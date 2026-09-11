@@ -66,10 +66,13 @@ Welcome to the **COSYplatform Content Repository**! This repository hosts all in
    - **90 Minutes (80 Active Min)**: Core + Deep Dive (authentic media analysis, extended pair work, case study).
    - **120 Minutes (110 Active Min)**: Core + Extension + Masterclass (live writing workshop, group debate, detailed action plan).
 
-4. **Group vs. Individual Class Modes**:
+4. **Introductory First Lessons ("Aloha")**:
+   - First lessons incorporate goal setting (Travel, Work, Myself, Studying), interest profiling (Movies, Tech, Business, Animals, Art, Food), learning preference quizzes, diagnostic speaking, course recommendation, and lesson results summary.
+
+5. **Group vs. Individual Class Modes**:
    - Dynamic slide rendering adapting to 1-on-1 tutoring (`mode="individual"`) or group breakout/pair-work sessions (`mode="group"`).
 
-5. **Ecosystem Integrations**:
+6. **Ecosystem Integrations**:
    - **Vocabulary Trainer**: Synced with mobile app wordlists.
    - **Self-Study & AI Practice**: Integrated links to AI speaking practice, video practice, and weekly Speaking Clubs.
 

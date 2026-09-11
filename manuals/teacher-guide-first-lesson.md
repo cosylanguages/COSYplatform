@@ -1,41 +1,42 @@
-# Teacher Guide: First Lesson ("Aloha", Duration & Format Setup)
+# Teacher Guide: First / Introductory ("Aloha") Lessons
 
-## Objectives of the First Lesson
-1. **Welcome & Icebreaking**: Greet the student/group and create a comfortable, low-stress environment.
-2. **Assess Goals & Duration**: Understand learning goals (career, travel, relocation, personal growth) and confirm scheduled lesson duration (60, 90, or 120 minutes).
-3. **Establish Class Format**: Determine 1-on-1 vs. Group dynamic (pair work, breakout room procedures).
-4. **Explore Student Interests**: Choose topics (Movies, Tech, Travel, Psychology, Pets, Business) to customize future lesson warm-ups.
-5. **Present Course Map**: Walk through the 40–80 lesson roadmap, milestone progress tests, and platform tools (Vocabulary Trainer, AI Practice, Speaking Clubs, Talks).
-6. **Start Main Topic**: Transition into Lesson 1 (*Relaxation and Hygge* or level equivalent).
+## Objectives of the Introductory First Lesson
+1. **Welcome & Icebreaking**: Greet the student/group, introduce yourself, and build rapport using interactive games.
+2. **Set Lesson Goals**: Help the student define why they are learning English (career, travel, studying, personal growth) and set target timelines.
+3. **Explore Student Interests**: Select topics (Movies, Tech, Business, Art, Sports, Animals, Food) to customize future lesson warm-ups and exercises.
+4. **Discuss Learning Styles**: Understand how the student learns best (preferred mistake correction, pace, hints vs. direct explanations).
+5. **Present Course Map**: Walk through the roadmap, milestone progress tests, and platform tools (Vocabulary Trainer, AI Practice, Speaking Clubs, Talks).
+6. **Recommend Course**: Recommending the best main course and supplementary skill modules based on student goals.
+7. **Lesson Results**: Summarize key student parameters and end on an encouraging note.
 
 ---
 
-## Monolingual Execution & Concept Check Questions (CCQs)
+## Monolingual Execution & Elicitation
 
 - **Strict Monolingual Policy**: Conduct 100% of the class in English. Do not use direct L1 translation.
 - **Elicitation & CCQs**: Use Concept Check Questions (CCQs) to verify understanding:
   - *Target word*: "Culinary" -> *CCQ*: "Does culinary relate to music or cooking?" (Cooking)
   - *Target phrase*: "Work-life balance" -> *CCQ*: "If you have a good work-life balance, do you spend all day working?" (No)
-- **Maximize Student Talk Time (STT)**: Keep teacher talk time low by asking open-ended questions and encouraging peer discussion.
+- **Maximize Student Talk Time (STT)**: Keep teacher talk time low by asking open-ended questions and encouraging student expression.
 
 ---
 
-## Lesson Plan Timing Across Formats
+## Introductory Lesson Stage Flow (30–50 Minutes)
 
-### A. 60-Minute Format (50 Active Minutes)
-- **00:00 - 00:18**: Introductory Aloha Part (Icebreaker, goals, interests, course map presentation).
-- **00:18 - 00:43**: Main Lesson Content (*Relaxation techniques, vocabulary, grammar, speaking practice*).
-- **00:43 - 00:50**: Cool-down & Homework assignment (Mobile app vocabulary, essay/audio instructions).
-
-### B. 90-Minute Format (80 Active Minutes)
-- **00:00 - 00:25**: Introductory Aloha Part + Extended Goal Alignment & Learning Style Evaluation.
-- **00:25 - 00:72**: Main Lesson Content + Video/Media Analysis & Group/Pair Discussion.
-- **00:72 - 00:80**: Cool-down & Detailed Error Correction / Homework Assignment.
-
-### C. 120-Minute Format (110 Active Minutes)
-- **00:00 - 00:30**: Introductory Aloha Part + In-depth Diagnostics & Group Roleplay Setup.
-- **00:30 - 01:40**: Comprehensive Lesson Content + Deep Vocabulary Discovery, Reading/Listening Workshop & Debate.
-- **01:40 - 01:50**: Final Cool-down, Individual Feedback Action Plan & Homework Setup.
+1. **Step 1: Greeting & Lesson Outline** (~2 min)
+   - Greet the student, verify audio/video, and briefly outline what to expect.
+2. **Step 2: About You & Me (Icebreaker)** (~5 min)
+   - Exchange personal backgrounds and run quick icebreaker questions or games.
+3. **Step 3: English Goals & Interests** (~7 min)
+   - Identify primary motivation, target timeframe, perceived pain points, and top interest categories.
+4. **Step 4: Learning Preferences & Short Practice** (~7 min)
+   - Discuss mistake correction preferences and run a short interactive teaching segment tailored to their goal.
+5. **Step 5: Diagnostic Conversation** (~15 min)
+   - Prompt free speaking to evaluate grammar and vocabulary proficiency across level benchmarks.
+6. **Step 6: Course Selection** (~7 min)
+   - Recommend a primary course (e.g. General English, Business, Spoken) and extra modules based on interests.
+7. **Step 7: Lesson Results & Summary** (~7 min)
+   - Record goals, level, recommended weekly frequency (e.g. 3–4 lessons/week), and schedule the next class.
 
 ---
 
@@ -48,11 +49,3 @@
 - **Individual (1-on-1) Lessons**:
   - Tailor speech scripts directly to the student's personal goals and career field.
   - Use `<cosy-record>` voice recording for personalized pronunciation analysis.
-
----
-
-## Key Rules & Guidelines
-
-- **Rescheduling vs. Cancellation**: Encourage students to reschedule rather than cancel to maintain steady progress toward milestone exams.
-- **Active Note Taking**: Take notes during the Aloha section regarding student interests and target dates—you will use these to select tailored extra exercises and warm-ups.
-- **Cool-down**: Always preserve 5–8 minutes at the end of class for student feedback and homework instructions.

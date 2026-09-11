@@ -1,6 +1,6 @@
 # CosyLanguages Lesson Format Specification
 
-This specification defines the markup tags used in CosyLanguages lesson files (`.xml`). The format supports interactive student workspace interaction, real-time teacher guidance, multi-duration scaling (50m, 80m, 110m active minutes), monolingual CELTA-inspired instruction, and individual vs. group lesson adaptations.
+This specification defines the markup tags used in CosyLanguages lesson files (`.xml`). The format supports interactive student workspace interaction, real-time teacher guidance, multi-duration scaling (50m, 80m, 110m active minutes), monolingual instruction, and individual vs. group lesson adaptations.
 
 ## Monolingual Principle
 
@@ -52,9 +52,17 @@ A lesson consists of ordered slides/stages with mode and duration tags.
 
 ---
 
+## Introductory First Lesson Components
+
+### 2. Goal & Interest Selectors
+- `<cosy-goal-select>`: Interactive selector for primary learning goals (Travelling, Work, Personal, Studying) and target timeframes.
+- `<cosy-choice-image>`: Selectable grid of student interests (Movies, Tech, Business, Art, Animals, Food) used to customize future lesson warm-ups.
+
+---
+
 ## Dual-View Tags (Teacher Page vs. Student Page)
 
-### 2. Teacher Notes (`<cosy-teacher-notes>`)
+### 3. Teacher Notes (`<cosy-teacher-notes>`)
 Teacher notes are rendered **strictly on the teacher's screen** during live lessons.
 - Attributes:
   - `type="instruction"`: Stage aims, pedagogical recommendations.
@@ -78,7 +86,7 @@ Teacher notes are rendered **strictly on the teacher's screen** during live less
 
 ## Interactive Student Workspace Elements
 
-### 3. Inputs & Fill-in-the-gaps (`<cosy-input>`)
+### 4. Inputs & Fill-in-the-gaps (`<cosy-input>`)
 ```xml
 <cosy-input placeholder="to keep">
   <cosy-input-answers>
@@ -88,7 +96,7 @@ Teacher notes are rendered **strictly on the teacher's screen** during live less
 </cosy-input>
 ```
 
-### 4. Multiple Choice & Select (`<cosy-select>`, `<cosy-test>`)
+### 5. Multiple Choice & Select (`<cosy-select>`, `<cosy-test>`)
 - `<cosy-select>`: Dropdown selection inside sentences or lists.
   ```xml
   <cosy-select>
@@ -100,7 +108,7 @@ Teacher notes are rendered **strictly on the teacher's screen** during live less
   ```
 - `<cosy-test>`: Standard multiple choice question block with support for single or multiple selection (`multiple="true"`).
 
-### 5. Drag and Drop Text (`<cosy-dnd-text>`)
+### 6. Drag and Drop Text (`<cosy-dnd-text>`)
 ```xml
 <cosy-dnd-text>
   <cosy-dnd-text-drags>
@@ -115,7 +123,7 @@ Teacher notes are rendered **strictly on the teacher's screen** during live less
 </cosy-dnd-text>
 ```
 
-### 6. Matching Groups (`<cosy-groups>`)
+### 7. Matching Groups (`<cosy-groups>`)
 For matching definitions, synonyms, or collocations in English.
 ```xml
 <cosy-groups>
@@ -126,7 +134,7 @@ For matching definitions, synonyms, or collocations in English.
 </cosy-groups>
 ```
 
-### 7. Choice Tabs & Options (`<cosy-choice>`)
+### 8. Choice Tabs & Options (`<cosy-choice>`)
 Presents options/tabs for discussion topics, grammar hints, or alternative tasks.
 ```xml
 <cosy-choice>
@@ -137,15 +145,6 @@ Presents options/tabs for discussion topics, grammar hints, or alternative tasks
     </cosy-choice-option-content>
   </cosy-choice-option>
 </cosy-choice>
-```
-
-### 8. Image Choices (`<cosy-choice-image>`)
-Grid of selectable images for warming up and goal setting.
-```xml
-<cosy-choice-image>
-  <cosy-choice-image-option resource-id="690033"><p>Travelling</p></cosy-choice-image-option>
-  <cosy-choice-image-option resource-id="690031"><p>Films and serials</p></cosy-choice-image-option>
-</cosy-choice-image>
 ```
 
 ---

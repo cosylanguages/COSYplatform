@@ -6,11 +6,11 @@ This guide explains how lessons, curriculums, and teaching manuals are structure
 ---
 
 ## 1. Catalog Hierarchy & Lesson Types
-1. **Course Level**: (e.g., *General English A0-C1*, *Business English*, *Conversational Italian*)
+1. **Course Level**: (e.g., *General English A0-C1*, *Spoken English A1-C1*, *Business English*)
 2. **Module / Unit**: Specific topical group (e.g., *Unit 1: Lifestyle & Relaxation*, *Unit 2: Work-Life Balance*)
 3. **Lesson Types**:
    - **Standard Lessons**: Flexible 50m, 80m, or 110m active teaching formats structured into **16 Live Cards** and **10 Homework Cards**.
-   - **Introductory "Aloha" Lessons**: First lesson designed for goal setting, duration selection, learning style evaluation, and course map presentation.
+   - **Introductory "Aloha" Lessons**: First lesson designed for greeting the student, teacher self-introduction, getting to know the student through games, setting lesson goals, discussing learning styles, presenting the course map, and summarizing lesson results.
    - **Progress Check / Exam**: Assessment slides scheduled after key modules.
    - **Talks / Speaking Clubs**: Short conversational sessions with native speakers or peers.
 

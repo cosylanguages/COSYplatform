@@ -68,16 +68,9 @@ Lessons are structured into **16 Live Lesson Cards** and **10 Homework Cards**, 
 
 ---
 
-## 👥 Individual (1-on-1) vs. Group Lesson Modes
+## 🎯 Introductory "Aloha" First Lessons
 
-Lessons dynamically adapt to classroom format via the `mode` attribute:
-
-- **1-on-1 Mode (`mode="individual"`)**:
-  - Direct teacher-student dialog prompts.
-  - Tailored personalized warm-ups ("Aloha" goals alignment).
-  - Individual audio recording and writing essay submissions.
-- **Group Mode (`mode="group"`)**:
-  - Pair-work and small group discussion prompts (`<cosy-group-instruction>`).
-  - Peer feedback activities and collaborative voting/matching tasks.
-  - Breakout room timing and group presentation slides.
-- **Universal Mode (`mode="all"`)**: Default mode adaptable to both formats.
+Introductory lessons utilize specialized slide components for student onboarding:
+- **Goal Selectors (`<cosy-goal-select>`)**: Captures primary student motivations (Travel, Work, Myself, Studying) and target timeframes.
+- **Interest Selectors (`<cosy-choice-image>`)**: Identifies top interest topics (Movies, Tech, Business, Art, Animals, Food) to customize future course maps.
+- **Course Recommendation Presentation**: Displays recommended main courses and extra skill modules.
