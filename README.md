@@ -15,12 +15,14 @@ Welcome to the **COSYplatform Content Repository**! This repository hosts all in
 ├── schemas/                     # Formal validation schemas
 │   └── lesson.schema.json       # JSON Schema for validating lesson structures
 ├── curriculums/                 # High-level curriculum definitions
+│   ├── general-english-a0.json  # General English A0 Beginner curriculum (8 units)
 │   ├── general-english-a1.json  # General English A1 Elementary curriculum (12 units)
 │   ├── general-english-a2.json  # General English A2 Pre-Intermediate curriculum (15 units)
 │   ├── general-english-b1.json  # General English B1 Intermediate curriculum (15 units)
 │   ├── general-english-b2.json  # General English B2 Upper-Intermediate curriculum (13 units)
 │   └── general-english-c1.json  # General English C1 Advanced curriculum (12 units)
 ├── roadmaps/                    # Course maps and lesson sequences
+│   ├── general-english-a0.json  # A0 Beginner course map (4 sections, 45 lessons)
 │   ├── general-english-a1.json  # A1 Elementary course map (6 sections, 62 lessons)
 │   ├── general-english-a2.json  # A2 Pre-Intermediate course map (8 sections, 71 lessons)
 │   ├── general-english-b1.json  # B1 Intermediate course map (8 sections, 74 lessons)
