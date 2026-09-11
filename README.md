@@ -15,15 +15,19 @@ Welcome to the **COSYplatform Content Repository**! This repository hosts all in
 ├── schemas/                     # Formal validation schemas
 │   └── lesson.schema.json       # JSON Schema for validating lesson structures
 ├── curriculums/                 # High-level curriculum definitions
-│   └── general-english-b2.json  # General English B2 curriculum
+│   ├── general-english-b2.json  # General English B2 curriculum
+│   └── general-english-c1.json  # General English C1 Advanced curriculum (66 lessons)
 ├── roadmaps/                    # Course maps and lesson sequences
-│   └── general-english-b2.json  # 40-lesson roadmap with milestone checkpoints
+│   ├── general-english-b2.json  # B2 course map
+│   └── general-english-c1.json  # C1 Advanced course map (6 sections, 12 units, exams)
 ├── manuals/                     # Teacher guides & onboarding instructions
 │   └── teacher-guide-first-lesson.md # First lesson ("Aloha") teacher checklist
 └── lessons/                     # Lesson interactive slides content
-    └── english-b2/
-        ├── relaxation-and-hygge.xml  # XML interactive slide markup
-        └── relaxation-and-hygge.json # JSON representation
+    ├── english-b2/
+    │   ├── relaxation-and-hygge.xml  # XML interactive slide markup
+    │   └── relaxation-and-hygge.json # JSON representation
+    └── english-c1/
+        └── opposites-attract.xml     # C1 Advanced sample lesson markup
 ```
 
 ---
