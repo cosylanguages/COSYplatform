@@ -17,6 +17,6 @@ This document maps all source directories from `cosylanguages/COSYmanuals` (and 
 | *COSYlanguages (Separate migration)* | `reference/manuals/` | Placeholder README created |
 | *COSYlanguages (Separate migration)* | `reference/grammar/` | Placeholder README created |
 | *COSYlanguages (Separate migration)* | `reference/vocabulary/` | Placeholder README created |
-| *New platform activities* | `activities/games.json` | Created empty array placeholder |
-| *New platform activities* | `activities/tools.json` | Created empty array placeholder |
-| *New platform activities* | `activities/print.json` | Created empty array placeholder |
+| *New platform activities* | `activities/games.json` | Populated array of COSYgames activity items |
+| *New platform activities* | `activities/tools.json` | Populated array of COSYtools micro-app items |
+| *New platform activities* | `activities/print.json` | Populated array of COSYlanguages print generators |

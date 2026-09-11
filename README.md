@@ -1,5 +1,7 @@
 # COSYplatform Content Repository
 
+[![Validate Content](https://github.com/cosylanguages/cosyplatform-content/actions/workflows/validate-content.yml/badge.svg)](https://github.com/cosylanguages/cosyplatform-content/actions/workflows/validate-content.yml)
+
 Welcome to the **COSYplatform Content Repository**! This repository hosts all interactive curriculums, roadmaps, teacher manuals, and lesson markup files used by the **CosyLanguages** teaching and learning ecosystem.
 
 ---
