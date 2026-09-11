@@ -24,7 +24,8 @@ Welcome to the **COSYplatform Content Repository**! This repository hosts all in
 │   ├── spoken-english-a1.json   # Spoken English A1 Elementary curriculum (22 modules)
 │   ├── spoken-english-a2.json   # Spoken English A2 Pre-Intermediate curriculum (68 modules)
 │   ├── spoken-english-b1.json   # Spoken English B1 Intermediate curriculum (79 modules)
-│   └── spoken-english-b2.json   # Spoken English B2 Upper-Intermediate curriculum (32 modules)
+│   ├── spoken-english-b2.json   # Spoken English B2 Upper-Intermediate curriculum (33 modules)
+│   └── spoken-english-c1.json   # Spoken English C1 Advanced curriculum (31 modules)
 ├── roadmaps/                    # Course maps and lesson sequences
 │   ├── general-english-a0.json  # A0 Beginner course map (4 sections, 45 lessons)
 │   ├── general-english-a1.json  # A1 Elementary course map (6 sections, 62 lessons)
@@ -35,7 +36,8 @@ Welcome to the **COSYplatform Content Repository**! This repository hosts all in
 │   ├── spoken-english-a1.json   # Spoken English A1 Elementary course map (22 lessons)
 │   ├── spoken-english-a2.json   # Spoken English A2 Pre-Intermediate course map (68 lessons)
 │   ├── spoken-english-b1.json   # Spoken English B1 Intermediate course map (79 lessons)
-│   └── spoken-english-b2.json   # Spoken English B2 Upper-Intermediate course map (32 lessons)
+│   ├── spoken-english-b2.json   # Spoken English B2 Upper-Intermediate course map (33 lessons)
+│   └── spoken-english-c1.json   # Spoken English C1 Advanced course map (31 lessons)
 ├── manuals/                     # Teacher guides & onboarding instructions
 │   └── teacher-guide-first-lesson.md # First lesson ("Aloha") setup & multi-duration guide
 └── lessons/                     # Lesson interactive slides content
