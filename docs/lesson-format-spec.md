@@ -1,18 +1,31 @@
 # CosyLanguages Lesson Format Specification
 
-This specification defines the markup tags used in CosyLanguages lesson files (`.xml`). The format builds upon modern interactive ESL platform standards to support rich student interaction and real-time teacher guidance.
+This specification defines the markup tags used in CosyLanguages lesson files (`.xml`). The format supports interactive student workspace interaction, real-time teacher guidance, multi-duration scaling (50m, 80m, 110m active minutes), and individual vs. group lesson adaptations.
 
 ## Root & Slide Structure
 
-A lesson consists of ordered slides/stages.
+A lesson consists of ordered slides/stages with mode and duration tags.
 
 ```xml
-<cosy-lesson id="lesson-id" level="B2" language="en" title="Relaxation and Hygge">
-  <cosy-slide id="slide-1" stage="warm-up">
+<cosy-lesson id="lesson-id" level="B2" language="en" title="Relaxation and Hygge" default-duration="50" default-mode="all">
+  <cosy-slide id="slide-1" stage="warm-up" duration="50|80|110" mode="individual|group|all">
     <!-- Slide content -->
   </cosy-slide>
 </cosy-lesson>
 ```
+
+---
+
+## Slide Filtering Attributes
+
+- `duration="50|80|110"`:
+  - `50`: Included in standard 60-min lesson (50 min active time).
+  - `80`: Included in 90-min lesson (80 min active time).
+  - `110`: Included in 120-min lesson (110 min active time).
+- `mode="individual|group|all"`:
+  - `individual`: Displayed specifically in 1-on-1 tutoring sessions.
+  - `group`: Displayed specifically in group classes (e.g. breakout prompts, pair work).
+  - `all`: Universal slides rendered for both classroom formats.
 
 ---
 
@@ -23,12 +36,20 @@ A lesson consists of ordered slides/stages.
   ```xml
   <cosy-instruction>Lesson objectives:</cosy-instruction>
   ```
+- `<cosy-group-instruction>`: Specific instructions rendered when class is in group/pair mode.
+  ```xml
+  <cosy-group-instruction>In pairs, discuss these two questions for 3 minutes:</cosy-group-instruction>
+  ```
 - `<cosy-text type="strong|em">`: Text formatting helpers.
 - `<cosy-blockquote importance="basic|low|medium|high">`: Highlighted content boxes or quote blocks.
 - `<cosy-spoiler>`: Collapsible informational block with `<cosy-spoiler-title>` and `<cosy-spoiler-content>`.
 
+---
+
+## Dual-View Tags (Teacher Page vs. Student Page)
+
 ### 2. Teacher Notes (`<cosy-teacher-notes>`)
-Teacher notes are rendered strictly on the teacher's screen during live lessons.
+Teacher notes are rendered **strictly on the teacher's screen** during live lessons.
 - Attributes:
   - `type="instruction"`: Stage aims, pedagogical recommendations.
   - `type="speech"`: Suggested wording/script for teacher to read or adapt.
@@ -49,7 +70,7 @@ Teacher notes are rendered strictly on the teacher's screen during live lessons.
 
 ---
 
-## Interactive Exercise Elements
+## Interactive Student Workspace Elements
 
 ### 3. Inputs & Fill-in-the-gaps (`<cosy-input>`)
 ```xml
@@ -126,7 +147,7 @@ Grid of selectable images for warming up and goal setting.
 ## Vocabulary, Grammar & Media
 
 ### 9. Vocabulary Items (`<cosy-vocabulary>`)
-Integrates with platform dictionary.
+Integrates with student dictionary and mobile app vocabulary trainer.
 ```xml
 <cosy-vocabulary>
   <cosy-vocabulary-item meaning-id="105868" word="cozy" definition="giving a feeling of comfort" />

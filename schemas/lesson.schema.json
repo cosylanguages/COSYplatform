@@ -6,8 +6,10 @@
   "properties": {
     "id": { "type": "string" },
     "title": { "type": "string" },
-    "level": { "type": "string", "enum": ["A1", "A2", "B1", "B2", "C1", "C2"] },
+    "level": { "type": "string", "enum": ["A0", "A1", "A2", "B1", "B2", "C1", "C2"] },
     "language": { "type": "string", "default": "en" },
+    "defaultDuration": { "type": "integer", "enum": [50, 80, 110], "default": 50 },
+    "defaultMode": { "type": "string", "enum": ["individual", "group", "all"], "default": "all" },
     "objectives": {
       "type": "array",
       "items": { "type": "string" }
@@ -21,6 +23,8 @@
           "id": { "type": "string" },
           "title": { "type": "string" },
           "stage": { "type": "string" },
+          "duration": { "type": "integer", "enum": [50, 80, 110], "default": 50 },
+          "mode": { "type": "string", "enum": ["individual", "group", "all"], "default": "all" },
           "teacherNotes": {
             "type": "array",
             "items": {

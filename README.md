@@ -9,11 +9,11 @@ Welcome to the **COSYplatform Content Repository**! This repository hosts all in
 ```
 .
 ├── docs/                        # Platform architecture & markup specifications
-│   ├── architecture.md          # Ecosystem & platform integration overview
+│   ├── architecture.md          # Dual-page view, group/1-on-1 modes & timing models
 │   ├── lesson-format-spec.md    # CosyLanguages (<cosy-*>) markup specification
-│   └── teacher-catalog-guide.md # Teacher catalog structure & lesson timing guide
+│   └── teacher-catalog-guide.md # Teacher catalog structure & multi-duration guide
 ├── schemas/                     # Formal validation schemas
-│   └── lesson.schema.json       # JSON Schema for validating lesson structures
+│   └── lesson.schema.json       # JSON Schema supporting duration & classroom modes
 ├── curriculums/                 # High-level curriculum definitions
 │   ├── general-english-a0.json  # General English A0 Beginner curriculum (8 units)
 │   ├── general-english-a1.json  # General English A1 Elementary curriculum (12 units)
@@ -29,7 +29,7 @@ Welcome to the **COSYplatform Content Repository**! This repository hosts all in
 │   ├── general-english-b2.json  # B2 Upper-Intermediate course map (7 sections, 58 lessons)
 │   └── general-english-c1.json  # C1 Advanced course map (6 sections, 67 lessons)
 ├── manuals/                     # Teacher guides & onboarding instructions
-│   └── teacher-guide-first-lesson.md # First lesson ("Aloha") teacher checklist
+│   └── teacher-guide-first-lesson.md # First lesson ("Aloha") setup & multi-duration guide
 └── lessons/                     # Lesson interactive slides content
     ├── english-b2/
     │   ├── relaxation-and-hygge.xml  # XML interactive slide markup
@@ -42,21 +42,21 @@ Welcome to the **COSYplatform Content Repository**! This repository hosts all in
 
 ## 🎯 Key Features & Capabilities
 
-1. **Dual Student/Teacher View**:
-   - **Student View**: Interactive exercises (gap fills, drag & drop, choice options, audio recorder, essay box, vocabulary lists, grammar hint cards).
-   - **Teacher View**: Dedicated stage aims (`<cosy-teacher-notes type="instruction">`), teacher speech scripts (`type="speech"`), extra hints (`type="additional"`), and listening transcripts (`type="tapescript"`).
+1. **Dual Student/Teacher Views**:
+   - **Student Page**: Distraction-free clean workspace showing instructions, interactive inputs (gaps, drag & drop, choice options), vocabulary dictionary add button, audio recorder, and essay submission box.
+   - **Teacher Page**: Live classroom view with stage aims (`<cosy-teacher-notes type="instruction">`), teacher speech prompts (`type="speech"`), extra hints (`type="additional"`), audio/video transcripts (`type="tapescript"`), and answer keys.
 
-2. **Standard 50-Minute Lesson Architecture**:
-   - Warm-up & Goal Alignment (3–5 min)
-   - Lead-in & Vocabulary Input (7–10 min)
-   - Grammar Discovery & Practice (10–12 min)
-   - Controlled Interactive Practice (10–12 min)
-   - Freer Practice & Speaking (10–12 min)
-   - Cool-down, Feedback & Homework (5 min)
+2. **Multi-Duration Timing Models**:
+   - **60 Minutes (50 Active Min)**: Fast-paced core vocabulary, grammar input, controlled practice, and speaking cool-down.
+   - **90 Minutes (80 Active Min)**: Core + Deep Dive (authentic media analysis, extended pair work, case study).
+   - **120 Minutes (110 Active Min)**: Core + Extension + Masterclass (live writing workshop, group debate, detailed action plan).
 
-3. **Ecosystem Integrations**:
-   - **Vocabulary Trainer**: Added words dynamically sync with the student's mobile app wordlists.
-   - **Self-Study & AI Practice**: Built-in links to AI teacher speaking practice, video practice, and weekly Speaking Clubs.
+3. **Group vs. Individual Class Modes**:
+   - Dynamic slide rendering adapting to 1-on-1 tutoring (`mode="individual"`) or group breakout/pair-work sessions (`mode="group"`).
+
+4. **Ecosystem Integrations**:
+   - **Vocabulary Trainer**: Synced with mobile app wordlists.
+   - **Self-Study & AI Practice**: Integrated links to AI speaking practice, video practice, and weekly Speaking Clubs.
 
 ---
 
