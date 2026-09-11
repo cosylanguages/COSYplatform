@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A1 Curriculum Roadmap — COSYlanguages</title>
+<script src="A1.js"></script>
+<link rel="icon" href="../../images/cosylanguages.png">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&family=Lora:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0F1923;
+  --surface:#16202B;
+  --surface2:#1D2D3E;
+  --border:#2A3F55;
+  --accent:#F5C842;
+  --accent2:#4ECDC4;
+  --accent3:#FF6B6B;
+  --muted:#7A9BB5;
+  --white:#F0F6FF;
+  --u1:#3B82F6; --u1-lt:#1E3A5F;
+  --u2:#8B5CF6; --u2-lt:#3B1F6B;
+  --u3:#10B981; --u3-lt:#0A4A35;
+  --u4:#F59E0B; --u4-lt:#5A3A00;
+  --u5:#EC4899; --u5-lt:#5A0F35;
+  --sp:#F5C842; --li:#4ECDC4; --rd:#74B9FF; --wr:#A29BFE;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--white);min-height:100vh;overflow-x:hidden;}
+.topbar{background:rgba(15,25,35,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:.65rem 1.8rem;display:flex;align-items:center;justify-content:space-between;gap:.8rem;flex-wrap:wrap;position:sticky;top:0;z-index:300;}
+.tb-brand{font-family:'Lora',serif;font-size:1rem;font-weight:700;color:var(--accent);letter-spacing:.02em;text-decoration:none;}
+.tb-sub{font-size:.7rem;color:var(--muted);margin-top:.1rem;}
+.tb-nav{display:flex;gap:.4rem;flex-wrap:wrap;}
+.tb-btn{background:rgba(255,255,255,.07);border:1px solid var(--border);color:var(--muted);border-radius:6px;padding:.28rem .75rem;font-family:'Nunito',sans-serif;font-size:.72rem;font-weight:800;cursor:pointer;transition:all .15s;text-decoration:none;}
+.tb-btn:hover,.tb-btn.active{background:var(--accent);color:var(--bg);border-color:var(--accent);}
+.hero{padding:3.5rem 2rem 2rem;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(245,200,66,.08) 0%,transparent 70%);pointer-events:none;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:.5rem;background:rgba(245,200,66,.12);border:1px solid rgba(245,200,66,.3);border-radius:999px;padding:.28rem 1rem;font-size:.7rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:1.1rem;}
+.hero h1{font-family:'Lora',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.15;margin-bottom:.75rem;background:linear-gradient(135deg,var(--white) 30%,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.hero-sub{color:var(--muted);font-size:.95rem;max-width:560px;margin:0 auto 1.8rem;line-height:1.7;}
+.hero-stats{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin-bottom:2rem;}
+.hs-item{text-align:center;}
+.hs-num{font-family:'Lora',serif;font-size:2rem;font-weight:700;color:var(--accent);display:block;line-height:1;}
+.hs-label{font-size:.68rem;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;margin-top:.2rem;}
+.arc-strip{display:flex;align-items:center;justify-content:center;gap:0;margin:0 auto 2.5rem;max-width:700px;flex-wrap:wrap;}
+.arc-node{background:var(--surface2);border:1.5px solid var(--border);border-radius:8px;padding:.4rem .9rem;font-size:.75rem;font-weight:800;color:var(--white);white-space:nowrap;}
+.arc-arrow{color:var(--muted);font-size:.9rem;margin:0 .3rem;}
+.layout{display:grid;grid-template-columns:260px 1fr;min-height:calc(100vh - 60px);gap:0;}
+.sidebar{background:var(--surface);border-right:1px solid var(--border);padding:1.5rem 0 3rem;position:sticky;top:56px;height:calc(100vh - 56px);overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--border) transparent;}
+.sb-head{padding:.2rem 1.2rem .6rem;font-size:.6rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+.sb-unit{margin-bottom:.2rem;}
+.sb-unit-header{display:flex;align-items:center;gap:.6rem;padding:.55rem 1.2rem;font-size:.78rem;font-weight:900;color:var(--white);cursor:pointer;border-left:3px solid transparent;transition:all .15s;}
+.sb-unit-header:hover{background:rgba(255,255,255,.04);}
+.sb-unit-header.active{border-left-color:var(--accent);}
+.sb-unit-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+.sb-lesson{display:flex;align-items:center;gap:.5rem;padding:.35rem 1.2rem .35rem 2.2rem;font-size:.73rem;font-weight:700;color:var(--muted);cursor:pointer;border-left:3px solid transparent;transition:all .15s;text-decoration:none;}
+.sb-lesson:hover{color:var(--white);background:rgba(255,255,255,.03);}
+.sb-lesson.active{color:var(--accent);border-left-color:var(--accent);}
+.sb-lesson-code{font-family:'Lora',serif;font-size:.65rem;color:var(--muted);min-width:38px;flex-shrink:0;}
+.main{padding:2rem 2.2rem 5rem;overflow-x:hidden;}
+.unit-block{margin-bottom:3.5rem;}
+.unit-header{display:flex;align-items:flex-start;gap:1.2rem;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.4rem 1.6rem;margin-bottom:1.5rem;position:relative;overflow:hidden;}
+.unit-header::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;border-radius:14px 0 0 14px;}
+.u1 .unit-header::before{background:var(--u1);}
+.u2 .unit-header::before{background:var(--u2);}
+.u3 .unit-header::before{background:var(--u3);}
+.u4 .unit-header::before{background:var(--u4);}
+.u5 .unit-header::before{background:var(--u5);}
+.uh-num{font-family:'Lora',serif;font-size:2.2rem;font-weight:700;line-height:1;opacity:.25;flex-shrink:0;margin-top:.1rem;}
+.uh-body h2{font-family:'Lora',serif;font-size:1.2rem;font-weight:700;margin-bottom:.25rem;}
+.uh-arc{font-size:.78rem;color:var(--muted);font-style:italic;margin-bottom:.6rem;line-height:1.5;}
+.uh-tags{display:flex;gap:.4rem;flex-wrap:wrap;}
+.uh-tag{font-size:.65rem;font-weight:900;padding:.18rem .55rem;border-radius:999px;background:rgba(255,255,255,.08);color:var(--muted);border:1px solid var(--border);}
+.lesson-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;margin-bottom:.75rem;overflow:hidden;transition:border-color .2s,transform .15s;}
+.lesson-card:hover{border-color:rgba(255,255,255,.15);transform:translateY(-1px);}
+.lesson-card.done{opacity:.55;}
+.lesson-card.done .lc-title{text-decoration:line-through;}
+.lc-header{display:flex;align-items:center;gap:.9rem;padding:.85rem 1.1rem;cursor:pointer;}
+.lc-code{font-family:'Lora',serif;font-size:.72rem;color:var(--muted);min-width:46px;flex-shrink:0;}
+.lc-num{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:900;flex-shrink:0;border:2px solid var(--border);}
+.lc-title{font-size:.9rem;font-weight:800;color:var(--white);flex:1;}
+.lc-done-btn{background:none;border:1.5px solid var(--border);border-radius:6px;color:var(--muted);font-size:.65rem;font-weight:900;padding:.18rem .55rem;cursor:pointer;transition:all .15s;flex-shrink:0;}
+.lc-done-btn:hover{border-color:var(--accent);color:var(--accent);}
+.lesson-card.done .lc-done-btn{background:rgba(245,200,66,.15);border-color:var(--accent);color:var(--accent);}
+.lc-expand{color:var(--muted);font-size:.7rem;transition:transform .25s;flex-shrink:0;}
+.lesson-card.open .lc-expand{transform:rotate(180deg);}
+.lc-skills{display:flex;gap:.3rem;flex-shrink:0;}
+.skill-pill{font-size:.6rem;font-weight:900;padding:.1rem .4rem;border-radius:4px;letter-spacing:.04em;}
+.sp-s{background:rgba(245,200,66,.15);color:var(--sp);}
+.sp-l{background:rgba(78,205,196,.15);color:var(--li);}
+.sp-r{background:rgba(116,185,255,.15);color:var(--rd);}
+.sp-w{background:rgba(162,155,254,.15);color:var(--wr);}
+.lc-body{display:none;padding:0 1.1rem 1.1rem;border-top:1px solid var(--border);}
+.lesson-card.open .lc-body{display:block;}
+.lb-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:.9rem;}
+.lb-col{background:var(--bg);border-radius:8px;padding:.75rem .9rem;border:1px solid var(--border);}
+.lb-col-title{font-size:.6rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.5rem;display:flex;align-items:center;gap:.35rem;}
+.lb-items{display:flex;flex-direction:column;gap:.3rem;}
+.lb-item{font-size:.78rem;color:var(--muted);line-height:1.5;display:flex;align-items:flex-start;gap:.4rem;}
+.lb-item::before{content:'·';color:var(--accent);flex-shrink:0;margin-top:.05rem;}
+.lb-item strong{color:var(--white);}
+.vocab-pills{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.4rem;}
+.vp{font-size:.7rem;font-weight:700;padding:.18rem .55rem;border-radius:4px;background:var(--surface2);color:var(--white);border:1px solid var(--border);cursor:pointer;transition:all .15s;text-decoration:none;display:inline-block;}
+.vp:hover{background:var(--border);border-color:var(--accent);transform:translateY(-1px);}
+.vp.verb{border-color:rgba(245,200,66,.3);color:var(--accent);}
+.can-do{background:rgba(245,200,66,.07);border:1px solid rgba(245,200,66,.2);border-radius:8px;padding:.65rem .9rem;margin-top:.8rem;font-size:.8rem;font-weight:700;color:var(--white);display:flex;align-items:flex-start;gap:.5rem;line-height:1.5;}
+.can-do::before{content:'✓';color:var(--accent);font-weight:900;flex-shrink:0;}
+.speaking-task{background:rgba(245,200,66,.05);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:.55rem .85rem;margin-top:.6rem;font-size:.79rem;color:var(--muted);font-style:italic;}
+.speaking-task strong{color:var(--accent);font-style:normal;}
+.grammar-box{background:rgba(78,205,196,.06);border:1px solid rgba(78,205,196,.2);border-radius:8px;padding:.55rem .85rem;font-size:.78rem;color:var(--muted);display:flex;align-items:flex-start;gap:.5rem;line-height:1.5;}
+.grammar-box::before{content:'📐';flex-shrink:0;}
+.hw-box{background:var(--surface2);border-radius:8px;padding:.5rem .85rem;font-size:.75rem;color:var(--muted);display:flex;align-items:flex-start;gap:.4rem;margin-top:.5rem;}
+.hw-box::before{content:'📝';flex-shrink:0;}
+.vocab-panel{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.2rem 1.5rem;margin-bottom:2rem;}
+.vp-title{font-family:'Lora',serif;font-size:1rem;font-weight:700;margin-bottom:.9rem;display:flex;align-items:center;gap:.5rem;}
+.grammar-panel{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.2rem 1.5rem;margin-bottom:2rem;}
+.gp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.7rem;}
+.gp-item{background:var(--bg);border-radius:8px;padding:.65rem .8rem;border:1px solid var(--border);}
+.gp-name{font-size:.8rem;font-weight:800;color:var(--white);margin-bottom:.2rem;}
+.gp-desc{font-size:.7rem;color:var(--muted);line-height:1.5;}
+.gp-ex{font-size:.7rem;color:var(--accent2);font-style:italic;margin-top:.25rem;}
+.progress-strip{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.5rem;margin-bottom:1.5rem;}
+.ps-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:.7rem;}
+.ps-title{font-size:.78rem;font-weight:800;}
+.ps-count{font-size:.75rem;color:var(--muted);}
+.ps-bar{background:rgba(255,255,255,.08);border-radius:999px;height:10px;overflow:hidden;}
+.ps-fill{height:100%;background:linear-gradient(90deg,var(--u1),var(--accent));border-radius:999px;transition:width .5s ease;}
+.ps-units{display:grid;grid-template-columns:repeat(5,1fr);gap:.4rem;margin-top:.7rem;}
+.psu{text-align:center;font-size:.65rem;font-weight:900;}
+.psu-bar{height:4px;border-radius:999px;margin-bottom:.2rem;background:rgba(255,255,255,.1);}
+.psu-fill{height:100%;border-radius:999px;transition:width .4s;}
+.psu-label{color:var(--muted);}
+.score-fixed{position:fixed;bottom:1.2rem;right:1.2rem;z-index:200;background:var(--surface);border:1.5px solid var(--accent);border-radius:10px;padding:.5rem .9rem;font-size:.8rem;font-weight:900;color:var(--accent);box-shadow:0 4px 20px rgba(245,200,66,.15);}
+.score-fixed span{font-size:1.2rem;display:block;text-align:center;}
+@media(max-width:800px){.layout{grid-template-columns:1fr;}.sidebar{display:none;}.lb-grid{grid-template-columns:1fr;}.main{padding:1.2rem;}.hero{padding:2rem 1rem 1.5rem;}}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.unit-block{animation:fadeIn .4s ease both;}
+</style>
+  <link rel="stylesheet" href="../../../css/components.css">
+</head>
+<body>
+<nav id="cosy-nav"></nav>
+<header class="hero">
+  <div class="hero-eyebrow">🇮🇹 A1 — Principiante</div>
+  <h1>La mia vita oggi. Il mio lavoro.<br>Il mio passato. I miei progetti.</h1>
+  <p class="hero-sub">50 lezioni · 100–120 ore · Approccio strutturo-funzionale.</p>
+  <div class="hero-stats">
+    <div class="hs-item"><span class="hs-num">50</span><span class="hs-label">Lezioni</span></div>
+    <div class="hs-item"><span class="hs-num">5</span><span class="hs-label">Unità</span></div>
+    <div class="hs-item"><span class="hs-num">200+</span><span class="hs-label">Parole</span></div>
+    <div class="hs-item"><span class="hs-num">15+</span><span class="hs-label">Grammatica</span></div>
+  </div>
+</header>
+<div class="layout">
+<nav class="sidebar" id="sidebar"><div class="sb-head">Lezioni</div><div id="sb-content"></div></nav>
+<main class="main">
+<div class="progress-strip" id="progress-strip">
+  <div class="ps-header"><span class="ps-title">Il tuo progresso A1</span><span class="ps-count" id="ps-count">0 / 50 lezioni</span></div>
+  <div class="ps-bar"><div class="ps-fill" id="ps-fill" style="width:0%"></div></div>
+  <div class="ps-units" id="ps-units"></div>
+</div>
+<div class="score-fixed" id="score-fixed">⭐ <span id="score-num">0</span></div>
+<div id="content"></div>
+</main>
+</div>
+<script>
+const UNITS = window.curriculumData?.it_a1 || [];
+let score = parseInt(localStorage.getItem('cosy_total_points') || '0');
+let done  = new Set(JSON.parse(localStorage.getItem('a1_it_done')||'[]'));
+let open  = new Set();
+function saveState(){ localStorage.setItem('a1_it_done',JSON.stringify([...done])); }
+function addScore(n){
+  score+=n; localStorage.setItem('cosy_total_points', score);
+  document.getElementById('score-num').textContent=score;
+}
+function updateProgress(){
+  const total=50, count=done.size;
+  document.getElementById('ps-count').textContent=`${count} / ${total} lezioni`;
+  document.getElementById('ps-fill').style.width=`${count/total*100}%`;
+  const uDiv=document.getElementById('ps-units');
+  uDiv.innerHTML=UNITS.map(u=>{
+    const ucodes=u.lessons.map(l=>l.code);
+    const udone=ucodes.filter(c=>done.has(c)).length;
+    const pct=Math.round(udone/ucodes.length*100);
+    return `<div class="psu"><div class="psu-bar"><div class="psu-fill" style="width:${pct}%;background:${u.color}"></div></div><div class="psu-label">U${u.num} ${udone}/${ucodes.length}</div></div>`;
+  }).join('');
+}
+function buildSidebar(){
+  const sb=document.getElementById('sb-content');
+  sb.innerHTML=UNITS.map(u=>`
+    <div class="sb-unit">
+      <div class="sb-unit-header" onclick="jumpUnit('${u.id}')"><span class="sb-unit-dot" style="background:${u.color}"></span>Unità ${u.num}: ${u.label}</div>
+      ${u.lessons.map(l=>{
+        const isDone=done.has(l.code);
+        return `<a class="sb-lesson" id="sb-${l.code}" onclick="jumpLesson('${l.code}')">
+          <span class="sb-lesson-code">${l.code}</span>
+          <span style="flex:1;font-size:.72rem">${l.title}</span>
+          ${isDone?'<span style="color:var(--accent);font-size:.7rem">✓</span>':''}
+        </a>`;
+      }).join('')}
+    </div>`).join('');
+}
+function jumpUnit(id){ document.getElementById(id)?.scrollIntoView({behavior:'smooth',block:'start'}); }
+function jumpLesson(code){
+  const el=document.getElementById(`lesson-${code}`);
+  if(!el) return;
+  el.scrollIntoView({behavior:'smooth',block:'start'});
+  if(!open.has(code)){ toggleLesson(code); }
+}
+function toggleLesson(code){
+  const card=document.getElementById(`lesson-${code}`);
+  if(!card) return;
+  if(open.has(code)){ open.delete(code); card.classList.remove('open'); }
+  else { open.add(code); card.classList.add('open'); }
+}
+function markDone(code,e){
+  e.stopPropagation();
+  const card=document.getElementById(`lesson-${code}`);
+  if(done.has(code)){ done.delete(code); card?.classList.remove('done'); }
+  else { done.add(code); card?.classList.add('done'); addScore(20); }
+  saveState(); updateProgress(); buildSidebar();
+}
+function renderVocabPills(words){
+  return words.map(w=>`<a href="../../vocabulary-reference.html?lang=it&search=${encodeURIComponent(w)}" class="vp">${w}</a>`).join('');
+}
+function buildContent(){
+  const area=document.getElementById('content');
+  let unitsHtml=UNITS.map(u=>{
+    const pct=Math.round(u.lessons.filter(l=>done.has(l.code)).length/u.lessons.length*100);
+    const lessonsHtml=u.lessons.map(l=>{
+      const isDone=done.has(l.code), isOpen=open.has(l.code);
+      const vocabDisplay=[...(l.vocab||[]),...(l.verbs||[]),...(l.adj||[])].slice(0,12);
+      return `<div class="lesson-card${isDone?' done':''}${isOpen?' open':''}" id="lesson-${l.code}">
+        <div class="lc-header" onclick="toggleLesson('${l.code}')">
+          <span class="lc-code">${l.code}</span>
+          <span class="lc-num" style="border-color:${u.color};color:${u.color}">${l.num}</span>
+          <span class="lc-title">${l.title}</span>
+          <button class="lc-done-btn" onclick="markDone('${l.code}',event)">${isDone?'✓ Fatto':'Segna fatto'}</button>
+          <span class="lc-expand">▼</span>
+        </div>
+        <div class="lc-body">
+          <div class="grammar-box">${l.grammar}</div>
+          <div class="speaking-task"><strong>🗣️ Orale :</strong> ${l.speaking}</div>
+          <div class="lb-grid">
+            <div class="lb-col"><div class="lb-col-title">👂 Ascolto</div><div class="lb-item">${l.listening}</div></div>
+            <div class="lb-col"><div class="lb-col-title">✍️ Scritto</div><div class="lb-item">${l.writing}</div></div>
+          </div>
+          <div style="margin-top:.8rem"><div class="vocab-pills">${renderVocabPills(vocabDisplay)}</div></div>
+          <div class="can-do">${l.cando}</div>
+          <div style="margin-top:1.2rem;text-align:center;"><a href="../../lesson.html?lang=it&lesson=${l.num}" class="tb-btn active">🚀 Pratica la lezione</a></div>
+        </div>
+      </div>`;
+    }).join('');
+    return `<div class="unit-block ${u.id}" id="${u.id}">
+      <div class="unit-header"><div class="uh-num" style="color:${u.color}">0${u.num}</div><div class="uh-body"><h2>Unità ${u.num}: ${u.label}</h2><div class="uh-arc">${u.arc}</div></div></div>
+      ${lessonsHtml}</div>`;
+  }).join('');
+  area.innerHTML = unitsHtml;
+}
+document.addEventListener('DOMContentLoaded',()=>{
+  document.getElementById('score-num').textContent=score;
+  buildSidebar(); buildContent(); updateProgress();
+});
+</script>
+<script src="../../../js/data/languages.js"></script>
+<script src="../../../js/core/engine.js"></script>
+<script src="../../../js/core/i18n.js"></script>
+<script src="../../../js/core/ui.js"></script>
+</body>
+</html>

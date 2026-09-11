@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🟢 Marathon de Prononciation — Niveau A0-A1 Fondations · COSY</title>
+<meta name="description" content="Marathon de prononciation française A0-A1 : les fondations absolues de la lecture du français moderne expliquées sans jargon pour débutants.">
+<link rel="stylesheet" href="../../../css/tokens.css">
+<link rel="stylesheet" href="../../../css/base.css">
+<link rel="stylesheet" href="../../../css/components.css">
+<link rel="stylesheet" href="../../../css/layout.css">
+<link rel="stylesheet" href="../../../css/lang-pages.css">
+<link rel="stylesheet" href="../../../css/lang-accents.css">
+<link rel="stylesheet" href="../../../css/mobile.css">
+<style>
+  :root {
+    --mp-primary: #1e5631;
+    --mp-primary-light: #e8f5e9;
+    --mp-accent: #2e7d32;
+    --mp-gold: #d4af37;
+    --mp-border: #c8e6c9;
+  }
+
+  body {
+    font-family: 'Nunito', system-ui, -apple-system, sans-serif;
+    color: #2c3e50;
+    background-color: #fcfdfc;
+    line-height: 1.65;
+  }
+
+  .mp-hero {
+    background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 50%, #40916c 100%);
+    color: #ffffff;
+    padding: 3rem 1.5rem 2rem;
+    border-bottom: 4px solid #74c69d;
+    text-align: center;
+  }
+
+  .mp-hero h1 {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+  }
+
+  .mp-hero p.subtitle {
+    font-size: 1.14rem;
+    color: #d8f3dc;
+    max-width: 800px;
+    margin: 0 auto 1.25rem;
+  }
+
+  .mp-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+  }
+
+  .mp-badge {
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    padding: 0.3rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .sd-sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+
+  .sd-jump-links {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    padding: 0.75rem 1.5rem;
+    white-space: nowrap;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .sd-jump-link {
+    color: #2d6a4f;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.88rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: 6px;
+    background: #f0fdf4;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .sd-jump-link:hover, .sd-jump-link.active {
+    background: #2d6a4f;
+    color: #ffffff;
+  }
+
+  .mp-container {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+  }
+
+  .mp-section {
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+  }
+
+  .mp-section h2 {
+    color: #1b4332;
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.7rem;
+    margin-top: 0;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #d8f3dc;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .mp-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.25rem 0;
+    font-size: 0.95rem;
+  }
+
+  .mp-table th, .mp-table td {
+    padding: 0.85rem 1rem;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .mp-table th {
+    background-color: #f0fdf4;
+    color: #1b4332;
+    font-weight: 700;
+  }
+
+  .mp-table tr:nth-child(even) {
+    background-color: #f9fbf9;
+  }
+
+  .mnemonic-box {
+    background: #fff8e1;
+    border-left: 4px solid #f57f17;
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin: 1rem 0;
+  }
+
+  .mnemonic-box h4 {
+    margin: 0 0 0.4rem 0;
+    color: #795548;
+    font-size: 1.05rem;
+  }
+
+  .beginner-notice {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .lesson-sample {
+    background: #ffffff;
+    border: 2px solid #74c69d;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+  }
+
+  .lesson-sample-header {
+    background: #2d6a4f;
+    color: #ffffff;
+    padding: 1rem 1.5rem;
+  }
+
+  .lesson-sample-header h3 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 1.25rem;
+  }
+
+  .lesson-sample-body {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .level-nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f0fdf4;
+    border: 1px solid #b7e4c7;
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .level-nav-bar a {
+    color: #1b4332;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .alphabet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 0.6rem;
+    margin: 1rem 0;
+  }
+  .alphabet-card {
+    background: #f0fdf4;
+    border: 1px solid #c8e6c9;
+    border-radius: 8px;
+    padding: 0.6rem;
+    text-align: center;
+  }
+  .alphabet-card .letter { font-size: 1.4rem; font-weight: 800; color: #1b4332; }
+  .alphabet-card .ipa { font-size: 0.85rem; color: #2e7d32; font-weight: 600; }
+  .alphabet-card .example { font-size: 0.8rem; color: #555; margin-top: 0.2rem; }
+</style>
+</head>
+<body data-lang-theme="fr">
+
+<nav id="cosy-nav"></nav>
+
+<!-- Navigation sticky -->
+<header class="sd-sticky-header">
+  <nav class="sd-jump-links" aria-label="Navigation Marathon">
+    <a href="../index.html" class="sd-jump-link">← Hub Marathon</a>
+    <a href="a0-a1.html" class="sd-jump-link active">🟢 A0-A1 Fondations</a>
+    <a href="a2.html" class="sd-jump-link">🟡 A2 Structures</a>
+    <a href="b1.html" class="sd-jump-link">🟠 B1 Liaisons</a>
+    <a href="b2.html" class="sd-jump-link">🔴 B2 Registres</a>
+    <a href="c1.html" class="sd-jump-link">🟣 C1 Poésie</a>
+    <a href="c2.html" class="sd-jump-link">⚫ C2 Expertise</a>
+  </nav>
+</header>
+
+<header class="mp-hero">
+  <div class="mp-badges">
+    <span class="mp-badge">🟢 CECRL A0-A1</span>
+    <span class="mp-badge">Débutant absolu</span>
+    <span class="mp-badge">Recettes physiques de sons</span>
+    <span class="mp-badge">8 Unités Complètes</span>
+  </div>
+  <h1>🟢 NIVEAU A0-A1 — Lecture et Prononciation du Français Moderne</h1>
+  <p class="subtitle">Toutes les règles indispensables pour déchiffrer et prononcer le français sans aucune hésitation.</p>
+</header>
+
+<main class="mp-container">
+
+  <div class="beginner-notice">
+    <h4>💡 Vous débutez en français ? (Welcome Beginners!)</h4>
+    <p style="margin: 0; font-size: 0.95rem; color: #1e3a8a;">
+      Ce niveau est votre guide complet étape par étape. Chaque leçon contient une <strong>recette de son physique</strong> (comment placer votre bouche et votre langue) et notre structure fixe à 14 champs avec visuel dédié.
+    </p>
+  </div>
+
+  <!-- MNEMOTECHNIQUES A0-A1 -->
+  <div class="mnemonic-box">
+    <h4>💡 Les règles d'or du niveau A0-A1</h4>
+    <ul style="margin: 0.5rem 0 0 1.2rem; padding: 0;">
+      <li><strong>1. Consonnes finales muettes :</strong> Mnémonique « <strong>S</strong>ale <strong>T</strong>able <strong>D</strong>e <strong>P</strong>etit <strong>X</strong>ylo <strong>Z</strong>éro » (-s, -t, -d, -p, -x, -z sont muettes : <em>petit, chat, grands</em>).</li>
+      <li><strong>2. Consonnes finales prononcées :</strong> Mnémonique « <strong>CaReFuL</strong> » / « <strong>C</strong>ar <strong>F</strong>abien <strong>L</strong>e <strong>N</strong>ormand » (-c, -r, -f, -l, -n parlent : <em>bac, mer, chef, bal, bon</em>).</li>
+      <li><strong>3. Le son U français [y] :</strong> Dites « i » avec un grand sourire, puis arrondissez fortement les lèvres sans bouger la langue ! Vous obtenez le <em>u</em> de <em>tu</em>.</li>
+      <li><strong>4. C et G :</strong> Devant A, O, U = son dur [k] / [g] (<em>café, gare</em>). Devant E, I, Y = son doux [s] / [ʒ] (<em>ceci, girafe</em>).</li>
+      <li><strong>5. Nasales simples :</strong> Une voyelle suivie de N ou M en fin de syllabe passe par le nez (<em>an, on, in</em>). Si N/M est suivi d'une voyelle, la nasalisation s'annule (<em>ami</em> n'est pas nasal) !</li>
+    </ul>
+  </div>
+
+  <!-- UNITE 3 DECISION TREE C / G -->
+  <section class="mp-section">
+    <h2>Unité 3 — Arbre de Décision Visuel pour C et G</h2>
+    <div class="mp-tree-card">
+      <div class="visual-frame" data-visual='{"type":"tree","title":"Règle d'or de lecture pour les lettres C et G","root":"La lettre est-elle suivie de E, I ou Y ?","left":{"label":"OUI (Devant E, I, Y)","result":"Son Doux !","sub":"C = [s] (ceci) / G = [ʒ] (girafe)"},"right":{"label":"NON (Devant A, O, U)","result":"Son Dur !","sub":"C = [k] (café) / G = [g] (gare)"}}'></div>
+    </div>
+  </section>
+
+  <!-- UNITE 1 -->
+  <section class="mp-section">
+    <h2>Unité 1 — L'Alphabet et les sons purs</h2>
+    <div class="alphabet-grid">
+      <div class="alphabet-card"><div class="letter">A</div><div class="ipa">[a]</div><div class="example">ami</div></div>
+      <div class="alphabet-card"><div class="letter">B</div><div class="ipa">[be]</div><div class="example">bon</div></div>
+      <div class="alphabet-card"><div class="letter">C</div><div class="ipa">[se]</div><div class="example">chat</div></div>
+      <div class="alphabet-card"><div class="letter">D</div><div class="ipa">[de]</div><div class="example">dans</div></div>
+      <div class="alphabet-card"><div class="letter">E</div><div class="ipa">[ə]</div><div class="example">eau</div></div>
+      <div class="alphabet-card"><div class="letter">F</div><div class="ipa">[ɛf]</div><div class="example">fille</div></div>
+      <div class="alphabet-card"><div class="letter">G</div><div class="ipa">[ʒe]</div><div class="example">garçon</div></div>
+      <div class="alphabet-card"><div class="letter">H</div><div class="ipa">[aʃ]</div><div class="example">héros</div></div>
+      <div class="alphabet-card"><div class="letter">I</div><div class="ipa">[i]</div><div class="example">ici</div></div>
+      <div class="alphabet-card"><div class="letter">J</div><div class="ipa">[ʒi]</div><div class="example">jour</div></div>
+      <div class="alphabet-card"><div class="letter">K</div><div class="ipa">[ka]</div><div class="example">kilo</div></div>
+      <div class="alphabet-card"><div class="letter">L</div><div class="ipa">[ɛl]</div><div class="example">livre</div></div>
+      <div class="alphabet-card"><div class="letter">M</div><div class="ipa">[ɛm]</div><div class="example">main</div></div>
+      <div class="alphabet-card"><div class="letter">N</div><div class="ipa">[ɛn]</div><div class="example">nuit</div></div>
+      <div class="alphabet-card"><div class="letter">O</div><div class="ipa">[o]</div><div class="example">où</div></div>
+      <div class="alphabet-card"><div class="letter">P</div><div class="ipa">[pe]</div><div class="example">pain</div></div>
+      <div class="alphabet-card"><div class="letter">Q</div><div class="ipa">[ky]</div><div class="example">qui</div></div>
+      <div class="alphabet-card"><div class="letter">R</div><div class="ipa">[ɛʁ]</div><div class="example">rue</div></div>
+      <div class="alphabet-card"><div class="letter">S</div><div class="ipa">[ɛs]</div><div class="example">sac</div></div>
+      <div class="alphabet-card"><div class="letter">T</div><div class="ipa">[te]</div><div class="example">table</div></div>
+      <div class="alphabet-card"><div class="letter">U</div><div class="ipa">[y]</div><div class="example">uni</div></div>
+      <div class="alphabet-card"><div class="letter">V</div><div class="ipa">[ve]</div><div class="example">vélo</div></div>
+      <div class="alphabet-card"><div class="letter">W</div><div class="ipa">[dubləve]</div><div class="example">wagon</div></div>
+      <div class="alphabet-card"><div class="letter">X</div><div class="ipa">[iks]</div><div class="example">xylo</div></div>
+      <div class="alphabet-card"><div class="letter">Y</div><div class="ipa">[igrɛk]</div><div class="example">yeux</div></div>
+      <div class="alphabet-card"><div class="letter">Z</div><div class="ipa">[zɛd]</div><div class="example">zéro</div></div>
+    </div>
+  </section>
+
+  <!-- UNITE 5 LES NASALES -->
+  <section class="mp-section">
+    <h2>Unité 5 — Les Nasales de Base (AN / AM / EN / EM)</h2>
+    <div class="lesson-sample">
+      <div class="lesson-sample-header">
+        <h3>Gabarit 14 Champs — Leçon 5.1 : Les Nasales AN / AM / EN / EM</h3>
+      </div>
+      <div class="lesson-sample-body">
+        <div class="visual-frame" data-visual='{"type":"grapheme","main":"AN / EN","ipa":"[ɑ̃]","words":["enfant","temps","grand"]}'></div>
+        <div class="mp-12field-grid">
+          <div class="mp-field-box full-width"><span class="mp-field-tag">Définition</span><div class="mp-field-content">Une voyelle nasale est un son où l'air passe simultanément par la bouche et le nez.</div></div>
+          <div class="mp-field-box full-width"><span class="mp-field-tag">Règle</span><div class="mp-field-content">a ou e, suivi de n ou m en fin de syllabe (non suivi d'une voyelle), se lit [ɑ̃].</div></div>
+          <div class="mp-field-box"><span class="mp-field-tag">Pourquoi ?</span><div class="mp-field-content">Le n/m ne se prononce plus lui-même depuis des siècles : il a transféré sa nasalité à la voyelle précédente.</div></div>
+          <div class="mp-field-box"><span class="mp-field-tag">Comment reconnaître ?</span><div class="mp-field-content">Repérer an/am/en/em quand ils sont suivis d'une consonne ou en fin de mot.</div></div>
+          <div class="mp-field-box"><span class="mp-field-tag">Exemples courants</span><div class="mp-field-content">enfant, temps, grand, champ, entrer, novembre, chambre, ensemble</div></div>
+          <div class="mp-field-box"><span class="mp-field-tag">Contre-exemples</span><div class="mp-field-content">ami (n/m suivi d'une voyelle ➔ non nasal), année</div></div>
+          <div class="mp-field-box"><span class="mp-field-tag">Exceptions</span><div class="mp-field-content">femme se lit [fam], pas [fɑ̃m] — cas isolé à mémoriser.</div></div>
+          <div class="mp-field-box"><span class="mp-field-tag">Erreurs fréquentes</span><div class="mp-field-content">Prononcer le n/m comme en anglais avec un vrai [n] consonne final.</div></div>
+          <div class="mp-field-box"><span class="mp-field-tag">Astuce mémorisation</span><div class="mp-field-content">« Le n et le m ferment la bouche mais ouvrent le nez ».</div></div>
+          <div class="mp-field-box"><span class="mp-field-tag">Vocabulaire clé</span><div class="mp-field-content">enfant, temps, grand, champ, chambre, novembre, ensemble, dimanche</div></div>
+          <div class="mp-field-box"><span class="mp-field-tag">Fréquence</span><div class="mp-field-content">★★★★★ (Indispensable)</div></div>
+          <div class="mp-field-box"><span class="mp-field-tag">Niveau CECRL</span><div class="mp-field-content">🟢 A0-A1</div></div>
+          <div class="mp-field-box full-width"><span class="mp-field-tag">Visuel associé (Famille)</span><div class="mp-field-content">🗣️ 1. Schéma articulatoire : coupe de la bouche montrant le voile du palais abaissé, l'air se divisant entre bouche et nez.</div></div>
+          <div class="mp-field-box full-width"><span class="mp-field-tag">À retenir</span><div class="mp-field-content">Une voyelle + n/m sans voyelle après = son nasal [ɑ̃], jamais un vrai N ou M prononcé.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UNITE 8 LOGIQUE DES MOTS -->
+  <section class="mp-section">
+    <h2>Unité 8 — Logique des Mots (A1)</h2>
+    <div class="mp-12field-grid">
+      <div class="mp-field-box full-width">
+        <span class="mp-field-tag">8.1 Mots « internationaux » transparents</span>
+        <div class="mp-field-content">
+          Sans traduire, observez la ressemblance de forme : <em>hôtel, taxi, restaurant, téléphone, musique, théâtre, bus, café, train</em>.
+        </div>
+      </div>
+      <div class="mp-field-box full-width">
+        <span class="mp-field-tag">8.2 Suffixes universels (-tion, -ique, -al)</span>
+        <div class="mp-field-content">
+          • <strong>-tion</strong> [sjɔ̃] : <em>nation, station, attention, information</em>.<br>
+          • <strong>-ique</strong> [ik] : <em>musique, fantastique, automatique</em>.<br>
+          • <strong>-al</strong> [al] : <em>national, général, spécial</em>.
+        </div>
+      </div>
+      <div class="mp-field-box full-width">
+        <span class="mp-field-tag">8.3 Verbes fondamentaux à l'infinitif (-er, -ir, -re)</span>
+        <div class="mp-field-content">
+          <em>parler</em> [paʁle], <em>manger</em> [mɑ̃ʒe], <em>aller</em> [ale], <em>être</em> [ɛtʁ], <em>avoir</em> [avwaʁ].
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="level-nav-bar">
+    <a href="../index.html">← Hub Général Marathon</a>
+    <a href="a2.html">Niveau A2 Structures →</a>
+  </div>
+
+</main>
+
+<footer class="site-footer" style="background: #1b4332; color: #d8f3dc; padding: 2rem 1.5rem; text-align: center; margin-top: 3rem;">
+  <p>© 2026 COSYlanguages · Marathon de Prononciation Française A0-A1</p>
+</footer>
+
+<script src="../../../js/data/languages.js"></script>
+<script src="../../../js/core/engine.js"></script>
+<script src="../../../js/core/i18n.js"></script>
+<script src="../../../js/core/ui.js"></script>
+<script src="../js/fr-marathon-engine.js"></script>
+</body>
+</html>

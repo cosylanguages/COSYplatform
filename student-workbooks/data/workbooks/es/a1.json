@@ -1,0 +1,42 @@
+{
+  "language": "es",
+  "level": "a1",
+  "topics": [
+    {
+      "id": "es-a1-intro",
+      "lang": "es",
+      "flag": "🇪🇸",
+      "level": "a1",
+      "title": "Saludos y Pronombres",
+      "desc": "Greetings & personal pronouns",
+      "img": "images/cosyspanish.png",
+      "grammarBlocks": [
+        {
+          "title": "Basic greetings",
+          "html": "\n        <table class=\"wb-table\">\n          <tr class=\"wt-sec\"><td colspan=\"2\">🇪🇸 Saludos</td></tr>\n          <tr><td class=\"wt-label\">Hola / Buenos días</td><td class=\"wt-l\"><span class=\"key-v\">¡Hola!</span> · <span class=\"key-v\">Buenos días</span></td></tr>\n          <tr><td class=\"wt-label\">Me llamo…</td><td class=\"wt-l\"><span class=\"key-v\">Me llamo</span> Carlos.</td></tr>\n          <tr class=\"wt-sec\"><td colspan=\"2\">👤 Pronombres</td></tr>\n          <tr><td class=\"wt-label\">I / You</td><td class=\"wt-l\"><span class=\"key-v\">Yo</span> / <span class=\"key-v\">Tú</span></td></tr>\n          <tr><td class=\"wt-label\">He / She</td><td class=\"wt-l\"><span class=\"key-v\">Él</span> / <span class=\"key-v\">Ella</span></td></tr>\n        </table>"
+        }
+      ],
+      "exercises": [
+        {
+          "id": "es-a1-0-1",
+          "q": "How do you say \"Hello\" in Spanish?",
+          "type": "fill",
+          "ans": "Hola",
+          "fb": "✅ ¡Hola!"
+        },
+        {
+          "id": "es-a1-0-2",
+          "q": "How do you say \"I\" in Spanish?",
+          "type": "mcq",
+          "opts": [
+            "Yo",
+            "Tú",
+            "Él"
+          ],
+          "ans": "Yo",
+          "fb": "✅ Yo = I"
+        }
+      ]
+    }
+  ]
+}

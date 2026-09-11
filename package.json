@@ -1,0 +1,12 @@
+{
+  "name": "cosyplatform-content",
+  "version": "1.0.0",
+  "description": "COSYplatform Content Repository",
+  "private": true,
+  "scripts": {
+    "validate": "node scripts/validate-curriculums.js"
+  },
+  "devDependencies": {
+    "ajv": "^8.17.1"
+  }
+}

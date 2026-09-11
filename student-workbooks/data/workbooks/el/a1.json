@@ -1,0 +1,42 @@
+{
+  "language": "el",
+  "level": "a1",
+  "topics": [
+    {
+      "id": "el-a1-alpha",
+      "lang": "el",
+      "flag": "🇬🇷",
+      "level": "a1",
+      "title": "Αλφάβητο και Χαιρετισμοί",
+      "desc": "The Greek Alphabet & Greetings",
+      "img": "images/cosygreek.png",
+      "grammarBlocks": [
+        {
+          "title": "Tricky Letters",
+          "html": "\n        <table class=\"wb-table\">\n          <tr class=\"wt-sec\"><td colspan=\"3\">🇬🇷 Alphabet Essentials</td></tr>\n          <tr><td class=\"wt-label\">Β β</td><td class=\"wt-c\">/v/</td><td class=\"wt-l\">Like <span class=\"key-v\">V</span>ase (NOT B)</td></tr>\n          <tr><td class=\"wt-label\">Δ δ</td><td class=\"wt-c\">/ð/</td><td class=\"wt-l\">Like <span class=\"key-v\">th</span>e (soft TH)</td></tr>\n          <tr><td class=\"wt-label\">Γ γ</td><td class=\"wt-c\">/ɣ/</td><td class=\"wt-l\">Soft \"g\" / \"y\" sound</td></tr>\n          <tr class=\"wt-sec\"><td colspan=\"3\">👋 Greetings</td></tr>\n          <tr><td class=\"wt-label\">Γεια / Χαίρετε</td><td class=\"wt-l\"><span class=\"key-v\">Ya</span> (Hi) / <span class=\"key-v\">Herete</span> (Hello)</td></tr>\n          <tr><td class=\"wt-label\">Με λένε…</td><td class=\"wt-l\"><span class=\"key-v\">Me lene</span>...</td></tr>\n        </table>"
+        }
+      ],
+      "exercises": [
+        {
+          "id": "el-a1-0-1",
+          "q": "Β in Greek sounds like...",
+          "type": "mcq",
+          "opts": [
+            "B",
+            "V",
+            "W"
+          ],
+          "ans": "V",
+          "fb": "✅ Β = /v/"
+        },
+        {
+          "id": "el-a1-0-2",
+          "q": "How do you say \"Hi\" in Greek?",
+          "type": "fill",
+          "ans": "Γεια",
+          "fb": "✅ Γεια!"
+        }
+      ]
+    }
+  ]
+}

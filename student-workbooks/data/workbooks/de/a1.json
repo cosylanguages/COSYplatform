@@ -1,0 +1,42 @@
+{
+  "language": "de",
+  "level": "a1",
+  "topics": [
+    {
+      "id": "de-a1-intro",
+      "lang": "de",
+      "flag": "🇩🇪",
+      "level": "a1",
+      "title": "Begrüßungen",
+      "desc": "Greetings & introductions",
+      "img": "images/cosygerman.png",
+      "grammarBlocks": [
+        {
+          "title": "Basic greetings",
+          "html": "\n        <table class=\"wb-table\">\n          <tr class=\"wt-sec\"><td colspan=\"2\">📌 Greetings</td></tr>\n          <tr><td class=\"wt-label\">Hello / Good day</td><td class=\"wt-l\"><span class=\"key-v\">Hallo!</span> / <span class=\"key-v\">Guten Tag</span></td></tr>\n          <tr><td class=\"wt-label\">My name is…</td><td class=\"wt-l\"><span class=\"key-v\">Ich heiße</span> Hans. / <span class=\"key-v\">Mein Name ist</span>...</td></tr>\n          <tr><td class=\"wt-label\">Nice to meet you</td><td class=\"wt-l\"><span class=\"key-v\">Freut mich!</span></td></tr>\n          <tr class=\"wt-sec\"><td colspan=\"2\">🔢 Numbers 1-5</td></tr>\n          <tr><td class=\"wt-label\">1, 2, 3</td><td class=\"wt-l\">eins, zwei, drei</td></tr>\n          <tr><td class=\"wt-label\">4, 5</td><td class=\"wt-l\">vier, fünf</td></tr>\n        </table>"
+        }
+      ],
+      "exercises": [
+        {
+          "id": "de-a1-0-1",
+          "q": "How do you say \"My name is\" in German?",
+          "type": "fill",
+          "ans": "Ich heiße",
+          "fb": "✅ Ich heiße Hans."
+        },
+        {
+          "id": "de-a1-0-2",
+          "q": "What is \"two\" in German?",
+          "type": "mcq",
+          "opts": [
+            "eins",
+            "zwei",
+            "drei"
+          ],
+          "ans": "zwei",
+          "fb": "✅ zwei = 2"
+        }
+      ]
+    }
+  ]
+}

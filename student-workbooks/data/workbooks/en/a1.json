@@ -1,0 +1,79 @@
+{
+  "language": "en",
+  "level": "a1",
+  "topics": [
+    {
+      "id": "en-a1-intro",
+      "lang": "en",
+      "flag": "🇬🇧",
+      "level": "a1",
+      "title": "Introducing Yourself",
+      "desc": "Basic greetings & introductions",
+      "img": "images/cosyenglish.png",
+      "grammarBlocks": [
+        {
+          "title": "Basic greetings & introductions",
+          "html": "\n        <table class=\"wb-table\">\n          <tr class=\"wt-sec\"><td colspan=\"2\">📌 Greetings</td></tr>\n          <tr><td class=\"wt-label\">Hello / Hi</td><td class=\"wt-l\"><span class=\"key-v\">Hello!</span> / <span class=\"key-v\">Hi!</span></td></tr>\n          <tr><td class=\"wt-label\">My name is…</td><td class=\"wt-l\"><span class=\"key-v\">My name is</span> Maria. / <span class=\"key-v\">I'm</span> Maria.</td></tr>\n          <tr><td class=\"wt-label\">Nice to meet you</td><td class=\"wt-l\"><span class=\"key-v\">Nice to meet you!</span></td></tr>\n          <tr><td class=\"wt-label\">How are you?</td><td class=\"wt-l\"><span class=\"key-v\">How are you?</span> → I'm <span class=\"key-v\">fine</span>, thank you.</td></tr>\n        </table>"
+        }
+      ],
+      "exercises": [
+        {
+          "id": "en-a1-0-1",
+          "q": "\"Nice to ___!\" (greeting)",
+          "type": "fill",
+          "ans": "meet you",
+          "fb": "✅ Nice to meet you!"
+        },
+        {
+          "id": "en-a1-0-2",
+          "q": "How do you say \"My name is\" in a shorter way?",
+          "type": "fill",
+          "ans": "I'm",
+          "fb": "✅ I'm Maria."
+        }
+      ]
+    },
+    {
+      "id": "en-a1-tobe-core",
+      "lang": "en",
+      "flag": "🇬🇧",
+      "level": "a1",
+      "title": "Verb TO BE : Core",
+      "desc": "I am / You are / He is",
+      "verbKey": "to be",
+      "img": "images/cosyenglish.png",
+      "grammarBlocks": [
+        {
+          "title": "Core Forms (Singular)",
+          "html": "\n        <table class=\"wb-table\">\n          <tr><td class=\"wt-label\">I</td><td class=\"wt-c\"><span class=\"key-v\">am</span> / 'm</td></tr>\n          <tr><td class=\"wt-label\">you</td><td class=\"wt-c\"><span class=\"key-v\">are</span> / 're</td></tr>\n          <tr><td class=\"wt-label\">he / she / it</td><td class=\"wt-c\"><span class=\"key-v\">is</span> / 's</td></tr>\n        </table>"
+        }
+      ],
+      "exercises": [
+        {
+          "id": "en-a1-0-3",
+          "q": "I ___ a student.",
+          "type": "mcq",
+          "opts": [
+            "am",
+            "is",
+            "are"
+          ],
+          "ans": "am",
+          "fb": "✅ I am"
+        },
+        {
+          "id": "en-a1-0-4",
+          "q": "She ___ French.",
+          "type": "mcq",
+          "opts": [
+            "am",
+            "is",
+            "are"
+          ],
+          "ans": "is",
+          "fb": "✅ She is"
+        }
+      ]
+    }
+  ]
+}

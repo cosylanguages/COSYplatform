@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A1 Curriculum Roadmap — COSYlanguages</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&family=Lora:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0F1923;
+  --surface:#16202B;
+  --surface2:#1D2D3E;
+  --border:#2A3F55;
+  --accent:#F5C842;
+  --accent2:#4ECDC4;
+  --accent3:#FF6B6B;
+  --muted:#7A9BB5;
+  --white:#F0F6FF;
+
+  /* Unit colours */
+  --u1:#3B82F6;  --u1-lt:#1E3A5F;
+  --u2:#8B5CF6;  --u2-lt:#3B1F6B;
+  --u3:#10B981;  --u3-lt:#0A4A35;
+  --u4:#F59E0B;  --u4-lt:#5A3A00;
+  --u5:#EC4899;  --u5-lt:#5A0F35;
+
+  /* skill colours */
+  --sp:#F5C842;
+  --li:#4ECDC4;
+  --rd:#74B9FF;
+  --wr:#A29BFE;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--white);
+  min-height:100vh;overflow-x:hidden;}
+
+/* ── TOPBAR ── */
+.topbar{background:rgba(15,25,35,.95);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  padding:.65rem 1.8rem;display:flex;align-items:center;
+  justify-content:space-between;gap:.8rem;flex-wrap:wrap;
+  position:sticky;top:0;z-index:300;}
+.tb-brand{font-family:'Lora',serif;font-size:1rem;font-weight:700;
+  color:var(--accent);letter-spacing:.02em;text-decoration:none;}
+.tb-sub{font-size:.7rem;color:var(--muted);margin-top:.1rem;}
+.tb-nav{display:flex;gap:.4rem;flex-wrap:wrap;}
+.tb-btn{background:rgba(255,255,255,.07);border:1px solid var(--border);
+  color:var(--muted);border-radius:6px;padding:.28rem .75rem;
+  font-family:'Nunito',sans-serif;font-size:.72rem;font-weight:800;
+  cursor:pointer;transition:all .15s;text-decoration:none;}
+.tb-btn:hover,.tb-btn.active{background:var(--accent);color:var(--bg);border-color:var(--accent);}
+
+/* ── HERO ── */
+.hero{padding:3.5rem 2rem 2rem;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(245,200,66,.08) 0%,transparent 70%);
+  pointer-events:none;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:.5rem;
+  background:rgba(245,200,66,.12);border:1px solid rgba(245,200,66,.3);
+  border-radius:999px;padding:.28rem 1rem;
+  font-size:.7rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:1.1rem;}
+.hero h1{font-family:'Lora',serif;font-size:clamp(2rem,5vw,3.2rem);
+  font-weight:700;line-height:1.15;margin-bottom:.75rem;
+  background:linear-gradient(135deg,var(--white) 30%,var(--accent));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.hero-sub{color:var(--muted);font-size:.95rem;max-width:560px;
+  margin:0 auto 1.8rem;line-height:1.7;}
+
+/* Stats row */
+.hero-stats{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin-bottom:2rem;}
+.hs-item{text-align:center;}
+.hs-num{font-family:'Lora',serif;font-size:2rem;font-weight:700;
+  color:var(--accent);display:block;line-height:1;}
+.hs-label{font-size:.68rem;font-weight:800;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.07em;margin-top:.2rem;}
+
+/* Narrative arc */
+.arc-strip{display:flex;align-items:center;justify-content:center;
+  gap:0;margin:0 auto 2.5rem;max-width:700px;flex-wrap:wrap;}
+.arc-node{background:var(--surface2);border:1.5px solid var(--border);
+  border-radius:8px;padding:.4rem .9rem;font-size:.75rem;font-weight:800;
+  color:var(--white);white-space:nowrap;}
+.arc-arrow{color:var(--muted);font-size:.9rem;margin:0 .3rem;}
+
+/* ── LAYOUT ── */
+.layout{display:grid;grid-template-columns:260px 1fr;
+  min-height:calc(100vh - 60px);gap:0;}
+
+/* ── SIDEBAR ── */
+.sidebar{background:var(--surface);border-right:1px solid var(--border);
+  padding:1.5rem 0 3rem;position:sticky;top:56px;
+  height:calc(100vh - 56px);overflow-y:auto;scrollbar-width:thin;
+  scrollbar-color:var(--border) transparent;}
+
+.sb-head{padding:.2rem 1.2rem .6rem;
+  font-size:.6rem;font-weight:900;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted);}
+
+.sb-unit{margin-bottom:.2rem;}
+.sb-unit-header{display:flex;align-items:center;gap:.6rem;
+  padding:.55rem 1.2rem;font-size:.78rem;font-weight:900;
+  color:var(--white);cursor:pointer;border-left:3px solid transparent;
+  transition:all .15s;}
+.sb-unit-header:hover{background:rgba(255,255,255,.04);}
+.sb-unit-header.active{border-left-color:var(--accent);}
+.sb-unit-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+
+.sb-lesson{display:flex;align-items:center;gap:.5rem;
+  padding:.35rem 1.2rem .35rem 2.2rem;
+  font-size:.73rem;font-weight:700;color:var(--muted);
+  cursor:pointer;border-left:3px solid transparent;
+  transition:all .15s;text-decoration:none;}
+.sb-lesson:hover{color:var(--white);background:rgba(255,255,255,.03);}
+.sb-lesson.active{color:var(--accent);border-left-color:var(--accent);}
+.sb-lesson-code{font-family:'Lora',serif;font-size:.65rem;
+  color:var(--muted);min-width:38px;flex-shrink:0;}
+.sb-progress-mini{flex:1;height:3px;background:rgba(255,255,255,.08);
+  border-radius:999px;overflow:hidden;margin-left:.3rem;}
+.sb-progress-fill{height:100%;background:var(--accent);border-radius:999px;transition:width .4s;}
+
+/* ── MAIN ── */
+.main{padding:2rem 2.2rem 5rem;overflow-x:hidden;}
+
+/* ── UNIT BLOCK ── */
+.unit-block{margin-bottom:3.5rem;}
+.unit-header{display:flex;align-items:flex-start;gap:1.2rem;
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:14px;padding:1.4rem 1.6rem;margin-bottom:1.5rem;
+  position:relative;overflow:hidden;}
+.unit-header::before{content:'';position:absolute;left:0;top:0;bottom:0;
+  width:4px;border-radius:14px 0 0 14px;}
+.u1 .unit-header::before{background:var(--u1);}
+.u2 .unit-header::before{background:var(--u2);}
+.u3 .unit-header::before{background:var(--u3);}
+.u4 .unit-header::before{background:var(--u4);}
+.u5 .unit-header::before{background:var(--u5);}
+
+.uh-num{font-family:'Lora',serif;font-size:2.2rem;font-weight:700;
+  line-height:1;opacity:.25;flex-shrink:0;margin-top:.1rem;}
+.uh-body h2{font-family:'Lora',serif;font-size:1.2rem;font-weight:700;
+  margin-bottom:.25rem;}
+.uh-arc{font-size:.78rem;color:var(--muted);font-style:italic;
+  margin-bottom:.6rem;line-height:1.5;}
+.uh-tags{display:flex;gap:.4rem;flex-wrap:wrap;}
+.uh-tag{font-size:.65rem;font-weight:900;padding:.18rem .55rem;
+  border-radius:999px;background:rgba(255,255,255,.08);
+  color:var(--muted);border:1px solid var(--border);}
+
+/* ── LESSON CARD ── */
+.lesson-card{background:var(--surface);border:1px solid var(--border);
+  border-radius:12px;margin-bottom:.75rem;overflow:hidden;
+  transition:border-color .2s,transform .15s;}
+.lesson-card:hover{border-color:rgba(255,255,255,.15);transform:translateY(-1px);}
+.lesson-card.done{opacity:.55;}
+.lesson-card.done .lc-title{text-decoration:line-through;}
+
+.lc-header{display:flex;align-items:center;gap:.9rem;
+  padding:.85rem 1.1rem;cursor:pointer;}
+.lc-code{font-family:'Lora',serif;font-size:.72rem;color:var(--muted);
+  min-width:46px;flex-shrink:0;}
+.lc-num{width:28px;height:28px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.72rem;font-weight:900;flex-shrink:0;
+  border:2px solid var(--border);}
+.lc-title{font-size:.9rem;font-weight:800;color:var(--white);flex:1;}
+.lc-done-btn{background:none;border:1.5px solid var(--border);
+  border-radius:6px;color:var(--muted);font-size:.65rem;font-weight:900;
+  padding:.18rem .5rem;cursor:pointer;transition:all .15s;flex-shrink:0;}
+.lc-done-btn:hover{border-color:var(--accent);color:var(--accent);}
+.lesson-card.done .lc-done-btn{background:rgba(245,200,66,.15);
+  border-color:var(--accent);color:var(--accent);}
+.lc-expand{color:var(--muted);font-size:.7rem;transition:transform .25s;flex-shrink:0;}
+.lesson-card.open .lc-expand{transform:rotate(180deg);}
+
+/* Skill pills on card header */
+.lc-skills{display:flex;gap:.3rem;flex-shrink:0;}
+.skill-pill{font-size:.6rem;font-weight:900;padding:.1rem .4rem;
+  border-radius:4px;letter-spacing:.04em;}
+.sp-s{background:rgba(245,200,66,.15);color:var(--sp);}
+.sp-l{background:rgba(78,205,196,.15);color:var(--li);}
+.sp-r{background:rgba(116,185,255,.15);color:var(--rd);}
+.sp-w{background:rgba(162,155,254,.15);color:var(--wr);}
+
+/* ── LESSON BODY (expanded) ── */
+.lc-body{display:none;padding:0 1.1rem 1.1rem;
+  border-top:1px solid var(--border);}
+.lesson-card.open .lc-body{display:block;}
+
+.lb-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:.9rem;}
+.lb-col{background:var(--bg);border-radius:8px;padding:.75rem .9rem;
+  border:1px solid var(--border);}
+.lb-col-title{font-size:.6rem;font-weight:900;letter-spacing:.08em;
+  text-transform:uppercase;margin-bottom:.5rem;display:flex;
+  align-items:center;gap:.35rem;}
+.lb-items{display:flex;flex-direction:column;gap:.3rem;}
+.lb-item{font-size:.78rem;color:var(--muted);line-height:1.5;
+  display:flex;align-items:flex-start;gap:.4rem;}
+.lb-item::before{content:'·';color:var(--accent);flex-shrink:0;margin-top:.05rem;}
+.lb-item strong{color:var(--white);}
+
+/* Vocabulary pills in lesson */
+.vocab-pills{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.4rem;}
+.vp{font-size:.7rem;font-weight:700;padding:.18rem .55rem;
+  border-radius:4px;background:var(--surface2);
+  color:var(--white);border:1px solid var(--border);
+  cursor:pointer;transition:all .15s;text-decoration:none;display:inline-block;}
+.vp:hover{background:var(--border);border-color:var(--accent);transform:translateY(-1px);}
+.vp.verb  {border-color:rgba(245,200,66,.3);color:var(--accent);}
+.vp.adj   {border-color:rgba(78,205,196,.3);color:var(--accent2);}
+.vp.noun  {border-color:rgba(116,185,255,.3);color:#74B9FF;}
+.vp.phrase{border-color:rgba(255,107,107,.3);color:var(--accent3);}
+
+/* Can-do outcome */
+.can-do{background:rgba(245,200,66,.07);border:1px solid rgba(245,200,66,.2);
+  border-radius:8px;padding:.65rem .9rem;margin-top:.8rem;
+  font-size:.8rem;font-weight:700;color:var(--white);
+  display:flex;align-items:flex-start;gap:.5rem;line-height:1.5;}
+.can-do::before{content:'✓';color:var(--accent);font-weight:900;flex-shrink:0;}
+
+/* Speaking task highlight */
+.speaking-task{background:rgba(245,200,66,.05);border-left:3px solid var(--accent);
+  border-radius:0 8px 8px 0;padding:.55rem .85rem;margin-top:.6rem;
+  font-size:.79rem;color:var(--muted);font-style:italic;}
+.speaking-task strong{color:var(--accent);font-style:normal;}
+
+/* Grammar focus */
+.grammar-box{background:rgba(78,205,196,.06);border:1px solid rgba(78,205,196,.2);
+  border-radius:8px;padding:.55rem .85rem;
+  font-size:.78rem;color:var(--muted);
+  display:flex;align-items:flex-start;gap:.5rem;line-height:1.5;}
+.grammar-box::before{content:'📐';flex-shrink:0;}
+
+/* Homework pill */
+.hw-box{background:var(--surface2);border-radius:8px;padding:.5rem .85rem;
+  font-size:.75rem;color:var(--muted);
+  display:flex;align-items:flex-start;gap:.4rem;margin-top:.5rem;}
+.hw-box::before{content:'📝';flex-shrink:0;}
+
+/* ── VOCAB SUMMARY PANEL ── */
+.vocab-panel{background:var(--surface);border:1px solid var(--border);
+  border-radius:14px;padding:1.2rem 1.5rem;margin-bottom:2rem;}
+.vp-title{font-family:'Lora',serif;font-size:1rem;font-weight:700;
+  margin-bottom:.9rem;display:flex;align-items:center;gap:.5rem;}
+.vp-section{margin-bottom:.9rem;}
+.vp-sec-label{font-size:.65rem;font-weight:900;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;}
+.vp-pills{display:flex;flex-wrap:wrap;gap:.35rem;}
+
+/* ── GRAMMAR SUMMARY ── */
+.grammar-panel{background:var(--surface);border:1px solid var(--border);
+  border-radius:14px;padding:1.2rem 1.5rem;margin-bottom:2rem;}
+.gp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.7rem;}
+.gp-item{background:var(--bg);border-radius:8px;padding:.65rem .8rem;
+  border:1px solid var(--border);}
+.gp-name{font-size:.8rem;font-weight:800;color:var(--white);margin-bottom:.2rem;}
+.gp-desc{font-size:.7rem;color:var(--muted);line-height:1.5;}
+.gp-ex{font-size:.7rem;color:var(--accent2);font-style:italic;margin-top:.25rem;}
+
+/* ── PROGRESS BAR ── */
+.progress-strip{background:var(--surface);border:1px solid var(--border);
+  border-radius:14px;padding:1.1rem 1.5rem;margin-bottom:1.5rem;}
+.ps-header{display:flex;justify-content:space-between;align-items:center;
+  margin-bottom:.7rem;}
+.ps-title{font-size:.78rem;font-weight:800;}
+.ps-count{font-size:.75rem;color:var(--muted);}
+.ps-bar{background:rgba(255,255,255,.08);border-radius:999px;height:10px;overflow:hidden;}
+.ps-fill{height:100%;background:linear-gradient(90deg,var(--u1),var(--accent));
+  border-radius:999px;transition:width .5s ease;}
+.ps-units{display:grid;grid-template-columns:repeat(5,1fr);gap:.4rem;margin-top:.7rem;}
+.psu{text-align:center;font-size:.65rem;font-weight:900;}
+.psu-bar{height:4px;border-radius:999px;margin-bottom:.2rem;background:rgba(255,255,255,.1);}
+.psu-fill{height:100%;border-radius:999px;transition:width .4s;}
+.psu-label{color:var(--muted);}
+
+/* ── SCORE ── */
+.score-fixed{position:fixed;bottom:1.2rem;right:1.2rem;z-index:200;
+  background:var(--surface);border:1.5px solid var(--accent);
+  border-radius:10px;padding:.5rem .9rem;
+  font-size:.8rem;font-weight:900;color:var(--accent);
+  box-shadow:0 4px 20px rgba(245,200,66,.15);}
+.score-fixed span{font-size:1.2rem;display:block;text-align:center;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:800px){
+  .layout{grid-template-columns:1fr;}
+  .sidebar{display:none;}
+  .lb-grid{grid-template-columns:1fr;}
+  .main{padding:1.2rem;}
+  .hero{padding:2rem 1rem 1.5rem;}
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.unit-block{animation:fadeIn .4s ease both;}
+.unit-block:nth-child(2){animation-delay:.05s;}
+.unit-block:nth-child(3){animation-delay:.1s;}
+.unit-block:nth-child(4){animation-delay:.15s;}
+.unit-block:nth-child(5){animation-delay:.2s;}
+</style>
+  <link rel="stylesheet" href="../../../css/components.css">
+</head>
+<body>
+
+<!-- TOPBAR -->
+<nav id="cosy-nav"></nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-eyebrow">🇬🇧 A1 — Beginner</div>
+  <h1>My life today. My work.<br>My past. My plans.</h1>
+  <p class="hero-sub">50 lessons · 100–120 hours · Structural–Functional approach — every grammar point unlocks a real communicative act. Speaking first, always.</p>
+  <div class="hero-stats">
+    <div class="hs-item"><span class="hs-num">50</span><span class="hs-label">Lessons</span></div>
+    <div class="hs-item"><span class="hs-num">5</span><span class="hs-label">Units</span></div>
+    <div class="hs-item"><span class="hs-num">203</span><span class="hs-label">New words</span></div>
+    <div class="hs-item"><span class="hs-num">16</span><span class="hs-label">Grammar points</span></div>
+    <div class="hs-item"><span class="hs-num">120h</span><span class="hs-label">Max hours</span></div>
+  </div>
+  <div class="arc-strip">
+    <div class="arc-node" style="border-color:#3B82F6;color:#93C5FD">My life today</div>
+    <span class="arc-arrow">→</span>
+    <div class="arc-node" style="border-color:#8B5CF6;color:#C4B5FD">My past</div>
+    <span class="arc-arrow">→</span>
+    <div class="arc-node" style="border-color:#10B981;color:#6EE7B7">My plans</div>
+    <span class="arc-arrow">→</span>
+    <div class="arc-node" style="border-color:#F59E0B;color:#FCD34D">My world</div>
+    <span class="arc-arrow">→</span>
+    <div class="arc-node" style="border-color:#EC4899;color:#F9A8D4">Mastery</div>
+  </div>
+</header>
+
+<!-- LAYOUT -->
+<div class="layout">
+
+<!-- SIDEBAR -->
+<nav class="sidebar" id="sidebar">
+  <div class="sb-head">Lessons</div>
+  <div id="sb-content"></div>
+</nav>
+
+<!-- MAIN -->
+<main class="main">
+
+<!-- Progress strip -->
+<div class="progress-strip" id="progress-strip">
+  <div class="ps-header">
+    <span class="ps-title">Your A1 progress</span>
+    <span class="ps-count" id="ps-count">0 / 50 lessons</span>
+  </div>
+  <div class="ps-bar"><div class="ps-fill" id="ps-fill" style="width:0%"></div></div>
+  <div class="ps-units" id="ps-units"></div>
+</div>
+
+<!-- Score -->
+<div class="score-fixed" id="score-fixed">⭐ <span id="score-num">0</span></div>
+
+<!-- CONTENT AREA -->
+<div id="content"></div>
+
+</main>
+</div><!-- /layout -->
+
+<script>
+const UNITS = window.curriculumData?.en_a1 || [];
+
+// ══════════════════════════════════════════════════════════════════
+// STATE
+// ══════════════════════════════════════════════════════════════════
+let score = parseInt(localStorage.getItem('cosy_total_points') || '0');
+let done  = new Set(JSON.parse(localStorage.getItem('a1_done')||'[]'));
+let open  = new Set();
+
+function saveState(){ localStorage.setItem('a1_done',JSON.stringify([...done])); }
+function addScore(n){
+  score+=n;
+  localStorage.setItem('cosy_total_points', score);
+  document.getElementById('score-num').textContent=score;
+  const w=document.getElementById('score-fixed');
+  w.style.boxShadow='0 0 20px rgba(245,200,66,.5)';
+  setTimeout(()=>w.style.boxShadow='',400);
+}
+
+// ══════════════════════════════════════════════════════════════════
+// PROGRESS
+// ══════════════════════════════════════════════════════════════════
+function updateProgress(){
+  const total=50, count=done.size;
+  document.getElementById('ps-count').textContent=`${count} / ${total} lessons`;
+  document.getElementById('ps-fill').style.width=`${count/total*100}%`;
+
+  const uDiv=document.getElementById('ps-units');
+  uDiv.innerHTML=UNITS.map(u=>{
+    const ucodes=u.lessons.map(l=>l.code);
+    const udone=ucodes.filter(c=>done.has(c)).length;
+    const pct=Math.round(udone/ucodes.length*100);
+    return `<div class="psu">
+      <div class="psu-bar"><div class="psu-fill" style="width:${pct}%;background:${u.color}"></div></div>
+      <div class="psu-label">U${u.num} ${udone}/${ucodes.length}</div>
+    </div>`;
+  }).join('');
+}
+
+// ══════════════════════════════════════════════════════════════════
+// SIDEBAR
+// ══════════════════════════════════════════════════════════════════
+function buildSidebar(){
+  const sb=document.getElementById('sb-content');
+  sb.innerHTML=UNITS.map(u=>`
+    <div class="sb-unit">
+      <div class="sb-unit-header" onclick="jumpUnit('${u.id}')">
+        <span class="sb-unit-dot" style="background:${u.color}"></span>
+        Unit ${u.num}: ${u.label}
+      </div>
+      ${u.lessons.map(l=>{
+        const isDone=done.has(l.code);
+        const progress=isDone?100:0;
+        return `<a class="sb-lesson" id="sb-${l.code}" onclick="jumpLesson('${l.code}')">
+          <span class="sb-lesson-code">${l.code}</span>
+          <span style="flex:1;font-size:.72rem">${l.title}</span>
+          ${isDone?'<span style="color:var(--accent);font-size:.7rem">✓</span>':''}
+        </a>`;
+      }).join('')}
+    </div>`).join('');
+}
+
+function jumpUnit(id){
+  document.getElementById(id)?.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function jumpLesson(code){
+  const el=document.getElementById(`lesson-${code}`);
+  if(!el) return;
+  el.scrollIntoView({behavior:'smooth',block:'start'});
+  // open it
+  if(!open.has(code)){ toggleLesson(code); }
+}
+
+// ══════════════════════════════════════════════════════════════════
+// LESSON TOGGLE
+// ══════════════════════════════════════════════════════════════════
+function toggleLesson(code){
+  const card=document.getElementById(`lesson-${code}`);
+  if(!card) return;
+  if(open.has(code)){
+    open.delete(code);
+    card.classList.remove('open');
+  } else {
+    open.add(code);
+    card.classList.add('open');
+  }
+}
+
+function markDone(code,e){
+  e.stopPropagation();
+  const card=document.getElementById(`lesson-${code}`);
+  const btn=document.getElementById(`done-btn-${code}`);
+  if(done.has(code)){
+    done.delete(code);
+    card?.classList.remove('done');
+    if(btn) btn.textContent='Mark done ✓';
+  } else {
+    done.add(code);
+    card?.classList.add('done');
+    if(btn) btn.textContent='✓ Done';
+    addScore(20);
+  }
+  saveState();
+  updateProgress();
+  buildSidebar();
+}
+
+// ══════════════════════════════════════════════════════════════════
+// RENDER
+// ══════════════════════════════════════════════════════════════════
+function posLabel(pos){
+  if(pos.includes('verb')) return 'verb';
+  if(pos.includes('adj'))  return 'adj';
+  if(pos.includes('phrase')||pos.includes('adv')) return 'phrase';
+  return 'noun';
+}
+
+function renderVocabPills(words){
+  const verbs = [
+    'be','have','feel','give','take','get','put','make','do','use','open','close','start','finish','help','try','show','find','keep','lose',
+    'cut','turn','bring','say','tell','ask','speak','talk','call','write','read','listen','answer','repeat','go','come','walk','drive','fly',
+    'arrive','leave','move','return','travel','eat','drink','sleep','cook','clean','wear','wash','buy','pay','spend','save','work','live',
+    'think','know','want','need','like','dislike','love','hate','hope','remember','forget','understand','decide','enjoy','see','hear',
+    'wake up','watch','look','play','run','sit','stand','meet','learn','change','stop','add','subtract','win','wait','die','send','stay',
+    'fall','rise','pass','sell','pull','push','carry','break','receive','agree','draw','share','smile','cry','dance','sing','jump','swim',
+    'study','teach','rent','exercise','cost','invite','get up','have breakfast','come back','go to bed','check','unpack','reply','present',
+    'attend','manage','earn','visit','celebrate','hurt','rest','book','pack','cancel','miss','order','thank','introduce','relax','mean',
+    'follow','grow','become','choose','begin','end','brush','ride','believe','prefer','catch','fix','plan','borrow','smell','taste','lie',
+    'laugh','worry','sound','spell','point','shout','wave','kick','throw','bounce','paint','hop','skip','count','tick','cross','colour',
+    'hold','lead','fight','hide','seek','ring','text','whisper','touch','let','set','email','phone','climb','dress','undress','turn on',
+    'turn off','welcome','act','copy','fill','fit','join','note','pick','wish','collect','describe','breathe','cough','sneeze','yawn',
+    'explain','prepare','depend','belong','can','must','accept','achieve','admire','admit','advise','afford','allow','analyze','announce',
+    'apologise','appear','apply','apply for','appreciate','argue','arrange','arrest','assist','attach','attract','avoid','beat','behave',
+    'bite','blame','brush teeth','budget','build','calculate','carry on','challenge','charge','claim','collaborate','communicate','compare',
+    'compete','complain','complete','compromise','concentrate','confirm','confuse','connect','conserve','consider','contact','contain',
+    'continue','contract','control','convince','create','cure','cut down on','damage','decorate','decrease','delegate','deliver','deposit',
+    'design','destroy','develop','diagnose','disagree','discover','discuss','dismiss','divide','doubt','dream','encourage','entertain',
+    'escape','evaluate','evolve','examine','excite','exhale','expand','expect','explore','fail','find out','forgive','freeze','give up',
+    'graduate','greet','guess','happen','hire','identify','ignore','imagine','impress','improve','improve skills','include','increase',
+    'inform','inhale','injure','intend','interview','invent','invest','kill','lend','log out','look after','look for','lose weight',
+    'measure','memorise','mention','multiply','negotiate','notice','observe','offer','organize','owe','participate','perform','pollute',
+    'predict','prevent','produce','prohibit','promise','promote','protect','provide','put off','reach','react','realize','recommend',
+    'record','recover','recycle','reduce','refuse','remain','repair','replace','require','reserve','resign','retire','schedule','search',
+    'seem','serve','set up','solve','sort out','succeed','suffer','suggest','support','swallow','take on','transfer','treat','trust',
+    'turn down','vote','withdraw','wonder','insist','interrupt','involve','obtain','occur','operate','persuade','publish','recognize',
+    'reflect','release','rely','remind','remove','represent','request','rescue','resolve','respond','rehearse','applaud','check in',
+    'overtake','break up','check out'
+  ];
+  return words.map(w=>{
+    const cls = w.endsWith(' verb')||verbs.includes(w.toLowerCase()) ? 'verb' : 'noun';
+    return `<a href="../../vocabulary-reference.html?lang=en&search=${encodeURIComponent(w)}" class="vp ${cls}">${w}</a>`;
+  }).join('');
+}
+
+function renderSkillPills(l){
+  return `<div class="lc-skills">
+    <span class="skill-pill sp-s">🗣️</span>
+    <span class="skill-pill sp-l">👂</span>
+    <span class="skill-pill sp-r">📖</span>
+    <span class="skill-pill sp-w">✍️</span>
+  </div>`;
+}
+
+function buildContent(){
+  const area=document.getElementById('content');
+
+  // ── Vocabulary Summary Panel ──
+  let vocabHtml=`<div class="vocab-panel">
+    <div class="vp-title">📖 A1 Vocabulary — 203 items across 8 themes</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.6rem">`;
+
+  const themes={
+    'Workplace basics':['job','work','boss','colleague','salary','office','meeting','email','full-time','part-time','commute'],
+    'Rooms of a home': ['rent','flat','landlord','tenant','neighbour','furniture','heating','bill'],
+    'Daily work routines':['alarm','breakfast','lunch','dinner','shower','supermarket'],
+    'Common illnesses & symptoms':['ill','tired','headache','doctor','hospital','medicine','sleep','exercise','stress'],
+    'Money & payment': ['spend','save','pay','cost','cheap','expensive','cash','card','receipt','discount'],
+    'Basic technology devices':['phone','app','password','internet','online','screen'],
+    'Leisure activities':['holiday','weekend','free time','friend','invitation','party','hobby'],
+    'Basic negative emotions':['happy','worried','relaxed','bored','angry','nervous','confident','friendly','honest','patient'],
+  };
+  const themeColours={'Workplace basics':'#3B82F6','Rooms of a home':'#8B5CF6','Daily work routines':'#10B981',
+    'Common illnesses & symptoms':'#EF4444','Money & payment':'#F59E0B','Basic technology devices':'#06B6D4',
+    'Leisure activities':'#EC4899','Basic negative emotions':'#84CC16'};
+
+  for(const [theme,words] of Object.entries(themes)){
+    const col=themeColours[theme]||'#666';
+    vocabHtml+=`<div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;
+      padding:.65rem .8rem;border-left:3px solid ${col}">
+      <a href="../../vocabulary-reference.html?lang=en&search=${encodeURIComponent(theme)}" style="text-decoration:none;display:block;">
+        <div style="font-size:.62rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;
+          color:${col};margin-bottom:.45rem">${theme}</div>
+      </a>
+      <div style="display:flex;flex-wrap:wrap;gap:.25rem">
+        ${words.map(w=>`<a href="../../vocabulary-reference.html?lang=en&search=${encodeURIComponent(w)}" style="text-decoration:none;">
+          <span style="font-size:.68rem;font-weight:700;
+          background:rgba(255,255,255,.06);border:1px solid var(--border);
+          border-radius:4px;padding:.1rem .4rem;color:var(--muted);transition:all .1s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">${w}</span>
+        </a>`).join('')}
+      </div>
+    </div>`;
+  }
+  vocabHtml+=`</div></div>`;
+
+  // ── Grammar Summary Panel ──
+  let grammarHtml=`<div class="grammar-panel">
+    <div class="vp-title">📐 A1 Grammar — 16 structures introduced</div>
+    <div class="gp-grid">`;
+
+  const allGrammar=UNITS.flatMap(u=>u.grammar_summary || []).filter(Boolean);
+  allGrammar.forEach(g=>{
+    const href = g.ref ? (g.ref.includes('.html') ? `../../${g.ref}` : `../../grammar-reference.html#${g.ref}`) : '../../grammar-reference.html';
+    grammarHtml+=`<a href="${href}" style="text-decoration:none;"><div class="gp-item">
+      <div class="gp-name">${g.name}</div>
+      <div class="gp-desc">${g.desc}</div>
+      <div class="gp-ex">${g.ex}</div>
+    </div></a>`;
+  });
+  grammarHtml+=`</div></div>`;
+
+  // ── Units ──
+  let unitsHtml=UNITS.map(u=>{
+    const isDoneMap=u.lessons.map(l=>done.has(l.code));
+    const pct=Math.round(isDoneMap.filter(Boolean).length/u.lessons.length*100);
+
+    const lessonsHtml=u.lessons.map(l=>{
+      const isDone=done.has(l.code);
+      const isOpen=open.has(l.code);
+      const lessonId = parseInt(l.code.split('-')[1]);
+
+      // Vocab pills (show first 8 to avoid overflow)
+      const vocabDisplay=[...new Set([...(l.vocab || []),...(l.verbs || []),...(l.adj || [])])].slice(0,12);
+
+      return `<div class="lesson-card${isDone?' done':''}${isOpen?' open':''}"
+               id="lesson-${l.code}">
+        <div class="lc-header" onclick="toggleLesson('${l.code}')">
+          <span class="lc-code">${l.code}</span>
+          <span class="lc-num" style="border-color:${u.color};color:${u.color}">${l.num}</span>
+          <span class="lc-title">${l.title}</span>
+          ${renderSkillPills(l)}
+          <button class="lc-done-btn" id="done-btn-${l.code}"
+            onclick="markDone('${l.code}',event)">${isDone?'✓ Done':'Mark done ✓'}</button>
+          <span class="lc-expand">▼</span>
+        </div>
+        <div class="lc-body">
+
+          <div class="grammar-box">${l.grammar}</div>
+          <div class="speaking-task"><strong>🗣️ Speaking task:</strong> ${l.speaking}</div>
+
+          <div class="lb-grid">
+            <div class="lb-col">
+              <div class="lb-col-title" style="color:var(--li)">👂 Listening</div>
+              <div class="lb-item">${l.listening}</div>
+              <div class="lb-col-title" style="color:var(--rd);margin-top:.6rem">📖 Reading</div>
+              <div class="lb-item">${l.reading}</div>
+            </div>
+            <div class="lb-col">
+              <div class="lb-col-title" style="color:var(--wr)">✍️ Writing</div>
+              <div class="lb-item">${l.writing}</div>
+              <div class="lb-col-title" style="color:var(--accent);margin-top:.6rem">🎯 Communicative task</div>
+              <div class="lb-item">${l.task}</div>
+            </div>
+          </div>
+
+          <div style="margin-top:.8rem">
+            <div style="font-size:.6rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;
+              color:var(--muted);margin-bottom:.4rem">Vocabulary focus</div>
+            <div class="vocab-pills">${renderVocabPills(vocabDisplay)}</div>
+          </div>
+
+          <div class="hw-box">${l.hw}</div>
+          <div class="can-do">${l.cando}</div>
+          <div style="margin-top:1.2rem;text-align:center;">
+            <a href="../../lesson.html?lang=en&lesson=${lessonId}" class="tb-btn active" style="font-size:.85rem;padding:.5rem 1.5rem">🚀 Start Lesson Practice</a>
+          </div>
+        </div>
+      </div>`;
+    }).join('');
+
+    return `<div class="unit-block ${u.id}" id="${u.id}">
+      <div class="unit-header">
+        <div class="uh-num" style="color:${u.color}">0${u.num}</div>
+        <div class="uh-body">
+          <h2>Unit ${u.num}: ${u.label}</h2>
+          <div class="uh-arc">${u.arc}</div>
+          <div class="uh-tags">
+            <span class="uh-tag">${u.lessons_count} lessons</span>
+            ${(u.vocab_themes || []).map(t=>`<span class="uh-tag">${t}</span>`).join('')}
+            <span class="uh-tag" style="color:${u.color};border-color:${u.color}">${pct}% complete</span>
+          </div>
+        </div>
+      </div>
+      ${lessonsHtml}
+    </div>`;
+  }).join('');
+
+  area.innerHTML = vocabHtml + grammarHtml + unitsHtml;
+}
+
+// ══════════════════════════════════════════════════════════════════
+// SIDEBAR INTERSECTION OBSERVER
+// ══════════════════════════════════════════════════════════════════
+function setupObserver(){
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        const code=e.target.id.replace('lesson-','');
+        document.querySelectorAll('.sb-lesson').forEach(l=>l.classList.remove('active'));
+        document.getElementById(`sb-${code}`)?.classList.add('active');
+      }
+    });
+  },{threshold:.4});
+  document.querySelectorAll('.lesson-card').forEach(c=>io.observe(c));
+}
+
+// ══════════════════════════════════════════════════════════════════
+// INIT
+// ══════════════════════════════════════════════════════════════════
+document.addEventListener('DOMContentLoaded',()=>{
+  document.getElementById('score-num').textContent=score;
+  buildSidebar();
+  buildContent();
+  updateProgress();
+  // Restore done state on cards
+  done.forEach(code=>{
+    document.getElementById(`lesson-${code}`)?.classList.add('done');
+    const btn=document.getElementById(`done-btn-${code}`);
+    if(btn) btn.textContent='✓ Done';
+  });
+  setTimeout(setupObserver,200);
+});
+</script>
+<script src="../../../js/data/languages.js"></script>
+<script src="../../../js/core/engine.js"></script>
+<script src="../../../js/core/i18n.js"></script>
+<script src="../../../js/core/ui.js"></script>
+</body>
+</html>
