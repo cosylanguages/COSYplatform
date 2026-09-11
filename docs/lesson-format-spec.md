@@ -1,6 +1,12 @@
 # CosyLanguages Lesson Format Specification
 
-This specification defines the markup tags used in CosyLanguages lesson files (`.xml`). The format supports interactive student workspace interaction, real-time teacher guidance, multi-duration scaling (50m, 80m, 110m active minutes), and individual vs. group lesson adaptations.
+This specification defines the markup tags used in CosyLanguages lesson files (`.xml`). The format supports interactive student workspace interaction, real-time teacher guidance, multi-duration scaling (50m, 80m, 110m active minutes), monolingual CELTA-inspired instruction, and individual vs. group lesson adaptations.
+
+## Monolingual Principle
+
+CosyLanguages follows a **100% monolingual policy**. All slide text, vocabulary definitions, grammar rules, exercises, and teacher speech notes must be written in English. Translation exercises are replaced with English Concept Check Questions (CCQs) and communicative speaking practice.
+
+---
 
 ## Root & Slide Structure
 
@@ -52,7 +58,7 @@ A lesson consists of ordered slides/stages with mode and duration tags.
 Teacher notes are rendered **strictly on the teacher's screen** during live lessons.
 - Attributes:
   - `type="instruction"`: Stage aims, pedagogical recommendations.
-  - `type="speech"`: Suggested wording/script for teacher to read or adapt.
+  - `type="speech"`: Suggested wording/script for teacher to read or adapt (including CCQs).
   - `type="additional"`: Optional extra exercises if time allows.
   - `type="tapescript"`: Video/Audio transcripts with timing cues.
   - `title="Stage aim"`: Optional custom title header.
@@ -60,11 +66,11 @@ Teacher notes are rendered **strictly on the teacher's screen** during live less
 
 ```xml
 <cosy-teacher-notes type="instruction">
-  <p><cosy-text type="strong">Stage aim:</cosy-text> to introduce target vocabulary.</p>
+  <p><cosy-text type="strong">Stage aim:</cosy-text> to check understanding using Concept Check Questions (CCQs).</p>
 </cosy-teacher-notes>
 
 <cosy-teacher-notes type="speech">
-  <p>How do you usually relax after a difficult week?</p>
+  <p>Ask CCQ: If someone is prone to forgetting things, do they forget often or rarely?</p>
 </cosy-teacher-notes>
 ```
 
@@ -110,7 +116,7 @@ Teacher notes are rendered **strictly on the teacher's screen** during live less
 ```
 
 ### 6. Matching Groups (`<cosy-groups>`)
-For matching definitions, synonyms, or collocations.
+For matching definitions, synonyms, or collocations in English.
 ```xml
 <cosy-groups>
   <cosy-groups-row>
@@ -155,7 +161,7 @@ Integrates with student dictionary and mobile app vocabulary trainer.
 ```
 
 ### 10. Grammar Material (`<cosy-grammar-material>`)
-Renders interactive grammar rule cards.
+Renders interactive English grammar rule cards.
 ```xml
 <cosy-grammar-material id="862" title="Speaking about the present habits" />
 ```

@@ -9,14 +9,25 @@ This guide explains how lessons, curriculums, and teaching manuals are structure
 1. **Course Level**: (e.g., *General English A0-C1*, *Business English*, *Conversational Italian*)
 2. **Module / Unit**: Specific topical group (e.g., *Unit 1: Lifestyle & Relaxation*, *Unit 2: Work-Life Balance*)
 3. **Lesson Types**:
-   - **Standard Lessons**: Flexible 50m, 80m, or 110m active teaching formats.
+   - **Standard Lessons**: Flexible 50m, 80m, or 110m active teaching formats structured into **16 Live Cards** and **10 Homework Cards**.
    - **Introductory "Aloha" Lessons**: First lesson designed for goal setting, duration selection, learning style evaluation, and course map presentation.
    - **Progress Check / Exam**: Assessment slides scheduled after key modules.
    - **Talks / Speaking Clubs**: Short conversational sessions with native speakers or peers.
 
 ---
 
-## 2. Multi-Duration Lesson Timing Models
+## 2. Monolingual Policy & Concept Check Questions (CCQs)
+
+CosyLanguages operates on a **strictly monolingual English policy**.
+- **No L1 Translation**: Never use direct translation exercises or native language explanations.
+- **Concept Check Questions (CCQs)**: Verify student comprehension through target questions:
+  - *Example for "gastro-tourism"*: "Is gastro-tourism about visiting museums or trying local foods?" (Trying local foods)
+  - *Example for "prone to"*: "If you are prone to making mistakes, happens it often or rarely?" (Often)
+- **Maximising Student Talk Time (STT)**: Keep teacher explanations brief and prompt students to produce target language in speaking activities.
+
+---
+
+## 3. Multi-Duration Lesson Timing Models
 
 Lessons scale cleanly across three standard scheduled durations:
 
@@ -49,13 +60,13 @@ Lessons scale cleanly across three standard scheduled durations:
 
 ---
 
-## 3. Teacher Page vs. Student Page Interface Features
+## 4. Teacher Page vs. Student Page Interface Features
 
 ### Teacher Page (Live Classroom View)
 1. **Stage Aim Box (`<cosy-teacher-notes type="instruction">`)**:
    - Displays pedagogical outcomes and timing targets.
-2. **Teacher Speech Scripts (`<cosy-teacher-notes type="speech">`)**:
-   - Suggested prompts to keep lesson flow natural and engaging.
+2. **Teacher Speech Scripts & CCQs (`<cosy-teacher-notes type="speech">`)**:
+   - Suggested prompts and CCQs to keep lesson flow natural and engaging without L1 translation.
 3. **Group Classroom Controls**:
    - Assign breakout rooms, toggle pair-work prompts, control answer overlays, and whiteboard sharing.
 4. **Additional / Extension Tasks (`<cosy-teacher-notes type="additional">`)**:
@@ -71,7 +82,7 @@ Lessons scale cleanly across three standard scheduled durations:
 
 ---
 
-## 4. Checklist for First / Introductory Lessons
+## 5. Checklist for First / Introductory Lessons
 
 - [ ] **Check limited lesson balance**: Remind student about attendance and milestone exams.
 - [ ] **Select lesson duration**: Confirm standard format (60m, 90m, or 120m).

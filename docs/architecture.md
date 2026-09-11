@@ -8,6 +8,14 @@ This repository serves as the central content repository for all curriculums, ro
 
 ---
 
+## 🌐 Monolingual Policy & Communicative Speaking Focus
+
+- **Monolingual Teaching (English-Only)**: CosyLanguages operates under a strict monolingual policy. All student workspace elements, teacher speech scripts, vocabulary definitions, and grammar explanations are written exclusively in English.
+- **Concept Check Questions (CCQs)**: Instead of translation tasks, target vocabulary and grammar are verified using English Concept Check Questions (CCQs) and elicitation questions.
+- **Student Talk Time (STT) Maximization**: Lessons are designed to maximize student speaking time through communicative prompts, debate questions, and audio voice recording activities.
+
+---
+
 ## 👥 Dual-View Architecture (Teacher Page vs. Student Page)
 
 Every lesson in CosyLanguages renders into two synchronized, role-specific views:
@@ -36,7 +44,7 @@ Every lesson in CosyLanguages renders into two synchronized, role-specific views
 ### 1. Teacher Page Features
 - **Hidden Guidance**: Elements tagged with `<cosy-teacher-notes>` render strictly for the teacher.
 - **Stage Aims & Timing**: Step-by-step goals, recommended timing, and stage transition triggers.
-- **Speech Scripts**: Suggested dialogue (`type="speech"`) to facilitate smooth explanations and instructions.
+- **Speech Scripts & CCQs**: Suggested dialogue (`type="speech"`) and Concept Check Questions to facilitate smooth explanations without L1 translation.
 - **Answer Key Overlay**: Automatic answer visibility for checking exercises and giving feedback.
 - **Group Management Controls**: Ability to assign pair/group breakout activities, mute/unmute, and control shared whiteboard elements.
 
@@ -48,9 +56,9 @@ Every lesson in CosyLanguages renders into two synchronized, role-specific views
 
 ---
 
-## ⏱ Multi-Duration Timing Models
+## ⏱ Multi-Duration Timing Models & Card Structures
 
-All CosyLanguages lessons are modularly structured to scale cleanly across 3 standard lesson durations:
+Lessons are structured into **16 Live Lesson Cards** and **10 Homework Cards**, modularly designed to scale across 3 standard lesson durations:
 
 | Scheduled Duration | Active Lesson Time | Structure & Allocation | Slide Filtering (`duration`) |
 |---|---|---|---|

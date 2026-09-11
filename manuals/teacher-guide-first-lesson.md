@@ -10,6 +10,16 @@
 
 ---
 
+## Monolingual Execution & Concept Check Questions (CCQs)
+
+- **Strict Monolingual Policy**: Conduct 100% of the class in English. Do not use direct L1 translation.
+- **Elicitation & CCQs**: Use Concept Check Questions (CCQs) to verify understanding:
+  - *Target word*: "Culinary" -> *CCQ*: "Does culinary relate to music or cooking?" (Cooking)
+  - *Target phrase*: "Work-life balance" -> *CCQ*: "If you have a good work-life balance, do you spend all day working?" (No)
+- **Maximize Student Talk Time (STT)**: Keep teacher talk time low by asking open-ended questions and encouraging peer discussion.
+
+---
+
 ## Lesson Plan Timing Across Formats
 
 ### A. 60-Minute Format (50 Active Minutes)

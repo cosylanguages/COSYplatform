@@ -9,9 +9,9 @@ Welcome to the **COSYplatform Content Repository**! This repository hosts all in
 ```
 .
 ├── docs/                        # Platform architecture & markup specifications
-│   ├── architecture.md          # Dual-page view, group/1-on-1 modes & timing models
+│   ├── architecture.md          # Dual-page view, monolingual policy, group modes & timing models
 │   ├── lesson-format-spec.md    # CosyLanguages (<cosy-*>) markup specification
-│   └── teacher-catalog-guide.md # Teacher catalog structure & multi-duration guide
+│   └── teacher-catalog-guide.md # Teacher catalog structure, CCQ guide & multi-duration guide
 ├── schemas/                     # Formal validation schemas
 │   └── lesson.schema.json       # JSON Schema supporting duration & classroom modes
 ├── curriculums/                 # High-level curriculum definitions
@@ -20,14 +20,16 @@ Welcome to the **COSYplatform Content Repository**! This repository hosts all in
 │   ├── general-english-a2.json  # General English A2 Pre-Intermediate curriculum (15 units)
 │   ├── general-english-b1.json  # General English B1 Intermediate curriculum (15 units)
 │   ├── general-english-b2.json  # General English B2 Upper-Intermediate curriculum (13 units)
-│   └── general-english-c1.json  # General English C1 Advanced curriculum (12 units)
+│   ├── general-english-c1.json  # General English C1 Advanced curriculum (12 units)
+│   └── spoken-english-a1.json   # Spoken English A1 Elementary curriculum (15m/30m/60m speaking)
 ├── roadmaps/                    # Course maps and lesson sequences
 │   ├── general-english-a0.json  # A0 Beginner course map (4 sections, 45 lessons)
 │   ├── general-english-a1.json  # A1 Elementary course map (6 sections, 62 lessons)
 │   ├── general-english-a2.json  # A2 Pre-Intermediate course map (8 sections, 71 lessons)
 │   ├── general-english-b1.json  # B1 Intermediate course map (8 sections, 74 lessons)
 │   ├── general-english-b2.json  # B2 Upper-Intermediate course map (7 sections, 58 lessons)
-│   └── general-english-c1.json  # C1 Advanced course map (6 sections, 67 lessons)
+│   ├── general-english-c1.json  # C1 Advanced course map (6 sections, 67 lessons)
+│   └── spoken-english-a1.json   # Spoken English A1 Elementary course map (22 speaking modules)
 ├── manuals/                     # Teacher guides & onboarding instructions
 │   └── teacher-guide-first-lesson.md # First lesson ("Aloha") setup & multi-duration guide
 └── lessons/                     # Lesson interactive slides content
@@ -42,19 +44,24 @@ Welcome to the **COSYplatform Content Repository**! This repository hosts all in
 
 ## 🎯 Key Features & Capabilities
 
-1. **Dual Student/Teacher Views**:
+1. **Monolingual English Policy & CCQs**:
+   - **Zero L1 Translation**: All content, definitions, and speech notes are strictly in English.
+   - **Concept Check Questions (CCQs)**: Elicitation and understanding checks integrated into teacher speech scripts to maximize Student Talk Time (STT).
+
+2. **Dual Student/Teacher Views**:
    - **Student Page**: Distraction-free clean workspace showing instructions, interactive inputs (gaps, drag & drop, choice options), vocabulary dictionary add button, audio recorder, and essay submission box.
    - **Teacher Page**: Live classroom view with stage aims (`<cosy-teacher-notes type="instruction">`), teacher speech prompts (`type="speech"`), extra hints (`type="additional"`), audio/video transcripts (`type="tapescript"`), and answer keys.
 
-2. **Multi-Duration Timing Models**:
+3. **Multi-Duration Timing Models & Card Structures**:
+   - Standardized into **16 Live Lesson Cards** and **10 Homework Cards** for General English, and **15m / 30m / 60m** formats for Spoken English.
    - **60 Minutes (50 Active Min)**: Fast-paced core vocabulary, grammar input, controlled practice, and speaking cool-down.
    - **90 Minutes (80 Active Min)**: Core + Deep Dive (authentic media analysis, extended pair work, case study).
    - **120 Minutes (110 Active Min)**: Core + Extension + Masterclass (live writing workshop, group debate, detailed action plan).
 
-3. **Group vs. Individual Class Modes**:
+4. **Group vs. Individual Class Modes**:
    - Dynamic slide rendering adapting to 1-on-1 tutoring (`mode="individual"`) or group breakout/pair-work sessions (`mode="group"`).
 
-4. **Ecosystem Integrations**:
+5. **Ecosystem Integrations**:
    - **Vocabulary Trainer**: Synced with mobile app wordlists.
    - **Self-Study & AI Practice**: Integrated links to AI speaking practice, video practice, and weekly Speaking Clubs.
 
