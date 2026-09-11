@@ -1,0 +1,46 @@
+{
+  "language": "pt",
+  "level": "a1",
+  "topics": [
+    {
+      "id": "pt-a1-intro",
+      "lang": "pt",
+      "flag": "🇵🇹",
+      "level": "a1",
+      "title": "Saudações e Alfabeto",
+      "desc": "Greetings & foundational sounds",
+      "img": "images/cosyportugese.png",
+      "grammarBlocks": [
+        {
+          "title": "Basic greetings",
+          "html": "\n        <table class=\"wb-table\">\n          <tr class=\"wt-sec\"><td colspan=\"2\">🇵🇹 Saudações</td></tr>\n          <tr><td class=\"wt-label\">Olá / Bom dia</td><td class=\"wt-l\"><span class=\"key-v\">Olá!</span> · <span class=\"key-v\">Bom dia</span></td></tr>\n          <tr><td class=\"wt-label\">Chamo-me…</td><td class=\"wt-l\"><span class=\"key-v\">Chamo-me</span> Ana.</td></tr>\n        </table>"
+        },
+        {
+          "title": "Alfabeto e Sons",
+          "html": "\n        <table class=\"wb-table\">\n          <tr class=\"wt-sec\"><td colspan=\"2\">🔡 Tricky Sounds</td></tr>\n          <tr><td class=\"wt-label\">LH</td><td class=\"wt-l\">Like \"mi<span class=\"key-v\">lli</span>on\" (filho)</td></tr>\n          <tr><td class=\"wt-label\">NH</td><td class=\"wt-l\">Like \"opi<span class=\"key-v\">ni</span>on\" (manhã)</td></tr>\n          <tr><td class=\"wt-label\">Ç</td><td class=\"wt-l\">Soft \"s\" sound (coração)</td></tr>\n          <tr><td class=\"wt-label\">~ (til)</td><td class=\"wt-l\">Nasal sound (pão)</td></tr>\n        </table>"
+        }
+      ],
+      "exercises": [
+        {
+          "id": "pt-a1-0-1",
+          "q": "How do you say \"Hello\" in Portuguese?",
+          "type": "fill",
+          "ans": "Olá",
+          "fb": "✅ Olá!"
+        },
+        {
+          "id": "pt-a1-0-2",
+          "q": "Which sound is like the \"lli\" in million?",
+          "type": "mcq",
+          "opts": [
+            "LH",
+            "NH",
+            "RR"
+          ],
+          "ans": "LH",
+          "fb": "✅ LH = /ʎ/"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🇫🇷 Marathon de Prononciation Française — Hub Général & Annexes (A0 → C2) · COSY</title>
+<meta name="description" content="Hub général du Marathon de Prononciation Française : choisissez votre niveau (A0-A1 à C2), découvrez la philosophie 1 règle = 1 image et explorez nos annexes complètes de fréquence.">
+<link rel="stylesheet" href="../../shared/styles/tokens.css">
+<link rel="stylesheet" href="../../shared/styles/base.css">
+<link rel="stylesheet" href="../../shared/styles/components.css">
+<link rel="stylesheet" href="../../shared/styles/layout.css">
+<link rel="stylesheet" href="../../shared/styles/lang-pages.css">
+<link rel="stylesheet" href="../../shared/styles/lang-accents.css">
+<link rel="stylesheet" href="../../shared/styles/mobile.css">
+<style>
+  :root {
+    --mp-primary: #1e5631;
+    --mp-primary-light: #e8f5e9;
+    --mp-accent: #2e7d32;
+    --mp-gold: #d4af37;
+    --mp-border: #c8e6c9;
+  }
+
+  body {
+    font-family: 'Nunito', system-ui, -apple-system, sans-serif;
+    color: #2c3e50;
+    background-color: #fcfdfc;
+    line-height: 1.65;
+  }
+
+  .mp-hero {
+    background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 50%, #40916c 100%);
+    color: #ffffff;
+    padding: 3.5rem 1.5rem 2.5rem;
+    border-bottom: 4px solid #74c69d;
+    text-align: center;
+  }
+
+  .mp-hero h1 {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: #ffffff;
+  }
+
+  .mp-hero p.subtitle {
+    font-size: 1.2rem;
+    color: #d8f3dc;
+    max-width: 800px;
+    margin: 0 auto 1.5rem;
+  }
+
+  .mp-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .mp-badge {
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    padding: 0.35rem 0.85rem;
+    border-radius: 50px;
+    font-size: 0.88rem;
+    font-weight: 600;
+  }
+
+  .sd-sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+
+  .sd-jump-links {
+    display: flex;
+    gap: 0.75rem;
+    overflow-x: auto;
+    padding: 0.75rem 1.5rem;
+    white-space: nowrap;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .sd-jump-link {
+    color: #2d6a4f;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 0.3rem 0.75rem;
+    border-radius: 6px;
+    background: #f0fdf4;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .sd-jump-link:hover {
+    background: #2d6a4f;
+    color: #ffffff;
+  }
+
+  .mp-container {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+  }
+
+  .mp-section {
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+  }
+
+  .mp-section h2 {
+    color: #1b4332;
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.8rem;
+    margin-top: 0;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #d8f3dc;
+  }
+
+  /* Level Cards Grid */
+  .level-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .level-card {
+    background: #ffffff;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.25s ease;
+  }
+
+  .level-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  }
+
+  .level-card.card-a0a1 { border-color: #90caf9; }
+  .level-card.card-a2 { border-color: #a5d6a7; }
+  .level-card.card-b1 { border-color: #ffe082; }
+  .level-card.card-b2 { border-color: #ffab91; }
+  .level-card.card-c1 { border-color: #ce93d8; }
+  .level-card.card-c2 { border-color: #b0bec5; }
+
+  .level-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+  }
+
+  .level-card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1b4332;
+    margin: 0;
+  }
+
+  .level-badge-pill {
+    padding: 0.25rem 0.65rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 800;
+  }
+
+  .pill-a0a1 { background: #e3f2fd; color: #0d47a1; }
+  .pill-a2 { background: #e8f5e9; color: #1b5e20; }
+  .pill-b1 { background: #fff8e1; color: #f57f17; }
+  .pill-b2 { background: #fbe9e7; color: #bf360c; }
+  .pill-c1 { background: #f3e5f5; color: #4a148c; }
+  .pill-c2 { background: #eceff1; color: #263238; }
+
+  .level-card-desc {
+    font-size: 0.95rem;
+    color: #4a5568;
+    margin-bottom: 1.25rem;
+    flex-grow: 1;
+  }
+
+  .level-card-btn {
+    display: block;
+    text-align: center;
+    padding: 0.65rem 1rem;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+
+  .btn-a0a1 { background: #1976d2; color: #ffffff; }
+  .btn-a0a1:hover { background: #0d47a1; }
+  .btn-a2 { background: #2e7d32; color: #ffffff; }
+  .btn-a2:hover { background: #1b5e20; }
+  .btn-b1 { background: #f57f17; color: #ffffff; }
+  .btn-b1:hover { background: #e65100; }
+  .btn-b2 { background: #d84315; color: #ffffff; }
+  .btn-b2:hover { background: #bf360c; }
+  .btn-c1 { background: #6a1b9a; color: #ffffff; }
+  .btn-c1:hover { background: #4a148c; }
+  .btn-c2 { background: #37474f; color: #ffffff; }
+  .btn-c2:hover { background: #263238; }
+
+  .mp-table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.92rem; }
+  .mp-table th, .mp-table td { padding: 0.75rem 1rem; border: 1px solid #e2e8f0; text-align: left; }
+  .mp-table th { background: #f0fdf4; color: #1b4332; }
+
+  /* Mnemonic Box */
+  .mnemonic-box {
+    background: #fff8e1;
+    border-left: 4px solid #f57f17;
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin: 1rem 0;
+  }
+
+  .mnemonic-box h4 {
+    margin: 0 0 0.4rem 0;
+    color: #795548;
+    font-size: 1.05rem;
+  }
+
+  /* 5 Families grid */
+  .families-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+  }
+
+  .family-card {
+    background: #f7fcf8;
+    border: 1px solid #c8e6c9;
+    border-radius: 10px;
+    padding: 1.25rem;
+  }
+
+  .family-card h4 {
+    margin: 0 0 0.5rem 0;
+    color: #1b4332;
+    font-size: 1.1rem;
+  }
+
+  .family-card p {
+    margin: 0;
+    font-size: 0.92rem;
+    color: #4a5568;
+  }
+</style>
+</head>
+<body data-lang-theme="fr">
+
+<nav id="cosy-nav"></nav>
+
+<!-- Sticky Navigation -->
+<header class="sd-sticky-header">
+  <nav class="sd-jump-links" aria-label="Sommaire du marathon">
+    <a href="index.html" class="sd-jump-link">← Hub FR</a>
+    <a href="pronunciation.html" class="sd-jump-link">← Prononciation</a>
+    <a href="#niveaux" class="sd-jump-link">🎯 Choisir son Niveau</a>
+    <a href="#principes" class="sd-jump-link">💡 Philosophie & Astuces</a>
+    <a href="#annexes" class="sd-jump-link">📊 Annexes de Fréquence</a>
+  </nav>
+</header>
+
+<header class="mp-hero">
+  <div class="mp-badges">
+    <span class="mp-badge">🇫🇷 Français Monolingue Accessible</span>
+    <span class="mp-badge">📐 1 Leçon = 1 Règle = 1 Image</span>
+    <span class="mp-badge">🎯 Sans jargon linguistique</span>
+    <span class="mp-badge">CECRL A0 → C2</span>
+  </div>
+  <h1>🇫🇷 MARATHON DE PRONONCIATION FRANÇAISE</h1>
+  <p class="subtitle">Guide complet de lecture, prononciation et orthographe : des recettes de sons physiques aux pièges du français parlé spontané.</p>
+</header>
+
+<main class="mp-container">
+
+  <!-- CHOIX DU NIVEAU -->
+  <section id="niveaux" class="mp-section">
+    <h2>🎯 Sélectionnez votre niveau de marathon</h2>
+    <p>
+      Pour une expérience d'apprentissage fluide et adaptée à vos compétences, chaque niveau possède sa propre page dédiée. Les débutants A0 et A1 sont réunis sur une même page avec un accompagnement visuel renforcé.
+    </p>
+
+    <div class="level-cards-grid">
+
+      <!-- Card A0-A1 -->
+      <div class="level-card card-a0a1">
+        <div>
+          <div class="level-card-header">
+            <h3 class="level-card-title">Fondations Absolues</h3>
+            <span class="level-badge-pill pill-a0a1">A0 - A1</span>
+          </div>
+          <p class="level-card-desc">
+            Pour les débutants complets. L'alphabet, les accents, les consonnes finales muettes (CaReFuL), le son U français et les nasales de base sans jargon.
+          </p>
+        </div>
+        <a href="levels/a0-a1.html" class="level-card-btn btn-a0a1">Accéder au Niveau A0-A1 →</a>
+      </div>
+
+      <!-- Card A2 -->
+      <div class="level-card card-a2">
+        <div>
+          <div class="level-card-header">
+            <h3 class="level-card-title">Structures Contextuelles</h3>
+            <span class="level-badge-pill pill-a2">A2</span>
+          </div>
+          <p class="level-card-desc">
+            Digrammes, trigrammes, semi-voyelles ([j], [w], [ɥ]), le H muet vs aspiré, et le groupe ILL avec ses 4 exceptions célèbres.
+          </p>
+        </div>
+        <a href="levels/a2.html" class="level-card-btn btn-a2">Accéder au Niveau A2 →</a>
+      </div>
+
+      <!-- Card B1 -->
+      <div class="level-card card-b1">
+        <div>
+          <div class="level-card-header">
+            <h3 class="level-card-title">Liaisons & Nombres</h3>
+            <span class="level-badge-pill pill-b1">B1</span>
+          </div>
+          <p class="level-card-desc">
+            Les 3 catégories de liaisons, les secrets du mot PLUS, la prononciation des chiffres (6, 10, 9) et la dénasalisation.
+          </p>
+        </div>
+        <a href="levels/b1.html" class="level-card-btn btn-b1">Accéder au Niveau B1 →</a>
+      </div>
+
+      <!-- Card B2 -->
+      <div class="level-card card-b2">
+        <div>
+          <div class="level-card-header">
+            <h3 class="level-card-title">Registres & Lettres Internes</h3>
+            <span class="level-badge-pill pill-b2">B2</span>
+          </div>
+          <p class="level-card-desc">
+            Les consonnes muettes internes (sculpture, sept), les réductions du français parlé spontané (ch'sais pas) et l'assimilation.
+          </p>
+        </div>
+        <a href="levels/b2.html" class="level-card-btn btn-b2">Accéder au Niveau B2 →</a>
+      </div>
+
+      <!-- Card C1 -->
+      <div class="level-card card-c1">
+        <div>
+          <div class="level-card-header">
+            <h3 class="level-card-title">Style & Poésie</h3>
+            <span class="level-badge-pill pill-c1">C1</span>
+          </div>
+          <p class="level-card-desc">
+            Le e muet en versification classique, la scansion alexandrine, la diérèse stylistique et les doublets étymologiques.
+          </p>
+        </div>
+        <a href="levels/c1.html" class="level-card-btn btn-c1">Accéder au Niveau C1 →</a>
+      </div>
+
+      <!-- Card C2 -->
+      <div class="level-card card-c2">
+        <div>
+          <div class="level-card-header">
+            <h3 class="level-card-title">Expertise & Réformes</h3>
+            <span class="level-badge-pill pill-c2">C2</span>
+          </div>
+          <p class="level-card-desc">
+            La réforme orthographique de 1990, les règles probabilistes de lecture et l'orthographe inverse pour écrire ce qu'on entend.
+          </p>
+        </div>
+        <a href="levels/c2.html" class="level-card-btn btn-c2">Accéder au Niveau C2 →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PHILOSOPHIE -->
+  <section id="principes" class="mp-section">
+    <h2>💡 Principes de conception et philosophie</h2>
+    <p>
+      Ce curriculum est <strong>entièrement monolingue et accessible à tous</strong>. Il est conçu spécifiquement pour être compris par des apprenants <em>qui ne sont pas linguistes</em>. Nous évitons le jargon académique pour privilégier des <strong>recettes de sons physiques et intuitives</strong>, des repères visuels clairs et des astuces mnémotechniques mémorables.
+    </p>
+
+    <div class="mnemonic-box">
+      <h4>💡 Les Mnémotechniques Essentielles du Marathon</h4>
+      <ul style="margin: 0.5rem 0 0 1.2rem; padding: 0;">
+        <li><strong>1. Consonnes finales sonores (« CaReFuL ») :</strong> En français, -t, -d, -s, -x, -p, -g sont muettes (<em>petit, chat, grands</em>). Seules <strong>C, R, F, L</strong> se prononcent le plus souvent en fin de mot (<em>ba<strong>c</strong>, me<strong>r</strong>, che<strong>f</strong>, ba<strong>l</strong></em>).</li>
+        <li><strong>2. Consonnes C et G :</strong>
+          <br>• CA-CO-CU = son dur [k] / CE-CI-CY = son doux [s].
+          <br>• GA-GO-GU = son dur [g] / GE-GI-GY = son doux [ʒ].
+        </li>
+        <li><strong>3. Recette du son U français [y] :</strong> Dites <strong>« i »</strong> avec un grand sourire, puis <strong>arrondissez fortement les lèvres</strong> sans bouger la langue ! Vous obtenez le <em>u</em> de <em>tu</em>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ANNEXES DE FREQUENCE -->
+  <section id="annexes" class="mp-section">
+    <h2>📊 Annexes de Fréquence & Répertoire Général</h2>
+    <p>Tables de référence indispensables classées par fréquence d'utilisation dans la langue française :</p>
+
+    <h3>1. Tableau complet des Graphèmes et Phonèmes principaux</h3>
+    <table class="mp-table">
+      <thead>
+        <tr><th>Graphème</th><th>Phonème principal</th><th>Condition</th><th>Fréquence</th><th>Exemples</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>e</strong></td><td>[ə] / [ɛ]</td><td>[ə] en syllabe ouverte ; [ɛ] devant consonne double.</td><td>★★★★★</td><td>le, chemin, belle</td></tr>
+        <tr><td><strong>a / au / eau</strong></td><td>[a] / [o]</td><td>a = [a] ; au/eau = [o] fermé.</td><td>★★★★★</td><td>ami, auto, bateau</td></tr>
+        <tr><td><strong>i / y</strong></td><td>[i]</td><td>Voyelle seule.</td><td>★★★★★</td><td>ici, lit, stylo</td></tr>
+        <tr><td><strong>ou</strong></td><td>[u]</td><td>Toujours [u].</td><td>★★★★★</td><td>nous, loup, vous</td></tr>
+        <tr><td><strong>an / en</strong></td><td>[ɑ̃]</td><td>En fin de syllabe sans voyelle suivante.</td><td>★★★★★</td><td>enfant, ensemble</td></tr>
+        <tr><td><strong>in / ain / ein</strong></td><td>[ɛ̃]</td><td>En fin de syllabe.</td><td>★★★★☆</td><td>matin, pain, plein</td></tr>
+        <tr><td><strong>on</strong></td><td>[ɔ̃]</td><td>En fin de syllabe.</td><td>★★★★☆</td><td>bonbon, maison</td></tr>
+      </tbody>
+    </table>
+
+    <h3>2. Top Exceptions Orthographiques du Français</h3>
+    <table class="mp-table">
+      <thead>
+        <tr><th>Mot</th><th>Prononciation réelle</th><th>Piège principal</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>monsieur</strong></td><td>[məsjø]</td><td>La syllabe 'mon' se lit 'me'.</td></tr>
+        <tr><td><strong>femme</strong></td><td>[fam]</td><td>La voyelle 'e' se lit 'a'.</td></tr>
+        <tr><td><strong>oignon</strong></td><td>[ɔɲɔ̃]</td><td>La lettre 'i' est totalement muette.</td></tr>
+        <tr><td><strong>second</strong></td><td>[səgɔ̃]</td><td>La lettre 'c' se lit [g].</td></tr>
+        <tr><td><strong>faisons / faisais</strong></td><td>[fəzɔ̃] / [fəzɛ]</td><td>Le digramme 'ai' se lit 'e' [ə].</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+</main>
+
+<footer class="site-footer" style="background: #1b4332; color: #d8f3dc; padding: 2.5rem 1.5rem; text-align: center; margin-top: 3rem;">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <p style="margin-bottom: 0.5rem; font-weight: 700; color: #ffffff;">COSYlanguages · Marathon de Prononciation Française</p>
+    <p style="margin-bottom: 1rem; font-size: 0.9rem;"><a href="index.html" style="color: #74c69d; text-decoration: none;">← Retour au Hub Français</a> | <a href="pronunciation.html" style="color: #74c69d; text-decoration: none;">Guide de Prononciation</a></p>
+    <p style="font-size: 0.8rem; color: #b7e4c7;">© 2026 COSYlanguages. Tous droits réservés.</p>
+  </div>
+</footer>
+
+<script src="../../js/data/languages.js"></script>
+<script src="../../js/core/engine.js"></script>
+<script src="../../js/core/i18n.js"></script>
+<script src="../../js/core/ui.js"></script>
+</body>
+</html>

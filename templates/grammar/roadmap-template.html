@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="xx">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Language Name Grammar Reference — COSYlanguages</title>
+<link rel="icon" href="../../images/logos/cosylanguages.png">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&family=Lora:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/tokens.css">
+<link rel="stylesheet" href="../../css/base.css">
+<link rel="stylesheet" href="../../css/components.css">
+<link rel="stylesheet" href="../../css/layout.css">
+</head>
+<body class="grammar-body">
+
+<div class="grammar-header-new">
+  <div>
+    <div class="breadcrumb">Student Area 🔐</div>
+    <h1>Language Name Grammar Roadmap 🏳️</h1>
+  </div>
+</div>
+
+<div class="grammar-layout">
+<nav class="grammar-sidebar">
+  <div class="gs-label">Starter (A1)</div>
+  <a class="gs-item active" href="#topic_1">Topic 1</a>
+
+  <div class="gs-label">Elementary (A2)</div>
+  <a class="gs-item" href="#topic_2">Topic 2</a>
+
+  <div class="gs-label">Intermediate (B1)</div>
+  <a class="gs-item" href="#topic_3">Topic 3</a>
+
+  <div class="gs-label" id="nav-label">Navigation</div>
+  <a class="gs-item" id="all-roadmaps-link" href="../grammar-reference.html">← All Roadmaps</a>
+</nav>
+
+<main class="grammar-main">
+  <div class="grammar-section-title">Language Name: Grammar Reference & Roadmap</div>
+
+  <!-- A1 SECTION -->
+  <div class="level-section" id="topic_1">
+    <div class="level-badge">A1: STARTER</div>
+    <div class="g-card">
+      <div class="card-title">Topic Title</div>
+      <p class="g-desc">Description in the target language.</p>
+      <div class="g-lesson-grid">
+        <a href="morphology/xx-lesson.html" class="g-lesson-btn">Open Interactive Lesson 🚀</a>
+      </div>
+    </div>
+  </div>
+
+</main>
+</div>
+
+<script>
+const items = document.querySelectorAll('.gs-item');
+const sections = document.querySelectorAll('.level-section');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      items.forEach(i => i.classList.remove('active'));
+      const link = document.querySelector(".gs-item[href=\"#" + entry.target.id + "\"]");
+      if (link) link.classList.add('active');
+    }
+  });
+}, { threshold: 0.3 });
+sections.forEach(s => observer.observe(s));
+</script>
+
+<script src="../../js/data/languages.js"></script>
+<script src="../../js/core/engine.js"></script>
+<script src="../../js/core/i18n.js"></script>
+<script src="../../js/core/ui.js"></script>
+</body>
+</html>

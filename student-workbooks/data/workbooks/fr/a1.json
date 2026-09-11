@@ -1,0 +1,50 @@
+{
+  "language": "fr",
+  "level": "a1",
+  "topics": [
+    {
+      "id": "fr-a1-intro",
+      "lang": "fr",
+      "flag": "🇫🇷",
+      "level": "a1",
+      "title": "Salutations",
+      "desc": "Greetings & introductions",
+      "img": "images/cosyfrench.png",
+      "grammarBlocks": [
+        {
+          "title": "Dire bonjour",
+          "html": "\n        <table class=\"wb-table\">\n          <tr class=\"wt-sec\"><td colspan=\"2\">🇫🇷 Greetings</td></tr>\n          <tr><td class=\"wt-label\">Bonjour / Salut</td><td class=\"wt-l\"><span class=\"key-v\">Bonjour !</span> · <span class=\"key-v\">Salut !</span></td></tr>\n          <tr><td class=\"wt-label\">Je m'appelle…</td><td class=\"wt-l\"><span class=\"key-v\">Je m'appelle</span> Marie.</td></tr>\n          <tr><td class=\"wt-label\">Au revoir</td><td class=\"wt-l\"><span class=\"key-v\">Au revoir !</span> · <span class=\"key-v\">À bientôt !</span></td></tr>\n        </table>"
+        },
+        {
+          "title": "Les Accents",
+          "html": "\n        <table class=\"wb-table\">\n          <tr class=\"wt-sec\"><td colspan=\"3\">🔡 French Accents</td></tr>\n          <tr><td class=\"wt-label\">é</td><td class=\"wt-c\">accent aigu</td><td class=\"wt-l\">café</td></tr>\n          <tr><td class=\"wt-label\">à / è / ù</td><td class=\"wt-c\">accent grave</td><td class=\"wt-l\">très, à</td></tr>\n          <tr><td class=\"wt-label\">â / ê / î / ô / û</td><td class=\"wt-c\">circonflexe</td><td class=\"wt-l\">hôtel</td></tr>\n          <tr><td class=\"wt-label\">ç</td><td class=\"wt-c\">cédille</td><td class=\"wt-l\">français</td></tr>\n        </table>"
+        },
+        {
+          "title": "Les Nombres 1-10",
+          "html": "\n        <table class=\"wb-table\">\n          <tr class=\"wt-sec\"><td colspan=\"2\">🔢 Numbers 1-10</td></tr>\n          <tr><td class=\"wt-label\">1-3</td><td class=\"wt-l\">un, deux, trois</td></tr>\n          <tr><td class=\"wt-label\">4-6</td><td class=\"wt-l\">quatre, cinq, six</td></tr>\n          <tr><td class=\"wt-label\">7-10</td><td class=\"wt-l\">sept, huit, neuf, dix</td></tr>\n          <tr class=\"wt-note\"><td colspan=\"2\">💡 Watch the pronunciation of \"six\" and \"dix\"!</td></tr>\n        </table>"
+        }
+      ],
+      "exercises": [
+        {
+          "id": "fr-a1-0-1",
+          "q": "How do you say \"Hello\" in French (formal)?",
+          "type": "fill",
+          "ans": "Bonjour",
+          "fb": "✅ Bonjour !"
+        },
+        {
+          "id": "fr-a1-0-2",
+          "q": "Which accent is in the word \"café\"?",
+          "type": "mcq",
+          "opts": [
+            "grave",
+            "aigu",
+            "cédille"
+          ],
+          "ans": "aigu",
+          "fb": "✅ é = accent aigu"
+        }
+      ]
+    }
+  ]
+}

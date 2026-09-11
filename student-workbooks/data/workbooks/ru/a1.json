@@ -1,0 +1,42 @@
+{
+  "language": "ru",
+  "level": "a1",
+  "topics": [
+    {
+      "id": "ru-a1-alpha",
+      "lang": "ru",
+      "flag": "🇷🇺",
+      "level": "a1",
+      "title": "Алфавит и Приветствия",
+      "desc": "The Cyrillic Alphabet & Greetings",
+      "img": "images/cosyrussian.png",
+      "grammarBlocks": [
+        {
+          "title": "False Friends (Looks like English, sounds different)",
+          "html": "\n        <table class=\"wb-table\">\n          <tr class=\"wt-sec\"><td colspan=\"3\">⚠️ Watch out!</td></tr>\n          <tr><td class=\"wt-label\">В в</td><td class=\"wt-c\">/v/</td><td class=\"wt-l\">Like <span class=\"key-v\">V</span>et (NOT W)</td></tr>\n          <tr><td class=\"wt-label\">Н н</td><td class=\"wt-c\">/n/</td><td class=\"wt-l\">Like <span class=\"key-v\">N</span>et (NOT H)</td></tr>\n          <tr><td class=\"wt-label\">Р р</td><td class=\"wt-c\">/r/</td><td class=\"wt-l\">Like <span class=\"key-v\">R</span>at (NOT P)</td></tr>\n          <tr><td class=\"wt-label\">Х х</td><td class=\"wt-c\">/h/</td><td class=\"wt-l\">Like <span class=\"key-v\">H</span>ot (NOT X)</td></tr>\n          <tr class=\"wt-sec\"><td colspan=\"3\">👋 Greetings</td></tr>\n          <tr><td class=\"wt-label\">Привет / Покa</td><td class=\"wt-l\"><span class=\"key-v\">Privet</span> (Hi) / <span class=\"key-v\">Poka</span> (Bye)</td></tr>\n          <tr><td class=\"wt-label\">Меня зовут…</td><td class=\"wt-l\"><span class=\"key-v\">Menya zovut</span>...</td></tr>\n        </table>"
+        }
+      ],
+      "exercises": [
+        {
+          "id": "ru-a1-0-1",
+          "q": "В in Russian sounds like English...",
+          "type": "mcq",
+          "opts": [
+            "W",
+            "V",
+            "B"
+          ],
+          "ans": "V",
+          "fb": "✅ В = /v/"
+        },
+        {
+          "id": "ru-a1-0-2",
+          "q": "How do you say \"Hi\" informally in Russian?",
+          "type": "fill",
+          "ans": "Привет",
+          "fb": "✅ Привет!"
+        }
+      ]
+    }
+  ]
+}

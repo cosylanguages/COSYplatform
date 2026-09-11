@@ -1,0 +1,42 @@
+{
+  "language": "it",
+  "level": "a1",
+  "topics": [
+    {
+      "id": "it-a1-intro",
+      "lang": "it",
+      "flag": "🇮🇹",
+      "level": "a1",
+      "title": "Saluti e Numeri",
+      "desc": "Greetings & numbers 1-5",
+      "img": "images/cosyitalian.png",
+      "grammarBlocks": [
+        {
+          "title": "Basic greetings",
+          "html": "\n        <table class=\"wb-table\">\n          <tr class=\"wt-sec\"><td colspan=\"2\">🇮🇹 Saluti</td></tr>\n          <tr><td class=\"wt-label\">Buongiorno / Ciao</td><td class=\"wt-l\"><span class=\"key-v\">Buongiorno!</span> · <span class=\"key-v\">Ciao!</span></td></tr>\n          <tr><td class=\"wt-label\">Mi chiamo…</td><td class=\"wt-l\"><span class=\"key-v\">Mi chiamo</span> Luca.</td></tr>\n          <tr class=\"wt-sec\"><td colspan=\"2\">🔢 Numeri 1-5</td></tr>\n          <tr><td class=\"wt-label\">1, 2, 3</td><td class=\"wt-l\">uno, due, tre</td></tr>\n          <tr><td class=\"wt-label\">4, 5</td><td class=\"wt-l\">quattro, cinque</td></tr>\n        </table>"
+        }
+      ],
+      "exercises": [
+        {
+          "id": "it-a1-0-1",
+          "q": "How do you say \"My name is\" in Italian?",
+          "type": "fill",
+          "ans": "Mi chiamo",
+          "fb": "✅ Mi chiamo Luca."
+        },
+        {
+          "id": "it-a1-0-2",
+          "q": "What is \"three\" in Italian?",
+          "type": "mcq",
+          "opts": [
+            "uno",
+            "due",
+            "tre"
+          ],
+          "ans": "tre",
+          "fb": "✅ tre = 3"
+        }
+      ]
+    }
+  ]
+}
