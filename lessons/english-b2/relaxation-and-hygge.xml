@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cosy-lesson id="english-b2-lesson-01-hygge" level="B2" language="en" title="Relaxation and Hygge">
+
+  <!-- SLIDE 1: Title & Objectives -->
+  <cosy-slide id="slide-1" title="Lesson Overview" stage="lead-in">
+    <p><cosy-image resource-id="222582" alt="Cozy setting with tea and blanket" /></p>
+    <p>How do you relax after a difficult week? In a noisy bar with friends or at home, under a cosy blanket, with a book? What do you know about relaxation techniques like <cosy-text type="em">hygge</cosy-text>, <cosy-text type="em">coorie</cosy-text>, and <cosy-text type="em">kalsarikännit</cosy-text>?</p>
+
+    <cosy-blockquote importance="basic">
+      <p>Today for 50 minutes, we're going to talk about relaxation and introduce you to the most effective relaxation techniques. It won't be about extreme forms of relaxation, but rather about being comfortable with yourself, and peace and concentration. Among other things, it helps effective language learning. Have a nice lesson!</p>
+    </cosy-blockquote>
+
+    <cosy-instruction>Lesson objectives:</cosy-instruction>
+    <ul>
+      <li>to <cosy-text type="strong">discuss</cosy-text> relaxation techniques typical of different countries;</li>
+      <li>to <cosy-text type="strong">enlarge</cosy-text> vocabulary on the topic of rest;</li>
+      <li>to <cosy-text type="strong">learn</cosy-text> new ways of talking about present habits.</li>
+    </ul>
+
+    <cosy-choice>
+      <cosy-choice-option>
+        <cosy-choice-option-title>Wordlist</cosy-choice-option-title>
+        <cosy-choice-option-content>
+          <h3>Words to talk about rest</h3>
+          <cosy-vocabulary>
+            <cosy-vocabulary-item meaning-id="105868" word="cozy" definition="giving a feeling of comfort and warmth" />
+            <cosy-vocabulary-item meaning-id="18358" word="unwind" definition="to relax after a period of work" />
+            <cosy-vocabulary-item meaning-id="171694" word="curl up" definition="to sit or lie in a comfortable position with legs pulled up" />
+            <cosy-vocabulary-item meaning-id="13712" word="peaceful" definition="tranquil and quiet" />
+            <cosy-vocabulary-item meaning-id="119998" word="lifestyle trend" definition="a popular way of living" />
+          </cosy-vocabulary>
+          <h3>Words to describe habits</h3>
+          <cosy-vocabulary>
+            <cosy-vocabulary-item meaning-id="239639" word="tend to" definition="to be likely to act or behave in a particular way" />
+            <cosy-vocabulary-item meaning-id="172599" word="prone to" definition="likely or liable to suffer from, do, or experience something" />
+            <cosy-vocabulary-item meaning-id="235875" word="keep -ing" definition="to continue doing something continuously or repeatedly" />
+          </cosy-vocabulary>
+        </cosy-choice-option-content>
+      </cosy-choice-option>
+      <cosy-choice-option>
+        <cosy-choice-option-title>Grammar: «Speaking about the present»</cosy-choice-option-title>
+        <cosy-choice-option-content>
+          <cosy-grammar-material id="862" title="Structures to describe habits (tend to, be prone to, keep doing, as a rule)" />
+        </cosy-choice-option-content>
+      </cosy-choice-option>
+    </cosy-choice>
+  </cosy-slide>
+
+  <!-- SLIDE 2: Teacher Check List & Aloha Introductory Guidance -->
+  <cosy-slide id="slide-2" title="Teacher Guidance &amp; First Lesson Checklist" stage="teacher-guide">
+    <p><cosy-image resource-id="414867" alt="Teacher guidance banner" /></p>
+    <cosy-instruction>Read the teacher's instruction to the lesson</cosy-instruction>
+
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Check list:</cosy-text></p>
+      <ol>
+        <li><cosy-text type="strong">🕒 Limited number of lessons</cosy-text>: Remember that your student has 40 lessons. Remind them rescheduling is better than canceling.</li>
+        <li><cosy-text type="strong">👋 Use the introductory slides</cosy-text>: Spend ~20 minutes on introductory goals, goals alignment, and course map.</li>
+        <li><cosy-text type="strong">🎯 Don’t forget the main lesson topic</cosy-text>: Balance icebreaker with today's relaxation topic.</li>
+        <li><cosy-text type="strong">🛠 Helpful tools in the programme</cosy-text>: Introduce Speaking Clubs, AI tools, Talks, and Vocabulary trainer.</li>
+      </ol>
+    </cosy-blockquote>
+
+    <cosy-teacher-notes type="instruction" title="Stage aim">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> to discuss the student's interests and goals in learning English.</p>
+    </cosy-teacher-notes>
+
+    <cosy-teacher-notes type="speech">
+      <p>Hello! I'm really glad to meet you. Today we'll start with a short intro to align on your learning goals and interests, then dive into our main topic: Relaxation and Hygge!</p>
+    </cosy-teacher-notes>
+  </cosy-slide>
+
+  <!-- SLIDE 3: Student Goals & Interests -->
+  <cosy-slide id="slide-3" title="Goals and Interests" stage="aloha-intro">
+    <cosy-teacher-notes type="instruction" is-expanded="true">
+      <p><cosy-text type="strong">Take notes</cosy-text> while you talk: goals, time frame, interests. You will need this to connect topics to the course map.</p>
+    </cosy-teacher-notes>
+
+    <h3>What is your aim?</h3>
+    <cosy-select>
+      <cosy-select-answers>
+        <cosy-select-item><cosy-select-item-title>to talk to people from other countries</cosy-select-item-title></cosy-select-item>
+        <cosy-select-item><cosy-select-item-title>to advance career or education</cosy-select-item-title></cosy-select-item>
+        <cosy-select-item><cosy-select-item-title>to travel more easily</cosy-select-item-title></cosy-select-item>
+        <cosy-select-item><cosy-select-item-title>to improve language skills generally</cosy-select-item-title></cosy-select-item>
+      </cosy-select-answers>
+    </cosy-select>
+
+    <h3>How often would you like to have lessons?</h3>
+    <cosy-test>
+      <cosy-test-question>
+        <cosy-test-question-text>Select frequency:</cosy-test-question-text>
+        <cosy-test-answers>
+          <cosy-test-item>Once a week</cosy-test-item>
+          <cosy-test-item>Twice a week</cosy-test-item>
+          <cosy-test-item>3 times a week</cosy-test-item>
+        </cosy-test-answers>
+      </cosy-test-question>
+    </cosy-test>
+
+    <h3>What are your interests?</h3>
+    <cosy-choice-image>
+      <cosy-choice-image-option resource-id="690033"><p>Travelling</p></cosy-choice-image-option>
+      <cosy-choice-image-option resource-id="690031"><p>Films and serials</p></cosy-choice-image-option>
+      <cosy-choice-image-option resource-id="690032"><p>Technology and science</p></cosy-choice-image-option>
+      <cosy-choice-image-option resource-id="690030"><p>Food</p></cosy-choice-image-option>
+      <cosy-choice-image-option resource-id="690028"><p>Sport and games</p></cosy-choice-image-option>
+      <cosy-choice-image-option resource-id="692025"><p>Business and career</p></cosy-choice-image-option>
+    </cosy-choice-image>
+  </cosy-slide>
+
+  <!-- SLIDE 4: Lead-in Discussion -->
+  <cosy-slide id="slide-4" title="Ways to Relieve Stress" stage="lead-in">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> to lead into the topic and generate interest.</p>
+    </cosy-teacher-notes>
+
+    <cosy-instruction>Look at the comments and discuss them with your teacher</cosy-instruction>
+
+    <cosy-blockquote importance="low">
+      <p><cosy-text type="strong">Leon, Germany</cosy-text></p>
+      <p>I usually meet my friends in a bar somewhere to have a beer. We have a talk about the usual stuff. When you share some problems, they don't seem so serious anymore.</p>
+    </cosy-blockquote>
+
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Louise, France</cosy-text></p>
+      <p>Here in France, people value beauty a lot. We call it "art of life"! When I dress up on Friday evening and sip a glass of good wine in a cafe, I feel rested and pleased.</p>
+    </cosy-blockquote>
+
+    <cosy-blockquote importance="low">
+      <p><cosy-text type="strong">Diego, Spain</cosy-text></p>
+      <p>Stress? Seriously? Here in Spain, we don't have stress ... because we take siestas!</p>
+    </cosy-blockquote>
+
+    <ol>
+      <li>Which of these ways to relieve stress is similar to yours?</li>
+      <li>Which is the least interesting to you?</li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 5: Grammar Practice (Habits) -->
+  <cosy-slide id="slide-5" title="Grammar: Speaking about Present Habits" stage="grammar-practice">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> to practise target grammar patterns (tend to, keep -ing, prone to, as a rule).</p>
+    </cosy-teacher-notes>
+
+    <cosy-instruction>Read and rewrite the sentences below using the given words in the correct form</cosy-instruction>
+
+    <ol>
+      <li>I often forget her birthday.
+        <p>I <cosy-input placeholder="to keep">
+          <cosy-input-answers>
+            <cosy-input-item>keep forgetting</cosy-input-item>
+          </cosy-input-answers>
+        </cosy-input> her birthday.</p>
+      </li>
+      <li>As a rule, he is friendly, but he can be bossy sometimes.
+        <p>He <cosy-input placeholder="to tend to">
+          <cosy-input-answers>
+            <cosy-input-item>tends to be</cosy-input-item>
+          </cosy-input-answers>
+        </cosy-input> friendly, but he can be bossy sometimes.</p>
+      </li>
+      <li>She is often critical of her colleagues.
+        <p>She <cosy-input placeholder="to have a tendency to">
+          <cosy-input-answers>
+            <cosy-input-item>has a tendency to be</cosy-input-item>
+          </cosy-input-answers>
+        </cosy-input> critical of her colleagues.</p>
+      </li>
+      <li>I tend to leave things to the last minute.
+        <p>I <cosy-input placeholder="to be prone to">
+          <cosy-input-answers>
+            <cosy-input-item>am prone to leaving</cosy-input-item>
+            <cosy-input-item>'m prone to leaving</cosy-input-item>
+          </cosy-input-answers>
+        </cosy-input> things to the last minute.</p>
+      </li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 6: Listening & Video Practice -->
+  <cosy-slide id="slide-6" title="Video: Scandinavian Hygge Lifestyle" stage="listening">
+    <cosy-instruction>Watch the video and choose the correct answers to the questions</cosy-instruction>
+    <cosy-iframe src="https://www.youtube.com/embed/Pl74ybpyNLk?si=1Yp-sTx9OHa56-p1" height="382" />
+
+    <cosy-teacher-notes type="tapescript">
+      <p>00:00 - Look up "hygge" on Instagram and you’ll find 1.7-million posts on wooly socks and hot chocolate.</p>
+      <p>00:36 - Hygge is being consciously cozy, but it has also been described as the art of creating a nice atmosphere.</p>
+    </cosy-teacher-notes>
+
+    <cosy-test>
+      <cosy-test-question>
+        <cosy-test-question-text>What is "hygge" often associated with?</cosy-test-question-text>
+        <cosy-test-answers>
+          <cosy-test-item correct="true">Wooly socks and hot chocolate</cosy-test-item>
+          <cosy-test-item>Going to the gym</cosy-test-item>
+          <cosy-test-item>Working overtime</cosy-test-item>
+        </cosy-test-answers>
+      </cosy-test-question>
+
+      <cosy-test-question>
+        <cosy-test-question-text>What does Meik Wiking describe "hygge" as?</cosy-test-question-text>
+        <cosy-test-answers>
+          <cosy-test-item>Just eating candy</cosy-test-item>
+          <cosy-test-item correct="true">Being consciously cozy</cosy-test-item>
+          <cosy-test-item>Doing homework</cosy-test-item>
+        </cosy-test-answers>
+      </cosy-test-question>
+    </cosy-test>
+  </cosy-slide>
+
+  <!-- SLIDE 7: Drag & Drop Vocabulary Practice -->
+  <cosy-slide id="slide-7" title="Vocabulary Practice" stage="controlled-practice">
+    <cosy-instruction>Complete the sentences with the missing words</cosy-instruction>
+    <cosy-dnd-text>
+      <cosy-dnd-text-drags>
+        <cosy-dnd-text-drag id="1">key ingredient</cosy-dnd-text-drag>
+        <cosy-dnd-text-drag id="2">lifestyle trend</cosy-dnd-text-drag>
+        <cosy-dnd-text-drag id="3">be aware of</cosy-dnd-text-drag>
+        <cosy-dnd-text-drag id="4">cosiness</cosy-dnd-text-drag>
+        <cosy-dnd-text-drag id="5">relaxation techniques</cosy-dnd-text-drag>
+      </cosy-dnd-text-drags>
+      <cosy-dnd-text-content>
+        <ol>
+          <li>This mixture of spices is the <cosy-dnd-text-drop drag-ids="1" /> of this amazing sauce.</li>
+          <li>Healthy eating is an extremely popular <cosy-dnd-text-drop drag-ids="2" /> at present.</li>
+          <li>Teenagers should <cosy-dnd-text-drop drag-ids="3" /> the danger of taking drugs.</li>
+          <li>Every evening we enjoy the <cosy-dnd-text-drop drag-ids="4" /> of the fire.</li>
+          <li>Different <cosy-dnd-text-drop drag-ids="5" /> can help reduce stress effects.</li>
+        </ol>
+      </cosy-dnd-text-content>
+    </cosy-dnd-text>
+  </cosy-slide>
+
+  <!-- SLIDE 8: Speaking Practice & Voice Recording -->
+  <cosy-slide id="slide-8" title="Speaking Practice: How Hygge Are You?" stage="freer-practice">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> to provide freer practice of target vocabulary and grammar structures.</p>
+    </cosy-teacher-notes>
+
+    <cosy-instruction>Give a 2-minute talk on how people tend to relax in your country or record your answer below</cosy-instruction>
+
+    <cosy-record time="120" counts="5" show-url="true" />
+  </cosy-slide>
+
+  <!-- SLIDE 9: Homework & Writing Assignment -->
+  <cosy-slide id="slide-9" title="Homework &amp; Essay Submission" stage="homework">
+    <cosy-instruction>Write a short text (up to 140 words / 900 characters) on the topic below</cosy-instruction>
+
+    <cosy-essay max-length="900">
+      <cosy-essay-topic>What helps you get rid of stress? / Can you offer a new way of relaxation?</cosy-essay-topic>
+    </cosy-essay>
+
+    <cosy-blockquote importance="basic">
+      <p>Don't forget to practice words in the CosyLanguages Mobile App or platform vocabulary trainer before your next lesson!</p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+</cosy-lesson>
