@@ -3,25 +3,122 @@
   "title": "General English B2 - Upper-Intermediate",
   "language": "en",
   "level": "B2",
-  "totalLessons": 40,
-  "description": "Comprehensive General English upper-intermediate program covering advanced vocabulary, habit expressions, work-life balance, complex grammar, and conversation practice.",
-  "units": [
+  "totalLessons": 58,
+  "description": "Comprehensive Upper-Intermediate (B2) English program covering 7 sections, 13 units, progress tests, optional lessons, 18+ sensitive topics, midterm/final exams, and final feedback.",
+  "sections": [
     {
-      "id": "unit-1",
-      "title": "Unit 1: Lifestyle, Relaxation & Well-being",
-      "lessons": [
-        "english-b2-lesson-01-hygge",
-        "english-b2-lesson-02-work-life-balance",
-        "english-b2-lesson-03-mindfulness"
-      ]
+      "sectionNumber": 1,
+      "title": "Section 1",
+      "units": [
+        {
+          "unitNumber": 1,
+          "title": "Unit 1. Lifestyle and interests",
+          "lessons": ["we-are-different", "productive-routine", "the-theory-of-laziness", "how-they-manipulate-us"]
+        },
+        {
+          "unitNumber": 2,
+          "title": "Unit 2. Storytelling",
+          "lessons": ["lets-tell-a-story", "nonverbal-communication", "public-speaking", "false-memories"]
+        }
+      ],
+      "assessments": ["progress-test-1-simple", "progress-test-1-full"]
     },
     {
-      "id": "unit-2",
-      "title": "Unit 2: Modern Career & Future Skills",
-      "lessons": [
-        "english-b2-lesson-04-remote-work",
-        "english-b2-lesson-05-tech-trends"
-      ]
+      "sectionNumber": 2,
+      "title": "Section 2",
+      "units": [
+        {
+          "unitNumber": 3,
+          "title": "Unit 3. New reality",
+          "lessons": ["superhumans", "esports", "going-cashless", "pets-of-the-future"]
+        },
+        {
+          "unitNumber": 4,
+          "title": "Unit 4. Communication",
+          "lessons": ["connected-but-alone", "communication-techniques", "language-of-social-media", "how-social-media-affects-us"]
+        }
+      ],
+      "assessments": ["progress-test-2-simple", "progress-test-2-full"]
+    },
+    {
+      "sectionNumber": 3,
+      "title": "Section 3",
+      "units": [
+        {
+          "unitNumber": 5,
+          "title": "Unit 5. Food culture",
+          "lessons": ["food-cult", "the-most-popular-diets", "gastrodiplomacy", "food-blogging"]
+        },
+        {
+          "unitNumber": 6,
+          "title": "Unit 6. Mind and emotions",
+          "lessons": ["emotional-first-aid", "lucid-dreams", "phobias-and-how-to-fight-them", "slow-life"]
+        }
+      ],
+      "assessments": ["progress-test-3-simple", "progress-test-3-full", "midterm-exam-simple", "midterm-exam-full"]
+    },
+    {
+      "sectionNumber": 4,
+      "title": "Section 4",
+      "units": [
+        {
+          "unitNumber": 7,
+          "title": "Unit 7. Talented people",
+          "lessons": ["creative-vs-rational", "weve-got-talent", "nature-of-genius", "talented-or-insane"]
+        },
+        {
+          "unitNumber": 8,
+          "title": "Unit 8. Travel",
+          "lessons": ["extreme-tourism", "travel-and-volunteer", "vr-changes-travelling", "space-tourism"]
+        }
+      ],
+      "assessments": ["progress-test-4-simple", "progress-test-4-full"]
+    },
+    {
+      "sectionNumber": 5,
+      "title": "Section 5",
+      "units": [
+        {
+          "unitNumber": 9,
+          "title": "Unit 9. Society",
+          "lessons": ["conspiracy-theories", "universal-basic-income", "first-world-problems", "can-we-say-no-to-violence"]
+        },
+        {
+          "unitNumber": 10,
+          "title": "Unit 10. Media",
+          "lessons": ["do-celebrities-make-a-difference", "fake-news", "freedom-of-speech", "filter-bubble"]
+        }
+      ],
+      "assessments": ["progress-test-5-simple", "progress-test-5-full"]
+    },
+    {
+      "sectionNumber": 6,
+      "title": "Section 6",
+      "units": [
+        {
+          "unitNumber": 11,
+          "title": "Unit 11. Education",
+          "lessons": ["unique-education-systems", "parenting-education", "hyperpolyglot", "soft-skills-or-hard-skills"]
+        },
+        {
+          "unitNumber": 12,
+          "title": "Unit 12. Workplace",
+          "lessons": ["flexible-workplace", "second-career", "jobs-that-are-hard-to-explain", "jump-off-the-career-ladder"]
+        }
+      ],
+      "assessments": ["progress-test-6-simple", "progress-test-6-full"]
+    },
+    {
+      "sectionNumber": 7,
+      "title": "Section 7",
+      "units": [
+        {
+          "unitNumber": 13,
+          "title": "Unit 13. Life stages",
+          "lessons": ["the-day-that-changed-my-life", "does-life-coaching-work", "crisis-of-meaning", "does-everybody-have-a-calling"]
+        }
+      ],
+      "assessments": ["final-exam-prep-simple", "final-exam-prep-full", "final-exam-simple", "final-exam-full", "productive-routine-extra", "final-feedback"]
     }
   ]
 }
