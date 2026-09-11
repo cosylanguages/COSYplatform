@@ -32,6 +32,9 @@ Welcome to the **COSYplatform Content Repository**! This repository hosts all in
 │   ├── grammar-english-b1.json  # Grammar English B1 Intermediate curriculum (51 modules)
 │   ├── grammar-english-b2.json  # Grammar English B2 Upper-Intermediate curriculum (52 modules)
 │   ├── grammar-english-c1.json  # Grammar English C1 Advanced curriculum (25 modules)
+│   ├── phrasal-verbs-english-a2.json # Phrasal Verbs A2 Pre-Intermediate curriculum (5 modules)
+│   ├── phrasal-verbs-english-b1.json # Phrasal Verbs B1 Intermediate curriculum (15 modules)
+│   ├── phrasal-verbs-english-b2.json # Phrasal Verbs B2 Upper-Intermediate curriculum (21 modules)
 │   └── introductory-english.json# Introductory Diagnostic curriculum (A0-C2)
 ├── roadmaps/                    # Course maps and lesson sequences
 │   ├── general-english-a0.json  # A0 Beginner course map (4 sections, 45 lessons)
@@ -51,6 +54,9 @@ Welcome to the **COSYplatform Content Repository**! This repository hosts all in
 │   ├── grammar-english-b1.json  # Grammar English B1 Intermediate course map (51 lessons)
 │   ├── grammar-english-b2.json  # Grammar English B2 Upper-Intermediate course map (52 lessons)
 │   ├── grammar-english-c1.json  # Grammar English C1 Advanced course map (25 lessons)
+│   ├── phrasal-verbs-english-a2.json # Phrasal Verbs A2 Pre-Intermediate course map (5 lessons)
+│   ├── phrasal-verbs-english-b1.json # Phrasal Verbs B1 Intermediate course map (15 lessons)
+│   ├── phrasal-verbs-english-b2.json # Phrasal Verbs B2 Upper-Intermediate course map (21 lessons)
 │   └── introductory-english.json# Introductory Diagnostic course map (6 level diagnostic modules)
 ├── manuals/                     # Teacher guides & onboarding instructions
 │   └── teacher-guide-first-lesson.md # First lesson ("Aloha") setup & multi-duration guide
