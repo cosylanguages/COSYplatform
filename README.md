@@ -26,6 +26,7 @@ Welcome to the **COSYplatform Content Repository**! This repository hosts all in
 │   ├── spoken-english-b1.json   # Spoken English B1 Intermediate curriculum (79 modules)
 │   ├── spoken-english-b2.json   # Spoken English B2 Upper-Intermediate curriculum (33 modules)
 │   ├── spoken-english-c1.json   # Spoken English C1 Advanced curriculum (31 modules)
+│   ├── grammar-english-b2.json  # Grammar English B2 Upper-Intermediate curriculum (52 modules)
 │   ├── grammar-english-c1.json  # Grammar English C1 Advanced curriculum (25 modules)
 │   └── introductory-english.json# Introductory Diagnostic curriculum (A0-C2)
 ├── roadmaps/                    # Course maps and lesson sequences
@@ -40,10 +41,11 @@ Welcome to the **COSYplatform Content Repository**! This repository hosts all in
 │   ├── spoken-english-b1.json   # Spoken English B1 Intermediate course map (79 lessons)
 │   ├── spoken-english-b2.json   # Spoken English B2 Upper-Intermediate course map (33 lessons)
 │   ├── spoken-english-c1.json   # Spoken English C1 Advanced course map (31 lessons)
+│   ├── grammar-english-b2.json  # Grammar English B2 Upper-Intermediate course map (52 lessons)
 │   ├── grammar-english-c1.json  # Grammar English C1 Advanced course map (25 lessons)
 │   └── introductory-english.json# Introductory Diagnostic course map (6 level diagnostic modules)
 ├── manuals/                     # Teacher guides & onboarding instructions
-│   └── teacher-guide-first-lesson.md # First lesson setup, diagnostic rubrics & multi-duration guide
+│   └── teacher-guide-first-lesson.md # First lesson ("Aloha") setup & multi-duration guide
 └── lessons/                     # Lesson interactive slides content
     ├── english-b2/
     │   ├── relaxation-and-hygge.xml  # XML interactive slide markup
