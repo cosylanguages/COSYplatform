@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cosy-lesson id="introductory-b1" level="B1" language="en" title="Introductory Lesson: Intermediate (B1)">
+
+  <!-- STEP 1: Let's Get Started -->
+  <cosy-slide id="step-1" title="👋 Let's Get Started!" stage="intro-greeting">
+    <cosy-instruction>Step 1: Welcome and Lesson Overview</cosy-instruction>
+
+    <p>Welcome to your first lesson with CosyLanguages!</p>
+
+    <cosy-blockquote importance="basic">
+      <p>In this 30–50 minute onboarding session, we will:</p>
+      <ul>
+        <li>Get to know each other through a quick warm-up;</li>
+        <li>Identify your primary learning goals and target timeline;</li>
+        <li>Discover your interests and preferred learning style;</li>
+        <li>Enjoy a short practice task and diagnostic conversation;</li>
+        <li>Select the best course and learning plan for you.</li>
+      </ul>
+    </cosy-blockquote>
+
+    <cosy-teacher-notes type="speech">
+      <p>Hello! Can you hear and see me well? My name is [Teacher Name]. In this lesson, we will get to know each other, discuss your goals, try out our interactive platform, and build your personalized learning roadmap!</p>
+    </cosy-teacher-notes>
+  </cosy-slide>
+
+  <!-- STEP 2: About You & Me -->
+  <cosy-slide id="step-2" title="🤝 About You &amp; Me" stage="intro-icebreaker">
+    <cosy-instruction>Step 2: Choose an icebreaker activity to get to know each other</cosy-instruction>
+
+    <cosy-choice>
+      <cosy-choice-option>
+        <cosy-choice-option-title>Blitz Questions</cosy-choice-option-title>
+        <cosy-choice-option-content>
+          <ol>
+            <li>Where are you from, and what do you do?</li>
+            <li>What is one thing you really enjoy doing in your free time?</li>
+            <li>Why did you decide to practice English today?</li>
+          </ol>
+        </cosy-choice-option-content>
+      </cosy-choice-option>
+      <cosy-choice-option>
+        <cosy-choice-option-title>Three Things in Common</cosy-choice-option-title>
+        <cosy-choice-option-content>
+          <p>Let's find three hobbies, favorite foods, or travel destinations that we both like!</p>
+        </cosy-choice-option-content>
+      </cosy-choice-option>
+    </cosy-choice>
+
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> to build rapport and establish a comfortable speaking environment.</p>
+    </cosy-teacher-notes>
+  </cosy-slide>
+
+  <!-- STEP 3: Goals and Interests -->
+  <cosy-slide id="step-3" title="🎯 Your English Goals &amp; Interests" stage="intro-goals">
+    <cosy-instruction>Step 3: Tell us about your goals and top interests</cosy-instruction>
+
+    <h3>Why do you learn English?</h3>
+    <cosy-select>
+      <cosy-select-answers>
+        <cosy-select-item><cosy-select-item-title>For traveling</cosy-select-item-title></cosy-select-item>
+        <cosy-select-item><cosy-select-item-title>For work &amp; career</cosy-select-item-title></cosy-select-item>
+        <cosy-select-item><cosy-select-item-title>For personal growth</cosy-select-item-title></cosy-select-item>
+        <cosy-select-item><cosy-select-item-title>For studying abroad</cosy-select-item-title></cosy-select-item>
+      </cosy-select-answers>
+    </cosy-select>
+
+    <h3>When do you want to reach your goal?</h3>
+    <cosy-test>
+      <cosy-test-question>
+        <cosy-test-question-text>Select target timeframe:</cosy-test-question-text>
+        <cosy-test-answers>
+          <cosy-test-item>In 1–3 months</cosy-test-item>
+          <cosy-test-item>In 6 months</cosy-test-item>
+          <cosy-test-item>In 1 year</cosy-test-item>
+          <cosy-test-item>No rush, continuous learning</cosy-test-item>
+        </cosy-test-answers>
+      </cosy-test-question>
+    </cosy-test>
+
+    <h3>Select your top interest topics:</h3>
+    <cosy-choice-image>
+      <cosy-choice-image-option resource-id="psychology"><p>Psychology &amp; Self-Development</p></cosy-choice-image-option>
+      <cosy-choice-image-option resource-id="movies"><p>Movies &amp; Series</p></cosy-choice-image-option>
+      <cosy-choice-image-option resource-id="business"><p>Business &amp; Career</p></cosy-choice-image-option>
+      <cosy-choice-image-option resource-id="culture"><p>Culture &amp; Art</p></cosy-choice-image-option>
+      <cosy-choice-image-option resource-id="travel"><p>Travel &amp; Lifestyle</p></cosy-choice-image-option>
+      <cosy-choice-image-option resource-id="tech"><p>Tech &amp; Science</p></cosy-choice-image-option>
+    </cosy-choice-image>
+  </cosy-slide>
+
+  <!-- STEP 4: How Do You Learn? -->
+  <cosy-slide id="step-4" title="🧠 How Do You Learn Best?" stage="intro-learning-style">
+    <cosy-instruction>Step 4: Answer a few quick questions about your learning preferences</cosy-instruction>
+
+    <h3>How would you like your teacher to correct your mistakes?</h3>
+    <cosy-select>
+      <cosy-select-answers>
+        <cosy-select-item><cosy-select-item-title>Correct me immediately as I speak</cosy-select-item-title></cosy-select-item>
+        <cosy-select-item><cosy-select-item-title>Correct me after I finish speaking</cosy-select-item-title></cosy-select-item>
+        <cosy-select-item><cosy-select-item-title>Discuss main mistakes at the end of the activity</cosy-select-item-title></cosy-select-item>
+        <cosy-select-item><cosy-select-item-title>Correct only mistakes that affect understanding</cosy-select-item-title></cosy-select-item>
+      </cosy-select-answers>
+    </cosy-select>
+
+    <h3>What helps you when a task feels challenging?</h3>
+    <ol>
+      <li>More time to think before answering</li>
+      <li>A hint or guiding Concept Check Question (CCQ)</li>
+      <li>A clear example in English</li>
+      <li>Keywords written down on the workspace</li>
+    </ol>
+  </cosy-slide>
+
+  <!-- STEP 5: Let's Just Talk -->
+  <cosy-slide id="step-5" title="🗣️ Let's Just Talk!" stage="intro-diagnostic-speaking">
+    <cosy-instruction>Step 5: Pick a prompt card and enjoy a short diagnostic conversation</cosy-instruction>
+
+    <cosy-choice>
+      <cosy-choice-option>
+        <cosy-choice-option-title>Card 1: Travel Memories</cosy-choice-option-title>
+        <cosy-choice-option-content>
+          <p>Describe a memorable trip you took. Where did you go, and what made it special?</p>
+        </cosy-choice-option-content>
+      </cosy-choice-option>
+      <cosy-choice-option>
+        <cosy-choice-option-title>Card 2: Daily Life &amp; Routine</cosy-choice-option-title>
+        <cosy-choice-option-content>
+          <p>What does a typical productive day look like for you?</p>
+        </cosy-choice-option-content>
+      </cosy-choice-option>
+    </cosy-choice>
+
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Level Rubric Verification (Intermediate B1):</cosy-text></p>
+      <ul>
+        <li>Grammar check: Present tenses, Narrative tenses, Infinitives/Gerunds, Relative clauses.</li>
+        <li>Vocabulary check: Collocations, phrasal verbs, topic-specific vocabulary, paraphrasing.</li>
+      </ul>
+    </cosy-teacher-notes>
+  </cosy-slide>
+
+  <!-- STEP 6: Choose Your Course -->
+  <cosy-slide id="step-6" title="🎓 Choose Your Course" stage="intro-course-recommendation">
+    <cosy-instruction>Step 6: Based on your goals and diagnostic speaking, here is your recommended course map</cosy-instruction>
+
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Recommended Main Course:</cosy-text> General English B1 (Intermediate)</p>
+      <p><cosy-text type="strong">Supplementary Modules:</cosy-text> Spoken English B1 + Vocabulary Trainer</p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- STEP 7: Lesson Results -->
+  <cosy-slide id="step-7" title="✅ Lesson Results" stage="intro-summary">
+    <cosy-instruction>Step 7: Confirm your course plan and schedule</cosy-instruction>
+
+    <p><cosy-text type="strong">Your Goal:</cosy-text> Master Intermediate (B1) and progress towards Upper-Intermediate (B2).</p>
+    <p><cosy-text type="strong">Recommended Frequency:</cosy-text> 3 lessons per week for steady progress in 4–6 months.</p>
+
+    <cosy-teacher-notes type="speech">
+      <p>Thank you for a great introductory lesson! You did wonderful today. I look forward to seeing you in our next class on [Day/Time]!</p>
+    </cosy-teacher-notes>
+  </cosy-slide>
+
+</cosy-lesson>
