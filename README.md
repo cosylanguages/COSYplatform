@@ -25,7 +25,9 @@ Welcome to the **COSYplatform Content Repository**! This repository hosts all in
 │   ├── spoken-english-a2.json   # Spoken English A2 Pre-Intermediate curriculum (68 modules)
 │   ├── spoken-english-b1.json   # Spoken English B1 Intermediate curriculum (79 modules)
 │   ├── spoken-english-b2.json   # Spoken English B2 Upper-Intermediate curriculum (33 modules)
-│   └── spoken-english-c1.json   # Spoken English C1 Advanced curriculum (31 modules)
+│   ├── spoken-english-c1.json   # Spoken English C1 Advanced curriculum (31 modules)
+│   ├── grammar-english-c1.json  # Grammar English C1 Advanced curriculum (25 modules)
+│   └── introductory-english.json# Introductory Diagnostic curriculum (A0-C2)
 ├── roadmaps/                    # Course maps and lesson sequences
 │   ├── general-english-a0.json  # A0 Beginner course map (4 sections, 45 lessons)
 │   ├── general-english-a1.json  # A1 Elementary course map (6 sections, 62 lessons)
@@ -37,15 +39,19 @@ Welcome to the **COSYplatform Content Repository**! This repository hosts all in
 │   ├── spoken-english-a2.json   # Spoken English A2 Pre-Intermediate course map (68 lessons)
 │   ├── spoken-english-b1.json   # Spoken English B1 Intermediate course map (79 lessons)
 │   ├── spoken-english-b2.json   # Spoken English B2 Upper-Intermediate course map (33 lessons)
-│   └── spoken-english-c1.json   # Spoken English C1 Advanced course map (31 lessons)
+│   ├── spoken-english-c1.json   # Spoken English C1 Advanced course map (31 lessons)
+│   ├── grammar-english-c1.json  # Grammar English C1 Advanced course map (25 lessons)
+│   └── introductory-english.json# Introductory Diagnostic course map (6 level diagnostic modules)
 ├── manuals/                     # Teacher guides & onboarding instructions
-│   └── teacher-guide-first-lesson.md # First lesson ("Aloha") setup & multi-duration guide
+│   └── teacher-guide-first-lesson.md # First lesson setup, diagnostic rubrics & multi-duration guide
 └── lessons/                     # Lesson interactive slides content
     ├── english-b2/
     │   ├── relaxation-and-hygge.xml  # XML interactive slide markup
     │   └── relaxation-and-hygge.json # JSON representation
-    └── english-c1/
-        └── opposites-attract.xml     # C1 Advanced sample lesson markup
+    ├── english-c1/
+    │   └── opposites-attract.xml     # C1 Advanced sample lesson markup
+    └── introductory/
+        └── introductory-b1.xml       # Introductory diagnostic B1 sample lesson markup
 ```
 
 ---
@@ -61,13 +67,14 @@ Welcome to the **COSYplatform Content Repository**! This repository hosts all in
    - **Teacher Page**: Live classroom view with stage aims (`<cosy-teacher-notes type="instruction">`), teacher speech prompts (`type="speech"`), extra hints (`type="additional"`), audio/video transcripts (`type="tapescript"`), and answer keys.
 
 3. **Multi-Duration Timing Models & Card Structures**:
-   - Standardized into **16 Live Lesson Cards** and **10 Homework Cards** for General English, and **15m / 30m / 60m** formats for Spoken English.
+   - Standardized into **16 Live Lesson Cards** and **10 Homework Cards** for General English, **15m / 30m / 60m** formats for Spoken English, and **30–50m** formats for Introductory Diagnostic Lessons.
    - **60 Minutes (50 Active Min)**: Fast-paced core vocabulary, grammar input, controlled practice, and speaking cool-down.
    - **90 Minutes (80 Active Min)**: Core + Deep Dive (authentic media analysis, extended pair work, case study).
    - **120 Minutes (110 Active Min)**: Core + Extension + Masterclass (live writing workshop, group debate, detailed action plan).
 
-4. **Introductory First Lessons ("Aloha")**:
-   - First lessons incorporate goal setting (Travel, Work, Myself, Studying), interest profiling (Movies, Tech, Business, Animals, Art, Food), learning preference quizzes, diagnostic speaking, course recommendation, and lesson results summary.
+4. **Introductory Diagnostic First Lessons**:
+   - Separate level diagnostic onboarding lessons for A0-A1, A2, B1, B2, C1, and C2.
+   - Incorporates greeting, icebreakers, goal setting (Travel, Work, Myself, Studying), interest profiling (Movies, Tech, Business, Animals, Art, Food), learning preference quizzes, level diagnostic speaking, course recommendation, and lesson results summary.
 
 5. **Group vs. Individual Class Modes**:
    - Dynamic slide rendering adapting to 1-on-1 tutoring (`mode="individual"`) or group breakout/pair-work sessions (`mode="group"`).
