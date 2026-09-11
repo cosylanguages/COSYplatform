@@ -1,8 +1,11 @@
 const fs = require("fs");
 const path = require("path");
-const Ajv2020 = require("ajv/dist/2020");
+const Ajv = require("ajv");
+const draft7MetaSchema = require("ajv/dist/refs/json-schema-draft-07.json");
 
-const ajv = new Ajv2020({ allErrors: true });
+const ajv = new Ajv({ allErrors: true });
+ajv.addMetaSchema(draft7MetaSchema);
+
 const schema = JSON.parse(fs.readFileSync("curriculums/_schema/curriculum.schema.json", "utf8"));
 const validate = ajv.compile(schema);
 
