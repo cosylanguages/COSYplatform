@@ -26,3 +26,33 @@ Curriculum definitions are validated directly against JSON Schema defined at:
 [`curriculums/_schema/curriculum.schema.json`](../curriculums/_schema/curriculum.schema.json)
 
 Refer directly to `curriculums/_schema/curriculum.schema.json` for validation rules, required fields, and structural definitions.
+
+---
+
+## Activity Resources Specification (`activities/`)
+
+Supplemental activity files (`activities/games.json`, `activities/tools.json`, `activities/print.json`) connect specific curriculum lessons to COSYgames, COSYtools, and printable learning assets.
+
+### Entry Schema
+
+Each activity item in these JSON arrays must conform to the following schema:
+
+```json
+{
+  "lessonId": "string (required, e.g. 'nice-to-meet-you')",
+  "curriculumId": "string (required, e.g. 'general-english-a1')",
+  "activityUrl": "string (required URL to resource)",
+  "activityType": "enum: 'game' | 'tool' | 'print' (required)",
+  "label": "string (required, descriptive title of activity)",
+  "category": "string (optional, e.g. 'vocabulary', 'grammar', 'speaking', 'worksheet')"
+}
+```
+
+### Properties Description
+
+- **`lessonId`**: The unique identifier of the target lesson as declared in the course roadmap/curriculum.
+- **`curriculumId`**: The unique course identifier (e.g., `general-english-a1`, `spoken-english-b1`).
+- **`activityUrl`**: Absolute or relative HTTP(S) URL pointing to the external or hosted interactive resource.
+- **`activityType`**: High-level classification of the resource. Must be `game` for COSYgames, `tool` for COSYtools reference engines, or `print` for printable assets/worksheets.
+- **`label`**: Human-readable label displayed on lesson view cards or teacher guides.
+- **`category`**: Optional tag for filtering activities by skill area (e.g. `grammar`, `vocabulary`, `speaking`, `roleplay-cards`).
