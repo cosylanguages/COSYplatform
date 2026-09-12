@@ -107,6 +107,34 @@ Welcome to the **COSYplatform Content Repository**! This repository hosts all in
 
 ---
 
+## 🔑 How to Grant Access
+
+Access to student and teacher workspaces is managed via unique direct links containing a secret token (`key`). No open signup or public buy buttons exist.
+
+### 1. Adding a Grant Entry
+To grant a student or teacher access, hand-edit `data/access-grants.json` and add a new entry:
+
+```json
+{
+  "key": "unique-random-token",
+  "role": "student",
+  "name": "Student Name",
+  "courses": [
+    "general-english-a1"
+  ]
+}
+```
+
+- **`role`**: `"student"` or `"teacher"`. Teachers (`role: "teacher"` or `courses: ["*"]`) see all courses and full teacher guidance.
+- **`courses`**: List of course IDs the student is entitled to view (e.g. `"general-english-a1"`, `"spoken-english-b2"`). Students will **only** see listed courses.
+
+### 2. Generating Access Links
+Provide the user with their personalized link:
+- **Student Workspace Link**: `https://<domain>/student.html?key=unique-random-token`
+- **Teacher Workspace Link**: `https://<domain>/teacher.html?key=unique-random-token`
+
+---
+
 ## 🛠 Adding New Lessons
 
 1. Read the markup specification in [`docs/lesson-format-spec.md`](docs/lesson-format-spec.md).

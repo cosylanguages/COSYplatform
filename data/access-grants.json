@@ -1,0 +1,28 @@
+{
+  "grants": [
+    {
+      "key": "demo-teacher-1",
+      "role": "teacher",
+      "name": "Demo Teacher",
+      "courses": ["*"]
+    },
+    {
+      "key": "demo-student-1",
+      "role": "student",
+      "name": "Demo Student 1",
+      "courses": [
+        "general-english-a1"
+      ]
+    },
+    {
+      "key": "demo-student-2",
+      "role": "student",
+      "name": "Demo Student 2",
+      "courses": [
+        "general-english-b2",
+        "spoken-english-b2",
+        "introductory-english"
+      ]
+    }
+  ]
+}
