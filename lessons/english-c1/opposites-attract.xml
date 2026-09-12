@@ -1,12 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cosy-lesson id="opposites-attract" level="C1" language="en" title="Opposites attract">
-  <cosy-slide id="slide-1" title="Lesson Overview" stage="lead-in">
+<cosy-lesson id="opposites-attract" level="C1" language="en" title="Opposites attract" default-duration="50" default-mode="all">
+
+  <!-- SLIDE 1: Lesson Overview -->
+  <cosy-slide id="slide-1" title="Lesson Overview" stage="lead-in" duration="50" mode="all">
     <cosy-instruction>Lesson objectives:</cosy-instruction>
     <ul>
       <li>to <cosy-text type="strong">discuss</cosy-text> relationship dynamics and personality traits;</li>
-      <li>to <cosy-text type="strong">explore</cosy-text> advanced vocabulary for describing interpersonal relationships;</li>
+      <li>to <cosy-text type="strong">explore</cosy-text> advanced C1 vocabulary for describing interpersonal relationships;</li>
       <li>to <cosy-text type="strong">analyze</cosy-text> whether contrasting personalities complement each other.</li>
     </ul>
+
+    <cosy-choice>
+      <cosy-choice-option>
+        <cosy-choice-option-title>Advanced C1 Wordlist</cosy-choice-option-title>
+        <cosy-choice-option-content>
+          <cosy-vocabulary>
+            <cosy-vocabulary-item word="complementary" definition="combining in such a way as to enhance or emphasize the qualities of each other" />
+            <cosy-vocabulary-item word="friction" definition="conflict or animosity caused by a clash of wills" />
+            <cosy-vocabulary-item word="extroverted" definition="outwardly expressive and socially confident" />
+            <cosy-vocabulary-item word="introverted" definition="reserved and focused on internal thoughts" />
+          </cosy-vocabulary>
+        </cosy-choice-option-content>
+      </cosy-choice-option>
+    </cosy-choice>
 
     <cosy-teacher-notes type="instruction" title="Stage aim">
       <p><cosy-text type="strong">Stage aim:</cosy-text> to introduce the topic of attraction between contrasting personality types and establish lesson goals.</p>
@@ -17,11 +33,34 @@
     </cosy-teacher-notes>
   </cosy-slide>
 
-  <cosy-slide id="slide-2" title="Discussion: Attraction Dynamics" stage="freer-practice">
+  <!-- SLIDE 2: Discussion & Lead-in -->
+  <cosy-slide id="slide-2" title="Discussion: Attraction Dynamics" stage="lead-in" duration="50" mode="all">
     <cosy-instruction>Discuss the following questions with your teacher</cosy-instruction>
     <ol>
       <li>In your experience, do people with opposite temperaments make better partners? Why or why not?</li>
       <li>What traits in a person do you find most complementary to your own?</li>
     </ol>
+
+    <cosy-teacher-notes type="speech">
+      <p>Ask CCQs: If two traits are complementary, do they fight each other or complete each other?</p>
+    </cosy-teacher-notes>
   </cosy-slide>
+
+  <!-- SLIDE 3: Controlled Vocabulary Practice -->
+  <cosy-slide id="slide-3" title="Controlled Practice: Personality Terms" stage="controlled-practice" duration="50" mode="all">
+    <cosy-instruction>Select the correct term to complete each statement</cosy-instruction>
+    <cosy-select>
+      <cosy-select-answers>
+        <cosy-select-item><cosy-select-item-title>friction</cosy-select-item-title></cosy-select-item>
+        <cosy-select-item correct="true"><cosy-select-item-title>complementary</cosy-select-item-title></cosy-select-item>
+      </cosy-select-answers>
+    </cosy-select>
+  </cosy-slide>
+
+  <!-- SLIDE 4: Freer Speaking & Voice Recording -->
+  <cosy-slide id="slide-4" title="Speaking &amp; Case Study" stage="freer-practice" duration="80" mode="group">
+    <cosy-instruction>Analyze the case study and record your response</cosy-instruction>
+    <cosy-record time="120" counts="5" />
+  </cosy-slide>
+
 </cosy-lesson>

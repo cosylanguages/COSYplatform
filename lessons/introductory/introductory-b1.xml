@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cosy-lesson id="introductory-b1" level="B1" language="en" title="Introductory Lesson: Intermediate (B1)">
+<cosy-lesson id="introductory-b1" level="B1" language="en" title="Introductory Lesson: Intermediate (B1)" default-duration="50" default-mode="all">
 
   <!-- STEP 1: Let's Get Started -->
-  <cosy-slide id="step-1" title="👋 Let's Get Started!" stage="intro-greeting">
+  <cosy-slide id="step-1" title="👋 Let's Get Started!" stage="intro-greeting" duration="50" mode="all">
     <cosy-instruction>Step 1: Welcome and Lesson Overview</cosy-instruction>
 
     <p>Welcome to your first lesson with CosyLanguages!</p>
@@ -24,7 +24,7 @@
   </cosy-slide>
 
   <!-- STEP 2: About You & Me -->
-  <cosy-slide id="step-2" title="🤝 About You &amp; Me" stage="intro-icebreaker">
+  <cosy-slide id="step-2" title="🤝 About You &amp; Me" stage="intro-icebreaker" duration="50" mode="all">
     <cosy-instruction>Step 2: Choose an icebreaker activity to get to know each other</cosy-instruction>
 
     <cosy-choice>
@@ -52,7 +52,7 @@
   </cosy-slide>
 
   <!-- STEP 3: Goals and Interests -->
-  <cosy-slide id="step-3" title="🎯 Your English Goals &amp; Interests" stage="intro-goals">
+  <cosy-slide id="step-3" title="🎯 Your English Goals &amp; Interests" stage="intro-goals" duration="50" mode="all">
     <cosy-instruction>Step 3: Tell us about your goals and top interests</cosy-instruction>
 
     <h3>Why do you learn English?</h3>
@@ -90,7 +90,7 @@
   </cosy-slide>
 
   <!-- STEP 4: How Do You Learn? -->
-  <cosy-slide id="step-4" title="🧠 How Do You Learn Best?" stage="intro-learning-style">
+  <cosy-slide id="step-4" title="🧠 How Do You Learn Best?" stage="intro-learning-style" duration="50" mode="all">
     <cosy-instruction>Step 4: Answer a few quick questions about your learning preferences</cosy-instruction>
 
     <h3>How would you like your teacher to correct your mistakes?</h3>
@@ -113,7 +113,7 @@
   </cosy-slide>
 
   <!-- STEP 5: Let's Just Talk -->
-  <cosy-slide id="step-5" title="🗣️ Let's Just Talk!" stage="intro-diagnostic-speaking">
+  <cosy-slide id="step-5" title="🗣️ Let's Just Talk!" stage="intro-diagnostic-speaking" duration="50" mode="all">
     <cosy-instruction>Step 5: Pick a prompt card and enjoy a short diagnostic conversation</cosy-instruction>
 
     <cosy-choice>
@@ -141,7 +141,7 @@
   </cosy-slide>
 
   <!-- STEP 6: Choose Your Course -->
-  <cosy-slide id="step-6" title="🎓 Choose Your Course" stage="intro-course-recommendation">
+  <cosy-slide id="step-6" title="🎓 Choose Your Course" stage="intro-course-recommendation" duration="50" mode="all">
     <cosy-instruction>Step 6: Based on your goals and diagnostic speaking, here is your recommended course map</cosy-instruction>
 
     <cosy-blockquote importance="basic">
@@ -151,7 +151,7 @@
   </cosy-slide>
 
   <!-- STEP 7: Lesson Results -->
-  <cosy-slide id="step-7" title="✅ Lesson Results" stage="intro-summary">
+  <cosy-slide id="step-7" title="✅ Lesson Results" stage="intro-summary" duration="50" mode="all">
     <cosy-instruction>Step 7: Confirm your course plan and schedule</cosy-instruction>
 
     <p><cosy-text type="strong">Your Goal:</cosy-text> Master Intermediate (B1) and progress towards Upper-Intermediate (B2).</p>

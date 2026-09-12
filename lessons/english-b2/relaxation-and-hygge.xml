@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cosy-lesson id="english-b2-lesson-01-hygge" level="B2" language="en" title="Relaxation and Hygge">
+<cosy-lesson id="english-b2-lesson-01-hygge" level="B2" language="en" title="Relaxation and Hygge" default-duration="50" default-mode="all">
 
   <!-- SLIDE 1: Title & Objectives -->
-  <cosy-slide id="slide-1" title="Lesson Overview" stage="lead-in">
+  <cosy-slide id="slide-1" title="Lesson Overview" stage="lead-in" duration="50" mode="all">
     <p><cosy-image resource-id="222582" alt="Cozy setting with tea and blanket" /></p>
     <p>How do you relax after a difficult week? In a noisy bar with friends or at home, under a cosy blanket, with a book? What do you know about relaxation techniques like <cosy-text type="em">hygge</cosy-text>, <cosy-text type="em">coorie</cosy-text>, and <cosy-text type="em">kalsarikännit</cosy-text>?</p>
 
@@ -47,7 +47,7 @@
   </cosy-slide>
 
   <!-- SLIDE 2: Teacher Check List & Aloha Introductory Guidance -->
-  <cosy-slide id="slide-2" title="Teacher Guidance &amp; First Lesson Checklist" stage="teacher-guide">
+  <cosy-slide id="slide-2" title="Teacher Guidance &amp; First Lesson Checklist" stage="teacher-guide" duration="50" mode="all">
     <p><cosy-image resource-id="414867" alt="Teacher guidance banner" /></p>
     <cosy-instruction>Read the teacher's instruction to the lesson</cosy-instruction>
 
@@ -71,7 +71,7 @@
   </cosy-slide>
 
   <!-- SLIDE 3: Student Goals & Interests -->
-  <cosy-slide id="slide-3" title="Goals and Interests" stage="aloha-intro">
+  <cosy-slide id="slide-3" title="Goals and Interests" stage="aloha-intro" duration="50" mode="all">
     <cosy-teacher-notes type="instruction" is-expanded="true">
       <p><cosy-text type="strong">Take notes</cosy-text> while you talk: goals, time frame, interests. You will need this to connect topics to the course map.</p>
     </cosy-teacher-notes>
@@ -110,7 +110,7 @@
   </cosy-slide>
 
   <!-- SLIDE 4: Lead-in Discussion -->
-  <cosy-slide id="slide-4" title="Ways to Relieve Stress" stage="lead-in">
+  <cosy-slide id="slide-4" title="Ways to Relieve Stress" stage="lead-in" duration="50" mode="all">
     <cosy-teacher-notes type="instruction">
       <p><cosy-text type="strong">Stage aim:</cosy-text> to lead into the topic and generate interest.</p>
     </cosy-teacher-notes>
@@ -139,7 +139,7 @@
   </cosy-slide>
 
   <!-- SLIDE 5: Grammar Practice (Habits) -->
-  <cosy-slide id="slide-5" title="Grammar: Speaking about Present Habits" stage="grammar-practice">
+  <cosy-slide id="slide-5" title="Grammar: Speaking about Present Habits" stage="grammar-practice" duration="50" mode="all">
     <cosy-teacher-notes type="instruction">
       <p><cosy-text type="strong">Stage aim:</cosy-text> to practise target grammar patterns (tend to, keep -ing, prone to, as a rule).</p>
     </cosy-teacher-notes>
@@ -180,7 +180,7 @@
   </cosy-slide>
 
   <!-- SLIDE 6: Listening & Video Practice -->
-  <cosy-slide id="slide-6" title="Video: Scandinavian Hygge Lifestyle" stage="listening">
+  <cosy-slide id="slide-6" title="Video: Scandinavian Hygge Lifestyle" stage="listening" duration="80" mode="all">
     <cosy-instruction>Watch the video and choose the correct answers to the questions</cosy-instruction>
     <cosy-iframe src="https://www.youtube.com/embed/Pl74ybpyNLk?si=1Yp-sTx9OHa56-p1" height="382" />
 
@@ -211,7 +211,7 @@
   </cosy-slide>
 
   <!-- SLIDE 7: Drag & Drop Vocabulary Practice -->
-  <cosy-slide id="slide-7" title="Vocabulary Practice" stage="controlled-practice">
+  <cosy-slide id="slide-7" title="Vocabulary Practice" stage="controlled-practice" duration="50" mode="all">
     <cosy-instruction>Complete the sentences with the missing words</cosy-instruction>
     <cosy-dnd-text>
       <cosy-dnd-text-drags>
@@ -234,7 +234,7 @@
   </cosy-slide>
 
   <!-- SLIDE 8: Speaking Practice & Voice Recording -->
-  <cosy-slide id="slide-8" title="Speaking Practice: How Hygge Are You?" stage="freer-practice">
+  <cosy-slide id="slide-8" title="Speaking Practice: How Hygge Are You?" stage="freer-practice" duration="50" mode="group">
     <cosy-teacher-notes type="instruction">
       <p><cosy-text type="strong">Stage aim:</cosy-text> to provide freer practice of target vocabulary and grammar structures.</p>
     </cosy-teacher-notes>
@@ -245,7 +245,7 @@
   </cosy-slide>
 
   <!-- SLIDE 9: Homework & Writing Assignment -->
-  <cosy-slide id="slide-9" title="Homework &amp; Essay Submission" stage="homework">
+  <cosy-slide id="slide-9" title="Homework &amp; Essay Submission" stage="homework" duration="110" mode="all">
     <cosy-instruction>Write a short text (up to 140 words / 900 characters) on the topic below</cosy-instruction>
 
     <cosy-essay max-length="900">

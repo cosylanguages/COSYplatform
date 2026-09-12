@@ -1,0 +1,149 @@
+{
+  "id": "introductory-b1",
+  "title": "Introductory Lesson: Intermediate (B1)",
+  "level": "B1",
+  "language": "en",
+  "defaultDuration": 50,
+  "defaultMode": "all",
+  "objectives": [
+    "welcome learner and outline first lesson structure",
+    "identify primary goals, timeframe, and interest topics",
+    "conduct diagnostic speaking evaluation",
+    "present personalized course map recommendation"
+  ],
+  "slides": [
+    {
+      "id": "step-1",
+      "title": "👋 Let's Get Started!",
+      "stage": "intro-greeting",
+      "duration": 50,
+      "mode": "all",
+      "teacherNotes": [
+        {
+          "type": "speech",
+          "content": "Hello! Can you hear and see me well? My name is [Teacher Name]."
+        }
+      ],
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Step 1: Welcome and Lesson Overview"
+        }
+      ]
+    },
+    {
+      "id": "step-2",
+      "title": "🤝 About You & Me",
+      "stage": "intro-icebreaker",
+      "duration": 50,
+      "mode": "all",
+      "teacherNotes": [
+        {
+          "type": "instruction",
+          "content": "Stage aim: to build rapport and establish a comfortable speaking environment."
+        }
+      ],
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Step 2: Choose an icebreaker activity to get to know each other"
+        }
+      ]
+    },
+    {
+      "id": "step-3",
+      "title": "🎯 Your English Goals & Interests",
+      "stage": "intro-goals",
+      "duration": 50,
+      "mode": "all",
+      "teacherNotes": [
+        {
+          "type": "instruction",
+          "content": "Select goals, timeline, and topics."
+        }
+      ],
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Step 3: Tell us about your goals and top interests"
+        }
+      ]
+    },
+    {
+      "id": "step-4",
+      "title": "🧠 How Do You Learn Best?",
+      "stage": "intro-learning-style",
+      "duration": 50,
+      "mode": "all",
+      "teacherNotes": [
+        {
+          "type": "instruction",
+          "content": "Identify error correction preference and learning style."
+        }
+      ],
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Step 4: Answer a few quick questions about your learning preferences"
+        }
+      ]
+    },
+    {
+      "id": "step-5",
+      "title": "🗣️ Let's Just Talk!",
+      "stage": "intro-diagnostic-speaking",
+      "duration": 50,
+      "mode": "all",
+      "teacherNotes": [
+        {
+          "type": "instruction",
+          "content": "Conduct B1 diagnostic speaking check."
+        }
+      ],
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Step 5: Pick a prompt card and enjoy a short diagnostic conversation"
+        }
+      ]
+    },
+    {
+      "id": "step-6",
+      "title": "🎓 Choose Your Course",
+      "stage": "intro-course-recommendation",
+      "duration": 50,
+      "mode": "all",
+      "teacherNotes": [
+        {
+          "type": "instruction",
+          "content": "Present recommended course map."
+        }
+      ],
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Step 6: Based on your goals and diagnostic speaking, here is your recommended course map"
+        }
+      ]
+    },
+    {
+      "id": "step-7",
+      "title": "✅ Lesson Results",
+      "stage": "intro-summary",
+      "duration": 50,
+      "mode": "all",
+      "teacherNotes": [
+        {
+          "type": "speech",
+          "content": "Thank you for a great introductory lesson! You did wonderful today."
+        }
+      ],
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Step 7: Confirm your course plan and schedule"
+        }
+      ]
+    }
+  ]
+}

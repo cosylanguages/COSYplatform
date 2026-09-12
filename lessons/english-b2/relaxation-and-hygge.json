@@ -3,6 +3,8 @@
   "title": "Relaxation and Hygge",
   "level": "B2",
   "language": "en",
+  "defaultDuration": 50,
+  "defaultMode": "all",
   "objectives": [
     "discuss relaxation techniques typical of different countries",
     "enlarge vocabulary on the topic of rest",
@@ -13,11 +15,13 @@
       "id": "slide-1",
       "title": "Lesson Overview",
       "stage": "lead-in",
+      "duration": 50,
+      "mode": "all",
       "teacherNotes": [
         {
           "type": "instruction",
           "title": "Stage aim",
-          "content": "Introduce topic and outline lesson objectives."
+          "content": "Introduce topic, set learning objectives, and review initial vocabulary."
         }
       ],
       "elements": [
@@ -33,15 +37,70 @@
     },
     {
       "id": "slide-2",
-      "title": "Ways to Relieve Stress",
-      "stage": "lead-in",
+      "title": "Teacher Guidance & First Lesson Checklist",
+      "stage": "teacher-guide",
+      "duration": 50,
+      "mode": "all",
       "teacherNotes": [
         {
+          "type": "instruction",
+          "title": "Stage aim",
+          "content": "Align student expectations and introduce course map tools."
+        },
+        {
           "type": "speech",
-          "content": "How do you usually relax after a stressful week?"
+          "content": "Hello! I'm really glad to meet you. Today we'll start with a short intro to align on your learning goals and interests, then dive into our main topic: Relaxation and Hygge!"
         }
       ],
       "elements": [
+        {
+          "type": "image",
+          "resourceId": "414867"
+        },
+        {
+          "type": "instruction",
+          "content": "Read the teacher's instruction to the lesson"
+        }
+      ]
+    },
+    {
+      "id": "slide-3",
+      "title": "Goals and Interests",
+      "stage": "aloha-intro",
+      "duration": 50,
+      "mode": "all",
+      "teacherNotes": [
+        {
+          "type": "instruction",
+          "title": "Teacher guidance",
+          "content": "Take notes while you talk: goals, time frame, interests."
+        }
+      ],
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "What is your aim?"
+        }
+      ]
+    },
+    {
+      "id": "slide-4",
+      "title": "Ways to Relieve Stress",
+      "stage": "lead-in",
+      "duration": 50,
+      "mode": "all",
+      "teacherNotes": [
+        {
+          "type": "instruction",
+          "title": "Stage aim",
+          "content": "Lead into the topic and generate interest using international quotes."
+        }
+      ],
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Look at the comments and discuss them with your teacher"
+        },
         {
           "type": "blockquote",
           "content": "Leon, Germany: I usually meet my friends in a bar somewhere to have a beer..."
@@ -49,19 +108,110 @@
       ]
     },
     {
-      "id": "slide-3",
+      "id": "slide-5",
       "title": "Grammar: Speaking about Present Habits",
       "stage": "grammar-practice",
+      "duration": 50,
+      "mode": "all",
       "teacherNotes": [
         {
           "type": "instruction",
+          "title": "Stage aim",
           "content": "Practise target grammar structures: tend to, keep -ing, prone to, as a rule."
         }
       ],
       "elements": [
         {
+          "type": "instruction",
+          "content": "Read and rewrite the sentences below using the given words in the correct form"
+        },
+        {
           "type": "input",
-          "answers": ["keep forgetting", "tends to be", "has a tendency to be", "am prone to leaving"]
+          "answers": ["keep forgetting", "tends to be", "has a tendency to be", "am prone to leaving", "'m prone to leaving"]
+        }
+      ]
+    },
+    {
+      "id": "slide-6",
+      "title": "Video: Scandinavian Hygge Lifestyle",
+      "stage": "listening",
+      "duration": 80,
+      "mode": "all",
+      "teacherNotes": [
+        {
+          "type": "tapescript",
+          "title": "Video Script",
+          "content": "00:00 - Look up 'hygge' on Instagram and you'll find 1.7-million posts... 00:36 - Hygge is being consciously cozy."
+        }
+      ],
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Watch the video and choose the correct answers to the questions"
+        },
+        {
+          "type": "iframe",
+          "src": "https://www.youtube.com/embed/Pl74ybpyNLk?si=1Yp-sTx9OHa56-p1"
+        }
+      ]
+    },
+    {
+      "id": "slide-7",
+      "title": "Vocabulary Practice",
+      "stage": "controlled-practice",
+      "duration": 50,
+      "mode": "all",
+      "teacherNotes": [
+        {
+          "type": "instruction",
+          "title": "Stage aim",
+          "content": "Controlled drag and drop exercise for target vocabulary."
+        }
+      ],
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Complete the sentences with the missing words"
+        }
+      ]
+    },
+    {
+      "id": "slide-8",
+      "title": "Speaking Practice: How Hygge Are You?",
+      "stage": "freer-practice",
+      "duration": 50,
+      "mode": "group",
+      "teacherNotes": [
+        {
+          "type": "instruction",
+          "title": "Stage aim",
+          "content": "Freer speaking practice using target habits grammar and relaxation terms."
+        }
+      ],
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Give a 2-minute talk on how people tend to relax in your country or record your answer below"
+        }
+      ]
+    },
+    {
+      "id": "slide-9",
+      "title": "Homework & Essay Submission",
+      "stage": "homework",
+      "duration": 110,
+      "mode": "all",
+      "teacherNotes": [
+        {
+          "type": "instruction",
+          "title": "Stage aim",
+          "content": "Set home writing task and remind student to practice with vocabulary trainer."
+        }
+      ],
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Write a short text (up to 140 words / 900 characters) on the topic below"
         }
       ]
     }
