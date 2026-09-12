@@ -3,63 +3,359 @@
   "title": "General English A0 Beginner Roadmap",
   "totalLessons": 45,
   "sequence": [
-    { "lessonNumber": 1, "id": "more-about-the-course", "title": "More about the course", "section": 0, "isOptional": false },
-    { "lessonNumber": 2, "id": "pronunciation-topics", "title": "Pronunciation topics", "section": 0, "isOptional": false },
-    { "lessonNumber": 3, "id": "grammar-topics", "title": "Grammar topics", "section": 0, "isOptional": false },
-    { "lessonNumber": 4, "id": "vocabulary-topics", "title": "Vocabulary topics", "section": 0, "isOptional": false },
-
-    { "lessonNumber": 5, "id": "hello-friend", "title": "Hello, friend!", "section": 1, "unit": "Unit 1. Hello there!", "isOptional": false },
-    { "lessonNumber": 6, "id": "pronouns-plus-to-be", "title": "Pronouns + to be (Where are you from?)", "section": 1, "unit": "Unit 1. Hello there!", "isOptional": false },
-    { "lessonNumber": 7, "id": "young-and-beautiful", "title": "Young and beautiful", "section": 1, "unit": "Unit 1. Hello there!", "isOptional": false },
-    { "lessonNumber": 8, "id": "time-to-show-off", "title": "Time to show off", "section": 1, "unit": "Unit 1. Hello there!", "isOptional": false },
-
-    { "lessonNumber": 9, "id": "its-my-family", "title": "It’s my family", "section": 1, "unit": "Unit 2. Big happy family", "isOptional": false },
-    { "lessonNumber": 10, "id": "how-do-you-feel-today", "title": "How do you feel today?", "section": 1, "unit": "Unit 2. Big happy family", "isOptional": false },
-    { "lessonNumber": 11, "id": "my-little-friend", "title": "My little friend", "section": 1, "unit": "Unit 2. Big happy family", "isOptional": false },
-    { "lessonNumber": 12, "id": "i-know-you", "title": "I know you", "section": 1, "unit": "Unit 2. Big happy family", "isOptional": false },
-
-    { "lessonNumber": 13, "id": "progress-test-1", "title": "Progress test 1", "section": 1, "isMilestone": true },
-
-    { "lessonNumber": 14, "id": "where-is-my-phone-again", "title": "Where is my phone again?", "section": 2, "unit": "Unit 3. What is it?", "isOptional": false },
-    { "lessonNumber": 15, "id": "whats-in-your-bag", "title": "What's in your bag?", "section": 2, "unit": "Unit 3. What is it?", "isOptional": false },
-    { "lessonNumber": 16, "id": "what-do-you-use-every-day", "title": "What do you use every day?", "section": 2, "unit": "Unit 3. What is it?", "isOptional": false },
-    { "lessonNumber": 17, "id": "pack-up", "title": "Pack up!", "section": 2, "unit": "Unit 3. What is it?", "isOptional": false },
-
-    { "lessonNumber": 18, "id": "my-daily-routine", "title": "My daily routine", "section": 2, "unit": "Unit 4. Daily routine", "isOptional": false },
-    { "lessonNumber": 19, "id": "who-does-it", "title": "Who does it?", "section": 2, "unit": "Unit 4. Daily routine", "isOptional": false },
-    { "lessonNumber": 20, "id": "a-man-of-100-faces", "title": "A man of 100 faces", "section": 2, "unit": "Unit 4. Daily routine", "isOptional": false },
-    { "lessonNumber": 21, "id": "temperament-matters", "title": "Temperament matters", "section": 2, "unit": "Unit 4. Daily routine", "isOptional": false },
-
-    { "lessonNumber": 22, "id": "progress-test-2", "title": "Progress test 2", "section": 2, "isMilestone": true },
-    { "lessonNumber": 23, "id": "midterm-exam", "title": "Midterm exam", "section": 2, "isExam": true },
-
-    { "lessonNumber": 24, "id": "whats-the-weather-like-today", "title": "What's the weather like today?", "section": 3, "unit": "Unit 5. Free time", "isOptional": false },
-    { "lessonNumber": 25, "id": "perfect-hobby", "title": "Perfect hobby", "section": 3, "unit": "Unit 5. Free time", "isOptional": false },
-    { "lessonNumber": 26, "id": "holidays-are-coming", "title": "Holidays are coming", "section": 3, "unit": "Unit 5. Free time", "isOptional": false },
-    { "lessonNumber": 27, "id": "top-presents", "title": "Top presents", "section": 3, "unit": "Unit 5. Free time", "isOptional": false },
-
-    { "lessonNumber": 28, "id": "we-need-a-flat", "title": "We need a flat", "section": 3, "unit": "Unit 6. Home sweet home", "isOptional": false },
-    { "lessonNumber": 29, "id": "furnish-it", "title": "Furnish it!", "section": 3, "unit": "Unit 6. Home sweet home", "isOptional": false },
-    { "lessonNumber": 30, "id": "housewarming-party", "title": "Housewarming party", "section": 3, "unit": "Unit 6. Home sweet home", "isOptional": false },
-    { "lessonNumber": 31, "id": "difficulties-of-house-move", "title": "Difficulties of house move", "section": 3, "unit": "Unit 6. Home sweet home", "isOptional": false },
-
-    { "lessonNumber": 32, "id": "progress-test-3", "title": "Progress test 3", "section": 3, "isMilestone": true },
-
-    { "lessonNumber": 33, "id": "all-sorts-of-diets", "title": "All sorts of diets", "section": 4, "unit": "Unit 7. Shopping", "isOptional": false },
-    { "lessonNumber": 34, "id": "try-this-shirt", "title": "Try this shirt", "section": 4, "unit": "Unit 7. Shopping", "isOptional": false },
-    { "lessonNumber": 35, "id": "shopping-day", "title": "Shopping day", "section": 4, "unit": "Unit 7. Shopping", "isOptional": false },
-    { "lessonNumber": 36, "id": "shop-online", "title": "Shop online", "section": 4, "unit": "Unit 7. Shopping", "isOptional": false },
-
-    { "lessonNumber": 37, "id": "live-long", "title": "Live long", "section": 4, "unit": "Unit 8. People around you", "isOptional": false },
-    { "lessonNumber": 38, "id": "remarkable-people", "title": "Remarkable people", "section": 4, "unit": "Unit 8. People around you", "isOptional": false },
-    { "lessonNumber": 39, "id": "how-i-met-my-friend", "title": "How I met my friend", "section": 4, "unit": "Unit 8. People around you", "isOptional": false },
-    { "lessonNumber": 40, "id": "what-a-record", "title": "What a record!", "section": 4, "unit": "Unit 8. People around you", "isOptional": false },
-
-    { "lessonNumber": 41, "id": "progress-test-4", "title": "Progress test 4", "section": 4, "isMilestone": true },
-    { "lessonNumber": 42, "id": "final-exam-prep", "title": "Final exam preparation", "section": 4, "isExam": true },
-    { "lessonNumber": 43, "id": "final-exam-prep-mixed", "title": "Final exam preparation (Mixed)", "section": 4, "isExam": true },
-    { "lessonNumber": 44, "id": "final-exam", "title": "Final exam", "section": 4, "isExam": true },
-    { "lessonNumber": 45, "id": "final-exam-mixed", "title": "Final exam (Mixed)", "section": 4, "isExam": true },
-    { "lessonNumber": 47, "id": "final-feedback", "title": "Final feedback", "section": 4, "isMilestone": true }
+    {
+      "lessonNumber": 1,
+      "id": "ge-a0-more-about-the-course",
+      "title": "More about the course",
+      "section": 0,
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 2,
+      "id": "ge-a0-pronunciation-topics",
+      "title": "Pronunciation topics",
+      "section": 0,
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 3,
+      "id": "ge-a0-grammar-topics",
+      "title": "Grammar topics",
+      "section": 0,
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 4,
+      "id": "ge-a0-vocabulary-topics",
+      "title": "Vocabulary topics",
+      "section": 0,
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 5,
+      "id": "hello-friend",
+      "title": "Hello, friend!",
+      "section": 1,
+      "unit": "Unit 1. Hello there!",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 6,
+      "id": "pronouns-plus-to-be",
+      "title": "Pronouns + to be (Where are you from?)",
+      "section": 1,
+      "unit": "Unit 1. Hello there!",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 7,
+      "id": "young-and-beautiful",
+      "title": "Young and beautiful",
+      "section": 1,
+      "unit": "Unit 1. Hello there!",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 8,
+      "id": "time-to-show-off",
+      "title": "Time to show off",
+      "section": 1,
+      "unit": "Unit 1. Hello there!",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 9,
+      "id": "its-my-family",
+      "title": "It\u2019s my family",
+      "section": 1,
+      "unit": "Unit 2. Big happy family",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 10,
+      "id": "how-do-you-feel-today",
+      "title": "How do you feel today?",
+      "section": 1,
+      "unit": "Unit 2. Big happy family",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 11,
+      "id": "my-little-friend",
+      "title": "My little friend",
+      "section": 1,
+      "unit": "Unit 2. Big happy family",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 12,
+      "id": "i-know-you",
+      "title": "I know you",
+      "section": 1,
+      "unit": "Unit 2. Big happy family",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 13,
+      "id": "ge-a0-progress-test-1",
+      "title": "Progress test 1",
+      "section": 1,
+      "isMilestone": true
+    },
+    {
+      "lessonNumber": 14,
+      "id": "where-is-my-phone-again",
+      "title": "Where is my phone again?",
+      "section": 2,
+      "unit": "Unit 3. What is it?",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 15,
+      "id": "whats-in-your-bag",
+      "title": "What's in your bag?",
+      "section": 2,
+      "unit": "Unit 3. What is it?",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 16,
+      "id": "what-do-you-use-every-day",
+      "title": "What do you use every day?",
+      "section": 2,
+      "unit": "Unit 3. What is it?",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 17,
+      "id": "pack-up",
+      "title": "Pack up!",
+      "section": 2,
+      "unit": "Unit 3. What is it?",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 18,
+      "id": "my-daily-routine",
+      "title": "My daily routine",
+      "section": 2,
+      "unit": "Unit 4. Daily routine",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 19,
+      "id": "who-does-it",
+      "title": "Who does it?",
+      "section": 2,
+      "unit": "Unit 4. Daily routine",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 20,
+      "id": "a-man-of-100-faces",
+      "title": "A man of 100 faces",
+      "section": 2,
+      "unit": "Unit 4. Daily routine",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 21,
+      "id": "temperament-matters",
+      "title": "Temperament matters",
+      "section": 2,
+      "unit": "Unit 4. Daily routine",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 22,
+      "id": "ge-a0-progress-test-2",
+      "title": "Progress test 2",
+      "section": 2,
+      "isMilestone": true
+    },
+    {
+      "lessonNumber": 23,
+      "id": "ge-a0-midterm-exam",
+      "title": "Midterm exam",
+      "section": 2,
+      "isExam": true
+    },
+    {
+      "lessonNumber": 24,
+      "id": "whats-the-weather-like-today",
+      "title": "What's the weather like today?",
+      "section": 3,
+      "unit": "Unit 5. Free time",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 25,
+      "id": "perfect-hobby",
+      "title": "Perfect hobby",
+      "section": 3,
+      "unit": "Unit 5. Free time",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 26,
+      "id": "holidays-are-coming",
+      "title": "Holidays are coming",
+      "section": 3,
+      "unit": "Unit 5. Free time",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 27,
+      "id": "top-presents",
+      "title": "Top presents",
+      "section": 3,
+      "unit": "Unit 5. Free time",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 28,
+      "id": "we-need-a-flat",
+      "title": "We need a flat",
+      "section": 3,
+      "unit": "Unit 6. Home sweet home",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 29,
+      "id": "furnish-it",
+      "title": "Furnish it!",
+      "section": 3,
+      "unit": "Unit 6. Home sweet home",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 30,
+      "id": "housewarming-party",
+      "title": "Housewarming party",
+      "section": 3,
+      "unit": "Unit 6. Home sweet home",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 31,
+      "id": "difficulties-of-house-move",
+      "title": "Difficulties of house move",
+      "section": 3,
+      "unit": "Unit 6. Home sweet home",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 32,
+      "id": "ge-a0-progress-test-3",
+      "title": "Progress test 3",
+      "section": 3,
+      "isMilestone": true
+    },
+    {
+      "lessonNumber": 33,
+      "id": "all-sorts-of-diets",
+      "title": "All sorts of diets",
+      "section": 4,
+      "unit": "Unit 7. Shopping",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 34,
+      "id": "try-this-shirt",
+      "title": "Try this shirt",
+      "section": 4,
+      "unit": "Unit 7. Shopping",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 35,
+      "id": "shopping-day",
+      "title": "Shopping day",
+      "section": 4,
+      "unit": "Unit 7. Shopping",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 36,
+      "id": "shop-online",
+      "title": "Shop online",
+      "section": 4,
+      "unit": "Unit 7. Shopping",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 37,
+      "id": "live-long",
+      "title": "Live long",
+      "section": 4,
+      "unit": "Unit 8. People around you",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 38,
+      "id": "remarkable-people",
+      "title": "Remarkable people",
+      "section": 4,
+      "unit": "Unit 8. People around you",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 39,
+      "id": "how-i-met-my-friend",
+      "title": "How I met my friend",
+      "section": 4,
+      "unit": "Unit 8. People around you",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 40,
+      "id": "what-a-record",
+      "title": "What a record!",
+      "section": 4,
+      "unit": "Unit 8. People around you",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 41,
+      "id": "ge-a0-progress-test-4",
+      "title": "Progress test 4",
+      "section": 4,
+      "isMilestone": true
+    },
+    {
+      "lessonNumber": 42,
+      "id": "ge-a0-final-exam-prep",
+      "title": "Final exam preparation",
+      "section": 4,
+      "isExam": true
+    },
+    {
+      "lessonNumber": 43,
+      "id": "final-exam-prep-mixed",
+      "title": "Final exam preparation (Mixed)",
+      "section": 4,
+      "isExam": true
+    },
+    {
+      "lessonNumber": 44,
+      "id": "ge-a0-final-exam",
+      "title": "Final exam",
+      "section": 4,
+      "isExam": true
+    },
+    {
+      "lessonNumber": 45,
+      "id": "final-exam-mixed",
+      "title": "Final exam (Mixed)",
+      "section": 4,
+      "isExam": true
+    },
+    {
+      "lessonNumber": 47,
+      "id": "ge-a0-final-feedback",
+      "title": "Final feedback",
+      "section": 4,
+      "isMilestone": true
+    }
   ]
 }

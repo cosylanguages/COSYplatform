@@ -2,32 +2,145 @@
   "curriculumId": "curriculum-spoken-english-a1",
   "title": "Spoken English A1 Elementary Roadmap",
   "totalLessons": 22,
-  "supportedDurations": [15, 30, 60],
+  "supportedDurations": [
+    15,
+    30,
+    60
+  ],
   "sequence": [
-    { "lessonNumber": 1, "id": "lifehacks-language-barrier", "title": "Lifehacks on how to get rid of a language barrier", "module": "Introducing yourself" },
-    { "lessonNumber": 2, "id": "small-talk-stranger", "title": "Small talk with a stranger", "module": "Introducing yourself" },
-    { "lessonNumber": 3, "id": "small-talk-neighbour", "title": "Small talk with a neighbour", "module": "Introducing yourself" },
-    { "lessonNumber": 4, "id": "small-talk-office", "title": "Small talk at the office", "module": "Introducing yourself" },
-
-    { "lessonNumber": 5, "id": "types-of-holidays", "title": "Types of holidays", "module": "Travelling & Transportation" },
-    { "lessonNumber": 6, "id": "ways-of-travelling", "title": "Ways of travelling", "module": "Travelling & Transportation" },
-    { "lessonNumber": 7, "id": "asking-for-recommendations", "title": "Asking for recommendations", "module": "Travelling & Transportation" },
-    { "lessonNumber": 8, "id": "giving-recommendations", "title": "Giving recommendations", "module": "Travelling & Transportation" },
-    { "lessonNumber": 9, "id": "checking-in-out-hotel", "title": "Checking in/out at the hotel", "module": "Travelling & Transportation" },
-    { "lessonNumber": 10, "id": "people-activities-hotel", "title": "People and activities at the hotel", "module": "Travelling & Transportation" },
-    { "lessonNumber": 11, "id": "solving-problems-hotel", "title": "Solving problems at the hotel", "module": "Travelling & Transportation" },
-    { "lessonNumber": 12, "id": "means-of-transport-city", "title": "Means of Transport in the City", "module": "Travelling & Transportation" },
-    { "lessonNumber": 13, "id": "navigating-public-transport", "title": "Navigating public transport", "module": "Travelling & Transportation" },
-
-    { "lessonNumber": 14, "id": "places-around-home", "title": "Places around your home", "module": "Home & Services" },
-    { "lessonNumber": 15, "id": "renting-flat", "title": "Renting a flat", "module": "Home & Services" },
-    { "lessonNumber": 16, "id": "plumber-electrician", "title": "How to get a plumber or an electrician in", "module": "Home & Services" },
-
-    { "lessonNumber": 17, "id": "coffee-shop", "title": "Coffee shop", "module": "Other" },
-    { "lessonNumber": 18, "id": "getting-bank-card", "title": "Getting a bank card", "module": "Other" },
-    { "lessonNumber": 19, "id": "mental-health-relaxation", "title": "Mental Health: Life Hacks for Relaxation and Well-Being", "module": "Other" },
-    { "lessonNumber": 20, "id": "memes-in-english", "title": "Memes in English", "module": "Other" },
-    { "lessonNumber": 21, "id": "revise-and-check", "title": "Revise and Check", "module": "Other", "isMilestone": true },
-    { "lessonNumber": 22, "id": "spoken-exam", "title": "Exam", "module": "Other", "isExam": true }
+    {
+      "lessonNumber": 1,
+      "id": "lifehacks-language-barrier",
+      "title": "Lifehacks on how to get rid of a language barrier",
+      "module": "Introducing yourself"
+    },
+    {
+      "lessonNumber": 2,
+      "id": "small-talk-stranger",
+      "title": "Small talk with a stranger",
+      "module": "Introducing yourself"
+    },
+    {
+      "lessonNumber": 3,
+      "id": "small-talk-neighbour",
+      "title": "Small talk with a neighbour",
+      "module": "Introducing yourself"
+    },
+    {
+      "lessonNumber": 4,
+      "id": "small-talk-office",
+      "title": "Small talk at the office",
+      "module": "Introducing yourself"
+    },
+    {
+      "lessonNumber": 5,
+      "id": "types-of-holidays",
+      "title": "Types of holidays",
+      "module": "Travelling & Transportation"
+    },
+    {
+      "lessonNumber": 6,
+      "id": "ways-of-travelling",
+      "title": "Ways of travelling",
+      "module": "Travelling & Transportation"
+    },
+    {
+      "lessonNumber": 7,
+      "id": "asking-for-recommendations",
+      "title": "Asking for recommendations",
+      "module": "Travelling & Transportation"
+    },
+    {
+      "lessonNumber": 8,
+      "id": "giving-recommendations",
+      "title": "Giving recommendations",
+      "module": "Travelling & Transportation"
+    },
+    {
+      "lessonNumber": 9,
+      "id": "checking-in-out-hotel",
+      "title": "Checking in/out at the hotel",
+      "module": "Travelling & Transportation"
+    },
+    {
+      "lessonNumber": 10,
+      "id": "people-activities-hotel",
+      "title": "People and activities at the hotel",
+      "module": "Travelling & Transportation"
+    },
+    {
+      "lessonNumber": 11,
+      "id": "solving-problems-hotel",
+      "title": "Solving problems at the hotel",
+      "module": "Travelling & Transportation"
+    },
+    {
+      "lessonNumber": 12,
+      "id": "means-of-transport-city",
+      "title": "Means of Transport in the City",
+      "module": "Travelling & Transportation"
+    },
+    {
+      "lessonNumber": 13,
+      "id": "navigating-public-transport",
+      "title": "Navigating public transport",
+      "module": "Travelling & Transportation"
+    },
+    {
+      "lessonNumber": 14,
+      "id": "places-around-home",
+      "title": "Places around your home",
+      "module": "Home & Services"
+    },
+    {
+      "lessonNumber": 15,
+      "id": "renting-flat",
+      "title": "Renting a flat",
+      "module": "Home & Services"
+    },
+    {
+      "lessonNumber": 16,
+      "id": "plumber-electrician",
+      "title": "How to get a plumber or an electrician in",
+      "module": "Home & Services"
+    },
+    {
+      "lessonNumber": 17,
+      "id": "coffee-shop",
+      "title": "Coffee shop",
+      "module": "Other"
+    },
+    {
+      "lessonNumber": 18,
+      "id": "getting-bank-card",
+      "title": "Getting a bank card",
+      "module": "Other"
+    },
+    {
+      "lessonNumber": 19,
+      "id": "mental-health-relaxation",
+      "title": "Mental Health: Life Hacks for Relaxation and Well-Being",
+      "module": "Other"
+    },
+    {
+      "lessonNumber": 20,
+      "id": "memes-in-english",
+      "title": "Memes in English",
+      "module": "Other"
+    },
+    {
+      "lessonNumber": 21,
+      "id": "se-a1-revise-and-check",
+      "title": "Revise and Check",
+      "module": "Other",
+      "isMilestone": true
+    },
+    {
+      "lessonNumber": 22,
+      "id": "se-a1-spoken-exam",
+      "title": "Exam",
+      "module": "Other",
+      "isExam": true
+    }
   ]
 }

@@ -6,11 +6,27 @@
   "totalLessons": 62,
   "description": "Comprehensive Elementary (A1) English program covering foundational grammar, vocabulary, pronunciation, 6 main sections, 12 units, progress tests, optional lessons, 18+ sensitive topics, midterm/final exams, and final feedback.",
   "introductory": [
-    { "id": "more-about-the-course", "title": "More about the course", "ageRestriction": "18+" },
-    { "id": "grammar-topics", "title": "Grammar topics" },
-    { "id": "grammar-translation", "title": "Grammar translation" },
-    { "id": "pronunciation-topics", "title": "Pronunciation topics" },
-    { "id": "vocabulary-topics", "title": "Vocabulary topics" }
+    {
+      "id": "ge-a1-more-about-the-course",
+      "title": "More about the course",
+      "ageRestriction": "18+"
+    },
+    {
+      "id": "ge-a1-grammar-topics",
+      "title": "Grammar topics"
+    },
+    {
+      "id": "grammar-translation",
+      "title": "Grammar translation"
+    },
+    {
+      "id": "ge-a1-pronunciation-topics",
+      "title": "Pronunciation topics"
+    },
+    {
+      "id": "ge-a1-vocabulary-topics",
+      "title": "Vocabulary topics"
+    }
   ],
   "sections": [
     {
@@ -20,15 +36,27 @@
         {
           "unitNumber": 1,
           "title": "Unit 1. Nice to meet you!",
-          "lessons": ["nice-to-meet-you", "more-about-me", "family-exchange", "world-of-people"]
+          "lessons": [
+            "nice-to-meet-you",
+            "more-about-me",
+            "family-exchange",
+            "world-of-people"
+          ]
         },
         {
           "unitNumber": 2,
           "title": "Unit 2. Routine and fun",
-          "lessons": ["where-do-real-heroes-work", "daily-routine", "lets-have-fun-together", "corporate-culture"]
+          "lessons": [
+            "where-do-real-heroes-work",
+            "daily-routine",
+            "lets-have-fun-together",
+            "corporate-culture"
+          ]
         }
       ],
-      "assessments": ["progress-test-1"]
+      "assessments": [
+        "ge-a1-progress-test-1"
+      ]
     },
     {
       "sectionNumber": 2,
@@ -37,15 +65,27 @@
         {
           "unitNumber": 3,
           "title": "Unit 3. Where I live",
-          "lessons": ["where-i-live", "what-a-mess", "making-it-cosy", "a-room-for-two"]
+          "lessons": [
+            "where-i-live",
+            "what-a-mess",
+            "making-it-cosy",
+            "a-room-for-two"
+          ]
         },
         {
           "unitNumber": 4,
           "title": "Unit 4. Free time",
-          "lessons": ["on-cloud-nine", "join-a-group", "no-limit", "the-art-of-doing-nothing"]
+          "lessons": [
+            "on-cloud-nine",
+            "join-a-group",
+            "no-limit",
+            "the-art-of-doing-nothing"
+          ]
         }
       ],
-      "assessments": ["progress-test-2"]
+      "assessments": [
+        "ge-a1-progress-test-2"
+      ]
     },
     {
       "sectionNumber": 3,
@@ -54,15 +94,28 @@
         {
           "unitNumber": 5,
           "title": "Unit 5. Food",
-          "lessons": ["whats-in-your-fridge", "ready-to-order", "happy-diet", "eating-tasty"]
+          "lessons": [
+            "whats-in-your-fridge",
+            "ready-to-order",
+            "happy-diet",
+            "eating-tasty"
+          ]
         },
         {
           "unitNumber": 6,
           "title": "Unit 6. Past",
-          "lessons": ["biographies", "history", "odd-coincidences", "the-power-of-storytelling"]
+          "lessons": [
+            "biographies",
+            "history",
+            "odd-coincidences",
+            "the-power-of-storytelling"
+          ]
         }
       ],
-      "assessments": ["progress-test-3", "midterm-exam"]
+      "assessments": [
+        "ge-a1-progress-test-3",
+        "ge-a1-midterm-exam"
+      ]
     },
     {
       "sectionNumber": 4,
@@ -71,15 +124,27 @@
         {
           "unitNumber": 7,
           "title": "Unit 7. Appearance",
-          "lessons": ["how-do-i-look", "clothes", "world-fashion", "wanted"]
+          "lessons": [
+            "how-do-i-look",
+            "clothes",
+            "world-fashion",
+            "wanted"
+          ]
         },
         {
           "unitNumber": 8,
           "title": "Unit 8. Nature",
-          "lessons": ["let-it-snow", "weather-forecast", "going-to-the-zoo", "amazing-water"]
+          "lessons": [
+            "let-it-snow",
+            "weather-forecast",
+            "going-to-the-zoo",
+            "amazing-water"
+          ]
         }
       ],
-      "assessments": ["progress-test-4"]
+      "assessments": [
+        "ge-a1-progress-test-4"
+      ]
     },
     {
       "sectionNumber": 5,
@@ -88,15 +153,27 @@
         {
           "unitNumber": 9,
           "title": "Unit 9. Shopping",
-          "lessons": ["at-a-shop", "im-just-looking", "black-friday", "best-present-ever"]
+          "lessons": [
+            "at-a-shop",
+            "im-just-looking",
+            "black-friday",
+            "best-present-ever"
+          ]
         },
         {
           "unitNumber": 10,
           "title": "Unit 10. Health",
-          "lessons": ["medical-problems", "doctors-advice", "are-you-ok", "not-a-disease"]
+          "lessons": [
+            "medical-problems",
+            "doctors-advice",
+            "are-you-ok",
+            "not-a-disease"
+          ]
         }
       ],
-      "assessments": ["progress-test-5"]
+      "assessments": [
+        "ge-a1-progress-test-5"
+      ]
     },
     {
       "sectionNumber": 6,
@@ -105,15 +182,30 @@
         {
           "unitNumber": 11,
           "title": "Unit 11. Holidays",
-          "lessons": ["the-best-place-ive-ever-seen", "not-only-sunbathing", "the-rich-in-the-city", "work-or-travel"]
+          "lessons": [
+            "the-best-place-ive-ever-seen",
+            "not-only-sunbathing",
+            "the-rich-in-the-city",
+            "work-or-travel"
+          ]
         },
         {
           "unitNumber": 12,
           "title": "Unit 12. City",
-          "lessons": ["how-can-i-get-to-the-hotel", "air-or-water", "you-must-behave", "for-better-or-for-worse"]
+          "lessons": [
+            "how-can-i-get-to-the-hotel",
+            "air-or-water",
+            "you-must-behave",
+            "for-better-or-for-worse"
+          ]
         }
       ],
-      "assessments": ["progress-test-6", "final-exam-prep", "final-exam", "final-feedback"]
+      "assessments": [
+        "ge-a1-progress-test-6",
+        "ge-a1-final-exam-prep",
+        "ge-a1-final-exam",
+        "ge-a1-final-feedback"
+      ]
     }
   ]
 }

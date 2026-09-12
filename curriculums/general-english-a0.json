@@ -6,10 +6,22 @@
   "totalLessons": 45,
   "description": "Comprehensive Beginner (A0) English program covering foundational course orientation, pronunciation, grammar, vocabulary, 4 sections, 8 units, progress tests, midterm/final exams, and final feedback.",
   "introductory": [
-    { "id": "more-about-the-course", "title": "More about the course" },
-    { "id": "pronunciation-topics", "title": "Pronunciation topics" },
-    { "id": "grammar-topics", "title": "Grammar topics" },
-    { "id": "vocabulary-topics", "title": "Vocabulary topics" }
+    {
+      "id": "ge-a0-more-about-the-course",
+      "title": "More about the course"
+    },
+    {
+      "id": "ge-a0-pronunciation-topics",
+      "title": "Pronunciation topics"
+    },
+    {
+      "id": "ge-a0-grammar-topics",
+      "title": "Grammar topics"
+    },
+    {
+      "id": "ge-a0-vocabulary-topics",
+      "title": "Vocabulary topics"
+    }
   ],
   "sections": [
     {
@@ -19,15 +31,27 @@
         {
           "unitNumber": 1,
           "title": "Unit 1. Hello there!",
-          "lessons": ["hello-friend", "pronouns-plus-to-be", "young-and-beautiful", "time-to-show-off"]
+          "lessons": [
+            "hello-friend",
+            "pronouns-plus-to-be",
+            "young-and-beautiful",
+            "time-to-show-off"
+          ]
         },
         {
           "unitNumber": 2,
           "title": "Unit 2. Big happy family",
-          "lessons": ["its-my-family", "how-do-you-feel-today", "my-little-friend", "i-know-you"]
+          "lessons": [
+            "its-my-family",
+            "how-do-you-feel-today",
+            "my-little-friend",
+            "i-know-you"
+          ]
         }
       ],
-      "assessments": ["progress-test-1"]
+      "assessments": [
+        "ge-a0-progress-test-1"
+      ]
     },
     {
       "sectionNumber": 2,
@@ -36,15 +60,28 @@
         {
           "unitNumber": 3,
           "title": "Unit 3. What is it?",
-          "lessons": ["where-is-my-phone-again", "whats-in-your-bag", "what-do-you-use-every-day", "pack-up"]
+          "lessons": [
+            "where-is-my-phone-again",
+            "whats-in-your-bag",
+            "what-do-you-use-every-day",
+            "pack-up"
+          ]
         },
         {
           "unitNumber": 4,
           "title": "Unit 4. Daily routine",
-          "lessons": ["my-daily-routine", "who-does-it", "a-man-of-100-faces", "temperament-matters"]
+          "lessons": [
+            "my-daily-routine",
+            "who-does-it",
+            "a-man-of-100-faces",
+            "temperament-matters"
+          ]
         }
       ],
-      "assessments": ["progress-test-2", "midterm-exam"]
+      "assessments": [
+        "ge-a0-progress-test-2",
+        "ge-a0-midterm-exam"
+      ]
     },
     {
       "sectionNumber": 3,
@@ -53,15 +90,27 @@
         {
           "unitNumber": 5,
           "title": "Unit 5. Free time",
-          "lessons": ["whats-the-weather-like-today", "perfect-hobby", "holidays-are-coming", "top-presents"]
+          "lessons": [
+            "whats-the-weather-like-today",
+            "perfect-hobby",
+            "holidays-are-coming",
+            "top-presents"
+          ]
         },
         {
           "unitNumber": 6,
           "title": "Unit 6. Home sweet home",
-          "lessons": ["we-need-a-flat", "furnish-it", "housewarming-party", "difficulties-of-house-move"]
+          "lessons": [
+            "we-need-a-flat",
+            "furnish-it",
+            "housewarming-party",
+            "difficulties-of-house-move"
+          ]
         }
       ],
-      "assessments": ["progress-test-3"]
+      "assessments": [
+        "ge-a0-progress-test-3"
+      ]
     },
     {
       "sectionNumber": 4,
@@ -70,15 +119,32 @@
         {
           "unitNumber": 7,
           "title": "Unit 7. Shopping",
-          "lessons": ["all-sorts-of-diets", "try-this-shirt", "shopping-day", "shop-online"]
+          "lessons": [
+            "all-sorts-of-diets",
+            "try-this-shirt",
+            "shopping-day",
+            "shop-online"
+          ]
         },
         {
           "unitNumber": 8,
           "title": "Unit 8. People around you",
-          "lessons": ["live-long", "remarkable-people", "how-i-met-my-friend", "what-a-record"]
+          "lessons": [
+            "live-long",
+            "remarkable-people",
+            "how-i-met-my-friend",
+            "what-a-record"
+          ]
         }
       ],
-      "assessments": ["progress-test-4", "final-exam-prep", "final-exam-prep-mixed", "final-exam", "final-exam-mixed", "final-feedback"]
+      "assessments": [
+        "ge-a0-progress-test-4",
+        "ge-a0-final-exam-prep",
+        "final-exam-prep-mixed",
+        "ge-a0-final-exam",
+        "final-exam-mixed",
+        "ge-a0-final-feedback"
+      ]
     }
   ]
 }

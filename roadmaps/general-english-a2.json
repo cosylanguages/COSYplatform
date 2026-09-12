@@ -3,98 +3,562 @@
   "title": "General English A2 Pre-Intermediate Roadmap",
   "totalLessons": 71,
   "sequence": [
-    { "lessonNumber": 5, "id": "a-person-in-three-words", "title": "A person in three words", "section": 1, "unit": "Unit 1. First impression", "isOptional": false },
-    { "lessonNumber": 6, "id": "first-impressions", "title": "First impressions", "section": 1, "unit": "Unit 1. First impression", "isOptional": false },
-    { "lessonNumber": 7, "id": "are-you-a-hobbyist", "title": "Are you a hobbyist?", "section": 1, "unit": "Unit 1. First impression", "isOptional": false },
-    { "lessonNumber": 8, "id": "find-me-online", "title": "Find me online", "section": 1, "unit": "Unit 1. First impression", "isOptional": true },
-
-    { "lessonNumber": 9, "id": "out-of-gym", "title": "Out of gym", "section": 1, "unit": "Unit 2. Sport or not?", "isOptional": false },
-    { "lessonNumber": 10, "id": "sport-or-not", "title": "Sport or not?", "section": 1, "unit": "Unit 2. Sport or not?", "isOptional": false },
-    { "lessonNumber": 11, "id": "the-21-day-challenge", "title": "The 21-day challenge", "section": 1, "unit": "Unit 2. Sport or not?", "isOptional": false },
-    { "lessonNumber": 12, "id": "new-olympic-sports", "title": "New Olympic Sports", "section": 1, "unit": "Unit 2. Sport or not?", "isOptional": true },
-
-    { "lessonNumber": 13, "id": "progress-test-1", "title": "Progress test 1", "section": 1, "isMilestone": true },
-
-    { "lessonNumber": 14, "id": "stranger-on-the-train", "title": "Stranger on the train", "section": 2, "unit": "Unit 3. That's the story!", "isOptional": false },
-    { "lessonNumber": 15, "id": "an-unforgettable-meeting", "title": "An unforgettable meeting", "section": 2, "unit": "Unit 3. That's the story!", "isOptional": false },
-    { "lessonNumber": 16, "id": "class-reunion", "title": "Class reunion", "section": 2, "unit": "Unit 3. That's the story!", "isOptional": false },
-    { "lessonNumber": 17, "id": "a-dream-meeting", "title": "A dream meeting", "section": 2, "unit": "Unit 3. That's the story!", "isOptional": true },
-
-    { "lessonNumber": 18, "id": "no-man-is-an-island", "title": "No man is an island", "section": 2, "unit": "Unit 4. People around you", "isOptional": false },
-    { "lessonNumber": 19, "id": "looking-for-a-friend", "title": "Looking for a friend", "section": 2, "unit": "Unit 4. People around you", "isOptional": false },
-    { "lessonNumber": 20, "id": "friends-you-didnt-choose", "title": "Friends you didn't choose", "section": 2, "unit": "Unit 4. People around you", "isOptional": false },
-    { "lessonNumber": 21, "id": "old-new-friend", "title": "Old new friend", "section": 2, "unit": "Unit 4. People around you", "isOptional": true },
-
-    { "lessonNumber": 22, "id": "progress-test-2", "title": "Progress test 2", "section": 2, "isMilestone": true },
-
-    { "lessonNumber": 23, "id": "old-jobs-new-jobs", "title": "Old jobs, new jobs", "section": 3, "unit": "Unit 5. Get to work!", "isOptional": false },
-    { "lessonNumber": 24, "id": "working-conditions", "title": "Working conditions", "section": 3, "unit": "Unit 5. Get to work!", "isOptional": false },
-    { "lessonNumber": 25, "id": "get-interviewed", "title": "Get interviewed", "section": 3, "unit": "Unit 5. Get to work!", "isOptional": false },
-    { "lessonNumber": 26, "id": "working-abroad", "title": "Working abroad", "section": 3, "unit": "Unit 5. Get to work!", "isOptional": true },
-
-    { "lessonNumber": 27, "id": "healthy-working", "title": "Healthy working", "section": 3, "unit": "Unit 6. Safe and sound", "isOptional": false },
-    { "lessonNumber": 28, "id": "job-burnout", "title": "Job burnout", "section": 3, "unit": "Unit 6. Safe and sound", "isOptional": false },
-    { "lessonNumber": 29, "id": "medical-advice", "title": "Medical advice", "section": 3, "unit": "Unit 6. Safe and sound", "isOptional": false },
-    { "lessonNumber": 30, "id": "talking-to-a-shrink", "title": "Talking to a shrink", "section": 3, "unit": "Unit 6. Safe and sound", "isOptional": true },
-
-    { "lessonNumber": 31, "id": "progress-test-3", "title": "Progress test 3", "section": 3, "isMilestone": true },
-
-    { "lessonNumber": 32, "id": "to-rent-or-to-buy", "title": "To rent or to buy?", "section": 4, "unit": "Unit 7. Life goals", "isOptional": false },
-    { "lessonNumber": 33, "id": "too-young-to-have-children", "title": "Too young to have children", "section": 4, "unit": "Unit 7. Life goals", "isOptional": false },
-    { "lessonNumber": 34, "id": "trees-are-back-in-fashion", "title": "Trees are back in fashion", "section": 4, "unit": "Unit 7. Life goals", "isOptional": false },
-    { "lessonNumber": 35, "id": "new-goals-of-a-new-person", "title": "New goals of a new person", "section": 4, "unit": "Unit 7. Life goals", "isOptional": true },
-
-    { "lessonNumber": 36, "id": "the-future-we-all-fear", "title": "The future we all fear", "section": 4, "unit": "Unit 8. Dreams and fears", "isOptional": false },
-    { "lessonNumber": 37, "id": "innovations-to-change-the-world", "title": "Innovations to change the world", "section": 4, "unit": "Unit 8. Dreams and fears", "isOptional": false },
-    { "lessonNumber": 38, "id": "do-predictions-really-work", "title": "Do predictions really work?", "section": 4, "unit": "Unit 8. Dreams and fears", "isOptional": false },
-    { "lessonNumber": 39, "id": "lost-in-time", "title": "Lost in time", "section": 4, "unit": "Unit 8. Dreams and fears", "isOptional": true },
-
-    { "lessonNumber": 40, "id": "progress-test-4", "title": "Progress test 4", "section": 4, "isMilestone": true },
-    { "lessonNumber": 41, "id": "midterm-exam", "title": "Midterm exam", "section": 4, "isExam": true },
-
-    { "lessonNumber": 42, "id": "tourists-are-not-welcome", "title": "Tourists are not welcome!", "section": 5, "unit": "Unit 9. Holidays", "isOptional": false },
-    { "lessonNumber": 43, "id": "staycation", "title": "Staycation", "section": 5, "unit": "Unit 9. Holidays", "isOptional": false },
-    { "lessonNumber": 44, "id": "unusual-destinations", "title": "Unusual destinations", "section": 5, "unit": "Unit 9. Holidays", "isOptional": false },
-    { "lessonNumber": 45, "id": "travel-bucket-list", "title": "Travel bucket list", "section": 5, "unit": "Unit 9. Holidays", "isOptional": true },
-
-    { "lessonNumber": 46, "id": "new-life-in-a-village", "title": "New life in a village", "section": 5, "unit": "Unit 10. City", "isOptional": false },
-    { "lessonNumber": 47, "id": "not-like-others", "title": "Not like others", "section": 5, "unit": "Unit 10. City", "isOptional": false },
-    { "lessonNumber": 48, "id": "expectation-vs-reality-popular-sights", "title": "Expectation vs. reality: popular sights", "section": 5, "unit": "Unit 10. City", "isOptional": false },
-    { "lessonNumber": 49, "id": "in-search-of-a-better-place", "title": "In search of a better place", "section": 5, "unit": "Unit 10. City", "isOptional": true },
-
-    { "lessonNumber": 50, "id": "progress-test-5", "title": "Progress test 5", "section": 5, "isMilestone": true },
-
-    { "lessonNumber": 51, "id": "holiday-shopping", "title": "Holiday shopping", "section": 6, "unit": "Unit 11. Shopping", "isOptional": false },
-    { "lessonNumber": 52, "id": "food-delivery", "title": "Food delivery", "section": 6, "unit": "Unit 11. Shopping", "isOptional": false },
-    { "lessonNumber": 53, "id": "online-shopping", "title": "Online shopping", "section": 6, "unit": "Unit 11. Shopping", "isOptional": false },
-    { "lessonNumber": 54, "id": "i-need-some-details", "title": "I need some details", "section": 6, "unit": "Unit 11. Shopping", "isOptional": true },
-
-    { "lessonNumber": 55, "id": "things-that-matter", "title": "Things that matter", "section": 6, "unit": "Unit 12. Things", "isOptional": false },
-    { "lessonNumber": 56, "id": "doing-more-with-less", "title": "Doing more with less", "section": 6, "unit": "Unit 12. Things", "isOptional": false },
-    { "lessonNumber": 57, "id": "born-in-the-same-year", "title": "Born in the same year", "section": 6, "unit": "Unit 12. Things", "isOptional": false },
-    { "lessonNumber": 58, "id": "travel-light", "title": "Travel light", "section": 6, "unit": "Unit 12. Things", "isOptional": true },
-
-    { "lessonNumber": 59, "id": "progress-test-6", "title": "Progress test 6", "section": 6, "isMilestone": true },
-
-    { "lessonNumber": 60, "id": "people-who-changed-the-world", "title": "People who changed the world", "section": 7, "unit": "Unit 13. Biographies", "isOptional": false },
-    { "lessonNumber": 61, "id": "life-crisis-is-that-a-thing", "title": "Life crisis: Is that a thing?", "section": 7, "unit": "Unit 13. Biographies", "isOptional": false },
-    { "lessonNumber": 62, "id": "things-i-didnt-have-to-change", "title": "Things I didn't have to change", "section": 7, "unit": "Unit 13. Biographies", "isOptional": false },
-    { "lessonNumber": 63, "id": "my-life-in-a-movie", "title": "My life in a movie", "section": 7, "unit": "Unit 13. Biographies", "isOptional": true },
-
-    { "lessonNumber": 64, "id": "put-your-shoes-on", "title": "Put your shoes on", "section": 7, "unit": "Unit 14. Culture", "isOptional": false },
-    { "lessonNumber": 65, "id": "marrying-a-different-culture", "title": "Marrying a different culture", "section": 7, "unit": "Unit 14. Culture", "isOptional": false },
-    { "lessonNumber": 66, "id": "language-and-colours", "title": "Language and colours", "section": 7, "unit": "Unit 14. Culture", "isOptional": false },
-    { "lessonNumber": 67, "id": "culture-shock", "title": "Culture shock", "section": 7, "unit": "Unit 14. Culture", "isOptional": true },
-
-    { "lessonNumber": 68, "id": "progress-test-7", "title": "Progress test 7", "section": 7, "isMilestone": true },
-
-    { "lessonNumber": 69, "id": "global-warming", "title": "Global warming", "section": 8, "unit": "Unit 15. Nature", "isOptional": false },
-    { "lessonNumber": 70, "id": "wild-friends", "title": "Wild friends", "section": 8, "unit": "Unit 15. Nature", "isOptional": false },
-    { "lessonNumber": 71, "id": "distant-past", "title": "Distant past", "section": 8, "unit": "Unit 15. Nature", "isOptional": false },
-    { "lessonNumber": 72, "id": "returning-to-roots", "title": "Returning to roots", "section": 8, "unit": "Unit 15. Nature", "isOptional": true },
-
-    { "lessonNumber": 73, "id": "final-exam-prep", "title": "Final exam preparation", "section": 8, "isExam": true },
-    { "lessonNumber": 74, "id": "final-exam", "title": "Final exam", "section": 8, "isExam": true },
-    { "lessonNumber": 79, "id": "final-feedback", "title": "Final feedback", "section": 8, "isMilestone": true }
+    {
+      "lessonNumber": 5,
+      "id": "a-person-in-three-words",
+      "title": "A person in three words",
+      "section": 1,
+      "unit": "Unit 1. First impression",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 6,
+      "id": "first-impressions",
+      "title": "First impressions",
+      "section": 1,
+      "unit": "Unit 1. First impression",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 7,
+      "id": "are-you-a-hobbyist",
+      "title": "Are you a hobbyist?",
+      "section": 1,
+      "unit": "Unit 1. First impression",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 8,
+      "id": "find-me-online",
+      "title": "Find me online",
+      "section": 1,
+      "unit": "Unit 1. First impression",
+      "isOptional": true
+    },
+    {
+      "lessonNumber": 9,
+      "id": "out-of-gym",
+      "title": "Out of gym",
+      "section": 1,
+      "unit": "Unit 2. Sport or not?",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 10,
+      "id": "sport-or-not",
+      "title": "Sport or not?",
+      "section": 1,
+      "unit": "Unit 2. Sport or not?",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 11,
+      "id": "the-21-day-challenge",
+      "title": "The 21-day challenge",
+      "section": 1,
+      "unit": "Unit 2. Sport or not?",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 12,
+      "id": "new-olympic-sports",
+      "title": "New Olympic Sports",
+      "section": 1,
+      "unit": "Unit 2. Sport or not?",
+      "isOptional": true
+    },
+    {
+      "lessonNumber": 13,
+      "id": "ge-a2-progress-test-1",
+      "title": "Progress test 1",
+      "section": 1,
+      "isMilestone": true
+    },
+    {
+      "lessonNumber": 14,
+      "id": "stranger-on-the-train",
+      "title": "Stranger on the train",
+      "section": 2,
+      "unit": "Unit 3. That's the story!",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 15,
+      "id": "an-unforgettable-meeting",
+      "title": "An unforgettable meeting",
+      "section": 2,
+      "unit": "Unit 3. That's the story!",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 16,
+      "id": "class-reunion",
+      "title": "Class reunion",
+      "section": 2,
+      "unit": "Unit 3. That's the story!",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 17,
+      "id": "a-dream-meeting",
+      "title": "A dream meeting",
+      "section": 2,
+      "unit": "Unit 3. That's the story!",
+      "isOptional": true
+    },
+    {
+      "lessonNumber": 18,
+      "id": "no-man-is-an-island",
+      "title": "No man is an island",
+      "section": 2,
+      "unit": "Unit 4. People around you",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 19,
+      "id": "looking-for-a-friend",
+      "title": "Looking for a friend",
+      "section": 2,
+      "unit": "Unit 4. People around you",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 20,
+      "id": "friends-you-didnt-choose",
+      "title": "Friends you didn't choose",
+      "section": 2,
+      "unit": "Unit 4. People around you",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 21,
+      "id": "old-new-friend",
+      "title": "Old new friend",
+      "section": 2,
+      "unit": "Unit 4. People around you",
+      "isOptional": true
+    },
+    {
+      "lessonNumber": 22,
+      "id": "ge-a2-progress-test-2",
+      "title": "Progress test 2",
+      "section": 2,
+      "isMilestone": true
+    },
+    {
+      "lessonNumber": 23,
+      "id": "old-jobs-new-jobs",
+      "title": "Old jobs, new jobs",
+      "section": 3,
+      "unit": "Unit 5. Get to work!",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 24,
+      "id": "working-conditions",
+      "title": "Working conditions",
+      "section": 3,
+      "unit": "Unit 5. Get to work!",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 25,
+      "id": "get-interviewed",
+      "title": "Get interviewed",
+      "section": 3,
+      "unit": "Unit 5. Get to work!",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 26,
+      "id": "working-abroad",
+      "title": "Working abroad",
+      "section": 3,
+      "unit": "Unit 5. Get to work!",
+      "isOptional": true
+    },
+    {
+      "lessonNumber": 27,
+      "id": "healthy-working",
+      "title": "Healthy working",
+      "section": 3,
+      "unit": "Unit 6. Safe and sound",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 28,
+      "id": "job-burnout",
+      "title": "Job burnout",
+      "section": 3,
+      "unit": "Unit 6. Safe and sound",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 29,
+      "id": "medical-advice",
+      "title": "Medical advice",
+      "section": 3,
+      "unit": "Unit 6. Safe and sound",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 30,
+      "id": "talking-to-a-shrink",
+      "title": "Talking to a shrink",
+      "section": 3,
+      "unit": "Unit 6. Safe and sound",
+      "isOptional": true
+    },
+    {
+      "lessonNumber": 31,
+      "id": "ge-a2-progress-test-3",
+      "title": "Progress test 3",
+      "section": 3,
+      "isMilestone": true
+    },
+    {
+      "lessonNumber": 32,
+      "id": "to-rent-or-to-buy",
+      "title": "To rent or to buy?",
+      "section": 4,
+      "unit": "Unit 7. Life goals",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 33,
+      "id": "too-young-to-have-children",
+      "title": "Too young to have children",
+      "section": 4,
+      "unit": "Unit 7. Life goals",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 34,
+      "id": "trees-are-back-in-fashion",
+      "title": "Trees are back in fashion",
+      "section": 4,
+      "unit": "Unit 7. Life goals",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 35,
+      "id": "new-goals-of-a-new-person",
+      "title": "New goals of a new person",
+      "section": 4,
+      "unit": "Unit 7. Life goals",
+      "isOptional": true
+    },
+    {
+      "lessonNumber": 36,
+      "id": "the-future-we-all-fear",
+      "title": "The future we all fear",
+      "section": 4,
+      "unit": "Unit 8. Dreams and fears",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 37,
+      "id": "innovations-to-change-the-world",
+      "title": "Innovations to change the world",
+      "section": 4,
+      "unit": "Unit 8. Dreams and fears",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 38,
+      "id": "do-predictions-really-work",
+      "title": "Do predictions really work?",
+      "section": 4,
+      "unit": "Unit 8. Dreams and fears",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 39,
+      "id": "lost-in-time",
+      "title": "Lost in time",
+      "section": 4,
+      "unit": "Unit 8. Dreams and fears",
+      "isOptional": true
+    },
+    {
+      "lessonNumber": 40,
+      "id": "ge-a2-progress-test-4",
+      "title": "Progress test 4",
+      "section": 4,
+      "isMilestone": true
+    },
+    {
+      "lessonNumber": 41,
+      "id": "ge-a2-midterm-exam",
+      "title": "Midterm exam",
+      "section": 4,
+      "isExam": true
+    },
+    {
+      "lessonNumber": 42,
+      "id": "tourists-are-not-welcome",
+      "title": "Tourists are not welcome!",
+      "section": 5,
+      "unit": "Unit 9. Holidays",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 43,
+      "id": "staycation",
+      "title": "Staycation",
+      "section": 5,
+      "unit": "Unit 9. Holidays",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 44,
+      "id": "unusual-destinations",
+      "title": "Unusual destinations",
+      "section": 5,
+      "unit": "Unit 9. Holidays",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 45,
+      "id": "travel-bucket-list",
+      "title": "Travel bucket list",
+      "section": 5,
+      "unit": "Unit 9. Holidays",
+      "isOptional": true
+    },
+    {
+      "lessonNumber": 46,
+      "id": "new-life-in-a-village",
+      "title": "New life in a village",
+      "section": 5,
+      "unit": "Unit 10. City",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 47,
+      "id": "not-like-others",
+      "title": "Not like others",
+      "section": 5,
+      "unit": "Unit 10. City",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 48,
+      "id": "expectation-vs-reality-popular-sights",
+      "title": "Expectation vs. reality: popular sights",
+      "section": 5,
+      "unit": "Unit 10. City",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 49,
+      "id": "in-search-of-a-better-place",
+      "title": "In search of a better place",
+      "section": 5,
+      "unit": "Unit 10. City",
+      "isOptional": true
+    },
+    {
+      "lessonNumber": 50,
+      "id": "ge-a2-progress-test-5",
+      "title": "Progress test 5",
+      "section": 5,
+      "isMilestone": true
+    },
+    {
+      "lessonNumber": 51,
+      "id": "holiday-shopping",
+      "title": "Holiday shopping",
+      "section": 6,
+      "unit": "Unit 11. Shopping",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 52,
+      "id": "food-delivery",
+      "title": "Food delivery",
+      "section": 6,
+      "unit": "Unit 11. Shopping",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 53,
+      "id": "online-shopping",
+      "title": "Online shopping",
+      "section": 6,
+      "unit": "Unit 11. Shopping",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 54,
+      "id": "i-need-some-details",
+      "title": "I need some details",
+      "section": 6,
+      "unit": "Unit 11. Shopping",
+      "isOptional": true
+    },
+    {
+      "lessonNumber": 55,
+      "id": "things-that-matter",
+      "title": "Things that matter",
+      "section": 6,
+      "unit": "Unit 12. Things",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 56,
+      "id": "doing-more-with-less",
+      "title": "Doing more with less",
+      "section": 6,
+      "unit": "Unit 12. Things",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 57,
+      "id": "born-in-the-same-year",
+      "title": "Born in the same year",
+      "section": 6,
+      "unit": "Unit 12. Things",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 58,
+      "id": "travel-light",
+      "title": "Travel light",
+      "section": 6,
+      "unit": "Unit 12. Things",
+      "isOptional": true
+    },
+    {
+      "lessonNumber": 59,
+      "id": "ge-a2-progress-test-6",
+      "title": "Progress test 6",
+      "section": 6,
+      "isMilestone": true
+    },
+    {
+      "lessonNumber": 60,
+      "id": "people-who-changed-the-world",
+      "title": "People who changed the world",
+      "section": 7,
+      "unit": "Unit 13. Biographies",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 61,
+      "id": "life-crisis-is-that-a-thing",
+      "title": "Life crisis: Is that a thing?",
+      "section": 7,
+      "unit": "Unit 13. Biographies",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 62,
+      "id": "things-i-didnt-have-to-change",
+      "title": "Things I didn't have to change",
+      "section": 7,
+      "unit": "Unit 13. Biographies",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 63,
+      "id": "my-life-in-a-movie",
+      "title": "My life in a movie",
+      "section": 7,
+      "unit": "Unit 13. Biographies",
+      "isOptional": true
+    },
+    {
+      "lessonNumber": 64,
+      "id": "put-your-shoes-on",
+      "title": "Put your shoes on",
+      "section": 7,
+      "unit": "Unit 14. Culture",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 65,
+      "id": "marrying-a-different-culture",
+      "title": "Marrying a different culture",
+      "section": 7,
+      "unit": "Unit 14. Culture",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 66,
+      "id": "language-and-colours",
+      "title": "Language and colours",
+      "section": 7,
+      "unit": "Unit 14. Culture",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 67,
+      "id": "culture-shock",
+      "title": "Culture shock",
+      "section": 7,
+      "unit": "Unit 14. Culture",
+      "isOptional": true
+    },
+    {
+      "lessonNumber": 68,
+      "id": "progress-test-7",
+      "title": "Progress test 7",
+      "section": 7,
+      "isMilestone": true
+    },
+    {
+      "lessonNumber": 69,
+      "id": "global-warming",
+      "title": "Global warming",
+      "section": 8,
+      "unit": "Unit 15. Nature",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 70,
+      "id": "wild-friends",
+      "title": "Wild friends",
+      "section": 8,
+      "unit": "Unit 15. Nature",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 71,
+      "id": "distant-past",
+      "title": "Distant past",
+      "section": 8,
+      "unit": "Unit 15. Nature",
+      "isOptional": false
+    },
+    {
+      "lessonNumber": 72,
+      "id": "returning-to-roots",
+      "title": "Returning to roots",
+      "section": 8,
+      "unit": "Unit 15. Nature",
+      "isOptional": true
+    },
+    {
+      "lessonNumber": 73,
+      "id": "ge-a2-final-exam-prep",
+      "title": "Final exam preparation",
+      "section": 8,
+      "isExam": true
+    },
+    {
+      "lessonNumber": 74,
+      "id": "ge-a2-final-exam",
+      "title": "Final exam",
+      "section": 8,
+      "isExam": true
+    },
+    {
+      "lessonNumber": 79,
+      "id": "ge-a2-final-feedback",
+      "title": "Final feedback",
+      "section": 8,
+      "isMilestone": true
+    }
   ]
 }
