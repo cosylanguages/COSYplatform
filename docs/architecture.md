@@ -18,26 +18,28 @@ This repository serves as the central content repository for all curriculums, ro
 
 ## 👥 Dual-View Architecture (Teacher Page vs. Student Page)
 
-Every lesson in CosyLanguages renders into two synchronized, role-specific views:
+> **Architecture Correction Note**: Previously, this document described a backend "CosyLanguages Server" for real-time state synchronization. To align with the serverless, static philosophy of the platform ecosystem, CosyLanguages is implemented as a **static client-side renderer**. Two static pages (`teacher.html` and `student.html`) read lesson JSON/XML markup files directly and render role-appropriate views entirely in the browser.
+
+Every lesson in CosyLanguages renders into two role-specific views from the same source lesson file (`.json` or `.xml`):
 
 ```
                                ┌─────────────────────────┐
-                               │  CosyLanguages Server   │
-                               │   State & Synchronization│
+                               │   Static Lesson File    │
+                               │  (JSON or XML Markup)   │
                                └───────────┬─────────────┘
                                            │
                     ┌──────────────────────┴──────────────────────┐
                     │                                             │
                     ▼                                             ▼
      ┌────────────────────────────┐                ┌────────────────────────────┐
-     │       Teacher View         │                │        Student View        │
+     │  Teacher Page (teacher.html)│                │ Student Page (student.html)│
      ├────────────────────────────┤                ├────────────────────────────┤
      │ - Full Slide Controls      │                │ - Interactive Workspace    │
      │ - Hidden Teacher Notes     │                │ - Real-Time Answer Fields  │
      │ - Suggested Speech Scripts │                │ - Vocabulary Dictionary    │
      │ - Stage Aims & Timing      │                │ - Audio Recording Widget   │
      │ - Answer Keys & Solution   │                │ - Clean Focus Mode         │
-     │ - Group / Pair Breakout    │                │ - AI & Self-Study Tools    │
+     │ - Full Catalog Access      │                │ - Entitled Courses Only    │
      └────────────────────────────┘                └────────────────────────────┘
 ```
 

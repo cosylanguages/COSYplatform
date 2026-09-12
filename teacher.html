@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COSYlanguages Teacher View &amp; Catalog</title>
+  <link rel="stylesheet" href="shared/styles/style.css">
+  <style>
+    /* Teacher Page Specific Styles */
+    :root {
+      --teacher-primary: #4f46e5;
+      --teacher-hover: #4338ca;
+      --teacher-light: #e0e7ff;
+      --teacher-note-bg: #fffbe3;
+      --teacher-note-border: #f59e0b;
+      --speech-bg: #ecfdf5;
+      --speech-border: #10b981;
+    }
+
+    body {
+      background-color: #f8fafc;
+    }
+
+    .badge-teacher {
+      background: #e0e7ff;
+      color: #3730a3;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    /* Access Denied */
+    .access-denied {
+      max-width: 500px;
+      margin: 80px auto;
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      border: 1px solid #cbd5e1;
+      text-align: center;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+
+    .access-denied h2 {
+      color: #ef4444;
+      margin-bottom: 12px;
+    }
+
+    /* Catalog View */
+    .catalog-container {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .catalog-header {
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .course-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .course-card h3 {
+      font-size: 1.2rem;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+
+    .course-card p {
+      font-size: 0.9rem;
+      color: #64748b;
+      margin-bottom: 16px;
+    }
+
+    /* Controls Header Bar */
+    .teacher-controls-bar {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 16px 24px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .control-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+    }
+
+    .control-group select {
+      padding: 6px 12px;
+      border-radius: 6px;
+      border: 1px solid #cbd5e1;
+      font-size: 0.85rem;
+      background: #f8fafc;
+    }
+
+    /* Lesson Viewer */
+    .lesson-viewer {
+      max-width: 950px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+
+    .slide-card {
+      background: white;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      padding: 32px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+
+    .slide-title {
+      font-size: 1.4rem;
+      color: #0f172a;
+      border-bottom: 2px solid #f1f5f9;
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .slide-stage-tag {
+      font-size: 0.75rem;
+      background: #f1f5f9;
+      color: #475569;
+      padding: 4px 10px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    /* Teacher Notes Styling */
+    .teacher-note-box {
+      border-radius: 8px;
+      padding: 16px;
+      margin: 16px 0;
+      font-size: 0.95rem;
+    }
+
+    .teacher-note-instruction {
+      background: var(--teacher-note-bg);
+      border-left: 4px solid var(--teacher-note-border);
+      color: #78350f;
+    }
+
+    .teacher-note-speech {
+      background: var(--speech-bg);
+      border-left: 4px solid var(--speech-border);
+      color: #065f46;
+    }
+
+    .teacher-note-header {
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .answer-key-box {
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 10px 14px;
+      margin: 8px 0;
+      font-size: 0.85rem;
+      color: #334155;
+    }
+
+    .answer-key-title {
+      font-weight: 700;
+      color: var(--teacher-primary);
+      margin-bottom: 4px;
+    }
+
+    /* Cosy Tags Elements */
+    cosy-instruction, .cosy-instruction {
+      display: block;
+      font-weight: 600;
+      color: var(--teacher-primary);
+      margin: 16px 0 8px 0;
+    }
+
+    cosy-blockquote, .cosy-blockquote {
+      display: block;
+      background: #f8fafc;
+      border-left: 4px solid var(--teacher-primary);
+      padding: 16px;
+      margin: 16px 0;
+      border-radius: 0 8px 8px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="manual-header">
+    <div class="header-content">
+      <div class="logo-badge">
+        <span>COSYlanguages</span>
+        <span class="badge-teacher">Teacher Catalog &amp; Guide</span>
+      </div>
+      <div id="user-info" style="font-size: 0.85rem; color: #64748b;"></div>
+    </div>
+  </header>
+
+  <main id="app-root" class="container">
+    <!-- Dynamic JS Content rendered here -->
+  </main>
+
+  <footer class="main-footer">
+    <p>COSYlanguages Platform &copy; 2025. Teacher View &amp; Catalog Interface.</p>
+  </footer>
+
+  <script>
+    // App State & Access Control Logic
+    const urlParams = new URLSearchParams(window.location.search);
+    const key = urlParams.get('key');
+    const courseParam = urlParams.get('course');
+    const levelParam = urlParams.get('level');
+    const lessonParam = urlParams.get('lesson');
+
+    async function initTeacherApp() {
+      const appRoot = document.getElementById('app-root');
+
+      if (!key) {
+        renderAccessDenied("Missing Access Key", "An access key is required to view the teacher catalog. Please use your teacher link.");
+        return;
+      }
+
+      try {
+        const grantsRes = await fetch('data/access-grants.json');
+        if (!grantsRes.ok) throw new Error("Unable to load access configuration");
+        const grantsData = await grantsRes.json();
+
+        const grant = grantsData.grants.find(g => g.key === key);
+        if (!grant) {
+          renderAccessDenied("Invalid Access Key", "The access key provided is invalid. Please contact COSYlanguages administration.");
+          return;
+        }
+
+        // Verify teacher role or wildcard access
+        if (grant.role !== 'teacher' && !grant.courses.includes('*')) {
+          renderAccessDenied("Permission Denied", "This access key does not have teacher privileges.");
+          return;
+        }
+
+        document.getElementById('user-info').innerText = `Teacher: ${grant.name || 'Teacher'}`;
+
+        if (lessonParam) {
+          renderLesson(lessonParam);
+        } else if (courseParam && levelParam) {
+          renderCourseRoadmap(courseParam, levelParam);
+        } else {
+          renderTeacherCatalog();
+        }
+
+      } catch (err) {
+        renderAccessDenied("System Error", err.message);
+      }
+    }
+
+    function renderAccessDenied(title, message) {
+      document.getElementById('app-root').innerHTML = `
+        <div class="access-denied">
+          <h2>🔒 ${title}</h2>
+          <p>${message}</p>
+        </div>
+      `;
+    }
+
+    async function renderTeacherCatalog() {
+      const appRoot = document.getElementById('app-root');
+
+      const allCourses = [
+        { id: "general-english-a0", title: "General English A0 - Beginner", track: "General English", level: "A0" },
+        { id: "general-english-a1", title: "General English A1 - Elementary", track: "General English", level: "A1" },
+        { id: "general-english-a2", title: "General English A2 - Pre-Intermediate", track: "General English", level: "A2" },
+        { id: "general-english-b1", title: "General English B1 - Intermediate", track: "General English", level: "B1" },
+        { id: "general-english-b2", title: "General English B2 - Upper-Intermediate", track: "General English", level: "B2" },
+        { id: "general-english-c1", title: "General English C1 - Advanced", track: "General English", level: "C1" },
+        { id: "spoken-english-a1", title: "Spoken English A1", track: "Spoken English", level: "A1" },
+        { id: "spoken-english-a2", title: "Spoken English A2", track: "Spoken English", level: "A2" },
+        { id: "spoken-english-b1", title: "Spoken English B1", track: "Spoken English", level: "B1" },
+        { id: "spoken-english-b2", title: "Spoken English B2", track: "Spoken English", level: "B2" },
+        { id: "spoken-english-c1", title: "Spoken English C1", track: "Spoken English", level: "C1" },
+        { id: "grammar-english-a0", title: "Grammar English A0", track: "Grammar English", level: "A0" },
+        { id: "grammar-english-a1", title: "Grammar English A1", track: "Grammar English", level: "A1" },
+        { id: "grammar-english-a2", title: "Grammar English A2", track: "Grammar English", level: "A2" },
+        { id: "grammar-english-b1", title: "Grammar English B1", track: "Grammar English", level: "B1" },
+        { id: "grammar-english-b2", title: "Grammar English B2", track: "Grammar English", level: "B2" },
+        { id: "grammar-english-c1", title: "Grammar English C1", track: "Grammar English", level: "C1" },
+        { id: "introductory-english", title: "Introductory Diagnostic First Lessons", track: "Introductory", level: "A0-C2" }
+      ];
+
+      let html = `
+        <div class="catalog-container">
+          <div class="catalog-header">
+            <div>
+              <h1 style="font-size: 1.6rem; color: #0f172a;">Full Teacher Catalog</h1>
+              <p style="color: #64748b;">Teachers have complete access to all tracks, curriculums, and speech scripts.</p>
+            </div>
+            <a href="manuals/teacher-guide-first-lesson.md" target="_blank" class="btn btn-outline" style="font-size: 0.85rem;">📖 Teaching Guide</a>
+          </div>
+          <div class="catalog-grid">
+      `;
+
+      allCourses.forEach(course => {
+        html += `
+          <div class="course-card">
+            <div>
+              <span class="badge-teacher" style="margin-bottom: 8px; display: inline-block;">${course.level}</span>
+              <h3>${course.title}</h3>
+              <p>Track: ${course.track}</p>
+            </div>
+            <a href="teacher.html?key=${key}&course=${course.id}&level=${course.level.toLowerCase()}" class="btn" style="background: var(--teacher-primary); text-align: center;">Open Teacher Roadmap</a>
+          </div>
+        `;
+      });
+
+      html += `</div></div>`;
+      appRoot.innerHTML = html;
+    }
+
+    async function renderCourseRoadmap(courseId, level) {
+      const appRoot = document.getElementById('app-root');
+
+      try {
+        const roadmapRes = await fetch(`roadmaps/${courseId}.json`);
+        if (!roadmapRes.ok) throw new Error(`Roadmap for ${courseId} not found`);
+        const roadmap = await roadmapRes.json();
+
+        let html = `
+          <div class="catalog-container">
+            <div class="teacher-controls-bar">
+              <a href="teacher.html?key=${key}" class="back-btn" style="color: #64748b; font-weight: 500;">← Back to Full Catalog</a>
+              <span class="badge-teacher">${roadmap.title}</span>
+            </div>
+
+            <div class="section-card">
+              <h2 style="font-size: 1.4rem; color: #0f172a; margin-bottom: 12px;">${roadmap.title}</h2>
+              <p style="color: #64748b; margin-bottom: 20px;">Complete lesson sequence with answer keys &amp; teacher notes.</p>
+
+              <div class="unit-grid">
+        `;
+
+        roadmap.sequence.forEach(item => {
+          let lessonPath = "";
+          if (item.id === "relaxation-and-hygge" || item.id === "we-are-different") {
+            lessonPath = "lessons/english-b2/relaxation-and-hygge.xml";
+          } else if (item.id === "opposites-attract") {
+            lessonPath = "lessons/english-c1/opposites-attract.xml";
+          } else if (item.id.includes("introductory") || item.section === 0) {
+            lessonPath = "lessons/introductory/introductory-b1.xml";
+          }
+
+          html += `
+            <div class="unit-card">
+              <div>
+                <span style="font-size: 0.75rem; color: #94a3b8; font-weight: 600;">LESSON #${item.lessonNumber}</span>
+                <h3 style="margin: 6px 0;">${item.title}</h3>
+                ${item.unit ? `<p style="font-size: 0.8rem; color: #64748b; margin-bottom: 12px;">${item.unit}</p>` : ''}
+              </div>
+              ${lessonPath ?
+                `<a href="teacher.html?key=${key}&lesson=${encodeURIComponent(lessonPath)}" class="btn" style="background: var(--teacher-primary); padding: 6px 12px; font-size: 0.85rem; text-align: center;">View Teacher Notes</a>` :
+                `<a href="teacher.html?key=${key}&lesson=${encodeURIComponent('lessons/english-b2/relaxation-and-hygge.xml')}" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.85rem; text-align: center;">Open Sample Lesson</a>`
+              }
+            </div>
+          `;
+        });
+
+        html += `</div></div></div>`;
+        appRoot.innerHTML = html;
+
+      } catch (err) {
+        appRoot.innerHTML = `<div class="access-denied"><h2>Error</h2><p>${err.message}</p></div>`;
+      }
+    }
+
+    async function renderLesson(lessonPath) {
+      const appRoot = document.getElementById('app-root');
+
+      try {
+        const response = await fetch(lessonPath);
+        if (!response.ok) throw new Error("Unable to load lesson file");
+        const text = await response.text();
+
+        let lessonTitle = "Interactive Teacher View";
+        let slides = [];
+
+        if (lessonPath.endsWith('.xml')) {
+          const parser = new DOMParser();
+          const xmlDoc = parser.parseFromString(text, "text/xml");
+          const cosyLesson = xmlDoc.querySelector("cosy-lesson");
+          if (cosyLesson) lessonTitle = cosyLesson.getAttribute("title") || lessonTitle;
+
+          const slideElements = xmlDoc.querySelectorAll("cosy-slide");
+          slideElements.forEach(s => {
+            slides.push({
+              id: s.getAttribute("id"),
+              title: s.getAttribute("title") || "Slide",
+              stage: s.getAttribute("stage") || "",
+              duration: s.getAttribute("duration") || "50",
+              mode: s.getAttribute("mode") || "all",
+              htmlContent: renderXmlNodeToTeacherHtml(s)
+            });
+          });
+        } else {
+          // JSON Lesson Format
+          const jsonData = JSON.parse(text);
+          lessonTitle = jsonData.title || lessonTitle;
+          jsonData.slides.forEach(s => {
+            slides.push({
+              id: s.id,
+              title: s.title,
+              stage: s.stage || "",
+              duration: s.duration || "50",
+              mode: s.mode || "all",
+              htmlContent: renderJsonSlideToTeacherHtml(s)
+            });
+          });
+        }
+
+        let html = `
+          <div class="lesson-viewer">
+            <div class="teacher-controls-bar">
+              <a href="teacher.html?key=${key}" class="back-btn" style="color: #64748b; font-weight: 500;">← Back to Catalog</a>
+              <div class="control-group">
+                <label><strong>Duration Filter:</strong></label>
+                <select id="duration-select">
+                  <option value="50">60m Lesson (50 active min)</option>
+                  <option value="80">90m Lesson (80 active min)</option>
+                  <option value="110">120m Lesson (110 active min)</option>
+                </select>
+              </div>
+              <div class="control-group">
+                <label><strong>Classroom Mode:</strong></label>
+                <select id="mode-select">
+                  <option value="all">All Modes</option>
+                  <option value="individual">1-on-1 Individual</option>
+                  <option value="group">Group Class</option>
+                </select>
+              </div>
+            </div>
+        `;
+
+        slides.forEach((slide, idx) => {
+          html += `
+            <div class="slide-card" data-duration="${slide.duration}" data-mode="${slide.mode}">
+              <div class="slide-title">
+                <span>Slide ${idx + 1}: ${slide.title}</span>
+                ${slide.stage ? `<span class="slide-stage-tag">${slide.stage}</span>` : ''}
+              </div>
+              <div class="slide-body">
+                ${slide.htmlContent}
+              </div>
+            </div>
+          `;
+        });
+
+        html += `</div>`;
+        appRoot.innerHTML = html;
+
+      } catch (err) {
+        appRoot.innerHTML = `<div class="access-denied"><h2>Lesson Error</h2><p>${err.message}</p></div>`;
+      }
+    }
+
+    function renderXmlNodeToTeacherHtml(node) {
+      let output = "";
+
+      for (let child of node.childNodes) {
+        if (child.nodeType === Node.TEXT_NODE) {
+          output += child.nodeValue;
+          continue;
+        }
+
+        const tagName = child.tagName ? child.tagName.toLowerCase() : "";
+
+        if (tagName === "cosy-teacher-notes") {
+          const type = child.getAttribute("type") || "instruction";
+          const title = child.getAttribute("title") || (type === "speech" ? "Suggested Speech Script & CCQs" : "Stage Aim & Guidance");
+          const noteClass = type === "speech" ? "teacher-note-speech" : "teacher-note-instruction";
+          const icon = type === "speech" ? "💬" : "💡";
+
+          output += `
+            <div class="teacher-note-box ${noteClass}">
+              <div class="teacher-note-header">${icon} ${title}</div>
+              <div>${renderXmlNodeToTeacherHtml(child)}</div>
+            </div>
+          `;
+        } else if (tagName === "p" || tagName === "ul" || tagName === "ol" || tagName === "li" || tagName === "h1" || tagName === "h2" || tagName === "h3") {
+          output += `<${tagName}>${renderXmlNodeToTeacherHtml(child)}</${tagName}>`;
+        } else if (tagName === "cosy-instruction") {
+          output += `<cosy-instruction>📋 ${renderXmlNodeToTeacherHtml(child)}</cosy-instruction>`;
+        } else if (tagName === "cosy-blockquote") {
+          output += `<cosy-blockquote>${renderXmlNodeToTeacherHtml(child)}</cosy-blockquote>`;
+        } else if (tagName === "cosy-text") {
+          const type = child.getAttribute("type");
+          if (type === "strong") output += `<strong>${renderXmlNodeToTeacherHtml(child)}</strong>`;
+          else if (type === "em") output += `<em>${renderXmlNodeToTeacherHtml(child)}</em>`;
+          else output += renderXmlNodeToTeacherHtml(child);
+        } else if (tagName === "cosy-input") {
+          const answers = child.querySelectorAll("cosy-input-item");
+          let ansList = [];
+          answers.forEach(a => ansList.push(a.textContent));
+
+          output += `
+            <div style="margin: 12px 0;">
+              <input type="text" disabled placeholder="${child.getAttribute("placeholder") || "Student input..."}" style="padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 6px;" />
+              <div class="answer-key-box">
+                <div class="answer-key-title">🔑 Answer Key:</div>
+                <div>${ansList.join(" / ") || "Free response"}</div>
+              </div>
+            </div>
+          `;
+        } else if (tagName === "cosy-select") {
+          const items = child.querySelectorAll("cosy-select-item");
+          let correct = "";
+          items.forEach(it => {
+            if (it.getAttribute("correct") === "true") correct = it.textContent;
+          });
+
+          output += `<div style="margin: 10px 0;">${renderXmlNodeToTeacherHtml(child)}`;
+          if (correct) {
+            output += `<div class="answer-key-box"><div class="answer-key-title">🔑 Answer Key:</div><div>${correct}</div></div>`;
+          }
+          output += `</div>`;
+        } else if (tagName === "cosy-test") {
+          const questions = child.querySelectorAll("cosy-test-question");
+          questions.forEach(q => {
+            const qText = q.querySelector("cosy-test-question-text")?.textContent || "Question";
+            output += `<div style="background: #f8fafc; padding: 12px; border-radius: 8px; margin: 12px 0; border: 1px solid #e2e8f0;"><strong>${qText}</strong>`;
+            const answers = q.querySelectorAll("cosy-test-item");
+            answers.forEach(a => {
+              const isCorrect = a.getAttribute("correct") === "true";
+              output += `<div style="padding: 4px 8px; margin: 4px 0; ${isCorrect ? 'background: #dcfce7; font-weight: 600; color: #15803d;' : ''}">${a.textContent} ${isCorrect ? '✔️ (Correct Answer)' : ''}</div>`;
+            });
+            output += `</div>`;
+          });
+        } else if (tagName === "cosy-vocabulary") {
+          const items = child.querySelectorAll("cosy-vocabulary-item");
+          output += `<div style="background: #f8fafc; border-radius: 8px; padding: 12px; margin: 12px 0;">`;
+          items.forEach(v => {
+            output += `<div style="padding: 6px 0; border-bottom: 1px solid #e2e8f0;"><strong>${v.getAttribute("word")}</strong>: ${v.getAttribute("definition")}</div>`;
+          });
+          output += `</div>`;
+        } else if (tagName === "cosy-choice" || tagName === "cosy-choice-image") {
+          output += `<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 16px 0;">${renderXmlNodeToTeacherHtml(child)}</div>`;
+        } else if (tagName === "cosy-choice-option" || tagName === "cosy-choice-image-option") {
+          output += `<div style="border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px; background: white;">${renderXmlNodeToTeacherHtml(child)}</div>`;
+        } else {
+          output += renderXmlNodeToTeacherHtml(child);
+        }
+      }
+      return output;
+    }
+
+    function renderJsonSlideToTeacherHtml(slide) {
+      let output = "";
+      if (slide.teacherNotes) {
+        slide.teacherNotes.forEach(tn => {
+          output += `
+            <div class="teacher-note-box ${tn.type === 'speech' ? 'teacher-note-speech' : 'teacher-note-instruction'}">
+              <div class="teacher-note-header">${tn.type === 'speech' ? '💬 Suggested Speech Script' : '💡 Stage Aim & Guidance'}</div>
+              <div>${tn.content}</div>
+            </div>
+          `;
+        });
+      }
+      if (slide.elements) {
+        slide.elements.forEach(el => {
+          if (el.type === "instruction") output += `<cosy-instruction>📋 ${el.content}</cosy-instruction>`;
+          else if (el.type === "blockquote") output += `<cosy-blockquote>${el.content}</cosy-blockquote>`;
+          else if (el.type === "input" && el.answers) {
+            output += `<div class="answer-key-box"><div class="answer-key-title">🔑 Answer Key:</div><div>${el.answers.join(" / ")}</div></div>`;
+          }
+        });
+      }
+      return output;
+    }
+
+    window.onload = initTeacherApp;
+  </script>
+</body>
+</html>
