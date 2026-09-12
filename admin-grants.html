@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COSYlanguages Admin Access Grant Helper</title>
+  <link rel="stylesheet" href="shared/styles/style.css">
+  <style>
+    :root {
+      --admin-primary: #0f172a;
+      --admin-accent: #4f46e5;
+      --admin-bg: #f8fafc;
+    }
+
+    body {
+      background-color: var(--admin-bg);
+      color: #1e293b;
+    }
+
+    .badge-admin {
+      background: #e2e8f0;
+      color: #0f172a;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .admin-container {
+      max-width: 960px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .admin-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .admin-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+      color: #334155;
+    }
+
+    .form-group input[type="text"],
+    .form-group select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      background: #ffffff;
+      box-sizing: border-box;
+    }
+
+    .key-input-group {
+      display: flex;
+      gap: 8px;
+    }
+
+    .key-input-group button {
+      white-space: nowrap;
+    }
+
+    .courses-checklist {
+      max-height: 260px;
+      overflow-y: auto;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 12px;
+      background: #f8fafc;
+    }
+
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 0;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .checkbox-item input {
+      cursor: pointer;
+    }
+
+    .quick-select-btns {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .quick-btn {
+      background: #e2e8f0;
+      border: none;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: #475569;
+    }
+
+    .quick-btn:hover {
+      background: #cbd5e1;
+    }
+
+    pre {
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 16px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 0.85rem;
+      line-height: 1.4;
+      margin: 12px 0;
+    }
+
+    .output-box {
+      margin-bottom: 20px;
+    }
+
+    .output-box label {
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .url-preview {
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      padding: 10px 12px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      word-break: break-all;
+      color: #0f172a;
+      margin: 8px 0;
+    }
+
+    .copy-btn {
+      background: var(--admin-accent);
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .copy-btn:hover {
+      background: #4338ca;
+    }
+
+    .notice-box {
+      background: #eff6ff;
+      border-left: 4px solid #3b82f6;
+      padding: 12px 16px;
+      border-radius: 0 6px 6px 0;
+      font-size: 0.85rem;
+      color: #1e40af;
+      margin-top: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="manual-header">
+    <div class="header-content container">
+      <div class="logo-badge">
+        <span>COSYlanguages</span>
+        <span class="badge-admin">Admin Helper</span>
+      </div>
+      <div style="font-size: 0.85rem; color: #64748b;">
+        Founder Access-Grants Snippet Generator
+      </div>
+    </div>
+  </header>
+
+  <main class="admin-container">
+    <div>
+      <h1 style="font-size: 1.6rem; color: #0f172a; margin-bottom: 6px;">Access Grant Generator</h1>
+      <p style="color: #64748b; font-size: 0.95rem;">
+        Generate formatted JSON entries for <code>data/access-grants.json</code> and instantly copy shareable access links for teachers or students.
+      </p>
+    </div>
+
+    <div class="admin-grid">
+      <!-- Form Input Column -->
+      <div class="card">
+        <h2 style="font-size: 1.2rem; color: #0f172a; margin-bottom: 16px;">Grant Parameters</h2>
+
+        <div class="form-group">
+          <label for="role-select">Role</label>
+          <select id="role-select" onchange="handleRoleChange()">
+            <option value="student">Student</option>
+            <option value="teacher">Teacher</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="name-input">Recipient Name</label>
+          <input type="text" id="name-input" placeholder="e.g. Jane Doe" oninput="updateOutput()" />
+        </div>
+
+        <div class="form-group">
+          <label for="key-input">Access Key Token</label>
+          <div class="key-input-group">
+            <input type="text" id="key-input" oninput="updateOutput()" />
+            <button class="btn btn-outline" style="padding: 6px 12px; font-size: 0.85rem;" onclick="generateNewKey()">🎲 Random</button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Course Entitlements</label>
+          <div class="quick-select-btns">
+            <button class="quick-btn" onclick="selectAllCourses(true)">Select All</button>
+            <button class="quick-btn" onclick="selectAllCourses(false)">Clear All</button>
+            <button class="quick-btn" onclick="setWildcardAccess()">Wildcard (*)</button>
+          </div>
+          <div class="courses-checklist" id="courses-checklist">
+            <!-- Rendered dynamically -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Output Column -->
+      <div class="card">
+        <h2 style="font-size: 1.2rem; color: #0f172a; margin-bottom: 16px;">Output &amp; Share Links</h2>
+
+        <div class="output-box">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <label>JSON Grant Snippet</label>
+            <button class="copy-btn" onclick="copyToClipboard('json-snippet', this)">📋 Copy JSON</button>
+          </div>
+          <pre id="json-snippet"></pre>
+        </div>
+
+        <div class="output-box">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <label>Shareable Access URL</label>
+            <button class="copy-btn" onclick="copyToClipboard('access-url', this)">🔗 Copy URL</button>
+          </div>
+          <div class="url-preview" id="access-url"></div>
+        </div>
+
+        <div class="notice-box">
+          💡 <strong>Instructions:</strong> Copy the JSON snippet above and paste it inside the <code>"grants": [ ... ]</code> array in <code>data/access-grants.json</code>. Then share the generated access link with the user.
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="main-footer" style="margin-top: 40px;">
+    <p>COSYlanguages Platform &copy; 2025. Founder Admin Tools.</p>
+  </footer>
+
+  <script>
+    const knownCourses = [
+      { id: "general-english-a0", title: "General English A0 - Beginner" },
+      { id: "general-english-a1", title: "General English A1 - Elementary" },
+      { id: "general-english-a2", title: "General English A2 - Pre-Intermediate" },
+      { id: "general-english-b1", title: "General English B1 - Intermediate" },
+      { id: "general-english-b2", title: "General English B2 - Upper-Intermediate" },
+      { id: "general-english-c1", title: "General English C1 - Advanced" },
+      { id: "spoken-english-a1", title: "Spoken English A1" },
+      { id: "spoken-english-a2", title: "Spoken English A2" },
+      { id: "spoken-english-b1", title: "Spoken English B1" },
+      { id: "spoken-english-b2", title: "Spoken English B2" },
+      { id: "spoken-english-c1", title: "Spoken English C1" },
+      { id: "grammar-english-a0", title: "Grammar English A0" },
+      { id: "grammar-english-a1", title: "Grammar English A1" },
+      { id: "grammar-english-a2", title: "Grammar English A2" },
+      { id: "grammar-english-b1", title: "Grammar English B1" },
+      { id: "grammar-english-b2", title: "Grammar English B2" },
+      { id: "grammar-english-c1", title: "Grammar English C1" },
+      { id: "introductory-english", title: "Introductory Diagnostic First Lessons" }
+    ];
+
+    function init() {
+      renderCourseChecklist();
+      generateNewKey();
+      document.getElementById('name-input').value = "Sample Student";
+      updateOutput();
+    }
+
+    function renderCourseChecklist() {
+      const container = document.getElementById('courses-checklist');
+      let html = `
+        <label class="checkbox-item" style="font-weight: 700; border-bottom: 1px solid #cbd5e1; padding-bottom: 6px; margin-bottom: 6px;">
+          <input type="checkbox" value="*" id="course-wildcard" onchange="updateOutput()" />
+          <span>* (All Courses Wildcard)</span>
+        </label>
+      `;
+
+      knownCourses.forEach(c => {
+        html += `
+          <label class="checkbox-item">
+            <input type="checkbox" class="course-cb" value="${c.id}" onchange="updateOutput()" />
+            <span>${c.title}</span>
+          </label>
+        `;
+      });
+
+      container.innerHTML = html;
+    }
+
+    function generateRandomToken(length = 12) {
+      const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
+      let result = '';
+      for (let i = 0; i < length; i++) {
+        result += chars.charAt(Math.floor(Math.random() * chars.length));
+      }
+      return result;
+    }
+
+    function generateNewKey() {
+      const role = document.getElementById('role-select').value;
+      const prefix = role === 'teacher' ? 't-' : 's-';
+      document.getElementById('key-input').value = prefix + generateRandomToken();
+      updateOutput();
+    }
+
+    function handleRoleChange() {
+      const role = document.getElementById('role-select').value;
+      if (role === 'teacher') {
+        setWildcardAccess();
+      }
+      updateOutput();
+    }
+
+    function selectAllCourses(checked) {
+      document.getElementById('course-wildcard').checked = false;
+      const checkboxes = document.querySelectorAll('.course-cb');
+      checkboxes.forEach(cb => cb.checked = checked);
+      updateOutput();
+    }
+
+    function setWildcardAccess() {
+      document.getElementById('course-wildcard').checked = true;
+      const checkboxes = document.querySelectorAll('.course-cb');
+      checkboxes.forEach(cb => cb.checked = false);
+      updateOutput();
+    }
+
+    function getSelectedCourses() {
+      const isWildcard = document.getElementById('course-wildcard').checked;
+      if (isWildcard) return ["*"];
+
+      const selected = [];
+      const checkboxes = document.querySelectorAll('.course-cb:checked');
+      checkboxes.forEach(cb => selected.push(cb.value));
+      return selected;
+    }
+
+    function updateOutput() {
+      const role = document.getElementById('role-select').value;
+      const name = document.getElementById('name-input').value.trim() || (role === 'teacher' ? 'Teacher Name' : 'Student Name');
+      const key = document.getElementById('key-input').value.trim() || 'sample-key';
+      const courses = getSelectedCourses();
+
+      const grantObj = {
+        key: key,
+        role: role,
+        name: name,
+        courses: courses
+      };
+
+      document.getElementById('json-snippet').innerText = JSON.stringify(grantObj, null, 2);
+
+      const page = role === 'teacher' ? 'teacher.html' : 'student.html';
+      const baseUrl = window.location.origin + window.location.pathname.replace('admin-grants.html', '');
+      const fullUrl = `${baseUrl}${page}?key=${encodeURIComponent(key)}`;
+
+      document.getElementById('access-url').innerText = fullUrl;
+    }
+
+    function copyToClipboard(elementId, btnElement) {
+      const text = document.getElementById(elementId).innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const originalText = btnElement.innerText;
+        btnElement.innerText = "✓ Copied!";
+        setTimeout(() => {
+          btnElement.innerText = originalText;
+        }, 2000);
+      }).catch(err => {
+        alert("Copy failed: " + err);
+      });
+    }
+
+    window.onload = init;
+  </script>
+</body>
+</html>
