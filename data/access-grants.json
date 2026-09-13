@@ -1,9 +1,33 @@
 {
   "grants": [
     {
+      "key": "founder-key",
+      "role": "founder",
+      "name": "Platform Founder",
+      "courses": ["*"]
+    },
+    {
       "key": "demo-teacher-1",
       "role": "teacher",
       "name": "Demo Teacher",
+      "courses": ["*"]
+    },
+    {
+      "key": "teacher-english-key",
+      "role": "teacher",
+      "name": "English Language Teacher",
+      "courses": ["*"]
+    },
+    {
+      "key": "teacher-french-key",
+      "role": "teacher",
+      "name": "French Language Teacher",
+      "courses": ["*"]
+    },
+    {
+      "key": "teacher-russian-key",
+      "role": "teacher",
+      "name": "Russian Language Teacher",
       "courses": ["*"]
     },
     {

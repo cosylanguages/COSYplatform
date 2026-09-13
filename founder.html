@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COSYlanguages — Founder &amp; Executive Portal</title>
+  <link rel="stylesheet" href="shared/styles/style.css">
+  <style>
+    :root {
+      --founder-primary: #0f172a;
+      --founder-accent: #6366f1;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+    }
+
+    body {
+      background-color: #f8fafc;
+      color: #0f172a;
+    }
+
+    .founder-header {
+      background: var(--founder-primary);
+      color: white;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .founder-header-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .badge-founder {
+      background: #312e81;
+      color: #c7d2fe;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .stat-card {
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .stat-card h3 {
+      font-size: 0.9rem;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-number {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--founder-primary);
+    }
+
+    .portal-section {
+      background: white;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      padding: 2rem;
+      margin-top: 2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .portal-section h2 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      color: #0f172a;
+    }
+
+    .teacher-links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .teacher-link-card {
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .teacher-link-card h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: #0f172a;
+    }
+
+    .access-denied {
+      max-width: 500px;
+      margin: 80px auto;
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      border: 1px solid #cbd5e1;
+      text-align: center;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="founder-header">
+    <div class="founder-header-content">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <span style="font-size: 1.4rem; font-weight: 800;">COSYlanguages</span>
+        <span class="badge-founder">Founder &amp; Executive Portal</span>
+      </div>
+      <div id="user-info" style="font-size: 0.85rem; color: #94a3b8;"></div>
+    </div>
+  </header>
+
+  <main id="app-root" class="container" style="max-width: 1100px;">
+    <!-- Rendered via JS -->
+  </main>
+
+  <footer class="main-footer">
+    <p>COSYlanguages Platform Executive Portal &copy; 2025.</p>
+  </footer>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const key = urlParams.get('key') || 'founder-key';
+
+    async function initFounderApp() {
+      const appRoot = document.getElementById('app-root');
+
+      try {
+        const grantsRes = await fetch('data/access-grants.json');
+        if (!grantsRes.ok) throw new Error("Unable to load access grants");
+        const grantsData = await grantsRes.json();
+
+        const grant = grantsData.grants.find(g => g.key === key);
+        if (!grant || (grant.role !== 'founder' && !grant.courses.includes('*'))) {
+          renderAccessDenied("Founder Access Denied", "This portal requires Founder or Administrator privileges.");
+          return;
+        }
+
+        document.getElementById('user-info').innerText = `Founder: ${grant.name || 'Founder'}`;
+        renderFounderDashboard();
+
+      } catch (err) {
+        renderAccessDenied("System Error", err.message);
+      }
+    }
+
+    function renderAccessDenied(title, message) {
+      document.getElementById('app-root').innerHTML = `
+        <div class="access-denied">
+          <h2>🔒 ${title}</h2>
+          <p>${message}</p>
+        </div>
+      `;
+    }
+
+    function renderFounderDashboard() {
+      const appRoot = document.getElementById('app-root');
+
+      appRoot.innerHTML = `
+        <div class="dashboard-grid">
+          <div class="stat-card">
+            <h3>Active Language Tracks</h3>
+            <div class="stat-number">11</div>
+            <p style="font-size: 0.85rem; color: #64748b; margin-top: 4px;">EN, FR, RU, DE, ES, PT, IT, HY, KA, BA, TT</p>
+          </div>
+          <div class="stat-card">
+            <h3>Curriculum Index Files</h3>
+            <div class="stat-number">112</div>
+            <p style="font-size: 0.85rem; color: #10b981; margin-top: 4px;">100% Schema Validated</p>
+          </div>
+          <div class="stat-card">
+            <h3>Interactive Lesson JSONs</h3>
+            <div class="stat-number">104</div>
+            <p style="font-size: 0.85rem; color: #10b981; margin-top: 4px;">Gabarit 14 Champs Standard</p>
+          </div>
+        </div>
+
+        <div class="portal-section">
+          <h2>👩‍🏫 Language-Specific Teacher Portals</h2>
+          <p style="color: #64748b; margin-bottom: 1rem;">Direct entry links for language department teachers:</p>
+          <div class="teacher-links-grid">
+            <div class="teacher-link-card">
+              <h4>🇬🇧 English Teacher Hub</h4>
+              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">General, Spoken, Grammar, Phrasal Verbs &amp; Pronunciation</p>
+              <a href="teacher-english.html?key=teacher-english-key" class="btn" style="background: #4f46e5; text-align: center;">Open English Hub</a>
+            </div>
+            <div class="teacher-link-card">
+              <h4>🇫🇷 French Teacher Hub</h4>
+              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">General, Spoken, Travelling &amp; Pronunciation A1-C2</p>
+              <a href="teacher-french.html?key=teacher-french-key" class="btn" style="background: #0284c7; text-align: center;">Open French Hub</a>
+            </div>
+            <div class="teacher-link-card">
+              <h4>🇷🇺 Russian Teacher Hub</h4>
+              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">General, Spoken, Travelling &amp; Pronunciation A1-C2</p>
+              <a href="teacher-russian.html?key=teacher-russian-key" class="btn" style="background: #059669; text-align: center;">Open Russian Hub</a>
+            </div>
+            <div class="teacher-link-card">
+              <h4>🎓 Universal Master Teacher Portal</h4>
+              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">Unrestricted access to all languages &amp; raw catalog</p>
+              <a href="teacher.html?key=demo-teacher-1" class="btn btn-outline" style="text-align: center;">Open Master Portal</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="portal-section">
+          <h2>🔑 Access Grants &amp; Student Workbooks</h2>
+          <div class="teacher-links-grid">
+            <div class="teacher-link-card">
+              <h4>🧑‍🎓 Student Workbook (A1)</h4>
+              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">Access key: demo-student-1</p>
+              <a href="student.html?key=demo-student-1" class="btn btn-secondary" style="text-align: center;">View Student Workbook</a>
+            </div>
+            <div class="teacher-link-card">
+              <h4>🧑‍🎓 Student Workbook (B2)</h4>
+              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">Access key: demo-student-2</p>
+              <a href="student.html?key=demo-student-2" class="btn btn-secondary" style="text-align: center;">View Student Workbook</a>
+            </div>
+            <div class="teacher-link-card">
+              <h4>⚙️ Access Grants Manager</h4>
+              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">Edit data/access-grants.json directly</p>
+              <a href="admin-grants.html" class="btn btn-outline" style="text-align: center;">Open Grants Manager</a>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    window.onload = initFounderApp;
+  </script>
+</body>
+</html>
