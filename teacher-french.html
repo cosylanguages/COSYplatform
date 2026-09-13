@@ -16,6 +16,7 @@
     .course-card { background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; }
     .access-denied { max-width: 500px; margin: 80px auto; background: white; padding: 40px; border-radius: 12px; border: 1px solid #cbd5e1; text-align: center; }
   </style>
+  <script src="shared/js/access-grants.js"></script>
 </head>
 <body>
   <header class="manual-header">
@@ -38,7 +39,7 @@
 
   <script>
     const urlParams = new URLSearchParams(window.location.search);
-    const key = urlParams.get('key') || 'teacher-french-key';
+    const key = urlParams.get('key') || 'french-teachers';
 
     async function initFrenchHub() {
       const appRoot = document.getElementById('app-root');
@@ -54,19 +55,12 @@
           return;
         }
 
+        const fullManifest = window.CosyAccessGrants ? window.CosyAccessGrants.FULL_MANIFEST : [];
+        const allowedCourses = window.CosyAccessGrants ? window.CosyAccessGrants.resolveGrantCourses(grant, fullManifest) : [];
+
         document.getElementById('user-info').innerText = `Enseignant: ${grant.name || 'Professeur de français'}`;
 
-        const frenchCourses = [
-          { id: "fr-pron-a1", title: "Prononciation & Lecture A1 (A0-A1 Fondations)", track: "Prononciation", level: "A1" },
-          { id: "fr-pron-a2", title: "Prononciation & Spoken French A2", track: "Prononciation", level: "A2" },
-          { id: "fr-pron-b1", title: "Prononciation & Phonétique B1", track: "Prononciation", level: "B1" },
-          { id: "fr-pron-b2", title: "Prononciation & Registres de langue B2", track: "Prononciation", level: "B2" },
-          { id: "fr-pron-c1", title: "Prononciation & Diction poétique C1", track: "Prononciation", level: "C1" },
-          { id: "fr-pron-c2", title: "Prononciation & Expertise орфоэпическая C2", track: "Prononciation", level: "C2" },
-          { id: "general-french-a1", title: "Français Général A1", track: "Français Général", level: "A1" },
-          { id: "general-french-a2", title: "Français Général A2", track: "Français Général", level: "A2" },
-          { id: "spoken-french-b1", title: "Français Oral B1", track: "Français Oral", level: "B1" }
-        ];
+        const frenchCourses = fullManifest.filter(c => c.lang === 'fr' && (allowedCourses.includes('*') || allowedCourses.includes(c.id)));
 
         let html = `
           <div class="catalog-container">
@@ -77,18 +71,22 @@
             <div class="catalog-grid">
         `;
 
-        frenchCourses.forEach(course => {
-          html += `
-            <div class="course-card">
-              <div>
-                <span class="badge-teacher" style="margin-bottom: 8px; display: inline-block;">${course.level}</span>
-                <h3 style="font-size: 1.15rem; color: #0f172a; margin-bottom: 6px;">${course.title}</h3>
-                <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 16px;">Parcours: ${course.track}</p>
+        if (frenchCourses.length === 0) {
+          html += `<p style="grid-column: 1/-1; color: #64748b;">Aucun cours trouvé pour ce filtre d'accès.</p>`;
+        } else {
+          frenchCourses.forEach(course => {
+            html += `
+              <div class="course-card">
+                <div>
+                  <span class="badge-teacher" style="margin-bottom: 8px; display: inline-block;">${course.level.toUpperCase()}</span>
+                  <h3 style="font-size: 1.15rem; color: #0f172a; margin-bottom: 6px;">${course.title}</h3>
+                  <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 16px;">Parcours: ${course.track}</p>
+                </div>
+                <a href="teacher.html?key=${key}&course=${course.id}&level=${course.level.toLowerCase()}" class="btn" style="background: var(--teacher-primary); text-align: center;">Ouvrir la feuille de route</a>
               </div>
-              <a href="teacher.html?key=${key}&course=${course.id}&level=${course.level.toLowerCase()}" class="btn" style="background: var(--teacher-primary); text-align: center;">Ouvrir la feuille de route</a>
-            </div>
-          `;
-        });
+            `;
+          });
+        }
 
         html += `</div></div>`;
         appRoot.innerHTML = html;

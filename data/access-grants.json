@@ -31,6 +31,30 @@
       "courses": ["*"]
     },
     {
+      "key": "english-teachers",
+      "role": "teacher",
+      "name": "All English Teachers",
+      "filter": { "language": "en" }
+    },
+    {
+      "key": "french-teachers",
+      "role": "teacher",
+      "name": "All French Teachers",
+      "filter": { "language": "fr" }
+    },
+    {
+      "key": "russian-teachers",
+      "role": "teacher",
+      "name": "All Russian Teachers",
+      "filter": { "language": "ru" }
+    },
+    {
+      "key": "english-a0-a1",
+      "role": "student",
+      "name": "English A0-A1 cohort",
+      "filter": { "language": "en", "level": ["a0", "a1"] }
+    },
+    {
       "key": "demo-student-1",
       "role": "student",
       "name": "Demo Student 1",
