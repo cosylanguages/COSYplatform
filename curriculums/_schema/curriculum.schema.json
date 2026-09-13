@@ -5,7 +5,7 @@
   "required": ["language", "course_type", "level", "units"],
   "properties": {
     "language": { "type": "string" },
-    "course_type": { "type": "string", "enum": ["general","spoken","exam","travelling","professional","relocation"] },
+    "course_type": { "type": "string", "enum": ["general","spoken","exam","travelling","professional","relocation","pronunciation"] },
     "level": { "type": "string", "enum": ["A1","A2","B1","B2","C1","C2"] },
     "units": {
       "type": "array",
@@ -22,7 +22,7 @@
               "required": ["lesson", "title"],
               "properties": {
                 "lesson": { "type": "integer" },
-                "type": { "type": "string", "enum": ["vocab", "grammar", "gv", "spoken", "srev", "exam"] },
+                "type": { "type": "string", "enum": ["vocab", "grammar", "gv", "spoken", "srev", "exam", "pronunciation", "pron"] },
                 "title": { "type": "string" },
                 "recycled": { "type": ["string", "null"] },
                 "duration_minutes": { "type": "integer" },

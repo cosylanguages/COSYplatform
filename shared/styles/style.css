@@ -335,3 +335,57 @@ footer.main-footer {
   border-top: 1px solid var(--border-color);
   margin-top: auto;
 }
+
+/* Print Stylesheet for Offline Worksheet Support */
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    font-size: 11pt;
+    line-height: 1.4;
+  }
+
+  .no-print, header, footer, nav, .btn, .practice-links {
+    display: none !important;
+  }
+
+  .container, .notice-card, .manual-meta, .section-card, .unit-card {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: transparent !important;
+  }
+
+  /* Page breaks for clean worksheet layout */
+  .slide-container, .section-card, .unit-card {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  blockquote {
+    border-left: 3px solid #333 !important;
+    padding-left: 0.8rem !important;
+    margin: 0.5rem 0 !important;
+    background-color: #f9f9f9 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  h1, h2, h3, h4 {
+    color: #000000 !important;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  a {
+    text-decoration: underline !important;
+    color: #000000 !important;
+  }
+
+  /* Ensure all lesson stages and notes render cleanly on paper */
+  .teacher-notes, .student-view {
+    display: block !important;
+  }
+}
