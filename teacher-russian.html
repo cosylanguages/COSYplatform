@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COSYlanguages — Russian Teacher Hub</title>
+  <link rel="stylesheet" href="shared/styles/style.css">
+  <style>
+    :root {
+      --teacher-primary: #059669;
+    }
+    body { background-color: #f8fafc; }
+    .badge-teacher { background: #d1fae5; color: #065f46; padding: 4px 10px; border-radius: 9999px; font-size: 0.8rem; font-weight: 600; }
+    .catalog-container { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
+    .catalog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+    .course-card { background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; }
+    .access-denied { max-width: 500px; margin: 80px auto; background: white; padding: 40px; border-radius: 12px; border: 1px solid #cbd5e1; text-align: center; }
+  </style>
+</head>
+<body>
+  <header class="manual-header">
+    <div class="header-content">
+      <div class="logo-badge">
+        <span>COSYlanguages</span>
+        <span class="badge-teacher">🇷🇺 Russian Teacher Hub</span>
+      </div>
+      <div id="user-info" style="font-size: 0.85rem; color: #64748b;"></div>
+    </div>
+  </header>
+
+  <main id="app-root" class="container">
+    <!-- JS Rendered -->
+  </main>
+
+  <footer class="main-footer">
+    <p>COSYlanguages Russian Department &copy; 2025.</p>
+  </footer>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const key = urlParams.get('key') || 'teacher-russian-key';
+
+    async function initRussianHub() {
+      const appRoot = document.getElementById('app-root');
+
+      try {
+        const grantsRes = await fetch('data/access-grants.json');
+        if (!grantsRes.ok) throw new Error("Unable to load access grants");
+        const grantsData = await grantsRes.json();
+
+        const grant = grantsData.grants.find(g => g.key === key);
+        if (!grant) {
+          renderAccessDenied("Invalid Key", "Access key required for Russian Teacher Hub.");
+          return;
+        }
+
+        document.getElementById('user-info').innerText = `Преподаватель: ${grant.name || 'Преподаватель РКИ'}`;
+
+        const russianCourses = [
+          { id: "ru-pron-a1", title: "Русская фонетика и чтение A1", track: "Фонетика", level: "A1" },
+          { id: "ru-pron-a2", title: "Русская фонетика и редукция A2", track: "Фонетика", level: "A2" },
+          { id: "ru-pron-b1", title: "Русская орфоэпия B1", track: "Фонетика", level: "B1" },
+          { id: "ru-pron-b2", title: "Русская орфоэпия и ударение B2", track: "Фонетика", level: "B2" },
+          { id: "ru-pron-c1", title: "Стилистическая орфоэпия C1", track: "Фонетика", level: "C1" },
+          { id: "ru-pron-c2", title: "Академическая орфоэпия C2", track: "Фонетика", level: "C2" },
+          { id: "general-russian-a1", title: "Русский язык как иностранный A1", track: "РКИ Общий", level: "A1" },
+          { id: "general-russian-a2", title: "Русский язык как иностранный A2", track: "РКИ Общий", level: "A2" },
+          { id: "spoken-russian-b1", title: "Разговорный русский B1", track: "РКИ Разговорный", level: "B1" }
+        ];
+
+        let html = `
+          <div class="catalog-container">
+            <div style="margin-bottom: 24px;">
+              <h1 style="font-size: 1.6rem; color: #0f172a;">🇷🇺 Каталог преподавателя — Русская секция (РКИ)</h1>
+              <p style="color: #64748b;">Полный доступ к курсам фонетики, орфоэпии, картам уроков Габарит 14 полей и ключам.</p>
+            </div>
+            <div class="catalog-grid">
+        `;
+
+        russianCourses.forEach(course => {
+          html += `
+            <div class="course-card">
+              <div>
+                <span class="badge-teacher" style="margin-bottom: 8px; display: inline-block;">${course.level}</span>
+                <h3 style="font-size: 1.15rem; color: #0f172a; margin-bottom: 6px;">${course.title}</h3>
+                <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 16px;">Направление: ${course.track}</p>
+              </div>
+              <a href="teacher.html?key=${key}&course=${course.id}&level=${course.level.toLowerCase()}" class="btn" style="background: var(--teacher-primary); text-align: center;">Открыть карту курса</a>
+            </div>
+          `;
+        });
+
+        html += `</div></div>`;
+        appRoot.innerHTML = html;
+
+      } catch (err) {
+        renderAccessDenied("Ошибка", err.message);
+      }
+    }
+
+    function renderAccessDenied(title, message) {
+      document.getElementById('app-root').innerHTML = `<div class="access-denied"><h2>🔒 ${title}</h2><p>${message}</p></div>`;
+    }
+
+    window.onload = initRussianHub;
+  </script>
+</body>
+</html>

@@ -376,11 +376,107 @@
         return grant.courses.includes(c.id);
       });
 
+      // Comprehensive manifest of all platform courses
+      const fullManifest = [
+        // English
+        { id: "general-english-a0", title: "General English A0 - Beginner", track: "General", lang: "en", level: "A0" },
+        { id: "general-english-a1", title: "General English A1 - Elementary", track: "General", lang: "en", level: "A1" },
+        { id: "general-english-a2", title: "General English A2 - Pre-Intermediate", track: "General", lang: "en", level: "A2" },
+        { id: "general-english-b1", title: "General English B1 - Intermediate", track: "General", lang: "en", level: "B1" },
+        { id: "general-english-b2", title: "General English B2 - Upper-Intermediate", track: "General", lang: "en", level: "B2" },
+        { id: "general-english-c1", title: "General English C1 - Advanced", track: "General", lang: "en", level: "C1" },
+        { id: "spoken-english-a1", title: "Spoken English A1", track: "Spoken", lang: "en", level: "A1" },
+        { id: "spoken-english-a2", title: "Spoken English A2", track: "Spoken", lang: "en", level: "A2" },
+        { id: "spoken-english-b1", title: "Spoken English B1", track: "Spoken", lang: "en", level: "B1" },
+        { id: "spoken-english-b2", title: "Spoken English B2", track: "Spoken", lang: "en", level: "B2" },
+        { id: "spoken-english-c1", title: "Spoken English C1", track: "Spoken", lang: "en", level: "C1" },
+        { id: "grammar-english-a0", title: "Grammar English A0", track: "Grammar", lang: "en", level: "A0" },
+        { id: "grammar-english-a1", title: "Grammar English A1", track: "Grammar", lang: "en", level: "A1" },
+        { id: "grammar-english-a2", title: "Grammar English A2", track: "Grammar", lang: "en", level: "A2" },
+        { id: "grammar-english-b1", title: "Grammar English B1", track: "Grammar", lang: "en", level: "B1" },
+        { id: "grammar-english-b2", title: "Grammar English B2", track: "Grammar", lang: "en", level: "B2" },
+        { id: "grammar-english-c1", title: "Grammar English C1", track: "Grammar", lang: "en", level: "C1" },
+        { id: "en-pron-a1", title: "English Pronunciation A1", track: "Pronunciation", lang: "en", level: "A1" },
+        { id: "en-pron-a2", title: "English Pronunciation A2", track: "Pronunciation", lang: "en", level: "A2" },
+        { id: "en-pron-b1", title: "English Pronunciation B1", track: "Pronunciation", lang: "en", level: "B1" },
+        { id: "en-pron-b2", title: "English Pronunciation B2", track: "Pronunciation", lang: "en", level: "B2" },
+        { id: "en-pron-c1", title: "English Pronunciation C1", track: "Pronunciation", lang: "en", level: "C1" },
+        { id: "en-pron-c2", title: "English Pronunciation C2", track: "Pronunciation", lang: "en", level: "C2" },
+
+        // French
+        { id: "fr-pron-a1", title: "French Pronunciation A1 (A0-A1)", track: "Pronunciation", lang: "fr", level: "A1" },
+        { id: "fr-pron-a2", title: "French Pronunciation A2", track: "Pronunciation", lang: "fr", level: "A2" },
+        { id: "fr-pron-b1", title: "French Pronunciation B1", track: "Pronunciation", lang: "fr", level: "B1" },
+        { id: "fr-pron-b2", title: "French Pronunciation B2", track: "Pronunciation", lang: "fr", level: "B2" },
+        { id: "fr-pron-c1", title: "French Pronunciation C1", track: "Pronunciation", lang: "fr", level: "C1" },
+        { id: "fr-pron-c2", title: "French Pronunciation C2", track: "Pronunciation", lang: "fr", level: "C2" },
+
+        // Russian
+        { id: "ru-pron-a1", title: "Russian Pronunciation A1", track: "Pronunciation", lang: "ru", level: "A1" },
+        { id: "ru-pron-a2", title: "Russian Pronunciation A2", track: "Pronunciation", lang: "ru", level: "A2" },
+        { id: "ru-pron-b1", title: "Russian Pronunciation B1", track: "Pronunciation", lang: "ru", level: "B1" },
+        { id: "ru-pron-b2", title: "Russian Pronunciation B2", track: "Pronunciation", lang: "ru", level: "B2" },
+        { id: "ru-pron-c1", title: "Russian Pronunciation C1", track: "Pronunciation", lang: "ru", level: "C1" },
+        { id: "ru-pron-c2", title: "Russian Pronunciation C2", track: "Pronunciation", lang: "ru", level: "C2" }
+      ];
+
+      // Read current filter selections from URL or DOM
+      const currentLang = urlParams.get('langFilter') || 'all';
+      const currentTrack = urlParams.get('trackFilter') || 'all';
+      const currentLevel = urlParams.get('levelFilter') || 'all';
+
+      // Filter courses based on entitlement grant and active dropdown selections
+      const allowedCourses = fullManifest.filter(c => {
+        const isEntitled = grant.courses.includes("*") || grant.courses.includes(c.id);
+        if (!isEntitled) return false;
+        if (currentLang !== 'all' && c.lang !== currentLang) return false;
+        if (currentTrack !== 'all' && c.track !== currentTrack) return false;
+        if (currentLevel !== 'all' && c.level !== currentLevel) return false;
+        return true;
+      });
+
       let html = `
         <div class="catalog-container">
           <div class="catalog-header">
-            <h1 style="font-size: 1.6rem; color: #0f172a;">Your Entitled Courses</h1>
-            <p style="color: #64748b;">Select a course to view your curriculum roadmap and interactive lessons.</p>
+            <h1 style="font-size: 1.6rem; color: #0f172a; margin-bottom: 8px;">Your Student Workspace</h1>
+            <p style="color: #64748b; margin-bottom: 16px;">Filter by Language, Course Track, and CEFR Level:</p>
+
+            <div style="background: white; border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px 16px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center;">
+              <div>
+                <label style="font-size: 0.85rem; font-weight: 600; color: #475569; margin-right: 6px;">Language:</label>
+                <select id="langFilter" onchange="updateStudentFilters()" style="padding: 6px 12px; border-radius: 6px; border: 1px solid #cbd5e1;">
+                  <option value="all" ${currentLang==='all'?'selected':''}>All Languages</option>
+                  <option value="en" ${currentLang==='en'?'selected':''}>🇬🇧 English</option>
+                  <option value="fr" ${currentLang==='fr'?'selected':''}>🇫🇷 French</option>
+                  <option value="ru" ${currentLang==='ru'?'selected':''}>🇷🇺 Russian</option>
+                </select>
+              </div>
+
+              <div>
+                <label style="font-size: 0.85rem; font-weight: 600; color: #475569; margin-right: 6px;">Course Type:</label>
+                <select id="trackFilter" onchange="updateStudentFilters()" style="padding: 6px 12px; border-radius: 6px; border: 1px solid #cbd5e1;">
+                  <option value="all" ${currentTrack==='all'?'selected':''}>All Types</option>
+                  <option value="General" ${currentTrack==='General'?'selected':''}>General</option>
+                  <option value="Spoken" ${currentTrack==='Spoken'?'selected':''}>Spoken</option>
+                  <option value="Grammar" ${currentTrack==='Grammar'?'selected':''}>Grammar</option>
+                  <option value="Pronunciation" ${currentTrack==='Pronunciation'?'selected':''}>Pronunciation</option>
+                </select>
+              </div>
+
+              <div>
+                <label style="font-size: 0.85rem; font-weight: 600; color: #475569; margin-right: 6px;">CEFR Level:</label>
+                <select id="levelFilter" onchange="updateStudentFilters()" style="padding: 6px 12px; border-radius: 6px; border: 1px solid #cbd5e1;">
+                  <option value="all" ${currentLevel==='all'?'selected':''}>All Levels</option>
+                  <option value="A0" ${currentLevel==='A0'?'selected':''}>A0</option>
+                  <option value="A1" ${currentLevel==='A1'?'selected':''}>A1</option>
+                  <option value="A2" ${currentLevel==='A2'?'selected':''}>A2</option>
+                  <option value="B1" ${currentLevel==='B1'?'selected':''}>B1</option>
+                  <option value="B2" ${currentLevel==='B2'?'selected':''}>B2</option>
+                  <option value="C1" ${currentLevel==='C1'?'selected':''}>C1</option>
+                  <option value="C2" ${currentLevel==='C2'?'selected':''}>C2</option>
+                </select>
+              </div>
+            </div>
           </div>
           <div class="catalog-grid">
       `;
@@ -643,6 +739,18 @@
         });
       }
       return output;
+    }
+
+    function updateStudentFilters() {
+      const lang = document.getElementById('langFilter').value;
+      const track = document.getElementById('trackFilter').value;
+      const level = document.getElementById('levelFilter').value;
+
+      const url = new URL(window.location.href);
+      url.searchParams.set('langFilter', lang);
+      url.searchParams.set('trackFilter', track);
+      url.searchParams.set('levelFilter', level);
+      window.location.href = url.toString();
     }
 
     window.onload = initStudentApp;

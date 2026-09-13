@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COSYlanguages — English Teacher Hub</title>
+  <link rel="stylesheet" href="shared/styles/style.css">
+  <style>
+    :root {
+      --teacher-primary: #4f46e5;
+    }
+    body { background-color: #f8fafc; }
+    .badge-teacher { background: #e0e7ff; color: #3730a3; padding: 4px 10px; border-radius: 9999px; font-size: 0.8rem; font-weight: 600; }
+    .catalog-container { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
+    .catalog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+    .course-card { background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; }
+    .access-denied { max-width: 500px; margin: 80px auto; background: white; padding: 40px; border-radius: 12px; border: 1px solid #cbd5e1; text-align: center; }
+  </style>
+</head>
+<body>
+  <header class="manual-header">
+    <div class="header-content">
+      <div class="logo-badge">
+        <span>COSYlanguages</span>
+        <span class="badge-teacher">🇬🇧 English Teacher Hub</span>
+      </div>
+      <div id="user-info" style="font-size: 0.85rem; color: #64748b;"></div>
+    </div>
+  </header>
+
+  <main id="app-root" class="container">
+    <!-- JS Rendered -->
+  </main>
+
+  <footer class="main-footer">
+    <p>COSYlanguages English Department &copy; 2025.</p>
+  </footer>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const key = urlParams.get('key') || 'teacher-english-key';
+
+    async function initEnglishHub() {
+      const appRoot = document.getElementById('app-root');
+
+      try {
+        const grantsRes = await fetch('data/access-grants.json');
+        if (!grantsRes.ok) throw new Error("Unable to load access grants");
+        const grantsData = await grantsRes.json();
+
+        const grant = grantsData.grants.find(g => g.key === key);
+        if (!grant) {
+          renderAccessDenied("Invalid Key", "Access key required for English Teacher Hub.");
+          return;
+        }
+
+        document.getElementById('user-info').innerText = `Teacher: ${grant.name || 'English Teacher'}`;
+
+        const englishCourses = [
+          { id: "general-english-a0", title: "General English A0 - Beginner", track: "General English", level: "A0" },
+          { id: "general-english-a1", title: "General English A1 - Elementary", track: "General English", level: "A1" },
+          { id: "general-english-a2", title: "General English A2 - Pre-Intermediate", track: "General English", level: "A2" },
+          { id: "general-english-b1", title: "General English B1 - Intermediate", track: "General English", level: "B1" },
+          { id: "general-english-b2", title: "General English B2 - Upper-Intermediate", track: "General English", level: "B2" },
+          { id: "general-english-c1", title: "General English C1 - Advanced", track: "General English", level: "C1" },
+          { id: "spoken-english-a1", title: "Spoken English A1", track: "Spoken English", level: "A1" },
+          { id: "spoken-english-a2", title: "Spoken English A2", track: "Spoken English", level: "A2" },
+          { id: "spoken-english-b1", title: "Spoken English B1", track: "Spoken English", level: "B1" },
+          { id: "spoken-english-b2", title: "Spoken English B2", track: "Spoken English", level: "B2" },
+          { id: "spoken-english-c1", title: "Spoken English C1", track: "Spoken English", level: "C1" },
+          { id: "grammar-english-a0", title: "Grammar English A0", track: "Grammar English", level: "A0" },
+          { id: "grammar-english-a1", title: "Grammar English A1", track: "Grammar English", level: "A1" },
+          { id: "grammar-english-a2", title: "Grammar English A2", track: "Grammar English", level: "A2" },
+          { id: "grammar-english-b1", title: "Grammar English B1", track: "Grammar English", level: "B1" },
+          { id: "grammar-english-b2", title: "Grammar English B2", track: "Grammar English", level: "B2" },
+          { id: "grammar-english-c1", title: "Grammar English C1", track: "Grammar English", level: "C1" },
+          { id: "en-pron-a1", title: "English Pronunciation & Spelling A1", track: "Pronunciation", level: "A1" },
+          { id: "en-pron-a2", title: "English Pronunciation & Spelling A2", track: "Pronunciation", level: "A2" },
+          { id: "en-pron-b1", title: "English Pronunciation & Spelling B1", track: "Pronunciation", level: "B1" },
+          { id: "en-pron-b2", title: "English Pronunciation & Spelling B2", track: "Pronunciation", level: "B2" },
+          { id: "en-pron-c1", title: "English Pronunciation & Spelling C1", track: "Pronunciation", level: "C1" },
+          { id: "en-pron-c2", title: "English Pronunciation & Spelling C2", track: "Pronunciation", level: "C2" }
+        ];
+
+        let html = `
+          <div class="catalog-container">
+            <div style="margin-bottom: 24px;">
+              <h1 style="font-size: 1.6rem; color: #0f172a;">🇬🇧 English Teacher Catalog &amp; Resources</h1>
+              <p style="color: #64748b;">Complete English courses: General, Spoken, Grammar, Phrasal Verbs, and Pronunciation (A1–C2).</p>
+            </div>
+            <div class="catalog-grid">
+        `;
+
+        englishCourses.forEach(course => {
+          html += `
+            <div class="course-card">
+              <div>
+                <span class="badge-teacher" style="margin-bottom: 8px; display: inline-block;">${course.level}</span>
+                <h3 style="font-size: 1.15rem; color: #0f172a; margin-bottom: 6px;">${course.title}</h3>
+                <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 16px;">Track: ${course.track}</p>
+              </div>
+              <a href="teacher.html?key=${key}&course=${course.id}&level=${course.level.toLowerCase()}" class="btn" style="background: var(--teacher-primary); text-align: center;">Open Teacher Roadmap</a>
+            </div>
+          `;
+        });
+
+        html += `</div></div>`;
+        appRoot.innerHTML = html;
+
+      } catch (err) {
+        renderAccessDenied("Error", err.message);
+      }
+    }
+
+    function renderAccessDenied(title, message) {
+      document.getElementById('app-root').innerHTML = `<div class="access-denied"><h2>🔒 ${title}</h2><p>${message}</p></div>`;
+    }
+
+    window.onload = initEnglishHub;
+  </script>
+</body>
+</html>
