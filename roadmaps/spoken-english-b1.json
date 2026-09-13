@@ -2,100 +2,598 @@
   "curriculumId": "curriculum-spoken-english-b1",
   "title": "Spoken English B1 Intermediate Roadmap",
   "totalLessons": 79,
-  "supportedDurations": [15, 30, 60],
+  "supportedDurations": [
+    15,
+    30,
+    60
+  ],
   "sequence": [
-    { "lessonNumber": 1, "id": "travelling-by-plane", "title": "Travelling by plane", "module": "Travelling" },
-    { "lessonNumber": 2, "id": "travelling-by-train", "title": "Travelling by train", "module": "Travelling" },
-    { "lessonNumber": 3, "id": "travelling-by-car", "title": "Travelling by car", "module": "Travelling" },
-    { "lessonNumber": 4, "id": "travelling-by-ship", "title": "Travelling by ship", "module": "Travelling" },
-    { "lessonNumber": 5, "id": "packing-virtual-suitcase-paris", "title": "Packing a virtual suitcase to Paris", "module": "Travelling" },
-    { "lessonNumber": 6, "id": "packing-virtual-suitcase-bangkok", "title": "Packing a virtual suitcase to Bangkok", "module": "Travelling" },
-    { "lessonNumber": 7, "id": "packing-virtual-suitcase-maldives", "title": "Pack your virtual suitcase to the Maldives", "module": "Travelling" },
-    { "lessonNumber": 8, "id": "using-transportation-apps", "title": "Using transportation apps", "module": "Travelling" },
-    { "lessonNumber": 9, "id": "holidays-from-hell", "title": "Holidays from hell", "module": "Travelling", "isOptional": true },
-
-    { "lessonNumber": 10, "id": "booking-hotels", "title": "Booking hotels", "module": "Staying at a hotel" },
-    { "lessonNumber": 11, "id": "situations-at-the-hotel", "title": "Situations at the hotel", "module": "Staying at a hotel" },
-
-    { "lessonNumber": 12, "id": "joining-sports-club", "title": "Joining a sports club or group", "module": "Healthy lifestyle" },
-    { "lessonNumber": 13, "id": "exercise-instructions-gym", "title": "Exercise instructions in the gym", "module": "Healthy lifestyle" },
-    { "lessonNumber": 14, "id": "healthy-lifestyle-opt", "title": "Healthy lifestyle", "module": "Healthy lifestyle", "isOptional": true },
-
-    { "lessonNumber": 15, "id": "smart-home", "title": "Smart home", "module": "Home & Living" },
-    { "lessonNumber": 16, "id": "repair-your-home", "title": "Repair your home", "module": "Home & Living" },
-    { "lessonNumber": 17, "id": "utilities-home-services", "title": "Utilities and home services", "module": "Home & Living" },
-    { "lessonNumber": 18, "id": "where-do-we-live", "title": "Where do we live?", "module": "Home & Living", "isOptional": true },
-    { "lessonNumber": 19, "id": "what-is-there-in-your-home", "title": "What is there in your home?", "module": "Home & Living" },
-    { "lessonNumber": 20, "id": "lets-redecorate-dream-house", "title": "Let's redecorate: Design your dream house", "module": "Home & Living" },
-    { "lessonNumber": 21, "id": "finding-renting-home", "title": "Finding and renting a home", "module": "Home & Living" },
-    { "lessonNumber": 22, "id": "neighbours-from-hell", "title": "Neighbours from hell", "module": "Home & Living", "isOptional": true },
-    { "lessonNumber": 23, "id": "tenant-rights-problems", "title": "Tenant rights and problems", "module": "Home & Living" },
-    { "lessonNumber": 24, "id": "cleaning-service", "title": "Cleaning service", "module": "Home & Living" },
-
-    { "lessonNumber": 25, "id": "yummy-food", "title": "Yummy food", "module": "Food & Cooking" },
-    { "lessonNumber": 26, "id": "whats-in-your-kitchen", "title": "What is there in your kitchen?", "module": "Food & Cooking" },
-    { "lessonNumber": 27, "id": "cook-at-home-easy-smart", "title": "How to cook at home easy and smart", "module": "Food & Cooking" },
-    { "lessonNumber": 28, "id": "understand-talk-recipes", "title": "How to understand and talk about recipes", "module": "Food & Cooking" },
-    { "lessonNumber": 29, "id": "dining-out-friends-family", "title": "Dining out with friends and family", "module": "Food & Cooking" },
-    { "lessonNumber": 30, "id": "gastro-tour-around-world", "title": "Gastro Tour Around the World", "module": "Food & Cooking" },
-    { "lessonNumber": 31, "id": "ordering-food-drinks-special-menus", "title": "Ordering food and drinks: Special menus", "module": "Food & Cooking" },
-    { "lessonNumber": 32, "id": "is-it-right-eat-meat", "title": "Is it right to eat meat?", "module": "Food & Cooking", "isOptional": true },
-
-    { "lessonNumber": 33, "id": "budgeting-everyday-life", "title": "Budgeting for everyday life", "module": "Money & Finance" },
-    { "lessonNumber": 34, "id": "money-poison", "title": "Money poison", "module": "Money & Finance", "isOptional": true },
-    { "lessonNumber": 35, "id": "saving-future-investing", "title": "Saving for the future/Investing", "module": "Money & Finance" },
-    { "lessonNumber": 36, "id": "banking-basics", "title": "Banking basics", "module": "Money & Finance" },
-    { "lessonNumber": 37, "id": "understanding-credit", "title": "Understanding credit", "module": "Money & Finance" },
-    { "lessonNumber": 38, "id": "paying-bills-subscriptions", "title": "Paying bills and subscriptions", "module": "Money & Finance" },
-
-    { "lessonNumber": 39, "id": "slangy-words", "title": "Slangy words", "module": "Social Behavior & Challenges" },
-    { "lessonNumber": 40, "id": "memes", "title": "Memes", "module": "Social Behavior & Challenges" },
-
-    { "lessonNumber": 41, "id": "preschool-childcare", "title": "Preschool and childcare", "module": "Education" },
-    { "lessonNumber": 42, "id": "school-system", "title": "School system", "module": "Education" },
-    { "lessonNumber": 43, "id": "smacking-or-petting", "title": "Smacking or petting?", "module": "Education", "isOptional": true },
-    { "lessonNumber": 44, "id": "communicating-with-teachers", "title": "Communicating with Teachers", "module": "Education" },
-    { "lessonNumber": 45, "id": "school-meals-allergies", "title": "School meals and allergies", "module": "Education" },
-    { "lessonNumber": 46, "id": "school-events-volunteering", "title": "School Events and Volunteering", "module": "Education" },
-
-    { "lessonNumber": 47, "id": "ai-daily-life", "title": "AI in daily life", "module": "Technologies" },
-    { "lessonNumber": 48, "id": "ai-summer-smart-travel", "title": "AI for your summer: from smart travel planning to personalised learning", "module": "Technologies" },
-    { "lessonNumber": 49, "id": "inventions-changed-world", "title": "Inventions that changed the world", "module": "Technologies" },
-    { "lessonNumber": 50, "id": "technologies-at-home", "title": "What technologies do you have at home", "module": "Technologies" },
-    { "lessonNumber": 51, "id": "youve-got-mail", "title": "You’ve got mail!", "module": "Technologies", "isOptional": true },
-
-    { "lessonNumber": 52, "id": "avito-carbon-footprint-b1", "title": "Avito: Reducing carbon footprint B1", "module": "Caring for the world" },
-    { "lessonNumber": 53, "id": "avito-lending-helping-hand-b1", "title": "Avito: Lending a Helping Hand B1", "module": "Caring for the world" },
-    { "lessonNumber": 54, "id": "avito-helping-stray-animals-b1", "title": "Avito: Helping stray animals B1", "module": "Caring for the world" },
-    { "lessonNumber": 55, "id": "environment-who-cares", "title": "The environment: who cares?", "module": "Caring for the world", "isOptional": true },
-
-    { "lessonNumber": 56, "id": "online-shopping-b1", "title": "Online Shopping", "module": "Shopping" },
-    { "lessonNumber": 57, "id": "shopping-smart-needs-wants", "title": "Shopping Smart: Needs vs Wants", "module": "Shopping" },
-    { "lessonNumber": 58, "id": "avito-smart-shopping-b1", "title": "Avito: Smart Shopping: Best Deals B1", "module": "Shopping" },
-
-    { "lessonNumber": 59, "id": "starting-business-online-b1", "title": "Starting your business online", "module": "Work & Communication" },
-    { "lessonNumber": 60, "id": "avito-selling-services-freelance-b1", "title": "Avito: Selling services online: freelance career B1", "module": "Work & Communication" },
-    { "lessonNumber": 61, "id": "ideal-workplace", "title": "An ideal workplace", "module": "Work & Communication", "isOptional": true },
-    { "lessonNumber": 62, "id": "avito-women-in-business-b1", "title": "Avito: women in business", "module": "Work & Communication" },
-
-    { "lessonNumber": 63, "id": "soft-and-self-skills", "title": "Soft and self skills", "module": "Other" },
-    { "lessonNumber": 64, "id": "incredible-stories", "title": "Incredible stories", "module": "Other", "isOptional": true },
-    { "lessonNumber": 65, "id": "fashion", "title": "Fashion", "module": "Other", "isOptional": true },
-    { "lessonNumber": 66, "id": "telling-lies", "title": "Telling lies", "module": "Other", "isOptional": true },
-    { "lessonNumber": 67, "id": "are-we-all-criminals", "title": "Are we all criminals?", "module": "Other", "isOptional": true },
-    { "lessonNumber": 68, "id": "taboo-questions", "title": "Taboo questions", "module": "Other", "isOptional": true },
-    { "lessonNumber": 69, "id": "bans-and-boycotts", "title": "Bans and boycotts", "module": "Other", "isOptional": true },
-    { "lessonNumber": 70, "id": "appearances", "title": "Appearances", "module": "Other", "isOptional": true },
-    { "lessonNumber": 71, "id": "why-get-married", "title": "Why get married", "module": "Other", "isOptional": true, "ageRestriction": "18+" },
-    { "lessonNumber": 72, "id": "survivors", "title": "Survivors", "module": "Other", "isOptional": true },
-    { "lessonNumber": 73, "id": "to-tip-or-not-to-tip", "title": "To tip or not to tip", "module": "Other", "isOptional": true },
-    { "lessonNumber": 74, "id": "social-engineering-b1", "title": "Social engineering B1", "module": "Other" },
-
-    { "lessonNumber": 75, "id": "education-reflection", "title": "Reflection", "module": "Section 3", "ageRestriction": "18+" },
-    { "lessonNumber": 76, "id": "exam-prep-opt", "title": "Exam Preparation", "module": "Section 3", "isOptional": true },
-    { "lessonNumber": 77, "id": "exam-opt-b1", "title": "Exam (Opt.)", "module": "Section 3", "isOptional": true, "isExam": true },
-    { "lessonNumber": 78, "id": "revise-and-check-b1", "title": "Revise and Check", "module": "Section 3", "isMilestone": true },
-    { "lessonNumber": 79, "id": "spoken-exam-b1", "title": "Exam", "module": "Section 3", "isExam": true },
-    { "lessonNumber": 80, "id": "avito-women-in-business-translation", "title": "Avito: женщины в бизнесе перевод", "module": "Section 3" }
+    {
+      "lessonNumber": 1,
+      "id": "travelling-by-plane",
+      "title": "Travelling by plane",
+      "module": "Travelling",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 2,
+      "id": "travelling-by-train",
+      "title": "Travelling by train",
+      "module": "Travelling",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 3,
+      "id": "travelling-by-car",
+      "title": "Travelling by car",
+      "module": "Travelling",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 4,
+      "id": "travelling-by-ship",
+      "title": "Travelling by ship",
+      "module": "Travelling",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 5,
+      "id": "packing-virtual-suitcase-paris",
+      "title": "Packing a virtual suitcase to Paris",
+      "module": "Travelling",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 6,
+      "id": "packing-virtual-suitcase-bangkok",
+      "title": "Packing a virtual suitcase to Bangkok",
+      "module": "Travelling",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 7,
+      "id": "packing-virtual-suitcase-maldives",
+      "title": "Pack your virtual suitcase to the Maldives",
+      "module": "Travelling",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 8,
+      "id": "using-transportation-apps",
+      "title": "Using transportation apps",
+      "module": "Travelling",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 9,
+      "id": "holidays-from-hell",
+      "title": "Holidays from hell",
+      "module": "Travelling",
+      "isOptional": true,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 10,
+      "id": "booking-hotels",
+      "title": "Booking hotels",
+      "module": "Staying at a hotel",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 11,
+      "id": "situations-at-the-hotel",
+      "title": "Situations at the hotel",
+      "module": "Staying at a hotel",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 12,
+      "id": "joining-sports-club",
+      "title": "Joining a sports club or group",
+      "module": "Healthy lifestyle",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 13,
+      "id": "exercise-instructions-gym",
+      "title": "Exercise instructions in the gym",
+      "module": "Healthy lifestyle",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 14,
+      "id": "healthy-lifestyle-opt",
+      "title": "Healthy lifestyle",
+      "module": "Healthy lifestyle",
+      "isOptional": true,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 15,
+      "id": "smart-home",
+      "title": "Smart home",
+      "module": "Home & Living",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 16,
+      "id": "repair-your-home",
+      "title": "Repair your home",
+      "module": "Home & Living",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 17,
+      "id": "utilities-home-services",
+      "title": "Utilities and home services",
+      "module": "Home & Living",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 18,
+      "id": "where-do-we-live",
+      "title": "Where do we live?",
+      "module": "Home & Living",
+      "isOptional": true,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 19,
+      "id": "what-is-there-in-your-home",
+      "title": "What is there in your home?",
+      "module": "Home & Living",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 20,
+      "id": "lets-redecorate-dream-house",
+      "title": "Let's redecorate: Design your dream house",
+      "module": "Home & Living",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 21,
+      "id": "finding-renting-home",
+      "title": "Finding and renting a home",
+      "module": "Home & Living",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 22,
+      "id": "neighbours-from-hell",
+      "title": "Neighbours from hell",
+      "module": "Home & Living",
+      "isOptional": true,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 23,
+      "id": "tenant-rights-problems",
+      "title": "Tenant rights and problems",
+      "module": "Home & Living",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 24,
+      "id": "cleaning-service",
+      "title": "Cleaning service",
+      "module": "Home & Living",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 25,
+      "id": "yummy-food",
+      "title": "Yummy food",
+      "module": "Food & Cooking",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 26,
+      "id": "whats-in-your-kitchen",
+      "title": "What is there in your kitchen?",
+      "module": "Food & Cooking",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 27,
+      "id": "cook-at-home-easy-smart",
+      "title": "How to cook at home easy and smart",
+      "module": "Food & Cooking",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 28,
+      "id": "understand-talk-recipes",
+      "title": "How to understand and talk about recipes",
+      "module": "Food & Cooking",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 29,
+      "id": "dining-out-friends-family",
+      "title": "Dining out with friends and family",
+      "module": "Food & Cooking",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 30,
+      "id": "gastro-tour-around-world",
+      "title": "Gastro Tour Around the World",
+      "module": "Food & Cooking",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 31,
+      "id": "ordering-food-drinks-special-menus",
+      "title": "Ordering food and drinks: Special menus",
+      "module": "Food & Cooking",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 32,
+      "id": "is-it-right-eat-meat",
+      "title": "Is it right to eat meat?",
+      "module": "Food & Cooking",
+      "isOptional": true,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 33,
+      "id": "budgeting-everyday-life",
+      "title": "Budgeting for everyday life",
+      "module": "Money & Finance",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 34,
+      "id": "money-poison",
+      "title": "Money poison",
+      "module": "Money & Finance",
+      "isOptional": true,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 35,
+      "id": "saving-future-investing",
+      "title": "Saving for the future/Investing",
+      "module": "Money & Finance",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 36,
+      "id": "banking-basics",
+      "title": "Banking basics",
+      "module": "Money & Finance",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 37,
+      "id": "understanding-credit",
+      "title": "Understanding credit",
+      "module": "Money & Finance",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 38,
+      "id": "paying-bills-subscriptions",
+      "title": "Paying bills and subscriptions",
+      "module": "Money & Finance",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 39,
+      "id": "slangy-words",
+      "title": "Slangy words",
+      "module": "Social Behavior & Challenges",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 40,
+      "id": "memes",
+      "title": "Memes",
+      "module": "Social Behavior & Challenges",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 41,
+      "id": "preschool-childcare",
+      "title": "Preschool and childcare",
+      "module": "Education",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 42,
+      "id": "school-system",
+      "title": "School system",
+      "module": "Education",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 43,
+      "id": "smacking-or-petting",
+      "title": "Smacking or petting?",
+      "module": "Education",
+      "isOptional": true,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 44,
+      "id": "communicating-with-teachers",
+      "title": "Communicating with Teachers",
+      "module": "Education",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 45,
+      "id": "school-meals-allergies",
+      "title": "School meals and allergies",
+      "module": "Education",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 46,
+      "id": "school-events-volunteering",
+      "title": "School Events and Volunteering",
+      "module": "Education",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 47,
+      "id": "ai-daily-life",
+      "title": "AI in daily life",
+      "module": "Technologies",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 48,
+      "id": "ai-summer-smart-travel",
+      "title": "AI for your summer: from smart travel planning to personalised learning",
+      "module": "Technologies",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 49,
+      "id": "inventions-changed-world",
+      "title": "Inventions that changed the world",
+      "module": "Technologies",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 50,
+      "id": "technologies-at-home",
+      "title": "What technologies do you have at home",
+      "module": "Technologies",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 51,
+      "id": "youve-got-mail",
+      "title": "You’ve got mail!",
+      "module": "Technologies",
+      "isOptional": true,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 52,
+      "id": "avito-carbon-footprint-b1",
+      "title": "Avito: Reducing carbon footprint B1",
+      "module": "Caring for the world",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 53,
+      "id": "avito-lending-helping-hand-b1",
+      "title": "Avito: Lending a Helping Hand B1",
+      "module": "Caring for the world",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 54,
+      "id": "avito-helping-stray-animals-b1",
+      "title": "Avito: Helping stray animals B1",
+      "module": "Caring for the world",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 55,
+      "id": "environment-who-cares",
+      "title": "The environment: who cares?",
+      "module": "Caring for the world",
+      "isOptional": true,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 56,
+      "id": "online-shopping-b1",
+      "title": "Online Shopping",
+      "module": "Shopping",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 57,
+      "id": "shopping-smart-needs-wants",
+      "title": "Shopping Smart: Needs vs Wants",
+      "module": "Shopping",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 58,
+      "id": "avito-smart-shopping-b1",
+      "title": "Avito: Smart Shopping: Best Deals B1",
+      "module": "Shopping",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 59,
+      "id": "starting-business-online-b1",
+      "title": "Starting your business online",
+      "module": "Work & Communication",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 60,
+      "id": "avito-selling-services-freelance-b1",
+      "title": "Avito: Selling services online: freelance career B1",
+      "module": "Work & Communication",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 61,
+      "id": "ideal-workplace",
+      "title": "An ideal workplace",
+      "module": "Work & Communication",
+      "isOptional": true,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 62,
+      "id": "avito-women-in-business-b1",
+      "title": "Avito: women in business",
+      "module": "Work & Communication",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 63,
+      "id": "soft-and-self-skills",
+      "title": "Soft and self skills",
+      "module": "Other",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 64,
+      "id": "incredible-stories",
+      "title": "Incredible stories",
+      "module": "Other",
+      "isOptional": true,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 65,
+      "id": "fashion",
+      "title": "Fashion",
+      "module": "Other",
+      "isOptional": true,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 66,
+      "id": "telling-lies",
+      "title": "Telling lies",
+      "module": "Other",
+      "isOptional": true,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 67,
+      "id": "are-we-all-criminals",
+      "title": "Are we all criminals?",
+      "module": "Other",
+      "isOptional": true,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 68,
+      "id": "taboo-questions",
+      "title": "Taboo questions",
+      "module": "Other",
+      "isOptional": true,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 69,
+      "id": "bans-and-boycotts",
+      "title": "Bans and boycotts",
+      "module": "Other",
+      "isOptional": true,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 70,
+      "id": "appearances",
+      "title": "Appearances",
+      "module": "Other",
+      "isOptional": true,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 71,
+      "id": "why-get-married",
+      "title": "Why get married",
+      "module": "Other",
+      "isOptional": true,
+      "ageRestriction": "18+",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 72,
+      "id": "survivors",
+      "title": "Survivors",
+      "module": "Other",
+      "isOptional": true,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 73,
+      "id": "to-tip-or-not-to-tip",
+      "title": "To tip or not to tip",
+      "module": "Other",
+      "isOptional": true,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 74,
+      "id": "social-engineering-b1",
+      "title": "Social engineering B1",
+      "module": "Other",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 75,
+      "id": "education-reflection",
+      "title": "Reflection",
+      "module": "Section 3",
+      "ageRestriction": "18+",
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 76,
+      "id": "exam-prep-opt",
+      "title": "Exam Preparation",
+      "module": "Section 3",
+      "isOptional": true,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 77,
+      "id": "exam-opt-b1",
+      "title": "Exam (Opt.)",
+      "module": "Section 3",
+      "isOptional": true,
+      "isExam": true,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 78,
+      "id": "revise-and-check-b1",
+      "title": "Revise and Check",
+      "module": "Section 3",
+      "isMilestone": true,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 79,
+      "id": "spoken-exam-b1",
+      "title": "Exam",
+      "module": "Section 3",
+      "isExam": true,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 80,
+      "id": "avito-women-in-business-translation",
+      "title": "Avito: женщины в бизнесе перевод",
+      "module": "Section 3",
+      "status": "planned"
+    }
   ]
 }

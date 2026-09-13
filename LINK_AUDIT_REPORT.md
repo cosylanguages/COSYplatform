@@ -1263,3 +1263,29 @@ None. No `curriculumId` references were found.
 ### Unresolved Access Grants List
 
 None. All course IDs referenced in `data/access-grants.json` resolve to existing curriculums and roadmaps.
+
+---
+
+## Summary of Resolutions & Audit Remediation
+
+Following the audit, the repository references were resolved according to platform architectural policies and verified requirements:
+
+### 1. Design Tokens Stylesheet Standardization (Fixed)
+- **Action Taken:** Replaced all broken external CSS stylesheet links (`css/tokens.css`, `css/components.css`, `css/base.css`, `css/layout.css`, `css/lang-pages.css`, `css/lang-accents.css`, `css/mobile.css`, `css/grammar.css`, `css/communication.css`) across `curriculums/**`, `marathons/**`, and `templates/**` (16 HTML files in total) with the pinned design tokens link:
+  ```html
+  <!-- Pinned to commit f59a291e8929a116b0c7d96505d67da7c16b287a; re-pin if COSYlanguages releases a tag -->
+  <link rel="stylesheet" href="https://raw.githubusercontent.com/cosylanguages/COSYlanguages/f59a291e8929a116b0c7d96505d67da7c16b287a/css/cosy-tokens.css">
+  ```
+- **Rationale:** Adheres strictly to the token policy documented in `cosylanguages/COSYlanguages/docs/design-tokens.md`. Links are pinned to verified commit SHA `f59a291e8929a116b0c7d96505d67da7c16b287a` with a code comment instructing re-pinning when release tags are cut. All locally-defined `<style>` blocks were preserved.
+
+### 2. Dead JavaScript Tag Removal (Removed)
+- **Action Taken:** Removed all 64 `<script src="...">` tags referencing `js/core/engine.js`, `js/core/i18n.js`, `js/core/ui.js`, and `js/data/languages.js` across `curriculums/**`, `marathons/**`, and `templates/**` (16 HTML files in total).
+- **Rationale:** Verified across the entire COSYlanguages ecosystem that these script files do not exist and are dead references. Code inspection confirmed inline scripts in these pages function independently using local DOM manipulation and `localStorage`, with zero dependency on the removed scripts.
+
+### 3. Roadmap Lesson Availability Explicit Status (Fixed / Machine-Readable Gaps)
+- **Action Taken:** Updated all 24 `roadmaps/*.json` files to add `"status": "planned"` to every sequence item (964 items total) that does not yet have a matching lesson file in `lessons/`. Sequence items with existing lesson files (e.g. `opposites-attract` in `general-english-c1.json` and `introductory-b1` in `introductory-english.json`) remain unchanged without `"status": "planned"`.
+- **Rationale:** Makes content gaps explicit and machine-readable in roadmap JSON files without inventing empty placeholder lesson files.
+
+### 4. Navigation & Template Link Cleanup (Fixed)
+- **Action Taken:** Updated non-existent internal page links in `marathons/pronunciation-bootcamp/index.html` (e.g. `pronunciation.html`) to valid section anchors (`#niveaux`).
+- **Rationale:** Ensures clean internal navigation within marathon hub pages.
