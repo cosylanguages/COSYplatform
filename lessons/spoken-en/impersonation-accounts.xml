@@ -1,0 +1,171 @@
+<!-- source: https://raw.githubusercontent.com/cosylanguages/COSYevents/main/sessions/keeping-up-with-science/impersonation-accounts.html -->
+<cosy-lesson id="impersonation-accounts" level="B1" language="en" title="Impersonation Accounts: Digital Identity Theft" default-duration="50" default-mode="all">
+  <!-- SLIDE 1: Warm-up & Vocabulary Review -->
+  <cosy-slide id="slide-1" stage="warm-up" duration="50" mode="all">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> to introduce the topic and clarify key target vocabulary for the session.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Review the key vocabulary for this session below:</cosy-instruction>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Fraudulent</cosy-text> – obtained, done by, or involving deception, especially criminal deception.</p>
+      <p><em>Example: The bank warned its customers about a series of fraudulent emails asking for passwords.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Verification</cosy-text> – the process of establishing the truth, accuracy, or validity of something.</p>
+      <p><em>Example: Two-step verification is an essential security measure for protecting your online accounts.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Identity</cosy-text> – the fact of being who or what a person or thing is.</p>
+      <p><em>Example: Digital identity theft can take months or even years to fully resolve.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Phishing</cosy-text> – the fraudulent practice of sending emails to induce individuals to reveal personal information.</p>
+      <p><em>Example: He realized the message was a phishing attempt when he noticed the suspicious URL.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Authentic</cosy-text> – of undisputed origin; genuine.</p>
+      <p><em>Example: Always check for the blue checkmark to ensure that a celebrity&apos;s profile is authentic.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Vulnerability ≠ resilience</cosy-text> – state of being exposed to the possibility of being attacked or harmed.</p>
+      <p><em>Example: Recognizing our structural vulnerability online is the first step toward cybersecurity.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Credential</cosy-text> – a qualification, achievement, personal quality, or aspect of a person&apos;s background.</p>
+      <p><em>Example: You should never share your login credentials with anyone, even if they claim to be from tech support.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Malicious</cosy-text> – intending or intended to do harm.</p>
+      <p><em>Example: Malicious software can infect your computer through a single suspicious download.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Pretext</cosy-text> – a reason given in justification of a course of action that is not the real reason.</p>
+      <p><em>Example: The scammer contacted him under the pretext of needing help with a charity donation.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Surveillance</cosy-text> – close observation of individuals or networks for security.</p>
+      <p><em>Example: Constant surveillance is a threat to the fundamental human right to privacy.</em></p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 2: Round 1 Discussion (Group Mode) -->
+  <cosy-slide id="slide-2-group" stage="round-1" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> pair/group discussion on core session themes.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>In pairs or small breakout groups, discuss the following questions:</cosy-group-instruction>
+    <ol>
+      <li>According to cybersecurity research, what specific parameters characterize a highly structured and fraudulent digital profile?<br/><em>★ Have you ever received a highly suspicious request or connection on LinkedIn or social media?</em></li>
+      <li>What empirical evidence shows that standard trust verification badges can be bypassed using automated web bots?<br/><em>★ How carefully do you check the spelling and email address of messages from your bank?</em></li>
+      <li>Based on clinical behavioral data, how does the trauma of digital identity theft damage a victim&apos;s real-world social trust scores?<br/><em>★ What is your reaction when you see a celebrity promoting a product? Do you check if the account is verified?</em></li>
+      <li>What parameters make a modern automated phishing campaign significantly harder to identify than simple spam filters?<br/><em>★ Do you use a password manager or follow strict security rules for your credentials?</em></li>
+      <li>What biometric indicators are researchers using to prove a remote speaker&apos;s streams are authentic?<br/><em>★ Have you ever had your email, social profile, or personal identity compromised?</em></li>
+      <li>According to behavioral studies, what psychological vulnerability is targeted most effectively by fake support profiles?<br/><em>★ Who do you think is most vulnerable to digital scams in your family or community?</em></li>
+      <li>What technical weaknesses allow a malicious script to harvest a user&apos;s master credential folder?<br/><em>★ What is the most convincing email phishing attempt you have ever personally spotted?</em></li>
+      <li>How does the paper differentiate simple profile scraping from highly targeted, malicious deepfake video scams?<br/><em>★ Do you feel that online networks like LinkedIn have become less authentic recently?</em></li>
+      <li>Based on cognitive research, why is an urgent financial emergency the most successful social engineering pretext?<br/><em>★ Would you change your daily habits if you knew scammers were watching your public profile?</em></li>
+      <li>What data metrics prove that intensive server-side network surveillance can prevent identity fraud without violating user privacy?<br/><em>★ What digital safety habits do you talk about most with your close friends?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 3: Round 1 Discussion (Individual Mode) -->
+  <cosy-slide id="slide-2-ind" stage="round-1" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> 1-on-1 teacher-student discussion on core session themes.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Discuss the following questions with your teacher:</cosy-instruction>
+    <ol>
+      <li>According to cybersecurity research, what specific parameters characterize a highly structured and fraudulent digital profile?<br/><em>★ Have you ever received a highly suspicious request or connection on LinkedIn or social media?</em></li>
+      <li>What empirical evidence shows that standard trust verification badges can be bypassed using automated web bots?<br/><em>★ How carefully do you check the spelling and email address of messages from your bank?</em></li>
+      <li>Based on clinical behavioral data, how does the trauma of digital identity theft damage a victim&apos;s real-world social trust scores?<br/><em>★ What is your reaction when you see a celebrity promoting a product? Do you check if the account is verified?</em></li>
+      <li>What parameters make a modern automated phishing campaign significantly harder to identify than simple spam filters?<br/><em>★ Do you use a password manager or follow strict security rules for your credentials?</em></li>
+      <li>What biometric indicators are researchers using to prove a remote speaker&apos;s streams are authentic?<br/><em>★ Have you ever had your email, social profile, or personal identity compromised?</em></li>
+      <li>According to behavioral studies, what psychological vulnerability is targeted most effectively by fake support profiles?<br/><em>★ Who do you think is most vulnerable to digital scams in your family or community?</em></li>
+      <li>What technical weaknesses allow a malicious script to harvest a user&apos;s master credential folder?<br/><em>★ What is the most convincing email phishing attempt you have ever personally spotted?</em></li>
+      <li>How does the paper differentiate simple profile scraping from highly targeted, malicious deepfake video scams?<br/><em>★ Do you feel that online networks like LinkedIn have become less authentic recently?</em></li>
+      <li>Based on cognitive research, why is an urgent financial emergency the most successful social engineering pretext?<br/><em>★ Would you change your daily habits if you knew scammers were watching your public profile?</em></li>
+      <li>What data metrics prove that intensive server-side network surveillance can prevent identity fraud without violating user privacy?<br/><em>★ What digital safety habits do you talk about most with your close friends?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 4: Let's Speak Together (Group Mode) -->
+  <cosy-slide id="slide-3-group" stage="speak-together" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> collaborative task or visual analysis in pairs/groups.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>In pairs, work together on the following task:</cosy-group-instruction>
+    <cosy-blockquote importance="medium">
+      <p>Visual comparison: High privacy sandbox vs total network surveillance.
+- 🔒High Privacy Sandbox
+- 🌐Total Server Monitoring</p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 5: Let's Speak Together (Individual Mode) -->
+  <cosy-slide id="slide-3-ind" stage="speak-together" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> 1-on-1 guided visual description and task response with teacher.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Look at the prompt and discuss your response with your teacher:</cosy-instruction>
+    <cosy-blockquote importance="medium">
+      <p>Visual comparison: High privacy sandbox vs total network surveillance.
+- 🔒High Privacy Sandbox
+- 🌐Total Server Monitoring</p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 6: Round 2 Discussion (Group Mode) -->
+  <cosy-slide id="slide-4-group" stage="round-2" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> deeper debate and statement evaluation in pairs/groups.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>In pairs, debate and state whether you agree or disagree with these statements:</cosy-group-instruction>
+    <ol>
+      <li>If future research continues to track polymorphic cyberattacks, all fraudulent accounts will eventually be eliminated by advanced server-side AI detectors.<br/><em>★ Would you trust an AI-led automated security system to manage all your personal accounts?</em></li>
+      <li>As our understanding of biometric verification models develops, continuous retinal scanning will be the only standard method to access public domains.<br/><em>★ Would you support mandatory biometric scans (like retina or fingerprint) for all social media accounts?</em></li>
+      <li>Imagine future research proves that digital identity is a fundamental biological right; global treaties will enforce heavy criminal sentences for cloning personal digital twins.<br/><em>★ Do you think social media platforms should be legally liable for scam accounts on their sites?</em></li>
+      <li>If we map targeted social phishing models using neural simulators, user systems will automatically neutralize conversational pretext attacks before they reach human view.<br/><em>★ How do you think digital identity theft will change when deepfakes become perfect?</em></li>
+      <li>Imagine future research shows that authentic human voices have unique electromagnetic frequencies; synthetic vocal channels will be easily filtered out in real time.<br/><em>★ Would you pay a monthly fee for absolute identity security on a public platform?</em></li>
+      <li>If we can measure psychological vulnerability using biometric watches, the user&apos;s interface will automatically lock login panels during high-cortisol states.<br/><em>★ Should digital literacy be a required course for graduation in every school?</em></li>
+      <li>As cryptographic protocols evolve, every digital credential will be updated continuously in milliseconds to guarantee invulnerability.<br/><em>★ If your digital twin could answer emails and do boring work for you, would you want one?</em></li>
+      <li>Imagine future research shows that malicious scripts are targeting specific auditory nerves; holographic headsets will be banned for general consumer use.<br/><em>★ Do you feel secure using fingerprint or facial recognition on your phone?</em></li>
+      <li>If developers automate the identification of any deceptive pretext, scammers will be forced to return to physical real-world crimes.<br/><em>★ What makes real-world face-to-face interaction feel safer and more authentic to you?</em></li>
+      <li>As security concerns mount, intensive public surveillance networks will replace private local area networks globally.<br/><em>★ Are you worried about your personal privacy in an era of constant online surveillance?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 7: Round 2 Discussion (Individual Mode) -->
+  <cosy-slide id="slide-4-ind" stage="round-2" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> deeper debate and statement evaluation with teacher in 1-on-1 format.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Share whether you agree or disagree with these statements and discuss them with your teacher:</cosy-instruction>
+    <ol>
+      <li>If future research continues to track polymorphic cyberattacks, all fraudulent accounts will eventually be eliminated by advanced server-side AI detectors.<br/><em>★ Would you trust an AI-led automated security system to manage all your personal accounts?</em></li>
+      <li>As our understanding of biometric verification models develops, continuous retinal scanning will be the only standard method to access public domains.<br/><em>★ Would you support mandatory biometric scans (like retina or fingerprint) for all social media accounts?</em></li>
+      <li>Imagine future research proves that digital identity is a fundamental biological right; global treaties will enforce heavy criminal sentences for cloning personal digital twins.<br/><em>★ Do you think social media platforms should be legally liable for scam accounts on their sites?</em></li>
+      <li>If we map targeted social phishing models using neural simulators, user systems will automatically neutralize conversational pretext attacks before they reach human view.<br/><em>★ How do you think digital identity theft will change when deepfakes become perfect?</em></li>
+      <li>Imagine future research shows that authentic human voices have unique electromagnetic frequencies; synthetic vocal channels will be easily filtered out in real time.<br/><em>★ Would you pay a monthly fee for absolute identity security on a public platform?</em></li>
+      <li>If we can measure psychological vulnerability using biometric watches, the user&apos;s interface will automatically lock login panels during high-cortisol states.<br/><em>★ Should digital literacy be a required course for graduation in every school?</em></li>
+      <li>As cryptographic protocols evolve, every digital credential will be updated continuously in milliseconds to guarantee invulnerability.<br/><em>★ If your digital twin could answer emails and do boring work for you, would you want one?</em></li>
+      <li>Imagine future research shows that malicious scripts are targeting specific auditory nerves; holographic headsets will be banned for general consumer use.<br/><em>★ Do you feel secure using fingerprint or facial recognition on your phone?</em></li>
+      <li>If developers automate the identification of any deceptive pretext, scammers will be forced to return to physical real-world crimes.<br/><em>★ What makes real-world face-to-face interaction feel safer and more authentic to you?</em></li>
+      <li>As security concerns mount, intensive public surveillance networks will replace private local area networks globally.<br/><em>★ Are you worried about your personal privacy in an era of constant online surveillance?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 8: Teacher's Note / Error Correction -->
+  <cosy-slide id="slide-5" stage="error-correction" duration="50" mode="all">
+    <cosy-teacher-notes type="additional">
+      <p><cosy-text type="strong">Teacher&apos;s Linguistic Error Correction Guidance:</cosy-text></p>
+      <ul>
+        <li>Incorrect: They have stole my identity → Correct: They have stolen my identity ((Irregular past participle))</li>
+        <li>Incorrect: It is a fraud account → Correct: It is a fraudulent account / a fake account ((Noun vs Adjective))</li>
+        <li>Incorrect: I am careful with my passwords since always → Correct: I have always been careful with my passwords ((Present Perfect + Frequency adverb))</li>
+        <li>Incorrect: I am agree with you → Correct: I agree with you ((Verb agreement))</li>
+        <li>Incorrect: It is depend on you → Correct: It depends on you ((Verb vs Adjective))</li>
+      </ul>
+    </cosy-teacher-notes>
+    <cosy-instruction>Reflection &amp; Feedback: Review language highlights and key corrections with your teacher.</cosy-instruction>
+  </cosy-slide>
+</cosy-lesson>

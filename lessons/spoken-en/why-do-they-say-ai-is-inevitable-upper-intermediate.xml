@@ -1,0 +1,165 @@
+<!-- source: https://raw.githubusercontent.com/cosylanguages/COSYevents/main/sessions/mind-matters/why-do-they-say-ai-is-inevitable-upper-intermediate.html -->
+<cosy-lesson id="why-do-they-say-ai-is-inevitable-upper-intermediate" level="B2" language="en" title="Is AI Inevitable? : Technological Determinism vs. Human Agency" default-duration="50" default-mode="all">
+  <!-- SLIDE 1: Warm-up & Vocabulary Review -->
+  <cosy-slide id="slide-1" stage="warm-up" duration="50" mode="all">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> to introduce the topic and clarify key target vocabulary for the session.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Review the key vocabulary for this session below:</cosy-instruction>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Technological determinism</cosy-text> – the theory that a society&apos;s technology drives its social structure and cultural values.</p>
+      <p><em>Example: Clinging to technological determinism makes us feel like helpless passengers on a train driven by silicon.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Cognitive submission</cosy-text> – the psychological state of surrendering one&apos;s critical judgment and agency to an external system.</p>
+      <p><em>Example: The narrative of AI inevitability forces a quiet cognitive submission in millions of modern workers.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Human agency</cosy-text> – the capacity of individuals to act independently and make their own free choices.</p>
+      <p><em>Example: We must reclaim our human agency, remembering that technology is a tool we design, not our master.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Adaptation</cosy-text> – the process of altering behavior or structure to fit a changing environment.</p>
+      <p><em>Example: Rapid corporate adaptation to AI is driven far more by fear of obsolescence than by real efficiency gains.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Obsolescence</cosy-text> – the state of being no longer useful, active, or relevant due to technological progress.</p>
+      <p><em>Example: The fear of professional obsolescence keeps many software engineers in a state of chronic anxiety.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Inevitability</cosy-text> – the state of being certain to happen and impossible to avoid or prevent.</p>
+      <p><em>Example: Marketers plaster the word &apos;inevitability&apos; on AI progress to neutralize ethical and legal resistance.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Sovereignty</cosy-text> – the supreme power or authority of a person, nation, or system to govern itself.</p>
+      <p><em>Example: Algorithmic recommendations are slowly eroding our individual cognitive sovereignty over our tastes.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Coercion</cosy-text> – the practice of persuading someone to do something by using force, threats, or manufactured fear.</p>
+      <p><em>Example: True integration of technology should be a democratic choice, not a result of economic coercion.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Optimism ≠ Pessimism</cosy-text> – hopefulness and confidence about the future or the success of a technology ≠ a tendency to see the worst aspect of things or believe that the worst will happen.</p>
+      <p><em>Example: Blind technological optimism often ignores the severe environmental and social costs of automation, leading to deep public pessimism.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Dystopian</cosy-text> – relating to or denoting an imagined state or society where there is great suffering or injustice.</p>
+      <p><em>Example: We must reject the dystopian narrative that humans are destined to become obsolete biological relics.</em></p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 2: Round 1 Discussion (Group Mode) -->
+  <cosy-slide id="slide-2-group" stage="round-1" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> pair/group discussion on core session themes.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>In pairs or small breakout groups, discuss the following questions:</cosy-group-instruction>
+    <ol>
+      <li>How does the myth of Technological determinism reduce our collective capacity to regulate tech giants?<br/><em>★ Do you believe that the path of technological progress is a unpreventable force of nature?</em></li>
+      <li>Why does constant exposure to AI marketing trigger a quiet, defensive Cognitive submission in us?<br/><em>★ Have you ever felt a sense of helpless surrender when reading about the latest automation models?</em></li>
+      <li>How can we actively assert our individual Human agency when algorithms dictate our career paths?<br/><em>★ What is one daily decision you make completely offline to preserve your independent Human agency ?</em></li>
+      <li>Why is corporate Adaptation to new software often driven by panic rather than actual utility?<br/><em>★ How do you personally handle the constant pressure to learn new digital tools in your career?</em></li>
+      <li>How does the constant fear of professional Obsolescence affect the mental health of modern workers?<br/><em>★ Have you ever worried that your unique skills might face complete Obsolescence within ten years?</em></li>
+      <li>Why do tech executives rely so heavily on the rhetoric of Inevitability during public debates?<br/><em>★ Does the word &apos;inevitable&apos; inspire you with hope, or does it trigger a sense of claustrophobia?</em></li>
+      <li>To what extent are we sacrificing our cognitive Sovereignty to automated recommendation systems?<br/><em>★ Do you feel you retain complete Sovereignty over your daily schedule, or does your phone manage you?</em></li>
+      <li>How do tech giants use the threat of economic isolation as a form of social Coercion ?<br/><em>★ Have you ever felt forced into using an application or platform that you deeply disliked?</em></li>
+      <li>What is the psychological difference between blind tech Optimism and grounded, critical skepticism?<br/><em>★ How do you maintain a healthy, balanced perspective amidst the extreme hype and doom of tech news?</em></li>
+      <li>Why is it so much easier for our minds to imagine a Dystopian future than a balanced, ecological one?<br/><em>★ What does your personal, ideal future look like-is it filled with silicon or with nature?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 3: Round 1 Discussion (Individual Mode) -->
+  <cosy-slide id="slide-2-ind" stage="round-1" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> 1-on-1 teacher-student discussion on core session themes.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Discuss the following questions with your teacher:</cosy-instruction>
+    <ol>
+      <li>How does the myth of Technological determinism reduce our collective capacity to regulate tech giants?<br/><em>★ Do you believe that the path of technological progress is a unpreventable force of nature?</em></li>
+      <li>Why does constant exposure to AI marketing trigger a quiet, defensive Cognitive submission in us?<br/><em>★ Have you ever felt a sense of helpless surrender when reading about the latest automation models?</em></li>
+      <li>How can we actively assert our individual Human agency when algorithms dictate our career paths?<br/><em>★ What is one daily decision you make completely offline to preserve your independent Human agency ?</em></li>
+      <li>Why is corporate Adaptation to new software often driven by panic rather than actual utility?<br/><em>★ How do you personally handle the constant pressure to learn new digital tools in your career?</em></li>
+      <li>How does the constant fear of professional Obsolescence affect the mental health of modern workers?<br/><em>★ Have you ever worried that your unique skills might face complete Obsolescence within ten years?</em></li>
+      <li>Why do tech executives rely so heavily on the rhetoric of Inevitability during public debates?<br/><em>★ Does the word &apos;inevitable&apos; inspire you with hope, or does it trigger a sense of claustrophobia?</em></li>
+      <li>To what extent are we sacrificing our cognitive Sovereignty to automated recommendation systems?<br/><em>★ Do you feel you retain complete Sovereignty over your daily schedule, or does your phone manage you?</em></li>
+      <li>How do tech giants use the threat of economic isolation as a form of social Coercion ?<br/><em>★ Have you ever felt forced into using an application or platform that you deeply disliked?</em></li>
+      <li>What is the psychological difference between blind tech Optimism and grounded, critical skepticism?<br/><em>★ How do you maintain a healthy, balanced perspective amidst the extreme hype and doom of tech news?</em></li>
+      <li>Why is it so much easier for our minds to imagine a Dystopian future than a balanced, ecological one?<br/><em>★ What does your personal, ideal future look like-is it filled with silicon or with nature?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 4: Let's Speak Together (Group Mode) -->
+  <cosy-slide id="slide-3-group" stage="speak-together" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> collaborative task or visual analysis in pairs/groups.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>In pairs, work together on the following task:</cosy-group-instruction>
+    <cosy-blockquote importance="medium">
+      <p>The Tech Summit: Imagine you are speaking at a global technology conference. Challenge the narrative of AI inevitability and defend human agency, utilizing at least one second conditional, one third conditional, and one mixed conditional.</p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 5: Let's Speak Together (Individual Mode) -->
+  <cosy-slide id="slide-3-ind" stage="speak-together" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> 1-on-1 guided visual description and task response with teacher.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Look at the prompt and discuss your response with your teacher:</cosy-instruction>
+    <cosy-blockquote importance="medium">
+      <p>The Tech Summit: Imagine you are speaking at a global technology conference. Challenge the narrative of AI inevitability and defend human agency, utilizing at least one second conditional, one third conditional, and one mixed conditional.</p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 6: Round 2 Discussion (Group Mode) -->
+  <cosy-slide id="slide-4-group" stage="round-2" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> deeper debate and statement evaluation in pairs/groups.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>In pairs, debate and state whether you agree or disagree with these statements:</cosy-group-instruction>
+    <ol>
+      <li>If society rejected Technological determinism tomorrow, would we regulate tech giants far more aggressively?</li>
+      <li>If you could reclaim your complete cognitive Sovereignty , would you delete all your social media accounts?</li>
+      <li>If we stopped panicking about professional Obsolescence , would we focus more on deep, creative mastery?</li>
+      <li>If they had not manufactured a sense of absolute Inevitability , would the public have resisted automation?</li>
+      <li>If you had not submitted to that quiet Cognitive submission , would you have chosen a different major in college?</li>
+      <li>If they had respected Human agency years ago, would our digital workspaces be more comfortable today?</li>
+      <li>If your previous company had not rushed its Adaptation last year, would they have saved their core talent?</li>
+      <li>If the government had not surrendered to tech lobby Coercion , would our data be more secure today?</li>
+      <li>If we had maintained a healthy tech skepticism instead of blind Optimism , would we have fewer digital addictions today?</li>
+      <li>If you had to live in a highly automated, Dystopian city, would you choose to escape to a rural community?</li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 7: Round 2 Discussion (Individual Mode) -->
+  <cosy-slide id="slide-4-ind" stage="round-2" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> deeper debate and statement evaluation with teacher in 1-on-1 format.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Share whether you agree or disagree with these statements and discuss them with your teacher:</cosy-instruction>
+    <ol>
+      <li>If society rejected Technological determinism tomorrow, would we regulate tech giants far more aggressively?</li>
+      <li>If you could reclaim your complete cognitive Sovereignty , would you delete all your social media accounts?</li>
+      <li>If we stopped panicking about professional Obsolescence , would we focus more on deep, creative mastery?</li>
+      <li>If they had not manufactured a sense of absolute Inevitability , would the public have resisted automation?</li>
+      <li>If you had not submitted to that quiet Cognitive submission , would you have chosen a different major in college?</li>
+      <li>If they had respected Human agency years ago, would our digital workspaces be more comfortable today?</li>
+      <li>If your previous company had not rushed its Adaptation last year, would they have saved their core talent?</li>
+      <li>If the government had not surrendered to tech lobby Coercion , would our data be more secure today?</li>
+      <li>If we had maintained a healthy tech skepticism instead of blind Optimism , would we have fewer digital addictions today?</li>
+      <li>If you had to live in a highly automated, Dystopian city, would you choose to escape to a rural community?</li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 8: Teacher's Note / Error Correction -->
+  <cosy-slide id="slide-5" stage="error-correction" duration="50" mode="all">
+    <cosy-teacher-notes type="additional">
+      <p><cosy-text type="strong">Teacher&apos;s Linguistic Error Correction Guidance:</cosy-text></p>
+      <ul>
+        <li>Incorrect: The AI is Inevitable to happen. → Correct: The rise of AI is inevitable / AI is bound to happen. ((Grammar check: &apos; Inevitable &apos; is an adjective, typically used directly to describe a noun rather than with &apos;to happen&apos; infinitives.))</li>
+        <li>Incorrect: I am fear of being obsolete. → Correct: I am afraid of being obsolete / I fear Obsolescence . ((Word class: &apos;fear&apos; is a verb or noun; use &apos;afraid of&apos; as an adjective phrase or the active verb &apos;I fear&apos;.))</li>
+        <li>Incorrect: We discussed about the technology . → Correct: We discussed the technology. ((Preposition error: &apos;discuss&apos; is transitive and does not take &apos;about&apos;.))</li>
+      </ul>
+    </cosy-teacher-notes>
+    <cosy-instruction>Reflection &amp; Feedback: Review language highlights and key corrections with your teacher.</cosy-instruction>
+  </cosy-slide>
+</cosy-lesson>

@@ -1,0 +1,169 @@
+<!-- source: https://raw.githubusercontent.com/cosylanguages/COSYevents/main/sessions/debatable-relatable/ai-and-art.html -->
+<cosy-lesson id="ai-and-art" level="C1" language="en" title="AI and Art: Can machines be truly creative?" default-duration="50" default-mode="all">
+  <!-- SLIDE 1: Warm-up & Vocabulary Review -->
+  <cosy-slide id="slide-1" stage="warm-up" duration="50" mode="all">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> to introduce the topic and clarify key target vocabulary for the session.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Review the key vocabulary for this session below:</cosy-instruction>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Originality</cosy-text> – the ability to think independently and creatively.</p>
+      <p><em>Example: The designer&apos;s work is known for its originality.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Aesthetic</cosy-text> – concerned with beauty or the appreciation of beauty.</p>
+      <p><em>Example: The painting has a very modern aesthetic.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Canvas</cosy-text> – a strong, coarse unbleached cloth used as a surface for painting.</p>
+      <p><em>Example: The artist prepared the canvas before starting to paint.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Masterpiece</cosy-text> – a work of outstanding artistry, skill, or workmanship.</p>
+      <p><em>Example: Many consider the Mona Lisa to be Da Vinci&apos;s masterpiece.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Inspiration</cosy-text> – the process of being mentally stimulated to do or feel something creative.</p>
+      <p><em>Example: Travel is a great source of inspiration for many artists.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Generative</cosy-text> – having the power or function of generating, producing, or reproducing.</p>
+      <p><em>Example: Generative AI can create completely new images from text.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Subjective</cosy-text> – based on or influenced by personal feelings, tastes, or opinions.</p>
+      <p><em>Example: Art is highly subjective; what one person loves, another may hate.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Craftsmanship</cosy-text> – skill in a particular craft.</p>
+      <p><em>Example: You can see the incredible craftsmanship in this handmade furniture.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Copyright</cosy-text> – the exclusive legal right to reproduce, publish, sell, or distribute a work.</p>
+      <p><em>Example: There are many legal battles over AI and copyright.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Provocative</cosy-text> – causing annoyance, anger, or another strong reaction, especially deliberately.</p>
+      <p><em>Example: The artist is known for his provocative and controversial works.</em></p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 2: Round 1 Discussion (Group Mode) -->
+  <cosy-slide id="slide-2-group" stage="round-1" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> pair/group discussion on core session themes.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>In pairs or small breakout groups, discuss the following questions:</cosy-group-instruction>
+    <ol>
+      <li>A: AI can generate unexpected combinations, sparking a new kind of creative originality. B: True originality requires human consciousness, emotion, and life experience.<br/><em>★ How do you define originality when evaluating a piece of art?</em></li>
+      <li>A: Machine algorithms can analyze millions of images to produce a perfect aesthetic balance. B: A refined aesthetic sensibility is a uniquely human quality developed over centuries of culture.<br/><em>★ What kind of visual aesthetic appeals to you the most in modern design?</em></li>
+      <li>A: Digital screens serve as a limitless, modern canvas for complex algorithmic art. B: The physical texture of paint on a real canvas connects the viewer directly to the artist&apos;s touch.<br/><em>★ Do you prefer digital illustrations or traditional paintings on a physical canvas?</em></li>
+      <li>A: AI can help amateur creators produce a visual masterpiece with minimal technical training. B: A true masterpiece requires years of dedicated struggle, discipline, and human genius.<br/><em>★ Have you ever stood in front of a famous masterpiece and felt deep emotion?</em></li>
+      <li>A: Artists can use generative tools as a source of instant inspiration to overcome creative blocks. B: Genuine inspiration comes from real-world interactions, suffering, and existential reflection (e.g. contemplating mortality, love, or individual purpose).<br/><em>★ Where do you find your greatest creative inspiration?</em></li>
+      <li>A: Modern generative models democratize the creative process, allowing everyone to build art. B: Relying on generative systems turns art into a repetitive commodity.<br/><em>★ Have you ever experimented with any generative AI tools to create images or text?</em></li>
+      <li>A: Art is highly subjective, so machine-made art is just as valid as human-made art. B: The subjective depth of human communication through art cannot be replicated by numbers.<br/><em>★ Do you agree that the value of any artwork is entirely subjective?</em></li>
+      <li>A: AI can replicate complex historical styles with flawless digital craftsmanship. B: Real human craftsmanship lies in the beautiful imperfections of physical labor.<br/><em>★ Do you value technical craftsmanship or the underlying concept more in art?</em></li>
+      <li>A: Open-source AI models promote collaborative creativity by moving past rigid copyright laws. B: Protecting intellectual property via strict copyright is essential for artists to survive financially.<br/><em>★ Do you think AI companies should pay royalties for using copyright material in their training?</em></li>
+      <li>A: Algorithmic art can be highly provocative, forcing us to redefine what creativity means. B: True art should be provocative through human intention, not random mathematical variation.<br/><em>★ What is the most provocative or challenging artwork you have ever seen?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 3: Round 1 Discussion (Individual Mode) -->
+  <cosy-slide id="slide-2-ind" stage="round-1" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> 1-on-1 teacher-student discussion on core session themes.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Discuss the following questions with your teacher:</cosy-instruction>
+    <ol>
+      <li>A: AI can generate unexpected combinations, sparking a new kind of creative originality. B: True originality requires human consciousness, emotion, and life experience.<br/><em>★ How do you define originality when evaluating a piece of art?</em></li>
+      <li>A: Machine algorithms can analyze millions of images to produce a perfect aesthetic balance. B: A refined aesthetic sensibility is a uniquely human quality developed over centuries of culture.<br/><em>★ What kind of visual aesthetic appeals to you the most in modern design?</em></li>
+      <li>A: Digital screens serve as a limitless, modern canvas for complex algorithmic art. B: The physical texture of paint on a real canvas connects the viewer directly to the artist&apos;s touch.<br/><em>★ Do you prefer digital illustrations or traditional paintings on a physical canvas?</em></li>
+      <li>A: AI can help amateur creators produce a visual masterpiece with minimal technical training. B: A true masterpiece requires years of dedicated struggle, discipline, and human genius.<br/><em>★ Have you ever stood in front of a famous masterpiece and felt deep emotion?</em></li>
+      <li>A: Artists can use generative tools as a source of instant inspiration to overcome creative blocks. B: Genuine inspiration comes from real-world interactions, suffering, and existential reflection (e.g. contemplating mortality, love, or individual purpose).<br/><em>★ Where do you find your greatest creative inspiration?</em></li>
+      <li>A: Modern generative models democratize the creative process, allowing everyone to build art. B: Relying on generative systems turns art into a repetitive commodity.<br/><em>★ Have you ever experimented with any generative AI tools to create images or text?</em></li>
+      <li>A: Art is highly subjective, so machine-made art is just as valid as human-made art. B: The subjective depth of human communication through art cannot be replicated by numbers.<br/><em>★ Do you agree that the value of any artwork is entirely subjective?</em></li>
+      <li>A: AI can replicate complex historical styles with flawless digital craftsmanship. B: Real human craftsmanship lies in the beautiful imperfections of physical labor.<br/><em>★ Do you value technical craftsmanship or the underlying concept more in art?</em></li>
+      <li>A: Open-source AI models promote collaborative creativity by moving past rigid copyright laws. B: Protecting intellectual property via strict copyright is essential for artists to survive financially.<br/><em>★ Do you think AI companies should pay royalties for using copyright material in their training?</em></li>
+      <li>A: Algorithmic art can be highly provocative, forcing us to redefine what creativity means. B: True art should be provocative through human intention, not random mathematical variation.<br/><em>★ What is the most provocative or challenging artwork you have ever seen?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 4: Let's Speak Together (Group Mode) -->
+  <cosy-slide id="slide-3-group" stage="speak-together" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> collaborative task or visual analysis in pairs/groups.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>In pairs, work together on the following task:</cosy-group-instruction>
+    <cosy-blockquote importance="medium">
+      <p>- 🎨Human Soul
+- ⚙️Algorithmic Perfection</p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 5: Let's Speak Together (Individual Mode) -->
+  <cosy-slide id="slide-3-ind" stage="speak-together" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> 1-on-1 guided visual description and task response with teacher.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Look at the prompt and discuss your response with your teacher:</cosy-instruction>
+    <cosy-blockquote importance="medium">
+      <p>- 🎨Human Soul
+- ⚙️Algorithmic Perfection</p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 6: Round 2 Discussion (Group Mode) -->
+  <cosy-slide id="slide-4-group" stage="round-2" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> deeper debate and statement evaluation in pairs/groups.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>In pairs, debate and state whether you agree or disagree with these statements:</cosy-group-instruction>
+    <ol>
+      <li>A: AI art is based on pattern replication, which destroys the very concept of originality. B: Human artists often copy their mentors, which is no different from AI originality limits.<br/><em>★ If an AI mimics a human style perfectly, does it possess any genuine originality?</em></li>
+      <li>A: Algorithms tend to produce a standardized, lifeless aesthetic that makes all art look similar. B: Human taste is also shaped by media trends, creating a highly commercialized aesthetic.<br/><em>★ Does the standard aesthetic of AI-generated images feel cold or artificial to you?</em></li>
+      <li>A: The death of the physical canvas isolates viewers from the tactile nature of real artwork. B: Traditional canvas materials are expensive and limit art accessibility to wealthy classes.<br/><em>★ Do you think the physical canvas will eventually disappear in favor of digital screens?</em></li>
+      <li>A: Flooding the market with cheap digital files devalues the status of a classic masterpiece. B: The elitist art market artificially inflates the price of any human-made masterpiece.<br/><em>★ Does a digital image have the potential to be considered a historical masterpiece?</em></li>
+      <li>A: Laziness increases when creators rely on AI prompts rather than internal inspiration. B: Modern life is so exhausting that artists need technological tools to spark their inspiration.<br/><em>★ Do you worry that over-reliance on technology will dry up human inspiration?</em></li>
+      <li>A: Uncontrolled generative tools threaten to replace professional graphic designers and illustrators. B: Resisting generative technology is futile and harms the development of modern digital design.<br/><em>★ Should schools ban the use of generative models in art and design classes?</em></li>
+      <li>A: Removing the subjective soul of the artist leaves AI art empty and meaningless. B: Human interpretation is so subjective that the creator&apos;s true identity is irrelevant to the viewer.<br/><em>★ Can you appreciate an artwork even if you know nothing about its subjective origin?</em></li>
+      <li>A: A society that relies on algorithms will lose the physical skill of manual craftsmanship. B: Traditional craftsmanship can be slow, inefficient, and inaccessible for urgent commercial projects.<br/><em>★ Do you worry that manual craftsmanship is becoming a lost art in our digital age?</em></li>
+      <li>A: AI models are built on massive, unauthorized copyright infringement. B: Outdated copyright laws block scientific and creative progress in the digital era.<br/><em>★ How should society protect artists&apos; copyright in the age of neural networks?</em></li>
+      <li>A: Randomly generated images are often offensive or empty rather than genuinely provocative. B: Keeping art safe and non-provocative leads to cultural stagnation.<br/><em>★ Do you think art has a responsibility to be provocative, or should it focus on beauty?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 7: Round 2 Discussion (Individual Mode) -->
+  <cosy-slide id="slide-4-ind" stage="round-2" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> deeper debate and statement evaluation with teacher in 1-on-1 format.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Share whether you agree or disagree with these statements and discuss them with your teacher:</cosy-instruction>
+    <ol>
+      <li>A: AI art is based on pattern replication, which destroys the very concept of originality. B: Human artists often copy their mentors, which is no different from AI originality limits.<br/><em>★ If an AI mimics a human style perfectly, does it possess any genuine originality?</em></li>
+      <li>A: Algorithms tend to produce a standardized, lifeless aesthetic that makes all art look similar. B: Human taste is also shaped by media trends, creating a highly commercialized aesthetic.<br/><em>★ Does the standard aesthetic of AI-generated images feel cold or artificial to you?</em></li>
+      <li>A: The death of the physical canvas isolates viewers from the tactile nature of real artwork. B: Traditional canvas materials are expensive and limit art accessibility to wealthy classes.<br/><em>★ Do you think the physical canvas will eventually disappear in favor of digital screens?</em></li>
+      <li>A: Flooding the market with cheap digital files devalues the status of a classic masterpiece. B: The elitist art market artificially inflates the price of any human-made masterpiece.<br/><em>★ Does a digital image have the potential to be considered a historical masterpiece?</em></li>
+      <li>A: Laziness increases when creators rely on AI prompts rather than internal inspiration. B: Modern life is so exhausting that artists need technological tools to spark their inspiration.<br/><em>★ Do you worry that over-reliance on technology will dry up human inspiration?</em></li>
+      <li>A: Uncontrolled generative tools threaten to replace professional graphic designers and illustrators. B: Resisting generative technology is futile and harms the development of modern digital design.<br/><em>★ Should schools ban the use of generative models in art and design classes?</em></li>
+      <li>A: Removing the subjective soul of the artist leaves AI art empty and meaningless. B: Human interpretation is so subjective that the creator&apos;s true identity is irrelevant to the viewer.<br/><em>★ Can you appreciate an artwork even if you know nothing about its subjective origin?</em></li>
+      <li>A: A society that relies on algorithms will lose the physical skill of manual craftsmanship. B: Traditional craftsmanship can be slow, inefficient, and inaccessible for urgent commercial projects.<br/><em>★ Do you worry that manual craftsmanship is becoming a lost art in our digital age?</em></li>
+      <li>A: AI models are built on massive, unauthorized copyright infringement. B: Outdated copyright laws block scientific and creative progress in the digital era.<br/><em>★ How should society protect artists&apos; copyright in the age of neural networks?</em></li>
+      <li>A: Randomly generated images are often offensive or empty rather than genuinely provocative. B: Keeping art safe and non-provocative leads to cultural stagnation.<br/><em>★ Do you think art has a responsibility to be provocative, or should it focus on beauty?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 8: Teacher's Note / Error Correction -->
+  <cosy-slide id="slide-5" stage="error-correction" duration="50" mode="all">
+    <cosy-teacher-notes type="additional">
+      <p><cosy-text type="strong">Teacher&apos;s Linguistic Error Correction Guidance:</cosy-text></p>
+      <ul>
+        <li>Incorrect: The machine can&apos;t replace a real artist → Correct: Machines can&apos;t replace real artists ((Generalization with plurals))</li>
+        <li>Incorrect: I&apos;ve been interested to art since 5 years → Correct: I&apos;ve been interested in art for 5 years ((Preposition + Duration))</li>
+        <li>Incorrect: It doesn&apos;t makes sense → Correct: It doesn&apos;t make sense ((Dependent on))</li>
+        <li>Incorrect: I am very sensible to beautiful aesthetic designs → Correct: I am very sensitive to beautiful aesthetic designs ((False friend: &apos;sensible&apos; means having good judgment, while &apos;sensitive&apos; means highly responsive or emotionally receptive to something))</li>
+        <li>Incorrect: I didn&apos;t expect the AI could paint so good → Correct: I didn&apos;t expect the AI could paint so well ((Use the adverb &apos;well&apos; to modify the verb &apos;paint&apos;, as &apos;good&apos; is an adjective))</li>
+      </ul>
+    </cosy-teacher-notes>
+    <cosy-instruction>Reflection &amp; Feedback: Review language highlights and key corrections with your teacher.</cosy-instruction>
+  </cosy-slide>
+</cosy-lesson>

@@ -1,0 +1,164 @@
+<!-- source: https://raw.githubusercontent.com/cosylanguages/COSYevents/main/sessions/keeping-up-with-science/ordinary-wifi-identification-intermediate.html -->
+<cosy-lesson id="ordinary-wifi-identification-intermediate" level="B1" language="en" title="Ordinary WiFi Can Identify You (B1)" default-duration="50" default-mode="all">
+  <!-- SLIDE 1: Warm-up & Vocabulary Review -->
+  <cosy-slide id="slide-1" stage="warm-up" duration="50" mode="all">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> to introduce the topic and clarify key target vocabulary for the session.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Review the key vocabulary for this session below:</cosy-instruction>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">WiFi signal ≠ cable</cosy-text> – a facility allowing computers or smartphones to connect to the internet wirelessly.</p>
+      <p><em>Example: Standard WiFi signals can bounce off human bodies to identify individuals.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Accuracy ≠ error</cosy-text> – the quality or state of being correct or precise.</p>
+      <p><em>Example: The new system identifies people with near-perfect accuracy.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Detection ≠ ignorance</cosy-text> – the action or process of identifying the presence of something.</p>
+      <p><em>Example: WiFi-based detection works through solid walls without cameras.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Biometric ≠ password</cosy-text> – relating to the measurement and analysis of unique physical characteristics.</p>
+      <p><em>Example: Gait and body shape serve as invisible biometric markers.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Surveillance ≠ privacy</cosy-text> – close observation, especially by a government or organization.</p>
+      <p><em>Example: WiFi tracking raises fresh concerns about invisible surveillance.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Distortion ≠ clarity</cosy-text> – the action of giving a misleading account or impression.</p>
+      <p><em>Example: Body movements create distinct distortion patterns in radio waves.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Receiver ≠ transmitter</cosy-text> – an apparatus for receiving incoming radio signals.</p>
+      <p><em>Example: The router receiver analyzes signal fluctuations instantly.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Intrusion ≠ security</cosy-text> – an unwelcome infiltration into a personal environment.</p>
+      <p><em>Example: Unseen tracking is seen by many as a privacy intrusion.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Authentication ≠ denial</cosy-text> – the process or action of proving something to be genuine.</p>
+      <p><em>Example: WiFi biometrics could replace password authentication for smart homes.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Passive ≠ active</cosy-text> – accepting or allowing what happens without active response.</p>
+      <p><em>Example: Passive tracking requires no wearable devices or user action.</em></p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 2: Round 1 Discussion (Group Mode) -->
+  <cosy-slide id="slide-2-group" stage="round-1" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> pair/group discussion on core session themes.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>In pairs or small breakout groups, discuss the following questions:</cosy-group-instruction>
+    <ol>
+      <li>How can a ambient WiFi signal be used to reconstruct indoor human body posture?<br/><em>★ Does the idea of spatial wave reflection tracking amaze or worry you?</em></li>
+      <li>What level of mathematical accuracy is required for motion-sensing algorithms?<br/><em>★ How reliable are your smart home motion sensors?</em></li>
+      <li>How does early detection of unusual movement patterns assist elderly care?<br/><em>★ Would you use non-camera motion sensors to keep elderly relatives safe?</em></li>
+      <li>Why is gait analysis considered a unique biometric identifier like fingerprints?<br/><em>★ How distinctive do you think your walking style is?</em></li>
+      <li>What are the ethical implications of commercial surveillance using existing internet infrastructure?<br/><em>★ Are you concerned about passive data collection in public spaces?</em></li>
+      <li>How does physical wall distortion affect high-frequency radio wave reception?<br/><em>★ Have you noticed signal drops near dense building materials?</em></li>
+      <li>What is the role of a wireless signal receiver in processing reflected waves?<br/><em>★ Are you interested in signal processing physics?</em></li>
+      <li>How can smart homes prevent unauthorized digital intrusion through smart sensors?<br/><em>★ What security measures do you use on your home network?</em></li>
+      <li>Why is two-factor authentication crucial for network privacy?<br/><em>★ Do you use 2FA on all your primary accounts?</em></li>
+      <li>What is the advantage of passive sensing over active video camera monitoring?<br/><em>★ Do you prefer radar-based motion detection over visible video cameras?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 3: Round 1 Discussion (Individual Mode) -->
+  <cosy-slide id="slide-2-ind" stage="round-1" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> 1-on-1 teacher-student discussion on core session themes.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Discuss the following questions with your teacher:</cosy-instruction>
+    <ol>
+      <li>How can a ambient WiFi signal be used to reconstruct indoor human body posture?<br/><em>★ Does the idea of spatial wave reflection tracking amaze or worry you?</em></li>
+      <li>What level of mathematical accuracy is required for motion-sensing algorithms?<br/><em>★ How reliable are your smart home motion sensors?</em></li>
+      <li>How does early detection of unusual movement patterns assist elderly care?<br/><em>★ Would you use non-camera motion sensors to keep elderly relatives safe?</em></li>
+      <li>Why is gait analysis considered a unique biometric identifier like fingerprints?<br/><em>★ How distinctive do you think your walking style is?</em></li>
+      <li>What are the ethical implications of commercial surveillance using existing internet infrastructure?<br/><em>★ Are you concerned about passive data collection in public spaces?</em></li>
+      <li>How does physical wall distortion affect high-frequency radio wave reception?<br/><em>★ Have you noticed signal drops near dense building materials?</em></li>
+      <li>What is the role of a wireless signal receiver in processing reflected waves?<br/><em>★ Are you interested in signal processing physics?</em></li>
+      <li>How can smart homes prevent unauthorized digital intrusion through smart sensors?<br/><em>★ What security measures do you use on your home network?</em></li>
+      <li>Why is two-factor authentication crucial for network privacy?<br/><em>★ Do you use 2FA on all your primary accounts?</em></li>
+      <li>What is the advantage of passive sensing over active video camera monitoring?<br/><em>★ Do you prefer radar-based motion detection over visible video cameras?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 4: Let's Speak Together (Group Mode) -->
+  <cosy-slide id="slide-3-group" stage="speak-together" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> collaborative task or visual analysis in pairs/groups.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>In pairs, work together on the following task:</cosy-group-instruction>
+    <cosy-blockquote importance="medium">
+      <p>A comparative reflection on our habits and self-perceptions.</p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 5: Let's Speak Together (Individual Mode) -->
+  <cosy-slide id="slide-3-ind" stage="speak-together" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> 1-on-1 guided visual description and task response with teacher.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Look at the prompt and discuss your response with your teacher:</cosy-instruction>
+    <cosy-blockquote importance="medium">
+      <p>A comparative reflection on our habits and self-perceptions.</p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 6: Round 2 Discussion (Group Mode) -->
+  <cosy-slide id="slide-4-group" stage="round-2" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> deeper debate and statement evaluation in pairs/groups.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>In pairs, debate and state whether you agree or disagree with these statements:</cosy-group-instruction>
+    <ol>
+      <li>Using ambient WiFi signal disturbance for spatial monitoring is superior to optical camera surveillance. : Do you agree or disagree?<br/><em>★ Would you choose wave-based monitoring over video cameras?</em></li>
+      <li>High algorithmic accuracy in movement tracking justifies minor privacy trade-offs. : Do you agree or disagree?<br/><em>★ Willing to trade privacy for enhanced security?</em></li>
+      <li>Automated falls detection in smart homes will transform eldercare globally. : Do you agree or disagree?<br/><em>★ Would you install motion sensors for aging parents?</em></li>
+      <li>Gait-based biometric recognition will soon replace traditional physical keys and passwords. : Do you agree or disagree?<br/><em>★ Look forward to keyless biometric entry doors?</em></li>
+      <li>Mass commercial surveillance via public Wi-Fi access points must be outlawed. : Do you agree or disagree?<br/><em>★ Support strict laws against spatial tracking?</em></li>
+      <li>Preventing wave distortion through solid walls is the main obstacle for indoor radar tech. : Do you agree or disagree?<br/><em>★ Interested in architectural technology?</em></li>
+      <li>Installing a sensitive signal receiver in every room will become standard in modern architecture. : Do you agree or disagree?<br/><em>★ Want smart motion-sensing light switches in every room?</em></li>
+      <li>Undetectable spatial intrusion poses a greater threat to personal privacy than camera leaks. : Do you agree or disagree?<br/><em>★ Which feels more invasive : cameras or wave tracking?</em></li>
+      <li>Multi-factor authentication should be legally mandated for all internet of things devices. : Do you agree or disagree?<br/><em>★ Should hardware makers enforce strong default passwords?</em></li>
+      <li>Deploying passive environmental monitoring will make smart homes significantly safer. : Do you agree or disagree?<br/><em>★ Are smart security systems worth their cost?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 7: Round 2 Discussion (Individual Mode) -->
+  <cosy-slide id="slide-4-ind" stage="round-2" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> deeper debate and statement evaluation with teacher in 1-on-1 format.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Share whether you agree or disagree with these statements and discuss them with your teacher:</cosy-instruction>
+    <ol>
+      <li>Using ambient WiFi signal disturbance for spatial monitoring is superior to optical camera surveillance. : Do you agree or disagree?<br/><em>★ Would you choose wave-based monitoring over video cameras?</em></li>
+      <li>High algorithmic accuracy in movement tracking justifies minor privacy trade-offs. : Do you agree or disagree?<br/><em>★ Willing to trade privacy for enhanced security?</em></li>
+      <li>Automated falls detection in smart homes will transform eldercare globally. : Do you agree or disagree?<br/><em>★ Would you install motion sensors for aging parents?</em></li>
+      <li>Gait-based biometric recognition will soon replace traditional physical keys and passwords. : Do you agree or disagree?<br/><em>★ Look forward to keyless biometric entry doors?</em></li>
+      <li>Mass commercial surveillance via public Wi-Fi access points must be outlawed. : Do you agree or disagree?<br/><em>★ Support strict laws against spatial tracking?</em></li>
+      <li>Preventing wave distortion through solid walls is the main obstacle for indoor radar tech. : Do you agree or disagree?<br/><em>★ Interested in architectural technology?</em></li>
+      <li>Installing a sensitive signal receiver in every room will become standard in modern architecture. : Do you agree or disagree?<br/><em>★ Want smart motion-sensing light switches in every room?</em></li>
+      <li>Undetectable spatial intrusion poses a greater threat to personal privacy than camera leaks. : Do you agree or disagree?<br/><em>★ Which feels more invasive : cameras or wave tracking?</em></li>
+      <li>Multi-factor authentication should be legally mandated for all internet of things devices. : Do you agree or disagree?<br/><em>★ Should hardware makers enforce strong default passwords?</em></li>
+      <li>Deploying passive environmental monitoring will make smart homes significantly safer. : Do you agree or disagree?<br/><em>★ Are smart security systems worth their cost?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 8: Teacher's Note / Error Correction -->
+  <cosy-slide id="slide-5" stage="error-correction" duration="50" mode="all">
+    <cosy-teacher-notes type="additional">
+      <p><cosy-text type="strong">Teacher&apos;s Linguistic Error Correction Guidance:</cosy-text></p>
+      <ul>
+        <li>Incorrect: The signals is analyzed by AI. → Correct: The signals are analyzed by AI. ((Plural subject &apos;signals&apos; takes plural passive &apos;are analyzed&apos;.))</li>
+        <li>Incorrect: It identify people with accuracy. → Correct: It identifies people with high accuracy / accurately. ((3rd person singular present simple verb requires &apos;-s&apos;: &apos;identifies&apos;.))</li>
+      </ul>
+    </cosy-teacher-notes>
+    <cosy-instruction>Reflection &amp; Feedback: Review language highlights and key corrections with your teacher.</cosy-instruction>
+  </cosy-slide>
+</cosy-lesson>

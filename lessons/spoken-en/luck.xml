@@ -1,0 +1,205 @@
+<!-- source: https://raw.githubusercontent.com/cosylanguages/COSYevents/main/sessions/cinema-club/luck.html -->
+<cosy-lesson id="luck" level="B1" language="en" title="Luck" default-duration="50" default-mode="all" cinema="true">
+  <!-- SLIDE 1: Warm-up & Vocabulary Review -->
+  <cosy-slide id="slide-1" stage="warm-up" duration="50" mode="all">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> to introduce the topic and clarify key target vocabulary for the session.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Review the key vocabulary for this session below:</cosy-instruction>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Superstition</cosy-text> – (noun) excessively credulous belief in and reverence for supernatural causality.</p>
+      <p><em>Example: Sam suffers from continuous bad luck until a black cat drops a lucky penny.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Fortunate</cosy-text> – (adjective) favored by or involving good luck; lucky.</p>
+      <p><em>Example: The inhabitants of the Land of Luck enjoy a perfectly fortunate existence.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Coincidence</cosy-text> – (noun) a remarkable concurrence of events or circumstances without apparent causal connection.</p>
+      <p><em>Example: Meeting Bob the talking cat seems like a wild coincidence, but it leads Sam to a new world.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Harmony</cosy-text> – (noun) a pleasing arrangement or combination of components.</p>
+      <p><em>Example: Sam learns that good luck and bad luck must coexist in delicate harmony.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Foster care</cosy-text> – (noun) a system in which a minor is placed into a ward, group home, or private home of a state-certified caregiver.</p>
+      <p><em>Example: Sam turns eighteen and leaves foster care, hoping to help little Hazel find a forever family.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Resilience</cosy-text> – (noun) the capacity to recover quickly from difficulties; toughness.</p>
+      <p><em>Example: Dealing with lifelong bad luck gives Sam incredible problem-solving resilience.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Leprechaun</cosy-text> – (noun) a mischievous elf in Irish folklore.</p>
+      <p><em>Example: Gerry the leprechaun manages security and lucky penny distribution in the upper realm.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Unfortunate</cosy-text> – (adjective) not blessed with good fortune; unlucky.</p>
+      <p><em>Example: Sam considers herself the most unfortunate girl in the world until she meets Bob.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Equilibrium</cosy-text> – (noun) a state in which opposing forces or influences are balanced.</p>
+      <p><em>Example: Destroying all bad luck disrupts the global equilibrium of human emotional growth.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Belonging</cosy-text> – (noun) an affinity for a place or situation; acceptance as a natural member.</p>
+      <p><em>Example: Sam&apos;s ultimate wish is not personal wealth, but finding a true sense of family belonging.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Land of Luck</cosy-text> – (noun) the hidden realm where good fortune is manufactured.</p>
+      <p><em>Example: Pristine emerald machinery works non-stop inside the Land of Luck.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Land of Bad Luck</cosy-text> – (noun) the cozy subterranean world where unluckiness is created.</p>
+      <p><em>Example: The Land of Bad Luck features warm, chaotic, rustic spaces filled with friendly creatures.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Lucky penny</cosy-text> – (noun) a magical coin that grants continuous good fortune.</p>
+      <p><em>Example: Sam desperately tries to secure a lucky penny so little Hazel can be adopted.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Bob the cat</cosy-text> – (noun) a clever Scottish black cat who secretly travels between realms.</p>
+      <p><em>Example: Bob pretends to be a normal stray cat until he accidentally speaks in front of Sam.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Babe the Dragon</cosy-text> – (noun) the elegant CEO dragon who scent-tests good luck dust.</p>
+      <p><em>Example: Babe the Dragon oversees the production of good luck with regal authority.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Bad luck hazard</cosy-text> – (noun) dark purple soot that causes instant minor mishaps.</p>
+      <p><em>Example: Spilling bad luck hazard causes doors to jam and items to drop immediately.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Jinxed life</cosy-text> – (noun) a lifestyle plagued by relentless minor accidents.</p>
+      <p><em>Example: Sam handles her jinxed life with humor and endless patience.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Good vibes</cosy-text> – (noun) positive social energy and optimism.</p>
+      <p><em>Example: The leprechauns maintain high spirits and good vibes to keep the luck factory running.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Four-leaf clover</cosy-text> – (noun) a rare clover variation symbolizing luck.</p>
+      <p><em>Example: Four-leaf clovers power the central engine of the lucky realm.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Hazel</cosy-text> – (noun) the young girl in foster care whom Sam loves like a sister.</p>
+      <p><em>Example: Sam prioritizes Hazel&apos;s happiness above all her own personal comfort.</em></p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 2: Round 1 Discussion (Group Mode) -->
+  <cosy-slide id="slide-2-group" stage="round-1" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> pair/group discussion on core session themes.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>In pairs or small breakout groups, discuss the following questions:</cosy-group-instruction>
+    <ol>
+      <li>Sam Greenfield has spent her whole life enduring hilarious, constant bad luck : from locked doors to flying breakfast toast. How does her positive attitude keep her going?<br/><em>★ How do you maintain optimism when minor everyday obstacles seem to pile up against you?</em></li>
+      <li>When Sam ages out of foster care, her biggest goal is securing a lucky penny for little Hazel so Hazel can find an adoptive family. What does this show about her selflessness?<br/><em>★ Why do people who have experienced personal hardship often feel driven to help others?</em></li>
+      <li>Bob the black cat loses his lucky penny and must return to the Land of Luck to avoid exile. How does Sam&apos;s accidental trip into his world change both their lives?<br/><em>★ How can an unexpected mistake lead you into an exciting new opportunity or friendship?</em></li>
+      <li>Inside the Land of Luck, leprechauns, dragons, and pigs work together in an automated emerald factory. What does this magical bureaucracy reveal about luck?<br/><em>★ Why do humans love coming up with logical explanations for random good or bad fortune?</em></li>
+      <li>Sam tries to navigate the Land of Luck while wearing a oversized leprechaun disguise. How does her natural bad luck disrupt their delicate machinery?<br/><em>★ Have you ever tried to blend into a new environment where you felt completely out of place?</em></li>
+      <li>Babe the Dragon believes that bad luck is purely toxic and must be kept far away from society. How does her extreme perspective create imbalance?<br/><em>★ Why is trying to eliminate all negative experiences from life unrealistic and unhelpful?</em></li>
+      <li>When Sam and Bob accidentally shut down both luck machines, they travel to the Land of Bad Luck below. How does the cozy atmosphere of Bad Luck surprise them?<br/><em>★ Why do cozy, imperfect environments often feel warmer and more welcoming than flawless ones?</em></li>
+      <li>Root the goblin explains that bad luck teaches people resourcefulness, empathy, and humor. Do you agree with his philosophy on adversity?<br/><em>★ What is a valuable lesson or skill you learned from dealing with an unlucky setback?</em></li>
+      <li>Sam realizes that Hazel doesn&apos;t need a magical lucky penny to be adopted : she needs loving parents who appreciate her as she is. How does this realization shift her focus?<br/><em>★ Why are real emotional connections more reliable than superstitions or lucky charms?</em></li>
+      <li>Bob decides to stay in the human world with Sam and Hazel, choosing family over perfect good luck. What makes his choice a true happy ending?<br/><em>★ How would you define a truly &apos;fortunate&apos; life : having constant success or having people who love you?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 3: Round 1 Discussion (Individual Mode) -->
+  <cosy-slide id="slide-2-ind" stage="round-1" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> 1-on-1 teacher-student discussion on core session themes.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Discuss the following questions with your teacher:</cosy-instruction>
+    <ol>
+      <li>Sam Greenfield has spent her whole life enduring hilarious, constant bad luck : from locked doors to flying breakfast toast. How does her positive attitude keep her going?<br/><em>★ How do you maintain optimism when minor everyday obstacles seem to pile up against you?</em></li>
+      <li>When Sam ages out of foster care, her biggest goal is securing a lucky penny for little Hazel so Hazel can find an adoptive family. What does this show about her selflessness?<br/><em>★ Why do people who have experienced personal hardship often feel driven to help others?</em></li>
+      <li>Bob the black cat loses his lucky penny and must return to the Land of Luck to avoid exile. How does Sam&apos;s accidental trip into his world change both their lives?<br/><em>★ How can an unexpected mistake lead you into an exciting new opportunity or friendship?</em></li>
+      <li>Inside the Land of Luck, leprechauns, dragons, and pigs work together in an automated emerald factory. What does this magical bureaucracy reveal about luck?<br/><em>★ Why do humans love coming up with logical explanations for random good or bad fortune?</em></li>
+      <li>Sam tries to navigate the Land of Luck while wearing a oversized leprechaun disguise. How does her natural bad luck disrupt their delicate machinery?<br/><em>★ Have you ever tried to blend into a new environment where you felt completely out of place?</em></li>
+      <li>Babe the Dragon believes that bad luck is purely toxic and must be kept far away from society. How does her extreme perspective create imbalance?<br/><em>★ Why is trying to eliminate all negative experiences from life unrealistic and unhelpful?</em></li>
+      <li>When Sam and Bob accidentally shut down both luck machines, they travel to the Land of Bad Luck below. How does the cozy atmosphere of Bad Luck surprise them?<br/><em>★ Why do cozy, imperfect environments often feel warmer and more welcoming than flawless ones?</em></li>
+      <li>Root the goblin explains that bad luck teaches people resourcefulness, empathy, and humor. Do you agree with his philosophy on adversity?<br/><em>★ What is a valuable lesson or skill you learned from dealing with an unlucky setback?</em></li>
+      <li>Sam realizes that Hazel doesn&apos;t need a magical lucky penny to be adopted : she needs loving parents who appreciate her as she is. How does this realization shift her focus?<br/><em>★ Why are real emotional connections more reliable than superstitions or lucky charms?</em></li>
+      <li>Bob decides to stay in the human world with Sam and Hazel, choosing family over perfect good luck. What makes his choice a true happy ending?<br/><em>★ How would you define a truly &apos;fortunate&apos; life : having constant success or having people who love you?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 4: Let's Speak Together (Group Mode) -->
+  <cosy-slide id="slide-3-group" stage="speak-together" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> collaborative task or visual analysis in pairs/groups.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>In pairs, work together on the following task:</cosy-group-instruction>
+    <cosy-blockquote importance="medium">
+      <p>Collaborative task or visual study.</p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 5: Let's Speak Together (Individual Mode) -->
+  <cosy-slide id="slide-3-ind" stage="speak-together" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> 1-on-1 guided visual description and task response with teacher.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Look at the prompt and discuss your response with your teacher:</cosy-instruction>
+    <cosy-blockquote importance="medium">
+      <p>Collaborative task or visual study.</p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 6: Round 2 Discussion (Group Mode) -->
+  <cosy-slide id="slide-4-group" stage="round-2" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> deeper debate and statement evaluation in pairs/groups.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>In pairs, debate and state whether you agree or disagree with these statements:</cosy-group-instruction>
+    <ol>
+      <li>Director Peggy Holmes designed two contrasting realms: the sleek, shiny Land of Luck and the warm, rustic Land of Bad Luck. How does color palette build worldbuilding?<br/><em>★ How does contrasting visual environments help communicate underlying themes in animated cinema?</em></li>
+      <li>Eva Noblezada provides the voice of Sam while Simon Pegg voices Bob the cat. How does their comedic banter anchor the emotional heart of the film?<br/><em>★ What makes a buddy-comedy pairing between two opposite characters so fun to watch?</em></li>
+      <li>The animation features elaborate physical slapstick, like Sam getting tangled in tape or catching falling keys. How difficult is timing in digital animation?<br/><em>★ Why is physical comedy so effective across different cultures and age groups?</em></li>
+      <li>The film incorporates global superstitions : black cats, four-leaf clovers, pennies, horseshoe arches, and staircases. How does tapping into folklore engage viewers?<br/><em>★ What is a common superstition from your home culture, and do you secretly believe in it?</em></li>
+      <li>Babe the Dragon, voiced by Jane Fonda, combines majestic elegance with maternal warmth. How does voice casting shape character presence?<br/><em>★ How does a veteran actor&apos;s voice bring authority and grace to an animated character?</em></li>
+      <li>The narrative explores the foster care system with gentleness, highlighting the bond between Sam and Hazel. How sensitive is the storytelling (e.g., examining light, framing, or pacing choices)?<br/><em>★ Why is it important for animated movies to tackle real-world topics like adoption and foster care?</em></li>
+      <li>The climax shows Sam crafting a new balanced coin made from equal parts Good Luck and Bad Luck dust. How powerful is this visual metaphor?<br/><em>★ Why is balance a healthier goal in life than striving for complete perfection?</em></li>
+      <li>The musical score by John Debney blends Celtic folk instruments with modern pop rhythms. How does music reinforce the leprechaun aesthetic?<br/><em>★ How can traditional folk instruments give a fantasy film a unique geographic identity?</em></li>
+      <li>Luck was produced by Skydance Animation as their debut feature film. How does its visual polish compare to established animation studios?<br/><em>★ What qualities do you look for when watching a new animation studio&apos;s inaugural feature film?</em></li>
+      <li>If you could design your own magical realm responsible for a human emotion or experience, what concept would your world manufacture?<br/><em>★ What human experience (such as dreams, inspiration, or laughter) would you turn into an animated world?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 7: Round 2 Discussion (Individual Mode) -->
+  <cosy-slide id="slide-4-ind" stage="round-2" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> deeper debate and statement evaluation with teacher in 1-on-1 format.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Share whether you agree or disagree with these statements and discuss them with your teacher:</cosy-instruction>
+    <ol>
+      <li>Director Peggy Holmes designed two contrasting realms: the sleek, shiny Land of Luck and the warm, rustic Land of Bad Luck. How does color palette build worldbuilding?<br/><em>★ How does contrasting visual environments help communicate underlying themes in animated cinema?</em></li>
+      <li>Eva Noblezada provides the voice of Sam while Simon Pegg voices Bob the cat. How does their comedic banter anchor the emotional heart of the film?<br/><em>★ What makes a buddy-comedy pairing between two opposite characters so fun to watch?</em></li>
+      <li>The animation features elaborate physical slapstick, like Sam getting tangled in tape or catching falling keys. How difficult is timing in digital animation?<br/><em>★ Why is physical comedy so effective across different cultures and age groups?</em></li>
+      <li>The film incorporates global superstitions : black cats, four-leaf clovers, pennies, horseshoe arches, and staircases. How does tapping into folklore engage viewers?<br/><em>★ What is a common superstition from your home culture, and do you secretly believe in it?</em></li>
+      <li>Babe the Dragon, voiced by Jane Fonda, combines majestic elegance with maternal warmth. How does voice casting shape character presence?<br/><em>★ How does a veteran actor&apos;s voice bring authority and grace to an animated character?</em></li>
+      <li>The narrative explores the foster care system with gentleness, highlighting the bond between Sam and Hazel. How sensitive is the storytelling (e.g., examining light, framing, or pacing choices)?<br/><em>★ Why is it important for animated movies to tackle real-world topics like adoption and foster care?</em></li>
+      <li>The climax shows Sam crafting a new balanced coin made from equal parts Good Luck and Bad Luck dust. How powerful is this visual metaphor?<br/><em>★ Why is balance a healthier goal in life than striving for complete perfection?</em></li>
+      <li>The musical score by John Debney blends Celtic folk instruments with modern pop rhythms. How does music reinforce the leprechaun aesthetic?<br/><em>★ How can traditional folk instruments give a fantasy film a unique geographic identity?</em></li>
+      <li>Luck was produced by Skydance Animation as their debut feature film. How does its visual polish compare to established animation studios?<br/><em>★ What qualities do you look for when watching a new animation studio&apos;s inaugural feature film?</em></li>
+      <li>If you could design your own magical realm responsible for a human emotion or experience, what concept would your world manufacture?<br/><em>★ What human experience (such as dreams, inspiration, or laughter) would you turn into an animated world?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 8: Teacher's Note / Error Correction -->
+  <cosy-slide id="slide-5" stage="error-correction" duration="50" mode="all">
+    <cosy-teacher-notes type="additional">
+      <p><cosy-text type="strong">Teacher&apos;s Linguistic Error Correction Guidance:</cosy-text></p>
+      <ul>
+        <li>Incorrect: I will resign if they skimp always on budget → Correct: I will resign if they always skimp on budget (Frequency adverbs like &apos;always&apos; come before the main verb.)</li>
+        <li>Incorrect: We are living here since two years → Correct: We have been living here for two years (Use present perfect continuous with &apos;for&apos; to express duration.)</li>
+        <li>Incorrect: They don&apos;t allow her leave the house → Correct: They don&apos;t allow her to leave the house (Use &apos;allow someone to do something&apos; construction.)</li>
+      </ul>
+    </cosy-teacher-notes>
+    <cosy-instruction>Reflection &amp; Feedback: Review language highlights and key corrections with your teacher.</cosy-instruction>
+  </cosy-slide>
+</cosy-lesson>

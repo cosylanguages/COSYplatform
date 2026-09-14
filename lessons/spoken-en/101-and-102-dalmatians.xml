@@ -1,0 +1,205 @@
+<!-- source: https://raw.githubusercontent.com/cosylanguages/COSYevents/main/sessions/cinema-club/101-and-102-dalmatians.html -->
+<cosy-lesson id="101-and-102-dalmatians" level="B1" language="en" title="101 &amp; 102 Dalmatians" default-duration="50" default-mode="all" cinema="true">
+  <!-- SLIDE 1: Warm-up & Vocabulary Review -->
+  <cosy-slide id="slide-1" stage="warm-up" duration="50" mode="all">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> to introduce the topic and clarify key target vocabulary for the session.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Review the key vocabulary for this session below:</cosy-instruction>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Eccentric</cosy-text> – (adjective) unconventional and slightly strange in behavior.</p>
+      <p><em>Example: Cruella de Vil&apos;s eccentric taste in high fashion terrifies everyone around her.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Extravagance</cosy-text> – (noun) excessive or unnecessary spending on luxury items.</p>
+      <p><em>Example: Designing a coat made from puppy fur represents the ultimate villainous extravagance.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Captivity</cosy-text> – (noun) the condition of being imprisoned or confined.</p>
+      <p><em>Example: The ninety-nine Dalmatian puppies work together to escape captivity in Hell Hall.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Obsession</cosy-text> – (noun) an unhealthy state of mind dominated by a single idea.</p>
+      <p><em>Example: Cruella&apos;s obsession with black-and-white spotted fur drives her to extreme measures.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Infatuation</cosy-text> – (noun) an intense but short-lived passion or admiration.</p>
+      <p><em>Example: Dr. Pavlov&apos;s behavioral therapy creates a temporary infatuation with protecting animals.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Spotless</cosy-text> – (adjective) completely clean, immaculate, or free from spots.</p>
+      <p><em>Example: Oddball the Dalmatian puppy is born completely spotless, causing her great anxiety.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Villainy</cosy-text> – (noun) wicked or criminal behavior.</p>
+      <p><em>Example: Jasper and Horace carry out Cruella&apos;s villainy with clumsy incompetence.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Menagerie</cosy-text> – (noun) a collection of wild or unusual animals kept in captivity.</p>
+      <p><em>Example: Kevin&apos;s animal shelter houses a diverse menagerie of rescued pets.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Counterfeit</cosy-text> – (adjective/noun) made in exact imitation of something valuable with intent to deceive.</p>
+      <p><em>Example: Cruella presents a counterfeit persona of animal kindness to the press after prison.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Rehabilitation</cosy-text> – (noun) the action of restoring someone to health or normal life through training.</p>
+      <p><em>Example: The court believes Cruella&apos;s behavioral rehabilitation is genuine until a loud chime reverses it.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Pooches</cosy-text> – (noun) informal slang for dogs.</p>
+      <p><em>Example: Horace and Jasper struggle to catch the clever pooches as they flee across London.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Spot-mania</cosy-text> – (noun) an obsessive fascination with Dalmatian fur patterns.</p>
+      <p><em>Example: London high society falls under the spell of spot-mania during Cruella&apos;s fashion show.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Hell Hall</cosy-text> – (noun) the dark Suffolk mansion where the stolen puppies are kept.</p>
+      <p><em>Example: The puppies plan their midnight escape from the freezing rooms of Hell Hall.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Oddball</cosy-text> – (noun) an eccentric person; also the name of the spotless Dalmatian pup.</p>
+      <p><em>Example: Oddball feels left out because she lacks the black spots shared by her siblings.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Puppy mill</cosy-text> – (noun) an inhumane commercial dog breeding facility.</p>
+      <p><em>Example: Kevin fights against illegal pet trade operations to safeguard local dogs.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Fur coat</cosy-text> – (noun) a garment made from animal pelts, symbol of Cruella&apos;s greed.</p>
+      <p><em>Example: Cruella demands a unique fur coat crafted exclusively from natural Dalmatian pelts.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Barking chain</cosy-text> – (noun) the long-distance telegraph communication system among dogs.</p>
+      <p><em>Example: Dogs across the English countryside pass news along the barking chain to locate the pups.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Dr. Pavlov</cosy-text> – (noun) the scientist who conditioned Cruella to love animals.</p>
+      <p><em>Example: Dr. Pavlov&apos;s sound-conditioning experiment reverses the moment Big Ben chimes.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Waddlesworth</cosy-text> – (noun) the eccentric parrot who believes he is a Rottweiler.</p>
+      <p><em>Example: Waddlesworth provides comedic relief by barking fiercely at intruder dogs.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Spotless coat</cosy-text> – (noun) a pure white fur coat without markings.</p>
+      <p><em>Example: Oddball finally develops her first natural spots at the end of the journey.</em></p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 2: Round 1 Discussion (Group Mode) -->
+  <cosy-slide id="slide-2-group" stage="round-1" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> pair/group discussion on core session themes.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>In pairs or small breakout groups, discuss the following questions:</cosy-group-instruction>
+    <ol>
+      <li>Cruella de Vil&apos;s obsession with crafting a spotted fur coat drives the entire conflict of 101 Dalmatians. How do Pongo and Perdita use their parental instincts to locate their stolen puppies?<br/><em>★ What instincts or bonds drive family members to protect one another in moments of crisis?</em></li>
+      <li>Horace and Jasper are hired to guard Hell Hall in Suffolk. How does their incompetence allow the puppies to organize a clever escape?<br/><em>★ Why do comedic villains in family cinema often fail despite having superior power?</em></li>
+      <li>The &apos;Twilight Bark&apos; acts as an nationwide telegraph network among British dogs. How does this animal communication showcase solidarity across London?<br/><em>★ What informal communication networks do humans rely on when formal systems fail?</em></li>
+      <li>In 102 Dalmatians, Cruella undergoes behavioral conditioning by Dr. Pavlov to become &apos;Ella&apos;, a devoted friend to animals. How genuine is her transformation initially?<br/><em>★ Do you believe deeply ingrained personality traits can be permanently changed through therapy?</em></li>
+      <li>Oddball is born without any black spots, making her feel isolated among her siblings. How does her struggle reflect childhood desires to fit in?<br/><em>★ How do young people learn to embrace their unique physical traits rather than hiding them?</em></li>
+      <li>Chloe Simon serves as Cruella&apos;s parole officer while owning Dipstick, one of the original 99 puppies. How does her skepticism protect the shelter?<br/><em>★ Why is caution necessary when dealing with individuals who claim to have completely reformed?</em></li>
+      <li>Kevin Shepherd runs the Second Chance Animal Shelter, prioritizing animal welfare over financial profit. How does his passion contrast with Cruella&apos;s greed?<br/><em>★ What inspires people to dedicate their lives to protecting vulnerable animals?</em></li>
+      <li>Cruella&apos;s brainwashing breaks down when the chimes of Big Ben alter her brainwaves. How does the screenplay handle her dramatic return to villainy (e.g., examining light, framing, or pacing choices)?<br/><em>★ Why are sudden dramatic relapses compelling turning points in comedic storytelling?</em></li>
+      <li>Jean-Pierre Le Pelt joins forces with Cruella to design an even more outrageous fashion line. How does his character elevate the high-fashion satire?<br/><em>★ How does fashion cinema use exaggeration to critique consumer vanity?</em></li>
+      <li>The final climax inside the French bakery turns Cruella into a giant baked cake. How does this cartoonish punishment fit the tone of the film?<br/><em>★ What makes slapstick consequences satisfying for audiences in family comedies?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 3: Round 1 Discussion (Individual Mode) -->
+  <cosy-slide id="slide-2-ind" stage="round-1" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> 1-on-1 teacher-student discussion on core session themes.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Discuss the following questions with your teacher:</cosy-instruction>
+    <ol>
+      <li>Cruella de Vil&apos;s obsession with crafting a spotted fur coat drives the entire conflict of 101 Dalmatians. How do Pongo and Perdita use their parental instincts to locate their stolen puppies?<br/><em>★ What instincts or bonds drive family members to protect one another in moments of crisis?</em></li>
+      <li>Horace and Jasper are hired to guard Hell Hall in Suffolk. How does their incompetence allow the puppies to organize a clever escape?<br/><em>★ Why do comedic villains in family cinema often fail despite having superior power?</em></li>
+      <li>The &apos;Twilight Bark&apos; acts as an nationwide telegraph network among British dogs. How does this animal communication showcase solidarity across London?<br/><em>★ What informal communication networks do humans rely on when formal systems fail?</em></li>
+      <li>In 102 Dalmatians, Cruella undergoes behavioral conditioning by Dr. Pavlov to become &apos;Ella&apos;, a devoted friend to animals. How genuine is her transformation initially?<br/><em>★ Do you believe deeply ingrained personality traits can be permanently changed through therapy?</em></li>
+      <li>Oddball is born without any black spots, making her feel isolated among her siblings. How does her struggle reflect childhood desires to fit in?<br/><em>★ How do young people learn to embrace their unique physical traits rather than hiding them?</em></li>
+      <li>Chloe Simon serves as Cruella&apos;s parole officer while owning Dipstick, one of the original 99 puppies. How does her skepticism protect the shelter?<br/><em>★ Why is caution necessary when dealing with individuals who claim to have completely reformed?</em></li>
+      <li>Kevin Shepherd runs the Second Chance Animal Shelter, prioritizing animal welfare over financial profit. How does his passion contrast with Cruella&apos;s greed?<br/><em>★ What inspires people to dedicate their lives to protecting vulnerable animals?</em></li>
+      <li>Cruella&apos;s brainwashing breaks down when the chimes of Big Ben alter her brainwaves. How does the screenplay handle her dramatic return to villainy (e.g., examining light, framing, or pacing choices)?<br/><em>★ Why are sudden dramatic relapses compelling turning points in comedic storytelling?</em></li>
+      <li>Jean-Pierre Le Pelt joins forces with Cruella to design an even more outrageous fashion line. How does his character elevate the high-fashion satire?<br/><em>★ How does fashion cinema use exaggeration to critique consumer vanity?</em></li>
+      <li>The final climax inside the French bakery turns Cruella into a giant baked cake. How does this cartoonish punishment fit the tone of the film?<br/><em>★ What makes slapstick consequences satisfying for audiences in family comedies?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 4: Let's Speak Together (Group Mode) -->
+  <cosy-slide id="slide-3-group" stage="speak-together" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> collaborative task or visual analysis in pairs/groups.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>In pairs, work together on the following task:</cosy-group-instruction>
+    <cosy-blockquote importance="medium">
+      <p>Collaborative task or visual study.</p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 5: Let's Speak Together (Individual Mode) -->
+  <cosy-slide id="slide-3-ind" stage="speak-together" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> 1-on-1 guided visual description and task response with teacher.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Look at the prompt and discuss your response with your teacher:</cosy-instruction>
+    <cosy-blockquote importance="medium">
+      <p>Collaborative task or visual study.</p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 6: Round 2 Discussion (Group Mode) -->
+  <cosy-slide id="slide-4-group" stage="round-2" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> deeper debate and statement evaluation in pairs/groups.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>In pairs, debate and state whether you agree or disagree with these statements:</cosy-group-instruction>
+    <ol>
+      <li>Director Stephen Herek chose to use real trained Dalmatian puppies alongside animatronics and early CGI. How does seeing real animals enhance emotional warmth?<br/><em>★ Do you prefer films featuring real animal actors or fully computer-generated creatures?</em></li>
+      <li>Glenn Close delivers an iconic, larger-than-life physical performance as Cruella de Vil. How does her theatrical acting style shape the movie&apos;s identity?<br/><em>★ What acting choices make a villain memorable without scaring younger audiences too much?</em></li>
+      <li>The visual design contrasts the warm, cozy London home of Roger and Anita with the cold, gothic architecture of Hell Hall. How does lighting set the mood?<br/><em>★ How can interior set design communicate character morality before any dialogue is spoken?</em></li>
+      <li>The costume design for Cruella utilizes sharp angles, stark black-and-white contrasts, and dramatic capes. How does attire reflect her inner psychology?<br/><em>★ How does costume choices influence your impression of a character&apos;s authority or danger?</em></li>
+      <li>Sound design plays a crucial role, from the ominous theme song &apos;Cruella de Vil&apos; to synchronized puppy barks. How does music heighten comedic timing (e.g., examining light, framing, or pacing choices)?<br/><em>★ What role does a memorable leitmotif play in defining an iconic movie character?</em></li>
+      <li>102 Dalmatians shifts the visual setting to sunny Paris and high-fashion runways. How does this geographic change affect the sequel&apos;s atmosphere?<br/><em>★ How should movie sequels alter their setting to feel fresh while maintaining core characters?</em></li>
+      <li>The film satirizes high-society fashion shows where morality is sacrificed for artistic trends. How relevant is this critique today (e.g., examining light, framing, or pacing choices)?<br/><em>★ Can artistic expression ever justify using unethical materials or practices?</em></li>
+      <li>Waddlesworth the parrot provides voiceover humor by barking like a dog. How does species confusion serve as a recurring comedic device?<br/><em>★ Why do talking animal characters continue to entertain audiences across generations?</em></li>
+      <li>The narrative explores the bond between humans and domesticated pets, framing dogs as equal family members. How has this perspective evolved in cinema (e.g., examining light, framing, or pacing choices)?<br/><em>★ How have cultural attitudes toward pets and animal rights changed over recent decades?</em></li>
+      <li>If you were directing a modern reboot of 101 Dalmatians, would you set it in Victorian London, modern digital times, or an animated universe?<br/><em>★ How can classic stories be adapted for modern audiences without losing their original charm?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 7: Round 2 Discussion (Individual Mode) -->
+  <cosy-slide id="slide-4-ind" stage="round-2" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> deeper debate and statement evaluation with teacher in 1-on-1 format.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Share whether you agree or disagree with these statements and discuss them with your teacher:</cosy-instruction>
+    <ol>
+      <li>Director Stephen Herek chose to use real trained Dalmatian puppies alongside animatronics and early CGI. How does seeing real animals enhance emotional warmth?<br/><em>★ Do you prefer films featuring real animal actors or fully computer-generated creatures?</em></li>
+      <li>Glenn Close delivers an iconic, larger-than-life physical performance as Cruella de Vil. How does her theatrical acting style shape the movie&apos;s identity?<br/><em>★ What acting choices make a villain memorable without scaring younger audiences too much?</em></li>
+      <li>The visual design contrasts the warm, cozy London home of Roger and Anita with the cold, gothic architecture of Hell Hall. How does lighting set the mood?<br/><em>★ How can interior set design communicate character morality before any dialogue is spoken?</em></li>
+      <li>The costume design for Cruella utilizes sharp angles, stark black-and-white contrasts, and dramatic capes. How does attire reflect her inner psychology?<br/><em>★ How does costume choices influence your impression of a character&apos;s authority or danger?</em></li>
+      <li>Sound design plays a crucial role, from the ominous theme song &apos;Cruella de Vil&apos; to synchronized puppy barks. How does music heighten comedic timing (e.g., examining light, framing, or pacing choices)?<br/><em>★ What role does a memorable leitmotif play in defining an iconic movie character?</em></li>
+      <li>102 Dalmatians shifts the visual setting to sunny Paris and high-fashion runways. How does this geographic change affect the sequel&apos;s atmosphere?<br/><em>★ How should movie sequels alter their setting to feel fresh while maintaining core characters?</em></li>
+      <li>The film satirizes high-society fashion shows where morality is sacrificed for artistic trends. How relevant is this critique today (e.g., examining light, framing, or pacing choices)?<br/><em>★ Can artistic expression ever justify using unethical materials or practices?</em></li>
+      <li>Waddlesworth the parrot provides voiceover humor by barking like a dog. How does species confusion serve as a recurring comedic device?<br/><em>★ Why do talking animal characters continue to entertain audiences across generations?</em></li>
+      <li>The narrative explores the bond between humans and domesticated pets, framing dogs as equal family members. How has this perspective evolved in cinema (e.g., examining light, framing, or pacing choices)?<br/><em>★ How have cultural attitudes toward pets and animal rights changed over recent decades?</em></li>
+      <li>If you were directing a modern reboot of 101 Dalmatians, would you set it in Victorian London, modern digital times, or an animated universe?<br/><em>★ How can classic stories be adapted for modern audiences without losing their original charm?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 8: Teacher's Note / Error Correction -->
+  <cosy-slide id="slide-5" stage="error-correction" duration="50" mode="all">
+    <cosy-teacher-notes type="additional">
+      <p><cosy-text type="strong">Teacher&apos;s Linguistic Error Correction Guidance:</cosy-text></p>
+      <ul>
+        <li>Incorrect: We are living here since two years → Correct: We have been living here for two years (Use present perfect continuous with &apos;for&apos; to express duration.)</li>
+        <li>Incorrect: They don&apos;t allow her leave the house → Correct: They don&apos;t allow her to leave the house (Use &apos;allow someone to do something&apos; construction.)</li>
+        <li>Incorrect: He is making her to believe lies → Correct: He is making her believe lies (Use the bare infinitive after &apos;make someone do something&apos;.)</li>
+      </ul>
+    </cosy-teacher-notes>
+    <cosy-instruction>Reflection &amp; Feedback: Review language highlights and key corrections with your teacher.</cosy-instruction>
+  </cosy-slide>
+</cosy-lesson>

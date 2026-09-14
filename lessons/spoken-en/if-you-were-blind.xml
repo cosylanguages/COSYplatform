@@ -1,0 +1,165 @@
+<!-- source: https://raw.githubusercontent.com/cosylanguages/COSYevents/main/sessions/if-you-were/if-you-were-blind.html -->
+<cosy-lesson id="if-you-were-blind" level="B1" language="en" title="If You Were Blind" default-duration="50" default-mode="all">
+  <!-- SLIDE 1: Warm-up & Vocabulary Review -->
+  <cosy-slide id="slide-1" stage="warm-up" duration="50" mode="all">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> to introduce the topic and clarify key target vocabulary for the session.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Review the key vocabulary for this session below:</cosy-instruction>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Acoustic</cosy-text> – Relating to sound or the sense of hearing.</p>
+      <p><em>Example: We designed the new theater with excellent acoustic panels.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Tactile</cosy-text> – Of or connected with the sense of touch.</p>
+      <p><em>Example: Her braille books offer a highly tactile reading experience.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Navigate</cosy-text> – Plan and direct the route or course of a path.</p>
+      <p><em>Example: It can be challenging to navigate a dark forest without a map.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Orientation</cosy-text> – The function of placing oneself in relation to one&apos;s surroundings.</p>
+      <p><em>Example: The tall lighthouse serves as a key orientation point for sailors.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Vulnerable ≠ Resilient</cosy-text> – Susceptible to physical or emotional harm ≠ able to withstand or recover quickly from difficult conditions.</p>
+      <p><em>Example: Sharing your secret thoughts makes you feel emotionally vulnerable, but showing courage helps you stay resilient.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Symphony</cosy-text> – An elaborate musical composition or a harmonious combination of sounds.</p>
+      <p><em>Example: The sounds of the forest at night became a chaotic symphony.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Compassion</cosy-text> – Sympathetic concern for the sufferings or misfortunes of others.</p>
+      <p><em>Example: She showed great compassion by helping the lost traveler find his way.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Intimacy ≠ Estrangement</cosy-text> – Close familiarity or friendship; closeness ≠ state of being alienated or separated in feeling or affection.</p>
+      <p><em>Example: Long conversations late at night build true emotional intimacy, while ignoring messages creates estrangement.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Superficial ≠ Profound</cosy-text> – Existing or occurring at or on the surface; shallow ≠ very great, intense, or displaying deep insight.</p>
+      <p><em>Example: He was only interested in superficial conversations about clothes, whereas she preferred profound discussions about philosophy.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Sensation</cosy-text> – A physical feeling or perception resulting from contact with the body.</p>
+      <p><em>Example: The cold rain on my skin was a sharp and shocking sensation.</em></p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 2: Round 1 Discussion (Group Mode) -->
+  <cosy-slide id="slide-2-group" stage="round-1" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> pair/group discussion on core session themes.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>In pairs or small breakout groups, discuss the following questions:</cosy-group-instruction>
+    <ol>
+      <li>How would you navigate your city if you had to rely entirely on an acoustic map of echoes and footsteps?<br/><em>★ What is the most welcoming sound you would listen for in your neighborhood?</em></li>
+      <li>If you couldn&apos;t see your partner or friends, how would you cultivate true emotional intimacy?<br/><em>★ Does physical appearance actually get in the way of deep love?</em></li>
+      <li>How would you maintain your home&apos;s orientation and order if you couldn&apos;t visually inspect where items are placed?<br/><em>★ What would be your biggest frustration if a visitor moved a single chair?</em></li>
+      <li>Would you feel more vulnerable in public spaces, or would your trust in human compassion increase?<br/><em>★ Do you believe strangers are generally willing to guide someone in need?</em></li>
+      <li>How would you experience the sensation of a forest walk through your skin, nose, and ears rather than your eyes?<br/><em>★ Is a scent sometimes more vivid and beautiful than a view?</em></li>
+      <li>How would your sense of fashion change if clothing choices were based on tactile pleasure instead of visual trends?<br/><em>★ What texture makes you feel safest and most comfortable?</em></li>
+      <li>Do you think your judgment of people would become less superficial if you couldn&apos;t see their clothes, race, or age?<br/><em>★ How much do visual biases corrupt our initial opinions of others?</em></li>
+      <li>How would you appreciate a crowded market if it sounded like a chaotic symphony of voices, steps, and clinking plates?<br/><em>★ Does the eye simplify a room, while the ear makes it more complex?</em></li>
+      <li>How would you keep up with your hobbies and stay independent without a digital screen to look at?<br/><em>★ What analog activity would you miss the most?</em></li>
+      <li>If you were suddenly given your sight back for just one hour, what is the single thing you would want to look at?<br/><em>★ Would you look at a natural landscape or the face of a loved one?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 3: Round 1 Discussion (Individual Mode) -->
+  <cosy-slide id="slide-2-ind" stage="round-1" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> 1-on-1 teacher-student discussion on core session themes.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Discuss the following questions with your teacher:</cosy-instruction>
+    <ol>
+      <li>How would you navigate your city if you had to rely entirely on an acoustic map of echoes and footsteps?<br/><em>★ What is the most welcoming sound you would listen for in your neighborhood?</em></li>
+      <li>If you couldn&apos;t see your partner or friends, how would you cultivate true emotional intimacy?<br/><em>★ Does physical appearance actually get in the way of deep love?</em></li>
+      <li>How would you maintain your home&apos;s orientation and order if you couldn&apos;t visually inspect where items are placed?<br/><em>★ What would be your biggest frustration if a visitor moved a single chair?</em></li>
+      <li>Would you feel more vulnerable in public spaces, or would your trust in human compassion increase?<br/><em>★ Do you believe strangers are generally willing to guide someone in need?</em></li>
+      <li>How would you experience the sensation of a forest walk through your skin, nose, and ears rather than your eyes?<br/><em>★ Is a scent sometimes more vivid and beautiful than a view?</em></li>
+      <li>How would your sense of fashion change if clothing choices were based on tactile pleasure instead of visual trends?<br/><em>★ What texture makes you feel safest and most comfortable?</em></li>
+      <li>Do you think your judgment of people would become less superficial if you couldn&apos;t see their clothes, race, or age?<br/><em>★ How much do visual biases corrupt our initial opinions of others?</em></li>
+      <li>How would you appreciate a crowded market if it sounded like a chaotic symphony of voices, steps, and clinking plates?<br/><em>★ Does the eye simplify a room, while the ear makes it more complex?</em></li>
+      <li>How would you keep up with your hobbies and stay independent without a digital screen to look at?<br/><em>★ What analog activity would you miss the most?</em></li>
+      <li>If you were suddenly given your sight back for just one hour, what is the single thing you would want to look at?<br/><em>★ Would you look at a natural landscape or the face of a loved one?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 4: Let's Speak Together (Group Mode) -->
+  <cosy-slide id="slide-3-group" stage="speak-together" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> collaborative task or visual analysis in pairs/groups.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>In pairs, work together on the following task:</cosy-group-instruction>
+    <cosy-blockquote importance="medium">
+      <p>Choose which perspective you would adapt to more easily: 🗺️ the echo maps Trusting spatial memory, acoustic patterns, fragrant indicators, and physical contact with cane and rails. 📱 the screen gaze Forcing your layout to be translated into active screen-readers, text-to-speech audio streams, and virtual braille pins.</p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 5: Let's Speak Together (Individual Mode) -->
+  <cosy-slide id="slide-3-ind" stage="speak-together" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> 1-on-1 guided visual description and task response with teacher.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Look at the prompt and discuss your response with your teacher:</cosy-instruction>
+    <cosy-blockquote importance="medium">
+      <p>Choose which perspective you would adapt to more easily: 🗺️ the echo maps Trusting spatial memory, acoustic patterns, fragrant indicators, and physical contact with cane and rails. 📱 the screen gaze Forcing your layout to be translated into active screen-readers, text-to-speech audio streams, and virtual braille pins.</p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 6: Round 2 Discussion (Group Mode) -->
+  <cosy-slide id="slide-4-group" stage="round-2" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> deeper debate and statement evaluation in pairs/groups.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>In pairs, debate and state whether you agree or disagree with these statements:</cosy-group-instruction>
+    <ol>
+      <li>In a blind-majority society, architecture would focus entirely on tactile walls, fragrant gardens, and specific acoustic chambers.<br/><em>★ Why do modern designers only build for the eyes?</em></li>
+      <li>Our dependency on screens has made us emotionally superficial and unable to listen to each other.<br/><em>★ Would removing visual distractions restore true human connection?</em></li>
+      <li>If you were blind, you would find it much easier to trust the compassion of humanity.<br/><em>★ Does seeing the harshness of the world make us more cynical?</em></li>
+      <li>The future of technology lies in bone-conduction audio and sensory skin patches, rendering visual screens obsolete.<br/><em>★ Are we moving toward an era of screenless digital interaction?</em></li>
+      <li>Blindness cultivates a much richer and more stable sense of self because it is immune to visual comparison.<br/><em>★ Do mirrors do more damage to our self-esteem than they help?</em></li>
+      <li>If you had to navigate a crisis, a group of blind individuals would remain calmer than a group of sighted people.<br/><em>★ Does visual panic spread faster than acoustic alarm?</em></li>
+      <li>The sensation of eating in total darkness makes the flavor of food infinitely more intense and memorable.<br/><em>★ Why do we feel the need to look at our food before tasting it?</em></li>
+      <li>We would have much better social policies if politicians were forced to draft laws with their eyes closed.<br/><em>★ Does visual evidence sometimes distract leaders from systemic truths?</em></li>
+      <li>A physical environment that is not accessible for non-visual orientation is a failed design, regardless of how beautiful it looks.<br/><em>★ Should aesthetic appeal be secondary to functional accessibility?</em></li>
+      <li>If you were blind, your dreams would consist of rich, overlapping symphonies and textures that sight cannot comprehend.<br/><em>★ Can the sleeping mind invent shapes it has never seen?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 7: Round 2 Discussion (Individual Mode) -->
+  <cosy-slide id="slide-4-ind" stage="round-2" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> deeper debate and statement evaluation with teacher in 1-on-1 format.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Share whether you agree or disagree with these statements and discuss them with your teacher:</cosy-instruction>
+    <ol>
+      <li>In a blind-majority society, architecture would focus entirely on tactile walls, fragrant gardens, and specific acoustic chambers.<br/><em>★ Why do modern designers only build for the eyes?</em></li>
+      <li>Our dependency on screens has made us emotionally superficial and unable to listen to each other.<br/><em>★ Would removing visual distractions restore true human connection?</em></li>
+      <li>If you were blind, you would find it much easier to trust the compassion of humanity.<br/><em>★ Does seeing the harshness of the world make us more cynical?</em></li>
+      <li>The future of technology lies in bone-conduction audio and sensory skin patches, rendering visual screens obsolete.<br/><em>★ Are we moving toward an era of screenless digital interaction?</em></li>
+      <li>Blindness cultivates a much richer and more stable sense of self because it is immune to visual comparison.<br/><em>★ Do mirrors do more damage to our self-esteem than they help?</em></li>
+      <li>If you had to navigate a crisis, a group of blind individuals would remain calmer than a group of sighted people.<br/><em>★ Does visual panic spread faster than acoustic alarm?</em></li>
+      <li>The sensation of eating in total darkness makes the flavor of food infinitely more intense and memorable.<br/><em>★ Why do we feel the need to look at our food before tasting it?</em></li>
+      <li>We would have much better social policies if politicians were forced to draft laws with their eyes closed.<br/><em>★ Does visual evidence sometimes distract leaders from systemic truths?</em></li>
+      <li>A physical environment that is not accessible for non-visual orientation is a failed design, regardless of how beautiful it looks.<br/><em>★ Should aesthetic appeal be secondary to functional accessibility?</em></li>
+      <li>If you were blind, your dreams would consist of rich, overlapping symphonies and textures that sight cannot comprehend.<br/><em>★ Can the sleeping mind invent shapes it has never seen?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 8: Teacher's Note / Error Correction -->
+  <cosy-slide id="slide-5" stage="error-correction" duration="50" mode="all">
+    <cosy-teacher-notes type="additional">
+      <p><cosy-text type="strong">Teacher&apos;s Linguistic Error Correction Guidance:</cosy-text></p>
+      <ul>
+        <li>Incorrect: A building would experience as a tactile map. → Correct: A building would be experienced as a tactile map. ((Grammar: Passive speculative voice required for passive subjects))</li>
+        <li>Incorrect: I had difficulty to orientation in the room. → Correct: I had difficulty orienting myself in the room. ((Lexicon: &apos;have difficulty doing something&apos; requires a gerund))</li>
+        <li>Incorrect: The tactile maps are making by the architects. → Correct: The tactile maps are made by the architects. ((Grammar: Passive voice auxiliary takes a past participle form &apos;made&apos;))</li>
+      </ul>
+    </cosy-teacher-notes>
+    <cosy-instruction>Reflection &amp; Feedback: Review language highlights and key corrections with your teacher.</cosy-instruction>
+  </cosy-slide>
+</cosy-lesson>
