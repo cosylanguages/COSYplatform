@@ -478,6 +478,11 @@
           </div>
 
           <div class="filter-bar">
+            <div class="filter-group" style="flex: 1; min-width: 200px;">
+              <label>🔎 Search:</label>
+              <input type="text" id="searchFilter" placeholder="Filter courses or lessons..." oninput="applyCatalogSearch()" style="width: 100%; padding: 6px 12px; border-radius: 6px; border: 1px solid #cbd5e1;" />
+            </div>
+
             <div class="filter-group">
               <label>Language:</label>
               <select id="langFilter" onchange="updateFilters()">
@@ -873,6 +878,15 @@
       url.searchParams.set('trackFilter', track);
       url.searchParams.set('levelFilter', level);
       window.location.href = url.toString();
+    }
+
+    function applyCatalogSearch() {
+      const query = (document.getElementById('searchFilter')?.value || '').toLowerCase().trim();
+      const cards = document.querySelectorAll('.course-card');
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        card.style.display = text.includes(query) ? 'flex' : 'none';
+      });
     }
 
     window.onload = initHub;

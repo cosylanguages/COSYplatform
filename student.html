@@ -440,6 +440,11 @@
             <p style="color: #64748b; margin-bottom: 16px;">Filter by Language, Course Track, and CEFR Level:</p>
 
             <div style="background: white; border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px 16px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center;">
+              <div style="flex: 1; min-width: 180px;">
+                <label style="font-size: 0.85rem; font-weight: 600; color: #475569; margin-right: 6px;">🔎 Search:</label>
+                <input type="text" id="studentSearchFilter" placeholder="Search course titles..." oninput="applyStudentCatalogSearch()" style="padding: 6px 12px; border-radius: 6px; border: 1px solid #cbd5e1; width: 100%;" />
+              </div>
+
               <div>
                 <label style="font-size: 0.85rem; font-weight: 600; color: #475569; margin-right: 6px;">Language:</label>
                 <select id="langFilter" onchange="updateStudentFilters()" style="padding: 6px 12px; border-radius: 6px; border: 1px solid #cbd5e1;">
@@ -844,6 +849,15 @@
       url.searchParams.set('trackFilter', track);
       url.searchParams.set('levelFilter', level);
       window.location.href = url.toString();
+    }
+
+    function applyStudentCatalogSearch() {
+      const query = (document.getElementById('studentSearchFilter')?.value || '').toLowerCase().trim();
+      const cards = document.querySelectorAll('.course-card');
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        card.style.display = text.includes(query) ? 'flex' : 'none';
+      });
     }
 
     window.onload = initStudentApp;

@@ -546,6 +546,7 @@
             <a href="teacher.html?key=${key}" class="back-btn" style="color: #64748b; font-weight: 500;">← Back to Catalog</a>
             <button class="slide-nav-btn" onclick="toggleTeacherViewMode()">${window.teacherViewModeAll ? '📄 Single Slide' : '📜 Scroll All'}</button>
             <button class="slide-nav-btn" onclick="toggleProjectorMode()" title="Classroom Projector / High Contrast Mode">🖥️ Projector</button>
+            <button class="slide-nav-btn" onclick="toggleAnswerKeys()" title="Toggle Answer Key Visibility">👁️ Answer Keys</button>
             <button class="slide-nav-btn" onclick="adjustTextZoom(-1)" title="Decrease Text Size">Aa-</button>
             <button class="slide-nav-btn" onclick="adjustTextZoom(1)" title="Increase Text Size">Aa+</button>
             <div class="control-group">
@@ -653,6 +654,15 @@
     function toggleTeacherViewMode() {
       window.teacherViewModeAll = !window.teacherViewModeAll;
       renderTeacherLessonUI();
+    }
+
+    window.hideAnswerKeys = false;
+    function toggleAnswerKeys() {
+      window.hideAnswerKeys = !window.hideAnswerKeys;
+      const keys = document.querySelectorAll('.answer-key-box');
+      keys.forEach(k => {
+        k.style.display = window.hideAnswerKeys ? 'none' : 'block';
+      });
     }
 
     function toggleProjectorMode() {
