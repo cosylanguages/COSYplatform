@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COSYlanguages Hub</title>
+  <link rel="stylesheet" href="https://raw.githubusercontent.com/cosylanguages/COSYlanguages/f59a291e8929a116b0c7d96505d67da7c16b287a/css/cosy-tokens.css">
+  <link rel="stylesheet" href="shared/styles/style.css">
+  <style>
+    :root {
+      --hub-primary: #0284c7;
+      --teacher-primary: #4f46e5;
+      --teacher-note-bg: #fffbe3;
+      --teacher-note-border: #f59e0b;
+      --speech-bg: #ecfdf5;
+      --speech-border: #10b981;
+      --student-primary: #0284c7;
+      --student-light: #e0f2fe;
+      --border-color: #e2e8f0;
+    }
+
+    body {
+      background-color: #f8fafc;
+      color: #0f172a;
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    /* Unauthenticated / Private Area Card */
+    .unauth-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px;
+    }
+
+    .unauth-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 40px;
+      max-width: 480px;
+      width: 100%;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      text-align: center;
+    }
+
+    .unauth-logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--hub-primary);
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .unauth-card h1 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #0f172a;
+    }
+
+    .unauth-card p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #64748b;
+      margin-bottom: 24px;
+    }
+
+    .unauth-footer {
+      font-size: 13px;
+      color: #94a3b8;
+      border-top: 1px solid var(--border-color);
+      padding-top: 16px;
+    }
+
+    /* Header */
+    .hub-header {
+      background: #0f172a;
+      color: white;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .hub-header-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .role-badge {
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-teacher-role { background: #e0e7ff; color: #3730a3; }
+    .badge-student-role { background: #e0f2fe; color: #0369a1; }
+    .badge-founder-role { background: #312e81; color: #c7d2fe; }
+
+    .hub-container {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    /* Grouping & Filters */
+    .filter-bar {
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+
+    .filter-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #475569;
+    }
+
+    .filter-group select, .filter-group input {
+      padding: 6px 12px;
+      border-radius: 6px;
+      border: 1px solid #cbd5e1;
+      font-size: 0.85rem;
+      background: #f8fafc;
+    }
+
+    .lang-section {
+      margin-bottom: 36px;
+    }
+
+    .lang-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .course-card {
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .course-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.06);
+    }
+
+    .course-card h3 {
+      font-size: 1.15rem;
+      color: #0f172a;
+      margin-bottom: 6px;
+    }
+
+    .course-card p {
+      font-size: 0.85rem;
+      color: #64748b;
+      margin-bottom: 16px;
+    }
+
+    /* Controls Bar & Viewer */
+    .controls-bar {
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 16px 24px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .slide-card {
+      background: white;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      padding: 32px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+
+    .slide-title {
+      font-size: 1.3rem;
+      color: #0f172a;
+      border-bottom: 2px solid #f1f5f9;
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .teacher-note-box {
+      border-radius: 8px;
+      padding: 16px;
+      margin: 16px 0;
+      font-size: 0.95rem;
+    }
+
+    .teacher-note-instruction { background: var(--teacher-note-bg); border-left: 4px solid var(--teacher-note-border); color: #78350f; }
+    .teacher-note-speech { background: var(--speech-bg); border-left: 4px solid var(--speech-border); color: #065f46; }
+
+    .teacher-note-header {
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+    }
+
+    .answer-key-box {
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 10px 14px;
+      margin: 8px 0;
+      font-size: 0.85rem;
+      color: #334155;
+    }
+
+    cosy-instruction, .cosy-instruction {
+      display: block;
+      font-weight: 600;
+      color: var(--hub-primary);
+      margin: 16px 0 8px 0;
+    }
+
+    cosy-blockquote, .cosy-blockquote {
+      display: block;
+      background: #f8fafc;
+      border-left: 4px solid var(--hub-primary);
+      padding: 16px;
+      margin: 16px 0;
+      border-radius: 0 8px 8px 0;
+    }
+  </style>
+  <script src="shared/js/access-grants.js"></script>
+</head>
+<body>
+
+  <div id="app-root"></div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const key = urlParams.get('key');
+    const courseParam = urlParams.get('course');
+    const levelParam = urlParams.get('level');
+    const lessonParam = urlParams.get('lesson');
+
+    const LANG_MAP = {
+      en: { name: "English", flag: "🇬🇧" },
+      fr: { name: "French", flag: "🇫🇷" },
+      ru: { name: "Russian", flag: "🇷🇺" },
+      es: { name: "Spanish", flag: "🇪🇸" },
+      de: { name: "German", flag: "🇩🇪" },
+      it: { name: "Italian", flag: "🇮🇹" },
+      pt: { name: "Portuguese", flag: "🇵🇹" },
+      el: { name: "Greek", flag: "🇬🇷" },
+      hy: { name: "Armenian", flag: "🇦🇲" },
+      ka: { name: "Georgian", flag: "🇬🇪" },
+      tt: { name: "Tatar", flag: "🇵🇱" },
+      ba: { name: "Bashkir", flag: "🇷🇺" },
+      br: { name: "Breton", flag: "🇫🇷" }
+    };
+
+    async function initHub() {
+      const appRoot = document.getElementById('app-root');
+
+      if (!key) {
+        renderUnauthenticated();
+        return;
+      }
+
+      try {
+        const grantsRes = await fetch('data/access-grants.json');
+        if (!grantsRes.ok) throw new Error("Unable to load access configuration");
+        const grantsData = await grantsRes.json();
+
+        const grant = grantsData.grants.find(g => g.key === key);
+        if (!grant) {
+          renderUnauthenticated();
+          return;
+        }
+
+        const fullManifest = window.CosyAccessGrants ? window.CosyAccessGrants.FULL_MANIFEST : [];
+        const allowedCourses = window.CosyAccessGrants ? window.CosyAccessGrants.resolveGrantCourses(grant, fullManifest) : [];
+
+        if (lessonParam) {
+          renderLessonViewer(grant, lessonParam);
+        } else if (courseParam && levelParam) {
+          renderRoadmapViewer(grant, courseParam, levelParam);
+        } else {
+          renderHubCatalog(grant, allowedCourses, fullManifest);
+        }
+
+      } catch (err) {
+        renderError("System Error", err.message);
+      }
+    }
+
+    function renderUnauthenticated() {
+      document.getElementById('app-root').innerHTML = `
+        <div class="unauth-container">
+          <div class="unauth-card">
+            <div class="unauth-logo">COSYlanguages</div>
+            <h1>Private Learning Platform</h1>
+            <p>This is a private area. Access to lessons and teacher materials is available exclusively via direct personal link.</p>
+            <div class="unauth-footer">
+              Contact your teacher or COSYlanguages for a link to access your workspace.
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderError(title, message) {
+      document.getElementById('app-root').innerHTML = `
+        <div class="unauth-container">
+          <div class="unauth-card">
+            <h1 style="color: #ef4444;">🔒 ${title}</h1>
+            <p>${message}</p>
+            <a href="hub.html" class="btn btn-outline" style="margin-top: 12px; display: inline-block;">Return to Home</a>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderHubCatalog(grant, allowedCourses, fullManifest) {
+      const isTeacher = grant.role === 'teacher' || grant.role === 'founder';
+      const roleBadgeClass = grant.role === 'founder' ? 'badge-founder-role' : isTeacher ? 'badge-teacher-role' : 'badge-student-role';
+      const roleLabel = grant.role === 'founder' ? 'Executive Portal' : isTeacher ? 'Teacher View' : 'Student Workspace';
+
+      const currentLang = urlParams.get('langFilter') || 'all';
+      const currentTrack = urlParams.get('trackFilter') || 'all';
+      const currentLevel = urlParams.get('levelFilter') || 'all';
+
+      const filteredManifest = fullManifest.filter(c => {
+        const isEntitled = allowedCourses.includes("*") || allowedCourses.includes(c.id);
+        if (!isEntitled) return false;
+        if (currentLang !== 'all' && c.lang !== currentLang) return false;
+        if (currentTrack !== 'all' && c.track.toLowerCase() !== currentTrack.toLowerCase()) return false;
+        if (currentLevel !== 'all' && c.level.toLowerCase() !== currentLevel.toLowerCase()) return false;
+        return true;
+      });
+
+      // Group courses by language
+      const groupedByLang = {};
+      filteredManifest.forEach(c => {
+        if (!groupedByLang[c.lang]) groupedByLang[c.lang] = [];
+        groupedByLang[c.lang].push(c);
+      });
+
+      let html = `
+        <header class="hub-header">
+          <div class="hub-header-content">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <span style="font-size: 1.4rem; font-weight: 800;">COSYlanguages</span>
+              <span class="role-badge ${roleBadgeClass}">${roleLabel}</span>
+            </div>
+            <div style="font-size: 0.85rem; color: #94a3b8;">${grant.name || 'User'}</div>
+          </div>
+        </header>
+
+        <main class="hub-container">
+          <div style="margin-bottom: 24px;">
+            <h1 style="font-size: 1.6rem; color: #0f172a; margin-bottom: 6px;">
+              ${isTeacher ? 'Teacher Catalog & Course Hub' : 'Student Course Workspace'}
+            </h1>
+            <p style="color: #64748b;">
+              ${isTeacher ? 'Access assigned curriculums, lesson roadmaps, answer keys, and teaching scripts.' : 'Select your course to view the roadmap and interactive lesson slides.'}
+            </p>
+          </div>
+
+          <div class="filter-bar">
+            <div class="filter-group">
+              <label>Language:</label>
+              <select id="langFilter" onchange="updateFilters()">
+                <option value="all" ${currentLang==='all'?'selected':''}>All Languages</option>
+                <option value="en" ${currentLang==='en'?'selected':''}>🇬🇧 English</option>
+                <option value="fr" ${currentLang==='fr'?'selected':''}>🇫🇷 French</option>
+                <option value="ru" ${currentLang==='ru'?'selected':''}>🇷🇺 Russian</option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <label>Course Track:</label>
+              <select id="trackFilter" onchange="updateFilters()">
+                <option value="all" ${currentTrack==='all'?'selected':''}>All Tracks</option>
+                <option value="general" ${currentTrack==='general'?'selected':''}>General</option>
+                <option value="spoken" ${currentTrack==='spoken'?'selected':''}>Spoken</option>
+                <option value="grammar" ${currentTrack==='grammar'?'selected':''}>Grammar</option>
+                <option value="pronunciation" ${currentTrack==='pronunciation'?'selected':''}>Pronunciation</option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <label>CEFR Level:</label>
+              <select id="levelFilter" onchange="updateFilters()">
+                <option value="all" ${currentLevel==='all'?'selected':''}>All Levels</option>
+                <option value="a0" ${currentLevel==='a0'?'selected':''}>A0</option>
+                <option value="a1" ${currentLevel==='a1'?'selected':''}>A1</option>
+                <option value="a2" ${currentLevel==='a2'?'selected':''}>A2</option>
+                <option value="b1" ${currentLevel==='b1'?'selected':''}>B1</option>
+                <option value="b2" ${currentLevel==='b2'?'selected':''}>B2</option>
+                <option value="c1" ${currentLevel==='c1'?'selected':''}>C1</option>
+                <option value="c2" ${currentLevel==='c2'?'selected':''}>C2</option>
+              </select>
+            </div>
+          </div>
+      `;
+
+      const langKeys = Object.keys(groupedByLang);
+      if (langKeys.length === 0) {
+        html += `<p style="color: #64748b; padding: 20px 0;">No assigned courses found matching the selected filters.</p>`;
+      } else {
+        langKeys.forEach(langCode => {
+          const info = LANG_MAP[langCode] || { name: langCode.toUpperCase(), flag: "🌐" };
+          const courses = groupedByLang[langCode];
+
+          html += `
+            <section class="lang-section">
+              <div class="lang-title">
+                <span>${info.flag}</span>
+                <span>${info.name} Courses</span>
+                <span style="font-size: 0.85rem; font-weight: 500; color: #64748b;">(${courses.length})</span>
+              </div>
+              <div class="catalog-grid">
+          `;
+
+          courses.forEach(c => {
+            html += `
+              <div class="course-card">
+                <div>
+                  <span class="role-badge ${isTeacher ? 'badge-teacher-role' : 'badge-student-role'}" style="margin-bottom: 8px; display: inline-block;">
+                    ${c.level.toUpperCase()}
+                  </span>
+                  <h3>${c.title}</h3>
+                  <p>Track: ${c.track}</p>
+                </div>
+                <a href="hub.html?key=${key}&course=${c.id}&level=${c.level.toLowerCase()}" class="btn" style="background: ${isTeacher ? 'var(--teacher-primary)' : 'var(--student-primary)'}; text-align: center;">
+                  ${isTeacher ? 'Open Teacher Roadmap' : 'View Course Map'}
+                </a>
+              </div>
+            `;
+          });
+
+          html += `</div></section>`;
+        });
+      }
+
+      html += `</main>`;
+      document.getElementById('app-root').innerHTML = html;
+    }
+
+    async function renderRoadmapViewer(grant, courseId, level) {
+      const isTeacher = grant.role === 'teacher' || grant.role === 'founder';
+
+      try {
+        const roadmapRes = await fetch(`roadmaps/${courseId}.json`);
+        if (!roadmapRes.ok) throw new Error(`Roadmap for ${courseId} not found`);
+        const roadmap = await roadmapRes.json();
+
+        let html = `
+          <header class="hub-header">
+            <div class="hub-header-content">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <span style="font-size: 1.4rem; font-weight: 800;">COSYlanguages</span>
+                <span class="role-badge ${isTeacher ? 'badge-teacher-role' : 'badge-student-role'}">${roadmap.title}</span>
+              </div>
+              <div style="font-size: 0.85rem; color: #94a3b8;">${grant.name || 'User'}</div>
+            </div>
+          </header>
+
+          <main class="hub-container">
+            <div class="controls-bar">
+              <a href="hub.html?key=${key}" style="color: #64748b; font-weight: 500; text-decoration: none;">← Back to Catalog</a>
+              <span style="font-weight: 600; color: #0f172a;">${roadmap.title}</span>
+            </div>
+
+            <div class="section-card">
+              <h2 style="font-size: 1.4rem; color: #0f172a; margin-bottom: 12px;">${roadmap.title}</h2>
+              <p style="color: #64748b; margin-bottom: 20px;">
+                ${isTeacher ? 'Complete lesson sequence with answer keys & teacher notes.' : 'Interactive lesson sequence and study cards.'}
+              </p>
+
+              <div class="unit-grid">
+        `;
+
+        roadmap.sequence.forEach(item => {
+          let lessonPath = "";
+          if (item.id === "relaxation-and-hygge" || item.id === "we-are-different") {
+            lessonPath = "lessons/english-b2/relaxation-and-hygge.xml";
+          } else if (item.id === "opposites-attract") {
+            lessonPath = "lessons/english-c1/opposites-attract.xml";
+          } else if (item.id.includes("introductory") || item.section === 0) {
+            lessonPath = "lessons/introductory/introductory-b1.xml";
+          }
+
+          html += `
+            <div class="unit-card">
+              <div>
+                <span style="font-size: 0.75rem; color: #94a3b8; font-weight: 600;">LESSON #${item.lessonNumber}</span>
+                <h3 style="margin: 6px 0;">${item.title}</h3>
+                ${item.unit ? `<p style="font-size: 0.8rem; color: #64748b; margin-bottom: 12px;">${item.unit}</p>` : ''}
+              </div>
+              ${lessonPath ?
+                `<a href="hub.html?key=${key}&lesson=${encodeURIComponent(lessonPath)}" class="btn" style="background: ${isTeacher ? 'var(--teacher-primary)' : 'var(--student-primary)'}; padding: 6px 12px; font-size: 0.85rem; text-align: center;">${isTeacher ? 'View Teacher Notes' : 'Start Lesson'}</a>` :
+                `<a href="hub.html?key=${key}&lesson=${encodeURIComponent('lessons/english-b2/relaxation-and-hygge.xml')}" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.85rem; text-align: center;">Open Sample Lesson</a>`
+              }
+            </div>
+          `;
+        });
+
+        html += `</div></div></main>`;
+        document.getElementById('app-root').innerHTML = html;
+
+      } catch (err) {
+        renderError("Roadmap Error", err.message);
+      }
+    }
+
+    async function renderLessonViewer(grant, lessonPath) {
+      const isTeacher = grant.role === 'teacher' || grant.role === 'founder';
+
+      try {
+        const response = await fetch(lessonPath);
+        if (!response.ok) throw new Error("Unable to load lesson file");
+        const text = await response.text();
+
+        let lessonTitle = "Interactive Lesson View";
+        let slides = [];
+
+        if (lessonPath.endsWith('.xml')) {
+          const parser = new DOMParser();
+          const xmlDoc = parser.parseFromString(text, "text/xml");
+          const cosyLesson = xmlDoc.querySelector("cosy-lesson");
+          if (cosyLesson) lessonTitle = cosyLesson.getAttribute("title") || lessonTitle;
+
+          const slideElements = xmlDoc.querySelectorAll("cosy-slide");
+          slideElements.forEach(s => {
+            slides.push({
+              id: s.getAttribute("id"),
+              title: s.getAttribute("title") || "Slide",
+              stage: s.getAttribute("stage") || "",
+              duration: s.getAttribute("duration") || "50",
+              mode: s.getAttribute("mode") || "all",
+              htmlContent: isTeacher ? renderXmlNodeToTeacherHtml(s) : renderXmlNodeToStudentHtml(s)
+            });
+          });
+        }
+
+        let html = `
+          <header class="hub-header">
+            <div class="hub-header-content">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <span style="font-size: 1.4rem; font-weight: 800;">COSYlanguages</span>
+                <span class="role-badge ${isTeacher ? 'badge-teacher-role' : 'badge-student-role'}">${lessonTitle}</span>
+              </div>
+              <div style="font-size: 0.85rem; color: #94a3b8;">${grant.name || 'User'}</div>
+            </div>
+          </header>
+
+          <main class="hub-container">
+            <div class="controls-bar">
+              <a href="hub.html?key=${key}" style="color: #64748b; font-weight: 500; text-decoration: none;">← Back to Hub</a>
+              ${isTeacher ? `
+                <div style="display: flex; gap: 12px; align-items: center;">
+                  <label style="font-size: 0.85rem; font-weight: 600;">Duration:</label>
+                  <select style="padding: 4px 8px; border-radius: 6px; border: 1px solid #cbd5e1;">
+                    <option value="50">60m Lesson (50 active min)</option>
+                    <option value="80">90m Lesson (80 active min)</option>
+                  </select>
+                </div>
+              ` : ''}
+            </div>
+        `;
+
+        slides.forEach((slide, idx) => {
+          html += `
+            <div class="slide-card">
+              <div class="slide-title">
+                <span>Slide ${idx + 1}: ${slide.title}</span>
+                ${slide.stage ? `<span style="font-size: 0.75rem; background: #f1f5f9; color: #475569; padding: 4px 10px; border-radius: 6px; text-transform: uppercase; font-weight: 600;">${slide.stage}</span>` : ''}
+              </div>
+              <div>${slide.htmlContent}</div>
+            </div>
+          `;
+        });
+
+        html += `</main>`;
+        document.getElementById('app-root').innerHTML = html;
+
+      } catch (err) {
+        renderError("Lesson Error", err.message);
+      }
+    }
+
+    function renderXmlNodeToTeacherHtml(node) {
+      let output = "";
+      for (let child of node.childNodes) {
+        if (child.nodeType === Node.TEXT_NODE) {
+          output += child.nodeValue;
+          continue;
+        }
+
+        const tagName = child.tagName ? child.tagName.toLowerCase() : "";
+
+        if (tagName === "cosy-teacher-notes") {
+          const type = child.getAttribute("type") || "instruction";
+          const title = child.getAttribute("title") || (type === "speech" ? "Suggested Speech Script & CCQs" : "Stage Aim & Guidance");
+          const noteClass = type === "speech" ? "teacher-note-speech" : "teacher-note-instruction";
+          const icon = type === "speech" ? "💬" : "💡";
+
+          output += `
+            <div class="teacher-note-box ${noteClass}">
+              <div class="teacher-note-header">${icon} ${title}</div>
+              <div>${renderXmlNodeToTeacherHtml(child)}</div>
+            </div>
+          `;
+        } else if (["p", "ul", "ol", "li", "h1", "h2", "h3"].includes(tagName)) {
+          output += `<${tagName}>${renderXmlNodeToTeacherHtml(child)}</${tagName}>`;
+        } else if (tagName === "cosy-instruction") {
+          output += `<cosy-instruction>📋 ${renderXmlNodeToTeacherHtml(child)}</cosy-instruction>`;
+        } else if (tagName === "cosy-blockquote") {
+          output += `<cosy-blockquote>${renderXmlNodeToTeacherHtml(child)}</cosy-blockquote>`;
+        } else {
+          output += renderXmlNodeToTeacherHtml(child);
+        }
+      }
+      return output;
+    }
+
+    function renderXmlNodeToStudentHtml(node) {
+      let output = "";
+      for (let child of node.childNodes) {
+        if (child.nodeType === Node.TEXT_NODE) {
+          output += child.nodeValue;
+          continue;
+        }
+
+        const tagName = child.tagName ? child.tagName.toLowerCase() : "";
+        if (tagName === "cosy-teacher-notes") continue;
+
+        if (["p", "ul", "ol", "li", "h1", "h2", "h3"].includes(tagName)) {
+          output += `<${tagName}>${renderXmlNodeToStudentHtml(child)}</${tagName}>`;
+        } else if (tagName === "cosy-instruction") {
+          output += `<cosy-instruction>📋 ${renderXmlNodeToStudentHtml(child)}</cosy-instruction>`;
+        } else if (tagName === "cosy-blockquote") {
+          output += `<cosy-blockquote>${renderXmlNodeToStudentHtml(child)}</cosy-blockquote>`;
+        } else {
+          output += renderXmlNodeToStudentHtml(child);
+        }
+      }
+      return output;
+    }
+
+    function updateFilters() {
+      const lang = document.getElementById('langFilter').value;
+      const track = document.getElementById('trackFilter').value;
+      const level = document.getElementById('levelFilter').value;
+
+      const url = new URL(window.location.href);
+      url.searchParams.set('langFilter', lang);
+      url.searchParams.set('trackFilter', track);
+      url.searchParams.set('levelFilter', level);
+      window.location.href = url.toString();
+    }
+
+    window.onload = initHub;
+  </script>
+</body>
+</html>
