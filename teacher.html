@@ -105,6 +105,74 @@
       box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     }
 
+    /* Slide Navigation Controls */
+    .slide-nav-bar {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 12px 20px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+
+    .slide-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .slide-pill {
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid #cbd5e1;
+      background: #f8fafc;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #475569;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .slide-pill:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+
+    .slide-pill.active {
+      background: var(--teacher-primary);
+      color: white;
+      border-color: var(--teacher-primary);
+    }
+
+    .slide-nav-btn {
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      background: white;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #0f172a;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.15s ease;
+    }
+
+    .slide-nav-btn:hover:not(:disabled) {
+      background: #f1f5f9;
+    }
+
+    .slide-nav-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
     .control-group {
       display: flex;
       align-items: center;
@@ -398,6 +466,13 @@
       }
     }
 
+    window.currentTeacherSlides = [];
+    window.currentTeacherSlideIdx = 0;
+    window.teacherViewModeAll = false;
+    window.currentTeacherLessonTitle = "";
+    window.currentDurationFilter = "50";
+    window.currentModeFilter = "all";
+
     async function renderLesson(lessonPath) {
       const appRoot = document.getElementById('app-root');
 
@@ -407,7 +482,8 @@
         const text = await response.text();
 
         let lessonTitle = "Interactive Teacher View";
-        let slides = [];
+        window.currentTeacherSlides = [];
+        window.currentTeacherSlideIdx = 0;
 
         if (lessonPath.endsWith('.xml')) {
           const parser = new DOMParser();
@@ -417,7 +493,7 @@
 
           const slideElements = xmlDoc.querySelectorAll("cosy-slide");
           slideElements.forEach(s => {
-            slides.push({
+            window.currentTeacherSlides.push({
               id: s.getAttribute("id"),
               title: s.getAttribute("title") || "Slide",
               stage: s.getAttribute("stage") || "",
@@ -430,7 +506,7 @@
           const jsonData = JSON.parse(text);
           lessonTitle = jsonData.title || lessonTitle;
           jsonData.slides.forEach(s => {
-            slides.push({
+            window.currentTeacherSlides.push({
               id: s.id,
               title: s.title,
               stage: s.stage || "",
@@ -441,49 +517,139 @@
           });
         }
 
-        let html = `
-          <div class="lesson-viewer">
-            <div class="teacher-controls-bar">
-              <a href="teacher.html?key=${key}" class="back-btn" style="color: #64748b; font-weight: 500;">← Back to Catalog</a>
-              <div class="control-group">
-                <label><strong>Duration Filter:</strong></label>
-                <select id="duration-select">
-                  <option value="50">60m Lesson (50 active min)</option>
-                  <option value="80">90m Lesson (80 active min)</option>
-                  <option value="110">120m Lesson (110 active min)</option>
-                </select>
-              </div>
-              <div class="control-group">
-                <label><strong>Classroom Mode:</strong></label>
-                <select id="mode-select">
-                  <option value="all">All Modes</option>
-                  <option value="individual">1-on-1 Individual</option>
-                  <option value="group">Group Class</option>
-                </select>
-              </div>
-            </div>
-        `;
+        window.currentTeacherLessonTitle = lessonTitle;
+        renderTeacherLessonUI();
 
-        slides.forEach((slide, idx) => {
-          html += `
-            <div class="slide-card" data-duration="${slide.duration}" data-mode="${slide.mode}">
-              <div class="slide-title">
-                <span>Slide ${idx + 1}: ${slide.title}</span>
-                ${slide.stage ? `<span class="slide-stage-tag">${slide.stage}</span>` : ''}
-              </div>
-              <div class="slide-body">
-                ${slide.htmlContent}
-              </div>
-            </div>
-          `;
-        });
-
-        html += `</div>`;
-        appRoot.innerHTML = html;
+        // Key bindings for keyboard slide navigation
+        window.onkeydown = function(e) {
+          const activeTag = document.activeElement ? document.activeElement.tagName.toLowerCase() : "";
+          if (["input", "textarea", "select"].includes(activeTag)) return;
+          if (e.key === "ArrowLeft") navigateTeacherSlide(-1);
+          if (e.key === "ArrowRight") navigateTeacherSlide(1);
+        };
 
       } catch (err) {
         appRoot.innerHTML = `<div class="access-denied"><h2>Lesson Error</h2><p>${err.message}</p></div>`;
       }
+    }
+
+    function renderTeacherLessonUI() {
+      const appRoot = document.getElementById('app-root');
+      const lessonTitle = window.currentTeacherLessonTitle;
+      const slides = window.currentTeacherSlides;
+      const totalSlides = slides.length;
+      const currentIdx = window.currentTeacherSlideIdx;
+
+      let html = `
+        <div class="lesson-viewer">
+          <div class="teacher-controls-bar">
+            <a href="teacher.html?key=${key}" class="back-btn" style="color: #64748b; font-weight: 500;">← Back to Catalog</a>
+            <button class="slide-nav-btn" onclick="toggleTeacherViewMode()">${window.teacherViewModeAll ? '📄 Single Slide View' : '📜 Scroll All Slides'}</button>
+            <div class="control-group">
+              <label><strong>Duration Filter:</strong></label>
+              <select id="duration-select" onchange="window.currentDurationFilter=this.value; applyTeacherFilters();">
+                <option value="50" ${window.currentDurationFilter==='50'?'selected':''}>60m Lesson (50 active min)</option>
+                <option value="80" ${window.currentDurationFilter==='80'?'selected':''}>90m Lesson (80 active min)</option>
+                <option value="110" ${window.currentDurationFilter==='110'?'selected':''}>120m Lesson (110 active min)</option>
+              </select>
+            </div>
+            <div class="control-group">
+              <label><strong>Classroom Mode:</strong></label>
+              <select id="mode-select" onchange="window.currentModeFilter=this.value; applyTeacherFilters();">
+                <option value="all" ${window.currentModeFilter==='all'?'selected':''}>All Modes</option>
+                <option value="individual" ${window.currentModeFilter==='individual'?'selected':''}>1-on-1 Individual</option>
+                <option value="group" ${window.currentModeFilter==='group'?'selected':''}>Group Class</option>
+              </select>
+            </div>
+          </div>
+      `;
+
+      if (!window.teacherViewModeAll && totalSlides > 0) {
+        html += `
+          <div class="slide-nav-bar">
+            <div class="slide-pills">
+        `;
+        slides.forEach((s, idx) => {
+          html += `
+            <button class="slide-pill ${idx === currentIdx ? 'active' : ''}" onclick="goToTeacherSlide(${idx})">
+              Slide ${idx + 1}
+            </button>
+          `;
+        });
+        html += `
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <button class="slide-nav-btn" onclick="navigateTeacherSlide(-1)" ${currentIdx === 0 ? 'disabled' : ''}>← Previous</button>
+              <span style="font-size: 0.85rem; font-weight: 700; color: #475569;">${currentIdx + 1} / ${totalSlides}</span>
+              <button class="slide-nav-btn" onclick="navigateTeacherSlide(1)" ${currentIdx === totalSlides - 1 ? 'disabled' : ''}>Next →</button>
+            </div>
+          </div>
+        `;
+      }
+
+      if (window.teacherViewModeAll) {
+        slides.forEach((slide, idx) => {
+          html += renderTeacherSlideCard(slide, idx);
+        });
+      } else if (totalSlides > 0) {
+        html += renderTeacherSlideCard(slides[currentIdx], currentIdx);
+      }
+
+      html += `</div>`;
+      appRoot.innerHTML = html;
+      applyTeacherFilters();
+    }
+
+    function applyTeacherFilters() {
+      const selectedDur = window.currentDurationFilter || '50';
+      const selectedMode = window.currentModeFilter || 'all';
+
+      const slideCards = document.querySelectorAll('.slide-card');
+      slideCards.forEach(card => {
+        const cardDur = card.getAttribute('data-duration') || '50';
+        const cardMode = card.getAttribute('data-mode') || 'all';
+
+        const matchDur = (cardDur === selectedDur || cardDur === 'all');
+        const matchMode = (selectedMode === 'all' || cardMode === 'all' || cardMode === selectedMode);
+
+        if (matchDur && matchMode) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function renderTeacherSlideCard(slide, idx) {
+      return `
+        <div class="slide-card" data-duration="${slide.duration}" data-mode="${slide.mode}">
+          <div class="slide-title">
+            <span>Slide ${idx + 1}: ${slide.title}</span>
+            ${slide.stage ? `<span class="slide-stage-tag">${slide.stage}</span>` : ''}
+          </div>
+          <div class="slide-body">
+            ${slide.htmlContent}
+          </div>
+        </div>
+      `;
+    }
+
+    function goToTeacherSlide(idx) {
+      window.currentTeacherSlideIdx = idx;
+      renderTeacherLessonUI();
+    }
+
+    function navigateTeacherSlide(direction) {
+      const nextIdx = window.currentTeacherSlideIdx + direction;
+      if (nextIdx >= 0 && nextIdx < window.currentTeacherSlides.length) {
+        window.currentTeacherSlideIdx = nextIdx;
+        renderTeacherLessonUI();
+      }
+    }
+
+    function toggleTeacherViewMode() {
+      window.teacherViewModeAll = !window.teacherViewModeAll;
+      renderTeacherLessonUI();
     }
 
     function renderXmlNodeToTeacherHtml(node) {
