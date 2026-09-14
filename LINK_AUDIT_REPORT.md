@@ -94,6 +94,8 @@ Every key in `data/access-grants.json` was evaluated against `shared/js/access-g
 - **Resolved:** 274
 - **Unresolved / Out of Scope:** 48 (All remaining unresolved links belong to uninstantiated scaffold files under `templates/`, `shared/templates/`, or dynamic JavaScript string templates in curriculum previews).
 
+*QA Pass Note:* Fixed broken favicon image references (`../../../images/cosylanguages.png`) in 4 curriculum files (`curriculums/el/general/A1.html`, `curriculums/fr/general/A1.html`, `curriculums/it/general/A1.html`, `curriculums/ru/general/A1.html`) by pointing them to the pinned upstream logo asset in `cosylanguages/COSYlanguages`. Added the pinned `cosy-tokens.css` link to 7 template and marathon files (`templates/curriculum-template.html`, `templates/marathon-template.html`, `templates/unit-template.html`, `shared/templates/curriculum-template.html`, `shared/templates/unit-template.html`, `shared/templates/marathon-template.html`, `marathons/speaking-marathon-30-days/index.html`).
+
 ---
 
 ## 📝 Category 3: Markdown Links in `.md` Files
