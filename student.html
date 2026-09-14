@@ -122,6 +122,74 @@
       color: var(--student-primary);
     }
 
+    /* Slide Navigation Controls */
+    .slide-nav-bar {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 12px 20px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+
+    .slide-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .slide-pill {
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid #cbd5e1;
+      background: #f8fafc;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #475569;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .slide-pill:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+
+    .slide-pill.active {
+      background: var(--student-primary);
+      color: white;
+      border-color: var(--student-primary);
+    }
+
+    .slide-nav-btn {
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      background: white;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #0f172a;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.15s ease;
+    }
+
+    .slide-nav-btn:hover:not(:disabled) {
+      background: #f1f5f9;
+    }
+
+    .slide-nav-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
     .slide-card {
       background: white;
       border-radius: 12px;
@@ -487,6 +555,11 @@
       }
     }
 
+    window.currentStudentSlides = [];
+    window.currentStudentSlideIdx = 0;
+    window.studentViewModeAll = false;
+    window.currentStudentLessonTitle = "";
+
     async function renderLesson(lessonPath, grant) {
       const appRoot = document.getElementById('app-root');
 
@@ -496,7 +569,8 @@
         const text = await response.text();
 
         let lessonTitle = "Interactive Lesson";
-        let slides = [];
+        window.currentStudentSlides = [];
+        window.currentStudentSlideIdx = 0;
 
         if (lessonPath.endsWith('.xml')) {
           const parser = new DOMParser();
@@ -506,7 +580,7 @@
 
           const slideElements = xmlDoc.querySelectorAll("cosy-slide");
           slideElements.forEach(s => {
-            slides.push({
+            window.currentStudentSlides.push({
               id: s.getAttribute("id"),
               title: s.getAttribute("title") || "Slide",
               stage: s.getAttribute("stage") || "",
@@ -517,7 +591,7 @@
           const jsonData = JSON.parse(text);
           lessonTitle = jsonData.title || lessonTitle;
           jsonData.slides.forEach(s => {
-            slides.push({
+            window.currentStudentSlides.push({
               id: s.id,
               title: s.title,
               stage: s.stage || "",
@@ -526,34 +600,103 @@
           });
         }
 
-        let html = `
-          <div class="lesson-viewer">
-            <div class="lesson-nav-header">
-              <a href="student.html?key=${key}" class="back-btn">← Back to Course</a>
-              <span class="badge-student">${lessonTitle}</span>
-            </div>
-        `;
+        window.currentStudentLessonTitle = lessonTitle;
+        renderStudentLessonUI();
 
-        slides.forEach((slide, idx) => {
-          html += `
-            <div class="slide-card">
-              <div class="slide-title">
-                <span>Slide ${idx + 1}: ${slide.title}</span>
-                ${slide.stage ? `<span class="slide-stage-tag">${slide.stage}</span>` : ''}
-              </div>
-              <div class="slide-body">
-                ${slide.htmlContent}
-              </div>
-            </div>
-          `;
-        });
-
-        html += `</div>`;
-        appRoot.innerHTML = html;
+        // Key bindings for keyboard slide navigation
+        window.onkeydown = function(e) {
+          const activeTag = document.activeElement ? document.activeElement.tagName.toLowerCase() : "";
+          if (["input", "textarea", "select"].includes(activeTag)) return;
+          if (e.key === "ArrowLeft") navigateStudentSlide(-1);
+          if (e.key === "ArrowRight") navigateStudentSlide(1);
+        };
 
       } catch (err) {
         appRoot.innerHTML = `<div class="access-denied"><h2>Lesson Error</h2><p>${err.message}</p></div>`;
       }
+    }
+
+    function renderStudentLessonUI() {
+      const appRoot = document.getElementById('app-root');
+      const lessonTitle = window.currentStudentLessonTitle;
+      const slides = window.currentStudentSlides;
+      const totalSlides = slides.length;
+      const currentIdx = window.currentStudentSlideIdx;
+
+      let html = `
+        <div class="lesson-viewer">
+          <div class="lesson-nav-header">
+            <a href="student.html?key=${key}" class="back-btn">← Back to Course</a>
+            <span class="badge-student">${lessonTitle}</span>
+            <button class="slide-nav-btn" onclick="toggleStudentViewMode()">${window.studentViewModeAll ? '📄 Single Slide View' : '📜 Scroll All Slides'}</button>
+          </div>
+      `;
+
+      if (!window.studentViewModeAll && totalSlides > 0) {
+        html += `
+          <div class="slide-nav-bar">
+            <div class="slide-pills">
+        `;
+        slides.forEach((s, idx) => {
+          html += `
+            <button class="slide-pill ${idx === currentIdx ? 'active' : ''}" onclick="goToStudentSlide(${idx})">
+              Slide ${idx + 1}
+            </button>
+          `;
+        });
+        html += `
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <button class="slide-nav-btn" onclick="navigateStudentSlide(-1)" ${currentIdx === 0 ? 'disabled' : ''}>← Previous</button>
+              <span style="font-size: 0.85rem; font-weight: 700; color: #475569;">${currentIdx + 1} / ${totalSlides}</span>
+              <button class="slide-nav-btn" onclick="navigateStudentSlide(1)" ${currentIdx === totalSlides - 1 ? 'disabled' : ''}>Next →</button>
+            </div>
+          </div>
+        `;
+      }
+
+      if (window.studentViewModeAll) {
+        slides.forEach((slide, idx) => {
+          html += renderStudentSlideCard(slide, idx);
+        });
+      } else if (totalSlides > 0) {
+        html += renderStudentSlideCard(slides[currentIdx], currentIdx);
+      }
+
+      html += `</div>`;
+      appRoot.innerHTML = html;
+    }
+
+    function renderStudentSlideCard(slide, idx) {
+      return `
+        <div class="slide-card">
+          <div class="slide-title">
+            <span>Slide ${idx + 1}: ${slide.title}</span>
+            ${slide.stage ? `<span class="slide-stage-tag">${slide.stage}</span>` : ''}
+          </div>
+          <div class="slide-body">
+            ${slide.htmlContent}
+          </div>
+        </div>
+      `;
+    }
+
+    function goToStudentSlide(idx) {
+      window.currentStudentSlideIdx = idx;
+      renderStudentLessonUI();
+    }
+
+    function navigateStudentSlide(direction) {
+      const nextIdx = window.currentStudentSlideIdx + direction;
+      if (nextIdx >= 0 && nextIdx < window.currentStudentSlides.length) {
+        window.currentStudentSlideIdx = nextIdx;
+        renderStudentLessonUI();
+      }
+    }
+
+    function toggleStudentViewMode() {
+      window.studentViewModeAll = !window.studentViewModeAll;
+      renderStudentLessonUI();
     }
 
     function renderXmlNodeToStudentHtml(node) {

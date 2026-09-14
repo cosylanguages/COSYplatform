@@ -208,6 +208,74 @@
       box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     }
 
+    /* Slide Navigation Controls */
+    .slide-nav-bar {
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 12px 20px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+
+    .slide-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .slide-pill {
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid #cbd5e1;
+      background: #f8fafc;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #475569;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .slide-pill:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+
+    .slide-pill.active {
+      background: var(--hub-primary);
+      color: white;
+      border-color: var(--hub-primary);
+    }
+
+    .slide-nav-btn {
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      background: white;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #0f172a;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.15s ease;
+    }
+
+    .slide-nav-btn:hover:not(:disabled) {
+      background: #f1f5f9;
+    }
+
+    .slide-nav-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
     .slide-card {
       background: white;
       border-radius: 12px;
@@ -557,8 +625,17 @@
       }
     }
 
+    window.currentLessonSlides = [];
+    window.currentSlideIdx = 0;
+    window.viewModeAll = false;
+    window.currentLessonGrant = null;
+    window.currentLessonTitle = "";
+    window.currentIsTeacher = false;
+
     async function renderLessonViewer(grant, lessonPath) {
       const isTeacher = grant.role === 'teacher' || grant.role === 'founder';
+      window.currentLessonGrant = grant;
+      window.currentIsTeacher = isTeacher;
 
       try {
         const response = await fetch(lessonPath);
@@ -566,7 +643,8 @@
         const text = await response.text();
 
         let lessonTitle = "Interactive Lesson View";
-        let slides = [];
+        window.currentLessonSlides = [];
+        window.currentSlideIdx = 0;
 
         if (lessonPath.endsWith('.xml')) {
           const parser = new DOMParser();
@@ -576,7 +654,7 @@
 
           const slideElements = xmlDoc.querySelectorAll("cosy-slide");
           slideElements.forEach(s => {
-            slides.push({
+            window.currentLessonSlides.push({
               id: s.getAttribute("id"),
               title: s.getAttribute("title") || "Slide",
               stage: s.getAttribute("stage") || "",
@@ -587,50 +665,121 @@
           });
         }
 
-        let html = `
-          <header class="hub-header">
-            <div class="hub-header-content">
-              <div style="display: flex; align-items: center; gap: 12px;">
-                <span style="font-size: 1.4rem; font-weight: 800;">COSYlanguages</span>
-                <span class="role-badge ${isTeacher ? 'badge-teacher-role' : 'badge-student-role'}">${lessonTitle}</span>
-              </div>
-              <div style="font-size: 0.85rem; color: #94a3b8;">${grant.name || 'User'}</div>
-            </div>
-          </header>
+        window.currentLessonTitle = lessonTitle;
+        renderLessonViewerUI();
 
-          <main class="hub-container">
-            <div class="controls-bar">
-              <a href="hub.html?key=${key}" style="color: #64748b; font-weight: 500; text-decoration: none;">← Back to Hub</a>
-              ${isTeacher ? `
-                <div style="display: flex; gap: 12px; align-items: center;">
-                  <label style="font-size: 0.85rem; font-weight: 600;">Duration:</label>
-                  <select style="padding: 4px 8px; border-radius: 6px; border: 1px solid #cbd5e1;">
-                    <option value="50">60m Lesson (50 active min)</option>
-                    <option value="80">90m Lesson (80 active min)</option>
-                  </select>
-                </div>
-              ` : ''}
-            </div>
-        `;
-
-        slides.forEach((slide, idx) => {
-          html += `
-            <div class="slide-card">
-              <div class="slide-title">
-                <span>Slide ${idx + 1}: ${slide.title}</span>
-                ${slide.stage ? `<span style="font-size: 0.75rem; background: #f1f5f9; color: #475569; padding: 4px 10px; border-radius: 6px; text-transform: uppercase; font-weight: 600;">${slide.stage}</span>` : ''}
-              </div>
-              <div>${slide.htmlContent}</div>
-            </div>
-          `;
-        });
-
-        html += `</main>`;
-        document.getElementById('app-root').innerHTML = html;
+        // Key bindings for keyboard slide navigation
+        window.onkeydown = function(e) {
+          const activeTag = document.activeElement ? document.activeElement.tagName.toLowerCase() : "";
+          if (["input", "textarea", "select"].includes(activeTag)) return;
+          if (e.key === "ArrowLeft") navigateSlide(-1);
+          if (e.key === "ArrowRight") navigateSlide(1);
+        };
 
       } catch (err) {
         renderError("Lesson Error", err.message);
       }
+    }
+
+    function renderLessonViewerUI() {
+      const grant = window.currentLessonGrant;
+      const lessonTitle = window.currentLessonTitle;
+      const isTeacher = window.currentIsTeacher;
+
+      const slides = window.currentLessonSlides;
+      const totalSlides = slides.length;
+      const currentIdx = window.currentSlideIdx;
+
+      let html = `
+        <header class="hub-header">
+          <div class="hub-header-content">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <span style="font-size: 1.4rem; font-weight: 800;">COSYlanguages</span>
+              <span class="role-badge ${isTeacher ? 'badge-teacher-role' : 'badge-student-role'}">${lessonTitle}</span>
+            </div>
+            <div style="font-size: 0.85rem; color: #94a3b8;">${grant.name || 'User'}</div>
+          </div>
+        </header>
+
+        <main class="hub-container">
+          <div class="controls-bar">
+            <a href="hub.html?key=${key}" style="color: #64748b; font-weight: 500; text-decoration: none;">← Back to Hub</a>
+            <div style="display: flex; gap: 12px; align-items: center;">
+              <button class="slide-nav-btn" onclick="toggleViewMode()">${window.viewModeAll ? '📄 Slide-by-Slide View' : '📜 Scroll All Slides'}</button>
+              ${isTeacher ? `
+                <label style="font-size: 0.85rem; font-weight: 600; margin-left: 8px;">Duration:</label>
+                <select style="padding: 4px 8px; border-radius: 6px; border: 1px solid #cbd5e1;">
+                  <option value="50">60m Lesson (50 active min)</option>
+                  <option value="80">90m Lesson (80 active min)</option>
+                </select>
+              ` : ''}
+            </div>
+          </div>
+      `;
+
+      if (!window.viewModeAll && totalSlides > 0) {
+        html += `
+          <div class="slide-nav-bar">
+            <div class="slide-pills">
+        `;
+        slides.forEach((s, idx) => {
+          html += `
+            <button class="slide-pill ${idx === currentIdx ? 'active' : ''}" onclick="goToSlide(${idx})">
+              Slide ${idx + 1}
+            </button>
+          `;
+        });
+        html += `
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <button class="slide-nav-btn" onclick="navigateSlide(-1)" ${currentIdx === 0 ? 'disabled' : ''}>← Previous</button>
+              <span style="font-size: 0.85rem; font-weight: 700; color: #475569;">${currentIdx + 1} / ${totalSlides}</span>
+              <button class="slide-nav-btn" onclick="navigateSlide(1)" ${currentIdx === totalSlides - 1 ? 'disabled' : ''}>Next →</button>
+            </div>
+          </div>
+        `;
+      }
+
+      if (window.viewModeAll) {
+        slides.forEach((slide, idx) => {
+          html += renderSingleSlideCard(slide, idx);
+        });
+      } else if (totalSlides > 0) {
+        html += renderSingleSlideCard(slides[currentIdx], currentIdx);
+      }
+
+      html += `</main>`;
+      document.getElementById('app-root').innerHTML = html;
+    }
+
+    function renderSingleSlideCard(slide, idx) {
+      return `
+        <div class="slide-card">
+          <div class="slide-title">
+            <span>Slide ${idx + 1}: ${slide.title}</span>
+            ${slide.stage ? `<span style="font-size: 0.75rem; background: #f1f5f9; color: #475569; padding: 4px 10px; border-radius: 6px; text-transform: uppercase; font-weight: 600;">${slide.stage}</span>` : ''}
+          </div>
+          <div>${slide.htmlContent}</div>
+        </div>
+      `;
+    }
+
+    function goToSlide(idx) {
+      window.currentSlideIdx = idx;
+      renderLessonViewerUI();
+    }
+
+    function navigateSlide(direction) {
+      const nextIdx = window.currentSlideIdx + direction;
+      if (nextIdx >= 0 && nextIdx < window.currentLessonSlides.length) {
+        window.currentSlideIdx = nextIdx;
+        renderLessonViewerUI();
+      }
+    }
+
+    function toggleViewMode() {
+      window.viewModeAll = !window.viewModeAll;
+      renderLessonViewerUI();
     }
 
     function renderXmlNodeToTeacherHtml(node) {
