@@ -1,0 +1,167 @@
+<!-- source: https://raw.githubusercontent.com/cosylanguages/COSYevents/main/sessions/cinema-club/breakfast-at-tiffanys.html -->
+<cosy-lesson id="breakfast-at-tiffanys" level="B1" language="en" title="Breakfast at Tiffany&apos;s" default-duration="50" default-mode="all" cinema="true">
+  <!-- SLIDE 1: Warm-up & Vocabulary Review -->
+  <cosy-slide id="slide-1" stage="warm-up" duration="50" mode="all">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> to introduce the topic and clarify key target vocabulary for the session.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Review the key vocabulary for this session below:</cosy-instruction>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">social climbing</cosy-text> – the strategic attempt to gain access to a higher socioeconomic class through charm and networking.</p>
+      <p><em>Example: Holly Golightly uses her wit and glamorous outfits for social climbing among New York&apos;s wealthy bachelor elite.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">bohemian lifestyle</cosy-text> – an unconventional, informal way of living free from traditional social rules and routines.</p>
+      <p><em>Example: Paul Varjak lives a bohemian lifestyle as a struggling writer living in a brownstone apartment subsidized by a married patron.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">superficial glamour</cosy-text> – an attractive, stylish outward appearance that disguises internal unhappiness or instability.</p>
+      <p><em>Example: Holly hides her chaotic rural past behind a facade of dark sunglasses, cigarette holders, and superficial glamour.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">emotional detachment</cosy-text> – a psychological coping strategy of avoiding deep feelings or personal vulnerability.</p>
+      <p><em>Example: Holly practices emotional detachment, refusing to name her cat or put furniture in her apartment to avoid belonging to anyone.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">urban isolation</cosy-text> – the sense of loneliness experienced despite living in a densely populated metropolis.</p>
+      <p><em>Example: Both Holly and Paul experience urban isolation in New York City, connecting late at night through their fire escape windows.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">the mean reds</cosy-text> – (iconic character idiom) Holly&apos;s nickname for sudden, existential terror and overwhelming anxiety.</p>
+      <p><em>Example: Holly explains that when she gets &quot;the mean reds&quot;, taking a taxi to Tiffany&apos;s jewelry store is the only thing that makes her feel safe.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">given name Lula Mae</cosy-text> – (pivotal plot line) the hidden rural identity Holly fled before reinventing herself in Manhattan.</p>
+      <p><em>Example: Doc Golightly travels from Texas to New York, begging his runaway teenage wife Lula Mae to return to her farm family.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">powder room</cosy-text> – (period euphemism) a polite 1960s code phrase used when asking wealthy dates for money or restroom breaks.</p>
+      <p><em>Example: Holly casually asks her wealthy escorts for fifty dollars for the &quot;powder room&quot; to pay her apartment rent.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">wild thing</cosy-text> – (character nickname quote) Paul&apos;s gentle nickname for Holly, highlighting her untamed, independent spirit.</p>
+      <p><em>Example: Paul tenderly tells Holly, &quot;You call yourself a free spirit, a wild thing, and you&apos;re terrified somebody&apos;s gonna stick you in a cage.&quot;</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Moon River</cosy-text> – (classic song title / theme) Henry Mancini&apos;s Oscar-winning song performed by Holly on her fire escape.</p>
+      <p><em>Example: Holly sits in her window wearing a sweatshirt and towel, strumming a guitar and singing &quot;Moon River&quot;.</em></p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 2: Round 1 Discussion (Group Mode) -->
+  <cosy-slide id="slide-2-group" stage="round-1" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> pair/group discussion on core session themes.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>In pairs or small breakout groups, discuss the following questions:</cosy-group-instruction>
+    <ol>
+      <li>Holly Golightly arrives at Tiffany&apos;s in a black Givenchy dress, eating a croissant at dawn. How does this iconic opening introduce her pursuit of social climbing in Manhattan?<br/><em>★ What makes a character&apos;s introductory scene iconic and memorable in cinema history?</em></li>
+      <li>Paul Varjak lives a bohemian lifestyle as an unfunded writer supported by a wealthy older patron. How does his apartment setup reflect his creative frustration?<br/><em>★ How do financial struggles affect an artist&apos;s sense of independence and self-worth?</em></li>
+      <li>Holly throws lavish, chaotic cocktail parties in her apartment, projecting an image of superficial glamour. What lies beneath her energetic social persona?<br/><em>★ Why do people in big cities sometimes put on elaborate social facades to hide personal loneliness?</em></li>
+      <li>To protect herself from heartbreak, Holly maintains strict emotional detachment, refusing to name her pet cat. How does her fear of belonging hold her back?<br/><em>★ Is it possible to protect yourself from emotional pain without isolating yourself from love?</em></li>
+      <li>Both Holly and Paul experience profound urban isolation despite being surrounded by New York&apos;s buzzing nightlife. How do their late-night fire escape chats bring them together?<br/><em>★ Why can living in a crowded city sometimes feel more lonely than living in a quiet rural town?</em></li>
+      <li>When anxiety strikes, Holly explains she suffers from &apos;the mean reds&apos; rather than ordinary sadness. How does visiting Tiffany&apos;s jewelry store calm her mind?<br/><em>★ What comfort routine or favorite place do you visit when feeling overwhelmed or anxious?</em></li>
+      <li>Doc Golightly arrives from Texas, revealing Holly&apos;s hidden rural past as a runaway named &apos;given name Lula Mae&apos;. How does this revelation alter Paul&apos;s understanding of her?<br/><em>★ How does learning about someone&apos;s hidden childhood background change your perspective on them?</em></li>
+      <li>Holly casually mentions asking dates for fifty dollars for the &apos;powder room&apos;. How does her clever code language gloss over her financial dependence on men?<br/><em>★ How do people use polite euphemisms to navigate awkward financial or social realities?</em></li>
+      <li>Paul affectionately calls Holly his &apos;wild thing&apos;, warning her that her fear of cages will leave her trapped in self-made isolation. Is his critique accurate?<br/><em>★ Can an absolute obsession with freedom actually prevent a person from finding genuine happiness?</em></li>
+      <li>Holly sings &apos;Moon River&apos; on her fire escape while strumming a guitar. How does this quiet musical scene express her longing for home and belonging?<br/><em>★ What song or melody evokes a deep sense of nostalgia or peaceful reflection for you?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 3: Round 1 Discussion (Individual Mode) -->
+  <cosy-slide id="slide-2-ind" stage="round-1" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> 1-on-1 teacher-student discussion on core session themes.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Discuss the following questions with your teacher:</cosy-instruction>
+    <ol>
+      <li>Holly Golightly arrives at Tiffany&apos;s in a black Givenchy dress, eating a croissant at dawn. How does this iconic opening introduce her pursuit of social climbing in Manhattan?<br/><em>★ What makes a character&apos;s introductory scene iconic and memorable in cinema history?</em></li>
+      <li>Paul Varjak lives a bohemian lifestyle as an unfunded writer supported by a wealthy older patron. How does his apartment setup reflect his creative frustration?<br/><em>★ How do financial struggles affect an artist&apos;s sense of independence and self-worth?</em></li>
+      <li>Holly throws lavish, chaotic cocktail parties in her apartment, projecting an image of superficial glamour. What lies beneath her energetic social persona?<br/><em>★ Why do people in big cities sometimes put on elaborate social facades to hide personal loneliness?</em></li>
+      <li>To protect herself from heartbreak, Holly maintains strict emotional detachment, refusing to name her pet cat. How does her fear of belonging hold her back?<br/><em>★ Is it possible to protect yourself from emotional pain without isolating yourself from love?</em></li>
+      <li>Both Holly and Paul experience profound urban isolation despite being surrounded by New York&apos;s buzzing nightlife. How do their late-night fire escape chats bring them together?<br/><em>★ Why can living in a crowded city sometimes feel more lonely than living in a quiet rural town?</em></li>
+      <li>When anxiety strikes, Holly explains she suffers from &apos;the mean reds&apos; rather than ordinary sadness. How does visiting Tiffany&apos;s jewelry store calm her mind?<br/><em>★ What comfort routine or favorite place do you visit when feeling overwhelmed or anxious?</em></li>
+      <li>Doc Golightly arrives from Texas, revealing Holly&apos;s hidden rural past as a runaway named &apos;given name Lula Mae&apos;. How does this revelation alter Paul&apos;s understanding of her?<br/><em>★ How does learning about someone&apos;s hidden childhood background change your perspective on them?</em></li>
+      <li>Holly casually mentions asking dates for fifty dollars for the &apos;powder room&apos;. How does her clever code language gloss over her financial dependence on men?<br/><em>★ How do people use polite euphemisms to navigate awkward financial or social realities?</em></li>
+      <li>Paul affectionately calls Holly his &apos;wild thing&apos;, warning her that her fear of cages will leave her trapped in self-made isolation. Is his critique accurate?<br/><em>★ Can an absolute obsession with freedom actually prevent a person from finding genuine happiness?</em></li>
+      <li>Holly sings &apos;Moon River&apos; on her fire escape while strumming a guitar. How does this quiet musical scene express her longing for home and belonging?<br/><em>★ What song or melody evokes a deep sense of nostalgia or peaceful reflection for you?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 4: Let's Speak Together (Group Mode) -->
+  <cosy-slide id="slide-3-group" stage="speak-together" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> collaborative task or visual analysis in pairs/groups.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>In pairs, work together on the following task:</cosy-group-instruction>
+    <cosy-blockquote importance="medium">
+      <p>Compare the adaptation differences and visual contrasts in this film.
+- Novella vs. Screenplay Adaptations• Truman Capote&apos;s 1958 novella featured a darker, bisexually fluid Holly who flees to South America at the end; the film creates a conventional romantic happy ending in New York.• The character of Paul Varjak was expanded from a nameless, passive narrator into a primary romantic lead played by George Peppard. Visual Directing &amp; Fashion Styling• Hubert de Givenchy designed Holly&apos;s iconic black satin gown, paired with oversized dark sunglasses and pearl necklaces.• Wide-angle cinematography captures the sparse, half-unpacked furniture inside Holly&apos;s apartment, reflecting her transient lifestyle.</p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 5: Let's Speak Together (Individual Mode) -->
+  <cosy-slide id="slide-3-ind" stage="speak-together" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> 1-on-1 guided visual description and task response with teacher.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Look at the prompt and discuss your response with your teacher:</cosy-instruction>
+    <cosy-blockquote importance="medium">
+      <p>Compare the adaptation differences and visual contrasts in this film.
+- Novella vs. Screenplay Adaptations• Truman Capote&apos;s 1958 novella featured a darker, bisexually fluid Holly who flees to South America at the end; the film creates a conventional romantic happy ending in New York.• The character of Paul Varjak was expanded from a nameless, passive narrator into a primary romantic lead played by George Peppard. Visual Directing &amp; Fashion Styling• Hubert de Givenchy designed Holly&apos;s iconic black satin gown, paired with oversized dark sunglasses and pearl necklaces.• Wide-angle cinematography captures the sparse, half-unpacked furniture inside Holly&apos;s apartment, reflecting her transient lifestyle.</p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 6: Round 2 Discussion (Group Mode) -->
+  <cosy-slide id="slide-4-group" stage="round-2" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> deeper debate and statement evaluation in pairs/groups.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>In pairs, debate and state whether you agree or disagree with these statements:</cosy-group-instruction>
+    <ol>
+      <li>Director Blake Edwards contrasts Holly&apos;s high-fashion Manhattan parties with her sparse, half-unpacked apartment furniture. How does this production design reflect her unsettled life?<br/><em>★ How do living spaces and interior decoration reveal a character&apos;s emotional state in film?</em></li>
+      <li>Audrey Hepburn created an indelible screen archetype as Holly Golightly, blending elegance with eccentric vulnerability. How does her performance balance comedy with quiet tragedy?<br/><em>★ What makes a performance feel timeless across generations of cinema viewers?</em></li>
+      <li>George Peppard plays Paul Varjak as a quiet, observant writer who falls in love while trying to save Holly from herself. Was his character a strong romantic match for her?<br/><em>★ What qualities matter most when two people support each other through personal reinvention?</em></li>
+      <li>Henry Mancini&apos;s legendary score, featuring &apos;Moon River&apos;, won two Academy Awards. How does the music weave through both comedic party scenes and romantic downpours?<br/><em>★ How can a single memorable musical theme define the entire mood of a romantic movie?</em></li>
+      <li>The famous rain-drenched final scene in a Manhattan alleyway, where Holly searches for her abandoned cat, provides an emotional resolution. Was their embrace in the rain satisfying?<br/><em>★ Do you enjoy classic Hollywood happy endings, or do you prefer open-ended romantic resolutions?</em></li>
+      <li>How does the movie navigate Truman Capote&apos;s darker novella themes while transforming the story into a glamorous 1960s romantic comedy (e.g., examining light, framing, or pacing choices)?<br/><em>★ Should film adaptations soften dark book themes to appeal to mainstream audiences?</em></li>
+      <li>Hubert de Givenchy&apos;s costume designs transformed Audrey Hepburn into a global fashion icon. How does her wardrobe function as an essential storytelling element?<br/><em>★ How can fashion choices in cinema communicate character development and social status?</em></li>
+      <li>The film&apos;s depiction of Mr. Yunioshi by Mickey Rooney remains a notoriously offensive racial caricature. How should modern audiences and film historians contextualize such legacy flaws?<br/><em>★ How can film lovers appreciate classic cinema while remaining critical of outdated cultural stereotypes?</em></li>
+      <li>Holly&apos;s relationship with her cat, whom she refuses to name until she belongs somewhere, serves as her central emotional symbol. How effective is this animal motif (e.g., examining light, framing, or pacing choices)?<br/><em>★ What animal or object motifs in movies have struck you as deeply symbolic?</em></li>
+      <li>If you were directing a contemporary remake of Breakfast at Tiffany&apos;s set in modern New York, how would you update Holly&apos;s career and independent lifestyle?<br/><em>★ How would Holly Golightly&apos;s social climbing and pursuit of independence look in today&apos;s digital world?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 7: Round 2 Discussion (Individual Mode) -->
+  <cosy-slide id="slide-4-ind" stage="round-2" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> deeper debate and statement evaluation with teacher in 1-on-1 format.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Share whether you agree or disagree with these statements and discuss them with your teacher:</cosy-instruction>
+    <ol>
+      <li>Director Blake Edwards contrasts Holly&apos;s high-fashion Manhattan parties with her sparse, half-unpacked apartment furniture. How does this production design reflect her unsettled life?<br/><em>★ How do living spaces and interior decoration reveal a character&apos;s emotional state in film?</em></li>
+      <li>Audrey Hepburn created an indelible screen archetype as Holly Golightly, blending elegance with eccentric vulnerability. How does her performance balance comedy with quiet tragedy?<br/><em>★ What makes a performance feel timeless across generations of cinema viewers?</em></li>
+      <li>George Peppard plays Paul Varjak as a quiet, observant writer who falls in love while trying to save Holly from herself. Was his character a strong romantic match for her?<br/><em>★ What qualities matter most when two people support each other through personal reinvention?</em></li>
+      <li>Henry Mancini&apos;s legendary score, featuring &apos;Moon River&apos;, won two Academy Awards. How does the music weave through both comedic party scenes and romantic downpours?<br/><em>★ How can a single memorable musical theme define the entire mood of a romantic movie?</em></li>
+      <li>The famous rain-drenched final scene in a Manhattan alleyway, where Holly searches for her abandoned cat, provides an emotional resolution. Was their embrace in the rain satisfying?<br/><em>★ Do you enjoy classic Hollywood happy endings, or do you prefer open-ended romantic resolutions?</em></li>
+      <li>How does the movie navigate Truman Capote&apos;s darker novella themes while transforming the story into a glamorous 1960s romantic comedy (e.g., examining light, framing, or pacing choices)?<br/><em>★ Should film adaptations soften dark book themes to appeal to mainstream audiences?</em></li>
+      <li>Hubert de Givenchy&apos;s costume designs transformed Audrey Hepburn into a global fashion icon. How does her wardrobe function as an essential storytelling element?<br/><em>★ How can fashion choices in cinema communicate character development and social status?</em></li>
+      <li>The film&apos;s depiction of Mr. Yunioshi by Mickey Rooney remains a notoriously offensive racial caricature. How should modern audiences and film historians contextualize such legacy flaws?<br/><em>★ How can film lovers appreciate classic cinema while remaining critical of outdated cultural stereotypes?</em></li>
+      <li>Holly&apos;s relationship with her cat, whom she refuses to name until she belongs somewhere, serves as her central emotional symbol. How effective is this animal motif (e.g., examining light, framing, or pacing choices)?<br/><em>★ What animal or object motifs in movies have struck you as deeply symbolic?</em></li>
+      <li>If you were directing a contemporary remake of Breakfast at Tiffany&apos;s set in modern New York, how would you update Holly&apos;s career and independent lifestyle?<br/><em>★ How would Holly Golightly&apos;s social climbing and pursuit of independence look in today&apos;s digital world?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 8: Teacher's Note / Error Correction -->
+  <cosy-slide id="slide-5" stage="error-correction" duration="50" mode="all">
+    <cosy-teacher-notes type="additional">
+      <p><cosy-text type="strong">Teacher&apos;s Linguistic Error Correction Guidance:</cosy-text></p>
+      <ul>
+        <li>Incorrect: I&apos;m used to watch movies in original → Correct: I&apos;m used to watching movies in original (The phrase &apos;be used to&apos; is followed by a gerund (-ing form), not a bare infinitive.)</li>
+        <li>Incorrect: The reason is because she was afraid → Correct: The reason is that she was afraid (Avoid &apos;the reason is because&apos;; use &apos;the reason is that&apos; for formal/style clarity.)</li>
+        <li>Incorrect: Seldom I have seen such an ending → Correct: Seldom have I seen such an ending (Negative adverbs like &apos;seldom&apos; at the beginning of a clause trigger subject-auxiliary inversion.)</li>
+      </ul>
+    </cosy-teacher-notes>
+    <cosy-instruction>Reflection &amp; Feedback: Review language highlights and key corrections with your teacher.</cosy-instruction>
+  </cosy-slide>
+</cosy-lesson>

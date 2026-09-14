@@ -1,0 +1,205 @@
+<!-- source: https://raw.githubusercontent.com/cosylanguages/COSYevents/main/sessions/cinema-club/homeward-bound.html -->
+<cosy-lesson id="homeward-bound" level="B1" language="en" title="Homeward Bound" default-duration="50" default-mode="all" cinema="true">
+  <!-- SLIDE 1: Warm-up & Vocabulary Review -->
+  <cosy-slide id="slide-1" stage="warm-up" duration="50" mode="all">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> to introduce the topic and clarify key target vocabulary for the session.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Review the key vocabulary for this session below:</cosy-instruction>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Fidelity</cosy-text> – (noun) faithfulness to a person, cause, or belief, shown by loyalty and support.</p>
+      <p><em>Example: Shadow demonstrates unwavering fidelity by waiting for Peter at the brink of the pit.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Wilderness</cosy-text> – (noun) an uncultivated, uninhabited, and wild region.</p>
+      <p><em>Example: The three pets must navigate hundreds of miles of uncharted wilderness in the Sierra Nevada.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Navigation</cosy-text> – (noun) the process or activity of accurately ascertaining one&apos;s position and planning a route.</p>
+      <p><em>Example: Shadow uses keen directional instincts for navigation across rugged mountains.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Instinct</cosy-text> – (noun) an innate, typically fixed pattern of behavior in animals.</p>
+      <p><em>Example: Chance gradually learns to trust his wild instincts instead of relying solely on pet bowls.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Peril</cosy-text> – (noun) serious and immediate danger.</p>
+      <p><em>Example: Crossing rushing mountain rivers presents constant peril for the small Himalayan cat Sassy.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Reunion</cosy-text> – (noun) an instance of two or more people or animals coming together again after a period of separation.</p>
+      <p><em>Example: The final reunion on the suburban lawn brings tears of relief to the entire family.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Companion</cosy-text> – (noun) a person or animal with whom one spends a lot of time or with whom one travels.</p>
+      <p><em>Example: The three companions keep each other warm during freezing wilderness nights.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Endurance</cosy-text> – (noun) the capacity of something to last or to withstand wear and tear.</p>
+      <p><em>Example: Shadow&apos;s aging body tests the limits of his physical endurance on steep rocky slopes.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Domesticated</cosy-text> – (adjective) tamed and kept as a pet or on a farm.</p>
+      <p><em>Example: Living as domesticated pets leaves them unprepared for wild predators like mountain lions.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Loyalty</cosy-text> – (noun) the quality of being loyal and giving firm support.</p>
+      <p><em>Example: Their journey proves that animal loyalty knows no physical boundary.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Pack mentality</cosy-text> – (noun) the instinct of animals to act together as a unified group.</p>
+      <p><em>Example: Shadow establishes a supportive pack mentality to keep Chance and Sassy safe.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Sassy attitude</cosy-text> – (noun) a witty, cheeky, and self-confident demeanor.</p>
+      <p><em>Example: Sassy the cat maintains her witty sassy attitude even when covered in mountain mud.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Porcupine quill</cosy-text> – (noun) a sharp needle-like spine from a porcupine.</p>
+      <p><em>Example: Chance suffers a painful nose full of porcupine quills after teasing a wild creature.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Lost in the wild</cosy-text> – (noun) being stranded in uncharted natural territory.</p>
+      <p><em>Example: The pets fear their owners abandoned them, unaware they are simply lost in the wild.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Sierra Nevada</cosy-text> – (noun) the vast mountain range where the pets travel.</p>
+      <p><em>Example: Snow-capped Sierra Nevada peaks form a daunting backdrop for their trek home.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Muddy pit</cosy-text> – (noun) the slippery hole where Shadow gets trapped near the climax.</p>
+      <p><em>Example: Shadow becomes stuck in a muddy pit, forcing Chance to step up as a leader.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Don Ameche</cosy-text> – (noun) the legendary actor who voiced wise old Golden Retriever Shadow.</p>
+      <p><em>Example: Don Ameche&apos;s calm voice performance gives Shadow deep dignity and warmth.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Michael J. Fox</cosy-text> – (noun) the actor who voiced energetic American Bulldog Chance.</p>
+      <p><em>Example: Michael J. Fox brings youthful enthusiasm and comedic timing to Chance&apos;s inner monologue.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Sally Field</cosy-text> – (noun) the actress who provided the voice for pampered cat Sassy.</p>
+      <p><em>Example: Sally Field delivers hilarious aristocratic cat dialogue that balances the dog energy.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Home sweet home</cosy-text> – (noun) an expression of joy upon returning to one&apos;s family environment.</p>
+      <p><em>Example: Reaching their backyard reminds the pets that home sweet home is worth every hardship.</em></p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 2: Round 1 Discussion (Group Mode) -->
+  <cosy-slide id="slide-2-group" stage="round-1" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> pair/group discussion on core session themes.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>In pairs or small breakout groups, discuss the following questions:</cosy-group-instruction>
+    <ol>
+      <li>Shadow, Chance, and Sassy misinterpret being left at a friend&apos;s ranch as permanent abandonment. How does miscommunication spark their decision to trek home?<br/><em>★ Have you ever misinterpreted a situation and taken drastic action before getting all the facts?</em></li>
+      <li>Shadow acts as the wise leader whose experience keeps the group focused on heading east. How does respect for elders guide their survival?<br/><em>★ Why is trusting experienced leaders vital when navigating unfamiliar challenges?</em></li>
+      <li>Chance starts as an undisciplined dog who only cares about food, but grows into a protective brother. How does hardship build character?<br/><em>★ How do unexpected difficulties help young people develop responsibility and empathy?</em></li>
+      <li>Sassy gets swept down a roaring waterfall and separated from the dogs. How does her survival show feline resilience?<br/><em>★ What inner strengths help people bounce back after facing a sudden, frightening setback?</em></li>
+      <li>When Chance gets spiked by a porcupine, a kindly wilderness hermit removes the quills. How does human kindness cross species barriers?<br/><em>★ How does encountering unexpected generosity during tough times restore your faith in people?</em></li>
+      <li>The three animals must outsmart a mountain lion by using a makeshift wooden teeter-totter log. How does teamwork overcome physical weakness?<br/><em>★ How can clever strategy and cooperation defeat an obstacle that seems far stronger than you?</em></li>
+      <li>Back home, Peter refuses to give up hope that Shadow will return, despite adults telling him to accept reality. What fuels his belief?<br/><em>★ Why is holding onto hope important even when circumstances look discouraging to others?</em></li>
+      <li>Near the end of the journey, Shadow falls into a muddy pit and tells Chance to go on without him because his old legs are failing. How emotional is this moment?<br/><em>★ How do true friends handle moments when one partner feels ready to give up?</em></li>
+      <li>Chance arrives first at the family home, followed by Sassy, leaving Peter waiting anxiously for Shadow. How does Shadow&apos;s slow limping arrival create catharsis?<br/><em>★ What makes a long-awaited reunion one of the most powerful scenes in storytelling?</em></li>
+      <li>The film contrasts the comfort of human domestic life with the unforgiving beauty of nature. What does &apos;home&apos; mean to domesticated animals?<br/><em>★ What specific feelings, memories, or people define what &apos;home&apos; means to you?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 3: Round 1 Discussion (Individual Mode) -->
+  <cosy-slide id="slide-2-ind" stage="round-1" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> 1-on-1 teacher-student discussion on core session themes.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Discuss the following questions with your teacher:</cosy-instruction>
+    <ol>
+      <li>Shadow, Chance, and Sassy misinterpret being left at a friend&apos;s ranch as permanent abandonment. How does miscommunication spark their decision to trek home?<br/><em>★ Have you ever misinterpreted a situation and taken drastic action before getting all the facts?</em></li>
+      <li>Shadow acts as the wise leader whose experience keeps the group focused on heading east. How does respect for elders guide their survival?<br/><em>★ Why is trusting experienced leaders vital when navigating unfamiliar challenges?</em></li>
+      <li>Chance starts as an undisciplined dog who only cares about food, but grows into a protective brother. How does hardship build character?<br/><em>★ How do unexpected difficulties help young people develop responsibility and empathy?</em></li>
+      <li>Sassy gets swept down a roaring waterfall and separated from the dogs. How does her survival show feline resilience?<br/><em>★ What inner strengths help people bounce back after facing a sudden, frightening setback?</em></li>
+      <li>When Chance gets spiked by a porcupine, a kindly wilderness hermit removes the quills. How does human kindness cross species barriers?<br/><em>★ How does encountering unexpected generosity during tough times restore your faith in people?</em></li>
+      <li>The three animals must outsmart a mountain lion by using a makeshift wooden teeter-totter log. How does teamwork overcome physical weakness?<br/><em>★ How can clever strategy and cooperation defeat an obstacle that seems far stronger than you?</em></li>
+      <li>Back home, Peter refuses to give up hope that Shadow will return, despite adults telling him to accept reality. What fuels his belief?<br/><em>★ Why is holding onto hope important even when circumstances look discouraging to others?</em></li>
+      <li>Near the end of the journey, Shadow falls into a muddy pit and tells Chance to go on without him because his old legs are failing. How emotional is this moment?<br/><em>★ How do true friends handle moments when one partner feels ready to give up?</em></li>
+      <li>Chance arrives first at the family home, followed by Sassy, leaving Peter waiting anxiously for Shadow. How does Shadow&apos;s slow limping arrival create catharsis?<br/><em>★ What makes a long-awaited reunion one of the most powerful scenes in storytelling?</em></li>
+      <li>The film contrasts the comfort of human domestic life with the unforgiving beauty of nature. What does &apos;home&apos; mean to domesticated animals?<br/><em>★ What specific feelings, memories, or people define what &apos;home&apos; means to you?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 4: Let's Speak Together (Group Mode) -->
+  <cosy-slide id="slide-3-group" stage="speak-together" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> collaborative task or visual analysis in pairs/groups.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>In pairs, work together on the following task:</cosy-group-instruction>
+    <cosy-blockquote importance="medium">
+      <p>Collaborative task or visual study.</p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 5: Let's Speak Together (Individual Mode) -->
+  <cosy-slide id="slide-3-ind" stage="speak-together" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> 1-on-1 guided visual description and task response with teacher.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Look at the prompt and discuss your response with your teacher:</cosy-instruction>
+    <cosy-blockquote importance="medium">
+      <p>Collaborative task or visual study.</p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 6: Round 2 Discussion (Group Mode) -->
+  <cosy-slide id="slide-4-group" stage="round-2" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> deeper debate and statement evaluation in pairs/groups.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>In pairs, debate and state whether you agree or disagree with these statements:</cosy-group-instruction>
+    <ol>
+      <li>Director Duwayne Dunham filmed real animal actors across Oregon wilderness without relying on computer-generated imagery. How does real animal acting impact warmth?<br/><em>★ Do you prefer films featuring real animal actors or fully computer-generated creatures?</em></li>
+      <li>The decision to use voiceover inner monologues rather than digitally moving the animals&apos; mouths keeps their movements natural. How effective is this artistic choice?<br/><em>★ Why is voiceover narration often better than digital mouth manipulation for live animals?</em></li>
+      <li>Cinematographer Reed Smoot captured sweeping vistas of forests, waterfalls, and snow peaks. How does nature photography elevate the story?<br/><em>★ How does grand natural scenery heighten the drama of a personal survival story?</em></li>
+      <li>The film balances light comedic bickering between Chance and Sassy with genuinely perilous survival situations. How well is this tone maintained?<br/><em>★ Why is comedy essential in family survival movies to prevent the story from becoming too dark?</em></li>
+      <li>The musical score by Bruce Broughton features triumphant brass themes whenever the pets conquer a mountain ridge. How does music evoke triumph (e.g., examining light, framing, or pacing choices)?<br/><em>★ How can an uplifting orchestral score make an audience feel victorious alongside the characters?</em></li>
+      <li>Each animal represents a distinct personality type: the wise veteran (Shadow), the rebellious youth (Chance), and the proud aristocrat (Sassy). How do these archetypes interact?<br/><em>★ Which of these three personality types best matches how you behave in a group project?</em></li>
+      <li>The narrative explores the deep psychological bond between children and their childhood pets. How does this connection resonate universally (e.g., examining light, framing, or pacing choices)?<br/><em>★ Why do stories about pet loyalty hold such a special place in global popular culture?</em></li>
+      <li>The climax in the muddy railway pit tests Chance&apos;s maturity as he refuses to leave Shadow behind. How does camera framing highlight their bond?<br/><em>★ How do tight close-up shots enhance emotional intimacy between characters in film?</em></li>
+      <li>Homeward Bound is a remake of Disney&apos;s 1963 classic &apos;The Incredible Journey&apos;. How did adding voiceover talent update the original story for 1990s audiences?<br/><em>★ What elements should a movie remake keep from the original version to honor its legacy?</em></li>
+      <li>If you were directing a modern version of Homeward Bound today, what three animals would you select for the journey, and where would you set it?<br/><em>★ What unique combination of pets would you choose to star in a modern wilderness adventure?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 7: Round 2 Discussion (Individual Mode) -->
+  <cosy-slide id="slide-4-ind" stage="round-2" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> deeper debate and statement evaluation with teacher in 1-on-1 format.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Share whether you agree or disagree with these statements and discuss them with your teacher:</cosy-instruction>
+    <ol>
+      <li>Director Duwayne Dunham filmed real animal actors across Oregon wilderness without relying on computer-generated imagery. How does real animal acting impact warmth?<br/><em>★ Do you prefer films featuring real animal actors or fully computer-generated creatures?</em></li>
+      <li>The decision to use voiceover inner monologues rather than digitally moving the animals&apos; mouths keeps their movements natural. How effective is this artistic choice?<br/><em>★ Why is voiceover narration often better than digital mouth manipulation for live animals?</em></li>
+      <li>Cinematographer Reed Smoot captured sweeping vistas of forests, waterfalls, and snow peaks. How does nature photography elevate the story?<br/><em>★ How does grand natural scenery heighten the drama of a personal survival story?</em></li>
+      <li>The film balances light comedic bickering between Chance and Sassy with genuinely perilous survival situations. How well is this tone maintained?<br/><em>★ Why is comedy essential in family survival movies to prevent the story from becoming too dark?</em></li>
+      <li>The musical score by Bruce Broughton features triumphant brass themes whenever the pets conquer a mountain ridge. How does music evoke triumph (e.g., examining light, framing, or pacing choices)?<br/><em>★ How can an uplifting orchestral score make an audience feel victorious alongside the characters?</em></li>
+      <li>Each animal represents a distinct personality type: the wise veteran (Shadow), the rebellious youth (Chance), and the proud aristocrat (Sassy). How do these archetypes interact?<br/><em>★ Which of these three personality types best matches how you behave in a group project?</em></li>
+      <li>The narrative explores the deep psychological bond between children and their childhood pets. How does this connection resonate universally (e.g., examining light, framing, or pacing choices)?<br/><em>★ Why do stories about pet loyalty hold such a special place in global popular culture?</em></li>
+      <li>The climax in the muddy railway pit tests Chance&apos;s maturity as he refuses to leave Shadow behind. How does camera framing highlight their bond?<br/><em>★ How do tight close-up shots enhance emotional intimacy between characters in film?</em></li>
+      <li>Homeward Bound is a remake of Disney&apos;s 1963 classic &apos;The Incredible Journey&apos;. How did adding voiceover talent update the original story for 1990s audiences?<br/><em>★ What elements should a movie remake keep from the original version to honor its legacy?</em></li>
+      <li>If you were directing a modern version of Homeward Bound today, what three animals would you select for the journey, and where would you set it?<br/><em>★ What unique combination of pets would you choose to star in a modern wilderness adventure?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 8: Teacher's Note / Error Correction -->
+  <cosy-slide id="slide-5" stage="error-correction" duration="50" mode="all">
+    <cosy-teacher-notes type="additional">
+      <p><cosy-text type="strong">Teacher&apos;s Linguistic Error Correction Guidance:</cosy-text></p>
+      <ul>
+        <li>Incorrect: I will resign if they skimp always on budget → Correct: I will resign if they always skimp on budget (Frequency adverbs like &apos;always&apos; come before the main verb.)</li>
+        <li>Incorrect: We are living here since two years → Correct: We have been living here for two years (Use present perfect continuous with &apos;for&apos; to express duration.)</li>
+        <li>Incorrect: They don&apos;t allow her leave the house → Correct: They don&apos;t allow her to leave the house (Use &apos;allow someone to do something&apos; construction.)</li>
+      </ul>
+    </cosy-teacher-notes>
+    <cosy-instruction>Reflection &amp; Feedback: Review language highlights and key corrections with your teacher.</cosy-instruction>
+  </cosy-slide>
+</cosy-lesson>

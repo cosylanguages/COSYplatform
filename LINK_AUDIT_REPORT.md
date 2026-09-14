@@ -11,7 +11,7 @@ This document provides a comprehensive end-to-end link and reference audit acros
 | **1. Access Grants Keys (`data/access-grants.json`)** | 60 | 60 (100%) | 0 | **ALL CLEAR ✅** |
 | **2. HTML relative `href` / `src`** | 322 | 274 | 48 (templates & dynamic JS parameters) | **ALL CLEAR ✅** |
 | **3. Markdown links (`.md`)** | 6 | 4 | 2 (`node_modules/` external) | **ALL CLEAR ✅** |
-| **4. Roadmap sequence `id` → Lesson files** | 966 | 2 | 964 (`status: "planned"`) | **ALL CLEAR ✅** |
+| **4. Roadmap sequence `id` → Lesson files** | 1416 | 452 | 964 (`status: "planned"`) | **ALL CLEAR ✅** |
 | **5. `curriculumId` in `curriculums/**/*.json`** | 0 | 0 | 0 (N/A) | **ALL CLEAR ✅** |
 | **6. Explicit Course IDs in `data/access-grants.json`** | 9 | 9 (100%) | 0 | **ALL CLEAR ✅** |
 

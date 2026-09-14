@@ -1,0 +1,167 @@
+<!-- source: https://raw.githubusercontent.com/cosylanguages/COSYevents/main/sessions/cinema-club/the-da-vinci-code.html -->
+<cosy-lesson id="the-da-vinci-code" level="B1" language="en" title="The Da Vinci Code" default-duration="50" default-mode="all" cinema="true">
+  <!-- SLIDE 1: Warm-up & Vocabulary Review -->
+  <cosy-slide id="slide-1" stage="warm-up" duration="50" mode="all">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> to introduce the topic and clarify key target vocabulary for the session.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Review the key vocabulary for this session below:</cosy-instruction>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">symbology</cosy-text> – the study of symbols and their hidden cultural or religious meanings.</p>
+      <p><em>Example: Harvard professor Robert Langdon relies on symbology to decode cryptic clues hidden in Leonardo da Vinci&apos;s famous paintings.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">cryptic anagram</cosy-text> – a word, phrase, or message puzzle created by transposing letters to conceal meaning.</p>
+      <p><em>Example: As Jacque Saunière lay dying in the Louvre, he scribbled a cryptic anagram on the museum floor to guide his granddaughter Sophie.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">religious fanaticism</cosy-text> – excessive, unyielding enthusiasm and extreme devotion to a religious cause.</p>
+      <p><em>Example: Silas operates under religious fanaticism, executing orders from The Teacher to protect what he believes is the Holy See.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">historical revisionism</cosy-text> – the reinterpretation of accepted historical records and orthodox narratives.</p>
+      <p><em>Example: Teabing argues that historical revisionism occurred during the Council of Nicaea when the Emperor Constantine altered sacred Christian texts.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">sacred feminine</cosy-text> – the spiritual concept venerating feminine divine power, wisdom, and matriarchal heritage.</p>
+      <p><em>Example: Langdon discovers that the Holy Grail is not a golden chalice, but a person representing the suppressed sacred feminine.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">cryptex</cosy-text> – (fictional device / noun) a portable vault constructed with rotating letter dials designed to destroy enclosed vinegar-soaked papyrus if forced.</p>
+      <p><em>Example: Saunière leaves Sophie a wooden cryptex containing the secret location of the Grail, requiring a five-letter password to open.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">so dark the con of man</cosy-text> – (key anagram quote) the decoded cipher phrase scrambled from Leonardo da Vinci&apos;s Mona Lisa.</p>
+      <p><em>Example: Sophie solves Saunière&apos;s first puzzle by rearranging the letters on the glass to reveal &quot;So dark the con of man&quot;.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">The Holy Grail</cosy-text> – (iconic central motif) the legendary sacred treasure sought across centuries, reinterpreted as Mary Magdalene&apos;s lineage.</p>
+      <p><em>Example: Teabing explains to Sophie that the quest for The Holy Grail is a search for royal bloodlines and lost historical truth.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Priory of Sion</cosy-text> – (proper noun / secret society) a secret brotherhood tasked with protecting the bloodline of Jesus and Mary Magdalene.</p>
+      <p><em>Example: Langdon discovers that Saunière was one of the four grand masters of the ancient Priory of Sion.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Opus Dei</cosy-text> – (proper noun / real institution) a conservative Catholic organization whose rogue faction serves as the primary threat in the story.</p>
+      <p><em>Example: Bishop Aringarosa leads a desperate wing of Opus Dei, attempting to locate the Keystone before their influence in Rome is erased.</em></p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 2: Round 1 Discussion (Group Mode) -->
+  <cosy-slide id="slide-2-group" stage="round-1" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> pair/group discussion on core session themes.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>In pairs or small breakout groups, discuss the following questions:</cosy-group-instruction>
+    <ol>
+      <li>When Robert Langdon is summoned to the Louvre, Captain Fache suspects him of Jacque Saunière&apos;s murder. How does Langdon use his expertise in symbology to prove his innocence?<br/><em>★ How can specialized knowledge or expertise help you navigate a high-stress crisis?</em></li>
+      <li>Sophie Neveu recognizes that Saunière&apos;s body position and the cryptic anagram written on the floor were designed specifically for her. How does she decode her grandfather&apos;s cipher?<br/><em>★ Have you ever solved a complex puzzle or secret message under intense time pressure?</em></li>
+      <li>Silas carries out violent assassinations under the influence of religious fanaticism, believing he is serving a holy mission. What drives his absolute obedience to The Teacher?<br/><em>★ Why are vulnerable individuals often susceptible to manipulation by extremist organizations?</em></li>
+      <li>Sir Leigh Teabing presents his theories on historical revisionism, arguing that Emperor Constantine altered Christian texts at the Council of Nicaea. How does Langdon evaluate his claims?<br/><em>★ How do accepted historical records shape modern cultural beliefs and institutional power?</em></li>
+      <li>Teabing argues that the Holy Grail is not a physical cup, but a emblem representing the suppressed sacred feminine. How does this reinterpretation challenge conventional Grail legends?<br/><em>★ Why do ancient symbols and legends continue to spark passionate debate in modern society?</em></li>
+      <li>Saunière leaves Sophie a wooden cryptex containing the location of the secret keystone. How does the risk of destroying the enclosed papyrus heighten the suspense?<br/><em>★ What measures do you take to secure your most important private information or documents?</em></li>
+      <li>Scrambled on the glass surrounding the Mona Lisa is the anagram phrase &apos;so dark the con of man&apos;. How does solving this line guide Sophie and Langdon to the next clue?<br/><em>★ Do you enjoy word puzzles, ciphers, and riddle-solving in mysteries and thrillers?</em></li>
+      <li>Langdon and Sophie travel to Britain in pursuit of the holy grail. How does their quest evolve from escaping the police to uncovering a global secret?<br/><em>★ What makes the search for historical truth such a compelling narrative motif in literature and film?</em></li>
+      <li>Saunière served as the Grand Master of the priory of sion, an ancient brotherhood sworn to protect royal bloodlines. Why did the society maintain total secrecy for centuries?<br/><em>★ Can secret societies ever serve a positive historical purpose, or do they inherently breed mistrust?</em></li>
+      <li>Bishop Aringarosa leads a rogue wing of opus dei desperate to preserve its Vatican influence. How do his political ambitions clash with Silas&apos;s blind devotion?<br/><em>★ What happens when institutional leaders exploit the sincere faith of their followers for political power?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 3: Round 1 Discussion (Individual Mode) -->
+  <cosy-slide id="slide-2-ind" stage="round-1" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> 1-on-1 teacher-student discussion on core session themes.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Discuss the following questions with your teacher:</cosy-instruction>
+    <ol>
+      <li>When Robert Langdon is summoned to the Louvre, Captain Fache suspects him of Jacque Saunière&apos;s murder. How does Langdon use his expertise in symbology to prove his innocence?<br/><em>★ How can specialized knowledge or expertise help you navigate a high-stress crisis?</em></li>
+      <li>Sophie Neveu recognizes that Saunière&apos;s body position and the cryptic anagram written on the floor were designed specifically for her. How does she decode her grandfather&apos;s cipher?<br/><em>★ Have you ever solved a complex puzzle or secret message under intense time pressure?</em></li>
+      <li>Silas carries out violent assassinations under the influence of religious fanaticism, believing he is serving a holy mission. What drives his absolute obedience to The Teacher?<br/><em>★ Why are vulnerable individuals often susceptible to manipulation by extremist organizations?</em></li>
+      <li>Sir Leigh Teabing presents his theories on historical revisionism, arguing that Emperor Constantine altered Christian texts at the Council of Nicaea. How does Langdon evaluate his claims?<br/><em>★ How do accepted historical records shape modern cultural beliefs and institutional power?</em></li>
+      <li>Teabing argues that the Holy Grail is not a physical cup, but a emblem representing the suppressed sacred feminine. How does this reinterpretation challenge conventional Grail legends?<br/><em>★ Why do ancient symbols and legends continue to spark passionate debate in modern society?</em></li>
+      <li>Saunière leaves Sophie a wooden cryptex containing the location of the secret keystone. How does the risk of destroying the enclosed papyrus heighten the suspense?<br/><em>★ What measures do you take to secure your most important private information or documents?</em></li>
+      <li>Scrambled on the glass surrounding the Mona Lisa is the anagram phrase &apos;so dark the con of man&apos;. How does solving this line guide Sophie and Langdon to the next clue?<br/><em>★ Do you enjoy word puzzles, ciphers, and riddle-solving in mysteries and thrillers?</em></li>
+      <li>Langdon and Sophie travel to Britain in pursuit of the holy grail. How does their quest evolve from escaping the police to uncovering a global secret?<br/><em>★ What makes the search for historical truth such a compelling narrative motif in literature and film?</em></li>
+      <li>Saunière served as the Grand Master of the priory of sion, an ancient brotherhood sworn to protect royal bloodlines. Why did the society maintain total secrecy for centuries?<br/><em>★ Can secret societies ever serve a positive historical purpose, or do they inherently breed mistrust?</em></li>
+      <li>Bishop Aringarosa leads a rogue wing of opus dei desperate to preserve its Vatican influence. How do his political ambitions clash with Silas&apos;s blind devotion?<br/><em>★ What happens when institutional leaders exploit the sincere faith of their followers for political power?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 4: Let's Speak Together (Group Mode) -->
+  <cosy-slide id="slide-3-group" stage="speak-together" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> collaborative task or visual analysis in pairs/groups.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>In pairs, work together on the following task:</cosy-group-instruction>
+    <cosy-blockquote importance="medium">
+      <p>Compare the adaptation differences and visual contrasts in this film.
+- Novel vs. Screenplay Adaptations• Screenwriter Akiva Goldsman streamlined Dan Brown&apos;s dense exposition into dynamic dialogue exchanges between Langdon, Sophie, and Teabing.• The film accelerates the police chase across Paris and England, compressing the novel&apos;s timeline into a continuous 24-hour race. Visual Directing &amp; Setting Contrasts• Filmed on location inside the actual Louvre Museum, using low-key moonlight shadows across classic Renaissance masterpieces.• Stark, cold blue lighting inside historical cathedrals contrasts with the warm, golden glow of Rosslyn Chapel during the climax.</p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 5: Let's Speak Together (Individual Mode) -->
+  <cosy-slide id="slide-3-ind" stage="speak-together" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> 1-on-1 guided visual description and task response with teacher.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Look at the prompt and discuss your response with your teacher:</cosy-instruction>
+    <cosy-blockquote importance="medium">
+      <p>Compare the adaptation differences and visual contrasts in this film.
+- Novel vs. Screenplay Adaptations• Screenwriter Akiva Goldsman streamlined Dan Brown&apos;s dense exposition into dynamic dialogue exchanges between Langdon, Sophie, and Teabing.• The film accelerates the police chase across Paris and England, compressing the novel&apos;s timeline into a continuous 24-hour race. Visual Directing &amp; Setting Contrasts• Filmed on location inside the actual Louvre Museum, using low-key moonlight shadows across classic Renaissance masterpieces.• Stark, cold blue lighting inside historical cathedrals contrasts with the warm, golden glow of Rosslyn Chapel during the climax.</p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 6: Round 2 Discussion (Group Mode) -->
+  <cosy-slide id="slide-4-group" stage="round-2" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> deeper debate and statement evaluation in pairs/groups.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>In pairs, debate and state whether you agree or disagree with these statements:</cosy-group-instruction>
+    <ol>
+      <li>Director Ron Howard uses shadowy lighting and cold blue hues inside the Louvre and Westminster Abbey. How does this visual style establish a mysterious, historical atmosphere?<br/><em>★ How does atmospheric lighting in museum or cathedral settings affect your mood as a viewer?</em></li>
+      <li>Tom Hanks portrays Robert Langdon as a cerebral academic rather than an action hero. How does his intellectual approach alter the pacing of traditional thriller cinema?<br/><em>★ Do you prefer thrillers driven by physical action scenes or those driven by intellectual problem-solving?</em></li>
+      <li>Hans Zimmer&apos;s haunting score, particularly &apos;CheValiers de Sangreal&apos;, builds to an emotional crescendo in the final scene at the Louvre pyramid. How does the music elevate Langdon&apos;s spiritual discovery?<br/><em>★ How much does a powerful orchestral soundtrack contribute to making a movie climax memorable?</em></li>
+      <li>The film intercuts scenes of Langdon decoding manuscripts with dramatic historical flashbacks to 4th-century Rome and medieval crusades. How effective are these visual flashbacks?<br/><em>★ Do historical flashbacks enrich a mystery story for you, or do you prefer staying in the present timeline?</em></li>
+      <li>Audrey Tautou brings quiet emotional intensity to Sophie Neveu as she uncovers her family&apos;s royal heritage. How does her personal discovery mirror Langdon&apos;s academic search?<br/><em>★ How does connecting a global mystery to a main character&apos;s personal family history heighten emotional stakes?</em></li>
+      <li>Leigh Teabing&apos;s dramatic transformation from enthusiastic host to ruthless antagonist at Westminster Abbey turns the plot upside down. Was Ian McKellen&apos;s performance convincing?<br/><em>★ What key elements make a dramatic character twist feel earned rather than forced?</em></li>
+      <li>How does the movie navigate controversial religious themes while maintaining a fast-paced Hollywood blockbuster narrative structure (e.g., examining light, framing, or pacing choices)?<br/><em>★ Can a film explore sensitive theological debates while still providing entertaining pop culture cinema?</em></li>
+      <li>The climax takes place at Rosslyn Chapel in Scotland, where Langdon meets Saunière&apos;s surviving relatives. How does this quiet, warm setting contrast with the dark chases earlier in the film?<br/><em>★ Why do directors often choose peaceful, intimate locations for the emotional resolution of intense thrillers?</em></li>
+      <li>Langdon kneels before the inverted pyramid at the Louvre in the final shot, realizing the sacred tomb rests beneath his feet. What does this closing image symbolize (e.g., examining light, framing, or pacing choices)?<br/><em>★ What makes an ending visual image linger in your memory long after the movie finishes?</em></li>
+      <li>If you were adapting Dan Brown&apos;s novel for a modern audience today, would you alter any of the historical theories or character dynamics?<br/><em>★ How should filmmakers balance staying faithful to a bestselling book with making necessary cinematic updates?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 7: Round 2 Discussion (Individual Mode) -->
+  <cosy-slide id="slide-4-ind" stage="round-2" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> deeper debate and statement evaluation with teacher in 1-on-1 format.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Share whether you agree or disagree with these statements and discuss them with your teacher:</cosy-instruction>
+    <ol>
+      <li>Director Ron Howard uses shadowy lighting and cold blue hues inside the Louvre and Westminster Abbey. How does this visual style establish a mysterious, historical atmosphere?<br/><em>★ How does atmospheric lighting in museum or cathedral settings affect your mood as a viewer?</em></li>
+      <li>Tom Hanks portrays Robert Langdon as a cerebral academic rather than an action hero. How does his intellectual approach alter the pacing of traditional thriller cinema?<br/><em>★ Do you prefer thrillers driven by physical action scenes or those driven by intellectual problem-solving?</em></li>
+      <li>Hans Zimmer&apos;s haunting score, particularly &apos;CheValiers de Sangreal&apos;, builds to an emotional crescendo in the final scene at the Louvre pyramid. How does the music elevate Langdon&apos;s spiritual discovery?<br/><em>★ How much does a powerful orchestral soundtrack contribute to making a movie climax memorable?</em></li>
+      <li>The film intercuts scenes of Langdon decoding manuscripts with dramatic historical flashbacks to 4th-century Rome and medieval crusades. How effective are these visual flashbacks?<br/><em>★ Do historical flashbacks enrich a mystery story for you, or do you prefer staying in the present timeline?</em></li>
+      <li>Audrey Tautou brings quiet emotional intensity to Sophie Neveu as she uncovers her family&apos;s royal heritage. How does her personal discovery mirror Langdon&apos;s academic search?<br/><em>★ How does connecting a global mystery to a main character&apos;s personal family history heighten emotional stakes?</em></li>
+      <li>Leigh Teabing&apos;s dramatic transformation from enthusiastic host to ruthless antagonist at Westminster Abbey turns the plot upside down. Was Ian McKellen&apos;s performance convincing?<br/><em>★ What key elements make a dramatic character twist feel earned rather than forced?</em></li>
+      <li>How does the movie navigate controversial religious themes while maintaining a fast-paced Hollywood blockbuster narrative structure (e.g., examining light, framing, or pacing choices)?<br/><em>★ Can a film explore sensitive theological debates while still providing entertaining pop culture cinema?</em></li>
+      <li>The climax takes place at Rosslyn Chapel in Scotland, where Langdon meets Saunière&apos;s surviving relatives. How does this quiet, warm setting contrast with the dark chases earlier in the film?<br/><em>★ Why do directors often choose peaceful, intimate locations for the emotional resolution of intense thrillers?</em></li>
+      <li>Langdon kneels before the inverted pyramid at the Louvre in the final shot, realizing the sacred tomb rests beneath his feet. What does this closing image symbolize (e.g., examining light, framing, or pacing choices)?<br/><em>★ What makes an ending visual image linger in your memory long after the movie finishes?</em></li>
+      <li>If you were adapting Dan Brown&apos;s novel for a modern audience today, would you alter any of the historical theories or character dynamics?<br/><em>★ How should filmmakers balance staying faithful to a bestselling book with making necessary cinematic updates?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 8: Teacher's Note / Error Correction -->
+  <cosy-slide id="slide-5" stage="error-correction" duration="50" mode="all">
+    <cosy-teacher-notes type="additional">
+      <p><cosy-text type="strong">Teacher&apos;s Linguistic Error Correction Guidance:</cosy-text></p>
+      <ul>
+        <li>Incorrect: He insisted she goes to Runway → Correct: He insisted she go to Runway (Verbs of demand/insistence like &apos;insist&apos; trigger the subjunctive/bare infinitive.)</li>
+        <li>Incorrect: I&apos;m used to watch movies in original → Correct: I&apos;m used to watching movies in original (The phrase &apos;be used to&apos; is followed by a gerund (-ing form), not a bare infinitive.)</li>
+        <li>Incorrect: Seldom I have seen such an ending → Correct: Seldom have I seen such an ending (Negative adverbs like &apos;seldom&apos; at the beginning of a clause trigger subject-auxiliary inversion.)</li>
+      </ul>
+    </cosy-teacher-notes>
+    <cosy-instruction>Reflection &amp; Feedback: Review language highlights and key corrections with your teacher.</cosy-instruction>
+  </cosy-slide>
+</cosy-lesson>

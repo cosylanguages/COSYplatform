@@ -1,0 +1,169 @@
+<!-- source: https://raw.githubusercontent.com/cosylanguages/COSYevents/main/sessions/my-life-with-without/car-life.html -->
+<cosy-lesson id="car-life" level="B1" language="en" title="My Life With &amp; Without a Car" default-duration="50" default-mode="all">
+  <!-- SLIDE 1: Warm-up & Vocabulary Review -->
+  <cosy-slide id="slide-1" stage="warm-up" duration="50" mode="all">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> to introduce the topic and clarify key target vocabulary for the session.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Review the key vocabulary for this session below:</cosy-instruction>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Mobility</cosy-text> – the ability to move or be moved freely and easily.</p>
+      <p><em>Example: Owning a car provides a great sense of personal mobility.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Infrastructure</cosy-text> – the basic physical and organizational structures (e.g. buildings, roads, power supplies) needed for the operation of a society.</p>
+      <p><em>Example: Many cities are investing in bicycle infrastructure to reduce car use.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Public transport</cosy-text> – buses, trains, and other forms of transport that are available to the public, charge set fares, and run on fixed routes.</p>
+      <p><em>Example: Using public transport is often cheaper and greener than driving.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Congestion</cosy-text> – the state of being extremely full or blocked, especially with traffic.</p>
+      <p><em>Example: Traffic congestion in the city center is a major problem during rush hour.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Maintenance</cosy-text> – the process of preserving a condition or situation or the state of being preserved (e.g. fixing a car).</p>
+      <p><em>Example: The annual maintenance of a car can be very expensive.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Autonomy ≠ Dependence</cosy-text> – the right of self-government or independence ≠ the state of relying on or being controlled by someone or something else.</p>
+      <p><em>Example: Owning a car gives drivers complete autonomy, whereas relying on bus schedules creates a feeling of constant dependence.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Carbon footprint</cosy-text> – the total amount of greenhouse gases produced to directly and indirectly support human activities.</p>
+      <p><em>Example: Selling my car was the fastest way to reduce my personal carbon footprint.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Commute</cosy-text> – travel some distance between one&apos;s home and place of work on a regular basis.</p>
+      <p><em>Example: My daily commute takes 45 minutes by train but over an hour by car.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Walkability</cosy-text> – a measure of how friendly an area is to walking.</p>
+      <p><em>Example: I moved to this neighborhood because of its high walkability and local shops.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Depreciation</cosy-text> – a reduction in the value of an asset with the passage of time.</p>
+      <p><em>Example: Car depreciation is a major financial downside of buying a new vehicle.</em></p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 2: Round 1 Discussion (Group Mode) -->
+  <cosy-slide id="slide-2-group" stage="round-1" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> pair/group discussion on core session themes.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>In pairs or small breakout groups, discuss the following questions:</cosy-group-instruction>
+    <ol>
+      <li>How does owning a car provide a level of personal mobility that you simply cannot find on public transit?<br/><em>★ Think about how you used to travel when you were a teenager-was it more or less comfortable?</em></li>
+      <li>Is a city&apos;s road infrastructure an absolute necessity, or does it exist because societies used to prioritize cars over pedestrian life?<br/><em>★ Have you ever had a car breakdown at a bad time?</em></li>
+      <li>Why do car owners refuse to use public transport even if the network is faster than driving?<br/><em>★ Are you satisfied with the transport in your city?</em></li>
+      <li>Can someone maintain good mental health if they have to sit in traffic congestion on their daily commute?<br/><em>★ If your personality was a car, what model would it be?</em></li>
+      <li>Does the financial cost of regular car maintenance feel like a reasonable price for comfort, or does it feel like a burden?<br/><em>★ Do you track your car expenses carefully?</em></li>
+      <li>Does owning a private car give you genuine autonomy, or are you actually dependent on its constant expenses?<br/><em>★ Think about how your family used to plan weekend trips when you were young-did a car make it easier?</em></li>
+      <li>Is selling your car the only realistic way for a citizen to drastically lower their personal carbon footprint?<br/><em>★ Do you prefer to walk or drive when running local errands?</em></li>
+      <li>Why do people subject themselves to a stressful daily commute in a private car instead of walking or cycling?<br/><em>★ Was learning to drive a stressful experience for you?</em></li>
+      <li>How does high walkability in a neighborhood reduce the psychological need to own a private vehicle?<br/><em>★ Do you care about the brand or look of the car you drive?</em></li>
+      <li>Why do millions of buyers accept the rapid financial depreciation of a new vehicle just to own a private cabin?<br/><em>★ Would you feel comfortable sharing a ride with complete strangers?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 3: Round 1 Discussion (Individual Mode) -->
+  <cosy-slide id="slide-2-ind" stage="round-1" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> 1-on-1 teacher-student discussion on core session themes.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Discuss the following questions with your teacher:</cosy-instruction>
+    <ol>
+      <li>How does owning a car provide a level of personal mobility that you simply cannot find on public transit?<br/><em>★ Think about how you used to travel when you were a teenager-was it more or less comfortable?</em></li>
+      <li>Is a city&apos;s road infrastructure an absolute necessity, or does it exist because societies used to prioritize cars over pedestrian life?<br/><em>★ Have you ever had a car breakdown at a bad time?</em></li>
+      <li>Why do car owners refuse to use public transport even if the network is faster than driving?<br/><em>★ Are you satisfied with the transport in your city?</em></li>
+      <li>Can someone maintain good mental health if they have to sit in traffic congestion on their daily commute?<br/><em>★ If your personality was a car, what model would it be?</em></li>
+      <li>Does the financial cost of regular car maintenance feel like a reasonable price for comfort, or does it feel like a burden?<br/><em>★ Do you track your car expenses carefully?</em></li>
+      <li>Does owning a private car give you genuine autonomy, or are you actually dependent on its constant expenses?<br/><em>★ Think about how your family used to plan weekend trips when you were young-did a car make it easier?</em></li>
+      <li>Is selling your car the only realistic way for a citizen to drastically lower their personal carbon footprint?<br/><em>★ Do you prefer to walk or drive when running local errands?</em></li>
+      <li>Why do people subject themselves to a stressful daily commute in a private car instead of walking or cycling?<br/><em>★ Was learning to drive a stressful experience for you?</em></li>
+      <li>How does high walkability in a neighborhood reduce the psychological need to own a private vehicle?<br/><em>★ Do you care about the brand or look of the car you drive?</em></li>
+      <li>Why do millions of buyers accept the rapid financial depreciation of a new vehicle just to own a private cabin?<br/><em>★ Would you feel comfortable sharing a ride with complete strangers?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 4: Let's Speak Together (Group Mode) -->
+  <cosy-slide id="slide-3-group" stage="speak-together" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> collaborative task or visual analysis in pairs/groups.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>In pairs, work together on the following task:</cosy-group-instruction>
+    <cosy-blockquote importance="medium">
+      <p>- 🚗The Private Cabin (With)
+- 🚲The Walkable Commons (Without)</p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 5: Let's Speak Together (Individual Mode) -->
+  <cosy-slide id="slide-3-ind" stage="speak-together" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> 1-on-1 guided visual description and task response with teacher.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Look at the prompt and discuss your response with your teacher:</cosy-instruction>
+    <cosy-blockquote importance="medium">
+      <p>- 🚗The Private Cabin (With)
+- 🚲The Walkable Commons (Without)</p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 6: Round 2 Discussion (Group Mode) -->
+  <cosy-slide id="slide-4-group" stage="round-2" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> deeper debate and statement evaluation in pairs/groups.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>In pairs, debate and state whether you agree or disagree with these statements:</cosy-group-instruction>
+    <ol>
+      <li>If personal cars were completely outlawed in city centers, how would communities redesign local urban mobility and transit systems?<br/><em>★ What would be your biggest daily challenge without a car?</em></li>
+      <li>Without any cars to plan for, how could urban planners adapt city infrastructure to support vibrant pedestrian life?<br/><em>★ Do you think you would know your neighbors better if you walked everywhere?</em></li>
+      <li>If private vehicles did not exist, how would local authorities adapt public transport to handle the massive passenger load?<br/><em>★ Would you trust a car that has no steering wheel?</em></li>
+      <li>In a car-free city, would road congestion completely disappear, or would it simply shift to bike lanes and sidewalks?<br/><em>★ What would you do with the extra space in your home?</em></li>
+      <li>If families didn&apos;t have to pay for car maintenance, what alternative local services or experiences would they spend their savings on?<br/><em>★ Have you ever experienced &quot;road rage&quot;?</em></li>
+      <li>Without a private vehicle, would you lose your sense of personal autonomy, or would you find new ways to stay independent?<br/><em>★ What is the one thing public transport can never replace for you?</em></li>
+      <li>In a fully car-free society, how would the commercial logistics network adapt to lower its collective carbon footprint?<br/><em>★ What is the best place you have ever reached only by car?</em></li>
+      <li>Without roads dominating our landscape, would the daily commute to work become a highly active and social journey?<br/><em>★ Was childhood neighborhood safe for playing in the street?</em></li>
+      <li>If streets were turned into parks, how would high walkability change the way neighbors communicate and support each other?<br/><em>★ How would a massive increase in fuel prices change your lifestyle?</em></li>
+      <li>Since citizens wouldn&apos;t suffer from the financial depreciation of vehicles, how would they invest their capital instead?<br/><em>★ Which city do you think is the best model for a car-free future?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 7: Round 2 Discussion (Individual Mode) -->
+  <cosy-slide id="slide-4-ind" stage="round-2" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> deeper debate and statement evaluation with teacher in 1-on-1 format.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Share whether you agree or disagree with these statements and discuss them with your teacher:</cosy-instruction>
+    <ol>
+      <li>If personal cars were completely outlawed in city centers, how would communities redesign local urban mobility and transit systems?<br/><em>★ What would be your biggest daily challenge without a car?</em></li>
+      <li>Without any cars to plan for, how could urban planners adapt city infrastructure to support vibrant pedestrian life?<br/><em>★ Do you think you would know your neighbors better if you walked everywhere?</em></li>
+      <li>If private vehicles did not exist, how would local authorities adapt public transport to handle the massive passenger load?<br/><em>★ Would you trust a car that has no steering wheel?</em></li>
+      <li>In a car-free city, would road congestion completely disappear, or would it simply shift to bike lanes and sidewalks?<br/><em>★ What would you do with the extra space in your home?</em></li>
+      <li>If families didn&apos;t have to pay for car maintenance, what alternative local services or experiences would they spend their savings on?<br/><em>★ Have you ever experienced &quot;road rage&quot;?</em></li>
+      <li>Without a private vehicle, would you lose your sense of personal autonomy, or would you find new ways to stay independent?<br/><em>★ What is the one thing public transport can never replace for you?</em></li>
+      <li>In a fully car-free society, how would the commercial logistics network adapt to lower its collective carbon footprint?<br/><em>★ What is the best place you have ever reached only by car?</em></li>
+      <li>Without roads dominating our landscape, would the daily commute to work become a highly active and social journey?<br/><em>★ Was childhood neighborhood safe for playing in the street?</em></li>
+      <li>If streets were turned into parks, how would high walkability change the way neighbors communicate and support each other?<br/><em>★ How would a massive increase in fuel prices change your lifestyle?</em></li>
+      <li>Since citizens wouldn&apos;t suffer from the financial depreciation of vehicles, how would they invest their capital instead?<br/><em>★ Which city do you think is the best model for a car-free future?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 8: Teacher's Note / Error Correction -->
+  <cosy-slide id="slide-5" stage="error-correction" duration="50" mode="all">
+    <cosy-teacher-notes type="additional">
+      <p><cosy-text type="strong">Teacher&apos;s Linguistic Error Correction Guidance:</cosy-text></p>
+      <ul>
+        <li>Incorrect: I am drive a car since five years → Correct: I have been driving for five years ((Present Perfect Continuous))</li>
+        <li>Incorrect: I prefer to drive than take the train → Correct: I prefer driving to taking the train ((Prefer A to B))</li>
+        <li>Incorrect: It depends of the maintenance cost → Correct: It depends on the maintenance cost ((Depends on))</li>
+        <li>Incorrect: I am not used to drive in city → Correct: I am not used to driving in the city ((Be used to + -ing))</li>
+        <li>Incorrect: I am agree with you → Correct: I agree with you ((Verb agreement))</li>
+      </ul>
+    </cosy-teacher-notes>
+    <cosy-instruction>Reflection &amp; Feedback: Review language highlights and key corrections with your teacher.</cosy-instruction>
+  </cosy-slide>
+</cosy-lesson>

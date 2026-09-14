@@ -1,0 +1,205 @@
+<!-- source: https://raw.githubusercontent.com/cosylanguages/COSYevents/main/sessions/cinema-club/ratatouille-english.html -->
+<cosy-lesson id="ratatouille-english" level="B1" language="en" title="Ratatouille (English)" default-duration="50" default-mode="all" cinema="true">
+  <!-- SLIDE 1: Warm-up & Vocabulary Review -->
+  <cosy-slide id="slide-1" stage="warm-up" duration="50" mode="all">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> to introduce the topic and clarify key target vocabulary for the session.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Review the key vocabulary for this session below:</cosy-instruction>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Culinary</cosy-text> – (adjective) related to cooking or the kitchen.</p>
+      <p><em>Example: Remy possesses an extraordinary culinary talent that surpasses human chefs.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Scavenge</cosy-text> – (verb) search for and collect anything usable from discarded waste.</p>
+      <p><em>Example: The rat colony is content to scavenge garbage, but Remy craves gourmet flavors.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Gourmet</cosy-text> – (adjective/noun) involving high-quality, refined food.</p>
+      <p><em>Example: Remy dreams of preparing gourmet French dishes inside Paris&apos;s finest restaurants.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Authenticity</cosy-text> – (noun) the quality of being real, genuine, or true to one&apos;s passion.</p>
+      <p><em>Example: Chef Gusteau&apos;s recipes celebrate authenticity and passion over rigid rules.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Connoisseur</cosy-text> – (noun) an expert judge in matters of taste or fine art.</p>
+      <p><em>Example: Anton Ego prides himself on being the ultimate connoisseur of Parisian dining.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Prestige</cosy-text> – (noun) widespread respect and admiration felt for someone or something based on achievements.</p>
+      <p><em>Example: Gusteau&apos;s restaurant struggles to regain its lost prestige after losing a star.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Recipe</cosy-text> – (noun) a set of instructions for preparing a particular dish.</p>
+      <p><em>Example: Linguini stumbles through the kitchen until Remy guides his movements according to the recipe.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Prejudice</cosy-text> – (noun) preconceived opinion that is not based on reason or actual experience.</p>
+      <p><em>Example: Remy must overcome human prejudice against rats to pursue his dream.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Epiphany</cosy-text> – (noun) a moment of sudden and profound revelation.</p>
+      <p><em>Example: Taking his first bite of ratatouille triggers a childhood epiphany for Anton Ego.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Hierarchy</cosy-text> – (noun) a system in which members of an organization are ranked according to relative status.</p>
+      <p><em>Example: Colette explains the strict kitchen hierarchy of sous-chefs, line cooks, and dishwashers.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Anyone can cook</cosy-text> – (phrase) Chef Gusteau&apos;s famous motto celebrating universal artistic potential.</p>
+      <p><em>Example: &apos;Anyone can cook&apos; inspires Remy to believe that great art can come from anywhere.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Little chef</cosy-text> – (noun) Linguini&apos;s affectionate nickname for Remy hiding under his hat.</p>
+      <p><em>Example: Linguini relies completely on his &apos;little chef&apos; to survive in the high-pressure kitchen.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Gusteau&apos;s legacy</cosy-text> – (noun) the culinary philosophy and recipes left behind by Auguste Gusteau.</p>
+      <p><em>Example: Skinner attempts to commercialize Gusteau&apos;s legacy with cheap frozen microwave meals.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Kitchen hierarchy</cosy-text> – (noun) the traditional French brigade system organizing kitchen roles.</p>
+      <p><em>Example: Colette teaches Linguini how to respect the fast-paced kitchen hierarchy.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Anton Ego</cosy-text> – (noun) the feared food critic whose reviews can make or break a restaurant.</p>
+      <p><em>Example: Anton Ego enters Gusteau&apos;s with cold arrogance, demanding to be challenged.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Garbage rat</cosy-text> – (noun) Django&apos;s pragmatic view of rat identity in human society.</p>
+      <p><em>Example: Django warns Remy that humans view rats as nothing more than disease-carrying garbage rats.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Ratatouille dish</cosy-text> – (noun) a traditional Provençal stewed vegetable dish.</p>
+      <p><em>Example: Remy serves a modest peasant ratatouille dish to the most terrifying critic in France.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">A taste of home</cosy-text> – (phrase) food that evokes nostalgic memories of childhood warmth.</p>
+      <p><em>Example: The simple vegetables give Anton Ego an unforgettable taste of home.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Ego&apos;s review</cosy-text> – (noun) the legendary newspaper column that restores Gusteau&apos;s reputation.</p>
+      <p><em>Example: Ego&apos;s review declares that a great artist can come from the most humble origins.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">La Ratatouille</cosy-text> – (noun) the cozy bistro opened by Remy, Linguini, and Colette at the end.</p>
+      <p><em>Example: La Ratatouille features a special miniature dining room created exclusively for rats.</em></p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 2: Round 1 Discussion (Group Mode) -->
+  <cosy-slide id="slide-2-group" stage="round-1" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> pair/group discussion on core session themes.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>In pairs or small breakout groups, discuss the following questions:</cosy-group-instruction>
+    <ol>
+      <li>Remy refuses to eat garbage like his colony, insisting on pairing fine cheese with fresh strawberries. How does his refined palate set him apart from his family?<br/><em>★ What is a passion or interest you have that makes you feel different from those around you?</em></li>
+      <li>Chef Auguste Gusteau appears as a helpful figment of Remy&apos;s imagination. How does this inner mentor guide Remy when he feels hopeless in Paris?<br/><em>★ How do mentors : real or remembered : help us stay true to our goals during difficult moments?</em></li>
+      <li>Linguini has zero cooking skills but inherits Gusteau&apos;s restaurant. How does his partnership with Remy under the chef&apos;s hat create chaotic harmony?<br/><em>★ Why do unexpected partnerships between people with different skills often produce great results?</em></li>
+      <li>Colette Tatou is the only female cook in Gusteau&apos;s kitchen, working twice as hard to earn respect. What does her character reveal about perseverance?<br/><em>★ How can standing up for your worth in a competitive environment inspire others?</em></li>
+      <li>Chef Skinner tries to profit off Gusteau&apos;s image by selling frozen microwavable meals. How does his greed contrast with true culinary art?<br/><em>★ What happens to art or food when commercial profit becomes more important than quality?</em></li>
+      <li>Django takes Remy to a pest control shop window filled with dead traps to warn him about humans. How does Remy respond to his father&apos;s fear?<br/><em>★ How should young people balance listening to parental warnings with pursuing their own dreams?</em></li>
+      <li>Linguini gets overwhelmed by sudden fame and temporarily takes credit for Remy&apos;s genius. How does vanity test their friendship?<br/><em>★ What should you do when a friend or colleague takes credit for work you accomplished together?</em></li>
+      <li>When the health inspector arrives, the entire rat colony steps up to wash, cook, and serve food under Remy&apos;s direction. How thrilling is this climax?<br/><em>★ How does seeing a marginalized group unite to achieve something incredible inspire audiences?</em></li>
+      <li>Remy serves Anton Ego a simple peasant dish : ratatouille : instead of an elaborate luxury meal. Why is this choice a brilliant artistic risk?<br/><em>★ Why can simplicity and genuine emotion often impress critics more than complex luxury?</em></li>
+      <li>Anton Ego loses his job and status as a top critic after praising a rat-staffed kitchen, but he becomes a happy investor in La Ratatouille. Is this true success?<br/><em>★ How can letting go of arrogance and status lead to genuine personal happiness?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 3: Round 1 Discussion (Individual Mode) -->
+  <cosy-slide id="slide-2-ind" stage="round-1" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> 1-on-1 teacher-student discussion on core session themes.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Discuss the following questions with your teacher:</cosy-instruction>
+    <ol>
+      <li>Remy refuses to eat garbage like his colony, insisting on pairing fine cheese with fresh strawberries. How does his refined palate set him apart from his family?<br/><em>★ What is a passion or interest you have that makes you feel different from those around you?</em></li>
+      <li>Chef Auguste Gusteau appears as a helpful figment of Remy&apos;s imagination. How does this inner mentor guide Remy when he feels hopeless in Paris?<br/><em>★ How do mentors : real or remembered : help us stay true to our goals during difficult moments?</em></li>
+      <li>Linguini has zero cooking skills but inherits Gusteau&apos;s restaurant. How does his partnership with Remy under the chef&apos;s hat create chaotic harmony?<br/><em>★ Why do unexpected partnerships between people with different skills often produce great results?</em></li>
+      <li>Colette Tatou is the only female cook in Gusteau&apos;s kitchen, working twice as hard to earn respect. What does her character reveal about perseverance?<br/><em>★ How can standing up for your worth in a competitive environment inspire others?</em></li>
+      <li>Chef Skinner tries to profit off Gusteau&apos;s image by selling frozen microwavable meals. How does his greed contrast with true culinary art?<br/><em>★ What happens to art or food when commercial profit becomes more important than quality?</em></li>
+      <li>Django takes Remy to a pest control shop window filled with dead traps to warn him about humans. How does Remy respond to his father&apos;s fear?<br/><em>★ How should young people balance listening to parental warnings with pursuing their own dreams?</em></li>
+      <li>Linguini gets overwhelmed by sudden fame and temporarily takes credit for Remy&apos;s genius. How does vanity test their friendship?<br/><em>★ What should you do when a friend or colleague takes credit for work you accomplished together?</em></li>
+      <li>When the health inspector arrives, the entire rat colony steps up to wash, cook, and serve food under Remy&apos;s direction. How thrilling is this climax?<br/><em>★ How does seeing a marginalized group unite to achieve something incredible inspire audiences?</em></li>
+      <li>Remy serves Anton Ego a simple peasant dish : ratatouille : instead of an elaborate luxury meal. Why is this choice a brilliant artistic risk?<br/><em>★ Why can simplicity and genuine emotion often impress critics more than complex luxury?</em></li>
+      <li>Anton Ego loses his job and status as a top critic after praising a rat-staffed kitchen, but he becomes a happy investor in La Ratatouille. Is this true success?<br/><em>★ How can letting go of arrogance and status lead to genuine personal happiness?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 4: Let's Speak Together (Group Mode) -->
+  <cosy-slide id="slide-3-group" stage="speak-together" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> collaborative task or visual analysis in pairs/groups.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>In pairs, work together on the following task:</cosy-group-instruction>
+    <cosy-blockquote importance="medium">
+      <p>Collaborative task or visual study.</p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 5: Let's Speak Together (Individual Mode) -->
+  <cosy-slide id="slide-3-ind" stage="speak-together" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> 1-on-1 guided visual description and task response with teacher.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Look at the prompt and discuss your response with your teacher:</cosy-instruction>
+    <cosy-blockquote importance="medium">
+      <p>Collaborative task or visual study.</p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 6: Round 2 Discussion (Group Mode) -->
+  <cosy-slide id="slide-4-group" stage="round-2" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> deeper debate and statement evaluation in pairs/groups.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>In pairs, debate and state whether you agree or disagree with these statements:</cosy-group-instruction>
+    <ol>
+      <li>Director Brad Bird used glowing color bursts and synchronized music to represent flavor combinations on screen. How effective is this visual metaphor?<br/><em>★ How can cinema convey invisible sensory experiences like taste or smell through visual art?</em></li>
+      <li>Pixar animators took cooking classes and studied real rotting produce to render food texture accurately. How does attention to detail elevate animation?<br/><em>★ How does realistic detail in animated food or environments make a movie more immersive?</em></li>
+      <li>Paris is depicted with golden romantic lighting, rainy cobblestone streets, and warm kitchen glow. How does the setting become its own character?<br/><em>★ What movie location or city made you fall in love with its atmosphere just by watching it?</em></li>
+      <li>Anton Ego&apos;s office is shaped like a coffin and his typewriter resembles a skull. How does exaggerated visual design communicate character traits?<br/><em>★ How do set designers use gothic or ominous visual shapes to tell you about a villain&apos;s mindset?</em></li>
+      <li>The flashback scene where young Ego drops his bicycle and receives a bowl of stew from his mother lasts only seconds. Why is it so emotionally powerful?<br/><em>★ What specific food or dish instantly transports you back to a warm childhood memory?</em></li>
+      <li>The film explores the tension between tradition (rigid French recipes) and innovation (Remy&apos;s creative combinations). Where do you stand?<br/><em>★ Is it better to strictly follow established traditions or constantly experiment with new ideas?</em></li>
+      <li>Michael Giacchino&apos;s accordion-driven musical score captures the essence of Parisian bistro culture. How does music set the geographic tone?<br/><em>★ How does a well-crafted musical soundtrack enhance your emotional connection to a country&apos;s culture?</em></li>
+      <li>The ending rejects a traditional Hollywood cliché where Remy magically turns human or wins public fame, keeping him a secret chef. Do you prefer this realism?<br/><em>★ Why is an honest, modest happy ending often more satisfying than an unrealistic grand triumph?</em></li>
+      <li>Anton Ego&apos;s final review concludes: &apos;Not everyone can become a great artist, but a great artist can come from anywhere.&apos; How profound is this thesis?<br/><em>★ What does the phrase &apos;a great artist can come from anywhere&apos; mean to you in modern society?</em></li>
+      <li>If you were hired to cook a single three-course meal that represented your life story and heritage, what dishes would you serve?<br/><em>★ What three dishes would you prepare to introduce someone to your personal background and taste?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 7: Round 2 Discussion (Individual Mode) -->
+  <cosy-slide id="slide-4-ind" stage="round-2" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> deeper debate and statement evaluation with teacher in 1-on-1 format.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Share whether you agree or disagree with these statements and discuss them with your teacher:</cosy-instruction>
+    <ol>
+      <li>Director Brad Bird used glowing color bursts and synchronized music to represent flavor combinations on screen. How effective is this visual metaphor?<br/><em>★ How can cinema convey invisible sensory experiences like taste or smell through visual art?</em></li>
+      <li>Pixar animators took cooking classes and studied real rotting produce to render food texture accurately. How does attention to detail elevate animation?<br/><em>★ How does realistic detail in animated food or environments make a movie more immersive?</em></li>
+      <li>Paris is depicted with golden romantic lighting, rainy cobblestone streets, and warm kitchen glow. How does the setting become its own character?<br/><em>★ What movie location or city made you fall in love with its atmosphere just by watching it?</em></li>
+      <li>Anton Ego&apos;s office is shaped like a coffin and his typewriter resembles a skull. How does exaggerated visual design communicate character traits?<br/><em>★ How do set designers use gothic or ominous visual shapes to tell you about a villain&apos;s mindset?</em></li>
+      <li>The flashback scene where young Ego drops his bicycle and receives a bowl of stew from his mother lasts only seconds. Why is it so emotionally powerful?<br/><em>★ What specific food or dish instantly transports you back to a warm childhood memory?</em></li>
+      <li>The film explores the tension between tradition (rigid French recipes) and innovation (Remy&apos;s creative combinations). Where do you stand?<br/><em>★ Is it better to strictly follow established traditions or constantly experiment with new ideas?</em></li>
+      <li>Michael Giacchino&apos;s accordion-driven musical score captures the essence of Parisian bistro culture. How does music set the geographic tone?<br/><em>★ How does a well-crafted musical soundtrack enhance your emotional connection to a country&apos;s culture?</em></li>
+      <li>The ending rejects a traditional Hollywood cliché where Remy magically turns human or wins public fame, keeping him a secret chef. Do you prefer this realism?<br/><em>★ Why is an honest, modest happy ending often more satisfying than an unrealistic grand triumph?</em></li>
+      <li>Anton Ego&apos;s final review concludes: &apos;Not everyone can become a great artist, but a great artist can come from anywhere.&apos; How profound is this thesis?<br/><em>★ What does the phrase &apos;a great artist can come from anywhere&apos; mean to you in modern society?</em></li>
+      <li>If you were hired to cook a single three-course meal that represented your life story and heritage, what dishes would you serve?<br/><em>★ What three dishes would you prepare to introduce someone to your personal background and taste?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 8: Teacher's Note / Error Correction -->
+  <cosy-slide id="slide-5" stage="error-correction" duration="50" mode="all">
+    <cosy-teacher-notes type="additional">
+      <p><cosy-text type="strong">Teacher&apos;s Linguistic Error Correction Guidance:</cosy-text></p>
+      <ul>
+        <li>Incorrect: I will resign if they skimp always on budget → Correct: I will resign if they always skimp on budget (Frequency adverbs like &apos;always&apos; come before the main verb.)</li>
+        <li>Incorrect: We are living here since two years → Correct: We have been living here for two years (Use present perfect continuous with &apos;for&apos; to express duration.)</li>
+        <li>Incorrect: They don&apos;t allow her leave the house → Correct: They don&apos;t allow her to leave the house (Use &apos;allow someone to do something&apos; construction.)</li>
+      </ul>
+    </cosy-teacher-notes>
+    <cosy-instruction>Reflection &amp; Feedback: Review language highlights and key corrections with your teacher.</cosy-instruction>
+  </cosy-slide>
+</cosy-lesson>

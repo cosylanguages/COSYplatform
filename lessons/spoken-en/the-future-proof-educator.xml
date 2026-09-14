@@ -1,0 +1,167 @@
+<!-- source: https://raw.githubusercontent.com/cosylanguages/COSYevents/main/sessions/debatable-relatable/the-future-proof-educator.html -->
+<cosy-lesson id="the-future-proof-educator" level="C1" language="en" title="The Future-Proof Educator: AI, Critical Thinking &amp; Diversity" default-duration="50" default-mode="all">
+  <!-- SLIDE 1: Warm-up & Vocabulary Review -->
+  <cosy-slide id="slide-1" stage="warm-up" duration="50" mode="all">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> to introduce the topic and clarify key target vocabulary for the session.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Review the key vocabulary for this session below:</cosy-instruction>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">AI Literacy</cosy-text> – the ability to understand, use, and critically evaluate AI technologies.</p>
+      <p><em>Example: Teachers need to develop AI literacy to guide students in the ethical use of large language models.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Differentiated Instruction</cosy-text> – providing different students with different avenues to learning in the same classroom.</p>
+      <p><em>Example: Differentiated instruction is essential when teaching a class with widely varying proficiency levels.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Translanguaging</cosy-text> – multilingual speakers using their languages as an integrated communication system.</p>
+      <p><em>Example: Translanguaging allows students to use their first language to help them understand complex concepts.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Authentic Assessment</cosy-text> – evaluation requiring students to perform real-world tasks demonstrating meaningful application.</p>
+      <p><em>Example: Asking students to write a real letter to a local politician is a form of authentic assessment.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Higher-Order Thinking Skills</cosy-text> – skills such as analysis, evaluation, and creation that go beyond fact recall.</p>
+      <p><em>Example: The lesson was designed to challenge the students&apos; higher-order thinking skills (HOTS).</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Inquiry-Based Learning</cosy-text> – active learning starting with questions or problems rather than facts.</p>
+      <p><em>Example: Inquiry-based learning encourages students to conduct their own research and find solutions.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Classroom Management</cosy-text> – techniques used to keep students organized, focused, and productive.</p>
+      <p><em>Example: Effective classroom management is the key to preventing disruptive behavior in large groups.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Neurodiversity</cosy-text> – the idea that neurological differences are natural variations, not deficits.</p>
+      <p><em>Example: Inclusive education requires an understanding of neurodiversity, such as autism and ADHD.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Growth Mindset</cosy-text> – the belief that abilities and intelligence can be developed through dedication.</p>
+      <p><em>Example: Students with a growth mindset view mistakes as opportunities to learn rather than failures.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Summative Assessment</cosy-text> – assessment focused on the final outcome of a program or unit.</p>
+      <p><em>Example: Final exams are the most common form of summative assessment in traditional schooling.</em></p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 2: Round 1 Discussion (Group Mode) -->
+  <cosy-slide id="slide-2-group" stage="round-1" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> pair/group discussion on core session themes.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>In pairs or small breakout groups, discuss the following questions:</cosy-group-instruction>
+    <ol>
+      <li>A: Prioritizing AI Literacy prepares students for an automated professional landscape. B: Focusing on foundational writing and logic skills builds deep, independent intelligence first.<br/><em>★ Why do you think basic AI Literacy is considered essential for modern students?</em></li>
+      <li>A: Utilizing differentiated instruction ensures that every learner&apos;s unique pace is respected. B: Standardized group lectures build strong collective discipline and shared timelines.<br/><em>★ Have you ever experienced differentiated instruction tailored directly to your personal pace?</em></li>
+      <li>A: Embracing translanguaging allows multilingual students to use their full linguistic repertoire. B: Strict monolingual immersion forces faster adaptation to the target language.<br/><em>★ Does the concept of translanguaging help you feel more comfortable when learning a language?</em></li>
+      <li>A: Implementing authentic assessment measures real-world, practical competence and problem-solving. B: Standardized multiple-choice tests are highly objective, efficient, and easy to grade.<br/><em>★ Do you think a portfolio project is a better authentic assessment than a traditional exam?</em></li>
+      <li>A: Training students in higher-order thinking skills prepares them to solve complex societal issues. B: Memorization of core facts provides the essential raw knowledge needed before analysis can begin.<br/><em>★ How does your school or workplace encourage the use of higher-order thinking skills?</em></li>
+      <li>A: Activating inquiry-based learning sparks natural curiosity by starting lessons with real questions. B: Structured, teacher-led instruction is far more efficient for delivering complex curriculums.<br/><em>★ Do you learn better through independent discovery in inquiry-based learning or direct lectures?</em></li>
+      <li>A: Empathetic classroom management builds a safe, collaborative space for emotional growth. B: Traditional, strict discipline maintains absolute order and minimizes class distractions.<br/><em>★ What is the most important factor in successful classroom management?</em></li>
+      <li>A: Supporting neurodiversity allows unique minds, like ADHD or autistic students, to thrive. B: Designing a standardized curriculum is easier to scale across public school networks.<br/><em>★ How can modern educational systems show greater respect and support for neurodiversity?</em></li>
+      <li>A: Fostering a growth mindset teaches students that intelligence can be developed through effort. B: Recognizing natural talent allows schools to fast-track exceptionally gifted students.<br/><em>★ Has developing a growth mindset helped you overcome obstacles in your life?</em></li>
+      <li>A: Regular feedback without grades lowers stress and helps students focus on actual learning progress. B: Standardized summative assessment provides clear, final qualifications for universities.<br/><em>★ Do you think a final summative assessment is the best way to evaluate a student&apos;s hard work?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 3: Round 1 Discussion (Individual Mode) -->
+  <cosy-slide id="slide-2-ind" stage="round-1" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> 1-on-1 teacher-student discussion on core session themes.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Discuss the following questions with your teacher:</cosy-instruction>
+    <ol>
+      <li>A: Prioritizing AI Literacy prepares students for an automated professional landscape. B: Focusing on foundational writing and logic skills builds deep, independent intelligence first.<br/><em>★ Why do you think basic AI Literacy is considered essential for modern students?</em></li>
+      <li>A: Utilizing differentiated instruction ensures that every learner&apos;s unique pace is respected. B: Standardized group lectures build strong collective discipline and shared timelines.<br/><em>★ Have you ever experienced differentiated instruction tailored directly to your personal pace?</em></li>
+      <li>A: Embracing translanguaging allows multilingual students to use their full linguistic repertoire. B: Strict monolingual immersion forces faster adaptation to the target language.<br/><em>★ Does the concept of translanguaging help you feel more comfortable when learning a language?</em></li>
+      <li>A: Implementing authentic assessment measures real-world, practical competence and problem-solving. B: Standardized multiple-choice tests are highly objective, efficient, and easy to grade.<br/><em>★ Do you think a portfolio project is a better authentic assessment than a traditional exam?</em></li>
+      <li>A: Training students in higher-order thinking skills prepares them to solve complex societal issues. B: Memorization of core facts provides the essential raw knowledge needed before analysis can begin.<br/><em>★ How does your school or workplace encourage the use of higher-order thinking skills?</em></li>
+      <li>A: Activating inquiry-based learning sparks natural curiosity by starting lessons with real questions. B: Structured, teacher-led instruction is far more efficient for delivering complex curriculums.<br/><em>★ Do you learn better through independent discovery in inquiry-based learning or direct lectures?</em></li>
+      <li>A: Empathetic classroom management builds a safe, collaborative space for emotional growth. B: Traditional, strict discipline maintains absolute order and minimizes class distractions.<br/><em>★ What is the most important factor in successful classroom management?</em></li>
+      <li>A: Supporting neurodiversity allows unique minds, like ADHD or autistic students, to thrive. B: Designing a standardized curriculum is easier to scale across public school networks.<br/><em>★ How can modern educational systems show greater respect and support for neurodiversity?</em></li>
+      <li>A: Fostering a growth mindset teaches students that intelligence can be developed through effort. B: Recognizing natural talent allows schools to fast-track exceptionally gifted students.<br/><em>★ Has developing a growth mindset helped you overcome obstacles in your life?</em></li>
+      <li>A: Regular feedback without grades lowers stress and helps students focus on actual learning progress. B: Standardized summative assessment provides clear, final qualifications for universities.<br/><em>★ Do you think a final summative assessment is the best way to evaluate a student&apos;s hard work?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 4: Let's Speak Together (Group Mode) -->
+  <cosy-slide id="slide-3-group" stage="speak-together" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> collaborative task or visual analysis in pairs/groups.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>In pairs, work together on the following task:</cosy-group-instruction>
+    <cosy-blockquote importance="medium">
+      <p>Brainstorm: Design a language task that is impossible for an AI to complete successfully without human intervention.</p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 5: Let's Speak Together (Individual Mode) -->
+  <cosy-slide id="slide-3-ind" stage="speak-together" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> 1-on-1 guided visual description and task response with teacher.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Look at the prompt and discuss your response with your teacher:</cosy-instruction>
+    <cosy-blockquote importance="medium">
+      <p>Brainstorm: Design a language task that is impossible for an AI to complete successfully without human intervention.</p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 6: Round 2 Discussion (Group Mode) -->
+  <cosy-slide id="slide-4-group" stage="round-2" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> deeper debate and statement evaluation in pairs/groups.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>In pairs, debate and state whether you agree or disagree with these statements:</cosy-group-instruction>
+    <ol>
+      <li>A: Over-focusing on AI Literacy might cause a decay in human critical writing and math skills. B: Banning AI entirely ignores modern industrial realities, leaving students without basic AI Literacy.<br/><em>★ Are you worried that a lack of AI Literacy will make human workers obsolete?</em></li>
+      <li>A: Designing complete differentiated instruction for large classes is exhausting for teachers. B: Standardized group models completely ignore slower learners, leading to high dropout rates.<br/><em>★ What are the main challenges of implementing differentiated instruction in public schools?</em></li>
+      <li>A: Too much translanguaging might delay the development of advanced fluency in the target language. B: Strict monolingual rules can trigger severe anxiety, locking out bilingual students from translanguaging.<br/><em>★ Have you ever felt frustrated in a class that strictly banned all forms of translanguaging?</em></li>
+      <li>A: Designing a custom authentic assessment is highly subjective and difficult to standardize. B: Relying only on multiple-choice exams fails to measure real-world skills, making it a poor assessment.<br/><em>★ Why do you think some universities resist moving away from final exams to authentic assessment?</em></li>
+      <li>A: Pushing higher-order thinking skills without teaching basic facts first results in superficial arguments. B: Focus on rote memorization completely kills a student&apos;s capacity for higher-order thinking skills.<br/><em>★ Have you ever encountered an educational model that ignored all higher-order thinking skills?</em></li>
+      <li>A: Pure inquiry-based learning can leave unstructured students confused and lost. B: Passive lectures without inquiry-based learning result in disengaged, bored students.<br/><em>★ What is the primary disadvantage of relying solely on inquiry-based learning?</em></li>
+      <li>A: Overly soft classroom management can lead to chaotic classrooms and lost teaching time. B: Dictatorial classroom management breeds resentment and fear instead of respect.<br/><em>★ Have you ever been in a class where weak classroom management ruined the lesson?</em></li>
+      <li>A: Schools might struggle to support extreme cases of neurodiversity without specialized funding. B: Standardized educational systems often pathologize natural neurodiversity, harming students&apos; self-esteem.<br/><em>★ How can standard schools adapt to better accommodate neurodiversity?</em></li>
+      <li>A: An obsession with a growth mindset can ignore genuine, natural limits of individual talent. B: A fixed mindset convinces struggling students that they are naturally stupid, blocking any growth mindset.<br/><em>★ What are the risks of using praise that contradicts a real growth mindset?</em></li>
+      <li>A: Continuous evaluation is exhausting, and final summative assessment remains a necessary benchmark. B: High-stakes final summative assessment measures exam-taking stress rather than long-term knowledge.<br/><em>★ Does preparing for a major summative assessment cause you severe anxiety?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 7: Round 2 Discussion (Individual Mode) -->
+  <cosy-slide id="slide-4-ind" stage="round-2" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> deeper debate and statement evaluation with teacher in 1-on-1 format.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Share whether you agree or disagree with these statements and discuss them with your teacher:</cosy-instruction>
+    <ol>
+      <li>A: Over-focusing on AI Literacy might cause a decay in human critical writing and math skills. B: Banning AI entirely ignores modern industrial realities, leaving students without basic AI Literacy.<br/><em>★ Are you worried that a lack of AI Literacy will make human workers obsolete?</em></li>
+      <li>A: Designing complete differentiated instruction for large classes is exhausting for teachers. B: Standardized group models completely ignore slower learners, leading to high dropout rates.<br/><em>★ What are the main challenges of implementing differentiated instruction in public schools?</em></li>
+      <li>A: Too much translanguaging might delay the development of advanced fluency in the target language. B: Strict monolingual rules can trigger severe anxiety, locking out bilingual students from translanguaging.<br/><em>★ Have you ever felt frustrated in a class that strictly banned all forms of translanguaging?</em></li>
+      <li>A: Designing a custom authentic assessment is highly subjective and difficult to standardize. B: Relying only on multiple-choice exams fails to measure real-world skills, making it a poor assessment.<br/><em>★ Why do you think some universities resist moving away from final exams to authentic assessment?</em></li>
+      <li>A: Pushing higher-order thinking skills without teaching basic facts first results in superficial arguments. B: Focus on rote memorization completely kills a student&apos;s capacity for higher-order thinking skills.<br/><em>★ Have you ever encountered an educational model that ignored all higher-order thinking skills?</em></li>
+      <li>A: Pure inquiry-based learning can leave unstructured students confused and lost. B: Passive lectures without inquiry-based learning result in disengaged, bored students.<br/><em>★ What is the primary disadvantage of relying solely on inquiry-based learning?</em></li>
+      <li>A: Overly soft classroom management can lead to chaotic classrooms and lost teaching time. B: Dictatorial classroom management breeds resentment and fear instead of respect.<br/><em>★ Have you ever been in a class where weak classroom management ruined the lesson?</em></li>
+      <li>A: Schools might struggle to support extreme cases of neurodiversity without specialized funding. B: Standardized educational systems often pathologize natural neurodiversity, harming students&apos; self-esteem.<br/><em>★ How can standard schools adapt to better accommodate neurodiversity?</em></li>
+      <li>A: An obsession with a growth mindset can ignore genuine, natural limits of individual talent. B: A fixed mindset convinces struggling students that they are naturally stupid, blocking any growth mindset.<br/><em>★ What are the risks of using praise that contradicts a real growth mindset?</em></li>
+      <li>A: Continuous evaluation is exhausting, and final summative assessment remains a necessary benchmark. B: High-stakes final summative assessment measures exam-taking stress rather than long-term knowledge.<br/><em>★ Does preparing for a major summative assessment cause you severe anxiety?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 8: Teacher's Note / Error Correction -->
+  <cosy-slide id="slide-5" stage="error-correction" duration="50" mode="all">
+    <cosy-teacher-notes type="additional">
+      <p><cosy-text type="strong">Teacher&apos;s Linguistic Error Correction Guidance:</cosy-text></p>
+      <ul>
+        <li>Incorrect: It depends of the student → Correct: It depends on the student ((Collocation: depend + on))</li>
+        <li>Incorrect: The AI can makes mistakes → Correct: AI can make mistakes ((Modal verbs + bare infinitive))</li>
+        <li>Incorrect: I suggest the teacher to use more AI → Correct: I suggest that the teacher should use / use more AI ((The verb &apos;suggest&apos; cannot be followed by an object pronoun + to-infinitive; it requires a that-clause or gerund))</li>
+        <li>Incorrect: Our school curriculum is very ancient → Correct: Our school curriculum is very outdated / archaic ((Use &apos;outdated&apos; or &apos;archaic&apos; to describe old methods/curricula, as &apos;ancient&apos; refers to historical periods like Ancient Rome))</li>
+        <li>Incorrect: The students did a big progress today → Correct: The students made great progress today ((Progress is an uncountable noun and collocates with the verb &apos;make&apos;, not &apos;do&apos;))</li>
+      </ul>
+    </cosy-teacher-notes>
+    <cosy-instruction>Reflection &amp; Feedback: Review language highlights and key corrections with your teacher.</cosy-instruction>
+  </cosy-slide>
+</cosy-lesson>

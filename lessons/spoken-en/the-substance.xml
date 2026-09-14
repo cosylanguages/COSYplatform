@@ -1,0 +1,167 @@
+<!-- source: https://raw.githubusercontent.com/cosylanguages/COSYevents/main/sessions/cinema-club/the-substance.html -->
+<cosy-lesson id="the-substance" level="B1" language="en" title="The Substance" default-duration="50" default-mode="all" cinema="true">
+  <!-- SLIDE 1: Warm-up & Vocabulary Review -->
+  <cosy-slide id="slide-1" stage="warm-up" duration="50" mode="all">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> to introduce the topic and clarify key target vocabulary for the session.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Review the key vocabulary for this session below:</cosy-instruction>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">hollywood ageism</cosy-text> – discrimination and systemic prejudice against aging performers, particularly women, in the entertainment industry.</p>
+      <p><em>Example: Elisabeth Sparkle is fired from her fitness television show on her 50th birthday due to blatant Hollywood ageism.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">cellular replication</cosy-text> – the biological process by which a cell divides and creates an exact genetic duplicate.</p>
+      <p><em>Example: The black-market medical treatment triggers cellular replication, creating a younger, firmer alter ego named Sue.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">extreme aesthetic obsession</cosy-text> – a dangerous fixation on maintaining youthful physical appearance at any cost.</p>
+      <p><em>Example: Elisabeth&apos;s extreme aesthetic obsession leads her to ignore medical warnings and abuse the stabilizing serum.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">media exploitation</cosy-text> – the predatory practice of using performers for commercial profit and discarding them when they age.</p>
+      <p><em>Example: Network executive Harvey embodies media exploitation, viewing female talent purely as disposable eye candy.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">dual identity</cosy-text> – the condition of existing as two separate personas or physical bodies with shared consciousness or consequences.</p>
+      <p><em>Example: Elisabeth struggles with her dual identity, growing envious of Sue as Sue drains her original body&apos;s vitality.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">the substance</cosy-text> – (title term / sci-fi jargon) an illicit, black-market cellular serum that generates a younger, &quot;improved&quot; version of oneself.</p>
+      <p><em>Example: A mysterious doctor delivers &quot;The Substance&quot; kit to Elisabeth, promising it will unlock a younger, flawless self.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">you are one</cosy-text> – (core medical warning quote) the fundamental rule reminding the user that the original body and clone share one consciousness.</p>
+      <p><em>Example: The instruction manual repeatedly warns &quot;Remember, you are one&quot; to emphasize that harming one body damages the other.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">7-day switch</cosy-text> – (strict procedural rule) the non-negotiable rule requiring a body swap every seven days without exception.</p>
+      <p><em>Example: Sue violates the 7-day switch rule to stay young longer, causing Elisabeth&apos;s original body to decay rapidly.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">stabilizer</cosy-text> – (sci-fi term) a specialized fluid extracted daily from the original body to keep the younger clone alive.</p>
+      <p><em>Example: Sue must extract spinal stabilizer fluid from Elisabeth every single day to prevent her own body from breaking down.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">matrix</cosy-text> – (sci-fi term) the original host body that gives birth to and nourishes the new clone.</p>
+      <p><em>Example: The instructional voice-over refers to Elisabeth&apos;s original 50-year-old body as &quot;the matrix&quot; during the division process.</em></p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 2: Round 1 Discussion (Group Mode) -->
+  <cosy-slide id="slide-2-group" stage="round-1" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> pair/group discussion on core session themes.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>In pairs or small breakout groups, discuss the following questions:</cosy-group-instruction>
+    <ol>
+      <li>When fitness icon Elisabeth Sparkle turns 50, network executive Harvey fires her due to rampant hollywood ageism. How does the media industry push older women out of the spotlight?<br/><em>★ How can society combat double standards regarding age and appearance in television and media?</em></li>
+      <li>In desperation, Elisabeth orders an illicit medical kit that promises cellular replication, giving birth to a younger, firmer alter ego named Sue. What are the horrifying physical costs of this process?<br/><em>★ Why are people willing to take extreme physical or health risks to retain youth and beauty?</em></li>
+      <li>Elisabeth&apos;s extreme aesthetic obsession drives her to ignore safety warnings as Sue demands more time in the spotlight. How does her vanity feed her self-destruction?<br/><em>★ What happens when a person&apos;s self-worth becomes entirely dependent on public validation and physical looks?</em></li>
+      <li>Network executives embrace Sue immediately, demonstrating ruthless media exploitation by airing her provocative dance show. How does the camera style satirize the male gaze?<br/><em>★ How does satire in body horror movies expose real-world industry exploitation?</em></li>
+      <li>Sharing one consciousness across two bodies creates a fractured dual identity where Elisabeth hates Sue and Sue despises Elisabeth. Why can&apos;t the two halves co-exist peacefully?<br/><em>★ Have you ever felt an internal conflict where two different desires inside you fought for control?</em></li>
+      <li>A mysterious contact delivers &apos;the substance&apos; in a clinical yellow box with strict instructions. How does the cold, bureaucratic delivery of the kit heighten the eerie atmosphere?<br/><em>★ Why do clinical, sterile environments in horror movies often feel more creepy than dark dungeons?</em></li>
+      <li>The instruction manual repeatedly insists &apos;you are one&apos;, reminding the user that Sue and Elisabeth are the exact same person. Why does Sue treat Elisabeth as a separate, annoying burden?<br/><em>★ Why do people sometimes distance themselves from their past selves or older relatives?</em></li>
+      <li>The process mandates a strict 7-day switch between bodies with zero exceptions. What terrifying physical decay occurs when Sue overstays her time limit to party in Hollywood?<br/><em>★ How does breaking strict rules in sci-fi/horror stories serve as a metaphor for human greed?</em></li>
+      <li>Sue must extract daily spinal stabilizer fluid from Elisabeth&apos;s unconscious body to maintain her fresh skin. How does this parasitic relationship symbolize self-cannibalization (e.g., examining light, framing, or pacing choices)?<br/><em>★ How do toxic habits drain our vitality while giving us temporary pleasure or success?</em></li>
+      <li>Elisabeth&apos;s original body is referred to as the matrix during the division procedure. As her matrix body deteriorates into a withered husk, what choice does she have left?<br/><em>★ What message does the movie deliver about the tragedy of sacrificing your core self for a temporary illusion?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 3: Round 1 Discussion (Individual Mode) -->
+  <cosy-slide id="slide-2-ind" stage="round-1" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> 1-on-1 teacher-student discussion on core session themes.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Discuss the following questions with your teacher:</cosy-instruction>
+    <ol>
+      <li>When fitness icon Elisabeth Sparkle turns 50, network executive Harvey fires her due to rampant hollywood ageism. How does the media industry push older women out of the spotlight?<br/><em>★ How can society combat double standards regarding age and appearance in television and media?</em></li>
+      <li>In desperation, Elisabeth orders an illicit medical kit that promises cellular replication, giving birth to a younger, firmer alter ego named Sue. What are the horrifying physical costs of this process?<br/><em>★ Why are people willing to take extreme physical or health risks to retain youth and beauty?</em></li>
+      <li>Elisabeth&apos;s extreme aesthetic obsession drives her to ignore safety warnings as Sue demands more time in the spotlight. How does her vanity feed her self-destruction?<br/><em>★ What happens when a person&apos;s self-worth becomes entirely dependent on public validation and physical looks?</em></li>
+      <li>Network executives embrace Sue immediately, demonstrating ruthless media exploitation by airing her provocative dance show. How does the camera style satirize the male gaze?<br/><em>★ How does satire in body horror movies expose real-world industry exploitation?</em></li>
+      <li>Sharing one consciousness across two bodies creates a fractured dual identity where Elisabeth hates Sue and Sue despises Elisabeth. Why can&apos;t the two halves co-exist peacefully?<br/><em>★ Have you ever felt an internal conflict where two different desires inside you fought for control?</em></li>
+      <li>A mysterious contact delivers &apos;the substance&apos; in a clinical yellow box with strict instructions. How does the cold, bureaucratic delivery of the kit heighten the eerie atmosphere?<br/><em>★ Why do clinical, sterile environments in horror movies often feel more creepy than dark dungeons?</em></li>
+      <li>The instruction manual repeatedly insists &apos;you are one&apos;, reminding the user that Sue and Elisabeth are the exact same person. Why does Sue treat Elisabeth as a separate, annoying burden?<br/><em>★ Why do people sometimes distance themselves from their past selves or older relatives?</em></li>
+      <li>The process mandates a strict 7-day switch between bodies with zero exceptions. What terrifying physical decay occurs when Sue overstays her time limit to party in Hollywood?<br/><em>★ How does breaking strict rules in sci-fi/horror stories serve as a metaphor for human greed?</em></li>
+      <li>Sue must extract daily spinal stabilizer fluid from Elisabeth&apos;s unconscious body to maintain her fresh skin. How does this parasitic relationship symbolize self-cannibalization (e.g., examining light, framing, or pacing choices)?<br/><em>★ How do toxic habits drain our vitality while giving us temporary pleasure or success?</em></li>
+      <li>Elisabeth&apos;s original body is referred to as the matrix during the division procedure. As her matrix body deteriorates into a withered husk, what choice does she have left?<br/><em>★ What message does the movie deliver about the tragedy of sacrificing your core self for a temporary illusion?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 4: Let's Speak Together (Group Mode) -->
+  <cosy-slide id="slide-3-group" stage="speak-together" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> collaborative task or visual analysis in pairs/groups.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>In pairs, work together on the following task:</cosy-group-instruction>
+    <cosy-blockquote importance="medium">
+      <p>Compare the adaptation differences and visual contrasts in this film.
+- Original Screenplay &amp; Directorial Vision• Written and directed by French filmmaker Coralie Fargeat, winning Best Screenplay at the 2024 Cannes Film Festival.• The script relies on minimal dialogue, using physical performance, body movement, and sound design to carry the narrative. Visual Directing &amp; Auditory Design• Wide-angle fisheye lenses distort corporate executives&apos; faces, emphasizing their grotesque, predatory nature.• Bright yellow raincoats, stark white bathroom tiles, and blood-red carpets create a high-contrast aesthetic reminiscent of Stanley Kubrick.</p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 5: Let's Speak Together (Individual Mode) -->
+  <cosy-slide id="slide-3-ind" stage="speak-together" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> 1-on-1 guided visual description and task response with teacher.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Look at the prompt and discuss your response with your teacher:</cosy-instruction>
+    <cosy-blockquote importance="medium">
+      <p>Compare the adaptation differences and visual contrasts in this film.
+- Original Screenplay &amp; Directorial Vision• Written and directed by French filmmaker Coralie Fargeat, winning Best Screenplay at the 2024 Cannes Film Festival.• The script relies on minimal dialogue, using physical performance, body movement, and sound design to carry the narrative. Visual Directing &amp; Auditory Design• Wide-angle fisheye lenses distort corporate executives&apos; faces, emphasizing their grotesque, predatory nature.• Bright yellow raincoats, stark white bathroom tiles, and blood-red carpets create a high-contrast aesthetic reminiscent of Stanley Kubrick.</p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 6: Round 2 Discussion (Group Mode) -->
+  <cosy-slide id="slide-4-group" stage="round-2" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> deeper debate and statement evaluation in pairs/groups.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>In pairs, debate and state whether you agree or disagree with these statements:</cosy-group-instruction>
+    <ol>
+      <li>Director Coralie Fargeat uses visceral body horror, extreme close-ups, and amplified sound design to critique beauty standards. How does her extreme visual style make audiences feel the horror physically?<br/><em>★ How do visceral physical reactions to cinema make a film&apos;s political or social message unforgettable?</em></li>
+      <li>Demi Moore delivers a fearless performance as Elisabeth Sparkle, exposing her own body and vulnerable emotions. How does her real history as a Hollywood icon add meta-textual depth to the role?<br/><em>★ How does casting an actor with a iconic real-world career enhance a movie&apos;s thematic message?</em></li>
+      <li>Margaret Qualley plays Sue with manic, infectious energy that gradually turns monstrous. How does she convey the arrogance of youth without losing the audience completely?<br/><em>★ What makes a character who is selfish and arrogant still mesmerizing to watch on screen?</em></li>
+      <li>The production design features bright primary colors-screaming yellow coats, stark white corridors, deep red carpets. How does this vibrant palette depart from traditional dark horror lighting?<br/><em>★ Why can bright, saturated lighting in horror movies be just as unsettling as dark shadows?</em></li>
+      <li>Amplified audio design turns everyday sounds-chewing shrimp, cracking eggs, sloshing liquid-into sickening soundscapes. How does auditory exaggeration heighten squamish discomfort?<br/><em>★ Which sensory element in horror films-sound effects, music, or visuals-triggers the strongest reaction in you?</em></li>
+      <li>Harvey, the TV executive played by Dennis Quaid, is named after Harvey Weinstein and portrayed with grotesque comedic exaggeration. How does his character embody corporate sleaze?<br/><em>★ How can comedic satire in horror movies effectively expose real-world systemic corruption?</em></li>
+      <li>The monstrous third-act creature, &apos;Elisasue&apos;, attempts to attend the New Year&apos;s Eve broadcast in a gown and a paper mask. How does this climax combine horrific body mutation with tragic dark comedy?<br/><em>★ Do you find cinematic climaxes that push body horror to extreme absurdity effective or distracting?</em></li>
+      <li>The final image of Elisabeth&apos;s face melting on her star on the Hollywood Walk of Fame brings her story full circle. What does this closing shot say about the fleeting nature of fame?<br/><em>★ What makes an ending image linger in your mind long after the credits roll?</em></li>
+      <li>How does The Substance compare to classic transformation stories like David Cronenberg&apos;s The Fly or Oscar Wilde&apos;s The Picture of Dorian Gray?<br/><em>★ Why does humanity remain permanently obsessed with stories about artificial youth and bodily transformation?</em></li>
+      <li>If you were pitching The Substance to a film studio, how would you explain why its extreme gore is essential to its feminist message about body autonomy?<br/><em>★ Can extreme violence and body horror in cinema serve a noble, artistic purpose?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 7: Round 2 Discussion (Individual Mode) -->
+  <cosy-slide id="slide-4-ind" stage="round-2" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> deeper debate and statement evaluation with teacher in 1-on-1 format.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Share whether you agree or disagree with these statements and discuss them with your teacher:</cosy-instruction>
+    <ol>
+      <li>Director Coralie Fargeat uses visceral body horror, extreme close-ups, and amplified sound design to critique beauty standards. How does her extreme visual style make audiences feel the horror physically?<br/><em>★ How do visceral physical reactions to cinema make a film&apos;s political or social message unforgettable?</em></li>
+      <li>Demi Moore delivers a fearless performance as Elisabeth Sparkle, exposing her own body and vulnerable emotions. How does her real history as a Hollywood icon add meta-textual depth to the role?<br/><em>★ How does casting an actor with a iconic real-world career enhance a movie&apos;s thematic message?</em></li>
+      <li>Margaret Qualley plays Sue with manic, infectious energy that gradually turns monstrous. How does she convey the arrogance of youth without losing the audience completely?<br/><em>★ What makes a character who is selfish and arrogant still mesmerizing to watch on screen?</em></li>
+      <li>The production design features bright primary colors-screaming yellow coats, stark white corridors, deep red carpets. How does this vibrant palette depart from traditional dark horror lighting?<br/><em>★ Why can bright, saturated lighting in horror movies be just as unsettling as dark shadows?</em></li>
+      <li>Amplified audio design turns everyday sounds-chewing shrimp, cracking eggs, sloshing liquid-into sickening soundscapes. How does auditory exaggeration heighten squamish discomfort?<br/><em>★ Which sensory element in horror films-sound effects, music, or visuals-triggers the strongest reaction in you?</em></li>
+      <li>Harvey, the TV executive played by Dennis Quaid, is named after Harvey Weinstein and portrayed with grotesque comedic exaggeration. How does his character embody corporate sleaze?<br/><em>★ How can comedic satire in horror movies effectively expose real-world systemic corruption?</em></li>
+      <li>The monstrous third-act creature, &apos;Elisasue&apos;, attempts to attend the New Year&apos;s Eve broadcast in a gown and a paper mask. How does this climax combine horrific body mutation with tragic dark comedy?<br/><em>★ Do you find cinematic climaxes that push body horror to extreme absurdity effective or distracting?</em></li>
+      <li>The final image of Elisabeth&apos;s face melting on her star on the Hollywood Walk of Fame brings her story full circle. What does this closing shot say about the fleeting nature of fame?<br/><em>★ What makes an ending image linger in your mind long after the credits roll?</em></li>
+      <li>How does The Substance compare to classic transformation stories like David Cronenberg&apos;s The Fly or Oscar Wilde&apos;s The Picture of Dorian Gray?<br/><em>★ Why does humanity remain permanently obsessed with stories about artificial youth and bodily transformation?</em></li>
+      <li>If you were pitching The Substance to a film studio, how would you explain why its extreme gore is essential to its feminist message about body autonomy?<br/><em>★ Can extreme violence and body horror in cinema serve a noble, artistic purpose?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 8: Teacher's Note / Error Correction -->
+  <cosy-slide id="slide-5" stage="error-correction" duration="50" mode="all">
+    <cosy-teacher-notes type="additional">
+      <p><cosy-text type="strong">Teacher&apos;s Linguistic Error Correction Guidance:</cosy-text></p>
+      <ul>
+        <li>Incorrect: I recommend you to see this film → Correct: I recommend that you see this film (Use &apos;recommend that + subjunctive/bare infinitive&apos; or &apos;recommend doing&apos;.)</li>
+        <li>Incorrect: The reason is because she was afraid → Correct: The reason is that she was afraid (Avoid &apos;the reason is because&apos;; use &apos;the reason is that&apos; for formal/style clarity.)</li>
+        <li>Incorrect: Seldom I have seen such an ending → Correct: Seldom have I seen such an ending (Negative adverbs like &apos;seldom&apos; at the beginning of a clause trigger subject-auxiliary inversion.)</li>
+      </ul>
+    </cosy-teacher-notes>
+    <cosy-instruction>Reflection &amp; Feedback: Review language highlights and key corrections with your teacher.</cosy-instruction>
+  </cosy-slide>
+</cosy-lesson>

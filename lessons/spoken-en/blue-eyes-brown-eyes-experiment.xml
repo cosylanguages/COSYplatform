@@ -1,0 +1,165 @@
+<!-- source: https://raw.githubusercontent.com/cosylanguages/COSYevents/main/sessions/mind-matters/blue-eyes-brown-eyes-experiment.html -->
+<cosy-lesson id="blue-eyes-brown-eyes-experiment" level="C1" language="en" title="The Blue Eyes - Brown Eyes Experiment" default-duration="50" default-mode="all">
+  <!-- SLIDE 1: Warm-up & Vocabulary Review -->
+  <cosy-slide id="slide-1" stage="warm-up" duration="50" mode="all">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> to introduce the topic and clarify key target vocabulary for the session.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Review the key vocabulary for this session below:</cosy-instruction>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Discrimination</cosy-text> – the prejudicial treatment of different categories of people based on arbitrary social markers.</p>
+      <p><em>Example: Jane Elliott&apos;s simulation illustrated how rapidly discrimination can be manufactured and normalized.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Privilege</cosy-text> – a special right, advantage, or immunity granted only to a particular favored group.</p>
+      <p><em>Example: The favored group enjoyed the privilege of extra recess time, which altered their self-concept.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Superiority</cosy-text> – the psychological belief or attitude of being higher in status, intellect, or value than others.</p>
+      <p><em>Example: Arbitrary praise from authority figures instantly triggered a sense of hostile superiority in the children.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Inferiority</cosy-text> – the state of feeling lower in status, capability, or cognitive worth than another.</p>
+      <p><em>Example: The stigmatized students suffered from a temporary, performance-disrupting feeling of inferiority.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">In-group favoritism</cosy-text> – the evolutionary tendency to show preference and warmth to members of one&apos;s own identified group.</p>
+      <p><em>Example: In-group favoritism is a survival shortcut that can be easily manipulated by toxic political narratives.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Out-group derogation</cosy-text> – the cognitive act of painting those outside one&apos;s group as hostile, inferior, or untrustworthy.</p>
+      <p><em>Example: The media often relies on out-group derogation to unite fragmented populaces behind a single banner.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Internalize</cosy-text> – to make an external attitude, bias, or social conditioning a core part of one&apos;s subconscious nature.</p>
+      <p><em>Example: Children quickly internalize the subtle prejudices and stereotypes expressed by adult role models.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Pygmalion effect</cosy-text> – the psychological phenomenon where high expectations lead to improved performance, and low expectations lead to worse.</p>
+      <p><em>Example: The drop in test scores among the unfavored students was a direct manifestation of the Pygmalion effect.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Empathy</cosy-text> – the capacity to understand, share, and cognitively step into the emotional state of another.</p>
+      <p><em>Example: By experiencing simulated prejudice, participants built a deep, visceral empathy for marginalized groups.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Conditioning</cosy-text> – the process of training or accustoming a human system to behave in a predetermined, automated way.</p>
+      <p><em>Example: Dismantling our cultural conditioning requires constant, conscious effort and cognitive audit.</em></p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 2: Round 1 Discussion (Group Mode) -->
+  <cosy-slide id="slide-2-group" stage="round-1" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> pair/group discussion on core session themes.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>In pairs or small breakout groups, discuss the following questions:</cosy-group-instruction>
+    <ol>
+      <li>How does systemic Discrimination immediately disrupt an individual&apos;s intellectual and cognitive performance?<br/><em>★ Have you ever noticed yourself making a snap judgment about a stranger based on their appearance?</em></li>
+      <li>Why is recognizing our own systemic Privilege so emotionally uncomfortable and defensive for the ego?<br/><em>★ What is one privilege in your life that you have had to consciously acknowledge and appreciate?</em></li>
+      <li>How do authority figures utilize manufactured narratives of Superiority to enforce group compliance?<br/><em>★ How do you typically react when a professional colleague acts with an arrogant sense of superiority?</em></li>
+      <li>What strategies can we use to protect our self-worth from a socially imposed feeling of Inferiority ?<br/><em>★ Have you ever felt unqualified or out of place at a high-stakes professional summit?</em></li>
+      <li>Why does In-group favoritism trigger a rapid decline in our capacity for objective, fair judgment?<br/><em>★ Do you feel a strong sense of loyalty to a local club, sports team, or professional network?</em></li>
+      <li>In what ways do modern media platforms exploit Out-group derogation to maximize user engagement?<br/><em>★ How do you maintain critical thinking when your social circle is criticizing an external group?</em></li>
+      <li>How do we deprogram the toxic biases and prejudices we did Internalize during childhood?<br/><em>★ What is one deep-seated belief from your upbringing that you have had to actively unlearn as an adult?</em></li>
+      <li>How does the Pygmalion effect explain why some students thrive under praise while others collapse under doubt?<br/><em>★ Has a supervisor&apos;s high expectation ever motivated you to achieve an impossible goal?</em></li>
+      <li>Why is raw, emotional Empathy far more difficult to cultivate than simple, polite intellectual sympathy?<br/><em>★ When was the last time you felt a profound wave of empathy for a complete stranger&apos;s struggle?</em></li>
+      <li>How can we identify our subtle social Conditioning before it dictates our daily interactions?<br/><em>★ What is one habit or custom of your culture that you only realized was bizarre after traveling abroad?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 3: Round 1 Discussion (Individual Mode) -->
+  <cosy-slide id="slide-2-ind" stage="round-1" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> 1-on-1 teacher-student discussion on core session themes.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Discuss the following questions with your teacher:</cosy-instruction>
+    <ol>
+      <li>How does systemic Discrimination immediately disrupt an individual&apos;s intellectual and cognitive performance?<br/><em>★ Have you ever noticed yourself making a snap judgment about a stranger based on their appearance?</em></li>
+      <li>Why is recognizing our own systemic Privilege so emotionally uncomfortable and defensive for the ego?<br/><em>★ What is one privilege in your life that you have had to consciously acknowledge and appreciate?</em></li>
+      <li>How do authority figures utilize manufactured narratives of Superiority to enforce group compliance?<br/><em>★ How do you typically react when a professional colleague acts with an arrogant sense of superiority?</em></li>
+      <li>What strategies can we use to protect our self-worth from a socially imposed feeling of Inferiority ?<br/><em>★ Have you ever felt unqualified or out of place at a high-stakes professional summit?</em></li>
+      <li>Why does In-group favoritism trigger a rapid decline in our capacity for objective, fair judgment?<br/><em>★ Do you feel a strong sense of loyalty to a local club, sports team, or professional network?</em></li>
+      <li>In what ways do modern media platforms exploit Out-group derogation to maximize user engagement?<br/><em>★ How do you maintain critical thinking when your social circle is criticizing an external group?</em></li>
+      <li>How do we deprogram the toxic biases and prejudices we did Internalize during childhood?<br/><em>★ What is one deep-seated belief from your upbringing that you have had to actively unlearn as an adult?</em></li>
+      <li>How does the Pygmalion effect explain why some students thrive under praise while others collapse under doubt?<br/><em>★ Has a supervisor&apos;s high expectation ever motivated you to achieve an impossible goal?</em></li>
+      <li>Why is raw, emotional Empathy far more difficult to cultivate than simple, polite intellectual sympathy?<br/><em>★ When was the last time you felt a profound wave of empathy for a complete stranger&apos;s struggle?</em></li>
+      <li>How can we identify our subtle social Conditioning before it dictates our daily interactions?<br/><em>★ What is one habit or custom of your culture that you only realized was bizarre after traveling abroad?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 4: Let's Speak Together (Group Mode) -->
+  <cosy-slide id="slide-3-group" stage="speak-together" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> collaborative task or visual analysis in pairs/groups.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>In pairs, work together on the following task:</cosy-group-instruction>
+    <cosy-blockquote importance="medium">
+      <p>The Diversity Dialogue: Imagine you are a corporate consultant addressing a board of directors about hidden structural prejudices. Deliver a speech advocating for reform, utilizing at least one second conditional, one third conditional, and one mixed conditional.</p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 5: Let's Speak Together (Individual Mode) -->
+  <cosy-slide id="slide-3-ind" stage="speak-together" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> 1-on-1 guided visual description and task response with teacher.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Look at the prompt and discuss your response with your teacher:</cosy-instruction>
+    <cosy-blockquote importance="medium">
+      <p>The Diversity Dialogue: Imagine you are a corporate consultant addressing a board of directors about hidden structural prejudices. Deliver a speech advocating for reform, utilizing at least one second conditional, one third conditional, and one mixed conditional.</p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 6: Round 2 Discussion (Group Mode) -->
+  <cosy-slide id="slide-4-group" stage="round-2" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> deeper debate and statement evaluation in pairs/groups.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>In pairs, debate and state whether you agree or disagree with these statements:</cosy-group-instruction>
+    <ol>
+      <li>If systemic Discrimination were completely eliminated tomorrow, do you think academic performance gaps would vanish?</li>
+      <li>If everyone acknowledged their unconscious Privilege today, would social conflicts dissolve immediately?</li>
+      <li>If a company promoted employees based on a belief in intellectual Superiority , would it lose its best talent?</li>
+      <li>If you had to battle a persistent feeling of Inferiority in childhood, would you now be as confident today?</li>
+      <li>If we had not relied on In-group favoritism for survival back then, would humanity have developed communities today?</li>
+      <li>If the media had not engaged in systematic Out-group derogation last year, would our elections have been less polarized today?</li>
+      <li>If you had not managed to Internalize those healthy boundaries in your youth, would you struggle with burnout today?</li>
+      <li>If your past teacher had leveraged the Pygmalion effect positively, would you have chosen a different field?</li>
+      <li>If you had shown true Empathy instead of cold detachment during that crisis, would your friendship still be intact today?</li>
+      <li>If our early cultural Conditioning had been completely different, would we now hold the same core values today?</li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 7: Round 2 Discussion (Individual Mode) -->
+  <cosy-slide id="slide-4-ind" stage="round-2" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> deeper debate and statement evaluation with teacher in 1-on-1 format.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Share whether you agree or disagree with these statements and discuss them with your teacher:</cosy-instruction>
+    <ol>
+      <li>If systemic Discrimination were completely eliminated tomorrow, do you think academic performance gaps would vanish?</li>
+      <li>If everyone acknowledged their unconscious Privilege today, would social conflicts dissolve immediately?</li>
+      <li>If a company promoted employees based on a belief in intellectual Superiority , would it lose its best talent?</li>
+      <li>If you had to battle a persistent feeling of Inferiority in childhood, would you now be as confident today?</li>
+      <li>If we had not relied on In-group favoritism for survival back then, would humanity have developed communities today?</li>
+      <li>If the media had not engaged in systematic Out-group derogation last year, would our elections have been less polarized today?</li>
+      <li>If you had not managed to Internalize those healthy boundaries in your youth, would you struggle with burnout today?</li>
+      <li>If your past teacher had leveraged the Pygmalion effect positively, would you have chosen a different field?</li>
+      <li>If you had shown true Empathy instead of cold detachment during that crisis, would your friendship still be intact today?</li>
+      <li>If our early cultural Conditioning had been completely different, would we now hold the same core values today?</li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 8: Teacher's Note / Error Correction -->
+  <cosy-slide id="slide-5" stage="error-correction" duration="50" mode="all">
+    <cosy-teacher-notes type="additional">
+      <p><cosy-text type="strong">Teacher&apos;s Linguistic Error Correction Guidance:</cosy-text></p>
+      <ul>
+        <li>Incorrect: They were discriminated because their eyes → Correct: They were discriminated against because of their eyes ((Prepositional collocation: use &apos;discriminate against&apos; and &apos;because of&apos; before a noun phrase))</li>
+        <li>Incorrect: He behaves like he is superiority → Correct: He behaves like he is superior ((Grammar structure: use the adjective &apos;superior&apos; instead of the abstract noun &apos;superiority&apos;))</li>
+        <li>Incorrect: I feel empathy to them → Correct: I feel empathy for them / I empathize with them ((Collocation error: we feel empathy &apos;for&apos; someone, or we &apos;empathize with&apos; someone))</li>
+      </ul>
+    </cosy-teacher-notes>
+    <cosy-instruction>Reflection &amp; Feedback: Review language highlights and key corrections with your teacher.</cosy-instruction>
+  </cosy-slide>
+</cosy-lesson>
