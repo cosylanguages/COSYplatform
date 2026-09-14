@@ -544,7 +544,10 @@
         <div class="lesson-viewer">
           <div class="teacher-controls-bar">
             <a href="teacher.html?key=${key}" class="back-btn" style="color: #64748b; font-weight: 500;">← Back to Catalog</a>
-            <button class="slide-nav-btn" onclick="toggleTeacherViewMode()">${window.teacherViewModeAll ? '📄 Single Slide View' : '📜 Scroll All Slides'}</button>
+            <button class="slide-nav-btn" onclick="toggleTeacherViewMode()">${window.teacherViewModeAll ? '📄 Single Slide' : '📜 Scroll All'}</button>
+            <button class="slide-nav-btn" onclick="toggleProjectorMode()" title="Classroom Projector / High Contrast Mode">🖥️ Projector</button>
+            <button class="slide-nav-btn" onclick="adjustTextZoom(-1)" title="Decrease Text Size">Aa-</button>
+            <button class="slide-nav-btn" onclick="adjustTextZoom(1)" title="Increase Text Size">Aa+</button>
             <div class="control-group">
               <label><strong>Duration Filter:</strong></label>
               <select id="duration-select" onchange="window.currentDurationFilter=this.value; applyTeacherFilters();">
@@ -650,6 +653,25 @@
     function toggleTeacherViewMode() {
       window.teacherViewModeAll = !window.teacherViewModeAll;
       renderTeacherLessonUI();
+    }
+
+    function toggleProjectorMode() {
+      document.body.classList.toggle('projector-mode');
+      if (document.body.classList.contains('projector-mode')) {
+        if (document.documentElement.requestFullscreen) {
+          document.documentElement.requestFullscreen().catch(() => {});
+        }
+      } else {
+        if (document.exitFullscreen && document.fullscreenElement) {
+          document.exitFullscreen().catch(() => {});
+        }
+      }
+    }
+
+    window.textZoomLevel = 100;
+    function adjustTextZoom(delta) {
+      window.textZoomLevel = Math.max(80, Math.min(160, window.textZoomLevel + (delta * 10)));
+      document.body.style.fontSize = window.textZoomLevel + '%';
     }
 
     function renderXmlNodeToTeacherHtml(node) {

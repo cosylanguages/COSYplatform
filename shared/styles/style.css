@@ -336,6 +336,129 @@ footer.main-footer {
   margin-top: auto;
 }
 
+/* Classroom Projector & Large Screen Display Mode */
+body.projector-mode {
+  background-color: #0f172a !important;
+  color: #f8fafc !important;
+  font-size: 1.25rem !important;
+  line-height: 1.8 !important;
+}
+
+body.projector-mode .slide-card,
+body.projector-mode .section-card,
+body.projector-mode .controls-bar,
+body.projector-mode .slide-nav-bar {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+  color: #f8fafc !important;
+}
+
+body.projector-mode .slide-title,
+body.projector-mode h1,
+body.projector-mode h2,
+body.projector-mode h3 {
+  color: #38bdf8 !important;
+}
+
+body.projector-mode cosy-instruction,
+body.projector-mode .cosy-instruction {
+  color: #38bdf8 !important;
+  font-size: 1.35rem !important;
+}
+
+body.projector-mode cosy-blockquote,
+body.projector-mode .cosy-blockquote {
+  background: #0f172a !important;
+  border-left-color: #38bdf8 !important;
+  color: #f1f5f9 !important;
+  font-size: 1.2rem !important;
+}
+
+body.projector-mode .teacher-note-instruction {
+  background: #451a03 !important;
+  border-left-color: #f59e0b !important;
+  color: #fef3c7 !important;
+  font-size: 1.15rem !important;
+}
+
+body.projector-mode .teacher-note-speech {
+  background: #064e3b !important;
+  border-left-color: #10b981 !important;
+  color: #d1fae5 !important;
+  font-size: 1.15rem !important;
+}
+
+/* Mobile & Tablet Responsive Media Queries */
+@media (max-width: 768px) {
+  .container, .hub-container, .catalog-container, .lesson-viewer {
+    padding: 1rem 0.75rem !important;
+  }
+
+  .slide-card {
+    padding: 1.25rem !important;
+    border-radius: 8px !important;
+  }
+
+  .slide-title {
+    font-size: 1.15rem !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 6px !important;
+  }
+
+  .controls-bar, .slide-nav-bar {
+    padding: 10px 14px !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+  }
+
+  .slide-pills {
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+    padding-bottom: 6px !important;
+    -webkit-overflow-scrolling: touch !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .slide-pill {
+    flex-shrink: 0 !important;
+    min-height: 44px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 16px !important;
+  }
+
+  .slide-nav-btn, .btn {
+    min-height: 44px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  .catalog-grid, .unit-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 0.95rem;
+  }
+
+  .hub-header-content, .header-content {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+  }
+
+  .role-badge {
+    align-self: flex-start !important;
+  }
+}
+
 /* Print Stylesheet for Offline Worksheet Support */
 @media print {
   body {

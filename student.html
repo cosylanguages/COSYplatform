@@ -628,7 +628,12 @@
           <div class="lesson-nav-header">
             <a href="student.html?key=${key}" class="back-btn">← Back to Course</a>
             <span class="badge-student">${lessonTitle}</span>
-            <button class="slide-nav-btn" onclick="toggleStudentViewMode()">${window.studentViewModeAll ? '📄 Single Slide View' : '📜 Scroll All Slides'}</button>
+            <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+              <button class="slide-nav-btn" onclick="toggleStudentViewMode()">${window.studentViewModeAll ? '📄 Single Slide' : '📜 Scroll All'}</button>
+              <button class="slide-nav-btn" onclick="toggleProjectorMode()" title="Classroom Projector / High Contrast Mode">🖥️ Projector</button>
+              <button class="slide-nav-btn" onclick="adjustTextZoom(-1)" title="Decrease Text Size">Aa-</button>
+              <button class="slide-nav-btn" onclick="adjustTextZoom(1)" title="Increase Text Size">Aa+</button>
+            </div>
           </div>
       `;
 
@@ -697,6 +702,25 @@
     function toggleStudentViewMode() {
       window.studentViewModeAll = !window.studentViewModeAll;
       renderStudentLessonUI();
+    }
+
+    function toggleProjectorMode() {
+      document.body.classList.toggle('projector-mode');
+      if (document.body.classList.contains('projector-mode')) {
+        if (document.documentElement.requestFullscreen) {
+          document.documentElement.requestFullscreen().catch(() => {});
+        }
+      } else {
+        if (document.exitFullscreen && document.fullscreenElement) {
+          document.exitFullscreen().catch(() => {});
+        }
+      }
+    }
+
+    window.textZoomLevel = 100;
+    function adjustTextZoom(delta) {
+      window.textZoomLevel = Math.max(80, Math.min(160, window.textZoomLevel + (delta * 10)));
+      document.body.style.fontSize = window.textZoomLevel + '%';
     }
 
     function renderXmlNodeToStudentHtml(node) {
