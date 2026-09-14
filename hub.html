@@ -704,10 +704,13 @@
         <main class="hub-container">
           <div class="controls-bar">
             <a href="hub.html?key=${key}" style="color: #64748b; font-weight: 500; text-decoration: none;">← Back to Hub</a>
-            <div style="display: flex; gap: 12px; align-items: center;">
-              <button class="slide-nav-btn" onclick="toggleViewMode()">${window.viewModeAll ? '📄 Slide-by-Slide View' : '📜 Scroll All Slides'}</button>
+            <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+              <button class="slide-nav-btn" onclick="toggleViewMode()">${window.viewModeAll ? '📄 Single Slide' : '📜 Scroll All'}</button>
+              <button class="slide-nav-btn" onclick="toggleProjectorMode()" title="Classroom Projector / High Contrast Mode">🖥️ Projector</button>
+              <button class="slide-nav-btn" onclick="adjustTextZoom(-1)" title="Decrease Text Size">Aa-</button>
+              <button class="slide-nav-btn" onclick="adjustTextZoom(1)" title="Increase Text Size">Aa+</button>
               ${isTeacher ? `
-                <label style="font-size: 0.85rem; font-weight: 600; margin-left: 8px;">Duration:</label>
+                <label style="font-size: 0.85rem; font-weight: 600; margin-left: 4px;">Duration:</label>
                 <select style="padding: 4px 8px; border-radius: 6px; border: 1px solid #cbd5e1;">
                   <option value="50">60m Lesson (50 active min)</option>
                   <option value="80">90m Lesson (80 active min)</option>
@@ -780,6 +783,25 @@
     function toggleViewMode() {
       window.viewModeAll = !window.viewModeAll;
       renderLessonViewerUI();
+    }
+
+    function toggleProjectorMode() {
+      document.body.classList.toggle('projector-mode');
+      if (document.body.classList.contains('projector-mode')) {
+        if (document.documentElement.requestFullscreen) {
+          document.documentElement.requestFullscreen().catch(() => {});
+        }
+      } else {
+        if (document.exitFullscreen && document.fullscreenElement) {
+          document.exitFullscreen().catch(() => {});
+        }
+      }
+    }
+
+    window.textZoomLevel = 100;
+    function adjustTextZoom(delta) {
+      window.textZoomLevel = Math.max(80, Math.min(160, window.textZoomLevel + (delta * 10)));
+      document.body.style.fontSize = window.textZoomLevel + '%';
     }
 
     function renderXmlNodeToTeacherHtml(node) {
