@@ -221,6 +221,7 @@
       border-radius: 0 8px 8px 0;
     }
   </style>
+  <script src="shared/js/access-grants.js"></script>
 </head>
 <body>
 
@@ -243,7 +244,6 @@
   </footer>
 
   <script>
-    // App State & Access Control Logic
     const urlParams = new URLSearchParams(window.location.search);
     const key = urlParams.get('key');
     const courseParam = urlParams.get('course');
@@ -269,8 +269,10 @@
           return;
         }
 
-        // Verify teacher role or wildcard access
-        if (grant.role !== 'teacher' && !grant.courses.includes('*')) {
+        const fullManifest = window.CosyAccessGrants ? window.CosyAccessGrants.FULL_MANIFEST : [];
+        const allowedCourses = window.CosyAccessGrants ? window.CosyAccessGrants.resolveGrantCourses(grant, fullManifest) : [];
+
+        if (grant.role !== 'teacher' && grant.role !== 'founder' && !allowedCourses.includes('*')) {
           renderAccessDenied("Permission Denied", "This access key does not have teacher privileges.");
           return;
         }
@@ -282,7 +284,7 @@
         } else if (courseParam && levelParam) {
           renderCourseRoadmap(courseParam, levelParam);
         } else {
-          renderTeacherCatalog();
+          renderTeacherCatalog(grant, allowedCourses, fullManifest);
         }
 
       } catch (err) {
@@ -299,54 +301,39 @@
       `;
     }
 
-    async function renderTeacherCatalog() {
+    async function renderTeacherCatalog(grant, allowedCourses, fullManifest) {
       const appRoot = document.getElementById('app-root');
 
-      const allCourses = [
-        { id: "general-english-a0", title: "General English A0 - Beginner", track: "General English", level: "A0" },
-        { id: "general-english-a1", title: "General English A1 - Elementary", track: "General English", level: "A1" },
-        { id: "general-english-a2", title: "General English A2 - Pre-Intermediate", track: "General English", level: "A2" },
-        { id: "general-english-b1", title: "General English B1 - Intermediate", track: "General English", level: "B1" },
-        { id: "general-english-b2", title: "General English B2 - Upper-Intermediate", track: "General English", level: "B2" },
-        { id: "general-english-c1", title: "General English C1 - Advanced", track: "General English", level: "C1" },
-        { id: "spoken-english-a1", title: "Spoken English A1", track: "Spoken English", level: "A1" },
-        { id: "spoken-english-a2", title: "Spoken English A2", track: "Spoken English", level: "A2" },
-        { id: "spoken-english-b1", title: "Spoken English B1", track: "Spoken English", level: "B1" },
-        { id: "spoken-english-b2", title: "Spoken English B2", track: "Spoken English", level: "B2" },
-        { id: "spoken-english-c1", title: "Spoken English C1", track: "Spoken English", level: "C1" },
-        { id: "grammar-english-a0", title: "Grammar English A0", track: "Grammar English", level: "A0" },
-        { id: "grammar-english-a1", title: "Grammar English A1", track: "Grammar English", level: "A1" },
-        { id: "grammar-english-a2", title: "Grammar English A2", track: "Grammar English", level: "A2" },
-        { id: "grammar-english-b1", title: "Grammar English B1", track: "Grammar English", level: "B1" },
-        { id: "grammar-english-b2", title: "Grammar English B2", track: "Grammar English", level: "B2" },
-        { id: "grammar-english-c1", title: "Grammar English C1", track: "Grammar English", level: "C1" },
-        { id: "introductory-english", title: "Introductory Diagnostic First Lessons", track: "Introductory", level: "A0-C2" }
-      ];
+      const courseList = fullManifest.filter(c => allowedCourses.includes('*') || allowedCourses.includes(c.id));
 
       let html = `
         <div class="catalog-container">
           <div class="catalog-header">
             <div>
-              <h1 style="font-size: 1.6rem; color: #0f172a;">Full Teacher Catalog</h1>
-              <p style="color: #64748b;">Teachers have complete access to all tracks, curriculums, and speech scripts.</p>
+              <h1 style="font-size: 1.6rem; color: #0f172a;">Teacher Catalog (${grant.name || 'Teacher'})</h1>
+              <p style="color: #64748b;">Teachers have access to all assigned tracks, curriculums, and speech scripts.</p>
             </div>
             <a href="manuals/teacher-guide-first-lesson.md" target="_blank" class="btn btn-outline" style="font-size: 0.85rem;">📖 Teaching Guide</a>
           </div>
           <div class="catalog-grid">
       `;
 
-      allCourses.forEach(course => {
-        html += `
-          <div class="course-card">
-            <div>
-              <span class="badge-teacher" style="margin-bottom: 8px; display: inline-block;">${course.level}</span>
-              <h3>${course.title}</h3>
-              <p>Track: ${course.track}</p>
+      if (courseList.length === 0) {
+        html += `<p style="grid-column: 1/-1; color: #64748b;">No active courses found for this grant.</p>`;
+      } else {
+        courseList.forEach(course => {
+          html += `
+            <div class="course-card">
+              <div>
+                <span class="badge-teacher" style="margin-bottom: 8px; display: inline-block;">${course.level.toUpperCase()}</span>
+                <h3>${course.title}</h3>
+                <p>Track: ${course.track}</p>
+              </div>
+              <a href="teacher.html?key=${key}&course=${course.id}&level=${course.level.toLowerCase()}" class="btn" style="background: var(--teacher-primary); text-align: center;">Open Teacher Roadmap</a>
             </div>
-            <a href="teacher.html?key=${key}&course=${course.id}&level=${course.level.toLowerCase()}" class="btn" style="background: var(--teacher-primary); text-align: center;">Open Teacher Roadmap</a>
-          </div>
-        `;
-      });
+          `;
+        });
+      }
 
       html += `</div></div>`;
       appRoot.innerHTML = html;
@@ -363,7 +350,7 @@
         let html = `
           <div class="catalog-container">
             <div class="teacher-controls-bar">
-              <a href="teacher.html?key=${key}" class="back-btn" style="color: #64748b; font-weight: 500;">← Back to Full Catalog</a>
+              <a href="teacher.html?key=${key}" class="back-btn" style="color: #64748b; font-weight: 500;">← Back to Catalog</a>
               <span class="badge-teacher">${roadmap.title}</span>
             </div>
 
@@ -436,7 +423,6 @@
             });
           });
         } else {
-          // JSON Lesson Format
           const jsonData = JSON.parse(text);
           lessonTitle = jsonData.title || lessonTitle;
           jsonData.slides.forEach(s => {

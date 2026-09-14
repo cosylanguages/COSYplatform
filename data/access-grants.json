@@ -4,31 +4,77 @@
       "key": "founder-key",
       "role": "founder",
       "name": "Platform Founder",
-      "courses": ["*"]
+      "courses": [
+        "*"
+      ]
     },
     {
       "key": "demo-teacher-1",
       "role": "teacher",
       "name": "Demo Teacher",
-      "courses": ["*"]
+      "courses": [
+        "*"
+      ]
     },
     {
       "key": "teacher-english-key",
       "role": "teacher",
       "name": "English Language Teacher",
-      "courses": ["*"]
+      "courses": [
+        "*"
+      ]
     },
     {
       "key": "teacher-french-key",
       "role": "teacher",
       "name": "French Language Teacher",
-      "courses": ["*"]
+      "courses": [
+        "*"
+      ]
     },
     {
       "key": "teacher-russian-key",
       "role": "teacher",
       "name": "Russian Language Teacher",
-      "courses": ["*"]
+      "courses": [
+        "*"
+      ]
+    },
+    {
+      "key": "english-teachers",
+      "role": "teacher",
+      "name": "All English Teachers",
+      "filter": {
+        "language": "en"
+      }
+    },
+    {
+      "key": "french-teachers",
+      "role": "teacher",
+      "name": "All French Teachers",
+      "filter": {
+        "language": "fr"
+      }
+    },
+    {
+      "key": "russian-teachers",
+      "role": "teacher",
+      "name": "All Russian Teachers",
+      "filter": {
+        "language": "ru"
+      }
+    },
+    {
+      "key": "english-a0-a1",
+      "role": "student",
+      "name": "English A0-A1 cohort",
+      "filter": {
+        "language": "en",
+        "level": [
+          "a0",
+          "a1"
+        ]
+      }
     },
     {
       "key": "demo-student-1",
@@ -47,6 +93,434 @@
         "spoken-english-b2",
         "introductory-english"
       ]
+    },
+    {
+      "key": "teachers-en",
+      "role": "teacher",
+      "name": "EN Language Teachers",
+      "filter": {
+        "language": "en"
+      }
+    },
+    {
+      "key": "teachers-fr",
+      "role": "teacher",
+      "name": "FR Language Teachers",
+      "filter": {
+        "language": "fr"
+      }
+    },
+    {
+      "key": "teachers-ru",
+      "role": "teacher",
+      "name": "RU Language Teachers",
+      "filter": {
+        "language": "ru"
+      }
+    },
+    {
+      "key": "teachers-es",
+      "role": "teacher",
+      "name": "ES Language Teachers",
+      "filter": {
+        "language": "es"
+      }
+    },
+    {
+      "key": "teachers-de",
+      "role": "teacher",
+      "name": "DE Language Teachers",
+      "filter": {
+        "language": "de"
+      }
+    },
+    {
+      "key": "teachers-it",
+      "role": "teacher",
+      "name": "IT Language Teachers",
+      "filter": {
+        "language": "it"
+      }
+    },
+    {
+      "key": "teachers-pt",
+      "role": "teacher",
+      "name": "PT Language Teachers",
+      "filter": {
+        "language": "pt"
+      }
+    },
+    {
+      "key": "teachers-el",
+      "role": "teacher",
+      "name": "EL Language Teachers",
+      "filter": {
+        "language": "el"
+      }
+    },
+    {
+      "key": "teachers-hy",
+      "role": "teacher",
+      "name": "HY Language Teachers",
+      "filter": {
+        "language": "hy"
+      }
+    },
+    {
+      "key": "teachers-ka",
+      "role": "teacher",
+      "name": "KA Language Teachers",
+      "filter": {
+        "language": "ka"
+      }
+    },
+    {
+      "key": "teachers-tt",
+      "role": "teacher",
+      "name": "TT Language Teachers",
+      "filter": {
+        "language": "tt"
+      }
+    },
+    {
+      "key": "teachers-ba",
+      "role": "teacher",
+      "name": "BA Language Teachers",
+      "filter": {
+        "language": "ba"
+      }
+    },
+    {
+      "key": "teachers-br",
+      "role": "teacher",
+      "name": "BR Language Teachers",
+      "filter": {
+        "language": "br"
+      }
+    },
+    {
+      "key": "students-en-a1",
+      "role": "student",
+      "name": "EN A1 Student Access",
+      "filter": {
+        "language": "en",
+        "level": "a1"
+      }
+    },
+    {
+      "key": "students-en-a2",
+      "role": "student",
+      "name": "EN A2 Student Access",
+      "filter": {
+        "language": "en",
+        "level": "a2"
+      }
+    },
+    {
+      "key": "students-en-b1",
+      "role": "student",
+      "name": "EN B1 Student Access",
+      "filter": {
+        "language": "en",
+        "level": "b1"
+      }
+    },
+    {
+      "key": "students-en-b2",
+      "role": "student",
+      "name": "EN B2 Student Access",
+      "filter": {
+        "language": "en",
+        "level": "b2"
+      }
+    },
+    {
+      "key": "students-en-c1",
+      "role": "student",
+      "name": "EN C1 Student Access",
+      "filter": {
+        "language": "en",
+        "level": "c1"
+      }
+    },
+    {
+      "key": "students-en-c2",
+      "role": "student",
+      "name": "EN C2 Student Access",
+      "filter": {
+        "language": "en",
+        "level": "c2"
+      }
+    },
+    {
+      "key": "students-fr-a1",
+      "role": "student",
+      "name": "FR A1 Student Access",
+      "filter": {
+        "language": "fr",
+        "level": "a1"
+      }
+    },
+    {
+      "key": "students-fr-a2",
+      "role": "student",
+      "name": "FR A2 Student Access",
+      "filter": {
+        "language": "fr",
+        "level": "a2"
+      }
+    },
+    {
+      "key": "students-fr-b1",
+      "role": "student",
+      "name": "FR B1 Student Access",
+      "filter": {
+        "language": "fr",
+        "level": "b1"
+      }
+    },
+    {
+      "key": "students-fr-b2",
+      "role": "student",
+      "name": "FR B2 Student Access",
+      "filter": {
+        "language": "fr",
+        "level": "b2"
+      }
+    },
+    {
+      "key": "students-fr-c1",
+      "role": "student",
+      "name": "FR C1 Student Access",
+      "filter": {
+        "language": "fr",
+        "level": "c1"
+      }
+    },
+    {
+      "key": "students-fr-c2",
+      "role": "student",
+      "name": "FR C2 Student Access",
+      "filter": {
+        "language": "fr",
+        "level": "c2"
+      }
+    },
+    {
+      "key": "students-ru-a1",
+      "role": "student",
+      "name": "RU A1 Student Access",
+      "filter": {
+        "language": "ru",
+        "level": "a1"
+      }
+    },
+    {
+      "key": "students-ru-a2",
+      "role": "student",
+      "name": "RU A2 Student Access",
+      "filter": {
+        "language": "ru",
+        "level": "a2"
+      }
+    },
+    {
+      "key": "students-ru-b1",
+      "role": "student",
+      "name": "RU B1 Student Access",
+      "filter": {
+        "language": "ru",
+        "level": "b1"
+      }
+    },
+    {
+      "key": "students-ru-b2",
+      "role": "student",
+      "name": "RU B2 Student Access",
+      "filter": {
+        "language": "ru",
+        "level": "b2"
+      }
+    },
+    {
+      "key": "students-ru-c1",
+      "role": "student",
+      "name": "RU C1 Student Access",
+      "filter": {
+        "language": "ru",
+        "level": "c1"
+      }
+    },
+    {
+      "key": "students-ru-c2",
+      "role": "student",
+      "name": "RU C2 Student Access",
+      "filter": {
+        "language": "ru",
+        "level": "c2"
+      }
+    },
+    {
+      "key": "students-es-a1",
+      "role": "student",
+      "name": "ES A1 Student Access",
+      "filter": {
+        "language": "es",
+        "level": "a1"
+      }
+    },
+    {
+      "key": "students-es-c1",
+      "role": "student",
+      "name": "ES C1 Student Access",
+      "filter": {
+        "language": "es",
+        "level": "c1"
+      }
+    },
+    {
+      "key": "students-de-a1",
+      "role": "student",
+      "name": "DE A1 Student Access",
+      "filter": {
+        "language": "de",
+        "level": "a1"
+      }
+    },
+    {
+      "key": "students-de-c1",
+      "role": "student",
+      "name": "DE C1 Student Access",
+      "filter": {
+        "language": "de",
+        "level": "c1"
+      }
+    },
+    {
+      "key": "students-it-a1",
+      "role": "student",
+      "name": "IT A1 Student Access",
+      "filter": {
+        "language": "it",
+        "level": "a1"
+      }
+    },
+    {
+      "key": "students-pt-a1",
+      "role": "student",
+      "name": "PT A1 Student Access",
+      "filter": {
+        "language": "pt",
+        "level": "a1"
+      }
+    },
+    {
+      "key": "students-pt-c1",
+      "role": "student",
+      "name": "PT C1 Student Access",
+      "filter": {
+        "language": "pt",
+        "level": "c1"
+      }
+    },
+    {
+      "key": "students-el-a1",
+      "role": "student",
+      "name": "EL A1 Student Access",
+      "filter": {
+        "language": "el",
+        "level": "a1"
+      }
+    },
+    {
+      "key": "students-hy-a1",
+      "role": "student",
+      "name": "HY A1 Student Access",
+      "filter": {
+        "language": "hy",
+        "level": "a1"
+      }
+    },
+    {
+      "key": "students-hy-c1",
+      "role": "student",
+      "name": "HY C1 Student Access",
+      "filter": {
+        "language": "hy",
+        "level": "c1"
+      }
+    },
+    {
+      "key": "students-ka-a1",
+      "role": "student",
+      "name": "KA A1 Student Access",
+      "filter": {
+        "language": "ka",
+        "level": "a1"
+      }
+    },
+    {
+      "key": "students-ka-c1",
+      "role": "student",
+      "name": "KA C1 Student Access",
+      "filter": {
+        "language": "ka",
+        "level": "c1"
+      }
+    },
+    {
+      "key": "students-tt-a1",
+      "role": "student",
+      "name": "TT A1 Student Access",
+      "filter": {
+        "language": "tt",
+        "level": "a1"
+      }
+    },
+    {
+      "key": "students-tt-c1",
+      "role": "student",
+      "name": "TT C1 Student Access",
+      "filter": {
+        "language": "tt",
+        "level": "c1"
+      }
+    },
+    {
+      "key": "students-ba-a1",
+      "role": "student",
+      "name": "BA A1 Student Access",
+      "filter": {
+        "language": "ba",
+        "level": "a1"
+      }
+    },
+    {
+      "key": "students-ba-c1",
+      "role": "student",
+      "name": "BA C1 Student Access",
+      "filter": {
+        "language": "ba",
+        "level": "c1"
+      }
+    },
+    {
+      "key": "students-br-a1",
+      "role": "student",
+      "name": "BR A1 Student Access",
+      "filter": {
+        "language": "br",
+        "level": "a1"
+      }
+    },
+    {
+      "key": "students-br-c1",
+      "role": "student",
+      "name": "BR C1 Student Access",
+      "filter": {
+        "language": "br",
+        "level": "c1"
+      }
     }
   ]
 }

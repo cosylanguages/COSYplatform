@@ -8,6 +8,22 @@ This repository serves as the central content repository for all curriculums, ro
 
 ---
 
+## 🔑 Access Control & Grant Types (`data/access-grants.json`)
+
+Platform access control is managed via URL parameters (e.g. `?key=unique-token`) checked in the browser against `data/access-grants.json` using the client-side helper module `shared/js/access-grants.js`. The system supports two distinct grant types:
+
+### 1. Explicit Course Grants (`"courses": [...]`)
+- **Structure**: An array of exact course IDs or the wildcard `"*"` (e.g., `["general-english-a1", "spoken-english-a1"]`).
+- **Resolution**: Evaluated via direct string matching.
+- **When to Use**: Ideal for individual student enrollments, targeted trial keys, or master teacher keys requiring explicit static boundaries or full unrestricted access (`"*"`).
+
+### 2. Segment Filter Grants (`"filter": { ... }`)
+- **Structure**: A key-value filter object scoping access by language, CEFR level, or course track (e.g., `{ "language": "en", "level": ["a0", "a1"] }`).
+- **Resolution**: Evaluated dynamically at load time against the platform course manifest (`CosyAccessGrants.FULL_MANIFEST`).
+- **When to Use**: Perfect for shared department keys (e.g., all English teachers) or student study cohorts. When new curriculums or roadmaps matching the filter criteria are added to the platform, holders of segment filter grants automatically gain entitlement without needing manual updates to `data/access-grants.json`.
+
+---
+
 ## 🌐 Monolingual Policy & Communicative Speaking Focus
 
 - **Monolingual Teaching (English-Only)**: CosyLanguages operates under a strict monolingual policy. All student workspace elements, teacher speech scripts, vocabulary definitions, and grammar explanations are written exclusively in English.

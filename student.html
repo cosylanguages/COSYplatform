@@ -229,7 +229,6 @@
       background: #bae6fd;
     }
 
-    /* Voice Recorder & Essay Widgets */
     .recorder-widget, .essay-widget {
       background: #f8fafc;
       border: 1px dashed #cbd5e1;
@@ -249,7 +248,6 @@
       font-family: inherit;
     }
 
-    /* Goal & Choice Selector Grids */
     .choice-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -272,6 +270,7 @@
       background: var(--student-light);
     }
   </style>
+  <script src="shared/js/access-grants.js"></script>
 </head>
 <body>
 
@@ -294,7 +293,6 @@
   </footer>
 
   <script>
-    // App State & Access Control Logic
     const urlParams = new URLSearchParams(window.location.search);
     const key = urlParams.get('key');
     const courseParam = urlParams.get('course');
@@ -322,7 +320,6 @@
 
         document.getElementById('user-info').innerText = `Learner: ${grant.name || 'Student'}`;
 
-        // Determine if rendering catalog or specific lesson
         if (lessonParam) {
           renderLesson(lessonParam, grant);
         } else if (courseParam && levelParam) {
@@ -348,90 +345,19 @@
     async function renderStudentCatalog(grant) {
       const appRoot = document.getElementById('app-root');
 
-      // Known courses manifest
-      const allCourses = [
-        { id: "general-english-a0", title: "General English A0 - Beginner", track: "General English", level: "A0" },
-        { id: "general-english-a1", title: "General English A1 - Elementary", track: "General English", level: "A1" },
-        { id: "general-english-a2", title: "General English A2 - Pre-Intermediate", track: "General English", level: "A2" },
-        { id: "general-english-b1", title: "General English B1 - Intermediate", track: "General English", level: "B1" },
-        { id: "general-english-b2", title: "General English B2 - Upper-Intermediate", track: "General English", level: "B2" },
-        { id: "general-english-c1", title: "General English C1 - Advanced", track: "General English", level: "C1" },
-        { id: "spoken-english-a1", title: "Spoken English A1", track: "Spoken English", level: "A1" },
-        { id: "spoken-english-a2", title: "Spoken English A2", track: "Spoken English", level: "A2" },
-        { id: "spoken-english-b1", title: "Spoken English B1", track: "Spoken English", level: "B1" },
-        { id: "spoken-english-b2", title: "Spoken English B2", track: "Spoken English", level: "B2" },
-        { id: "spoken-english-c1", title: "Spoken English C1", track: "Spoken English", level: "C1" },
-        { id: "grammar-english-a0", title: "Grammar English A0", track: "Grammar English", level: "A0" },
-        { id: "grammar-english-a1", title: "Grammar English A1", track: "Grammar English", level: "A1" },
-        { id: "grammar-english-a2", title: "Grammar English A2", track: "Grammar English", level: "A2" },
-        { id: "grammar-english-b1", title: "Grammar English B1", track: "Grammar English", level: "B1" },
-        { id: "grammar-english-b2", title: "Grammar English B2", track: "Grammar English", level: "B2" },
-        { id: "grammar-english-c1", title: "Grammar English C1", track: "Grammar English", level: "C1" },
-        { id: "introductory-english", title: "Introductory Diagnostic First Lessons", track: "Introductory", level: "A0-C2" }
-      ];
+      const fullManifest = window.CosyAccessGrants ? window.CosyAccessGrants.FULL_MANIFEST : [];
+      const allowedCourseIds = window.CosyAccessGrants ? window.CosyAccessGrants.resolveGrantCourses(grant, fullManifest) : [];
 
-      // Filter courses strictly based on student grant
-      const allowedCourses = allCourses.filter(c => {
-        if (grant.courses.includes("*")) return true;
-        return grant.courses.includes(c.id);
-      });
-
-      // Comprehensive manifest of all platform courses
-      const fullManifest = [
-        // English
-        { id: "general-english-a0", title: "General English A0 - Beginner", track: "General", lang: "en", level: "A0" },
-        { id: "general-english-a1", title: "General English A1 - Elementary", track: "General", lang: "en", level: "A1" },
-        { id: "general-english-a2", title: "General English A2 - Pre-Intermediate", track: "General", lang: "en", level: "A2" },
-        { id: "general-english-b1", title: "General English B1 - Intermediate", track: "General", lang: "en", level: "B1" },
-        { id: "general-english-b2", title: "General English B2 - Upper-Intermediate", track: "General", lang: "en", level: "B2" },
-        { id: "general-english-c1", title: "General English C1 - Advanced", track: "General", lang: "en", level: "C1" },
-        { id: "spoken-english-a1", title: "Spoken English A1", track: "Spoken", lang: "en", level: "A1" },
-        { id: "spoken-english-a2", title: "Spoken English A2", track: "Spoken", lang: "en", level: "A2" },
-        { id: "spoken-english-b1", title: "Spoken English B1", track: "Spoken", lang: "en", level: "B1" },
-        { id: "spoken-english-b2", title: "Spoken English B2", track: "Spoken", lang: "en", level: "B2" },
-        { id: "spoken-english-c1", title: "Spoken English C1", track: "Spoken", lang: "en", level: "C1" },
-        { id: "grammar-english-a0", title: "Grammar English A0", track: "Grammar", lang: "en", level: "A0" },
-        { id: "grammar-english-a1", title: "Grammar English A1", track: "Grammar", lang: "en", level: "A1" },
-        { id: "grammar-english-a2", title: "Grammar English A2", track: "Grammar", lang: "en", level: "A2" },
-        { id: "grammar-english-b1", title: "Grammar English B1", track: "Grammar", lang: "en", level: "B1" },
-        { id: "grammar-english-b2", title: "Grammar English B2", track: "Grammar", lang: "en", level: "B2" },
-        { id: "grammar-english-c1", title: "Grammar English C1", track: "Grammar", lang: "en", level: "C1" },
-        { id: "en-pron-a1", title: "English Pronunciation A1", track: "Pronunciation", lang: "en", level: "A1" },
-        { id: "en-pron-a2", title: "English Pronunciation A2", track: "Pronunciation", lang: "en", level: "A2" },
-        { id: "en-pron-b1", title: "English Pronunciation B1", track: "Pronunciation", lang: "en", level: "B1" },
-        { id: "en-pron-b2", title: "English Pronunciation B2", track: "Pronunciation", lang: "en", level: "B2" },
-        { id: "en-pron-c1", title: "English Pronunciation C1", track: "Pronunciation", lang: "en", level: "C1" },
-        { id: "en-pron-c2", title: "English Pronunciation C2", track: "Pronunciation", lang: "en", level: "C2" },
-
-        // French
-        { id: "fr-pron-a1", title: "French Pronunciation A1 (A0-A1)", track: "Pronunciation", lang: "fr", level: "A1" },
-        { id: "fr-pron-a2", title: "French Pronunciation A2", track: "Pronunciation", lang: "fr", level: "A2" },
-        { id: "fr-pron-b1", title: "French Pronunciation B1", track: "Pronunciation", lang: "fr", level: "B1" },
-        { id: "fr-pron-b2", title: "French Pronunciation B2", track: "Pronunciation", lang: "fr", level: "B2" },
-        { id: "fr-pron-c1", title: "French Pronunciation C1", track: "Pronunciation", lang: "fr", level: "C1" },
-        { id: "fr-pron-c2", title: "French Pronunciation C2", track: "Pronunciation", lang: "fr", level: "C2" },
-
-        // Russian
-        { id: "ru-pron-a1", title: "Russian Pronunciation A1", track: "Pronunciation", lang: "ru", level: "A1" },
-        { id: "ru-pron-a2", title: "Russian Pronunciation A2", track: "Pronunciation", lang: "ru", level: "A2" },
-        { id: "ru-pron-b1", title: "Russian Pronunciation B1", track: "Pronunciation", lang: "ru", level: "B1" },
-        { id: "ru-pron-b2", title: "Russian Pronunciation B2", track: "Pronunciation", lang: "ru", level: "B2" },
-        { id: "ru-pron-c1", title: "Russian Pronunciation C1", track: "Pronunciation", lang: "ru", level: "C1" },
-        { id: "ru-pron-c2", title: "Russian Pronunciation C2", track: "Pronunciation", lang: "ru", level: "C2" }
-      ];
-
-      // Read current filter selections from URL or DOM
       const currentLang = urlParams.get('langFilter') || 'all';
       const currentTrack = urlParams.get('trackFilter') || 'all';
       const currentLevel = urlParams.get('levelFilter') || 'all';
 
-      // Filter courses based on entitlement grant and active dropdown selections
       const allowedCourses = fullManifest.filter(c => {
-        const isEntitled = grant.courses.includes("*") || grant.courses.includes(c.id);
+        const isEntitled = allowedCourseIds.includes("*") || allowedCourseIds.includes(c.id);
         if (!isEntitled) return false;
         if (currentLang !== 'all' && c.lang !== currentLang) return false;
-        if (currentTrack !== 'all' && c.track !== currentTrack) return false;
-        if (currentLevel !== 'all' && c.level !== currentLevel) return false;
+        if (currentTrack !== 'all' && c.track.toLowerCase() !== currentTrack.toLowerCase()) return false;
+        if (currentLevel !== 'all' && c.level.toLowerCase() !== currentLevel.toLowerCase()) return false;
         return true;
       });
 
@@ -467,13 +393,13 @@
                 <label style="font-size: 0.85rem; font-weight: 600; color: #475569; margin-right: 6px;">CEFR Level:</label>
                 <select id="levelFilter" onchange="updateStudentFilters()" style="padding: 6px 12px; border-radius: 6px; border: 1px solid #cbd5e1;">
                   <option value="all" ${currentLevel==='all'?'selected':''}>All Levels</option>
-                  <option value="A0" ${currentLevel==='A0'?'selected':''}>A0</option>
-                  <option value="A1" ${currentLevel==='A1'?'selected':''}>A1</option>
-                  <option value="A2" ${currentLevel==='A2'?'selected':''}>A2</option>
-                  <option value="B1" ${currentLevel==='B1'?'selected':''}>B1</option>
-                  <option value="B2" ${currentLevel==='B2'?'selected':''}>B2</option>
-                  <option value="C1" ${currentLevel==='C1'?'selected':''}>C1</option>
-                  <option value="C2" ${currentLevel==='C2'?'selected':''}>C2</option>
+                  <option value="a0" ${currentLevel==='a0'?'selected':''}>A0</option>
+                  <option value="a1" ${currentLevel==='a1'?'selected':''}>A1</option>
+                  <option value="a2" ${currentLevel==='a2'?'selected':''}>A2</option>
+                  <option value="b1" ${currentLevel==='b1'?'selected':''}>B1</option>
+                  <option value="b2" ${currentLevel==='b2'?'selected':''}>B2</option>
+                  <option value="c1" ${currentLevel==='c1'?'selected':''}>C1</option>
+                  <option value="c2" ${currentLevel==='c2'?'selected':''}>C2</option>
                 </select>
               </div>
             </div>
@@ -482,13 +408,13 @@
       `;
 
       if (allowedCourses.length === 0) {
-        html += `<p style="grid-column: 1/-1; color: #64748b;">No active course enrolments found for this key.</p>`;
+        html += `<p style="grid-column: 1/-1; color: #64748b;">No active course enrolments found for this key matching the selected filters.</p>`;
       } else {
         allowedCourses.forEach(course => {
           html += `
             <div class="course-card">
               <div>
-                <span class="badge-student" style="margin-bottom: 8px; display: inline-block;">${course.level}</span>
+                <span class="badge-student" style="margin-bottom: 8px; display: inline-block;">${course.level.toUpperCase()}</span>
                 <h3>${course.title}</h3>
                 <p>Track: ${course.track}</p>
               </div>
@@ -525,7 +451,6 @@
         `;
 
         roadmap.sequence.forEach(item => {
-          // Check for available real sample files
           let lessonPath = "";
           if (item.id === "relaxation-and-hygge" || item.id === "we-are-different") {
             lessonPath = "lessons/english-b2/relaxation-and-hygge.xml";
@@ -585,7 +510,6 @@
             });
           });
         } else {
-          // JSON Lesson Format
           const jsonData = JSON.parse(text);
           lessonTitle = jsonData.title || lessonTitle;
           jsonData.slides.forEach(s => {
@@ -628,7 +552,6 @@
       }
     }
 
-    // Helper: Clean Student HTML Renderer from XML
     function renderXmlNodeToStudentHtml(node) {
       let output = "";
 
@@ -640,7 +563,6 @@
 
         const tagName = child.tagName ? child.tagName.toLowerCase() : "";
 
-        // Strictly omit teacher-notes
         if (tagName === "cosy-teacher-notes") continue;
 
         if (tagName === "p" || tagName === "ul" || tagName === "ol" || tagName === "li" || tagName === "h1" || tagName === "h2" || tagName === "h3") {

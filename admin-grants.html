@@ -86,7 +86,7 @@
     }
 
     .courses-checklist {
-      max-height: 260px;
+      max-height: 220px;
       overflow-y: auto;
       border: 1px solid #cbd5e1;
       border-radius: 6px;
@@ -190,6 +190,7 @@
       margin-top: 16px;
     }
   </style>
+  <script src="shared/js/access-grants.js"></script>
 </head>
 <body>
 
@@ -209,7 +210,7 @@
     <div>
       <h1 style="font-size: 1.6rem; color: #0f172a; margin-bottom: 6px;">Access Grant Generator</h1>
       <p style="color: #64748b; font-size: 0.95rem;">
-        Generate formatted JSON entries for <code>data/access-grants.json</code> and instantly copy shareable access links for teachers or students.
+        Generate formatted JSON entries for <code>data/access-grants.json</code> (Explicit Course Grants or Segment Filter Grants) and instantly copy shareable links.
       </p>
     </div>
 
@@ -217,6 +218,14 @@
       <!-- Form Input Column -->
       <div class="card">
         <h2 style="font-size: 1.2rem; color: #0f172a; margin-bottom: 16px;">Grant Parameters</h2>
+
+        <div class="form-group">
+          <label for="grant-type-select">Grant Type</label>
+          <select id="grant-type-select" onchange="handleGrantTypeChange()">
+            <option value="filter">Segment Filter Grant (Dynamic)</option>
+            <option value="explicit">Explicit Courses Grant (Static List)</option>
+          </select>
+        </div>
 
         <div class="form-group">
           <label for="role-select">Role</label>
@@ -227,8 +236,8 @@
         </div>
 
         <div class="form-group">
-          <label for="name-input">Recipient Name</label>
-          <input type="text" id="name-input" placeholder="e.g. Jane Doe" oninput="updateOutput()" />
+          <label for="name-input">Recipient / Group Name</label>
+          <input type="text" id="name-input" placeholder="e.g. All English Teachers" oninput="updateOutput()" />
         </div>
 
         <div class="form-group">
@@ -239,7 +248,26 @@
           </div>
         </div>
 
-        <div class="form-group">
+        <!-- Filter Fields -->
+        <div id="filter-fields-group">
+          <div class="form-group">
+            <label for="filter-lang-select">Language Filter</label>
+            <select id="filter-lang-select" onchange="updateOutput()">
+              <option value="en">English (en)</option>
+              <option value="fr">French (fr)</option>
+              <option value="ru">Russian (ru)</option>
+              <option value="">Any Language</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="filter-level-input">CEFR Levels (comma separated, e.g. a0, a1)</label>
+            <input type="text" id="filter-level-input" placeholder="Leave empty for all levels" oninput="updateOutput()" />
+          </div>
+        </div>
+
+        <!-- Explicit Checklist -->
+        <div class="form-group" id="explicit-courses-group" style="display: none;">
           <label>Course Entitlements</label>
           <div class="quick-select-btns">
             <button class="quick-btn" onclick="selectAllCourses(true)">Select All</button>
@@ -273,7 +301,7 @@
         </div>
 
         <div class="notice-box">
-          💡 <strong>Instructions:</strong> Copy the JSON snippet above and paste it inside the <code>"grants": [ ... ]</code> array in <code>data/access-grants.json</code>. Then share the generated access link with the user.
+          💡 <strong>Instructions:</strong> Copy the JSON snippet above and paste it inside the <code>"grants": [ ... ]</code> array in <code>data/access-grants.json</code>. Then share the generated access link with the user or cohort.
         </div>
       </div>
     </div>
@@ -284,31 +312,12 @@
   </footer>
 
   <script>
-    const knownCourses = [
-      { id: "general-english-a0", title: "General English A0 - Beginner" },
-      { id: "general-english-a1", title: "General English A1 - Elementary" },
-      { id: "general-english-a2", title: "General English A2 - Pre-Intermediate" },
-      { id: "general-english-b1", title: "General English B1 - Intermediate" },
-      { id: "general-english-b2", title: "General English B2 - Upper-Intermediate" },
-      { id: "general-english-c1", title: "General English C1 - Advanced" },
-      { id: "spoken-english-a1", title: "Spoken English A1" },
-      { id: "spoken-english-a2", title: "Spoken English A2" },
-      { id: "spoken-english-b1", title: "Spoken English B1" },
-      { id: "spoken-english-b2", title: "Spoken English B2" },
-      { id: "spoken-english-c1", title: "Spoken English C1" },
-      { id: "grammar-english-a0", title: "Grammar English A0" },
-      { id: "grammar-english-a1", title: "Grammar English A1" },
-      { id: "grammar-english-a2", title: "Grammar English A2" },
-      { id: "grammar-english-b1", title: "Grammar English B1" },
-      { id: "grammar-english-b2", title: "Grammar English B2" },
-      { id: "grammar-english-c1", title: "Grammar English C1" },
-      { id: "introductory-english", title: "Introductory Diagnostic First Lessons" }
-    ];
+    const knownCourses = window.CosyAccessGrants ? window.CosyAccessGrants.FULL_MANIFEST : [];
 
     function init() {
       renderCourseChecklist();
       generateNewKey();
-      document.getElementById('name-input').value = "Sample Student";
+      document.getElementById('name-input').value = "All English Teachers";
       updateOutput();
     }
 
@@ -333,6 +342,21 @@
       container.innerHTML = html;
     }
 
+    function handleGrantTypeChange() {
+      const type = document.getElementById('grant-type-select').value;
+      const filterGroup = document.getElementById('filter-fields-group');
+      const explicitGroup = document.getElementById('explicit-courses-group');
+
+      if (type === 'filter') {
+        filterGroup.style.display = 'block';
+        explicitGroup.style.display = 'none';
+      } else {
+        filterGroup.style.display = 'none';
+        explicitGroup.style.display = 'block';
+      }
+      updateOutput();
+    }
+
     function generateRandomToken(length = 12) {
       const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
       let result = '';
@@ -350,10 +374,6 @@
     }
 
     function handleRoleChange() {
-      const role = document.getElementById('role-select').value;
-      if (role === 'teacher') {
-        setWildcardAccess();
-      }
       updateOutput();
     }
 
@@ -382,21 +402,35 @@
     }
 
     function updateOutput() {
+      const grantType = document.getElementById('grant-type-select').value;
       const role = document.getElementById('role-select').value;
-      const name = document.getElementById('name-input').value.trim() || (role === 'teacher' ? 'Teacher Name' : 'Student Name');
+      const name = document.getElementById('name-input').value.trim() || 'Access Grant';
       const key = document.getElementById('key-input').value.trim() || 'sample-key';
-      const courses = getSelectedCourses();
 
-      const grantObj = {
+      let grantObj = {
         key: key,
         role: role,
-        name: name,
-        courses: courses
+        name: name
       };
+
+      if (grantType === 'explicit') {
+        grantObj.courses = getSelectedCourses();
+      } else {
+        const lang = document.getElementById('filter-lang-select').value;
+        const levelRaw = document.getElementById('filter-level-input').value.trim();
+
+        let filterObj = {};
+        if (lang) filterObj.language = lang;
+        if (levelRaw) {
+          const levels = levelRaw.split(',').map(s => s.trim().toLowerCase()).filter(Boolean);
+          if (levels.length > 0) filterObj.level = levels.length === 1 ? levels[0] : levels;
+        }
+        grantObj.filter = filterObj;
+      }
 
       document.getElementById('json-snippet').innerText = JSON.stringify(grantObj, null, 2);
 
-      const page = role === 'teacher' ? 'teacher.html' : 'student.html';
+      const page = role === 'teacher' ? (grantType === 'filter' && grantObj.filter && grantObj.filter.language ? `teacher-${grantObj.filter.language === 'en' ? 'english' : grantObj.filter.language === 'fr' ? 'french' : 'russian'}.html` : 'teacher.html') : 'student.html';
       const baseUrl = window.location.origin + window.location.pathname.replace('admin-grants.html', '');
       const fullUrl = `${baseUrl}${page}?key=${encodeURIComponent(key)}`;
 
