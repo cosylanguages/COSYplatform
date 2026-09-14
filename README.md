@@ -107,6 +107,24 @@ Welcome to the **COSYplatform Content Repository**! This repository hosts all in
 
 ---
 
+## 🚀 Live Deployment & GitHub Pages
+
+This repository is automatically published via GitHub Actions on every push to `main` using `.github/workflows/pages.yml`.
+
+- **Live Platform URL**: [https://cosylanguages.github.io/COSYplatform/hub.html](https://cosylanguages.github.io/COSYplatform/hub.html)
+
+### URL Key Pattern
+To view personalized teacher catalogs, student workspaces, or executive dashboards on the live site, append the `?key=` query parameter to the hub URL:
+
+- **Unified Hub Base**: `https://cosylanguages.github.io/COSYplatform/hub.html?key=<KEY>`
+- **Executive / Founder Hub**: `https://cosylanguages.github.io/COSYplatform/hub.html?key=founder-key`
+- **English Teacher Hub**: `https://cosylanguages.github.io/COSYplatform/hub.html?key=teachers-en`
+- **French Teacher Hub**: `https://cosylanguages.github.io/COSYplatform/hub.html?key=teachers-fr`
+- **Russian Teacher Hub**: `https://cosylanguages.github.io/COSYplatform/hub.html?key=teachers-ru`
+- **Student Cohort Workspace**: `https://cosylanguages.github.io/COSYplatform/hub.html?key=students-en-a1`
+
+---
+
 ## 🔑 How to Grant Access
 
 Access to student and teacher workspaces is managed via unique direct links containing a secret token (`key`). No open signup or public buy buttons exist.
