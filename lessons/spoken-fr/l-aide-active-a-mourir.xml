@@ -1,0 +1,170 @@
+<!-- source: https://raw.githubusercontent.com/cosylanguages/COSYevents/main/fr/sessions/debatable-relatable/l-aide-active-a-mourir.html -->
+<cosy-lesson id="l-aide-active-a-mourir" level="C1" language="fr" title="L&apos;aide active à mourir : oui ou non ?" default-duration="50" default-mode="all">
+  <!-- SLIDE 1: Warm-up & Vocabulary Review -->
+  <cosy-slide id="slide-1" stage="warm-up" duration="50" mode="all">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> to introduce the topic and clarify key target vocabulary for the session.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Révisez le vocabulaire clé de la session ci-dessous :</cosy-instruction>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">L&apos;autonomie (f.)</cosy-text> – le droit de se gouverner soi-même ou la liberté personnelle.</p>
+      <p><em>Example: L&apos;autonomie individuelle permet de prendre des décisions cruciales concernant son propre traitement médical.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Incurable</cosy-text> – qu&apos;on ne peut pas guérir.</p>
+      <p><em>Example: Le patient a été diagnostiqué avec une maladie incurable et évolutive.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">L&apos;euthanasie (f.)</cosy-text> – acte consistant à donner volontairement la mort à un malade pour abréger ses souffrances.</p>
+      <p><em>Example: Le comité d&apos;éthique a débattu pour savoir si l&apos;euthanasie devait être légalement autorisée sous des critères stricts.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">La compassion</cosy-text> – sentiment de pitié et de sympathie face aux souffrances d&apos;autrui.</p>
+      <p><em>Example: Offrir des soins palliatifs réconfortants est un acte de profonde compassion humaine.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">La législation</cosy-text> – ensemble des lois d&apos;un pays ou processus d&apos;élaboration des lois.</p>
+      <p><em>Example: Le gouvernement français a travaillé sur cette nouvelle législation pendant plusieurs mois.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Le garde-fou</cosy-text> – mesure de sécurité ou de protection destinée à éviter un dérapage.</p>
+      <p><em>Example: La loi prévoit des garde-fous médicaux extrêmement stricts pour éviter toute dérive.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Terminal</cosy-text> – qui touche à sa fin, en parlant d&apos;une maladie entraînant la mort.</p>
+      <p><em>Example: Les unités de soins palliatifs accompagnent avec humanité les patients en phase terminale.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Palliatif</cosy-text> – qui permet de soulager la douleur sans guérir la cause de la maladie.</p>
+      <p><em>Example: La médecine palliative se concentre sur l&apos;amélioration de la qualité de vie des malades.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">La dignité</cosy-text> – respect de soi-même et considération que l&apos;on doit à la personne humaine.</p>
+      <p><em>Example: Chaque être humain a le droit de vivre et de mourir dans la dignité.</em></p>
+    </cosy-blockquote>
+    <cosy-blockquote importance="basic">
+      <p><cosy-text type="strong">Le consentement</cosy-text> – accord volontaire et éclairé donné à un acte ou une décision.</p>
+      <p><em>Example: L&apos;administration d&apos;une substance létale ne peut se faire qu&apos;avec le consentement explicite du patient.</em></p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 2: Round 1 Discussion (Group Mode) -->
+  <cosy-slide id="slide-2-group" stage="round-1" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> pair/group discussion on core session themes.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>En binôme ou en sous-groupe, discutez des questions suivantes :</cosy-group-instruction>
+    <ol>
+      <li>A: L&apos;autonomie individuelle exige que chaque personne puisse décider de sa fin de vie. B: La protection de la vie par la société doit prévaloir sur les volontés individuelles.<br/><em>★ Angle personnel : Quelle importance accordez-vous à l&apos;autonomie dans vos choix de vie ?</em></li>
+      <li>A: Permettre l&apos;aide active à mourir pour les maladies incurables est un acte d&apos;humanité. B: Les soins de fin de vie peuvent soulager les douleurs des patients atteints de pathologies incurables.<br/><em>★ Angle personnel : Pensez-vous que la lutte contre la souffrance doit dépasser les règles strictes ?</em></li>
+      <li>A: Légaliser l&apos;euthanasie permet d&apos;abréger des souffrances physiques intolérables. B: L&apos;accompagnement naturel en unité de soins permet de vivre sereinement ses derniers moments.<br/><em>★ Angle personnel : Avez-vous déjà été confronté à la fin de vie d&apos;un proche ?</em></li>
+      <li>A: La vraie compassion consiste à respecter la volonté d&apos;un patient qui souhaite mourir. B: La compassion s&apos;exprime par une présence humaine et des soins constants jusqu&apos;à la fin.<br/><em>★ Angle personnel : Comment définiriez-vous la compassion en médecine ?</em></li>
+      <li>A: Une législation claire encadre strictement les pratiques de fin de vie. B: Modifier la législation actuelle risque d&apos;ouvrir la voie à des dérives éthiques majeures.<br/><em>★ Angle personnel : Faites-vous confiance à la loi pour régler ces choix personnels ?</em></li>
+      <li>A: Des protocoles médicaux stricts constituent un garde-fou efficace contre tout abus. B: L&apos;éthique médicale traditionnelle offre le meilleur garde-fou pour protéger les plus fragiles.<br/><em>★ Angle personnel : Quel garde-fou vous semble le plus indispensable ?</em></li>
+      <li>A: Pour les malades en phase terminale, choisir l&apos;heure de sa mort offre une paix d&apos;esprit. B: La phase terminale peut être un moment de rapprochement familial précieux.<br/><em>★ Angle personnel : Avoir le contrôle sur votre avenir vous apporte-t-il de la sérénité ?</em></li>
+      <li>A: Associer l&apos;aide active aux soins de type palliatif garantit une prise en charge complète. B: Développer le réseau palliatif permet de répondre dignement à toutes les souffrances.<br/><em>★ Angle personnel : Pensez-vous que notre société investit assez dans l&apos;accompagnement palliatif ?</em></li>
+      <li>A: Choisir sa mort permet de préserver sa dignité d&apos;être humain jusqu&apos;au bout. B: La dignité réside dans le respect du cycle naturel de la vie et de la vulnérabilité.<br/><em>★ Angle personnel : Que signifie pour vous mourir dans la dignité ?</em></li>
+      <li>A: Le consentement explicite du patient garantit que la décision lui appartient totalement. B: Le consentement peut être altéré par la douleur ou la peur d&apos;être un fardeau.<br/><em>★ Angle personnel : Dans quelles conditions le consentement est-il vraiment libre ?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 3: Round 1 Discussion (Individual Mode) -->
+  <cosy-slide id="slide-2-ind" stage="round-1" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> 1-on-1 teacher-student discussion on core session themes.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Discutez des questions suivantes avec votre professeur :</cosy-instruction>
+    <ol>
+      <li>A: L&apos;autonomie individuelle exige que chaque personne puisse décider de sa fin de vie. B: La protection de la vie par la société doit prévaloir sur les volontés individuelles.<br/><em>★ Angle personnel : Quelle importance accordez-vous à l&apos;autonomie dans vos choix de vie ?</em></li>
+      <li>A: Permettre l&apos;aide active à mourir pour les maladies incurables est un acte d&apos;humanité. B: Les soins de fin de vie peuvent soulager les douleurs des patients atteints de pathologies incurables.<br/><em>★ Angle personnel : Pensez-vous que la lutte contre la souffrance doit dépasser les règles strictes ?</em></li>
+      <li>A: Légaliser l&apos;euthanasie permet d&apos;abréger des souffrances physiques intolérables. B: L&apos;accompagnement naturel en unité de soins permet de vivre sereinement ses derniers moments.<br/><em>★ Angle personnel : Avez-vous déjà été confronté à la fin de vie d&apos;un proche ?</em></li>
+      <li>A: La vraie compassion consiste à respecter la volonté d&apos;un patient qui souhaite mourir. B: La compassion s&apos;exprime par une présence humaine et des soins constants jusqu&apos;à la fin.<br/><em>★ Angle personnel : Comment définiriez-vous la compassion en médecine ?</em></li>
+      <li>A: Une législation claire encadre strictement les pratiques de fin de vie. B: Modifier la législation actuelle risque d&apos;ouvrir la voie à des dérives éthiques majeures.<br/><em>★ Angle personnel : Faites-vous confiance à la loi pour régler ces choix personnels ?</em></li>
+      <li>A: Des protocoles médicaux stricts constituent un garde-fou efficace contre tout abus. B: L&apos;éthique médicale traditionnelle offre le meilleur garde-fou pour protéger les plus fragiles.<br/><em>★ Angle personnel : Quel garde-fou vous semble le plus indispensable ?</em></li>
+      <li>A: Pour les malades en phase terminale, choisir l&apos;heure de sa mort offre une paix d&apos;esprit. B: La phase terminale peut être un moment de rapprochement familial précieux.<br/><em>★ Angle personnel : Avoir le contrôle sur votre avenir vous apporte-t-il de la sérénité ?</em></li>
+      <li>A: Associer l&apos;aide active aux soins de type palliatif garantit une prise en charge complète. B: Développer le réseau palliatif permet de répondre dignement à toutes les souffrances.<br/><em>★ Angle personnel : Pensez-vous que notre société investit assez dans l&apos;accompagnement palliatif ?</em></li>
+      <li>A: Choisir sa mort permet de préserver sa dignité d&apos;être humain jusqu&apos;au bout. B: La dignité réside dans le respect du cycle naturel de la vie et de la vulnérabilité.<br/><em>★ Angle personnel : Que signifie pour vous mourir dans la dignité ?</em></li>
+      <li>A: Le consentement explicite du patient garantit que la décision lui appartient totalement. B: Le consentement peut être altéré par la douleur ou la peur d&apos;être un fardeau.<br/><em>★ Angle personnel : Dans quelles conditions le consentement est-il vraiment libre ?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 4: Let's Speak Together (Group Mode) -->
+  <cosy-slide id="slide-3-group" stage="speak-together" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> collaborative task or visual analysis in pairs/groups.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>En binôme, réalisez la tâche visuelle/interactive suivante :</cosy-group-instruction>
+    <cosy-blockquote importance="medium">
+      <p>Comparaison visuelle : Modèles d&apos;accompagnement de fin de vie
+- 🏥Soins Palliatifs &amp; Fin Naturelle
+- ⚖️Aide Active &amp; Autonomie Encadrée</p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 5: Let's Speak Together (Individual Mode) -->
+  <cosy-slide id="slide-3-ind" stage="speak-together" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> 1-on-1 guided visual description and task response with teacher.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Examinez les éléments et répondez à la tâche avec votre professeur :</cosy-instruction>
+    <cosy-blockquote importance="medium">
+      <p>Comparaison visuelle : Modèles d&apos;accompagnement de fin de vie
+- 🏥Soins Palliatifs &amp; Fin Naturelle
+- ⚖️Aide Active &amp; Autonomie Encadrée</p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 6: Round 2 Discussion (Group Mode) -->
+  <cosy-slide id="slide-4-group" stage="round-2" duration="50" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> deeper debate and statement evaluation in pairs/groups.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>En binôme, débattez et exprimez votre accord ou désaccord sur ces affirmations :</cosy-group-instruction>
+    <ol>
+      <li>A: Certains craignent que l&apos;autorisation de mourir ne porte atteinte à l&apos;autonomie réelle des personnes vulnérables sous pression. B: L&apos;autonomie individuelle doit rester la valeur suprême lorsqu&apos;un patient fait face à une souffrance intolérable.<br/><em>★ Angle personnel : Dans quelle mesure l&apos;autonomie individuelle est-elle importante pour vous dans les décisions de santé ?</em></li>
+      <li>A: Les progrès de la médecine pourraient trouver des traitements pour des maladies actuellement considérées comme incurables. B: Refuser le choix oblige les patients atteints de maladies incurables à souffrir en attendant des remèdes hypothétiques.<br/><em>★ Angle personnel : Pensez-vous que la science vaincra un jour toutes les maladies incurables ?</em></li>
+      <li>A: La normalisation de l&apos;euthanasie pourrait inciter les patients vulnérables à se sentir comme un fardeau pour leur famille. B: Interdire l&apos;euthanasie active contraint les familles à assister à l&apos;agonie de leurs proches, causant un traumatisme profond.<br/><em>★ Est-il difficile pour vous de demander de l&apos;aide à vos proches lors d&apos;une épreuve ?</em></li>
+      <li>A: La vraie compassion consiste à améliorer les soins de fin de vie plutôt qu&apos;à faciliter une mort précoce. B: Permettre le choix est un acte de pure compassion pour les patients souffrant de douleurs neurologiques intraitables.<br/><em>★ Comment s&apos;exprime la compassion au sein de votre communauté ou de votre famille ?</em></li>
+      <li>A: Les opposants soulignent le risque de dérive dès lors que la première législation est adoptée. B: L&apos;absence de législation claire pousse les patients fortunés à se rendre à l&apos;étranger pour obtenir de l&apos;aide.<br/><em>★ Pensez-vous que la législation doit s&apos;adapter à chaque situation particulière ou rester stricte ?</em></li>
+      <li>A: Aucun garde-fou médical n&apos;est infaillible ; des pressions subtiles ou des erreurs de diagnostic peuvent mener à des tragédies irréversibles. B: Des garde-fous trop rigides privent les patients de leur liberté fondamentale de choisir.<br/><em>★ Comment réagissez-vous face à des pressions ou influences subtiles de votre entourage ?</em></li>
+      <li>A: Les patients en phase terminale peuvent traverser des périodes de dépression temporaire, faussant leur jugement. B: Forcer un malade en phase terminale à endurer une agonie lente aggrave son désespoir existentiel.<br/><em>★ Quand vous vous sentez dépassé par les événements, comment retrouvez-vous la clarté d&apos;esprit ?</em></li>
+      <li>A: Si l&apos;accès aux soins palliatifs était universel et excellent, la demande d&apos;aide active à mourir diminuerait fortement. B: Les structures de type palliatif sont souvent inégalement réparties, laissant les patients modestes sans soutien adéquat.<br/><em>★ Avez-vous déjà constaté des différences de qualité dans les services palliatifs ou de santé ?</em></li>
+      <li>A: La société risquerait de dévaloriser la dignité humaine dans ses phases de plus grande vulnérabilité et dépendance. B: Interdire le choix bafoue la dignité du patient et sa liberté de conscience.<br/><em>★ Comment notre société peut-elle montrer un plus grand respect de la dignité de ses aînés ?</em></li>
+      <li>A: Obtenir un consentement libre et éclairé est extrêmement difficile lorsque le patient est accablé par une souffrance physique extrême. B: Refuser l&apos;aide suppose que les patients ne sont pas aptes à donner leur consentement concernant leur propre corps.<br/><em>★ Selon vous, la souffrance altère-t-elle notre capacité à donner un consentement rationnel ?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 7: Round 2 Discussion (Individual Mode) -->
+  <cosy-slide id="slide-4-ind" stage="round-2" duration="50" mode="individual">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> deeper debate and statement evaluation with teacher in 1-on-1 format.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Exprimez votre accord ou désaccord sur ces affirmations et discutez-en avec votre professeur :</cosy-instruction>
+    <ol>
+      <li>A: Certains craignent que l&apos;autorisation de mourir ne porte atteinte à l&apos;autonomie réelle des personnes vulnérables sous pression. B: L&apos;autonomie individuelle doit rester la valeur suprême lorsqu&apos;un patient fait face à une souffrance intolérable.<br/><em>★ Angle personnel : Dans quelle mesure l&apos;autonomie individuelle est-elle importante pour vous dans les décisions de santé ?</em></li>
+      <li>A: Les progrès de la médecine pourraient trouver des traitements pour des maladies actuellement considérées comme incurables. B: Refuser le choix oblige les patients atteints de maladies incurables à souffrir en attendant des remèdes hypothétiques.<br/><em>★ Angle personnel : Pensez-vous que la science vaincra un jour toutes les maladies incurables ?</em></li>
+      <li>A: La normalisation de l&apos;euthanasie pourrait inciter les patients vulnérables à se sentir comme un fardeau pour leur famille. B: Interdire l&apos;euthanasie active contraint les familles à assister à l&apos;agonie de leurs proches, causant un traumatisme profond.<br/><em>★ Est-il difficile pour vous de demander de l&apos;aide à vos proches lors d&apos;une épreuve ?</em></li>
+      <li>A: La vraie compassion consiste à améliorer les soins de fin de vie plutôt qu&apos;à faciliter une mort précoce. B: Permettre le choix est un acte de pure compassion pour les patients souffrant de douleurs neurologiques intraitables.<br/><em>★ Comment s&apos;exprime la compassion au sein de votre communauté ou de votre famille ?</em></li>
+      <li>A: Les opposants soulignent le risque de dérive dès lors que la première législation est adoptée. B: L&apos;absence de législation claire pousse les patients fortunés à se rendre à l&apos;étranger pour obtenir de l&apos;aide.<br/><em>★ Pensez-vous que la législation doit s&apos;adapter à chaque situation particulière ou rester stricte ?</em></li>
+      <li>A: Aucun garde-fou médical n&apos;est infaillible ; des pressions subtiles ou des erreurs de diagnostic peuvent mener à des tragédies irréversibles. B: Des garde-fous trop rigides privent les patients de leur liberté fondamentale de choisir.<br/><em>★ Comment réagissez-vous face à des pressions ou influences subtiles de votre entourage ?</em></li>
+      <li>A: Les patients en phase terminale peuvent traverser des périodes de dépression temporaire, faussant leur jugement. B: Forcer un malade en phase terminale à endurer une agonie lente aggrave son désespoir existentiel.<br/><em>★ Quand vous vous sentez dépassé par les événements, comment retrouvez-vous la clarté d&apos;esprit ?</em></li>
+      <li>A: Si l&apos;accès aux soins palliatifs était universel et excellent, la demande d&apos;aide active à mourir diminuerait fortement. B: Les structures de type palliatif sont souvent inégalement réparties, laissant les patients modestes sans soutien adéquat.<br/><em>★ Avez-vous déjà constaté des différences de qualité dans les services palliatifs ou de santé ?</em></li>
+      <li>A: La société risquerait de dévaloriser la dignité humaine dans ses phases de plus grande vulnérabilité et dépendance. B: Interdire le choix bafoue la dignité du patient et sa liberté de conscience.<br/><em>★ Comment notre société peut-elle montrer un plus grand respect de la dignité de ses aînés ?</em></li>
+      <li>A: Obtenir un consentement libre et éclairé est extrêmement difficile lorsque le patient est accablé par une souffrance physique extrême. B: Refuser l&apos;aide suppose que les patients ne sont pas aptes à donner leur consentement concernant leur propre corps.<br/><em>★ Selon vous, la souffrance altère-t-elle notre capacité à donner un consentement rationnel ?</em></li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 8: Teacher's Note / Error Correction -->
+  <cosy-slide id="slide-5" stage="error-correction" duration="50" mode="all">
+    <cosy-teacher-notes type="additional">
+      <p><cosy-text type="strong">Notes de correction linguistique du professeur:</cosy-text></p>
+      <ul>
+        <li>Incorrect: Je suis d&apos;accord pour ton point de vue → Correct: Je suis d&apos;accord avec ton point de vue ((En français, la locution correcte est &apos;être d&apos;accord avec&apos; quelqu&apos;un ou quelque chose))</li>
+        <li>Incorrect: La loi est dépend de les votes → Correct: La loi dépend des votes ((Le verbe &apos;dépendre&apos; ne nécessite pas l&apos;auxiliaire être. De plus, &apos;de&apos; + &apos;les&apos; se contracte en &apos;des&apos;))</li>
+        <li>Incorrect: Je pense que le euthanasie est importante → Correct: Je pense que l&apos;euthanasie est importante ((Élision obligatoire devant la voyelle initiale d&apos;un nom féminin : &apos;le&apos; ou &apos;la&apos; devient &apos;l&apos;&apos;))</li>
+        <li>Incorrect: Son argument était pas mal → Correct: Son argument était particulièrement convaincant / rigoureux / pertinent ((Élevons le registre de langue familier &apos;pas mal&apos; vers des adjectifs sophistiqués adaptés au débat formel))</li>
+      </ul>
+    </cosy-teacher-notes>
+    <cosy-instruction>Bilan et retours : révisez les corrections linguistiques clés avec votre professeur.</cosy-instruction>
+  </cosy-slide>
+</cosy-lesson>
