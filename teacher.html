@@ -435,12 +435,18 @@
 
         roadmap.sequence.forEach(item => {
           let lessonPath = "";
-          if (item.id === "relaxation-and-hygge" || item.id === "we-are-different") {
+          if (courseId === "general-english-a0" && item.section > 0) {
+            lessonPath = `lessons/general-english-a0/${item.id}.json`;
+          } else if (courseId === "general-english-a1" && item.section > 0) {
+            lessonPath = `lessons/general-english-a1/${item.id}.json`;
+          } else if (item.id === "relaxation-and-hygge" || item.id === "we-are-different") {
             lessonPath = "lessons/english-b2/relaxation-and-hygge.xml";
           } else if (item.id === "opposites-attract") {
             lessonPath = "lessons/english-c1/opposites-attract.xml";
           } else if (item.id.includes("introductory") || item.section === 0) {
             lessonPath = "lessons/introductory/introductory-b1.xml";
+          } else {
+            lessonPath = `lessons/${courseId}/${item.id}.json`;
           }
 
           html += `
@@ -450,10 +456,7 @@
                 <h3 style="margin: 6px 0;">${item.title}</h3>
                 ${item.unit ? `<p style="font-size: 0.8rem; color: #64748b; margin-bottom: 12px;">${item.unit}</p>` : ''}
               </div>
-              ${lessonPath ?
-                `<a href="teacher.html?key=${key}&lesson=${encodeURIComponent(lessonPath)}" class="btn" style="background: var(--teacher-primary); padding: 6px 12px; font-size: 0.85rem; text-align: center;">View Teacher Notes</a>` :
-                `<a href="teacher.html?key=${key}&lesson=${encodeURIComponent('lessons/english-b2/relaxation-and-hygge.xml')}" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.85rem; text-align: center;">Open Sample Lesson</a>`
-              }
+              <a href="teacher.html?key=${key}&lesson=${encodeURIComponent(lessonPath)}" class="btn" style="background: var(--teacher-primary); padding: 6px 12px; font-size: 0.85rem; text-align: center;">View Teacher Notes</a>
             </div>
           `;
         });
@@ -790,8 +793,19 @@
         slide.elements.forEach(el => {
           if (el.type === "instruction") output += `<cosy-instruction>📋 ${el.content}</cosy-instruction>`;
           else if (el.type === "blockquote") output += `<cosy-blockquote>${el.content}</cosy-blockquote>`;
-          else if (el.type === "input" && el.answers) {
+          else if (el.type === "test") {
+            output += `<div style="background: #f8fafc; padding: 12px; border-radius: 8px; margin: 12px 0; border: 1px solid #e2e8f0;">`;
+            if (el.options) {
+              el.options.forEach(opt => {
+                const isCorrect = el.answers && el.answers.includes(opt);
+                output += `<div style="padding: 4px 8px; margin: 4px 0; ${isCorrect ? 'background: #dcfce7; font-weight: 600; color: #15803d;' : ''}">${opt} ${isCorrect ? '✔️ (Correct Answer)' : ''}</div>`;
+              });
+            }
+            output += `</div>`;
+          } else if (el.type === "input" && el.answers) {
             output += `<div class="answer-key-box"><div class="answer-key-title">🔑 Answer Key:</div><div>${el.answers.join(" / ")}</div></div>`;
+          } else if (el.type === "image") {
+            output += `<div style="background: #e2e8f0; height: 180px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #64748b; margin: 12px 0;">🖼️ Image [Resource ID: ${el.resourceId}]</div>`;
           }
         });
       }
