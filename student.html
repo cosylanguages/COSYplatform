@@ -529,12 +529,18 @@
 
         roadmap.sequence.forEach(item => {
           let lessonPath = "";
-          if (item.id === "relaxation-and-hygge" || item.id === "we-are-different") {
+          if (courseId === "general-english-a0" && item.section > 0) {
+            lessonPath = `lessons/general-english-a0/${item.id}.json`;
+          } else if (courseId === "general-english-a1" && item.section > 0) {
+            lessonPath = `lessons/general-english-a1/${item.id}.json`;
+          } else if (item.id === "relaxation-and-hygge" || item.id === "we-are-different") {
             lessonPath = "lessons/english-b2/relaxation-and-hygge.xml";
           } else if (item.id === "opposites-attract") {
             lessonPath = "lessons/english-c1/opposites-attract.xml";
           } else if (item.id.includes("introductory") || item.section === 0) {
             lessonPath = "lessons/introductory/introductory-b1.xml";
+          } else {
+            lessonPath = `lessons/${courseId}/${item.id}.json`;
           }
 
           html += `
@@ -544,10 +550,7 @@
                 <h3 style="margin: 6px 0;">${item.title}</h3>
                 ${item.unit ? `<p style="font-size: 0.8rem; color: #64748b; margin-bottom: 12px;">${item.unit}</p>` : ''}
               </div>
-              ${lessonPath ?
-                `<a href="student.html?key=${key}&lesson=${encodeURIComponent(lessonPath)}" class="btn" style="background: var(--student-primary); padding: 6px 12px; font-size: 0.85rem; text-align: center;">Start Lesson</a>` :
-                `<a href="student.html?key=${key}&lesson=${encodeURIComponent('lessons/english-b2/relaxation-and-hygge.xml')}" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.85rem; text-align: center;">Open Interactive Slide</a>`
-              }
+              <a href="student.html?key=${key}&lesson=${encodeURIComponent(lessonPath)}" class="btn" style="background: var(--student-primary); padding: 6px 12px; font-size: 0.85rem; text-align: center;">Start Lesson</a>
             </div>
           `;
         });
@@ -829,6 +832,15 @@
             output += `<cosy-instruction>📋 ${el.content}</cosy-instruction>`;
           } else if (el.type === "blockquote") {
             output += `<cosy-blockquote>${el.content}</cosy-blockquote>`;
+          } else if (el.type === "test") {
+            output += `<div class="cosy-test-question">`;
+            if (el.options) {
+              const qName = "q_" + Math.random().toString(36).substring(2, 8);
+              el.options.forEach(opt => {
+                output += `<label class="cosy-test-option"><input type="radio" name="${qName}" /> ${opt}</label>`;
+              });
+            }
+            output += `</div>`;
           } else if (el.type === "input") {
             output += `<div class="cosy-input-box"><input type="text" placeholder="Type answer..." /></div>`;
           } else if (el.type === "image") {
