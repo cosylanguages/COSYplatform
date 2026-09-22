@@ -188,13 +188,124 @@
       background: #f8fafc;
     }
 
-    /* Lesson Viewer */
-    .lesson-viewer {
-      max-width: 950px;
+    /* Edvibe Workspace Layout */
+    .edvibe-workspace {
+      display: grid;
+      grid-template-columns: 56px 1fr 280px;
+      gap: 20px;
+      max-width: 1440px;
       margin: 20px auto;
-      padding: 0 20px;
+      padding: 0 16px;
+      align-items: start;
     }
 
+    @media (max-width: 1024px) {
+      .edvibe-workspace {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .left-utility-rail {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 12px 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+      position: sticky;
+      top: 20px;
+    }
+
+    .rail-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      border: 1px solid #cbd5e1;
+      background: #f8fafc;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s ease;
+      color: #475569;
+    }
+
+    .rail-btn:hover, .rail-btn.active {
+      background: var(--teacher-primary);
+      color: white;
+      border-color: var(--teacher-primary);
+    }
+
+    .right-sections-sidebar {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+      position: sticky;
+      top: 20px;
+    }
+
+    .sections-header {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #f1f5f9;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .section-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 12px;
+      border-radius: 8px;
+      margin-bottom: 6px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: #475569;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      background: #f8fafc;
+      border: 1px solid transparent;
+    }
+
+    .section-item:hover {
+      background: #f1f5f9;
+      color: #0f172a;
+    }
+
+    .section-item.active {
+      background: #e0e7ff;
+      color: #3730a3;
+      border-color: #c7d2fe;
+      font-weight: 600;
+    }
+
+    .section-num {
+      font-size: 0.75rem;
+      font-weight: 700;
+      background: #cbd5e1;
+      color: #334155;
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-right: 8px;
+    }
+
+    .section-item.active .section-num {
+      background: var(--teacher-primary);
+      color: white;
+    }
+
+    /* Lesson Viewer */
     .slide-card {
       background: white;
       border-radius: 12px;
@@ -290,6 +401,8 @@
     }
   </style>
   <script src="shared/js/access-grants.js"></script>
+  <script src="shared/js/vocab-index.js"></script>
+  <script src="shared/js/irregular-verbs.js"></script>
 </head>
 <body>
 
@@ -475,6 +588,144 @@
     window.currentTeacherLessonTitle = "";
     window.currentDurationFilter = "50";
     window.currentModeFilter = "all";
+    window.activeDrawer = null;
+
+    window.timerSeconds = 300;
+    window.timerInterval = null;
+
+    function toggleUtilityDrawer(drawerName) {
+      if (window.activeDrawer === drawerName) {
+        window.activeDrawer = null;
+      } else {
+        window.activeDrawer = drawerName;
+      }
+      renderTeacherLessonUI();
+    }
+
+    function searchCosyDict(query) {
+      const resultsDiv = document.getElementById('dictSearchResults');
+      if (!resultsDiv) return;
+
+      const q = query.trim().toLowerCase();
+      if (!q) {
+        resultsDiv.innerHTML = `<p style="color: #64748b; font-style: italic;">Type a word to search COSYdata vocabulary index...</p>`;
+        return;
+      }
+
+      const vocabIndex = window.CosyVocabIndex || {};
+      const matches = [];
+
+      for (const word in vocabIndex) {
+        if (word.includes(q)) {
+          vocabIndex[word].forEach(entry => {
+            matches.push({ word: word, id: entry.id, pos: entry.pos, file: entry.file });
+          });
+          if (matches.length >= 20) break;
+        }
+      }
+
+      if (matches.length === 0) {
+        resultsDiv.innerHTML = `<p style="color: #ef4444;">No matching COSYdata key found for "${query}".</p>`;
+        return;
+      }
+
+      let html = `<div style="display: flex; flex-direction: column; gap: 8px;">`;
+      matches.forEach(m => {
+        html += `
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 8px 10px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+              <strong style="color: #0f172a; font-size: 0.95rem;">${m.word}</strong>
+              <span style="font-size: 0.75rem; background: #e0e7ff; color: #3730a3; padding: 2px 6px; border-radius: 4px; font-weight: 600;">${m.pos}</span>
+            </div>
+            <div style="font-family: monospace; font-size: 0.8rem; color: #0284c7; background: #f0f9ff; padding: 2px 6px; border-radius: 4px; word-break: break-all;">
+              COSYdata ID: ${m.id}
+            </div>
+            <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">File: ${m.file}</div>
+          </div>
+        `;
+      });
+      html += `</div>`;
+      resultsDiv.innerHTML = html;
+    }
+
+    function searchIrregularVerbs(query) {
+      const resultsDiv = document.getElementById('verbSearchResults');
+      if (!resultsDiv) return;
+
+      const q = query.trim().toLowerCase();
+      const verbs = window.CosyIrregularVerbs || [];
+      const matches = verbs.filter(v => v.v1.includes(q) || v.v2.includes(q) || v.v3.includes(q));
+
+      if (matches.length === 0) {
+        resultsDiv.innerHTML = `<p style="color: #ef4444;">No irregular verb found for "${query}".</p>`;
+        return;
+      }
+
+      let html = `
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; text-align: left;">
+          <thead>
+            <tr style="background: #f1f5f9; border-bottom: 1px solid #cbd5e1; color: #475569;">
+              <th style="padding: 6px 8px;">V1 (Base)</th>
+              <th style="padding: 6px 8px;">V2 (Past Simple)</th>
+              <th style="padding: 6px 8px;">V3 (Past Participle)</th>
+            </tr>
+          </thead>
+          <tbody>
+      `;
+
+      matches.slice(0, 15).forEach(v => {
+        html += `
+          <tr style="border-bottom: 1px solid #e2e8f0;">
+            <td style="padding: 6px 8px; font-weight: 700; color: #0f172a;">${v.v1}</td>
+            <td style="padding: 6px 8px; color: #4338ca;">${v.v2}</td>
+            <td style="padding: 6px 8px; color: #0284c7;">${v.v3}</td>
+          </tr>
+        `;
+      });
+
+      html += `</tbody></table>`;
+      resultsDiv.innerHTML = html;
+    }
+
+    function updateTimerDisplay() {
+      const el = document.getElementById('timerDisplay');
+      if (!el) return;
+      const m = Math.floor(window.timerSeconds / 60).toString().padStart(2, '0');
+      const s = (window.timerSeconds % 60).toString().padStart(2, '0');
+      el.innerText = `${m}:${s}`;
+    }
+
+    function startTimer() {
+      if (window.timerInterval) return;
+      window.timerInterval = setInterval(() => {
+        if (window.timerSeconds > 0) {
+          window.timerSeconds--;
+          updateTimerDisplay();
+        } else {
+          clearInterval(window.timerInterval);
+          window.timerInterval = null;
+          alert('⏱️ Time is up!');
+        }
+      }, 1000);
+    }
+
+    function pauseTimer() {
+      if (window.timerInterval) {
+        clearInterval(window.timerInterval);
+        window.timerInterval = null;
+      }
+    }
+
+    function resetTimer(secs) {
+      pauseTimer();
+      window.timerSeconds = secs;
+      updateTimerDisplay();
+    }
+
+    function addTimerMinutes(mins) {
+      window.timerSeconds += mins * 60;
+      updateTimerDisplay();
+    }
 
     async function renderLesson(lessonPath) {
       const appRoot = document.getElementById('app-root');
@@ -544,55 +795,72 @@
       const currentIdx = window.currentTeacherSlideIdx;
 
       let html = `
-        <div class="lesson-viewer">
+        <div style="max-width: 1440px; margin: 10px auto; padding: 0 16px;">
           <div class="teacher-controls-bar">
             <a href="teacher.html?key=${key}" class="back-btn" style="color: #64748b; font-weight: 500;">← Back to Catalog</a>
-            <button class="slide-nav-btn" onclick="toggleTeacherViewMode()">${window.teacherViewModeAll ? '📄 Single Slide' : '📜 Scroll All'}</button>
-            <button class="slide-nav-btn" onclick="toggleProjectorMode()" title="Classroom Projector / High Contrast Mode">🖥️ Projector</button>
-            <button class="slide-nav-btn" onclick="toggleAnswerKeys()" title="Toggle Answer Key Visibility">👁️ Answer Keys</button>
-            <button class="slide-nav-btn" onclick="adjustTextZoom(-1)" title="Decrease Text Size">Aa-</button>
-            <button class="slide-nav-btn" onclick="adjustTextZoom(1)" title="Increase Text Size">Aa+</button>
-            <div class="control-group">
-              <label><strong>Duration Filter:</strong></label>
-              <select id="duration-select" onchange="window.currentDurationFilter=this.value; applyTeacherFilters();">
-                <option value="50" ${window.currentDurationFilter==='50'?'selected':''}>60m Lesson (50 active min)</option>
-                <option value="80" ${window.currentDurationFilter==='80'?'selected':''}>90m Lesson (80 active min)</option>
-                <option value="110" ${window.currentDurationFilter==='110'?'selected':''}>120m Lesson (110 active min)</option>
-              </select>
-            </div>
-            <div class="control-group">
-              <label><strong>Classroom Mode:</strong></label>
-              <select id="mode-select" onchange="window.currentModeFilter=this.value; applyTeacherFilters();">
-                <option value="all" ${window.currentModeFilter==='all'?'selected':''}>All Modes</option>
-                <option value="individual" ${window.currentModeFilter==='individual'?'selected':''}>1-on-1 Individual</option>
-                <option value="group" ${window.currentModeFilter==='group'?'selected':''}>Group Class</option>
-              </select>
+            <span style="font-weight: 700; color: #0f172a; font-size: 1.1rem;">${lessonTitle}</span>
+            <div style="display: flex; gap: 8px; align-items: center;">
+              <button class="slide-nav-btn" onclick="toggleTeacherViewMode()">${window.teacherViewModeAll ? '📄 Single Slide' : '📜 Scroll All'}</button>
+              <button class="slide-nav-btn" onclick="toggleProjectorMode()" title="Classroom Projector">🖥️ Projector</button>
+              <button class="slide-nav-btn" onclick="toggleAnswerKeys()" title="Toggle Answer Key Visibility">👁️ Answer Keys</button>
+              <button class="slide-nav-btn" onclick="adjustTextZoom(-1)">Aa-</button>
+              <button class="slide-nav-btn" onclick="adjustTextZoom(1)">Aa+</button>
             </div>
           </div>
-      `;
+        </div>
 
-      if (!window.teacherViewModeAll && totalSlides > 0) {
-        html += `
-          <div class="slide-nav-bar">
-            <div class="slide-pills">
-        `;
-        slides.forEach((s, idx) => {
-          html += `
-            <button class="slide-pill ${idx === currentIdx ? 'active' : ''}" onclick="goToTeacherSlide(${idx})">
-              Slide ${idx + 1}
-            </button>
-          `;
-        });
-        html += `
-            </div>
-            <div style="display: flex; align-items: center; gap: 10px;">
-              <button class="slide-nav-btn" onclick="navigateTeacherSlide(-1)" ${currentIdx === 0 ? 'disabled' : ''}>← Previous</button>
-              <span style="font-size: 0.85rem; font-weight: 700; color: #475569;">${currentIdx + 1} / ${totalSlides}</span>
-              <button class="slide-nav-btn" onclick="navigateTeacherSlide(1)" ${currentIdx === totalSlides - 1 ? 'disabled' : ''}>Next →</button>
-            </div>
+        <div class="edvibe-workspace">
+          <!-- Left Utility Rail -->
+          <div class="left-utility-rail">
+            <button class="rail-btn ${window.activeDrawer==='dict'?'active':''}" onclick="toggleUtilityDrawer('dict')" title="COSYdata Dictionary">📖</button>
+            <button class="rail-btn ${window.activeDrawer==='verbs'?'active':''}" onclick="toggleUtilityDrawer('verbs')" title="Irregular Verbs">⚡</button>
+            <button class="rail-btn ${window.activeDrawer==='timer'?'active':''}" onclick="toggleUtilityDrawer('timer')" title="Lesson Timer">⏱️</button>
           </div>
-        `;
-      }
+
+          <!-- Main Slide Content Area -->
+          <div style="position: relative;">
+            <!-- Utility Drawer Popovers -->
+            <div id="dict-drawer" style="display: ${window.activeDrawer==='dict'?'block':'none'}; background: white; border: 1px solid #cbd5e1; border-radius: 12px; padding: 16px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+              <h3 style="font-size: 1rem; color: #0f172a; margin-bottom: 8px; display: flex; align-items: center; justify-content: space-between;">
+                <span>📖 COSYdata Dictionary Lookup</span>
+                <button onclick="toggleUtilityDrawer(null)" style="border:none; background:none; cursor:pointer; font-size: 1.1rem;">✖</button>
+              </h3>
+              <input type="text" id="dictSearchInput" placeholder="Type a word (e.g. mother, family)..." oninput="searchCosyDict(this.value)" style="width: 100%; padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.9rem; margin-bottom: 12px;" />
+              <div id="dictSearchResults" style="max-height: 250px; overflow-y: auto; font-size: 0.88rem;">
+                <p style="color: #64748b; font-style: italic;">Type a word to search COSYdata vocabulary index...</p>
+              </div>
+            </div>
+
+            <div id="verbs-drawer" style="display: ${window.activeDrawer==='verbs'?'block':'none'}; background: white; border: 1px solid #cbd5e1; border-radius: 12px; padding: 16px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+              <h3 style="font-size: 1rem; color: #0f172a; margin-bottom: 8px; display: flex; align-items: center; justify-content: space-between;">
+                <span>⚡ Irregular Verbs Reference (V1 - V2 - V3)</span>
+                <button onclick="toggleUtilityDrawer(null)" style="border:none; background:none; cursor:pointer; font-size: 1.1rem;">✖</button>
+              </h3>
+              <input type="text" id="verbSearchInput" placeholder="Search verb (e.g. go, speak, write)..." oninput="searchIrregularVerbs(this.value)" style="width: 100%; padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.9rem; margin-bottom: 12px;" />
+              <div id="verbSearchResults" style="max-height: 250px; overflow-y: auto;">
+                <!-- Verbs rendered here -->
+              </div>
+            </div>
+
+            <div id="timer-drawer" style="display: ${window.activeDrawer==='timer'?'block':'none'}; background: white; border: 1px solid #cbd5e1; border-radius: 12px; padding: 16px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+              <h3 style="font-size: 1rem; color: #0f172a; margin-bottom: 8px; display: flex; align-items: center; justify-content: space-between;">
+                <span>⏱️ Classroom Timer</span>
+                <button onclick="toggleUtilityDrawer(null)" style="border:none; background:none; cursor:pointer; font-size: 1.1rem;">✖</button>
+              </h3>
+              <div style="text-align: center; margin: 12px 0;">
+                <div id="timerDisplay" style="font-size: 2.2rem; font-weight: 800; color: var(--teacher-primary); font-family: monospace;">05:00</div>
+                <div style="display: flex; gap: 8px; justify-content: center; margin-top: 12px;">
+                  <button class="slide-nav-btn" onclick="startTimer()">Start</button>
+                  <button class="slide-nav-btn" onclick="pauseTimer()">Pause</button>
+                  <button class="slide-nav-btn" onclick="resetTimer(300)">Reset (5m)</button>
+                  <button class="slide-nav-btn" onclick="addTimerMinutes(1)">+1m</button>
+                  <button class="slide-nav-btn" onclick="addTimerMinutes(5)">+5m</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide Canvas -->
+      `;
 
       if (window.teacherViewModeAll) {
         slides.forEach((slide, idx) => {
@@ -602,9 +870,42 @@
         html += renderTeacherSlideCard(slides[currentIdx], currentIdx);
       }
 
-      html += `</div>`;
+      html += `
+          </div>
+
+          <!-- Right Sections Sidebar (Slide Switcher) -->
+          <div class="right-sections-sidebar">
+            <div class="sections-header">
+              <span>Sections (${totalSlides})</span>
+              <div style="display: flex; gap: 4px;">
+                <button class="slide-nav-btn" style="padding: 2px 8px;" onclick="navigateTeacherSlide(-1)" ${currentIdx === 0 ? 'disabled' : ''}>←</button>
+                <button class="slide-nav-btn" style="padding: 2px 8px;" onclick="navigateTeacherSlide(1)" ${currentIdx === totalSlides - 1 ? 'disabled' : ''}>→</button>
+              </div>
+            </div>
+            <div style="max-height: 500px; overflow-y: auto;">
+      `;
+
+      slides.forEach((s, idx) => {
+        html += `
+          <div class="section-item ${idx === currentIdx ? 'active' : ''}" onclick="goToTeacherSlide(${idx})">
+            <div>
+              <span class="section-num">${idx + 1}</span>
+              <span>${s.title}</span>
+            </div>
+            ${s.stage ? `<span style="font-size: 0.7rem; color: #64748b;">${s.stage}</span>` : ''}
+          </div>
+        `;
+      });
+
+      html += `
+            </div>
+          </div>
+        </div>
+      `;
+
       appRoot.innerHTML = html;
       applyTeacherFilters();
+      if (window.activeDrawer === 'verbs') searchIrregularVerbs('');
     }
 
     function applyTeacherFilters() {
