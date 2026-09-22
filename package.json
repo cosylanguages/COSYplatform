@@ -4,7 +4,8 @@
   "description": "COSYplatform Content Repository",
   "private": true,
   "scripts": {
-    "validate": "node scripts/validate-curriculums.js && node scripts/validate-lessons.js"
+    "validate": "node scripts/validate-curriculums.js && node scripts/validate-lessons.js",
+    "check:links": "node scripts/check-links.mjs"
   },
   "devDependencies": {
     "ajv": "^8.17.1"

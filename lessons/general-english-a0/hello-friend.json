@@ -1,0 +1,201 @@
+{
+  "id": "hello-friend",
+  "title": "Hello, friend!",
+  "level": "A0",
+  "language": "en",
+  "defaultDuration": 50,
+  "defaultMode": "all",
+  "objectives": [
+    "greet people politely in English",
+    "spell name aloud using the alphabet",
+    "introduce oneself to others"
+  ],
+  "links": {
+    "vocabulary": [
+      "hello",
+      "hi",
+      "goodbye",
+      "bye",
+      "name",
+      "spell",
+      "student",
+      "teacher"
+    ],
+    "grammar": [
+      {
+        "topic_id": "to-be",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/to-be.html"
+      }
+    ],
+    "communication": [
+      "en:general:greetings-and-introductions:hello-nice-to-meet-you"
+    ],
+    "phonetics": "en-pron-a1-01-alphabet"
+  },
+  "slides": [
+    {
+      "id": "hello-friend-slide-1",
+      "title": "Warm-up & Overview",
+      "stage": "warm-up",
+      "duration": 50,
+      "mode": "all",
+      "teacherNotes": [
+        {
+          "type": "instruction",
+          "title": "Stage aim",
+          "content": "Greet student and introduce lesson objectives for Hello, friend!."
+        },
+        {
+          "type": "speech",
+          "content": "Welcome to today's lesson: Hello, friend!! Today we will practice how to greet people politely in English."
+        }
+      ],
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Lesson Objectives for Hello, friend!:"
+        },
+        {
+          "type": "blockquote",
+          "content": "greet people politely in English; spell name aloud using the alphabet; introduce oneself to others"
+        }
+      ]
+    },
+    {
+      "id": "hello-friend-slide-2",
+      "title": "Vocabulary & Input",
+      "stage": "input",
+      "duration": 50,
+      "mode": "all",
+      "teacherNotes": [
+        {
+          "type": "instruction",
+          "title": "Stage aim",
+          "content": "Introduce target vocabulary and key language structures using concept check questions."
+        }
+      ],
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Review key terms and target language below:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Key terms: hello, hi, goodbye, bye, name, spell"
+        }
+      ]
+    },
+    {
+      "id": "hello-friend-slide-3",
+      "title": "Controlled Practice",
+      "stage": "controlled-practice",
+      "duration": 50,
+      "mode": "all",
+      "teacherNotes": [
+        {
+          "type": "instruction",
+          "title": "Stage aim",
+          "content": "Check understanding through controlled choice exercise."
+        }
+      ],
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "What is the polite greeting for the morning?"
+        },
+        {
+          "type": "test",
+          "options": [
+            "Good morning",
+            "Good night",
+            "Goodbye"
+          ],
+          "answers": [
+            "Good morning"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hello-friend-slide-4",
+      "title": "Reading & Listening Skills",
+      "stage": "reading-listening",
+      "duration": 50,
+      "mode": "all",
+      "teacherNotes": [
+        {
+          "type": "instruction",
+          "title": "Stage aim",
+          "content": "Develop reading comprehension and listening skills."
+        },
+        {
+          "type": "additional",
+          "title": "Listening Task Status",
+          "content": "Listening task: not-applicable \u2014 introductory orientation focus for initial Unit 1 lessons."
+        }
+      ],
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Read the short passage below (recycling introduced vocabulary):"
+        },
+        {
+          "type": "blockquote",
+          "content": "Hello! My name is Alex. I am a student. Good morning to my teacher and my friend."
+        },
+        {
+          "type": "instruction",
+          "content": "Listening Task: Listen to your teacher / audio prompt and answer the comprehension question."
+        }
+      ]
+    },
+    {
+      "id": "hello-friend-slide-5",
+      "title": "Freer Speaking Practice",
+      "stage": "freer-practice",
+      "duration": 50,
+      "mode": "all",
+      "teacherNotes": [
+        {
+          "type": "instruction",
+          "title": "Stage aim",
+          "content": "Provide communicative speaking practice and personalized interaction."
+        }
+      ],
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Practice saying hello, stating your name, and spelling your full name to your teacher."
+        }
+      ]
+    },
+    {
+      "id": "hello-friend-slide-6",
+      "title": "Cool-down & Summary",
+      "stage": "cool-down",
+      "duration": 50,
+      "mode": "all",
+      "teacherNotes": [
+        {
+          "type": "instruction",
+          "title": "Stage aim",
+          "content": "Review key corrections and confirm homework task."
+        },
+        {
+          "type": "speech",
+          "content": "Great work today! Remember to review target words in your mobile app before our next class."
+        }
+      ],
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Lesson Summary & Feedback:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Today you practiced: greet people politely in English, spell name aloud using the alphabet, introduce oneself to others."
+        }
+      ]
+    }
+  ]
+}
