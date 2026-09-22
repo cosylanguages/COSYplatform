@@ -14,6 +14,31 @@
       "type": "array",
       "items": { "type": "string" }
     },
+    "links": {
+      "type": "object",
+      "properties": {
+        "vocabulary": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "grammar": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "topic_id": { "type": "string" },
+              "manual_url": { "type": "string" },
+              "practice_ref": { "type": "string" }
+            }
+          }
+        },
+        "communication": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "phonetics": { "type": "string" }
+      }
+    },
     "slides": {
       "type": "array",
       "items": {

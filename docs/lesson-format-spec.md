@@ -170,3 +170,66 @@ Renders interactive English grammar rule cards.
 - `<cosy-iframe src="..." height="382" />`
 - `<cosy-record time="120" counts="5">`: Audio recorder component for student speech practice.
 - `<cosy-essay max-length="900">`: Long text response submission widget.
+
+---
+
+## Lesson Metadata & Cross-Curriculum Links (`<cosy-links>` / `links`)
+
+Lessons support structured cross-curriculum metadata linking vocabulary target items, grammar manual topics with practice references, communication goals, and phonetics points.
+
+- **JSON `links` object**:
+  - `vocabulary`: array of strings (`string[]`)
+  - `grammar`: array of objects (`{ topic_id: string, manual_url: string, practice_ref: string }`)
+  - `communication`: array of strings (`string[]`)
+  - `phonetics`: string
+- **XML `<cosy-links>` element**: Optional top-level metadata element mapping directly to the JSON `links` object.
+
+### Worked Example
+
+**JSON Representation:**
+```json
+{
+  "id": "nice-to-meet-you",
+  "title": "Nice to meet you!",
+  "level": "A1",
+  "language": "en",
+  "links": {
+    "vocabulary": ["hello", "goodbye", "name", "nice to meet you"],
+    "grammar": [
+      {
+        "topic_id": "to-be-present",
+        "manual_url": "manuals/grammar/to-be.md",
+        "practice_ref": "grammar-english-a1#lesson-2"
+      }
+    ],
+    "communication": ["Greeting people", "Introducing oneself"],
+    "phonetics": "/h/ sound & rising intonation in questions"
+  },
+  "slides": []
+}
+```
+
+**XML Representation:**
+```xml
+<cosy-lesson id="nice-to-meet-you" level="A1" language="en" title="Nice to meet you!">
+  <cosy-links>
+    <cosy-link-vocabulary>
+      <item>hello</item>
+      <item>goodbye</item>
+      <item>name</item>
+      <item>nice to meet you</item>
+    </cosy-link-vocabulary>
+    <cosy-link-grammar>
+      <topic topic-id="to-be-present" manual-url="manuals/grammar/to-be.md" practice-ref="grammar-english-a1#lesson-2" />
+    </cosy-link-grammar>
+    <cosy-link-communication>
+      <item>Greeting people</item>
+      <item>Introducing oneself</item>
+    </cosy-link-communication>
+    <cosy-link-phonetics>/h/ sound &amp; rising intonation in questions</cosy-link-phonetics>
+  </cosy-links>
+  <cosy-slide id="slide-1" title="Warm-up">
+    <!-- Slide content -->
+  </cosy-slide>
+</cosy-lesson>
+```
