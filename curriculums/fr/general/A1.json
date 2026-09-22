@@ -86,217 +86,167 @@
     },
     {
       "unit": 1,
-      "title": "Ma vie aujourd'hui",
+      "title": "MODULE 1. PREMIER CONTACT & IDENTITÉ PERSONNELLE",
       "lessons": [
         {
           "lesson": 1,
-          "title": "Bonjour, je m'appelle...",
+          "title": "1.1 Bonjour ! Premier contact",
           "grammar": [
-            "Être au présent + pronoms sujets"
+            "Pronoms sujets, verbe 'être' au présent, 's'appeler'"
           ],
           "vocabulary": [
-            "Bonjour",
-            "Salut",
-            "Merci",
-            "S'il vous plaît",
-            "Enchanté",
-            "être",
-            "s'appeler",
-            "français",
-            "anglais"
+            "bonjour",
+            "salut",
+            "au revoir",
+            "merci",
+            "s'il vous plaît"
           ],
-          "teacher_notes": "code: \"FR-01\"\npronunciation: [{\"point\":\"The French Alphabet - Vowels\",\"explain\":\"French vowels are much 'tighter' and more forward in the mouth than in English.\",\"examples\":[{\"pattern\":\"A\",\"ipa\":\"/a/\",\"word\":\"chat\"},{\"pattern\":\"E\",\"ipa\":\"/ə/\",\"word\":\"le\"},{\"pattern\":\"I\",\"ipa\":\"/i/\",\"word\":\"lit\"},{\"pattern\":\"O\",\"ipa\":\"/o/\",\"word\":\"dos\"},{\"pattern\":\"U\",\"ipa\":\"/y/\",\"word\":\"tu\"}],\"extension\":\"En français, les voyelles sont pures. Elles ne changent pas de son à la fin, contrairement à l'anglais où elles glissent souvent.\",\"visual\":\"👄\"},{\"point\":\"Silent Final Consonants\",\"explain\":\"In French, many final consonants are not pronounced.\",\"examples\":[{\"pattern\":\"t\",\"ipa\":\"/sa.ly/\",\"word\":\"salut\"},{\"pattern\":\"s\",\"ipa\":\"/vu/\",\"word\":\"vous\"},{\"pattern\":\"d\",\"ipa\":\"/taʁ/\",\"word\":\"tard\"}],\"tip\":\"Remember: C, R, F, L (CaReFuL) are usually pronounced at the end.\",\"extension\":\"C'est l'une des règles les plus importantes : on ne prononce pas le 's' du pluriel, ni le 't' ou le 'd' final dans la plupart des cas.\",\"visual\":\"🔇\"}]\nspeaking: \"Se présenter et saluer en classe\"\nlistening: \"Trois personnes se présentent\"\nreading: \"Un court dialogue de présentation\"\nwriting: \"Écrire sa propre présentation (4 phrases)\"\ntask: \"Speed dating de présentation\"\ncando: \"Peut se présenter et saluer poliment\"\nhw: \"Apprendre les nombres de 1 à 20\"",
-          "recycled": "Structure de base de la phrase, Requêtes polies (S'il vous plaît), Merci beaucoup"
+          "teacher_notes": "code: \"FR-01\"\ncando: \"Peut saluer, dire au revoir, se présenter et utiliser le vocabulaire de la classe\"\nspeaking: \"Se présenter et saluer en classe\"\nlistening: \"Trois personnes se présentent\"\nreading: \"Un court dialogue de présentation\"\nwriting: \"Écrire 5 phrases pour se présenter\"",
+          "recycled": "Module 1 foundational progression"
         },
         {
           "lesson": 2,
-          "title": "Mon travail au quotidien",
+          "title": "1.2 Comment t'appelles-tu ? Demander le nom",
           "grammar": [
-            "Avoir au présent + articles indéfinis"
+            "Questions avec 's'appeler', présentations avec 'C'est'"
           ],
           "vocabulary": [
-            "travail",
-            "bureau",
-            "collègue",
-            "salaire",
-            "ordinateur",
-            "avoir",
-            "travailler",
-            "occupé",
-            "libre"
+            "nom",
+            "prénom",
+            "ami",
+            "qui",
+            "comment"
           ],
-          "teacher_notes": "code: \"FR-02\"\npronunciation: [{\"point\":\"The Accent Aigu (é)\",\"explain\":\"The 'é' makes a short, closed 'e' sound, like 'ay' in 'play' but shorter.\",\"examples\":[{\"pattern\":\"é\",\"ipa\":\"/e.ka.nɔ.mi/\",\"word\":\"économie\"},{\"pattern\":\"é\",\"ipa\":\"/ka.fe/\",\"word\":\"café\"},{\"pattern\":\"é\",\"ipa\":\"/e.te/\",\"word\":\"été\"}],\"tip\":\"Smile slightly when pronouncing this sound.\"}]\nspeaking: \"Décrire son métier et ses outils\"\nlistening: \"Descriptions de différents métiers\"\nreading: \"Une annonce d'emploi simple\"\nwriting: \"Décrire son travail en 5 phrases\"\ntask: \"Deviner le métier de son partenaire\"\ncando: \"Peut parler de sa profession de base\"\nhw: \"Énumérer 10 objets de son bureau\"",
-          "recycled": "Requêtes polies (S'il vous plaît), Être au présent + pronoms sujets, s'appeler"
+          "teacher_notes": "code: \"FR-02\"\ncando: \"Peut demander et donner un nom, et présenter une autre personne\"\nspeaking: \"Demander les noms et présenter un ami en trio\"\nlistening: \"Personnes demandant et donnant leur nom\"\nreading: \"Dialogues simples lors d'une rencontre\"\nwriting: \"Rédiger un court dialogue de présentation\"",
+          "recycled": "Module 1 foundational progression"
         },
         {
           "lesson": 3,
-          "title": "Où j'habite — ma maison",
+          "title": "1.3 Alphabet & Épellation",
           "grammar": [
-            "Habiter + prépositions de lieu (à, en)"
+            "Comment ça s'écrit ?, accents et cédille"
           ],
           "vocabulary": [
-            "appartement",
-            "maison",
-            "ville",
-            "pays",
-            "rue",
-            "habiter",
-            "grand",
-            "petit",
-            "moderne"
+            "alphabet",
+            "lettre",
+            "épeler",
+            "voyelle",
+            "consonne"
           ],
-          "teacher_notes": "code: \"FR-03\"\npronunciation: [{\"point\":\"The Sound /u/ (ou)\",\"explain\":\"Like the 'oo' in 'food', but with more rounded lips.\",\"examples\":[{\"pattern\":\"ou\",\"ipa\":\"/u/\",\"word\":\"où\"},{\"pattern\":\"ou\",\"ipa\":\"/bu.lɑ̃.ʒe/\",\"word\":\"boulanger\"},{\"pattern\":\"ou\",\"ipa\":\"/vu/\",\"word\":\"vous\"}],\"tip\":\"Imagine you are blowing out a candle.\",\"extension\":\"Ne confondez pas le 'ou' (/u/) avec le 'u' (/y/). Le 'ou' est profond et arrondi.\",\"visual\":\"🕯️\"}]\nspeaking: \"Décrire son domicile et sa localisation\"\nlistening: \"Une personne décrit son quartier\"\nreading: \"Une petite annonce immobilière\"\nwriting: \"Écrire son adresse et décrire sa maison\"\ntask: \"Dessiner le plan de sa maison et l'expliquer\"\ncando: \"Peut décrire son lieu d'habitation\"\nhw: \"Apprendre le vocabulaire des pièces de la maison\"",
-          "recycled": "Être au présent + pronoms sujets, Avoir au présent + articles indéfinis, travailler"
+          "teacher_notes": "code: \"FR-03\"\ncando: \"Peut épeler son nom et comprendre des mots épelés\"\nspeaking: \"Épeler son nom et son courriel à voix haute\"\nlistening: \"Dictée de noms et d'adresses courriel\"\nreading: \"Lecture de lettres et de codes\"\nwriting: \"Épeler par écrit des noms propres\"",
+          "recycled": "Module 1 foundational progression"
         },
         {
           "lesson": 4,
-          "title": "Ma famille et mes proches",
+          "title": "1.4 Pays & Nationalités",
           "grammar": [
-            "Adjectifs possessifs (mon, ma, mes)"
+            "Accord des adjectifs de nationalité, préposition 'de/du/d''"
           ],
           "vocabulary": [
-            "père",
-            "mère",
-            "frère",
-            "sœur",
-            "enfant",
-            "avoir",
-            "aimer",
-            "marié",
-            "célibataire"
+            "pays",
+            "nationalité",
+            "ville",
+            "passeport",
+            "France"
           ],
-          "teacher_notes": "code: \"FR-04\"\npronunciation: [{\"point\":\"The Sound /y/ (u)\",\"explain\":\"A sound that doesn't exist in English. Shape your lips for 'oo' but say 'ee'.\",\"examples\":[{\"pattern\":\"u\",\"ipa\":\"/y/\",\"word\":\"tu\"},{\"pattern\":\"u\",\"ipa\":\"/mə.ny/\",\"word\":\"menu\"},{\"pattern\":\"u\",\"ipa\":\"/sal.y/\",\"word\":\"salut\"}],\"tip\":\"Keep your tongue forward and your lips very tight.\"}]\nspeaking: \"Présenter sa famille à l'aide de photos\"\nlistening: \"Un homme parle de sa grande famille\"\nreading: \"Un arbre généalogique commenté\"\nwriting: \"Rédiger un paragraphe sur sa famille\"\ntask: \"Trouver des points communs familiaux\"\ncando: \"Peut présenter les membres de sa famille\"\nhw: \"Faire son arbre généalogique en français\"",
-          "recycled": "Avoir au présent + articles indéfinis, Habiter + prépositions de lieu (à, en), grand"
+          "teacher_notes": "code: \"FR-04\"\ncando: \"Peut indiquer son pays d'origine et demander la nationalité\"\nspeaking: \"Demander l'origine et la nationalité en groupe\"\nlistening: \"Entretiens de contrôle aux frontières\"\nreading: \"Fiches de passeport\"\nwriting: \"Écrire 5 phrases sur l'origine de personnes connues\"",
+          "recycled": "Module 1 foundational progression"
         },
         {
           "lesson": 5,
-          "title": "Combien ça coûte ? (Argent)",
+          "title": "1.5 Langues que je parle",
           "grammar": [
-            "Les nombres jusqu'à 100 + interrogatifs"
+            "Verbe 'parler', verbe 'pouvoir' + infinitif, négation 'ne... pas'"
           ],
           "vocabulary": [
-            "prix",
-            "argent",
-            "carte",
-            "espèces",
-            "cher",
-            "bon marché",
-            "payer",
-            "acheter",
-            "coûter",
-            "gratuit"
+            "langue",
+            "français",
+            "anglais",
+            "parler",
+            "un peu"
           ],
-          "teacher_notes": "code: \"FR-05\"\npronunciation: [{\"point\":\"The Nasal Sound /ɑ̃/ (an, en)\",\"explain\":\"Air comes out of both your nose and mouth. Like the 'on' in 'song' but more open.\",\"examples\":[{\"pattern\":\"en\",\"ipa\":\"/ɑ̃.fɑ̃/\",\"word\":\"enfant\"},{\"pattern\":\"an\",\"ipa\":\"/mɑ̃.ʒe/\",\"word\":\"manger\"},{\"pattern\":\"an\",\"ipa\":\"/fʁɑ̃.sɛ/\",\"word\":\"français\"}],\"tip\":\"Don't pronounce the 'n' or 'm' fully.\"}]\nspeaking: \"Acheter des articles dans un magasin fictif\"\nlistening: \"Un dialogue à la caisse d'un supermarché\"\nreading: \"Un ticket de caisse et des prix\"\nwriting: \"Faire une liste de courses avec des prix\"\ntask: \"Jeu de rôle au marché\"\ncando: \"Peut faire des achats de base\"\nhw: \"Mémoriser les nombres jusqu'à 100\"",
-          "recycled": "Habiter + prépositions de lieu (à, en), Adjectifs possessifs (mon, ma, mes), aimer"
+          "teacher_notes": "code: \"FR-05\"\ncando: \"Peut parler des langues connues et exprimer ses capacités\"\nspeaking: \"Sondage de classe sur les langues parlées\"\nlistening: \"Interviews de polyglottes\"\nreading: \"Descriptions de portefeuilles linguistiques\"\nwriting: \"Écrire 5 phrases sur ses compétences linguistiques\"",
+          "recycled": "Module 1 foundational progression"
         },
         {
           "lesson": 6,
-          "title": "Manger et boire à la française",
+          "title": "1.6 Les nombres de 0 à 20",
           "grammar": [
-            "Articles partitifs (du, de la, des)"
+            "Pluriel des noms (-s), articles indéfinis 'des'"
           ],
           "vocabulary": [
-            "pain",
-            "café",
-            "eau",
-            "vin",
-            "fromage",
-            "repas",
-            "manger",
-            "boire",
-            "vouloir",
-            "bon",
-            "mauvais",
-            "froid",
-            "chaud"
+            "zéro",
+            "un",
+            "deux",
+            "trois",
+            "vingt"
           ],
-          "teacher_notes": "code: \"FR-06\"\npronunciation: [{\"point\":\"The Sound /ɔ̃/ (on, om)\",\"explain\":\"A nasal sound like 'on' in 'song', but with very rounded lips.\",\"examples\":[{\"pattern\":\"on\",\"ipa\":\"/bɔ̃/\",\"word\":\"bon\"},{\"pattern\":\"om\",\"ipa\":\"/nɔ̃/\",\"word\":\"nom\"},{\"pattern\":\"on\",\"ipa\":\"/pɔ̃/\",\"word\":\"pont\"}],\"tip\":\"Push your lips forward into an 'O' shape.\"}]\nspeaking: \"Commander au restaurant\"\nlistening: \"Une commande dans un café\"\nreading: \"Un menu de bistro parisien\"\nwriting: \"Écrire sa commande idéale\"\ntask: \"Commander un petit-déjeuner complet\"\ncando: \"Peut commander à manger et à boire\"\nhw: \"Apprendre 10 noms d'aliments de base\"",
-          "recycled": "Adjectifs possessifs (mon, ma, mes), Les nombres jusqu'à 100 + interrogatifs, acheter"
+          "teacher_notes": "code: \"FR-06\"\ncando: \"Peut compter de 0 à 20 et compter des objets\"\nspeaking: \"Comptage des objets de la classe et inventaire\"\nlistening: \"Dictées de nombres et quantités\"\nreading: \"Listes de stock courtes\"\nwriting: \"Écrire 5 groupes d'objets comptés au pluriel\"",
+          "recycled": "Module 1 foundational progression"
         },
         {
           "lesson": 7,
-          "title": "Ma santé, mon corps",
+          "title": "1.7 Âge & Anniversaire",
           "grammar": [
-            "L'expression \"avoir mal à...\""
+            "Verbe 'avoir' pour l'âge, adjectifs possessifs (mon, ma, mes)"
           ],
           "vocabulary": [
-            "tête",
-            "dos",
-            "ventre",
-            "médecin",
-            "médicament",
-            "dormir",
-            "marcher",
-            "souffrir",
-            "fatigué",
-            "malade",
-            "en forme"
+            "âge",
+            "an",
+            "anniversaire",
+            "mois",
+            "janvier"
           ],
-          "teacher_notes": "code: \"FR-07\"\npronunciation: [{\"point\":\"The 'R' sound /ʁ/\",\"explain\":\"The famous French 'R' is made in the back of the throat, like clearing your throat gently.\",\"examples\":[{\"pattern\":\"r\",\"ipa\":\"/ʁə.pa/\",\"word\":\"repas\"},{\"pattern\":\"r\",\"ipa\":\"/fʁɑ̃.sɛ/\",\"word\":\"français\"},{\"pattern\":\"r\",\"ipa\":\"/tʁɑ̃.vwa/\",\"word\":\"travail\"}],\"tip\":\"Keep the tip of your tongue down behind your bottom teeth.\"}]\nspeaking: \"Expliquer ses symptômes au médecin\"\nlistening: \"Une consultation médicale simple\"\nreading: \"Une ordonnance fictive\"\nwriting: \"Écrire un mot d'absence pour maladie\"\ntask: \"Jeu de rôle : chez le docteur\"\ncando: \"Peut exprimer une douleur physique simple\"\nhw: \"Apprendre les parties du corps\"",
-          "recycled": "Les nombres jusqu'à 100 + interrogatifs, Articles partitifs (du, de la, des), mauvais"
+          "teacher_notes": "code: \"FR-07\"\ncando: \"Peut demander et dire son âge et parler de son anniversaire\"\nspeaking: \"Demander l'âge et le mois d'anniversaire\"\nlistening: \"Annonces d'anniversaires célèbres\"\nreading: \"Calendrier d'anniversaires\"\nwriting: \"Écrire 5 phrases sur l'âge de proches\"",
+          "recycled": "Module 1 foundational progression"
         },
         {
           "lesson": 8,
-          "title": "La technologie dans ma vie",
+          "title": "1.8 Numéro de téléphone & Coordonnées",
           "grammar": [
-            "Verbes en -ER (groupe 1) au présent"
+            "Quel / Quelle, adjectifs possessifs"
           ],
           "vocabulary": [
-            "téléphone",
-            "internet",
-            "réseaux sociaux",
-            "mail",
-            "écran",
-            "utiliser",
-            "regarder",
-            "envoyer",
-            "surfer",
-            "utile",
-            "rapide",
-            "lent"
+            "numéro de téléphone",
+            "portable",
+            "courriel",
+            "adresse",
+            "rue"
           ],
-          "teacher_notes": "code: \"FR-08\"\nspeaking: \"Parler de son usage des écrans\"\nlistening: \"Interview sur les habitudes numériques\"\nreading: \"Un court article sur les réseaux sociaux\"\nwriting: \"Décrire sa routine numérique\"\ntask: \"Débat : pour ou contre le smartphone ?\"\ncando: \"Peut parler de ses habitudes technologiques\"\nhw: \"Traduire 5 phrases sur la technologie\"",
-          "recycled": "Articles partitifs (du, de la, des), L'expression \"avoir mal à...\", fatigué"
+          "teacher_notes": "code: \"FR-08\"\ncando: \"Peut échanger des coordonnées complètes\"\nspeaking: \"Échanger des cartes de visite et coordonnées\"\nlistening: \"Dictée de numéros de téléphone et courriels\"\nreading: \"Formulaires de réservation d'hôtel\"\nwriting: \"Remplir une fiche de contact personnelle\"",
+          "recycled": "Module 1 foundational progression"
         },
         {
           "lesson": 9,
-          "title": "Mes loisirs et passions",
+          "title": "1.9 Nombres de 20 à 100 & Prix",
           "grammar": [
-            "Le verbe \"faire\" + activités"
+            "Combien ça coûte ?, pluriel des prix"
           ],
           "vocabulary": [
-            "sport",
-            "musique",
-            "cinéma",
-            "voyage",
-            "lecture",
-            "faire",
-            "aimer",
-            "adorer",
-            "détester",
-            "amusant",
-            "ennuyeux",
-            "intéressant"
+            "trente",
+            "quarante",
+            "prix",
+            "coût",
+            "euro"
           ],
-          "teacher_notes": "code: \"FR-09\"\nspeaking: \"Partager ses activités du week-end\"\nlistening: \"Des jeunes parlent de leurs hobbies\"\nreading: \"Un programme culturel local\"\nwriting: \"Décrire son hobby préféré\"\ntask: \"Trouver quelqu'un qui fait la même activité\"\ncando: \"Peut parler de ses loisirs\"\nhw: \"Rédiger 5 phrases sur ses goûts\"",
-          "recycled": "L'expression \"avoir mal à...\", Verbes en -ER (groupe 1) au présent, utile"
+          "teacher_notes": "code: \"FR-09\"\ncando: \"Peut comprendre les nombres de 20 à 100 et demander des prix\"\nspeaking: \"Demander des prix et acheter au marché\"\nlistening: \"Transactions en caisse de magasin\"\nreading: \"Étiquettes de prix et tickets de caisse\"\nwriting: \"Écrire 5 phrases indiquant des prix\"",
+          "recycled": "Module 1 foundational progression"
         },
         {
           "lesson": 10,
-          "title": "Révision Unité 1 — Ma vie",
+          "title": "1.10 Projet : Profil personnel",
           "grammar": [
-            "Récapitulatif présent, articles et possessifs"
+            "Synthèse : être, avoir, s'appeler, parler, pouvoir"
           ],
           "vocabulary": [
-            "Tout le vocabulaire de l'Unité 1",
-            "Être",
-            "Avoir",
-            "Faire",
-            "Verbes en -ER",
-            "Accord des adjectifs"
+            "profil",
+            "identité",
+            "information",
+            "personnel",
+            "à propos de moi"
           ],
-          "teacher_notes": "code: \"FR-10\"\nspeaking: \"Bilan oral de 3 minutes sur soi-même\"\nlistening: \"Test de compréhension globale (dialogues mixtes)\"\nreading: \"Portrait d'un étudiant français\"\nwriting: \"Rédiger sa biographie complète (A1)\"\ntask: \"Entretien de personnalité\"\ncando: \"Maîtrise les bases de la survie en français\"\nhw: \"Préparer le portfolio de l'Unité 1\"",
-          "recycled": "Verbes en -ER (groupe 1) au présent, Le verbe \"faire\" + activités, amusant"
+          "teacher_notes": "code: \"FR-10\"\ncando: \"Peut présenter son profil personnel complet\"\nspeaking: \"Présentation orale de son profil en 1 minute\"\nlistening: \"Écoute des présentations de camarades\"\nreading: \"Exemples de cartes de profil\"\nwriting: \"Rédiger un profil personnel complet de 100 mots\"",
+          "recycled": "Module 1 foundational progression"
         }
       ]
     },
