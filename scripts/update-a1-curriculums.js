@@ -1,0 +1,759 @@
+const fs = require('fs');
+const path = require('path');
+
+const languages = ['ba', 'br', 'de', 'el', 'en', 'es', 'fr', 'hy', 'it', 'ka', 'pt', 'ru', 'tt'];
+
+const unitsTemplate = [
+  {
+    unit: 1,
+    title: "MODULE 1. PERSONAL IDENTITY & BASIC COMMUNICATION",
+    lessons: [
+      {
+        lesson: 1,
+        title: "1.1 Greetings, Introductions & Politeness",
+        grammar: ["Subject pronouns", "Verb \"to be\"", "Basic sentence order"],
+        vocabulary: ["hello", "good morning", "goodbye", "please", "thank you", "sorry", "excuse me", "greetings", "farewells", "titles", "polite phrases"],
+        teacher_notes: "code: \"M01-L01\"\ncando: \"Can greet people, introduce themselves and another person, say goodbye, use basic polite expressions, understand formal/informal differences\"",
+        recycled: "Foundation for all future communication"
+      },
+      {
+        lesson: 2,
+        title: "1.2 Personal Information",
+        grammar: ["Question words: what, where, who, how", "Yes/no questions", "Possessive adjectives"],
+        vocabulary: ["first name", "surname", "age", "birthday", "address", "phone number", "email", "nationality"],
+        teacher_notes: "code: \"M01-L02\"\ncando: \"Can give personal details, ask for information, fill in simple forms\"",
+        recycled: "Greetings, verb to be, subject pronouns"
+      },
+      {
+        lesson: 3,
+        title: "1.3 Alphabet, Spelling & Numbers",
+        grammar: ["Plural formation", "Numbers with nouns"],
+        vocabulary: ["alphabet", "numbers 0–100", "phone numbers", "prices", "dates"],
+        teacher_notes: "code: \"M01-L03\"\ncando: \"Can spell their name, understand numbers, give codes and information\"",
+        recycled: "Personal information questions, possessive adjectives"
+      }
+    ]
+  },
+  {
+    unit: 2,
+    title: "MODULE 2. PEOPLE & RELATIONSHIPS",
+    lessons: [
+      {
+        lesson: 1,
+        title: "2.1 Family",
+        grammar: ["Possession (my family, her brother)", "Verb \"have\"", "Possessive structures ('s)"],
+        vocabulary: ["mother", "father", "sister", "brother", "husband", "wife", "child", "grandparents", "friend", "neighbour", "colleague"],
+        teacher_notes: "code: \"M02-L01\"\ncando: \"Can talk about family members, describe relationships, introduce relatives\"",
+        recycled: "Numbers 0-100, personal details, possessive adjectives"
+      },
+      {
+        lesson: 2,
+        title: "2.2 Personal Appearance",
+        grammar: ["Adjectives (adjective + noun)", "Present simple (have/has)"],
+        vocabulary: ["head", "eyes", "hair", "face", "tall", "short", "young", "old", "beautiful", "handsome", "black", "brown", "blue"],
+        teacher_notes: "code: \"M02-L02\"\ncando: \"Can describe themselves and other people\"",
+        recycled: "Family vocabulary, verb have, possessive adjectives"
+      },
+      {
+        lesson: 3,
+        title: "2.3 Personality & Basic Characteristics",
+        grammar: ["Be + adjective", "Simple connectors (and, but)"],
+        vocabulary: ["friendly", "kind", "funny", "polite", "angry", "quiet", "lazy"],
+        teacher_notes: "code: \"M02-L03\"\ncando: \"Can describe personality and state basic impressions\"",
+        recycled: "Personal appearance, verb to be"
+      }
+    ]
+  },
+  {
+    unit: 3,
+    title: "MODULE 3. OBJECTS & PERSONAL SPACE",
+    lessons: [
+      {
+        lesson: 1,
+        title: "3.1 Everyday Objects",
+        grammar: ["Articles (a / an / the)", "Demonstratives (this, that)"],
+        vocabulary: ["phone", "computer", "book", "bag", "key", "wallet", "pen", "paper", "notebook"],
+        teacher_notes: "code: \"M03-L01\"\ncando: \"Can identify objects, ask what something is, ask for objects\"",
+        recycled: "Subject pronouns, verb to be, basic adjectives"
+      },
+      {
+        lesson: 2,
+        title: "3.2 Possessions",
+        grammar: ["Have / have got", "Possessives (my, your, his, her)", "Whose questions"],
+        vocabulary: ["clothes", "devices", "furniture", "personal belongings"],
+        teacher_notes: "code: \"M03-L02\"\ncando: \"Can talk about things they own and ask about ownership\"",
+        recycled: "Everyday objects, demonstratives, possessive adjectives"
+      },
+      {
+        lesson: 3,
+        title: "3.3 Colours, Shapes & Basic Descriptions",
+        grammar: ["Adjective order", "Comparisons introduction"],
+        vocabulary: ["red", "green", "black", "white", "circle", "square", "long", "short", "big", "small"],
+        teacher_notes: "code: \"M03-L03\"\ncando: \"Can describe objects and identify things by color, shape and size\"",
+        recycled: "Everyday objects, articles, possessive pronouns"
+      }
+    ]
+  },
+  {
+    unit: 4,
+    title: "MODULE 4. HOME & EVERYDAY ENVIRONMENT",
+    lessons: [
+      {
+        lesson: 1,
+        title: "4.1 Types of Homes",
+        grammar: ["Verb \"live\"", "Prepositions (in, near)"],
+        vocabulary: ["house", "apartment", "room", "building", "big", "small", "old", "new"],
+        teacher_notes: "code: \"M04-L01\"\ncando: \"Can say where they live and describe their home\"",
+        recycled: "Personal details, basic adjectives, demonstratives"
+      },
+      {
+        lesson: 2,
+        title: "4.2 Rooms",
+        grammar: ["There is / There are"],
+        vocabulary: ["kitchen", "bedroom", "bathroom", "living room"],
+        teacher_notes: "code: \"M04-L02\"\ncando: \"Can describe rooms and say where things are\"",
+        recycled: "Types of homes, everyday objects, articles"
+      },
+      {
+        lesson: 3,
+        title: "4.3 Furniture & Household Items",
+        grammar: ["Prepositions of place (on, under, next to, behind, in front of)"],
+        vocabulary: ["bed", "sofa", "chair", "table", "wardrobe", "lamp", "door", "window"],
+        teacher_notes: "code: \"M04-L03\"\ncando: \"Can describe their home interior and locate objects\"",
+        recycled: "Rooms, there is / there are, everyday objects"
+      },
+      {
+        lesson: 4,
+        title: "4.4 Household Actions",
+        grammar: ["Imperatives", "Present Simple"],
+        vocabulary: ["clean", "cook", "wash", "open", "close", "turn on", "turn off"],
+        teacher_notes: "code: \"M04-L04\"\ncando: \"Can talk about home activities and understand instructions\"",
+        recycled: "Furniture and household items, prepositions of place"
+      }
+    ]
+  },
+  {
+    unit: 5,
+    title: "MODULE 5. DAILY ROUTINE & TIME",
+    lessons: [
+      {
+        lesson: 1,
+        title: "5.1 Days, Dates & Calendar",
+        grammar: ["Time expressions (on Monday, in July)", "Ordinal numbers"],
+        vocabulary: ["days", "months", "seasons", "today", "tomorrow", "yesterday"],
+        teacher_notes: "code: \"M05-L01\"\ncando: \"Can talk about dates and understand schedules\"",
+        recycled: "Numbers 0-100, prepositions"
+      },
+      {
+        lesson: 2,
+        title: "5.2 Clock & Time",
+        grammar: ["Time questions (What time is it?)", "Prepositions (at 5 o'clock)"],
+        vocabulary: ["hour", "minute", "morning", "afternoon", "evening", "night"],
+        teacher_notes: "code: \"M05-L02\"\ncando: \"Can ask the time and arrange meetings\"",
+        recycled: "Days, dates, numbers 0-100"
+      },
+      {
+        lesson: 3,
+        title: "5.3 Daily Routine",
+        grammar: ["Present Simple", "Frequency adverbs (always, usually, sometimes, never)"],
+        vocabulary: ["wake up", "get dressed", "have breakfast", "work", "study", "relax", "cook", "watch TV", "sleep"],
+        teacher_notes: "code: \"M05-L03\"\ncando: \"Can describe a typical day and daily activities\"",
+        recycled: "Household actions, clock time, days of the week"
+      },
+      {
+        lesson: 4,
+        title: "5.4 Schedules & Appointments",
+        grammar: ["Present Simple questions"],
+        vocabulary: ["free", "busy", "appointment", "meeting", "class"],
+        teacher_notes: "code: \"M05-L04\"\ncando: \"Can make simple plans and discuss availability\"",
+        recycled: "Daily routine, clock time, time expressions"
+      }
+    ]
+  },
+  {
+    unit: 6,
+    title: "MODULE 6. FOOD & BASIC NEEDS",
+    lessons: [
+      {
+        lesson: 1,
+        title: "6.1 Food Vocabulary",
+        grammar: ["Countable and uncountable nouns"],
+        vocabulary: ["apple", "banana", "potato", "tomato", "meat", "fish", "egg", "milk", "cheese"],
+        teacher_notes: "code: \"M06-L01\"\ncando: \"Can talk about food and identify ingredients\"",
+        recycled: "Everyday objects, articles, present simple"
+      },
+      {
+        lesson: 2,
+        title: "6.2 Meals & Eating Habits",
+        grammar: ["Like + noun", "Like + verb-ing"],
+        vocabulary: ["breakfast", "lunch", "dinner", "eat", "drink", "cook"],
+        teacher_notes: "code: \"M06-L02\"\ncando: \"Can describe eating routines and state preferences\"",
+        recycled: "Food vocabulary, daily routine verbs, frequency adverbs"
+      },
+      {
+        lesson: 3,
+        title: "6.3 Drinks & Ordering",
+        grammar: ["Modal verb Can", "Would like"],
+        vocabulary: ["coffee", "tea", "water", "juice", "menu", "bill", "table"],
+        teacher_notes: "code: \"M06-L03\"\ncando: \"Can order in cafés and request things politely\"",
+        recycled: "Food vocabulary, polite phrases, countable/uncountable nouns"
+      },
+      {
+        lesson: 4,
+        title: "6.4 Shopping for Food",
+        grammar: ["How much / How many", "Some / any"],
+        vocabulary: ["supermarket", "bakery", "market", "kilo", "bottle", "piece", "price", "euro", "dollar"],
+        teacher_notes: "code: \"M06-L04\"\ncando: \"Can buy basic products and ask prices\"",
+        recycled: "Food and drink vocabulary, numbers, ordering phrases"
+      }
+    ]
+  },
+  {
+    unit: 7,
+    title: "MODULE 7. SHOPPING, MONEY & EVERYDAY SERVICES",
+    lessons: [
+      {
+        lesson: 1,
+        title: "7.1 General Shopping",
+        grammar: ["Want / need + noun", "Can for requests", "Demonstratives (this, that, these, those)"],
+        vocabulary: ["shop", "supermarket", "market", "store", "online shop", "customer", "seller", "cashier", "buy", "sell", "pay", "choose", "need", "want"],
+        teacher_notes: "code: \"M07-L01\"\ncando: \"Can enter a shop, ask for products, ask prices, buy basic items, and understand simple transactions\"",
+        recycled: "Demonstratives, polite requests, food shopping"
+      },
+      {
+        lesson: 2,
+        title: "7.2 Prices, Money & Payments",
+        grammar: ["Question structures (How much is/are...?)", "Singular / plural revision"],
+        vocabulary: ["money", "price", "cheap", "expensive", "cash", "card", "change", "receipt", "numbers 100–1000"],
+        teacher_notes: "code: \"M07-L02\"\ncando: \"Can ask how much something costs, understand prices, and pay\"",
+        recycled: "Numbers 0-100, shopping for food, demonstratives"
+      },
+      {
+        lesson: 3,
+        title: "7.3 Clothes Shopping",
+        grammar: ["Adjective + noun", "Comparatives (bigger, smaller, cheaper)", "Can I try...?"],
+        vocabulary: ["shirt", "T-shirt", "trousers", "jeans", "dress", "jacket", "coat", "shoes", "size", "colour", "style"],
+        teacher_notes: "code: \"M07-L03\"\ncando: \"Can ask for clothes, describe size and colour, and buy clothes\"",
+        recycled: "Colours, basic descriptions, general shopping phrases"
+      },
+      {
+        lesson: 4,
+        title: "7.4 Online Shopping & Digital Buying",
+        grammar: ["Imperatives", "Present Simple"],
+        vocabulary: ["website", "app", "account", "password", "order", "delivery", "address"],
+        teacher_notes: "code: \"M07-L04\"\ncando: \"Can understand basic online shopping, search for products, and order simple items\"",
+        recycled: "Imperatives, general shopping, personal information"
+      }
+    ]
+  },
+  {
+    unit: 8,
+    title: "MODULE 8. BODY, HEALTH & WELLBEING",
+    lessons: [
+      {
+        lesson: 1,
+        title: "8.1 Body Parts",
+        grammar: ["Possessives (my hand, your eyes)", "Have / has got"],
+        vocabulary: ["head", "eye", "ear", "nose", "mouth", "hand", "arm", "leg", "foot"],
+        teacher_notes: "code: \"M08-L01\"\ncando: \"Can identify body parts and describe simple problems\"",
+        recycled: "Personal appearance, possessive adjectives, have"
+      },
+      {
+        lesson: 2,
+        title: "8.2 Feeling Ill & Basic Symptoms",
+        grammar: ["Have + illness", "Feel + adjective"],
+        vocabulary: ["headache", "fever", "cough", "pain", "cold", "tired", "sick", "healthy", "better"],
+        teacher_notes: "code: \"M08-L02\"\ncando: \"Can explain basic health problems and ask for help\"",
+        recycled: "Body parts, feel + adjective, verb have"
+      },
+      {
+        lesson: 3,
+        title: "8.3 Doctor & Pharmacy",
+        grammar: ["Modal verb Should", "Imperatives"],
+        vocabulary: ["doctor", "nurse", "hospital", "pharmacy", "medicine", "appointment"],
+        teacher_notes: "code: \"M08-L03\"\ncando: \"Can make a doctor's appointment, describe simple problems, and buy medicine\"",
+        recycled: "Feeling ill, appointments, polite requests"
+      },
+      {
+        lesson: 4,
+        title: "8.4 Healthy Lifestyle",
+        grammar: ["Adverbs of frequency", "Present Simple"],
+        vocabulary: ["sleep", "exercise", "walk", "drink water", "eat healthy food"],
+        teacher_notes: "code: \"M08-L04\"\ncando: \"Can describe healthy habits and talk about basic routines\"",
+        recycled: "Daily routine, frequency adverbs, food & drink"
+      }
+    ]
+  },
+  {
+    unit: 9,
+    title: "MODULE 9. WORK, EDUCATION & SKILLS",
+    lessons: [
+      {
+        lesson: 1,
+        title: "9.1 Jobs & Professions",
+        grammar: ["Present Simple", "Indefinite articles (a/an with jobs)"],
+        vocabulary: ["teacher", "doctor", "engineer", "student", "driver", "manager", "designer", "office", "school", "hospital", "company"],
+        teacher_notes: "code: \"M09-L01\"\ncando: \"Can say what they do and ask about jobs\"",
+        recycled: "Personal details, Present Simple, articles"
+      },
+      {
+        lesson: 2,
+        title: "9.2 Workplace Communication",
+        grammar: ["Present Simple", "Prepositions (at work, in an office)"],
+        vocabulary: ["colleague", "boss", "meeting", "project", "task", "break"],
+        teacher_notes: "code: \"M09-L02\"\ncando: \"Can talk about basic work situations\"",
+        recycled: "Jobs and professions, daily routine, prepositions"
+      },
+      {
+        lesson: 3,
+        title: "9.3 Education & Learning",
+        grammar: ["Modal verb Can", "Like + verb-ing"],
+        vocabulary: ["school", "university", "class", "lesson", "teacher", "student", "homework", "read", "write", "listen", "speak", "learn"],
+        teacher_notes: "code: \"M09-L03\"\ncando: \"Can talk about studies and describe learning activities\"",
+        recycled: "Present simple, can for ability, like + verb-ing"
+      },
+      {
+        lesson: 4,
+        title: "9.4 Languages & Communication",
+        grammar: ["Can / can't for abilities"],
+        vocabulary: ["speak", "understand", "read", "write", "translate", "beginner", "intermediate"],
+        teacher_notes: "code: \"M09-L04\"\ncando: \"Can talk about languages and explain their abilities\"",
+        recycled: "Education and learning verbs, modal can"
+      }
+    ]
+  },
+  {
+    unit: 10,
+    title: "MODULE 10. CITY & PLACES AROUND ME",
+    lessons: [
+      {
+        lesson: 1,
+        title: "10.1 Places in Town",
+        grammar: ["Go + place (to)", "Prepositions (in, at)"],
+        vocabulary: ["bank", "hospital", "school", "park", "library", "restaurant", "cinema"],
+        teacher_notes: "code: \"M10-L01\"\ncando: \"Can name places and say where they go\"",
+        recycled: "Types of homes, prepositions of place, daily routine"
+      },
+      {
+        lesson: 2,
+        title: "10.2 Asking for Directions",
+        grammar: ["Questions (Where is...?)", "Imperatives (Turn left, Go straight)"],
+        vocabulary: ["left", "right", "straight", "near", "far", "corner"],
+        teacher_notes: "code: \"M10-L02\"\ncando: \"Can ask where places are and understand simple directions\"",
+        recycled: "Places in town, imperatives, prepositions"
+      },
+      {
+        lesson: 3,
+        title: "10.3 Buildings & Services",
+        grammar: ["There is / There are revision", "Prepositions (next to, opposite, between)"],
+        vocabulary: ["post office", "police station", "pharmacy", "supermarket"],
+        teacher_notes: "code: \"M10-L03\"\ncando: \"Can explain where they need to go and locate town services\"",
+        recycled: "Places in town, prepositions of place, there is/are"
+      }
+    ]
+  },
+  {
+    unit: 11,
+    title: "MODULE 11. TRANSPORT & TRAVEL",
+    lessons: [
+      {
+        lesson: 1,
+        title: "11.1 Transport",
+        grammar: ["By + transport", "Present Simple (schedules)"],
+        vocabulary: ["bus", "train", "car", "bicycle", "taxi", "plane", "metro"],
+        teacher_notes: "code: \"M11-L01\"\ncando: \"Can talk about transport and choose transportation\"",
+        recycled: "Places in town, Present Simple, daily schedules"
+      },
+      {
+        lesson: 2,
+        title: "11.2 Buying Tickets",
+        grammar: ["Modal verb Can", "Travel questions (When does it leave?)"],
+        vocabulary: ["ticket", "station", "airport", "platform", "departure", "arrival"],
+        teacher_notes: "code: \"M11-L02\"\ncando: \"Can buy tickets and ask travel information\"",
+        recycled: "Transport, prices and payments, polite requests"
+      },
+      {
+        lesson: 3,
+        title: "11.3 Travel Situations",
+        grammar: ["Past Simple introduction", "Be going to for travel"],
+        vocabulary: ["passport", "luggage", "flight", "gate", "room", "key", "reservation"],
+        teacher_notes: "code: \"M11-L03\"\ncando: \"Can check in at airports or hotels and ask basic travel questions\"",
+        recycled: "Buying tickets, personal information, possessive structures"
+      }
+    ]
+  },
+  {
+    unit: 12,
+    title: "MODULE 12. WEATHER, NATURE & ENVIRONMENT",
+    lessons: [
+      {
+        lesson: 1,
+        title: "12.1 Weather",
+        grammar: ["Present Simple (It is cold)", "Present Continuous (It is raining)"],
+        vocabulary: ["sunny", "rainy", "windy", "cloudy", "snowy", "hot", "cold"],
+        teacher_notes: "code: \"M12-L01\"\ncando: \"Can describe weather and talk about seasons\"",
+        recycled: "Days, dates & calendar, basic descriptions"
+      },
+      {
+        lesson: 2,
+        title: "12.2 Seasons & Activities",
+        grammar: ["Like + verb-ing", "Connecting word Because"],
+        vocabulary: ["spring", "summer", "autumn", "winter", "swim", "ski", "walk"],
+        teacher_notes: "code: \"M12-L02\"\ncando: \"Can connect weather with activities and express reasons\"",
+        recycled: "Weather vocabulary, like + verb-ing, daily routine"
+      },
+      {
+        lesson: 3,
+        title: "12.3 Nature & Environment",
+        grammar: ["Can / can't", "Imperatives"],
+        vocabulary: ["tree", "flower", "river", "sea", "mountain", "recycle", "plastic", "clean"],
+        teacher_notes: "code: \"M12-L03\"\ncando: \"Can describe natural places and talk about simple environmental habits\"",
+        recycled: "Seasons, modal can, basic descriptions"
+      }
+    ]
+  },
+  {
+    unit: 13,
+    title: "MODULE 13. FREE TIME, ENTERTAINMENT & SOCIAL LIFE",
+    lessons: [
+      {
+        lesson: 1,
+        title: "13.1 Hobbies",
+        grammar: ["Like / love / hate + noun / verb-ing"],
+        vocabulary: ["music", "films", "books", "games", "sport", "cooking", "photography"],
+        teacher_notes: "code: \"M13-L01\"\ncando: \"Can talk about interests and ask about hobbies\"",
+        recycled: "Like + verb-ing, daily routine activities"
+      },
+      {
+        lesson: 2,
+        title: "13.2 Sports & Activities",
+        grammar: ["Modal verb Can for sports", "Adverbs of frequency"],
+        vocabulary: ["football", "tennis", "swimming", "running"],
+        teacher_notes: "code: \"M13-L02\"\ncando: \"Can describe sports abilities and talk about frequency\"",
+        recycled: "Hobbies, modal can, frequency adverbs"
+      },
+      {
+        lesson: 3,
+        title: "13.3 Cinema, Music & Culture",
+        grammar: ["Opinions (I like..., I don't like...)"],
+        vocabulary: ["actor", "singer", "movie", "song", "concert", "book", "interesting", "boring", "exciting"],
+        teacher_notes: "code: \"M13-L03\"\ncando: \"Can talk about entertainment preferences and give simple reactions\"",
+        recycled: "Hobbies, sports, basic adjectives"
+      }
+    ]
+  },
+  {
+    unit: 14,
+    title: "MODULE 14. TECHNOLOGY & DIGITAL LIFE",
+    lessons: [
+      {
+        lesson: 1,
+        title: "14.1 Devices & Everyday Technology",
+        grammar: ["Present Simple", "Verb Have", "Modal verb Can"],
+        vocabulary: ["phone", "smartphone", "computer", "laptop", "tablet", "camera", "headphones", "charger", "turn on", "turn off", "charge", "open", "close", "connect"],
+        teacher_notes: "code: \"M14-L01\"\ncando: \"Can name common devices, say what they use, and describe basic problems\"",
+        recycled: "Everyday objects, present simple, modal can"
+      },
+      {
+        lesson: 2,
+        title: "14.2 Internet & Online Activities",
+        grammar: ["Present Simple questions", "Adverbs of frequency"],
+        vocabulary: ["website", "app", "account", "password", "profile", "message", "email", "search", "download", "upload", "click", "send"],
+        teacher_notes: "code: \"M14-L02\"\ncando: \"Can talk about online habits and describe simple digital activities\"",
+        recycled: "Devices, frequency adverbs, present simple questions"
+      },
+      {
+        lesson: 3,
+        title: "14.3 Social Media & Online Communication",
+        grammar: ["Imperatives", "Short questions"],
+        vocabulary: ["like", "comment", "follow", "post", "share", "video", "photo", "Really?", "Why?"],
+        teacher_notes: "code: \"M14-L03\"\ncando: \"Can write simple messages, react online, and communicate politely\"",
+        recycled: "Internet activities, imperatives, short questions"
+      },
+      {
+        lesson: 4,
+        title: "14.4 Digital Safety",
+        grammar: ["Modal verbs Must / mustn't"],
+        vocabulary: ["private", "public", "safe", "dangerous", "password", "personal information"],
+        teacher_notes: "code: \"M14-L04\"\ncando: \"Can understand basic safety rules and describe online problems\"",
+        recycled: "Online communication, imperatives, modal verbs"
+      }
+    ]
+  },
+  {
+    unit: 15,
+    title: "MODULE 15. EMOTIONS, PERSONALITY & WELLBEING",
+    lessons: [
+      {
+        lesson: 1,
+        title: "15.1 Basic Emotions",
+        grammar: ["Feel + adjective", "Be + adjective"],
+        vocabulary: ["happy", "excited", "relaxed", "proud", "sad", "angry", "nervous", "tired", "bored"],
+        teacher_notes: "code: \"M15-L01\"\ncando: \"Can say how they feel and ask about feelings\"",
+        recycled: "Basic descriptions, feel + adjective, verb to be"
+      },
+      {
+        lesson: 2,
+        title: "15.2 Needs, Wants & Preferences",
+        grammar: ["Want + infinitive", "Like + noun / verb-ing"],
+        vocabulary: ["need", "want", "prefer", "like", "dislike", "love", "hate"],
+        teacher_notes: "code: \"M15-L02\"\ncando: \"Can express needs, express wishes, and make simple choices\"",
+        recycled: "Basic emotions, want + noun, like + verb-ing"
+      },
+      {
+        lesson: 3,
+        title: "15.3 Personality & Relationships",
+        grammar: ["Connecting word Because", "Comparatives"],
+        vocabulary: ["kind", "funny", "quiet", "serious", "creative", "friendly", "friend", "partner", "neighbour", "colleague"],
+        teacher_notes: "code: \"M15-L03\"\ncando: \"Can describe people and talk about relationships\"",
+        recycled: "Personality characteristics, family, comparative adjectives"
+      }
+    ]
+  },
+  {
+    unit: 16,
+    title: "MODULE 16. CELEBRATIONS, CULTURE & EVENTS",
+    lessons: [
+      {
+        lesson: 1,
+        title: "16.1 Birthdays & Personal Celebrations",
+        grammar: ["Would you like...?", "Let's + verb"],
+        vocabulary: ["birthday", "party", "gift", "cake", "invitation", "guest"],
+        teacher_notes: "code: \"M16-L01\"\ncando: \"Can invite people, accept/refuse invitations, and talk about celebrations\"",
+        recycled: "Polite requests, dates, food and drink"
+      },
+      {
+        lesson: 2,
+        title: "16.2 Holidays & Traditions",
+        grammar: ["Present Simple", "Frequency adverbs"],
+        vocabulary: ["holiday", "festival", "tradition", "family", "celebration", "New Year", "Christmas"],
+        teacher_notes: "code: \"M16-L02\"\ncando: \"Can describe national or family traditions and talk about special days\"",
+        recycled: "Birthdays, calendar dates, frequency adverbs"
+      },
+      {
+        lesson: 3,
+        title: "16.3 Events & Going Out",
+        grammar: ["Present Continuous for arrangements"],
+        vocabulary: ["concert", "exhibition", "cinema", "museum", "restaurant", "festival"],
+        teacher_notes: "code: \"M16-L03\"\ncando: \"Can make plans and discuss events\"",
+        recycled: "Places in town, time expressions, invitations"
+      }
+    ]
+  },
+  {
+    unit: 17,
+    title: "MODULE 17. PAST EXPERIENCES (MOVING TOWARDS A2)",
+    lessons: [
+      {
+        lesson: 1,
+        title: "17.1 Yesterday & Last Week",
+        grammar: ["Past Simple introduction (regular verbs)"],
+        vocabulary: ["yesterday", "last night", "last week", "ago", "visit", "watch", "buy", "go", "meet"],
+        teacher_notes: "code: \"M17-L01\"\ncando: \"Can describe completed actions and talk about recent events\"",
+        recycled: "Daily routine verbs, time expressions"
+      },
+      {
+        lesson: 2,
+        title: "17.2 Memories & Life Events",
+        grammar: ["Past Simple questions", "Irregular verbs (went, saw, had, made)"],
+        vocabulary: ["childhood", "school", "holiday", "first time", "favourite memory"],
+        teacher_notes: "code: \"M17-L02\"\ncando: \"Can describe simple memories and talk about previous experiences\"",
+        recycled: "Past Simple regular verbs, family, education"
+      },
+      {
+        lesson: 3,
+        title: "17.3 Travel Experiences",
+        grammar: ["Past Simple", "Prepositions (in, to, from)"],
+        vocabulary: ["country", "city", "hotel", "beach", "museum"],
+        teacher_notes: "code: \"M17-L03\"\ncando: \"Can say where they went and describe simple trips\"",
+        recycled: "Past Simple irregulars, travel situations, places"
+      }
+    ]
+  },
+  {
+    unit: 18,
+    title: "MODULE 18. FUTURE PLANS & DREAMS",
+    lessons: [
+      {
+        lesson: 1,
+        title: "18.1 Personal Plans",
+        grammar: ["Be going to for future plans"],
+        vocabulary: ["tomorrow", "next week", "holiday", "project", "meeting"],
+        teacher_notes: "code: \"M18-L01\"\ncando: \"Can talk about future activities and make arrangements\"",
+        recycled: "Time expressions, present continuous for arrangements"
+      },
+      {
+        lesson: 2,
+        title: "18.2 Dreams & Goals",
+        grammar: ["Want to + verb", "Future expressions (I hope...)"],
+        vocabulary: ["dream", "goal", "learn", "improve", "travel", "work"],
+        teacher_notes: "code: \"M18-L02\"\ncando: \"Can talk about ambitions and describe wishes\"",
+        recycled: "Personal plans, want + infinitive, work & study"
+      },
+      {
+        lesson: 3,
+        title: "18.3 Predictions & Simple Opinions About Future",
+        grammar: ["Will for simple predictions"],
+        vocabulary: ["technology", "cities", "jobs", "environment"],
+        teacher_notes: "code: \"M18-L03\"\ncando: \"Can make simple predictions and talk about future changes\"",
+        recycled: "Dreams & goals, technology, environment"
+      }
+    ]
+  },
+  {
+    unit: 19,
+    title: "MODULE 19. COMPARING MY WORLD",
+    lessons: [
+      {
+        lesson: 1,
+        title: "19.1 Comparing People & Things",
+        grammar: ["Comparatives (-er than, more ... than)"],
+        vocabulary: ["big/small", "fast/slow", "cheap/expensive", "easy/difficult"],
+        teacher_notes: "code: \"M19-L01\"\ncando: \"Can compare objects and people using comparative adjectives\"",
+        recycled: "Basic descriptions, size and colour, possessions"
+      },
+      {
+        lesson: 2,
+        title: "19.2 Comparing Places & Lifestyles",
+        grammar: ["Comparatives", "Connectors (but, and)"],
+        vocabulary: ["city", "village", "country", "lifestyle", "transport", "nature"],
+        teacher_notes: "code: \"M19-L02\"\ncando: \"Can describe differences between places and lifestyles\"",
+        recycled: "Comparing people & things, city places, transport"
+      },
+      {
+        lesson: 3,
+        title: "19.3 Likes, Dislikes & Choices",
+        grammar: ["Opinion structures (I prefer..., I think...)"],
+        vocabulary: ["favourite", "better", "interesting", "comfortable", "useful"],
+        teacher_notes: "code: \"M19-L03\"\ncando: \"Can choose between options and explain basic preferences\"",
+        recycled: "Comparatives, likes & dislikes, basic opinions"
+      }
+    ]
+  },
+  {
+    unit: 20,
+    title: "MODULE 20. BASIC OPINIONS & SOCIAL INTERACTION",
+    lessons: [
+      {
+        lesson: 1,
+        title: "20.1 Giving Simple Opinions",
+        grammar: ["Opinion structures (I think..., I don't think..., I agree)"],
+        vocabulary: ["good", "bad", "interesting", "boring", "important", "useful"],
+        teacher_notes: "code: \"M20-L01\"\ncando: \"Can express opinions and agree/disagree simply\"",
+        recycled: "Basic descriptions, preferences, connectors"
+      },
+      {
+        lesson: 2,
+        title: "20.2 Everyday Problems & Solutions",
+        grammar: ["Modal verb Can for requests", "Modal verb Should for advice"],
+        vocabulary: ["lost", "broken", "late", "wrong", "difficult", "help", "fix", "change"],
+        teacher_notes: "code: \"M20-L02\"\ncando: \"Can explain simple problems and ask for or give help\"",
+        recycled: "Giving simple opinions, modal verbs, health & wellbeing"
+      },
+      {
+        lesson: 3,
+        title: "20.3 Making Requests & Being Polite",
+        grammar: ["Polite forms (Could you...?, Can I...?)"],
+        vocabulary: ["help", "information", "permission", "question"],
+        teacher_notes: "code: \"M20-L03\"\ncando: \"Can ask for help and make polite requests in social interactions\"",
+        recycled: "Everyday problems, polite phrases, modal verbs"
+      }
+    ]
+  },
+  {
+    unit: 21,
+    title: "MODULE 21. FINAL A1 SURVIVAL SKILLS",
+    lessons: [
+      {
+        lesson: 1,
+        title: "21.1 At the Airport / Station",
+        grammar: ["Questions (Where is...?, When does it leave?)"],
+        vocabulary: ["departure", "arrival", "ticket", "passport", "gate", "luggage"],
+        teacher_notes: "code: \"M21-L01\"\ncando: \"Can understand announcements and ask basic travel questions\"",
+        recycled: "Transport & travel, buying tickets, travel situations"
+      },
+      {
+        lesson: 2,
+        title: "21.2 At a Hotel",
+        grammar: ["Verb Have (I have a reservation)", "Modal verb Can"],
+        vocabulary: ["room", "key", "reservation", "breakfast", "towel"],
+        teacher_notes: "code: \"M21-L02\"\ncando: \"Can check in at a hotel and ask for services\"",
+        recycled: "Travel situations, requests, polite phrases"
+      },
+      {
+        lesson: 3,
+        title: "21.3 Emergency Communication",
+        grammar: ["Imperatives (Call the police)", "Modal verb Can"],
+        vocabulary: ["help", "danger", "police", "doctor", "emergency"],
+        teacher_notes: "code: \"M21-L03\"\ncando: \"Can ask for urgent help and describe basic emergency situations\"",
+        recycled: "Everyday problems, doctor & pharmacy, imperatives"
+      }
+    ]
+  },
+  {
+    unit: 22,
+    title: "MODULE 22. A1 INTEGRATED PROJECTS",
+    lessons: [
+      {
+        lesson: 1,
+        title: "22.1 Project 1. My Profile",
+        grammar: ["Be", "Have", "Present Simple", "Adjectives"],
+        vocabulary: ["introduce", "profile", "identity", "family", "interests"],
+        teacher_notes: "code: \"M22-L01\"\ncando: \"Can introduce themselves, describe their family, and share personal interests in a comprehensive profile\"",
+        recycled: "Personal identity, family, interests"
+      },
+      {
+        lesson: 2,
+        title: "22.2 Project 2. My Perfect Day",
+        grammar: ["Present Simple", "Adverbs of frequency", "Time expressions"],
+        vocabulary: ["routine", "activities", "schedule", "perfect day"],
+        teacher_notes: "code: \"M22-L02\"\ncando: \"Can describe a complete daily routine and favorite leisure activities\"",
+        recycled: "Daily routine, time, hobbies"
+      },
+      {
+        lesson: 3,
+        title: "22.3 Project 3. My Home & My City",
+        grammar: ["There is / There are", "Prepositions of place", "Imperatives"],
+        vocabulary: ["home", "rooms", "city", "places", "directions"],
+        teacher_notes: "code: \"M22-L03\"\ncando: \"Can describe where they live and give directions around their town\"",
+        recycled: "Home & environment, city places, directions"
+      },
+      {
+        lesson: 4,
+        title: "22.4 Project 4. My Past & Future",
+        grammar: ["Past Simple", "Be going to", "Will"],
+        vocabulary: ["memories", "past", "experiences", "future", "plans", "dreams"],
+        teacher_notes: "code: \"M22-L04\"\ncando: \"Can describe past experiences and talk about future plans and ambitions\"",
+        recycled: "Past experiences, future plans & dreams"
+      },
+      {
+        lesson: 5,
+        title: "22.5 Project 5. My Opinions",
+        grammar: ["Comparatives", "Because", "But", "Opinion structures (I think)"],
+        vocabulary: ["opinion", "preference", "compare", "agree", "disagree"],
+        teacher_notes: "code: \"M22-L05\"\ncando: \"Can express simple preferences, compare choices, and justify opinions\"",
+        recycled: "Comparing my world, basic opinions, social interaction"
+      }
+    ]
+  }
+];
+
+languages.forEach(lang => {
+  const filePath = path.join(__dirname, '..', 'curriculums', lang, 'general', 'A1.json');
+  const dir = path.dirname(filePath);
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true });
+  }
+
+  const content = {
+    language: lang,
+    course_type: "general",
+    level: "A1",
+    units: unitsTemplate
+  };
+
+  fs.writeFileSync(filePath, JSON.stringify(content, null, 2), 'utf8');
+  console.log(`Updated ${filePath}`);
+});
+
+console.log('All 13 General A1 curriculum files updated successfully.');
