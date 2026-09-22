@@ -15,7 +15,6 @@ The following grammar topics were referenced in General English A0/A1 lessons bu
 - `prepositions-of-place`
 - `present-simple-3rd-person`
 - `present-simple-intro`
-- `present-simple-routines`
 - `sequence-words`
 - `wh-questions`
 - `work-collocations`
