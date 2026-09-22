@@ -12,7 +12,7 @@ const unitsTemplate = [
         lesson: 1,
         title: "1.1 Greetings, Introductions & Politeness",
         grammar: ["Subject pronouns", "Verb \"to be\"", "Basic sentence order"],
-        vocabulary: ["hello", "good morning", "goodbye", "please", "thank you", "sorry", "excuse me", "greetings", "farewells", "titles", "polite phrases"],
+        vocabulary: ["hello", "good morning", "goodbye", "please", "thank you", "sorry", "excuse me", "greetings", "farewells", "titles", "polite phrases", "conversation starters"],
         teacher_notes: "code: \"M01-L01\"\ncando: \"Can greet people, introduce themselves and another person, say goodbye, use basic polite expressions, understand formal/informal differences\"",
         recycled: "Foundation for all future communication"
       },
@@ -20,7 +20,7 @@ const unitsTemplate = [
         lesson: 2,
         title: "1.2 Personal Information",
         grammar: ["Question words: what, where, who, how", "Yes/no questions", "Possessive adjectives"],
-        vocabulary: ["first name", "surname", "age", "birthday", "address", "phone number", "email", "nationality"],
+        vocabulary: ["first name", "surname", "age", "birthday", "address", "phone number", "email", "nationality", "country of origin", "city", "village", "languages spoken"],
         teacher_notes: "code: \"M01-L02\"\ncando: \"Can give personal details, ask for information, fill in simple forms\"",
         recycled: "Greetings, verb to be, subject pronouns"
       },
@@ -42,7 +42,7 @@ const unitsTemplate = [
         lesson: 1,
         title: "2.1 Family",
         grammar: ["Possession (my family, her brother)", "Verb \"have\"", "Possessive structures ('s)"],
-        vocabulary: ["mother", "father", "sister", "brother", "husband", "wife", "child", "grandparents", "friend", "neighbour", "colleague"],
+        vocabulary: ["mother", "father", "parents", "sister", "brother", "husband", "wife", "child", "children", "grandparents", "relatives", "friend", "neighbour", "colleague", "classmate"],
         teacher_notes: "code: \"M02-L01\"\ncando: \"Can talk about family members, describe relationships, introduce relatives\"",
         recycled: "Numbers 0-100, personal details, possessive adjectives"
       },
@@ -50,7 +50,7 @@ const unitsTemplate = [
         lesson: 2,
         title: "2.2 Personal Appearance",
         grammar: ["Adjectives (adjective + noun)", "Present simple (have/has)"],
-        vocabulary: ["head", "eyes", "hair", "face", "tall", "short", "young", "old", "beautiful", "handsome", "black", "brown", "blue"],
+        vocabulary: ["head", "eyes", "hair", "face", "body", "tall", "short", "young", "old", "beautiful", "handsome", "black", "brown", "blue"],
         teacher_notes: "code: \"M02-L02\"\ncando: \"Can describe themselves and other people\"",
         recycled: "Family vocabulary, verb have, possessive adjectives"
       },
@@ -58,7 +58,7 @@ const unitsTemplate = [
         lesson: 3,
         title: "2.3 Personality & Basic Characteristics",
         grammar: ["Be + adjective", "Simple connectors (and, but)"],
-        vocabulary: ["friendly", "kind", "funny", "polite", "angry", "quiet", "lazy"],
+        vocabulary: ["friendly", "nice", "kind", "funny", "polite", "angry", "quiet", "lazy", "serious"],
         teacher_notes: "code: \"M02-L03\"\ncando: \"Can describe personality and state basic impressions\"",
         recycled: "Personal appearance, verb to be"
       }
@@ -72,7 +72,7 @@ const unitsTemplate = [
         lesson: 1,
         title: "3.1 Everyday Objects",
         grammar: ["Articles (a / an / the)", "Demonstratives (this, that)"],
-        vocabulary: ["phone", "computer", "book", "bag", "key", "wallet", "pen", "paper", "notebook"],
+        vocabulary: ["phone", "computer", "book", "bag", "key", "wallet", "pen", "paper", "notebook", "cup", "plate", "glass", "knife"],
         teacher_notes: "code: \"M03-L01\"\ncando: \"Can identify objects, ask what something is, ask for objects\"",
         recycled: "Subject pronouns, verb to be, basic adjectives"
       },
@@ -102,7 +102,7 @@ const unitsTemplate = [
         lesson: 1,
         title: "4.1 Types of Homes",
         grammar: ["Verb \"live\"", "Prepositions (in, near)"],
-        vocabulary: ["house", "apartment", "room", "building", "big", "small", "old", "new"],
+        vocabulary: ["house", "apartment", "flat", "room", "building", "big", "small", "old", "new", "comfortable", "beautiful"],
         teacher_notes: "code: \"M04-L01\"\ncando: \"Can say where they live and describe their home\"",
         recycled: "Personal details, basic adjectives, demonstratives"
       },
@@ -110,7 +110,7 @@ const unitsTemplate = [
         lesson: 2,
         title: "4.2 Rooms",
         grammar: ["There is / There are"],
-        vocabulary: ["kitchen", "bedroom", "bathroom", "living room"],
+        vocabulary: ["kitchen", "bedroom", "bathroom", "living room", "office", "balcony", "garden"],
         teacher_notes: "code: \"M04-L02\"\ncando: \"Can describe rooms and say where things are\"",
         recycled: "Types of homes, everyday objects, articles"
       },
@@ -118,7 +118,7 @@ const unitsTemplate = [
         lesson: 3,
         title: "4.3 Furniture & Household Items",
         grammar: ["Prepositions of place (on, under, next to, behind, in front of)"],
-        vocabulary: ["bed", "sofa", "chair", "table", "wardrobe", "lamp", "door", "window"],
+        vocabulary: ["bed", "sofa", "chair", "table", "wardrobe", "lamp", "shelf", "door", "window", "TV"],
         teacher_notes: "code: \"M04-L03\"\ncando: \"Can describe their home interior and locate objects\"",
         recycled: "Rooms, there is / there are, everyday objects"
       },
@@ -126,7 +126,7 @@ const unitsTemplate = [
         lesson: 4,
         title: "4.4 Household Actions",
         grammar: ["Imperatives", "Present Simple"],
-        vocabulary: ["clean", "cook", "wash", "open", "close", "turn on", "turn off"],
+        vocabulary: ["clean", "cook", "wash", "open", "close", "turn on", "turn off", "sleep", "sit", "stand"],
         teacher_notes: "code: \"M04-L04\"\ncando: \"Can talk about home activities and understand instructions\"",
         recycled: "Furniture and household items, prepositions of place"
       }
@@ -140,7 +140,7 @@ const unitsTemplate = [
         lesson: 1,
         title: "5.1 Days, Dates & Calendar",
         grammar: ["Time expressions (on Monday, in July)", "Ordinal numbers"],
-        vocabulary: ["days", "months", "seasons", "today", "tomorrow", "yesterday"],
+        vocabulary: ["days", "weeks", "months", "years", "seasons", "today", "tomorrow", "yesterday"],
         teacher_notes: "code: \"M05-L01\"\ncando: \"Can talk about dates and understand schedules\"",
         recycled: "Numbers 0-100, prepositions"
       },
@@ -156,7 +156,7 @@ const unitsTemplate = [
         lesson: 3,
         title: "5.3 Daily Routine",
         grammar: ["Present Simple", "Frequency adverbs (always, usually, sometimes, never)"],
-        vocabulary: ["wake up", "get dressed", "have breakfast", "work", "study", "relax", "cook", "watch TV", "sleep"],
+        vocabulary: ["wake up", "get dressed", "have breakfast", "work", "study", "relax", "cook", "watch TV", "sleep", "every day"],
         teacher_notes: "code: \"M05-L03\"\ncando: \"Can describe a typical day and daily activities\"",
         recycled: "Household actions, clock time, days of the week"
       },
@@ -178,7 +178,7 @@ const unitsTemplate = [
         lesson: 1,
         title: "6.1 Food Vocabulary",
         grammar: ["Countable and uncountable nouns"],
-        vocabulary: ["apple", "banana", "potato", "tomato", "meat", "fish", "egg", "milk", "cheese"],
+        vocabulary: ["apple", "banana", "orange", "strawberry", "potato", "tomato", "onion", "carrot", "meat", "beef", "chicken", "fish", "egg", "milk", "cheese", "butter", "yogurt"],
         teacher_notes: "code: \"M06-L01\"\ncando: \"Can talk about food and identify ingredients\"",
         recycled: "Everyday objects, articles, present simple"
       },
@@ -186,16 +186,16 @@ const unitsTemplate = [
         lesson: 2,
         title: "6.2 Meals & Eating Habits",
         grammar: ["Like + noun", "Like + verb-ing"],
-        vocabulary: ["breakfast", "lunch", "dinner", "eat", "drink", "cook"],
-        teacher_notes: "code: \"M06-L02\"\ncando: \"Can describe eating routines and state preferences\"",
+        vocabulary: ["breakfast", "lunch", "dinner", "eat", "drink", "cook", "cut", "mix", "bake", "boil"],
+        teacher_notes: "code: \"M06-L02\"\ncando: \"Can describe eating routines, cooking basics, and state preferences\"",
         recycled: "Food vocabulary, daily routine verbs, frequency adverbs"
       },
       {
         lesson: 3,
         title: "6.3 Drinks & Ordering",
         grammar: ["Modal verb Can", "Would like"],
-        vocabulary: ["coffee", "tea", "water", "juice", "menu", "bill", "table"],
-        teacher_notes: "code: \"M06-L03\"\ncando: \"Can order in cafés and request things politely\"",
+        vocabulary: ["coffee", "tea", "water", "juice", "milk", "menu", "bill", "table", "ordering"],
+        teacher_notes: "code: \"M06-L03\"\ncando: \"Can order in cafés/restaurants and request things politely\"",
         recycled: "Food vocabulary, polite phrases, countable/uncountable nouns"
       },
       {
@@ -216,7 +216,7 @@ const unitsTemplate = [
         lesson: 1,
         title: "7.1 General Shopping",
         grammar: ["Want / need + noun", "Can for requests", "Demonstratives (this, that, these, those)"],
-        vocabulary: ["shop", "supermarket", "market", "store", "online shop", "customer", "seller", "cashier", "buy", "sell", "pay", "choose", "need", "want"],
+        vocabulary: ["shop", "supermarket", "market", "store", "online shop", "pharmacy", "clothing shop", "customer", "seller", "cashier", "buy", "sell", "pay", "choose", "need", "want"],
         teacher_notes: "code: \"M07-L01\"\ncando: \"Can enter a shop, ask for products, ask prices, buy basic items, and understand simple transactions\"",
         recycled: "Demonstratives, polite requests, food shopping"
       },
@@ -224,16 +224,16 @@ const unitsTemplate = [
         lesson: 2,
         title: "7.2 Prices, Money & Payments",
         grammar: ["Question structures (How much is/are...?)", "Singular / plural revision"],
-        vocabulary: ["money", "price", "cheap", "expensive", "cash", "card", "change", "receipt", "numbers 100–1000"],
-        teacher_notes: "code: \"M07-L02\"\ncando: \"Can ask how much something costs, understand prices, and pay\"",
+        vocabulary: ["money", "price", "cheap", "expensive", "cash", "card", "change", "receipt", "currency", "numbers 100–1000"],
+        teacher_notes: "code: \"M07-L02\"\ncando: \"Can ask how much something costs, understand prices, and pay by cash or card\"",
         recycled: "Numbers 0-100, shopping for food, demonstratives"
       },
       {
         lesson: 3,
-        title: "7.3 Clothes Shopping",
+        title: "7.3 Clothes Shopping & Accessories",
         grammar: ["Adjective + noun", "Comparatives (bigger, smaller, cheaper)", "Can I try...?"],
-        vocabulary: ["shirt", "T-shirt", "trousers", "jeans", "dress", "jacket", "coat", "shoes", "size", "colour", "style"],
-        teacher_notes: "code: \"M07-L03\"\ncando: \"Can ask for clothes, describe size and colour, and buy clothes\"",
+        vocabulary: ["shirt", "T-shirt", "trousers", "jeans", "dress", "skirt", "jacket", "coat", "shoes", "bag", "watch", "glasses", "hat", "size", "colour", "style"],
+        teacher_notes: "code: \"M07-L03\"\ncando: \"Can ask for clothes and accessories, describe size and colour, and buy clothes\"",
         recycled: "Colours, basic descriptions, general shopping phrases"
       },
       {
@@ -254,7 +254,7 @@ const unitsTemplate = [
         lesson: 1,
         title: "8.1 Body Parts",
         grammar: ["Possessives (my hand, your eyes)", "Have / has got"],
-        vocabulary: ["head", "eye", "ear", "nose", "mouth", "hand", "arm", "leg", "foot"],
+        vocabulary: ["head", "face", "eye", "ear", "nose", "mouth", "hand", "arm", "leg", "foot"],
         teacher_notes: "code: \"M08-L01\"\ncando: \"Can identify body parts and describe simple problems\"",
         recycled: "Personal appearance, possessive adjectives, have"
       },
@@ -300,23 +300,23 @@ const unitsTemplate = [
         lesson: 2,
         title: "9.2 Workplace Communication",
         grammar: ["Present Simple", "Prepositions (at work, in an office)"],
-        vocabulary: ["colleague", "boss", "meeting", "project", "task", "break"],
+        vocabulary: ["colleague", "boss", "meeting", "project", "task", "break", "working hours"],
         teacher_notes: "code: \"M09-L02\"\ncando: \"Can talk about basic work situations\"",
         recycled: "Jobs and professions, daily routine, prepositions"
       },
       {
         lesson: 3,
-        title: "9.3 Education & Learning",
-        grammar: ["Modal verb Can", "Like + verb-ing"],
-        vocabulary: ["school", "university", "class", "lesson", "teacher", "student", "homework", "read", "write", "listen", "speak", "learn"],
-        teacher_notes: "code: \"M09-L03\"\ncando: \"Can talk about studies and describe learning activities\"",
+        title: "9.3 Education & Classroom Language",
+        grammar: ["Modal verb Can", "Like + verb-ing", "Imperatives for classroom instructions"],
+        vocabulary: ["school", "university", "class", "classroom", "lesson", "teacher", "student", "homework", "exam", "subjects", "read", "write", "listen", "speak", "learn", "repeat", "explain", "translate", "spell", "pronounce"],
+        teacher_notes: "code: \"M09-L03\"\ncando: \"Can talk about studies, describe learning activities, and use essential classroom language\"",
         recycled: "Present simple, can for ability, like + verb-ing"
       },
       {
         lesson: 4,
         title: "9.4 Languages & Communication",
         grammar: ["Can / can't for abilities"],
-        vocabulary: ["speak", "understand", "read", "write", "translate", "beginner", "intermediate"],
+        vocabulary: ["speak", "understand", "read", "write", "translate", "beginner", "intermediate", "language names"],
         teacher_notes: "code: \"M09-L04\"\ncando: \"Can talk about languages and explain their abilities\"",
         recycled: "Education and learning verbs, modal can"
       }
@@ -330,15 +330,15 @@ const unitsTemplate = [
         lesson: 1,
         title: "10.1 Places in Town",
         grammar: ["Go + place (to)", "Prepositions (in, at)"],
-        vocabulary: ["bank", "hospital", "school", "park", "library", "restaurant", "cinema"],
+        vocabulary: ["bank", "hospital", "school", "park", "library", "restaurant", "cinema", "museum", "hotel"],
         teacher_notes: "code: \"M10-L01\"\ncando: \"Can name places and say where they go\"",
         recycled: "Types of homes, prepositions of place, daily routine"
       },
       {
         lesson: 2,
         title: "10.2 Asking for Directions",
-        grammar: ["Questions (Where is...?)", "Imperatives (Turn left, Go straight)"],
-        vocabulary: ["left", "right", "straight", "near", "far", "corner"],
+        grammar: ["Questions (Where is...?, How can I get to...?)", "Imperatives (Turn left, Go straight)"],
+        vocabulary: ["left", "right", "straight", "near", "far", "corner", "street"],
         teacher_notes: "code: \"M10-L02\"\ncando: \"Can ask where places are and understand simple directions\"",
         recycled: "Places in town, imperatives, prepositions"
       },
@@ -368,7 +368,7 @@ const unitsTemplate = [
         lesson: 2,
         title: "11.2 Buying Tickets",
         grammar: ["Modal verb Can", "Travel questions (When does it leave?)"],
-        vocabulary: ["ticket", "station", "airport", "platform", "departure", "arrival"],
+        vocabulary: ["ticket", "station", "airport", "bus stop", "platform", "departure", "arrival"],
         teacher_notes: "code: \"M11-L02\"\ncando: \"Can buy tickets and ask travel information\"",
         recycled: "Transport, prices and payments, polite requests"
       },
@@ -384,14 +384,14 @@ const unitsTemplate = [
   },
   {
     unit: 12,
-    title: "MODULE 12. WEATHER, NATURE & ENVIRONMENT",
+    title: "MODULE 12. WEATHER, NATURE & ANIMALS",
     lessons: [
       {
         lesson: 1,
-        title: "12.1 Weather",
+        title: "12.1 Weather & Temperature",
         grammar: ["Present Simple (It is cold)", "Present Continuous (It is raining)"],
-        vocabulary: ["sunny", "rainy", "windy", "cloudy", "snowy", "hot", "cold"],
-        teacher_notes: "code: \"M12-L01\"\ncando: \"Can describe weather and talk about seasons\"",
+        vocabulary: ["sunny", "rainy", "windy", "cloudy", "snowy", "hot", "cold", "warm", "cool"],
+        teacher_notes: "code: \"M12-L01\"\ncando: \"Can describe weather, temperature, and talk about seasons\"",
         recycled: "Days, dates & calendar, basic descriptions"
       },
       {
@@ -404,10 +404,10 @@ const unitsTemplate = [
       },
       {
         lesson: 3,
-        title: "12.3 Nature & Environment",
+        title: "12.3 Nature, Environment & Animals",
         grammar: ["Can / can't", "Imperatives"],
-        vocabulary: ["tree", "flower", "river", "sea", "mountain", "recycle", "plastic", "clean"],
-        teacher_notes: "code: \"M12-L03\"\ncando: \"Can describe natural places and talk about simple environmental habits\"",
+        vocabulary: ["tree", "flower", "sea", "mountain", "dog", "cat", "bird", "fish", "cow", "horse", "chicken", "lion", "elephant", "bear", "recycle", "plastic", "clean"],
+        teacher_notes: "code: \"M12-L03\"\ncando: \"Can describe natural places, talk about pets and wild animals, and discuss simple environmental habits\"",
         recycled: "Seasons, modal can, basic descriptions"
       }
     ]
@@ -418,10 +418,10 @@ const unitsTemplate = [
     lessons: [
       {
         lesson: 1,
-        title: "13.1 Hobbies",
+        title: "13.1 Hobbies & Activities",
         grammar: ["Like / love / hate + noun / verb-ing"],
-        vocabulary: ["music", "films", "books", "games", "sport", "cooking", "photography"],
-        teacher_notes: "code: \"M13-L01\"\ncando: \"Can talk about interests and ask about hobbies\"",
+        vocabulary: ["music", "films", "books", "games", "sport", "cooking", "photography", "watch TV", "listen to music", "read", "travel"],
+        teacher_notes: "code: \"M13-L01\"\ncando: \"Can talk about interests and ask about hobbies and activities\"",
         recycled: "Like + verb-ing, daily routine activities"
       },
       {
@@ -458,7 +458,7 @@ const unitsTemplate = [
         lesson: 2,
         title: "14.2 Internet & Online Activities",
         grammar: ["Present Simple questions", "Adverbs of frequency"],
-        vocabulary: ["website", "app", "account", "password", "profile", "message", "email", "search", "download", "upload", "click", "send"],
+        vocabulary: ["website", "app", "account", "password", "profile", "message", "email", "search", "download", "upload", "click", "send", "call", "write"],
         teacher_notes: "code: \"M14-L02\"\ncando: \"Can talk about online habits and describe simple digital activities\"",
         recycled: "Devices, frequency adverbs, present simple questions"
       },
@@ -486,9 +486,9 @@ const unitsTemplate = [
     lessons: [
       {
         lesson: 1,
-        title: "15.1 Basic Emotions",
+        title: "15.1 Basic Emotions & Feelings",
         grammar: ["Feel + adjective", "Be + adjective"],
-        vocabulary: ["happy", "excited", "relaxed", "proud", "sad", "angry", "nervous", "tired", "bored"],
+        vocabulary: ["happy", "excited", "relaxed", "proud", "sad", "angry", "nervous", "tired", "bored", "afraid"],
         teacher_notes: "code: \"M15-L01\"\ncando: \"Can say how they feel and ask about feelings\"",
         recycled: "Basic descriptions, feel + adjective, verb to be"
       },
@@ -526,7 +526,7 @@ const unitsTemplate = [
         lesson: 2,
         title: "16.2 Holidays & Traditions",
         grammar: ["Present Simple", "Frequency adverbs"],
-        vocabulary: ["holiday", "festival", "tradition", "family", "celebration", "New Year", "Christmas"],
+        vocabulary: ["holiday", "festival", "tradition", "family traditions", "food traditions", "celebration", "New Year", "Christmas"],
         teacher_notes: "code: \"M16-L02\"\ncando: \"Can describe national or family traditions and talk about special days\"",
         recycled: "Birthdays, calendar dates, frequency adverbs"
       },
@@ -534,7 +534,7 @@ const unitsTemplate = [
         lesson: 3,
         title: "16.3 Events & Going Out",
         grammar: ["Present Continuous for arrangements"],
-        vocabulary: ["concert", "exhibition", "cinema", "museum", "restaurant", "festival"],
+        vocabulary: ["concert", "exhibition", "cinema", "museum", "restaurant", "festival", "cultural events"],
         teacher_notes: "code: \"M16-L03\"\ncando: \"Can make plans and discuss events\"",
         recycled: "Places in town, time expressions, invitations"
       }
