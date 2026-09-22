@@ -567,8 +567,27 @@
       const isTeacher = grant.role === 'teacher' || grant.role === 'founder';
 
       try {
-        const roadmapRes = await fetch(`roadmaps/${courseId}.json`);
-        if (!roadmapRes.ok) throw new Error(`Roadmap for ${courseId} not found`);
+        const candidates = [
+          `roadmaps/${courseId}.json`,
+          `roadmaps/${courseId.replace('-en-', '-english-')}.json`,
+          `roadmaps/${courseId.replace('curriculum-', '')}.json`,
+          `roadmaps/${courseId.replace('curriculum-', '').replace('-en-', '-english-')}.json`,
+          `roadmaps/${courseId.replace('curriculum-english-', 'general-english-')}.json`,
+          `roadmaps/${courseId.replace('general-en-', 'general-english-')}.json`
+        ];
+
+        let roadmapRes = null;
+        for (const cand of candidates) {
+          try {
+            const res = await fetch(cand);
+            if (res.ok) {
+              roadmapRes = res;
+              break;
+            }
+          } catch (e) {}
+        }
+
+        if (!roadmapRes || !roadmapRes.ok) throw new Error(`Roadmap for ${courseId} not found`);
         const roadmap = await roadmapRes.json();
 
         let html = `
