@@ -49,7 +49,7 @@
 
     /* Catalog View */
     .catalog-container {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 30px auto;
       padding: 0 20px;
     }
@@ -61,33 +61,88 @@
       align-items: center;
     }
 
-    .catalog-grid {
+    .catalog-category-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
       gap: 20px;
+      align-items: start;
     }
 
-    .course-card {
-      background: white;
-      border: 1px solid #e2e8f0;
+    .category-card {
+      background: #eef2ff;
+      border: 1px solid #c7d2fe;
       border-radius: 12px;
-      padding: 24px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+      padding: 16px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+      transition: all 0.2s ease;
+    }
+
+    .category-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #e0e7ff;
+      user-select: none;
+    }
+
+    .category-header h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #3730a3;
+      margin: 0;
+    }
+
+    .category-toggle-icon {
+      font-size: 0.9rem;
+      color: #4f46e5;
+      transition: transform 0.2s ease;
+    }
+
+    .category-body {
+      margin-top: 12px;
       display: flex;
       flex-direction: column;
+      gap: 10px;
+    }
+
+    .category-card.collapsed .category-body {
+      display: none;
+    }
+
+    .category-card.collapsed .category-toggle-icon {
+      transform: rotate(-90deg);
+    }
+
+    .course-item-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
       justify-content: space-between;
+      gap: 12px;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
     }
 
-    .course-card h3 {
-      font-size: 1.2rem;
-      color: #0f172a;
-      margin-bottom: 8px;
+    .course-item-card:hover {
+      border-color: #818cf8;
+      box-shadow: 0 2px 8px rgba(79, 70, 229, 0.08);
     }
 
-    .course-card p {
+    .course-item-title {
+      font-weight: 600;
       font-size: 0.9rem;
-      color: #64748b;
-      margin-bottom: 16px;
+      color: #0f172a;
+    }
+
+    .course-item-level {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
     }
 
     /* Controls Header Bar */
@@ -506,21 +561,53 @@
       if (courseList.length === 0) {
         html += `<p style="grid-column: 1/-1; color: #64748b;">No active courses found for this grant.</p>`;
       } else {
-        courseList.forEach(course => {
+        // Group courses by track
+        const groupedByTrack = {};
+        courseList.forEach(c => {
+          const trackKey = c.track ? (c.track.charAt(0).toUpperCase() + c.track.slice(1)) : 'General';
+          if (!groupedByTrack[trackKey]) groupedByTrack[trackKey] = [];
+          groupedByTrack[trackKey].push(c);
+        });
+
+        html += `<div class="catalog-category-grid">`;
+
+        Object.keys(groupedByTrack).forEach(trackName => {
+          const trackCourses = groupedByTrack[trackName];
           html += `
-            <div class="course-card">
-              <div>
-                <span class="badge-teacher" style="margin-bottom: 8px; display: inline-block;">${course.level.toUpperCase()}</span>
-                <h3>${course.title}</h3>
-                <p>Track: ${course.track}</p>
+            <div class="category-card" id="tcat-${trackName}">
+              <div class="category-header" onclick="toggleTeacherCategoryFold('tcat-${trackName}')">
+                <h3>English • ${trackName} (${trackCourses.length})</h3>
+                <span class="category-toggle-icon">▼</span>
               </div>
-              <a href="teacher.html?key=${key}&course=${course.id}&level=${course.level.toLowerCase()}" class="btn" style="background: var(--teacher-primary); text-align: center;">Open Teacher Roadmap</a>
+              <div class="category-body">
+          `;
+
+          trackCourses.forEach(c => {
+            html += `
+              <div class="course-item-card">
+                <div>
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <span class="course-item-level badge-teacher">${c.level.toUpperCase()}</span>
+                    <span class="course-item-title">${c.title}</span>
+                  </div>
+                </div>
+                <a href="teacher.html?key=${key}&course=${c.id}&level=${c.level.toLowerCase()}" class="btn" style="background: var(--teacher-primary); padding: 6px 12px; font-size: 0.8rem; white-space: nowrap;">
+                  Roadmap
+                </a>
+              </div>
+            `;
+          });
+
+          html += `
+              </div>
             </div>
           `;
         });
+
+        html += `</div>`;
       }
 
-      html += `</div></div>`;
+      html += `</div>`;
       appRoot.innerHTML = html;
     }
 
@@ -608,6 +695,13 @@
     window.currentDurationFilter = "50";
     window.currentModeFilter = "all";
     window.activeDrawer = null;
+
+    function toggleTeacherCategoryFold(categoryId) {
+      const card = document.getElementById(categoryId);
+      if (card) {
+        card.classList.toggle('collapsed');
+      }
+    }
 
     window.timerSeconds = 300;
     window.timerInterval = null;

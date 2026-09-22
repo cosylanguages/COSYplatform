@@ -51,7 +51,7 @@
 
     /* Catalog View */
     .catalog-container {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 30px auto;
       padding: 0 20px;
     }
@@ -60,33 +60,88 @@
       margin-bottom: 24px;
     }
 
-    .catalog-grid {
+    .catalog-category-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
       gap: 20px;
+      align-items: start;
     }
 
-    .course-card {
-      background: white;
-      border: 1px solid #e2e8f0;
+    .category-card {
+      background: #f0f7ff;
+      border: 1px solid #bae6fd;
       border-radius: 12px;
-      padding: 24px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+      padding: 16px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+      transition: all 0.2s ease;
+    }
+
+    .category-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #e0f2fe;
+      user-select: none;
+    }
+
+    .category-header h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #0369a1;
+      margin: 0;
+    }
+
+    .category-toggle-icon {
+      font-size: 0.9rem;
+      color: #0284c7;
+      transition: transform 0.2s ease;
+    }
+
+    .category-body {
+      margin-top: 12px;
       display: flex;
       flex-direction: column;
+      gap: 10px;
+    }
+
+    .category-card.collapsed .category-body {
+      display: none;
+    }
+
+    .category-card.collapsed .category-toggle-icon {
+      transform: rotate(-90deg);
+    }
+
+    .course-item-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
       justify-content: space-between;
+      gap: 12px;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
     }
 
-    .course-card h3 {
-      font-size: 1.2rem;
-      color: #0f172a;
-      margin-bottom: 8px;
+    .course-item-card:hover {
+      border-color: #38bdf8;
+      box-shadow: 0 2px 8px rgba(2, 132, 199, 0.08);
     }
 
-    .course-card p {
+    .course-item-title {
+      font-weight: 600;
       font-size: 0.9rem;
-      color: #64748b;
-      margin-bottom: 16px;
+      color: #0f172a;
+    }
+
+    .course-item-level {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
     }
 
     /* Edvibe Workspace Layout */
@@ -594,27 +649,58 @@
               </div>
             </div>
           </div>
-          <div class="catalog-grid">
       `;
 
       if (allowedCourses.length === 0) {
         html += `<p style="grid-column: 1/-1; color: #64748b;">No active course enrolments found for this key matching the selected filters.</p>`;
       } else {
-        allowedCourses.forEach(course => {
+        // Group courses by track
+        const groupedByTrack = {};
+        allowedCourses.forEach(c => {
+          const trackKey = c.track ? (c.track.charAt(0).toUpperCase() + c.track.slice(1)) : 'General';
+          if (!groupedByTrack[trackKey]) groupedByTrack[trackKey] = [];
+          groupedByTrack[trackKey].push(c);
+        });
+
+        html += `<div class="catalog-category-grid">`;
+
+        Object.keys(groupedByTrack).forEach(trackName => {
+          const trackCourses = groupedByTrack[trackName];
           html += `
-            <div class="course-card">
-              <div>
-                <span class="badge-student" style="margin-bottom: 8px; display: inline-block;">${course.level.toUpperCase()}</span>
-                <h3>${course.title}</h3>
-                <p>Track: ${course.track}</p>
+            <div class="category-card" id="scat-${trackName}">
+              <div class="category-header" onclick="toggleStudentCategoryFold('scat-${trackName}')">
+                <h3>English • ${trackName} (${trackCourses.length})</h3>
+                <span class="category-toggle-icon">▼</span>
               </div>
-              <a href="student.html?key=${key}&course=${course.id}&level=${course.level.toLowerCase()}" class="btn" style="background: var(--student-primary); text-align: center;">View Course Map</a>
+              <div class="category-body">
+          `;
+
+          trackCourses.forEach(c => {
+            html += `
+              <div class="course-item-card">
+                <div>
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <span class="course-item-level badge-student">${c.level.toUpperCase()}</span>
+                    <span class="course-item-title">${c.title}</span>
+                  </div>
+                </div>
+                <a href="student.html?key=${key}&course=${c.id}&level=${c.level.toLowerCase()}" class="btn" style="background: var(--student-primary); padding: 6px 12px; font-size: 0.8rem; white-space: nowrap;">
+                  View
+                </a>
+              </div>
+            `;
+          });
+
+          html += `
+              </div>
             </div>
           `;
         });
+
+        html += `</div>`;
       }
 
-      html += `</div></div>`;
+      html += `</div>`;
       appRoot.innerHTML = html;
     }
 
@@ -1196,12 +1282,19 @@
       window.location.href = url.toString();
     }
 
+    function toggleStudentCategoryFold(categoryId) {
+      const card = document.getElementById(categoryId);
+      if (card) {
+        card.classList.toggle('collapsed');
+      }
+    }
+
     function applyStudentCatalogSearch() {
       const query = (document.getElementById('studentSearchFilter')?.value || '').toLowerCase().trim();
-      const cards = document.querySelectorAll('.course-card');
-      cards.forEach(card => {
-        const text = card.textContent.toLowerCase();
-        card.style.display = text.includes(query) ? 'flex' : 'none';
+      const items = document.querySelectorAll('.course-item-card');
+      items.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        item.style.display = text.includes(query) ? 'flex' : 'none';
       });
     }
 
