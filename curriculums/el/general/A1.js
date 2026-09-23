@@ -1,361 +1,620 @@
 if(!window.curriculumData) window.curriculumData = {};
 window.curriculumData.el_a1 = [
-{
-  id:'u0', num:0, color:'#10B981', label:'Ενότητα 0: Πρώτα Βήματα (A0)',
-  arc:'Χαιρετισμοί → Το Αλφάβητο → Αριθμοί 1-20 → Βασική Προφορά',
-  lessons_count:5,
-  lessons:[
-    { code:'EL-001', num:1, title:'Γεια σας & Καλώς ήρθατε',
-      grammar:'Ρήμα "είμαι" (ενεστώτας) — καταφατικός τύπος',
-      pronunciation: [
-        {
-          point: "Το Ελληνικό Αλφάβητο",
-          explain: "Το ελληνικό αλφάβητο έχει 24 γράμματα. Ξεκινήστε με τα ονόματα των γραμμάτων.",
-          alphabet: [
-            {l:'Α α', ipa:'/a/'}, {l:'Β β', ipa:'/v/'}, {l:'Γ γ', ipa:'/ɣ/'}, {l:'Δ δ', ipa:'/ð/'}, {l:'Ε ε', ipa:'/e/'},
-            {l:'Ζ ζ', ipa:'/z/'}, {l:'Η η', ipa:'/i/'}, {l:'Θ θ', ipa:'/θ/'}, {l:'Ι ι', ipa:'/i/'}, {l:'Κ κ', ipa:'/k/'},
-            {l:'Λ λ', ipa:'/l/'}, {l:'Μ μ', ipa:'/m/'}, {l:'Ν ν', ipa:'/n/'}, {l:'Ξ ξ', ipa:'/ks/'}, {l:'Ο ο', ipa:'/o/'},
-            {l:'Π π', ipa:'/p/'}, {l:'Ρ ρ', ipa:'/r/'}, {l:'Σ σ/ς', ipa:'/s/'}, {l:'Τ τ', ipa:'/t/'}, {l:'Υ υ', ipa:'/i/'},
-            {l:'Φ φ', ipa:'/f/'}, {l:'Χ χ', ipa:'/x/'}, {l:'Ψ ψ', ipa:'/ps/'}, {l:'Ω ω', ipa:'/o/'}
-          ],
-          extension: "Το ελληνικό αλφάβητο είναι η βάση πολλών επιστημών. Πολλά γράμματα μοιάζουν με τα λατινικά, αλλά οι ήχοι μπορεί να διαφέρουν!",
-          visual: "🇬🇷🔤"
-        }
-      ],
-      vocab: ['Γεια σας', 'Καλημέρα', 'Ευχαριστώ', 'Παρακαλώ', 'Αντίο'],
-      cando:'Μπορεί να χαιρετά και να αποχαιρετά',
-      hw:'Μάθετε το τραγούδι του αλφαβήτου' },
-    { code:'EL-002', num:2, title:'Πώς σε λένε;',
-      grammar:'Ρήμα "λέγομαι" & "με λένε"',
-      pronunciation: [
-        {
-          point: "Δίψηφα Φωνήεντα",
-          explain: "Στα ελληνικά, δύο φωνήεντα μαζί μπορούν να βγάζουν έναν ήχο.",
-          examples: [
-            { pattern: "ει, οι, υι", ipa: "/i/", word: "είμαι" },
-            { pattern: "αι", ipa: "/e/", word: "και" },
-            { pattern: "ου", ipa: "/u/", word: "μου" }
-          ],
-          tip: "Όλα τα 'ι', 'η', 'υ', 'ει', 'οι' ακούγονται ίδια: /i/!",
-          extension: "Αυτή η ιστορική ορθογραφία είναι που κάνει τα ελληνικά να φαίνονται δύσκολα, αλλά η προφορά είναι πάντα σταθερή.",
-          visual: "🔠"
-        }
-      ],
-      vocab: ['Όνομα', 'Πώς', 'Χάρηκα'],
-      cando:'Μπορεί να συστήνεται',
-      hw:'Εξασκηθείτε στο να συλλαβίζετε το όνομά σας' },
-    { code:'EL-003', num:3, title:'Αριθμοί 1-20',
-      grammar:'Γένη ουσιαστικών (εισαγωγή)',
-      pronunciation: [
-        {
-          point: "Ο Τόνος",
-          explain: "Κάθε ελληνική λέξη με δύο ή περισσότερες συλλαβές έχει έναν τόνο.",
-          examples: [
-            { pattern: "ένα", ipa: "/ˈe.na/", word: "ένα" },
-            { pattern: "δύο", ipa: "/ˈði.o/", word: "δύο" },
-            { pattern: "έντεκα", ipa: "/ˈen.de.ka/", word: "έντεκα" }
-          ]
-        }
-      ],
-      vocab: ['ένα', 'δύο', 'τρία', 'δέκα', 'είκοσι'],
-      cando:'Μπορεί να μετρά από το 1 έως το 20',
-      hw:'Μετρήστε αντικείμενα στο δωμάτιο' },
-    { code:'EL-004', num:4, title:'Ζεύγη: Σύμφωνα',
-      grammar:'Βασική δομή πρότασης',
-      pronunciation: [
-        {
-          point: "Δίψηφα Σύμφωνα",
-          explain: "Συνδυασμοί συμφώνων που αλλάζουν τον ήχο.",
-          minimalPairs: [
-            { w1: "ντομάτα", p1: "/do.ˈma.ta/", w2: "τόπος", p2: "/ˈto.pos/" },
-            { w1: "μπύρα", p1: "/ˈbi.ra/", w2: "πόλη", p2: "/ˈpo.li/" },
-            { w1: "γκολ", p1: "/ɡol/", w2: "καλό", p2: "/ka.ˈlo/" }
-          ],
-          extension: "Τα 'μπ', 'ντ', 'γκ' χρησιμοποιούνται συχνά για ήχους που δεν υπήρχαν στα αρχαία ελληνικά, ειδικά σε ξένες λέξεις.",
-          visual: "🍅🍺"
-        }
-      ],
-      vocab: ['ντομάτα', 'μπύρα', 'πόλη'],
-      cando:'Μπορεί να διακρίνει ήχους όπως μπ, ντ, γκ',
-      hw:'Ηχογραφήστε τον εαυτό σας' },
-    { code:'EL-005', num:5, title:'Βασικές Φράσεις',
-      grammar:'Ευγενικές αιτήσεις (Παρακαλώ)',
-      pronunciation: [
-        {
-          point: "Ερωτηματική Ιντονάσια",
-          explain: "Στις ερωτήσεις η φωνή ανεβαίνει στο τέλος.",
-          examples: [
-            { pattern: "Τι κάνετε;", ipa: "/ti ˈka.ne.te?/", word: "Τι κάνετε;" },
-            { pattern: "Είστε καλά;", ipa: "/ˈis.te ka.ˈla?/", word: "Είστε καλά;" }
-          ]
-        }
-      ],
-      vocab: ['Συγνώμη', 'Λυπάμαι', 'Ναι', 'Όχι'],
-      cando:'Μπορεί να χρησιμοποιεί βασικές φράσεις ευγενείας',
-      hw:'Χρησιμοποιήστε τρεις φράσεις ευγενείας αύριο' }
-  ]
-},
-{
-  id:'u1', num:1, color:'#3B82F6', label:'Η ζωή μου σήμερα',
-  arc:'Αλφάβητο → Γνωριμία → Εργασία → Σπίτι → Χρήματα → Υγεία → Τεχνολογία → Ελεύθερος χρόνος',
-  lessons_count:10,
-  grammar_summary:[
-    {name:'Αλφάβητο & Τονισμός', desc:'Τα ελληνικά γράμματα και οι κανόνες ανάγνωσης', ex:'"Γεια σας, τι κάνετε;"', ref:'grammar-reference.html'},
-    {name:'Το ρήμα "είμαι"', desc:'Ενεστώτας του βοηθητικού ρήματος', ex:'"Είμαι φοιτητής."', ref:'grammar-reference.html'},
-    {name:'Οριστικό & Αόριστο άρθρο', desc:'Ο, η, το vs ένας, μία, ένα', ex:'"Ο καφές, ένα νερό."', ref:'grammar-reference.html'},
-    {name:'Ρήματα σε -ω (Ενεστώτας)', desc:'Πρώτη συζυγία (κάνω, μιλάω)', ex:'"Μιλάω ελληνικά."', ref:'grammar-reference.html'},
-    {name:'Άρνηση', desc:'Το μόριο "δεν" πριν το ρήμα', ex:'"Δεν δουλεύω σήμερα."', ref:'grammar-reference.html'},
-  ],
-  vocab_themes:['Χαιρετισμοί','Εργασία','Σπίτι','Χρήματα','Υγεία','Τεχνολογία','Χόμπι'],
-  lessons:[
-    { code:'EL-01', num:1, title:'Γεια σου! Με λένε...',
-      grammar:'Αλφάβητο + Προσωπικές αντωνυμίες + Ρήμα είμαι',
-      pronunciation: [
-        {
-          point: "The Greek Alphabet — Vowels",
-          explain: "Greek has 7 vowel letters but only 5 vowel sounds (a, e, i, o, u).",
-          examples: [
-            { pattern: "Α, α", ipa: "/a/", word: "καλά" },
-            { pattern: "Ε, ε / ΑΙ, αι", ipa: "/e/", word: "ναι" },
-            { pattern: "Η, η / Ι, ι / Υ, υ", ipa: "/i/", word: "είμαι" }
-          ],
-          extension: "Η ελληνική γλώσσα είναι πολύ σταθερή στην προφορά της. Παρόλο που υπάρχουν πολλοί τρόποι να γράψεις τον ήχο /i/, η προφορά παραμένει η ίδια.",
-          visual: "👄"
-        }
-      ],
-      vocab: ['Γεια', 'Ευχαριστώ', 'Παρακαλώ', 'Χαίρετε', 'Αντίο'],
-      verbs:['είμαι','λέω'],
-      adj:['Έλληνας','καλός'],
-      speaking:'Συστήνομαι και χαιρετάω στην τάξη',
-      listening:'Τρία άτομα συστήνονται',
-      reading:'Ένας σύντομος διάλογος γνωριμίας',
-      writing:'Γράφω την παρουσίασή μου (4 προτάσεις)',
-      task:'Speed dating γνωριμίας',
-      cando:'Μπορεί να συστήνεται και να χαιρετάει ευγενικά',
-      hw:'Μαθαίνω το αλφάβητο' },
-    { code:'EL-02', num:2, title:'Η δουλειά μου — τι κάνω',
-      grammar:'Άρθρο + Ουσιαστικά (Επαγγέλματα)',
-      pronunciation: [
-        {
-          point: "Special Consonants: Γ, Δ, Θ",
-          explain: "These sounds are 'fricatives' and differ from English equivalents.",
-          examples: [
-            { pattern: "Γ, γ", ipa: "/ɣ/", word: "γραφείο" },
-            { pattern: "Δ, δ", ipa: "/ð/", word: "δουλειά" },
-            { pattern: "Θ, θ", ipa: "/θ/", word: "θέλω" }
-          ],
-          tip: "Γ is like a soft gargle; Δ is like 'th' in 'this'; Θ is like 'th' in 'think'.",
-          extension: "Αυτά τα σύμφωνα δίνουν στα ελληνικά τον ιδιαίτερο ήχο τους. Χρειάζονται συνεχή ροή αέρα για να προφερθούν σωστά.",
-          visual: "💨"
-        }
-      ],
-      vocab: ['δουλειά', 'γραφείο', 'συνάδελφος', 'μισθός', 'υπολογιστής'],
-      verbs:['δουλεύω','κάνω'],
-      adj:['πολυάσχολος','ελεύθερος'],
-      speaking:'Περιγράφω το επάγγελμά μου',
-      listening:'Περιγραφές επαγγελμάτων',
-      reading:'Μια απλή αγγελία εργασίας',
-      writing:'Περιγράφω τη δουλειά μου σε 5 προτάσεις',
-      task:'Μαντεύω τη δουλειά του συμμαθητή μου',
-      cando:'Μπορεί να μιλάει για το επάγγελμά του',
-      hw:'Λίστα με 10 αντικείμενα γραφείου' },
-    { code:'EL-03', num:3, title:'Πού μένω — το σπίτι μου',
-      grammar:'Ρήμα "μένω" + Προθέσεις τόπου (σε, από)',
-      pronunciation: [
-        {
-          point: "The Sound 'Χ'",
-          explain: "Like 'h' in English but stronger, or like 'ch' in Scottish 'loch'.",
-          examples: [
-            { pattern: "χα, χο, χυ", ipa: "/x/", word: "χαρά" },
-            { pattern: "χε, χι", ipa: "/ç/", word: "χέρι" }
-          ],
-          extension: "Το 'Χ' αλλάζει ήχο ανάλογα με το φωνήεν που ακολουθεί. Πριν από 'ε' και 'ι' γίνεται πιο μαλακό.",
-          visual: "🧣"
-        }
-      ],
-      vocab: ['διαμέρισμα','σπίτι','πόλη','οδός','όροφος'],
-      verbs:['μένω','ζω'],
-      adj:['μεγάλος','μικρός','μοντέρνος'],
-      speaking:'Περιγράφω το σπίτι μου και την περιοχή',
-      listening:'Κάποιος περιγράφει τη γειτονιά του',
-      reading:'Μια αγγελία ακινήτων',
-      writing:'Γράφω τη διεύθυνση και το σπίτι μου',
-      task:'Σχεδιάζω το πλάνο του σπιτιού μου',
-      cando:'Μπορεί να περιγράφει την κατοικία του',
-      hw:'Λεξιλόγιο για τα δωμάτια του σπιτιού' },
-    { code:'EL-04', num:4, title:'Η οικογένειά μου',
-      grammar:'Κτητικές αντωνυμίες (μου, σου, του)',
-      vocab: ['πατέρας','μητέρα','αδελφός','αδελφή','παιδί'],
-      verbs:['έχω','αγαπάω'],
-      adj:['παντρεμένος','ελεύθερος'],
-      speaking:'Παρουσιάζω την οικογένειά μου με φωτογραφίες',
-      listening:'Ένας άντρας μιλάει για την οικογένειά του',
-      reading:'Ένα οικογενειακό δέντρο',
-      writing:'Ένα κείμενο για την οικογένειά μου',
-      task:'Βρίσκουμε κοινά στοιχεία στην οικογένεια',
-      cando:'Μπορεί να παρουσιάζει τα μέλη της οικογένειας',
-      hw:'Φτιάχνω το δικό μου οικογενειακό δέντρο' },
-    { code:'EL-05', num:5, title:'Πόσο κάνει; (Χρήματα)',
-      grammar:'Αριθμοί έως το 100 + Ερώτηση "Πόσο;"',
-      vocab: ['τιμή','χρήματα','κάρτα','μετρητά','ακριβός','φτηνός'],
-      verbs:['πληρώνω','αγοράζω','κοστίζω'],
-      adj:['δωρεάν'],
-      speaking:'Ψώνια σε ένα κατάστημα (παιχνίδι ρόλων)',
-      listening:'Διάλογος στο ταμείο του σούπερ μάρκετ',
-      reading:'Μια απόδειξη και τιμές',
-      writing:'Λίστα αγορών με τιμές',
-      task:'Στην αγορά: παζάρια για την τιμή',
-      cando:'Μπορεί να κάνει βασικές αγορές',
-      hw:'Μαθαίνω τους αριθμούς έως το 100' },
-    { code:'EL-06', num:6, title:'Στο εστιατόριο — φαγητό και ποτό',
-      grammar:'Πτώση Αιτιατική (αντικείμενο) + "Θα ήθελα..."',
-      vocab: ['ψωμί','καφές','νερό','κρασί','φαγητό','πιάτο'],
-      verbs:['τρώω','πίνω','παραγγέλνω'],
-      adj:['νόστιμος','ζεστός','κρύος'],
-      speaking:'Παραγγέλνω στο εστιατόριο',
-      listening:'Μια παραγγελία σε καφετέρια',
-      reading:'Ένας κατάλογος εστιατορίου',
-      writing:'Γράφω την ιδανική μου παραγγελία',
-      task:'Παραγγέλνω ένα πλήρες πρωινό',
-      cando:'Μπορεί να παραγγέλνει φαγητό και ποτό',
-      hw:'Μαθαίνω 10 ονόματα τροφίμων' },
-    { code:'EL-07', num:7, title:'Υγεία και σώμα',
-      grammar:'Η έκφραση "Πονάει το..." / "Έχω..."',
-      vocab: ['κεφάλι','πλάτη','κοιλιά','γιατρός','φάρμακο'],
-      verbs:['κοιμάμαι','περπατάω','πονάω'],
-      adj:['κουρασμένος','άρρωστος','καλά'],
-      speaking:'Εξηγώ τα συμπτώματα στον γιατρό',
-      listening:'Μια επίσκεψη στον γιατρό',
-      reading:'Μια ιατρική συνταγή',
-      writing:'Γράφω ένα σημείωμα για απουσία λόγω ασθένειας',
-      task:'Role-play: στον γιατρό',
-      cando:'Μπορεί να εκφράσει έναν απλό πόνο',
-      hw:'Μαθαίνω τα μέρη του σώματος' },
-    { code:'EL-08', num:8, title:'Η τεχνολογία στη ζωή μου',
-      grammar:'Ρήματα σε -ω (συνέχεια) + Επίρρημα',
-      vocab: ['τηλέφωνο','ίντερνετ','μέσα κοινωνικής δικτύωσης','μήνυμα','οθόνη'],
-      verbs:['χρησιμοποιώ','βλέπω','γράφω','στέλνω'],
-      adj:['χρήσιμος','γρήγορος','αργός'],
-      speaking:'Μιλάω για τη χρήση του κινητού μου',
-      listening:'Συνέντευξη για τις ψηφιακές συνήθειες',
-      reading:'Ένα σύντομο άρθρο για το διαδίκτυο',
-      writing:'Περιγράφω την ψηφιακή μου ρουτίνα',
-      task:'Συζήτηση: smartphone υπέρ και κατά',
-      cando:'Μπορεί να μιλάει για τεχνολογικές συνήθειες',
-      hw:'Μεταφράζω 5 προτάσεις για την τεχνολογία' },
-    { code:'EL-09', num:9, title:'Χόμπι και ελεύθερος χρόνος',
-      grammar:'Ρήματα που δηλώνουν αρέσκεια (μου αρέσει)',
-      vocab: ['σπορ','μουσική','σινεμά','ταξίδι','διάβασμα'],
-      verbs:['μου αρέσει','αγαπάω','παίζω','ακούω'],
-      adj:['ωραίος','βαρετός','ενδιαφέρων'],
-      speaking:'Μοιράζομαι τις δραστηριότητες του Σαββατοκύριακου',
-      listening:'Άνθρωποι μιλούν για τα χόμπι τους',
-      reading:'Ένα πολιτιστικό πρόγραμμα της πόλης',
-      writing:'Περιγράφω το αγαπημένο μου χόμπι',
-      task:'Βρίσκω κάποιον με το ίδιο χόμπι',
-      cando:'Μπορεί να μιλάει για τα ενδιαφέροντά του',
-      hw:'Γράφω 5 προτάσεις για τις προτιμήσεις μου' },
-    { code:'EL-10', num:10, title:'Επανάληψη Ενότητας 1',
-      grammar:'Σύνοψη Ενεστώτα, άρθρων και κτητικών',
-      vocab: ['Όλο το λεξιλόγιο της Ενότητας 1'],
-      verbs:['Είμαι','Έχω','Κάνω','Ρήματα σε -ω'],
-      adj:['Συμφωνία γένους και αριθμού'],
-      speaking:'Προφορική παρουσίαση 3 λεπτών για τον εαυτό μου',
-      listening:'Τεστ κατανόησης Ενότητας 1',
-      reading:'Πορτρέτο ενός Έλληνα φοιτητή',
-      writing:'Γράφω τη βιογραφία μου (A1)',
-      task:'Συνέντευξη προσωπικότητας',
-      cando:'Κατέχει τις βάσεις για επικοινωνία στα ελληνικά',
-      hw:'Προετοιμάζω το portfolio Ενότητας 1' },
-  ]
-},
-{
-  id:'u2', num:2, color:'#8B5CF6', label:'Το παρελθόν μου',
-  arc:'Αναμνήσεις → Σπουδές → Ταξίδια → Αλλαγές → Ιστορίες',
-  lessons_count:10,
-  grammar_summary:[
-    {name:'Αόριστος (ρήμα είμαι)', desc:'Ήμουν, ήσουν...', ex:'"Ήμουν στο σπίτι χθες."', ref:'grammar-reference.html'},
-    {name:'Αόριστος (ομαλά ρήματα)', desc:'Η πράξη που τελείωσε', ex:'"Δούλεψα 8 ώρες."', ref:'grammar-reference.html'},
-  ],
-  vocab_themes:['Αναμνήσεις','Σπουδές','Ταξίδια','Χρόνος'],
-  lessons:[
-    { code:'EL-11', num:1, title:'Τι έκανες χθες;', grammar:'Αόριστος', lessons_count:1 },
-    { code:'EL-12', num:2, title:'Οι σπουδές μου', grammar:'Αόριστος (συνέχεια)', lessons_count:1 },
-    { code:'EL-13', num:3, title:'Το τελευταίο μου ταξίδι', grammar:'Ρήματα κίνησης στο παρελθόν', lessons_count:1 },
-    { code:'EL-14', num:4, title:'Όταν ήμουν παιδί', grammar:'Παρατατικός (εισαγωγή)', lessons_count:1 },
-    { code:'EL-15', num:5, title:'Οι παλιές μου δουλειές', grammar:'Σύγκριση παρελθόντος-παρόντος', lessons_count:1 },
-    { code:'EL-16', num:6, title:'Πριν από δέκα χρόνια', grammar:'Χρονικές εκφράσεις', lessons_count:1 },
-    { code:'EL-17', num:7, title:'Μια σημαντική ιστορία', grammar:'Αφήγηση', lessons_count:1 },
-    { code:'EL-18', num:8, title:'Παλιές συνήθειες', grammar:'Παρατατικός για συνήθεια', lessons_count:1 },
-    { code:'EL-19', num:9, title:'Τι είπαν;', grammar:'Πλάγιος λόγος (απλά)', lessons_count:1 },
-    { code:'EL-20', num:10, title:'Επανάληψη Ενότητας 2', grammar:'Σύνοψη Παρελθόντος', lessons_count:1 },
-  ]
-},
-{
-  id:'u3', num:3, color:'#10B981', label:'Το μέλλον μου',
-  arc:'Μέλλοντας → Σχέδια → Καιρός → Υποθέσεις',
-  lessons_count:10,
-  grammar_summary:[
-    {name:'Εξακολουθητικός Μέλλοντας', desc:'Θα + Ενεστώτας', ex:'"Θα δουλεύω όλη μέρα."', ref:'grammar-reference.html'},
-    {name:'Συνοπτικός Μέλλοντας', desc:'Θα + Αόριστος', ex:'"Θα πάω σινεμά."', ref:'grammar-reference.html'},
-  ],
-  vocab_themes:['Σχέδια','Προγραμματισμός','Περιβάλλον'],
-  lessons:[
-    { code:'EL-21', num:1, title:'Τι θα κάνεις απόψε;', grammar:'Μέλλοντας', lessons_count:1 },
-    { code:'EL-22', num:2, title:'Τα σχέδια της καριέρας μου', grammar:'Μέλλοντας', lessons_count:1 },
-    { code:'EL-23', num:3, title:'Ο καιρός αύριο', grammar:'Πρόβλεψη', lessons_count:1 },
-    { code:'EL-24', num:4, title:'Αν έχω χρόνο...', grammar:'Υποθετικός λόγος', lessons_count:1 },
-    { code:'EL-25', num:5, title:'Οργάνωση εκδήλωσης', grammar:'Σχεδιασμός', lessons_count:1 },
-    { code:'EL-26', num:6, title:'Η Ελλάδα το 2040', grammar:'Προβλέψεις', lessons_count:1 },
-    { code:'EL-27', num:7, title:'Υποσχέσεις', grammar:'Προθέσεις', lessons_count:1 },
-    { code:'EL-28', num:8, title:'Ραντεβού στο γραφείο', grammar:'Κανονίζω χρόνο', lessons_count:1 },
-    { code:'EL-29', num:9, title:'Προγραμματισμός ταξιδιού', grammar:'Logistics', lessons_count:1 },
-    { code:'EL-30', num:10, title:'Επανάληψη Ενότητας 3', grammar:'Σύνοψη Μέλλοντα', lessons_count:1 },
-  ]
-},
-{
-  id:'u4', num:4, color:'#F59E0B', label:'Ο κόσμος μου',
-  arc:'Απόψεις → Συγκρίσεις → Πολιτισμός → Κοινωνία',
-  lessons_count:10,
-  grammar_summary:[
-    {name:'Σύγκριση', desc:'Πιο... από / Πιο πολύ', ex:'"Το σπίτι είναι πιο μεγάλο."', ref:'grammar-reference.html'},
-    {name:'Υπερθετικός βαθμός', desc:'Ο πιο... / -ότατος', ex:'"Είναι ο καλύτερος."', ref:'grammar-reference.html'},
-    {name:'Αναφορικές αντωνυμίες (που)', desc:'Σύνδεση προτάσεων', ex:'"Ο άνθρωπος που μένει εκεί."', ref:'grammar-reference.html'},
-  ],
-  vocab_themes:['Κοινωνία','Πόλη','Πολιτισμός','Απόψεις'],
-  lessons:[
-    { code:'EL-31', num:1, title:'Πόλη ή Χωριό;', grammar:'Σύγκριση', lessons_count:1 },
-    { code:'EL-32', num:2, title:'Το ομορφότερο μέρος', grammar:'Υπερθετικός', lessons_count:1 },
-    { code:'EL-33', num:3, title:'Νομίζω ότι... (Απόψεις)', grammar:'Έκφραση γνώμης', lessons_count:1 },
-    { code:'EL-34', num:4, title:'Ο άνθρωπος που θαυμάζω', grammar:'Αναφορικό "που"', lessons_count:1 },
-    { code:'EL-35', num:5, title:'Πράγματα που δεν μου αρέσουν', grammar:'Έκφραση δυσαρέσκειας', lessons_count:1 },
-    { code:'EL-36', num:6, title:'Ελληνικές παραδόσεις', grammar:'Πολιτισμός', lessons_count:1 },
-    { code:'EL-37', num:7, title:'Στο ελληνικό τραπέζι', grammar:'Γαστρονομία', lessons_count:1 },
-    { code:'EL-38', num:8, title:'Ζωή στην πόλη', grammar:'Υπηρεσίες', lessons_count:1 },
-    { code:'EL-39', num:9, title:'Οικολογία', grammar:'Περιβάλλον', lessons_count:1 },
-    { code:'EL-40', num:10, title:'Επανάληψη Ενότητας 4', grammar:'Σύνοψη Απόψεων', lessons_count:1 },
-  ]
-},
-{
-  id:'u5', num:5, color:'#EC4899', label:'Κατάκτηση',
-  arc:'Συζήτηση → Εμπέδωση → Τελική αξιολόγηση',
-  lessons_count:10,
-  grammar_summary:[
-    {name:'Επανάληψη A1', desc:'Τελική σύνθεση όλων των δομών', ex:'Ελεύθερος διάλογος', ref:'grammar-reference.html'},
-    {name:'Σύνδεσμοι', desc:'Αλλά, λοιπόν, επειδή, τότε', ex:'"Μαθαίνω επειδή θέλω."', ref:'grammar-reference.html'},
-  ],
-  vocab_themes:['Σύνθεση','Διάλογος','Ροή'],
-  lessons:[
-    { code:'EL-41', num:1, title:'Μιλάμε για τη δουλειά', grammar:'Συζήτηση', lessons_count:1 },
-    { code:'EL-42', num:2, title:'Αφήγηση μεγάλης ιστορίας', grammar:'Ροή λόγου', lessons_count:1 },
-    { code:'EL-43', num:3, title:'Ευγένεια και τρόποι', grammar:'Εκφράσεις', lessons_count:1 },
-    { code:'EL-44', num:4, title:'Διαβάζουμε ειδήσεις', grammar:'Λεξιλόγιο ΜΜΕ', lessons_count:1 },
-    { code:'EL-45', num:5, title:'Ιδιωματισμοί', grammar:'Εκφράσεις της καθημερινότητας', lessons_count:1 },
-    { code:'EL-46', num:6, title:'Προετοιμασία προφορικών', grammar:'Προσομοίωση', lessons_count:1 },
-    { code:'EL-47', num:7, title:'Επανάληψη Γραμματικής A1', grammar:'Σύνθεση', lessons_count:1 },
-    { code:'EL-48', num:8, title:'Επανάληψη Λεξιλογίου A1', grammar:'Σύνθεση', lessons_count:1 },
-    { code:'EL-49', num:9, title:'Προσομοίωση Τεστ A1', grammar:'Αξιολόγηση', lessons_count:1 },
-    { code:'EL-50', num:10, title:'Τελικό Bilan και μέλλον', grammar:'Αξιολόγηση', lessons_count:1 },
-  ]
-}
+  {
+    "id": "u1",
+    "num": 1,
+    "color": "#3B82F6",
+    "label": "Πρώτη επαφή & Προσωπική ταυτότητα",
+    "arc": "Χαιρετισμοί → Όνομα & Συστάσεις → Συλλαβισμός → Καταγωγή → Γλώσσες → Αριθμοί 0-20 → Ηλικία & Γενέθλια → Στοιχεία → Τιμές → Προσωπικό προφίλ",
+    "lessons_count": 10,
+    "grammar_summary": [
+      {
+        "name": "Subject Pronouns & Verb 'be'",
+        "desc": "Foundational self-introduction",
+        "ex": "Self-introduction & greetings",
+        "ref": "grammar-reference.html"
+      },
+      {
+        "name": "Possessive Adjectives",
+        "desc": "Expressing belonging",
+        "ex": "My name, your age",
+        "ref": "grammar-reference.html"
+      },
+      {
+        "name": "Modal 'can/can't'",
+        "desc": "Abilities and languages",
+        "ex": "Languages spoken",
+        "ref": "grammar-reference.html"
+      }
+    ],
+    "vocab_themes": [
+      "Greetings",
+      "Personal Details",
+      "Nationalities",
+      "Languages",
+      "Numbers & Prices"
+    ],
+    "lessons": [
+      {
+        "code": "EL-01",
+        "num": 1,
+        "title": "1.1 Γεια σας! Πρώτη επαφή",
+        "grammar": "Προσωπικές αντωνυμίες, ρήμα 'είμαι', 'λέγομαι'",
+        "vocab": [
+          "γεια σας",
+          "ευχαριστώ",
+          "παρακαλώ",
+          "αντίο",
+          "καλημέρα"
+        ],
+        "speaking": "Αυτοσύσταση και χαιρετισμοί στην τάξη",
+        "listening": "Σύντομος διάλογος πρώτης γνωριμίας",
+        "reading": "Ανάγνωση οδηγιών τάξης και χαιρετισμών",
+        "writing": "Γράψτε 5 προτάσεις για να συστηθείτε",
+        "task": "Personalized communication task",
+        "cando": "Μπορεί να χαιρετά, να αποχαιρετά, να συστήνεται και να χρησιμοποιεί τη γλώσσα της τάξης",
+        "hw": "Practice and complete lesson exercises"
+      },
+      {
+        "code": "EL-02",
+        "num": 2,
+        "title": "1.2 Πώς σε λένε; Ρωτώντας ονόματα",
+        "grammar": "Ερωτήσεις με 'με λένε', συστάσεις με 'Αυτός είναι ο...'",
+        "vocab": [
+          "όνομα",
+          "επώνυμο",
+          "φίλος",
+          "ποιος",
+          "πώς"
+        ],
+        "speaking": "Ερώτηση ονομάτων και σύσταση φίλου σε τριάδες",
+        "listening": "Άνθρωποι που ρωτούν και δίνουν ονόματα",
+        "reading": "Απλοί διάλογοι σε μια συνάντηση",
+        "writing": "Σύνταξη σύντομου διαλόγου γνωριμίας",
+        "task": "Personalized communication task",
+        "cando": "Μπορεί να ρωτά και να λέει το όνομά του, καθώς και να συστήνει άλλο πρόσωπο",
+        "hw": "Practice and complete lesson exercises"
+      },
+      {
+        "code": "EL-03",
+        "num": 3,
+        "title": "1.3 Αλφάβητο & Συλλαβισμός",
+        "grammar": "Πώς γράφεται;, ελληνικό αλφάβητο",
+        "vocab": [
+          "αλφάβητο",
+          "γράμμα",
+          "φωνήεν",
+          "σύμφωνο",
+          "τελεία"
+        ],
+        "speaking": "Συλλαβισμός ονόματος και email μεγαλόφωνα",
+        "listening": "Υπαγόρευση ονομάτων και διευθύνσεων email",
+        "reading": "Ανάγνωση γραμμάτων και κωδικών",
+        "writing": "Συλλαβισμός κυρίων ονομάτων γραπτώς",
+        "task": "Personalized communication task",
+        "cando": "Μπορεί να συλλαβίζει το όνομά του και να καταλαβαίνει συλλαβισμό",
+        "hw": "Practice and complete lesson exercises"
+      },
+      {
+        "code": "EL-04",
+        "num": 4,
+        "title": "1.4 Χώρες & Εθνικότητες",
+        "grammar": "Συμφωνία εθνικών επιθέτων, πρόθεση 'από' + αιτιατική",
+        "vocab": [
+          "χώρα",
+          "εθνικότητα",
+          "πόλη",
+          "διαβατήριο",
+          "Ελλάδα"
+        ],
+        "speaking": "Ερώτηση καταγωγής και εθνικότητας στην ομάδα",
+        "listening": "Συνεντεύξεις στον έλεγχο διαβατηρίων",
+        "reading": "Κάρτες διαβατηρίου",
+        "writing": "Γράψτε 5 προτάσεις για την καταγωγή γνωστών προσώπων",
+        "task": "Personalized communication task",
+        "cando": "Μπορεί να λέει από ποια χώρα είναι και να ρωτά την εθνικότητα",
+        "hw": "Practice and complete lesson exercises"
+      },
+      {
+        "code": "EL-05",
+        "num": 5,
+        "title": "1.5 Γλώσσες που μιλώ",
+        "grammar": "Ρήμα 'μιλάω/μιλώ', ρήμα 'μπορώ' + να, άρνηση 'δεν'",
+        "vocab": [
+          "γλώσσα",
+          "ελληνικά",
+          "αγγλικά",
+          "μιλάω",
+          "λίγο"
+        ],
+        "speaking": "Έρευνα τάξης για τις γλώσσες που μιλιούνται",
+        "listening": "Συνεντεύξεις με πολύγλωσσους",
+        "reading": "Περιγραφές γλωσσικού χαρτοφυλακίου",
+        "writing": "Γράψτε 5 προτάσεις για τις γλωσσικές σας ικανότητες",
+        "task": "Personalized communication task",
+        "cando": "Μπορεί να μιλά για τις γλώσσες που γνωρίζει και να εκφράζει ικανότητες",
+        "hw": "Practice and complete lesson exercises"
+      },
+      {
+        "code": "EL-06",
+        "num": 6,
+        "title": "1.6 Αριθμοί 0 έως 20",
+        "grammar": "Ενικός και πληθυντικός αριθμός ουσιαστικών, 'Υπάρχουν'",
+        "vocab": [
+          "μηδέν",
+          "ένα",
+          "δύο",
+          "τρία",
+          "είκοσι"
+        ],
+        "speaking": "Μέτρηση αντικειμένων τάξης και απογραφή",
+        "listening": "Υπαγορεύσεις αριθμών και ποσοτήτων",
+        "reading": "Σύντομες λίστες αποθέματος",
+        "writing": "Γράψτε 5 ομάδες αντικειμένων στον πληθυντικό",
+        "task": "Personalized communication task",
+        "cando": "Μπορεί να καταλαβαίνει και να δίνει αριθμούς 0–20 και να μετρά αντικείμενα",
+        "hw": "Practice and complete lesson exercises"
+      },
+      {
+        "code": "EL-07",
+        "num": 7,
+        "title": "1.7 Ηλικία & Γενέθλια",
+        "grammar": "Έκφραση ηλικίας με 'είμαι ... χρονών', κτητικές αντωνυμίες",
+        "vocab": [
+          "ηλικία",
+          "χρονών",
+          "γενέθλια",
+          "μήνας",
+          "Ιανουάριος"
+        ],
+        "speaking": "Ερώτηση ηλικίας και μήνα γενεθλίων στην τάξη",
+        "listening": "Ανακοινώσεις γενεθλίων διασήμων",
+        "reading": "Ημερολόγιο γενεθλίων",
+        "writing": "Γράψτε 5 προτάσεις για την ηλικία συγγενών",
+        "task": "Personalized communication task",
+        "cando": "Μπορεί να ρωτά και να λέει την ηλικία του και να μιλά για γενέθλια",
+        "hw": "Practice and complete lesson exercises"
+      },
+      {
+        "code": "EL-08",
+        "num": 8,
+        "title": "1.8 Αριθμός τηλεφώνου & Στοιχεία",
+        "grammar": "Ποιο είναι...;, κτητικές αντωνυμίες",
+        "vocab": [
+          "αριθμός τηλεφώνου",
+          "κινητό",
+          "email",
+          "διεύθυνση",
+          "οδός"
+        ],
+        "speaking": "Ανταλλαγή επαγγελματικών καρτών και στοιχείων",
+        "listening": "Υπαγόρευση αριθμών τηλεφώνου και email",
+        "reading": "Φόρμες εγγραφής ξενοδοχείου",
+        "writing": "Συμπλήρωση προσωπικής κάρτας επαφής",
+        "task": "Personalized communication task",
+        "cando": "Μπορεί να ανταλλάσσει πλήρη στοιχεία επικοινωνίας",
+        "hw": "Practice and complete lesson exercises"
+      },
+      {
+        "code": "EL-09",
+        "num": 9,
+        "title": "1.9 Αριθμοί 20 έως 100 & Τιμές",
+        "grammar": "Πόσο κάνει; / Πόσο κάνουν;",
+        "vocab": [
+          "τριάντα",
+          "σαράντα",
+          "τιμή",
+          "κόστος",
+          "ευρώ"
+        ],
+        "speaking": "Ερώτηση τιμών και αγορά στην αγορά",
+        "listening": "Συναλλαγές στο ταμείο καταστήματος",
+        "reading": "Ετικέτες τιμών και αποδείξεις",
+        "writing": "Γράψτε 5 προτάσεις αναφέροντας τιμές",
+        "task": "Personalized communication task",
+        "cando": "Μπορεί να καταλαβαίνει αριθμούς 20–100 και να ρωτά τιμές",
+        "hw": "Practice and complete lesson exercises"
+      },
+      {
+        "code": "EL-10",
+        "num": 10,
+        "title": "1.10 Έργο: Προσωπικό προφίλ",
+        "grammar": "Σύνθεση: είμαι, με λένε, μένω, μιλώ, μπορώ, κτητικά",
+        "vocab": [
+          "προφίλ",
+          "ταυτότητα",
+          "πληροφορία",
+          "προσωπικός",
+          "για μένα"
+        ],
+        "speaking": "Προφορική παρουσίαση προφίλ 1 λεπτού",
+        "listening": "Ακρόαση παρουσιάσεων συμμαθητών",
+        "reading": "Παραδείγματα καρτών προφίλ",
+        "writing": "Σύνταξη πλήρους προσωπικού προφίλ 100 λέξεων",
+        "task": "Personalized communication task",
+        "cando": "Μπορεί να παρουσιάσει ένα πλήρες προσωπικό προφίλ",
+        "hw": "Practice and complete lesson exercises"
+      }
+    ]
+  },
+  {
+    "id": "u2",
+    "num": 2,
+    "color": "#8B5CF6",
+    "label": "Unit 2: People & Relationships",
+    "arc": "Unit 2 progression arc",
+    "lessons_count": 5,
+    "lessons": [
+      {
+        "code": "EL-021",
+        "num": 1,
+        "title": "Lesson 2.1 Core Practice",
+        "grammar": "Target grammar point",
+        "vocab": [
+          "word1",
+          "word2"
+        ],
+        "speaking": "Oral practice",
+        "listening": "Listening exercise",
+        "reading": "Short text",
+        "writing": "Writing response",
+        "task": "Interactive task",
+        "cando": "Can demonstrate Unit 2 skill 1",
+        "hw": "Review vocabulary"
+      },
+      {
+        "code": "EL-022",
+        "num": 2,
+        "title": "Lesson 2.2 Core Practice",
+        "grammar": "Target grammar point",
+        "vocab": [
+          "word1",
+          "word2"
+        ],
+        "speaking": "Oral practice",
+        "listening": "Listening exercise",
+        "reading": "Short text",
+        "writing": "Writing response",
+        "task": "Interactive task",
+        "cando": "Can demonstrate Unit 2 skill 2",
+        "hw": "Review vocabulary"
+      },
+      {
+        "code": "EL-023",
+        "num": 3,
+        "title": "Lesson 2.3 Core Practice",
+        "grammar": "Target grammar point",
+        "vocab": [
+          "word1",
+          "word2"
+        ],
+        "speaking": "Oral practice",
+        "listening": "Listening exercise",
+        "reading": "Short text",
+        "writing": "Writing response",
+        "task": "Interactive task",
+        "cando": "Can demonstrate Unit 2 skill 3",
+        "hw": "Review vocabulary"
+      },
+      {
+        "code": "EL-024",
+        "num": 4,
+        "title": "Lesson 2.4 Core Practice",
+        "grammar": "Target grammar point",
+        "vocab": [
+          "word1",
+          "word2"
+        ],
+        "speaking": "Oral practice",
+        "listening": "Listening exercise",
+        "reading": "Short text",
+        "writing": "Writing response",
+        "task": "Interactive task",
+        "cando": "Can demonstrate Unit 2 skill 4",
+        "hw": "Review vocabulary"
+      },
+      {
+        "code": "EL-025",
+        "num": 5,
+        "title": "Lesson 2.5 Core Practice",
+        "grammar": "Target grammar point",
+        "vocab": [
+          "word1",
+          "word2"
+        ],
+        "speaking": "Oral practice",
+        "listening": "Listening exercise",
+        "reading": "Short text",
+        "writing": "Writing response",
+        "task": "Interactive task",
+        "cando": "Can demonstrate Unit 2 skill 5",
+        "hw": "Review vocabulary"
+      }
+    ]
+  },
+  {
+    "id": "u3",
+    "num": 3,
+    "color": "#10B981",
+    "label": "Unit 3: Objects & Space",
+    "arc": "Unit 3 progression arc",
+    "lessons_count": 5,
+    "lessons": [
+      {
+        "code": "EL-031",
+        "num": 1,
+        "title": "Lesson 3.1 Core Practice",
+        "grammar": "Target grammar point",
+        "vocab": [
+          "word1",
+          "word2"
+        ],
+        "speaking": "Oral practice",
+        "listening": "Listening exercise",
+        "reading": "Short text",
+        "writing": "Writing response",
+        "task": "Interactive task",
+        "cando": "Can demonstrate Unit 3 skill 1",
+        "hw": "Review vocabulary"
+      },
+      {
+        "code": "EL-032",
+        "num": 2,
+        "title": "Lesson 3.2 Core Practice",
+        "grammar": "Target grammar point",
+        "vocab": [
+          "word1",
+          "word2"
+        ],
+        "speaking": "Oral practice",
+        "listening": "Listening exercise",
+        "reading": "Short text",
+        "writing": "Writing response",
+        "task": "Interactive task",
+        "cando": "Can demonstrate Unit 3 skill 2",
+        "hw": "Review vocabulary"
+      },
+      {
+        "code": "EL-033",
+        "num": 3,
+        "title": "Lesson 3.3 Core Practice",
+        "grammar": "Target grammar point",
+        "vocab": [
+          "word1",
+          "word2"
+        ],
+        "speaking": "Oral practice",
+        "listening": "Listening exercise",
+        "reading": "Short text",
+        "writing": "Writing response",
+        "task": "Interactive task",
+        "cando": "Can demonstrate Unit 3 skill 3",
+        "hw": "Review vocabulary"
+      },
+      {
+        "code": "EL-034",
+        "num": 4,
+        "title": "Lesson 3.4 Core Practice",
+        "grammar": "Target grammar point",
+        "vocab": [
+          "word1",
+          "word2"
+        ],
+        "speaking": "Oral practice",
+        "listening": "Listening exercise",
+        "reading": "Short text",
+        "writing": "Writing response",
+        "task": "Interactive task",
+        "cando": "Can demonstrate Unit 3 skill 4",
+        "hw": "Review vocabulary"
+      },
+      {
+        "code": "EL-035",
+        "num": 5,
+        "title": "Lesson 3.5 Core Practice",
+        "grammar": "Target grammar point",
+        "vocab": [
+          "word1",
+          "word2"
+        ],
+        "speaking": "Oral practice",
+        "listening": "Listening exercise",
+        "reading": "Short text",
+        "writing": "Writing response",
+        "task": "Interactive task",
+        "cando": "Can demonstrate Unit 3 skill 5",
+        "hw": "Review vocabulary"
+      }
+    ]
+  },
+  {
+    "id": "u4",
+    "num": 4,
+    "color": "#F59E0B",
+    "label": "Unit 4: Daily Routine & Time",
+    "arc": "Unit 4 progression arc",
+    "lessons_count": 5,
+    "lessons": [
+      {
+        "code": "EL-041",
+        "num": 1,
+        "title": "Lesson 4.1 Core Practice",
+        "grammar": "Target grammar point",
+        "vocab": [
+          "word1",
+          "word2"
+        ],
+        "speaking": "Oral practice",
+        "listening": "Listening exercise",
+        "reading": "Short text",
+        "writing": "Writing response",
+        "task": "Interactive task",
+        "cando": "Can demonstrate Unit 4 skill 1",
+        "hw": "Review vocabulary"
+      },
+      {
+        "code": "EL-042",
+        "num": 2,
+        "title": "Lesson 4.2 Core Practice",
+        "grammar": "Target grammar point",
+        "vocab": [
+          "word1",
+          "word2"
+        ],
+        "speaking": "Oral practice",
+        "listening": "Listening exercise",
+        "reading": "Short text",
+        "writing": "Writing response",
+        "task": "Interactive task",
+        "cando": "Can demonstrate Unit 4 skill 2",
+        "hw": "Review vocabulary"
+      },
+      {
+        "code": "EL-043",
+        "num": 3,
+        "title": "Lesson 4.3 Core Practice",
+        "grammar": "Target grammar point",
+        "vocab": [
+          "word1",
+          "word2"
+        ],
+        "speaking": "Oral practice",
+        "listening": "Listening exercise",
+        "reading": "Short text",
+        "writing": "Writing response",
+        "task": "Interactive task",
+        "cando": "Can demonstrate Unit 4 skill 3",
+        "hw": "Review vocabulary"
+      },
+      {
+        "code": "EL-044",
+        "num": 4,
+        "title": "Lesson 4.4 Core Practice",
+        "grammar": "Target grammar point",
+        "vocab": [
+          "word1",
+          "word2"
+        ],
+        "speaking": "Oral practice",
+        "listening": "Listening exercise",
+        "reading": "Short text",
+        "writing": "Writing response",
+        "task": "Interactive task",
+        "cando": "Can demonstrate Unit 4 skill 4",
+        "hw": "Review vocabulary"
+      },
+      {
+        "code": "EL-045",
+        "num": 5,
+        "title": "Lesson 4.5 Core Practice",
+        "grammar": "Target grammar point",
+        "vocab": [
+          "word1",
+          "word2"
+        ],
+        "speaking": "Oral practice",
+        "listening": "Listening exercise",
+        "reading": "Short text",
+        "writing": "Writing response",
+        "task": "Interactive task",
+        "cando": "Can demonstrate Unit 4 skill 5",
+        "hw": "Review vocabulary"
+      }
+    ]
+  },
+  {
+    "id": "u5",
+    "num": 5,
+    "color": "#EC4899",
+    "label": "Unit 5: Final Review & Project",
+    "arc": "Unit 5 progression arc",
+    "lessons_count": 5,
+    "lessons": [
+      {
+        "code": "EL-051",
+        "num": 1,
+        "title": "Lesson 5.1 Core Practice",
+        "grammar": "Target grammar point",
+        "vocab": [
+          "word1",
+          "word2"
+        ],
+        "speaking": "Oral practice",
+        "listening": "Listening exercise",
+        "reading": "Short text",
+        "writing": "Writing response",
+        "task": "Interactive task",
+        "cando": "Can demonstrate Unit 5 skill 1",
+        "hw": "Review vocabulary"
+      },
+      {
+        "code": "EL-052",
+        "num": 2,
+        "title": "Lesson 5.2 Core Practice",
+        "grammar": "Target grammar point",
+        "vocab": [
+          "word1",
+          "word2"
+        ],
+        "speaking": "Oral practice",
+        "listening": "Listening exercise",
+        "reading": "Short text",
+        "writing": "Writing response",
+        "task": "Interactive task",
+        "cando": "Can demonstrate Unit 5 skill 2",
+        "hw": "Review vocabulary"
+      },
+      {
+        "code": "EL-053",
+        "num": 3,
+        "title": "Lesson 5.3 Core Practice",
+        "grammar": "Target grammar point",
+        "vocab": [
+          "word1",
+          "word2"
+        ],
+        "speaking": "Oral practice",
+        "listening": "Listening exercise",
+        "reading": "Short text",
+        "writing": "Writing response",
+        "task": "Interactive task",
+        "cando": "Can demonstrate Unit 5 skill 3",
+        "hw": "Review vocabulary"
+      },
+      {
+        "code": "EL-054",
+        "num": 4,
+        "title": "Lesson 5.4 Core Practice",
+        "grammar": "Target grammar point",
+        "vocab": [
+          "word1",
+          "word2"
+        ],
+        "speaking": "Oral practice",
+        "listening": "Listening exercise",
+        "reading": "Short text",
+        "writing": "Writing response",
+        "task": "Interactive task",
+        "cando": "Can demonstrate Unit 5 skill 4",
+        "hw": "Review vocabulary"
+      },
+      {
+        "code": "EL-055",
+        "num": 5,
+        "title": "Lesson 5.5 Core Practice",
+        "grammar": "Target grammar point",
+        "vocab": [
+          "word1",
+          "word2"
+        ],
+        "speaking": "Oral practice",
+        "listening": "Listening exercise",
+        "reading": "Short text",
+        "writing": "Writing response",
+        "task": "Interactive task",
+        "cando": "Can demonstrate Unit 5 skill 5",
+        "hw": "Review vocabulary"
+      }
+    ]
+  }
 ];

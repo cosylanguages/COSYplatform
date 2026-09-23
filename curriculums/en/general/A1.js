@@ -1,11 +1,11 @@
 if(!window.curriculumData) window.curriculumData = {};
-window.curriculumData.it_a1 = [
+window.curriculumData.en_a1 = [
   {
     "id": "u1",
     "num": 1,
     "color": "#3B82F6",
-    "label": "Primo contatto & Identità personale",
-    "arc": "Saluti → Nome & Presentazioni → Spelling → Origini → Lingue → Numeri 0-20 → Età & Compleanno → Contatti → Prezzi → Profilo personale",
+    "label": "First Contact & Personal Identity",
+    "arc": "Greetings → Name & Introductions → Spelling → Origins → Languages → Numbers 0-20 → Age & Birthday → Contact Details → Prices → Personal Profile",
     "lessons_count": 10,
     "grammar_summary": [
       {
@@ -36,203 +36,204 @@ window.curriculumData.it_a1 = [
     ],
     "lessons": [
       {
-        "code": "IT-01",
+        "code": "EN-01",
         "num": 1,
-        "title": "1.1 Buongiorno! Primo contatto",
-        "grammar": "Pronomi soggetto, verbo 'essere' al presente, 'chiamarsi'",
+        "title": "1.1 Hello! First Contact",
+        "grammar": "Subject pronouns, verb 'be' affirmative",
         "vocab": [
-          "buongiorno",
-          "ciao",
-          "arrivederci",
-          "grazie",
-          "per favore"
+          "hello",
+          "hi",
+          "goodbye",
+          "teacher",
+          "student"
         ],
-        "speaking": "Presentarsi e salutare in classe",
-        "listening": "Tre persone si presentano",
-        "reading": "Un breve dialogo di presentazione",
-        "writing": "Scrivere 5 frasi per presentarsi",
+        "speaking": "Greeting and self-introductions in class",
+        "listening": "Short dialogue of people meeting for first time",
+        "reading": "Reading classroom instructions and greetings",
+        "writing": "Write 5 sentences introducing yourself",
         "task": "Personalized communication task",
-        "cando": "Sa salutare, dire arrivederci, presentarsi e usare il linguaggio della classe",
+        "cando": "Can greet people, say goodbye, introduce oneself, and use classroom language",
         "hw": "Practice and complete lesson exercises"
       },
       {
-        "code": "IT-02",
+        "code": "EN-02",
         "num": 2,
-        "title": "1.2 Come ti chiami? Chiedere il nome",
-        "grammar": "Domande con 'chiamarsi', presentazioni con 'Questo è...'",
+        "title": "1.2 My Name Is... Asking Names",
+        "grammar": "Questions with 'be', short answers",
         "vocab": [
-          "nome",
-          "cognome",
-          "amico",
-          "chi",
-          "come"
+          "name",
+          "first name",
+          "surname",
+          "who",
+          "what"
         ],
-        "speaking": "Chiedere i nomi e presentare un amico in trio",
-        "listening": "Persone che chiedono e danno il nome",
-        "reading": "Dialoghi semplici a un incontro",
-        "writing": "Scrivere un breve dialogo di presentazione",
+        "speaking": "Asking names and introducing a friend in trios",
+        "listening": "People asking and giving names",
+        "reading": "Short dialogues at a conference",
+        "writing": "Write short Q&A pairs introducing friends",
         "task": "Personalized communication task",
-        "cando": "Sa chiedere e dire il nome e presentare un'altra persona",
+        "cando": "Can ask and answer names and introduce another person",
         "hw": "Practice and complete lesson exercises"
       },
       {
-        "code": "IT-03",
+        "code": "EN-03",
         "num": 3,
-        "title": "1.3 Alfabeto & Spelling",
-        "grammar": "Come si scrive?, doppie consonanti",
+        "title": "1.3 Alphabet & Spelling",
+        "grammar": "How do you spell...?",
         "vocab": [
-          "alfabeto",
-          "lettera",
-          "compitare",
-          "vocale",
-          "consonante"
+          "alphabet",
+          "letter",
+          "spell",
+          "vowel",
+          "consonant"
         ],
-        "speaking": "Compitare il proprio nome ed email ad alta voce",
-        "listening": "Dettato di nomi e indirizzi email",
-        "reading": "Lettura di lettere e codici",
-        "writing": "Compitare per iscritto nomi propri",
+        "speaking": "Spelling names and emails aloud to a partner",
+        "listening": "Dictation of names and email addresses",
+        "reading": "Reading letter names and codes",
+        "writing": "Write out spelled names letter by letter",
         "task": "Personalized communication task",
-        "cando": "Sa compitare il proprio nome e capire parole compitate",
+        "cando": "Can spell names and understand spelled words and codes",
         "hw": "Practice and complete lesson exercises"
       },
       {
-        "code": "IT-04",
+        "code": "EN-04",
         "num": 4,
-        "title": "1.4 Paesi & Nazionalità",
-        "grammar": "Accordo aggettivi di nazionalità, preposizioni 'da' / 'di'",
+        "title": "1.4 Countries & Nationalities",
+        "grammar": "Verb 'be' + nationality adjectives, prep 'from'",
         "vocab": [
-          "paese",
-          "nazionalità",
-          "città",
-          "passaporto",
-          "Italia"
+          "country",
+          "nationality",
+          "city",
+          "capital",
+          "from"
         ],
-        "speaking": "Chiedere l'origine e la nazionalità in gruppo",
-        "listening": "Interviste al controllo passaporti",
-        "reading": "Schede di passaporto",
-        "writing": "Scrivere 5 frasi sull'origine di persone famose",
+        "speaking": "Asking origins and nationalities in international group",
+        "listening": "Passport control interviews",
+        "reading": "Reading passport profiles",
+        "writing": "Write 5 sentences about origins of famous people",
         "task": "Personalized communication task",
-        "cando": "Sa dire da quale paese viene e chiedere la nazionalità",
+        "cando": "Can say where they are from and ask about nationality",
         "hw": "Practice and complete lesson exercises"
       },
       {
-        "code": "IT-05",
+        "code": "EN-05",
         "num": 5,
-        "title": "1.5 Lingue che parlo",
-        "grammar": "Verbo 'parlare', verbo servile 'potere', negazione 'non'",
+        "title": "1.5 Languages I Speak",
+        "grammar": "Modal verb 'can' / 'can't' for ability",
         "vocab": [
-          "lingua",
-          "italiano",
-          "inglese",
-          "parlare",
-          "un po'"
+          "language",
+          "speak",
+          "understand",
+          "well",
+          "a little"
         ],
-        "speaking": "Sondaggio di classe sulle lingue parlate",
-        "listening": "Interviste a poliglotta",
-        "reading": "Descrizioni di portafogli linguistici",
-        "writing": "Scrivere 5 frasi sulle proprie competenze linguistiche",
+        "speaking": "Surveying classmates about languages spoken",
+        "listening": "Interviews with polyglots",
+        "reading": "Language portfolio descriptions",
+        "writing": "Write 5 sentences about your language abilities",
         "task": "Personalized communication task",
-        "cando": "Sa parlare delle lingue conosciute ed esprimere capacità",
+        "cando": "Can talk about languages spoken and state abilities",
         "hw": "Practice and complete lesson exercises"
       },
       {
-        "code": "IT-06",
+        "code": "EN-06",
         "num": 6,
-        "title": "1.6 I numeri da 0 a 20",
-        "grammar": "Plurale dei sostantivi (-i, -e), struttura 'Ci sono'",
+        "title": "1.6 Numbers 0–20",
+        "grammar": "Singular and plural nouns with numbers 0-20",
         "vocab": [
           "zero",
-          "uno",
-          "due",
-          "tre",
-          "venti"
+          "one",
+          "two",
+          "three",
+          "twenty"
         ],
-        "speaking": "Conteggio degli oggetti della classe e inventario",
-        "listening": "Dettati di numeri e quantità",
-        "reading": "Brevi liste di magazzino",
-        "writing": "Scrivere 5 gruppi di oggetti contati al plurale",
+        "speaking": "Counting classroom items and inventory check",
+        "listening": "Number dictations and quantities",
+        "reading": "Reading short stock inventory lists",
+        "writing": "Write 5 groups of counted items with plurals",
         "task": "Personalized communication task",
-        "cando": "Sa contare da 0 a 20 e contare oggetti",
+        "cando": "Can understand and give numbers 0 to 20 and count objects",
         "hw": "Practice and complete lesson exercises"
       },
       {
-        "code": "IT-07",
+        "code": "EN-07",
         "num": 7,
-        "title": "1.7 Età & Compleanno",
-        "grammar": "Verbo 'avere' per l'età, aggettivi possessivi (il mio, la mia)",
+        "title": "1.7 Age & Birthday",
+        "grammar": "How old are you?, possessive adjectives",
         "vocab": [
-          "età",
-          "anno",
-          "compleanno",
-          "mese",
-          "gennaio"
+          "age",
+          "year",
+          "birthday",
+          "month",
+          "January"
         ],
-        "speaking": "Chiedere l'età e il mese di compleanno",
-        "listening": "Annunci di compleanni famosi",
-        "reading": "Calendario di compleanni",
-        "writing": "Scrivere 5 frasi sull'età di familiari",
+        "speaking": "Asking age and birthday month in class survey",
+        "listening": "Celebrity birthday announcements",
+        "reading": "Reading short birthday calendar entries",
+        "writing": "Write 5 sentences about ages of family members",
         "task": "Personalized communication task",
-        "cando": "Sa chiedere e dire l'età e parlare del compleanno",
+        "cando": "Can ask and say age, talk about birthdays, and use possessives",
         "hw": "Practice and complete lesson exercises"
       },
       {
-        "code": "IT-08",
+        "code": "EN-08",
         "num": 8,
-        "title": "1.8 Numero di telefono & Contatti",
-        "grammar": "Qual è, aggettivi possessivi con articolo",
+        "title": "1.8 Phone Numbers & Contact Details",
+        "grammar": "Possessive adjectives, question words (What, Where)",
         "vocab": [
-          "numero di telefono",
-          "cellulare",
+          "phone number",
+          "mobile",
           "email",
-          "indirizzo",
-          "via"
+          "address",
+          "street"
         ],
-        "speaking": "Scambiare biglietti da visita e contatti",
-        "listening": "Dettato di numeri di telefono ed email",
-        "reading": "Moduli di registrazione hotel",
-        "writing": "Compilare una scheda contatti personale",
+        "speaking": "Exchanging business cards and contact details",
+        "listening": "Dictation of phone numbers and email addresses",
+        "reading": "Reading hotel registration forms",
+        "writing": "Fill in a personal contact card",
         "task": "Personalized communication task",
-        "cando": "Sa scambiare recapiti completi",
+        "cando": "Can exchange contact details including phone and email",
         "hw": "Practice and complete lesson exercises"
       },
       {
-        "code": "IT-09",
+        "code": "EN-09",
         "num": 9,
-        "title": "1.9 Numeri da 20 a 100 & Prezzi",
-        "grammar": "Quanto costa? / Quanti costano?",
+        "title": "1.9 Numbers 20–100 & Prices",
+        "grammar": "How much...?, plural nouns with prices",
         "vocab": [
-          "trenta",
-          "quaranta",
-          "prezzo",
-          "costo",
+          "thirty",
+          "forty",
+          "price",
+          "cost",
+          "dollar",
           "euro"
         ],
-        "speaking": "Chiedere prezzi e comprare al mercato",
-        "listening": "Transazioni alla cassa del negozio",
-        "reading": "Cartellini prezzo e scontrini",
-        "writing": "Scrivere 5 frasi indicando prezzi",
+        "speaking": "Asking prices and buying items in a market roleplay",
+        "listening": "Listening to store cash register transactions",
+        "reading": "Reading store price tags and receipts",
+        "writing": "Write 5 sentences stating item prices",
         "task": "Personalized communication task",
-        "cando": "Sa capire i numeri da 20 a 100 e chiedere prezzi",
+        "cando": "Can understand numbers 20 to 100, ask about prices, and understand costs",
         "hw": "Practice and complete lesson exercises"
       },
       {
-        "code": "IT-10",
+        "code": "EN-10",
         "num": 10,
-        "title": "1.10 Progetto: Profilo personale",
-        "grammar": "Sintesi: essere, avere, chiamarsi, parlare, potere",
+        "title": "1.10 Personal Profile Project",
+        "grammar": "Grammar recycling: be, have, can, possessives",
         "vocab": [
-          "profilo",
-          "identità",
-          "informazione",
-          "personale",
-          "su di me"
+          "profile",
+          "identity",
+          "personal",
+          "information",
+          "about me"
         ],
-        "speaking": "Presentazione orale del profilo in 1 minuto",
-        "listening": "Ascolto delle presentazioni dei compagni",
-        "reading": "Esempi di schede profilo",
-        "writing": "Scrivere un profilo personale completo di 100 parole",
+        "speaking": "Oral 1-minute personal profile presentation",
+        "listening": "Listening to classmate profile presentations",
+        "reading": "Reading model personal profile cards",
+        "writing": "Write a full 100-word personal profile",
         "task": "Personalized communication task",
-        "cando": "Sa presentare un profilo personale completo",
+        "cando": "Can present a comprehensive personal profile",
         "hw": "Practice and complete lesson exercises"
       }
     ]
@@ -246,7 +247,7 @@ window.curriculumData.it_a1 = [
     "lessons_count": 5,
     "lessons": [
       {
-        "code": "IT-021",
+        "code": "EN-021",
         "num": 1,
         "title": "Lesson 2.1 Core Practice",
         "grammar": "Target grammar point",
@@ -263,7 +264,7 @@ window.curriculumData.it_a1 = [
         "hw": "Review vocabulary"
       },
       {
-        "code": "IT-022",
+        "code": "EN-022",
         "num": 2,
         "title": "Lesson 2.2 Core Practice",
         "grammar": "Target grammar point",
@@ -280,7 +281,7 @@ window.curriculumData.it_a1 = [
         "hw": "Review vocabulary"
       },
       {
-        "code": "IT-023",
+        "code": "EN-023",
         "num": 3,
         "title": "Lesson 2.3 Core Practice",
         "grammar": "Target grammar point",
@@ -297,7 +298,7 @@ window.curriculumData.it_a1 = [
         "hw": "Review vocabulary"
       },
       {
-        "code": "IT-024",
+        "code": "EN-024",
         "num": 4,
         "title": "Lesson 2.4 Core Practice",
         "grammar": "Target grammar point",
@@ -314,7 +315,7 @@ window.curriculumData.it_a1 = [
         "hw": "Review vocabulary"
       },
       {
-        "code": "IT-025",
+        "code": "EN-025",
         "num": 5,
         "title": "Lesson 2.5 Core Practice",
         "grammar": "Target grammar point",
@@ -341,7 +342,7 @@ window.curriculumData.it_a1 = [
     "lessons_count": 5,
     "lessons": [
       {
-        "code": "IT-031",
+        "code": "EN-031",
         "num": 1,
         "title": "Lesson 3.1 Core Practice",
         "grammar": "Target grammar point",
@@ -358,7 +359,7 @@ window.curriculumData.it_a1 = [
         "hw": "Review vocabulary"
       },
       {
-        "code": "IT-032",
+        "code": "EN-032",
         "num": 2,
         "title": "Lesson 3.2 Core Practice",
         "grammar": "Target grammar point",
@@ -375,7 +376,7 @@ window.curriculumData.it_a1 = [
         "hw": "Review vocabulary"
       },
       {
-        "code": "IT-033",
+        "code": "EN-033",
         "num": 3,
         "title": "Lesson 3.3 Core Practice",
         "grammar": "Target grammar point",
@@ -392,7 +393,7 @@ window.curriculumData.it_a1 = [
         "hw": "Review vocabulary"
       },
       {
-        "code": "IT-034",
+        "code": "EN-034",
         "num": 4,
         "title": "Lesson 3.4 Core Practice",
         "grammar": "Target grammar point",
@@ -409,7 +410,7 @@ window.curriculumData.it_a1 = [
         "hw": "Review vocabulary"
       },
       {
-        "code": "IT-035",
+        "code": "EN-035",
         "num": 5,
         "title": "Lesson 3.5 Core Practice",
         "grammar": "Target grammar point",
@@ -436,7 +437,7 @@ window.curriculumData.it_a1 = [
     "lessons_count": 5,
     "lessons": [
       {
-        "code": "IT-041",
+        "code": "EN-041",
         "num": 1,
         "title": "Lesson 4.1 Core Practice",
         "grammar": "Target grammar point",
@@ -453,7 +454,7 @@ window.curriculumData.it_a1 = [
         "hw": "Review vocabulary"
       },
       {
-        "code": "IT-042",
+        "code": "EN-042",
         "num": 2,
         "title": "Lesson 4.2 Core Practice",
         "grammar": "Target grammar point",
@@ -470,7 +471,7 @@ window.curriculumData.it_a1 = [
         "hw": "Review vocabulary"
       },
       {
-        "code": "IT-043",
+        "code": "EN-043",
         "num": 3,
         "title": "Lesson 4.3 Core Practice",
         "grammar": "Target grammar point",
@@ -487,7 +488,7 @@ window.curriculumData.it_a1 = [
         "hw": "Review vocabulary"
       },
       {
-        "code": "IT-044",
+        "code": "EN-044",
         "num": 4,
         "title": "Lesson 4.4 Core Practice",
         "grammar": "Target grammar point",
@@ -504,7 +505,7 @@ window.curriculumData.it_a1 = [
         "hw": "Review vocabulary"
       },
       {
-        "code": "IT-045",
+        "code": "EN-045",
         "num": 5,
         "title": "Lesson 4.5 Core Practice",
         "grammar": "Target grammar point",
@@ -531,7 +532,7 @@ window.curriculumData.it_a1 = [
     "lessons_count": 5,
     "lessons": [
       {
-        "code": "IT-051",
+        "code": "EN-051",
         "num": 1,
         "title": "Lesson 5.1 Core Practice",
         "grammar": "Target grammar point",
@@ -548,7 +549,7 @@ window.curriculumData.it_a1 = [
         "hw": "Review vocabulary"
       },
       {
-        "code": "IT-052",
+        "code": "EN-052",
         "num": 2,
         "title": "Lesson 5.2 Core Practice",
         "grammar": "Target grammar point",
@@ -565,7 +566,7 @@ window.curriculumData.it_a1 = [
         "hw": "Review vocabulary"
       },
       {
-        "code": "IT-053",
+        "code": "EN-053",
         "num": 3,
         "title": "Lesson 5.3 Core Practice",
         "grammar": "Target grammar point",
@@ -582,7 +583,7 @@ window.curriculumData.it_a1 = [
         "hw": "Review vocabulary"
       },
       {
-        "code": "IT-054",
+        "code": "EN-054",
         "num": 4,
         "title": "Lesson 5.4 Core Practice",
         "grammar": "Target grammar point",
@@ -599,7 +600,7 @@ window.curriculumData.it_a1 = [
         "hw": "Review vocabulary"
       },
       {
-        "code": "IT-055",
+        "code": "EN-055",
         "num": 5,
         "title": "Lesson 5.5 Core Practice",
         "grammar": "Target grammar point",
