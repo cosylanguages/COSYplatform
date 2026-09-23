@@ -646,94 +646,184 @@ window.curriculumData.ru_a1 = [
     "id": "u4",
     "num": 4,
     "color": "#F59E0B",
-    "label": "Unit 4: Daily Routine & Time",
-    "arc": "Unit 4 progression arc",
-    "lessons_count": 5,
+    "label": "Раздел 4: Распорядок дня и время",
+    "arc": "Время на часах → Календарь → Части суток → Глаголы распорядка → Наречия частоты → Расписание",
+    "lessons_count": 6,
+    "vocab_themes": [
+      "Time",
+      "Calendar",
+      "Routine",
+      "Frequency",
+      "Schedules"
+    ],
+    "grammar_summary": [
+      {
+        "name": "Time Expressions & Routine Verbs",
+        "desc": "Expressing clock time, habits, and frequency",
+        "ex": "At 8 o'clock, I usually wake up early",
+        "ref": "grammar-reference.html"
+      }
+    ],
     "lessons": [
       {
         "code": "RU-041",
+        "lesson": 1,
         "num": 1,
-        "title": "Lesson 4.1 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "4.1 Часы и время",
+        "grammar": [
+          "Вопросы о времени и называние часов"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 4 skill 1",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "время",
+          "часы",
+          "час",
+          "минута",
+          "половина",
+          "четверть",
+          "утро",
+          "вечер"
+        ],
+        "teacher_notes": "code: \"RU-041\"\ncando: \"Может спрашивать и называть время в часах и минутах\"",
+        "recycled": "Числа от 0 до 100 из Модуля 1",
+        "speaking": "Задавать вопросы о времени и отвечать партнёру",
+        "listening": "Слушание объявлений точного времени",
+        "reading": "Чтение часов в расписании",
+        "writing": "Написать 5 предложений с указанием времени",
+        "task": "Ролевая игра 'Который час'",
+        "cando": "Может спрашивать и называть время в часах и минутах",
+        "hw": "Написать 5 предложений о времени событий дня"
       },
       {
         "code": "RU-042",
+        "lesson": 2,
         "num": 2,
-        "title": "Lesson 4.2 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "4.2 Календарь: дни, месяцы и даты",
+        "grammar": [
+          "Предлоги времени с днями и месяцами"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 4 skill 2",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "понедельник",
+          "пятница",
+          "суббота",
+          "воскресенье",
+          "январь",
+          "июль",
+          "лето"
+        ],
+        "teacher_notes": "code: \"RU-042\"\ncando: \"Может называть дни недели, месяцы, времена года и даты\"",
+        "recycled": "Время на часах, дни рождения из Модуля 1",
+        "speaking": "Обсуждение любимых дней и месяцев с партнёром",
+        "listening": "Слушание людей, называющих любимые даты",
+        "reading": "Чтение записей в календаре",
+        "writing": "Написать 5 предложений о важных датах",
+        "task": "Сопоставление дат в календаре",
+        "cando": "Может называть дни недели, месяцы и даты",
+        "hw": "Написать 5 предложений о своём календаре"
       },
       {
         "code": "RU-043",
+        "lesson": 3,
         "num": 3,
-        "title": "Lesson 4.3 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "4.3 Части суток и предлоги времени",
+        "grammar": [
+          "Выражения времени суток ('утром', 'вечером')"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 4 skill 3",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "утро",
+          "день",
+          "вечер",
+          "ночь",
+          "рано",
+          "поздно",
+          "каждый день"
+        ],
+        "teacher_notes": "code: \"RU-043\"\ncando: \"Может указывать время проведения действий с помощью частей суток\"",
+        "recycled": "Время на часах, дни недели",
+        "speaking": "Описание действий в разное время суток",
+        "listening": "Слушание описаний распорядка по частям дня",
+        "reading": "Чтение краткого описания дня",
+        "writing": "Написать 5 предложений о частях суток",
+        "task": "Презентация шкалы времени дня",
+        "cando": "Может указывать время проведения действий с помощью частей суток",
+        "hw": "Написать 5 предложений об утренних и вечерних привычках"
       },
       {
         "code": "RU-044",
+        "lesson": 4,
         "num": 4,
-        "title": "Lesson 4.4 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "4.4 Глаголы распорядка дня",
+        "grammar": [
+          "Возвратные глаголы и Настоящее время привычных действий"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 4 skill 4",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "просыпаться",
+          "принимать душ",
+          "завтракать",
+          "обедать",
+          "ужинать",
+          "спать"
+        ],
+        "teacher_notes": "code: \"RU-044\"\ncando: \"Может описывать свой типичный распорядок дня с утра до вечера\"",
+        "recycled": "Части суток, бытовые глаголы",
+        "speaking": "Презентация своего обычного распорядка дня",
+        "listening": "Слушание описания распорядка дня блогера",
+        "reading": "Чтение записи в блоге о распорядке дня",
+        "writing": "Написать короткий абзац о своём распорядке дня",
+        "task": "Интервью о распорядке дня",
+        "cando": "Может описывать свой типичный распорядок дня с утра до вечера",
+        "hw": "Написать абзац с описанием своего обычного дня"
       },
       {
         "code": "RU-045",
+        "lesson": 5,
         "num": 5,
-        "title": "Lesson 4.5 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "4.5 Наречия частоты и привычки",
+        "grammar": [
+          "Наречия частоты и их место в предложении"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 4 skill 5",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "всегда",
+          "обычно",
+          "часто",
+          "иногда",
+          "никогда",
+          "привычка"
+        ],
+        "teacher_notes": "code: \"RU-045\"\ncando: \"Может описывать частоту действий с помощью наречий\"",
+        "recycled": "Глаголы распорядка дня, части суток",
+        "speaking": "Опрос партнёра о частоте выполнения действий",
+        "listening": "Слушание опроса о привычках и образе жизни",
+        "reading": "Чтение профилей с описанием привычек",
+        "writing": "Написать 5 предложений с наречиями частоты",
+        "task": "Опрос о частоте привычек",
+        "cando": "Может описывать частоту выполнения действий",
+        "hw": "Написать 5 предложений о своих еженедельных привычках"
+      },
+      {
+        "code": "RU-046",
+        "lesson": 6,
+        "num": 6,
+        "title": "4.6 Расписание и встречи",
+        "grammar": [
+          "Вопросы настоящего времени и назначение встреч"
+        ],
+        "vocabulary": [
+          "расписание",
+          "встреча",
+          "приём",
+          "свободен",
+          "занят",
+          "план"
+        ],
+        "teacher_notes": "code: \"RU-046\"\ncando: \"Может обсуждать расписание и назначать встречу\"",
+        "recycled": "Время на часах, дни, наречия частоты, этикет",
+        "speaking": "Согласование времени встречи с одногруппником",
+        "listening": "Слушание телефонных разговоров о записи на приём",
+        "reading": "Чтение подтверждений встреч",
+        "writing": "Написать сообщение для назначения встречи",
+        "task": "Ролевая игра по назначению встречи",
+        "cando": "Может обсуждать расписание и назначать встречу",
+        "hw": "Написать записку с подтверждением времени встречи"
       }
     ]
   },

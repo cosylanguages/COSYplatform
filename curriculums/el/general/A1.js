@@ -645,94 +645,184 @@ window.curriculumData.el_a1 = [
     "id": "u4",
     "num": 4,
     "color": "#F59E0B",
-    "label": "Unit 4: Daily Routine & Time",
-    "arc": "Unit 4 progression arc",
-    "lessons_count": 5,
+    "label": "Ενότητα 4: Καθημερινή ρουτίνα & Χρόνος",
+    "arc": "Ώρα → Ημερολόγιο → Μέρη της ημέρας → Ρήματα ρουτίνας → Επιρρήματα συχνότητας → Πρόγραμμα",
+    "lessons_count": 6,
+    "vocab_themes": [
+      "Time",
+      "Calendar",
+      "Routine",
+      "Frequency",
+      "Schedules"
+    ],
+    "grammar_summary": [
+      {
+        "name": "Time Expressions & Routine Verbs",
+        "desc": "Expressing clock time, habits, and frequency",
+        "ex": "At 8 o'clock, I usually wake up early",
+        "ref": "grammar-reference.html"
+      }
+    ],
     "lessons": [
       {
         "code": "EL-041",
+        "lesson": 1,
         "num": 1,
-        "title": "Lesson 4.1 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "4.1 Ρολόι & Ώρα",
+        "grammar": [
+          "Ερώτηση και αναφορά ώρας"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 4 skill 1",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "ώρα",
+          "ρολόι",
+          "λεπτό",
+          "μισό",
+          "τέταρτο",
+          "πρωί",
+          "βράδυ"
+        ],
+        "teacher_notes": "code: \"EL-041\"\ncando: \"Μπορεί να ρωτά και να λέει την ώρα σε ώρες και λεπτά\"",
+        "recycled": "Αριθμοί 0-100 από την Ενότητα 1",
+        "speaking": "Ερώτηση και αναφορά ώρας με το ζευγάρι σας",
+        "listening": "Ακρόαση ανακοινώσεων ώρας",
+        "reading": "Ανάγνωση ωραρίων",
+        "writing": "Γράψτε 5 προτάσεις αναφέροντας ώρες",
+        "task": "Παιχνίδι ρόλων αναφοράς ώρας",
+        "cando": "Μπορεί να ρωτά και να λέει την ώρα σε ώρες και λεπτά",
+        "hw": "Γράψτε 5 προτάσεις για τις ώρες καθημερινών γεγονότων"
       },
       {
         "code": "EL-042",
+        "lesson": 2,
         "num": 2,
-        "title": "Lesson 4.2 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "4.2 Ημερολόγιο: Ημέρες, Μήνες & Ημερομηνίες",
+        "grammar": [
+          "Προθέσεις με ημέρες και μήνες"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 4 skill 2",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "Δευτέρα",
+          "Παρασκευή",
+          "Σάββατο",
+          "Κυριακή",
+          "Ιανουάριος",
+          "Ιούλιος",
+          "καλοκαίρι"
+        ],
+        "teacher_notes": "code: \"EL-042\"\ncando: \"Μπορεί να μιλά για ημέρες, μήνες, εποχές και ημερομηνίες\"",
+        "recycled": "Ώρα, γενέθλια από την Ενότητα 1",
+        "speaking": "Συζήτηση για αγαπημένες ημέρες και μήνες",
+        "listening": "Ακρόαση ανθρώπων που αναφέρουν αγαπημένες ημερομηνίες",
+        "reading": "Ανάγνωση σημειώσεων ημερολογίου",
+        "writing": "Γράψτε 5 προτάσεις για σημαντικές ημερομηνίες",
+        "task": "Αντιστοίχιση προγράμματος ημερολογίου",
+        "cando": "Μπορεί να μιλά για ημέρες της εβδομάδας, μήνες και ημερομηνίες",
+        "hw": "Γράψτε 5 προτάσεις για το ημερολόγιό σας"
       },
       {
         "code": "EL-043",
+        "lesson": 3,
         "num": 3,
-        "title": "Lesson 4.3 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "4.3 Μέρη της ημέρας & Προθέσεις",
+        "grammar": [
+          "Χρονικές προθέσεις ('στις', 'το πρωί', 'το βράδυ')"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 4 skill 3",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "πρωί",
+          "απόγευμα",
+          "βράδυ",
+          "νύχτα",
+          "νωρίς",
+          "αργά",
+          "καθημερινός"
+        ],
+        "teacher_notes": "code: \"EL-043\"\ncando: \"Μπορεί να εκφράζει πότε γίνονται οι δραστηριότητες στη διάρκεια της ημέρας\"",
+        "recycled": "Ώρα, ημέρες της εβδομάδας",
+        "speaking": "Περιγραφή δραστηριοτήτων σε διαφορετικά μέρη της ημέρας",
+        "listening": "Ακρόαση περιγραφών ημερήσιου προγράμματος",
+        "reading": "Ανάγνωση συνόψεων ρουτίνας",
+        "writing": "Γράψτε 5 προτάσεις για τα μέρη της ημέρας",
+        "task": "Παρουσίαση άξονα χρόνου ημέρας",
+        "cando": "Μπορεί να εκφράζει πότε γίνονται οι δραστηριότητες",
+        "hw": "Γράψτε 5 προτάσεις για πρωινές και βραδινές συνήθειες"
       },
       {
         "code": "EL-044",
+        "lesson": 4,
         "num": 4,
-        "title": "Lesson 4.4 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "4.4 Ρήματα καθημερινής ρουτίνας",
+        "grammar": [
+          "Ρήματα Ενεστώτα & Αυτοπαθή ρήματα"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 4 skill 4",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "ξυπνάω",
+          "κάνω ντους",
+          "πρωινό",
+          "μεσημεριανό",
+          "δείπνο",
+          "κοιμάμαι"
+        ],
+        "teacher_notes": "code: \"EL-044\"\ncando: \"Μπορεί να περιγράφει την τυπική καθημερινή ρουτίνα από το πρωί ως το βράδυ\"",
+        "recycled": "Μέρη της ημέρας, ρήματα σπιτιού",
+        "speaking": "Παρουσίαση της καθημερινής σας ρουτίνας στο ζευγάρι",
+        "listening": "Ακρόαση περιγραφής καθημερινής ρουτίνας",
+        "reading": "Ανάγνωση δημοσίευσης ιστολογίου για τη ρουτίνα",
+        "writing": "Γράψτε μια παράγραφο για την καθημερινή σας ρουτίνα",
+        "task": "Συνέντευξη καθημερινής ρουτίνας",
+        "cando": "Μπορεί να περιγράφει την τυπική καθημερινή ρουτίνα",
+        "hw": "Γράψτε μια παράγραφο περιγράφοντας την ημέρα σας"
       },
       {
         "code": "EL-045",
+        "lesson": 5,
         "num": 5,
-        "title": "Lesson 4.5 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "4.5 Επιρρήματα συχνότητας & Συνήθειες",
+        "grammar": [
+          "Θέση επιρρημάτων συχνότητας ('πάντα', 'συνήθως', 'ποτέ')"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 4 skill 5",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "πάντα",
+          "συνήθως",
+          "συχνά",
+          "καμιά φορά",
+          "σπάνια",
+          "ποτέ",
+          "συνήθεια"
+        ],
+        "teacher_notes": "code: \"EL-045\"\ncando: \"Μπορεί να περιγράφει πόσο συχνά κάνει καθημερινές δραστηριότητες\"",
+        "recycled": "Ρήματα ρουτίνας, μέρη της ημέρας",
+        "speaking": "Έρευνα στο ζευγάρι για τη συχνότητα συνηθειών",
+        "listening": "Ακρόαση έρευνας για τις συνήθειες",
+        "reading": "Ανάγνωση προφίλ συνηθειών",
+        "writing": "Γράψτε 5 προτάσεις με επιρρήματα συχνότητας",
+        "task": "Έρευνα συχνότητας συνηθειών",
+        "cando": "Μπορεί να περιγράφει πόσο συχνά κάνει δραστηριότητες",
+        "hw": "Γράψτε 5 προτάσεις για τις εβδομαδιαίες συνήθειές σας"
+      },
+      {
+        "code": "EL-046",
+        "lesson": 6,
+        "num": 6,
+        "title": "4.6 Πρόγραμμα & Ραντεβού",
+        "grammar": [
+          "Ερωτήσεις Ενεστώτα & Κανονισμός ραντεβού"
+        ],
+        "vocabulary": [
+          "πρόγραμμα",
+          "ραντεβού",
+          "συνάντηση",
+          "ελεύθερος",
+          "απασχολημένος",
+          "σχέδιο"
+        ],
+        "teacher_notes": "code: \"EL-046\"\ncando: \"Μπορεί να συζητά το πρόγραμμά του και να κανονίζει ραντεβού\"",
+        "recycled": "Ώρα, ημέρες, επιρρήματα συχνότητας, ευγένεια",
+        "speaking": "Κανονισμός ώρας συνάντησης με έναν συμμαθητή",
+        "listening": "Ακρόαση τηλεφωνικών κλήσεων για κλείσιμο ραντεβού",
+        "reading": "Ανάγνωση επιβεβαιώσεων ραντεβού",
+        "writing": "Γράψτε ένα email για να κανονίσετε ραντεβού",
+        "task": "Παιχνίδι ρόλων κανονισμού ραντεβού",
+        "cando": "Μπορεί να συζητά το πρόγραμμά του και να κανονίζει ραντεβού",
+        "hw": "Γράψτε ένα σημείωμα επιβεβαίωσης ώρας συνάντησης"
       }
     ]
   },
