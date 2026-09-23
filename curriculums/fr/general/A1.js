@@ -241,94 +241,214 @@ window.curriculumData.fr_a1 = [
     "id": "u2",
     "num": 2,
     "color": "#8B5CF6",
-    "label": "Unit 2: People & Relationships",
-    "arc": "Unit 2 progression arc",
-    "lessons_count": 5,
+    "label": "Unité 2 : Famille & Relations sociales",
+    "arc": "Membres de la famille → Âge & Métiers → Apparence → Personnalité → Amis & Collègues → Présentations → Invitations",
+    "lessons_count": 7,
+    "vocab_themes": [
+      "Family",
+      "Relationships",
+      "Personality",
+      "Invitations"
+    ],
+    "grammar_summary": [
+      {
+        "name": "Possessive Structures & Agreement",
+        "desc": "Expressing family relations and agreement",
+        "ex": "My family, her brother",
+        "ref": "grammar-reference.html"
+      }
+    ],
     "lessons": [
       {
         "code": "FR-021",
+        "lesson": 1,
         "num": 1,
-        "title": "Lesson 2.1 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "2.1 Membres de la famille & Arbre généalogique",
+        "grammar": [
+          "Adjectifs possessifs (mon, ma, mes)"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 2 skill 1",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "père",
+          "mère",
+          "parents",
+          "frère",
+          "sœur",
+          "fils",
+          "fille",
+          "enfants"
+        ],
+        "teacher_notes": "code: \"FR-021\"\ncando: \"Peut nommer les membres de la famille et décrire un arbre généalogique\"",
+        "recycled": "Possessifs et nombres 0-20 du Module 1",
+        "speaking": "Présenter son arbre généalogique en binôme",
+        "listening": "Dialogue autour d'une photo de famille",
+        "reading": "Lecture de courtes biographies familiales",
+        "writing": "Écrire 5 phrases sur sa famille",
+        "task": "Présentation de l'arbre généalogique",
+        "cando": "Peut nommer les membres de la famille et décrire un arbre généalogique",
+        "hw": "Dessiner et annoter son arbre généalogique"
       },
       {
         "code": "FR-022",
+        "lesson": 2,
         "num": 2,
-        "title": "Lesson 2.2 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "2.2 Décrire la famille : Âge & Métiers",
+        "grammar": [
+          "Verbe 'avoir' pour l'âge et verbe 'travailler'"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 2 skill 2",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "âge",
+          "an",
+          "métier",
+          "travail",
+          "professeur",
+          "médecin",
+          "retraité"
+        ],
+        "teacher_notes": "code: \"FR-022\"\ncando: \"Peut indiquer l'âge et la profession de ses proches\"",
+        "recycled": "Vocabulaire famille, nombres 20-100, professions",
+        "speaking": "Interroger son partenaire sur l'âge et le travail des proches",
+        "listening": "Écoute de descriptions de métiers des parents",
+        "reading": "Lecture de fiches familiales",
+        "writing": "Écrire 5 phrases sur le métier et l'âge de ses proches",
+        "task": "Jeu de cartes de rôles familiaux",
+        "cando": "Peut indiquer l'âge et la profession de ses proches",
+        "hw": "Écrire un court paragraphe sur le travail de ses parents"
       },
       {
         "code": "FR-023",
+        "lesson": 3,
         "num": 3,
-        "title": "Lesson 2.3 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "2.3 L'apparence physique",
+        "grammar": [
+          "Accord des adjectifs physiques en genre et en nombre"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 2 skill 3",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "grand",
+          "petit",
+          "jeune",
+          "vieux",
+          "cheveux",
+          "yeux",
+          "beau",
+          "belle"
+        ],
+        "teacher_notes": "code: \"FR-023\"\ncando: \"Peut décrire l'apparence physique de proches\"",
+        "recycled": "Noms de la famille, verbe être, adjectifs de couleur",
+        "speaking": "Décrire l'apparence d'un camarade ou d'une célébrité",
+        "listening": "Description policière d'une personne recherchée",
+        "reading": "Lecture de portraits physiques",
+        "writing": "Écrire 5 phrases décrivant l'apparence d'un ami",
+        "task": "Jeu 'Qui est-ce ?'",
+        "cando": "Peut décrire l'apparence physique de proches",
+        "hw": "Décrire l'apparence d'une célébrité"
       },
       {
         "code": "FR-024",
+        "lesson": 4,
         "num": 4,
-        "title": "Lesson 2.4 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "2.4 Personnalité & Caractère",
+        "grammar": [
+          "Adjectifs de personnalité et modificateurs (très, un peu)"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 2 skill 4",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "gentil",
+          "sympathique",
+          "drôle",
+          "calme",
+          "sérieux",
+          "poli",
+          "patient"
+        ],
+        "teacher_notes": "code: \"FR-024\"\ncando: \"Peut décrire la personnalité et le caractère\"",
+        "recycled": "Adjectifs physiques, verbe être, modificateurs",
+        "speaking": "Discuter du caractère de ses amis et de sa famille",
+        "listening": "Interviews sur les meilleurs amis",
+        "reading": "Lecture de résultats de tests de personnalité",
+        "writing": "Écrire 5 phrases sur le caractère de son meilleur ami",
+        "task": "Activité de correspondance de caractères",
+        "cando": "Peut décrire la personnalité et le caractère",
+        "hw": "Écrire 5 phrases de description de caractère"
       },
       {
         "code": "FR-025",
+        "lesson": 5,
         "num": 5,
-        "title": "Lesson 2.5 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "2.5 Relations sociales : Amis & Collègues",
+        "grammar": [
+          "Verbes 'connaître' / 'rencontrer' et prépositions"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 2 skill 5",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "ami",
+          "voisin",
+          "camarade",
+          "collègue",
+          "patron",
+          "connaître",
+          "rencontrer"
+        ],
+        "teacher_notes": "code: \"FR-025\"\ncando: \"Peut parler de ses relations sociales hors famille\"",
+        "recycled": "Descriptions familiales, lieux de travail",
+        "speaking": "Raconter comment on a rencontré ses amis/collègues",
+        "listening": "Témoignages sur les voisins et collègues",
+        "reading": "Lecture de présentation sur réseau social",
+        "writing": "Écrire 5 phrases sur ses collègues et voisins",
+        "task": "Présentation du cercle social",
+        "cando": "Peut parler de ses relations sociales hors famille",
+        "hw": "Rédiger une courte note sur un collègue"
+      },
+      {
+        "code": "FR-026",
+        "lesson": 6,
+        "num": 6,
+        "title": "2.6 Présenter des personnes & Poser des questions",
+        "grammar": [
+          "Formation des questions et présentatifs (Voici, C'est)"
+        ],
+        "vocabulary": [
+          "présenter",
+          "rencontrer",
+          "photo",
+          "combien",
+          "qui",
+          "marié",
+          "célibataire"
+        ],
+        "teacher_notes": "code: \"FR-026\"\ncando: \"Peut présenter quelqu'un et poser des questions sur la famille\"",
+        "recycled": "Vocabulaire de la famille, mots interrogatifs",
+        "speaking": "Présenter un ami à un groupe et poser des questions",
+        "listening": "Présentations lors d'une fête",
+        "reading": "Lecture de légendes de photos",
+        "writing": "Écrire 5 questions-réponses sur la famille de quelqu'un",
+        "task": "Jeu de rôle lors d'une soirée",
+        "cando": "Peut présenter quelqu'un et poser des questions sur la famille",
+        "hw": "Préparer 5 questions pour un camarade"
+      },
+      {
+        "code": "FR-027",
+        "lesson": 7,
+        "num": 7,
+        "title": "2.7 Invitations & Événements sociaux",
+        "grammar": [
+          "Formules d'invitation et modaux (Voulez-vous...?)"
+        ],
+        "vocabulary": [
+          "inviter",
+          "fête",
+          "dîner",
+          "week-end",
+          "anniversaire",
+          "accepter",
+          "refuser"
+        ],
+        "teacher_notes": "code: \"FR-027\"\ncando: \"Peut inviter des proches et accepter/refuser poliment\"",
+        "recycled": "Relations sociales, calendrier, formules de politesse",
+        "speaking": "Inviter son partenaire à un événement et répondre",
+        "listening": "Appels téléphoniques d'invitation à une fête",
+        "reading": "Lecture d'invitations d'anniversaire",
+        "writing": "Écrire un message d'invitation et une réponse",
+        "task": "Organisation d'une fête en jeu de rôle",
+        "cando": "Peut inviter des proches et accepter/refuser poliment",
+        "hw": "Écrire un courriel d'invitation à un ami"
       }
     ]
   },

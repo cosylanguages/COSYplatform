@@ -242,94 +242,215 @@ window.curriculumData.en_a1 = [
     "id": "u2",
     "num": 2,
     "color": "#8B5CF6",
-    "label": "Unit 2: People & Relationships",
-    "arc": "Unit 2 progression arc",
-    "lessons_count": 5,
+    "label": "Unit 2: Family & Relationships",
+    "arc": "Family Members → Age & Jobs → Appearance → Personality → Friends & Colleagues → Introductions → Invitations",
+    "lessons_count": 7,
+    "vocab_themes": [
+      "Family",
+      "Relationships",
+      "Personality",
+      "Invitations"
+    ],
+    "grammar_summary": [
+      {
+        "name": "Possessive Structures & Agreement",
+        "desc": "Expressing family relations and agreement",
+        "ex": "My family, her brother",
+        "ref": "grammar-reference.html"
+      }
+    ],
     "lessons": [
       {
         "code": "EN-021",
+        "lesson": 1,
         "num": 1,
-        "title": "Lesson 2.1 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "2.1 Family Members & Family Tree",
+        "grammar": [
+          "Possessive Adjectives & Possessive 's"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 2 skill 1",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "father",
+          "mother",
+          "parents",
+          "brother",
+          "sister",
+          "son",
+          "daughter",
+          "children"
+        ],
+        "teacher_notes": "code: \"EN-021\"\ncando: \"Can name family members and describe a family tree\"",
+        "recycled": "Module 1 possessives & numbers 0-20",
+        "speaking": "Describing family tree in pairs",
+        "listening": "Dialogue about a family photo",
+        "reading": "Reading short family bios",
+        "writing": "Write 5 sentences about your family",
+        "task": "Family tree presentation",
+        "cando": "Can name family members and describe a family tree",
+        "hw": "Draw and label your family tree"
       },
       {
         "code": "EN-022",
+        "lesson": 2,
         "num": 2,
-        "title": "Lesson 2.2 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "2.2 Describing Family: Age & Jobs",
+        "grammar": [
+          "Present Simple 'be' & 'work' + Age Expressions"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 2 skill 2",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "age",
+          "year",
+          "job",
+          "work",
+          "teacher",
+          "doctor",
+          "engineer",
+          "retired"
+        ],
+        "teacher_notes": "code: \"EN-022\"\ncando: \"Can state age, occupation, and residence of family members\"",
+        "recycled": "Family nouns, numbers 20-100, job nouns",
+        "speaking": "Interviewing partner about family ages and jobs",
+        "listening": "Listening to people describing their parents' work",
+        "reading": "Reading family profiles",
+        "writing": "Write 5 sentences about family jobs and ages",
+        "task": "Family role card exchange",
+        "cando": "Can state age, occupation, and residence of family members",
+        "hw": "Write a short paragraph about parents' jobs"
       },
       {
         "code": "EN-023",
+        "lesson": 3,
         "num": 3,
-        "title": "Lesson 2.3 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "2.3 Physical Appearance",
+        "grammar": [
+          "Adjective Order & 'be' / 'have got' for features"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 2 skill 3",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "tall",
+          "short",
+          "young",
+          "old",
+          "hair",
+          "eyes",
+          "handsome",
+          "beautiful"
+        ],
+        "teacher_notes": "code: \"EN-023\"\ncando: \"Can describe physical appearance of relatives and friends\"",
+        "recycled": "Family nouns, verb be, colors and basic adjectives",
+        "speaking": "Describing classmate or celebrity appearance",
+        "listening": "Police description of missing person",
+        "reading": "Reading short character descriptions",
+        "writing": "Write 5 sentences describing a friend's appearance",
+        "task": "Guess who appearance game",
+        "cando": "Can describe physical appearance of relatives and friends",
+        "hw": "Describe a famous person's appearance"
       },
       {
         "code": "EN-024",
+        "lesson": 4,
         "num": 4,
-        "title": "Lesson 2.4 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "2.4 Personality & Character",
+        "grammar": [
+          "Verb 'be' + Modifiers ('very', 'a bit') & Connectors"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 2 skill 4",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "kind",
+          "friendly",
+          "funny",
+          "quiet",
+          "serious",
+          "polite",
+          "patient"
+        ],
+        "teacher_notes": "code: \"EN-024\"\ncando: \"Can describe personality traits and character\"",
+        "recycled": "Appearance adjectives, verb be, modifiers",
+        "speaking": "Discussing personality of friends and family",
+        "listening": "Interviews discussing best friends",
+        "reading": "Reading personality quiz results",
+        "writing": "Write 5 sentences about your best friend's character",
+        "task": "Personality match activity",
+        "cando": "Can describe personality traits and character",
+        "hw": "Write 5 personality sentences"
       },
       {
         "code": "EN-025",
+        "lesson": 5,
         "num": 5,
-        "title": "Lesson 2.5 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "2.5 Social Relationships: Friends & Colleagues",
+        "grammar": [
+          "Verbs 'know' / 'meet' + Prepositions of Context"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 2 skill 5",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "friend",
+          "neighbour",
+          "classmate",
+          "colleague",
+          "boss",
+          "know",
+          "meet"
+        ],
+        "teacher_notes": "code: \"EN-025\"\ncando: \"Can talk about social relationships outside the family\"",
+        "recycled": "Family descriptions, work/places vocabulary",
+        "speaking": "Talking about how you met your friends and colleagues",
+        "listening": "Listening to people talk about neighbours and colleagues",
+        "reading": "Reading social network introductions",
+        "writing": "Write 5 sentences about colleagues and neighbours",
+        "task": "Social circle chart presentation",
+        "cando": "Can talk about social relationships outside the family",
+        "hw": "Write short note about a colleague"
+      },
+      {
+        "code": "EN-026",
+        "lesson": 6,
+        "num": 6,
+        "title": "2.6 Introducing People & Asking About Family",
+        "grammar": [
+          "Question Formation & Demonstration structures"
+        ],
+        "vocabulary": [
+          "introduce",
+          "meet",
+          "picture",
+          "photo",
+          "how many",
+          "married",
+          "single"
+        ],
+        "teacher_notes": "code: \"EN-026\"\ncando: \"Can introduce someone and ask questions about family\"",
+        "recycled": "Family vocabulary, question words, demonstratives",
+        "speaking": "Introducing a friend to a group and asking Qs",
+        "listening": "Party introductions and casual Q&A",
+        "reading": "Reading photo caption stories",
+        "writing": "Write 5 Q&A pairs about someone's family",
+        "task": "Party mingling roleplay",
+        "cando": "Can introduce someone and ask questions about family",
+        "hw": "Prepare 5 questions for a classmate"
+      },
+      {
+        "code": "EN-027",
+        "lesson": 7,
+        "num": 7,
+        "title": "2.7 Invitations & Social Events",
+        "grammar": [
+          "Modals for Invitation & Preference ('Would you like to...?')"
+        ],
+        "vocabulary": [
+          "invite",
+          "party",
+          "dinner",
+          "weekend",
+          "birthday",
+          "accept",
+          "refuse"
+        ],
+        "teacher_notes": "code: \"EN-027\"\ncando: \"Can invite family/friends and accept or refuse politely\"",
+        "recycled": "Social relationships, time/calendar, politeness formulas",
+        "speaking": "Inviting partner to weekend events with responses",
+        "listening": "Phone calls making and accepting party invitations",
+        "reading": "Reading birthday party invitations",
+        "writing": "Write a short invitation message and response",
+        "task": "Party planning roleplay",
+        "cando": "Can invite family/friends and accept or refuse politely",
+        "hw": "Write an email invitation to a friend"
       }
     ]
   },
