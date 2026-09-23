@@ -458,94 +458,192 @@ window.curriculumData.en_a1 = [
     "id": "u3",
     "num": 3,
     "color": "#10B981",
-    "label": "Unit 3: Objects & Space",
-    "arc": "Unit 3 progression arc",
-    "lessons_count": 5,
+    "label": "Unit 3: Home & Living",
+    "arc": "Types of Homes → Rooms → Furniture & Prepositions → Household Actions → Size & Rent → Housewarming",
+    "lessons_count": 6,
+    "vocab_themes": [
+      "Homes",
+      "Rooms",
+      "Furniture",
+      "Activities",
+      "Rent"
+    ],
+    "grammar_summary": [
+      {
+        "name": "Existence & Prepositions of Place",
+        "desc": "Expressing locations and existence of objects",
+        "ex": "There is a kitchen, on the table",
+        "ref": "grammar-reference.html"
+      }
+    ],
     "lessons": [
       {
         "code": "EN-031",
+        "lesson": 1,
         "num": 1,
-        "title": "Lesson 3.1 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "3.1 Types of Homes & Location",
+        "grammar": [
+          "Verb 'live' + Prepositions of location"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 3 skill 1",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "house",
+          "flat",
+          "apartment",
+          "building",
+          "room",
+          "live",
+          "city",
+          "street",
+          "near"
+        ],
+        "teacher_notes": "code: \"EN-031\"\ncando: \"Can describe type of home and state where it is located\"",
+        "recycled": "Module 1 & 2 verbs, size adjectives, city prepositions",
+        "speaking": "Describing your home and location to a partner",
+        "listening": "Listening to home description and locating it on a map",
+        "reading": "Reading short home property listings",
+        "writing": "Write 5 sentences about your home and location",
+        "task": "Home location exchange",
+        "cando": "Can describe type of home and state where it is located",
+        "hw": "Write 5 sentences about where you live"
       },
       {
         "code": "EN-032",
+        "lesson": 2,
         "num": 2,
-        "title": "Lesson 3.2 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "3.2 Rooms in a Home",
+        "grammar": [
+          "Existence structures 'There is / There are'"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 3 skill 2",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "kitchen",
+          "bedroom",
+          "bathroom",
+          "living room",
+          "balcony",
+          "garden",
+          "hall"
+        ],
+        "teacher_notes": "code: \"EN-032\"\ncando: \"Can name rooms in a house or flat and describe home layout\"",
+        "recycled": "Types of homes, numbers 1-20",
+        "speaking": "Describing home room layout to a classmate",
+        "listening": "Listening to an apartment tour",
+        "reading": "Reading real estate room descriptions",
+        "writing": "Write 5 sentences listing rooms in your home",
+        "task": "Flat layout drawing & description",
+        "cando": "Can name rooms in a house/flat and describe home layout",
+        "hw": "Draw and label rooms in your flat"
       },
       {
         "code": "EN-033",
+        "lesson": 3,
         "num": 3,
-        "title": "Lesson 3.3 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "3.3 Furniture & Prepositions of Place",
+        "grammar": [
+          "Prepositions of Place ('on', 'under', 'next to', 'behind')"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 3 skill 3",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "bed",
+          "sofa",
+          "chair",
+          "table",
+          "wardrobe",
+          "lamp",
+          "shelf",
+          "window"
+        ],
+        "teacher_notes": "code: \"EN-033\"\ncando: \"Can identify furniture and describe location with prepositions\"",
+        "recycled": "Rooms in a home, demonstratives",
+        "speaking": "Describing furniture placement in your room",
+        "listening": "Listening to living room furniture arrangement",
+        "reading": "Reading interior design descriptions",
+        "writing": "Write 5 sentences about furniture placement",
+        "task": "Room arrangement roleplay",
+        "cando": "Can identify furniture and describe placement with prepositions",
+        "hw": "Describe furniture placement in your bedroom"
       },
       {
         "code": "EN-034",
+        "lesson": 4,
         "num": 4,
-        "title": "Lesson 3.4 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "3.4 Household Actions & Everyday Activities",
+        "grammar": [
+          "Present Simple Action Verbs & Imperatives"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 3 skill 4",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "open",
+          "close",
+          "clean",
+          "cook",
+          "wash",
+          "sleep",
+          "sit",
+          "window"
+        ],
+        "teacher_notes": "code: \"EN-034\"\ncando: \"Can talk about everyday household actions and activities\"",
+        "recycled": "Furniture items, action imperatives",
+        "speaking": "Talking about weekend household chores and routines",
+        "listening": "Listening to family members dividing household tasks",
+        "reading": "Reading house rules and instructions",
+        "writing": "Write 5 sentences about your home routine",
+        "task": "Chore division roleplay",
+        "cando": "Can talk about everyday household actions and activities",
+        "hw": "Write 5 sentences about household actions"
       },
       {
         "code": "EN-035",
+        "lesson": 5,
         "num": 5,
-        "title": "Lesson 3.5 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "3.5 Describing Home: Size, Comfort & Cost",
+        "grammar": [
+          "Adjective Modifiers & Cost Questions"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 3 skill 5",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "size",
+          "age",
+          "comfort",
+          "comfortable",
+          "rent",
+          "price",
+          "expensive",
+          "cheap"
+        ],
+        "teacher_notes": "code: \"EN-035\"\ncando: \"Can describe a home in detail including size, comfort, and rent\"",
+        "recycled": "Home features, numbers & prices",
+        "speaking": "Comparing two rental flats by price and comfort",
+        "listening": "Listening to housing advertisements and prices",
+        "reading": "Reading apartment rental ads",
+        "writing": "Write 5 sentences evaluating a flat",
+        "task": "Flat comparison roleplay",
+        "cando": "Can describe a home in detail including size, comfort, and cost",
+        "hw": "Compare two rental advertisements"
+      },
+      {
+        "code": "EN-036",
+        "lesson": 6,
+        "num": 6,
+        "title": "3.6 Renting & Housewarming",
+        "grammar": [
+          "Imperatives & Invitation Structures"
+        ],
+        "vocabulary": [
+          "rent",
+          "landlord",
+          "tenant",
+          "party",
+          "invite",
+          "visit",
+          "new",
+          "welcome"
+        ],
+        "teacher_notes": "code: \"EN-036\"\ncando: \"Can discuss renting a home and invite friends to a housewarming\"",
+        "recycled": "Home descriptions, invitations from Module 2",
+        "speaking": "Inviting a friend to a housewarming party with details",
+        "listening": "Listening to a housewarming voice message",
+        "reading": "Reading housewarming invitations",
+        "writing": "Write a housewarming invitation card",
+        "task": "Housewarming party roleplay",
+        "cando": "Can discuss renting a home and invite friends to a housewarming",
+        "hw": "Write a housewarming invitation message"
       }
     ]
   },
