@@ -652,93 +652,187 @@ window.curriculumData.en_a1 = [
     "num": 4,
     "color": "#F59E0B",
     "label": "Unit 4: Daily Routine & Time",
-    "arc": "Unit 4 progression arc",
-    "lessons_count": 5,
+    "arc": "Clock Time → Calendar & Dates → Parts of Day → Routine Verbs → Frequency Adverbs → Schedules",
+    "lessons_count": 6,
+    "vocab_themes": [
+      "Time",
+      "Calendar",
+      "Routine",
+      "Frequency",
+      "Schedules"
+    ],
+    "grammar_summary": [
+      {
+        "name": "Time Expressions & Routine Verbs",
+        "desc": "Expressing clock time, habits, and frequency",
+        "ex": "At 8 o'clock, I usually wake up early",
+        "ref": "grammar-reference.html"
+      }
+    ],
     "lessons": [
       {
         "code": "EN-041",
+        "lesson": 1,
         "num": 1,
-        "title": "Lesson 4.1 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "4.1 Clock & Telling Time",
+        "grammar": [
+          "Asking & Telling Time"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 4 skill 1",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "time",
+          "clock",
+          "hour",
+          "minute",
+          "half",
+          "quarter",
+          "past",
+          "to"
+        ],
+        "teacher_notes": "code: \"EN-041\"\ncando: \"Can ask for and tell the time in hours and minutes\"",
+        "recycled": "Numbers 0-100 from Module 1",
+        "speaking": "Asking and telling time with a partner",
+        "listening": "Listening to clock chime announcements",
+        "reading": "Reading clock schedules",
+        "writing": "Write 5 sentences stating times",
+        "task": "Clock time roleplay",
+        "cando": "Can ask for and tell the time in hours and minutes",
+        "hw": "Write 5 sentences about times of daily events"
       },
       {
         "code": "EN-042",
+        "lesson": 2,
         "num": 2,
-        "title": "Lesson 4.2 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "4.2 Calendar: Days, Months & Dates",
+        "grammar": [
+          "Prepositions with Days and Months"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 4 skill 2",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "Monday",
+          "Friday",
+          "Saturday",
+          "Sunday",
+          "January",
+          "July",
+          "spring",
+          "summer"
+        ],
+        "teacher_notes": "code: \"EN-042\"\ncando: \"Can talk about days, months, seasons, and ordinal dates\"",
+        "recycled": "Telling time, birthdays from Module 1",
+        "speaking": "Discussing favorite days and months with a partner",
+        "listening": "Listening to people stating favorite seasons and dates",
+        "reading": "Reading calendar diary entries",
+        "writing": "Write 5 sentences about important calendar dates",
+        "task": "Calendar schedule matching",
+        "cando": "Can talk about days of the week, months, and dates",
+        "hw": "Write 5 sentences about your calendar"
       },
       {
         "code": "EN-043",
+        "lesson": 3,
         "num": 3,
-        "title": "Lesson 4.3 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "4.3 Parts of the Day & Time Prepositions",
+        "grammar": [
+          "Prepositions of Time ('at', 'in', 'on')"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 4 skill 3",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "morning",
+          "afternoon",
+          "evening",
+          "night",
+          "early",
+          "late",
+          "everyday"
+        ],
+        "teacher_notes": "code: \"EN-043\"\ncando: \"Can express when activities happen using parts of the day\"",
+        "recycled": "Telling time, days of the week",
+        "speaking": "Describing activities during different parts of the day",
+        "listening": "Listening to daily schedule breakdowns",
+        "reading": "Reading daily routine summaries",
+        "writing": "Write 5 sentences about parts of the day",
+        "task": "Daily timeline presentation",
+        "cando": "Can express when activities happen using parts of the day",
+        "hw": "Write 5 sentences about morning and evening habits"
       },
       {
         "code": "EN-044",
+        "lesson": 4,
         "num": 4,
-        "title": "Lesson 4.4 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "4.4 Daily Routine Verbs & Habits",
+        "grammar": [
+          "Present Simple for Habits & Daily Actions"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 4 skill 4",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "wake up",
+          "shower",
+          "breakfast",
+          "lunch",
+          "dinner",
+          "work",
+          "sleep"
+        ],
+        "teacher_notes": "code: \"EN-044\"\ncando: \"Can describe typical daily routine from morning to night\"",
+        "recycled": "Parts of the day, household verbs",
+        "speaking": "Presenting your typical daily routine to a partner",
+        "listening": "Listening to a daily routine description",
+        "reading": "Reading a daily blog post",
+        "writing": "Write a short paragraph about your daily routine",
+        "task": "Daily routine interview",
+        "cando": "Can describe typical daily routine from morning to night",
+        "hw": "Write a paragraph describing your daily routine"
       },
       {
         "code": "EN-045",
+        "lesson": 5,
         "num": 5,
-        "title": "Lesson 4.5 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "4.5 Frequency Adverbs & Habits",
+        "grammar": [
+          "Frequency Adverbs Position ('always', 'usually', 'sometimes', 'never')"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 4 skill 5",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "always",
+          "usually",
+          "often",
+          "sometimes",
+          "rarely",
+          "never",
+          "habit"
+        ],
+        "teacher_notes": "code: \"EN-045\"\ncando: \"Can describe how often daily activities occur using adverbs\"",
+        "recycled": "Daily routine verbs, parts of the day",
+        "speaking": "Surveying partner about frequency of habits",
+        "listening": "Listening to a lifestyle habit survey",
+        "reading": "Reading frequency habit profiles",
+        "writing": "Write 5 sentences using frequency adverbs",
+        "task": "Habit frequency survey",
+        "cando": "Can describe how often daily activities occur",
+        "hw": "Write 5 sentences about your weekly habits"
+      },
+      {
+        "code": "EN-046",
+        "lesson": 6,
+        "num": 6,
+        "title": "4.6 Schedules & Making Appointments",
+        "grammar": [
+          "Present Simple Questions & Time Arrangements"
+        ],
+        "vocabulary": [
+          "schedule",
+          "appointment",
+          "meeting",
+          "free",
+          "busy",
+          "plan",
+          "doctor"
+        ],
+        "teacher_notes": "code: \"EN-046\"\ncando: \"Can discuss schedule, check availability, and arrange an appointment\"",
+        "recycled": "Telling time, days, frequency adverbs, politeness",
+        "speaking": "Arranging a meeting time with a classmate",
+        "listening": "Listening to appointment booking phone calls",
+        "reading": "Reading appointment confirmation notes",
+        "writing": "Write an email arranging an appointment",
+        "task": "Appointment scheduling roleplay",
+        "cando": "Can discuss schedule and arrange an appointment",
+        "hw": "Write a note confirming a meeting time"
       }
     ]
   },

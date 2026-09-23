@@ -648,94 +648,183 @@ window.curriculumData.it_a1 = [
     "id": "u4",
     "num": 4,
     "color": "#F59E0B",
-    "label": "Unit 4: Daily Routine & Time",
-    "arc": "Unit 4 progression arc",
-    "lessons_count": 5,
+    "label": "Unità 4: Routine quotidiana & Tempo",
+    "arc": "L'ora → Calendario → Momenti della giornata → Verbi della routine → Avverbi di frequenza → Orari",
+    "lessons_count": 6,
+    "vocab_themes": [
+      "Time",
+      "Calendar",
+      "Routine",
+      "Frequency",
+      "Schedules"
+    ],
+    "grammar_summary": [
+      {
+        "name": "Time Expressions & Routine Verbs",
+        "desc": "Expressing clock time, habits, and frequency",
+        "ex": "At 8 o'clock, I usually wake up early",
+        "ref": "grammar-reference.html"
+      }
+    ],
     "lessons": [
       {
         "code": "IT-041",
+        "lesson": 1,
         "num": 1,
-        "title": "Lesson 4.1 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "4.1 L'ora & L'orologio",
+        "grammar": [
+          "Chiedere e dire l'ora"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 4 skill 1",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "ora",
+          "orologio",
+          "minuto",
+          "mezzo",
+          "quarto",
+          "mattina",
+          "sera"
+        ],
+        "teacher_notes": "code: \"IT-041\"\ncando: \"Posso chiedere e dire l'ora in ore e minuti\"",
+        "recycled": "Numeri 0-100 dal Modulo 1",
+        "speaking": "Chiedere e dire l'ora a un compagno",
+        "listening": "Ascoltare annunci di orario",
+        "reading": "Leggere orari di treni/bus",
+        "writing": "Scrivere 5 frasi indicando gli orari",
+        "task": "Gioco di ruolo sugli orari",
+        "cando": "Posso chiedere e dire l'ora in ore e minuti",
+        "hw": "Scrivere 5 frasi sugli orari della giornata"
       },
       {
         "code": "IT-042",
+        "lesson": 2,
         "num": 2,
-        "title": "Lesson 4.2 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "4.2 Calendario: Giorni, Mesi & Date",
+        "grammar": [
+          "Preposizioni di tempo con giorni e mesi"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 4 skill 2",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "lunedì",
+          "venerdì",
+          "sabato",
+          "domenica",
+          "gennaio",
+          "luglio",
+          "estate"
+        ],
+        "teacher_notes": "code: \"IT-042\"\ncando: \"Posso parlare di giorni, mesi, stagioni e date\"",
+        "recycled": "L'ora, compleanni dal Modulo 1",
+        "speaking": "Discutere dei giorni e mesi preferiti con il compagno",
+        "listening": "Ascoltare persone che dicono le loro date preferite",
+        "reading": "Leggere pagine di diario e calendario",
+        "writing": "Scrivere 5 frasi su date importanti",
+        "task": "Abbinamento sul calendario",
+        "cando": "Posso parlare di giorni, mesi e date",
+        "hw": "Scrivere 5 frasi sul proprio calendario"
       },
       {
         "code": "IT-043",
+        "lesson": 3,
         "num": 3,
-        "title": "Lesson 4.3 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "4.3 Momenti della giornata & Preposizioni",
+        "grammar": [
+          "Preposizioni temporali ('alle 8', 'di mattina', 'di sera')"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 4 skill 3",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "mattina",
+          "pomeriggio",
+          "sera",
+          "notte",
+          "presto",
+          "tardi",
+          "ogni giorno"
+        ],
+        "teacher_notes": "code: \"IT-043\"\ncando: \"Posso esprimere quando si svolgono le attività nella giornata\"",
+        "recycled": "L'ora, giorni della settimana",
+        "speaking": "Descrivere le attività nei diversi momenti della giornata",
+        "listening": "Ascoltare la descrizione degli orari giornalieri",
+        "reading": "Leggere sintesi della routine",
+        "writing": "Scrivere 5 frasi sui momenti della giornata",
+        "task": "Presentazione della linea del tempo della giornata",
+        "cando": "Posso esprimere quando si svolgono le attività",
+        "hw": "Scrivere 5 frasi sulle abitudini mattutine e serali"
       },
       {
         "code": "IT-044",
+        "lesson": 4,
         "num": 4,
-        "title": "Lesson 4.4 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "4.4 Verbi della routine quotidiana",
+        "grammar": [
+          "Verbi riflessivi & Presente per le abitudini"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 4 skill 4",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "svegliarsi",
+          "farsi la doccia",
+          "colazione",
+          "pranzo",
+          "cena",
+          "dormire"
+        ],
+        "teacher_notes": "code: \"IT-044\"\ncando: \"Posso descrivere la mia routine quotidiana dal mattino alla sera\"",
+        "recycled": "Momenti della giornata, verbi della casa",
+        "speaking": "Presentare la propria routine tipica al compagno",
+        "listening": "Ascoltare la descrizione di una routine quotidiana",
+        "reading": "Leggere un post sul blog della routine",
+        "writing": "Scrivere un paragrafo sulla propria routine",
+        "task": "Intervista sulla routine quotidiana",
+        "cando": "Posso descrivere la mia routine quotidiana dal mattino alla sera",
+        "hw": "Scrivere un paragrafo che descriva la propria giornata"
       },
       {
         "code": "IT-045",
+        "lesson": 5,
         "num": 5,
-        "title": "Lesson 4.5 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "4.5 Avverbi di frequenza & Abitudini",
+        "grammar": [
+          "Posizione degli avverbi di frequenza ('sempre', 'spesso', 'mai')"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 4 skill 5",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "sempre",
+          "spesso",
+          "a volte",
+          "raramente",
+          "mai",
+          "abitudine"
+        ],
+        "teacher_notes": "code: \"IT-045\"\ncando: \"Posso descrivere la frequenza delle mie attività con avverbi\"",
+        "recycled": "Verbi della routine, momenti della giornata",
+        "speaking": "Intervistare il compagno sulla frequenza delle abitudini",
+        "listening": "Ascoltare un sondaggio sulle abitudini",
+        "reading": "Leggere profili sulle abitudini",
+        "writing": "Scrivere 5 frasi con avverbi di frequenza",
+        "task": "Sondaggio sulla frequenza delle abitudini",
+        "cando": "Posso descrivere la frequenza delle attività quotidiane",
+        "hw": "Scrivere 5 frasi sulle proprie abitudini settimanali"
+      },
+      {
+        "code": "IT-046",
+        "lesson": 6,
+        "num": 6,
+        "title": "4.6 Orari & Appuntamenti",
+        "grammar": [
+          "Domande al presente & Organizzare appuntamenti"
+        ],
+        "vocabulary": [
+          "orario",
+          "appuntamento",
+          "riunione",
+          "libero",
+          "occupato",
+          "programma"
+        ],
+        "teacher_notes": "code: \"IT-046\"\ncando: \"Posso parlare dei miei orari e fissare un appuntamento\"",
+        "recycled": "L'ora, giorni, avverbi di frequenza, cortesia",
+        "speaking": "Fissare l'orario di un incontro con un compagno",
+        "listening": "Ascoltare telefonate per prenotare un appuntamento",
+        "reading": "Leggere conferme di appuntamenti",
+        "writing": "Scrivere un'email per fissare un appuntamento",
+        "task": "Gioco di ruolo per fissare appuntamenti",
+        "cando": "Posso parlare dei miei orari e fissare un appuntamento",
+        "hw": "Scrivere una nota per confermare un appuntamento"
       }
     ]
   },
