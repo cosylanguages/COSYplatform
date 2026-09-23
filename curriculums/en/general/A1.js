@@ -584,816 +584,1621 @@ window.COSY_CURRICULUM_A1 = {
     },
     {
       "unit": 6,
-      "title": "MODULE 6. FOOD & BASIC NEEDS",
+      "num": 6,
+      "id": "u6",
+      "label": "SHOPPING & MONEY",
+      "title": "MODULE 6. SHOPPING & MONEY",
+      "color": "#3c78F6",
+      "arc": "Navigating shops, asking prices, paying and understanding discounts",
+      "lessons_count": 6,
       "lessons": [
         {
+          "code": "M06-L01",
           "lesson": 1,
-          "title": "6.1 Food Vocabulary",
+          "num": 1,
+          "title": "6.1 Shop Types & Places to Buy",
           "grammar": [
-            "Countable and uncountable nouns"
+            "Grammar focus & practice"
           ],
-          "vocabulary": [
-            "apple",
-            "banana",
-            "orange",
-            "strawberry",
-            "potato",
-            "tomato",
-            "onion",
-            "carrot",
-            "meat",
-            "beef",
-            "chicken",
-            "fish",
-            "egg",
-            "milk",
-            "cheese",
-            "butter",
-            "yogurt"
-          ],
-          "teacher_notes": "code: \"M06-L01\"\ncando: \"Can talk about food and identify ingredients\"",
-          "recycled": "Everyday objects, articles, present simple"
-        },
-        {
-          "lesson": 2,
-          "title": "6.2 Meals & Eating Habits",
-          "grammar": [
-            "Like + noun",
-            "Like + verb-ing"
-          ],
-          "vocabulary": [
-            "breakfast",
-            "lunch",
-            "dinner",
-            "eat",
-            "drink",
-            "cook",
-            "cut",
-            "mix",
-            "bake",
-            "boil"
-          ],
-          "teacher_notes": "code: \"M06-L02\"\ncando: \"Can describe eating routines, cooking basics, and state preferences\"",
-          "recycled": "Food vocabulary, daily routine verbs, frequency adverbs"
-        },
-        {
-          "lesson": 3,
-          "title": "6.3 Drinks & Ordering",
-          "grammar": [
-            "Modal verb Can",
-            "Would like"
-          ],
-          "vocabulary": [
-            "coffee",
-            "tea",
-            "water",
-            "juice",
-            "milk",
-            "menu",
-            "bill",
-            "table"
-          ],
-          "teacher_notes": "code: \"M06-L03\"\ncando: \"Can order in cafés/restaurants and request things politely\"",
-          "recycled": "Food vocabulary, polite phrases, countable/uncountable nouns"
-        },
-        {
-          "lesson": 4,
-          "title": "6.4 Shopping for Food",
-          "grammar": [
-            "How much / How many",
-            "Some / any"
-          ],
-          "vocabulary": [
+          "speaking": "I can name different shop types and say where to buy everyday products.",
+          "listening": "Audio dialogue for 6.1 Shop Types & Places to Buy",
+          "reading": "Short text for 6.1 Shop Types & Places to Buy",
+          "writing": "Write 5 sentences for 6.1 Shop Types & Places to Buy",
+          "task": "Roleplay practice for 6.1 Shop Types & Places to Buy",
+          "vocab": [
             "supermarket",
             "bakery",
-            "market",
-            "kilo",
-            "bottle",
-            "piece",
+            "pharmacy",
+            "shop",
+            "store"
+          ],
+          "hw": "Homework practice for 6.1 Shop Types & Places to Buy",
+          "cando": "I can name different shop types and say where to buy everyday products.",
+          "teacher_notes": "code: \"M06-L01\"\ncando: \"I can name different shop types and say where to buy everyday products.\"",
+          "recycled": "Module 6 progression"
+        },
+        {
+          "code": "M06-L02",
+          "lesson": 2,
+          "num": 2,
+          "title": "6.2 Product Categories & Availability",
+          "grammar": [
+            "Grammar focus & practice"
+          ],
+          "speaking": "I can ask for product categories and inquire if items are in stock.",
+          "listening": "Audio dialogue for 6.2 Product Categories & Availability",
+          "reading": "Short text for 6.2 Product Categories & Availability",
+          "writing": "Write 5 sentences for 6.2 Product Categories & Availability",
+          "task": "Roleplay practice for 6.2 Product Categories & Availability",
+          "vocab": [
+            "product",
+            "food",
+            "clothes",
+            "medicine",
+            "book"
+          ],
+          "hw": "Homework practice for 6.2 Product Categories & Availability",
+          "cando": "I can ask for product categories and inquire if items are in stock.",
+          "teacher_notes": "code: \"M06-L02\"\ncando: \"I can ask for product categories and inquire if items are in stock.\"",
+          "recycled": "Module 6 progression"
+        },
+        {
+          "code": "M06-L03",
+          "lesson": 3,
+          "num": 3,
+          "title": "6.3 Money, Currency & Prices",
+          "grammar": [
+            "Grammar focus & practice"
+          ],
+          "speaking": "I can ask how much items cost and understand price statements in local currency.",
+          "listening": "Audio dialogue for 6.3 Money, Currency & Prices",
+          "reading": "Short text for 6.3 Money, Currency & Prices",
+          "writing": "Write 5 sentences for 6.3 Money, Currency & Prices",
+          "task": "Roleplay practice for 6.3 Money, Currency & Prices",
+          "vocab": [
+            "money",
             "price",
+            "cost",
             "euro",
             "dollar"
           ],
-          "teacher_notes": "code: \"M06-L04\"\ncando: \"Can buy basic products and ask prices\"",
-          "recycled": "Food and drink vocabulary, numbers, ordering phrases"
+          "hw": "Homework practice for 6.3 Money, Currency & Prices",
+          "cando": "I can ask how much items cost and understand price statements in local currency.",
+          "teacher_notes": "code: \"M06-L03\"\ncando: \"I can ask how much items cost and understand price statements in local currency.\"",
+          "recycled": "Module 6 progression"
+        },
+        {
+          "code": "M06-L04",
+          "lesson": 4,
+          "num": 4,
+          "title": "6.4 Paying & Payment Methods",
+          "grammar": [
+            "Grammar focus & practice"
+          ],
+          "speaking": "I can pay for items using cash or card and request receipts and change.",
+          "listening": "Audio dialogue for 6.4 Paying & Payment Methods",
+          "reading": "Short text for 6.4 Paying & Payment Methods",
+          "writing": "Write 5 sentences for 6.4 Paying & Payment Methods",
+          "task": "Roleplay practice for 6.4 Paying & Payment Methods",
+          "vocab": [
+            "pay",
+            "cash",
+            "card",
+            "receipt",
+            "change"
+          ],
+          "hw": "Homework practice for 6.4 Paying & Payment Methods",
+          "cando": "I can pay for items using cash or card and request receipts and change.",
+          "teacher_notes": "code: \"M06-L04\"\ncando: \"I can pay for items using cash or card and request receipts and change.\"",
+          "recycled": "Module 6 progression"
+        },
+        {
+          "code": "M06-L05",
+          "lesson": 5,
+          "num": 5,
+          "title": "6.5 Discounts & Quantities",
+          "grammar": [
+            "Grammar focus & practice"
+          ],
+          "speaking": "I can understand sale prices, discounts, and ask for specific quantities in shops.",
+          "listening": "Audio dialogue for 6.5 Discounts & Quantities",
+          "reading": "Short text for 6.5 Discounts & Quantities",
+          "writing": "Write 5 sentences for 6.5 Discounts & Quantities",
+          "task": "Roleplay practice for 6.5 Discounts & Quantities",
+          "vocab": [
+            "discount",
+            "sale",
+            "offer",
+            "kilo",
+            "gram"
+          ],
+          "hw": "Homework practice for 6.5 Discounts & Quantities",
+          "cando": "I can understand sale prices, discounts, and ask for specific quantities in shops.",
+          "teacher_notes": "code: \"M06-L05\"\ncando: \"I can understand sale prices, discounts, and ask for specific quantities in shops.\"",
+          "recycled": "Module 6 progression"
+        },
+        {
+          "code": "M06-L06",
+          "lesson": 6,
+          "num": 6,
+          "title": "6.6 Shopping Transactions Capstone",
+          "grammar": [
+            "Grammar focus & practice"
+          ],
+          "speaking": "I can handle a complete shopping transaction from entering a store to paying and leaving.",
+          "listening": "Audio dialogue for 6.6 Shopping Transactions Capstone",
+          "reading": "Short text for 6.6 Shopping Transactions Capstone",
+          "writing": "Write 5 sentences for 6.6 Shopping Transactions Capstone",
+          "task": "Roleplay practice for 6.6 Shopping Transactions Capstone",
+          "vocab": [
+            "customer",
+            "cashier",
+            "bag",
+            "total",
+            "receipt"
+          ],
+          "hw": "Homework practice for 6.6 Shopping Transactions Capstone",
+          "cando": "I can handle a complete shopping transaction from entering a store to paying and leaving.",
+          "teacher_notes": "code: \"M06-L06\"\ncando: \"I can handle a complete shopping transaction from entering a store to paying and leaving.\"",
+          "recycled": "Module 6 progression"
         }
       ]
     },
     {
       "unit": 7,
-      "title": "MODULE 7. SHOPPING, MONEY & EVERYDAY SERVICES",
+      "num": 7,
+      "id": "u7",
+      "label": "CLOTHES & APPEARANCE",
+      "title": "MODULE 7. CLOTHES & APPEARANCE",
+      "color": "#468cF6",
+      "arc": "Describing clothing, accessories, fitting, sizes and personal style",
+      "lessons_count": 6,
       "lessons": [
         {
+          "code": "M07-L01",
           "lesson": 1,
-          "title": "7.1 General Shopping",
+          "num": 1,
+          "title": "7.1 Essential Clothing Items",
           "grammar": [
-            "Want / need + noun",
-            "Can for requests",
-            "Demonstratives (this, that, these, those)"
+            "Grammar focus & practice"
           ],
-          "vocabulary": [
-            "shop",
-            "supermarket",
-            "market",
-            "store",
-            "online shop",
-            "pharmacy",
-            "clothing shop",
-            "customer",
-            "seller",
-            "cashier",
-            "buy",
-            "sell",
-            "pay",
-            "choose",
-            "need",
-            "want"
-          ],
-          "teacher_notes": "code: \"M07-L01\"\ncando: \"Can enter a shop, ask for products, ask prices, buy basic items, and understand simple transactions\"",
-          "recycled": "Demonstratives, polite requests, food shopping"
-        },
-        {
-          "lesson": 2,
-          "title": "7.2 Prices, Money & Payments",
-          "grammar": [
-            "Question structures (How much is/are...?)",
-            "Singular / plural revision"
-          ],
-          "vocabulary": [
-            "money",
-            "price",
-            "cheap",
-            "expensive",
-            "cash",
-            "card",
-            "change",
-            "receipt",
-            "currency"
-          ],
-          "teacher_notes": "code: \"M07-L02\"\ncando: \"Can ask how much something costs, understand prices, and pay\"",
-          "recycled": "Numbers 0-100, shopping for food, demonstratives"
-        },
-        {
-          "lesson": 3,
-          "title": "7.3 Clothes Shopping & Accessories",
-          "grammar": [
-            "Adjective + noun",
-            "Comparatives (bigger, smaller, cheaper)",
-            "Can I try...?"
-          ],
-          "vocabulary": [
+          "speaking": "I can name everyday clothing items and describe what I am wearing today.",
+          "listening": "Audio dialogue for 7.1 Essential Clothing Items",
+          "reading": "Short text for 7.1 Essential Clothing Items",
+          "writing": "Write 5 sentences for 7.1 Essential Clothing Items",
+          "task": "Roleplay practice for 7.1 Essential Clothing Items",
+          "vocab": [
             "shirt",
-            "T-shirt",
             "trousers",
             "jeans",
             "dress",
-            "skirt",
-            "jacket",
-            "coat",
-            "shoes",
-            "bag",
-            "watch",
-            "glasses",
-            "hat",
-            "size",
-            "colour",
-            "style"
+            "skirt"
           ],
-          "teacher_notes": "code: \"M07-L03\"\ncando: \"Can ask for clothes and accessories, describe size and colour, and buy clothes\"",
-          "recycled": "Colours, basic descriptions, general shopping phrases"
+          "hw": "Homework practice for 7.1 Essential Clothing Items",
+          "cando": "I can name everyday clothing items and describe what I am wearing today.",
+          "teacher_notes": "code: \"M07-L01\"\ncando: \"I can name everyday clothing items and describe what I am wearing today.\"",
+          "recycled": "Module 7 progression"
         },
         {
-          "lesson": 4,
-          "title": "7.4 Online Shopping & Digital Buying",
+          "code": "M07-L02",
+          "lesson": 2,
+          "num": 2,
+          "title": "7.2 Accessories & Footwear",
           "grammar": [
-            "Imperatives",
-            "Present Simple"
+            "Grammar focus & practice"
           ],
-          "vocabulary": [
-            "website",
-            "app",
-            "account",
-            "password",
-            "order",
-            "delivery",
-            "address"
+          "speaking": "I can identify accessories and footwear and describe personal style.",
+          "listening": "Audio dialogue for 7.2 Accessories & Footwear",
+          "reading": "Short text for 7.2 Accessories & Footwear",
+          "writing": "Write 5 sentences for 7.2 Accessories & Footwear",
+          "task": "Roleplay practice for 7.2 Accessories & Footwear",
+          "vocab": [
+            "hat",
+            "cap",
+            "glasses",
+            "watch",
+            "bag"
           ],
-          "teacher_notes": "code: \"M07-L04\"\ncando: \"Can understand basic online shopping, search for products, and order simple items\"",
-          "recycled": "Imperatives, general shopping, personal information"
+          "hw": "Homework practice for 7.2 Accessories & Footwear",
+          "cando": "I can identify accessories and footwear and describe personal style.",
+          "teacher_notes": "code: \"M07-L02\"\ncando: \"I can identify accessories and footwear and describe personal style.\"",
+          "recycled": "Module 7 progression"
+        },
+        {
+          "code": "M07-L03",
+          "lesson": 3,
+          "num": 3,
+          "title": "7.3 Describing Clothes: Colour, Size & Style",
+          "grammar": [
+            "Grammar focus & practice"
+          ],
+          "speaking": "I can describe clothes using colour, size, and style adjectives.",
+          "listening": "Audio dialogue for 7.3 Describing Clothes: Colour, Size & Style",
+          "reading": "Short text for 7.3 Describing Clothes: Colour, Size & Style",
+          "writing": "Write 5 sentences for 7.3 Describing Clothes: Colour, Size & Style",
+          "task": "Roleplay practice for 7.3 Describing Clothes: Colour, Size & Style",
+          "vocab": [
+            "size",
+            "small",
+            "medium",
+            "large",
+            "red"
+          ],
+          "hw": "Homework practice for 7.3 Describing Clothes: Colour, Size & Style",
+          "cando": "I can describe clothes using colour, size, and style adjectives.",
+          "teacher_notes": "code: \"M07-L03\"\ncando: \"I can describe clothes using colour, size, and style adjectives.\"",
+          "recycled": "Module 7 progression"
+        },
+        {
+          "code": "M07-L04",
+          "lesson": 4,
+          "num": 4,
+          "title": "7.4 Clothes Shopping: Trying On & Fitting",
+          "grammar": [
+            "Grammar focus & practice"
+          ],
+          "speaking": "I can ask to try on clothes and express fitting preferences.",
+          "listening": "Audio dialogue for 7.4 Clothes Shopping: Trying On & Fitting",
+          "reading": "Short text for 7.4 Clothes Shopping: Trying On & Fitting",
+          "writing": "Write 5 sentences for 7.4 Clothes Shopping: Trying On & Fitting",
+          "task": "Roleplay practice for 7.4 Clothes Shopping: Trying On & Fitting",
+          "vocab": [
+            "buy",
+            "room",
+            "size",
+            "fit",
+            "big"
+          ],
+          "hw": "Homework practice for 7.4 Clothes Shopping: Trying On & Fitting",
+          "cando": "I can ask to try on clothes and express fitting preferences.",
+          "teacher_notes": "code: \"M07-L04\"\ncando: \"I can ask to try on clothes and express fitting preferences.\"",
+          "recycled": "Module 7 progression"
+        },
+        {
+          "code": "M07-L05",
+          "lesson": 5,
+          "num": 5,
+          "title": "7.5 Clothes Shopping: Comparisons & Buying",
+          "grammar": [
+            "Grammar focus & practice"
+          ],
+          "speaking": "I can compare clothing choices, discuss prices, and buy clothes in a shop.",
+          "listening": "Audio dialogue for 7.5 Clothes Shopping: Comparisons & Buying",
+          "reading": "Short text for 7.5 Clothes Shopping: Comparisons & Buying",
+          "writing": "Write 5 sentences for 7.5 Clothes Shopping: Comparisons & Buying",
+          "task": "Roleplay practice for 7.5 Clothes Shopping: Comparisons & Buying",
+          "vocab": [
+            "better",
+            "cheap",
+            "nice",
+            "prefer",
+            "buy"
+          ],
+          "hw": "Homework practice for 7.5 Clothes Shopping: Comparisons & Buying",
+          "cando": "I can compare clothing choices, discuss prices, and buy clothes in a shop.",
+          "teacher_notes": "code: \"M07-L05\"\ncando: \"I can compare clothing choices, discuss prices, and buy clothes in a shop.\"",
+          "recycled": "Module 7 progression"
+        },
+        {
+          "code": "M07-L06",
+          "lesson": 6,
+          "num": 6,
+          "title": "7.6 Wardrobe & Fashion Capstone",
+          "grammar": [
+            "Grammar focus & practice"
+          ],
+          "speaking": "I can describe my wardrobe, favourite outfits, and handle clothes shopping dialogues.",
+          "listening": "Audio dialogue for 7.6 Wardrobe & Fashion Capstone",
+          "reading": "Short text for 7.6 Wardrobe & Fashion Capstone",
+          "writing": "Write 5 sentences for 7.6 Wardrobe & Fashion Capstone",
+          "task": "Roleplay practice for 7.6 Wardrobe & Fashion Capstone",
+          "vocab": [
+            "clothes",
+            "wear",
+            "favourite",
+            "season",
+            "look"
+          ],
+          "hw": "Homework practice for 7.6 Wardrobe & Fashion Capstone",
+          "cando": "I can describe my wardrobe, favourite outfits, and handle clothes shopping dialogues.",
+          "teacher_notes": "code: \"M07-L06\"\ncando: \"I can describe my wardrobe, favourite outfits, and handle clothes shopping dialogues.\"",
+          "recycled": "Module 7 progression"
         }
       ]
     },
     {
       "unit": 8,
-      "title": "MODULE 8. BODY, HEALTH & WELLBEING",
+      "num": 8,
+      "id": "u8",
+      "label": "HEALTH & BODY",
+      "title": "MODULE 8. HEALTH & BODY",
+      "color": "#50a0F6",
+      "arc": "Body parts, symptoms, doctor visits, pharmacy and healthy habits",
+      "lessons_count": 6,
       "lessons": [
         {
+          "code": "M08-L01",
           "lesson": 1,
-          "title": "8.1 Body Parts",
+          "num": 1,
+          "title": "8.1 Body Parts & Physical Self",
           "grammar": [
-            "Possessives (my hand, your eyes)",
-            "Have / has got"
+            "Grammar focus & practice"
           ],
-          "vocabulary": [
+          "speaking": "I can name human body parts and point out physical pain locations.",
+          "listening": "Audio dialogue for 8.1 Body Parts & Physical Self",
+          "reading": "Short text for 8.1 Body Parts & Physical Self",
+          "writing": "Write 5 sentences for 8.1 Body Parts & Physical Self",
+          "task": "Roleplay practice for 8.1 Body Parts & Physical Self",
+          "vocab": [
             "head",
             "face",
             "eye",
             "ear",
-            "nose",
-            "mouth",
-            "hand",
-            "arm",
-            "leg",
-            "foot"
+            "nose"
           ],
-          "teacher_notes": "code: \"M08-L01\"\ncando: \"Can identify body parts and describe simple problems\"",
-          "recycled": "Personal appearance, possessive adjectives, have"
+          "hw": "Homework practice for 8.1 Body Parts & Physical Self",
+          "cando": "I can name human body parts and point out physical pain locations.",
+          "teacher_notes": "code: \"M08-L01\"\ncando: \"I can name human body parts and point out physical pain locations.\"",
+          "recycled": "Module 8 progression"
         },
         {
+          "code": "M08-L02",
           "lesson": 2,
-          "title": "8.2 Feeling Ill & Basic Symptoms",
+          "num": 2,
+          "title": "8.2 Basic Health States & Feeling Unwell",
           "grammar": [
-            "Have + illness",
-            "Feel + adjective"
+            "Grammar focus & practice"
           ],
-          "vocabulary": [
+          "speaking": "I can express physical feelings and basic health states.",
+          "listening": "Audio dialogue for 8.2 Basic Health States & Feeling Unwell",
+          "reading": "Short text for 8.2 Basic Health States & Feeling Unwell",
+          "writing": "Write 5 sentences for 8.2 Basic Health States & Feeling Unwell",
+          "task": "Roleplay practice for 8.2 Basic Health States & Feeling Unwell",
+          "vocab": [
+            "feel",
+            "sick",
+            "tired",
+            "well",
+            "healthy"
+          ],
+          "hw": "Homework practice for 8.2 Basic Health States & Feeling Unwell",
+          "cando": "I can express physical feelings and basic health states.",
+          "teacher_notes": "code: \"M08-L02\"\ncando: \"I can express physical feelings and basic health states.\"",
+          "recycled": "Module 8 progression"
+        },
+        {
+          "code": "M08-L03",
+          "lesson": 3,
+          "num": 3,
+          "title": "8.3 Common Ailments & Symptoms",
+          "grammar": [
+            "Grammar focus & practice"
+          ],
+          "speaking": "I can describe common ailments like headaches, colds, and fevers.",
+          "listening": "Audio dialogue for 8.3 Common Ailments & Symptoms",
+          "reading": "Short text for 8.3 Common Ailments & Symptoms",
+          "writing": "Write 5 sentences for 8.3 Common Ailments & Symptoms",
+          "task": "Roleplay practice for 8.3 Common Ailments & Symptoms",
+          "vocab": [
             "headache",
             "fever",
-            "cough",
-            "pain",
             "cold",
-            "tired",
-            "sick",
-            "healthy",
-            "better"
+            "cough",
+            "pain"
           ],
-          "teacher_notes": "code: \"M08-L02\"\ncando: \"Can explain basic health problems and ask for help\"",
-          "recycled": "Body parts, feel + adjective, verb have"
+          "hw": "Homework practice for 8.3 Common Ailments & Symptoms",
+          "cando": "I can describe common ailments like headaches, colds, and fevers.",
+          "teacher_notes": "code: \"M08-L03\"\ncando: \"I can describe common ailments like headaches, colds, and fevers.\"",
+          "recycled": "Module 8 progression"
         },
         {
-          "lesson": 3,
-          "title": "8.3 Doctor & Pharmacy",
+          "code": "M08-L04",
+          "lesson": 4,
+          "num": 4,
+          "title": "8.4 At the Doctor's Office",
           "grammar": [
-            "Modal verb Should",
-            "Imperatives"
+            "Grammar focus & practice"
           ],
-          "vocabulary": [
+          "speaking": "I can explain health problems to a doctor and understand basic medical advice.",
+          "listening": "Audio dialogue for 8.4 At the Doctor's Office",
+          "reading": "Short text for 8.4 At the Doctor's Office",
+          "writing": "Write 5 sentences for 8.4 At the Doctor's Office",
+          "task": "Roleplay practice for 8.4 At the Doctor's Office",
+          "vocab": [
             "doctor",
             "nurse",
-            "hospital",
-            "pharmacy",
-            "medicine",
-            "appointment"
+            "clinic",
+            "problem",
+            "symptom"
           ],
-          "teacher_notes": "code: \"M08-L03\"\ncando: \"Can make a doctor's appointment, describe simple problems, and buy medicine\"",
-          "recycled": "Feeling ill, appointments, polite requests"
+          "hw": "Homework practice for 8.4 At the Doctor's Office",
+          "cando": "I can explain health problems to a doctor and understand basic medical advice.",
+          "teacher_notes": "code: \"M08-L04\"\ncando: \"I can explain health problems to a doctor and understand basic medical advice.\"",
+          "recycled": "Module 8 progression"
         },
         {
-          "lesson": 4,
-          "title": "8.4 Healthy Lifestyle",
+          "code": "M08-L05",
+          "lesson": 5,
+          "num": 5,
+          "title": "8.5 At the Pharmacy & Buying Medicine",
           "grammar": [
-            "Adverbs of frequency",
-            "Present Simple"
+            "Grammar focus & practice"
           ],
-          "vocabulary": [
-            "sleep",
+          "speaking": "I can request medicine at a pharmacy and understand dosage instructions.",
+          "listening": "Audio dialogue for 8.5 At the Pharmacy & Buying Medicine",
+          "reading": "Short text for 8.5 At the Pharmacy & Buying Medicine",
+          "writing": "Write 5 sentences for 8.5 At the Pharmacy & Buying Medicine",
+          "task": "Roleplay practice for 8.5 At the Pharmacy & Buying Medicine",
+          "vocab": [
+            "pharmacy",
+            "medicine",
+            "prescription",
+            "take",
+            "doctor"
+          ],
+          "hw": "Homework practice for 8.5 At the Pharmacy & Buying Medicine",
+          "cando": "I can request medicine at a pharmacy and understand dosage instructions.",
+          "teacher_notes": "code: \"M08-L05\"\ncando: \"I can request medicine at a pharmacy and understand dosage instructions.\"",
+          "recycled": "Module 8 progression"
+        },
+        {
+          "code": "M08-L06",
+          "lesson": 6,
+          "num": 6,
+          "title": "8.6 Healthy Lifestyle & Wellness Capstone",
+          "grammar": [
+            "Grammar focus & practice"
+          ],
+          "speaking": "I can describe healthy daily routines and discuss simple wellness habits.",
+          "listening": "Audio dialogue for 8.6 Healthy Lifestyle & Wellness Capstone",
+          "reading": "Short text for 8.6 Healthy Lifestyle & Wellness Capstone",
+          "writing": "Write 5 sentences for 8.6 Healthy Lifestyle & Wellness Capstone",
+          "task": "Roleplay practice for 8.6 Healthy Lifestyle & Wellness Capstone",
+          "vocab": [
+            "health",
+            "diet",
             "exercise",
-            "walk",
-            "drink water",
-            "eat healthy food"
+            "sleep",
+            "water"
           ],
-          "teacher_notes": "code: \"M08-L04\"\ncando: \"Can describe healthy habits and talk about basic routines\"",
-          "recycled": "Daily routine, frequency adverbs, food & drink"
+          "hw": "Homework practice for 8.6 Healthy Lifestyle & Wellness Capstone",
+          "cando": "I can describe healthy daily routines and discuss simple wellness habits.",
+          "teacher_notes": "code: \"M08-L06\"\ncando: \"I can describe healthy daily routines and discuss simple wellness habits.\"",
+          "recycled": "Module 8 progression"
         }
       ]
     },
     {
       "unit": 9,
-      "title": "MODULE 9. WORK, EDUCATION & SKILLS",
+      "num": 9,
+      "id": "u9",
+      "label": "WORK & EDUCATION",
+      "title": "MODULE 9. WORK & EDUCATION",
+      "color": "#5ab4F6",
+      "arc": "Occupations, workplaces, working hours, studies, exams and career profiles",
+      "lessons_count": 6,
       "lessons": [
         {
+          "code": "M09-L01",
           "lesson": 1,
+          "num": 1,
           "title": "9.1 Jobs & Professions",
           "grammar": [
-            "Present Simple",
-            "Indefinite articles (a/an with jobs)"
+            "Grammar focus & practice"
           ],
-          "vocabulary": [
+          "speaking": "I can name common occupations and ask someone about their job.",
+          "listening": "Audio dialogue for 9.1 Jobs & Professions",
+          "reading": "Short text for 9.1 Jobs & Professions",
+          "writing": "Write 5 sentences for 9.1 Jobs & Professions",
+          "task": "Roleplay practice for 9.1 Jobs & Professions",
+          "vocab": [
             "teacher",
             "doctor",
             "engineer",
-            "student",
-            "driver",
             "manager",
-            "designer",
-            "office",
-            "school",
-            "hospital",
-            "company"
+            "driver"
           ],
-          "teacher_notes": "code: \"M09-L01\"\ncando: \"Can say what they do and ask about jobs\"",
-          "recycled": "Personal details, Present Simple, articles"
+          "hw": "Homework practice for 9.1 Jobs & Professions",
+          "cando": "I can name common occupations and ask someone about their job.",
+          "teacher_notes": "code: \"M09-L01\"\ncando: \"I can name common occupations and ask someone about their job.\"",
+          "recycled": "Module 9 progression"
         },
         {
+          "code": "M09-L02",
           "lesson": 2,
-          "title": "9.2 Workplace Communication",
+          "num": 2,
+          "title": "9.2 Workplaces & Work Locations",
           "grammar": [
-            "Present Simple",
-            "Prepositions (at work, in an office)"
+            "Grammar focus & practice"
           ],
-          "vocabulary": [
-            "colleague",
-            "boss",
-            "meeting",
-            "project",
-            "task",
-            "break",
-            "working hours"
+          "speaking": "I can describe workplaces and state where people work.",
+          "listening": "Audio dialogue for 9.2 Workplaces & Work Locations",
+          "reading": "Short text for 9.2 Workplaces & Work Locations",
+          "writing": "Write 5 sentences for 9.2 Workplaces & Work Locations",
+          "task": "Roleplay practice for 9.2 Workplaces & Work Locations",
+          "vocab": [
+            "office",
+            "hospital",
+            "school",
+            "company",
+            "factory"
           ],
-          "teacher_notes": "code: \"M09-L02\"\ncando: \"Can talk about basic work situations\"",
-          "recycled": "Jobs and professions, daily routine, prepositions"
+          "hw": "Homework practice for 9.2 Workplaces & Work Locations",
+          "cando": "I can describe workplaces and state where people work.",
+          "teacher_notes": "code: \"M09-L02\"\ncando: \"I can describe workplaces and state where people work.\"",
+          "recycled": "Module 9 progression"
         },
         {
+          "code": "M09-L03",
           "lesson": 3,
-          "title": "9.3 Education & Classroom Language",
+          "num": 3,
+          "title": "9.3 Working Hours & Work Communication",
           "grammar": [
-            "Modal verb Can",
-            "Like + verb-ing",
-            "Imperatives"
+            "Grammar focus & practice"
           ],
-          "vocabulary": [
+          "speaking": "I can talk about working hours, schedules, and basic workplace tasks.",
+          "listening": "Audio dialogue for 9.3 Working Hours & Work Communication",
+          "reading": "Short text for 9.3 Working Hours & Work Communication",
+          "writing": "Write 5 sentences for 9.3 Working Hours & Work Communication",
+          "task": "Roleplay practice for 9.3 Working Hours & Work Communication",
+          "vocab": [
+            "time",
+            "schedule",
+            "meeting",
+            "email",
+            "project"
+          ],
+          "hw": "Homework practice for 9.3 Working Hours & Work Communication",
+          "cando": "I can talk about working hours, schedules, and basic workplace tasks.",
+          "teacher_notes": "code: \"M09-L03\"\ncando: \"I can talk about working hours, schedules, and basic workplace tasks.\"",
+          "recycled": "Module 9 progression"
+        },
+        {
+          "code": "M09-L04",
+          "lesson": 4,
+          "num": 4,
+          "title": "9.4 Education Places & School Subjects",
+          "grammar": [
+            "Grammar focus & practice"
+          ],
+          "speaking": "I can talk about schools, universities, and favourite academic subjects.",
+          "listening": "Audio dialogue for 9.4 Education Places & School Subjects",
+          "reading": "Short text for 9.4 Education Places & School Subjects",
+          "writing": "Write 5 sentences for 9.4 Education Places & School Subjects",
+          "task": "Roleplay practice for 9.4 Education Places & School Subjects",
+          "vocab": [
             "school",
             "university",
-            "class",
-            "classroom",
+            "college",
             "lesson",
-            "teacher",
-            "student",
-            "homework",
-            "exam",
-            "subjects",
-            "read",
-            "write",
-            "listen",
-            "speak",
-            "learn",
-            "repeat",
-            "explain",
-            "translate",
-            "spell",
-            "pronounce"
+            "subject"
           ],
-          "teacher_notes": "code: \"M09-L03\"\ncando: \"Can talk about studies, describe learning activities, and use classroom language\"",
-          "recycled": "Present simple, can for ability, like + verb-ing"
+          "hw": "Homework practice for 9.4 Education Places & School Subjects",
+          "cando": "I can talk about schools, universities, and favourite academic subjects.",
+          "teacher_notes": "code: \"M09-L04\"\ncando: \"I can talk about schools, universities, and favourite academic subjects.\"",
+          "recycled": "Module 9 progression"
         },
         {
-          "lesson": 4,
-          "title": "9.4 Languages & Communication",
+          "code": "M09-L05",
+          "lesson": 5,
+          "num": 5,
+          "title": "9.5 Study Habits, Homework & Exams",
           "grammar": [
-            "Can / can't for abilities"
+            "Grammar focus & practice"
           ],
-          "vocabulary": [
-            "speak",
-            "understand",
+          "speaking": "I can describe study routines, homework tasks, and exam preparation.",
+          "listening": "Audio dialogue for 9.5 Study Habits, Homework & Exams",
+          "reading": "Short text for 9.5 Study Habits, Homework & Exams",
+          "writing": "Write 5 sentences for 9.5 Study Habits, Homework & Exams",
+          "task": "Roleplay practice for 9.5 Study Habits, Homework & Exams",
+          "vocab": [
+            "study",
             "read",
             "write",
-            "translate",
-            "beginner",
-            "intermediate",
-            "languages"
+            "homework",
+            "exam"
           ],
-          "teacher_notes": "code: \"M09-L04\"\ncando: \"Can talk about languages and explain their abilities\"",
-          "recycled": "Education and learning verbs, modal can"
+          "hw": "Homework practice for 9.5 Study Habits, Homework & Exams",
+          "cando": "I can describe study routines, homework tasks, and exam preparation.",
+          "teacher_notes": "code: \"M09-L05\"\ncando: \"I can describe study routines, homework tasks, and exam preparation.\"",
+          "recycled": "Module 9 progression"
+        },
+        {
+          "code": "M09-L06",
+          "lesson": 6,
+          "num": 6,
+          "title": "9.6 Work & Education Profile Capstone",
+          "grammar": [
+            "Grammar focus & practice"
+          ],
+          "speaking": "I can present a complete overview of my professional and educational background.",
+          "listening": "Audio dialogue for 9.6 Work & Education Profile Capstone",
+          "reading": "Short text for 9.6 Work & Education Profile Capstone",
+          "writing": "Write 5 sentences for 9.6 Work & Education Profile Capstone",
+          "task": "Roleplay practice for 9.6 Work & Education Profile Capstone",
+          "vocab": [
+            "education",
+            "experience",
+            "skill",
+            "profile",
+            "work"
+          ],
+          "hw": "Homework practice for 9.6 Work & Education Profile Capstone",
+          "cando": "I can present a complete overview of my professional and educational background.",
+          "teacher_notes": "code: \"M09-L06\"\ncando: \"I can present a complete overview of my professional and educational background.\"",
+          "recycled": "Module 9 progression"
         }
       ]
     },
     {
       "unit": 10,
-      "title": "MODULE 10. CITY & PLACES AROUND ME",
+      "num": 10,
+      "id": "u10",
+      "label": "LANGUAGES & COMMUNICATION",
+      "title": "MODULE 10. LANGUAGES & COMMUNICATION",
+      "color": "#64c8F6",
+      "arc": "Language skills, learning levels, classroom phrases, translation, messaging and portfolio",
+      "lessons_count": 6,
       "lessons": [
         {
+          "code": "M10-L01",
           "lesson": 1,
-          "title": "10.1 Places in Town",
+          "num": 1,
+          "title": "10.1 Languages & Communication Verbs",
           "grammar": [
-            "Go + place (to)",
-            "Prepositions (in, at)"
+            "Grammar focus & practice"
           ],
-          "vocabulary": [
-            "bank",
-            "hospital",
-            "school",
-            "park",
-            "library",
-            "restaurant",
-            "cinema",
-            "museum",
-            "hotel"
+          "speaking": "I can state which languages I speak, read, write, and understand.",
+          "listening": "Audio dialogue for 10.1 Languages & Communication Verbs",
+          "reading": "Short text for 10.1 Languages & Communication Verbs",
+          "writing": "Write 5 sentences for 10.1 Languages & Communication Verbs",
+          "task": "Roleplay practice for 10.1 Languages & Communication Verbs",
+          "vocab": [
+            "speak",
+            "read",
+            "write",
+            "listen",
+            "understand"
           ],
-          "teacher_notes": "code: \"M10-L01\"\ncando: \"Can name places and say where they go\"",
-          "recycled": "Types of homes, prepositions of place, daily routine"
+          "hw": "Homework practice for 10.1 Languages & Communication Verbs",
+          "cando": "I can state which languages I speak, read, write, and understand.",
+          "teacher_notes": "code: \"M10-L01\"\ncando: \"I can state which languages I speak, read, write, and understand.\"",
+          "recycled": "Module 10 progression"
         },
         {
+          "code": "M10-L02",
           "lesson": 2,
-          "title": "10.2 Asking for Directions",
+          "num": 2,
+          "title": "10.2 Language Ability & Learning Progress",
           "grammar": [
-            "Questions (Where is...?, How can I get to...?)",
-            "Imperatives (Turn left, Go straight)"
+            "Grammar focus & practice"
           ],
-          "vocabulary": [
-            "left",
-            "right",
-            "straight",
-            "near",
-            "far",
-            "corner",
-            "street"
+          "speaking": "I can describe my language proficiency level and learning progress.",
+          "listening": "Audio dialogue for 10.2 Language Ability & Learning Progress",
+          "reading": "Short text for 10.2 Language Ability & Learning Progress",
+          "writing": "Write 5 sentences for 10.2 Language Ability & Learning Progress",
+          "task": "Roleplay practice for 10.2 Language Ability & Learning Progress",
+          "vocab": [
+            "can",
+            "speak",
+            "little",
+            "student",
+            "class"
           ],
-          "teacher_notes": "code: \"M10-L02\"\ncando: \"Can ask where places are and understand simple directions\"",
-          "recycled": "Places in town, imperatives, prepositions"
+          "hw": "Homework practice for 10.2 Language Ability & Learning Progress",
+          "cando": "I can describe my language proficiency level and learning progress.",
+          "teacher_notes": "code: \"M10-L02\"\ncando: \"I can describe my language proficiency level and learning progress.\"",
+          "recycled": "Module 10 progression"
         },
         {
+          "code": "M10-L03",
           "lesson": 3,
-          "title": "10.3 Buildings & Services",
+          "num": 3,
+          "title": "10.3 Classroom Interaction & Requests",
           "grammar": [
-            "There is / There are revision",
-            "Prepositions (next to, opposite, between)"
+            "Grammar focus & practice"
           ],
-          "vocabulary": [
-            "post office",
-            "police station",
-            "pharmacy",
-            "supermarket"
+          "speaking": "I can use classroom communication phrases and request clarification.",
+          "listening": "Audio dialogue for 10.3 Classroom Interaction & Requests",
+          "reading": "Short text for 10.3 Classroom Interaction & Requests",
+          "writing": "Write 5 sentences for 10.3 Classroom Interaction & Requests",
+          "task": "Roleplay practice for 10.3 Classroom Interaction & Requests",
+          "vocab": [
+            "repeat",
+            "explain",
+            "understand",
+            "ask",
+            "question"
           ],
-          "teacher_notes": "code: \"M10-L03\"\ncando: \"Can explain where they need to go and locate town services\"",
-          "recycled": "Places in town, prepositions of place, there is/are"
+          "hw": "Homework practice for 10.3 Classroom Interaction & Requests",
+          "cando": "I can use classroom communication phrases and request clarification.",
+          "teacher_notes": "code: \"M10-L03\"\ncando: \"I can use classroom communication phrases and request clarification.\"",
+          "recycled": "Module 10 progression"
+        },
+        {
+          "code": "M10-L04",
+          "lesson": 4,
+          "num": 4,
+          "title": "10.4 Translation, Spelling & Pronunciation",
+          "grammar": [
+            "Grammar focus & practice"
+          ],
+          "speaking": "I can ask for translations, correct spelling, and pronunciation help.",
+          "listening": "Audio dialogue for 10.4 Translation, Spelling & Pronunciation",
+          "reading": "Short text for 10.4 Translation, Spelling & Pronunciation",
+          "writing": "Write 5 sentences for 10.4 Translation, Spelling & Pronunciation",
+          "task": "Roleplay practice for 10.4 Translation, Spelling & Pronunciation",
+          "vocab": [
+            "translate",
+            "spell",
+            "pronounce",
+            "word",
+            "meaning"
+          ],
+          "hw": "Homework practice for 10.4 Translation, Spelling & Pronunciation",
+          "cando": "I can ask for translations, correct spelling, and pronunciation help.",
+          "teacher_notes": "code: \"M10-L04\"\ncando: \"I can ask for translations, correct spelling, and pronunciation help.\"",
+          "recycled": "Module 10 progression"
+        },
+        {
+          "code": "M10-L05",
+          "lesson": 5,
+          "num": 5,
+          "title": "10.5 Communication Channels & Messages",
+          "grammar": [
+            "Grammar focus & practice"
+          ],
+          "speaking": "I can talk about methods of communication and send short digital messages.",
+          "listening": "Audio dialogue for 10.5 Communication Channels & Messages",
+          "reading": "Short text for 10.5 Communication Channels & Messages",
+          "writing": "Write 5 sentences for 10.5 Communication Channels & Messages",
+          "task": "Roleplay practice for 10.5 Communication Channels & Messages",
+          "vocab": [
+            "message",
+            "email",
+            "phone",
+            "text",
+            "send"
+          ],
+          "hw": "Homework practice for 10.5 Communication Channels & Messages",
+          "cando": "I can talk about methods of communication and send short digital messages.",
+          "teacher_notes": "code: \"M10-L05\"\ncando: \"I can talk about methods of communication and send short digital messages.\"",
+          "recycled": "Module 10 progression"
+        },
+        {
+          "code": "M10-L06",
+          "lesson": 6,
+          "num": 6,
+          "title": "10.6 Multilingual Learner Profile Capstone",
+          "grammar": [
+            "Grammar focus & practice"
+          ],
+          "speaking": "I can present my language learning portfolio and communicate effectively in class.",
+          "listening": "Audio dialogue for 10.6 Multilingual Learner Profile Capstone",
+          "reading": "Short text for 10.6 Multilingual Learner Profile Capstone",
+          "writing": "Write 5 sentences for 10.6 Multilingual Learner Profile Capstone",
+          "task": "Roleplay practice for 10.6 Multilingual Learner Profile Capstone",
+          "vocab": [
+            "language",
+            "communication",
+            "practice",
+            "goal",
+            "profile"
+          ],
+          "hw": "Homework practice for 10.6 Multilingual Learner Profile Capstone",
+          "cando": "I can present my language learning portfolio and communicate effectively in class.",
+          "teacher_notes": "code: \"M10-L06\"\ncando: \"I can present my language learning portfolio and communicate effectively in class.\"",
+          "recycled": "Module 10 progression"
         }
       ]
     },
     {
       "unit": 11,
+      "num": 11,
+      "id": "u11",
+      "label": "TRANSPORT & TRAVEL",
       "title": "MODULE 11. TRANSPORT & TRAVEL",
+      "color": "#6edcF6",
+      "arc": "Transport modes, travel places, directions, tickets, schedules and airport check-in",
+      "lessons_count": 6,
       "lessons": [
         {
+          "code": "M11-L01",
           "lesson": 1,
-          "title": "11.1 Transport",
+          "num": 1,
+          "title": "11.1 Modes of Transport & Commuting",
           "grammar": [
-            "By + transport",
-            "Present Simple (schedules)"
+            "Grammar focus & practice"
           ],
-          "vocabulary": [
+          "speaking": "I can name common modes of transport and say how I travel to work or school.",
+          "listening": "Audio dialogue for 11.1 Modes of Transport & Commuting",
+          "reading": "Short text for 11.1 Modes of Transport & Commuting",
+          "writing": "Write 5 sentences for 11.1 Modes of Transport & Commuting",
+          "task": "Roleplay practice for 11.1 Modes of Transport & Commuting",
+          "vocab": [
             "bus",
             "train",
             "car",
             "bicycle",
-            "taxi",
-            "plane",
-            "metro"
+            "taxi"
           ],
-          "teacher_notes": "code: \"M11-L01\"\ncando: \"Can talk about transport and choose transportation\"",
-          "recycled": "Places in town, Present Simple, daily schedules"
+          "hw": "Homework practice for 11.1 Modes of Transport & Commuting",
+          "cando": "I can name common modes of transport and say how I travel to work or school.",
+          "teacher_notes": "code: \"M11-L01\"\ncando: \"I can name common modes of transport and say how I travel to work or school.\"",
+          "recycled": "Module 11 progression"
         },
         {
+          "code": "M11-L02",
           "lesson": 2,
-          "title": "11.2 Buying Tickets",
+          "num": 2,
+          "title": "11.2 Travel Places & Stations",
           "grammar": [
-            "Modal verb Can",
-            "Travel questions (When does it leave?)"
+            "Grammar focus & practice"
           ],
-          "vocabulary": [
-            "ticket",
+          "speaking": "I can name travel locations like airports and train stations and locate them.",
+          "listening": "Audio dialogue for 11.2 Travel Places & Stations",
+          "reading": "Short text for 11.2 Travel Places & Stations",
+          "writing": "Write 5 sentences for 11.2 Travel Places & Stations",
+          "task": "Roleplay practice for 11.2 Travel Places & Stations",
+          "vocab": [
             "station",
             "airport",
-            "bus stop",
-            "platform",
-            "departure",
-            "arrival"
+            "stop",
+            "ticket",
+            "bus"
           ],
-          "teacher_notes": "code: \"M11-L02\"\ncando: \"Can buy tickets and ask travel information\"",
-          "recycled": "Transport, prices and payments, polite requests"
+          "hw": "Homework practice for 11.2 Travel Places & Stations",
+          "cando": "I can name travel locations like airports and train stations and locate them.",
+          "teacher_notes": "code: \"M11-L02\"\ncando: \"I can name travel locations like airports and train stations and locate them.\"",
+          "recycled": "Module 11 progression"
         },
         {
+          "code": "M11-L03",
           "lesson": 3,
-          "title": "11.3 Travel Situations",
+          "num": 3,
+          "title": "11.3 Asking & Giving Directions",
           "grammar": [
-            "Past Simple introduction",
-            "Be going to for travel"
+            "Grammar focus & practice"
           ],
-          "vocabulary": [
+          "speaking": "I can ask where places are and understand basic directions.",
+          "listening": "Audio dialogue for 11.3 Asking & Giving Directions",
+          "reading": "Short text for 11.3 Asking & Giving Directions",
+          "writing": "Write 5 sentences for 11.3 Asking & Giving Directions",
+          "task": "Roleplay practice for 11.3 Asking & Giving Directions",
+          "vocab": [
+            "street",
+            "near",
+            "far",
+            "city",
+            "town"
+          ],
+          "hw": "Homework practice for 11.3 Asking & Giving Directions",
+          "cando": "I can ask where places are and understand basic directions.",
+          "teacher_notes": "code: \"M11-L03\"\ncando: \"I can ask where places are and understand basic directions.\"",
+          "recycled": "Module 11 progression"
+        },
+        {
+          "code": "M11-L04",
+          "lesson": 4,
+          "num": 4,
+          "title": "11.4 Buying Tickets & Travel Schedules",
+          "grammar": [
+            "Grammar focus & practice"
+          ],
+          "speaking": "I can buy transport tickets and ask about departure and arrival times.",
+          "listening": "Audio dialogue for 11.4 Buying Tickets & Travel Schedules",
+          "reading": "Short text for 11.4 Buying Tickets & Travel Schedules",
+          "writing": "Write 5 sentences for 11.4 Buying Tickets & Travel Schedules",
+          "task": "Roleplay practice for 11.4 Buying Tickets & Travel Schedules",
+          "vocab": [
+            "ticket",
+            "price",
+            "time",
+            "leave",
+            "arrive"
+          ],
+          "hw": "Homework practice for 11.4 Buying Tickets & Travel Schedules",
+          "cando": "I can buy transport tickets and ask about departure and arrival times.",
+          "teacher_notes": "code: \"M11-L04\"\ncando: \"I can buy transport tickets and ask about departure and arrival times.\"",
+          "recycled": "Module 11 progression"
+        },
+        {
+          "code": "M11-L05",
+          "lesson": 5,
+          "num": 5,
+          "title": "11.5 Travel Situations: Checking In & Luggage",
+          "grammar": [
+            "Grammar focus & practice"
+          ],
+          "speaking": "I can handle basic airport/hotel check-in situations and talk about luggage.",
+          "listening": "Audio dialogue for 11.5 Travel Situations: Checking In & Luggage",
+          "reading": "Short text for 11.5 Travel Situations: Checking In & Luggage",
+          "writing": "Write 5 sentences for 11.5 Travel Situations: Checking In & Luggage",
+          "task": "Roleplay practice for 11.5 Travel Situations: Checking In & Luggage",
+          "vocab": [
             "passport",
-            "luggage",
-            "flight",
-            "gate",
-            "room",
-            "key",
-            "reservation"
+            "bag",
+            "hotel",
+            "airport",
+            "ticket"
           ],
-          "teacher_notes": "code: \"M11-L03\"\ncando: \"Can check in at airports or hotels and ask basic travel questions\"",
-          "recycled": "Buying tickets, personal information, possessive structures"
+          "hw": "Homework practice for 11.5 Travel Situations: Checking In & Luggage",
+          "cando": "I can handle basic airport/hotel check-in situations and talk about luggage.",
+          "teacher_notes": "code: \"M11-L05\"\ncando: \"I can handle basic airport/hotel check-in situations and talk about luggage.\"",
+          "recycled": "Module 11 progression"
+        },
+        {
+          "code": "M11-L06",
+          "lesson": 6,
+          "num": 6,
+          "title": "11.6 Transport & Travel Capstone",
+          "grammar": [
+            "Grammar focus & practice"
+          ],
+          "speaking": "I can navigate a full travel itinerary from asking directions to buying tickets and arriving.",
+          "listening": "Audio dialogue for 11.6 Transport & Travel Capstone",
+          "reading": "Short text for 11.6 Transport & Travel Capstone",
+          "writing": "Write 5 sentences for 11.6 Transport & Travel Capstone",
+          "task": "Roleplay practice for 11.6 Transport & Travel Capstone",
+          "vocab": [
+            "travel",
+            "station",
+            "airport",
+            "ticket",
+            "bus"
+          ],
+          "hw": "Homework practice for 11.6 Transport & Travel Capstone",
+          "cando": "I can navigate a full travel itinerary from asking directions to buying tickets and arriving.",
+          "teacher_notes": "code: \"M11-L06\"\ncando: \"I can navigate a full travel itinerary from asking directions to buying tickets and arriving.\"",
+          "recycled": "Module 11 progression"
         }
       ]
     },
     {
       "unit": 12,
-      "title": "MODULE 12. WEATHER, NATURE & ANIMALS",
+      "num": 12,
+      "id": "u12",
+      "label": "CITY & PLACES",
+      "title": "MODULE 12. CITY & PLACES",
+      "color": "#78f0F6",
+      "arc": "Places in town, public buildings, landmarks, city orientation and neighborhood guide",
+      "lessons_count": 6,
       "lessons": [
         {
+          "code": "M12-L01",
           "lesson": 1,
-          "title": "12.1 Weather & Temperature",
+          "num": 1,
+          "title": "12.1 Places in Town & Public Buildings",
           "grammar": [
-            "Present Simple (It is cold)",
-            "Present Continuous (It is raining)"
+            "Grammar focus & practice"
           ],
-          "vocabulary": [
-            "sunny",
-            "rainy",
-            "windy",
-            "cloudy",
-            "snowy",
-            "hot",
-            "cold",
-            "warm",
-            "cool"
+          "speaking": "I can name town locations like banks, parks, museums, cinemas, and libraries.",
+          "listening": "Audio dialogue for 12.1 Places in Town & Public Buildings",
+          "reading": "Short text for 12.1 Places in Town & Public Buildings",
+          "writing": "Write 5 sentences for 12.1 Places in Town & Public Buildings",
+          "task": "Roleplay practice for 12.1 Places in Town & Public Buildings",
+          "vocab": [
+            "bank",
+            "park",
+            "museum",
+            "cinema",
+            "restaurant"
           ],
-          "teacher_notes": "code: \"M12-L01\"\ncando: \"Can describe weather, temperature, and talk about seasons\"",
-          "recycled": "Days, dates & calendar, basic descriptions"
+          "hw": "Homework practice for 12.1 Places in Town & Public Buildings",
+          "cando": "I can name town locations like banks, parks, museums, cinemas, and libraries.",
+          "teacher_notes": "code: \"M12-L01\"\ncando: \"I can name town locations like banks, parks, museums, cinemas, and libraries.\"",
+          "recycled": "Module 12 progression"
         },
         {
+          "code": "M12-L02",
           "lesson": 2,
-          "title": "12.2 Seasons & Activities",
+          "num": 2,
+          "title": "12.2 City Landmarks & Services",
           "grammar": [
-            "Like + verb-ing",
-            "Connecting word Because"
+            "Grammar focus & practice"
           ],
-          "vocabulary": [
-            "spring",
-            "summer",
-            "autumn",
-            "winter",
-            "swim",
-            "ski",
-            "walk"
+          "speaking": "I can describe public city landmarks and municipal services.",
+          "listening": "Audio dialogue for 12.2 City Landmarks & Services",
+          "reading": "Short text for 12.2 City Landmarks & Services",
+          "writing": "Write 5 sentences for 12.2 City Landmarks & Services",
+          "task": "Roleplay practice for 12.2 City Landmarks & Services",
+          "vocab": [
+            "building",
+            "street",
+            "town",
+            "place",
+            "hospital"
           ],
-          "teacher_notes": "code: \"M12-L02\"\ncando: \"Can connect weather with activities and express reasons\"",
-          "recycled": "Weather vocabulary, like + verb-ing, daily routine"
+          "hw": "Homework practice for 12.2 City Landmarks & Services",
+          "cando": "I can describe public city landmarks and municipal services.",
+          "teacher_notes": "code: \"M12-L02\"\ncando: \"I can describe public city landmarks and municipal services.\"",
+          "recycled": "Module 12 progression"
         },
         {
+          "code": "M12-L03",
           "lesson": 3,
-          "title": "12.3 Nature, Environment & Animals",
+          "num": 3,
+          "title": "12.3 Asking Directions in Town",
           "grammar": [
-            "Can / can't",
-            "Imperatives"
+            "Grammar focus & practice"
           ],
-          "vocabulary": [
-            "tree",
-            "flower",
-            "sea",
-            "mountain",
-            "dog",
-            "cat",
-            "bird",
-            "fish",
-            "cow",
-            "horse",
-            "chicken",
-            "lion",
-            "elephant",
-            "bear",
-            "recycle",
-            "plastic",
-            "clean"
+          "speaking": "I can ask how to reach city landmarks and understand town orientation.",
+          "listening": "Audio dialogue for 12.3 Asking Directions in Town",
+          "reading": "Short text for 12.3 Asking Directions in Town",
+          "writing": "Write 5 sentences for 12.3 Asking Directions in Town",
+          "task": "Roleplay practice for 12.3 Asking Directions in Town",
+          "vocab": [
+            "street",
+            "near",
+            "far",
+            "building",
+            "place"
           ],
-          "teacher_notes": "code: \"M12-L03\"\ncando: \"Can describe natural places, talk about pets and wild animals, and discuss simple environmental habits\"",
-          "recycled": "Seasons, modal can, basic descriptions"
+          "hw": "Homework practice for 12.3 Asking Directions in Town",
+          "cando": "I can ask how to reach city landmarks and understand town orientation.",
+          "teacher_notes": "code: \"M12-L03\"\ncando: \"I can ask how to reach city landmarks and understand town orientation.\"",
+          "recycled": "Module 12 progression"
+        },
+        {
+          "code": "M12-L04",
+          "lesson": 4,
+          "num": 4,
+          "title": "12.4 Describing Neighborhoods & City Life",
+          "grammar": [
+            "Grammar focus & practice"
+          ],
+          "speaking": "I can describe my neighborhood and express what I like about my city.",
+          "listening": "Audio dialogue for 12.4 Describing Neighborhoods & City Life",
+          "reading": "Short text for 12.4 Describing Neighborhoods & City Life",
+          "writing": "Write 5 sentences for 12.4 Describing Neighborhoods & City Life",
+          "task": "Roleplay practice for 12.4 Describing Neighborhoods & City Life",
+          "vocab": [
+            "city",
+            "town",
+            "street",
+            "building",
+            "park"
+          ],
+          "hw": "Homework practice for 12.4 Describing Neighborhoods & City Life",
+          "cando": "I can describe my neighborhood and express what I like about my city.",
+          "teacher_notes": "code: \"M12-L04\"\ncando: \"I can describe my neighborhood and express what I like about my city.\"",
+          "recycled": "Module 12 progression"
+        },
+        {
+          "code": "M12-L05",
+          "lesson": 5,
+          "num": 5,
+          "title": "12.5 City Transport & Urban Navigation",
+          "grammar": [
+            "Grammar focus & practice"
+          ],
+          "speaking": "I can navigate city transport systems like metro, bus lines, and taxi stands.",
+          "listening": "Audio dialogue for 12.5 City Transport & Urban Navigation",
+          "reading": "Short text for 12.5 City Transport & Urban Navigation",
+          "writing": "Write 5 sentences for 12.5 City Transport & Urban Navigation",
+          "task": "Roleplay practice for 12.5 City Transport & Urban Navigation",
+          "vocab": [
+            "bus",
+            "train",
+            "stop",
+            "station",
+            "ticket"
+          ],
+          "hw": "Homework practice for 12.5 City Transport & Urban Navigation",
+          "cando": "I can navigate city transport systems like metro, bus lines, and taxi stands.",
+          "teacher_notes": "code: \"M12-L05\"\ncando: \"I can navigate city transport systems like metro, bus lines, and taxi stands.\"",
+          "recycled": "Module 12 progression"
+        },
+        {
+          "code": "M12-L06",
+          "lesson": 6,
+          "num": 6,
+          "title": "12.6 City Guide & Navigation Capstone",
+          "grammar": [
+            "Grammar focus & practice"
+          ],
+          "speaking": "I can present a city tour guide and give directions to multiple places in town.",
+          "listening": "Audio dialogue for 12.6 City Guide & Navigation Capstone",
+          "reading": "Short text for 12.6 City Guide & Navigation Capstone",
+          "writing": "Write 5 sentences for 12.6 City Guide & Navigation Capstone",
+          "task": "Roleplay practice for 12.6 City Guide & Navigation Capstone",
+          "vocab": [
+            "city",
+            "town",
+            "museum",
+            "park",
+            "street"
+          ],
+          "hw": "Homework practice for 12.6 City Guide & Navigation Capstone",
+          "cando": "I can present a city tour guide and give directions to multiple places in town.",
+          "teacher_notes": "code: \"M12-L06\"\ncando: \"I can present a city tour guide and give directions to multiple places in town.\"",
+          "recycled": "Module 12 progression"
         }
       ]
     },
     {
       "unit": 13,
-      "title": "MODULE 13. FREE TIME, ENTERTAINMENT & SOCIAL LIFE",
+      "num": 13,
+      "id": "u13",
+      "label": "WEATHER & NATURE",
+      "title": "MODULE 13. WEATHER & NATURE",
+      "color": "#82104F6",
+      "arc": "Weather conditions, seasons, natural landscapes, weather forecast and eco-habits",
+      "lessons_count": 6,
       "lessons": [
         {
+          "code": "M13-L01",
           "lesson": 1,
-          "title": "13.1 Hobbies & Activities",
+          "num": 1,
+          "title": "13.1 Weather Conditions & Temperature",
           "grammar": [
-            "Like / love / hate + noun / verb-ing"
+            "Grammar focus & practice"
           ],
-          "vocabulary": [
-            "music",
-            "films",
-            "books",
-            "games",
-            "sport",
-            "cooking",
-            "photography",
-            "watch TV",
-            "listen to music",
-            "read",
-            "travel"
+          "speaking": "I can describe daily weather conditions and temperature.",
+          "listening": "Audio dialogue for 13.1 Weather Conditions & Temperature",
+          "reading": "Short text for 13.1 Weather Conditions & Temperature",
+          "writing": "Write 5 sentences for 13.1 Weather Conditions & Temperature",
+          "task": "Roleplay practice for 13.1 Weather Conditions & Temperature",
+          "vocab": [
+            "weather",
+            "sunny",
+            "rainy",
+            "windy",
+            "cold"
           ],
-          "teacher_notes": "code: \"M13-L01\"\ncando: \"Can talk about interests and ask about hobbies and activities\"",
-          "recycled": "Like + verb-ing, daily routine activities"
+          "hw": "Homework practice for 13.1 Weather Conditions & Temperature",
+          "cando": "I can describe daily weather conditions and temperature.",
+          "teacher_notes": "code: \"M13-L01\"\ncando: \"I can describe daily weather conditions and temperature.\"",
+          "recycled": "Module 13 progression"
         },
         {
+          "code": "M13-L02",
           "lesson": 2,
-          "title": "13.2 Sports & Activities",
+          "num": 2,
+          "title": "13.2 The Four Seasons & Seasonal Activities",
           "grammar": [
-            "Modal verb Can for sports",
-            "Adverbs of frequency"
+            "Grammar focus & practice"
           ],
-          "vocabulary": [
-            "football",
-            "tennis",
-            "swimming",
-            "running"
+          "speaking": "I can name the four seasons and talk about favourite seasonal activities.",
+          "listening": "Audio dialogue for 13.2 The Four Seasons & Seasonal Activities",
+          "reading": "Short text for 13.2 The Four Seasons & Seasonal Activities",
+          "writing": "Write 5 sentences for 13.2 The Four Seasons & Seasonal Activities",
+          "task": "Roleplay practice for 13.2 The Four Seasons & Seasonal Activities",
+          "vocab": [
+            "spring",
+            "summer",
+            "autumn",
+            "winter",
+            "weather"
           ],
-          "teacher_notes": "code: \"M13-L02\"\ncando: \"Can describe sports abilities and talk about frequency\"",
-          "recycled": "Hobbies, modal can, frequency adverbs"
+          "hw": "Homework practice for 13.2 The Four Seasons & Seasonal Activities",
+          "cando": "I can name the four seasons and talk about favourite seasonal activities.",
+          "teacher_notes": "code: \"M13-L02\"\ncando: \"I can name the four seasons and talk about favourite seasonal activities.\"",
+          "recycled": "Module 13 progression"
         },
         {
+          "code": "M13-L03",
           "lesson": 3,
-          "title": "13.3 Cinema, Music & Culture",
+          "num": 3,
+          "title": "13.3 Nature Landscapes & Natural Places",
           "grammar": [
-            "Opinions (I like..., I don't like...)"
+            "Grammar focus & practice"
           ],
-          "vocabulary": [
-            "actor",
-            "singer",
-            "movie",
-            "song",
-            "concert",
-            "book",
-            "interesting",
-            "boring",
-            "exciting"
+          "speaking": "I can name natural places and landscapes like seas, mountains, and forests.",
+          "listening": "Audio dialogue for 13.3 Nature Landscapes & Natural Places",
+          "reading": "Short text for 13.3 Nature Landscapes & Natural Places",
+          "writing": "Write 5 sentences for 13.3 Nature Landscapes & Natural Places",
+          "task": "Roleplay practice for 13.3 Nature Landscapes & Natural Places",
+          "vocab": [
+            "sea",
+            "mountain",
+            "tree",
+            "flower",
+            "animal"
           ],
-          "teacher_notes": "code: \"M13-L03\"\ncando: \"Can talk about entertainment preferences and give simple reactions\"",
-          "recycled": "Hobbies, sports, basic adjectives"
+          "hw": "Homework practice for 13.3 Nature Landscapes & Natural Places",
+          "cando": "I can name natural places and landscapes like seas, mountains, and forests.",
+          "teacher_notes": "code: \"M13-L03\"\ncando: \"I can name natural places and landscapes like seas, mountains, and forests.\"",
+          "recycled": "Module 13 progression"
+        },
+        {
+          "code": "M13-L04",
+          "lesson": 4,
+          "num": 4,
+          "title": "13.4 Weather Forecasts & Planning Activities",
+          "grammar": [
+            "Grammar focus & practice"
+          ],
+          "speaking": "I can understand simple weather forecasts and plan outdoor activities.",
+          "listening": "Audio dialogue for 13.4 Weather Forecasts & Planning Activities",
+          "reading": "Short text for 13.4 Weather Forecasts & Planning Activities",
+          "writing": "Write 5 sentences for 13.4 Weather Forecasts & Planning Activities",
+          "task": "Roleplay practice for 13.4 Weather Forecasts & Planning Activities",
+          "vocab": [
+            "weather",
+            "sunny",
+            "rain",
+            "snow",
+            "cold"
+          ],
+          "hw": "Homework practice for 13.4 Weather Forecasts & Planning Activities",
+          "cando": "I can understand simple weather forecasts and plan outdoor activities.",
+          "teacher_notes": "code: \"M13-L04\"\ncando: \"I can understand simple weather forecasts and plan outdoor activities.\"",
+          "recycled": "Module 13 progression"
+        },
+        {
+          "code": "M13-L05",
+          "lesson": 5,
+          "num": 5,
+          "title": "13.5 Environmental Habits & Caring for Nature",
+          "grammar": [
+            "Grammar focus & practice"
+          ],
+          "speaking": "I can discuss simple eco-friendly habits like recycling and keeping places clean.",
+          "listening": "Audio dialogue for 13.5 Environmental Habits & Caring for Nature",
+          "reading": "Short text for 13.5 Environmental Habits & Caring for Nature",
+          "writing": "Write 5 sentences for 13.5 Environmental Habits & Caring for Nature",
+          "task": "Roleplay practice for 13.5 Environmental Habits & Caring for Nature",
+          "vocab": [
+            "tree",
+            "flower",
+            "water",
+            "clean",
+            "park"
+          ],
+          "hw": "Homework practice for 13.5 Environmental Habits & Caring for Nature",
+          "cando": "I can discuss simple eco-friendly habits like recycling and keeping places clean.",
+          "teacher_notes": "code: \"M13-L05\"\ncando: \"I can discuss simple eco-friendly habits like recycling and keeping places clean.\"",
+          "recycled": "Module 13 progression"
+        },
+        {
+          "code": "M13-L06",
+          "lesson": 6,
+          "num": 6,
+          "title": "13.6 Nature & Weather Capstone",
+          "grammar": [
+            "Grammar focus & practice"
+          ],
+          "speaking": "I can describe natural environments, climate in my country, and discuss weather.",
+          "listening": "Audio dialogue for 13.6 Nature & Weather Capstone",
+          "reading": "Short text for 13.6 Nature & Weather Capstone",
+          "writing": "Write 5 sentences for 13.6 Nature & Weather Capstone",
+          "task": "Roleplay practice for 13.6 Nature & Weather Capstone",
+          "vocab": [
+            "weather",
+            "spring",
+            "summer",
+            "sea",
+            "mountain"
+          ],
+          "hw": "Homework practice for 13.6 Nature & Weather Capstone",
+          "cando": "I can describe natural environments, climate in my country, and discuss weather.",
+          "teacher_notes": "code: \"M13-L06\"\ncando: \"I can describe natural environments, climate in my country, and discuss weather.\"",
+          "recycled": "Module 13 progression"
         }
       ]
     },
     {
       "unit": 14,
-      "title": "MODULE 14. TECHNOLOGY & DIGITAL LIFE",
+      "num": 14,
+      "id": "u14",
+      "label": "FREE TIME & HOBBIES",
+      "title": "MODULE 14. FREE TIME & HOBBIES",
+      "color": "#8c118F6",
+      "arc": "Leisure activities, sports, entertainment, weekend plans, hobbies survey and portfolio",
+      "lessons_count": 6,
       "lessons": [
         {
+          "code": "M14-L01",
           "lesson": 1,
-          "title": "14.1 Devices & Everyday Technology",
+          "num": 1,
+          "title": "14.1 Leisure Activities & Everyday Hobbies",
           "grammar": [
-            "Present Simple",
-            "Verb Have",
-            "Modal verb Can"
+            "Grammar focus & practice"
           ],
-          "vocabulary": [
-            "phone",
-            "smartphone",
-            "computer",
-            "laptop",
-            "tablet",
-            "camera",
-            "headphones",
-            "charger",
-            "turn on",
-            "turn off",
-            "charge",
-            "open",
-            "close",
-            "connect"
+          "speaking": "I can talk about leisure activities like watching TV, listening to music, and reading.",
+          "listening": "Audio dialogue for 14.1 Leisure Activities & Everyday Hobbies",
+          "reading": "Short text for 14.1 Leisure Activities & Everyday Hobbies",
+          "writing": "Write 5 sentences for 14.1 Leisure Activities & Everyday Hobbies",
+          "task": "Roleplay practice for 14.1 Leisure Activities & Everyday Hobbies",
+          "vocab": [
+            "watch",
+            "listen",
+            "read",
+            "music",
+            "film"
           ],
-          "teacher_notes": "code: \"M14-L01\"\ncando: \"Can name common devices, say what they use, and describe basic problems\"",
-          "recycled": "Everyday objects, present simple, modal can"
+          "hw": "Homework practice for 14.1 Leisure Activities & Everyday Hobbies",
+          "cando": "I can talk about leisure activities like watching TV, listening to music, and reading.",
+          "teacher_notes": "code: \"M14-L01\"\ncando: \"I can talk about leisure activities like watching TV, listening to music, and reading.\"",
+          "recycled": "Module 14 progression"
         },
         {
+          "code": "M14-L02",
           "lesson": 2,
-          "title": "14.2 Internet & Online Activities",
+          "num": 2,
+          "title": "14.2 Sports & Physical Activities",
           "grammar": [
-            "Present Simple questions",
-            "Adverbs of frequency"
+            "Grammar focus & practice"
           ],
-          "vocabulary": [
-            "website",
-            "app",
-            "account",
-            "password",
-            "profile",
-            "message",
-            "email",
-            "search",
-            "download",
-            "upload",
-            "click",
-            "send",
-            "call",
-            "write"
+          "speaking": "I can name sports and describe my physical activities and abilities.",
+          "listening": "Audio dialogue for 14.2 Sports & Physical Activities",
+          "reading": "Short text for 14.2 Sports & Physical Activities",
+          "writing": "Write 5 sentences for 14.2 Sports & Physical Activities",
+          "task": "Roleplay practice for 14.2 Sports & Physical Activities",
+          "vocab": [
+            "sport",
+            "play",
+            "football",
+            "tennis",
+            "swim"
           ],
-          "teacher_notes": "code: \"M14-L02\"\ncando: \"Can talk about online habits and describe simple digital activities\"",
-          "recycled": "Devices, frequency adverbs, present simple questions"
+          "hw": "Homework practice for 14.2 Sports & Physical Activities",
+          "cando": "I can name sports and describe my physical activities and abilities.",
+          "teacher_notes": "code: \"M14-L02\"\ncando: \"I can name sports and describe my physical activities and abilities.\"",
+          "recycled": "Module 14 progression"
         },
         {
+          "code": "M14-L03",
           "lesson": 3,
-          "title": "14.3 Social Media & Online Communication",
+          "num": 3,
+          "title": "14.3 Cinema, Music & Entertainment",
           "grammar": [
-            "Imperatives",
-            "Short questions"
+            "Grammar focus & practice"
           ],
-          "vocabulary": [
-            "like",
-            "comment",
-            "follow",
-            "post",
-            "share",
-            "video",
-            "photo",
-            "Really?",
-            "Why?"
+          "speaking": "I can express preferences for movies, music, books, and cultural events.",
+          "listening": "Audio dialogue for 14.3 Cinema, Music & Entertainment",
+          "reading": "Short text for 14.3 Cinema, Music & Entertainment",
+          "writing": "Write 5 sentences for 14.3 Cinema, Music & Entertainment",
+          "task": "Roleplay practice for 14.3 Cinema, Music & Entertainment",
+          "vocab": [
+            "cinema",
+            "film",
+            "music",
+            "book",
+            "game"
           ],
-          "teacher_notes": "code: \"M14-L03\"\ncando: \"Can write simple messages, react online, and communicate politely\"",
-          "recycled": "Internet activities, imperatives, short questions"
+          "hw": "Homework practice for 14.3 Cinema, Music & Entertainment",
+          "cando": "I can express preferences for movies, music, books, and cultural events.",
+          "teacher_notes": "code: \"M14-L03\"\ncando: \"I can express preferences for movies, music, books, and cultural events.\"",
+          "recycled": "Module 14 progression"
         },
         {
+          "code": "M14-L04",
           "lesson": 4,
-          "title": "14.4 Digital Safety",
+          "num": 4,
+          "title": "14.4 Weekend Plans & Free Time Activities",
           "grammar": [
-            "Modal verbs Must / mustn't"
+            "Grammar focus & practice"
           ],
-          "vocabulary": [
-            "private",
-            "public",
-            "safe",
-            "dangerous",
-            "password",
-            "personal information"
+          "speaking": "I can talk about weekend plans and invite friends to leisure events.",
+          "listening": "Audio dialogue for 14.4 Weekend Plans & Free Time Activities",
+          "reading": "Short text for 14.4 Weekend Plans & Free Time Activities",
+          "writing": "Write 5 sentences for 14.4 Weekend Plans & Free Time Activities",
+          "task": "Roleplay practice for 14.4 Weekend Plans & Free Time Activities",
+          "vocab": [
+            "weekend",
+            "hobby",
+            "sport",
+            "game",
+            "friend"
           ],
-          "teacher_notes": "code: \"M14-L04\"\ncando: \"Can understand basic safety rules and describe online problems\"",
-          "recycled": "Online communication, imperatives, modal verbs"
+          "hw": "Homework practice for 14.4 Weekend Plans & Free Time Activities",
+          "cando": "I can talk about weekend plans and invite friends to leisure events.",
+          "teacher_notes": "code: \"M14-L04\"\ncando: \"I can talk about weekend plans and invite friends to leisure events.\"",
+          "recycled": "Module 14 progression"
+        },
+        {
+          "code": "M14-L05",
+          "lesson": 5,
+          "num": 5,
+          "title": "14.5 Hobbies & Personal Interests Survey",
+          "grammar": [
+            "Grammar focus & practice"
+          ],
+          "speaking": "I can interview peers about hobbies and compare leisure interests.",
+          "listening": "Audio dialogue for 14.5 Hobbies & Personal Interests Survey",
+          "reading": "Short text for 14.5 Hobbies & Personal Interests Survey",
+          "writing": "Write 5 sentences for 14.5 Hobbies & Personal Interests Survey",
+          "task": "Roleplay practice for 14.5 Hobbies & Personal Interests Survey",
+          "vocab": [
+            "hobby",
+            "sport",
+            "game",
+            "music",
+            "read"
+          ],
+          "hw": "Homework practice for 14.5 Hobbies & Personal Interests Survey",
+          "cando": "I can interview peers about hobbies and compare leisure interests.",
+          "teacher_notes": "code: \"M14-L05\"\ncando: \"I can interview peers about hobbies and compare leisure interests.\"",
+          "recycled": "Module 14 progression"
+        },
+        {
+          "code": "M14-L06",
+          "lesson": 6,
+          "num": 6,
+          "title": "14.6 Free Time & Hobbies Portfolio Capstone",
+          "grammar": [
+            "Grammar focus & practice"
+          ],
+          "speaking": "I can give a presentation about my hobbies, favourite sports, and leisure routine.",
+          "listening": "Audio dialogue for 14.6 Free Time & Hobbies Portfolio Capstone",
+          "reading": "Short text for 14.6 Free Time & Hobbies Portfolio Capstone",
+          "writing": "Write 5 sentences for 14.6 Free Time & Hobbies Portfolio Capstone",
+          "task": "Roleplay practice for 14.6 Free Time & Hobbies Portfolio Capstone",
+          "vocab": [
+            "hobby",
+            "sport",
+            "music",
+            "game",
+            "weekend"
+          ],
+          "hw": "Homework practice for 14.6 Free Time & Hobbies Portfolio Capstone",
+          "cando": "I can give a presentation about my hobbies, favourite sports, and leisure routine.",
+          "teacher_notes": "code: \"M14-L06\"\ncando: \"I can give a presentation about my hobbies, favourite sports, and leisure routine.\"",
+          "recycled": "Module 14 progression"
         }
       ]
     },
     {
       "unit": 15,
-      "title": "MODULE 15. EMOTIONS, PERSONALITY & WELLBEING",
+      "num": 15,
+      "id": "u15",
+      "label": "TECHNOLOGY",
+      "title": "MODULE 15. TECHNOLOGY",
+      "color": "#9612cF6",
+      "arc": "Devices, tech operations, internet activities, messaging, safety and digital life",
+      "lessons_count": 6,
       "lessons": [
         {
+          "code": "M15-L01",
           "lesson": 1,
-          "title": "15.1 Basic Emotions & Feelings",
+          "num": 1,
+          "title": "15.1 Digital Devices & Hardware",
           "grammar": [
-            "Feel + adjective",
-            "Be + adjective"
+            "Grammar focus & practice"
           ],
-          "vocabulary": [
-            "happy",
-            "excited",
-            "relaxed",
-            "proud",
-            "sad",
-            "angry",
-            "nervous",
-            "tired",
-            "bored",
-            "afraid"
+          "speaking": "I can name common tech devices like smartphones, laptops, and headphones.",
+          "listening": "Audio dialogue for 15.1 Digital Devices & Hardware",
+          "reading": "Short text for 15.1 Digital Devices & Hardware",
+          "writing": "Write 5 sentences for 15.1 Digital Devices & Hardware",
+          "task": "Roleplay practice for 15.1 Digital Devices & Hardware",
+          "vocab": [
+            "phone",
+            "computer",
+            "laptop",
+            "tablet",
+            "camera"
           ],
-          "teacher_notes": "code: \"M15-L01\"\ncando: \"Can say how they feel and ask about feelings\"",
-          "recycled": "Basic descriptions, feel + adjective, verb to be"
+          "hw": "Homework practice for 15.1 Digital Devices & Hardware",
+          "cando": "I can name common tech devices like smartphones, laptops, and headphones.",
+          "teacher_notes": "code: \"M15-L01\"\ncando: \"I can name common tech devices like smartphones, laptops, and headphones.\"",
+          "recycled": "Module 15 progression"
         },
         {
+          "code": "M15-L02",
           "lesson": 2,
-          "title": "15.2 Needs, Wants & Preferences",
+          "num": 2,
+          "title": "15.2 Tech Action Verbs & Operations",
           "grammar": [
-            "Want + infinitive",
-            "Like + noun / verb-ing"
+            "Grammar focus & practice"
           ],
-          "vocabulary": [
-            "need",
-            "want",
-            "prefer",
-            "like",
-            "dislike",
-            "love",
-            "hate"
+          "speaking": "I can describe basic tech actions like turning on, charging, opening, and downloading.",
+          "listening": "Audio dialogue for 15.2 Tech Action Verbs & Operations",
+          "reading": "Short text for 15.2 Tech Action Verbs & Operations",
+          "writing": "Write 5 sentences for 15.2 Tech Action Verbs & Operations",
+          "task": "Roleplay practice for 15.2 Tech Action Verbs & Operations",
+          "vocab": [
+            "open",
+            "close",
+            "send",
+            "call",
+            "write"
           ],
-          "teacher_notes": "code: \"M15-L02\"\ncando: \"Can express needs, express wishes, and make simple choices\"",
-          "recycled": "Basic emotions, want + noun, like + verb-ing"
+          "hw": "Homework practice for 15.2 Tech Action Verbs & Operations",
+          "cando": "I can describe basic tech actions like turning on, charging, opening, and downloading.",
+          "teacher_notes": "code: \"M15-L02\"\ncando: \"I can describe basic tech actions like turning on, charging, opening, and downloading.\"",
+          "recycled": "Module 15 progression"
         },
         {
+          "code": "M15-L03",
           "lesson": 3,
-          "title": "15.3 Personality & Relationships",
+          "num": 3,
+          "title": "15.3 Internet Vocabulary & Online Activities",
           "grammar": [
-            "Connecting word Because",
-            "Comparatives"
+            "Grammar focus & practice"
           ],
-          "vocabulary": [
-            "kind",
-            "funny",
-            "quiet",
-            "serious",
-            "creative",
-            "friendly",
-            "friend",
-            "partner",
-            "neighbour",
-            "colleague"
+          "speaking": "I can talk about online activities like searching, checking email, and browsing websites.",
+          "listening": "Audio dialogue for 15.3 Internet Vocabulary & Online Activities",
+          "reading": "Short text for 15.3 Internet Vocabulary & Online Activities",
+          "writing": "Write 5 sentences for 15.3 Internet Vocabulary & Online Activities",
+          "task": "Roleplay practice for 15.3 Internet Vocabulary & Online Activities",
+          "vocab": [
+            "internet",
+            "online",
+            "website",
+            "email",
+            "search"
           ],
-          "teacher_notes": "code: \"M15-L03\"\ncando: \"Can describe people and talk about relationships\"",
-          "recycled": "Personality characteristics, family, comparative adjectives"
+          "hw": "Homework practice for 15.3 Internet Vocabulary & Online Activities",
+          "cando": "I can talk about online activities like searching, checking email, and browsing websites.",
+          "teacher_notes": "code: \"M15-L03\"\ncando: \"I can talk about online activities like searching, checking email, and browsing websites.\"",
+          "recycled": "Module 15 progression"
+        },
+        {
+          "code": "M15-L04",
+          "lesson": 4,
+          "num": 4,
+          "title": "15.4 Social Media & Digital Messages",
+          "grammar": [
+            "Grammar focus & practice"
+          ],
+          "speaking": "I can write short digital messages and use basic social media terms.",
+          "listening": "Audio dialogue for 15.4 Social Media & Digital Messages",
+          "reading": "Short text for 15.4 Social Media & Digital Messages",
+          "writing": "Write 5 sentences for 15.4 Social Media & Digital Messages",
+          "task": "Roleplay practice for 15.4 Social Media & Digital Messages",
+          "vocab": [
+            "message",
+            "text",
+            "email",
+            "send",
+            "receive"
+          ],
+          "hw": "Homework practice for 15.4 Social Media & Digital Messages",
+          "cando": "I can write short digital messages and use basic social media terms.",
+          "teacher_notes": "code: \"M15-L04\"\ncando: \"I can write short digital messages and use basic social media terms.\"",
+          "recycled": "Module 15 progression"
+        },
+        {
+          "code": "M15-L05",
+          "lesson": 5,
+          "num": 5,
+          "title": "15.5 Digital Safety & Troubleshooting",
+          "grammar": [
+            "Grammar focus & practice"
+          ],
+          "speaking": "I can understand basic digital safety rules and describe simple tech problems.",
+          "listening": "Audio dialogue for 15.5 Digital Safety & Troubleshooting",
+          "reading": "Short text for 15.5 Digital Safety & Troubleshooting",
+          "writing": "Write 5 sentences for 15.5 Digital Safety & Troubleshooting",
+          "task": "Roleplay practice for 15.5 Digital Safety & Troubleshooting",
+          "vocab": [
+            "phone",
+            "computer",
+            "problem",
+            "close",
+            "open"
+          ],
+          "hw": "Homework practice for 15.5 Digital Safety & Troubleshooting",
+          "cando": "I can understand basic digital safety rules and describe simple tech problems.",
+          "teacher_notes": "code: \"M15-L05\"\ncando: \"I can understand basic digital safety rules and describe simple tech problems.\"",
+          "recycled": "Module 15 progression"
+        },
+        {
+          "code": "M15-L06",
+          "lesson": 6,
+          "num": 6,
+          "title": "15.6 Digital Life & Technology Profile Capstone",
+          "grammar": [
+            "Grammar focus & practice"
+          ],
+          "speaking": "I can present an overview of my daily tech habits and digital communication.",
+          "listening": "Audio dialogue for 15.6 Digital Life & Technology Profile Capstone",
+          "reading": "Short text for 15.6 Digital Life & Technology Profile Capstone",
+          "writing": "Write 5 sentences for 15.6 Digital Life & Technology Profile Capstone",
+          "task": "Roleplay practice for 15.6 Digital Life & Technology Profile Capstone",
+          "vocab": [
+            "phone",
+            "computer",
+            "internet",
+            "online",
+            "message"
+          ],
+          "hw": "Homework practice for 15.6 Digital Life & Technology Profile Capstone",
+          "cando": "I can present an overview of my daily tech habits and digital communication.",
+          "teacher_notes": "code: \"M15-L06\"\ncando: \"I can present an overview of my daily tech habits and digital communication.\"",
+          "recycled": "Module 15 progression"
         }
       ]
     },
