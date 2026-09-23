@@ -167,7 +167,7 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--white);min
 </main>
 </div>
 <script>
-const UNITS = window.curriculumData?.fr_a1 || [];
+const UNITS = window.COSY_CURRICULUM_A1?.units || window.curriculumData?.fr_a1 || [];
 let score = parseInt(localStorage.getItem('cosy_total_points') || '0');
 let done  = new Set(JSON.parse(localStorage.getItem('a1_fr_done')||'[]'));
 let open  = new Set();
