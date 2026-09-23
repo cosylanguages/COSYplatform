@@ -787,97 +787,176 @@
     },
     {
       "unit": 5,
-      "title": "Maîtrise et perfectionnement",
+      "title": "MODULE 5. NOURRITURE & BOISSONS",
       "lessons": [
         {
+          "code": "FR-051",
           "lesson": 1,
-          "title": "Débat : Le travail",
+          "num": 1,
+          "title": "5.1 Vocabulaire de la nourriture & Catégories",
           "grammar": [
-            "Arguments"
+            "Articles partitifs ('du', 'de la', 'des')"
           ],
-          "teacher_notes": "code: \"FR-41\"\nlessons_count: 1",
-          "recycled": "Société, Bilan Opinions, Tout le vocabulaire de l'Unité 2"
+          "vocabulary": [
+            "pomme",
+            "banane",
+            "orange",
+            "pomme de terre",
+            "viande",
+            "poulet",
+            "lait",
+            "fromage"
+          ],
+          "teacher_notes": "code: \"FR-051\"\ncando: \"Je peux identifier les aliments de base par catégorie (fruits, légumes, viande, poisson, produits laitiers).\"",
+          "recycled": "Goûts du Module 1, objets de la cuisine du Module 3",
+          "speaking": "Classer les aliments et exprimer ses préférences",
+          "listening": "Vérification des réserves de nourriture",
+          "reading": "Lecture de catégories d'aliments",
+          "writing": "Rédiger 5 phrases sur la nourriture dans votre cuisine",
+          "task": "Inventaire de la cuisine",
+          "cando": "Je peux identifier les aliments de base par catégorie (fruits, légumes, viande, poisson, produits laitiers).",
+          "hw": "Lister 10 aliments présents dans votre réfrigérateur"
         },
         {
+          "code": "FR-052",
           "lesson": 2,
-          "title": "Raconter une histoire longue",
+          "num": 2,
+          "title": "5.2 Repas & Habitudes alimentaires",
           "grammar": [
-            "Narration"
+            "Verbes 'manger' et 'boire' au présent"
           ],
-          "teacher_notes": "code: \"FR-42\"\nlessons_count: 1",
-          "recycled": "Bilan Opinions, Arguments, Tout le vocabulaire de l'Unité 2"
+          "vocabulary": [
+            "petit-déjeuner",
+            "déjeuner",
+            "dîner",
+            "pain",
+            "café",
+            "thé",
+            "soupe",
+            "salade"
+          ],
+          "teacher_notes": "code: \"FR-052\"\ncando: \"Je peux décrire mes repas quotidiens et exprimer ce que j'aime manger et boire.\"",
+          "recycled": "Aliments de la Leçon 5.1, moments de la journée du Module 4",
+          "speaking": "Interroger son partenaire sur ses heures de repas",
+          "listening": "Écoute des routines de repas",
+          "reading": "Lecture d'un journal alimentaire quotidien",
+          "writing": "Rédiger un court paragraphe sur vos repas",
+          "task": "Enquête sur les horaires de repas",
+          "cando": "Je peux décrire mes repas quotidiens et exprimer ce que j'aime manger et boire.",
+          "hw": "Écrire 5 phrases sur ce que vous mangez au petit-déjeuner et au dîner"
         },
         {
+          "code": "FR-053",
           "lesson": 3,
-          "title": "Nuances de la politesse",
+          "num": 3,
+          "title": "5.3 Boissons & Commander au café",
           "grammar": [
-            "Conditionnel"
+            "Formules de politesse & Conditionnel de souhait ('Je voudrais...')"
           ],
-          "teacher_notes": "code: \"FR-43\"\nlessons_count: 1",
-          "recycled": "Arguments, Narration, Tout le vocabulaire de l'Unité 2"
+          "vocabulary": [
+            "café",
+            "thé",
+            "eau",
+            "jus",
+            "lait",
+            "sucre",
+            "tasse",
+            "verre"
+          ],
+          "teacher_notes": "code: \"FR-053\"\ncando: \"Je peux commander poliment des boissons chaudes et froides dans un café.\"",
+          "recycled": "Boissons des Leçons 5.1-5.2, politesse du Module 1",
+          "speaking": "Commander des boissons en jeu de rôle au café",
+          "listening": "Écoute de commandes de boissons au café",
+          "reading": "Lecture de cartes de boissons de café",
+          "writing": "Rédiger un dialogue de commande au café",
+          "task": "Jeu de rôle au café",
+          "cando": "Je peux commander poliment des boissons chaudes et froides dans un café.",
+          "hw": "Rédiger un dialogue pour commander un café et de l'eau"
         },
         {
+          "code": "FR-054",
           "lesson": 4,
-          "title": "Comprendre les médias",
+          "num": 4,
+          "title": "5.4 Restaurant & Menu",
           "grammar": [
-            "Actualités"
+            "Commandes & Recommandations au restaurant"
           ],
-          "teacher_notes": "code: \"FR-44\"\nlessons_count: 1",
-          "recycled": "Narration, Conditionnel, Tout le vocabulaire de l'Unité 2"
+          "vocabulary": [
+            "menu",
+            "entrée",
+            "plat principal",
+            "dessert",
+            "table",
+            "serveur",
+            "plat",
+            "addition"
+          ],
+          "teacher_notes": "code: \"FR-054\"\ncando: \"Je peux lire un menu, poser des questions sur les plats et commander un repas au restaurant.\"",
+          "recycled": "Commandes du café de la Leçon 5.3, aliments des Leçons 5.1-5.2",
+          "speaking": "Commander un repas complet au restaurant en binôme",
+          "listening": "Écoute du serveur prenant la commande",
+          "reading": "Lecture de menus de restaurant",
+          "writing": "Rédiger une commande de repas au restaurant",
+          "task": "Jeu de rôle au restaurant",
+          "cando": "Je peux lire un menu, poser des questions sur les plats et commander un repas au restaurant.",
+          "hw": "Créer un menu de restaurant à 3 plats avec les prix"
         },
         {
+          "code": "FR-055",
           "lesson": 5,
-          "title": "Expression idiomatique",
+          "num": 5,
+          "title": "5.5 Verbes de cuisine & Recettes",
           "grammar": [
-            "Argot/Familier"
+            "Impératif pour les étapes de recettes"
           ],
-          "teacher_notes": "code: \"FR-45\"\nlessons_count: 1",
-          "recycled": "Conditionnel, Actualités, Tout le vocabulaire de l'Unité 2"
+          "vocabulary": [
+            "couper",
+            "cuisiner",
+            "mélanger",
+            "bouillir",
+            "ajouter",
+            "recette",
+            "sel",
+            "poivre",
+            "huile"
+          ],
+          "teacher_notes": "code: \"FR-055\"\ncando: \"Je peux expliquer les étapes de base de la cuisine et lister les ingrédients d'une recette simple.\"",
+          "recycled": "Ingrédients des Leçons 5.1-5.2, impératif du Module 3",
+          "speaking": "Expliquer la préparation d'une salade ou d'un plat simple",
+          "listening": "Écoute des étapes d'une recette",
+          "reading": "Lecture d'une recette simple",
+          "writing": "Rédiger 5 étapes à l'impératif pour une recette",
+          "task": "Échange d'instructions de recette",
+          "cando": "Je peux expliquer les étapes de base de la cuisine et lister les ingrédients d'une recette simple.",
+          "hw": "Écrire les ingrédients et les étapes de votre plat préféré"
         },
         {
+          "code": "FR-056",
           "lesson": 6,
-          "title": "Préparation orale finale",
+          "num": 6,
+          "title": "5.6 Payer au restaurant & Achats alimentaires",
           "grammar": [
-            "Fluence"
+            "Questions de paiement & Expressions de quantité"
           ],
-          "teacher_notes": "code: \"FR-46\"\nlessons_count: 1",
-          "recycled": "Actualités, Argot/Familier, Tout le vocabulaire de l'Unité 2"
-        },
-        {
-          "lesson": 7,
-          "title": "Révision Grammaire A1",
-          "grammar": [
-            "Synthèse"
+          "vocabulary": [
+            "addition",
+            "payer",
+            "carte",
+            "espèces",
+            "ticket",
+            "supermarché",
+            "kilo",
+            "bouteille"
           ],
-          "teacher_notes": "code: \"FR-47\"\nlessons_count: 1",
-          "recycled": "Argot/Familier, Fluence, Tout le vocabulaire de l'Unité 2"
-        },
-        {
-          "lesson": 8,
-          "title": "Révision Vocabulaire A1",
-          "grammar": [
-            "Synthèse"
-          ],
-          "teacher_notes": "code: \"FR-48\"\nlessons_count: 1",
-          "recycled": "Fluence, Synthèse, Tout le vocabulaire de l'Unité 2"
-        },
-        {
-          "lesson": 9,
-          "title": "Examen Blanc A1",
-          "grammar": [
-            "Test"
-          ],
-          "teacher_notes": "code: \"FR-49\"\nlessons_count: 1",
-          "recycled": "Synthèse, Synthèse, Tout le vocabulaire de l'Unité 2"
-        },
-        {
-          "lesson": 10,
-          "title": "Bilan et Certification",
-          "grammar": [
-            "Évaluation"
-          ],
-          "teacher_notes": "code: \"FR-50\"\nlessons_count: 1",
-          "recycled": "Synthèse, Test, Tout le vocabulaire de l'Unité 2"
+          "teacher_notes": "code: \"FR-056\"\ncando: \"Je peux demander l'addition au restaurant et acheter des aliments au supermarché.\"",
+          "recycled": "Prix de la Leçon 5.3-5.4, nombres et paiements du Module 1",
+          "speaking": "Demander l'addition et payer par carte ou en espèces",
+          "listening": "Écoute des transactions en caisse",
+          "reading": "Lecture d'additions de restaurant et tickets de caisse",
+          "writing": "Rédiger 5 phrases sur le paiement au restaurant ou au magasin",
+          "task": "Simulation de caisse et de paiement",
+          "cando": "Je peux demander l'addition au restaurant et acheter des aliments au supermarché.",
+          "hw": "Écrire 5 questions pour demander l'addition et acheter des aliments"
         }
       ]
     }

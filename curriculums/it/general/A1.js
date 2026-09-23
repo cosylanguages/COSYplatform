@@ -1,926 +1,964 @@
-if(!window.curriculumData) window.curriculumData = {};
-window.curriculumData.it_a1 = [
-  {
-    "id": "u1",
-    "num": 1,
-    "color": "#3B82F6",
-    "label": "Primo contatto & Identità personale",
-    "arc": "Saluti → Nome & Presentazioni → Spelling → Origini → Lingue → Numeri 0-20 → Età & Compleanno → Contatti → Prezzi → Profilo personale",
-    "lessons_count": 10,
-    "grammar_summary": [
-      {
-        "name": "Subject Pronouns & Verb 'be'",
-        "desc": "Foundational self-introduction",
-        "ex": "Self-introduction & greetings",
-        "ref": "grammar-reference.html"
-      },
-      {
-        "name": "Possessive Adjectives",
-        "desc": "Expressing belonging",
-        "ex": "My name, your age",
-        "ref": "grammar-reference.html"
-      },
-      {
-        "name": "Modal 'can/can't'",
-        "desc": "Abilities and languages",
-        "ex": "Languages spoken",
-        "ref": "grammar-reference.html"
-      }
-    ],
-    "vocab_themes": [
-      "Greetings",
-      "Personal Details",
-      "Nationalities",
-      "Languages",
-      "Numbers & Prices"
-    ],
-    "lessons": [
-      {
-        "code": "IT-01",
-        "num": 1,
-        "title": "1.1 Buongiorno! Primo contatto",
-        "grammar": "Pronomi soggetto, verbo 'essere' al presente, 'chiamarsi'",
-        "vocab": [
-          "buongiorno",
-          "ciao",
-          "arrivederci",
-          "grazie",
-          "per favore"
-        ],
-        "speaking": "Presentarsi e salutare in classe",
-        "listening": "Tre persone si presentano",
-        "reading": "Un breve dialogo di presentazione",
-        "writing": "Scrivere 5 frasi per presentarsi",
-        "task": "Personalized communication task",
-        "cando": "Sa salutare, dire arrivederci, presentarsi e usare il linguaggio della classe",
-        "hw": "Practice and complete lesson exercises"
-      },
-      {
-        "code": "IT-02",
-        "num": 2,
-        "title": "1.2 Come ti chiami? Chiedere il nome",
-        "grammar": "Domande con 'chiamarsi', presentazioni con 'Questo è...'",
-        "vocab": [
-          "nome",
-          "cognome",
-          "amico",
-          "chi",
-          "come"
-        ],
-        "speaking": "Chiedere i nomi e presentare un amico in trio",
-        "listening": "Persone che chiedono e danno il nome",
-        "reading": "Dialoghi semplici a un incontro",
-        "writing": "Scrivere un breve dialogo di presentazione",
-        "task": "Personalized communication task",
-        "cando": "Sa chiedere e dire il nome e presentare un'altra persona",
-        "hw": "Practice and complete lesson exercises"
-      },
-      {
-        "code": "IT-03",
-        "num": 3,
-        "title": "1.3 Alfabeto & Spelling",
-        "grammar": "Come si scrive?, doppie consonanti",
-        "vocab": [
-          "alfabeto",
-          "lettera",
-          "compitare",
-          "vocale",
-          "consonante"
-        ],
-        "speaking": "Compitare il proprio nome ed email ad alta voce",
-        "listening": "Dettato di nomi e indirizzi email",
-        "reading": "Lettura di lettere e codici",
-        "writing": "Compitare per iscritto nomi propri",
-        "task": "Personalized communication task",
-        "cando": "Sa compitare il proprio nome e capire parole compitate",
-        "hw": "Practice and complete lesson exercises"
-      },
-      {
-        "code": "IT-04",
-        "num": 4,
-        "title": "1.4 Paesi & Nazionalità",
-        "grammar": "Accordo aggettivi di nazionalità, preposizioni 'da' / 'di'",
-        "vocab": [
-          "paese",
-          "nazionalità",
-          "città",
-          "passaporto",
-          "Italia"
-        ],
-        "speaking": "Chiedere l'origine e la nazionalità in gruppo",
-        "listening": "Interviste al controllo passaporti",
-        "reading": "Schede di passaporto",
-        "writing": "Scrivere 5 frasi sull'origine di persone famose",
-        "task": "Personalized communication task",
-        "cando": "Sa dire da quale paese viene e chiedere la nazionalità",
-        "hw": "Practice and complete lesson exercises"
-      },
-      {
-        "code": "IT-05",
-        "num": 5,
-        "title": "1.5 Lingue che parlo",
-        "grammar": "Verbo 'parlare', verbo servile 'potere', negazione 'non'",
-        "vocab": [
-          "lingua",
-          "italiano",
-          "inglese",
-          "parlare",
-          "un po'"
-        ],
-        "speaking": "Sondaggio di classe sulle lingue parlate",
-        "listening": "Interviste a poliglotta",
-        "reading": "Descrizioni di portafogli linguistici",
-        "writing": "Scrivere 5 frasi sulle proprie competenze linguistiche",
-        "task": "Personalized communication task",
-        "cando": "Sa parlare delle lingue conosciute ed esprimere capacità",
-        "hw": "Practice and complete lesson exercises"
-      },
-      {
-        "code": "IT-06",
-        "num": 6,
-        "title": "1.6 I numeri da 0 a 20",
-        "grammar": "Plurale dei sostantivi (-i, -e), struttura 'Ci sono'",
-        "vocab": [
-          "zero",
-          "uno",
-          "due",
-          "tre",
-          "venti"
-        ],
-        "speaking": "Conteggio degli oggetti della classe e inventario",
-        "listening": "Dettati di numeri e quantità",
-        "reading": "Brevi liste di magazzino",
-        "writing": "Scrivere 5 gruppi di oggetti contati al plurale",
-        "task": "Personalized communication task",
-        "cando": "Sa contare da 0 a 20 e contare oggetti",
-        "hw": "Practice and complete lesson exercises"
-      },
-      {
-        "code": "IT-07",
-        "num": 7,
-        "title": "1.7 Età & Compleanno",
-        "grammar": "Verbo 'avere' per l'età, aggettivi possessivi (il mio, la mia)",
-        "vocab": [
-          "età",
-          "anno",
-          "compleanno",
-          "mese",
-          "gennaio"
-        ],
-        "speaking": "Chiedere l'età e il mese di compleanno",
-        "listening": "Annunci di compleanni famosi",
-        "reading": "Calendario di compleanni",
-        "writing": "Scrivere 5 frasi sull'età di familiari",
-        "task": "Personalized communication task",
-        "cando": "Sa chiedere e dire l'età e parlare del compleanno",
-        "hw": "Practice and complete lesson exercises"
-      },
-      {
-        "code": "IT-08",
-        "num": 8,
-        "title": "1.8 Numero di telefono & Contatti",
-        "grammar": "Qual è, aggettivi possessivi con articolo",
-        "vocab": [
-          "numero di telefono",
-          "cellulare",
-          "email",
-          "indirizzo",
-          "via"
-        ],
-        "speaking": "Scambiare biglietti da visita e contatti",
-        "listening": "Dettato di numeri di telefono ed email",
-        "reading": "Moduli di registrazione hotel",
-        "writing": "Compilare una scheda contatti personale",
-        "task": "Personalized communication task",
-        "cando": "Sa scambiare recapiti completi",
-        "hw": "Practice and complete lesson exercises"
-      },
-      {
-        "code": "IT-09",
-        "num": 9,
-        "title": "1.9 Numeri da 20 a 100 & Prezzi",
-        "grammar": "Quanto costa? / Quanti costano?",
-        "vocab": [
-          "trenta",
-          "quaranta",
-          "prezzo",
-          "costo",
-          "euro"
-        ],
-        "speaking": "Chiedere prezzi e comprare al mercato",
-        "listening": "Transazioni alla cassa del negozio",
-        "reading": "Cartellini prezzo e scontrini",
-        "writing": "Scrivere 5 frasi indicando prezzi",
-        "task": "Personalized communication task",
-        "cando": "Sa capire i numeri da 20 a 100 e chiedere prezzi",
-        "hw": "Practice and complete lesson exercises"
-      },
-      {
-        "code": "IT-10",
-        "num": 10,
-        "title": "1.10 Progetto: Profilo personale",
-        "grammar": "Sintesi: essere, avere, chiamarsi, parlare, potere",
-        "vocab": [
-          "profilo",
-          "identità",
-          "informazione",
-          "personale",
-          "su di me"
-        ],
-        "speaking": "Presentazione orale del profilo in 1 minuto",
-        "listening": "Ascolto delle presentazioni dei compagni",
-        "reading": "Esempi di schede profilo",
-        "writing": "Scrivere un profilo personale completo di 100 parole",
-        "task": "Personalized communication task",
-        "cando": "Sa presentare un profilo personale completo",
-        "hw": "Practice and complete lesson exercises"
-      }
-    ]
-  },
-  {
-    "id": "u2",
-    "num": 2,
-    "color": "#8B5CF6",
-    "label": "Unità 2: Famiglia & Relazioni sociali",
-    "arc": "Membri della famiglia → Età & Lavori → Aspetto fisico → Personalità → Amici & Colleghi → Presentazioni → Inviti",
-    "lessons_count": 7,
-    "vocab_themes": [
-      "Famiglia",
-      "Relazioni",
-      "Personalità",
-      "Inviti"
-    ],
-    "grammar_summary": [
-      {
-        "name": "Aggettivi possessivi & Accordi",
-        "desc": "Esprimere relazioni familiari e accordi",
-        "ex": "Mio padre, mia madre, i miei fratelli",
-        "ref": "grammar-reference.html"
-      }
-    ],
-    "lessons": [
-      {
-        "code": "IT-021",
-        "lesson": 1,
-        "num": 1,
-        "title": "2.1 Membri della famiglia & Albero genealogico",
-        "grammar": [
-          "Aggettivi possessivi (mio, mia, mio padre)"
-        ],
-        "vocabulary": [
-          "padre",
-          "madre",
-          "genitori",
-          "fratello",
-          "sorella",
-          "figlio",
-          "figlia",
-          "nonni"
-        ],
-        "teacher_notes": "code: \"IT-021\"\ncando: \"Sa nominare i membri della famiglia e descrivere un albero genealogico\"",
-        "recycled": "Possessivi e numeri 0-20 del Modulo 1",
-        "speaking": "Presentare il proprio albero genealogico a coppie",
-        "listening": "Dialogo su una foto di famiglia",
-        "reading": "Lettura di brevi biografie familiari",
-        "writing": "Scrivere 5 frasi sulla propria famiglia",
-        "task": "Presentazione dell'albero genealogico",
-        "cando": "Sa nominare i membri della famiglia e descrivere un albero genealogico",
-        "hw": "Disegnare e completare l'albero genealogico"
-      },
-      {
-        "code": "IT-022",
-        "lesson": 2,
-        "num": 2,
-        "title": "2.2 Descrivere la famiglia: Età & Lavori",
-        "grammar": [
-          "Verbo 'avere' per l'età e 'lavorare' al presente"
-        ],
-        "vocabulary": [
-          "età",
-          "anno",
-          "lavoro",
-          "lavorare",
-          "insegnante",
-          "medico",
-          "in pensione"
-        ],
-        "teacher_notes": "code: \"IT-022\"\ncando: \"Sa indicare età e professione dei parenti\"",
-        "recycled": "Sostantivi della famiglia, numeri 20-100, professioni",
-        "speaking": "Intervistare il compagno su età e lavoro dei parenti",
-        "listening": "Ascolto di persone che descrivono il lavoro dei genitori",
-        "reading": "Lettura di profili familiari",
-        "writing": "Scrivere 5 frasi su lavoro ed età dei parenti",
-        "task": "Scambio di carte di ruolo familiare",
-        "cando": "Sa indicare età e professione dei parenti",
-        "hw": "Scrivere un breve paragrafo sul lavoro dei genitori"
-      },
-      {
-        "code": "IT-023",
-        "lesson": 3,
-        "num": 3,
-        "title": "2.3 L'aspetto fisico",
-        "grammar": [
-          "Accordo degli aggettivi qualificativi (alto/alta)"
-        ],
-        "vocabulary": [
-          "alto",
-          "basso",
-          "giovane",
-          "vecchio",
-          "capelli",
-          "occhi",
-          "bello",
-          "bella"
-        ],
-        "teacher_notes": "code: \"IT-023\"\ncando: \"Sa descrivere l'aspetto fisico di parenti e amici\"",
-        "recycled": "Sostantivi famiglia, verbo essere, colori",
-        "speaking": "Descrivere l'aspetto di un compagno o personaggio famoso",
-        "listening": "Descrizione della polizia di una persona scomparsa",
-        "reading": "Lettura di ritratti fisici",
-        "writing": "Scrivere 5 frasi che descrivono l'aspetto di un amico",
-        "task": "Gioco 'Indovina chi'",
-        "cando": "Sa descrivere l'aspetto fisico di parenti e amici",
-        "hw": "Descrivere l'aspetto di un personaggio famoso"
-      },
-      {
-        "code": "IT-024",
-        "lesson": 4,
-        "num": 4,
-        "title": "2.4 Personalità & Carattere",
-        "grammar": [
-          "Aggettivi di personalità e avverbi (molto, un po')"
-        ],
-        "vocabulary": [
-          "gentile",
-          "simpatico",
-          "divertente",
-          "calmo",
-          "serio",
-          "educato",
-          "paziente"
-        ],
-        "teacher_notes": "code: \"IT-024\"\ncando: \"Sa descrivere personalità e carattere\"",
-        "recycled": "Aggettivi fisici, verbo essere, avverbi d'intensità",
-        "speaking": "Discussione sulla personalità di amici e parenti",
-        "listening": "Interviste sui migliori amici",
-        "reading": "Lettura dei risultati di un test di personalità",
-        "writing": "Scrivere 5 frasi sul carattere del migliore amico",
-        "task": "Attività di abbinamento dei caratteri",
-        "cando": "Sa descrivere personalità e carattere",
-        "hw": "Scrivere 5 frasi di descrizione del carattere"
-      },
-      {
-        "code": "IT-025",
-        "lesson": 5,
-        "num": 5,
-        "title": "2.5 Relazioni sociali: Amici & Colleghi",
-        "grammar": [
-          "Verbi 'conoscere' / 'incontrare' e preposizioni"
-        ],
-        "vocabulary": [
-          "amico",
-          "vicino",
-          "compagno",
-          "collega",
-          "capo",
-          "conoscere",
-          "incontrare"
-        ],
-        "teacher_notes": "code: \"IT-025\"\ncando: \"Sa parlare delle relazioni sociali fuori dalla famiglia\"",
-        "recycled": "Descrizioni familiari, luoghi di lavoro",
-        "speaking": "Raccontare come si sono conosciuti amici e colleghi",
-        "listening": "Testimonianze su vicini e colleghi",
-        "reading": "Lettura di presentazioni sui social network",
-        "writing": "Scrivere 5 frasi su colleghi e vicini",
-        "task": "Presentazione della cerchia sociale",
-        "cando": "Sa parlare delle relazioni sociali fuori dalla famiglia",
-        "hw": "Riconoscere e scrivere una nota su un collega"
-      },
-      {
-        "code": "IT-026",
-        "lesson": 6,
-        "num": 6,
-        "title": "2.6 Presentare persone & Chiedere della famiglia",
-        "grammar": [
-          "Formazione delle domande e dimostrativi (Questo è...)"
-        ],
-        "vocabulary": [
-          "presentare",
-          "incontrare",
-          "foto",
-          "quanti",
-          "chi",
-          "sposato",
-          "single"
-        ],
-        "teacher_notes": "code: \"IT-026\"\ncando: \"Sa presentare qualcuno e fare domande sulla famiglia\"",
-        "recycled": "Vocabolario della famiglia, pronomi interrogativi",
-        "speaking": "Presentare un amico a un gruppo e fare domande",
-        "listening": "Presentazioni a una festa",
-        "reading": "Lettura di didascalie di foto",
-        "writing": "Scrivere 5 domande e risposte sulla famiglia",
-        "task": "Gioco di ruolo ad una festa",
-        "cando": "Sa presentare qualcuno e fare domande sulla famiglia",
-        "hw": "Preparare 5 domande per un compagno"
-      },
-      {
-        "code": "IT-027",
-        "lesson": 7,
-        "num": 7,
-        "title": "2.7 Inviti ed eventi sociali",
-        "grammar": [
-          "Formule di invito e verbi modali (Vuoi venire...?)"
-        ],
-        "vocabulary": [
-          "invitare",
-          "festa",
-          "cena",
-          "fine settimana",
-          "compleanno",
-          "accettare",
-          "rifiutare"
-        ],
-        "teacher_notes": "code: \"IT-027\"\ncando: \"Sa invitare parenti/amici e accettare o rifiutare con cortesia\"",
-        "recycled": "Relazioni sociali, calendario, formule di cortesia",
-        "speaking": "Invitare il compagno a un evento e rispondere",
-        "listening": "Telefonate d'invito a una festa",
-        "reading": "Lettura di inviti di compleanno",
-        "writing": "Scrivere un invito e una risposta",
-        "task": "Pianificazione di una festa in gioco di ruolo",
-        "cando": "Sa invitare parenti/amici e accettare o rifiutare con cortesia",
-        "hw": "Scrivere un'email di invito a un amico"
-      }
-    ]
-  },
-  {
-    "id": "u3",
-    "num": 3,
-    "color": "#10B981",
-    "label": "Unità 3: Casa & Ambiente quotidiano",
-    "arc": "Tipi di case → Stanze → Mobili & Preposizioni → Azioni di casa → Comfort & Costi → Inaugurazione",
-    "lessons_count": 6,
-    "vocab_themes": [
-      "Abitazioni",
-      "Stanze",
-      "Mobili",
-      "Attività",
-      "Affitto"
-    ],
-    "grammar_summary": [
-      {
-        "name": "C'è / Ci sono & Preposizioni di luogo",
-        "desc": "Esprimere esistenza e posizione di oggetti",
-        "ex": "C'è una cucina, sul tavolo",
-        "ref": "grammar-reference.html"
-      }
-    ],
-    "lessons": [
-      {
-        "code": "IT-031",
-        "lesson": 1,
-        "num": 1,
-        "title": "3.1 Tipi di case & Posizione",
-        "grammar": [
-          "Verbo 'abitare' + Preposizioni di luogo"
-        ],
-        "vocabulary": [
-          "casa",
-          "appartamento",
-          "palazzo",
-          "stanza",
-          "abitare",
-          "città",
-          "via",
-          "vicino"
-        ],
-        "teacher_notes": "code: \"IT-031\"\ncando: \"Posso descrivere il tipo di casa e indicare dove si trova\"",
-        "recycled": "Verbo abitare, aggettivi di dimensione dal Modulo 1 & 2",
-        "speaking": "Descrivere la propria casa e la posizione a un compagno",
-        "listening": "Ascoltare la descrizione di una casa e individuarla sulla mappa",
-        "reading": "Leggere brevi annunci immobiliari",
-        "writing": "Scrivere 5 frasi sulla propria casa e posizione",
-        "task": "Scambio di informazioni sulla posizione della casa",
-        "cando": "Posso descrivere il tipo di casa e indicare dove si trova",
-        "hw": "Scrivere 5 frasi su dove si abita"
-      },
-      {
-        "code": "IT-032",
-        "lesson": 2,
-        "num": 2,
-        "title": "3.2 Le stanze della casa",
-        "grammar": [
-          "Struttura d'esistenza 'C'è / Ci sono'"
-        ],
-        "vocabulary": [
-          "cucina",
-          "camera da letto",
-          "bagno",
-          "soggiorno",
-          "balcone",
-          "giardino",
-          "corridoio"
-        ],
-        "teacher_notes": "code: \"IT-032\"\ncando: \"Posso nominare le stanze di una casa e descrivere la disposizione\"",
-        "recycled": "Tipi di casa, numeri da 1 a 20",
-        "speaking": "Descrivere la disposizione delle stanze della propria casa",
-        "listening": "Ascoltare la visita guidata di un appartamento",
-        "reading": "Leggere descrizioni di stanze immobiliari",
-        "writing": "Scrivere 5 frasi elencando le stanze della casa",
-        "task": "Disegno e descrizione della pianta dell'appartamento",
-        "cando": "Posso nominare le stanze di una casa e descrivere la disposizione",
-        "hw": "Disegnare e nominare le stanze della propria casa"
-      },
-      {
-        "code": "IT-033",
-        "lesson": 3,
-        "num": 3,
-        "title": "3.3 I mobili & Preposizioni di luogo",
-        "grammar": [
-          "Preposizioni di luogo ('su', 'sotto', 'accanto a')"
-        ],
-        "vocabulary": [
-          "letto",
-          "divano",
-          "sedia",
-          "tavolo",
-          "armadio",
-          "lampada",
-          "scaffale",
-          "finestra"
-        ],
-        "teacher_notes": "code: \"IT-033\"\ncando: \"Posso identificare i mobili e descrivere dove si trovano con le preposizioni\"",
-        "recycled": "Stanze della casa, dimostrativi",
-        "speaking": "Descrivere la disposizione dei mobili nella propria camera",
-        "listening": "Ascoltare la disposizione dei mobili in un soggiorno",
-        "reading": "Leggere descrizioni di arredamento d'interni",
-        "writing": "Scrivere 5 frasi sulla posizione dei mobili",
-        "task": "Gioco di ruolo per la disposizione della stanza",
-        "cando": "Posso identificare i mobili e descrivere dove si trovano con le preposizioni",
-        "hw": "Descrivere la disposizione dei mobili nella propria camera"
-      },
-      {
-        "code": "IT-034",
-        "lesson": 4,
-        "num": 4,
-        "title": "3.4 Azioni di casa & Attività",
-        "grammar": [
-          "Verbi d'azione al presente e L'Imperativo"
-        ],
-        "vocabulary": [
-          "aprire",
-          "chiudere",
-          "pulire",
-          "cucinare",
-          "lavare",
-          "dormire",
-          "sedersi",
-          "finestra"
-        ],
-        "teacher_notes": "code: \"IT-034\"\ncando: \"Posso parlare delle azioni quotidiane e delle attività in casa\"",
-        "recycled": "Mobili e oggetti, imperativo",
-        "speaking": "Parlare delle faccende domestiche del fine settimana",
-        "listening": "Ascoltare una famiglia che si divide i compiti di casa",
-        "reading": "Leggere il regolamento di una casa",
-        "writing": "Scrivere 5 frasi sulle abitudini in casa",
-        "task": "Gioco di ruolo per la divisione dei compiti",
-        "cando": "Posso parlare delle azioni quotidiane e delle attività in casa",
-        "hw": "Scrivere 5 frasi sulle faccende domestiche"
-      },
-      {
-        "code": "IT-035",
-        "lesson": 5,
-        "num": 5,
-        "title": "3.5 Descrivere la casa: Comfort & Costi",
-        "grammar": [
-          "Aggettivi qualificativi & Domande sui costi"
-        ],
-        "vocabulary": [
-          "dimensione",
-          "età",
-          "comfort",
-          "comodo",
-          "affitto",
-          "prezzo",
-          "caro",
-          "economico"
-        ],
-        "teacher_notes": "code: \"IT-035\"\ncando: \"Posso descrivere un'abitazione nei dettagli (dimensioni, comfort, affitto)\"",
-        "recycled": "Elementi della casa, prezzi e numeri",
-        "speaking": "Confrontare due appartamenti in affitto per prezzo e comfort",
-        "listening": "Ascoltare annunci immobiliari e prezzi",
-        "reading": "Leggere annunci di affitto appartamenti",
-        "writing": "Scrivere 5 frasi per valutare un appartamento",
-        "task": "Gioco di ruolo di confronto appartamenti",
-        "cando": "Posso descrivere un'abitazione nei dettagli (dimensioni, comfort, affitto)",
-        "hw": "Confrontare due annunci di affitto"
-      },
-      {
-        "code": "IT-036",
-        "lesson": 6,
-        "num": 6,
-        "title": "3.6 Affitto & Festa di inaugurazione",
-        "grammar": [
-          "Formule di invito e Imperativo"
-        ],
-        "vocabulary": [
-          "affittare",
-          "proprietario",
-          "inquilino",
-          "festa",
-          "invitare",
-          "visitare",
-          "nuovo",
-          "benvenuto"
-        ],
-        "teacher_notes": "code: \"IT-036\"\ncando: \"Posso parlare dell'affitto e invitare amici a una festa di inaugurazione\"",
-        "recycled": "Descrizioni della casa, inviti dal Modulo 2",
-        "speaking": "Invitare un amico a una festa di inaugurazione",
-        "listening": "Ascoltare un messaggio vocale di invito alla festa",
-        "reading": "Leggere inviti per feste di inaugurazione",
-        "writing": "Scrivere un biglietto di invito per una festa",
-        "task": "Gioco di ruolo di organizzazione festa",
-        "cando": "Posso parlare dell'affitto e invitare amici a una festa di inaugurazione",
-        "hw": "Scrivere un messaggio di invito a un amico"
-      }
-    ]
-  },
-  {
-    "id": "u4",
-    "num": 4,
-    "color": "#F59E0B",
-    "label": "Unità 4: Routine quotidiana & Tempo",
-    "arc": "L'ora → Calendario → Momenti della giornata → Verbi della routine → Avverbi di frequenza → Orari",
-    "lessons_count": 6,
-    "vocab_themes": [
-      "Time",
-      "Calendar",
-      "Routine",
-      "Frequency",
-      "Schedules"
-    ],
-    "grammar_summary": [
-      {
-        "name": "Time Expressions & Routine Verbs",
-        "desc": "Expressing clock time, habits, and frequency",
-        "ex": "At 8 o'clock, I usually wake up early",
-        "ref": "grammar-reference.html"
-      }
-    ],
-    "lessons": [
-      {
-        "code": "IT-041",
-        "lesson": 1,
-        "num": 1,
-        "title": "4.1 L'ora & L'orologio",
-        "grammar": [
-          "Chiedere e dire l'ora"
-        ],
-        "vocabulary": [
-          "ora",
-          "orologio",
-          "minuto",
-          "mezzo",
-          "quarto",
-          "mattina",
-          "sera"
-        ],
-        "teacher_notes": "code: \"IT-041\"\ncando: \"Posso chiedere e dire l'ora in ore e minuti\"",
-        "recycled": "Numeri 0-100 dal Modulo 1",
-        "speaking": "Chiedere e dire l'ora a un compagno",
-        "listening": "Ascoltare annunci di orario",
-        "reading": "Leggere orari di treni/bus",
-        "writing": "Scrivere 5 frasi indicando gli orari",
-        "task": "Gioco di ruolo sugli orari",
-        "cando": "Posso chiedere e dire l'ora in ore e minuti",
-        "hw": "Scrivere 5 frasi sugli orari della giornata"
-      },
-      {
-        "code": "IT-042",
-        "lesson": 2,
-        "num": 2,
-        "title": "4.2 Calendario: Giorni, Mesi & Date",
-        "grammar": [
-          "Preposizioni di tempo con giorni e mesi"
-        ],
-        "vocabulary": [
-          "lunedì",
-          "venerdì",
-          "sabato",
-          "domenica",
-          "gennaio",
-          "luglio",
-          "estate"
-        ],
-        "teacher_notes": "code: \"IT-042\"\ncando: \"Posso parlare di giorni, mesi, stagioni e date\"",
-        "recycled": "L'ora, compleanni dal Modulo 1",
-        "speaking": "Discutere dei giorni e mesi preferiti con il compagno",
-        "listening": "Ascoltare persone che dicono le loro date preferite",
-        "reading": "Leggere pagine di diario e calendario",
-        "writing": "Scrivere 5 frasi su date importanti",
-        "task": "Abbinamento sul calendario",
-        "cando": "Posso parlare di giorni, mesi e date",
-        "hw": "Scrivere 5 frasi sul proprio calendario"
-      },
-      {
-        "code": "IT-043",
-        "lesson": 3,
-        "num": 3,
-        "title": "4.3 Momenti della giornata & Preposizioni",
-        "grammar": [
-          "Preposizioni temporali ('alle 8', 'di mattina', 'di sera')"
-        ],
-        "vocabulary": [
-          "mattina",
-          "pomeriggio",
-          "sera",
-          "notte",
-          "presto",
-          "tardi",
-          "ogni giorno"
-        ],
-        "teacher_notes": "code: \"IT-043\"\ncando: \"Posso esprimere quando si svolgono le attività nella giornata\"",
-        "recycled": "L'ora, giorni della settimana",
-        "speaking": "Descrivere le attività nei diversi momenti della giornata",
-        "listening": "Ascoltare la descrizione degli orari giornalieri",
-        "reading": "Leggere sintesi della routine",
-        "writing": "Scrivere 5 frasi sui momenti della giornata",
-        "task": "Presentazione della linea del tempo della giornata",
-        "cando": "Posso esprimere quando si svolgono le attività",
-        "hw": "Scrivere 5 frasi sulle abitudini mattutine e serali"
-      },
-      {
-        "code": "IT-044",
-        "lesson": 4,
-        "num": 4,
-        "title": "4.4 Verbi della routine quotidiana",
-        "grammar": [
-          "Verbi riflessivi & Presente per le abitudini"
-        ],
-        "vocabulary": [
-          "svegliarsi",
-          "farsi la doccia",
-          "colazione",
-          "pranzo",
-          "cena",
-          "dormire"
-        ],
-        "teacher_notes": "code: \"IT-044\"\ncando: \"Posso descrivere la mia routine quotidiana dal mattino alla sera\"",
-        "recycled": "Momenti della giornata, verbi della casa",
-        "speaking": "Presentare la propria routine tipica al compagno",
-        "listening": "Ascoltare la descrizione di una routine quotidiana",
-        "reading": "Leggere un post sul blog della routine",
-        "writing": "Scrivere un paragrafo sulla propria routine",
-        "task": "Intervista sulla routine quotidiana",
-        "cando": "Posso descrivere la mia routine quotidiana dal mattino alla sera",
-        "hw": "Scrivere un paragrafo che descriva la propria giornata"
-      },
-      {
-        "code": "IT-045",
-        "lesson": 5,
-        "num": 5,
-        "title": "4.5 Avverbi di frequenza & Abitudini",
-        "grammar": [
-          "Posizione degli avverbi di frequenza ('sempre', 'spesso', 'mai')"
-        ],
-        "vocabulary": [
-          "sempre",
-          "spesso",
-          "a volte",
-          "raramente",
-          "mai",
-          "abitudine"
-        ],
-        "teacher_notes": "code: \"IT-045\"\ncando: \"Posso descrivere la frequenza delle mie attività con avverbi\"",
-        "recycled": "Verbi della routine, momenti della giornata",
-        "speaking": "Intervistare il compagno sulla frequenza delle abitudini",
-        "listening": "Ascoltare un sondaggio sulle abitudini",
-        "reading": "Leggere profili sulle abitudini",
-        "writing": "Scrivere 5 frasi con avverbi di frequenza",
-        "task": "Sondaggio sulla frequenza delle abitudini",
-        "cando": "Posso descrivere la frequenza delle attività quotidiane",
-        "hw": "Scrivere 5 frasi sulle proprie abitudini settimanali"
-      },
-      {
-        "code": "IT-046",
-        "lesson": 6,
-        "num": 6,
-        "title": "4.6 Orari & Appuntamenti",
-        "grammar": [
-          "Domande al presente & Organizzare appuntamenti"
-        ],
-        "vocabulary": [
-          "orario",
-          "appuntamento",
-          "riunione",
-          "libero",
-          "occupato",
-          "programma"
-        ],
-        "teacher_notes": "code: \"IT-046\"\ncando: \"Posso parlare dei miei orari e fissare un appuntamento\"",
-        "recycled": "L'ora, giorni, avverbi di frequenza, cortesia",
-        "speaking": "Fissare l'orario di un incontro con un compagno",
-        "listening": "Ascoltare telefonate per prenotare un appuntamento",
-        "reading": "Leggere conferme di appuntamenti",
-        "writing": "Scrivere un'email per fissare un appuntamento",
-        "task": "Gioco di ruolo per fissare appuntamenti",
-        "cando": "Posso parlare dei miei orari e fissare un appuntamento",
-        "hw": "Scrivere una nota per confermare un appuntamento"
-      }
-    ]
-  },
-  {
-    "id": "u5",
-    "num": 5,
-    "color": "#EC4899",
-    "label": "Unit 5: Final Review & Project",
-    "arc": "Unit 5 progression arc",
-    "lessons_count": 5,
-    "lessons": [
-      {
-        "code": "IT-051",
-        "num": 1,
-        "title": "Lesson 5.1 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
-        ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 5 skill 1",
-        "hw": "Review vocabulary"
-      },
-      {
-        "code": "IT-052",
-        "num": 2,
-        "title": "Lesson 5.2 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
-        ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 5 skill 2",
-        "hw": "Review vocabulary"
-      },
-      {
-        "code": "IT-053",
-        "num": 3,
-        "title": "Lesson 5.3 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
-        ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 5 skill 3",
-        "hw": "Review vocabulary"
-      },
-      {
-        "code": "IT-054",
-        "num": 4,
-        "title": "Lesson 5.4 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
-        ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 5 skill 4",
-        "hw": "Review vocabulary"
-      },
-      {
-        "code": "IT-055",
-        "num": 5,
-        "title": "Lesson 5.5 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
-        ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 5 skill 5",
-        "hw": "Review vocabulary"
-      }
-    ]
-  }
-];
+window.COSY_CURRICULUM_A1 = {
+  "language": "it",
+  "course_type": "general",
+  "level": "A1",
+  "units": [
+    {
+      "unit": 0,
+      "title": "Unità 0: Primi passi (A0)",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "Buongiorno & Benvenuti",
+          "grammar": [
+            "Verbo essere (presente) — forme affermative"
+          ],
+          "vocabulary": [
+            "Buongiorno",
+            "Ciao",
+            "Benvenuti",
+            "Grazie",
+            "Arrivederci"
+          ],
+          "teacher_notes": "code: \"IT-001\"\npronunciation: [{\"point\":\"L'alfabeto italiano\",\"explain\":\"L'italiano ha 21 lettere. Le vocali sono sempre chiare e distinte.\",\"alphabet\":[{\"l\":\"A\",\"ipa\":\"/a/\"},{\"l\":\"B\",\"ipa\":\"/be/\"},{\"l\":\"C\",\"ipa\":\"/tʃe/\"},{\"l\":\"D\",\"ipa\":\"/de/\"},{\"l\":\"E\",\"ipa\":\"/e/\"},{\"l\":\"F\",\"ipa\":\"/ɛf.fe/\"},{\"l\":\"G\",\"ipa\":\"/dʒe/\"},{\"l\":\"H\",\"ipa\":\"/ak.ka/\"},{\"l\":\"I\",\"ipa\":\"/i/\"},{\"l\":\"L\",\"ipa\":\"/ɛl.le/\"},{\"l\":\"M\",\"ipa\":\"/ɛm.me/\"},{\"l\":\"N\",\"ipa\":\"/ɛn.ne/\"},{\"l\":\"O\",\"ipa\":\"/o/\"},{\"l\":\"P\",\"ipa\":\"/pe/\"},{\"l\":\"Q\",\"ipa\":\"/ku/\"},{\"l\":\"R\",\"ipa\":\"/ɛr.re/\"},{\"l\":\"S\",\"ipa\":\"/ɛs.se/\"},{\"l\":\"T\",\"ipa\":\"/te/\"},{\"l\":\"U\",\"ipa\":\"/u/\"},{\"l\":\"V\",\"ipa\":\"/vu/\"},{\"l\":\"Z\",\"ipa\":\"/dzɛ.ta/\"}],\"extension\":\"L'italiano è una lingua fonetica: si scrive quasi esattamente come si pronuncia. Imparare l'alfabeto è il primo passo per leggere correttamente ogni parola.\",\"visual\":\"🇮🇹🔤\"}]\ncando: \"Sa salutare e dire arrivederci\"\nhw: \"Imparare la canzone dell'alfabeto\"",
+          "recycled": "Foundational communication & basic level vocabulary"
+        },
+        {
+          "lesson": 2,
+          "title": "Come ti chiami?",
+          "grammar": [
+            "Verbo chiamarsi (presente)"
+          ],
+          "vocabulary": [
+            "Nome",
+            "Come",
+            "Piacere"
+          ],
+          "teacher_notes": "code: \"IT-002\"\npronunciation: [{\"point\":\"La Doppia Consonante\",\"explain\":\"In italiano, le doppie consonanti si pronunciano con più forza e durata.\",\"examples\":[{\"pattern\":\"nn\",\"ipa\":\"/ˈnon.no/\",\"word\":\"nonno\"},{\"pattern\":\"tt\",\"ipa\":\"/ˈfat.to/\",\"word\":\"fatto\"},{\"pattern\":\"ll\",\"ipa\":\"/ˈbel.lo/\",\"word\":\"bello\"}],\"tip\":\"Immagina di fare una piccola pausa sulla doppia.\",\"extension\":\"Le doppie sono fondamentali! Cambiano il significato delle parole: 'casa' (house) vs 'cassa' (box). Ascolta bene la vibrazione più lunga.\",\"visual\":\"⚡\"}]\ncando: \"Sa presentarsi\"\nhw: \"Compitare il proprio nome in italiano\"",
+          "recycled": "Verbo essere (presente) — forme affermative, Benvenuti, Grazie"
+        },
+        {
+          "lesson": 3,
+          "title": "I numeri 1-20",
+          "grammar": [
+            "Il plurale dei nomi (introduzione)"
+          ],
+          "vocabulary": [
+            "uno",
+            "due",
+            "tre",
+            "dieci",
+            "venti"
+          ],
+          "teacher_notes": "code: \"IT-003\"\npronunciation: [{\"point\":\"Accento sulle parole\",\"explain\":\"La maggior parte delle parole italiane ha l'accento sulla penultima sillaba.\",\"examples\":[{\"pattern\":\"undici\",\"ipa\":\"/ˈun.di.tʃi/\",\"word\":\"undici\"},{\"pattern\":\"dodici\",\"ipa\":\"/ˈdo.di.tʃi/\",\"word\":\"dodici\"},{\"pattern\":\"venti\",\"ipa\":\"/ˈven.ti/\",\"word\":\"venti\"}]}]\ncando: \"Sa contare da 1 a 20\"\nhw: \"Contare gli oggetti nella stanza\"",
+          "recycled": "Verbo essere (presente) — forme affermative, Verbo chiamarsi (presente), Nome"
+        },
+        {
+          "lesson": 4,
+          "title": "Paire minime: Consonanti",
+          "grammar": [
+            "Struttura base della frase"
+          ],
+          "vocabulary": [
+            "casa",
+            "cena",
+            "chi"
+          ],
+          "teacher_notes": "code: \"IT-004\"\npronunciation: [{\"point\":\"C vs G\",\"explain\":\"Distinguere tra suoni duri e dolci di C e G.\",\"minimalPairs\":[{\"w1\":\"casa\",\"p1\":\"/ˈka.za/\",\"w2\":\"gara\",\"p2\":\"/ˈɡa.ra/\"},{\"w1\":\"cena\",\"p1\":\"/ˈtʃe.na/\",\"w2\":\"gena\",\"p2\":\"/ˈdʒɛ.na/\"},{\"w1\":\"chi\",\"p1\":\"/ki/\",\"w2\":\"ghi\",\"p2\":\"/ɡi/\"}]}]\ncando: \"Sa distinguere i suoni C e G\"\nhw: \"Registrarsi dicendo casa e gara\"",
+          "recycled": "Verbo chiamarsi (presente), Il plurale dei nomi (introduzione), tre"
+        },
+        {
+          "lesson": 5,
+          "title": "Frasi essenziali",
+          "grammar": [
+            "Richieste gentili (Per favore)"
+          ],
+          "vocabulary": [
+            "Per favore",
+            "Grazie mille",
+            "Scusa",
+            "Prego"
+          ],
+          "teacher_notes": "code: \"IT-005\"\npronunciation: [{\"point\":\"Intonazione delle domande\",\"explain\":\"Nelle domande, la voce sale alla fine della frase.\",\"examples\":[{\"pattern\":\"Per favore\",\"ipa\":\"/per fa.ˈvo.re/\",\"word\":\"Per favore\"},{\"pattern\":\"Scusa\",\"ipa\":\"/ˈsku.za/\",\"word\":\"Scusa\"},{\"pattern\":\"Prego\",\"ipa\":\"/ˈprɛ.ɡo/\",\"word\":\"Prego\"}]}]\ncando: \"Sa usare frasi di cortesia di base\"\nhw: \"Usare tre frasi di cortesia domani\"",
+          "recycled": "Il plurale dei nomi (introduzione), Struttura base della frase, casa"
+        }
+      ]
+    },
+    {
+      "unit": 1,
+      "title": "MODULE 1. PRIMO CONTATTO & IDENTITÀ PERSONALE",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "1.1 Buongiorno! Primo contatto",
+          "grammar": [
+            "Pronomi soggetto, verbo 'essere' al presente, 'chiamarsi'"
+          ],
+          "vocabulary": [
+            "buongiorno",
+            "ciao",
+            "arrivederci",
+            "grazie",
+            "per favore"
+          ],
+          "teacher_notes": "code: \"IT-01\"\ncando: \"Sa salutare, dire arrivederci, presentarsi e usare il linguaggio della classe\"\nspeaking: \"Presentarsi e salutare in classe\"\nlistening: \"Tre persone si presentano\"\nreading: \"Un breve dialogo di presentazione\"\nwriting: \"Scrivere 5 frasi per presentarsi\"",
+          "recycled": "Module 1 foundational progression"
+        },
+        {
+          "lesson": 2,
+          "title": "1.2 Come ti chiami? Chiedere il nome",
+          "grammar": [
+            "Domande con 'chiamarsi', presentazioni con 'Questo è...'"
+          ],
+          "vocabulary": [
+            "nome",
+            "cognome",
+            "amico",
+            "chi",
+            "come"
+          ],
+          "teacher_notes": "code: \"IT-02\"\ncando: \"Sa chiedere e dire il nome e presentare un'altra persona\"\nspeaking: \"Chiedere i nomi e presentare un amico in trio\"\nlistening: \"Persone che chiedono e danno il nome\"\nreading: \"Dialoghi semplici a un incontro\"\nwriting: \"Scrivere un breve dialogo di presentazione\"",
+          "recycled": "Module 1 foundational progression"
+        },
+        {
+          "lesson": 3,
+          "title": "1.3 Alfabeto & Spelling",
+          "grammar": [
+            "Come si scrive?, doppie consonanti"
+          ],
+          "vocabulary": [
+            "alfabeto",
+            "lettera",
+            "compitare",
+            "vocale",
+            "consonante"
+          ],
+          "teacher_notes": "code: \"IT-03\"\ncando: \"Sa compitare il proprio nome e capire parole compitate\"\nspeaking: \"Compitare il proprio nome ed email ad alta voce\"\nlistening: \"Dettato di nomi e indirizzi email\"\nreading: \"Lettura di lettere e codici\"\nwriting: \"Compitare per iscritto nomi propri\"",
+          "recycled": "Module 1 foundational progression"
+        },
+        {
+          "lesson": 4,
+          "title": "1.4 Paesi & Nazionalità",
+          "grammar": [
+            "Accordo aggettivi di nazionalità, preposizioni 'da' / 'di'"
+          ],
+          "vocabulary": [
+            "paese",
+            "nazionalità",
+            "città",
+            "passaporto",
+            "Italia"
+          ],
+          "teacher_notes": "code: \"IT-04\"\ncando: \"Sa dire da quale paese viene e chiedere la nazionalità\"\nspeaking: \"Chiedere l'origine e la nazionalità in gruppo\"\nlistening: \"Interviste al controllo passaporti\"\nreading: \"Schede di passaporto\"\nwriting: \"Scrivere 5 frasi sull'origine di persone famose\"",
+          "recycled": "Module 1 foundational progression"
+        },
+        {
+          "lesson": 5,
+          "title": "1.5 Lingue che parlo",
+          "grammar": [
+            "Verbo 'parlare', verbo servile 'potere', negazione 'non'"
+          ],
+          "vocabulary": [
+            "lingua",
+            "italiano",
+            "inglese",
+            "parlare",
+            "un po'"
+          ],
+          "teacher_notes": "code: \"IT-05\"\ncando: \"Sa parlare delle lingue conosciute ed esprimere capacità\"\nspeaking: \"Sondaggio di classe sulle lingue parlate\"\nlistening: \"Interviste a poliglotta\"\nreading: \"Descrizioni di portafogli linguistici\"\nwriting: \"Scrivere 5 frasi sulle proprie competenze linguistiche\"",
+          "recycled": "Module 1 foundational progression"
+        },
+        {
+          "lesson": 6,
+          "title": "1.6 I numeri da 0 a 20",
+          "grammar": [
+            "Plurale dei sostantivi (-i, -e), struttura 'Ci sono'"
+          ],
+          "vocabulary": [
+            "zero",
+            "uno",
+            "due",
+            "tre",
+            "venti"
+          ],
+          "teacher_notes": "code: \"IT-06\"\ncando: \"Sa contare da 0 a 20 e contare oggetti\"\nspeaking: \"Conteggio degli oggetti della classe e inventario\"\nlistening: \"Dettati di numeri e quantità\"\nreading: \"Brevi liste di magazzino\"\nwriting: \"Scrivere 5 gruppi di oggetti contati al plurale\"",
+          "recycled": "Module 1 foundational progression"
+        },
+        {
+          "lesson": 7,
+          "title": "1.7 Età & Compleanno",
+          "grammar": [
+            "Verbo 'avere' per l'età, aggettivi possessivi (il mio, la mia)"
+          ],
+          "vocabulary": [
+            "età",
+            "anno",
+            "compleanno",
+            "mese",
+            "gennaio"
+          ],
+          "teacher_notes": "code: \"IT-07\"\ncando: \"Sa chiedere e dire l'età e parlare del compleanno\"\nspeaking: \"Chiedere l'età e il mese di compleanno\"\nlistening: \"Annunci di compleanni famosi\"\nreading: \"Calendario di compleanni\"\nwriting: \"Scrivere 5 frasi sull'età di familiari\"",
+          "recycled": "Module 1 foundational progression"
+        },
+        {
+          "lesson": 8,
+          "title": "1.8 Numero di telefono & Contatti",
+          "grammar": [
+            "Qual è, aggettivi possessivi con articolo"
+          ],
+          "vocabulary": [
+            "numero di telefono",
+            "cellulare",
+            "email",
+            "indirizzo",
+            "via"
+          ],
+          "teacher_notes": "code: \"IT-08\"\ncando: \"Sa scambiare recapiti completi\"\nspeaking: \"Scambiare biglietti da visita e contatti\"\nlistening: \"Dettato di numeri di telefono ed email\"\nreading: \"Moduli di registrazione hotel\"\nwriting: \"Compilare una scheda contatti personale\"",
+          "recycled": "Module 1 foundational progression"
+        },
+        {
+          "lesson": 9,
+          "title": "1.9 Numeri da 20 a 100 & Prezzi",
+          "grammar": [
+            "Quanto costa? / Quanti costano?"
+          ],
+          "vocabulary": [
+            "trenta",
+            "quaranta",
+            "prezzo",
+            "costo",
+            "euro"
+          ],
+          "teacher_notes": "code: \"IT-09\"\ncando: \"Sa capire i numeri da 20 a 100 e chiedere prezzi\"\nspeaking: \"Chiedere prezzi e comprare al mercato\"\nlistening: \"Transazioni alla cassa del negozio\"\nreading: \"Cartellini prezzo e scontrini\"\nwriting: \"Scrivere 5 frasi indicando prezzi\"",
+          "recycled": "Module 1 foundational progression"
+        },
+        {
+          "lesson": 10,
+          "title": "1.10 Progetto: Profilo personale",
+          "grammar": [
+            "Sintesi: essere, avere, chiamarsi, parlare, potere"
+          ],
+          "vocabulary": [
+            "profilo",
+            "identità",
+            "informazione",
+            "personale",
+            "su di me"
+          ],
+          "teacher_notes": "code: \"IT-10\"\ncando: \"Sa presentare un profilo personale completo\"\nspeaking: \"Presentazione orale del profilo in 1 minuto\"\nlistening: \"Ascolto delle presentazioni dei compagni\"\nreading: \"Esempi di schede profilo\"\nwriting: \"Scrivere un profilo personale completo di 100 parole\"",
+          "recycled": "Module 1 foundational progression"
+        }
+      ]
+    },
+    {
+      "unit": 2,
+      "title": "MODULE 2. FAMIGLIA & RELAZIONI SOCIALI",
+      "lessons": [
+        {
+          "code": "IT-021",
+          "lesson": 1,
+          "num": 1,
+          "title": "2.1 Membri della famiglia & Albero genealogico",
+          "grammar": [
+            "Aggettivi possessivi (mio, mia, mio padre)"
+          ],
+          "vocabulary": [
+            "padre",
+            "madre",
+            "genitori",
+            "fratello",
+            "sorella",
+            "figlio",
+            "figlia",
+            "nonni"
+          ],
+          "teacher_notes": "code: \"IT-021\"\ncando: \"Sa nominare i membri della famiglia e descrivere un albero genealogico\"",
+          "recycled": "Possessivi e numeri 0-20 del Modulo 1",
+          "speaking": "Presentare il proprio albero genealogico a coppie",
+          "listening": "Dialogo su una foto di famiglia",
+          "reading": "Lettura di brevi biografie familiari",
+          "writing": "Scrivere 5 frasi sulla propria famiglia",
+          "task": "Presentazione dell'albero genealogico",
+          "cando": "Sa nominare i membri della famiglia e descrivere un albero genealogico",
+          "hw": "Disegnare e completare l'albero genealogico"
+        },
+        {
+          "code": "IT-022",
+          "lesson": 2,
+          "num": 2,
+          "title": "2.2 Descrivere la famiglia: Età & Lavori",
+          "grammar": [
+            "Verbo 'avere' per l'età e 'lavorare' al presente"
+          ],
+          "vocabulary": [
+            "età",
+            "anno",
+            "lavoro",
+            "lavorare",
+            "insegnante",
+            "medico",
+            "in pensione"
+          ],
+          "teacher_notes": "code: \"IT-022\"\ncando: \"Sa indicare età e professione dei parenti\"",
+          "recycled": "Sostantivi della famiglia, numeri 20-100, professioni",
+          "speaking": "Intervistare il compagno su età e lavoro dei parenti",
+          "listening": "Ascolto di persone che descrivono il lavoro dei genitori",
+          "reading": "Lettura di profili familiari",
+          "writing": "Scrivere 5 frasi su lavoro ed età dei parenti",
+          "task": "Scambio di carte di ruolo familiare",
+          "cando": "Sa indicare età e professione dei parenti",
+          "hw": "Scrivere un breve paragrafo sul lavoro dei genitori"
+        },
+        {
+          "code": "IT-023",
+          "lesson": 3,
+          "num": 3,
+          "title": "2.3 L'aspetto fisico",
+          "grammar": [
+            "Accordo degli aggettivi qualificativi (alto/alta)"
+          ],
+          "vocabulary": [
+            "alto",
+            "basso",
+            "giovane",
+            "vecchio",
+            "capelli",
+            "occhi",
+            "bello",
+            "bella"
+          ],
+          "teacher_notes": "code: \"IT-023\"\ncando: \"Sa descrivere l'aspetto fisico di parenti e amici\"",
+          "recycled": "Sostantivi famiglia, verbo essere, colori",
+          "speaking": "Descrivere l'aspetto di un compagno o personaggio famoso",
+          "listening": "Descrizione della polizia di una persona scomparsa",
+          "reading": "Lettura di ritratti fisici",
+          "writing": "Scrivere 5 frasi che descrivono l'aspetto di un amico",
+          "task": "Gioco 'Indovina chi'",
+          "cando": "Sa descrivere l'aspetto fisico di parenti e amici",
+          "hw": "Descrivere l'aspetto di un personaggio famoso"
+        },
+        {
+          "code": "IT-024",
+          "lesson": 4,
+          "num": 4,
+          "title": "2.4 Personalità & Carattere",
+          "grammar": [
+            "Aggettivi di personalità e avverbi (molto, un po')"
+          ],
+          "vocabulary": [
+            "gentile",
+            "simpatico",
+            "divertente",
+            "calmo",
+            "serio",
+            "educato",
+            "paziente"
+          ],
+          "teacher_notes": "code: \"IT-024\"\ncando: \"Sa descrivere personalità e carattere\"",
+          "recycled": "Aggettivi fisici, verbo essere, avverbi d'intensità",
+          "speaking": "Discussione sulla personalità di amici e parenti",
+          "listening": "Interviste sui migliori amici",
+          "reading": "Lettura dei risultati di un test di personalità",
+          "writing": "Scrivere 5 frasi sul carattere del migliore amico",
+          "task": "Attività di abbinamento dei caratteri",
+          "cando": "Sa descrivere personalità e carattere",
+          "hw": "Scrivere 5 frasi di descrizione del carattere"
+        },
+        {
+          "code": "IT-025",
+          "lesson": 5,
+          "num": 5,
+          "title": "2.5 Relazioni sociali: Amici & Colleghi",
+          "grammar": [
+            "Verbi 'conoscere' / 'incontrare' e preposizioni"
+          ],
+          "vocabulary": [
+            "amico",
+            "vicino",
+            "compagno",
+            "collega",
+            "capo",
+            "conoscere",
+            "incontrare"
+          ],
+          "teacher_notes": "code: \"IT-025\"\ncando: \"Sa parlare delle relazioni sociali fuori dalla famiglia\"",
+          "recycled": "Descrizioni familiari, luoghi di lavoro",
+          "speaking": "Raccontare come si sono conosciuti amici e colleghi",
+          "listening": "Testimonianze su vicini e colleghi",
+          "reading": "Lettura di presentazioni sui social network",
+          "writing": "Scrivere 5 frasi su colleghi e vicini",
+          "task": "Presentazione della cerchia sociale",
+          "cando": "Sa parlare delle relazioni sociali fuori dalla famiglia",
+          "hw": "Riconoscere e scrivere una nota su un collega"
+        },
+        {
+          "code": "IT-026",
+          "lesson": 6,
+          "num": 6,
+          "title": "2.6 Presentare persone & Chiedere della famiglia",
+          "grammar": [
+            "Formazione delle domande e dimostrativi (Questo è...)"
+          ],
+          "vocabulary": [
+            "presentare",
+            "incontrare",
+            "foto",
+            "quanti",
+            "chi",
+            "sposato",
+            "single"
+          ],
+          "teacher_notes": "code: \"IT-026\"\ncando: \"Sa presentare qualcuno e fare domande sulla famiglia\"",
+          "recycled": "Vocabolario della famiglia, pronomi interrogativi",
+          "speaking": "Presentare un amico a un gruppo e fare domande",
+          "listening": "Presentazioni a una festa",
+          "reading": "Lettura di didascalie di foto",
+          "writing": "Scrivere 5 domande e risposte sulla famiglia",
+          "task": "Gioco di ruolo ad una festa",
+          "cando": "Sa presentare qualcuno e fare domande sulla famiglia",
+          "hw": "Preparare 5 domande per un compagno"
+        },
+        {
+          "code": "IT-027",
+          "lesson": 7,
+          "num": 7,
+          "title": "2.7 Inviti ed eventi sociali",
+          "grammar": [
+            "Formule di invito e verbi modali (Vuoi venire...?)"
+          ],
+          "vocabulary": [
+            "invitare",
+            "festa",
+            "cena",
+            "fine settimana",
+            "compleanno",
+            "accettare",
+            "rifiutare"
+          ],
+          "teacher_notes": "code: \"IT-027\"\ncando: \"Sa invitare parenti/amici e accettare o rifiutare con cortesia\"",
+          "recycled": "Relazioni sociali, calendario, formule di cortesia",
+          "speaking": "Invitare il compagno a un evento e rispondere",
+          "listening": "Telefonate d'invito a una festa",
+          "reading": "Lettura di inviti di compleanno",
+          "writing": "Scrivere un invito e una risposta",
+          "task": "Pianificazione di una festa in gioco di ruolo",
+          "cando": "Sa invitare parenti/amici e accettare o rifiutare con cortesia",
+          "hw": "Scrivere un'email di invito a un amico"
+        }
+      ]
+    },
+    {
+      "unit": 3,
+      "title": "MODULE 3. CASA & AMBIENTE QUOTIDIANO",
+      "lessons": [
+        {
+          "code": "IT-031",
+          "lesson": 1,
+          "num": 1,
+          "title": "3.1 Tipi di case & Posizione",
+          "grammar": [
+            "Verbo 'abitare' + Preposizioni di luogo"
+          ],
+          "vocabulary": [
+            "casa",
+            "appartamento",
+            "palazzo",
+            "stanza",
+            "abitare",
+            "città",
+            "via",
+            "vicino"
+          ],
+          "teacher_notes": "code: \"IT-031\"\ncando: \"Posso descrivere il tipo di casa e indicare dove si trova\"",
+          "recycled": "Verbo abitare, aggettivi di dimensione dal Modulo 1 & 2",
+          "speaking": "Descrivere la propria casa e la posizione a un compagno",
+          "listening": "Ascoltare la descrizione di una casa e individuarla sulla mappa",
+          "reading": "Leggere brevi annunci immobiliari",
+          "writing": "Scrivere 5 frasi sulla propria casa e posizione",
+          "task": "Scambio di informazioni sulla posizione della casa",
+          "cando": "Posso descrivere il tipo di casa e indicare dove si trova",
+          "hw": "Scrivere 5 frasi su dove si abita"
+        },
+        {
+          "code": "IT-032",
+          "lesson": 2,
+          "num": 2,
+          "title": "3.2 Le stanze della casa",
+          "grammar": [
+            "Struttura d'esistenza 'C'è / Ci sono'"
+          ],
+          "vocabulary": [
+            "cucina",
+            "camera da letto",
+            "bagno",
+            "soggiorno",
+            "balcone",
+            "giardino",
+            "corridoio"
+          ],
+          "teacher_notes": "code: \"IT-032\"\ncando: \"Posso nominare le stanze di una casa e descrivere la disposizione\"",
+          "recycled": "Tipi di casa, numeri da 1 a 20",
+          "speaking": "Descrivere la disposizione delle stanze della propria casa",
+          "listening": "Ascoltare la visita guidata di un appartamento",
+          "reading": "Leggere descrizioni di stanze immobiliari",
+          "writing": "Scrivere 5 frasi elencando le stanze della casa",
+          "task": "Disegno e descrizione della pianta dell'appartamento",
+          "cando": "Posso nominare le stanze di una casa e descrivere la disposizione",
+          "hw": "Disegnare e nominare le stanze della propria casa"
+        },
+        {
+          "code": "IT-033",
+          "lesson": 3,
+          "num": 3,
+          "title": "3.3 I mobili & Preposizioni di luogo",
+          "grammar": [
+            "Preposizioni di luogo ('su', 'sotto', 'accanto a')"
+          ],
+          "vocabulary": [
+            "letto",
+            "divano",
+            "sedia",
+            "tavolo",
+            "armadio",
+            "lampada",
+            "scaffale",
+            "finestra"
+          ],
+          "teacher_notes": "code: \"IT-033\"\ncando: \"Posso identificare i mobili e descrivere dove si trovano con le preposizioni\"",
+          "recycled": "Stanze della casa, dimostrativi",
+          "speaking": "Descrivere la disposizione dei mobili nella propria camera",
+          "listening": "Ascoltare la disposizione dei mobili in un soggiorno",
+          "reading": "Leggere descrizioni di arredamento d'interni",
+          "writing": "Scrivere 5 frasi sulla posizione dei mobili",
+          "task": "Gioco di ruolo per la disposizione della stanza",
+          "cando": "Posso identificare i mobili e descrivere dove si trovano con le preposizioni",
+          "hw": "Descrivere la disposizione dei mobili nella propria camera"
+        },
+        {
+          "code": "IT-034",
+          "lesson": 4,
+          "num": 4,
+          "title": "3.4 Azioni di casa & Attività",
+          "grammar": [
+            "Verbi d'azione al presente e L'Imperativo"
+          ],
+          "vocabulary": [
+            "aprire",
+            "chiudere",
+            "pulire",
+            "cucinare",
+            "lavare",
+            "dormire",
+            "sedersi",
+            "finestra"
+          ],
+          "teacher_notes": "code: \"IT-034\"\ncando: \"Posso parlare delle azioni quotidiane e delle attività in casa\"",
+          "recycled": "Mobili e oggetti, imperativo",
+          "speaking": "Parlare delle faccende domestiche del fine settimana",
+          "listening": "Ascoltare una famiglia che si divide i compiti di casa",
+          "reading": "Leggere il regolamento di una casa",
+          "writing": "Scrivere 5 frasi sulle abitudini in casa",
+          "task": "Gioco di ruolo per la divisione dei compiti",
+          "cando": "Posso parlare delle azioni quotidiane e delle attività in casa",
+          "hw": "Scrivere 5 frasi sulle faccende domestiche"
+        },
+        {
+          "code": "IT-035",
+          "lesson": 5,
+          "num": 5,
+          "title": "3.5 Descrivere la casa: Comfort & Costi",
+          "grammar": [
+            "Aggettivi qualificativi & Domande sui costi"
+          ],
+          "vocabulary": [
+            "dimensione",
+            "età",
+            "comfort",
+            "comodo",
+            "affitto",
+            "prezzo",
+            "caro",
+            "economico"
+          ],
+          "teacher_notes": "code: \"IT-035\"\ncando: \"Posso descrivere un'abitazione nei dettagli (dimensioni, comfort, affitto)\"",
+          "recycled": "Elementi della casa, prezzi e numeri",
+          "speaking": "Confrontare due appartamenti in affitto per prezzo e comfort",
+          "listening": "Ascoltare annunci immobiliari e prezzi",
+          "reading": "Leggere annunci di affitto appartamenti",
+          "writing": "Scrivere 5 frasi per valutare un appartamento",
+          "task": "Gioco di ruolo di confronto appartamenti",
+          "cando": "Posso descrivere un'abitazione nei dettagli (dimensioni, comfort, affitto)",
+          "hw": "Confrontare due annunci di affitto"
+        },
+        {
+          "code": "IT-036",
+          "lesson": 6,
+          "num": 6,
+          "title": "3.6 Affitto & Festa di inaugurazione",
+          "grammar": [
+            "Formule di invito e Imperativo"
+          ],
+          "vocabulary": [
+            "affittare",
+            "proprietario",
+            "inquilino",
+            "festa",
+            "invitare",
+            "visitare",
+            "nuovo",
+            "benvenuto"
+          ],
+          "teacher_notes": "code: \"IT-036\"\ncando: \"Posso parlare dell'affitto e invitare amici a una festa di inaugurazione\"",
+          "recycled": "Descrizioni della casa, inviti dal Modulo 2",
+          "speaking": "Invitare un amico a una festa di inaugurazione",
+          "listening": "Ascoltare un messaggio vocale di invito alla festa",
+          "reading": "Leggere inviti per feste di inaugurazione",
+          "writing": "Scrivere un biglietto di invito per una festa",
+          "task": "Gioco di ruolo di organizzazione festa",
+          "cando": "Posso parlare dell'affitto e invitare amici a una festa di inaugurazione",
+          "hw": "Scrivere un messaggio di invito a un amico"
+        }
+      ]
+    },
+    {
+      "unit": 4,
+      "title": "MODULE 4. ROUTINE QUOTIDIANA & TEMPO",
+      "lessons": [
+        {
+          "code": "IT-041",
+          "lesson": 1,
+          "num": 1,
+          "title": "4.1 L'ora & L'orologio",
+          "grammar": [
+            "Chiedere e dire l'ora"
+          ],
+          "vocabulary": [
+            "ora",
+            "orologio",
+            "minuto",
+            "mezzo",
+            "quarto",
+            "mattina",
+            "sera"
+          ],
+          "teacher_notes": "code: \"IT-041\"\ncando: \"Posso chiedere e dire l'ora in ore e minuti\"",
+          "recycled": "Numeri 0-100 dal Modulo 1",
+          "speaking": "Chiedere e dire l'ora a un compagno",
+          "listening": "Ascoltare annunci di orario",
+          "reading": "Leggere orari di treni/bus",
+          "writing": "Scrivere 5 frasi indicando gli orari",
+          "task": "Gioco di ruolo sugli orari",
+          "cando": "Posso chiedere e dire l'ora in ore e minuti",
+          "hw": "Scrivere 5 frasi sugli orari della giornata"
+        },
+        {
+          "code": "IT-042",
+          "lesson": 2,
+          "num": 2,
+          "title": "4.2 Calendario: Giorni, Mesi & Date",
+          "grammar": [
+            "Preposizioni di tempo con giorni e mesi"
+          ],
+          "vocabulary": [
+            "lunedì",
+            "venerdì",
+            "sabato",
+            "domenica",
+            "gennaio",
+            "luglio",
+            "estate"
+          ],
+          "teacher_notes": "code: \"IT-042\"\ncando: \"Posso parlare di giorni, mesi, stagioni e date\"",
+          "recycled": "L'ora, compleanni dal Modulo 1",
+          "speaking": "Discutere dei giorni e mesi preferiti con il compagno",
+          "listening": "Ascoltare persone che dicono le loro date preferite",
+          "reading": "Leggere pagine di diario e calendario",
+          "writing": "Scrivere 5 frasi su date importanti",
+          "task": "Abbinamento sul calendario",
+          "cando": "Posso parlare di giorni, mesi e date",
+          "hw": "Scrivere 5 frasi sul proprio calendario"
+        },
+        {
+          "code": "IT-043",
+          "lesson": 3,
+          "num": 3,
+          "title": "4.3 Momenti della giornata & Preposizioni",
+          "grammar": [
+            "Preposizioni temporali ('alle 8', 'di mattina', 'di sera')"
+          ],
+          "vocabulary": [
+            "mattina",
+            "pomeriggio",
+            "sera",
+            "notte",
+            "presto",
+            "tardi",
+            "ogni giorno"
+          ],
+          "teacher_notes": "code: \"IT-043\"\ncando: \"Posso esprimere quando si svolgono le attività nella giornata\"",
+          "recycled": "L'ora, giorni della settimana",
+          "speaking": "Descrivere le attività nei diversi momenti della giornata",
+          "listening": "Ascoltare la descrizione degli orari giornalieri",
+          "reading": "Leggere sintesi della routine",
+          "writing": "Scrivere 5 frasi sui momenti della giornata",
+          "task": "Presentazione della linea del tempo della giornata",
+          "cando": "Posso esprimere quando si svolgono le attività",
+          "hw": "Scrivere 5 frasi sulle abitudini mattutine e serali"
+        },
+        {
+          "code": "IT-044",
+          "lesson": 4,
+          "num": 4,
+          "title": "4.4 Verbi della routine quotidiana",
+          "grammar": [
+            "Verbi riflessivi & Presente per le abitudini"
+          ],
+          "vocabulary": [
+            "svegliarsi",
+            "farsi la doccia",
+            "colazione",
+            "pranzo",
+            "cena",
+            "dormire"
+          ],
+          "teacher_notes": "code: \"IT-044\"\ncando: \"Posso descrivere la mia routine quotidiana dal mattino alla sera\"",
+          "recycled": "Momenti della giornata, verbi della casa",
+          "speaking": "Presentare la propria routine tipica al compagno",
+          "listening": "Ascoltare la descrizione di una routine quotidiana",
+          "reading": "Leggere un post sul blog della routine",
+          "writing": "Scrivere un paragrafo sulla propria routine",
+          "task": "Intervista sulla routine quotidiana",
+          "cando": "Posso descrivere la mia routine quotidiana dal mattino alla sera",
+          "hw": "Scrivere un paragrafo che descriva la propria giornata"
+        },
+        {
+          "code": "IT-045",
+          "lesson": 5,
+          "num": 5,
+          "title": "4.5 Avverbi di frequenza & Abitudini",
+          "grammar": [
+            "Posizione degli avverbi di frequenza ('sempre', 'spesso', 'mai')"
+          ],
+          "vocabulary": [
+            "sempre",
+            "spesso",
+            "a volte",
+            "raramente",
+            "mai",
+            "abitudine"
+          ],
+          "teacher_notes": "code: \"IT-045\"\ncando: \"Posso descrivere la frequenza delle mie attività con avverbi\"",
+          "recycled": "Verbi della routine, momenti della giornata",
+          "speaking": "Intervistare il compagno sulla frequenza delle abitudini",
+          "listening": "Ascoltare un sondaggio sulle abitudini",
+          "reading": "Leggere profili sulle abitudini",
+          "writing": "Scrivere 5 frasi con avverbi di frequenza",
+          "task": "Sondaggio sulla frequenza delle abitudini",
+          "cando": "Posso descrivere la frequenza delle attività quotidiane",
+          "hw": "Scrivere 5 frasi sulle proprie abitudini settimanali"
+        },
+        {
+          "code": "IT-046",
+          "lesson": 6,
+          "num": 6,
+          "title": "4.6 Orari & Appuntamenti",
+          "grammar": [
+            "Domande al presente & Organizzare appuntamenti"
+          ],
+          "vocabulary": [
+            "orario",
+            "appuntamento",
+            "riunione",
+            "libero",
+            "occupato",
+            "programma"
+          ],
+          "teacher_notes": "code: \"IT-046\"\ncando: \"Posso parlare dei miei orari e fissare un appuntamento\"",
+          "recycled": "L'ora, giorni, avverbi di frequenza, cortesia",
+          "speaking": "Fissare l'orario di un incontro con un compagno",
+          "listening": "Ascoltare telefonate per prenotare un appuntamento",
+          "reading": "Leggere conferme di appuntamenti",
+          "writing": "Scrivere un'email per fissare un appuntamento",
+          "task": "Gioco di ruolo per fissare appuntamenti",
+          "cando": "Posso parlare dei miei orari e fissare un appuntamento",
+          "hw": "Scrivere una nota per confermare un appuntamento"
+        }
+      ]
+    },
+    {
+      "unit": 5,
+      "title": "MODULE 5. CIBO & BEVANDE",
+      "lessons": [
+        {
+          "code": "IT-051",
+          "lesson": 1,
+          "num": 1,
+          "title": "5.1 Vocabolario del cibo & Categorie",
+          "grammar": [
+            "Articoli partitivi ('del', 'della', 'dei', 'degli')"
+          ],
+          "vocabulary": [
+            "mela",
+            "banana",
+            "arancia",
+            "patata",
+            "carne",
+            "pollo",
+            "latte",
+            "formaggio"
+          ],
+          "teacher_notes": "code: \"IT-051\"\ncando: \"Posso identificare i cibi di base per categoria (frutta, verdura, carne, pesce, latticini).\"",
+          "recycled": "Gusti dal Modulo 1, oggetti della cucina dal Modulo 3",
+          "speaking": "Classificare i cibi ed esprimere i propri gusti",
+          "listening": "Controllo della dispensa in cucina",
+          "reading": "Lettura di categorie di alimenti",
+          "writing": "Scrivere 5 frasi sul cibo presente in cucina",
+          "task": "Controllo inventario cucina",
+          "cando": "Posso identificare i cibi di base per categoria (frutta, verdura, carne, pesce, latticini).",
+          "hw": "Elencare 10 cibi nel proprio frigorifero"
+        },
+        {
+          "code": "IT-052",
+          "lesson": 2,
+          "num": 2,
+          "title": "5.2 Pasti & Abitudini alimentari",
+          "grammar": [
+            "Verbi 'mangiare' e 'bere' al presente"
+          ],
+          "vocabulary": [
+            "colazione",
+            "pranzo",
+            "cena",
+            "pane",
+            "caffè",
+            "tè",
+            "zuppa",
+            "insalata"
+          ],
+          "teacher_notes": "code: \"IT-052\"\ncando: \"Posso descrivere i miei pasti quotidiani ed esprimere cosa mi piace mangiare e bere.\"",
+          "recycled": "Cibi dalla Lezione 5.1, momenti della giornata dal Modulo 4",
+          "speaking": "Intervistare il compagno sugli orari dei pasti",
+          "listening": "Ascolto sulle routine dei pasti quotidiani",
+          "reading": "Lettura di un diario alimentare",
+          "writing": "Scrivere un breve paragrafo sui propri pasti quotidiani",
+          "task": "Sondaggio sugli orari dei pasti",
+          "cando": "Posso descrivere i miei pasti quotidiani ed esprimere cosa mi piace mangiare e bere.",
+          "hw": "Scrivere 5 frasi su cosa mangi a colazione e a cena"
+        },
+        {
+          "code": "IT-053",
+          "lesson": 3,
+          "num": 3,
+          "title": "5.3 Bevande & Ordinare al bar",
+          "grammar": [
+            "Formule di cortesia & Condizionale ('Vorrei...')"
+          ],
+          "vocabulary": [
+            "caffè",
+            "tè",
+            "acqua",
+            "succo",
+            "latte",
+            "zucchero",
+            "tazza",
+            "bicchiere"
+          ],
+          "teacher_notes": "code: \"IT-053\"\ncando: \"Posso ordinare bevande calde e fredde con cortesia in un bar o caffè.\"",
+          "recycled": "Bevande dalle Lezioni 5.1-5.2, formule di cortesia dal Modulo 1",
+          "speaking": "Ordinare bevande in giochi di ruolo al bar",
+          "listening": "Ascolto di ordinazioni di bevande al bar",
+          "reading": "Lettura del listino bevande del bar",
+          "writing": "Scrivere un dialogo per ordinare al bar",
+          "task": "Gioco di ruolo al bar",
+          "cando": "Posso ordinare bevande calde e fredde con cortesia in un bar o caffè.",
+          "hw": "Scrivere un dialogo per ordinare un caffè e acqua"
+        },
+        {
+          "code": "IT-054",
+          "lesson": 4,
+          "num": 4,
+          "title": "5.4 Ristorante & Menu",
+          "grammar": [
+            "Ordinazioni & Consigli al ristorante"
+          ],
+          "vocabulary": [
+            "menu",
+            "antipasto",
+            "primo",
+            "secondo",
+            "dolce",
+            "tavolo",
+            "cameriere",
+            "conto"
+          ],
+          "teacher_notes": "code: \"IT-054\"\ncando: \"Posso leggere un menu, chiedere informazioni sui piatti e ordinare un pasto al ristorante.\"",
+          "recycled": "Ordinazioni dalla Lezione 5.3, cibi dalle Lezioni 5.1-5.2",
+          "speaking": "Ordinare un pasto completo al ristorante a coppie",
+          "listening": "Ascolto del cameriere che prende l'ordinazione",
+          "reading": "Lettura dei menu del ristorante",
+          "writing": "Scrivere un'ordinazione per il ristorante",
+          "task": "Gioco di ruolo al ristorante",
+          "cando": "Posso leggere un menu, chiedere informazioni sui piatti e ordinare un pasto al ristorante.",
+          "hw": "Creare un menu di ristorante a 3 portate con i prezzi"
+        },
+        {
+          "code": "IT-055",
+          "lesson": 5,
+          "num": 5,
+          "title": "5.5 Verbi di cucina & Ricette",
+          "grammar": [
+            "Imperativo per i passaggi delle ricette"
+          ],
+          "vocabulary": [
+            "tagliare",
+            "cucinare",
+            "mescolare",
+            "bollire",
+            "aggiungere",
+            "ricetta",
+            "sale",
+            "pepe",
+            "olio"
+          ],
+          "teacher_notes": "code: \"IT-055\"\ncando: \"Posso spiegare i passaggi di base della cucina ed elencare gli ingredienti per una semplice ricetta.\"",
+          "recycled": "Ingredienti dalle Lezioni 5.1-5.2, imperativo dal Modulo 3",
+          "speaking": "Spiegare la preparazione di un'insalata o di un piatto semplice",
+          "listening": "Ascolto delle istruzioni di una ricetta",
+          "reading": "Lettura di una semplice ricetta",
+          "writing": "Scrivere 5 passaggi all'imperativo per una ricetta",
+          "task": "Scambio di istruzioni per una ricetta",
+          "cando": "Posso spiegare i passaggi di base della cucina ed elencare gli ingredienti per una semplice ricetta.",
+          "hw": "Scrivere ingredienti e passaggi del tuo piatto preferito"
+        },
+        {
+          "code": "IT-056",
+          "lesson": 6,
+          "num": 6,
+          "title": "5.6 Pagare al ristorante & Fare la spesa",
+          "grammar": [
+            "Domande sul conto & Espressioni di quantità"
+          ],
+          "vocabulary": [
+            "conto",
+            "pagare",
+            "carta",
+            "contanti",
+            "scontrino",
+            "supermercato",
+            "chilo",
+            "bottiglia"
+          ],
+          "teacher_notes": "code: \"IT-056\"\ncando: \"Posso chiedere il conto al ristorante e comprare cibo al supermercato o al mercato.\"",
+          "recycled": "Prezzi dalle Lezioni 5.3-5.4, numeri e pagamenti dal Modulo 1",
+          "speaking": "Chiedere il conto e pagare con carta o contanti",
+          "listening": "Ascolto dei pagamenti alla cassa",
+          "reading": "Lettura di conti del ristorante e scontrini",
+          "writing": "Scrivere 5 frasi sul pagamento al ristorante o in negozio",
+          "task": "Simulazione cassa e pagamento",
+          "cando": "Posso chiedere il conto al ristorante e comprare cibo al supermercato o al mercato.",
+          "hw": "Scrivere 5 domande per chiedere il conto e fare la spesa"
+        }
+      ]
+    }
+  ]
+};
