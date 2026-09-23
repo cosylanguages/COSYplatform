@@ -241,94 +241,212 @@ window.curriculumData.ru_a1 = [
     "id": "u2",
     "num": 2,
     "color": "#8B5CF6",
-    "label": "Unit 2: People & Relationships",
-    "arc": "Unit 2 progression arc",
-    "lessons_count": 5,
+    "label": "Раздел 2: Семья и социальные связи",
+    "arc": "Члены семьи → Возраст и профессии → Внешность → Характер → Друзья и коллеги → Знакомство → Приглашения",
+    "lessons_count": 7,
+    "vocab_themes": [
+      "Family",
+      "Relationships",
+      "Personality",
+      "Invitations"
+    ],
+    "grammar_summary": [
+      {
+        "name": "Possessive Structures & Agreement",
+        "desc": "Expressing family relations and agreement",
+        "ex": "My family, her brother",
+        "ref": "grammar-reference.html"
+      }
+    ],
     "lessons": [
       {
         "code": "RU-021",
+        "lesson": 1,
         "num": 1,
-        "title": "Lesson 2.1 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "2.1 Члены семьи и семейное дерево",
+        "grammar": [
+          "Притяжательные местоимения (мой, моя) и конструкция 'У меня есть...'"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 2 skill 1",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "отец",
+          "мать",
+          "родители",
+          "брат",
+          "сестра",
+          "сын",
+          "дочь",
+          "дедушка"
+        ],
+        "teacher_notes": "code: \"RU-021\"\ncando: \"Может называть членов семьи и описывать семейное дерево\"",
+        "recycled": "Притяжательные местоимения и числа 0-20 Модуля 1",
+        "speaking": "Описание своего семейного дерева в парах",
+        "listening": "Диалог по семейной фотографии",
+        "reading": "Чтение коротких семейных историй",
+        "writing": "Написать 5 предложений о своей семье",
+        "task": "Презентация семейного дерева",
+        "cando": "Может называть членов семьи и описывать семейное дерево",
+        "hw": "Нарисовать и подписать семейное дерево"
       },
       {
         "code": "RU-022",
+        "lesson": 2,
         "num": 2,
-        "title": "Lesson 2.2 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "2.2 Описание семьи: возраст и профессии",
+        "grammar": [
+          "Дательный падеж для возраста ('мне... лет') и предложный падеж места работы"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 2 skill 2",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "возраст",
+          "год",
+          "лет",
+          "работа",
+          "учитель",
+          "врач",
+          "на пенсии"
+        ],
+        "teacher_notes": "code: \"RU-022\"\ncando: \"Может называть возраст и профессию родственников\"",
+        "recycled": "Лексика семьи, числа 20-100, профессии",
+        "speaking": "Опрос партнёра о возрасте и работе родственников",
+        "listening": "Слушание рассказов о работе родителей",
+        "reading": "Чтение семейных профилей",
+        "writing": "Написать 5 предложений о работе и возрасте близких",
+        "task": "Обмен семейными карточками",
+        "cando": "Может называть возраст и профессию родственников",
+        "hw": "Написать короткий абзац о работе родителей"
       },
       {
         "code": "RU-023",
+        "lesson": 3,
         "num": 3,
-        "title": "Lesson 2.3 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "2.3 Внешность и внешний вид",
+        "grammar": [
+          "Согласование прилагательных с существительными в роде и числе"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 2 skill 3",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "высокий",
+          "низкий",
+          "молодой",
+          "старый",
+          "волосы",
+          "глаза",
+          "красивый"
+        ],
+        "teacher_notes": "code: \"RU-023\"\ncando: \"Может описывать внешность близких и друзей\"",
+        "recycled": "Существительные семьи, глагол быть, цвета",
+        "speaking": "Описание внешности одногруппника или знаменитости",
+        "listening": "Описание человека для полиции",
+        "reading": "Чтение словесных портретов",
+        "writing": "Написать 5 предложений с описанием внешности друга",
+        "task": "Игра 'Угадай, кто это'",
+        "cando": "Может описывать внешность близких и друзей",
+        "hw": "Описать внешность известного человека"
       },
       {
         "code": "RU-024",
+        "lesson": 4,
         "num": 4,
-        "title": "Lesson 2.4 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "2.4 Характер и личность",
+        "grammar": [
+          "Прилагательные характера и модификаторы степени ('очень', 'немного')"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 2 skill 4",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "добрый",
+          "дружелюбный",
+          "весёлый",
+          "тихий",
+          "серьёзный",
+          "вежливый"
+        ],
+        "teacher_notes": "code: \"RU-024\"\ncando: \"Может описывать черты характера и личность\"",
+        "recycled": "Прилагательные внешности, модификаторы степени",
+        "speaking": "Обсуждение характера друзей и семьи",
+        "listening": "Интервью о лучших друзьях",
+        "reading": "Чтение результатов теста личности",
+        "writing": "Написать 5 предложений о характере лучшего друга",
+        "task": "Подбор пар по характеру",
+        "cando": "Может описывать черты характера и личность",
+        "hw": "Написать 5 предложений с описанием характера"
       },
       {
         "code": "RU-025",
+        "lesson": 5,
         "num": 5,
-        "title": "Lesson 2.5 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "2.5 Социальные связи: друзья и коллеги",
+        "grammar": [
+          "Глаголы 'знать', 'познакомиться' и предлоги контекста"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 2 skill 5",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "друг",
+          "сосед",
+          "одноклассник",
+          "коллега",
+          "начальник",
+          "знать",
+          "работать"
+        ],
+        "teacher_notes": "code: \"RU-025\"\ncando: \"Может рассказывать о социальных связях вне семьи\"",
+        "recycled": "Семейные описания, места работы",
+        "speaking": "Рассказ о том, где и как познакомились с друзьями/коллегами",
+        "listening": "Рассказы о соседях и коллегах",
+        "reading": "Чтение профилей в социальных сетях",
+        "writing": "Написать 5 предложений о коллегах и соседях",
+        "task": "Презентация своего круга общения",
+        "cando": "Может рассказывать о социальных связях вне семьи",
+        "hw": "Написать короткую заметку о коллеге"
+      },
+      {
+        "code": "RU-026",
+        "lesson": 6,
+        "num": 6,
+        "title": "2.6 Знакомство людей и вопросы о семье",
+        "grammar": [
+          "Вопросительные конструкции и указательные слова ('Это...')"
+        ],
+        "vocabulary": [
+          "представлять",
+          "знакомиться",
+          "фотография",
+          "сколько",
+          "кто",
+          "женат",
+          "холост"
+        ],
+        "teacher_notes": "code: \"RU-026\"\ncando: \"Может знакомить людей и задавать вопросы о семье\"",
+        "recycled": "Лексика семьи, вопросительные слова",
+        "speaking": "Знакомство друга с группой и вопросы о семье",
+        "listening": "Знакомство на празднике",
+        "reading": "Чтение подписей к фотографиям",
+        "writing": "Составить 5 вопросов и ответов о чьей-то семье",
+        "task": "Ролевая игра 'Знакомство на вечеринке'",
+        "cando": "Может знакомить людей и задавать вопросы о семье",
+        "hw": "Подготовить 5 вопросов для одногруппника"
+      },
+      {
+        "code": "RU-027",
+        "lesson": 7,
+        "num": 7,
+        "title": "2.7 Приглашения и встречи",
+        "grammar": [
+          "Конструкции приглашения и согласия/отказа ('Хочешь...?', 'С удовольствием')"
+        ],
+        "vocabulary": [
+          "приглашать",
+          "праздник",
+          "ужин",
+          "выходные",
+          "день рождения",
+          "принять",
+          "отказаться"
+        ],
+        "teacher_notes": "code: \"RU-027\"\ncando: \"Может приглашать близких и вежливо принимать/отклонять приглашения\"",
+        "recycled": "Социальные связи, календарь, этикетные фразы",
+        "speaking": "Приглашение партнёра на мероприятие и ответ",
+        "listening": "Телефонные разговоры с приглашением на праздник",
+        "reading": "Чтение приглашений на день рождения",
+        "writing": "Написать пригласительное сообщение и ответ",
+        "task": "Планирование праздника в ролевой игре",
+        "cando": "Может приглашать близких и вежливо принимать/отклонять приглашения",
+        "hw": "Написать e-mail с приглашением другу"
       }
     ]
   },

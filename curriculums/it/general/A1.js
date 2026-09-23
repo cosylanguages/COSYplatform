@@ -241,94 +241,214 @@ window.curriculumData.it_a1 = [
     "id": "u2",
     "num": 2,
     "color": "#8B5CF6",
-    "label": "Unit 2: People & Relationships",
-    "arc": "Unit 2 progression arc",
-    "lessons_count": 5,
+    "label": "Unità 2: Famiglia & Relazioni sociali",
+    "arc": "Membri della famiglia → Età & Lavori → Aspetto fisico → Personalità → Amici & Colleghi → Presentazioni → Inviti",
+    "lessons_count": 7,
+    "vocab_themes": [
+      "Family",
+      "Relationships",
+      "Personality",
+      "Invitations"
+    ],
+    "grammar_summary": [
+      {
+        "name": "Possessive Structures & Agreement",
+        "desc": "Expressing family relations and agreement",
+        "ex": "My family, her brother",
+        "ref": "grammar-reference.html"
+      }
+    ],
     "lessons": [
       {
         "code": "IT-021",
+        "lesson": 1,
         "num": 1,
-        "title": "Lesson 2.1 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "2.1 Membri della famiglia & Albero genealogico",
+        "grammar": [
+          "Aggettivi possessivi (mio, mia, mio padre)"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 2 skill 1",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "padre",
+          "madre",
+          "genitori",
+          "fratello",
+          "sorella",
+          "figlio",
+          "figlia",
+          "nonni"
+        ],
+        "teacher_notes": "code: \"IT-021\"\ncando: \"Sa nominare i membri della famiglia e descrivere un albero genealogico\"",
+        "recycled": "Possessivi e numeri 0-20 del Modulo 1",
+        "speaking": "Presentare il proprio albero genealogico a coppie",
+        "listening": "Dialogo su una foto di famiglia",
+        "reading": "Lettura di brevi biografie familiari",
+        "writing": "Scrivere 5 frasi sulla propria famiglia",
+        "task": "Presentazione dell'albero genealogico",
+        "cando": "Sa nominare i membri della famiglia e descrivere un albero genealogico",
+        "hw": "Disegnare e completare l'albero genealogico"
       },
       {
         "code": "IT-022",
+        "lesson": 2,
         "num": 2,
-        "title": "Lesson 2.2 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "2.2 Descrivere la famiglia: Età & Lavori",
+        "grammar": [
+          "Verbo 'avere' per l'età e 'lavorare' al presente"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 2 skill 2",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "età",
+          "anno",
+          "lavoro",
+          "lavorare",
+          "insegnante",
+          "medico",
+          "in pensione"
+        ],
+        "teacher_notes": "code: \"IT-022\"\ncando: \"Sa indicare età e professione dei parenti\"",
+        "recycled": "Sostantivi della famiglia, numeri 20-100, professioni",
+        "speaking": "Intervistare il compagno su età e lavoro dei parenti",
+        "listening": "Ascolto di persone che descrivono il lavoro dei genitori",
+        "reading": "Lettura di profili familiari",
+        "writing": "Scrivere 5 frasi su lavoro ed età dei parenti",
+        "task": "Scambio di carte di ruolo familiare",
+        "cando": "Sa indicare età e professione dei parenti",
+        "hw": "Scrivere un breve paragrafo sul lavoro dei genitori"
       },
       {
         "code": "IT-023",
+        "lesson": 3,
         "num": 3,
-        "title": "Lesson 2.3 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "2.3 L'aspetto fisico",
+        "grammar": [
+          "Accordo degli aggettivi qualificativi (alto/alta)"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 2 skill 3",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "alto",
+          "basso",
+          "giovane",
+          "vecchio",
+          "capelli",
+          "occhi",
+          "bello",
+          "bella"
+        ],
+        "teacher_notes": "code: \"IT-023\"\ncando: \"Sa descrivere l'aspetto fisico di parenti e amici\"",
+        "recycled": "Sostantivi famiglia, verbo essere, colori",
+        "speaking": "Descrivere l'aspetto di un compagno o personaggio famoso",
+        "listening": "Descrizione della polizia di una persona scomparsa",
+        "reading": "Lettura di ritratti fisici",
+        "writing": "Scrivere 5 frasi che descrivono l'aspetto di un amico",
+        "task": "Gioco 'Indovina chi'",
+        "cando": "Sa descrivere l'aspetto fisico di parenti e amici",
+        "hw": "Descrivere l'aspetto di un personaggio famoso"
       },
       {
         "code": "IT-024",
+        "lesson": 4,
         "num": 4,
-        "title": "Lesson 2.4 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "2.4 Personalità & Carattere",
+        "grammar": [
+          "Aggettivi di personalità e avverbi (molto, un po')"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 2 skill 4",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "gentile",
+          "simpatico",
+          "divertente",
+          "calmo",
+          "serio",
+          "educato",
+          "paziente"
+        ],
+        "teacher_notes": "code: \"IT-024\"\ncando: \"Sa descrivere personalità e carattere\"",
+        "recycled": "Aggettivi fisici, verbo essere, avverbi d'intensità",
+        "speaking": "Discussione sulla personalità di amici e parenti",
+        "listening": "Interviste sui migliori amici",
+        "reading": "Lettura dei risultati di un test di personalità",
+        "writing": "Scrivere 5 frasi sul carattere del migliore amico",
+        "task": "Attività di abbinamento dei caratteri",
+        "cando": "Sa descrivere personalità e carattere",
+        "hw": "Scrivere 5 frasi di descrizione del carattere"
       },
       {
         "code": "IT-025",
+        "lesson": 5,
         "num": 5,
-        "title": "Lesson 2.5 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "2.5 Relazioni sociali: Amici & Colleghi",
+        "grammar": [
+          "Verbi 'conoscere' / 'incontrare' e preposizioni"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 2 skill 5",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "amico",
+          "vicino",
+          "compagno",
+          "collega",
+          "capo",
+          "conoscere",
+          "incontrare"
+        ],
+        "teacher_notes": "code: \"IT-025\"\ncando: \"Sa parlare delle relazioni sociali fuori dalla famiglia\"",
+        "recycled": "Descrizioni familiari, luoghi di lavoro",
+        "speaking": "Raccontare come si sono conosciuti amici e colleghi",
+        "listening": "Testimonianze su vicini e colleghi",
+        "reading": "Lettura di presentazioni sui social network",
+        "writing": "Scrivere 5 frasi su colleghi e vicini",
+        "task": "Presentazione della cerchia sociale",
+        "cando": "Sa parlare delle relazioni sociali fuori dalla famiglia",
+        "hw": "Riconoscere e scrivere una nota su un collega"
+      },
+      {
+        "code": "IT-026",
+        "lesson": 6,
+        "num": 6,
+        "title": "2.6 Presentare persone & Chiedere della famiglia",
+        "grammar": [
+          "Formazione delle domande e dimostrativi (Questo è...)"
+        ],
+        "vocabulary": [
+          "presentare",
+          "incontrare",
+          "foto",
+          "quanti",
+          "chi",
+          "sposato",
+          "single"
+        ],
+        "teacher_notes": "code: \"IT-026\"\ncando: \"Sa presentare qualcuno e fare domande sulla famiglia\"",
+        "recycled": "Vocabolario della famiglia, pronomi interrogativi",
+        "speaking": "Presentare un amico a un gruppo e fare domande",
+        "listening": "Presentazioni a una festa",
+        "reading": "Lettura di didascalie di foto",
+        "writing": "Scrivere 5 domande e risposte sulla famiglia",
+        "task": "Gioco di ruolo ad una festa",
+        "cando": "Sa presentare qualcuno e fare domande sulla famiglia",
+        "hw": "Preparare 5 domande per un compagno"
+      },
+      {
+        "code": "IT-027",
+        "lesson": 7,
+        "num": 7,
+        "title": "2.7 Inviti ed eventi sociali",
+        "grammar": [
+          "Formule di invito e verbi modali (Vuoi venire...?)"
+        ],
+        "vocabulary": [
+          "invitare",
+          "festa",
+          "cena",
+          "fine settimana",
+          "compleanno",
+          "accettare",
+          "rifiutare"
+        ],
+        "teacher_notes": "code: \"IT-027\"\ncando: \"Sa invitare parenti/amici e accettare o rifiutare con cortesia\"",
+        "recycled": "Relazioni sociali, calendario, formule di cortesia",
+        "speaking": "Invitare il compagno a un evento e rispondere",
+        "listening": "Telefonate d'invito a una festa",
+        "reading": "Lettura di inviti di compleanno",
+        "writing": "Scrivere un invito e una risposta",
+        "task": "Pianificazione di una festa in gioco di ruolo",
+        "cando": "Sa invitare parenti/amici e accettare o rifiutare con cortesia",
+        "hw": "Scrivere un'email di invito a un amico"
       }
     ]
   },
