@@ -245,16 +245,16 @@ window.curriculumData.it_a1 = [
     "arc": "Membri della famiglia → Età & Lavori → Aspetto fisico → Personalità → Amici & Colleghi → Presentazioni → Inviti",
     "lessons_count": 7,
     "vocab_themes": [
-      "Family",
-      "Relationships",
-      "Personality",
-      "Invitations"
+      "Famiglia",
+      "Relazioni",
+      "Personalità",
+      "Inviti"
     ],
     "grammar_summary": [
       {
-        "name": "Possessive Structures & Agreement",
-        "desc": "Expressing family relations and agreement",
-        "ex": "My family, her brother",
+        "name": "Aggettivi possessivi & Accordi",
+        "desc": "Esprimere relazioni familiari e accordi",
+        "ex": "Mio padre, mia madre, i miei fratelli",
         "ref": "grammar-reference.html"
       }
     ],
@@ -456,94 +456,191 @@ window.curriculumData.it_a1 = [
     "id": "u3",
     "num": 3,
     "color": "#10B981",
-    "label": "Unit 3: Objects & Space",
-    "arc": "Unit 3 progression arc",
-    "lessons_count": 5,
+    "label": "Unità 3: Casa & Ambiente quotidiano",
+    "arc": "Tipi di case → Stanze → Mobili & Preposizioni → Azioni di casa → Comfort & Costi → Inaugurazione",
+    "lessons_count": 6,
+    "vocab_themes": [
+      "Abitazioni",
+      "Stanze",
+      "Mobili",
+      "Attività",
+      "Affitto"
+    ],
+    "grammar_summary": [
+      {
+        "name": "C'è / Ci sono & Preposizioni di luogo",
+        "desc": "Esprimere esistenza e posizione di oggetti",
+        "ex": "C'è una cucina, sul tavolo",
+        "ref": "grammar-reference.html"
+      }
+    ],
     "lessons": [
       {
         "code": "IT-031",
+        "lesson": 1,
         "num": 1,
-        "title": "Lesson 3.1 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "3.1 Tipi di case & Posizione",
+        "grammar": [
+          "Verbo 'abitare' + Preposizioni di luogo"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 3 skill 1",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "casa",
+          "appartamento",
+          "palazzo",
+          "stanza",
+          "abitare",
+          "città",
+          "via",
+          "vicino"
+        ],
+        "teacher_notes": "code: \"IT-031\"\ncando: \"Posso descrivere il tipo di casa e indicare dove si trova\"",
+        "recycled": "Verbo abitare, aggettivi di dimensione dal Modulo 1 & 2",
+        "speaking": "Descrivere la propria casa e la posizione a un compagno",
+        "listening": "Ascoltare la descrizione di una casa e individuarla sulla mappa",
+        "reading": "Leggere brevi annunci immobiliari",
+        "writing": "Scrivere 5 frasi sulla propria casa e posizione",
+        "task": "Scambio di informazioni sulla posizione della casa",
+        "cando": "Posso descrivere il tipo di casa e indicare dove si trova",
+        "hw": "Scrivere 5 frasi su dove si abita"
       },
       {
         "code": "IT-032",
+        "lesson": 2,
         "num": 2,
-        "title": "Lesson 3.2 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "3.2 Le stanze della casa",
+        "grammar": [
+          "Struttura d'esistenza 'C'è / Ci sono'"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 3 skill 2",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "cucina",
+          "camera da letto",
+          "bagno",
+          "soggiorno",
+          "balcone",
+          "giardino",
+          "corridoio"
+        ],
+        "teacher_notes": "code: \"IT-032\"\ncando: \"Posso nominare le stanze di una casa e descrivere la disposizione\"",
+        "recycled": "Tipi di casa, numeri da 1 a 20",
+        "speaking": "Descrivere la disposizione delle stanze della propria casa",
+        "listening": "Ascoltare la visita guidata di un appartamento",
+        "reading": "Leggere descrizioni di stanze immobiliari",
+        "writing": "Scrivere 5 frasi elencando le stanze della casa",
+        "task": "Disegno e descrizione della pianta dell'appartamento",
+        "cando": "Posso nominare le stanze di una casa e descrivere la disposizione",
+        "hw": "Disegnare e nominare le stanze della propria casa"
       },
       {
         "code": "IT-033",
+        "lesson": 3,
         "num": 3,
-        "title": "Lesson 3.3 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "3.3 I mobili & Preposizioni di luogo",
+        "grammar": [
+          "Preposizioni di luogo ('su', 'sotto', 'accanto a')"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 3 skill 3",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "letto",
+          "divano",
+          "sedia",
+          "tavolo",
+          "armadio",
+          "lampada",
+          "scaffale",
+          "finestra"
+        ],
+        "teacher_notes": "code: \"IT-033\"\ncando: \"Posso identificare i mobili e descrivere dove si trovano con le preposizioni\"",
+        "recycled": "Stanze della casa, dimostrativi",
+        "speaking": "Descrivere la disposizione dei mobili nella propria camera",
+        "listening": "Ascoltare la disposizione dei mobili in un soggiorno",
+        "reading": "Leggere descrizioni di arredamento d'interni",
+        "writing": "Scrivere 5 frasi sulla posizione dei mobili",
+        "task": "Gioco di ruolo per la disposizione della stanza",
+        "cando": "Posso identificare i mobili e descrivere dove si trovano con le preposizioni",
+        "hw": "Descrivere la disposizione dei mobili nella propria camera"
       },
       {
         "code": "IT-034",
+        "lesson": 4,
         "num": 4,
-        "title": "Lesson 3.4 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "3.4 Azioni di casa & Attività",
+        "grammar": [
+          "Verbi d'azione al presente e L'Imperativo"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 3 skill 4",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "aprire",
+          "chiudere",
+          "pulire",
+          "cucinare",
+          "lavare",
+          "dormire",
+          "sedersi",
+          "finestra"
+        ],
+        "teacher_notes": "code: \"IT-034\"\ncando: \"Posso parlare delle azioni quotidiane e delle attività in casa\"",
+        "recycled": "Mobili e oggetti, imperativo",
+        "speaking": "Parlare delle faccende domestiche del fine settimana",
+        "listening": "Ascoltare una famiglia che si divide i compiti di casa",
+        "reading": "Leggere il regolamento di una casa",
+        "writing": "Scrivere 5 frasi sulle abitudini in casa",
+        "task": "Gioco di ruolo per la divisione dei compiti",
+        "cando": "Posso parlare delle azioni quotidiane e delle attività in casa",
+        "hw": "Scrivere 5 frasi sulle faccende domestiche"
       },
       {
         "code": "IT-035",
+        "lesson": 5,
         "num": 5,
-        "title": "Lesson 3.5 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "3.5 Descrivere la casa: Comfort & Costi",
+        "grammar": [
+          "Aggettivi qualificativi & Domande sui costi"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 3 skill 5",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "dimensione",
+          "età",
+          "comfort",
+          "comodo",
+          "affitto",
+          "prezzo",
+          "caro",
+          "economico"
+        ],
+        "teacher_notes": "code: \"IT-035\"\ncando: \"Posso descrivere un'abitazione nei dettagli (dimensioni, comfort, affitto)\"",
+        "recycled": "Elementi della casa, prezzi e numeri",
+        "speaking": "Confrontare due appartamenti in affitto per prezzo e comfort",
+        "listening": "Ascoltare annunci immobiliari e prezzi",
+        "reading": "Leggere annunci di affitto appartamenti",
+        "writing": "Scrivere 5 frasi per valutare un appartamento",
+        "task": "Gioco di ruolo di confronto appartamenti",
+        "cando": "Posso descrivere un'abitazione nei dettagli (dimensioni, comfort, affitto)",
+        "hw": "Confrontare due annunci di affitto"
+      },
+      {
+        "code": "IT-036",
+        "lesson": 6,
+        "num": 6,
+        "title": "3.6 Affitto & Festa di inaugurazione",
+        "grammar": [
+          "Formule di invito e Imperativo"
+        ],
+        "vocabulary": [
+          "affittare",
+          "proprietario",
+          "inquilino",
+          "festa",
+          "invitare",
+          "visitare",
+          "nuovo",
+          "benvenuto"
+        ],
+        "teacher_notes": "code: \"IT-036\"\ncando: \"Posso parlare dell'affitto e invitare amici a una festa di inaugurazione\"",
+        "recycled": "Descrizioni della casa, inviti dal Modulo 2",
+        "speaking": "Invitare un amico a una festa di inaugurazione",
+        "listening": "Ascoltare un messaggio vocale di invito alla festa",
+        "reading": "Leggere inviti per feste di inaugurazione",
+        "writing": "Scrivere un biglietto di invito per una festa",
+        "task": "Gioco di ruolo di organizzazione festa",
+        "cando": "Posso parlare dell'affitto e invitare amici a una festa di inaugurazione",
+        "hw": "Scrivere un messaggio di invito a un amico"
       }
     ]
   },

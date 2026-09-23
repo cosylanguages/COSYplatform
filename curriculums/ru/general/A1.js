@@ -245,16 +245,16 @@ window.curriculumData.ru_a1 = [
     "arc": "Члены семьи → Возраст и профессии → Внешность → Характер → Друзья и коллеги → Знакомство → Приглашения",
     "lessons_count": 7,
     "vocab_themes": [
-      "Family",
-      "Relationships",
-      "Personality",
-      "Invitations"
+      "Семья",
+      "Связи",
+      "Характер",
+      "Приглашения"
     ],
     "grammar_summary": [
       {
-        "name": "Possessive Structures & Agreement",
-        "desc": "Expressing family relations and agreement",
-        "ex": "My family, her brother",
+        "name": "Притяжательные местоимения и придежи",
+        "desc": "Выражение семейных связей и возраста",
+        "ex": "Мой отец, мне 30 лет",
         "ref": "grammar-reference.html"
       }
     ],
@@ -454,94 +454,191 @@ window.curriculumData.ru_a1 = [
     "id": "u3",
     "num": 3,
     "color": "#10B981",
-    "label": "Unit 3: Objects & Space",
-    "arc": "Unit 3 progression arc",
-    "lessons_count": 5,
+    "label": "Раздел 3: Дом и повседневная жизнь",
+    "arc": "Типы жилья → Комнаты → Мебель и предлоги → Домашние дела → Уют и стоимость → Новоселье",
+    "lessons_count": 6,
+    "vocab_themes": [
+      "Жильё",
+      "Комнаты",
+      "Мебель",
+      "Дела",
+      "Аренда"
+    ],
+    "grammar_summary": [
+      {
+        "name": "Конструкции наличия и предлоги места",
+        "desc": "Описание расположения и наличия предметов",
+        "ex": "В квартире есть кухня, на столе",
+        "ref": "grammar-reference.html"
+      }
+    ],
     "lessons": [
       {
         "code": "RU-031",
+        "lesson": 1,
         "num": 1,
-        "title": "Lesson 3.1 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "3.1 Типы жилья и расположение",
+        "grammar": [
+          "Глагол 'жить' + Предложный падеж места"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 3 skill 1",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "дом",
+          "квартира",
+          "здание",
+          "комната",
+          "жить",
+          "город",
+          "улица",
+          "близко"
+        ],
+        "teacher_notes": "code: \"RU-031\"\ncando: \"Может описывать тип жилья и указывать, где оно находится\"",
+        "recycled": "Глагол жить, прилагательные размера, предлоги места из Модулей 1 и 2",
+        "speaking": "Описание своего жилья и его расположения в парах",
+        "listening": "Слушание описания дома и поиск его на карте",
+        "reading": "Чтение коротких объявлений о жилье",
+        "writing": "Написать 5 предложений о своём доме и расположении",
+        "task": "Обмен информацией о месте жительства",
+        "cando": "Может описывать тип жилья и указывать, где оно находится",
+        "hw": "Написать 5 предложений о том, где вы живёте"
       },
       {
         "code": "RU-032",
+        "lesson": 2,
         "num": 2,
-        "title": "Lesson 3.2 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "3.2 Комнаты в доме",
+        "grammar": [
+          "Конструкция наличия 'В квартире есть...'"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 3 skill 2",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "кухня",
+          "спальня",
+          "ванная",
+          "гостиная",
+          "балкон",
+          "сад",
+          "коридор"
+        ],
+        "teacher_notes": "code: \"RU-032\"\ncando: \"Может называть комнаты в доме/квартире и описывать планировку\"",
+        "recycled": "Типы жилья, числа от 1 до 20",
+        "speaking": "Описание планировки комнат своей квартиры",
+        "listening": "Слушание экскурсии по квартире",
+        "reading": "Чтение описаний комнат в недвижимости",
+        "writing": "Написать 5 предложений с перечислением комнат дома",
+        "task": "Рисование и описание плана квартиры",
+        "cando": "Может называть комнаты в доме/квартире и описывать планировку",
+        "hw": "Нарисовать и подписать комнаты своей квартиры"
       },
       {
         "code": "RU-033",
+        "lesson": 3,
         "num": 3,
-        "title": "Lesson 3.3 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "3.3 Мебель и предлоги места",
+        "grammar": [
+          "Предлоги места ('на', 'под', 'рядом с') и падежи"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 3 skill 3",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "кровать",
+          "диван",
+          "стул",
+          "стол",
+          "шкаф",
+          "лампа",
+          "полка",
+          "окно"
+        ],
+        "teacher_notes": "code: \"RU-033\"\ncando: \"Может называть мебель и описывать её расположение с помощью предлогов\"",
+        "recycled": "Комнаты в доме, указательные слова",
+        "speaking": "Описание расстановки мебели в своей комнате",
+        "listening": "Слушание расстановки мебели в гостиной",
+        "reading": "Чтение описаний интерьера",
+        "writing": "Написать 5 предложений о расположении мебели",
+        "task": "Ролевая игра по обустройству комнаты",
+        "cando": "Может называть мебель и описывать её расположение с помощью предлогов",
+        "hw": "Описать расположение мебели в своей спальне"
       },
       {
         "code": "RU-034",
+        "lesson": 4,
         "num": 4,
-        "title": "Lesson 3.4 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "3.4 Домашние дела и действия",
+        "grammar": [
+          "Глаголы настоящего времени и Повелительное наклонение"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 3 skill 4",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "открывать",
+          "закрывать",
+          "убирать",
+          "готовить",
+          "мыть",
+          "спать",
+          "сидеть",
+          "окно"
+        ],
+        "teacher_notes": "code: \"RU-034\"\ncando: \"Может описывать повседневные домашние дела и действия\"",
+        "recycled": "Предметы мебели, повелительное наклонение",
+        "speaking": "Рассказ о домашних обязанностях на выходных",
+        "listening": "Слушание распределения домашних дел в семье",
+        "reading": "Чтение правил дома и инструкций",
+        "writing": "Написать 5 предложений о домашних привычках",
+        "task": "Ролевая игра по распределению обязанностей",
+        "cando": "Может описывать повседневные домашние дела и действия",
+        "hw": "Написать 5 предложений о своих домашних делах"
       },
       {
         "code": "RU-035",
+        "lesson": 5,
         "num": 5,
-        "title": "Lesson 3.5 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "3.5 Описание дома: уют и стоимость",
+        "grammar": [
+          "Качественные прилагательные и вопросы о стоимости"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 3 skill 5",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "размер",
+          "возраст",
+          "комфорт",
+          "удобный",
+          "аренда",
+          "цена",
+          "дорогой",
+          "дешевый"
+        ],
+        "teacher_notes": "code: \"RU-035\"\ncando: \"Может подробно описывать жильё (размер, уют, аренду и стоимость)\"",
+        "recycled": "Характеристики жилья, цены и числа",
+        "speaking": "Сравнение двух квартир по цене и удобству",
+        "listening": "Слушание объявлений о жилье и цен",
+        "reading": "Чтение объявлений об аренде квартир",
+        "writing": "Написать 5 предложений с оценкой квартиры",
+        "task": "Ролевая игра по сравнению квартир",
+        "cando": "Может подробно описывать жильё (размер, уют, аренду и стоимость)",
+        "hw": "Сравнить два объявления об аренде"
+      },
+      {
+        "code": "RU-036",
+        "lesson": 6,
+        "num": 6,
+        "title": "3.6 Аренда и новоселье",
+        "grammar": [
+          "Конструкции приглашения и Повелительное наклонение"
+        ],
+        "vocabulary": [
+          "арендовать",
+          "хозяин",
+          "арендатор",
+          "праздник",
+          "приглашать",
+          "в гости",
+          "новый",
+          "добро пожаловать"
+        ],
+        "teacher_notes": "code: \"RU-036\"\ncando: \"Может обсуждать аренду и приглашать друзей на новоселье\"",
+        "recycled": "Описание жилья, приглашения из Модуля 2",
+        "speaking": "Приглашение друга на новоселье с подробностями",
+        "listening": "Слушание голосового сообщения с приглашением на новоселье",
+        "reading": "Чтение пригласительных открыток на новоселье",
+        "writing": "Написать приглашение на новоселье",
+        "task": "Ролевая игра по организации новоселья",
+        "cando": "Может обсуждать аренду и приглашать друзей на новоселье",
+        "hw": "Написать сообщение с приглашением на новоселье"
       }
     ]
   },

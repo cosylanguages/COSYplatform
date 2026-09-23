@@ -245,16 +245,16 @@ window.curriculumData.fr_a1 = [
     "arc": "Membres de la famille → Âge & Métiers → Apparence → Personnalité → Amis & Collègues → Présentations → Invitations",
     "lessons_count": 7,
     "vocab_themes": [
-      "Family",
-      "Relationships",
-      "Personality",
+      "Famille",
+      "Relations",
+      "Personnalité",
       "Invitations"
     ],
     "grammar_summary": [
       {
-        "name": "Possessive Structures & Agreement",
-        "desc": "Expressing family relations and agreement",
-        "ex": "My family, her brother",
+        "name": "Adjectifs possessifs & Accords",
+        "desc": "Exprimer les liens familiaux et l'accord",
+        "ex": "Mon père, ma mère, mes frères",
         "ref": "grammar-reference.html"
       }
     ],
@@ -456,94 +456,191 @@ window.curriculumData.fr_a1 = [
     "id": "u3",
     "num": 3,
     "color": "#10B981",
-    "label": "Unit 3: Objects & Space",
-    "arc": "Unit 3 progression arc",
-    "lessons_count": 5,
+    "label": "Unité 3 : Logement & Vie quotidienne",
+    "arc": "Types de logements → Pièces → Meubles & Prépositions → Actions ménagères → Confort & Prix → Crémaillère",
+    "lessons_count": 6,
+    "vocab_themes": [
+      "Logement",
+      "Pièces",
+      "Meubles",
+      "Activités",
+      "Loyer"
+    ],
+    "grammar_summary": [
+      {
+        "name": "Il y a & Prépositions de lieu",
+        "desc": "Exprimer la présence et la position d'objets",
+        "ex": "Il y a une cuisine, sur la table",
+        "ref": "grammar-reference.html"
+      }
+    ],
     "lessons": [
       {
         "code": "FR-031",
+        "lesson": 1,
         "num": 1,
-        "title": "Lesson 3.1 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "3.1 Types de logements & Emplacement",
+        "grammar": [
+          "Verbe 'habiter' + Prépositions de lieu"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 3 skill 1",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "maison",
+          "appartement",
+          "immeuble",
+          "pièce",
+          "habiter",
+          "ville",
+          "rue",
+          "près"
+        ],
+        "teacher_notes": "code: \"FR-031\"\ncando: \"Peut décrire son type de logement et indiquer où il se trouve\"",
+        "recycled": "Verbe habiter, adjectifs de taille, prépositions du Module 1 & 2",
+        "speaking": "Décrire son logement et son emplacement à un camarade",
+        "listening": "Écouter une description de logement et le situer sur un plan",
+        "reading": "Lire de courtes annonces immobilières",
+        "writing": "Écrire 5 phrases sur son logement et son emplacement",
+        "task": "Échange sur l'emplacement du logement",
+        "cando": "Peut décrire son type de logement et indiquer où il se trouve",
+        "hw": "Écrire 5 phrases sur son lieu de résidence"
       },
       {
         "code": "FR-032",
+        "lesson": 2,
         "num": 2,
-        "title": "Lesson 3.2 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "3.2 Les pièces de la maison",
+        "grammar": [
+          "Structure d'existence 'Il y a'"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 3 skill 2",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "cuisine",
+          "chambre",
+          "salle de bains",
+          "salon",
+          "balcon",
+          "jardin",
+          "couloir"
+        ],
+        "teacher_notes": "code: \"FR-032\"\ncando: \"Peut nommer les pièces d'un logement et décrire sa disposition\"",
+        "recycled": "Types de logements, chiffres de 1 à 20",
+        "speaking": "Décrire la disposition des pièces de son logement",
+        "listening": "Écouter la visite guidée d'un appartement",
+        "reading": "Lire des descriptions de pièces immobilières",
+        "writing": "Écrire 5 phrases listant les pièces de son logement",
+        "task": "Dessin et description du plan d'appartement",
+        "cando": "Peut nommer les pièces d'un logement et décrire sa disposition",
+        "hw": "Dessiner et annoter les pièces de son appartement"
       },
       {
         "code": "FR-033",
+        "lesson": 3,
         "num": 3,
-        "title": "Lesson 3.3 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "3.3 Les meubles & Prépositions de lieu",
+        "grammar": [
+          "Prépositions de lieu ('sur', 'sous', 'à côté de')"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 3 skill 3",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "lit",
+          "canapé",
+          "chaise",
+          "table",
+          "armoire",
+          "lampe",
+          "étagère",
+          "fenêtre"
+        ],
+        "teacher_notes": "code: \"FR-033\"\ncando: \"Peut identifier les meubles et décrire leur emplacement avec des prépositions\"",
+        "recycled": "Pièces de la maison, démonstratifs",
+        "speaking": "Décrire la disposition des meubles dans sa chambre",
+        "listening": "Écouter l'aménagement des meubles dans un salon",
+        "reading": "Lire des descriptions de décoration intérieure",
+        "writing": "Écrire 5 phrases sur la disposition des meubles",
+        "task": "Jeu de rôle d'aménagement de pièce",
+        "cando": "Peut identifier les meubles et décrire leur emplacement avec des prépositions",
+        "hw": "Décrire la disposition des meubles de sa chambre"
       },
       {
         "code": "FR-034",
+        "lesson": 4,
         "num": 4,
-        "title": "Lesson 3.4 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "3.4 Actions ménagères & Activités",
+        "grammar": [
+          "Verbes d'action au présent & L'Impératif"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 3 skill 4",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "ouvrir",
+          "fermer",
+          "nettoyer",
+          "cuisiner",
+          "laver",
+          "dormir",
+          "s'asseoir",
+          "fenêtre"
+        ],
+        "teacher_notes": "code: \"FR-034\"\ncando: \"Peut parler des actions quotidiennes et des activités à la maison\"",
+        "recycled": "Meubles et objets, impératifs d'action",
+        "speaking": "Parler des tâches ménagères du week-end",
+        "listening": "Écouter une famille répartir les tâches ménagères",
+        "reading": "Lire le règlement d'une maison",
+        "writing": "Écrire 5 phrases sur ses habitudes à la maison",
+        "task": "Jeu de rôle de répartition des tâches",
+        "cando": "Peut parler des actions quotidiennes et des activités à la maison",
+        "hw": "Écrire 5 phrases sur ses activités ménagères"
       },
       {
         "code": "FR-035",
+        "lesson": 5,
         "num": 5,
-        "title": "Lesson 3.5 Core Practice",
-        "grammar": "Target grammar point",
-        "vocab": [
-          "word1",
-          "word2"
+        "title": "3.5 Décrire le logement : Confort & Prix",
+        "grammar": [
+          "Adjectifs de qualification & Questions de coût"
         ],
-        "speaking": "Oral practice",
-        "listening": "Listening exercise",
-        "reading": "Short text",
-        "writing": "Writing response",
-        "task": "Interactive task",
-        "cando": "Can demonstrate Unit 3 skill 5",
-        "hw": "Review vocabulary"
+        "vocabulary": [
+          "taille",
+          "âge",
+          "confort",
+          "confortable",
+          "loyer",
+          "prix",
+          "cher",
+          "bon marché"
+        ],
+        "teacher_notes": "code: \"FR-035\"\ncando: \"Peut décrire un logement en détail (taille, confort, loyer)\"",
+        "recycled": "Éléments du logement, prix et nombres",
+        "speaking": "Comparer deux appartements à louer selon le prix et le confort",
+        "listening": "Écouter des annonces immobilières et tarifs",
+        "reading": "Lire des petites annonces de location",
+        "writing": "Écrire 5 phrases pour évaluer un appartement",
+        "task": "Jeu de rôle de comparaison d'appartements",
+        "cando": "Peut décrire un logement en détail (taille, confort, loyer)",
+        "hw": "Comparer deux annonces de location"
+      },
+      {
+        "code": "FR-036",
+        "lesson": 6,
+        "num": 6,
+        "title": "3.6 Location & Crémaillère",
+        "grammar": [
+          "Formules d'invitation & Impératif"
+        ],
+        "vocabulary": [
+          "louer",
+          "propriétaire",
+          "locataire",
+          "fête",
+          "inviter",
+          "visiter",
+          "nouveau",
+          "bienvenue"
+        ],
+        "teacher_notes": "code: \"FR-036\"\ncando: \"Peut discuter de location et inviter des amis à une crémaillère\"",
+        "recycled": "Descriptions de logement, invitations du Module 2",
+        "speaking": "Inviter un ami à une pendaison de crémaillère",
+        "listening": "Écouter un message vocal d'invitation à une crémaillère",
+        "reading": "Lire des cartes d'invitation de crémaillère",
+        "writing": "Écrire un mot d'invitation pour une crémaillère",
+        "task": "Jeu de rôle d'organisation de crémaillère",
+        "cando": "Peut discuter de location et inviter des amis à une crémaillère",
+        "hw": "Rédiger un message d'invitation pour une crémaillère"
       }
     ]
   },
