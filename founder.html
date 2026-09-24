@@ -128,7 +128,7 @@
 <body>
 
   <div style="background: #fffbe3; border-bottom: 1px solid #f59e0b; color: #78350f; text-align: center; padding: 10px 16px; font-size: 0.85rem; font-weight: 600;">
-    ℹ️ Notice: COSYlanguages entry points have consolidated into <a href="hub.html?key=founder-key" style="color: #0284c7; text-decoration: underline;">hub.html</a>. Please update your bookmarks.
+    ℹ️ Notice: COSYlanguages entry points have consolidated into <a id="notice-hub-link" href="hub.html" style="color: #0284c7; text-decoration: underline;">hub.html</a>. Please update your bookmarks.
   </div>
 
   <header class="founder-header">
@@ -151,17 +151,27 @@
 
   <script>
     const urlParams = new URLSearchParams(window.location.search);
-    const key = urlParams.get('key') || 'founder-key';
+    const key = urlParams.get('key');
 
     async function initFounderApp() {
       const appRoot = document.getElementById('app-root');
+
+      if (!key) {
+        renderAccessDenied("Missing Access Key", "An access key is required to view the founder dashboard.");
+        return;
+      }
+
+      const noticeLink = document.getElementById('notice-hub-link');
+      if (noticeLink && key) {
+        noticeLink.href = `hub.html?key=${encodeURIComponent(key)}`;
+      }
 
       try {
         const grantsRes = await fetch('data/access-grants.json');
         if (!grantsRes.ok) throw new Error("Unable to load access grants");
         const grantsData = await grantsRes.json();
 
-        const grant = grantsData.grants.find(g => g.key === key);
+        const grant = await window.CosyAccessGrants.matchGrant(grantsData.grants, key);
         const fullManifest = window.CosyAccessGrants ? window.CosyAccessGrants.FULL_MANIFEST : [];
         const allowedCourses = window.CosyAccessGrants ? window.CosyAccessGrants.resolveGrantCourses(grant, fullManifest) : [];
 
@@ -211,27 +221,27 @@
 
         <div class="portal-section">
           <h2>👩‍🏫 Language-Specific Teacher Portals</h2>
-          <p style="color: #64748b; margin-bottom: 1rem;">Direct entry links for language department teachers (Segment Grants):</p>
+          <p style="color: #64748b; margin-bottom: 1rem;">Direct entry links for language department teachers:</p>
           <div class="teacher-links-grid">
             <div class="teacher-link-card">
               <h4>🇬🇧 English Teacher Hub</h4>
-              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">Access key: english-teachers (filter: { language: "en" })</p>
-              <a href="teacher-english.html?key=english-teachers" class="btn" style="background: #4f46e5; text-align: center;">Open English Hub</a>
+              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">Segment Grant filter: { language: "en" }</p>
+              <a href="teacher-english.html?key=${encodeURIComponent(key)}" class="btn" style="background: #4f46e5; text-align: center;">Open English Hub</a>
             </div>
             <div class="teacher-link-card">
               <h4>🇫🇷 French Teacher Hub</h4>
-              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">Access key: french-teachers (filter: { language: "fr" })</p>
-              <a href="teacher-french.html?key=french-teachers" class="btn" style="background: #0284c7; text-align: center;">Open French Hub</a>
+              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">Segment Grant filter: { language: "fr" }</p>
+              <a href="teacher-french.html?key=${encodeURIComponent(key)}" class="btn" style="background: #0284c7; text-align: center;">Open French Hub</a>
             </div>
             <div class="teacher-link-card">
               <h4>🇷🇺 Russian Teacher Hub</h4>
-              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">Access key: russian-teachers (filter: { language: "ru" })</p>
-              <a href="teacher-russian.html?key=russian-teachers" class="btn" style="background: #059669; text-align: center;">Open Russian Hub</a>
+              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">Segment Grant filter: { language: "ru" }</p>
+              <a href="teacher-russian.html?key=${encodeURIComponent(key)}" class="btn" style="background: #059669; text-align: center;">Open Russian Hub</a>
             </div>
             <div class="teacher-link-card">
               <h4>🎓 Universal Master Teacher Portal</h4>
               <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">Unrestricted access to all languages &amp; raw catalog</p>
-              <a href="teacher.html?key=demo-teacher-1" class="btn btn-outline" style="text-align: center;">Open Master Portal</a>
+              <a href="teacher.html?key=${encodeURIComponent(key)}" class="btn btn-outline" style="text-align: center;">Open Master Portal</a>
             </div>
           </div>
         </div>
@@ -240,19 +250,14 @@
           <h2>🔑 Access Grants &amp; Student Workbooks</h2>
           <div class="teacher-links-grid">
             <div class="teacher-link-card">
-              <h4>🧑‍🎓 Student Cohort (A0-A1 Segment)</h4>
-              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">Access key: english-a0-a1</p>
-              <a href="student.html?key=english-a0-a1" class="btn btn-secondary" style="text-align: center;">View Cohort Workbook</a>
+              <h4>🧑‍🎓 Student Workspace</h4>
+              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">Preview student view with current key</p>
+              <a href="student.html?key=${encodeURIComponent(key)}" class="btn btn-secondary" style="text-align: center;">View Student Workspace</a>
             </div>
             <div class="teacher-link-card">
-              <h4>🧑‍🎓 Student Workbook (A1 Direct)</h4>
-              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">Access key: demo-student-1</p>
-              <a href="student.html?key=demo-student-1" class="btn btn-secondary" style="text-align: center;">View Student Workbook</a>
-            </div>
-            <div class="teacher-link-card">
-              <h4>⚙️ Access Grants Manager</h4>
-              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">Edit data/access-grants.json directly</p>
-              <a href="admin-grants.html" class="btn btn-outline" style="text-align: center;">Open Grants Manager</a>
+              <h4>⚙️ Access Grants Generator</h4>
+              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">Generate hashed JSON entries for data/access-grants.json</p>
+              <a href="admin-grants.html" class="btn btn-outline" style="text-align: center;">Open Grant Generator</a>
             </div>
           </div>
         </div>

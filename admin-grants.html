@@ -301,7 +301,7 @@
         </div>
 
         <div class="notice-box">
-          💡 <strong>Instructions:</strong> Copy the JSON snippet above and paste it inside the <code>"grants": [ ... ]</code> array in <code>data/access-grants.json</code>. Then share the generated access link with the user or cohort.
+          💡 <strong>Instructions:</strong> Copy the JSON snippet above (which contains only the salted SHA-256 hash of the token) into the <code>"grants": [ ... ]</code> array in <code>data/access-grants.json</code>. Send the generated Shareable Access URL (containing the plaintext token) to the user or cohort. The plaintext token is displayed here ONCE so you can share it, and is never written to repository files.
         </div>
       </div>
     </div>
@@ -357,7 +357,7 @@
       updateOutput();
     }
 
-    function generateRandomToken(length = 12) {
+    function generateRandomToken(length = 16) {
       const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
       let result = '';
       for (let i = 0; i < length; i++) {
@@ -401,14 +401,16 @@
       return selected;
     }
 
-    function updateOutput() {
+    async function updateOutput() {
       const grantType = document.getElementById('grant-type-select').value;
       const role = document.getElementById('role-select').value;
       const name = document.getElementById('name-input').value.trim() || 'Access Grant';
       const key = document.getElementById('key-input').value.trim() || 'sample-key';
 
+      const keyHash = await window.CosyAccessGrants.hashKey(key);
+
       let grantObj = {
-        key: key,
+        keyHash: keyHash,
         role: role,
         name: name
       };

@@ -1010,3 +1010,31 @@ window.CosyAccessGrants.resolveGrantCourses = function(grant, manifest) {
 
   return [];
 };
+
+/**
+ * Hashes a plaintext access key using SHA-256 with a fixed salt prefix.
+ * @param {string} key - Plaintext access key string
+ * @returns {Promise<string>} Hex representation of SHA-256 hash
+ */
+window.CosyAccessGrants.hashKey = async function(key) {
+  if (!key || typeof key !== 'string') return '';
+  const salt = 'cosy-platform-v1:';
+  const encoder = new TextEncoder();
+  const data = encoder.encode(salt + key.trim());
+  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+};
+
+/**
+ * Matches a user-provided access key against a list of grant objects by comparing SHA-256 hashes.
+ * @param {Array<Object>} grants - List of grant objects from data/access-grants.json
+ * @param {string} inputKey - Plaintext access key from query string
+ * @returns {Promise<Object|null>} Matching grant object or null if not found
+ */
+window.CosyAccessGrants.matchGrant = async function(grants, inputKey) {
+  if (!inputKey || !Array.isArray(grants)) return null;
+  const hashedInput = await window.CosyAccessGrants.hashKey(inputKey);
+  if (!hashedInput) return null;
+  return grants.find(g => g.keyHash && g.keyHash === hashedInput) || null;
+};
