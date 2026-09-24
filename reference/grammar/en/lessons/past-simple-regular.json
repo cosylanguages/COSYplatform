@@ -1,0 +1,98 @@
+{
+  "unitId": "EN-A1-PAST-SIMPLE-REGULAR-01",
+  "title": "Past Simple: Regular Verbs",
+  "level": "A1",
+  "language": "en",
+  "leadIn": {
+    "title": "Lead-In & Context: Past Simple: Regular Verbs",
+    "content": "Finished actions in the past: Yesterday afternoon, Emma walked in the park, cooked dinner, and watched a movie."
+  },
+  "instructionCheck": [
+    {
+      "question": "Do you write a diary entry using past simple -ed or present continuous?",
+      "expectedAnswer": "Past simple -ed",
+      "attachedTo": "production"
+    }
+  ],
+  "meaningCheck": [
+    {
+      "question": "\"I visited Paris in 2019.\" — Is the trip to Paris completely finished?",
+      "targetStructure": "past-simple-regular",
+      "options": [
+        "Yes, the action finished at a specific completed time in the past",
+        "No, the speaker is still in Paris right now",
+        "The trip will happen next year"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Correct · Past simple refers to finished actions at a specific time in the past."
+    },
+    {
+      "question": "\"She lived in Rome for two years.\" — Does she live in Rome now?",
+      "targetStructure": "past-simple-regular",
+      "options": [
+        "Yes, she still lives in Rome",
+        "No, she does not live in Rome anymore",
+        "She is moving to Rome tomorrow"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Correct · Past simple indicates the period of living in Rome is completely over."
+    }
+  ],
+  "form": {
+    "title": "Form & Structure: Past Simple: Regular Verbs",
+    "content": "Subject + verb + -ed (e.g. walked, played, cleaned). Negative: Subject + didn't + base verb. Question: Did + subject + base verb?"
+  },
+  "pronunciation": {
+    "title": "Pronunciation Notes: Past Simple: Regular Verbs",
+    "content": "Spoken stress, weak forms, intonation, and articulation patterns for Past Simple: Regular Verbs."
+  },
+  "controlledPractice": [
+    {
+      "question": "Past of 'study'?",
+      "targetStructure": "past-simple-regular",
+      "options": [
+        "studyed",
+        "studied",
+        "studdied"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Consonant + y → y becomes ied: study → studied."
+    },
+    {
+      "question": "Past of 'stop'?",
+      "targetStructure": "past-simple-regular",
+      "options": [
+        "stoped",
+        "stopped",
+        "stopeed"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "One vowel + one final consonant → double it: stop → stopped."
+    },
+    {
+      "question": "Past of 'live'?",
+      "targetStructure": "past-simple-regular",
+      "options": [
+        "lived",
+        "liveed",
+        "livved"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Verbs ending in -e just add -d: live → lived."
+    }
+  ],
+  "freerPractice": {
+    "title": "Freer Practice: Past Simple: Regular Verbs",
+    "content": "Guided communicative exchanges applying Past Simple: Regular Verbs in everyday conversation.",
+    "links": [
+      "COSYgames/scene_match"
+    ]
+  },
+  "production": {
+    "title": "Communicative Production: Past Simple: Regular Verbs",
+    "content": "Independent oral production and real-world task execution using Past Simple: Regular Verbs.",
+    "links": [
+      "COSYevents/speaking-club"
+    ]
+  }
+}

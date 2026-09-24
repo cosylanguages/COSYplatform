@@ -1,0 +1,98 @@
+{
+  "unitId": "EN-A1-CAN-CANT-01",
+  "title": "Can / Can't",
+  "level": "A1",
+  "language": "en",
+  "leadIn": {
+    "title": "Lead-In & Context: Can / Can't",
+    "content": "What can you do? Maria can swim and drive a car, but she can't play the guitar. 'Can' expresses ability and possibility."
+  },
+  "instructionCheck": [
+    {
+      "question": "Are you interviewing a partner about 5 abilities or working alone?",
+      "expectedAnswer": "Interviewing a partner",
+      "attachedTo": "freerPractice"
+    }
+  ],
+  "meaningCheck": [
+    {
+      "question": "Function check: What is the primary purpose of using Can / Can't?",
+      "targetStructure": "can-cant",
+      "options": [
+        "To express clear, level-appropriate meaning in structured context",
+        "To translate sentences word-for-word from another language",
+        "It is an obsolete form never used by native speakers"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Correct · This structure provides explicit grammatical function and clarity."
+    },
+    {
+      "question": "Form check: Does correct usage of Can / Can't require matching subject, verb, and modifier agreements?",
+      "targetStructure": "can-cant",
+      "options": [
+        "No, agreement rules are optional in English",
+        "Yes, matching grammatical forms ensures natural, accurate communication",
+        "Agreement only matters in formal academic writing"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Correct · Accurate form and agreement choices prevent misunderstandings."
+    }
+  ],
+  "form": {
+    "title": "Form & Structure: Can / Can't",
+    "content": "Subject + can / can't + base verb (no 'to', no '-s'). Question: Can + subject + base verb?"
+  },
+  "pronunciation": {
+    "title": "Pronunciation Notes: Can / Can't",
+    "content": "Spoken stress, weak forms, intonation, and articulation patterns for Can / Can't."
+  },
+  "controlledPractice": [
+    {
+      "question": "Which is correct?",
+      "targetStructure": "can-cant",
+      "options": [
+        "She can to swim.",
+        "She can swims.",
+        "She can swim."
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Can never takes 'to', and never adds -s: can + base verb."
+    },
+    {
+      "question": "'___ I open the window, please?' (permission)",
+      "targetStructure": "can-cant",
+      "options": [
+        "Can",
+        "Do",
+        "Am"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Can is used to ask for permission politely."
+    },
+    {
+      "question": "Negative contraction of 'can not'?",
+      "targetStructure": "can-cant",
+      "options": [
+        "can't",
+        "cann't",
+        "cant't"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The contraction is spelled can't."
+    }
+  ],
+  "freerPractice": {
+    "title": "Freer Practice: Can / Can't",
+    "content": "Guided communicative exchanges applying Can / Can't in everyday conversation.",
+    "links": [
+      "COSYgames/scene_match"
+    ]
+  },
+  "production": {
+    "title": "Communicative Production: Can / Can't",
+    "content": "Independent oral production and real-world task execution using Can / Can't.",
+    "links": [
+      "COSYevents/speaking-club"
+    ]
+  }
+}
