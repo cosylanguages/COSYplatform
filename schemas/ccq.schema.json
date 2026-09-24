@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://cosylanguages.com/schemas/ccq.schema.json",
+  "title": "Concept Checking Question / Choice Item",
+  "description": "Schema for interactive choice-based concept checking questions and practice items. Every CCQ must be a choice item with options, correctOptionIndex, and explanation.",
+  "type": "object",
+  "required": [
+    "question",
+    "targetStructure",
+    "options",
+    "correctOptionIndex",
+    "explanation"
+  ],
+  "properties": {
+    "question": {
+      "type": "string",
+      "description": "The question text checking concept or target structure."
+    },
+    "targetStructure": {
+      "type": "string",
+      "description": "The word, phrase, or target grammar/vocabulary structure being checked."
+    },
+    "options": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 2,
+      "description": "2-3 short option choices matching the .qopt buttons on the page."
+    },
+    "correctOptionIndex": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Zero-based index of the correct answer in the options array."
+    },
+    "explanation": {
+      "type": "string",
+      "description": "Explanation text displayed after answering."
+    }
+  },
+  "additionalProperties": false
+}

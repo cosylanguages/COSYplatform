@@ -47,7 +47,37 @@
         "properties": {
           "id": { "type": "string" },
           "title": { "type": "string" },
-          "stage": { "type": "string" },
+          "stage": {
+            "type": "string",
+            "enum": [
+              "lead-in",
+              "warm-up",
+              "recycling",
+              "input",
+              "listening",
+              "reading-listening",
+              "ccq-check",
+              "grammar",
+              "grammar-practice",
+              "pronunciation",
+              "controlled-practice",
+              "freer-practice",
+              "adaptation",
+              "cool-down",
+              "intro-greeting",
+              "intro-icebreaker",
+              "intro-goals",
+              "intro-learning-style",
+              "intro-diagnostic-speaking",
+              "intro-course-recommendation",
+              "intro-summary",
+              "aloha-intro",
+              "homework",
+              "teacher-guide",
+              "gabarit-core"
+            ],
+            "description": "Unified stage name for lesson slides, mapping to CELTA and platform lesson frameworks."
+          },
           "duration": { "type": "integer", "enum": [50, 80, 110], "default": 50 },
           "mode": { "type": "string", "enum": ["individual", "group", "all"], "default": "all" },
           "teacherNotes": {

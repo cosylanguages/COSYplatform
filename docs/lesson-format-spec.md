@@ -14,10 +14,28 @@ A lesson consists of ordered slides/stages with mode and duration tags.
 
 ```xml
 <cosy-lesson id="lesson-id" level="B2" language="en" title="Relaxation and Hygge" default-duration="50" default-mode="all">
-  <cosy-slide id="slide-1" stage="warm-up" duration="50|80|110" mode="individual|group|all">
+  <cosy-slide id="slide-1" stage="lead-in" duration="50|80|110" mode="individual|group|all">
     <!-- Slide content -->
   </cosy-slide>
 </cosy-lesson>
+
+---
+
+## Lesson Stages & Taxonomy
+
+Slides use the standard `stage` attribute to designate lesson progression. See [Lesson Stage Taxonomy](lesson-stage-taxonomy.md) for full CELTA 6-stage alignment.
+
+### Standard Slide Stages (`kebab-case`)
+- `lead-in` / `warm-up`: Context-setting and schema activation.
+- `recycling`: Review of previous target concepts.
+- `input` / `reading-listening`: Target language exposure.
+- `ccq-check`: Concept Checking Questions (CCQs) testing meaning.
+- `grammar` / `grammar-practice`: Sentence structure and rule presentation.
+- `pronunciation`: Phonetics, stress, and drills.
+- `controlled-practice`: Restricted accuracy practice.
+- `freer-practice`: Fluency-focused communicative tasks.
+- `adaptation`: Extension material or fast-finisher tasks.
+- `cool-down`: Reflection, recap, and feedback.
 ```
 
 ---

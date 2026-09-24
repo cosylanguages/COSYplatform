@@ -1,0 +1,91 @@
+{
+  "unitId": "EN-A1-QUESTION-WORDS-01",
+  "title": "Question Words",
+  "level": "A1",
+  "language": "en",
+  "leadIn": {
+    "title": "Lead-In & Context: Question Words",
+    "content": "Asking for information: Where do you live? Who is your friend? When does the train arrive?"
+  },
+  "meaningCheck": [
+    {
+      "question": "Function check: What is the primary purpose of using Question Words?",
+      "targetStructure": "question-words",
+      "options": [
+        "To express clear, level-appropriate meaning in structured context",
+        "To translate sentences word-for-word from another language",
+        "It is an obsolete form never used by native speakers"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Correct · This structure provides explicit grammatical function and clarity."
+    },
+    {
+      "question": "Form check: Does correct usage of Question Words require matching subject, verb, and modifier agreements?",
+      "targetStructure": "question-words",
+      "options": [
+        "No, agreement rules are optional in English",
+        "Yes, matching grammatical forms ensures natural, accurate communication",
+        "Agreement only matters in formal academic writing"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Correct · Accurate form and agreement choices prevent misunderstandings."
+    }
+  ],
+  "form": {
+    "title": "Form & Structure: Question Words",
+    "content": "Question word (Who, What, Where, When, Why, How) + auxiliary verb (be/do/can) + subject + main verb?"
+  },
+  "pronunciation": {
+    "title": "Pronunciation Notes: Question Words",
+    "content": "Spoken stress, weak forms, intonation, and articulation patterns for Question Words."
+  },
+  "controlledPractice": [
+    {
+      "question": "Asking about a reason:",
+      "targetStructure": "question-words",
+      "options": [
+        "What",
+        "Why",
+        "Where"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Why asks for a reason."
+    },
+    {
+      "question": "Fix: 'Where you live?'",
+      "targetStructure": "question-words",
+      "options": [
+        "Where do you live?",
+        "Where you do live?",
+        "Where lives you?"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Questions need the auxiliary 'do': Where do you live?"
+    },
+    {
+      "question": "Asking the price of something uncountable (cost):",
+      "targetStructure": "question-words",
+      "options": [
+        "How many",
+        "How much",
+        "How old"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "How much asks about uncountable quantities like price."
+    }
+  ],
+  "freerPractice": {
+    "title": "Freer Practice: Question Words",
+    "content": "Guided communicative exchanges applying Question Words in everyday conversation.",
+    "links": [
+      "COSYgames/scene_match"
+    ]
+  },
+  "production": {
+    "title": "Communicative Production: Question Words",
+    "content": "Independent oral production and real-world task execution using Question Words.",
+    "links": [
+      "COSYevents/speaking-club"
+    ]
+  }
+}

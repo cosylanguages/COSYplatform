@@ -1,0 +1,98 @@
+{
+  "unitId": "EN-A1-PRESENT-CONTINUOUS-01",
+  "title": "Present Continuous",
+  "level": "A1",
+  "language": "en",
+  "leadIn": {
+    "title": "Lead-In & Context: Present Continuous",
+    "content": "Actions happening right now: Look! It is raining outside, and Marco is drinking tea by the window."
+  },
+  "instructionCheck": [
+    {
+      "question": "Do you describe actions happening right now or what people did yesterday?",
+      "expectedAnswer": "Actions happening right now",
+      "attachedTo": "controlledPractice"
+    }
+  ],
+  "meaningCheck": [
+    {
+      "question": "\"He is cooking dinner.\" — Is he cooking right now in this current moment?",
+      "targetStructure": "present-continuous",
+      "options": [
+        "No, he cooks dinner every Sunday",
+        "Yes, the action is happening right now in progress",
+        "No, he finished cooking an hour ago"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Correct · Present continuous describes actions happening right now at the time of speaking."
+    },
+    {
+      "question": "\"They are staying at a hotel this week.\" — Is this a permanent home or a temporary situation?",
+      "targetStructure": "present-continuous",
+      "options": [
+        "A temporary situation for a short period",
+        "Their permanent lifetime address",
+        "A past trip from last year"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Correct · Present continuous expresses temporary situations around the present time."
+    }
+  ],
+  "form": {
+    "title": "Form & Structure: Present Continuous",
+    "content": "Subject + am/is/are + verb-ing. Negative: am/is/are + not + verb-ing. Question: Am/Is/Are + subject + verb-ing?"
+  },
+  "pronunciation": {
+    "title": "Pronunciation Notes: Present Continuous",
+    "content": "Spoken stress, weak forms, intonation, and articulation patterns for Present Continuous."
+  },
+  "controlledPractice": [
+    {
+      "question": "'She ___ dinner right now.'",
+      "targetStructure": "present-continuous",
+      "options": [
+        "cooks",
+        "is cooking",
+        "cook"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "An action happening now needs am/is/are + -ing."
+    },
+    {
+      "question": "Spelling: run + -ing?",
+      "targetStructure": "present-continuous",
+      "options": [
+        "runing",
+        "running",
+        "runeing"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "One vowel + one final consonant → double the consonant: run → running."
+    },
+    {
+      "question": "Fix: 'He working now.'",
+      "targetStructure": "present-continuous",
+      "options": [
+        "He is working now.",
+        "He works now.",
+        "He working is now."
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Present continuous always needs am/is/are before the -ing verb."
+    }
+  ],
+  "freerPractice": {
+    "title": "Freer Practice: Present Continuous",
+    "content": "Guided communicative exchanges applying Present Continuous in everyday conversation.",
+    "links": [
+      "COSYgames/scene_match"
+    ]
+  },
+  "production": {
+    "title": "Communicative Production: Present Continuous",
+    "content": "Independent oral production and real-world task execution using Present Continuous.",
+    "links": [
+      "COSYevents/speaking-club"
+    ]
+  }
+}
