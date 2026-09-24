@@ -116,12 +116,12 @@ This repository is automatically published via GitHub Actions on every push to `
 ### URL Key Pattern
 To view personalized teacher catalogs, student workspaces, or executive dashboards on the live site, append the `?key=` query parameter to the hub URL:
 
-- **Unified Hub Base**: `https://cosylanguages.github.io/COSYplatform/hub.html?key=<KEY>`
-- **Executive / Founder Hub**: `https://cosylanguages.github.io/COSYplatform/hub.html?key=founder-key`
-- **English Teacher Hub**: `https://cosylanguages.github.io/COSYplatform/hub.html?key=teachers-en`
-- **French Teacher Hub**: `https://cosylanguages.github.io/COSYplatform/hub.html?key=teachers-fr`
-- **Russian Teacher Hub**: `https://cosylanguages.github.io/COSYplatform/hub.html?key=teachers-ru`
-- **Student Cohort Workspace**: `https://cosylanguages.github.io/COSYplatform/hub.html?key=students-en-a1`
+- **Unified Hub Base**: `https://cosylanguages.github.io/COSYplatform/hub.html?key=<your-token-here>`
+- **Executive / Founder Hub**: `https://cosylanguages.github.io/COSYplatform/hub.html?key=<your-token-here>`
+- **English Teacher Hub**: `https://cosylanguages.github.io/COSYplatform/hub.html?key=<your-token-here>`
+- **French Teacher Hub**: `https://cosylanguages.github.io/COSYplatform/hub.html?key=<your-token-here>`
+- **Russian Teacher Hub**: `https://cosylanguages.github.io/COSYplatform/hub.html?key=<your-token-here>`
+- **Student Cohort Workspace**: `https://cosylanguages.github.io/COSYplatform/hub.html?key=<your-token-here>`
 
 ---
 
@@ -130,11 +130,11 @@ To view personalized teacher catalogs, student workspaces, or executive dashboar
 Access to student and teacher workspaces is managed via unique direct links containing a secret token (`key`). No open signup or public buy buttons exist.
 
 ### 1. Adding a Grant Entry
-To grant a student or teacher access, hand-edit `data/access-grants.json` and add a new entry:
+To grant a student or teacher access, use `admin-grants.html` to generate a grant entry, or compute the salted SHA-256 hash of a new random token and add an entry to `data/access-grants.json`:
 
 ```json
 {
-  "key": "unique-random-token",
+  "keyHash": "<salted-sha256-hash>",
   "role": "student",
   "name": "Student Name",
   "courses": [
@@ -143,13 +143,25 @@ To grant a student or teacher access, hand-edit `data/access-grants.json` and ad
 }
 ```
 
+- **`keyHash`**: Hex representation of the salted SHA-256 hash of the access token. Plaintext keys MUST NEVER be stored in `data/access-grants.json` or committed to the repository.
 - **`role`**: `"student"` or `"teacher"`. Teachers (`role: "teacher"` or `courses: ["*"]`) see all courses and full teacher guidance.
 - **`courses`**: List of course IDs the student is entitled to view (e.g. `"general-english-a1"`, `"spoken-english-b2"`). Students will **only** see listed courses.
 
 ### 2. Generating Access Links
-Provide the user with their personalized link:
-- **Student Workspace Link**: `https://<domain>/student.html?key=unique-random-token`
-- **Teacher Workspace Link**: `https://<domain>/teacher.html?key=unique-random-token`
+Provide the user with their personalized link containing their secret plaintext token:
+- **Student Workspace Link**: `https://<domain>/student.html?key=<your-token-here>`
+- **Teacher Workspace Link**: `https://<domain>/teacher.html?key=<your-token-here>`
+
+---
+
+## 🛡️ Security & Architecture Trade-Offs
+
+COSYplatform uses a **$0, no-account, database-less static architecture**. Access control relies on client-side salted SHA-256 token hashing and obscurity.
+
+**Important Security Notice:**
+- **Obscurity + Client-Side Hashing**: `data/access-grants.json` stores salted SHA-256 hashes (`keyHash`) rather than plaintext keys. However, because static site resources are public and hashing occurs client-side, short or guessable tokens can still be brute-forced offline, and anyone with a direct access URL can view the associated content.
+- **Token Best Practices**: Tokens must be long random strings (generated automatically via `admin-grants.html`, e.g., `t-` or `s-` followed by 16+ random characters) and should be rotated periodically.
+- **Deliberate Design Trade-Off**: This lightweight architecture enables zero-cost static hosting without database infrastructure or login systems. Storing hashes prevents plaintext secret exposure in public git commits, but is not a substitute for server-side authentication.
 
 ---
 

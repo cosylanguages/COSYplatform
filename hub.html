@@ -431,7 +431,7 @@
         if (!grantsRes.ok) throw new Error("Unable to load access configuration");
         const grantsData = await grantsRes.json();
 
-        const grant = grantsData.grants.find(g => g.key === key);
+        const grant = await window.CosyAccessGrants.matchGrant(grantsData.grants, key);
         if (!grant) {
           renderUnauthenticated();
           return;
