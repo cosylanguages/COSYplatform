@@ -2,36 +2,160 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "COSY Curriculum",
   "type": "object",
-  "required": ["language", "course_type", "level", "units"],
+  "required": [
+    "language",
+    "course_type",
+    "level",
+    "units"
+  ],
   "properties": {
-    "language": { "type": "string" },
-    "course_type": { "type": "string", "enum": ["general","spoken","exam","travelling","professional","relocation","pronunciation"] },
-    "level": { "type": "string", "enum": ["A1","A2","B1","B2","C1","C2"] },
+    "language": {
+      "type": "string"
+    },
+    "course_type": {
+      "type": "string",
+      "enum": [
+        "general",
+        "spoken",
+        "exam",
+        "travelling",
+        "professional",
+        "relocation",
+        "pronunciation"
+      ]
+    },
+    "level": {
+      "type": "string",
+      "enum": [
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "C1",
+        "C2"
+      ]
+    },
     "units": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["unit", "title", "lessons"],
+        "required": [
+          "unit",
+          "title",
+          "lessons"
+        ],
         "properties": {
-          "unit": { "type": "integer" },
-          "title": { "type": "string", "description": "Unit title in the target language" },
+          "unit": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string",
+            "description": "Unit title in the target language"
+          },
           "lessons": {
             "type": "array",
             "items": {
               "type": "object",
-              "required": ["lesson", "title"],
+              "required": [
+                "lesson",
+                "title"
+              ],
               "properties": {
-                "lesson": { "type": "integer" },
-                "type": { "type": "string", "enum": ["vocab", "grammar", "gv", "spoken", "srev", "exam", "pronunciation", "pron"] },
-                "title": { "type": "string" },
-                "recycled": { "type": ["string", "null"] },
-                "duration_minutes": { "type": "integer" },
-                "grammar": { "type": "array", "items": { "type": "string" } },
-                "discourse": { "type": "array", "items": { "type": "string" } },
-                "vocabulary": { "type": "array", "items": { "type": "string" } },
-                "practice_types": { "type": "array", "items": { "type": "string" } },
-                "speaking_percent": { "type": "integer" },
-                "teacher_notes": { "type": "string" }
+                "lesson": {
+                  "type": "integer"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "vocab",
+                    "grammar",
+                    "gv",
+                    "spoken",
+                    "srev",
+                    "exam",
+                    "pronunciation",
+                    "pron"
+                  ]
+                },
+                "title": {
+                  "type": "string"
+                },
+                "recycled": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "duration_minutes": {
+                  "type": "integer"
+                },
+                "grammar": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "discourse": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "vocabulary": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "practice_types": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "speaking_percent": {
+                  "type": "integer"
+                },
+                "teacher_notes": {
+                  "type": "string"
+                },
+                "ageAdaptation": {
+                  "type": "object",
+                  "properties": {
+                    "children": {
+                      "type": "string"
+                    },
+                    "teens": {
+                      "type": "string"
+                    },
+                    "adults": {
+                      "type": "string"
+                    },
+                    "seniors": {
+                      "type": "string"
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                "growingTask": {
+                  "type": "object",
+                  "description": "Cumulative task artifact. Policy A: Review/exam lessons (title containing 'review'/'exam' or type 'srev'/'exam') never receive growingTask. Policy B: selfPortrait is optional; omit for purely functional/conversational lessons (greetings, politeness formulas) and include dialogue only.",
+                  "properties": {
+                    "selfPortrait": {
+                      "type": "string"
+                    },
+                    "dialogue": {
+                      "type": "string"
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                "bigSpiralReview": {
+                  "type": "boolean"
+                },
+                "bigSpiralScope": {
+                  "type": "string"
+                }
               }
             }
           }

@@ -23,7 +23,17 @@ window.COSY_CURRICULUM_A1 = {
           "teacher_notes": "code: \"EN-01\"\ncando: \"Can greet people, say goodbye, introduce oneself, and use classroom language\"\nspeaking: \"Greeting and self-introductions in class\"\nlistening: \"Short dialogue of people meeting for first time\"\nreading: \"Reading classroom instructions and greetings\"\nwriting: \"Write 5 sentences introducing yourself\"",
           "recycled": "Module 1 foundational progression",
           "num": 1,
-          "code": "M01-L01"
+          "code": "M01-L01",
+          "ageAdaptation": {
+            "children": "Learn the alphabet song with gestures and TPR body movements for each letter, followed by a fast-paced flashcard greeting game.",
+            "teens": "Interactive digital spell-off competition using smartphones/tablets and online group polls to race spelling names aloud.",
+            "adults": "Focus on real-life transactional workplace introductions, business card exchange roleplays, and explicit phonics/spelling rules.",
+            "seniors": "Practice greetings in familiar concrete social contexts with large-print letter cards, a deliberate pace, and comfortable acoustic repetition."
+          },
+          "growingTask": {
+            "selfPortrait": "Hello, good morning! My name is Alex, A-L-E-X.",
+            "dialogue": "A: Hello, good morning!\nB: Hi! Good morning!"
+          }
         },
         {
           "lesson": 2,
@@ -41,7 +51,17 @@ window.COSY_CURRICULUM_A1 = {
           "teacher_notes": "code: \"EN-02\"\ncando: \"Can ask and answer names and introduce another person\"\nspeaking: \"Asking names and introducing a friend in trios\"\nlistening: \"People asking and giving names\"\nreading: \"Short dialogues at a conference\"\nwriting: \"Write short Q&A pairs introducing friends\"",
           "recycled": "Module 1 foundational progression",
           "num": 2,
-          "code": "M01-L02"
+          "code": "M01-L02",
+          "ageAdaptation": {
+            "children": "Puppet roleplay and matching game linking pronoun/verb cards ('I am' / 'You are') with physical movements and high-fives.",
+            "teens": "Competitive pair-matching game on digital whiteboards creating avatar profile cards with positive/negative identity statements.",
+            "adults": "Explicit grammar rule breakdown of contractions ('I'm' vs 'I am') applied directly to professional self-introductions and identity forms.",
+            "seniors": "Guided turn-taking dialogue practice in a quiet setting using clear visual contrast charts for affirmative and negative forms."
+          },
+          "growingTask": {
+            "selfPortrait": "I am a student. I am not a teacher.",
+            "dialogue": "A: Are you a student?\nB: Yes, I am. You are a friend."
+          }
         },
         {
           "lesson": 3,
@@ -59,7 +79,17 @@ window.COSY_CURRICULUM_A1 = {
           "teacher_notes": "code: \"EN-03\"\ncando: \"Can spell names and understand spelled words and codes\"\nspeaking: \"Spelling names and emails aloud to a partner\"\nlistening: \"Dictation of names and email addresses\"\nreading: \"Reading letter names and codes\"\nwriting: \"Write out spelled names letter by letter\"",
           "recycled": "Module 1 foundational progression",
           "num": 3,
-          "code": "M01-L03"
+          "code": "M01-L03",
+          "ageAdaptation": {
+            "children": "Circle greeting game passing a ball while singing 'How are you?' and practicing handshakes with funny character voices.",
+            "teens": "Speed-friending rotation activity and digital messaging roleplay using polite first-meeting phrases and peer feedback.",
+            "adults": "Formal vs informal context comparison (networking event vs casual meetup) with explicit intonation practice for polite inquiries.",
+            "seniors": "Pair dialogues focused on daily neighborhood encounters, emphasizing clear pronunciation, steady pacing, and gentle repetition."
+          },
+          "growingTask": {
+            "selfPortrait": "Nice to meet you! I'm fine, thanks.",
+            "dialogue": "A: What's your name?\nB: I'm Alex. How are you?\nA: I'm fine, thanks. And you?"
+          }
         },
         {
           "lesson": 4,
@@ -77,7 +107,16 @@ window.COSY_CURRICULUM_A1 = {
           "teacher_notes": "code: \"EN-04\"\ncando: \"Can say where they are from and ask about nationality\"\nspeaking: \"Asking origins and nationalities in international group\"\nlistening: \"Passport control interviews\"\nreading: \"Reading passport profiles\"\nwriting: \"Write 5 sentences about origins of famous people\"",
           "recycled": "Module 1 foundational progression",
           "num": 4,
-          "code": "M01-L04"
+          "code": "M01-L04",
+          "ageAdaptation": {
+            "children": "TPR action story game responding to spoken imperatives ('listen', 'repeat') with energetic physical gestures and rhythm chants.",
+            "teens": "Peer video recording challenge creating short greeting clips and voting on the best polite spoken expressions.",
+            "adults": "Transactional spoken simulations (arriving at a reception desk or customer service counter) focusing on natural polite intonation.",
+            "seniors": "Structured conversational practice simulating community club greetings with audio-supported repetition and ample thinking time."
+          },
+          "growingTask": {
+            "dialogue": "A: Welcome! Excuse me, is this the English class?\nB: Yes, it is! Take care and see you later."
+          }
         },
         {
           "lesson": 5,
@@ -95,7 +134,13 @@ window.COSY_CURRICULUM_A1 = {
           "teacher_notes": "code: \"EN-05\"\ncando: \"Can talk about languages spoken and state abilities\"\nspeaking: \"Surveying classmates about languages spoken\"\nlistening: \"Interviews with polyglots\"\nreading: \"Language portfolio descriptions\"\nwriting: \"Write 5 sentences about your language abilities\"",
           "recycled": "Module 1 foundational progression",
           "num": 5,
-          "code": "M01-L05"
+          "code": "M01-L05",
+          "ageAdaptation": {
+            "children": "Interactive review board game with visual station challenges for spelling, greeting puppets, and 'to be' chant rewards.",
+            "teens": "Gamified digital quiz competition with instant leaderboard feedback covering alphabet, greetings, and 'to be' questions.",
+            "adults": "Self-assessment check-grid with targeted error-analysis exercise and practical written/spoken grammar review tasks.",
+            "seniors": "Unhurried paper-based or group review session with clear visual layouts, reviewing core Unit 1 concepts through shared recall."
+          }
         },
         {
           "lesson": 6,
@@ -223,7 +268,17 @@ window.COSY_CURRICULUM_A1 = {
           "teacher_notes": "code: \"M02-L01\"\ncando: \"Can talk about family members, describe relationships, introduce relatives\"",
           "recycled": "Numbers 0-100, personal details, possessive adjectives",
           "num": 1,
-          "code": "M02-L01"
+          "code": "M02-L01",
+          "ageAdaptation": {
+            "children": "World map flag-matching game with physical country tag racing and chant drills for nationalities.",
+            "teens": "Digital map quiz racing peers to identify flag icons and spell nationality adjectives online.",
+            "adults": "Business origin introductions and travel document reading exercises focusing on capital letter capitalization rules.",
+            "seniors": "Large-print geographical card sorting with steady pronunciation practice for country and language pairs."
+          },
+          "growingTask": {
+            "selfPortrait": "I am from France. I speak French and English.",
+            "dialogue": "A: Where are you from?\nB: I am from France. I speak French."
+          }
         },
         {
           "lesson": 2,
@@ -251,7 +306,17 @@ window.COSY_CURRICULUM_A1 = {
           "teacher_notes": "code: \"M02-L02\"\ncando: \"Can describe themselves and other people\"",
           "recycled": "Family vocabulary, verb have, possessive adjectives",
           "num": 2,
-          "code": "M02-L02"
+          "code": "M02-L02",
+          "ageAdaptation": {
+            "children": "Famous cartoon character guessing game using 'Where is he/she from?' card prompts and movement responses.",
+            "teens": "Avatar celebrity origin trivia challenge with digital polls and timed third-person question rounds.",
+            "adults": "International team profile review practicing third-person singular and plural 'to be' origin statements.",
+            "seniors": "Paired picture inquiry using clear pronoun visual charts ('he is' / 'they are') in a calm, structured dialogue."
+          },
+          "growingTask": {
+            "selfPortrait": "My friend is from Italy. She is Italian.",
+            "dialogue": "A: Where is she from?\nB: She is from Italy. She is Italian."
+          }
         },
         {
           "lesson": 3,
@@ -274,7 +339,17 @@ window.COSY_CURRICULUM_A1 = {
           "teacher_notes": "code: \"M02-L03\"\ncando: \"Can describe personality and state basic impressions\"",
           "recycled": "Personal appearance, verb to be",
           "num": 3,
-          "code": "M02-L03"
+          "code": "M02-L03",
+          "ageAdaptation": {
+            "children": "Roleplay passport stamp activity where kids 'fly' between classroom stations and state where they live.",
+            "teens": "Interactive messaging simulation filling out student profile bios with residence and spoken language details.",
+            "adults": "Expat relocation profile workshop contrasting 'come from' (origin) and 'live in' (current residence).",
+            "seniors": "Guided interview exercise sharing life background, native languages, and current city residence with steady repetition."
+          },
+          "growingTask": {
+            "selfPortrait": "I come from France, but I live in London.",
+            "dialogue": "A: Where do you live?\nB: I live in London, but I come from France."
+          }
         }
       ],
       "num": 2,
@@ -311,7 +386,17 @@ window.COSY_CURRICULUM_A1 = {
           "teacher_notes": "code: \"M03-L01\"\ncando: \"Can identify objects, ask what something is, ask for objects\"",
           "recycled": "Subject pronouns, verb to be, basic adjectives",
           "num": 1,
-          "code": "M03-L01"
+          "code": "M03-L01",
+          "ageAdaptation": {
+            "children": "Drawing a cartoon family tree with puppet roleplays stating ages and family titles.",
+            "teens": "Digital photo story creation building a family tree slideshow with ages and names.",
+            "adults": "Practical family background introductions focusing on numbers 1–100 and plural noun forms.",
+            "seniors": "Sharing family photographs in pairs with comfortable turn-taking and large-print age cards."
+          },
+          "growingTask": {
+            "selfPortrait": "My mother is 50 years old. I have one brother and one sister.",
+            "dialogue": "A: How old is your mother?\nB: She is 50 years old."
+          }
         },
         {
           "lesson": 2,
@@ -330,7 +415,17 @@ window.COSY_CURRICULUM_A1 = {
           "teacher_notes": "code: \"M03-L02\"\ncando: \"Can talk about things they own and ask about ownership\"",
           "recycled": "Everyday objects, demonstratives, possessive adjectives",
           "num": 2,
-          "code": "M03-L02"
+          "code": "M03-L02",
+          "ageAdaptation": {
+            "children": "Object-matching game with physical tags identifying 'his car' / 'her hat' / 'their toys'.",
+            "teens": "Whiteboard team race matching possessive adjectives to celebrity family trees.",
+            "adults": "Structural possessive breakdown contrasting possessive 's ('John's father') vs verb 'to be' ('John's tall').",
+            "seniors": "Guided visual chart practice clarifying 'his' vs 'her' through structured picture prompts."
+          },
+          "growingTask": {
+            "selfPortrait": "My brother's name is Mark. His wife is my aunt's daughter.",
+            "dialogue": "A: What is your brother's name?\nB: His name is Mark."
+          }
         },
         {
           "lesson": 3,
@@ -354,7 +449,17 @@ window.COSY_CURRICULUM_A1 = {
           "teacher_notes": "code: \"M03-L03\"\ncando: \"Can describe objects and identify things by color, shape and size\"",
           "recycled": "Everyday objects, articles, possessive pronouns",
           "num": 3,
-          "code": "M03-L03"
+          "code": "M03-L03",
+          "ageAdaptation": {
+            "children": "Flashcard comparison game describing older vs younger siblings using funny avatar drawings.",
+            "teens": "Pair-matching activity creating digital profiles describing marital status and family closeness.",
+            "adults": "Structured writing task building a 5-sentence family description with 'have/has got'.",
+            "seniors": "Conversational photo-sharing circle discussing family members and who looks like whom."
+          },
+          "growingTask": {
+            "selfPortrait": "My younger sister is single. We live together in a close family.",
+            "dialogue": "A: Is your sister married?\nB: No, she is single. We live together."
+          }
         }
       ],
       "num": 3,
@@ -387,7 +492,17 @@ window.COSY_CURRICULUM_A1 = {
           "teacher_notes": "code: \"M04-L01\"\ncando: \"Can say where they live and describe their home\"",
           "recycled": "Personal details, basic adjectives, demonstratives",
           "num": 1,
-          "code": "M04-L01"
+          "code": "M04-L01",
+          "ageAdaptation": {
+            "children": "Building a toy house with block furniture and hiding toy animals under/on/next to objects.",
+            "teens": "Designing a digital floorplan using interactive interior design tools and labeling furniture locations.",
+            "adults": "Real estate location description drills placing furniture accurately using prepositions of place.",
+            "seniors": "Describing room arrangements from memory using clear preposition cards in unhurried pair work."
+          },
+          "growingTask": {
+            "selfPortrait": "My desk is in front of the window in my bedroom.",
+            "dialogue": "A: Where is the table?\nB: The table is in the kitchen next to the door."
+          }
         },
         {
           "lesson": 2,
@@ -407,7 +522,17 @@ window.COSY_CURRICULUM_A1 = {
           "teacher_notes": "code: \"M04-L02\"\ncando: \"Can describe rooms and say where things are\"",
           "recycled": "Types of homes, everyday objects, articles",
           "num": 2,
-          "code": "M04-L02"
+          "code": "M04-L02",
+          "ageAdaptation": {
+            "children": "Memory game observing a room illustration for 10 seconds, then stating 'There is a...' / 'There are two...'.",
+            "teens": "Digital room inspection quiz identifying differences between two photo interiors using 'there is/are'.",
+            "adults": "Rental apartment verification roleplay listing amenities using 'there is/are' positive and negative forms.",
+            "seniors": "Guided visual checklists describing living room contents using large-print contrast charts."
+          },
+          "growingTask": {
+            "selfPortrait": "There is a sofa and a television in my living room.",
+            "dialogue": "A: Is there a balcony in the flat?\nB: Yes, there is. There are two rooms."
+          }
         },
         {
           "lesson": 3,
@@ -430,7 +555,17 @@ window.COSY_CURRICULUM_A1 = {
           "teacher_notes": "code: \"M04-L03\"\ncando: \"Can describe their home interior and locate objects\"",
           "recycled": "Rooms, there is / there are, everyday objects",
           "num": 3,
-          "code": "M04-L03"
+          "code": "M04-L03",
+          "ageAdaptation": {
+            "children": "Drawing a 'cozy' or 'big' dream house and presenting descriptive adjectives with visual gestures.",
+            "teens": "Writing a social media post evaluating a living space using opinion and size adjectives.",
+            "adults": "Writing a descriptive email to a penpal detailing apartment rental features, size, and environment.",
+            "seniors": "Pair exchanges comparing quiet vs noisy neighborhoods and cozy home features using clear adjective scales."
+          },
+          "growingTask": {
+            "selfPortrait": "I live in a small, quiet flat. It is very cozy and clean.",
+            "dialogue": "A: Is your house big?\nB: No, it is small, but it is comfortable and quiet."
+          }
         },
         {
           "lesson": 4,
@@ -454,7 +589,16 @@ window.COSY_CURRICULUM_A1 = {
           "teacher_notes": "code: \"M04-L04\"\ncando: \"Can talk about home activities and understand instructions\"",
           "recycled": "Furniture and household items, prepositions of place",
           "num": 4,
-          "code": "M04-L04"
+          "code": "M04-L04",
+          "ageAdaptation": {
+            "children": "Fantasy home presentation describing an ideal room with a view of a park or garden.",
+            "teens": "Recording a 1-minute video blog pitching a dream house design with spatial preferences.",
+            "adults": "Conversational roleplays discussing housing choices, views, and proximity to amenities.",
+            "seniors": "Structured conversation sharing ideal living preferences with audio-supported repetition."
+          },
+          "growingTask": {
+            "dialogue": "A: What is your dream house like?\nB: I like a cozy house near the park. It has got a beautiful view."
+          }
         }
       ],
       "num": 4,
@@ -492,7 +636,17 @@ window.COSY_CURRICULUM_A1 = {
           "writing": "Write 5 sentences about food in your kitchen",
           "task": "Kitchen inventory check",
           "cando": "I can identify basic food items by category (fruit, vegetables, meat, fish, dairy).",
-          "hw": "List 10 food items in your fridge"
+          "hw": "List 10 food items in your fridge",
+          "ageAdaptation": {
+            "children": "Pantomime action game acting out morning routines ('brush teeth', 'wake up') with clock face practice.",
+            "teens": "Digital routine timeline creation mapping daily schedules with clock icons.",
+            "adults": "Work-life balance timetable analysis practicing precise time prepositions ('at 7 o'clock').",
+            "seniors": "Daily activity recall in pairs using large clock visual aids and clear verb repetition."
+          },
+          "growingTask": {
+            "selfPortrait": "I wake up at 7 o'clock in the morning. I go to bed at 11 o'clock.",
+            "dialogue": "A: What time do you wake up?\nB: I wake up at 7 o'clock."
+          }
         },
         {
           "code": "EN-052",
@@ -520,7 +674,17 @@ window.COSY_CURRICULUM_A1 = {
           "writing": "Write a short paragraph about your daily meals",
           "task": "Meal schedule survey",
           "cando": "I can describe my daily meals and express what I like to eat and drink.",
-          "hw": "Write 5 sentences about what you eat for breakfast and dinner"
+          "hw": "Write 5 sentences about what you eat for breakfast and dinner",
+          "ageAdaptation": {
+            "children": "Habit frequency scale activity placing cards ('always', 'never') on a weekly chart with physical actions.",
+            "teens": "Interactive poll rating daily habits (gaming, studying) with frequency adverbs.",
+            "adults": "Grammar position drill placing adverbs of frequency correctly before main verbs.",
+            "seniors": "Pair discussion on weekly routines using clear percentage frequency charts."
+          },
+          "growingTask": {
+            "selfPortrait": "I usually drink coffee in the morning. On weekdays, I always start work at 9.",
+            "dialogue": "A: Do you always drink coffee in the morning?\nB: Yes, I always do."
+          }
         },
         {
           "code": "EN-053",
@@ -548,7 +712,17 @@ window.COSY_CURRICULUM_A1 = {
           "writing": "Write a short drink order dialogue",
           "task": "Café ordering roleplay",
           "cando": "I can order hot and cold drinks politely in a café or bar.",
-          "hw": "Write a dialogue ordering coffee and water at a café"
+          "hw": "Write a dialogue ordering coffee and water at a café",
+          "ageAdaptation": {
+            "children": "Comic strip sequencing task using 'first, then, after that, finally' to arrange a daily story.",
+            "teens": "Creating a vlog script connecting daily activities chronologically with transition words.",
+            "adults": "Paragraph construction exercise describing a typical busy workday using sequence markers.",
+            "seniors": "Structured recall sharing weekend habits chronologically with gentle prompt cards."
+          },
+          "growingTask": {
+            "selfPortrait": "First, I have breakfast. Then, I go to work. After that, I go home.",
+            "dialogue": "A: What do you do on your day off?\nB: First I wake up late. Then I meet friends."
+          }
         },
         {
           "code": "EN-054",
@@ -576,7 +750,16 @@ window.COSY_CURRICULUM_A1 = {
           "writing": "Write a restaurant meal order",
           "task": "Restaurant dining roleplay",
           "cando": "I can read a menu, ask about dishes, and order a full meal at a restaurant.",
-          "hw": "Design a 3-course dinner menu with prices"
+          "hw": "Design a 3-course dinner menu with prices",
+          "ageAdaptation": {
+            "children": "Interviewer roleplay holding a toy microphone and asking classmates about their schedules.",
+            "teens": "Pair interview recording activity presenting a summary of a partner's daily routine.",
+            "adults": "Communicative interview simulation asking precise Present Simple routine questions.",
+            "seniors": "Pair interview exchanges sharing daily habits at a relaxed pace with structured guides."
+          },
+          "growingTask": {
+            "dialogue": "A: What time do you usually wake up?\nB: I usually wake up at 7. What do you do after that?\nA: Then I have breakfast."
+          }
         },
         {
           "code": "EN-055",
@@ -606,7 +789,13 @@ window.COSY_CURRICULUM_A1 = {
           "writing": "Write 5 imperative steps for a simple recipe",
           "task": "Recipe instruction exchange",
           "cando": "I can explain basic cooking steps and list ingredients for a simple recipe.",
-          "hw": "Write down ingredients and steps for your favorite simple dish"
+          "hw": "Write down ingredients and steps for your favorite simple dish",
+          "ageAdaptation": {
+            "children": "Timetable board game review matching routines, times, and adverbs.",
+            "teens": "Digital speed review quiz testing frequency adverbs and Present Simple forms.",
+            "adults": "Self-assessment checklist and written error-correction exercise on routines.",
+            "seniors": "Paper-based review exercise summarizing daily schedule concepts calmly."
+          }
         },
         {
           "code": "EN-056",
