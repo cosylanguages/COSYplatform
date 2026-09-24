@@ -462,8 +462,445 @@ MODULE_TEMPLATES = [
              ["My daily tech habits", "Smartphone and laptop use", "Digital communication", "Useful apps"],
              "what-does-this-word-mean")
         ]
+    },
+    # Module 16
+    {
+        "modNum": 16, "code": "M16", "unit": 16,
+        "label": {"en": "CELEBRATIONS, CULTURE & EVENTS", "fr": "CÉLÉBRATIONS, CULTURE & ÉVÉNEMENTS", "it": "FESTEGGIAMENTI, CULTURA ED EVENTI", "ru": "ПРАЗДНИКИ, КУЛЬТУРА И СОБЫТИЯ", "el": "ΓΙΟΡΤΕΣ, CULTURA ΚΑΙ ΕΚΔΗΛΩΣΕΙΣ"},
+        "title": {"en": "MODULE 16. CELEBRATIONS, CULTURE & EVENTS", "fr": "MODULE 16. CÉLÉBRATIONS, CULTURE & ÉVÉNEMENTS", "it": "MODULE 16. FESTEGGIAMENTI, CULTURA ED EVENTI", "ru": "MODULE 16. ПРАЗДНИКИ, КУЛЬТУРА И СОБЫТИЯ", "el": "MODULE 16. ΓΙΟΡΤΕΣ, CULTURA ΚΑΙ ΕΚΔΗΛΩΣΕΙΣ"},
+        "arc": {"en": "Personal celebrations, party invitations, national holidays, cultural outings, social events and capstone project", "fr": "Fêtes personnelles, invitations, fêtes nationales, sorties culturelles, événements sociaux et projet final", "it": "Feste personali, inviti, feste nazionali, uscite culturali, eventi sociali e progetto finale", "ru": "Личные праздники, приглашения, национальные традиции, культурный досуг, встречи и итоговый проект", "el": "Προσωπικές γιορτές, προσκλήσεις, εθνικές παραδόσεις, πολιτιστικές έξοδοι, κοινωνικές εκδηλώσεις και τελικό έργο"},
+        "lessons": [
+            ("m16-l01-birthdays-and-personal-celebrations", 1,
+             {"en": "16.1 Birthdays & Personal Celebrations", "fr": "16.1 Anniversaires & Fêtes personnelles", "it": "16.1 Compleanni e Feste personali", "ru": "16.1 Дни рождения и личные праздники", "el": "16.1 Γενέθλια και προσωπικές γιορτές"},
+             {"en": "I can talk about birthdays, gifts, and personal celebrations.", "fr": "Je peux parler des anniversaires, des cadeaux et des fêtes personnelles.", "it": "Posso parlare di compleanni, regali e feste personali.", "ru": "Я могу говорить о днях рождения, подарках и личных праздниках.", "el": "Μπορώ να μιλήσω για γενέθλια, δώρα και προσωπικές γιορτές."},
+             ["birthday", "party", "gift", "cake", "card", "celebrate", "invite", "guest"],
+             ["Happy birthday!", "When is your birthday?", "Here is a gift for you", "Celebrate with friends"],
+             "i-have-a-question"),
+            ("m16-l02-invitations-and-party-planning", 2,
+             {"en": "16.2 Invitations & Party Planning", "fr": "16.2 Invitations & Organisation de fêtes", "it": "16.2 Inviti e Organizzazione di feste", "ru": "16.2 Приглашения и организация праздников", "el": "16.2 Προσκλήσεις και οργάνωση πάρτι"},
+             {"en": "I can invite people to a party and respond to invitations.", "fr": "Je peux inviter des personnes à une fête et répondre aux invitations.", "it": "Posso invitare persone a una festa e rispondere agli inviti.", "ru": "Я могу приглашать на праздник и отвечать на приглашения.", "el": "Μπορώ να προσκαλέσω άτομα σε πάρτι και να απαντήσω σε προσκλήσεις."},
+             ["invitation", "accept", "decline", "bring", "food", "drink", "music", "time"],
+             ["Would you like to come?", "I would love to!", "Sorry, I cannot come", "What time does it start?"],
+             "how-much-does-this-cost"),
+            ("m16-l03-holidays-and-national-traditions", 3,
+             {"en": "16.3 Holidays & National Traditions", "fr": "16.3 Fêtes & Traditions nationales", "it": "16.3 Feste e Tradizioni nazionali", "ru": "16.3 Праздники и национальные традиции", "el": "16.3 Γιορτές και εθνικές παραδόσεις"},
+             {"en": "I can describe national holidays, family customs, and seasonal celebrations.", "fr": "Je peux décrire des fêtes nationales, des coutumes familiales et des célébrations.", "it": "Posso descrivere feste nazionali, usanze familiari e celebrazioni.", "ru": "Я могу описывать национальные праздники, семейные обычаи и традиции.", "el": "Μπορώ να περιγράψω εθνικές γιορτές, οικογενειακά έθιμα και παραδόσεις."},
+             ["holiday", "festival", "tradition", "family", "food", "winter", "summer", "year"],
+             ["How do you celebrate...?", "We usually eat...", "It is a tradition", "Happy New Year!"],
+             "what-time-is-it"),
+            ("m16-l04-cultural-outings-and-venues", 4,
+             {"en": "16.4 Cultural Outings & Venues", "fr": "16.4 Sorties culturelles & Lieux", "it": "16.4 Uscite culturali e Luoghi", "ru": "16.4 Культурный досуг и места", "el": "16.4 Πολιτιστικές έξοδοι και χώροι"},
+             {"en": "I can talk about visiting museums, cinemas, theatres, and concerts.", "fr": "Je peux parler de visites aux musées, cinémas, théâtres et concerts.", "it": "Posso parlare di visite a musei, cinema, teatri e concerti.", "ru": "Я могу говорить о посещении музеев, кино, театров и концертов.", "el": "Μπορώ να μιλήσω για επισκέψεις σε μουσεία, σινεμά, θέατρα και συναυλίες."},
+             ["museum", "cinema", "theatre", "concert", "ticket", "artist", "show", "place"],
+             ["There is a concert on Friday", "Let us go to the cinema", "I want to visit the museum", "How much are the tickets?"],
+             "what-does-this-word-mean"),
+            ("m16-l05-social-events-and-going-out", 5,
+             {"en": "16.5 Social Events & Going Out", "fr": "16.5 Événements sociaux & Sorties", "it": "16.5 Eventi sociali e Uscite", "ru": "16.5 Социальные события и встречи", "el": "16.5 Κοινωνικές εκδηλώσεις και έξοδοι"},
+             {"en": "I can arrange to meet friends for social events and outings.", "fr": "Je peux m'organiser pour rencontrer des amis lors d'événements et sorties.", "it": "Posso organizzare incontri con amici per eventi sociali ed uscite.", "ru": "Я могу договариваться о встрече с друзьями на мероприятиях и прогулках.", "el": "Μπορώ να κανονίσω να συναντήσω φίλους για εκδηλώσεις και εξόδους."},
+             ["meet", "friend", "weekend", "restaurant", "park", "event", "plan", "time"],
+             ["Let us meet at 7 PM", "Shall we go out tonight?", "Where do you want to meet?", "Sounds like a great plan!"],
+             "what-time-is-it"),
+            ("m16-l06-celebrations-and-cultural-events-capstone", 6,
+             {"en": "16.6 Celebrations & Cultural Events Capstone", "fr": "16.6 Bilan : Célébrations & Événements culturels", "it": "16.6 Sintesi: Festeggiamenti ed Eventi culturali", "ru": "16.6 Итоговый урок: Праздники и культура", "el": "16.6 Ανακεφαλαίωση: Γιορτές και εκδηλώσεις"},
+             {"en": "I can present a plan for a holiday celebration or cultural outing.", "fr": "Je peux présenter un projet de fête ou de sortie culturelle.", "it": "Posso presentare un piano per una festa o un'uscita culturale.", "ru": "Я могу представить план праздника или культурного мероприятия.", "el": "Μπορώ να παρουσιάσω ένα σχέδιο για μια γιορτή ή πολιτιστική έξοδο."},
+             ["party", "event", "celebrate", "music", "food", "guest", "time", "place"],
+             ["I am planning a celebration", "We will meet at...", "The event includes...", "Everyone is welcome!"],
+             "i-have-a-question")
+        ]
+    },
+    # Module 17
+    {
+        "modNum": 17, "code": "M17", "unit": 17,
+        "label": {"en": "PAST EXPERIENCES", "fr": "EXPÉRIENCES PASSÉES", "it": "ESPERIENZE PASSATE", "ru": "ПРОШЛЫЙ ОПЫТ", "el": "ΠΑΡΕΛΘΟΝΤΙΚΕΣ ΕΜΠΕΙΡΙΕΣ"},
+        "title": {"en": "MODULE 17. PAST EXPERIENCES (MOVING TOWARDS A2)", "fr": "MODULE 17. EXPÉRIENCES PASSÉES (VERS A2)", "it": "MODULE 17. ESPERIENZE PASSATE (VERSO A2)", "ru": "MODULE 17. ПРОШЛЫЙ ОПЫТ (ПЕРЕХОД К A2)", "el": "MODULE 17. ΠΑΡΕΛΘΟΝΤΙΚΕΣ ΕΜΠΕΙΡΙΕΣ (ΠΡΟΣ A2)"},
+        "arc": {"en": "Talking about past events, yesterday, weekends, childhood memories, travel, and personal milestones", "fr": "Parler d'événements passés, d'hier, des week-ends, de l'enfance, des voyages et étapes personnelles", "it": "Parlare di eventi passati, ieri, fine settimana, ricordi d'infanzia, viaggi e tappe personali", "ru": "Рассказы о прошлом, вчерашнем дне, выходных, детстве, путешествиях и важных событиях", "el": "Συζήτηση για παρελθοντικά γεγονότα, χθες, Σαββατοκύριακα, παιδικές αναμνήσεις, ταξίδια και σταθμούς της ζωής"},
+        "lessons": [
+            ("m17-l01-yesterday-and-recent-past", 1,
+             {"en": "17.1 Yesterday & Recent Past", "fr": "17.1 Hier & Passé récent", "it": "17.1 Ieri e Passato recente", "ru": "17.1 Вчера и недавнее прошлое", "el": "17.1 Χθες και πρόσφατο παρελθόν"},
+             {"en": "I can talk about actions I completed yesterday or last week.", "fr": "Je peux parler d'actions accomplies hier ou la semaine dernière.", "it": "Posso parlare di azioni completate ieri o la settimana scorsa.", "ru": "Я могу говорить о действиях, совершенных вчера или на прошлой неделе.", "el": "Μπορώ να μιλήσω για ενέργειες που ολοκλήρωσα χθες ή την προηγούμενη εβδομάδα."},
+             ["yesterday", "last", "week", "work", "visit", "watch", "cook", "stay"],
+             ["What did you do yesterday?", "Yesterday I worked", "Last week I visited...", "I stayed at home"],
+             "i-have-a-question"),
+            ("m17-l02-weekend-activities-and-past-events", 2,
+             {"en": "17.2 Weekend Activities & Past Events", "fr": "17.2 Activités du week-end & Événements passés", "it": "17.2 Attività del fine settimana ed Eventi passati", "ru": "17.2 Выходные и прошлые события", "el": "17.2 Δραστηριότητες Σαββατοκύριακου"},
+             {"en": "I can describe what I did over the weekend and during past events.", "fr": "Je peux décrire ce que j'ai fait le week-end et lors d'événements passés.", "it": "Posso descrivere cosa ho fatto nel fine settimana e durante eventi passati.", "ru": "Я могу описывать, что делал на выходных и на прошедших мероприятиях.", "el": "Μπορώ να περιγράψω τι έκανα το Σαββατοκύριακο και σε παρελθοντικές εκδηλώσεις."},
+             ["weekend", "friend", "go", "see", "buy", "eat", "meet", "enjoy"],
+             ["How was your weekend?", "It was great!", "I went to the park", "I met my friends"],
+             "i-have-a-question"),
+            ("m17-l03-childhood-and-early-memories", 3,
+             {"en": "17.3 Childhood & Early Memories", "fr": "17.3 Enfance & Souvenirs d'enfance", "it": "17.3 Infanzia e Primi ricordi", "ru": "17.3 Детство и первые воспоминания", "el": "17.3 Παιδική ηλικία και αναμνήσεις"},
+             {"en": "I can share simple facts and memories from my childhood.", "fr": "Je peux partager de simples souvenirs de mon enfance.", "it": "Posso condividere semplici ricordi della mia infanzia.", "ru": "Я могу делиться простыми фактами и воспоминаниями из детства.", "el": "Μπορώ να μοιραστώ απλές αναμνήσεις από την παιδική μου ηλικία."},
+             ["childhood", "school", "memory", "live", "like", "friend", "play", "young"],
+             ["When I was young...", "I lived in a small town", "My favorite memory was...", "I loved playing outside"],
+             "i-have-a-question"),
+            ("m17-l04-past-travel-and-holidays", 4,
+             {"en": "17.4 Past Travel & Holidays", "fr": "17.4 Voyages passés & Vacances", "it": "17.4 Viaggi passati e Vacanze", "ru": "17.4 Прошлые путешествия и отпуск", "el": "17.4 Παρελθοντικά ταξίδια και διακοπές"},
+             {"en": "I can describe a holiday trip I took in the past.", "fr": "Je peux décrire un voyage ou des vacances passées.", "it": "Posso descrivere un viaggio o una vacanza passata.", "ru": "Я могу рассказывать о поездке или отпуске в прошлом.", "el": "Μπορώ να περιγράψω ένα ταξίδι ή διακοπές στο παρελθόν."},
+             ["travel", "holiday", "hotel", "beach", "city", "country", "flight", "visit"],
+             ["Where did you go on holiday?", "I traveled to France", "We stayed in a hotel", "It was a fantastic trip"],
+             "what-does-this-word-mean"),
+            ("m17-l05-life-events-and-personal-milestones", 5,
+             {"en": "17.5 Life Events & Personal Milestones", "fr": "17.5 Événements de la vie & Étapes clés", "it": "17.5 Eventi della vita e Tappe personali", "ru": "17.5 Жизненные события и важные этапы", "el": "17.5 Γεγονότα ζωής και σημαντικοί σταθμοί"},
+             {"en": "I can speak about major life milestones like moving, finishing school, or starting a job.", "fr": "Je peux parler des grandes étapes de la vie (déménagement, fin d'études, début d'emploi).", "it": "Posso parlare di tappe importanti (trasferimento, fine studi, nuovo lavoro).", "ru": "Я могу говорить о главных этапах жизни (переезд, учеба, новая работа).", "el": "Μπορώ να μιλήσω για σημαντικούς σταθμούς της ζωής (μετακόμιση, σπουδές, εργασία)."},
+             ["born", "move", "start", "finish", "study", "job", "change", "year"],
+             ["I was born in...", "In 2020 I moved to...", "I started a new job", "When did you finish school?"],
+             "i-have-a-question"),
+            ("m17-l06-past-experiences-capstone", 6,
+             {"en": "17.6 Past Experiences Portfolio Capstone", "fr": "17.6 Bilan : Expériences passées", "it": "17.6 Sintesi: Esperienze passate", "ru": "17.6 Итоговый урок: Прошлый опыт", "el": "17.6 Ανακεφαλαίωση: Παρελθοντικές εμπειρίες"},
+             {"en": "I can give a short talk summarizing an important past experience.", "fr": "Je peux faire un court exposé résumant une expérience passée importante.", "it": "Posso fare una breve presentazione su un'importante esperienza passata.", "ru": "Я могу сделать короткий рассказ о важном событии из прошлого.", "el": "Μπορώ να παρουσιάσω μια σύντομη ανακεφαλαίωση μιας σημαντικής εμπειρίας."},
+             ["past", "experience", "memory", "trip", "event", "story", "life", "year"],
+             ["I want to share a story", "Last year I visited...", "It was a great experience", "In the end everything was fine"],
+             "i-have-a-question")
+        ]
+    },
+    # Module 18
+    {
+        "modNum": 18, "code": "M18", "unit": 18,
+        "label": {"en": "FUTURE PLANS & DREAMS", "fr": "PROJETS FUTURS & RÊVES", "it": "PROGETTI FUTURI E SOGNI", "ru": "ПЛАНЫ НА БУДУЩЕЕ И МЕЧТЫ", "el": "ΜΕΛΛΟΝΤΙΚΑ ΣΧΕΔΙΑ ΚΑΙ ΟΝΕΙΡΑ"},
+        "title": {"en": "MODULE 18. FUTURE PLANS & DREAMS", "fr": "MODULE 18. PROJETS FUTURS & RÊVES", "it": "MODULE 18. PROGETTI FUTURI E SOGNI", "ru": "MODULE 18. ПЛАНЫ НА БУДУЩЕЕ И МЕЧТЫ", "el": "MODULE 18. ΜΕΛΛΟΝΤΙΚΑ ΣΧΕΔΙΑ ΚΑΙ ΟΝΕΙΡΑ"},
+        "arc": {"en": "Immediate future intentions, personal goals, career ambitions, future travel, simple predictions and capstone roadmap", "fr": "Intentions immédiates, objectifs personnels, ambitions, voyages futurs, prédictions simples et feuille de route", "it": "Intenzioni immediate, obiettivi personali, ambizioni lavorative, viaggi futuri, previsioni semplici e mappa del futuro", "ru": "Планы на ближайшее будущее, личные цели, карьера, будущие поездки, простые прогнозы и карта будущего", "el": "Άμεσες προθέσεις, προσωπικοί στόχοι, επαγγελματικές φιλοδοξίες, μελλοντικά ταξίδια, προβλέψεις και χάρτης μέλλοντος"},
+        "lessons": [
+            ("m18-l01-immediate-future-and-personal-plans", 1,
+             {"en": "18.1 Immediate Future & Personal Plans", "fr": "18.1 Futur immédiat & Projets personnels", "it": "18.1 Futuro immediato e Progetti personali", "ru": "18.1 Ближайшее будущее и личные планы", "el": "18.1 Άμεσο μέλλον και προσωπικά σχέδια"},
+             {"en": "I can state what I am going to do tomorrow or next week.", "fr": "Je peux dire ce que je vais faire demain ou la semaine prochaine.", "it": "Posso dire cosa farò domani o la prossima settimana.", "ru": "Я могу говорить о том, что собираюсь делать завтра или на следующей неделе.", "el": "Μπορώ να πω τι πρόκειται να κάνω αύριο ή την επόμενη εβδομάδα."},
+             ["tomorrow", "next", "week", "plan", "visit", "study", "travel", "meet"],
+             ["What are you going to do tomorrow?", "I am going to visit my family", "Next week I plan to...", "I am going to rest"],
+             "i-have-a-question"),
+            ("m18-l02-dreams-and-personal-goals", 2,
+             {"en": "18.2 Dreams & Personal Goals", "fr": "18.2 Rêves & Objectifs personnels", "it": "18.2 Sogni e Obiettivi personali", "ru": "18.2 Мечты и личные цели", "el": "18.2 Όνειρα και προσωπικοί στόχοι"},
+             {"en": "I can talk about my dreams, hopes, and self-improvement goals.", "fr": "Je peux parler de mes rêves, espoirs et objectifs personnels.", "it": "Posso parlare dei miei sogni, speranze e obiettivi personali.", "ru": "Я могу говорить о своих мечтах, надеждах и личных целях.", "el": "Μπορώ να μιλήσω για τα όνειρά μου, τις ελπίδες και τους προσωπικούς μου στόχους."},
+             ["dream", "goal", "hope", "want", "learn", "improve", "future", "language"],
+             ["My goal is to learn...", "I want to improve my English", "I hope to travel more", "In the future I want to..."],
+             "i-have-a-question"),
+            ("m18-l03-career-and-education-plans", 3,
+             {"en": "18.3 Career & Education Plans", "fr": "18.3 Projets professionnels & Études", "it": "18.3 Progetti di carriera ed Istruzione", "ru": "18.3 Картера и планы на учебу", "el": "18.3 Καριέρα και εκπαιδευτικά σχέδια"},
+             {"en": "I can express future intentions regarding work and studies.", "fr": "Je peux exprimer des intentions futures concernant le travail et les études.", "it": "Posso esprimere intenzioni future sul lavoro e gli studi.", "ru": "Я могу выражать намерения относительно будущей работы и учебы.", "el": "Μπορώ να εκφράσω μελλοντικές προθέσεις σχετικά με την εργασία και τις σπουδές."},
+             ["career", "job", "study", "course", "work", "skill", "future", "learn"],
+             ["I want to work as...", "I am going to take a language course", "My career goal is...", "In two years I will..."],
+             "i-have-a-question"),
+            ("m18-l04-future-travel-and-holiday-plans", 4,
+             {"en": "18.4 Future Travel & Holiday Plans", "fr": "18.4 Voyages futurs & Projets de vacances", "it": "18.4 Viaggi futuri e Progetti di vacanza", "ru": "18.4 Будущие путешествия и отпуск", "el": "18.4 Μελλοντικά ταξίδια και διακοπές"},
+             {"en": "I can discuss future travel destinations and holiday intentions.", "fr": "Je peux discuter de destinations de voyage et projets de vacances.", "it": "Posso parlare di destinazioni di viaggio e progetti di vacanza.", "ru": "Я могу обсуждать будущие направления для поездок и планы на отпуск.", "el": "Μπορώ να συζητήσω για μελλοντικούς προορισμούς και διακοπές."},
+             ["travel", "holiday", "country", "city", "visit", "summer", "ticket", "hotel"],
+             ["Where are you going for holiday?", "I plan to visit Italy", "We are going to book tickets", "I would love to go to..."],
+             "what-does-this-word-mean"),
+            ("m18-l05-simple-predictions-and-opinions", 5,
+             {"en": "18.5 Simple Predictions & Opinions About Future", "fr": "18.5 Prédictions simples & Opinions sur l'avenir", "it": "18.5 Semplici previsioni ed Opinioni sul futuro", "ru": "18.5 Простые прогнозы и мнение о будущем", "el": "18.5 Απλές προβλέψεις και γνώμες για το μέλλον"},
+             {"en": "I can make simple predictions about cities, technology, or weather in the future.", "fr": "Je peux faire de simples prédictions sur les villes, la technologie ou le climat.", "it": "Posso fare semplici previsioni su città, tecnologia o clima nel futuro.", "ru": "Я могу делать простые прогнозы о городах, технологиях или погоде в будущем.", "el": "Μπορώ να κάνω απλές προβλέψεις για πόλεις, τεχνολογία ή καιρό στο μέλλον."},
+             ["future", "think", "world", "city", "technology", "change", "environment", "life"],
+             ["I think cities will be green", "Technology will change our lives", "I believe that...", "In ten years..."],
+             "i-have-a-question"),
+            ("m18-l06-future-plans-and-dreams-capstone", 6,
+             {"en": "18.6 Future Plans & Dreams Capstone", "fr": "18.6 Bilan : Projets futurs & Feuille de route", "it": "18.6 Sintesi: Progetti futuri e Mappa del futuro", "ru": "18.6 Итоговый урок: Карта будущего", "el": "18.6 Ανακεφαλαίωση: Μελλοντικά σχέδια"},
+             {"en": "I can present a personal roadmap detailing my short-term and long-term future goals.", "fr": "Je peux présenter une feuille de route personnelle détaillant mes objectifs à court et long terme.", "it": "Posso presentare una mappa personale con i miei obiettivi a breve e lungo termine.", "ru": "Я могу представить личную карту целей на ближайшее и отдаленное будущее.", "el": "Μπορώ να παρουσιάσω έναν προσωπικό χάρτη με τους μελλοντικούς μου στόχους."},
+             ["future", "plan", "goal", "dream", "walk", "hope", "project", "work"],
+             ["My roadmap for the future", "First I am going to...", "Then I want to...", "My ultimate goal is..."],
+             "i-have-a-question")
+        ]
+    },
+    # Module 19
+    {
+        "modNum": 19, "code": "M19", "unit": 19,
+        "label": {"en": "COMPARING MY WORLD", "fr": "COMPARER MON MONDE", "it": "CONFRONTARE IL MIO MONDO", "ru": "СРАВНЕНИЕ ОКРУЖАЮЩЕГО МИРА", "el": "ΣΥΓΚΡΙΣΗ ΤΟΥ ΚΟΣΜΟΥ ΜΟΥ"},
+        "title": {"en": "MODULE 19. COMPARING MY WORLD", "fr": "MODULE 19. COMPARER MON MONDE", "it": "MODULE 19. CONFRONTARE IL MIO MONDO", "ru": "MODULE 19. СРАВНЕНИЕ ОКРУЖАЮЩЕГО МИРА", "el": "MODULE 19. ΣΥΓΚΡΙΣΗ ΤΟΥ ΚΟΣΜΟΥ ΜΟΥ"},
+        "arc": {"en": "Comparing objects, people, places, lifestyles, preferences, recommendations and comparative capstone", "fr": "Comparer les objets, personnes, lieux, modes de vie, préférences, recommandations et bilan", "it": "Confrontare oggetti, persone, luoghi, stili di vita, preferenze, raccomandazioni e sintesi", "ru": "Сравнение предметов, людей, мест, образа жизни, предпочтения, рекомендации и итоговый проект", "el": "Σύγκριση αντικειμένων, ανθρώπων, μερών, τρόπων ζωής, προτιμήσεων, συστάσεων και ανακεφαλαίωση"},
+        "lessons": [
+            ("m19-l01-comparing-people-and-physical-objects", 1,
+             {"en": "19.1 Comparing People & Physical Objects", "fr": "19.1 Comparer personnes & Objets physiques", "it": "19.1 Confrontare persone ed Oggetti fisici", "ru": "19.1 Сравнение людей и предметов", "el": "19.1 Σύγκριση ανθρώπων και αντικειμένων"},
+             {"en": "I can compare two people or objects using simple comparative words.", "fr": "Je peux comparer deux personnes ou objets avec des comparatifs simples.", "it": "Posso confrontare due persone o oggetti usando semplici comparativi.", "ru": "Я могу сравнивать двух людей или предметы, используя слова сравнения.", "el": "Μπορώ να συγκρίνω δύο ανθρώπους ή αντικείμενα χρησιμοποιώντας απλές συγκρίσεις."},
+             ["big", "small", "fast", "slow", "cheap", "expensive", "tall", "short"],
+             ["This phone is bigger than that one", "A car is faster than a bike", "Which one is cheaper?", "He is taller than me"],
+             "how-much-does-this-cost"),
+            ("m19-l02-comparing-places-and-cities", 2,
+             {"en": "19.2 Comparing Places & Cities", "fr": "19.2 Comparer villes & Lieux", "it": "19.2 Confrontare città e Luoghi", "ru": "19.2 Сравнение городов и мест", "el": "19.2 Σύγκριση πόλεων και μερών"},
+             {"en": "I can compare life in different cities, towns, or countries.", "fr": "Je peux comparer la vie dans différentes villes, villages ou pays.", "it": "Posso confrontare la vita in diverse città, paesi o nazioni.", "ru": "Я могу сравнивать жизнь в разных городах, поселках или странах.", "el": "Μπορώ να συγκρίνω τη ζωή σε διαφορετικές πόλεις ή χώρες."},
+             ["city", "village", "quiet", "noisy", "modern", "old", "clean", "large"],
+             ["My city is larger than...", "Life in a village is quieter", "Which city is more modern?", "It is cleaner here"],
+             "what-does-this-word-mean"),
+            ("m19-l03-comparing-lifestyles-and-habits", 3,
+             {"en": "19.3 Comparing Lifestyles & Habits", "fr": "19.3 Comparer modes de vie & Habitudes", "it": "19.3 Confrontare stili di vita ed Abitudini", "ru": "19.3 Сравнение образа жизни и привычек", "el": "19.3 Σύγκριση τρόπου ζωής και συνηθειών"},
+             {"en": "I can compare modern vs traditional lifestyles and daily habits.", "fr": "Je peux comparer les modes de vie modernes et traditionnels.", "it": "Posso confrontare stili di vita moderni e tradizionali.", "ru": "Я могу сравнивать современный и традиционный образ жизни и привычки.", "el": "Μπορώ να συγκρίνω τον σύγχρονο και τον παραδοσιακό τρόπο ζωής."},
+             ["lifestyle", "routine", "busy", "relaxed", "healthy", "active", "habit", "work"],
+             ["A healthy lifestyle is better", "My routine is busier now", "Working online is more comfortable", "Life was simpler"],
+             "i-have-a-question"),
+            ("m19-l04-likes-dislikes-and-preferences", 4,
+             {"en": "19.4 Likes, Dislikes & Preferences", "fr": "19.4 Goûts, Dégoûts & Préférences", "it": "19.4 Gusti, Disgusti e Preferenze", "ru": "19.4 Предпочтения и выбор", "el": "19.4 Προτιμήσεις και επιλογές"},
+             {"en": "I can express preferences and choose between different options.", "fr": "Je peux exprimer des préférences et choisir entre différentes options.", "it": "Posso esprimere preferenze e scegliere tra diverse opzioni.", "ru": "Я могу выражать предпочтения и делать выбор между вариантами.", "el": "Μπορώ να εκφράσω προτιμήσεις και να επιλέξω ανάμεσα σε επιλογές."},
+             ["prefer", "like", "better", "favorite", "choice", "option", "enjoy", "rather"],
+             ["I prefer tea to coffee", "Which option do you like better?", "This place is better for me", "I would rather choose..."],
+             "i-have-a-question"),
+            ("m19-l05-making-choices-and-recommendations", 5,
+             {"en": "19.5 Making Choices & Recommendations", "fr": "19.5 Faire des choix & Recommandations", "it": "19.5 Fare scelte e Raccomandazioni", "ru": "19.5 Выбор и рекомендации", "el": "19.5 Επιλογές και συστάσεις"},
+             {"en": "I can recommend an option to someone based on a comparison.", "fr": "Je peux recommander une option à quelqu'un sur la base d'une comparaison.", "it": "Posso raccomandare un'opzione a qualcuno in base a un confronto.", "ru": "Я могу рекомендовать вариант на основе сравнения.", "el": "Μπορώ να συστήσω μια επιλογή σε κάποιον με βάση τη σύγκριση."},
+             ["choose", "recommend", "best", "reason", "advantage", "suitable", "opinion", "decide"],
+             ["I recommend this product because...", "The main advantage is...", "Which is the best choice?", "You should choose this one"],
+             "i-have-a-question"),
+            ("m19-l06-comparing-my-world-capstone", 6,
+             {"en": "19.6 Comparing My World Capstone", "fr": "19.6 Bilan : Comparer mon monde", "it": "19.6 Sintesi: Confrontare il mio mondo", "ru": "19.6 Итоговый урок: Сравнение моего мира", "el": "19.6 Ανακεφαλαίωση: Σύγκριση του κόσμου μου"},
+             {"en": "I can give a comparative presentation comparing two products, places, or ways of living.", "fr": "Je peux faire une présentation comparative de deux produits, lieux ou modes de vie.", "it": "Posso fare una presentazione comparativa di due prodotti, luoghi o stili di vita.", "ru": "Я могу выступить с презентацией-сравнением двух товаров, мест или способов жизни.", "el": "Μπορώ να παρουσιάσω μια σύγκριση δύο προϊόντων, μερών ή τρόπων ζωής."},
+             ["comparison", "opinion", "preference", "better", "worse", "advantage", "summary", "choice"],
+             ["Today I am comparing two places", "X is better than Y because...", "In summary I prefer...", "The best option is..."],
+             "i-have-a-question")
+        ]
+    },
+    # Module 20
+    {
+        "modNum": 20, "code": "M20", "unit": 20,
+        "label": {"en": "BASIC OPINIONS & SOCIAL INTERACTION", "fr": "OPINIONS DE BASE & INTERACTIONS", "it": "OPINIONI DI BASE ED INTERAZIONE SOCIALE", "ru": "МНЕНИЯ И СОЦИАЛЬНОЕ ВЗАИМОДЕЙСТВИЕ", "el": "ΒΑΣΙΚΕΣ ΓΝΩΜΕΣ ΚΑΙ ΚΟΙΝΩΝΙΚΗ ΑΛΛΗΛΕΠΙΔΡΑΣΗ"},
+        "title": {"en": "MODULE 20. BASIC OPINIONS & SOCIAL INTERACTION", "fr": "MODULE 20. OPINIONS DE BASE & INTERACTIONS", "it": "MODULE 20. OPINIONS DI BASE ED INTERAZIONE SOCIALE", "ru": "MODULE 20. МНЕНИЯ И СОЦИАЛЬНОЕ ВЗАИМОДЕЙСТВИЕ", "el": "MODULE 20. ΒΑΣΙΚΕΣ ΓΝΩΜΕΣ ΚΑΙ ΚΟΙΝΩΝΙΚΗ ΑΛΛΗΛΕΠΙΔΡΑΣΗ"},
+        "arc": {"en": "Giving opinions, polite agreement/disagreement, handling everyday problems, giving advice, polite requests and capstone survey", "fr": "Donner son avis, accord/désaccord poli, gérer les problèmes quotidiens, conseils, requêtes polies et bilan", "it": "Esprimere opinioni, accordo/disaccordo cortese, gestire problemi quotidiani, consigli, richieste cortesi e sintesi", "ru": "Выражение мнения, вежливое согласие/несогласие, решение бытовых проблем, советы, просьбы и итоговый опрос", "el": "Έκφραση γνώμης, ευγενική συμφωνία/διαφωνία, αντιμετώπιση καθημερινών προβλημάτων, συμβουλές, ευγενικά αιτήματα και ανακεφαλαίωση"},
+        "lessons": [
+            ("m20-l01-expressing-simple-opinions", 1,
+             {"en": "20.1 Expressing Simple Opinions", "fr": "20.1 Exprimer des opinions simples", "it": "20.1 Esprimere semplici opinioni", "ru": "20.1 Выражение простого мнения", "el": "20.1 Έκφραση απλών γνωμών"},
+             {"en": "I can state my opinion clearly on everyday topics and ask others for theirs.", "fr": "Je peux exprimer clairement mon avis sur des sujets quotidiens.", "it": "Posso esprimere chiaramente la mia opinione su argomenti quotidiani.", "ru": "Я могу четко выражать свое мнение по повседневным темам.", "el": "Μπορώ να εκφράσω τη γνώμη μου για καθημερινά θέματα."},
+             ["think", "believe", "opinion", "good", "bad", "interesting", "boring", "important"],
+             ["In my opinion...", "I think that...", "What do you think about...?", "I believe it is important"],
+             "i-have-a-question"),
+            ("m20-l02-agreeing-and-disagreeing-politely", 2,
+             {"en": "20.2 Agreeing & Disagreeing Politely", "fr": "20.2 Exprimer l'accord & le désaccord poli", "it": "20.2 Esprimere accordo e disaccordo con cortesia", "ru": "20.2 Вежливое согласие и несогласие", "el": "20.2 Ευγενική συμφωνία και διαφωνία"},
+             {"en": "I can show agreement or polite disagreement during a simple discussion.", "fr": "Je peux exprimer un accord ou un désaccord poli pendant une discussion.", "it": "Posso mostrare accordo o disaccordo cortese durante una discussione.", "ru": "Я могу выражать согласие или вежливое несогласие в беседе.", "el": "Μπορώ να δείξω συμφωνία ή ευγενική διαφωνία σε μια συζήτηση."},
+             ["agree", "disagree", "right", "wrong", "true", "point", "sure", "respect"],
+             ["I agree with you", "I see your point, but...", "I am not sure about that", "You are right!"],
+             "i-have-a-question"),
+            ("m20-l03-expressing-problems-and-seeking-help", 3,
+             {"en": "20.3 Expressing Problems & Seeking Help", "fr": "20.3 Expliquer un problème & Demander de l'aide", "it": "20.3 Spiegare un problema e Chiedere aiuto", "ru": "20.3 Выражение проблемы и просьба о помощи", "el": "20.3 Έκφραση προβλημάτων και ζήτηση βοήθειας"},
+             {"en": "I can describe everyday problems (lost, broken, late) and ask for assistance.", "fr": "Je peux décrire des problèmes quotidiens (perdu, cassé, en retard) et demander de l'aide.", "it": "Posso descrivere problemi quotidiani (perso, rotto, in ritardo) e chiedere aiuto.", "ru": "Я могу описывать бытовые проблемы (потерял, сломал, опоздал) и просить о помощи.", "el": "Μπορώ να περιγράψω καθημερινά προβλήματα και να ζητήσω βοήθεια."},
+             ["problem", "broken", "lost", "late", "wrong", "help", "fix", "issue"],
+             ["I have a problem", "My phone is broken", "I am lost", "Could you help me, please?"],
+             "i-have-a-question"),
+            ("m20-l04-giving-advice-and-simple-solutions", 4,
+             {"en": "20.4 Giving Advice & Simple Solutions", "fr": "20.4 Donner des conseils & Solutions simples", "it": "20.4 Dare consigli e Soluzioni semplici", "ru": "20.4 Советы и простые решения", "el": "20.4 Παροχή συμβουλών και απλές λύσεις"},
+             {"en": "I can offer simple advice or practical suggestions for common issues.", "fr": "Je peux offrir de simples conseils ou suggestions pratiques pour des problèmes courants.", "it": "Posso offrire semplici consigli o suggerimenti pratici per problemi comuni.", "ru": "Я могу давать простые советы и предложения по решению проблем.", "el": "Μπορώ να προσφέρω απλές συμβουλές για κοινά θέματα."},
+             ["should", "advice", "try", "solution", "change", "check", "fix", "idea"],
+             ["You should call the technician", "Why do you not try...?", "The best solution is...", "You can check online"],
+             "i-have-a-question"),
+            ("m20-l05-polite-requests-and-permission", 5,
+             {"en": "20.5 Polite Requests & Permission", "fr": "20.5 Requêtes polies & Demandes de permission", "it": "20.5 Richieste cortesi e Permessi", "ru": "20.5 Вежливые просьбы и разрешение", "el": "20.5 Ευγενικά αιτήματα και άδεια"},
+             {"en": "I can make polite requests and ask for permission in public contexts.", "fr": "Je peux faire des demandes polies et demander la permission dans des lieux publics.", "it": "Posso fare richieste cortesi e chiedere il permesso in contesti pubblici.", "ru": "Я могу формулировать вежливые просьбы и спрашивать разрешение в общественных местах.", "el": "Μπορώ να κάνω ευγενικά αιτήματα και να ζητήσω άδεια."},
+             ["could", "please", "polite", "mind", "borrow", "use", "help", "permission"],
+             ["Could you please help me?", "Would you mind if I open the window?", "May I ask a question?", "Can I borrow a pen?"],
+             "i-have-a-question"),
+            ("m20-l06-social-interaction-capstone", 6,
+             {"en": "20.6 Social Interaction & Opinion Survey Capstone", "fr": "20.6 Bilan : Interactions sociales & Enquête d'opinion", "it": "20.6 Sintesi: Interazione sociale e Sondaggio d'opinione", "ru": "20.6 Итоговый урок: Опрос и социальное взаимодействие", "el": "20.6 Ανακεφαλαίωση: Κοινωνική αλληλεπίδραση"},
+             {"en": "I can conduct a simple opinion survey and resolve a practical problem scenario in a roleplay.", "fr": "Je peux mener une simple enquête d'opinion et résoudre un problème pratique.", "it": "Posso condurre un semplice sondaggio d'opinione e risolvere un problema pratico.", "ru": "Я могу провести простой опрос мнений и решить бытовую ситуацию в игре.", "el": "Μπορώ να διεξάγω μια απλή έρευνα γνώμης και να λύσω ένα πρόβλημα."},
+             ["survey", "opinion", "problem", "solution", "agreement", "discussion", "request", "summary"],
+             ["We conducted a survey on...", "Most people agreed that...", "When faced with a problem...", "Our recommendation is..."],
+             "i-have-a-question")
+        ]
+    },
+    # Module 21
+    {
+        "modNum": 21, "code": "M21", "unit": 21,
+        "label": {"en": "FINAL A1 SURVIVAL SKILLS", "fr": "COMPÉTENCES D'URGENCE A1", "it": "COMPETENZE DI SOPRAVVIVENZA A1", "ru": "НАВЫКИ ВЫЖИВАНИЯ A1", "el": "ΒΑΣΙΚΕΣ ΔΕΞΙΟΤΗΤΕΣ ΕΠΙΒΙΩΣΗΣ A1"},
+        "title": {"en": "MODULE 21. FINAL A1 SURVIVAL SKILLS", "fr": "MODULE 21. COMPÉTENCES D'URGENCE A1", "it": "MODULE 21. COMPETENZE DI SOPRAVVIVENZA A1", "ru": "MODULE 21. НАВЫКИ ВЫЖИВАНИЯ A1", "el": "MODULE 21. ΒΑΣΙΚΕΣ ΔΕΞΙΟΤΗΤΕΣ ΕΠΙΒΙΩΣΗΣ A1"},
+        "arc": {"en": "Airport navigation, hotel check-in, medical emergencies, lost property, survival strategies and real-world roleplay capstone", "fr": "Aéroport, hôtel, urgences médicales, objets perdus, stratégies de survie et mise en situation réelle", "it": "Aeroporto, hotel, emergenze mediche, oggetti smarriti, strategie di sopravvivenza e simulazione reale", "ru": "Аэропорт, отель, медицинская помощь, потерянные вещи, стратегии общения и итоговая ролевая игра", "el": "Αεροδρόμιο, ξενοδοχείο, ιατρική φροντίδα, χαμένα αντικείμενα, στρατηγικές επιβίωσης και προσομοίωση"},
+        "lessons": [
+            ("m21-l01-at-the-airport-and-train-station", 1,
+             {"en": "21.1 At the Airport & Train Station", "fr": "21.1 À l'aéroport & à la gare", "it": "21.1 All'aeroporto e alla stazione", "ru": "21.1 В аэропорту и на вокзале", "el": "21.1 Στο αεροδρόμιο και το σταθμό"},
+             {"en": "I can navigate transit hubs, understand gate announcements, and check in baggage.", "fr": "Je peux me repérer dans un aéroport/une gare, comprendre les annonces et enregistrer mes bagages.", "it": "Posso orientarmi in aeroporto/stazione, capire gli annunci ed effettuare il check-in.", "ru": "Я могу ориентироваться в аэропорту и на вокзале, понимать объявления и сдавать багаж.", "el": "Μπορώ να προσανατολιστώ στο αεροδρόμιο, να καταλάβω ανακοινώσεις και να κάνω check-in."},
+             ["airport", "flight", "gate", "passport", "ticket", "luggage", "departure", "arrival"],
+             ["Where is gate 5?", "Here is my passport", "When does the train leave?", "Is this the line for check-in?"],
+             "what-does-this-word-mean"),
+            ("m21-l02-at-the-hotel-and-accommodation", 2,
+             {"en": "21.2 At the Hotel & Accommodation", "fr": "21.2 À l'hôtel & Hébergement", "it": "21.2 In hotel e Alloggio", "ru": "21.2 В отеле и жилье", "el": "21.2 Στο ξενοδοχείο και κατάλυμα"},
+             {"en": "I can check in at a hotel, ask about amenities, and report room issues.", "fr": "Je peux faire le check-in à l'hôtel, me renseigner sur les services et signaler un problème.", "it": "Posso fare il check-in in hotel, chiedere informazioni sui servizi e segnalare problemi.", "ru": "Я могу заселяться в отель, спрашивать об услугах и сообщать о неполадках в номере.", "el": "Μπορώ να κάνω check-in στο ξενοδοχείο, να ρωτήσω για παροχές και να αναφέρω προβλήματα."},
+             ["hotel", "room", "key", "reservation", "breakfast", "wifi", "towel", "reception"],
+             ["I have a reservation", "What is the WiFi password?", "What time is breakfast?", "The room key is not working"],
+             "what-does-this-word-mean"),
+            ("m21-l03-medical-emergencies-and-pharmacy", 3,
+             {"en": "21.3 Medical Emergencies & Pharmacy", "fr": "21.3 Urgences médicales & Pharmacie", "it": "21.3 Emergenze mediche e Farmacia", "ru": "21.3 Медицинская помощь и аптека", "el": "21.3 Ιατρικά περιστατικά και φαρμακείο"},
+             {"en": "I can communicate urgent health needs, buy medicine, and ask for a doctor.", "fr": "Je peux communiquer un besoin de santé urgent, acheter des médicaments et demander un médecin.", "it": "Posso comunicare un'emergenza medica, comprare farmaci e chiedere di un medico.", "ru": "Я могу сообщать о срочных проблемах со здоровьем, покупать лекарства и вызывать врача.", "el": "Μπορώ να αναφέρω επείγοντα θέματα υγείας, να αγοράσω φάρμακα και να ζητήσω γιατρό."},
+             ["doctor", "hospital", "emergency", "medicine", "pain", "fever", "pharmacy", "help"],
+             ["I need a doctor!", "I feel sick", "Where is the nearest pharmacy?", "Please call an ambulance"],
+             "what-does-this-word-mean"),
+            ("m21-l04-lost-property-and-police-services", 4,
+             {"en": "21.4 Lost Property & Police Services", "fr": "21.4 Objets perdus & Services de police", "it": "21.4 Oggetti smarriti e Servizi di polizia", "ru": "21.4 Потерянные вещи и полиция", "el": "21.4 Απώλεια αντικειμένων και αστυνομία"},
+             {"en": "I can report lost or stolen belongings to police or information desks.", "fr": "Je peux signaler des objets perdus ou volés à la police ou au bureau d'information.", "it": "Posso segnalare oggetti smarriti o rubati alla polizia o all'ufficio informazioni.", "ru": "Я могу сообщать об утерянных или украденных вещах в полицию или стойку информации.", "el": "Μπορώ να αναφέρω χαμένα ή κλεμμένα αντικείμενα στην αστυνομία."},
+             ["lost", "stolen", "wallet", "phone", "bag", "police", "report", "passport"],
+             ["I lost my passport", "My bag was stolen", "Where is the police station?", "I want to report a lost wallet"],
+             "what-does-this-word-mean"),
+            ("m21-l05-communication-breakdown-and-coping", 5,
+             {"en": "21.5 Communication Breakdown & Survival Strategies", "fr": "21.5 Difficultés de communication & Stratégies de survie", "it": "21.5 Difficoltà di comunicazione e Strategie", "ru": "21.5 Понимание в сложных ситуациях и стратегии", "el": "21.5 Δυσκολίες επικοινωνίας και στρατηγικές"},
+             {"en": "I can use clarification strategies when I do not understand or need repetition.", "fr": "Je peux utiliser des stratégies de clarification quand je ne comprends pas.", "it": "Posso usare strategie di chiarimento quando non capisco.", "ru": "Я могу использовать фразы уточнения, когда что-то не понял.", "el": "Μπορώ να χρησιμοποιήσω στρατηγικές διευκρίνισης όταν δεν καταλαβαίνω."},
+             ["repeat", "slow", "understand", "mean", "speak", "write", "spell", "clear"],
+             ["Could you speak more slowly?", "I do not understand", "Could you write it down?", "What does this word mean?"],
+             "what-does-this-word-mean"),
+            ("m21-l06-survival-skills-capstone", 6,
+             {"en": "21.6 Survival Skills Real-World Roleplay Capstone", "fr": "21.6 Bilan : Mise en situation de survie en voyage", "it": "21.6 Sintesi: Simulazione reale di sopravvivenza", "ru": "21.6 Итоговый урок: Ситуация реального общения в поездке", "el": "21.6 Ανακεφαλαίωση: Προσομοίωση επιβίωσης"},
+             {"en": "I can navigate a multi-stage real-world travel survival simulation.", "fr": "Je peux réussir une simulation complète de voyage (aéroport, hôtel, imprévus).", "it": "Posso gestire una simulazione completa di viaggio (aeroporto, hotel, imprevisti).", "ru": "Я могу успешно проходить комплексные ситуации в поездке (аэропорт, отель, форс-мажор).", "el": "Μπορώ να αντεπεξέλθω σε μια ολοκληρωμένη προσομοίωση ταξιδιού."},
+             ["travel", "situation", "help", "direction", "emergency", "scenario", "solution", "plan"],
+             ["I am ready for travel", "Excuse me, I need help", "Everything is clear now", "Thank you for your assistance"],
+             "what-does-this-word-mean")
+        ]
+    },
+    # Module 22
+    {
+        "modNum": 22, "code": "M22", "unit": 22,
+        "label": {"en": "A1 INTEGRATED PROJECTS", "fr": "PROJETS INTÉGRÉS A1", "it": "PROGETTI INTEGRATI A1", "ru": "ИТОГОВЫЕ ПРОЕКТЫ A1", "el": "ΟΛΟΚΛΗΡΩΜΕΝΑ ΕΡΓΑ A1"},
+        "title": {"en": "MODULE 22. A1 INTEGRATED PROJECTS", "fr": "MODULE 22. PROJETS INTÉGRÉS A1", "it": "MODULE 22. PROGETTI INTEGRATI A1", "ru": "MODULE 22. ИТОГОВЫЕ ПРОЕКТЫ A1", "el": "MODULE 22. ΟΛΟΚΛΗΡΩΜΕΝΑ ΕΡΓΑ A1"},
+        "arc": {"en": "Comprehensive portfolio projects integrating profile, daily routine, home guide, past/future timeline, opinions and final A1 showcase", "fr": "Projets de portfolio intégrant profil, routine, logement, parcours passé/futur, opinions et présentation finale A1", "it": "Progetti di portfolio che integrano profilo, routine, guida della casa, percorso passato/futuro, opinioni e presentazione finale A1", "ru": "Комплексные проекты портфолио: профиль, день, дом, жизненный путь, мнения и итоговая презентация A1", "el": "Ολοκληρωμένα έργα χαρτοφυλακίου: προφίλ, καθημερινότητα, οδηγός σπιτιού, παρελθόν/μέλλον, γνώμες και τελική παρουσίαση A1"},
+        "lessons": [
+            ("m22-l01-project-1-my-profile", 1,
+             {"en": "22.1 Project 1. My Personal & Professional Profile", "fr": "22.1 Projet 1. Mon profil personnel & professionnel", "it": "22.1 Progetto 1. Il mio profilo personale e professionale", "ru": "22.1 Проект 1. Мой личный и профессиональный профиль", "el": "22.1 Έργο 1. Το προσωπικό και επαγγελματικό μου προφίλ"},
+             {"en": "I can create a complete personal and professional profile sheet.", "fr": "Je peux créer une fiche de profil personnel et professionnel complète.", "it": "Posso creare una scheda completa del mio profilo personale e professionale.", "ru": "Я могу составлять полный личный и профессиональный профиль.", "el": "Μπορώ να δημιουργήσω ένα πλήρες προσωπικό και επαγγελματικό προφίλ."},
+             ["profile", "identity", "profession", "language", "nationality", "summary", "person", "contact"],
+             ["My name is...", "I work as...", "I speak two languages", "In my free time I..."],
+             "i-have-a-question"),
+            ("m22-l02-project-2-my-perfect-day", 2,
+             {"en": "22.2 Project 2. My Daily Routine & Perfect Day", "fr": "22.2 Projet 2. Ma routine & Ma journée idéale", "it": "22.2 Progetto 2. La mia routine e la mia giornata ideale", "ru": "22.2 Проект 2. Мой распорядок и идеальный день", "el": "22.2 Έργο 2. Η καθημερινότητα και η ιδανική μου μέρα"},
+             {"en": "I can present a narrative comparing my normal daily routine with my ideal day.", "fr": "Je peux présenter un récit comparant ma routine quotidienne et ma journée idéale.", "it": "Posso presentare un racconto che confronta la mia routine e la mia giornata ideale.", "ru": "Я могу рассказать историю, сравнивая свой обычный распорядок дня с идеальным днем.", "el": "Μπορώ να παρουσιάσω μια σύγκριση της καθημερινότητάς μου με την ιδανική μέρα."},
+             ["routine", "morning", "evening", "schedule", "day", "hobby", "relax", "work"],
+             ["On a normal day I start at...", "In my perfect day I would...", "First I wake up early", "Finally I relax with a book"],
+             "what-time-is-it"),
+            ("m22-l03-project-3-my-home-and-neighborhood-guide", 3,
+             {"en": "22.3 Project 3. My Home & Neighborhood Guide", "fr": "22.3 Projet 3. Guide de mon logement & de mon quartier", "it": "22.3 Progetto 3. Guida della mia casa e del mio quartiere", "ru": "22.3 Проект 3. Путеводитель по моему дому и району", "el": "22.3 Έργο 3. Οδηγός για το σπίτι και τη γειτονιά μου"},
+             {"en": "I can create a descriptive guide about my home, neighborhood, and local services.", "fr": "Je peux créer un guide descriptif de mon logement, quartier et services locaux.", "it": "Posso creare una guida descrittiva della mia casa, quartiere e servizi locali.", "ru": "Я могу создавать путеводитель с описанием дома, района и услуг поблизости.", "el": "Μπορώ να δημιουργήσω έναν οδηγό για το σπίτι, τη γειτονιά και τις υπηρεσίες της."},
+             ["home", "neighborhood", "shop", "park", "transport", "guide", "quiet", "friendly"],
+             ["Welcome to my neighborhood", "Near my house there is a park", "The best place to visit is...", "To get there turn right"],
+             "what-does-this-word-mean"),
+            ("m22-l04-project-4-my-past-and-future", 4,
+             {"en": "22.4 Project 4. My Life Journey: Past & Future", "fr": "22.4 Projet 4. Mon parcours : Passé & Avenir", "it": "22.4 Progetto 4. Il mio percorso: Passato e Futuro", "ru": "22.4 Проект 4. Мой жизненный путь: прошлое и будущее", "el": "22.4 Έργο 4. Η πορεία μου: Παρελθόν και Μέλλον"},
+             {"en": "I can create a personal timeline combining past life experiences with future goals.", "fr": "Je peux créer une frise chronologique combinant mes expériences passées et futurs objectifs.", "it": "Posso creare una linea del tempo personale che unisce esperienze passate e obiettivi futuri.", "ru": "Я могу составлять хронологическую ленту жизни, объединяя прошлый опыт и будущие цели.", "el": "Μπορώ να δημιουργήσω μια προσωπική χρονογραμμή με παρελθοντικές εμπειρίες και μελλοντικούς στόχους."},
+             ["plan", "past", "future", "milestone", "memory", "goal", "year", "time"],
+             ["In the past I lived in...", "A key moment was...", "In the future I plan to...", "My goal for next year is..."],
+             "i-have-a-question"),
+            ("m22-l05-project-5-my-world-and-perspectives", 5,
+             {"en": "22.5 Project 5. My Opinions & Cultural Perspectives", "fr": "22.5 Projet 5. Mes opinions & Perspectives culturelles", "it": "22.5 Progetto 5. Le mie opinioni e Prospettive culturali", "ru": "22.5 Проект 5. Мои мнения и культурные взгляды", "el": "22.5 Έργο 5. Οι γνώμες και οι πολιτιστικές μου απόψεις"},
+             {"en": "I can present a portfolio section expressing my opinions and cultural preferences.", "fr": "Je peux présenter une section de portfolio exprimant mes opinions et préférences culturelles.", "it": "Posso presentare una sezione del portfolio con le mie opinioni e preferenze culturali.", "ru": "Я могу презентовать раздел портфолио со своими мнениями и культурными предпочтениями.", "el": "Μπορώ να παρουσιάσω μια ενότητα χαρτοφυλακίου με τις γνώμες και πολιτιστικές προτιμήσεις μου."},
+             ["opinion", "preference", "culture", "choice", "favorite", "recommendation", "world", "summary"],
+             ["In my view...", "I prefer this because...", "My favorite cultural event is...", "I recommend exploring..."],
+             "i-have-a-question"),
+            ("m22-l06-final-a1-capstone-showcase", 6,
+             {"en": "22.6 Final A1 Capstone Showcase & Self-Assessment", "fr": "22.6 Bilan final : Présentation du portfolio A1 & Auto-évaluation", "it": "22.6 Sintesi finale: Presentazione del portfolio A1 ed Valutazione", "ru": "22.6 Итоговый выпускной урок: Презентация портфолио A1 и самооценка", "el": "22.6 Τελική ανακεφαλαίωση: Παρουσίαση A1 και αυτοαξιολόγηση"},
+             {"en": "I can showcase my complete A1 portfolio and perform a self-assessment against A1 can-do goals.", "fr": "Je peux présenter mon portfolio A1 complet et réaliser une auto-évaluation des objectifs A1.", "it": "Posso presentare il mio portfolio A1 completo e fare un'autovalutazione degli obiettivi A1.", "ru": "Я могу презентовать свое полное портфолио уровня A1 и провести самооценку своих навыков.", "el": "Μπορώ να παρουσιάσω το πλήρες χαρτοφυλάκιό μου A1 και να αξιολογήσω την πρόοδό μου."},
+             ["course", "present", "progress", "skill", "summary", "test", "achievement", "success"],
+             ["I can now communicate in basic situations", "My main achievement is...", "I am confident in my A1 skills", "Ready for Level A2!"],
+             "i-have-a-question")
+        ]
     }
 ]
+
+GRAMMAR_MAP = {
+    6: {
+        "en": ["How much is / How much are...?", "Payment prepositions (by card, in cash)"],
+        "fr": ["Combien coûte / coûtent...?", "Prépositions de paiement (par carte, en espèces)"],
+        "it": ["Quanto costa / costano...?", "Preposizioni di pagamento (con carta, in contanti)"],
+        "ru": ["Сколько стоит / стоят...?", "Предлоги и падежи при оплате (картой, наличными)"],
+        "el": ["Πόσο κάνει / κάνουν...;", "Προθέσεις πληρωμής (με κάρτα, με μετρητά)"]
+    },
+    7: {
+        "en": ["Demonstratives (this/that/these/those)", "Adjective order & color agreement"],
+        "fr": ["Démonstratifs (ce/cette/ces)", "Accord des adjectifs de couleur et taille"],
+        "it": ["Dimostrativi (questo/quella/questi)", "Accordo degli aggettivi di colore e taglia"],
+        "ru": ["Указательные местоимения (этот/эта/эти)", "Согласование прилагательных в роде и числе"],
+        "el": ["Δεικτικές αντωνυμίες (αυτός/αυτή/αυτό)", "Συμφωνία επιθέτων σε γένος και αριθμό"]
+    },
+    8: {
+        "en": ["Expressing pain with 'have got' / 'feel'", "Imperatives for health advice"],
+        "fr": ["Avoir mal à + article contracté", "Impératif pour conseils de santé"],
+        "it": ["Avere male a + articolo", "Imperativo per consigli di salute"],
+        "ru": ["Конструкции со словом 'болит / болят'", "Повелительное наклонение и советы"],
+        "el": ["Εκφράσεις 'πονάει / πονάνε'", "Προστακτική για συμβουλές υγείας"]
+    },
+    9: {
+        "en": ["Present Simple for work routines", "Prepositions of place for workplaces (at/in)"],
+        "fr": ["Présent pour la routine professionnelle", "Prépositions de lieu (chez, dans, à)"],
+        "it": ["Presente per routine lavorative", "Preposizioni di luogo (in, a, da)"],
+        "ru": ["Настоящее время для работы и учебы", "Предложный падеж места работы (в/на)"],
+        "el": ["Ενεστώτας για εργασιακή routine", "Προθέσεις τόπου εργασίας (σε, στο, στη)"]
+    },
+    10: {
+        "en": ["Can / Can't for language ability", "Adverbs of manner (well, fluently)"],
+        "fr": ["Savoir / Pouvoir pour compétences linguistiques", "Adverbes (bien, couramment)"],
+        "it": ["Sapere / Potere per abilità linguistiche", "Avverbi (bene, correntemente)"],
+        "ru": ["Модальные глаголы умения (уметь, говорить по-...)", "Наречия стиля речи (хорошо, свободно)"],
+        "el": ["Μπορώ / Ξέρω για γλωσσικές ικανότητες", "Επιρρήματα (καλά, πταίστα)"]
+    },
+    11: {
+        "en": ["Prepositions of transport (by bus, on foot)", "Imperatives for directions"],
+        "fr": ["Prépositions de transport (en bus, à pied)", "Impératif pour directions"],
+        "it": ["Preposizioni di trasporto (in autobus, a piedi)", "Imperativo per indicazioni"],
+        "ru": ["Творительный падеж транспорта (на автобусе, пешком)", "Повелительное наклонение для маршрута"],
+        "el": ["Προθέσεις μεταφοράς (με λεωφορείο, με τα πόδια)", "Προστακτική για κατευθύνσεις"]
+    },
+    12: {
+        "en": ["There is / There are for places in town", "Prepositions of place (next to, opposite)"],
+        "fr": ["Il y a pour les lieux en ville", "Prépositions de lieu (à côté de, en face de)"],
+        "it": ["C'è / Ci sono per luoghi in città", "Preposizioni di luogo (vicino a, di fronte a)"],
+        "ru": ["Конструкция 'Здесь есть / Находятся'", "Предложный падеж расположения в городе"],
+        "el": ["Υπάρχει / Υπάρχουν για μέρη στην πόλη", "Προθέσεις τόπου (δίπλα σε, απέναντι από)"]
+    },
+    13: {
+        "en": ["It is + weather adjective", "Present Continuous for weather right now"],
+        "fr": ["Il fait + adjectif météo / Il pleut", "Présent pour la météo actuelle"],
+        "it": ["Fa + adjectivo meteo / Piove", "Presente per tempo atmosferico"],
+        "ru": ["Безличные предложения (сегодня тепло / идет дождь)", "Настоящее время для погоды"],
+        "el": ["Κάνει + επίθετο καιρού / Βρέχει", "Ενεστώτας για τον καιρό"]
+    },
+    14: {
+        "en": ["Like / Love / Hate + -ing", "Frequency adverbs (always, sometimes, never)"],
+        "fr": ["Aimer / Adorer / Détester + infinitif", "Adverbes de fréquence (toujours, parfois)"],
+        "it": ["Piacere + infinito / nome", "Avverbi di frequenza (sempre, a volte)"],
+        "ru": ["Глаголы предпочтений (любить / нравиться + инфинитив)", "Наречия частоты (всегда, иногда)"],
+        "el": ["Μου αρέσει / Αγαπώ + απαρέμφατο/ουσιαστικό", "Επιρρήματα συχνότητας (πάντα, καμιά φορά)"]
+    },
+    15: {
+        "en": ["Imperatives for tech instructions", "Present Simple for daily tech habits"],
+        "fr": ["Impératif pour instructions techniques", "Présent pour habitudes numériques"],
+        "it": ["Imperativo per istruzioni tecnologiche", "Presente per abitudini digitali"],
+        "ru": ["Повелительное наклонение для инструкций", "Настоящее время для цифровых привычек"],
+        "el": ["Προστακτική για οδηγίες τεχνολογίας", "Ενεστώτας για ψηφιακές συνήθειες"]
+    },
+    16: {
+        "en": ["Would like to + verb for invitations", "Let's + verb for social plans"],
+        "fr": ["Vouloir / Pouvoir pour inviter", "Formules d'invitation et de fête"],
+        "it": ["Vorrei / Vorresti per invitare", "Formule di invito e festeggiamenti"],
+        "ru": ["Глаголы приглашения и поздравления", "Винительный падеж существительных (подарок, праздник)"],
+        "el": ["Ρήματα πρόσκλησης & Ευχές", "Αιτιατική πτώση ουσιαστικών (δώρο, πάρτι)"]
+    },
+    17: {
+        "en": ["Past Simple (regular & irregular verbs)", "Time expressions (yesterday, last, ago)"],
+        "fr": ["Passé composé avec avoir et être", "Marqueurs temporels (hier, la semaine dernière)"],
+        "it": ["Passato prossimo con essere e avere", "Espressioni di tempo (ieri, la settimana scorsa)"],
+        "ru": ["Прошедшее время глаголов (совершенный/несовершенный вид)", "Предложный падеж времени и места"],
+        "el": ["Αόριστος χρόνος (παρελθόν)", "Χρονικές εκφράσεις (χθες, την προηγούμενη εβδομάδα)"]
+    },
+    18: {
+        "en": ["Be going to for future plans", "Want to + verb / Will for predictions"],
+        "fr": ["Futur proche (aller + infinitif)", "Espérer / Vouloir + infinitif"],
+        "it": ["Futuro semplice ed espressioni di intenzione", "Volere + infinito / Stare per"],
+        "ru": ["Будущее время глаголов (буду делать / сделаю)", "Конструкции намерений (я хочу, я планирую)"],
+        "el": ["Εξακολουθητικός & Συνοπτικός Μέλλοντας (θα κάνω)", "Εκφράσεις πρόθεσης (θέλω να, σκοπεύω να)"]
+    },
+    19: {
+        "en": ["Comparative adjectives (-er than, more ... than)", "Connectors (and, but, because)"],
+        "fr": ["Comparatifs (plus ... que, moins ... que, aussi ... que)", "Accord des adjectifs"],
+        "it": ["Comparativi (più di/che, meno di/che)", "Accordo degli aggettivi"],
+        "ru": ["Сравнительная степень прилагательных (-ее, более ... чем)", "Согласование прилагательных"],
+        "el": ["Συγκριτικός βαθμός επιθέτων (-ότερος, πιο ... από)", "Συμφωνία γένους και πτώσης επιθέτων"]
+    },
+    20: {
+        "en": ["Opinion structures (I think, I believe)", "Modal verbs Can / Could / Should for polite requests & advice"],
+        "fr": ["Je pense que / À mon avis", "Conditionnel de politesse (Pourriez-vous, Je voudrais)"],
+        "it": ["Secondo me / Penso che", "Verbi modali (Potrebbe, Dovresti) per cortesia e consigli"],
+        "ru": ["Конструкции мнения (я думаю, по-моему)", "Модальные слова (нужно, следует, можно) и вежливые просьбы"],
+        "el": ["Εκφράσεις γνώμης (νομίζω ότι, κατά τη γνώμη μου)", "Ευγενικά ρήματα & συμβουλές (μπορείτε να, πρέπει να)"]
+    },
+    21: {
+        "en": ["Imperatives & Polite requests", "Question words (Where, When, How much)"],
+        "fr": ["Impératif & Formules de politesse", "Interrogation avec Où, Quand, Combien"],
+        "it": ["Imperativo e forme di cortesia", "Domande con Dove, Quando, Quanto"],
+        "ru": ["Повелительное наклонение и вежливые формулы", "Вопросительные слова (где, когда, сколько)"],
+        "el": ["Προστακτική & Ευγενικοί τύποι", "Ερωτηματικές λέξεις (πού, πότε, πόσο)"]
+    },
+    22: {
+        "en": ["Present Simple & Past Simple review", "Future plans with Be going to", "Comparatives & Opinion structures"],
+        "fr": ["Synthèse du présent, passé composé et futur proche", "Connecteurs logiques (parce que, mais, donc)"],
+        "it": ["Revisione del presente, passato prossimo e futuro", "Connettivi (perché, ma, quindi)"],
+        "ru": ["Сводное повторение прошедшего, настоящего и будущего времени", "Падежные формы в связном тексте"],
+        "el": ["Επανάλυψη Ενεστώτα, Αορίστου και Μέλλοντα", "Σύνδεσμοι (επειδή, αλλά, γι' αυτό)"]
+    }
+}
 
 def build_slides(slug, title, cando, vocab, chunks, lang, mod_num, les_num):
     return [
@@ -691,7 +1128,7 @@ for lang in LANGUAGES:
                 "lesson": les_num,
                 "num": les_num,
                 "title": title,
-                "grammar": ["Grammar focus & practice"],
+                "grammar": GRAMMAR_MAP.get(mod_num, {}).get(lang, ["Grammar focus & practice"]),
                 "speaking": cando,
                 "listening": f"Audio dialogue for {title}",
                 "reading": f"Short text for {title}",
@@ -715,6 +1152,24 @@ for lang in LANGUAGES:
             "lessons_count": len(unit_lessons),
             "lessons": unit_lessons
         }
+
+    # Ensure all units (including 1-5) have complete metadata and lesson codes
+    for u_k in sorted(units_map.keys()):
+        u = units_map[u_k]
+        u_num = u.get("unit", u.get("num", u_k))
+        u["unit"] = u_num
+        u["num"] = u_num
+        u["id"] = f"u{u_num}"
+        if not u.get("label"):
+            u["label"] = u.get("title", f"MODULE {u_num}").replace(f"MODULE {u_num}. ", "")
+        if not u.get("color"):
+            u["color"] = f"#{u_num*10:02x}{u_num*20:02x}F6"
+        for idx, l in enumerate(u.get("lessons", [])):
+            l_num = l.get("lesson", l.get("num", idx + 1))
+            l["lesson"] = l_num
+            l["num"] = l_num
+            if not l.get("code"):
+                l["code"] = f"M{u_num:02d}-L{l_num:02d}"
 
     sorted_units = [units_map[k] for k in sorted(units_map.keys())]
     curr_data["units"] = sorted_units
