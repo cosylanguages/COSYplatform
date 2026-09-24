@@ -21,7 +21,9 @@ window.COSY_CURRICULUM_A1 = {
             "student"
           ],
           "teacher_notes": "code: \"EN-01\"\ncando: \"Can greet people, say goodbye, introduce oneself, and use classroom language\"\nspeaking: \"Greeting and self-introductions in class\"\nlistening: \"Short dialogue of people meeting for first time\"\nreading: \"Reading classroom instructions and greetings\"\nwriting: \"Write 5 sentences introducing yourself\"",
-          "recycled": "Module 1 foundational progression"
+          "recycled": "Module 1 foundational progression",
+          "num": 1,
+          "code": "M01-L01"
         },
         {
           "lesson": 2,
@@ -37,7 +39,9 @@ window.COSY_CURRICULUM_A1 = {
             "what"
           ],
           "teacher_notes": "code: \"EN-02\"\ncando: \"Can ask and answer names and introduce another person\"\nspeaking: \"Asking names and introducing a friend in trios\"\nlistening: \"People asking and giving names\"\nreading: \"Short dialogues at a conference\"\nwriting: \"Write short Q&A pairs introducing friends\"",
-          "recycled": "Module 1 foundational progression"
+          "recycled": "Module 1 foundational progression",
+          "num": 2,
+          "code": "M01-L02"
         },
         {
           "lesson": 3,
@@ -53,7 +57,9 @@ window.COSY_CURRICULUM_A1 = {
             "consonant"
           ],
           "teacher_notes": "code: \"EN-03\"\ncando: \"Can spell names and understand spelled words and codes\"\nspeaking: \"Spelling names and emails aloud to a partner\"\nlistening: \"Dictation of names and email addresses\"\nreading: \"Reading letter names and codes\"\nwriting: \"Write out spelled names letter by letter\"",
-          "recycled": "Module 1 foundational progression"
+          "recycled": "Module 1 foundational progression",
+          "num": 3,
+          "code": "M01-L03"
         },
         {
           "lesson": 4,
@@ -69,7 +75,9 @@ window.COSY_CURRICULUM_A1 = {
             "from"
           ],
           "teacher_notes": "code: \"EN-04\"\ncando: \"Can say where they are from and ask about nationality\"\nspeaking: \"Asking origins and nationalities in international group\"\nlistening: \"Passport control interviews\"\nreading: \"Reading passport profiles\"\nwriting: \"Write 5 sentences about origins of famous people\"",
-          "recycled": "Module 1 foundational progression"
+          "recycled": "Module 1 foundational progression",
+          "num": 4,
+          "code": "M01-L04"
         },
         {
           "lesson": 5,
@@ -85,7 +93,9 @@ window.COSY_CURRICULUM_A1 = {
             "a little"
           ],
           "teacher_notes": "code: \"EN-05\"\ncando: \"Can talk about languages spoken and state abilities\"\nspeaking: \"Surveying classmates about languages spoken\"\nlistening: \"Interviews with polyglots\"\nreading: \"Language portfolio descriptions\"\nwriting: \"Write 5 sentences about your language abilities\"",
-          "recycled": "Module 1 foundational progression"
+          "recycled": "Module 1 foundational progression",
+          "num": 5,
+          "code": "M01-L05"
         },
         {
           "lesson": 6,
@@ -101,7 +111,9 @@ window.COSY_CURRICULUM_A1 = {
             "twenty"
           ],
           "teacher_notes": "code: \"EN-06\"\ncando: \"Can understand and give numbers 0 to 20 and count objects\"\nspeaking: \"Counting classroom items and inventory check\"\nlistening: \"Number dictations and quantities\"\nreading: \"Reading short stock inventory lists\"\nwriting: \"Write 5 groups of counted items with plurals\"",
-          "recycled": "Module 1 foundational progression"
+          "recycled": "Module 1 foundational progression",
+          "num": 6,
+          "code": "M01-L06"
         },
         {
           "lesson": 7,
@@ -117,7 +129,9 @@ window.COSY_CURRICULUM_A1 = {
             "January"
           ],
           "teacher_notes": "code: \"EN-07\"\ncando: \"Can ask and say age, talk about birthdays, and use possessives\"\nspeaking: \"Asking age and birthday month in class survey\"\nlistening: \"Celebrity birthday announcements\"\nreading: \"Reading short birthday calendar entries\"\nwriting: \"Write 5 sentences about ages of family members\"",
-          "recycled": "Module 1 foundational progression"
+          "recycled": "Module 1 foundational progression",
+          "num": 7,
+          "code": "M01-L07"
         },
         {
           "lesson": 8,
@@ -133,7 +147,9 @@ window.COSY_CURRICULUM_A1 = {
             "street"
           ],
           "teacher_notes": "code: \"EN-08\"\ncando: \"Can exchange contact details including phone and email\"\nspeaking: \"Exchanging business cards and contact details\"\nlistening: \"Dictation of phone numbers and email addresses\"\nreading: \"Reading hotel registration forms\"\nwriting: \"Fill in a personal contact card\"",
-          "recycled": "Module 1 foundational progression"
+          "recycled": "Module 1 foundational progression",
+          "num": 8,
+          "code": "M01-L08"
         },
         {
           "lesson": 9,
@@ -150,7 +166,9 @@ window.COSY_CURRICULUM_A1 = {
             "euro"
           ],
           "teacher_notes": "code: \"EN-09\"\ncando: \"Can understand numbers 20 to 100, ask about prices, and understand costs\"\nspeaking: \"Asking prices and buying items in a market roleplay\"\nlistening: \"Listening to store cash register transactions\"\nreading: \"Reading store price tags and receipts\"\nwriting: \"Write 5 sentences stating item prices\"",
-          "recycled": "Module 1 foundational progression"
+          "recycled": "Module 1 foundational progression",
+          "num": 9,
+          "code": "M01-L09"
         },
         {
           "lesson": 10,
@@ -166,9 +184,15 @@ window.COSY_CURRICULUM_A1 = {
             "about me"
           ],
           "teacher_notes": "code: \"EN-10\"\ncando: \"Can present a comprehensive personal profile\"\nspeaking: \"Oral 1-minute personal profile presentation\"\nlistening: \"Listening to classmate profile presentations\"\nreading: \"Reading model personal profile cards\"\nwriting: \"Write a full 100-word personal profile\"",
-          "recycled": "Module 1 foundational progression"
+          "recycled": "Module 1 foundational progression",
+          "num": 10,
+          "code": "M01-L10"
         }
-      ]
+      ],
+      "num": 1,
+      "id": "u1",
+      "label": "FIRST CONTACT & PERSONAL IDENTITY",
+      "color": "#0a14F6"
     },
     {
       "unit": 2,
@@ -197,7 +221,9 @@ window.COSY_CURRICULUM_A1 = {
             "colleague"
           ],
           "teacher_notes": "code: \"M02-L01\"\ncando: \"Can talk about family members, describe relationships, introduce relatives\"",
-          "recycled": "Numbers 0-100, personal details, possessive adjectives"
+          "recycled": "Numbers 0-100, personal details, possessive adjectives",
+          "num": 1,
+          "code": "M02-L01"
         },
         {
           "lesson": 2,
@@ -223,7 +249,9 @@ window.COSY_CURRICULUM_A1 = {
             "blue"
           ],
           "teacher_notes": "code: \"M02-L02\"\ncando: \"Can describe themselves and other people\"",
-          "recycled": "Family vocabulary, verb have, possessive adjectives"
+          "recycled": "Family vocabulary, verb have, possessive adjectives",
+          "num": 2,
+          "code": "M02-L02"
         },
         {
           "lesson": 3,
@@ -244,9 +272,15 @@ window.COSY_CURRICULUM_A1 = {
             "serious"
           ],
           "teacher_notes": "code: \"M02-L03\"\ncando: \"Can describe personality and state basic impressions\"",
-          "recycled": "Personal appearance, verb to be"
+          "recycled": "Personal appearance, verb to be",
+          "num": 3,
+          "code": "M02-L03"
         }
-      ]
+      ],
+      "num": 2,
+      "id": "u2",
+      "label": "PEOPLE & RELATIONSHIPS",
+      "color": "#1428F6"
     },
     {
       "unit": 3,
@@ -275,7 +309,9 @@ window.COSY_CURRICULUM_A1 = {
             "knife"
           ],
           "teacher_notes": "code: \"M03-L01\"\ncando: \"Can identify objects, ask what something is, ask for objects\"",
-          "recycled": "Subject pronouns, verb to be, basic adjectives"
+          "recycled": "Subject pronouns, verb to be, basic adjectives",
+          "num": 1,
+          "code": "M03-L01"
         },
         {
           "lesson": 2,
@@ -292,7 +328,9 @@ window.COSY_CURRICULUM_A1 = {
             "personal belongings"
           ],
           "teacher_notes": "code: \"M03-L02\"\ncando: \"Can talk about things they own and ask about ownership\"",
-          "recycled": "Everyday objects, demonstratives, possessive adjectives"
+          "recycled": "Everyday objects, demonstratives, possessive adjectives",
+          "num": 2,
+          "code": "M03-L02"
         },
         {
           "lesson": 3,
@@ -314,9 +352,15 @@ window.COSY_CURRICULUM_A1 = {
             "small"
           ],
           "teacher_notes": "code: \"M03-L03\"\ncando: \"Can describe objects and identify things by color, shape and size\"",
-          "recycled": "Everyday objects, articles, possessive pronouns"
+          "recycled": "Everyday objects, articles, possessive pronouns",
+          "num": 3,
+          "code": "M03-L03"
         }
-      ]
+      ],
+      "num": 3,
+      "id": "u3",
+      "label": "OBJECTS & PERSONAL SPACE",
+      "color": "#1e3cF6"
     },
     {
       "unit": 4,
@@ -341,7 +385,9 @@ window.COSY_CURRICULUM_A1 = {
             "new"
           ],
           "teacher_notes": "code: \"M04-L01\"\ncando: \"Can say where they live and describe their home\"",
-          "recycled": "Personal details, basic adjectives, demonstratives"
+          "recycled": "Personal details, basic adjectives, demonstratives",
+          "num": 1,
+          "code": "M04-L01"
         },
         {
           "lesson": 2,
@@ -359,7 +405,9 @@ window.COSY_CURRICULUM_A1 = {
             "garden"
           ],
           "teacher_notes": "code: \"M04-L02\"\ncando: \"Can describe rooms and say where things are\"",
-          "recycled": "Types of homes, everyday objects, articles"
+          "recycled": "Types of homes, everyday objects, articles",
+          "num": 2,
+          "code": "M04-L02"
         },
         {
           "lesson": 3,
@@ -380,7 +428,9 @@ window.COSY_CURRICULUM_A1 = {
             "TV"
           ],
           "teacher_notes": "code: \"M04-L03\"\ncando: \"Can describe their home interior and locate objects\"",
-          "recycled": "Rooms, there is / there are, everyday objects"
+          "recycled": "Rooms, there is / there are, everyday objects",
+          "num": 3,
+          "code": "M04-L03"
         },
         {
           "lesson": 4,
@@ -402,9 +452,15 @@ window.COSY_CURRICULUM_A1 = {
             "stand"
           ],
           "teacher_notes": "code: \"M04-L04\"\ncando: \"Can talk about home activities and understand instructions\"",
-          "recycled": "Furniture and household items, prepositions of place"
+          "recycled": "Furniture and household items, prepositions of place",
+          "num": 4,
+          "code": "M04-L04"
         }
-      ]
+      ],
+      "num": 4,
+      "id": "u4",
+      "label": "HOME & EVERYDAY ENVIRONMENT",
+      "color": "#2850F6"
     },
     {
       "unit": 5,
@@ -580,7 +636,11 @@ window.COSY_CURRICULUM_A1 = {
           "cando": "I can ask for the bill at a restaurant and buy food items at a supermarket or market.",
           "hw": "Write 5 questions for asking the bill and buying food"
         }
-      ]
+      ],
+      "num": 5,
+      "id": "u5",
+      "label": "FOOD & DRINK",
+      "color": "#3264F6"
     },
     {
       "unit": 6,
@@ -598,7 +658,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 1,
           "title": "6.1 Shop Types & Places to Buy",
           "grammar": [
-            "Grammar focus & practice"
+            "How much is / How much are...?",
+            "Payment prepositions (by card, in cash)"
           ],
           "speaking": "I can name different shop types and say where to buy everyday products.",
           "listening": "Audio dialogue for 6.1 Shop Types & Places to Buy",
@@ -623,7 +684,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 2,
           "title": "6.2 Product Categories & Availability",
           "grammar": [
-            "Grammar focus & practice"
+            "How much is / How much are...?",
+            "Payment prepositions (by card, in cash)"
           ],
           "speaking": "I can ask for product categories and inquire if items are in stock.",
           "listening": "Audio dialogue for 6.2 Product Categories & Availability",
@@ -648,7 +710,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 3,
           "title": "6.3 Money, Currency & Prices",
           "grammar": [
-            "Grammar focus & practice"
+            "How much is / How much are...?",
+            "Payment prepositions (by card, in cash)"
           ],
           "speaking": "I can ask how much items cost and understand price statements in local currency.",
           "listening": "Audio dialogue for 6.3 Money, Currency & Prices",
@@ -673,7 +736,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 4,
           "title": "6.4 Paying & Payment Methods",
           "grammar": [
-            "Grammar focus & practice"
+            "How much is / How much are...?",
+            "Payment prepositions (by card, in cash)"
           ],
           "speaking": "I can pay for items using cash or card and request receipts and change.",
           "listening": "Audio dialogue for 6.4 Paying & Payment Methods",
@@ -698,7 +762,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 5,
           "title": "6.5 Discounts & Quantities",
           "grammar": [
-            "Grammar focus & practice"
+            "How much is / How much are...?",
+            "Payment prepositions (by card, in cash)"
           ],
           "speaking": "I can understand sale prices, discounts, and ask for specific quantities in shops.",
           "listening": "Audio dialogue for 6.5 Discounts & Quantities",
@@ -723,7 +788,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 6,
           "title": "6.6 Shopping Transactions Capstone",
           "grammar": [
-            "Grammar focus & practice"
+            "How much is / How much are...?",
+            "Payment prepositions (by card, in cash)"
           ],
           "speaking": "I can handle a complete shopping transaction from entering a store to paying and leaving.",
           "listening": "Audio dialogue for 6.6 Shopping Transactions Capstone",
@@ -760,7 +826,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 1,
           "title": "7.1 Essential Clothing Items",
           "grammar": [
-            "Grammar focus & practice"
+            "Demonstratives (this/that/these/those)",
+            "Adjective order & color agreement"
           ],
           "speaking": "I can name everyday clothing items and describe what I am wearing today.",
           "listening": "Audio dialogue for 7.1 Essential Clothing Items",
@@ -785,7 +852,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 2,
           "title": "7.2 Accessories & Footwear",
           "grammar": [
-            "Grammar focus & practice"
+            "Demonstratives (this/that/these/those)",
+            "Adjective order & color agreement"
           ],
           "speaking": "I can identify accessories and footwear and describe personal style.",
           "listening": "Audio dialogue for 7.2 Accessories & Footwear",
@@ -810,7 +878,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 3,
           "title": "7.3 Describing Clothes: Colour, Size & Style",
           "grammar": [
-            "Grammar focus & practice"
+            "Demonstratives (this/that/these/those)",
+            "Adjective order & color agreement"
           ],
           "speaking": "I can describe clothes using colour, size, and style adjectives.",
           "listening": "Audio dialogue for 7.3 Describing Clothes: Colour, Size & Style",
@@ -835,7 +904,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 4,
           "title": "7.4 Clothes Shopping: Trying On & Fitting",
           "grammar": [
-            "Grammar focus & practice"
+            "Demonstratives (this/that/these/those)",
+            "Adjective order & color agreement"
           ],
           "speaking": "I can ask to try on clothes and express fitting preferences.",
           "listening": "Audio dialogue for 7.4 Clothes Shopping: Trying On & Fitting",
@@ -860,7 +930,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 5,
           "title": "7.5 Clothes Shopping: Comparisons & Buying",
           "grammar": [
-            "Grammar focus & practice"
+            "Demonstratives (this/that/these/those)",
+            "Adjective order & color agreement"
           ],
           "speaking": "I can compare clothing choices, discuss prices, and buy clothes in a shop.",
           "listening": "Audio dialogue for 7.5 Clothes Shopping: Comparisons & Buying",
@@ -885,7 +956,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 6,
           "title": "7.6 Wardrobe & Fashion Capstone",
           "grammar": [
-            "Grammar focus & practice"
+            "Demonstratives (this/that/these/those)",
+            "Adjective order & color agreement"
           ],
           "speaking": "I can describe my wardrobe, favourite outfits, and handle clothes shopping dialogues.",
           "listening": "Audio dialogue for 7.6 Wardrobe & Fashion Capstone",
@@ -922,7 +994,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 1,
           "title": "8.1 Body Parts & Physical Self",
           "grammar": [
-            "Grammar focus & practice"
+            "Expressing pain with 'have got' / 'feel'",
+            "Imperatives for health advice"
           ],
           "speaking": "I can name human body parts and point out physical pain locations.",
           "listening": "Audio dialogue for 8.1 Body Parts & Physical Self",
@@ -947,7 +1020,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 2,
           "title": "8.2 Basic Health States & Feeling Unwell",
           "grammar": [
-            "Grammar focus & practice"
+            "Expressing pain with 'have got' / 'feel'",
+            "Imperatives for health advice"
           ],
           "speaking": "I can express physical feelings and basic health states.",
           "listening": "Audio dialogue for 8.2 Basic Health States & Feeling Unwell",
@@ -972,7 +1046,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 3,
           "title": "8.3 Common Ailments & Symptoms",
           "grammar": [
-            "Grammar focus & practice"
+            "Expressing pain with 'have got' / 'feel'",
+            "Imperatives for health advice"
           ],
           "speaking": "I can describe common ailments like headaches, colds, and fevers.",
           "listening": "Audio dialogue for 8.3 Common Ailments & Symptoms",
@@ -997,7 +1072,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 4,
           "title": "8.4 At the Doctor's Office",
           "grammar": [
-            "Grammar focus & practice"
+            "Expressing pain with 'have got' / 'feel'",
+            "Imperatives for health advice"
           ],
           "speaking": "I can explain health problems to a doctor and understand basic medical advice.",
           "listening": "Audio dialogue for 8.4 At the Doctor's Office",
@@ -1022,7 +1098,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 5,
           "title": "8.5 At the Pharmacy & Buying Medicine",
           "grammar": [
-            "Grammar focus & practice"
+            "Expressing pain with 'have got' / 'feel'",
+            "Imperatives for health advice"
           ],
           "speaking": "I can request medicine at a pharmacy and understand dosage instructions.",
           "listening": "Audio dialogue for 8.5 At the Pharmacy & Buying Medicine",
@@ -1047,7 +1124,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 6,
           "title": "8.6 Healthy Lifestyle & Wellness Capstone",
           "grammar": [
-            "Grammar focus & practice"
+            "Expressing pain with 'have got' / 'feel'",
+            "Imperatives for health advice"
           ],
           "speaking": "I can describe healthy daily routines and discuss simple wellness habits.",
           "listening": "Audio dialogue for 8.6 Healthy Lifestyle & Wellness Capstone",
@@ -1084,7 +1162,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 1,
           "title": "9.1 Jobs & Professions",
           "grammar": [
-            "Grammar focus & practice"
+            "Present Simple for work routines",
+            "Prepositions of place for workplaces (at/in)"
           ],
           "speaking": "I can name common occupations and ask someone about their job.",
           "listening": "Audio dialogue for 9.1 Jobs & Professions",
@@ -1109,7 +1188,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 2,
           "title": "9.2 Workplaces & Work Locations",
           "grammar": [
-            "Grammar focus & practice"
+            "Present Simple for work routines",
+            "Prepositions of place for workplaces (at/in)"
           ],
           "speaking": "I can describe workplaces and state where people work.",
           "listening": "Audio dialogue for 9.2 Workplaces & Work Locations",
@@ -1134,7 +1214,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 3,
           "title": "9.3 Working Hours & Work Communication",
           "grammar": [
-            "Grammar focus & practice"
+            "Present Simple for work routines",
+            "Prepositions of place for workplaces (at/in)"
           ],
           "speaking": "I can talk about working hours, schedules, and basic workplace tasks.",
           "listening": "Audio dialogue for 9.3 Working Hours & Work Communication",
@@ -1159,7 +1240,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 4,
           "title": "9.4 Education Places & School Subjects",
           "grammar": [
-            "Grammar focus & practice"
+            "Present Simple for work routines",
+            "Prepositions of place for workplaces (at/in)"
           ],
           "speaking": "I can talk about schools, universities, and favourite academic subjects.",
           "listening": "Audio dialogue for 9.4 Education Places & School Subjects",
@@ -1184,7 +1266,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 5,
           "title": "9.5 Study Habits, Homework & Exams",
           "grammar": [
-            "Grammar focus & practice"
+            "Present Simple for work routines",
+            "Prepositions of place for workplaces (at/in)"
           ],
           "speaking": "I can describe study routines, homework tasks, and exam preparation.",
           "listening": "Audio dialogue for 9.5 Study Habits, Homework & Exams",
@@ -1209,7 +1292,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 6,
           "title": "9.6 Work & Education Profile Capstone",
           "grammar": [
-            "Grammar focus & practice"
+            "Present Simple for work routines",
+            "Prepositions of place for workplaces (at/in)"
           ],
           "speaking": "I can present a complete overview of my professional and educational background.",
           "listening": "Audio dialogue for 9.6 Work & Education Profile Capstone",
@@ -1246,7 +1330,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 1,
           "title": "10.1 Languages & Communication Verbs",
           "grammar": [
-            "Grammar focus & practice"
+            "Can / Can't for language ability",
+            "Adverbs of manner (well, fluently)"
           ],
           "speaking": "I can state which languages I speak, read, write, and understand.",
           "listening": "Audio dialogue for 10.1 Languages & Communication Verbs",
@@ -1271,7 +1356,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 2,
           "title": "10.2 Language Ability & Learning Progress",
           "grammar": [
-            "Grammar focus & practice"
+            "Can / Can't for language ability",
+            "Adverbs of manner (well, fluently)"
           ],
           "speaking": "I can describe my language proficiency level and learning progress.",
           "listening": "Audio dialogue for 10.2 Language Ability & Learning Progress",
@@ -1296,7 +1382,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 3,
           "title": "10.3 Classroom Interaction & Requests",
           "grammar": [
-            "Grammar focus & practice"
+            "Can / Can't for language ability",
+            "Adverbs of manner (well, fluently)"
           ],
           "speaking": "I can use classroom communication phrases and request clarification.",
           "listening": "Audio dialogue for 10.3 Classroom Interaction & Requests",
@@ -1321,7 +1408,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 4,
           "title": "10.4 Translation, Spelling & Pronunciation",
           "grammar": [
-            "Grammar focus & practice"
+            "Can / Can't for language ability",
+            "Adverbs of manner (well, fluently)"
           ],
           "speaking": "I can ask for translations, correct spelling, and pronunciation help.",
           "listening": "Audio dialogue for 10.4 Translation, Spelling & Pronunciation",
@@ -1346,7 +1434,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 5,
           "title": "10.5 Communication Channels & Messages",
           "grammar": [
-            "Grammar focus & practice"
+            "Can / Can't for language ability",
+            "Adverbs of manner (well, fluently)"
           ],
           "speaking": "I can talk about methods of communication and send short digital messages.",
           "listening": "Audio dialogue for 10.5 Communication Channels & Messages",
@@ -1371,7 +1460,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 6,
           "title": "10.6 Multilingual Learner Profile Capstone",
           "grammar": [
-            "Grammar focus & practice"
+            "Can / Can't for language ability",
+            "Adverbs of manner (well, fluently)"
           ],
           "speaking": "I can present my language learning portfolio and communicate effectively in class.",
           "listening": "Audio dialogue for 10.6 Multilingual Learner Profile Capstone",
@@ -1408,7 +1498,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 1,
           "title": "11.1 Modes of Transport & Commuting",
           "grammar": [
-            "Grammar focus & practice"
+            "Prepositions of transport (by bus, on foot)",
+            "Imperatives for directions"
           ],
           "speaking": "I can name common modes of transport and say how I travel to work or school.",
           "listening": "Audio dialogue for 11.1 Modes of Transport & Commuting",
@@ -1433,7 +1524,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 2,
           "title": "11.2 Travel Places & Stations",
           "grammar": [
-            "Grammar focus & practice"
+            "Prepositions of transport (by bus, on foot)",
+            "Imperatives for directions"
           ],
           "speaking": "I can name travel locations like airports and train stations and locate them.",
           "listening": "Audio dialogue for 11.2 Travel Places & Stations",
@@ -1458,7 +1550,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 3,
           "title": "11.3 Asking & Giving Directions",
           "grammar": [
-            "Grammar focus & practice"
+            "Prepositions of transport (by bus, on foot)",
+            "Imperatives for directions"
           ],
           "speaking": "I can ask where places are and understand basic directions.",
           "listening": "Audio dialogue for 11.3 Asking & Giving Directions",
@@ -1483,7 +1576,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 4,
           "title": "11.4 Buying Tickets & Travel Schedules",
           "grammar": [
-            "Grammar focus & practice"
+            "Prepositions of transport (by bus, on foot)",
+            "Imperatives for directions"
           ],
           "speaking": "I can buy transport tickets and ask about departure and arrival times.",
           "listening": "Audio dialogue for 11.4 Buying Tickets & Travel Schedules",
@@ -1508,7 +1602,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 5,
           "title": "11.5 Travel Situations: Checking In & Luggage",
           "grammar": [
-            "Grammar focus & practice"
+            "Prepositions of transport (by bus, on foot)",
+            "Imperatives for directions"
           ],
           "speaking": "I can handle basic airport/hotel check-in situations and talk about luggage.",
           "listening": "Audio dialogue for 11.5 Travel Situations: Checking In & Luggage",
@@ -1533,7 +1628,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 6,
           "title": "11.6 Transport & Travel Capstone",
           "grammar": [
-            "Grammar focus & practice"
+            "Prepositions of transport (by bus, on foot)",
+            "Imperatives for directions"
           ],
           "speaking": "I can navigate a full travel itinerary from asking directions to buying tickets and arriving.",
           "listening": "Audio dialogue for 11.6 Transport & Travel Capstone",
@@ -1570,7 +1666,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 1,
           "title": "12.1 Places in Town & Public Buildings",
           "grammar": [
-            "Grammar focus & practice"
+            "There is / There are for places in town",
+            "Prepositions of place (next to, opposite)"
           ],
           "speaking": "I can name town locations like banks, parks, museums, cinemas, and libraries.",
           "listening": "Audio dialogue for 12.1 Places in Town & Public Buildings",
@@ -1595,7 +1692,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 2,
           "title": "12.2 City Landmarks & Services",
           "grammar": [
-            "Grammar focus & practice"
+            "There is / There are for places in town",
+            "Prepositions of place (next to, opposite)"
           ],
           "speaking": "I can describe public city landmarks and municipal services.",
           "listening": "Audio dialogue for 12.2 City Landmarks & Services",
@@ -1620,7 +1718,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 3,
           "title": "12.3 Asking Directions in Town",
           "grammar": [
-            "Grammar focus & practice"
+            "There is / There are for places in town",
+            "Prepositions of place (next to, opposite)"
           ],
           "speaking": "I can ask how to reach city landmarks and understand town orientation.",
           "listening": "Audio dialogue for 12.3 Asking Directions in Town",
@@ -1645,7 +1744,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 4,
           "title": "12.4 Describing Neighborhoods & City Life",
           "grammar": [
-            "Grammar focus & practice"
+            "There is / There are for places in town",
+            "Prepositions of place (next to, opposite)"
           ],
           "speaking": "I can describe my neighborhood and express what I like about my city.",
           "listening": "Audio dialogue for 12.4 Describing Neighborhoods & City Life",
@@ -1670,7 +1770,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 5,
           "title": "12.5 City Transport & Urban Navigation",
           "grammar": [
-            "Grammar focus & practice"
+            "There is / There are for places in town",
+            "Prepositions of place (next to, opposite)"
           ],
           "speaking": "I can navigate city transport systems like metro, bus lines, and taxi stands.",
           "listening": "Audio dialogue for 12.5 City Transport & Urban Navigation",
@@ -1695,7 +1796,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 6,
           "title": "12.6 City Guide & Navigation Capstone",
           "grammar": [
-            "Grammar focus & practice"
+            "There is / There are for places in town",
+            "Prepositions of place (next to, opposite)"
           ],
           "speaking": "I can present a city tour guide and give directions to multiple places in town.",
           "listening": "Audio dialogue for 12.6 City Guide & Navigation Capstone",
@@ -1732,7 +1834,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 1,
           "title": "13.1 Weather Conditions & Temperature",
           "grammar": [
-            "Grammar focus & practice"
+            "It is + weather adjective",
+            "Present Continuous for weather right now"
           ],
           "speaking": "I can describe daily weather conditions and temperature.",
           "listening": "Audio dialogue for 13.1 Weather Conditions & Temperature",
@@ -1757,7 +1860,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 2,
           "title": "13.2 The Four Seasons & Seasonal Activities",
           "grammar": [
-            "Grammar focus & practice"
+            "It is + weather adjective",
+            "Present Continuous for weather right now"
           ],
           "speaking": "I can name the four seasons and talk about favourite seasonal activities.",
           "listening": "Audio dialogue for 13.2 The Four Seasons & Seasonal Activities",
@@ -1782,7 +1886,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 3,
           "title": "13.3 Nature Landscapes & Natural Places",
           "grammar": [
-            "Grammar focus & practice"
+            "It is + weather adjective",
+            "Present Continuous for weather right now"
           ],
           "speaking": "I can name natural places and landscapes like seas, mountains, and forests.",
           "listening": "Audio dialogue for 13.3 Nature Landscapes & Natural Places",
@@ -1807,7 +1912,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 4,
           "title": "13.4 Weather Forecasts & Planning Activities",
           "grammar": [
-            "Grammar focus & practice"
+            "It is + weather adjective",
+            "Present Continuous for weather right now"
           ],
           "speaking": "I can understand simple weather forecasts and plan outdoor activities.",
           "listening": "Audio dialogue for 13.4 Weather Forecasts & Planning Activities",
@@ -1832,7 +1938,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 5,
           "title": "13.5 Environmental Habits & Caring for Nature",
           "grammar": [
-            "Grammar focus & practice"
+            "It is + weather adjective",
+            "Present Continuous for weather right now"
           ],
           "speaking": "I can discuss simple eco-friendly habits like recycling and keeping places clean.",
           "listening": "Audio dialogue for 13.5 Environmental Habits & Caring for Nature",
@@ -1857,7 +1964,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 6,
           "title": "13.6 Nature & Weather Capstone",
           "grammar": [
-            "Grammar focus & practice"
+            "It is + weather adjective",
+            "Present Continuous for weather right now"
           ],
           "speaking": "I can describe natural environments, climate in my country, and discuss weather.",
           "listening": "Audio dialogue for 13.6 Nature & Weather Capstone",
@@ -1894,7 +2002,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 1,
           "title": "14.1 Leisure Activities & Everyday Hobbies",
           "grammar": [
-            "Grammar focus & practice"
+            "Like / Love / Hate + -ing",
+            "Frequency adverbs (always, sometimes, never)"
           ],
           "speaking": "I can talk about leisure activities like watching TV, listening to music, and reading.",
           "listening": "Audio dialogue for 14.1 Leisure Activities & Everyday Hobbies",
@@ -1919,7 +2028,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 2,
           "title": "14.2 Sports & Physical Activities",
           "grammar": [
-            "Grammar focus & practice"
+            "Like / Love / Hate + -ing",
+            "Frequency adverbs (always, sometimes, never)"
           ],
           "speaking": "I can name sports and describe my physical activities and abilities.",
           "listening": "Audio dialogue for 14.2 Sports & Physical Activities",
@@ -1944,7 +2054,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 3,
           "title": "14.3 Cinema, Music & Entertainment",
           "grammar": [
-            "Grammar focus & practice"
+            "Like / Love / Hate + -ing",
+            "Frequency adverbs (always, sometimes, never)"
           ],
           "speaking": "I can express preferences for movies, music, books, and cultural events.",
           "listening": "Audio dialogue for 14.3 Cinema, Music & Entertainment",
@@ -1969,7 +2080,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 4,
           "title": "14.4 Weekend Plans & Free Time Activities",
           "grammar": [
-            "Grammar focus & practice"
+            "Like / Love / Hate + -ing",
+            "Frequency adverbs (always, sometimes, never)"
           ],
           "speaking": "I can talk about weekend plans and invite friends to leisure events.",
           "listening": "Audio dialogue for 14.4 Weekend Plans & Free Time Activities",
@@ -1994,7 +2106,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 5,
           "title": "14.5 Hobbies & Personal Interests Survey",
           "grammar": [
-            "Grammar focus & practice"
+            "Like / Love / Hate + -ing",
+            "Frequency adverbs (always, sometimes, never)"
           ],
           "speaking": "I can interview peers about hobbies and compare leisure interests.",
           "listening": "Audio dialogue for 14.5 Hobbies & Personal Interests Survey",
@@ -2019,7 +2132,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 6,
           "title": "14.6 Free Time & Hobbies Portfolio Capstone",
           "grammar": [
-            "Grammar focus & practice"
+            "Like / Love / Hate + -ing",
+            "Frequency adverbs (always, sometimes, never)"
           ],
           "speaking": "I can give a presentation about my hobbies, favourite sports, and leisure routine.",
           "listening": "Audio dialogue for 14.6 Free Time & Hobbies Portfolio Capstone",
@@ -2056,7 +2170,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 1,
           "title": "15.1 Digital Devices & Hardware",
           "grammar": [
-            "Grammar focus & practice"
+            "Imperatives for tech instructions",
+            "Present Simple for daily tech habits"
           ],
           "speaking": "I can name common tech devices like smartphones, laptops, and headphones.",
           "listening": "Audio dialogue for 15.1 Digital Devices & Hardware",
@@ -2081,7 +2196,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 2,
           "title": "15.2 Tech Action Verbs & Operations",
           "grammar": [
-            "Grammar focus & practice"
+            "Imperatives for tech instructions",
+            "Present Simple for daily tech habits"
           ],
           "speaking": "I can describe basic tech actions like turning on, charging, opening, and downloading.",
           "listening": "Audio dialogue for 15.2 Tech Action Verbs & Operations",
@@ -2106,7 +2222,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 3,
           "title": "15.3 Internet Vocabulary & Online Activities",
           "grammar": [
-            "Grammar focus & practice"
+            "Imperatives for tech instructions",
+            "Present Simple for daily tech habits"
           ],
           "speaking": "I can talk about online activities like searching, checking email, and browsing websites.",
           "listening": "Audio dialogue for 15.3 Internet Vocabulary & Online Activities",
@@ -2131,7 +2248,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 4,
           "title": "15.4 Social Media & Digital Messages",
           "grammar": [
-            "Grammar focus & practice"
+            "Imperatives for tech instructions",
+            "Present Simple for daily tech habits"
           ],
           "speaking": "I can write short digital messages and use basic social media terms.",
           "listening": "Audio dialogue for 15.4 Social Media & Digital Messages",
@@ -2156,7 +2274,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 5,
           "title": "15.5 Digital Safety & Troubleshooting",
           "grammar": [
-            "Grammar focus & practice"
+            "Imperatives for tech instructions",
+            "Present Simple for daily tech habits"
           ],
           "speaking": "I can understand basic digital safety rules and describe simple tech problems.",
           "listening": "Audio dialogue for 15.5 Digital Safety & Troubleshooting",
@@ -2181,7 +2300,8 @@ window.COSY_CURRICULUM_A1 = {
           "num": 6,
           "title": "15.6 Digital Life & Technology Profile Capstone",
           "grammar": [
-            "Grammar focus & practice"
+            "Imperatives for tech instructions",
+            "Present Simple for daily tech habits"
           ],
           "speaking": "I can present an overview of my daily tech habits and digital communication.",
           "listening": "Audio dialogue for 15.6 Digital Life & Technology Profile Capstone",
@@ -2204,446 +2324,1183 @@ window.COSY_CURRICULUM_A1 = {
     },
     {
       "unit": 16,
+      "num": 16,
+      "id": "u16",
+      "label": "CELEBRATIONS, CULTURE & EVENTS",
       "title": "MODULE 16. CELEBRATIONS, CULTURE & EVENTS",
+      "color": "#a0140F6",
+      "arc": "Personal celebrations, party invitations, national holidays, cultural outings, social events and capstone project",
+      "lessons_count": 6,
       "lessons": [
         {
+          "code": "M16-L01",
           "lesson": 1,
+          "num": 1,
           "title": "16.1 Birthdays & Personal Celebrations",
           "grammar": [
-            "Would you like...?",
-            "Let's + verb"
+            "Would like to + verb for invitations",
+            "Let's + verb for social plans"
           ],
-          "vocabulary": [
+          "speaking": "I can talk about birthdays, gifts, and personal celebrations.",
+          "listening": "Audio dialogue for 16.1 Birthdays & Personal Celebrations",
+          "reading": "Short text for 16.1 Birthdays & Personal Celebrations",
+          "writing": "Write 5 sentences for 16.1 Birthdays & Personal Celebrations",
+          "task": "Roleplay practice for 16.1 Birthdays & Personal Celebrations",
+          "vocab": [
             "birthday",
             "party",
             "gift",
             "cake",
-            "invitation",
-            "guest"
+            "card"
           ],
-          "teacher_notes": "code: \"M16-L01\"\ncando: \"Can invite people, accept/refuse invitations, and talk about celebrations\"",
-          "recycled": "Polite requests, dates, food and drink"
+          "hw": "Homework practice for 16.1 Birthdays & Personal Celebrations",
+          "cando": "I can talk about birthdays, gifts, and personal celebrations.",
+          "teacher_notes": "code: \"M16-L01\"\ncando: \"I can talk about birthdays, gifts, and personal celebrations.\"",
+          "recycled": "Module 16 progression"
         },
         {
+          "code": "M16-L02",
           "lesson": 2,
-          "title": "16.2 Holidays & Traditions",
+          "num": 2,
+          "title": "16.2 Invitations & Party Planning",
           "grammar": [
-            "Present Simple",
-            "Frequency adverbs"
+            "Would like to + verb for invitations",
+            "Let's + verb for social plans"
           ],
-          "vocabulary": [
+          "speaking": "I can invite people to a party and respond to invitations.",
+          "listening": "Audio dialogue for 16.2 Invitations & Party Planning",
+          "reading": "Short text for 16.2 Invitations & Party Planning",
+          "writing": "Write 5 sentences for 16.2 Invitations & Party Planning",
+          "task": "Roleplay practice for 16.2 Invitations & Party Planning",
+          "vocab": [
+            "invitation",
+            "accept",
+            "decline",
+            "bring",
+            "food"
+          ],
+          "hw": "Homework practice for 16.2 Invitations & Party Planning",
+          "cando": "I can invite people to a party and respond to invitations.",
+          "teacher_notes": "code: \"M16-L02\"\ncando: \"I can invite people to a party and respond to invitations.\"",
+          "recycled": "Module 16 progression"
+        },
+        {
+          "code": "M16-L03",
+          "lesson": 3,
+          "num": 3,
+          "title": "16.3 Holidays & National Traditions",
+          "grammar": [
+            "Would like to + verb for invitations",
+            "Let's + verb for social plans"
+          ],
+          "speaking": "I can describe national holidays, family customs, and seasonal celebrations.",
+          "listening": "Audio dialogue for 16.3 Holidays & National Traditions",
+          "reading": "Short text for 16.3 Holidays & National Traditions",
+          "writing": "Write 5 sentences for 16.3 Holidays & National Traditions",
+          "task": "Roleplay practice for 16.3 Holidays & National Traditions",
+          "vocab": [
             "holiday",
             "festival",
             "tradition",
-            "family traditions",
-            "food traditions",
-            "celebration",
-            "New Year",
-            "Christmas"
+            "family",
+            "food"
           ],
-          "teacher_notes": "code: \"M16-L02\"\ncando: \"Can describe national or family traditions and talk about special days\"",
-          "recycled": "Birthdays, calendar dates, frequency adverbs"
+          "hw": "Homework practice for 16.3 Holidays & National Traditions",
+          "cando": "I can describe national holidays, family customs, and seasonal celebrations.",
+          "teacher_notes": "code: \"M16-L03\"\ncando: \"I can describe national holidays, family customs, and seasonal celebrations.\"",
+          "recycled": "Module 16 progression"
         },
         {
-          "lesson": 3,
-          "title": "16.3 Events & Going Out",
+          "code": "M16-L04",
+          "lesson": 4,
+          "num": 4,
+          "title": "16.4 Cultural Outings & Venues",
           "grammar": [
-            "Present Continuous for arrangements"
+            "Would like to + verb for invitations",
+            "Let's + verb for social plans"
           ],
-          "vocabulary": [
-            "concert",
-            "exhibition",
-            "cinema",
+          "speaking": "I can talk about visiting museums, cinemas, theatres, and concerts.",
+          "listening": "Audio dialogue for 16.4 Cultural Outings & Venues",
+          "reading": "Short text for 16.4 Cultural Outings & Venues",
+          "writing": "Write 5 sentences for 16.4 Cultural Outings & Venues",
+          "task": "Roleplay practice for 16.4 Cultural Outings & Venues",
+          "vocab": [
             "museum",
-            "restaurant",
-            "festival",
-            "cultural events"
+            "cinema",
+            "theatre",
+            "concert",
+            "ticket"
           ],
-          "teacher_notes": "code: \"M16-L03\"\ncando: \"Can make plans and discuss events\"",
-          "recycled": "Places in town, time expressions, invitations"
+          "hw": "Homework practice for 16.4 Cultural Outings & Venues",
+          "cando": "I can talk about visiting museums, cinemas, theatres, and concerts.",
+          "teacher_notes": "code: \"M16-L04\"\ncando: \"I can talk about visiting museums, cinemas, theatres, and concerts.\"",
+          "recycled": "Module 16 progression"
+        },
+        {
+          "code": "M16-L05",
+          "lesson": 5,
+          "num": 5,
+          "title": "16.5 Social Events & Going Out",
+          "grammar": [
+            "Would like to + verb for invitations",
+            "Let's + verb for social plans"
+          ],
+          "speaking": "I can arrange to meet friends for social events and outings.",
+          "listening": "Audio dialogue for 16.5 Social Events & Going Out",
+          "reading": "Short text for 16.5 Social Events & Going Out",
+          "writing": "Write 5 sentences for 16.5 Social Events & Going Out",
+          "task": "Roleplay practice for 16.5 Social Events & Going Out",
+          "vocab": [
+            "meet",
+            "friend",
+            "weekend",
+            "restaurant",
+            "park"
+          ],
+          "hw": "Homework practice for 16.5 Social Events & Going Out",
+          "cando": "I can arrange to meet friends for social events and outings.",
+          "teacher_notes": "code: \"M16-L05\"\ncando: \"I can arrange to meet friends for social events and outings.\"",
+          "recycled": "Module 16 progression"
+        },
+        {
+          "code": "M16-L06",
+          "lesson": 6,
+          "num": 6,
+          "title": "16.6 Celebrations & Cultural Events Capstone",
+          "grammar": [
+            "Would like to + verb for invitations",
+            "Let's + verb for social plans"
+          ],
+          "speaking": "I can present a plan for a holiday celebration or cultural outing.",
+          "listening": "Audio dialogue for 16.6 Celebrations & Cultural Events Capstone",
+          "reading": "Short text for 16.6 Celebrations & Cultural Events Capstone",
+          "writing": "Write 5 sentences for 16.6 Celebrations & Cultural Events Capstone",
+          "task": "Roleplay practice for 16.6 Celebrations & Cultural Events Capstone",
+          "vocab": [
+            "party",
+            "event",
+            "celebrate",
+            "music",
+            "food"
+          ],
+          "hw": "Homework practice for 16.6 Celebrations & Cultural Events Capstone",
+          "cando": "I can present a plan for a holiday celebration or cultural outing.",
+          "teacher_notes": "code: \"M16-L06\"\ncando: \"I can present a plan for a holiday celebration or cultural outing.\"",
+          "recycled": "Module 16 progression"
         }
       ]
     },
     {
       "unit": 17,
+      "num": 17,
+      "id": "u17",
+      "label": "PAST EXPERIENCES",
       "title": "MODULE 17. PAST EXPERIENCES (MOVING TOWARDS A2)",
+      "color": "#aa154F6",
+      "arc": "Talking about past events, yesterday, weekends, childhood memories, travel, and personal milestones",
+      "lessons_count": 6,
       "lessons": [
         {
+          "code": "M17-L01",
           "lesson": 1,
-          "title": "17.1 Yesterday & Last Week",
+          "num": 1,
+          "title": "17.1 Yesterday & Recent Past",
           "grammar": [
-            "Past Simple introduction (regular verbs)"
+            "Past Simple (regular & irregular verbs)",
+            "Time expressions (yesterday, last, ago)"
           ],
-          "vocabulary": [
+          "speaking": "I can talk about actions I completed yesterday or last week.",
+          "listening": "Audio dialogue for 17.1 Yesterday & Recent Past",
+          "reading": "Short text for 17.1 Yesterday & Recent Past",
+          "writing": "Write 5 sentences for 17.1 Yesterday & Recent Past",
+          "task": "Roleplay practice for 17.1 Yesterday & Recent Past",
+          "vocab": [
             "yesterday",
-            "last night",
-            "last week",
-            "ago",
-            "visit",
-            "watch",
-            "buy",
-            "go",
-            "meet"
+            "last",
+            "week",
+            "work",
+            "visit"
           ],
-          "teacher_notes": "code: \"M17-L01\"\ncando: \"Can describe completed actions and talk about recent events\"",
-          "recycled": "Daily routine verbs, time expressions"
+          "hw": "Homework practice for 17.1 Yesterday & Recent Past",
+          "cando": "I can talk about actions I completed yesterday or last week.",
+          "teacher_notes": "code: \"M17-L01\"\ncando: \"I can talk about actions I completed yesterday or last week.\"",
+          "recycled": "Module 17 progression"
         },
         {
+          "code": "M17-L02",
           "lesson": 2,
-          "title": "17.2 Memories & Life Events",
+          "num": 2,
+          "title": "17.2 Weekend Activities & Past Events",
           "grammar": [
-            "Past Simple questions",
-            "Irregular verbs (went, saw, had, made)"
+            "Past Simple (regular & irregular verbs)",
+            "Time expressions (yesterday, last, ago)"
           ],
-          "vocabulary": [
+          "speaking": "I can describe what I did over the weekend and during past events.",
+          "listening": "Audio dialogue for 17.2 Weekend Activities & Past Events",
+          "reading": "Short text for 17.2 Weekend Activities & Past Events",
+          "writing": "Write 5 sentences for 17.2 Weekend Activities & Past Events",
+          "task": "Roleplay practice for 17.2 Weekend Activities & Past Events",
+          "vocab": [
+            "weekend",
+            "friend",
+            "go",
+            "see",
+            "buy"
+          ],
+          "hw": "Homework practice for 17.2 Weekend Activities & Past Events",
+          "cando": "I can describe what I did over the weekend and during past events.",
+          "teacher_notes": "code: \"M17-L02\"\ncando: \"I can describe what I did over the weekend and during past events.\"",
+          "recycled": "Module 17 progression"
+        },
+        {
+          "code": "M17-L03",
+          "lesson": 3,
+          "num": 3,
+          "title": "17.3 Childhood & Early Memories",
+          "grammar": [
+            "Past Simple (regular & irregular verbs)",
+            "Time expressions (yesterday, last, ago)"
+          ],
+          "speaking": "I can share simple facts and memories from my childhood.",
+          "listening": "Audio dialogue for 17.3 Childhood & Early Memories",
+          "reading": "Short text for 17.3 Childhood & Early Memories",
+          "writing": "Write 5 sentences for 17.3 Childhood & Early Memories",
+          "task": "Roleplay practice for 17.3 Childhood & Early Memories",
+          "vocab": [
             "childhood",
             "school",
-            "holiday",
-            "first time",
-            "favourite memory"
+            "memory",
+            "live",
+            "like"
           ],
-          "teacher_notes": "code: \"M17-L02\"\ncando: \"Can describe simple memories and talk about previous experiences\"",
-          "recycled": "Past Simple regular verbs, family, education"
+          "hw": "Homework practice for 17.3 Childhood & Early Memories",
+          "cando": "I can share simple facts and memories from my childhood.",
+          "teacher_notes": "code: \"M17-L03\"\ncando: \"I can share simple facts and memories from my childhood.\"",
+          "recycled": "Module 17 progression"
         },
         {
-          "lesson": 3,
-          "title": "17.3 Travel Experiences",
+          "code": "M17-L04",
+          "lesson": 4,
+          "num": 4,
+          "title": "17.4 Past Travel & Holidays",
           "grammar": [
-            "Past Simple",
-            "Prepositions (in, to, from)"
+            "Past Simple (regular & irregular verbs)",
+            "Time expressions (yesterday, last, ago)"
           ],
-          "vocabulary": [
-            "country",
-            "city",
+          "speaking": "I can describe a holiday trip I took in the past.",
+          "listening": "Audio dialogue for 17.4 Past Travel & Holidays",
+          "reading": "Short text for 17.4 Past Travel & Holidays",
+          "writing": "Write 5 sentences for 17.4 Past Travel & Holidays",
+          "task": "Roleplay practice for 17.4 Past Travel & Holidays",
+          "vocab": [
+            "travel",
+            "holiday",
             "hotel",
             "beach",
-            "museum"
+            "city"
           ],
-          "teacher_notes": "code: \"M17-L03\"\ncando: \"Can say where they went and describe simple trips\"",
-          "recycled": "Past Simple irregulars, travel situations, places"
+          "hw": "Homework practice for 17.4 Past Travel & Holidays",
+          "cando": "I can describe a holiday trip I took in the past.",
+          "teacher_notes": "code: \"M17-L04\"\ncando: \"I can describe a holiday trip I took in the past.\"",
+          "recycled": "Module 17 progression"
+        },
+        {
+          "code": "M17-L05",
+          "lesson": 5,
+          "num": 5,
+          "title": "17.5 Life Events & Personal Milestones",
+          "grammar": [
+            "Past Simple (regular & irregular verbs)",
+            "Time expressions (yesterday, last, ago)"
+          ],
+          "speaking": "I can speak about major life milestones like moving, finishing school, or starting a job.",
+          "listening": "Audio dialogue for 17.5 Life Events & Personal Milestones",
+          "reading": "Short text for 17.5 Life Events & Personal Milestones",
+          "writing": "Write 5 sentences for 17.5 Life Events & Personal Milestones",
+          "task": "Roleplay practice for 17.5 Life Events & Personal Milestones",
+          "vocab": [
+            "born",
+            "move",
+            "start",
+            "finish",
+            "study"
+          ],
+          "hw": "Homework practice for 17.5 Life Events & Personal Milestones",
+          "cando": "I can speak about major life milestones like moving, finishing school, or starting a job.",
+          "teacher_notes": "code: \"M17-L05\"\ncando: \"I can speak about major life milestones like moving, finishing school, or starting a job.\"",
+          "recycled": "Module 17 progression"
+        },
+        {
+          "code": "M17-L06",
+          "lesson": 6,
+          "num": 6,
+          "title": "17.6 Past Experiences Portfolio Capstone",
+          "grammar": [
+            "Past Simple (regular & irregular verbs)",
+            "Time expressions (yesterday, last, ago)"
+          ],
+          "speaking": "I can give a short talk summarizing an important past experience.",
+          "listening": "Audio dialogue for 17.6 Past Experiences Portfolio Capstone",
+          "reading": "Short text for 17.6 Past Experiences Portfolio Capstone",
+          "writing": "Write 5 sentences for 17.6 Past Experiences Portfolio Capstone",
+          "task": "Roleplay practice for 17.6 Past Experiences Portfolio Capstone",
+          "vocab": [
+            "past",
+            "experience",
+            "memory",
+            "trip",
+            "event"
+          ],
+          "hw": "Homework practice for 17.6 Past Experiences Portfolio Capstone",
+          "cando": "I can give a short talk summarizing an important past experience.",
+          "teacher_notes": "code: \"M17-L06\"\ncando: \"I can give a short talk summarizing an important past experience.\"",
+          "recycled": "Module 17 progression"
         }
       ]
     },
     {
       "unit": 18,
+      "num": 18,
+      "id": "u18",
+      "label": "FUTURE PLANS & DREAMS",
       "title": "MODULE 18. FUTURE PLANS & DREAMS",
+      "color": "#b4168F6",
+      "arc": "Immediate future intentions, personal goals, career ambitions, future travel, simple predictions and capstone roadmap",
+      "lessons_count": 6,
       "lessons": [
         {
+          "code": "M18-L01",
           "lesson": 1,
-          "title": "18.1 Personal Plans",
+          "num": 1,
+          "title": "18.1 Immediate Future & Personal Plans",
           "grammar": [
-            "Be going to for future plans"
+            "Be going to for future plans",
+            "Want to + verb / Will for predictions"
           ],
-          "vocabulary": [
+          "speaking": "I can state what I am going to do tomorrow or next week.",
+          "listening": "Audio dialogue for 18.1 Immediate Future & Personal Plans",
+          "reading": "Short text for 18.1 Immediate Future & Personal Plans",
+          "writing": "Write 5 sentences for 18.1 Immediate Future & Personal Plans",
+          "task": "Roleplay practice for 18.1 Immediate Future & Personal Plans",
+          "vocab": [
             "tomorrow",
-            "next week",
-            "holiday",
-            "project",
-            "meeting"
+            "next",
+            "week",
+            "plan",
+            "visit"
           ],
-          "teacher_notes": "code: \"M18-L01\"\ncando: \"Can talk about future activities and make arrangements\"",
-          "recycled": "Time expressions, present continuous for arrangements"
+          "hw": "Homework practice for 18.1 Immediate Future & Personal Plans",
+          "cando": "I can state what I am going to do tomorrow or next week.",
+          "teacher_notes": "code: \"M18-L01\"\ncando: \"I can state what I am going to do tomorrow or next week.\"",
+          "recycled": "Module 18 progression"
         },
         {
+          "code": "M18-L02",
           "lesson": 2,
-          "title": "18.2 Dreams & Goals",
+          "num": 2,
+          "title": "18.2 Dreams & Personal Goals",
           "grammar": [
-            "Want to + verb",
-            "Future expressions (I hope...)"
+            "Be going to for future plans",
+            "Want to + verb / Will for predictions"
           ],
-          "vocabulary": [
+          "speaking": "I can talk about my dreams, hopes, and self-improvement goals.",
+          "listening": "Audio dialogue for 18.2 Dreams & Personal Goals",
+          "reading": "Short text for 18.2 Dreams & Personal Goals",
+          "writing": "Write 5 sentences for 18.2 Dreams & Personal Goals",
+          "task": "Roleplay practice for 18.2 Dreams & Personal Goals",
+          "vocab": [
             "dream",
             "goal",
-            "learn",
-            "improve",
-            "travel",
-            "work"
+            "hope",
+            "want",
+            "learn"
           ],
-          "teacher_notes": "code: \"M18-L02\"\ncando: \"Can talk about ambitions and describe wishes\"",
-          "recycled": "Personal plans, want + infinitive, work & study"
+          "hw": "Homework practice for 18.2 Dreams & Personal Goals",
+          "cando": "I can talk about my dreams, hopes, and self-improvement goals.",
+          "teacher_notes": "code: \"M18-L02\"\ncando: \"I can talk about my dreams, hopes, and self-improvement goals.\"",
+          "recycled": "Module 18 progression"
         },
         {
+          "code": "M18-L03",
           "lesson": 3,
-          "title": "18.3 Predictions & Simple Opinions About Future",
+          "num": 3,
+          "title": "18.3 Career & Education Plans",
           "grammar": [
-            "Will for simple predictions"
+            "Be going to for future plans",
+            "Want to + verb / Will for predictions"
           ],
-          "vocabulary": [
-            "technology",
-            "cities",
-            "jobs",
-            "environment"
+          "speaking": "I can express future intentions regarding work and studies.",
+          "listening": "Audio dialogue for 18.3 Career & Education Plans",
+          "reading": "Short text for 18.3 Career & Education Plans",
+          "writing": "Write 5 sentences for 18.3 Career & Education Plans",
+          "task": "Roleplay practice for 18.3 Career & Education Plans",
+          "vocab": [
+            "career",
+            "job",
+            "study",
+            "course",
+            "work"
           ],
-          "teacher_notes": "code: \"M18-L03\"\ncando: \"Can make simple predictions and talk about future changes\"",
-          "recycled": "Dreams & goals, technology, environment"
+          "hw": "Homework practice for 18.3 Career & Education Plans",
+          "cando": "I can express future intentions regarding work and studies.",
+          "teacher_notes": "code: \"M18-L03\"\ncando: \"I can express future intentions regarding work and studies.\"",
+          "recycled": "Module 18 progression"
+        },
+        {
+          "code": "M18-L04",
+          "lesson": 4,
+          "num": 4,
+          "title": "18.4 Future Travel & Holiday Plans",
+          "grammar": [
+            "Be going to for future plans",
+            "Want to + verb / Will for predictions"
+          ],
+          "speaking": "I can discuss future travel destinations and holiday intentions.",
+          "listening": "Audio dialogue for 18.4 Future Travel & Holiday Plans",
+          "reading": "Short text for 18.4 Future Travel & Holiday Plans",
+          "writing": "Write 5 sentences for 18.4 Future Travel & Holiday Plans",
+          "task": "Roleplay practice for 18.4 Future Travel & Holiday Plans",
+          "vocab": [
+            "travel",
+            "holiday",
+            "country",
+            "city",
+            "visit"
+          ],
+          "hw": "Homework practice for 18.4 Future Travel & Holiday Plans",
+          "cando": "I can discuss future travel destinations and holiday intentions.",
+          "teacher_notes": "code: \"M18-L04\"\ncando: \"I can discuss future travel destinations and holiday intentions.\"",
+          "recycled": "Module 18 progression"
+        },
+        {
+          "code": "M18-L05",
+          "lesson": 5,
+          "num": 5,
+          "title": "18.5 Simple Predictions & Opinions About Future",
+          "grammar": [
+            "Be going to for future plans",
+            "Want to + verb / Will for predictions"
+          ],
+          "speaking": "I can make simple predictions about cities, technology, or weather in the future.",
+          "listening": "Audio dialogue for 18.5 Simple Predictions & Opinions About Future",
+          "reading": "Short text for 18.5 Simple Predictions & Opinions About Future",
+          "writing": "Write 5 sentences for 18.5 Simple Predictions & Opinions About Future",
+          "task": "Roleplay practice for 18.5 Simple Predictions & Opinions About Future",
+          "vocab": [
+            "future",
+            "think",
+            "world",
+            "city",
+            "technology"
+          ],
+          "hw": "Homework practice for 18.5 Simple Predictions & Opinions About Future",
+          "cando": "I can make simple predictions about cities, technology, or weather in the future.",
+          "teacher_notes": "code: \"M18-L05\"\ncando: \"I can make simple predictions about cities, technology, or weather in the future.\"",
+          "recycled": "Module 18 progression"
+        },
+        {
+          "code": "M18-L06",
+          "lesson": 6,
+          "num": 6,
+          "title": "18.6 Future Plans & Dreams Capstone",
+          "grammar": [
+            "Be going to for future plans",
+            "Want to + verb / Will for predictions"
+          ],
+          "speaking": "I can present a personal roadmap detailing my short-term and long-term future goals.",
+          "listening": "Audio dialogue for 18.6 Future Plans & Dreams Capstone",
+          "reading": "Short text for 18.6 Future Plans & Dreams Capstone",
+          "writing": "Write 5 sentences for 18.6 Future Plans & Dreams Capstone",
+          "task": "Roleplay practice for 18.6 Future Plans & Dreams Capstone",
+          "vocab": [
+            "future",
+            "plan",
+            "goal",
+            "dream",
+            "walk"
+          ],
+          "hw": "Homework practice for 18.6 Future Plans & Dreams Capstone",
+          "cando": "I can present a personal roadmap detailing my short-term and long-term future goals.",
+          "teacher_notes": "code: \"M18-L06\"\ncando: \"I can present a personal roadmap detailing my short-term and long-term future goals.\"",
+          "recycled": "Module 18 progression"
         }
       ]
     },
     {
       "unit": 19,
+      "num": 19,
+      "id": "u19",
+      "label": "COMPARING MY WORLD",
       "title": "MODULE 19. COMPARING MY WORLD",
+      "color": "#be17cF6",
+      "arc": "Comparing objects, people, places, lifestyles, preferences, recommendations and comparative capstone",
+      "lessons_count": 6,
       "lessons": [
         {
+          "code": "M19-L01",
           "lesson": 1,
-          "title": "19.1 Comparing People & Things",
+          "num": 1,
+          "title": "19.1 Comparing People & Physical Objects",
           "grammar": [
-            "Comparatives (-er than, more ... than)"
+            "Comparative adjectives (-er than, more ... than)",
+            "Connectors (and, but, because)"
           ],
-          "vocabulary": [
-            "big/small",
-            "fast/slow",
-            "cheap/expensive",
-            "easy/difficult"
+          "speaking": "I can compare two people or objects using simple comparative words.",
+          "listening": "Audio dialogue for 19.1 Comparing People & Physical Objects",
+          "reading": "Short text for 19.1 Comparing People & Physical Objects",
+          "writing": "Write 5 sentences for 19.1 Comparing People & Physical Objects",
+          "task": "Roleplay practice for 19.1 Comparing People & Physical Objects",
+          "vocab": [
+            "big",
+            "small",
+            "fast",
+            "slow",
+            "cheap"
           ],
-          "teacher_notes": "code: \"M19-L01\"\ncando: \"Can compare objects and people using comparative adjectives\"",
-          "recycled": "Basic descriptions, size and colour, possessions"
+          "hw": "Homework practice for 19.1 Comparing People & Physical Objects",
+          "cando": "I can compare two people or objects using simple comparative words.",
+          "teacher_notes": "code: \"M19-L01\"\ncando: \"I can compare two people or objects using simple comparative words.\"",
+          "recycled": "Module 19 progression"
         },
         {
+          "code": "M19-L02",
           "lesson": 2,
-          "title": "19.2 Comparing Places & Lifestyles",
+          "num": 2,
+          "title": "19.2 Comparing Places & Cities",
           "grammar": [
-            "Comparatives",
-            "Connectors (but, and)"
+            "Comparative adjectives (-er than, more ... than)",
+            "Connectors (and, but, because)"
           ],
-          "vocabulary": [
+          "speaking": "I can compare life in different cities, towns, or countries.",
+          "listening": "Audio dialogue for 19.2 Comparing Places & Cities",
+          "reading": "Short text for 19.2 Comparing Places & Cities",
+          "writing": "Write 5 sentences for 19.2 Comparing Places & Cities",
+          "task": "Roleplay practice for 19.2 Comparing Places & Cities",
+          "vocab": [
             "city",
             "village",
-            "country",
-            "lifestyle",
-            "transport",
-            "nature"
+            "quiet",
+            "noisy",
+            "modern"
           ],
-          "teacher_notes": "code: \"M19-L02\"\ncando: \"Can describe differences between places and lifestyles\"",
-          "recycled": "Comparing people & things, city places, transport"
+          "hw": "Homework practice for 19.2 Comparing Places & Cities",
+          "cando": "I can compare life in different cities, towns, or countries.",
+          "teacher_notes": "code: \"M19-L02\"\ncando: \"I can compare life in different cities, towns, or countries.\"",
+          "recycled": "Module 19 progression"
         },
         {
+          "code": "M19-L03",
           "lesson": 3,
-          "title": "19.3 Likes, Dislikes & Choices",
+          "num": 3,
+          "title": "19.3 Comparing Lifestyles & Habits",
           "grammar": [
-            "Opinion structures (I prefer..., I think...)"
+            "Comparative adjectives (-er than, more ... than)",
+            "Connectors (and, but, because)"
           ],
-          "vocabulary": [
-            "favourite",
+          "speaking": "I can compare modern vs traditional lifestyles and daily habits.",
+          "listening": "Audio dialogue for 19.3 Comparing Lifestyles & Habits",
+          "reading": "Short text for 19.3 Comparing Lifestyles & Habits",
+          "writing": "Write 5 sentences for 19.3 Comparing Lifestyles & Habits",
+          "task": "Roleplay practice for 19.3 Comparing Lifestyles & Habits",
+          "vocab": [
+            "lifestyle",
+            "routine",
+            "busy",
+            "relaxed",
+            "healthy"
+          ],
+          "hw": "Homework practice for 19.3 Comparing Lifestyles & Habits",
+          "cando": "I can compare modern vs traditional lifestyles and daily habits.",
+          "teacher_notes": "code: \"M19-L03\"\ncando: \"I can compare modern vs traditional lifestyles and daily habits.\"",
+          "recycled": "Module 19 progression"
+        },
+        {
+          "code": "M19-L04",
+          "lesson": 4,
+          "num": 4,
+          "title": "19.4 Likes, Dislikes & Preferences",
+          "grammar": [
+            "Comparative adjectives (-er than, more ... than)",
+            "Connectors (and, but, because)"
+          ],
+          "speaking": "I can express preferences and choose between different options.",
+          "listening": "Audio dialogue for 19.4 Likes, Dislikes & Preferences",
+          "reading": "Short text for 19.4 Likes, Dislikes & Preferences",
+          "writing": "Write 5 sentences for 19.4 Likes, Dislikes & Preferences",
+          "task": "Roleplay practice for 19.4 Likes, Dislikes & Preferences",
+          "vocab": [
+            "prefer",
+            "like",
             "better",
-            "interesting",
-            "comfortable",
-            "useful"
+            "favorite",
+            "choice"
           ],
-          "teacher_notes": "code: \"M19-L03\"\ncando: \"Can choose between options and explain basic preferences\"",
-          "recycled": "Comparatives, likes & dislikes, basic opinions"
+          "hw": "Homework practice for 19.4 Likes, Dislikes & Preferences",
+          "cando": "I can express preferences and choose between different options.",
+          "teacher_notes": "code: \"M19-L04\"\ncando: \"I can express preferences and choose between different options.\"",
+          "recycled": "Module 19 progression"
+        },
+        {
+          "code": "M19-L05",
+          "lesson": 5,
+          "num": 5,
+          "title": "19.5 Making Choices & Recommendations",
+          "grammar": [
+            "Comparative adjectives (-er than, more ... than)",
+            "Connectors (and, but, because)"
+          ],
+          "speaking": "I can recommend an option to someone based on a comparison.",
+          "listening": "Audio dialogue for 19.5 Making Choices & Recommendations",
+          "reading": "Short text for 19.5 Making Choices & Recommendations",
+          "writing": "Write 5 sentences for 19.5 Making Choices & Recommendations",
+          "task": "Roleplay practice for 19.5 Making Choices & Recommendations",
+          "vocab": [
+            "choose",
+            "recommend",
+            "best",
+            "reason",
+            "advantage"
+          ],
+          "hw": "Homework practice for 19.5 Making Choices & Recommendations",
+          "cando": "I can recommend an option to someone based on a comparison.",
+          "teacher_notes": "code: \"M19-L05\"\ncando: \"I can recommend an option to someone based on a comparison.\"",
+          "recycled": "Module 19 progression"
+        },
+        {
+          "code": "M19-L06",
+          "lesson": 6,
+          "num": 6,
+          "title": "19.6 Comparing My World Capstone",
+          "grammar": [
+            "Comparative adjectives (-er than, more ... than)",
+            "Connectors (and, but, because)"
+          ],
+          "speaking": "I can give a comparative presentation comparing two products, places, or ways of living.",
+          "listening": "Audio dialogue for 19.6 Comparing My World Capstone",
+          "reading": "Short text for 19.6 Comparing My World Capstone",
+          "writing": "Write 5 sentences for 19.6 Comparing My World Capstone",
+          "task": "Roleplay practice for 19.6 Comparing My World Capstone",
+          "vocab": [
+            "comparison",
+            "opinion",
+            "preference",
+            "better",
+            "worse"
+          ],
+          "hw": "Homework practice for 19.6 Comparing My World Capstone",
+          "cando": "I can give a comparative presentation comparing two products, places, or ways of living.",
+          "teacher_notes": "code: \"M19-L06\"\ncando: \"I can give a comparative presentation comparing two products, places, or ways of living.\"",
+          "recycled": "Module 19 progression"
         }
       ]
     },
     {
       "unit": 20,
+      "num": 20,
+      "id": "u20",
+      "label": "BASIC OPINIONS & SOCIAL INTERACTION",
       "title": "MODULE 20. BASIC OPINIONS & SOCIAL INTERACTION",
+      "color": "#c8190F6",
+      "arc": "Giving opinions, polite agreement/disagreement, handling everyday problems, giving advice, polite requests and capstone survey",
+      "lessons_count": 6,
       "lessons": [
         {
+          "code": "M20-L01",
           "lesson": 1,
-          "title": "20.1 Giving Simple Opinions",
+          "num": 1,
+          "title": "20.1 Expressing Simple Opinions",
           "grammar": [
-            "Opinion structures (I think..., I don't think..., I agree)"
+            "Opinion structures (I think, I believe)",
+            "Modal verbs Can / Could / Should for polite requests & advice"
           ],
-          "vocabulary": [
+          "speaking": "I can state my opinion clearly on everyday topics and ask others for theirs.",
+          "listening": "Audio dialogue for 20.1 Expressing Simple Opinions",
+          "reading": "Short text for 20.1 Expressing Simple Opinions",
+          "writing": "Write 5 sentences for 20.1 Expressing Simple Opinions",
+          "task": "Roleplay practice for 20.1 Expressing Simple Opinions",
+          "vocab": [
+            "think",
+            "believe",
+            "opinion",
             "good",
-            "bad",
-            "interesting",
-            "boring",
-            "important",
-            "useful"
+            "bad"
           ],
-          "teacher_notes": "code: \"M20-L01\"\ncando: \"Can express opinions and agree/disagree simply\"",
-          "recycled": "Basic descriptions, preferences, connectors"
+          "hw": "Homework practice for 20.1 Expressing Simple Opinions",
+          "cando": "I can state my opinion clearly on everyday topics and ask others for theirs.",
+          "teacher_notes": "code: \"M20-L01\"\ncando: \"I can state my opinion clearly on everyday topics and ask others for theirs.\"",
+          "recycled": "Module 20 progression"
         },
         {
+          "code": "M20-L02",
           "lesson": 2,
-          "title": "20.2 Everyday Problems & Solutions",
+          "num": 2,
+          "title": "20.2 Agreeing & Disagreeing Politely",
           "grammar": [
-            "Modal verb Can for requests",
-            "Modal verb Should for advice"
+            "Opinion structures (I think, I believe)",
+            "Modal verbs Can / Could / Should for polite requests & advice"
           ],
-          "vocabulary": [
-            "lost",
-            "broken",
-            "late",
+          "speaking": "I can show agreement or polite disagreement during a simple discussion.",
+          "listening": "Audio dialogue for 20.2 Agreeing & Disagreeing Politely",
+          "reading": "Short text for 20.2 Agreeing & Disagreeing Politely",
+          "writing": "Write 5 sentences for 20.2 Agreeing & Disagreeing Politely",
+          "task": "Roleplay practice for 20.2 Agreeing & Disagreeing Politely",
+          "vocab": [
+            "agree",
+            "disagree",
+            "right",
             "wrong",
-            "difficult",
-            "help",
-            "fix",
+            "true"
+          ],
+          "hw": "Homework practice for 20.2 Agreeing & Disagreeing Politely",
+          "cando": "I can show agreement or polite disagreement during a simple discussion.",
+          "teacher_notes": "code: \"M20-L02\"\ncando: \"I can show agreement or polite disagreement during a simple discussion.\"",
+          "recycled": "Module 20 progression"
+        },
+        {
+          "code": "M20-L03",
+          "lesson": 3,
+          "num": 3,
+          "title": "20.3 Expressing Problems & Seeking Help",
+          "grammar": [
+            "Opinion structures (I think, I believe)",
+            "Modal verbs Can / Could / Should for polite requests & advice"
+          ],
+          "speaking": "I can describe everyday problems (lost, broken, late) and ask for assistance.",
+          "listening": "Audio dialogue for 20.3 Expressing Problems & Seeking Help",
+          "reading": "Short text for 20.3 Expressing Problems & Seeking Help",
+          "writing": "Write 5 sentences for 20.3 Expressing Problems & Seeking Help",
+          "task": "Roleplay practice for 20.3 Expressing Problems & Seeking Help",
+          "vocab": [
+            "problem",
+            "broken",
+            "lost",
+            "late",
+            "wrong"
+          ],
+          "hw": "Homework practice for 20.3 Expressing Problems & Seeking Help",
+          "cando": "I can describe everyday problems (lost, broken, late) and ask for assistance.",
+          "teacher_notes": "code: \"M20-L03\"\ncando: \"I can describe everyday problems (lost, broken, late) and ask for assistance.\"",
+          "recycled": "Module 20 progression"
+        },
+        {
+          "code": "M20-L04",
+          "lesson": 4,
+          "num": 4,
+          "title": "20.4 Giving Advice & Simple Solutions",
+          "grammar": [
+            "Opinion structures (I think, I believe)",
+            "Modal verbs Can / Could / Should for polite requests & advice"
+          ],
+          "speaking": "I can offer simple advice or practical suggestions for common issues.",
+          "listening": "Audio dialogue for 20.4 Giving Advice & Simple Solutions",
+          "reading": "Short text for 20.4 Giving Advice & Simple Solutions",
+          "writing": "Write 5 sentences for 20.4 Giving Advice & Simple Solutions",
+          "task": "Roleplay practice for 20.4 Giving Advice & Simple Solutions",
+          "vocab": [
+            "should",
+            "advice",
+            "try",
+            "solution",
             "change"
           ],
-          "teacher_notes": "code: \"M20-L02\"\ncando: \"Can explain simple problems and ask for or give help\"",
-          "recycled": "Giving simple opinions, modal verbs, health & wellbeing"
+          "hw": "Homework practice for 20.4 Giving Advice & Simple Solutions",
+          "cando": "I can offer simple advice or practical suggestions for common issues.",
+          "teacher_notes": "code: \"M20-L04\"\ncando: \"I can offer simple advice or practical suggestions for common issues.\"",
+          "recycled": "Module 20 progression"
         },
         {
-          "lesson": 3,
-          "title": "20.3 Making Requests & Being Polite",
+          "code": "M20-L05",
+          "lesson": 5,
+          "num": 5,
+          "title": "20.5 Polite Requests & Permission",
           "grammar": [
-            "Polite forms (Could you...?, Can I...?)"
+            "Opinion structures (I think, I believe)",
+            "Modal verbs Can / Could / Should for polite requests & advice"
           ],
-          "vocabulary": [
-            "help",
-            "information",
-            "permission",
-            "question"
+          "speaking": "I can make polite requests and ask for permission in public contexts.",
+          "listening": "Audio dialogue for 20.5 Polite Requests & Permission",
+          "reading": "Short text for 20.5 Polite Requests & Permission",
+          "writing": "Write 5 sentences for 20.5 Polite Requests & Permission",
+          "task": "Roleplay practice for 20.5 Polite Requests & Permission",
+          "vocab": [
+            "could",
+            "please",
+            "polite",
+            "mind",
+            "borrow"
           ],
-          "teacher_notes": "code: \"M20-L03\"\ncando: \"Can ask for help and make polite requests in social interactions\"",
-          "recycled": "Everyday problems, polite phrases, modal verbs"
+          "hw": "Homework practice for 20.5 Polite Requests & Permission",
+          "cando": "I can make polite requests and ask for permission in public contexts.",
+          "teacher_notes": "code: \"M20-L05\"\ncando: \"I can make polite requests and ask for permission in public contexts.\"",
+          "recycled": "Module 20 progression"
+        },
+        {
+          "code": "M20-L06",
+          "lesson": 6,
+          "num": 6,
+          "title": "20.6 Social Interaction & Opinion Survey Capstone",
+          "grammar": [
+            "Opinion structures (I think, I believe)",
+            "Modal verbs Can / Could / Should for polite requests & advice"
+          ],
+          "speaking": "I can conduct a simple opinion survey and resolve a practical problem scenario in a roleplay.",
+          "listening": "Audio dialogue for 20.6 Social Interaction & Opinion Survey Capstone",
+          "reading": "Short text for 20.6 Social Interaction & Opinion Survey Capstone",
+          "writing": "Write 5 sentences for 20.6 Social Interaction & Opinion Survey Capstone",
+          "task": "Roleplay practice for 20.6 Social Interaction & Opinion Survey Capstone",
+          "vocab": [
+            "survey",
+            "opinion",
+            "problem",
+            "solution",
+            "agreement"
+          ],
+          "hw": "Homework practice for 20.6 Social Interaction & Opinion Survey Capstone",
+          "cando": "I can conduct a simple opinion survey and resolve a practical problem scenario in a roleplay.",
+          "teacher_notes": "code: \"M20-L06\"\ncando: \"I can conduct a simple opinion survey and resolve a practical problem scenario in a roleplay.\"",
+          "recycled": "Module 20 progression"
         }
       ]
     },
     {
       "unit": 21,
+      "num": 21,
+      "id": "u21",
+      "label": "FINAL A1 SURVIVAL SKILLS",
       "title": "MODULE 21. FINAL A1 SURVIVAL SKILLS",
+      "color": "#d21a4F6",
+      "arc": "Airport navigation, hotel check-in, medical emergencies, lost property, survival strategies and real-world roleplay capstone",
+      "lessons_count": 6,
       "lessons": [
         {
+          "code": "M21-L01",
           "lesson": 1,
-          "title": "21.1 At the Airport / Station",
+          "num": 1,
+          "title": "21.1 At the Airport & Train Station",
           "grammar": [
-            "Questions (Where is...?, When does it leave?)"
+            "Imperatives & Polite requests",
+            "Question words (Where, When, How much)"
           ],
-          "vocabulary": [
-            "departure",
-            "arrival",
-            "ticket",
-            "passport",
+          "speaking": "I can navigate transit hubs, understand gate announcements, and check in baggage.",
+          "listening": "Audio dialogue for 21.1 At the Airport & Train Station",
+          "reading": "Short text for 21.1 At the Airport & Train Station",
+          "writing": "Write 5 sentences for 21.1 At the Airport & Train Station",
+          "task": "Roleplay practice for 21.1 At the Airport & Train Station",
+          "vocab": [
+            "airport",
+            "flight",
             "gate",
-            "luggage"
+            "passport",
+            "ticket"
           ],
-          "teacher_notes": "code: \"M21-L01\"\ncando: \"Can understand announcements and ask basic travel questions\"",
-          "recycled": "Transport & travel, buying tickets, travel situations"
+          "hw": "Homework practice for 21.1 At the Airport & Train Station",
+          "cando": "I can navigate transit hubs, understand gate announcements, and check in baggage.",
+          "teacher_notes": "code: \"M21-L01\"\ncando: \"I can navigate transit hubs, understand gate announcements, and check in baggage.\"",
+          "recycled": "Module 21 progression"
         },
         {
+          "code": "M21-L02",
           "lesson": 2,
-          "title": "21.2 At a Hotel",
+          "num": 2,
+          "title": "21.2 At the Hotel & Accommodation",
           "grammar": [
-            "Verb Have (I have a reservation)",
-            "Modal verb Can"
+            "Imperatives & Polite requests",
+            "Question words (Where, When, How much)"
           ],
-          "vocabulary": [
+          "speaking": "I can check in at a hotel, ask about amenities, and report room issues.",
+          "listening": "Audio dialogue for 21.2 At the Hotel & Accommodation",
+          "reading": "Short text for 21.2 At the Hotel & Accommodation",
+          "writing": "Write 5 sentences for 21.2 At the Hotel & Accommodation",
+          "task": "Roleplay practice for 21.2 At the Hotel & Accommodation",
+          "vocab": [
+            "hotel",
             "room",
             "key",
             "reservation",
-            "breakfast",
-            "towel"
+            "breakfast"
           ],
-          "teacher_notes": "code: \"M21-L02\"\ncando: \"Can check in at a hotel and ask for services\"",
-          "recycled": "Travel situations, requests, polite phrases"
+          "hw": "Homework practice for 21.2 At the Hotel & Accommodation",
+          "cando": "I can check in at a hotel, ask about amenities, and report room issues.",
+          "teacher_notes": "code: \"M21-L02\"\ncando: \"I can check in at a hotel, ask about amenities, and report room issues.\"",
+          "recycled": "Module 21 progression"
         },
         {
+          "code": "M21-L03",
           "lesson": 3,
-          "title": "21.3 Emergency Communication",
+          "num": 3,
+          "title": "21.3 Medical Emergencies & Pharmacy",
           "grammar": [
-            "Imperatives (Call the police)",
-            "Modal verb Can"
+            "Imperatives & Polite requests",
+            "Question words (Where, When, How much)"
           ],
-          "vocabulary": [
-            "help",
-            "danger",
-            "police",
+          "speaking": "I can communicate urgent health needs, buy medicine, and ask for a doctor.",
+          "listening": "Audio dialogue for 21.3 Medical Emergencies & Pharmacy",
+          "reading": "Short text for 21.3 Medical Emergencies & Pharmacy",
+          "writing": "Write 5 sentences for 21.3 Medical Emergencies & Pharmacy",
+          "task": "Roleplay practice for 21.3 Medical Emergencies & Pharmacy",
+          "vocab": [
             "doctor",
+            "hospital",
+            "emergency",
+            "medicine",
+            "pain"
+          ],
+          "hw": "Homework practice for 21.3 Medical Emergencies & Pharmacy",
+          "cando": "I can communicate urgent health needs, buy medicine, and ask for a doctor.",
+          "teacher_notes": "code: \"M21-L03\"\ncando: \"I can communicate urgent health needs, buy medicine, and ask for a doctor.\"",
+          "recycled": "Module 21 progression"
+        },
+        {
+          "code": "M21-L04",
+          "lesson": 4,
+          "num": 4,
+          "title": "21.4 Lost Property & Police Services",
+          "grammar": [
+            "Imperatives & Polite requests",
+            "Question words (Where, When, How much)"
+          ],
+          "speaking": "I can report lost or stolen belongings to police or information desks.",
+          "listening": "Audio dialogue for 21.4 Lost Property & Police Services",
+          "reading": "Short text for 21.4 Lost Property & Police Services",
+          "writing": "Write 5 sentences for 21.4 Lost Property & Police Services",
+          "task": "Roleplay practice for 21.4 Lost Property & Police Services",
+          "vocab": [
+            "lost",
+            "stolen",
+            "wallet",
+            "phone",
+            "bag"
+          ],
+          "hw": "Homework practice for 21.4 Lost Property & Police Services",
+          "cando": "I can report lost or stolen belongings to police or information desks.",
+          "teacher_notes": "code: \"M21-L04\"\ncando: \"I can report lost or stolen belongings to police or information desks.\"",
+          "recycled": "Module 21 progression"
+        },
+        {
+          "code": "M21-L05",
+          "lesson": 5,
+          "num": 5,
+          "title": "21.5 Communication Breakdown & Survival Strategies",
+          "grammar": [
+            "Imperatives & Polite requests",
+            "Question words (Where, When, How much)"
+          ],
+          "speaking": "I can use clarification strategies when I do not understand or need repetition.",
+          "listening": "Audio dialogue for 21.5 Communication Breakdown & Survival Strategies",
+          "reading": "Short text for 21.5 Communication Breakdown & Survival Strategies",
+          "writing": "Write 5 sentences for 21.5 Communication Breakdown & Survival Strategies",
+          "task": "Roleplay practice for 21.5 Communication Breakdown & Survival Strategies",
+          "vocab": [
+            "repeat",
+            "slow",
+            "understand",
+            "mean",
+            "speak"
+          ],
+          "hw": "Homework practice for 21.5 Communication Breakdown & Survival Strategies",
+          "cando": "I can use clarification strategies when I do not understand or need repetition.",
+          "teacher_notes": "code: \"M21-L05\"\ncando: \"I can use clarification strategies when I do not understand or need repetition.\"",
+          "recycled": "Module 21 progression"
+        },
+        {
+          "code": "M21-L06",
+          "lesson": 6,
+          "num": 6,
+          "title": "21.6 Survival Skills Real-World Roleplay Capstone",
+          "grammar": [
+            "Imperatives & Polite requests",
+            "Question words (Where, When, How much)"
+          ],
+          "speaking": "I can navigate a multi-stage real-world travel survival simulation.",
+          "listening": "Audio dialogue for 21.6 Survival Skills Real-World Roleplay Capstone",
+          "reading": "Short text for 21.6 Survival Skills Real-World Roleplay Capstone",
+          "writing": "Write 5 sentences for 21.6 Survival Skills Real-World Roleplay Capstone",
+          "task": "Roleplay practice for 21.6 Survival Skills Real-World Roleplay Capstone",
+          "vocab": [
+            "travel",
+            "situation",
+            "help",
+            "direction",
             "emergency"
           ],
-          "teacher_notes": "code: \"M21-L03\"\ncando: \"Can ask for urgent help and describe basic emergency situations\"",
-          "recycled": "Everyday problems, doctor & pharmacy, imperatives"
+          "hw": "Homework practice for 21.6 Survival Skills Real-World Roleplay Capstone",
+          "cando": "I can navigate a multi-stage real-world travel survival simulation.",
+          "teacher_notes": "code: \"M21-L06\"\ncando: \"I can navigate a multi-stage real-world travel survival simulation.\"",
+          "recycled": "Module 21 progression"
         }
       ]
     },
     {
       "unit": 22,
+      "num": 22,
+      "id": "u22",
+      "label": "A1 INTEGRATED PROJECTS",
       "title": "MODULE 22. A1 INTEGRATED PROJECTS",
+      "color": "#dc1b8F6",
+      "arc": "Comprehensive portfolio projects integrating profile, daily routine, home guide, past/future timeline, opinions and final A1 showcase",
+      "lessons_count": 6,
       "lessons": [
         {
+          "code": "M22-L01",
           "lesson": 1,
-          "title": "22.1 Project 1. My Profile",
+          "num": 1,
+          "title": "22.1 Project 1. My Personal & Professional Profile",
           "grammar": [
-            "Be",
-            "Have",
-            "Present Simple",
-            "Adjectives"
+            "Present Simple & Past Simple review",
+            "Future plans with Be going to",
+            "Comparatives & Opinion structures"
           ],
-          "vocabulary": [
-            "introduce",
+          "speaking": "I can create a complete personal and professional profile sheet.",
+          "listening": "Audio dialogue for 22.1 Project 1. My Personal & Professional Profile",
+          "reading": "Short text for 22.1 Project 1. My Personal & Professional Profile",
+          "writing": "Write 5 sentences for 22.1 Project 1. My Personal & Professional Profile",
+          "task": "Roleplay practice for 22.1 Project 1. My Personal & Professional Profile",
+          "vocab": [
             "profile",
             "identity",
-            "family",
-            "interests"
+            "profession",
+            "language",
+            "nationality"
           ],
-          "teacher_notes": "code: \"M22-L01\"\ncando: \"Can introduce themselves, describe their family, and share personal interests in a comprehensive profile\"",
-          "recycled": "Personal identity, family, interests"
+          "hw": "Homework practice for 22.1 Project 1. My Personal & Professional Profile",
+          "cando": "I can create a complete personal and professional profile sheet.",
+          "teacher_notes": "code: \"M22-L01\"\ncando: \"I can create a complete personal and professional profile sheet.\"",
+          "recycled": "Module 22 progression"
         },
         {
+          "code": "M22-L02",
           "lesson": 2,
-          "title": "22.2 Project 2. My Perfect Day",
+          "num": 2,
+          "title": "22.2 Project 2. My Daily Routine & Perfect Day",
           "grammar": [
-            "Present Simple",
-            "Adverbs of frequency",
-            "Time expressions"
+            "Present Simple & Past Simple review",
+            "Future plans with Be going to",
+            "Comparatives & Opinion structures"
           ],
-          "vocabulary": [
+          "speaking": "I can present a narrative comparing my normal daily routine with my ideal day.",
+          "listening": "Audio dialogue for 22.2 Project 2. My Daily Routine & Perfect Day",
+          "reading": "Short text for 22.2 Project 2. My Daily Routine & Perfect Day",
+          "writing": "Write 5 sentences for 22.2 Project 2. My Daily Routine & Perfect Day",
+          "task": "Roleplay practice for 22.2 Project 2. My Daily Routine & Perfect Day",
+          "vocab": [
             "routine",
-            "activities",
+            "morning",
+            "evening",
             "schedule",
-            "perfect day"
+            "day"
           ],
-          "teacher_notes": "code: \"M22-L02\"\ncando: \"Can describe a complete daily routine and favorite leisure activities\"",
-          "recycled": "Daily routine, time, hobbies"
+          "hw": "Homework practice for 22.2 Project 2. My Daily Routine & Perfect Day",
+          "cando": "I can present a narrative comparing my normal daily routine with my ideal day.",
+          "teacher_notes": "code: \"M22-L02\"\ncando: \"I can present a narrative comparing my normal daily routine with my ideal day.\"",
+          "recycled": "Module 22 progression"
         },
         {
+          "code": "M22-L03",
           "lesson": 3,
-          "title": "22.3 Project 3. My Home & My City",
+          "num": 3,
+          "title": "22.3 Project 3. My Home & Neighborhood Guide",
           "grammar": [
-            "There is / There are",
-            "Prepositions of place",
-            "Imperatives"
+            "Present Simple & Past Simple review",
+            "Future plans with Be going to",
+            "Comparatives & Opinion structures"
           ],
-          "vocabulary": [
+          "speaking": "I can create a descriptive guide about my home, neighborhood, and local services.",
+          "listening": "Audio dialogue for 22.3 Project 3. My Home & Neighborhood Guide",
+          "reading": "Short text for 22.3 Project 3. My Home & Neighborhood Guide",
+          "writing": "Write 5 sentences for 22.3 Project 3. My Home & Neighborhood Guide",
+          "task": "Roleplay practice for 22.3 Project 3. My Home & Neighborhood Guide",
+          "vocab": [
             "home",
-            "rooms",
-            "city",
-            "places",
-            "directions"
+            "neighborhood",
+            "shop",
+            "park",
+            "transport"
           ],
-          "teacher_notes": "code: \"M22-L03\"\ncando: \"Can describe where they live and give directions around their town\"",
-          "recycled": "Home & environment, city places, directions"
+          "hw": "Homework practice for 22.3 Project 3. My Home & Neighborhood Guide",
+          "cando": "I can create a descriptive guide about my home, neighborhood, and local services.",
+          "teacher_notes": "code: \"M22-L03\"\ncando: \"I can create a descriptive guide about my home, neighborhood, and local services.\"",
+          "recycled": "Module 22 progression"
         },
         {
+          "code": "M22-L04",
           "lesson": 4,
-          "title": "22.4 Project 4. My Past & Future",
+          "num": 4,
+          "title": "22.4 Project 4. My Life Journey: Past & Future",
           "grammar": [
-            "Past Simple",
-            "Be going to",
-            "Will"
+            "Present Simple & Past Simple review",
+            "Future plans with Be going to",
+            "Comparatives & Opinion structures"
           ],
-          "vocabulary": [
-            "memories",
+          "speaking": "I can create a personal timeline combining past life experiences with future goals.",
+          "listening": "Audio dialogue for 22.4 Project 4. My Life Journey: Past & Future",
+          "reading": "Short text for 22.4 Project 4. My Life Journey: Past & Future",
+          "writing": "Write 5 sentences for 22.4 Project 4. My Life Journey: Past & Future",
+          "task": "Roleplay practice for 22.4 Project 4. My Life Journey: Past & Future",
+          "vocab": [
+            "plan",
             "past",
-            "experiences",
             "future",
-            "plans",
-            "dreams"
+            "milestone",
+            "memory"
           ],
-          "teacher_notes": "code: \"M22-L04\"\ncando: \"Can describe past experiences and talk about future plans and ambitions\"",
-          "recycled": "Past experiences, future plans & dreams"
+          "hw": "Homework practice for 22.4 Project 4. My Life Journey: Past & Future",
+          "cando": "I can create a personal timeline combining past life experiences with future goals.",
+          "teacher_notes": "code: \"M22-L04\"\ncando: \"I can create a personal timeline combining past life experiences with future goals.\"",
+          "recycled": "Module 22 progression"
         },
         {
+          "code": "M22-L05",
           "lesson": 5,
-          "title": "22.5 Project 5. My Opinions",
+          "num": 5,
+          "title": "22.5 Project 5. My Opinions & Cultural Perspectives",
           "grammar": [
-            "Comparatives",
-            "Because",
-            "But",
-            "Opinion structures (I think)"
+            "Present Simple & Past Simple review",
+            "Future plans with Be going to",
+            "Comparatives & Opinion structures"
           ],
-          "vocabulary": [
+          "speaking": "I can present a portfolio section expressing my opinions and cultural preferences.",
+          "listening": "Audio dialogue for 22.5 Project 5. My Opinions & Cultural Perspectives",
+          "reading": "Short text for 22.5 Project 5. My Opinions & Cultural Perspectives",
+          "writing": "Write 5 sentences for 22.5 Project 5. My Opinions & Cultural Perspectives",
+          "task": "Roleplay practice for 22.5 Project 5. My Opinions & Cultural Perspectives",
+          "vocab": [
             "opinion",
             "preference",
-            "compare",
-            "agree",
-            "disagree"
+            "culture",
+            "choice",
+            "favorite"
           ],
-          "teacher_notes": "code: \"M22-L05\"\ncando: \"Can express simple preferences, compare choices, and justify opinions\"",
-          "recycled": "Comparing my world, basic opinions, social interaction"
+          "hw": "Homework practice for 22.5 Project 5. My Opinions & Cultural Perspectives",
+          "cando": "I can present a portfolio section expressing my opinions and cultural preferences.",
+          "teacher_notes": "code: \"M22-L05\"\ncando: \"I can present a portfolio section expressing my opinions and cultural preferences.\"",
+          "recycled": "Module 22 progression"
+        },
+        {
+          "code": "M22-L06",
+          "lesson": 6,
+          "num": 6,
+          "title": "22.6 Final A1 Capstone Showcase & Self-Assessment",
+          "grammar": [
+            "Present Simple & Past Simple review",
+            "Future plans with Be going to",
+            "Comparatives & Opinion structures"
+          ],
+          "speaking": "I can showcase my complete A1 portfolio and perform a self-assessment against A1 can-do goals.",
+          "listening": "Audio dialogue for 22.6 Final A1 Capstone Showcase & Self-Assessment",
+          "reading": "Short text for 22.6 Final A1 Capstone Showcase & Self-Assessment",
+          "writing": "Write 5 sentences for 22.6 Final A1 Capstone Showcase & Self-Assessment",
+          "task": "Roleplay practice for 22.6 Final A1 Capstone Showcase & Self-Assessment",
+          "vocab": [
+            "course",
+            "present",
+            "progress",
+            "skill",
+            "summary"
+          ],
+          "hw": "Homework practice for 22.6 Final A1 Capstone Showcase & Self-Assessment",
+          "cando": "I can showcase my complete A1 portfolio and perform a self-assessment against A1 can-do goals.",
+          "teacher_notes": "code: \"M22-L06\"\ncando: \"I can showcase my complete A1 portfolio and perform a self-assessment against A1 can-do goals.\"",
+          "recycled": "Module 22 progression"
         }
       ]
     }
