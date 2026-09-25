@@ -489,6 +489,7 @@
     const courseParam = urlParams.get('course');
     const levelParam = urlParams.get('level');
     const lessonParam = urlParams.get('lesson');
+    const langParam = urlParams.get('lang');
 
     async function initTeacherApp() {
       const appRoot = document.getElementById('app-root');
@@ -549,16 +550,24 @@
     async function renderTeacherCatalog(grant, allowedCourses, fullManifest) {
       const appRoot = document.getElementById('app-root');
 
-      const courseList = fullManifest.filter(c => allowedCourses.includes('*') || allowedCourses.includes(c.id));
+      let courseList = fullManifest.filter(c => allowedCourses.includes('*') || allowedCourses.includes(c.id));
+      if (langParam) {
+        courseList = courseList.filter(c => c.lang.toLowerCase() === langParam.toLowerCase());
+      }
+
+      const langName = langParam ? langParam.toUpperCase() : '';
 
       let html = `
         <div class="catalog-container">
           <div class="catalog-header">
             <div>
-              <h1 style="font-size: 1.6rem; color: #0f172a;">Teacher Catalog (${grant.name || 'Teacher'})</h1>
+              <h1 style="font-size: 1.6rem; color: #0f172a;">${langName ? `${langName} Teacher Space` : 'Teacher Catalog'} (${grant.name || 'Teacher'})</h1>
               <p style="color: #64748b;">Teachers have access to all assigned tracks, curriculums, and speech scripts.</p>
             </div>
-            <a href="manuals/teacher-guide-first-lesson.md" target="_blank" class="btn btn-outline" style="font-size: 0.85rem;">📖 Teaching Guide</a>
+            <div style="display: flex; gap: 8px;">
+              <a href="founder.html?key=${encodeURIComponent(key)}" class="btn btn-outline" style="font-size: 0.85rem;">← Founder Portal</a>
+              <a href="manuals/teacher-guide-first-lesson.md" target="_blank" class="btn btn-outline" style="font-size: 0.85rem;">📖 Teaching Guide</a>
+            </div>
           </div>
           <div class="catalog-grid">
       `;
@@ -680,7 +689,10 @@
                 <h3 style="margin: 6px 0;">${item.title}</h3>
                 ${item.unit ? `<p style="font-size: 0.8rem; color: #64748b; margin-bottom: 12px;">${item.unit}</p>` : ''}
               </div>
-              <a href="teacher.html?key=${key}&lesson=${encodeURIComponent(lessonPath)}" class="btn" style="background: var(--teacher-primary); padding: 6px 12px; font-size: 0.85rem; text-align: center;">View Teacher Notes</a>
+              <div style="display: flex; flex-direction: column; gap: 6px; margin-top: 10px;">
+                <a href="teacher.html?key=${key}&lesson=${encodeURIComponent(lessonPath)}" class="btn" style="background: var(--teacher-primary); padding: 6px 12px; font-size: 0.8rem; text-align: center;">👁️ View Teacher Notes</a>
+                <a href="student.html?key=${key}&lesson=${encodeURIComponent(lessonPath)}&export=print" target="_blank" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.8rem; text-align: center;">🖨️ Print / Send HTML</a>
+              </div>
             </div>
           `;
         });

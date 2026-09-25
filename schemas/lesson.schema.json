@@ -34,7 +34,18 @@
         },
         "communication": {
           "type": "array",
-          "items": { "type": "string" }
+          "items": {
+            "oneOf": [
+              { "type": "string" },
+              {
+                "type": "object",
+                "properties": {
+                  "phrase_id": { "type": "string" },
+                  "manual_url": { "type": "string" }
+                }
+              }
+            ]
+          }
         },
         "phonetics": { "type": "string" }
       }

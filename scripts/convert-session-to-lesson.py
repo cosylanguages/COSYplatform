@@ -30,13 +30,18 @@ def escape_xml(text):
 def fetch_html(source_path_or_url):
     if source_path_or_url.startswith("http://") or source_path_or_url.startswith("https://"):
         url = source_path_or_url
+        req = urllib.request.Request(url, headers={"User-Agent": "Python"})
+        with urllib.request.urlopen(req) as resp:
+            return resp.read().decode("utf-8", errors="ignore"), url
+    elif os.path.exists(source_path_or_url):
+        with open(source_path_or_url, "r", encoding="utf-8") as f:
+            return f.read(), source_path_or_url
     else:
         clean_path = source_path_or_url.lstrip("/")
         url = f"https://raw.githubusercontent.com/cosylanguages/COSYevents/main/{clean_path}"
-
-    req = urllib.request.Request(url, headers={"User-Agent": "Python"})
-    with urllib.request.urlopen(req) as resp:
-        return resp.read().decode("utf-8", errors="ignore"), url
+        req = urllib.request.Request(url, headers={"User-Agent": "Python"})
+        with urllib.request.urlopen(req) as resp:
+            return resp.read().decode("utf-8", errors="ignore"), url
 
 def extract_section(raw_html, section_id, next_ids=[]):
     pattern = f'id="{section_id}"'
@@ -514,16 +519,49 @@ def generate_lesson_xml(parsed_data, lesson_id=None):
     xml_lines.append('</cosy-lesson>')
     return "\n".join(xml_lines)
 
+def register_in_roadmap(lesson_id, title, level, lang="en"):
+    roadmap_filename = f"spoken-english-{level.lower()}.json"
+    roadmap_path = os.path.join("roadmaps", roadmap_filename)
+    if not os.path.exists(roadmap_path):
+        roadmap_filename = f"general-english-{level.lower()}.json"
+        roadmap_path = os.path.join("roadmaps", roadmap_filename)
+
+    if os.path.exists(roadmap_path):
+        try:
+            with open(roadmap_path, "r", encoding="utf-8") as f:
+                rm_data = json.load(f)
+
+            sequence = rm_data.get("sequence", [])
+            if not any(item.get("id") == lesson_id for item in sequence):
+                new_num = len(sequence) + 1
+                sequence.append({
+                    "lessonNumber": new_num,
+                    "id": lesson_id,
+                    "title": title,
+                    "module": "COSYevents Converted Sessions",
+                    "status": "active"
+                })
+                rm_data["sequence"] = sequence
+                rm_data["totalLessons"] = len(sequence)
+                with open(roadmap_path, "w", encoding="utf-8") as f:
+                    json.dump(rm_data, f, indent=2, ensure_ascii=False)
+                print(f"Registered {lesson_id} in {roadmap_path} as Lesson #{new_num}")
+        except Exception as e:
+            print(f"Roadmap registration notice: {e}")
+
 def convert_session(source_path_or_url, output_file=None, lesson_id=None):
     raw_html, url = fetch_html(source_path_or_url)
     parsed = parse_session_html(raw_html, url)
-    xml_content = generate_lesson_xml(parsed, lesson_id=lesson_id)
+    final_lid = lesson_id or parsed["filename"]
+    xml_content = generate_lesson_xml(parsed, lesson_id=final_lid)
 
     if output_file:
         os.makedirs(os.path.dirname(output_file), exist_ok=True)
         with open(output_file, "w", encoding="utf-8") as f:
             f.write(xml_content)
         print(f"Successfully generated {output_file}")
+        register_in_roadmap(final_lid, parsed["title"], parsed["level"], parsed["lang"])
+
     return xml_content
 
 if __name__ == "__main__":

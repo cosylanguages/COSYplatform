@@ -750,7 +750,7 @@
               <div class="unit-grid">
         `;
 
-        roadmap.sequence.forEach(item => {
+        roadmap.sequence.forEach((item, idx) => {
           let lessonPath = "";
           if (courseId === "general-english-a0" && item.section > 0) {
             lessonPath = `lessons/general-english-a0/${item.id}.json`;
@@ -766,14 +766,22 @@
             lessonPath = `lessons/${courseId}/${item.id}.json`;
           }
 
+          const isUnlocked = (idx === 0 || item.id === "relaxation-and-hygge");
+
           html += `
-            <div class="unit-card">
+            <div class="unit-card" style="${!isUnlocked ? 'opacity: 0.85; background: #f8fafc;' : ''}">
               <div>
-                <span style="font-size: 0.75rem; color: #94a3b8; font-weight: 600;">LESSON #${item.lessonNumber}</span>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                  <span style="font-size: 0.75rem; color: #94a3b8; font-weight: 600;">LESSON #${item.lessonNumber}</span>
+                  ${isUnlocked ? '<span style="font-size: 0.7rem; background: #dcfce7; color: #15803d; padding: 2px 6px; border-radius: 4px; font-weight: 700;">🔓 ACTIVE</span>' : '<span style="font-size: 0.7rem; background: #f1f5f9; color: #64748b; padding: 2px 6px; border-radius: 4px; font-weight: 700;">🔒 CLOSED</span>'}
+                </div>
                 <h3 style="margin: 6px 0;">${item.title}</h3>
                 ${item.unit ? `<p style="font-size: 0.8rem; color: #64748b; margin-bottom: 12px;">${item.unit}</p>` : ''}
               </div>
-              <a href="student.html?key=${key}&lesson=${encodeURIComponent(lessonPath)}" class="btn" style="background: var(--student-primary); padding: 6px 12px; font-size: 0.85rem; text-align: center;">Start Lesson</a>
+              ${isUnlocked ?
+                `<a href="student.html?key=${key}&lesson=${encodeURIComponent(lessonPath)}" class="btn" style="background: var(--student-primary); padding: 6px 12px; font-size: 0.85rem; text-align: center;">Start Lesson</a>` :
+                `<a href="student.html?key=${key}&lesson=${encodeURIComponent(lessonPath)}" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.85rem; text-align: center; color: #64748b;">🔒 Closed (Sent by Teacher)</a>`
+              }
             </div>
           `;
         });
@@ -941,6 +949,7 @@
         window.currentStudentSlides = [];
         window.currentStudentSlideIdx = 0;
 
+        window.currentStudentLessonPath = lessonPath;
         if (lessonPath.endsWith('.xml')) {
           const parser = new DOMParser();
           const xmlDoc = parser.parseFromString(text, "text/xml");
@@ -948,23 +957,23 @@
           if (cosyLesson) lessonTitle = cosyLesson.getAttribute("title") || lessonTitle;
 
           const slideElements = xmlDoc.querySelectorAll("cosy-slide");
-          slideElements.forEach(s => {
+          slideElements.forEach((s, sIdx) => {
             window.currentStudentSlides.push({
-              id: s.getAttribute("id"),
+              id: s.getAttribute("id") || `slide-${sIdx+1}`,
               title: s.getAttribute("title") || "Slide",
               stage: s.getAttribute("stage") || "",
-              htmlContent: renderXmlNodeToStudentHtml(s)
+              htmlContent: renderXmlNodeToStudentHtml(s, `slide_${sIdx}`)
             });
           });
         } else {
           const jsonData = JSON.parse(text);
           lessonTitle = jsonData.title || lessonTitle;
-          jsonData.slides.forEach(s => {
+          jsonData.slides.forEach((s, sIdx) => {
             window.currentStudentSlides.push({
-              id: s.id,
+              id: s.id || `slide-${sIdx+1}`,
               title: s.title,
               stage: s.stage || "",
-              htmlContent: renderJsonSlideToStudentHtml(s)
+              htmlContent: renderJsonSlideToStudentHtml(s, `slide_${sIdx}`)
             });
           });
         }
@@ -992,8 +1001,16 @@
       const totalSlides = slides.length;
       const currentIdx = window.currentStudentSlideIdx;
 
+      const isExport = urlParams.get('export') === 'print';
+
       let html = `
         <div style="max-width: 1440px; margin: 10px auto; padding: 0 16px;">
+          ${isExport ? `
+            <div style="background: #e0f2fe; border: 1px solid #bae6fd; padding: 12px 20px; border-radius: 8px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center;">
+              <span style="color: #0369a1; font-weight: 600;">🖨️ Standalone Lesson Page — Printable Student Sheet</span>
+              <button onclick="window.print()" class="btn" style="background: var(--student-primary); font-size: 0.85rem;">📥 Print to PDF / Save HTML</button>
+            </div>
+          ` : ''}
           <div class="lesson-nav-header">
             <a href="student.html?key=${key}" class="back-btn">← Back to Course</a>
             <span style="font-weight: 700; color: #0f172a; font-size: 1.1rem;">${lessonTitle}</span>
@@ -1002,6 +1019,7 @@
               <button class="slide-nav-btn" onclick="toggleProjectorMode()" title="Classroom Projector">🖥️ Projector</button>
               <button class="slide-nav-btn" onclick="adjustTextZoom(-1)">Aa-</button>
               <button class="slide-nav-btn" onclick="adjustTextZoom(1)">Aa+</button>
+              <button class="slide-nav-btn" onclick="window.print()">🖨️ Print</button>
             </div>
           </div>
         </div>
@@ -1155,8 +1173,28 @@
       document.body.style.fontSize = window.textZoomLevel + '%';
     }
 
-    function renderXmlNodeToStudentHtml(node) {
+    function saveStudentInput(key, val) {
+      if (!window.currentStudentLessonPath) return;
+      try {
+        const storeKey = `cosy_ans_${window.currentStudentLessonPath}`;
+        const existing = JSON.parse(localStorage.getItem(storeKey) || '{}');
+        existing[key] = val;
+        localStorage.setItem(storeKey, JSON.stringify(existing));
+      } catch(e) {}
+    }
+
+    function getSavedStudentInput(key) {
+      if (!window.currentStudentLessonPath) return '';
+      try {
+        const storeKey = `cosy_ans_${window.currentStudentLessonPath}`;
+        const existing = JSON.parse(localStorage.getItem(storeKey) || '{}');
+        return existing[key] || '';
+      } catch(e) { return ''; }
+    }
+
+    function renderXmlNodeToStudentHtml(node, pathPrefix = "n") {
       let output = "";
+      let elementIdx = 0;
 
       for (let child of node.childNodes) {
         if (child.nodeType === Node.TEXT_NODE) {
@@ -1165,84 +1203,128 @@
         }
 
         const tagName = child.tagName ? child.tagName.toLowerCase() : "";
+        const fieldKey = `${pathPrefix}_${tagName}_${elementIdx++}`;
 
         if (tagName === "cosy-teacher-notes") continue;
 
         if (tagName === "p" || tagName === "ul" || tagName === "ol" || tagName === "li" || tagName === "h1" || tagName === "h2" || tagName === "h3") {
-          output += `<${tagName}>${renderXmlNodeToStudentHtml(child)}</${tagName}>`;
+          output += `<${tagName}>${renderXmlNodeToStudentHtml(child, fieldKey)}</${tagName}>`;
         } else if (tagName === "cosy-instruction") {
-          output += `<cosy-instruction>📋 ${renderXmlNodeToStudentHtml(child)}</cosy-instruction>`;
+          output += `<cosy-instruction>📋 ${renderXmlNodeToStudentHtml(child, fieldKey)}</cosy-instruction>`;
         } else if (tagName === "cosy-blockquote") {
-          output += `<cosy-blockquote>${renderXmlNodeToStudentHtml(child)}</cosy-blockquote>`;
+          output += `<cosy-blockquote>${renderXmlNodeToStudentHtml(child, fieldKey)}</cosy-blockquote>`;
         } else if (tagName === "cosy-text") {
           const type = child.getAttribute("type");
-          if (type === "strong") output += `<strong>${renderXmlNodeToStudentHtml(child)}</strong>`;
-          else if (type === "em") output += `<em>${renderXmlNodeToStudentHtml(child)}</em>`;
-          else output += renderXmlNodeToStudentHtml(child);
+          if (type === "strong") output += `<strong>${renderXmlNodeToStudentHtml(child, fieldKey)}</strong>`;
+          else if (type === "em") output += `<em>${renderXmlNodeToStudentHtml(child, fieldKey)}</em>`;
+          else output += renderXmlNodeToStudentHtml(child, fieldKey);
         } else if (tagName === "cosy-input") {
           const placeholder = child.getAttribute("placeholder") || "Type here...";
+          const saved = getSavedStudentInput(fieldKey);
           output += `
-            <div class="cosy-input-box">
-              <input type="text" placeholder="${placeholder}" />
+            <div class="cosy-input-box" style="display: inline-block;">
+              <input type="text" placeholder="${placeholder}" value="${saved.replace(/"/g, '&quot;')}" oninput="saveStudentInput('${fieldKey}', this.value)" />
             </div>
           `;
         } else if (tagName === "cosy-select") {
           const items = child.querySelectorAll("cosy-select-item-title");
-          output += `<select style="padding: 6px; border-radius: 6px; border: 1px solid #cbd5e1; margin: 4px 0;"><option value="">-- Select option --</option>`;
+          const saved = getSavedStudentInput(fieldKey);
+          output += `<select onchange="saveStudentInput('${fieldKey}', this.value)" style="padding: 6px 12px; border-radius: 6px; border: 1px solid #cbd5e1; margin: 6px 0; font-size: 0.9rem;"><option value="">-- Select option --</option>`;
           items.forEach(it => {
-            output += `<option>${it.textContent}</option>`;
+            const txt = it.textContent.trim();
+            output += `<option value="${txt.replace(/"/g, '&quot;')}" ${saved === txt ? 'selected' : ''}>${txt}</option>`;
           });
           output += `</select>`;
         } else if (tagName === "cosy-test") {
           const questions = child.querySelectorAll("cosy-test-question");
           if (questions.length > 0) {
-            questions.forEach(q => {
+            questions.forEach((q, qIdx) => {
+              const qKey = `${fieldKey}_q${qIdx}`;
+              const savedAns = getSavedStudentInput(qKey);
               const qText = q.querySelector("cosy-test-question-text")?.textContent || "Question";
               output += `<div class="cosy-test-question"><strong>${qText}</strong>`;
               const answers = q.querySelectorAll("cosy-test-item");
-              answers.forEach(a => {
-                output += `<label class="cosy-test-option"><input type="radio" name="q_${Math.random()}" /> ${a.textContent}</label>`;
+              answers.forEach((a, aIdx) => {
+                const optVal = a.textContent.trim();
+                const isChecked = savedAns === optVal ? 'checked' : '';
+                output += `<label class="cosy-test-option"><input type="radio" name="${qKey}" value="${optVal.replace(/"/g, '&quot;')}" ${isChecked} onchange="saveStudentInput('${qKey}', this.value)" /> ${optVal}</label>`;
               });
               output += `</div>`;
             });
           }
+        } else if (tagName === "cosy-dnd-text") {
+          const drags = child.querySelectorAll("cosy-dnd-text-drag");
+          let dragWords = [];
+          drags.forEach(d => dragWords.push(d.textContent.trim()));
+
+          output += `<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; margin: 16px 0;">`;
+          output += `<div style="margin-bottom: 12px; font-weight: 600; font-size: 0.85rem; color: #475569;">Word Bank (Drag / Drop):</div>`;
+          output += `<div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px;">`;
+          dragWords.forEach(w => {
+            output += `<span style="background: var(--student-light); color: var(--student-primary); border: 1px solid #bae6fd; font-weight: 600; padding: 4px 10px; border-radius: 16px; font-size: 0.85rem;">${w}</span>`;
+          });
+          output += `</div>`;
+
+          const content = child.querySelector("cosy-dnd-text-content");
+          if (content) {
+            let contentHtml = content.innerHTML;
+            let dropIdx = 0;
+            contentHtml = contentHtml.replace(/<cosy-dnd-text-drop[^>]*>/gi, () => {
+              const dropKey = `${fieldKey}_drop_${dropIdx++}`;
+              const savedVal = getSavedStudentInput(dropKey);
+              let selHtml = `<select onchange="saveStudentInput('${dropKey}', this.value)" style="padding: 4px 8px; border-radius: 6px; border: 1px solid #cbd5e1; font-weight: 600; color: #0284c7; font-size: 0.9rem;"><option value="">[ ___ ]</option>`;
+              dragWords.forEach(dw => {
+                selHtml += `<option value="${dw.replace(/"/g, '&quot;')}" ${savedVal === dw ? 'selected' : ''}>${dw}</option>`;
+              });
+              selHtml += `</select>`;
+              return selHtml;
+            });
+            output += `<div>${contentHtml}</div>`;
+          }
+          output += `</div>`;
         } else if (tagName === "cosy-vocabulary") {
           const items = child.querySelectorAll("cosy-vocabulary-item");
           output += `<div style="background: #f8fafc; border-radius: 8px; padding: 12px; margin: 12px 0;">`;
           items.forEach(v => {
+            const word = v.getAttribute("word");
             output += `
               <div class="cosy-vocab-item">
-                <div><strong>${v.getAttribute("word")}</strong> — <span style="color: #64748b;">${v.getAttribute("definition")}</span></div>
-                <button class="add-vocab-btn" onclick="alert('Added to dictionary!')">+ Add to Dictionary</button>
+                <div><strong>${word}</strong> — <span style="color: #64748b;">${v.getAttribute("definition")}</span></div>
+                <button class="add-vocab-btn" onclick="saveStudentInput('vocab_${word.replace(/\s+/g, '_')}', 'added'); alert('Added &quot;${word}&quot; to your personal dictionary!')">+ Add to Dictionary</button>
               </div>
             `;
           });
           output += `</div>`;
         } else if (tagName === "cosy-record") {
+          const maxTime = child.getAttribute("time") || "120";
           output += `
             <div class="recorder-widget">
-              <p>🎙️ <strong>Voice Speaking Task</strong> (Max time: ${child.getAttribute("time") || "120"}s)</p>
-              <button class="btn" style="background: var(--student-primary); margin-top: 8px;" onclick="alert('Record audio simulation')">Start Recording</button>
+              <p>🎙️ <strong>Voice Speaking Task</strong> (Max time: ${maxTime}s)</p>
+              <button class="btn" style="background: var(--student-primary); margin-top: 8px;" onclick="saveStudentInput('${fieldKey}_rec', 'recorded'); alert('Audio recording simulation completed!')">🎙️ Record Voice Response</button>
             </div>
           `;
         } else if (tagName === "cosy-essay") {
+          const topic = child.querySelector("cosy-essay-topic")?.textContent || "Writing Assignment";
+          const savedText = getSavedStudentInput(`${fieldKey}_essay`);
           output += `
             <div class="essay-widget">
-              <p>📝 <strong>Writing Assignment</strong></p>
-              <textarea placeholder="Write your response in English..."></textarea>
-              <button class="btn" style="background: var(--student-primary); margin-top: 8px;" onclick="alert('Essay saved!')">Submit Response</button>
+              <p>📝 <strong>${topic}</strong></p>
+              <textarea placeholder="Write your response in English..." oninput="saveStudentInput('${fieldKey}_essay', this.value)">${savedText}</textarea>
+              <button class="btn" style="background: var(--student-primary); margin-top: 8px;" onclick="alert('Essay saved locally in localStorage!')">Save Essay Response</button>
             </div>
           `;
         } else if (tagName === "cosy-choice" || tagName === "cosy-choice-image") {
-          output += `<div class="choice-grid">${renderXmlNodeToStudentHtml(child)}</div>`;
+          output += `<div class="choice-grid">${renderXmlNodeToStudentHtml(child, fieldKey)}</div>`;
         } else if (tagName === "cosy-choice-option" || tagName === "cosy-choice-image-option") {
-          output += `<div class="choice-card" onclick="this.classList.toggle('selected')">${renderXmlNodeToStudentHtml(child)}</div>`;
+          const savedOpt = getSavedStudentInput(fieldKey);
+          const isSelected = savedOpt === "selected" ? "selected" : "";
+          output += `<div class="choice-card ${isSelected}" onclick="this.classList.toggle('selected'); saveStudentInput('${fieldKey}', this.classList.contains('selected') ? 'selected' : '')">${renderXmlNodeToStudentHtml(child, fieldKey)}</div>`;
         } else if (tagName === "cosy-image") {
           output += `<div style="background: #e2e8f0; height: 180px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #64748b; margin: 12px 0;">🖼️ Image [Resource ID: ${child.getAttribute("resource-id") || "Media"}]</div>`;
         } else if (tagName === "cosy-iframe") {
-          output += `<div style="background: #000; color: white; padding: 40px; text-align: center; border-radius: 8px; margin: 12px 0;">📺 Interactive Media / Video Player (${child.getAttribute("src")})</div>`;
+          output += `<div style="background: #000; color: white; padding: 30px; text-align: center; border-radius: 8px; margin: 12px 0;">📺 Interactive Media / Video Player (${child.getAttribute("src")})</div>`;
         } else {
-          output += renderXmlNodeToStudentHtml(child);
+          output += renderXmlNodeToStudentHtml(child, fieldKey);
         }
       }
       return output;
