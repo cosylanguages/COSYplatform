@@ -4,30 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>COSYlanguages Teacher View &amp; Catalog</title>
+  <link rel="stylesheet" href="shared/css/tokens.css">
   <link rel="stylesheet" href="shared/styles/style.css">
   <style>
     /* Teacher Page Specific Styles */
     :root {
-      --teacher-primary: #4f46e5;
-      --teacher-hover: #4338ca;
-      --teacher-light: #e0e7ff;
-      --teacher-note-bg: #fffbe3;
-      --teacher-note-border: #f59e0b;
-      --speech-bg: #ecfdf5;
-      --speech-border: #10b981;
+      --teacher-primary: var(--cosy-platform-teacher, #0369a1);
+      --teacher-hover: var(--cosy-platform-teacher-hover, #075985);
+      --teacher-light: var(--cosy-platform-teacher-light, #e0f2fe);
+      --teacher-note-bg: var(--cosy-color-honey-pale, #fffbe3);
+      --teacher-note-border: var(--cosy-color-honey, #f59e0b);
+      --speech-bg: var(--cosy-semantic-success-light, #ecfdf5);
+      --speech-border: var(--cosy-semantic-success, #10b981);
     }
 
     body {
-      background-color: #f8fafc;
+      background-color: var(--cosy-color-cream, #fdfcf8);
     }
 
     .badge-teacher {
-      background: #e0e7ff;
-      color: #3730a3;
+      background: #e0f2fe;
+      color: #0369a1;
       padding: 4px 10px;
-      border-radius: 9999px;
+      border-radius: var(--cosy-radius-full, 100px);
       font-size: 0.8rem;
-      font-weight: 600;
+      font-weight: 700;
     }
 
     /* Access Denied */
@@ -36,10 +37,10 @@
       margin: 80px auto;
       background: white;
       padding: 40px;
-      border-radius: 12px;
+      border-radius: var(--cosy-radius-md, 14px);
       border: 1px solid #cbd5e1;
       text-align: center;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      box-shadow: var(--cosy-shadow-sm);
     }
 
     .access-denied h2 {
@@ -52,6 +53,7 @@
       max-width: 1100px;
       margin: 30px auto;
       padding: 0 20px;
+      flex: 1;
     }
 
     .catalog-header {
@@ -69,9 +71,9 @@
     }
 
     .category-card {
-      background: #eef2ff;
-      border: 1px solid #c7d2fe;
-      border-radius: 12px;
+      background: #f0f9ff;
+      border: 1px solid #bae6fd;
+      border-radius: var(--cosy-radius-md, 14px);
       padding: 16px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.02);
       transition: all 0.2s ease;
@@ -83,20 +85,20 @@
       justify-content: space-between;
       cursor: pointer;
       padding-bottom: 10px;
-      border-bottom: 2px solid #e0e7ff;
+      border-bottom: 2px solid #e0f2fe;
       user-select: none;
     }
 
     .category-header h3 {
       font-size: 1.05rem;
       font-weight: 700;
-      color: #3730a3;
+      color: #0369a1;
       margin: 0;
     }
 
     .category-toggle-icon {
       font-size: 0.9rem;
-      color: #4f46e5;
+      color: #0369a1;
       transition: transform 0.2s ease;
     }
 
@@ -118,7 +120,7 @@
     .course-item-card {
       background: white;
       border: 1px solid #e2e8f0;
-      border-radius: 8px;
+      border-radius: var(--cosy-radius-sm, 8px);
       padding: 12px 14px;
       display: flex;
       align-items: center;
@@ -128,8 +130,8 @@
     }
 
     .course-item-card:hover {
-      border-color: #818cf8;
-      box-shadow: 0 2px 8px rgba(79, 70, 229, 0.08);
+      border-color: #38bdf8;
+      box-shadow: 0 2px 8px rgba(3, 105, 161, 0.08);
     }
 
     .course-item-title {
@@ -149,7 +151,7 @@
     .teacher-controls-bar {
       background: white;
       border: 1px solid #e2e8f0;
-      border-radius: 12px;
+      border-radius: var(--cosy-radius-md, 14px);
       padding: 16px 24px;
       margin-bottom: 20px;
       display: flex;
@@ -157,14 +159,14 @@
       justify-content: space-between;
       align-items: center;
       gap: 16px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      box-shadow: var(--cosy-shadow-sm);
     }
 
     /* Slide Navigation Controls */
     .slide-nav-bar {
       background: white;
       border: 1px solid #e2e8f0;
-      border-radius: 12px;
+      border-radius: var(--cosy-radius-md, 14px);
       padding: 12px 20px;
       margin-bottom: 20px;
       display: flex;
@@ -172,7 +174,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 12px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      box-shadow: var(--cosy-shadow-sm);
     }
 
     .slide-pills {
@@ -183,7 +185,7 @@
 
     .slide-pill {
       padding: 6px 14px;
-      border-radius: 20px;
+      border-radius: var(--cosy-radius-full, 100px);
       border: 1px solid #cbd5e1;
       background: #f8fafc;
       font-size: 0.82rem;
@@ -206,7 +208,7 @@
 
     .slide-nav-btn {
       padding: 8px 16px;
-      border-radius: 8px;
+      border-radius: var(--cosy-radius-sm, 8px);
       border: 1px solid #cbd5e1;
       background: white;
       font-weight: 600;
@@ -237,7 +239,7 @@
 
     .control-group select {
       padding: 6px 12px;
-      border-radius: 6px;
+      border-radius: var(--cosy-radius-sm, 8px);
       border: 1px solid #cbd5e1;
       font-size: 0.85rem;
       background: #f8fafc;
@@ -263,7 +265,7 @@
     .left-utility-rail {
       background: white;
       border: 1px solid #e2e8f0;
-      border-radius: 12px;
+      border-radius: var(--cosy-radius-md, 14px);
       padding: 12px 6px;
       display: flex;
       flex-direction: column;
@@ -298,7 +300,7 @@
     .right-sections-sidebar {
       background: white;
       border: 1px solid #e2e8f0;
-      border-radius: 12px;
+      border-radius: var(--cosy-radius-md, 14px);
       padding: 20px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.03);
       position: sticky;
@@ -339,9 +341,9 @@
     }
 
     .section-item.active {
-      background: #e0e7ff;
-      color: #3730a3;
-      border-color: #c7d2fe;
+      background: #e0f2fe;
+      color: #0369a1;
+      border-color: #bae6fd;
       font-weight: 600;
     }
 
@@ -363,11 +365,11 @@
     /* Lesson Viewer */
     .slide-card {
       background: white;
-      border-radius: 12px;
+      border-radius: var(--cosy-radius-md, 14px);
       border: 1px solid #e2e8f0;
       padding: 32px;
       margin-bottom: 24px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      box-shadow: var(--cosy-shadow-sm);
     }
 
     .slide-title {
@@ -393,7 +395,7 @@
 
     /* Teacher Notes Styling */
     .teacher-note-box {
-      border-radius: 8px;
+      border-radius: var(--cosy-radius-sm, 8px);
       padding: 16px;
       margin: 16px 0;
       font-size: 0.95rem;
@@ -438,7 +440,6 @@
       margin-bottom: 4px;
     }
 
-    /* Cosy Tags Elements */
     cosy-instruction, .cosy-instruction {
       display: block;
       font-weight: 600;
@@ -479,8 +480,12 @@
     <!-- Dynamic JS Content rendered here -->
   </main>
 
-  <footer class="main-footer">
-    <p>COSYlanguages Platform &copy; 2025. Teacher View &amp; Catalog Interface.</p>
+  <footer class="cosy-ecosystem-strip-footer">
+    🌐 Part of the COSY ecosystem •
+    <a href="https://cosylanguages.github.io/COSYlanguages/" target="_blank" rel="noopener">COSYlanguages 🏠</a> •
+    <a href="https://cosylanguages.github.io/COSYtools/" target="_blank" rel="noopener">COSYtools 🔎</a> •
+    <a href="https://cosylanguages.github.io/COSYgames/" target="_blank" rel="noopener">COSYgames 🎮</a> •
+    <a href="https://cosylanguages.github.io/COSYevents/" target="_blank" rel="noopener">COSYevents 🎉</a>
   </footer>
 
   <script>
@@ -561,7 +566,7 @@
         <div class="catalog-container">
           <div class="catalog-header">
             <div>
-              <h1 style="font-size: 1.6rem; color: #0f172a;">${langName ? `${langName} Teacher Space` : 'Teacher Catalog'} (${grant.name || 'Teacher'})</h1>
+              <h1 style="font-size: 1.6rem; color: #0f172a;">${langName ? `${langName} Teacher Space` : 'Teacher Catalog 📚'} (${grant.name || 'Teacher'})</h1>
               <p style="color: #64748b;">Teachers have access to all assigned tracks, curriculums, and speech scripts.</p>
             </div>
             <div style="display: flex; gap: 8px;">
@@ -575,7 +580,6 @@
       if (courseList.length === 0) {
         html += `<p style="grid-column: 1/-1; color: #64748b;">No active courses found for this grant.</p>`;
       } else {
-        // Group courses by track
         const groupedByTrack = {};
         courseList.forEach(c => {
           const trackKey = c.track ? (c.track.charAt(0).toUpperCase() + c.track.slice(1)) : 'General';
@@ -606,7 +610,7 @@
                   </div>
                 </div>
                 <a href="teacher.html?key=${key}&course=${c.id}&level=${c.level.toLowerCase()}" class="btn" style="background: var(--teacher-primary); padding: 6px 12px; font-size: 0.8rem; white-space: nowrap;">
-                  Roadmap
+                  Roadmap 📚
                 </a>
               </div>
             `;
@@ -765,7 +769,7 @@
           <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 8px 10px;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
               <strong style="color: #0f172a; font-size: 0.95rem;">${m.word}</strong>
-              <span style="font-size: 0.75rem; background: #e0e7ff; color: #3730a3; padding: 2px 6px; border-radius: 4px; font-weight: 600;">${m.pos}</span>
+              <span style="font-size: 0.75rem; background: #e0f2fe; color: #0369a1; padding: 2px 6px; border-radius: 4px; font-weight: 600;">${m.pos}</span>
             </div>
             <div style="font-family: monospace; font-size: 0.8rem; color: #0284c7; background: #f0f9ff; padding: 2px 6px; border-radius: 4px; word-break: break-all;">
               COSYdata ID: ${m.id}
@@ -807,7 +811,7 @@
         html += `
           <tr style="border-bottom: 1px solid #e2e8f0;">
             <td style="padding: 6px 8px; font-weight: 700; color: #0f172a;">${v.v1}</td>
-            <td style="padding: 6px 8px; color: #4338ca;">${v.v2}</td>
+            <td style="padding: 6px 8px; color: #0369a1;">${v.v2}</td>
             <td style="padding: 6px 8px; color: #0284c7;">${v.v3}</td>
           </tr>
         `;
@@ -904,7 +908,6 @@
         window.currentTeacherLessonTitle = lessonTitle;
         renderTeacherLessonUI();
 
-        // Key bindings for keyboard slide navigation
         window.onkeydown = function(e) {
           const activeTag = document.activeElement ? document.activeElement.tagName.toLowerCase() : "";
           if (["input", "textarea", "select"].includes(activeTag)) return;
@@ -949,7 +952,6 @@
 
           <!-- Main Slide Content Area -->
           <div style="position: relative;">
-            <!-- Utility Drawer Popovers -->
             <div id="dict-drawer" style="display: ${window.activeDrawer==='dict'?'block':'none'}; background: white; border: 1px solid #cbd5e1; border-radius: 12px; padding: 16px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
               <h3 style="font-size: 1rem; color: #0f172a; margin-bottom: 8px; display: flex; align-items: center; justify-content: space-between;">
                 <span>📖 COSYdata Dictionary Lookup</span>
@@ -968,7 +970,6 @@
               </h3>
               <input type="text" id="verbSearchInput" placeholder="Search verb (e.g. go, speak, write)..." oninput="searchIrregularVerbs(this.value)" style="width: 100%; padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.9rem; margin-bottom: 12px;" />
               <div id="verbSearchResults" style="max-height: 250px; overflow-y: auto;">
-                <!-- Verbs rendered here -->
               </div>
             </div>
 
@@ -1003,7 +1004,7 @@
       html += `
           </div>
 
-          <!-- Right Sections Sidebar (Slide Switcher) -->
+          <!-- Right Sections Sidebar -->
           <div class="right-sections-sidebar">
             <div class="sections-header">
               <span>Sections (${totalSlides})</span>

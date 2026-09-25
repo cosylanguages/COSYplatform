@@ -4,17 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>COSYlanguages — French Teacher Hub</title>
+  <link rel="stylesheet" href="shared/css/tokens.css">
   <link rel="stylesheet" href="shared/styles/style.css">
   <style>
     :root {
-      --teacher-primary: #0284c7;
+      --teacher-primary: var(--cosy-platform-teacher, #0369a1);
     }
-    body { background-color: #f8fafc; }
-    .badge-teacher { background: #e0f2fe; color: #0369a1; padding: 4px 10px; border-radius: 9999px; font-size: 0.8rem; font-weight: 600; }
-    .catalog-container { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
+    body { background-color: var(--cosy-color-cream, #fdfcf8); }
+    .badge-teacher { background: #e0f2fe; color: #0369a1; padding: 4px 10px; border-radius: var(--cosy-radius-full, 100px); font-size: 0.8rem; font-weight: 700; }
+    .catalog-container { max-width: 1000px; margin: 30px auto; padding: 0 20px; flex: 1; }
     .catalog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
-    .course-card { background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; }
-    .access-denied { max-width: 500px; margin: 80px auto; background: white; padding: 40px; border-radius: 12px; border: 1px solid #cbd5e1; text-align: center; }
+    .course-card { background: white; border: 1px solid #e2e8f0; border-radius: var(--cosy-radius-md, 14px); padding: 24px; display: flex; flex-direction: column; justify-content: space-between; }
+    .access-denied { max-width: 500px; margin: 80px auto; background: white; padding: 40px; border-radius: var(--cosy-radius-md, 14px); border: 1px solid #cbd5e1; text-align: center; }
   </style>
   <script src="shared/js/access-grants.js"></script>
 </head>
@@ -36,8 +37,12 @@
     <!-- JS Rendered -->
   </main>
 
-  <footer class="main-footer">
-    <p>COSYlanguages French Department &copy; 2025.</p>
+  <footer class="cosy-ecosystem-strip-footer">
+    🌐 Part of the COSY ecosystem •
+    <a href="https://cosylanguages.github.io/COSYlanguages/" target="_blank" rel="noopener">COSYlanguages 🏠</a> •
+    <a href="https://cosylanguages.github.io/COSYtools/" target="_blank" rel="noopener">COSYtools 🔎</a> •
+    <a href="https://cosylanguages.github.io/COSYgames/" target="_blank" rel="noopener">COSYgames 🎮</a> •
+    <a href="https://cosylanguages.github.io/COSYevents/" target="_blank" rel="noopener">COSYevents 🎉</a>
   </footer>
 
   <script>
@@ -78,7 +83,7 @@
         let html = `
           <div class="catalog-container">
             <div style="margin-bottom: 24px;">
-              <h1 style="font-size: 1.6rem; color: #0f172a;">🇫🇷 Catalogue Enseignant — Section Français</h1>
+              <h1 style="font-size: 1.6rem; color: #0f172a;">🇫🇷 Catalogue Enseignant — Section Français 📚</h1>
               <p style="color: #64748b;">Accès complet aux cursus, fiches pédagogiques Gabarit 14 Champs, CCQ et corrigés.</p>
             </div>
             <div class="catalog-grid">
@@ -95,7 +100,7 @@
                   <h3 style="font-size: 1.15rem; color: #0f172a; margin-bottom: 6px;">${course.title}</h3>
                   <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 16px;">Parcours: ${course.track}</p>
                 </div>
-                <a href="teacher.html?key=${key}&course=${course.id}&level=${course.level.toLowerCase()}" class="btn" style="background: var(--teacher-primary); text-align: center;">Ouvrir la feuille de route</a>
+                <a href="teacher.html?key=${key}&course=${course.id}&level=${course.level.toLowerCase()}" class="btn" style="background: var(--teacher-primary); text-align: center;">Ouvrir la feuille de route 📚</a>
               </div>
             `;
           });

@@ -4,17 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>COSYlanguages Student Workspace</title>
+  <link rel="stylesheet" href="shared/css/tokens.css">
   <link rel="stylesheet" href="shared/styles/style.css">
   <style>
     /* Student Workspace Specific Styles */
     :root {
-      --student-primary: #0284c7;
-      --student-hover: #0369a1;
-      --student-light: #e0f2fe;
+      --student-primary: var(--cosy-platform-student, #0284c7);
+      --student-hover: var(--cosy-platform-student-hover, #0369a1);
+      --student-light: var(--cosy-platform-student-light, #e0f2fe);
     }
 
     body {
-      background-color: #f1f5f9;
+      background-color: var(--cosy-color-cream, #fdfcf8);
     }
 
     .header-content {
@@ -25,11 +26,11 @@
 
     .badge-student {
       background: #e0f2fe;
-      color: #0369a1;
+      color: #0284c7;
       padding: 4px 10px;
-      border-radius: 9999px;
+      border-radius: var(--cosy-radius-full, 100px);
       font-size: 0.8rem;
-      font-weight: 600;
+      font-weight: 700;
     }
 
     /* Access Denied Card */
@@ -38,10 +39,10 @@
       margin: 80px auto;
       background: white;
       padding: 40px;
-      border-radius: 12px;
+      border-radius: var(--cosy-radius-md, 14px);
       border: 1px solid #cbd5e1;
       text-align: center;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      box-shadow: var(--cosy-shadow-sm);
     }
 
     .access-denied h2 {
@@ -54,6 +55,7 @@
       max-width: 1100px;
       margin: 30px auto;
       padding: 0 20px;
+      flex: 1;
     }
 
     .catalog-header {
@@ -68,9 +70,9 @@
     }
 
     .category-card {
-      background: #f0f7ff;
+      background: #f0f9ff;
       border: 1px solid #bae6fd;
-      border-radius: 12px;
+      border-radius: var(--cosy-radius-md, 14px);
       padding: 16px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.02);
       transition: all 0.2s ease;
@@ -117,7 +119,7 @@
     .course-item-card {
       background: white;
       border: 1px solid #e2e8f0;
-      border-radius: 8px;
+      border-radius: var(--cosy-radius-sm, 8px);
       padding: 12px 14px;
       display: flex;
       align-items: center;
@@ -164,7 +166,7 @@
     .left-utility-rail {
       background: white;
       border: 1px solid #e2e8f0;
-      border-radius: 12px;
+      border-radius: var(--cosy-radius-md, 14px);
       padding: 12px 6px;
       display: flex;
       flex-direction: column;
@@ -199,7 +201,7 @@
     .right-sections-sidebar {
       background: white;
       border: 1px solid #e2e8f0;
-      border-radius: 12px;
+      border-radius: var(--cosy-radius-md, 14px);
       padding: 20px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.03);
       position: sticky;
@@ -265,7 +267,7 @@
     .lesson-nav-header {
       background: white;
       border: 1px solid #e2e8f0;
-      border-radius: 12px;
+      border-radius: var(--cosy-radius-md, 14px);
       padding: 16px 24px;
       margin-bottom: 20px;
       display: flex;
@@ -288,77 +290,9 @@
       color: var(--student-primary);
     }
 
-    /* Slide Navigation Controls */
-    .slide-nav-bar {
-      background: white;
-      border: 1px solid #e2e8f0;
-      border-radius: 12px;
-      padding: 12px 20px;
-      margin-bottom: 20px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-    }
-
-    .slide-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .slide-pill {
-      padding: 6px 14px;
-      border-radius: 20px;
-      border: 1px solid #cbd5e1;
-      background: #f8fafc;
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: #475569;
-      cursor: pointer;
-      transition: all 0.15s ease;
-    }
-
-    .slide-pill:hover {
-      background: #e2e8f0;
-      color: #0f172a;
-    }
-
-    .slide-pill.active {
-      background: var(--student-primary);
-      color: white;
-      border-color: var(--student-primary);
-    }
-
-    .slide-nav-btn {
-      padding: 8px 16px;
-      border-radius: 8px;
-      border: 1px solid #cbd5e1;
-      background: white;
-      font-weight: 600;
-      font-size: 0.85rem;
-      color: #0f172a;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: background 0.15s ease;
-    }
-
-    .slide-nav-btn:hover:not(:disabled) {
-      background: #f1f5f9;
-    }
-
-    .slide-nav-btn:disabled {
-      opacity: 0.4;
-      cursor: not-allowed;
-    }
-
     .slide-card {
       background: white;
-      border-radius: 12px;
+      border-radius: var(--cosy-radius-md, 14px);
       border: 1px solid #e2e8f0;
       padding: 32px;
       margin-bottom: 24px;
@@ -386,7 +320,6 @@
       font-weight: 600;
     }
 
-    /* Cosy Elements Styling */
     cosy-instruction, .cosy-instruction {
       display: block;
       font-weight: 600;
@@ -528,8 +461,12 @@
     <!-- Dynamic JS Content rendered here -->
   </main>
 
-  <footer class="main-footer">
-    <p>COSYlanguages Platform &copy; 2025. Private Learner Interface.</p>
+  <footer class="cosy-ecosystem-strip-footer">
+    🌐 Part of the COSY ecosystem •
+    <a href="https://cosylanguages.github.io/COSYlanguages/" target="_blank" rel="noopener">COSYlanguages 🏠</a> •
+    <a href="https://cosylanguages.github.io/COSYtools/" target="_blank" rel="noopener">COSYtools 🔎</a> •
+    <a href="https://cosylanguages.github.io/COSYgames/" target="_blank" rel="noopener">COSYgames 🎮</a> •
+    <a href="https://cosylanguages.github.io/COSYevents/" target="_blank" rel="noopener">COSYevents 🎉</a>
   </footer>
 
   <script>
@@ -609,7 +546,7 @@
       let html = `
         <div class="catalog-container">
           <div class="catalog-header">
-            <h1 style="font-size: 1.6rem; color: #0f172a; margin-bottom: 8px;">Your Student Workspace</h1>
+            <h1 style="font-size: 1.6rem; color: #0f172a; margin-bottom: 8px;">Your Student Workspace 📚</h1>
             <p style="color: #64748b; margin-bottom: 16px;">Filter by Language, Course Track, and CEFR Level:</p>
 
             <div style="background: white; border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px 16px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center;">
@@ -659,7 +596,6 @@
       if (allowedCourses.length === 0) {
         html += `<p style="grid-column: 1/-1; color: #64748b;">No active course enrolments found for this key matching the selected filters.</p>`;
       } else {
-        // Group courses by track
         const groupedByTrack = {};
         allowedCourses.forEach(c => {
           const trackKey = c.track ? (c.track.charAt(0).toUpperCase() + c.track.slice(1)) : 'General';
@@ -690,7 +626,7 @@
                   </div>
                 </div>
                 <a href="student.html?key=${key}&course=${c.id}&level=${c.level.toLowerCase()}" class="btn" style="background: var(--student-primary); padding: 6px 12px; font-size: 0.8rem; white-space: nowrap;">
-                  View
+                  View 📚
                 </a>
               </div>
             `;
@@ -779,7 +715,7 @@
                 ${item.unit ? `<p style="font-size: 0.8rem; color: #64748b; margin-bottom: 12px;">${item.unit}</p>` : ''}
               </div>
               ${isUnlocked ?
-                `<a href="student.html?key=${key}&lesson=${encodeURIComponent(lessonPath)}" class="btn" style="background: var(--student-primary); padding: 6px 12px; font-size: 0.85rem; text-align: center;">Start Lesson</a>` :
+                `<a href="student.html?key=${key}&lesson=${encodeURIComponent(lessonPath)}" class="btn" style="background: var(--student-primary); padding: 6px 12px; font-size: 0.85rem; text-align: center;">▶ Start Lesson</a>` :
                 `<a href="student.html?key=${key}&lesson=${encodeURIComponent(lessonPath)}" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.85rem; text-align: center; color: #64748b;">🔒 Closed (Sent by Teacher)</a>`
               }
             </div>
@@ -981,7 +917,6 @@
         window.currentStudentLessonTitle = lessonTitle;
         renderStudentLessonUI();
 
-        // Key bindings for keyboard slide navigation
         window.onkeydown = function(e) {
           const activeTag = document.activeElement ? document.activeElement.tagName.toLowerCase() : "";
           if (["input", "textarea", "select"].includes(activeTag)) return;
@@ -1034,7 +969,6 @@
 
           <!-- Main Slide Content Area -->
           <div style="position: relative;">
-            <!-- Utility Drawer Popovers -->
             <div id="dict-drawer" style="display: ${window.activeDrawer==='dict'?'block':'none'}; background: white; border: 1px solid #cbd5e1; border-radius: 12px; padding: 16px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
               <h3 style="font-size: 1rem; color: #0f172a; margin-bottom: 8px; display: flex; align-items: center; justify-content: space-between;">
                 <span>📖 COSYdata Dictionary Lookup</span>
@@ -1053,7 +987,6 @@
               </h3>
               <input type="text" id="verbSearchInput" placeholder="Search verb (e.g. go, speak, write)..." oninput="searchIrregularVerbs(this.value)" style="width: 100%; padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.9rem; margin-bottom: 12px;" />
               <div id="verbSearchResults" style="max-height: 250px; overflow-y: auto;">
-                <!-- Verbs rendered here -->
               </div>
             </div>
 
@@ -1088,7 +1021,7 @@
       html += `
           </div>
 
-          <!-- Right Sections Sidebar (Slide Switcher) -->
+          <!-- Right Sections Sidebar -->
           <div class="right-sections-sidebar">
             <div class="sections-header">
               <span>Sections (${totalSlides})</span>

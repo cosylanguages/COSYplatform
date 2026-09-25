@@ -4,12 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>COSYlanguages Admin Access Grant Helper</title>
+  <link rel="stylesheet" href="shared/css/tokens.css">
   <link rel="stylesheet" href="shared/styles/style.css">
   <style>
     :root {
       --admin-primary: #0f172a;
-      --admin-accent: #4f46e5;
-      --admin-bg: #f8fafc;
+      --admin-accent: var(--cosy-platform-teacher, #0369a1);
+      --admin-bg: var(--cosy-color-cream, #fdfcf8);
     }
 
     body {
@@ -21,7 +22,7 @@
       background: #e2e8f0;
       color: #0f172a;
       padding: 4px 10px;
-      border-radius: 9999px;
+      border-radius: var(--cosy-radius-full, 100px);
       font-size: 0.8rem;
       font-weight: 700;
     }
@@ -30,6 +31,7 @@
       max-width: 960px;
       margin: 30px auto;
       padding: 0 20px;
+      flex: 1;
     }
 
     .admin-grid {
@@ -48,9 +50,9 @@
     .card {
       background: white;
       border: 1px solid #e2e8f0;
-      border-radius: 12px;
+      border-radius: var(--cosy-radius-md, 14px);
       padding: 24px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+      box-shadow: var(--cosy-shadow-sm);
     }
 
     .form-group {
@@ -177,7 +179,7 @@
     }
 
     .copy-btn:hover {
-      background: #4338ca;
+      background: var(--cosy-platform-teacher-hover, #075985);
     }
 
     .notice-box {
@@ -208,7 +210,7 @@
 
   <main class="admin-container">
     <div>
-      <h1 style="font-size: 1.6rem; color: #0f172a; margin-bottom: 6px;">Access Grant Generator</h1>
+      <h1 style="font-size: 1.6rem; color: #0f172a; margin-bottom: 6px;">Access Grant Generator ⚙️</h1>
       <p style="color: #64748b; font-size: 0.95rem;">
         Generate formatted JSON entries for <code>data/access-grants.json</code> (Explicit Course Grants or Segment Filter Grants) and instantly copy shareable links.
       </p>
@@ -307,8 +309,12 @@
     </div>
   </main>
 
-  <footer class="main-footer" style="margin-top: 40px;">
-    <p>COSYlanguages Platform &copy; 2025. Founder Admin Tools.</p>
+  <footer class="cosy-ecosystem-strip-footer">
+    🌐 Part of the COSY ecosystem •
+    <a href="https://cosylanguages.github.io/COSYlanguages/" target="_blank" rel="noopener">COSYlanguages 🏠</a> •
+    <a href="https://cosylanguages.github.io/COSYtools/" target="_blank" rel="noopener">COSYtools 🔎</a> •
+    <a href="https://cosylanguages.github.io/COSYgames/" target="_blank" rel="noopener">COSYgames 🎮</a> •
+    <a href="https://cosylanguages.github.io/COSYevents/" target="_blank" rel="noopener">COSYevents 🎉</a>
   </footer>
 
   <script>

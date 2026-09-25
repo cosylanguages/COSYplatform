@@ -4,17 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>COSYlanguages — Founder &amp; Executive Portal</title>
+  <link rel="stylesheet" href="shared/css/tokens.css">
   <link rel="stylesheet" href="shared/styles/style.css">
   <style>
     :root {
       --founder-primary: #0f172a;
-      --founder-accent: #6366f1;
+      --founder-accent: var(--cosy-platform-accent, #0284c7);
       --card-bg: #ffffff;
-      --border-color: #e2e8f0;
+      --border-color: var(--cosy-color-border, rgba(74, 107, 80, 0.12));
     }
 
     body {
-      background-color: #f8fafc;
+      background-color: var(--cosy-color-cream, #fdfcf8);
       color: #0f172a;
     }
 
@@ -35,10 +36,10 @@
     }
 
     .badge-founder {
-      background: #312e81;
-      color: #c7d2fe;
+      background: #0c4a6e;
+      color: #bae6fd;
       padding: 4px 12px;
-      border-radius: 9999px;
+      border-radius: var(--cosy-radius-full, 100px);
       font-size: 0.8rem;
       font-weight: 700;
       text-transform: uppercase;
@@ -55,9 +56,9 @@
     .stat-card {
       background: white;
       border: 1px solid var(--border-color);
-      border-radius: 12px;
+      border-radius: var(--cosy-radius-md, 14px);
       padding: 1.5rem;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      box-shadow: var(--cosy-shadow-sm);
     }
 
     .stat-card h3 {
@@ -71,16 +72,16 @@
     .stat-number {
       font-size: 2.2rem;
       font-weight: 800;
-      color: var(--founder-primary);
+      color: var(--founder-accent);
     }
 
     .portal-section {
       background: white;
-      border-radius: 12px;
+      border-radius: var(--cosy-radius-md, 14px);
       border: 1px solid var(--border-color);
       padding: 2rem;
       margin-top: 2rem;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      box-shadow: var(--cosy-shadow-sm);
     }
 
     .portal-section h2 {
@@ -99,7 +100,7 @@
     .teacher-link-card {
       background: #f8fafc;
       border: 1px solid var(--border-color);
-      border-radius: 8px;
+      border-radius: var(--cosy-radius-sm, 8px);
       padding: 1.25rem;
       display: flex;
       flex-direction: column;
@@ -117,10 +118,10 @@
       margin: 80px auto;
       background: white;
       padding: 40px;
-      border-radius: 12px;
+      border-radius: var(--cosy-radius-md, 14px);
       border: 1px solid #cbd5e1;
       text-align: center;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      box-shadow: var(--cosy-shadow-sm);
     }
   </style>
   <script src="shared/js/access-grants.js"></script>
@@ -145,8 +146,12 @@
     <!-- Rendered via JS -->
   </main>
 
-  <footer class="main-footer">
-    <p>COSYlanguages Platform Executive Portal &copy; 2025.</p>
+  <footer class="cosy-ecosystem-strip-footer">
+    🌐 Part of the COSY ecosystem •
+    <a href="https://cosylanguages.github.io/COSYlanguages/" target="_blank" rel="noopener">COSYlanguages 🏠</a> •
+    <a href="https://cosylanguages.github.io/COSYtools/" target="_blank" rel="noopener">COSYtools 🔎</a> •
+    <a href="https://cosylanguages.github.io/COSYgames/" target="_blank" rel="noopener">COSYgames 🎮</a> •
+    <a href="https://cosylanguages.github.io/COSYevents/" target="_blank" rel="noopener">COSYevents 🎉</a>
   </footer>
 
   <script>
@@ -226,72 +231,72 @@
             <div class="teacher-link-card">
               <h4>🇬🇧 English Space</h4>
               <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">General, Spoken, Grammar, Phrasal Verbs, Vocab</p>
-              <a href="teacher-english.html?key=${encodeURIComponent(key)}" class="btn" style="background: #4f46e5; text-align: center;">Open English Space</a>
+              <a href="teacher-english.html?key=${encodeURIComponent(key)}" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open English Space 📚</a>
             </div>
             <div class="teacher-link-card">
               <h4>🇫🇷 French Space</h4>
               <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">General, Spoken, Professional, Travelling, Pronunciation</p>
-              <a href="teacher-french.html?key=${encodeURIComponent(key)}" class="btn" style="background: #0284c7; text-align: center;">Open French Space</a>
+              <a href="teacher-french.html?key=${encodeURIComponent(key)}" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open French Space 📚</a>
             </div>
             <div class="teacher-link-card">
               <h4>🇷🇺 Russian Space</h4>
               <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">General, Spoken, Professional, Travelling, Pronunciation</p>
-              <a href="teacher-russian.html?key=${encodeURIComponent(key)}" class="btn" style="background: #059669; text-align: center;">Open Russian Space</a>
+              <a href="teacher-russian.html?key=${encodeURIComponent(key)}" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open Russian Space 📚</a>
             </div>
             <div class="teacher-link-card">
               <h4>🇩🇪 German Space</h4>
               <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">General German A1 - C1 Courses</p>
-              <a href="teacher.html?key=${encodeURIComponent(key)}&lang=de" class="btn" style="background: #d97706; text-align: center;">Open German Space</a>
+              <a href="teacher.html?key=${encodeURIComponent(key)}&lang=de" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open German Space 📚</a>
             </div>
             <div class="teacher-link-card">
               <h4>🇪🇸 Spanish Space</h4>
               <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">General Spanish A1 - C1 Courses</p>
-              <a href="teacher.html?key=${encodeURIComponent(key)}&lang=es" class="btn" style="background: #dc2626; text-align: center;">Open Spanish Space</a>
+              <a href="teacher.html?key=${encodeURIComponent(key)}&lang=es" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open Spanish Space 📚</a>
             </div>
             <div class="teacher-link-card">
               <h4>🇵🇹 Portuguese Space</h4>
               <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">General Portuguese A1 - C1 Courses</p>
-              <a href="teacher.html?key=${encodeURIComponent(key)}&lang=pt" class="btn" style="background: #16a34a; text-align: center;">Open Portuguese Space</a>
+              <a href="teacher.html?key=${encodeURIComponent(key)}&lang=pt" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open Portuguese Space 📚</a>
             </div>
             <div class="teacher-link-card">
               <h4>🇮🇹 Italian Space</h4>
               <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">General Italian A1 - C2 Courses</p>
-              <a href="teacher.html?key=${encodeURIComponent(key)}&lang=it" class="btn" style="background: #0284c7; text-align: center;">Open Italian Space</a>
+              <a href="teacher.html?key=${encodeURIComponent(key)}&lang=it" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open Italian Space 📚</a>
             </div>
             <div class="teacher-link-card">
               <h4>🇬🇷 Greek Space</h4>
               <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">General &amp; Exam Greek A1 - C2 Courses</p>
-              <a href="teacher.html?key=${encodeURIComponent(key)}&lang=el" class="btn" style="background: #2563eb; text-align: center;">Open Greek Space</a>
+              <a href="teacher.html?key=${encodeURIComponent(key)}&lang=el" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open Greek Space 📚</a>
             </div>
             <div class="teacher-link-card">
               <h4>🇦🇲 Armenian Space</h4>
               <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">General Armenian A1 - C1 Courses</p>
-              <a href="teacher.html?key=${encodeURIComponent(key)}&lang=hy" class="btn" style="background: #7c3aed; text-align: center;">Open Armenian Space</a>
+              <a href="teacher.html?key=${encodeURIComponent(key)}&lang=hy" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open Armenian Space 📚</a>
             </div>
             <div class="teacher-link-card">
               <h4>🇬🇪 Georgian Space</h4>
               <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">General Georgian A1 - C1 Courses</p>
-              <a href="teacher.html?key=${encodeURIComponent(key)}&lang=ka" class="btn" style="background: #e11d48; text-align: center;">Open Georgian Space</a>
+              <a href="teacher.html?key=${encodeURIComponent(key)}&lang=ka" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open Georgian Space 📚</a>
             </div>
             <div class="teacher-link-card">
               <h4>🇵🇱 Tatar Space</h4>
               <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">General Tatar A1 - C1 Courses</p>
-              <a href="teacher.html?key=${encodeURIComponent(key)}&lang=tt" class="btn" style="background: #0d9488; text-align: center;">Open Tatar Space</a>
+              <a href="teacher.html?key=${encodeURIComponent(key)}&lang=tt" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open Tatar Space 📚</a>
             </div>
             <div class="teacher-link-card">
               <h4>🇷🇺 Bashkir Space</h4>
               <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">General Bashkir A1 - C1 Courses</p>
-              <a href="teacher.html?key=${encodeURIComponent(key)}&lang=ba" class="btn" style="background: #475569; text-align: center;">Open Bashkir Space</a>
+              <a href="teacher.html?key=${encodeURIComponent(key)}&lang=ba" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open Bashkir Space 📚</a>
             </div>
             <div class="teacher-link-card">
               <h4>🇫🇷 Breton Space</h4>
               <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">General Breton A1 - C1 Courses</p>
-              <a href="teacher.html?key=${encodeURIComponent(key)}&lang=br" class="btn" style="background: #475569; text-align: center;">Open Breton Space</a>
+              <a href="teacher.html?key=${encodeURIComponent(key)}&lang=br" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open Breton Space 📚</a>
             </div>
             <div class="teacher-link-card">
               <h4>🎓 Universal Master Teacher Portal</h4>
               <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">Unrestricted access to all languages &amp; raw catalog</p>
-              <a href="teacher.html?key=${encodeURIComponent(key)}" class="btn btn-outline" style="text-align: center;">Open Master Portal</a>
+              <a href="teacher.html?key=${encodeURIComponent(key)}" class="btn btn-outline" style="text-align: center;">Open Master Portal 📚</a>
             </div>
           </div>
         </div>
@@ -302,12 +307,12 @@
             <div class="teacher-link-card">
               <h4>🧑‍🎓 Student Workspace</h4>
               <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">Preview student view with current key</p>
-              <a href="student.html?key=${encodeURIComponent(key)}" class="btn btn-secondary" style="text-align: center;">View Student Workspace</a>
+              <a href="student.html?key=${encodeURIComponent(key)}" class="btn btn-secondary" style="text-align: center;">View Student Workspace 📚</a>
             </div>
             <div class="teacher-link-card">
               <h4>⚙️ Access Grants Generator</h4>
               <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">Generate hashed JSON entries for data/access-grants.json</p>
-              <a href="admin-grants.html" class="btn btn-outline" style="text-align: center;">Open Grant Generator</a>
+              <a href="admin-grants.html" class="btn btn-outline" style="text-align: center;">Open Grant Generator ⚙️</a>
             </div>
           </div>
         </div>

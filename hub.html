@@ -4,26 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>COSYlanguages Hub</title>
-  <link rel="stylesheet" href="https://raw.githubusercontent.com/cosylanguages/COSYlanguages/f59a291e8929a116b0c7d96505d67da7c16b287a/css/cosy-tokens.css">
+  <link rel="stylesheet" href="shared/css/tokens.css">
   <link rel="stylesheet" href="shared/styles/style.css">
   <style>
     :root {
-      --hub-primary: #0284c7;
-      --teacher-primary: #4f46e5;
-      --teacher-note-bg: #fffbe3;
-      --teacher-note-border: #f59e0b;
-      --speech-bg: #ecfdf5;
-      --speech-border: #10b981;
-      --student-primary: #0284c7;
-      --student-light: #e0f2fe;
-      --border-color: #e2e8f0;
+      --hub-primary: var(--cosy-platform-accent, #0284c7);
+      --teacher-primary: var(--cosy-platform-teacher, #0369a1);
+      --teacher-note-bg: var(--cosy-color-honey-pale, #fffbe3);
+      --teacher-note-border: var(--cosy-color-honey, #f59e0b);
+      --speech-bg: var(--cosy-semantic-success-light, #ecfdf5);
+      --speech-border: var(--cosy-semantic-success, #10b981);
+      --student-primary: var(--cosy-platform-student, #0284c7);
+      --student-light: var(--cosy-platform-student-light, #e0f2fe);
+      --border-color: var(--cosy-color-border, rgba(74, 107, 80, 0.12));
     }
 
     body {
-      background-color: #f8fafc;
-      color: #0f172a;
+      background-color: var(--cosy-color-cream, #fdfcf8);
+      color: var(--cosy-color-ink, #2a2a2a);
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: var(--cosy-font-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
     }
 
     /* Unauthenticated / Private Area Card */
@@ -38,17 +38,17 @@
     .unauth-card {
       background: #ffffff;
       border: 1px solid var(--border-color);
-      border-radius: 12px;
+      border-radius: var(--cosy-radius-md, 14px);
       padding: 40px;
       max-width: 480px;
       width: 100%;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      box-shadow: var(--cosy-shadow-sm);
       text-align: center;
     }
 
     .unauth-logo {
       font-size: 24px;
-      font-weight: 700;
+      font-weight: 800;
       color: var(--hub-primary);
       margin-bottom: 16px;
       letter-spacing: -0.5px;
@@ -56,7 +56,7 @@
 
     .unauth-card h1 {
       font-size: 20px;
-      font-weight: 600;
+      font-weight: 700;
       margin-bottom: 12px;
       color: #0f172a;
     }
@@ -94,35 +94,36 @@
 
     .role-badge {
       padding: 4px 12px;
-      border-radius: 9999px;
+      border-radius: var(--cosy-radius-full, 100px);
       font-size: 0.8rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
 
-    .badge-teacher-role { background: #e0e7ff; color: #3730a3; }
-    .badge-student-role { background: #e0f2fe; color: #0369a1; }
-    .badge-founder-role { background: #312e81; color: #c7d2fe; }
+    .badge-teacher-role { background: #e0f2fe; color: #0369a1; }
+    .badge-student-role { background: #e0f2fe; color: #0284c7; }
+    .badge-founder-role { background: #0c4a6e; color: #bae6fd; }
 
     .hub-container {
       max-width: 1100px;
       margin: 30px auto;
       padding: 0 20px;
+      flex: 1;
     }
 
     /* Grouping & Filters */
     .filter-bar {
       background: white;
       border: 1px solid var(--border-color);
-      border-radius: 12px;
+      border-radius: var(--cosy-radius-md, 14px);
       padding: 16px 20px;
       margin-bottom: 24px;
       display: flex;
       flex-wrap: wrap;
       gap: 16px;
       align-items: center;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      box-shadow: var(--cosy-shadow-sm);
     }
 
     .filter-group {
@@ -136,7 +137,7 @@
 
     .filter-group select, .filter-group input {
       padding: 6px 12px;
-      border-radius: 6px;
+      border-radius: var(--cosy-radius-sm, 8px);
       border: 1px solid #cbd5e1;
       font-size: 0.85rem;
       background: #f8fafc;
@@ -166,9 +167,9 @@
     }
 
     .category-card {
-      background: #f0f7ff;
+      background: #f0f9ff;
       border: 1px solid #bae6fd;
-      border-radius: 12px;
+      border-radius: var(--cosy-radius-md, 14px);
       padding: 16px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.02);
       transition: all 0.2s ease;
@@ -215,7 +216,7 @@
     .course-item-card {
       background: white;
       border: 1px solid #e2e8f0;
-      border-radius: 8px;
+      border-radius: var(--cosy-radius-sm, 8px);
       padding: 12px 14px;
       display: flex;
       align-items: center;
@@ -246,7 +247,7 @@
     .controls-bar {
       background: white;
       border: 1px solid var(--border-color);
-      border-radius: 12px;
+      border-radius: var(--cosy-radius-md, 14px);
       padding: 16px 24px;
       margin-bottom: 20px;
       display: flex;
@@ -254,14 +255,14 @@
       justify-content: space-between;
       align-items: center;
       gap: 16px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      box-shadow: var(--cosy-shadow-sm);
     }
 
     /* Slide Navigation Controls */
     .slide-nav-bar {
       background: white;
       border: 1px solid var(--border-color);
-      border-radius: 12px;
+      border-radius: var(--cosy-radius-md, 14px);
       padding: 12px 20px;
       margin-bottom: 20px;
       display: flex;
@@ -269,7 +270,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 12px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      box-shadow: var(--cosy-shadow-sm);
     }
 
     .slide-pills {
@@ -280,7 +281,7 @@
 
     .slide-pill {
       padding: 6px 14px;
-      border-radius: 20px;
+      border-radius: var(--cosy-radius-full, 100px);
       border: 1px solid #cbd5e1;
       background: #f8fafc;
       font-size: 0.82rem;
@@ -303,7 +304,7 @@
 
     .slide-nav-btn {
       padding: 8px 16px;
-      border-radius: 8px;
+      border-radius: var(--cosy-radius-sm, 8px);
       border: 1px solid #cbd5e1;
       background: white;
       font-weight: 600;
@@ -327,11 +328,11 @@
 
     .slide-card {
       background: white;
-      border-radius: 12px;
+      border-radius: var(--cosy-radius-md, 14px);
       border: 1px solid var(--border-color);
       padding: 32px;
       margin-bottom: 24px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      box-shadow: var(--cosy-shadow-sm);
     }
 
     .slide-title {
@@ -346,7 +347,7 @@
     }
 
     .teacher-note-box {
-      border-radius: 8px;
+      border-radius: var(--cosy-radius-sm, 8px);
       padding: 16px;
       margin: 16px 0;
       font-size: 0.95rem;
@@ -394,6 +395,14 @@
 <body>
 
   <div id="app-root"></div>
+
+  <footer class="cosy-ecosystem-strip-footer">
+    🌐 Part of the COSY ecosystem •
+    <a href="https://cosylanguages.github.io/COSYlanguages/" target="_blank" rel="noopener">COSYlanguages 🏠</a> •
+    <a href="https://cosylanguages.github.io/COSYtools/" target="_blank" rel="noopener">COSYtools 🔎</a> •
+    <a href="https://cosylanguages.github.io/COSYgames/" target="_blank" rel="noopener">COSYgames 🎮</a> •
+    <a href="https://cosylanguages.github.io/COSYevents/" target="_blank" rel="noopener">COSYevents 🎉</a>
+  </footer>
 
   <script>
     const urlParams = new URLSearchParams(window.location.search);
@@ -474,7 +483,7 @@
           <div class="unauth-card">
             <h1 style="color: #ef4444;">🔒 ${title}</h1>
             <p>${message}</p>
-            <a href="hub.html" class="btn btn-outline" style="margin-top: 12px; display: inline-block;">Return to Home</a>
+            <a href="hub.html" class="btn btn-outline" style="margin-top: 12px; display: inline-block;">← Return to Home</a>
           </div>
         </div>
       `;
@@ -498,7 +507,6 @@
         return true;
       });
 
-      // Group courses by language
       const groupedByLang = {};
       filteredManifest.forEach(c => {
         if (!groupedByLang[c.lang]) groupedByLang[c.lang] = [];
@@ -519,7 +527,7 @@
         <main class="hub-container">
           <div style="margin-bottom: 24px;">
             <h1 style="font-size: 1.6rem; color: #0f172a; margin-bottom: 6px;">
-              ${isTeacher ? 'Teacher Catalog & Course Hub' : 'Student Course Workspace'}
+              ${isTeacher ? 'Teacher Catalog & Course Hub 📚' : 'Student Course Workspace 📚'}
             </h1>
             <p style="color: #64748b;">
               ${isTeacher ? 'Access assigned curriculums, lesson roadmaps, answer keys, and teaching scripts.' : 'Select your course to view the roadmap and interactive lesson slides.'}
@@ -587,7 +595,6 @@
               <div class="catalog-grid">
           `;
 
-          // Group by track within language
           const groupedByTrack = {};
           courses.forEach(c => {
             const trackKey = c.track ? (c.track.charAt(0).toUpperCase() + c.track.slice(1)) : 'General';
@@ -618,7 +625,7 @@
                     </div>
                   </div>
                   <a href="hub.html?key=${key}&course=${c.id}&level=${c.level.toLowerCase()}" class="btn" style="background: ${isTeacher ? 'var(--teacher-primary)' : 'var(--student-primary)'}; padding: 6px 12px; font-size: 0.8rem; white-space: nowrap;">
-                    ${isTeacher ? 'Roadmap' : 'View'}
+                    ${isTeacher ? 'Roadmap 📚' : 'View 📚'}
                   </a>
                 </div>
               `;
@@ -709,7 +716,7 @@
                 ${item.unit ? `<p style="font-size: 0.8rem; color: #64748b; margin-bottom: 12px;">${item.unit}</p>` : ''}
               </div>
               ${lessonPath ?
-                `<a href="hub.html?key=${key}&lesson=${encodeURIComponent(lessonPath)}" class="btn" style="background: ${isTeacher ? 'var(--teacher-primary)' : 'var(--student-primary)'}; padding: 6px 12px; font-size: 0.85rem; text-align: center;">${isTeacher ? 'View Teacher Notes' : 'Start Lesson'}</a>` :
+                `<a href="hub.html?key=${key}&lesson=${encodeURIComponent(lessonPath)}" class="btn" style="background: ${isTeacher ? 'var(--teacher-primary)' : 'var(--student-primary)'}; padding: 6px 12px; font-size: 0.85rem; text-align: center;">${isTeacher ? '👁️ View Teacher Notes' : '▶ Start Lesson'}</a>` :
                 `<a href="hub.html?key=${key}&lesson=${encodeURIComponent('lessons/english-b2/relaxation-and-hygge.xml')}" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.85rem; text-align: center;">Open Sample Lesson</a>`
               }
             </div>
@@ -767,7 +774,6 @@
         window.currentLessonTitle = lessonTitle;
         renderLessonViewerUI();
 
-        // Key bindings for keyboard slide navigation
         window.onkeydown = function(e) {
           const activeTag = document.activeElement ? document.activeElement.tagName.toLowerCase() : "";
           if (["input", "textarea", "select"].includes(activeTag)) return;
@@ -976,7 +982,7 @@
 
     function applyCatalogSearch() {
       const query = (document.getElementById('searchFilter')?.value || '').toLowerCase().trim();
-      const cards = document.querySelectorAll('.course-card');
+      const cards = document.querySelectorAll('.course-item-card');
       cards.forEach(card => {
         const text = card.textContent.toLowerCase();
         card.style.display = text.includes(query) ? 'flex' : 'none';
