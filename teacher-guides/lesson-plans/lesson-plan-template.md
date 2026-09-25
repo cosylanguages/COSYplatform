@@ -14,7 +14,7 @@ Each stage of a CELTA lesson unit maps to a specific component within the COSY e
 4. **Pronunciation / Drill**: `COSYtools` conjugation engines
 5. **Controlled Practice**: `COSYgames` (e.g. Action Hero, Battle of Wits)
 6. **Freer Practice**: `COSYgames` (Storytelling, Story Chain, Opinion Arena)
-7. **Production / Activation**: `COSYworld` quests / `COSYevents` speaking clubs
+7. **Production / Activation**: `COSYevents` speaking clubs & live communicative tasks
 8. **Feedback**: a short "common errors" note field
 
 ---
@@ -68,9 +68,9 @@ Copy the block below for each new curriculum unit or lesson stage document.
 - **COSYgames Integration**: [e.g. COSYgames/storytelling or COSYgames/opinion-arena]
 
 ### Stage 7: Production / Activation
-> *Ecosystem mapping:* `COSYworld` quests / `COSYevents` speaking clubs
-- **Communicative Goal**: [Real-world task or quest objective]
-- **Ecosystem Session**: [e.g. COSYworld Quest "Childhood Memories" / COSYevents Speaking Club]
+> *Ecosystem mapping:* `COSYevents` speaking clubs & live communicative tasks
+- **Communicative Goal**: [Real-world task or speaking objective]
+- **Ecosystem Session**: [e.g. COSYevents Speaking Club]
 
 ### Stage 8: Feedback
 > *Ecosystem mapping:* a short "common errors" note field
@@ -126,7 +126,7 @@ Copy the block below for each new curriculum unit or lesson stage document.
 - **COSYgames Integration**: `COSYgames/story-chain/past-memories`
 
 ### Stage 7: Production / Activation
-> *Ecosystem mapping:* `COSYworld` quests / `COSYevents` speaking clubs
+> *Ecosystem mapping:* `COSYevents` speaking clubs & live communicative tasks
 - **Communicative Goal**: Participate in a 15-minute speaking club session interviewing peers about former lifestyles and past habits.
 - **Ecosystem Session**: `COSYevents/speaking-club-childhood-and-nostalgia`
 
