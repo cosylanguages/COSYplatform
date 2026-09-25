@@ -198,7 +198,7 @@ Lessons support structured cross-curriculum metadata linking vocabulary target i
 - **JSON `links` object**:
   - `vocabulary`: array of strings (`string[]`)
   - `grammar`: array of objects (`{ topic_id: string, manual_url: string, practice_ref: string }`)
-  - `communication`: array of strings (`string[]`)
+  - `communication`: array of objects (`{ phrase_id: string, manual_url: string }`)
   - `phonetics`: string
 - **XML `<cosy-links>` element**: Optional top-level metadata element mapping directly to the JSON `links` object.
 
@@ -220,7 +220,12 @@ Lessons support structured cross-curriculum metadata linking vocabulary target i
         "practice_ref": "grammar-english-a1#lesson-2"
       }
     ],
-    "communication": ["Greeting people", "Introducing oneself"],
+    "communication": [
+      {
+        "phrase_id": "en:general:greetings-and-introductions:hello-nice-to-meet-you",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/greetings-and-introductions.html"
+      }
+    ],
     "phonetics": "/h/ sound & rising intonation in questions"
   },
   "slides": []
