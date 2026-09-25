@@ -99,7 +99,12 @@ Authored JSON files map the 10 standard sections directly into 10 slide objects 
         "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/to-be.html"
       }
     ],
-    "communication": ["en:general:greetings-and-introductions:hello-nice-to-meet-you"],
+    "communication": [
+      {
+        "phrase_id": "en:general:greetings-and-introductions:hello-nice-to-meet-you",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/greetings-and-introductions.html"
+      }
+    ],
     "phonetics": "en-pron-a1-01-alphabet"
   },
   "slides": [
@@ -486,7 +491,7 @@ m<XX>-l<YY>-<slug>.json
 Lesson JSON files reference external indexes and manual pages in the `"links"` object:
 - `vocabulary`: Keys indexed in COSYdata vocabulary repositories.
 - `grammar`: `topic_id` and canonical `manual_url` pointing to `https://cosylanguages.github.io/COSYmanuals/...`.
-- `communication`: Functional phrase target keys.
+- `communication`: Functional phrase objects with `phrase_id` and `manual_url`.
 - `phonetics`: Phonetic topic references.
 
 All links are checked using `npm run check:links` (`scripts/check-links.mjs`). Schema validation is executed via `npm run validate` (`scripts/validate-lessons.js`).

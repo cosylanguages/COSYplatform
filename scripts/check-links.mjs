@@ -175,17 +175,29 @@ async function main() {
 
     // 3. Communication links
     if (Array.isArray(content.links.communication)) {
-      for (const cId of content.links.communication) {
-        totalChecked++;
-        const norm = cId.toLowerCase();
-        const isValid = validPhraseKeys.has(cId) ||
-                        validPhraseShorts.has(norm) ||
-                        validPhraseKeys.has(`en:general:${cId}`) ||
-                        validPhraseShorts.has(cId.replace(/^phr_/, '').replace(/_\d+$/, ''));
+      for (const cItem of content.links.communication) {
+        const cId = typeof cItem === 'object' && cItem !== null ? cItem.phrase_id : cItem;
+        if (cId) {
+          totalChecked++;
+          const norm = cId.toLowerCase();
+          const isValid = validPhraseKeys.has(cId) ||
+                          validPhraseShorts.has(norm) ||
+                          validPhraseKeys.has(`en:general:${cId}`) ||
+                          validPhraseShorts.has(cId.replace(/^phr_/, '').replace(/_\d+$/, ''));
 
-        if (!isValid) {
-          issues.push({ type: 'Communication', id: cId, reason: 'ID not resolved in COSYdata functional-phrases index' });
-          totalBroken++;
+          if (!isValid) {
+            issues.push({ type: 'Communication Phrase ID', id: cId, reason: 'ID not resolved in COSYdata functional-phrases index' });
+            totalBroken++;
+          }
+        }
+
+        if (typeof cItem === 'object' && cItem !== null && cItem.manual_url) {
+          totalChecked++;
+          const status = await checkUrlStatus(cItem.manual_url);
+          if (status !== 200) {
+            issues.push({ type: 'Communication Manual URL', id: cItem.manual_url, reason: `HTTP status ${status} (expected 200)` });
+            totalBroken++;
+          }
         }
       }
     }

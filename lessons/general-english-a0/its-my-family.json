@@ -1,6 +1,6 @@
 {
   "id": "its-my-family",
-  "title": "It\u2019s my family",
+  "title": "It’s my family",
   "level": "A0",
   "language": "en",
   "defaultDuration": 50,
@@ -26,7 +26,10 @@
       }
     ],
     "communication": [
-      "en:general:describing-family:this-is-my-mother"
+      {
+        "phrase_id": "en:general:describing-family:this-is-my-mother",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/describing-family.html"
+      }
     ],
     "phonetics": "en-pron-a1-07-plural-s-endings"
   },
@@ -41,17 +44,17 @@
         {
           "type": "instruction",
           "title": "Stage aim",
-          "content": "Greet student and introduce lesson objectives for It\u2019s my family."
+          "content": "Greet student and introduce lesson objectives for It’s my family."
         },
         {
           "type": "speech",
-          "content": "Welcome to today's lesson: It\u2019s my family! Today we will practice how to identify core family member vocabulary."
+          "content": "Welcome to today's lesson: It’s my family! Today we will practice how to identify core family member vocabulary."
         }
       ],
       "elements": [
         {
           "type": "instruction",
-          "content": "Lesson Objectives for It\u2019s my family:"
+          "content": "Lesson Objectives for It’s my family:"
         },
         {
           "type": "blockquote",
