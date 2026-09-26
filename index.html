@@ -277,7 +277,8 @@
   </style>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="shared/js/access-grants.js"></script>
+  <script src="shared/js/auth-guard.js"></script>
+
 </head>
 <body>
 
@@ -310,19 +311,6 @@
     }
 
     async function checkAuthentication() {
-      // 1. Check legacy grant key parameter
-      if (keyParam) {
-        try {
-          const res = await fetch('data/access-grants.json');
-          if (res.ok) {
-            const grantsData = await res.json();
-            const grant = await window.CosyAccessGrants.matchGrant(grantsData.grants, keyParam);
-            if (grant) return { authenticated: true, user: grant, role: grant.role || 'student' };
-          }
-        } catch (e) {}
-      }
-
-      // 2. Check Supabase Auth Session
       if (supabaseClient) {
         const { data: { session } } = await supabaseClient.auth.getSession();
         if (session && session.user) {
@@ -337,12 +325,6 @@
           } catch (e) {}
           return { authenticated: true, user: session.user, role };
         }
-      }
-
-      // 3. Check localStorage stored auth token
-      const localToken = localStorage.getItem('cosy_auth_token');
-      if (localToken) {
-        return { authenticated: true, user: { token: localToken }, role: 'authenticated' };
       }
 
       return { authenticated: false };
@@ -366,7 +348,7 @@
     }
 
     function renderPublicCatalog() {
-      const fullManifest = window.CosyAccessGrants ? window.CosyAccessGrants.FULL_MANIFEST : [];
+      const fullManifest = window.CosyAuth ? window.CosyAuth.FULL_MANIFEST : [];
 
       let html = `
         <header class="hub-header">

@@ -113,18 +113,19 @@
       color: #0f172a;
     }
 
-    .access-denied {
-      max-width: 500px;
-      margin: 80px auto;
-      background: white;
-      padding: 40px;
-      border-radius: var(--cosy-radius-md, 14px);
-      border: 1px solid #cbd5e1;
-      text-align: center;
-      box-shadow: var(--cosy-shadow-sm);
+    .btn-logout {
+      background-color: #334155;
+      color: white;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
     }
   </style>
-  <script src="shared/js/access-grants.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="shared/js/auth-guard.js"></script>
 </head>
 <body>
 
@@ -138,7 +139,10 @@
         <span style="font-size: 1.4rem; font-weight: 800;">COSYlanguages</span>
         <span class="badge-founder">Founder &amp; Executive Portal</span>
       </div>
-      <div id="user-info" style="font-size: 0.85rem; color: #94a3b8;"></div>
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <div id="user-info" style="font-size: 0.85rem; color: #94a3b8;"></div>
+        <button onclick="window.CosyAuth.logout()" class="btn-logout">Log Out</button>
+      </div>
     </div>
   </header>
 
@@ -155,51 +159,14 @@
   </footer>
 
   <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const key = urlParams.get('key');
-
     async function initFounderApp() {
-      const appRoot = document.getElementById('app-root');
+      const authData = await window.CosyAuth.requireRole(['founder']);
+      if (!authData) return;
 
-      if (!key) {
-        renderAccessDenied("Missing Access Key", "An access key is required to view the founder dashboard.");
-        return;
-      }
+      const userEmail = authData.user ? authData.user.email : '';
+      document.getElementById('user-info').innerText = `Founder: ${userEmail || 'Executive'}`;
 
-      const noticeLink = document.getElementById('notice-hub-link');
-      if (noticeLink && key) {
-        noticeLink.href = `hub.html?key=${encodeURIComponent(key)}`;
-      }
-
-      try {
-        const grantsRes = await fetch('data/access-grants.json');
-        if (!grantsRes.ok) throw new Error("Unable to load access grants");
-        const grantsData = await grantsRes.json();
-
-        const grant = await window.CosyAccessGrants.matchGrant(grantsData.grants, key);
-        const fullManifest = window.CosyAccessGrants ? window.CosyAccessGrants.FULL_MANIFEST : [];
-        const allowedCourses = window.CosyAccessGrants ? window.CosyAccessGrants.resolveGrantCourses(grant, fullManifest) : [];
-
-        if (!grant || (grant.role !== 'founder' && !allowedCourses.includes('*'))) {
-          renderAccessDenied("Founder Access Denied", "This portal requires Founder or Administrator privileges.");
-          return;
-        }
-
-        document.getElementById('user-info').innerText = `Founder: ${grant.name || 'Founder'}`;
-        renderFounderDashboard();
-
-      } catch (err) {
-        renderAccessDenied("System Error", err.message);
-      }
-    }
-
-    function renderAccessDenied(title, message) {
-      document.getElementById('app-root').innerHTML = `
-        <div class="access-denied">
-          <h2>🔒 ${title}</h2>
-          <p>${message}</p>
-        </div>
-      `;
+      renderFounderDashboard();
     }
 
     function renderFounderDashboard() {
@@ -231,88 +198,83 @@
             <div class="teacher-link-card">
               <h4>🇬🇧 English Space</h4>
               <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">General, Spoken, Grammar, Phrasal Verbs, Vocab</p>
-              <a href="teacher-english.html?key=${encodeURIComponent(key)}" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open English Space 📚</a>
+              <a href="teacher-english.html" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open English Space 📚</a>
             </div>
             <div class="teacher-link-card">
               <h4>🇫🇷 French Space</h4>
               <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">General, Spoken, Professional, Travelling, Pronunciation</p>
-              <a href="teacher-french.html?key=${encodeURIComponent(key)}" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open French Space 📚</a>
+              <a href="teacher-french.html" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open French Space 📚</a>
             </div>
             <div class="teacher-link-card">
               <h4>🇷🇺 Russian Space</h4>
               <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">General, Spoken, Professional, Travelling, Pronunciation</p>
-              <a href="teacher-russian.html?key=${encodeURIComponent(key)}" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open Russian Space 📚</a>
+              <a href="teacher-russian.html" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open Russian Space 📚</a>
             </div>
             <div class="teacher-link-card">
               <h4>🇩🇪 German Space</h4>
               <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">General German A1 - C1 Courses</p>
-              <a href="teacher.html?key=${encodeURIComponent(key)}&lang=de" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open German Space 📚</a>
+              <a href="teacher.html?lang=de" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open German Space 📚</a>
             </div>
             <div class="teacher-link-card">
               <h4>🇪🇸 Spanish Space</h4>
               <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">General Spanish A1 - C1 Courses</p>
-              <a href="teacher.html?key=${encodeURIComponent(key)}&lang=es" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open Spanish Space 📚</a>
+              <a href="teacher.html?lang=es" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open Spanish Space 📚</a>
             </div>
             <div class="teacher-link-card">
               <h4>🇵🇹 Portuguese Space</h4>
               <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">General Portuguese A1 - C1 Courses</p>
-              <a href="teacher.html?key=${encodeURIComponent(key)}&lang=pt" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open Portuguese Space 📚</a>
+              <a href="teacher.html?lang=pt" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open Portuguese Space 📚</a>
             </div>
             <div class="teacher-link-card">
               <h4>🇮🇹 Italian Space</h4>
               <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">General Italian A1 - C2 Courses</p>
-              <a href="teacher.html?key=${encodeURIComponent(key)}&lang=it" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open Italian Space 📚</a>
+              <a href="teacher.html?lang=it" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open Italian Space 📚</a>
             </div>
             <div class="teacher-link-card">
               <h4>🇬🇷 Greek Space</h4>
               <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">General &amp; Exam Greek A1 - C2 Courses</p>
-              <a href="teacher.html?key=${encodeURIComponent(key)}&lang=el" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open Greek Space 📚</a>
+              <a href="teacher.html?lang=el" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open Greek Space 📚</a>
             </div>
             <div class="teacher-link-card">
               <h4>🇦🇲 Armenian Space</h4>
               <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">General Armenian A1 - C1 Courses</p>
-              <a href="teacher.html?key=${encodeURIComponent(key)}&lang=hy" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open Armenian Space 📚</a>
+              <a href="teacher.html?lang=hy" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open Armenian Space 📚</a>
             </div>
             <div class="teacher-link-card">
               <h4>🇬🇪 Georgian Space</h4>
               <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">General Georgian A1 - C1 Courses</p>
-              <a href="teacher.html?key=${encodeURIComponent(key)}&lang=ka" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open Georgian Space 📚</a>
+              <a href="teacher.html?lang=ka" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open Georgian Space 📚</a>
             </div>
             <div class="teacher-link-card">
               <h4>🇵🇱 Tatar Space</h4>
               <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">General Tatar A1 - C1 Courses</p>
-              <a href="teacher.html?key=${encodeURIComponent(key)}&lang=tt" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open Tatar Space 📚</a>
+              <a href="teacher.html?lang=tt" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open Tatar Space 📚</a>
             </div>
             <div class="teacher-link-card">
               <h4>🇷🇺 Bashkir Space</h4>
               <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">General Bashkir A1 - C1 Courses</p>
-              <a href="teacher.html?key=${encodeURIComponent(key)}&lang=ba" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open Bashkir Space 📚</a>
+              <a href="teacher.html?lang=ba" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open Bashkir Space 📚</a>
             </div>
             <div class="teacher-link-card">
               <h4>🇫🇷 Breton Space</h4>
               <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">General Breton A1 - C1 Courses</p>
-              <a href="teacher.html?key=${encodeURIComponent(key)}&lang=br" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open Breton Space 📚</a>
+              <a href="teacher.html?lang=br" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open Breton Space 📚</a>
             </div>
             <div class="teacher-link-card">
               <h4>🎓 Universal Master Teacher Portal</h4>
               <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">Unrestricted access to all languages &amp; raw catalog</p>
-              <a href="teacher.html?key=${encodeURIComponent(key)}" class="btn btn-outline" style="text-align: center;">Open Master Portal 📚</a>
+              <a href="teacher.html" class="btn btn-outline" style="text-align: center;">Open Master Portal 📚</a>
             </div>
           </div>
         </div>
 
         <div class="portal-section">
-          <h2>🔑 Access Grants &amp; Student Workbooks</h2>
+          <h2>🧑‍🎓 Student Workspace Access</h2>
           <div class="teacher-links-grid">
             <div class="teacher-link-card">
               <h4>🧑‍🎓 Student Workspace</h4>
-              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">Preview student view with current key</p>
-              <a href="student.html?key=${encodeURIComponent(key)}" class="btn btn-secondary" style="text-align: center;">View Student Workspace 📚</a>
-            </div>
-            <div class="teacher-link-card">
-              <h4>⚙️ Access Grants Generator</h4>
-              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">Generate hashed JSON entries for data/access-grants.json</p>
-              <a href="admin-grants.html" class="btn btn-outline" style="text-align: center;">Open Grant Generator ⚙️</a>
+              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">Preview student view with authenticated session</p>
+              <a href="student.html" class="btn btn-secondary" style="text-align: center;">View Student Workspace 📚</a>
             </div>
           </div>
         </div>

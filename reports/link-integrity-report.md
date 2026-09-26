@@ -2,7 +2,7 @@
 
 **Index Resolution Strategy:** Remote index fetched from COSYdata GitHub repository (`https://raw.githubusercontent.com/cosylanguages/COSYdata/main/`) with local fallback to `.cache/`.
 
-**Summary:** Checked 7904 total link references across 833 lesson files. Found **500 broken reference(s)**.
+**Summary:** Checked 7904 total link references across 833 lesson files. Found **515 broken reference(s)**.
 
 ## Identified Link Issues
 
@@ -101,6 +101,13 @@
 
 ### `lessons/general-english-a1/lets-have-fun-together.json`
 - **[Communication Manual URL]** `https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/free-time-invitations.html`: HTTP status 404 (expected 200)
+
+### `lessons/general-english-a1/m02-l01-family-members-and-tree.json`
+- **[Vocabulary]** `parents`: ID or word not resolved in COSYdata vocabulary index
+- **[Vocabulary]** `children`: ID or word not resolved in COSYdata vocabulary index
+
+### `lessons/general-english-a1/m02-l03-physical-appearance.json`
+- **[Vocabulary]** `eyes`: ID or word not resolved in COSYdata vocabulary index
 
 ### `lessons/general-english-a1/m06-l01-shop-types-and-places.json`
 - **[Communication Manual URL]** `https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/shopping-basics.html`: HTTP status 404 (expected 200)
@@ -390,6 +397,13 @@
 ### `lessons/general-english-a1/world-of-people.json`
 - **[Communication Manual URL]** `https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/asking-and-giving-personal-info.html`: HTTP status 404 (expected 200)
 
+### `lessons/general-french-a1/m02-l01-membres-de-la-famille-et-arbre.json`
+- **[Vocabulary]** `parents`: ID or word not resolved in COSYdata vocabulary index
+- **[Vocabulary]** `children`: ID or word not resolved in COSYdata vocabulary index
+
+### `lessons/general-french-a1/m02-l03-apparence-physique.json`
+- **[Vocabulary]** `eyes`: ID or word not resolved in COSYdata vocabulary index
+
 ### `lessons/general-french-a1/m06-l01-shop-types-and-places.json`
 - **[Communication Manual URL]** `https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/shopping-basics.html`: HTTP status 404 (expected 200)
 
@@ -668,6 +682,13 @@
 
 ### `lessons/general-french-a1/m22-l06-final-a1-capstone-showcase.json`
 - **[Communication Manual URL]** `https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/classroom-language.html`: HTTP status 404 (expected 200)
+
+### `lessons/general-greek-a1/m02-l01-meli-oikogeneias-kai-dendro.json`
+- **[Vocabulary]** `parents`: ID or word not resolved in COSYdata vocabulary index
+- **[Vocabulary]** `children`: ID or word not resolved in COSYdata vocabulary index
+
+### `lessons/general-greek-a1/m02-l03-exoteriki-emfanisi.json`
+- **[Vocabulary]** `eyes`: ID or word not resolved in COSYdata vocabulary index
 
 ### `lessons/general-greek-a1/m06-l01-shop-types-and-places.json`
 - **[Communication Manual URL]** `https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/shopping-basics.html`: HTTP status 404 (expected 200)
@@ -948,6 +969,13 @@
 ### `lessons/general-greek-a1/m22-l06-final-a1-capstone-showcase.json`
 - **[Communication Manual URL]** `https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/classroom-language.html`: HTTP status 404 (expected 200)
 
+### `lessons/general-italian-a1/m02-l01-membri-della-famiglia-e-albero.json`
+- **[Vocabulary]** `parents`: ID or word not resolved in COSYdata vocabulary index
+- **[Vocabulary]** `children`: ID or word not resolved in COSYdata vocabulary index
+
+### `lessons/general-italian-a1/m02-l03-aspetto-fisico.json`
+- **[Vocabulary]** `eyes`: ID or word not resolved in COSYdata vocabulary index
+
 ### `lessons/general-italian-a1/m06-l01-shop-types-and-places.json`
 - **[Communication Manual URL]** `https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/shopping-basics.html`: HTTP status 404 (expected 200)
 
@@ -1226,6 +1254,13 @@
 
 ### `lessons/general-italian-a1/m22-l06-final-a1-capstone-showcase.json`
 - **[Communication Manual URL]** `https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/classroom-language.html`: HTTP status 404 (expected 200)
+
+### `lessons/general-russian-a1/m02-l01-chleny-semi-i-semeynoe-derevo.json`
+- **[Vocabulary]** `parents`: ID or word not resolved in COSYdata vocabulary index
+- **[Vocabulary]** `children`: ID or word not resolved in COSYdata vocabulary index
+
+### `lessons/general-russian-a1/m02-l03-vneshnost-i-vneshniy-vid.json`
+- **[Vocabulary]** `eyes`: ID or word not resolved in COSYdata vocabulary index
 
 ### `lessons/general-russian-a1/m06-l01-shop-types-and-places.json`
 - **[Communication Manual URL]** `https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/shopping-basics.html`: HTTP status 404 (expected 200)

@@ -456,7 +456,8 @@
       border-radius: 0 8px 8px 0;
     }
   </style>
-  <script src="shared/js/access-grants.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="shared/js/auth-guard.js"></script>
   <script src="shared/js/vocab-index.js"></script>
   <script src="shared/js/irregular-verbs.js"></script>
 </head>
@@ -499,47 +500,20 @@
     async function initTeacherApp() {
       const appRoot = document.getElementById('app-root');
 
-      if (!key) {
-        renderAccessDenied("Missing Access Key", "An access key is required to view the teacher catalog. Please use your teacher link.");
-        return;
-      }
+      const authData = await window.CosyAuth.requireRole(['teacher', 'founder']);
+      if (!authData) return;
 
-      const noticeLink = document.getElementById('notice-hub-link');
-      if (noticeLink && key) {
-        noticeLink.href = `hub.html?key=${encodeURIComponent(key)}`;
-      }
+      const userEmail = authData.user ? authData.user.email : '';
+      document.getElementById('user-info').innerText = `Teacher: ${userEmail || 'Teacher'}`;
 
-      try {
-        const grantsRes = await fetch('data/access-grants.json');
-        if (!grantsRes.ok) throw new Error("Unable to load access configuration");
-        const grantsData = await grantsRes.json();
+      const fullManifest = window.CosyAuth ? window.CosyAuth.FULL_MANIFEST : [];
 
-        const grant = await window.CosyAccessGrants.matchGrant(grantsData.grants, key);
-        if (!grant) {
-          renderAccessDenied("Invalid Access Key", "The access key provided is invalid. Please contact COSYlanguages administration.");
-          return;
-        }
-
-        const fullManifest = window.CosyAccessGrants ? window.CosyAccessGrants.FULL_MANIFEST : [];
-        const allowedCourses = window.CosyAccessGrants ? window.CosyAccessGrants.resolveGrantCourses(grant, fullManifest) : [];
-
-        if (grant.role !== 'teacher' && grant.role !== 'founder' && !allowedCourses.includes('*')) {
-          renderAccessDenied("Permission Denied", "This access key does not have teacher privileges.");
-          return;
-        }
-
-        document.getElementById('user-info').innerText = `Teacher: ${grant.name || 'Teacher'}`;
-
-        if (lessonParam) {
-          renderLesson(lessonParam);
-        } else if (courseParam && levelParam) {
-          renderCourseRoadmap(courseParam, levelParam);
-        } else {
-          renderTeacherCatalog(grant, allowedCourses, fullManifest);
-        }
-
-      } catch (err) {
-        renderAccessDenied("System Error", err.message);
+      if (lessonParam) {
+        renderLesson(lessonParam, authData.profile);
+      } else if (courseParam) {
+        renderCourseRoadmap(courseParam, levelParam, authData.profile);
+      } else {
+        renderTeacherCatalog(authData.profile, fullManifest);
       }
     }
 
@@ -552,10 +526,10 @@
       `;
     }
 
-    async function renderTeacherCatalog(grant, allowedCourses, fullManifest) {
+    async function renderTeacherCatalog(profile, fullManifest) {
       const appRoot = document.getElementById('app-root');
 
-      let courseList = fullManifest.filter(c => allowedCourses.includes('*') || allowedCourses.includes(c.id));
+      let courseList = fullManifest.filter(c => window.CosyAuth.isCourseAccessible(c, profile));
       if (langParam) {
         courseList = courseList.filter(c => c.lang.toLowerCase() === langParam.toLowerCase());
       }
@@ -570,7 +544,7 @@
               <p style="color: #64748b;">Teachers have access to all assigned tracks, curriculums, and speech scripts.</p>
             </div>
             <div style="display: flex; gap: 8px;">
-              <a href="founder.html?key=${encodeURIComponent(key)}" class="btn btn-outline" style="font-size: 0.85rem;">← Founder Portal</a>
+              <a href="founder.html" class="btn btn-outline" style="font-size: 0.85rem;">← Founder Portal</a>
               <a href="manuals/teacher-guide-first-lesson.md" target="_blank" class="btn btn-outline" style="font-size: 0.85rem;">📖 Teaching Guide</a>
             </div>
           </div>
@@ -609,7 +583,7 @@
                     <span class="course-item-title">${c.title}</span>
                   </div>
                 </div>
-                <a href="teacher.html?key=${key}&course=${c.id}&level=${c.level.toLowerCase()}" class="btn" style="background: var(--teacher-primary); padding: 6px 12px; font-size: 0.8rem; white-space: nowrap;">
+                <a href="teacher.html?course=${c.id}&level=${c.level.toLowerCase()}" class="btn" style="background: var(--teacher-primary); padding: 6px 12px; font-size: 0.8rem; white-space: nowrap;">
                   Roadmap 📚
                 </a>
               </div>
@@ -659,7 +633,7 @@
         let html = `
           <div class="catalog-container">
             <div class="teacher-controls-bar">
-              <a href="teacher.html?key=${key}" class="back-btn" style="color: #64748b; font-weight: 500;">← Back to Catalog</a>
+              <a href="teacher.html" class="back-btn" style="color: #64748b; font-weight: 500;">← Back to Catalog</a>
               <span class="badge-teacher">${roadmap.title}</span>
             </div>
 
@@ -694,8 +668,8 @@
                 ${item.unit ? `<p style="font-size: 0.8rem; color: #64748b; margin-bottom: 12px;">${item.unit}</p>` : ''}
               </div>
               <div style="display: flex; flex-direction: column; gap: 6px; margin-top: 10px;">
-                <a href="teacher.html?key=${key}&lesson=${encodeURIComponent(lessonPath)}" class="btn" style="background: var(--teacher-primary); padding: 6px 12px; font-size: 0.8rem; text-align: center;">👁️ View Teacher Notes</a>
-                <a href="student.html?key=${key}&lesson=${encodeURIComponent(lessonPath)}&export=print" target="_blank" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.8rem; text-align: center;">🖨️ Print / Send HTML</a>
+                <a href="teacher.html?lesson=${encodeURIComponent(lessonPath)}" class="btn" style="background: var(--teacher-primary); padding: 6px 12px; font-size: 0.8rem; text-align: center;">👁️ View Teacher Notes</a>
+                <a href="student.html?lesson=${encodeURIComponent(lessonPath)}&export=print" target="_blank" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.8rem; text-align: center;">🖨️ Print / Send HTML</a>
               </div>
             </div>
           `;
@@ -930,7 +904,7 @@
       let html = `
         <div style="max-width: 1440px; margin: 10px auto; padding: 0 16px;">
           <div class="teacher-controls-bar">
-            <a href="teacher.html?key=${key}" class="back-btn" style="color: #64748b; font-weight: 500;">← Back to Catalog</a>
+            <a href="teacher.html" class="back-btn" style="color: #64748b; font-weight: 500;">← Back to Catalog</a>
             <span style="font-weight: 700; color: #0f172a; font-size: 1.1rem;">${lessonTitle}</span>
             <div style="display: flex; gap: 8px; align-items: center;">
               <button class="slide-nav-btn" onclick="toggleTeacherViewMode()">${window.teacherViewModeAll ? '📄 Single Slide' : '📜 Scroll All'}</button>

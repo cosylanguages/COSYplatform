@@ -437,7 +437,8 @@
       background: var(--student-light);
     }
   </style>
-  <script src="shared/js/access-grants.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="shared/js/auth-guard.js"></script>
   <script src="shared/js/vocab-index.js"></script>
   <script src="shared/js/irregular-verbs.js"></script>
 </head>
@@ -479,39 +480,18 @@
     async function initStudentApp() {
       const appRoot = document.getElementById('app-root');
 
-      if (!key) {
-        renderAccessDenied("Missing Access Key", "An access key is required to view your workspace. Please use the link provided by your teacher.");
-        return;
-      }
+      const authData = await window.CosyAuth.requireRole(['student', 'teacher', 'founder']);
+      if (!authData) return;
 
-      const noticeLink = document.getElementById('notice-hub-link');
-      if (noticeLink && key) {
-        noticeLink.href = `hub.html?key=${encodeURIComponent(key)}`;
-      }
+      const userEmail = authData.user ? authData.user.email : '';
+      document.getElementById('user-info').innerText = `Learner: ${userEmail || 'Student'}`;
 
-      try {
-        const grantsRes = await fetch('data/access-grants.json');
-        if (!grantsRes.ok) throw new Error("Unable to load access configuration");
-        const grantsData = await grantsRes.json();
-
-        const grant = await window.CosyAccessGrants.matchGrant(grantsData.grants, key);
-        if (!grant) {
-          renderAccessDenied("Invalid Access Key", "The access key provided is invalid or has expired. Please contact your teacher or COSYlanguages.");
-          return;
-        }
-
-        document.getElementById('user-info').innerText = `Learner: ${grant.name || 'Student'}`;
-
-        if (lessonParam) {
-          renderLesson(lessonParam, grant);
-        } else if (courseParam && levelParam) {
-          renderCourseRoadmap(courseParam, levelParam, grant);
-        } else {
-          renderStudentCatalog(grant);
-        }
-
-      } catch (err) {
-        renderAccessDenied("System Error", err.message);
+      if (lessonParam) {
+        renderLesson(lessonParam, authData.profile);
+      } else if (courseParam) {
+        renderCourseRoadmap(courseParam, levelParam, authData.profile);
+      } else {
+        renderStudentCatalog(authData.profile);
       }
     }
 
@@ -524,18 +504,17 @@
       `;
     }
 
-    async function renderStudentCatalog(grant) {
+    async function renderStudentCatalog(profile) {
       const appRoot = document.getElementById('app-root');
 
-      const fullManifest = window.CosyAccessGrants ? window.CosyAccessGrants.FULL_MANIFEST : [];
-      const allowedCourseIds = window.CosyAccessGrants ? window.CosyAccessGrants.resolveGrantCourses(grant, fullManifest) : [];
+      const fullManifest = window.CosyAuth ? window.CosyAuth.FULL_MANIFEST : [];
 
       const currentLang = urlParams.get('langFilter') || 'all';
       const currentTrack = urlParams.get('trackFilter') || 'all';
       const currentLevel = urlParams.get('levelFilter') || 'all';
 
       const allowedCourses = fullManifest.filter(c => {
-        const isEntitled = allowedCourseIds.includes("*") || allowedCourseIds.includes(c.id);
+        const isEntitled = window.CosyAuth.isCourseAccessible(c, profile);
         if (!isEntitled) return false;
         if (currentLang !== 'all' && c.lang !== currentLang) return false;
         if (currentTrack !== 'all' && c.track.toLowerCase() !== currentTrack.toLowerCase()) return false;
@@ -625,7 +604,7 @@
                     <span class="course-item-title">${c.title}</span>
                   </div>
                 </div>
-                <a href="student.html?key=${key}&course=${c.id}&level=${c.level.toLowerCase()}" class="btn" style="background: var(--student-primary); padding: 6px 12px; font-size: 0.8rem; white-space: nowrap;">
+                <a href="student.html?course=${c.id}&level=${c.level.toLowerCase()}" class="btn" style="background: var(--student-primary); padding: 6px 12px; font-size: 0.8rem; white-space: nowrap;">
                   View 📚
                 </a>
               </div>
@@ -645,7 +624,7 @@
       appRoot.innerHTML = html;
     }
 
-    async function renderCourseRoadmap(courseId, level, grant) {
+    async function renderCourseRoadmap(courseId, level, profile) {
       const appRoot = document.getElementById('app-root');
 
       try {
@@ -675,7 +654,7 @@
         let html = `
           <div class="catalog-container">
             <div class="lesson-nav-header">
-              <a href="student.html?key=${key}" class="back-btn">← Back to Courses</a>
+              <a href="student.html" class="back-btn">← Back to Courses</a>
               <span class="badge-student">${roadmap.title}</span>
             </div>
 
@@ -715,8 +694,8 @@
                 ${item.unit ? `<p style="font-size: 0.8rem; color: #64748b; margin-bottom: 12px;">${item.unit}</p>` : ''}
               </div>
               ${isUnlocked ?
-                `<a href="student.html?key=${key}&lesson=${encodeURIComponent(lessonPath)}" class="btn" style="background: var(--student-primary); padding: 6px 12px; font-size: 0.85rem; text-align: center;">▶ Start Lesson</a>` :
-                `<a href="student.html?key=${key}&lesson=${encodeURIComponent(lessonPath)}" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.85rem; text-align: center; color: #64748b;">🔒 Closed (Sent by Teacher)</a>`
+                `<a href="student.html?lesson=${encodeURIComponent(lessonPath)}" class="btn" style="background: var(--student-primary); padding: 6px 12px; font-size: 0.85rem; text-align: center;">▶ Start Lesson</a>` :
+                `<a href="student.html?lesson=${encodeURIComponent(lessonPath)}" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.85rem; text-align: center; color: #64748b;">🔒 Closed (Sent by Teacher)</a>`
               }
             </div>
           `;
@@ -873,7 +852,7 @@
       updateTimerDisplay();
     }
 
-    async function renderLesson(lessonPath, grant) {
+    async function renderLesson(lessonPath, profile) {
       const appRoot = document.getElementById('app-root');
 
       try {
@@ -947,7 +926,7 @@
             </div>
           ` : ''}
           <div class="lesson-nav-header">
-            <a href="student.html?key=${key}" class="back-btn">← Back to Course</a>
+            <a href="student.html" class="back-btn">← Back to Course</a>
             <span style="font-weight: 700; color: #0f172a; font-size: 1.1rem;">${lessonTitle}</span>
             <div style="display: flex; gap: 8px; align-items: center;">
               <button class="slide-nav-btn" onclick="toggleStudentViewMode()">${window.studentViewModeAll ? '📄 Single Slide' : '📜 Scroll All'}</button>

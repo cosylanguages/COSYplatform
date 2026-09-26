@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log In — COSYlanguages</title>
+  <link rel="stylesheet" href="shared/css/tokens.css">
+  <link rel="stylesheet" href="shared/styles/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <style>
+    body {
+      background-color: #f8fafc;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .login-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 40px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+    }
+    .login-header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .login-header h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0 0 8px 0;
+    }
+    .login-header p {
+      color: #64748b;
+      font-size: 0.9rem;
+      margin: 0;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #334155;
+      margin-bottom: 6px;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      box-sizing: border-box;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .form-group input:focus {
+      outline: none;
+      border-color: #0284c7;
+      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+    }
+    .btn-submit {
+      width: 100%;
+      padding: 12px;
+      background-color: #0284c7;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.15s ease;
+    }
+    .btn-submit:hover {
+      background-color: #0369a1;
+    }
+    .btn-submit:disabled {
+      background-color: #94a3b8;
+      cursor: not-allowed;
+    }
+    .error-banner {
+      background-color: #fef2f2;
+      border: 1px solid #fca5a5;
+      color: #991b1b;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      margin-bottom: 20px;
+      display: none;
+    }
+    .footer-note {
+      text-align: center;
+      margin-top: 24px;
+      font-size: 0.8rem;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-card">
+    <div class="login-header">
+      <h1>COSYlanguages</h1>
+      <p>Log in to access your workspace</p>
+    </div>
+
+    <div id="error-banner" class="error-banner"></div>
+
+    <form id="login-form">
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" required placeholder="name@domain.com" autocomplete="email">
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" required placeholder="••••••••" autocomplete="current-password">
+      </div>
+
+      <button type="submit" id="submit-btn" class="btn-submit">Sign In</button>
+    </form>
+
+    <div class="footer-note">
+      Account creation is managed by platform administration.
+    </div>
+  </div>
+
+  <script>
+    const SUPABASE_URL = window.SUPABASE_URL || "https://your-supabase-project.supabase.co";
+    const SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY || "your-anon-key";
+
+    let supabaseClient = null;
+    if (window.supabase && SUPABASE_URL.startsWith("http")) {
+      supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    }
+
+    const form = document.getElementById('login-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const errorBanner = document.getElementById('error-banner');
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const redirectTarget = urlParams.get('redirect');
+
+    function showError(msg) {
+      errorBanner.textContent = msg;
+      errorBanner.style.display = 'block';
+    }
+
+    function hideError() {
+      errorBanner.style.display = 'none';
+      errorBanner.textContent = '';
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      hideError();
+
+      if (!supabaseClient) {
+        showError("Supabase backend connection is not configured.");
+        return;
+      }
+
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Signing in...';
+
+      try {
+        const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
+
+        if (error) {
+          showError(error.message || "Invalid credentials. Please check your email and password.");
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Sign In';
+          return;
+        }
+
+        if (data && data.user) {
+          // Fetch profile role to determine landing portal
+          let targetPage = 'student.html';
+          const { data: profile } = await supabaseClient
+            .from('profiles')
+            .select('role')
+            .eq('id', data.user.id)
+            .maybeSingle();
+
+          if (profile && profile.role) {
+            const role = profile.role.toLowerCase();
+            if (role === 'founder') targetPage = 'founder.html';
+            else if (role === 'teacher') targetPage = 'teacher.html';
+            else targetPage = 'student.html';
+          }
+
+          // If redirect target is specified, honor it
+          if (redirectTarget) {
+            window.location.href = redirectTarget;
+          } else {
+            window.location.href = targetPage;
+          }
+        }
+      } catch (err) {
+        showError("An unexpected error occurred during sign in.");
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Sign In';
+      }
+    });
+  </script>
+</body>
+</html>
