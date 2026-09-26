@@ -4,14 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>COSYlanguages Platform</title>
+  <link rel="stylesheet" href="shared/css/tokens.css">
+  <link rel="stylesheet" href="shared/styles/style.css">
   <style>
     :root {
-      --bg-color: #f8fafc;
-      --card-bg: #ffffff;
+      --bg-color: var(--cosy-color-cream, #fdfcf8);
+      --card-bg: var(--cosy-color-warm-white, #FFFEFB);
       --text-main: #0f172a;
       --text-muted: #64748b;
-      --border-color: #e2e8f0;
-      --accent-color: #0284c7;
+      --border-color: var(--cosy-color-border, rgba(74, 107, 80, 0.12));
+      --accent-color: var(--cosy-platform-accent, #0284c7);
     }
 
     * {
@@ -21,30 +23,40 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: var(--cosy-font-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
       background-color: var(--bg-color);
       color: var(--text-main);
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
+    }
+
+    .main-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      width: 100%;
       padding: 24px;
     }
 
     .card {
       background: var(--card-bg);
       border: 1px solid var(--border-color);
-      border-radius: 12px;
+      border-radius: var(--cosy-radius-md, 14px);
       padding: 40px;
       max-width: 480px;
       width: 100%;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      box-shadow: var(--cosy-shadow-sm);
       text-align: center;
     }
 
     .logo {
       font-size: 24px;
-      font-weight: 700;
+      font-weight: 800;
       color: var(--accent-color);
       margin-bottom: 16px;
       letter-spacing: -0.5px;
@@ -52,7 +64,7 @@
 
     h1 {
       font-size: 20px;
-      font-weight: 600;
+      font-weight: 700;
       margin-bottom: 12px;
       color: var(--text-main);
     }
@@ -76,13 +88,24 @@
   <div style="position: fixed; top: 0; left: 0; right: 0; background: #fffbe3; border-bottom: 1px solid #f59e0b; color: #78350f; text-align: center; padding: 10px 16px; font-size: 0.85rem; font-weight: 600; z-index: 1000;">
     ℹ️ Notice: COSYlanguages entry points have consolidated into <a href="hub.html" style="color: #0284c7; text-decoration: underline;">hub.html</a>. Please update your bookmarks.
   </div>
-  <div class="card" style="margin-top: 40px;">
-    <div class="logo">COSYlanguages</div>
-    <h1>Private Learning Platform</h1>
-    <p>This is a private area. Access to lessons and teacher materials is available exclusively via direct personal link.</p>
-    <div class="footer-note">
-      Contact your teacher or COSYlanguages for a link to access your workspace.
+
+  <div class="main-wrap">
+    <div class="card" style="margin-top: 40px;">
+      <div class="logo">COSYlanguages</div>
+      <h1>Private Learning Platform 🔒</h1>
+      <p>This is a private area. Access to lessons and teacher materials is available exclusively via direct personal link.</p>
+      <div class="footer-note">
+        Contact your teacher or COSYlanguages for a link to access your workspace.
+      </div>
     </div>
   </div>
+
+  <footer class="cosy-ecosystem-strip-footer">
+    🌐 Part of the COSY ecosystem •
+    <a href="https://cosylanguages.github.io/COSYlanguages/" target="_blank" rel="noopener">COSYlanguages 🏠</a> •
+    <a href="https://cosylanguages.github.io/COSYtools/" target="_blank" rel="noopener">COSYtools 🔎</a> •
+    <a href="https://cosylanguages.github.io/COSYgames/" target="_blank" rel="noopener">COSYgames 🎮</a> •
+    <a href="https://cosylanguages.github.io/COSYevents/" target="_blank" rel="noopener">COSYevents 🎉</a>
+  </footer>
 </body>
 </html>

@@ -1,0 +1,252 @@
+/**
+ * COSYplatform Master Design Tokens
+ * Local Vendored Location: shared/css/tokens.css
+ * Synchronized with COSYlanguages Ecosystem Master Design System:
+ * https://cosylanguages.github.io/COSYlanguages/shared/css/tokens.css
+ *
+ * COSYplatform is the flagship paid, full-course, live-classroom product
+ * (student view + teacher view). It shares the ecosystem base tokens, typography,
+ * spacing, and component shapes, while defining its own distinct Sapphire Blue accent palette.
+ */
+
+:root {
+    /* ── 1. Base Neutrals & Surface Palette (Light Mode) ──────────────── */
+    --cosy-color-cream:                  #fdfcf8;
+    --cosy-color-cream-dark:             #f5ede0;
+    --cosy-color-warm-white:             #FFFEFB;
+    --cosy-color-surface:                #FFFFFF;
+
+    --cosy-color-ink:                    #2a2a2a;
+    --cosy-color-ink-soft:               #4a4a4a;
+    --cosy-color-ink-muted:              #4a4a4a;
+    --cosy-color-ink-faint:              #5c5957;
+    --cosy-color-muted:                  #5c5957;
+
+    --cosy-color-border:                 rgba(74, 107, 80, 0.12);
+    --cosy-color-border-hover:           rgba(74, 107, 80, 0.25);
+
+    /* Direct System Aliases for Neutrals */
+    --cream:                             var(--cosy-color-cream);
+    --cream-dark:                        var(--cosy-color-cream-dark);
+    --warm-white:                        var(--cosy-color-warm-white);
+    --surface-color:                     var(--cosy-color-surface);
+    --background-color:                  var(--cosy-color-cream);
+    --ink:                               var(--cosy-color-ink);
+    --ink-soft:                          var(--cosy-color-ink-soft);
+    --ink-muted:                         var(--cosy-color-ink-muted);
+    --ink-faint:                         var(--cosy-color-ink-faint);
+    --muted:                             var(--cosy-color-muted);
+    --text-color:                        var(--cosy-color-ink);
+    --light-gray:                        var(--cosy-color-cream-dark);
+    --border:                            var(--cosy-color-border);
+    --border-hover:                      var(--cosy-color-border-hover);
+
+    /* ── 2. Sage Base Brand Palette (Forest Green / Sage Base) ────────── */
+    --cosy-color-forest-green:           #416b49;
+    --cosy-color-sage:                   #416b49;
+    --cosy-color-sage-dark:              #375742;
+    --cosy-color-sage-deep:              #233827;
+    --cosy-color-sage-soft:              #6b9474;
+    --cosy-color-sage-mist:              #f0f5f1;
+    --cosy-color-sage-pale:              #e8f0e9;
+    --cosy-color-sage-light:             #e8f0e9;
+
+    /* Direct System Aliases for Sage */
+    --sage:                              var(--cosy-color-sage);
+    --sage-dark:                         var(--cosy-color-sage-dark);
+    --sage-deep:                         var(--cosy-color-sage-deep);
+    --sage-soft:                         var(--cosy-color-sage-soft);
+    --sage-mist:                         var(--cosy-color-sage-mist);
+    --sage-pale:                         var(--cosy-color-sage-pale);
+    --sage-light:                        var(--cosy-color-sage-light);
+    --primary-color:                     var(--sage);
+
+    /* ── 3. COSYplatform Flagship Paid Product Accent Palette ─────────── */
+    /* COSYplatform distinct accent: Confident Sapphire / Cerulean Blue (#0284c7)
+       Shared hue family across both student and teacher views. */
+    --cosy-platform-accent:              #0284c7;
+    --cosy-platform-accent-light:        #e0f2fe;
+    --cosy-platform-accent-deep:         #0369a1;
+
+    /* Student View Variant: Vibrant Active Sapphire Blue */
+    --cosy-platform-student:             #0284c7;
+    --cosy-platform-student-light:       #e0f2fe;
+    --cosy-platform-student-hover:       #0369a1;
+    --cosy-platform-student-border:      #bae6fd;
+
+    /* Teacher View Variant: Deeper Authoritative Slate-Sapphire Blue */
+    --cosy-platform-teacher:             #0369a1;
+    --cosy-platform-teacher-light:       #e0f2fe;
+    --cosy-platform-teacher-hover:       #075985;
+    --cosy-platform-teacher-border:      #7dd3fc;
+
+    /* System Aliases for COSYplatform */
+    --platform-primary:                  var(--cosy-platform-accent);
+    --student-primary:                   var(--cosy-platform-student);
+    --student-light:                     var(--cosy-platform-student-light);
+    --student-hover:                     var(--cosy-platform-student-hover);
+    --teacher-primary:                   var(--cosy-platform-teacher);
+    --teacher-light:                     var(--cosy-platform-teacher-light);
+    --teacher-hover:                     var(--cosy-platform-teacher-hover);
+
+    /* ── 4. Ecosystem Track Accent Layer ───────────────────────────────── */
+    --cosy-track-general:                #416b49;
+    --cosy-track-general-light:          #e8f0e9;
+    --cosy-track-spoken:                 #B84318;
+    --cosy-track-spoken-light:           #faeee8;
+    --cosy-track-professional:           #1e2f6b;
+    --cosy-track-professional-light:     #e8ecf5;
+    --cosy-track-travelling:             #4a6b50;
+    --cosy-track-travelling-light:       #e5f4ec;
+    --cosy-track-relocation:             #d66161;
+    --cosy-track-relocation-light:       #fcebeb;
+    --cosy-track-exam:                   #7a5c3a;
+    --cosy-track-exam-light:             #f5ede0;
+
+    /* ── 5. Auxiliary UI Palette & Focus Ring ─────────────────────────── */
+    --cosy-color-honey:                  #945e05;
+    --cosy-color-honey-dark:             #7d4d03;
+    --cosy-color-honey-pale:             #fff8e7;
+    --cosy-color-honey-mid:              #fef0c7;
+
+    --cosy-semantic-error:               #a32d2d;
+    --cosy-semantic-error-light:         #fcebeb;
+    --cosy-semantic-success:             #416b49;
+    --cosy-semantic-success-light:       #e5f4ec;
+    --cosy-semantic-warning:             #945e05;
+    --cosy-semantic-warning-light:       #fff8e7;
+    --cosy-semantic-focus:               #0284c7;
+
+    --focus-ring:                        0 0 0 3px rgba(2, 132, 199, 0.35);
+
+    /* ── 6. Typography Scale & Font Stacks ──────────────────────────────── */
+    --cosy-font-sans:                    'Nunito', 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --cosy-font-serif:                   'Fraunces', 'Lora', serif;
+    --cosy-font-mono:                    'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+
+    --font-sans:                         var(--cosy-font-sans);
+    --font-serif:                        var(--cosy-font-serif);
+    --font-mono:                         var(--cosy-font-mono);
+
+    --cosy-font-size-xs:                 0.75rem;   /* 12px */
+    --cosy-font-size-sm:                 0.875rem;  /* 14px */
+    --cosy-font-size-base:               1rem;      /* 16px */
+    --cosy-font-size-lg:                 1.125rem;  /* 18px */
+    --cosy-font-size-xl:                 1.25rem;   /* 20px */
+    --cosy-font-size-2xl:                1.5rem;    /* 24px */
+    --cosy-font-size-3xl:                2rem;      /* 32px */
+    --cosy-font-size-4xl:                2.5rem;    /* 40px */
+
+    --cosy-font-weight-normal:           400;
+    --cosy-font-weight-medium:           500;
+    --cosy-font-weight-semibold:         600;
+    --cosy-font-weight-bold:             700;
+    --cosy-font-weight-extrabold:        800;
+
+    --cosy-line-height-tight:            1.2;
+    --cosy-line-height-snug:             1.375;
+    --cosy-line-height-normal:           1.5;
+    --cosy-line-height-relaxed:          1.625;
+
+    /* ── 7. Spacing Scale ────────────────────────────────────────────────── */
+    --cosy-space-xs:                     4px;
+    --cosy-space-sm:                     8px;
+    --cosy-space-md:                     16px;
+    --cosy-space-lg:                     24px;
+    --cosy-space-xl:                     32px;
+    --cosy-space-xxl:                    48px;
+
+    --space-xs:                          var(--cosy-space-xs);
+    --space-sm:                          var(--cosy-space-sm);
+    --space-md:                          var(--cosy-space-md);
+    --space-lg:                          var(--cosy-space-lg);
+    --space-xl:                          var(--cosy-space-xl);
+    --space-xxl:                         var(--cosy-space-xxl);
+
+    /* ── 8. Border Radius Scale ─────────────────────────────────────────── */
+    --cosy-radius-xs:                    4px;
+    --cosy-radius-sm:                    8px;
+    --cosy-radius-smm:                   10px;
+    --cosy-radius-md:                    14px;
+    --cosy-radius-base:                  18px;
+    --cosy-radius-lg:                    22px;
+    --cosy-radius-xl:                    32px;
+    --cosy-radius-full:                  100px;
+
+    --r-sm:                              var(--cosy-radius-sm);
+    --r-md:                              var(--cosy-radius-md);
+    --r-lg:                              var(--cosy-radius-lg);
+    --r-xl:                              var(--cosy-radius-xl);
+    --radius:                            var(--cosy-radius-base);
+    --radius-sm:                         var(--cosy-radius-smm);
+    --border-radius:                     var(--cosy-radius-base);
+
+    /* ── 9. Elevation & Shadows ────────────────────────────────────────── */
+    --cosy-shadow-sm:                    0 2px 12px rgba(2, 132, 199, 0.07);
+    --cosy-shadow-base:                  0 6px 28px rgba(2, 132, 199, 0.10);
+    --cosy-shadow-md:                    0 4px 14px rgba(2, 132, 199, 0.15);
+    --cosy-shadow-lg:                    0 6px 20px rgba(2, 132, 199, 0.25);
+
+    --shadow-sm:                         var(--cosy-shadow-sm);
+    --shadow:                            var(--cosy-shadow-base);
+    --box-shadow:                        var(--cosy-shadow-base);
+
+    /* ── 10. Cosy Button System Standard Tokens ─────────────────────────── */
+    --btn-font-sans:                     var(--cosy-font-sans);
+    --btn-primary-bg:                    var(--cosy-platform-accent);
+    --btn-primary-color:                 #ffffff;
+    --btn-primary-hover-bg:              var(--cosy-platform-accent-deep);
+    --btn-primary-hover-color:           #ffffff;
+    --btn-primary-radius:               var(--cosy-radius-full);
+    --btn-primary-padding:              12px 28px;
+    --btn-primary-weight:               var(--cosy-font-weight-bold);
+    --btn-primary-shadow:               var(--cosy-shadow-sm);
+    --btn-primary-hover-shadow:         var(--cosy-shadow-md);
+
+    --transition-speed:                  0.3s;
+}
+
+/* ── 11. Shared Ecosystem Strip & Footer Component Styles ─────────────── */
+.cosy-ecosystem-strip-footer {
+    background: #0f172a;
+    color: #94a3b8;
+    font-family: var(--cosy-font-sans);
+    font-size: 0.8rem;
+    padding: 12px 1.5rem;
+    border-top: 1px solid #1e293b;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    margin-top: auto;
+}
+
+.cosy-ecosystem-strip-footer a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 0 4px;
+    transition: color 0.2s ease;
+}
+
+.cosy-ecosystem-strip-footer a:hover {
+    color: #38bdf8;
+    text-decoration: underline;
+}
+
+/* ── 12. Dark Mode Theme Overrides ───────────────────────────────────────── */
+html[data-theme="dark"], body.theme-dark {
+    --cosy-color-cream:                  #0f172a;
+    --cosy-color-cream-dark:             #0284c7;
+    --cosy-color-warm-white:             #1e293b;
+    --cosy-color-surface:                #1e293b;
+
+    --cosy-color-ink:                    #f8fafc;
+    --cosy-color-ink-soft:               #cbd5e1;
+    --cosy-color-ink-muted:              #94a3b8;
+    --cosy-color-border:                 rgba(56, 189, 248, 0.20);
+    --cosy-color-border-hover:           rgba(56, 189, 248, 0.35);
+
+    --cosy-platform-accent:              #38bdf8;
+    --cosy-platform-student:             #38bdf8;
+    --cosy-platform-teacher:             #7dd3fc;
+}
