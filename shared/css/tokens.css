@@ -59,6 +59,8 @@
     --sage-mist:                         var(--cosy-color-sage-mist);
     --sage-pale:                         var(--cosy-color-sage-pale);
     --sage-light:                        var(--cosy-color-sage-light);
+    --teal:                              var(--sage);
+    --teal-light:                        var(--sage-light);
     --primary-color:                     var(--sage);
 
     /* ── 3. COSYplatform Flagship Paid Product Accent Palette ─────────── */
@@ -68,13 +70,13 @@
     --cosy-platform-accent-light:        #e0f2fe;
     --cosy-platform-accent-deep:         #0369a1;
 
-    /* Student View Variant: Vibrant Active Sapphire Blue */
+    /* Student View Variant: Vibrant Active Sapphire Blue (#0284c7) */
     --cosy-platform-student:             #0284c7;
     --cosy-platform-student-light:       #e0f2fe;
     --cosy-platform-student-hover:       #0369a1;
     --cosy-platform-student-border:      #bae6fd;
 
-    /* Teacher View Variant: Deeper Authoritative Slate-Sapphire Blue */
+    /* Teacher View Variant: Deeper Authoritative Slate-Sapphire Blue (#0369a1) */
     --cosy-platform-teacher:             #0369a1;
     --cosy-platform-teacher-light:       #e0f2fe;
     --cosy-platform-teacher-hover:       #075985;
@@ -90,24 +92,56 @@
     --teacher-hover:                     var(--cosy-platform-teacher-hover);
 
     /* ── 4. Ecosystem Track Accent Layer ───────────────────────────────── */
+    /* Track 1: General Course — Forest Green / Sage */
     --cosy-track-general:                #416b49;
     --cosy-track-general-light:          #e8f0e9;
+    --cosy-track-general-deep:           #233827;
+
+    /* Track 2: Spoken Course — Terracotta / Coral */
     --cosy-track-spoken:                 #B84318;
     --cosy-track-spoken-light:           #faeee8;
+
+    /* Track 3: Professional Course — Credible Navy */
     --cosy-track-professional:           #1e2f6b;
     --cosy-track-professional-light:     #e8ecf5;
+
+    /* Track 4: Travelling Course — Practical Fresh Green */
     --cosy-track-travelling:             #4a6b50;
     --cosy-track-travelling-light:       #e5f4ec;
+
+    /* Track 5: Relocation Course — Warm Rust / Amber */
     --cosy-track-relocation:             #d66161;
     --cosy-track-relocation-light:       #fcebeb;
+
+    /* Track 6: Exam Preparation — Scholarly Plum */
     --cosy-track-exam:                   #7a5c3a;
     --cosy-track-exam-light:             #f5ede0;
 
-    /* ── 5. Auxiliary UI Palette & Focus Ring ─────────────────────────── */
+    /* ── 5. Auxiliary UI Palette & Semantic Feedback ─────────────────── */
     --cosy-color-honey:                  #945e05;
     --cosy-color-honey-dark:             #7d4d03;
     --cosy-color-honey-pale:             #fff8e7;
     --cosy-color-honey-mid:              #fef0c7;
+
+    --cosy-color-coral:                  #B84318;
+    --cosy-color-coral-light:            #faeee8;
+
+    --cosy-color-navy:                   #1e2f6b;
+    --cosy-color-navy-light:             #e8ecf5;
+
+    --cosy-color-green:                  #4a6b50;
+    --cosy-color-green-light:            #e5f4ec;
+
+    --cosy-color-blue:                   #3a5298;
+    --cosy-color-blue-light:             #eef1fb;
+
+    --cosy-color-plum:                   #7a5c3a;
+    --cosy-color-plum-light:             #f5ede0;
+
+    --cosy-color-rose:                   #a32d2d;
+    --cosy-color-rose-light:             #fcebeb;
+
+    --cosy-color-accent:                 #d66161;
 
     --cosy-semantic-error:               #a32d2d;
     --cosy-semantic-error-light:         #fcebeb;
@@ -147,6 +181,7 @@
     --cosy-line-height-snug:             1.375;
     --cosy-line-height-normal:           1.5;
     --cosy-line-height-relaxed:          1.625;
+    --cosy-line-height-loose:            1.7;
 
     /* ── 7. Spacing Scale ────────────────────────────────────────────────── */
     --cosy-space-xs:                     4px;
@@ -203,10 +238,80 @@
     --btn-primary-shadow:               var(--cosy-shadow-sm);
     --btn-primary-hover-shadow:         var(--cosy-shadow-md);
 
+    --btn-secondary-bg:                  transparent;
+    --btn-secondary-border:              1.5px solid var(--cosy-platform-teacher);
+    --btn-secondary-color:               var(--cosy-platform-teacher);
+    --btn-secondary-hover-bg:            var(--cosy-platform-accent-light);
+    --btn-secondary-hover-color:         var(--cosy-platform-teacher-hover);
+    --btn-secondary-radius:             var(--cosy-radius-full);
+    --btn-secondary-padding:            11px 24px;
+    --btn-secondary-weight:             var(--cosy-font-weight-semibold);
+
     --transition-speed:                  0.3s;
 }
 
 /* ── 11. Shared Ecosystem Strip & Footer Component Styles ─────────────── */
+.cosy-ecosystem-strip {
+    background: #0f172a;
+    color: #94a3b8;
+    font-family: var(--cosy-font-sans, 'Nunito', 'DM Sans', sans-serif);
+    font-size: 0.78rem;
+    padding: 6px 1.5rem;
+    border-bottom: 1px solid #1e293b;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.cosy-strip-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+}
+
+.cosy-strip-brand {
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    opacity: 0.95;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.cosy-strip-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.cosy-strip-link {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: var(--cosy-radius-xs, 4px);
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.cosy-strip-link:hover,
+.cosy-strip-link.active {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.18);
+}
+
 .cosy-ecosystem-strip-footer {
     background: #0f172a;
     color: #94a3b8;
@@ -249,4 +354,10 @@ html[data-theme="dark"], body.theme-dark {
     --cosy-platform-accent:              #38bdf8;
     --cosy-platform-student:             #38bdf8;
     --cosy-platform-teacher:             #7dd3fc;
+}
+
+html[data-theme="dark"] .cosy-ecosystem-strip-footer,
+body.theme-dark .cosy-ecosystem-strip-footer {
+    background: #020617;
+    border-top-color: rgba(255, 255, 255, 0.08);
 }
