@@ -3,102 +3,285 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>COSYlanguages Platform</title>
+  <title>COSYlanguages Course Catalog & Public Curriculum Browser</title>
   <link rel="stylesheet" href="shared/css/tokens.css">
   <link rel="stylesheet" href="shared/styles/style.css">
   <style>
     :root {
-      --bg-color: var(--cosy-color-cream, #fdfcf8);
-      --card-bg: var(--cosy-color-warm-white, #FFFEFB);
-      --text-main: #0f172a;
-      --text-muted: #64748b;
+      --hub-primary: var(--cosy-platform-accent, #0284c7);
+      --teacher-primary: var(--cosy-platform-teacher, #0369a1);
+      --teacher-note-bg: var(--cosy-color-honey-pale, #fffbe3);
+      --teacher-note-border: var(--cosy-color-honey, #f59e0b);
+      --speech-bg: var(--cosy-semantic-success-light, #ecfdf5);
+      --speech-border: var(--cosy-semantic-success, #10b981);
+      --student-primary: var(--cosy-platform-student, #0284c7);
+      --student-light: var(--cosy-platform-student-light, #e0f2fe);
       --border-color: var(--cosy-color-border, rgba(74, 107, 80, 0.12));
-      --accent-color: var(--cosy-platform-accent, #0284c7);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
     }
 
     body {
+      background-color: var(--cosy-color-cream, #fdfcf8);
+      color: var(--cosy-color-ink, #2a2a2a);
+      margin: 0;
       font-family: var(--cosy-font-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
-      background-color: var(--bg-color);
-      color: var(--text-main);
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
       min-height: 100vh;
     }
 
-    .main-wrap {
+    /* Header */
+    .hub-header {
+      background: #0f172a;
+      color: white;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .hub-header-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
+    }
+
+    .badge-public {
+      background: #38bdf8;
+      color: #0f172a;
+      padding: 4px 12px;
+      border-radius: var(--cosy-radius-full, 100px);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .hub-container {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 0 20px;
       flex: 1;
       width: 100%;
-      padding: 24px;
+      box-sizing: border-box;
     }
 
-    .card {
-      background: var(--card-bg);
+    /* Filters */
+    .filter-bar {
+      background: white;
       border: 1px solid var(--border-color);
       border-radius: var(--cosy-radius-md, 14px);
-      padding: 40px;
-      max-width: 480px;
-      width: 100%;
-      box-shadow: var(--cosy-shadow-sm);
-      text-align: center;
-    }
-
-    .logo {
-      font-size: 24px;
-      font-weight: 800;
-      color: var(--accent-color);
-      margin-bottom: 16px;
-      letter-spacing: -0.5px;
-    }
-
-    h1 {
-      font-size: 20px;
-      font-weight: 700;
-      margin-bottom: 12px;
-      color: var(--text-main);
-    }
-
-    p {
-      font-size: 15px;
-      line-height: 1.6;
-      color: var(--text-muted);
+      padding: 16px 20px;
       margin-bottom: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+      box-shadow: var(--cosy-shadow-sm);
     }
 
-    .footer-note {
-      font-size: 13px;
-      color: #94a3b8;
-      border-top: 1px solid var(--border-color);
-      padding-top: 16px;
+    .filter-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #475569;
+    }
+
+    .filter-group select, .filter-group input {
+      padding: 6px 12px;
+      border-radius: var(--cosy-radius-sm, 8px);
+      border: 1px solid #cbd5e1;
+      font-size: 0.85rem;
+      background: #f8fafc;
+    }
+
+    .catalog-category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 20px;
+      align-items: start;
+    }
+
+    .category-card {
+      background: #f0f9ff;
+      border: 1px solid #bae6fd;
+      border-radius: var(--cosy-radius-md, 14px);
+      padding: 16px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+
+    .category-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #e0f2fe;
+      user-select: none;
+    }
+
+    .category-header h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #0369a1;
+      margin: 0;
+    }
+
+    .category-body {
+      margin-top: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .course-item-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--cosy-radius-sm, 8px);
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .course-item-card:hover {
+      border-color: #38bdf8;
+      box-shadow: 0 2px 8px rgba(2, 132, 199, 0.08);
+    }
+
+    .course-item-title {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #0f172a;
+    }
+
+    .course-item-level {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: #e0f2fe;
+      color: #0284c7;
+    }
+
+    /* Lesson Viewer & Slide Styling */
+    .controls-bar {
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: var(--cosy-radius-md, 14px);
+      padding: 16px 24px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      box-shadow: var(--cosy-shadow-sm);
+    }
+
+    .slide-nav-bar {
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: var(--cosy-radius-md, 14px);
+      padding: 12px 20px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      box-shadow: var(--cosy-shadow-sm);
+    }
+
+    .slide-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .slide-pill {
+      padding: 6px 14px;
+      border-radius: var(--cosy-radius-full, 100px);
+      border: 1px solid #cbd5e1;
+      background: #f8fafc;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #475569;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .slide-pill.active {
+      background: var(--hub-primary);
+      color: white;
+      border-color: var(--hub-primary);
+    }
+
+    .slide-nav-btn {
+      padding: 8px 16px;
+      border-radius: var(--cosy-radius-sm, 8px);
+      border: 1px solid #cbd5e1;
+      background: white;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #0f172a;
+      cursor: pointer;
+    }
+
+    .slide-card {
+      background: white;
+      border-radius: var(--cosy-radius-md, 14px);
+      border: 1px solid var(--border-color);
+      padding: 32px;
+      margin-bottom: 24px;
+      box-shadow: var(--cosy-shadow-sm);
+    }
+
+    .teacher-note-box {
+      border-radius: var(--cosy-radius-sm, 8px);
+      padding: 16px;
+      margin: 16px 0;
+      font-size: 0.95rem;
+    }
+
+    .teacher-note-instruction { background: var(--teacher-note-bg); border-left: 4px solid var(--teacher-note-border); color: #78350f; }
+    .teacher-note-speech { background: var(--speech-bg); border-left: 4px solid var(--speech-border); color: #065f46; }
+
+    /* Not Yet Published Placeholder */
+    .not-published-card {
+      background: #fffbe3;
+      border: 1px solid #f59e0b;
+      border-radius: var(--cosy-radius-md, 14px);
+      padding: 40px;
+      text-align: center;
+      max-width: 600px;
+      margin: 40px auto;
+      box-shadow: var(--cosy-shadow-sm);
+    }
+
+    .not-published-card h2 {
+      color: #92400e;
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+    }
+
+    .not-published-card p {
+      color: #78350f;
+      line-height: 1.6;
+      margin-bottom: 20px;
     }
   </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="shared/js/access-grants.js"></script>
 </head>
 <body>
-  <div style="position: fixed; top: 0; left: 0; right: 0; background: #fffbe3; border-bottom: 1px solid #f59e0b; color: #78350f; text-align: center; padding: 10px 16px; font-size: 0.85rem; font-weight: 600; z-index: 1000;">
-    ℹ️ Notice: COSYlanguages entry points have consolidated into <a href="hub.html" style="color: #0284c7; text-decoration: underline;">hub.html</a>. Please update your bookmarks.
-  </div>
 
-  <div class="main-wrap">
-    <div class="card" style="margin-top: 40px;">
-      <div class="logo">COSYlanguages</div>
-      <h1>Private Learning Platform 🔒</h1>
-      <p>This is a private area. Access to lessons and teacher materials is available exclusively via direct personal link.</p>
-      <div class="footer-note">
-        Contact your teacher or COSYlanguages for a link to access your workspace.
-      </div>
-    </div>
-  </div>
+  <div id="app-root"></div>
 
   <footer class="cosy-ecosystem-strip-footer">
     🌐 Part of the COSY ecosystem •
@@ -107,5 +290,394 @@
     <a href="https://cosylanguages.github.io/COSYgames/" target="_blank" rel="noopener">COSYgames 🎮</a> •
     <a href="https://cosylanguages.github.io/COSYevents/" target="_blank" rel="noopener">COSYevents 🎉</a>
   </footer>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const lessonParam = urlParams.get('lesson');
+    const courseParam = urlParams.get('course');
+    const levelParam = urlParams.get('level');
+    const keyParam = urlParams.get('key');
+
+    // Configurable Supabase credentials (populated via env or window config)
+    const SUPABASE_URL = window.SUPABASE_URL || "https://your-supabase-project.supabase.co";
+    const SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY || "your-anon-key";
+
+    let supabaseClient = null;
+    if (window.supabase && SUPABASE_URL.startsWith("http")) {
+      try {
+        supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+      } catch (e) {}
+    }
+
+    async function checkAuthentication() {
+      // 1. Check legacy grant key parameter
+      if (keyParam) {
+        try {
+          const res = await fetch('data/access-grants.json');
+          if (res.ok) {
+            const grantsData = await res.json();
+            const grant = await window.CosyAccessGrants.matchGrant(grantsData.grants, keyParam);
+            if (grant) return { authenticated: true, user: grant, role: grant.role || 'student' };
+          }
+        } catch (e) {}
+      }
+
+      // 2. Check Supabase Auth Session
+      if (supabaseClient) {
+        const { data: { session } } = await supabaseClient.auth.getSession();
+        if (session && session.user) {
+          let role = 'student';
+          try {
+            const { data: profile } = await supabaseClient
+              .from('profiles')
+              .select('role')
+              .eq('id', session.user.id)
+              .maybeSingle();
+            if (profile && profile.role) role = profile.role;
+          } catch (e) {}
+          return { authenticated: true, user: session.user, role };
+        }
+      }
+
+      // 3. Check localStorage stored auth token
+      const localToken = localStorage.getItem('cosy_auth_token');
+      if (localToken) {
+        return { authenticated: true, user: { token: localToken }, role: 'authenticated' };
+      }
+
+      return { authenticated: false };
+    }
+
+    async function initCatalog() {
+      if (lessonParam) {
+        const authState = await checkAuthentication();
+        if (!authState.authenticated) {
+          // Unauthenticated visitors clicking into a lesson get redirected
+          const loginUrl = `https://cosylanguages.github.io/COSYlanguages/login.html?redirect=${encodeURIComponent(lessonParam)}`;
+          window.location.href = loginUrl;
+          return;
+        }
+        renderLessonFromSupabase(lessonParam, authState);
+      } else if (courseParam && levelParam) {
+        renderPublicRoadmap(courseParam, levelParam);
+      } else {
+        renderPublicCatalog();
+      }
+    }
+
+    function renderPublicCatalog() {
+      const fullManifest = window.CosyAccessGrants ? window.CosyAccessGrants.FULL_MANIFEST : [];
+
+      let html = `
+        <header class="hub-header">
+          <div class="hub-header-content">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <span style="font-size: 1.4rem; font-weight: 800;">COSYlanguages</span>
+              <span class="badge-public">Free Public Catalog 🌐</span>
+            </div>
+            <div>
+              <a href="https://cosylanguages.github.io/COSYlanguages/login.html" class="btn" style="background: var(--hub-primary); color: white; padding: 6px 14px; text-decoration: none; font-size: 0.85rem; border-radius: 6px;">Sign In 🔒</a>
+            </div>
+          </div>
+        </header>
+
+        <main class="hub-container">
+          <div style="margin-bottom: 24px;">
+            <h1 style="font-size: 1.6rem; color: #0f172a; margin-bottom: 6px;">Course & Curriculum Catalog 📚</h1>
+            <p style="color: #64748b;">Browse public course curriculums, unit structures, and lesson sequences across all languages.</p>
+          </div>
+
+          <div class="filter-bar">
+            <div class="filter-group" style="flex: 1; min-width: 200px;">
+              <label>🔎 Search:</label>
+              <input type="text" id="searchFilter" placeholder="Filter courses..." oninput="applySearch()" style="width: 100%;" />
+            </div>
+            <div class="filter-group">
+              <label>Language:</label>
+              <select id="langFilter" onchange="filterCatalog()">
+                <option value="all">All Languages</option>
+                <option value="en">🇬🇧 English</option>
+                <option value="fr">🇫🇷 French</option>
+                <option value="ru">🇷🇺 Russian</option>
+                <option value="es">🇪🇸 Spanish</option>
+                <option value="el">🇬🇷 Greek</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="catalog-category-grid" id="catalog-grid">
+      `;
+
+      const groupedByTrack = {};
+      fullManifest.forEach(c => {
+        const track = c.track || 'General';
+        if (!groupedByTrack[track]) groupedByTrack[track] = [];
+        groupedByTrack[track].push(c);
+      });
+
+      Object.keys(groupedByTrack).forEach(trackName => {
+        const courses = groupedByTrack[trackName];
+        html += `
+          <div class="category-card" data-track="${trackName}">
+            <div class="category-header">
+              <h3>${trackName} Track (${courses.length})</h3>
+            </div>
+            <div class="category-body">
+        `;
+
+        courses.forEach(c => {
+          html += `
+            <div class="course-item-card" data-lang="${c.lang}" data-title="${c.title.toLowerCase()}">
+              <div>
+                <span class="course-item-level">${c.level.toUpperCase()}</span>
+                <span class="course-item-title" style="margin-left: 8px;">${c.title}</span>
+              </div>
+              <a href="index.html?course=${c.id}&level=${c.level.toLowerCase()}" class="btn" style="background: var(--hub-primary); color: white; padding: 6px 12px; font-size: 0.8rem; text-decoration: none; border-radius: 6px;">
+                View Roadmap 📖
+              </a>
+            </div>
+          `;
+        });
+
+        html += `</div></div>`;
+      });
+
+      html += `</div></main>`;
+      document.getElementById('app-root').innerHTML = html;
+    }
+
+    async function renderPublicRoadmap(courseId, level) {
+      try {
+        const candidates = [
+          `roadmaps/${courseId}.json`,
+          `roadmaps/${courseId.replace('-en-', '-english-')}.json`,
+          `roadmaps/${courseId.replace('curriculum-', '')}.json`,
+          `roadmaps/${courseId.replace('curriculum-', '').replace('-en-', '-english-')}.json`
+        ];
+
+        let roadmapRes = null;
+        for (const cand of candidates) {
+          try {
+            const res = await fetch(cand);
+            if (res.ok) {
+              roadmapRes = res;
+              break;
+            }
+          } catch (e) {}
+        }
+
+        if (!roadmapRes || !roadmapRes.ok) throw new Error(`Roadmap for ${courseId} not found`);
+        const roadmap = await roadmapRes.json();
+
+        let html = `
+          <header class="hub-header">
+            <div class="hub-header-content">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <span style="font-size: 1.4rem; font-weight: 800;">COSYlanguages</span>
+                <span class="badge-public">${roadmap.title}</span>
+              </div>
+              <a href="index.html" style="color: #94a3b8; text-decoration: none; font-size: 0.9rem;">← Catalog</a>
+            </div>
+          </header>
+
+          <main class="hub-container">
+            <div class="controls-bar">
+              <a href="index.html" style="color: #64748b; font-weight: 500; text-decoration: none;">← Back to Full Catalog</a>
+              <span style="font-weight: 600; color: #0f172a;">${roadmap.title}</span>
+            </div>
+
+            <div class="section-card" style="background: white; border: 1px solid var(--border-color); border-radius: 14px; padding: 24px;">
+              <h2 style="font-size: 1.4rem; color: #0f172a; margin-bottom: 12px;">${roadmap.title} Sequence</h2>
+              <p style="color: #64748b; margin-bottom: 20px;">Public roadmap of lessons. Authenticated users can open interactive lesson slides live from Supabase.</p>
+
+              <div class="unit-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px;">
+        `;
+
+        roadmap.sequence.forEach(item => {
+          html += `
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <span style="font-size: 0.75rem; color: #94a3b8; font-weight: 600;">LESSON #${item.lessonNumber}</span>
+                <h3 style="margin: 6px 0; font-size: 1rem; color: #0f172a;">${item.title}</h3>
+                ${item.unit ? `<p style="font-size: 0.8rem; color: #64748b;">${item.unit}</p>` : ''}
+              </div>
+              <a href="index.html?lesson=${encodeURIComponent(item.id)}" class="btn" style="margin-top: 12px; background: var(--hub-primary); color: white; padding: 6px 12px; font-size: 0.8rem; text-align: center; text-decoration: none; border-radius: 6px;">
+                ▶ Open Lesson
+              </a>
+            </div>
+          `;
+        });
+
+        html += `</div></div></main>`;
+        document.getElementById('app-root').innerHTML = html;
+
+      } catch (err) {
+        document.getElementById('app-root').innerHTML = `
+          <div class="hub-container">
+            <h2>Course Roadmap</h2>
+            <p style="color: #ef4444;">${err.message}</p>
+            <a href="index.html" class="btn">← Back to Catalog</a>
+          </div>
+        `;
+      }
+    }
+
+    async function fetchLessonContentFromSupabase(lessonId) {
+      if (supabaseClient) {
+        const { data, error } = await supabaseClient
+          .from('lesson_content')
+          .select('*')
+          .eq('lesson_id', lessonId)
+          .maybeSingle();
+
+        if (!error && data) return data.xml_content;
+      }
+
+      // Fallback REST fetch if client not initialized
+      try {
+        const endpoint = `${SUPABASE_URL}/rest/v1/lesson_content?lesson_id=eq.${encodeURIComponent(lessonId)}`;
+        const res = await fetch(endpoint, {
+          headers: {
+            'apikey': SUPABASE_ANON_KEY,
+            'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
+          }
+        });
+        if (res.ok) {
+          const json = await res.json();
+          if (json && json.length > 0) return json[0].xml_content;
+        }
+      } catch (e) {}
+
+      return null;
+    }
+
+    async function renderLessonFromSupabase(lessonId, authState) {
+      const xmlContent = await fetchLessonContentFromSupabase(lessonId);
+
+      if (!xmlContent) {
+        // Requirement 6: Render "Not Yet Published" state
+        document.getElementById('app-root').innerHTML = `
+          <header class="hub-header">
+            <div class="hub-header-content">
+              <span style="font-size: 1.4rem; font-weight: 800;">COSYlanguages</span>
+              <a href="index.html" style="color: #94a3b8; text-decoration: none;">← Catalog</a>
+            </div>
+          </header>
+          <main class="hub-container">
+            <div class="not-published-card">
+              <h2>🚧 Not Yet Published</h2>
+              <p>The lesson <strong>"${lessonId}"</strong> is currently in pre-publish draft status and has not been published to Supabase yet.</p>
+              <p style="font-size: 0.85rem; color: #a16207;">Final lesson content must be published via the founder local script (<code>publish_to_supabase.js</code>).</p>
+              <a href="index.html" class="btn" style="background: #f59e0b; color: white; padding: 8px 16px; text-decoration: none; border-radius: 6px; font-weight: 600; display: inline-block;">← Return to Catalog</a>
+            </div>
+          </main>
+        `;
+        return;
+      }
+
+      // Render live lesson body using XML dual-view logic
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(xmlContent, "text/xml");
+      const cosyLesson = xmlDoc.querySelector("cosy-lesson");
+      const lessonTitle = cosyLesson ? (cosyLesson.getAttribute("title") || lessonId) : lessonId;
+
+      const isTeacher = authState.role === 'teacher' || authState.role === 'founder';
+      const slideElements = xmlDoc.querySelectorAll("cosy-slide");
+
+      let html = `
+        <header class="hub-header">
+          <div class="hub-header-content">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <span style="font-size: 1.4rem; font-weight: 800;">COSYlanguages</span>
+              <span class="badge-public">${lessonTitle}</span>
+            </div>
+            <a href="index.html" style="color: #94a3b8; text-decoration: none;">← Catalog</a>
+          </div>
+        </header>
+
+        <main class="hub-container">
+          <div class="controls-bar">
+            <a href="index.html" style="color: #64748b; font-weight: 500; text-decoration: none;">← Back to Catalog</a>
+            <span style="font-size: 0.85rem; color: #10b981; font-weight: 600;">🔒 Live Supabase Content Stream</span>
+          </div>
+      `;
+
+      slideElements.forEach((s, idx) => {
+        const slideTitle = s.getAttribute("title") || `Slide ${idx + 1}`;
+        const stage = s.getAttribute("stage") || "";
+
+        html += `
+          <div class="slide-card">
+            <div style="font-weight: 700; font-size: 1.2rem; color: #0f172a; margin-bottom: 16px; display: flex; justify-content: space-between;">
+              <span>Slide ${idx + 1}: ${slideTitle}</span>
+              ${stage ? `<span style="font-size: 0.75rem; background: #f1f5f9; color: #475569; padding: 4px 10px; border-radius: 6px; text-transform: uppercase;">${stage}</span>` : ''}
+            </div>
+            <div>${isTeacher ? renderXmlNodeToTeacher(s) : renderXmlNodeToStudent(s)}</div>
+          </div>
+        `;
+      });
+
+      html += `</main>`;
+      document.getElementById('app-root').innerHTML = html;
+    }
+
+    function renderXmlNodeToTeacher(node) {
+      let output = "";
+      for (let child of node.childNodes) {
+        if (child.nodeType === Node.TEXT_NODE) {
+          output += child.nodeValue;
+          continue;
+        }
+        const tagName = child.tagName ? child.tagName.toLowerCase() : "";
+        if (tagName === "cosy-teacher-notes") {
+          const type = child.getAttribute("type") || "instruction";
+          const title = type === "speech" ? "💬 Suggested Speech Script" : "💡 Stage Aim";
+          const cls = type === "speech" ? "teacher-note-speech" : "teacher-note-instruction";
+          output += `<div class="teacher-note-box ${cls}"><strong>${title}</strong><div>${renderXmlNodeToTeacher(child)}</div></div>`;
+        } else if (["p", "ul", "ol", "li", "h1", "h2", "h3"].includes(tagName)) {
+          output += `<${tagName}>${renderXmlNodeToTeacher(child)}</${tagName}>`;
+        } else {
+          output += renderXmlNodeToTeacher(child);
+        }
+      }
+      return output;
+    }
+
+    function renderXmlNodeToStudent(node) {
+      let output = "";
+      for (let child of node.childNodes) {
+        if (child.nodeType === Node.TEXT_NODE) {
+          output += child.nodeValue;
+          continue;
+        }
+        const tagName = child.tagName ? child.tagName.toLowerCase() : "";
+        if (tagName === "cosy-teacher-notes") continue;
+        if (["p", "ul", "ol", "li", "h1", "h2", "h3"].includes(tagName)) {
+          output += `<${tagName}>${renderXmlNodeToStudent(child)}</${tagName}>`;
+        } else {
+          output += renderXmlNodeToStudent(child);
+        }
+      }
+      return output;
+    }
+
+    function applySearch() {
+      const query = (document.getElementById('searchFilter')?.value || '').toLowerCase().trim();
+      document.querySelectorAll('.course-item-card').forEach(card => {
+        const title = card.getAttribute('data-title') || '';
+        card.style.display = title.includes(query) ? 'flex' : 'none';
+      });
+    }
+
+    function filterCatalog() {
+      const lang = document.getElementById('langFilter').value;
+      document.querySelectorAll('.course-item-card').forEach(card => {
+        const cardLang = card.getAttribute('data-lang');
+        card.style.display = (lang === 'all' || cardLang === lang) ? 'flex' : 'none';
+      });
+    }
+
+    window.onload = initCatalog;
+  </script>
 </body>
 </html>
