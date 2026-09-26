@@ -17,7 +17,8 @@
     .course-card { background: white; border: 1px solid #e2e8f0; border-radius: var(--cosy-radius-md, 14px); padding: 24px; display: flex; flex-direction: column; justify-content: space-between; }
     .access-denied { max-width: 500px; margin: 80px auto; background: white; padding: 40px; border-radius: var(--cosy-radius-md, 14px); border: 1px solid #cbd5e1; text-align: center; }
   </style>
-  <script src="shared/js/access-grants.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="shared/js/auth-guard.js"></script>
 </head>
 <body>
   <div style="background: #fffbe3; border-bottom: 1px solid #f59e0b; color: #78350f; text-align: center; padding: 10px 16px; font-size: 0.85rem; font-weight: 600;">
@@ -49,69 +50,44 @@
     const urlParams = new URLSearchParams(window.location.search);
     const key = urlParams.get('key');
 
-    async function initRussianHub() {
-      const appRoot = document.getElementById('app-root');
+        async function initRussianHub() {
+      const authData = await window.CosyAuth.requireRole(['teacher', 'founder']);
+      if (!authData) return;
 
-      if (!key) {
-        renderAccessDenied("Missing Key", "Access key required for Russian Teacher Hub.");
-        return;
-      }
+      const userEmail = authData.user ? authData.user.email : '';
+      document.getElementById('user-info').innerText = `Преподаватель: ${userEmail || 'Преподаватель РКИ'}`;
 
-      const noticeLink = document.getElementById('notice-hub-link');
-      if (noticeLink && key) {
-        noticeLink.href = `hub.html?key=${encodeURIComponent(key)}`;
-      }
+      const fullManifest = window.CosyAuth ? window.CosyAuth.FULL_MANIFEST : [];
+      const russianCourses = fullManifest.filter(c => c.lang === 'ru' && window.CosyAuth.isCourseAccessible(c, authData.profile));
 
-      try {
-        const grantsRes = await fetch('data/access-grants.json');
-        if (!grantsRes.ok) throw new Error("Unable to load access grants");
-        const grantsData = await grantsRes.json();
+      let html = `
+        <div class="catalog-container">
+          <div style="margin-bottom: 24px;">
+            <h1 style="font-size: 1.6rem; color: #0f172a;">🇷🇺 Кабинет Преподавателя РКИ 📚</h1>
+            <p style="color: #64748b;">Полный каталог курсов русского языка: Общий, Разговорный, Бизнес, Для путешествий и Фонетика.</p>
+          </div>
+          <div class="catalog-grid">
+      `;
 
-        const grant = await window.CosyAccessGrants.matchGrant(grantsData.grants, key);
-        if (!grant) {
-          renderAccessDenied("Invalid Key", "Access key required for Russian Teacher Hub.");
-          return;
-        }
-
-        const fullManifest = window.CosyAccessGrants ? window.CosyAccessGrants.FULL_MANIFEST : [];
-        const allowedCourses = window.CosyAccessGrants ? window.CosyAccessGrants.resolveGrantCourses(grant, fullManifest) : [];
-
-        document.getElementById('user-info').innerText = `Преподаватель: ${grant.name || 'Преподаватель РКИ'}`;
-
-        const russianCourses = fullManifest.filter(c => c.lang === 'ru' && (allowedCourses.includes('*') || allowedCourses.includes(c.id)));
-
-        let html = `
-          <div class="catalog-container">
-            <div style="margin-bottom: 24px;">
-              <h1 style="font-size: 1.6rem; color: #0f172a;">🇷🇺 Каталог преподавателя — Русская секция (РКИ) 📚</h1>
-              <p style="color: #64748b;">Полный доступ к курсам фонетики, орфоэпии, картам уроков Габарит 14 полей и ключам.</p>
-            </div>
-            <div class="catalog-grid">
-        `;
-
-        if (russianCourses.length === 0) {
-          html += `<p style="grid-column: 1/-1; color: #64748b;">Курсы для данного ключа не найдены.</p>`;
-        } else {
-          russianCourses.forEach(course => {
-            html += `
-              <div class="course-card">
-                <div>
-                  <span class="badge-teacher" style="margin-bottom: 8px; display: inline-block;">${course.level.toUpperCase()}</span>
-                  <h3 style="font-size: 1.15rem; color: #0f172a; margin-bottom: 6px;">${course.title}</h3>
-                  <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 16px;">Направление: ${course.track}</p>
-                </div>
-                <a href="teacher.html?key=${key}&course=${course.id}&level=${course.level.toLowerCase()}" class="btn" style="background: var(--teacher-primary); text-align: center;">Открыть карту курса 📚</a>
+      if (russianCourses.length === 0) {
+        html += `<p style="grid-column: 1/-1; color: #64748b;">Нет доступных курсов русского языка для вашей учетной записи.</p>`;
+      } else {
+        russianCourses.forEach(course => {
+          html += `
+            <div class="course-card">
+              <div>
+                <span class="badge-teacher" style="margin-bottom: 8px; display: inline-block;">${course.level.toUpperCase()}</span>
+                <h3 style="font-size: 1.15rem; color: #0f172a; margin-bottom: 6px;">${course.title}</h3>
+                <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 16px;">Направление: ${course.track}</p>
               </div>
-            `;
-          });
-        }
-
-        html += `</div></div>`;
-        appRoot.innerHTML = html;
-
-      } catch (err) {
-        renderAccessDenied("Ошибка", err.message);
+              <a href="teacher.html?course=${course.id}&level=${course.level.toLowerCase()}" class="btn" style="background: var(--teacher-primary); text-align: center;">Открыть программу 📚</a>
+            </div>
+          `;
+        });
       }
+
+      html += `</div></div>`;
+      document.getElementById('app-root').innerHTML = html;
     }
 
     function renderAccessDenied(title, message) {
