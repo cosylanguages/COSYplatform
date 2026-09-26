@@ -159,14 +159,24 @@ async function publishToSupabase() {
     }
   }
 
-  console.log(`📤 Upserting ${recordsToUpsert.length} records into Supabase 'lesson_content' table...`);
+// Deduplicate by lesson_id — a single upsert batch can't touch the same
+// primary key twice (Postgres: "ON CONFLICT DO UPDATE command cannot
+// affect row a second time"). Last occurrence wins.
+const dedupedMap = new Map();
+for (const record of recordsToUpsert) {
+  dedupedMap.set(record.lesson_id, record);
+}
+const dedupedRecords = Array.from(dedupedMap.values());
+console.log(`🧹 Deduplicated ${recordsToUpsert.length} records down to ${dedupedRecords.length} unique lesson_id rows.`);
+
+console.log(`📤 Upserting ${dedupedRecords.length} records into Supabase 'lesson_content' table...`);
 
   const endpoint = `${SUPABASE_URL.replace(/\/$/, '')}/rest/v1/lesson_content`;
 
   // Batch upsert in chunks of 50
   const CHUNK_SIZE = 50;
-  for (let i = 0; i < recordsToUpsert.length; i += CHUNK_SIZE) {
-    const chunk = recordsToUpsert.slice(i, i + CHUNK_SIZE);
+for (let i = 0; i < dedupedRecords.length; i += CHUNK_SIZE) {
+  const chunk = dedupedRecords.slice(i, i + CHUNK_SIZE);
 
     const response = await fetch(endpoint, {
       method: 'POST',
