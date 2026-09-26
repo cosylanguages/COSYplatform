@@ -123,6 +123,77 @@
       font-weight: 600;
       cursor: pointer;
     }
+
+    /* Admin Table Styling */
+    .admin-table-wrapper {
+      overflow-x: auto;
+      margin-top: 1rem;
+    }
+
+    .admin-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      text-align: left;
+    }
+
+    .admin-table th {
+      background: #f1f5f9;
+      color: #334155;
+      font-weight: 700;
+      padding: 10px 12px;
+      border-bottom: 2px solid #cbd5e1;
+    }
+
+    .admin-table td {
+      padding: 12px;
+      border-bottom: 1px solid #e2e8f0;
+      vertical-align: middle;
+    }
+
+    .admin-table select, .admin-table input[type="text"] {
+      padding: 6px 10px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .btn-save-row {
+      background-color: #0284c7;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn-save-row:hover {
+      background-color: #0369a1;
+    }
+
+    .instructions-card {
+      background: #f0f9ff;
+      border: 1px solid #bae6fd;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+      color: #0369a1;
+    }
+
+    .instructions-card ol {
+      margin: 8px 0 0 20px;
+      padding: 0;
+    }
+
+    .instructions-card li {
+      margin-bottom: 4px;
+    }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="shared/js/auth-guard.js"></script>
@@ -159,6 +230,24 @@
   </footer>
 
   <script>
+    /*
+     * NOTE ON ROW LEVEL SECURITY (RLS) UPDATE POLICY:
+     * This Founder Admin Panel performs UPDATE operations directly against the 'profiles' table via:
+     *   supabaseClient.from('profiles').update({...}).eq('id', rowId)
+     *
+     * In addition to the existing founder SELECT policy in supabase/schema.sql, executing updates
+     * requires a founder-only UPDATE RLS policy on the profiles table:
+     *
+     * CREATE POLICY "Founders can update all profiles"
+     *   ON profiles FOR UPDATE
+     *   USING (
+     *     EXISTS (
+     *       SELECT 1 FROM profiles
+     *       WHERE id = auth.uid() AND role = 'founder'
+     *     )
+     *   );
+     */
+
     async function initFounderApp() {
       const authData = await window.CosyAuth.requireRole(['founder']);
       if (!authData) return;
@@ -167,6 +256,7 @@
       document.getElementById('user-info').innerText = `Founder: ${userEmail || 'Executive'}`;
 
       renderFounderDashboard();
+      await loadUserProfiles();
     }
 
     function renderFounderDashboard() {
@@ -188,6 +278,23 @@
             <h3>Interactive Lesson JSONs</h3>
             <div class="stat-number">104</div>
             <p style="font-size: 0.85rem; color: #10b981; margin-top: 4px;">Gabarit 14 Champs Standard</p>
+          </div>
+        </div>
+
+        <!-- Founder User Management Admin Panel -->
+        <div class="portal-section" id="user-management-section">
+          <h2>🛡️ User Access &amp; Profiles Admin</h2>
+
+          <div class="instructions-card">
+            <strong>➕ How to Create a New User:</strong>
+            <ol>
+              <li>Create the user account via <strong>Supabase Dashboard → Authentication → Users → Add User</strong> (set email &amp; initial password).</li>
+              <li>Once created, return here to assign their role (founder/teacher/student), language permissions, and course level access.</li>
+            </ol>
+          </div>
+
+          <div id="profiles-table-container">
+            <p style="color: #64748b; font-style: italic;">Loading user profiles from Supabase...</p>
           </div>
         </div>
 
@@ -279,6 +386,138 @@
           </div>
         </div>
       `;
+    }
+
+    async function loadUserProfiles() {
+      const container = document.getElementById('profiles-table-container');
+      if (!container) return;
+
+      const client = window.CosyAuth.client;
+      if (!client) {
+        container.innerHTML = `<p style="color: #ef4444;">Supabase client not initialized. Unable to load profiles.</p>`;
+        return;
+      }
+
+      try {
+        const { data: profiles, error } = await client
+          .from('profiles')
+          .select('id, role, language_access, course_level, created_at')
+          .order('created_at', { ascending: false });
+
+        if (error) {
+          container.innerHTML = `<p style="color: #ef4444;">Error fetching user profiles: ${error.message}</p>`;
+          return;
+        }
+
+        if (!profiles || profiles.length === 0) {
+          container.innerHTML = `<p style="color: #64748b;">No user profiles found in the system.</p>`;
+          return;
+        }
+
+        let html = `
+          <div class="admin-table-wrapper">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>User ID</th>
+                  <th>Role</th>
+                  <th>Language Access</th>
+                  <th>Course Levels</th>
+                  <th>Created At</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+        `;
+
+        profiles.forEach(p => {
+          const langsStr = Array.isArray(p.language_access) ? p.language_access.join(', ') : (p.language_access || '*');
+          const dateStr = p.created_at ? new Date(p.created_at).toLocaleDateString() : 'N/A';
+
+          html += `
+            <tr id="profile-row-${p.id}">
+              <td style="font-family: monospace; font-size: 0.8rem; color: #64748b;" title="${p.id}">
+                ${p.id.substring(0, 8)}...
+              </td>
+              <td style="width: 130px;">
+                <select id="role-${p.id}">
+                  <option value="student" ${p.role==='student'?'selected':''}>student</option>
+                  <option value="teacher" ${p.role==='teacher'?'selected':''}>teacher</option>
+                  <option value="founder" ${p.role==='founder'?'selected':''}>founder</option>
+                </select>
+              </td>
+              <td style="width: 200px;">
+                <input type="text" id="langs-${p.id}" value="${langsStr.replace(/"/g, '&quot;')}" placeholder="e.g. en, fr or *" />
+              </td>
+              <td style="width: 180px;">
+                <input type="text" id="levels-${p.id}" value="${(p.course_level || '*').replace(/"/g, '&quot;')}" placeholder="e.g. a1, c1 or *" />
+              </td>
+              <td style="font-size: 0.8rem; color: #64748b;">
+                ${dateStr}
+              </td>
+              <td>
+                <button onclick="saveUserProfile('${p.id}')" id="btn-save-${p.id}" class="btn-save-row">Save</button>
+                <span id="status-${p.id}" style="font-size: 0.8rem; margin-left: 8px;"></span>
+              </td>
+            </tr>
+          `;
+        });
+
+        html += `</tbody></table></div>`;
+        container.innerHTML = html;
+
+      } catch (err) {
+        container.innerHTML = `<p style="color: #ef4444;">System error loading profiles: ${err.message}</p>`;
+      }
+    }
+
+    async function saveUserProfile(userId) {
+      const client = window.CosyAuth.client;
+      const statusEl = document.getElementById(`status-${userId}`);
+      const btnEl = document.getElementById(`btn-save-${userId}`);
+
+      if (!client) {
+        if (statusEl) statusEl.innerHTML = `<span style="color: #ef4444;">Client offline</span>`;
+        return;
+      }
+
+      const role = document.getElementById(`role-${userId}`).value;
+      const rawLangs = document.getElementById(`langs-${userId}`).value.trim();
+      const course_level = document.getElementById(`levels-${userId}`).value.trim();
+
+      // Parse comma-separated language_access array
+      let language_access = [];
+      if (rawLangs === '*' || !rawLangs) {
+        language_access = ['*'];
+      } else {
+        language_access = rawLangs.split(',').map(s => s.trim()).filter(Boolean);
+      }
+
+      if (btnEl) btnEl.disabled = true;
+      if (statusEl) statusEl.innerHTML = `<span style="color: #0284c7;">Saving...</span>`;
+
+      try {
+        const { error } = await client
+          .from('profiles')
+          .update({
+            role: role,
+            language_access: language_access,
+            course_level: course_level,
+            updated_at: new Date().toISOString()
+          })
+          .eq('id', userId);
+
+        if (error) {
+          if (statusEl) statusEl.innerHTML = `<span style="color: #ef4444;">Error: ${error.message}</span>`;
+        } else {
+          if (statusEl) statusEl.innerHTML = `<span style="color: #10b981; font-weight: 600;">Saved ✔️</span>`;
+          setTimeout(() => { if (statusEl) statusEl.innerHTML = ''; }, 3000);
+        }
+      } catch (err) {
+        if (statusEl) statusEl.innerHTML = `<span style="color: #ef4444;">${err.message}</span>`;
+      } finally {
+        if (btnEl) btnEl.disabled = false;
+      }
     }
 
     window.onload = initFounderApp;
