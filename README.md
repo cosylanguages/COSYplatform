@@ -2,6 +2,14 @@
 
 Welcome to the **COSYplatform Content Repository**! This repository hosts all interactive curriculums, roadmaps, teacher manuals, and lesson markup files used by the **CosyLanguages** teaching and learning ecosystem.
 
+> ⚠️ **IMPORTANT CONTENT SECURITY WARNING:**
+> All files under `lessons/**/*.xml` (and any real content in `manuals/`, `teacher-guides/`, `student-workbooks/`, `activities/`, `marathons/`, or `reference/`) committed to this public git repository MUST be treated as **pre-publish drafts only**.
+>
+> Production interactive lesson content (including teacher-notes, tapescripts, speech prompts, and answer keys) is gated and served live from Supabase. Final lesson materials must be published to Supabase using the local founder script:
+> ```bash
+> node scripts/publish_to_supabase.js
+> ```
+
 ---
 
 ## 📁 Repository Structure
