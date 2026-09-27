@@ -92,7 +92,12 @@ Below is a summary of General curriculum level coverage across supported languag
 
 - **Single Canonical Curriculum Schema:** All course curriculums must be stored in the nested structure `curriculums/{iso}/{track}/{LEVEL}.json` and conform to `curriculums/_schema/curriculum.schema.json`. Legacy flat curriculum JSON files (`curriculums/_archive/legacy-flat/`) are archived and excluded from schema checks.
 - **Roadmap-to-Lesson Linking Mechanism:** Sequence items in `roadmaps/*.json` link to lesson files via an explicit `"lessonFile"` property pointing to the relative file path under `lessons/` (e.g. `"lessonFile": "lessons/general-english-a1/nice-to-meet-you.json"`). Unmapped sequence entries are explicitly marked as `"status": "planned"`. Full resolution mappings are documented in `/docs/roadmap-lesson-resolution.json`.
-- **Validation:** Always validate curriculum and lesson schemas before committing changes:
+- **Content Integrity Checks:** Automated CI checks run on every pull request (`node scripts/check-content-integrity.js` or `npm run check:integrity`) to prevent repository structural issues:
+  1. **Duplicate Detection:** Ensures no two curriculum or roadmap files exist for the same language, track, and level combination. *To fix:* Consolidate or remove near-duplicate/duplicate files.
+  2. **Sequence Entry Resolution:** Ensures every sequence item in `roadmaps/*.json` includes a valid `"lessonFile"` path or an explicit `"status": "planned"` marker. *To fix:* Add the `"lessonFile"` path or set `"status": "planned"`.
+  3. **Manifest Active File Check:** Ensures every active course listed in `shared/js/auth-guard.js`'s `FULL_MANIFEST` has a corresponding roadmap or curriculum file on disk. *To fix:* Create the missing file or mark the manifest entry as `"status": "not_yet_available"`.
+  4. **Orphan Curriculum Detection:** Ensures every curriculum file in `curriculums/{iso}/{track}/{LEVEL}.json` has a tracking entry in `FULL_MANIFEST`. *To fix:* Add the course entry to `FULL_MANIFEST` in `shared/js/auth-guard.js`.
+- **Validation:** Always validate content integrity, curriculum schemas, and lesson schemas before committing changes:
   ```bash
   npm run validate
   ```
