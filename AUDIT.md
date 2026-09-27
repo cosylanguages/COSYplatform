@@ -1,7 +1,7 @@
 # COSYplatform System Audit Report
 
 ## Executive Summary
-This report presents a comprehensive audit of the **COSYplatform** repository across structural/logic integrity, visual/CSS design, and UX/accessibility standards.
+This report presents a comprehensive audit of the **COSYplatform** repository across structural/logic integrity, visual/CSS design, UX/accessibility standards, and roadmap lesson resolution. All roadmap resolution metrics in this report are derived directly from `/docs/roadmap-lesson-resolution.json` as the single canonical source of truth.
 
 ---
 
@@ -17,7 +17,19 @@ This report presents a comprehensive audit of the **COSYplatform** repository ac
 - **Validation Gap:** Inputs lack automated client-side validation / instant self-grading feedback in Student View. Correct answers are visible to teachers in Teacher View, but students do not receive inline score indicators or instant right/wrong feedback.
 
 ### Curriculum → Roadmap → Lesson Chain Resolution
-- **Resolution Audit Result:** Across all 30 canonical roadmaps (1,418 sequence entries), **494 entries** resolve directly to lesson content files in `lessons/` (via explicit `lessonFile` properties generated in `/docs/roadmap-lesson-resolution.json`), while **924 entries** are explicitly marked with `"status": "planned"`.
+- **Resolution Audit Result:** Across all 30 canonical roadmaps (1,418 sequence entries), **494 entries (34.8%)** resolve directly to lesson content files in `lessons/` (via explicit `lessonFile` properties generated in `/docs/roadmap-lesson-resolution.json`), while **924 entries (65.2%)** are explicitly marked with `"status": "planned"`.
+
+#### Track Resolution Summary
+| Track | Total Roadmaps | Resolved Lessons | Planned Entries | Total Entries | Resolution % |
+| --- | --- | --- | --- | --- | --- |
+| **Cinema** | 6 | 113 | 0 | 113 | 100.0% |
+| **General** | 6 | 41 | 357 | 398 | 10.3% |
+| **Grammar** | 6 | 0 | 248 | 248 | 0.0% |
+| **Introductory** | 1 | 1 | 5 | 6 | 16.7% |
+| **Phrasal-Verbs** | 3 | 0 | 41 | 41 | 0.0% |
+| **Spoken** | 5 | 339 | 235 | 574 | 59.1% |
+| **Vocabulary** | 3 | 0 | 38 | 38 | 0.0% |
+| **Total** | **30** | **494** | **924** | **1418** | **34.8%** |
 
 ---
 
@@ -37,8 +49,8 @@ This report presents a comprehensive audit of the **COSYplatform** repository ac
 ## 3. UX / UI & ACCESSIBILITY AUDIT
 
 ### Access Control UX
-- **Gating Mechanism:** Token checked against salted SHA-256 hashes in `data/access-grants.json`.
-- **User Feedback:** Invalid or missing keys display a polite, clear "🔒 Private Learning Platform" card explaining direct link access requirements, avoiding confusing technical errors or contextless GitHub login prompts.
+- **Gating Mechanism:** Token/role checked via Supabase session and `shared/js/auth-guard.js` (`window.CosyAuth.requireRole(...)`).
+- **User Feedback:** Unauthenticated users or users with invalid roles are redirected to `login.html` with explanatory context, protecting gated content.
 
 ### Keyboard Accessibility
 - **Form Controls:** Text inputs, select menus, radio buttons, essay textareas, and drag-and-drop gap dropdowns are native HTML elements, fully focusable and operable via `Tab`, `Space`, and `Arrow` keys.
@@ -54,3 +66,27 @@ This report presents a comprehensive audit of the **COSYplatform** repository ac
 3. **Keyboard Focusability on Custom Choice Cards:** Add `tabindex="0"` and `onkeydown` (Enter/Space) handlers to `<div class="choice-card">` elements for full WCAG keyboard accessibility.
 4. **Complete Roadmap File Coverage for Spoken & Grammar Tracks:** Batch convert remaining planned roadmap lessons or stub future lesson files so every roadmap entry resolves without fallback warnings.
 5. **Student Duration Filter Control:** Expose duration mode toggles (50m / 80m / 110m) on `student.html` so self-study learners can select core vs. extended lesson flows.
+
+---
+
+## Known Gaps
+
+The following open items consolidated from the legacy `CONVERSION_PLAN.md` represent active content gaps awaiting future authoring, roadmap creation, or track conversion:
+
+1. **Spoken French & Russian Roadmaps & Lessons:**
+   - No `spoken-fr-*` or `spoken-ru-*` roadmap files currently exist in `roadmaps/`.
+   - Approximately 50 French and 35 Russian session HTML files from `cosylanguages/COSYevents` require dedicated roadmap JSON creation (`spoken-fr-<level>.json` and `spoken-ru-<level>.json`) and XML conversion into `lessons/spoken-fr/` and `lessons/spoken-ru/`.
+
+2. **Core General English & Grammar Tracks Content Gap:**
+   - 357 General English sequence entries (A0–C1) and 248 Grammar English sequence entries (A0–C1) are explicitly marked with `"status": "planned"`.
+   - These slots require authoring and JSON/XML content conversion to reach 100% resolution.
+
+3. **Phrasal Verbs & Vocabulary Practice Tracks:**
+   - 41 Phrasal Verbs sequence entries across `phrasal-verbs-en-a2`, `b1`, `b2` and 38 Vocabulary Practice entries across `vocabulary-en-a1`, `a2`, `b1` are currently marked as `"status": "planned"`.
+
+4. **Empty Cinema Club Track Stubs:**
+   - 5 Cinema Club roadmap stubs (`cinema-en-a1.json`, `cinema-en-a2.json`, `cinema-en-b2.json`, `cinema-en-c1.json`, `cinema-en-c2.json`) exist in `roadmaps/` with 0 sequence items.
+   - While `cinema-en-b1.json` is 100% complete (113 resolved lessons), the remaining levels require session curation and sequence populating.
+
+5. **Multilingual Karaoke & Cultural Challenge Sessions:**
+   - Multi-lingual Karaoke Club sessions (Greek, Italian, French, Russian) require track assignment and XML conversion into respective target-language spoken/cultural tracks.
