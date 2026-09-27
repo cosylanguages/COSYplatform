@@ -40,7 +40,7 @@ Each activity item in these JSON arrays must conform to the following schema:
 ```json
 {
   "lessonId": "string (required, e.g. 'nice-to-meet-you')",
-  "curriculumId": "string (required, e.g. 'general-english-a1')",
+  "curriculumId": "string (required, e.g. 'general-en-a1')",
   "activityUrl": "string (required URL to resource)",
   "activityType": "enum: 'game' | 'tool' | 'print' (required)",
   "label": "string (required, descriptive title of activity)",
@@ -51,7 +51,7 @@ Each activity item in these JSON arrays must conform to the following schema:
 ### Properties Description
 
 - **`lessonId`**: The unique identifier of the target lesson as declared in the course roadmap/curriculum.
-- **`curriculumId`**: The unique course identifier (e.g., `general-english-a1`, `spoken-english-b1`).
+- **`curriculumId`**: The unique course identifier (e.g., `general-en-a1`, `spoken-en-b1`).
 - **`activityUrl`**: Absolute or relative HTTP(S) URL pointing to the external or hosted interactive resource.
 - **`activityType`**: High-level classification of the resource. Must be `game` for COSYgames, `tool` for COSYtools reference engines, or `print` for printable assets/worksheets.
 - **`label`**: Human-readable label displayed on lesson view cards or teacher guides.

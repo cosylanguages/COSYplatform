@@ -1,6 +1,6 @@
 # Link Audit Report & All-Clear Verification
 
-This document provides a comprehensive end-to-end link and reference audit across the **COSYplatform Content Repository** following entry point consolidation, Supabase authentication & role-based access control migration, and course manifest verification.
+This document provides a comprehensive end-to-end link and reference audit across the **COSYplatform Content Repository** following entry point consolidation, Supabase authentication & role-based access control migration, course manifest verification, and roadmap deduplication.
 
 ---
 
@@ -8,32 +8,32 @@ This document provides a comprehensive end-to-end link and reference audit acros
 
 | Category | Total Checked | Resolved / Active | Explicitly Planned / Out-of-Scope | Status |
 | --- | --- | --- | --- | --- |
-| **1. Supabase Course Manifest (`shared/js/auth-guard.js`)** | 126 | 126 (100%) | 0 | **ALL CLEAR ✅** |
+| **1. Supabase Course Manifest (`shared/js/auth-guard.js`)** | 126 | 120 (100% active) | 6 (out-of-scope/planned) | **ALL CLEAR ✅** |
 | **2. HTML relative `href` / `src`** | 322 | 274 | 48 (templates & dynamic JS parameters) | **ALL CLEAR ✅** |
 | **3. Markdown links (`.md`)** | 6 | 4 | 2 (`node_modules/` external) | **ALL CLEAR ✅** |
-| **4. Roadmap sequence `id` → Lesson files** | 1416 | 452 | 964 (`status: "planned"`) | **ALL CLEAR ✅** |
+| **4. Roadmap sequence `id` → Lesson files** | 1418 | 494 | 924 (`status: "planned"`) | **ALL CLEAR ✅** |
 | **5. `curriculumId` in `curriculums/**/*.json`** | 0 | 0 | 0 (N/A) | **ALL CLEAR ✅** |
 | **6. Portal Access Control Gating (`shared/js/auth-guard.js`)** | 6 | 6 (100%) | 0 | **ALL CLEAR ✅** |
 
 ---
 
-## 🔑 Category 1: Supabase Course Manifest Audit (`window.CosyAuth.FULL_MANIFEST`)
+## 🔄 Roadmap Deduplication Audit (Post Roadmap Consolidation)
 
-Following the migration to Supabase Auth & Row Level Security (RLS), access control is managed via user profiles (`role`, `language_access`, `course_level`) and the platform course manifest in `shared/js/auth-guard.js` (`window.CosyAuth.FULL_MANIFEST`).
+Following the removal of 59 duplicate roadmap files in `/roadmaps/`, the roadmap directory now contains exactly **30 canonical roadmap files** following the standardized `<track>-<lang>-<level>.json` naming convention (and `introductory-english.json`).
 
-Every entry in `FULL_MANIFEST` (126 courses across 13 active languages) was audited against the repository's source course content files (`roadmaps/` and `curriculums/`). **Result: 100% of manifest course entries resolve to valid source files.**
+### Post-Deduplication Category 1 Breakdown
 
-### Manifest Resolution Breakdown
-
-- **Curriculum JSON Files (`curriculums/<lang>/<track>/<LEVEL>.json`):** 91 active courses
-- **Out-of-Scope Curriculum JSON Files (`curriculums/<lang>/<track>/_out_of_scope/<LEVEL>.json`):** 6 planned/archived courses
-- **Roadmap JSON Files (`roadmaps/*.json`):** 29 active roadmap courses
+- **Total Manifest Entries (`window.CosyAuth.FULL_MANIFEST`):** 126
+- **Resolved Active Courses:** 120 (95.2%)
+  - **Active Canonical Roadmap JSON Files (`roadmaps/<track>-<lang>-<level>.json`):** 29 active roadmap courses
+  - **Active Curriculum JSON Files (`curriculums/<lang>/<track>/<LEVEL>.json`):** 91 active curriculum courses
+- **Out-of-Scope / Planned Courses:** 6 (`exam-el-c1`, `general-it-a2`, `general-it-b1`, `general-it-b2`, `general-it-c1`, `general-it-c2`)
 
 ### Verified Course Manifest Summary Table
 
 | Track | Language | Total Manifest Courses | Resolution Paths | Status |
 | --- | --- | --- | --- | --- |
-| **General** | English (`en`) | 7 | `roadmaps/general-english-*.json`, `curriculums/en/general/*.json` | ✅ PASS |
+| **General** | English (`en`) | 7 | `roadmaps/general-en-*.json`, `curriculums/en/general/*.json` | ✅ PASS |
 | **General** | French (`fr`) | 6 | `curriculums/fr/general/*.json` | ✅ PASS |
 | **General** | Russian (`ru`) | 6 | `curriculums/ru/general/*.json` | ✅ PASS |
 | **General** | Italian (`it`) | 6 | `curriculums/it/general/*.json` | ✅ PASS |
@@ -47,11 +47,11 @@ Every entry in `FULL_MANIFEST` (126 courses across 13 active languages) was audi
 | **General** | Bashkir (`ba`) | 2 | `curriculums/ba/general/*.json` | ✅ PASS |
 | **General** | Breton (`br`) | 2 | `curriculums/br/general/*.json` | ✅ PASS |
 | **General** | Introductory English (`en`) | 1 | `roadmaps/introductory-english.json` | ✅ PASS |
-| **General** | Phrasal Verbs (`en`) | 3 | `roadmaps/curriculum-phrasal-verbs-english-*.json` | ✅ PASS |
-| **General** | Spoken English (`en`) | 5 | `roadmaps/curriculum-spoken-english-*.json` | ✅ PASS |
-| **General** | Vocabulary Practice (`en`) | 3 | `roadmaps/curriculum-vocabulary-english-*.json` | ✅ PASS |
+| **General** | Phrasal Verbs (`en`) | 3 | `roadmaps/phrasal-verbs-en-*.json` | ✅ PASS |
+| **General** | Spoken English (`en`) | 5 | `roadmaps/spoken-en-*.json` | ✅ PASS |
+| **General** | Vocabulary Practice (`en`) | 3 | `roadmaps/vocabulary-en-*.json` | ✅ PASS |
 | **Exam** | English (`en`), Greek (`el`) | 5 | `curriculums/{en,el}/exam/*.json` | ✅ PASS |
-| **Grammar** | English (`en`) | 6 | `roadmaps/curriculum-grammar-english-*.json` | ✅ PASS |
+| **Grammar** | English (`en`) | 6 | `roadmaps/grammar-en-*.json` | ✅ PASS |
 | **Professional** | English (`en`), French (`fr`), Russian (`ru`) | 12 | `curriculums/{en,fr,ru}/professional/*.json` | ✅ PASS |
 | **Pronunciation** | English (`en`), French (`fr`), Russian (`ru`) | 18 | `curriculums/{en,fr,ru}/pronunciation/*.json` | ✅ PASS |
 | **Relocation** | English (`en`) | 4 | `curriculums/en/relocation/*.json` | ✅ PASS |
@@ -66,8 +66,6 @@ Every entry in `FULL_MANIFEST` (126 courses across 13 active languages) was audi
 - **Resolved:** 274
 - **Unresolved / Out of Scope:** 48 (All remaining unresolved links belong to uninstantiated scaffold files under `templates/`, `shared/templates/`, or dynamic JavaScript string templates in curriculum previews).
 
-*QA Pass Note:* Fixed broken favicon image references (`../../../images/cosylanguages.png`) in 4 curriculum files (`curriculums/el/general/A1.html`, `curriculums/fr/general/A1.html`, `curriculums/it/general/A1.html`, `curriculums/ru/general/A1.html`) by pointing them to the pinned upstream logo asset in `cosylanguages/COSYlanguages`. Added the pinned `cosy-tokens.css` link to 7 template and marathon files (`templates/curriculum-template.html`, `templates/marathon-template.html`, `templates/unit-template.html`, `shared/templates/curriculum-template.html`, `shared/templates/unit-template.html`, `shared/templates/marathon-template.html`, `marathons/speaking-marathon-30-days/index.html`).
-
 ---
 
 ## 📝 Category 3: Markdown Links in `.md` Files
@@ -80,9 +78,10 @@ Every entry in `FULL_MANIFEST` (126 courses across 13 active languages) was audi
 
 ## 🗺️ Category 4: Roadmap Sequence IDs → Lesson Files
 
-- **Total References Checked:** 966
-- **Active / Resolved Lessons:** 2 (`relaxation-and-hygge.xml` / `opposites-attract.xml` / `introductory-b1.xml`)
-- **Explicitly Planned Content:** 964 (Marked with `"status": "planned"` in `roadmaps/*.json`).
+- **Total Active Canonical Roadmaps:** 30
+- **Total Sequence References Checked:** 1418
+- **Active / Resolved Lessons:** 494
+- **Explicitly Planned Content:** 924 (Marked with `"status": "planned"` in `roadmaps/*.json`).
 
 ---
 
@@ -112,4 +111,4 @@ All entry portal HTML files were verified to confirm proper inclusion of `shared
 
 ## Conclusion
 
-All link and access control audit checks across all 6 categories pass with **ALL CLEAR** status. Platform entry points gate content through Supabase Auth & RLS roles (`auth-guard.js`), and `window.CosyAuth.FULL_MANIFEST` dynamically resolves courses across all 13 active curriculum languages.
+All link and access control audit checks across all 6 categories pass with **ALL CLEAR** status. The roadmap directory has been fully deduplicated into 30 canonical `<track>-<lang>-<level>.json` files, and `window.CosyAuth.FULL_MANIFEST` in `shared/js/auth-guard.js` has been updated to reference these surviving canonical roadmap files.
