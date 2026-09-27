@@ -17,11 +17,7 @@ This report presents a comprehensive audit of the **COSYplatform** repository ac
 - **Validation Gap:** Inputs lack automated client-side validation / instant self-grading feedback in Student View. Correct answers are visible to teachers in Teacher View, but students do not receive inline score indicators or instant right/wrong feedback.
 
 ### Curriculum → Roadmap → Lesson Chain Resolution
-- **Resolution Audit Result:**
-  - `general-en-a0`: 32 of 46 roadmap items resolve to real lesson files (`lessons/general-en-a0/*.json`).
-  - `general-en-a1`: Only 8 of 63 roadmap items resolve directly. Roadmap IDs use names like `ge-a1-more-about-the-course` or `where-i-live`, whereas the 145 actual lesson files in `lessons/general-en-a1/` are named using module convention (`m01-l01-*.json`).
-  - `general-russian-a1`, `general-french-a1`, `general-italian-a1`, `general-greek-a1`: 137 lesson JSON files exist per language (`m01-l01-*.json`), but roadmap IDs require alias resolution mapping to match module file naming.
-  - Spoken English & Grammar tracks list hundreds of planned roadmap entries, but rely on sample XML files or converted `COSYevents` sessions rather than 1:1 file coverage across all level roadmaps.
+- **Resolution Audit Result:** Across all 30 canonical roadmaps (1,418 sequence entries), **494 entries** resolve directly to lesson content files in `lessons/` (via explicit `lessonFile` properties generated in `/docs/roadmap-lesson-resolution.json`), while **924 entries** are explicitly marked with `"status": "planned"`.
 
 ---
 
