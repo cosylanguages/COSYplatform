@@ -1,11 +1,10 @@
 # COSYplatform Content Repository
 
-Welcome to the **COSYplatform Content Repository**! This repository hosts all interactive curriculums, roadmaps, teacher manuals, and lesson markup files used by the **CosyLanguages** teaching and learning ecosystem.
+Welcome to the **COSYplatform Content Repository**! This repository hosts all interactive curriculums, course roadmaps, teacher manuals, reference guides, student workbooks, and interactive lesson markup files used by the **CosyLanguages** teaching and learning platform.
 
 > ⚠️ **IMPORTANT CONTENT SECURITY WARNING:**
-> All files under `lessons/**/*.xml` (and any real content in `manuals/`, `teacher-guides/`, `student-workbooks/`, `activities/`, `marathons/`, or `reference/`) committed to this public git repository MUST be treated as **pre-publish drafts only**.
->
-> Production interactive lesson content (including teacher-notes, tapescripts, speech prompts, and answer keys) is gated and served live from Supabase. Final lesson materials must be published to Supabase using the local founder script:
+> All files under `lessons/**/*.xml` and `lessons/**/*.json` committed to this public repository act as pre-publish content sources.
+> Production interactive lesson materials (including teacher notes, speech scripts, and answer key overlays) are gated and served live from Supabase. Final lesson materials must be published to Supabase using the local founder script:
 > ```bash
 > node scripts/publish_to_supabase.js
 > ```
@@ -16,59 +15,88 @@ Welcome to the **COSYplatform Content Repository**! This repository hosts all in
 
 ```
 .
-├── docs/                        # Platform architecture & markup specifications
-│   ├── architecture.md          # Dual-page view, monolingual policy, group modes & timing models
+├── activities/                  # Supplementary classroom activity files
+├── curriculums/                 # Canonical nested JSON curriculum definitions ({iso}/{track}/{LEVEL}.json)
+│   ├── _archive/                # Legacy flat curriculum files and migration logs
+│   ├── _schema/                 # Curriculum JSON Schema validation
+│   └── {iso}/                   # Language folders (en, fr, ru, es, de, it, el, pt, hy, ka, ba, br, tt)
+├── data/                        # Core static data indexes
+├── docs/                        # Architecture, specs, audit, and coverage reports
+│   ├── architecture.md          # Dual-page view, monolingual policy & mode specifications
 │   ├── lesson-format-spec.md    # CosyLanguages (<cosy-*>) markup specification
-│   └── teacher-catalog-guide.md # Teacher catalog structure, CCQ guide & multi-duration guide
-├── schemas/                     # Formal validation schemas
-│   └── lesson.schema.json       # JSON Schema supporting duration & classroom modes
-├── curriculums/                 # High-level curriculum definitions
-├── roadmaps/                    # Course maps and lesson sequences
-├── manuals/                     # Teacher guides & onboarding instructions
-│   └── teacher-guide-first-lesson.md # First lesson ("Aloha") setup & multi-duration guide
-├── lessons/                     # Lesson interactive slides content
-├── shared/                      # Shared JS/CSS modules
+│   ├── level-coverage-report.md # Level coverage audit across all languages
+│   └── roadmap-lesson-resolution.json # Master roadmap entry to lesson file resolution table
+├── lessons/                     # Interactive lesson slides (XML / JSON format)
+│   ├── general-{lang}-{level}/  # General English / French / Russian / Italian / Greek lesson JSONs
+│   ├── spoken-{lang}/           # Spoken language XML cards (English, French, Russian)
+│   └── pronunciation/           # Pronunciation modules
+├── manuals/                     # Teacher manuals & onboarding guides
+├── reference/                   # Grammar CELTA unit plans & reference schemas
+├── reports/                     # Automated audit and validation outputs
+├── roadmaps/                    # 30 canonical course sequence manifests (<track>-<lang>-<level>.json)
+├── schemas/                     # Validation JSON Schemas (lesson.schema.json, ccq.schema.json)
+├── scripts/                     # Build, conversion, link check, and Supabase publishing scripts
+├── shared/                      # Shared CSS design tokens and authentication guard
+│   ├── css/tokens.css           # CosyLanguages Sapphire design tokens
+│   ├── styles/style.css         # Print & layout stylesheets
 │   └── js/auth-guard.js         # Supabase Auth & RLS Role Guard Module
-└── login.html                   # Authentication login portal
+├── student-workbooks/           # Student workbook supplementary materials
+├── supabase/                    # Supabase database schema and RLS policies (schema.sql)
+├── teacher-guides/              # Teacher guidance documentation
+├── templates/                   # Lesson & slide markup templates
+├── founder.html                 # Founder executive management portal
+├── teacher.html                 # Teacher classroom portal & guide
+├── student.html                 # Learner interactive workspace portal
+├── hub.html                     # Live course hub viewer
+├── index.html                   # Unauthenticated public catalog browser
+└── login.html                   # Supabase authentication portal
 ```
 
 ---
 
-## 🔒 Access Control & Authentication (Supabase Auth + RLS)
+## ✨ Key Features
 
-COSYplatform uses **Supabase Auth** and **PostgreSQL Row Level Security (RLS)** as the single, platform-wide access control mechanism across all entry portals (`founder.html`, `teacher.html`, `student.html`, `index.html`).
-
-### 1. Account Roles & Profiles Table
-User permissions are tied to their authenticated account (`auth.users`) and their corresponding entry in the `profiles` table in Supabase:
-
-* **`founder`**: Executive role with unrestricted access to all active language spaces, platform analytics, and full content streams.
-* **`teacher`**: Access to dedicated teacher spaces, teacher notes, speech scripts, and lesson release controls for assigned languages (`language_access`) and levels (`course_level`).
-* **`student`**: Access to student workspaces, interactive lesson slides, and released course roadmaps matching their assigned `language_access` and `course_level`.
-
-### 2. Login Flow
-Users log in at `login.html` using their email and password via Supabase Auth (`supabase.auth.signInWithPassword`). Account creation is managed directly by the founder/administrator via the Supabase dashboard. Upon successful login, users are automatically routed to their role's portal (`founder.html`, `teacher.html`, or `student.html`).
+- **Supabase Authentication & Role-Based Access Control (RLS):** Private learning platform enforced by `shared/js/auth-guard.js`. Roles (`founder`, `teacher`, `student`) control access to courses and gated lesson content live from Supabase.
+- **Dual Teacher & Student View Modes:** `teacher.html` renders yellow stage aim boxes, green speech scripts, hints, and visible answer key overlays; `student.html` filters out teacher notes to present a clean workspace.
+- **Multi-Duration Pacing Filters:** `teacher.html` supports active slide duration filtering (`50m`, `80m`, `110m`) to tailor lesson pacing for short vs. extended sessions.
+- **Classroom Projector Mode:** One-click full-screen projector view (`.projector-mode`) for classroom presentation.
+- **Utility Drawers:** Instant sticky sidebar access to the COSYdata vocabulary dictionary lookup, irregular verb reference tables, and a configurable classroom timer.
+- **Local Response Persistence:** Student inputs (`cosy-input`, `cosy-select`, `cosy-test`, `cosy-dnd-text`, `cosy-essay`) automatically persist state locally in browser `localStorage`.
+- **Standalone Worksheet Print Styles:** `@media print` rules enable printing or exporting interactive lessons as offline PDF worksheets without loss of content.
 
 ---
 
-## 🚀 Live Deployment & GitHub Pages
+## 📊 Language & Level Coverage Summary
 
-This repository is automatically published via GitHub Actions on every push to `main` using `.github/workflows/pages.yml`.
+Below is a summary of General curriculum level coverage across supported languages (pulled from [`docs/level-coverage-report.md`](docs/level-coverage-report.md)). Planned levels missing a curriculum JSON file are enumerated in `shared/js/auth-guard.js`'s `FULL_MANIFEST` with `"status": "not_yet_available"` to display "Coming soon" indicators in the UI.
 
-- **Live Platform Catalog**: [https://cosylanguages.github.io/COSYplatform/](https://cosylanguages.github.io/COSYplatform/)
-- **Login Portal**: [https://cosylanguages.github.io/COSYplatform/login.html](https://cosylanguages.github.io/COSYplatform/login.html)
+| Language Code | Language | Available General Levels | Coming Soon Levels |
+| --- | --- | --- | --- |
+| `en` | English | `A1`, `A2`, `B1`, `B2`, `C1`, `C2` | `A0` |
+| `fr` | French | `A1`, `A2`, `B1`, `B2`, `C1`, `C2` | `A0` |
+| `ru` | Russian | `A1`, `A2`, `B1`, `B2`, `C1`, `C2` | `A0` |
+| `de` | German | `A1`, `C1` | `A0`, `A2`, `B1`, `B2`, `C2` |
+| `es` | Spanish | `A1`, `C1` | `A0`, `A2`, `B1`, `B2`, `C2` |
+| `it` | Italian | `A1` | `A0`, `A2`, `B1`, `B2`, `C1`, `C2` |
+| `el` | Greek | `A1` | `A0`, `A2`, `B1`, `B2`, `C1`, `C2` |
+| `pt` | Portuguese | `A1`, `C1` | `A0`, `A2`, `B1`, `B2`, `C2` |
+| `hy` | Armenian | `A1`, `C1` | `A0`, `A2`, `B1`, `B2`, `C2` |
+| `ka` | Georgian | `A1`, `C1` | `A0`, `A2`, `B1`, `B2`, `C2` |
+| `ba` | Bashkir | `A1`, `C1` | `A0`, `A2`, `B1`, `B2`, `C2` |
+| `br` | Breton | `A1`, `C1` | `A0`, `A2`, `B1`, `B2`, `C2` |
+| `tt` | Tatar | `A1`, `C1` | `A0`, `A2`, `B1`, `B2`, `C2` |
 
 ---
 
-## 🛠 Adding New Lessons & Publishing
+## 🛠 For Contributors
 
-1. Read the markup specification in [`docs/lesson-format-spec.md`](docs/lesson-format-spec.md).
-2. Create a new `.json` file in `lessons/<course-id>/`.
-3. Add the lesson entry to the corresponding roadmap in `roadmaps/<course-id>.json`.
-4. Validate the lesson syntax:
-   ```bash
-   npm run validate
-   ```
-5. Publish updated lesson content to Supabase:
-   ```bash
-   node scripts/publish_to_supabase.js
-   ```
+- **Single Canonical Curriculum Schema:** All course curriculums must be stored in the nested structure `curriculums/{iso}/{track}/{LEVEL}.json` and conform to `curriculums/_schema/curriculum.schema.json`. Legacy flat curriculum JSON files (`curriculums/_archive/legacy-flat/`) are archived and excluded from schema checks.
+- **Roadmap-to-Lesson Linking Mechanism:** Sequence items in `roadmaps/*.json` link to lesson files via an explicit `"lessonFile"` property pointing to the relative file path under `lessons/` (e.g. `"lessonFile": "lessons/general-english-a1/nice-to-meet-you.json"`). Unmapped sequence entries are explicitly marked as `"status": "planned"`. Full resolution mappings are documented in `/docs/roadmap-lesson-resolution.json`.
+- **Validation:** Always validate curriculum and lesson schemas before committing changes:
+  ```bash
+  npm run validate
+  ```
+- **Publishing:** To push updated lesson materials to the live Supabase backend, run:
+  ```bash
+  node scripts/publish_to_supabase.js
+  ```
