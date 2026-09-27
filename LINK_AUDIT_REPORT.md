@@ -1,6 +1,6 @@
 # Link Audit Report & All-Clear Verification
 
-This document provides a comprehensive end-to-end link and reference audit across the **COSYplatform Content Repository** following the entry point consolidation into `hub.html`, access grant expansion, and marathon reorganization.
+This document provides a comprehensive end-to-end link and reference audit across the **COSYplatform Content Repository** following entry point consolidation, Supabase authentication & role-based access control migration, and course manifest verification.
 
 ---
 
@@ -8,83 +8,55 @@ This document provides a comprehensive end-to-end link and reference audit acros
 
 | Category | Total Checked | Resolved / Active | Explicitly Planned / Out-of-Scope | Status |
 | --- | --- | --- | --- | --- |
-| **1. Access Grants Keys (`data/access-grants.json`)** | 60 | 60 (100%) | 0 | **ALL CLEAR ✅** |
+| **1. Supabase Course Manifest (`shared/js/auth-guard.js`)** | 126 | 126 (100%) | 0 | **ALL CLEAR ✅** |
 | **2. HTML relative `href` / `src`** | 322 | 274 | 48 (templates & dynamic JS parameters) | **ALL CLEAR ✅** |
 | **3. Markdown links (`.md`)** | 6 | 4 | 2 (`node_modules/` external) | **ALL CLEAR ✅** |
 | **4. Roadmap sequence `id` → Lesson files** | 1416 | 452 | 964 (`status: "planned"`) | **ALL CLEAR ✅** |
 | **5. `curriculumId` in `curriculums/**/*.json`** | 0 | 0 | 0 (N/A) | **ALL CLEAR ✅** |
-| **6. Explicit Course IDs in `data/access-grants.json`** | 9 | 9 (100%) | 0 | **ALL CLEAR ✅** |
+| **6. Portal Access Control Gating (`shared/js/auth-guard.js`)** | 6 | 6 (100%) | 0 | **ALL CLEAR ✅** |
 
 ---
 
-## 🔑 Category 1: Access Grant Key Resolution Audit
+## 🔑 Category 1: Supabase Course Manifest Audit (`window.CosyAuth.FULL_MANIFEST`)
 
-Every key in `data/access-grants.json` was evaluated against `shared/js/access-grants.js` (`FULL_MANIFEST` containing 136 courses across 13 languages). **Result: 0 keys resolve to zero courses.**
+Following the migration to Supabase Auth & Row Level Security (RLS), access control is managed via user profiles (`role`, `language_access`, `course_level`) and the platform course manifest in `shared/js/auth-guard.js` (`window.CosyAuth.FULL_MANIFEST`).
 
-### Verified Access Grant Key Table
+Every entry in `FULL_MANIFEST` (126 courses across 13 active languages) was audited against the repository's source course content files (`roadmaps/` and `curriculums/`). **Result: 100% of manifest course entries resolve to valid source files.**
 
-| Key | Role | Grant Filter / Array | Resolved Courses Count | Status |
+### Manifest Resolution Breakdown
+
+- **Curriculum JSON Files (`curriculums/<lang>/<track>/<LEVEL>.json`):** 91 active courses
+- **Out-of-Scope Curriculum JSON Files (`curriculums/<lang>/<track>/_out_of_scope/<LEVEL>.json`):** 6 planned/archived courses
+- **Roadmap JSON Files (`roadmaps/*.json`):** 29 active roadmap courses
+
+### Verified Course Manifest Summary Table
+
+| Track | Language | Total Manifest Courses | Resolution Paths | Status |
 | --- | --- | --- | --- | --- |
-| `founder-key` | `founder` | `["*"]` | 1 (Wildcard All) | ✅ PASS |
-| `demo-teacher-1` | `teacher` | `["*"]` | 1 (Wildcard All) | ✅ PASS |
-| `teacher-english-key` | `teacher` | `["*"]` | 1 (Wildcard All) | ✅ PASS |
-| `teacher-french-key` | `teacher` | `["*"]` | 1 (Wildcard All) | ✅ PASS |
-| `teacher-russian-key` | `teacher` | `["*"]` | 1 (Wildcard All) | ✅ PASS |
-| `english-teachers` | `teacher` | `{"language": "en"}` | 57 courses | ✅ PASS |
-| `french-teachers` | `teacher` | `{"language": "fr"}` | 25 courses | ✅ PASS |
-| `russian-teachers` | `teacher` | `{"language": "ru"}` | 25 courses | ✅ PASS |
-| `english-a0-a1` | `student` | `{"language": "en", "level": ["a0", "a1"]}` | 10 courses | ✅ PASS |
-| `demo-student-1` | `student` | `["general-english-a1"]` | 1 course | ✅ PASS |
-| `demo-student-2` | `student` | `["general-english-b2", ...]` | 3 courses | ✅ PASS |
-| `teachers-en` | `teacher` | `{"language": "en"}` | 57 courses | ✅ PASS |
-| `teachers-fr` | `teacher` | `{"language": "fr"}` | 25 courses | ✅ PASS |
-| `teachers-ru` | `teacher` | `{"language": "ru"}` | 25 courses | ✅ PASS |
-| `teachers-es` | `teacher` | `{"language": "es"}` | 2 courses | ✅ PASS |
-| `teachers-de` | `teacher` | `{"language": "de"}` | 2 courses | ✅ PASS |
-| `teachers-it` | `teacher` | `{"language": "it"}` | 6 courses | ✅ PASS |
-| `teachers-pt` | `teacher` | `{"language": "pt"}` | 2 courses | ✅ PASS |
-| `teachers-el` | `teacher` | `{"language": "el"}` | 7 courses | ✅ PASS |
-| `teachers-hy` | `teacher` | `{"language": "hy"}` | 2 courses | ✅ PASS |
-| `teachers-ka` | `teacher` | `{"language": "ka"}` | 2 courses | ✅ PASS |
-| `teachers-tt` | `teacher` | `{"language": "tt"}` | 2 courses | ✅ PASS |
-| `teachers-ba` | `teacher` | `{"language": "ba"}` | 2 courses | ✅ PASS |
-| `teachers-br` | `teacher` | `{"language": "br"}` | 2 courses | ✅ PASS |
-| `students-en-a1` | `student` | `{"language": "en", "level": "a1"}` | 8 courses | ✅ PASS |
-| `students-en-a2` | `student` | `{"language": "en", "level": "a2"}` | 10 courses | ✅ PASS |
-| `students-en-b1` | `student` | `{"language": "en", "level": "b1"}` | 12 courses | ✅ PASS |
-| `students-en-b2` | `student` | `{"language": "en", "level": "b2"}` | 10 courses | ✅ PASS |
-| `students-en-c1` | `student` | `{"language": "en", "level": "c1"}` | 9 courses | ✅ PASS |
-| `students-en-c2` | `student` | `{"language": "en", "level": "c2"}` | 5 courses | ✅ PASS |
-| `students-fr-a1` | `student` | `{"language": "fr", "level": "a1"}` | 4 courses | ✅ PASS |
-| `students-fr-a2` | `student` | `{"language": "fr", "level": "a2"}` | 4 courses | ✅ PASS |
-| `students-fr-b1` | `student` | `{"language": "fr", "level": "b1"}` | 5 courses | ✅ PASS |
-| `students-fr-b2` | `student` | `{"language": "fr", "level": "b2"}` | 4 courses | ✅ PASS |
-| `students-fr-c1` | `student` | `{"language": "fr", "level": "c1"}` | 4 courses | ✅ PASS |
-| `students-fr-c2` | `student` | `{"language": "fr", "level": "c2"}` | 4 courses | ✅ PASS |
-| `students-ru-a1` | `student` | `{"language": "ru", "level": "a1"}` | 4 courses | ✅ PASS |
-| `students-ru-a2` | `student` | `{"language": "ru", "level": "a2"}` | 4 courses | ✅ PASS |
-| `students-ru-b1` | `student` | `{"language": "ru", "level": "b1"}` | 5 courses | ✅ PASS |
-| `students-ru-b2` | `student` | `{"language": "ru", "level": "b2"}` | 4 courses | ✅ PASS |
-| `students-ru-c1` | `student` | `{"language": "ru", "level": "c1"}` | 4 courses | ✅ PASS |
-| `students-ru-c2` | `student` | `{"language": "ru", "level": "c2"}` | 4 courses | ✅ PASS |
-| `students-es-a1` | `student` | `{"language": "es", "level": "a1"}` | 1 course | ✅ PASS |
-| `students-es-c1` | `student` | `{"language": "es", "level": "c1"}` | 1 course | ✅ PASS |
-| `students-de-a1` | `student` | `{"language": "de", "level": "a1"}` | 1 course | ✅ PASS |
-| `students-de-c1` | `student` | `{"language": "de", "level": "c1"}` | 1 course | ✅ PASS |
-| `students-it-a1` | `student` | `{"language": "it", "level": "a1"}` | 1 course | ✅ PASS |
-| `students-pt-a1` | `student` | `{"language": "pt", "level": "a1"}` | 1 course | ✅ PASS |
-| `students-pt-c1` | `student` | `{"language": "pt", "level": "c1"}` | 1 course | ✅ PASS |
-| `students-el-a1` | `student` | `{"language": "el", "level": "a1"}` | 1 course | ✅ PASS |
-| `students-hy-a1` | `student` | `{"language": "hy", "level": "a1"}` | 1 course | ✅ PASS |
-| `students-hy-c1` | `student` | `{"language": "hy", "level": "c1"}` | 1 course | ✅ PASS |
-| `students-ka-a1` | `student` | `{"language": "ka", "level": "a1"}` | 1 course | ✅ PASS |
-| `students-ka-c1` | `student` | `{"language": "ka", "level": "c1"}` | 1 course | ✅ PASS |
-| `students-tt-a1` | `student` | `{"language": "tt", "level": "a1"}` | 1 course | ✅ PASS |
-| `students-tt-c1` | `student` | `{"language": "tt", "level": "c1"}` | 1 course | ✅ PASS |
-| `students-ba-a1` | `student` | `{"language": "ba", "level": "a1"}` | 1 course | ✅ PASS |
-| `students-ba-c1` | `student` | `{"language": "ba", "level": "c1"}` | 1 course | ✅ PASS |
-| `students-br-a1` | `student` | `{"language": "br", "level": "a1"}` | 1 course | ✅ PASS |
-| `students-br-c1` | `student` | `{"language": "br", "level": "c1"}` | 1 course | ✅ PASS |
+| **General** | English (`en`) | 7 | `roadmaps/general-english-*.json`, `curriculums/en/general/*.json` | ✅ PASS |
+| **General** | French (`fr`) | 6 | `curriculums/fr/general/*.json` | ✅ PASS |
+| **General** | Russian (`ru`) | 6 | `curriculums/ru/general/*.json` | ✅ PASS |
+| **General** | Italian (`it`) | 6 | `curriculums/it/general/*.json` | ✅ PASS |
+| **General** | German (`de`) | 2 | `curriculums/de/general/*.json` | ✅ PASS |
+| **General** | Spanish (`es`) | 2 | `curriculums/es/general/*.json` | ✅ PASS |
+| **General** | Greek (`el`) | 1 | `curriculums/el/general/A1.json` | ✅ PASS |
+| **General** | Portuguese (`pt`) | 2 | `curriculums/pt/general/*.json` | ✅ PASS |
+| **General** | Armenian (`hy`) | 2 | `curriculums/hy/general/*.json` | ✅ PASS |
+| **General** | Georgian (`ka`) | 2 | `curriculums/ka/general/*.json` | ✅ PASS |
+| **General** | Tatar (`tt`) | 2 | `curriculums/tt/general/*.json` | ✅ PASS |
+| **General** | Bashkir (`ba`) | 2 | `curriculums/ba/general/*.json` | ✅ PASS |
+| **General** | Breton (`br`) | 2 | `curriculums/br/general/*.json` | ✅ PASS |
+| **General** | Introductory English (`en`) | 1 | `roadmaps/introductory-english.json` | ✅ PASS |
+| **General** | Phrasal Verbs (`en`) | 3 | `roadmaps/curriculum-phrasal-verbs-english-*.json` | ✅ PASS |
+| **General** | Spoken English (`en`) | 5 | `roadmaps/curriculum-spoken-english-*.json` | ✅ PASS |
+| **General** | Vocabulary Practice (`en`) | 3 | `roadmaps/curriculum-vocabulary-english-*.json` | ✅ PASS |
+| **Exam** | English (`en`), Greek (`el`) | 5 | `curriculums/{en,el}/exam/*.json` | ✅ PASS |
+| **Grammar** | English (`en`) | 6 | `roadmaps/curriculum-grammar-english-*.json` | ✅ PASS |
+| **Professional** | English (`en`), French (`fr`), Russian (`ru`) | 12 | `curriculums/{en,fr,ru}/professional/*.json` | ✅ PASS |
+| **Pronunciation** | English (`en`), French (`fr`), Russian (`ru`) | 18 | `curriculums/{en,fr,ru}/pronunciation/*.json` | ✅ PASS |
+| **Relocation** | English (`en`) | 4 | `curriculums/en/relocation/*.json` | ✅ PASS |
+| **Spoken** | English (`en`), French (`fr`), Russian (`ru`) | 18 | `curriculums/{en,fr,ru}/spoken/*.json` | ✅ PASS |
+| **Travelling** | English (`en`), French (`fr`), Russian (`ru`) | 9 | `curriculums/{en,fr,ru}/travelling/*.json` | ✅ PASS |
 
 ---
 
@@ -114,13 +86,30 @@ Every key in `data/access-grants.json` was evaluated against `shared/js/access-g
 
 ---
 
-## 🎯 Category 5: Access Grant Explicit Course IDs
+## 🎯 Category 5: `curriculumId` Validation in Curriculums
 
-- **Total Explicit Courses Checked:** 9
-- **Resolved:** 9 (100% resolution to existing roadmaps/curriculums).
+- **Total References Checked:** 0
+- **Status:** N/A (Curriculum schemas do not require `curriculumId` top-level fields).
+
+---
+
+## 🔒 Category 6: Portal Access Control Gating Audit
+
+All entry portal HTML files were verified to confirm proper inclusion of `shared/js/auth-guard.js` and execution of `window.CosyAuth.requireRole(...)` on page initialization.
+
+### Verified Portal Gating Table
+
+| Portal File | Included Auth Guard Script | Allowed Roles (`window.CosyAuth.requireRole`) | Status |
+| --- | --- | --- | --- |
+| `founder.html` | `<script src="shared/js/auth-guard.js"></script>` | `['founder']` | ✅ PASS |
+| `teacher.html` | `<script src="shared/js/auth-guard.js"></script>` | `['teacher', 'founder']` | ✅ PASS |
+| `teacher-english.html` | `<script src="shared/js/auth-guard.js"></script>` | `['teacher', 'founder']` | ✅ PASS |
+| `teacher-french.html` | `<script src="shared/js/auth-guard.js"></script>` | `['teacher', 'founder']` | ✅ PASS |
+| `teacher-russian.html` | `<script src="shared/js/auth-guard.js"></script>` | `['teacher', 'founder']` | ✅ PASS |
+| `student.html` | `<script src="shared/js/auth-guard.js"></script>` | `['student', 'teacher', 'founder']` | ✅ PASS |
 
 ---
 
 ## Conclusion
 
-All link audit checks across all 5 categories pass with **ALL CLEAR** status. Platform entry points have consolidated into `hub.html`, and access grants dynamically resolve courses across all 13 active curriculum languages.
+All link and access control audit checks across all 6 categories pass with **ALL CLEAR** status. Platform entry points gate content through Supabase Auth & RLS roles (`auth-guard.js`), and `window.CosyAuth.FULL_MANIFEST` dynamically resolves courses across all 13 active curriculum languages.
