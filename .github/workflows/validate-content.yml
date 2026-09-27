@@ -1,0 +1,27 @@
+name: Validate Content & Integrity
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    name: Content Integrity & Schema Validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Dependencies
+        run: npm ci || npm install
+
+      - name: Run Content Integrity Check
+        run: node scripts/check-content-integrity.js
+
+      - name: Run Schema Validation
+        run: npm run validate

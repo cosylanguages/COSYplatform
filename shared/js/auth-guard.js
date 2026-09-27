@@ -26,7 +26,7 @@ window.CosyAuth.FULL_MANIFEST = [
   {"id": "general-de-b2", "title": "General DE B2", "track": "General", "lang": "de", "level": "b2", "status": "not_yet_available"},
   {"id": "general-de-c1", "title": "General DE C1", "track": "General", "lang": "de", "level": "c1"},
   {"id": "general-de-c2", "title": "General DE C2", "track": "General", "lang": "de", "level": "c2", "status": "not_yet_available"},
-  {"id": "exam-el-c1", "title": "Exam EL C1", "track": "Exam", "lang": "el", "level": "c1"},
+  {"id": "exam-el-c1", "title": "Exam EL C1", "track": "Exam", "lang": "el", "level": "c1", "status": "not_yet_available"},
   {"id": "general-el-a0", "title": "General EL A0", "track": "General", "lang": "el", "level": "a0", "status": "not_yet_available"},
   {"id": "general-el-a1", "title": "General EL A1", "track": "General", "lang": "el", "level": "a1"},
   {"id": "general-el-a2", "title": "General EL A2", "track": "General", "lang": "el", "level": "a2", "status": "not_yet_available"},
