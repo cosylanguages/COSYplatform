@@ -501,11 +501,12 @@
         `;
 
         roadmap.sequence.forEach(item => {
+          const lPath = item.lessonFile || ('lessons/' + courseId + '/' + item.id + '.json');
           html += `
             <div class="unit-card">
               <span style="font-size: 0.75rem; color: #94a3b8; font-weight: 600;">LESSON #${item.lessonNumber}</span>
               <h3 style="margin: 6px 0;">${item.title}</h3>
-              <a href="hub.html?lesson=${encodeURIComponent('lessons/' + courseId + '/' + item.id + '.json')}" class="btn" style="background: var(--hub-primary, #0284c7); text-align: center; margin-top: 10px;">▶ Open Lesson</a>
+              <a href="hub.html?lesson=${encodeURIComponent(lPath)}" class="btn" style="background: var(--hub-primary, #0284c7); text-align: center; margin-top: 10px;">▶ Open Lesson</a>
             </div>
           `;
         });

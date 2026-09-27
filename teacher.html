@@ -641,19 +641,21 @@
         `;
 
         roadmap.sequence.forEach(item => {
-          let lessonPath = "";
-          if (courseId === "general-en-a0" && item.section > 0) {
-            lessonPath = `lessons/general-en-a0/${item.id}.json`;
-          } else if (courseId === "general-en-a1" && item.section > 0) {
-            lessonPath = `lessons/general-en-a1/${item.id}.json`;
-          } else if (item.id === "relaxation-and-hygge" || item.id === "we-are-different") {
-            lessonPath = "lessons/english-b2/relaxation-and-hygge.xml";
-          } else if (item.id === "opposites-attract") {
-            lessonPath = "lessons/english-c1/opposites-attract.xml";
-          } else if (item.id.includes("introductory") || item.section === 0) {
-            lessonPath = "lessons/introductory/introductory-b1.xml";
-          } else {
-            lessonPath = `lessons/${courseId}/${item.id}.json`;
+          let lessonPath = item.lessonFile || "";
+          if (!lessonPath) {
+            if (courseId === "general-en-a0" && item.section > 0) {
+              lessonPath = `lessons/general-en-a0/${item.id}.json`;
+            } else if (courseId === "general-en-a1" && item.section > 0) {
+              lessonPath = `lessons/general-en-a1/${item.id}.json`;
+            } else if (item.id === "relaxation-and-hygge" || item.id === "we-are-different") {
+              lessonPath = "lessons/english-b2/relaxation-and-hygge.xml";
+            } else if (item.id === "opposites-attract") {
+              lessonPath = "lessons/english-c1/opposites-attract.xml";
+            } else if (item.id.includes("introductory") || item.section === 0) {
+              lessonPath = "lessons/introductory/introductory-b1.xml";
+            } else {
+              lessonPath = `lessons/${courseId}/${item.id}.json`;
+            }
           }
 
           html += `

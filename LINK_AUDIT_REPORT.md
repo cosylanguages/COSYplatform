@@ -80,7 +80,7 @@ Following the removal of 59 duplicate roadmap files in `/roadmaps/`, the roadmap
 
 - **Total Active Canonical Roadmaps:** 30
 - **Total Sequence References Checked:** 1418
-- **Active / Resolved Lessons:** 494
+- **Active / Resolved Lessons:** 494 (Mapped via explicit `"lessonFile"` properties documented in `/docs/roadmap-lesson-resolution.json`)
 - **Explicitly Planned Content:** 924 (Marked with `"status": "planned"` in `roadmaps/*.json`).
 
 ---
