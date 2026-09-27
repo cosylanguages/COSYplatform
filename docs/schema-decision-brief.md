@@ -3,7 +3,7 @@
 ## Executive Summary
 
 This brief analyzes the two competing curriculum data schemas in `cosylanguages/COSYplatform`:
-1. **Schema 1 (Legacy Flat Files):** Located at `/curriculums/*.json` (e.g., `curriculums/general-english-a1.json`).
+1. **Schema 1 (Legacy Flat Files):** Archived at `/curriculums/_archive/legacy-flat/*.json` (e.g., `curriculums/_archive/legacy-flat/general-english-a1.json`).
 2. **Schema 2 (Newer Nested Files):** Located at `/curriculums/<lang>/<track>/<LEVEL>.json` (e.g., `curriculums/en/general/A1.json`).
 
 The analysis demonstrates that **Schema 2** is the richer, standardized, multi-language curriculum schema backed by JSON Schema validation (`curriculums/_schema/curriculum.schema.json`). Crucially, an audit of the live application entry points (`student.html`, `teacher.html`, `hub.html`, and `index.html`) reveals that **no runtime renderer directly fetches curriculum files from `/curriculums/`**. Instead, all active views render course structures from `/roadmaps/*.json` files and load lesson bodies from `/lessons/` or Supabase.

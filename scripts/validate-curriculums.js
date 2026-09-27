@@ -14,7 +14,7 @@ function getJsonFiles(dir) {
   list.forEach(file => {
     const filePath = path.join(dir, file);
     const stat = fs.statSync(filePath);
-    if (stat && stat.isDirectory() && file !== "_schema") {
+    if (stat && stat.isDirectory() && file !== "_schema" && file !== "_archive") {
       results = results.concat(getJsonFiles(filePath));
     } else if (file.endsWith(".json") && !file.startsWith("_") && dir !== "curriculums") {
       results.push(filePath);
