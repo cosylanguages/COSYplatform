@@ -520,10 +520,10 @@ def generate_lesson_xml(parsed_data, lesson_id=None):
     return "\n".join(xml_lines)
 
 def register_in_roadmap(lesson_id, title, level, lang="en"):
-    roadmap_filename = f"spoken-english-{level.lower()}.json"
+    roadmap_filename = f"spoken-{lang.lower() if lang else 'en'}-{level.lower()}.json"
     roadmap_path = os.path.join("roadmaps", roadmap_filename)
     if not os.path.exists(roadmap_path):
-        roadmap_filename = f"general-english-{level.lower()}.json"
+        roadmap_filename = f"general-{lang.lower() if lang else 'en'}-{level.lower()}.json"
         roadmap_path = os.path.join("roadmaps", roadmap_filename)
 
     if os.path.exists(roadmap_path):

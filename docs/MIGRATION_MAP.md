@@ -7,7 +7,7 @@ This document maps all source directories from `cosylanguages/COSYmanuals` (and 
 | `curriculums/_schema/` | `curriculums/_schema/` | Copied as-is (curriculum validation JSON schema) |
 | `curriculums/{iso}/{course_type}/{LEVEL}.json` | `curriculums/{iso}/{course_type}/{LEVEL}.json` | Copied all language and course type curriculum JSON files |
 | `curriculums/{english,french,italian,russian,greek}/` | *Skipped* | Skipped legacy folders pending reconciliation decision |
-| `curriculums/_archive/` | *Skipped* | Skipped legacy archive materials |
+| `curriculums/_archive/` | `curriculums/_archive/` | Contains archived legacy flat files (`curriculums/_archive/legacy-flat/`) and historical materials |
 | `marathons/` | *Removed* | Removed from COSYplatform (marathon content lives exclusively in `cosylanguages/COSYmanuals`) |
 | `teacher-guides/` | `teacher-guides/` | Copied as-is (teacher manuals and guides) |
 | `student-workbooks/data/workbooks/{lang}/{level}.json` | `student-workbooks/data/workbooks/{lang}/{level}.json` | Copied normalized workbook data files |

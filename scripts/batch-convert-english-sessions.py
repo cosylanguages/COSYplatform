@@ -82,9 +82,9 @@ def update_roadmaps(converted_items):
 
         if target_rm not in roadmaps:
             if club == 'cinema-club':
-                target_rm = f"cinema-english-{item['level_code']}.json"
+                target_rm = f"cinema-en-{item['level_code']}.json"
             else:
-                target_rm = f"spoken-english-{item['level_code']}.json"
+                target_rm = f"spoken-en-{item['level_code']}.json"
 
         if target_rm not in roadmaps:
             target_rm = "spoken-en-b1.json"

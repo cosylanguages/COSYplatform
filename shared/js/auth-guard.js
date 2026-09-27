@@ -23,7 +23,7 @@ window.CosyAuth.FULL_MANIFEST = [
   { "id": "general-en-b1", "title": "General English B1", "track": "General", "lang": "en", "level": "b1" },
   { "id": "general-en-b2", "title": "General English B2", "track": "General", "lang": "en", "level": "b2" },
   { "id": "general-en-c1", "title": "General English C1", "track": "General", "lang": "en", "level": "c1" },
-  { "id": "general-english-c2", "title": "General English C2", "track": "General", "lang": "en", "level": "c2" },
+  { "id": "general-en-c2", "title": "General English C2", "track": "General", "lang": "en", "level": "c2" },
   { "id": "professional-en-b1", "title": "Professional EN B1", "track": "Professional", "lang": "en", "level": "b1" },
   { "id": "professional-en-b2", "title": "Professional EN B2", "track": "Professional", "lang": "en", "level": "b2" },
   { "id": "professional-en-c1", "title": "Professional EN C1", "track": "Professional", "lang": "en", "level": "c1" },

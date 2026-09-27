@@ -630,11 +630,7 @@
       try {
         const candidates = [
           `roadmaps/${courseId}.json`,
-          `roadmaps/${courseId.replace('-en-', '-english-')}.json`,
-          `roadmaps/${courseId.replace('curriculum-', '')}.json`,
-          `roadmaps/${courseId.replace('curriculum-', '').replace('-en-', '-english-')}.json`,
-          `roadmaps/${courseId.replace('curriculum-english-', 'general-english-')}.json`,
-          `roadmaps/${courseId.replace('general-en-', 'general-english-')}.json`
+          `roadmaps/${courseId.replace('curriculum-', '')}.json`
         ];
 
         let roadmapRes = null;
