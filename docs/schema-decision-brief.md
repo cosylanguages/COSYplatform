@@ -217,7 +217,7 @@ An audit of all JSON files in `/roadmaps/` was conducted to determine how roadma
 
 ---
 
-## 5. Decision & Recommendation
+## 5. Recommendation (Proposed for Human Approval)
 
-> **DECISION & RECOMMENDATION (HUMAN APPROVED):**
-> **Schema 2 (`curriculums/<lang>/<track>/<LEVEL>.json`)** is adopted as the single canonical schema for all curriculum definitions across the platform, and the 24 legacy Schema 1 files (`curriculums/*.json`) are marked for deprecation. Schema 2 is vastly richer (incorporating CEFR Can-Do statements, grammar targets, age adaptations, growing tasks, and lesson codes), is backed by active JSON schema validation (`curriculums/_schema/curriculum.schema.json` via `npm run validate`), and already contains 112 multi-language curriculum definitions. Because all live frontend renderers (`student.html`, `teacher.html`, `hub.html`, and `index.html`) construct user interfaces by loading sequence data from `/roadmaps/*.json` and content from `/lessons/` rather than reading `/curriculums/` directly, standardizing on Schema 2 carries zero risk of breaking live application views.
+> **RECOMMENDATION (FLAGGED FOR HUMAN APPROVAL):**
+> It is recommended that **Schema 2 (`curriculums/<lang>/<track>/<LEVEL>.json`)** be adopted as the single canonical schema for all curriculum definitions across the platform, and that the 24 legacy Schema 1 files (`curriculums/*.json`) be archived or deprecated. Schema 2 is vastly richer (incorporating CEFR Can-Do statements, grammar targets, age adaptations, growing tasks, and lesson codes), is backed by active JSON schema validation (`curriculums/_schema/curriculum.schema.json` via `npm run validate`), and already contains 112 multi-language curriculum definitions. Because all live frontend renderers (`student.html`, `teacher.html`, `hub.html`, and `index.html`) construct user interfaces by loading sequence data from `/roadmaps/*.json` and content from `/lessons/` rather than reading `/curriculums/` directly, standardizing on Schema 2 carries zero risk of breaking live application views. This recommendation is submitted for maintainer review and approval.

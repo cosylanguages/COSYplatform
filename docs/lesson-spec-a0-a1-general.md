@@ -466,13 +466,13 @@ Lessons are organized into directories using full English language names and lev
 lessons/general-<language_name>-<level>/
 ```
 Examples:
-- `lessons/general-english-a1/`
+- `lessons/general-en-a1/`
 - `lessons/general-french-a1/`
 - `lessons/general-italian-a1/`
 - `lessons/general-russian-a1/`
 - `lessons/general-greek-a1/`
 
-> **Note on Language Naming:** Directory names use full English language names (`general-english-a1`), **not** ISO codes in directory paths. Inside the JSON file, the `"language"` property strictly uses the 2-letter ISO 639-1 code (`"en"`, `"fr"`, `"it"`, `"ru"`, `"el"`).
+> **Note on Language Naming:** Directory names use full English language names (`general-en-a1`), **not** ISO codes in directory paths. Inside the JSON file, the `"language"` property strictly uses the 2-letter ISO 639-1 code (`"en"`, `"fr"`, `"it"`, `"ru"`, `"el"`).
 
 ### File Naming Convention
 Lesson JSON files follow a structured module and lesson identifier:

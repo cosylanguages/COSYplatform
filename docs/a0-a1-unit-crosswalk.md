@@ -2,7 +2,7 @@
 
 ## Executive Summary
 
-This crosswalk maps every lesson slot in COSYplatform's **General English A0** (`curriculums/general-english-a0.json`) and **General English A1** (`curriculums/general-english-a1.json`) to the corresponding source lesson in COSYlanguages' **A1 General Curriculum** (`curriculums/en/general/A1.json`).
+This crosswalk maps every lesson slot in COSYplatform's **General English A0** (`curriculums/general-en-a0.json`) and **General English A1** (`curriculums/general-en-a1.json`) to the corresponding source lesson in COSYlanguages' **A1 General Curriculum** (`curriculums/en/general/A1.json`).
 
 * **COSYplatform Skeleton**: 20 units (8 units in A0 + 12 units in A1), totaling 109 lesson slots (including orientation slots, core lessons, optional expansion lessons, progress tests, midterm/final exams, and feedback sessions).
 * **COSYlanguages Source**: 10 units (50 lessons total, 5 lessons per unit).

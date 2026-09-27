@@ -646,10 +646,10 @@
 
         roadmap.sequence.forEach(item => {
           let lessonPath = "";
-          if (courseId === "general-english-a0" && item.section > 0) {
-            lessonPath = `lessons/general-english-a0/${item.id}.json`;
-          } else if (courseId === "general-english-a1" && item.section > 0) {
-            lessonPath = `lessons/general-english-a1/${item.id}.json`;
+          if (courseId === "general-en-a0" && item.section > 0) {
+            lessonPath = `lessons/general-en-a0/${item.id}.json`;
+          } else if (courseId === "general-en-a1" && item.section > 0) {
+            lessonPath = `lessons/general-en-a1/${item.id}.json`;
           } else if (item.id === "relaxation-and-hygge" || item.id === "we-are-different") {
             lessonPath = "lessons/english-b2/relaxation-and-hygge.xml";
           } else if (item.id === "opposites-attract") {

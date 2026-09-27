@@ -217,7 +217,7 @@ Lessons support structured cross-curriculum metadata linking vocabulary target i
       {
         "topic_id": "to-be-present",
         "manual_url": "manuals/grammar/to-be.md",
-        "practice_ref": "grammar-english-a1#lesson-2"
+        "practice_ref": "grammar-en-a1#lesson-2"
       }
     ],
     "communication": [
@@ -243,7 +243,7 @@ Lessons support structured cross-curriculum metadata linking vocabulary target i
       <item>nice to meet you</item>
     </cosy-link-vocabulary>
     <cosy-link-grammar>
-      <topic topic-id="to-be-present" manual-url="manuals/grammar/to-be.md" practice-ref="grammar-english-a1#lesson-2" />
+      <topic topic-id="to-be-present" manual-url="manuals/grammar/to-be.md" practice-ref="grammar-en-a1#lesson-2" />
     </cosy-link-grammar>
     <cosy-link-communication>
       <item>Greeting people</item>

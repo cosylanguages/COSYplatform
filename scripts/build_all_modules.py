@@ -5,7 +5,7 @@ LANGUAGES = ["en", "fr", "it", "ru", "el"]
 MANUAL_URL = "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/to-be.html"
 
 LANG_DIR_MAP = {
-    "en": "general-english-a1",
+    "en": "general-en-a1",
     "fr": "general-french-a1",
     "it": "general-italian-a1",
     "ru": "general-russian-a1",

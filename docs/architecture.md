@@ -13,7 +13,7 @@ This repository serves as the central content repository for all curriculums, ro
 Platform access control is managed via URL parameters (e.g. `?key=unique-token`) checked in the browser against `data/access-grants.json` using the client-side helper module `shared/js/access-grants.js`. The system supports two distinct grant types:
 
 ### 1. Explicit Course Grants (`"courses": [...]`)
-- **Structure**: An array of exact course IDs or the wildcard `"*"` (e.g., `["general-english-a1", "spoken-english-a1"]`).
+- **Structure**: An array of exact course IDs or the wildcard `"*"` (e.g., `["general-en-a1", "spoken-en-a1"]`).
 - **Resolution**: Evaluated via direct string matching.
 - **When to Use**: Ideal for individual student enrollments, targeted trial keys, or master teacher keys requiring explicit static boundaries or full unrestricted access (`"*"`).
 

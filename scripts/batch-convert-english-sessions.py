@@ -87,7 +87,7 @@ def update_roadmaps(converted_items):
                 target_rm = f"spoken-english-{item['level_code']}.json"
 
         if target_rm not in roadmaps:
-            target_rm = "spoken-english-b1.json"
+            target_rm = "spoken-en-b1.json"
 
         sequence = roadmaps[target_rm].get("sequence", [])
 
