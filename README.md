@@ -47,6 +47,7 @@ Welcome to the **COSYplatform Content Repository**! This repository hosts all in
 ├── founder.html                 # Founder executive management portal
 ├── teacher.html                 # Teacher classroom portal & guide
 ├── student.html                 # Learner interactive workspace portal
+├── classroom.html               # Live interactive classroom with Jitsi video & PeerJS P2P sync
 ├── hub.html                     # Live course hub viewer
 ├── index.html                   # Unauthenticated public catalog browser
 └── login.html                   # Supabase authentication portal
@@ -63,6 +64,7 @@ Welcome to the **COSYplatform Content Repository**! This repository hosts all in
 - **Utility Drawers:** Instant sticky sidebar access to the COSYdata vocabulary dictionary lookup, irregular verb reference tables, and a configurable classroom timer.
 - **Local Response Persistence:** Student inputs (`cosy-input`, `cosy-select`, `cosy-test`, `cosy-dnd-text`, `cosy-essay`) automatically persist state locally in browser `localStorage`.
 - **Standalone Worksheet Print Styles:** `@media print` rules enable printing or exporting interactive lessons as offline PDF worksheets without loss of content.
+- **Live Interactive Classroom (`classroom.html`):** Embedded Jitsi Meet WebRTC video calling, PeerJS peer-to-peer live state synchronization (slides, blanks, whiteboard drawing strokes, chat), Web Speech API audio vocabulary cards, interactive fill-in-the-blanks with instant verification, and collaborative canvas drawing practice.
 
 ---
 

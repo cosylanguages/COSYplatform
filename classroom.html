@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COSYlanguages - Live Interactive Classroom</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Jitsi Meet IFrame API -->
+  <script src="https://meet.jit.si/external_api.js"></script>
+  <!-- PeerJS WebRTC Library -->
+  <script src="https://unpkg.com/peerjs@1.5.2/dist/peerjs.min.js"></script>
+  <!-- Design Tokens -->
+  <link rel="stylesheet" href="shared/css/tokens.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cosy: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              200: '#bae6fd',
+              500: '#0284c7',
+              600: '#0369a1',
+              700: '#075985',
+              800: '#0c4a6e',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .canvas-container canvas {
+      touch-action: none;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 h-screen flex flex-col font-sans overflow-hidden">
+
+  <!-- Header Navigation -->
+  <header class="bg-white border-b border-cosy-100 px-4 py-2.5 flex items-center justify-between shadow-sm z-10 flex-wrap gap-2">
+    <!-- Brand / Title -->
+    <div class="flex items-center space-x-3">
+      <div class="w-9 h-9 rounded-xl bg-cosy-500 text-white flex items-center justify-center font-bold text-lg shadow-sm">
+        <i class="fa-solid fa-graduation-cap"></i>
+      </div>
+      <div>
+        <h1 class="text-sm font-bold text-gray-900 leading-tight">Cosy Languages</h1>
+        <p class="text-[11px] text-cosy-600 font-medium">Live Interactive Classroom</p>
+      </div>
+    </div>
+
+    <!-- Center Navigation / Room Info -->
+    <div class="flex items-center space-x-2 bg-cosy-50 p-1.5 rounded-xl border border-cosy-200 text-sm">
+      <span class="text-xs text-gray-500 font-medium px-2">Room ID:</span>
+      <span id="display-room-id" class="font-mono font-bold text-cosy-700 select-all">------</span>
+      <button onclick="copyShareLink()" title="Copy Share Link" class="px-2 py-1 bg-white hover:bg-cosy-100 rounded-lg text-xs font-medium text-cosy-700 shadow-sm transition border border-gray-200">
+        <i class="fa-regular fa-copy mr-1"></i>Copy Link
+      </button>
+    </div>
+
+    <!-- Status & Role Selector -->
+    <div class="flex items-center space-x-3 text-xs">
+      <div id="connection-status" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-yellow-100 text-yellow-800 font-medium">
+        <span id="status-dot" class="w-2 h-2 rounded-full bg-yellow-500 animate-pulse"></span>
+        <span id="status-text">Ready to Host / Join</span>
+      </div>
+
+      <!-- Role Selector Switcher -->
+      <div class="bg-gray-100 p-1 rounded-xl flex items-center">
+        <button id="role-teacher-btn" onclick="switchRole('teacher')" class="px-3 py-1 rounded-lg font-medium transition shadow-sm bg-white text-cosy-700">
+          <i class="fa-solid fa-chalkboard-user mr-1"></i> Teacher
+        </button>
+        <button id="role-student-btn" onclick="switchRole('student')" class="px-3 py-1 rounded-lg font-medium text-gray-500 transition">
+          <i class="fa-solid fa-user-graduate mr-1"></i> Student
+        </button>
+      </div>
+
+      <a href="hub.html" class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 rounded-xl text-xs font-medium text-gray-600 transition">
+        ← Hub
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Workspace Area -->
+  <div class="flex-1 flex flex-col md:flex-row overflow-hidden relative">
+
+    <!-- Left Sidebar: Video Call & Room Controls -->
+    <aside class="w-full md:w-80 lg:w-96 bg-white border-r border-cosy-100 flex flex-col h-1/3 md:h-full z-0">
+
+      <!-- Room Connection Controls Box -->
+      <div id="room-controls-card" class="p-3 border-b border-cosy-100 bg-cosy-50/50">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs font-semibold uppercase text-gray-500 tracking-wider">Classroom Connection</span>
+          <button onclick="toggleGithubGuideModal()" class="text-xs text-cosy-500 hover:underline">
+            <i class="fa-solid fa-circle-info mr-1"></i>Hosting Guide
+          </button>
+        </div>
+
+        <div class="flex flex-col space-y-2">
+          <div class="flex space-x-2">
+            <input type="text" id="target-room-input" placeholder="Enter Room ID to Join..." class="flex-1 px-3 py-1.5 text-xs rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-cosy-500">
+            <button onclick="joinRoomFromInput()" class="px-3 py-1.5 bg-cosy-700 text-white text-xs font-medium rounded-xl hover:bg-cosy-800 transition">
+              Join
+            </button>
+          </div>
+          <button id="host-btn" onclick="initHost()" class="w-full py-1.5 bg-cosy-500 text-white text-xs font-medium rounded-xl hover:bg-cosy-600 transition shadow-sm">
+            <i class="fa-solid fa-plus mr-1"></i> Create New Room as Host
+          </button>
+        </div>
+      </div>
+
+      <!-- Embedded Video Container -->
+      <div class="flex-1 bg-gray-900 relative flex items-center justify-center min-h-[180px]">
+        <div id="jitsi-container" class="w-full h-full"></div>
+        <div id="jitsi-placeholder" class="text-center p-4 text-gray-400">
+          <i class="fa-solid fa-video-slash text-3xl mb-2 opacity-50"></i>
+          <p class="text-xs">Video call inactive.</p>
+          <button onclick="startVideoCall()" class="mt-2 px-3 py-1.5 bg-cosy-500 text-white rounded-lg text-xs font-medium hover:bg-cosy-600 transition">
+            Launch Video Call
+          </button>
+        </div>
+      </div>
+
+      <!-- Quick Chat Drawer inside Sidebar -->
+      <div class="h-44 border-t border-cosy-100 flex flex-col bg-white">
+        <div class="px-3 py-1.5 bg-gray-50 border-b border-gray-100 text-xs font-semibold text-gray-600 flex justify-between items-center">
+          <span><i class="fa-regular fa-comments mr-1"></i> Class Chat</span>
+          <span id="chat-count" class="text-[10px] bg-cosy-200 text-cosy-800 px-1.5 py-0.5 rounded-full">0</span>
+        </div>
+        <div id="chat-messages" class="flex-1 p-2 overflow-y-auto text-xs space-y-2">
+          <div class="text-center text-gray-400 text-[11px] my-1">System: Connected to live lesson.</div>
+        </div>
+        <div class="p-2 border-t border-gray-100 flex space-x-1">
+          <input type="text" id="chat-input" placeholder="Type message..." onkeypress="handleChatKeyPress(event)" class="flex-1 px-2.5 py-1 text-xs border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-cosy-500">
+          <button onclick="sendChatMessage()" class="px-2.5 py-1 bg-cosy-500 text-white rounded-lg text-xs hover:bg-cosy-600 transition">
+            <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Right Panel: Lesson Content Board -->
+    <section class="flex-1 flex flex-col bg-cosy-50/50 overflow-hidden relative">
+
+      <!-- Slide Toolbar Control -->
+      <div class="bg-white px-4 py-2 border-b border-cosy-100 flex items-center justify-between shadow-sm">
+        <div class="flex items-center space-x-3">
+          <span class="text-xs font-semibold text-cosy-500 bg-cosy-50 px-2.5 py-1 rounded-lg border border-cosy-200">
+            <i class="fa-solid fa-book-open mr-1"></i> <span id="lesson-title">Lesson 1: Spanish Greetings</span>
+          </span>
+          <span class="text-xs text-gray-500 font-medium">
+            Slide <span id="current-slide-num">1</span> of <span id="total-slides-num">3</span>
+          </span>
+        </div>
+
+        <div class="flex items-center space-x-2">
+          <button id="prev-slide-btn" onclick="navigateSlide(-1)" class="p-2 rounded-xl border border-gray-200 bg-white text-gray-600 hover:bg-cosy-50 hover:text-cosy-700 disabled:opacity-40 disabled:cursor-not-allowed transition">
+            <i class="fa-solid fa-chevron-left text-xs"></i>
+          </button>
+          <button id="next-slide-btn" onclick="navigateSlide(1)" class="p-2 rounded-xl border border-gray-200 bg-white text-gray-600 hover:bg-cosy-50 hover:text-cosy-700 disabled:opacity-40 disabled:cursor-not-allowed transition">
+            <i class="fa-solid fa-chevron-right text-xs"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Dynamic Classroom Canvas / Slide Display Area -->
+      <div class="flex-1 p-4 md:p-6 overflow-y-auto relative flex flex-col items-center justify-center">
+
+        <!-- SLIDE 1: Interactive Audio Vocabulary Cards -->
+        <div id="slide-1" class="slide-content w-full max-w-3xl space-y-4">
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-cosy-100">
+            <h2 class="text-xl font-bold text-cosy-700 mb-2">1. Essential Vocabulary / Vocabulario</h2>
+            <p class="text-sm text-gray-600 mb-6">Listen to the pronunciation and practice repeating with your teacher.</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <!-- Vocab Card 1 -->
+              <div class="p-4 rounded-xl border border-cosy-100 bg-cosy-50/30 flex justify-between items-center hover:border-cosy-500 transition group">
+                <div>
+                  <div class="text-lg font-bold text-cosy-800">¡Hola!</div>
+                  <div class="text-xs text-gray-500">Hello / Hi</div>
+                </div>
+                <button onclick="speakText('¡Hola!', 'es-ES')" class="w-10 h-10 rounded-xl bg-cosy-500 text-white flex items-center justify-center shadow-sm group-hover:scale-105 transition">
+                  <i class="fa-solid fa-volume-high"></i>
+                </button>
+              </div>
+
+              <!-- Vocab Card 2 -->
+              <div class="p-4 rounded-xl border border-cosy-100 bg-cosy-50/30 flex justify-between items-center hover:border-cosy-500 transition group">
+                <div>
+                  <div class="text-lg font-bold text-cosy-800">¿Cómo estás?</div>
+                  <div class="text-xs text-gray-500">How are you?</div>
+                </div>
+                <button onclick="speakText('¿Cómo estás?', 'es-ES')" class="w-10 h-10 rounded-xl bg-cosy-500 text-white flex items-center justify-center shadow-sm group-hover:scale-105 transition">
+                  <i class="fa-solid fa-volume-high"></i>
+                </button>
+              </div>
+
+              <!-- Vocab Card 3 -->
+              <div class="p-4 rounded-xl border border-cosy-100 bg-cosy-50/30 flex justify-between items-center hover:border-cosy-500 transition group">
+                <div>
+                  <div class="text-lg font-bold text-cosy-800">Buenos días</div>
+                  <div class="text-xs text-gray-500">Good morning</div>
+                </div>
+                <button onclick="speakText('Buenos días', 'es-ES')" class="w-10 h-10 rounded-xl bg-cosy-500 text-white flex items-center justify-center shadow-sm group-hover:scale-105 transition">
+                  <i class="fa-solid fa-volume-high"></i>
+                </button>
+              </div>
+
+              <!-- Vocab Card 4 -->
+              <div class="p-4 rounded-xl border border-cosy-100 bg-cosy-50/30 flex justify-between items-center hover:border-cosy-500 transition group">
+                <div>
+                  <div class="text-lg font-bold text-cosy-800">Mucho gusto</div>
+                  <div class="text-xs text-gray-500">Nice to meet you</div>
+                </div>
+                <button onclick="speakText('Mucho gusto', 'es-ES')" class="w-10 h-10 rounded-xl bg-cosy-500 text-white flex items-center justify-center shadow-sm group-hover:scale-105 transition">
+                  <i class="fa-solid fa-volume-high"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 2: Interactive Fill in the Blanks Exercise -->
+        <div id="slide-2" class="slide-content w-full max-w-3xl space-y-4 hidden">
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-cosy-100">
+            <h2 class="text-xl font-bold text-cosy-700 mb-2">2. Interactive Exercise: Fill in the Blanks</h2>
+            <p class="text-sm text-gray-600 mb-6">Complete the dialogue by typing the correct word. State syncs live!</p>
+
+            <div class="space-y-6">
+              <!-- Exercise Question 1 -->
+              <div class="p-4 rounded-xl bg-cosy-50/50 border border-cosy-100 space-y-2">
+                <div class="text-xs font-semibold text-cosy-500 uppercase tracking-wide">Dialogue 1</div>
+                <div class="text-base text-cosy-800 flex flex-wrap items-center gap-2">
+                  <span>A: ¡Hola! ¿Cómo</span>
+                  <input type="text" id="blank-1" oninput="handleBlankInput('blank-1', event.target.value)" placeholder="type here..." class="px-3 py-1 border-2 border-cosy-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-cosy-500 text-center font-bold text-cosy-700 w-32 bg-white">
+                  <span>?</span>
+                </div>
+                <div class="text-base text-cosy-800">
+                  <span>B: ¡Muy bien, gracias!</span>
+                </div>
+                <div id="feedback-1" class="text-xs font-medium mt-1 min-h-[18px]"></div>
+              </div>
+
+              <!-- Exercise Question 2 -->
+              <div class="p-4 rounded-xl bg-cosy-50/50 border border-cosy-100 space-y-2">
+                <div class="text-xs font-semibold text-cosy-500 uppercase tracking-wide">Dialogue 2</div>
+                <div class="text-base text-cosy-800 flex flex-wrap items-center gap-2">
+                  <span>A: Me llamo Sofia. ¿Mucho</span>
+                  <input type="text" id="blank-2" oninput="handleBlankInput('blank-2', event.target.value)" placeholder="type here..." class="px-3 py-1 border-2 border-cosy-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-cosy-500 text-center font-bold text-cosy-700 w-32 bg-white">
+                  <span>!</span>
+                </div>
+                <div id="feedback-2" class="text-xs font-medium mt-1 min-h-[18px]"></div>
+              </div>
+
+              <div class="flex justify-end space-x-3 pt-2">
+                <button onclick="checkAnswers()" class="px-5 py-2 bg-cosy-500 text-white font-medium rounded-xl hover:bg-cosy-600 transition shadow-sm text-sm">
+                  <i class="fa-solid fa-check-double mr-1.5"></i> Check Answers
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 3: Synced Collaborative Whiteboard -->
+        <div id="slide-3" class="slide-content w-full max-w-3xl h-full flex flex-col hidden">
+          <div class="bg-white rounded-2xl p-4 shadow-sm border border-cosy-100 flex-1 flex flex-col">
+
+            <div class="flex flex-wrap items-center justify-between pb-3 border-b border-gray-100 gap-2">
+              <div>
+                <h2 class="text-lg font-bold text-cosy-700">3. Live Collaborative Whiteboard</h2>
+                <p class="text-xs text-gray-500">Draw or write letters together live.</p>
+              </div>
+
+              <!-- Whiteboard Controls -->
+              <div class="flex items-center space-x-3">
+                <!-- Color Picker -->
+                <div class="flex items-center space-x-1">
+                  <button onclick="setBrushColor('#2b2d42')" class="w-6 h-6 rounded-full bg-[#2b2d42] ring-2 ring-offset-1 ring-transparent focus:ring-cosy-500"></button>
+                  <button onclick="setBrushColor('#e07a5f')" class="w-6 h-6 rounded-full bg-[#e07a5f] ring-2 ring-offset-1 ring-transparent focus:ring-cosy-500"></button>
+                  <button onclick="setBrushColor('#81b29a')" class="w-6 h-6 rounded-full bg-[#81b29a] ring-2 ring-offset-1 ring-transparent focus:ring-cosy-500"></button>
+                  <button onclick="setBrushColor('#3d405b')" class="w-6 h-6 rounded-full bg-[#3d405b] ring-2 ring-offset-1 ring-transparent focus:ring-cosy-500"></button>
+                </div>
+
+                <!-- Stroke Size -->
+                <select id="brush-size" onchange="setBrushSize(this.value)" class="text-xs border border-gray-200 rounded-lg px-2 py-1 focus:outline-none">
+                  <option value="2">Thin</option>
+                  <option value="5" selected>Medium</option>
+                  <option value="10">Thick</option>
+                </select>
+
+                <!-- Clear Button -->
+                <button onclick="clearWhiteboard(true)" class="px-3 py-1 bg-red-50 text-red-600 border border-red-200 rounded-lg text-xs font-medium hover:bg-red-100 transition">
+                  <i class="fa-solid fa-trash mr-1"></i> Clear
+                </button>
+              </div>
+            </div>
+
+            <!-- Canvas Area -->
+            <div class="flex-1 relative mt-3 rounded-xl border border-gray-200 bg-white overflow-hidden canvas-container min-h-[300px]">
+              <canvas id="whiteboard" class="w-full h-full cursor-crosshair block"></canvas>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <!-- GitHub Pages Hosting Guide Modal -->
+  <div id="github-guide-modal" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-2xl max-w-lg w-full p-6 space-y-4 shadow-xl border border-cosy-100">
+      <div class="flex items-center justify-between pb-2 border-b border-gray-100">
+        <div class="flex items-center space-x-2 text-cosy-500">
+          <i class="fa-brands fa-github text-2xl"></i>
+          <h3 class="text-lg font-bold text-cosy-700">Deploying on GitHub Pages</h3>
+        </div>
+        <button onclick="toggleGithubGuideModal()" class="text-gray-400 hover:text-gray-600 text-lg">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="text-xs text-gray-600 space-y-2.5">
+        <p>This virtual classroom is <strong>100% static</strong> (HTML, JS, CSS) and requires zero server-side code. You can host it completely free on GitHub Pages:</p>
+
+        <ol class="list-decimal list-inside space-y-1.5 pl-1 font-medium text-gray-700">
+          <li>Create or open your GitHub repo (e.g., <code class="bg-gray-100 px-1 py-0.5 rounded">cosylanguages</code>).</li>
+          <li>Add this <code class="bg-gray-100 px-1 py-0.5 rounded">classroom.html</code> file to the root of your repository.</li>
+          <li>Go to <strong>Settings &gt; Pages</strong> in your GitHub repository.</li>
+          <li>Select the <code class="bg-gray-100 px-1 py-0.5 rounded">main</code> branch and click <strong>Save</strong>.</li>
+          <li>Your app will be live at <code class="bg-gray-100 px-1 py-0.5 rounded">https://yourusername.github.io/cosylanguages/classroom.html</code>!</li>
+        </ol>
+
+        <div class="p-3 bg-cosy-50 border border-cosy-200 rounded-xl">
+          <p class="font-semibold text-cosy-700 mb-1">How PeerJS Real-time Sync Works:</p>
+          <p class="text-[11px] text-gray-600">
+            PeerJS connects both browsers directly via WebRTC data channels using a free public signaling server (<code class="font-mono">0.peerjs.com</code>). No backend installation required!
+          </p>
+        </div>
+      </div>
+
+      <div class="text-right">
+        <button onclick="toggleGithubGuideModal()" class="px-4 py-2 bg-cosy-700 text-white text-xs font-medium rounded-xl hover:bg-cosy-800 transition">
+          Got it!
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Application Core -->
+  <script>
+    // Platform State Management
+    let currentRole = 'teacher';
+    let peer = null;
+    let conn = null;
+    let connections = [];
+    let roomId = '';
+    let currentSlide = 1;
+    const totalSlides = 3;
+    let jitsiApi = null;
+    let chatCount = 0;
+
+    // Whiteboard Canvas State
+    let canvas, ctx;
+    let isDrawing = false;
+    let lastX = 0;
+    let lastY = 0;
+    let brushColor = '#2b2d42';
+    let brushSize = 5;
+
+    // Correct Answers Map
+    const answersMap = {
+      'blank-1': 'estás',
+      'blank-2': 'gusto'
+    };
+
+    // Initialize Page Application
+    window.addEventListener('DOMContentLoaded', () => {
+      initWhiteboard();
+      updateSlideToolbar();
+
+      // Auto-join room from URL search query if provided
+      const params = new URLSearchParams(window.location.search);
+      const urlRoom = params.get('room');
+      if (urlRoom) {
+        document.getElementById('target-room-input').value = urlRoom;
+        joinRoomFromInput();
+      }
+    });
+
+    // Role Switching Logic
+    function switchRole(role) {
+      currentRole = role;
+      const teacherBtn = document.getElementById('role-teacher-btn');
+      const studentBtn = document.getElementById('role-student-btn');
+
+      if (role === 'teacher') {
+        teacherBtn.className = 'px-3 py-1 rounded-lg font-medium transition shadow-sm bg-white text-cosy-700';
+        studentBtn.className = 'px-3 py-1 rounded-lg font-medium text-gray-500 transition hover:text-gray-700';
+      } else {
+        studentBtn.className = 'px-3 py-1 rounded-lg font-medium transition shadow-sm bg-white text-cosy-700';
+        teacherBtn.className = 'px-3 py-1 rounded-lg font-medium text-gray-500 transition hover:text-gray-700';
+      }
+
+      sendData({ type: 'role', role: role });
+    }
+
+    // Generate Short Room ID
+    function generateRoomId() {
+      return 'cosy-' + Math.random().toString(36).substring(2, 8);
+    }
+
+    // Initialize Host Room (PeerJS)
+    function initHost() {
+      roomId = generateRoomId();
+      document.getElementById('display-room-id').innerText = roomId;
+      updateStatus('Connecting Host...', 'yellow');
+
+      if (peer) peer.destroy();
+      peer = new Peer(roomId);
+
+      peer.on('open', (id) => {
+        updateStatus('Hosting Room (Connected)', 'green');
+        addChatMessage('System', `Room created with ID: ${id}`);
+      });
+
+      peer.on('connection', (c) => {
+        conn = c;
+        connections.push(c);
+        setupConnection(c);
+        addChatMessage('System', 'A student connected to the session.');
+        updateStatus('Student Connected', 'green');
+
+        // Sync initial state to newly connected student
+        sendData({ type: 'slide', slide: currentSlide });
+      });
+
+      peer.on('error', (err) => {
+        console.error(err);
+        updateStatus('PeerJS Error', 'red');
+      });
+    }
+
+    // Join Existing Room
+    function joinRoomFromInput() {
+      const inputId = document.getElementById('target-room-input').value.trim();
+      if (!inputId) {
+        alert('Please enter a valid Room ID.');
+        return;
+      }
+
+      roomId = inputId;
+      document.getElementById('display-room-id').innerText = roomId;
+      updateStatus('Joining Room...', 'yellow');
+
+      if (peer) peer.destroy();
+      peer = new Peer();
+
+      peer.on('open', () => {
+        conn = peer.connect(roomId);
+        setupConnection(conn);
+      });
+
+      peer.on('error', (err) => {
+        console.error(err);
+        updateStatus('Failed to join room', 'red');
+      });
+    }
+
+    // Setup WebRTC Connection Listener
+    function setupConnection(c) {
+      c.on('open', () => {
+        updateStatus('Live Synchronized', 'green');
+        addChatMessage('System', 'WebRTC Data Channel active.');
+      });
+
+      c.on('data', (data) => {
+        handleIncomingData(data);
+      });
+
+      c.on('close', () => {
+        updateStatus('Peer Disconnected', 'yellow');
+        addChatMessage('System', 'Peer left the session.');
+      });
+    }
+
+    // Broadcast Data to Peers
+    function sendData(data) {
+      if (conn && conn.open) {
+        conn.send(data);
+      }
+      connections.forEach(c => {
+        if (c && c.open) c.send(data);
+      });
+    }
+
+    // Handle incoming PeerJS data packet
+    function handleIncomingData(data) {
+      if (!data) return;
+
+      switch (data.type) {
+        case 'slide':
+          if (data.slide) goToSlide(data.slide, false);
+          break;
+        case 'blank':
+          if (data.id && data.value !== undefined) {
+            const input = document.getElementById(data.id);
+            if (input) input.value = data.value;
+          }
+          break;
+        case 'whiteboard-draw':
+          drawOnCanvas(data.lastX, data.lastY, data.x, data.y, data.color, data.size, false);
+          break;
+        case 'whiteboard-clear':
+          clearWhiteboard(false);
+          break;
+        case 'chat':
+          addChatMessage(data.sender, data.message, data.time);
+          break;
+        case 'role':
+          addChatMessage('System', `Peer switched role to ${data.role}`);
+          break;
+      }
+    }
+
+    // Update Connection Status UI
+    function updateStatus(text, color) {
+      const statusText = document.getElementById('status-text');
+      const statusDot = document.getElementById('status-dot');
+      const statusContainer = document.getElementById('connection-status');
+
+      statusText.innerText = text;
+
+      if (color === 'green') {
+        statusContainer.className = 'flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-green-100 text-green-800 font-medium';
+        statusDot.className = 'w-2 h-2 rounded-full bg-green-500 animate-pulse';
+      } else if (color === 'red') {
+        statusContainer.className = 'flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-red-100 text-red-800 font-medium';
+        statusDot.className = 'w-2 h-2 rounded-full bg-red-500';
+      } else {
+        statusContainer.className = 'flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-yellow-100 text-yellow-800 font-medium';
+        statusDot.className = 'w-2 h-2 rounded-full bg-yellow-500 animate-pulse';
+      }
+    }
+
+    // Copy Share Link
+    function copyShareLink() {
+      if (!roomId || roomId === '------') {
+        alert('Please create or join a room first.');
+        return;
+      }
+      const link = `${window.location.origin}${window.location.pathname}?room=${roomId}`;
+      navigator.clipboard.writeText(link).then(() => {
+        alert(`Share link copied to clipboard!\n${link}`);
+      }).catch(() => {
+        prompt('Copy room link:', link);
+      });
+    }
+
+    // Launch Embedded Jitsi Video Call
+    function startVideoCall() {
+      const roomName = roomId && roomId !== '------' ? `cosy-languages-${roomId}` : `cosy-languages-room-${Math.floor(Math.random()*10000)}`;
+      document.getElementById('jitsi-placeholder').classList.add('hidden');
+
+      const domain = 'meet.jit.si';
+      const options = {
+        roomName: roomName,
+        width: '100%',
+        height: '100%',
+        parentNode: document.querySelector('#jitsi-container'),
+        userInfo: {
+          displayName: currentRole === 'teacher' ? 'Teacher' : 'Student'
+        },
+        configOverwrite: {
+          startWithAudioMuted: false,
+          disableDeepLinking: true
+        },
+        interfaceConfigOverwrite: {
+          TOOLBAR_BUTTONS: [
+            'microphone', 'camera', 'desktop', 'fullscreen',
+            'fittings', 'raisehand', 'tileview'
+          ]
+        }
+      };
+
+      try {
+        if (jitsiApi) jitsiApi.dispose();
+        jitsiApi = new JitsiMeetExternalAPI(domain, options);
+      } catch (err) {
+        console.error('Jitsi error:', err);
+        alert('Could not initialize video call frame.');
+      }
+    }
+
+    // Slide Navigation
+    function navigateSlide(direction) {
+      const target = currentSlide + direction;
+      if (target >= 1 && target <= totalSlides) {
+        goToSlide(target, true);
+      }
+    }
+
+    function goToSlide(slideNum, broadcast = true) {
+      currentSlide = slideNum;
+
+      for (let i = 1; i <= totalSlides; i++) {
+        const slideEl = document.getElementById(`slide-${i}`);
+        if (slideEl) {
+          if (i === currentSlide) {
+            slideEl.classList.remove('hidden');
+          } else {
+            slideEl.classList.add('hidden');
+          }
+        }
+      }
+
+      updateSlideToolbar();
+
+      if (currentSlide === 3) {
+        setTimeout(resizeCanvas, 100);
+      }
+
+      if (broadcast) {
+        sendData({ type: 'slide', slide: currentSlide });
+      }
+    }
+
+    function updateSlideToolbar() {
+      document.getElementById('current-slide-num').innerText = currentSlide;
+      document.getElementById('total-slides-num').innerText = totalSlides;
+
+      const prevBtn = document.getElementById('prev-slide-btn');
+      const nextBtn = document.getElementById('next-slide-btn');
+
+      if (prevBtn) prevBtn.disabled = currentSlide === 1;
+      if (nextBtn) nextBtn.disabled = currentSlide === totalSlides;
+    }
+
+    // Web Speech API Text-To-Speech
+    function speakText(text, lang = 'es-ES') {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel(); // Stop ongoing speech
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = lang;
+        utterance.rate = 0.9;
+        window.speechSynthesis.speak(utterance);
+      } else {
+        alert('Text-to-speech is not supported in this browser.');
+      }
+    }
+
+    // Exercise Fill-in-Blank handler
+    function handleBlankInput(id, val) {
+      sendData({ type: 'blank', id: id, value: val });
+    }
+
+    function checkAnswers() {
+      for (const [id, answer] of Object.entries(answersMap)) {
+        const input = document.getElementById(id);
+        const feedback = document.getElementById(`feedback-${id.replace('blank-', '')}`);
+
+        if (input && feedback) {
+          const userVal = input.value.trim().toLowerCase();
+          if (userVal === answer.toLowerCase()) {
+            input.classList.remove('border-cosy-200', 'border-red-500');
+            input.classList.add('border-green-500', 'bg-green-50');
+            feedback.innerHTML = '<span class="text-green-600 font-bold"><i class="fa-solid fa-check mr-1"></i>Correct!</span>';
+          } else {
+            input.classList.remove('border-cosy-200', 'border-green-500');
+            input.classList.add('border-red-500', 'bg-red-50');
+            feedback.innerHTML = `<span class="text-red-600 font-bold"><i class="fa-solid fa-xmark mr-1"></i>Incorrect. Answer: ${answer}</span>`;
+          }
+        }
+      }
+    }
+
+    // Collaborative Whiteboard
+    function initWhiteboard() {
+      canvas = document.getElementById('whiteboard');
+      if (!canvas) return;
+      ctx = canvas.getContext('2d');
+
+      resizeCanvas();
+      window.addEventListener('resize', resizeCanvas);
+
+      // Mouse Listeners
+      canvas.addEventListener('mousedown', startDrawing);
+      canvas.addEventListener('mousemove', draw);
+      canvas.addEventListener('mouseup', stopDrawing);
+      canvas.addEventListener('mouseleave', stopDrawing);
+
+      // Touch Listeners
+      canvas.addEventListener('touchstart', handleTouchStart, { passive: false });
+      canvas.addEventListener('touchmove', handleTouchMove, { passive: false });
+      canvas.addEventListener('touchend', stopDrawing);
+    }
+
+    function resizeCanvas() {
+      if (!canvas) return;
+      const rect = canvas.parentElement.getBoundingClientRect();
+      if (rect.width > 0 && rect.height > 0) {
+        // Save current canvas content before resize
+        const tempCanvas = document.createElement('canvas');
+        tempCanvas.width = canvas.width;
+        tempCanvas.height = canvas.height;
+        const tempCtx = tempCanvas.getContext('2d');
+        if (canvas.width > 0) tempCtx.drawImage(canvas, 0, 0);
+
+        canvas.width = rect.width;
+        canvas.height = rect.height;
+
+        // Restore image
+        ctx.drawImage(tempCanvas, 0, 0);
+      }
+    }
+
+    function setBrushColor(color) {
+      brushColor = color;
+    }
+
+    function setBrushSize(size) {
+      brushSize = parseInt(size, 10);
+    }
+
+    function getCanvasPos(e) {
+      const rect = canvas.getBoundingClientRect();
+      return {
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top
+      };
+    }
+
+    function startDrawing(e) {
+      isDrawing = true;
+      const pos = getCanvasPos(e);
+      lastX = pos.x;
+      lastY = pos.y;
+    }
+
+    function draw(e) {
+      if (!isDrawing) return;
+      const pos = getCanvasPos(e);
+      drawOnCanvas(lastX, lastY, pos.x, pos.y, brushColor, brushSize, true);
+      lastX = pos.x;
+      lastY = pos.y;
+    }
+
+    function handleTouchStart(e) {
+      e.preventDefault();
+      if (e.touches.length > 0) {
+        startDrawing(e.touches[0]);
+      }
+    }
+
+    function handleTouchMove(e) {
+      e.preventDefault();
+      if (e.touches.length > 0) {
+        draw(e.touches[0]);
+      }
+    }
+
+    function stopDrawing() {
+      isDrawing = false;
+    }
+
+    function drawOnCanvas(x1, y1, x2, y2, color, size, broadcast = true) {
+      if (!ctx) return;
+      ctx.beginPath();
+      ctx.strokeStyle = color;
+      ctx.lineWidth = size;
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+      ctx.moveTo(x1, y1);
+      ctx.lineTo(x2, y2);
+      ctx.stroke();
+      ctx.closePath();
+
+      if (broadcast) {
+        sendData({
+          type: 'whiteboard-draw',
+          lastX: x1,
+          lastY: y1,
+          x: x2,
+          y: y2,
+          color: color,
+          size: size
+        });
+      }
+    }
+
+    function clearWhiteboard(broadcast = true) {
+      if (!ctx || !canvas) return;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      if (broadcast) {
+        sendData({ type: 'whiteboard-clear' });
+      }
+    }
+
+    // Class Chat Logic
+    function handleChatKeyPress(e) {
+      if (e.key === 'Enter') sendChatMessage();
+    }
+
+    function sendChatMessage() {
+      const input = document.getElementById('chat-input');
+      const msg = input.value.trim();
+      if (!msg) return;
+
+      const sender = currentRole === 'teacher' ? 'Teacher' : 'Student';
+      const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+      addChatMessage(sender, msg, time);
+      sendData({ type: 'chat', sender: sender, message: msg, time: time });
+
+      input.value = '';
+    }
+
+    function addChatMessage(sender, msg, time = '') {
+      const chatBox = document.getElementById('chat-messages');
+      if (!chatBox) return;
+
+      const msgDiv = document.createElement('div');
+      msgDiv.className = 'p-1.5 rounded-lg bg-gray-50 border border-gray-100';
+
+      const timeStr = time || new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+      if (sender === 'System') {
+        msgDiv.className = 'text-center text-gray-400 text-[11px] my-1';
+        msgDiv.innerText = `${msg} (${timeStr})`;
+      } else {
+        const isSelf = (currentRole === 'teacher' && sender === 'Teacher') || (currentRole === 'student' && sender === 'Student');
+        msgDiv.innerHTML = `
+          <div class="flex justify-between items-center text-[10px] text-gray-400 font-medium">
+            <span class="${isSelf ? 'text-cosy-600 font-bold' : 'text-gray-700 font-bold'}">${sender}</span>
+            <span>${timeStr}</span>
+          </div>
+          <div class="text-xs text-gray-800 mt-0.5">${escapeHtml(msg)}</div>
+        `;
+      }
+
+      chatBox.appendChild(msgDiv);
+      chatBox.scrollTop = chatBox.scrollHeight;
+
+      chatCount++;
+      const chatBadge = document.getElementById('chat-count');
+      if (chatBadge) chatBadge.innerText = chatCount;
+    }
+
+    function escapeHtml(str) {
+      return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+    }
+
+    // Hosting Guide Modal Toggle
+    function toggleGithubGuideModal() {
+      const modal = document.getElementById('github-guide-modal');
+      if (modal) {
+        modal.classList.toggle('hidden');
+      }
+    }
+  </script>
+</body>
+</html>
