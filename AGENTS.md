@@ -11,6 +11,7 @@
 ```bash
 npm ci
 npm run validate
+npm run check:cefr
 ```
 
 ## Editing rules
@@ -27,6 +28,7 @@ npm run validate
 - There is **NO** `A0` level. The A0–A1 band is stored as level `A1` with sublevel `"start"`.
 - Valid `sublevel` values are `null`, `"start"`, and `"p"`.
 - Descriptor IDs must be lowercase (e.g. `in-conv-b1`, `lis-ov-a1s`).
+- `cefr/data/*.json` is generated: edit `cefr/CEFR_Universal_Master.md`, then run `python3 scripts/build-cefr-json.py` and commit both.
 
 ## PR rules
 - One task per PR.
