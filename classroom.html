@@ -13,6 +13,11 @@
   <script src="https://meet.jit.si/external_api.js"></script>
   <!-- PeerJS WebRTC Library -->
   <script src="https://unpkg.com/peerjs@1.5.2/dist/peerjs.min.js"></script>
+  <!-- Supabase JS Client -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <!-- Config & Auth Guard -->
+  <script src="shared/js/config.js"></script>
+  <script src="shared/js/auth-guard.js"></script>
   <!-- Design Tokens -->
   <link rel="stylesheet" href="shared/css/tokens.css">
 
@@ -38,6 +43,23 @@
   <style>
     .canvas-container canvas {
       touch-action: none;
+    }
+    .teacher-note-box {
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin: 12px 0;
+      font-size: 0.9rem;
+    }
+    .teacher-note-instruction { background: #fffbe3; border-left: 4px solid #f59e0b; color: #78350f; }
+    .teacher-note-speech { background: #ecfdf5; border-left: 4px solid #10b981; color: #065f46; }
+    .answer-key-box {
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 8px 12px;
+      margin: 8px 0;
+      font-size: 0.85rem;
+      color: #334155;
     }
   </style>
 </head>
@@ -116,14 +138,64 @@
         </div>
       </div>
 
-      <!-- Embedded Video Container -->
+      <!-- Facilitation Drawer Toggle -->
+      <div class="p-2 border-b border-cosy-100 bg-gray-50 flex justify-between items-center">
+        <button onclick="toggleFacilitationDrawer()" class="w-full py-1.5 px-3 bg-white border border-cosy-200 text-cosy-700 rounded-xl text-xs font-semibold hover:bg-cosy-50 transition flex items-center justify-between">
+          <span><i class="fa-solid fa-wand-magic-sparkles mr-1.5 text-yellow-500"></i> Icebreakers &amp; Activities</span>
+          <i class="fa-solid fa-chevron-down text-[10px]"></i>
+        </button>
+      </div>
+
+      <!-- Facilitation Drawer (Hidden by default) -->
+      <div id="facilitation-drawer" class="p-3 bg-cosy-50/70 border-b border-cosy-200 hidden max-h-56 overflow-y-auto text-xs space-y-2">
+        <div class="font-bold text-gray-700 uppercase tracking-wider text-[10px]">Select Activity Prompt:</div>
+        <div class="grid grid-cols-1 gap-1.5">
+          <button onclick="launchActivity('Two Truths and a Lie', 'Share 3 statements about yourself: 2 truths and 1 lie. Can your partner guess the lie?')" class="p-1.5 text-left bg-white rounded-lg border border-gray-200 hover:border-cosy-500 transition">
+            <strong>🎯 Two Truths &amp; A Lie</strong> - Icebreaker
+          </button>
+          <button onclick="launchActivity('Desert Island Scenario', 'You are stranded on a desert island and can bring only 3-5 items. Negotiate and justify your choices!')" class="p-1.5 text-left bg-white rounded-lg border border-gray-200 hover:border-cosy-500 transition">
+            <strong>🏝️ Desert Island</strong> - Team Problem Solving
+          </button>
+          <button onclick="launchActivity('Think-Pair-Share', '1. Think individually (1 min). 2. Pair up and discuss (2 min). 3. Share with the class.')" class="p-1.5 text-left bg-white rounded-lg border border-gray-200 hover:border-cosy-500 transition">
+            <strong>💬 Think-Pair-Share</strong> - Content Exploration
+          </button>
+          <button onclick="launchActivity('Role-Playing Practice', 'Act out a real-world scenario (e.g. hotel check-in, ordering food, job interview) with your partner.')" class="p-1.5 text-left bg-white rounded-lg border border-gray-200 hover:border-cosy-500 transition">
+            <strong>🎭 Role-Playing</strong> - Skill Practice
+          </button>
+          <button onclick="launchActivity('Rose, Bud, Thorn', 'Share 1 Rose (positive highlight), 1 Bud (growth area to try), and 1 Thorn (challenge or question).')" class="p-1.5 text-left bg-white rounded-lg border border-gray-200 hover:border-cosy-500 transition">
+            <strong>🌹 Rose, Bud, Thorn</strong> - Reflection &amp; Review
+          </button>
+        </div>
+      </div>
+
+      <!-- Video Call Provider Controls -->
+      <div class="p-2 border-b border-cosy-100 bg-white text-xs space-y-1.5">
+        <div class="flex items-center justify-between text-gray-600 font-semibold text-[11px]">
+          <span><i class="fa-solid fa-video text-cosy-600 mr-1"></i> Video Provider:</span>
+          <select id="video-provider-select" onchange="changeVideoProvider(this.value)" class="px-2 py-0.5 border border-gray-300 rounded-lg text-xs bg-gray-50 focus:ring-1 focus:ring-cosy-500">
+            <option value="jitsi">Jitsi Meet (Embedded)</option>
+            <option value="yandex">Yandex Telemost (Яндекс Телемост)</option>
+            <option value="google">Google Meet</option>
+            <option value="custom">Custom Meeting Link</option>
+          </select>
+        </div>
+
+        <div id="external-video-link-container" class="hidden space-y-1 pt-1">
+          <input type="text" id="video-link-input" placeholder="Paste Yandex Telemost / Google Meet URL..." class="w-full px-2.5 py-1 text-xs border border-gray-300 rounded-lg focus:ring-1 focus:ring-cosy-500">
+          <button onclick="broadcastAndOpenVideoLink()" class="w-full py-1 bg-green-600 text-white font-semibold rounded-lg text-[11px] hover:bg-green-700 transition">
+            🚀 Broadcast &amp; Launch Call
+          </button>
+        </div>
+      </div>
+
+      <!-- Embedded Video Container / External Launch Area -->
       <div class="flex-1 bg-gray-900 relative flex items-center justify-center min-h-[180px]">
         <div id="jitsi-container" class="w-full h-full"></div>
         <div id="jitsi-placeholder" class="text-center p-4 text-gray-400">
           <i class="fa-solid fa-video-slash text-3xl mb-2 opacity-50"></i>
-          <p class="text-xs">Video call inactive.</p>
-          <button onclick="startVideoCall()" class="mt-2 px-3 py-1.5 bg-cosy-500 text-white rounded-lg text-xs font-medium hover:bg-cosy-600 transition">
-            Launch Video Call
+          <p id="video-placeholder-text" class="text-xs">Video call inactive.</p>
+          <button id="launch-video-btn" onclick="startVideoCall()" class="mt-2 px-3 py-1.5 bg-cosy-500 text-white rounded-lg text-xs font-medium hover:bg-cosy-600 transition">
+            Launch Embedded Video Call
           </button>
         </div>
       </div>
@@ -150,11 +222,35 @@
     <section class="flex-1 flex flex-col bg-cosy-50/50 overflow-hidden relative">
 
       <!-- Slide Toolbar Control -->
-      <div class="bg-white px-4 py-2 border-b border-cosy-100 flex items-center justify-between shadow-sm">
-        <div class="flex items-center space-x-3">
-          <span class="text-xs font-semibold text-cosy-500 bg-cosy-50 px-2.5 py-1 rounded-lg border border-cosy-200">
-            <i class="fa-solid fa-book-open mr-1"></i> <span id="lesson-title">Lesson 1: Spanish Greetings</span>
-          </span>
+      <div class="bg-white px-4 py-2 border-b border-cosy-100 flex items-center justify-between shadow-sm flex-wrap gap-2">
+        <div class="flex items-center space-x-3 flex-wrap gap-2">
+          <!-- Quick Lesson Switcher Dropdown -->
+          <div class="flex items-center space-x-1.5">
+            <span class="text-xs font-semibold text-gray-500"><i class="fa-solid fa-book-open text-cosy-500"></i> Lesson:</span>
+            <select id="quick-lesson-select" onchange="quickSwitchLesson(this.value)" class="px-2.5 py-1 bg-white border border-gray-300 hover:border-cosy-500 text-gray-800 font-semibold text-xs rounded-lg transition focus:ring-2 focus:ring-cosy-500">
+              <option value="default">🇪🇸 Spanish Greetings (Demo)</option>
+              <optgroup label="🇬🇧 General English A1">
+                <option value="lessons/en/general/A1/u01-l01-greetings-be.json">Unit 1 - Greetings & Verb 'To Be'</option>
+                <option value="lessons/en/general/A1/u01-l02-countries-nationalities.json">Unit 1 - Countries & Nationalities</option>
+                <option value="lessons/en/general/A1/u02-l01-family-possessives.json">Unit 2 - Family & Possessives</option>
+                <option value="lessons/en/general/A1/u02-l02-jobs-routines.json">Unit 2 - Jobs & Daily Routines</option>
+              </optgroup>
+              <optgroup label="💬 Special Discussion">
+                <option value="lessons/discussion-en/travel-and-culture.json">Travel & Culture Discussion</option>
+                <option value="lessons/discussion-en/technology-and-society.json">Technology & Society</option>
+                <option value="lessons/discussion-en/work-and-career.json">Work & Career</option>
+              </optgroup>
+              <optgroup label="🗣️ Spoken English">
+                <option value="lessons/spoken-en/01-icebreaker.json">01. Icebreaker & Socializing</option>
+                <option value="lessons/spoken-en/02-travel-hacks.json">02. Travel Hacks & Packing</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <button onclick="toggleLessonCatalogModal()" class="px-2.5 py-1 bg-cosy-50 hover:bg-cosy-100 border border-cosy-200 text-cosy-700 font-semibold text-xs rounded-lg transition flex items-center gap-1.5" title="Browse full catalog">
+            <i class="fa-solid fa-folder-open"></i> Full Catalog
+          </button>
+
           <span class="text-xs text-gray-500 font-medium">
             Slide <span id="current-slide-num">1</span> of <span id="total-slides-num">3</span>
           </span>
@@ -170,9 +266,19 @@
         </div>
       </div>
 
-      <!-- Dynamic Classroom Canvas / Slide Display Area -->
-      <div class="flex-1 p-4 md:p-6 overflow-y-auto relative flex flex-col items-center justify-center">
+      <!-- Active Activity Banner (if launched) -->
+      <div id="activity-banner" class="bg-yellow-50 border-b border-yellow-200 p-3 px-4 hidden text-xs text-yellow-900 flex justify-between items-center">
+        <div>
+          <strong id="activity-banner-title">Activity Prompt:</strong>
+          <span id="activity-banner-text" class="ml-1"></span>
+        </div>
+        <button onclick="closeActivityBanner()" class="text-yellow-700 hover:text-yellow-900 font-bold ml-2">✖</button>
+      </div>
 
+      <!-- Dynamic Classroom Canvas / Slide Display Area -->
+      <div id="slide-container" class="flex-1 p-4 md:p-6 overflow-y-auto relative flex flex-col items-center justify-center">
+
+        <!-- Default Pre-built Slides (if no dynamic lesson file is loaded) -->
         <!-- SLIDE 1: Interactive Audio Vocabulary Cards -->
         <div id="slide-1" class="slide-content w-full max-w-3xl space-y-4">
           <div class="bg-white rounded-2xl p-6 shadow-sm border border-cosy-100">
@@ -313,6 +419,31 @@
     </section>
   </div>
 
+  <!-- Lesson Material Catalog Modal -->
+  <div id="lesson-catalog-modal" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-2xl max-w-2xl w-full p-6 space-y-4 shadow-xl border border-cosy-100 max-h-[85vh] flex flex-col">
+      <div class="flex items-center justify-between pb-2 border-b border-gray-100">
+        <div class="flex items-center space-x-2 text-cosy-600">
+          <i class="fa-solid fa-book-open text-xl"></i>
+          <h3 class="text-lg font-bold text-gray-800">Platform Material Catalog</h3>
+        </div>
+        <button onclick="toggleLessonCatalogModal()" class="text-gray-400 hover:text-gray-600 text-lg">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Filter Controls -->
+      <div class="flex space-x-2">
+        <input type="text" id="catalog-search" oninput="filterCatalogModal()" placeholder="Search platform lessons..." class="flex-1 px-3 py-1.5 border border-gray-300 rounded-xl text-xs focus:ring-2 focus:ring-cosy-500">
+      </div>
+
+      <!-- Course Sequence List -->
+      <div id="catalog-modal-body" class="flex-1 overflow-y-auto space-y-3 pr-1 text-xs">
+        <div class="text-center py-8 text-gray-400">Loading platform course manifests...</div>
+      </div>
+    </div>
+  </div>
+
   <!-- GitHub Pages Hosting Guide Modal -->
   <div id="github-guide-modal" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 hidden">
     <div class="bg-white rounded-2xl max-w-lg w-full p-6 space-y-4 shadow-xl border border-cosy-100">
@@ -362,9 +493,13 @@
     let connections = [];
     let roomId = '';
     let currentSlide = 1;
-    const totalSlides = 3;
+    let totalSlides = 3;
     let jitsiApi = null;
     let chatCount = 0;
+    let dynamicSlides = [];
+    let currentVideoProvider = 'jitsi';
+    let activeVideoLink = '';
+    let currentLessonPath = 'default';
 
     // Whiteboard Canvas State
     let canvas, ctx;
@@ -380,35 +515,529 @@
       'blank-2': 'gusto'
     };
 
-    // Initialize Page Application
-    window.addEventListener('DOMContentLoaded', () => {
-      initWhiteboard();
-      updateSlideToolbar();
+    // User Authentication & Profile
+    let userProfile = null;
 
-      // Auto-join room from URL search query if provided
+    // Initialize Page Application
+    window.addEventListener('DOMContentLoaded', async () => {
+      initWhiteboard();
+
+      // Enforce Authentication
+      if (window.CosyAuth && typeof window.CosyAuth.getAuthAndProfile === 'function') {
+        const auth = await window.CosyAuth.getAuthAndProfile();
+        if (!auth) return; // redirected to login
+        userProfile = auth.profile;
+      }
+
+      // Enforce Role Switcher Permissions
+      enforceRolePermissions();
+
+      // Check for dynamic lesson loading parameter
       const params = new URLSearchParams(window.location.search);
+      const lessonParam = params.get('lesson');
       const urlRoom = params.get('room');
+
+      if (lessonParam) {
+        await loadDynamicLesson(lessonParam);
+      } else {
+        updateSlideToolbar();
+      }
+
       if (urlRoom) {
         document.getElementById('target-room-input').value = urlRoom;
         joinRoomFromInput();
       }
     });
 
+    function enforceRolePermissions() {
+      const teacherBtn = document.getElementById('role-teacher-btn');
+      const studentBtn = document.getElementById('role-student-btn');
+
+      const role = (userProfile && userProfile.role) ? userProfile.role.toLowerCase() : 'student';
+
+      if (role === 'student') {
+        // Students cannot switch to teacher view or view answer keys
+        if (teacherBtn) {
+          teacherBtn.classList.add('hidden');
+        }
+        switchRole('student');
+      } else {
+        // Teachers / Founders can view both views
+        if (teacherBtn) teacherBtn.classList.remove('hidden');
+        if (studentBtn) studentBtn.classList.remove('hidden');
+        switchRole('teacher');
+      }
+    }
+
+    // Video Provider Switching Logic
+    function changeVideoProvider(provider) {
+      currentVideoProvider = provider;
+      const linkContainer = document.getElementById('external-video-link-container');
+      const btn = document.getElementById('launch-video-btn');
+      const placeholderText = document.getElementById('video-placeholder-text');
+
+      if (provider === 'jitsi') {
+        linkContainer.classList.add('hidden');
+        btn.classList.remove('hidden');
+        placeholderText.innerText = 'Video call inactive (Embedded Jitsi).';
+      } else {
+        linkContainer.classList.remove('hidden');
+        btn.classList.add('hidden');
+
+        if (provider === 'yandex') {
+          document.getElementById('video-link-input').placeholder = 'Paste Yandex Telemost URL (e.g. https://telemost.yandex.ru/j/...)';
+          placeholderText.innerText = 'Yandex Telemost selected (Яндекс Телемост).';
+        } else if (provider === 'google') {
+          document.getElementById('video-link-input').placeholder = 'Paste Google Meet URL (e.g. https://meet.google.com/...)';
+          placeholderText.innerText = 'Google Meet selected.';
+        } else {
+          document.getElementById('video-link-input').placeholder = 'Paste custom video meeting link...';
+          placeholderText.innerText = 'Custom Meeting Link selected.';
+        }
+      }
+    }
+
+    function broadcastAndOpenVideoLink() {
+      const input = document.getElementById('video-link-input');
+      const url = input.value.trim();
+      if (!url) {
+        alert('Please paste a meeting link first.');
+        return;
+      }
+
+      activeVideoLink = url;
+      sendData({ type: 'video-link', provider: currentVideoProvider, link: url });
+
+      // Render external video link banner in video container
+      renderExternalVideoBanner(currentVideoProvider, url);
+      window.open(url, '_blank');
+    }
+
+    function renderExternalVideoBanner(provider, url) {
+      const placeholder = document.getElementById('jitsi-placeholder');
+      const container = document.getElementById('jitsi-container');
+
+      container.innerHTML = '';
+      placeholder.classList.remove('hidden');
+
+      const providerName = provider === 'yandex' ? 'Yandex Telemost' : provider === 'google' ? 'Google Meet' : 'Video Call';
+
+      placeholder.innerHTML = `
+        <div class="space-y-2">
+          <i class="fa-solid fa-video text-3xl text-green-400"></i>
+          <div class="text-xs font-bold text-white">${providerName} Active</div>
+          <p class="text-[11px] text-gray-300">Click below to open meeting in window:</p>
+          <a href="${url}" target="_blank" class="inline-block px-4 py-2 bg-green-600 hover:bg-green-700 text-white text-xs font-bold rounded-xl transition shadow">
+            📹 Join ${providerName} Session
+          </a>
+        </div>
+      `;
+    }
+
+    // Lesson Catalog Modal Toggle & Population
+    function toggleLessonCatalogModal() {
+      const modal = document.getElementById('lesson-catalog-modal');
+      modal.classList.toggle('hidden');
+      if (!modal.classList.contains('hidden')) {
+        populateLessonCatalogModal();
+      }
+    }
+
+    async function populateLessonCatalogModal() {
+      const body = document.getElementById('catalog-modal-body');
+      const manifest = window.CosyAuth ? window.CosyAuth.FULL_MANIFEST : [];
+
+      if (manifest.length === 0) {
+        body.innerHTML = '<div class="text-center py-4 text-gray-400">No active manifest items found.</div>';
+        return;
+      }
+
+      let html = `<div class="space-y-4">`;
+
+      for (const c of manifest) {
+        if (c.status === 'not_yet_available') continue;
+
+        html += `
+          <div class="border border-gray-200 rounded-xl p-3 bg-gray-50/50 catalog-course-item" data-title="${c.title.toLowerCase()}">
+            <div class="flex justify-between items-center mb-2">
+              <div class="font-bold text-gray-800 text-xs">${c.title} <span class="text-[10px] bg-cosy-100 text-cosy-700 px-1.5 py-0.5 rounded font-mono ml-1">${c.level.toUpperCase()}</span></div>
+              <button onclick="loadCourseRoadmapIntoModal('${c.id}')" class="px-2 py-1 bg-cosy-500 text-white rounded text-[11px] font-semibold hover:bg-cosy-600 transition">View Lessons 📖</button>
+            </div>
+            <div id="course-sequence-${c.id}" class="hidden mt-2 pt-2 border-t border-gray-200 space-y-1"></div>
+          </div>
+        `;
+      }
+
+      html += `</div>`;
+      body.innerHTML = html;
+    }
+
+    async function loadCourseRoadmapIntoModal(courseId) {
+      const targetDiv = document.getElementById(`course-sequence-${courseId}`);
+      if (!targetDiv) return;
+
+      if (!targetDiv.classList.contains('hidden')) {
+        targetDiv.classList.add('hidden');
+        return;
+      }
+
+      targetDiv.innerHTML = '<div class="text-gray-400 text-[11px]">Fetching roadmap sequence...</div>';
+      targetDiv.classList.remove('hidden');
+
+      try {
+        const res = await fetch(`roadmaps/${courseId}.json`);
+        if (!res.ok) throw new Error("Roadmap not found");
+        const roadmap = await res.json();
+
+        let seqHtml = `<div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5">`;
+        roadmap.sequence.forEach(item => {
+          let lPath = item.lessonFile || (`lessons/${courseId}/${item.id}.json`);
+          seqHtml += `
+            <div onclick="selectAndBroadcastLesson('${lPath}')" class="p-2 bg-white border border-gray-200 hover:border-cosy-500 rounded-lg cursor-pointer transition flex items-center justify-between">
+              <div>
+                <div class="font-bold text-gray-800 text-[11px]">#${item.lessonNumber}: ${item.title}</div>
+              </div>
+              <span class="text-[10px] bg-green-50 text-green-700 font-bold px-1.5 py-0.5 rounded">Launch 🎥</span>
+            </div>
+          `;
+        });
+        seqHtml += `</div>`;
+        targetDiv.innerHTML = seqHtml;
+      } catch (e) {
+        targetDiv.innerHTML = `<div class="text-red-500 text-[11px]">Error loading roadmap sequence.</div>`;
+      }
+    }
+
+    function filterCatalogModal() {
+      const q = (document.getElementById('catalog-search')?.value || '').toLowerCase().trim();
+      document.querySelectorAll('.catalog-course-item').forEach(item => {
+        const title = item.getAttribute('data-title') || '';
+        item.style.display = title.includes(q) ? 'block' : 'none';
+      });
+    }
+
+    async function quickSwitchLesson(val) {
+      if (!val) return;
+      if (val === 'default') {
+        window.location.href = window.location.pathname + (roomId ? `?room=${roomId}` : '');
+        return;
+      }
+      await selectAndBroadcastLesson(val);
+    }
+
+    async function selectAndBroadcastLesson(lessonPath) {
+      if (document.getElementById('lesson-catalog-modal') && !document.getElementById('lesson-catalog-modal').classList.contains('hidden')) {
+        toggleLessonCatalogModal();
+      }
+      await loadDynamicLesson(lessonPath);
+      sendData({ type: 'load-lesson', lessonPath: lessonPath, slide: 1 });
+    }
+
+    // Dynamic Platform Material Loader
+    async function loadDynamicLesson(lessonPath) {
+      try {
+        currentLessonPath = lessonPath;
+
+        // Keep quick selector dropdown in sync
+        const selectEl = document.getElementById('quick-lesson-select');
+        if (selectEl) {
+          let foundOption = false;
+          for (let opt of selectEl.options) {
+            if (opt.value === lessonPath) {
+              selectEl.value = lessonPath;
+              foundOption = true;
+              break;
+            }
+          }
+          if (!foundOption) {
+            // Dynamically add option if loaded from full catalog
+            const opt = document.createElement('option');
+            opt.value = lessonPath;
+            opt.textContent = `📖 ${lessonPath.split('/').pop().replace('.json', '')}`;
+            opt.selected = true;
+            selectEl.appendChild(opt);
+          }
+        }
+
+        let xmlContent = null;
+        let jsonContent = null;
+
+        // 1. Try Supabase lesson_content
+        const client = window.CosyAuth ? window.CosyAuth.client : null;
+        if (client) {
+          const { data } = await client
+            .from('lesson_content')
+            .select('xml_content')
+            .eq('lesson_id', lessonPath)
+            .maybeSingle();
+          if (data && data.xml_content) {
+            xmlContent = data.xml_content;
+          }
+        }
+
+        // 2. Fallback to local fetch
+        if (!xmlContent) {
+          const res = await fetch(lessonPath);
+          if (res.ok) {
+            const text = await res.text();
+            if (lessonPath.endsWith('.xml') || text.trim().startsWith('<')) {
+              xmlContent = text;
+            } else {
+              jsonContent = JSON.parse(text);
+            }
+          }
+        }
+
+        if (xmlContent) {
+          parseXmlLessonToSlides(xmlContent);
+        } else if (jsonContent) {
+          parseJsonLessonToSlides(jsonContent);
+        }
+
+      } catch (e) {
+        console.error("Error loading dynamic lesson:", e);
+      }
+    }
+
+    function parseXmlLessonToSlides(xmlText) {
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(xmlText, "text/xml");
+      const cosyLesson = xmlDoc.querySelector("cosy-lesson");
+      const title = cosyLesson ? (cosyLesson.getAttribute("title") || "Live Lesson") : "Live Lesson";
+      document.getElementById("lesson-title").innerText = title;
+
+      const slideEls = xmlDoc.querySelectorAll("cosy-slide");
+      if (slideEls.length === 0) return;
+
+      dynamicSlides = [];
+      slideEls.forEach((s, idx) => {
+        dynamicSlides.push({
+          id: s.getAttribute("id") || `slide-${idx+1}`,
+          title: s.getAttribute("title") || `Slide ${idx+1}`,
+          stage: s.getAttribute("stage") || "",
+          xmlNode: s
+        });
+      });
+
+      totalSlides = dynamicSlides.length;
+      renderDynamicSlideContainers();
+      goToSlide(1, false);
+    }
+
+    function parseJsonLessonToSlides(jsonData) {
+      document.getElementById("lesson-title").innerText = jsonData.title || "Live Lesson";
+      if (!jsonData.slides || jsonData.slides.length === 0) return;
+
+      dynamicSlides = [];
+      jsonData.slides.forEach((s, idx) => {
+        dynamicSlides.push({
+          id: s.id || `slide-${idx+1}`,
+          title: s.title || `Slide ${idx+1}`,
+          stage: s.stage || "",
+          jsonData: s
+        });
+      });
+
+      totalSlides = dynamicSlides.length;
+      renderDynamicSlideContainers();
+      goToSlide(1, false);
+    }
+
+    function renderDynamicSlideContainers() {
+      const container = document.getElementById("slide-container");
+      container.innerHTML = "";
+
+      dynamicSlides.forEach((slide, idx) => {
+        const slideDiv = document.createElement("div");
+        slideDiv.id = `slide-${idx+1}`;
+        slideDiv.className = `slide-content w-full max-w-3xl space-y-4 ${idx === 0 ? '' : 'hidden'}`;
+
+        let innerContent = "";
+        if (slide.xmlNode) {
+          innerContent = renderXmlNodeToClassroomHtml(slide.xmlNode, `s${idx}`);
+        } else if (slide.jsonData) {
+          innerContent = renderJsonSlideToClassroomHtml(slide.jsonData, `s${idx}`);
+        }
+
+        slideDiv.innerHTML = `
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-cosy-100">
+            <div class="flex justify-between items-center mb-4 border-b border-gray-100 pb-3">
+              <h2 class="text-xl font-bold text-cosy-700">${idx+1}. ${slide.title}</h2>
+              ${slide.stage ? `<span class="text-xs font-semibold uppercase bg-cosy-50 text-cosy-600 px-2.5 py-1 rounded-md border border-cosy-200">${slide.stage}</span>` : ''}
+            </div>
+            <div>${innerContent}</div>
+          </div>
+        `;
+
+        container.appendChild(slideDiv);
+      });
+    }
+
+    function renderXmlNodeToClassroomHtml(node, prefix = "n") {
+      let output = "";
+      let elIdx = 0;
+
+      for (let child of node.childNodes) {
+        if (child.nodeType === Node.TEXT_NODE) {
+          output += child.nodeValue;
+          continue;
+        }
+
+        const tag = child.tagName ? child.tagName.toLowerCase() : "";
+        const fKey = `${prefix}_${tag}_${elIdx++}`;
+
+        if (tag === "cosy-teacher-notes") {
+          const type = child.getAttribute("type") || "instruction";
+          const noteClass = type === "speech" ? "teacher-note-speech" : "teacher-note-instruction";
+          const icon = type === "speech" ? "💬" : "💡";
+          const title = type === "speech" ? "Suggested Speech Script & CCQs" : "Stage Aim & Guidance";
+
+          if (currentRole === 'teacher') {
+            output += `
+              <div class="teacher-note-box ${noteClass}">
+                <div class="font-bold uppercase text-xs mb-1">${icon} ${title}</div>
+                <div>${renderXmlNodeToClassroomHtml(child, fKey)}</div>
+              </div>
+            `;
+          }
+        } else if (["p", "ul", "ol", "li", "h1", "h2", "h3"].includes(tag)) {
+          output += `<${tag}>${renderXmlNodeToClassroomHtml(child, fKey)}</${tag}>`;
+        } else if (tag === "cosy-instruction") {
+          output += `<div class="font-semibold text-cosy-600 my-2">📋 ${renderXmlNodeToClassroomHtml(child, fKey)}</div>`;
+        } else if (tag === "cosy-blockquote") {
+          output += `<blockquote class="bg-gray-50 border-l-4 border-cosy-500 p-3 my-2 rounded-r-lg text-sm">${renderXmlNodeToClassroomHtml(child, fKey)}</blockquote>`;
+        } else if (tag === "cosy-vocabulary") {
+          const items = child.querySelectorAll("cosy-vocabulary-item");
+          output += `<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 my-4">`;
+          items.forEach(v => {
+            const word = v.getAttribute("word") || "Word";
+            const def = v.getAttribute("definition") || "";
+            output += `
+              <div class="p-3 rounded-xl border border-cosy-100 bg-cosy-50/30 flex justify-between items-center hover:border-cosy-500 transition">
+                <div>
+                  <div class="text-base font-bold text-cosy-800">${word}</div>
+                  <div class="text-xs text-gray-500">${def}</div>
+                </div>
+                <button onclick="speakText('${word.replace(/'/g, "\\'")}', 'en-US')" class="w-8 h-8 rounded-lg bg-cosy-500 text-white flex items-center justify-center shadow-sm hover:scale-105 transition">
+                  <i class="fa-solid fa-volume-high text-xs"></i>
+                </button>
+              </div>
+            `;
+          });
+          output += `</div>`;
+        } else if (tag === "cosy-input") {
+          const answers = child.querySelectorAll("cosy-input-item");
+          let ansList = [];
+          answers.forEach(a => ansList.push(a.textContent.trim()));
+          if (ansList.length > 0) answersMap[fKey] = ansList[0];
+
+          output += `
+            <div class="my-3 space-y-1">
+              <input type="text" id="${fKey}" oninput="handleBlankInput('${fKey}', this.value)" placeholder="${child.getAttribute("placeholder") || "Type here..."}" class="px-3 py-1.5 border border-gray-300 rounded-lg text-sm w-full max-w-sm focus:ring-2 focus:ring-cosy-500 font-medium">
+              ${currentRole === 'teacher' && ansList.length > 0 ? `<div class="answer-key-box">🔑 Key: ${ansList.join(' / ')}</div>` : ''}
+              <div id="feedback-${fKey}" class="text-xs font-medium"></div>
+            </div>
+          `;
+        } else if (tag === "cosy-select") {
+          const items = child.querySelectorAll("cosy-select-item-title");
+          output += `<select id="${fKey}" onchange="handleBlankInput('${fKey}', this.value)" class="px-3 py-1.5 border border-gray-300 rounded-lg text-sm my-2 focus:ring-2 focus:ring-cosy-500"><option value="">-- Choose option --</option>`;
+          items.forEach(it => {
+            output += `<option value="${it.textContent.trim()}">${it.textContent.trim()}</option>`;
+          });
+          output += `</select>`;
+        } else if (tag === "cosy-test") {
+          const questions = child.querySelectorAll("cosy-test-question");
+          questions.forEach((q, qIdx) => {
+            const qText = q.querySelector("cosy-test-question-text")?.textContent || "Question";
+            output += `<div class="bg-gray-50 border border-gray-200 rounded-xl p-4 my-3"><strong class="text-sm text-gray-800">${qText}</strong><div class="space-y-1.5 mt-2">`;
+            const options = q.querySelectorAll("cosy-test-item");
+            options.forEach(opt => {
+              const isCorrect = opt.getAttribute("correct") === "true";
+              output += `<label class="flex items-center space-x-2 text-xs p-2 rounded-lg border border-gray-200 bg-white hover:bg-cosy-50 cursor-pointer"><input type="radio" name="${fKey}_q${qIdx}" value="${opt.textContent.trim()}"><span>${opt.textContent.trim()}</span> ${currentRole === 'teacher' && isCorrect ? '<span class="text-green-600 font-bold ml-auto">✔️ Correct</span>' : ''}</label>`;
+            });
+            output += `</div></div>`;
+          });
+        } else if (tag === "cosy-essay") {
+          output += `
+            <div class="bg-gray-50 border border-dashed border-gray-300 rounded-xl p-4 my-3 text-xs">
+              <div class="font-bold text-gray-700 mb-1">📝 Open Text Practice</div>
+              <textarea id="${fKey}" oninput="handleBlankInput('${fKey}', this.value)" placeholder="Write your paragraph response here..." class="w-full h-24 p-2 border border-gray-300 rounded-lg text-xs font-sans"></textarea>
+            </div>
+          `;
+        } else {
+          output += renderXmlNodeToClassroomHtml(child, fKey);
+        }
+      }
+      return output;
+    }
+
+    function renderJsonSlideToClassroomHtml(slide, prefix = "n") {
+      let output = "";
+      if (slide.elements) {
+        slide.elements.forEach((el, idx) => {
+          const fKey = `${prefix}_el_${idx}`;
+          if (el.type === "instruction") output += `<div class="font-semibold text-cosy-600 my-2">📋 ${el.content}</div>`;
+          else if (el.type === "blockquote") output += `<blockquote class="bg-gray-50 border-l-4 border-cosy-500 p-3 my-2 rounded-r-lg text-sm">${el.content}</blockquote>`;
+          else if (el.type === "input") {
+            if (el.answers && el.answers.length > 0) answersMap[fKey] = el.answers[0];
+            output += `<input type="text" id="${fKey}" oninput="handleBlankInput('${fKey}', this.value)" placeholder="Type response..." class="px-3 py-1.5 border border-gray-300 rounded-lg text-sm my-2">`;
+          }
+        });
+      }
+      return output;
+    }
+
     // Role Switching Logic
     function switchRole(role) {
+      const actualUserRole = (userProfile && userProfile.role) ? userProfile.role.toLowerCase() : 'student';
+
+      // Security check: If actual user profile is student, prevent switching to teacher mode
+      if (role === 'teacher' && actualUserRole === 'student') {
+        alert('Access denied: Student accounts cannot access Teacher view mode or answer keys.');
+        return;
+      }
+
       currentRole = role;
       const teacherBtn = document.getElementById('role-teacher-btn');
       const studentBtn = document.getElementById('role-student-btn');
 
       if (role === 'teacher') {
-        teacherBtn.className = 'px-3 py-1 rounded-lg font-medium transition shadow-sm bg-white text-cosy-700';
-        studentBtn.className = 'px-3 py-1 rounded-lg font-medium text-gray-500 transition hover:text-gray-700';
+        if (teacherBtn) teacherBtn.className = 'px-3 py-1 rounded-lg font-medium transition shadow-sm bg-white text-cosy-700';
+        if (studentBtn) studentBtn.className = 'px-3 py-1 rounded-lg font-medium text-gray-500 transition hover:text-gray-700';
       } else {
-        studentBtn.className = 'px-3 py-1 rounded-lg font-medium transition shadow-sm bg-white text-cosy-700';
-        teacherBtn.className = 'px-3 py-1 rounded-lg font-medium text-gray-500 transition hover:text-gray-700';
+        if (studentBtn) studentBtn.className = 'px-3 py-1 rounded-lg font-medium transition shadow-sm bg-white text-cosy-700';
+        if (teacherBtn) teacherBtn.className = 'px-3 py-1 rounded-lg font-medium text-gray-500 transition hover:text-gray-700';
+      }
+
+      // Re-render active dynamic slides if loaded to toggle teacher notes/answer keys
+      if (dynamicSlides && dynamicSlides.length > 0) {
+        renderDynamicSlideContainers();
       }
 
       sendData({ type: 'role', role: role });
+    }
+
+    // Facilitation Drawer Toggle & Activity Launcher
+    function toggleFacilitationDrawer() {
+      const drawer = document.getElementById('facilitation-drawer');
+      if (drawer) drawer.classList.toggle('hidden');
+    }
+
+    function launchActivity(title, promptText) {
+      showActivityBanner(title, promptText);
+      sendData({ type: 'activity', title: title, prompt: promptText });
+      toggleFacilitationDrawer();
+    }
+
+    function showActivityBanner(title, promptText) {
+      const banner = document.getElementById('activity-banner');
+      document.getElementById('activity-banner-title').innerText = `${title}:`;
+      document.getElementById('activity-banner-text').innerText = promptText;
+      banner.classList.remove('hidden');
+    }
+
+    function closeActivityBanner() {
+      document.getElementById('activity-banner').classList.add('hidden');
     }
 
     // Generate Short Room ID
@@ -437,8 +1066,12 @@
         addChatMessage('System', 'A student connected to the session.');
         updateStatus('Student Connected', 'green');
 
-        // Sync initial state to newly connected student
-        sendData({ type: 'slide', slide: currentSlide });
+        // Sync active lesson material and current slide to newly connected student
+        if (currentLessonPath && currentLessonPath !== 'default') {
+          c.send({ type: 'load-lesson', lessonPath: currentLessonPath, slide: currentSlide });
+        } else {
+          c.send({ type: 'slide', slide: currentSlide });
+        }
       });
 
       peer.on('error', (err) => {
@@ -525,6 +1158,22 @@
           break;
         case 'role':
           addChatMessage('System', `Peer switched role to ${data.role}`);
+          break;
+        case 'activity':
+          showActivityBanner(data.title, data.prompt);
+          break;
+        case 'load-lesson':
+          if (data.lessonPath) {
+            loadDynamicLesson(data.lessonPath).then(() => {
+              if (data.slide) goToSlide(data.slide, false);
+            });
+          }
+          break;
+        case 'video-link':
+          if (data.link) {
+            renderExternalVideoBanner(data.provider, data.link);
+            addChatMessage('System', `Teacher launched ${data.provider === 'yandex' ? 'Yandex Telemost' : 'Google Meet'} video call.`);
+          }
           break;
       }
     }

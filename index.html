@@ -491,9 +491,14 @@
                 <h3 style="margin: 6px 0; font-size: 1rem; color: #0f172a;">${item.title}</h3>
                 ${item.unit ? `<p style="font-size: 0.8rem; color: #64748b;">${item.unit}</p>` : ''}
               </div>
-              <a href="index.html?lesson=${encodeURIComponent(item.id)}" class="btn" style="margin-top: 12px; background: var(--hub-primary); color: white; padding: 6px 12px; font-size: 0.8rem; text-align: center; text-decoration: none; border-radius: 6px;">
-                ▶ Open Lesson
-              </a>
+              <div style="display: flex; gap: 6px; flex-direction: column; margin-top: 12px;">
+                <a href="index.html?lesson=${encodeURIComponent(item.id)}" class="btn" style="background: var(--hub-primary); color: white; padding: 6px 12px; font-size: 0.8rem; text-align: center; text-decoration: none; border-radius: 6px;">
+                  ▶ Open Lesson
+                </a>
+                <a href="classroom.html?lesson=${encodeURIComponent(item.id)}" target="_blank" class="btn" style="background: #10b981; color: white; padding: 6px 12px; font-size: 0.8rem; text-align: center; text-decoration: none; border-radius: 6px; font-weight: 600;">
+                  🎥 Launch Live Classroom
+                </a>
+              </div>
             </div>
           `;
         });
