@@ -365,6 +365,20 @@
         </div>
       </div>
 
+      <!-- Active Breakout Room Banner (if active) -->
+      <div id="breakout-banner" class="bg-amber-50 border-b border-amber-200 p-2.5 px-4 hidden text-xs text-amber-900 flex flex-wrap justify-between items-center gap-2">
+        <div class="flex items-center space-x-2 font-bold">
+          <span class="w-2.5 h-2.5 rounded-full bg-amber-500 animate-ping"></span>
+          <span>🔀 Active Breakout Room: <span id="breakout-banner-room-name" class="font-extrabold text-amber-950 underline">Room A</span></span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <div id="breakout-banner-quick-links" class="flex items-center space-x-1"></div>
+          <button onclick="returnToMainRoom()" class="px-3 py-1 bg-amber-700 hover:bg-amber-800 text-white font-bold rounded-lg text-xs transition shadow-sm">
+            🏠 Return to Main Room
+          </button>
+        </div>
+      </div>
+
       <!-- Active Activity Banner (if launched) -->
       <div id="activity-banner" class="bg-yellow-50 border-b border-yellow-200 p-3 px-4 hidden text-xs text-yellow-900 flex justify-between items-center">
         <div>
@@ -2157,10 +2171,18 @@
       }
     }
 
-    // Breakout Rooms Manager Modal Toggle & Logic
+    // Breakout Rooms State & Navigation Manager
+    let currentBreakoutRoom = null;
+    let activeBreakoutRoomsList = [];
+
     function toggleBreakoutRoomsModal() {
       const modal = document.getElementById('breakout-rooms-modal');
-      if (modal) modal.classList.toggle('hidden');
+      if (modal) {
+        modal.classList.toggle('hidden');
+        if (!modal.classList.contains('hidden') && activeBreakoutRoomsList.length === 0) {
+          generateBreakoutRooms();
+        }
+      }
     }
 
     function generateBreakoutRooms() {
@@ -2168,44 +2190,129 @@
       const numRooms = parseInt(countSelect.value, 10) || 2;
       const container = document.getElementById('breakout-rooms-container');
 
-      const roomNames = ['Room A (Grammar Focus)', 'Room B (Free Discussion)', 'Room C (Debate)', 'Room D (Pronunciation)'];
+      const roomPresets = [
+        { key: 'a', name: 'Room A (Grammar Focus)' },
+        { key: 'b', name: 'Room B (Free Discussion)' },
+        { key: 'c', name: 'Room C (Debate)' },
+        { key: 'd', name: 'Room D (Pronunciation)' }
+      ];
+
+      activeBreakoutRoomsList = roomPresets.slice(0, numRooms);
+
       let html = `<div class="grid grid-cols-1 sm:grid-cols-2 gap-2">`;
 
-      for (let i = 0; i < numRooms; i++) {
-        const rName = roomNames[i] || `Room ${i+1}`;
+      activeBreakoutRoomsList.forEach((r) => {
+        const isCurrent = currentBreakoutRoom === r.name;
         html += `
-          <div class="p-3 bg-amber-50/50 border border-amber-200 rounded-xl space-y-2">
+          <div class="p-3 ${isCurrent ? 'bg-amber-100 border-amber-400' : 'bg-amber-50/50 border-amber-200'} border rounded-xl space-y-2 transition">
             <div class="flex justify-between items-center font-bold text-amber-900">
-              <span>🏠 ${rName}</span>
-              <span class="text-[10px] bg-amber-200 text-amber-900 px-1.5 py-0.5 rounded font-mono">Active</span>
+              <span>🏠 ${r.name}</span>
+              ${isCurrent ? '<span class="text-[10px] bg-green-200 text-green-900 px-1.5 py-0.5 rounded font-bold">You are here</span>' : '<span class="text-[10px] bg-amber-200 text-amber-900 px-1.5 py-0.5 rounded font-mono">Active</span>'}
             </div>
-            <div class="text-[11px] text-gray-600">Assigned Peers: Auto-balanced</div>
-            <button onclick="broadcastBreakoutAssignment('${rName}')" class="w-full py-1 bg-amber-600 hover:bg-amber-700 text-white font-bold rounded-lg text-[11px] transition">
-              🚀 Broadcast Sub-room Link
-            </button>
+            <div class="flex items-center gap-1.5 pt-1">
+              <button onclick="joinBreakoutRoom('${r.key}', '${r.name}')" class="flex-1 py-1 bg-amber-600 hover:bg-amber-700 text-white font-bold rounded-lg text-[11px] transition shadow-sm">
+                🚪 ${isCurrent ? 'Current Room' : 'Enter / Move Here'}
+              </button>
+              <button onclick="broadcastBreakoutAssignment('${r.name}')" title="Assign students" class="px-2 py-1 bg-white border border-amber-300 text-amber-900 hover:bg-amber-100 font-bold rounded-lg text-[11px] transition">
+                📢 Assign
+              </button>
+            </div>
           </div>
         `;
-      }
+      });
 
       html += `</div>`;
       container.innerHTML = html;
 
-      // Broadcast room assignment event to connected peers
-      sendData({ type: 'breakout-assignment', roomName: roomNames[0] });
-      addChatMessage('System', `🔀 Teacher generated ${numRooms} breakout rooms and assigned students.`);
+      sendData({ type: 'breakout-generated', numRooms: numRooms, rooms: activeBreakoutRoomsList });
+      addChatMessage('System', `🔀 Created ${numRooms} active Breakout Rooms.`);
+    }
+
+    function joinBreakoutRoom(key, roomName) {
+      currentBreakoutRoom = roomName;
+
+      // Update active banner
+      const banner = document.getElementById('breakout-banner');
+      const roomNameEl = document.getElementById('breakout-banner-room-name');
+      const linksContainer = document.getElementById('breakout-banner-quick-links');
+
+      if (banner) banner.classList.remove('hidden');
+      if (roomNameEl) roomNameEl.innerText = roomName;
+
+      if (linksContainer && activeBreakoutRoomsList.length > 0) {
+        linksContainer.innerHTML = activeBreakoutRoomsList.map(r => `
+          <button onclick="joinBreakoutRoom('${r.key}', '${r.name}')" class="px-2 py-0.5 ${currentBreakoutRoom === r.name ? 'bg-amber-700 text-white font-bold' : 'bg-white text-amber-900 border border-amber-300 hover:bg-amber-100'} rounded text-[10px] transition">
+            ${r.name.split(' ')[0]} ${r.name.split(' ')[1]}
+          </button>
+        `).join('');
+      }
+
+      // Refresh modal UI if open
+      if (document.getElementById('breakout-rooms-modal') && !document.getElementById('breakout-rooms-modal').classList.contains('hidden')) {
+        generateBreakoutRooms();
+      }
+
+      // Re-initialize Video Stream in Breakout Room Context
+      if (currentVideoProvider === 'jitsi' && jitsiApi) {
+        startVideoCallForBreakout(key);
+      }
+
+      sendData({ type: 'breakout-move', user: currentRole, roomName: roomName });
+      addChatMessage('System', `🔀 Entered Breakout Sub-room: ${roomName}`);
+    }
+
+    function startVideoCallForBreakout(key) {
+      const mainRoomName = roomId && roomId !== '------' ? `cosy-languages-${roomId}` : `cosy-languages-room`;
+      const breakoutRoomName = `${mainRoomName}-breakout-${key}`;
+
+      document.getElementById('jitsi-placeholder').classList.add('hidden');
+      const domain = currentJitsiDomain || 'meet.jit.si';
+      const options = {
+        roomName: breakoutRoomName,
+        width: '100%',
+        height: '100%',
+        parentNode: document.querySelector('#jitsi-container'),
+        userInfo: {
+          displayName: `${currentRole === 'teacher' ? 'Teacher' : 'Student'} (${currentBreakoutRoom ? currentBreakoutRoom.split(' ')[0] + ' ' + currentBreakoutRoom.split(' ')[1] : 'Main'})`
+        },
+        configOverwrite: { startWithAudioMuted: false, disableDeepLinking: true }
+      };
+
+      try {
+        if (jitsiApi) jitsiApi.dispose();
+        jitsiApi = new JitsiMeetExternalAPI(domain, options);
+      } catch (err) {
+        console.error('Jitsi breakout room error:', err);
+      }
+    }
+
+    function returnToMainRoom() {
+      currentBreakoutRoom = null;
+
+      const banner = document.getElementById('breakout-banner');
+      if (banner) banner.classList.add('hidden');
+
+      // Re-initialize main video call
+      startVideoCall();
+
+      sendData({ type: 'breakout-move', user: currentRole, roomName: 'Main Room' });
+      addChatMessage('System', `🏠 Returned to Main Classroom.`);
     }
 
     function broadcastBreakoutAssignment(roomName) {
       sendData({ type: 'breakout-assignment', roomName: roomName });
-      addChatMessage('System', `🔀 Teacher assigned students to ${roomName}.`);
+      addChatMessage('System', `🔀 Assigned students to ${roomName}.`);
       alert(`Sent assignment for ${roomName} to all connected peers.`);
     }
 
     function recallAllFromBreakouts() {
       sendData({ type: 'breakout-recall' });
-      addChatMessage('System', `📢 Teacher recalled all students to the main room.`);
+      returnToMainRoom();
+      addChatMessage('System', `📢 Recalled all participants to the main room.`);
       alert('Recalled all participants back to the main room.');
-      toggleBreakoutRoomsModal();
+      if (document.getElementById('breakout-rooms-modal')) {
+        document.getElementById('breakout-rooms-modal').classList.add('hidden');
+      }
     }
   </script>
 </body>
