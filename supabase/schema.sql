@@ -23,6 +23,20 @@ CREATE TABLE IF NOT EXISTS lesson_content (
 ALTER TABLE profiles ENABLE ROW LEVEL SECURITY;
 ALTER TABLE lesson_content ENABLE ROW LEVEL SECURITY;
 
+-- Helper function to prevent RLS policy recursion on public.profiles
+CREATE OR REPLACE FUNCTION public.is_founder()
+RETURNS boolean
+LANGUAGE sql
+SECURITY DEFINER
+SET search_path = public
+STABLE
+AS $$
+  SELECT EXISTS (
+    SELECT 1 FROM public.profiles
+    WHERE id = auth.uid() AND role = 'founder'
+  );
+$$;
+
 -- Profiles Policies
 CREATE POLICY "Users can view their own profile"
   ON profiles FOR SELECT
@@ -30,12 +44,7 @@ CREATE POLICY "Users can view their own profile"
 
 CREATE POLICY "Founders can read all profiles"
   ON profiles FOR SELECT
-  USING (
-    EXISTS (
-      SELECT 1 FROM profiles
-      WHERE id = auth.uid() AND role = 'founder'
-    )
-  );
+  USING (public.is_founder());
 
 -- Lesson Content Policies
 -- Founder reads everything

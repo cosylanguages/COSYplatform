@@ -13,6 +13,7 @@ Database changes must be added as sequential migration files in [`supabase/migra
 - **`0001_core_profiles_and_lessons.sql`**: Core user profiles (`public.profiles`) and lesson content (`public.lesson_content`) tables, along with Row-Level Security (RLS) policies.
 - **`0002_session_content.sql`**: Extension for event sessions (`public.session_content`), adding `enrolled_sessions` and `hosted_sessions` columns to `public.profiles` and defining event-specific RLS policies.
 - **`0003_manual_content.sql`**: Extension for manuals (`public.manual_content`) storing markdown manuals and defining RLS policies.
+- **`0004_fix_profiles_policy_recursion.sql`**: Fixes infinite recursion in the `public.profiles` RLS policy by introducing a `SECURITY DEFINER` function `public.is_founder()`.
 
 ## Repository Guidance
 
@@ -25,5 +26,6 @@ When provisioning or applying migrations to a fresh Supabase environment, execut
 1. `0001_core_profiles_and_lessons.sql`
 2. `0002_session_content.sql`
 3. `0003_manual_content.sql`
+4. `0004_fix_profiles_policy_recursion.sql`
 
 This guarantees that base tables (e.g. `public.profiles`) exist prior to subsequent `ALTER TABLE` statements or policy references.
