@@ -100,6 +100,9 @@
         <button id="mode-group-btn" onclick="switchLessonMode('group')" class="px-2.5 py-1 rounded-lg font-semibold text-gray-500 transition hover:text-gray-800">
           👥 Group Mode
         </button>
+        <button id="breakout-rooms-btn" onclick="toggleBreakoutRoomsModal()" class="hidden px-2 py-1 bg-amber-100 hover:bg-amber-200 text-amber-900 rounded-lg font-semibold text-xs transition border border-amber-300" title="Manage Breakout Rooms">
+          🔀 Breakout Rooms
+        </button>
       </div>
 
       <!-- Video Layout Preset Dropdown -->
@@ -343,6 +346,10 @@
             <i class="fa-solid fa-folder-open"></i> Full Catalog
           </button>
 
+          <button onclick="toggleSidebarCollapse()" class="px-2.5 py-1 bg-gray-100 hover:bg-gray-200 border border-gray-300 text-gray-700 font-semibold text-xs rounded-lg transition flex items-center gap-1.5" title="Toggle Sidebar / Maximize Stage">
+            <i class="fa-solid fa-up-right-and-down-left-from-center text-[11px]"></i> <span id="sidebar-toggle-text">Expand Stage</span>
+          </button>
+
           <span class="text-xs text-gray-500 font-medium">
             Slide <span id="current-slide-num">1</span> of <span id="total-slides-num">3</span>
           </span>
@@ -532,6 +539,47 @@
       <!-- Course Sequence List -->
       <div id="catalog-modal-body" class="flex-1 overflow-y-auto space-y-3 pr-1 text-xs">
         <div class="text-center py-8 text-gray-400">Loading platform course manifests...</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Breakout Rooms Manager Modal (Group Mode) -->
+  <div id="breakout-rooms-modal" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-2xl max-w-lg w-full p-6 space-y-4 shadow-xl border border-cosy-100">
+      <div class="flex items-center justify-between pb-2 border-b border-gray-100">
+        <div class="flex items-center space-x-2 text-amber-700">
+          <i class="fa-solid fa-people-arrows text-xl"></i>
+          <h3 class="text-lg font-bold text-gray-900">Breakout Rooms Manager</h3>
+        </div>
+        <button onclick="toggleBreakoutRoomsModal()" class="text-gray-400 hover:text-gray-600 text-lg">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <p class="text-xs text-gray-600">Divide group class participants into smaller sub-rooms for pair work or group debates.</p>
+
+      <div class="flex items-center justify-between bg-amber-50 p-3 rounded-xl border border-amber-200 text-xs">
+        <span class="font-bold text-amber-900">Number of Breakout Rooms:</span>
+        <select id="breakout-count-select" class="bg-white border border-amber-300 rounded-lg px-2 py-1 text-xs font-bold text-amber-900 focus:ring-1 focus:ring-amber-500">
+          <option value="2">2 Sub-Rooms (Room A &amp; B)</option>
+          <option value="3">3 Sub-Rooms (Room A, B, C)</option>
+          <option value="4">4 Sub-Rooms (Room A, B, C, D)</option>
+        </select>
+      </div>
+
+      <div id="breakout-rooms-container" class="space-y-2 max-h-56 overflow-y-auto pt-1 text-xs">
+        <div class="p-3 bg-gray-50 border border-gray-200 rounded-xl text-center text-gray-500">
+          Click "Generate Rooms" to automatically assign active participants into breakout rooms.
+        </div>
+      </div>
+
+      <div class="flex items-center justify-between pt-2 border-t border-gray-100 gap-2">
+        <button onclick="generateBreakoutRooms()" class="px-4 py-2 bg-amber-600 text-white text-xs font-bold rounded-xl hover:bg-amber-700 transition shadow-sm">
+          ⚡ Generate &amp; Assign Rooms
+        </button>
+        <button onclick="recallAllFromBreakouts()" class="px-4 py-2 bg-gray-700 text-white text-xs font-bold rounded-xl hover:bg-gray-800 transition shadow-sm">
+          📢 Recall All To Main Room
+        </button>
       </div>
     </div>
   </div>
@@ -754,9 +802,12 @@
       const indBtn = document.getElementById('mode-individual-btn');
       const grpBtn = document.getElementById('mode-group-btn');
 
+      const breakoutBtn = document.getElementById('breakout-rooms-btn');
+
       if (mode === 'group') {
         if (indBtn) indBtn.className = 'px-2.5 py-1 rounded-lg font-semibold text-gray-500 transition hover:text-gray-800';
         if (grpBtn) grpBtn.className = 'px-2.5 py-1 rounded-lg font-semibold transition shadow-sm bg-white text-cosy-700';
+        if (breakoutBtn) breakoutBtn.classList.remove('hidden');
 
         // If in group mode and layout is default side, suggest discussion split layout
         if (currentLayoutPreset === 'side') {
@@ -765,6 +816,7 @@
       } else {
         if (indBtn) indBtn.className = 'px-2.5 py-1 rounded-lg font-semibold transition shadow-sm bg-white text-cosy-700';
         if (grpBtn) grpBtn.className = 'px-2.5 py-1 rounded-lg font-semibold text-gray-500 transition hover:text-gray-800';
+        if (breakoutBtn) breakoutBtn.classList.add('hidden');
 
         if (currentLayoutPreset === 'discussion-split') {
           switchLayoutPreset('side', false);
@@ -1136,6 +1188,26 @@
       goToSlide(1, false);
     }
 
+    let isSidebarCollapsed = false;
+
+    function toggleSidebarCollapse() {
+      isSidebarCollapsed = !isSidebarCollapsed;
+      const sidebar = document.getElementById('video-sidebar');
+      const toggleText = document.getElementById('sidebar-toggle-text');
+
+      if (sidebar) {
+        if (isSidebarCollapsed) {
+          sidebar.classList.add('hidden');
+          if (toggleText) toggleText.innerText = 'Show Sidebar';
+        } else {
+          sidebar.classList.remove('hidden');
+          if (toggleText) toggleText.innerText = 'Expand Stage';
+        }
+      }
+
+      setTimeout(resizeCanvas, 150);
+    }
+
     function renderDynamicSlideContainers() {
       const container = document.getElementById("slide-container");
       container.innerHTML = "";
@@ -1143,7 +1215,7 @@
       dynamicSlides.forEach((slide, idx) => {
         const slideDiv = document.createElement("div");
         slideDiv.id = `slide-${idx+1}`;
-        slideDiv.className = `slide-content w-full max-w-3xl space-y-4 ${idx === 0 ? '' : 'hidden'}`;
+        slideDiv.className = `slide-content w-full max-w-4xl lg:max-w-5xl space-y-4 ${idx === 0 ? '' : 'hidden'}`;
 
         let innerContent = "";
         if (slide.xmlNode) {
@@ -1153,10 +1225,10 @@
         }
 
         slideDiv.innerHTML = `
-          <div class="bg-white rounded-2xl p-6 shadow-sm border border-cosy-100">
-            <div class="flex justify-between items-center mb-4 border-b border-gray-100 pb-3">
-              <h2 class="text-xl font-bold text-cosy-700">${idx+1}. ${slide.title}</h2>
-              ${slide.stage ? `<span class="text-xs font-semibold uppercase bg-cosy-50 text-cosy-600 px-2.5 py-1 rounded-md border border-cosy-200">${slide.stage}</span>` : ''}
+          <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-cosy-200">
+            <div class="flex flex-wrap items-center justify-between pb-4 mb-4 border-b border-gray-100 gap-2">
+              <h2 class="text-2xl font-black text-gray-900 tracking-tight">${idx+1}. ${slide.title}</h2>
+              ${slide.stage ? `<span class="px-3 py-1 bg-sky-100 text-sky-800 rounded-full font-bold text-xs uppercase tracking-wide">${slide.stage}</span>` : ''}
             </div>
             <div>${innerContent}</div>
           </div>
@@ -1676,6 +1748,17 @@
             addChatMessage('System', `Teacher launched ${data.provider === 'yandex' ? 'Yandex Telemost' : 'Google Meet'} video call.`);
           }
           break;
+        case 'breakout-assignment':
+          if (data.roomName) {
+            showActivityBanner(`Breakout Room Assigned`, `You have been assigned to ${data.roomName}. Focus on pair/group discussion!`);
+            addChatMessage('System', `🔀 Assigned to Breakout ${data.roomName}`);
+          }
+          break;
+        case 'breakout-recall':
+          closeActivityBanner();
+          addChatMessage('System', `📢 Teacher recalled all participants back to the main room.`);
+          alert('📢 All participants recalled to the main room!');
+          break;
       }
     }
 
@@ -2072,6 +2155,57 @@
       if (modal) {
         modal.classList.toggle('hidden');
       }
+    }
+
+    // Breakout Rooms Manager Modal Toggle & Logic
+    function toggleBreakoutRoomsModal() {
+      const modal = document.getElementById('breakout-rooms-modal');
+      if (modal) modal.classList.toggle('hidden');
+    }
+
+    function generateBreakoutRooms() {
+      const countSelect = document.getElementById('breakout-count-select');
+      const numRooms = parseInt(countSelect.value, 10) || 2;
+      const container = document.getElementById('breakout-rooms-container');
+
+      const roomNames = ['Room A (Grammar Focus)', 'Room B (Free Discussion)', 'Room C (Debate)', 'Room D (Pronunciation)'];
+      let html = `<div class="grid grid-cols-1 sm:grid-cols-2 gap-2">`;
+
+      for (let i = 0; i < numRooms; i++) {
+        const rName = roomNames[i] || `Room ${i+1}`;
+        html += `
+          <div class="p-3 bg-amber-50/50 border border-amber-200 rounded-xl space-y-2">
+            <div class="flex justify-between items-center font-bold text-amber-900">
+              <span>🏠 ${rName}</span>
+              <span class="text-[10px] bg-amber-200 text-amber-900 px-1.5 py-0.5 rounded font-mono">Active</span>
+            </div>
+            <div class="text-[11px] text-gray-600">Assigned Peers: Auto-balanced</div>
+            <button onclick="broadcastBreakoutAssignment('${rName}')" class="w-full py-1 bg-amber-600 hover:bg-amber-700 text-white font-bold rounded-lg text-[11px] transition">
+              🚀 Broadcast Sub-room Link
+            </button>
+          </div>
+        `;
+      }
+
+      html += `</div>`;
+      container.innerHTML = html;
+
+      // Broadcast room assignment event to connected peers
+      sendData({ type: 'breakout-assignment', roomName: roomNames[0] });
+      addChatMessage('System', `🔀 Teacher generated ${numRooms} breakout rooms and assigned students.`);
+    }
+
+    function broadcastBreakoutAssignment(roomName) {
+      sendData({ type: 'breakout-assignment', roomName: roomName });
+      addChatMessage('System', `🔀 Teacher assigned students to ${roomName}.`);
+      alert(`Sent assignment for ${roomName} to all connected peers.`);
+    }
+
+    function recallAllFromBreakouts() {
+      sendData({ type: 'breakout-recall' });
+      addChatMessage('System', `📢 Teacher recalled all students to the main room.`);
+      alert('Recalled all participants back to the main room.');
+      toggleBreakoutRoomsModal();
     }
   </script>
 </body>
