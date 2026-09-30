@@ -277,6 +277,7 @@
   </style>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="shared/js/config.js"></script>
   <script src="shared/js/auth-guard.js"></script>
 
 </head>
@@ -299,24 +300,14 @@
     const levelParam = urlParams.get('level');
     const keyParam = urlParams.get('key');
 
-    // Configurable Supabase credentials (populated via env or window config)
-    const SUPABASE_URL = window.SUPABASE_URL || "https://your-supabase-project.supabase.co";
-    const SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY || "your-anon-key";
-
-    let supabaseClient = null;
-    if (window.supabase && SUPABASE_URL.startsWith("http")) {
-      try {
-        supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-      } catch (e) {}
-    }
-
     async function checkAuthentication() {
-      if (supabaseClient) {
-        const { data: { session } } = await supabaseClient.auth.getSession();
+      const client = window.CosyAuth ? window.CosyAuth.client : null;
+      if (client) {
+        const { data: { session } } = await client.auth.getSession();
         if (session && session.user) {
           let role = 'student';
           try {
-            const { data: profile } = await supabaseClient
+            const { data: profile } = await client
               .from('profiles')
               .select('role')
               .eq('id', session.user.id)
@@ -505,8 +496,9 @@
     }
 
     async function fetchLessonContentFromSupabase(lessonId) {
-      if (supabaseClient) {
-        const { data, error } = await supabaseClient
+      const client = window.CosyAuth ? window.CosyAuth.client : null;
+      if (client) {
+        const { data, error } = await client
           .from('lesson_content')
           .select('*')
           .eq('lesson_id', lessonId)
@@ -516,19 +508,25 @@
       }
 
       // Fallback REST fetch if client not initialized
-      try {
-        const endpoint = `${SUPABASE_URL}/rest/v1/lesson_content?lesson_id=eq.${encodeURIComponent(lessonId)}`;
-        const res = await fetch(endpoint, {
-          headers: {
-            'apikey': SUPABASE_ANON_KEY,
-            'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
+      const config = window.COSY_CONFIG || {};
+      const url = config.SUPABASE_URL || "";
+      const key = config.SUPABASE_ANON_KEY || "";
+
+      if (url && key) {
+        try {
+          const endpoint = `${url}/rest/v1/lesson_content?lesson_id=${encodeURIComponent(lessonId)}`;
+          const res = await fetch(endpoint, {
+            headers: {
+              'apikey': key,
+              'Authorization': `Bearer ${key}`
+            }
+          });
+          if (res.ok) {
+            const json = await res.json();
+            if (json && json.length > 0) return json[0].xml_content;
           }
-        });
-        if (res.ok) {
-          const json = await res.json();
-          if (json && json.length > 0) return json[0].xml_content;
-        }
-      } catch (e) {}
+        } catch (e) {}
+      }
 
       return null;
     }

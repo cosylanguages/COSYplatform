@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="shared/css/tokens.css">
   <link rel="stylesheet" href="shared/styles/style.css">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="shared/js/config.js"></script>
   <style>
     body {
       background-color: #f8fafc;
@@ -134,13 +135,20 @@
   </div>
 
   <script>
-    const SUPABASE_URL = window.SUPABASE_URL || "https://your-supabase-project.supabase.co";
-    const SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY || "your-anon-key";
-
     let supabaseClient = null;
-    if (window.supabase && SUPABASE_URL.startsWith("http")) {
-      supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-    }
+    (function() {
+      const config = window.COSY_CONFIG || {};
+      const url = config.SUPABASE_URL || "";
+      const key = config.SUPABASE_ANON_KEY || "";
+      const isConfigured = Boolean(
+        url && key && !url.startsWith("REPLACE_WITH") && !key.startsWith("REPLACE_WITH") && url.startsWith("http")
+      );
+      if (isConfigured && window.supabase) {
+        try {
+          supabaseClient = window.supabase.createClient(url, key);
+        } catch (e) {}
+      }
+    })();
 
     const form = document.getElementById('login-form');
     const submitBtn = document.getElementById('submit-btn');
@@ -159,12 +167,16 @@
       errorBanner.textContent = '';
     }
 
+    if (!supabaseClient) {
+      showError("Platform not configured. Ask an administrator to set the Supabase details in shared/js/config.js.");
+    }
+
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       hideError();
 
       if (!supabaseClient) {
-        showError("Supabase backend connection is not configured.");
+        showError("Platform not configured. Ask an administrator to set the Supabase details in shared/js/config.js.");
         return;
       }
 

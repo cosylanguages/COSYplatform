@@ -189,17 +189,33 @@ window.CosyAuth.FULL_MANIFEST = [
  * Enforces Supabase Auth & RLS Role Access Controls.
  */
 
-// Placeholder constants matching index.html pattern
-const SUPABASE_URL = window.SUPABASE_URL || "https://your-supabase-project.supabase.co";
-const SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY || "your-anon-key";
-
 window.CosyAuth = window.CosyAuth || {};
 
-let supabaseClient = null;
-if (window.supabase && SUPABASE_URL.startsWith("http")) {
-  supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-}
-window.CosyAuth.client = supabaseClient;
+(function() {
+  const config = window.COSY_CONFIG || {};
+  const url = config.SUPABASE_URL || "";
+  const key = config.SUPABASE_ANON_KEY || "";
+
+  const isConfigured = Boolean(
+    url &&
+    key &&
+    !url.startsWith("REPLACE_WITH") &&
+    !key.startsWith("REPLACE_WITH") &&
+    url.startsWith("http")
+  );
+
+  window.CosyAuth.isConfigured = isConfigured;
+
+  let client = null;
+  if (isConfigured && window.supabase) {
+    try {
+      client = window.supabase.createClient(url, key);
+    } catch (e) {
+      console.error("Failed to initialize Supabase client:", e);
+    }
+  }
+  window.CosyAuth.client = client;
+})();
 
 /**
  * Loads the current session and associated user profile from Supabase.
@@ -207,11 +223,17 @@ window.CosyAuth.client = supabaseClient;
  * @returns {Promise<{session: Object, profile: Object}>}
  */
 window.CosyAuth.getAuthAndProfile = async function() {
-  if (!supabaseClient) {
-    console.warn("Supabase client not initialized. Redirecting to login.");
-    window.CosyAuth.redirectToLogin();
+  if (!window.CosyAuth.isConfigured || !window.CosyAuth.client) {
+    document.body.innerHTML = `
+      <div style="max-width: 500px; margin: 100px auto; padding: 30px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; text-align: center; border: 1px solid #fca5a5; border-radius: 12px; background-color: #fef2f2; color: #991b1b; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);">
+        <h2 style="margin-top: 0; color: #991b1b; font-size: 1.5rem;">Platform Not Configured</h2>
+        <p style="margin-bottom: 0; font-size: 0.95rem; color: #b91c1c;">Platform not configured. Ask an administrator to set the Supabase details in shared/js/config.js.</p>
+      </div>
+    `;
     return null;
   }
+
+  const supabaseClient = window.CosyAuth.client;
 
   const { data: { session }, error: sessionError } = await supabaseClient.auth.getSession();
   if (sessionError || !session || !session.user) {
@@ -326,8 +348,8 @@ window.CosyAuth.isCourseAccessible = function(course, profile) {
  * Signs out current user session.
  */
 window.CosyAuth.logout = async function() {
-  if (supabaseClient) {
-    await supabaseClient.auth.signOut();
+  if (window.CosyAuth.client) {
+    await window.CosyAuth.client.auth.signOut();
   }
   window.location.href = "login.html";
 };
