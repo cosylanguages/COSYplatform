@@ -522,7 +522,10 @@
             <div class="unit-card">
               <span style="font-size: 0.75rem; color: #94a3b8; font-weight: 600;">LESSON #${item.lessonNumber}</span>
               <h3 style="margin: 6px 0;">${item.title}</h3>
-              <a href="hub.html?lesson=${encodeURIComponent(lPath)}" class="btn" style="background: var(--hub-primary, #0284c7); text-align: center; margin-top: 10px;">▶ Open Lesson</a>
+              <div style="display: flex; gap: 6px; flex-direction: column; margin-top: 10px;">
+                <a href="hub.html?lesson=${encodeURIComponent(lPath)}" class="btn" style="background: var(--hub-primary, #0284c7); text-align: center;">▶ Open Lesson</a>
+                <a href="classroom.html?lesson=${encodeURIComponent(lPath)}" target="_blank" class="btn" style="background: #10b981; color: white; text-align: center;">🎥 Open in Live Classroom</a>
+              </div>
             </div>
           `;
         });

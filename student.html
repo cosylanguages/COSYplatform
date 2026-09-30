@@ -714,7 +714,10 @@
                 ${item.unit ? `<p style="font-size: 0.8rem; color: #64748b; margin-bottom: 12px;">${item.unit}</p>` : ''}
               </div>
               ${isUnlocked ?
-                `<a href="student.html?lesson=${encodeURIComponent(lessonPath)}" class="btn" style="background: var(--student-primary); padding: 6px 12px; font-size: 0.85rem; text-align: center;">▶ Start Lesson</a>` :
+                `<div style="display: flex; gap: 6px; flex-direction: column;">
+                  <a href="student.html?lesson=${encodeURIComponent(lessonPath)}" class="btn" style="background: var(--student-primary); padding: 6px 12px; font-size: 0.85rem; text-align: center;">▶ Start Lesson</a>
+                  <a href="classroom.html?lesson=${encodeURIComponent(lessonPath)}" target="_blank" class="btn" style="background: #10b981; color: white; padding: 6px 12px; font-size: 0.85rem; text-align: center;">🎥 Join Live Classroom</a>
+                 </div>` :
                 `<a href="student.html?lesson=${encodeURIComponent(lessonPath)}" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.85rem; text-align: center; color: #64748b;">🔒 Closed (Sent by Teacher)</a>`
               }
             </div>
