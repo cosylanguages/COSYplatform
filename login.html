@@ -157,6 +157,29 @@
     const urlParams = new URLSearchParams(window.location.search);
     const redirectTarget = urlParams.get('redirect');
 
+    function safeRedirect(target) {
+      if (!target || typeof target !== 'string') return null;
+      try {
+        const parsed = new URL(target, window.location.href);
+        if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') return null;
+        if (parsed.origin !== window.location.origin) return null;
+
+        const loginPath = window.location.pathname;
+        const folderPath = loginPath.substring(0, loginPath.lastIndexOf('/') + 1);
+
+        if (!parsed.pathname.startsWith(folderPath)) return null;
+
+        const relPath = parsed.pathname.substring(folderPath.length);
+        if (relPath.includes('/')) return null;
+
+        if (relPath !== '' && !relPath.endsWith('.html')) return null;
+
+        return relPath + parsed.search + parsed.hash;
+      } catch (e) {
+        return null;
+      }
+    }
+
     function showError(msg) {
       errorBanner.textContent = msg;
       errorBanner.style.display = 'block';
@@ -212,9 +235,10 @@
             else targetPage = 'student.html';
           }
 
-          // If redirect target is specified, honor it
-          if (redirectTarget) {
-            window.location.href = redirectTarget;
+          // If redirect target is specified and safe, honor it
+          const safeTarget = safeRedirect(redirectTarget);
+          if (safeTarget) {
+            window.location.href = safeTarget;
           } else {
             window.location.href = targetPage;
           }
