@@ -168,10 +168,22 @@
         <div class="flex items-center justify-between text-gray-600 font-semibold text-[11px]">
           <span><i class="fa-solid fa-video text-cosy-600 mr-1"></i> Provider:</span>
           <select id="video-provider-select" onchange="changeVideoProvider(this.value)" class="px-2 py-0.5 border border-gray-300 rounded-lg text-xs bg-white focus:ring-1 focus:ring-cosy-500">
-            <option value="jitsi">Jitsi Meet (Embedded)</option>
+            <option value="peerjs-video">⚡ PeerJS Direct Video (Free &amp; Unlimited)</option>
+            <option value="jitsi" selected>Jitsi Meet (Embedded)</option>
             <option value="yandex">Yandex Telemost</option>
             <option value="google">Google Meet</option>
             <option value="custom">Custom Link</option>
+          </select>
+        </div>
+
+        <!-- Jitsi Server Selector (if Jitsi is selected) -->
+        <div id="jitsi-server-container" class="flex items-center justify-between text-gray-600 font-semibold text-[11px]">
+          <span><i class="fa-solid fa-server text-cosy-600 mr-1"></i> Jitsi Host:</span>
+          <select id="jitsi-server-select" onchange="changeJitsiServer(this.value)" class="px-2 py-0.5 border border-gray-300 rounded-lg text-xs bg-white focus:ring-1 focus:ring-cosy-500">
+            <option value="meet.jit.si">meet.jit.si (Official)</option>
+            <option value="meet.ffmuc.net">meet.ffmuc.net (Unlimited)</option>
+            <option value="jitsi.riot.im">jitsi.riot.im (Element)</option>
+            <option value="framatalk.org">framatalk.org (Framasoft)</option>
           </select>
         </div>
 
@@ -722,20 +734,45 @@
       }
     }
 
+    let currentJitsiDomain = 'meet.jit.si';
+    let localStream = null;
+    let peerMediaCalls = [];
+
+    function changeJitsiServer(domain) {
+      currentJitsiDomain = domain;
+      if (currentVideoProvider === 'jitsi' && jitsiApi) {
+        startVideoCall();
+      }
+    }
+
     // Video Provider Switching Logic
     function changeVideoProvider(provider) {
       currentVideoProvider = provider;
       const linkContainer = document.getElementById('external-video-link-container');
+      const jitsiServerContainer = document.getElementById('jitsi-server-container');
       const btn = document.getElementById('launch-video-btn');
       const placeholderText = document.getElementById('video-placeholder-text');
 
-      if (provider === 'jitsi') {
-        linkContainer.classList.add('hidden');
-        btn.classList.remove('hidden');
-        placeholderText.innerText = 'Video call inactive (Embedded Jitsi).';
+      if (provider === 'peerjs-video') {
+        if (linkContainer) linkContainer.classList.add('hidden');
+        if (jitsiServerContainer) jitsiServerContainer.classList.add('hidden');
+        if (btn) {
+          btn.classList.remove('hidden');
+          btn.innerText = 'Launch Direct PeerJS Video Call ⚡';
+        }
+        if (placeholderText) placeholderText.innerText = 'Direct P2P WebRTC Video (Free & Unlimited).';
+      } else if (provider === 'jitsi') {
+        if (linkContainer) linkContainer.classList.add('hidden');
+        if (jitsiServerContainer) jitsiServerContainer.classList.remove('hidden');
+        if (btn) {
+          btn.classList.remove('hidden');
+          btn.innerText = 'Launch Embedded Jitsi Call';
+        }
+        if (placeholderText) placeholderText.innerText = 'Embedded Jitsi Video Call.';
       } else {
-        linkContainer.classList.remove('hidden');
-        btn.classList.add('hidden');
+        if (linkContainer) linkContainer.classList.remove('hidden');
+        if (jitsiServerContainer) jitsiServerContainer.classList.add('hidden');
+        if (btn) btn.classList.add('hidden');
 
         if (provider === 'yandex') {
           document.getElementById('video-link-input').placeholder = 'Paste Yandex Telemost URL (e.g. https://telemost.yandex.ru/j/...)';
@@ -1575,12 +1612,17 @@
       });
     }
 
-    // Launch Embedded Jitsi Video Call
-    function startVideoCall() {
+    // Launch Video Call (Handles Jitsi or PeerJS Direct WebRTC Video)
+    async function startVideoCall() {
+      if (currentVideoProvider === 'peerjs-video') {
+        await startPeerJsVideoCall();
+        return;
+      }
+
       const roomName = roomId && roomId !== '------' ? `cosy-languages-${roomId}` : `cosy-languages-room-${Math.floor(Math.random()*10000)}`;
       document.getElementById('jitsi-placeholder').classList.add('hidden');
 
-      const domain = 'meet.jit.si';
+      const domain = currentJitsiDomain || 'meet.jit.si';
       const options = {
         roomName: roomName,
         width: '100%',
@@ -1606,7 +1648,55 @@
         jitsiApi = new JitsiMeetExternalAPI(domain, options);
       } catch (err) {
         console.error('Jitsi error:', err);
-        alert('Could not initialize video call frame.');
+        alert(`Could not initialize video call frame on ${domain}.`);
+      }
+    }
+
+    async function startPeerJsVideoCall() {
+      const placeholder = document.getElementById('jitsi-placeholder');
+      const container = document.getElementById('jitsi-container');
+
+      try {
+        localStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+        placeholder.classList.add('hidden');
+        container.innerHTML = `
+          <div class="w-full h-full relative grid grid-cols-1 md:grid-cols-2 gap-1 bg-black p-1">
+            <div class="relative w-full h-full bg-gray-900 rounded-lg overflow-hidden flex items-center justify-center border border-gray-800">
+              <video id="local-video" autoplay playsinline muted class="w-full h-full object-cover"></video>
+              <span class="absolute bottom-1 left-1 bg-black/60 text-white text-[10px] px-2 py-0.5 rounded font-bold">${currentRole === 'teacher' ? 'Teacher (You)' : 'Student (You)'}</span>
+            </div>
+            <div class="relative w-full h-full bg-gray-900 rounded-lg overflow-hidden flex items-center justify-center border border-gray-800">
+              <video id="remote-video" autoplay playsinline class="w-full h-full object-cover"></video>
+              <span id="remote-video-label" class="absolute bottom-1 left-1 bg-black/60 text-white text-[10px] px-2 py-0.5 rounded font-bold">${currentRole === 'teacher' ? 'Student' : 'Teacher'}</span>
+            </div>
+          </div>
+        `;
+
+        const localVid = document.getElementById('local-video');
+        if (localVid) localVid.srcObject = localStream;
+
+        // Listen for incoming media calls via PeerJS
+        if (peer) {
+          peer.on('call', (call) => {
+            call.answer(localStream);
+            call.on('stream', (remoteStream) => {
+              const remoteVid = document.getElementById('remote-video');
+              if (remoteVid) remoteVid.srcObject = remoteStream;
+            });
+          });
+
+          // Call connected peer if conn exists
+          if (conn && conn.peer) {
+            const mediaCall = peer.call(conn.peer, localStream);
+            mediaCall.on('stream', (remoteStream) => {
+              const remoteVid = document.getElementById('remote-video');
+              if (remoteVid) remoteVid.srcObject = remoteStream;
+            });
+          }
+        }
+      } catch (err) {
+        console.error("Camera/Mic access error:", err);
+        alert("Camera and Microphone permission required for PeerJS Direct Video Call.");
       }
     }
 
