@@ -468,16 +468,30 @@
         html += `<p style="grid-column: 1/-1; color: #64748b;">No accessible courses found for your account profile.</p>`;
       } else {
         courseList.forEach(course => {
-          html += `
-            <div class="course-card">
-              <div>
-                <span class="badge-hub" style="margin-bottom: 8px; display: inline-block;">${course.level.toUpperCase()}</span>
-                <h3 style="font-size: 1.15rem; color: #0f172a; margin-bottom: 6px;">${course.title}</h3>
-                <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 16px;">Track: ${course.track}</p>
+          const isAvailable = course.status !== 'not_yet_available';
+          if (isAvailable) {
+            html += `
+              <div class="course-card">
+                <div>
+                  <span class="badge-hub" style="margin-bottom: 8px; display: inline-block;">${course.level.toUpperCase()}</span>
+                  <h3 style="font-size: 1.15rem; color: #0f172a; margin-bottom: 6px;">${course.title}</h3>
+                  <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 16px;">Track: ${course.track}</p>
+                </div>
+                <a href="hub.html?course=${course.id}&level=${course.level.toLowerCase()}" class="btn" style="background: var(--hub-primary, #0284c7); text-align: center;">Open Course Roadmap 📚</a>
               </div>
-              <a href="hub.html?course=${course.id}&level=${course.level.toLowerCase()}" class="btn" style="background: var(--hub-primary, #0284c7); text-align: center;">Open Course Roadmap 📚</a>
-            </div>
-          `;
+            `;
+          } else {
+            html += `
+              <div class="course-card disabled" style="opacity: 0.6;">
+                <div>
+                  <span class="badge-hub" style="margin-bottom: 8px; display: inline-block;">${course.level.toUpperCase()}</span>
+                  <h3 style="font-size: 1.15rem; color: #0f172a; margin-bottom: 6px;">${course.title}</h3>
+                  <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 16px;">Track: ${course.track}</p>
+                </div>
+                <span style="font-size: 0.85rem; color: #64748b; font-weight: 500; text-align: center; display: block;">Coming soon</span>
+              </div>
+            `;
+          }
         });
       }
 

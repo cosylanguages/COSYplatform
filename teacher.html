@@ -566,29 +566,47 @@
 
         Object.keys(groupedByTrack).forEach(trackName => {
           const trackCourses = groupedByTrack[trackName];
+          const availableCount = trackCourses.filter(c => c.status !== 'not_yet_available').length;
+          const comingSoonCount = trackCourses.filter(c => c.status === 'not_yet_available').length;
+
           html += `
             <div class="category-card" id="tcat-${trackName}">
               <div class="category-header" onclick="toggleTeacherCategoryFold('tcat-${trackName}')">
-                <h3>English • ${trackName} (${trackCourses.length})</h3>
+                <h3>English • ${trackName} (${availableCount})${comingSoonCount > 0 ? ` <span style="font-size: 0.8em; font-weight: normal; color: #64748b;">+ ${comingSoonCount} coming soon</span>` : ''}</h3>
                 <span class="category-toggle-icon">▼</span>
               </div>
               <div class="category-body">
           `;
 
           trackCourses.forEach(c => {
-            html += `
-              <div class="course-item-card">
-                <div>
-                  <div style="display: flex; align-items: center; gap: 8px;">
-                    <span class="course-item-level badge-teacher">${c.level.toUpperCase()}</span>
-                    <span class="course-item-title">${c.title}</span>
+            const isAvailable = c.status !== 'not_yet_available';
+            if (isAvailable) {
+              html += `
+                <div class="course-item-card">
+                  <div>
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                      <span class="course-item-level badge-teacher">${c.level.toUpperCase()}</span>
+                      <span class="course-item-title">${c.title}</span>
+                    </div>
                   </div>
+                  <a href="teacher.html?course=${c.id}&level=${c.level.toLowerCase()}" class="btn" style="background: var(--teacher-primary); padding: 6px 12px; font-size: 0.8rem; white-space: nowrap;">
+                    Roadmap 📚
+                  </a>
                 </div>
-                <a href="teacher.html?course=${c.id}&level=${c.level.toLowerCase()}" class="btn" style="background: var(--teacher-primary); padding: 6px 12px; font-size: 0.8rem; white-space: nowrap;">
-                  Roadmap 📚
-                </a>
-              </div>
-            `;
+              `;
+            } else {
+              html += `
+                <div class="course-item-card disabled" style="opacity: 0.6;">
+                  <div>
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                      <span class="course-item-level badge-teacher">${c.level.toUpperCase()}</span>
+                      <span class="course-item-title">${c.title}</span>
+                    </div>
+                  </div>
+                  <span style="font-size: 0.8rem; color: #64748b; font-weight: 500; white-space: nowrap;">Coming soon</span>
+                </div>
+              `;
+            }
           });
 
           html += `
