@@ -29,6 +29,15 @@ const CINEMA_ENTRIES = [
   { id: 'cinema-en-c2', title: 'Cinema Club English C2', track: 'Cinema', lang: 'en', level: 'c2' }
 ];
 
+const DISCUSSION_ENTRIES = [
+  { id: 'discussion-en-a1', title: 'Special Discussion English A1', track: 'Discussion', lang: 'en', level: 'a1' },
+  { id: 'discussion-en-a2', title: 'Special Discussion English A2', track: 'Discussion', lang: 'en', level: 'a2' },
+  { id: 'discussion-en-b1', title: 'Special Discussion English B1', track: 'Discussion', lang: 'en', level: 'b1' },
+  { id: 'discussion-en-b2', title: 'Special Discussion English B2', track: 'Discussion', lang: 'en', level: 'b2' },
+  { id: 'discussion-en-c1', title: 'Special Discussion English C1', track: 'Discussion', lang: 'en', level: 'c1' },
+  { id: 'discussion-en-c2', title: 'Special Discussion English C2', track: 'Discussion', lang: 'en', level: 'c2' }
+];
+
 function isCourseAvailable(courseId) {
   const roadmapPath = path.join(ROOT_DIR, 'roadmaps', `${courseId}.json`);
   if (!fs.existsSync(roadmapPath)) {
@@ -58,10 +67,13 @@ function processManifest(rawEntries) {
     return true;
   });
 
-  // Update titles for Spoken track
+  // Update titles for Spoken track and track name for Discussion track
   cleaned = cleaned.map(entry => {
     if (entry.track === 'Spoken' && SPOKEN_TITLES[entry.id]) {
       return { ...entry, title: SPOKEN_TITLES[entry.id] };
+    }
+    if (entry.id.startsWith('discussion-en-')) {
+      return { ...entry, track: 'Discussion' };
     }
     return entry;
   });
@@ -71,6 +83,13 @@ function processManifest(rawEntries) {
   for (const cinemaEntry of CINEMA_ENTRIES) {
     if (!existingIds.has(cinemaEntry.id)) {
       cleaned.push({ ...cinemaEntry });
+    }
+  }
+
+  // Add discussion entries if missing
+  for (const discussionEntry of DISCUSSION_ENTRIES) {
+    if (!existingIds.has(discussionEntry.id)) {
+      cleaned.push({ ...discussionEntry });
     }
   }
 
