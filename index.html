@@ -279,6 +279,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="shared/js/config.js"></script>
   <script src="shared/js/auth-guard.js"></script>
+  <script src="shared/js/lesson-resolver.js"></script>
 
 </head>
 <body>
@@ -459,6 +460,9 @@
         if (!roadmapRes || !roadmapRes.ok) throw new Error(`Roadmap for ${courseId} not found`);
         const roadmap = await roadmapRes.json();
 
+        const totalLessons = roadmap.sequence.length;
+        const availableCount = roadmap.sequence.filter(item => window.CosyLessons.getLessonState(item) === 'available').length;
+
         let html = `
           <header class="hub-header">
             <div class="hub-header-content">
@@ -477,30 +481,45 @@
             </div>
 
             <div class="section-card" style="background: white; border: 1px solid var(--border-color); border-radius: 14px; padding: 24px;">
-              <h2 style="font-size: 1.4rem; color: #0f172a; margin-bottom: 12px;">${roadmap.title} Sequence</h2>
-              <p style="color: #64748b; margin-bottom: 20px;">Public roadmap of lessons. Authenticated users can open interactive lesson slides live from Supabase.</p>
+              <h2 style="font-size: 1.4rem; color: #0f172a; margin-bottom: 6px;">${roadmap.title} Sequence</h2>
+              <p style="color: #64748b; margin-bottom: 20px;">${availableCount} of ${totalLessons} lessons available</p>
 
               <div class="unit-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px;">
         `;
 
         roadmap.sequence.forEach(item => {
-          html += `
-            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
-              <div>
-                <span style="font-size: 0.75rem; color: #94a3b8; font-weight: 600;">LESSON #${item.lessonNumber}</span>
-                <h3 style="margin: 6px 0; font-size: 1rem; color: #0f172a;">${item.title}</h3>
-                ${item.unit ? `<p style="font-size: 0.8rem; color: #64748b;">${item.unit}</p>` : ''}
+          const state = window.CosyLessons.getLessonState(item);
+          const lessonPath = window.CosyLessons.getLessonPath(item);
+
+          if (state === 'available') {
+            html += `
+              <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <span style="font-size: 0.75rem; color: #94a3b8; font-weight: 600;">LESSON #${item.lessonNumber}</span>
+                  <h3 style="margin: 6px 0; font-size: 1rem; color: #0f172a;">${item.title}</h3>
+                  ${item.unit ? `<p style="font-size: 0.8rem; color: #64748b;">${item.unit}</p>` : ''}
+                </div>
+                <div style="display: flex; gap: 6px; flex-direction: column; margin-top: 12px;">
+                  <a href="index.html?lesson=${encodeURIComponent(lessonPath)}&course=${encodeURIComponent(courseId)}" class="btn" style="background: var(--hub-primary); color: white; padding: 6px 12px; font-size: 0.8rem; text-align: center; text-decoration: none; border-radius: 6px;">
+                    Open lesson
+                  </a>
+                </div>
               </div>
-              <div style="display: flex; gap: 6px; flex-direction: column; margin-top: 12px;">
-                <a href="index.html?lesson=${encodeURIComponent(item.id)}" class="btn" style="background: var(--hub-primary); color: white; padding: 6px 12px; font-size: 0.8rem; text-align: center; text-decoration: none; border-radius: 6px;">
-                  ▶ Open Lesson
-                </a>
-                <a href="classroom.html?lesson=${encodeURIComponent(item.id)}" target="_blank" class="btn" style="background: #10b981; color: white; padding: 6px 12px; font-size: 0.8rem; text-align: center; text-decoration: none; border-radius: 6px; font-weight: 600;">
-                  🎥 Launch Live Classroom
-                </a>
+            `;
+          } else {
+            html += `
+              <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; opacity: 0.6; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                    <span style="font-size: 0.75rem; color: #94a3b8; font-weight: 600;">LESSON #${item.lessonNumber}</span>
+                    <span style="font-size: 0.75rem; color: #64748b; background: #e2e8f0; padding: 2px 6px; border-radius: 4px; font-weight: 600;">Planned</span>
+                  </div>
+                  <h3 style="margin: 6px 0; font-size: 1rem; color: #64748b;">${item.title}</h3>
+                  ${item.unit ? `<p style="font-size: 0.8rem; color: #94a3b8;">${item.unit}</p>` : ''}
+                </div>
               </div>
-            </div>
-          `;
+            `;
+          }
         });
 
         html += `</div></div></main>`;
