@@ -515,9 +515,22 @@
       'blank-2': 'gusto'
     };
 
+    // User Authentication & Profile
+    let userProfile = null;
+
     // Initialize Page Application
     window.addEventListener('DOMContentLoaded', async () => {
       initWhiteboard();
+
+      // Enforce Authentication
+      if (window.CosyAuth && typeof window.CosyAuth.getAuthAndProfile === 'function') {
+        const auth = await window.CosyAuth.getAuthAndProfile();
+        if (!auth) return; // redirected to login
+        userProfile = auth.profile;
+      }
+
+      // Enforce Role Switcher Permissions
+      enforceRolePermissions();
 
       // Check for dynamic lesson loading parameter
       const params = new URLSearchParams(window.location.search);
@@ -535,6 +548,26 @@
         joinRoomFromInput();
       }
     });
+
+    function enforceRolePermissions() {
+      const teacherBtn = document.getElementById('role-teacher-btn');
+      const studentBtn = document.getElementById('role-student-btn');
+
+      const role = (userProfile && userProfile.role) ? userProfile.role.toLowerCase() : 'student';
+
+      if (role === 'student') {
+        // Students cannot switch to teacher view or view answer keys
+        if (teacherBtn) {
+          teacherBtn.classList.add('hidden');
+        }
+        switchRole('student');
+      } else {
+        // Teachers / Founders can view both views
+        if (teacherBtn) teacherBtn.classList.remove('hidden');
+        if (studentBtn) studentBtn.classList.remove('hidden');
+        switchRole('teacher');
+      }
+    }
 
     // Video Provider Switching Logic
     function changeVideoProvider(provider) {
@@ -956,16 +989,29 @@
 
     // Role Switching Logic
     function switchRole(role) {
+      const actualUserRole = (userProfile && userProfile.role) ? userProfile.role.toLowerCase() : 'student';
+
+      // Security check: If actual user profile is student, prevent switching to teacher mode
+      if (role === 'teacher' && actualUserRole === 'student') {
+        alert('Access denied: Student accounts cannot access Teacher view mode or answer keys.');
+        return;
+      }
+
       currentRole = role;
       const teacherBtn = document.getElementById('role-teacher-btn');
       const studentBtn = document.getElementById('role-student-btn');
 
       if (role === 'teacher') {
-        teacherBtn.className = 'px-3 py-1 rounded-lg font-medium transition shadow-sm bg-white text-cosy-700';
-        studentBtn.className = 'px-3 py-1 rounded-lg font-medium text-gray-500 transition hover:text-gray-700';
+        if (teacherBtn) teacherBtn.className = 'px-3 py-1 rounded-lg font-medium transition shadow-sm bg-white text-cosy-700';
+        if (studentBtn) studentBtn.className = 'px-3 py-1 rounded-lg font-medium text-gray-500 transition hover:text-gray-700';
       } else {
-        studentBtn.className = 'px-3 py-1 rounded-lg font-medium transition shadow-sm bg-white text-cosy-700';
-        teacherBtn.className = 'px-3 py-1 rounded-lg font-medium text-gray-500 transition hover:text-gray-700';
+        if (studentBtn) studentBtn.className = 'px-3 py-1 rounded-lg font-medium transition shadow-sm bg-white text-cosy-700';
+        if (teacherBtn) teacherBtn.className = 'px-3 py-1 rounded-lg font-medium text-gray-500 transition hover:text-gray-700';
+      }
+
+      // Re-render active dynamic slides if loaded to toggle teacher notes/answer keys
+      if (dynamicSlides && dynamicSlides.length > 0) {
+        renderDynamicSlideContainers();
       }
 
       sendData({ type: 'role', role: role });
