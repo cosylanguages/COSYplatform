@@ -8,13 +8,13 @@
   <link rel="stylesheet" href="shared/styles/style.css">
   <style>
     :root {
-      --hub-primary: var(--cosy-platform-accent, #0284c7);
-      --teacher-primary: var(--cosy-platform-teacher, #0369a1);
+      --hub-primary: var(--cosy-platform-accent, #0369a1);
+      --teacher-primary: var(--cosy-platform-teacher, #6d28d9);
       --teacher-note-bg: var(--cosy-color-honey-pale, #fffbe3);
-      --teacher-note-border: var(--cosy-color-honey, #f59e0b);
+      --teacher-note-border: var(--cosy-color-honey, #b45309);
       --speech-bg: var(--cosy-semantic-success-light, #ecfdf5);
-      --speech-border: var(--cosy-semantic-success, #10b981);
-      --student-primary: var(--cosy-platform-student, #0284c7);
+      --speech-border: var(--cosy-semantic-success, #047857);
+      --student-primary: var(--cosy-platform-student, #0369a1);
       --student-light: var(--cosy-platform-student-light, #e0f2fe);
       --border-color: var(--cosy-color-border, rgba(74, 107, 80, 0.12));
     }
@@ -165,7 +165,7 @@
       padding: 2px 8px;
       border-radius: 4px;
       background: #e0f2fe;
-      color: #0284c7;
+      color: #0369a1;
     }
 
     /* Lesson Viewer & Slide Styling */
@@ -254,7 +254,7 @@
     /* Not Yet Published Placeholder */
     .not-published-card {
       background: #fffbe3;
-      border: 1px solid #f59e0b;
+      border: 1px solid #b45309;
       border-radius: var(--cosy-radius-md, 14px);
       padding: 40px;
       text-align: center;
@@ -350,7 +350,7 @@
               <span class="badge-public">Free Public Catalog 🌐</span>
             </div>
             <div style="display: flex; align-items: center; gap: 8px;">
-              <a href="classroom.html" class="btn" style="background: #10b981; color: white; padding: 6px 14px; text-decoration: none; font-size: 0.85rem; border-radius: 6px; font-weight: 600;">Live Classroom 🎥</a>
+              <a href="classroom.html" class="btn" style="background: #047857; color: white; padding: 6px 14px; text-decoration: none; font-size: 0.85rem; border-radius: 6px; font-weight: 600;">Live Classroom 🎥</a>
               <a href="https://cosylanguages.github.io/COSYlanguages/login.html" class="btn" style="background: var(--hub-primary); color: white; padding: 6px 14px; text-decoration: none; font-size: 0.85rem; border-radius: 6px;">Sign In 🔒</a>
             </div>
           </div>
@@ -470,7 +470,7 @@
                 <span style="font-size: 1.4rem; font-weight: 800;">COSYlanguages</span>
                 <span class="badge-public">${roadmap.title}</span>
               </div>
-              <a href="index.html" style="color: #94a3b8; text-decoration: none; font-size: 0.9rem;">← Catalog</a>
+              <a href="index.html" style="color: #64748b; text-decoration: none; font-size: 0.9rem;">← Catalog</a>
             </div>
           </header>
 
@@ -495,7 +495,7 @@
             html += `
               <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
-                  <span style="font-size: 0.75rem; color: #94a3b8; font-weight: 600;">LESSON #${item.lessonNumber}</span>
+                  <span style="font-size: 0.75rem; color: #64748b; font-weight: 600;">LESSON #${item.lessonNumber}</span>
                   <h3 style="margin: 6px 0; font-size: 1rem; color: #0f172a;">${item.title}</h3>
                   ${item.unit ? `<p style="font-size: 0.8rem; color: #64748b;">${item.unit}</p>` : ''}
                 </div>
@@ -511,11 +511,11 @@
               <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; opacity: 0.6; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
                   <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-                    <span style="font-size: 0.75rem; color: #94a3b8; font-weight: 600;">LESSON #${item.lessonNumber}</span>
+                    <span style="font-size: 0.75rem; color: #64748b; font-weight: 600;">LESSON #${item.lessonNumber}</span>
                     <span style="font-size: 0.75rem; color: #64748b; background: #e2e8f0; padding: 2px 6px; border-radius: 4px; font-weight: 600;">Planned</span>
                   </div>
                   <h3 style="margin: 6px 0; font-size: 1rem; color: #64748b;">${item.title}</h3>
-                  ${item.unit ? `<p style="font-size: 0.8rem; color: #94a3b8;">${item.unit}</p>` : ''}
+                  ${item.unit ? `<p style="font-size: 0.8rem; color: #64748b;">${item.unit}</p>` : ''}
                 </div>
               </div>
             `;
@@ -581,7 +581,7 @@
           <header class="hub-header">
             <div class="hub-header-content">
               <span style="font-size: 1.4rem; font-weight: 800;">COSYlanguages</span>
-              <a href="index.html" style="color: #94a3b8; text-decoration: none;">← Catalog</a>
+              <a href="index.html" style="color: #64748b; text-decoration: none;">← Catalog</a>
             </div>
           </header>
           <main class="hub-container">
@@ -589,7 +589,7 @@
               <h2>🚧 Not Yet Published</h2>
               <p>The lesson <strong>"${lessonId}"</strong> is currently in pre-publish draft status and has not been published to Supabase yet.</p>
               <p style="font-size: 0.85rem; color: #a16207;">Final lesson content must be published via the founder local script (<code>publish_to_supabase.js</code>).</p>
-              <a href="index.html" class="btn" style="background: #f59e0b; color: white; padding: 8px 16px; text-decoration: none; border-radius: 6px; font-weight: 600; display: inline-block;">← Return to Catalog</a>
+              <a href="index.html" class="btn" style="background: #b45309; color: white; padding: 8px 16px; text-decoration: none; border-radius: 6px; font-weight: 600; display: inline-block;">← Return to Catalog</a>
             </div>
           </main>
         `;
@@ -612,14 +612,14 @@
               <span style="font-size: 1.4rem; font-weight: 800;">COSYlanguages</span>
               <span class="badge-public">${lessonTitle}</span>
             </div>
-            <a href="index.html" style="color: #94a3b8; text-decoration: none;">← Catalog</a>
+            <a href="index.html" style="color: #cbd5e1; text-decoration: none;">← Catalog</a>
           </div>
         </header>
 
         <main class="hub-container">
           <div class="controls-bar">
-            <a href="index.html" style="color: #64748b; font-weight: 500; text-decoration: none;">← Back to Catalog</a>
-            <span style="font-size: 0.85rem; color: #10b981; font-weight: 600;">🔒 Live Supabase Content Stream</span>
+            <a href="index.html" style="color: #64748b; text-decoration: none;">← Catalog</a>
+            <span style="font-size: 0.85rem; color: #047857; font-weight: 600;">🔒 Live Supabase Content Stream</span>
           </div>
       `;
 
