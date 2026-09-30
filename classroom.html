@@ -204,8 +204,11 @@
       <!-- Slide Toolbar Control -->
       <div class="bg-white px-4 py-2 border-b border-cosy-100 flex items-center justify-between shadow-sm flex-wrap gap-2">
         <div class="flex items-center space-x-3">
-          <span class="text-xs font-semibold text-cosy-500 bg-cosy-50 px-2.5 py-1 rounded-lg border border-cosy-200">
-            <i class="fa-solid fa-book-open mr-1"></i> <span id="lesson-title">Lesson 1: Spanish Greetings</span>
+          <button onclick="toggleLessonCatalogModal()" class="px-2.5 py-1 bg-cosy-50 hover:bg-cosy-100 border border-cosy-200 text-cosy-700 font-semibold text-xs rounded-lg transition flex items-center gap-1.5">
+            <i class="fa-solid fa-folder-open"></i> Switch Lesson
+          </button>
+          <span class="text-xs font-semibold text-cosy-600">
+            <span id="lesson-title">Lesson 1: Spanish Greetings</span>
           </span>
           <span class="text-xs text-gray-500 font-medium">
             Slide <span id="current-slide-num">1</span> of <span id="total-slides-num">3</span>
@@ -375,6 +378,31 @@
     </section>
   </div>
 
+  <!-- Lesson Material Catalog Modal -->
+  <div id="lesson-catalog-modal" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-2xl max-w-2xl w-full p-6 space-y-4 shadow-xl border border-cosy-100 max-h-[85vh] flex flex-col">
+      <div class="flex items-center justify-between pb-2 border-b border-gray-100">
+        <div class="flex items-center space-x-2 text-cosy-600">
+          <i class="fa-solid fa-book-open text-xl"></i>
+          <h3 class="text-lg font-bold text-gray-800">Platform Material Catalog</h3>
+        </div>
+        <button onclick="toggleLessonCatalogModal()" class="text-gray-400 hover:text-gray-600 text-lg">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Filter Controls -->
+      <div class="flex space-x-2">
+        <input type="text" id="catalog-search" oninput="filterCatalogModal()" placeholder="Search platform lessons..." class="flex-1 px-3 py-1.5 border border-gray-300 rounded-xl text-xs focus:ring-2 focus:ring-cosy-500">
+      </div>
+
+      <!-- Course Sequence List -->
+      <div id="catalog-modal-body" class="flex-1 overflow-y-auto space-y-3 pr-1 text-xs">
+        <div class="text-center py-8 text-gray-400">Loading platform course manifests...</div>
+      </div>
+    </div>
+  </div>
+
   <!-- GitHub Pages Hosting Guide Modal -->
   <div id="github-guide-modal" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 hidden">
     <div class="bg-white rounded-2xl max-w-lg w-full p-6 space-y-4 shadow-xl border border-cosy-100">
@@ -463,6 +491,94 @@
         joinRoomFromInput();
       }
     });
+
+    // Lesson Catalog Modal Toggle & Population
+    function toggleLessonCatalogModal() {
+      const modal = document.getElementById('lesson-catalog-modal');
+      modal.classList.toggle('hidden');
+      if (!modal.classList.contains('hidden')) {
+        populateLessonCatalogModal();
+      }
+    }
+
+    async function populateLessonCatalogModal() {
+      const body = document.getElementById('catalog-modal-body');
+      const manifest = window.CosyAuth ? window.CosyAuth.FULL_MANIFEST : [];
+
+      if (manifest.length === 0) {
+        body.innerHTML = '<div class="text-center py-4 text-gray-400">No active manifest items found.</div>';
+        return;
+      }
+
+      let html = `<div class="space-y-4">`;
+
+      for (const c of manifest) {
+        if (c.status === 'not_yet_available') continue;
+
+        html += `
+          <div class="border border-gray-200 rounded-xl p-3 bg-gray-50/50 catalog-course-item" data-title="${c.title.toLowerCase()}">
+            <div class="flex justify-between items-center mb-2">
+              <div class="font-bold text-gray-800 text-xs">${c.title} <span class="text-[10px] bg-cosy-100 text-cosy-700 px-1.5 py-0.5 rounded font-mono ml-1">${c.level.toUpperCase()}</span></div>
+              <button onclick="loadCourseRoadmapIntoModal('${c.id}')" class="px-2 py-1 bg-cosy-500 text-white rounded text-[11px] font-semibold hover:bg-cosy-600 transition">View Lessons 📖</button>
+            </div>
+            <div id="course-sequence-${c.id}" class="hidden mt-2 pt-2 border-t border-gray-200 space-y-1"></div>
+          </div>
+        `;
+      }
+
+      html += `</div>`;
+      body.innerHTML = html;
+    }
+
+    async function loadCourseRoadmapIntoModal(courseId) {
+      const targetDiv = document.getElementById(`course-sequence-${courseId}`);
+      if (!targetDiv) return;
+
+      if (!targetDiv.classList.contains('hidden')) {
+        targetDiv.classList.add('hidden');
+        return;
+      }
+
+      targetDiv.innerHTML = '<div class="text-gray-400 text-[11px]">Fetching roadmap sequence...</div>';
+      targetDiv.classList.remove('hidden');
+
+      try {
+        const res = await fetch(`roadmaps/${courseId}.json`);
+        if (!res.ok) throw new Error("Roadmap not found");
+        const roadmap = await res.json();
+
+        let seqHtml = `<div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5">`;
+        roadmap.sequence.forEach(item => {
+          let lPath = item.lessonFile || (`lessons/${courseId}/${item.id}.json`);
+          seqHtml += `
+            <div onclick="selectAndBroadcastLesson('${lPath}')" class="p-2 bg-white border border-gray-200 hover:border-cosy-500 rounded-lg cursor-pointer transition flex items-center justify-between">
+              <div>
+                <div class="font-bold text-gray-800 text-[11px]">#${item.lessonNumber}: ${item.title}</div>
+              </div>
+              <span class="text-[10px] bg-green-50 text-green-700 font-bold px-1.5 py-0.5 rounded">Launch 🎥</span>
+            </div>
+          `;
+        });
+        seqHtml += `</div>`;
+        targetDiv.innerHTML = seqHtml;
+      } catch (e) {
+        targetDiv.innerHTML = `<div class="text-red-500 text-[11px]">Error loading roadmap sequence.</div>`;
+      }
+    }
+
+    function filterCatalogModal() {
+      const q = (document.getElementById('catalog-search')?.value || '').toLowerCase().trim();
+      document.querySelectorAll('.catalog-course-item').forEach(item => {
+        const title = item.getAttribute('data-title') || '';
+        item.style.display = title.includes(q) ? 'block' : 'none';
+      });
+    }
+
+    async function selectAndBroadcastLesson(lessonPath) {
+      toggleLessonCatalogModal();
+      await loadDynamicLesson(lessonPath);
+      sendData({ type: 'load-lesson', lessonPath: lessonPath });
+    }
 
     // Dynamic Platform Material Loader
     async function loadDynamicLesson(lessonPath) {
@@ -852,6 +968,9 @@
           break;
         case 'activity':
           showActivityBanner(data.title, data.prompt);
+          break;
+        case 'load-lesson':
+          if (data.lessonPath) loadDynamicLesson(data.lessonPath);
           break;
       }
     }
