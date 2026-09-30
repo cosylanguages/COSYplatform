@@ -35,10 +35,10 @@ function loadEnv() {
 
 loadEnv();
 
-const SUPABASE_URL = process.env.SUPABASE_URL;
+const supabaseUrl = process.env.SUPABASE_URL;
 const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
-if (!SUPABASE_URL || !SUPABASE_SERVICE_ROLE_KEY) {
+if (!supabaseUrl || !SUPABASE_SERVICE_ROLE_KEY) {
   console.error("❌ Error: SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY must be set in local .env file.");
   process.exit(1);
 }
@@ -171,7 +171,7 @@ console.log(`🧹 Deduplicated ${recordsToUpsert.length} records down to ${dedup
 
 console.log(`📤 Upserting ${dedupedRecords.length} records into Supabase 'lesson_content' table...`);
 
-  const endpoint = `${SUPABASE_URL.replace(/\/$/, '')}/rest/v1/lesson_content`;
+  const endpoint = `${supabaseUrl.replace(/\/$/, '')}/rest/v1/lesson_content`;
 
   // Batch upsert in chunks of 50
   const CHUNK_SIZE = 50;
