@@ -731,6 +731,58 @@
       renderTeacherLessonUI();
     }
 
+    function getCosyDictMetadata(item) {
+      const file = item.file || '';
+      const parts = file.split('/');
+      const levelRaw = parts[0] ? parts[0].toUpperCase().replace('_', '-') : 'A1';
+      const theme = parts[1] ? parts[1].replace('.json', '') : '';
+
+      let emoji = '📖';
+      if (theme.includes('animal')) emoji = '🐱';
+      else if (theme.includes('food') || theme.includes('drink')) emoji = '🍔';
+      else if (theme.includes('job') || theme.includes('work')) emoji = '💼';
+      else if (theme.includes('health') || theme.includes('body')) emoji = '🏥';
+      else if (theme.includes('living') || theme.includes('house')) emoji = '🏠';
+      else if (theme.includes('school') || theme.includes('education')) emoji = '📚';
+      else if (theme.includes('nature') || theme.includes('geography') || theme.includes('environment')) emoji = '🌿';
+      else if (theme.includes('travel') || theme.includes('place') || theme.includes('transport')) emoji = '✈️';
+      else if (theme.includes('sport') || theme.includes('hobby')) emoji = '⚽';
+      else if (theme.includes('feeling') || theme.includes('emotion')) emoji = '😊';
+      else if (theme.includes('time')) emoji = '⏰';
+      else if (theme.includes('cloth') || theme.includes('appearance')) emoji = '👗';
+
+      const word = item.word;
+      const pos = item.pos || 'noun';
+
+      let def = `Key ${pos} vocabulary item associated with ${theme.replace('_', ' ') || 'general communication'}.`;
+      if (word === 'cat') def = "A small domesticated carnivorous mammal with soft fur, short snout, and retractile claws.";
+      else if (word === 'dog') def = "A domesticated carnivorous mammal that typically has a long snout, an acute sense of smell, and a barking voice.";
+      else if (word === 'hello') def = "Used as a greeting or to begin a phone conversation.";
+      else if (word === 'work') def = "Activity involving mental or physical effort done in order to achieve a purpose or result.";
+
+      let example = `I practiced using "${word}" in my English lesson today.`;
+      if (word === 'cat') example = "The cat curled up on the cozy armchair and purred gently.";
+      else if (word === 'dog') example = "They took their dog for a walk in the park every morning.";
+      else if (word === 'hello') example = "She smiled warmly and said hello to everyone in the room.";
+
+      let syns = [];
+      let ants = [];
+      if (word === 'cat') { syns = ['feline', 'kitten', 'pet']; ants = ['dog (popular contrast)']; }
+      else if (word === 'dog') { syns = ['canine', 'pup', 'hound']; ants = []; }
+      else if (word === 'hello') { syns = ['hi', 'greetings', 'welcome']; ants = ['goodbye', 'farewell']; }
+      else if (word === 'work') { syns = ['job', 'task', 'labor', 'employment']; ants = ['rest', 'leisure', 'play']; }
+
+      return {
+        level: levelRaw,
+        theme: theme,
+        emoji: emoji,
+        definition: def,
+        example: example,
+        synonyms: syns,
+        antonyms: ants
+      };
+    }
+
     function searchCosyDict(query) {
       const resultsDiv = document.getElementById('dictSearchResults');
       if (!resultsDiv) return;
@@ -742,39 +794,91 @@
       }
 
       const vocabIndex = window.CosyVocabIndex || {};
-      const matches = [];
+      const allMatches = [];
 
       for (const word in vocabIndex) {
-        if (word.includes(q)) {
+        const w = word.toLowerCase();
+        if (w.includes(q)) {
+          let priority = 3;
+          if (w === q) priority = 1;
+          else if (w.startsWith(q)) priority = 2;
+
           vocabIndex[word].forEach(entry => {
-            matches.push({ word: word, id: entry.id, pos: entry.pos, file: entry.file });
+            allMatches.push({
+              word: word,
+              id: entry.id,
+              pos: entry.pos,
+              file: entry.file,
+              priority: priority
+            });
           });
-          if (matches.length >= 20) break;
         }
       }
 
-      if (matches.length === 0) {
+      if (allMatches.length === 0) {
         resultsDiv.innerHTML = `<p style="color: #ef4444;">No matching COSYdata key found for "${query}".</p>`;
         return;
       }
 
+      allMatches.sort((a, b) => {
+        if (a.priority !== b.priority) return a.priority - b.priority;
+        if (a.word.length !== b.word.length) return a.word.length - b.word.length;
+        return a.word.localeCompare(b.word);
+      });
+
+      const topMatches = allMatches.slice(0, 25);
+
       let html = `<div style="display: flex; flex-direction: column; gap: 8px;">`;
-      matches.forEach(m => {
+      topMatches.forEach((m, idx) => {
+        const meta = getCosyDictMetadata(m);
+        const cardId = `dict-card-teacher-${idx}`;
+        const isExact = m.priority === 1;
+
         html += `
-          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 8px 10px;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-              <strong style="color: #0f172a; font-size: 0.95rem;">${m.word}</strong>
-              <span style="font-size: 0.75rem; background: #e0f2fe; color: #0369a1; padding: 2px 6px; border-radius: 4px; font-weight: 600;">${m.pos}</span>
+          <div style="background: ${isExact ? '#f0f9ff' : '#ffffff'}; border: 1px solid ${isExact ? '#0369a1' : '#cbd5e1'}; border-radius: 10px; padding: 10px 12px; cursor: pointer;" onclick="toggleDictCardDetail('${cardId}')">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div style="display: flex; align-items: center; gap: 6px; font-weight: 700; color: #0f172a;">
+                <span>${meta.emoji}</span>
+                <span style="font-size: 0.95rem; color: #0369a1;">${m.word}</span>
+                ${isExact ? '<span style="background: #dcfce7; color: #166534; font-size: 0.65rem; font-weight: 800; padding: 2px 6px; border-radius: 4px;">EXACT MATCH</span>' : ''}
+              </div>
+              <div style="display: flex; align-items: center; gap: 6px;">
+                <span style="font-size: 0.7rem; background: #e0f2fe; color: #0369a1; padding: 2px 6px; border-radius: 4px; font-weight: 700;">${meta.level}</span>
+                <span style="font-size: 0.7rem; background: #f1f5f9; color: #475569; padding: 2px 6px; border-radius: 4px; font-weight: 600;">${m.pos}</span>
+                <button onclick="event.stopPropagation(); speakText('${m.word.replace(/'/g, "\\'")}', 'en-US')" style="background: #0369a1; color: white; border: none; border-radius: 6px; padding: 3px 8px; font-size: 0.75rem; cursor: pointer;">🔊</button>
+              </div>
             </div>
-            <div style="font-family: monospace; font-size: 0.8rem; color: #0284c7; background: #f0f9ff; padding: 2px 6px; border-radius: 4px; word-break: break-all;">
-              COSYdata ID: ${m.id}
+
+            <div id="${cardId}" style="display: ${isExact ? 'block' : 'none'}; margin-top: 8px; pt-8px; border-top: 1px solid #e2e8f0; font-size: 0.8rem; color: #334155;">
+              <div style="margin-top: 6px; font-weight: 500;"><strong style="color: #0369a1;">Definition:</strong> ${meta.definition}</div>
+              <div style="margin-top: 4px; background: #f8fafc; padding: 6px 8px; border-radius: 6px; font-style: italic;"><strong style="font-style: normal; color: #475569;">Example:</strong> "${meta.example}"</div>
+              ${meta.synonyms.length > 0 ? `<div style="margin-top: 4px;"><strong>Synonyms:</strong> ${meta.synonyms.join(', ')}</div>` : ''}
+              ${meta.antonyms.length > 0 ? `<div style="margin-top: 4px;"><strong>Antonyms:</strong> ${meta.antonyms.join(', ')}</div>` : ''}
+              <div style="font-family: monospace; font-size: 0.75rem; color: #0284c7; background: #f0f9ff; padding: 4px 6px; border-radius: 4px; margin-top: 6px; word-break: break-all;">
+                COSYdata ID: ${m.id} | File: ${m.file}
+              </div>
             </div>
-            <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">File: ${m.file}</div>
           </div>
         `;
       });
+
       html += `</div>`;
       resultsDiv.innerHTML = html;
+    }
+
+    function toggleDictCardDetail(cardId) {
+      const el = document.getElementById(cardId);
+      if (el) el.style.display = el.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function speakText(text, lang = 'en-US') {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = lang;
+        utterance.rate = 0.9;
+        window.speechSynthesis.speak(utterance);
+      }
     }
 
     function searchIrregularVerbs(query) {
