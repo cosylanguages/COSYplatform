@@ -8,13 +8,13 @@
   <link rel="stylesheet" href="shared/styles/style.css">
   <style>
     :root {
-      --hub-primary: var(--cosy-platform-accent, #0284c7);
-      --teacher-primary: var(--cosy-platform-teacher, #0369a1);
+      --hub-primary: var(--cosy-platform-accent, #0369a1);
+      --teacher-primary: var(--cosy-platform-teacher, #6d28d9);
       --teacher-note-bg: var(--cosy-color-honey-pale, #fffbe3);
-      --teacher-note-border: var(--cosy-color-honey, #f59e0b);
+      --teacher-note-border: var(--cosy-color-honey, #b45309);
       --speech-bg: var(--cosy-semantic-success-light, #ecfdf5);
-      --speech-border: var(--cosy-semantic-success, #10b981);
-      --student-primary: var(--cosy-platform-student, #0284c7);
+      --speech-border: var(--cosy-semantic-success, #047857);
+      --student-primary: var(--cosy-platform-student, #0369a1);
       --student-light: var(--cosy-platform-student-light, #e0f2fe);
       --border-color: var(--cosy-color-border, rgba(74, 107, 80, 0.12));
     }
@@ -70,7 +70,7 @@
 
     .unauth-footer {
       font-size: 13px;
-      color: #94a3b8;
+      color: #64748b;
       border-top: 1px solid var(--border-color);
       padding-top: 16px;
     }
@@ -101,8 +101,8 @@
       letter-spacing: 0.05em;
     }
 
-    .badge-teacher-role { background: #e0f2fe; color: #0369a1; }
-    .badge-student-role { background: #e0f2fe; color: #0284c7; }
+    .badge-teacher-role { background: #f3e8ff; color: #6d28d9; }
+    .badge-student-role { background: #e0f2fe; color: #0369a1; }
     .badge-founder-role { background: #0c4a6e; color: #bae6fd; }
 
     .hub-container {
@@ -194,7 +194,7 @@
 
     .category-toggle-icon {
       font-size: 0.9rem;
-      color: #0284c7;
+      color: #0369a1;
       transition: transform 0.2s ease;
     }
 
@@ -405,7 +405,7 @@
         <span style="font-size: 1.4rem; font-weight: 800;">COSYlanguages</span>
         <span class="badge-hub">Unified Hub Portal</span>
       </div>
-      <div id="user-info" style="font-size: 0.85rem; color: #94a3b8;"></div>
+      <div id="user-info" style="font-size: 0.85rem; color: #64748b;"></div>
     </div>
   </header>
 
@@ -464,7 +464,7 @@
               <p style="color: #64748b;">Unified view of accessible course tracks, roadmaps, and lesson content.</p>
             </div>
             <div style="display: flex; align-items: center; gap: 8px;">
-              <a href="classroom.html" class="btn" style="background: #10b981; color: white; padding: 6px 14px; text-decoration: none; font-size: 0.85rem; border-radius: 6px; font-weight: 600;">Live Classroom 🎥</a>
+              <a href="classroom.html" class="btn" style="background: #047857; color: white; padding: 6px 14px; text-decoration: none; font-size: 0.85rem; border-radius: 6px; font-weight: 600;">Live Classroom 🎥</a>
               <button onclick="window.CosyAuth.logout()" class="btn btn-outline" style="font-size: 0.85rem;">Log Out</button>
             </div>
           </div>
@@ -484,7 +484,7 @@
                   <h3 style="font-size: 1.15rem; color: #0f172a; margin-bottom: 6px;">${course.title}</h3>
                   <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 16px;">Track: ${course.track}</p>
                 </div>
-                <a href="hub.html?course=${course.id}&level=${course.level.toLowerCase()}" class="btn" style="background: var(--hub-primary, #0284c7); text-align: center;">Open Course Roadmap 📚</a>
+                <a href="hub.html?course=${course.id}&level=${course.level.toLowerCase()}" class="btn" style="background: var(--hub-primary, #0369a1); text-align: center;">Open Course Roadmap 📚</a>
               </div>
             `;
           } else {
@@ -537,13 +537,13 @@
               <div class="unit-card">
                 <div>
                   <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-                    <span style="font-size: 0.75rem; color: #94a3b8; font-weight: 600;">LESSON #${item.lessonNumber}</span>
+                    <span style="font-size: 0.75rem; color: #64748b; font-weight: 600;">LESSON #${item.lessonNumber}</span>
                   </div>
                   <h3 style="margin: 6px 0;">${item.title}</h3>
                   ${item.unit ? `<p style="font-size: 0.8rem; color: #64748b; margin-bottom: 12px;">${item.unit}</p>` : ''}
                 </div>
                 <div style="display: flex; gap: 6px; flex-direction: column; margin-top: 10px;">
-                  <a href="${targetPage}?lesson=${encodeURIComponent(lessonPath)}&course=${encodeURIComponent(courseId)}" class="btn" style="background: var(--hub-primary, #0284c7); text-align: center;">Open lesson</a>
+                  <a href="${targetPage}?lesson=${encodeURIComponent(lessonPath)}&course=${encodeURIComponent(courseId)}" class="btn" style="background: var(--hub-primary, #0369a1); text-align: center;">Open lesson</a>
                 </div>
               </div>
             `;
@@ -552,11 +552,11 @@
               <div class="unit-card" style="opacity: 0.6; background: #f8fafc;">
                 <div>
                   <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-                    <span style="font-size: 0.75rem; color: #94a3b8; font-weight: 600;">LESSON #${item.lessonNumber}</span>
+                    <span style="font-size: 0.75rem; color: #64748b; font-weight: 600;">LESSON #${item.lessonNumber}</span>
                     <span style="font-size: 0.75rem; color: #64748b; background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-weight: 600;">Planned</span>
                   </div>
                   <h3 style="margin: 6px 0; color: #64748b;">${item.title}</h3>
-                  ${item.unit ? `<p style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 12px;">${item.unit}</p>` : ''}
+                  ${item.unit ? `<p style="font-size: 0.8rem; color: #64748b; margin-bottom: 12px;">${item.unit}</p>` : ''}
                 </div>
               </div>
             `;

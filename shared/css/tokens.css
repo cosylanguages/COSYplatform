@@ -64,21 +64,21 @@
     /* ── 3. COSYplatform Flagship Paid Product Accent Palette ─────────── */
     /* COSYplatform distinct accent: Confident Sapphire / Cerulean Blue (#0284c7)
        Shared hue family across both student and teacher views. */
-    --cosy-platform-accent:              #0284c7;
+    --cosy-platform-accent:              #0369a1;
     --cosy-platform-accent-light:        #e0f2fe;
-    --cosy-platform-accent-deep:         #0369a1;
+    --cosy-platform-accent-deep:         #075985;
 
     /* Student View Variant: Vibrant Active Sapphire Blue */
-    --cosy-platform-student:             #0284c7;
+    --cosy-platform-student:             #0369a1;
     --cosy-platform-student-light:       #e0f2fe;
-    --cosy-platform-student-hover:       #0369a1;
+    --cosy-platform-student-hover:       #075985;
     --cosy-platform-student-border:      #bae6fd;
 
-    /* Teacher View Variant: Deeper Authoritative Slate-Sapphire Blue */
-    --cosy-platform-teacher:             #0369a1;
-    --cosy-platform-teacher-light:       #e0f2fe;
-    --cosy-platform-teacher-hover:       #075985;
-    --cosy-platform-teacher-border:      #7dd3fc;
+    /* Teacher View Variant: Royal Deep Purple */
+    --cosy-platform-teacher:             #6d28d9;
+    --cosy-platform-teacher-light:       #f3e8ff;
+    --cosy-platform-teacher-hover:       #5b21b6;
+    --cosy-platform-teacher-border:      #ddd6fe;
 
     /* System Aliases for COSYplatform */
     --platform-primary:                  var(--cosy-platform-accent);
@@ -115,9 +115,9 @@
     --cosy-semantic-success-light:       #e5f4ec;
     --cosy-semantic-warning:             #945e05;
     --cosy-semantic-warning-light:       #fff8e7;
-    --cosy-semantic-focus:               #0284c7;
+    --cosy-semantic-focus:               #0369a1;
 
-    --focus-ring:                        0 0 0 3px rgba(2, 132, 199, 0.35);
+    --focus-ring:                        0 0 0 3px rgba(3, 105, 161, 0.35);
 
     /* ── 6. Typography Scale & Font Stacks ──────────────────────────────── */
     --cosy-font-sans:                    'Nunito', 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;

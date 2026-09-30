@@ -8,10 +8,11 @@
   <link rel="stylesheet" href="shared/styles/style.css">
   <style>
     :root {
-      --teacher-primary: var(--cosy-platform-teacher, #0369a1);
+      --teacher-primary: var(--cosy-platform-teacher, #6d28d9);
     }
     body { background-color: var(--cosy-color-cream, #fdfcf8); }
-    .badge-teacher { background: #e0f2fe; color: #0369a1; padding: 4px 10px; border-radius: var(--cosy-radius-full, 100px); font-size: 0.8rem; font-weight: 700; }
+    .badge-teacher { background: #f3e8ff; color: var(--teacher-primary, #6d28d9); padding: 4px 10px; border-radius: var(--cosy-radius-full, 100px); font-size: 0.8rem; font-weight: 700; }
+    .btn-logout { background-color: #334155; color: white; border: none; padding: 6px 14px; border-radius: 6px; font-size: 0.8rem; font-weight: 600; cursor: pointer; }
     .catalog-container { max-width: 1000px; margin: 30px auto; padding: 0 20px; flex: 1; }
     .catalog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
     .course-card { background: white; border: 1px solid #e2e8f0; border-radius: var(--cosy-radius-md, 14px); padding: 24px; display: flex; flex-direction: column; justify-content: space-between; }
@@ -22,16 +23,16 @@
   <script src="shared/js/auth-guard.js"></script>
 </head>
 <body>
-  <div style="background: #fffbe3; border-bottom: 1px solid #f59e0b; color: #78350f; text-align: center; padding: 10px 16px; font-size: 0.85rem; font-weight: 600;">
-    ℹ️ Notice: COSYlanguages entry points have consolidated into <a id="notice-hub-link" href="hub.html" style="color: #0284c7; text-decoration: underline;">hub.html</a>. Please update your bookmarks.
-  </div>
   <header class="manual-header">
     <div class="header-content">
       <div class="logo-badge">
         <span>COSYlanguages</span>
         <span class="badge-teacher">🇫🇷 French Teacher Hub</span>
       </div>
-      <div id="user-info" style="font-size: 0.85rem; color: #64748b;"></div>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <div id="user-info" style="font-size: 0.85rem; color: #64748b;"></div>
+        <button onclick="window.CosyAuth.logout()" class="btn-logout">Log Out</button>
+      </div>
     </div>
   </header>
 

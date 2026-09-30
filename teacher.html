@@ -9,13 +9,13 @@
   <style>
     /* Teacher Page Specific Styles */
     :root {
-      --teacher-primary: var(--cosy-platform-teacher, #0369a1);
-      --teacher-hover: var(--cosy-platform-teacher-hover, #075985);
-      --teacher-light: var(--cosy-platform-teacher-light, #e0f2fe);
+      --teacher-primary: var(--cosy-platform-teacher, #6d28d9);
+      --teacher-hover: var(--cosy-platform-teacher-hover, #5b21b6);
+      --teacher-light: var(--cosy-platform-teacher-light, #f3e8ff);
       --teacher-note-bg: var(--cosy-color-honey-pale, #fffbe3);
-      --teacher-note-border: var(--cosy-color-honey, #f59e0b);
+      --teacher-note-border: var(--cosy-color-honey, #b45309);
       --speech-bg: var(--cosy-semantic-success-light, #ecfdf5);
-      --speech-border: var(--cosy-semantic-success, #10b981);
+      --speech-border: var(--cosy-semantic-success, #047857);
     }
 
     body {
@@ -23,12 +23,23 @@
     }
 
     .badge-teacher {
-      background: #e0f2fe;
-      color: #0369a1;
+      background: #f3e8ff;
+      color: var(--teacher-primary, #6d28d9);
       padding: 4px 10px;
       border-radius: var(--cosy-radius-full, 100px);
       font-size: 0.8rem;
       font-weight: 700;
+    }
+
+    .btn-logout {
+      background-color: #334155;
+      color: white;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
     }
 
     /* Access Denied */
@@ -92,13 +103,13 @@
     .category-header h3 {
       font-size: 1.05rem;
       font-weight: 700;
-      color: #0369a1;
+      color: var(--teacher-primary, #6d28d9);
       margin: 0;
     }
 
     .category-toggle-icon {
       font-size: 0.9rem;
-      color: #0369a1;
+      color: var(--teacher-primary, #6d28d9);
       transition: transform 0.2s ease;
     }
 
@@ -466,10 +477,6 @@
 </head>
 <body>
 
-  <div style="background: #fffbe3; border-bottom: 1px solid #f59e0b; color: #78350f; text-align: center; padding: 10px 16px; font-size: 0.85rem; font-weight: 600;">
-    ℹ️ Notice: COSYlanguages entry points have consolidated into <a id="notice-hub-link" href="hub.html" style="color: #0284c7; text-decoration: underline;">hub.html</a>. Please update your bookmarks.
-  </div>
-
   <header class="manual-header">
     <div class="header-content">
       <div class="logo-badge">
@@ -477,8 +484,9 @@
         <span class="badge-teacher">Teacher Catalog &amp; Guide</span>
       </div>
       <div style="display: flex; align-items: center; gap: 12px;">
-        <a href="classroom.html" class="btn" style="background: #10b981; color: white; padding: 4px 12px; text-decoration: none; font-size: 0.8rem; border-radius: 6px; font-weight: 600;">Live Classroom 🎥</a>
+        <a href="classroom.html" class="btn" style="background: #047857; color: white; padding: 4px 12px; text-decoration: none; font-size: 0.8rem; border-radius: 6px; font-weight: 600;">Live Classroom 🎥</a>
         <div id="user-info" style="font-size: 0.85rem; color: #64748b;"></div>
+        <button onclick="window.CosyAuth.logout()" class="btn-logout">Log Out</button>
       </div>
     </div>
   </header>
@@ -686,7 +694,7 @@
               <div class="unit-card">
                 <div>
                   <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-                    <span style="font-size: 0.75rem; color: #94a3b8; font-weight: 600;">LESSON #${item.lessonNumber}</span>
+                    <span style="font-size: 0.75rem; color: #64748b; font-weight: 600;">LESSON #${item.lessonNumber}</span>
                   </div>
                   <h3 style="margin: 6px 0;">${item.title}</h3>
                   ${item.unit ? `<p style="font-size: 0.8rem; color: #64748b; margin-bottom: 12px;">${item.unit}</p>` : ''}
@@ -701,11 +709,11 @@
               <div class="unit-card" style="opacity: 0.6; background: #f8fafc;">
                 <div>
                   <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-                    <span style="font-size: 0.75rem; color: #94a3b8; font-weight: 600;">LESSON #${item.lessonNumber}</span>
+                    <span style="font-size: 0.75rem; color: #64748b; font-weight: 600;">LESSON #${item.lessonNumber}</span>
                     <span style="font-size: 0.75rem; color: #64748b; background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-weight: 600;">Planned</span>
                   </div>
                   <h3 style="margin: 6px 0; color: #64748b;">${item.title}</h3>
-                  ${item.unit ? `<p style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 12px;">${item.unit}</p>` : ''}
+                  ${item.unit ? `<p style="font-size: 0.8rem; color: #64748b; margin-bottom: 12px;">${item.unit}</p>` : ''}
                 </div>
               </div>
             `;
@@ -862,26 +870,26 @@
         const isExact = m.priority === 1;
 
         html += `
-          <div style="background: ${isExact ? '#f0f9ff' : '#ffffff'}; border: 1px solid ${isExact ? '#0369a1' : '#cbd5e1'}; border-radius: 10px; padding: 10px 12px; cursor: pointer;" onclick="toggleDictCardDetail('${cardId}')">
+          <div style="background: ${isExact ? '#faf5ff' : '#ffffff'}; border: 1px solid ${isExact ? '#6d28d9' : '#cbd5e1'}; border-radius: 10px; padding: 10px 12px; cursor: pointer;" onclick="toggleDictCardDetail('${cardId}')">
             <div style="display: flex; justify-content: space-between; align-items: center;">
               <div style="display: flex; align-items: center; gap: 6px; font-weight: 700; color: #0f172a;">
                 <span>${meta.emoji}</span>
-                <span style="font-size: 0.95rem; color: #0369a1;">${m.word}</span>
+                <span style="font-size: 0.95rem; color: var(--teacher-primary, #6d28d9);">${m.word}</span>
                 ${isExact ? '<span style="background: #dcfce7; color: #166534; font-size: 0.65rem; font-weight: 800; padding: 2px 6px; border-radius: 4px;">EXACT MATCH</span>' : ''}
               </div>
               <div style="display: flex; align-items: center; gap: 6px;">
-                <span style="font-size: 0.7rem; background: #e0f2fe; color: #0369a1; padding: 2px 6px; border-radius: 4px; font-weight: 700;">${meta.level}</span>
+                <span style="font-size: 0.7rem; background: #f3e8ff; color: var(--teacher-primary, #6d28d9); padding: 2px 6px; border-radius: 4px; font-weight: 700;">${meta.level}</span>
                 <span style="font-size: 0.7rem; background: #f1f5f9; color: #475569; padding: 2px 6px; border-radius: 4px; font-weight: 600;">${m.pos}</span>
-                <button onclick="event.stopPropagation(); speakText('${m.word.replace(/'/g, "\\'")}', 'en-US')" style="background: #0369a1; color: white; border: none; border-radius: 6px; padding: 3px 8px; font-size: 0.75rem; cursor: pointer;">🔊</button>
+                <button onclick="event.stopPropagation(); speakText('${m.word.replace(/'/g, "\\'")}', 'en-US')" style="background: var(--teacher-primary, #6d28d9); color: white; border: none; border-radius: 6px; padding: 3px 8px; font-size: 0.75rem; cursor: pointer;">🔊</button>
               </div>
             </div>
 
             <div id="${cardId}" style="display: ${isExact ? 'block' : 'none'}; margin-top: 8px; pt-8px; border-top: 1px solid #e2e8f0; font-size: 0.8rem; color: #334155;">
-              <div style="margin-top: 6px; font-weight: 500;"><strong style="color: #0369a1;">Definition:</strong> ${meta.definition}</div>
+              <div style="margin-top: 6px; font-weight: 500;"><strong style="color: var(--teacher-primary, #6d28d9);">Definition:</strong> ${meta.definition}</div>
               <div style="margin-top: 4px; background: #f8fafc; padding: 6px 8px; border-radius: 6px; font-style: italic;"><strong style="font-style: normal; color: #475569;">Example:</strong> "${meta.example}"</div>
               ${meta.synonyms.length > 0 ? `<div style="margin-top: 4px;"><strong>Synonyms:</strong> ${meta.synonyms.join(', ')}</div>` : ''}
               ${meta.antonyms.length > 0 ? `<div style="margin-top: 4px;"><strong>Antonyms:</strong> ${meta.antonyms.join(', ')}</div>` : ''}
-              <div style="font-family: monospace; font-size: 0.75rem; color: #0284c7; background: #f0f9ff; padding: 4px 6px; border-radius: 4px; margin-top: 6px; word-break: break-all;">
+              <div style="font-family: monospace; font-size: 0.75rem; color: var(--teacher-primary, #6d28d9); background: #faf5ff; padding: 4px 6px; border-radius: 4px; margin-top: 6px; word-break: break-all;">
                 COSYdata ID: ${m.id} | File: ${m.file}
               </div>
             </div>
@@ -937,8 +945,8 @@
         html += `
           <tr style="border-bottom: 1px solid #e2e8f0;">
             <td style="padding: 6px 8px; font-weight: 700; color: #0f172a;">${v.v1}</td>
-            <td style="padding: 6px 8px; color: #0369a1;">${v.v2}</td>
-            <td style="padding: 6px 8px; color: #0284c7;">${v.v3}</td>
+            <td style="padding: 6px 8px; color: var(--teacher-primary, #6d28d9);">${v.v2}</td>
+            <td style="padding: 6px 8px; color: var(--teacher-primary, #6d28d9);">${v.v3}</td>
           </tr>
         `;
       });
