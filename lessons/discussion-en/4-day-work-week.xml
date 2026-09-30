@@ -1,21 +1,36 @@
 <!-- source: https://raw.githubusercontent.com/cosylanguages/COSYevents/main/sessions/debatable-relatable/4-day-work-week.html -->
 <cosy-lesson id="4-day-work-week" level="B1" language="en" title="The 4-Day Work Week: Productivity vs. Tradition" default-duration="50" default-mode="all">
-  <!-- SLIDE 1: Warm-up & Target Vocabulary -->
-  <cosy-slide id="slide-1" stage="warm-up" duration="50" mode="all">
+  <!-- SLIDE 1: Warm-up & Target Vocabulary (15m, 30m, 50m, 80m, 110m) -->
+  <cosy-slide id="slide-1" stage="warm-up" duration="15" mode="all">
     <cosy-teacher-notes type="instruction">
-      <p><cosy-text type="strong">Stage aim:</cosy-text> activate prior knowledge and introduce key target vocabulary from the reading/listening material.</p>
+      <p><cosy-text type="strong">Stage aim:</cosy-text> activate prior knowledge and introduce key target vocabulary in context.</p>
     </cosy-teacher-notes>
-    <cosy-instruction>Review key vocabulary extracted for this session below:</cosy-instruction>
+    <cosy-teacher-notes type="speech">
+      <p><strong>Concept Check Questions (CCQs):</strong> Elicit meaning and drill pronunciation before starting speaking tasks.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Review key target vocabulary extracted for this session below:</cosy-instruction>
+    <cosy-vocabulary>
+      <cosy-vocabulary-item word="Burnout" definition="physical or mental collapse caused by overwork or stress." />
+    </cosy-vocabulary>
     <cosy-blockquote importance="basic">
       <p><cosy-text type="strong">Burnout</cosy-text> – physical or mental collapse caused by overwork or stress.</p>
       <p><em>Example: Many employees are suffering from burnout due to long hours.</em></p>
     </cosy-blockquote>
   </cosy-slide>
 
-  <!-- SLIDE 2: Reading / Listening & General Discussion -->
-  <cosy-slide id="slide-2" stage="lead-in" duration="50" mode="all">
+  <!-- SLIDE 2: Express Debate Blitz (15m Spoken Format) -->
+  <cosy-slide id="slide-15m-blitz" stage="warm-up" duration="15" mode="all">
     <cosy-teacher-notes type="instruction">
-      <p><cosy-text type="strong">Stage aim:</cosy-text> engage with input text/prompt and launch general discussion.</p>
+      <p><cosy-text type="strong">Stage aim:</cosy-text> rapid 15-minute speaking blitz focused on immediate fluency and target vocabulary usage.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>15-Min Express Blitz: Share your core opinion on <strong>The 4-Day Work Week: Productivity vs. Tradition</strong> in 90 seconds:</cosy-instruction>
+    <cosy-record time="90" counts="3" />
+  </cosy-slide>
+
+  <!-- SLIDE 3: Reading / Listening & General Discussion (30m+) -->
+  <cosy-slide id="slide-2" stage="lead-in" duration="30" mode="all">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> engage with input reading/listening prompt and launch general topic discussion.</p>
     </cosy-teacher-notes>
     <cosy-instruction>Read/listen to the prompt and discuss the general topic questions:</cosy-instruction>
     <ol>
@@ -26,7 +41,7 @@
     </ol>
   </cosy-slide>
 
-  <!-- SLIDE 3: Comparison (Past vs Present / With vs Without) -->
+  <!-- SLIDE 4: Comparison (Past vs Present / With vs Without) (50m+) -->
   <cosy-slide id="slide-3" stage="freer-practice" duration="50" mode="all">
     <cosy-teacher-notes type="instruction">
       <p><cosy-text type="strong">Stage aim:</cosy-text> practice comparative analysis and contrasting structures (used to, whereas, compared to).</p>
@@ -37,8 +52,8 @@
     </cosy-blockquote>
   </cosy-slide>
 
-  <!-- SLIDE 4: Debate / Agree or Disagree -->
-  <cosy-slide id="slide-4" stage="freer-practice" duration="50" mode="all">
+  <!-- SLIDE 5: Debate / Agree or Disagree (30m+) -->
+  <cosy-slide id="slide-4" stage="freer-practice" duration="30" mode="all">
     <cosy-teacher-notes type="instruction">
       <p><cosy-text type="strong">Stage aim:</cosy-text> develop stance-taking, opinion justification, and counter-argumentation skills.</p>
     </cosy-teacher-notes>
@@ -51,7 +66,7 @@
     </ol>
   </cosy-slide>
 
-  <!-- SLIDE 5: Practical Solutions & Advice -->
+  <!-- SLIDE 6: Practical Solutions & Advice (50m+) -->
   <cosy-slide id="slide-5" stage="freer-practice" duration="50" mode="all">
     <cosy-teacher-notes type="instruction">
       <p><cosy-text type="strong">Stage aim:</cosy-text> collaborative problem solving using modal verbs of recommendation (should, ought to, could).</p>
@@ -63,7 +78,7 @@
     </ol>
   </cosy-slide>
 
-  <!-- SLIDE 6: Future Speculation -->
+  <!-- SLIDE 7: Future Speculation (50m+) -->
   <cosy-slide id="slide-6" stage="freer-practice" duration="50" mode="all">
     <cosy-teacher-notes type="instruction">
       <p><cosy-text type="strong">Stage aim:</cosy-text> express future probability and predict long-term developments (is bound to, will likely, is expected to).</p>
@@ -75,8 +90,31 @@
     </ol>
   </cosy-slide>
 
-  <!-- SLIDE 7: Outro & Language Feedback -->
-  <cosy-slide id="slide-7" stage="cool-down" duration="50" mode="all">
+  <!-- SLIDE 8: Extended Case Study & Deep Analysis (80m & 110m Extension) -->
+  <cosy-slide id="slide-case-study" stage="adaptation" duration="80" mode="all">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> deep-dive case study analysis for 90-min and 120-min lesson formats.</p>
+    </cosy-teacher-notes>
+    <cosy-instruction>Extended Case Study (90m / 120m format): Analyze this complex real-world scenario:</cosy-instruction>
+    <cosy-blockquote importance="high">
+      <p><strong>Scenario:</strong> An international organization is deciding whether to adopt a mandatory policy regarding <strong>The 4-Day Work Week: Productivity vs. Tradition</strong>. Evaluate the economic, ethical, and social consequences before voting on a final decision.</p>
+    </cosy-blockquote>
+  </cosy-slide>
+
+  <!-- SLIDE 9: Group Workshop & Synthesis Presentation (110m Group Format Only) -->
+  <cosy-slide id="slide-group-workshop" stage="adaptation" duration="110" mode="group">
+    <cosy-teacher-notes type="instruction">
+      <p><cosy-text type="strong">Stage aim:</cosy-text> collaborative group breakout task and synthesis presentation for 120-minute group sessions.</p>
+    </cosy-teacher-notes>
+    <cosy-group-instruction>Group Workshop &amp; Synthesis Presentation (120m Group Format Only): Collaborate and present:</cosy-group-instruction>
+    <ol>
+      <li>In breakout pairs, design a comprehensive action proposal addressing <strong>The 4-Day Work Week: Productivity vs. Tradition</strong>.</li>
+      <li>Present your 3-minute synthesis pitch to the full group and defend your recommendations against peer questions.</li>
+    </ol>
+  </cosy-slide>
+
+  <!-- SLIDE 10: Outro & Language Feedback -->
+  <cosy-slide id="slide-7" stage="cool-down" duration="15" mode="all">
     <cosy-teacher-notes type="additional">
       <p><cosy-text type="strong">Teacher&apos;s Linguistic Error Correction Guidance:</cosy-text></p>
       <ul>

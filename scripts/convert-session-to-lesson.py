@@ -283,44 +283,60 @@ def generate_lesson_xml(parsed_data, lesson_id=None, is_discussion_format=True):
     lang = parsed_data["lang"]
 
     if lang == "fr":
-        vocab_intro = "Révisez le vocabulaire clé de la session ci-dessous :"
-        r1_intro = "Examinez les éléments de lecture/écoute et discutez des questions générales :"
-        comparison_intro = "Comparez la situation : avant vs maintenant, avec vs sans, et évaluez l'impact :"
-        debate_intro = "Débattez des affirmations suivantes. Exprimez votre accord ou désaccord et argumentez :"
-        solutions_intro = "Formulez des solutions pratiques et des conseils pour répondre aux défis abordés :"
-        future_intro = "Spéculez sur les évolutions futures et les tendances à venir :"
+        vocab_intro = "Révisez le vocabulaire clé extrait pour cette session ci-dessous :"
+        r1_intro = "Examinez l'extrait de lecture/écoute et discutez des questions générales :"
+        comparison_intro = "Comparez la situation : avant vs maintenant, avec vs sans, et évaluez les changements :"
+        debate_intro = "Débattez de ces affirmations. Exprimez votre accord ou désaccord et argumentez :"
+        solutions_intro = "Formulez des solutions pratiques, des conseils et des recommandations :"
+        future_intro = "Spéculez sur les évolutions futures et les tendances à long terme :"
+        case_study_intro = "Étude de cas approfondie : analysez ce scénario complexe et proposez une décision :"
+        workshop_intro = "Atelier de groupe (Cours collectif - 120 min) : collaborez en sous-groupe et présentez votre synthèse :"
         error_note_title = "Notes de correction linguistique du professeur"
     elif lang == "ru":
         vocab_intro = "Изучите ключевую лексику занятия:"
         r1_intro = "Ознакомьтесь с материалом и ответьте на общие вопросы для обсуждения:"
         comparison_intro = "Сравните ситуации: как было раньше и как сейчас, с данным явлением и без него:"
         debate_intro = "Проведите дискуссию по следующим утверждениям. Выразите согласие или несогласие:"
-        solutions_intro = "Предложите практические решения и рекомендации для решения данной проблемы:"
+        solutions_intro = "Предложите практические решения и рекомендации для решения проблемы:"
         future_intro = "Сделайте прогнозы относительно будущих изменений и тенденций:"
+        case_study_intro = "Глубокий разбор кейса: проанализируйте сценарий и предложите стратегическое решение:"
+        workshop_intro = "Групповой практикум (Групповой формат - 120 мин): работа в парах и итоговая презентация:"
         error_note_title = "Заметки преподавателя по языковым ошибкам"
     else:
-        vocab_intro = "Review key vocabulary extracted for this session below:"
+        vocab_intro = "Review key target vocabulary extracted for this session below:"
         r1_intro = "Read/listen to the prompt and discuss the general topic questions:"
         comparison_intro = "Compare the scenario: how it was before vs. now, or life with vs. without it:"
         debate_intro = "Debate these statements. State whether you agree or disagree and justify your position:"
         solutions_intro = "Propose practical solutions, actionable advice, and policy recommendations:"
         future_intro = "Speculate on future developments and long-term trends:"
+        case_study_intro = "Extended Case Study (90m / 120m format): Analyze this complex real-world scenario:"
+        workshop_intro = "Group Workshop & Synthesis Presentation (120m Group Format Only): Collaborate and present:"
         error_note_title = "Teacher's Linguistic Error Correction Guidance"
 
     xml_lines = []
     xml_lines.append(f'<!-- source: {parsed_data["url"]} -->')
     xml_lines.append(f'<cosy-lesson id="{escape_xml(lesson_id)}" level="{escape_xml(parsed_data["level"])}" language="{escape_xml(lang)}" title="{escape_xml(parsed_data["title"])}" default-duration="50" default-mode="all">')
 
-    # SLIDE 1: Warm-up & Target Vocabulary
-    xml_lines.append('  <!-- SLIDE 1: Warm-up & Target Vocabulary -->')
-    xml_lines.append('  <cosy-slide id="slide-1" stage="warm-up" duration="50" mode="all">')
+    # SLIDE 1: Warm-up & Target Vocabulary (All durations: 15, 30, 50, 80, 110)
+    xml_lines.append('  <!-- SLIDE 1: Warm-up & Target Vocabulary (15m, 30m, 50m, 80m, 110m) -->')
+    xml_lines.append('  <cosy-slide id="slide-1" stage="warm-up" duration="15" mode="all">')
     xml_lines.append('    <cosy-teacher-notes type="instruction">')
-    xml_lines.append('      <p><cosy-text type="strong">Stage aim:</cosy-text> activate prior knowledge and introduce key target vocabulary from the reading/listening material.</p>')
+    xml_lines.append('      <p><cosy-text type="strong">Stage aim:</cosy-text> activate prior knowledge and introduce key target vocabulary in context.</p>')
+    xml_lines.append('    </cosy-teacher-notes>')
+    xml_lines.append('    <cosy-teacher-notes type="speech">')
+    xml_lines.append('      <p><strong>Concept Check Questions (CCQs):</strong> Elicit meaning and drill pronunciation before starting speaking tasks.</p>')
     xml_lines.append('    </cosy-teacher-notes>')
     xml_lines.append(f'    <cosy-instruction>{escape_xml(vocab_intro)}</cosy-instruction>')
 
     if parsed_data["vocab_items"]:
+        xml_lines.append('    <cosy-vocabulary>')
         for item in parsed_data["vocab_items"]:
+            w = item["word"]
+            d = item["def"]
+            xml_lines.append(f'      <cosy-vocabulary-item word="{escape_xml(w)}" definition="{escape_xml(d)}" />')
+        xml_lines.append('    </cosy-vocabulary>')
+
+        for item in parsed_data["vocab_items"][:4]:
             w = item["word"]
             d = item["def"]
             ex = item["example"]
@@ -334,16 +350,26 @@ def generate_lesson_xml(parsed_data, lesson_id=None, is_discussion_format=True):
             xml_lines.append('    </cosy-blockquote>')
     else:
         xml_lines.append('    <cosy-blockquote importance="basic">')
-        xml_lines.append(f'      <p>Welcome to <strong>{escape_xml(parsed_data["title"])}</strong>! Explore key concepts and activate vocabulary.</p>')
+        xml_lines.append(f'      <p>Welcome to <strong>{escape_xml(parsed_data["title"])}</strong>! Explore key concepts and activate target vocabulary.</p>')
         xml_lines.append('    </cosy-blockquote>')
     xml_lines.append('  </cosy-slide>')
 
-    # SLIDE 2: Reading / Listening & General Discussion
-    r1_items, r1_type = extract_round_items(parsed_data["r1_html"])
-    xml_lines.append('\n  <!-- SLIDE 2: Reading / Listening & General Discussion -->')
-    xml_lines.append('  <cosy-slide id="slide-2" stage="lead-in" duration="50" mode="all">')
+    # SLIDE 2: Express Debate Blitz (15m Spoken Express format)
+    xml_lines.append('\n  <!-- SLIDE 2: Express Debate Blitz (15m Spoken Format) -->')
+    xml_lines.append('  <cosy-slide id="slide-15m-blitz" stage="warm-up" duration="15" mode="all">')
     xml_lines.append('    <cosy-teacher-notes type="instruction">')
-    xml_lines.append('      <p><cosy-text type="strong">Stage aim:</cosy-text> engage with input text/prompt and launch general discussion.</p>')
+    xml_lines.append('      <p><cosy-text type="strong">Stage aim:</cosy-text> rapid 15-minute speaking blitz focused on immediate fluency and target vocabulary usage.</p>')
+    xml_lines.append('    </cosy-teacher-notes>')
+    xml_lines.append(f'    <cosy-instruction>15-Min Express Blitz: Share your core opinion on <strong>{escape_xml(parsed_data["title"])}</strong> in 90 seconds:</cosy-instruction>')
+    xml_lines.append('    <cosy-record time="90" counts="3" />')
+    xml_lines.append('  </cosy-slide>')
+
+    # SLIDE 3: Reading / Listening & General Discussion (30m, 50m, 80m, 110m)
+    r1_items, r1_type = extract_round_items(parsed_data["r1_html"])
+    xml_lines.append('\n  <!-- SLIDE 3: Reading / Listening & General Discussion (30m+) -->')
+    xml_lines.append('  <cosy-slide id="slide-2" stage="lead-in" duration="30" mode="all">')
+    xml_lines.append('    <cosy-teacher-notes type="instruction">')
+    xml_lines.append('      <p><cosy-text type="strong">Stage aim:</cosy-text> engage with input reading/listening prompt and launch general topic discussion.</p>')
     xml_lines.append('    </cosy-teacher-notes>')
     xml_lines.append(f'    <cosy-instruction>{escape_xml(r1_intro)}</cosy-instruction>')
     xml_lines.append('    <ol>')
@@ -357,9 +383,9 @@ def generate_lesson_xml(parsed_data, lesson_id=None, is_discussion_format=True):
     xml_lines.append('    </ol>')
     xml_lines.append('  </cosy-slide>')
 
-    # SLIDE 3: Comparison (Past vs Present / With vs Without)
+    # SLIDE 4: Comparison (Past vs Present / With vs Without) (50m+)
     lst_group_txt, lst_ind_txt, lst_imgs = extract_lst_content(parsed_data["lst_html"], lang)
-    xml_lines.append('\n  <!-- SLIDE 3: Comparison (Past vs Present / With vs Without) -->')
+    xml_lines.append('\n  <!-- SLIDE 4: Comparison (Past vs Present / With vs Without) (50m+) -->')
     xml_lines.append('  <cosy-slide id="slide-3" stage="freer-practice" duration="50" mode="all">')
     xml_lines.append('    <cosy-teacher-notes type="instruction">')
     xml_lines.append('      <p><cosy-text type="strong">Stage aim:</cosy-text> practice comparative analysis and contrasting structures (used to, whereas, compared to).</p>')
@@ -375,10 +401,10 @@ def generate_lesson_xml(parsed_data, lesson_id=None, is_discussion_format=True):
     xml_lines.append('    </cosy-blockquote>')
     xml_lines.append('  </cosy-slide>')
 
-    # SLIDE 4: Debate / Agree or Disagree
+    # SLIDE 5: Debate / Agree or Disagree (30m, 50m, 80m, 110m)
     r2_items, r2_type = extract_round_items(parsed_data["r2_html"])
-    xml_lines.append('\n  <!-- SLIDE 4: Debate / Agree or Disagree -->')
-    xml_lines.append('  <cosy-slide id="slide-4" stage="freer-practice" duration="50" mode="all">')
+    xml_lines.append('\n  <!-- SLIDE 5: Debate / Agree or Disagree (30m+) -->')
+    xml_lines.append('  <cosy-slide id="slide-4" stage="freer-practice" duration="30" mode="all">')
     xml_lines.append('    <cosy-teacher-notes type="instruction">')
     xml_lines.append('      <p><cosy-text type="strong">Stage aim:</cosy-text> develop stance-taking, opinion justification, and counter-argumentation skills.</p>')
     xml_lines.append('    </cosy-teacher-notes>')
@@ -394,8 +420,8 @@ def generate_lesson_xml(parsed_data, lesson_id=None, is_discussion_format=True):
     xml_lines.append('    </ol>')
     xml_lines.append('  </cosy-slide>')
 
-    # SLIDE 5: Practical Solutions / Advice
-    xml_lines.append('\n  <!-- SLIDE 5: Practical Solutions & Advice -->')
+    # SLIDE 6: Practical Solutions & Advice (50m, 80m, 110m)
+    xml_lines.append('\n  <!-- SLIDE 6: Practical Solutions & Advice (50m+) -->')
     xml_lines.append('  <cosy-slide id="slide-5" stage="freer-practice" duration="50" mode="all">')
     xml_lines.append('    <cosy-teacher-notes type="instruction">')
     xml_lines.append('      <p><cosy-text type="strong">Stage aim:</cosy-text> collaborative problem solving using modal verbs of recommendation (should, ought to, could).</p>')
@@ -407,8 +433,8 @@ def generate_lesson_xml(parsed_data, lesson_id=None, is_discussion_format=True):
     xml_lines.append('    </ol>')
     xml_lines.append('  </cosy-slide>')
 
-    # SLIDE 6: Future Speculation
-    xml_lines.append('\n  <!-- SLIDE 6: Future Speculation -->')
+    # SLIDE 7: Future Speculation (50m, 80m, 110m)
+    xml_lines.append('\n  <!-- SLIDE 7: Future Speculation (50m+) -->')
     xml_lines.append('  <cosy-slide id="slide-6" stage="freer-practice" duration="50" mode="all">')
     xml_lines.append('    <cosy-teacher-notes type="instruction">')
     xml_lines.append('      <p><cosy-text type="strong">Stage aim:</cosy-text> express future probability and predict long-term developments (is bound to, will likely, is expected to).</p>')
@@ -420,10 +446,35 @@ def generate_lesson_xml(parsed_data, lesson_id=None, is_discussion_format=True):
     xml_lines.append('    </ol>')
     xml_lines.append('  </cosy-slide>')
 
-    # SLIDE 7: Outro & Language Feedback
+    # SLIDE 8: Extended Case Study & Deep Analysis (80m, 110m - 90-min & 120-min formats)
+    xml_lines.append('\n  <!-- SLIDE 8: Extended Case Study & Deep Analysis (80m & 110m Extension) -->')
+    xml_lines.append('  <cosy-slide id="slide-case-study" stage="adaptation" duration="80" mode="all">')
+    xml_lines.append('    <cosy-teacher-notes type="instruction">')
+    xml_lines.append('      <p><cosy-text type="strong">Stage aim:</cosy-text> deep-dive case study analysis for 90-min and 120-min lesson formats.</p>')
+    xml_lines.append('    </cosy-teacher-notes>')
+    xml_lines.append(f'    <cosy-instruction>{escape_xml(case_study_intro)}</cosy-instruction>')
+    xml_lines.append('    <cosy-blockquote importance="high">')
+    xml_lines.append(f'      <p><strong>Scenario:</strong> An international organization is deciding whether to adopt a mandatory policy regarding <strong>{escape_xml(parsed_data["title"])}</strong>. Evaluate the economic, ethical, and social consequences before voting on a final decision.</p>')
+    xml_lines.append('    </cosy-blockquote>')
+    xml_lines.append('  </cosy-slide>')
+
+    # SLIDE 9: Group Workshop & Synthesis Presentation (110m - 120-min Group Lessons Only)
+    xml_lines.append('\n  <!-- SLIDE 9: Group Workshop & Synthesis Presentation (110m Group Format Only) -->')
+    xml_lines.append('  <cosy-slide id="slide-group-workshop" stage="adaptation" duration="110" mode="group">')
+    xml_lines.append('    <cosy-teacher-notes type="instruction">')
+    xml_lines.append('      <p><cosy-text type="strong">Stage aim:</cosy-text> collaborative group breakout task and synthesis presentation for 120-minute group sessions.</p>')
+    xml_lines.append('    </cosy-teacher-notes>')
+    xml_lines.append(f'    <cosy-group-instruction>{escape_xml(workshop_intro)}</cosy-group-instruction>')
+    xml_lines.append('    <ol>')
+    xml_lines.append(f'      <li>In breakout pairs, design a comprehensive action proposal addressing <strong>{escape_xml(parsed_data["title"])}</strong>.</li>')
+    xml_lines.append('      <li>Present your 3-minute synthesis pitch to the full group and defend your recommendations against peer questions.</li>')
+    xml_lines.append('    </ol>')
+    xml_lines.append('  </cosy-slide>')
+
+    # SLIDE 10: Outro & Language Feedback (All durations)
     mistakes_raw = re.findall(r'<div class="mistake-item"[^>]*>(.*?)</div>', parsed_data["mistakes_html"], re.DOTALL)
-    xml_lines.append('\n  <!-- SLIDE 7: Outro & Language Feedback -->')
-    xml_lines.append('  <cosy-slide id="slide-7" stage="cool-down" duration="50" mode="all">')
+    xml_lines.append('\n  <!-- SLIDE 10: Outro & Language Feedback -->')
+    xml_lines.append('  <cosy-slide id="slide-7" stage="cool-down" duration="15" mode="all">')
     xml_lines.append('    <cosy-teacher-notes type="additional">')
     xml_lines.append(f'      <p><cosy-text type="strong">{escape_xml(error_note_title)}:</cosy-text></p>')
     if mistakes_raw:
