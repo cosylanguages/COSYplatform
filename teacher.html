@@ -505,7 +505,6 @@
 
   <script>
     const urlParams = new URLSearchParams(window.location.search);
-    const key = urlParams.get('key');
     const courseParam = urlParams.get('course');
     const levelParam = urlParams.get('level');
     const lessonParam = urlParams.get('lesson');
@@ -554,7 +553,7 @@
         <div class="catalog-container">
           <div class="catalog-header">
             <div>
-              <h1 style="font-size: 1.6rem; color: #0f172a;">${langName ? `${langName} Teacher Space` : 'Teacher Catalog 📚'} (${grant.name || 'Teacher'})</h1>
+              <h1 style="font-size: 1.6rem; color: #0f172a;">${langName ? `${langName} Teacher Space` : 'Teacher Catalog 📚'}</h1>
               <p style="color: #64748b;">Teachers have access to all assigned tracks, curriculums, and speech scripts.</p>
             </div>
             <div style="display: flex; gap: 8px;">

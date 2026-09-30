@@ -50,9 +50,8 @@
 
   <script>
     const urlParams = new URLSearchParams(window.location.search);
-    const key = urlParams.get('key');
 
-        async function initFrenchHub() {
+    async function initFrenchHub() {
       const authData = await window.CosyAuth.requireRole(['teacher', 'founder']);
       if (!authData) return;
 
