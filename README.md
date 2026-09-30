@@ -16,6 +16,7 @@ Welcome to the **COSYplatform Content Repository**! This repository hosts all in
 ```
 .
 ├── activities/                  # Supplementary classroom activity files
+├── cefr/                        # Canonical CEFR master reference specification and docs
 ├── curriculums/                 # Canonical nested JSON curriculum definitions ({iso}/{track}/{LEVEL}.json)
 │   ├── _archive/                # Legacy flat curriculum files and migration logs
 │   ├── _schema/                 # Curriculum JSON Schema validation
@@ -87,6 +88,12 @@ Below is a summary of General curriculum level coverage across supported languag
 | `ba` | Bashkir | `A1`, `C1` | `A0`, `A2`, `B1`, `B2`, `C2` |
 | `br` | Breton | `A1`, `C1` | `A0`, `A2`, `B1`, `B2`, `C2` |
 | `tt` | Tatar | `A1`, `C1` | `A0`, `A2`, `B1`, `B2`, `C2` |
+
+---
+
+## 🌍 CEFR Reference
+
+COSYplatform is the canonical home of the project's CEFR reference system. For detailed level rules, descriptor ID specifications, tag taxonomies, and authority guidelines, see [`cefr/README.md`](cefr/README.md).
 
 ---
 
