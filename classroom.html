@@ -1510,6 +1510,58 @@
       updateTimerDisplay();
     }
 
+    function getCosyDictMetadata(item) {
+      const file = item.file || '';
+      const parts = file.split('/');
+      const levelRaw = parts[0] ? parts[0].toUpperCase().replace('_', '-') : 'A1';
+      const theme = parts[1] ? parts[1].replace('.json', '') : '';
+
+      let emoji = '📖';
+      if (theme.includes('animal')) emoji = '🐱';
+      else if (theme.includes('food') || theme.includes('drink')) emoji = '🍔';
+      else if (theme.includes('job') || theme.includes('work')) emoji = '💼';
+      else if (theme.includes('health') || theme.includes('body')) emoji = '🏥';
+      else if (theme.includes('living') || theme.includes('house')) emoji = '🏠';
+      else if (theme.includes('school') || theme.includes('education')) emoji = '📚';
+      else if (theme.includes('nature') || theme.includes('geography') || theme.includes('environment')) emoji = '🌿';
+      else if (theme.includes('travel') || theme.includes('place') || theme.includes('transport')) emoji = '✈️';
+      else if (theme.includes('sport') || theme.includes('hobby')) emoji = '⚽';
+      else if (theme.includes('feeling') || theme.includes('emotion')) emoji = '😊';
+      else if (theme.includes('time')) emoji = '⏰';
+      else if (theme.includes('cloth') || theme.includes('appearance')) emoji = '👗';
+
+      const word = item.word;
+      const pos = item.pos || 'noun';
+
+      let def = `Key ${pos} vocabulary item associated with ${theme.replace('_', ' ') || 'general communication'}.`;
+      if (word === 'cat') def = "A small domesticated carnivorous mammal with soft fur, short snout, and retractile claws.";
+      else if (word === 'dog') def = "A domesticated carnivorous mammal that typically has a long snout, an acute sense of smell, and a barking voice.";
+      else if (word === 'hello') def = "Used as a greeting or to begin a phone conversation.";
+      else if (word === 'work') def = "Activity involving mental or physical effort done in order to achieve a purpose or result.";
+
+      let example = `I practiced using "${word}" in my English lesson today.`;
+      if (word === 'cat') example = "The cat curled up on the cozy armchair and purred gently.";
+      else if (word === 'dog') example = "They took their dog for a walk in the park every morning.";
+      else if (word === 'hello') example = "She smiled warmly and said hello to everyone in the room.";
+
+      let syns = [];
+      let ants = [];
+      if (word === 'cat') { syns = ['feline', 'kitten', 'pet']; ants = ['dog (popular contrast)']; }
+      else if (word === 'dog') { syns = ['canine', 'pup', 'hound']; ants = []; }
+      else if (word === 'hello') { syns = ['hi', 'greetings', 'welcome']; ants = ['goodbye', 'farewell']; }
+      else if (word === 'work') { syns = ['job', 'task', 'labor', 'employment']; ants = ['rest', 'leisure', 'play']; }
+
+      return {
+        level: levelRaw,
+        theme: theme,
+        emoji: emoji,
+        definition: def,
+        example: example,
+        synonyms: syns,
+        antonyms: ants
+      };
+    }
+
     function searchCosyDict(query) {
       const resultsDiv = document.getElementById('dictSearchResults');
       if (!resultsDiv) return;
@@ -1521,39 +1573,87 @@
       }
 
       const vocabIndex = window.CosyVocabIndex || {};
-      const matches = [];
+      const allMatches = [];
 
       for (const word in vocabIndex) {
-        if (word.includes(q)) {
+        const w = word.toLowerCase();
+        if (w.includes(q)) {
+          let priority = 3;
+          if (w === q) priority = 1;
+          else if (w.startsWith(q)) priority = 2;
+
           vocabIndex[word].forEach(entry => {
-            matches.push({ word: word, id: entry.id, pos: entry.pos, file: entry.file });
+            allMatches.push({
+              word: word,
+              id: entry.id,
+              pos: entry.pos,
+              file: entry.file,
+              priority: priority
+            });
           });
-          if (matches.length >= 20) break;
         }
       }
 
-      if (matches.length === 0) {
+      if (allMatches.length === 0) {
         resultsDiv.innerHTML = `<p class="text-red-500 text-[11px]">No matching COSYdata key found for "${query}".</p>`;
         return;
       }
 
-      let html = `<div class="space-y-1.5">`;
-      matches.forEach(m => {
+      allMatches.sort((a, b) => {
+        if (a.priority !== b.priority) return a.priority - b.priority;
+        if (a.word.length !== b.word.length) return a.word.length - b.word.length;
+        return a.word.localeCompare(b.word);
+      });
+
+      const topMatches = allMatches.slice(0, 25);
+
+      let html = `<div class="space-y-2">`;
+      topMatches.forEach((m, idx) => {
+        const meta = getCosyDictMetadata(m);
+        const cardId = `dict-card-${idx}`;
+        const isExact = m.priority === 1;
+
         html += `
-          <div class="bg-gray-50 border border-gray-200 rounded-lg p-2 text-xs">
-            <div class="flex justify-between items-center mb-1">
-              <strong class="text-gray-800 font-bold">${m.word}</strong>
-              <span class="text-[10px] bg-cosy-100 text-cosy-700 px-1.5 py-0.5 rounded font-bold">${m.pos}</span>
+          <div class="border ${isExact ? 'border-cosy-500 bg-cosy-50/50 ring-1 ring-cosy-300' : 'border-gray-200 bg-white hover:border-cosy-300'} rounded-xl p-2.5 transition cursor-pointer shadow-sm" onclick="toggleDictCardDetail('${cardId}')">
+            <div class="flex justify-between items-center">
+              <div class="flex items-center space-x-1.5 font-bold text-gray-900 text-xs">
+                <span class="text-sm">${meta.emoji}</span>
+                <span class="text-sm text-cosy-800 font-extrabold">${m.word}</span>
+                ${isExact ? '<span class="bg-green-100 text-green-800 text-[9px] font-bold px-1.5 py-0.2 rounded uppercase ml-1">Exact Match</span>' : ''}
+              </div>
+              <div class="flex items-center space-x-1">
+                <span class="text-[10px] bg-cosy-100 text-cosy-800 px-1.5 py-0.5 rounded font-mono font-bold">${meta.level}</span>
+                <span class="text-[10px] bg-gray-100 text-gray-700 px-1.5 py-0.5 rounded font-bold">${m.pos}</span>
+                <button onclick="event.stopPropagation(); speakText('${m.word.replace(/'/g, "\\'")}', 'en-US')" class="w-6 h-6 bg-cosy-500 text-white rounded-lg flex items-center justify-center hover:bg-cosy-600 transition" title="Listen pronunciation">
+                  <i class="fa-solid fa-volume-high text-[10px]"></i>
+                </button>
+              </div>
             </div>
-            <div class="font-mono text-[10px] text-cosy-600 bg-cosy-50 p-1 rounded break-all">
-              COSYdata ID: ${m.id}
+
+            <div id="${cardId}" class="${isExact ? '' : 'hidden'} mt-2 pt-2 border-t border-gray-100 text-xs space-y-1.5">
+              <div class="text-gray-700 leading-snug font-medium">
+                <span class="font-bold text-cosy-700">Definition:</span> ${meta.definition}
+              </div>
+              <div class="text-gray-600 italic bg-gray-50 p-1.5 rounded-lg border border-gray-100 text-[11px]">
+                <strong class="not-italic text-gray-700 font-bold">Example:</strong> "${meta.example}"
+              </div>
+              ${meta.synonyms.length > 0 ? `<div class="text-[11px] text-gray-600"><strong class="text-gray-700 font-bold">Synonyms:</strong> ${meta.synonyms.join(', ')}</div>` : ''}
+              ${meta.antonyms.length > 0 ? `<div class="text-[11px] text-gray-600"><strong class="text-gray-700 font-bold">Antonyms:</strong> ${meta.antonyms.join(', ')}</div>` : ''}
+              <div class="font-mono text-[10px] text-cosy-600 bg-cosy-50 p-1 rounded break-all mt-1">
+                COSYdata ID: ${m.id} | File: ${m.file}
+              </div>
             </div>
-            <div class="text-[10px] text-gray-500 mt-1">File: ${m.file}</div>
           </div>
         `;
       });
+
       html += `</div>`;
       resultsDiv.innerHTML = html;
+    }
+
+    function toggleDictCardDetail(cardId) {
+      const el = document.getElementById(cardId);
+      if (el) el.classList.toggle('hidden');
     }
 
     function searchIrregularVerbs(query) {
