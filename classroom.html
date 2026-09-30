@@ -230,19 +230,17 @@
             <select id="quick-lesson-select" onchange="quickSwitchLesson(this.value)" class="px-2.5 py-1 bg-white border border-gray-300 hover:border-cosy-500 text-gray-800 font-semibold text-xs rounded-lg transition focus:ring-2 focus:ring-cosy-500">
               <option value="default">🇪🇸 Spanish Greetings (Demo)</option>
               <optgroup label="🇬🇧 General English A1">
-                <option value="lessons/en/general/A1/u01-l01-greetings-be.json">Unit 1 - Greetings & Verb 'To Be'</option>
-                <option value="lessons/en/general/A1/u01-l02-countries-nationalities.json">Unit 1 - Countries & Nationalities</option>
-                <option value="lessons/en/general/A1/u02-l01-family-possessives.json">Unit 2 - Family & Possessives</option>
-                <option value="lessons/en/general/A1/u02-l02-jobs-routines.json">Unit 2 - Jobs & Daily Routines</option>
+                <option value="lessons/general-english-a1/m01-l01-hello-first-contact.json">Module 1 - Hello & First Contact</option>
+                <option value="lessons/general-english-a1/m01-l02-my-name-is-asking-names.json">Module 1 - My Name Is...</option>
+                <option value="lessons/general-english-a1/m01-l04-countries-and-nationalities.json">Module 1 - Countries & Nationalities</option>
+                <option value="lessons/general-english-a1/daily-routine.json">Daily Routine</option>
               </optgroup>
               <optgroup label="💬 Special Discussion">
-                <option value="lessons/discussion-en/travel-and-culture.json">Travel & Culture Discussion</option>
-                <option value="lessons/discussion-en/technology-and-society.json">Technology & Society</option>
-                <option value="lessons/discussion-en/work-and-career.json">Work & Career</option>
+                <option value="lessons/discussion-en/4-day-work-week.xml">4-Day Work Week</option>
               </optgroup>
               <optgroup label="🗣️ Spoken English">
-                <option value="lessons/spoken-en/01-icebreaker.json">01. Icebreaker & Socializing</option>
-                <option value="lessons/spoken-en/02-travel-hacks.json">02. Travel Hacks & Packing</option>
+                <option value="lessons/spoken-en/how-to-love-your-work.xml">How To Love Your Work</option>
+                <option value="lessons/spoken-en/4-day-work-week.xml">4-Day Work Week</option>
               </optgroup>
             </select>
           </div>
@@ -691,7 +689,7 @@
 
         let seqHtml = `<div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5">`;
         roadmap.sequence.forEach(item => {
-          let lPath = item.lessonFile || (`lessons/${courseId}/${item.id}.json`);
+          let lPath = item.lessonFile || item.lesson_file || (`lessons/${courseId}/${item.id}.json`);
           seqHtml += `
             <div onclick="selectAndBroadcastLesson('${lPath}')" class="p-2 bg-white border border-gray-200 hover:border-cosy-500 rounded-lg cursor-pointer transition flex items-center justify-between">
               <div>
@@ -804,7 +802,8 @@
       const xmlDoc = parser.parseFromString(xmlText, "text/xml");
       const cosyLesson = xmlDoc.querySelector("cosy-lesson");
       const title = cosyLesson ? (cosyLesson.getAttribute("title") || "Live Lesson") : "Live Lesson";
-      document.getElementById("lesson-title").innerText = title;
+      const titleEl = document.getElementById("lesson-title");
+      if (titleEl) titleEl.innerText = title;
 
       const slideEls = xmlDoc.querySelectorAll("cosy-slide");
       if (slideEls.length === 0) return;
@@ -825,7 +824,8 @@
     }
 
     function parseJsonLessonToSlides(jsonData) {
-      document.getElementById("lesson-title").innerText = jsonData.title || "Live Lesson";
+      const titleEl = document.getElementById("lesson-title");
+      if (titleEl) titleEl.innerText = jsonData.title || "Live Lesson";
       if (!jsonData.slides || jsonData.slides.length === 0) return;
 
       dynamicSlides = [];
@@ -973,14 +973,53 @@
 
     function renderJsonSlideToClassroomHtml(slide, prefix = "n") {
       let output = "";
+
+      // Teacher Notes rendering
+      if (currentRole === 'teacher' && slide.teacherNotes) {
+        slide.teacherNotes.forEach((tn) => {
+          const noteClass = tn.type === "speech" ? "teacher-note-speech" : "teacher-note-instruction";
+          const icon = tn.type === "speech" ? "💬" : "💡";
+          const title = tn.title || (tn.type === "speech" ? "Suggested Speech Script & CCQs" : "Stage Aim & Guidance");
+          output += `
+            <div class="teacher-note-box ${noteClass}">
+              <div class="font-bold uppercase text-xs mb-1">${icon} ${title}</div>
+              <div class="text-xs">${escapeHtml(tn.content || '')}</div>
+            </div>
+          `;
+        });
+      }
+
       if (slide.elements) {
         slide.elements.forEach((el, idx) => {
           const fKey = `${prefix}_el_${idx}`;
-          if (el.type === "instruction") output += `<div class="font-semibold text-cosy-600 my-2">📋 ${el.content}</div>`;
-          else if (el.type === "blockquote") output += `<blockquote class="bg-gray-50 border-l-4 border-cosy-500 p-3 my-2 rounded-r-lg text-sm">${el.content}</blockquote>`;
-          else if (el.type === "input") {
+          if (el.type === "instruction") {
+            output += `<div class="font-semibold text-cosy-600 my-2">📋 ${escapeHtml(el.content || '')}</div>`;
+          } else if (el.type === "blockquote") {
+            output += `<blockquote class="bg-gray-50 border-l-4 border-cosy-500 p-3 my-2 rounded-r-lg text-sm whitespace-pre-wrap">${escapeHtml(el.content || '')}</blockquote>`;
+          } else if (el.type === "input") {
             if (el.answers && el.answers.length > 0) answersMap[fKey] = el.answers[0];
-            output += `<input type="text" id="${fKey}" oninput="handleBlankInput('${fKey}', this.value)" placeholder="Type response..." class="px-3 py-1.5 border border-gray-300 rounded-lg text-sm my-2">`;
+            output += `
+              <div class="my-3 space-y-1">
+                <input type="text" id="${fKey}" oninput="handleBlankInput('${fKey}', this.value)" placeholder="${el.placeholder || "Type response..."}" class="px-3 py-1.5 border border-gray-300 rounded-lg text-sm w-full max-w-sm focus:ring-2 focus:ring-cosy-500 font-medium">
+                ${currentRole === 'teacher' && el.answers ? `<div class="answer-key-box">🔑 Key: ${el.answers.join(' / ')}</div>` : ''}
+              </div>
+            `;
+          } else if (el.type === "test") {
+            output += `<div class="bg-gray-50 border border-gray-200 rounded-xl p-4 my-3"><strong class="text-sm text-gray-800">${escapeHtml(el.content || '')}</strong><div class="space-y-1.5 mt-2">`;
+            if (el.options) {
+              el.options.forEach(opt => {
+                const isCorrect = el.answers && el.answers.includes(opt);
+                output += `<label class="flex items-center space-x-2 text-xs p-2 rounded-lg border border-gray-200 bg-white hover:bg-cosy-50 cursor-pointer"><input type="radio" name="${fKey}" value="${escapeHtml(opt)}"><span>${escapeHtml(opt)}</span> ${currentRole === 'teacher' && isCorrect ? '<span class="text-green-600 font-bold ml-auto">✔️ Correct</span>' : ''}</label>`;
+              });
+            }
+            output += `</div></div>`;
+          } else if (el.type === "essay") {
+            output += `
+              <div class="bg-gray-50 border border-dashed border-gray-300 rounded-xl p-4 my-3 text-xs">
+                <div class="font-bold text-gray-700 mb-1">📝 Open Text Practice</div>
+                <textarea id="${fKey}" oninput="handleBlankInput('${fKey}', this.value)" placeholder="Write your response here..." class="w-full h-24 p-2 border border-gray-300 rounded-lg text-xs font-sans"></textarea>
+              </div>
+            `;
           }
         });
       }
