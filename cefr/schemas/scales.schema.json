@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cosylanguages.com/cefr/schemas/scales.schema.json",
+  "title": "CEFR Scales Schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "id",
+      "name",
+      "mode",
+      "kind",
+      "skill",
+      "levels"
+    ],
+    "properties": {
+      "id": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+      },
+      "name": {
+        "type": "string"
+      },
+      "mode": {
+        "type": "string",
+        "enum": [
+          "reception",
+          "production",
+          "interaction",
+          "mediation",
+          "strategies",
+          "competences"
+        ]
+      },
+      "kind": {
+        "type": "string",
+        "enum": [
+          "activity",
+          "strategy",
+          "competence"
+        ]
+      },
+      "skill": {
+        "type": ["string", "null"],
+        "enum": [
+          "lis",
+          "rd",
+          "in",
+          "sp",
+          "wr",
+          "med",
+          null
+        ]
+      },
+      "levels": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+$"
+        }
+      }
+    },
+    "additionalProperties": false
+  }
+}

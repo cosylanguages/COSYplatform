@@ -19,6 +19,17 @@ This directory serves as the canonical home of the project's Common European Fra
 
 ---
 
+## How to Update the CEFR Reference
+
+To update the CEFR reference system, follow these steps:
+1. **Edit the master document:** Modify `cefr/CEFR_Universal_Master.md`. Do not edit files in `cefr/data/*.json` directly.
+2. **Rebuild derived JSON data:** Run `python3 scripts/build-cefr-json.py` to regenerate all JSON files in `cefr/data/`.
+3. **Validate changes:** Run `npm run validate` (which includes `npm run check:cefr`) to ensure all JSON files conform to schemas and pass relational integrity checks.
+4. **Record changes:** Add an entry documenting your updates in `cefr/CHANGELOG.md`.
+5. **Commit both:** Commit both `cefr/CEFR_Universal_Master.md` and the updated `cefr/data/*.json` files.
+
+---
+
 ## Status
 
 - **Version:** v1.1
