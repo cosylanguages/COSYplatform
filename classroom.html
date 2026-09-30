@@ -168,14 +168,34 @@
         </div>
       </div>
 
-      <!-- Embedded Video Container -->
+      <!-- Video Call Provider Controls -->
+      <div class="p-2 border-b border-cosy-100 bg-white text-xs space-y-1.5">
+        <div class="flex items-center justify-between text-gray-600 font-semibold text-[11px]">
+          <span><i class="fa-solid fa-video text-cosy-600 mr-1"></i> Video Provider:</span>
+          <select id="video-provider-select" onchange="changeVideoProvider(this.value)" class="px-2 py-0.5 border border-gray-300 rounded-lg text-xs bg-gray-50 focus:ring-1 focus:ring-cosy-500">
+            <option value="jitsi">Jitsi Meet (Embedded)</option>
+            <option value="yandex">Yandex Telemost (Яндекс Телемост)</option>
+            <option value="google">Google Meet</option>
+            <option value="custom">Custom Meeting Link</option>
+          </select>
+        </div>
+
+        <div id="external-video-link-container" class="hidden space-y-1 pt-1">
+          <input type="text" id="video-link-input" placeholder="Paste Yandex Telemost / Google Meet URL..." class="w-full px-2.5 py-1 text-xs border border-gray-300 rounded-lg focus:ring-1 focus:ring-cosy-500">
+          <button onclick="broadcastAndOpenVideoLink()" class="w-full py-1 bg-green-600 text-white font-semibold rounded-lg text-[11px] hover:bg-green-700 transition">
+            🚀 Broadcast &amp; Launch Call
+          </button>
+        </div>
+      </div>
+
+      <!-- Embedded Video Container / External Launch Area -->
       <div class="flex-1 bg-gray-900 relative flex items-center justify-center min-h-[180px]">
         <div id="jitsi-container" class="w-full h-full"></div>
         <div id="jitsi-placeholder" class="text-center p-4 text-gray-400">
           <i class="fa-solid fa-video-slash text-3xl mb-2 opacity-50"></i>
-          <p class="text-xs">Video call inactive.</p>
-          <button onclick="startVideoCall()" class="mt-2 px-3 py-1.5 bg-cosy-500 text-white rounded-lg text-xs font-medium hover:bg-cosy-600 transition">
-            Launch Video Call
+          <p id="video-placeholder-text" class="text-xs">Video call inactive.</p>
+          <button id="launch-video-btn" onclick="startVideoCall()" class="mt-2 px-3 py-1.5 bg-cosy-500 text-white rounded-lg text-xs font-medium hover:bg-cosy-600 transition">
+            Launch Embedded Video Call
           </button>
         </div>
       </div>
@@ -456,6 +476,8 @@
     let jitsiApi = null;
     let chatCount = 0;
     let dynamicSlides = [];
+    let currentVideoProvider = 'jitsi';
+    let activeVideoLink = '';
 
     // Whiteboard Canvas State
     let canvas, ctx;
@@ -491,6 +513,71 @@
         joinRoomFromInput();
       }
     });
+
+    // Video Provider Switching Logic
+    function changeVideoProvider(provider) {
+      currentVideoProvider = provider;
+      const linkContainer = document.getElementById('external-video-link-container');
+      const btn = document.getElementById('launch-video-btn');
+      const placeholderText = document.getElementById('video-placeholder-text');
+
+      if (provider === 'jitsi') {
+        linkContainer.classList.add('hidden');
+        btn.classList.remove('hidden');
+        placeholderText.innerText = 'Video call inactive (Embedded Jitsi).';
+      } else {
+        linkContainer.classList.remove('hidden');
+        btn.classList.add('hidden');
+
+        if (provider === 'yandex') {
+          document.getElementById('video-link-input').placeholder = 'Paste Yandex Telemost URL (e.g. https://telemost.yandex.ru/j/...)';
+          placeholderText.innerText = 'Yandex Telemost selected (Яндекс Телемост).';
+        } else if (provider === 'google') {
+          document.getElementById('video-link-input').placeholder = 'Paste Google Meet URL (e.g. https://meet.google.com/...)';
+          placeholderText.innerText = 'Google Meet selected.';
+        } else {
+          document.getElementById('video-link-input').placeholder = 'Paste custom video meeting link...';
+          placeholderText.innerText = 'Custom Meeting Link selected.';
+        }
+      }
+    }
+
+    function broadcastAndOpenVideoLink() {
+      const input = document.getElementById('video-link-input');
+      const url = input.value.trim();
+      if (!url) {
+        alert('Please paste a meeting link first.');
+        return;
+      }
+
+      activeVideoLink = url;
+      sendData({ type: 'video-link', provider: currentVideoProvider, link: url });
+
+      // Render external video link banner in video container
+      renderExternalVideoBanner(currentVideoProvider, url);
+      window.open(url, '_blank');
+    }
+
+    function renderExternalVideoBanner(provider, url) {
+      const placeholder = document.getElementById('jitsi-placeholder');
+      const container = document.getElementById('jitsi-container');
+
+      container.innerHTML = '';
+      placeholder.classList.remove('hidden');
+
+      const providerName = provider === 'yandex' ? 'Yandex Telemost' : provider === 'google' ? 'Google Meet' : 'Video Call';
+
+      placeholder.innerHTML = `
+        <div class="space-y-2">
+          <i class="fa-solid fa-video text-3xl text-green-400"></i>
+          <div class="text-xs font-bold text-white">${providerName} Active</div>
+          <p class="text-[11px] text-gray-300">Click below to open meeting in window:</p>
+          <a href="${url}" target="_blank" class="inline-block px-4 py-2 bg-green-600 hover:bg-green-700 text-white text-xs font-bold rounded-xl transition shadow">
+            📹 Join ${providerName} Session
+          </a>
+        </div>
+      `;
+    }
 
     // Lesson Catalog Modal Toggle & Population
     function toggleLessonCatalogModal() {
@@ -971,6 +1058,12 @@
           break;
         case 'load-lesson':
           if (data.lessonPath) loadDynamicLesson(data.lessonPath);
+          break;
+        case 'video-link':
+          if (data.link) {
+            renderExternalVideoBanner(data.provider, data.link);
+            addChatMessage('System', `Teacher launched ${data.provider === 'yandex' ? 'Yandex Telemost' : 'Google Meet'} video call.`);
+          }
           break;
       }
     }
