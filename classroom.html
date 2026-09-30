@@ -1733,7 +1733,7 @@
           clearWhiteboard(false);
           break;
         case 'chat':
-          addChatMessage(data.sender, data.message, data.time);
+          addChatMessage(data.sender, data.message, data.time, data.roomScope || 'Main Room');
           break;
         case 'role':
           addChatMessage('System', `Peer switched role to ${data.role}`);
@@ -1766,6 +1766,18 @@
           if (data.roomName) {
             showActivityBanner(`Breakout Room Assigned`, `You have been assigned to ${data.roomName}. Focus on pair/group discussion!`);
             addChatMessage('System', `🔀 Assigned to Breakout ${data.roomName}`);
+          }
+          break;
+        case 'breakout-task':
+          if (data.roomName && (currentBreakoutRoom === data.roomName || currentRole === 'teacher')) {
+            showActivityBanner(`Task for ${data.roomName}`, data.prompt);
+            addChatMessage('System', `🎯 Task dispatched to ${data.roomName}: "${data.prompt}"`);
+          }
+          break;
+        case 'breakout-move':
+          if (data.user && data.roomName) {
+            addChatMessage('System', `${data.user} moved to ${data.roomName}`);
+            updatePeerVideoMuteState(data.user, data.roomName);
           }
           break;
         case 'breakout-recall':
@@ -2121,14 +2133,22 @@
 
       const sender = currentRole === 'teacher' ? 'Teacher' : 'Student';
       const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      const roomScope = currentBreakoutRoom || 'Main Room';
 
-      addChatMessage(sender, msg, time);
-      sendData({ type: 'chat', sender: sender, message: msg, time: time });
+      addChatMessage(sender, msg, time, roomScope);
+      sendData({ type: 'chat', sender: sender, message: msg, time: time, roomScope: roomScope });
 
       input.value = '';
     }
 
-    function addChatMessage(sender, msg, time = '') {
+    function addChatMessage(sender, msg, time = '', roomScope = 'Main Room') {
+      const currentScope = currentBreakoutRoom || 'Main Room';
+
+      // Scoped Chat Filtering: If message is bound to a specific breakout room that isn't our current room, ignore unless it's a System announcement
+      if (sender !== 'System' && roomScope !== 'Main Room' && roomScope !== currentScope) {
+        return;
+      }
+
       const chatBox = document.getElementById('chat-messages');
       if (!chatBox) return;
 
@@ -2142,9 +2162,10 @@
         msgDiv.innerText = `${msg} (${timeStr})`;
       } else {
         const isSelf = (currentRole === 'teacher' && sender === 'Teacher') || (currentRole === 'student' && sender === 'Student');
+        const badgeHtml = roomScope !== 'Main Room' ? `<span class="bg-amber-100 text-amber-800 text-[9px] font-bold px-1.5 py-0.2 rounded ml-1">${roomScope.split(' ')[0]} ${roomScope.split(' ')[1]}</span>` : '';
         msgDiv.innerHTML = `
           <div class="flex justify-between items-center text-[10px] text-gray-400 font-medium">
-            <span class="${isSelf ? 'text-cosy-600 font-bold' : 'text-gray-700 font-bold'}">${sender}</span>
+            <span class="${isSelf ? 'text-cosy-600 font-bold' : 'text-gray-700 font-bold'}">${sender}${badgeHtml}</span>
             <span>${timeStr}</span>
           </div>
           <div class="text-xs text-gray-800 mt-0.5">${escapeHtml(msg)}</div>
@@ -2157,6 +2178,27 @@
       chatCount++;
       const chatBadge = document.getElementById('chat-count');
       if (chatBadge) chatBadge.innerText = chatCount;
+    }
+
+    function updatePeerVideoMuteState(user, peerRoomName) {
+      if (currentVideoProvider !== 'peerjs-video') return;
+      const remoteVid = document.getElementById('remote-video');
+      if (!remoteVid) return;
+
+      const myRoom = currentBreakoutRoom || 'Main Room';
+      const targetRoom = peerRoomName || 'Main Room';
+
+      if (myRoom !== targetRoom) {
+        remoteVid.muted = true;
+        remoteVid.style.opacity = '0.3';
+        const label = document.getElementById('remote-video-label');
+        if (label) label.innerText = `${user} (In ${targetRoom} - Muted)`;
+      } else {
+        remoteVid.muted = false;
+        remoteVid.style.opacity = '1';
+        const label = document.getElementById('remote-video-label');
+        if (label) label.innerText = user;
+      }
     }
 
     function escapeHtml(str) {
@@ -2209,6 +2251,14 @@
               <span>🏠 ${r.name}</span>
               ${isCurrent ? '<span class="text-[10px] bg-green-200 text-green-900 px-1.5 py-0.5 rounded font-bold">You are here</span>' : '<span class="text-[10px] bg-amber-200 text-amber-900 px-1.5 py-0.5 rounded font-mono">Active</span>'}
             </div>
+
+            <div class="space-y-1">
+              <input type="text" id="task-input-${r.key}" placeholder="Specific task for ${r.name.split(' ')[0]} ${r.name.split(' ')[1]}..." class="w-full px-2 py-1 text-[11px] border border-amber-300 rounded-lg focus:ring-1 focus:ring-amber-500 bg-white">
+              <button onclick="dispatchBreakoutTask('${r.key}', '${r.name}')" class="w-full py-0.5 bg-amber-800 hover:bg-amber-900 text-white font-bold rounded-lg text-[10px] transition shadow-sm">
+                🎯 Dispatch Sub-Room Task
+              </button>
+            </div>
+
             <div class="flex items-center gap-1.5 pt-1">
               <button onclick="joinBreakoutRoom('${r.key}', '${r.name}')" class="flex-1 py-1 bg-amber-600 hover:bg-amber-700 text-white font-bold rounded-lg text-[11px] transition shadow-sm">
                 🚪 ${isCurrent ? 'Current Room' : 'Enter / Move Here'}
@@ -2297,6 +2347,22 @@
 
       sendData({ type: 'breakout-move', user: currentRole, roomName: 'Main Room' });
       addChatMessage('System', `🏠 Returned to Main Classroom.`);
+    }
+
+    function dispatchBreakoutTask(key, roomName) {
+      const input = document.getElementById(`task-input-${key}`);
+      const promptText = input ? input.value.trim() : '';
+      if (!promptText) {
+        alert(`Please enter a task description for ${roomName} first.`);
+        return;
+      }
+
+      sendData({ type: 'breakout-task', roomKey: key, roomName: roomName, prompt: promptText });
+      addChatMessage('System', `🎯 Dispatched task to ${roomName}: "${promptText}"`);
+      if (currentBreakoutRoom === roomName || currentRole === 'teacher') {
+        showActivityBanner(`Task for ${roomName}`, promptText);
+      }
+      alert(`Task dispatched to ${roomName}!`);
     }
 
     function broadcastBreakoutAssignment(roomName) {
