@@ -116,166 +116,150 @@
   <!-- Main Workspace Area -->
   <div class="flex-1 flex flex-col md:flex-row overflow-hidden relative">
 
-    <!-- Left Sidebar: Video Call & Room Controls -->
-    <aside class="w-full md:w-80 lg:w-96 bg-white border-r border-cosy-100 flex flex-col h-1/3 md:h-full z-0">
+    <!-- Left Sidebar: Fixed Video Window & Tabbed Workspace -->
+    <aside class="w-full md:w-80 lg:w-96 bg-white border-r border-cosy-100 flex flex-col h-1/3 md:h-full z-0 overflow-hidden flex-none">
 
-      <!-- Room Connection Controls Box -->
-      <div id="room-controls-card" class="p-3 border-b border-cosy-100 bg-cosy-50/50">
-        <div class="flex items-center justify-between mb-2">
-          <span class="text-xs font-semibold uppercase text-gray-500 tracking-wider">Classroom Connection</span>
-          <button onclick="toggleGithubGuideModal()" class="text-xs text-cosy-500 hover:underline">
-            <i class="fa-solid fa-circle-info mr-1"></i>Hosting Guide
-          </button>
-        </div>
-
-        <div class="flex flex-col space-y-2">
-          <div class="flex space-x-2">
-            <input type="text" id="target-room-input" placeholder="Enter Room ID to Join..." class="flex-1 px-3 py-1.5 text-xs rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-cosy-500">
-            <button onclick="joinRoomFromInput()" class="px-3 py-1.5 bg-cosy-700 text-white text-xs font-medium rounded-xl hover:bg-cosy-800 transition">
-              Join
-            </button>
-          </div>
-          <button id="host-btn" onclick="initHost()" class="w-full py-1.5 bg-cosy-500 text-white text-xs font-medium rounded-xl hover:bg-cosy-600 transition shadow-sm">
-            <i class="fa-solid fa-plus mr-1"></i> Create New Room as Host
-          </button>
-        </div>
-      </div>
-
-      <!-- Classroom Utilities Toggle Bar -->
-      <div class="p-2 border-b border-cosy-100 bg-gray-50 flex items-center justify-between text-xs font-semibold text-gray-700">
-        <span class="text-[10px] uppercase font-bold text-gray-500 tracking-wider"><i class="fa-solid fa-toolbox text-cosy-500 mr-1"></i> Quick Tools:</span>
-        <div class="flex items-center space-x-1">
-          <button onclick="toggleUtilityDrawer('timer')" class="px-2 py-1 bg-white hover:bg-cosy-50 border border-gray-200 text-gray-700 rounded-lg text-xs font-semibold transition" title="Classroom Timer">
-            ⏱️ Timer
-          </button>
-          <button onclick="toggleUtilityDrawer('verbs')" class="px-2 py-1 bg-white hover:bg-cosy-50 border border-gray-200 text-gray-700 rounded-lg text-xs font-semibold transition" title="Irregular Verbs">
-            ⚡ Verbs
-          </button>
-          <button onclick="toggleUtilityDrawer('dict')" class="px-2 py-1 bg-white hover:bg-cosy-50 border border-gray-200 text-gray-700 rounded-lg text-xs font-semibold transition" title="COSYdata Dictionary">
-            📖 Dict
-          </button>
-        </div>
-      </div>
-
-      <!-- Timer Utility Drawer -->
-      <div id="timer-drawer" class="p-3 bg-white border-b border-cosy-200 hidden text-xs space-y-2">
-        <div class="flex items-center justify-between pb-1 border-b border-gray-100">
-          <span class="font-bold text-gray-800"><i class="fa-regular fa-clock text-cosy-600 mr-1"></i> Classroom Timer</span>
-          <button onclick="toggleUtilityDrawer(null)" class="text-gray-400 hover:text-gray-600 text-sm">✖</button>
-        </div>
-        <div class="text-center py-2">
-          <div id="timerDisplay" class="text-3xl font-mono font-extrabold text-cosy-700">05:00</div>
-          <div class="flex flex-wrap items-center justify-center gap-1.5 mt-2">
-            <button onclick="startTimer()" class="px-2.5 py-1 bg-green-600 hover:bg-green-700 text-white font-bold rounded-lg transition text-[11px]">Start</button>
-            <button onclick="pauseTimer()" class="px-2.5 py-1 bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded-lg transition text-[11px]">Pause</button>
-            <button onclick="resetTimer(300)" class="px-2.5 py-1 bg-gray-600 hover:bg-gray-700 text-white font-bold rounded-lg transition text-[11px]">Reset (5m)</button>
-            <button onclick="addTimerMinutes(1)" class="px-2 py-1 bg-cosy-100 text-cosy-800 font-bold rounded-lg transition text-[11px]">+1m</button>
-            <button onclick="addTimerMinutes(5)" class="px-2 py-1 bg-cosy-100 text-cosy-800 font-bold rounded-lg transition text-[11px]">+5m</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Irregular Verbs Utility Drawer -->
-      <div id="verbs-drawer" class="p-3 bg-white border-b border-cosy-200 hidden text-xs space-y-2">
-        <div class="flex items-center justify-between pb-1 border-b border-gray-100">
-          <span class="font-bold text-gray-800"><i class="fa-solid fa-bolt text-yellow-500 mr-1"></i> Irregular Verbs (V1-V2-V3)</span>
-          <button onclick="toggleUtilityDrawer(null)" class="text-gray-400 hover:text-gray-600 text-sm">✖</button>
-        </div>
-        <input type="text" id="verbSearchInput" oninput="searchIrregularVerbs(this.value)" placeholder="Search verb (e.g. speak, write, go)..." class="w-full px-2.5 py-1 border border-gray-300 rounded-lg text-xs focus:ring-1 focus:ring-cosy-500">
-        <div id="verbSearchResults" class="max-h-48 overflow-y-auto pt-1">
-          <p class="text-gray-400 italic text-[11px]">Type a verb to search V1, V2, V3 forms...</p>
-        </div>
-      </div>
-
-      <!-- COSYdata Dictionary Utility Drawer -->
-      <div id="dict-drawer" class="p-3 bg-white border-b border-cosy-200 hidden text-xs space-y-2">
-        <div class="flex items-center justify-between pb-1 border-b border-gray-100">
-          <span class="font-bold text-gray-800"><i class="fa-solid fa-book text-cosy-600 mr-1"></i> COSYdata Vocabulary Dictionary</span>
-          <button onclick="toggleUtilityDrawer(null)" class="text-gray-400 hover:text-gray-600 text-sm">✖</button>
-        </div>
-        <input type="text" id="dictSearchInput" oninput="searchCosyDict(this.value)" placeholder="Search dictionary (e.g. family, work)..." class="w-full px-2.5 py-1 border border-gray-300 rounded-lg text-xs focus:ring-1 focus:ring-cosy-500">
-        <div id="dictSearchResults" class="max-h-48 overflow-y-auto pt-1">
-          <p class="text-gray-400 italic text-[11px]">Type a word to search COSYdata vocabulary index...</p>
-        </div>
-      </div>
-
-      <!-- Facilitation Drawer Toggle -->
-      <div class="p-2 border-b border-cosy-100 bg-gray-50 flex justify-between items-center">
-        <button onclick="toggleFacilitationDrawer()" class="w-full py-1.5 px-3 bg-white border border-cosy-200 text-cosy-700 rounded-xl text-xs font-semibold hover:bg-cosy-50 transition flex items-center justify-between">
-          <span><i class="fa-solid fa-wand-magic-sparkles mr-1.5 text-yellow-500"></i> Icebreakers &amp; Activities</span>
-          <i class="fa-solid fa-chevron-down text-[10px]"></i>
-        </button>
-      </div>
-
-      <!-- Facilitation Drawer (Hidden by default) -->
-      <div id="facilitation-drawer" class="p-3 bg-cosy-50/70 border-b border-cosy-200 hidden max-h-56 overflow-y-auto text-xs space-y-2">
-        <div class="font-bold text-gray-700 uppercase tracking-wider text-[10px]">Select Activity Prompt:</div>
-        <div class="grid grid-cols-1 gap-1.5">
-          <button onclick="launchActivity('Two Truths and a Lie', 'Share 3 statements about yourself: 2 truths and 1 lie. Can your partner guess the lie?')" class="p-1.5 text-left bg-white rounded-lg border border-gray-200 hover:border-cosy-500 transition">
-            <strong>🎯 Two Truths &amp; A Lie</strong> - Icebreaker
-          </button>
-          <button onclick="launchActivity('Desert Island Scenario', 'You are stranded on a desert island and can bring only 3-5 items. Negotiate and justify your choices!')" class="p-1.5 text-left bg-white rounded-lg border border-gray-200 hover:border-cosy-500 transition">
-            <strong>🏝️ Desert Island</strong> - Team Problem Solving
-          </button>
-          <button onclick="launchActivity('Think-Pair-Share', '1. Think individually (1 min). 2. Pair up and discuss (2 min). 3. Share with the class.')" class="p-1.5 text-left bg-white rounded-lg border border-gray-200 hover:border-cosy-500 transition">
-            <strong>💬 Think-Pair-Share</strong> - Content Exploration
-          </button>
-          <button onclick="launchActivity('Role-Playing Practice', 'Act out a real-world scenario (e.g. hotel check-in, ordering food, job interview) with your partner.')" class="p-1.5 text-left bg-white rounded-lg border border-gray-200 hover:border-cosy-500 transition">
-            <strong>🎭 Role-Playing</strong> - Skill Practice
-          </button>
-          <button onclick="launchActivity('Rose, Bud, Thorn', 'Share 1 Rose (positive highlight), 1 Bud (growth area to try), and 1 Thorn (challenge or question).')" class="p-1.5 text-left bg-white rounded-lg border border-gray-200 hover:border-cosy-500 transition">
-            <strong>🌹 Rose, Bud, Thorn</strong> - Reflection &amp; Review
-          </button>
-        </div>
-      </div>
-
-      <!-- Video Call Provider Controls -->
-      <div class="p-2 border-b border-cosy-100 bg-white text-xs space-y-1.5">
-        <div class="flex items-center justify-between text-gray-600 font-semibold text-[11px]">
-          <span><i class="fa-solid fa-video text-cosy-600 mr-1"></i> Video Provider:</span>
-          <select id="video-provider-select" onchange="changeVideoProvider(this.value)" class="px-2 py-0.5 border border-gray-300 rounded-lg text-xs bg-gray-50 focus:ring-1 focus:ring-cosy-500">
-            <option value="jitsi">Jitsi Meet (Embedded)</option>
-            <option value="yandex">Yandex Telemost (Яндекс Телемост)</option>
-            <option value="google">Google Meet</option>
-            <option value="custom">Custom Meeting Link</option>
-          </select>
-        </div>
-
-        <div id="external-video-link-container" class="hidden space-y-1 pt-1">
-          <input type="text" id="video-link-input" placeholder="Paste Yandex Telemost / Google Meet URL..." class="w-full px-2.5 py-1 text-xs border border-gray-300 rounded-lg focus:ring-1 focus:ring-cosy-500">
-          <button onclick="broadcastAndOpenVideoLink()" class="w-full py-1 bg-green-600 text-white font-semibold rounded-lg text-[11px] hover:bg-green-700 transition">
-            🚀 Broadcast &amp; Launch Call
-          </button>
-        </div>
-      </div>
-
-      <!-- Embedded Video Container / External Launch Area -->
-      <div class="flex-1 bg-gray-900 relative flex items-center justify-center min-h-[180px]">
+      <!-- Fixed Video Window (STATIONARY - NEVER MOVES OR RESIZES) -->
+      <div class="flex-none h-52 md:h-56 bg-gray-900 relative flex items-center justify-center border-b border-gray-800 overflow-hidden">
         <div id="jitsi-container" class="w-full h-full"></div>
         <div id="jitsi-placeholder" class="text-center p-4 text-gray-400">
-          <i class="fa-solid fa-video-slash text-3xl mb-2 opacity-50"></i>
+          <i class="fa-solid fa-video-slash text-2xl mb-1 opacity-50"></i>
           <p id="video-placeholder-text" class="text-xs">Video call inactive.</p>
-          <button id="launch-video-btn" onclick="startVideoCall()" class="mt-2 px-3 py-1.5 bg-cosy-500 text-white rounded-lg text-xs font-medium hover:bg-cosy-600 transition">
+          <button id="launch-video-btn" onclick="startVideoCall()" class="mt-2 px-3 py-1.5 bg-cosy-500 text-white rounded-lg text-xs font-medium hover:bg-cosy-600 transition shadow-sm">
             Launch Embedded Video Call
           </button>
         </div>
       </div>
 
-      <!-- Quick Chat Drawer inside Sidebar -->
-      <div class="h-44 border-t border-cosy-100 flex flex-col bg-white">
-        <div class="px-3 py-1.5 bg-gray-50 border-b border-gray-100 text-xs font-semibold text-gray-600 flex justify-between items-center">
-          <span><i class="fa-regular fa-comments mr-1"></i> Class Chat</span>
-          <span id="chat-count" class="text-[10px] bg-cosy-200 text-cosy-800 px-1.5 py-0.5 rounded-full">0</span>
-        </div>
-        <div id="chat-messages" class="flex-1 p-2 overflow-y-auto text-xs space-y-2">
-          <div class="text-center text-gray-400 text-[11px] my-1">System: Connected to live lesson.</div>
-        </div>
-        <div class="p-2 border-t border-gray-100 flex space-x-1">
-          <input type="text" id="chat-input" placeholder="Type message..." onkeypress="handleChatKeyPress(event)" class="flex-1 px-2.5 py-1 text-xs border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-cosy-500">
-          <button onclick="sendChatMessage()" class="px-2.5 py-1 bg-cosy-500 text-white rounded-lg text-xs hover:bg-cosy-600 transition">
-            <i class="fa-solid fa-paper-plane"></i>
+      <!-- Compact Room & Video Provider Selector Bar -->
+      <div class="p-2 bg-gray-50 border-b border-cosy-100 text-xs space-y-1.5 flex-none">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-1">
+            <input type="text" id="target-room-input" placeholder="Room ID..." class="w-28 px-2 py-0.5 text-xs rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-cosy-500">
+            <button onclick="joinRoomFromInput()" class="px-2 py-0.5 bg-cosy-700 text-white text-xs font-medium rounded-lg hover:bg-cosy-800 transition">Join</button>
+            <button id="host-btn" onclick="initHost()" class="px-2 py-0.5 bg-cosy-500 text-white text-xs font-medium rounded-lg hover:bg-cosy-600 transition" title="Create Room">Host</button>
+          </div>
+          <button onclick="toggleGithubGuideModal()" class="text-[11px] text-cosy-600 hover:underline">
+            <i class="fa-solid fa-circle-info"></i>
           </button>
         </div>
+
+        <div class="flex items-center justify-between text-gray-600 font-semibold text-[11px]">
+          <span><i class="fa-solid fa-video text-cosy-600 mr-1"></i> Provider:</span>
+          <select id="video-provider-select" onchange="changeVideoProvider(this.value)" class="px-2 py-0.5 border border-gray-300 rounded-lg text-xs bg-white focus:ring-1 focus:ring-cosy-500">
+            <option value="jitsi">Jitsi Meet (Embedded)</option>
+            <option value="yandex">Yandex Telemost</option>
+            <option value="google">Google Meet</option>
+            <option value="custom">Custom Link</option>
+          </select>
+        </div>
+
+        <div id="external-video-link-container" class="hidden space-y-1 pt-0.5">
+          <input type="text" id="video-link-input" placeholder="Paste Telemost / Meet link..." class="w-full px-2 py-1 text-xs border border-gray-300 rounded-lg focus:ring-1 focus:ring-cosy-500">
+          <button onclick="broadcastAndOpenVideoLink()" class="w-full py-1 bg-green-600 text-white font-semibold rounded-lg text-[11px] hover:bg-green-700 transition">
+            🚀 Launch Link
+          </button>
+        </div>
+      </div>
+
+      <!-- Tabbed Utility Navigation Bar -->
+      <div class="bg-gray-100 border-b border-gray-200 flex items-center justify-around text-xs font-semibold p-1 flex-none">
+        <button id="tab-btn-chat" onclick="switchSidebarTab('chat')" class="flex-1 py-1.5 text-center rounded-lg text-cosy-700 bg-white shadow-sm transition">
+          💬 Chat <span id="chat-count" class="text-[10px] bg-cosy-200 text-cosy-800 px-1 py-0.2 rounded-full font-bold ml-0.5">0</span>
+        </button>
+        <button id="tab-btn-timer" onclick="switchSidebarTab('timer')" class="flex-1 py-1.5 text-center rounded-lg text-gray-500 hover:text-gray-800 transition">
+          ⏱️ Timer
+        </button>
+        <button id="tab-btn-verbs" onclick="switchSidebarTab('verbs')" class="flex-1 py-1.5 text-center rounded-lg text-gray-500 hover:text-gray-800 transition">
+          ⚡ Verbs
+        </button>
+        <button id="tab-btn-dict" onclick="switchSidebarTab('dict')" class="flex-1 py-1.5 text-center rounded-lg text-gray-500 hover:text-gray-800 transition">
+          📖 Dict
+        </button>
+        <button id="tab-btn-activities" onclick="switchSidebarTab('activities')" class="flex-1 py-1.5 text-center rounded-lg text-gray-500 hover:text-gray-800 transition">
+          🎯 Prompts
+        </button>
+      </div>
+
+      <!-- Tab Content Area (Scrolling container below fixed camera) -->
+      <div class="flex-1 flex flex-col overflow-y-auto bg-white p-2">
+
+        <!-- Tab 1: Class Chat -->
+        <div id="sidebar-tab-chat" class="flex-1 flex flex-col h-full space-y-2">
+          <div id="chat-messages" class="flex-1 p-2 overflow-y-auto text-xs space-y-2 min-h-[140px] bg-gray-50/50 rounded-xl border border-gray-100">
+            <div class="text-center text-gray-400 text-[11px] my-1">System: Connected to live lesson.</div>
+          </div>
+          <div class="flex space-x-1">
+            <input type="text" id="chat-input" placeholder="Type message..." onkeypress="handleChatKeyPress(event)" class="flex-1 px-2.5 py-1 text-xs border border-gray-200 rounded-xl focus:outline-none focus:ring-1 focus:ring-cosy-500">
+            <button onclick="sendChatMessage()" class="px-3 py-1 bg-cosy-500 text-white rounded-xl text-xs hover:bg-cosy-600 transition shadow-sm">
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Tab 2: Classroom Timer -->
+        <div id="sidebar-tab-timer" class="hidden text-xs space-y-3 p-1">
+          <div class="font-bold text-gray-800 flex items-center justify-between pb-1 border-b border-gray-100">
+            <span><i class="fa-regular fa-clock text-cosy-600 mr-1"></i> Classroom Timer</span>
+          </div>
+          <div class="text-center py-2 bg-cosy-50/50 rounded-2xl border border-cosy-100 p-3">
+            <div id="timerDisplay" class="text-3xl font-mono font-extrabold text-cosy-700">05:00</div>
+            <div class="flex flex-wrap items-center justify-center gap-1.5 mt-3">
+              <button onclick="startTimer()" class="px-3 py-1 bg-green-600 hover:bg-green-700 text-white font-bold rounded-xl transition text-[11px] shadow-sm">Start</button>
+              <button onclick="pauseTimer()" class="px-3 py-1 bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded-xl transition text-[11px] shadow-sm">Pause</button>
+              <button onclick="resetTimer(300)" class="px-3 py-1 bg-gray-600 hover:bg-gray-700 text-white font-bold rounded-xl transition text-[11px] shadow-sm">Reset (5m)</button>
+              <button onclick="addTimerMinutes(1)" class="px-2.5 py-1 bg-white border border-cosy-200 text-cosy-800 font-bold rounded-xl transition text-[11px] hover:bg-cosy-50">+1m</button>
+              <button onclick="addTimerMinutes(5)" class="px-2.5 py-1 bg-white border border-cosy-200 text-cosy-800 font-bold rounded-xl transition text-[11px] hover:bg-cosy-50">+5m</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: Irregular Verbs Reference -->
+        <div id="sidebar-tab-verbs" class="hidden text-xs space-y-2 p-1">
+          <div class="font-bold text-gray-800 flex items-center justify-between pb-1 border-b border-gray-100">
+            <span><i class="fa-solid fa-bolt text-yellow-500 mr-1"></i> Irregular Verbs (V1-V2-V3)</span>
+          </div>
+          <input type="text" id="verbSearchInput" oninput="searchIrregularVerbs(this.value)" placeholder="Search verb (e.g. speak, write, go)..." class="w-full px-2.5 py-1.5 border border-gray-300 rounded-xl text-xs focus:ring-1 focus:ring-cosy-500">
+          <div id="verbSearchResults" class="max-h-52 overflow-y-auto pt-1">
+            <p class="text-gray-400 italic text-[11px]">Type a verb to search V1, V2, V3 forms...</p>
+          </div>
+        </div>
+
+        <!-- Tab 4: COSYdata Dictionary Lookup -->
+        <div id="sidebar-tab-dict" class="hidden text-xs space-y-2 p-1">
+          <div class="font-bold text-gray-800 flex items-center justify-between pb-1 border-b border-gray-100">
+            <span><i class="fa-solid fa-book text-cosy-600 mr-1"></i> COSYdata Dictionary</span>
+          </div>
+          <input type="text" id="dictSearchInput" oninput="searchCosyDict(this.value)" placeholder="Search dictionary (e.g. family, work)..." class="w-full px-2.5 py-1.5 border border-gray-300 rounded-xl text-xs focus:ring-1 focus:ring-cosy-500">
+          <div id="dictSearchResults" class="max-h-52 overflow-y-auto pt-1">
+            <p class="text-gray-400 italic text-[11px]">Type a word to search COSYdata vocabulary index...</p>
+          </div>
+        </div>
+
+        <!-- Tab 5: Facilitation & Icebreakers -->
+        <div id="sidebar-tab-activities" class="hidden text-xs space-y-2 p-1">
+          <div class="font-bold text-gray-800 flex items-center justify-between pb-1 border-b border-gray-100">
+            <span><i class="fa-solid fa-wand-magic-sparkles text-yellow-500 mr-1"></i> Facilitation Prompts</span>
+          </div>
+          <div class="grid grid-cols-1 gap-1.5 pt-1">
+            <button onclick="launchActivity('Two Truths and a Lie', 'Share 3 statements about yourself: 2 truths and 1 lie. Can your partner guess the lie?')" class="p-2 text-left bg-white rounded-xl border border-gray-200 hover:border-cosy-500 transition shadow-sm">
+              <strong class="text-gray-800">🎯 Two Truths &amp; A Lie</strong> - Icebreaker
+            </button>
+            <button onclick="launchActivity('Desert Island Scenario', 'You are stranded on a desert island and can bring only 3-5 items. Negotiate and justify your choices!')" class="p-2 text-left bg-white rounded-xl border border-gray-200 hover:border-cosy-500 transition shadow-sm">
+              <strong class="text-gray-800">🏝️ Desert Island</strong> - Team Exercise
+            </button>
+            <button onclick="launchActivity('Think-Pair-Share', '1. Think individually (1 min). 2. Pair up and discuss (2 min). 3. Share with the class.')" class="p-2 text-left bg-white rounded-lg border border-gray-200 hover:border-cosy-500 transition shadow-sm">
+              <strong class="text-gray-800">💬 Think-Pair-Share</strong> - Discussion
+            </button>
+            <button onclick="launchActivity('Role-Playing Practice', 'Act out a real-world scenario (e.g. hotel check-in, ordering food, job interview) with your partner.')" class="p-2 text-left bg-white rounded-lg border border-gray-200 hover:border-cosy-500 transition shadow-sm">
+              <strong class="text-gray-800">🎭 Role-Playing</strong> - Practice
+            </button>
+            <button onclick="launchActivity('Rose, Bud, Thorn', 'Share 1 Rose (positive highlight), 1 Bud (growth area to try), and 1 Thorn (challenge or question).')" class="p-2 text-left bg-white rounded-lg border border-gray-200 hover:border-cosy-500 transition shadow-sm">
+              <strong class="text-gray-800">🌹 Rose, Bud, Thorn</strong> - Reflection
+            </button>
+          </div>
+        </div>
+
       </div>
     </aside>
 
@@ -1117,28 +1101,39 @@
       sendData({ type: 'role', role: role });
     }
 
-    // Utility Drawers State & Logic
-    let activeClassroomDrawer = null;
+    // Utility Drawers State & Tab Switcher Logic
+    let activeSidebarTab = 'chat';
     let timerSeconds = 300;
     let timerInterval = null;
 
+    function switchSidebarTab(tabName) {
+      activeSidebarTab = tabName;
+      const tabs = ['chat', 'timer', 'verbs', 'dict', 'activities'];
+      tabs.forEach(t => {
+        const btn = document.getElementById(`tab-btn-${t}`);
+        const content = document.getElementById(`sidebar-tab-${t}`);
+        if (btn) {
+          if (t === tabName) {
+            btn.className = 'flex-1 py-1.5 text-center rounded-lg text-cosy-700 bg-white shadow-sm font-bold transition';
+          } else {
+            btn.className = 'flex-1 py-1.5 text-center rounded-lg text-gray-500 hover:text-gray-800 transition';
+          }
+        }
+        if (content) {
+          content.classList.toggle('hidden', t !== tabName);
+        }
+      });
+
+      if (tabName === 'verbs') searchIrregularVerbs('');
+      if (tabName === 'dict') searchCosyDict('');
+    }
+
     function toggleUtilityDrawer(drawerName) {
-      if (activeClassroomDrawer === drawerName) {
-        activeClassroomDrawer = null;
+      if (drawerName) {
+        switchSidebarTab(drawerName);
       } else {
-        activeClassroomDrawer = drawerName;
+        switchSidebarTab('chat');
       }
-
-      const timerDrawer = document.getElementById('timer-drawer');
-      const verbsDrawer = document.getElementById('verbs-drawer');
-      const dictDrawer = document.getElementById('dict-drawer');
-
-      if (timerDrawer) timerDrawer.classList.toggle('hidden', activeClassroomDrawer !== 'timer');
-      if (verbsDrawer) verbsDrawer.classList.toggle('hidden', activeClassroomDrawer !== 'verbs');
-      if (dictDrawer) dictDrawer.classList.toggle('hidden', activeClassroomDrawer !== 'dict');
-
-      if (activeClassroomDrawer === 'verbs') searchIrregularVerbs('');
-      if (activeClassroomDrawer === 'dict') searchCosyDict('');
     }
 
     function updateTimerDisplay() {
