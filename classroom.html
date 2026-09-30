@@ -187,6 +187,22 @@
           </select>
         </div>
 
+        <!-- Camera & Microphone Device Selectors -->
+        <div id="media-device-controls" class="space-y-1 pt-1 border-t border-gray-200">
+          <div class="flex items-center justify-between text-gray-600 font-semibold text-[11px]">
+            <span><i class="fa-solid fa-camera text-cosy-600 mr-1"></i> Camera:</span>
+            <select id="camera-select" onchange="changeCameraDevice(this.value)" class="w-36 px-1.5 py-0.5 border border-gray-300 rounded-lg text-[11px] bg-white focus:ring-1 focus:ring-cosy-500 truncate">
+              <option value="">Default Camera</option>
+            </select>
+          </div>
+          <div class="flex items-center justify-between text-gray-600 font-semibold text-[11px]">
+            <span><i class="fa-solid fa-microphone text-cosy-600 mr-1"></i> Mic:</span>
+            <select id="mic-select" onchange="changeMicDevice(this.value)" class="w-36 px-1.5 py-0.5 border border-gray-300 rounded-lg text-[11px] bg-white focus:ring-1 focus:ring-cosy-500 truncate">
+              <option value="">Default Microphone</option>
+            </select>
+          </div>
+        </div>
+
         <div id="external-video-link-container" class="hidden space-y-1 pt-0.5">
           <input type="text" id="video-link-input" placeholder="Paste Telemost / Meet link..." class="w-full px-2 py-1 text-xs border border-gray-300 rounded-lg focus:ring-1 focus:ring-cosy-500">
           <button onclick="broadcastAndOpenVideoLink()" class="w-full py-1 bg-green-600 text-white font-semibold rounded-lg text-[11px] hover:bg-green-700 transition">
@@ -596,9 +612,13 @@
     // User Authentication & Profile
     let userProfile = null;
 
+    let selectedCamDeviceId = '';
+    let selectedMicDeviceId = '';
+
     // Initialize Page Application
     window.addEventListener('DOMContentLoaded', async () => {
       initWhiteboard();
+      populateMediaDevices();
 
       // Enforce Authentication
       if (window.CosyAuth && typeof window.CosyAuth.getAuthAndProfile === 'function') {
@@ -626,6 +646,87 @@
         joinRoomFromInput();
       }
     });
+
+    async function populateMediaDevices() {
+      if (!navigator.mediaDevices || !navigator.mediaDevices.enumerateDevices) return;
+
+      try {
+        const devices = await navigator.mediaDevices.enumerateDevices();
+        const camSelect = document.getElementById('camera-select');
+        const micSelect = document.getElementById('mic-select');
+
+        if (camSelect) camSelect.innerHTML = '';
+        if (micSelect) micSelect.innerHTML = '';
+
+        let camCount = 1;
+        let micCount = 1;
+
+        devices.forEach(d => {
+          const opt = document.createElement('option');
+          opt.value = d.deviceId;
+
+          if (d.kind === 'videoinput') {
+            opt.textContent = d.label || `Camera ${camCount++}`;
+            if (camSelect) camSelect.appendChild(opt);
+          } else if (d.kind === 'audioinput') {
+            opt.textContent = d.label || `Microphone ${micCount++}`;
+            if (micSelect) micSelect.appendChild(opt);
+          }
+        });
+      } catch (err) {
+        console.warn("Could not enumerate media devices:", err);
+      }
+    }
+
+    async function changeCameraDevice(deviceId) {
+      selectedCamDeviceId = deviceId;
+      if (currentVideoProvider === 'peerjs-video' && localStream) {
+        await updatePeerJsMediaStream();
+      }
+    }
+
+    async function changeMicDevice(deviceId) {
+      selectedMicDeviceId = deviceId;
+      if (currentVideoProvider === 'peerjs-video' && localStream) {
+        await updatePeerJsMediaStream();
+      }
+    }
+
+    async function updatePeerJsMediaStream() {
+      if (!navigator.mediaDevices) return;
+
+      const videoConstraints = selectedCamDeviceId ? { deviceId: { exact: selectedCamDeviceId } } : true;
+      const audioConstraints = selectedMicDeviceId ? { deviceId: { exact: selectedMicDeviceId } } : true;
+
+      try {
+        const newStream = await navigator.mediaDevices.getUserMedia({
+          video: videoConstraints,
+          audio: audioConstraints
+        });
+
+        // Replace tracks on existing local stream
+        if (localStream) {
+          localStream.getTracks().forEach(track => track.stop());
+        }
+        localStream = newStream;
+
+        const localVid = document.getElementById('local-video');
+        if (localVid) localVid.srcObject = newStream;
+
+        // Replace video/audio sender tracks in active PeerJS calls
+        peerMediaCalls.forEach(call => {
+          if (call.peerConnection) {
+            const senders = call.peerConnection.getSenders();
+            newStream.getTracks().forEach(track => {
+              const sender = senders.find(s => s.track && s.track.kind === track.kind);
+              if (sender) sender.replaceTrack(track);
+            });
+          }
+        });
+      } catch (err) {
+        console.error("Error switching media device:", err);
+      }
+    }
 
     function enforceRolePermissions() {
       const teacherBtn = document.getElementById('role-teacher-btn');
@@ -1656,8 +1757,13 @@
       const placeholder = document.getElementById('jitsi-placeholder');
       const container = document.getElementById('jitsi-container');
 
+      const videoConstraints = selectedCamDeviceId ? { deviceId: { exact: selectedCamDeviceId } } : true;
+      const audioConstraints = selectedMicDeviceId ? { deviceId: { exact: selectedMicDeviceId } } : true;
+
       try {
-        localStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+        localStream = await navigator.mediaDevices.getUserMedia({ video: videoConstraints, audio: audioConstraints });
+        populateMediaDevices(); // Refresh device names now that permission is granted
+
         placeholder.classList.add('hidden');
         container.innerHTML = `
           <div class="w-full h-full relative grid grid-cols-1 md:grid-cols-2 gap-1 bg-black p-1">
@@ -1678,6 +1784,7 @@
         // Listen for incoming media calls via PeerJS
         if (peer) {
           peer.on('call', (call) => {
+            peerMediaCalls.push(call);
             call.answer(localStream);
             call.on('stream', (remoteStream) => {
               const remoteVid = document.getElementById('remote-video');
@@ -1688,6 +1795,7 @@
           // Call connected peer if conn exists
           if (conn && conn.peer) {
             const mediaCall = peer.call(conn.peer, localStream);
+            peerMediaCalls.push(mediaCall);
             mediaCall.on('stream', (remoteStream) => {
               const remoteVid = document.getElementById('remote-video');
               if (remoteVid) remoteVid.srcObject = remoteStream;
