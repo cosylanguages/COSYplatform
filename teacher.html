@@ -462,6 +462,7 @@
   <script src="shared/js/vocab-index.js"></script>
   <script src="shared/js/irregular-verbs.js"></script>
   <script src="shared/js/lesson-resolver.js"></script>
+  <script src="shared/js/ui-toast.js"></script>
 </head>
 <body>
 
@@ -963,7 +964,7 @@
         } else {
           clearInterval(window.timerInterval);
           window.timerInterval = null;
-          alert('⏱️ Time is up!');
+          if (window.CosyUI) window.CosyUI.toast('⏱️ Time is up!');
         }
       }, 1000);
     }
@@ -1340,6 +1341,16 @@
           output += `<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 16px 0;">${renderXmlNodeToTeacherHtml(child)}</div>`;
         } else if (tagName === "cosy-choice-option" || tagName === "cosy-choice-image-option") {
           output += `<div style="border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px; background: white;">${renderXmlNodeToTeacherHtml(child)}</div>`;
+        } else if (tagName === "cosy-image") {
+          const src = child.getAttribute("src") || child.getAttribute("resource-id") || "";
+          if (src.startsWith("https://")) {
+            output += `<img src="${src}" loading="lazy" alt="" style="max-width: 100%; border-radius: 8px; margin: 12px 0; display: block;" />`;
+          }
+        } else if (tagName === "cosy-iframe") {
+          const src = child.getAttribute("src") || "";
+          if (src.startsWith("https://")) {
+            output += `<iframe src="${src}" sandbox="allow-scripts allow-same-origin allow-presentation" allow="fullscreen" style="width: 100%; height: 350px; border: none; border-radius: 8px; margin: 12px 0;"></iframe>`;
+          }
         } else {
           output += renderXmlNodeToTeacherHtml(child);
         }
@@ -1375,7 +1386,10 @@
           } else if (el.type === "input" && el.answers) {
             output += `<div class="answer-key-box"><div class="answer-key-title">🔑 Answer Key:</div><div>${el.answers.join(" / ")}</div></div>`;
           } else if (el.type === "image") {
-            output += `<div style="background: #e2e8f0; height: 180px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #64748b; margin: 12px 0;">🖼️ Image [Resource ID: ${el.resourceId}]</div>`;
+            const src = el.src || el.resourceId || "";
+            if (typeof src === "string" && src.startsWith("https://")) {
+              output += `<img src="${src}" loading="lazy" alt="" style="max-width: 100%; border-radius: 8px; margin: 12px 0; display: block;" />`;
+            }
           }
         });
       }

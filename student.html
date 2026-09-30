@@ -443,6 +443,7 @@
   <script src="shared/js/vocab-index.js"></script>
   <script src="shared/js/irregular-verbs.js"></script>
   <script src="shared/js/lesson-resolver.js"></script>
+  <script src="shared/js/ui-toast.js"></script>
 </head>
 <body>
 
@@ -975,7 +976,7 @@
         } else {
           clearInterval(window.timerInterval);
           window.timerInterval = null;
-          alert('⏱️ Time is up!');
+          if (window.CosyUI) window.CosyUI.toast('⏱️ Time is up!');
         }
       }, 1000);
     }
@@ -1244,9 +1245,10 @@
     }
 
     function saveStudentInput(key, val) {
-      if (!window.currentStudentLessonPath) return;
+      const lessonPath = window.currentStudentLessonPath || currentStudentLessonPath;
+      if (!lessonPath) return;
       try {
-        const storeKey = `cosy_ans_${window.currentStudentLessonPath}`;
+        const storeKey = `cosy_ans_${lessonPath}`;
         const existing = JSON.parse(localStorage.getItem(storeKey) || '{}');
         existing[key] = val;
         localStorage.setItem(storeKey, JSON.stringify(existing));
@@ -1254,9 +1256,10 @@
     }
 
     function getSavedStudentInput(key) {
-      if (!window.currentStudentLessonPath) return '';
+      const lessonPath = window.currentStudentLessonPath || currentStudentLessonPath;
+      if (!lessonPath) return '';
       try {
-        const storeKey = `cosy_ans_${window.currentStudentLessonPath}`;
+        const storeKey = `cosy_ans_${lessonPath}`;
         const existing = JSON.parse(localStorage.getItem(storeKey) || '{}');
         return existing[key] || '';
       } catch(e) { return ''; }
@@ -1328,7 +1331,7 @@
           drags.forEach(d => dragWords.push(d.textContent.trim()));
 
           output += `<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; margin: 16px 0;">`;
-          output += `<div style="margin-bottom: 12px; font-weight: 600; font-size: 0.85rem; color: #475569;">Word Bank (Drag / Drop):</div>`;
+          output += `<div style="margin-bottom: 12px; font-weight: 600; font-size: 0.85rem; color: #475569;">Word Bank (Choose the missing words):</div>`;
           output += `<div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px;">`;
           dragWords.forEach(w => {
             output += `<span style="background: var(--student-light); color: var(--student-primary); border: 1px solid #bae6fd; font-weight: 600; padding: 4px 10px; border-radius: 16px; font-size: 0.85rem;">${w}</span>`;
@@ -1360,27 +1363,33 @@
             output += `
               <div class="cosy-vocab-item">
                 <div><strong>${word}</strong> — <span style="color: #64748b;">${v.getAttribute("definition")}</span></div>
-                <button class="add-vocab-btn" onclick="saveStudentInput('vocab_${word.replace(/\s+/g, '_')}', 'added'); alert('Added &quot;${word}&quot; to your personal dictionary!')">+ Add to Dictionary</button>
               </div>
             `;
           });
           output += `</div>`;
         } else if (tagName === "cosy-record") {
           const maxTime = child.getAttribute("time") || "120";
+          const widgetId = `rec_${fieldKey}`;
           output += `
-            <div class="recorder-widget">
-              <p>🎙️ <strong>Voice Speaking Task</strong> (Max time: ${maxTime}s)</p>
-              <button class="btn" style="background: var(--student-primary); margin-top: 8px;" onclick="saveStudentInput('${fieldKey}_rec', 'recorded'); alert('Audio recording simulation completed!')">🎙️ Record Voice Response</button>
+            <div class="recorder-widget" id="${widgetId}">
+              <p style="font-weight: 600; margin-bottom: 8px;">🎙️ <strong>Voice Speaking Task</strong> (Max time: ${maxTime}s)</p>
+              <button class="btn" style="background: var(--student-primary); margin: 8px 0; padding: 6px 14px; font-size: 0.85rem;" onclick="startCosyRecord('${widgetId}')">🎙️ Record Voice Response</button>
+              <p style="font-size: 0.75rem; color: #64748b; margin-top: 6px;">Recording stays on this device and is not sent to anyone.</p>
             </div>
           `;
         } else if (tagName === "cosy-essay") {
           const topic = child.querySelector("cosy-essay-topic")?.textContent || "Writing Assignment";
           const savedText = getSavedStudentInput(`${fieldKey}_essay`);
+          const statusId = `${fieldKey}_essay_status`;
           output += `
             <div class="essay-widget">
               <p>📝 <strong>${topic}</strong></p>
-              <textarea placeholder="Write your response in English..." oninput="saveStudentInput('${fieldKey}_essay', this.value)">${savedText}</textarea>
-              <button class="btn" style="background: var(--student-primary); margin-top: 8px;" onclick="alert('Essay saved locally in localStorage!')">Save Essay Response</button>
+              <textarea id="${fieldKey}_essay_textarea" placeholder="Write your answer here..." oninput="saveStudentInput('${fieldKey}_essay', this.value); document.getElementById('${statusId}').innerText='Saved on this device';">${savedText}</textarea>
+              <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 8px; flex-wrap: wrap;">
+                <button class="btn" style="background: var(--student-primary);" onclick="saveStudentInput('${fieldKey}_essay', document.getElementById('${fieldKey}_essay_textarea').value); document.getElementById('${statusId}').innerText='Saved on this device';">Save Essay Response</button>
+                <button class="btn btn-outline" onclick="copyEssayText('${fieldKey}_essay_textarea')">Copy text</button>
+                <span id="${statusId}" style="font-size: 0.8rem; color: #166534; font-weight: 600;">${savedText ? 'Saved on this device' : ''}</span>
+              </div>
             </div>
           `;
         } else if (tagName === "cosy-choice" || tagName === "cosy-choice-image") {
@@ -1390,9 +1399,15 @@
           const isSelected = savedOpt === "selected" ? "selected" : "";
           output += `<div class="choice-card ${isSelected}" onclick="this.classList.toggle('selected'); saveStudentInput('${fieldKey}', this.classList.contains('selected') ? 'selected' : '')">${renderXmlNodeToStudentHtml(child, fieldKey)}</div>`;
         } else if (tagName === "cosy-image") {
-          output += `<div style="background: #e2e8f0; height: 180px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #64748b; margin: 12px 0;">🖼️ Image [Resource ID: ${child.getAttribute("resource-id") || "Media"}]</div>`;
+          const src = child.getAttribute("src") || child.getAttribute("resource-id") || "";
+          if (src.startsWith("https://")) {
+            output += `<img src="${src}" loading="lazy" alt="" style="max-width: 100%; border-radius: 8px; margin: 12px 0; display: block;" />`;
+          }
         } else if (tagName === "cosy-iframe") {
-          output += `<div style="background: #000; color: white; padding: 30px; text-align: center; border-radius: 8px; margin: 12px 0;">📺 Interactive Media / Video Player (${child.getAttribute("src")})</div>`;
+          const src = child.getAttribute("src") || "";
+          if (src.startsWith("https://")) {
+            output += `<iframe src="${src}" sandbox="allow-scripts allow-same-origin allow-presentation" allow="fullscreen" style="width: 100%; height: 350px; border: none; border-radius: 8px; margin: 12px 0;"></iframe>`;
+          }
         } else {
           output += renderXmlNodeToStudentHtml(child, fieldKey);
         }
@@ -1420,12 +1435,133 @@
           } else if (el.type === "input") {
             output += `<div class="cosy-input-box"><input type="text" placeholder="Type answer..." /></div>`;
           } else if (el.type === "image") {
-            output += `<div style="background: #e2e8f0; height: 180px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #64748b; margin: 12px 0;">🖼️ Image [Resource ID: ${el.resourceId}]</div>`;
+            const src = el.src || el.resourceId || "";
+            if (typeof src === "string" && src.startsWith("https://")) {
+              output += `<img src="${src}" loading="lazy" alt="" style="max-width: 100%; border-radius: 8px; margin: 12px 0; display: block;" />`;
+            }
           }
         });
       }
       return output;
     }
+
+    window.cosyRecorders = window.cosyRecorders || {};
+
+    async function startCosyRecord(widgetId) {
+      if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia || typeof MediaRecorder === 'undefined') {
+        if (window.CosyUI) window.CosyUI.toast('Microphone not available');
+        return;
+      }
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        const chunks = [];
+        const mediaRecorder = new MediaRecorder(stream);
+
+        mediaRecorder.ondataavailable = (e) => {
+          if (e.data && e.data.size > 0) chunks.push(e.data);
+        };
+
+        mediaRecorder.onstop = () => {
+          stream.getTracks().forEach(track => track.stop());
+          const blob = new Blob(chunks, { type: mediaRecorder.mimeType || 'audio/webm' });
+          const audioUrl = URL.createObjectURL(blob);
+
+          window.cosyRecorders[widgetId] = {
+            blob: blob,
+            audioUrl: audioUrl,
+            state: 'recorded'
+          };
+
+          renderCosyRecordWidget(widgetId);
+        };
+
+        window.cosyRecorders[widgetId] = {
+          mediaRecorder: mediaRecorder,
+          stream: stream,
+          chunks: chunks,
+          state: 'recording'
+        };
+
+        mediaRecorder.start();
+        renderCosyRecordWidget(widgetId);
+      } catch (err) {
+        if (window.CosyUI) window.CosyUI.toast('Microphone not available');
+      }
+    }
+
+    function stopCosyRecord(widgetId) {
+      const rec = window.cosyRecorders[widgetId];
+      if (rec && rec.mediaRecorder && rec.state === 'recording') {
+        rec.mediaRecorder.stop();
+      }
+    }
+
+    function resetCosyRecord(widgetId) {
+      const rec = window.cosyRecorders[widgetId];
+      if (rec && rec.audioUrl) {
+        URL.revokeObjectURL(rec.audioUrl);
+      }
+      delete window.cosyRecorders[widgetId];
+      renderCosyRecordWidget(widgetId);
+    }
+
+    function renderCosyRecordWidget(widgetId, timeAttr = "120") {
+      const container = document.getElementById(widgetId);
+      if (!container) return;
+
+      const rec = window.cosyRecorders[widgetId] || { state: 'idle' };
+
+      let inner = `
+        <p style="font-weight: 600; margin-bottom: 8px;">🎙️ <strong>Voice Speaking Task</strong> (Max time: ${timeAttr}s)</p>
+      `;
+
+      if (rec.state === 'recording') {
+        inner += `
+          <div style="margin: 8px 0; display: flex; align-items: center; justify-content: center; gap: 10px;">
+            <span style="color: #ef4444; font-weight: 700;">🔴 Recording...</span>
+            <button class="btn" style="background: #ef4444; padding: 6px 14px; font-size: 0.85rem;" onclick="stopCosyRecord('${widgetId}')">⏹️ Stop</button>
+          </div>
+        `;
+      } else if (rec.state === 'recorded') {
+        inner += `
+          <div style="margin: 8px 0; display: flex; flex-direction: column; align-items: center; gap: 10px;">
+            <audio controls src="${rec.audioUrl}" style="max-width: 100%; height: 36px;"></audio>
+            <button class="btn btn-outline" style="padding: 6px 14px; font-size: 0.85rem;" onclick="resetCosyRecord('${widgetId}')">🎙️ Record again</button>
+          </div>
+        `;
+      } else {
+        inner += `
+          <button class="btn" style="background: var(--student-primary); margin: 8px 0; padding: 6px 14px; font-size: 0.85rem;" onclick="startCosyRecord('${widgetId}')">🎙️ Record Voice Response</button>
+        `;
+      }
+
+      inner += `
+        <p style="font-size: 0.75rem; color: #64748b; margin-top: 6px;">Recording stays on this device and is not sent to anyone.</p>
+      `;
+
+      container.innerHTML = inner;
+    }
+
+    function copyEssayText(textareaId) {
+      const txt = document.getElementById(textareaId)?.value || '';
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(txt).then(() => {
+          if (window.CosyUI) window.CosyUI.toast('Copied');
+        }).catch(() => {
+          if (window.CosyUI) window.CosyUI.toast('Copied');
+        });
+      } else {
+        if (window.CosyUI) window.CosyUI.toast('Copied');
+      }
+    }
+
+    window.saveStudentInput = saveStudentInput;
+    window.getSavedStudentInput = getSavedStudentInput;
+    window.startCosyRecord = startCosyRecord;
+    window.stopCosyRecord = stopCosyRecord;
+    window.resetCosyRecord = resetCosyRecord;
+    window.renderCosyRecordWidget = renderCosyRecordWidget;
+    window.copyEssayText = copyEssayText;
 
     function updateStudentFilters() {
       const lang = document.getElementById('langFilter').value;
