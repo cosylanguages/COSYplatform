@@ -4,11 +4,14 @@
   "description": "COSYplatform Content Repository",
   "private": true,
   "scripts": {
-    "validate": "node scripts/check-content-integrity.js && node scripts/validate-curriculums.js && node scripts/validate-lessons.js",
+    "validate": "node scripts/check-content-integrity.js && node scripts/validate-curriculums.js && node scripts/validate-lessons.js && node scripts/sync-manifest-status.js --check",
+    "sync:manifest": "node scripts/sync-manifest-status.js",
+    "check:manifest": "node scripts/sync-manifest-status.js --check",
     "check:integrity": "node scripts/check-content-integrity.js",
     "check:links": "node scripts/check-links.mjs"
   },
   "devDependencies": {
-    "ajv": "^8.17.1"
+    "ajv": "^8.17.1",
+    "jsdom": "^29.1.1"
   }
 }

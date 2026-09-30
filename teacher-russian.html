@@ -74,16 +74,30 @@
         html += `<p style="grid-column: 1/-1; color: #64748b;">Нет доступных курсов русского языка для вашей учетной записи.</p>`;
       } else {
         russianCourses.forEach(course => {
-          html += `
-            <div class="course-card">
-              <div>
-                <span class="badge-teacher" style="margin-bottom: 8px; display: inline-block;">${course.level.toUpperCase()}</span>
-                <h3 style="font-size: 1.15rem; color: #0f172a; margin-bottom: 6px;">${course.title}</h3>
-                <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 16px;">Направление: ${course.track}</p>
+          const isAvailable = course.status !== 'not_yet_available';
+          if (isAvailable) {
+            html += `
+              <div class="course-card">
+                <div>
+                  <span class="badge-teacher" style="margin-bottom: 8px; display: inline-block;">${course.level.toUpperCase()}</span>
+                  <h3 style="font-size: 1.15rem; color: #0f172a; margin-bottom: 6px;">${course.title}</h3>
+                  <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 16px;">Направление: ${course.track}</p>
+                </div>
+                <a href="teacher.html?course=${course.id}&level=${course.level.toLowerCase()}" class="btn" style="background: var(--teacher-primary); text-align: center;">Открыть программу 📚</a>
               </div>
-              <a href="teacher.html?course=${course.id}&level=${course.level.toLowerCase()}" class="btn" style="background: var(--teacher-primary); text-align: center;">Открыть программу 📚</a>
-            </div>
-          `;
+            `;
+          } else {
+            html += `
+              <div class="course-card disabled" style="opacity: 0.6;">
+                <div>
+                  <span class="badge-teacher" style="margin-bottom: 8px; display: inline-block;">${course.level.toUpperCase()}</span>
+                  <h3 style="font-size: 1.15rem; color: #0f172a; margin-bottom: 6px;">${course.title}</h3>
+                  <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 16px;">Направление: ${course.track}</p>
+                </div>
+                <span style="font-size: 0.85rem; color: #64748b; font-weight: 500; text-align: center; display: block;">Coming soon</span>
+              </div>
+            `;
+          }
         });
       }
 

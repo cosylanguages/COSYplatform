@@ -390,26 +390,42 @@
 
       Object.keys(groupedByTrack).forEach(trackName => {
         const courses = groupedByTrack[trackName];
+        const availableCount = courses.filter(c => c.status !== 'not_yet_available').length;
+        const comingSoonCount = courses.filter(c => c.status === 'not_yet_available').length;
+
         html += `
           <div class="category-card" data-track="${trackName}">
             <div class="category-header">
-              <h3>${trackName} Track (${courses.length})</h3>
+              <h3>${trackName} Track (${availableCount})${comingSoonCount > 0 ? ` <span style="font-size: 0.8em; font-weight: normal; color: #64748b;">+ ${comingSoonCount} coming soon</span>` : ''}</h3>
             </div>
             <div class="category-body">
         `;
 
         courses.forEach(c => {
-          html += `
-            <div class="course-item-card" data-lang="${c.lang}" data-title="${c.title.toLowerCase()}">
-              <div>
-                <span class="course-item-level">${c.level.toUpperCase()}</span>
-                <span class="course-item-title" style="margin-left: 8px;">${c.title}</span>
+          const isAvailable = c.status !== 'not_yet_available';
+          if (isAvailable) {
+            html += `
+              <div class="course-item-card" data-lang="${c.lang}" data-title="${c.title.toLowerCase()}">
+                <div>
+                  <span class="course-item-level">${c.level.toUpperCase()}</span>
+                  <span class="course-item-title" style="margin-left: 8px;">${c.title}</span>
+                </div>
+                <a href="index.html?course=${c.id}&level=${c.level.toLowerCase()}" class="btn" style="background: var(--hub-primary); color: white; padding: 6px 12px; font-size: 0.8rem; text-decoration: none; border-radius: 6px;">
+                  View Roadmap 📖
+                </a>
               </div>
-              <a href="index.html?course=${c.id}&level=${c.level.toLowerCase()}" class="btn" style="background: var(--hub-primary); color: white; padding: 6px 12px; font-size: 0.8rem; text-decoration: none; border-radius: 6px;">
-                View Roadmap 📖
-              </a>
-            </div>
-          `;
+            `;
+          } else {
+            html += `
+              <div class="course-item-card disabled" data-lang="${c.lang}" data-title="${c.title.toLowerCase()}" style="opacity: 0.6;">
+                <div>
+                  <span class="course-item-level">${c.level.toUpperCase()}</span>
+                  <span class="course-item-title" style="margin-left: 8px;">${c.title}</span>
+                </div>
+                <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">Coming soon</span>
+              </div>
+            `;
+          }
         });
 
         html += `</div></div>`;
