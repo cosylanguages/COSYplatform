@@ -18,6 +18,9 @@
   <!-- Config & Auth Guard -->
   <script src="shared/js/config.js"></script>
   <script src="shared/js/auth-guard.js"></script>
+  <!-- Vocabulary Index & Irregular Verbs Data -->
+  <script src="shared/js/vocab-index.js"></script>
+  <script src="shared/js/irregular-verbs.js"></script>
   <!-- Design Tokens -->
   <link rel="stylesheet" href="shared/css/tokens.css">
 
@@ -135,6 +138,64 @@
           <button id="host-btn" onclick="initHost()" class="w-full py-1.5 bg-cosy-500 text-white text-xs font-medium rounded-xl hover:bg-cosy-600 transition shadow-sm">
             <i class="fa-solid fa-plus mr-1"></i> Create New Room as Host
           </button>
+        </div>
+      </div>
+
+      <!-- Classroom Utilities Toggle Bar -->
+      <div class="p-2 border-b border-cosy-100 bg-gray-50 flex items-center justify-between text-xs font-semibold text-gray-700">
+        <span class="text-[10px] uppercase font-bold text-gray-500 tracking-wider"><i class="fa-solid fa-toolbox text-cosy-500 mr-1"></i> Quick Tools:</span>
+        <div class="flex items-center space-x-1">
+          <button onclick="toggleUtilityDrawer('timer')" class="px-2 py-1 bg-white hover:bg-cosy-50 border border-gray-200 text-gray-700 rounded-lg text-xs font-semibold transition" title="Classroom Timer">
+            ⏱️ Timer
+          </button>
+          <button onclick="toggleUtilityDrawer('verbs')" class="px-2 py-1 bg-white hover:bg-cosy-50 border border-gray-200 text-gray-700 rounded-lg text-xs font-semibold transition" title="Irregular Verbs">
+            ⚡ Verbs
+          </button>
+          <button onclick="toggleUtilityDrawer('dict')" class="px-2 py-1 bg-white hover:bg-cosy-50 border border-gray-200 text-gray-700 rounded-lg text-xs font-semibold transition" title="COSYdata Dictionary">
+            📖 Dict
+          </button>
+        </div>
+      </div>
+
+      <!-- Timer Utility Drawer -->
+      <div id="timer-drawer" class="p-3 bg-white border-b border-cosy-200 hidden text-xs space-y-2">
+        <div class="flex items-center justify-between pb-1 border-b border-gray-100">
+          <span class="font-bold text-gray-800"><i class="fa-regular fa-clock text-cosy-600 mr-1"></i> Classroom Timer</span>
+          <button onclick="toggleUtilityDrawer(null)" class="text-gray-400 hover:text-gray-600 text-sm">✖</button>
+        </div>
+        <div class="text-center py-2">
+          <div id="timerDisplay" class="text-3xl font-mono font-extrabold text-cosy-700">05:00</div>
+          <div class="flex flex-wrap items-center justify-center gap-1.5 mt-2">
+            <button onclick="startTimer()" class="px-2.5 py-1 bg-green-600 hover:bg-green-700 text-white font-bold rounded-lg transition text-[11px]">Start</button>
+            <button onclick="pauseTimer()" class="px-2.5 py-1 bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded-lg transition text-[11px]">Pause</button>
+            <button onclick="resetTimer(300)" class="px-2.5 py-1 bg-gray-600 hover:bg-gray-700 text-white font-bold rounded-lg transition text-[11px]">Reset (5m)</button>
+            <button onclick="addTimerMinutes(1)" class="px-2 py-1 bg-cosy-100 text-cosy-800 font-bold rounded-lg transition text-[11px]">+1m</button>
+            <button onclick="addTimerMinutes(5)" class="px-2 py-1 bg-cosy-100 text-cosy-800 font-bold rounded-lg transition text-[11px]">+5m</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Irregular Verbs Utility Drawer -->
+      <div id="verbs-drawer" class="p-3 bg-white border-b border-cosy-200 hidden text-xs space-y-2">
+        <div class="flex items-center justify-between pb-1 border-b border-gray-100">
+          <span class="font-bold text-gray-800"><i class="fa-solid fa-bolt text-yellow-500 mr-1"></i> Irregular Verbs (V1-V2-V3)</span>
+          <button onclick="toggleUtilityDrawer(null)" class="text-gray-400 hover:text-gray-600 text-sm">✖</button>
+        </div>
+        <input type="text" id="verbSearchInput" oninput="searchIrregularVerbs(this.value)" placeholder="Search verb (e.g. speak, write, go)..." class="w-full px-2.5 py-1 border border-gray-300 rounded-lg text-xs focus:ring-1 focus:ring-cosy-500">
+        <div id="verbSearchResults" class="max-h-48 overflow-y-auto pt-1">
+          <p class="text-gray-400 italic text-[11px]">Type a verb to search V1, V2, V3 forms...</p>
+        </div>
+      </div>
+
+      <!-- COSYdata Dictionary Utility Drawer -->
+      <div id="dict-drawer" class="p-3 bg-white border-b border-cosy-200 hidden text-xs space-y-2">
+        <div class="flex items-center justify-between pb-1 border-b border-gray-100">
+          <span class="font-bold text-gray-800"><i class="fa-solid fa-book text-cosy-600 mr-1"></i> COSYdata Vocabulary Dictionary</span>
+          <button onclick="toggleUtilityDrawer(null)" class="text-gray-400 hover:text-gray-600 text-sm">✖</button>
+        </div>
+        <input type="text" id="dictSearchInput" oninput="searchCosyDict(this.value)" placeholder="Search dictionary (e.g. family, work)..." class="w-full px-2.5 py-1 border border-gray-300 rounded-lg text-xs focus:ring-1 focus:ring-cosy-500">
+        <div id="dictSearchResults" class="max-h-48 overflow-y-auto pt-1">
+          <p class="text-gray-400 italic text-[11px]">Type a word to search COSYdata vocabulary index...</p>
         </div>
       </div>
 
@@ -1054,6 +1115,155 @@
       }
 
       sendData({ type: 'role', role: role });
+    }
+
+    // Utility Drawers State & Logic
+    let activeClassroomDrawer = null;
+    let timerSeconds = 300;
+    let timerInterval = null;
+
+    function toggleUtilityDrawer(drawerName) {
+      if (activeClassroomDrawer === drawerName) {
+        activeClassroomDrawer = null;
+      } else {
+        activeClassroomDrawer = drawerName;
+      }
+
+      const timerDrawer = document.getElementById('timer-drawer');
+      const verbsDrawer = document.getElementById('verbs-drawer');
+      const dictDrawer = document.getElementById('dict-drawer');
+
+      if (timerDrawer) timerDrawer.classList.toggle('hidden', activeClassroomDrawer !== 'timer');
+      if (verbsDrawer) verbsDrawer.classList.toggle('hidden', activeClassroomDrawer !== 'verbs');
+      if (dictDrawer) dictDrawer.classList.toggle('hidden', activeClassroomDrawer !== 'dict');
+
+      if (activeClassroomDrawer === 'verbs') searchIrregularVerbs('');
+      if (activeClassroomDrawer === 'dict') searchCosyDict('');
+    }
+
+    function updateTimerDisplay() {
+      const el = document.getElementById('timerDisplay');
+      if (!el) return;
+      const m = Math.floor(timerSeconds / 60).toString().padStart(2, '0');
+      const s = (timerSeconds % 60).toString().padStart(2, '0');
+      el.innerText = `${m}:${s}`;
+    }
+
+    function startTimer() {
+      if (timerInterval) return;
+      timerInterval = setInterval(() => {
+        if (timerSeconds > 0) {
+          timerSeconds--;
+          updateTimerDisplay();
+        } else {
+          clearInterval(timerInterval);
+          timerInterval = null;
+          alert('⏱️ Time is up!');
+        }
+      }, 1000);
+    }
+
+    function pauseTimer() {
+      if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+      }
+    }
+
+    function resetTimer(secs) {
+      pauseTimer();
+      timerSeconds = secs;
+      updateTimerDisplay();
+    }
+
+    function addTimerMinutes(mins) {
+      timerSeconds += mins * 60;
+      updateTimerDisplay();
+    }
+
+    function searchCosyDict(query) {
+      const resultsDiv = document.getElementById('dictSearchResults');
+      if (!resultsDiv) return;
+
+      const q = query.trim().toLowerCase();
+      if (!q) {
+        resultsDiv.innerHTML = `<p class="text-gray-400 italic text-[11px]">Type a word to search COSYdata vocabulary index...</p>`;
+        return;
+      }
+
+      const vocabIndex = window.CosyVocabIndex || {};
+      const matches = [];
+
+      for (const word in vocabIndex) {
+        if (word.includes(q)) {
+          vocabIndex[word].forEach(entry => {
+            matches.push({ word: word, id: entry.id, pos: entry.pos, file: entry.file });
+          });
+          if (matches.length >= 20) break;
+        }
+      }
+
+      if (matches.length === 0) {
+        resultsDiv.innerHTML = `<p class="text-red-500 text-[11px]">No matching COSYdata key found for "${query}".</p>`;
+        return;
+      }
+
+      let html = `<div class="space-y-1.5">`;
+      matches.forEach(m => {
+        html += `
+          <div class="bg-gray-50 border border-gray-200 rounded-lg p-2 text-xs">
+            <div class="flex justify-between items-center mb-1">
+              <strong class="text-gray-800 font-bold">${m.word}</strong>
+              <span class="text-[10px] bg-cosy-100 text-cosy-700 px-1.5 py-0.5 rounded font-bold">${m.pos}</span>
+            </div>
+            <div class="font-mono text-[10px] text-cosy-600 bg-cosy-50 p-1 rounded break-all">
+              COSYdata ID: ${m.id}
+            </div>
+            <div class="text-[10px] text-gray-500 mt-1">File: ${m.file}</div>
+          </div>
+        `;
+      });
+      html += `</div>`;
+      resultsDiv.innerHTML = html;
+    }
+
+    function searchIrregularVerbs(query) {
+      const resultsDiv = document.getElementById('verbSearchResults');
+      if (!resultsDiv) return;
+
+      const q = query.trim().toLowerCase();
+      const verbs = window.CosyIrregularVerbs || [];
+      const matches = verbs.filter(v => v.v1.includes(q) || v.v2.includes(q) || v.v3.includes(q));
+
+      if (matches.length === 0) {
+        resultsDiv.innerHTML = `<p class="text-red-500 text-[11px]">No irregular verb found for "${query}".</p>`;
+        return;
+      }
+
+      let html = `
+        <table class="w-full text-left text-xs border-collapse">
+          <thead>
+            <tr class="bg-gray-100 border-b border-gray-200 text-gray-600 font-bold text-[10px]">
+              <th class="p-1">V1 (Base)</th>
+              <th class="p-1">V2 (Past)</th>
+              <th class="p-1">V3 (Participle)</th>
+            </tr>
+          </thead>
+          <tbody>
+      `;
+
+      matches.slice(0, 15).forEach(v => {
+        html += `
+          <tr class="border-b border-gray-100 text-[11px]">
+            <td class="p-1 font-bold text-gray-800">${v.v1}</td>
+            <td class="p-1 text-cosy-700 font-semibold">${v.v2}</td>
+            <td class="p-1 text-cosy-600 font-medium">${v.v3}</td>
+          </tr>
+        `;
+      });
+
+      html += `</tbody></table>`;
+      resultsDiv.innerHTML = html;
     }
 
     // Facilitation Drawer Toggle & Activity Launcher
