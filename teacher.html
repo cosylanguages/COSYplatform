@@ -461,6 +461,7 @@
   <script src="shared/js/auth-guard.js"></script>
   <script src="shared/js/vocab-index.js"></script>
   <script src="shared/js/irregular-verbs.js"></script>
+  <script src="shared/js/lesson-resolver.js"></script>
 </head>
 <body>
 
@@ -556,26 +557,36 @@
       `;
 
       if (courseList.length === 0) {
-        html += `<p style="grid-column: 1/-1; color: #64748b;">No active courses found for this grant.</p>`;
+        html += `<p style="grid-column: 1/-1; color: #64748b;">No courses match the selected filters.</p>`;
       } else {
-        const groupedByTrack = {};
+        const groupedByLangTrack = {};
         courseList.forEach(c => {
           const trackKey = c.track ? (c.track.charAt(0).toUpperCase() + c.track.slice(1)) : 'General';
-          if (!groupedByTrack[trackKey]) groupedByTrack[trackKey] = [];
-          groupedByTrack[trackKey].push(c);
+          const langCode = (c.lang || 'en').toLowerCase();
+          const groupKey = `${langCode}_${trackKey}`;
+          if (!groupedByLangTrack[groupKey]) {
+            groupedByLangTrack[groupKey] = {
+              lang: langCode,
+              track: trackKey,
+              courses: []
+            };
+          }
+          groupedByLangTrack[groupKey].courses.push(c);
         });
 
         html += `<div class="catalog-category-grid">`;
 
-        Object.keys(groupedByTrack).forEach(trackName => {
-          const trackCourses = groupedByTrack[trackName];
+        Object.keys(groupedByLangTrack).forEach(groupKey => {
+          const group = groupedByLangTrack[groupKey];
+          const trackCourses = group.courses;
           const availableCount = trackCourses.filter(c => c.status !== 'not_yet_available').length;
           const comingSoonCount = trackCourses.filter(c => c.status === 'not_yet_available').length;
+          const langName = getLangName(group.lang);
 
           html += `
-            <div class="category-card" id="tcat-${trackName}">
-              <div class="category-header" onclick="toggleTeacherCategoryFold('tcat-${trackName}')">
-                <h3>English • ${trackName} (${availableCount})${comingSoonCount > 0 ? ` <span style="font-size: 0.8em; font-weight: normal; color: #64748b;">+ ${comingSoonCount} coming soon</span>` : ''}</h3>
+            <div class="category-card" id="tcat-${groupKey}">
+              <div class="category-header" onclick="toggleTeacherCategoryFold('tcat-${groupKey}')">
+                <h3>${langName} • ${group.track} (${availableCount})${comingSoonCount > 0 ? ` <span style="font-size: 0.8em; font-weight: normal; color: #64748b;">+ ${comingSoonCount} coming soon</span>` : ''}</h3>
                 <span class="category-toggle-icon">▼</span>
               </div>
               <div class="category-body">
@@ -648,6 +659,9 @@
         if (!roadmapRes || !roadmapRes.ok) throw new Error(`Roadmap for ${courseId} not found`);
         const roadmap = await roadmapRes.json();
 
+        const totalLessons = roadmap.sequence.length;
+        const availableCount = roadmap.sequence.filter(item => window.CosyLessons.getLessonState(item) === 'available').length;
+
         let html = `
           <div class="catalog-container">
             <div class="teacher-controls-bar">
@@ -656,44 +670,45 @@
             </div>
 
             <div class="section-card">
-              <h2 style="font-size: 1.4rem; color: #0f172a; margin-bottom: 12px;">${roadmap.title}</h2>
-              <p style="color: #64748b; margin-bottom: 20px;">Complete lesson sequence with answer keys &amp; teacher notes.</p>
+              <h2 style="font-size: 1.4rem; color: #0f172a; margin-bottom: 6px;">${roadmap.title}</h2>
+              <p style="color: #64748b; margin-bottom: 20px;">${availableCount} of ${totalLessons} lessons available</p>
 
               <div class="unit-grid">
         `;
 
         roadmap.sequence.forEach(item => {
-          let lessonPath = item.lessonFile || "";
-          if (!lessonPath) {
-            if (courseId === "general-en-a0" && item.section > 0) {
-              lessonPath = `lessons/general-en-a0/${item.id}.json`;
-            } else if (courseId === "general-en-a1" && item.section > 0) {
-              lessonPath = `lessons/general-en-a1/${item.id}.json`;
-            } else if (item.id === "relaxation-and-hygge" || item.id === "we-are-different") {
-              lessonPath = "lessons/english-b2/relaxation-and-hygge.xml";
-            } else if (item.id === "opposites-attract") {
-              lessonPath = "lessons/english-c1/opposites-attract.xml";
-            } else if (item.id.includes("introductory") || item.section === 0) {
-              lessonPath = "lessons/introductory/introductory-b1.xml";
-            } else {
-              lessonPath = `lessons/${courseId}/${item.id}.json`;
-            }
-          }
+          const state = window.CosyLessons.getLessonState(item);
+          const lessonPath = window.CosyLessons.getLessonPath(item);
 
-          html += `
-            <div class="unit-card">
-              <div>
-                <span style="font-size: 0.75rem; color: #94a3b8; font-weight: 600;">LESSON #${item.lessonNumber}</span>
-                <h3 style="margin: 6px 0;">${item.title}</h3>
-                ${item.unit ? `<p style="font-size: 0.8rem; color: #64748b; margin-bottom: 12px;">${item.unit}</p>` : ''}
+          if (state === 'available') {
+            html += `
+              <div class="unit-card">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                    <span style="font-size: 0.75rem; color: #94a3b8; font-weight: 600;">LESSON #${item.lessonNumber}</span>
+                  </div>
+                  <h3 style="margin: 6px 0;">${item.title}</h3>
+                  ${item.unit ? `<p style="font-size: 0.8rem; color: #64748b; margin-bottom: 12px;">${item.unit}</p>` : ''}
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 6px; margin-top: 10px;">
+                  <a href="teacher.html?lesson=${encodeURIComponent(lessonPath)}&course=${encodeURIComponent(courseId)}" class="btn" style="background: var(--teacher-primary); padding: 6px 12px; font-size: 0.8rem; text-align: center;">Open lesson</a>
+                </div>
               </div>
-              <div style="display: flex; flex-direction: column; gap: 6px; margin-top: 10px;">
-                <a href="teacher.html?lesson=${encodeURIComponent(lessonPath)}" class="btn" style="background: var(--teacher-primary); padding: 6px 12px; font-size: 0.8rem; text-align: center;">👁️ View Teacher Notes</a>
-                <a href="classroom.html?lesson=${encodeURIComponent(lessonPath)}" target="_blank" class="btn" style="background: #10b981; color: white; padding: 6px 12px; font-size: 0.8rem; text-align: center;">🎥 Launch Live Classroom</a>
-                <a href="student.html?lesson=${encodeURIComponent(lessonPath)}&export=print" target="_blank" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.8rem; text-align: center;">🖨️ Print / Send HTML</a>
+            `;
+          } else {
+            html += `
+              <div class="unit-card" style="opacity: 0.6; background: #f8fafc;">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                    <span style="font-size: 0.75rem; color: #94a3b8; font-weight: 600;">LESSON #${item.lessonNumber}</span>
+                    <span style="font-size: 0.75rem; color: #64748b; background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-weight: 600;">Planned</span>
+                  </div>
+                  <h3 style="margin: 6px 0; color: #64748b;">${item.title}</h3>
+                  ${item.unit ? `<p style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 12px;">${item.unit}</p>` : ''}
+                </div>
               </div>
-            </div>
-          `;
+            `;
+          }
         });
 
         html += `</div></div></div>`;
@@ -729,6 +744,17 @@
         window.activeDrawer = drawerName;
       }
       renderTeacherLessonUI();
+    }
+
+    function getLangName(code) {
+      if (!code) return '';
+      const map = {
+        en: 'English', fr: 'French', ru: 'Russian', es: 'Spanish', el: 'Greek',
+        de: 'German', it: 'Italian', pt: 'Portuguese', ba: 'Bashkir', br: 'Breton',
+        hy: 'Armenian', ka: 'Georgian', tt: 'Tatar'
+      };
+      const lower = code.toLowerCase();
+      return map[lower] || lower.toUpperCase();
     }
 
     function getCosyDictMetadata(item) {
@@ -1015,7 +1041,17 @@
         };
 
       } catch (err) {
-        appRoot.innerHTML = `<div class="access-denied"><h2>Lesson Error</h2><p>${err.message}</p></div>`;
+        const backCourse = urlParams.get('course');
+        const backHref = backCourse ? `teacher.html?course=${encodeURIComponent(backCourse)}` : 'teacher.html';
+        appRoot.innerHTML = `
+          <div class="access-denied">
+            <h2>Lesson Error</h2>
+            <p>This lesson could not be loaded.</p>
+            <div style="margin-top: 16px;">
+              <a href="${backHref}" class="btn" style="background: var(--teacher-primary); text-decoration: none;">← Back to Course</a>
+            </div>
+          </div>
+        `;
       }
     }
 
@@ -1026,10 +1062,13 @@
       const totalSlides = slides.length;
       const currentIdx = window.currentTeacherSlideIdx;
 
+      const backCourse = urlParams.get('course');
+      const backHref = backCourse ? `teacher.html?course=${encodeURIComponent(backCourse)}` : 'teacher.html';
+
       let html = `
         <div style="max-width: 1440px; margin: 10px auto; padding: 0 16px;">
           <div class="teacher-controls-bar">
-            <a href="teacher.html" class="back-btn" style="color: #64748b; font-weight: 500;">← Back to Catalog</a>
+            <a href="${backHref}" class="back-btn" style="color: #64748b; font-weight: 500;">← Back to Course</a>
             <span style="font-weight: 700; color: #0f172a; font-size: 1.1rem;">${lessonTitle}</span>
             <div style="display: flex; gap: 8px; align-items: center;">
               <button class="slide-nav-btn" onclick="toggleTeacherViewMode()">${window.teacherViewModeAll ? '📄 Single Slide' : '📜 Scroll All'}</button>

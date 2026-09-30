@@ -395,6 +395,7 @@
   <script src="shared/js/auth-guard.js"></script>
   <script src="shared/js/vocab-index.js"></script>
   <script src="shared/js/irregular-verbs.js"></script>
+  <script src="shared/js/lesson-resolver.js"></script>
 </head>
 <body>
 
@@ -430,14 +431,19 @@
       const authData = await window.CosyAuth.getAuthAndProfile();
       if (!authData) return;
 
+      if (lessonParam) {
+        const isTeacher = authData.profile && (authData.profile.role === 'teacher' || authData.profile.role === 'founder');
+        const targetPage = isTeacher ? 'teacher.html' : 'student.html';
+        window.location.replace(`${targetPage}${window.location.search}`);
+        return;
+      }
+
       const userEmail = authData.user ? authData.user.email : '';
       document.getElementById('user-info').innerText = `User: ${userEmail || 'Authenticated'}`;
 
       const fullManifest = window.CosyAuth ? window.CosyAuth.FULL_MANIFEST : [];
 
-      if (lessonParam) {
-        renderLessonViewer(authData.profile, lessonParam);
-      } else if (courseParam) {
+      if (courseParam) {
         renderRoadmapViewer(authData.profile, courseParam, levelParam);
       } else {
         renderHubCatalog(authData.profile, fullManifest);
@@ -507,27 +513,54 @@
         if (!res.ok) throw new Error("Roadmap not found");
         const roadmap = await res.json();
 
+        const isTeacher = profile && (profile.role === 'teacher' || profile.role === 'founder');
+        const targetPage = isTeacher ? 'teacher.html' : 'student.html';
+        const totalLessons = roadmap.sequence.length;
+        const availableCount = roadmap.sequence.filter(item => window.CosyLessons.getLessonState(item) === 'available').length;
+
         let html = `
           <div class="catalog-container">
             <div style="margin-bottom: 20px;">
               <a href="hub.html" class="btn btn-outline">← Back to Hub</a>
             </div>
-            <h2 style="font-size: 1.4rem; color: #0f172a; margin-bottom: 16px;">${roadmap.title}</h2>
+            <h2 style="font-size: 1.4rem; color: #0f172a; margin-bottom: 6px;">${roadmap.title}</h2>
+            <p style="color: #64748b; margin-bottom: 20px;">${availableCount} of ${totalLessons} lessons available</p>
             <div class="unit-grid">
         `;
 
         roadmap.sequence.forEach(item => {
-          const lPath = item.lessonFile || ('lessons/' + courseId + '/' + item.id + '.json');
-          html += `
-            <div class="unit-card">
-              <span style="font-size: 0.75rem; color: #94a3b8; font-weight: 600;">LESSON #${item.lessonNumber}</span>
-              <h3 style="margin: 6px 0;">${item.title}</h3>
-              <div style="display: flex; gap: 6px; flex-direction: column; margin-top: 10px;">
-                <a href="hub.html?lesson=${encodeURIComponent(lPath)}" class="btn" style="background: var(--hub-primary, #0284c7); text-align: center;">▶ Open Lesson</a>
-                <a href="classroom.html?lesson=${encodeURIComponent(lPath)}" target="_blank" class="btn" style="background: #10b981; color: white; text-align: center;">🎥 Open in Live Classroom</a>
+          const state = window.CosyLessons.getLessonState(item);
+          const lessonPath = window.CosyLessons.getLessonPath(item);
+
+          if (state === 'available') {
+            html += `
+              <div class="unit-card">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                    <span style="font-size: 0.75rem; color: #94a3b8; font-weight: 600;">LESSON #${item.lessonNumber}</span>
+                  </div>
+                  <h3 style="margin: 6px 0;">${item.title}</h3>
+                  ${item.unit ? `<p style="font-size: 0.8rem; color: #64748b; margin-bottom: 12px;">${item.unit}</p>` : ''}
+                </div>
+                <div style="display: flex; gap: 6px; flex-direction: column; margin-top: 10px;">
+                  <a href="${targetPage}?lesson=${encodeURIComponent(lessonPath)}&course=${encodeURIComponent(courseId)}" class="btn" style="background: var(--hub-primary, #0284c7); text-align: center;">Open lesson</a>
+                </div>
               </div>
-            </div>
-          `;
+            `;
+          } else {
+            html += `
+              <div class="unit-card" style="opacity: 0.6; background: #f8fafc;">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                    <span style="font-size: 0.75rem; color: #94a3b8; font-weight: 600;">LESSON #${item.lessonNumber}</span>
+                    <span style="font-size: 0.75rem; color: #64748b; background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-weight: 600;">Planned</span>
+                  </div>
+                  <h3 style="margin: 6px 0; color: #64748b;">${item.title}</h3>
+                  ${item.unit ? `<p style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 12px;">${item.unit}</p>` : ''}
+                </div>
+              </div>
+            `;
+          }
         });
 
         html += `</div></div>`;
@@ -537,24 +570,6 @@
       }
     }
 
-    async function renderLessonViewer(profile, lessonPath) {
-      const appRoot = document.getElementById('app-root');
-      try {
-        const res = await fetch(lessonPath);
-        if (!res.ok) throw new Error("Lesson file not found");
-        const text = await res.text();
-        appRoot.innerHTML = `
-          <div class="catalog-container">
-            <a href="hub.html" class="btn btn-outline" style="margin-bottom: 20px;">← Back to Hub</a>
-            <div style="background: white; padding: 24px; border-radius: 12px; border: 1px solid #cbd5e1;">
-              <pre style="white-space: pre-wrap; font-family: monospace;">${text.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</pre>
-            </div>
-          </div>
-        `;
-      } catch (err) {
-        appRoot.innerHTML = `<div class="access-denied"><h2>Error</h2><p>${err.message}</p></div>`;
-      }
-    }
 
     window.onload = initHubApp;
   </script>
