@@ -557,7 +557,7 @@
               <p style="color: #64748b;">Teachers have access to all assigned tracks, curriculums, and speech scripts.</p>
             </div>
             <div style="display: flex; gap: 8px;">
-              <a href="founder.html" class="btn btn-outline" style="font-size: 0.85rem;">← Founder Portal</a>
+              ${profile && profile.role === 'founder' ? '<a href="founder.html" class="btn btn-outline" style="font-size: 0.85rem;">← Founder Portal</a>' : ''}
               <a href="manuals/teacher-guide-first-lesson.md" target="_blank" class="btn btn-outline" style="font-size: 0.85rem;">📖 Teaching Guide</a>
             </div>
           </div>
