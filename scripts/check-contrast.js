@@ -40,29 +40,35 @@ const colorPairs = [
   { label: 'Subtle Text (#64748b) on White', fg: '#64748b', bg: '#ffffff' },
   { label: 'Subtle Text (#64748b) on Cream (#fdfcf8)', fg: '#64748b', bg: '#fdfcf8' },
   { label: 'White Text on Amber Fix (#b45309)', fg: '#ffffff', bg: '#b45309' },
-  { label: 'White Text on Live Classroom (#047857)', fg: '#ffffff', bg: '#047857' }
+  { label: 'White Text on Live Classroom (#047857)', fg: '#ffffff', bg: '#047857' },
+  { label: 'Disabled Input Text (#475569) on Disabled Input BG (#f1f5f9)', fg: '#475569', bg: '#f1f5f9' },
+  { label: 'Saved Status Text (#047857) on White (#ffffff)', fg: '#047857', bg: '#ffffff' }
 ];
 
-console.log('🎨 Running COSYplatform WCAG AA Color Contrast Verification...\n');
+if (require.main === module) {
+  console.log('🎨 Running COSYplatform WCAG AA Color Contrast Verification...\n');
 
-let failed = false;
+  let failed = false;
 
-colorPairs.forEach(({ label, fg, bg }) => {
-  const ratio = getContrastRatio(fg, bg);
-  const formattedRatio = ratio.toFixed(2);
-  if (ratio >= 4.5) {
-    console.log(`  ✅ [PASS] ${label} (${fg} / ${bg}): ${formattedRatio}:1`);
+  colorPairs.forEach(({ label, fg, bg }) => {
+    const ratio = getContrastRatio(fg, bg);
+    const formattedRatio = ratio.toFixed(2);
+    if (ratio >= 4.5) {
+      console.log(`  ✅ [PASS] ${label} (${fg} / ${bg}): ${formattedRatio}:1`);
+    } else {
+      console.error(`  ❌ [FAIL] ${label} (${fg} / ${bg}): ${formattedRatio}:1 (Below 4.5:1 required)`);
+      failed = true;
+    }
+  });
+
+  console.log('');
+  if (failed) {
+    console.error('❌ Contrast verification failed! One or more color pairs do not meet WCAG AA requirements (4.5:1).');
+    process.exit(1);
   } else {
-    console.error(`  ❌ [FAIL] ${label} (${fg} / ${bg}): ${formattedRatio}:1 (Below 4.5:1 required)`);
-    failed = true;
+    console.log('✨ All color contrast pairs successfully passed WCAG AA checks (>= 4.5:1)!');
+    process.exit(0);
   }
-});
-
-console.log('');
-if (failed) {
-  console.error('❌ Contrast verification failed! One or more color pairs do not meet WCAG AA requirements (4.5:1).');
-  process.exit(1);
-} else {
-  console.log('✨ All color contrast pairs successfully passed WCAG AA checks (>= 4.5:1)!');
-  process.exit(0);
 }
+
+module.exports = { getContrastRatio, hexToRgb, getRelativeLuminance, colorPairs };

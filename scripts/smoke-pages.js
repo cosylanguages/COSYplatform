@@ -23,6 +23,7 @@ const COMBINATIONS = [
 
   // Founder role
   { role: 'founder', url: 'founder.html' },
+  { role: 'founder', url: 'teacher.html' },
   { role: 'founder', url: 'hub.html' },
   { role: 'founder', url: 'index.html' }
 ];
@@ -69,9 +70,11 @@ function getVisibleText(dom) {
 
   let text = '';
   if (targetEl) {
-    text = targetEl.textContent || '';
+    const clone = targetEl.cloneNode(true);
+    const scriptsAndStyles = clone.querySelectorAll('script, style');
+    scriptsAndStyles.forEach(node => node.remove());
+    text = clone.textContent || '';
   } else {
-    // Clone body and remove script and style tags
     const clone = doc.body.cloneNode(true);
     const scriptsAndStyles = clone.querySelectorAll('script, style');
     scriptsAndStyles.forEach(node => node.remove());
@@ -233,6 +236,41 @@ async function testCombination(port, { role, url }) {
   const visibleText = getVisibleText(dom);
   if (visibleText.length < 40) {
     return { pass: false, reason: `Main content area has fewer than 40 characters of visible text (found ${visibleText.length}): "${visibleText}"` };
+  }
+
+  // Specific assertions based on requirements:
+  // 1. founder.html must match numbers from data/platform-stats.json
+  if (htmlFileName === 'founder.html') {
+    const statsPath = path.join(ROOT_DIR, 'data/platform-stats.json');
+    if (!fs.existsSync(statsPath)) {
+      return { pass: false, reason: 'data/platform-stats.json not found for founder.html assertion' };
+    }
+    const stats = JSON.parse(fs.readFileSync(statsPath, 'utf8'));
+
+    const expectedStrings = [
+      `live of ${stats.languages.total.toLocaleString()} planned (${stats.languages.codes.map(c => c.toUpperCase()).join(', ')})`,
+      `available of ${stats.courses.total.toLocaleString()} in catalog`,
+      `available of ${stats.lessons.total.toLocaleString()} planned`,
+      `${stats.unlinkedLessonFiles.toLocaleString()} lesson files not yet linked to a course`
+    ];
+
+    for (const expStr of expectedStrings) {
+      if (!visibleText.includes(expStr)) {
+        return { pass: false, reason: `founder.html visible text missing expected stats string: "${expStr}"` };
+      }
+    }
+  }
+
+  // 2. teacher.html: founder profile has "Founder Portal" link, teacher profile does NOT
+  if (htmlFileName === 'teacher.html' && !parsedUrl.search) {
+    const hasFounderLink = visibleText.includes('Founder Portal');
+
+    if (role === 'founder' && !hasFounderLink) {
+      return { pass: false, reason: 'teacher.html with founder profile should display Founder Portal link, but link was missing.' };
+    }
+    if (role === 'teacher' && hasFounderLink) {
+      return { pass: false, reason: 'teacher.html with teacher profile should NOT display Founder Portal link, but link was found.' };
+    }
   }
 
   return { pass: true, textLength: visibleText.length };

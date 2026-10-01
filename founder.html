@@ -162,7 +162,7 @@
 
     .admin-table input:disabled {
       background-color: #f1f5f9;
-      color: #94a3b8;
+      color: #475569;
       cursor: not-allowed;
     }
 
@@ -258,29 +258,58 @@
       const userEmail = authData.user ? authData.user.email : '';
       document.getElementById('user-info').innerText = `Founder: ${userEmail || 'Executive'}`;
 
-      renderFounderDashboard();
+      await renderFounderDashboard();
       await loadUserProfiles();
     }
 
-    function renderFounderDashboard() {
+    async function renderFounderDashboard() {
       const appRoot = document.getElementById('app-root');
+
+      let stats = null;
+      try {
+        const res = await fetch('data/platform-stats.json');
+        if (res.ok) {
+          stats = await res.json();
+        }
+      } catch (err) {
+        console.error("Failed to load platform stats:", err);
+      }
+
+      const langBig = stats ? stats.languages.withAvailableCourse.toLocaleString() : '—';
+      const langSub = stats
+        ? `live of ${stats.languages.total.toLocaleString()} planned (${stats.languages.codes.map(c => c.toUpperCase()).join(', ')})`
+        : 'Stats unavailable';
+
+      const courseBig = stats ? stats.courses.available.toLocaleString() : '—';
+      const courseSub = stats
+        ? `available of ${stats.courses.total.toLocaleString()} in catalog`
+        : 'Stats unavailable';
+
+      const lessonBig = stats ? stats.lessons.available.toLocaleString() : '—';
+      const lessonSub1 = stats
+        ? `available of ${stats.lessons.total.toLocaleString()} planned`
+        : 'Stats unavailable';
+      const lessonSub2 = stats
+        ? `${stats.unlinkedLessonFiles.toLocaleString()} lesson files not yet linked to a course`
+        : '';
 
       appRoot.innerHTML = `
         <div class="dashboard-grid">
           <div class="stat-card">
-            <h3>Active Language Tracks</h3>
-            <div class="stat-number">11</div>
-            <p style="font-size: 0.85rem; color: #64748b; margin-top: 4px;">EN, FR, RU, DE, ES, PT, IT, HY, KA, BA, TT</p>
+            <h3>LANGUAGES</h3>
+            <div class="stat-number">${langBig}</div>
+            <p style="font-size: 0.85rem; color: #64748b; margin-top: 4px;">${langSub}</p>
           </div>
           <div class="stat-card">
-            <h3>Curriculum Index Files</h3>
-            <div class="stat-number">112</div>
-            <p style="font-size: 0.85rem; color: #10b981; margin-top: 4px;">100% Schema Validated</p>
+            <h3>COURSES</h3>
+            <div class="stat-number">${courseBig}</div>
+            <p style="font-size: 0.85rem; color: #64748b; margin-top: 4px;">${courseSub}</p>
           </div>
           <div class="stat-card">
-            <h3>Interactive Lesson JSONs</h3>
-            <div class="stat-number">104</div>
-            <p style="font-size: 0.85rem; color: #10b981; margin-top: 4px;">Gabarit 14 Champs Standard</p>
+            <h3>LESSONS</h3>
+            <div class="stat-number">${lessonBig}</div>
+            <p style="font-size: 0.85rem; color: #64748b; margin-top: 4px;">${lessonSub1}</p>
+            ${lessonSub2 ? `<p style="font-size: 0.85rem; color: #64748b; margin-top: 2px;">${lessonSub2}</p>` : ''}
           </div>
         </div>
 
@@ -292,7 +321,7 @@
             <strong>➕ How to Create a New User:</strong>
             <ol>
               <li>Create the user account via <strong>Supabase Dashboard → Authentication → Users → Add User</strong> (set email &amp; initial password).</li>
-              <li>Once created, return here to assign their role (founder/teacher/student/host), language permissions, course level access, and hosted sessions (for hosts).</li>
+              <li>Once created, return here to assign their role (founder, teacher or student), language permissions, course level access, and hosted event sessions (teachers only).</li>
             </ol>
           </div>
 
@@ -396,7 +425,7 @@
       const sessionsInput = document.getElementById(`sessions-${userId}`);
       if (!roleSelect || !sessionsInput) return;
 
-      if (roleSelect.value === 'host') {
+      if (roleSelect.value === 'teacher') {
         sessionsInput.disabled = false;
         sessionsInput.style.display = 'block';
       } else {
@@ -452,7 +481,7 @@
           const langsStr = Array.isArray(p.language_access) ? p.language_access.join(', ') : (p.language_access || '*');
           const sessionsStr = Array.isArray(p.hosted_sessions) ? p.hosted_sessions.join(', ') : (p.hosted_sessions || '');
           const dateStr = p.created_at ? new Date(p.created_at).toLocaleDateString() : 'N/A';
-          const isHost = p.role === 'host';
+          const isTeacher = p.role === 'teacher';
 
           html += `
             <tr id="profile-row-${p.id}">
@@ -463,7 +492,6 @@
                 <select id="role-${p.id}" onchange="toggleHostedSessionsField('${p.id}')">
                   <option value="student" ${p.role==='student'?'selected':''}>student</option>
                   <option value="teacher" ${p.role==='teacher'?'selected':''}>teacher</option>
-                  <option value="host" ${p.role==='host'?'selected':''}>host</option>
                   <option value="founder" ${p.role==='founder'?'selected':''}>founder</option>
                 </select>
               </td>
@@ -474,7 +502,7 @@
                 <input type="text" id="levels-${p.id}" value="${(p.course_level || '*').replace(/"/g, '&quot;')}" placeholder="e.g. a1, c1 or *" />
               </td>
               <td style="width: 180px;">
-                <input type="text" id="sessions-${p.id}" value="${sessionsStr.replace(/"/g, '&quot;')}" placeholder="e.g. session-01, session-02" ${isHost ? '' : 'disabled style="display:none;"'} />
+                <input type="text" id="sessions-${p.id}" value="${sessionsStr.replace(/"/g, '&quot;')}" placeholder="e.g. session-01, session-02" ${isTeacher ? '' : 'disabled style="display:none;"'} />
               </td>
               <td style="font-size: 0.8rem; color: #64748b;">
                 ${dateStr}
@@ -518,9 +546,9 @@
         language_access = rawLangs.split(',').map(s => s.trim()).filter(Boolean);
       }
 
-      // Parse comma-separated hosted_sessions array when role is host
+      // Parse comma-separated hosted_sessions array when role is teacher
       let hosted_sessions = [];
-      if (role === 'host' && rawSessions) {
+      if (role === 'teacher' && rawSessions) {
         hosted_sessions = rawSessions.split(',').map(s => s.trim()).filter(Boolean);
       }
 
@@ -532,12 +560,9 @@
           role: role,
           language_access: language_access,
           course_level: course_level,
+          hosted_sessions: hosted_sessions,
           updated_at: new Date().toISOString()
         };
-
-        if (role === 'host') {
-          updatePayload.hosted_sessions = hosted_sessions;
-        }
 
         const { error } = await client
           .from('profiles')
@@ -547,7 +572,7 @@
         if (error) {
           if (statusEl) statusEl.innerHTML = `<span style="color: #ef4444;">Error: ${error.message}</span>`;
         } else {
-          if (statusEl) statusEl.innerHTML = `<span style="color: #10b981; font-weight: 600;">Saved ✔️</span>`;
+          if (statusEl) statusEl.innerHTML = `<span style="color: #047857; font-weight: 600;">Saved ✔️</span>`;
           setTimeout(() => { if (statusEl) statusEl.innerHTML = ''; }, 3000);
         }
       } catch (err) {
