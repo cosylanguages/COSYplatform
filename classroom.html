@@ -18,6 +18,7 @@
   <!-- Config & Auth Guard -->
   <script src="shared/js/config.js"></script>
   <script src="shared/js/auth-guard.js"></script>
+  <script src="shared/js/ui-toast.js"></script>
   <!-- Vocabulary Index & Irregular Verbs Data -->
   <script src="shared/js/vocab-index.js"></script>
   <script src="shared/js/irregular-verbs.js"></script>
@@ -163,9 +164,6 @@
             <button onclick="joinRoomFromInput()" class="px-2 py-0.5 bg-cosy-700 text-white text-xs font-medium rounded-lg hover:bg-cosy-800 transition">Join</button>
             <button id="host-btn" onclick="initHost()" class="px-2 py-0.5 bg-cosy-500 text-white text-xs font-medium rounded-lg hover:bg-cosy-600 transition" title="Create Room">Host</button>
           </div>
-          <button onclick="toggleGithubGuideModal()" class="text-[11px] text-cosy-600 hover:underline">
-            <i class="fa-solid fa-circle-info"></i>
-          </button>
         </div>
 
         <div class="flex items-center justify-between text-gray-600 font-semibold text-[11px]">
@@ -598,45 +596,6 @@
     </div>
   </div>
 
-  <!-- GitHub Pages Hosting Guide Modal -->
-  <div id="github-guide-modal" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 hidden">
-    <div class="bg-white rounded-2xl max-w-lg w-full p-6 space-y-4 shadow-xl border border-cosy-100">
-      <div class="flex items-center justify-between pb-2 border-b border-gray-100">
-        <div class="flex items-center space-x-2 text-cosy-500">
-          <i class="fa-brands fa-github text-2xl"></i>
-          <h3 class="text-lg font-bold text-cosy-700">Deploying on GitHub Pages</h3>
-        </div>
-        <button onclick="toggleGithubGuideModal()" class="text-gray-400 hover:text-gray-600 text-lg">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-      </div>
-
-      <div class="text-xs text-gray-600 space-y-2.5">
-        <p>This virtual classroom is <strong>100% static</strong> (HTML, JS, CSS) and requires zero server-side code. You can host it completely free on GitHub Pages:</p>
-
-        <ol class="list-decimal list-inside space-y-1.5 pl-1 font-medium text-gray-700">
-          <li>Create or open your GitHub repo (e.g., <code class="bg-gray-100 px-1 py-0.5 rounded">cosylanguages</code>).</li>
-          <li>Add this <code class="bg-gray-100 px-1 py-0.5 rounded">classroom.html</code> file to the root of your repository.</li>
-          <li>Go to <strong>Settings &gt; Pages</strong> in your GitHub repository.</li>
-          <li>Select the <code class="bg-gray-100 px-1 py-0.5 rounded">main</code> branch and click <strong>Save</strong>.</li>
-          <li>Your app will be live at <code class="bg-gray-100 px-1 py-0.5 rounded">https://yourusername.github.io/cosylanguages/classroom.html</code>!</li>
-        </ol>
-
-        <div class="p-3 bg-cosy-50 border border-cosy-200 rounded-xl">
-          <p class="font-semibold text-cosy-700 mb-1">How PeerJS Real-time Sync Works:</p>
-          <p class="text-[11px] text-gray-600">
-            PeerJS connects both browsers directly via WebRTC data channels using a free public signaling server (<code class="font-mono">0.peerjs.com</code>). No backend installation required!
-          </p>
-        </div>
-      </div>
-
-      <div class="text-right">
-        <button onclick="toggleGithubGuideModal()" class="px-4 py-2 bg-cosy-700 text-white text-xs font-medium rounded-xl hover:bg-cosy-800 transition">
-          Got it!
-        </button>
-      </div>
-    </div>
-  </div>
 
   <!-- JavaScript Application Core -->
   <script>
@@ -648,6 +607,9 @@
     let conn = null;
     let connections = [];
     let roomId = '';
+    let roomKey = '';
+    let participantKey = '';
+    let isHost = false;
     let currentSlide = 1;
     let totalSlides = 3;
     let jitsiApi = null;
@@ -677,34 +639,77 @@
     let selectedCamDeviceId = '';
     let selectedMicDeviceId = '';
 
+    function escapeHtml(str) {
+      if (typeof str !== 'string') return '';
+      return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+    }
+
+    function isSafeLessonPath(p) {
+      if (typeof p !== 'string') return false;
+      if (p.includes('..') || p.includes('//')) return false;
+      return /^lessons\/[A-Za-z0-9_\-.\/]+\.(json|xml)$/.test(p);
+    }
+
+    function renderAuthErrorPage() {
+      document.body.innerHTML = `
+        <div class="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+          <div class="bg-white rounded-2xl max-w-md w-full p-8 text-center space-y-4 shadow-lg border border-gray-200">
+            <div class="w-12 h-12 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto text-xl">
+              <i class="fa-solid fa-lock"></i>
+            </div>
+            <h2 class="text-xl font-bold text-gray-900">Please sign in to use the live classroom.</h2>
+            <p class="text-xs text-gray-600">An active authenticated session is required to access the interactive classroom tools, video calling, and live peer synchronization.</p>
+            <div class="pt-2">
+              <a href="login.html" class="inline-block px-5 py-2.5 bg-cosy-600 hover:bg-cosy-700 text-white rounded-xl text-xs font-bold transition shadow-sm">
+                Go to Sign In
+              </a>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
     // Initialize Page Application
     window.addEventListener('DOMContentLoaded', async () => {
+      // Fail closed authentication check
+      if (!window.CosyAuth || typeof window.CosyAuth.getAuthAndProfile !== 'function') {
+        renderAuthErrorPage();
+        return;
+      }
+
+      const auth = await window.CosyAuth.getAuthAndProfile();
+      if (!auth || !auth.profile) {
+        renderAuthErrorPage();
+        return;
+      }
+      userProfile = auth.profile;
+      window.userProfile = userProfile;
+
       initWhiteboard();
       populateMediaDevices();
-
-      // Enforce Authentication
-      if (window.CosyAuth && typeof window.CosyAuth.getAuthAndProfile === 'function') {
-        const auth = await window.CosyAuth.getAuthAndProfile();
-        if (!auth) return; // redirected to login
-        userProfile = auth.profile;
-      }
 
       // Enforce Role Switcher Permissions
       enforceRolePermissions();
 
-      // Check for dynamic lesson loading parameter
+      // Check for dynamic lesson loading parameter & room parameters
       const params = new URLSearchParams(window.location.search);
       const lessonParam = params.get('lesson');
       const urlRoom = params.get('room');
+      const urlKey = params.get('k');
 
-      if (lessonParam) {
+      if (urlKey) {
+        participantKey = urlKey;
+        roomKey = urlKey;
+      }
+
+      if (lessonParam && isSafeLessonPath(lessonParam)) {
         await loadDynamicLesson(lessonParam);
       } else {
         updateSlideToolbar();
       }
 
       if (urlRoom) {
-        document.getElementById('target-room-input').value = urlRoom;
+        document.getElementById('target-room-input').value = urlRoom + (urlKey ? `&k=${urlKey}` : '');
         joinRoomFromInput();
       }
     });
@@ -954,11 +959,28 @@
       }
     }
 
+    function isValidVideoUrl(urlStr) {
+      if (typeof urlStr !== 'string') return false;
+      try {
+        const parsed = new URL(urlStr);
+        if (parsed.protocol !== 'https:') return false;
+        if (parsed.hostname !== 'meet.google.com' && parsed.hostname !== 'telemost.yandex.ru') return false;
+        return true;
+      } catch (e) {
+        return false;
+      }
+    }
+
     function broadcastAndOpenVideoLink() {
       const input = document.getElementById('video-link-input');
-      const url = input.value.trim();
+      const url = input ? input.value.trim() : '';
       if (!url) {
-        alert('Please paste a meeting link first.');
+        if (window.CosyUI && window.CosyUI.toast) CosyUI.toast('Please paste a meeting link first.', 'warning');
+        return;
+      }
+
+      if (!isValidVideoUrl(url)) {
+        addChatMessage('System', 'Ignored an invalid video link.');
         return;
       }
 
@@ -967,28 +989,53 @@
 
       // Render external video link banner in video container
       renderExternalVideoBanner(currentVideoProvider, url);
-      window.open(url, '_blank');
+      window.open(url, '_blank', 'noopener,noreferrer');
     }
 
     function renderExternalVideoBanner(provider, url) {
+      if (!isValidVideoUrl(url)) {
+        addChatMessage('System', 'Ignored an invalid video link.');
+        return;
+      }
+
       const placeholder = document.getElementById('jitsi-placeholder');
       const container = document.getElementById('jitsi-container');
 
-      container.innerHTML = '';
-      placeholder.classList.remove('hidden');
+      if (container) container.innerHTML = '';
+      if (placeholder) placeholder.classList.remove('hidden');
 
       const providerName = provider === 'yandex' ? 'Yandex Telemost' : provider === 'google' ? 'Google Meet' : 'Video Call';
 
-      placeholder.innerHTML = `
-        <div class="space-y-2">
-          <i class="fa-solid fa-video text-3xl text-green-400"></i>
-          <div class="text-xs font-bold text-white">${providerName} Active</div>
-          <p class="text-[11px] text-gray-300">Click below to open meeting in window:</p>
-          <a href="${url}" target="_blank" class="inline-block px-4 py-2 bg-green-600 hover:bg-green-700 text-white text-xs font-bold rounded-xl transition shadow">
-            📹 Join ${providerName} Session
-          </a>
-        </div>
-      `;
+      if (placeholder) {
+        placeholder.textContent = ''; // Clear placeholder
+
+        const wrapper = document.createElement('div');
+        wrapper.className = 'space-y-2';
+
+        const icon = document.createElement('i');
+        icon.className = 'fa-solid fa-video text-3xl text-green-400';
+        wrapper.appendChild(icon);
+
+        const titleDiv = document.createElement('div');
+        titleDiv.className = 'text-xs font-bold text-white';
+        titleDiv.textContent = `${providerName} Active`;
+        wrapper.appendChild(titleDiv);
+
+        const p = document.createElement('p');
+        p.className = 'text-[11px] text-gray-300';
+        p.textContent = 'Click below to open meeting in window:';
+        wrapper.appendChild(p);
+
+        const link = document.createElement('a');
+        link.href = url;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.className = 'inline-block px-4 py-2 bg-green-600 hover:bg-green-700 text-white text-xs font-bold rounded-xl transition shadow';
+        link.textContent = `📹 Join ${providerName} Session`;
+        wrapper.appendChild(link);
+
+        placeholder.appendChild(wrapper);
+      }
     }
 
     // Lesson Catalog Modal Toggle & Population
@@ -1014,13 +1061,17 @@
       for (const c of manifest) {
         if (c.status === 'not_yet_available') continue;
 
+        const safeTitle = escapeHtml(c.title);
+        const safeLevel = escapeHtml(c.level);
+        const safeId = escapeHtml(c.id);
+
         html += `
-          <div class="border border-gray-200 rounded-xl p-3 bg-gray-50/50 catalog-course-item" data-title="${c.title.toLowerCase()}">
+          <div class="border border-gray-200 rounded-xl p-3 bg-gray-50/50 catalog-course-item" data-title="${safeTitle.toLowerCase()}">
             <div class="flex justify-between items-center mb-2">
-              <div class="font-bold text-gray-800 text-xs">${c.title} <span class="text-[10px] bg-cosy-100 text-cosy-700 px-1.5 py-0.5 rounded font-mono ml-1">${c.level.toUpperCase()}</span></div>
-              <button onclick="loadCourseRoadmapIntoModal('${c.id}')" class="px-2 py-1 bg-cosy-500 text-white rounded text-[11px] font-semibold hover:bg-cosy-600 transition">View Lessons 📖</button>
+              <div class="font-bold text-gray-800 text-xs">${safeTitle} <span class="text-[10px] bg-cosy-100 text-cosy-700 px-1.5 py-0.5 rounded font-mono ml-1">${safeLevel.toUpperCase()}</span></div>
+              <button onclick="loadCourseRoadmapIntoModal('${safeId}')" class="px-2 py-1 bg-cosy-500 text-white rounded text-[11px] font-semibold hover:bg-cosy-600 transition">View Lessons 📖</button>
             </div>
-            <div id="course-sequence-${c.id}" class="hidden mt-2 pt-2 border-t border-gray-200 space-y-1"></div>
+            <div id="course-sequence-${safeId}" class="hidden mt-2 pt-2 border-t border-gray-200 space-y-1"></div>
           </div>
         `;
       }
@@ -1030,7 +1081,8 @@
     }
 
     async function loadCourseRoadmapIntoModal(courseId) {
-      const targetDiv = document.getElementById(`course-sequence-${courseId}`);
+      const safeCourseId = escapeHtml(courseId);
+      const targetDiv = document.getElementById(`course-sequence-${safeCourseId}`);
       if (!targetDiv) return;
 
       if (!targetDiv.classList.contains('hidden')) {
@@ -1042,17 +1094,21 @@
       targetDiv.classList.remove('hidden');
 
       try {
-        const res = await fetch(`roadmaps/${courseId}.json`);
+        const res = await fetch(`roadmaps/${safeCourseId}.json`);
         if (!res.ok) throw new Error("Roadmap not found");
         const roadmap = await res.json();
 
         let seqHtml = `<div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5">`;
         roadmap.sequence.forEach(item => {
-          let lPath = item.lessonFile || item.lesson_file || (`lessons/${courseId}/${item.id}.json`);
+          let lPath = item.lessonFile || item.lesson_file || (`lessons/${safeCourseId}/${item.id}.json`);
+          const safeLPath = escapeHtml(lPath);
+          const safeTitle = escapeHtml(item.title || '');
+          const safeNum = escapeHtml(String(item.lessonNumber || ''));
+
           seqHtml += `
-            <div onclick="selectAndBroadcastLesson('${lPath}')" class="p-2 bg-white border border-gray-200 hover:border-cosy-500 rounded-lg cursor-pointer transition flex items-center justify-between">
+            <div onclick="selectAndBroadcastLesson('${safeLPath}')" class="p-2 bg-white border border-gray-200 hover:border-cosy-500 rounded-lg cursor-pointer transition flex items-center justify-between">
               <div>
-                <div class="font-bold text-gray-800 text-[11px]">#${item.lessonNumber}: ${item.title}</div>
+                <div class="font-bold text-gray-800 text-[11px]">#${safeNum}: ${safeTitle}</div>
               </div>
               <span class="text-[10px] bg-green-50 text-green-700 font-bold px-1.5 py-0.5 rounded">Launch 🎥</span>
             </div>
@@ -1079,10 +1135,18 @@
         window.location.href = window.location.pathname + (roomId ? `?room=${roomId}` : '');
         return;
       }
+      if (!isSafeLessonPath(val)) {
+        if (window.CosyUI && window.CosyUI.toast) CosyUI.toast("Invalid lesson path.", "error");
+        return;
+      }
       await selectAndBroadcastLesson(val);
     }
 
     async function selectAndBroadcastLesson(lessonPath) {
+      if (!isSafeLessonPath(lessonPath)) {
+        if (window.CosyUI && window.CosyUI.toast) CosyUI.toast("Invalid lesson path.", "error");
+        return;
+      }
       if (document.getElementById('lesson-catalog-modal') && !document.getElementById('lesson-catalog-modal').classList.contains('hidden')) {
         toggleLessonCatalogModal();
       }
@@ -1092,6 +1156,11 @@
 
     // Dynamic Platform Material Loader
     async function loadDynamicLesson(lessonPath) {
+      if (!isSafeLessonPath(lessonPath)) {
+        console.warn("Rejected unsafe lesson path:", lessonPath);
+        if (window.CosyUI && window.CosyUI.toast) CosyUI.toast("Invalid lesson path.", "error");
+        return;
+      }
       try {
         currentLessonPath = lessonPath;
 
@@ -1238,11 +1307,14 @@
           innerContent = renderJsonSlideToClassroomHtml(slide.jsonData, `s${idx}`);
         }
 
+        const safeTitle = escapeHtml(slide.title);
+        const safeStage = escapeHtml(slide.stage);
+
         slideDiv.innerHTML = `
           <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-cosy-200">
             <div class="flex flex-wrap items-center justify-between pb-4 mb-4 border-b border-gray-100 gap-2">
-              <h2 class="text-2xl font-black text-gray-900 tracking-tight">${idx+1}. ${slide.title}</h2>
-              ${slide.stage ? `<span class="px-3 py-1 bg-sky-100 text-sky-800 rounded-full font-bold text-xs uppercase tracking-wide">${slide.stage}</span>` : ''}
+              <h2 class="text-2xl font-black text-gray-900 tracking-tight">${idx+1}. ${safeTitle}</h2>
+              ${safeStage ? `<span class="px-3 py-1 bg-sky-100 text-sky-800 rounded-full font-bold text-xs uppercase tracking-wide">${safeStage}</span>` : ''}
             </div>
             <div>${innerContent}</div>
           </div>
@@ -1258,7 +1330,7 @@
 
       for (let child of node.childNodes) {
         if (child.nodeType === Node.TEXT_NODE) {
-          output += child.nodeValue;
+          output += escapeHtml(child.nodeValue || '');
           continue;
         }
 
@@ -1291,13 +1363,15 @@
           items.forEach(v => {
             const word = v.getAttribute("word") || "Word";
             const def = v.getAttribute("definition") || "";
+            const safeWord = escapeHtml(word);
+            const safeDef = escapeHtml(def);
             output += `
               <div class="p-3 rounded-xl border border-cosy-100 bg-cosy-50/30 flex justify-between items-center hover:border-cosy-500 transition">
                 <div>
-                  <div class="text-base font-bold text-cosy-800">${word}</div>
-                  <div class="text-xs text-gray-500">${def}</div>
+                  <div class="text-base font-bold text-cosy-800">${safeWord}</div>
+                  <div class="text-xs text-gray-500">${safeDef}</div>
                 </div>
-                <button onclick="speakText('${word.replace(/'/g, "\\'")}', 'en-US')" class="w-8 h-8 rounded-lg bg-cosy-500 text-white flex items-center justify-center shadow-sm hover:scale-105 transition">
+                <button onclick="speakText('${safeWord.replace(/'/g, "\\'")}', 'en-US')" class="w-8 h-8 rounded-lg bg-cosy-500 text-white flex items-center justify-center shadow-sm hover:scale-105 transition">
                   <i class="fa-solid fa-volume-high text-xs"></i>
                 </button>
               </div>
@@ -1310,10 +1384,13 @@
           answers.forEach(a => ansList.push(a.textContent.trim()));
           if (ansList.length > 0) answersMap[fKey] = ansList[0];
 
+          const safePlaceholder = escapeHtml(child.getAttribute("placeholder") || "Type here...");
+          const safeAnsKey = escapeHtml(ansList.join(' / '));
+
           output += `
             <div class="my-3 space-y-1">
-              <input type="text" id="${fKey}" oninput="handleBlankInput('${fKey}', this.value)" placeholder="${child.getAttribute("placeholder") || "Type here..."}" class="px-3 py-1.5 border border-gray-300 rounded-lg text-sm w-full max-w-sm focus:ring-2 focus:ring-cosy-500 font-medium">
-              ${currentRole === 'teacher' && ansList.length > 0 ? `<div class="answer-key-box">🔑 Key: ${ansList.join(' / ')}</div>` : ''}
+              <input type="text" id="${fKey}" oninput="handleBlankInput('${fKey}', this.value)" placeholder="${safePlaceholder}" class="px-3 py-1.5 border border-gray-300 rounded-lg text-sm w-full max-w-sm focus:ring-2 focus:ring-cosy-500 font-medium">
+              ${currentRole === 'teacher' && ansList.length > 0 ? `<div class="answer-key-box">🔑 Key: ${safeAnsKey}</div>` : ''}
               <div id="feedback-${fKey}" class="text-xs font-medium"></div>
             </div>
           `;
@@ -1321,18 +1398,20 @@
           const items = child.querySelectorAll("cosy-select-item-title");
           output += `<select id="${fKey}" onchange="handleBlankInput('${fKey}', this.value)" class="px-3 py-1.5 border border-gray-300 rounded-lg text-sm my-2 focus:ring-2 focus:ring-cosy-500"><option value="">-- Choose option --</option>`;
           items.forEach(it => {
-            output += `<option value="${it.textContent.trim()}">${it.textContent.trim()}</option>`;
+            const val = escapeHtml(it.textContent.trim());
+            output += `<option value="${val}">${val}</option>`;
           });
           output += `</select>`;
         } else if (tag === "cosy-test") {
           const questions = child.querySelectorAll("cosy-test-question");
           questions.forEach((q, qIdx) => {
-            const qText = q.querySelector("cosy-test-question-text")?.textContent || "Question";
+            const qText = escapeHtml(q.querySelector("cosy-test-question-text")?.textContent || "Question");
             output += `<div class="bg-gray-50 border border-gray-200 rounded-xl p-4 my-3"><strong class="text-sm text-gray-800">${qText}</strong><div class="space-y-1.5 mt-2">`;
             const options = q.querySelectorAll("cosy-test-item");
             options.forEach(opt => {
               const isCorrect = opt.getAttribute("correct") === "true";
-              output += `<label class="flex items-center space-x-2 text-xs p-2 rounded-lg border border-gray-200 bg-white hover:bg-cosy-50 cursor-pointer"><input type="radio" name="${fKey}_q${qIdx}" value="${opt.textContent.trim()}"><span>${opt.textContent.trim()}</span> ${currentRole === 'teacher' && isCorrect ? '<span class="text-green-600 font-bold ml-auto">✔️ Correct</span>' : ''}</label>`;
+              const optVal = escapeHtml(opt.textContent.trim());
+              output += `<label class="flex items-center space-x-2 text-xs p-2 rounded-lg border border-gray-200 bg-white hover:bg-cosy-50 cursor-pointer"><input type="radio" name="${fKey}_q${qIdx}" value="${optVal}"><span>${optVal}</span> ${currentRole === 'teacher' && isCorrect ? '<span class="text-green-600 font-bold ml-auto">✔️ Correct</span>' : ''}</label>`;
             });
             output += `</div></div>`;
           });
@@ -1411,7 +1490,7 @@
 
       // Security check: If actual user profile is student, prevent switching to teacher mode
       if (role === 'teacher' && actualUserRole === 'student') {
-        alert('Access denied: Student accounts cannot access Teacher view mode or answer keys.');
+        if (window.CosyUI && window.CosyUI.toast) CosyUI.toast('Access denied: Student accounts cannot access Teacher view mode or answer keys.', 'error');
         return;
       }
 
@@ -1487,7 +1566,7 @@
         } else {
           clearInterval(timerInterval);
           timerInterval = null;
-          alert('⏱️ Time is up!');
+          if (window.CosyUI && window.CosyUI.toast) CosyUI.toast('⏱️ Time is up!', 'info');
         }
       }, 1000);
     }
@@ -1613,18 +1692,28 @@
         const cardId = `dict-card-${idx}`;
         const isExact = m.priority === 1;
 
+        const safeWord = escapeHtml(m.word);
+        const safePos = escapeHtml(m.pos);
+        const safeLevel = escapeHtml(meta.level);
+        const safeDef = escapeHtml(meta.definition);
+        const safeExample = escapeHtml(meta.example);
+        const safeSyns = escapeHtml(meta.synonyms.join(', '));
+        const safeAnts = escapeHtml(meta.antonyms.join(', '));
+        const safeId = escapeHtml(m.id);
+        const safeFile = escapeHtml(m.file);
+
         html += `
           <div class="border ${isExact ? 'border-cosy-500 bg-cosy-50/50 ring-1 ring-cosy-300' : 'border-gray-200 bg-white hover:border-cosy-300'} rounded-xl p-2.5 transition cursor-pointer shadow-sm" onclick="toggleDictCardDetail('${cardId}')">
             <div class="flex justify-between items-center">
               <div class="flex items-center space-x-1.5 font-bold text-gray-900 text-xs">
                 <span class="text-sm">${meta.emoji}</span>
-                <span class="text-sm text-cosy-800 font-extrabold">${m.word}</span>
+                <span class="text-sm text-cosy-800 font-extrabold">${safeWord}</span>
                 ${isExact ? '<span class="bg-green-100 text-green-800 text-[9px] font-bold px-1.5 py-0.2 rounded uppercase ml-1">Exact Match</span>' : ''}
               </div>
               <div class="flex items-center space-x-1">
-                <span class="text-[10px] bg-cosy-100 text-cosy-800 px-1.5 py-0.5 rounded font-mono font-bold">${meta.level}</span>
-                <span class="text-[10px] bg-gray-100 text-gray-700 px-1.5 py-0.5 rounded font-bold">${m.pos}</span>
-                <button onclick="event.stopPropagation(); speakText('${m.word.replace(/'/g, "\\'")}', 'en-US')" class="w-6 h-6 bg-cosy-500 text-white rounded-lg flex items-center justify-center hover:bg-cosy-600 transition" title="Listen pronunciation">
+                <span class="text-[10px] bg-cosy-100 text-cosy-800 px-1.5 py-0.5 rounded font-mono font-bold">${safeLevel}</span>
+                <span class="text-[10px] bg-gray-100 text-gray-700 px-1.5 py-0.5 rounded font-bold">${safePos}</span>
+                <button onclick="event.stopPropagation(); speakText('${safeWord.replace(/'/g, "\\'")}', 'en-US')" class="w-6 h-6 bg-cosy-500 text-white rounded-lg flex items-center justify-center hover:bg-cosy-600 transition" title="Listen pronunciation">
                   <i class="fa-solid fa-volume-high text-[10px]"></i>
                 </button>
               </div>
@@ -1632,15 +1721,15 @@
 
             <div id="${cardId}" class="${isExact ? '' : 'hidden'} mt-2 pt-2 border-t border-gray-100 text-xs space-y-1.5">
               <div class="text-gray-700 leading-snug font-medium">
-                <span class="font-bold text-cosy-700">Definition:</span> ${meta.definition}
+                <span class="font-bold text-cosy-700">Definition:</span> ${safeDef}
               </div>
               <div class="text-gray-600 italic bg-gray-50 p-1.5 rounded-lg border border-gray-100 text-[11px]">
-                <strong class="not-italic text-gray-700 font-bold">Example:</strong> "${meta.example}"
+                <strong class="not-italic text-gray-700 font-bold">Example:</strong> "${safeExample}"
               </div>
-              ${meta.synonyms.length > 0 ? `<div class="text-[11px] text-gray-600"><strong class="text-gray-700 font-bold">Synonyms:</strong> ${meta.synonyms.join(', ')}</div>` : ''}
-              ${meta.antonyms.length > 0 ? `<div class="text-[11px] text-gray-600"><strong class="text-gray-700 font-bold">Antonyms:</strong> ${meta.antonyms.join(', ')}</div>` : ''}
+              ${meta.synonyms.length > 0 ? `<div class="text-[11px] text-gray-600"><strong class="text-gray-700 font-bold">Synonyms:</strong> ${safeSyns}</div>` : ''}
+              ${meta.antonyms.length > 0 ? `<div class="text-[11px] text-gray-600"><strong class="text-gray-700 font-bold">Antonyms:</strong> ${safeAnts}</div>` : ''}
               <div class="font-mono text-[10px] text-cosy-600 bg-cosy-50 p-1 rounded break-all mt-1">
-                COSYdata ID: ${m.id} | File: ${m.file}
+                COSYdata ID: ${safeId} | File: ${safeFile}
               </div>
             </div>
           </div>
@@ -1684,9 +1773,9 @@
       matches.slice(0, 15).forEach(v => {
         html += `
           <tr class="border-b border-gray-100 text-[11px]">
-            <td class="p-1 font-bold text-gray-800">${v.v1}</td>
-            <td class="p-1 text-cosy-700 font-semibold">${v.v2}</td>
-            <td class="p-1 text-cosy-600 font-medium">${v.v3}</td>
+            <td class="p-1 font-bold text-gray-800">${escapeHtml(v.v1)}</td>
+            <td class="p-1 text-cosy-700 font-semibold">${escapeHtml(v.v2)}</td>
+            <td class="p-1 text-cosy-600 font-medium">${escapeHtml(v.v3)}</td>
           </tr>
         `;
       });
@@ -1718,19 +1807,51 @@
       document.getElementById('activity-banner').classList.add('hidden');
     }
 
-    // Generate Short Room ID
-    function generateRoomId() {
-      return 'cosy-' + Math.random().toString(36).substring(2, 8);
+    // Room Secret & Key Generation Helpers
+    function generateRandomRoomId() {
+      const charset = 'abcdefghijklmnopqrstuvwxyz0123456789';
+      const arr = new Uint8Array(10);
+      crypto.getRandomValues(arr);
+      let res = '';
+      for (let i = 0; i < arr.length; i++) {
+        res += charset[arr[i] % charset.length];
+      }
+      return 'cosy-' + res;
+    }
+
+    function generateRoomKey() {
+      const arr = new Uint8Array(16);
+      crypto.getRandomValues(arr);
+      let hex = '';
+      for (let i = 0; i < arr.length; i++) {
+        hex += arr[i].toString(16).padStart(2, '0');
+      }
+      return hex; // 32 hex chars
     }
 
     // Initialize Host Room (PeerJS)
     function initHost() {
-      roomId = generateRoomId();
+      const role = (userProfile && userProfile.role) ? userProfile.role.toLowerCase() : '';
+      if (role !== 'teacher' && role !== 'founder') {
+        if (window.CosyUI && window.CosyUI.toast) {
+          CosyUI.toast('Only teachers can create a room.', 'warning');
+        }
+        return;
+      }
+
+      isHost = true;
+      window.isHost = true;
+      roomId = generateRandomRoomId();
+      window.roomId = roomId;
+      roomKey = generateRoomKey();
+      window.roomKey = roomKey;
+
       document.getElementById('display-room-id').innerText = roomId;
       updateStatus('Connecting Host...', 'yellow');
 
       if (peer) peer.destroy();
       peer = new Peer(roomId);
+      window.peer = peer;
 
       peer.on('open', (id) => {
         updateStatus('Hosting Room (Connected)', 'green');
@@ -1738,6 +1859,12 @@
       });
 
       peer.on('connection', (c) => {
+        if (!c.metadata || c.metadata.k !== roomKey) {
+          c.close();
+          addChatMessage('System', 'Rejected a connection without a valid room key.');
+          return;
+        }
+
         conn = c;
         connections.push(c);
         setupConnection(c);
@@ -1761,21 +1888,44 @@
 
     // Join Existing Room
     function joinRoomFromInput() {
-      const inputId = document.getElementById('target-room-input').value.trim();
-      if (!inputId) {
-        alert('Please enter a valid Room ID.');
+      const rawInput = document.getElementById('target-room-input').value.trim();
+      if (!rawInput) {
+        if (window.CosyUI && window.CosyUI.toast) CosyUI.toast('Please enter a valid Room ID.', 'warning');
         return;
       }
 
-      roomId = inputId;
+      let parsedRoomId = rawInput;
+      let parsedKey = participantKey || '';
+
+      // Check if input is a URL or full query parameter string containing ?room= or &k=
+      if (rawInput.includes('room=') || rawInput.includes('http://') || rawInput.includes('https://')) {
+        try {
+          const urlObj = new URL(rawInput.startsWith('http') ? rawInput : `http://dummy.local/${rawInput.startsWith('?') ? rawInput : '?' + rawInput}`);
+          const r = urlObj.searchParams.get('room');
+          const k = urlObj.searchParams.get('k');
+          if (r) parsedRoomId = r;
+          if (k) parsedKey = k;
+        } catch (e) {
+          console.warn('Could not parse URL input:', e);
+        }
+      }
+
+      isHost = false;
+      window.isHost = false;
+      roomId = parsedRoomId;
+      window.roomId = roomId;
+      roomKey = parsedKey;
+      window.roomKey = roomKey;
+
       document.getElementById('display-room-id').innerText = roomId;
       updateStatus('Joining Room...', 'yellow');
 
       if (peer) peer.destroy();
       peer = new Peer();
+      window.peer = peer;
 
       peer.on('open', () => {
-        conn = peer.connect(roomId);
+        conn = peer.connect(roomId, { metadata: { k: roomKey } });
         setupConnection(conn);
       });
 
@@ -1816,6 +1966,14 @@
     function handleIncomingData(data) {
       if (!data) return;
 
+      if (isHost) {
+        const allowedTypesOnHost = ['chat', 'blank', 'whiteboard-draw', 'role'];
+        if (!allowedTypesOnHost.includes(data.type)) {
+          console.warn(`Ignored unauthorized packet type '${data.type}' from participant on host.`);
+          return;
+        }
+      }
+
       switch (data.type) {
         case 'slide':
           if (data.slide) goToSlide(data.slide, false);
@@ -1850,16 +2008,22 @@
           showActivityBanner(data.title, data.prompt);
           break;
         case 'load-lesson':
-          if (data.lessonPath) {
+          if (data.lessonPath && isSafeLessonPath(data.lessonPath)) {
             loadDynamicLesson(data.lessonPath).then(() => {
               if (data.slide) goToSlide(data.slide, false);
             });
+          } else {
+            console.warn("Ignored load-lesson packet with unsafe path:", data ? data.lessonPath : null);
           }
           break;
         case 'video-link':
           if (data.link) {
-            renderExternalVideoBanner(data.provider, data.link);
-            addChatMessage('System', `Teacher launched ${data.provider === 'yandex' ? 'Yandex Telemost' : 'Google Meet'} video call.`);
+            if (isValidVideoUrl(data.link)) {
+              renderExternalVideoBanner(data.provider, data.link);
+              addChatMessage('System', `Teacher launched ${data.provider === 'yandex' ? 'Yandex Telemost' : 'Google Meet'} video call.`);
+            } else {
+              addChatMessage('System', 'Ignored an invalid video link.');
+            }
           }
           break;
         case 'breakout-assignment':
@@ -1883,7 +2047,7 @@
         case 'breakout-recall':
           closeActivityBanner();
           addChatMessage('System', `📢 Teacher recalled all participants back to the main room.`);
-          alert('📢 All participants recalled to the main room!');
+          if (window.CosyUI && window.CosyUI.toast) CosyUI.toast('📢 All participants recalled to the main room!', 'info');
           break;
       }
     }
@@ -1911,15 +2075,19 @@
     // Copy Share Link
     function copyShareLink() {
       if (!roomId || roomId === '------') {
-        alert('Please create or join a room first.');
+        if (window.CosyUI && window.CosyUI.toast) CosyUI.toast('Please create or join a room first.', 'warning');
         return;
       }
-      const link = `${window.location.origin}${window.location.pathname}?room=${roomId}`;
-      navigator.clipboard.writeText(link).then(() => {
-        alert(`Share link copied to clipboard!\n${link}`);
-      }).catch(() => {
-        prompt('Copy room link:', link);
-      });
+      const link = `${window.location.origin}${window.location.pathname}?room=${roomId}${roomKey ? `&k=${roomKey}` : ''}`;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(link).then(() => {
+          if (window.CosyUI && window.CosyUI.toast) CosyUI.toast('Share link copied to clipboard!', 'success');
+        }).catch(() => {
+          if (window.CosyUI && window.CosyUI.toast) CosyUI.toast(`Share link: ${link}`, 'info');
+        });
+      } else {
+        if (window.CosyUI && window.CosyUI.toast) CosyUI.toast(`Share link: ${link}`, 'info');
+      }
     }
 
     // Launch Video Call (Handles Jitsi or PeerJS Direct WebRTC Video)
@@ -1929,7 +2097,7 @@
         return;
       }
 
-      const roomName = roomId && roomId !== '------' ? `cosy-languages-${roomId}` : `cosy-languages-room-${Math.floor(Math.random()*10000)}`;
+      const roomName = roomKey ? roomKey.substring(0, 16) : (roomId && roomId !== '------' ? `cosy-${roomId}` : `cosy-languages-room`);
       document.getElementById('jitsi-placeholder').classList.add('hidden');
 
       const domain = currentJitsiDomain || 'meet.jit.si';
@@ -1958,7 +2126,7 @@
         jitsiApi = new JitsiMeetExternalAPI(domain, options);
       } catch (err) {
         console.error('Jitsi error:', err);
-        alert(`Could not initialize video call frame on ${domain}.`);
+        if (window.CosyUI && window.CosyUI.toast) CosyUI.toast(`Could not initialize video call frame on ${domain}.`, 'error');
       }
     }
 
@@ -2013,7 +2181,7 @@
         }
       } catch (err) {
         console.error("Camera/Mic access error:", err);
-        alert("Camera and Microphone permission required for PeerJS Direct Video Call.");
+        if (window.CosyUI && window.CosyUI.toast) CosyUI.toast("Camera and Microphone permission required for PeerJS Direct Video Call.", 'warning');
       }
     }
 
@@ -2070,7 +2238,7 @@
         utterance.rate = 0.9;
         window.speechSynthesis.speak(utterance);
       } else {
-        alert('Text-to-speech is not supported in this browser.');
+        if (window.CosyUI && window.CosyUI.toast) CosyUI.toast('Text-to-speech is not supported in this browser.', 'warning');
       }
     }
 
@@ -2086,14 +2254,24 @@
 
         if (input && feedback) {
           const userVal = input.value.trim().toLowerCase();
+          feedback.textContent = ''; // clear
+
           if (userVal === answer.toLowerCase()) {
             input.classList.remove('border-cosy-200', 'border-red-500');
             input.classList.add('border-green-500', 'bg-green-50');
-            feedback.innerHTML = '<span class="text-green-600 font-bold"><i class="fa-solid fa-check mr-1"></i>Correct!</span>';
+
+            const span = document.createElement('span');
+            span.className = 'text-green-600 font-bold';
+            span.textContent = '✔️ Correct!';
+            feedback.appendChild(span);
           } else {
             input.classList.remove('border-cosy-200', 'border-green-500');
             input.classList.add('border-red-500', 'bg-red-50');
-            feedback.innerHTML = `<span class="text-red-600 font-bold"><i class="fa-solid fa-xmark mr-1"></i>Incorrect. Answer: ${answer}</span>`;
+
+            const span = document.createElement('span');
+            span.className = 'text-red-600 font-bold';
+            span.textContent = `❌ Incorrect. Answer: ${answer}`;
+            feedback.appendChild(span);
           }
         }
       }
@@ -2253,23 +2431,42 @@
       if (!chatBox) return;
 
       const msgDiv = document.createElement('div');
-      msgDiv.className = 'p-1.5 rounded-lg bg-gray-50 border border-gray-100';
-
       const timeStr = time || new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
       if (sender === 'System') {
         msgDiv.className = 'text-center text-gray-400 text-[11px] my-1';
-        msgDiv.innerText = `${msg} (${timeStr})`;
+        msgDiv.textContent = `${msg} (${timeStr})`;
       } else {
+        msgDiv.className = 'p-1.5 rounded-lg bg-gray-50 border border-gray-100';
+
+        const headerDiv = document.createElement('div');
+        headerDiv.className = 'flex justify-between items-center text-[10px] text-gray-400 font-medium';
+
+        const senderSpan = document.createElement('span');
         const isSelf = (currentRole === 'teacher' && sender === 'Teacher') || (currentRole === 'student' && sender === 'Student');
-        const badgeHtml = roomScope !== 'Main Room' ? `<span class="bg-amber-100 text-amber-800 text-[9px] font-bold px-1.5 py-0.2 rounded ml-1">${roomScope.split(' ')[0]} ${roomScope.split(' ')[1]}</span>` : '';
-        msgDiv.innerHTML = `
-          <div class="flex justify-between items-center text-[10px] text-gray-400 font-medium">
-            <span class="${isSelf ? 'text-cosy-600 font-bold' : 'text-gray-700 font-bold'}">${sender}${badgeHtml}</span>
-            <span>${timeStr}</span>
-          </div>
-          <div class="text-xs text-gray-800 mt-0.5">${escapeHtml(msg)}</div>
-        `;
+        senderSpan.className = isSelf ? 'text-cosy-600 font-bold' : 'text-gray-700 font-bold';
+        senderSpan.textContent = sender;
+
+        if (roomScope !== 'Main Room') {
+          const badge = document.createElement('span');
+          badge.className = 'bg-amber-100 text-amber-800 text-[9px] font-bold px-1.5 py-0.2 rounded ml-1';
+          const parts = String(roomScope).split(' ');
+          badge.textContent = `${parts[0] || ''} ${parts[1] || ''}`.trim();
+          senderSpan.appendChild(badge);
+        }
+
+        const timeSpan = document.createElement('span');
+        timeSpan.textContent = timeStr;
+
+        headerDiv.appendChild(senderSpan);
+        headerDiv.appendChild(timeSpan);
+
+        const bodyDiv = document.createElement('div');
+        bodyDiv.className = 'text-xs text-gray-800 mt-0.5';
+        bodyDiv.textContent = msg;
+
+        msgDiv.appendChild(headerDiv);
+        msgDiv.appendChild(bodyDiv);
       }
 
       chatBox.appendChild(msgDiv);
@@ -2305,13 +2502,6 @@
       return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
     }
 
-    // Hosting Guide Modal Toggle
-    function toggleGithubGuideModal() {
-      const modal = document.getElementById('github-guide-modal');
-      if (modal) {
-        modal.classList.toggle('hidden');
-      }
-    }
 
     // Breakout Rooms State & Navigation Manager
     let currentBreakoutRoom = null;
@@ -2453,7 +2643,7 @@
       const input = document.getElementById(`task-input-${key}`);
       const promptText = input ? input.value.trim() : '';
       if (!promptText) {
-        alert(`Please enter a task description for ${roomName} first.`);
+        if (window.CosyUI && window.CosyUI.toast) CosyUI.toast(`Please enter a task description for ${roomName} first.`, 'warning');
         return;
       }
 
@@ -2462,20 +2652,20 @@
       if (currentBreakoutRoom === roomName || currentRole === 'teacher') {
         showActivityBanner(`Task for ${roomName}`, promptText);
       }
-      alert(`Task dispatched to ${roomName}!`);
+      if (window.CosyUI && window.CosyUI.toast) CosyUI.toast(`Task dispatched to ${roomName}!`, 'success');
     }
 
     function broadcastBreakoutAssignment(roomName) {
       sendData({ type: 'breakout-assignment', roomName: roomName });
       addChatMessage('System', `🔀 Assigned students to ${roomName}.`);
-      alert(`Sent assignment for ${roomName} to all connected peers.`);
+      if (window.CosyUI && window.CosyUI.toast) CosyUI.toast(`Sent assignment for ${roomName} to all connected peers.`, 'info');
     }
 
     function recallAllFromBreakouts() {
       sendData({ type: 'breakout-recall' });
       returnToMainRoom();
       addChatMessage('System', `📢 Recalled all participants to the main room.`);
-      alert('Recalled all participants back to the main room.');
+      if (window.CosyUI && window.CosyUI.toast) CosyUI.toast('Recalled all participants back to the main room.', 'info');
       if (document.getElementById('breakout-rooms-modal')) {
         document.getElementById('breakout-rooms-modal').classList.add('hidden');
       }
