@@ -1,0 +1,48 @@
+{
+  "curriculumId": "pronunciation-ru-a2",
+  "title": "Russian Pronunciation A2",
+  "totalLessons": 5,
+  "supportedDurations": [
+    50,
+    80,
+    110
+  ],
+  "teacherLed": true,
+  "sequence": [
+    {
+      "lessonNumber": 1,
+      "id": "ru-pron-a2-01-vowel-reduction-akanje",
+      "title": "Редукция безударных О и А (Аканье)",
+      "lessonFile": "lessons/russian-pronunciation/a2/ru-pron-a2-01-vowel-reduction-akanje.json",
+      "teacherLed": true
+    },
+    {
+      "lessonNumber": 2,
+      "id": "ru-pron-a2-02-final-devoicing",
+      "title": "Оглушение звонких согласных на конце слова",
+      "lessonFile": "lessons/russian-pronunciation/a2/ru-pron-a2-02-final-devoicing.json",
+      "teacherLed": true
+    },
+    {
+      "lessonNumber": 3,
+      "id": "ru-pron-a2-03-assimilation-in-clusters",
+      "title": "Оглушение и озвончение согласных в группах",
+      "lessonFile": "lessons/russian-pronunciation/a2/ru-pron-a2-03-assimilation-in-clusters.json",
+      "teacherLed": true
+    },
+    {
+      "lessonNumber": 4,
+      "id": "ru-pron-a2-04-tsya-tsya-chn-cht",
+      "title": "Произношение сочетаний -ТСЯ / -ТЬСЯ, ЧН, ЧТ",
+      "lessonFile": "lessons/russian-pronunciation/a2/ru-pron-a2-04-tsya-tsya-chn-cht.json",
+      "teacherLed": true
+    },
+    {
+      "lessonNumber": 5,
+      "id": "ru-pron-a2-05-ogo-ego-endings",
+      "title": "Произношение окончаний -ОГО / -ЕГО",
+      "lessonFile": "lessons/russian-pronunciation/a2/ru-pron-a2-05-ogo-ego-endings.json",
+      "teacherLed": true
+    }
+  ]
+}

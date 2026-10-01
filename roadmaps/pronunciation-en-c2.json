@@ -1,0 +1,27 @@
+{
+  "curriculumId": "pronunciation-en-c2",
+  "title": "English Pronunciation C2",
+  "totalLessons": 2,
+  "supportedDurations": [
+    50,
+    80,
+    110
+  ],
+  "teacherLed": true,
+  "sequence": [
+    {
+      "lessonNumber": 1,
+      "id": "en-pron-c2-01-historical-phonology",
+      "title": "Historical Phonology, Vowel Shifts & Archaic Spellings",
+      "lessonFile": "lessons/english-pronunciation/c2/en-pron-c2-01-historical-phonology.json",
+      "teacherLed": true
+    },
+    {
+      "lessonNumber": 2,
+      "id": "en-pron-c2-02-complete-grapheme-mapping",
+      "title": "Complete Grapheme-to-Phoneme Equivalence & Top Exceptions",
+      "lessonFile": "lessons/english-pronunciation/c2/en-pron-c2-02-complete-grapheme-mapping.json",
+      "teacherLed": true
+    }
+  ]
+}

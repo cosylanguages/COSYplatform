@@ -7,6 +7,7 @@
     "validate": "node scripts/check-content-integrity.js && node scripts/validate-curriculums.js && node scripts/validate-lessons.js && node scripts/sync-manifest-status.js --check && npm run check:stats && npm run check:cefr && npm run check:contrast && npm run test:founder && npm run test:classroom && node scripts/test-pages-build.js && node scripts/test-publish-labels.js && npm run smoke",
     "smoke": "node scripts/smoke-pages.js",
     "build:pages": "node scripts/build-pages-site.js",
+    "build:pronunciation-roadmaps": "node scripts/build-pronunciation-roadmaps.js",
     "test:founder": "node scripts/test-founder.js",
     "test:classroom": "node scripts/test-classroom-security.js",
     "build:stats": "node scripts/build-stats.js",

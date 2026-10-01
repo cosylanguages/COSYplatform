@@ -11,6 +11,7 @@ const COMBINATIONS = [
   // Student role
   { role: 'student', url: 'student.html' },
   { role: 'student', url: 'student.html?course=general-en-a1' },
+  { role: 'student', url: 'student.html?course=pronunciation-fr-a1' },
   { role: 'student', url: 'student.html?lesson=lessons/general-english-a1/nice-to-meet-you.json&course=general-en-a1' },
 
   // Teacher role
@@ -19,6 +20,7 @@ const COMBINATIONS = [
   { role: 'teacher', url: 'teacher.html?lang=fr' },
   { role: 'teacher', url: 'teacher.html?lang=ru' },
   { role: 'teacher', url: 'teacher.html?course=general-en-a1' },
+  { role: 'teacher', url: 'teacher.html?course=pronunciation-fr-a1' },
   { role: 'teacher', url: 'teacher-english.html' },
   { role: 'teacher', url: 'teacher-french.html' },
   { role: 'teacher', url: 'teacher-russian.html' },

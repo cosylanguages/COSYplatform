@@ -1,0 +1,48 @@
+{
+  "curriculumId": "pronunciation-ru-a1",
+  "title": "Russian Pronunciation A1",
+  "totalLessons": 5,
+  "supportedDurations": [
+    50,
+    80,
+    110
+  ],
+  "teacherLed": true,
+  "sequence": [
+    {
+      "lessonNumber": 1,
+      "id": "ru-pron-a1-01-alphabet",
+      "title": "Русский алфавит и базовые звуки",
+      "lessonFile": "lessons/russian-pronunciation/a1/ru-pron-a1-01-alphabet.json",
+      "teacherLed": true
+    },
+    {
+      "lessonNumber": 2,
+      "id": "ru-pron-a1-02-hard-and-soft-consonants",
+      "title": "Твёрдые и мягкие согласные перед гласными",
+      "lessonFile": "lessons/russian-pronunciation/a1/ru-pron-a1-02-hard-and-soft-consonants.json",
+      "teacherLed": true
+    },
+    {
+      "lessonNumber": 3,
+      "id": "ru-pron-a1-03-iotated-vowels",
+      "title": "Йотированные гласные (Е, Ё, Ю, Я) и 2 звука",
+      "lessonFile": "lessons/russian-pronunciation/a1/ru-pron-a1-03-iotated-vowels.json",
+      "teacherLed": true
+    },
+    {
+      "lessonNumber": 4,
+      "id": "ru-pron-a1-04-soft-and-hard-signs",
+      "title": "Мягкий знак (Ь) и Твёрдый знак (Ъ)",
+      "lessonFile": "lessons/russian-pronunciation/a1/ru-pron-a1-04-soft-and-hard-signs.json",
+      "teacherLed": true
+    },
+    {
+      "lessonNumber": 5,
+      "id": "ru-pron-a1-05-always-hard-and-soft",
+      "title": "Всегда твёрдые (Ж, Ш, Ц) и всегда мягкие (Ч, Щ, Й)",
+      "lessonFile": "lessons/russian-pronunciation/a1/ru-pron-a1-05-always-hard-and-soft.json",
+      "teacherLed": true
+    }
+  ]
+}
