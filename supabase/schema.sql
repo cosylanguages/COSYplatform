@@ -37,6 +37,34 @@ AS $$
   );
 $$;
 
+-- Automatic Onboarding Trigger Function for Auth Users
+CREATE OR REPLACE FUNCTION public.handle_new_user()
+RETURNS trigger
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path = public
+AS $$
+BEGIN
+  INSERT INTO public.profiles (id, role, language_access, course_level)
+  VALUES (NEW.id, 'student', '{}', NULL)
+  ON CONFLICT (id) DO NOTHING;
+  RETURN NEW;
+END;
+$$;
+
+-- Trigger on auth.users table
+DROP TRIGGER IF EXISTS on_auth_user_created ON auth.users;
+CREATE TRIGGER on_auth_user_created
+  AFTER INSERT ON auth.users
+  FOR EACH ROW
+  EXECUTE FUNCTION public.handle_new_user();
+
+-- Backfill existing auth.users without profiles
+INSERT INTO public.profiles (id, role, language_access)
+SELECT id, 'student', '{}'
+FROM auth.users
+ON CONFLICT (id) DO NOTHING;
+
 -- Profiles Policies
 CREATE POLICY "Users can view their own profile"
   ON profiles FOR SELECT
@@ -45,6 +73,11 @@ CREATE POLICY "Users can view their own profile"
 CREATE POLICY "Founders can read all profiles"
   ON profiles FOR SELECT
   USING (public.is_founder());
+
+CREATE POLICY "Founders can update profiles"
+  ON profiles FOR UPDATE
+  USING (public.is_founder())
+  WITH CHECK (public.is_founder());
 
 -- Lesson Content Policies
 -- Founder reads everything
