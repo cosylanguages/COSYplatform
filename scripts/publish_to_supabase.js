@@ -3,7 +3,7 @@
 /**
  * publish_to_supabase.js
  *
- * LOCAL ONLY script run by the founder to read gated content from:
+ * Script run locally or in CI to read gated content from:
  * - lessons/ (XML/JSON)
  * - student-workbooks/
  * - activities/
@@ -11,14 +11,14 @@
  * - teacher-guides/
  * - reference/
  *
- * and upsert into Supabase `lesson_content` table using service_role key from .env.
+ * and upsert into Supabase `lesson_content` and `student_lesson_content` tables.
  */
 
 const fs = require('fs');
 const path = require('path');
 const { sanitizeStudentLessonContent } = require('./sanitize-student-lesson');
 
-// Basic .env parser for LOCAL ONLY execution
+// Basic .env parser for LOCAL execution
 function loadEnv() {
   const envPath = path.join(process.cwd(), '.env');
   if (fs.existsSync(envPath)) {
@@ -32,16 +32,6 @@ function loadEnv() {
       }
     });
   }
-}
-
-loadEnv();
-
-const supabaseUrl = process.env.SUPABASE_URL;
-const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
-
-if (!supabaseUrl || !SUPABASE_SERVICE_ROLE_KEY) {
-  console.error("❌ Error: SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY must be set in local .env file.");
-  process.exit(1);
 }
 
 // Folders containing gated lesson & teaching content
@@ -73,57 +63,113 @@ function getAllFiles(dirPath, arrayOfFiles = []) {
   return arrayOfFiles;
 }
 
+function getFolderLanguage(relativePath) {
+  const norm = relativePath.replace(/\\/g, '/');
+  if (!norm.startsWith('lessons/')) return null;
+  const parts = norm.split('/');
+  if (parts.length < 2) return null;
+  const folder = parts[1];
+
+  if (
+    folder === 'spoken-en' ||
+    folder === 'discussion-en' ||
+    folder === 'introductory' ||
+    folder.startsWith('english-') ||
+    folder.startsWith('general-english-')
+  ) {
+    return 'en';
+  }
+  if (
+    folder === 'spoken-fr' ||
+    folder.startsWith('french-') ||
+    folder.startsWith('general-french-')
+  ) {
+    return 'fr';
+  }
+  if (
+    folder === 'spoken-ru' ||
+    folder.startsWith('russian-') ||
+    folder.startsWith('general-russian-')
+  ) {
+    return 'ru';
+  }
+  if (folder.startsWith('general-italian-')) {
+    return 'it';
+  }
+  if (folder.startsWith('general-greek-')) {
+    return 'el';
+  }
+  return null;
+}
+
 function parseContentMetadata(filePath, fileContent) {
   const relativePath = path.relative(process.cwd(), filePath).replace(/\\/g, '/');
   const filename = path.basename(filePath, path.extname(filePath));
 
   let lessonId = filename;
   let level = 'all';
-  let language = 'en';
+  let ownLanguage = null;
 
   if (filePath.endsWith('.xml')) {
-    const idMatch = fileContent.match(/id=["']([^"']+)["']/i);
-    const levelMatch = fileContent.match(/level=["']([^"']+)["']/i);
-    const langMatch = fileContent.match(/language=["']([^"']+)["']/i);
+    // Read level and language ONLY from the root lesson element's attributes
+    const rootTagMatch = fileContent.match(/<cosy-lesson\b([^>]*)>/i) || fileContent.match(/<lesson\b([^>]*)>/i);
+    if (rootTagMatch) {
+      const attrs = rootTagMatch[1];
+      const idMatch = attrs.match(/\bid=["']([^"']+)["']/i);
+      const levelMatch = attrs.match(/\blevel=["']([^"']+)["']/i);
+      const langMatch = attrs.match(/\blanguage=["']([^"']+)["']/i);
 
-    if (idMatch && idMatch[1]) lessonId = idMatch[1];
-    if (levelMatch && levelMatch[1]) level = levelMatch[1];
-    if (langMatch && langMatch[1]) language = langMatch[1];
+      if (idMatch && idMatch[1]) lessonId = idMatch[1];
+      if (levelMatch && levelMatch[1]) level = levelMatch[1];
+      if (langMatch && langMatch[1]) ownLanguage = langMatch[1];
+    }
   } else if (filePath.endsWith('.json')) {
     try {
       const parsed = JSON.parse(fileContent);
       if (parsed.id) lessonId = parsed.id;
       if (parsed.level) level = parsed.level;
-      if (parsed.language) language = parsed.language;
+      if (parsed.language) ownLanguage = parsed.language;
     } catch (e) {
       // Non-JSON or malformed JSON fallback
     }
   }
 
-  // Infer level or language from path if missing
+  const folderLang = getFolderLanguage(relativePath);
+  const language = folderLang || ownLanguage || 'en';
+
+  const disagreement = (folderLang && ownLanguage && ownLanguage !== folderLang)
+    ? { relativePath, ownLanguage, folderLang }
+    : null;
+
+  // Infer level from path if missing or 'all'
   const normalizedPath = relativePath.toLowerCase();
   if (level === 'all') {
     const levelMatch = normalizedPath.match(/\b(a0|a1|a2|b1|b2|c1|c2)\b/);
     if (levelMatch) level = levelMatch[1].toUpperCase();
-  }
-  if (language === 'en') {
-    if (normalizedPath.includes('/fr/') || normalizedPath.includes('-fr-')) language = 'fr';
-    if (normalizedPath.includes('/ru/') || normalizedPath.includes('-ru-')) language = 'ru';
-    if (normalizedPath.includes('/es/') || normalizedPath.includes('-es-')) language = 'es';
-    if (normalizedPath.includes('/de/') || normalizedPath.includes('-de-')) language = 'de';
-    if (normalizedPath.includes('/it/') || normalizedPath.includes('-it-')) language = 'it';
-    if (normalizedPath.includes('/el/') || normalizedPath.includes('-el-')) language = 'el';
   }
 
   return {
     primaryKey: lessonId,
     relativePath,
     level,
-    language
+    language,
+    ownLanguage,
+    folderLang,
+    disagreement
   };
 }
 
 async function publishToSupabase() {
+  loadEnv();
+  const isDryRun = process.argv.includes('--dry-run');
+  const supabaseUrl = process.env.SUPABASE_URL;
+  const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+  if (!isDryRun && (!supabaseUrl || !SUPABASE_SERVICE_ROLE_KEY)) {
+    console.log("::warning:: SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY environment variable is missing. Skipping Supabase publish.");
+    process.exit(0);
+  }
+
   console.log("🚀 Gathering gated material files...");
   let allFiles = [];
   GATED_DIRECTORIES.forEach(dir => {
@@ -131,14 +177,24 @@ async function publishToSupabase() {
     allFiles = getAllFiles(fullDir, allFiles);
   });
 
-  console.log(`📦 Found ${allFiles.length} gated content files to publish.`);
+  console.log(`📦 Found ${allFiles.length} gated content files.`);
 
   const recordsToUpsert = [];
   const studentRecordsToUpsert = [];
+  const disagreements = [];
+  const countsMap = {};
 
   for (const filePath of allFiles) {
     const fileContent = fs.readFileSync(filePath, 'utf8');
     const meta = parseContentMetadata(filePath, fileContent);
+
+    if (meta.disagreement) {
+      disagreements.push(meta.disagreement);
+      console.log(`⚠️ Disagreement in ${meta.relativePath}: own language field '${meta.ownLanguage}' disagrees with folder language '${meta.folderLang}'. Using '${meta.folderLang}'.`);
+    }
+
+    const key = `${meta.language}|${meta.level}`;
+    countsMap[key] = (countsMap[key] || 0) + 1;
 
     // Upsert primary key as lesson_id
     recordsToUpsert.push({
@@ -149,7 +205,7 @@ async function publishToSupabase() {
       updated_at: new Date().toISOString()
     });
 
-    // Also upsert with relativePath as secondary key if different (so lookups by path or ID both work)
+    // Also upsert with relativePath as secondary key if different
     if (meta.relativePath !== meta.primaryKey) {
       recordsToUpsert.push({
         lesson_id: meta.relativePath,
@@ -171,42 +227,58 @@ async function publishToSupabase() {
     }
   }
 
-// Deduplicate by lesson_id — a single upsert batch can't touch the same
-// primary key twice (Postgres: "ON CONFLICT DO UPDATE command cannot
-// affect row a second time"). Last occurrence wins.
-const dedupedMap = new Map();
-for (const record of recordsToUpsert) {
-  dedupedMap.set(record.lesson_id, record);
-}
-const dedupedRecords = Array.from(dedupedMap.values());
-console.log(`🧹 Deduplicated ${recordsToUpsert.length} records down to ${dedupedRecords.length} unique lesson_id rows.`);
-
-async function upsertRecords(table, records) {
-  const endpoint = `${supabaseUrl.replace(/\/$/, '')}/rest/v1/${table}`;
-  const chunkSize = 50;
-  for (let i = 0; i < records.length; i += chunkSize) {
-    const chunk = records.slice(i, i + chunkSize);
-    const response = await fetch(endpoint, {
-      method: 'POST',
-      headers: {
-        'apikey': SUPABASE_SERVICE_ROLE_KEY,
-        'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`,
-        'Content-Type': 'application/json',
-        'Prefer': 'resolution=merge-duplicates'
-      },
-      body: JSON.stringify(chunk)
+  if (isDryRun) {
+    console.log("\n📊 --- DRY-RUN PUBLISH SUMMARY ---");
+    const tableData = Object.keys(countsMap).sort().map(k => {
+      const [language, level] = k.split('|');
+      return { language, level, count: countsMap[k] };
     });
+    console.table(tableData);
 
-    if (!response.ok) {
-      const errorText = await response.text();
-      throw new Error(`Batch upload to ${table} failed (rows ${i} to ${i + chunk.length}): ${errorText}`);
+    console.log(`\n⚠️ Total Disagreements: ${disagreements.length}`);
+    if (disagreements.length > 0) {
+      disagreements.forEach(d => {
+        console.log(`  - ${d.relativePath}: own='${d.ownLanguage}' vs folder='${d.folderLang}'`);
+      });
     }
-    console.log(`✅ ${table}: uploaded batch ${Math.floor(i / chunkSize) + 1}/${Math.ceil(records.length / chunkSize)}`);
+    console.log("🏁 Dry-run complete. No data sent to Supabase.");
+    return;
   }
-}
 
-await upsertRecords('student_lesson_content', studentRecordsToUpsert);
-await upsertRecords('lesson_content', dedupedRecords);
+  // Deduplicate by lesson_id
+  const dedupedMap = new Map();
+  for (const record of recordsToUpsert) {
+    dedupedMap.set(record.lesson_id, record);
+  }
+  const dedupedRecords = Array.from(dedupedMap.values());
+  console.log(`🧹 Deduplicated ${recordsToUpsert.length} records down to ${dedupedRecords.length} unique lesson_id rows.`);
+
+  async function upsertRecords(table, records) {
+    const endpoint = `${supabaseUrl.replace(/\/$/, '')}/rest/v1/${table}`;
+    const chunkSize = 50;
+    for (let i = 0; i < records.length; i += chunkSize) {
+      const chunk = records.slice(i, i + chunkSize);
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'apikey': SUPABASE_SERVICE_ROLE_KEY,
+          'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`,
+          'Content-Type': 'application/json',
+          'Prefer': 'resolution=merge-duplicates'
+        },
+        body: JSON.stringify(chunk)
+      });
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(`Batch upload to ${table} failed (rows ${i} to ${i + chunk.length}): ${errorText}`);
+      }
+      console.log(`✅ ${table}: uploaded batch ${Math.floor(i / chunkSize) + 1}/${Math.ceil(records.length / chunkSize)}`);
+    }
+  }
+
+  await upsertRecords('student_lesson_content', studentRecordsToUpsert);
+  await upsertRecords('lesson_content', dedupedRecords);
 
   console.log("🎉 Publishing to Supabase complete!");
 }
@@ -218,4 +290,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = { parseContentMetadata, getAllFiles };
+module.exports = { parseContentMetadata, getAllFiles, getFolderLanguage };
