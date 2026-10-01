@@ -426,6 +426,95 @@ async function runSecurityTests() {
       console.log('  ✅ PASS: Student profile blocked from creating a room (initHost did nothing).');
     }
 
+    // -------------------------------------------------------------
+    // Test (a2): Participant chat packet sender spoofing protection on host
+    // -------------------------------------------------------------
+    console.log('\n🔹 Test (a2): Participant chat packet sender spoofing protection on host...');
+    const { dom: domA2 } = createMockDom(port, 'teacher');
+    await new Promise(r => setTimeout(r, 800));
+
+    domA2.window.initHost();
+    await new Promise(r => setTimeout(r, 50));
+
+    const chatBoxA2 = domA2.window.document.getElementById('chat-messages');
+    domA2.window.handleIncomingData({ type: 'chat', sender: 'Teacher', message: 'I am teacher spoof' });
+
+    const lastMsg = chatBoxA2 ? chatBoxA2.lastElementChild : null;
+    const senderText = lastMsg ? lastMsg.querySelector('span')?.textContent : '';
+
+    if (!senderText.includes('Student')) {
+      console.error(`❌ FAIL: Expected chat sender label to be forced to 'Student', but got: "${senderText}"`);
+      failures++;
+    } else {
+      console.log('  ✅ PASS: Participant chat packet with sender "Teacher" correctly rendered as "Student" on host.');
+    }
+
+    // -------------------------------------------------------------
+    // Test (b2): Header Portal link href per role and Log Out button
+    // -------------------------------------------------------------
+    console.log('\n🔹 Test (b2): Header Portal link href per role and Log Out button...');
+    for (const testRole of ['student', 'teacher', 'founder']) {
+      const { dom: domB2 } = createMockDom(port, testRole);
+      await new Promise(r => setTimeout(r, 800));
+
+      const portalLink = domB2.window.document.getElementById('portal-link');
+      const expectedHref = `${testRole}.html`;
+      const actualHref = portalLink ? portalLink.getAttribute('href') : '';
+
+      if (actualHref !== expectedHref) {
+        console.error(`❌ FAIL: For role '${testRole}', portal link expected href='${expectedHref}', got: '${actualHref}'`);
+        failures++;
+      }
+    }
+
+    const { dom: domLogout } = createMockDom(port, 'student');
+    await new Promise(r => setTimeout(r, 800));
+
+    let signOutCalledCount = 0;
+    if (domLogout.window.CosyAuth && domLogout.window.CosyAuth.client) {
+      domLogout.window.CosyAuth.client.auth.signOut = async () => {
+        signOutCalledCount++;
+        return { error: null };
+      };
+    }
+
+    const logoutBtn = domLogout.window.document.getElementById('logout-btn');
+    if (!logoutBtn) {
+      console.error('❌ FAIL: #logout-btn not found in header.');
+      failures++;
+    } else {
+      await domLogout.window.CosyAuth.logout();
+      if (signOutCalledCount !== 1) {
+        console.error(`❌ FAIL: Expected signOut to be called 1 time, but called ${signOutCalledCount} times.`);
+        failures++;
+      } else {
+        console.log('  ✅ PASS: Header Portal link href correct for student/teacher/founder roles, and Log Out calls signOut once.');
+      }
+    }
+
+    // -------------------------------------------------------------
+    // Test (c2): vocab-index.js on-demand loading
+    // -------------------------------------------------------------
+    console.log('\n🔹 Test (c2): vocab-index.js on-demand loading...');
+    const { dom: domC2 } = createMockDom(port, 'student');
+    await new Promise(r => setTimeout(r, 800));
+
+    const headScriptsBefore = domC2.window.document.head.querySelectorAll('script[src*="vocab-index.js"]');
+    if (headScriptsBefore.length > 0) {
+      console.error('❌ FAIL: vocab-index.js was included in <head> at page load!');
+      failures++;
+    } else {
+      domC2.window.searchCosyDict('family');
+      const headScriptsAfter = domC2.window.document.head.querySelectorAll('script[src*="vocab-index.js"]');
+
+      if (headScriptsAfter.length === 0) {
+        console.error('❌ FAIL: vocab-index.js script tag was NOT injected into <head> after dictionary search!');
+        failures++;
+      } else {
+        console.log('  ✅ PASS: vocab-index.js is NOT loaded at page load, but is injected into <head> upon first dictionary search.');
+      }
+    }
+
   } finally {
     server.close();
   }

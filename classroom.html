@@ -19,9 +19,6 @@
   <script src="shared/js/config.js"></script>
   <script src="shared/js/auth-guard.js"></script>
   <script src="shared/js/ui-toast.js"></script>
-  <!-- Vocabulary Index & Irregular Verbs Data -->
-  <script src="shared/js/vocab-index.js"></script>
-  <script src="shared/js/irregular-verbs.js"></script>
   <!-- Design Tokens -->
   <link rel="stylesheet" href="shared/css/tokens.css">
 
@@ -71,13 +68,16 @@
 
   <!-- Header Navigation -->
   <header class="bg-white border-b border-cosy-100 px-4 py-2.5 flex items-center justify-between shadow-sm z-10 flex-wrap gap-2">
-    <!-- Brand / Title -->
+    <!-- Brand / Title & Portal Link -->
     <div class="flex items-center space-x-3">
-      <div class="w-9 h-9 rounded-xl bg-cosy-500 text-white flex items-center justify-center font-bold text-lg shadow-sm">
+      <a id="portal-link" href="student.html" class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 rounded-xl text-xs font-medium text-gray-600 transition">
+        ← Portal
+      </a>
+      <div class="w-9 h-9 rounded-xl bg-cosy-600 text-white flex items-center justify-center font-bold text-lg shadow-sm">
         <i class="fa-solid fa-graduation-cap"></i>
       </div>
       <div>
-        <h1 class="text-sm font-bold text-gray-900 leading-tight">Cosy Languages</h1>
+        <h1 class="text-sm font-bold text-gray-900 leading-tight">COSYlanguages</h1>
         <p class="text-[11px] text-cosy-600 font-medium">Live Interactive Classroom</p>
       </div>
     </div>
@@ -135,6 +135,10 @@
       <a href="hub.html" class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 rounded-xl text-xs font-medium text-gray-600 transition">
         ← Hub
       </a>
+
+      <button id="logout-btn" onclick="window.CosyAuth.logout()" class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 rounded-xl text-xs font-medium text-gray-600 transition flex items-center gap-1.5">
+        <i class="fa-solid fa-right-from-bracket text-[11px]"></i> Log Out
+      </button>
     </div>
   </header>
 
@@ -150,7 +154,7 @@
         <div id="jitsi-placeholder" class="text-center p-4 text-gray-400">
           <i class="fa-solid fa-video-slash text-2xl mb-1 opacity-50"></i>
           <p id="video-placeholder-text" class="text-xs">Video call inactive.</p>
-          <button id="launch-video-btn" onclick="startVideoCall()" class="mt-2 px-3 py-1.5 bg-cosy-500 text-white rounded-lg text-xs font-medium hover:bg-cosy-600 transition shadow-sm">
+          <button id="launch-video-btn" onclick="startVideoCall()" class="mt-2 px-3 py-1.5 bg-cosy-600 text-white rounded-lg text-xs font-medium hover:bg-cosy-700 transition shadow-sm">
             Launch Embedded Video Call
           </button>
         </div>
@@ -162,7 +166,7 @@
           <div class="flex items-center space-x-1">
             <input type="text" id="target-room-input" placeholder="Room ID..." class="w-28 px-2 py-0.5 text-xs rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-cosy-500">
             <button onclick="joinRoomFromInput()" class="px-2 py-0.5 bg-cosy-700 text-white text-xs font-medium rounded-lg hover:bg-cosy-800 transition">Join</button>
-            <button id="host-btn" onclick="initHost()" class="px-2 py-0.5 bg-cosy-500 text-white text-xs font-medium rounded-lg hover:bg-cosy-600 transition" title="Create Room">Host</button>
+            <button id="host-btn" onclick="initHost()" class="px-2 py-0.5 bg-cosy-600 text-white text-xs font-medium rounded-lg hover:bg-cosy-700 transition" title="Create Room">Host</button>
           </div>
         </div>
 
@@ -241,7 +245,7 @@
           </div>
           <div class="flex space-x-1">
             <input type="text" id="chat-input" placeholder="Type message..." onkeypress="handleChatKeyPress(event)" class="flex-1 px-2.5 py-1 text-xs border border-gray-200 rounded-xl focus:outline-none focus:ring-1 focus:ring-cosy-500">
-            <button onclick="sendChatMessage()" class="px-3 py-1 bg-cosy-500 text-white rounded-xl text-xs hover:bg-cosy-600 transition shadow-sm">
+            <button onclick="sendChatMessage()" class="px-3 py-1 bg-cosy-600 text-white rounded-xl text-xs hover:bg-cosy-700 transition shadow-sm">
               <i class="fa-solid fa-paper-plane"></i>
             </button>
           </div>
@@ -403,7 +407,7 @@
                   <div class="text-lg font-bold text-cosy-800">¡Hola!</div>
                   <div class="text-xs text-gray-500">Hello / Hi</div>
                 </div>
-                <button onclick="speakText('¡Hola!', 'es-ES')" class="w-10 h-10 rounded-xl bg-cosy-500 text-white flex items-center justify-center shadow-sm group-hover:scale-105 transition">
+                <button onclick="speakText('¡Hola!', 'es-ES')" class="w-10 h-10 rounded-xl bg-cosy-600 text-white flex items-center justify-center shadow-sm group-hover:scale-105 transition">
                   <i class="fa-solid fa-volume-high"></i>
                 </button>
               </div>
@@ -414,7 +418,7 @@
                   <div class="text-lg font-bold text-cosy-800">¿Cómo estás?</div>
                   <div class="text-xs text-gray-500">How are you?</div>
                 </div>
-                <button onclick="speakText('¿Cómo estás?', 'es-ES')" class="w-10 h-10 rounded-xl bg-cosy-500 text-white flex items-center justify-center shadow-sm group-hover:scale-105 transition">
+                <button onclick="speakText('¿Cómo estás?', 'es-ES')" class="w-10 h-10 rounded-xl bg-cosy-600 text-white flex items-center justify-center shadow-sm group-hover:scale-105 transition">
                   <i class="fa-solid fa-volume-high"></i>
                 </button>
               </div>
@@ -425,7 +429,7 @@
                   <div class="text-lg font-bold text-cosy-800">Buenos días</div>
                   <div class="text-xs text-gray-500">Good morning</div>
                 </div>
-                <button onclick="speakText('Buenos días', 'es-ES')" class="w-10 h-10 rounded-xl bg-cosy-500 text-white flex items-center justify-center shadow-sm group-hover:scale-105 transition">
+                <button onclick="speakText('Buenos días', 'es-ES')" class="w-10 h-10 rounded-xl bg-cosy-600 text-white flex items-center justify-center shadow-sm group-hover:scale-105 transition">
                   <i class="fa-solid fa-volume-high"></i>
                 </button>
               </div>
@@ -436,7 +440,7 @@
                   <div class="text-lg font-bold text-cosy-800">Mucho gusto</div>
                   <div class="text-xs text-gray-500">Nice to meet you</div>
                 </div>
-                <button onclick="speakText('Mucho gusto', 'es-ES')" class="w-10 h-10 rounded-xl bg-cosy-500 text-white flex items-center justify-center shadow-sm group-hover:scale-105 transition">
+                <button onclick="speakText('Mucho gusto', 'es-ES')" class="w-10 h-10 rounded-xl bg-cosy-600 text-white flex items-center justify-center shadow-sm group-hover:scale-105 transition">
                   <i class="fa-solid fa-volume-high"></i>
                 </button>
               </div>
@@ -477,7 +481,7 @@
               </div>
 
               <div class="flex justify-end space-x-3 pt-2">
-                <button onclick="checkAnswers()" class="px-5 py-2 bg-cosy-500 text-white font-medium rounded-xl hover:bg-cosy-600 transition shadow-sm text-sm">
+                <button onclick="checkAnswers()" class="px-5 py-2 bg-cosy-600 text-white font-medium rounded-xl hover:bg-cosy-700 transition shadow-sm text-sm">
                   <i class="fa-solid fa-check-double mr-1.5"></i> Check Answers
                 </button>
               </div>
@@ -798,8 +802,15 @@
     function enforceRolePermissions() {
       const teacherBtn = document.getElementById('role-teacher-btn');
       const studentBtn = document.getElementById('role-student-btn');
+      const portalLink = document.getElementById('portal-link');
 
       const role = (userProfile && userProfile.role) ? userProfile.role.toLowerCase() : 'student';
+
+      if (portalLink) {
+        if (role === 'founder') portalLink.href = 'founder.html';
+        else if (role === 'teacher') portalLink.href = 'teacher.html';
+        else portalLink.href = 'student.html';
+      }
 
       if (role === 'student') {
         // Students cannot switch to teacher view or view answer keys
@@ -1069,7 +1080,7 @@
           <div class="border border-gray-200 rounded-xl p-3 bg-gray-50/50 catalog-course-item" data-title="${safeTitle.toLowerCase()}">
             <div class="flex justify-between items-center mb-2">
               <div class="font-bold text-gray-800 text-xs">${safeTitle} <span class="text-[10px] bg-cosy-100 text-cosy-700 px-1.5 py-0.5 rounded font-mono ml-1">${safeLevel.toUpperCase()}</span></div>
-              <button onclick="loadCourseRoadmapIntoModal('${safeId}')" class="px-2 py-1 bg-cosy-500 text-white rounded text-[11px] font-semibold hover:bg-cosy-600 transition">View Lessons 📖</button>
+              <button onclick="loadCourseRoadmapIntoModal('${safeId}')" class="px-2 py-1 bg-cosy-600 text-white rounded text-[11px] font-semibold hover:bg-cosy-700 transition">View Lessons 📖</button>
             </div>
             <div id="course-sequence-${safeId}" class="hidden mt-2 pt-2 border-t border-gray-200 space-y-1"></div>
           </div>
@@ -1371,7 +1382,7 @@
                   <div class="text-base font-bold text-cosy-800">${safeWord}</div>
                   <div class="text-xs text-gray-500">${safeDef}</div>
                 </div>
-                <button onclick="speakText('${safeWord.replace(/'/g, "\\'")}', 'en-US')" class="w-8 h-8 rounded-lg bg-cosy-500 text-white flex items-center justify-center shadow-sm hover:scale-105 transition">
+                <button onclick="speakText('${safeWord.replace(/'/g, "\\'")}', 'en-US')" class="w-8 h-8 rounded-lg bg-cosy-600 text-white flex items-center justify-center shadow-sm hover:scale-105 transition">
                   <i class="fa-solid fa-volume-high text-xs"></i>
                 </button>
               </div>
@@ -1641,7 +1652,37 @@
       };
     }
 
-    function searchCosyDict(query) {
+    let vocabIndexPromise = null;
+    function loadVocabIndexOnDemand() {
+      if (window.CosyVocabIndex) return Promise.resolve();
+      if (!vocabIndexPromise) {
+        vocabIndexPromise = new Promise((resolve, reject) => {
+          const script = document.createElement('script');
+          script.src = 'shared/js/vocab-index.js';
+          script.onload = () => resolve();
+          script.onerror = () => reject(new Error('Failed to load vocab index'));
+          document.head.appendChild(script);
+        });
+      }
+      return vocabIndexPromise;
+    }
+
+    let irregularVerbsPromise = null;
+    function loadIrregularVerbsOnDemand() {
+      if (window.CosyIrregularVerbs) return Promise.resolve();
+      if (!irregularVerbsPromise) {
+        irregularVerbsPromise = new Promise((resolve, reject) => {
+          const script = document.createElement('script');
+          script.src = 'shared/js/irregular-verbs.js';
+          script.onload = () => resolve();
+          script.onerror = () => reject(new Error('Failed to load irregular verbs'));
+          document.head.appendChild(script);
+        });
+      }
+      return irregularVerbsPromise;
+    }
+
+    async function searchCosyDict(query) {
       const resultsDiv = document.getElementById('dictSearchResults');
       if (!resultsDiv) return;
 
@@ -1649,6 +1690,16 @@
       if (!q) {
         resultsDiv.innerHTML = `<p class="text-gray-400 italic text-[11px]">Type a word to search COSYdata vocabulary index...</p>`;
         return;
+      }
+
+      if (!window.CosyVocabIndex) {
+        resultsDiv.textContent = 'Loading dictionary…';
+        try {
+          await loadVocabIndexOnDemand();
+        } catch (e) {
+          resultsDiv.textContent = 'Could not load the dictionary.';
+          return;
+        }
       }
 
       const vocabIndex = window.CosyVocabIndex || {};
@@ -1674,7 +1725,7 @@
       }
 
       if (allMatches.length === 0) {
-        resultsDiv.innerHTML = `<p class="text-red-500 text-[11px]">No matching COSYdata key found for "${query}".</p>`;
+        resultsDiv.innerHTML = `<p class="text-red-500 text-[11px]">No matching COSYdata key found for "${escapeHtml(query)}".</p>`;
         return;
       }
 
@@ -1713,7 +1764,7 @@
               <div class="flex items-center space-x-1">
                 <span class="text-[10px] bg-cosy-100 text-cosy-800 px-1.5 py-0.5 rounded font-mono font-bold">${safeLevel}</span>
                 <span class="text-[10px] bg-gray-100 text-gray-700 px-1.5 py-0.5 rounded font-bold">${safePos}</span>
-                <button onclick="event.stopPropagation(); speakText('${safeWord.replace(/'/g, "\\'")}', 'en-US')" class="w-6 h-6 bg-cosy-500 text-white rounded-lg flex items-center justify-center hover:bg-cosy-600 transition" title="Listen pronunciation">
+                <button onclick="event.stopPropagation(); speakText('${safeWord.replace(/'/g, "\\'")}', 'en-US')" class="w-6 h-6 bg-cosy-600 text-white rounded-lg flex items-center justify-center hover:bg-cosy-700 transition" title="Listen pronunciation">
                   <i class="fa-solid fa-volume-high text-[10px]"></i>
                 </button>
               </div>
@@ -1745,16 +1796,27 @@
       if (el) el.classList.toggle('hidden');
     }
 
-    function searchIrregularVerbs(query) {
+    async function searchIrregularVerbs(query) {
       const resultsDiv = document.getElementById('verbSearchResults');
       if (!resultsDiv) return;
 
       const q = query.trim().toLowerCase();
+
+      if (!window.CosyIrregularVerbs) {
+        resultsDiv.textContent = 'Loading dictionary…';
+        try {
+          await loadIrregularVerbsOnDemand();
+        } catch (e) {
+          resultsDiv.textContent = 'Could not load the dictionary.';
+          return;
+        }
+      }
+
       const verbs = window.CosyIrregularVerbs || [];
       const matches = verbs.filter(v => v.v1.includes(q) || v.v2.includes(q) || v.v3.includes(q));
 
       if (matches.length === 0) {
-        resultsDiv.innerHTML = `<p class="text-red-500 text-[11px]">No irregular verb found for "${query}".</p>`;
+        resultsDiv.innerHTML = `<p class="text-red-500 text-[11px]">No irregular verb found for "${escapeHtml(query)}".</p>`;
         return;
       }
 
@@ -1991,10 +2053,13 @@
           clearWhiteboard(false);
           break;
         case 'chat':
-          addChatMessage(data.sender, data.message, data.time, data.roomScope || 'Main Room');
+          const senderName = isHost ? 'Student' : (data.sender || 'Student');
+          addChatMessage(senderName, data.message, data.time, data.roomScope || 'Main Room');
           break;
         case 'role':
-          addChatMessage('System', `Peer switched role to ${data.role}`);
+          if (data.role === 'teacher' || data.role === 'student') {
+            addChatMessage('System', `Peer switched role to ${data.role}`);
+          }
           break;
         case 'lesson-mode':
           if (data.mode) switchLessonMode(data.mode, false);
