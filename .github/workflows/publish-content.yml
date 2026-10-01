@@ -2,6 +2,13 @@ name: Publish Content to Supabase
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'lessons/**'
+      - 'scripts/publish_to_supabase.js'
+      - 'scripts/sanitize-student-lesson.js'
 
 jobs:
   publish:
