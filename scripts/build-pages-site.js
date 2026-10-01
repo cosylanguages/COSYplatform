@@ -14,7 +14,8 @@ const ALLOWED_ROOT_FILES = new Set([
   'classroom.html',
   'teacher-english.html',
   'teacher-french.html',
-  'teacher-russian.html'
+  'teacher-russian.html',
+  '404.html'
 ]);
 
 const ALLOWED_ROOT_DIRS = new Set([
