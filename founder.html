@@ -160,7 +160,7 @@
       box-sizing: border-box;
     }
 
-    .admin-table input:disabled {
+    .admin-table select:disabled, .admin-table input:disabled {
       background-color: #f1f5f9;
       color: #475569;
       cursor: not-allowed;
@@ -241,20 +241,17 @@
      * In addition to the existing founder SELECT policy in supabase/schema.sql, executing updates
      * requires a founder-only UPDATE RLS policy on the profiles table:
      *
-     * CREATE POLICY "Founders can update all profiles"
+     * CREATE POLICY "Founders can update profiles"
      *   ON profiles FOR UPDATE
-     *   USING (
-     *     EXISTS (
-     *       SELECT 1 FROM profiles
-     *       WHERE id = auth.uid() AND role = 'founder'
-     *     )
-     *   );
+     *   USING (public.is_founder())
+     *   WITH CHECK (public.is_founder());
      */
 
     async function initFounderApp() {
       const authData = await window.CosyAuth.requireRole(['founder']);
       if (!authData) return;
 
+      window.currentUserId = authData.user ? authData.user.id : null;
       const userEmail = authData.user ? authData.user.email : '';
       document.getElementById('user-info').innerText = `Founder: ${userEmail || 'Executive'}`;
 
@@ -321,7 +318,7 @@
             <strong>➕ How to Create a New User:</strong>
             <ol>
               <li>Create the user account via <strong>Supabase Dashboard → Authentication → Users → Add User</strong> (set email &amp; initial password).</li>
-              <li>Once created, return here to assign their role (founder, teacher or student), language permissions, course level access, and hosted event sessions (teachers only).</li>
+              <li>Once created, return here to assign their role (founder, teacher or student), language permissions, course level access, and hosted event sessions (teachers only). New accounts appear in this list automatically as students.</li>
             </ol>
           </div>
 
@@ -467,7 +464,7 @@
                 <tr>
                   <th>User ID</th>
                   <th>Role</th>
-                  <th>Language Access</th>
+                  <th>Language Access (* = all, empty = none)</th>
                   <th>Course Levels</th>
                   <th>Hosted Sessions</th>
                   <th>Created At</th>
@@ -478,10 +475,11 @@
         `;
 
         profiles.forEach(p => {
-          const langsStr = Array.isArray(p.language_access) ? p.language_access.join(', ') : (p.language_access || '*');
+          const langsStr = Array.isArray(p.language_access) ? p.language_access.join(', ') : (p.language_access || '');
           const sessionsStr = Array.isArray(p.hosted_sessions) ? p.hosted_sessions.join(', ') : (p.hosted_sessions || '');
           const dateStr = p.created_at ? new Date(p.created_at).toLocaleDateString() : 'N/A';
           const isTeacher = p.role === 'teacher';
+          const isSelf = Boolean(window.currentUserId && p.id === window.currentUserId);
 
           html += `
             <tr id="profile-row-${p.id}">
@@ -489,7 +487,7 @@
                 ${p.id.substring(0, 8)}...
               </td>
               <td style="width: 120px;">
-                <select id="role-${p.id}" onchange="toggleHostedSessionsField('${p.id}')">
+                <select id="role-${p.id}" ${isSelf ? 'disabled title="You cannot change your own role here"' : ''} onchange="toggleHostedSessionsField('${p.id}')">
                   <option value="student" ${p.role==='student'?'selected':''}>student</option>
                   <option value="teacher" ${p.role==='teacher'?'selected':''}>teacher</option>
                   <option value="founder" ${p.role==='founder'?'selected':''}>founder</option>
@@ -533,16 +531,17 @@
         return;
       }
 
-      const role = document.getElementById(`role-${userId}`).value;
+      const roleSelectEl = document.getElementById(`role-${userId}`);
+      const role = roleSelectEl ? roleSelectEl.value : 'student';
       const rawLangs = document.getElementById(`langs-${userId}`).value.trim();
       const course_level = document.getElementById(`levels-${userId}`).value.trim();
       const rawSessions = document.getElementById(`sessions-${userId}`).value.trim();
 
       // Parse comma-separated language_access array
       let language_access = [];
-      if (rawLangs === '*' || !rawLangs) {
+      if (rawLangs === '*') {
         language_access = ['*'];
-      } else {
+      } else if (rawLangs) {
         language_access = rawLangs.split(',').map(s => s.trim()).filter(Boolean);
       }
 
@@ -564,19 +563,20 @@
           updated_at: new Date().toISOString()
         };
 
-        const { error } = await client
+        const { data, error } = await client
           .from('profiles')
           .update(updatePayload)
-          .eq('id', userId);
+          .eq('id', userId)
+          .select('id');
 
-        if (error) {
-          if (statusEl) statusEl.innerHTML = `<span style="color: #ef4444;">Error: ${error.message}</span>`;
+        if (error || !data || data.length !== 1) {
+          if (statusEl) statusEl.innerHTML = `<span style="color: #ef4444; font-weight: 600;">Not saved. You may not have permission to change this profile.</span>`;
         } else {
           if (statusEl) statusEl.innerHTML = `<span style="color: #047857; font-weight: 600;">Saved ✔️</span>`;
           setTimeout(() => { if (statusEl) statusEl.innerHTML = ''; }, 3000);
         }
       } catch (err) {
-        if (statusEl) statusEl.innerHTML = `<span style="color: #ef4444;">${err.message}</span>`;
+        if (statusEl) statusEl.innerHTML = `<span style="color: #ef4444; font-weight: 600;">Not saved. You may not have permission to change this profile.</span>`;
       } finally {
         if (btnEl) btnEl.disabled = false;
       }
