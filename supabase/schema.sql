@@ -118,6 +118,7 @@ CREATE POLICY "Teachers and founders read entitled lesson content"
           p.course_level IS NULL
           OR p.course_level = '*'
           OR LOWER(p.course_level) = LOWER(lesson_content.level)
+          OR LOWER(lesson_content.level) IN ('all', '*')
         )
     )
   );
@@ -143,6 +144,7 @@ CREATE POLICY "Users read entitled student-safe lesson content"
           p.course_level IS NULL
           OR p.course_level = '*'
           OR LOWER(p.course_level) = LOWER(student_lesson_content.level)
+          OR LOWER(student_lesson_content.level) IN ('all', '*')
         )
     )
   );

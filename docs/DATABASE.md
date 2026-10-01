@@ -21,6 +21,10 @@ Database changes must be added as sequential migration files in [`supabase/migra
 - **`COSYplatform`**: Maintains the canonical schema migration scripts in `supabase/migrations/`.
 - **`COSYevents` & `COSYmanuals`**: Should **not** maintain separate `schema.sql` files. Instead, refer to `COSYplatform` (`supabase/migrations/`) as the authoritative source of truth for database schema definitions.
 
+## Content Publishing Policy
+
+A lesson is published only when a roadmap lists it with a lessonFile. To publish a draft, add it to a roadmap.
+
 ## Order of Execution
 
 When provisioning or applying migrations to a fresh Supabase environment, execute the migrations in numerical order:
