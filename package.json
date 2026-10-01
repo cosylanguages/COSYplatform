@@ -4,9 +4,10 @@
   "description": "COSYplatform Content Repository",
   "private": true,
   "scripts": {
-    "validate": "node scripts/check-content-integrity.js && node scripts/validate-curriculums.js && node scripts/validate-lessons.js && node scripts/sync-manifest-status.js --check && npm run check:stats && npm run check:cefr && npm run check:contrast && npm run test:founder && npm run smoke",
+    "validate": "node scripts/check-content-integrity.js && node scripts/validate-curriculums.js && node scripts/validate-lessons.js && node scripts/sync-manifest-status.js --check && npm run check:stats && npm run check:cefr && npm run check:contrast && npm run test:founder && npm run test:classroom && npm run smoke",
     "smoke": "node scripts/smoke-pages.js",
     "test:founder": "node scripts/test-founder.js",
+    "test:classroom": "node scripts/test-classroom-security.js",
     "build:stats": "node scripts/build-stats.js",
     "check:stats": "node scripts/build-stats.js --check",
     "check:cefr": "node scripts/validate-cefr.js && python3 scripts/build-cefr-json.py --check",
