@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { buildPagesSite } = require('./build-pages-site');
+const { buildPagesSite, ALLOWED_ROOT_FILES } = require('./build-pages-site');
 
 const ROOT_DIR = path.join(__dirname, '..');
 const PAGES_DIR = path.join(ROOT_DIR, '.pages-site');
@@ -15,7 +15,8 @@ const SHIPPED_HTML_FILES = [
   'classroom.html',
   'teacher-english.html',
   'teacher-french.html',
-  'teacher-russian.html'
+  'teacher-russian.html',
+  '404.html'
 ];
 
 const FORBIDDEN_NAMES = [
@@ -34,7 +35,8 @@ const FORBIDDEN_NAMES = [
   'reference',
   'test-results',
   'package.json',
-  'package-lock.json'
+  'package-lock.json',
+  'robots.txt'
 ];
 
 function getAllFiles(dirPath, arrayOfFiles = []) {
@@ -178,6 +180,67 @@ function runTestPagesBuild() {
   }
 
   console.log(`✅ Assertion (b) passed: Checked ${checkedPaths.size} referenced paths in .pages-site.`);
+
+  console.log('🧪 Asserting (c) root HTML metadata and 404.html exist in .pages-site...');
+
+  // Assert 404.html specifically exists in .pages-site
+  if (!fs.existsSync(path.join(PAGES_DIR, '404.html'))) {
+    console.error('❌ Assertion (c) failed: 404.html does not exist in .pages-site');
+    process.exit(1);
+  }
+
+  const descriptions = new Set();
+
+  for (const pageName of SHIPPED_HTML_FILES) {
+    const siteFilePath = path.join(PAGES_DIR, pageName);
+    if (!fs.existsSync(siteFilePath)) {
+      console.error(`❌ Assertion (c) failed: Shipped HTML file missing in .pages-site: ${pageName}`);
+      process.exit(1);
+    }
+
+    const content = fs.readFileSync(siteFilePath, 'utf8');
+
+    // 1. lang="en"
+    if (!/<html[^>]*lang=[\"']en[\"']/i.test(content)) {
+      console.error(`❌ Assertion (c) failed in ${pageName}: <html> tag missing lang="en"`);
+      process.exit(1);
+    }
+
+    // 2. <title> ends with " · COSYlanguages"
+    const titleMatch = content.match(/<title>([\s\S]*?)<\/title>/i);
+    if (!titleMatch || !titleMatch[1].trim().endsWith(' · COSYlanguages')) {
+      console.error(`❌ Assertion (c) failed in ${pageName}: <title> must end with ' · COSYlanguages' (found '${titleMatch ? titleMatch[1] : 'none'}')`);
+      process.exit(1);
+    }
+
+    // 3. Non-empty, unique description
+    const descMatch = content.match(/<meta\s+name=[\"']description[\"']\s+content=[\"']([^\"']+)[\"']/i);
+    if (!descMatch || !descMatch[1].trim()) {
+      console.error(`❌ Assertion (c) failed in ${pageName}: Missing or empty <meta name="description">`);
+      process.exit(1);
+    }
+    const descText = descMatch[1].trim();
+    if (descriptions.has(descText)) {
+      console.error(`❌ Assertion (c) failed in ${pageName}: Duplicate <meta name="description">: '${descText}'`);
+      process.exit(1);
+    }
+    descriptions.add(descText);
+
+    // 4. robots noindex
+    const robotsMatch = content.match(/<meta\s+name=[\"']robots[\"']\s+content=[\"']([^\"']+)[\"']/i);
+    if (!robotsMatch || !robotsMatch[1].toLowerCase().includes('noindex')) {
+      console.error(`❌ Assertion (c) failed in ${pageName}: Missing or non-noindex <meta name="robots">`);
+      process.exit(1);
+    }
+
+    // 5. favicon link present (static link or dynamic JS favicon injection in 404.html)
+    if (!/<link\s+[^>]*rel=[\"']icon[\"']/i.test(content) && !content.includes('favicon.svg')) {
+      console.error(`❌ Assertion (c) failed in ${pageName}: Missing favicon link`);
+      process.exit(1);
+    }
+  }
+
+  console.log('✅ Assertion (c) passed: All shipped root HTML pages have valid lang="en", title, unique description, noindex, and favicon link.');
   console.log('🎉 All .pages-site build tests passed!');
 }
 
