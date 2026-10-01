@@ -8,6 +8,7 @@ Welcome to the **COSYplatform Content Repository**! This repository hosts all in
 > ```bash
 > node scripts/publish_to_supabase.js
 > ```
+> A lesson is published only when a roadmap lists it with a lessonFile. To publish a draft, add it to a roadmap.
 
 ---
 
