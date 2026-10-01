@@ -1,7 +1,7 @@
-const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const { JSDOM, VirtualConsole } = require('jsdom');
+const { startStaticServer } = require('./lib/static-server');
 
 const ROOT_DIR = path.join(__dirname, '..');
 
@@ -27,42 +27,6 @@ const COMBINATIONS = [
   { role: 'founder', url: 'hub.html' },
   { role: 'founder', url: 'index.html' }
 ];
-
-function getContentType(filePath) {
-  const ext = path.extname(filePath).toLowerCase();
-  switch (ext) {
-    case '.html': return 'text/html; charset=utf-8';
-    case '.js':
-    case '.mjs': return 'application/javascript; charset=utf-8';
-    case '.css': return 'text/css; charset=utf-8';
-    case '.json': return 'application/json; charset=utf-8';
-    default: return 'text/plain';
-  }
-}
-
-function startStaticServer() {
-  const server = http.createServer((req, res) => {
-    let cleanPath = decodeURIComponent(req.url.split('?')[0]).replace(/^\//, '');
-    if (!cleanPath) cleanPath = 'index.html';
-
-    const filePath = path.join(ROOT_DIR, cleanPath);
-
-    if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
-      res.writeHead(200, { 'Content-Type': getContentType(filePath) });
-      res.end(fs.readFileSync(filePath));
-    } else {
-      res.writeHead(404, { 'Content-Type': 'text/plain' });
-      res.end('404 Not Found');
-    }
-  });
-
-  return new Promise((resolve, reject) => {
-    server.listen(0, '127.0.0.1', () => {
-      const port = server.address().port;
-      resolve({ server, port });
-    });
-  });
-}
 
 function getVisibleText(dom) {
   const doc = dom.window.document;
@@ -279,7 +243,7 @@ async function testCombination(port, { role, url }) {
 async function runSmokeSuite() {
   console.log('💨 Running COSYplatform Page Smoke Tests...\n');
 
-  const { server, port } = await startStaticServer();
+  const { server, port } = await startStaticServer(ROOT_DIR);
 
   let passedCount = 0;
   let failedCount = 0;
