@@ -42,7 +42,9 @@ const colorPairs = [
   { label: 'White Text on Amber Fix (#b45309)', fg: '#ffffff', bg: '#b45309' },
   { label: 'White Text on Live Classroom (#047857)', fg: '#ffffff', bg: '#047857' },
   { label: 'Disabled Input Text (#475569) on Disabled Input BG (#f1f5f9)', fg: '#475569', bg: '#f1f5f9' },
-  { label: 'Saved Status Text (#047857) on White (#ffffff)', fg: '#047857', bg: '#ffffff' }
+  { label: 'Saved Status Text (#047857) on White (#ffffff)', fg: '#047857', bg: '#ffffff' },
+  { label: 'White Text on #0369a1 (bg-cosy-600)', fg: '#ffffff', bg: '#0369a1' },
+  { label: 'White Text on #075985 (bg-cosy-700)', fg: '#ffffff', bg: '#075985' }
 ];
 
 if (require.main === module) {
