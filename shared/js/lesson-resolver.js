@@ -41,7 +41,10 @@
       return loadLessonContent(client, lessonPath, role);
     },
 
-    getLessonState(item) {
+    getLessonState(item, role) {
+      if (item && item.teacherLed && role === 'student') {
+        return 'teacher-led';
+      }
       if (
         item &&
         typeof item.lessonFile === 'string' &&

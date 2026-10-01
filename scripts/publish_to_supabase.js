@@ -159,10 +159,11 @@ function parseContentMetadata(filePath, fileContent) {
 
 function buildLiveSet(roadmapsDir = path.join(process.cwd(), 'roadmaps')) {
   const LIVE = new Set();
+  const teacherLedLessons = new Set();
   let roadmapParseFailed = false;
 
   if (!fs.existsSync(roadmapsDir)) {
-    return { LIVE, roadmapParseFailed: true };
+    return { LIVE, teacherLedLessons, roadmapParseFailed: true };
   }
 
   try {
@@ -175,6 +176,7 @@ function buildLiveSet(roadmapsDir = path.join(process.cwd(), 'roadmaps')) {
       const fullPath = path.join(roadmapsDir, file);
       try {
         const content = JSON.parse(fs.readFileSync(fullPath, 'utf8'));
+        const roadmapIsTeacherLed = Boolean(content.teacherLed);
 
         function traverse(obj) {
           if (!obj || typeof obj !== 'object') return;
@@ -182,6 +184,9 @@ function buildLiveSet(roadmapsDir = path.join(process.cwd(), 'roadmaps')) {
             const normPath = obj.lessonFile.replace(/\\/g, '/');
             if (fs.existsSync(path.join(process.cwd(), normPath))) {
               LIVE.add(normPath);
+              if (roadmapIsTeacherLed || obj.teacherLed === true) {
+                teacherLedLessons.add(normPath);
+              }
             }
           }
           for (const key of Object.keys(obj)) {
@@ -202,7 +207,7 @@ function buildLiveSet(roadmapsDir = path.join(process.cwd(), 'roadmaps')) {
     roadmapParseFailed = true;
   }
 
-  return { LIVE, roadmapParseFailed };
+  return { LIVE, teacherLedLessons, roadmapParseFailed };
 }
 
 async function fetchAllLessonIds(table, supabaseUrl, serviceRoleKey) {
@@ -264,7 +269,7 @@ async function publishToSupabase() {
     process.exit(0);
   }
 
-  const { LIVE, roadmapParseFailed } = buildLiveSet();
+  const { LIVE, teacherLedLessons, roadmapParseFailed } = buildLiveSet();
 
   if (isPrune) {
     if (roadmapParseFailed) {
@@ -294,6 +299,7 @@ async function publishToSupabase() {
   const draftLessonFiles = [];
   const skippedFolderBreakdown = {};
   let skippedCount = 0;
+  let teacherLedCount = 0;
 
   for (const filePath of allFiles) {
     const relativePath = path.relative(process.cwd(), filePath).replace(/\\/g, '/');
@@ -345,18 +351,23 @@ async function publishToSupabase() {
       });
     }
 
-    if (meta.relativePath.startsWith('lessons/')) {
-      studentRecordsToUpsert.push({
-        lesson_id: meta.relativePath,
-        level: meta.level,
-        language: meta.language,
-        content: sanitizeStudentLessonContent(meta.relativePath, fileContent),
-        updated_at: new Date().toISOString()
-      });
+    if (relativePath.startsWith('lessons/')) {
+      if (teacherLedLessons.has(relativePath)) {
+        teacherLedCount++;
+      } else {
+        studentRecordsToUpsert.push({
+          lesson_id: meta.relativePath,
+          level: meta.level,
+          language: meta.language,
+          content: sanitizeStudentLessonContent(meta.relativePath, fileContent),
+          updated_at: new Date().toISOString()
+        });
+      }
     }
   }
 
   console.log(`Live lessons to publish: ${LIVE.size}`);
+  console.log(`Teacher-led lessons (staff only): ${teacherLedCount}`);
   console.log(`Draft lessons skipped: ${skippedCount}`);
   console.log("Draft lessons skipped folder breakdown:");
   Object.keys(skippedFolderBreakdown).sort().forEach(folder => {
@@ -385,7 +396,7 @@ async function publishToSupabase() {
         const existingStudentIds = await fetchAllLessonIds('student_lesson_content', supabaseUrl, SUPABASE_SERVICE_ROLE_KEY);
         const existingLessonIds = await fetchAllLessonIds('lesson_content', supabaseUrl, SUPABASE_SERVICE_ROLE_KEY);
 
-        const studentToPrune = existingStudentIds.filter(id => id.startsWith('lessons/') && !LIVE.has(id));
+        const studentToPrune = existingStudentIds.filter(id => (id.startsWith('lessons/') && !LIVE.has(id)) || teacherLedLessons.has(id));
         const lessonToPrune = existingLessonIds.filter(id => {
           if (LIVE.has(id) || livePrimaryKeys.has(id)) return false;
           if (id.startsWith('lessons/')) return !LIVE.has(id);
@@ -460,7 +471,7 @@ async function publishToSupabase() {
     const existingStudentIds = await fetchAllLessonIds('student_lesson_content', supabaseUrl, SUPABASE_SERVICE_ROLE_KEY);
     const existingLessonIds = await fetchAllLessonIds('lesson_content', supabaseUrl, SUPABASE_SERVICE_ROLE_KEY);
 
-    const studentToPrune = existingStudentIds.filter(id => id.startsWith('lessons/') && !LIVE.has(id));
+    const studentToPrune = existingStudentIds.filter(id => (id.startsWith('lessons/') && !LIVE.has(id)) || teacherLedLessons.has(id));
     const lessonToPrune = existingLessonIds.filter(id => {
       if (LIVE.has(id) || livePrimaryKeys.has(id)) return false;
       if (id.startsWith('lessons/')) return !LIVE.has(id);

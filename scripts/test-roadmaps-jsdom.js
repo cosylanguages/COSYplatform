@@ -82,7 +82,7 @@ async function runRoadmapJsdomTests() {
 
     roadmapData.sequence.forEach((item, idx) => {
       const card = cards[idx];
-      const state = window.CosyLessons.getLessonState(item);
+      const state = window.CosyLessons.getLessonState(item, 'student');
 
       if (state === 'available') {
         const link = card.querySelector('a');
@@ -109,6 +109,16 @@ async function runRoadmapJsdomTests() {
         }
 
         totalAvailableLinksTested++;
+      } else if (state === 'teacher-led') {
+        const link = card.querySelector('a');
+        if (link) {
+          throw new Error(`[${file}] Teacher-led lesson #${item.lessonNumber} (${item.id}) should NOT have an <a> link, but found: ${link.outerHTML}`);
+        }
+
+        const textContent = card.textContent;
+        if (!textContent.includes('Taught live with your teacher')) {
+          throw new Error(`[${file}] Teacher-led lesson #${item.lessonNumber} (${item.id}) missing 'Taught live with your teacher' label.`);
+        }
       } else {
         const link = card.querySelector('a');
         if (link) {

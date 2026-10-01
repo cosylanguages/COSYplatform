@@ -463,8 +463,12 @@
         if (!roadmapRes || !roadmapRes.ok) throw new Error(`Roadmap for ${courseId} not found`);
         const roadmap = await roadmapRes.json();
 
+        const role = 'student';
         const totalLessons = roadmap.sequence.length;
-        const availableCount = roadmap.sequence.filter(item => window.CosyLessons.getLessonState(item) === 'available').length;
+        const availableCount = roadmap.sequence.filter(item => window.CosyLessons.getLessonState(item, role) === 'available').length;
+        const summaryText = roadmap.teacherLed
+          ? `Taught live with your teacher · ${totalLessons} lessons`
+          : `${availableCount} of ${totalLessons} lessons available`;
 
         let html = `
           <header class="hub-header">
@@ -485,13 +489,13 @@
 
             <div class="section-card" style="background: white; border: 1px solid var(--border-color); border-radius: 14px; padding: 24px;">
               <h2 style="font-size: 1.4rem; color: #0f172a; margin-bottom: 6px;">${roadmap.title} Sequence</h2>
-              <p style="color: #64748b; margin-bottom: 20px;">${availableCount} of ${totalLessons} lessons available</p>
+              <p style="color: #64748b; margin-bottom: 20px;">${summaryText}</p>
 
               <div class="unit-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px;">
         `;
 
         roadmap.sequence.forEach(item => {
-          const state = window.CosyLessons.getLessonState(item);
+          const state = window.CosyLessons.getLessonState(item, role);
           const lessonPath = window.CosyLessons.getLessonPath(item);
 
           if (state === 'available') {
@@ -506,6 +510,19 @@
                   <a href="index.html?lesson=${encodeURIComponent(lessonPath)}&course=${encodeURIComponent(courseId)}" class="btn" style="background: var(--hub-primary); color: white; padding: 6px 12px; font-size: 0.8rem; text-align: center; text-decoration: none; border-radius: 6px;">
                     Open lesson
                   </a>
+                </div>
+              </div>
+            `;
+          } else if (state === 'teacher-led') {
+            html += `
+              <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; opacity: 0.6; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                    <span style="font-size: 0.75rem; color: #64748b; font-weight: 600;">LESSON #${item.lessonNumber}</span>
+                    <span style="font-size: 0.75rem; color: #64748b; background: #e2e8f0; padding: 2px 6px; border-radius: 4px; font-weight: 600;">Taught live with your teacher</span>
+                  </div>
+                  <h3 style="margin: 6px 0; font-size: 1rem; color: #64748b;">${item.title}</h3>
+                  ${item.unit ? `<p style="font-size: 0.8rem; color: #64748b;">${item.unit}</p>` : ''}
                 </div>
               </div>
             `;

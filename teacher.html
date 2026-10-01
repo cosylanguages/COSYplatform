@@ -651,7 +651,7 @@
       appRoot.innerHTML = html;
     }
 
-    async function renderCourseRoadmap(courseId, level) {
+    async function renderCourseRoadmap(courseId, level, profile) {
       const appRoot = document.getElementById('app-root');
 
       try {
@@ -674,8 +674,12 @@
         if (!roadmapRes || !roadmapRes.ok) throw new Error(`Roadmap for ${courseId} not found`);
         const roadmap = await roadmapRes.json();
 
+        const role = (profile && profile.role) || 'teacher';
         const totalLessons = roadmap.sequence.length;
-        const availableCount = roadmap.sequence.filter(item => window.CosyLessons.getLessonState(item) === 'available').length;
+        const availableCount = roadmap.sequence.filter(item => window.CosyLessons.getLessonState(item, role) === 'available').length;
+        const summaryText = roadmap.teacherLed
+          ? `Taught live with your teacher · ${totalLessons} lessons`
+          : `${availableCount} of ${totalLessons} lessons available`;
 
         let html = `
           <div class="catalog-container">
@@ -686,13 +690,13 @@
 
             <div class="section-card">
               <h2 style="font-size: 1.4rem; color: #0f172a; margin-bottom: 6px;">${roadmap.title}</h2>
-              <p style="color: #64748b; margin-bottom: 20px;">${availableCount} of ${totalLessons} lessons available</p>
+              <p style="color: #64748b; margin-bottom: 20px;">${summaryText}</p>
 
               <div class="unit-grid">
         `;
 
         roadmap.sequence.forEach(item => {
-          const state = window.CosyLessons.getLessonState(item);
+          const state = window.CosyLessons.getLessonState(item, role);
           const lessonPath = window.CosyLessons.getLessonPath(item);
 
           if (state === 'available') {

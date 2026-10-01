@@ -1,0 +1,34 @@
+{
+  "curriculumId": "pronunciation-en-c1",
+  "title": "English Pronunciation C1",
+  "totalLessons": 3,
+  "supportedDurations": [
+    50,
+    80,
+    110
+  ],
+  "teacherLed": true,
+  "sequence": [
+    {
+      "lessonNumber": 1,
+      "id": "en-pron-c1-01-etymological-strata",
+      "title": "Etymological Strata (Greek, French, Latin, Germanic)",
+      "lessonFile": "lessons/english-pronunciation/c1/en-pron-c1-01-etymological-strata.json",
+      "teacherLed": true
+    },
+    {
+      "lessonNumber": 2,
+      "id": "en-pron-c1-02-transatlantic-differences",
+      "title": "Transatlantic Pronunciation & Stress Differences (UK vs US)",
+      "lessonFile": "lessons/english-pronunciation/c1/en-pron-c1-02-transatlantic-differences.json",
+      "teacherLed": true
+    },
+    {
+      "lessonNumber": 3,
+      "id": "en-pron-c1-03-complex-homographs",
+      "title": "Complex Homographs with Phonological Alternation",
+      "lessonFile": "lessons/english-pronunciation/c1/en-pron-c1-03-complex-homographs.json",
+      "teacherLed": true
+    }
+  ]
+}
