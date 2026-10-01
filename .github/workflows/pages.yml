@@ -28,10 +28,13 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
+      - name: Build public site without gated content
+        run: npm run build:pages
+
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
+          path: '.pages-site'
 
       - name: Deploy to GitHub Pages
         id: deployment

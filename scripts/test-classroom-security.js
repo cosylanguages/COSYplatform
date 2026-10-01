@@ -2,8 +2,74 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const { JSDOM, VirtualConsole } = require('jsdom');
+const assert = require('assert/strict');
+const { sanitizeStudentLessonContent } = require('./sanitize-student-lesson');
+const { loadLessonContent } = require('../shared/js/lesson-resolver');
 
 const ROOT_DIR = path.join(__dirname, '..');
+
+function testStudentLessonSanitizer() {
+  const json = sanitizeStudentLessonContent('lesson.json', JSON.stringify({
+    slides: [{
+      teacherNotes: [{ content: 'teacher-only' }],
+      elements: [
+        { type: 'test', options: ['visible option'], answers: ['secret answer'] },
+        { type: 'input', answerKey: 'hidden key' }
+      ]
+    }]
+  }));
+  const lesson = JSON.parse(json);
+  assert.equal(lesson.slides[0].teacherNotes, undefined);
+  assert.deepEqual(lesson.slides[0].elements[0].options, ['visible option']);
+  assert.equal(lesson.slides[0].elements[0].answers, undefined);
+  assert.equal(lesson.slides[0].elements[1].answerKey, undefined);
+
+  const xml = sanitizeStudentLessonContent('lesson.xml', `
+    <cosy-lesson>
+      <cosy-slide>
+        <cosy-teacher-notes>teacher-only</cosy-teacher-notes>
+        <cosy-input><cosy-input-answers><cosy-input-item>secret answer</cosy-input-item></cosy-input-answers></cosy-input>
+        <cosy-test><cosy-test-question><cosy-test-question-text>Question</cosy-test-question-text>
+          <cosy-test-answers><cosy-test-item correct="true">visible option</cosy-test-item></cosy-test-answers>
+        </cosy-test-question></cosy-test>
+        <cosy-select><cosy-select-item correct="true"><cosy-select-item-title>visible choice</cosy-select-item-title></cosy-select-item></cosy-select>
+      </cosy-slide>
+    </cosy-lesson>
+  `);
+  assert.doesNotMatch(xml, /teacher-only|secret answer|cosy-(input|test|select)-answers|correct=/);
+  assert.match(xml, /visible option/);
+  assert.match(xml, /visible choice/);
+}
+
+testStudentLessonSanitizer();
+
+async function testRoleSpecificLessonReader() {
+  const calls = [];
+  const client = {
+    from(table) {
+      return {
+        select(column) {
+          return {
+            eq(field, lessonPath) {
+              calls.push({ table, column, field, lessonPath });
+              return {
+                maybeSingle: async () => ({ data: { [column]: '<cosy-lesson />' }, error: null })
+              };
+            }
+          };
+        }
+      };
+    }
+  };
+
+  await loadLessonContent(client, 'lessons/general-english-a1/test.json', 'student');
+  await loadLessonContent(client, 'lessons/general-english-a1/test.json', 'teacher');
+  assert.deepEqual(calls.map(({ table, column }) => ({ table, column })), [
+    { table: 'student_lesson_content', column: 'content' },
+    { table: 'lesson_content', column: 'xml_content' }
+  ]);
+  await assert.rejects(loadLessonContent(client, '../private.json', 'student'));
+}
 
 function getContentType(filePath) {
   const ext = path.extname(filePath).toLowerCase();
@@ -529,7 +595,7 @@ async function runSecurityTests() {
   }
 }
 
-runSecurityTests().catch(err => {
+testRoleSpecificLessonReader().then(runSecurityTests).catch(err => {
   console.error('❌ Unhandled error in security tests:', err);
   process.exit(1);
 });

@@ -351,6 +351,13 @@ window.CosyAuth.isCourseAccessible = function(course, profile) {
   return levelAllowed;
 };
 
+window.CosyAuth.canAccessCourseId = function(courseId, profile) {
+  const course = (window.CosyAuth.FULL_MANIFEST || []).find(item => item.id === courseId);
+  if (!course || !profile) return false;
+  if (course.status === 'not_yet_available' && profile.role !== 'founder') return false;
+  return window.CosyAuth.isCourseAccessible(course, profile);
+};
+
 /**
  * Signs out current user session.
  */

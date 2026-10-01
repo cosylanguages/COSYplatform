@@ -522,6 +522,10 @@
       const fullManifest = window.CosyAuth ? window.CosyAuth.FULL_MANIFEST : [];
 
       if (lessonParam) {
+        if (!window.CosyAuth.canAccessCourseId(courseParam, authData.profile)) {
+          renderAccessDenied('Course unavailable', 'You do not have access to this course.');
+          return;
+        }
         renderLesson(lessonParam, authData.profile);
       } else if (courseParam) {
         renderCourseRoadmap(courseParam, levelParam, authData.profile);
@@ -998,9 +1002,7 @@
       const appRoot = document.getElementById('app-root');
 
       try {
-        const response = await fetch(lessonPath);
-        if (!response.ok) throw new Error("Unable to load lesson file");
-        const text = await response.text();
+        const text = await window.CosyLessons.loadLessonContent(lessonPath, 'teacher');
 
         let lessonTitle = "Interactive Teacher View";
         window.currentTeacherSlides = [];

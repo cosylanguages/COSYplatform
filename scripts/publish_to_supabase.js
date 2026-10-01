@@ -16,6 +16,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { sanitizeStudentLessonContent } = require('./sanitize-student-lesson');
 
 // Basic .env parser for LOCAL ONLY execution
 function loadEnv() {
@@ -133,6 +134,7 @@ async function publishToSupabase() {
   console.log(`📦 Found ${allFiles.length} gated content files to publish.`);
 
   const recordsToUpsert = [];
+  const studentRecordsToUpsert = [];
 
   for (const filePath of allFiles) {
     const fileContent = fs.readFileSync(filePath, 'utf8');
@@ -157,6 +159,16 @@ async function publishToSupabase() {
         updated_at: new Date().toISOString()
       });
     }
+
+    if (meta.relativePath.startsWith('lessons/')) {
+      studentRecordsToUpsert.push({
+        lesson_id: meta.relativePath,
+        level: meta.level,
+        language: meta.language,
+        content: sanitizeStudentLessonContent(meta.relativePath, fileContent),
+        updated_at: new Date().toISOString()
+      });
+    }
   }
 
 // Deduplicate by lesson_id — a single upsert batch can't touch the same
@@ -169,15 +181,11 @@ for (const record of recordsToUpsert) {
 const dedupedRecords = Array.from(dedupedMap.values());
 console.log(`🧹 Deduplicated ${recordsToUpsert.length} records down to ${dedupedRecords.length} unique lesson_id rows.`);
 
-console.log(`📤 Upserting ${dedupedRecords.length} records into Supabase 'lesson_content' table...`);
-
-  const endpoint = `${supabaseUrl.replace(/\/$/, '')}/rest/v1/lesson_content`;
-
-  // Batch upsert in chunks of 50
-  const CHUNK_SIZE = 50;
-for (let i = 0; i < dedupedRecords.length; i += CHUNK_SIZE) {
-  const chunk = dedupedRecords.slice(i, i + CHUNK_SIZE);
-
+async function upsertRecords(table, records) {
+  const endpoint = `${supabaseUrl.replace(/\/$/, '')}/rest/v1/${table}`;
+  const chunkSize = 50;
+  for (let i = 0; i < records.length; i += chunkSize) {
+    const chunk = records.slice(i, i + chunkSize);
     const response = await fetch(endpoint, {
       method: 'POST',
       headers: {
@@ -191,11 +199,14 @@ for (let i = 0; i < dedupedRecords.length; i += CHUNK_SIZE) {
 
     if (!response.ok) {
       const errorText = await response.text();
-      console.error(`❌ Batch upload failed (rows ${i} to ${i + chunk.length}):`, errorText);
-    } else {
-      console.log(`✅ Uploaded batch ${Math.floor(i / CHUNK_SIZE) + 1}/${Math.ceil(recordsToUpsert.length / CHUNK_SIZE)}`);
+      throw new Error(`Batch upload to ${table} failed (rows ${i} to ${i + chunk.length}): ${errorText}`);
     }
+    console.log(`✅ ${table}: uploaded batch ${Math.floor(i / chunkSize) + 1}/${Math.ceil(records.length / chunkSize)}`);
   }
+}
+
+await upsertRecords('student_lesson_content', studentRecordsToUpsert);
+await upsertRecords('lesson_content', dedupedRecords);
 
   console.log("🎉 Publishing to Supabase complete!");
 }

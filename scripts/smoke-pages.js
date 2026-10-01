@@ -2,6 +2,8 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const { JSDOM, VirtualConsole } = require('jsdom');
+const { sanitizeStudentLessonContent } = require('./sanitize-student-lesson');
+const { buildPagesSite, EXCLUDED_PATHS } = require('./build-pages-site');
 
 const ROOT_DIR = path.join(__dirname, '..');
 
@@ -136,13 +138,31 @@ async function testCombination(port, { role, url }) {
           signOut: async () => ({ error: null })
         },
         from: (table) => {
+          let selectedColumn = '';
+          let lessonPath = '';
           return {
             select: (cols) => {
+              selectedColumn = cols;
               const query = {
-                eq: (col, val) => query,
+                eq: (col, val) => {
+                  if (col === 'lesson_id') lessonPath = val;
+                  return query;
+                },
                 order: (col, opts) => query,
                 single: async () => ({ data: mockProfile, error: null }),
-                maybeSingle: async () => ({ data: mockProfile, error: null }),
+                maybeSingle: async () => {
+                  if (table === 'profiles') return { data: mockProfile, error: null };
+                  if (table === 'student_lesson_content' || table === 'lesson_content') {
+                    const contentPath = path.join(ROOT_DIR, lessonPath);
+                    if (!fs.existsSync(contentPath)) return { data: null, error: null };
+                    const source = fs.readFileSync(contentPath, 'utf8');
+                    const content = table === 'student_lesson_content'
+                      ? sanitizeStudentLessonContent(lessonPath, source)
+                      : source;
+                    return { data: { [selectedColumn]: content }, error: null };
+                  }
+                  return { data: mockProfile, error: null };
+                },
                 then: (onRes, onRej) => Promise.resolve({ data: [mockProfile], error: null }).then(onRes, onRej)
               };
               return query;
@@ -238,6 +258,10 @@ async function testCombination(port, { role, url }) {
     return { pass: false, reason: `Main content area has fewer than 40 characters of visible text (found ${visibleText.length}): "${visibleText}"` };
   }
 
+  if (parsedUrl.searchParams.has('lesson') && !visibleText.includes('Nice to meet you!')) {
+    return { pass: false, reason: `Lesson content did not render from the role-specific Supabase table: "${visibleText}"` };
+  }
+
   // Specific assertions based on requirements:
   // 1. founder.html must match numbers from data/platform-stats.json
   if (htmlFileName === 'founder.html') {
@@ -278,6 +302,16 @@ async function testCombination(port, { role, url }) {
 
 async function runSmokeSuite() {
   console.log('💨 Running COSYplatform Page Smoke Tests...\n');
+
+  const pagesSite = buildPagesSite();
+  const missingPages = ['index.html', 'student.html', 'teacher.html', 'classroom.html']
+    .filter(file => !fs.existsSync(path.join(pagesSite, file)));
+  const exposedGatedPaths = Array.from(EXCLUDED_PATHS)
+    .filter(directory => fs.existsSync(path.join(pagesSite, directory)));
+  if (missingPages.length || exposedGatedPaths.length) {
+    throw new Error(`Unsafe Pages artifact. Missing pages: ${missingPages.join(', ')}. Exposed paths: ${exposedGatedPaths.join(', ')}.`);
+  }
+  console.log('  PASS: GitHub Pages artifact contains the portals and excludes gated content.');
 
   const { server, port } = await startStaticServer();
 
