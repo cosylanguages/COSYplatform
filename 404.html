@@ -34,10 +34,12 @@
       head.appendChild(css2);
 
       const js1 = document.createElement('script');
+      js1.async = false;
       js1.src = basePath + 'shared/js/config.js';
       head.appendChild(js1);
 
       const js2 = document.createElement('script');
+      js2.async = false;
       js2.src = basePath + 'shared/js/auth-guard.js';
       head.appendChild(js2);
     })();

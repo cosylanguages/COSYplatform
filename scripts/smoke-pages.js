@@ -11,6 +11,7 @@ const COMBINATIONS = [
   // Student role
   { role: 'student', url: 'student.html' },
   { role: 'student', url: 'student.html?course=general-en-a1' },
+  { role: 'student', url: 'student.html?course=general-en-b2' },
   { role: 'student', url: 'student.html?course=pronunciation-fr-a1' },
   { role: 'student', url: 'student.html?lesson=lessons/general-english-a1/nice-to-meet-you.json&course=general-en-a1' },
 
@@ -28,6 +29,7 @@ const COMBINATIONS = [
   // Founder role
   { role: 'founder', url: 'founder.html' },
   { role: 'founder', url: 'teacher.html' },
+  { role: 'founder', url: 'teacher.html?course=pronunciation-fr-a1' },
   { role: 'founder', url: 'hub.html' },
   { role: 'founder', url: 'index.html' }
 ];
@@ -296,6 +298,43 @@ async function testCombination(port, { role, url }) {
     }
     if (role === 'teacher' && hasFounderLink) {
       return { pass: false, reason: 'teacher.html with teacher profile should NOT display Founder Portal link, but link was found.' };
+    }
+  }
+
+  // 3. student.html?course=general-en-b2: shows an "Open lesson" link for "Relaxation and Hygge" pointing to an existing file
+  if (htmlFileName === 'student.html' && parsedUrl.searchParams.get('course') === 'general-en-b2') {
+    const doc = dom.window.document;
+    const cards = Array.from(doc.querySelectorAll('.unit-card'));
+    const hyggeCard = cards.find(card => card.textContent.includes('Relaxation and Hygge'));
+    if (!hyggeCard) {
+      return { pass: false, reason: 'student.html?course=general-en-b2 missing card for Relaxation and Hygge' };
+    }
+    const link = hyggeCard.querySelector('a');
+    if (!link || !link.textContent.includes('Open lesson')) {
+      return { pass: false, reason: 'student.html?course=general-en-b2 missing Open lesson link for Relaxation and Hygge' };
+    }
+    const href = link.getAttribute('href');
+    const hrefUrl = new URL(href, `http://127.0.0.1:${port}/`);
+    const lessonParam = hrefUrl.searchParams.get('lesson');
+    if (!lessonParam) {
+      return { pass: false, reason: 'Relaxation and Hygge link missing "lesson" parameter' };
+    }
+    const targetFilePath = path.join(ROOT_DIR, lessonParam);
+    if (!fs.existsSync(targetFilePath)) {
+      return { pass: false, reason: `Relaxation and Hygge link points to non-existent file: ${lessonParam}` };
+    }
+  }
+
+  // 4. teacher-led course counter wording by role
+  if (parsedUrl.searchParams.get('course') === 'pronunciation-fr-a1') {
+    if (role === 'teacher' || role === 'founder') {
+      if (!visibleText.includes('Teacher-led course · 18 lessons')) {
+        return { pass: false, reason: `Teacher/founder role view on teacher-led roadmap should display "Teacher-led course · 18 lessons", got text: "${visibleText}"` };
+      }
+    } else if (role === 'student') {
+      if (!visibleText.includes('Taught live with your teacher · 18 lessons')) {
+        return { pass: false, reason: `Student role view on teacher-led roadmap should display "Taught live with your teacher · 18 lessons", got text: "${visibleText}"` };
+      }
     }
   }
 

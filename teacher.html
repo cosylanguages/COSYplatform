@@ -677,8 +677,9 @@
         const role = (profile && profile.role) || 'teacher';
         const totalLessons = roadmap.sequence.length;
         const availableCount = roadmap.sequence.filter(item => window.CosyLessons.getLessonState(item, role) === 'available').length;
+        const isTeacherOrFounder = role === 'teacher' || role === 'founder';
         const summaryText = roadmap.teacherLed
-          ? `Taught live with your teacher · ${totalLessons} lessons`
+          ? (isTeacherOrFounder ? `Teacher-led course · ${totalLessons} lessons` : `Taught live with your teacher · ${totalLessons} lessons`)
           : `${availableCount} of ${totalLessons} lessons available`;
 
         let html = `
