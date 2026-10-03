@@ -48,8 +48,18 @@
       js3.src = basePath + 'shared/js/i18n.js';
       head.appendChild(js3);
 
+      window.mountCosyLangSwitcher = function() {
+        if (window.CosyLangSwitcher) {
+          const container = document.getElementById('lang-switcher-container');
+          if (container && !container.querySelector('.cosy-lang-switcher-select')) {
+            window.CosyLangSwitcher.mount(container);
+          }
+        }
+      };
+
       const js4 = document.createElement('script');
       js4.async = false;
+      js4.onload = () => { if (window.mountCosyLangSwitcher) window.mountCosyLangSwitcher(); };
       js4.src = basePath + 'shared/js/lang-switcher.js';
       head.appendChild(js4);
     })();
@@ -69,14 +79,13 @@
   </div>
 
   <script>
+    if (window.mountCosyLangSwitcher) window.mountCosyLangSwitcher();
     document.addEventListener('DOMContentLoaded', () => {
       const basePath = window.COSY_BASE_PATH || '/';
       const signInBtn = document.getElementById('btn-signin');
       const workspaceBtn = document.getElementById('btn-workspace');
 
-      if (window.CosyLangSwitcher) {
-        window.CosyLangSwitcher.mount('#lang-switcher-container');
-      }
+      if (window.mountCosyLangSwitcher) window.mountCosyLangSwitcher();
 
       if (signInBtn) {
         signInBtn.href = basePath + 'login.html';
