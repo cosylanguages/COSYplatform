@@ -5,7 +5,7 @@ LANGUAGES = ["en", "fr", "it", "ru", "el"]
 MANUAL_URL = "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/to-be.html"
 
 LANG_DIR_MAP = {
-    "en": "general-en-a1",
+    "en": "general-english-a1",
     "fr": "general-french-a1",
     "it": "general-italian-a1",
     "ru": "general-russian-a1",
@@ -1066,7 +1066,7 @@ def build_slides(slug, title, cando, vocab, chunks, lang, mod_num, les_num):
 created_count = 0
 for lang in LANGUAGES:
     dir_name = LANG_DIR_MAP[lang]
-    target_dir = os.path.join("lessons", dir_name)
+    target_dir = os.path.join("drafts", "blueprints", dir_name)
     os.makedirs(target_dir, exist_ok=True)
 
     curr_json_path = os.path.join("curriculums", lang, "general", "A1.json")

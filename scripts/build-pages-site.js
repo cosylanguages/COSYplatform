@@ -32,6 +32,7 @@ const EXCLUDED_PATHS = new Set([
   '.pages-site',
   'activities',
   'docs',
+  'drafts',
   'fixtures',
   'lessons',
   'manuals',
