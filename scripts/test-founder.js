@@ -73,20 +73,38 @@ async function runFounderTests() {
       resources: 'usable',
       virtualConsole,
       beforeParse(window) {
-        // Mock local fetch for data/platform-stats.json
+        // Mock local fetch
+        const origFetch = window.fetch;
         window.fetch = async (input) => {
-          return {
-            ok: true,
-            status: 200,
-            json: async () => ({
-              languages: { total: 13, withAvailableCourse: 1, codes: ['en'] },
-              courses: { available: 11, total: 182 },
-              lessons: { available: 495, planned: 924, total: 1419 },
-              lessonFilesOnDisk: 1289,
-              unlinkedLessonFiles: 796,
-              generatedAt: '2026-10-01'
-            })
-          };
+          const reqUrl = typeof input === 'string' ? input : (input.url || '');
+          if (reqUrl.includes('data/platform-stats.json')) {
+            return {
+              ok: true,
+              status: 200,
+              json: async () => ({
+                languages: { total: 13, withAvailableCourse: 1, codes: ['en'] },
+                courses: { available: 11, total: 182 },
+                lessons: { available: 495, planned: 924, total: 1419 },
+                lessonFilesOnDisk: 1289,
+                unlinkedLessonFiles: 796,
+                generatedAt: '2026-10-01'
+              })
+            };
+          }
+          let cleanPath = reqUrl.replace(/^https?:\/\/[^\/]+\//, '').split('?')[0];
+          if (cleanPath.startsWith('/')) cleanPath = cleanPath.slice(1);
+          const localPath = path.join(ROOT_DIR, cleanPath);
+
+          if (fs.existsSync(localPath) && fs.statSync(localPath).isFile()) {
+            const data = fs.readFileSync(localPath, 'utf8');
+            return {
+              ok: true,
+              status: 200,
+              text: async () => data,
+              json: async () => JSON.parse(data)
+            };
+          }
+          return { ok: false, status: 404, text: async () => '404', json: async () => ({}) };
         };
 
         // Polyfill innerText

@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#0369a1">
-  <meta name="description" content="Manage platform users, language access permissions, and administrative settings.">
+  <meta name="description" content="Manage platform users, language access permissions, and administrative settings." data-i18n-placeholder="founder.metaDescription">
   <link rel="icon" href="shared/img/favicon.svg" type="image/svg+xml">
-  <title>Founder Portal · COSYlanguages</title>
+  <title data-i18n="founder.title">Founder Portal · COSYlanguages</title>
   <link rel="stylesheet" href="shared/css/tokens.css">
   <link rel="stylesheet" href="shared/styles/style.css">
   <style>
@@ -208,18 +208,21 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="shared/js/config.js"></script>
   <script src="shared/js/auth-guard.js"></script>
+  <script src="shared/js/i18n.js"></script>
+  <script src="shared/js/lang-switcher.js"></script>
 </head>
 <body>
 
   <header class="founder-header">
     <div class="founder-header-content">
       <div style="display: flex; align-items: center; gap: 12px;">
-        <span style="font-size: 1.4rem; font-weight: 800;">COSYlanguages</span>
-        <span class="badge-founder">Founder &amp; Executive Portal</span>
+        <span style="font-size: 1.4rem; font-weight: 800;" data-i18n-skip>COSYlanguages</span>
+        <span class="badge-founder" data-i18n="founder.badge">Founder &amp; Executive Portal</span>
       </div>
       <div style="display: flex; align-items: center; gap: 16px;">
+        <div id="header-lang-switcher"></div>
         <div id="user-info" style="font-size: 0.85rem; color: #94a3b8;"></div>
-        <button onclick="window.CosyAuth.logout()" class="btn-logout">Log Out</button>
+        <button onclick="window.CosyAuth.logout()" class="btn-logout" data-i18n="common.logout">Log Out</button>
       </div>
     </div>
   </header>
@@ -229,36 +232,33 @@
   </main>
 
   <footer class="cosy-ecosystem-strip-footer">
-    🌐 Part of the COSY ecosystem •
-    <a href="https://cosylanguages.github.io/COSYlanguages/" target="_blank" rel="noopener">COSYlanguages 🏠</a> •
-    <a href="https://cosylanguages.github.io/COSYdata/" target="_blank" rel="noopener">COSYdata 📚</a> •
-    <a href="https://cosylanguages.github.io/COSYtools/" target="_blank" rel="noopener">COSYtools 🔎</a> •
-    <a href="https://cosylanguages.github.io/COSYgames/" target="_blank" rel="noopener">COSYgames 🎮</a> •
-    <a href="https://cosylanguages.github.io/COSYevents/" target="_blank" rel="noopener">COSYevents 🎉</a>
+    <span data-i18n="footer.partOfEcosystem">🌐 Part of the COSY ecosystem •</span>
+    <a href="https://cosylanguages.github.io/COSYlanguages/" target="_blank" rel="noopener" data-i18n="footer.cosylanguages">COSYlanguages 🏠</a> •
+    <a href="https://cosylanguages.github.io/COSYdata/" target="_blank" rel="noopener" data-i18n="footer.cosydata">COSYdata 📚</a> •
+    <a href="https://cosylanguages.github.io/COSYtools/" target="_blank" rel="noopener" data-i18n="footer.cosytools">COSYtools 🔎</a> •
+    <a href="https://cosylanguages.github.io/COSYgames/" target="_blank" rel="noopener" data-i18n="footer.cosygames">COSYgames 🎮</a> •
+    <a href="https://cosylanguages.github.io/COSYevents/" target="_blank" rel="noopener" data-i18n="footer.cosyevents">COSYevents 🎉</a>
   </footer>
 
   <script>
-    /*
-     * NOTE ON ROW LEVEL SECURITY (RLS) UPDATE POLICY:
-     * This Founder Admin Panel performs UPDATE operations directly against the 'profiles' table via:
-     *   supabaseClient.from('profiles').update({...}).eq('id', rowId)
-     *
-     * In addition to the existing founder SELECT policy in supabase/schema.sql, executing updates
-     * requires a founder-only UPDATE RLS policy on the profiles table:
-     *
-     * CREATE POLICY "Founders can update profiles"
-     *   ON profiles FOR UPDATE
-     *   USING (public.is_founder())
-     *   WITH CHECK (public.is_founder());
-     */
-
     async function initFounderApp() {
+      await window.CosyI18n.ready;
+      if (window.CosyLangSwitcher) {
+        window.CosyLangSwitcher.mount('#header-lang-switcher');
+      }
+
       const authData = await window.CosyAuth.requireRole(['founder']);
       if (!authData) return;
 
+      if (authData.profile && window.CosyI18n && typeof window.CosyI18n.recompute === 'function') {
+        await window.CosyI18n.recompute(authData.profile);
+      }
+
       window.currentUserId = authData.user ? authData.user.id : null;
       const userEmail = authData.user ? authData.user.email : '';
-      document.getElementById('user-info').innerText = `Founder: ${userEmail || 'Executive'}`;
+      const emailText = userEmail || window.CosyI18n.t('common.executive');
+      const userInfoEl = document.getElementById('user-info');
+      userInfoEl.innerHTML = `<span data-i18n-skip>${window.CosyI18n.t('common.founderLabel', { email: emailText })}</span>`;
 
       await renderFounderDashboard();
       await loadUserProfiles();
@@ -277,149 +277,152 @@
         console.error("Failed to load platform stats:", err);
       }
 
-      const langBig = stats ? stats.languages.withAvailableCourse.toLocaleString() : '—';
+      const langBig = stats ? window.CosyI18n.formatNumber(stats.languages.withAvailableCourse) : '—';
       const langSub = stats
-        ? `live of ${stats.languages.total.toLocaleString()} planned (${stats.languages.codes.map(c => c.toUpperCase()).join(', ')})`
-        : 'Stats unavailable';
+        ? window.CosyI18n.t('founder.statLanguagesSub', {
+            total: window.CosyI18n.formatNumber(stats.languages.total),
+            codes: `<span data-i18n-skip>${stats.languages.codes.map(c => c.toUpperCase()).join(', ')}</span>`
+          })
+        : window.CosyI18n.t('founder.statUnavailable');
 
-      const courseBig = stats ? stats.courses.available.toLocaleString() : '—';
+      const courseBig = stats ? window.CosyI18n.formatNumber(stats.courses.available) : '—';
       const courseSub = stats
-        ? `available of ${stats.courses.total.toLocaleString()} in catalog`
-        : 'Stats unavailable';
+        ? window.CosyI18n.t('founder.statCoursesSub', { total: window.CosyI18n.formatNumber(stats.courses.total) })
+        : window.CosyI18n.t('founder.statUnavailable');
 
-      const lessonBig = stats ? stats.lessons.available.toLocaleString() : '—';
+      const lessonBig = stats ? window.CosyI18n.formatNumber(stats.lessons.available) : '—';
       const lessonSub1 = stats
-        ? `available of ${stats.lessons.total.toLocaleString()} planned`
-        : 'Stats unavailable';
+        ? window.CosyI18n.t('founder.statLessonsSub1', { total: window.CosyI18n.formatNumber(stats.lessons.total) })
+        : window.CosyI18n.t('founder.statUnavailable');
       const lessonSub2 = stats
-        ? `${stats.unlinkedLessonFiles.toLocaleString()} lesson files not yet linked to a course`
+        ? window.CosyI18n.t('founder.statLessonsSub2', { count: window.CosyI18n.formatNumber(stats.unlinkedLessonFiles) })
         : '';
 
       appRoot.innerHTML = `
         <div class="dashboard-grid">
           <div class="stat-card">
-            <h3>LANGUAGES</h3>
-            <div class="stat-number">${langBig}</div>
+            <h3 data-i18n="founder.statLanguages">${window.CosyI18n.t('founder.statLanguages')}</h3>
+            <div class="stat-number" data-i18n-skip>${langBig}</div>
             <p style="font-size: 0.85rem; color: #64748b; margin-top: 4px;">${langSub}</p>
           </div>
           <div class="stat-card">
-            <h3>COURSES</h3>
-            <div class="stat-number">${courseBig}</div>
+            <h3 data-i18n="founder.statCourses">${window.CosyI18n.t('founder.statCourses')}</h3>
+            <div class="stat-number" data-i18n-skip>${courseBig}</div>
             <p style="font-size: 0.85rem; color: #64748b; margin-top: 4px;">${courseSub}</p>
           </div>
           <div class="stat-card">
-            <h3>LESSONS</h3>
-            <div class="stat-number">${lessonBig}</div>
+            <h3 data-i18n="founder.statLessons">${window.CosyI18n.t('founder.statLessons')}</h3>
+            <div class="stat-number" data-i18n-skip>${lessonBig}</div>
             <p style="font-size: 0.85rem; color: #64748b; margin-top: 4px;">${lessonSub1}</p>
             ${lessonSub2 ? `<p style="font-size: 0.85rem; color: #64748b; margin-top: 2px;">${lessonSub2}</p>` : ''}
           </div>
         </div>
 
-        <!-- Founder User Management Admin Panel -->
         <div class="portal-section" id="user-management-section">
-          <h2>🛡️ User Access &amp; Profiles Admin</h2>
+          <h2 data-i18n="founder.userAdminTitle">${window.CosyI18n.t('founder.userAdminTitle')}</h2>
 
           <div class="instructions-card">
-            <strong>➕ How to Create a New User:</strong>
+            <strong data-i18n="founder.newUserTitle">${window.CosyI18n.t('founder.newUserTitle')}</strong>
             <ol>
-              <li>Create the user account via <strong>Supabase Dashboard → Authentication → Users → Add User</strong> (set email &amp; initial password).</li>
-              <li>Once created, return here to assign their role (founder, teacher or student), language permissions, course level access, and hosted event sessions (teachers only). New accounts appear in this list automatically as students.</li>
+              <li data-i18n="founder.newUserStep1">${window.CosyI18n.t('founder.newUserStep1')}</li>
+              <li data-i18n="founder.newUserStep2">${window.CosyI18n.t('founder.newUserStep2')}</li>
             </ol>
           </div>
 
           <div id="profiles-table-container">
-            <p style="color: #64748b; font-style: italic;">Loading user profiles from Supabase...</p>
+            <p style="color: #64748b; font-style: italic;" data-i18n="founder.loadingProfiles">${window.CosyI18n.t('founder.loadingProfiles')}</p>
           </div>
         </div>
 
         <div class="portal-section">
-          <h2>👩‍🏫 Language-Specific Teacher Spaces</h2>
-          <p style="color: #64748b; margin-bottom: 1rem;">Select any language card to enter the dedicated teacher space for that language:</p>
+          <h2 data-i18n="founder.teacherSpacesTitle">${window.CosyI18n.t('founder.teacherSpacesTitle')}</h2>
+          <p style="color: #64748b; margin-bottom: 1rem;" data-i18n="founder.teacherSpacesDesc">${window.CosyI18n.t('founder.teacherSpacesDesc')}</p>
           <div class="teacher-links-grid">
             <div class="teacher-link-card">
-              <h4>🇬🇧 English Space</h4>
-              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">General, Spoken, Grammar, Phrasal Verbs, Vocab</p>
-              <a href="teacher.html?lang=en" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open English Space 📚</a>
+              <h4 data-i18n="founder.spaceEnTitle">${window.CosyI18n.t('founder.spaceEnTitle')}</h4>
+              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;" data-i18n="founder.spaceEnDesc">${window.CosyI18n.t('founder.spaceEnDesc')}</p>
+              <a href="teacher.html?lang=en" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;" data-i18n="founder.spaceEnBtn">${window.CosyI18n.t('founder.spaceEnBtn')}</a>
             </div>
             <div class="teacher-link-card">
-              <h4>🇫🇷 French Space</h4>
-              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">General, Spoken, Professional, Travelling, Pronunciation</p>
-              <a href="teacher.html?lang=fr" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open French Space 📚</a>
+              <h4 data-i18n="founder.spaceFrTitle">${window.CosyI18n.t('founder.spaceFrTitle')}</h4>
+              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;" data-i18n="founder.spaceFrDesc">${window.CosyI18n.t('founder.spaceFrDesc')}</p>
+              <a href="teacher.html?lang=fr" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;" data-i18n="founder.spaceFrBtn">${window.CosyI18n.t('founder.spaceFrBtn')}</a>
             </div>
             <div class="teacher-link-card">
-              <h4>🇷🇺 Russian Space</h4>
-              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">General, Spoken, Professional, Travelling, Pronunciation</p>
-              <a href="teacher.html?lang=ru" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open Russian Space 📚</a>
+              <h4 data-i18n="founder.spaceRuTitle">${window.CosyI18n.t('founder.spaceRuTitle')}</h4>
+              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;" data-i18n="founder.spaceRuDesc">${window.CosyI18n.t('founder.spaceRuDesc')}</p>
+              <a href="teacher.html?lang=ru" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;" data-i18n="founder.spaceRuBtn">${window.CosyI18n.t('founder.spaceRuBtn')}</a>
             </div>
             <div class="teacher-link-card">
-              <h4>🇩🇪 German Space</h4>
-              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">General German A1 - C1 Courses</p>
-              <a href="teacher.html?lang=de" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open German Space 📚</a>
+              <h4 data-i18n="founder.spaceDeTitle">${window.CosyI18n.t('founder.spaceDeTitle')}</h4>
+              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;" data-i18n="founder.spaceDeDesc">${window.CosyI18n.t('founder.spaceDeDesc')}</p>
+              <a href="teacher.html?lang=de" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;" data-i18n="founder.spaceDeBtn">${window.CosyI18n.t('founder.spaceDeBtn')}</a>
             </div>
             <div class="teacher-link-card">
-              <h4>🇪🇸 Spanish Space</h4>
-              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">General Spanish A1 - C1 Courses</p>
-              <a href="teacher.html?lang=es" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open Spanish Space 📚</a>
+              <h4 data-i18n="founder.spaceEsTitle">${window.CosyI18n.t('founder.spaceEsTitle')}</h4>
+              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;" data-i18n="founder.spaceEsDesc">${window.CosyI18n.t('founder.spaceEsDesc')}</p>
+              <a href="teacher.html?lang=es" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;" data-i18n="founder.spaceEsBtn">${window.CosyI18n.t('founder.spaceEsBtn')}</a>
             </div>
             <div class="teacher-link-card">
-              <h4>🇵🇹 Portuguese Space</h4>
-              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">General Portuguese A1 - C1 Courses</p>
-              <a href="teacher.html?lang=pt" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open Portuguese Space 📚</a>
+              <h4 data-i18n="founder.spacePtTitle">${window.CosyI18n.t('founder.spacePtTitle')}</h4>
+              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;" data-i18n="founder.spacePtDesc">${window.CosyI18n.t('founder.spacePtDesc')}</p>
+              <a href="teacher.html?lang=pt" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;" data-i18n="founder.spacePtBtn">${window.CosyI18n.t('founder.spacePtBtn')}</a>
             </div>
             <div class="teacher-link-card">
-              <h4>🇮🇹 Italian Space</h4>
-              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">General Italian A1 - C2 Courses</p>
-              <a href="teacher.html?lang=it" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open Italian Space 📚</a>
+              <h4 data-i18n="founder.spaceItTitle">${window.CosyI18n.t('founder.spaceItTitle')}</h4>
+              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;" data-i18n="founder.spaceItDesc">${window.CosyI18n.t('founder.spaceItDesc')}</p>
+              <a href="teacher.html?lang=it" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;" data-i18n="founder.spaceItBtn">${window.CosyI18n.t('founder.spaceItBtn')}</a>
             </div>
             <div class="teacher-link-card">
-              <h4>🇬🇷 Greek Space</h4>
-              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">General &amp; Exam Greek A1 - C2 Courses</p>
-              <a href="teacher.html?lang=el" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open Greek Space 📚</a>
+              <h4 data-i18n="founder.spaceElTitle">${window.CosyI18n.t('founder.spaceElTitle')}</h4>
+              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;" data-i18n="founder.spaceElDesc">${window.CosyI18n.t('founder.spaceElDesc')}</p>
+              <a href="teacher.html?lang=el" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;" data-i18n="founder.spaceElBtn">${window.CosyI18n.t('founder.spaceElBtn')}</a>
             </div>
             <div class="teacher-link-card">
-              <h4>🇦🇲 Armenian Space</h4>
-              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">General Armenian A1 - C1 Courses</p>
-              <a href="teacher.html?lang=hy" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open Armenian Space 📚</a>
+              <h4 data-i18n="founder.spaceHyTitle">${window.CosyI18n.t('founder.spaceHyTitle')}</h4>
+              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;" data-i18n="founder.spaceHyDesc">${window.CosyI18n.t('founder.spaceHyDesc')}</p>
+              <a href="teacher.html?lang=hy" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;" data-i18n="founder.spaceHyBtn">${window.CosyI18n.t('founder.spaceHyBtn')}</a>
             </div>
             <div class="teacher-link-card">
-              <h4>🇬🇪 Georgian Space</h4>
-              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">General Georgian A1 - C1 Courses</p>
-              <a href="teacher.html?lang=ka" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open Georgian Space 📚</a>
+              <h4 data-i18n="founder.spaceKaTitle">${window.CosyI18n.t('founder.spaceKaTitle')}</h4>
+              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;" data-i18n="founder.spaceKaDesc">${window.CosyI18n.t('founder.spaceKaDesc')}</p>
+              <a href="teacher.html?lang=ka" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;" data-i18n="founder.spaceKaBtn">${window.CosyI18n.t('founder.spaceKaBtn')}</a>
             </div>
             <div class="teacher-link-card">
-              <h4>🇵🇱 Tatar Space</h4>
-              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">General Tatar A1 - C1 Courses</p>
-              <a href="teacher.html?lang=tt" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open Tatar Space 📚</a>
+              <h4 data-i18n="founder.spaceTtTitle">${window.CosyI18n.t('founder.spaceTtTitle')}</h4>
+              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;" data-i18n="founder.spaceTtDesc">${window.CosyI18n.t('founder.spaceTtDesc')}</p>
+              <a href="teacher.html?lang=tt" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;" data-i18n="founder.spaceTtBtn">${window.CosyI18n.t('founder.spaceTtBtn')}</a>
             </div>
             <div class="teacher-link-card">
-              <h4>🇷🇺 Bashkir Space</h4>
-              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">General Bashkir A1 - C1 Courses</p>
-              <a href="teacher.html?lang=ba" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open Bashkir Space 📚</a>
+              <h4 data-i18n="founder.spaceBaTitle">${window.CosyI18n.t('founder.spaceBaTitle')}</h4>
+              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;" data-i18n="founder.spaceBaDesc">${window.CosyI18n.t('founder.spaceBaDesc')}</p>
+              <a href="teacher.html?lang=ba" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;" data-i18n="founder.spaceBaBtn">${window.CosyI18n.t('founder.spaceBaBtn')}</a>
             </div>
             <div class="teacher-link-card">
-              <h4>🇫🇷 Breton Space</h4>
-              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">General Breton A1 - C1 Courses</p>
-              <a href="teacher.html?lang=br" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;">Open Breton Space 📚</a>
+              <h4 data-i18n="founder.spaceBrTitle">${window.CosyI18n.t('founder.spaceBrTitle')}</h4>
+              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;" data-i18n="founder.spaceBrDesc">${window.CosyI18n.t('founder.spaceBrDesc')}</p>
+              <a href="teacher.html?lang=br" class="btn" style="background: var(--cosy-platform-teacher, #0369a1); text-align: center;" data-i18n="founder.spaceBrBtn">${window.CosyI18n.t('founder.spaceBrBtn')}</a>
             </div>
             <div class="teacher-link-card">
-              <h4>🎓 Universal Master Teacher Portal</h4>
-              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">Unrestricted access to all languages &amp; raw catalog</p>
-              <a href="teacher.html" class="btn btn-outline" style="text-align: center;">Open Master Portal 📚</a>
+              <h4 data-i18n="founder.masterSpaceTitle">${window.CosyI18n.t('founder.masterSpaceTitle')}</h4>
+              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;" data-i18n="founder.masterSpaceDesc">${window.CosyI18n.t('founder.masterSpaceDesc')}</p>
+              <a href="teacher.html" class="btn btn-outline" style="text-align: center;" data-i18n="founder.masterSpaceBtn">${window.CosyI18n.t('founder.masterSpaceBtn')}</a>
             </div>
           </div>
         </div>
 
         <div class="portal-section">
-          <h2>🧑‍🎓 Student Workspace Access</h2>
+          <h2 data-i18n="founder.studentSectionTitle">${window.CosyI18n.t('founder.studentSectionTitle')}</h2>
           <div class="teacher-links-grid">
             <div class="teacher-link-card">
-              <h4>🧑‍🎓 Student Workspace</h4>
-              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">Preview student view with authenticated session</p>
-              <a href="student.html" class="btn btn-secondary" style="text-align: center;">View Student Workspace 📚</a>
+              <h4 data-i18n="founder.studentCardTitle">${window.CosyI18n.t('founder.studentCardTitle')}</h4>
+              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;" data-i18n="founder.studentCardDesc">${window.CosyI18n.t('founder.studentCardDesc')}</p>
+              <a href="student.html" class="btn btn-secondary" style="text-align: center;" data-i18n="founder.studentCardBtn">${window.CosyI18n.t('founder.studentCardBtn')}</a>
             </div>
           </div>
         </div>
       `;
+      window.CosyI18n.applyDom(appRoot);
     }
 
     function toggleHostedSessionsField(userId) {
@@ -442,7 +445,7 @@
 
       const client = window.CosyAuth.client;
       if (!client) {
-        container.innerHTML = `<p style="color: #ef4444;">Supabase client not initialized. Unable to load profiles.</p>`;
+        container.innerHTML = `<p style="color: #ef4444;" data-i18n="founder.clientOffline">Client offline</p>`;
         return;
       }
 
@@ -453,12 +456,12 @@
           .order('created_at', { ascending: false });
 
         if (error) {
-          container.innerHTML = `<p style="color: #ef4444;">Error fetching user profiles: ${error.message}</p>`;
+          container.innerHTML = `<p style="color: #ef4444;">${window.CosyI18n.t('founder.errFetchingProfiles', { message: `<span data-i18n-skip>${error.message}</span>` })}</p>`;
           return;
         }
 
         if (!profiles || profiles.length === 0) {
-          container.innerHTML = `<p style="color: #64748b;">No user profiles found in the system.</p>`;
+          container.innerHTML = `<p style="color: #64748b;" data-i18n="founder.noProfiles">${window.CosyI18n.t('founder.noProfiles')}</p>`;
           return;
         }
 
@@ -467,13 +470,13 @@
             <table class="admin-table">
               <thead>
                 <tr>
-                  <th>User ID</th>
-                  <th>Role</th>
-                  <th>Language Access (* = all, empty = none)</th>
-                  <th>Course Levels</th>
-                  <th>Hosted Sessions</th>
-                  <th>Created At</th>
-                  <th>Action</th>
+                  <th data-i18n="founder.thUserId">${window.CosyI18n.t('founder.thUserId')}</th>
+                  <th data-i18n="founder.thRole">${window.CosyI18n.t('founder.thRole')}</th>
+                  <th data-i18n="founder.thLangAccess">${window.CosyI18n.t('founder.thLangAccess')}</th>
+                  <th data-i18n="founder.thCourseLevels">${window.CosyI18n.t('founder.thCourseLevels')}</th>
+                  <th data-i18n="founder.thHostedSessions">${window.CosyI18n.t('founder.thHostedSessions')}</th>
+                  <th data-i18n="founder.thCreatedAt">${window.CosyI18n.t('founder.thCreatedAt')}</th>
+                  <th data-i18n="founder.thAction">${window.CosyI18n.t('founder.thAction')}</th>
                 </tr>
               </thead>
               <tbody>
@@ -482,36 +485,41 @@
         profiles.forEach(p => {
           const langsStr = Array.isArray(p.language_access) ? p.language_access.join(', ') : (p.language_access || '');
           const sessionsStr = Array.isArray(p.hosted_sessions) ? p.hosted_sessions.join(', ') : (p.hosted_sessions || '');
-          const dateStr = p.created_at ? new Date(p.created_at).toLocaleDateString() : 'N/A';
+          const dateStr = p.created_at ? window.CosyI18n.formatDate(p.created_at) : 'N/A';
           const isTeacher = p.role === 'teacher';
           const isSelf = Boolean(window.currentUserId && p.id === window.currentUserId);
 
+          const cannotChangeOwnTitle = window.CosyI18n.t('founder.cannotChangeOwnRole');
+          const phLangs = window.CosyI18n.t('founder.phLangs');
+          const phLevels = window.CosyI18n.t('founder.phLevels');
+          const phSessions = window.CosyI18n.t('founder.phSessions');
+
           html += `
             <tr id="profile-row-${p.id}">
-              <td style="font-family: monospace; font-size: 0.8rem; color: #64748b;" title="${p.id}">
+              <td style="font-family: monospace; font-size: 0.8rem; color: #64748b;" title="${p.id}" data-i18n-skip>
                 ${p.id.substring(0, 8)}...
               </td>
               <td style="width: 120px;">
-                <select id="role-${p.id}" ${isSelf ? 'disabled title="You cannot change your own role here"' : ''} onchange="toggleHostedSessionsField('${p.id}')">
+                <select id="role-${p.id}" ${isSelf ? `disabled title="${cannotChangeOwnTitle}"` : ''} onchange="toggleHostedSessionsField('${p.id}')" data-i18n-skip>
                   <option value="student" ${p.role==='student'?'selected':''}>student</option>
                   <option value="teacher" ${p.role==='teacher'?'selected':''}>teacher</option>
                   <option value="founder" ${p.role==='founder'?'selected':''}>founder</option>
                 </select>
               </td>
               <td style="width: 160px;">
-                <input type="text" id="langs-${p.id}" value="${langsStr.replace(/"/g, '&quot;')}" placeholder="e.g. en, fr or *" />
+                <input type="text" id="langs-${p.id}" value="${langsStr.replace(/"/g, '&quot;')}" placeholder="${phLangs}" data-i18n-placeholder="founder.phLangs" />
               </td>
               <td style="width: 140px;">
-                <input type="text" id="levels-${p.id}" value="${(p.course_level || '*').replace(/"/g, '&quot;')}" placeholder="e.g. a1, c1 or *" />
+                <input type="text" id="levels-${p.id}" value="${(p.course_level || '*').replace(/"/g, '&quot;')}" placeholder="${phLevels}" data-i18n-placeholder="founder.phLevels" />
               </td>
               <td style="width: 180px;">
-                <input type="text" id="sessions-${p.id}" value="${sessionsStr.replace(/"/g, '&quot;')}" placeholder="e.g. session-01, session-02" ${isTeacher ? '' : 'disabled style="display:none;"'} />
+                <input type="text" id="sessions-${p.id}" value="${sessionsStr.replace(/"/g, '&quot;')}" placeholder="${phSessions}" data-i18n-placeholder="founder.phSessions" ${isTeacher ? '' : 'disabled style="display:none;"'} />
               </td>
-              <td style="font-size: 0.8rem; color: #64748b;">
+              <td style="font-size: 0.8rem; color: #64748b;" data-i18n-skip>
                 ${dateStr}
               </td>
               <td>
-                <button onclick="saveUserProfile('${p.id}')" id="btn-save-${p.id}" class="btn-save-row">Save</button>
+                <button onclick="saveUserProfile('${p.id}')" id="btn-save-${p.id}" class="btn-save-row" data-i18n="founder.saveBtn">${window.CosyI18n.t('founder.saveBtn')}</button>
                 <span id="status-${p.id}" style="font-size: 0.8rem; margin-left: 8px;"></span>
               </td>
             </tr>
@@ -520,9 +528,10 @@
 
         html += `</tbody></table></div>`;
         container.innerHTML = html;
+        window.CosyI18n.applyDom(container);
 
       } catch (err) {
-        container.innerHTML = `<p style="color: #ef4444;">System error loading profiles: ${err.message}</p>`;
+        container.innerHTML = `<p style="color: #ef4444;">${window.CosyI18n.t('founder.errSystem', { message: `<span data-i18n-skip>${err.message}</span>` })}</p>`;
       }
     }
 
@@ -532,7 +541,7 @@
       const btnEl = document.getElementById(`btn-save-${userId}`);
 
       if (!client) {
-        if (statusEl) statusEl.innerHTML = `<span style="color: #ef4444;">Client offline</span>`;
+        if (statusEl) statusEl.innerHTML = `<span style="color: #ef4444;">${window.CosyI18n.t('founder.clientOffline')}</span>`;
         return;
       }
 
@@ -542,7 +551,6 @@
       const course_level = document.getElementById(`levels-${userId}`).value.trim();
       const rawSessions = document.getElementById(`sessions-${userId}`).value.trim();
 
-      // Parse comma-separated language_access array
       let language_access = [];
       if (rawLangs === '*') {
         language_access = ['*'];
@@ -550,14 +558,13 @@
         language_access = rawLangs.split(',').map(s => s.trim()).filter(Boolean);
       }
 
-      // Parse comma-separated hosted_sessions array when role is teacher
       let hosted_sessions = [];
       if (role === 'teacher' && rawSessions) {
         hosted_sessions = rawSessions.split(',').map(s => s.trim()).filter(Boolean);
       }
 
       if (btnEl) btnEl.disabled = true;
-      if (statusEl) statusEl.innerHTML = `<span style="color: #0369a1;">Saving...</span>`;
+      if (statusEl) statusEl.innerHTML = `<span style="color: #0369a1;">${window.CosyI18n.t('founder.savingStatus')}</span>`;
 
       try {
         const updatePayload = {
@@ -575,13 +582,13 @@
           .select('id');
 
         if (error || !data || data.length !== 1) {
-          if (statusEl) statusEl.innerHTML = `<span style="color: #ef4444; font-weight: 600;">Not saved. You may not have permission to change this profile.</span>`;
+          if (statusEl) statusEl.innerHTML = `<span style="color: #ef4444; font-weight: 600;">${window.CosyI18n.t('founder.notSavedErr')}</span>`;
         } else {
-          if (statusEl) statusEl.innerHTML = `<span style="color: #047857; font-weight: 600;">Saved ✔️</span>`;
+          if (statusEl) statusEl.innerHTML = `<span style="color: #047857; font-weight: 600;">${window.CosyI18n.t('founder.savedSuccess')}</span>`;
           setTimeout(() => { if (statusEl) statusEl.innerHTML = ''; }, 3000);
         }
       } catch (err) {
-        if (statusEl) statusEl.innerHTML = `<span style="color: #ef4444; font-weight: 600;">Not saved. You may not have permission to change this profile.</span>`;
+        if (statusEl) statusEl.innerHTML = `<span style="color: #ef4444; font-weight: 600;">${window.CosyI18n.t('founder.notSavedErr')}</span>`;
       } finally {
         if (btnEl) btnEl.disabled = false;
       }

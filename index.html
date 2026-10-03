@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#0369a1">
-  <meta name="description" content="Browse available language learning courses and curriculum roadmaps.">
+  <meta name="description" content="Browse available language learning courses and curriculum roadmaps." data-i18n-placeholder="index.metaDescription">
   <link rel="icon" href="shared/img/favicon.svg" type="image/svg+xml">
-  <title>Course Catalog · COSYlanguages</title>
+  <title data-i18n="index.title">Course Catalog · COSYlanguages</title>
   <link rel="stylesheet" href="shared/css/tokens.css">
   <link rel="stylesheet" href="shared/styles/style.css">
   <style>
@@ -187,55 +187,6 @@
       box-shadow: var(--cosy-shadow-sm);
     }
 
-    .slide-nav-bar {
-      background: white;
-      border: 1px solid var(--border-color);
-      border-radius: var(--cosy-radius-md, 14px);
-      padding: 12px 20px;
-      margin-bottom: 20px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      box-shadow: var(--cosy-shadow-sm);
-    }
-
-    .slide-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .slide-pill {
-      padding: 6px 14px;
-      border-radius: var(--cosy-radius-full, 100px);
-      border: 1px solid #cbd5e1;
-      background: #f8fafc;
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: #475569;
-      cursor: pointer;
-      transition: all 0.15s ease;
-    }
-
-    .slide-pill.active {
-      background: var(--hub-primary);
-      color: white;
-      border-color: var(--hub-primary);
-    }
-
-    .slide-nav-btn {
-      padding: 8px 16px;
-      border-radius: var(--cosy-radius-sm, 8px);
-      border: 1px solid #cbd5e1;
-      background: white;
-      font-weight: 600;
-      font-size: 0.85rem;
-      color: #0f172a;
-      cursor: pointer;
-    }
-
     .slide-card {
       background: white;
       border-radius: var(--cosy-radius-md, 14px);
@@ -283,6 +234,8 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="shared/js/config.js"></script>
   <script src="shared/js/auth-guard.js"></script>
+  <script src="shared/js/i18n.js"></script>
+  <script src="shared/js/lang-switcher.js"></script>
   <script src="shared/js/lesson-resolver.js"></script>
 
 </head>
@@ -291,12 +244,12 @@
   <div id="app-root"></div>
 
   <footer class="cosy-ecosystem-strip-footer">
-    🌐 Part of the COSY ecosystem •
-    <a href="https://cosylanguages.github.io/COSYlanguages/" target="_blank" rel="noopener">COSYlanguages 🏠</a> •
-    <a href="https://cosylanguages.github.io/COSYdata/" target="_blank" rel="noopener">COSYdata 📚</a> •
-    <a href="https://cosylanguages.github.io/COSYtools/" target="_blank" rel="noopener">COSYtools 🔎</a> •
-    <a href="https://cosylanguages.github.io/COSYgames/" target="_blank" rel="noopener">COSYgames 🎮</a> •
-    <a href="https://cosylanguages.github.io/COSYevents/" target="_blank" rel="noopener">COSYevents 🎉</a>
+    <span data-i18n="footer.partOfEcosystem">🌐 Part of the COSY ecosystem •</span>
+    <a href="https://cosylanguages.github.io/COSYlanguages/" target="_blank" rel="noopener" data-i18n="footer.cosylanguages">COSYlanguages 🏠</a> •
+    <a href="https://cosylanguages.github.io/COSYdata/" target="_blank" rel="noopener" data-i18n="footer.cosydata">COSYdata 📚</a> •
+    <a href="https://cosylanguages.github.io/COSYtools/" target="_blank" rel="noopener" data-i18n="footer.cosytools">COSYtools 🔎</a> •
+    <a href="https://cosylanguages.github.io/COSYgames/" target="_blank" rel="noopener" data-i18n="footer.cosygames">COSYgames 🎮</a> •
+    <a href="https://cosylanguages.github.io/COSYevents/" target="_blank" rel="noopener" data-i18n="footer.cosyevents">COSYevents 🎉</a>
   </footer>
 
   <script>
@@ -314,10 +267,15 @@
           try {
             const { data: profile } = await client
               .from('profiles')
-              .select('role')
+              .select('role, language_access')
               .eq('id', session.user.id)
               .maybeSingle();
-            if (profile && profile.role) role = profile.role;
+            if (profile) {
+              if (profile.role) role = profile.role;
+              if (window.CosyI18n && typeof window.CosyI18n.recompute === 'function') {
+                await window.CosyI18n.recompute(profile);
+              }
+            }
           } catch (e) {}
           return { authenticated: true, user: session.user, role };
         }
@@ -327,10 +285,10 @@
     }
 
     async function initCatalog() {
+      await window.CosyI18n.ready;
       if (lessonParam) {
         const authState = await checkAuthentication();
         if (!authState.authenticated) {
-          // Unauthenticated visitors clicking into a lesson get redirected
           const loginUrl = `https://cosylanguages.github.io/COSYlanguages/login.html?redirect=${encodeURIComponent(lessonParam)}`;
           window.location.href = loginUrl;
           return;
@@ -350,36 +308,37 @@
         <header class="hub-header">
           <div class="hub-header-content">
             <div style="display: flex; align-items: center; gap: 12px;">
-              <span style="font-size: 1.4rem; font-weight: 800;">COSYlanguages</span>
-              <span class="badge-public">Free Public Catalog 🌐</span>
+              <span style="font-size: 1.4rem; font-weight: 800;" data-i18n-skip>COSYlanguages</span>
+              <span class="badge-public" data-i18n="index.badgePublic">${window.CosyI18n.t('index.badgePublic')}</span>
             </div>
             <div style="display: flex; align-items: center; gap: 8px;">
-              <a href="classroom.html" class="btn" style="background: #047857; color: white; padding: 6px 14px; text-decoration: none; font-size: 0.85rem; border-radius: 6px; font-weight: 600;">Live Classroom 🎥</a>
-              <a href="https://cosylanguages.github.io/COSYlanguages/login.html" class="btn" style="background: var(--hub-primary); color: white; padding: 6px 14px; text-decoration: none; font-size: 0.85rem; border-radius: 6px;">Sign In 🔒</a>
+              <div id="header-lang-switcher"></div>
+              <a href="classroom.html" class="btn" style="background: #047857; color: white; padding: 6px 14px; text-decoration: none; font-size: 0.85rem; border-radius: 6px; font-weight: 600;" data-i18n="common.liveClassroom">${window.CosyI18n.t('common.liveClassroom')}</a>
+              <a href="https://cosylanguages.github.io/COSYlanguages/login.html" class="btn" style="background: var(--hub-primary); color: white; padding: 6px 14px; text-decoration: none; font-size: 0.85rem; border-radius: 6px;" data-i18n="common.signIn">${window.CosyI18n.t('common.signIn')} 🔒</a>
             </div>
           </div>
         </header>
 
         <main class="hub-container">
           <div style="margin-bottom: 24px;">
-            <h1 style="font-size: 1.6rem; color: #0f172a; margin-bottom: 6px;">Course & Curriculum Catalog 📚</h1>
-            <p style="color: #64748b;">Browse public course curriculums, unit structures, and lesson sequences across all languages.</p>
+            <h1 style="font-size: 1.6rem; color: #0f172a; margin-bottom: 6px;" data-i18n="index.heading">${window.CosyI18n.t('index.heading')}</h1>
+            <p style="color: #64748b;" data-i18n="index.subheading">${window.CosyI18n.t('index.subheading')}</p>
           </div>
 
           <div class="filter-bar">
             <div class="filter-group" style="flex: 1; min-width: 200px;">
-              <label>🔎 Search:</label>
-              <input type="text" id="searchFilter" placeholder="Filter courses..." oninput="applySearch()" style="width: 100%;" />
+              <label data-i18n="index.searchLabel">${window.CosyI18n.t('index.searchLabel')}</label>
+              <input type="text" id="searchFilter" placeholder="${window.CosyI18n.t('index.searchPlaceholder')}" data-i18n-placeholder="index.searchPlaceholder" oninput="applySearch()" style="width: 100%;" />
             </div>
             <div class="filter-group">
-              <label>Language:</label>
+              <label data-i18n="index.languageLabel">${window.CosyI18n.t('index.languageLabel')}</label>
               <select id="langFilter" onchange="filterCatalog()">
-                <option value="all">All Languages</option>
-                <option value="en">🇬🇧 English</option>
-                <option value="fr">🇫🇷 French</option>
-                <option value="ru">🇷🇺 Russian</option>
-                <option value="es">🇪🇸 Spanish</option>
-                <option value="el">🇬🇷 Greek</option>
+                <option value="all" data-i18n="index.allLanguages">${window.CosyI18n.t('index.allLanguages')}</option>
+                <option value="en" data-i18n="index.langEn">${window.CosyI18n.t('index.langEn')}</option>
+                <option value="fr" data-i18n="index.langFr">${window.CosyI18n.t('index.langFr')}</option>
+                <option value="ru" data-i18n="index.langRu">${window.CosyI18n.t('index.langRu')}</option>
+                <option value="es" data-i18n="index.langEs">${window.CosyI18n.t('index.langEs')}</option>
+                <option value="el" data-i18n="index.langEl">${window.CosyI18n.t('index.langEl')}</option>
               </select>
             </div>
           </div>
@@ -399,10 +358,13 @@
         const availableCount = courses.filter(c => c.status !== 'not_yet_available').length;
         const comingSoonCount = courses.filter(c => c.status === 'not_yet_available').length;
 
+        const trackHeadingText = window.CosyI18n.t('index.trackTitle', { track: trackName, count: availableCount }) +
+          (comingSoonCount > 0 ? `<span style="font-size: 0.8em; font-weight: normal; color: #64748b;" data-i18n-skip>${window.CosyI18n.t('index.trackTitlePlus', { count: comingSoonCount })}</span>` : '');
+
         html += `
           <div class="category-card" data-track="${trackName}">
             <div class="category-header">
-              <h3>${trackName} Track (${availableCount})${comingSoonCount > 0 ? ` <span style="font-size: 0.8em; font-weight: normal; color: #64748b;">+ ${comingSoonCount} coming soon</span>` : ''}</h3>
+              <h3>${trackHeadingText}</h3>
             </div>
             <div class="category-body">
         `;
@@ -413,11 +375,11 @@
             html += `
               <div class="course-item-card" data-lang="${c.lang}" data-title="${c.title.toLowerCase()}">
                 <div>
-                  <span class="course-item-level">${c.level.toUpperCase()}</span>
-                  <span class="course-item-title" style="margin-left: 8px;">${c.title}</span>
+                  <span class="course-item-level" data-i18n-skip>${c.level.toUpperCase()}</span>
+                  <span class="course-item-title" style="margin-left: 8px;" data-i18n-skip>${c.title}</span>
                 </div>
-                <a href="index.html?course=${c.id}&level=${c.level.toLowerCase()}" class="btn" style="background: var(--hub-primary); color: white; padding: 6px 12px; font-size: 0.8rem; text-decoration: none; border-radius: 6px;">
-                  View Roadmap 📖
+                <a href="index.html?course=${c.id}&level=${c.level.toLowerCase()}" class="btn" style="background: var(--hub-primary); color: white; padding: 6px 12px; font-size: 0.8rem; text-decoration: none; border-radius: 6px;" data-i18n="common.viewRoadmap">
+                  ${window.CosyI18n.t('common.viewRoadmap')}
                 </a>
               </div>
             `;
@@ -425,10 +387,10 @@
             html += `
               <div class="course-item-card disabled" data-lang="${c.lang}" data-title="${c.title.toLowerCase()}" style="opacity: 0.6;">
                 <div>
-                  <span class="course-item-level">${c.level.toUpperCase()}</span>
-                  <span class="course-item-title" style="margin-left: 8px;">${c.title}</span>
+                  <span class="course-item-level" data-i18n-skip>${c.level.toUpperCase()}</span>
+                  <span class="course-item-title" style="margin-left: 8px;" data-i18n-skip>${c.title}</span>
                 </div>
-                <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">Coming soon</span>
+                <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;" data-i18n="common.comingSoon">${window.CosyI18n.t('common.comingSoon')}</span>
               </div>
             `;
           }
@@ -439,6 +401,11 @@
 
       html += `</div></main>`;
       document.getElementById('app-root').innerHTML = html;
+
+      if (window.CosyLangSwitcher) {
+        window.CosyLangSwitcher.mount('#header-lang-switcher');
+      }
+      window.CosyI18n.applyDom(document);
     }
 
     async function renderPublicRoadmap(courseId, level) {
@@ -461,35 +428,38 @@
           } catch (e) {}
         }
 
-        if (!roadmapRes || !roadmapRes.ok) throw new Error(`Roadmap for ${courseId} not found`);
+        if (!roadmapRes || !roadmapRes.ok) throw new Error(window.CosyI18n.t('index.roadmapErr', { id: courseId }));
         const roadmap = await roadmapRes.json();
 
         const role = 'student';
         const totalLessons = roadmap.sequence.length;
         const availableCount = roadmap.sequence.filter(item => window.CosyLessons.getLessonState(item, role) === 'available').length;
         const summaryText = roadmap.teacherLed
-          ? `Taught live with your teacher · ${totalLessons} lessons`
-          : `${availableCount} of ${totalLessons} lessons available`;
+          ? window.CosyI18n.tp('common.taughtLiveSummary', totalLessons)
+          : window.CosyI18n.tp('common.lessonsAvailable', availableCount, { total: totalLessons });
 
         let html = `
           <header class="hub-header">
             <div class="hub-header-content">
               <div style="display: flex; align-items: center; gap: 12px;">
-                <span style="font-size: 1.4rem; font-weight: 800;">COSYlanguages</span>
-                <span class="badge-public">${roadmap.title}</span>
+                <span style="font-size: 1.4rem; font-weight: 800;" data-i18n-skip>COSYlanguages</span>
+                <span class="badge-public" data-i18n-skip>${roadmap.title}</span>
               </div>
-              <a href="index.html" style="color: #64748b; text-decoration: none; font-size: 0.9rem;">← Catalog</a>
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <div id="header-lang-switcher"></div>
+                <a href="index.html" style="color: #64748b; text-decoration: none; font-size: 0.9rem;" data-i18n="common.backToCatalog">${window.CosyI18n.t('common.backToCatalog')}</a>
+              </div>
             </div>
           </header>
 
           <main class="hub-container">
             <div class="controls-bar">
-              <a href="index.html" style="color: #64748b; font-weight: 500; text-decoration: none;">← Back to Full Catalog</a>
-              <span style="font-weight: 600; color: #0f172a;">${roadmap.title}</span>
+              <a href="index.html" style="color: #64748b; font-weight: 500; text-decoration: none;" data-i18n="common.backToFullCatalog">${window.CosyI18n.t('common.backToFullCatalog')}</a>
+              <span style="font-weight: 600; color: #0f172a;" data-i18n-skip>${roadmap.title}</span>
             </div>
 
             <div class="section-card" style="background: white; border: 1px solid var(--border-color); border-radius: 14px; padding: 24px;">
-              <h2 style="font-size: 1.4rem; color: #0f172a; margin-bottom: 6px;">${roadmap.title} Sequence</h2>
+              <h2 style="font-size: 1.4rem; color: #0f172a; margin-bottom: 6px;">${window.CosyI18n.t('index.sequenceTitle', { title: `<span data-i18n-skip>${roadmap.title}</span>` })}</h2>
               <p style="color: #64748b; margin-bottom: 20px;">${summaryText}</p>
 
               <div class="unit-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px;">
@@ -503,13 +473,13 @@
             html += `
               <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
-                  <span style="font-size: 0.75rem; color: #64748b; font-weight: 600;">LESSON #${item.lessonNumber}</span>
-                  <h3 style="margin: 6px 0; font-size: 1rem; color: #0f172a;">${item.title}</h3>
-                  ${item.unit ? `<p style="font-size: 0.8rem; color: #64748b;">${item.unit}</p>` : ''}
+                  <span style="font-size: 0.75rem; color: #64748b; font-weight: 600;">${window.CosyI18n.t('common.lessonNumber', { number: item.lessonNumber })}</span>
+                  <h3 style="margin: 6px 0; font-size: 1rem; color: #0f172a;" data-i18n-skip>${item.title}</h3>
+                  ${item.unit ? `<p style="font-size: 0.8rem; color: #64748b;" data-i18n-skip>${item.unit}</p>` : ''}
                 </div>
                 <div style="display: flex; gap: 6px; flex-direction: column; margin-top: 12px;">
-                  <a href="index.html?lesson=${encodeURIComponent(lessonPath)}&course=${encodeURIComponent(courseId)}" class="btn" style="background: var(--hub-primary); color: white; padding: 6px 12px; font-size: 0.8rem; text-align: center; text-decoration: none; border-radius: 6px;">
-                    Open lesson
+                  <a href="index.html?lesson=${encodeURIComponent(lessonPath)}&course=${encodeURIComponent(courseId)}" class="btn" style="background: var(--hub-primary); color: white; padding: 6px 12px; font-size: 0.8rem; text-align: center; text-decoration: none; border-radius: 6px;" data-i18n="common.openLesson">
+                    ${window.CosyI18n.t('common.openLesson')}
                   </a>
                 </div>
               </div>
@@ -519,11 +489,11 @@
               <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; opacity: 0.6; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
                   <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-                    <span style="font-size: 0.75rem; color: #64748b; font-weight: 600;">LESSON #${item.lessonNumber}</span>
-                    <span style="font-size: 0.75rem; color: #64748b; background: #e2e8f0; padding: 2px 6px; border-radius: 4px; font-weight: 600;">Taught live with your teacher</span>
+                    <span style="font-size: 0.75rem; color: #64748b; font-weight: 600;">${window.CosyI18n.t('common.lessonNumber', { number: item.lessonNumber })}</span>
+                    <span style="font-size: 0.75rem; color: #64748b; background: #e2e8f0; padding: 2px 6px; border-radius: 4px; font-weight: 600;" data-i18n="common.taughtWithTeacher">${window.CosyI18n.t('common.taughtWithTeacher')}</span>
                   </div>
-                  <h3 style="margin: 6px 0; font-size: 1rem; color: #64748b;">${item.title}</h3>
-                  ${item.unit ? `<p style="font-size: 0.8rem; color: #64748b;">${item.unit}</p>` : ''}
+                  <h3 style="margin: 6px 0; font-size: 1rem; color: #64748b;" data-i18n-skip>${item.title}</h3>
+                  ${item.unit ? `<p style="font-size: 0.8rem; color: #64748b;" data-i18n-skip>${item.unit}</p>` : ''}
                 </div>
               </div>
             `;
@@ -532,11 +502,11 @@
               <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; opacity: 0.6; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
                   <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-                    <span style="font-size: 0.75rem; color: #64748b; font-weight: 600;">LESSON #${item.lessonNumber}</span>
-                    <span style="font-size: 0.75rem; color: #64748b; background: #e2e8f0; padding: 2px 6px; border-radius: 4px; font-weight: 600;">Planned</span>
+                    <span style="font-size: 0.75rem; color: #64748b; font-weight: 600;">${window.CosyI18n.t('common.lessonNumber', { number: item.lessonNumber })}</span>
+                    <span style="font-size: 0.75rem; color: #64748b; background: #e2e8f0; padding: 2px 6px; border-radius: 4px; font-weight: 600;" data-i18n="common.planned">${window.CosyI18n.t('common.planned')}</span>
                   </div>
-                  <h3 style="margin: 6px 0; font-size: 1rem; color: #64748b;">${item.title}</h3>
-                  ${item.unit ? `<p style="font-size: 0.8rem; color: #64748b;">${item.unit}</p>` : ''}
+                  <h3 style="margin: 6px 0; font-size: 1rem; color: #64748b;" data-i18n-skip>${item.title}</h3>
+                  ${item.unit ? `<p style="font-size: 0.8rem; color: #64748b;" data-i18n-skip>${item.unit}</p>` : ''}
                 </div>
               </div>
             `;
@@ -546,14 +516,20 @@
         html += `</div></div></main>`;
         document.getElementById('app-root').innerHTML = html;
 
+        if (window.CosyLangSwitcher) {
+          window.CosyLangSwitcher.mount('#header-lang-switcher');
+        }
+        window.CosyI18n.applyDom(document);
+
       } catch (err) {
         document.getElementById('app-root').innerHTML = `
           <div class="hub-container">
-            <h2>Course Roadmap</h2>
-            <p style="color: #ef4444;">${err.message}</p>
-            <a href="index.html" class="btn">← Back to Catalog</a>
+            <h2 data-i18n="index.roadmapTitle">${window.CosyI18n.t('index.roadmapTitle')}</h2>
+            <p style="color: #ef4444;" data-i18n-skip>${err.message}</p>
+            <a href="index.html" class="btn" data-i18n="common.backToCatalog">${window.CosyI18n.t('common.backToCatalog')}</a>
           </div>
         `;
+        window.CosyI18n.applyDom(document);
       }
     }
 
@@ -569,7 +545,6 @@
         if (!error && data) return data.xml_content;
       }
 
-      // Fallback REST fetch if client not initialized
       const config = window.COSY_CONFIG || {};
       const url = config.SUPABASE_URL || "";
       const key = config.SUPABASE_ANON_KEY || "";
@@ -597,27 +572,32 @@
       const xmlContent = await fetchLessonContentFromSupabase(lessonId);
 
       if (!xmlContent) {
-        // Requirement 6: Render "Not Yet Published" state
         document.getElementById('app-root').innerHTML = `
           <header class="hub-header">
             <div class="hub-header-content">
-              <span style="font-size: 1.4rem; font-weight: 800;">COSYlanguages</span>
-              <a href="index.html" style="color: #64748b; text-decoration: none;">← Catalog</a>
+              <span style="font-size: 1.4rem; font-weight: 800;" data-i18n-skip>COSYlanguages</span>
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <div id="header-lang-switcher"></div>
+                <a href="index.html" style="color: #64748b; text-decoration: none;" data-i18n="common.backToCatalog">${window.CosyI18n.t('common.backToCatalog')}</a>
+              </div>
             </div>
           </header>
           <main class="hub-container">
             <div class="not-published-card">
-              <h2>🚧 Not Yet Published</h2>
-              <p>The lesson <strong>"${lessonId}"</strong> is currently in pre-publish draft status and has not been published to Supabase yet.</p>
-              <p style="font-size: 0.85rem; color: #a16207;">Final lesson content must be published via the founder local script (<code>publish_to_supabase.js</code>).</p>
-              <a href="index.html" class="btn" style="background: #b45309; color: white; padding: 8px 16px; text-decoration: none; border-radius: 6px; font-weight: 600; display: inline-block;">← Return to Catalog</a>
+              <h2 data-i18n="index.notPublishedHeading">${window.CosyI18n.t('index.notPublishedHeading')}</h2>
+              <p>${window.CosyI18n.t('index.notPublishedMessage', { id: `<strong data-i18n-skip>"${lessonId}"</strong>` })}</p>
+              <p style="font-size: 0.85rem; color: #a16207;" data-i18n="index.notPublishedDetail">${window.CosyI18n.t('index.notPublishedDetail')}</p>
+              <a href="index.html" class="btn" style="background: #b45309; color: white; padding: 8px 16px; text-decoration: none; border-radius: 6px; font-weight: 600; display: inline-block;" data-i18n="index.notPublishedReturn">${window.CosyI18n.t('index.notPublishedReturn')}</a>
             </div>
           </main>
         `;
+        if (window.CosyLangSwitcher) {
+          window.CosyLangSwitcher.mount('#header-lang-switcher');
+        }
+        window.CosyI18n.applyDom(document);
         return;
       }
 
-      // Render live lesson body using XML dual-view logic
       const parser = new DOMParser();
       const xmlDoc = parser.parseFromString(xmlContent, "text/xml");
       const cosyLesson = xmlDoc.querySelector("cosy-lesson");
@@ -630,17 +610,20 @@
         <header class="hub-header">
           <div class="hub-header-content">
             <div style="display: flex; align-items: center; gap: 12px;">
-              <span style="font-size: 1.4rem; font-weight: 800;">COSYlanguages</span>
-              <span class="badge-public">${lessonTitle}</span>
+              <span style="font-size: 1.4rem; font-weight: 800;" data-i18n-skip>COSYlanguages</span>
+              <span class="badge-public" data-i18n-skip>${lessonTitle}</span>
             </div>
-            <a href="index.html" style="color: #cbd5e1; text-decoration: none;">← Catalog</a>
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <div id="header-lang-switcher"></div>
+              <a href="index.html" style="color: #cbd5e1; text-decoration: none;" data-i18n="common.backToCatalog">${window.CosyI18n.t('common.backToCatalog')}</a>
+            </div>
           </div>
         </header>
 
         <main class="hub-container">
           <div class="controls-bar">
-            <a href="index.html" style="color: #64748b; text-decoration: none;">← Catalog</a>
-            <span style="font-size: 0.85rem; color: #047857; font-weight: 600;">🔒 Live Supabase Content Stream</span>
+            <a href="index.html" style="color: #64748b; text-decoration: none;" data-i18n="common.backToCatalog">${window.CosyI18n.t('common.backToCatalog')}</a>
+            <span style="font-size: 0.85rem; color: #047857; font-weight: 600;" data-i18n="index.liveSupabaseStream">${window.CosyI18n.t('index.liveSupabaseStream')}</span>
           </div>
       `;
 
@@ -651,16 +634,21 @@
         html += `
           <div class="slide-card">
             <div style="font-weight: 700; font-size: 1.2rem; color: #0f172a; margin-bottom: 16px; display: flex; justify-content: space-between;">
-              <span>Slide ${idx + 1}: ${slideTitle}</span>
-              ${stage ? `<span style="font-size: 0.75rem; background: #f1f5f9; color: #475569; padding: 4px 10px; border-radius: 6px; text-transform: uppercase;">${stage}</span>` : ''}
+              <span data-i18n-skip>${window.CosyI18n.t('index.slideTitle', { number: idx + 1, title: slideTitle })}</span>
+              ${stage ? `<span style="font-size: 0.75rem; background: #f1f5f9; color: #475569; padding: 4px 10px; border-radius: 6px; text-transform: uppercase;" data-i18n-skip>${stage}</span>` : ''}
             </div>
-            <div>${isTeacher ? renderXmlNodeToTeacher(s) : renderXmlNodeToStudent(s)}</div>
+            <div data-i18n-skip>${isTeacher ? renderXmlNodeToTeacher(s) : renderXmlNodeToStudent(s)}</div>
           </div>
         `;
       });
 
       html += `</main>`;
       document.getElementById('app-root').innerHTML = html;
+
+      if (window.CosyLangSwitcher) {
+        window.CosyLangSwitcher.mount('#header-lang-switcher');
+      }
+      window.CosyI18n.applyDom(document);
     }
 
     function renderXmlNodeToTeacher(node) {
@@ -673,7 +661,7 @@
         const tagName = child.tagName ? child.tagName.toLowerCase() : "";
         if (tagName === "cosy-teacher-notes") {
           const type = child.getAttribute("type") || "instruction";
-          const title = type === "speech" ? "💬 Suggested Speech Script" : "💡 Stage Aim";
+          const title = type === "speech" ? window.CosyI18n.t('index.suggestedSpeech') : window.CosyI18n.t('index.stageAim');
           const cls = type === "speech" ? "teacher-note-speech" : "teacher-note-instruction";
           output += `<div class="teacher-note-box ${cls}"><strong>${title}</strong><div>${renderXmlNodeToTeacher(child)}</div></div>`;
         } else if (["p", "ul", "ol", "li", "h1", "h2", "h3"].includes(tagName)) {
