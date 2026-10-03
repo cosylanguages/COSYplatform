@@ -4,116 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <meta name="theme-color" content="#0369a1">
-  <meta name="description" content="Access Russian teaching materials, course roadmaps, and classroom resources.">
+  <meta name="description" content="Redirecting to Russian Teacher Space on COSYlanguages.">
+  <meta http-equiv="refresh" content="0; url=teacher.html?lang=ru">
   <link rel="icon" href="shared/img/favicon.svg" type="image/svg+xml">
-  <title>Russian Teacher Space · COSYlanguages</title>
-  <link rel="stylesheet" href="shared/css/tokens.css">
-  <link rel="stylesheet" href="shared/styles/style.css">
-  <style>
-    :root {
-      --teacher-primary: var(--cosy-platform-teacher, #6d28d9);
-    }
-    body { background-color: var(--cosy-color-cream, #fdfcf8); }
-    .badge-teacher { background: #f3e8ff; color: var(--teacher-primary, #6d28d9); padding: 4px 10px; border-radius: var(--cosy-radius-full, 100px); font-size: 0.8rem; font-weight: 700; }
-    .btn-logout { background-color: #334155; color: white; border: none; padding: 6px 14px; border-radius: 6px; font-size: 0.8rem; font-weight: 600; cursor: pointer; }
-    .catalog-container { max-width: 1000px; margin: 30px auto; padding: 0 20px; flex: 1; }
-    .catalog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
-    .course-card { background: white; border: 1px solid #e2e8f0; border-radius: var(--cosy-radius-md, 14px); padding: 24px; display: flex; flex-direction: column; justify-content: space-between; }
-    .access-denied { max-width: 500px; margin: 80px auto; background: white; padding: 40px; border-radius: var(--cosy-radius-md, 14px); border: 1px solid #cbd5e1; text-align: center; }
-  </style>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="shared/js/config.js"></script>
-  <script src="shared/js/auth-guard.js"></script>
+  <title>Redirecting · COSYlanguages</title>
+  <script>
+    location.replace('teacher.html?lang=ru' + location.hash);
+  </script>
 </head>
 <body>
-  <header class="manual-header">
-    <div class="header-content">
-      <div class="logo-badge">
-        <span>COSYlanguages</span>
-        <span class="badge-teacher">🇷🇺 Russian Teacher Hub</span>
-      </div>
-      <div style="display: flex; align-items: center; gap: 12px;">
-        <div id="user-info" style="font-size: 0.85rem; color: #64748b;"></div>
-        <button onclick="window.CosyAuth.logout()" class="btn-logout">Log Out</button>
-      </div>
-    </div>
-  </header>
-
-  <main id="app-root" class="container">
-    <!-- JS Rendered -->
-  </main>
-
-  <footer class="cosy-ecosystem-strip-footer">
-    🌐 Part of the COSY ecosystem •
-    <a href="https://cosylanguages.github.io/COSYlanguages/" target="_blank" rel="noopener">COSYlanguages 🏠</a> •
-    <a href="https://cosylanguages.github.io/COSYtools/" target="_blank" rel="noopener">COSYtools 🔎</a> •
-    <a href="https://cosylanguages.github.io/COSYgames/" target="_blank" rel="noopener">COSYgames 🎮</a> •
-    <a href="https://cosylanguages.github.io/COSYevents/" target="_blank" rel="noopener">COSYevents 🎉</a>
-  </footer>
-
-  <script>
-    const urlParams = new URLSearchParams(window.location.search);
-
-    async function initRussianHub() {
-      const authData = await window.CosyAuth.requireRole(['teacher', 'founder']);
-      if (!authData) return;
-
-      const userEmail = authData.user ? authData.user.email : '';
-      document.getElementById('user-info').innerText = `Преподаватель: ${userEmail || 'Преподаватель РКИ'}`;
-
-      const fullManifest = window.CosyAuth ? window.CosyAuth.FULL_MANIFEST : [];
-      const russianCourses = fullManifest.filter(c => c.lang === 'ru' && window.CosyAuth.isCourseAccessible(c, authData.profile));
-
-      let html = `
-        <div class="catalog-container">
-          <div style="margin-bottom: 24px;">
-            <h1 style="font-size: 1.6rem; color: #0f172a;">🇷🇺 Кабинет Преподавателя РКИ 📚</h1>
-            <p style="color: #64748b;">Полный каталог курсов русского языка: Общий, Разговорный, Бизнес, Для путешествий и Фонетика.</p>
-          </div>
-          <div class="catalog-grid">
-      `;
-
-      if (russianCourses.length === 0) {
-        html += `<p style="grid-column: 1/-1; color: #64748b;">Нет доступных курсов русского языка для вашей учетной записи.</p>`;
-      } else {
-        russianCourses.forEach(course => {
-          const isAvailable = course.status !== 'not_yet_available';
-          if (isAvailable) {
-            html += `
-              <div class="course-card">
-                <div>
-                  <span class="badge-teacher" style="margin-bottom: 8px; display: inline-block;">${course.level.toUpperCase()}</span>
-                  <h3 style="font-size: 1.15rem; color: #0f172a; margin-bottom: 6px;">${course.title}</h3>
-                  <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 16px;">Направление: ${course.track}</p>
-                </div>
-                <a href="teacher.html?course=${course.id}&level=${course.level.toLowerCase()}" class="btn" style="background: var(--teacher-primary); text-align: center;">Открыть программу 📚</a>
-              </div>
-            `;
-          } else {
-            html += `
-              <div class="course-card disabled" style="opacity: 0.6;">
-                <div>
-                  <span class="badge-teacher" style="margin-bottom: 8px; display: inline-block;">${course.level.toUpperCase()}</span>
-                  <h3 style="font-size: 1.15rem; color: #0f172a; margin-bottom: 6px;">${course.title}</h3>
-                  <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 16px;">Направление: ${course.track}</p>
-                </div>
-                <span style="font-size: 0.85rem; color: #64748b; font-weight: 500; text-align: center; display: block;">Coming soon</span>
-              </div>
-            `;
-          }
-        });
-      }
-
-      html += `</div></div>`;
-      document.getElementById('app-root').innerHTML = html;
-    }
-
-    function renderAccessDenied(title, message) {
-      document.getElementById('app-root').innerHTML = `<div class="access-denied"><h2>🔒 ${title}</h2><p>${message}</p></div>`;
-    }
-
-    window.onload = initRussianHub;
-  </script>
+  <p>Redirecting to Russian Teacher Space... <a href="teacher.html?lang=ru">Click here if you are not redirected.</a></p>
 </body>
 </html>

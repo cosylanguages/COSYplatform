@@ -474,8 +474,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="shared/js/config.js"></script>
   <script src="shared/js/auth-guard.js"></script>
-  <script src="shared/js/vocab-index.js"></script>
-  <script src="shared/js/irregular-verbs.js"></script>
+  <script src="shared/js/lazy-script.js"></script>
   <script src="shared/js/lesson-resolver.js"></script>
   <script src="shared/js/ui-toast.js"></script>
 </head>
@@ -502,6 +501,7 @@
   <footer class="cosy-ecosystem-strip-footer">
     🌐 Part of the COSY ecosystem •
     <a href="https://cosylanguages.github.io/COSYlanguages/" target="_blank" rel="noopener">COSYlanguages 🏠</a> •
+    <a href="https://cosylanguages.github.io/COSYdata/" target="_blank" rel="noopener">COSYdata 📚</a> •
     <a href="https://cosylanguages.github.io/COSYtools/" target="_blank" rel="noopener">COSYtools 🔎</a> •
     <a href="https://cosylanguages.github.io/COSYgames/" target="_blank" rel="noopener">COSYgames 🎮</a> •
     <a href="https://cosylanguages.github.io/COSYevents/" target="_blank" rel="noopener">COSYevents 🎉</a>
@@ -547,6 +547,21 @@
       `;
     }
 
+    function getLangFlag(code) {
+      if (!code) return '';
+      const flags = {
+        en: '🇬🇧',
+        fr: '🇫🇷',
+        ru: '🇷🇺',
+        es: '🇪🇸',
+        de: '🇩🇪',
+        it: '🇮🇹',
+        pt: '🇵🇹',
+        el: '🇬🇷'
+      };
+      return flags[code.toLowerCase()] || '';
+    }
+
     async function renderTeacherCatalog(profile, fullManifest) {
       const appRoot = document.getElementById('app-root');
 
@@ -555,13 +570,15 @@
         courseList = courseList.filter(c => c.lang.toLowerCase() === langParam.toLowerCase());
       }
 
-      const langName = langParam ? langParam.toUpperCase() : '';
+      const langFlag = langParam ? getLangFlag(langParam) : '';
+      const langName = langParam ? getLangName(langParam) : '';
+      const headingText = langName ? `${langFlag ? langFlag + ' ' : ''}${langName} Teacher Space` : 'Teacher Catalog 📚';
 
       let html = `
         <div class="catalog-container">
           <div class="catalog-header">
             <div>
-              <h1 style="font-size: 1.6rem; color: #0f172a;">${langName ? `${langName} Teacher Space` : 'Teacher Catalog 📚'}</h1>
+              <h1 style="font-size: 1.6rem; color: #0f172a;">${headingText}</h1>
               <p style="color: #64748b;">Teachers have access to all assigned tracks, curriculums, and speech scripts.</p>
             </div>
             <div style="display: flex; gap: 8px;">
@@ -611,7 +628,7 @@
             const isAvailable = c.status !== 'not_yet_available';
             if (isAvailable) {
               html += `
-                <div class="course-item-card">
+                <div class="course-item-card" data-course-id="${c.id}">
                   <div>
                     <div style="display: flex; align-items: center; gap: 8px;">
                       <span class="course-item-level badge-teacher">${c.level.toUpperCase()}</span>
@@ -625,7 +642,7 @@
               `;
             } else {
               html += `
-                <div class="course-item-card disabled" style="opacity: 0.6;">
+                <div class="course-item-card disabled" data-course-id="${c.id}" style="opacity: 0.6;">
                   <div>
                     <div style="display: flex; align-items: center; gap: 8px;">
                       <span class="course-item-level badge-teacher">${c.level.toUpperCase()}</span>
@@ -829,11 +846,24 @@
       };
     }
 
-    function searchCosyDict(query) {
+    async function searchCosyDict(query) {
       const resultsDiv = document.getElementById('dictSearchResults');
+
+      if (!window.CosyVocabIndex) {
+        if (resultsDiv) resultsDiv.innerHTML = `<p style="color: #64748b; font-style: italic;">Loading dictionary…</p>`;
+        try {
+          await window.CosyLazy.load('shared/js/vocab-index.js');
+        } catch (err) {
+          if (resultsDiv) resultsDiv.innerHTML = `<p style="color: #ef4444;">Could not load the dictionary.</p>`;
+          return;
+        }
+      }
+
       if (!resultsDiv) return;
 
-      const q = query.trim().toLowerCase();
+      const currentInput = document.getElementById('dictSearchInput');
+      const currentQuery = currentInput ? currentInput.value : query;
+      const q = (currentQuery !== undefined ? currentQuery : query).trim().toLowerCase();
       if (!q) {
         resultsDiv.innerHTML = `<p style="color: #64748b; font-style: italic;">Type a word to search COSYdata vocabulary index...</p>`;
         return;
@@ -862,7 +892,7 @@
       }
 
       if (allMatches.length === 0) {
-        resultsDiv.innerHTML = `<p style="color: #ef4444;">No matching COSYdata key found for "${query}".</p>`;
+        resultsDiv.innerHTML = `<p style="color: #ef4444;">No matching COSYdata key found for "${q}".</p>`;
         return;
       }
 
@@ -927,16 +957,29 @@
       }
     }
 
-    function searchIrregularVerbs(query) {
+    async function searchIrregularVerbs(query) {
       const resultsDiv = document.getElementById('verbSearchResults');
+
+      if (!window.CosyIrregularVerbs) {
+        if (resultsDiv) resultsDiv.innerHTML = `<p style="color: #64748b; font-style: italic;">Loading dictionary…</p>`;
+        try {
+          await window.CosyLazy.load('shared/js/irregular-verbs.js');
+        } catch (err) {
+          if (resultsDiv) resultsDiv.innerHTML = `<p style="color: #ef4444;">Could not load the dictionary.</p>`;
+          return;
+        }
+      }
+
       if (!resultsDiv) return;
 
-      const q = query.trim().toLowerCase();
+      const currentInput = document.getElementById('verbSearchInput');
+      const currentQuery = currentInput ? currentInput.value : query;
+      const q = (currentQuery !== undefined ? currentQuery : query).trim().toLowerCase();
       const verbs = window.CosyIrregularVerbs || [];
       const matches = verbs.filter(v => v.v1.includes(q) || v.v2.includes(q) || v.v3.includes(q));
 
       if (matches.length === 0) {
-        resultsDiv.innerHTML = `<p style="color: #ef4444;">No irregular verb found for "${query}".</p>`;
+        resultsDiv.innerHTML = `<p style="color: #ef4444;">No irregular verb found for "${q}".</p>`;
         return;
       }
 
