@@ -28,8 +28,10 @@ Welcome to the **COSYplatform Content Repository**! This repository hosts all in
 │   ├── lesson-format-spec.md    # CosyLanguages (<cosy-*>) markup specification
 │   ├── level-coverage-report.md # Level coverage audit across all languages
 │   └── roadmap-lesson-resolution.json # Master roadmap entry to lesson file resolution table
-├── lessons/                     # Interactive lesson slides (XML / JSON format)
-│   ├── general-{lang}-{level}/  # General English / French / Russian / Italian / Greek lesson JSONs
+├── drafts/                      # Unpublished draft lessons and blueprint skeleton templates
+│   └── blueprints/              # English skeleton templates (general-{lang}-a1/)
+├── lessons/                     # Published interactive lesson slides (XML / JSON format)
+│   ├── general-english-a1/      # Live General English A1 hand-made lessons
 │   ├── spoken-{lang}/           # Spoken language XML cards (English, French, Russian)
 │   └── pronunciation/           # Pronunciation modules
 ├── manuals/                     # Teacher manuals & onboarding guides

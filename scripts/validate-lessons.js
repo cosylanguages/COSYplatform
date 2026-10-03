@@ -24,8 +24,8 @@ function getJsonFiles(dir) {
   return results;
 }
 
-const files = getJsonFiles("lessons");
-console.log(`Validating ${files.length} json files in lessons/...`);
+const files = [...getJsonFiles("lessons"), ...getJsonFiles("drafts/blueprints")];
+console.log(`Validating ${files.length} json files in lessons/ and drafts/blueprints/...`);
 let failed = 0;
 
 files.forEach(file => {

@@ -21,6 +21,7 @@ const SHIPPED_HTML_FILES = [
 
 const FORBIDDEN_NAMES = [
   'docs',
+  'drafts',
   'scripts',
   'supabase',
   'schemas',

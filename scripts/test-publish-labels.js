@@ -18,6 +18,13 @@ function runTestPublishLabels() {
 
   for (const filePath of lessonFiles) {
     const relativePath = path.relative(process.cwd(), filePath).replace(/\\/g, '/');
+
+    // Assert 0: The publish selection never contains a path starting with "drafts/"
+    if (relativePath.startsWith('drafts/')) {
+      console.error(`❌ Publish selection contained draft file: ${relativePath}`);
+      process.exit(1);
+    }
+
     const content = fs.readFileSync(filePath, 'utf8');
     const meta = parseContentMetadata(filePath, content);
 
@@ -74,10 +81,10 @@ function runTestPublishLive() {
 
     // Pick 1 live file and 1 draft file
     const liveSampleRel = Array.from(LIVE).find(p => p.startsWith('lessons/general-english-a1/'));
-    const allLessonFiles = getAllFiles(path.join(process.cwd(), 'lessons'));
-    const draftSampleFile = allLessonFiles.find(f => {
+    const allDraftFiles = getAllFiles(path.join(process.cwd(), 'drafts', 'blueprints'));
+    const draftSampleFile = allDraftFiles.find(f => {
       const rel = path.relative(process.cwd(), f).replace(/\\/g, '/');
-      return rel.startsWith('lessons/general-french-a1/') && !LIVE.has(rel);
+      return rel.startsWith('drafts/blueprints/general-french-a1/');
     });
 
     if (!liveSampleRel || !draftSampleFile) {

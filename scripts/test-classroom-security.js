@@ -5,6 +5,7 @@ const { JSDOM, VirtualConsole } = require('jsdom');
 const assert = require('assert/strict');
 const { sanitizeStudentLessonContent } = require('./sanitize-student-lesson');
 const { loadLessonContent } = require('../shared/js/lesson-resolver');
+const { buildLiveSet } = require('./publish_to_supabase');
 
 const ROOT_DIR = path.join(__dirname, '..');
 
@@ -555,6 +556,38 @@ async function runSecurityTests() {
         failures++;
       } else {
         console.log('  ✅ PASS: Header Portal link href correct for student/teacher/founder roles, and Log Out calls signOut once.');
+      }
+    }
+
+    // -------------------------------------------------------------
+    // Test (d2): Assert all options in #quick-lesson-select with value="lessons/..." are published
+    // -------------------------------------------------------------
+    console.log('\n🔹 Test (d2): Quick lesson select options published check...');
+    const { dom: domD2 } = createMockDom(port, 'teacher');
+    await new Promise(r => setTimeout(r, 800));
+
+    const quickSelect = domD2.window.document.getElementById('quick-lesson-select');
+    const { LIVE } = buildLiveSet();
+
+    if (!quickSelect) {
+      console.error('❌ FAIL: #quick-lesson-select not found in classroom.html');
+      failures++;
+    } else {
+      const lessonOptions = Array.from(quickSelect.querySelectorAll('option'))
+        .map(opt => opt.value)
+        .filter(val => val.startsWith('lessons/'));
+
+      let unpublishedCount = 0;
+      lessonOptions.forEach(optVal => {
+        if (!LIVE.has(optVal)) {
+          console.error(`❌ FAIL: #quick-lesson-select option '${optVal}' is not a published lesson in LIVE set.`);
+          failures++;
+          unpublishedCount++;
+        }
+      });
+
+      if (unpublishedCount === 0) {
+        console.log(`  ✅ PASS: All ${lessonOptions.length} lesson options in #quick-lesson-select are published lessons.`);
       }
     }
 

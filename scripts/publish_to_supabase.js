@@ -304,6 +304,10 @@ async function publishToSupabase() {
   for (const filePath of allFiles) {
     const relativePath = path.relative(process.cwd(), filePath).replace(/\\/g, '/');
 
+    if (relativePath.startsWith('drafts/')) {
+      continue;
+    }
+
     if (relativePath.startsWith('lessons/')) {
       if (!LIVE.has(relativePath)) {
         skippedCount++;
