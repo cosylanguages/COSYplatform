@@ -29,6 +29,9 @@ const COMBINATIONS = [
   // Founder role
   { role: 'founder', url: 'founder.html' },
   { role: 'founder', url: 'teacher.html' },
+  { role: 'founder', url: 'teacher.html?lang=en' },
+  { role: 'founder', url: 'teacher.html?lang=fr' },
+  { role: 'founder', url: 'teacher.html?lang=ru' },
   { role: 'founder', url: 'teacher.html?course=pronunciation-fr-a1' },
   { role: 'founder', url: 'hub.html' },
   { role: 'founder', url: 'index.html' }
@@ -110,7 +113,8 @@ async function testCombination(port, { role, url }) {
       msg.includes('Could not load script') ||
       msg.includes('Could not load stylesheet') ||
       msg.includes('Failed to load') ||
-      msg.includes('Error: Could not load')
+      msg.includes('Error: Could not load') ||
+      msg.includes('Not implemented: navigation')
     ) {
       return;
     }
@@ -257,13 +261,76 @@ async function testCombination(port, { role, url }) {
     return { pass: false, reason: uncaughtError };
   }
 
+  const isRedirectPage = ['teacher-english.html', 'teacher-french.html', 'teacher-russian.html'].includes(htmlFileName);
   const visibleText = getVisibleText(dom);
-  if (visibleText.length < 40) {
+  if (!isRedirectPage && visibleText.length < 40) {
     return { pass: false, reason: `Main content area has fewer than 40 characters of visible text (found ${visibleText.length}): "${visibleText}"` };
   }
 
   if (parsedUrl.searchParams.has('lesson') && !visibleText.includes('Nice to meet you!')) {
     return { pass: false, reason: `Lesson content did not render from the role-specific Supabase table: "${visibleText}"` };
+  }
+
+  // Assert redirects for teacher-<lang>.html
+  if (['teacher-english.html', 'teacher-french.html', 'teacher-russian.html'].includes(htmlFileName)) {
+    const codeMap = { 'teacher-english.html': 'en', 'teacher-french.html': 'fr', 'teacher-russian.html': 'ru' };
+    const expectedLang = codeMap[htmlFileName];
+    if (!fileContent.includes(`teacher.html?lang=${expectedLang}`)) {
+      return { pass: false, reason: `${htmlFileName} does not contain redirect target teacher.html?lang=${expectedLang}` };
+    }
+  }
+
+  // Assert check (a): for each of en/fr/ru the set of course ids shown by teacher.html?lang=<code> as founder equals manifest courses of that language
+  if (htmlFileName === 'teacher.html' && parsedUrl.searchParams.has('lang') && role === 'founder') {
+    const lang = parsedUrl.searchParams.get('lang').toLowerCase();
+    if (['en', 'fr', 'ru'].includes(lang)) {
+      const fullManifest = dom.window.CosyAuth ? dom.window.CosyAuth.FULL_MANIFEST : [];
+      const expectedIds = fullManifest.filter(c => c.lang.toLowerCase() === lang).map(c => c.id).sort();
+      const doc = dom.window.document;
+      const renderedCards = Array.from(doc.querySelectorAll('.course-item-card[data-course-id]'));
+      const renderedIds = renderedCards.map(el => el.getAttribute('data-course-id')).sort();
+
+      const missing = expectedIds.filter(id => !renderedIds.includes(id));
+      const extra = renderedIds.filter(id => !expectedIds.includes(id));
+
+      if (missing.length > 0 || extra.length > 0 || renderedIds.length !== expectedIds.length) {
+        return {
+          pass: false,
+          reason: `teacher.html?lang=${lang} as founder course mismatch. Expected (${expectedIds.length}): [${expectedIds.join(', ')}]. Rendered (${renderedIds.length}): [${renderedIds.join(', ')}]. Missing: [${missing.join(', ')}], Extra: [${extra.join(', ')}]`
+        };
+      }
+    }
+  }
+
+  // Assert check (b): student.html, teacher.html and hub.html contain no vocab-index.js or irregular-verbs.js <script> at load
+  if (['student.html', 'teacher.html', 'hub.html'].includes(htmlFileName)) {
+    const doc = dom.window.document;
+    const eagerScripts = doc.querySelectorAll('script[src*="vocab-index.js"], script[src*="irregular-verbs.js"]');
+    if (eagerScripts.length > 0) {
+      return {
+        pass: false,
+        reason: `${htmlFileName} contains eager script tags for vocab-index.js or irregular-verbs.js at page load`
+      };
+    }
+  }
+
+  // Assert check (c): vocabulary script is requested only after the first dictionary search on student.html and teacher.html
+  if (['student.html', 'teacher.html'].includes(htmlFileName) && !parsedUrl.search) {
+    const doc = dom.window.document;
+    const vocabScriptsBefore = doc.querySelectorAll('script[src*="vocab-index.js"]');
+    if (vocabScriptsBefore.length > 0) {
+      return { pass: false, reason: `${htmlFileName} had vocab-index.js script tag at load time before search` };
+    }
+
+    if (typeof dom.window.searchCosyDict === 'function') {
+      dom.window.searchCosyDict('family');
+      const vocabScriptsAfter = doc.querySelectorAll('script[src*="vocab-index.js"]');
+      if (vocabScriptsAfter.length === 0) {
+        return { pass: false, reason: `${htmlFileName} did not inject vocab-index.js script tag after searchCosyDict()` };
+      }
+    } else {
+      return { pass: false, reason: `${htmlFileName} missing searchCosyDict function` };
+    }
   }
 
   // Specific assertions based on requirements:
