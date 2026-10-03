@@ -208,7 +208,7 @@ function runTestPagesBuild() {
     }
 
     // 2. <title> ends with " · COSYlanguages"
-    const titleMatch = content.match(/<title>([\s\S]*?)<\/title>/i);
+    const titleMatch = content.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
     if (!titleMatch || !titleMatch[1].trim().endsWith(' · COSYlanguages')) {
       console.error(`❌ Assertion (c) failed in ${pageName}: <title> must end with ' · COSYlanguages' (found '${titleMatch ? titleMatch[1] : 'none'}')`);
       process.exit(1);

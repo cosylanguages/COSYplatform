@@ -5,13 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#0369a1">
-  <meta name="description" content="Sign in to your COSYlanguages student, teacher, or founder account.">
+  <meta name="description" content="Sign in to your COSYlanguages student, teacher, or founder account." data-i18n-placeholder="login.metaDescription">
   <link rel="icon" href="shared/img/favicon.svg" type="image/svg+xml">
-  <title>Sign in · COSYlanguages</title>
+  <title data-i18n="login.title">Sign in · COSYlanguages</title>
   <link rel="stylesheet" href="shared/css/tokens.css">
   <link rel="stylesheet" href="shared/styles/style.css">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="shared/js/config.js"></script>
+  <script src="shared/js/i18n.js"></script>
+  <script src="shared/js/lang-switcher.js"></script>
   <style>
     body {
       background-color: #f8fafc;
@@ -32,6 +34,12 @@
       width: 100%;
       max-width: 400px;
       box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+      position: relative;
+    }
+    .login-card-top-bar {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 16px;
     }
     .login-header {
       text-align: center;
@@ -112,28 +120,30 @@
 <body>
 
   <div class="login-card">
+    <div class="login-card-top-bar" id="lang-switcher-container"></div>
+
     <div class="login-header">
-      <h1>COSYlanguages</h1>
-      <p>Log in to access your workspace</p>
+      <h1 data-i18n-skip>COSYlanguages</h1>
+      <p data-i18n="login.subheading">Log in to access your workspace</p>
     </div>
 
     <div id="error-banner" class="error-banner"></div>
 
     <form id="login-form">
       <div class="form-group">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" required placeholder="name@domain.com" autocomplete="email">
+        <label for="email" data-i18n="login.emailLabel">Email Address</label>
+        <input type="email" id="email" required placeholder="name@domain.com" autocomplete="email" data-i18n-placeholder="login.emailPlaceholder">
       </div>
 
       <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" required placeholder="••••••••" autocomplete="current-password">
+        <label for="password" data-i18n="login.passwordLabel">Password</label>
+        <input type="password" id="password" required placeholder="••••••••" autocomplete="current-password" data-i18n-placeholder="login.passwordPlaceholder">
       </div>
 
-      <button type="submit" id="submit-btn" class="btn-submit">Sign In</button>
+      <button type="submit" id="submit-btn" class="btn-submit" data-i18n="login.submitBtn">Sign In</button>
     </form>
 
-    <div class="footer-note">
+    <div class="footer-note" data-i18n="login.footerNote">
       Account creation is managed by platform administration.
     </div>
   </div>
@@ -161,6 +171,10 @@
     const urlParams = new URLSearchParams(window.location.search);
     const redirectTarget = urlParams.get('redirect');
 
+    if (window.CosyLangSwitcher) {
+      window.CosyLangSwitcher.mount('#lang-switcher-container');
+    }
+
     function safeRedirect(target) {
       if (!target || typeof target !== 'string') return null;
       try {
@@ -184,8 +198,11 @@
       }
     }
 
-    function showError(msg) {
-      errorBanner.textContent = msg;
+    function showError(msgKey, fallbackMsg) {
+      const translated = (window.CosyI18n && typeof window.CosyI18n.t === 'function')
+        ? window.CosyI18n.t(msgKey)
+        : fallbackMsg;
+      errorBanner.textContent = (translated && translated !== msgKey) ? translated : fallbackMsg;
       errorBanner.style.display = 'block';
     }
 
@@ -194,16 +211,18 @@
       errorBanner.textContent = '';
     }
 
-    if (!supabaseClient) {
-      showError("Platform not configured. Ask an administrator to set the Supabase details in shared/js/config.js.");
-    }
+    window.CosyI18n.ready.then(() => {
+      if (!supabaseClient) {
+        showError('login.errNotConfigured', 'Platform not configured. Ask an administrator to set the Supabase details in shared/js/config.js.');
+      }
+    });
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       hideError();
 
       if (!supabaseClient) {
-        showError("Platform not configured. Ask an administrator to set the Supabase details in shared/js/config.js.");
+        showError('login.errNotConfigured', 'Platform not configured. Ask an administrator to set the Supabase details in shared/js/config.js.');
         return;
       }
 
@@ -211,35 +230,45 @@
       const password = document.getElementById('password').value;
 
       submitBtn.disabled = true;
-      submitBtn.textContent = 'Signing in...';
+      submitBtn.textContent = window.CosyI18n ? window.CosyI18n.t('login.signingIn') : 'Signing in...';
 
       try {
         const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
 
         if (error) {
-          showError(error.message || "Invalid credentials. Please check your email and password.");
+          const errMsg = error.message || '';
+          if (errMsg.toLowerCase().includes('invalid login credentials') || errMsg.toLowerCase().includes('invalid credentials')) {
+            showError('login.errInvalidCredentials', 'Invalid credentials. Please check your email and password.');
+          } else {
+            showError('login.errInvalidCredentials', errMsg || 'Invalid credentials. Please check your email and password.');
+          }
           submitBtn.disabled = false;
-          submitBtn.textContent = 'Sign In';
+          submitBtn.textContent = window.CosyI18n ? window.CosyI18n.t('login.submitBtn') : 'Sign In';
           return;
         }
 
         if (data && data.user) {
-          // Fetch profile role to determine landing portal
           let targetPage = 'student.html';
           const { data: profile } = await supabaseClient
             .from('profiles')
-            .select('role')
+            .select('role, language_access')
             .eq('id', data.user.id)
             .maybeSingle();
 
-          if (profile && profile.role) {
-            const role = profile.role.toLowerCase();
-            if (role === 'founder') targetPage = 'founder.html';
-            else if (role === 'teacher') targetPage = 'teacher.html';
-            else targetPage = 'student.html';
+          if (profile) {
+            if (profile.role) {
+              const role = profile.role.toLowerCase();
+              if (role === 'founder') targetPage = 'founder.html';
+              else if (role === 'teacher') targetPage = 'teacher.html';
+              else targetPage = 'student.html';
+            }
+
+            // Recompute language with profile and save cosy_ui_lang_last
+            if (window.CosyI18n && typeof window.CosyI18n.recompute === 'function') {
+              await window.CosyI18n.recompute(profile);
+            }
           }
 
-          // If redirect target is specified and safe, honor it
           const safeTarget = safeRedirect(redirectTarget);
           if (safeTarget) {
             window.location.href = safeTarget;
@@ -248,9 +277,9 @@
           }
         }
       } catch (err) {
-        showError("An unexpected error occurred during sign in.");
+        showError('login.errUnexpected', 'An unexpected error occurred during sign in.');
         submitBtn.disabled = false;
-        submitBtn.textContent = 'Sign In';
+        submitBtn.textContent = window.CosyI18n ? window.CosyI18n.t('login.submitBtn') : 'Sign In';
       }
     });
   </script>
