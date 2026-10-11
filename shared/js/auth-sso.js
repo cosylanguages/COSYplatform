@@ -150,7 +150,27 @@ window.CosySSO = window.CosySSO || {};
 
     const urlParams = new URLSearchParams(window.location.search);
     const redirectTarget = urlParams.get('redirect');
-    window.location.href = redirectTarget || targetPage;
+    // Only follow redirects to another .html page in this same app folder.
+    // Anything else (other sites, other repos, deeper paths) is ignored.
+    let safeTarget = null;
+    if (redirectTarget) {
+      try {
+        const parsed = new URL(redirectTarget, window.location.href);
+        const loginPath = window.location.pathname;
+        const folderPath = loginPath.substring(0, loginPath.lastIndexOf('/') + 1);
+        if (
+          (parsed.protocol === 'http:' || parsed.protocol === 'https:') &&
+          parsed.origin === window.location.origin &&
+          parsed.pathname.startsWith(folderPath)
+        ) {
+          const rel = parsed.pathname.substring(folderPath.length);
+          if (rel && !rel.includes('/') && rel.endsWith('.html') && rel !== 'login.html') {
+            safeTarget = rel + parsed.search + parsed.hash;
+          }
+        }
+      } catch (e) {}
+    }
+    window.location.href = safeTarget || targetPage;
   }
 
   window.CosySSO.parseHashTokens = parseHashTokens;
