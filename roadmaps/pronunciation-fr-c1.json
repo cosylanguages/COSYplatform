@@ -1,0 +1,48 @@
+{
+  "curriculumId": "pronunciation-fr-c1",
+  "title": "French Pronunciation C1",
+  "totalLessons": 5,
+  "supportedDurations": [
+    50,
+    80,
+    110
+  ],
+  "teacherLed": true,
+  "sequence": [
+    {
+      "lessonNumber": 1,
+      "id": "fr-pron-c1-01-e-muet-poesie",
+      "title": "Le E muet métrique et comptage syllabique",
+      "lessonFile": "lessons/french-pronunciation/c1/fr-pron-c1-01-e-muet-poesie.json",
+      "teacherLed": true
+    },
+    {
+      "lessonNumber": 2,
+      "id": "fr-pron-c1-02-scansion-alexandrin",
+      "title": "Scansion avancée de l'alexandrin (exemples de Hugo, Baudelaire, Racine, Corneille)",
+      "lessonFile": "lessons/french-pronunciation/c1/fr-pron-c1-02-scansion-alexandrin.json",
+      "teacherLed": true
+    },
+    {
+      "lessonNumber": 3,
+      "id": "fr-pron-c1-03-dierese-synerese",
+      "title": "Diérèse vs synérèse dans la déclamation",
+      "lessonFile": "lessons/french-pronunciation/c1/fr-pron-c1-03-dierese-synerese.json",
+      "teacherLed": true
+    },
+    {
+      "lessonNumber": 4,
+      "id": "fr-pron-c1-04-liaisons-oratoires",
+      "title": "Liaisons oratoires et de prestige",
+      "lessonFile": "lessons/french-pronunciation/c1/fr-pron-c1-04-liaisons-oratoires.json",
+      "teacherLed": true
+    },
+    {
+      "lessonNumber": 5,
+      "id": "fr-pron-c1-05-doublets-savants-populaires",
+      "title": "Doublets savants et populaires",
+      "lessonFile": "lessons/french-pronunciation/c1/fr-pron-c1-05-doublets-savants-populaires.json",
+      "teacherLed": true
+    }
+  ]
+}

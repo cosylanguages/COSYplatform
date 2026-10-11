@@ -1,0 +1,34 @@
+{
+  "curriculumId": "pronunciation-ru-b1",
+  "title": "Russian Pronunciation B1",
+  "totalLessons": 3,
+  "supportedDurations": [
+    50,
+    80,
+    110
+  ],
+  "teacherLed": true,
+  "sequence": [
+    {
+      "lessonNumber": 1,
+      "id": "ru-pron-b1-01-ikanje-reduction",
+      "title": "Редукция безударных Е и Я (Иканье)",
+      "lessonFile": "lessons/russian-pronunciation/b1/ru-pron-b1-01-ikanje-reduction.json",
+      "teacherLed": true
+    },
+    {
+      "lessonNumber": 2,
+      "id": "ru-pron-b1-02-silent-consonants",
+      "title": "Непроизносимые согласные (стн, здн, лнц, рдц)",
+      "lessonFile": "lessons/russian-pronunciation/b1/ru-pron-b1-02-silent-consonants.json",
+      "teacherLed": true
+    },
+    {
+      "lessonNumber": 3,
+      "id": "ru-pron-b1-03-loanwords-orthoepy",
+      "title": "Орфоэпия заимствованных слов (твёрдый согласный перед Е)",
+      "lessonFile": "lessons/russian-pronunciation/b1/ru-pron-b1-03-loanwords-orthoepy.json",
+      "teacherLed": true
+    }
+  ]
+}

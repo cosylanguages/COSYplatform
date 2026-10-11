@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0369a1">
+  <meta name="description" content="Manage course roadmaps, view lesson materials, and guide student sessions.">
+  <link rel="icon" href="shared/img/favicon.svg" type="image/svg+xml">
+  <title>Teacher Workspace · COSYlanguages</title>
+  <link rel="stylesheet" href="shared/css/tokens.css">
+  <link rel="stylesheet" href="shared/styles/style.css">
+  <style>
+    /* Teacher Page Specific Styles */
+    :root {
+      --teacher-primary: var(--cosy-platform-teacher, #6d28d9);
+      --teacher-hover: var(--cosy-platform-teacher-hover, #5b21b6);
+      --teacher-light: var(--cosy-platform-teacher-light, #f3e8ff);
+      --teacher-note-bg: var(--cosy-color-honey-pale, #fffbe3);
+      --teacher-note-border: var(--cosy-color-honey, #b45309);
+      --speech-bg: var(--cosy-semantic-success-light, #ecfdf5);
+      --speech-border: var(--cosy-semantic-success, #047857);
+    }
+
+    body {
+      background-color: var(--cosy-color-cream, #fdfcf8);
+    }
+
+    .badge-teacher {
+      background: #f3e8ff;
+      color: var(--teacher-primary, #6d28d9);
+      padding: 4px 10px;
+      border-radius: var(--cosy-radius-full, 100px);
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .btn-logout {
+      background-color: #334155;
+      color: white;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* Access Denied */
+    .access-denied {
+      max-width: 500px;
+      margin: 80px auto;
+      background: white;
+      padding: 40px;
+      border-radius: var(--cosy-radius-md, 14px);
+      border: 1px solid #cbd5e1;
+      text-align: center;
+      box-shadow: var(--cosy-shadow-sm);
+    }
+
+    .access-denied h2 {
+      color: #ef4444;
+      margin-bottom: 12px;
+    }
+
+    /* Catalog View */
+    .catalog-container {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 0 20px;
+      flex: 1;
+    }
+
+    .catalog-header {
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .catalog-category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 20px;
+      align-items: start;
+    }
+
+    .category-card {
+      background: #f0f9ff;
+      border: 1px solid #bae6fd;
+      border-radius: var(--cosy-radius-md, 14px);
+      padding: 16px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+      transition: all 0.2s ease;
+    }
+
+    .category-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #e0f2fe;
+      user-select: none;
+    }
+
+    .category-header h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--teacher-primary, #6d28d9);
+      margin: 0;
+    }
+
+    .category-toggle-icon {
+      font-size: 0.9rem;
+      color: var(--teacher-primary, #6d28d9);
+      transition: transform 0.2s ease;
+    }
+
+    .category-body {
+      margin-top: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .category-card.collapsed .category-body {
+      display: none;
+    }
+
+    .category-card.collapsed .category-toggle-icon {
+      transform: rotate(-90deg);
+    }
+
+    .course-item-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--cosy-radius-sm, 8px);
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .course-item-card:hover {
+      border-color: #38bdf8;
+      box-shadow: 0 2px 8px rgba(3, 105, 161, 0.08);
+    }
+
+    .course-item-title {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #0f172a;
+    }
+
+    .course-item-level {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    /* Controls Header Bar */
+    .teacher-controls-bar {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--cosy-radius-md, 14px);
+      padding: 16px 24px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      box-shadow: var(--cosy-shadow-sm);
+    }
+
+    /* Slide Navigation Controls */
+    .slide-nav-bar {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--cosy-radius-md, 14px);
+      padding: 12px 20px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      box-shadow: var(--cosy-shadow-sm);
+    }
+
+    .slide-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .slide-pill {
+      padding: 6px 14px;
+      border-radius: var(--cosy-radius-full, 100px);
+      border: 1px solid #cbd5e1;
+      background: #f8fafc;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #475569;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .slide-pill:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+
+    .slide-pill.active {
+      background: var(--teacher-primary);
+      color: white;
+      border-color: var(--teacher-primary);
+    }
+
+    .slide-nav-btn {
+      padding: 8px 16px;
+      border-radius: var(--cosy-radius-sm, 8px);
+      border: 1px solid #cbd5e1;
+      background: white;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #0f172a;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.15s ease;
+    }
+
+    .slide-nav-btn:hover:not(:disabled) {
+      background: #f1f5f9;
+    }
+
+    .slide-nav-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    .control-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+    }
+
+    .control-group select {
+      padding: 6px 12px;
+      border-radius: var(--cosy-radius-sm, 8px);
+      border: 1px solid #cbd5e1;
+      font-size: 0.85rem;
+      background: #f8fafc;
+    }
+
+    /* Edvibe Workspace Layout */
+    .edvibe-workspace {
+      display: grid;
+      grid-template-columns: 56px 1fr 280px;
+      gap: 20px;
+      max-width: 1440px;
+      margin: 20px auto;
+      padding: 0 16px;
+      align-items: start;
+    }
+
+    @media (max-width: 1024px) {
+      .edvibe-workspace {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .left-utility-rail {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--cosy-radius-md, 14px);
+      padding: 12px 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+      position: sticky;
+      top: 20px;
+    }
+
+    .rail-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      border: 1px solid #cbd5e1;
+      background: #f8fafc;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s ease;
+      color: #475569;
+    }
+
+    .rail-btn:hover, .rail-btn.active {
+      background: var(--teacher-primary);
+      color: white;
+      border-color: var(--teacher-primary);
+    }
+
+    .right-sections-sidebar {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--cosy-radius-md, 14px);
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+      position: sticky;
+      top: 20px;
+    }
+
+    .sections-header {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #f1f5f9;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .section-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 12px;
+      border-radius: 8px;
+      margin-bottom: 6px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: #475569;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      background: #f8fafc;
+      border: 1px solid transparent;
+    }
+
+    .section-item:hover {
+      background: #f1f5f9;
+      color: #0f172a;
+    }
+
+    .section-item.active {
+      background: #e0f2fe;
+      color: #0369a1;
+      border-color: #bae6fd;
+      font-weight: 600;
+    }
+
+    .section-num {
+      font-size: 0.75rem;
+      font-weight: 700;
+      background: #cbd5e1;
+      color: #334155;
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-right: 8px;
+    }
+
+    .section-item.active .section-num {
+      background: var(--teacher-primary);
+      color: white;
+    }
+
+    /* Lesson Viewer */
+    .slide-card {
+      background: white;
+      border-radius: var(--cosy-radius-md, 14px);
+      border: 1px solid #e2e8f0;
+      padding: 32px;
+      margin-bottom: 24px;
+      box-shadow: var(--cosy-shadow-sm);
+    }
+
+    .slide-title {
+      font-size: 1.4rem;
+      color: #0f172a;
+      border-bottom: 2px solid #f1f5f9;
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .slide-stage-tag {
+      font-size: 0.75rem;
+      background: #f1f5f9;
+      color: #475569;
+      padding: 4px 10px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    /* Teacher Notes Styling */
+    .teacher-note-box {
+      border-radius: var(--cosy-radius-sm, 8px);
+      padding: 16px;
+      margin: 16px 0;
+      font-size: 0.95rem;
+    }
+
+    .teacher-note-instruction {
+      background: var(--teacher-note-bg);
+      border-left: 4px solid var(--teacher-note-border);
+      color: #78350f;
+    }
+
+    .teacher-note-speech {
+      background: var(--speech-bg);
+      border-left: 4px solid var(--speech-border);
+      color: #065f46;
+    }
+
+    .teacher-note-header {
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .answer-key-box {
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 10px 14px;
+      margin: 8px 0;
+      font-size: 0.85rem;
+      color: #334155;
+    }
+
+    .answer-key-title {
+      font-weight: 700;
+      color: var(--teacher-primary);
+      margin-bottom: 4px;
+    }
+
+    cosy-instruction, .cosy-instruction {
+      display: block;
+      font-weight: 600;
+      color: var(--teacher-primary);
+      margin: 16px 0 8px 0;
+    }
+
+    cosy-blockquote, .cosy-blockquote {
+      display: block;
+      background: #f8fafc;
+      border-left: 4px solid var(--teacher-primary);
+      padding: 16px;
+      margin: 16px 0;
+      border-radius: 0 8px 8px 0;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.49.1"></script>
+  <script src="shared/js/config.js"></script>
+  <script src="shared/js/auth-guard.js"></script>
+  <script src="shared/js/auth-sso.js"></script>
+  <script src="shared/js/cms-editor.js"></script>
+  <script src="shared/js/lazy-script.js"></script>
+  <script src="shared/js/lesson-resolver.js"></script>
+  <script src="shared/js/ui-toast.js"></script>
+</head>
+<body>
+
+  <header class="manual-header">
+    <div class="header-content">
+      <div class="logo-badge">
+        <span>COSYlanguages</span>
+        <span class="badge-teacher">Teacher Catalog &amp; Guide</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <a href="classroom.html" class="btn" style="background: #047857; color: white; padding: 4px 12px; text-decoration: none; font-size: 0.8rem; border-radius: 6px; font-weight: 600;">Live Classroom 🎥</a>
+        <div id="user-info" style="font-size: 0.85rem; color: #64748b;"></div>
+        <button onclick="window.CosyAuth.logout()" class="btn-logout">Log Out</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="app-root" class="container">
+    <!-- Dynamic JS Content rendered here -->
+  </main>
+
+  <footer class="cosy-ecosystem-strip-footer">
+    🌐 Part of the COSY ecosystem •
+    <a href="https://cosylanguages.github.io/COSYlanguages/" target="_blank" rel="noopener">COSYlanguages 🏠</a> •
+    <a href="https://cosylanguages.github.io/COSYdata/" target="_blank" rel="noopener">COSYdata 📚</a> •
+    <a href="https://cosylanguages.github.io/COSYtools/" target="_blank" rel="noopener">COSYtools 🔎</a> •
+    <a href="https://cosylanguages.github.io/COSYgames/" target="_blank" rel="noopener">COSYgames 🎮</a> •
+    <a href="https://cosylanguages.github.io/COSYevents/" target="_blank" rel="noopener">COSYevents 🎉</a>
+  </footer>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const courseParam = urlParams.get('course');
+    const levelParam = urlParams.get('level');
+    const lessonParam = urlParams.get('lesson');
+    const langParam = urlParams.get('lang');
+
+    async function initTeacherApp() {
+      const appRoot = document.getElementById('app-root');
+
+      const authData = await window.CosyAuth.requireRole(['teacher', 'founder']);
+      if (!authData) return;
+
+      const userEmail = authData.user ? authData.user.email : '';
+      document.getElementById('user-info').innerText = `Teacher: ${userEmail || 'Teacher'}`;
+
+      const fullManifest = window.CosyAuth ? window.CosyAuth.FULL_MANIFEST : [];
+
+      if (lessonParam) {
+        if (!window.CosyAuth.canAccessCourseId(courseParam, authData.profile)) {
+          renderAccessDenied('Course unavailable', 'You do not have access to this course.');
+          return;
+        }
+        renderLesson(lessonParam, authData.profile);
+      } else if (courseParam) {
+        renderCourseRoadmap(courseParam, levelParam, authData.profile);
+      } else {
+        renderTeacherCatalog(authData.profile, fullManifest);
+      }
+    }
+
+    function renderAccessDenied(title, message) {
+      document.getElementById('app-root').innerHTML = `
+        <div class="access-denied">
+          <h2>🔒 ${title}</h2>
+          <p>${message}</p>
+        </div>
+      `;
+    }
+
+    function getLangFlag(code) {
+      if (!code) return '';
+      const flags = {
+        en: '🇬🇧',
+        fr: '🇫🇷',
+        ru: '🇷🇺',
+        es: '🇪🇸',
+        de: '🇩🇪',
+        it: '🇮🇹',
+        pt: '🇵🇹',
+        el: '🇬🇷'
+      };
+      return flags[code.toLowerCase()] || '';
+    }
+
+    async function renderTeacherCatalog(profile, fullManifest) {
+      const appRoot = document.getElementById('app-root');
+
+      let courseList = fullManifest.filter(c => window.CosyAuth.isCourseAccessible(c, profile));
+      if (langParam) {
+        courseList = courseList.filter(c => c.lang.toLowerCase() === langParam.toLowerCase());
+      }
+
+      const langFlag = langParam ? getLangFlag(langParam) : '';
+      const langName = langParam ? getLangName(langParam) : '';
+      const headingText = langName ? `${langFlag ? langFlag + ' ' : ''}${langName} Teacher Space` : 'Teacher Catalog 📚';
+
+      let html = `
+        <div class="catalog-container">
+          <div class="catalog-header">
+            <div>
+              <h1 style="font-size: 1.6rem; color: #0f172a;">${headingText}</h1>
+              <p style="color: #64748b;">Teachers have access to all assigned tracks, curriculums, and speech scripts.</p>
+            </div>
+            <div style="display: flex; gap: 8px;">
+              ${profile && profile.role === 'founder' ? '<a href="founder.html" class="btn btn-outline" style="font-size: 0.85rem;">← Founder Portal</a>' : ''}
+            </div>
+          </div>
+
+          <!-- My Shared Notes Section -->
+          <div id="my-notes-section" style="margin-bottom: 30px; background: white; border: 1px solid #cbd5e1; border-radius: var(--cosy-radius-md, 14px); padding: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
+            <h2 style="font-size: 1.2rem; font-weight: 700; color: var(--teacher-primary, #6d28d9); margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;">
+              <span>📝 My Classroom Notes</span>
+              <button onclick="loadUserNotes('teacher')" style="font-size: 0.8rem; padding: 4px 10px; background: #f3e8ff; color: var(--teacher-primary, #6d28d9); border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">Refresh 🔄</button>
+            </h2>
+            <div id="user-notes-container">
+              <p style="color: #64748b; font-size: 0.85rem;">Loading your notes...</p>
+            </div>
+          </div>
+
+          <div class="catalog-grid">
+      `;
+
+      if (courseList.length === 0) {
+        html += `<p style="grid-column: 1/-1; color: #64748b;">No courses match the selected filters.</p>`;
+      } else {
+        const groupedByLangTrack = {};
+        courseList.forEach(c => {
+          const trackKey = c.track ? (c.track.charAt(0).toUpperCase() + c.track.slice(1)) : 'General';
+          const langCode = (c.lang || 'en').toLowerCase();
+          const groupKey = `${langCode}_${trackKey}`;
+          if (!groupedByLangTrack[groupKey]) {
+            groupedByLangTrack[groupKey] = {
+              lang: langCode,
+              track: trackKey,
+              courses: []
+            };
+          }
+          groupedByLangTrack[groupKey].courses.push(c);
+        });
+
+        html += `<div class="catalog-category-grid">`;
+
+        Object.keys(groupedByLangTrack).forEach(groupKey => {
+          const group = groupedByLangTrack[groupKey];
+          const trackCourses = group.courses;
+          const availableCount = trackCourses.filter(c => c.status !== 'not_yet_available').length;
+          const comingSoonCount = trackCourses.filter(c => c.status === 'not_yet_available').length;
+          const langName = getLangName(group.lang);
+
+          html += `
+            <div class="category-card" id="tcat-${groupKey}">
+              <div class="category-header" onclick="toggleTeacherCategoryFold('tcat-${groupKey}')">
+                <h3>${langName} • ${group.track} (${availableCount})${comingSoonCount > 0 ? ` <span style="font-size: 0.8em; font-weight: normal; color: #64748b;">+ ${comingSoonCount} coming soon</span>` : ''}</h3>
+                <span class="category-toggle-icon">▼</span>
+              </div>
+              <div class="category-body">
+          `;
+
+          trackCourses.forEach(c => {
+            const isAvailable = c.status !== 'not_yet_available';
+            if (isAvailable) {
+              html += `
+                <div class="course-item-card" data-course-id="${c.id}">
+                  <div>
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                      <span class="course-item-level badge-teacher">${c.level.toUpperCase()}</span>
+                      <span class="course-item-title">${c.title}</span>
+                    </div>
+                  </div>
+                  <a href="teacher.html?course=${c.id}&level=${c.level.toLowerCase()}" class="btn" style="background: var(--teacher-primary); padding: 6px 12px; font-size: 0.8rem; white-space: nowrap;">
+                    Roadmap 📚
+                  </a>
+                </div>
+              `;
+            } else {
+              html += `
+                <div class="course-item-card disabled" data-course-id="${c.id}" style="opacity: 0.6;">
+                  <div>
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                      <span class="course-item-level badge-teacher">${c.level.toUpperCase()}</span>
+                      <span class="course-item-title">${c.title}</span>
+                    </div>
+                  </div>
+                  <span style="font-size: 0.8rem; color: #64748b; font-weight: 500; white-space: nowrap;">Coming soon</span>
+                </div>
+              `;
+            }
+          });
+
+          html += `
+              </div>
+            </div>
+          `;
+        });
+
+        html += `</div>`;
+      }
+
+      html += `</div>`;
+      appRoot.innerHTML = html;
+    }
+
+    async function renderCourseRoadmap(courseId, level, profile) {
+      const appRoot = document.getElementById('app-root');
+
+      try {
+        const candidates = [
+          `roadmaps/${courseId}.json`,
+          `roadmaps/${courseId.replace('curriculum-', '')}.json`
+        ];
+
+        let roadmapRes = null;
+        for (const cand of candidates) {
+          try {
+            const res = await fetch(cand);
+            if (res.ok) {
+              roadmapRes = res;
+              break;
+            }
+          } catch (e) {}
+        }
+
+        if (!roadmapRes || !roadmapRes.ok) throw new Error(`Roadmap for ${courseId} not found`);
+        const roadmap = await roadmapRes.json();
+
+        const role = (profile && profile.role) || 'teacher';
+        const totalLessons = roadmap.sequence.length;
+        const availableCount = roadmap.sequence.filter(item => window.CosyLessons.getLessonState(item, role) === 'available').length;
+        const isTeacherOrFounder = role === 'teacher' || role === 'founder';
+        const summaryText = roadmap.teacherLed
+          ? (isTeacherOrFounder ? `Teacher-led course · ${totalLessons} lessons` : `Taught live with your teacher · ${totalLessons} lessons`)
+          : `${availableCount} of ${totalLessons} lessons available`;
+
+        let html = `
+          <div class="catalog-container">
+            <div class="teacher-controls-bar">
+              <a href="teacher.html" class="back-btn" style="color: #64748b; font-weight: 500;">← Back to Catalog</a>
+              <span class="badge-teacher">${roadmap.title}</span>
+            </div>
+
+            <div class="section-card">
+              <h2 style="font-size: 1.4rem; color: #0f172a; margin-bottom: 6px;">${roadmap.title}</h2>
+              <p style="color: #64748b; margin-bottom: 20px;">${summaryText}</p>
+
+              <div class="unit-grid">
+        `;
+
+        roadmap.sequence.forEach(item => {
+          const state = window.CosyLessons.getLessonState(item, role);
+          const lessonPath = window.CosyLessons.getLessonPath(item);
+
+          if (state === 'available') {
+            html += `
+              <div class="unit-card">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                    <span style="font-size: 0.75rem; color: #64748b; font-weight: 600;">LESSON #${item.lessonNumber}</span>
+                  </div>
+                  <h3 style="margin: 6px 0;">${item.title}</h3>
+                  ${item.unit ? `<p style="font-size: 0.8rem; color: #64748b; margin-bottom: 12px;">${item.unit}</p>` : ''}
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 6px; margin-top: 10px;">
+                  <a href="teacher.html?lesson=${encodeURIComponent(lessonPath)}&course=${encodeURIComponent(courseId)}" class="btn" style="background: var(--teacher-primary); padding: 6px 12px; font-size: 0.8rem; text-align: center;">Open lesson</a>
+                </div>
+              </div>
+            `;
+          } else {
+            html += `
+              <div class="unit-card" style="opacity: 0.6; background: #f8fafc;">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                    <span style="font-size: 0.75rem; color: #64748b; font-weight: 600;">LESSON #${item.lessonNumber}</span>
+                    <span style="font-size: 0.75rem; color: #64748b; background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-weight: 600;">Planned</span>
+                  </div>
+                  <h3 style="margin: 6px 0; color: #64748b;">${item.title}</h3>
+                  ${item.unit ? `<p style="font-size: 0.8rem; color: #64748b; margin-bottom: 12px;">${item.unit}</p>` : ''}
+                </div>
+              </div>
+            `;
+          }
+        });
+
+        html += `</div></div></div>`;
+        appRoot.innerHTML = html;
+
+      } catch (err) {
+        appRoot.innerHTML = `<div class="access-denied"><h2>Error</h2><p>${err.message}</p></div>`;
+      }
+    }
+
+    window.currentTeacherSlides = [];
+    window.currentTeacherSlideIdx = 0;
+    window.teacherViewModeAll = false;
+    window.currentTeacherLessonTitle = "";
+    window.currentDurationFilter = "50";
+    window.currentModeFilter = "all";
+    window.activeDrawer = null;
+
+    function toggleTeacherCategoryFold(categoryId) {
+      const card = document.getElementById(categoryId);
+      if (card) {
+        card.classList.toggle('collapsed');
+      }
+    }
+
+    window.timerSeconds = 300;
+    window.timerInterval = null;
+
+    function toggleUtilityDrawer(drawerName) {
+      if (window.activeDrawer === drawerName) {
+        window.activeDrawer = null;
+      } else {
+        window.activeDrawer = drawerName;
+      }
+      renderTeacherLessonUI();
+    }
+
+    function getLangName(code) {
+      if (!code) return '';
+      const map = {
+        en: 'English', fr: 'French', ru: 'Russian', es: 'Spanish', el: 'Greek',
+        de: 'German', it: 'Italian', pt: 'Portuguese', ba: 'Bashkir', br: 'Breton',
+        hy: 'Armenian', ka: 'Georgian', tt: 'Tatar'
+      };
+      const lower = code.toLowerCase();
+      return map[lower] || lower.toUpperCase();
+    }
+
+    function getCosyDictMetadata(item) {
+      const file = item.file || '';
+      const parts = file.split('/');
+      const levelRaw = parts[0] ? parts[0].toUpperCase().replace('_', '-') : 'A1';
+      const theme = parts[1] ? parts[1].replace('.json', '') : '';
+
+      let emoji = '📖';
+      if (theme.includes('animal')) emoji = '🐱';
+      else if (theme.includes('food') || theme.includes('drink')) emoji = '🍔';
+      else if (theme.includes('job') || theme.includes('work')) emoji = '💼';
+      else if (theme.includes('health') || theme.includes('body')) emoji = '🏥';
+      else if (theme.includes('living') || theme.includes('house')) emoji = '🏠';
+      else if (theme.includes('school') || theme.includes('education')) emoji = '📚';
+      else if (theme.includes('nature') || theme.includes('geography') || theme.includes('environment')) emoji = '🌿';
+      else if (theme.includes('travel') || theme.includes('place') || theme.includes('transport')) emoji = '✈️';
+      else if (theme.includes('sport') || theme.includes('hobby')) emoji = '⚽';
+      else if (theme.includes('feeling') || theme.includes('emotion')) emoji = '😊';
+      else if (theme.includes('time')) emoji = '⏰';
+      else if (theme.includes('cloth') || theme.includes('appearance')) emoji = '👗';
+
+      const word = item.word;
+      const pos = item.pos || 'noun';
+
+      let def = `Key ${pos} vocabulary item associated with ${theme.replace('_', ' ') || 'general communication'}.`;
+      if (word === 'cat') def = "A small domesticated carnivorous mammal with soft fur, short snout, and retractile claws.";
+      else if (word === 'dog') def = "A domesticated carnivorous mammal that typically has a long snout, an acute sense of smell, and a barking voice.";
+      else if (word === 'hello') def = "Used as a greeting or to begin a phone conversation.";
+      else if (word === 'work') def = "Activity involving mental or physical effort done in order to achieve a purpose or result.";
+
+      let example = `I practiced using "${word}" in my English lesson today.`;
+      if (word === 'cat') example = "The cat curled up on the cozy armchair and purred gently.";
+      else if (word === 'dog') example = "They took their dog for a walk in the park every morning.";
+      else if (word === 'hello') example = "She smiled warmly and said hello to everyone in the room.";
+
+      let syns = [];
+      let ants = [];
+      if (word === 'cat') { syns = ['feline', 'kitten', 'pet']; ants = ['dog (popular contrast)']; }
+      else if (word === 'dog') { syns = ['canine', 'pup', 'hound']; ants = []; }
+      else if (word === 'hello') { syns = ['hi', 'greetings', 'welcome']; ants = ['goodbye', 'farewell']; }
+      else if (word === 'work') { syns = ['job', 'task', 'labor', 'employment']; ants = ['rest', 'leisure', 'play']; }
+
+      return {
+        level: levelRaw,
+        theme: theme,
+        emoji: emoji,
+        definition: def,
+        example: example,
+        synonyms: syns,
+        antonyms: ants
+      };
+    }
+
+    async function searchCosyDict(query) {
+      const resultsDiv = document.getElementById('dictSearchResults');
+
+      if (!window.CosyVocabIndex) {
+        if (resultsDiv) resultsDiv.innerHTML = `<p style="color: #64748b; font-style: italic;">Loading dictionary…</p>`;
+        try {
+          await window.CosyLazy.load('shared/js/vocab-index.js');
+        } catch (err) {
+          if (resultsDiv) resultsDiv.innerHTML = `<p style="color: #ef4444;">Could not load the dictionary.</p>`;
+          return;
+        }
+      }
+
+      if (!resultsDiv) return;
+
+      const currentInput = document.getElementById('dictSearchInput');
+      const currentQuery = currentInput ? currentInput.value : query;
+      const q = (currentQuery !== undefined ? currentQuery : query).trim().toLowerCase();
+      if (!q) {
+        resultsDiv.innerHTML = `<p style="color: #64748b; font-style: italic;">Type a word to search COSYdata vocabulary index...</p>`;
+        return;
+      }
+
+      const vocabIndex = window.CosyVocabIndex || {};
+      const allMatches = [];
+
+      for (const word in vocabIndex) {
+        const w = word.toLowerCase();
+        if (w.includes(q)) {
+          let priority = 3;
+          if (w === q) priority = 1;
+          else if (w.startsWith(q)) priority = 2;
+
+          vocabIndex[word].forEach(entry => {
+            allMatches.push({
+              word: word,
+              id: entry.id,
+              pos: entry.pos,
+              file: entry.file,
+              priority: priority
+            });
+          });
+        }
+      }
+
+      if (allMatches.length === 0) {
+        resultsDiv.innerHTML = `<p style="color: #ef4444;">No matching COSYdata key found for "${q}".</p>`;
+        return;
+      }
+
+      allMatches.sort((a, b) => {
+        if (a.priority !== b.priority) return a.priority - b.priority;
+        if (a.word.length !== b.word.length) return a.word.length - b.word.length;
+        return a.word.localeCompare(b.word);
+      });
+
+      const topMatches = allMatches.slice(0, 25);
+
+      let html = `<div style="display: flex; flex-direction: column; gap: 8px;">`;
+      topMatches.forEach((m, idx) => {
+        const meta = getCosyDictMetadata(m);
+        const cardId = `dict-card-teacher-${idx}`;
+        const isExact = m.priority === 1;
+
+        html += `
+          <div style="background: ${isExact ? '#faf5ff' : '#ffffff'}; border: 1px solid ${isExact ? '#6d28d9' : '#cbd5e1'}; border-radius: 10px; padding: 10px 12px; cursor: pointer;" onclick="toggleDictCardDetail('${cardId}')">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div style="display: flex; align-items: center; gap: 6px; font-weight: 700; color: #0f172a;">
+                <span>${meta.emoji}</span>
+                <span style="font-size: 0.95rem; color: var(--teacher-primary, #6d28d9);">${m.word}</span>
+                ${isExact ? '<span style="background: #dcfce7; color: #166534; font-size: 0.65rem; font-weight: 800; padding: 2px 6px; border-radius: 4px;">EXACT MATCH</span>' : ''}
+              </div>
+              <div style="display: flex; align-items: center; gap: 6px;">
+                <span style="font-size: 0.7rem; background: #f3e8ff; color: var(--teacher-primary, #6d28d9); padding: 2px 6px; border-radius: 4px; font-weight: 700;">${meta.level}</span>
+                <span style="font-size: 0.7rem; background: #f1f5f9; color: #475569; padding: 2px 6px; border-radius: 4px; font-weight: 600;">${m.pos}</span>
+                <button onclick="event.stopPropagation(); speakText('${m.word.replace(/'/g, "\\'")}', 'en-US')" style="background: var(--teacher-primary, #6d28d9); color: white; border: none; border-radius: 6px; padding: 3px 8px; font-size: 0.75rem; cursor: pointer;">🔊</button>
+              </div>
+            </div>
+
+            <div id="${cardId}" style="display: ${isExact ? 'block' : 'none'}; margin-top: 8px; pt-8px; border-top: 1px solid #e2e8f0; font-size: 0.8rem; color: #334155;">
+              <div style="margin-top: 6px; font-weight: 500;"><strong style="color: var(--teacher-primary, #6d28d9);">Definition:</strong> ${meta.definition}</div>
+              <div style="margin-top: 4px; background: #f8fafc; padding: 6px 8px; border-radius: 6px; font-style: italic;"><strong style="font-style: normal; color: #475569;">Example:</strong> "${meta.example}"</div>
+              ${meta.synonyms.length > 0 ? `<div style="margin-top: 4px;"><strong>Synonyms:</strong> ${meta.synonyms.join(', ')}</div>` : ''}
+              ${meta.antonyms.length > 0 ? `<div style="margin-top: 4px;"><strong>Antonyms:</strong> ${meta.antonyms.join(', ')}</div>` : ''}
+              <div style="font-family: monospace; font-size: 0.75rem; color: var(--teacher-primary, #6d28d9); background: #faf5ff; padding: 4px 6px; border-radius: 4px; margin-top: 6px; word-break: break-all;">
+                COSYdata ID: ${m.id} | File: ${m.file}
+              </div>
+            </div>
+          </div>
+        `;
+      });
+
+      html += `</div>`;
+      resultsDiv.innerHTML = html;
+    }
+
+    function toggleDictCardDetail(cardId) {
+      const el = document.getElementById(cardId);
+      if (el) el.style.display = el.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function speakText(text, lang = 'en-US') {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = lang;
+        utterance.rate = 0.9;
+        window.speechSynthesis.speak(utterance);
+      }
+    }
+
+    async function searchIrregularVerbs(query) {
+      const resultsDiv = document.getElementById('verbSearchResults');
+
+      if (!window.CosyIrregularVerbs) {
+        if (resultsDiv) resultsDiv.innerHTML = `<p style="color: #64748b; font-style: italic;">Loading dictionary…</p>`;
+        try {
+          await window.CosyLazy.load('shared/js/irregular-verbs.js');
+        } catch (err) {
+          if (resultsDiv) resultsDiv.innerHTML = `<p style="color: #ef4444;">Could not load the dictionary.</p>`;
+          return;
+        }
+      }
+
+      if (!resultsDiv) return;
+
+      const currentInput = document.getElementById('verbSearchInput');
+      const currentQuery = currentInput ? currentInput.value : query;
+      const q = (currentQuery !== undefined ? currentQuery : query).trim().toLowerCase();
+      const verbs = window.CosyIrregularVerbs || [];
+      const matches = verbs.filter(v => v.v1.includes(q) || v.v2.includes(q) || v.v3.includes(q));
+
+      if (matches.length === 0) {
+        resultsDiv.innerHTML = `<p style="color: #ef4444;">No irregular verb found for "${q}".</p>`;
+        return;
+      }
+
+      let html = `
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; text-align: left;">
+          <thead>
+            <tr style="background: #f1f5f9; border-bottom: 1px solid #cbd5e1; color: #475569;">
+              <th style="padding: 6px 8px;">V1 (Base)</th>
+              <th style="padding: 6px 8px;">V2 (Past Simple)</th>
+              <th style="padding: 6px 8px;">V3 (Past Participle)</th>
+            </tr>
+          </thead>
+          <tbody>
+      `;
+
+      matches.slice(0, 15).forEach(v => {
+        html += `
+          <tr style="border-bottom: 1px solid #e2e8f0;">
+            <td style="padding: 6px 8px; font-weight: 700; color: #0f172a;">${v.v1}</td>
+            <td style="padding: 6px 8px; color: var(--teacher-primary, #6d28d9);">${v.v2}</td>
+            <td style="padding: 6px 8px; color: var(--teacher-primary, #6d28d9);">${v.v3}</td>
+          </tr>
+        `;
+      });
+
+      html += `</tbody></table>`;
+      resultsDiv.innerHTML = html;
+    }
+
+    function updateTimerDisplay() {
+      const el = document.getElementById('timerDisplay');
+      if (!el) return;
+      const m = Math.floor(window.timerSeconds / 60).toString().padStart(2, '0');
+      const s = (window.timerSeconds % 60).toString().padStart(2, '0');
+      el.innerText = `${m}:${s}`;
+    }
+
+    function startTimer() {
+      if (window.timerInterval) return;
+      window.timerInterval = setInterval(() => {
+        if (window.timerSeconds > 0) {
+          window.timerSeconds--;
+          updateTimerDisplay();
+        } else {
+          clearInterval(window.timerInterval);
+          window.timerInterval = null;
+          if (window.CosyUI) window.CosyUI.toast('⏱️ Time is up!');
+        }
+      }, 1000);
+    }
+
+    function pauseTimer() {
+      if (window.timerInterval) {
+        clearInterval(window.timerInterval);
+        window.timerInterval = null;
+      }
+    }
+
+    function resetTimer(secs) {
+      pauseTimer();
+      window.timerSeconds = secs;
+      updateTimerDisplay();
+    }
+
+    function addTimerMinutes(mins) {
+      window.timerSeconds += mins * 60;
+      updateTimerDisplay();
+    }
+
+    async function renderLesson(lessonPath) {
+      const appRoot = document.getElementById('app-root');
+
+      try {
+        const text = await window.CosyLessons.loadLessonContent(lessonPath, 'teacher');
+
+        let lessonTitle = "Interactive Teacher View";
+        window.currentTeacherSlides = [];
+        window.currentTeacherSlideIdx = 0;
+
+        if (lessonPath.endsWith('.xml')) {
+          const parser = new DOMParser();
+          const xmlDoc = parser.parseFromString(text, "text/xml");
+          const cosyLesson = xmlDoc.querySelector("cosy-lesson");
+          if (cosyLesson) lessonTitle = cosyLesson.getAttribute("title") || lessonTitle;
+
+          const slideElements = xmlDoc.querySelectorAll("cosy-slide");
+          slideElements.forEach(s => {
+            window.currentTeacherSlides.push({
+              id: s.getAttribute("id"),
+              title: s.getAttribute("title") || "Slide",
+              stage: s.getAttribute("stage") || "",
+              duration: s.getAttribute("duration") || "50",
+              mode: s.getAttribute("mode") || "all",
+              htmlContent: renderXmlNodeToTeacherHtml(s)
+            });
+          });
+        } else {
+          const jsonData = JSON.parse(text);
+          lessonTitle = jsonData.title || lessonTitle;
+          jsonData.slides.forEach(s => {
+            window.currentTeacherSlides.push({
+              id: s.id,
+              title: s.title,
+              stage: s.stage || "",
+              duration: s.duration || "50",
+              mode: s.mode || "all",
+              htmlContent: renderJsonSlideToTeacherHtml(s)
+            });
+          });
+        }
+
+        window.currentTeacherLessonTitle = lessonTitle;
+        renderTeacherLessonUI();
+
+        window.onkeydown = function(e) {
+          const activeTag = document.activeElement ? document.activeElement.tagName.toLowerCase() : "";
+          if (["input", "textarea", "select"].includes(activeTag)) return;
+          if (e.key === "ArrowLeft") navigateTeacherSlide(-1);
+          if (e.key === "ArrowRight") navigateTeacherSlide(1);
+        };
+
+      } catch (err) {
+        const backCourse = urlParams.get('course');
+        const backHref = backCourse ? `teacher.html?course=${encodeURIComponent(backCourse)}` : 'teacher.html';
+        appRoot.innerHTML = `
+          <div class="access-denied">
+            <h2>Lesson Error</h2>
+            <p>This lesson could not be loaded.</p>
+            <div style="margin-top: 16px;">
+              <a href="${backHref}" class="btn" style="background: var(--teacher-primary); text-decoration: none;">← Back to Course</a>
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    function renderTeacherLessonUI() {
+      const appRoot = document.getElementById('app-root');
+      const lessonTitle = window.currentTeacherLessonTitle;
+      const slides = window.currentTeacherSlides;
+      const totalSlides = slides.length;
+      const currentIdx = window.currentTeacherSlideIdx;
+
+      const backCourse = urlParams.get('course');
+      const backHref = backCourse ? `teacher.html?course=${encodeURIComponent(backCourse)}` : 'teacher.html';
+
+      let html = `
+        <div style="max-width: 1440px; margin: 10px auto; padding: 0 16px;">
+          <div class="teacher-controls-bar">
+            <a href="${backHref}" class="back-btn" style="color: #64748b; font-weight: 500;">← Back to Course</a>
+            <span style="font-weight: 700; color: #0f172a; font-size: 1.1rem;">${lessonTitle}</span>
+            <div style="display: flex; gap: 8px; align-items: center;">
+              <button class="slide-nav-btn" onclick="toggleTeacherViewMode()">${window.teacherViewModeAll ? '📄 Single Slide' : '📜 Scroll All'}</button>
+              <button class="slide-nav-btn" onclick="toggleProjectorMode()" title="Classroom Projector">🖥️ Projector</button>
+              <button class="slide-nav-btn" onclick="toggleAnswerKeys()" title="Toggle Answer Key Visibility">👁️ Answer Keys</button>
+              <button class="slide-nav-btn" onclick="adjustTextZoom(-1)">Aa-</button>
+              <button class="slide-nav-btn" onclick="adjustTextZoom(1)">Aa+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="edvibe-workspace">
+          <!-- Left Utility Rail -->
+          <div class="left-utility-rail">
+            <button class="rail-btn ${window.activeDrawer==='dict'?'active':''}" onclick="toggleUtilityDrawer('dict')" title="COSYdata Dictionary">📖</button>
+            <button class="rail-btn ${window.activeDrawer==='verbs'?'active':''}" onclick="toggleUtilityDrawer('verbs')" title="Irregular Verbs">⚡</button>
+            <button class="rail-btn ${window.activeDrawer==='timer'?'active':''}" onclick="toggleUtilityDrawer('timer')" title="Lesson Timer">⏱️</button>
+          </div>
+
+          <!-- Main Slide Content Area -->
+          <div style="position: relative;">
+            <div id="dict-drawer" style="display: ${window.activeDrawer==='dict'?'block':'none'}; background: white; border: 1px solid #cbd5e1; border-radius: 12px; padding: 16px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+              <h3 style="font-size: 1rem; color: #0f172a; margin-bottom: 8px; display: flex; align-items: center; justify-content: space-between;">
+                <span>📖 COSYdata Dictionary Lookup</span>
+                <button onclick="toggleUtilityDrawer(null)" style="border:none; background:none; cursor:pointer; font-size: 1.1rem;">✖</button>
+              </h3>
+              <input type="text" id="dictSearchInput" placeholder="Type a word (e.g. mother, family)..." oninput="searchCosyDict(this.value)" style="width: 100%; padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.9rem; margin-bottom: 12px;" />
+              <div id="dictSearchResults" style="max-height: 250px; overflow-y: auto; font-size: 0.88rem;">
+                <p style="color: #64748b; font-style: italic;">Type a word to search COSYdata vocabulary index...</p>
+              </div>
+            </div>
+
+            <div id="verbs-drawer" style="display: ${window.activeDrawer==='verbs'?'block':'none'}; background: white; border: 1px solid #cbd5e1; border-radius: 12px; padding: 16px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+              <h3 style="font-size: 1rem; color: #0f172a; margin-bottom: 8px; display: flex; align-items: center; justify-content: space-between;">
+                <span>⚡ Irregular Verbs Reference (V1 - V2 - V3)</span>
+                <button onclick="toggleUtilityDrawer(null)" style="border:none; background:none; cursor:pointer; font-size: 1.1rem;">✖</button>
+              </h3>
+              <input type="text" id="verbSearchInput" placeholder="Search verb (e.g. go, speak, write)..." oninput="searchIrregularVerbs(this.value)" style="width: 100%; padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.9rem; margin-bottom: 12px;" />
+              <div id="verbSearchResults" style="max-height: 250px; overflow-y: auto;">
+              </div>
+            </div>
+
+            <div id="timer-drawer" style="display: ${window.activeDrawer==='timer'?'block':'none'}; background: white; border: 1px solid #cbd5e1; border-radius: 12px; padding: 16px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+              <h3 style="font-size: 1rem; color: #0f172a; margin-bottom: 8px; display: flex; align-items: center; justify-content: space-between;">
+                <span>⏱️ Classroom Timer</span>
+                <button onclick="toggleUtilityDrawer(null)" style="border:none; background:none; cursor:pointer; font-size: 1.1rem;">✖</button>
+              </h3>
+              <div style="text-align: center; margin: 12px 0;">
+                <div id="timerDisplay" style="font-size: 2.2rem; font-weight: 800; color: var(--teacher-primary); font-family: monospace;">05:00</div>
+                <div style="display: flex; gap: 8px; justify-content: center; margin-top: 12px;">
+                  <button class="slide-nav-btn" onclick="startTimer()">Start</button>
+                  <button class="slide-nav-btn" onclick="pauseTimer()">Pause</button>
+                  <button class="slide-nav-btn" onclick="resetTimer(300)">Reset (5m)</button>
+                  <button class="slide-nav-btn" onclick="addTimerMinutes(1)">+1m</button>
+                  <button class="slide-nav-btn" onclick="addTimerMinutes(5)">+5m</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide Canvas -->
+      `;
+
+      if (window.teacherViewModeAll) {
+        slides.forEach((slide, idx) => {
+          html += renderTeacherSlideCard(slide, idx);
+        });
+      } else if (totalSlides > 0) {
+        html += renderTeacherSlideCard(slides[currentIdx], currentIdx);
+      }
+
+      html += `
+          </div>
+
+          <!-- Right Sections Sidebar -->
+          <div class="right-sections-sidebar">
+            <div class="sections-header">
+              <span>Sections (${totalSlides})</span>
+              <div style="display: flex; gap: 4px;">
+                <button class="slide-nav-btn" style="padding: 2px 8px;" onclick="navigateTeacherSlide(-1)" ${currentIdx === 0 ? 'disabled' : ''}>←</button>
+                <button class="slide-nav-btn" style="padding: 2px 8px;" onclick="navigateTeacherSlide(1)" ${currentIdx === totalSlides - 1 ? 'disabled' : ''}>→</button>
+              </div>
+            </div>
+            <div style="max-height: 500px; overflow-y: auto;">
+      `;
+
+      slides.forEach((s, idx) => {
+        html += `
+          <div class="section-item ${idx === currentIdx ? 'active' : ''}" onclick="goToTeacherSlide(${idx})">
+            <div>
+              <span class="section-num">${idx + 1}</span>
+              <span>${s.title}</span>
+            </div>
+            ${s.stage ? `<span style="font-size: 0.7rem; color: #64748b;">${s.stage}</span>` : ''}
+          </div>
+        `;
+      });
+
+      html += `
+            </div>
+          </div>
+        </div>
+      `;
+
+      appRoot.innerHTML = html;
+      applyTeacherFilters();
+      if (window.activeDrawer === 'verbs') searchIrregularVerbs('');
+    }
+
+    function applyTeacherFilters() {
+      const selectedDur = window.currentDurationFilter || '50';
+      const selectedMode = window.currentModeFilter || 'all';
+
+      const slideCards = document.querySelectorAll('.slide-card');
+      slideCards.forEach(card => {
+        const cardDur = card.getAttribute('data-duration') || '50';
+        const cardMode = card.getAttribute('data-mode') || 'all';
+
+        const matchDur = (cardDur === selectedDur || cardDur === 'all');
+        const matchMode = (selectedMode === 'all' || cardMode === 'all' || cardMode === selectedMode);
+
+        if (matchDur && matchMode) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function renderTeacherSlideCard(slide, idx) {
+      return `
+        <div class="slide-card" data-duration="${slide.duration}" data-mode="${slide.mode}">
+          <div class="slide-title">
+            <span>Slide ${idx + 1}: ${slide.title}</span>
+            ${slide.stage ? `<span class="slide-stage-tag">${slide.stage}</span>` : ''}
+          </div>
+          <div class="slide-body">
+            ${slide.htmlContent}
+          </div>
+        </div>
+      `;
+    }
+
+    function goToTeacherSlide(idx) {
+      window.currentTeacherSlideIdx = idx;
+      renderTeacherLessonUI();
+    }
+
+    function navigateTeacherSlide(direction) {
+      const nextIdx = window.currentTeacherSlideIdx + direction;
+      if (nextIdx >= 0 && nextIdx < window.currentTeacherSlides.length) {
+        window.currentTeacherSlideIdx = nextIdx;
+        renderTeacherLessonUI();
+      }
+    }
+
+    function toggleTeacherViewMode() {
+      window.teacherViewModeAll = !window.teacherViewModeAll;
+      renderTeacherLessonUI();
+    }
+
+    window.hideAnswerKeys = false;
+    function toggleAnswerKeys() {
+      window.hideAnswerKeys = !window.hideAnswerKeys;
+      const keys = document.querySelectorAll('.answer-key-box');
+      keys.forEach(k => {
+        k.style.display = window.hideAnswerKeys ? 'none' : 'block';
+      });
+    }
+
+    function toggleProjectorMode() {
+      document.body.classList.toggle('projector-mode');
+      if (document.body.classList.contains('projector-mode')) {
+        if (document.documentElement.requestFullscreen) {
+          document.documentElement.requestFullscreen().catch(() => {});
+        }
+      } else {
+        if (document.exitFullscreen && document.fullscreenElement) {
+          document.exitFullscreen().catch(() => {});
+        }
+      }
+    }
+
+    window.textZoomLevel = 100;
+    function adjustTextZoom(delta) {
+      window.textZoomLevel = Math.max(80, Math.min(160, window.textZoomLevel + (delta * 10)));
+      document.body.style.fontSize = window.textZoomLevel + '%';
+    }
+
+    function renderXmlNodeToTeacherHtml(node) {
+      let output = "";
+
+      for (let child of node.childNodes) {
+        if (child.nodeType === Node.TEXT_NODE) {
+          output += child.nodeValue;
+          continue;
+        }
+
+        const tagName = child.tagName ? child.tagName.toLowerCase() : "";
+
+        if (tagName === "cosy-teacher-notes") {
+          const type = child.getAttribute("type") || "instruction";
+          const title = child.getAttribute("title") || (type === "speech" ? "Suggested Speech Script & CCQs" : "Stage Aim & Guidance");
+          const noteClass = type === "speech" ? "teacher-note-speech" : "teacher-note-instruction";
+          const icon = type === "speech" ? "💬" : "💡";
+
+          output += `
+            <div class="teacher-note-box ${noteClass}">
+              <div class="teacher-note-header">${icon} ${title}</div>
+              <div>${renderXmlNodeToTeacherHtml(child)}</div>
+            </div>
+          `;
+        } else if (tagName === "p" || tagName === "ul" || tagName === "ol" || tagName === "li" || tagName === "h1" || tagName === "h2" || tagName === "h3") {
+          output += `<${tagName}>${renderXmlNodeToTeacherHtml(child)}</${tagName}>`;
+        } else if (tagName === "cosy-instruction") {
+          output += `<cosy-instruction>📋 ${renderXmlNodeToTeacherHtml(child)}</cosy-instruction>`;
+        } else if (tagName === "cosy-blockquote") {
+          output += `<cosy-blockquote>${renderXmlNodeToTeacherHtml(child)}</cosy-blockquote>`;
+        } else if (tagName === "cosy-text") {
+          const type = child.getAttribute("type");
+          if (type === "strong") output += `<strong>${renderXmlNodeToTeacherHtml(child)}</strong>`;
+          else if (type === "em") output += `<em>${renderXmlNodeToTeacherHtml(child)}</em>`;
+          else output += renderXmlNodeToTeacherHtml(child);
+        } else if (tagName === "cosy-input") {
+          const answers = child.querySelectorAll("cosy-input-item");
+          let ansList = [];
+          answers.forEach(a => ansList.push(a.textContent));
+
+          output += `
+            <div style="margin: 12px 0;">
+              <input type="text" disabled placeholder="${child.getAttribute("placeholder") || "Student input..."}" style="padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 6px;" />
+              <div class="answer-key-box">
+                <div class="answer-key-title">🔑 Answer Key:</div>
+                <div>${ansList.join(" / ") || "Free response"}</div>
+              </div>
+            </div>
+          `;
+        } else if (tagName === "cosy-select") {
+          const items = child.querySelectorAll("cosy-select-item");
+          let correct = "";
+          items.forEach(it => {
+            if (it.getAttribute("correct") === "true") correct = it.textContent;
+          });
+
+          output += `<div style="margin: 10px 0;">${renderXmlNodeToTeacherHtml(child)}`;
+          if (correct) {
+            output += `<div class="answer-key-box"><div class="answer-key-title">🔑 Answer Key:</div><div>${correct}</div></div>`;
+          }
+          output += `</div>`;
+        } else if (tagName === "cosy-test") {
+          const questions = child.querySelectorAll("cosy-test-question");
+          questions.forEach(q => {
+            const qText = q.querySelector("cosy-test-question-text")?.textContent || "Question";
+            output += `<div style="background: #f8fafc; padding: 12px; border-radius: 8px; margin: 12px 0; border: 1px solid #e2e8f0;"><strong>${qText}</strong>`;
+            const answers = q.querySelectorAll("cosy-test-item");
+            answers.forEach(a => {
+              const isCorrect = a.getAttribute("correct") === "true";
+              output += `<div style="padding: 4px 8px; margin: 4px 0; ${isCorrect ? 'background: #dcfce7; font-weight: 600; color: #15803d;' : ''}">${a.textContent} ${isCorrect ? '✔️ (Correct Answer)' : ''}</div>`;
+            });
+            output += `</div>`;
+          });
+        } else if (tagName === "cosy-vocabulary") {
+          const items = child.querySelectorAll("cosy-vocabulary-item");
+          output += `<div style="background: #f8fafc; border-radius: 8px; padding: 12px; margin: 12px 0;">`;
+          items.forEach(v => {
+            output += `<div style="padding: 6px 0; border-bottom: 1px solid #e2e8f0;"><strong>${v.getAttribute("word")}</strong>: ${v.getAttribute("definition")}</div>`;
+          });
+          output += `</div>`;
+        } else if (tagName === "cosy-choice" || tagName === "cosy-choice-image") {
+          output += `<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 16px 0;">${renderXmlNodeToTeacherHtml(child)}</div>`;
+        } else if (tagName === "cosy-choice-option" || tagName === "cosy-choice-image-option") {
+          output += `<div style="border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px; background: white;">${renderXmlNodeToTeacherHtml(child)}</div>`;
+        } else if (tagName === "cosy-image") {
+          const src = child.getAttribute("src") || child.getAttribute("resource-id") || "";
+          if (src.startsWith("https://")) {
+            output += `<img src="${src}" loading="lazy" alt="" style="max-width: 100%; border-radius: 8px; margin: 12px 0; display: block;" />`;
+          }
+        } else if (tagName === "cosy-iframe") {
+          const src = child.getAttribute("src") || "";
+          if (src.startsWith("https://")) {
+            output += `<iframe src="${src}" sandbox="allow-scripts allow-same-origin allow-presentation" allow="fullscreen" style="width: 100%; height: 350px; border: none; border-radius: 8px; margin: 12px 0;"></iframe>`;
+          }
+        } else {
+          output += renderXmlNodeToTeacherHtml(child);
+        }
+      }
+      return output;
+    }
+
+    function renderJsonSlideToTeacherHtml(slide) {
+      let output = "";
+      if (slide.teacherNotes) {
+        slide.teacherNotes.forEach(tn => {
+          output += `
+            <div class="teacher-note-box ${tn.type === 'speech' ? 'teacher-note-speech' : 'teacher-note-instruction'}">
+              <div class="teacher-note-header">${tn.type === 'speech' ? '💬 Suggested Speech Script' : '💡 Stage Aim & Guidance'}</div>
+              <div>${tn.content}</div>
+            </div>
+          `;
+        });
+      }
+      if (slide.elements) {
+        slide.elements.forEach(el => {
+          if (el.type === "instruction") output += `<cosy-instruction>📋 ${el.content}</cosy-instruction>`;
+          else if (el.type === "blockquote") output += `<cosy-blockquote>${el.content}</cosy-blockquote>`;
+          else if (el.type === "test") {
+            output += `<div style="background: #f8fafc; padding: 12px; border-radius: 8px; margin: 12px 0; border: 1px solid #e2e8f0;">`;
+            if (el.options) {
+              el.options.forEach(opt => {
+                const isCorrect = el.answers && el.answers.includes(opt);
+                output += `<div style="padding: 4px 8px; margin: 4px 0; ${isCorrect ? 'background: #dcfce7; font-weight: 600; color: #15803d;' : ''}">${opt} ${isCorrect ? '✔️ (Correct Answer)' : ''}</div>`;
+              });
+            }
+            output += `</div>`;
+          } else if (el.type === "input" && el.answers) {
+            output += `<div class="answer-key-box"><div class="answer-key-title">🔑 Answer Key:</div><div>${el.answers.join(" / ")}</div></div>`;
+          } else if (el.type === "image") {
+            const src = el.src || el.resourceId || "";
+            if (typeof src === "string" && src.startsWith("https://")) {
+              output += `<img src="${src}" loading="lazy" alt="" style="max-width: 100%; border-radius: 8px; margin: 12px 0; display: block;" />`;
+            }
+          }
+        });
+      }
+      return output;
+    }
+
+    async function loadUserNotes(roleType) {
+      const container = document.getElementById('user-notes-container');
+      if (!container) return;
+
+      const client = window.CosyAuth ? window.CosyAuth.client : null;
+      if (!client) {
+        container.innerHTML = '<p style="color: #64748b; font-size: 0.85rem;">Notes functionality requires configured database access.</p>';
+        return;
+      }
+
+      try {
+        const { data: notes, error } = await client
+          .from('lesson_notes')
+          .select('*')
+          .order('updated_at', { ascending: false });
+
+        if (error) throw error;
+
+        if (!notes || notes.length === 0) {
+          container.innerHTML = '<p style="color: #64748b; font-size: 0.85rem;">You do not have any saved classroom notes yet.</p>';
+          return;
+        }
+
+        // Group notes by date, language, and lesson
+        const grouped = {};
+        notes.forEach(note => {
+          const dateStr = note.updated_at ? new Date(note.updated_at).toLocaleDateString() : 'Recent';
+          const parts = (note.lesson_id || '').split('/');
+          const file = parts.pop() || note.lesson_id;
+          const lang = parts.length > 0 ? parts[parts.length - 1] : 'general';
+          const groupKey = `${dateStr} • ${lang}`;
+
+          if (!grouped[groupKey]) grouped[groupKey] = [];
+          grouped[groupKey].push({ ...note, fileName: file });
+        });
+
+        let html = '<div style="display: flex; flex-direction: column; gap: 16px;">';
+        for (const groupHeader in grouped) {
+          html += `
+            <div style="border-bottom: 1px solid #e2e8f0; pb: 8px;">
+              <h3 style="font-size: 0.95rem; font-weight: 700; color: #334155; margin-bottom: 8px;">${groupHeader}</h3>
+              <div style="display: flex; flex-direction: column; gap: 10px;">
+          `;
+
+          grouped[groupHeader].forEach(n => {
+            const cardId = `note-card-${n.id}`;
+            const textareaId = `note-text-${n.id}`;
+            const statusId = `note-status-${n.id}`;
+
+            html += `
+              <div id="${cardId}" style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                  <strong style="font-size: 0.88rem; color: var(--teacher-primary, #6d28d9);">${n.lesson_id}</strong>
+                  <span id="${statusId}" style="font-size: 0.75rem; font-weight: 700; color: #64748b;">v${n.version || 0}</span>
+                </div>
+                <textarea id="${textareaId}" style="width: 100%; height: 80px; padding: 8px; font-size: 0.85rem; border: 1px solid #cbd5e1; border-radius: 6px; resize: vertical; font-family: inherit;">${n.content || ''}</textarea>
+                <div style="display: flex; justify-content: flex-end; gap: 8px; margin-top: 6px;">
+                  <button onclick="savePortalNote('${n.id}', '${textareaId}', '${statusId}', ${n.version || 0})" style="background: var(--teacher-primary, #6d28d9); color: white; border: none; border-radius: 6px; padding: 4px 12px; font-size: 0.8rem; font-weight: 600; cursor: pointer;">Save Note</button>
+                </div>
+              </div>
+            `;
+          });
+
+          html += `</div></div>`;
+        }
+        html += '</div>';
+        container.innerHTML = html;
+
+      } catch (err) {
+        console.warn('Error loading notes:', err);
+        container.innerHTML = `<p style="color: #ef4444; font-size: 0.85rem;">Could not load notes: ${err.message || 'Error'}</p>`;
+      }
+    }
+
+    async function savePortalNote(noteId, textareaId, statusId, baseVersion) {
+      const textarea = document.getElementById(textareaId);
+      const statusEl = document.getElementById(statusId);
+      if (!textarea) return;
+
+      const content = textarea.value;
+      const client = window.CosyAuth ? window.CosyAuth.client : null;
+
+      if (!client) {
+        if (statusEl) statusEl.innerText = 'Saved locally';
+        return;
+      }
+
+      if (statusEl) statusEl.innerText = 'Saving...';
+
+      try {
+        const { data, error } = await client.rpc('save_lesson_note', {
+          note_id: noteId,
+          content: content,
+          base_version: baseVersion
+        });
+
+        if (error) throw error;
+
+        if (data && data.conflict) {
+          if (statusEl) statusEl.innerText = 'Conflict merged';
+          textarea.value = data.content || content;
+        } else {
+          if (statusEl) statusEl.innerText = 'Saved ✓';
+        }
+      } catch (err) {
+        console.warn('Portal note save error:', err);
+        if (statusEl) statusEl.innerText = 'Save failed';
+      }
+    }
+
+    window.loadUserNotes = loadUserNotes;
+    window.savePortalNote = savePortalNote;
+
+    const originalInitTeacherApp = initTeacherApp;
+    initTeacherApp = async function() {
+      await originalInitTeacherApp();
+      loadUserNotes('teacher');
+    };
+
+    window.onload = initTeacherApp;
+  </script>
+</body>
+</html>

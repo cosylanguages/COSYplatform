@@ -1,0 +1,48 @@
+{
+  "curriculumId": "pronunciation-en-b2",
+  "title": "English Pronunciation B2",
+  "totalLessons": 5,
+  "supportedDurations": [
+    50,
+    80,
+    110
+  ],
+  "teacherLed": true,
+  "sequence": [
+    {
+      "lessonNumber": 1,
+      "id": "en-pron-b2-01-latin-greek-stress",
+      "title": "Latin & Greek Suffix Stress Rules (-ian, -ious, -ial, -graphy, -logy)",
+      "lessonFile": "lessons/english-pronunciation/b2/en-pron-b2-01-latin-greek-stress.json",
+      "teacherLed": true
+    },
+    {
+      "lessonNumber": 2,
+      "id": "en-pron-b2-02-palatalization-ti-ci-si",
+      "title": "Palatalization of TI, CI, SI before Vowels (/ʃ/, /ʒ/)",
+      "lessonFile": "lessons/english-pronunciation/b2/en-pron-b2-02-palatalization-ti-ci-si.json",
+      "teacherLed": true
+    },
+    {
+      "lessonNumber": 3,
+      "id": "en-pron-b2-03-advanced-silent-letters",
+      "title": "Advanced Silent Letters (bt, ps-, pn-, sc-)",
+      "lessonFile": "lessons/english-pronunciation/b2/en-pron-b2-03-advanced-silent-letters.json",
+      "teacherLed": true
+    },
+    {
+      "lessonNumber": 4,
+      "id": "en-pron-b2-04-connected-speech",
+      "title": "Connected Speech: Linking R, Intrusive R, T-Flapping & H-Dropping",
+      "lessonFile": "lessons/english-pronunciation/b2/en-pron-b2-04-connected-speech.json",
+      "teacherLed": true
+    },
+    {
+      "lessonNumber": 5,
+      "id": "en-pron-b2-05-clear-and-dark-l",
+      "title": "Clear L vs Dark L Allophony",
+      "lessonFile": "lessons/english-pronunciation/b2/en-pron-b2-05-clear-and-dark-l.json",
+      "teacherLed": true
+    }
+  ]
+}

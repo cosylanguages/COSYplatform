@@ -1,0 +1,55 @@
+{
+  "curriculumId": "pronunciation-fr-c2",
+  "title": "French Pronunciation C2",
+  "totalLessons": 6,
+  "supportedDurations": [
+    50,
+    80,
+    110
+  ],
+  "teacherLed": true,
+  "sequence": [
+    {
+      "lessonNumber": 1,
+      "id": "fr-pron-c2-01-histoire-prononciation",
+      "title": "Histoire de la prononciation du latin au français moderne",
+      "lessonFile": "lessons/french-pronunciation/c2/fr-pron-c2-01-histoire-prononciation.json",
+      "teacherLed": true
+    },
+    {
+      "lessonNumber": 2,
+      "id": "fr-pron-c2-02-reformes-orthographiques",
+      "title": "Les réformes orthographiques de 1835, 1901 et 1990",
+      "lessonFile": "lessons/french-pronunciation/c2/fr-pron-c2-02-reformes-orthographiques.json",
+      "teacherLed": true
+    },
+    {
+      "lessonNumber": 3,
+      "id": "fr-pron-c2-03-lettres-fantomes",
+      "title": "Lettres fantômes étymologiques et cas limites",
+      "lessonFile": "lessons/french-pronunciation/c2/fr-pron-c2-03-lettres-fantomes.json",
+      "teacherLed": true
+    },
+    {
+      "lessonNumber": 4,
+      "id": "fr-pron-c2-04-noms-propres",
+      "title": "Prononciation des noms propres et toponymes français",
+      "lessonFile": "lessons/french-pronunciation/c2/fr-pron-c2-04-noms-propres.json",
+      "teacherLed": true
+    },
+    {
+      "lessonNumber": 5,
+      "id": "fr-pron-c2-05-mots-etrangers-conserves",
+      "title": "Mots étrangers conservés et emprunts non francisés",
+      "lessonFile": "lessons/french-pronunciation/c2/fr-pron-c2-05-mots-etrangers-conserves.json",
+      "teacherLed": true
+    },
+    {
+      "lessonNumber": 6,
+      "id": "fr-pron-c2-06-tables-annexes-top100",
+      "title": "Annexes de référence : Tables d'équivalence graphème<->phonème & Top 100 exceptions",
+      "lessonFile": "lessons/french-pronunciation/c2/fr-pron-c2-06-tables-annexes-top100.json",
+      "teacherLed": true
+    }
+  ]
+}

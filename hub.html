@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0369a1">
+  <meta name="description" content="Access your course tracks, learning resources, and portal navigation." data-i18n-placeholder="hub.metaDescription">
+  <link rel="icon" href="shared/img/favicon.svg" type="image/svg+xml">
+  <title data-i18n="hub.title">Learning Hub · COSYlanguages</title>
+  <link rel="stylesheet" href="shared/css/tokens.css">
+  <link rel="stylesheet" href="shared/styles/style.css">
+  <style>
+    :root {
+      --hub-primary: var(--cosy-platform-accent, #0369a1);
+      --teacher-primary: var(--cosy-platform-teacher, #6d28d9);
+      --teacher-note-bg: var(--cosy-color-honey-pale, #fffbe3);
+      --teacher-note-border: var(--cosy-color-honey, #b45309);
+      --speech-bg: var(--cosy-semantic-success-light, #ecfdf5);
+      --speech-border: var(--cosy-semantic-success, #047857);
+      --student-primary: var(--cosy-platform-student, #0369a1);
+      --student-light: var(--cosy-platform-student-light, #e0f2fe);
+      --border-color: var(--cosy-color-border, rgba(74, 107, 80, 0.12));
+    }
+
+    body {
+      background-color: var(--cosy-color-cream, #fdfcf8);
+      color: var(--cosy-color-ink, #2a2a2a);
+      margin: 0;
+      font-family: var(--cosy-font-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+    }
+
+    /* Unauthenticated / Private Area Card */
+    .unauth-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px;
+    }
+
+    .unauth-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--cosy-radius-md, 14px);
+      padding: 40px;
+      max-width: 480px;
+      width: 100%;
+      box-shadow: var(--cosy-shadow-sm);
+      text-align: center;
+    }
+
+    .unauth-logo {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--hub-primary);
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .unauth-card h1 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #0f172a;
+    }
+
+    .unauth-card p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #64748b;
+      margin-bottom: 24px;
+    }
+
+    .unauth-footer {
+      font-size: 13px;
+      color: #64748b;
+      border-top: 1px solid var(--border-color);
+      padding-top: 16px;
+    }
+
+    /* Header */
+    .hub-header {
+      background: #0f172a;
+      color: white;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .hub-header-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .role-badge {
+      padding: 4px 12px;
+      border-radius: var(--cosy-radius-full, 100px);
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-teacher-role { background: #f3e8ff; color: #6d28d9; }
+    .badge-student-role { background: #e0f2fe; color: #0369a1; }
+    .badge-founder-role { background: #0c4a6e; color: #bae6fd; }
+
+    .hub-container {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 0 20px;
+      flex: 1;
+    }
+
+    /* Grouping & Filters */
+    .filter-bar {
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: var(--cosy-radius-md, 14px);
+      padding: 16px 20px;
+      margin-bottom: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+      box-shadow: var(--cosy-shadow-sm);
+    }
+
+    .filter-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #475569;
+    }
+
+    .filter-group select, .filter-group input {
+      padding: 6px 12px;
+      border-radius: var(--cosy-radius-sm, 8px);
+      border: 1px solid #cbd5e1;
+      font-size: 0.85rem;
+      background: #f8fafc;
+    }
+
+    .lang-section {
+      margin-bottom: 36px;
+    }
+
+    .lang-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .catalog-category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 20px;
+      align-items: start;
+    }
+
+    .category-card {
+      background: #f0f9ff;
+      border: 1px solid #bae6fd;
+      border-radius: var(--cosy-radius-md, 14px);
+      padding: 16px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+      transition: all 0.2s ease;
+    }
+
+    .category-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #e0f2fe;
+      user-select: none;
+    }
+
+    .category-header h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #0369a1;
+      margin: 0;
+    }
+
+    .category-toggle-icon {
+      font-size: 0.9rem;
+      color: #0369a1;
+      transition: transform 0.2s ease;
+    }
+
+    .category-body {
+      margin-top: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .category-card.collapsed .category-body {
+      display: none;
+    }
+
+    .category-card.collapsed .category-toggle-icon {
+      transform: rotate(-90deg);
+    }
+
+    .course-item-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--cosy-radius-sm, 8px);
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .course-item-card:hover {
+      border-color: #38bdf8;
+      box-shadow: 0 2px 8px rgba(2, 132, 199, 0.08);
+    }
+
+    .course-item-title {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #0f172a;
+    }
+
+    .course-item-level {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    /* Controls Bar & Viewer */
+    .controls-bar {
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: var(--cosy-radius-md, 14px);
+      padding: 16px 24px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      box-shadow: var(--cosy-shadow-sm);
+    }
+
+    .slide-card {
+      background: white;
+      border-radius: var(--cosy-radius-md, 14px);
+      border: 1px solid var(--border-color);
+      padding: 32px;
+      margin-bottom: 24px;
+      box-shadow: var(--cosy-shadow-sm);
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.49.1"></script>
+  <script src="shared/js/config.js"></script>
+  <script src="shared/js/auth-guard.js"></script>
+  <script src="shared/js/auth-sso.js"></script>
+  <script src="shared/js/cms-editor.js"></script>
+  <script src="shared/js/i18n.js"></script>
+  <script src="shared/js/lang-switcher.js"></script>
+  <script src="shared/js/lesson-resolver.js"></script>
+</head>
+<body>
+
+  <header class="hub-header">
+    <div class="hub-header-content">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <span style="font-size: 1.4rem; font-weight: 800;" data-i18n-skip>COSYlanguages</span>
+        <span class="badge-hub" data-i18n="hub.badge">Unified Hub Portal</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <div id="header-lang-switcher"></div>
+        <div id="user-info" style="font-size: 0.85rem; color: #64748b;"></div>
+      </div>
+    </div>
+  </header>
+
+  <main id="app-root" class="container">
+    <!-- Dynamic JS Content -->
+  </main>
+
+  <footer class="cosy-ecosystem-strip-footer">
+    <span data-i18n="footer.partOfEcosystem">🌐 Part of the COSY ecosystem •</span>
+    <a href="https://cosylanguages.github.io/COSYlanguages/" target="_blank" rel="noopener" data-i18n="footer.cosylanguages">COSYlanguages 🏠</a> •
+    <a href="https://cosylanguages.github.io/COSYdata/" target="_blank" rel="noopener" data-i18n="footer.cosydata">COSYdata 📚</a> •
+    <a href="https://cosylanguages.github.io/COSYtools/" target="_blank" rel="noopener" data-i18n="footer.cosytools">COSYtools 🔎</a> •
+    <a href="https://cosylanguages.github.io/COSYgames/" target="_blank" rel="noopener" data-i18n="footer.cosygames">COSYgames 🎮</a> •
+    <a href="https://cosylanguages.github.io/COSYevents/" target="_blank" rel="noopener" data-i18n="footer.cosyevents">COSYevents 🎉</a>
+  </footer>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const courseParam = urlParams.get('course');
+    const levelParam = urlParams.get('level');
+    const lessonParam = urlParams.get('lesson');
+
+    function trackLabel(track) {
+      const key = 'track.' + track;
+      const v = window.CosyI18n.t(key);
+      return (v === key) ? `<span data-i18n-skip>${track}</span>` : v;
+    }
+
+    async function initHubApp() {
+      await window.CosyI18n.ready;
+      if (window.CosyLangSwitcher) {
+        window.CosyLangSwitcher.mount('#header-lang-switcher');
+      }
+
+      const authData = await window.CosyAuth.getAuthAndProfile();
+      if (!authData) return;
+
+      if (authData.profile && window.CosyI18n && typeof window.CosyI18n.recompute === 'function') {
+        await window.CosyI18n.recompute(authData.profile);
+      }
+
+      if (lessonParam) {
+        const isTeacher = authData.profile && (authData.profile.role === 'teacher' || authData.profile.role === 'founder');
+        const targetPage = isTeacher ? 'teacher.html' : 'student.html';
+        window.location.replace(`${targetPage}${window.location.search}`);
+        return;
+      }
+
+      const userEmail = authData.user ? authData.user.email : '';
+      const emailText = userEmail || window.CosyI18n.t('common.authenticated');
+      const userInfoEl = document.getElementById('user-info');
+      userInfoEl.innerHTML = `<span data-i18n-skip>${window.CosyI18n.t('common.userLabel', { email: emailText })}</span>`;
+
+      const fullManifest = window.CosyAuth ? window.CosyAuth.FULL_MANIFEST : [];
+
+      if (courseParam) {
+        renderRoadmapViewer(authData.profile, courseParam, levelParam);
+      } else {
+        renderHubCatalog(authData.profile, fullManifest);
+      }
+    }
+
+    function renderHubCatalog(profile, fullManifest) {
+      const appRoot = document.getElementById('app-root');
+
+      let courseList = fullManifest.filter(c => window.CosyAuth.isCourseAccessible(c, profile));
+
+      let html = `
+        <div class="catalog-container">
+          <div style="margin-bottom: 24px; display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <h1 style="font-size: 1.6rem; color: #0f172a;" data-i18n="hub.heading">${window.CosyI18n.t('hub.heading')}</h1>
+              <p style="color: #64748b;" data-i18n="hub.subheading">${window.CosyI18n.t('hub.subheading')}</p>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <a href="classroom.html" class="btn" style="background: #047857; color: white; padding: 6px 14px; text-decoration: none; font-size: 0.85rem; border-radius: 6px; font-weight: 600;" data-i18n="common.liveClassroom">${window.CosyI18n.t('common.liveClassroom')}</a>
+              <button onclick="window.CosyAuth.logout()" class="btn btn-outline" style="font-size: 0.85rem;" data-i18n="common.logout">${window.CosyI18n.t('common.logout')}</button>
+            </div>
+          </div>
+          <div class="catalog-grid">
+      `;
+
+      if (courseList.length === 0) {
+        html += `<p style="grid-column: 1/-1; color: #64748b;" data-i18n="hub.noAccessibleCourses">${window.CosyI18n.t('hub.noAccessibleCourses')}</p>`;
+      } else {
+        courseList.forEach(course => {
+          const isAvailable = course.status !== 'not_yet_available';
+          if (isAvailable) {
+            html += `
+              <div class="course-card">
+                <div>
+                  <span class="badge-hub" style="margin-bottom: 8px; display: inline-block;" data-i18n-skip>${course.level.toUpperCase()}</span>
+                  <h3 style="font-size: 1.15rem; color: #0f172a; margin-bottom: 6px;" data-i18n-skip>${course.title}</h3>
+                  <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 16px;">${window.CosyI18n.t('hub.trackLabel', { track: trackLabel(course.track) })}</p>
+                </div>
+                <a href="hub.html?course=${course.id}&level=${course.level.toLowerCase()}" class="btn" style="background: var(--hub-primary, #0369a1); text-align: center;" data-i18n="hub.openCourseRoadmap">${window.CosyI18n.t('hub.openCourseRoadmap')}</a>
+              </div>
+            `;
+          } else {
+            html += `
+              <div class="course-card disabled" style="opacity: 0.6;">
+                <div>
+                  <span class="badge-hub" style="margin-bottom: 8px; display: inline-block;" data-i18n-skip>${course.level.toUpperCase()}</span>
+                  <h3 style="font-size: 1.15rem; color: #0f172a; margin-bottom: 6px;" data-i18n-skip>${course.title}</h3>
+                  <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 16px;">${window.CosyI18n.t('hub.trackLabel', { track: trackLabel(course.track) })}</p>
+                </div>
+                <span style="font-size: 0.85rem; color: #64748b; font-weight: 500; text-align: center; display: block;" data-i18n="common.comingSoon">${window.CosyI18n.t('common.comingSoon')}</span>
+              </div>
+            `;
+          }
+        });
+      }
+
+      html += `</div></div>`;
+      appRoot.innerHTML = html;
+      window.CosyI18n.applyDom(document);
+    }
+
+    async function renderRoadmapViewer(profile, courseId, level) {
+      const appRoot = document.getElementById('app-root');
+      try {
+        const res = await fetch(`roadmaps/${courseId}.json`);
+        if (!res.ok) throw new Error("Roadmap not found");
+        const roadmap = await res.json();
+
+        const role = (profile && profile.role) || 'student';
+        const isTeacher = profile && (profile.role === 'teacher' || profile.role === 'founder');
+        const targetPage = isTeacher ? 'teacher.html' : 'student.html';
+        const totalLessons = roadmap.sequence.length;
+        const availableCount = roadmap.sequence.filter(item => window.CosyLessons.getLessonState(item, role) === 'available').length;
+        const summaryText = roadmap.teacherLed
+          ? window.CosyI18n.tp('common.taughtLiveSummary', totalLessons)
+          : window.CosyI18n.tp('common.lessonsAvailable', availableCount, { total: totalLessons });
+
+        let html = `
+          <div class="catalog-container">
+            <div style="margin-bottom: 20px;">
+              <a href="hub.html" class="btn btn-outline" data-i18n="common.backToHub">${window.CosyI18n.t('common.backToHub')}</a>
+            </div>
+            <h2 style="font-size: 1.4rem; color: #0f172a; margin-bottom: 6px;" data-i18n-skip>${roadmap.title}</h2>
+            <p style="color: #64748b; margin-bottom: 20px;">${summaryText}</p>
+            <div class="unit-grid">
+        `;
+
+        roadmap.sequence.forEach(item => {
+          const state = window.CosyLessons.getLessonState(item, role);
+          const lessonPath = window.CosyLessons.getLessonPath(item);
+
+          if (state === 'available') {
+            html += `
+              <div class="unit-card">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                    <span style="font-size: 0.75rem; color: #64748b; font-weight: 600;">${window.CosyI18n.t('common.lessonNumber', { number: item.lessonNumber })}</span>
+                  </div>
+                  <h3 style="margin: 6px 0;" data-i18n-skip>${item.title}</h3>
+                  ${item.unit ? `<p style="font-size: 0.8rem; color: #64748b; margin-bottom: 12px;" data-i18n-skip>${item.unit}</p>` : ''}
+                </div>
+                <div style="display: flex; gap: 6px; flex-direction: column; margin-top: 10px;">
+                  <a href="${targetPage}?lesson=${encodeURIComponent(lessonPath)}&course=${encodeURIComponent(courseId)}" class="btn" style="background: var(--hub-primary, #0369a1); text-align: center;" data-i18n="common.openLesson">${window.CosyI18n.t('common.openLesson')}</a>
+                </div>
+              </div>
+            `;
+          } else if (state === 'teacher-led') {
+            html += `
+              <div class="unit-card" style="opacity: 0.6; background: #f8fafc;">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                    <span style="font-size: 0.75rem; color: #64748b; font-weight: 600;">${window.CosyI18n.t('common.lessonNumber', { number: item.lessonNumber })}</span>
+                    <span style="font-size: 0.75rem; color: #64748b; background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-weight: 600;" data-i18n="common.taughtWithTeacher">${window.CosyI18n.t('common.taughtWithTeacher')}</span>
+                  </div>
+                  <h3 style="margin: 6px 0; color: #64748b;" data-i18n-skip>${item.title}</h3>
+                  ${item.unit ? `<p style="font-size: 0.8rem; color: #64748b; margin-bottom: 12px;" data-i18n-skip>${item.unit}</p>` : ''}
+                </div>
+              </div>
+            `;
+          } else {
+            html += `
+              <div class="unit-card" style="opacity: 0.6; background: #f8fafc;">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                    <span style="font-size: 0.75rem; color: #64748b; font-weight: 600;">${window.CosyI18n.t('common.lessonNumber', { number: item.lessonNumber })}</span>
+                    <span style="font-size: 0.75rem; color: #64748b; background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-weight: 600;" data-i18n="common.planned">${window.CosyI18n.t('common.planned')}</span>
+                  </div>
+                  <h3 style="margin: 6px 0; color: #64748b;" data-i18n-skip>${item.title}</h3>
+                  ${item.unit ? `<p style="font-size: 0.8rem; color: #64748b; margin-bottom: 12px;" data-i18n-skip>${item.unit}</p>` : ''}
+                </div>
+              </div>
+            `;
+          }
+        });
+
+        html += `</div></div>`;
+        appRoot.innerHTML = html;
+        window.CosyI18n.applyDom(document);
+      } catch (err) {
+        appRoot.innerHTML = `<div class="access-denied"><h2 data-i18n="hub.error">${window.CosyI18n.t('hub.error')}</h2><p data-i18n-skip>${err.message}</p></div>`;
+        window.CosyI18n.applyDom(document);
+      }
+    }
+
+
+    window.onload = initHubApp;
+  </script>
+</body>
+</html>
