@@ -461,6 +461,8 @@
   <script src="shared/js/lazy-script.js"></script>
   <script src="shared/js/lesson-resolver.js"></script>
   <script src="shared/js/ui-toast.js"></script>
+  <script src="shared/js/i18n.js"></script>
+  <script src="shared/js/lang-switcher.js"></script>
 </head>
 <body>
 
@@ -498,6 +500,9 @@
     const lessonParam = urlParams.get('lesson');
 
     async function initStudentApp() {
+      if (window.CosyI18n && window.CosyI18n.ready) {
+        await window.CosyI18n.ready;
+      }
       const appRoot = document.getElementById('app-root');
 
       const authData = await window.CosyAuth.requireRole(['student', 'teacher', 'founder']);
@@ -513,7 +518,7 @@
         }
         renderLesson(lessonParam, authData.profile);
       } else if (courseParam) {
-        renderCourseRoadmap(courseParam, levelParam, authData.profile);
+        renderCourseRoadmap(courseParam, levelParam, authData.profile, authData);
       } else {
         renderStudentCatalog(authData.profile);
       }
@@ -691,8 +696,9 @@
       appRoot.innerHTML = html;
     }
 
-    async function renderCourseRoadmap(courseId, level, profile) {
+    async function renderCourseRoadmap(courseId, level, profile, authData) {
       const appRoot = document.getElementById('app-root');
+      appRoot.innerHTML = `<div class="catalog-container"><p style="color: #64748b;">${window.CosyI18n ? window.CosyI18n.t('progress.loading') : 'Loading progress...'}</p></div>`;
 
       try {
         const candidates = [
@@ -714,6 +720,30 @@
         if (!roadmapRes || !roadmapRes.ok) throw new Error(`Roadmap for ${courseId} not found`);
         const roadmap = await roadmapRes.json();
 
+        let progressMap = {};
+        let progressError = null;
+        const client = window.CosyAuth ? window.CosyAuth.client : null;
+        const userId = authData && authData.user ? authData.user.id : null;
+
+        if (client && userId) {
+          try {
+            const { data: pData, error: pErr } = await client
+              .from('lesson_progress')
+              .select('lesson_id, answered, correct, incorrect, last_activity')
+              .eq('student_id', userId);
+
+            if (pErr) {
+              progressError = pErr.message || 'Error loading progress';
+            } else if (pData) {
+              pData.forEach(row => {
+                progressMap[row.lesson_id] = row;
+              });
+            }
+          } catch (err) {
+            progressError = err.message || 'Error loading progress';
+          }
+        }
+
         const role = (profile && profile.role) || 'student';
         const totalLessons = roadmap.sequence.length;
         const availableCount = roadmap.sequence.filter(item => window.CosyLessons.getLessonState(item, role) === 'available').length;
@@ -731,6 +761,7 @@
             <div class="section-card">
               <h2 style="font-size: 1.4rem; color: #0f172a; margin-bottom: 6px;">${roadmap.title}</h2>
               <p style="color: #64748b; margin-bottom: 20px;">${summaryText}</p>
+              ${progressError ? `<div style="color: #ef4444; font-size: 0.85rem; margin-bottom: 16px;">⚠️ ${window.CosyI18n ? window.CosyI18n.t('progress.error') : 'Could not load progress'}</div>` : ''}
 
               <div class="unit-grid">
         `;
@@ -738,6 +769,32 @@
         roadmap.sequence.forEach((item) => {
           const state = window.CosyLessons.getLessonState(item, role);
           const lessonPath = window.CosyLessons.getLessonPath(item);
+          const prog = lessonPath ? progressMap[lessonPath] : null;
+
+          let progressHtml = '';
+          if (prog) {
+            const answered = prog.answered || 0;
+            const correct = prog.correct || 0;
+            const pct = answered > 0 ? Math.round((correct / answered) * 100) : 0;
+            const dateStr = prog.last_activity ? (window.CosyI18n && window.CosyI18n.formatDate ? window.CosyI18n.formatDate(prog.last_activity) : new Date(prog.last_activity).toLocaleDateString()) : '';
+
+            const answeredText = window.CosyI18n ? window.CosyI18n.t('progress.answered', { count: answered }) : `Answered: ${answered}`;
+            const correctText = window.CosyI18n ? window.CosyI18n.t('progress.correct', { pct: pct }) : `${pct}% correct`;
+            const lastActText = window.CosyI18n ? window.CosyI18n.t('progress.lastActivity', { date: dateStr }) : `Last activity: ${dateStr}`;
+
+            progressHtml = `
+              <div class="lesson-progress-box" style="margin-top: 10px; padding-top: 8px; border-top: 1px solid #e2e8f0; font-size: 0.78rem; color: #475569;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                  <span style="font-weight: 600;">${answeredText}</span>
+                  ${answered > 0 ? `<span style="font-weight: 700; color: #166534;">${correctText}</span>` : ''}
+                </div>
+                <div style="background: #e2e8f0; border-radius: 100px; height: 6px; overflow: hidden; margin-bottom: 4px;">
+                  <div style="background: var(--student-primary); width: ${Math.min(100, pct)}%; height: 100%; border-radius: 100px;"></div>
+                </div>
+                ${dateStr ? `<div style="font-size: 0.72rem; color: #64748b;">${lastActText}</div>` : ''}
+              </div>
+            `;
+          }
 
           if (state === 'available') {
             html += `
@@ -748,8 +805,9 @@
                   </div>
                   <h3 style="margin: 6px 0;">${item.title}</h3>
                   ${item.unit ? `<p style="font-size: 0.8rem; color: #64748b; margin-bottom: 12px;">${item.unit}</p>` : ''}
+                  ${progressHtml}
                 </div>
-                <div style="display: flex; gap: 6px; flex-direction: column;">
+                <div style="display: flex; gap: 6px; flex-direction: column; margin-top: 12px;">
                   <a href="student.html?lesson=${encodeURIComponent(lessonPath)}&course=${encodeURIComponent(courseId)}" class="btn" style="background: var(--student-primary); padding: 6px 12px; font-size: 0.85rem; text-align: center;">Open lesson</a>
                 </div>
               </div>
@@ -764,6 +822,7 @@
                   </div>
                   <h3 style="margin: 6px 0; color: #64748b;">${item.title}</h3>
                   ${item.unit ? `<p style="font-size: 0.8rem; color: #64748b; margin-bottom: 12px;">${item.unit}</p>` : ''}
+                  ${progressHtml}
                 </div>
               </div>
             `;
@@ -777,6 +836,7 @@
                   </div>
                   <h3 style="margin: 6px 0; color: #64748b;">${item.title}</h3>
                   ${item.unit ? `<p style="font-size: 0.8rem; color: #64748b; margin-bottom: 12px;">${item.unit}</p>` : ''}
+                  ${progressHtml}
                 </div>
               </div>
             `;
