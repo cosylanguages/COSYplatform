@@ -1083,6 +1083,29 @@
 
         window.currentStudentLessonPath = lessonPath;
 
+        window.studentSubmissions = {};
+        if (window.CosyAuth && window.CosyAuth.client) {
+          try {
+            const client = window.CosyAuth.client;
+            const { data: { session } } = await client.auth.getSession();
+            if (session && session.user) {
+              const { data: subs } = await client
+                .from("lesson_submissions")
+                .select("*")
+                .eq("student_id", session.user.id)
+                .eq("lesson_id", lessonPath);
+
+              if (subs) {
+                subs.forEach(s => {
+                  window.studentSubmissions[s.field_key] = s;
+                });
+              }
+            }
+          } catch (e) {
+            console.warn("Error loading submissions:", e);
+          }
+        }
+
         if (window.CosyProgress) {
           try {
             const serverAnswers = await window.CosyProgress.loadAnswers(lessonPath);
@@ -1464,26 +1487,44 @@
         } else if (tagName === "cosy-record") {
           const maxTime = child.getAttribute("time") || "120";
           const widgetId = `rec_${fieldKey}`;
-          output += `
-            <div class="recorder-widget" id="${widgetId}">
-              <p style="font-weight: 600; margin-bottom: 8px;">🎙️ <strong>Voice Speaking Task</strong> (Max time: ${maxTime}s)</p>
-              <button class="btn" style="background: var(--student-primary); margin: 8px 0; padding: 6px 14px; font-size: 0.85rem;" onclick="startCosyRecord('${widgetId}')">🎙️ Record Voice Response</button>
-              <p style="font-size: 0.75rem; color: #64748b; margin-top: 6px;">Recording stays on this device and is not sent to anyone.</p>
-            </div>
-          `;
+          output += getCosyRecordWidgetHtml(widgetId, maxTime);
         } else if (tagName === "cosy-essay") {
           const topic = child.querySelector("cosy-essay-topic")?.textContent || "Writing Assignment";
           const savedText = getSavedStudentInput(`${fieldKey}_essay`);
           const statusId = `${fieldKey}_essay_status`;
+          const subKey = `${fieldKey}_essay`;
+          const sub = (window.studentSubmissions || {})[subKey];
+          let statusText = (window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("submission.notSubmitted") : "Not submitted";
+          let badgeClass = "background: #e2e8f0; color: #475569;";
+          if (sub) {
+            if (sub.status === "reviewed") {
+              statusText = (window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("submission.reviewed") : "Reviewed";
+              badgeClass = "background: #dcfce7; color: #166534;";
+            } else if (sub.status === "submitted") {
+              statusText = (window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("submission.submitted") : "Submitted";
+              badgeClass = "background: #e0f2fe; color: #0369a1;";
+            }
+          }
+
           output += `
             <div class="essay-widget">
-              <p>📝 <strong>${topic}</strong></p>
-              <textarea id="${fieldKey}_essay_textarea" placeholder="Write your answer here..." oninput="saveStudentInput('${fieldKey}_essay', this.value); document.getElementById('${statusId}').innerText='Saved on this device';">${savedText}</textarea>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <p style="margin: 0;">📝 <strong>${escapeHtml(topic)}</strong></p>
+                <span style="font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 12px; ${badgeClass}">${statusText}</span>
+              </div>
+              <textarea id="${fieldKey}_essay_textarea" placeholder="Write your answer here..." oninput="saveStudentInput('${fieldKey}_essay', this.value); document.getElementById('${statusId}').innerText='Saved on this device';">${escapeHtml(savedText)}</textarea>
               <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 8px; flex-wrap: wrap;">
                 <button class="btn" style="background: var(--student-primary);" onclick="saveStudentInput('${fieldKey}_essay', document.getElementById('${fieldKey}_essay_textarea').value); document.getElementById('${statusId}').innerText='Saved on this device';">Save Essay Response</button>
+                <button class="btn" style="background: #047857;" onclick="submitEssayToTeacher('${fieldKey}')">${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("submission.submitToTeacher") : "Submit to teacher 📤"}</button>
                 <button class="btn btn-outline" onclick="copyEssayText('${fieldKey}_essay_textarea')">Copy text</button>
                 <span id="${statusId}" style="font-size: 0.8rem; color: #166534; font-weight: 600;">${savedText ? 'Saved on this device' : ''}</span>
               </div>
+              ${sub && sub.status === "reviewed" && sub.feedback ? `
+                <div style="margin-top: 12px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; padding: 10px; text-align: left; font-size: 0.85rem;">
+                  <strong style="color: #166534;">💬 ${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("submission.teacherFeedback") : "Teacher Feedback:"}</strong>
+                  <p style="margin: 4px 0 0 0; color: #15803d; white-space: pre-wrap;">${escapeHtml(sub.feedback)}</p>
+                </div>
+              ` : ""}
             </div>
           `;
         } else if (tagName === "cosy-choice" || tagName === "cosy-choice-image") {
@@ -1599,41 +1640,176 @@
       renderCosyRecordWidget(widgetId);
     }
 
-    function renderCosyRecordWidget(widgetId, timeAttr = "120") {
-      const container = document.getElementById(widgetId);
-      if (!container) return;
+    function getCosyRecordWidgetHtml(widgetId, timeAttr = "120") {
+      const fieldKey = widgetId.startsWith("rec_") ? widgetId.substring(4) : widgetId;
+      const rec = window.cosyRecorders[widgetId] || { state: "idle" };
+      const sub = (window.studentSubmissions || {})[fieldKey];
 
-      const rec = window.cosyRecorders[widgetId] || { state: 'idle' };
+      let statusText = (window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("submission.notSubmitted") : "Not submitted";
+      let badgeClass = "background: #e2e8f0; color: #475569;";
+      if (sub) {
+        if (sub.status === "reviewed") {
+          statusText = (window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("submission.reviewed") : "Reviewed";
+          badgeClass = "background: #dcfce7; color: #166534;";
+        } else if (sub.status === "submitted") {
+          statusText = (window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("submission.submitted") : "Submitted";
+          badgeClass = "background: #e0f2fe; color: #0369a1;";
+        }
+      }
 
       let inner = `
-        <p style="font-weight: 600; margin-bottom: 8px;">🎙️ <strong>Voice Speaking Task</strong> (Max time: ${timeAttr}s)</p>
+        <div class="recorder-widget" id="${widgetId}" data-time="${timeAttr}">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <p style="margin: 0; font-weight: 600;">🎙️ <strong>Voice Speaking Task</strong> (Max time: ${timeAttr}s)</p>
+            <span style="font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 12px; ${badgeClass}">${statusText}</span>
+          </div>
       `;
 
-      if (rec.state === 'recording') {
+      if (rec.state === "recording") {
         inner += `
           <div style="margin: 8px 0; display: flex; align-items: center; justify-content: center; gap: 10px;">
             <span style="color: #ef4444; font-weight: 700;">🔴 Recording...</span>
             <button class="btn" style="background: #ef4444; padding: 6px 14px; font-size: 0.85rem;" onclick="stopCosyRecord('${widgetId}')">⏹️ Stop</button>
           </div>
         `;
-      } else if (rec.state === 'recorded') {
+      } else if (rec.state === "recorded") {
         inner += `
           <div style="margin: 8px 0; display: flex; flex-direction: column; align-items: center; gap: 10px;">
             <audio controls src="${rec.audioUrl}" style="max-width: 100%; height: 36px;"></audio>
-            <button class="btn btn-outline" style="padding: 6px 14px; font-size: 0.85rem;" onclick="resetCosyRecord('${widgetId}')">🎙️ Record again</button>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;">
+              <button class="btn" style="background: #047857; padding: 6px 14px; font-size: 0.85rem;" onclick="submitAudioToTeacher('${widgetId}', '${fieldKey}')">${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("submission.submitToTeacher") : "Submit to teacher 📤"}</button>
+              <button class="btn btn-outline" style="padding: 6px 14px; font-size: 0.85rem;" onclick="resetCosyRecord('${widgetId}')">🎙️ Record again</button>
+            </div>
           </div>
         `;
       } else {
         inner += `
-          <button class="btn" style="background: var(--student-primary); margin: 8px 0; padding: 6px 14px; font-size: 0.85rem;" onclick="startCosyRecord('${widgetId}')">🎙️ Record Voice Response</button>
+          <div style="margin: 8px 0; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+            <button class="btn" style="background: var(--student-primary); padding: 6px 14px; font-size: 0.85rem;" onclick="startCosyRecord('${widgetId}')">🎙️ Record Voice Response</button>
+          </div>
         `;
       }
 
       inner += `
-        <p style="font-size: 0.75rem; color: #64748b; margin-top: 6px;">Recording stays on this device and is not sent to anyone.</p>
+        <p style="font-size: 0.75rem; color: #64748b; margin-top: 6px;">Recording stays on this device unless submitted to teacher.</p>
       `;
 
-      container.innerHTML = inner;
+      if (sub && sub.status === "reviewed" && sub.feedback) {
+        inner += `
+          <div style="margin-top: 12px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; padding: 10px; text-align: left; font-size: 0.85rem;">
+            <strong style="color: #166534;">💬 ${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("submission.teacherFeedback") : "Teacher Feedback:"}</strong>
+            <p style="margin: 4px 0 0 0; color: #15803d; white-space: pre-wrap;">${escapeHtml(sub.feedback)}</p>
+          </div>
+        `;
+      }
+
+      inner += `</div>`;
+      return inner;
+    }
+
+    function renderCosyRecordWidget(widgetId, timeAttr = "120") {
+      const container = document.getElementById(widgetId);
+      if (!container) return;
+      const actualTime = container.getAttribute("data-time") || timeAttr;
+      const newHtml = getCosyRecordWidgetHtml(widgetId, actualTime);
+      container.outerHTML = newHtml;
+    }
+
+    function getAudioBlobDuration(blob) {
+      return new Promise((resolve) => {
+        const tempAudio = new Audio();
+        const url = URL.createObjectURL(blob);
+        tempAudio.src = url;
+        tempAudio.onloadedmetadata = () => {
+          if (tempAudio.duration === Infinity) {
+            tempAudio.currentTime = 1e101;
+            tempAudio.ontimeupdate = () => {
+              tempAudio.ontimeupdate = null;
+              const dur = tempAudio.duration;
+              tempAudio.currentTime = 0;
+              URL.revokeObjectURL(url);
+              resolve(isFinite(dur) ? dur : 0);
+            };
+          } else {
+            const dur = tempAudio.duration;
+            URL.revokeObjectURL(url);
+            resolve(isFinite(dur) ? dur : 0);
+          }
+        };
+        tempAudio.onerror = () => {
+          URL.revokeObjectURL(url);
+          resolve(0);
+        };
+      });
+    }
+
+    async function submitAudioToTeacher(widgetId, fieldKey) {
+      const rec = window.cosyRecorders[widgetId];
+      if (!rec || !rec.blob) {
+        if (window.CosyUI) window.CosyUI.toast("No audio recorded to submit");
+        return;
+      }
+
+      const duration = await getAudioBlobDuration(rec.blob);
+      if (duration > 300) {
+        if (window.CosyUI) window.CosyUI.toast("Audio exceeds 5 minutes maximum limit");
+        return;
+      }
+
+      const client = window.CosyAuth ? window.CosyAuth.client : null;
+      if (!client) {
+        if (window.CosyUI) window.CosyUI.toast("Offline - cannot submit audio");
+        return;
+      }
+
+      try {
+        const { data: { session } } = await client.auth.getSession();
+        const userId = session?.user?.id;
+        if (!userId) {
+          if (window.CosyUI) window.CosyUI.toast("Please sign in to submit");
+          return;
+        }
+
+        if (window.CosyUI) window.CosyUI.toast("Uploading audio...");
+
+        const timestamp = Date.now();
+        const filePath = `${userId}/${timestamp}-${fieldKey}.webm`;
+
+        const { data: storageData, error: storageErr } = await client.storage
+          .from("submissions")
+          .upload(filePath, rec.blob, {
+            contentType: rec.blob.type || "audio/webm",
+            upsert: true
+          });
+
+        if (storageErr) throw storageErr;
+
+        const lessonId = window.currentStudentLessonPath || "";
+        const payload = {
+          student_id: userId,
+          lesson_id: lessonId,
+          field_key: fieldKey,
+          kind: "audio",
+          audio_path: filePath,
+          status: "submitted",
+          created_at: new Date().toISOString()
+        };
+
+        const { error: dbErr } = await client
+          .from("lesson_submissions")
+          .upsert(payload, { onConflict: "student_id,lesson_id,field_key" });
+
+        if (dbErr) throw dbErr;
+
+        window.studentSubmissions = window.studentSubmissions || {};
+        window.studentSubmissions[fieldKey] = payload;
+
+        if (window.CosyUI) window.CosyUI.toast("Audio submitted to teacher!");
+        renderStudentLessonUI();
+      } catch (err) {
+        console.error("Audio submission error:", err);
+        if (window.CosyUI) window.CosyUI.toast("Failed to submit audio");
+      }
     }
 
     function copyEssayText(textareaId) {
@@ -1655,7 +1831,73 @@
     window.stopCosyRecord = stopCosyRecord;
     window.resetCosyRecord = resetCosyRecord;
     window.renderCosyRecordWidget = renderCosyRecordWidget;
+        function escapeHtml(str) {
+      if (!str) return "";
+      return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+
+    async function submitEssayToTeacher(fieldKey) {
+      const textarea = document.getElementById(`${fieldKey}_essay_textarea`);
+      const textContent = textarea ? textarea.value.trim() : "";
+
+      if (!textContent) {
+        if (window.CosyUI) window.CosyUI.toast("Cannot submit empty response");
+        return;
+      }
+
+      const client = window.CosyAuth ? window.CosyAuth.client : null;
+      if (!client) {
+        if (window.CosyUI) window.CosyUI.toast("Offline - saved locally");
+        return;
+      }
+
+      try {
+        const { data: { session } } = await client.auth.getSession();
+        const userId = session?.user?.id;
+        if (!userId) {
+          if (window.CosyUI) window.CosyUI.toast("Please sign in to submit");
+          return;
+        }
+
+        const lessonId = window.currentStudentLessonPath || "";
+        const payload = {
+          student_id: userId,
+          lesson_id: lessonId,
+          field_key: `${fieldKey}_essay`,
+          kind: "essay",
+          text_content: textContent,
+          status: "submitted",
+          created_at: new Date().toISOString()
+        };
+
+        const { error } = await client
+          .from("lesson_submissions")
+          .upsert(payload, { onConflict: "student_id,lesson_id,field_key" });
+
+        if (error) throw error;
+
+        window.studentSubmissions = window.studentSubmissions || {};
+        window.studentSubmissions[`${fieldKey}_essay`] = payload;
+
+        if (window.CosyUI) window.CosyUI.toast("Essay submitted to teacher!");
+        renderStudentLessonUI();
+      } catch (err) {
+        console.error("Essay submission error:", err);
+        if (window.CosyUI) window.CosyUI.toast("Failed to submit essay");
+      }
+    }
+
     window.copyEssayText = copyEssayText;
+    window.submitEssayToTeacher = submitEssayToTeacher;
+    window.submitAudioToTeacher = submitAudioToTeacher;
+    window.getCosyRecordWidgetHtml = getCosyRecordWidgetHtml;
+    window.escapeHtml = escapeHtml;
 
     function updateStudentFilters() {
       const lang = document.getElementById('langFilter').value;

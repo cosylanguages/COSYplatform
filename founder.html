@@ -296,6 +296,50 @@
       const lessonSub1 = stats
         ? window.CosyI18n.t('founder.statLessonsSub1', { total: window.CosyI18n.formatNumber(stats.lessons.total) })
         : window.CosyI18n.t('founder.statUnavailable');
+            let activeStudentsCount = "—";
+      let activeStudentsSub = window.CosyI18n ? window.CosyI18n.t("founder.statActiveStudentsSub") : "active learners in last 7 days";
+
+      const client = window.CosyAuth ? window.CosyAuth.client : null;
+      if (client) {
+        try {
+          const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();
+
+          const { data: progressData, error: progressErr } = await client
+            .from("lesson_progress")
+            .select("student_id, last_activity")
+            .gte("last_activity", sevenDaysAgo);
+
+          let studentIds = [];
+          if (!progressErr && progressData && progressData.length > 0) {
+            studentIds = [...new Set(progressData.map(p => p.student_id))];
+          } else {
+            const { data: answersData } = await client
+              .from("lesson_answers")
+              .select("student_id, updated_at")
+              .gte("updated_at", sevenDaysAgo);
+
+            if (answersData) {
+              studentIds = [...new Set(answersData.map(a => a.student_id))];
+            }
+          }
+
+          if (studentIds.length > 0) {
+            const { data: nonFounderProfiles } = await client
+              .from("profiles")
+              .select("id, role")
+              .in("id", studentIds)
+              .neq("role", "founder");
+
+            const validCount = nonFounderProfiles ? nonFounderProfiles.length : 0;
+            activeStudentsCount = window.CosyI18n ? window.CosyI18n.formatNumber(validCount) : String(validCount);
+          } else {
+            activeStudentsCount = "0";
+          }
+        } catch (err) {
+          console.warn("Failed to compute active students stats:", err);
+        }
+      }
+
       const lessonSub2 = stats
         ? window.CosyI18n.t('founder.statLessonsSub2', { count: window.CosyI18n.formatNumber(stats.unlinkedLessonFiles) })
         : '';
@@ -317,6 +361,11 @@
             <div class="stat-number" data-i18n-skip>${lessonBig}</div>
             <p style="font-size: 0.85rem; color: #64748b; margin-top: 4px;">${lessonSub1}</p>
             ${lessonSub2 ? `<p style="font-size: 0.85rem; color: #64748b; margin-top: 2px;">${lessonSub2}</p>` : ''}
+          </div>
+          <div class="stat-card">
+            <h3 data-i18n="founder.statActiveStudents">${window.CosyI18n.t('founder.statActiveStudents')}</h3>
+            <div class="stat-number" data-i18n-skip>${activeStudentsCount}</div>
+            <p style="font-size: 0.85rem; color: #64748b; margin-top: 4px;">${activeStudentsSub}</p>
           </div>
         </div>
 
