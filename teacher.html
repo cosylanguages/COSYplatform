@@ -522,6 +522,8 @@
       const authData = await window.CosyAuth.requireRole(['teacher', 'founder']);
       if (!authData) return;
 
+      window.currentTeacherAuthData = authData;
+
       const userEmail = authData.user ? authData.user.email : '';
       document.getElementById('user-info').innerText = `Teacher: ${userEmail || 'Teacher'}`;
 
@@ -536,7 +538,7 @@
       } else if (courseParam) {
         renderCourseRoadmap(courseParam, levelParam, authData.profile);
       } else {
-        renderTeacherCatalog(authData.profile, fullManifest);
+        await renderTeacherCatalog(authData.profile, fullManifest);
       }
     }
 
@@ -588,31 +590,46 @@
             </div>
           </div>
 
-          <!-- Student Roster & Submissions Section -->
-          <div id="student-roster-section" style="margin-bottom: 30px; background: white; border: 1px solid #cbd5e1; border-radius: var(--cosy-radius-md, 14px); padding: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
-            <h2 style="font-size: 1.2rem; font-weight: 700; color: #0369a1; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;">
-              <span>${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.reviewTitle") : "🧑‍🎓 Student Submissions Review"}</span>
-              <button onclick="loadTeacherStudentRoster()" style="font-size: 0.8rem; padding: 4px 10px; background: #e0f2fe; color: #0369a1; border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.refreshRoster") : "Refresh Roster 🔄"}</button>
-            </h2>
-            <div style="margin-bottom: 16px;">
-              <label style="font-size: 0.85rem; font-weight: 600; color: #475569; margin-right: 8px;">${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.selectStudent") : "Select Student:"}</label>
-              <select id="teacher-student-select" onchange="loadStudentSubmissions(this.value)" style="padding: 6px 12px; border-radius: 6px; border: 1px solid #cbd5e1; font-size: 0.9rem; min-width: 250px;">
-                <option value="">-- Select a student --</option>
-              </select>
-            </div>
-            <div id="student-submissions-container">
-              <p style="color: #64748b; font-size: 0.85rem;">Select a student to view their essay and audio submissions.</p>
-            </div>
-          </div>
+          <!-- Grid Layout for Submissions & Notes Side by Side -->
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 20px; margin-bottom: 30px; align-items: start;">
+            <!-- Student Submissions Section -->
+            <div id="student-roster-section" style="background: white; border: 1px solid #cbd5e1; border-radius: var(--cosy-radius-md, 14px); padding: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
+              <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 12px;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <h2 style="font-size: 1.2rem; font-weight: 700; color: #0369a1; margin: 0;">
+                    <span>${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.submissionsTitle") : "🧑‍🎓 Student Submissions"}</span>
+                  </h2>
+                  <span id="unreviewed-count-badge" style="background: #ef4444; color: white; font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 12px; display: none;"></span>
+                </div>
+                <button onclick="loadTeacherSubmissions()" style="font-size: 0.8rem; padding: 4px 10px; background: #e0f2fe; color: #0369a1; border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.refreshRoster") : "Refresh Submissions 🔄"}</button>
+              </div>
 
-          <!-- My Shared Notes Section -->
-          <div id="my-notes-section" style="margin-bottom: 30px; background: white; border: 1px solid #cbd5e1; border-radius: var(--cosy-radius-md, 14px); padding: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
-            <h2 style="font-size: 1.2rem; font-weight: 700; color: var(--teacher-primary, #6d28d9); margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;">
-              <span>📝 My Classroom Notes</span>
-              <button onclick="loadUserNotes('teacher')" style="font-size: 0.8rem; padding: 4px 10px; background: #f3e8ff; color: var(--teacher-primary, #6d28d9); border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">Refresh 🔄</button>
-            </h2>
-            <div id="user-notes-container">
-              <p style="color: #64748b; font-size: 0.85rem;">Loading your notes...</p>
+              <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px;">
+                <select id="teacher-status-filter" onchange="renderGroupedSubmissions()" style="padding: 6px 10px; border-radius: 6px; border: 1px solid #cbd5e1; font-size: 0.85rem;">
+                  <option value="all">${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.filterAll") : "All Submissions"}</option>
+                  <option value="unreviewed" selected>${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.filterUnreviewed") : "Unreviewed Only"}</option>
+                  <option value="reviewed">${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.filterReviewed") : "Reviewed Only"}</option>
+                </select>
+
+                <select id="teacher-student-select" onchange="renderGroupedSubmissions()" style="padding: 6px 10px; border-radius: 6px; border: 1px solid #cbd5e1; font-size: 0.85rem; flex: 1; min-width: 150px;">
+                  <option value="">${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.selectStudent") : "Select Student:"}</option>
+                </select>
+              </div>
+
+              <div id="student-submissions-container">
+                <p style="color: #64748b; font-size: 0.85rem;">Loading submissions...</p>
+              </div>
+            </div>
+
+            <!-- My Shared Notes Section -->
+            <div id="my-notes-section" style="background: white; border: 1px solid #cbd5e1; border-radius: var(--cosy-radius-md, 14px); padding: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
+              <h2 style="font-size: 1.2rem; font-weight: 700; color: var(--teacher-primary, #6d28d9); margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;">
+                <span>📝 My Classroom Notes</span>
+                <button onclick="loadUserNotes('teacher')" style="font-size: 0.8rem; padding: 4px 10px; background: #f3e8ff; color: var(--teacher-primary, #6d28d9); border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">Refresh 🔄</button>
+              </h2>
+              <div id="user-notes-container">
+                <p style="color: #64748b; font-size: 0.85rem;">Loading your notes...</p>
+              </div>
             </div>
           </div>
 
@@ -697,6 +714,7 @@
 
       html += `</div>`;
       appRoot.innerHTML = html;
+      loadTeacherSubmissions();
     }
 
     async function renderCourseRoadmap(courseId, level, profile) {
@@ -1610,11 +1628,14 @@
         .replace(/'/g, "&#039;");
     }
 
+    window.allTeacherSubmissions = [];
+    window.studentProfilesMap = {};
+
     async function fetchTeacherStudents() {
       const client = window.CosyAuth ? window.CosyAuth.client : null;
       if (!client) return [];
 
-      const authData = window.currentTeacherAuthData;
+      const authData = window.currentTeacherAuthData || (await window.CosyAuth.getAuthAndProfile());
       const isFounder = authData?.profile?.role === "founder";
       const userId = authData?.user?.id;
 
@@ -1649,29 +1670,9 @@
       }
     }
 
-    async function loadTeacherStudentRoster() {
-      const selectEl = document.getElementById("teacher-student-select");
-      if (!selectEl) return;
-
-      const students = await fetchTeacherStudents();
-      let html = '<option value="">-- Select a student --</option>';
-
-      students.forEach(s => {
-        const displayLabel = s.id ? s.id.substring(0, 8) + "..." + (s.role ? " (" + s.role + ")" : "") : "Student";
-        html += `<option value="${s.id}">${escapeHtml(displayLabel)}</option>`;
-      });
-
-      selectEl.innerHTML = html;
-    }
-
-    async function loadStudentSubmissions(studentId) {
+    async function loadTeacherSubmissions() {
       const container = document.getElementById("student-submissions-container");
       if (!container) return;
-
-      if (!studentId) {
-        container.innerHTML = '<p style="color: #64748b; font-size: 0.85rem;">Select a student to view their essay and audio submissions.</p>';
-        return;
-      }
 
       const client = window.CosyAuth ? window.CosyAuth.client : null;
       if (!client) {
@@ -1682,76 +1683,206 @@
       container.innerHTML = '<p style="color: #64748b; font-size: 0.85rem;">Loading submissions...</p>';
 
       try {
-        const { data: subs, error } = await client
-          .from("lesson_submissions")
-          .select("*")
-          .eq("student_id", studentId)
-          .order("created_at", { ascending: false });
+        const students = await fetchTeacherStudents();
+        const studentIds = students.map(s => s.id);
 
-        if (error) throw error;
+        const profilesMap = {};
+        students.forEach(s => {
+          profilesMap[s.id] = s;
+        });
+        window.studentProfilesMap = profilesMap;
 
-        if (!subs || subs.length === 0) {
-          container.innerHTML = '<p style="color: #64748b; font-size: 0.85rem;">No submissions found for this student.</p>';
+        let query = client.from("lesson_submissions").select("*").order("created_at", { ascending: false });
+
+        const authData = window.currentTeacherAuthData;
+        const isFounder = authData?.profile?.role === "founder";
+        if (!isFounder && studentIds.length > 0) {
+          query = query.in("student_id", studentIds);
+        } else if (!isFounder && studentIds.length === 0) {
+          window.allTeacherSubmissions = [];
+          updateSubmissionsUI();
           return;
         }
 
-        let html = '<div style="display: flex; flex-direction: column; gap: 16px;">';
+        const { data: subs, error } = await query;
+        if (error) throw error;
 
-        for (const sub of subs) {
-          const subId = `${sub.lesson_id}_${sub.field_key}`.replace(/[^a-zA-Z0-9_-]/g, "_");
-          const textareaId = `feedback_txt_${subId}`;
-          const isAudio = sub.kind === "audio";
+        // If there are students in submissions that weren't in studentProfilesMap, fetch their profiles
+        const missingStudentIds = [...new Set((subs || []).map(s => s.student_id))].filter(id => !profilesMap[id]);
+        if (missingStudentIds.length > 0) {
+          const { data: extraProfiles } = await client
+            .from("profiles")
+            .select("id, role, language_access, course_level, created_at")
+            .in("id", missingStudentIds);
 
-          let audioHtml = "";
-          if (isAudio && sub.audio_path) {
-            const { data: signedData } = await client.storage
-              .from("submissions")
-              .createSignedUrl(sub.audio_path, 3600);
-
-            if (signedData && signedData.signedUrl) {
-              audioHtml = `<audio controls src="${signedData.signedUrl}" style="margin: 8px 0; max-width: 100%; height: 36px;"></audio>`;
-            } else {
-              audioHtml = `<p style="color: #ef4444; font-size: 0.8rem;">Could not generate audio URL (${escapeHtml(sub.audio_path)})</p>`;
-            }
+          if (extraProfiles) {
+            extraProfiles.forEach(p => {
+              profilesMap[p.id] = p;
+            });
           }
-
-          const badgeColor = sub.status === "reviewed" ? "background: #dcfce7; color: #166534;" : "background: #e0f2fe; color: #0369a1;";
-
-          html += `
-            <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 14px;">
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <div style="font-weight: 700; color: #0f172a; font-size: 0.9rem;">
-                  <span>${isAudio ? "🎙️ Audio Task" : "📝 Essay Assignment"}</span>
-                  <span style="font-size: 0.8rem; font-weight: normal; color: #64748b; margin-left: 8px;">(${escapeHtml(sub.lesson_id)})</span>
-                </div>
-                <span style="font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 12px; ${badgeColor}">${escapeHtml(sub.status || "submitted")}</span>
-              </div>
-
-              ${sub.text_content ? `
-                <div style="background: white; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px; font-size: 0.85rem; color: #334155; white-space: pre-wrap; margin-bottom: 8px;">
-                  ${escapeHtml(sub.text_content)}
-                </div>
-              ` : ""}
-
-              ${audioHtml}
-
-              <div style="margin-top: 10px;">
-                <label style="font-size: 0.8rem; font-weight: 600; color: #475569;">${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("submission.teacherFeedback") : "Teacher Feedback:"}</label>
-                <textarea id="${textareaId}" style="width: 100%; height: 60px; padding: 6px; font-size: 0.85rem; border: 1px solid #cbd5e1; border-radius: 6px; resize: vertical; margin-top: 4px; font-family: inherit;">${escapeHtml(sub.feedback || "")}</textarea>
-                <div style="display: flex; justify-content: flex-end; margin-top: 6px;">
-                  <button onclick="saveSubmissionReview('${sub.student_id}', '${escapeHtml(sub.lesson_id)}', '${escapeHtml(sub.field_key)}', '${textareaId}')" style="background: #0369a1; color: white; border: none; border-radius: 6px; padding: 4px 12px; font-size: 0.8rem; font-weight: 600; cursor: pointer;">Save Review & Feedback ✔️</button>
-                </div>
-              </div>
-            </div>
-          `;
         }
 
-        html += '</div>';
-        container.innerHTML = html;
+        window.allTeacherSubmissions = subs || [];
+        updateSubmissionsUI();
+
       } catch (err) {
-        console.warn("loadStudentSubmissions error:", err);
+        console.warn("loadTeacherSubmissions error:", err);
         container.innerHTML = `<p style="color: #ef4444; font-size: 0.85rem;">Could not load submissions: ${escapeHtml(err.message)}</p>`;
       }
+    }
+
+    function updateSubmissionsUI() {
+      const subs = window.allTeacherSubmissions || [];
+      const profilesMap = window.studentProfilesMap || {};
+
+      // Unreviewed count
+      const unreviewedCount = subs.filter(s => s.status !== "reviewed").length;
+      const badgeEl = document.getElementById("unreviewed-count-badge");
+      if (badgeEl) {
+        if (unreviewedCount > 0) {
+          const textTpl = (window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.unreviewedBadge", { count: unreviewedCount }) : `${unreviewedCount} unreviewed`;
+          badgeEl.innerText = textTpl;
+          badgeEl.style.display = "inline-block";
+        } else {
+          badgeEl.style.display = "none";
+        }
+      }
+
+      // Populate student select dropdown
+      const selectEl = document.getElementById("teacher-student-select");
+      if (selectEl) {
+        const selectedVal = selectEl.value;
+        const studentIdsInSubs = [...new Set(subs.map(s => s.student_id))];
+
+        let selectHtml = `<option value="">${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.selectStudent") : "All Students"}</option>`;
+        studentIdsInSubs.forEach(sid => {
+          const profile = profilesMap[sid];
+          const displayLabel = profile ? (profile.id.substring(0, 8) + "..." + (profile.role ? " (" + profile.role + ")" : "")) : (sid.substring(0, 8) + "...");
+          selectHtml += `<option value="${sid}" ${selectedVal === sid ? "selected" : ""}>${escapeHtml(displayLabel)}</option>`;
+        });
+        selectEl.innerHTML = selectHtml;
+      }
+
+      renderGroupedSubmissions();
+    }
+
+    async function renderGroupedSubmissions() {
+      const container = document.getElementById("student-submissions-container");
+      if (!container) return;
+
+      const client = window.CosyAuth ? window.CosyAuth.client : null;
+      const statusFilter = document.getElementById("teacher-status-filter")?.value || "all";
+      const studentFilter = document.getElementById("teacher-student-select")?.value || "";
+
+      let subs = window.allTeacherSubmissions || [];
+
+      if (statusFilter === "unreviewed") {
+        subs = subs.filter(s => s.status !== "reviewed");
+      } else if (statusFilter === "reviewed") {
+        subs = subs.filter(s => s.status === "reviewed");
+      }
+
+      if (studentFilter) {
+        subs = subs.filter(s => s.student_id === studentFilter);
+      }
+
+      if (subs.length === 0) {
+        const noSubsText = (window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.noSubmissions") : "No submissions found.";
+        container.innerHTML = `<p style="color: #64748b; font-size: 0.85rem;">${noSubsText}</p>`;
+        return;
+      }
+
+      // Group by student then lesson
+      const grouped = {};
+      subs.forEach(s => {
+        const sid = s.student_id;
+        const lid = s.lesson_id;
+        if (!grouped[sid]) grouped[sid] = {};
+        if (!grouped[sid][lid]) grouped[sid][lid] = [];
+        grouped[sid][lid].push(s);
+      });
+
+      const profilesMap = window.studentProfilesMap || {};
+      let html = '<div style="display: flex; flex-direction: column; gap: 20px;">';
+
+      for (const sid in grouped) {
+        const profile = profilesMap[sid];
+        const studentLabel = profile ? (profile.id.substring(0, 8) + "..." + (profile.role ? " (" + profile.role + ")" : "")) : sid.substring(0, 8) + "...";
+
+        html += `
+          <div style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px; background: #fafafa;">
+            <div style="font-weight: 700; color: #0369a1; font-size: 0.95rem; margin-bottom: 12px; border-bottom: 1px solid #cbd5e1; padding-bottom: 6px;">
+              <span>👤 ${escapeHtml(studentLabel)}</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 14px;">
+        `;
+
+        for (const lid in grouped[sid]) {
+          const lessonSubs = grouped[sid][lid];
+
+          html += `
+            <div style="background: white; border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px;">
+              <div style="font-weight: 700; font-size: 0.88rem; color: #0f172a; margin-bottom: 10px;">
+                <span>📚 ${escapeHtml(lid)}</span>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 10px;">
+          `;
+
+          for (const sub of lessonSubs) {
+            const subId = `${sub.student_id}_${sub.lesson_id}_${sub.field_key}`.replace(/[^a-zA-Z0-9_-]/g, "_");
+            const textareaId = `feedback_txt_${subId}`;
+            const isAudio = sub.kind === "audio";
+
+            let audioHtml = "";
+            if (isAudio && sub.audio_path && client) {
+              const { data: signedData } = await client.storage
+                .from("submissions")
+                .createSignedUrl(sub.audio_path, 3600);
+
+              if (signedData && signedData.signedUrl) {
+                audioHtml = `<audio controls src="${signedData.signedUrl}" style="margin: 8px 0; max-width: 100%; height: 36px;"></audio>`;
+              } else {
+                audioHtml = `<p style="color: #ef4444; font-size: 0.8rem;">Could not generate audio URL (${escapeHtml(sub.audio_path)})</p>`;
+              }
+            }
+
+            const badgeColor = sub.status === "reviewed" ? "background: #dcfce7; color: #166534;" : "background: #fee2e2; color: #991b1b;";
+            const taskLabel = isAudio ? ((window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("submission.audioTask") : "🎙️ Audio Task") : ((window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("submission.essayAssignment") : "📝 Essay Assignment");
+
+            html += `
+              <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                  <span style="font-weight: 600; font-size: 0.85rem; color: #334155;">${taskLabel}</span>
+                  <span style="font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 12px; ${badgeColor}">${escapeHtml(sub.status || "submitted")}</span>
+                </div>
+
+                ${sub.text_content ? `
+                  <div style="background: white; border: 1px solid #cbd5e1; border-radius: 6px; padding: 8px; font-size: 0.85rem; color: #334155; white-space: pre-wrap; margin-bottom: 6px;">
+                    ${escapeHtml(sub.text_content)}
+                  </div>
+                ` : ""}
+
+                ${audioHtml}
+
+                <div style="margin-top: 8px;">
+                  <label style="font-size: 0.8rem; font-weight: 600; color: #475569;">${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("submission.teacherFeedback") : "Teacher Feedback:"}</label>
+                  <textarea id="${textareaId}" style="width: 100%; height: 50px; padding: 6px; font-size: 0.85rem; border: 1px solid #cbd5e1; border-radius: 6px; resize: vertical; margin-top: 4px; font-family: inherit;">${escapeHtml(sub.feedback || "")}</textarea>
+                  <div style="display: flex; justify-content: flex-end; margin-top: 6px;">
+                    <button onclick="saveSubmissionReview('${sub.student_id}', '${escapeHtml(sub.lesson_id)}', '${escapeHtml(sub.field_key)}', '${textareaId}')" style="background: #0369a1; color: white; border: none; border-radius: 6px; padding: 4px 12px; font-size: 0.8rem; font-weight: 600; cursor: pointer;">${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.markReviewed") : "Mark reviewed ✔️"}</button>
+                  </div>
+                </div>
+              </div>
+            `;
+          }
+
+          html += `</div></div>`;
+        }
+
+        html += `</div></div>`;
+      }
+
+      html += '</div>';
+      container.innerHTML = html;
     }
 
     async function saveSubmissionReview(studentId, lessonId, fieldKey, textareaId) {
@@ -1785,7 +1916,7 @@
         if (error) throw error;
 
         if (window.CosyUI) window.CosyUI.toast("Review saved and status updated!");
-        loadStudentSubmissions(studentId);
+        loadTeacherSubmissions();
       } catch (err) {
         console.error("saveSubmissionReview error:", err);
         if (window.CosyUI) window.CosyUI.toast("Failed to save review");
@@ -1793,8 +1924,8 @@
     }
 
     window.fetchTeacherStudents = fetchTeacherStudents;
-    window.loadTeacherStudentRoster = loadTeacherStudentRoster;
-    window.loadStudentSubmissions = loadStudentSubmissions;
+    window.loadTeacherSubmissions = loadTeacherSubmissions;
+    window.renderGroupedSubmissions = renderGroupedSubmissions;
     window.saveSubmissionReview = saveSubmissionReview;
     window.escapeHtml = escapeHtml;
 
