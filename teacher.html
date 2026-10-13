@@ -479,6 +479,8 @@
   <script src="shared/js/lazy-script.js"></script>
   <script src="shared/js/lesson-resolver.js"></script>
   <script src="shared/js/ui-toast.js"></script>
+  <script src="shared/js/i18n.js"></script>
+  <script src="shared/js/lang-switcher.js"></script>
 </head>
 <body>
 
@@ -517,6 +519,9 @@
     const langParam = urlParams.get('lang');
 
     async function initTeacherApp() {
+      if (window.CosyI18n && window.CosyI18n.ready) {
+        await window.CosyI18n.ready;
+      }
       const appRoot = document.getElementById('app-root');
 
       const authData = await window.CosyAuth.requireRole(['teacher', 'founder']);
@@ -587,6 +592,19 @@
             </div>
             <div style="display: flex; gap: 8px;">
               ${profile && profile.role === 'founder' ? '<a href="founder.html" class="btn btn-outline" style="font-size: 0.85rem;">← Founder Portal</a>' : ''}
+            </div>
+          </div>
+
+          <!-- My Students Progress Table Section -->
+          <div id="my-students-section" style="margin-bottom: 30px; background: white; border: 1px solid #cbd5e1; border-radius: var(--cosy-radius-md, 14px); padding: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+              <h2 style="font-size: 1.2rem; font-weight: 700; color: var(--teacher-primary, #6d28d9); margin: 0;">
+                <span>${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.myStudentsTitle") : "🧑‍🎓 My Students"}</span>
+              </h2>
+              <button onclick="loadMyStudentsProgress()" style="font-size: 0.8rem; padding: 4px 10px; background: #f3e8ff; color: var(--teacher-primary, #6d28d9); border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.refreshStudents") : "Refresh 🔄"}</button>
+            </div>
+            <div id="my-students-table-container">
+              <p style="color: #64748b; font-size: 0.85rem;">${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.loadingStudents") : "Loading student progress..."}</p>
             </div>
           </div>
 
@@ -714,8 +732,167 @@
 
       html += `</div>`;
       appRoot.innerHTML = html;
+      loadMyStudentsProgress();
       loadTeacherSubmissions();
     }
+
+    window.myStudentsProgressData = [];
+    window.myStudentsSortOrder = 'desc'; // 'desc' | 'asc'
+
+    async function loadMyStudentsProgress() {
+      const container = document.getElementById("my-students-table-container");
+      if (!container) return;
+
+      const client = window.CosyAuth ? window.CosyAuth.client : null;
+      if (!client) {
+        container.innerHTML = `<p style="color: #ef4444; font-size: 0.85rem;">${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.errLoadingStudents", { error: "Offline" }) : "Could not load student progress: Offline"}</p>`;
+        return;
+      }
+
+      container.innerHTML = `<p style="color: #64748b; font-size: 0.85rem;">${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.loadingStudents") : "Loading student progress..."}</p>`;
+
+      try {
+        const authData = window.currentTeacherAuthData || (await window.CosyAuth.getAuthAndProfile());
+        const userRole = authData?.profile?.role;
+        const isFounder = userRole === "founder";
+        const userId = authData?.user?.id;
+
+        let targetStudentIds = [];
+        let studentsMap = {};
+
+        if (isFounder) {
+          const { data: nonFounders, error: nfErr } = await client
+            .from("profiles")
+            .select("id, role, language_access, course_level")
+            .neq("role", "founder");
+
+          if (nfErr) throw nfErr;
+          (nonFounders || []).forEach(s => {
+            studentsMap[s.id] = s;
+          });
+          targetStudentIds = Object.keys(studentsMap);
+        } else {
+          const { data: links, error: lErr } = await client
+            .from("teacher_students")
+            .select("student_id")
+            .eq("teacher_id", userId);
+
+          if (lErr) throw lErr;
+
+          targetStudentIds = (links || []).map(l => l.student_id);
+          if (targetStudentIds.length > 0) {
+            const { data: sProfiles, error: spErr } = await client
+              .from("profiles")
+              .select("id, role, language_access, course_level")
+              .in("id", targetStudentIds);
+
+            if (spErr) throw spErr;
+            (sProfiles || []).forEach(s => {
+              studentsMap[s.id] = s;
+            });
+          }
+        }
+
+        if (targetStudentIds.length === 0) {
+          window.myStudentsProgressData = [];
+          renderMyStudentsProgressTable();
+          return;
+        }
+
+        const { data: progressRows, error: pErr } = await client
+          .from("lesson_progress")
+          .select("student_id, lesson_id, answered, correct, incorrect, last_activity")
+          .in("student_id", targetStudentIds);
+
+        if (pErr) throw pErr;
+
+        window.myStudentsProgressData = (progressRows || []).map(row => ({
+          ...row,
+          student_profile: studentsMap[row.student_id] || null
+        }));
+
+        renderMyStudentsProgressTable();
+      } catch (err) {
+        console.warn("loadMyStudentsProgress error:", err);
+        const errMsg = (window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.errLoadingStudents", { error: err.message }) : `Could not load student progress: ${err.message}`;
+        container.innerHTML = `<p style="color: #ef4444; font-size: 0.85rem;">${escapeHtml(errMsg)}</p>`;
+      }
+    }
+
+    function toggleMyStudentsSort() {
+      window.myStudentsSortOrder = window.myStudentsSortOrder === 'desc' ? 'asc' : 'desc';
+      renderMyStudentsProgressTable();
+    }
+
+    function renderMyStudentsProgressTable() {
+      const container = document.getElementById("my-students-table-container");
+      if (!container) return;
+
+      let rows = [...(window.myStudentsProgressData || [])];
+
+      if (rows.length === 0) {
+        const noDataMsg = (window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.noStudents") : "No student progress recorded yet.";
+        container.innerHTML = `<p style="color: #64748b; font-size: 0.85rem;">${noDataMsg}</p>`;
+        return;
+      }
+
+      const order = window.myStudentsSortOrder || 'desc';
+      rows.sort((a, b) => {
+        const timeA = a.last_activity ? new Date(a.last_activity).getTime() : 0;
+        const timeB = b.last_activity ? new Date(b.last_activity).getTime() : 0;
+        return order === 'desc' ? timeB - timeA : timeA - timeB;
+      });
+
+      const sortArrow = order === 'desc' ? '▼' : '▲';
+
+      const thStudent = (window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.thStudent") : "Student";
+      const thLesson = (window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.thLesson") : "Lesson";
+      const thAnswered = (window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.thAnswered") : "Answered";
+      const thCorrect = (window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.thCorrect") : "% Correct";
+      const thLastActivity = (window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.thLastActivity") : "Last Activity";
+
+      let html = `
+        <div class="admin-table-wrapper">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>${escapeHtml(thStudent)}</th>
+                <th>${escapeHtml(thLesson)}</th>
+                <th style="text-align: right;">${escapeHtml(thAnswered)}</th>
+                <th style="text-align: right;">${escapeHtml(thCorrect)}</th>
+                <th style="cursor: pointer; user-select: none;" onclick="toggleMyStudentsSort()">
+                  ${escapeHtml(thLastActivity)} ${sortArrow}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+      `;
+
+      rows.forEach(r => {
+        const sProfile = r.student_profile;
+        const studentLabel = sProfile ? (sProfile.id.substring(0, 8) + "..." + (sProfile.role ? " (" + sProfile.role + ")" : "")) : r.student_id.substring(0, 8) + "...";
+        const answered = r.answered || 0;
+        const correct = r.correct || 0;
+        const pct = answered > 0 ? Math.round((correct / answered) * 100) : 0;
+        const dateStr = r.last_activity ? (window.CosyI18n && window.CosyI18n.formatDate ? window.CosyI18n.formatDate(r.last_activity) : new Date(r.last_activity).toLocaleString()) : 'N/A';
+
+        html += `
+          <tr>
+            <td style="font-weight: 600; color: #0369a1;">${escapeHtml(studentLabel)}</td>
+            <td style="font-family: monospace; font-size: 0.85rem;">${escapeHtml(r.lesson_id)}</td>
+            <td style="text-align: right;">${answered}</td>
+            <td style="text-align: right; font-weight: 700; color: ${pct >= 70 ? '#166534' : '#b91c1c'};">${answered > 0 ? pct + '%' : '-'}</td>
+            <td style="font-size: 0.85rem; color: #64748b;">${escapeHtml(dateStr)}</td>
+          </tr>
+        `;
+      });
+
+      html += `</tbody></table></div>`;
+      container.innerHTML = html;
+    }
+
+    window.loadMyStudentsProgress = loadMyStudentsProgress;
+    window.toggleMyStudentsSort = toggleMyStudentsSort;
 
     async function renderCourseRoadmap(courseId, level, profile) {
       const appRoot = document.getElementById('app-root');
