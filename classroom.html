@@ -396,8 +396,8 @@
         <div class="pt-1.5 border-t border-gray-700 text-[11px]">
           <label class="text-gray-400 block mb-0.5">Provider:</label>
           <select id="video-provider-select" onchange="changeVideoProvider(this.value)" class="w-full bg-gray-900 border border-gray-700 text-gray-200 rounded-lg px-2 py-1">
-            <option value="peerjs-video" selected>PeerJS Direct WebRTC</option>
-            <option value="jitsi">Embedded Jitsi Meet</option>
+            <option value="peerjs-video">PeerJS Direct WebRTC</option>
+            <option value="jitsi" selected>Embedded Jitsi Meet</option>
             <option value="google">Google Meet Link</option>
             <option value="yandex">Yandex Telemost Link</option>
           </select>
@@ -879,6 +879,12 @@
       const lessonParam = params.get('lesson');
       const urlRoom = params.get('room');
       const urlKey = params.get('k');
+      const urlProvider = params.get('provider') || params.get('vprovider');
+
+      // Determine initial video provider: URL param > localStorage > default 'jitsi'
+      const savedProvider = localStorage.getItem('cosy_video_provider');
+      const initialProvider = urlProvider || savedProvider || 'jitsi';
+      changeVideoProvider(initialProvider);
 
       if (urlKey) {
         participantKey = urlKey;
@@ -1293,6 +1299,9 @@
     // Video Provider Switching Logic
     function changeVideoProvider(provider) {
       currentVideoProvider = provider;
+      try {
+        localStorage.setItem('cosy_video_provider', provider);
+      } catch (e) {}
       updateVideoControlStripState(provider);
 
       const providerNameSpan = document.getElementById('display-provider-name');
@@ -2249,8 +2258,15 @@
           if (softNotice) softNotice.classList.remove('hidden');
         }
 
-        // Sync active lesson material, mode, layout, and current slide to newly connected student
+        // Sync active lesson material, mode, layout, video provider, and current slide to newly connected student
         c.send({ type: 'lesson-mode', mode: lessonMode, layout: currentLayoutPreset });
+        if (currentVideoProvider) {
+          if (activeVideoLink && (currentVideoProvider === 'google' || currentVideoProvider === 'yandex')) {
+            c.send({ type: 'video-link', provider: currentVideoProvider, link: activeVideoLink });
+          } else {
+            c.send({ type: 'video-provider-switch', provider: currentVideoProvider });
+          }
+        }
         if (currentLessonPath && currentLessonPath !== 'default') {
           c.send({ type: 'load-lesson', lessonPath: currentLessonPath, slide: currentSlide });
         } else {
@@ -2411,9 +2427,18 @@
             console.warn("Ignored load-lesson packet with unsafe path:", data ? data.lessonPath : null);
           }
           break;
+        case 'video-provider-switch':
+          if (data.provider) {
+            changeVideoProvider(data.provider);
+            if (data.provider === 'jitsi' || data.provider === 'peerjs-video') {
+              startVideoCall();
+            }
+          }
+          break;
         case 'video-link':
           if (data.link) {
             if (isValidVideoUrl(data.link)) {
+              if (data.provider) changeVideoProvider(data.provider);
               renderExternalVideoBanner(data.provider, data.link);
               addChatMessage('System', `Teacher launched ${data.provider === 'yandex' ? 'Yandex Telemost' : 'Google Meet'} video call.`);
             } else {
