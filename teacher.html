@@ -1676,11 +1676,11 @@
 
       const client = window.CosyAuth ? window.CosyAuth.client : null;
       if (!client) {
-        container.innerHTML = '<p style="color: #ef4444; font-size: 0.85rem;">Offline - cannot load submissions.</p>';
+        container.innerHTML = `<p style="color: #ef4444; font-size: 0.85rem;">${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.offlineCannotLoadSubmissions") : "Offline - cannot load submissions."}</p>`;
         return;
       }
 
-      container.innerHTML = '<p style="color: #64748b; font-size: 0.85rem;">Loading submissions...</p>';
+      container.innerHTML = `<p style="color: #64748b; font-size: 0.85rem;">${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.loadingSubmissions") : "Loading submissions..."}</p>`;
 
       try {
         const students = await fetchTeacherStudents();
@@ -1727,7 +1727,8 @@
 
       } catch (err) {
         console.warn("loadTeacherSubmissions error:", err);
-        container.innerHTML = `<p style="color: #ef4444; font-size: 0.85rem;">Could not load submissions: ${escapeHtml(err.message)}</p>`;
+        const errMsg = (window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.couldNotLoadSubmissions", { error: err.message }) : `Could not load submissions: ${err.message}`;
+        container.innerHTML = `<p style="color: #ef4444; font-size: 0.85rem;">${escapeHtml(errMsg)}</p>`;
       }
     }
 
@@ -1842,7 +1843,8 @@
               if (signedData && signedData.signedUrl) {
                 audioHtml = `<audio controls src="${signedData.signedUrl}" style="margin: 8px 0; max-width: 100%; height: 36px;"></audio>`;
               } else {
-                audioHtml = `<p style="color: #ef4444; font-size: 0.8rem;">Could not generate audio URL (${escapeHtml(sub.audio_path)})</p>`;
+                const errAudioMsg = (window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.couldNotGenerateAudioUrl", { path: sub.audio_path }) : `Could not generate audio URL (${sub.audio_path})`;
+                audioHtml = `<p style="color: #ef4444; font-size: 0.8rem;">${escapeHtml(errAudioMsg)}</p>`;
               }
             }
 
@@ -1868,7 +1870,7 @@
                   <label style="font-size: 0.8rem; font-weight: 600; color: #475569;">${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("submission.teacherFeedback") : "Teacher Feedback:"}</label>
                   <textarea id="${textareaId}" style="width: 100%; height: 50px; padding: 6px; font-size: 0.85rem; border: 1px solid #cbd5e1; border-radius: 6px; resize: vertical; margin-top: 4px; font-family: inherit;">${escapeHtml(sub.feedback || "")}</textarea>
                   <div style="display: flex; justify-content: flex-end; margin-top: 6px;">
-                    <button onclick="saveSubmissionReview('${sub.student_id}', '${escapeHtml(sub.lesson_id)}', '${escapeHtml(sub.field_key)}', '${textareaId}')" style="background: #0369a1; color: white; border: none; border-radius: 6px; padding: 4px 12px; font-size: 0.8rem; font-weight: 600; cursor: pointer;">${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.markReviewed") : "Mark reviewed ✔️"}</button>
+                    <button onclick="saveSubmissionReview('${sub.id}', '${textareaId}')" style="background: #0369a1; color: white; border: none; border-radius: 6px; padding: 4px 12px; font-size: 0.8rem; font-weight: 600; cursor: pointer;">${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.markReviewed") : "Mark reviewed ✔️"}</button>
                   </div>
                 </div>
               </div>
@@ -1885,7 +1887,7 @@
       container.innerHTML = html;
     }
 
-    async function saveSubmissionReview(studentId, lessonId, fieldKey, textareaId) {
+    async function saveSubmissionReview(submissionId, textareaId) {
       const textarea = document.getElementById(textareaId);
       if (!textarea) return;
 
@@ -1893,7 +1895,7 @@
       const client = window.CosyAuth ? window.CosyAuth.client : null;
 
       if (!client) {
-        if (window.CosyUI) window.CosyUI.toast("Offline - cannot save review");
+        if (window.CosyUI) window.CosyUI.toast((window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.offlineCannotSaveReview") : "Offline - cannot save review");
         return;
       }
 
@@ -1909,17 +1911,15 @@
             reviewed_by: teacherId,
             reviewed_at: new Date().toISOString()
           })
-          .eq("student_id", studentId)
-          .eq("lesson_id", lessonId)
-          .eq("field_key", fieldKey);
+          .eq("id", submissionId);
 
         if (error) throw error;
 
-        if (window.CosyUI) window.CosyUI.toast("Review saved and status updated!");
+        if (window.CosyUI) window.CosyUI.toast((window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.reviewSaved") : "Review saved and status updated!");
         loadTeacherSubmissions();
       } catch (err) {
         console.error("saveSubmissionReview error:", err);
-        if (window.CosyUI) window.CosyUI.toast("Failed to save review");
+        if (window.CosyUI) window.CosyUI.toast((window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.failedToSaveReview") : "Failed to save review");
       }
     }
 

@@ -9,7 +9,7 @@ window.CosyProgress = window.CosyProgress || {};
   'use strict';
 
   const debounceTimers = new Map();
-  const PENDING_STORAGE_KEY = 'cosy_pending_answers';
+  const PENDING_STORAGE_KEY_PREFIX = 'cosy_pending_answers';
   const DEBOUNCE_DELAY = 800; // ms
 
   function getClient() {
@@ -27,47 +27,53 @@ window.CosyProgress = window.CosyProgress || {};
     }
   }
 
-  function getPendingFromStorage() {
+  function getStorageKey(userId) {
+    return userId ? `${PENDING_STORAGE_KEY_PREFIX}_${userId}` : PENDING_STORAGE_KEY_PREFIX;
+  }
+
+  function getPendingFromStorage(userId) {
     try {
-      const raw = localStorage.getItem(PENDING_STORAGE_KEY);
+      const key = getStorageKey(userId);
+      const raw = localStorage.getItem(key);
       return raw ? JSON.parse(raw) : {};
     } catch (e) {
       return {};
     }
   }
 
-  function savePendingToStorage(obj) {
+  function savePendingToStorage(userId, obj) {
     try {
-      localStorage.setItem(PENDING_STORAGE_KEY, JSON.stringify(obj));
+      const key = getStorageKey(userId);
+      localStorage.setItem(key, JSON.stringify(obj));
     } catch (e) {}
   }
 
-  function queuePendingItem(lessonId, fieldKey, value, isCorrect) {
+  function queuePendingItem(userId, lessonId, fieldKey, value, isCorrect) {
     const key = `${lessonId}::${fieldKey}`;
-    const stored = getPendingFromStorage();
-    stored[key] = { lessonId, fieldKey, value, isCorrect: isCorrect ?? null, time: Date.now() };
-    savePendingToStorage(stored);
+    const stored = getPendingFromStorage(userId);
+    stored[key] = { userId, lessonId, fieldKey, value, isCorrect: isCorrect ?? null, time: Date.now() };
+    savePendingToStorage(userId, stored);
   }
 
-  function removePendingItem(lessonId, fieldKey) {
+  function removePendingItem(userId, lessonId, fieldKey) {
     const key = `${lessonId}::${fieldKey}`;
-    const stored = getPendingFromStorage();
+    const stored = getPendingFromStorage(userId);
     if (stored[key]) {
       delete stored[key];
-      savePendingToStorage(stored);
+      savePendingToStorage(userId, stored);
     }
   }
 
-  async function performUpsert(lessonId, fieldKey, value, isCorrect) {
+  async function performUpsert(userId, lessonId, fieldKey, value, isCorrect) {
     const client = getClient();
     if (!client) return false;
 
-    const userId = await getUserId();
-    if (!userId) return false;
+    const currentUserId = await getUserId();
+    if (!currentUserId || currentUserId !== userId) return false;
 
     try {
       const payload = {
-        student_id: userId,
+        student_id: currentUserId,
         lesson_id: lessonId,
         field_key: fieldKey,
         value: value,
@@ -83,7 +89,7 @@ window.CosyProgress = window.CosyProgress || {};
         console.warn('CosyProgress: upsert error', error);
         return false;
       }
-      removePendingItem(lessonId, fieldKey);
+      removePendingItem(currentUserId, lessonId, fieldKey);
       return true;
     } catch (err) {
       console.warn('CosyProgress: save error', err);
@@ -95,19 +101,22 @@ window.CosyProgress = window.CosyProgress || {};
     /**
      * Saves an answer with ~800ms debounce. Updates offline queue and attempts sync.
      */
-    saveAnswer(lessonId, fieldKey, value, isCorrect) {
+    async saveAnswer(lessonId, fieldKey, value, isCorrect) {
       if (!lessonId || !fieldKey) return;
 
-      queuePendingItem(lessonId, fieldKey, value, isCorrect);
+      const userId = await getUserId();
+      if (!userId) return;
 
-      const timerKey = `${lessonId}::${fieldKey}`;
+      queuePendingItem(userId, lessonId, fieldKey, value, isCorrect);
+
+      const timerKey = `${userId}::${lessonId}::${fieldKey}`;
       if (debounceTimers.has(timerKey)) {
         clearTimeout(debounceTimers.get(timerKey));
       }
 
       const timer = setTimeout(async () => {
         debounceTimers.delete(timerKey);
-        await performUpsert(lessonId, fieldKey, value, isCorrect);
+        await performUpsert(userId, lessonId, fieldKey, value, isCorrect);
       }, DEBOUNCE_DELAY);
 
       debounceTimers.set(timerKey, timer);
@@ -155,17 +164,18 @@ window.CosyProgress = window.CosyProgress || {};
       }
       debounceTimers.clear();
 
-      const stored = getPendingFromStorage();
+      const client = getClient();
+      const currentUserId = await getUserId();
+      if (!client || !currentUserId) return;
+
+      const stored = getPendingFromStorage(currentUserId);
       const entries = Object.entries(stored);
 
       if (entries.length === 0) return;
 
-      const client = getClient();
-      const userId = await getUserId();
-      if (!client || !userId) return;
-
       for (const [key, item] of entries) {
-        const success = await performUpsert(item.lessonId, item.fieldKey, item.value, item.isCorrect);
+        if (item.userId && item.userId !== currentUserId) continue;
+        const success = await performUpsert(currentUserId, item.lessonId, item.fieldKey, item.value, item.isCorrect);
         if (!success) {
           break;
         }
