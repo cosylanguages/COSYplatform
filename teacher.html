@@ -588,6 +588,23 @@
             </div>
           </div>
 
+          <!-- Student Roster & Submissions Section -->
+          <div id="student-roster-section" style="margin-bottom: 30px; background: white; border: 1px solid #cbd5e1; border-radius: var(--cosy-radius-md, 14px); padding: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
+            <h2 style="font-size: 1.2rem; font-weight: 700; color: #0369a1; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;">
+              <span>${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.reviewTitle") : "🧑‍🎓 Student Submissions Review"}</span>
+              <button onclick="loadTeacherStudentRoster()" style="font-size: 0.8rem; padding: 4px 10px; background: #e0f2fe; color: #0369a1; border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.refreshRoster") : "Refresh Roster 🔄"}</button>
+            </h2>
+            <div style="margin-bottom: 16px;">
+              <label style="font-size: 0.85rem; font-weight: 600; color: #475569; margin-right: 8px;">${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.selectStudent") : "Select Student:"}</label>
+              <select id="teacher-student-select" onchange="loadStudentSubmissions(this.value)" style="padding: 6px 12px; border-radius: 6px; border: 1px solid #cbd5e1; font-size: 0.9rem; min-width: 250px;">
+                <option value="">-- Select a student --</option>
+              </select>
+            </div>
+            <div id="student-submissions-container">
+              <p style="color: #64748b; font-size: 0.85rem;">Select a student to view their essay and audio submissions.</p>
+            </div>
+          </div>
+
           <!-- My Shared Notes Section -->
           <div id="my-notes-section" style="margin-bottom: 30px; background: white; border: 1px solid #cbd5e1; border-radius: var(--cosy-radius-md, 14px); padding: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
             <h2 style="font-size: 1.2rem; font-weight: 700; color: var(--teacher-primary, #6d28d9); margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;">
@@ -1582,6 +1599,204 @@
 
     window.loadUserNotes = loadUserNotes;
     window.savePortalNote = savePortalNote;
+
+    function escapeHtml(str) {
+      if (!str) return "";
+      return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    async function fetchTeacherStudents() {
+      const client = window.CosyAuth ? window.CosyAuth.client : null;
+      if (!client) return [];
+
+      const authData = window.currentTeacherAuthData;
+      const isFounder = authData?.profile?.role === "founder";
+      const userId = authData?.user?.id;
+
+      try {
+        if (isFounder) {
+          const { data, error } = await client
+            .from("profiles")
+            .select("id, role, language_access, course_level, created_at")
+            .neq("role", "founder")
+            .order("created_at", { ascending: false });
+
+          return (!error && data) ? data : [];
+        } else {
+          const { data: links, error: linkErr } = await client
+            .from("teacher_students")
+            .select("student_id")
+            .eq("teacher_id", userId);
+
+          if (linkErr || !links || links.length === 0) return [];
+
+          const studentIds = links.map(l => l.student_id);
+          const { data: students, error: studErr } = await client
+            .from("profiles")
+            .select("id, role, language_access, course_level, created_at")
+            .in("id", studentIds);
+
+          return (!studErr && students) ? students : [];
+        }
+      } catch (err) {
+        console.warn("fetchTeacherStudents error:", err);
+        return [];
+      }
+    }
+
+    async function loadTeacherStudentRoster() {
+      const selectEl = document.getElementById("teacher-student-select");
+      if (!selectEl) return;
+
+      const students = await fetchTeacherStudents();
+      let html = '<option value="">-- Select a student --</option>';
+
+      students.forEach(s => {
+        const displayLabel = s.id ? s.id.substring(0, 8) + "..." + (s.role ? " (" + s.role + ")" : "") : "Student";
+        html += `<option value="${s.id}">${escapeHtml(displayLabel)}</option>`;
+      });
+
+      selectEl.innerHTML = html;
+    }
+
+    async function loadStudentSubmissions(studentId) {
+      const container = document.getElementById("student-submissions-container");
+      if (!container) return;
+
+      if (!studentId) {
+        container.innerHTML = '<p style="color: #64748b; font-size: 0.85rem;">Select a student to view their essay and audio submissions.</p>';
+        return;
+      }
+
+      const client = window.CosyAuth ? window.CosyAuth.client : null;
+      if (!client) {
+        container.innerHTML = '<p style="color: #ef4444; font-size: 0.85rem;">Offline - cannot load submissions.</p>';
+        return;
+      }
+
+      container.innerHTML = '<p style="color: #64748b; font-size: 0.85rem;">Loading submissions...</p>';
+
+      try {
+        const { data: subs, error } = await client
+          .from("lesson_submissions")
+          .select("*")
+          .eq("student_id", studentId)
+          .order("created_at", { ascending: false });
+
+        if (error) throw error;
+
+        if (!subs || subs.length === 0) {
+          container.innerHTML = '<p style="color: #64748b; font-size: 0.85rem;">No submissions found for this student.</p>';
+          return;
+        }
+
+        let html = '<div style="display: flex; flex-direction: column; gap: 16px;">';
+
+        for (const sub of subs) {
+          const subId = `${sub.lesson_id}_${sub.field_key}`.replace(/[^a-zA-Z0-9_-]/g, "_");
+          const textareaId = `feedback_txt_${subId}`;
+          const isAudio = sub.kind === "audio";
+
+          let audioHtml = "";
+          if (isAudio && sub.audio_path) {
+            const { data: signedData } = await client.storage
+              .from("submissions")
+              .createSignedUrl(sub.audio_path, 3600);
+
+            if (signedData && signedData.signedUrl) {
+              audioHtml = `<audio controls src="${signedData.signedUrl}" style="margin: 8px 0; max-width: 100%; height: 36px;"></audio>`;
+            } else {
+              audioHtml = `<p style="color: #ef4444; font-size: 0.8rem;">Could not generate audio URL (${escapeHtml(sub.audio_path)})</p>`;
+            }
+          }
+
+          const badgeColor = sub.status === "reviewed" ? "background: #dcfce7; color: #166534;" : "background: #e0f2fe; color: #0369a1;";
+
+          html += `
+            <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 14px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <div style="font-weight: 700; color: #0f172a; font-size: 0.9rem;">
+                  <span>${isAudio ? "🎙️ Audio Task" : "📝 Essay Assignment"}</span>
+                  <span style="font-size: 0.8rem; font-weight: normal; color: #64748b; margin-left: 8px;">(${escapeHtml(sub.lesson_id)})</span>
+                </div>
+                <span style="font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 12px; ${badgeColor}">${escapeHtml(sub.status || "submitted")}</span>
+              </div>
+
+              ${sub.text_content ? `
+                <div style="background: white; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px; font-size: 0.85rem; color: #334155; white-space: pre-wrap; margin-bottom: 8px;">
+                  ${escapeHtml(sub.text_content)}
+                </div>
+              ` : ""}
+
+              ${audioHtml}
+
+              <div style="margin-top: 10px;">
+                <label style="font-size: 0.8rem; font-weight: 600; color: #475569;">${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("submission.teacherFeedback") : "Teacher Feedback:"}</label>
+                <textarea id="${textareaId}" style="width: 100%; height: 60px; padding: 6px; font-size: 0.85rem; border: 1px solid #cbd5e1; border-radius: 6px; resize: vertical; margin-top: 4px; font-family: inherit;">${escapeHtml(sub.feedback || "")}</textarea>
+                <div style="display: flex; justify-content: flex-end; margin-top: 6px;">
+                  <button onclick="saveSubmissionReview('${sub.student_id}', '${escapeHtml(sub.lesson_id)}', '${escapeHtml(sub.field_key)}', '${textareaId}')" style="background: #0369a1; color: white; border: none; border-radius: 6px; padding: 4px 12px; font-size: 0.8rem; font-weight: 600; cursor: pointer;">Save Review & Feedback ✔️</button>
+                </div>
+              </div>
+            </div>
+          `;
+        }
+
+        html += '</div>';
+        container.innerHTML = html;
+      } catch (err) {
+        console.warn("loadStudentSubmissions error:", err);
+        container.innerHTML = `<p style="color: #ef4444; font-size: 0.85rem;">Could not load submissions: ${escapeHtml(err.message)}</p>`;
+      }
+    }
+
+    async function saveSubmissionReview(studentId, lessonId, fieldKey, textareaId) {
+      const textarea = document.getElementById(textareaId);
+      if (!textarea) return;
+
+      const feedback = textarea.value;
+      const client = window.CosyAuth ? window.CosyAuth.client : null;
+
+      if (!client) {
+        if (window.CosyUI) window.CosyUI.toast("Offline - cannot save review");
+        return;
+      }
+
+      try {
+        const { data: { session } } = await client.auth.getSession();
+        const teacherId = session?.user?.id;
+
+        const { error } = await client
+          .from("lesson_submissions")
+          .update({
+            status: "reviewed",
+            feedback: feedback,
+            reviewed_by: teacherId,
+            reviewed_at: new Date().toISOString()
+          })
+          .eq("student_id", studentId)
+          .eq("lesson_id", lessonId)
+          .eq("field_key", fieldKey);
+
+        if (error) throw error;
+
+        if (window.CosyUI) window.CosyUI.toast("Review saved and status updated!");
+        loadStudentSubmissions(studentId);
+      } catch (err) {
+        console.error("saveSubmissionReview error:", err);
+        if (window.CosyUI) window.CosyUI.toast("Failed to save review");
+      }
+    }
+
+    window.fetchTeacherStudents = fetchTeacherStudents;
+    window.loadTeacherStudentRoster = loadTeacherStudentRoster;
+    window.loadStudentSubmissions = loadStudentSubmissions;
+    window.saveSubmissionReview = saveSubmissionReview;
+    window.escapeHtml = escapeHtml;
 
     const originalInitTeacherApp = initTeacherApp;
     initTeacherApp = async function() {
