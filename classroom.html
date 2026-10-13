@@ -22,6 +22,7 @@
   <!-- Config & Auth Guard -->
   <script src="shared/js/config.js"></script>
   <script src="shared/js/auth-guard.js"></script>
+  <script src="shared/js/progress.js"></script>
   <script src="shared/js/auth-sso.js"></script>
   <script src="shared/js/cms-editor.js"></script>
   <script src="shared/js/ui-toast.js"></script>
@@ -1847,8 +1848,10 @@
         if (teacherBtn) teacherBtn.className = 'px-3 py-1 rounded-lg font-medium text-gray-500 transition hover:text-gray-700';
       }
 
-      // Re-render active dynamic slides if loaded to toggle teacher notes/answer keys
-      if (dynamicSlides && dynamicSlides.length > 0) {
+      // Re-load or re-render active dynamic slides if loaded to fetch proper content table for role
+      if (currentLessonPath && currentLessonPath !== 'default') {
+        loadDynamicLesson(currentLessonPath);
+      } else if (dynamicSlides && dynamicSlides.length > 0) {
         renderDynamicSlideContainers();
       }
 
@@ -2660,6 +2663,9 @@
     // Exercise Fill-in-Blank handler
     function handleBlankInput(id, val) {
       sendData({ type: 'blank', id: id, value: val });
+      if (currentRole === 'student' && window.CosyProgress) {
+        window.CosyProgress.saveAnswer(currentLessonPath, id, val);
+      }
     }
 
     function checkAnswers() {
