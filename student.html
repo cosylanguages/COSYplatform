@@ -455,6 +455,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.49.1"></script>
   <script src="shared/js/config.js"></script>
   <script src="shared/js/auth-guard.js"></script>
+  <script src="shared/js/progress.js"></script>
   <script src="shared/js/auth-sso.js"></script>
   <script src="shared/js/cms-editor.js"></script>
   <script src="shared/js/lazy-script.js"></script>
@@ -1080,6 +1081,22 @@
       try {
         const text = await window.CosyLessons.loadLessonContent(lessonPath, 'student');
 
+        window.currentStudentLessonPath = lessonPath;
+
+        if (window.CosyProgress) {
+          try {
+            const serverAnswers = await window.CosyProgress.loadAnswers(lessonPath);
+            if (serverAnswers && Object.keys(serverAnswers).length > 0) {
+              const storeKey = `cosy_ans_${lessonPath}`;
+              const localAnswers = JSON.parse(localStorage.getItem(storeKey) || '{}');
+              const merged = { ...localAnswers, ...serverAnswers };
+              localStorage.setItem(storeKey, JSON.stringify(merged));
+            }
+          } catch (e) {
+            console.warn("Error merging server answers:", e);
+          }
+        }
+
         let lessonTitle = "Interactive Lesson";
         window.currentStudentSlides = [];
         window.currentStudentSlideIdx = 0;
@@ -1326,6 +1343,10 @@
         existing[key] = val;
         localStorage.setItem(storeKey, JSON.stringify(existing));
       } catch(e) {}
+
+      if (window.CosyProgress) {
+        window.CosyProgress.saveAnswer(lessonPath, key, val);
+      }
     }
 
     function getSavedStudentInput(key) {
