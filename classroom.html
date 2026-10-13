@@ -1737,25 +1737,37 @@
             </div>
           `;
         } else if (tag === "cosy-select") {
-          const items = child.querySelectorAll("cosy-select-item-title");
-          output += `<select id="${fKey}" onchange="handleBlankInput('${fKey}', this.value)" class="px-3 py-1.5 border border-gray-300 rounded-lg text-sm my-2 focus:ring-2 focus:ring-cosy-500"><option value="">-- Choose option --</option>`;
+          const items = child.querySelectorAll("cosy-select-item, cosy-select-item-title");
+          let selectAns = [];
+          items.forEach(it => {
+            if (it.getAttribute("correct") === "true") {
+              selectAns.push(it.textContent.trim());
+            }
+          });
+          if (selectAns.length > 0) answersMap[fKey] = selectAns;
+
+          output += `<select id="${fKey}" onchange="handleChoiceInput('${fKey}', this.value)" class="px-3 py-1.5 border border-gray-300 rounded-lg text-sm my-2 focus:ring-2 focus:ring-cosy-500"><option value="">-- Choose option --</option>`;
           items.forEach(it => {
             const val = escapeHtml(it.textContent.trim());
             output += `<option value="${val}">${val}</option>`;
           });
-          output += `</select>`;
+          output += `</select><div id="feedback-${fKey}" class="text-xs font-medium my-1"></div>`;
         } else if (tag === "cosy-test") {
           const questions = child.querySelectorAll("cosy-test-question");
           questions.forEach((q, qIdx) => {
+            const qKey = `${fKey}_q${qIdx}`;
             const qText = escapeHtml(q.querySelector("cosy-test-question-text")?.textContent || "Question");
             output += `<div class="bg-gray-50 border border-gray-200 rounded-xl p-4 my-3"><strong class="text-sm text-gray-800">${qText}</strong><div class="space-y-1.5 mt-2">`;
             const options = q.querySelectorAll("cosy-test-item");
+            let correctOpts = [];
             options.forEach(opt => {
               const isCorrect = opt.getAttribute("correct") === "true";
               const optVal = escapeHtml(opt.textContent.trim());
-              output += `<label class="flex items-center space-x-2 text-xs p-2 rounded-lg border border-gray-200 bg-white hover:bg-cosy-50 cursor-pointer"><input type="radio" name="${fKey}_q${qIdx}" value="${optVal}"><span>${optVal}</span> ${currentRole === 'teacher' && isCorrect ? '<span class="text-green-600 font-bold ml-auto">✔️ Correct</span>' : ''}</label>`;
+              if (isCorrect) correctOpts.push(opt.textContent.trim());
+              output += `<label class="flex items-center space-x-2 text-xs p-2 rounded-lg border border-gray-200 bg-white hover:bg-cosy-50 cursor-pointer"><input type="radio" name="${qKey}" value="${optVal}" onchange="handleChoiceInput('${qKey}', this.value)"><span>${optVal}</span> ${currentRole === 'teacher' && isCorrect ? '<span class="text-green-600 font-bold ml-auto">✔️ Correct</span>' : ''}</label>`;
             });
-            output += `</div></div>`;
+            if (correctOpts.length > 0) answersMap[qKey] = correctOpts;
+            output += `</div><div id="feedback-${qKey}" class="text-xs font-medium mt-2"></div></div>`;
           });
         } else if (tag === "cosy-essay") {
           output += `
@@ -1805,14 +1817,15 @@
               </div>
             `;
           } else if (el.type === "test") {
+            if (el.answers && el.answers.length > 0) answersMap[fKey] = el.answers;
             output += `<div class="bg-gray-50 border border-gray-200 rounded-xl p-4 my-3"><strong class="text-sm text-gray-800">${escapeHtml(el.content || '')}</strong><div class="space-y-1.5 mt-2">`;
             if (el.options) {
               el.options.forEach(opt => {
                 const isCorrect = el.answers && el.answers.includes(opt);
-                output += `<label class="flex items-center space-x-2 text-xs p-2 rounded-lg border border-gray-200 bg-white hover:bg-cosy-50 cursor-pointer"><input type="radio" name="${fKey}" value="${escapeHtml(opt)}"><span>${escapeHtml(opt)}</span> ${currentRole === 'teacher' && isCorrect ? '<span class="text-green-600 font-bold ml-auto">✔️ Correct</span>' : ''}</label>`;
+                output += `<label class="flex items-center space-x-2 text-xs p-2 rounded-lg border border-gray-200 bg-white hover:bg-cosy-50 cursor-pointer"><input type="radio" name="${fKey}" value="${escapeHtml(opt)}" onchange="handleChoiceInput('${fKey}', this.value)"><span>${escapeHtml(opt)}</span> ${currentRole === 'teacher' && isCorrect ? '<span class="text-green-600 font-bold ml-auto">✔️ Correct</span>' : ''}</label>`;
               });
             }
-            output += `</div></div>`;
+            output += `</div><div id="feedback-${fKey}" class="text-xs font-medium mt-2"></div></div>`;
           } else if (el.type === "essay") {
             output += `
               <div class="bg-gray-50 border border-dashed border-gray-300 rounded-xl p-4 my-3 text-xs">
@@ -2333,7 +2346,7 @@
       if (!data) return;
 
       if (isHost) {
-        const allowedTypesOnHost = ['chat', 'blank', 'whiteboard-draw', 'role', 'note-sync', 'call-teacher', 'breakout-move'];
+        const allowedTypesOnHost = ['chat', 'blank', 'choice', 'whiteboard-draw', 'role', 'note-sync', 'call-teacher', 'breakout-move'];
         if (!allowedTypesOnHost.includes(data.type)) {
           console.warn(`Ignored unauthorized packet type '${data.type}' from participant on host.`);
           return;
@@ -2348,6 +2361,19 @@
           if (data.id && data.value !== undefined) {
             const input = document.getElementById(data.id);
             if (input) input.value = data.value;
+          }
+          break;
+        case 'choice':
+          if (data.id && data.value !== undefined) {
+            const el = document.getElementById(data.id);
+            if (el) {
+              el.value = data.value;
+            } else {
+              const radios = document.querySelectorAll(`input[type="radio"][name="${data.id}"]`);
+              radios.forEach(r => {
+                r.checked = (r.value === data.value);
+              });
+            }
           }
           break;
         case 'whiteboard-draw':
@@ -2660,6 +2686,14 @@
       }
     }
 
+    // Choice (radio / select) handler
+    function handleChoiceInput(id, val) {
+      sendData({ type: 'choice', id: id, value: val });
+      if (currentRole === 'student' && window.CosyProgress) {
+        window.CosyProgress.saveAnswer(currentLessonPath, id, val);
+      }
+    }
+
     // Exercise Fill-in-Blank handler
     function handleBlankInput(id, val) {
       sendData({ type: 'blank', id: id, value: val });
@@ -2668,32 +2702,73 @@
       }
     }
 
+    function normalizeStr(str) {
+      if (str === null || str === undefined) return '';
+      return String(str)
+        .trim()
+        .replace(/[\u2018\u2019\u201B\u2032`']/g, "'")
+        .toLowerCase()
+        .replace(/\s+/g, ' ');
+    }
+
     function checkAnswers() {
-      for (const [id, answer] of Object.entries(answersMap)) {
+      for (const [id, answerKey] of Object.entries(answersMap)) {
         const input = document.getElementById(id);
-        const feedback = document.getElementById(`feedback-${id.replace('blank-', '')}`);
+        const radios = document.querySelectorAll(`input[type="radio"][name="${id}"]`);
+        const radioChecked = document.querySelector(`input[type="radio"][name="${id}"]:checked`);
+        const feedback = document.getElementById(`feedback-${id.replace('blank-', '')}`) || document.getElementById(`feedback-${id}`);
 
-        if (input && feedback) {
-          const userVal = input.value.trim().toLowerCase();
-          feedback.textContent = ''; // clear
+        let userVal = '';
+        if (input) {
+          userVal = input.value || '';
+        } else if (radios.length > 0) {
+          userVal = radioChecked ? radioChecked.value : '';
+        }
 
-          if (userVal === answer.toLowerCase()) {
-            input.classList.remove('border-cosy-200', 'border-red-500');
+        const normUser = normalizeStr(userVal);
+
+        let validList = [];
+        if (Array.isArray(answerKey)) {
+          answerKey.forEach(ak => {
+            String(ak).split(/\s*[\/|]\s*/).forEach(sub => {
+              const n = normalizeStr(sub);
+              if (n) validList.push(n);
+            });
+          });
+        } else if (answerKey) {
+          String(answerKey).split(/\s*[\/|]\s*/).forEach(sub => {
+            const n = normalizeStr(sub);
+            if (n) validList.push(n);
+          });
+        }
+
+        const isCorrect = normUser !== '' && validList.includes(normUser);
+
+        if (input) {
+          input.classList.remove('border-cosy-200', 'border-gray-300', 'border-red-500', 'border-green-500', 'bg-green-50', 'bg-red-50');
+          if (isCorrect) {
             input.classList.add('border-green-500', 'bg-green-50');
+          } else {
+            input.classList.add('border-red-500', 'bg-red-50');
+          }
+        }
 
-            const span = document.createElement('span');
+        if (feedback) {
+          feedback.textContent = '';
+          const span = document.createElement('span');
+          if (isCorrect) {
             span.className = 'text-green-600 font-bold';
             span.textContent = '✔️ Correct!';
-            feedback.appendChild(span);
           } else {
-            input.classList.remove('border-cosy-200', 'border-green-500');
-            input.classList.add('border-red-500', 'bg-red-50');
-
-            const span = document.createElement('span');
             span.className = 'text-red-600 font-bold';
-            span.textContent = `❌ Incorrect. Answer: ${answer}`;
-            feedback.appendChild(span);
+            const displayKey = Array.isArray(answerKey) ? answerKey.join(' / ') : answerKey;
+            span.textContent = `❌ Incorrect. Answer: ${displayKey}`;
           }
+          feedback.appendChild(span);
+        }
+
+        if (currentRole === 'student' && window.CosyProgress) {
+          window.CosyProgress.saveAnswer(currentLessonPath, id, userVal, isCorrect);
         }
       }
     }
