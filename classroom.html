@@ -118,10 +118,21 @@
     .bottom-sheet.collapsed {
       transform: translateY(100%);
     }
+    body.role-pending [data-requires] {
+      display: none !important;
+    }
+    body:not(.can-lesson-mode) [data-requires="lesson-mode"],
+    body:not(.can-breakout) [data-requires="breakout"],
+    body:not(.can-video-provider) [data-requires="video-provider"],
+    body:not(.can-material-select) [data-requires="material-select"],
+    body:not(.can-clear-board) [data-requires="clear-board"],
+    body:not(.can-activities) [data-requires="activities"] {
+      display: none !important;
+    }
   </style>
 </head>
 
-<body class="bg-gray-100 text-gray-800 h-[100dvh] flex flex-col font-sans overflow-hidden">
+<body class="bg-gray-100 text-gray-800 h-[100dvh] flex flex-col font-sans overflow-hidden role-pending">
 
   <!-- TOP BAR (Desktop & Tablet >=600px) -->
   <header id="desktop-top-bar" class="bg-white border-b border-gray-200 px-3 py-2 hidden sm:flex items-center justify-between shadow-sm z-20 flex-wrap gap-2 text-xs flex-none">
@@ -141,9 +152,9 @@
       <div class="relative flex items-center">
         <button id="room-chip-btn" onclick="toggleProviderMenu()" class="flex items-center space-x-1.5 px-2.5 py-1 bg-cosy-50 hover:bg-cosy-100 text-cosy-800 border border-cosy-200 rounded-xl font-mono text-xs font-semibold transition touch-target" title="Click to manage video provider or copy link" aria-label="Room invite link and provider selector" data-i18n-title="classroom.roomChipTooltip">
           <span>#<span id="display-room-id">------</span> · <span id="display-provider-name">Cosy</span></span>
-          <span id="provider-chevron" class="host-only text-[10px]">▼</span>
+          <span id="provider-chevron" data-requires="video-provider" class="text-[10px]">▼</span>
         </button>
-        <div id="provider-dropdown-menu" class="hidden absolute top-full left-0 mt-1 w-56 bg-white border border-gray-200 rounded-xl shadow-xl z-50 p-1.5 text-xs space-y-1">
+        <div id="provider-dropdown-menu" data-requires="video-provider" class="hidden absolute top-full left-0 mt-1 w-56 bg-white border border-gray-200 rounded-xl shadow-xl z-50 p-1.5 text-xs space-y-1">
           <div class="px-2 py-1 text-[10px] font-bold text-gray-400 uppercase tracking-wider" data-i18n="classroom.providerSelectHeader">Switch Video Provider</div>
           <button onclick="switchVideoProviderAndNotify('peerjs-video')" class="w-full text-left px-2 py-1.5 rounded-lg hover:bg-cosy-50 text-gray-800 font-medium flex items-center justify-between">
             <span>⚡ Cosy Direct WebRTC</span>
@@ -178,13 +189,13 @@
     <!-- Modes (Host buttons / Student active mode badge) -->
     <div class="flex items-center space-x-1 bg-gray-100 p-1 rounded-xl">
       <div id="host-mode-controls" class="flex items-center space-x-1">
-        <button id="mode-individual-btn" onclick="switchLessonMode('individual')" class="px-2.5 py-1 rounded-lg font-semibold text-xs transition shadow-sm bg-white text-cosy-700 touch-target" title="1-on-1 Mode" aria-label="1-on-1 mode" data-i18n="classroom.modeOneToOne">
+        <button id="mode-individual-btn" data-requires="lesson-mode" onclick="switchLessonMode('individual')" class="px-2.5 py-1 rounded-lg font-semibold text-xs transition shadow-sm bg-white text-cosy-700 touch-target" title="1-on-1 Mode" aria-label="1-on-1 mode" data-i18n="classroom.modeOneToOne">
           👤👤 1-on-1
         </button>
-        <button id="mode-group-btn" onclick="switchLessonMode('group')" class="px-2.5 py-1 rounded-lg font-semibold text-xs text-gray-600 hover:text-gray-900 transition touch-target" title="Group Mode" aria-label="Group mode" data-i18n="classroom.modeGroup">
+        <button id="mode-group-btn" data-requires="lesson-mode" onclick="switchLessonMode('group')" class="px-2.5 py-1 rounded-lg font-semibold text-xs text-gray-600 hover:text-gray-900 transition touch-target" title="Group Mode" aria-label="Group mode" data-i18n="classroom.modeGroup">
           👥 Group
         </button>
-        <button id="breakout-rooms-btn" onclick="toggleBreakoutRoomsModal()" class="px-2.5 py-1 rounded-lg font-semibold text-xs text-amber-700 bg-amber-50 hover:bg-amber-100 border border-amber-200 transition hidden touch-target" title="Breakout Rooms" aria-label="Breakout rooms" data-i18n="classroom.modeBreakout">
+        <button id="breakout-rooms-btn" data-requires="breakout" onclick="toggleBreakoutRoomsModal()" class="px-2.5 py-1 rounded-lg font-semibold text-xs text-amber-700 bg-amber-50 hover:bg-amber-100 border border-amber-200 transition hidden touch-target" title="Breakout Rooms" aria-label="Breakout rooms" data-i18n="classroom.modeBreakout">
           🚪 Breakout Rooms
         </button>
       </div>
@@ -221,7 +232,7 @@
         <span data-i18n="classroom.toolNotes">Notes</span>
       </button>
 
-      <button id="tab-btn-activities" onclick="switchSidebarTab('activities')" class="px-2.5 py-1 rounded-lg text-gray-600 hover:text-gray-900 font-medium transition flex items-center space-x-1 host-only hidden touch-target" title="Prompts / Activities" aria-label="Prompts" data-i18n-title="classroom.toolActivities">
+      <button id="tab-btn-activities" data-requires="activities" onclick="switchSidebarTab('activities')" class="px-2.5 py-1 rounded-lg text-gray-600 hover:text-gray-900 font-medium transition flex items-center space-x-1 hidden touch-target" title="Prompts / Activities" aria-label="Prompts" data-i18n-title="classroom.toolActivities">
         <span>💡</span>
         <span data-i18n="classroom.toolActivities">Prompts</span>
       </button>
@@ -255,7 +266,7 @@
           <span class="text-xl">📝</span>
           <span>Notes</span>
         </button>
-        <button onclick="switchSidebarTab('activities'); toggleTabletToolsMenu();" class="p-2 hover:bg-cosy-50 rounded-xl flex flex-col items-center justify-center text-xs font-semibold text-gray-700 host-only hidden">
+        <button data-requires="activities" onclick="switchSidebarTab('activities'); toggleTabletToolsMenu();" class="p-2 hover:bg-cosy-50 rounded-xl flex flex-col items-center justify-center text-xs font-semibold text-gray-700 hidden">
           <span class="text-xl">💡</span>
           <span>Prompts</span>
         </button>
@@ -286,9 +297,9 @@
           ⋯
         </button>
         <div id="more-menu-dropdown" class="hidden absolute right-0 top-full mt-2 w-48 bg-white rounded-2xl shadow-2xl border border-gray-200 p-2 z-50 text-xs space-y-1">
-          <button onclick="switchLessonMode('individual'); toggleMobileMoreMenu();" class="w-full text-left px-3 py-2 hover:bg-cosy-50 rounded-xl font-semibold text-gray-700">👤👤 1-on-1 Mode</button>
-          <button onclick="switchLessonMode('group'); toggleMobileMoreMenu();" class="w-full text-left px-3 py-2 hover:bg-cosy-50 rounded-xl font-semibold text-gray-700">👥 Group Mode</button>
-          <button onclick="toggleBreakoutRoomsModal(); toggleMobileMoreMenu();" class="w-full text-left px-3 py-2 hover:bg-amber-50 rounded-xl font-semibold text-amber-800">🚪 Breakout Rooms</button>
+          <button data-requires="lesson-mode" onclick="switchLessonMode('individual'); toggleMobileMoreMenu();" class="w-full text-left px-3 py-2 hover:bg-cosy-50 rounded-xl font-semibold text-gray-700">👤👤 1-on-1 Mode</button>
+          <button data-requires="lesson-mode" onclick="switchLessonMode('group'); toggleMobileMoreMenu();" class="w-full text-left px-3 py-2 hover:bg-cosy-50 rounded-xl font-semibold text-gray-700">👥 Group Mode</button>
+          <button data-requires="breakout" onclick="toggleBreakoutRoomsModal(); toggleMobileMoreMenu();" class="w-full text-left px-3 py-2 hover:bg-amber-50 rounded-xl font-semibold text-amber-800">🚪 Breakout Rooms</button>
           <button onclick="copyShareLink(); toggleMobileMoreMenu();" class="w-full text-left px-3 py-2 hover:bg-cosy-50 rounded-xl font-semibold text-cosy-700">🔗 Copy Invite Link</button>
         </div>
       </div>
@@ -322,10 +333,10 @@
           <span>⚠️</span>
           <span>Having trouble? Switch to Jitsi / Google Meet / Yandex Telemost</span>
         </div>
-        <div id="timeout-host-controls" class="hidden flex flex-wrap gap-1 mt-0.5">
-          <button onclick="changeVideoProvider('jitsi'); startVideoCall();" class="px-2 py-0.5 bg-amber-800 hover:bg-amber-700 text-white rounded text-[10px] font-semibold border border-amber-600">Switch to Jitsi</button>
-          <button onclick="changeVideoProvider('google');" class="px-2 py-0.5 bg-amber-800 hover:bg-amber-700 text-white rounded text-[10px] font-semibold border border-amber-600">Google Meet</button>
-          <button onclick="changeVideoProvider('yandex');" class="px-2 py-0.5 bg-amber-800 hover:bg-amber-700 text-white rounded text-[10px] font-semibold border border-amber-600">Yandex Telemost</button>
+        <div id="timeout-host-controls" data-requires="video-provider" class="hidden flex flex-wrap gap-1 mt-0.5">
+          <button data-requires="video-provider" onclick="changeVideoProvider('jitsi'); startVideoCall();" class="px-2 py-0.5 bg-amber-800 hover:bg-amber-700 text-white rounded text-[10px] font-semibold border border-amber-600">Switch to Jitsi</button>
+          <button data-requires="video-provider" onclick="changeVideoProvider('google');" class="px-2 py-0.5 bg-amber-800 hover:bg-amber-700 text-white rounded text-[10px] font-semibold border border-amber-600">Google Meet</button>
+          <button data-requires="video-provider" onclick="changeVideoProvider('yandex');" class="px-2 py-0.5 bg-amber-800 hover:bg-amber-700 text-white rounded text-[10px] font-semibold border border-amber-600">Yandex Telemost</button>
         </div>
         <span id="timeout-student-notice" class="hidden text-[10px] text-amber-300">Your host has been notified to switch video provider if needed.</span>
       </div>
@@ -393,9 +404,9 @@
           </div>
         </div>
 
-        <div class="pt-1.5 border-t border-gray-700 text-[11px]">
+        <div class="pt-1.5 border-t border-gray-700 text-[11px]" data-requires="video-provider">
           <label class="text-gray-400 block mb-0.5">Provider:</label>
-          <select id="video-provider-select" onchange="changeVideoProvider(this.value)" class="w-full bg-gray-900 border border-gray-700 text-gray-200 rounded-lg px-2 py-1">
+          <select id="video-provider-select" data-requires="video-provider" onchange="changeVideoProvider(this.value)" class="w-full bg-gray-900 border border-gray-700 text-gray-200 rounded-lg px-2 py-1">
             <option value="peerjs-video">PeerJS Direct WebRTC</option>
             <option value="jitsi" selected>Embedded Jitsi Meet</option>
             <option value="google">Google Meet Link</option>
@@ -403,9 +414,9 @@
           </select>
         </div>
 
-        <div id="jitsi-server-container" class="hidden text-[11px]">
+        <div id="jitsi-server-container" data-requires="video-provider" class="hidden text-[11px]">
           <label class="text-gray-400 block mb-0.5">Jitsi Server:</label>
-          <select id="jitsi-server-select" onchange="changeJitsiServer(this.value)" class="w-full bg-gray-900 border border-gray-700 text-gray-200 rounded-lg px-2 py-1">
+          <select id="jitsi-server-select" data-requires="video-provider" onchange="changeJitsiServer(this.value)" class="w-full bg-gray-900 border border-gray-700 text-gray-200 rounded-lg px-2 py-1">
             <option value="meet.jit.si">meet.jit.si (Default)</option>
             <option value="meet.ffmuc.net">meet.ffmuc.net</option>
             <option value="jitsi.riot.im">jitsi.riot.im</option>
@@ -439,7 +450,7 @@
     <section id="center-stage-column" class="flex-1 flex flex-col overflow-hidden relative bg-white">
       <!-- Stage Header Toolbar -->
       <div class="p-2 px-3 bg-gray-50 border-b border-gray-200 flex items-center justify-between text-xs gap-2 flex-wrap flex-none">
-        <div id="material-select-wrapper" class="flex items-center space-x-2">
+        <div id="material-select-wrapper" data-requires="material-select" class="flex items-center space-x-2">
           <span class="font-bold text-gray-700 flex items-center space-x-1">
             <span>📚</span>
             <span data-i18n="classroom.materialSelect" class="hidden sm:inline">Material:</span>
@@ -475,7 +486,7 @@
             <option value="5" selected>Medium</option>
             <option value="10">Thick</option>
           </select>
-          <button onclick="clearWhiteboard()" class="px-2 py-1 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium rounded-lg text-xs transition touch-target">
+          <button onclick="clearWhiteboard()" data-requires="clear-board" class="px-2 py-1 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium rounded-lg text-xs transition touch-target">
             Clear
           </button>
         </div>
@@ -726,7 +737,7 @@
       <span class="text-lg">📝</span>
       <span class="text-[10px] font-medium">Notes</span>
     </button>
-    <button onclick="switchSidebarTab('activities')" class="flex flex-col items-center justify-center p-1 text-gray-600 hover:text-cosy-700 host-only hidden touch-target" title="Prompts" aria-label="Prompts">
+    <button data-requires="activities" onclick="switchSidebarTab('activities')" class="flex flex-col items-center justify-center p-1 text-gray-600 hover:text-cosy-700 hidden touch-target" title="Prompts" aria-label="Prompts">
       <span class="text-lg">💡</span>
       <span class="text-[10px] font-medium">Prompts</span>
     </button>
@@ -777,13 +788,42 @@
   </div>
 
 <script>
+    // Capabilities Matrix & Role Permissions Helper
+    const CAPS = {
+      'lesson-mode': ['teacher'],
+      'breakout': ['teacher'],
+      'video-provider': ['teacher'],
+      'material-select': ['teacher'],
+      'clear-board': ['teacher'],
+      'activities': ['teacher']
+    };
+
+    function can(feature) {
+      const allowed = CAPS[feature];
+      if (!allowed) return false;
+      const realRole = (userProfile && userProfile.role) ? userProfile.role.toLowerCase() : 'student';
+      const effectiveRole = (realRole === 'student') ? 'student' : currentRole;
+      return allowed.includes(effectiveRole);
+    }
+
+    function showTeacherOnlyToast() {
+      const msg = (window.CosyI18n && window.CosyI18n.t)
+        ? window.CosyI18n.t('classroom.teacherOnlyControl')
+        : 'This control is only available to teachers.';
+      if (window.CosyUI && window.CosyUI.toast) {
+        CosyUI.toast(msg, 'warning');
+      } else {
+        alert(msg);
+      }
+    }
+
     // Shared Lesson Notes State
     window.currentNoteRecord = null; // { id, room_key, lesson_id, content, version, participants }
     window.noteDebounceTimer = null;
     window.localUnsavedNote = false;
 
     // Platform State Management
-    let currentRole = 'teacher';
+    let currentRole = 'student';
     let lessonMode = 'individual'; // 'individual' (1-on-1) or 'group'
     let currentLayoutPreset = 'side'; // 'side', 'top-strip', 'discussion-split', 'stage-focus'
     let peer = null;
@@ -884,7 +924,7 @@
       // Determine initial video provider: URL param > localStorage > default 'jitsi'
       const savedProvider = localStorage.getItem('cosy_video_provider');
       const initialProvider = urlProvider || savedProvider || 'jitsi';
-      changeVideoProvider(initialProvider);
+      changeVideoProvider(initialProvider, true);
 
       if (urlKey) {
         participantKey = urlKey;
@@ -1039,6 +1079,26 @@
       }
     }
 
+    function applyCapabilities() {
+      const features = ['lesson-mode', 'breakout', 'video-provider', 'material-select', 'clear-board', 'activities'];
+      features.forEach(f => {
+        if (can(f)) {
+          document.body.classList.add(`can-${f}`);
+        } else {
+          document.body.classList.remove(`can-${f}`);
+        }
+      });
+
+      const studentModeLabel = document.getElementById('student-mode-label');
+      if (studentModeLabel) {
+        if (can('lesson-mode')) {
+          studentModeLabel.classList.add('hidden');
+        } else {
+          studentModeLabel.classList.remove('hidden');
+        }
+      }
+    }
+
     function enforceRolePermissions() {
       const teacherBtn = document.getElementById('role-teacher-btn');
       const studentBtn = document.getElementById('role-student-btn');
@@ -1064,10 +1124,17 @@
         if (studentBtn) studentBtn.classList.remove('hidden');
         switchRole('teacher');
       }
+
+      applyCapabilities();
+      document.body.classList.remove('role-pending');
     }
 
     // Lesson Mode Switcher (1-on-1 vs Group Mode)
     function switchLessonMode(mode, broadcast = true) {
+      if (broadcast && !can('lesson-mode')) {
+        showTeacherOnlyToast();
+        return;
+      }
       lessonMode = mode;
       const indBtn = document.getElementById('mode-individual-btn');
       const grpBtn = document.getElementById('mode-group-btn');
@@ -1077,7 +1144,7 @@
       if (mode === 'group') {
         if (indBtn) indBtn.className = 'px-2.5 py-1 rounded-lg font-semibold text-gray-500 transition hover:text-gray-800';
         if (grpBtn) grpBtn.className = 'px-2.5 py-1 rounded-lg font-semibold transition shadow-sm bg-white text-cosy-700';
-        if (breakoutBtn) breakoutBtn.classList.remove('hidden');
+        if (breakoutBtn && can('breakout')) breakoutBtn.classList.remove('hidden');
 
         // If in group mode and layout is default side, suggest discussion split layout
         if (currentLayoutPreset === 'side') {
@@ -1174,6 +1241,10 @@
     let isLocalVideoMirrored = false;
 
     function changeJitsiServer(domain) {
+      if (!can('video-provider')) {
+        showTeacherOnlyToast();
+        return;
+      }
       currentJitsiDomain = domain;
       if (currentVideoProvider === 'jitsi' && jitsiApi) {
         startVideoCall();
@@ -1297,7 +1368,11 @@
     }
 
     // Video Provider Switching Logic
-    function changeVideoProvider(provider) {
+    function changeVideoProvider(provider, isRemote = false) {
+      if (!isRemote && !can('video-provider')) {
+        showTeacherOnlyToast();
+        return;
+      }
       currentVideoProvider = provider;
       try {
         localStorage.setItem('cosy_video_provider', provider);
@@ -1526,6 +1601,10 @@
 
     async function quickSwitchLesson(val) {
       if (!val) return;
+      if (!can('material-select')) {
+        showTeacherOnlyToast();
+        return;
+      }
       if (val === 'default') {
         window.location.href = window.location.pathname + (roomId ? `?room=${roomId}` : '');
         return;
@@ -1538,6 +1617,10 @@
     }
 
     async function selectAndBroadcastLesson(lessonPath) {
+      if (!can('material-select')) {
+        showTeacherOnlyToast();
+        return;
+      }
       if (!isSafeLessonPath(lessonPath)) {
         if (window.CosyUI && window.CosyUI.toast) CosyUI.toast("Invalid lesson path.", "error");
         return;
@@ -1878,6 +1961,7 @@
       }
 
       sendData({ type: 'role', role: role });
+      applyCapabilities();
     }
 
     // Utility Drawers State
@@ -2429,7 +2513,7 @@
           break;
         case 'video-provider-switch':
           if (data.provider) {
-            changeVideoProvider(data.provider);
+            changeVideoProvider(data.provider, true);
             if (data.provider === 'jitsi' || data.provider === 'peerjs-video') {
               startVideoCall();
             }
@@ -2438,7 +2522,7 @@
         case 'video-link':
           if (data.link) {
             if (isValidVideoUrl(data.link)) {
-              if (data.provider) changeVideoProvider(data.provider);
+              if (data.provider) changeVideoProvider(data.provider, true);
               renderExternalVideoBanner(data.provider, data.link);
               addChatMessage('System', `Teacher launched ${data.provider === 'yandex' ? 'Yandex Telemost' : 'Google Meet'} video call.`);
             } else {
@@ -2913,6 +2997,10 @@
     }
 
     function clearWhiteboard(broadcast = true) {
+      if (broadcast && !can('clear-board')) {
+        showTeacherOnlyToast();
+        return;
+      }
       if (!ctx || !canvas) return;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       if (broadcast) {
@@ -3025,6 +3113,10 @@
     let activeBreakoutRoomsList = [];
 
     function toggleBreakoutRoomsModal() {
+      if (!can('breakout')) {
+        showTeacherOnlyToast();
+        return;
+      }
       const modal = document.getElementById('breakout-rooms-modal');
       if (modal) {
         modal.classList.toggle('hidden');
@@ -3510,6 +3602,10 @@
     window.isDrawerPinned = false; isDrawerPinned = false; var isDrawerPinned = window.isDrawerPinned;
 
     function openDrawer(tabName) {
+      if (tabName === 'activities' && !can('activities')) {
+        showTeacherOnlyToast();
+        return;
+      }
       window.activeTool = tabName; activeTool = tabName;
       const drawer = document.getElementById('right-tool-drawer');
       if (drawer) drawer.classList.remove('hidden');
@@ -3596,6 +3692,10 @@
     }
 
     function switchSidebarTab(tabName) {
+      if (tabName === 'activities' && !can('activities')) {
+        showTeacherOnlyToast();
+        return;
+      }
       const isMobile = window.innerWidth < 600;
       if (isMobile) {
         if (activeTool === tabName && isBottomSheetOpen) {
@@ -3707,6 +3807,10 @@
     let isBottomSheetOpen = false;
 
     function openBottomSheet(tabName) {
+      if (tabName === 'activities' && !can('activities')) {
+        showTeacherOnlyToast();
+        return;
+      }
       const sheet = document.getElementById('bottom-sheet-drawer');
       const body = document.getElementById('bottom-sheet-body');
       const titleEl = document.getElementById('bottom-sheet-title');
