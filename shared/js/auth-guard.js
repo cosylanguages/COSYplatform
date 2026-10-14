@@ -359,6 +359,32 @@ window.CosyAuth.canAccessCourseId = function(courseId, profile) {
 };
 
 /**
+ * Fetches public preview metadata for courses from the Supabase course_preview view.
+ * @param {string} courseId - Optional course ID to filter preview metadata
+ * @returns {Promise<Array<Object>>}
+ */
+window.CosyAuth.fetchCoursePreview = async function(courseId) {
+  const client = window.CosyAuth.client;
+  if (!client) return [];
+
+  try {
+    let query = client.from('course_preview').select('*');
+    if (courseId) {
+      query = query.eq('course_id', courseId);
+    }
+    const { data, error } = await query;
+    if (error) {
+      console.warn('[CosyAuth] Error fetching course_preview:', error);
+      return [];
+    }
+    return data || [];
+  } catch (err) {
+    console.warn('[CosyAuth] Exception fetching course_preview:', err);
+    return [];
+  }
+};
+
+/**
  * Signs out current user session.
  */
 window.CosyAuth.logout = async function() {

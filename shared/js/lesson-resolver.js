@@ -8,10 +8,8 @@
   async function loadLessonContent(client, lessonPath, role) {
     const pathParts = typeof lessonPath === 'string' ? lessonPath.split('/') : [];
     if (
-      !client ||
-      !lessonPath.startsWith('lessons/') ||
-      pathParts.some(part => !part || part === '.' || part === '..') ||
-      !/\.(json|xml)$/i.test(lessonPath)
+      !lessonPath ||
+      pathParts.some(part => !part || part === '.' || part === '..')
     ) {
       throw new Error('Lesson content is unavailable.');
     }
@@ -21,18 +19,49 @@
       throw new Error('Lesson content is unavailable.');
     }
 
-    const table = studentView ? 'student_lesson_content' : 'lesson_content';
-    const column = studentView ? 'content' : 'xml_content';
-    const { data, error } = await client
-      .from(table)
-      .select(column)
-      .eq('lesson_id', lessonPath)
-      .maybeSingle();
+    if (client) {
+      // First try canonical 'lessons' protected contract table if client is available
+      try {
+        const { data: contractData, error: contractError } = await client
+          .from('lessons')
+          .select('body')
+          .eq('id', lessonPath)
+          .maybeSingle();
 
-    if (error || !data || typeof data[column] !== 'string') {
-      throw new Error('Lesson content is unavailable.');
+        if (!contractError && contractData && typeof contractData.body === 'string') {
+          return contractData.body;
+        }
+      } catch (e) {
+        // Fallback to legacy content tables
+      }
+
+      if (lessonPath.startsWith('lessons/')) {
+        const table = studentView ? 'student_lesson_content' : 'lesson_content';
+        const column = studentView ? 'content' : 'xml_content';
+        const { data, error } = await client
+          .from(table)
+          .select(column)
+          .eq('lesson_id', lessonPath)
+          .maybeSingle();
+
+        if (!error && data && typeof data[column] === 'string') {
+          return data[column];
+        }
+      }
     }
-    return data[column];
+
+    // Fallback static fetch for local preview or unmigrated assets
+    try {
+      const res = await fetch(lessonPath);
+      if (res.ok) {
+        const text = await res.text();
+        return text;
+      }
+    } catch (err) {
+      console.warn('[LessonResolver] Static fetch failed:', err);
+    }
+
+    throw new Error('Lesson content is unavailable.');
   }
 
   async function saveLessonToSupabase(payload) {
