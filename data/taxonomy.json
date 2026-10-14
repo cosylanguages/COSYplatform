@@ -1,0 +1,278 @@
+{
+  "$schema": "https://cosylanguages.github.io/schemas/taxonomy.json",
+  "version": "1.0.0",
+  "description": "Single registry of COSY Ecosystem course types and roadmap mappings",
+  "courseTypes": [
+    {
+      "id": "general",
+      "kind": "core",
+      "owningRepo": "platform",
+      "displayName": {
+        "en": "General Course",
+        "fr": "Cours Général",
+        "ru": "Общий курс",
+        "el": "Γενικό Μάθημα",
+        "it": "Corso Generale"
+      },
+      "languagesOffered": ["en", "fr", "ru", "es", "de", "it", "pt", "el", "hy", "ka", "tt", "ba", "br"],
+      "cefrLevelsOffered": ["a0", "a1", "a2", "b1", "b2", "c1", "c2"]
+    },
+    {
+      "id": "spoken",
+      "kind": "core",
+      "owningRepo": "platform",
+      "displayName": {
+        "en": "Spoken Course",
+        "fr": "Cours Parlé / Expression Orale",
+        "ru": "Разговорный курс",
+        "el": "Μάθημα Συνομιλίας",
+        "it": "Corso Parlato"
+      },
+      "languagesOffered": ["en", "fr", "ru"],
+      "cefrLevelsOffered": ["a1", "a2", "b1", "b2", "c1", "c2"]
+    },
+    {
+      "id": "professional",
+      "kind": "core",
+      "owningRepo": "platform",
+      "displayName": {
+        "en": "Professional & Business Course",
+        "fr": "Cours Professionnel",
+        "ru": "Профессиональный курс",
+        "el": "Επαγγελματικό Μάθημα",
+        "it": "Corso Professionale"
+      },
+      "languagesOffered": ["en", "fr", "ru"],
+      "cefrLevelsOffered": ["b1", "b2", "c1", "c2"]
+    },
+    {
+      "id": "travelling",
+      "kind": "core",
+      "owningRepo": "platform",
+      "displayName": {
+        "en": "Travelling Course",
+        "fr": "Cours de Voyage",
+        "ru": "Курс для путешествий",
+        "el": "Μάθημα Ταξιδιού",
+        "it": "Corso per Viaggi"
+      },
+      "languagesOffered": ["en", "fr", "ru"],
+      "cefrLevelsOffered": ["a1", "a2", "b1"]
+    },
+    {
+      "id": "relocation",
+      "kind": "core",
+      "owningRepo": "platform",
+      "displayName": {
+        "en": "Relocation Course",
+        "fr": "Cours de Relocalisation",
+        "ru": "Курс для релокации",
+        "el": "Μάθημα Μετεγκατάστασης",
+        "it": "Corso di Trasferimento"
+      },
+      "languagesOffered": ["en"],
+      "cefrLevelsOffered": ["a2", "b1", "b2", "c1"]
+    },
+    {
+      "id": "exam",
+      "kind": "core",
+      "owningRepo": "platform",
+      "displayName": {
+        "en": "Exam Preparation",
+        "fr": "Préparation aux Examens",
+        "ru": "Подготовка к экзаменам",
+        "el": "Προετοιμασία Εξετάσεων",
+        "it": "Preparazione Esami"
+      },
+      "languagesOffered": ["en", "el"],
+      "cefrLevelsOffered": ["b1", "b2", "c1", "c2"]
+    },
+    {
+      "id": "cinema",
+      "kind": "extra",
+      "owningRepo": "events",
+      "displayName": {
+        "en": "Cinema Club",
+        "fr": "Club Cinéma",
+        "ru": "Киноклуб",
+        "el": "Κινηματογραφική Λέσχη",
+        "it": "Club del Cinema"
+      },
+      "languagesOffered": ["en"],
+      "cefrLevelsOffered": ["a1", "a2", "b1", "b2", "c1", "c2"]
+    },
+    {
+      "id": "karaoke",
+      "kind": "extra",
+      "owningRepo": "events",
+      "displayName": {
+        "en": "Karaoke Sessions",
+        "fr": "Sessions Karaoké",
+        "ru": "Караоке-сессии",
+        "el": "Συνεδρίες Καραόκε",
+        "it": "Sessioni Karaoke"
+      },
+      "languagesOffered": ["en", "fr"],
+      "cefrLevelsOffered": ["a1", "a2", "b1", "b2"]
+    },
+    {
+      "id": "discussion",
+      "kind": "extra",
+      "owningRepo": "events",
+      "displayName": {
+        "en": "Special Discussion Club",
+        "fr": "Club de Discussion Spécialisé",
+        "ru": "Дискуссионный клуб",
+        "el": "Λέσχη Συζήτησης",
+        "it": "Club di Discussione"
+      },
+      "languagesOffered": ["en"],
+      "cefrLevelsOffered": ["a1", "a2", "b1", "b2", "c1", "c2"]
+    },
+    {
+      "id": "pronunciation",
+      "kind": "extra",
+      "owningRepo": "platform",
+      "displayName": {
+        "en": "Pronunciation & Phonetics Practice",
+        "fr": "Pratique de la Prononciation",
+        "ru": "Практика произношения",
+        "el": "Πρακτική Προφοράς",
+        "it": "Pratica di Pronuncia"
+      },
+      "languagesOffered": ["en", "fr", "ru"],
+      "cefrLevelsOffered": ["a1", "a2", "b1", "b2", "c1", "c2"]
+    }
+  ],
+  "roadmapMappings": {
+    "cinema-en-a1.json": { "courseTypeId": "cinema", "lang": "en", "level": "a1", "status": "standard" },
+    "cinema-en-a2.json": { "courseTypeId": "cinema", "lang": "en", "level": "a2", "status": "standard" },
+    "cinema-en-b1.json": { "courseTypeId": "cinema", "lang": "en", "level": "b1", "status": "standard" },
+    "cinema-en-b2.json": { "courseTypeId": "cinema", "lang": "en", "level": "b2", "status": "standard" },
+    "cinema-en-c1.json": { "courseTypeId": "cinema", "lang": "en", "level": "c1", "status": "standard" },
+    "cinema-en-c2.json": { "courseTypeId": "cinema", "lang": "en", "level": "c2", "status": "standard" },
+
+    "discussion-en-a1.json": { "courseTypeId": "discussion", "lang": "en", "level": "a1", "status": "standard" },
+    "discussion-en-a2.json": { "courseTypeId": "discussion", "lang": "en", "level": "a2", "status": "standard" },
+    "discussion-en-b1.json": { "courseTypeId": "discussion", "lang": "en", "level": "b1", "status": "standard" },
+    "discussion-en-b2.json": { "courseTypeId": "discussion", "lang": "en", "level": "b2", "status": "standard" },
+    "discussion-en-c1.json": { "courseTypeId": "discussion", "lang": "en", "level": "c1", "status": "standard" },
+    "discussion-en-c2.json": { "courseTypeId": "discussion", "lang": "en", "level": "c2", "status": "standard" },
+
+    "general-en-a0.json": { "courseTypeId": "general", "lang": "en", "level": "a0", "status": "standard" },
+    "general-en-a1.json": { "courseTypeId": "general", "lang": "en", "level": "a1", "status": "standard" },
+    "general-en-a2.json": { "courseTypeId": "general", "lang": "en", "level": "a2", "status": "standard" },
+    "general-en-b1.json": { "courseTypeId": "general", "lang": "en", "level": "b1", "status": "standard" },
+    "general-en-b2.json": { "courseTypeId": "general", "lang": "en", "level": "b2", "status": "standard" },
+    "general-en-c1.json": { "courseTypeId": "general", "lang": "en", "level": "c1", "status": "standard" },
+
+    "pronunciation-en-a1.json": { "courseTypeId": "pronunciation", "lang": "en", "level": "a1", "status": "standard" },
+    "pronunciation-en-a2.json": { "courseTypeId": "pronunciation", "lang": "en", "level": "a2", "status": "standard" },
+    "pronunciation-en-b1.json": { "courseTypeId": "pronunciation", "lang": "en", "level": "b1", "status": "standard" },
+    "pronunciation-en-b2.json": { "courseTypeId": "pronunciation", "lang": "en", "level": "b2", "status": "standard" },
+    "pronunciation-en-c1.json": { "courseTypeId": "pronunciation", "lang": "en", "level": "c1", "status": "standard" },
+    "pronunciation-en-c2.json": { "courseTypeId": "pronunciation", "lang": "en", "level": "c2", "status": "standard" },
+
+    "pronunciation-fr-a1.json": { "courseTypeId": "pronunciation", "lang": "fr", "level": "a1", "status": "standard" },
+    "pronunciation-fr-a2.json": { "courseTypeId": "pronunciation", "lang": "fr", "level": "a2", "status": "standard" },
+    "pronunciation-fr-b1.json": { "courseTypeId": "pronunciation", "lang": "fr", "level": "b1", "status": "standard" },
+    "pronunciation-fr-b2.json": { "courseTypeId": "pronunciation", "lang": "fr", "level": "b2", "status": "standard" },
+    "pronunciation-fr-c1.json": { "courseTypeId": "pronunciation", "lang": "fr", "level": "c1", "status": "standard" },
+    "pronunciation-fr-c2.json": { "courseTypeId": "pronunciation", "lang": "fr", "level": "c2", "status": "standard" },
+
+    "pronunciation-ru-a1.json": { "courseTypeId": "pronunciation", "lang": "ru", "level": "a1", "status": "standard" },
+    "pronunciation-ru-a2.json": { "courseTypeId": "pronunciation", "lang": "ru", "level": "a2", "status": "standard" },
+    "pronunciation-ru-b1.json": { "courseTypeId": "pronunciation", "lang": "ru", "level": "b1", "status": "standard" },
+    "pronunciation-ru-b2.json": { "courseTypeId": "pronunciation", "lang": "ru", "level": "b2", "status": "standard" },
+    "pronunciation-ru-c1.json": { "courseTypeId": "pronunciation", "lang": "ru", "level": "c1", "status": "standard" },
+    "pronunciation-ru-c2.json": { "courseTypeId": "pronunciation", "lang": "ru", "level": "c2", "status": "standard" },
+
+    "spoken-en-a1.json": { "courseTypeId": "spoken", "lang": "en", "level": "a1", "status": "standard" },
+    "spoken-en-a2.json": { "courseTypeId": "spoken", "lang": "en", "level": "a2", "status": "standard" },
+    "spoken-en-b1.json": { "courseTypeId": "spoken", "lang": "en", "level": "b1", "status": "standard" },
+    "spoken-en-b2.json": { "courseTypeId": "spoken", "lang": "en", "level": "b2", "status": "standard" },
+    "spoken-en-c1.json": { "courseTypeId": "spoken", "lang": "en", "level": "c1", "status": "standard" }
+  },
+  "nonConformingRoadmaps": {
+    "grammar-en-a0.json": {
+      "reason": "Standalone grammar practice module outside the 6 core course types.",
+      "proposedPlacement": "Modular Sub-track / Module inside 'general' (General English A0 Grammar Module) or COSYtools grammar reference."
+    },
+    "grammar-en-a1.json": {
+      "reason": "Standalone grammar practice module outside the 6 core course types.",
+      "proposedPlacement": "Modular Sub-track / Module inside 'general' (General English A1 Grammar Module) or COSYtools grammar reference."
+    },
+    "grammar-en-a2.json": {
+      "reason": "Standalone grammar practice module outside the 6 core course types.",
+      "proposedPlacement": "Modular Sub-track / Module inside 'general' (General English A2 Grammar Module) or COSYtools grammar reference."
+    },
+    "grammar-en-b1.json": {
+      "reason": "Standalone grammar practice module outside the 6 core course types.",
+      "proposedPlacement": "Modular Sub-track / Module inside 'general' (General English B1 Grammar Module) or COSYtools grammar reference."
+    },
+    "grammar-en-b2.json": {
+      "reason": "Standalone grammar practice module outside the 6 core course types.",
+      "proposedPlacement": "Modular Sub-track / Module inside 'general' (General English B2 Grammar Module) or COSYtools grammar reference."
+    },
+    "grammar-en-c1.json": {
+      "reason": "Standalone grammar practice module outside the 6 core course types.",
+      "proposedPlacement": "Modular Sub-track / Module inside 'general' (General English C1 Grammar Module) or COSYtools grammar reference."
+    },
+
+    "phrasal-verbs-en-a2.json": {
+      "reason": "Specific vocabulary sub-topic (phrasal verbs) not fitting the 6 core course types.",
+      "proposedPlacement": "Modular Sub-track / Module inside 'spoken' or 'general' (A2 Phrasal Verbs Module) or COSYdata vocabulary index."
+    },
+    "phrasal-verbs-en-b1.json": {
+      "reason": "Specific vocabulary sub-topic (phrasal verbs) not fitting the 6 core course types.",
+      "proposedPlacement": "Modular Sub-track / Module inside 'spoken' or 'general' (B1 Phrasal Verbs Module) or COSYdata vocabulary index."
+    },
+    "phrasal-verbs-en-b2.json": {
+      "reason": "Specific vocabulary sub-topic (phrasal verbs) not fitting the 6 core course types.",
+      "proposedPlacement": "Modular Sub-track / Module inside 'spoken' or 'general' (B2 Phrasal Verbs Module) or COSYdata vocabulary index."
+    },
+
+    "vocabulary-en-a1.json": {
+      "reason": "Standalone vocabulary practice module.",
+      "proposedPlacement": "Modular Sub-track / Module inside 'general' (A1 Vocabulary Module) or COSYdata practice."
+    },
+    "vocabulary-en-a2.json": {
+      "reason": "Standalone vocabulary practice module.",
+      "proposedPlacement": "Modular Sub-track / Module inside 'general' (A2 Vocabulary Module) or COSYdata practice."
+    },
+    "vocabulary-en-b1.json": {
+      "reason": "Standalone vocabulary practice module.",
+      "proposedPlacement": "Modular Sub-track / Module inside 'general' (B1 Vocabulary Module) or COSYdata practice."
+    },
+
+    "introductory-english.json": {
+      "reason": "Diagnostic / placement test roadmap outside standard CEFR course sequence.",
+      "proposedPlacement": "Platform Utility / Onboarding Diagnostic Module inside 'general' (General English Placement Test)."
+    },
+
+    "science-lessons (PR #13)": {
+      "reason": "Domain-specific CLIL (Content and Language Integrated Learning) lessons.",
+      "proposedPlacement": "Sub-track inside 'discussion' or 'professional' (e.g. Science & Technology Discussion Module)."
+    }
+  },
+  "cosymanualsComparisonReport": {
+    "cosymanualsCurriculums": [
+      "general",
+      "spoken",
+      "travelling",
+      "professional",
+      "relocation",
+      "exam"
+    ],
+    "cosyplatformTaxonomyCore": [
+      "general",
+      "spoken",
+      "professional",
+      "travelling",
+      "relocation",
+      "exam"
+    ],
+    "mismatchStatus": "ALIGNMENT_PERFECT",
+    "notes": "All 6 core course types in COSYplatform taxonomy match COSYmanuals/curriculums identically. Extra event types (cinema, karaoke, discussion) and pronunciation remain segregated under 'extra' / 'events' ownership."
+  }
+}
