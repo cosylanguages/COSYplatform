@@ -2,46 +2,189 @@
   "id": "gene-editing-and-crispr",
   "title": "Keeping Up With Science #2: Gene Editing & Bioethics (CRISPR)",
   "level": "B2",
-  "templateType": "speaking_club",
+  "templateType": "general",
+  "durationMinutes": 50,
   "teacherNotes": [
     {
       "type": "instruction",
-      "title": "Session Goal",
-      "content": "Explore medical breakthroughs in gene therapy, genetic engineering, and ethical boundaries surrounding designer babies and disease eradication."
+      "title": "Lesson Stage Aims",
+      "content": "Explore medical breakthroughs in gene therapy, genetic engineering, and ethical boundaries surrounding designer babies, disease eradication, and bio-safety."
     }
   ],
   "slides": [
     {
       "id": "slide-1",
-      "title": "Icebreaker: The Promise of Genetics",
-      "stage": "Icebreaker / Lead-in",
+      "title": "Warm-up & Lead-in",
+      "stage": "Warm-up",
       "elements": [
         {
           "type": "instruction",
-          "content": "Warm-up questions (30-60 seconds per response):"
+          "content": "Discuss the following questions with your partner (3-4 minutes):"
         },
         {
           "type": "blockquote",
-          "content": "1. If genetic testing could predict disease risks later in life, would you want to know?\n2. What comes to mind when you hear the term 'designer babies'?\n3. Do humans have a moral responsibility to eradicate genetic diseases using technology?"
+          "content": "1. If a DNA test could accurately predict your risk of developing a hereditary disease in 20 years, would you want to know?\n2. What images or ethical concerns come to mind when you hear the phrase 'designer babies'?\n3. Do scientists have a moral obligation to eliminate genetic illness if the technology exists?"
         }
       ]
     },
     {
       "id": "slide-2",
-      "title": "Round 1: Medical Breakthroughs vs Bioethics",
-      "stage": "Categorized Discussion",
+      "title": "Target Vocabulary & Bio-Tech Terms",
+      "stage": "Vocabulary Presentation",
       "elements": [
         {
           "type": "instruction",
-          "content": "Discuss the ethical limits of CRISPR gene editing:"
+          "content": "Study key terms in modern genetics and bioethics:"
         },
         {
           "type": "blockquote",
-          "content": "• Curing inherited blindness vs. enhancing physical traits (height, intelligence).\n• Should gene editing be accessible via public healthcare or reserved for private clinics?"
+          "content": "1. CRISPR-Cas9 (/ˈkrɪs.pər kæs naɪn/): A genome editing tool that allows scientists to alter DNA sequences with precision.\n   • Example: 'CRISPR-Cas9 has made targeted gene editing significantly faster and cheaper.'\n\n2. Germline Editing (/ˈdʒɜːm.laɪn ˈed.ɪ.tɪŋ/): Changes made to the DNA in reproductive cells that are passed down to future generations.\n   • Example: 'Germline editing remains controversial because inherited changes affect future offspring.'\n\n3. Hereditary Disorder (/hɪˈred.ɪ.tər.i dɪsˈɔː.dər/): A medical condition caused by genetic mutations passed from parents.\n   • Example: 'Gene therapy holds promise for curing single-gene hereditary disorders like sickle cell anemia.'\n\n4. Bioethics (/ˌbaɪ.əʊˈeθ.ɪks/): The study of ethical issues arising from advances in biology and medicine.\n   • Example: 'Hospitals employ bioethics committees to guide complex patient treatment decisions.'"
+        }
+      ]
+    },
+    {
+      "id": "slide-3",
+      "title": "Controlled Practice: Genetics & Ethics",
+      "stage": "Controlled Practice",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Fill in the missing terms (CRISPR-Cas9, germline editing, bioethics, hereditary disorder):"
+        },
+        {
+          "type": "input",
+          "placeholder": "Sentence 1: The international summit called for a moratorium on clinical...",
+          "answers": ["germline editing"]
+        },
+        {
+          "type": "input",
+          "placeholder": "Sentence 2: Researchers successfully corrected a mutation causing a rare...",
+          "answers": ["hereditary disorder"]
+        },
+        {
+          "type": "input",
+          "placeholder": "Sentence 3: The discovery of molecular scissors known as... won the Nobel Prize in Chemistry.",
+          "answers": ["CRISPR-Cas9", "CRISPR"]
+        }
+      ]
+    },
+    {
+      "id": "slide-4",
+      "title": "Reading: The Frontier of Gene Therapy",
+      "stage": "Reading & Analysis",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Read the text and answer the comprehension question:"
+        },
+        {
+          "type": "blockquote",
+          "content": "'In recent years, clinical trials involving somatic gene editing have demonstrated unprecedented success in treating hitherto incurable blood disorders. Somatic edits affect only the individual patient and cannot be inherited. However, the prospect of germline modification—altering human embryos—has polarized the scientific community. Proponents argue it offers a permanent end to hereditary suffering, while critics caution against unquantifiable long-term ecological and biological consequences.'"
+        },
+        {
+          "type": "test",
+          "content": "What is the crucial biological distinction between somatic editing and germline editing?",
+          "options": [
+            "Somatic editing is illegal worldwide, while germline editing is routine.",
+            "Somatic edits affect only the treated patient, whereas germline edits are inherited by future generations.",
+            "Germline editing is cheaper and less precise than somatic editing.",
+            "Somatic editing modifies plant DNA, while germline editing applies to humans."
+          ],
+          "answers": ["Somatic edits affect only the treated patient, whereas germline edits are inherited by future generations."]
+        }
+      ]
+    },
+    {
+      "id": "slide-5",
+      "title": "Useful Phrasebank: Stating Hypotheses & Ethical Limits",
+      "stage": "Language Focus",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Key expressions for scientific debate:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• 'Where do we draw the line between therapy and enhancement?'\n• 'Hypothetically speaking, if we were to allow...'\n• 'The bioethical implications cannot be overlooked.'\n• 'We are stepping onto a slippery slope when we...'\n• 'From a utilitarian perspective...'"
+        }
+      ]
+    },
+    {
+      "id": "slide-6",
+      "title": "Discussion Round 1: Medical Treatment vs Enhancement",
+      "stage": "Fluency Practice",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Discuss these scenarios in small groups:"
+        },
+        {
+          "type": "blockquote",
+          "content": "1. Is it ethical to edit genes to prevent severe physical disability?\n2. What about editing genes to enhance height, athletic capability, or cognitive speed?\n3. If genetic modifications become commercially available, will rich families gain an unfair biological advantage?"
         },
         {
           "type": "essay",
-          "placeholder": "Summarize your group's arguments regarding public healthcare access..."
+          "placeholder": "Summarize your group's consensus..."
+        }
+      ]
+    },
+    {
+      "id": "slide-7",
+      "title": "Discussion Round 2: Ecological Gene Drives",
+      "stage": "Deep Discussion",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Analyze the concept of 'gene drives' in ecology:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Scientists have developed gene drives capable of wiping out disease-carrying mosquito populations in the wild.\n• Should we intentionally modify wild animal populations to protect human health?\n• What risks might unintended ecological consequences pose to biodiversity?"
+        }
+      ]
+    },
+    {
+      "id": "slide-8",
+      "title": "Debate: Bioethics Committee Ruling",
+      "stage": "Role-Play & Debate",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Role-Play Scenario: A clinic requests approval for embryo gene editing to prevent inherited heart disease."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Role A (Lead Geneticist): Argues that denying gene editing causes unnecessary human illness.\n• Role B (Bioethics Officer): Argues that potential off-target genetic mutations outweigh immediate benefits."
+        }
+      ]
+    },
+    {
+      "id": "slide-9",
+      "title": "Teacher Feedback & Language Corrections",
+      "stage": "Teacher Feedback",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Live feedback notes on pronunciation and scientific collocations:"
+        },
+        {
+          "type": "essay",
+          "placeholder": "Teacher notes during class..."
+        }
+      ]
+    },
+    {
+      "id": "slide-10",
+      "title": "Homework & Extended Reading",
+      "stage": "Wrap-up",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Essay Task (150-200 words):"
+        },
+        {
+          "type": "blockquote",
+          "content": "'Should germline gene editing be permanently banned under international law?' Give arguments for both sides and state your conclusion."
         }
       ]
     }

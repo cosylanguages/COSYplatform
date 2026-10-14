@@ -1,84 +1,190 @@
 {
   "id": "artificial-intelligence-everyday-life",
-  "title": "Keeping Up With Science #1: AI in Everyday Life",
+  "title": "Keeping Up With Science #1: Artificial Intelligence in Everyday Life",
   "level": "B2",
-  "templateType": "speaking_club",
+  "templateType": "general",
+  "durationMinutes": 50,
   "teacherNotes": [
     {
       "type": "instruction",
-      "title": "Session Goal",
-      "content": "Engage participants in discussing how generative AI, machine learning algorithms, and automation impact daily habits, jobs, and decision-making."
+      "title": "Lesson Stage Aims",
+      "content": "This 50-minute full-scale lesson guides students through the impact of generative AI, neural networks, and automation on daily habits, employment, and ethics."
     }
   ],
   "slides": [
     {
       "id": "slide-1",
-      "title": "Icebreaker: AI Around Us",
-      "stage": "Icebreaker / Lead-in",
+      "title": "Warm-up & Lead-in",
+      "stage": "Warm-up",
       "elements": [
         {
           "type": "instruction",
-          "content": "Discuss the following rapid-fire questions with your group (1 min each):"
+          "content": "Look at the questions below and discuss them with your partner (3-4 minutes):"
         },
         {
           "type": "blockquote",
-          "content": "1. What AI tool (e.g. ChatGPT, recommendation engines, voice assistants) do you use most frequently?\n2. Have you ever followed a recommendation made by an algorithm that surprised you?\n3. Would you trust an AI doctor to diagnose a medical symptom?"
+          "content": "1. What AI tool (e.g., ChatGPT, recommendation algorithms, voice assistants) do you interact with most frequently?\n2. Has an algorithm ever recommended a video, song, or product that surprised you with its accuracy?\n3. Would you feel comfortable being diagnosed by an AI doctor if it was statistically more accurate than a human physician?"
         }
       ]
     },
     {
       "id": "slide-2",
-      "title": "Useful Phrasebank: Expressing Opinions on Tech",
-      "stage": "Phrasebank Focus",
+      "title": "Target Vocabulary & Collocations",
+      "stage": "Vocabulary Presentation",
       "elements": [
         {
           "type": "instruction",
-          "content": "Practice incorporating these phrases into your discussion:"
+          "content": "Study the key scientific and technical terms below:"
         },
         {
           "type": "blockquote",
-          "content": "• 'From a technological standpoint...'\n• 'It’s a double-edged sword because...'\n• 'We need to strike a balance between innovation and privacy.'\n• 'There’s no denying that...'"
+          "content": "1. Neural Network (/ˈnjʊə.rəl ˈnet.wɜːk/): A computer system modeled on the human brain designed to recognize patterns.\n   • Example: 'Modern image recognition algorithms rely heavily on deep neural networks.'\n\n2. Algorithmic Bias (/ˌæl.ɡəˈrɪð.mɪk ˈbaɪ.əs/): Systematic errors in computer systems that create unfair outcomes.\n   • Example: 'Hiring software can exhibit algorithmic bias if trained on historical data.'\n\n3. Generative Model (/ˈdʒen.ər.ə.tɪv ˈmɒd.əl/): AI capable of producing new text, images, or audio from prompts.\n   • Example: 'Generative models have revolutionized content creation in digital marketing.'\n\n4. Automation (/ˌɔː.təˈmeɪ.ʃən/): The use of machines or algorithms to perform tasks with minimal human intervention.\n   • Example: 'Robotic process automation is reshaping traditional banking and customer support.'"
         }
       ]
     },
     {
       "id": "slide-3",
-      "title": "Round 1: Automation vs Job Security",
-      "stage": "Categorized Discussion",
+      "title": "Controlled Vocabulary Practice",
+      "stage": "Controlled Practice",
       "elements": [
         {
           "type": "instruction",
-          "content": "In pairs or small breakout rooms, analyze the following statement:"
+          "content": "Complete the sentences below using the target vocabulary (neural network, algorithmic bias, generative model, automation):"
         },
         {
-          "type": "blockquote",
-          "content": "'AI will create more high-value creative jobs than it destroys in repetitive manual sectors.'"
+          "type": "input",
+          "placeholder": "Sentence 1: The company introduced automated customer support using a sophisticated...",
+          "answers": ["generative model", "neural network"]
         },
         {
-          "type": "essay",
-          "placeholder": "Write key takeaways or new vocabulary learned from your partner..."
+          "type": "input",
+          "placeholder": "Sentence 2: Facial recognition software was audited to prevent instances of...",
+          "answers": ["algorithmic bias"]
+        },
+        {
+          "type": "input",
+          "placeholder": "Sentence 3: Manufacturing efficiency surged by 40% following full factory...",
+          "answers": ["automation"]
         }
       ]
     },
     {
       "id": "slide-4",
-      "title": "Round 2: Ethics & Algorithmic Bias",
-      "stage": "Deep Dive & Debate",
+      "title": "Reading & Analysis: The AI Workplace Revolution",
+      "stage": "Reading & Analysis",
       "elements": [
         {
           "type": "instruction",
-          "content": "Debate Scenario: Should governments strictly regulate AI development even if it slows down scientific innovation?"
+          "content": "Read the excerpt below and answer the comprehension question:"
+        },
+        {
+          "type": "blockquote",
+          "content": "'As artificial intelligence shifts from rule-based calculations to autonomous decision-making, the global labor market faces a profound transformation. While repetitive administrative tasks are rapidly being automated, experts argue that AI will act as a force multiplier for human creativity rather than a pure replacement. However, without proactive retraining programs, the gap between tech-skilled workers and displaced labor risks widening significantly.'"
         },
         {
           "type": "test",
-          "content": "Which concern do you think poses the greatest risk in AI adoption?",
+          "content": "According to the article, what is the primary risk of AI workplace integration?",
           "options": [
-            "Data privacy & surveillance",
-            "Job displacement & unemployment",
-            "Misinformation & deepfakes",
-            "Loss of human connection"
+            "AI will completely eliminate all creative professions.",
+            "Without retraining, the gap between skilled and displaced workers will widen.",
+            "Rule-based calculations are less reliable than human workers.",
+            "Government regulation will halt technological progress."
           ],
-          "answers": ["Misinformation & deepfakes"]
+          "answers": ["Without retraining, the gap between skilled and displaced workers will widen."]
+        }
+      ]
+    },
+    {
+      "id": "slide-5",
+      "title": "Useful Phrasebank: Debating Science & Tech",
+      "stage": "Language Focus",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Use these phrases when sharing your opinions in the discussion rounds:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• 'From an empirical standpoint...'\n• 'It is a double-edged sword because...'\n• 'We must strike a balance between innovation and ethical oversight.'\n• 'The evidence strongly suggests that...'\n• 'I tend to lean towards the view that...'"
+        }
+      ]
+    },
+    {
+      "id": "slide-6",
+      "title": "Discussion Round 1: Personal Experience & Habits",
+      "stage": "Fluency Practice",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Discuss the following scenarios in pairs:"
+        },
+        {
+          "type": "blockquote",
+          "content": "1. How has AI changed the way you search for information or solve technical problems at work/study?\n2. Do you think students who use AI writing assistants are learning effectively, or are they outsourcing critical thinking?\n3. Would you feel comfortable riding in a fully autonomous self-driving car in high-density city traffic?"
+        },
+        {
+          "type": "essay",
+          "placeholder": "Write notes on your partner's responses..."
+        }
+      ]
+    },
+    {
+      "id": "slide-7",
+      "title": "Discussion Round 2: Societal & Ethical Dilemmas",
+      "stage": "Deep Discussion",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Examine the ethical dilemmas surrounding modern AI deployment:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• Deepfakes & Misinformation: How can society distinguish synthetic media from authentic reality?\n• Copyright & Ownership: Should AI models trained on human artwork pay royalties to original creators?\n• Universal Basic Income (UBI): If automation causes mass job displacement, should tech companies be taxed to fund UBI?"
+        }
+      ]
+    },
+    {
+      "id": "slide-8",
+      "title": "Debate Scenario: Tech Giant Regulation",
+      "stage": "Role-Play & Debate",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Assigned Roles for Debate (3 minutes prep, 5 minutes debate):"
+        },
+        {
+          "type": "blockquote",
+          "content": "• Role A (Tech CEO): Advocates for minimal regulation to accelerate scientific innovation and medical breakthroughs.\n• Role B (Ethics Commissioner): Demands strict government auditing, transparency of training data, and heavy safety compliance prior to releasing models."
+        }
+      ]
+    },
+    {
+      "id": "slide-9",
+      "title": "Live Feedback & Error Correction",
+      "stage": "Teacher Feedback",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Teacher's real-time notes on pronunciation, grammar, and advanced vocabulary used during class:"
+        },
+        {
+          "type": "essay",
+          "placeholder": "Teacher live feedback notes go here during class..."
+        }
+      ]
+    },
+    {
+      "id": "slide-10",
+      "title": "Homework & Reflection",
+      "stage": "Wrap-up",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Writing Task (150-200 words):"
+        },
+        {
+          "type": "blockquote",
+          "content": "'Will artificial intelligence do more to enhance or diminish human autonomy over the next decade?' Support your opinion with 3 target vocabulary items from today's lesson."
         }
       ]
     }
