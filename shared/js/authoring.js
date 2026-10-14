@@ -56,7 +56,8 @@
       const userRole = auth.profile.role ? auth.profile.role.toLowerCase() : 'student';
 
       // Student role or student view cannot author lessons
-      if (userRole === 'student' || activeView === 'student' || window.currentRole === 'student') {
+      const currentRole = (typeof window !== 'undefined' && window.currentRole) ? window.currentRole : null;
+      if (userRole === 'student' || activeView === 'student' || currentRole === 'student') {
         return false;
       }
 

@@ -521,3 +521,15 @@ body.projector-mode .teacher-note-speech {
     display: block !important;
   }
 }
+
+/* Dark Mode Card Overrides */
+html[data-theme="dark"] .notice-card,
+html[data-theme="dark"] .section-card,
+html[data-theme="dark"] .unit-card,
+body.theme-dark .notice-card,
+body.theme-dark .section-card,
+body.theme-dark .unit-card {
+  background: #1e293b !important;
+  border-color: rgba(56, 189, 248, 0.25) !important;
+  color: #f8fafc !important;
+}
