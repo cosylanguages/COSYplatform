@@ -173,6 +173,21 @@
     });
   }
 
+  function getValueFromDict(dict, key) {
+    if (!dict) return undefined;
+    if (dict[key] !== undefined) return dict[key];
+    if (typeof key === 'string') {
+      const lowerKey = key.toLowerCase();
+      const keys = Object.keys(dict);
+      for (let i = 0; i < keys.length; i++) {
+        if (keys[i].toLowerCase() === lowerKey) {
+          return dict[keys[i]];
+        }
+      }
+    }
+    return undefined;
+  }
+
   function t(key, params) {
     if (currentLang === 'pseudo') {
       return `⟦${key}⟧`;
@@ -181,9 +196,9 @@
     const dict = dictionaries[currentLang] || {};
     const enDict = dictionaries['en'] || {};
 
-    let value = dict[key];
+    let value = getValueFromDict(dict, key);
     if (value === undefined && currentLang !== 'en') {
-      value = enDict[key];
+      value = getValueFromDict(enDict, key);
     }
     if (value === undefined) {
       value = key;
@@ -215,11 +230,11 @@
     const dict = dictionaries[currentLang] || {};
     const enDict = dictionaries['en'] || {};
 
-    let value = dict[specificKey];
-    if (value === undefined) value = dict[fallbackKey];
+    let value = getValueFromDict(dict, specificKey);
+    if (value === undefined) value = getValueFromDict(dict, fallbackKey);
     if (value === undefined && currentLang !== 'en') {
-      value = enDict[specificKey];
-      if (value === undefined) value = enDict[fallbackKey];
+      value = getValueFromDict(enDict, specificKey);
+      if (value === undefined) value = getValueFromDict(enDict, fallbackKey);
     }
     if (value === undefined) {
       value = key;
