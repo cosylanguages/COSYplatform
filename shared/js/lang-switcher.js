@@ -3,25 +3,18 @@
  */
 (function () {
   const LANG_NAMES = {
-    auto: 'Auto',
-    en: 'English',
-    fr: 'Français',
-    ru: 'Русский',
-    it: 'Italiano',
-    el: 'Ελληνικά'
+    auto: '🌐 Auto',
+    en: '🇬🇧 English',
+    fr: '🇫🇷 Français',
+    ru: '🇷🇺 Русский',
+    it: '🇮🇹 Italiano',
+    el: '🇬🇷 Ελληνικά'
   };
 
   function createLanguageSwitcherSelect() {
     const select = document.createElement('select');
     select.className = 'cosy-lang-switcher-select';
     select.setAttribute('data-i18n-skip', '');
-    select.style.padding = '4px 8px';
-    select.style.borderRadius = '6px';
-    select.style.border = '1px solid #cbd5e1';
-    select.style.fontSize = '0.85rem';
-    select.style.background = '#f8fafc';
-    select.style.color = '#0f172a';
-    select.style.cursor = 'pointer';
 
     if (window.CosyI18n && typeof window.CosyI18n.t === 'function') {
       select.setAttribute('aria-label', window.CosyI18n.t('switcher.ariaLabel'));
