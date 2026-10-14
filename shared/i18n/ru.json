@@ -436,5 +436,14 @@
   "teacher.thLastActivity": "Последняя активность",
   "teacher.loadingStudents": "Загрузка прогресса учеников...",
   "teacher.noStudents": "Прогресс учеников пока не записан.",
-  "teacher.errLoadingStudents": "Не удалось загрузить прогресс учеников: {error}"
+  "teacher.errLoadingStudents": "Не удалось загрузить прогресс учеников: {error}",
+  "teacher.mainTeacherBadge": "Ведущий преподаватель 🌟",
+  "teacher.authoringAccessDenied": "Создавать и редактировать уроки могут только основатель и ведущие преподаватели.",
+  "teacher.saveLessonPermissionError": "Доступ запрещен: у вас нет прав автора для сохранения уроков.",
+  "founder.mainTeacherToggle": "Ведущий преподаватель (может создавать уроки)",
+  "founder.confirmGrantAuthor": "Вы уверены, что хотите назначить этого преподавателя ведущим с правом создания уроков?",
+  "founder.confirmRevokeAuthor": "Вы уверены, что хотите отозвать права на создание уроков у этого преподавателя?",
+  "founder.authorGrantedSuccess": "Права ведущего преподавателя успешно предоставлены.",
+  "founder.authorRevokedSuccess": "Права ведущего преподавателя отозваны.",
+  "founder.authorChangeError": "Не удалось обновить статус ведущего преподавателя."
 }

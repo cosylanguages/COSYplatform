@@ -481,6 +481,7 @@
   <script src="shared/js/ui-toast.js"></script>
   <script src="shared/js/i18n.js"></script>
   <script src="shared/js/lang-switcher.js"></script>
+  <script src="shared/js/authoring.js"></script>
 </head>
 <body>
 
@@ -530,7 +531,19 @@
       window.currentTeacherAuthData = authData;
 
       const userEmail = authData.user ? authData.user.email : '';
-      document.getElementById('user-info').innerText = `Teacher: ${userEmail || 'Teacher'}`;
+      let userInfoText = `Teacher: ${userEmail || 'Teacher'}`;
+
+      const isAuthor = window.CosyAuthoring && typeof window.CosyAuthoring.canAuthor === 'function'
+        ? await window.CosyAuthoring.canAuthor('teacher')
+        : false;
+
+      if (isAuthor && authData.profile && authData.profile.role !== 'founder') {
+        const badgeText = (window.CosyI18n && window.CosyI18n.t)
+          ? window.CosyI18n.t('teacher.mainTeacherBadge')
+          : 'Main Teacher 🌟';
+        userInfoText += ` <span style="background: #dbeafe; color: #1e40af; font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 9999px; border: 1px solid #bfdbfe; margin-left: 6px;" data-i18n="teacher.mainTeacherBadge">${badgeText}</span>`;
+      }
+      document.getElementById('user-info').innerHTML = userInfoText;
 
       const fullManifest = window.CosyAuth ? window.CosyAuth.FULL_MANIFEST : [];
 
@@ -591,7 +604,7 @@
               <p style="color: #64748b;">Teachers have access to all assigned tracks, curriculums, and speech scripts.</p>
             </div>
             <div style="display: flex; gap: 8px;">
-              <button onclick="openLessonCreatorModal()" class="btn" style="background: #0284c7; color: white; padding: 6px 14px; font-size: 0.85rem; font-weight: 600; cursor: pointer; border-radius: 6px; border: none;">➕ Create New Lesson</button>
+              <button id="create-lesson-btn" onclick="openLessonCreatorModal()" class="btn" style="display: none; background: #0284c7; color: white; padding: 6px 14px; font-size: 0.85rem; font-weight: 600; cursor: pointer; border-radius: 6px; border: none;">➕ Create New Lesson</button>
               ${profile && profile.role === 'founder' ? '<a href="founder.html" class="btn btn-outline" style="font-size: 0.85rem;">← Founder Portal</a>' : ''}
             </div>
           </div>
@@ -733,6 +746,15 @@
 
       html += `</div>`;
       appRoot.innerHTML = html;
+
+      const createBtn = document.getElementById('create-lesson-btn');
+      if (createBtn) {
+        const canCreate = window.CosyAuthoring && typeof window.CosyAuthoring.canAuthor === 'function'
+          ? await window.CosyAuthoring.canAuthor('teacher')
+          : false;
+        createBtn.style.display = canCreate ? 'inline-block' : 'none';
+      }
+
       loadMyStudentsProgress();
       loadTeacherSubmissions();
     }
@@ -2108,7 +2130,20 @@
     window.escapeHtml = escapeHtml;
 
     /* Web-Based Lesson Creator Modal Implementation */
-    function openLessonCreatorModal() {
+    async function openLessonCreatorModal() {
+      const allowed = window.CosyAuthoring && typeof window.CosyAuthoring.canAuthor === 'function'
+        ? await window.CosyAuthoring.canAuthor('teacher')
+        : false;
+
+      if (!allowed) {
+        const msg = (window.CosyI18n && window.CosyI18n.t)
+          ? window.CosyI18n.t('teacher.authoringAccessDenied')
+          : 'Only the founder and designated main teachers can create or edit lessons.';
+        if (window.CosyUI && window.CosyUI.toast) CosyUI.toast(msg, 'warning');
+        else alert(msg);
+        return;
+      }
+
       let modal = document.getElementById('lesson-creator-modal');
       if (!modal) {
         modal = document.createElement('div');
@@ -2261,6 +2296,19 @@
 
     async function handleLessonSubmit(e) {
       e.preventDefault();
+      const allowed = window.CosyAuthoring && typeof window.CosyAuthoring.canAuthor === 'function'
+        ? await window.CosyAuthoring.canAuthor('teacher')
+        : false;
+
+      if (!allowed) {
+        const msg = (window.CosyI18n && window.CosyI18n.t)
+          ? window.CosyI18n.t('teacher.authoringAccessDenied')
+          : 'Only the founder and designated main teachers can create or edit lessons.';
+        if (window.CosyUI && window.CosyUI.toast) CosyUI.toast(msg, 'warning');
+        else alert(msg);
+        return;
+      }
+
       const title = document.getElementById('creator-title')?.value;
       const lang = document.getElementById('creator-lang')?.value;
       const level = document.getElementById('creator-level')?.value;
@@ -2288,14 +2336,34 @@
 
         if (window.CosyLessons && typeof window.CosyLessons.saveLessonToSupabase === 'function') {
           await window.CosyLessons.saveLessonToSupabase(lessonPayload);
-          if (window.CosyUI) window.CosyUI.toast('✅ Lesson created & published to Supabase!');
+          if (window.CosyUI) window.CosyUI.toast('✅ Lesson created & published to Supabase!', 'success');
           closeLessonCreatorModal();
         } else {
           alert('Lesson published successfully to local storage/state.');
           closeLessonCreatorModal();
         }
       } catch (err) {
-        alert('Invalid JSON structure or error saving lesson: ' + err.message);
+        console.error('Error saving lesson:', err);
+        const permMsg = (window.CosyI18n && window.CosyI18n.t)
+          ? window.CosyI18n.t('teacher.saveLessonPermissionError')
+          : 'Permission denied: You do not have authoring rights to save lessons.';
+
+        const isPermissionErr = err && (
+          err.code === '42501' ||
+          (err.message && (
+            err.message.includes('row-level security') ||
+            err.message.includes('permission') ||
+            err.message.includes('policy') ||
+            err.message.includes('violates')
+          ))
+        );
+
+        const errorToast = isPermissionErr ? permMsg : ('Error saving lesson: ' + (err.message || err));
+        if (window.CosyUI && window.CosyUI.toast) {
+          CosyUI.toast(errorToast, 'error');
+        } else {
+          alert(errorToast);
+        }
       }
     }
 

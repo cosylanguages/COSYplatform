@@ -210,8 +210,10 @@
   <script src="shared/js/auth-guard.js"></script>
   <script src="shared/js/auth-sso.js"></script>
   <script src="shared/js/cms-editor.js"></script>
+  <script src="shared/js/ui-toast.js"></script>
   <script src="shared/js/i18n.js"></script>
   <script src="shared/js/lang-switcher.js"></script>
+  <script src="shared/js/authoring.js"></script>
 </head>
 <body>
 
@@ -480,14 +482,76 @@
     function toggleHostedSessionsField(userId) {
       const roleSelect = document.getElementById(`role-${userId}`);
       const sessionsInput = document.getElementById(`sessions-${userId}`);
-      if (!roleSelect || !sessionsInput) return;
+      const mainTeacherContainer = document.getElementById(`main-teacher-container-${userId}`);
 
-      if (roleSelect.value === 'teacher') {
-        sessionsInput.disabled = false;
-        sessionsInput.style.display = 'block';
-      } else {
-        sessionsInput.disabled = true;
-        sessionsInput.style.display = 'none';
+      if (roleSelect) {
+        const isTeacher = roleSelect.value === 'teacher';
+        if (sessionsInput) {
+          sessionsInput.disabled = !isTeacher;
+          sessionsInput.style.display = isTeacher ? 'block' : 'none';
+        }
+        if (mainTeacherContainer) {
+          mainTeacherContainer.style.display = isTeacher ? 'block' : 'none';
+        }
+      }
+    }
+
+    async function toggleMainTeacherStatus(userId, checkboxEl) {
+      const isGranting = checkboxEl.checked;
+      const confirmText = isGranting
+        ? ((window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t('founder.confirmGrantAuthor') : 'Are you sure you want to make this teacher a Main Teacher with lesson authoring rights?')
+        : ((window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t('founder.confirmRevokeAuthor') : 'Are you sure you want to revoke lesson authoring rights from this teacher?');
+
+      if (!confirm(confirmText)) {
+        checkboxEl.checked = !isGranting;
+        return;
+      }
+
+      const client = window.CosyAuth ? window.CosyAuth.client : null;
+      if (!client) {
+        if (window.CosyUI) CosyUI.toast('Client offline', 'error');
+        checkboxEl.checked = !isGranting;
+        return;
+      }
+
+      const founderId = window.currentUserId || (await window.CosyAuth.getAuthAndProfile())?.user?.id;
+
+      try {
+        if (isGranting) {
+          const { error } = await client
+            .from('lesson_authors')
+            .insert({ user_id: userId, granted_by: founderId });
+
+          if (error) throw error;
+
+          const successMsg = (window.CosyI18n && window.CosyI18n.t)
+            ? window.CosyI18n.t('founder.authorGrantedSuccess')
+            : 'Main teacher authoring rights granted.';
+          if (window.CosyUI) CosyUI.toast(successMsg, 'success');
+        } else {
+          const { error } = await client
+            .from('lesson_authors')
+            .delete()
+            .eq('user_id', userId);
+
+          if (error) throw error;
+
+          const successMsg = (window.CosyI18n && window.CosyI18n.t)
+            ? window.CosyI18n.t('founder.authorRevokedSuccess')
+            : 'Main teacher authoring rights revoked.';
+          if (window.CosyUI) CosyUI.toast(successMsg, 'success');
+        }
+
+        if (window.CosyAuthoring && typeof window.CosyAuthoring.clearCache === 'function') {
+          window.CosyAuthoring.clearCache();
+        }
+      } catch (err) {
+        console.error('Error toggling lesson author status:', err);
+        checkboxEl.checked = !isGranting;
+        const errMsg = (window.CosyI18n && window.CosyI18n.t)
+          ? window.CosyI18n.t('founder.authorChangeError')
+          : 'Failed to update main teacher authoring status.';
+        if (window.CosyUI) CosyUI.toast(errMsg + ' (' + (err.message || err) + ')', 'error');
       }
     }
 
@@ -502,13 +566,13 @@
       }
 
       try {
-        const { data: profiles, error } = await client
-          .from('profiles')
-          .select('id, role, language_access, course_level, hosted_sessions, created_at')
-          .order('created_at', { ascending: false });
+        const [{ data: profiles, error: pError }, { data: authors }] = await Promise.all([
+          client.from('profiles').select('id, role, language_access, course_level, hosted_sessions, created_at').order('created_at', { ascending: false }),
+          client.from('lesson_authors').select('user_id')
+        ]);
 
-        if (error) {
-          container.innerHTML = `<p style="color: #ef4444;">${window.CosyI18n.t('founder.errFetchingProfiles', { message: `<span data-i18n-skip>${error.message}</span>` })}</p>`;
+        if (pError) {
+          container.innerHTML = `<p style="color: #ef4444;">${window.CosyI18n.t('founder.errFetchingProfiles', { message: `<span data-i18n-skip>${pError.message}</span>` })}</p>`;
           return;
         }
 
@@ -516,6 +580,8 @@
           container.innerHTML = `<p style="color: #64748b;" data-i18n="founder.noProfiles">${window.CosyI18n.t('founder.noProfiles')}</p>`;
           return;
         }
+
+        const authorSet = new Set((authors || []).map(a => a.user_id));
 
         let html = `
           <div class="admin-table-wrapper">
@@ -545,18 +611,25 @@
           const phLangs = window.CosyI18n.t('founder.phLangs');
           const phLevels = window.CosyI18n.t('founder.phLevels');
           const phSessions = window.CosyI18n.t('founder.phSessions');
+          const mainTeacherToggleText = window.CosyI18n.t('founder.mainTeacherToggle');
 
           html += `
             <tr id="profile-row-${p.id}">
               <td style="font-family: monospace; font-size: 0.8rem; color: #64748b;" title="${p.id}" data-i18n-skip>
                 ${p.id.substring(0, 8)}...
               </td>
-              <td style="width: 120px;">
+              <td style="width: 140px;">
                 <select id="role-${p.id}" ${isSelf ? `disabled title="${cannotChangeOwnTitle}"` : ''} onchange="toggleHostedSessionsField('${p.id}')" data-i18n-skip>
                   <option value="student" ${p.role==='student'?'selected':''}>student</option>
                   <option value="teacher" ${p.role==='teacher'?'selected':''}>teacher</option>
                   <option value="founder" ${p.role==='founder'?'selected':''}>founder</option>
                 </select>
+                <div id="main-teacher-container-${p.id}" style="margin-top: 4px; ${isTeacher ? '' : 'display: none;'}">
+                  <label style="font-size: 0.72rem; color: #0284c7; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;">
+                    <input type="checkbox" id="author-toggle-${p.id}" ${authorSet.has(p.id) ? 'checked' : ''} onchange="toggleMainTeacherStatus('${p.id}', this)" />
+                    <span data-i18n="founder.mainTeacherToggle">${mainTeacherToggleText}</span>
+                  </label>
+                </div>
               </td>
               <td style="width: 160px;">
                 <input type="text" id="langs-${p.id}" value="${langsStr.replace(/"/g, '&quot;')}" placeholder="${phLangs}" data-i18n-placeholder="founder.phLangs" />

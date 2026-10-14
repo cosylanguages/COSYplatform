@@ -436,5 +436,14 @@
   "teacher.thLastActivity": "Ultima attività",
   "teacher.loadingStudents": "Caricamento progressi studenti...",
   "teacher.noStudents": "Nessun progresso studente ancora registrato.",
-  "teacher.errLoadingStudents": "Impossibile caricare i progressi degli studenti: {error}"
+  "teacher.errLoadingStudents": "Impossibile caricare i progressi degli studenti: {error}",
+  "teacher.mainTeacherBadge": "Insegnante principale 🌟",
+  "teacher.authoringAccessDenied": "Solo il fondatore e gli insegnanti principali designati possono creare o modificare le lezioni.",
+  "teacher.saveLessonPermissionError": "Autorizzazione negata: non disponi dei diritti di autore per salvare le lezioni.",
+  "founder.mainTeacherToggle": "Insegnante principale (può creare lezioni)",
+  "founder.confirmGrantAuthor": "Sei sicuro di voler concedere i diritti di creazione lezioni a questo insegnante?",
+  "founder.confirmRevokeAuthor": "Sei sicuro di voler revocare i diritti di creazione lezioni a questo insegnante?",
+  "founder.authorGrantedSuccess": "Diritti di autore concessi all'insegnante principale.",
+  "founder.authorRevokedSuccess": "Diritti di autore revocati all'insegnante principale.",
+  "founder.authorChangeError": "Impossibile aggiornare lo stato dell'insegnante principale."
 }

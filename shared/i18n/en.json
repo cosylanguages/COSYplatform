@@ -436,5 +436,14 @@
   "teacher.thLastActivity": "Last Activity",
   "teacher.loadingStudents": "Loading student progress...",
   "teacher.noStudents": "No student progress recorded yet.",
-  "teacher.errLoadingStudents": "Could not load student progress: {error}"
+  "teacher.errLoadingStudents": "Could not load student progress: {error}",
+  "teacher.mainTeacherBadge": "Main Teacher 🌟",
+  "teacher.authoringAccessDenied": "Only the founder and designated main teachers can create or edit lessons.",
+  "teacher.saveLessonPermissionError": "Permission denied: You do not have authoring rights to save lessons.",
+  "founder.mainTeacherToggle": "Main teacher (can create lessons)",
+  "founder.confirmGrantAuthor": "Are you sure you want to make this teacher a Main Teacher with lesson authoring rights?",
+  "founder.confirmRevokeAuthor": "Are you sure you want to revoke lesson authoring rights from this teacher?",
+  "founder.authorGrantedSuccess": "Main teacher authoring rights granted.",
+  "founder.authorRevokedSuccess": "Main teacher authoring rights revoked.",
+  "founder.authorChangeError": "Failed to update main teacher authoring status."
 }
