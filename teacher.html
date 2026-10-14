@@ -531,6 +531,25 @@
       const authData = await window.CosyAuth.requireRole(['teacher', 'founder']);
       if (!authData) return;
 
+      // Server-enforce role verification directly from Supabase profiles table
+      const client = window.CosyAuth.client;
+      if (client) {
+        const { data: serverProfile, error: profileErr } = await client
+          .from('profiles')
+          .select('id, role, language_access, course_level')
+          .eq('id', authData.user.id)
+          .maybeSingle();
+
+        if (profileErr || !serverProfile || (serverProfile.role !== 'teacher' && serverProfile.role !== 'founder')) {
+          window.CosyAuth.renderAccessDenied(
+            "Access Denied (Server Verified)",
+            "Server verification failed. Your account does not have teacher/founder privileges."
+          );
+          return;
+        }
+        authData.profile = serverProfile;
+      }
+
       window.currentTeacherAuthData = authData;
 
       const userEmail = authData.user ? authData.user.email : '';
