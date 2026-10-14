@@ -35,10 +35,40 @@
     return data[column];
   }
 
+  async function saveLessonToSupabase(payload) {
+    const client = global.CosyAuth ? global.CosyAuth.client : null;
+    if (!client) {
+      throw new Error('Supabase client is not initialized.');
+    }
+
+    const { lesson_id, title, language, level, template_type, xml_content } = payload;
+    if (!lesson_id || !xml_content) {
+      throw new Error('Missing required lesson data.');
+    }
+
+    const { data, error } = await client
+      .from('lesson_content')
+      .upsert({
+        lesson_id: lesson_id,
+        xml_content: xml_content,
+        updated_at: new Date().toISOString()
+      }, { onConflict: 'lesson_id' });
+
+    if (error) {
+      console.error('[CosyLessons] Error saving lesson to Supabase:', error);
+      throw error;
+    }
+    return data;
+  }
+
   const CosyLessons = {
     loadLessonContent(lessonPath, role) {
       const client = global.CosyAuth ? global.CosyAuth.client : null;
       return loadLessonContent(client, lessonPath, role);
+    },
+
+    saveLessonToSupabase(payload) {
+      return saveLessonToSupabase(payload);
     },
 
     getLessonState(item, role) {

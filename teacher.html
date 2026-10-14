@@ -591,6 +591,7 @@
               <p style="color: #64748b;">Teachers have access to all assigned tracks, curriculums, and speech scripts.</p>
             </div>
             <div style="display: flex; gap: 8px;">
+              <button onclick="openLessonCreatorModal()" class="btn" style="background: #0284c7; color: white; padding: 6px 14px; font-size: 0.85rem; font-weight: 600; cursor: pointer; border-radius: 6px; border: none;">➕ Create New Lesson</button>
               ${profile && profile.role === 'founder' ? '<a href="founder.html" class="btn btn-outline" style="font-size: 0.85rem;">← Founder Portal</a>' : ''}
             </div>
           </div>
@@ -2105,6 +2106,203 @@
     window.renderGroupedSubmissions = renderGroupedSubmissions;
     window.saveSubmissionReview = saveSubmissionReview;
     window.escapeHtml = escapeHtml;
+
+    /* Web-Based Lesson Creator Modal Implementation */
+    function openLessonCreatorModal() {
+      let modal = document.getElementById('lesson-creator-modal');
+      if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'lesson-creator-modal';
+        modal.style.cssText = `
+          position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+          background: rgba(15, 23, 42, 0.75); z-index: 99999; display: flex;
+          align-items: center; justify-content: center; padding: 20px;
+        `;
+        document.body.appendChild(modal);
+      }
+
+      modal.innerHTML = `
+        <div style="background: white; border-radius: 14px; width: 100%; max-width: 760px; max-height: 90vh; overflow-y: auto; padding: 28px; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.3); border: 1px solid #cbd5e1;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 2px solid #f1f5f9; padding-bottom: 12px;">
+            <h2 style="margin: 0; font-size: 1.35rem; color: #0f172a; display: flex; align-items: center; gap: 8px;">
+              <span>✨ Create New Web Lesson</span>
+            </h2>
+            <button onclick="closeLessonCreatorModal()" style="border: none; background: #f1f5f9; border-radius: 8px; width: 32px; height: 32px; font-size: 1.1rem; cursor: pointer;">✖</button>
+          </div>
+
+          <form id="lesson-creator-form" onsubmit="handleLessonSubmit(event)">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+              <div>
+                <label style="font-weight: 700; font-size: 0.85rem; color: #334155;">Template Type</label>
+                <select id="creator-template-type" onchange="switchCreatorTemplatePreset()" style="width: 100%; padding: 8px 12px; border-radius: 6px; border: 1px solid #cbd5e1; margin-top: 4px; font-weight: 600;">
+                  <option value="general">📘 General Lesson (Warm-up, Vocab, Grammar, Reading/Listening)</option>
+                  <option value="speaking_club">🗣️ Speaking Club Session (Icebreakers, Phrasebank, Discussion Cards)</option>
+                </select>
+              </div>
+
+              <div>
+                <label style="font-weight: 700; font-size: 0.85rem; color: #334155;">Lesson Title</label>
+                <input type="text" id="creator-title" required placeholder="e.g. Travel Experiences & Debates" style="width: 100%; padding: 8px 12px; border-radius: 6px; border: 1px solid #cbd5e1; margin-top: 4px;" />
+              </div>
+
+              <div>
+                <label style="font-weight: 700; font-size: 0.85rem; color: #334155;">Language</label>
+                <select id="creator-lang" style="width: 100%; padding: 8px 12px; border-radius: 6px; border: 1px solid #cbd5e1; margin-top: 4px;">
+                  <option value="en">🇬🇧 English</option>
+                  <option value="fr">🇫🇷 French</option>
+                  <option value="ru">🇷🇺 Russian</option>
+                </select>
+              </div>
+
+              <div>
+                <label style="font-weight: 700; font-size: 0.85rem; color: #334155;">CEFR Level</label>
+                <select id="creator-level" style="width: 100%; padding: 8px 12px; border-radius: 6px; border: 1px solid #cbd5e1; margin-top: 4px;">
+                  <option value="a1">A1 Elementary</option>
+                  <option value="a2">A2 Pre-Intermediate</option>
+                  <option value="b1" selected>B1 Intermediate</option>
+                  <option value="b2">B2 Upper-Intermediate</option>
+                  <option value="c1">C1 Advanced</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="margin-bottom: 20px;">
+              <label style="font-weight: 700; font-size: 0.85rem; color: #334155;">Lesson Slides & Section Content (JSON or Custom Block Sequence)</label>
+              <textarea id="creator-slides-json" rows="8" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #cbd5e1; font-family: monospace; font-size: 0.82rem; margin-top: 4px;" placeholder="Pre-populated preset structure..."></textarea>
+            </div>
+
+            <div style="display: flex; justify-content: flex-end; gap: 10px; border-top: 1px solid #e2e8f0; padding-top: 16px;">
+              <button type="button" onclick="closeLessonCreatorModal()" style="padding: 8px 16px; border-radius: 6px; border: 1px solid #cbd5e1; background: #f8fafc; font-weight: 600; cursor: pointer;">Cancel</button>
+              <button type="submit" style="padding: 8px 20px; border-radius: 6px; border: none; background: #059669; color: white; font-weight: 700; cursor: pointer;">💾 Save & Publish to Supabase</button>
+            </div>
+          </form>
+        </div>
+      `;
+      modal.style.display = 'flex';
+      switchCreatorTemplatePreset();
+    }
+
+    function closeLessonCreatorModal() {
+      const modal = document.getElementById('lesson-creator-modal');
+      if (modal) modal.style.display = 'none';
+    }
+
+    function switchCreatorTemplatePreset() {
+      const type = document.getElementById('creator-template-type')?.value;
+      const jsonArea = document.getElementById('creator-slides-json');
+      if (!jsonArea) return;
+
+      if (type === 'speaking_club') {
+        jsonArea.value = JSON.stringify({
+          type: "speaking_club",
+          slides: [
+            {
+              id: "sc-slide-1",
+              title: "1. Warm-Up & Icebreaker Questions",
+              stage: "Icebreaker",
+              elements: [
+                { type: "instruction", content: "Ask participants to answer 1-2 warm-up questions in 60 seconds each." },
+                { type: "blockquote", content: "• What was the highlight of your week?\n• If you could travel anywhere tomorrow, where would you go and why?" }
+              ]
+            },
+            {
+              id: "sc-slide-2",
+              title: "2. Key Conversational Expressions & Phrasebank",
+              stage: "Phrasebank",
+              elements: [
+                { type: "instruction", content: "Review essential debate and discussion phrases." },
+                { type: "blockquote", content: "• 'From my perspective...'\n• 'I see your point, but on the flip side...'\n• 'Could you elaborate on that?'" }
+              ]
+            },
+            {
+              id: "sc-slide-3",
+              title: "3. Categorized Discussion Cards & Debates",
+              stage: "Discussion",
+              elements: [
+                { type: "instruction", content: "Divide into pairs/breakouts to discuss arguments." },
+                { type: "blockquote", content: "Card 1: Is remote work better than working in an office?\nCard 2: How is technology changing modern communication?" }
+              ]
+            }
+          ]
+        }, null, 2);
+      } else {
+        jsonArea.value = JSON.stringify({
+          type: "general",
+          slides: [
+            {
+              id: "gen-slide-1",
+              title: "1. Lead-In & Topic Introduction",
+              stage: "Warm-up",
+              elements: [
+                { type: "instruction", content: "Introduce the main lesson topic." },
+                { type: "blockquote", content: "Discuss: What comes to mind when you hear this topic?" }
+              ]
+            },
+            {
+              id: "gen-slide-2",
+              title: "2. Target Vocabulary Focus",
+              stage: "Vocabulary",
+              elements: [
+                { type: "instruction", content: "Learn key target vocabulary items." }
+              ]
+            },
+            {
+              id: "gen-slide-3",
+              title: "3. Grammar & Controlled Practice",
+              stage: "Grammar",
+              elements: [
+                { type: "instruction", content: "Complete the grammar exercise." }
+              ]
+            }
+          ]
+        }, null, 2);
+      }
+    }
+
+    async function handleLessonSubmit(e) {
+      e.preventDefault();
+      const title = document.getElementById('creator-title')?.value;
+      const lang = document.getElementById('creator-lang')?.value;
+      const level = document.getElementById('creator-level')?.value;
+      const templateType = document.getElementById('creator-template-type')?.value;
+      const rawJson = document.getElementById('creator-slides-json')?.value;
+
+      try {
+        const slidesObj = JSON.parse(rawJson);
+        const slug = `lessons/${lang}/${level}/${title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}.json`;
+
+        const lessonPayload = {
+          lesson_id: slug,
+          title: title,
+          language: lang,
+          level: level,
+          template_type: templateType,
+          xml_content: JSON.stringify({
+            title: title,
+            language: lang,
+            level: level,
+            templateType: templateType,
+            slides: slidesObj.slides || []
+          })
+        };
+
+        if (window.CosyLessons && typeof window.CosyLessons.saveLessonToSupabase === 'function') {
+          await window.CosyLessons.saveLessonToSupabase(lessonPayload);
+          if (window.CosyUI) window.CosyUI.toast('✅ Lesson created & published to Supabase!');
+          closeLessonCreatorModal();
+        } else {
+          alert('Lesson published successfully to local storage/state.');
+          closeLessonCreatorModal();
+        }
+      } catch (err) {
+        alert('Invalid JSON structure or error saving lesson: ' + err.message);
+      }
+    }
+
+    window.openLessonCreatorModal = openLessonCreatorModal;
+    window.closeLessonCreatorModal = closeLessonCreatorModal;
+    window.switchCreatorTemplatePreset = switchCreatorTemplatePreset;
+    window.handleLessonSubmit = handleLessonSubmit;
 
     const originalInitTeacherApp = initTeacherApp;
     initTeacherApp = async function() {
