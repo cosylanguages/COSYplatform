@@ -222,6 +222,7 @@
         <span class="badge-founder" data-i18n="founder.badge">Founder &amp; Executive Portal</span>
       </div>
       <div style="display: flex; align-items: center; gap: 16px;">
+        <button onclick="openFounderLessonCreatorModal()" class="btn" style="background: #0284c7; color: white; border: none; border-radius: 6px; padding: 6px 14px; font-size: 0.85rem; font-weight: 600; cursor: pointer;">➕ Create New Lesson</button>
         <div id="header-lang-switcher"></div>
         <div id="user-info" style="font-size: 0.85rem; color: #94a3b8;"></div>
         <button onclick="window.CosyAuth.logout()" class="btn-logout" data-i18n="common.logout">Log Out</button>
@@ -644,6 +645,11 @@
         if (btnEl) btnEl.disabled = false;
       }
     }
+
+    function openFounderLessonCreatorModal() {
+      window.location.href = 'teacher.html';
+    }
+    window.openFounderLessonCreatorModal = openFounderLessonCreatorModal;
 
     window.onload = initFounderApp;
   </script>
