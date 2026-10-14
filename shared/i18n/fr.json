@@ -436,5 +436,14 @@
   "teacher.thLastActivity": "Dernière activité",
   "teacher.loadingStudents": "Chargement des progrès des élèves...",
   "teacher.noStudents": "Aucun progrès d'élève enregistré pour le moment.",
-  "teacher.errLoadingStudents": "Impossible de charger les progrès des élèves : {error}"
+  "teacher.errLoadingStudents": "Impossible de charger les progrès des élèves : {error}",
+  "teacher.mainTeacherBadge": "Professeur principal 🌟",
+  "teacher.authoringAccessDenied": "Seuls le fondateur et les professeurs principaux désignés peuvent créer ou modifier des leçons.",
+  "teacher.saveLessonPermissionError": "Permission refusée : vous n'avez pas les droits d'auteur pour enregistrer les leçons.",
+  "founder.mainTeacherToggle": "Professeur principal (peut créer des leçons)",
+  "founder.confirmGrantAuthor": "Voulez-vous vraiment accorder les droits d'auteur de leçons à ce professeur ?",
+  "founder.confirmRevokeAuthor": "Voulez-vous vraiment retirer les droits d'auteur de leçons à ce professeur ?",
+  "founder.authorGrantedSuccess": "Droits d'auteur accordés au professeur principal.",
+  "founder.authorRevokedSuccess": "Droits d'auteur retirés au professeur principal.",
+  "founder.authorChangeError": "Échec de la mise à jour du statut du professeur principal."
 }
