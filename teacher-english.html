@@ -9,7 +9,8 @@
   <link rel="icon" href="shared/img/favicon.svg" type="image/svg+xml">
   <title>Redirecting · COSYlanguages</title>
   <script>
-    location.replace('teacher.html?lang=en' + location.hash);
+    const extraParams = location.search ? '&' + location.search.substring(1) : '';
+    location.replace('teacher.html?lang=en' + extraParams + location.hash);
   </script>
 </head>
 <body>

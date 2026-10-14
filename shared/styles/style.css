@@ -2,21 +2,21 @@
 @import "../css/tokens.css";
 
 :root {
-  --primary-color: var(--cosy-platform-accent, #0369a1);
-  --primary-hover: var(--cosy-platform-accent-deep, #075985);
-  --secondary-color: var(--cosy-platform-teacher, #6d28d9);
-  --bg-color: var(--cosy-color-cream, #fdfcf8);
-  --card-bg: var(--cosy-color-warm-white, #FFFEFB);
-  --text-color: var(--cosy-color-ink, #2a2a2a);
-  --text-muted: var(--cosy-color-ink-muted, #4a4a4a);
-  --border-color: var(--cosy-color-border, rgba(74, 107, 80, 0.12));
-  --accent-light: var(--cosy-platform-accent-light, #e0f2fe);
-  --success-color: var(--cosy-semantic-success, #416b49);
-  --radius: var(--cosy-radius-base, 18px);
-  --shadow: var(--cosy-shadow-sm, 0 2px 12px rgba(2, 132, 199, 0.07));
-  --shadow-lg: var(--cosy-shadow-base, 0 6px 28px rgba(2, 132, 199, 0.10));
-  --font-family: var(--cosy-font-sans, 'Nunito', 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
-  --focus-ring: 0 0 0 3px rgba(2, 132, 199, 0.35);
+  --primary-color: var(--cosy-platform-accent);
+  --primary-hover: var(--cosy-platform-accent-deep);
+  --secondary-color: var(--cosy-platform-teacher);
+  --bg-color: var(--cosy-color-cream);
+  --card-bg: var(--cosy-color-warm-white);
+  --text-color: var(--cosy-color-ink);
+  --text-muted: var(--cosy-color-ink-muted);
+  --border-color: var(--cosy-color-border);
+  --accent-light: var(--cosy-platform-accent-light);
+  --success-color: var(--cosy-semantic-success);
+  --radius: var(--cosy-radius-base);
+  --shadow: var(--cosy-shadow-sm);
+  --shadow-lg: var(--cosy-shadow-base);
+  --font-family: var(--cosy-font-sans);
+  --focus-ring: 0 0 0 3px rgba(3, 105, 161, 0.35);
 }
 
 /* Toast Notification Utility */
@@ -73,6 +73,37 @@ input[type="text"]:focus, select:focus, textarea:focus {
   outline: none;
   border-color: var(--primary-color) !important;
   box-shadow: var(--focus-ring);
+}
+
+/* Language Switcher Dropdown Styling */
+.cosy-lang-switcher-select {
+  padding: 6px 28px 6px 12px !important;
+  border-radius: var(--cosy-radius-sm, 8px) !important;
+  border: 1px solid var(--border-color, rgba(74, 107, 80, 0.2)) !important;
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  background-color: var(--card-bg, #ffffff) !important;
+  color: var(--text-color, #2a2a2a) !important;
+  cursor: pointer !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%20369a1' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 10px center !important;
+  box-shadow: var(--shadow, 0 2px 12px rgba(2, 132, 199, 0.07)) !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.cosy-lang-switcher-select:hover {
+  border-color: var(--primary-color, #0369a1) !important;
+  box-shadow: var(--shadow-lg, 0 6px 28px rgba(2, 132, 199, 0.10)) !important;
+}
+
+.cosy-lang-switcher-select:focus {
+  outline: none !important;
+  border-color: var(--primary-color, #0369a1) !important;
+  box-shadow: var(--focus-ring) !important;
 }
 
 * {
@@ -520,4 +551,16 @@ body.projector-mode .teacher-note-speech {
   .teacher-notes, .student-view {
     display: block !important;
   }
+}
+
+/* Dark Mode Card Overrides */
+html[data-theme="dark"] .notice-card,
+html[data-theme="dark"] .section-card,
+html[data-theme="dark"] .unit-card,
+body.theme-dark .notice-card,
+body.theme-dark .section-card,
+body.theme-dark .unit-card {
+  background: #1e293b !important;
+  border-color: rgba(56, 189, 248, 0.25) !important;
+  color: #f8fafc !important;
 }
