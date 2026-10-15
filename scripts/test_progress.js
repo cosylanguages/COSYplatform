@@ -11,7 +11,7 @@ const vm = require('node:vm');
 
 const source = fs.readFileSync(path.join(__dirname, '..', 'shared', 'js', 'progress.js'), 'utf8');
 
-function createHarness({ userId = 'student-123', answers = [], readError = false } = {}) {
+function createHarness({ userId = 'student-123', answers = [], readError = false, deleteError = false } = {}) {
   const storage = new Map();
   const upserts = [];
   const deletes = [];
@@ -47,7 +47,7 @@ function createHarness({ userId = 'student-123', answers = [], readError = false
                   return {
                     async eq(lessonColumn, lessonId) {
                       deletes.push({ column, userId, lessonColumn, lessonId });
-                      return { error: null };
+                      return { error: deleteError ? { message: 'delete denied' } : null };
                     }
                   };
                 }
@@ -127,6 +127,12 @@ async function main() {
     lessonId: 'lessons/a1/greetings.json'
   });
   assert.equal(Object.keys(JSON.parse(h.storage.get(pendingKey))).some(key => key.startsWith('lessons/a1/greetings.json::')), false);
+
+  // If server deletion is denied, reset reports failure and retains queued data.
+  const deniedReset = createHarness({ deleteError: true });
+  await deniedReset.context.CosyProgress.saveAnswer('lessons/a1/greetings.json', 'blank_3', 'keep me');
+  assert.equal(await deniedReset.context.CosyProgress.clearLessonAnswers('lessons/a1/greetings.json'), false);
+  assert.equal(JSON.parse(deniedReset.storage.get(pendingKey))['lessons/a1/greetings.json::blank_3'].value, 'keep me');
 
   // Missing identifiers are ignored instead of writing malformed records.
   await h.context.CosyProgress.saveAnswer('', 'blank_2', 'ignored');
