@@ -861,6 +861,15 @@
     // Optional learner-facing rationale authored in lesson content (never teacher notes).
     const explanationsMap = {};
 
+    // Remove metadata from the previous dynamic lesson before parsing another one.
+    // Keep the legacy static-slide answer keys, but never let dynamic lesson keys leak.
+    function resetLessonAnswerMetadata() {
+      Object.keys(answersMap).forEach(key => delete answersMap[key]);
+      answersMap['blank-1'] = 'estás';
+      answersMap['blank-2'] = 'gusto';
+      Object.keys(explanationsMap).forEach(key => delete explanationsMap[key]);
+    }
+
     // User Authentication & Profile
     let userProfile = null;
 
@@ -1684,6 +1693,7 @@
     }
 
     function parseXmlLessonToSlides(xmlText) {
+      resetLessonAnswerMetadata();
       const parser = new DOMParser();
       const xmlDoc = parser.parseFromString(xmlText, "text/xml");
       const cosyLesson = xmlDoc.querySelector("cosy-lesson");
@@ -1710,6 +1720,7 @@
     }
 
     function parseJsonLessonToSlides(jsonData) {
+      resetLessonAnswerMetadata();
       const titleEl = document.getElementById("lesson-title");
       if (titleEl) titleEl.innerText = jsonData.title || "Live Lesson";
       if (!jsonData.slides || jsonData.slides.length === 0) return;
