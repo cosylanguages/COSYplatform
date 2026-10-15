@@ -198,6 +198,19 @@ window.CosyProgress = window.CosyProgress || {};
           return false;
         }
 
+        // Some RLS configurations can make DELETE affect zero rows without
+        // returning an error. Verify the lesson is actually empty before
+        // discarding the local retry queue or telling the student reset worked.
+        const { data: remaining, error: verifyError } = await client
+          .from('lesson_answers')
+          .select('field_key')
+          .eq('student_id', userId)
+          .eq('lesson_id', lessonId);
+        if (verifyError || !Array.isArray(remaining) || remaining.length > 0) {
+          console.warn('CosyProgress: answer reset could not be verified', verifyError);
+          return false;
+        }
+
         const pending = getPendingFromStorage(userId);
         Object.entries(pending).forEach(([key, item]) => {
           if (item && item.userId === userId && item.lessonId === lessonId) delete pending[key];
