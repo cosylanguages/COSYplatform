@@ -6,8 +6,6 @@ BEGIN;
 SELECT plan(15);
 
 -- Setup test users & test data
--- Mock auth users in auth.users table or mock auth.uid() function
-
 CREATE TEMP TABLE IF NOT EXISTS test_users (
     name TEXT PRIMARY KEY,
     id UUID NOT NULL
@@ -19,44 +17,60 @@ INSERT INTO test_users (name, id) VALUES
     ('student_granted_user', '33333333-3333-3333-3333-333333333333'),
     ('student_ungranted_user', '44444444-4444-4444-4444-444444444444');
 
+-- Seed auth.users records to satisfy profiles foreign key
+INSERT INTO auth.users (id, instance_id, aud, role, email, encrypted_password, email_confirmed_at, created_at, updated_at)
+VALUES
+    ('11111111-1111-1111-1111-111111111111', '00000000-0000-0000-0000-000000000000', 'authenticated', 'authenticated', 'founder@cosy.platform', '', NOW(), NOW(), NOW()),
+    ('22222222-2222-2222-2222-222222222222', '00000000-0000-0000-0000-000000000000', 'authenticated', 'authenticated', 'teacher@cosy.platform', '', NOW(), NOW(), NOW()),
+    ('33333333-3333-3333-3333-333333333333', '00000000-0000-0000-0000-000000000000', 'authenticated', 'authenticated', 'student_a1@cosy.platform', '', NOW(), NOW(), NOW()),
+    ('44444444-4444-4444-4444-444444444444', '00000000-0000-0000-0000-000000000000', 'authenticated', 'authenticated', 'student_none@cosy.platform', '', NOW(), NOW(), NOW())
+ON CONFLICT (id) DO NOTHING;
+
 -- Seed Profiles
 INSERT INTO public.profiles (id, role, language_access, course_level) VALUES
     ('11111111-1111-1111-1111-111111111111', 'founder', '{"*"}', '*'),
     ('22222222-2222-2222-2222-222222222222', 'teacher', '{"en"}', '*'),
     ('33333333-3333-3333-3333-333333333333', 'student', '{"en"}', 'a1'),
-    ('44444444-4444-4444-4444-444444444444', 'student', '{}', 'none');
+    ('44444444-4444-4444-4444-444444444444', 'student', '{}', 'none')
+ON CONFLICT (id) DO UPDATE SET role = EXCLUDED.role, language_access = EXCLUDED.language_access, course_level = EXCLUDED.course_level;
 
 -- Seed Teacher Languages
-INSERT INTO public.teacher_languages (teacher_id, language) VALUES
-    ('22222222-2222-2222-2222-222222222222', 'en');
+INSERT INTO public.teacher_languages (user_id, language) VALUES
+    ('22222222-2222-2222-2222-222222222222', 'en')
+ON CONFLICT DO NOTHING;
 
 -- Seed Courses
 INSERT INTO public.courses (id, language, cefr, course_type, title, description, total_lessons, is_public_preview) VALUES
     ('general-en-a1', 'en', 'a1', 'general', 'General English A1', 'Elementary course', 1, true),
     ('general-en-b1', 'en', 'b1', 'general', 'General English B1', 'Intermediate course', 1, true),
-    ('general-fr-a1', 'fr', 'a1', 'general', 'General French A1', 'French elementary', 1, true);
+    ('general-fr-a1', 'fr', 'a1', 'general', 'General French A1', 'French elementary', 1, true)
+ON CONFLICT (id) DO NOTHING;
 
 -- Seed Access Grant (Student granted ONLY general-en-a1)
-INSERT INTO public.access_grants (student_id, course_id) VALUES
-    ('33333333-3333-3333-3333-333333333333', 'general-en-a1');
+INSERT INTO public.access_grants (user_id, course_id) VALUES
+    ('33333333-3333-3333-3333-333333333333', 'general-en-a1')
+ON CONFLICT DO NOTHING;
 
 -- Seed Lessons
 INSERT INTO public.lessons (id, language, cefr, kind, slug, title, summary) VALUES
     ('en:a1:nice-to-meet-you', 'en', 'a1', 'lesson', 'nice-to-meet-you', 'Nice to meet you!', 'Introductory greetings'),
     ('en:b1:b1-topic', 'en', 'b1', 'lesson', 'b1-topic', 'B1 Topic', 'Intermediate topic'),
-    ('fr:a1:bonjour', 'fr', 'a1', 'lesson', 'bonjour', 'Bonjour!', 'French greetings');
+    ('fr:a1:bonjour', 'fr', 'a1', 'lesson', 'bonjour', 'Bonjour!', 'French greetings')
+ON CONFLICT (id) DO NOTHING;
 
 -- Seed Course Lessons
 INSERT INTO public.course_lessons (course_id, lesson_id, placement_id, unit, section_number, lesson_number, status) VALUES
     ('general-en-a1', 'en:a1:nice-to-meet-you', 'en:a1:general-en-a1:unit-1:nice-to-meet-you', 'Unit 1', 1, 1, 'published'),
     ('general-en-b1', 'en:b1:b1-topic', 'en:b1:general-en-b1:unit-1:b1-topic', 'Unit 1', 1, 1, 'published'),
-    ('general-fr-a1', 'fr:a1:bonjour', 'fr:a1:general-fr-a1:unit-1:bonjour', 'Unit 1', 1, 1, 'published');
+    ('general-fr-a1', 'fr:a1:bonjour', 'fr:a1:general-fr-a1:unit-1:bonjour', 'Unit 1', 1, 1, 'published')
+ON CONFLICT DO NOTHING;
 
 -- Seed Student Content
 INSERT INTO public.lesson_student_content (lesson_id, body) VALUES
     ('en:a1:nice-to-meet-you', '<cosy-lesson><cosy-slide><p>Hello!</p></cosy-slide></cosy-lesson>'),
     ('en:b1:b1-topic', '<cosy-lesson><cosy-slide><p>B1 Content</p></cosy-slide></cosy-lesson>'),
-    ('fr:a1:bonjour', '<cosy-lesson><cosy-slide><p>Bonjour</p></cosy-slide></cosy-lesson>');
+    ('fr:a1:bonjour', '<cosy-lesson><cosy-slide><p>Bonjour</p></cosy-slide></cosy-lesson>')
+ON CONFLICT (lesson_id) DO NOTHING;
 
 -- Seed Protected Content
 INSERT INTO public.lesson_protected (lesson_id, kind, content) VALUES
