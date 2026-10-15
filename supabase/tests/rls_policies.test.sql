@@ -5,6 +5,31 @@ BEGIN;
 
 SELECT plan(15);
 
+-- Setup test helper schema for auth mocking
+CREATE SCHEMA IF NOT EXISTS tests;
+
+CREATE OR REPLACE FUNCTION tests.authenticate_as(p_user_id UUID)
+RETURNS VOID
+LANGUAGE plpgsql
+AS $$
+BEGIN
+  PERFORM set_config('role', 'authenticated', true);
+  PERFORM set_config('request.jwt.claim.sub', p_user_id::text, true);
+  PERFORM set_config('request.jwt.claims', json_build_object('sub', p_user_id, 'role', 'authenticated')::text, true);
+END;
+$$;
+
+CREATE OR REPLACE FUNCTION tests.clear_authentication()
+RETURNS VOID
+LANGUAGE plpgsql
+AS $$
+BEGIN
+  PERFORM set_config('role', 'anon', true);
+  PERFORM set_config('request.jwt.claim.sub', '', true);
+  PERFORM set_config('request.jwt.claims', '', true);
+END;
+$$;
+
 -- Setup test users & test data
 CREATE TEMP TABLE IF NOT EXISTS test_users (
     name TEXT PRIMARY KEY,
@@ -80,7 +105,7 @@ INSERT INTO public.lesson_protected (lesson_id, kind, content) VALUES
 
 
 -- TEST GROUP 1: Anonymous User
-SET LOCAL ROLE anon;
+SELECT tests.clear_authentication();
 
 SELECT results_eq(
     'SELECT COUNT(*)::INTEGER FROM public.course_preview',
@@ -102,8 +127,7 @@ SELECT results_eq(
 
 
 -- TEST GROUP 2: Granted Student User
-SET LOCAL auth.uid = '33333333-3333-3333-3333-333333333333';
-SET LOCAL ROLE authenticated;
+SELECT tests.authenticate_as('33333333-3333-3333-3333-333333333333'::UUID);
 
 SELECT results_eq(
     'SELECT COUNT(*)::INTEGER FROM public.lesson_student_content WHERE lesson_id = ''en:a1:nice-to-meet-you''',
@@ -125,8 +149,7 @@ SELECT results_eq(
 
 
 -- TEST GROUP 3: Ungranted Student User
-SET LOCAL auth.uid = '44444444-4444-4444-4444-444444444444';
-SET LOCAL ROLE authenticated;
+SELECT tests.authenticate_as('44444444-4444-4444-4444-444444444444'::UUID);
 
 SELECT results_eq(
     'SELECT COUNT(*)::INTEGER FROM public.lesson_student_content',
@@ -142,8 +165,7 @@ SELECT results_eq(
 
 
 -- TEST GROUP 4: Teacher Assigned to English ('en')
-SET LOCAL auth.uid = '22222222-2222-2222-2222-222222222222';
-SET LOCAL ROLE authenticated;
+SELECT tests.authenticate_as('22222222-2222-2222-2222-222222222222'::UUID);
 
 SELECT results_eq(
     'SELECT COUNT(*)::INTEGER FROM public.lesson_student_content WHERE lesson_id LIKE ''en:%''',
@@ -171,8 +193,7 @@ SELECT results_eq(
 
 
 -- TEST GROUP 5: Founder User
-SET LOCAL auth.uid = '11111111-1111-1111-1111-111111111111';
-SET LOCAL ROLE authenticated;
+SELECT tests.authenticate_as('11111111-1111-1111-1111-111111111111'::UUID);
 
 SELECT results_eq(
     'SELECT COUNT(*)::INTEGER FROM public.lesson_student_content',
