@@ -167,6 +167,48 @@ window.CosyProgress = window.CosyProgress || {};
     },
 
     /**
+     * Clears this authenticated student's saved answers for one lesson.
+     * Returns false when the server cannot confirm the deletion, so the UI
+     * does not claim a reset that would reappear on the next lesson load.
+     */
+    async clearLessonAnswers(lessonId) {
+      if (!lessonId) return false;
+      const client = getClient();
+      const userId = await getUserId();
+      if (!client || !userId) return false;
+
+      try {
+        const { error } = await client
+          .from('lesson_answers')
+          .delete()
+          .eq('student_id', userId)
+          .eq('lesson_id', lessonId);
+
+        if (error) {
+          console.warn('CosyProgress: clear answers error', error);
+          return false;
+        }
+
+        const pending = getPendingFromStorage(userId);
+        Object.entries(pending).forEach(([key, item]) => {
+          if (item && item.userId === userId && item.lessonId === lessonId) delete pending[key];
+        });
+        savePendingToStorage(userId, pending);
+
+        for (const [timerKey, timer] of debounceTimers.entries()) {
+          if (timerKey.startsWith(`${userId}::${lessonId}::`)) {
+            clearTimeout(timer);
+            debounceTimers.delete(timerKey);
+          }
+        }
+        return true;
+      } catch (err) {
+        console.warn('CosyProgress: clear answers error', err);
+        return false;
+      }
+    },
+
+    /**
      * Immediately flushes debounced / unsynced pending answers to Supabase.
      */
     async flush() {
