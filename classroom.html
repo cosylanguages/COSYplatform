@@ -1754,6 +1754,48 @@
 
         container.appendChild(slideDiv);
       });
+
+      // Restore this authenticated student's saved work after every lesson render.
+      // This also covers reconnects and teacher/student view re-renders without
+      // broadcasting another student's answers or overwriting the offline queue.
+      if (currentRole === 'student' && currentLessonPath && currentLessonPath !== 'default') {
+        restoreSavedAnswers(currentLessonPath);
+      }
+    }
+
+    async function restoreSavedAnswers(lessonPath) {
+      if (!lessonPath || currentRole !== 'student' || !window.CosyProgress ||
+          typeof window.CosyProgress.loadAnswers !== 'function') return;
+
+      try {
+        const saved = await window.CosyProgress.loadAnswers(lessonPath);
+        if (!saved || typeof saved !== 'object' || lessonPath !== currentLessonPath ||
+            currentRole !== 'student') return;
+
+        Object.entries(saved).forEach(([fieldKey, value]) => {
+          if (value === null || value === undefined) return;
+          const input = document.getElementById(fieldKey);
+          if (input && (input.matches('input, textarea, select'))) {
+            if (input.type === 'radio' || input.type === 'checkbox') {
+              input.checked = String(input.value) === String(value);
+            } else {
+              input.value = String(value);
+            }
+          } else {
+            // Radio groups are keyed by their shared name in some lesson formats.
+            const radios = document.querySelectorAll('input[type="radio"]');
+            radios.forEach(radio => {
+              if (radio.name === fieldKey) radio.checked = String(radio.value) === String(value);
+            });
+          }
+
+          // Recalculate local feedback only; restoration must not trigger a new save
+          // or send student answers to peers.
+          if (typeof checkAnswerForField === 'function') checkAnswerForField(fieldKey, false);
+        });
+      } catch (err) {
+        console.warn('Could not restore saved classroom answers:', err);
+      }
     }
 
     function renderXmlNodeToClassroomHtml(node, prefix = "n") {
