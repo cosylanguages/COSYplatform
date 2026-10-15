@@ -103,7 +103,6 @@ async function main() {
   await offlineHarness.context.CosyProgress.saveAnswer('lessons/a1/greetings.json', 'blank_1', 'new local value', true);
   const offlineLoaded = await offlineHarness.context.CosyProgress.loadAnswers('lessons/a1/greetings.json');
   assert.deepEqual(JSON.parse(JSON.stringify(offlineLoaded)), { blank_1: 'new local value' });
-  for (const timer of offlineHarness.context.CosyProgress) { void timer; }
 
   // Missing identifiers are ignored instead of writing malformed records.
   await h.context.CosyProgress.saveAnswer('', 'blank_2', 'ignored');
