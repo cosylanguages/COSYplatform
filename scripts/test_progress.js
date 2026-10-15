@@ -11,7 +11,7 @@ const vm = require('node:vm');
 
 const source = fs.readFileSync(path.join(__dirname, '..', 'shared', 'js', 'progress.js'), 'utf8');
 
-function createHarness({ userId = 'student-123', answers = [] } = {}) {
+function createHarness({ userId = 'student-123', answers = [], readError = false } = {}) {
   const storage = new Map();
   const upserts = [];
   const context = {
@@ -45,7 +45,7 @@ function createHarness({ userId = 'student-123', answers = [] } = {}) {
                 eq() {
                   return {
                     eq() {
-                      return Promise.resolve({ data: answers, error: null });
+                      return Promise.resolve({ data: readError ? null : answers, error: readError ? { message: 'offline' } : null });
                     }
                   };
                 }
@@ -94,6 +94,16 @@ async function main() {
   });
   const loaded = await loadedHarness.context.CosyProgress.loadAnswers('lessons/a1/greetings.json');
   assert.deepEqual(JSON.parse(JSON.stringify(loaded)), { blank_1: 'hello', choice_2: 'B' });
+
+  // Unsynced local values remain available offline and override stale server values.
+  const offlineHarness = createHarness({
+    answers: [{ field_key: 'blank_1', value: 'old server value', is_correct: false }],
+    readError: true
+  });
+  await offlineHarness.context.CosyProgress.saveAnswer('lessons/a1/greetings.json', 'blank_1', 'new local value', true);
+  const offlineLoaded = await offlineHarness.context.CosyProgress.loadAnswers('lessons/a1/greetings.json');
+  assert.deepEqual(JSON.parse(JSON.stringify(offlineLoaded)), { blank_1: 'new local value' });
+  for (const timer of offlineHarness.context.CosyProgress) { void timer; }
 
   // Missing identifiers are ignored instead of writing malformed records.
   await h.context.CosyProgress.saveAnswer('', 'blank_2', 'ignored');
