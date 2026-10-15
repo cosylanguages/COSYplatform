@@ -11,7 +11,9 @@ CREATE SCHEMA IF NOT EXISTS tests;
 CREATE OR REPLACE FUNCTION tests.authenticate_as(p_user_id UUID)
 RETURNS VOID
 LANGUAGE plpgsql
-AS $$
+SECURITY DEFINER
+SET search_path = pg_catalog
+AS $
 BEGIN
   PERFORM set_config('role', 'authenticated', true);
   PERFORM set_config('request.jwt.claim.sub', p_user_id::text, true);
@@ -22,7 +24,9 @@ $$;
 CREATE OR REPLACE FUNCTION tests.clear_authentication()
 RETURNS VOID
 LANGUAGE plpgsql
-AS $$
+SECURITY DEFINER
+SET search_path = pg_catalog
+AS $
 BEGIN
   PERFORM set_config('role', 'anon', true);
   PERFORM set_config('request.jwt.claim.sub', '', true);
