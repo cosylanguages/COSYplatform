@@ -126,7 +126,8 @@
     body:not(.can-video-provider) [data-requires="video-provider"],
     body:not(.can-material-select) [data-requires="material-select"],
     body:not(.can-clear-board) [data-requires="clear-board"],
-    body:not(.can-activities) [data-requires="activities"] {
+    body:not(.can-activities) [data-requires="activities"],
+    body:not(.can-clear-answers) [data-requires="clear-answers"] {
       display: none !important;
     }
   </style>
@@ -470,6 +471,9 @@
             Full Catalog
           </button>
         </div>
+        <button data-requires="clear-answers" onclick="resetClassAnswers()" class="px-3 py-1.5 bg-red-600 text-white font-semibold rounded-lg text-xs hover:bg-red-700 transition touch-target">
+          Reset Student Answers
+        </button>
 
         <!-- Whiteboard Drawing Tools -->
         <div class="flex items-center space-x-2">
@@ -793,6 +797,7 @@
       'video-provider': ['teacher'],
       'material-select': ['teacher'],
       'clear-board': ['teacher'],
+      'clear-answers': ['teacher'],
       'activities': ['teacher']
     };
 
@@ -853,6 +858,16 @@
       'blank-1': 'estás',
       'blank-2': 'gusto'
     };
+    // Optional learner-facing rationale authored in lesson content (never teacher notes).
+    const explanationsMap = {};
+
+    // Remove metadata from the previous lesson before parsing a dynamic lesson.
+    // Static-slide defaults are initialized above; dynamic lessons must start clean
+    // so legacy or prior-lesson answers cannot accidentally mark fields as correct.
+    function resetLessonAnswerMetadata() {
+      Object.keys(answersMap).forEach(key => delete answersMap[key]);
+      Object.keys(explanationsMap).forEach(key => delete explanationsMap[key]);
+    }
 
     // User Authentication & Profile
     let userProfile = null;
@@ -1078,7 +1093,7 @@
     }
 
     function applyCapabilities() {
-      const features = ['lesson-mode', 'breakout', 'video-provider', 'material-select', 'clear-board', 'activities'];
+      const features = ['lesson-mode', 'breakout', 'video-provider', 'material-select', 'clear-board', 'clear-answers', 'activities'];
       features.forEach(f => {
         if (can(f)) {
           document.body.classList.add(`can-${f}`);
@@ -1677,6 +1692,7 @@
     }
 
     function parseXmlLessonToSlides(xmlText) {
+      resetLessonAnswerMetadata();
       const parser = new DOMParser();
       const xmlDoc = parser.parseFromString(xmlText, "text/xml");
       const cosyLesson = xmlDoc.querySelector("cosy-lesson");
@@ -1703,6 +1719,7 @@
     }
 
     function parseJsonLessonToSlides(jsonData) {
+      resetLessonAnswerMetadata();
       const titleEl = document.getElementById("lesson-title");
       if (titleEl) titleEl.innerText = jsonData.title || "Live Lesson";
       if (!jsonData.slides || jsonData.slides.length === 0) return;
@@ -1754,6 +1771,48 @@
 
         container.appendChild(slideDiv);
       });
+
+      // Restore this authenticated student's saved work after every lesson render.
+      // This also covers reconnects and teacher/student view re-renders without
+      // broadcasting another student's answers or overwriting the offline queue.
+      if (currentRole === 'student' && currentLessonPath && currentLessonPath !== 'default') {
+        restoreSavedAnswers(currentLessonPath);
+      }
+    }
+
+    async function restoreSavedAnswers(lessonPath) {
+      if (!lessonPath || currentRole !== 'student' || !window.CosyProgress ||
+          typeof window.CosyProgress.loadAnswers !== 'function') return;
+
+      try {
+        const saved = await window.CosyProgress.loadAnswers(lessonPath);
+        if (!saved || typeof saved !== 'object' || lessonPath !== currentLessonPath ||
+            currentRole !== 'student') return;
+
+        Object.entries(saved).forEach(([fieldKey, value]) => {
+          if (value === null || value === undefined) return;
+          const input = document.getElementById(fieldKey);
+          if (input && (input.matches('input, textarea, select'))) {
+            if (input.type === 'radio' || input.type === 'checkbox') {
+              input.checked = String(input.value) === String(value);
+            } else {
+              input.value = String(value);
+            }
+          } else {
+            // Radio groups are keyed by their shared name in some lesson formats.
+            const radios = document.querySelectorAll('input[type="radio"]');
+            radios.forEach(radio => {
+              if (radio.name === fieldKey) radio.checked = String(radio.value) === String(value);
+            });
+          }
+
+          // Recalculate local feedback only; restoration must not trigger a new save
+          // or send student answers to peers.
+          if (typeof checkAnswerForField === 'function') checkAnswerForField(fieldKey, false, false);
+        });
+      } catch (err) {
+        console.warn('Could not restore saved classroom answers:', err);
+      }
     }
 
     function renderXmlNodeToClassroomHtml(node, prefix = "n") {
@@ -1815,6 +1874,8 @@
           let ansList = [];
           answers.forEach(a => ansList.push(a.textContent.trim()));
           if (ansList.length > 0) answersMap[fKey] = ansList[0];
+          const inputExplanation = child.getAttribute("explanation");
+          if (inputExplanation) explanationsMap[fKey] = inputExplanation;
 
           const safePlaceholder = escapeHtml(child.getAttribute("placeholder") || "Type here...");
           const safeAnsKey = escapeHtml(ansList.join(' / '));
@@ -1835,6 +1896,8 @@
             }
           });
           if (selectAns.length > 0) answersMap[fKey] = selectAns;
+          const selectExplanation = child.getAttribute("explanation");
+          if (selectExplanation) explanationsMap[fKey] = selectExplanation;
 
           output += `<select id="${fKey}" onchange="handleChoiceInput('${fKey}', this.value)" class="px-3 py-1.5 border border-gray-300 rounded-lg text-sm my-2 focus:ring-2 focus:ring-cosy-500"><option value="">-- Choose option --</option>`;
           items.forEach(it => {
@@ -1857,6 +1920,8 @@
               output += `<label class="flex items-center space-x-2 text-xs p-2 rounded-lg border border-gray-200 bg-white hover:bg-cosy-50 cursor-pointer"><input type="radio" name="${qKey}" value="${optVal}" onchange="handleChoiceInput('${qKey}', this.value)"><span>${optVal}</span> ${currentRole === 'teacher' && isCorrect ? '<span class="text-green-600 font-bold ml-auto">✔️ Correct</span>' : ''}</label>`;
             });
             if (correctOpts.length > 0) answersMap[qKey] = correctOpts;
+            const questionExplanation = q.getAttribute("explanation");
+            if (questionExplanation) explanationsMap[qKey] = questionExplanation;
             output += `</div><div id="feedback-${qKey}" class="text-xs font-medium mt-2"></div></div>`;
           });
         } else if (tag === "cosy-essay") {
@@ -1900,6 +1965,7 @@
             output += `<blockquote class="bg-gray-50 border-l-4 border-cosy-500 p-3 my-2 rounded-r-lg text-sm whitespace-pre-wrap">${escapeHtml(el.content || '')}</blockquote>`;
           } else if (el.type === "input") {
             if (el.answers && el.answers.length > 0) answersMap[fKey] = el.answers[0];
+            if (typeof el.explanation === 'string' && el.explanation.trim()) explanationsMap[fKey] = el.explanation.trim();
             output += `
               <div class="my-3 space-y-1">
                 <input type="text" id="${fKey}" oninput="handleBlankInput('${fKey}', this.value)" placeholder="${el.placeholder || "Type response..."}" class="px-3 py-1.5 border border-gray-300 rounded-lg text-sm w-full max-w-sm focus:ring-2 focus:ring-cosy-500 font-medium">
@@ -1908,6 +1974,7 @@
             `;
           } else if (el.type === "test") {
             if (el.answers && el.answers.length > 0) answersMap[fKey] = el.answers;
+            if (typeof el.explanation === 'string' && el.explanation.trim()) explanationsMap[fKey] = el.explanation.trim();
             output += `<div class="bg-gray-50 border border-gray-200 rounded-xl p-4 my-3"><strong class="text-sm text-gray-800">${escapeHtml(el.content || '')}</strong><div class="space-y-1.5 mt-2">`;
             if (el.options) {
               el.options.forEach(opt => {
@@ -1927,6 +1994,50 @@
         });
       }
       return output;
+    }
+
+    // Ask each connected student to clear only their own saved answers for this lesson.
+    async function resetClassAnswers() {
+      if (!can('clear-answers') || currentRole !== 'teacher') {
+        showTeacherOnlyToast();
+        return;
+      }
+      if (!isHost) {
+        if (window.CosyUI && window.CosyUI.toast) CosyUI.toast('Only the teacher hosting this room can reset student answers.', 'warning');
+        return;
+      }
+      if (!currentLessonPath || currentLessonPath === 'default') {
+        if (window.CosyUI && window.CosyUI.toast) CosyUI.toast('Load a lesson before resetting student answers.', 'warning');
+        return;
+      }
+      if (!window.confirm('Reset saved answers for every connected student in this lesson? This cannot be undone.')) return;
+      sendData({ type: 'reset-answers', lessonPath: currentLessonPath });
+      if (window.CosyUI && window.CosyUI.toast) CosyUI.toast('Reset request sent to connected students.', 'info');
+    }
+
+    async function clearStudentLessonAnswers(lessonPath) {
+      if (!lessonPath || lessonPath !== currentLessonPath || currentRole !== 'student') return;
+      if (!window.CosyProgress || typeof window.CosyProgress.clearLessonAnswers !== 'function') {
+        if (window.CosyUI && window.CosyUI.toast) CosyUI.toast('Could not reset saved answers. Please reconnect and try again.', 'error');
+        return;
+      }
+      const cleared = await window.CosyProgress.clearLessonAnswers(lessonPath);
+      if (!cleared) {
+        if (window.CosyUI && window.CosyUI.toast) CosyUI.toast('Answers were not reset on the server. Check your connection or permissions and retry.', 'error');
+        return;
+      }
+
+      document.querySelectorAll('.slide-content input, .slide-content textarea, .slide-content select').forEach(el => {
+        if (el.type === 'radio' || el.type === 'checkbox') el.checked = false;
+        else el.value = '';
+        el.classList.remove('border-red-500', 'border-green-500', 'bg-green-50', 'bg-red-50');
+        if (el.classList.contains('border-cosy-200') || el.classList.contains('border-gray-300') ||
+            el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.tagName === 'SELECT') {
+          el.classList.add('border-cosy-200');
+        }
+      });
+      document.querySelectorAll('.slide-content [id^="feedback-"]').forEach(el => { el.textContent = ''; });
+      if (window.CosyUI && window.CosyUI.toast) CosyUI.toast('Your saved answers for this lesson were reset by the teacher.', 'success');
     }
 
     // Role Switching Logic
@@ -2417,6 +2528,25 @@
       c.on('open', () => {
         updateStatus('Live Synchronized', 'green');
         addChatMessage('System', 'WebRTC Data Channel active.');
+
+        // A newly connected/reconnected student replays current responses to the
+        // teacher so the live view catches up without waiting for another edit.
+        // The host's packet allow-list already accepts only blank/choice inputs.
+        if (!isHost && c && c.open) {
+          document.querySelectorAll('#slide-container input, #slide-container textarea, #slide-container select').forEach(el => {
+            if (!el.id || el.disabled) return;
+            if ((el.type === 'radio' || el.type === 'checkbox') && !el.checked) return;
+            const value = (el.type === 'radio' || el.type === 'checkbox') ? el.value : el.value;
+            if (value === undefined || value === null || value === '') return;
+            const isChoice = el.tagName === 'SELECT' || el.type === 'radio' || el.type === 'checkbox';
+            c.send({
+              type: isChoice ? 'choice' : 'blank',
+              id: isChoice && el.type === 'radio' ? el.name : el.id,
+              value,
+              checked: (el.type === 'radio' || el.type === 'checkbox') ? el.checked : undefined
+            });
+          });
+        }
       });
 
       c.on('data', (data) => {
@@ -2464,7 +2594,9 @@
         case 'choice':
           if (data.id && data.value !== undefined) {
             const el = document.getElementById(data.id);
-            if (el) {
+            if (el && el.type === 'checkbox') {
+              el.checked = data.checked !== undefined ? Boolean(data.checked) : true;
+            } else if (el && el.type !== 'radio') {
               el.value = data.value;
             } else {
               const radios = document.querySelectorAll(`input[type="radio"][name="${data.id}"]`);
@@ -2555,6 +2687,16 @@
           if (isHost || currentRole === 'teacher' || (userProfile && userProfile.role === 'founder')) {
             addChatMessage('System', `✋ Student in ${data.roomName || 'breakout'} requested help!`);
             if (window.CosyUI && window.CosyUI.toast) CosyUI.toast(`✋ Student in ${data.roomName || 'breakout'} requested help!`, 'warning');
+          }
+          break;
+        case 'reset-answers':
+          // Accept reset commands only from the host peer connection. In a
+          // hosted room, conn is the teacher/host connection; in host mode the
+          // incoming participant allow-list rejects this packet type.
+          if (!isHost && conn && conn.open && conn.peer === roomId &&
+              data.lessonPath && data.lessonPath === currentLessonPath &&
+              currentRole === 'student') {
+            clearStudentLessonAnswers(data.lessonPath);
           }
           break;
         case 'note-sync':
@@ -2799,6 +2941,7 @@
       if (currentRole === 'student' && window.CosyProgress) {
         window.CosyProgress.saveAnswer(currentLessonPath, id, val);
       }
+      checkAnswerForField(id, false);
     }
 
     // Exercise Fill-in-Blank handler
@@ -2807,6 +2950,11 @@
       if (currentRole === 'student' && window.CosyProgress) {
         window.CosyProgress.saveAnswer(currentLessonPath, id, val);
       }
+      if (liveFeedbackTimers.has(id)) clearTimeout(liveFeedbackTimers.get(id));
+      liveFeedbackTimers.set(id, setTimeout(() => {
+        liveFeedbackTimers.delete(id);
+        checkAnswerForField(id, false);
+      }, 650));
     }
 
     function normalizeStr(str) {
@@ -2818,65 +2966,81 @@
         .replace(/\s+/g, ' ');
     }
 
+    const liveFeedbackTimers = new Map();
+
+    // Check one exercise without exposing the answer key during live practice.
+    function checkAnswerForField(id, revealAnswer = false, persist = true) {
+      if (!Object.prototype.hasOwnProperty.call(answersMap, id)) return;
+
+      const answerKey = answersMap[id];
+      const input = document.getElementById(id);
+      const radios = document.querySelectorAll(`input[type="radio"][name="${id}"]`);
+      const radioChecked = document.querySelector(`input[type="radio"][name="${id}"]:checked`);
+      const feedback = document.getElementById(`feedback-${id.replace('blank-', '')}`) || document.getElementById(`feedback-${id}`);
+      // For radio groups, read the selected option rather than the first
+      // radio returned by getElementById(name/id); otherwise restored choices
+      // can be incorrectly marked as unanswered or wrong.
+      const userVal = radios.length
+        ? (radioChecked ? radioChecked.value : '')
+        : (input ? (input.value || '') : '');
+      const normUser = normalizeStr(userVal);
+
+      const validList = [];
+      const keys = Array.isArray(answerKey) ? answerKey : (answerKey ? [answerKey] : []);
+      keys.forEach(ak => {
+        String(ak).split(/\s*[\/|]\s*/).forEach(sub => {
+          const normalized = normalizeStr(sub);
+          if (normalized) validList.push(normalized);
+        });
+      });
+
+      if (!normUser) {
+        if (input && !radios.length) {
+          input.classList.remove('border-red-500', 'border-green-500', 'bg-green-50', 'bg-red-50');
+          input.classList.add('border-cosy-200');
+        }
+        if (feedback) feedback.textContent = '';
+        return;
+      }
+
+      const isCorrect = validList.includes(normUser);
+      if (input && !radios.length) {
+        input.classList.remove('border-cosy-200', 'border-gray-300', 'border-red-500', 'border-green-500', 'bg-green-50', 'bg-red-50');
+        input.classList.add(isCorrect ? 'border-green-500' : 'border-red-500', isCorrect ? 'bg-green-50' : 'bg-red-50');
+      }
+
+      if (feedback) {
+        feedback.textContent = '';
+        feedback.setAttribute('aria-live', 'polite');
+        const span = document.createElement('span');
+        if (isCorrect) {
+          span.className = 'text-green-600 font-bold';
+          span.textContent = '✔️ Correct!';
+        } else {
+          span.className = 'text-red-600 font-bold';
+          const displayKey = Array.isArray(answerKey) ? answerKey.join(' / ') : answerKey;
+          span.textContent = revealAnswer && displayKey
+            ? `❌ Incorrect. Answer: ${displayKey}`
+            : '↻ Not quite—try again.';
+        }
+        feedback.appendChild(span);
+        const explanation = explanationsMap[id];
+        if (explanation) {
+          const rationale = document.createElement('div');
+          rationale.className = 'mt-1 text-gray-600 font-normal';
+          rationale.textContent = `Why: ${explanation}`;
+          feedback.appendChild(rationale);
+        }
+      }
+
+      if (persist && currentRole === 'student' && window.CosyProgress) {
+        window.CosyProgress.saveAnswer(currentLessonPath, id, userVal, isCorrect);
+      }
+    }
+
     function checkAnswers() {
-      for (const [id, answerKey] of Object.entries(answersMap)) {
-        const input = document.getElementById(id);
-        const radios = document.querySelectorAll(`input[type="radio"][name="${id}"]`);
-        const radioChecked = document.querySelector(`input[type="radio"][name="${id}"]:checked`);
-        const feedback = document.getElementById(`feedback-${id.replace('blank-', '')}`) || document.getElementById(`feedback-${id}`);
-
-        let userVal = '';
-        if (input) {
-          userVal = input.value || '';
-        } else if (radios.length > 0) {
-          userVal = radioChecked ? radioChecked.value : '';
-        }
-
-        const normUser = normalizeStr(userVal);
-
-        let validList = [];
-        if (Array.isArray(answerKey)) {
-          answerKey.forEach(ak => {
-            String(ak).split(/\s*[\/|]\s*/).forEach(sub => {
-              const n = normalizeStr(sub);
-              if (n) validList.push(n);
-            });
-          });
-        } else if (answerKey) {
-          String(answerKey).split(/\s*[\/|]\s*/).forEach(sub => {
-            const n = normalizeStr(sub);
-            if (n) validList.push(n);
-          });
-        }
-
-        const isCorrect = normUser !== '' && validList.includes(normUser);
-
-        if (input) {
-          input.classList.remove('border-cosy-200', 'border-gray-300', 'border-red-500', 'border-green-500', 'bg-green-50', 'bg-red-50');
-          if (isCorrect) {
-            input.classList.add('border-green-500', 'bg-green-50');
-          } else {
-            input.classList.add('border-red-500', 'bg-red-50');
-          }
-        }
-
-        if (feedback) {
-          feedback.textContent = '';
-          const span = document.createElement('span');
-          if (isCorrect) {
-            span.className = 'text-green-600 font-bold';
-            span.textContent = '✔️ Correct!';
-          } else {
-            span.className = 'text-red-600 font-bold';
-            const displayKey = Array.isArray(answerKey) ? answerKey.join(' / ') : answerKey;
-            span.textContent = `❌ Incorrect. Answer: ${displayKey}`;
-          }
-          feedback.appendChild(span);
-        }
-
-        if (currentRole === 'student' && window.CosyProgress) {
-          window.CosyProgress.saveAnswer(currentLessonPath, id, userVal, isCorrect);
-        }
+      for (const id of Object.keys(answersMap)) {
+        checkAnswerForField(id, true);
       }
     }
 

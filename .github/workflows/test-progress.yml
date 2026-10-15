@@ -1,0 +1,25 @@
+name: Progress Persistence Tests
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test-progress:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Test student answer persistence
+        run: node scripts/test_progress.js
+
+      - name: Test live classroom answer feedback
+        run: node scripts/test_live_feedback.js

@@ -3,7 +3,7 @@
 
 BEGIN;
 
-SELECT plan(15);
+SELECT plan(20);
 
 -- Setup test helper schema for auth mocking
 CREATE SCHEMA IF NOT EXISTS tests;
@@ -29,6 +29,13 @@ BEGIN
   PERFORM set_config('request.jwt.claims', '', true);
 END;
 $$;
+
+-- The helpers are invoked again after clear_authentication() switches to anon,
+-- and authenticate_as() itself switches to authenticated for later assertions.
+-- Grant only the test helper schema/functions; this file runs in the disposable
+-- Supabase test database, not as a production migration.
+GRANT USAGE ON SCHEMA tests TO anon, authenticated;
+GRANT EXECUTE ON ALL FUNCTIONS IN SCHEMA tests TO anon, authenticated;
 
 -- Setup test users & test data
 CREATE TEMP TABLE IF NOT EXISTS test_users (
@@ -104,6 +111,13 @@ INSERT INTO public.lesson_protected (lesson_id, kind, content) VALUES
     ('fr:a1:bonjour', 'answer-key', '{"q1": "bonjour"}');
 
 
+-- Seed student answers for RLS isolation checks.
+INSERT INTO public.lesson_answers (student_id, lesson_id, field_key, value, is_correct) VALUES
+  ('33333333-3333-3333-3333-333333333333', 'en:a1:nice-to-meet-you', 'q1', 'hello', true),
+  ('44444444-4444-4444-4444-444444444444', 'en:a1:nice-to-meet-you', 'q1', 'bonjour', false)
+ON CONFLICT (student_id, lesson_id, field_key) DO UPDATE
+SET value = EXCLUDED.value, is_correct = EXCLUDED.is_correct;
+
 -- TEST GROUP 1: Anonymous User
 SELECT tests.clear_authentication();
 
@@ -125,6 +139,15 @@ SELECT results_eq(
     'TC-03 [PASS]: Anonymous CANNOT SELECT lesson_protected (0 rows returned)'
 );
 
+SELECT results_eq(
+    'SELECT COUNT(*)::INTEGER FROM public.lesson_answers',
+    ARRAY[0],
+    'TC-16 [PASS]: Anonymous cannot read student answers'
+);
+
+
+-- Return to the test runner's session role before switching from anon to authenticated.
+RESET ROLE;
 
 -- TEST GROUP 2: Granted Student User
 SELECT tests.authenticate_as('33333333-3333-3333-3333-333333333333'::UUID);
@@ -139,6 +162,18 @@ SELECT results_eq(
     'SELECT COUNT(*)::INTEGER FROM public.lesson_protected WHERE lesson_id = ''en:a1:nice-to-meet-you''',
     ARRAY[0],
     'TC-05 [PASS]: Granted Student CANNOT SELECT lesson_protected (0 rows returned - answer key / teacher notes hidden)'
+);
+
+SELECT results_eq(
+    'SELECT COUNT(*)::INTEGER FROM public.lesson_answers WHERE student_id = auth.uid()',
+    ARRAY[1],
+    'TC-17 [PASS]: Student can read their own saved answers'
+);
+
+SELECT results_eq(
+    'SELECT COUNT(*)::INTEGER FROM public.lesson_answers WHERE student_id = ''44444444-4444-4444-4444-444444444444''',
+    ARRAY[0],
+    'TC-18 [PASS]: Student cannot read another student''s saved answers'
 );
 
 SELECT results_eq(
@@ -191,6 +226,12 @@ SELECT results_eq(
     'TC-12 [PASS]: Teacher CANNOT SELECT lesson_protected for unassigned language (fr)'
 );
 
+SELECT results_eq(
+    'SELECT COUNT(*)::INTEGER FROM public.lesson_answers',
+    ARRAY[0],
+    'TC-19 [PASS]: Teacher cannot directly read private student answer rows'
+);
+
 
 -- TEST GROUP 5: Founder User
 SELECT tests.authenticate_as('11111111-1111-1111-1111-111111111111'::UUID);
@@ -211,6 +252,12 @@ SELECT results_eq(
     'SELECT COUNT(*)::INTEGER FROM public.courses',
     ARRAY[3],
     'TC-15 [PASS]: Founder has unrestricted access to all course records'
+);
+
+SELECT results_eq(
+    'SELECT COUNT(*)::INTEGER FROM public.lesson_answers',
+    ARRAY[0],
+    'TC-20 [PASS]: Founder role does not bypass private student answer isolation'
 );
 
 SELECT * FROM finish();

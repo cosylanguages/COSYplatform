@@ -11,6 +11,7 @@ window.CosyProgress = window.CosyProgress || {};
   const debounceTimers = new Map();
   const PENDING_STORAGE_KEY_PREFIX = 'cosy_pending_answers';
   const DEBOUNCE_DELAY = 800; // ms
+  let queueRevision = 0;
 
   function getClient() {
     return (global.CosyAuth && global.CosyAuth.client) ? global.CosyAuth.client : null;
@@ -51,20 +52,22 @@ window.CosyProgress = window.CosyProgress || {};
   function queuePendingItem(userId, lessonId, fieldKey, value, isCorrect) {
     const key = `${lessonId}::${fieldKey}`;
     const stored = getPendingFromStorage(userId);
-    stored[key] = { userId, lessonId, fieldKey, value, isCorrect: isCorrect ?? null, time: Date.now() };
+    const item = { userId, lessonId, fieldKey, value, isCorrect: isCorrect ?? null, time: Date.now(), revision: `${Date.now()}-${++queueRevision}-${Math.random().toString(36).slice(2)}` };
+    stored[key] = item;
     savePendingToStorage(userId, stored);
+    return item.revision;
   }
 
-  function removePendingItem(userId, lessonId, fieldKey) {
+  function removePendingItem(userId, lessonId, fieldKey, expectedRevision) {
     const key = `${lessonId}::${fieldKey}`;
     const stored = getPendingFromStorage(userId);
-    if (stored[key]) {
+    // An older in-flight request must never erase a newer locally queued value.
+    if (stored[key] && stored[key].revision === expectedRevision) {
       delete stored[key];
       savePendingToStorage(userId, stored);
     }
   }
-
-  async function performUpsert(userId, lessonId, fieldKey, value, isCorrect) {
+  async function performUpsert(userId, lessonId, fieldKey, value, isCorrect, expectedRevision) {
     const client = getClient();
     if (!client) return false;
 
@@ -89,7 +92,7 @@ window.CosyProgress = window.CosyProgress || {};
         console.warn('CosyProgress: upsert error', error);
         return false;
       }
-      removePendingItem(currentUserId, lessonId, fieldKey);
+      removePendingItem(currentUserId, lessonId, fieldKey, expectedRevision);
       return true;
     } catch (err) {
       console.warn('CosyProgress: save error', err);
@@ -107,7 +110,7 @@ window.CosyProgress = window.CosyProgress || {};
       const userId = await getUserId();
       if (!userId) return;
 
-      queuePendingItem(userId, lessonId, fieldKey, value, isCorrect);
+      const revision = queuePendingItem(userId, lessonId, fieldKey, value, isCorrect);
 
       const timerKey = `${userId}::${lessonId}::${fieldKey}`;
       if (debounceTimers.has(timerKey)) {
@@ -116,7 +119,7 @@ window.CosyProgress = window.CosyProgress || {};
 
       const timer = setTimeout(async () => {
         debounceTimers.delete(timerKey);
-        await performUpsert(userId, lessonId, fieldKey, value, isCorrect);
+        await performUpsert(userId, lessonId, fieldKey, value, isCorrect, revision);
       }, DEBOUNCE_DELAY);
 
       debounceTimers.set(timerKey, timer);
@@ -135,6 +138,15 @@ window.CosyProgress = window.CosyProgress || {};
       const userId = await getUserId();
       if (!userId) return {};
 
+      // Keep this user's unsynced answers usable if the server read is unavailable.
+      const pendingAnswers = {};
+      const pending = getPendingFromStorage(userId);
+      Object.values(pending).forEach(item => {
+        if (item && item.userId === userId && item.lessonId === lessonId && item.fieldKey) {
+          pendingAnswers[item.fieldKey] = item.value;
+        }
+      });
+
       try {
         const { data, error } = await client
           .from('lesson_answers')
@@ -142,16 +154,75 @@ window.CosyProgress = window.CosyProgress || {};
           .eq('student_id', userId)
           .eq('lesson_id', lessonId);
 
-        if (error || !data) return {};
+        if (error || !data) return pendingAnswers;
 
         const answers = {};
         data.forEach(item => {
           answers[item.field_key] = item.value;
         });
-        return answers;
+
+        // Locally queued answers are newer than the last successful server sync.
+        return Object.assign(answers, pendingAnswers);
       } catch (err) {
         console.warn('CosyProgress: loadAnswers error', err);
-        return {};
+        return pendingAnswers;
+      }
+    },
+
+    /**
+     * Clears this authenticated student's saved answers for one lesson.
+     * Returns false when the server cannot confirm the deletion, so the UI
+     * does not claim a reset that would reappear on the next lesson load.
+     */
+    async clearLessonAnswers(lessonId) {
+      if (!lessonId) return false;
+      const client = getClient();
+      const userId = await getUserId();
+      if (!client || !userId) return false;
+
+      try {
+        // Stop delayed upserts first so a queued write cannot race and recreate
+        // a row after the server-side delete completes.
+        for (const [timerKey, timer] of debounceTimers.entries()) {
+          if (timerKey.startsWith(`${userId}::${lessonId}::`)) {
+            clearTimeout(timer);
+            debounceTimers.delete(timerKey);
+          }
+        }
+
+        const { error } = await client
+          .from('lesson_answers')
+          .delete()
+          .eq('student_id', userId)
+          .eq('lesson_id', lessonId);
+
+        if (error) {
+          console.warn('CosyProgress: clear answers error', error);
+          return false;
+        }
+
+        // Some RLS configurations can make DELETE affect zero rows without
+        // returning an error. Verify the lesson is actually empty before
+        // discarding the local retry queue or telling the student reset worked.
+        const { data: remaining, error: verifyError } = await client
+          .from('lesson_answers')
+          .select('field_key')
+          .eq('student_id', userId)
+          .eq('lesson_id', lessonId);
+        if (verifyError || !Array.isArray(remaining) || remaining.length > 0) {
+          console.warn('CosyProgress: answer reset could not be verified', verifyError);
+          return false;
+        }
+
+        const pending = getPendingFromStorage(userId);
+        Object.entries(pending).forEach(([key, item]) => {
+          if (item && item.userId === userId && item.lessonId === lessonId) delete pending[key];
+        });
+        savePendingToStorage(userId, pending);
+        return true;
+      } catch (err) {
+        console.warn('CosyProgress: clear answers error', err);
+        return false;
       }
     },
 
@@ -175,7 +246,7 @@ window.CosyProgress = window.CosyProgress || {};
 
       for (const [key, item] of entries) {
         if (item.userId && item.userId !== currentUserId) continue;
-        const success = await performUpsert(currentUserId, item.lessonId, item.fieldKey, item.value, item.isCorrect);
+        const success = await performUpsert(currentUserId, item.lessonId, item.fieldKey, item.value, item.isCorrect, item.revision);
         if (!success) {
           break;
         }
