@@ -2799,6 +2799,7 @@
       if (currentRole === 'student' && window.CosyProgress) {
         window.CosyProgress.saveAnswer(currentLessonPath, id, val);
       }
+      checkAnswerForField(id, false);
     }
 
     // Exercise Fill-in-Blank handler
@@ -2807,6 +2808,11 @@
       if (currentRole === 'student' && window.CosyProgress) {
         window.CosyProgress.saveAnswer(currentLessonPath, id, val);
       }
+      if (liveFeedbackTimers.has(id)) clearTimeout(liveFeedbackTimers.get(id));
+      liveFeedbackTimers.set(id, setTimeout(() => {
+        liveFeedbackTimers.delete(id);
+        checkAnswerForField(id, false);
+      }, 650));
     }
 
     function normalizeStr(str) {
@@ -2818,65 +2824,66 @@
         .replace(/\s+/g, ' ');
     }
 
+    const liveFeedbackTimers = new Map();
+
+    // Check one exercise without exposing the answer key during live practice.
+    function checkAnswerForField(id, revealAnswer = false) {
+      if (!Object.prototype.hasOwnProperty.call(answersMap, id)) return;
+
+      const answerKey = answersMap[id];
+      const input = document.getElementById(id);
+      const radios = document.querySelectorAll(`input[type="radio"][name="${id}"]`);
+      const radioChecked = document.querySelector(`input[type="radio"][name="${id}"]:checked`);
+      const feedback = document.getElementById(`feedback-${id.replace('blank-', '')}`) || document.getElementById(`feedback-${id}`);
+      const userVal = input ? (input.value || '') : (radios.length ? (radioChecked ? radioChecked.value : '') : '');
+      const normUser = normalizeStr(userVal);
+
+      const validList = [];
+      const keys = Array.isArray(answerKey) ? answerKey : (answerKey ? [answerKey] : []);
+      keys.forEach(ak => {
+        String(ak).split(/\s*[\/|]\s*/).forEach(sub => {
+          const normalized = normalizeStr(sub);
+          if (normalized) validList.push(normalized);
+        });
+      });
+
+      if (!normUser) {
+        if (input) input.classList.remove('border-red-500', 'border-green-500', 'bg-green-50', 'bg-red-50');
+        if (feedback) feedback.textContent = '';
+        return;
+      }
+
+      const isCorrect = validList.includes(normUser);
+      if (input) {
+        input.classList.remove('border-cosy-200', 'border-gray-300', 'border-red-500', 'border-green-500', 'bg-green-50', 'bg-red-50');
+        input.classList.add(isCorrect ? 'border-green-500' : 'border-red-500', isCorrect ? 'bg-green-50' : 'bg-red-50');
+      }
+
+      if (feedback) {
+        feedback.textContent = '';
+        feedback.setAttribute('aria-live', 'polite');
+        const span = document.createElement('span');
+        if (isCorrect) {
+          span.className = 'text-green-600 font-bold';
+          span.textContent = '✔️ Correct!';
+        } else {
+          span.className = 'text-red-600 font-bold';
+          const displayKey = Array.isArray(answerKey) ? answerKey.join(' / ') : answerKey;
+          span.textContent = revealAnswer && displayKey
+            ? `❌ Incorrect. Answer: ${displayKey}`
+            : '↻ Not quite—try again.';
+        }
+        feedback.appendChild(span);
+      }
+
+      if (currentRole === 'student' && window.CosyProgress) {
+        window.CosyProgress.saveAnswer(currentLessonPath, id, userVal, isCorrect);
+      }
+    }
+
     function checkAnswers() {
-      for (const [id, answerKey] of Object.entries(answersMap)) {
-        const input = document.getElementById(id);
-        const radios = document.querySelectorAll(`input[type="radio"][name="${id}"]`);
-        const radioChecked = document.querySelector(`input[type="radio"][name="${id}"]:checked`);
-        const feedback = document.getElementById(`feedback-${id.replace('blank-', '')}`) || document.getElementById(`feedback-${id}`);
-
-        let userVal = '';
-        if (input) {
-          userVal = input.value || '';
-        } else if (radios.length > 0) {
-          userVal = radioChecked ? radioChecked.value : '';
-        }
-
-        const normUser = normalizeStr(userVal);
-
-        let validList = [];
-        if (Array.isArray(answerKey)) {
-          answerKey.forEach(ak => {
-            String(ak).split(/\s*[\/|]\s*/).forEach(sub => {
-              const n = normalizeStr(sub);
-              if (n) validList.push(n);
-            });
-          });
-        } else if (answerKey) {
-          String(answerKey).split(/\s*[\/|]\s*/).forEach(sub => {
-            const n = normalizeStr(sub);
-            if (n) validList.push(n);
-          });
-        }
-
-        const isCorrect = normUser !== '' && validList.includes(normUser);
-
-        if (input) {
-          input.classList.remove('border-cosy-200', 'border-gray-300', 'border-red-500', 'border-green-500', 'bg-green-50', 'bg-red-50');
-          if (isCorrect) {
-            input.classList.add('border-green-500', 'bg-green-50');
-          } else {
-            input.classList.add('border-red-500', 'bg-red-50');
-          }
-        }
-
-        if (feedback) {
-          feedback.textContent = '';
-          const span = document.createElement('span');
-          if (isCorrect) {
-            span.className = 'text-green-600 font-bold';
-            span.textContent = '✔️ Correct!';
-          } else {
-            span.className = 'text-red-600 font-bold';
-            const displayKey = Array.isArray(answerKey) ? answerKey.join(' / ') : answerKey;
-            span.textContent = `❌ Incorrect. Answer: ${displayKey}`;
-          }
-          feedback.appendChild(span);
-        }
-
-        if (currentRole === 'student' && window.CosyProgress) {
-          window.CosyProgress.saveAnswer(currentLessonPath, id, userVal, isCorrect);
-        }
+      for (const id of Object.keys(answersMap)) {
+        checkAnswerForField(id, true);
       }
     }
 
