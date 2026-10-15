@@ -1798,7 +1798,7 @@
 
           // Recalculate local feedback only; restoration must not trigger a new save
           // or send student answers to peers.
-          if (typeof checkAnswerForField === 'function') checkAnswerForField(fieldKey, false);
+          if (typeof checkAnswerForField === 'function') checkAnswerForField(fieldKey, false, false);
         });
       } catch (err) {
         console.warn('Could not restore saved classroom answers:', err);
@@ -2949,7 +2949,7 @@
     const liveFeedbackTimers = new Map();
 
     // Check one exercise without exposing the answer key during live practice.
-    function checkAnswerForField(id, revealAnswer = false) {
+    function checkAnswerForField(id, revealAnswer = false, persist = true) {
       if (!Object.prototype.hasOwnProperty.call(answersMap, id)) return;
 
       const answerKey = answersMap[id];
@@ -3008,7 +3008,7 @@
         }
       }
 
-      if (currentRole === 'student' && window.CosyProgress) {
+      if (persist && currentRole === 'student' && window.CosyProgress) {
         window.CosyProgress.saveAnswer(currentLessonPath, id, userVal, isCorrect);
       }
     }
