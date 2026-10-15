@@ -11,8 +11,6 @@ CREATE SCHEMA IF NOT EXISTS tests;
 CREATE OR REPLACE FUNCTION tests.authenticate_as(p_user_id UUID)
 RETURNS VOID
 LANGUAGE plpgsql
-SECURITY DEFINER
-SET search_path = pg_catalog
 AS $
 BEGIN
   PERFORM set_config('role', 'authenticated', true);
@@ -24,8 +22,6 @@ $$;
 CREATE OR REPLACE FUNCTION tests.clear_authentication()
 RETURNS VOID
 LANGUAGE plpgsql
-SECURITY DEFINER
-SET search_path = pg_catalog
 AS $
 BEGIN
   PERFORM set_config('role', 'anon', true);
@@ -136,6 +132,9 @@ SELECT results_eq(
     'TC-03 [PASS]: Anonymous CANNOT SELECT lesson_protected (0 rows returned)'
 );
 
+
+-- Return to the test runner's session role before switching from anon to authenticated.
+RESET ROLE;
 
 -- TEST GROUP 2: Granted Student User
 SELECT tests.authenticate_as('33333333-3333-3333-3333-333333333333'::UUID);
