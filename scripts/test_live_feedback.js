@@ -101,6 +101,36 @@ assert.equal(h.input.classList.contains('border-red-500'), false);
 assert.equal(h.input.classList.contains('border-green-500'), false);
 assert.equal(h.input.classList.contains('border-cosy-200'), true);
 
+// Radio-group feedback must use the selected option, not the first radio in the group.
+{
+  const first = makeElement('question1', 'wrong');
+  first.type = 'radio';
+  first.name = 'question1';
+  const selected = makeElement('question1-correct', 'hello');
+  selected.type = 'radio';
+  selected.name = 'question1';
+  selected.checked = true;
+  const feedback = makeElement('feedback-question1');
+  const context = {
+    answersMap: { question1: 'hello' },
+    explanationsMap: {},
+    currentRole: 'teacher',
+    currentLessonPath: 'lesson',
+    window: {},
+    document: {
+      getElementById(id) { return id === 'question1' ? first : id === 'feedback-question1' ? feedback : null; },
+      querySelectorAll() { return [first, selected]; },
+      querySelector() { return selected; },
+      createElement() { return { className: '', textContent: '' }; }
+    }
+  };
+  vm.createContext(context);
+  vm.runInContext(feedbackSource, context, { filename: 'classroom-radio-feedback.js' });
+  context.checkAnswerForField('question1', false);
+  assert.match(feedback.children[0].textContent, /Correct/);
+  assert.equal(first.classList.contains('border-red-500'), false);
+}
+
 // Saved answers restore after lesson rendering, and reconnect replays current answers.
 assert.match(html, /restoreSavedAnswers\(currentLessonPath\)/);
 assert.match(html, /CosyProgress\.loadAnswers\(lessonPath\)/);
