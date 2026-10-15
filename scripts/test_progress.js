@@ -15,6 +15,11 @@ function createHarness({ userId = 'student-123', answers = [], readError = false
   const storage = new Map();
   const upserts = [];
   const deletes = [];
+  const serverRows = answers.map(row => ({
+    student_id: userId,
+    lesson_id: 'lessons/a1/greetings.json',
+    ...row
+  }));
   const context = {
     console,
     Date,
@@ -39,26 +44,45 @@ function createHarness({ userId = 'student-123', answers = [], readError = false
           return {
             upsert: async (payload, options) => {
               upserts.push({ payload, options });
+              const index = serverRows.findIndex(row =>
+                row.student_id === payload.student_id &&
+                row.lesson_id === payload.lesson_id &&
+                row.field_key === payload.field_key);
+              if (index >= 0) serverRows[index] = { ...payload };
+              else serverRows.push({ ...payload });
               return { error: null };
             },
             delete() {
               return {
-                eq(column, userId) {
+                eq(column, expectedUserId) {
                   return {
                     async eq(lessonColumn, lessonId) {
-                      deletes.push({ column, userId, lessonColumn, lessonId });
-                      return { error: deleteError ? { message: 'delete denied' } : null };
+                      deletes.push({ column, userId: expectedUserId, lessonColumn, lessonId });
+                      if (deleteError) return { error: { message: 'delete denied' } };
+                      for (let i = serverRows.length - 1; i >= 0; i--) {
+                        if (serverRows[i][column] === expectedUserId &&
+                            serverRows[i][lessonColumn] === lessonId) serverRows.splice(i, 1);
+                      }
+                      return { error: null };
                     }
                   };
                 }
               };
             },
             select() {
+              const filters = {};
               return {
-                eq() {
+                eq(column, value) {
+                  filters[column] = value;
                   return {
-                    eq() {
-                      return Promise.resolve({ data: readError ? null : answers, error: readError ? { message: 'offline' } : null });
+                    eq(nextColumn, nextValue) {
+                      filters[nextColumn] = nextValue;
+                      const data = serverRows.filter(row =>
+                        Object.entries(filters).every(([key, expected]) => row[key] === expected));
+                      return Promise.resolve({
+                        data: readError ? null : data,
+                        error: readError ? { message: 'read unavailable' } : null
+                      });
                     }
                   };
                 }
@@ -72,9 +96,8 @@ function createHarness({ userId = 'student-123', answers = [], readError = false
   context.window = context;
   vm.createContext(context);
   vm.runInContext(source, context, { filename: 'shared/js/progress.js' });
-  return { context, storage, upserts, deletes };
+  return { context, storage, upserts, deletes, serverRows };
 }
-
 async function main() {
   // Saving queues a durable offline copy immediately; flush persists it to Supabase.
   const h = createHarness();
@@ -117,7 +140,19 @@ async function main() {
   const offlineLoaded = await offlineHarness.context.CosyProgress.loadAnswers('lessons/a1/greetings.json');
   assert.deepEqual(JSON.parse(JSON.stringify(offlineLoaded)), { blank_1: 'new local value' });
 
-  // Teacher-triggered reset asks each student to delete only their own lesson rows.
+  // Teacher-triggered reset deletes existing server rows and only this student's lesson rows.
+  h.serverRows.push({
+    student_id: 'student-123',
+    lesson_id: 'lessons/a1/greetings.json',
+    field_key: 'already-synced',
+    value: 'old answer'
+  });
+  h.serverRows.push({
+    student_id: 'another-student',
+    lesson_id: 'lessons/a1/greetings.json',
+    field_key: 'other-student-answer',
+    value: 'must remain'
+  });
   await h.context.CosyProgress.saveAnswer('lessons/a1/greetings.json', 'blank_2', 'to clear');
   assert.equal(await h.context.CosyProgress.clearLessonAnswers('lessons/a1/greetings.json'), true);
   assert.deepEqual(h.deletes.at(-1), {
@@ -127,6 +162,14 @@ async function main() {
     lessonId: 'lessons/a1/greetings.json'
   });
   assert.equal(Object.keys(JSON.parse(h.storage.get(pendingKey))).some(key => key.startsWith('lessons/a1/greetings.json::')), false);
+  assert.equal(h.serverRows.some(row => row.student_id === 'student-123' && row.lesson_id === 'lessons/a1/greetings.json'), false);
+  assert.equal(h.serverRows.some(row => row.student_id === 'another-student'), true);
+
+  // If the delete succeeds but verification read fails, reset is not reported as successful.
+  const unverifiableReset = createHarness({ readError: true });
+  await unverifiableReset.context.CosyProgress.saveAnswer('lessons/a1/greetings.json', 'blank_4', 'keep queued');
+  assert.equal(await unverifiableReset.context.CosyProgress.clearLessonAnswers('lessons/a1/greetings.json'), false);
+  assert.equal(JSON.parse(unverifiableReset.storage.get(pendingKey))['lessons/a1/greetings.json::blank_4'].value, 'keep queued');
 
   // If server deletion is denied, reset reports failure and retains queued data.
   const deniedReset = createHarness({ deleteError: true });
