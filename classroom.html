@@ -2459,6 +2459,20 @@
       c.on('open', () => {
         updateStatus('Live Synchronized', 'green');
         addChatMessage('System', 'WebRTC Data Channel active.');
+
+        // A newly connected/reconnected student replays current responses to the
+        // teacher so the live view catches up without waiting for another edit.
+        // The host's packet allow-list already accepts only blank/choice inputs.
+        if (!isHost && c && c.open) {
+          document.querySelectorAll('#slide-container input, #slide-container textarea, #slide-container select').forEach(el => {
+            if (!el.id || el.disabled) return;
+            if ((el.type === 'radio' || el.type === 'checkbox') && !el.checked) return;
+            const value = (el.type === 'radio' || el.type === 'checkbox') ? el.value : el.value;
+            if (value === undefined || value === null || value === '') return;
+            const isChoice = el.tagName === 'SELECT' || el.type === 'radio' || el.type === 'checkbox';
+            c.send({ type: isChoice ? 'choice' : 'blank', id: isChoice && el.type === 'radio' ? el.name : el.id, value });
+          });
+        }
       });
 
       c.on('data', (data) => {
