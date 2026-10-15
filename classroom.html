@@ -2959,7 +2959,12 @@
       const radios = document.querySelectorAll(`input[type="radio"][name="${id}"]`);
       const radioChecked = document.querySelector(`input[type="radio"][name="${id}"]:checked`);
       const feedback = document.getElementById(`feedback-${id.replace('blank-', '')}`) || document.getElementById(`feedback-${id}`);
-      const userVal = input ? (input.value || '') : (radios.length ? (radioChecked ? radioChecked.value : '') : '');
+      // For radio groups, read the selected option rather than the first
+      // radio returned by getElementById(name/id); otherwise restored choices
+      // can be incorrectly marked as unanswered or wrong.
+      const userVal = radios.length
+        ? (radioChecked ? radioChecked.value : '')
+        : (input ? (input.value || '') : '');
       const normUser = normalizeStr(userVal);
 
       const validList = [];
@@ -2972,7 +2977,7 @@
       });
 
       if (!normUser) {
-        if (input) {
+        if (input && !radios.length) {
           input.classList.remove('border-red-500', 'border-green-500', 'bg-green-50', 'bg-red-50');
           input.classList.add('border-cosy-200');
         }
@@ -2981,7 +2986,7 @@
       }
 
       const isCorrect = validList.includes(normUser);
-      if (input) {
+      if (input && !radios.length) {
         input.classList.remove('border-cosy-200', 'border-gray-300', 'border-red-500', 'border-green-500', 'bg-green-50', 'bg-red-50');
         input.classList.add(isCorrect ? 'border-green-500' : 'border-red-500', isCorrect ? 'bg-green-50' : 'bg-red-50');
       }
