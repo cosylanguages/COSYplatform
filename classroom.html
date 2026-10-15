@@ -2529,7 +2529,12 @@
             const value = (el.type === 'radio' || el.type === 'checkbox') ? el.value : el.value;
             if (value === undefined || value === null || value === '') return;
             const isChoice = el.tagName === 'SELECT' || el.type === 'radio' || el.type === 'checkbox';
-            c.send({ type: isChoice ? 'choice' : 'blank', id: isChoice && el.type === 'radio' ? el.name : el.id, value });
+            c.send({
+              type: isChoice ? 'choice' : 'blank',
+              id: isChoice && el.type === 'radio' ? el.name : el.id,
+              value,
+              checked: (el.type === 'radio' || el.type === 'checkbox') ? el.checked : undefined
+            });
           });
         }
       });
@@ -2579,7 +2584,9 @@
         case 'choice':
           if (data.id && data.value !== undefined) {
             const el = document.getElementById(data.id);
-            if (el) {
+            if (el && el.type === 'checkbox') {
+              el.checked = data.checked !== undefined ? Boolean(data.checked) : true;
+            } else if (el && el.type !== 'radio') {
               el.value = data.value;
             } else {
               const radios = document.querySelectorAll(`input[type="radio"][name="${data.id}"]`);
