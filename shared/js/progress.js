@@ -178,6 +178,15 @@ window.CosyProgress = window.CosyProgress || {};
       if (!client || !userId) return false;
 
       try {
+        // Stop delayed upserts first so a queued write cannot race and recreate
+        // a row after the server-side delete completes.
+        for (const [timerKey, timer] of debounceTimers.entries()) {
+          if (timerKey.startsWith(`${userId}::${lessonId}::`)) {
+            clearTimeout(timer);
+            debounceTimers.delete(timerKey);
+          }
+        }
+
         const { error } = await client
           .from('lesson_answers')
           .delete()
@@ -194,13 +203,6 @@ window.CosyProgress = window.CosyProgress || {};
           if (item && item.userId === userId && item.lessonId === lessonId) delete pending[key];
         });
         savePendingToStorage(userId, pending);
-
-        for (const [timerKey, timer] of debounceTimers.entries()) {
-          if (timerKey.startsWith(`${userId}::${lessonId}::`)) {
-            clearTimeout(timer);
-            debounceTimers.delete(timerKey);
-          }
-        }
         return true;
       } catch (err) {
         console.warn('CosyProgress: clear answers error', err);
