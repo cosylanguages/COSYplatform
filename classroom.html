@@ -861,12 +861,11 @@
     // Optional learner-facing rationale authored in lesson content (never teacher notes).
     const explanationsMap = {};
 
-    // Remove metadata from the previous dynamic lesson before parsing another one.
-    // Keep the legacy static-slide answer keys, but never let dynamic lesson keys leak.
+    // Remove metadata from the previous lesson before parsing a dynamic lesson.
+    // Static-slide defaults are initialized above; dynamic lessons must start clean
+    // so legacy or prior-lesson answers cannot accidentally mark fields as correct.
     function resetLessonAnswerMetadata() {
       Object.keys(answersMap).forEach(key => delete answersMap[key]);
-      answersMap['blank-1'] = 'estás';
-      answersMap['blank-2'] = 'gusto';
       Object.keys(explanationsMap).forEach(key => delete explanationsMap[key]);
     }
 
