@@ -2848,7 +2848,10 @@
       });
 
       if (!normUser) {
-        if (input) input.classList.remove('border-red-500', 'border-green-500', 'bg-green-50', 'bg-red-50');
+        if (input) {
+          input.classList.remove('border-red-500', 'border-green-500', 'bg-green-50', 'bg-red-50');
+          input.classList.add('border-cosy-200');
+        }
         if (feedback) feedback.textContent = '';
         return;
       }
