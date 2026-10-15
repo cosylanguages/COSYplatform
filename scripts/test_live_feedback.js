@@ -99,4 +99,11 @@ assert.equal(h.input.classList.contains('border-red-500'), false);
 assert.equal(h.input.classList.contains('border-green-500'), false);
 assert.equal(h.input.classList.contains('border-cosy-200'), true);
 
-console.log('PASS: live feedback correct/incorrect, answer-key hiding, reveal-on-check, and cleared-state styling');
+// Saved answers restore after lesson rendering, and reconnect replays current answers.
+assert.match(html, /restoreSavedAnswers\(currentLessonPath\)/);
+assert.match(html, /CosyProgress\.loadAnswers\(lessonPath\)/);
+assert.match(html, /if \(!isHost && c && c\.open\)/);
+assert.match(html, /c\.send\(\{ type: isChoice \? 'choice' : 'blank'/);
+assert.match(html, /lessonPath !== currentLessonPath/);
+
+console.log('PASS: live feedback, answer-key hiding, cleared-state styling, saved-answer restore, and reconnect replay');
