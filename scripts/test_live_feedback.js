@@ -135,7 +135,7 @@ assert.equal(h.input.classList.contains('border-cosy-200'), true);
 assert.match(html, /restoreSavedAnswers\(currentLessonPath\)/);
 assert.match(html, /CosyProgress\.loadAnswers\(lessonPath\)/);
 assert.match(html, /if \(!isHost && c && c\.open\)/);
-assert.match(html, /c\.send\(\{ type: isChoice \? 'choice' : 'blank'/);
+assert.match(html, /c\.send\(\{\s*type: isChoice \? 'choice' : 'blank'/);
 assert.match(html, /lessonPath !== currentLessonPath/);
 assert.match(html, /conn\.peer === roomId/);
 assert.match(html, /checked: \(el\.type === 'radio' \|\| el\.type === 'checkbox'\)/);
