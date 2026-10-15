@@ -2673,9 +2673,11 @@
           }
           break;
         case 'reset-answers':
-          // Only accept a reset from the room host; student-to-host packets are
-          // filtered by the host's incoming-message allow-list above.
-          if (!isHost && data.lessonPath && data.lessonPath === currentLessonPath) {
+          // Accept reset commands only from the host peer connection. In a
+          // hosted room, conn is the teacher/host connection; in host mode the
+          // incoming participant allow-list rejects this packet type.
+          if (!isHost && conn && conn.open && data.lessonPath &&
+              data.lessonPath === currentLessonPath && currentRole === 'student') {
             clearStudentLessonAnswers(data.lessonPath);
           }
           break;
