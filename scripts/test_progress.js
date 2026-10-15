@@ -14,6 +14,7 @@ const source = fs.readFileSync(path.join(__dirname, '..', 'shared', 'js', 'progr
 function createHarness({ userId = 'student-123', answers = [], readError = false } = {}) {
   const storage = new Map();
   const upserts = [];
+  const deletes = [];
   const context = {
     console,
     Date,
@@ -40,6 +41,18 @@ function createHarness({ userId = 'student-123', answers = [], readError = false
               upserts.push({ payload, options });
               return { error: null };
             },
+            delete() {
+              return {
+                eq(column, userId) {
+                  return {
+                    async eq(lessonColumn, lessonId) {
+                      deletes.push({ column, userId, lessonColumn, lessonId });
+                      return { error: null };
+                    }
+                  };
+                }
+              };
+            },
             select() {
               return {
                 eq() {
@@ -59,7 +72,7 @@ function createHarness({ userId = 'student-123', answers = [], readError = false
   context.window = context;
   vm.createContext(context);
   vm.runInContext(source, context, { filename: 'shared/js/progress.js' });
-  return { context, storage, upserts };
+  return { context, storage, upserts, deletes };
 }
 
 async function main() {
@@ -104,13 +117,24 @@ async function main() {
   const offlineLoaded = await offlineHarness.context.CosyProgress.loadAnswers('lessons/a1/greetings.json');
   assert.deepEqual(JSON.parse(JSON.stringify(offlineLoaded)), { blank_1: 'new local value' });
 
+  // Teacher-triggered reset asks each student to delete only their own lesson rows.
+  await h.context.CosyProgress.saveAnswer('lessons/a1/greetings.json', 'blank_2', 'to clear');
+  assert.equal(await h.context.CosyProgress.clearLessonAnswers('lessons/a1/greetings.json'), true);
+  assert.deepEqual(h.deletes.at(-1), {
+    column: 'student_id',
+    userId: 'student-123',
+    lessonColumn: 'lesson_id',
+    lessonId: 'lessons/a1/greetings.json'
+  });
+  assert.equal(Object.keys(JSON.parse(h.storage.get(pendingKey))).some(key => key.startsWith('lessons/a1/greetings.json::')), false);
+
   // Missing identifiers are ignored instead of writing malformed records.
   await h.context.CosyProgress.saveAnswer('', 'blank_2', 'ignored');
   await h.context.CosyProgress.saveAnswer('lesson-id', '', 'ignored');
   await h.context.CosyProgress.flush();
   assert.equal(h.upserts.length, 1);
 
-  console.log('PASS: progress answer queue, Supabase flush, loadAnswers, and invalid-input guards');
+  console.log('PASS: progress queue, Supabase flush/load, offline fallback, safe lesson reset, and invalid-input guards');
 }
 
 main().catch((error) => {
