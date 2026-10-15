@@ -2676,8 +2676,9 @@
           // Accept reset commands only from the host peer connection. In a
           // hosted room, conn is the teacher/host connection; in host mode the
           // incoming participant allow-list rejects this packet type.
-          if (!isHost && conn && conn.open && data.lessonPath &&
-              data.lessonPath === currentLessonPath && currentRole === 'student') {
+          if (!isHost && conn && conn.open && conn.peer === roomId &&
+              data.lessonPath && data.lessonPath === currentLessonPath &&
+              currentRole === 'student') {
             clearStudentLessonAnswers(data.lessonPath);
           }
           break;
