@@ -6,6 +6,12 @@ The current reset command is sent over PeerJS to students who are connected at t
 
 The PeerJS room ID and room key are generated when a teacher starts a room. They are session credentials, not durable classroom identities. Using either as a permanent class identifier would not reliably reset progress across future sessions and could couple data to a secret.
 
+## Schema audit (current repository migrations)
+
+The current protected-content migration defines `profiles`, `courses`, `course_lessons`, and `access_grants`, but does not define a durable classroom entity or classroom-membership junction table. `access_grants` is course entitlement, not evidence that a teacher owns a live class or that a student belongs to a specific classroom. The PeerJS room identifier is generated per host session.
+
+Therefore the current schema does not provide enough authoritative information to safely implement a classroom-scoped reset yet. Do not use `course_id`, a teacher's role alone, or the ephemeral PeerJS room ID as a substitute for classroom membership. First decide whether COSY should introduce durable classes and memberships or integrate an existing shared schema not present in these migrations.
+
 ## Required model change
 
 1. Introduce a durable `classroom_id` UUID owned by a teacher/class entity already authorized by the platform. Reuse the platform's canonical class ID if one exists; do not mint a second competing class identity.
