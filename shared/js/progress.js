@@ -52,7 +52,7 @@ window.CosyProgress = window.CosyProgress || {};
   function queuePendingItem(userId, lessonId, fieldKey, value, isCorrect) {
     const key = `${lessonId}::${fieldKey}`;
     const stored = getPendingFromStorage(userId);
-    const item = { userId, lessonId, fieldKey, value, isCorrect: isCorrect ?? null, time: Date.now(), revision: ++queueRevision };
+    const item = { userId, lessonId, fieldKey, value, isCorrect: isCorrect ?? null, time: Date.now(), revision: `${Date.now()}-${++queueRevision}-${Math.random().toString(36).slice(2)}` };
     stored[key] = item;
     savePendingToStorage(userId, stored);
     return item.revision;
