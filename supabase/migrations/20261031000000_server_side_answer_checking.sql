@@ -37,8 +37,8 @@ BEGIN
     FROM public.profiles p
     JOIN public.access_grants ag
       ON (ag.user_id = p.id OR ag.student_id = p.id)
-    JOIN public.course_lessons cl ON cl.course_id = ag.course_id
-    JOIN public.courses c ON c.id = cl.course_id
+    JOIN public.courses c ON c.id = COALESCE(ag.course_id, ag.course)
+    JOIN public.course_lessons cl ON cl.course_id = c.id
     JOIN public.lessons l ON l.id = cl.lesson_id
     WHERE p.id = auth.uid()
       AND p.role = 'student'
