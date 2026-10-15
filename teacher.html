@@ -547,6 +547,15 @@
           );
           return;
         }
+        if (serverProfile.role === 'teacher') {
+          const { data: langData } = await client
+            .from('teacher_languages')
+            .select('language')
+            .eq('teacher_id', authData.user.id);
+          if (langData && langData.length > 0) {
+            serverProfile.language_access = langData.map(l => l.language);
+          }
+        }
         authData.profile = serverProfile;
       }
 

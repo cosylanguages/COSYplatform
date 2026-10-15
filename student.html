@@ -511,6 +511,25 @@
       const authData = await window.CosyAuth.requireRole(['student', 'teacher', 'founder']);
       if (!authData) return;
 
+      // Server-enforce role verification directly from Supabase profiles table
+      const client = window.CosyAuth.client;
+      if (client) {
+        const { data: serverProfile, error: profileErr } = await client
+          .from('profiles')
+          .select('id, role, language_access, course_level')
+          .eq('id', authData.user.id)
+          .maybeSingle();
+
+        if (profileErr || !serverProfile || !['student', 'teacher', 'founder'].includes(serverProfile.role)) {
+          renderAccessDenied(
+            "Access Denied (Server Verified)",
+            "Server verification failed. Your account role is not authorized."
+          );
+          return;
+        }
+        authData.profile = serverProfile;
+      }
+
       const userEmail = authData.user ? authData.user.email : '';
       document.getElementById('user-info').innerText = `Learner: ${userEmail || 'Student'}`;
 

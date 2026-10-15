@@ -20,7 +20,24 @@
     }
 
     if (client) {
-      // First try canonical 'lessons' protected contract table if client is available
+      // 1. Try student_lesson_content for student role (RLS-guarded sanitized student body)
+      if (studentView) {
+        try {
+          const { data: scData, error: scError } = await client
+            .from('lesson_student_content')
+            .select('body')
+            .eq('lesson_id', lessonPath)
+            .maybeSingle();
+
+          if (!scError && scData && typeof scData.body === 'string') {
+            return scData.body;
+          }
+        } catch (e) {
+          // Fallback to legacy/public checks
+        }
+      }
+
+      // 2. Try canonical 'lessons' / 'lesson_protected' for teacher/founder
       try {
         const { data: contractData, error: contractError } = await client
           .from('lessons')
@@ -35,6 +52,7 @@
         // Fallback to legacy content tables
       }
 
+      // 3. Fallback to legacy tables if path matches legacy scheme
       if (lessonPath.startsWith('lessons/')) {
         const table = studentView ? 'student_lesson_content' : 'lesson_content';
         const column = studentView ? 'content' : 'xml_content';
