@@ -150,9 +150,9 @@ assert.match(html, /explanationsMap\[id\]/);
 // Switching lessons must not leave the previous lesson's correct answers or
 // explanations in the shared feedback maps.
 assert.match(html, /function resetLessonAnswerMetadata\(\)/);
-const metadataReset = html.match(/function resetLessonAnswerMetadata\(\) \{([\\s\\S]*?)\\n    \}/);
+const metadataReset = html.match(/function resetLessonAnswerMetadata\(\) \{([\s\S]*?)\n    \}/);
 assert.ok(metadataReset, 'lesson metadata reset helper must be extractable');
-assert.doesNotMatch(metadataReset[1], /answersMap\[['"]blank-[12]['"]\]\\s*=/,
+assert.doesNotMatch(metadataReset[1], /answersMap\[['"]blank-[12]['"]\]\s*=/,
   'dynamic lesson reset must not reintroduce legacy static answer keys');
 assert.match(html, /function parseXmlLessonToSlides\(xmlText\) \{\s*resetLessonAnswerMetadata\(\);/);
 assert.match(html, /function parseJsonLessonToSlides\(jsonData\) \{\s*resetLessonAnswerMetadata\(\);/);
