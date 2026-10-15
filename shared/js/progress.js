@@ -52,19 +52,21 @@ window.CosyProgress = window.CosyProgress || {};
   function queuePendingItem(userId, lessonId, fieldKey, value, isCorrect) {
     const key = `${lessonId}::${fieldKey}`;
     const stored = getPendingFromStorage(userId);
-    stored[key] = { userId, lessonId, fieldKey, value, isCorrect: isCorrect ?? null, time: Date.now() };
+    const item = { userId, lessonId, fieldKey, value, isCorrect: isCorrect ?? null, time: Date.now(), revision: ++queueRevision };
+    stored[key] = item;
     savePendingToStorage(userId, stored);
+    return item.revision;
   }
 
-  function removePendingItem(userId, lessonId, fieldKey) {
+  function removePendingItem(userId, lessonId, fieldKey, expectedRevision) {
     const key = `${lessonId}::${fieldKey}`;
     const stored = getPendingFromStorage(userId);
-    if (stored[key]) {
+    // An older in-flight request must never erase a newer locally queued value.
+    if (stored[key] && stored[key].revision === expectedRevision) {
       delete stored[key];
       savePendingToStorage(userId, stored);
     }
   }
-
   async function performUpsert(userId, lessonId, fieldKey, value, isCorrect, expectedRevision) {
     const client = getClient();
     if (!client) return false;
