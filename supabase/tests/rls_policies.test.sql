@@ -28,7 +28,14 @@ BEGIN
   PERFORM set_config('request.jwt.claim.sub', '', true);
   PERFORM set_config('request.jwt.claims', '', true);
 END;
-$$;
+$;
+
+-- The helpers are invoked again after clear_authentication() switches to anon,
+-- and authenticate_as() itself switches to authenticated for later assertions.
+-- Grant only the test helper schema/functions; this file runs in the disposable
+-- Supabase test database, not as a production migration.
+GRANT USAGE ON SCHEMA tests TO anon, authenticated;
+GRANT EXECUTE ON ALL FUNCTIONS IN SCHEMA tests TO anon, authenticated;
 
 -- Setup test users & test data
 CREATE TEMP TABLE IF NOT EXISTS test_users (
