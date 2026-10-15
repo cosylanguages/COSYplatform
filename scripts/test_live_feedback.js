@@ -147,4 +147,11 @@ assert.match(html, /case 'reset-answers'/);
 assert.match(html, /clearStudentLessonAnswers\(data\.lessonPath\)/);
 assert.match(html, /explanationsMap\[id\]/);
 
-console.log('PASS: live feedback, answer-key hiding, cleared-state styling, saved-answer restore, and reconnect replay');
+// Switching lessons must not leave the previous lesson's correct answers or
+// explanations in the shared feedback maps.
+assert.match(html, /function resetLessonAnswerMetadata\(\)/);
+assert.match(html, /function parseXmlLessonToSlides\(xmlText\) \{\s*resetLessonAnswerMetadata\(\);/);
+assert.match(html, /function parseJsonLessonToSlides\(jsonData\) \{\s*resetLessonAnswerMetadata\(\);/);
+assert.match(html, /Object\.keys\(explanationsMap\)\.forEach\(key => delete explanationsMap\[key\]\)/);
+
+console.log('PASS: live feedback, answer-key hiding, cleared-state styling, saved-answer restore, reconnect replay, and lesson metadata isolation');
