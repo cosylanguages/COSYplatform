@@ -50,6 +50,7 @@ function createHarness() {
   const saved = [];
   const context = {
     answersMap: { 'blank-1': 'hello' },
+    explanationsMap: { 'blank-1': 'Use this greeting when meeting someone.' },
     currentRole: 'student',
     currentLessonPath: 'lessons/a1/greetings.json',
     window: { CosyProgress: { saveAnswer(...args) { saved.push(args); } } },
@@ -78,6 +79,7 @@ h.context.checkAnswerForField('blank-1', false);
 assert.match(h.feedback.children[0].textContent, /Correct/);
 assert.equal(h.input.classList.contains('border-green-500'), true);
 assert.equal(h.saved.at(-1)[3], true);
+assert.match(h.feedback.children[1].textContent, /Why: Use this greeting/);
 
 // Incorrect answers get a retry prompt, never the answer key during live practice.
 h.input.value = 'goodbye';
