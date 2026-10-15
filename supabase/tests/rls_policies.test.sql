@@ -3,7 +3,7 @@
 
 BEGIN;
 
-SELECT plan(20);
+SELECT plan(23);
 
 -- Setup test helper schema for auth mocking
 CREATE SCHEMA IF NOT EXISTS tests;
@@ -258,6 +258,30 @@ SELECT results_eq(
     'SELECT COUNT(*)::INTEGER FROM public.lesson_answers',
     ARRAY[0],
     'TC-20 [PASS]: Founder role does not bypass private student answer isolation'
+);
+
+
+-- TEST GROUP 6: Server-side answer checking never returns answer keys
+SELECT tests.authenticate_as('33333333-3333-3333-3333-333333333333'::UUID);
+
+SELECT is(
+    public.check_lesson_answer('en:a1:nice-to-meet-you', 'q1', 'HELLO'),
+    TRUE,
+    'TC-21 [PASS]: Granted student can validate a correct answer without reading the key'
+);
+
+SELECT is(
+    public.check_lesson_answer('en:a1:nice-to-meet-you', 'q1', 'not the answer'),
+    FALSE,
+    'TC-22 [PASS]: Incorrect answer returns only false'
+);
+
+SELECT tests.authenticate_as('44444444-4444-4444-4444-444444444444'::UUID);
+
+SELECT is(
+    public.check_lesson_answer('en:a1:nice-to-meet-you', 'q1', 'hello'),
+    FALSE,
+    'TC-23 [PASS]: Ungranted student cannot use answer-checking RPC to validate answers'
 );
 
 SELECT * FROM finish();
