@@ -81,6 +81,14 @@ assert.equal(h.input.classList.contains('border-green-500'), true);
 assert.equal(h.saved.at(-1)[3], true);
 assert.match(h.feedback.children[1].textContent, /Why: Use this greeting/);
 
+// Authored explanations are inserted as text, not interpreted as HTML.
+{
+  const safe = createHarness();
+  safe.context.explanationsMap['blank-1'] = '<img src=x onerror=alert(1)>';
+  safe.context.checkAnswerForField('blank-1', false);
+  assert.equal(safe.feedback.children[1].textContent, 'Why: <img src=x onerror=alert(1)>');
+}
+
 // Incorrect answers get a retry prompt, never the answer key during live practice.
 h.input.value = 'goodbye';
 h.context.checkAnswerForField('blank-1', false);
@@ -146,6 +154,7 @@ assert.match(html, /type: 'reset-answers', lessonPath: currentLessonPath/);
 assert.match(html, /case 'reset-answers'/);
 assert.match(html, /clearStudentLessonAnswers\(data\.lessonPath\)/);
 assert.match(html, /explanationsMap\[id\]/);
+assert.doesNotMatch(html, /explanationsMap\[[^\]]+\]\s*=\s*tn\./, 'teacher-note content must not be copied into learner explanations');
 
 // Switching lessons must not leave the previous lesson's correct answers or
 // explanations in the shared feedback maps.
