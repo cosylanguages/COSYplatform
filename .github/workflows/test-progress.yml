@@ -20,3 +20,6 @@ jobs:
 
       - name: Test student answer persistence
         run: node scripts/test_progress.js
+
+      - name: Test live classroom answer feedback
+        run: node scripts/test_live_feedback.js
