@@ -853,6 +853,8 @@
       'blank-1': 'estás',
       'blank-2': 'gusto'
     };
+    // Optional learner-facing rationale authored in lesson content (never teacher notes).
+    const explanationsMap = {};
 
     // User Authentication & Profile
     let userProfile = null;
@@ -1857,6 +1859,8 @@
           let ansList = [];
           answers.forEach(a => ansList.push(a.textContent.trim()));
           if (ansList.length > 0) answersMap[fKey] = ansList[0];
+          const inputExplanation = child.getAttribute("explanation");
+          if (inputExplanation) explanationsMap[fKey] = inputExplanation;
 
           const safePlaceholder = escapeHtml(child.getAttribute("placeholder") || "Type here...");
           const safeAnsKey = escapeHtml(ansList.join(' / '));
@@ -1877,6 +1881,8 @@
             }
           });
           if (selectAns.length > 0) answersMap[fKey] = selectAns;
+          const selectExplanation = child.getAttribute("explanation");
+          if (selectExplanation) explanationsMap[fKey] = selectExplanation;
 
           output += `<select id="${fKey}" onchange="handleChoiceInput('${fKey}', this.value)" class="px-3 py-1.5 border border-gray-300 rounded-lg text-sm my-2 focus:ring-2 focus:ring-cosy-500"><option value="">-- Choose option --</option>`;
           items.forEach(it => {
@@ -1899,6 +1905,8 @@
               output += `<label class="flex items-center space-x-2 text-xs p-2 rounded-lg border border-gray-200 bg-white hover:bg-cosy-50 cursor-pointer"><input type="radio" name="${qKey}" value="${optVal}" onchange="handleChoiceInput('${qKey}', this.value)"><span>${optVal}</span> ${currentRole === 'teacher' && isCorrect ? '<span class="text-green-600 font-bold ml-auto">✔️ Correct</span>' : ''}</label>`;
             });
             if (correctOpts.length > 0) answersMap[qKey] = correctOpts;
+            const questionExplanation = q.getAttribute("explanation");
+            if (questionExplanation) explanationsMap[qKey] = questionExplanation;
             output += `</div><div id="feedback-${qKey}" class="text-xs font-medium mt-2"></div></div>`;
           });
         } else if (tag === "cosy-essay") {
@@ -1942,6 +1950,7 @@
             output += `<blockquote class="bg-gray-50 border-l-4 border-cosy-500 p-3 my-2 rounded-r-lg text-sm whitespace-pre-wrap">${escapeHtml(el.content || '')}</blockquote>`;
           } else if (el.type === "input") {
             if (el.answers && el.answers.length > 0) answersMap[fKey] = el.answers[0];
+            if (typeof el.explanation === 'string' && el.explanation.trim()) explanationsMap[fKey] = el.explanation.trim();
             output += `
               <div class="my-3 space-y-1">
                 <input type="text" id="${fKey}" oninput="handleBlankInput('${fKey}', this.value)" placeholder="${el.placeholder || "Type response..."}" class="px-3 py-1.5 border border-gray-300 rounded-lg text-sm w-full max-w-sm focus:ring-2 focus:ring-cosy-500 font-medium">
@@ -1950,6 +1959,7 @@
             `;
           } else if (el.type === "test") {
             if (el.answers && el.answers.length > 0) answersMap[fKey] = el.answers;
+            if (typeof el.explanation === 'string' && el.explanation.trim()) explanationsMap[fKey] = el.explanation.trim();
             output += `<div class="bg-gray-50 border border-gray-200 rounded-xl p-4 my-3"><strong class="text-sm text-gray-800">${escapeHtml(el.content || '')}</strong><div class="space-y-1.5 mt-2">`;
             if (el.options) {
               el.options.forEach(opt => {
@@ -2933,6 +2943,13 @@
             : '↻ Not quite—try again.';
         }
         feedback.appendChild(span);
+        const explanation = explanationsMap[id];
+        if (explanation) {
+          const rationale = document.createElement('div');
+          rationale.className = 'mt-1 text-gray-600 font-normal';
+          rationale.textContent = `Why: ${explanation}`;
+          feedback.appendChild(rationale);
+        }
       }
 
       if (currentRole === 'student' && window.CosyProgress) {
