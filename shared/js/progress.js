@@ -135,6 +135,15 @@ window.CosyProgress = window.CosyProgress || {};
       const userId = await getUserId();
       if (!userId) return {};
 
+      // Keep this user's unsynced answers usable if the server read is unavailable.
+      const pendingAnswers = {};
+      const pending = getPendingFromStorage(userId);
+      Object.values(pending).forEach(item => {
+        if (item && item.userId === userId && item.lessonId === lessonId && item.fieldKey) {
+          pendingAnswers[item.fieldKey] = item.value;
+        }
+      });
+
       try {
         const { data, error } = await client
           .from('lesson_answers')
@@ -142,16 +151,18 @@ window.CosyProgress = window.CosyProgress || {};
           .eq('student_id', userId)
           .eq('lesson_id', lessonId);
 
-        if (error || !data) return {};
+        if (error || !data) return pendingAnswers;
 
         const answers = {};
         data.forEach(item => {
           answers[item.field_key] = item.value;
         });
-        return answers;
+
+        // Locally queued answers are newer than the last successful server sync.
+        return Object.assign(answers, pendingAnswers);
       } catch (err) {
         console.warn('CosyProgress: loadAnswers error', err);
-        return {};
+        return pendingAnswers;
       }
     },
 
