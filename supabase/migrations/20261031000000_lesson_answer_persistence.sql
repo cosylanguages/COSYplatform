@@ -46,4 +46,7 @@ CREATE POLICY "Students delete own lesson answers"
   USING (student_id = (SELECT auth.uid()));
 
 REVOKE ALL ON public.lesson_answers FROM anon;
+-- Permit SELECT at the SQL privilege layer so RLS can enforce an empty result
+-- for anonymous callers; no policy grants anon access to any answer rows.
+GRANT SELECT ON public.lesson_answers TO anon;
 GRANT SELECT, INSERT, UPDATE, DELETE ON public.lesson_answers TO authenticated;
