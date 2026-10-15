@@ -471,6 +471,9 @@
             Full Catalog
           </button>
         </div>
+        <button data-requires="clear-answers" onclick="resetClassAnswers()" class="px-3 py-1.5 bg-red-600 text-white font-semibold rounded-lg text-xs hover:bg-red-700 transition touch-target">
+          Reset Student Answers
+        </button>
 
         <!-- Whiteboard Drawing Tools -->
         <div class="flex items-center space-x-2">
@@ -553,9 +556,6 @@
             <div id="feedback-2" class="text-xs font-medium min-h-[18px]"></div>
             <button onclick="checkAnswers()" class="px-3 py-1.5 bg-cosy-600 text-white font-semibold rounded-lg text-xs hover:bg-cosy-700 transition touch-target">
               Check Answers
-            </button>
-            <button data-requires="clear-answers" onclick="resetClassAnswers()" class="px-3 py-1.5 bg-red-600 text-white font-semibold rounded-lg text-xs hover:bg-red-700 transition touch-target">
-              Reset Student Answers
             </button>
           </div>
         </div>
