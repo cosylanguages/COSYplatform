@@ -11,8 +11,8 @@ const vm = require('node:vm');
 
 const source = fs.readFileSync(path.join(__dirname, '..', 'shared', 'js', 'progress.js'), 'utf8');
 
-function createHarness({ userId = 'student-123', answers = [], readError = false, deleteError = false, deferUpsert = false } = {}) {
-  const storage = new Map();
+function createHarness({ userId = 'student-123', answers = [], readError = false, deleteError = false, deferUpsert = false, storageMap = null } = {}) {
+  const storage = storageMap || new Map();
   const upserts = [];
   const deletes = [];
   let releaseUpsert;
@@ -137,6 +137,24 @@ async function main() {
     JSON.parse(raceHarness.storage.get(racePendingKey))['lessons/a1/greetings.json::blank_race'].value,
     'newer value',
     'older sync completion must preserve the newer queued answer'
+  );
+
+  // Separate tabs have independent revision counters but share localStorage.
+  // A stale tab's successful sync must not remove the other tab's newer value.
+  const sharedTabStorage = new Map();
+  const tabA = createHarness({ deferUpsert: true, storageMap: sharedTabStorage });
+  const tabB = createHarness({ storageMap: sharedTabStorage });
+  await tabA.context.CosyProgress.saveAnswer('lessons/a1/greetings.json', 'blank_cross_tab', 'tab A old value');
+  const tabAPendingKey = 'cosy_pending_answers_student-123';
+  const tabAFlush = tabA.context.CosyProgress.flush();
+  while (tabA.upserts.length === 0) await new Promise(resolve => setTimeout(resolve, 0));
+  await tabB.context.CosyProgress.saveAnswer('lessons/a1/greetings.json', 'blank_cross_tab', 'tab B newer value');
+  tabA.releaseUpsert();
+  await tabAFlush;
+  assert.equal(
+    JSON.parse(sharedTabStorage.get(tabAPendingKey))['lessons/a1/greetings.json::blank_cross_tab'].value,
+    'tab B newer value',
+    'one tab must not clear another tab’s newer queued answer'
   );
 
   // Loading returns saved field values from the authenticated student's rows.
