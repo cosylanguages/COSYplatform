@@ -107,5 +107,10 @@ assert.match(html, /CosyProgress\.loadAnswers\(lessonPath\)/);
 assert.match(html, /if \(!isHost && c && c\.open\)/);
 assert.match(html, /c\.send\(\{ type: isChoice \? 'choice' : 'blank'/);
 assert.match(html, /lessonPath !== currentLessonPath/);
+assert.match(html, /data-requires="clear-answers" onclick="resetClassAnswers\(\)"/);
+assert.match(html, /type: 'reset-answers', lessonPath: currentLessonPath/);
+assert.match(html, /case 'reset-answers'/);
+assert.match(html, /clearStudentLessonAnswers\(data\.lessonPath\)/);
+assert.match(html, /explanationsMap\[id\]/);
 
 console.log('PASS: live feedback, answer-key hiding, cleared-state styling, saved-answer restore, and reconnect replay');
