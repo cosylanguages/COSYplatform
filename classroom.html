@@ -126,7 +126,8 @@
     body:not(.can-video-provider) [data-requires="video-provider"],
     body:not(.can-material-select) [data-requires="material-select"],
     body:not(.can-clear-board) [data-requires="clear-board"],
-    body:not(.can-activities) [data-requires="activities"] {
+    body:not(.can-activities) [data-requires="activities"],
+    body:not(.can-clear-answers) [data-requires="clear-answers"] {
       display: none !important;
     }
   </style>
@@ -553,6 +554,9 @@
             <button onclick="checkAnswers()" class="px-3 py-1.5 bg-cosy-600 text-white font-semibold rounded-lg text-xs hover:bg-cosy-700 transition touch-target">
               Check Answers
             </button>
+            <button data-requires="clear-answers" onclick="resetClassAnswers()" class="px-3 py-1.5 bg-red-600 text-white font-semibold rounded-lg text-xs hover:bg-red-700 transition touch-target">
+              Reset Student Answers
+            </button>
           </div>
         </div>
 
@@ -793,6 +797,7 @@
       'video-provider': ['teacher'],
       'material-select': ['teacher'],
       'clear-board': ['teacher'],
+      'clear-answers': ['teacher'],
       'activities': ['teacher']
     };
 
@@ -1080,7 +1085,7 @@
     }
 
     function applyCapabilities() {
-      const features = ['lesson-mode', 'breakout', 'video-provider', 'material-select', 'clear-board', 'activities'];
+      const features = ['lesson-mode', 'breakout', 'video-provider', 'material-select', 'clear-board', 'clear-answers', 'activities'];
       features.forEach(f => {
         if (can(f)) {
           document.body.classList.add(`can-${f}`);
@@ -1981,6 +1986,50 @@
       return output;
     }
 
+    // Ask each connected student to clear only their own saved answers for this lesson.
+    async function resetClassAnswers() {
+      if (!can('clear-answers') || currentRole !== 'teacher') {
+        showTeacherOnlyToast();
+        return;
+      }
+      if (!isHost) {
+        if (window.CosyUI && window.CosyUI.toast) CosyUI.toast('Only the teacher hosting this room can reset student answers.', 'warning');
+        return;
+      }
+      if (!currentLessonPath || currentLessonPath === 'default') {
+        if (window.CosyUI && window.CosyUI.toast) CosyUI.toast('Load a lesson before resetting student answers.', 'warning');
+        return;
+      }
+      if (!window.confirm('Reset saved answers for every connected student in this lesson? This cannot be undone.')) return;
+      sendData({ type: 'reset-answers', lessonPath: currentLessonPath });
+      if (window.CosyUI && window.CosyUI.toast) CosyUI.toast('Reset request sent to connected students.', 'info');
+    }
+
+    async function clearStudentLessonAnswers(lessonPath) {
+      if (!lessonPath || lessonPath !== currentLessonPath || currentRole !== 'student') return;
+      if (!window.CosyProgress || typeof window.CosyProgress.clearLessonAnswers !== 'function') {
+        if (window.CosyUI && window.CosyUI.toast) CosyUI.toast('Could not reset saved answers. Please reconnect and try again.', 'error');
+        return;
+      }
+      const cleared = await window.CosyProgress.clearLessonAnswers(lessonPath);
+      if (!cleared) {
+        if (window.CosyUI && window.CosyUI.toast) CosyUI.toast('Answers were not reset on the server. Check your connection or permissions and retry.', 'error');
+        return;
+      }
+
+      document.querySelectorAll('.slide-content input, .slide-content textarea, .slide-content select').forEach(el => {
+        if (el.type === 'radio' || el.type === 'checkbox') el.checked = false;
+        else el.value = '';
+        el.classList.remove('border-red-500', 'border-green-500', 'bg-green-50', 'bg-red-50');
+        if (el.classList.contains('border-cosy-200') || el.classList.contains('border-gray-300') ||
+            el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.tagName === 'SELECT') {
+          el.classList.add('border-cosy-200');
+        }
+      });
+      document.querySelectorAll('.slide-content [id^="feedback-"]').forEach(el => { el.textContent = ''; });
+      if (window.CosyUI && window.CosyUI.toast) CosyUI.toast('Your saved answers for this lesson were reset by the teacher.', 'success');
+    }
+
     // Role Switching Logic
     function switchRole(role) {
       const actualUserRole = (userProfile && userProfile.role) ? userProfile.role.toLowerCase() : 'student';
@@ -2621,6 +2670,13 @@
           if (isHost || currentRole === 'teacher' || (userProfile && userProfile.role === 'founder')) {
             addChatMessage('System', `✋ Student in ${data.roomName || 'breakout'} requested help!`);
             if (window.CosyUI && window.CosyUI.toast) CosyUI.toast(`✋ Student in ${data.roomName || 'breakout'} requested help!`, 'warning');
+          }
+          break;
+        case 'reset-answers':
+          // Only accept a reset from the room host; student-to-host packets are
+          // filtered by the host's incoming-message allow-list above.
+          if (!isHost && data.lessonPath && data.lessonPath === currentLessonPath) {
+            clearStudentLessonAnswers(data.lessonPath);
           }
           break;
         case 'note-sync':
