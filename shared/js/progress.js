@@ -11,6 +11,7 @@ window.CosyProgress = window.CosyProgress || {};
   const debounceTimers = new Map();
   const PENDING_STORAGE_KEY_PREFIX = 'cosy_pending_answers';
   const DEBOUNCE_DELAY = 800; // ms
+  let queueRevision = 0;
 
   function getClient() {
     return (global.CosyAuth && global.CosyAuth.client) ? global.CosyAuth.client : null;
@@ -64,7 +65,7 @@ window.CosyProgress = window.CosyProgress || {};
     }
   }
 
-  async function performUpsert(userId, lessonId, fieldKey, value, isCorrect) {
+  async function performUpsert(userId, lessonId, fieldKey, value, isCorrect, expectedRevision) {
     const client = getClient();
     if (!client) return false;
 
@@ -89,7 +90,7 @@ window.CosyProgress = window.CosyProgress || {};
         console.warn('CosyProgress: upsert error', error);
         return false;
       }
-      removePendingItem(currentUserId, lessonId, fieldKey);
+      removePendingItem(currentUserId, lessonId, fieldKey, expectedRevision);
       return true;
     } catch (err) {
       console.warn('CosyProgress: save error', err);
@@ -107,7 +108,7 @@ window.CosyProgress = window.CosyProgress || {};
       const userId = await getUserId();
       if (!userId) return;
 
-      queuePendingItem(userId, lessonId, fieldKey, value, isCorrect);
+      const revision = queuePendingItem(userId, lessonId, fieldKey, value, isCorrect);
 
       const timerKey = `${userId}::${lessonId}::${fieldKey}`;
       if (debounceTimers.has(timerKey)) {
@@ -116,7 +117,7 @@ window.CosyProgress = window.CosyProgress || {};
 
       const timer = setTimeout(async () => {
         debounceTimers.delete(timerKey);
-        await performUpsert(userId, lessonId, fieldKey, value, isCorrect);
+        await performUpsert(userId, lessonId, fieldKey, value, isCorrect, revision);
       }, DEBOUNCE_DELAY);
 
       debounceTimers.set(timerKey, timer);
@@ -243,7 +244,7 @@ window.CosyProgress = window.CosyProgress || {};
 
       for (const [key, item] of entries) {
         if (item.userId && item.userId !== currentUserId) continue;
-        const success = await performUpsert(currentUserId, item.lessonId, item.fieldKey, item.value, item.isCorrect);
+        const success = await performUpsert(currentUserId, item.lessonId, item.fieldKey, item.value, item.isCorrect, item.revision);
         if (!success) {
           break;
         }
