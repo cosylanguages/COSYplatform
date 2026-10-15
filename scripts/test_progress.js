@@ -11,10 +11,12 @@ const vm = require('node:vm');
 
 const source = fs.readFileSync(path.join(__dirname, '..', 'shared', 'js', 'progress.js'), 'utf8');
 
-function createHarness({ userId = 'student-123', answers = [], readError = false, deleteError = false } = {}) {
+function createHarness({ userId = 'student-123', answers = [], readError = false, deleteError = false, deferUpsert = false } = {}) {
   const storage = new Map();
   const upserts = [];
   const deletes = [];
+  let releaseUpsert;
+  const upsertGate = new Promise(resolve => { releaseUpsert = resolve; });
   const serverRows = answers.map(row => ({
     student_id: userId,
     lesson_id: 'lessons/a1/greetings.json',
@@ -44,6 +46,7 @@ function createHarness({ userId = 'student-123', answers = [], readError = false
           return {
             upsert: async (payload, options) => {
               upserts.push({ payload, options });
+              if (deferUpsert) await upsertGate;
               const index = serverRows.findIndex(row =>
                 row.student_id === payload.student_id &&
                 row.lesson_id === payload.lesson_id &&
@@ -96,7 +99,7 @@ function createHarness({ userId = 'student-123', answers = [], readError = false
   context.window = context;
   vm.createContext(context);
   vm.runInContext(source, context, { filename: 'shared/js/progress.js' });
-  return { context, storage, upserts, deletes, serverRows };
+  return { context, storage, upserts, deletes, serverRows, releaseUpsert };
 }
 async function main() {
   // Saving queues a durable offline copy immediately; flush persists it to Supabase.
@@ -120,6 +123,21 @@ async function main() {
   });
   assert.equal(h.upserts[0].options.onConflict, 'student_id,lesson_id,field_key');
   assert.equal(JSON.parse(h.storage.get(pendingKey))['lessons/a1/greetings.json::blank_1'], undefined);
+
+  // A successful older in-flight upsert must not remove a newer queued answer.
+  const raceHarness = createHarness({ deferUpsert: true });
+  await raceHarness.context.CosyProgress.saveAnswer('lessons/a1/greetings.json', 'blank_race', 'older value');
+  const racePendingKey = 'cosy_pending_answers_student-123';
+  const oldFlush = raceHarness.context.CosyProgress.flush();
+  while (raceHarness.upserts.length === 0) await new Promise(resolve => setTimeout(resolve, 0));
+  await raceHarness.context.CosyProgress.saveAnswer('lessons/a1/greetings.json', 'blank_race', 'newer value');
+  raceHarness.releaseUpsert();
+  await oldFlush;
+  assert.equal(
+    JSON.parse(raceHarness.storage.get(racePendingKey))['lessons/a1/greetings.json::blank_race'].value,
+    'newer value',
+    'older sync completion must preserve the newer queued answer'
+  );
 
   // Loading returns saved field values from the authenticated student's rows.
   const loadedHarness = createHarness({
