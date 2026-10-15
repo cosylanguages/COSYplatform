@@ -322,9 +322,11 @@ The pilot course `general-en-a1` is seeded via `scripts/seed_pilot.js`.
 2. **Course & Lesson Extraction:** Extracts metadata for `courses`, deduplicates unique lessons across roadmaps (`lessons.id`), and generates stable placement IDs (`course_lessons.placement_id`).
 3. **Content Separation:** Sanitizes student bodies into `lesson_student_content` and protected notes/answers into `lesson_protected`.
 
-### 7.2 Ingestion Plan for PR #13 Science Lessons
-- **Constraint:** PR #13 must **not** be merged, touched, or edited by automated agents.
+### 7.2 Ingestion Plan for PR #13 Science Lessons (Zero-Merge Policy)
+- **Constraint:** PR #13 is **never** merged onto `main`.
 - **Procedure:**
-  1. Once PR #13 is reviewed and merged by the repository owner in due course, run `scripts/ingest_roadmaps.js` over the newly added XML/JSON files.
-  2. The parser will extract `<cosy-teacher-notes>` tags and answer keys into protected `lesson_protected` table records.
-  3. The public preview view will immediately expose only lesson titles and summaries, maintaining 100% protection of answer keys and paid session materials.
+  1. Run `scripts/ingest_roadmaps.js --source origin/pr/13` (or pointing to local folder / PR branch ref).
+  2. The parser uses `git show` / file reader to load science lesson XML/JSON files directly from the PR branch without checking out or merging PR #13 onto `main`.
+  3. `<cosy-teacher-notes>` tags and answer keys are automatically separated and saved into `lesson_protected`.
+  4. Sanitized bodies are saved into `lesson_student_content`, and metadata into `courses` and `lessons`.
+  5. The public preview view exposes only titles, levels, and summaries in `course_preview`.

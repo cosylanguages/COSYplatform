@@ -8,13 +8,19 @@
  * - lesson_student_content (sanitized body)
  * - lesson_protected (answer keys & teacher notes)
  *
+ * Support for reading lesson content from external sources without merging branches:
+ *   --source <local folder path OR git ref>
+ *
  * Usage:
  *   node scripts/ingest_roadmaps.js --dry-run
- *   SUPABASE_URL=... SUPABASE_SERVICE_ROLE_KEY=... node scripts/ingest_roadmaps.js
+ *   node scripts/ingest_roadmaps.js --source ./seed_data --dry-run
+ *   node scripts/ingest_roadmaps.js --source origin/pr/13 --dry-run
+ *   SUPABASE_URL=... SUPABASE_SERVICE_ROLE_KEY=... node scripts/ingest_roadmaps.js --source origin/pr/13
  */
 
 const fs = require('fs');
 const path = require('path');
+const { execSync } = require('child_process');
 
 const ROADMAPS_DIR = path.join(__dirname, '../roadmaps');
 const LOCAL_SOURCE_DIRS = [
@@ -28,8 +34,17 @@ const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABA
 
 const isDryRun = process.argv.includes('--dry-run') || SUPABASE_URL.includes('example.supabase.co');
 
+function getSourceArg() {
+  const idx = process.argv.indexOf('--source');
+  if (idx !== -1 && idx + 1 < process.argv.length) {
+    return process.argv[idx + 1];
+  }
+  return null;
+}
+
+const customSource = getSourceArg();
+
 function parseFilenameMetadata(filename) {
-  // Filename format: e.g. general-en-a1.json, cinema-en-b1.json, pronunciation-fr-c2.json
   const basename = path.basename(filename, '.json');
   if (basename === 'introductory-english') {
     return { courseId: 'introductory-english', courseType: 'general', language: 'en', cefr: 'a0' };
@@ -46,13 +61,40 @@ function parseFilenameMetadata(filename) {
   return { courseId: basename, courseType: 'general', language: 'en', cefr: 'a1' };
 }
 
-function locateLocalLessonFile(relativeFilePath) {
-  for (const baseDir of LOCAL_SOURCE_DIRS) {
-    const fullPath = path.join(baseDir, relativeFilePath.replace(/^lessons\//, ''));
-    if (fs.existsSync(fullPath)) {
-      return fullPath;
+function fetchContentFromSource(relativeFilePath, source) {
+  if (!relativeFilePath) return null;
+  const normalizedRelPath = relativeFilePath.replace(/^\.\//, '');
+
+  if (source) {
+    // 1. Check if source is a local directory
+    const resolvedPath = path.resolve(source, normalizedRelPath.replace(/^lessons\//, ''));
+    if (fs.existsSync(resolvedPath) && fs.statSync(resolvedPath).isFile()) {
+      return fs.readFileSync(resolvedPath, 'utf8');
+    }
+    const resolvedDirect = path.resolve(source, normalizedRelPath);
+    if (fs.existsSync(resolvedDirect) && fs.statSync(resolvedDirect).isFile()) {
+      return fs.readFileSync(resolvedDirect, 'utf8');
+    }
+
+    // 2. Check if source is a git ref
+    try {
+      const gitOutput = execSync(`git show ${source}:${normalizedRelPath}`, { encoding: 'utf8', stdio: ['pipe', 'pipe', 'ignore'] });
+      if (gitOutput && gitOutput.trim().length > 0) {
+        return gitOutput;
+      }
+    } catch (e) {
+      // Git show failed for this path
     }
   }
+
+  // Fallback to local default search dirs
+  for (const baseDir of LOCAL_SOURCE_DIRS) {
+    const fullPath = path.join(baseDir, normalizedRelPath.replace(/^lessons\//, ''));
+    if (fs.existsSync(fullPath) && fs.statSync(fullPath).isFile()) {
+      return fs.readFileSync(fullPath, 'utf8');
+    }
+  }
+
   return null;
 }
 
@@ -84,6 +126,9 @@ function extractProtectedContent(rawContent) {
 async function ingestRoadmaps() {
   console.log('=== COSYplatform Roadmap Ingestion Tool ===');
   console.log(`Dry run mode: ${isDryRun ? 'YES' : 'NO'}`);
+  if (customSource) {
+    console.log(`Source location / git ref: ${customSource}`);
+  }
 
   const files = fs.readdirSync(ROADMAPS_DIR).filter(f => f.endsWith('.json'));
   console.log(`Found ${files.length} roadmap files in roadmaps/\n`);
@@ -174,9 +219,8 @@ async function ingestRoadmaps() {
       }
 
       if (item.lessonFile) {
-        const localFile = locateLocalLessonFile(item.lessonFile);
-        if (localFile) {
-          const rawContent = fs.readFileSync(localFile, 'utf8');
+        const rawContent = fetchContentFromSource(item.lessonFile, customSource);
+        if (rawContent) {
           const sanitized = sanitizeStudentContent(rawContent);
           const protectedItems = extractProtectedContent(rawContent);
 
@@ -203,7 +247,7 @@ async function ingestRoadmaps() {
   console.log(`- Total lessonFile references: ${totalLessonFileRefs}`);
   console.log(`- Deduplicated unique lessons: ${lessonsMap.size}`);
   console.log(`- Total placement records: ${courseLessonsMap.size}`);
-  console.log(`- Local student bodies found: ${studentContentMap.size}`);
+  console.log(`- Local/Remote student bodies found: ${studentContentMap.size}`);
 
   console.log('\n=== Shared / Duplicate Lessons Detected ===');
   let duplicateCount = 0;

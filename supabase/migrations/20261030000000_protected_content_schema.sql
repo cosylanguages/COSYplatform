@@ -1,27 +1,49 @@
--- COSYplatform Protected Content Contract Migration
--- Upstream Owner: COSYplatform
--- Schema version: 20260330000000
+-- Migration: 20261030000000_protected_content_schema.sql
+-- Description: COSYplatform Protected Curriculum Architecture & RLS Policies
+-- Upstream Canonical Curriculum Owner: COSYplatform
+--
+-- ============================================================================
+-- SHARED VS NEW OBJECTS HEADER:
+-- ============================================================================
+-- Shared Ecosystem Objects (Defined or referenced across COSYevents / COSYplatform):
+--   1. public.profiles (Shared user table - added language_access, course_level)
+--   2. public.teacher_languages (Shared language assignment - user_id, language)
+--   3. public.access_grants (Shared entitlement table - user_id, course_id, expires_at)
+--   4. public.session_content (Shared events content)
+--
+-- New COSYplatform Canonical Curriculum Objects:
+--   1. public.courses (Curriculum tracks and metadata)
+--   2. public.lessons (Canonical deduplicated lesson metadata)
+--   3. public.lesson_student_content (Sanitized student-facing lesson body)
+--   4. public.lesson_protected (Answer keys, teacher notes, paid session scripts)
+--   5. public.course_lessons (Sequence placement junction table)
+--   6. public.course_preview (Public catalog preview view)
+-- ============================================================================
 
--- 1. Profiles Table (if not exists)
+-- 1. Shared Table Adaptation: `profiles`
 CREATE TABLE IF NOT EXISTS public.profiles (
     id UUID PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE,
     role TEXT NOT NULL DEFAULT 'student' CHECK (role IN ('student', 'teacher', 'founder')),
-    language_access TEXT[] DEFAULT '{}',
-    course_level TEXT DEFAULT '*',
-    created_at TIMESTAMPTZ DEFAULT NOW(),
+    display_name TEXT,
+    ui_lang TEXT DEFAULT 'en',
+    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     updated_at TIMESTAMPTZ DEFAULT NOW()
 );
 
--- 2. Teacher Languages Mapping
+ALTER TABLE public.profiles ADD COLUMN IF NOT EXISTS language_access TEXT[] DEFAULT '{}';
+ALTER TABLE public.profiles ADD COLUMN IF NOT EXISTS course_level TEXT DEFAULT '*';
+
+-- 2. Shared Table Adaptation: `teacher_languages`
 CREATE TABLE IF NOT EXISTS public.teacher_languages (
-    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    teacher_id UUID NOT NULL REFERENCES public.profiles(id) ON DELETE CASCADE,
+    user_id UUID NOT NULL REFERENCES public.profiles(id) ON DELETE CASCADE,
     language TEXT NOT NULL,
     created_at TIMESTAMPTZ DEFAULT NOW(),
-    UNIQUE (teacher_id, language)
+    PRIMARY KEY (user_id, language)
 );
 
--- 3. Courses Table
+ALTER TABLE public.teacher_languages ADD COLUMN IF NOT EXISTS teacher_id UUID REFERENCES public.profiles(id) ON DELETE CASCADE;
+
+-- 3. New Table: `courses`
 CREATE TABLE IF NOT EXISTS public.courses (
     id TEXT PRIMARY KEY,
     language TEXT NOT NULL,
@@ -35,17 +57,19 @@ CREATE TABLE IF NOT EXISTS public.courses (
     updated_at TIMESTAMPTZ DEFAULT NOW()
 );
 
--- 4. Access Grants Table
+-- 4. Shared Table Adaptation: `access_grants`
 CREATE TABLE IF NOT EXISTS public.access_grants (
-    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    student_id UUID NOT NULL REFERENCES public.profiles(id) ON DELETE CASCADE,
-    course_id TEXT NOT NULL REFERENCES public.courses(id) ON DELETE CASCADE,
-    expires_at TIMESTAMPTZ,
-    created_at TIMESTAMPTZ DEFAULT NOW(),
-    UNIQUE (student_id, course_id)
+    grant_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    user_id UUID REFERENCES public.profiles(id) ON DELETE CASCADE,
+    course TEXT,
+    created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
--- 5. Lessons Metadata Table (No sensitive body content)
+ALTER TABLE public.access_grants ADD COLUMN IF NOT EXISTS student_id UUID REFERENCES public.profiles(id) ON DELETE CASCADE;
+ALTER TABLE public.access_grants ADD COLUMN IF NOT EXISTS course_id TEXT REFERENCES public.courses(id) ON DELETE CASCADE;
+ALTER TABLE public.access_grants ADD COLUMN IF NOT EXISTS expires_at TIMESTAMPTZ;
+
+-- 5. New Table: `lessons` (Metadata Only - No sensitive bodies)
 CREATE TABLE IF NOT EXISTS public.lessons (
     id TEXT PRIMARY KEY,
     language TEXT NOT NULL,
@@ -58,14 +82,14 @@ CREATE TABLE IF NOT EXISTS public.lessons (
     updated_at TIMESTAMPTZ DEFAULT NOW()
 );
 
--- 6. Lesson Student Content Table (Sanitized bodies for students)
+-- 6. New Table: `lesson_student_content` (Sanitized student body)
 CREATE TABLE IF NOT EXISTS public.lesson_student_content (
     lesson_id TEXT PRIMARY KEY REFERENCES public.lessons(id) ON DELETE CASCADE,
     body TEXT NOT NULL,
     updated_at TIMESTAMPTZ DEFAULT NOW()
 );
 
--- 7. Lesson Protected Content Table (Answer keys, teacher notes, paid session bodies - Strictly hidden from students/anon)
+-- 7. New Table: `lesson_protected` (Answer keys, teacher notes, paid session scripts)
 CREATE TABLE IF NOT EXISTS public.lesson_protected (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     lesson_id TEXT NOT NULL REFERENCES public.lessons(id) ON DELETE CASCADE,
@@ -74,7 +98,7 @@ CREATE TABLE IF NOT EXISTS public.lesson_protected (
     created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
--- 8. Course Lessons Junction Table
+-- 8. New Table: `course_lessons` (Junction table with stable placement_id)
 CREATE TABLE IF NOT EXISTS public.course_lessons (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     course_id TEXT NOT NULL REFERENCES public.courses(id) ON DELETE CASCADE,
@@ -122,7 +146,7 @@ JOIN public.course_lessons cl ON c.id = cl.course_id
 JOIN public.lessons l ON cl.lesson_id = l.id
 WHERE c.is_public_preview = true;
 
--- 10. Enable Row Level Security (RLS) on all tables
+-- 10. Enable Row Level Security (RLS)
 ALTER TABLE public.profiles ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.teacher_languages ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.courses ENABLE ROW LEVEL SECURITY;
@@ -132,9 +156,37 @@ ALTER TABLE public.lesson_student_content ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.lesson_protected ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.course_lessons ENABLE ROW LEVEL SECURITY;
 
+-- Clean up existing policies for idempotent re-runs
+DROP POLICY IF EXISTS "Profiles readable by owner or founder" ON public.profiles;
+DROP POLICY IF EXISTS "Founder full access on profiles" ON public.profiles;
+
+DROP POLICY IF EXISTS "Teacher read own assigned languages" ON public.teacher_languages;
+DROP POLICY IF EXISTS "Founder full access on teacher_languages" ON public.teacher_languages;
+
+DROP POLICY IF EXISTS "Public preview courses readable by all" ON public.courses;
+DROP POLICY IF EXISTS "Founder full access on courses" ON public.courses;
+
+DROP POLICY IF EXISTS "Public preview course_lessons readable by all" ON public.course_lessons;
+DROP POLICY IF EXISTS "Founder full access on course_lessons" ON public.course_lessons;
+
+DROP POLICY IF EXISTS "Public preview lessons metadata readable by all" ON public.lessons;
+DROP POLICY IF EXISTS "Teacher read lessons for assigned languages" ON public.lessons;
+DROP POLICY IF EXISTS "Student read lessons metadata for granted courses and levels" ON public.lessons;
+DROP POLICY IF EXISTS "Founder full access on lessons" ON public.lessons;
+
+DROP POLICY IF EXISTS "Teacher read student content for assigned languages" ON public.lesson_student_content;
+DROP POLICY IF EXISTS "Student read student content for granted courses and level isolation" ON public.lesson_student_content;
+DROP POLICY IF EXISTS "Founder full access on lesson_student_content" ON public.lesson_student_content;
+
+DROP POLICY IF EXISTS "Teacher read protected content for assigned languages" ON public.lesson_protected;
+DROP POLICY IF EXISTS "Founder full access on lesson_protected" ON public.lesson_protected;
+
+DROP POLICY IF EXISTS "Student read own access grants" ON public.access_grants;
+DROP POLICY IF EXISTS "Founder full access on access_grants" ON public.access_grants;
+
 -- 11. RLS Policies
 
--- Profiles Policies
+-- Profiles
 CREATE POLICY "Profiles readable by owner or founder"
 ON public.profiles FOR SELECT
 USING (
@@ -151,11 +203,11 @@ USING (
     )
 );
 
--- Teacher Languages Policies
+-- Teacher Languages
 CREATE POLICY "Teacher read own assigned languages"
 ON public.teacher_languages FOR SELECT
 USING (
-    teacher_id = auth.uid() OR EXISTS (
+    user_id = auth.uid() OR teacher_id = auth.uid() OR EXISTS (
         SELECT 1 FROM public.profiles p WHERE p.id = auth.uid() AND p.role = 'founder'
     )
 );
@@ -168,7 +220,7 @@ USING (
     )
 );
 
--- Courses Policies
+-- Courses
 CREATE POLICY "Public preview courses readable by all"
 ON public.courses FOR SELECT
 USING (is_public_preview = true);
@@ -181,7 +233,7 @@ USING (
     )
 );
 
--- Course Lessons Policies
+-- Course Lessons
 CREATE POLICY "Public preview course_lessons readable by all"
 ON public.course_lessons FOR SELECT
 USING (
@@ -198,7 +250,7 @@ USING (
     )
 );
 
--- Lessons Metadata Policies
+-- Lessons Metadata
 CREATE POLICY "Public preview lessons metadata readable by all"
 ON public.lessons FOR SELECT
 USING (
@@ -215,7 +267,7 @@ USING (
     EXISTS (
         SELECT 1 FROM public.profiles p WHERE p.id = auth.uid() AND p.role = 'teacher'
     ) AND EXISTS (
-        SELECT 1 FROM public.teacher_languages tl WHERE tl.teacher_id = auth.uid() AND tl.language = lessons.language
+        SELECT 1 FROM public.teacher_languages tl WHERE (tl.user_id = auth.uid() OR tl.teacher_id = auth.uid()) AND tl.language = lessons.language
     )
 );
 
@@ -226,9 +278,9 @@ USING (
         SELECT 1 FROM public.profiles p WHERE p.id = auth.uid() AND p.role = 'student'
     ) AND EXISTS (
         SELECT 1 FROM public.access_grants ag
-        JOIN public.courses c ON c.id = ag.course_id
+        JOIN public.courses c ON (c.id = ag.course_id OR c.id = ag.course)
         JOIN public.course_lessons cl ON cl.course_id = c.id
-        WHERE ag.student_id = auth.uid()
+        WHERE (ag.user_id = auth.uid() OR ag.student_id = auth.uid())
           AND cl.lesson_id = lessons.id
           AND c.language = lessons.language
           AND c.cefr = lessons.cefr
@@ -244,7 +296,7 @@ USING (
     )
 );
 
--- Lesson Student Content Policies (Sanitized Body)
+-- Lesson Student Content (Sanitized Body)
 CREATE POLICY "Teacher read student content for assigned languages"
 ON public.lesson_student_content FOR SELECT
 USING (
@@ -253,7 +305,7 @@ USING (
     ) AND EXISTS (
         SELECT 1 FROM public.lessons l
         JOIN public.teacher_languages tl ON tl.language = l.language
-        WHERE l.id = lesson_student_content.lesson_id AND tl.teacher_id = auth.uid()
+        WHERE l.id = lesson_student_content.lesson_id AND (tl.user_id = auth.uid() OR tl.teacher_id = auth.uid())
     )
 );
 
@@ -264,10 +316,10 @@ USING (
         SELECT 1 FROM public.profiles p WHERE p.id = auth.uid() AND p.role = 'student'
     ) AND EXISTS (
         SELECT 1 FROM public.access_grants ag
-        JOIN public.courses c ON c.id = ag.course_id
+        JOIN public.courses c ON (c.id = ag.course_id OR c.id = ag.course)
         JOIN public.course_lessons cl ON cl.course_id = c.id
         JOIN public.lessons l ON l.id = lesson_student_content.lesson_id
-        WHERE ag.student_id = auth.uid()
+        WHERE (ag.user_id = auth.uid() OR ag.student_id = auth.uid())
           AND cl.lesson_id = lesson_student_content.lesson_id
           AND c.language = l.language
           AND c.cefr = l.cefr
@@ -284,8 +336,7 @@ USING (
     )
 );
 
--- Lesson Protected Content Policies (Answer Keys / Teacher Notes / Session Bodies)
--- NOTE: No policies granted to students or anonymous users!
+-- Lesson Protected Content (Answer Keys / Teacher Notes) - Hidden from students/anon
 CREATE POLICY "Teacher read protected content for assigned languages"
 ON public.lesson_protected FOR SELECT
 USING (
@@ -294,7 +345,7 @@ USING (
     ) AND EXISTS (
         SELECT 1 FROM public.lessons l
         JOIN public.teacher_languages tl ON tl.language = l.language
-        WHERE l.id = lesson_protected.lesson_id AND tl.teacher_id = auth.uid()
+        WHERE l.id = lesson_protected.lesson_id AND (tl.user_id = auth.uid() OR tl.teacher_id = auth.uid())
     )
 );
 
@@ -306,11 +357,11 @@ USING (
     )
 );
 
--- Access Grants Policies
+-- Access Grants
 CREATE POLICY "Student read own access grants"
 ON public.access_grants FOR SELECT
 USING (
-    student_id = auth.uid() OR EXISTS (
+    user_id = auth.uid() OR student_id = auth.uid() OR EXISTS (
         SELECT 1 FROM public.profiles p WHERE p.id = auth.uid() AND p.role = 'founder'
     )
 );
