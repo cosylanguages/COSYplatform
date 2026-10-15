@@ -23,7 +23,6 @@ CREATE UNIQUE INDEX IF NOT EXISTS lesson_answers_student_lesson_field_uidx
   ON public.lesson_answers (student_id, lesson_id, field_key);
 
 ALTER TABLE public.lesson_answers ENABLE ROW LEVEL SECURITY;
-ALTER TABLE public.lesson_answers FORCE ROW LEVEL SECURITY;
 
 DROP POLICY IF EXISTS "Students read own lesson answers" ON public.lesson_answers;
 CREATE POLICY "Students read own lesson answers"
