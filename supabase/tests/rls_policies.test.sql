@@ -3,7 +3,7 @@
 
 BEGIN;
 
-SELECT plan(23);
+SELECT plan(24);
 
 -- Setup test helper schema for auth mocking
 CREATE SCHEMA IF NOT EXISTS tests;
@@ -268,6 +268,12 @@ SELECT is(
     public.check_lesson_answer('en:a1:nice-to-meet-you', 'q1', 'HELLO'),
     TRUE,
     'TC-21 [PASS]: Granted student can validate a correct answer without reading the key'
+);
+
+SELECT is(
+    public.check_lesson_answer('lessons/general-english-a1/nice-to-meet-you.json', 'q1', 'hello'),
+    TRUE,
+    'TC-24 [PASS]: Roadmap file paths resolve to canonical protected answer keys'
 );
 
 SELECT is(
