@@ -46,8 +46,8 @@
             canonicalLessonId = direct.data.id;
           } else {
             const fileName = pathParts[pathParts.length - 1];
-            const lessonSlug = fileName.replace(/\\.(json|xml)$/i, '');
-            if (!lessonSlug || lessonSlug === fileName && /\\.(json|xml)$/i.test(fileName)) {
+            const lessonSlug = fileName.replace(/\.(json|xml)$/i, '');
+            if (!lessonSlug || lessonSlug === fileName && /\.(json|xml)$/i.test(fileName)) {
               throw new Error('Student-safe lesson content is unavailable.');
             }
 
