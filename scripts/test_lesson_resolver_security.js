@@ -59,6 +59,22 @@ async function main() {
     assert.equal(fetchCalls, 0, 'student path must not fall back to public static files');
   }
 
+  // Missing Supabase initialization must not trigger a static-file fallback.
+  {
+    const originalFetch = global.fetch;
+    let fetchCalls = 0;
+    global.fetch = async () => { fetchCalls++; return { ok: true, async text() { return '<cosy-input-item answer="secret">'; } }; };
+    try {
+      await assert.rejects(
+        loadLessonContent(null, 'lessons/a1/greetings.xml', 'student'),
+        /Student-safe lesson content is unavailable/
+      );
+    } finally {
+      global.fetch = originalFetch;
+    }
+    assert.equal(fetchCalls, 0, 'student path must not fetch static content without Supabase');
+  }
+
   // RLS/network errors are also fail-closed for student roles.
   {
     const h = makeClient({ sanitizedError: new Error('permission denied') });
