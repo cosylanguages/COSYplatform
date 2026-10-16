@@ -7,18 +7,29 @@
 const assert = require('node:assert/strict');
 const { loadLessonContent } = require('../shared/js/lesson-resolver.js');
 
-function makeClient({ sanitizedBody, sanitizedError = null, unexpected = [] } = {}) {
+function makeClient({ sanitizedBody, sanitizedError = null, canonicalLessonId = null, canonicalSlug = null, unexpected = [] } = {}) {
   const calls = [];
   const client = {
     from(table) {
       calls.push({ table });
-      if (table !== 'lesson_student_content') unexpected.push(table);
+      if (!['lesson_student_content', 'lessons'].includes(table)) unexpected.push(table);
       const chain = {
         select(column) { calls[calls.length - 1].column = column; return chain; },
         eq(column, value) { calls[calls.length - 1].filter = [column, value]; return chain; },
         async maybeSingle() {
-          if (calls[calls.length - 1].table === 'lesson_student_content') {
-            return { data: sanitizedBody == null ? null : { body: sanitizedBody }, error: sanitizedError };
+          const call = calls[calls.length - 1];
+          if (call.table === 'lesson_student_content') {
+            const requestedId = call.filter && call.filter[1];
+            if (sanitizedBody == null || (canonicalLessonId && requestedId !== canonicalLessonId)) {
+              return { data: null, error: sanitizedError };
+            }
+            return { data: { body: sanitizedBody }, error: sanitizedError };
+          }
+          if (call.table === 'lessons' && canonicalLessonId) {
+            const [field, value] = call.filter || [];
+            if ((field === 'id' && value === canonicalLessonId) || (field === 'slug' && value === canonicalSlug)) {
+              return { data: { id: canonicalLessonId }, error: null };
+            }
           }
           return { data: null, error: null };
         }
@@ -39,6 +50,21 @@ async function main() {
     assert.deepEqual(h.unexpected, []);
   }
 
+  // Roadmap file paths resolve by a unique canonical slug, then load only
+  // the sanitized body keyed by canonical lesson ID.
+  {
+    const h = makeClient({
+      sanitizedBody: '<cosy-lesson><p>Mapped safe lesson</p></cosy-lesson>',
+      canonicalLessonId: 'en:a1:greetings',
+      canonicalSlug: 'greetings'
+    });
+    const body = await loadLessonContent(h.client, 'lessons/general-english-a1/greetings.json', 'student');
+    assert.match(body, /Mapped safe lesson/);
+    assert.deepEqual(h.unexpected, []);
+    assert.ok(h.calls.some(c => c.table === 'lessons' && c.filter?.[0] === 'slug' && c.filter?.[1] === 'greetings'));
+    assert.ok(h.calls.some(c => c.table === 'lesson_student_content' && c.filter?.[1] === 'en:a1:greetings'));
+  }
+
   // Missing sanitized content must fail closed, without querying legacy tables
   // or fetching the public lesson path where answer metadata may be exposed.
   {
@@ -54,7 +80,7 @@ async function main() {
     } finally {
       global.fetch = originalFetch;
     }
-    assert.deepEqual(h.calls.map(c => c.table), ['lesson_student_content']);
+    assert.deepEqual(h.calls.map(c => c.table), ['lesson_student_content', 'lessons', 'lessons']);
     assert.deepEqual(h.unexpected, []);
     assert.equal(fetchCalls, 0, 'student path must not fall back to public static files');
   }
@@ -82,7 +108,7 @@ async function main() {
       loadLessonContent(h.client, 'en:a1:greetings', 'student'),
       /Student-safe lesson content is unavailable/
     );
-    assert.deepEqual(h.calls.map(c => c.table), ['lesson_student_content']);
+    assert.deepEqual(h.calls.map(c => c.table), ['lesson_student_content', 'lessons', 'lessons']);
   }
 
   // Teacher/founder legacy fallback behavior is intentionally unchanged.
