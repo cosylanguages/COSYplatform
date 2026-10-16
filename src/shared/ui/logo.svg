@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+  <!-- Background -->
+  <rect width="1000" height="1000" fill="#00C4C7"/>
+
+  <!-- Laptop Container -->
+  <g id="laptop">
+    <!-- Laptop Screen Outer Box -->
+    <rect x="270" y="210" width="460" height="315" rx="32" fill="#000000"/>
+
+    <!-- Laptop Base Bottom -->
+    <path d="M 230 540 L 770 540 C 770 540 765 575 740 575 L 260 575 C 235 575 230 540 230 540 Z" fill="#000000"/>
+
+    <!-- Laptop Notch -->
+    <path d="M 440 540 L 560 540 C 555 555 545 556 530 556 L 470 556 C 455 556 445 555 440 540 Z" fill="#00C4C7"/>
+
+    <!-- CP Monogram inside Screen -->
+    <!-- Letter C -->
+    <path d="M 500 270 C 420 270 330 310 330 370 C 330 430 420 470 500 470 C 520 470 535 465 540 460 L 540 435 C 530 442 515 446 500 446 C 435 446 360 415 360 370 C 360 325 435 294 500 294 C 515 294 530 298 540 305 L 540 280 C 535 275 520 270 500 270 Z" fill="#FFFDF5"/>
+
+    <!-- Letter P -->
+    <path d="M 480 270 L 530 270 L 530 278 L 512 278 L 512 322 L 570 322 C 610 322 632 342 632 375 C 632 408 610 428 570 428 L 512 428 L 512 497 L 530 497 L 530 505 L 480 505 L 480 497 L 498 497 L 498 278 L 480 278 Z M 512 334 L 512 416 L 570 416 C 598 416 614 402 614 375 C 614 348 598 334 570 334 Z" fill="#FFFDF5"/>
+
+    <!-- Graduation Cap Icon -->
+    <g transform="translate(550, 238) scale(0.7)">
+      <!-- Cap Diamond Base -->
+      <polygon points="100,10 180,45 100,80 20,45" fill="#FFFDF5"/>
+      <!-- Cap Skull Underneath -->
+      <path d="M 50 62 L 50 95 C 50 112 150 112 150 95 L 150 62 Z" fill="#FFFDF5"/>
+      <!-- Tassel Ribbon & Hanging Ball -->
+      <path d="M 170 50 L 170 95" stroke="#FFFDF5" stroke-width="5" stroke-linecap="round"/>
+      <path d="M 166 95 L 174 95 L 176 122 L 164 122 Z" fill="#FFFDF5"/>
+    </g>
+  </g>
+
+  <!-- Typography: COSY PLATFORM -->
+  <text x="500" y="700" font-family="'Didot', 'Bodoni MT', 'Cinzel', 'Times New Roman', serif" font-size="82" font-weight="400" fill="#000000" text-anchor="middle" letter-spacing="3">COSY PLATFORM</text>
+</svg>
