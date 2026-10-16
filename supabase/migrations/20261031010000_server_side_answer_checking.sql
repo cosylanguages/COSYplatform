@@ -40,7 +40,7 @@ BEGIN
   -- RLS-eligible lesson matching either exact ID or slug.
   lesson_slug := regexp_replace(
     split_part(p_lesson_id, '/', array_length(string_to_array(p_lesson_id, '/'), 1)),
-    '\.(json|xml)
+    E'\\\\.(json|xml)$',
     '',
     'i'
   );
