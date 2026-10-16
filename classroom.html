@@ -1873,7 +1873,7 @@
           const answers = child.querySelectorAll("cosy-input-item");
           let ansList = [];
           answers.forEach(a => ansList.push(a.textContent.trim()));
-          if (ansList.length > 0) answersMap[fKey] = ansList[0];
+          if (currentRole !== 'student' && ansList.length > 0) answersMap[fKey] = ansList[0];
           const inputExplanation = child.getAttribute("explanation");
           if (inputExplanation) explanationsMap[fKey] = inputExplanation;
 
@@ -1895,7 +1895,7 @@
               selectAns.push(it.textContent.trim());
             }
           });
-          if (selectAns.length > 0) answersMap[fKey] = selectAns;
+          if (currentRole !== 'student' && selectAns.length > 0) answersMap[fKey] = selectAns;
           const selectExplanation = child.getAttribute("explanation");
           if (selectExplanation) explanationsMap[fKey] = selectExplanation;
 
@@ -1919,7 +1919,7 @@
               if (isCorrect) correctOpts.push(opt.textContent.trim());
               output += `<label class="flex items-center space-x-2 text-xs p-2 rounded-lg border border-gray-200 bg-white hover:bg-cosy-50 cursor-pointer"><input type="radio" name="${qKey}" value="${optVal}" onchange="handleChoiceInput('${qKey}', this.value)"><span>${optVal}</span> ${currentRole === 'teacher' && isCorrect ? '<span class="text-green-600 font-bold ml-auto">✔️ Correct</span>' : ''}</label>`;
             });
-            if (correctOpts.length > 0) answersMap[qKey] = correctOpts;
+            if (currentRole !== 'student' && correctOpts.length > 0) answersMap[qKey] = correctOpts;
             const questionExplanation = q.getAttribute("explanation");
             if (questionExplanation) explanationsMap[qKey] = questionExplanation;
             output += `</div><div id="feedback-${qKey}" class="text-xs font-medium mt-2"></div></div>`;
@@ -1964,7 +1964,7 @@
           } else if (el.type === "blockquote") {
             output += `<blockquote class="bg-gray-50 border-l-4 border-cosy-500 p-3 my-2 rounded-r-lg text-sm whitespace-pre-wrap">${escapeHtml(el.content || '')}</blockquote>`;
           } else if (el.type === "input") {
-            if (el.answers && el.answers.length > 0) answersMap[fKey] = el.answers[0];
+            if (currentRole !== 'student' && el.answers && el.answers.length > 0) answersMap[fKey] = el.answers[0];
             if (typeof el.explanation === 'string' && el.explanation.trim()) explanationsMap[fKey] = el.explanation.trim();
             output += `
               <div class="my-3 space-y-1">
@@ -1973,7 +1973,7 @@
               </div>
             `;
           } else if (el.type === "test") {
-            if (el.answers && el.answers.length > 0) answersMap[fKey] = el.answers;
+            if (currentRole !== 'student' && el.answers && el.answers.length > 0) answersMap[fKey] = el.answers;
             if (typeof el.explanation === 'string' && el.explanation.trim()) explanationsMap[fKey] = el.explanation.trim();
             output += `<div class="bg-gray-50 border border-gray-200 rounded-xl p-4 my-3"><strong class="text-sm text-gray-800">${escapeHtml(el.content || '')}</strong><div class="space-y-1.5 mt-2">`;
             if (el.options) {
@@ -2968,31 +2968,46 @@
 
     const liveFeedbackTimers = new Map();
 
-    // Check one exercise without exposing the answer key during live practice.
-    function checkAnswerForField(id, revealAnswer = false, persist = true) {
-      if (!Object.prototype.hasOwnProperty.call(answersMap, id)) return;
+    // Keep student answer validation on the server. Correct-answer metadata is
+    // never used by the student-side checker; student lesson bodies must be sanitized.
+    const answerCheckRequests = new Map();
 
-      const answerKey = answersMap[id];
+    function showAnswerFeedback(id, isCorrect, userVal, persist = true) {
+      const input = document.getElementById(id);
+      const radios = document.querySelectorAll(`input[type="radio"][name="${id}"]`);
+      const feedback = document.getElementById(`feedback-${id.replace('blank-', '')}`) || document.getElementById(`feedback-${id}`);
+      if (input && !radios.length) {
+        input.classList.remove('border-cosy-200', 'border-gray-300', 'border-red-500', 'border-green-500', 'bg-green-50', 'bg-red-50');
+        input.classList.add(isCorrect ? 'border-green-500' : 'border-red-500', isCorrect ? 'bg-green-50' : 'bg-red-50');
+      }
+      if (feedback) {
+        feedback.textContent = '';
+        feedback.setAttribute('aria-live', 'polite');
+        const span = document.createElement('span');
+        span.className = isCorrect ? 'text-green-600 font-bold' : 'text-red-600 font-bold';
+        span.textContent = isCorrect ? '✔️ Correct!' : '↻ Not quite—try again.';
+        feedback.appendChild(span);
+        // Rationale is shown only if authored as learner-facing content.
+        const explanation = explanationsMap[id];
+        if (explanation) {
+          const rationale = document.createElement('div');
+          rationale.className = 'mt-1 text-gray-600 font-normal';
+          rationale.textContent = `Why: ${explanation}`;
+          feedback.appendChild(rationale);
+        }
+      }
+      if (persist && currentRole === 'student' && window.CosyProgress) {
+        window.CosyProgress.saveAnswer(currentLessonPath, id, userVal, isCorrect);
+      }
+    }
+
+    async function checkAnswerForField(id, revealAnswer = false, persist = true) {
       const input = document.getElementById(id);
       const radios = document.querySelectorAll(`input[type="radio"][name="${id}"]`);
       const radioChecked = document.querySelector(`input[type="radio"][name="${id}"]:checked`);
       const feedback = document.getElementById(`feedback-${id.replace('blank-', '')}`) || document.getElementById(`feedback-${id}`);
-      // For radio groups, read the selected option rather than the first
-      // radio returned by getElementById(name/id); otherwise restored choices
-      // can be incorrectly marked as unanswered or wrong.
-      const userVal = radios.length
-        ? (radioChecked ? radioChecked.value : '')
-        : (input ? (input.value || '') : '');
+      const userVal = radios.length ? (radioChecked ? radioChecked.value : '') : (input ? (input.value || '') : '');
       const normUser = normalizeStr(userVal);
-
-      const validList = [];
-      const keys = Array.isArray(answerKey) ? answerKey : (answerKey ? [answerKey] : []);
-      keys.forEach(ak => {
-        String(ak).split(/\s*[\/|]\s*/).forEach(sub => {
-          const normalized = normalizeStr(sub);
-          if (normalized) validList.push(normalized);
-        });
-      });
 
       if (!normUser) {
         if (input && !radios.length) {
@@ -3003,42 +3018,64 @@
         return;
       }
 
-      const isCorrect = validList.includes(normUser);
-      if (input && !radios.length) {
-        input.classList.remove('border-cosy-200', 'border-gray-300', 'border-red-500', 'border-green-500', 'bg-green-50', 'bg-red-50');
-        input.classList.add(isCorrect ? 'border-green-500' : 'border-red-500', isCorrect ? 'bg-green-50' : 'bg-red-50');
+      if (currentRole === 'student') {
+        // A student must never get an answer key from the browser-side map.
+        // Ignore revealAnswer for students; the server returns only a boolean.
+        const client = window.CosyAuth && window.CosyAuth.client;
+        if (!client || typeof client.rpc !== 'function' || !currentLessonPath || currentLessonPath === 'default') {
+          if (feedback) feedback.textContent = 'Answer checking is unavailable for this legacy lesson.';
+          return;
+        }
+        const requestId = (answerCheckRequests.get(id) || 0) + 1;
+        answerCheckRequests.set(id, requestId);
+        if (feedback) feedback.textContent = 'Checking…';
+        try {
+          const { data, error } = await client.rpc('check_lesson_answer', {
+            p_lesson_id: currentLessonPath,
+            p_field_key: id,
+            p_value: String(userVal)
+          });
+          if (answerCheckRequests.get(id) !== requestId) return;
+          if (error || typeof data !== 'boolean') {
+            if (feedback) feedback.textContent = 'Could not check this answer. Please try again.';
+            return;
+          }
+          showAnswerFeedback(id, data, userVal, persist);
+        } catch (error) {
+          if (answerCheckRequests.get(id) === requestId && feedback) {
+            feedback.textContent = 'Could not check this answer. Please try again.';
+          }
+        }
+        return;
       }
 
+      // Teacher preview can check/reveal locally; teachers are authorized to see keys.
+      if (!Object.prototype.hasOwnProperty.call(answersMap, id)) return;
+      const answerKey = answersMap[id];
+      const keys = Array.isArray(answerKey) ? answerKey : (answerKey ? [answerKey] : []);
+      const validList = keys.flatMap(ak => String(ak).split(/\s*[\/|]\s*/).map(normalizeStr).filter(Boolean));
+      const isCorrect = validList.includes(normUser);
       if (feedback) {
         feedback.textContent = '';
         feedback.setAttribute('aria-live', 'polite');
         const span = document.createElement('span');
-        if (isCorrect) {
-          span.className = 'text-green-600 font-bold';
-          span.textContent = '✔️ Correct!';
-        } else {
-          span.className = 'text-red-600 font-bold';
-          const displayKey = Array.isArray(answerKey) ? answerKey.join(' / ') : answerKey;
-          span.textContent = revealAnswer && displayKey
-            ? `❌ Incorrect. Answer: ${displayKey}`
-            : '↻ Not quite—try again.';
-        }
+        span.className = isCorrect ? 'text-green-600 font-bold' : 'text-red-600 font-bold';
+        const displayKey = Array.isArray(answerKey) ? answerKey.join(' / ') : answerKey;
+        span.textContent = isCorrect ? '✔️ Correct!' : (revealAnswer && displayKey ? `❌ Incorrect. Answer: ${displayKey}` : '↻ Not quite—try again.');
         feedback.appendChild(span);
-        const explanation = explanationsMap[id];
-        if (explanation) {
-          const rationale = document.createElement('div');
-          rationale.className = 'mt-1 text-gray-600 font-normal';
-          rationale.textContent = `Why: ${explanation}`;
-          feedback.appendChild(rationale);
-        }
-      }
-
-      if (persist && currentRole === 'student' && window.CosyProgress) {
-        window.CosyProgress.saveAnswer(currentLessonPath, id, userVal, isCorrect);
       }
     }
 
     function checkAnswers() {
+      if (currentRole === 'student') {
+        // Do not reveal keys to students; request server-side checking per visible field.
+        const fields = new Set([
+          ...Array.from(document.querySelectorAll('input[id], select[id]')).map(el => el.id),
+          ...Array.from(document.querySelectorAll('input[type="radio"][name]')).map(el => el.name)
+        ]);
+        fields.forEach(id => checkAnswerForField(id, false));
+        return;
+      }
       for (const id of Object.keys(answersMap)) {
         checkAnswerForField(id, true);
       }
