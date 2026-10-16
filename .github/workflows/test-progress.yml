@@ -23,3 +23,6 @@ jobs:
 
       - name: Test live classroom answer feedback
         run: node scripts/test_live_feedback.js
+
+      - name: Test student lesson content isolation
+        run: node scripts/test_lesson_resolver_security.js
