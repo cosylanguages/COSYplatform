@@ -72,8 +72,14 @@ async function main() {
   // Teacher/founder legacy fallback behavior is intentionally unchanged.
   {
     const h = makeClient();
-    const body = await loadLessonContent(h.client, 'lessons/a1/greetings.xml', 'teacher');
-    assert.match(body, /cosy-input-item/);
+    const originalFetch = global.fetch;
+    global.fetch = async () => ({ ok: true, async text() { return '<cosy-input-item answer="teacher-preview">'; } });
+    try {
+      const body = await loadLessonContent(h.client, 'lessons/a1/greetings.xml', 'teacher');
+      assert.match(body, /cosy-input-item/);
+    } finally {
+      global.fetch = originalFetch;
+    }
   }
 
   console.log('PASS: students only receive canonical sanitized lesson content; missing/error cases fail closed');
