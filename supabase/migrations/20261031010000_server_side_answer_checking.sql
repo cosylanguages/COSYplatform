@@ -21,6 +21,9 @@ DECLARE
   expected_value TEXT;
   submitted TEXT;
   is_authorized BOOLEAN;
+  resolved_lesson_id TEXT;
+  candidate_count INTEGER;
+  lesson_slug TEXT;
 BEGIN
   -- Fail closed for unauthenticated users and malformed requests.
   IF auth.uid() IS NULL
@@ -32,24 +35,33 @@ BEGIN
 
   -- Only students with an active grant for the course containing this lesson
   -- may submit checks. Do not trust a client-supplied student ID or role.
-  SELECT EXISTS (
-    SELECT 1
-    FROM public.profiles p
-    JOIN public.access_grants ag
-      ON (ag.user_id = p.id OR ag.student_id = p.id)
-    JOIN public.courses c ON c.id = COALESCE(ag.course_id, ag.course)
-    JOIN public.course_lessons cl ON cl.course_id = c.id
-    JOIN public.lessons l ON l.id = cl.lesson_id
-    WHERE p.id = auth.uid()
-      AND p.role = 'student'
-      AND l.id = p_lesson_id
-      AND l.kind IN ('lesson', 'workbook')
-      AND (ag.expires_at IS NULL OR ag.expires_at > NOW())
-      AND (p.language_access = '{}' OR '*' = ANY(p.language_access) OR l.language = ANY(p.language_access))
-      AND (p.course_level = '*' OR lower(p.course_level) = lower(l.cefr))
-  ) INTO is_authorized;
+  -- The classroom passes roadmap paths (e.g. lessons/course/slug.json),
+  -- while protected tables use canonical lesson IDs. Resolve only a unique,
+  -- RLS-eligible lesson matching either exact ID or slug.
+  lesson_slug := regexp_replace(
+    split_part(p_lesson_id, '/', array_length(string_to_array(p_lesson_id, '/'), 1)),
+    '\\.(json|xml)$',
+    '',
+    'i'
+  );
 
-  IF NOT is_authorized THEN
+  SELECT count(DISTINCT l.id)::INTEGER, min(l.id)
+    INTO candidate_count, resolved_lesson_id
+  FROM public.profiles p
+  JOIN public.access_grants ag
+    ON (ag.user_id = p.id OR ag.student_id = p.id)
+  JOIN public.courses c ON c.id = COALESCE(ag.course_id, ag.course)
+  JOIN public.course_lessons cl ON cl.course_id = c.id
+  JOIN public.lessons l ON l.id = cl.lesson_id
+  WHERE p.id = auth.uid()
+    AND p.role = 'student'
+    AND (l.id = p_lesson_id OR l.slug = lesson_slug)
+    AND l.kind IN ('lesson', 'workbook')
+    AND (ag.expires_at IS NULL OR ag.expires_at > NOW())
+    AND (p.language_access = '{}' OR '*' = ANY(p.language_access) OR l.language = ANY(p.language_access))
+    AND (p.course_level = '*' OR lower(p.course_level) = lower(l.cefr));
+
+  IF COALESCE(candidate_count, 0) <> 1 OR resolved_lesson_id IS NULL THEN
     RETURN FALSE;
   END IF;
 
@@ -60,7 +72,7 @@ BEGIN
   FOR answer_doc IN
     SELECT lp.content::jsonb
     FROM public.lesson_protected lp
-    WHERE lp.lesson_id = p_lesson_id
+    WHERE lp.lesson_id = resolved_lesson_id
       AND lp.kind = 'answer-key'
   LOOP
     expected := answer_doc -> p_field_key;
