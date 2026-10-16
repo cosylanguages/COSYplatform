@@ -79,7 +79,7 @@ async function main() {
 const h = createHarness();
 
 // Correct answers are validated through the server RPC and persisted as correct.
-await await h.context.checkAnswerForField('blank-1', false);
+await h.context.checkAnswerForField('blank-1', false);
 assert.match(h.feedback.children[0].textContent, /Correct/);
 assert.equal(h.input.classList.contains('border-green-500'), true);
 assert.equal(h.saved.at(-1)[3], true);
