@@ -37,6 +37,13 @@
         }
       }
 
+      // Fail closed for students. Never fall back to legacy lesson tables or
+      // static files: those sources may still contain correct-answer metadata.
+      // Lessons must be migrated into the RLS-protected, sanitized table first.
+      if (studentView) {
+        throw new Error('Student-safe lesson content is unavailable.');
+      }
+
       // 2. Try canonical 'lessons' / 'lesson_protected' for teacher/founder
       try {
         const { data: contractData, error: contractError } = await client
