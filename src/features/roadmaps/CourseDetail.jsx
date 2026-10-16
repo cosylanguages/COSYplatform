@@ -26,7 +26,8 @@ export function CourseDetail({ base }) {
               <li key={l.lesson_id} className="lesson-row">
                 <span className="lesson-no">{l.lesson_number}</span>
                 <div className="grow">
-                  <Link to={`/classroom/${encodeURIComponent(courseId)}?lesson=${encodeURIComponent(l.lesson_id)}`}>{l.lesson_title}</Link>
+                  <Link to={`${base}/courses/${encodeURIComponent(courseId)}/lessons/${encodeURIComponent(l.lesson_id)}`}>{l.lesson_title}</Link>
+                  {base === '/teacher' && <> <Link className="muted small" to={`/classroom/${encodeURIComponent(courseId)}?lesson=${encodeURIComponent(l.lesson_id)}`}>{t('common.liveClassroom')}</Link></>}
                   {l.lesson_summary && <p className="muted">{l.lesson_summary}</p>}
                 </div>
                 {l.status && l.status !== 'available' && <Badge>{t(`common.${l.status === 'planned' ? 'planned' : 'comingSoon'}`)}</Badge>}

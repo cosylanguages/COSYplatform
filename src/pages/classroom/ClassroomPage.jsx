@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link, useParams, useSearchParams } from 'react-router-dom';
+import { LessonViewer } from '../../features/lessons/LessonViewer.jsx';
 import { Toolbox } from '../../features/classroom/Toolbox.jsx';
 import { useAuth } from '../../shared/auth/AuthContext.jsx';
 import { useT } from '../../shared/i18n/I18nContext.jsx';
@@ -8,7 +9,7 @@ import { Drawer } from '../../shared/ui/Drawer.jsx';
 
 /**
  * Live classroom shell: video stage, lesson stage, and a tools drawer.
- * TODO: mount ONE video provider here (Jitsi or PeerJS; see README) and the lesson renderer.
+ * TODO: mount ONE video provider here (Jitsi or PeerJS; see README).
  */
 export default function ClassroomPage() {
   const t = useT();
@@ -29,7 +30,7 @@ export default function ClassroomPage() {
       <div className="stage">
         <section className="video-stage" aria-label={t('classroom.teacherVideo')} />
         <section className="lesson-stage" aria-label={t('classroom.materialSelect')}>
-          <p className="muted">{lesson}</p>
+          {lesson && <LessonViewer lessonId={lesson} mode={isTeacher ? 'teacher' : 'student'} />}
         </section>
       </div>
       <Drawer open={toolsOpen} onClose={() => setToolsOpen(false)} title={t('toolbox.title')}>

@@ -5,7 +5,8 @@ const env = import.meta.env;
 export const config = {
   supabaseUrl: env.VITE_SUPABASE_URL || '',
   supabaseAnonKey: env.VITE_SUPABASE_ANON_KEY || '',
-  routerMode: env.VITE_ROUTER === 'hash' ? 'hash' : 'browser',
+  // Hash routing works on any static host without a custom domain or 404 tricks.
+  routerMode: env.VITE_ROUTER === 'browser' ? 'browser' : 'hash',
   basePath: env.BASE_URL || '/',
 
   // Ecosystem sites (used by footer links and tool deep links).
