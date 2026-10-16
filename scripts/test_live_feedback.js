@@ -95,7 +95,7 @@ assert.match(h.feedback.children[1].textContent, /Why: Use this greeting/);
 
 // Incorrect answers get a retry prompt, never the answer key during live practice.
 h.input.value = 'goodbye';
-h.context.checkAnswerForField('blank-1', false);
+await h.context.checkAnswerForField('blank-1', false);
 assert.match(h.feedback.children[0].textContent, /try again/i);
 assert.doesNotMatch(h.feedback.children[0].textContent, /hello/i);
 assert.equal(h.input.classList.contains('border-red-500'), true);
