@@ -75,6 +75,12 @@
       }
     }
 
+    // A student must never fall through to static files, even when Supabase
+    // has not initialized. Those files may contain legacy answer metadata.
+    if (studentView) {
+      throw new Error('Student-safe lesson content is unavailable.');
+    }
+
     // Fallback static fetch for local preview or unmigrated assets
     try {
       const res = await fetch(lessonPath);
