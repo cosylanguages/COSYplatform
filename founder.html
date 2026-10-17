@@ -577,6 +577,10 @@
       }
     }
 
+    function escapeText(str) {
+      return String(str).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    }
+
     async function loadUserProfiles() {
       const container = document.getElementById('profiles-table-container');
       if (!container) return;
@@ -589,7 +593,7 @@
 
       try {
         const [{ data: profiles, error: pError }, { data: authors }] = await Promise.all([
-          client.from('profiles').select('id, role, language_access, course_level, hosted_sessions, created_at').order('created_at', { ascending: false }),
+          client.from('profiles').select('id, display_name, role, language_access, course_level, hosted_sessions, created_at').order('created_at', { ascending: false }),
           client.from('lesson_authors').select('user_id')
         ]);
 
@@ -638,6 +642,7 @@
           html += `
             <tr id="profile-row-${p.id}">
               <td style="font-family: monospace; font-size: 0.8rem; color: #64748b;" title="${p.id}" data-i18n-skip>
+                ${p.display_name ? `<div style="font-family: var(--cosy-font-sans, sans-serif); font-size: 0.9rem; font-weight: 600; color: #0f172a;">${escapeText(p.display_name)}</div>` : ''}
                 ${p.id.substring(0, 8)}...
               </td>
               <td style="width: 140px;">
