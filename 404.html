@@ -8,7 +8,6 @@
   <meta name="description" content="The requested page could not be found or requires different access permissions." data-i18n-placeholder="notfound.metaDescription">
   <title data-i18n="notfound.title">Page Not Found · COSYlanguages</title>
 
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.49.1"></script>
   <script>
     (function() {
       const firstPart = location.pathname.split('/')[1] || '';
@@ -32,6 +31,11 @@
       css2.rel = 'stylesheet';
       css2.href = basePath + 'shared/styles/style.css';
       head.appendChild(css2);
+
+      const jsSb = document.createElement('script');
+      jsSb.async = false;
+      jsSb.src = basePath + 'vendor/supabase-js-2.49.1/supabase.js';
+      head.appendChild(jsSb);
 
       const js1 = document.createElement('script');
       js1.async = false;

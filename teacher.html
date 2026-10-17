@@ -471,7 +471,7 @@
       border-radius: 0 8px 8px 0;
     }
   </style>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.49.1"></script>
+  <script src="vendor/supabase-js-2.49.1/supabase.js"></script>
   <script src="shared/js/config.js"></script>
   <script src="shared/js/auth-guard.js"></script>
   <script src="shared/js/auth-sso.js"></script>
@@ -817,7 +817,7 @@
         if (isFounder) {
           const { data: nonFounders, error: nfErr } = await client
             .from("profiles")
-            .select("id, role, language_access, course_level")
+            .select("id, display_name, role, language_access, course_level")
             .neq("role", "founder");
 
           if (nfErr) throw nfErr;
@@ -837,7 +837,7 @@
           if (targetStudentIds.length > 0) {
             const { data: sProfiles, error: spErr } = await client
               .from("profiles")
-              .select("id, role, language_access, course_level")
+              .select("id, display_name, role, language_access, course_level")
               .in("id", targetStudentIds);
 
             if (spErr) throw spErr;
@@ -924,7 +924,7 @@
 
       rows.forEach(r => {
         const sProfile = r.student_profile;
-        const studentLabel = sProfile ? (sProfile.id.substring(0, 8) + "..." + (sProfile.role ? " (" + sProfile.role + ")" : "")) : r.student_id.substring(0, 8) + "...";
+        const studentLabel = studentLabelFor(sProfile, r.student_id);
         const answered = r.answered || 0;
         const correct = r.correct || 0;
         const pct = answered > 0 ? Math.round((correct / answered) * 100) : 0;
@@ -1849,6 +1849,16 @@
     window.loadUserNotes = loadUserNotes;
     window.savePortalNote = savePortalNote;
 
+    // Student label for teacher tables: display_name when readable, otherwise a short id.
+    // (display_name is only readable for the teacher's own students; see RLS policy
+    // "Teachers read their students' profiles".)
+    function studentLabelFor(profile, id) {
+      const name = profile && typeof profile.display_name === 'string' ? profile.display_name.trim() : '';
+      if (name) return name;
+      const rawId = String(id || (profile && profile.id) || '');
+      return rawId.substring(0, 8) + '\u2026';
+    }
+
     function escapeHtml(str) {
       if (!str) return "";
       return String(str)
@@ -1874,7 +1884,7 @@
         if (isFounder) {
           const { data, error } = await client
             .from("profiles")
-            .select("id, role, language_access, course_level, created_at")
+            .select("id, display_name, role, language_access, course_level, created_at")
             .neq("role", "founder")
             .order("created_at", { ascending: false });
 
@@ -1890,7 +1900,7 @@
           const studentIds = links.map(l => l.student_id);
           const { data: students, error: studErr } = await client
             .from("profiles")
-            .select("id, role, language_access, course_level, created_at")
+            .select("id, display_name, role, language_access, course_level, created_at")
             .in("id", studentIds);
 
           return (!studErr && students) ? students : [];
@@ -1943,7 +1953,7 @@
         if (missingStudentIds.length > 0) {
           const { data: extraProfiles } = await client
             .from("profiles")
-            .select("id, role, language_access, course_level, created_at")
+            .select("id, display_name, role, language_access, course_level, created_at")
             .in("id", missingStudentIds);
 
           if (extraProfiles) {
@@ -1989,7 +1999,7 @@
         let selectHtml = `<option value="">${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.selectStudent") : "All Students"}</option>`;
         studentIdsInSubs.forEach(sid => {
           const profile = profilesMap[sid];
-          const displayLabel = profile ? (profile.id.substring(0, 8) + "..." + (profile.role ? " (" + profile.role + ")" : "")) : (sid.substring(0, 8) + "...");
+          const displayLabel = studentLabelFor(profile, sid);
           selectHtml += `<option value="${sid}" ${selectedVal === sid ? "selected" : ""}>${escapeHtml(displayLabel)}</option>`;
         });
         selectEl.innerHTML = selectHtml;
@@ -2039,7 +2049,7 @@
 
       for (const sid in grouped) {
         const profile = profilesMap[sid];
-        const studentLabel = profile ? (profile.id.substring(0, 8) + "..." + (profile.role ? " (" + profile.role + ")" : "")) : sid.substring(0, 8) + "...";
+        const studentLabel = studentLabelFor(profile, sid);
 
         html += `
           <div style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px; background: #fafafa;">
