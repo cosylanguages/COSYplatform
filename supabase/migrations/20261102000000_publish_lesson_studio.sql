@@ -184,6 +184,8 @@ AS $$
           SELECT 1 FROM public.access_grants ag
           WHERE (ag.user_id = auth.uid() OR ag.student_id = auth.uid())
             AND (ag.course_id = c.id OR ag.course = c.id)
+            AND ag.valid_from <= CURRENT_DATE
+            AND (ag.valid_until IS NULL OR ag.valid_until >= CURRENT_DATE)
             AND (ag.expires_at IS NULL OR ag.expires_at > NOW())
         ))
       )
@@ -221,6 +223,8 @@ AS $$
         SELECT 1 FROM public.access_grants ag
         WHERE (ag.user_id = auth.uid() OR ag.student_id = auth.uid())
           AND (ag.course_id = c.id OR ag.course = c.id)
+          AND ag.valid_from <= CURRENT_DATE
+          AND (ag.valid_until IS NULL OR ag.valid_until >= CURRENT_DATE)
           AND (ag.expires_at IS NULL OR ag.expires_at > NOW())
       ))
     )
