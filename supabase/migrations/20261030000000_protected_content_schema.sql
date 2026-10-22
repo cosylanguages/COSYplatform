@@ -200,7 +200,7 @@ CREATE TABLE IF NOT EXISTS public.course_lessons (
 );
 
 -- 10. Public Course Preview View
-CREATE OR REPLACE VIEW public.course_preview AS
+CREATE OR REPLACE VIEW public.course_preview WITH (security_invoker = true) AS
 SELECT
     c.id AS course_id,
     c.language,
