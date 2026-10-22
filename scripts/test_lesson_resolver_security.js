@@ -111,6 +111,34 @@ async function main() {
     assert.deepEqual(h.calls.map(c => c.table), ['lesson_student_content', 'lessons', 'lessons']);
   }
 
+  // Invalid or caller-forged roles must not trigger any lesson reads.
+  {
+    const h = makeClient({ sanitizedBody: '<cosy-lesson>must not load</cosy-lesson>' });
+    await assert.rejects(
+      loadLessonContent(h.client, 'en:a1:greetings', 'admin'),
+      /Lesson content is unavailable/
+    );
+    assert.deepEqual(h.calls, [], 'invalid roles must be rejected before database access');
+  }
+
+  // Path traversal is rejected before querying Supabase or static files.
+  {
+    const h = makeClient();
+    const originalFetch = global.fetch;
+    let fetchCalls = 0;
+    global.fetch = async () => { fetchCalls++; return { ok: true, async text() { return 'private'; } }; };
+    try {
+      await assert.rejects(
+        loadLessonContent(h.client, 'lessons/../private.json', 'student'),
+        /Lesson content is unavailable/
+      );
+    } finally {
+      global.fetch = originalFetch;
+    }
+    assert.deepEqual(h.calls, [], 'unsafe paths must be rejected before any database access');
+    assert.equal(fetchCalls, 0, 'unsafe paths must never be fetched');
+  }
+
   // Teacher/founder legacy fallback behavior is intentionally unchanged.
   {
     const h = makeClient();
