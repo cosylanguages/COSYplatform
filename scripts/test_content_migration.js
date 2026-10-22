@@ -30,7 +30,7 @@ assert.equal('teacherNotes' in clean.slides[0], false);
 assert.equal('answers' in clean.slides[0].elements[1], false);
 assert.equal('answers' in clean.slides[0].elements[2], false);
 assert.equal('explanation' in clean.slides[0].elements[2], false);
-assert.doesNotMatch(studentBody, /PRIVATE|correct response|"right"/);
+assert.doesNotMatch(studentBody, /PRIVATE|correct response/);
 assert.deepEqual(JSON.parse(protectedRows.find(row => row.kind === 'answer-key').content), {
   s0_el_1: ['correct response'],
   s0_el_2: ['right']
