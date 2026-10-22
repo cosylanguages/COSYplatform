@@ -4,25 +4,24 @@ The protected-content migration is deliberately fail-closed. Do not merge the st
 
 ## 1. Prepare source files
 
-The ingestion script combines tracked roadmap JSON files with roadmap files from the selected source. For a migration involving an unmerged curriculum PR, place its non-sensitive roadmap metadata in a local source folder and keep the original answer-bearing lesson files in that same folder (or its lessons/ subfolder), outside the public repository.
+The science curriculum source is already present in the repository's Git history on PR #13. Its full 10-slide lesson files are in commit `33c54bab8d9c12ff5bd3202c76069f1782207087`; the current PR branch files are sanitized, so use the historical source commit for migration preflight and extraction.
 
-Example private source layout:
+Fetch the PR branch (which also fetches its history) and confirm the source commit is available:
 
-```text
-private-lesson-source/
-  roadmaps/science-en-b2.json
-  lessons/science-en/<original lesson JSON files>
+```sh
+git fetch origin pull/13/head:refs/remotes/origin/pr/13
+git cat-file -e 33c54bab8d9c12ff5bd3202c76069f1782207087^{commit}
 ```
 
-Then run the preflight against that local folder. The public science PR branch has had answer and teacher-note fields removed from its current files; do not use the public branch as the source of protected answer keys. Do not commit service-role keys or protected answer keys into public roadmap/lesson files.
+The migration script accepts that Git commit as `--source`, reads the roadmap and lesson files from it, and writes only sanitized student bodies plus separately protected answer keys and teacher notes. Do not add the historical answer-bearing files back to the current branch or commit service-role credentials. Note that the old commit is part of public Git history, so its protected values must be treated as already disclosed; migration isolation prevents future student API responses from exposing those values but cannot undo the historical disclosure.
 
 ## 2. Run the dry-run preflight
 
 Run a focused preflight for the new science course first, then run the full inventory preflight before a complete migration:
 
 ```sh
-node scripts/ingest_roadmaps.js --source ./private-lesson-source --roadmap science-en-b2.json --dry-run
-node scripts/ingest_roadmaps.js --source ./private-lesson-source --dry-run
+node scripts/ingest_roadmaps.js --source 33c54bab8d9c12ff5bd3202c76069f1782207087 --roadmap science-en-b2.json --dry-run
+node scripts/ingest_roadmaps.js --source 33c54bab8d9c12ff5bd3202c76069f1782207087 --dry-run
 ```
 
 Each preflight must report **zero missing sources and zero unsafe/unsupported sources** for its selected scope. Exit code 2 means the preflight is blocked. Do not bypass it or run a write-mode migration while either count is non-zero.
