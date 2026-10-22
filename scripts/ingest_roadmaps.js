@@ -143,7 +143,14 @@ function extractProtectedContent(raw) {
       if(slide.teacherNotes!=null)notes.push({location:'slide:'+(slide.id||si),notes:slide.teacherNotes});
       (slide.elements||[]).forEach((el,ei)=>{
         const field='s'+si+'_el_'+ei;
-        if(Array.isArray(el.answers)&&el.answers.length){if(!['input','test'].includes(String(el.type||'').toLowerCase()))throw new Error('Unsupported answer-bearing element type at '+field+'.');keys[field]=el.answers;}
+        const type=String(el.type||'').toLowerCase();
+        if(['input','test'].includes(type)&&(!Array.isArray(el.answers)||!el.answers.length)){
+          throw new Error('Interactive element is missing its private answer key at '+field+'.');
+        }
+        if(Array.isArray(el.answers)&&el.answers.length){
+          if(!['input','test'].includes(type))throw new Error('Unsupported answer-bearing element type at '+field+'.');
+          keys[field]=el.answers;
+        }
         if(typeof el.explanation==='string'&&el.explanation.trim())notes.push({location:field,explanation:el.explanation.trim()});
       });
     });
