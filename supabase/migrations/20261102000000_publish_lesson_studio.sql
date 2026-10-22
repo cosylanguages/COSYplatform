@@ -41,7 +41,7 @@ DECLARE
   v_block_index INTEGER := 0;
   v_slug TEXT;
 BEGIN
-  IF v_user_id IS NULL OR NOT public.can_author_lessons(v_user_id) THEN
+  IF v_user_id IS NULL OR NOT public.can_author_lessons_for_user(v_user_id) THEN
     RAISE EXCEPTION 'You are not authorized to publish lessons.';
   END IF;
   IF p_lesson_number IS NULL OR p_lesson_number < 1 THEN
