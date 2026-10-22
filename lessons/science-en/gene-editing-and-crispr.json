@@ -4,13 +4,6 @@
   "level": "B2",
   "templateType": "general",
   "durationMinutes": 50,
-  "teacherNotes": [
-    {
-      "type": "instruction",
-      "title": "Lesson Stage Aims",
-      "content": "Explore medical breakthroughs in gene therapy, genetic engineering, and ethical boundaries surrounding designer babies, disease eradication, and bio-safety."
-    }
-  ],
   "slides": [
     {
       "id": "slide-1",
@@ -53,18 +46,15 @@
         },
         {
           "type": "input",
-          "placeholder": "Sentence 1: The international summit called for a moratorium on clinical...",
-          "answers": ["germline editing"]
+          "placeholder": "Sentence 1: The international summit called for a moratorium on clinical..."
         },
         {
           "type": "input",
-          "placeholder": "Sentence 2: Researchers successfully corrected a mutation causing a rare...",
-          "answers": ["hereditary disorder"]
+          "placeholder": "Sentence 2: Researchers successfully corrected a mutation causing a rare..."
         },
         {
           "type": "input",
-          "placeholder": "Sentence 3: The discovery of molecular scissors known as... won the Nobel Prize in Chemistry.",
-          "answers": ["CRISPR-Cas9", "CRISPR"]
+          "placeholder": "Sentence 3: The discovery of molecular scissors known as... won the Nobel Prize in Chemistry."
         }
       ]
     },
@@ -89,8 +79,7 @@
             "Somatic edits affect only the treated patient, whereas germline edits are inherited by future generations.",
             "Germline editing is cheaper and less precise than somatic editing.",
             "Somatic editing modifies plant DNA, while germline editing applies to humans."
-          ],
-          "answers": ["Somatic edits affect only the treated patient, whereas germline edits are inherited by future generations."]
+          ]
         }
       ]
     },
