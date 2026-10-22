@@ -116,6 +116,11 @@ ALTER TABLE public.access_grants ADD COLUMN IF NOT EXISTS student_id UUID REFERE
 ALTER TABLE public.access_grants ADD COLUMN IF NOT EXISTS course_id TEXT REFERENCES public.courses(id) ON DELETE CASCADE;
 ALTER TABLE public.access_grants ADD COLUMN IF NOT EXISTS expires_at TIMESTAMPTZ;
 
+-- Preserve existing grant expiry semantics when adapting the legacy access table.
+UPDATE public.access_grants
+SET expires_at = valid_until::timestamptz
+WHERE expires_at IS NULL AND valid_until IS NOT NULL;
+
 -- 6. New Table: `lessons` (Metadata Only - No sensitive bodies)
 CREATE TABLE IF NOT EXISTS public.lessons (
     id TEXT PRIMARY KEY,
@@ -388,3 +393,9 @@ ON public.access_grants FOR ALL
 USING (
     public.is_founder()
 );
+
+
+-- Explicit API privileges for newly-created canonical curriculum objects.
+-- RLS policies still determine which rows each caller can see.
+GRANT SELECT ON public.courses, public.course_lessons, public.lessons, public.course_preview TO anon, authenticated;
+GRANT SELECT ON public.lesson_student_content, public.lesson_protected TO authenticated;
