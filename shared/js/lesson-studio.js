@@ -286,6 +286,13 @@
     }
   }
 
+function normalizeLanguage(value) {
+    const key = String(value || '').trim().toLowerCase();
+    return ({ english: 'en', en: 'en', french: 'fr', fr: 'fr', italian: 'it', it: 'it',
+      russian: 'ru', ru: 'ru', greek: 'el', el: 'el', spanish: 'es', es: 'es',
+      german: 'de', de: 'de' })[key] || key;
+  }
+
   async function loadPublishableCourses() {
     const select = $('publish-course');
     const client = window.CosyAuth ? window.CosyAuth.client : null;
@@ -294,7 +301,7 @@
     const { data, error } = await client.rpc('list_studio_publishable_courses');
     if (error) { $('publish-status').textContent = 'Could not load courses. Apply the Lesson Studio publishing migration and try again.'; return; }
     const matching = (data || []).filter(course =>
-      String(course.language).toLowerCase() === String(state.doc.language).toLowerCase() &&
+      normalizeLanguage(course.language) === normalizeLanguage(state.doc.language) &&
       String(course.cefr).toUpperCase() === String(state.doc.level).toUpperCase()
     );
     matching.forEach(course => select.add(new Option(course.title + ' · ' + course.language + ' ' + course.cefr, course.id)));
