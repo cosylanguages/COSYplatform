@@ -49,11 +49,14 @@ function createHarness() {
   const feedback = makeElement('feedback-1');
   const saved = [];
   const context = {
-    answersMap: { 'blank-1': 'hello' },
+    answersMap: {},
     explanationsMap: { 'blank-1': 'Use this greeting when meeting someone.' },
     currentRole: 'student',
     currentLessonPath: 'lessons/a1/greetings.json',
-    window: { CosyProgress: { saveAnswer(...args) { saved.push(args); } } },
+    window: {
+      CosyProgress: { saveAnswer(...args) { saved.push(args); } },
+      CosyAuth: { client: { async rpc(name, args) { assert.equal(name, 'check_lesson_answer'); return { data: args.p_value === 'hello', error: null }; } } }
+    },
     document: {
       getElementById(id) {
         if (id === 'blank-1') return input;
@@ -72,10 +75,11 @@ function createHarness() {
   return { context, input, feedback, saved };
 }
 
+async function main() {
 const h = createHarness();
 
-// Correct answers receive positive feedback and are persisted as correct.
-h.context.checkAnswerForField('blank-1', false);
+// Correct answers are validated through the server RPC and persisted as correct.
+await h.context.checkAnswerForField('blank-1', false);
 assert.match(h.feedback.children[0].textContent, /Correct/);
 assert.equal(h.input.classList.contains('border-green-500'), true);
 assert.equal(h.saved.at(-1)[3], true);
@@ -85,21 +89,22 @@ assert.match(h.feedback.children[1].textContent, /Why: Use this greeting/);
 {
   const safe = createHarness();
   safe.context.explanationsMap['blank-1'] = '<img src=x onerror=alert(1)>';
-  safe.context.checkAnswerForField('blank-1', false);
+  await safe.context.checkAnswerForField('blank-1', false);
   assert.equal(safe.feedback.children[1].textContent, 'Why: <img src=x onerror=alert(1)>');
 }
 
 // Incorrect answers get a retry prompt, never the answer key during live practice.
 h.input.value = 'goodbye';
-h.context.checkAnswerForField('blank-1', false);
+await h.context.checkAnswerForField('blank-1', false);
 assert.match(h.feedback.children[0].textContent, /try again/i);
 assert.doesNotMatch(h.feedback.children[0].textContent, /hello/i);
 assert.equal(h.input.classList.contains('border-red-500'), true);
 assert.equal(h.saved.at(-1)[3], false);
 
-// The explicit Check Answers action may reveal the expected answer.
-h.context.checkAnswerForField('blank-1', true);
-assert.match(h.feedback.children[0].textContent, /Answer: hello/);
+// Student Check Answers never reveals the expected answer key.
+await h.context.checkAnswerForField('blank-1', true);
+assert.match(h.feedback.children[0].textContent, /try again/i);
+assert.doesNotMatch(h.feedback.children[0].textContent, /hello/i);
 
 // Clearing a field clears stale feedback and restores neutral styling.
 h.input.value = '';
@@ -134,7 +139,7 @@ assert.equal(h.input.classList.contains('border-cosy-200'), true);
   };
   vm.createContext(context);
   vm.runInContext(feedbackSource, context, { filename: 'classroom-radio-feedback.js' });
-  context.checkAnswerForField('question1', false);
+  await context.checkAnswerForField('question1', false);
   assert.match(feedback.children[0].textContent, /Correct/);
   assert.equal(first.classList.contains('border-red-500'), false);
 }
@@ -167,4 +172,7 @@ assert.match(html, /function parseXmlLessonToSlides\(xmlText\) \{\s*resetLessonA
 assert.match(html, /function parseJsonLessonToSlides\(jsonData\) \{\s*resetLessonAnswerMetadata\(\);/);
 assert.match(html, /Object\.keys\(explanationsMap\)\.forEach\(key => delete explanationsMap\[key\]\)/);
 
-console.log('PASS: live feedback, answer-key hiding, cleared-state styling, saved-answer restore, reconnect replay, and lesson metadata isolation');
+console.log('PASS: server-checked student feedback, no student answer reveal, saved-answer restore, reconnect replay, and lesson metadata isolation');
+}
+
+main().catch(error => { console.error(error); process.exitCode = 1; });

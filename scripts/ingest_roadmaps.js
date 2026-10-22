@@ -20,7 +20,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const { execSync } = require('child_process');
+const { execFileSync } = require('child_process');
 
 const ROADMAPS_DIR = path.join(__dirname, '../roadmaps');
 const LOCAL_SOURCE_DIRS = [
@@ -30,7 +30,7 @@ const LOCAL_SOURCE_DIRS = [
 ];
 
 const SUPABASE_URL = process.env.SUPABASE_URL || 'https://example.supabase.co';
-const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_ANON_KEY || 'fake-key';
+const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || '';
 
 const isDryRun = process.argv.includes('--dry-run') || SUPABASE_URL.includes('example.supabase.co');
 
@@ -42,7 +42,15 @@ function getSourceArg() {
   return null;
 }
 
+function getRoadmapArg() {
+  const idx = process.argv.indexOf('--roadmap');
+  if (idx < 0) return null;
+  if (!process.argv[idx + 1]) throw new Error('--roadmap requires a roadmap filename, e.g. science-en-b2.json.');
+  return path.basename(process.argv[idx + 1]);
+}
+
 const customSource = getSourceArg();
+const roadmapFilter = getRoadmapArg();
 
 function parseFilenameMetadata(filename) {
   const basename = path.basename(filename, '.json');
@@ -59,6 +67,36 @@ function parseFilenameMetadata(filename) {
   }
 
   return { courseId: basename, courseType: 'general', language: 'en', cefr: 'a1' };
+}
+
+function loadRoadmapFiles(source) {
+  const roadmaps = new Map();
+  if (fs.existsSync(ROADMAPS_DIR)) {
+    for (const name of fs.readdirSync(ROADMAPS_DIR).filter(name => name.endsWith('.json'))) {
+      roadmaps.set(name, fs.readFileSync(path.join(ROADMAPS_DIR, name), 'utf8'));
+    }
+  }
+  if (source) {
+    const localRoadmaps = path.join(path.resolve(source), 'roadmaps');
+    if (fs.existsSync(localRoadmaps) && fs.statSync(localRoadmaps).isDirectory()) {
+      for (const name of fs.readdirSync(localRoadmaps).filter(name => name.endsWith('.json'))) {
+        roadmaps.set(name, fs.readFileSync(path.join(localRoadmaps, name), 'utf8'));
+      }
+    } else {
+      try {
+        const names = execFileSync('git', ['ls-tree', '-r', '--name-only', source, '--', 'roadmaps'], {
+          encoding: 'utf8', stdio: ['pipe', 'pipe', 'ignore']
+        }).split(/\r?\n/).filter(name => /^roadmaps\/[^/]+\.json$/.test(name));
+        for (const name of names) {
+          const content = execFileSync('git', ['show', `${source}:${name}`], {
+            encoding: 'utf8', stdio: ['pipe', 'pipe', 'ignore']
+          });
+          roadmaps.set(path.basename(name), content);
+        }
+      } catch (_) {}
+    }
+  }
+  return Array.from(roadmaps.entries()).map(([filename, content]) => ({ filename, content }));
 }
 
 function fetchContentFromSource(relativeFilePath, source) {
@@ -78,7 +116,7 @@ function fetchContentFromSource(relativeFilePath, source) {
 
     // 2. Check if source is a git ref
     try {
-      const gitOutput = execSync(`git show ${source}:${normalizedRelPath}`, { encoding: 'utf8', stdio: ['pipe', 'pipe', 'ignore'] });
+      const gitOutput = execFileSync('git', ['show', `${source}:${normalizedRelPath}`], { encoding: 'utf8', stdio: ['pipe', 'pipe', 'ignore'] });
       if (gitOutput && gitOutput.trim().length > 0) {
         return gitOutput;
       }
@@ -98,30 +136,140 @@ function fetchContentFromSource(relativeFilePath, source) {
   return null;
 }
 
-function sanitizeStudentContent(rawContent) {
-  if (typeof rawContent !== 'string') return '';
-  return rawContent
+const SENSITIVE_JSON_KEYS = new Set([
+  'answer', 'answers', 'answerkey', 'answer_key', 'answer-key',
+  'correctanswer', 'correct_answer', 'correct-answer',
+  'iscorrect', 'is_correct', 'is-correct', 'correct',
+  'solution', 'solutions', 'teachernotes', 'teacher_notes',
+  'teacher-notes', 'explanation', 'rationale', 'rationales'
+]);
+
+function parseJsonLesson(raw) {
+  if (typeof raw !== 'string') return null;
+  const trimmed = raw.trim();
+  if (!trimmed.startsWith('{') && !trimmed.startsWith('[')) return null;
+  try {
+    const value = JSON.parse(raw);
+    if (!value || typeof value !== 'object' || Array.isArray(value)) {
+      throw new Error('Lesson JSON must be an object, not an array or primitive.');
+    }
+    return value;
+  } catch (error) {
+    throw new Error('Lesson source looks like JSON but cannot be parsed safely: ' + error.message);
+  }
+}
+
+function collectSensitivePaths(value, currentPath = '', found = []) {
+  if (Array.isArray(value)) {
+    value.forEach((item, index) => collectSensitivePaths(item, `${currentPath}[${index}]`, found));
+  } else if (value && typeof value === 'object') {
+    for (const [key, nested] of Object.entries(value)) {
+      const nextPath = currentPath ? `${currentPath}.${key}` : key;
+      if (SENSITIVE_JSON_KEYS.has(key.toLowerCase())) found.push(nextPath);
+      collectSensitivePaths(nested, nextPath, found);
+    }
+  }
+  return found;
+}
+
+function extractProtectedContent(raw) {
+  const output = [];
+  if (typeof raw !== 'string') return output;
+  const lesson = parseJsonLesson(raw);
+
+  if (lesson) {
+    const answerKey = {};
+    const teacherNotes = [];
+    const allowedSensitivePaths = new Set();
+
+    if (lesson.teacherNotes != null) {
+      teacherNotes.push({ location: 'lesson', notes: lesson.teacherNotes });
+      allowedSensitivePaths.add('teacherNotes');
+    }
+
+    (lesson.slides || []).forEach((slide, slideIndex) => {
+      const slidePath = `slides[${slideIndex}]`;
+      if (slide.teacherNotes != null) {
+        teacherNotes.push({ location: `slide:${slide.id || slideIndex}`, notes: slide.teacherNotes });
+        allowedSensitivePaths.add(`${slidePath}.teacherNotes`);
+      }
+
+      (slide.elements || []).forEach((element, elementIndex) => {
+        const fieldKey = `s${slideIndex}_el_${elementIndex}`;
+        const elementPath = `${slidePath}.elements[${elementIndex}]`;
+        const type = String(element.type || '').toLowerCase();
+
+        if (['input', 'test'].includes(type) && (!Array.isArray(element.answers) || !element.answers.length)) {
+          throw new Error(`Interactive element is missing its private answer key at ${fieldKey}.`);
+        }
+
+        if (Array.isArray(element.answers) && element.answers.length) {
+          if (!['input', 'test'].includes(type)) {
+            throw new Error(`Unsupported answer-bearing element type at ${fieldKey}.`);
+          }
+          answerKey[fieldKey] = element.answers;
+          allowedSensitivePaths.add(`${elementPath}.answers`);
+        }
+
+        if (typeof element.explanation === 'string' && element.explanation.trim()) {
+          teacherNotes.push({ location: fieldKey, explanation: element.explanation.trim() });
+          allowedSensitivePaths.add(`${elementPath}.explanation`);
+        }
+      });
+    });
+
+    const unmapped = collectSensitivePaths(lesson).filter(path => !allowedSensitivePaths.has(path));
+    if (unmapped.length) {
+      throw new Error(`Unsupported sensitive fields require manual migration: ${unmapped.slice(0, 10).join(', ')}.`);
+    }
+
+    if (Object.keys(answerKey).length) {
+      output.push({ kind: 'answer-key', content: JSON.stringify(answerKey) });
+    }
+    if (teacherNotes.length) {
+      output.push({ kind: 'teacher-notes', content: JSON.stringify(teacherNotes) });
+    }
+    return output;
+  }
+
+  if (/<(?:cosy-input-item|cosy-select-item|cosy-test-item|(?:cosy-)?(?:answer|answers|answer-key|correct-answer|solution))\b|\b(?:answer|answers|correct|solution)\s*=/i.test(raw)) {
+    throw new Error('XML source contains answer metadata; structural XML migration is required before safe ingestion.');
+  }
+  const notes = raw.match(/<cosy-teacher-notes[\s\S]*?<\/cosy-teacher-notes>|<teacher-notes[\s\S]*?<\/teacher-notes>/gi);
+  if (notes) {
+    notes.forEach(note => output.push({
+      kind: 'teacher-notes',
+      content: note.replace(/<\/?(?:cosy-)?teacher-notes[^>]*>/gi, '').trim()
+    }));
+  }
+  return output;
+}
+
+function sanitizeStudentContent(raw) {
+  if (typeof raw !== 'string') return '';
+  const lesson = parseJsonLesson(raw);
+  if (lesson) {
+    const strip = value => {
+      if (Array.isArray(value)) return value.map(strip);
+      if (!value || typeof value !== 'object') return value;
+      const clean = {};
+      for (const [key, nested] of Object.entries(value)) {
+        if (!SENSITIVE_JSON_KEYS.has(key.toLowerCase())) clean[key] = strip(nested);
+      }
+      return clean;
+    };
+    return JSON.stringify(strip(lesson));
+  }
+
+  if (/<(?:cosy-input-item|cosy-select-item|cosy-test-item|(?:cosy-)?(?:answer|answers|answer-key|correct-answer|solution))\b|\b(?:answer|answers|correct|solution)\s*=/i.test(raw)) {
+    throw new Error('XML source contains answer metadata; structural XML migration is required before safe ingestion.');
+  }
+  return raw
     .replace(/<cosy-teacher-notes[\s\S]*?<\/cosy-teacher-notes>/gi, '')
     .replace(/<teacher-notes[\s\S]*?<\/teacher-notes>/gi, '')
     .trim();
 }
 
-function extractProtectedContent(rawContent) {
-  const protectedItems = [];
-  if (typeof rawContent !== 'string') return protectedItems;
-
-  const teacherNotesMatch = rawContent.match(/<cosy-teacher-notes[\s\S]*?<\/cosy-teacher-notes>/gi);
-  if (teacherNotesMatch) {
-    teacherNotesMatch.forEach(notes => {
-      protectedItems.push({
-        kind: 'teacher-notes',
-        content: notes.replace(/<\/?cosy-teacher-notes>/gi, '').trim()
-      });
-    });
-  }
-
-  return protectedItems;
-}
 
 async function ingestRoadmaps() {
   console.log('=== COSYplatform Roadmap Ingestion Tool ===');
@@ -130,8 +278,14 @@ async function ingestRoadmaps() {
     console.log(`Source location / git ref: ${customSource}`);
   }
 
-  const files = fs.readdirSync(ROADMAPS_DIR).filter(f => f.endsWith('.json'));
-  console.log(`Found ${files.length} roadmap files in roadmaps/\n`);
+  const allRoadmapFiles = loadRoadmapFiles(customSource);
+  const roadmapFiles = roadmapFilter
+    ? allRoadmapFiles.filter(item => item.filename === roadmapFilter)
+    : allRoadmapFiles;
+  if (roadmapFilter && roadmapFiles.length !== 1) {
+    throw new Error(`Requested roadmap not found: ${roadmapFilter}`);
+  }
+  console.log(`Found ${roadmapFiles.length} roadmap file(s) for migration preflight\\n`);
 
   const coursesMap = new Map();
   const lessonsMap = new Map();
@@ -141,15 +295,17 @@ async function ingestRoadmaps() {
 
   const fileToRoadmaps = {};
   const idToRoadmaps = {};
+  const missingSources = new Set();
+  const unsafeSources = new Map();
 
   let totalSequenceCount = 0;
   let totalLessonFileRefs = 0;
 
-  files.forEach(filename => {
+  roadmapFiles.forEach(({ filename, content }) => {
     const meta = parseFilenameMetadata(filename);
-    const filePath = path.join(ROADMAPS_DIR, filename);
-    const content = fs.readFileSync(filePath, 'utf8');
-    const data = JSON.parse(content);
+    let data;
+    try { data = JSON.parse(content); }
+    catch (_) { throw new Error(`Invalid roadmap JSON: ${filename}`); }
 
     const courseId = meta.courseId;
     const language = meta.language;
@@ -220,23 +376,16 @@ async function ingestRoadmaps() {
 
       if (item.lessonFile) {
         const rawContent = fetchContentFromSource(item.lessonFile, customSource);
-        if (rawContent) {
-          const sanitized = sanitizeStudentContent(rawContent);
+        if (!rawContent) { missingSources.add(item.lessonFile); return; }
+        try {
           const protectedItems = extractProtectedContent(rawContent);
-
-          studentContentMap.set(canonicalLessonId, {
-            lesson_id: canonicalLessonId,
-            body: sanitized
-          });
-
-          if (protectedItems.length > 0) {
-            protectedContentMap.set(canonicalLessonId, protectedItems.map(p => ({
-              lesson_id: canonicalLessonId,
-              kind: p.kind,
-              content: p.content
-            })));
-          }
-        }
+          const sanitized = sanitizeStudentContent(rawContent);
+          if (!sanitized) throw new Error('Sanitized student body is empty.');
+          if (/<cosy-teacher-notes\b|<teacher-notes\b/i.test(sanitized)) throw new Error('Teacher-note markup remains in student body.');
+          if (parseJsonLesson(sanitized) && /"(?:answers|answerKey|answer_key|correctAnswer|correct_answer|isCorrect|solution|teacherNotes|teacher_notes|explanation)"\s*:/i.test(sanitized)) throw new Error('Sensitive JSON fields remain in student body.');
+          studentContentMap.set(canonicalLessonId,{lesson_id:canonicalLessonId,body:sanitized});
+          if(protectedItems.length)protectedContentMap.set(canonicalLessonId,protectedItems.map(p=>({lesson_id:canonicalLessonId,kind:p.kind,content:p.content})));
+        } catch(error) { unsafeSources.set(item.lessonFile,error.message); }
       }
     });
   });
@@ -247,7 +396,11 @@ async function ingestRoadmaps() {
   console.log(`- Total lessonFile references: ${totalLessonFileRefs}`);
   console.log(`- Deduplicated unique lessons: ${lessonsMap.size}`);
   console.log(`- Total placement records: ${courseLessonsMap.size}`);
-  console.log(`- Local/Remote student bodies found: ${studentContentMap.size}`);
+  console.log(`- Student bodies safely prepared: ${studentContentMap.size}`);
+  console.log(`- Protected records prepared: ${Array.from(protectedContentMap.values()).reduce((n,rows)=>n+rows.length,0)}`);
+  console.log(`- Missing sources: ${missingSources.size}; unsafe/unsupported sources: ${unsafeSources.size}`);
+  for(const p of Array.from(missingSources).slice(0,50))console.log('MISSING: '+p);
+  for(const [p,reason] of Array.from(unsafeSources.entries()).slice(0,50))console.log('UNSAFE: '+p+' — '+reason);
 
   console.log('\n=== Shared / Duplicate Lessons Detected ===');
   let duplicateCount = 0;
@@ -268,9 +421,12 @@ async function ingestRoadmaps() {
   }
 
   if (isDryRun) {
-    console.log('\n[Dry Run] Database ingestion simulation completed successfully.');
+    if(missingSources.size||unsafeSources.size){console.error('\\n[Dry Run] BLOCKED: source coverage/sanitization incomplete; no writes attempted.');process.exitCode=2;}
+    else console.log('\\n[Dry Run] Source coverage and sanitization preflight passed. No writes attempted.');
     return;
   }
+  if(!SUPABASE_KEY)throw new Error('SUPABASE_SERVICE_ROLE_KEY is required; anon-key writes are disabled.');
+  if(missingSources.size||unsafeSources.size)throw new Error('Ingestion blocked: all lesson sources must exist and pass sanitization before any writes.');
 
   let createClient;
   try {
@@ -282,16 +438,26 @@ async function ingestRoadmaps() {
 
   const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
-  console.log('\nWriting records to Supabase...');
-  await supabase.from('courses').upsert(Array.from(coursesMap.values()));
-  await supabase.from('lessons').upsert(Array.from(lessonsMap.values()));
-  await supabase.from('course_lessons').upsert(Array.from(courseLessonsMap.values()));
-
-  if (studentContentMap.size > 0) {
-    await supabase.from('lesson_student_content').upsert(Array.from(studentContentMap.values()));
+  async function checkedWrite(label,query){const {error}=await query;if(error)throw new Error(label+' failed: '+(error.message||error));}
+  console.log('\\nWriting records to Supabase...');
+  await checkedWrite('Courses upsert',supabase.from('courses').upsert(Array.from(coursesMap.values())));
+  await checkedWrite('Lessons upsert',supabase.from('lessons').upsert(Array.from(lessonsMap.values())));
+  await checkedWrite('Course placements upsert',supabase.from('course_lessons').upsert(Array.from(courseLessonsMap.values())));
+  // Replace each student's sanitized body and protected rows in one database
+  // transaction, so a failed protected-key write cannot leave a mismatched lesson.
+  for (const [lessonId, studentRecord] of studentContentMap.entries()) {
+    const protectedRecords = (protectedContentMap.get(lessonId) || [])
+      .map(({ kind, content }) => ({ kind, content }));
+    await checkedWrite(
+      `Atomic lesson content replacement for ${lessonId}`,
+      supabase.rpc('replace_lesson_content', {
+        p_lesson_id: lessonId,
+        p_body: studentRecord.body,
+        p_protected: protectedRecords
+      })
+    );
   }
-
-  console.log('✅ Ingestion into Supabase completed successfully.');
+  console.log('Ingestion completed. Verify row counts and run Supabase RLS tests before enabling student access.');
 }
 
 if (require.main === module) {
@@ -301,4 +467,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = { ingestRoadmaps };
+module.exports = { ingestRoadmaps, sanitizeStudentContent, extractProtectedContent, loadRoadmapFiles };

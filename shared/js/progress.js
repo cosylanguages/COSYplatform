@@ -9,6 +9,9 @@ window.CosyProgress = window.CosyProgress || {};
   'use strict';
 
   const debounceTimers = new Map();
+  const lessonGenerations = new Map();
+  const inFlightWrites = new Map();
+  const clearingLessons = new Set();
   const PENDING_STORAGE_KEY_PREFIX = 'cosy_pending_answers';
   const DEBOUNCE_DELAY = 800; // ms
   let queueRevision = 0;
@@ -67,12 +70,32 @@ window.CosyProgress = window.CosyProgress || {};
       savePendingToStorage(userId, stored);
     }
   }
-  async function performUpsert(userId, lessonId, fieldKey, value, isCorrect, expectedRevision) {
+  function lessonOperationKey(userId, lessonId) {
+    return `${userId}::${lessonId}`;
+  }
+
+  function getLessonGeneration(userId, lessonId) {
+    return lessonGenerations.get(lessonOperationKey(userId, lessonId)) || 0;
+  }
+
+  function trackInFlightWrite(userId, lessonId, promise) {
+    const key = lessonOperationKey(userId, lessonId);
+    const writes = inFlightWrites.get(key) || new Set();
+    writes.add(promise);
+    inFlightWrites.set(key, writes);
+    promise.finally(() => {
+      writes.delete(promise);
+      if (writes.size === 0) inFlightWrites.delete(key);
+    });
+    return promise;
+  }
+
+  async function performUpsert(userId, lessonId, fieldKey, value, isCorrect, expectedRevision, expectedGeneration) {
     const client = getClient();
-    if (!client) return false;
+    if (!client || clearingLessons.has(lessonOperationKey(userId, lessonId))) return false;
 
     const currentUserId = await getUserId();
-    if (!currentUserId || currentUserId !== userId) return false;
+    if (!currentUserId || currentUserId !== userId || getLessonGeneration(userId, lessonId) !== expectedGeneration || clearingLessons.has(lessonOperationKey(userId, lessonId))) return false;
 
     try {
       const payload = {
@@ -92,7 +115,9 @@ window.CosyProgress = window.CosyProgress || {};
         console.warn('CosyProgress: upsert error', error);
         return false;
       }
-      removePendingItem(currentUserId, lessonId, fieldKey, expectedRevision);
+      if (getLessonGeneration(currentUserId, lessonId) === expectedGeneration) {
+        removePendingItem(currentUserId, lessonId, fieldKey, expectedRevision);
+      }
       return true;
     } catch (err) {
       console.warn('CosyProgress: save error', err);
@@ -108,9 +133,10 @@ window.CosyProgress = window.CosyProgress || {};
       if (!lessonId || !fieldKey) return;
 
       const userId = await getUserId();
-      if (!userId) return;
+      if (!userId || clearingLessons.has(lessonOperationKey(userId, lessonId))) return;
 
       const revision = queuePendingItem(userId, lessonId, fieldKey, value, isCorrect);
+      const generation = getLessonGeneration(userId, lessonId);
 
       const timerKey = `${userId}::${lessonId}::${fieldKey}`;
       if (debounceTimers.has(timerKey)) {
@@ -119,7 +145,8 @@ window.CosyProgress = window.CosyProgress || {};
 
       const timer = setTimeout(async () => {
         debounceTimers.delete(timerKey);
-        await performUpsert(userId, lessonId, fieldKey, value, isCorrect, revision);
+        const write = performUpsert(userId, lessonId, fieldKey, value, isCorrect, revision, generation);
+        await trackInFlightWrite(userId, lessonId, write);
       }, DEBOUNCE_DELAY);
 
       debounceTimers.set(timerKey, timer);
@@ -180,14 +207,23 @@ window.CosyProgress = window.CosyProgress || {};
       const userId = await getUserId();
       if (!client || !userId) return false;
 
+      const operationKey = lessonOperationKey(userId, lessonId);
+      if (clearingLessons.has(operationKey)) return false;
+      clearingLessons.add(operationKey);
+      lessonGenerations.set(operationKey, getLessonGeneration(userId, lessonId) + 1);
+
       try {
-        // Stop delayed upserts first so a queued write cannot race and recreate
-        // a row after the server-side delete completes.
+        // Invalidate pending timers/writes, then wait for any request already
+        // in flight before deleting. Otherwise a late upsert could recreate rows.
         for (const [timerKey, timer] of debounceTimers.entries()) {
           if (timerKey.startsWith(`${userId}::${lessonId}::`)) {
             clearTimeout(timer);
             debounceTimers.delete(timerKey);
           }
+        }
+
+        while (inFlightWrites.has(operationKey)) {
+          await Promise.all(Array.from(inFlightWrites.get(operationKey)));
         }
 
         const { error } = await client
@@ -223,6 +259,8 @@ window.CosyProgress = window.CosyProgress || {};
       } catch (err) {
         console.warn('CosyProgress: clear answers error', err);
         return false;
+      } finally {
+        clearingLessons.delete(operationKey);
       }
     },
 
@@ -246,7 +284,9 @@ window.CosyProgress = window.CosyProgress || {};
 
       for (const [key, item] of entries) {
         if (item.userId && item.userId !== currentUserId) continue;
-        const success = await performUpsert(currentUserId, item.lessonId, item.fieldKey, item.value, item.isCorrect, item.revision);
+        const generation = getLessonGeneration(currentUserId, item.lessonId);
+        const write = performUpsert(currentUserId, item.lessonId, item.fieldKey, item.value, item.isCorrect, item.revision, generation);
+        const success = await trackInFlightWrite(currentUserId, item.lessonId, write);
         if (!success) {
           break;
         }

@@ -24,8 +24,14 @@ const IGNORED_PATHS = [
   'verification'
 ];
 
-const PROHIBITED_KEYS = ['answers', 'teacherNotes', 'answer-key'];
-const PROHIBITED_TAGS = ['<cosy-teacher-notes', '<teacher-notes'];
+// Answer-bearing and instructor-only metadata spellings that must never be
+// shipped in public JSON/XML lesson assets.
+const PROHIBITED_KEYS = [
+  'answers', 'answer', 'answerKey', 'answer_key', 'answer-key',
+  'teacherNotes', 'teacher_notes', 'teacher-notes',
+  'correct', 'isCorrect', 'correctAnswer', 'correct_answer',
+  'solution', 'explanation'
+];
 
 function isIgnored(relativeFilePath) {
   return IGNORED_PATHS.some(ignored =>
@@ -52,25 +58,13 @@ function scanDirectory(dir, violations) {
         const content = fs.readFileSync(fullPath, 'utf8');
 
         PROHIBITED_KEYS.forEach(key => {
-          const jsonPattern = new RegExp(`"${key}"\\s*:`, 'i');
-          const keyMatch = jsonPattern.test(content) || content.includes(`key="${key}"`) || content.includes(`<${key}>`);
+          const escaped = key.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&');
+          const jsonPattern = new RegExp(`"${escaped}"\\s*:`, 'i');
+          const xmlAttributePattern = new RegExp(`\\b${escaped}\\s*=`, 'i');
+          const xmlElementPattern = new RegExp(`<\\s*(?:cosy-)?${escaped}\\b`, 'i');
 
-          if (keyMatch) {
-            violations.push({
-              file: relPath,
-              type: 'key',
-              item: key
-            });
-          }
-        });
-
-        PROHIBITED_TAGS.forEach(tag => {
-          if (content.toLowerCase().includes(tag.toLowerCase())) {
-            violations.push({
-              file: relPath,
-              type: 'tag',
-              item: tag
-            });
+          if (jsonPattern.test(content) || xmlAttributePattern.test(content) || xmlElementPattern.test(content)) {
+            violations.push({ file: relPath, type: 'protected field/tag', item: key });
           }
         });
       }

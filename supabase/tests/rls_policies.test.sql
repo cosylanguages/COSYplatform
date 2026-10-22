@@ -3,7 +3,7 @@
 
 BEGIN;
 
-SELECT plan(20);
+SELECT plan(29);
 
 -- Setup test helper schema for auth mocking
 CREATE SCHEMA IF NOT EXISTS tests;
@@ -258,6 +258,67 @@ SELECT results_eq(
     'SELECT COUNT(*)::INTEGER FROM public.lesson_answers',
     ARRAY[0],
     'TC-20 [PASS]: Founder role does not bypass private student answer isolation'
+);
+
+
+-- TEST GROUP 6: Server-side answer checking never returns answer keys
+SELECT tests.authenticate_as('33333333-3333-3333-3333-333333333333'::UUID);
+
+SELECT is(
+    public.check_lesson_answer('en:a1:nice-to-meet-you', 'q1', 'HELLO'),
+    TRUE,
+    'TC-21 [PASS]: Granted student can validate a correct answer without reading the key'
+);
+
+SELECT is(
+    public.check_lesson_answer('lessons/general-english-a1/nice-to-meet-you.json', 'q1', 'hello'),
+    TRUE,
+    'TC-24 [PASS]: Roadmap file paths resolve to canonical protected answer keys'
+);
+
+SELECT is(
+    public.check_lesson_answer('en:a1:nice-to-meet-you', 'q1', 'not the answer'),
+    FALSE,
+    'TC-22 [PASS]: Incorrect answer returns only false'
+);
+
+SELECT tests.authenticate_as('44444444-4444-4444-4444-444444444444'::UUID);
+
+SELECT is(
+    public.check_lesson_answer('en:a1:nice-to-meet-you', 'q1', 'hello'),
+    FALSE,
+    'TC-23 [PASS]: Ungranted student cannot use answer-checking RPC to validate answers'
+);
+
+SELECT ok(
+    NOT has_function_privilege('authenticated', 'public.replace_lesson_content(text,text,jsonb)', 'EXECUTE'),
+    'TC-25 [PASS]: Authenticated users cannot call the privileged lesson-content replacement RPC'
+);
+
+SELECT ok(
+    has_function_privilege('service_role', 'public.replace_lesson_content(text,text,jsonb)', 'EXECUTE'),
+    'TC-26 [PASS]: Only the server-side service role is granted lesson-content replacement access'
+);
+
+SELECT tests.authenticate_as('22222222-2222-2222-2222-222222222222'::UUID);
+
+SELECT is(
+    public.check_lesson_answer('en:a1:nice-to-meet-you', 'q1', 'hello'),
+    FALSE,
+    'TC-27 [PASS]: Teacher role cannot use the student answer-checking RPC'
+);
+
+SELECT tests.authenticate_as('11111111-1111-1111-1111-111111111111'::UUID);
+
+SELECT is(
+    public.check_lesson_answer('en:a1:nice-to-meet-you', 'q1', 'hello'),
+    FALSE,
+    'TC-28 [PASS]: Founder role cannot use the student answer-checking RPC'
+);
+
+SELECT ok(
+    NOT has_function_privilege('anon', 'public.check_lesson_answer(text,text,text)', 'EXECUTE'),
+    'TC-29 [PASS]: Anonymous users are not granted execute permission on answer checking'
 );
 
 SELECT * FROM finish();

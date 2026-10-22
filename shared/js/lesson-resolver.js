@@ -20,7 +20,9 @@
     }
 
     if (client) {
-      // 1. Try student_lesson_content for student role (RLS-guarded sanitized student body)
+      // 1. Students may only receive the RLS-protected sanitized body.
+      // First accept a canonical lesson ID, then map legacy roadmap file paths
+      // to a unique canonical lesson by slug. Never fetch the legacy file itself.
       if (studentView) {
         try {
           const { data: scData, error: scError } = await client
@@ -32,9 +34,52 @@
           if (!scError && scData && typeof scData.body === 'string') {
             return scData.body;
           }
+
+          let canonicalLessonId = null;
+          const direct = await client
+            .from('lessons')
+            .select('id')
+            .eq('id', lessonPath)
+            .maybeSingle();
+
+          if (!direct.error && direct.data && typeof direct.data.id === 'string') {
+            canonicalLessonId = direct.data.id;
+          } else {
+            const fileName = pathParts[pathParts.length - 1];
+            const lessonSlug = fileName.replace(/\.(json|xml)$/i, '');
+            if (!lessonSlug || lessonSlug === fileName && /\.(json|xml)$/i.test(fileName)) {
+              throw new Error('Student-safe lesson content is unavailable.');
+            }
+
+            const bySlug = await client
+              .from('lessons')
+              .select('id')
+              .eq('slug', lessonSlug)
+              .maybeSingle();
+
+            // maybeSingle fails when a slug is ambiguous. Fail closed rather
+            // than selecting another course/language's lesson.
+            if (!bySlug.error && bySlug.data && typeof bySlug.data.id === 'string') {
+              canonicalLessonId = bySlug.data.id;
+            }
+          }
+
+          if (canonicalLessonId && canonicalLessonId !== lessonPath) {
+            const { data: canonicalContent, error: canonicalError } = await client
+              .from('lesson_student_content')
+              .select('body')
+              .eq('lesson_id', canonicalLessonId)
+              .maybeSingle();
+
+            if (!canonicalError && canonicalContent && typeof canonicalContent.body === 'string') {
+              return canonicalContent.body;
+            }
+          }
         } catch (e) {
-          // Fallback to legacy/public checks
+          // Fail closed below; never fall back to legacy/public content.
         }
+
+        throw new Error('Student-safe lesson content is unavailable.');
       }
 
       // 2. Try canonical 'lessons' / 'lesson_protected' for teacher/founder
@@ -66,6 +111,12 @@
           return data[column];
         }
       }
+    }
+
+    // A student must never fall through to static files, even when Supabase
+    // has not initialized. Those files may contain legacy answer metadata.
+    if (studentView) {
+      throw new Error('Student-safe lesson content is unavailable.');
     }
 
     // Fallback static fetch for local preview or unmigrated assets
