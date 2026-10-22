@@ -137,12 +137,17 @@ const SENSITIVE_JSON_KEYS = new Set([
 ]);
 
 function parseJsonLesson(raw) {
-  if (typeof raw !== 'string' || !raw.trim().startsWith('{')) return null;
+  if (typeof raw !== 'string') return null;
+  const trimmed = raw.trim();
+  if (!trimmed.startsWith('{') && !trimmed.startsWith('[')) return null;
   try {
     const value = JSON.parse(raw);
-    return value && typeof value === 'object' && !Array.isArray(value) ? value : null;
-  } catch (_) {
-    throw new Error('Lesson source looks like JSON but cannot be parsed safely.');
+    if (!value || typeof value !== 'object' || Array.isArray(value)) {
+      throw new Error('Lesson JSON must be an object, not an array or primitive.');
+    }
+    return value;
+  } catch (error) {
+    throw new Error('Lesson source looks like JSON but cannot be parsed safely: ' + error.message);
   }
 }
 
@@ -219,7 +224,7 @@ function extractProtectedContent(raw) {
     return output;
   }
 
-  if (/<(?:cosy-input-item|cosy-select-item|cosy-test-item)\b|\b(?:answer|correct|solution)\s*=/i.test(raw)) {
+  if (/<(?:cosy-input-item|cosy-select-item|cosy-test-item|(?:cosy-)?(?:answer|answers|answer-key|correct-answer|solution))\b|\b(?:answer|answers|correct|solution)\s*=/i.test(raw)) {
     throw new Error('XML source contains answer metadata; structural XML migration is required before safe ingestion.');
   }
   const notes = raw.match(/<cosy-teacher-notes[\s\S]*?<\/cosy-teacher-notes>|<teacher-notes[\s\S]*?<\/teacher-notes>/gi);
@@ -248,7 +253,7 @@ function sanitizeStudentContent(raw) {
     return JSON.stringify(strip(lesson));
   }
 
-  if (/<(?:cosy-input-item|cosy-select-item|cosy-test-item)\b|\b(?:answer|correct|solution)\s*=/i.test(raw)) {
+  if (/<(?:cosy-input-item|cosy-select-item|cosy-test-item|(?:cosy-)?(?:answer|answers|answer-key|correct-answer|solution))\b|\b(?:answer|answers|correct|solution)\s*=/i.test(raw)) {
     throw new Error('XML source contains answer metadata; structural XML migration is required before safe ingestion.');
   }
   return raw
