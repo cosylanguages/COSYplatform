@@ -24,9 +24,7 @@ STABLE
 SECURITY DEFINER
 SET search_path = public
 AS $$
-  SELECT public.is_founder(p_user_id) OR EXISTS (
-    SELECT 1 FROM public.lesson_authors la WHERE la.user_id = p_user_id
-  );
+  SELECT public.is_founder(p_user_id) OR public.is_teacher(p_user_id);
 $$;
 
 REVOKE ALL ON FUNCTION public.can_author_lessons_for_user(UUID) FROM PUBLIC, anon, authenticated;
