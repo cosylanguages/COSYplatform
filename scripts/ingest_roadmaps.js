@@ -30,7 +30,7 @@ const LOCAL_SOURCE_DIRS = [
 ];
 
 const SUPABASE_URL = process.env.SUPABASE_URL || 'https://example.supabase.co';
-const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_ANON_KEY || 'fake-key';
+const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || '';
 
 const isDryRun = process.argv.includes('--dry-run') || SUPABASE_URL.includes('example.supabase.co');
 
@@ -98,30 +98,45 @@ function fetchContentFromSource(relativeFilePath, source) {
   return null;
 }
 
-function sanitizeStudentContent(rawContent) {
-  if (typeof rawContent !== 'string') return '';
-  return rawContent
-    .replace(/<cosy-teacher-notes[\s\S]*?<\/cosy-teacher-notes>/gi, '')
-    .replace(/<teacher-notes[\s\S]*?<\/teacher-notes>/gi, '')
-    .trim();
+const SENSITIVE_JSON_KEYS = new Set(['answers','answer','answerkey','answer_key','correctanswer','correct_answer','iscorrect','correct','solution','teachernotes','teacher_notes','explanation']);
+function parseJsonLesson(raw) {
+  if (typeof raw !== 'string' || !raw.trim().startsWith('{')) return null;
+  try { const v=JSON.parse(raw); return v && typeof v==='object' && !Array.isArray(v) ? v : null; }
+  catch (_) { throw new Error('Lesson source looks like JSON but cannot be parsed safely.'); }
 }
-
-function extractProtectedContent(rawContent) {
-  const protectedItems = [];
-  if (typeof rawContent !== 'string') return protectedItems;
-
-  const teacherNotesMatch = rawContent.match(/<cosy-teacher-notes[\s\S]*?<\/cosy-teacher-notes>/gi);
-  if (teacherNotesMatch) {
-    teacherNotesMatch.forEach(notes => {
-      protectedItems.push({
-        kind: 'teacher-notes',
-        content: notes.replace(/<\/?cosy-teacher-notes>/gi, '').trim()
+function extractProtectedContent(raw) {
+  const out=[]; if(typeof raw!=='string')return out; const lesson=parseJsonLesson(raw);
+  if(lesson){
+    const keys={},notes=[];
+    if(lesson.teacherNotes!=null)notes.push({location:'lesson',notes:lesson.teacherNotes});
+    (lesson.slides||[]).forEach((slide,si)=>{
+      if(slide.teacherNotes!=null)notes.push({location:'slide:'+(slide.id||si),notes:slide.teacherNotes});
+      (slide.elements||[]).forEach((el,ei)=>{
+        const field='s'+si+'_el_'+ei;
+        if(Array.isArray(el.answers)&&el.answers.length){if(!['input','test'].includes(String(el.type||'').toLowerCase()))throw new Error('Unsupported answer-bearing element type at '+field+'.');keys[field]=el.answers;}
+        if(typeof el.explanation==='string'&&el.explanation.trim())notes.push({location:field,explanation:el.explanation.trim()});
       });
     });
+    if(Object.keys(keys).length)out.push({kind:'answer-key',content:JSON.stringify(keys)});
+    if(notes.length)out.push({kind:'teacher-notes',content:JSON.stringify(notes)});
+    return out;
   }
-
-  return protectedItems;
+  if(/<(?:cosy-input-item|cosy-select-item|cosy-test-item)\b|\b(?:answer|correct|solution)\s*=/i.test(raw))throw new Error('XML source contains answer metadata; structural XML migration is required before safe ingestion.');
+  const notes=raw.match(/<cosy-teacher-notes[\s\S]*?<\/cosy-teacher-notes>|<teacher-notes[\s\S]*?<\/teacher-notes>/gi);
+  if(notes)notes.forEach(n=>out.push({kind:'teacher-notes',content:n.replace(/<\/?(?:cosy-)?teacher-notes[^>]*>/gi,'').trim()}));
+  return out;
 }
+function sanitizeStudentContent(raw) {
+  if(typeof raw!=='string')return '';
+  const lesson=parseJsonLesson(raw);
+  if(lesson){
+    const strip=v=>{if(Array.isArray(v))return v.map(strip);if(!v||typeof v!=='object')return v;const clean={};for(const [k,x] of Object.entries(v))if(!SENSITIVE_JSON_KEYS.has(k.toLowerCase()))clean[k]=strip(x);return clean;};
+    return JSON.stringify(strip(lesson));
+  }
+  if(/<(?:cosy-input-item|cosy-select-item|cosy-test-item)\b|\b(?:answer|correct|solution)\s*=/i.test(raw))throw new Error('XML source contains answer metadata; structural XML migration is required before safe ingestion.');
+  return raw.replace(/<cosy-teacher-notes[\s\S]*?<\/cosy-teacher-notes>/gi,'').replace(/<teacher-notes[\s\S]*?<\/teacher-notes>/gi,'').trim();
+}
+
 
 async function ingestRoadmaps() {
   console.log('=== COSYplatform Roadmap Ingestion Tool ===');
@@ -141,6 +156,8 @@ async function ingestRoadmaps() {
 
   const fileToRoadmaps = {};
   const idToRoadmaps = {};
+  const missingSources = new Set();
+  const unsafeSources = new Map();
 
   let totalSequenceCount = 0;
   let totalLessonFileRefs = 0;
@@ -220,23 +237,16 @@ async function ingestRoadmaps() {
 
       if (item.lessonFile) {
         const rawContent = fetchContentFromSource(item.lessonFile, customSource);
-        if (rawContent) {
-          const sanitized = sanitizeStudentContent(rawContent);
+        if (!rawContent) { missingSources.add(item.lessonFile); return; }
+        try {
           const protectedItems = extractProtectedContent(rawContent);
-
-          studentContentMap.set(canonicalLessonId, {
-            lesson_id: canonicalLessonId,
-            body: sanitized
-          });
-
-          if (protectedItems.length > 0) {
-            protectedContentMap.set(canonicalLessonId, protectedItems.map(p => ({
-              lesson_id: canonicalLessonId,
-              kind: p.kind,
-              content: p.content
-            })));
-          }
-        }
+          const sanitized = sanitizeStudentContent(rawContent);
+          if (!sanitized) throw new Error('Sanitized student body is empty.');
+          if (/<cosy-teacher-notes\b|<teacher-notes\b/i.test(sanitized)) throw new Error('Teacher-note markup remains in student body.');
+          if (parseJsonLesson(sanitized) && /"(?:answers|answerKey|answer_key|correctAnswer|correct_answer|isCorrect|solution|teacherNotes|teacher_notes|explanation)"\s*:/i.test(sanitized)) throw new Error('Sensitive JSON fields remain in student body.');
+          studentContentMap.set(canonicalLessonId,{lesson_id:canonicalLessonId,body:sanitized});
+          if(protectedItems.length)protectedContentMap.set(canonicalLessonId,protectedItems.map(p=>({lesson_id:canonicalLessonId,kind:p.kind,content:p.content})));
+        } catch(error) { unsafeSources.set(item.lessonFile,error.message); }
       }
     });
   });
@@ -247,7 +257,11 @@ async function ingestRoadmaps() {
   console.log(`- Total lessonFile references: ${totalLessonFileRefs}`);
   console.log(`- Deduplicated unique lessons: ${lessonsMap.size}`);
   console.log(`- Total placement records: ${courseLessonsMap.size}`);
-  console.log(`- Local/Remote student bodies found: ${studentContentMap.size}`);
+  console.log(`- Student bodies safely prepared: ${studentContentMap.size}`);
+  console.log(`- Protected records prepared: ${Array.from(protectedContentMap.values()).reduce((n,rows)=>n+rows.length,0)}`);
+  console.log(`- Missing sources: ${missingSources.size}; unsafe/unsupported sources: ${unsafeSources.size}`);
+  for(const p of Array.from(missingSources).slice(0,50))console.log('MISSING: '+p);
+  for(const [p,reason] of Array.from(unsafeSources.entries()).slice(0,50))console.log('UNSAFE: '+p+' — '+reason);
 
   console.log('\n=== Shared / Duplicate Lessons Detected ===');
   let duplicateCount = 0;
@@ -268,9 +282,12 @@ async function ingestRoadmaps() {
   }
 
   if (isDryRun) {
-    console.log('\n[Dry Run] Database ingestion simulation completed successfully.');
+    if(missingSources.size||unsafeSources.size){console.error('\\n[Dry Run] BLOCKED: source coverage/sanitization incomplete; no writes attempted.');process.exitCode=2;}
+    else console.log('\\n[Dry Run] Source coverage and sanitization preflight passed. No writes attempted.');
     return;
   }
+  if(!SUPABASE_KEY)throw new Error('SUPABASE_SERVICE_ROLE_KEY is required; anon-key writes are disabled.');
+  if(missingSources.size||unsafeSources.size)throw new Error('Ingestion blocked: all lesson sources must exist and pass sanitization before any writes.');
 
   let createClient;
   try {
@@ -282,16 +299,19 @@ async function ingestRoadmaps() {
 
   const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
-  console.log('\nWriting records to Supabase...');
-  await supabase.from('courses').upsert(Array.from(coursesMap.values()));
-  await supabase.from('lessons').upsert(Array.from(lessonsMap.values()));
-  await supabase.from('course_lessons').upsert(Array.from(courseLessonsMap.values()));
-
-  if (studentContentMap.size > 0) {
-    await supabase.from('lesson_student_content').upsert(Array.from(studentContentMap.values()));
+  async function checkedWrite(label,query){const {error}=await query;if(error)throw new Error(label+' failed: '+(error.message||error));}
+  console.log('\\nWriting records to Supabase...');
+  await checkedWrite('Courses upsert',supabase.from('courses').upsert(Array.from(coursesMap.values())));
+  await checkedWrite('Lessons upsert',supabase.from('lessons').upsert(Array.from(lessonsMap.values())));
+  await checkedWrite('Course placements upsert',supabase.from('course_lessons').upsert(Array.from(courseLessonsMap.values())));
+  await checkedWrite('Sanitized student content upsert',supabase.from('lesson_student_content').upsert(Array.from(studentContentMap.values())));
+  const migratedIds=Array.from(studentContentMap.keys());
+  if(migratedIds.length){
+    await checkedWrite('Delete previous protected records',supabase.from('lesson_protected').delete().in('lesson_id',migratedIds));
+    const protectedRows=Array.from(protectedContentMap.values()).flat();
+    if(protectedRows.length)await checkedWrite('Insert protected records',supabase.from('lesson_protected').insert(protectedRows));
   }
-
-  console.log('✅ Ingestion into Supabase completed successfully.');
+  console.log('Ingestion completed. Verify row counts and run Supabase RLS tests before enabling student access.');
 }
 
 if (require.main === module) {
@@ -301,4 +321,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = { ingestRoadmaps };
+module.exports = { ingestRoadmaps, sanitizeStudentContent, extractProtectedContent };
