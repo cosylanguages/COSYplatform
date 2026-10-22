@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Lesson Studio · COSYlanguages</title>
+  <link rel="stylesheet" href="shared/css/tokens.css">
+  <link rel="stylesheet" href="shared/styles/style.css">
+  <link rel="stylesheet" href="shared/css/lesson-studio.css">
+  <script src="vendor/supabase-js-2.49.1/supabase.js"></script>
+  <script src="shared/js/config.js"></script>
+  <script src="shared/js/auth-guard.js"></script>
+  <script src="shared/js/auth-sso.js"></script>
+  <script src="shared/js/authoring.js"></script>
+  <script src="shared/js/lesson-resolver.js"></script>
+</head>
+<body class="lesson-studio-page">
+  <header class="studio-topbar">
+    <a class="studio-brand" href="teacher.html" aria-label="Back to teacher workspace">COSY <span>Lesson Studio</span></a>
+    <div class="studio-top-actions">
+      <span id="save-status" role="status" aria-live="polite">Draft not saved</span>
+      <button id="preview-button" class="studio-button studio-button-secondary" type="button">Preview</button>
+      <button id="save-button" class="studio-button studio-button-primary" type="button">Save draft</button>
+    </div>
+  </header>
+
+  <main class="studio-shell">
+    <section class="studio-heading">
+      <div>
+        <p class="studio-eyebrow">AUTHORING WORKSPACE</p>
+        <h1>Create a lesson</h1>
+        <p class="studio-intro">Build blocks visually or edit the lesson document as JSON. Both views use the same source of truth.</p>
+      </div>
+      <div class="studio-draft-note"><strong>Draft mode</strong><span>Saving is enabled. Student publishing is not part of this first version.</span></div>
+    </section>
+
+    <section class="studio-metadata" aria-label="Lesson details">
+      <label>Lesson title<input id="lesson-title" maxlength="160" value="At the restaurant"></label>
+      <label>Language<select id="lesson-language"><option value="English">English</option><option value="French">French</option><option value="Spanish">Spanish</option><option value="German">German</option><option value="Italian">Italian</option><option value="Other">Other</option></select></label>
+      <label>Level<select id="lesson-level"><option>A1</option><option selected>A2</option><option>B1</option><option>B2</option><option>C1</option><option>C2</option></select></label>
+    </section>
+
+    <div class="studio-workspace">
+      <section class="studio-editor-panel">
+        <div class="studio-panel-header">
+          <div><h2>Lesson editor</h2><p>Choose a mode; edits stay in sync.</p></div>
+          <div class="studio-mode-switch" role="group" aria-label="Editor mode">
+            <button type="button" class="studio-mode active" data-mode="visual" aria-pressed="true">Visual</button>
+            <button type="button" class="studio-mode" data-mode="code" aria-pressed="false">Code</button>
+          </div>
+        </div>
+        <div id="visual-editor" class="visual-editor">
+          <div id="block-list" class="block-list"></div>
+          <div class="studio-add-actions">
+            <button id="add-text" class="studio-button studio-button-secondary" type="button">＋ Text block</button>
+            <button id="add-blank" class="studio-button studio-button-secondary" type="button">＋ Fill-in-the-blank</button>
+          </div>
+        </div>
+        <div id="code-editor" class="code-editor" hidden>
+          <label for="lesson-json">Lesson document (JSON)</label>
+          <textarea id="lesson-json" spellcheck="false" autocapitalize="off" autocomplete="off"></textarea>
+          <p class="studio-hint">Edit the document, then switch back to Visual. Invalid JSON is flagged and won't overwrite the last valid lesson.</p>
+          <p id="code-error" class="studio-error" role="status" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <aside class="studio-preview-panel">
+        <div class="studio-panel-header"><div><h2>Student preview</h2><p>Safe preview of the current draft</p></div><span class="studio-preview-pill">PREVIEW</span></div>
+        <div id="lesson-preview" class="lesson-preview"></div>
+      </aside>
+    </div>
+    <p class="studio-footnote">Your lesson is stored as a Studio draft. It is not added to a course roadmap and is not published to students yet.</p>
+  </main>
+  <script src="shared/js/lesson-studio.js"></script>
+</body>
+</html>
