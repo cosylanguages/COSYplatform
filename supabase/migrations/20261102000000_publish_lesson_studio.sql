@@ -82,7 +82,7 @@ BEGIN
     COALESCE(jsonb_agg(jsonb_build_object('blockId',b->>'id','acceptedAnswers',b->'answers')
       ) FILTER (WHERE b->>'type' = 'fill_blank'),'[]'::JSONB))
     INTO v_protected_answers
-    FROM jsonb_array_elements(v_draft.document->'blocks') AS b;
+    FROM jsonb_array_elements(v_draft.document->'blocks') AS items(b);
 
   INSERT INTO public.lessons (id,language,cefr,kind,slug,title,summary)
   VALUES (v_lesson_id,v_draft.language,v_draft.level,'lesson',v_slug,v_draft.title,'Created in COSY Lesson Studio')
@@ -114,3 +114,71 @@ REVOKE ALL ON FUNCTION public.list_studio_publishable_courses() FROM PUBLIC, ano
 GRANT EXECUTE ON FUNCTION public.list_studio_publishable_courses() TO authenticated;
 REVOKE ALL ON FUNCTION public.publish_lesson_studio_draft(TEXT,TEXT,INTEGER) FROM PUBLIC, anon;
 GRANT EXECUTE ON FUNCTION public.publish_lesson_studio_draft(TEXT,TEXT,INTEGER) TO authenticated;
+
+
+-- This SECURITY DEFINER predicate checks entitlement without depending on nested
+-- SELECT permissions on courses/course_lessons, while exposing only published bodies.
+CREATE OR REPLACE FUNCTION public.can_read_published_studio_lesson(p_lesson_id TEXT)
+RETURNS BOOLEAN
+LANGUAGE sql STABLE SECURITY DEFINER SET search_path = public
+AS $$
+  SELECT EXISTS (
+    SELECT 1
+    FROM public.course_lessons cl
+    JOIN public.courses c ON c.id = cl.course_id
+    WHERE cl.lesson_id = p_lesson_id
+      AND cl.status = 'published'
+      AND (
+        public.is_founder()
+        OR (public.is_teacher() AND EXISTS (
+          SELECT 1 FROM public.teacher_languages tl
+          WHERE (tl.user_id = auth.uid() OR tl.teacher_id = auth.uid())
+            AND lower(tl.language) = lower(c.language)
+        ))
+        OR (public.is_student() AND EXISTS (
+          SELECT 1 FROM public.access_grants ag
+          WHERE (ag.user_id = auth.uid() OR ag.student_id = auth.uid())
+            AND (ag.course_id = c.id OR ag.course = c.id)
+            AND (ag.expires_at IS NULL OR ag.expires_at > NOW())
+        ))
+      )
+  );
+$$;
+
+DROP POLICY IF EXISTS "Authorized users read published Studio lesson bodies" ON public.lesson_student_content;
+CREATE POLICY "Authorized users read published Studio lesson bodies"
+  ON public.lesson_student_content FOR SELECT TO authenticated
+  USING (lesson_id LIKE 'studio:%' AND public.can_read_published_studio_lesson(lesson_id));
+
+CREATE OR REPLACE FUNCTION public.list_published_studio_lessons(p_course_id TEXT)
+RETURNS TABLE (lesson_id TEXT, title TEXT, lesson_number INTEGER, unit TEXT)
+LANGUAGE sql STABLE SECURITY DEFINER SET search_path = public
+AS $$
+  SELECT l.id, l.title, cl.lesson_number, cl.unit
+  FROM public.course_lessons cl
+  JOIN public.lessons l ON l.id = cl.lesson_id
+  JOIN public.courses c ON c.id = cl.course_id
+  WHERE cl.course_id = p_course_id
+    AND cl.status = 'published'
+    AND cl.lesson_id LIKE 'studio:%'
+    AND (
+      public.is_founder()
+      OR (public.is_teacher() AND EXISTS (
+        SELECT 1 FROM public.teacher_languages tl
+        WHERE (tl.user_id = auth.uid() OR tl.teacher_id = auth.uid())
+          AND lower(tl.language) = lower(c.language)
+      ))
+      OR (public.is_student() AND EXISTS (
+        SELECT 1 FROM public.access_grants ag
+        WHERE (ag.user_id = auth.uid() OR ag.student_id = auth.uid())
+          AND (ag.course_id = c.id OR ag.course = c.id)
+          AND (ag.expires_at IS NULL OR ag.expires_at > NOW())
+      ))
+    )
+  ORDER BY cl.lesson_number;
+$$;
+
+REVOKE ALL ON FUNCTION public.can_read_published_studio_lesson(TEXT) FROM PUBLIC, anon;
+GRANT EXECUTE ON FUNCTION public.can_read_published_studio_lesson(TEXT) TO authenticated;
+REVOKE ALL ON FUNCTION public.list_published_studio_lessons(TEXT) FROM PUBLIC, anon;
+GRANT EXECUTE ON FUNCTION public.list_published_studio_lessons(TEXT) TO authenticated;
