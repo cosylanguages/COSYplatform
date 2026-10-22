@@ -86,9 +86,9 @@ LANGUAGE sql
 STABLE
 SECURITY DEFINER
 SET search_path = public
-AS $
+AS $$
   SELECT public.is_founder(auth.uid());
-$;
+$$;
 
 CREATE OR REPLACE FUNCTION public.is_teacher()
 RETURNS BOOLEAN
@@ -96,9 +96,9 @@ LANGUAGE sql
 STABLE
 SECURITY DEFINER
 SET search_path = public
-AS $
+AS $$
   SELECT public.is_teacher(auth.uid());
-$;
+$$;
 
 CREATE OR REPLACE FUNCTION public.is_student()
 RETURNS BOOLEAN
@@ -106,9 +106,9 @@ LANGUAGE sql
 STABLE
 SECURITY DEFINER
 SET search_path = public
-AS $
+AS $$
   SELECT public.is_student(auth.uid());
-$;
+$$;
 
 -- 3. Shared Table Adaptation: `teacher_languages`
 CREATE TABLE IF NOT EXISTS public.teacher_languages (
