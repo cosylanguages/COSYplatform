@@ -94,7 +94,7 @@ window.CosySSO = window.CosySSO || {};
     if (!targetHref || typeof targetHref !== 'string') return false;
     try {
       const target = new URL(targetHref, window.location.href);
-      if (target.protocol !== 'https:' && target.origin !== window.location.origin) return false;
+      if (target.protocol !== 'https:') return false;
       const trustedOrigins = new Set([
         window.location.origin,
         'https://cosylanguages.github.io'
