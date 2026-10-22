@@ -743,6 +743,31 @@
 
         if (!roadmapRes || !roadmapRes.ok) throw new Error(`Roadmap for ${courseId} not found`);
         const roadmap = await roadmapRes.json();
+        // Merge published Studio lessons into the existing roadmap without requiring
+        // the static roadmap JSON to be rebuilt or manually edited.
+        const roadmapClient = window.CosyAuth ? window.CosyAuth.client : null;
+        if (roadmapClient && Array.isArray(roadmap.sequence)) {
+          try {
+            const { data: studioLessons, error: studioError } = await roadmapClient.rpc('list_published_studio_lessons', { p_course_id: courseId });
+            if (!studioError && Array.isArray(studioLessons)) {
+              const existingPaths = new Set(roadmap.sequence.map(item => item.lessonFile).filter(Boolean));
+              studioLessons.forEach(row => {
+                if (!existingPaths.has(row.lesson_id)) {
+                  roadmap.sequence.push({
+                    lessonNumber: row.lesson_number,
+                    title: row.title,
+                    unit: row.unit || 'COSY Lesson Studio',
+                    lessonFile: row.lesson_id,
+                    status: 'published'
+                  });
+                }
+              });
+              roadmap.sequence.sort((a, b) => Number(a.lessonNumber || 0) - Number(b.lessonNumber || 0));
+            }
+          } catch (studioLoadError) {
+            console.warn('[StudentRoadmap] Could not load Studio lessons:', studioLoadError);
+          }
+        }
 
         let progressMap = {};
         let progressError = null;
