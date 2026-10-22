@@ -35,6 +35,16 @@ ALTER TABLE public.profiles ADD COLUMN IF NOT EXISTS language_access TEXT[] DEFA
 ALTER TABLE public.profiles ADD COLUMN IF NOT EXISTS course_level TEXT DEFAULT '*';
 
 -- 2. SECURITY DEFINER Helper Functions (Prevents RLS infinite recursion on profiles)
+CREATE OR REPLACE FUNCTION public.is_founder()
+RETURNS BOOLEAN
+LANGUAGE sql
+STABLE
+SECURITY DEFINER
+SET search_path = public
+AS $$
+  SELECT public.is_founder(auth.uid());
+$$;
+
 CREATE OR REPLACE FUNCTION public.is_founder(p_user_id UUID)
 RETURNS BOOLEAN
 LANGUAGE sql
@@ -50,6 +60,16 @@ AS $$
   );
 $$;
 
+CREATE OR REPLACE FUNCTION public.is_teacher()
+RETURNS BOOLEAN
+LANGUAGE sql
+STABLE
+SECURITY DEFINER
+SET search_path = public
+AS $$
+  SELECT public.is_teacher(auth.uid());
+$$;
+
 CREATE OR REPLACE FUNCTION public.is_teacher(p_user_id UUID)
 RETURNS BOOLEAN
 LANGUAGE sql
@@ -63,6 +83,16 @@ AS $$
     WHERE id = p_user_id
       AND role = 'teacher'
   );
+$$;
+
+CREATE OR REPLACE FUNCTION public.is_student()
+RETURNS BOOLEAN
+LANGUAGE sql
+STABLE
+SECURITY DEFINER
+SET search_path = public
+AS $$
+  SELECT public.is_student(auth.uid());
 $$;
 
 CREATE OR REPLACE FUNCTION public.is_student(p_user_id UUID)
