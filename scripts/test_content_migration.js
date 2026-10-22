@@ -74,6 +74,17 @@ assert.throws(
 );
 
 assert.throws(
+  () => sanitizeStudentContent(JSON.stringify([{ answers: ['secret'] }])),
+  /must be an object/,
+  'JSON arrays must not bypass object-based sanitization'
+);
+assert.throws(
+  () => sanitizeStudentContent('<lesson><answer>secret</answer></lesson>'),
+  /structural XML migration/,
+  'XML answer tags must be blocked until structural parsing is implemented'
+);
+
+assert.throws(
   () => sanitizeStudentContent('<cosy-test><cosy-test-item correct="true">secret</cosy-test-item></cosy-test>'),
   /structural XML migration/
 );
