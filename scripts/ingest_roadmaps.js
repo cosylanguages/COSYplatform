@@ -443,12 +443,19 @@ async function ingestRoadmaps() {
   await checkedWrite('Courses upsert',supabase.from('courses').upsert(Array.from(coursesMap.values())));
   await checkedWrite('Lessons upsert',supabase.from('lessons').upsert(Array.from(lessonsMap.values())));
   await checkedWrite('Course placements upsert',supabase.from('course_lessons').upsert(Array.from(courseLessonsMap.values())));
-  await checkedWrite('Sanitized student content upsert',supabase.from('lesson_student_content').upsert(Array.from(studentContentMap.values())));
-  const migratedIds=Array.from(studentContentMap.keys());
-  if(migratedIds.length){
-    await checkedWrite('Delete previous protected records',supabase.from('lesson_protected').delete().in('lesson_id',migratedIds));
-    const protectedRows=Array.from(protectedContentMap.values()).flat();
-    if(protectedRows.length)await checkedWrite('Insert protected records',supabase.from('lesson_protected').insert(protectedRows));
+  // Replace each student's sanitized body and protected rows in one database
+  // transaction, so a failed protected-key write cannot leave a mismatched lesson.
+  for (const [lessonId, studentRecord] of studentContentMap.entries()) {
+    const protectedRecords = (protectedContentMap.get(lessonId) || [])
+      .map(({ kind, content }) => ({ kind, content }));
+    await checkedWrite(
+      `Atomic lesson content replacement for ${lessonId}`,
+      supabase.rpc('replace_lesson_content', {
+        p_lesson_id: lessonId,
+        p_body: studentRecord.body,
+        p_protected: protectedRecords
+      })
+    );
   }
   console.log('Ingestion completed. Verify row counts and run Supabase RLS tests before enabling student access.');
 }
