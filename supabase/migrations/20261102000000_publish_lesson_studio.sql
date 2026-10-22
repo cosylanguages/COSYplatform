@@ -76,7 +76,16 @@ BEGIN
   END IF;
   SELECT * INTO v_course FROM public.courses WHERE id = p_course_id;
   IF NOT FOUND THEN RAISE EXCEPTION 'Course not found.'; END IF;
-  IF lower(v_course.language) <> lower(v_draft.language)
+  IF lower(CASE lower(v_course.language)
+       WHEN 'english' THEN 'en' WHEN 'french' THEN 'fr'
+       WHEN 'italian' THEN 'it' WHEN 'russian' THEN 'ru'
+       WHEN 'greek' THEN 'el' WHEN 'spanish' THEN 'es'
+       ELSE v_course.language END)
+     <> lower(CASE lower(v_draft.language)
+       WHEN 'english' THEN 'en' WHEN 'french' THEN 'fr'
+       WHEN 'italian' THEN 'it' WHEN 'russian' THEN 'ru'
+       WHEN 'greek' THEN 'el' WHEN 'spanish' THEN 'es'
+       ELSE v_draft.language END)
      OR upper(v_course.cefr) <> upper(v_draft.level) THEN
     RAISE EXCEPTION 'Course language and level must match the lesson.';
   END IF;
