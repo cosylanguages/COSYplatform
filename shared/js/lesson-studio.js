@@ -17,7 +17,8 @@
     },
     lessonId: null,
     codeValid: true,
-    lastSaved: null
+    lastSaved: null,
+    publishedLessonId: null
   };
 
   function makeId() {
@@ -245,7 +246,7 @@
     if (!state.codeValid) {
       $('save-status').textContent = 'Fix the JSON error before saving.';
       $('code-error').textContent = 'Fix the JSON error before saving.';
-      return;
+      return false;
     }
     const doc = cloneDoc();
     doc.title = $('lesson-title').value.trim();
@@ -254,7 +255,7 @@
     const error = validateDocument(doc);
     if (error) {
       $('save-status').textContent = error;
-      return;
+      return false;
     }
     state.doc = doc;
     const serialized = JSON.stringify(doc);
@@ -262,7 +263,7 @@
     const client = window.CosyAuth ? window.CosyAuth.client : null;
     if (!client) {
       $('save-status').textContent = 'Saved locally only (Supabase is not connected)';
-      return;
+      return false;
     }
     try {
       const { data: authData, error: authError } = await client.auth.getUser();
@@ -278,9 +279,55 @@
       }, { onConflict: 'id' });
       if (saveError) throw saveError;
       $('save-status').textContent = 'Draft saved to COSY';
+      return true;
     } catch (error) {
       $('save-status').textContent = 'Saved locally; cloud save failed: ' + (error.message || 'unknown error');
+      return false;
     }
+  }
+
+  async function loadPublishableCourses() {
+    const select = $('publish-course');
+    const client = window.CosyAuth ? window.CosyAuth.client : null;
+    select.replaceChildren(new Option('Choose a course…', ''));
+    if (!client) { $('publish-status').textContent = 'Connect to COSY to load courses.'; return; }
+    const { data, error } = await client.rpc('list_studio_publishable_courses');
+    if (error) { $('publish-status').textContent = 'Could not load courses. Apply the Lesson Studio publishing migration and try again.'; return; }
+    const matching = (data || []).filter(course =>
+      String(course.language).toLowerCase() === String(state.doc.language).toLowerCase() &&
+      String(course.cefr).toUpperCase() === String(state.doc.level).toUpperCase()
+    );
+    matching.forEach(course => select.add(new Option(course.title + ' · ' + course.language + ' ' + course.cefr, course.id)));
+    if (!matching.length) {
+      select.add(new Option('No matching course for this language and level', ''));
+      $('publish-status').textContent = 'No course matches this language and level, or you lack permission to publish to one.';
+    } else $('publish-status').textContent = 'Choose the course and lesson number.';
+  }
+
+  async function publishLesson() {
+    const courseId = $('publish-course').value;
+    const lessonNumber = Number.parseInt($('publish-lesson-number').value, 10);
+    if (!courseId || !Number.isInteger(lessonNumber) || lessonNumber < 1) {
+      $('publish-status').textContent = 'Choose a course and a lesson number greater than zero.'; return;
+    }
+    $('publish-confirm-button').disabled = true;
+    $('publish-status').textContent = 'Saving draft and publishing…';
+    try {
+      if (!await saveDraft()) throw new Error('The draft must be saved to COSY before it can be published.');
+      const client = window.CosyAuth && window.CosyAuth.client;
+      const { data, error } = await client.rpc('publish_lesson_studio_draft', {
+        p_draft_id: state.lessonId, p_course_id: courseId, p_lesson_number: lessonNumber
+      });
+      if (error) throw error;
+      const publishedId = typeof data === 'string' ? data : (data && data.lesson_id);
+      if (!publishedId) throw new Error('The server did not return a published lesson identifier.');
+      state.publishedLessonId = publishedId;
+      $('published-link').href = 'student.html?lesson=' + encodeURIComponent(publishedId);
+      $('published-link-row').hidden = false;
+      $('publish-status').textContent = 'Published successfully. The student player will load the published content.';
+      $('save-status').textContent = 'Draft saved · Published';
+    } catch (error) { $('publish-status').textContent = error.message || 'Publishing failed.'; }
+    finally { $('publish-confirm-button').disabled = false; }
   }
 
   function setup() {
@@ -316,6 +363,19 @@
       changed();
     });
     $('save-button').addEventListener('click', saveDraft);
+    $('publish-open-button').addEventListener('click', async () => {
+      $('publish-panel').hidden = !$('publish-panel').hidden;
+      if (!$('publish-panel').hidden) await loadPublishableCourses();
+    });
+    $('publish-confirm-button').addEventListener('click', publishLesson);
+    $('publish-course').addEventListener('change', () => {
+      const client = window.CosyAuth && window.CosyAuth.client;
+      if (!client || !$('publish-course').value) return;
+      client.from('course_lessons').select('lesson_number').eq('course_id', $('publish-course').value)
+        .order('lesson_number', { ascending: false }).limit(1).then(({ data }) => {
+          $('publish-lesson-number').value = String(data && data.length ? Number(data[0].lesson_number) + 1 : 1);
+        });
+    });
     $('preview-button').addEventListener('click', () => {
       renderPreview();
       $('lesson-preview').scrollIntoView({ behavior: 'smooth', block: 'start' });
