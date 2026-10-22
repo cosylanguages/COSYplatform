@@ -201,6 +201,29 @@ async function main() {
   assert.equal(h.serverRows.some(row => row.student_id === 'student-123' && row.lesson_id === 'lessons/a1/greetings.json'), false);
   assert.equal(h.serverRows.some(row => row.student_id === 'another-student'), true);
 
+  // Clearing a lesson waits for an already-running upsert before deleting.
+  // This prevents a late network response from recreating the just-cleared row.
+  const resetRace = createHarness({ deferUpsert: true });
+  await resetRace.context.CosyProgress.saveAnswer('lessons/a1/greetings.json', 'blank_reset_race', 'must be cleared');
+  const resetRaceFlush = resetRace.context.CosyProgress.flush();
+  while (resetRace.upserts.length === 0) await new Promise(resolve => setTimeout(resolve, 0));
+  const resetRaceClear = resetRace.context.CosyProgress.clearLessonAnswers('lessons/a1/greetings.json');
+  await new Promise(resolve => setTimeout(resolve, 0));
+  assert.equal(resetRace.deletes.length, 0, 'reset must wait while an upsert for the same lesson is in flight');
+  resetRace.releaseUpsert();
+  assert.equal(await resetRaceClear, true);
+  await resetRaceFlush;
+  assert.equal(
+    resetRace.serverRows.some(row => row.student_id === 'student-123' && row.lesson_id === 'lessons/a1/greetings.json'),
+    false,
+    'a pending upsert must not recreate an answer after reset completes'
+  );
+  assert.equal(
+    Object.keys(JSON.parse(resetRace.storage.get(pendingKey))).some(key => key.startsWith('lessons/a1/greetings.json::')),
+    false,
+    'successful reset must clear the local retry queue after the in-flight write settles'
+  );
+
   // If the delete succeeds but verification read fails, reset is not reported as successful.
   const unverifiableReset = createHarness({ readError: true });
   await unverifiableReset.context.CosyProgress.saveAnswer('lessons/a1/greetings.json', 'blank_4', 'keep queued');
