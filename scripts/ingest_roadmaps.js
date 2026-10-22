@@ -20,7 +20,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const { execSync } = require('child_process');
+const { execFileSync } = require('child_process');
 
 const ROADMAPS_DIR = path.join(__dirname, '../roadmaps');
 const LOCAL_SOURCE_DIRS = [
@@ -61,6 +61,36 @@ function parseFilenameMetadata(filename) {
   return { courseId: basename, courseType: 'general', language: 'en', cefr: 'a1' };
 }
 
+function loadRoadmapFiles(source) {
+  const roadmaps = new Map();
+  if (fs.existsSync(ROADMAPS_DIR)) {
+    for (const name of fs.readdirSync(ROADMAPS_DIR).filter(name => name.endsWith('.json'))) {
+      roadmaps.set(name, fs.readFileSync(path.join(ROADMAPS_DIR, name), 'utf8'));
+    }
+  }
+  if (source) {
+    const localRoadmaps = path.join(path.resolve(source), 'roadmaps');
+    if (fs.existsSync(localRoadmaps) && fs.statSync(localRoadmaps).isDirectory()) {
+      for (const name of fs.readdirSync(localRoadmaps).filter(name => name.endsWith('.json'))) {
+        roadmaps.set(name, fs.readFileSync(path.join(localRoadmaps, name), 'utf8'));
+      }
+    } else {
+      try {
+        const names = execFileSync('git', ['ls-tree', '-r', '--name-only', source, '--', 'roadmaps'], {
+          encoding: 'utf8', stdio: ['pipe', 'pipe', 'ignore']
+        }).split(/\r?\n/).filter(name => /^roadmaps\/[^/]+\.json$/.test(name));
+        for (const name of names) {
+          const content = execFileSync('git', ['show', `${source}:${name}`], {
+            encoding: 'utf8', stdio: ['pipe', 'pipe', 'ignore']
+          });
+          roadmaps.set(path.basename(name), content);
+        }
+      } catch (_) {}
+    }
+  }
+  return Array.from(roadmaps.entries()).map(([filename, content]) => ({ filename, content }));
+}
+
 function fetchContentFromSource(relativeFilePath, source) {
   if (!relativeFilePath) return null;
   const normalizedRelPath = relativeFilePath.replace(/^\.\//, '');
@@ -78,7 +108,7 @@ function fetchContentFromSource(relativeFilePath, source) {
 
     // 2. Check if source is a git ref
     try {
-      const gitOutput = execSync(`git show ${source}:${normalizedRelPath}`, { encoding: 'utf8', stdio: ['pipe', 'pipe', 'ignore'] });
+      const gitOutput = execFileSync('git', ['show', `${source}:${normalizedRelPath}`], { encoding: 'utf8', stdio: ['pipe', 'pipe', 'ignore'] });
       if (gitOutput && gitOutput.trim().length > 0) {
         return gitOutput;
       }
@@ -145,8 +175,8 @@ async function ingestRoadmaps() {
     console.log(`Source location / git ref: ${customSource}`);
   }
 
-  const files = fs.readdirSync(ROADMAPS_DIR).filter(f => f.endsWith('.json'));
-  console.log(`Found ${files.length} roadmap files in roadmaps/\n`);
+  const roadmapFiles = loadRoadmapFiles(customSource);
+  console.log(`Found ${roadmapFiles.length} roadmap files across main and selected source\\n`);
 
   const coursesMap = new Map();
   const lessonsMap = new Map();
@@ -162,11 +192,11 @@ async function ingestRoadmaps() {
   let totalSequenceCount = 0;
   let totalLessonFileRefs = 0;
 
-  files.forEach(filename => {
+  roadmapFiles.forEach(({ filename, content }) => {
     const meta = parseFilenameMetadata(filename);
-    const filePath = path.join(ROADMAPS_DIR, filename);
-    const content = fs.readFileSync(filePath, 'utf8');
-    const data = JSON.parse(content);
+    let data;
+    try { data = JSON.parse(content); }
+    catch (_) { throw new Error(`Invalid roadmap JSON: ${filename}`); }
 
     const courseId = meta.courseId;
     const language = meta.language;
@@ -321,4 +351,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = { ingestRoadmaps, sanitizeStudentContent, extractProtectedContent };
+module.exports = { ingestRoadmaps, sanitizeStudentContent, extractProtectedContent, loadRoadmapFiles };
