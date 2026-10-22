@@ -202,7 +202,11 @@ AS $$
       OR (public.is_teacher() AND EXISTS (
         SELECT 1 FROM public.teacher_languages tl
         WHERE (tl.user_id = auth.uid() OR tl.teacher_id = auth.uid())
-          AND lower(tl.language) = lower(c.language)
+          AND lower(tl.language) = lower(CASE lower(c.language)
+          WHEN 'english' THEN 'en' WHEN 'french' THEN 'fr'
+          WHEN 'italian' THEN 'it' WHEN 'russian' THEN 'ru'
+          WHEN 'greek' THEN 'el' WHEN 'spanish' THEN 'es'
+          ELSE c.language END)
       ))
       OR (public.is_student() AND EXISTS (
         SELECT 1 FROM public.access_grants ag
