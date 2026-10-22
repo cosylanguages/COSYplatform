@@ -2,7 +2,27 @@
 'use strict';
 
 const assert = require('node:assert/strict');
-const { sanitizeStudentContent, extractProtectedContent } = require('./ingest_roadmaps.js');
+const fs = require('node:fs');
+const os = require('node:os');
+const path = require('node:path');
+const { sanitizeStudentContent, extractProtectedContent, loadRoadmapFiles } = require('./ingest_roadmaps.js');
+
+
+const tempRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'cosy-roadmap-source-'));
+try {
+  fs.mkdirSync(path.join(tempRoot, 'roadmaps'));
+  fs.writeFileSync(path.join(tempRoot, 'roadmaps', 'science-en-b2.json'), JSON.stringify({
+    title: 'Science English B2',
+    totalLessons: 1,
+    sequence: [{ id: 'sample-science', title: 'Sample', lessonFile: 'lessons/science-en/sample.json' }]
+  }));
+  const mergedRoadmaps = loadRoadmapFiles(tempRoot);
+  const sourceRoadmap = mergedRoadmaps.find(item => item.filename === 'science-en-b2.json');
+  assert.ok(sourceRoadmap, 'source-only roadmaps must be included in the migration inventory');
+  assert.equal(JSON.parse(sourceRoadmap.content).sequence[0].id, 'sample-science');
+} finally {
+  fs.rmSync(tempRoot, { recursive: true, force: true });
+}
 
 const source = {
   id: 'sample',
