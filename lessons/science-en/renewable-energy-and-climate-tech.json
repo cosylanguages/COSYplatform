@@ -4,13 +4,6 @@
   "level": "B2",
   "templateType": "general",
   "durationMinutes": 50,
-  "teacherNotes": [
-    {
-      "type": "instruction",
-      "title": "Lesson Stage Aims",
-      "content": "Analyze nuclear fusion, next-gen solar/wind storage, carbon capture & storage (CCS), geoengineering, and individual climate action."
-    }
-  ],
   "slides": [
     {
       "id": "slide-1",
@@ -53,18 +46,15 @@
         },
         {
           "type": "input",
-          "placeholder": "Sentence 1: To prevent power outages when the sun isn't shining, cities invest in massive...",
-          "answers": ["grid storage", "grid storage batteries"]
+          "placeholder": "Sentence 1: To prevent power outages when the sun isn't shining, cities invest in massive..."
         },
         {
           "type": "input",
-          "placeholder": "Sentence 2: Unlike nuclear fission, experimental... produces no long-lived high-level radioactive waste.",
-          "answers": ["nuclear fusion"]
+          "placeholder": "Sentence 2: Unlike nuclear fission, experimental... produces no long-lived high-level radioactive waste."
         },
         {
           "type": "input",
-          "placeholder": "Sentence 3: Heavy industrial factories deploy... technology to trap smokestack emissions.",
-          "answers": ["carbon capture", "carbon capture & storage", "carbon capture and storage"]
+          "placeholder": "Sentence 3: Heavy industrial factories deploy... technology to trap smokestack emissions."
         }
       ]
     },
@@ -89,8 +79,7 @@
             "Grid operators face energy storage and reliability bottlenecks during non-sunny or windless periods.",
             "Nuclear power has completely replaced all renewable installations.",
             "Fossil fuel prices are significantly cheaper than ten years ago."
-          ],
-          "answers": ["Grid operators face energy storage and reliability bottlenecks during non-sunny or windless periods."]
+          ]
         }
       ]
     },
