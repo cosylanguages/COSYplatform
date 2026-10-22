@@ -128,50 +128,133 @@ function fetchContentFromSource(relativeFilePath, source) {
   return null;
 }
 
-const SENSITIVE_JSON_KEYS = new Set(['answers','answer','answerkey','answer_key','correctanswer','correct_answer','iscorrect','correct','solution','teachernotes','teacher_notes','explanation']);
+const SENSITIVE_JSON_KEYS = new Set([
+  'answer', 'answers', 'answerkey', 'answer_key', 'answer-key',
+  'correctanswer', 'correct_answer', 'correct-answer',
+  'iscorrect', 'is_correct', 'is-correct', 'correct',
+  'solution', 'solutions', 'teachernotes', 'teacher_notes',
+  'teacher-notes', 'explanation', 'rationale', 'rationales'
+]);
+
 function parseJsonLesson(raw) {
   if (typeof raw !== 'string' || !raw.trim().startsWith('{')) return null;
-  try { const v=JSON.parse(raw); return v && typeof v==='object' && !Array.isArray(v) ? v : null; }
-  catch (_) { throw new Error('Lesson source looks like JSON but cannot be parsed safely.'); }
+  try {
+    const value = JSON.parse(raw);
+    return value && typeof value === 'object' && !Array.isArray(value) ? value : null;
+  } catch (_) {
+    throw new Error('Lesson source looks like JSON but cannot be parsed safely.');
+  }
 }
+
+function collectSensitivePaths(value, currentPath = '', found = []) {
+  if (Array.isArray(value)) {
+    value.forEach((item, index) => collectSensitivePaths(item, `${currentPath}[${index}]`, found));
+  } else if (value && typeof value === 'object') {
+    for (const [key, nested] of Object.entries(value)) {
+      const nextPath = currentPath ? `${currentPath}.${key}` : key;
+      if (SENSITIVE_JSON_KEYS.has(key.toLowerCase())) found.push(nextPath);
+      collectSensitivePaths(nested, nextPath, found);
+    }
+  }
+  return found;
+}
+
 function extractProtectedContent(raw) {
-  const out=[]; if(typeof raw!=='string')return out; const lesson=parseJsonLesson(raw);
-  if(lesson){
-    const keys={},notes=[];
-    if(lesson.teacherNotes!=null)notes.push({location:'lesson',notes:lesson.teacherNotes});
-    (lesson.slides||[]).forEach((slide,si)=>{
-      if(slide.teacherNotes!=null)notes.push({location:'slide:'+(slide.id||si),notes:slide.teacherNotes});
-      (slide.elements||[]).forEach((el,ei)=>{
-        const field='s'+si+'_el_'+ei;
-        const type=String(el.type||'').toLowerCase();
-        if(['input','test'].includes(type)&&(!Array.isArray(el.answers)||!el.answers.length)){
-          throw new Error('Interactive element is missing its private answer key at '+field+'.');
+  const output = [];
+  if (typeof raw !== 'string') return output;
+  const lesson = parseJsonLesson(raw);
+
+  if (lesson) {
+    const answerKey = {};
+    const teacherNotes = [];
+    const allowedSensitivePaths = new Set();
+
+    if (lesson.teacherNotes != null) {
+      teacherNotes.push({ location: 'lesson', notes: lesson.teacherNotes });
+      allowedSensitivePaths.add('teacherNotes');
+    }
+
+    (lesson.slides || []).forEach((slide, slideIndex) => {
+      const slidePath = `slides[${slideIndex}]`;
+      if (slide.teacherNotes != null) {
+        teacherNotes.push({ location: `slide:${slide.id || slideIndex}`, notes: slide.teacherNotes });
+        allowedSensitivePaths.add(`${slidePath}.teacherNotes`);
+      }
+
+      (slide.elements || []).forEach((element, elementIndex) => {
+        const fieldKey = `s${slideIndex}_el_${elementIndex}`;
+        const elementPath = `${slidePath}.elements[${elementIndex}]`;
+        const type = String(element.type || '').toLowerCase();
+
+        if (['input', 'test'].includes(type) && (!Array.isArray(element.answers) || !element.answers.length)) {
+          throw new Error(`Interactive element is missing its private answer key at ${fieldKey}.`);
         }
-        if(Array.isArray(el.answers)&&el.answers.length){
-          if(!['input','test'].includes(type))throw new Error('Unsupported answer-bearing element type at '+field+'.');
-          keys[field]=el.answers;
+
+        if (Array.isArray(element.answers) && element.answers.length) {
+          if (!['input', 'test'].includes(type)) {
+            throw new Error(`Unsupported answer-bearing element type at ${fieldKey}.`);
+          }
+          answerKey[fieldKey] = element.answers;
+          allowedSensitivePaths.add(`${elementPath}.answers`);
         }
-        if(typeof el.explanation==='string'&&el.explanation.trim())notes.push({location:field,explanation:el.explanation.trim()});
+
+        if (typeof element.explanation === 'string' && element.explanation.trim()) {
+          teacherNotes.push({ location: fieldKey, explanation: element.explanation.trim() });
+          allowedSensitivePaths.add(`${elementPath}.explanation`);
+        }
       });
     });
-    if(Object.keys(keys).length)out.push({kind:'answer-key',content:JSON.stringify(keys)});
-    if(notes.length)out.push({kind:'teacher-notes',content:JSON.stringify(notes)});
-    return out;
+
+    const unmapped = collectSensitivePaths(lesson).filter(path => !allowedSensitivePaths.has(path));
+    if (unmapped.length) {
+      throw new Error(`Unsupported sensitive fields require manual migration: ${unmapped.slice(0, 10).join(', ')}.`);
+    }
+
+    if (Object.keys(answerKey).length) {
+      output.push({ kind: 'answer-key', content: JSON.stringify(answerKey) });
+    }
+    if (teacherNotes.length) {
+      output.push({ kind: 'teacher-notes', content: JSON.stringify(teacherNotes) });
+    }
+    return output;
   }
-  if(/<(?:cosy-input-item|cosy-select-item|cosy-test-item)\b|\b(?:answer|correct|solution)\s*=/i.test(raw))throw new Error('XML source contains answer metadata; structural XML migration is required before safe ingestion.');
-  const notes=raw.match(/<cosy-teacher-notes[\s\S]*?<\/cosy-teacher-notes>|<teacher-notes[\s\S]*?<\/teacher-notes>/gi);
-  if(notes)notes.forEach(n=>out.push({kind:'teacher-notes',content:n.replace(/<\/?(?:cosy-)?teacher-notes[^>]*>/gi,'').trim()}));
-  return out;
+
+  if (/<(?:cosy-input-item|cosy-select-item|cosy-test-item)\\b|\\b(?:answer|correct|solution)\\s*=/i.test(raw)) {
+    throw new Error('XML source contains answer metadata; structural XML migration is required before safe ingestion.');
+  }
+  const notes = raw.match(/<cosy-teacher-notes[\\s\\S]*?<\\/cosy-teacher-notes>|<teacher-notes[\\s\\S]*?<\\/teacher-notes>/gi);
+  if (notes) {
+    notes.forEach(note => output.push({
+      kind: 'teacher-notes',
+      content: note.replace(/<\\/?(?:cosy-)?teacher-notes[^>]*>/gi, '').trim()
+    }));
+  }
+  return output;
 }
+
 function sanitizeStudentContent(raw) {
-  if(typeof raw!=='string')return '';
-  const lesson=parseJsonLesson(raw);
-  if(lesson){
-    const strip=v=>{if(Array.isArray(v))return v.map(strip);if(!v||typeof v!=='object')return v;const clean={};for(const [k,x] of Object.entries(v))if(!SENSITIVE_JSON_KEYS.has(k.toLowerCase()))clean[k]=strip(x);return clean;};
+  if (typeof raw !== 'string') return '';
+  const lesson = parseJsonLesson(raw);
+  if (lesson) {
+    const strip = value => {
+      if (Array.isArray(value)) return value.map(strip);
+      if (!value || typeof value !== 'object') return value;
+      const clean = {};
+      for (const [key, nested] of Object.entries(value)) {
+        if (!SENSITIVE_JSON_KEYS.has(key.toLowerCase())) clean[key] = strip(nested);
+      }
+      return clean;
+    };
     return JSON.stringify(strip(lesson));
   }
-  if(/<(?:cosy-input-item|cosy-select-item|cosy-test-item)\b|\b(?:answer|correct|solution)\s*=/i.test(raw))throw new Error('XML source contains answer metadata; structural XML migration is required before safe ingestion.');
-  return raw.replace(/<cosy-teacher-notes[\s\S]*?<\/cosy-teacher-notes>/gi,'').replace(/<teacher-notes[\s\S]*?<\/teacher-notes>/gi,'').trim();
+
+  if (/<(?:cosy-input-item|cosy-select-item|cosy-test-item)\\b|\\b(?:answer|correct|solution)\\s*=/i.test(raw)) {
+    throw new Error('XML source contains answer metadata; structural XML migration is required before safe ingestion.');
+  }
+  return raw
+    .replace(/<cosy-teacher-notes[\\s\\S]*?<\\/cosy-teacher-notes>/gi, '')
+    .replace(/<teacher-notes[\\s\\S]*?<\\/teacher-notes>/gi, '')
+    .trim();
 }
 
 
