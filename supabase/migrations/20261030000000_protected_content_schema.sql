@@ -145,6 +145,8 @@ CREATE TABLE IF NOT EXISTS public.access_grants (
 ALTER TABLE public.access_grants ADD COLUMN IF NOT EXISTS student_id UUID REFERENCES public.profiles(id) ON DELETE CASCADE;
 ALTER TABLE public.access_grants ADD COLUMN IF NOT EXISTS course_id TEXT REFERENCES public.courses(id) ON DELETE CASCADE;
 ALTER TABLE public.access_grants ADD COLUMN IF NOT EXISTS expires_at TIMESTAMPTZ;
+ALTER TABLE public.access_grants ADD COLUMN IF NOT EXISTS valid_from DATE NOT NULL DEFAULT CURRENT_DATE;
+ALTER TABLE public.access_grants ADD COLUMN IF NOT EXISTS valid_until DATE;
 
 -- Preserve existing grant expiry semantics when adapting the legacy access table.
 UPDATE public.access_grants
@@ -347,6 +349,8 @@ USING (
         JOIN public.courses c ON (c.id = ag.course_id OR c.id = ag.course)
         JOIN public.course_lessons cl ON cl.course_id = c.id
         WHERE (ag.user_id = auth.uid() OR ag.student_id = auth.uid())
+          AND ag.valid_from <= CURRENT_DATE
+          AND (ag.valid_until IS NULL OR ag.valid_until >= CURRENT_DATE)
           AND cl.lesson_id = lessons.id
           AND c.language = lessons.language
           AND c.cefr = lessons.cefr
@@ -380,6 +384,8 @@ USING (
         JOIN public.course_lessons cl ON cl.course_id = c.id
         JOIN public.lessons l ON l.id = lesson_student_content.lesson_id
         WHERE (ag.user_id = auth.uid() OR ag.student_id = auth.uid())
+          AND ag.valid_from <= CURRENT_DATE
+          AND (ag.valid_until IS NULL OR ag.valid_until >= CURRENT_DATE)
           AND cl.lesson_id = lesson_student_content.lesson_id
           AND c.language = l.language
           AND c.cefr = l.cefr
