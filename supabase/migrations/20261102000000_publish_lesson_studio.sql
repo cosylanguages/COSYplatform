@@ -46,6 +46,30 @@ BEGIN
   SELECT * INTO v_draft FROM public.lesson_studio_drafts
     WHERE id = p_draft_id AND (owner_id = v_user_id OR public.is_founder(v_user_id));
   IF NOT FOUND THEN RAISE EXCEPTION 'Draft not found or access denied.'; END IF;
+  IF jsonb_typeof(v_draft.document) IS DISTINCT FROM 'object'
+     OR v_draft.document->>'schemaVersion' IS DISTINCT FROM '1'
+     OR jsonb_typeof(v_draft.document->'blocks') IS DISTINCT FROM 'array'
+     OR NULLIF(trim(v_draft.document->>'title'), '') IS NULL THEN
+    RAISE EXCEPTION 'Draft document is not a valid COSY Studio lesson.';
+  END IF;
+  IF EXISTS (
+    SELECT 1
+    FROM jsonb_array_elements(v_draft.document->'blocks') AS block_rows(block_doc)
+    WHERE jsonb_typeof(block_doc) IS DISTINCT FROM 'object'
+       OR NULLIF(block_doc->>'id', '') IS NULL
+       OR block_doc->>'type' NOT IN ('text', 'fill_blank')
+       OR (block_doc->>'type' = 'text' AND jsonb_typeof(block_doc->'content') IS DISTINCT FROM 'string')
+       OR (block_doc->>'type' = 'fill_blank' AND (
+         jsonb_typeof(block_doc->'prompt') IS DISTINCT FROM 'string'
+         OR jsonb_typeof(block_doc->'answers') IS DISTINCT FROM 'array'
+         OR EXISTS (
+           SELECT 1 FROM jsonb_array_elements(block_doc->'answers') AS answer_rows(answer_doc)
+           WHERE jsonb_typeof(answer_doc) IS DISTINCT FROM 'string'
+         )
+       ))
+  ) THEN
+    RAISE EXCEPTION 'Draft contains an invalid or unsupported lesson block.';
+  END IF;
   SELECT * INTO v_course FROM public.courses WHERE id = p_course_id;
   IF NOT FOUND THEN RAISE EXCEPTION 'Course not found.'; END IF;
   IF lower(v_course.language) <> lower(v_draft.language)
