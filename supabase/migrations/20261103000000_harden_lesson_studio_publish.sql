@@ -1,56 +1,24 @@
--- Hardening follow-up for Studio publication: honor caller RLS and avoid public role probing.
+-- Harden Studio publication: caller RLS, private author checks, safe preview view.
 ALTER VIEW public.course_preview SET (security_invoker = true);
 
 CREATE OR REPLACE FUNCTION public.can_author_lessons_for_user(p_user_id UUID)
 RETURNS BOOLEAN
-LANGUAGE sql
-STABLE
-SECURITY DEFINER
-SET search_path = public
+LANGUAGE sql STABLE SECURITY DEFINER SET search_path = public
 AS $$
   SELECT public.is_founder(p_user_id) OR EXISTS (
     SELECT 1 FROM public.lesson_authors la WHERE la.user_id = p_user_id
   );
 $$;
 REVOKE ALL ON FUNCTION public.can_author_lessons_for_user(UUID) FROM PUBLIC, anon, authenticated;
-
-CREATE OR REPLACE FUNCTION public.can_author_lessons()
-RETURNS BOOLEAN
-LANGUAGE sql
-STABLE
-SECURITY DEFINER
-SET search_path = public
-AS $$
-  SELECT public.can_author_lessons_for_user(auth.uid());
-$$;
-REVOKE ALL ON FUNCTION public.can_author_lessons() FROM PUBLIC, anon;
-GRANT EXECUTE ON FUNCTION public.can_author_lessons() TO authenticated;
-
 REVOKE ALL ON FUNCTION public.is_founder(UUID) FROM PUBLIC, anon, authenticated;
 REVOKE ALL ON FUNCTION public.is_teacher(UUID) FROM PUBLIC, anon, authenticated;
 REVOKE ALL ON FUNCTION public.is_student(UUID) FROM PUBLIC, anon, authenticated;
 
--- Rebind the Studio policies to the no-argument author check.
+-- Drop policies before removing the old default-argument function overload.
 DROP POLICY IF EXISTS "Authors read own Studio drafts" ON public.lesson_studio_drafts;
-CREATE POLICY "Authors read own Studio drafts"
-  ON public.lesson_studio_drafts FOR SELECT TO authenticated
-  USING (owner_id = auth.uid() OR public.is_founder());
-
 DROP POLICY IF EXISTS "Authorized authors create Studio drafts" ON public.lesson_studio_drafts;
-CREATE POLICY "Authorized authors create Studio drafts"
-  ON public.lesson_studio_drafts FOR INSERT TO authenticated
-  WITH CHECK (owner_id = auth.uid() AND public.can_author_lessons());
-
 DROP POLICY IF EXISTS "Authorized authors update Studio drafts" ON public.lesson_studio_drafts;
-CREATE POLICY "Authorized authors update Studio drafts"
-  ON public.lesson_studio_drafts FOR UPDATE TO authenticated
-  USING (owner_id = auth.uid() OR public.is_founder())
-  WITH CHECK ((owner_id = auth.uid() AND public.can_author_lessons()) OR public.is_founder());
-
 DROP POLICY IF EXISTS "Authorized authors delete Studio drafts" ON public.lesson_studio_drafts;
-CREATE POLICY "Authorized authors delete Studio drafts"
-  ON public.lesson_studio_drafts FOR DELETE TO authenticated
-  USING ((owner_id = auth.uid() AND public.can_author_lessons()) OR public.is_founder());
 
 CREATE OR REPLACE FUNCTION public.publish_lesson_studio_draft(
   p_draft_id TEXT, p_course_id TEXT, p_lesson_number INTEGER
@@ -180,7 +148,34 @@ BEGIN
 END;
 $$;
 
+
 REVOKE ALL ON FUNCTION public.publish_lesson_studio_draft(TEXT,TEXT,INTEGER) FROM PUBLIC, anon;
 GRANT EXECUTE ON FUNCTION public.publish_lesson_studio_draft(TEXT,TEXT,INTEGER) TO authenticated;
 
 DROP FUNCTION IF EXISTS public.can_author_lessons(UUID);
+
+CREATE OR REPLACE FUNCTION public.can_author_lessons()
+RETURNS BOOLEAN
+LANGUAGE sql STABLE SECURITY DEFINER SET search_path = public
+AS $$
+  SELECT public.can_author_lessons_for_user(auth.uid());
+$$;
+REVOKE ALL ON FUNCTION public.can_author_lessons() FROM PUBLIC, anon;
+GRANT EXECUTE ON FUNCTION public.can_author_lessons() TO authenticated;
+
+CREATE POLICY "Authors read own Studio drafts"
+  ON public.lesson_studio_drafts FOR SELECT TO authenticated
+  USING (owner_id = auth.uid() OR public.is_founder());
+
+CREATE POLICY "Authorized authors create Studio drafts"
+  ON public.lesson_studio_drafts FOR INSERT TO authenticated
+  WITH CHECK (owner_id = auth.uid() AND public.can_author_lessons());
+
+CREATE POLICY "Authorized authors update Studio drafts"
+  ON public.lesson_studio_drafts FOR UPDATE TO authenticated
+  USING (owner_id = auth.uid() OR public.is_founder())
+  WITH CHECK ((owner_id = auth.uid() AND public.can_author_lessons()) OR public.is_founder());
+
+CREATE POLICY "Authorized authors delete Studio drafts"
+  ON public.lesson_studio_drafts FOR DELETE TO authenticated
+  USING ((owner_id = auth.uid() AND public.can_author_lessons()) OR public.is_founder());
