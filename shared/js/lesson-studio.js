@@ -330,7 +330,7 @@
       const requestedId = params.get('lesson');
       state.lessonId = requestedId && requestedId.startsWith(LESSON_PREFIX) ? requestedId : LESSON_PREFIX + (crypto.randomUUID ? crypto.randomUUID() : makeId());
       await loadDraft(state.lessonId);
-      if (!requestedId) history.replaceState(null, '', window.location.pathname + '?lesson=' + encodeURIComponent(state.lessonId));
+      if (requestedId !== state.lessonId) history.replaceState(null, '', window.location.pathname + '?lesson=' + encodeURIComponent(state.lessonId));
     } catch (error) {
       document.querySelector('.studio-shell').innerHTML = '<section class="studio-access-denied"><h1>Lesson Studio unavailable</h1><p>' + escapeHtml(error.message) + '</p><a href="teacher.html">Return to teacher workspace</a></section>';
       $('save-button').disabled = true;
