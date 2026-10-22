@@ -58,6 +58,16 @@ assert.deepEqual(JSON.parse(protectedRows.find(row => row.kind === 'answer-key')
 assert.ok(protectedRows.some(row => row.kind === 'teacher-notes' && row.content.includes('PRIVATE script')));
 
 assert.throws(
+  () => extractProtectedContent(JSON.stringify({
+    id: 'unsupported',
+    metadata: { answers: ['must not silently disappear'] },
+    slides: []
+  })),
+  /Unsupported sensitive fields/,
+  'unmapped answer fields must block migration rather than be silently stripped'
+);
+
+assert.throws(
   () => extractProtectedContent(studentBody),
   /missing its private answer key/,
   'a sanitized public copy must not be mistaken for a complete answer-key migration source'
