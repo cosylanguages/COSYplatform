@@ -4,13 +4,6 @@
   "level": "B2",
   "templateType": "general",
   "durationMinutes": 50,
-  "teacherNotes": [
-    {
-      "type": "instruction",
-      "title": "Lesson Stage Aims",
-      "content": "This 50-minute full-scale lesson guides students through the impact of generative AI, neural networks, and automation on daily habits, employment, and ethics."
-    }
-  ],
   "slides": [
     {
       "id": "slide-1",
@@ -53,18 +46,15 @@
         },
         {
           "type": "input",
-          "placeholder": "Sentence 1: The company introduced automated customer support using a sophisticated...",
-          "answers": ["generative model", "neural network"]
+          "placeholder": "Sentence 1: The company introduced automated customer support using a sophisticated..."
         },
         {
           "type": "input",
-          "placeholder": "Sentence 2: Facial recognition software was audited to prevent instances of...",
-          "answers": ["algorithmic bias"]
+          "placeholder": "Sentence 2: Facial recognition software was audited to prevent instances of..."
         },
         {
           "type": "input",
-          "placeholder": "Sentence 3: Manufacturing efficiency surged by 40% following full factory...",
-          "answers": ["automation"]
+          "placeholder": "Sentence 3: Manufacturing efficiency surged by 40% following full factory..."
         }
       ]
     },
@@ -89,8 +79,7 @@
             "Without retraining, the gap between skilled and displaced workers will widen.",
             "Rule-based calculations are less reliable than human workers.",
             "Government regulation will halt technological progress."
-          ],
-          "answers": ["Without retraining, the gap between skilled and displaced workers will widen."]
+          ]
         }
       ]
     },
