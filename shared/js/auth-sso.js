@@ -88,30 +88,49 @@ window.CosySSO = window.CosySSO || {};
   /**
    * Appends session transfer tokens to ecosystem link URL
    */
+  // Session tokens may only be transferred to trusted COSY app origins.
+  // GitHub Pages hosts the COSY ecosystem under paths on this shared origin.
+  function isTrustedEcosystemUrl(targetHref) {
+    if (!targetHref || typeof targetHref !== 'string') return false;
+    try {
+      const target = new URL(targetHref, window.location.href);
+      if (target.protocol !== 'https:') return false;
+      const trustedOrigins = new Set([
+        window.location.origin,
+        'https://cosylanguages.github.io'
+      ]);
+      return target.protocol === 'https:' && trustedOrigins.has(target.origin);
+    } catch (e) {
+      return false;
+    }
+  }
+
   function buildEcosystemUrlWithTokens(targetHref, accessToken, refreshToken) {
-    if (!targetHref || !accessToken || !refreshToken) return targetHref;
+    if (!targetHref || !accessToken || !refreshToken || !isTrustedEcosystemUrl(targetHref)) {
+      return targetHref;
+    }
 
     try {
-      const [baseAndQuery, existingHash] = targetHref.split('#');
-      const hashParams = new URLSearchParams(existingHash || '');
+      const target = new URL(targetHref, window.location.href);
+      const hashParams = new URLSearchParams(target.hash.startsWith('#') ? target.hash.slice(1) : target.hash);
       hashParams.set('access_token', accessToken);
       hashParams.set('refresh_token', refreshToken);
-
-      return `${baseAndQuery}#${hashParams.toString()}`;
+      target.hash = hashParams.toString();
+      return target.href;
     } catch (e) {
       return targetHref;
     }
   }
 
   /**
-   * Handles click events on ecosystem links (a[href*="COSY"])
+   * Transfers session tokens only to allowlisted HTTPS COSY ecosystem links.
    */
   async function handleEcosystemClick(e) {
     const anchor = e.target ? e.target.closest('a[href*="COSY"], a[href*="cosy"]') : null;
     if (!anchor) return;
 
     const href = anchor.getAttribute('href');
-    if (!href || href.startsWith('#') || href.startsWith('javascript:')) return;
+    if (!isTrustedEcosystemUrl(href)) return;
 
     const supabase = getSupabaseClient();
     if (!supabase) return;
@@ -121,7 +140,7 @@ window.CosySSO = window.CosySSO || {};
       if (!session || !session.access_token || !session.refresh_token) return;
 
       const newUrl = buildEcosystemUrlWithTokens(href, session.access_token, session.refresh_token);
-      anchor.setAttribute('href', newUrl);
+      if (newUrl !== href) anchor.setAttribute('href', newUrl);
     } catch (err) {
       console.error('[CosySSO] Error appending session transfer tokens:', err);
     }

@@ -248,7 +248,7 @@ window.CosyAuth.getAuthAndProfile = async function() {
     return null;
   }
 
-  let profile = { role: 'student', language_access: [], course_level: '*' };
+  let profile;
   try {
     const { data, error } = await supabaseClient
       .from('profiles')
@@ -256,11 +256,25 @@ window.CosyAuth.getAuthAndProfile = async function() {
       .eq('id', session.user.id)
       .maybeSingle();
 
-    if (!error && data) {
-      profile = data;
+    // Do not infer a role when the profile is missing or cannot be verified.
+    // A fabricated default role can make the UI disagree with server-side RLS.
+    if (error || !data || data.id !== session.user.id ||
+        !['student', 'teacher', 'founder'].includes(String(data.role || '').toLowerCase())) {
+      console.error('[CosyAuth] Unable to verify a valid role for the signed-in user.', error || 'Profile missing or invalid');
+      window.CosyAuth.renderAccessDenied(
+        'Account Access Unavailable',
+        'Your account permissions could not be verified. Please sign in again or contact the platform administrator.'
+      );
+      return null;
     }
+    profile = { ...data, role: String(data.role).toLowerCase() };
   } catch (err) {
-    console.error("Error fetching user profile:", err);
+    console.error('[CosyAuth] Error fetching user profile:', err);
+    window.CosyAuth.renderAccessDenied(
+      'Account Access Unavailable',
+      'Your account permissions could not be verified. Please try again or contact the platform administrator.'
+    );
+    return null;
   }
 
   return { session, user: session.user, profile };

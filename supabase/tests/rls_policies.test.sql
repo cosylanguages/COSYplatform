@@ -111,8 +111,11 @@ INSERT INTO public.lesson_protected (lesson_id, kind, content) VALUES
     ('fr:a1:bonjour', 'answer-key', '{"q1": "bonjour"}');
 
 
--- Seed student answers for RLS isolation checks.
+-- Seed answers for each role to verify that answer rows are student-only,
+-- not merely isolated by user ID.
 INSERT INTO public.lesson_answers (student_id, lesson_id, field_key, value, is_correct) VALUES
+  ('11111111-1111-1111-1111-111111111111', 'en:a1:nice-to-meet-you', 'founder-test', 'must remain private', false),
+  ('22222222-2222-2222-2222-222222222222', 'en:a1:nice-to-meet-you', 'teacher-test', 'must remain private', false),
   ('33333333-3333-3333-3333-333333333333', 'en:a1:nice-to-meet-you', 'q1', 'hello', true),
   ('44444444-4444-4444-4444-444444444444', 'en:a1:nice-to-meet-you', 'q1', 'bonjour', false)
 ON CONFLICT (student_id, lesson_id, field_key) DO UPDATE
