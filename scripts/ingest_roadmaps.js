@@ -42,7 +42,15 @@ function getSourceArg() {
   return null;
 }
 
+function getRoadmapArg() {
+  const idx = process.argv.indexOf('--roadmap');
+  if (idx < 0) return null;
+  if (!process.argv[idx + 1]) throw new Error('--roadmap requires a roadmap filename, e.g. science-en-b2.json.');
+  return path.basename(process.argv[idx + 1]);
+}
+
 const customSource = getSourceArg();
+const roadmapFilter = getRoadmapArg();
 
 function parseFilenameMetadata(filename) {
   const basename = path.basename(filename, '.json');
@@ -270,8 +278,14 @@ async function ingestRoadmaps() {
     console.log(`Source location / git ref: ${customSource}`);
   }
 
-  const roadmapFiles = loadRoadmapFiles(customSource);
-  console.log(`Found ${roadmapFiles.length} roadmap files across main and selected source\\n`);
+  const allRoadmapFiles = loadRoadmapFiles(customSource);
+  const roadmapFiles = roadmapFilter
+    ? allRoadmapFiles.filter(item => item.filename === roadmapFilter)
+    : allRoadmapFiles;
+  if (roadmapFilter && roadmapFiles.length !== 1) {
+    throw new Error(`Requested roadmap not found: ${roadmapFilter}`);
+  }
+  console.log(`Found ${roadmapFiles.length} roadmap file(s) for migration preflight\\n`);
 
   const coursesMap = new Map();
   const lessonsMap = new Map();
