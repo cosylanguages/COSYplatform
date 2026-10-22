@@ -17,17 +17,29 @@ CREATE INDEX IF NOT EXISTS lesson_studio_drafts_owner_updated_idx
 ALTER TABLE public.lesson_studio_drafts ENABLE ROW LEVEL SECURITY;
 
 -- Match the existing COSY authoring rule: founder or a user explicitly listed in lesson_authors.
-CREATE OR REPLACE FUNCTION public.can_author_lessons(p_user_id UUID DEFAULT auth.uid())
+CREATE OR REPLACE FUNCTION public.can_author_lessons_for_user(p_user_id UUID)
 RETURNS BOOLEAN
 LANGUAGE sql
 STABLE
 SECURITY DEFINER
 SET search_path = public
-AS $$
+AS $
   SELECT public.is_founder(p_user_id) OR EXISTS (
     SELECT 1 FROM public.lesson_authors la WHERE la.user_id = p_user_id
   );
-$$;
+$;
+
+REVOKE ALL ON FUNCTION public.can_author_lessons_for_user(UUID) FROM PUBLIC, anon, authenticated;
+
+CREATE OR REPLACE FUNCTION public.can_author_lessons()
+RETURNS BOOLEAN
+LANGUAGE sql
+STABLE
+SECURITY DEFINER
+SET search_path = public
+AS $
+  SELECT public.can_author_lessons_for_user(auth.uid());
+$;
 
 DROP POLICY IF EXISTS "Authors read own Studio drafts" ON public.lesson_studio_drafts;
 CREATE POLICY "Authors read own Studio drafts"
@@ -52,4 +64,5 @@ CREATE POLICY "Authorized authors delete Studio drafts"
 
 REVOKE ALL ON public.lesson_studio_drafts FROM anon;
 GRANT SELECT, INSERT, UPDATE, DELETE ON public.lesson_studio_drafts TO authenticated;
-GRANT EXECUTE ON FUNCTION public.can_author_lessons(UUID) TO authenticated;
+REVOKE ALL ON FUNCTION public.can_author_lessons() FROM PUBLIC, anon;
+GRANT EXECUTE ON FUNCTION public.can_author_lessons() TO authenticated;
