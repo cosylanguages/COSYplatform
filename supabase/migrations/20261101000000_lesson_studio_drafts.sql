@@ -23,11 +23,11 @@ LANGUAGE sql
 STABLE
 SECURITY DEFINER
 SET search_path = public
-AS $
+AS $$
   SELECT public.is_founder(p_user_id) OR EXISTS (
     SELECT 1 FROM public.lesson_authors la WHERE la.user_id = p_user_id
   );
-$;
+$$;
 
 REVOKE ALL ON FUNCTION public.can_author_lessons_for_user(UUID) FROM PUBLIC, anon, authenticated;
 
@@ -37,9 +37,9 @@ LANGUAGE sql
 STABLE
 SECURITY DEFINER
 SET search_path = public
-AS $
+AS $$
   SELECT public.can_author_lessons_for_user(auth.uid());
-$;
+$$;
 
 DROP POLICY IF EXISTS "Authors read own Studio drafts" ON public.lesson_studio_drafts;
 CREATE POLICY "Authors read own Studio drafts"
