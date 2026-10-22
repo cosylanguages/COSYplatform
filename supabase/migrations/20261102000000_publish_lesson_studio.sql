@@ -1,0 +1,236 @@
+-- Publish COSY Lesson Studio drafts into the existing student-safe lesson store.
+-- Student content and answer keys are written separately; student RLS never exposes answers.
+ALTER TABLE public.lesson_studio_drafts
+  ADD COLUMN IF NOT EXISTS published_lesson_id TEXT,
+  ADD COLUMN IF NOT EXISTS published_at TIMESTAMPTZ;
+
+CREATE OR REPLACE FUNCTION public.list_studio_publishable_courses()
+RETURNS TABLE (id TEXT, title TEXT, language TEXT, cefr TEXT)
+LANGUAGE sql STABLE SECURITY DEFINER SET search_path = public
+AS $$
+  SELECT c.id, c.title, c.language, c.cefr
+  FROM public.courses c
+  WHERE public.is_founder()
+     OR (public.is_teacher()
+       AND EXISTS (SELECT 1 FROM public.teacher_languages tl
+         WHERE (tl.user_id = auth.uid() OR tl.teacher_id = auth.uid())
+           AND lower(tl.language) = lower(CASE lower(c.language)
+           WHEN 'english' THEN 'en' WHEN 'french' THEN 'fr'
+           WHEN 'italian' THEN 'it' WHEN 'russian' THEN 'ru'
+           WHEN 'greek' THEN 'el' WHEN 'spanish' THEN 'es'
+           ELSE c.language END)))
+  ORDER BY c.language, c.cefr, c.title;
+$$;
+
+CREATE OR REPLACE FUNCTION public.publish_lesson_studio_draft(
+  p_draft_id TEXT, p_course_id TEXT, p_lesson_number INTEGER
+) RETURNS TEXT
+LANGUAGE plpgsql SECURITY DEFINER SET search_path = public
+AS $$
+DECLARE
+  v_user_id UUID := auth.uid();
+  v_draft public.lesson_studio_drafts%ROWTYPE;
+  v_course public.courses%ROWTYPE;
+  v_lesson_id TEXT;
+  v_student_body JSONB;
+  v_protected_answers JSONB;
+  v_slides JSONB := '[]'::JSONB;
+  v_block JSONB;
+  v_elements JSONB;
+  v_block_index INTEGER := 0;
+  v_slug TEXT;
+BEGIN
+  IF v_user_id IS NULL OR NOT public.can_author_lessons_for_user(v_user_id) THEN
+    RAISE EXCEPTION 'You are not authorized to publish lessons.';
+  END IF;
+  IF p_lesson_number IS NULL OR p_lesson_number < 1 THEN
+    RAISE EXCEPTION 'Lesson number must be a positive integer.';
+  END IF;
+  SELECT * INTO v_draft FROM public.lesson_studio_drafts
+    WHERE id = p_draft_id AND (owner_id = v_user_id OR public.is_founder(v_user_id));
+  IF NOT FOUND THEN RAISE EXCEPTION 'Draft not found or access denied.'; END IF;
+  IF jsonb_typeof(v_draft.document) IS DISTINCT FROM 'object'
+     OR v_draft.document->>'schemaVersion' IS DISTINCT FROM '1'
+     OR jsonb_typeof(v_draft.document->'blocks') IS DISTINCT FROM 'array'
+     OR NULLIF(trim(v_draft.document->>'title'), '') IS NULL THEN
+    RAISE EXCEPTION 'Draft document is not a valid COSY Studio lesson.';
+  END IF;
+  IF EXISTS (
+    SELECT 1
+    FROM jsonb_array_elements(v_draft.document->'blocks') AS block_rows(block_doc)
+    WHERE jsonb_typeof(block_doc) IS DISTINCT FROM 'object'
+       OR NULLIF(block_doc->>'id', '') IS NULL
+       OR block_doc->>'type' NOT IN ('text', 'fill_blank')
+       OR (block_doc->>'type' = 'text' AND jsonb_typeof(block_doc->'content') IS DISTINCT FROM 'string')
+       OR (block_doc->>'type' = 'fill_blank' AND (
+         jsonb_typeof(block_doc->'prompt') IS DISTINCT FROM 'string'
+         OR jsonb_typeof(block_doc->'answers') IS DISTINCT FROM 'array'
+         OR EXISTS (
+           SELECT 1 FROM jsonb_array_elements(block_doc->'answers') AS answer_rows(answer_doc)
+           WHERE jsonb_typeof(answer_doc) IS DISTINCT FROM 'string'
+         )
+       ))
+  ) THEN
+    RAISE EXCEPTION 'Draft contains an invalid or unsupported lesson block.';
+  END IF;
+  SELECT * INTO v_course FROM public.courses WHERE id = p_course_id;
+  IF NOT FOUND THEN RAISE EXCEPTION 'Course not found.'; END IF;
+  IF lower(CASE lower(v_course.language)
+       WHEN 'english' THEN 'en' WHEN 'french' THEN 'fr'
+       WHEN 'italian' THEN 'it' WHEN 'russian' THEN 'ru'
+       WHEN 'greek' THEN 'el' WHEN 'spanish' THEN 'es'
+       ELSE v_course.language END)
+     <> lower(CASE lower(v_draft.language)
+       WHEN 'english' THEN 'en' WHEN 'french' THEN 'fr'
+       WHEN 'italian' THEN 'it' WHEN 'russian' THEN 'ru'
+       WHEN 'greek' THEN 'el' WHEN 'spanish' THEN 'es'
+       ELSE v_draft.language END)
+     OR upper(v_course.cefr) <> upper(v_draft.level) THEN
+    RAISE EXCEPTION 'Course language and level must match the lesson.';
+  END IF;
+  IF NOT public.is_founder(v_user_id) AND NOT EXISTS (
+    SELECT 1 FROM public.teacher_languages tl
+    WHERE (tl.user_id = v_user_id OR tl.teacher_id = v_user_id)
+      AND lower(tl.language) = lower(CASE lower(v_course.language)
+        WHEN 'english' THEN 'en' WHEN 'french' THEN 'fr'
+        WHEN 'italian' THEN 'it' WHEN 'russian' THEN 'ru'
+        WHEN 'greek' THEN 'el' WHEN 'spanish' THEN 'es'
+        ELSE v_course.language END)
+  ) THEN RAISE EXCEPTION 'You are not authorized to publish to this course.'; END IF;
+
+  v_lesson_id := 'studio:' || regexp_replace(p_draft_id, '^studio:', '');
+  v_slug := trim(both '-' from regexp_replace(lower(v_draft.title), '[^a-z0-9]+', '-', 'g'));
+  IF v_slug = '' THEN v_slug := 'studio-lesson'; END IF;
+
+  FOR v_block IN SELECT value FROM jsonb_array_elements(v_draft.document->'blocks')
+  LOOP
+    v_block_index := v_block_index + 1;
+    IF v_block->>'type' = 'text' THEN
+      v_elements := jsonb_build_array(jsonb_build_object('type','studio-text','content',v_block->>'content'));
+    ELSIF v_block->>'type' = 'fill_blank' THEN
+      v_elements := jsonb_build_array(
+        jsonb_build_object('type','studio-prompt','content',v_block->>'prompt'),
+        jsonb_build_object('type','studio-input','fieldKey',v_block->>'id',
+          'placeholder','Type your answer...','label','Answer ' || v_block_index));
+    ELSE RAISE EXCEPTION 'Unsupported lesson block type: %', v_block->>'type'; END IF;
+    v_slides := v_slides || jsonb_build_array(jsonb_build_object(
+      'id','slide-' || v_block_index,'title','Part ' || v_block_index,'stage','','elements',v_elements));
+  END LOOP;
+
+  v_student_body := jsonb_build_object('schemaVersion',1,'title',v_draft.title,'slides',v_slides);
+  SELECT jsonb_build_object('schemaVersion',1,'answers',
+    COALESCE(jsonb_agg(jsonb_build_object('blockId',b->>'id','acceptedAnswers',b->'answers')
+      ) FILTER (WHERE b->>'type' = 'fill_blank'),'[]'::JSONB))
+    INTO v_protected_answers
+    FROM jsonb_array_elements(v_draft.document->'blocks') AS items(b);
+
+  INSERT INTO public.lessons (id,language,cefr,kind,slug,title,summary)
+  VALUES (v_lesson_id,v_draft.language,v_draft.level,'lesson',v_slug,v_draft.title,'Created in COSY Lesson Studio')
+  ON CONFLICT (id) DO UPDATE SET language=EXCLUDED.language,cefr=EXCLUDED.cefr,
+    kind=EXCLUDED.kind,slug=EXCLUDED.slug,title=EXCLUDED.title,summary=EXCLUDED.summary,updated_at=NOW();
+
+  INSERT INTO public.lesson_student_content (lesson_id,body,updated_at)
+  VALUES (v_lesson_id,v_student_body::TEXT,NOW())
+  ON CONFLICT (lesson_id) DO UPDATE SET body=EXCLUDED.body,updated_at=NOW();
+
+  DELETE FROM public.lesson_protected WHERE lesson_id=v_lesson_id AND kind='answer-key';
+  INSERT INTO public.lesson_protected (lesson_id,kind,content)
+  VALUES (v_lesson_id,'answer-key',v_protected_answers::TEXT);
+
+  INSERT INTO public.course_lessons (course_id,lesson_id,placement_id,unit,section_number,lesson_number,
+    is_optional,is_milestone,is_exam,teacher_led,status)
+  VALUES (p_course_id,v_lesson_id,'studio:' || p_draft_id,'COSY Lesson Studio',0,p_lesson_number,
+    false,false,false,false,'published')
+  ON CONFLICT (course_id,placement_id) DO UPDATE SET lesson_id=EXCLUDED.lesson_id,
+    unit=EXCLUDED.unit,section_number=EXCLUDED.section_number,lesson_number=EXCLUDED.lesson_number,status='published';
+
+  UPDATE public.lesson_studio_drafts SET published_lesson_id=v_lesson_id,published_at=NOW(),updated_at=NOW()
+    WHERE id=p_draft_id;
+  RETURN v_lesson_id;
+END;
+$$;
+
+REVOKE ALL ON FUNCTION public.list_studio_publishable_courses() FROM PUBLIC, anon;
+GRANT EXECUTE ON FUNCTION public.list_studio_publishable_courses() TO authenticated;
+REVOKE ALL ON FUNCTION public.publish_lesson_studio_draft(TEXT,TEXT,INTEGER) FROM PUBLIC, anon;
+GRANT EXECUTE ON FUNCTION public.publish_lesson_studio_draft(TEXT,TEXT,INTEGER) TO authenticated;
+
+
+-- This SECURITY DEFINER predicate checks entitlement without depending on nested
+-- SELECT permissions on courses/course_lessons, while exposing only published bodies.
+CREATE OR REPLACE FUNCTION public.can_read_published_studio_lesson(p_lesson_id TEXT)
+RETURNS BOOLEAN
+LANGUAGE sql STABLE SECURITY DEFINER SET search_path = public
+AS $$
+  SELECT EXISTS (
+    SELECT 1
+    FROM public.course_lessons cl
+    JOIN public.courses c ON c.id = cl.course_id
+    WHERE cl.lesson_id = p_lesson_id
+      AND cl.status = 'published'
+      AND (
+        public.is_founder()
+        OR (public.is_teacher() AND EXISTS (
+          SELECT 1 FROM public.teacher_languages tl
+          WHERE (tl.user_id = auth.uid() OR tl.teacher_id = auth.uid())
+            AND lower(tl.language) = lower(CASE lower(c.language)
+          WHEN 'english' THEN 'en' WHEN 'french' THEN 'fr'
+          WHEN 'italian' THEN 'it' WHEN 'russian' THEN 'ru'
+          WHEN 'greek' THEN 'el' WHEN 'spanish' THEN 'es'
+          ELSE c.language END)
+        ))
+        OR (public.is_student() AND EXISTS (
+          SELECT 1 FROM public.access_grants ag
+          WHERE (ag.user_id = auth.uid() OR ag.student_id = auth.uid())
+            AND (ag.course_id = c.id OR ag.course = c.id)
+            AND ag.valid_from <= CURRENT_DATE
+            AND (ag.valid_until IS NULL OR ag.valid_until >= CURRENT_DATE)
+            AND (ag.expires_at IS NULL OR ag.expires_at > NOW())
+        ))
+      )
+  );
+$$;
+
+DROP POLICY IF EXISTS "Authorized users read published Studio lesson bodies" ON public.lesson_student_content;
+CREATE POLICY "Authorized users read published Studio lesson bodies"
+  ON public.lesson_student_content FOR SELECT TO authenticated
+  USING (lesson_id LIKE 'studio:%' AND public.can_read_published_studio_lesson(lesson_id));
+
+CREATE OR REPLACE FUNCTION public.list_published_studio_lessons(p_course_id TEXT)
+RETURNS TABLE (lesson_id TEXT, title TEXT, lesson_number INTEGER, unit TEXT)
+LANGUAGE sql STABLE SECURITY DEFINER SET search_path = public
+AS $$
+  SELECT l.id, l.title, cl.lesson_number, cl.unit
+  FROM public.course_lessons cl
+  JOIN public.lessons l ON l.id = cl.lesson_id
+  JOIN public.courses c ON c.id = cl.course_id
+  WHERE cl.course_id = p_course_id
+    AND cl.status = 'published'
+    AND cl.lesson_id LIKE 'studio:%'
+    AND (
+      public.is_founder()
+      OR (public.is_teacher() AND EXISTS (
+        SELECT 1 FROM public.teacher_languages tl
+        WHERE (tl.user_id = auth.uid() OR tl.teacher_id = auth.uid())
+          AND lower(tl.language) = lower(CASE lower(c.language)
+          WHEN 'english' THEN 'en' WHEN 'french' THEN 'fr'
+          WHEN 'italian' THEN 'it' WHEN 'russian' THEN 'ru'
+          WHEN 'greek' THEN 'el' WHEN 'spanish' THEN 'es'
+          ELSE c.language END)
+      ))
+      OR (public.is_student() AND EXISTS (
+        SELECT 1 FROM public.access_grants ag
+        WHERE (ag.user_id = auth.uid() OR ag.student_id = auth.uid())
+          AND (ag.course_id = c.id OR ag.course = c.id)
+          AND ag.valid_from <= CURRENT_DATE
+          AND (ag.valid_until IS NULL OR ag.valid_until >= CURRENT_DATE)
+          AND (ag.expires_at IS NULL OR ag.expires_at > NOW())
+      ))
+    )
+  ORDER BY cl.lesson_number;
+$$;
+
+REVOKE ALL ON FUNCTION public.can_read_published_studio_lesson(TEXT) FROM PUBLIC, anon;
+GRANT EXECUTE ON FUNCTION public.can_read_published_studio_lesson(TEXT) TO authenticated;
+REVOKE ALL ON FUNCTION public.list_published_studio_lessons(TEXT) FROM PUBLIC, anon;
+GRANT EXECUTE ON FUNCTION public.list_published_studio_lessons(TEXT) TO authenticated;

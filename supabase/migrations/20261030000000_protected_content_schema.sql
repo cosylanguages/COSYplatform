@@ -35,7 +35,7 @@ ALTER TABLE public.profiles ADD COLUMN IF NOT EXISTS language_access TEXT[] DEFA
 ALTER TABLE public.profiles ADD COLUMN IF NOT EXISTS course_level TEXT DEFAULT '*';
 
 -- 2. SECURITY DEFINER Helper Functions (Prevents RLS infinite recursion on profiles)
-CREATE OR REPLACE FUNCTION public.is_founder(p_user_id UUID DEFAULT auth.uid())
+CREATE OR REPLACE FUNCTION public.is_founder(p_user_id UUID)
 RETURNS BOOLEAN
 LANGUAGE sql
 STABLE
@@ -50,7 +50,7 @@ AS $$
   );
 $$;
 
-CREATE OR REPLACE FUNCTION public.is_teacher(p_user_id UUID DEFAULT auth.uid())
+CREATE OR REPLACE FUNCTION public.is_teacher(p_user_id UUID)
 RETURNS BOOLEAN
 LANGUAGE sql
 STABLE
@@ -65,7 +65,7 @@ AS $$
   );
 $$;
 
-CREATE OR REPLACE FUNCTION public.is_student(p_user_id UUID DEFAULT auth.uid())
+CREATE OR REPLACE FUNCTION public.is_student(p_user_id UUID)
 RETURNS BOOLEAN
 LANGUAGE sql
 STABLE
@@ -78,6 +78,36 @@ AS $$
     WHERE id = p_user_id
       AND role = 'student'
   );
+$$;
+
+CREATE OR REPLACE FUNCTION public.is_founder()
+RETURNS BOOLEAN
+LANGUAGE sql
+STABLE
+SECURITY DEFINER
+SET search_path = public
+AS $$
+  SELECT public.is_founder(auth.uid());
+$$;
+
+CREATE OR REPLACE FUNCTION public.is_teacher()
+RETURNS BOOLEAN
+LANGUAGE sql
+STABLE
+SECURITY DEFINER
+SET search_path = public
+AS $$
+  SELECT public.is_teacher(auth.uid());
+$$;
+
+CREATE OR REPLACE FUNCTION public.is_student()
+RETURNS BOOLEAN
+LANGUAGE sql
+STABLE
+SECURITY DEFINER
+SET search_path = public
+AS $$
+  SELECT public.is_student(auth.uid());
 $$;
 
 -- 3. Shared Table Adaptation: `teacher_languages`
@@ -115,6 +145,13 @@ CREATE TABLE IF NOT EXISTS public.access_grants (
 ALTER TABLE public.access_grants ADD COLUMN IF NOT EXISTS student_id UUID REFERENCES public.profiles(id) ON DELETE CASCADE;
 ALTER TABLE public.access_grants ADD COLUMN IF NOT EXISTS course_id TEXT REFERENCES public.courses(id) ON DELETE CASCADE;
 ALTER TABLE public.access_grants ADD COLUMN IF NOT EXISTS expires_at TIMESTAMPTZ;
+ALTER TABLE public.access_grants ADD COLUMN IF NOT EXISTS valid_from DATE NOT NULL DEFAULT CURRENT_DATE;
+ALTER TABLE public.access_grants ADD COLUMN IF NOT EXISTS valid_until DATE;
+
+-- Preserve existing grant expiry semantics when adapting the legacy access table.
+UPDATE public.access_grants
+SET expires_at = valid_until::timestamptz
+WHERE expires_at IS NULL AND valid_until IS NOT NULL;
 
 -- 6. New Table: `lessons` (Metadata Only - No sensitive bodies)
 CREATE TABLE IF NOT EXISTS public.lessons (
@@ -165,7 +202,7 @@ CREATE TABLE IF NOT EXISTS public.course_lessons (
 );
 
 -- 10. Public Course Preview View
-CREATE OR REPLACE VIEW public.course_preview AS
+CREATE OR REPLACE VIEW public.course_preview WITH (security_invoker = true) AS
 SELECT
     c.id AS course_id,
     c.language,
@@ -312,6 +349,8 @@ USING (
         JOIN public.courses c ON (c.id = ag.course_id OR c.id = ag.course)
         JOIN public.course_lessons cl ON cl.course_id = c.id
         WHERE (ag.user_id = auth.uid() OR ag.student_id = auth.uid())
+          AND ag.valid_from <= CURRENT_DATE
+          AND (ag.valid_until IS NULL OR ag.valid_until >= CURRENT_DATE)
           AND cl.lesson_id = lessons.id
           AND c.language = lessons.language
           AND c.cefr = lessons.cefr
@@ -345,6 +384,8 @@ USING (
         JOIN public.course_lessons cl ON cl.course_id = c.id
         JOIN public.lessons l ON l.id = lesson_student_content.lesson_id
         WHERE (ag.user_id = auth.uid() OR ag.student_id = auth.uid())
+          AND ag.valid_from <= CURRENT_DATE
+          AND (ag.valid_until IS NULL OR ag.valid_until >= CURRENT_DATE)
           AND cl.lesson_id = lesson_student_content.lesson_id
           AND c.language = l.language
           AND c.cefr = l.cefr
@@ -388,3 +429,9 @@ ON public.access_grants FOR ALL
 USING (
     public.is_founder()
 );
+
+
+-- Explicit API privileges for newly-created canonical curriculum objects.
+-- RLS policies still determine which rows each caller can see.
+GRANT SELECT ON public.courses, public.course_lessons, public.lessons, public.course_preview TO anon, authenticated;
+GRANT SELECT ON public.lesson_student_content, public.lesson_protected TO authenticated;

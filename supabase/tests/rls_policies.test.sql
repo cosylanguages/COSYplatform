@@ -250,8 +250,8 @@ SELECT results_eq(
 
 SELECT results_eq(
     'SELECT COUNT(*)::INTEGER FROM public.courses',
-    ARRAY[3],
-    'TC-15 [PASS]: Founder has unrestricted access to all course records'
+    ARRAY[54],
+    'TC-15 [PASS]: Founder has unrestricted access to the seeded course catalog'
 );
 
 SELECT results_eq(
