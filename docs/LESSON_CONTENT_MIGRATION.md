@@ -18,11 +18,14 @@ Then run the preflight against that local folder. The public science PR branch h
 
 ## 2. Run the dry-run preflight
 
+Run a focused preflight for the new science course first, then run the full inventory preflight before a complete migration:
+
 ```sh
+node scripts/ingest_roadmaps.js --source ./private-lesson-source --roadmap science-en-b2.json --dry-run
 node scripts/ingest_roadmaps.js --source ./private-lesson-source --dry-run
 ```
 
-The preflight must report **zero missing sources and zero unsafe/unsupported sources**. Exit code 2 means the preflight is blocked. Do not bypass it or run a write-mode migration while either count is non-zero.
+Each preflight must report **zero missing sources and zero unsafe/unsupported sources** for its selected scope. Exit code 2 means the preflight is blocked. Do not bypass it or run a write-mode migration while either count is non-zero.
 
 - JSON lesson bodies have answer fields, correctness flags, teacher notes, and explanations removed from the student payload.
 - Supported JSON exercise answers are stored separately as JSON under lesson_protected.kind = answer-key, keyed to the classroom's stable generated field IDs.
