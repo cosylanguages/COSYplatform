@@ -248,7 +248,7 @@ function sanitizeStudentContent(raw) {
     return JSON.stringify(strip(lesson));
   }
 
-  if (/<(?:cosy-input-item|cosy-select-item|cosy-test-item)\\b|\\b(?:answer|correct|solution)\\s*=/i.test(raw)) {
+  if (/<(?:cosy-input-item|cosy-select-item|cosy-test-item)\b|\b(?:answer|correct|solution)\s*=/i.test(raw)) {
     throw new Error('XML source contains answer metadata; structural XML migration is required before safe ingestion.');
   }
   return raw
