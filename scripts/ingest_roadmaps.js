@@ -219,14 +219,14 @@ function extractProtectedContent(raw) {
     return output;
   }
 
-  if (/<(?:cosy-input-item|cosy-select-item|cosy-test-item)\\b|\\b(?:answer|correct|solution)\\s*=/i.test(raw)) {
+  if (/<(?:cosy-input-item|cosy-select-item|cosy-test-item)\b|\b(?:answer|correct|solution)\s*=/i.test(raw)) {
     throw new Error('XML source contains answer metadata; structural XML migration is required before safe ingestion.');
   }
-  const notes = raw.match(/<cosy-teacher-notes[\\s\\S]*?<\\/cosy-teacher-notes>|<teacher-notes[\\s\\S]*?<\\/teacher-notes>/gi);
+  const notes = raw.match(/<cosy-teacher-notes[\s\S]*?<\/cosy-teacher-notes>|<teacher-notes[\s\S]*?<\/teacher-notes>/gi);
   if (notes) {
     notes.forEach(note => output.push({
       kind: 'teacher-notes',
-      content: note.replace(/<\\/?(?:cosy-)?teacher-notes[^>]*>/gi, '').trim()
+      content: note.replace(/<\/?(?:cosy-)?teacher-notes[^>]*>/gi, '').trim()
     }));
   }
   return output;
@@ -252,8 +252,8 @@ function sanitizeStudentContent(raw) {
     throw new Error('XML source contains answer metadata; structural XML migration is required before safe ingestion.');
   }
   return raw
-    .replace(/<cosy-teacher-notes[\\s\\S]*?<\\/cosy-teacher-notes>/gi, '')
-    .replace(/<teacher-notes[\\s\\S]*?<\\/teacher-notes>/gi, '')
+    .replace(/<cosy-teacher-notes[\s\S]*?<\/cosy-teacher-notes>/gi, '')
+    .replace(/<teacher-notes[\s\S]*?<\/teacher-notes>/gi, '')
     .trim();
 }
 
