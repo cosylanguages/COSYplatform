@@ -58,6 +58,12 @@ assert.deepEqual(JSON.parse(protectedRows.find(row => row.kind === 'answer-key')
 assert.ok(protectedRows.some(row => row.kind === 'teacher-notes' && row.content.includes('PRIVATE script')));
 
 assert.throws(
+  () => extractProtectedContent(studentBody),
+  /missing its private answer key/,
+  'a sanitized public copy must not be mistaken for a complete answer-key migration source'
+);
+
+assert.throws(
   () => sanitizeStudentContent('<cosy-test><cosy-test-item correct="true">secret</cosy-test-item></cosy-test>'),
   /structural XML migration/
 );
