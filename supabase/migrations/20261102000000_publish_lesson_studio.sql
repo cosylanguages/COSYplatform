@@ -18,8 +18,7 @@ AS $$
            WHEN 'english' THEN 'en' WHEN 'french' THEN 'fr'
            WHEN 'italian' THEN 'it' WHEN 'russian' THEN 'ru'
            WHEN 'greek' THEN 'el' WHEN 'spanish' THEN 'es'
-           ELSE c.language END))
-       AND EXISTS (SELECT 1 FROM public.lesson_authors la WHERE la.user_id = auth.uid()))
+           ELSE c.language END)))
   ORDER BY c.language, c.cefr, c.title;
 $$;
 
