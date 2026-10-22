@@ -225,7 +225,7 @@
     if (client && id) {
       try {
         const { data, error } = await client.from('lesson_studio_drafts').select('document').eq('id', id).maybeSingle();
-        if (!error && data && data.document && typeof data.document === 'object') {
+        if (!saved && !error && data && data.document && typeof data.document === 'object') {
           const remote = data.document;
           if (!validateDocument(remote)) saved = remote;
         }
@@ -242,6 +242,11 @@
   }
 
   async function saveDraft() {
+    if (!state.codeValid) {
+      $('save-status').textContent = 'Fix the JSON error before saving.';
+      $('code-error').textContent = 'Fix the JSON error before saving.';
+      return;
+    }
     const doc = cloneDoc();
     doc.title = $('lesson-title').value.trim();
     doc.language = $('lesson-language').value;
