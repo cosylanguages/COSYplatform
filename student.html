@@ -534,7 +534,9 @@
       document.getElementById('user-info').innerText = `Learner: ${userEmail || 'Student'}`;
 
       if (lessonParam) {
-        if (!window.CosyAuth.canAccessCourseId(courseParam, authData.profile)) {
+        // Studio content is served through lesson_student_content RLS, which checks
+        // published course placement and the signed-in student's active entitlement.
+        if (!lessonParam.startsWith('studio:') && !window.CosyAuth.canAccessCourseId(courseParam, authData.profile)) {
           renderAccessDenied('Course unavailable', 'You do not have access to this course.');
           return;
         }
@@ -1634,9 +1636,21 @@
 
     function renderJsonSlideToStudentHtml(slide) {
       let output = "";
+      const escapeStudioText = (value) => String(value == null ? "" : value).replace(/[&<>"]/g, ch => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"
+      })[ch]);
       if (slide.elements) {
         slide.elements.forEach(el => {
-          if (el.type === "instruction") {
+          if (el.type === "studio-text") {
+            output += '<p style="white-space:pre-wrap;line-height:1.7;">' + escapeStudioText(el.content) + '</p>';
+          } else if (el.type === "studio-prompt") {
+            output += '<p style="white-space:pre-wrap;line-height:1.7;font-weight:600;">' + escapeStudioText(el.content) + '</p>';
+          } else if (el.type === "studio-input") {
+            const fieldKey = 'studio_' + String(el.fieldKey || slide.id || 'answer').replace(/[^a-zA-Z0-9_-]/g, '_');
+            const placeholder = escapeStudioText(el.placeholder || 'Type answer...');
+            const saved = getSavedStudentInput(fieldKey);
+            output += '<div class="cosy-input-box"><input type="text" aria-label="' + escapeStudioText(el.label || 'Your answer') + '" placeholder="' + placeholder + '" value="' + escapeStudioText(saved) + '" oninput="saveStudentInput(\'' + fieldKey + '\', this.value)" /></div>';
+          } else if (el.type === "instruction") {
             output += `<cosy-instruction>📋 ${el.content}</cosy-instruction>`;
           } else if (el.type === "blockquote") {
             output += `<cosy-blockquote>${el.content}</cosy-blockquote>`;
