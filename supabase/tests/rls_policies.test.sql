@@ -3,7 +3,7 @@
 
 BEGIN;
 
-SELECT plan(26);
+SELECT plan(29);
 
 -- Setup test helper schema for auth mocking
 CREATE SCHEMA IF NOT EXISTS tests;
@@ -298,6 +298,27 @@ SELECT ok(
 SELECT ok(
     has_function_privilege('service_role', 'public.replace_lesson_content(text,text,jsonb)', 'EXECUTE'),
     'TC-26 [PASS]: Only the server-side service role is granted lesson-content replacement access'
+);
+
+SELECT tests.authenticate_as('22222222-2222-2222-2222-222222222222'::UUID);
+
+SELECT is(
+    public.check_lesson_answer('en:a1:nice-to-meet-you', 'q1', 'hello'),
+    FALSE,
+    'TC-27 [PASS]: Teacher role cannot use the student answer-checking RPC'
+);
+
+SELECT tests.authenticate_as('11111111-1111-1111-1111-111111111111'::UUID);
+
+SELECT is(
+    public.check_lesson_answer('en:a1:nice-to-meet-you', 'q1', 'hello'),
+    FALSE,
+    'TC-28 [PASS]: Founder role cannot use the student answer-checking RPC'
+);
+
+SELECT ok(
+    NOT has_function_privilege('anon', 'public.check_lesson_answer(text,text,text)', 'EXECUTE'),
+    'TC-29 [PASS]: Anonymous users are not granted execute permission on answer checking'
 );
 
 SELECT * FROM finish();
