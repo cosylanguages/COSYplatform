@@ -9,6 +9,9 @@ window.CosyProgress = window.CosyProgress || {};
   'use strict';
 
   const debounceTimers = new Map();
+  // Serialize writes and resets per student/lesson so an in-flight upsert cannot
+  // finish after a reset and recreate an answer that was just deleted.
+  const lessonOperationQueues = new Map();
   const PENDING_STORAGE_KEY_PREFIX = 'cosy_pending_answers';
   const DEBOUNCE_DELAY = 800; // ms
   let queueRevision = 0;
@@ -67,7 +70,21 @@ window.CosyProgress = window.CosyProgress || {};
       savePendingToStorage(userId, stored);
     }
   }
-  async function performUpsert(userId, lessonId, fieldKey, value, isCorrect, expectedRevision) {
+
+  function enqueueLessonOperation(userId, lessonId, operation) {
+    const key = `${userId}::${lessonId}`;
+    const previous = lessonOperationQueues.get(key) || Promise.resolve();
+    const current = previous.catch(() => {}).then(operation);
+    lessonOperationQueues.set(key, current);
+    // Clean up only if this is still the newest operation for this lesson.
+    current.then(
+      () => { if (lessonOperationQueues.get(key) === current) lessonOperationQueues.delete(key); },
+      () => { if (lessonOperationQueues.get(key) === current) lessonOperationQueues.delete(key); }
+    );
+    return current;
+  }
+
+  async function performUpsertNow(userId, lessonId, fieldKey, value, isCorrect, expectedRevision) {
     const client = getClient();
     if (!client) return false;
 
@@ -98,6 +115,12 @@ window.CosyProgress = window.CosyProgress || {};
       console.warn('CosyProgress: save error', err);
       return false;
     }
+  }
+
+  function performUpsert(userId, lessonId, fieldKey, value, isCorrect, expectedRevision) {
+    return enqueueLessonOperation(userId, lessonId, () =>
+      performUpsertNow(userId, lessonId, fieldKey, value, isCorrect, expectedRevision)
+    );
   }
 
   const CosyProgress = {
@@ -180,50 +203,62 @@ window.CosyProgress = window.CosyProgress || {};
       const userId = await getUserId();
       if (!client || !userId) return false;
 
-      try {
-        // Stop delayed upserts first so a queued write cannot race and recreate
-        // a row after the server-side delete completes.
-        for (const [timerKey, timer] of debounceTimers.entries()) {
-          if (timerKey.startsWith(`${userId}::${lessonId}::`)) {
-            clearTimeout(timer);
-            debounceTimers.delete(timerKey);
-          }
+      // Capture only the queued revisions that existed when reset began. Saves
+      // made while reset is running must remain queued and run after the delete.
+      const pendingAtReset = getPendingFromStorage(userId);
+      const resetRevisions = new Map();
+      Object.entries(pendingAtReset).forEach(([key, item]) => {
+        if (item && item.userId === userId && item.lessonId === lessonId) {
+          resetRevisions.set(key, item.revision);
         }
+      });
 
-        const { error } = await client
-          .from('lesson_answers')
-          .delete()
-          .eq('student_id', userId)
-          .eq('lesson_id', lessonId);
-
-        if (error) {
-          console.warn('CosyProgress: clear answers error', error);
-          return false;
+      // Cancel delayed writes. Already-running writes are serialized ahead of
+      // the delete below, so they cannot recreate rows after reset verification.
+      for (const [timerKey, timer] of debounceTimers.entries()) {
+        if (timerKey.startsWith(`${userId}::${lessonId}::`)) {
+          clearTimeout(timer);
+          debounceTimers.delete(timerKey);
         }
-
-        // Some RLS configurations can make DELETE affect zero rows without
-        // returning an error. Verify the lesson is actually empty before
-        // discarding the local retry queue or telling the student reset worked.
-        const { data: remaining, error: verifyError } = await client
-          .from('lesson_answers')
-          .select('field_key')
-          .eq('student_id', userId)
-          .eq('lesson_id', lessonId);
-        if (verifyError || !Array.isArray(remaining) || remaining.length > 0) {
-          console.warn('CosyProgress: answer reset could not be verified', verifyError);
-          return false;
-        }
-
-        const pending = getPendingFromStorage(userId);
-        Object.entries(pending).forEach(([key, item]) => {
-          if (item && item.userId === userId && item.lessonId === lessonId) delete pending[key];
-        });
-        savePendingToStorage(userId, pending);
-        return true;
-      } catch (err) {
-        console.warn('CosyProgress: clear answers error', err);
-        return false;
       }
+
+      return enqueueLessonOperation(userId, lessonId, async () => {
+        try {
+          const { error } = await client
+            .from('lesson_answers')
+            .delete()
+            .eq('student_id', userId)
+            .eq('lesson_id', lessonId);
+
+          if (error) {
+            console.warn('CosyProgress: clear answers error', error);
+            return false;
+          }
+
+          // Some RLS configurations can make DELETE affect zero rows without
+          // returning an error. Verify the lesson is actually empty before
+          // discarding the local retry queue or telling the student reset worked.
+          const { data: remaining, error: verifyError } = await client
+            .from('lesson_answers')
+            .select('field_key')
+            .eq('student_id', userId)
+            .eq('lesson_id', lessonId);
+          if (verifyError || !Array.isArray(remaining) || remaining.length > 0) {
+            console.warn('CosyProgress: answer reset could not be verified', verifyError);
+            return false;
+          }
+
+          const pending = getPendingFromStorage(userId);
+          resetRevisions.forEach((revision, key) => {
+            if (pending[key] && pending[key].revision === revision) delete pending[key];
+          });
+          savePendingToStorage(userId, pending);
+          return true;
+        } catch (err) {
+          console.warn('CosyProgress: clear answers error', err);
+          return false;
+        }
+      });
     },
 
     /**
