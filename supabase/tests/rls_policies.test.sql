@@ -3,7 +3,7 @@
 
 BEGIN;
 
-SELECT plan(24);
+SELECT plan(26);
 
 -- Setup test helper schema for auth mocking
 CREATE SCHEMA IF NOT EXISTS tests;
@@ -288,6 +288,16 @@ SELECT is(
     public.check_lesson_answer('en:a1:nice-to-meet-you', 'q1', 'hello'),
     FALSE,
     'TC-23 [PASS]: Ungranted student cannot use answer-checking RPC to validate answers'
+);
+
+SELECT ok(
+    NOT has_function_privilege('authenticated', 'public.replace_lesson_content(text,text,jsonb)', 'EXECUTE'),
+    'TC-25 [PASS]: Authenticated users cannot call the privileged lesson-content replacement RPC'
+);
+
+SELECT ok(
+    has_function_privilege('service_role', 'public.replace_lesson_content(text,text,jsonb)', 'EXECUTE'),
+    'TC-26 [PASS]: Only the server-side service role is granted lesson-content replacement access'
 );
 
 SELECT * FROM finish();
