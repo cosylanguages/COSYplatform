@@ -224,9 +224,9 @@
     const client = window.CosyAuth ? window.CosyAuth.client : null;
     if (client && id) {
       try {
-        const { data, error } = await client.from('lesson_content').select('xml_content').eq('lesson_id', id).maybeSingle();
-        if (!error && data && typeof data.xml_content === 'string') {
-          const remote = JSON.parse(data.xml_content);
+        const { data, error } = await client.from('lesson_studio_drafts').select('document').eq('id', id).maybeSingle();
+        if (!error && data && data.document && typeof data.document === 'object') {
+          const remote = data.document;
           if (!validateDocument(remote)) saved = remote;
         }
       } catch (e) { /* a missing remote draft is normal */ }
@@ -260,24 +260,19 @@
       return;
     }
     try {
-      if (window.CosyLessons && typeof window.CosyLessons.saveLessonToSupabase === 'function') {
-        await window.CosyLessons.saveLessonToSupabase({
-          lesson_id: state.lessonId,
-          title: doc.title,
-          language: doc.language,
-          level: doc.level,
-          template_type: 'cosy-lesson-studio-v1',
-          xml_content: serialized
-        });
-      } else {
-        const { error: saveError } = await client.from('lesson_content').upsert({
-          lesson_id: state.lessonId,
-          xml_content: serialized,
-          updated_at: new Date().toISOString()
-        }, { onConflict: 'lesson_id' });
-        if (saveError) throw saveError;
-      }
-      $('save-status').textContent = 'Draft saved';
+      const { data: authData, error: authError } = await client.auth.getUser();
+      if (authError || !authData || !authData.user) throw new Error('Could not verify your signed-in account.');
+      const { error: saveError } = await client.from('lesson_studio_drafts').upsert({
+        id: state.lessonId,
+        owner_id: authData.user.id,
+        title: doc.title,
+        language: doc.language,
+        level: doc.level,
+        document: doc,
+        updated_at: new Date().toISOString()
+      }, { onConflict: 'id' });
+      if (saveError) throw saveError;
+      $('save-status').textContent = 'Draft saved to COSY';
     } catch (error) {
       $('save-status').textContent = 'Saved locally; cloud save failed: ' + (error.message || 'unknown error');
     }
