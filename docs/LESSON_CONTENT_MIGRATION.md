@@ -4,20 +4,22 @@ The protected-content migration is deliberately fail-closed. Do not merge the st
 
 ## 1. Prepare source files
 
-The ingestion script combines tracked roadmap JSON files with roadmap files from the selected source. This supports migrating a roadmap from an unmerged curriculum branch without merging that branch into main.
+The ingestion script combines tracked roadmap JSON files with roadmap files from the selected source. For a migration involving an unmerged curriculum PR, place its non-sensitive roadmap metadata in a local source folder and keep the original answer-bearing lesson files in that same folder (or its lessons/ subfolder), outside the public repository.
 
-For a git ref, fetch it locally first so git show and git ls-tree can read it. For example:
+Example private source layout:
 
-```sh
-git fetch origin pull/13/head:refs/remotes/origin/pr/13
+```text
+private-lesson-source/
+  roadmaps/science-en-b2.json
+  lessons/science-en/<original lesson JSON files>
 ```
 
-Keep private or git-ignored lesson source folders outside the public repository. Do not commit service-role keys or protected answer keys into public roadmap/lesson files.
+Then run the preflight against that local folder. The public science PR branch has had answer and teacher-note fields removed from its current files; do not use the public branch as the source of protected answer keys. Do not commit service-role keys or protected answer keys into public roadmap/lesson files.
 
 ## 2. Run the dry-run preflight
 
 ```sh
-node scripts/ingest_roadmaps.js --source origin/pr/13 --dry-run
+node scripts/ingest_roadmaps.js --source ./private-lesson-source --dry-run
 ```
 
 The preflight must report **zero missing sources and zero unsafe/unsupported sources**. Exit code 2 means the preflight is blocked. Do not bypass it or run a write-mode migration while either count is non-zero.
