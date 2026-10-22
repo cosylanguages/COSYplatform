@@ -26,3 +26,6 @@ jobs:
 
       - name: Test student lesson content isolation
         run: node scripts/test_lesson_resolver_security.js
+
+      - name: Test protected content migration
+        run: node scripts/test_content_migration.js
