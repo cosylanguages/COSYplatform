@@ -21,7 +21,8 @@
     <div class="studio-top-actions">
       <span id="save-status" role="status" aria-live="polite">Draft not saved</span>
       <button id="preview-button" class="studio-button studio-button-secondary" type="button">Preview</button>
-      <button id="save-button" class="studio-button studio-button-primary" type="button">Save draft</button>
+      <button id="save-button" class="studio-button studio-button-secondary" type="button">Save draft</button>
+      <button id="publish-open-button" class="studio-button studio-button-primary" type="button">Publish to course</button>
     </div>
   </header>
 
@@ -39,6 +40,17 @@
       <label>Lesson title<input id="lesson-title" maxlength="160" value="At the restaurant"></label>
       <label>Language<select id="lesson-language"><option value="English">English</option><option value="French">French</option><option value="Spanish">Spanish</option><option value="German">German</option><option value="Italian">Italian</option><option value="Other">Other</option></select></label>
       <label>Level<select id="lesson-level"><option>A1</option><option selected>A2</option><option>B1</option><option>B2</option><option>C1</option><option>C2</option></select></label>
+    </section>
+
+    <section id="publish-panel" class="studio-publish-panel" hidden aria-labelledby="publish-heading">
+      <div><h2 id="publish-heading">Publish this lesson</h2><p>Publishing adds this lesson to a course sequence and makes its student-safe content available in the classroom.</p></div>
+      <div class="studio-publish-fields">
+        <label>Course<select id="publish-course" required><option value="">Loading courses…</option></select></label>
+        <label>Lesson number<input id="publish-lesson-number" type="number" min="1" step="1" value="1" required></label>
+        <button id="publish-confirm-button" class="studio-button studio-button-primary" type="button">Publish lesson</button>
+      </div>
+      <p id="publish-status" role="status" aria-live="polite"></p>
+      <p id="published-link-row" hidden>Student link: <a id="published-link" href="student.html">Open published lesson</a></p>
     </section>
 
     <div class="studio-workspace">
