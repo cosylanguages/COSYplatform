@@ -4,13 +4,6 @@
   "level": "B2",
   "templateType": "general",
   "durationMinutes": 50,
-  "teacherNotes": [
-    {
-      "type": "instruction",
-      "title": "Lesson Stage Aims",
-      "content": "Examine space economy, public space agencies vs private aerospace firms (NASA vs SpaceX), extraterrestrial resource mining, and Mars colonization."
-    }
-  ],
   "slides": [
     {
       "id": "slide-1",
@@ -53,18 +46,15 @@
         },
         {
           "type": "input",
-          "placeholder": "Sentence 1: Private companies have transformed space flight into a competitive...",
-          "answers": ["commercial aerospace"]
+          "placeholder": "Sentence 1: Private companies have transformed space flight into a competitive..."
         },
         {
           "type": "input",
-          "placeholder": "Sentence 2: Scientists calculate that... could take centuries of atmospheric modification.",
-          "answers": ["terraforming"]
+          "placeholder": "Sentence 2: Scientists calculate that... could take centuries of atmospheric modification."
         },
         {
           "type": "input",
-          "placeholder": "Sentence 3: Planetary geologists are evaluating near-Earth rocks for future...",
-          "answers": ["asteroid mining"]
+          "placeholder": "Sentence 3: Planetary geologists are evaluating near-Earth rocks for future..."
         }
       ]
     },
@@ -89,8 +79,7 @@
             "Government space agencies have banned private corporations from launching rockets.",
             "International space law lacks clear enforcement mechanisms for property rights.",
             "Asteroids do not contain valuable metals or water ice."
-          ],
-          "answers": ["International space law lacks clear enforcement mechanisms for property rights."]
+          ]
         }
       ]
     },
