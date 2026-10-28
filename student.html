@@ -633,26 +633,150 @@
             </div>
 
             <div id="regulations-body" style="display: none; border-top: 1px solid #e0f2fe; pt-12px; margin-top: 10px; font-size: 0.88rem; color: #334155; line-height: 1.6;">
-              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 10px;">
-                <div style="background: white; border: 1px solid #e0f2fe; border-radius: 8px; padding: 14px;">
-                  <strong style="color: #0369a1; font-size: 0.95rem;">⏱️ 8-Hour Notice Rule</strong>
-                  <p style="margin: 6px 0 0 0; color: #475569;">You can cancel or reschedule any upcoming lesson <strong>free of charge</strong> up to <strong>8 hours</strong> before class time. The lesson credit remains intact on your balance.</p>
+              <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 10px;">
+
+                <!-- Section 1: Payments & Booking -->
+                <div style="background: white; border: 1px solid #e0f2fe; border-radius: 10px; padding: 16px;">
+                  <strong style="color: #0369a1; font-size: 1rem;">1. Платежи и бронирование / Payments & Booking</strong>
+                  <ul style="margin: 8px 0 0 18px; padding: 0; color: #475569;">
+                    <li><strong>Предоплата:</strong> Занятие считается забронированным только после 100% оплаты (до или во время бронирования).</li>
+                    <li><strong>Способы оплаты:</strong> Банковские переводы в RUB, USD, EUR, PayPal. При поздней отмене оплата не возвращается.</li>
+                    <li><strong>Документация:</strong> Студент может в любой момент запросить квитанцию или счёт на оплаченные услуги.</li>
+                    <li><strong>Профиль в ProgressMe / COSYplatform:</strong> Для создания профиля потребуется ваш номер телефона и почта для приглашения.</li>
+                  </ul>
                 </div>
 
-                <div style="background: white; border: 1px solid #e0f2fe; border-radius: 8px; padding: 14px;">
-                  <strong style="color: #c2410c; font-size: 0.95rem;">⚠️ Late Cancellation (&lt; 8 Hours)</strong>
-                  <p style="margin: 6px 0 0 0; color: #475569;">Cancellations or reschedules made less than 8 hours in advance result in the <strong>deduction of 1 lesson credit</strong> to compensate the assigned teacher.</p>
+                <!-- Section 2: Lesson Types & Programs -->
+                <div style="background: white; border: 1px solid #e0f2fe; border-radius: 10px; padding: 16px;">
+                  <strong style="color: #0369a1; font-size: 1rem;">2. Типы уроков и программ / Lesson Types & Programs</strong>
+                  <ul style="margin: 8px 0 0 18px; padding: 0; color: #475569;">
+                    <li><strong>Разговорный (Spoken):</strong> Снятие языкового барьера, работа над беглостью и произношением.</li>
+                    <li><strong>Общий (General):</strong> Системное изучение грамматики, лексики, чтения и письма для всех уровней.</li>
+                    <li><strong>Экзамены (Exams):</strong> Подготовка к международным сертификатам (IELTS, DELF, CILS, ТРКИ и др.). Тренировка формата и стратегий.</li>
+                  </ul>
                 </div>
 
-                <div style="background: white; border: 1px solid #e0f2fe; border-radius: 8px; padding: 14px;">
-                  <strong style="color: #047857; font-size: 0.95rem;">⏳ 15-Minute Waiting Period</strong>
-                  <p style="margin: 6px 0 0 0; color: #475569;">Teachers wait in the live classroom for 15 minutes. If a student arrives late, the lesson duration is shortened accordingly.</p>
+                <!-- Section 3: Duration and Lesson Structure Breakdown Table -->
+                <div style="background: white; border: 1px solid #e0f2fe; border-radius: 10px; padding: 16px;">
+                  <strong style="color: #0369a1; font-size: 1rem;">3. Продолжительность и структура занятия / Duration & Structure</strong>
+                  <div style="overflow-x: auto; margin-top: 10px;">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; text-align: left;">
+                      <thead>
+                        <tr style="background: #f1f5f9; border-bottom: 2px solid #cbd5e1; color: #334155;">
+                          <th style="padding: 8px 10px;">Общее время</th>
+                          <th style="padding: 8px 10px;">Учебный блок</th>
+                          <th style="padding: 8px 10px;">Вопросы & Уточнения</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr style="border-bottom: 1px solid #e2e8f0;">
+                          <td style="padding: 8px 10px; font-weight: 700;">15 минут</td>
+                          <td style="padding: 8px 10px;">10 минут</td>
+                          <td style="padding: 8px 10px;">5 минут</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e2e8f0;">
+                          <td style="padding: 8px 10px; font-weight: 700;">30 минут</td>
+                          <td style="padding: 8px 10px;">25 минут</td>
+                          <td style="padding: 8px 10px;">5 минут</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e2e8f0;">
+                          <td style="padding: 8px 10px; font-weight: 700;">60 минут</td>
+                          <td style="padding: 8px 10px;">50 минут</td>
+                          <td style="padding: 8px 10px;">10 минут</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e2e8f0;">
+                          <td style="padding: 8px 10px; font-weight: 700;">90 минут</td>
+                          <td style="padding: 8px 10px;">80 минут</td>
+                          <td style="padding: 8px 10px;">10 минут</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e2e8f0;">
+                          <td style="padding: 8px 10px; font-weight: 700;">120 минут</td>
+                          <td style="padding: 8px 10px;">110 минут (+/- перерыв)</td>
+                          <td style="padding: 8px 10px;">10 минут</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
 
-                <div style="background: white; border: 1px solid #e0f2fe; border-radius: 8px; padding: 14px;">
-                  <strong style="color: #6d28d9; font-size: 0.95rem;">👨‍🏫 Teacher-Initiated Changes</strong>
-                  <p style="margin: 6px 0 0 0; color: #475569;">If a teacher reschedules or cancels a class, <strong>no credits are lost</strong> and the lesson is rescheduled to a mutually convenient time.</p>
+                <!-- Section 4: Cancellation & Tardiness Policy -->
+                <div style="background: white; border: 1px solid #e0f2fe; border-radius: 10px; padding: 16px;">
+                  <strong style="color: #c2410c; font-size: 1rem;">4. Политика отмены и опозданий / Cancellation & Tardiness Policy</strong>
+                  <ul style="margin: 8px 0 0 18px; padding: 0; color: #475569;">
+                    <li><strong>Отмена/Перенос:</strong> Студент обязан уведомить преподавателя не менее чем за <strong>12 часов</strong>.</li>
+                    <li><strong>Поздняя отмена:</strong> При отмене менее чем за 12 часов или неявке без уведомления занятие оплачивается полностью (списывается 1 кредит).</li>
+                    <li><strong>Опоздания:</strong> Время опоздания студента не компенсируется. Если опаздывает учитель, время добавляется к уроку или переносится на следующий раз.</li>
+                  </ul>
                 </div>
+
+                <!-- Section 5: Quality Control (Screen Test) -->
+                <div style="background: white; border: 1px solid #e0f2fe; border-radius: 10px; padding: 16px;">
+                  <strong style="color: #0369a1; font-size: 1rem;">5. Контроль качества (Screen Test)</strong>
+                  <p style="margin: 6px 0 0 0; color: #475569;">Преподаватели могут записывать фрагменты занятий для внутренней проверки навыков (Screen Test). Записи строго конфиденциальны, используются только для анализа работы учителя и не публикуются.</p>
+                </div>
+
+                <!-- Section 6: Recommended Dictionary Resources Table -->
+                <div style="background: white; border: 1px solid #e0f2fe; border-radius: 10px; padding: 16px;">
+                  <strong style="color: #0369a1; font-size: 1rem;">6. Рекомендуемые учебные ресурсы (Словари)</strong>
+                  <div style="overflow-x: auto; margin-top: 10px;">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; text-align: left;">
+                      <thead>
+                        <tr style="background: #f1f5f9; border-bottom: 2px solid #cbd5e1; color: #334155;">
+                          <th style="padding: 8px 10px;">Язык</th>
+                          <th style="padding: 8px 10px;">Ресурсы</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr style="border-bottom: 1px solid #e2e8f0;">
+                          <td style="padding: 8px 10px; font-weight: 700;">🇬🇧 Английский</td>
+                          <td style="padding: 8px 10px;">Cambridge, Collins, Macquarie</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e2e8f0;">
+                          <td style="padding: 8px 10px; font-weight: 700;">🇫🇷 Французский</td>
+                          <td style="padding: 8px 10px;">Larousse, Le Robert</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e2e8f0;">
+                          <td style="padding: 8px 10px; font-weight: 700;">🇮🇹 Итальянский</td>
+                          <td style="padding: 8px 10px;">Treccani, Garzanti</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e2e8f0;">
+                          <td style="padding: 8px 10px; font-weight: 700;">🇷🇺 Русский</td>
+                          <td style="padding: 8px 10px;">Gramota.ru, Multitran</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e2e8f0;">
+                          <td style="padding: 8px 10px; font-weight: 700;">🇬🇷 Греческий</td>
+                          <td style="padding: 8px 10px;">LKN</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e2e8f0;">
+                          <td style="padding: 8px 10px; font-weight: 700;">🌐 Универсальные</td>
+                          <td style="padding: 8px 10px;">WordReference (контекст), Forvo (произношение), YouGlish (видеофразы), Dictionariez (расширение браузера)</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <!-- Section 8: Ethics & Equipment -->
+                <div style="background: white; border: 1px solid #e0f2fe; border-radius: 10px; padding: 16px;">
+                  <strong style="color: #0369a1; font-size: 1rem;">8. Подготовка и этика / Ethics & Equipment</strong>
+                  <ul style="margin: 8px 0 0 18px; padding: 0; color: #475569;">
+                    <li><strong>Оборудование:</strong> Студент отвечает за стабильный интернет и исправность гарнитуры.</li>
+                    <li><strong>Поведение:</strong> Попадающие под дискриминацию или оскорбления инциденты недопустимы. В случае нарушений сотрудничество прекращается немедленно.</li>
+                  </ul>
+                </div>
+
+                <!-- Section 9: Official Contacts -->
+                <div style="background: white; border: 1px solid #bae6fd; border-radius: 10px; padding: 16px; background: #fafafa;">
+                  <strong style="color: #0f172a; font-size: 1rem;">9. Контакты администрации / Direct Administration Contacts</strong>
+                  <p style="margin: 6px 0 10px 0; color: #475569; font-size: 0.85rem;">По всем вопросам (оплата, жалобы, предложения):</p>
+                  <div style="display: flex; flex-wrap: wrap; gap: 12px; font-size: 0.85rem;">
+                    <a href="https://cosylanguages.github.io/" target="_blank" rel="noopener" style="background: #e0f2fe; color: #0369a1; padding: 6px 12px; border-radius: 6px; font-weight: 700; text-decoration: none;">🌐 cosylanguages.github.io</a>
+                    <a href="mailto:jamesyork_and_co@yahoo.com" style="background: #f1f5f9; color: #334155; padding: 6px 12px; border-radius: 6px; font-weight: 600; text-decoration: none;">✉️ jamesyork_and_co@yahoo.com</a>
+                    <a href="https://wa.me/33766784195" target="_blank" rel="noopener" style="background: #dcfce7; color: #15803d; padding: 6px 12px; border-radius: 6px; font-weight: 700; text-decoration: none;">💬 WhatsApp (+33766784195)</a>
+                    <a href="https://t.me/jamesyork" target="_blank" rel="noopener" style="background: #e0f2fe; color: #0284c7; padding: 6px 12px; border-radius: 6px; font-weight: 700; text-decoration: none;">✈️ Telegram (@jamesyork)</a>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>
@@ -2408,9 +2532,9 @@
           </div>
 
           <div style="background: #fef2f2; border: 1px solid #fca5a5; border-radius: 10px; padding: 14px; margin-bottom: 16px;">
-            <div style="font-weight: 700; color: #991b1b; font-size: 0.9rem; margin-bottom: 4px;">⚠️ COSYlanguages Policy Warning (8-Hour Rule)</div>
+            <div style="font-weight: 700; color: #991b1b; font-size: 0.9rem; margin-bottom: 4px;">⚠️ COSYlanguages Policy Warning (12-Hour Notice Rule)</div>
             <p style="font-size: 0.85rem; color: #7f1d1d; margin: 0; line-height: 1.5;">
-              If you ${isReschedule ? 'reschedule' : 'cancel'} less than <strong>8 hours</strong> before lesson time, <strong>1 lesson credit will be deducted</strong> from your balance to compensate teacher Elena Rostova.
+              According to Section 4 of COSYlanguages Regulations, students must notify their teacher at least <strong>12 hours</strong> in advance. If you ${isReschedule ? 'reschedule' : 'cancel'} less than <strong>12 hours</strong> before lesson time, <strong>1 lesson credit will be deducted</strong> (lesson is fully payable) to compensate teacher Elena Rostova.
             </p>
           </div>
 
