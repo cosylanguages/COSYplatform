@@ -1,3 +1,21 @@
+/**
+ * @typedef {Object} LessonStudioBlock
+ * @property {string} id - Unique block identifier
+ * @property {('text'|'fill_blank')} type - Block interaction type
+ * @property {string} [content] - Text content for text blocks
+ * @property {string} [prompt] - Prompt or sentence with blank for fill_blank blocks
+ * @property {string[]} [answers] - Accepted answer alternatives for fill_blank blocks
+ */
+
+/**
+ * @typedef {Object} LessonStudioDocument
+ * @property {number} schemaVersion - Schema version (must be 1)
+ * @property {string} title - Lesson title
+ * @property {string} language - Target language name or code
+ * @property {string} level - CEFR level (A0-C2)
+ * @property {LessonStudioBlock[]} blocks - Sequential activity blocks
+ */
+
 (function () {
   'use strict';
 
@@ -51,6 +69,10 @@
       }
     }
     return '';
+  }
+
+  function isValidDocument(doc) {
+    return validateDocument(doc) === '';
   }
 
   function cloneDoc() {
@@ -222,17 +244,17 @@
       if (local) saved = JSON.parse(local);
     } catch (e) { /* ignore malformed local draft */ }
 
-    const client = window.CosyAuth ? window.CosyAuth.client : null;
+    const client = window.CosyAuth ? window.CosyAuth.getSupabaseClient() : null;
     if (client && id) {
       try {
         const { data, error } = await client.from('lesson_studio_drafts').select('document').eq('id', id).maybeSingle();
         if (!saved && !error && data && data.document && typeof data.document === 'object') {
           const remote = data.document;
-          if (!validateDocument(remote)) saved = remote;
+          if (isValidDocument(remote)) saved = remote;
         }
       } catch (e) { /* a missing remote draft is normal */ }
     }
-    if (saved && !validateDocument(saved)) state.doc = saved;
+    if (saved && isValidDocument(saved)) state.doc = saved;
     $('lesson-title').value = state.doc.title;
     $('lesson-language').value = state.doc.language;
     $('lesson-level').value = state.doc.level;

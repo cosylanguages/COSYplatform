@@ -1,5 +1,30 @@
 
 /**
+ * @typedef {Object} UserProfile
+ * @property {string} id - Unique Supabase auth user UUID
+ * @property {('student'|'teacher'|'founder'|'admin')} role - Platform access role
+ * @property {string[]} [language_access] - Permitted target languages or ['*']
+ * @property {string|string[]} [course_level] - Permitted CEFR levels or '*'
+ */
+
+/**
+ * @typedef {Object} AuthData
+ * @property {Object} session - Supabase auth session object
+ * @property {Object} user - Authenticated user payload
+ * @property {UserProfile} profile - User profile data from profiles table
+ */
+
+/**
+ * @typedef {Object} CourseManifestItem
+ * @property {string} id - Course identifier (e.g. 'general-en-a1')
+ * @property {string} title - Human readable course title
+ * @property {string} track - Course track ('General'|'Grammar'|'Spoken'|'Exam'|'Professional'|'Pronunciation'|'Relocation'|'Travelling'|'Cinema'|'Discussion')
+ * @property {string} lang - ISO 2-letter language code
+ * @property {string} level - CEFR level code
+ * @property {string} [status] - Availability status ('not_yet_available'|'available')
+ */
+
+/**
  * Full Platform Course Manifest
  * Generated dynamically from all curriculums across all languages and levels.
  */
@@ -198,7 +223,16 @@ window.CosyAuth.FULL_MANIFEST = [
 
 window.CosyAuth = window.CosyAuth || {};
 
-(function() {
+/**
+ * Returns the singleton Supabase client instance across the platform.
+ * Initializes the client on first call if not already created.
+ * @returns {Object|null} Supabase client instance or null if unconfigured
+ */
+window.CosyAuth.getSupabaseClient = function() {
+  if (window.CosyAuth.client) {
+    return window.CosyAuth.client;
+  }
+
   const config = window.COSY_CONFIG || {};
   const url = config.SUPABASE_URL || "";
   const key = config.SUPABASE_ANON_KEY || "";
@@ -213,15 +247,19 @@ window.CosyAuth = window.CosyAuth || {};
 
   window.CosyAuth.isConfigured = isConfigured;
 
-  let client = null;
-  if (isConfigured && window.supabase) {
+  if (isConfigured && window.supabase && typeof window.supabase.createClient === 'function') {
     try {
-      client = window.supabase.createClient(url, key);
+      window.CosyAuth.client = window.supabase.createClient(url, key);
+      return window.CosyAuth.client;
     } catch (e) {
       console.error("Failed to initialize Supabase client:", e);
     }
   }
-  window.CosyAuth.client = client;
+  return null;
+};
+
+(function() {
+  window.CosyAuth.getSupabaseClient();
 })();
 
 /**
@@ -230,40 +268,45 @@ window.CosyAuth = window.CosyAuth || {};
  * @returns {Promise<{session: Object, profile: Object}>}
  */
 window.CosyAuth.getAuthAndProfile = async function() {
-  if (!window.CosyAuth.isConfigured || !window.CosyAuth.client) {
-    document.body.innerHTML = `
-      <div style="max-width: 500px; margin: 100px auto; padding: 30px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; text-align: center; border: 1px solid #fca5a5; border-radius: 12px; background-color: #fef2f2; color: #991b1b; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);">
-        <h2 style="margin-top: 0; color: #991b1b; font-size: 1.5rem;">Platform Not Configured</h2>
-        <p style="margin-bottom: 0; font-size: 0.95rem; color: #b91c1c;">Platform not configured. Ask an administrator to set the Supabase details in shared/js/config.js.</p>
-      </div>
-    `;
-    return null;
-  }
+  try {
+    const supabaseClient = window.CosyAuth.getSupabaseClient();
+    if (!window.CosyAuth.isConfigured || !supabaseClient) {
+      document.body.innerHTML = `
+        <div style="max-width: 500px; margin: 100px auto; padding: 30px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; text-align: center; border: 1px solid #fca5a5; border-radius: 12px; background-color: #fef2f2; color: #991b1b; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);">
+          <h2 style="margin-top: 0; color: #991b1b; font-size: 1.5rem;">Platform Not Configured</h2>
+          <p style="margin-bottom: 0; font-size: 0.95rem; color: #b91c1c;">Platform not configured. Ask an administrator to set the Supabase details in shared/js/config.js.</p>
+        </div>
+      `;
+      return null;
+    }
 
-  const supabaseClient = window.CosyAuth.client;
+    const { data: { session }, error: sessionError } = await supabaseClient.auth.getSession();
+    if (sessionError || !session || !session.user) {
+      window.CosyAuth.redirectToLogin();
+      return null;
+    }
 
-  const { data: { session }, error: sessionError } = await supabaseClient.auth.getSession();
-  if (sessionError || !session || !session.user) {
+    let profile = { role: 'student', language_access: [], course_level: '*' };
+    try {
+      const { data, error } = await supabaseClient
+        .from('profiles')
+        .select('id, role, language_access, course_level')
+        .eq('id', session.user.id)
+        .maybeSingle();
+
+      if (!error && data) {
+        profile = data;
+      }
+    } catch (err) {
+      console.error("Error fetching user profile:", err);
+    }
+
+    return { session, user: session.user, profile };
+  } catch (err) {
+    console.error("CosyAuth.getAuthAndProfile error:", err);
     window.CosyAuth.redirectToLogin();
     return null;
   }
-
-  let profile = { role: 'student', language_access: [], course_level: '*' };
-  try {
-    const { data, error } = await supabaseClient
-      .from('profiles')
-      .select('id, role, language_access, course_level')
-      .eq('id', session.user.id)
-      .maybeSingle();
-
-    if (!error && data) {
-      profile = data;
-    }
-  } catch (err) {
-    console.error("Error fetching user profile:", err);
-  }
-
-  return { session, user: session.user, profile };
 };
 
 /**
