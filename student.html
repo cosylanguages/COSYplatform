@@ -616,7 +616,45 @@
                 <div style="font-size: 0.85rem; color: #64748b;">Wednesday, Oct 28 at 18:00 (UTC+2) with Elena Rostova</div>
               </div>
             </div>
-            <a href="classroom.html" class="btn" style="background: #047857; color: white; padding: 10px 20px; font-size: 0.95rem; font-weight: 700; border-radius: 8px; text-decoration: none; box-shadow: 0 2px 6px rgba(4, 120, 87, 0.2);">Enter Classroom 🎥</a>
+            <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+              <button onclick="triggerStudentSessionAction('reschedule')" class="btn btn-outline" style="font-size: 0.85rem; font-weight: 600; padding: 8px 14px;">Reschedule 🔄</button>
+              <button onclick="triggerStudentSessionAction('cancel')" class="btn" style="background: #fee2e2; color: #991b1b; font-size: 0.85rem; font-weight: 700; border: 1px solid #fca5a5; padding: 8px 14px; border-radius: 8px; cursor: pointer;">Cancel ❌</button>
+              <a href="classroom.html" class="btn" style="background: #047857; color: white; padding: 8px 16px; font-size: 0.9rem; font-weight: 700; border-radius: 8px; text-decoration: none; box-shadow: 0 2px 6px rgba(4, 120, 87, 0.2);">Enter Classroom 🎥</a>
+            </div>
+          </div>
+
+          <!-- COSYlanguages Official Lesson Regulations & Cancellation Policy Card -->
+          <div id="cosy-regulations-card" style="background: #f0f9ff; border: 1px solid #bae6fd; border-radius: var(--cosy-radius-md, 14px); padding: 20px; margin-bottom: 30px; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; cursor: pointer;" onclick="toggleRegulationsFold()">
+              <h3 style="font-size: 1.15rem; font-weight: 800; color: #0369a1; margin: 0; display: flex; align-items: center; gap: 8px;">
+                <span>📜 COSYlanguages Lesson Regulations & Policy</span>
+              </h3>
+              <span id="regulations-toggle-icon" style="font-size: 0.9rem; color: #0369a1; font-weight: 700;">▼ View Rules</span>
+            </div>
+
+            <div id="regulations-body" style="display: none; border-top: 1px solid #e0f2fe; pt-12px; margin-top: 10px; font-size: 0.88rem; color: #334155; line-height: 1.6;">
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 10px;">
+                <div style="background: white; border: 1px solid #e0f2fe; border-radius: 8px; padding: 14px;">
+                  <strong style="color: #0369a1; font-size: 0.95rem;">⏱️ 8-Hour Notice Rule</strong>
+                  <p style="margin: 6px 0 0 0; color: #475569;">You can cancel or reschedule any upcoming lesson <strong>free of charge</strong> up to <strong>8 hours</strong> before class time. The lesson credit remains intact on your balance.</p>
+                </div>
+
+                <div style="background: white; border: 1px solid #e0f2fe; border-radius: 8px; padding: 14px;">
+                  <strong style="color: #c2410c; font-size: 0.95rem;">⚠️ Late Cancellation (&lt; 8 Hours)</strong>
+                  <p style="margin: 6px 0 0 0; color: #475569;">Cancellations or reschedules made less than 8 hours in advance result in the <strong>deduction of 1 lesson credit</strong> to compensate the assigned teacher.</p>
+                </div>
+
+                <div style="background: white; border: 1px solid #e0f2fe; border-radius: 8px; padding: 14px;">
+                  <strong style="color: #047857; font-size: 0.95rem;">⏳ 15-Minute Waiting Period</strong>
+                  <p style="margin: 6px 0 0 0; color: #475569;">Teachers wait in the live classroom for 15 minutes. If a student arrives late, the lesson duration is shortened accordingly.</p>
+                </div>
+
+                <div style="background: white; border: 1px solid #e0f2fe; border-radius: 8px; padding: 14px;">
+                  <strong style="color: #6d28d9; font-size: 0.95rem;">👨‍🏫 Teacher-Initiated Changes</strong>
+                  <p style="margin: 6px 0 0 0; color: #475569;">If a teacher reschedules or cancels a class, <strong>no credits are lost</strong> and the lesson is rescheduled to a mutually convenient time.</p>
+                </div>
+              </div>
+            </div>
           </div>
 
           <!-- Homework & Vocabulary Widgets (Skyeng / ProgressMe inspired) -->
@@ -2346,6 +2384,91 @@
       }
     }
 
+    function triggerStudentSessionAction(actionType) {
+      let modal = document.getElementById('session-action-modal');
+      if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'session-action-modal';
+        modal.style.cssText = `
+          position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+          background: rgba(15, 23, 42, 0.75); z-index: 99999; display: flex;
+          align-items: center; justify-content: center; padding: 20px;
+        `;
+        document.body.appendChild(modal);
+      }
+
+      const isReschedule = actionType === 'reschedule';
+      const actionTitle = isReschedule ? "🔄 Reschedule Lesson Request" : "❌ Cancel Scheduled Lesson";
+
+      modal.innerHTML = `
+        <div style="background: white; border-radius: 14px; width: 100%; max-width: 520px; padding: 24px; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.3); border: 1px solid #cbd5e1;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px;">
+            <h3 style="margin: 0; font-size: 1.2rem; color: #0f172a;">${actionTitle}</h3>
+            <button onclick="closeSessionActionModal()" style="border: none; background: #f1f5f9; border-radius: 8px; width: 32px; height: 32px; font-size: 1.1rem; cursor: pointer;">✖</button>
+          </div>
+
+          <div style="background: #fef2f2; border: 1px solid #fca5a5; border-radius: 10px; padding: 14px; margin-bottom: 16px;">
+            <div style="font-weight: 700; color: #991b1b; font-size: 0.9rem; margin-bottom: 4px;">⚠️ COSYlanguages Policy Warning (8-Hour Rule)</div>
+            <p style="font-size: 0.85rem; color: #7f1d1d; margin: 0; line-height: 1.5;">
+              If you ${isReschedule ? 'reschedule' : 'cancel'} less than <strong>8 hours</strong> before lesson time, <strong>1 lesson credit will be deducted</strong> from your balance to compensate teacher Elena Rostova.
+            </p>
+          </div>
+
+          <p style="font-size: 0.9rem; color: #334155; margin-bottom: 16px;">
+            Session: <strong>B1 English · Travel & Discussion</strong><br>
+            Scheduled for: <strong>Wed, Oct 28 at 18:00 (UTC+2)</strong>
+          </p>
+
+          ${isReschedule ? `
+            <div style="margin-bottom: 16px;">
+              <label style="font-size: 0.85rem; font-weight: 700; color: #334155;">Select New Desired Time:</label>
+              <select id="new-slot-select" style="width: 100%; padding: 8px 12px; border-radius: 6px; border: 1px solid #cbd5e1; margin-top: 4px; font-size: 0.88rem;">
+                <option value="Thu, Oct 29 - 16:00">Thu, Oct 29 at 16:00 (UTC+2)</option>
+                <option value="Fri, Oct 30 - 18:00">Fri, Oct 30 at 18:00 (UTC+2)</option>
+                <option value="Sat, Oct 31 - 12:00">Sat, Oct 31 at 12:00 (UTC+2)</option>
+              </select>
+            </div>
+          ` : ''}
+
+          <div style="display: flex; justify-content: flex-end; gap: 10px;">
+            <button onclick="closeSessionActionModal()" style="padding: 8px 16px; border-radius: 6px; border: 1px solid #cbd5e1; background: #f8fafc; font-weight: 600; cursor: pointer;">Go Back</button>
+            <button onclick="confirmSessionAction('${actionType}')" style="padding: 8px 18px; border-radius: 6px; border: none; background: ${isReschedule ? '#0284c7' : '#dc2626'}; color: white; font-weight: 700; cursor: pointer;">Confirm ${isReschedule ? 'Reschedule' : 'Cancellation'}</button>
+          </div>
+        </div>
+      `;
+      modal.style.display = 'flex';
+    }
+
+    function closeSessionActionModal() {
+      const modal = document.getElementById('session-action-modal');
+      if (modal) modal.style.display = 'none';
+    }
+
+    function confirmSessionAction(actionType) {
+      if (window.CosyUI) {
+        if (actionType === 'reschedule') {
+          window.CosyUI.toast("✅ Reschedule request sent to Elena Rostova!");
+        } else {
+          window.CosyUI.toast("✅ Lesson cancelled. Policy rules applied.");
+        }
+      }
+      closeSessionActionModal();
+    }
+
+    function toggleRegulationsFold() {
+      const body = document.getElementById('regulations-body');
+      const icon = document.getElementById('regulations-toggle-icon');
+      if (body) {
+        const isHidden = body.style.display === 'none';
+        body.style.display = isHidden ? 'block' : 'none';
+        if (icon) icon.innerText = isHidden ? '▲ Hide Rules' : '▼ View Rules';
+      }
+    }
+
+    window.triggerStudentSessionAction = triggerStudentSessionAction;
+    window.closeSessionActionModal = closeSessionActionModal;
+    window.confirmSessionAction = confirmSessionAction;
+    window.toggleRegulationsFold = toggleRegulationsFold;
     window.loadStudentStatsSummary = loadStudentStatsSummary;
     window.loadStudentBalanceAndTeacher = loadStudentBalanceAndTeacher;
     window.openTopUpModal = openTopUpModal;
