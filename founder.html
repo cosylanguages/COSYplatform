@@ -735,12 +735,15 @@
 
         if (error || !data || data.length !== 1) {
           if (statusEl) statusEl.innerHTML = `<span style="color: #ef4444; font-weight: 600;">${window.CosyI18n.t('founder.notSavedErr')}</span>`;
+          if (window.CosyUI && window.CosyUI.toast) CosyUI.toast(window.CosyI18n.t('founder.notSavedErr'), 'error');
         } else {
           if (statusEl) statusEl.innerHTML = `<span style="color: #047857; font-weight: 600;">${window.CosyI18n.t('founder.savedSuccess')}</span>`;
+          if (window.CosyUI && window.CosyUI.toast) CosyUI.toast(window.CosyI18n.t('founder.savedSuccess'), 'success');
           setTimeout(() => { if (statusEl) statusEl.innerHTML = ''; }, 3000);
         }
       } catch (err) {
         if (statusEl) statusEl.innerHTML = `<span style="color: #ef4444; font-weight: 600;">${window.CosyI18n.t('founder.notSavedErr')}</span>`;
+        if (window.CosyUI && window.CosyUI.toast) CosyUI.toast(window.CosyI18n.t('founder.notSavedErr'), 'error');
       } finally {
         if (btnEl) btnEl.disabled = false;
       }

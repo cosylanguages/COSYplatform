@@ -581,6 +581,30 @@
             <h1 style="font-size: 1.6rem; color: #0f172a; margin-bottom: 8px;">Your Student Workspace 📚</h1>
           </div>
 
+          <!-- Student Stats Summary Cards -->
+          <div id="student-stats-summary" style="margin-bottom: 30px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
+            <div style="background: white; border: 1px solid #bae6fd; border-radius: var(--cosy-radius-md, 14px); padding: 16px; box-shadow: 0 2px 6px rgba(3, 105, 161, 0.05);">
+              <div style="font-size: 0.8rem; font-weight: 700; color: #0369a1; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px;">Enrolled Courses</div>
+              <div id="stat-enrolled-courses" style="font-size: 1.8rem; font-weight: 800; color: #0f172a;">${allowedCourses.length}</div>
+              <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Available in catalog</div>
+            </div>
+            <div style="background: white; border: 1px solid #bae6fd; border-radius: var(--cosy-radius-md, 14px); padding: 16px; box-shadow: 0 2px 6px rgba(3, 105, 161, 0.05);">
+              <div style="font-size: 0.8rem; font-weight: 700; color: #0369a1; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px;">Lessons Practiced</div>
+              <div id="stat-lessons-practiced" style="font-size: 1.8rem; font-weight: 800; color: #0f172a;">—</div>
+              <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">With progress records</div>
+            </div>
+            <div style="background: white; border: 1px solid #bae6fd; border-radius: var(--cosy-radius-md, 14px); padding: 16px; box-shadow: 0 2px 6px rgba(3, 105, 161, 0.05);">
+              <div style="font-size: 0.8rem; font-weight: 700; color: #0369a1; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px;">Exercises Answered</div>
+              <div id="stat-exercises-answered" style="font-size: 1.8rem; font-weight: 800; color: #0f172a;">—</div>
+              <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Interactive items completed</div>
+            </div>
+            <div style="background: white; border: 1px solid #bae6fd; border-radius: var(--cosy-radius-md, 14px); padding: 16px; box-shadow: 0 2px 6px rgba(3, 105, 161, 0.05);">
+              <div style="font-size: 0.8rem; font-weight: 700; color: #0369a1; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px;">Tasks Submitted</div>
+              <div id="stat-tasks-submitted" style="font-size: 1.8rem; font-weight: 800; color: #0f172a;">—</div>
+              <div id="stat-tasks-submitted-sub" style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Essays & voice recordings</div>
+            </div>
+          </div>
+
           <!-- My Shared Notes Section -->
           <div id="my-notes-section" style="margin-bottom: 30px; background: white; border: 1px solid #cbd5e1; border-radius: var(--cosy-radius-md, 14px); padding: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
             <h2 style="font-size: 1.2rem; font-weight: 700; color: #0369a1; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;">
@@ -2168,10 +2192,64 @@
     window.loadUserNotes = loadUserNotes;
     window.savePortalNote = savePortalNote;
 
+    async function loadStudentStatsSummary() {
+      const lpEl = document.getElementById('stat-lessons-practiced');
+      const eaEl = document.getElementById('stat-exercises-answered');
+      const tsEl = document.getElementById('stat-tasks-submitted');
+      const tsSubEl = document.getElementById('stat-tasks-submitted-sub');
+
+      if (!lpEl || !eaEl || !tsEl) return;
+
+      const client = window.CosyAuth ? window.CosyAuth.client : null;
+      if (!client) {
+        lpEl.innerText = '0';
+        eaEl.innerText = '0';
+        tsEl.innerText = '0';
+        return;
+      }
+
+      try {
+        const { data: { session } } = await client.auth.getSession();
+        const userId = session?.user?.id;
+        if (!userId) return;
+
+        // Fetch lesson progress
+        const { data: progressRows } = await client
+          .from('lesson_progress')
+          .select('lesson_id, answered')
+          .eq('student_id', userId);
+
+        if (progressRows) {
+          lpEl.innerText = String(progressRows.length);
+          const totalAnswered = progressRows.reduce((sum, r) => sum + (r.answered || 0), 0);
+          eaEl.innerText = String(totalAnswered);
+        }
+
+        // Fetch submissions
+        const { data: subRows } = await client
+          .from('lesson_submissions')
+          .select('id, status')
+          .eq('student_id', userId);
+
+        if (subRows) {
+          tsEl.innerText = String(subRows.length);
+          const reviewedCount = subRows.filter(s => s.status === 'reviewed').length;
+          if (tsSubEl) {
+            tsSubEl.innerText = `${reviewedCount} reviewed by teacher`;
+          }
+        }
+      } catch (err) {
+        console.warn('Error loading student stats summary:', err);
+      }
+    }
+
+    window.loadStudentStatsSummary = loadStudentStatsSummary;
+
     const originalInitStudentApp = initStudentApp;
     initStudentApp = async function() {
       await originalInitStudentApp();
       loadUserNotes('student');
+      loadStudentStatsSummary();
     };
 
     window.onload = initStudentApp;

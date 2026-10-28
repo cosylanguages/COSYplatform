@@ -931,12 +931,16 @@
         const pct = answered > 0 ? Math.round((correct / answered) * 100) : 0;
         const dateStr = r.last_activity ? (window.CosyI18n && window.CosyI18n.formatDate ? window.CosyI18n.formatDate(r.last_activity) : new Date(r.last_activity).toLocaleString()) : 'N/A';
 
+        const badgeStyle = pct >= 70
+          ? 'background: #dcfce7; color: #166534; padding: 2px 6px; border-radius: 4px;'
+          : 'background: #fee2e2; color: #991b1b; padding: 2px 6px; border-radius: 4px;';
+
         html += `
           <tr>
             <td style="font-weight: 600; color: #0369a1;">${escapeHtml(studentLabel)}</td>
             <td style="font-family: monospace; font-size: 0.85rem;">${escapeHtml(r.lesson_id)}</td>
             <td style="text-align: right;">${answered}</td>
-            <td style="text-align: right; font-weight: 700; color: ${pct >= 70 ? '#166534' : '#b91c1c'};">${answered > 0 ? pct + '%' : '-'}</td>
+            <td style="text-align: right; font-weight: 700;"><span style="${badgeStyle}">${answered > 0 ? pct + '%' : '-'}</span></td>
             <td style="font-size: 0.85rem; color: #64748b;">${escapeHtml(dateStr)}</td>
           </tr>
         `;
@@ -2109,8 +2113,15 @@
                 ${audioHtml}
 
                 <div style="margin-top: 8px;">
-                  <label style="font-size: 0.8rem; font-weight: 600; color: #475569;">${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("submission.teacherFeedback") : "Teacher Feedback:"}</label>
-                  <textarea id="${textareaId}" style="width: 100%; height: 50px; padding: 6px; font-size: 0.85rem; border: 1px solid #cbd5e1; border-radius: 6px; resize: vertical; margin-top: 4px; font-family: inherit;">${escapeHtml(sub.feedback || "")}</textarea>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                    <label style="font-size: 0.8rem; font-weight: 600; color: #475569;">${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("submission.teacherFeedback") : "Teacher Feedback:"}</label>
+                    <div style="display: flex; gap: 4px; flex-wrap: wrap;">
+                      <button onclick="insertQuickFeedback('${textareaId}', 'Great pronunciation & clear intonation! 🌟')" style="font-size: 0.7rem; background: #e0f2fe; color: #0369a1; border: none; border-radius: 4px; padding: 2px 6px; cursor: pointer;">+ Pronunciation</button>
+                      <button onclick="insertQuickFeedback('${textareaId}', 'Excellent use of target vocabulary! 👏')" style="font-size: 0.7rem; background: #f3e8ff; color: #6d28d9; border: none; border-radius: 4px; padding: 2px 6px; cursor: pointer;">+ Vocabulary</button>
+                      <button onclick="insertQuickFeedback('${textareaId}', 'Well structured response, good grammar! 👍')" style="font-size: 0.7rem; background: #dcfce7; color: #166534; border: none; border-radius: 4px; padding: 2px 6px; cursor: pointer;">+ Grammar</button>
+                    </div>
+                  </div>
+                  <textarea id="${textareaId}" style="width: 100%; height: 55px; padding: 6px; font-size: 0.85rem; border: 1px solid #cbd5e1; border-radius: 6px; resize: vertical; font-family: inherit;">${escapeHtml(sub.feedback || "")}</textarea>
                   <div style="display: flex; justify-content: flex-end; margin-top: 6px;">
                     <button onclick="saveSubmissionReview('${sub.id}', '${textareaId}')" style="background: #0369a1; color: white; border: none; border-radius: 6px; padding: 4px 12px; font-size: 0.8rem; font-weight: 600; cursor: pointer;">${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.markReviewed") : "Mark reviewed ✔️"}</button>
                   </div>
@@ -2165,6 +2176,17 @@
       }
     }
 
+    function insertQuickFeedback(textareaId, phrase) {
+      const el = document.getElementById(textareaId);
+      if (!el) return;
+      if (el.value.trim().length > 0) {
+        el.value = el.value.trim() + " " + phrase;
+      } else {
+        el.value = phrase;
+      }
+    }
+
+    window.insertQuickFeedback = insertQuickFeedback;
     window.fetchTeacherStudents = fetchTeacherStudents;
     window.loadTeacherSubmissions = loadTeacherSubmissions;
     window.renderGroupedSubmissions = renderGroupedSubmissions;
