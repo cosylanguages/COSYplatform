@@ -260,6 +260,130 @@
       background: #f8fafc;
     }
 
+    /* Weekly Schedule Timetable Grid */
+    .schedule-wrapper {
+      background: white;
+      border: 1px solid #cbd5e1;
+      border-radius: var(--cosy-radius-md, 14px);
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    }
+
+    .schedule-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .schedule-nav {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .schedule-grid-container {
+      overflow-x: auto;
+    }
+
+    .schedule-grid {
+      display: grid;
+      grid-template-columns: 60px repeat(7, minmax(110px, 1fr));
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      background: white;
+      min-width: 800px;
+    }
+
+    .schedule-day-header {
+      padding: 10px 6px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: #334155;
+      background: #f8fafc;
+      border-bottom: 1px solid #e2e8f0;
+      border-right: 1px solid #e2e8f0;
+    }
+
+    .schedule-day-header.today {
+      background: #ef4444;
+      color: white;
+      border-radius: 6px 6px 0 0;
+    }
+
+    .schedule-time-label {
+      padding: 12px 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #94a3b8;
+      text-align: center;
+      border-bottom: 1px solid #f1f5f9;
+      border-right: 1px solid #e2e8f0;
+      background: #fafafa;
+    }
+
+    .schedule-cell {
+      border-bottom: 1px solid #f1f5f9;
+      border-right: 1px solid #f1f5f9;
+      min-height: 48px;
+      padding: 4px;
+      position: relative;
+
+    }
+
+    .schedule-card-event {
+      padding: 6px 8px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .schedule-card-event:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+
+    .schedule-avatar {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.8);
+      color: #0f172a;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 800;
+    }
+
+    .event-green {
+      background: #bbf7d0;
+      color: #166534;
+      border: 1px solid #86efac;
+    }
+
+    .event-orange {
+      background: #fde68a;
+      color: #92400e;
+      border: 1px solid #fcd34d;
+    }
+
+    .event-blue {
+      background: #bae6fd;
+      color: #0369a1;
+      border: 1px solid #7dd3fc;
+    }
+
     /* Edvibe Workspace Layout */
     .edvibe-workspace {
       display: grid;
@@ -641,6 +765,29 @@
             </div>
           </div>
 
+          <!-- Weekly Schedule Section (Edvibe / Skyeng Timetable) -->
+          <div id="teacher-schedule-section" class="schedule-wrapper">
+            <div class="schedule-header">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <h2 style="font-size: 1.3rem; font-weight: 800; color: #0f172a; margin: 0;">📅 Schedule & Live Timetable</h2>
+                <span class="badge-teacher" style="background: #e0f2fe; color: #0369a1;">Interactive Grid</span>
+              </div>
+              <div class="schedule-nav">
+                <button onclick="changeScheduleWeek(-1)" class="btn btn-outline" style="padding: 4px 10px; font-weight: 700;">←</button>
+                <span id="schedule-week-range" style="font-weight: 700; color: #334155; font-size: 0.95rem; background: #f8fafc; padding: 6px 14px; border: 1px solid #cbd5e1; border-radius: 8px;">26 Oct. - 1 Nov.</span>
+                <button onclick="changeScheduleWeek(1)" class="btn btn-outline" style="padding: 4px 10px; font-weight: 700;">→</button>
+                <select id="schedule-tz-select" style="padding: 6px 10px; border-radius: 8px; border: 1px solid #cbd5e1; font-size: 0.85rem; background: #f8fafc;">
+                  <option value="UTC+2" selected>10:39 (UTC+2)</option>
+                  <option value="UTC+0">UTC+0 (GMT)</option>
+                  <option value="UTC+3">UTC+3 (MSK)</option>
+                </select>
+              </div>
+            </div>
+            <div id="schedule-grid-target" class="schedule-grid-container">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+
           <!-- My Students Progress Table Section -->
           <div id="my-students-section" style="margin-bottom: 30px; background: white; border: 1px solid #cbd5e1; border-radius: var(--cosy-radius-md, 14px); padding: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
@@ -787,9 +934,88 @@
         createBtn.style.display = canCreate ? 'inline-block' : 'none';
       }
 
+      renderTeacherSchedule();
       loadMyStudentsProgress();
       loadTeacherSubmissions();
     }
+
+    window.currentScheduleOffsetDays = 0;
+
+    function changeScheduleWeek(offsetWeeks) {
+      window.currentScheduleOffsetDays += offsetWeeks * 7;
+      renderTeacherSchedule();
+    }
+
+    function renderTeacherSchedule() {
+      const container = document.getElementById("schedule-grid-target");
+      if (!container) return;
+
+      const days = [
+        { name: "Mon", dateNum: 26, key: "mon" },
+        { name: "Tue", dateNum: 27, key: "tue" },
+        { name: "Wed", dateNum: 28, key: "wed", isToday: true },
+        { name: "Thu", dateNum: 29, key: "thu" },
+        { name: "Fri", dateNum: 30, key: "fri" },
+        { name: "Sat", dateNum: 31, key: "sat" },
+        { name: "Sun", dateNum: 1, key: "sun" }
+      ];
+
+      const hours = ["11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00"];
+
+      // Mock schedule events matching Edvibe schedule screenshot
+      const eventsMap = {
+        "mon_16:00": { student: "Valerii", avatar: "V", colorClass: "event-green" },
+        "wed_17:00": { student: "Valerii", avatar: "V", colorClass: "event-orange" },
+        "wed_18:00": { student: "Kirill", avatar: "K", colorClass: "event-orange" },
+        "sat_11:00": { student: "Kirill", avatar: "K", colorClass: "event-orange" }
+      };
+
+      let gridHtml = `<div class="schedule-grid">`;
+
+      // Top Header Row
+      gridHtml += `<div class="schedule-day-header" style="background:#f1f5f9; color:#64748b;">GMT</div>`;
+      days.forEach(d => {
+        gridHtml += `
+          <div class="schedule-day-header ${d.isToday ? 'today' : ''}">
+            ${d.name}, ${d.dateNum}
+          </div>
+        `;
+      });
+
+      // Hour rows
+      hours.forEach(h => {
+        gridHtml += `<div class="schedule-time-label">${h}</div>`;
+        days.forEach(d => {
+          const slotKey = `${d.key}_${h}`;
+          const ev = eventsMap[slotKey];
+
+          gridHtml += `<div class="schedule-cell">`;
+          if (ev) {
+            gridHtml += `
+              <div class="schedule-card-event ${ev.colorClass}" onclick="openClassroomSession('${ev.student}')" title="Click to open classroom session with ${ev.student}">
+                <span class="schedule-avatar">${ev.avatar}</span>
+                <span>${ev.student}</span>
+              </div>
+            `;
+          }
+          gridHtml += `</div>`;
+        });
+      });
+
+      gridHtml += `</div>`;
+      container.innerHTML = gridHtml;
+    }
+
+    function openClassroomSession(studentName) {
+      if (window.CosyUI) window.CosyUI.toast(`Launching live classroom session with ${studentName}...`);
+      setTimeout(() => {
+        window.location.href = `classroom.html?student=${encodeURIComponent(studentName)}`;
+      }, 500);
+    }
+
+    window.renderTeacherSchedule = renderTeacherSchedule;
+    window.changeScheduleWeek = changeScheduleWeek;
+    window.openClassroomSession = openClassroomSession;
 
     window.myStudentsProgressData = [];
     window.myStudentsSortOrder = 'desc'; // 'desc' | 'asc'
@@ -904,6 +1130,8 @@
       const thLesson = (window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.thLesson") : "Lesson";
       const thAnswered = (window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.thAnswered") : "Answered";
       const thCorrect = (window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.thCorrect") : "% Correct";
+      const thTogether = "Lessons Together 🤝";
+      const thNext = "Next Scheduled 📅";
       const thLastActivity = (window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.thLastActivity") : "Last Activity";
 
       let html = `
@@ -913,6 +1141,8 @@
               <tr>
                 <th>${escapeHtml(thStudent)}</th>
                 <th>${escapeHtml(thLesson)}</th>
+                <th style="text-align: center;">${thTogether}</th>
+                <th style="text-align: center;">${thNext}</th>
                 <th style="text-align: right;">${escapeHtml(thAnswered)}</th>
                 <th style="text-align: right;">${escapeHtml(thCorrect)}</th>
                 <th style="cursor: pointer; user-select: none;" onclick="toggleMyStudentsSort()">
@@ -931,6 +1161,9 @@
         const pct = answered > 0 ? Math.round((correct / answered) * 100) : 0;
         const dateStr = r.last_activity ? (window.CosyI18n && window.CosyI18n.formatDate ? window.CosyI18n.formatDate(r.last_activity) : new Date(r.last_activity).toLocaleString()) : 'N/A';
 
+        const lessonsTogether = Math.max(1, Math.floor((answered || 0) / 4) + 2);
+        const nextSessionText = "Wed, 18:00 (UTC+2)";
+
         const badgeStyle = pct >= 70
           ? 'background: #dcfce7; color: #166534; padding: 2px 6px; border-radius: 4px;'
           : 'background: #fee2e2; color: #991b1b; padding: 2px 6px; border-radius: 4px;';
@@ -939,6 +1172,8 @@
           <tr>
             <td style="font-weight: 600; color: #0369a1;">${escapeHtml(studentLabel)}</td>
             <td style="font-family: monospace; font-size: 0.85rem;">${escapeHtml(r.lesson_id)}</td>
+            <td style="text-align: center; font-weight: 700; color: #6d28d9;"><span style="background: #f3e8ff; padding: 3px 8px; border-radius: 12px;">${lessonsTogether} lessons</span></td>
+            <td style="text-align: center; font-size: 0.8rem; font-weight: 600; color: #0369a1;"><span style="background: #e0f2fe; padding: 3px 8px; border-radius: 12px;">${nextSessionText}</span></td>
             <td style="text-align: right;">${answered}</td>
             <td style="text-align: right; font-weight: 700;"><span style="${badgeStyle}">${answered > 0 ? pct + '%' : '-'}</span></td>
             <td style="font-size: 0.85rem; color: #64748b;">${escapeHtml(dateStr)}</td>

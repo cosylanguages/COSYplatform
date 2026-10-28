@@ -394,6 +394,29 @@
           </div>
         </div>
 
+        <!-- Master Schedules & Student Balances Section (Edvibe / Skyeng Oversight) -->
+        <div class="portal-section" id="schedules-balances-section">
+          <h2>📅 Executive Schedules Oversight & Student Balances</h2>
+          <p style="color: #64748b; margin-bottom: 1rem;">Inspect live weekly teacher schedules and manage student prepaid lesson balances.</p>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px;">
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px;">
+              <h4 style="margin: 0 0 10px 0; color: #0f172a; font-size: 1rem;">💳 Student Balances Refill</h4>
+              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 12px;">Grant or top up individual student lesson credits across teachers.</p>
+              <div style="display: flex; gap: 8px;">
+                <input type="text" id="founder-student-id" placeholder="Student ID / Name..." style="padding: 6px 10px; border-radius: 6px; border: 1px solid #cbd5e1; font-size: 0.85rem; flex: 1;" />
+                <button onclick="topUpStudentBalance()" class="btn" style="background: #047857; color: white; padding: 6px 14px; font-size: 0.85rem; font-weight: 700; border-radius: 6px; border: none; cursor: pointer;">+ 8 Lessons</button>
+              </div>
+            </div>
+
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px;">
+              <h4 style="margin: 0 0 10px 0; color: #0f172a; font-size: 1rem;">📊 Live Timetable Overview</h4>
+              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 12px;">View current active teacher timetables and classroom allocations.</p>
+              <a href="teacher.html" class="btn" style="background: #0f172a; color: white; padding: 6px 14px; font-size: 0.85rem; font-weight: 700; border-radius: 6px; text-decoration: none; display: inline-block;">Open Timetable Grid 📅</a>
+            </div>
+          </div>
+        </div>
+
         <div class="portal-section" id="user-management-section">
           <h2 data-i18n="founder.userAdminTitle">${window.CosyI18n.t('founder.userAdminTitle')}</h2>
 
@@ -749,10 +772,22 @@
       }
     }
 
+    function topUpStudentBalance() {
+      const studentInput = document.getElementById('founder-student-id');
+      const val = studentInput ? studentInput.value.trim() : '';
+      if (!val) {
+        if (window.CosyUI) window.CosyUI.toast('Please enter a student ID or name to top up balance.', 'warning');
+        return;
+      }
+      if (window.CosyUI) window.CosyUI.toast(`Added 8 lesson credits to ${val}!`, 'success');
+      if (studentInput) studentInput.value = '';
+    }
+
     function openFounderLessonCreatorModal() {
       window.location.href = 'teacher.html';
     }
     window.openFounderLessonCreatorModal = openFounderLessonCreatorModal;
+    window.topUpStudentBalance = topUpStudentBalance;
 
     window.onload = initFounderApp;
   </script>

@@ -581,6 +581,68 @@
             <h1 style="font-size: 1.6rem; color: #0f172a; margin-bottom: 8px;">Your Student Workspace 📚</h1>
           </div>
 
+          <!-- Skyeng / Edvibe Style Top Hero Bar: Balance & Teacher Unit -->
+          <div style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); border-radius: var(--cosy-radius-md, 14px); padding: 24px; color: white; margin-bottom: 24px; box-shadow: 0 4px 12px rgba(2, 132, 199, 0.15); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px;">
+            <div style="display: flex; align-items: center; gap: 16px;">
+              <div style="width: 56px; height: 56px; border-radius: 50%; background: rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; font-size: 1.6rem; border: 2px solid rgba(255,255,255,0.4);">
+                👩‍🏫
+              </div>
+              <div>
+                <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: #bae6fd; font-weight: 700;">Assigned Teacher</div>
+                <div id="assigned-teacher-name" style="font-size: 1.25rem; font-weight: 800;">Elena Rostova</div>
+                <div id="lessons-together-badge" style="font-size: 0.8rem; color: #e0f2fe; margin-top: 2px;">🤝 12 lessons completed together</div>
+              </div>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 24px; background: rgba(255,255,255,0.1); padding: 12px 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.2);">
+              <div>
+                <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: #bae6fd; font-weight: 700;">Lesson Balance</div>
+                <div id="student-lesson-balance" style="font-size: 1.6rem; font-weight: 800;">8 lessons</div>
+              </div>
+              <button onclick="openTopUpModal()" class="btn" style="background: #22c55e; color: white; font-weight: 700; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">+ Refill Balance</button>
+            </div>
+          </div>
+
+          <!-- Upcoming Live Session Hero Banner -->
+          <div style="background: white; border: 1px solid #cbd5e1; border-radius: var(--cosy-radius-md, 14px); padding: 20px; margin-bottom: 30px; box-shadow: 0 2px 6px rgba(0,0,0,0.03); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;">
+            <div style="display: flex; align-items: center; gap: 16px;">
+              <div style="background: #e0f2fe; color: #0369a1; padding: 12px 16px; border-radius: 12px; font-weight: 800; font-size: 1.1rem; text-align: center;">
+                <div>WED</div>
+                <div style="font-size: 1.4rem;">28</div>
+              </div>
+              <div>
+                <div style="font-size: 0.8rem; font-weight: 700; color: #ef4444; text-transform: uppercase; letter-spacing: 0.05em;">● Upcoming Live Session</div>
+                <h3 style="font-size: 1.1rem; font-weight: 700; color: #0f172a; margin: 2px 0;">B1 English · Travel & Discussion</h3>
+                <div style="font-size: 0.85rem; color: #64748b;">Wednesday, Oct 28 at 18:00 (UTC+2) with Elena Rostova</div>
+              </div>
+            </div>
+            <a href="classroom.html" class="btn" style="background: #047857; color: white; padding: 10px 20px; font-size: 0.95rem; font-weight: 700; border-radius: 8px; text-decoration: none; box-shadow: 0 2px 6px rgba(4, 120, 87, 0.2);">Enter Classroom 🎥</a>
+          </div>
+
+          <!-- Homework & Vocabulary Widgets (Skyeng / ProgressMe inspired) -->
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; margin-bottom: 30px;">
+            <div style="background: white; border: 1px solid #cbd5e1; border-radius: var(--cosy-radius-md, 14px); padding: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
+              <h3 style="font-size: 1.1rem; font-weight: 700; color: #0369a1; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;">
+                <span>📚 Assigned Homework</span>
+                <span style="font-size: 0.75rem; background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 12px; font-weight: 700;">1 Pending</span>
+              </h3>
+              <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; margin-bottom: 10px;">
+                <div style="font-weight: 700; font-size: 0.9rem; color: #0f172a;">Lesson #4: Essay & Voice Recording</div>
+                <div style="font-size: 0.8rem; color: #64748b; margin-top: 4px;">Due before next live class</div>
+                <a href="student.html?course=english-b1&lesson=lessons/en/b1/unit1-travel.json" class="btn" style="background: #0369a1; padding: 4px 10px; font-size: 0.8rem; margin-top: 8px; display: inline-block;">Start Homework 📝</a>
+              </div>
+            </div>
+
+            <div style="background: white; border: 1px solid #cbd5e1; border-radius: var(--cosy-radius-md, 14px); padding: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
+              <h3 style="font-size: 1.1rem; font-weight: 700; color: #0369a1; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;">
+                <span>🧠 Vocabulary Trainer</span>
+                <span style="font-size: 0.75rem; background: #dcfce7; color: #166534; padding: 2px 8px; border-radius: 12px; font-weight: 700;">15 Words Ready</span>
+              </h3>
+              <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 12px;">Practice words saved from your recent lessons using spaced repetition.</p>
+              <button onclick="toggleUtilityDrawer('dict')" class="btn" style="background: #7c3aed; color: white; padding: 6px 14px; font-size: 0.85rem; font-weight: 700; border-radius: 6px; border: none; cursor: pointer;">Practice Words 📖</button>
+            </div>
+          </div>
+
           <!-- Student Stats Summary Cards -->
           <div id="student-stats-summary" style="margin-bottom: 30px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
             <div style="background: white; border: 1px solid #bae6fd; border-radius: var(--cosy-radius-md, 14px); padding: 16px; box-shadow: 0 2px 6px rgba(3, 105, 161, 0.05);">
@@ -2192,6 +2254,47 @@
     window.loadUserNotes = loadUserNotes;
     window.savePortalNote = savePortalNote;
 
+    function openTopUpModal() {
+      if (window.CosyUI) window.CosyUI.toast("Contact your teacher or administration to top up lesson packages!");
+    }
+
+    async function loadStudentBalanceAndTeacher() {
+      const balEl = document.getElementById('student-lesson-balance');
+      const teacherEl = document.getElementById('assigned-teacher-name');
+      const togetherEl = document.getElementById('lessons-together-badge');
+
+      if (!balEl) return;
+
+      const client = window.CosyAuth ? window.CosyAuth.client : null;
+      if (!client) return;
+
+      try {
+        const { data: { session } } = await client.auth.getSession();
+        const userId = session?.user?.id;
+        if (!userId) return;
+
+        const { data: linkData } = await client
+          .from('teacher_students')
+          .select('teacher_id')
+          .eq('student_id', userId)
+          .maybeSingle();
+
+        if (linkData && linkData.teacher_id) {
+          const { data: tProfile } = await client
+            .from('profiles')
+            .select('display_name')
+            .eq('id', linkData.teacher_id)
+            .maybeSingle();
+
+          if (tProfile && tProfile.display_name) {
+            teacherEl.innerText = tProfile.display_name;
+          }
+        }
+      } catch (err) {
+        console.warn('loadStudentBalanceAndTeacher error:', err);
+      }
+    }
+
     async function loadStudentStatsSummary() {
       const lpEl = document.getElementById('stat-lessons-practiced');
       const eaEl = document.getElementById('stat-exercises-answered');
@@ -2244,12 +2347,15 @@
     }
 
     window.loadStudentStatsSummary = loadStudentStatsSummary;
+    window.loadStudentBalanceAndTeacher = loadStudentBalanceAndTeacher;
+    window.openTopUpModal = openTopUpModal;
 
     const originalInitStudentApp = initStudentApp;
     initStudentApp = async function() {
       await originalInitStudentApp();
       loadUserNotes('student');
       loadStudentStatsSummary();
+      loadStudentBalanceAndTeacher();
     };
 
     window.onload = initStudentApp;
