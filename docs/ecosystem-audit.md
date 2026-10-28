@@ -111,10 +111,11 @@ Historically, platform code resided in a legacy repository (`COSYplatform-source
   * Ensures static client assets never contain leakable teacher notes or answer keys.
 
 * **WebRTC Credentials Security:**
-  * `shared/js/config.js` includes a commented-out TURN server configuration block:
+  * `shared/js/config.js` includes STUN configuration and guidelines for TURN deployment:
     ```javascript
-    // username: "cosy_user",
-    // credential: "cosy_password"
+    // TURN credential placeholder guidance:
+    // Never hardcode production TURN credentials in client JS.
+    // Use dynamic credential fetching via Edge Functions.
     ```
   * **Risk Assessment:** Hardcoding static TURN credentials in browser JS would expose credentials to public misuse.
   * **Recommendation:** Use dynamic TURN credential generation via a Supabase Edge Function or ephemeral token endpoint when production TURN servers are deployed.
@@ -159,26 +160,42 @@ Content separation between public, student, teacher, and founder access is stric
 
 ---
 
-## Section 4: Actionable Structural Recommendations
+## Section 4: Actionable Structural Recommendations & Manual Execution Guide
 
-### 1. Ecosystem Shared Asset Module (`@cosylanguages/shared` or Ecosystem CDN)
-* **Action:** Consolidate `vocab-resolver.js`, `vocab-index.js`, `i18n.js`, `manuals-resolver.js`, `tools-resolver.js`, and `auth-sso.js` into a shared npm package or single host script on `COSYdata` / GitHub Pages.
-* **Benefit:** Eliminates copy-paste drift across `COSYplatform`, `COSYtools`, and `COSYgames`.
+### 4.1 Automated Enhancements Applied in `COSYplatform`
+* Configured STUN/TURN security best-practice guidelines in `shared/js/config.js`.
+* Created comprehensive ecosystem architecture and security audit report (`docs/ecosystem-audit.md`).
+* Verified client/server boundary enforcement via CI script `scripts/check_protected_keys.js`.
 
-### 2. Complete Legacy Schema Migration & Fallback Removal
-* **Action:** Run final migration scripts (`ingest_roadmaps.js`) to migrate remaining legacy lessons from `student_lesson_content` and `lesson_content` into `lessons`, `lesson_student_content`, and `lesson_protected`.
-* **Benefit:** Allows removing legacy fallbacks in `shared/js/lesson-resolver.js`, reducing query overhead and complexity.
+### 4.2 Step-by-Step Manual Guide for Ecosystem Maintainers
 
-### 3. Centralize Course Manifests in Supabase
-* **Action:** Deprecate `window.CosyAuth.FULL_MANIFEST` in `auth-guard.js` in favor of dynamic queries to `course_preview`.
-* **Benefit:** Avoids dual-maintenance of hardcoded JSON arrays in client JavaScript.
+To complete the ecosystem synchronization across sister repositories and cloud services, follow these manual steps:
 
-### 4. Implement Ephemeral WebRTC TURN Token Endpoint
-* **Action:** Create a Supabase Edge Function (`/functions/v1/get-turn-credentials`) returning time-limited HMAC credentials for WebRTC TURN connections.
-* **Benefit:** Secures media streaming infrastructure against unauthorized bandwidth usage.
+#### Step 1: Archive Legacy `COSYplatform-source` Repository
+1. Navigate to GitHub repository settings for `cosylanguages/COSYplatform-source`.
+2. Scroll to the "Danger Zone" and click **Archive this repository**.
+3. Set a deprecation banner pointing maintainers to `cosylanguages/COSYplatform` as the primary active repository.
+
+#### Step 2: Synchronize Shared Resolvers across `COSYtools` and `COSYgames`
+1. Copy `shared/js/vocab-resolver.js` and `shared/js/vocab-index.js` from `COSYplatform` into `COSYtools` and `COSYgames`.
+2. Verify that term searches in practice apps invoke `window.CosyVocabResolver.resolveWord()`.
+
+#### Step 3: Align i18n Translation Dictionaries (`shared/i18n/*.json`)
+1. Review `shared/i18n/en.json`, `fr.json`, `ru.json`, `it.json`, `el.json` in `COSYplatform`.
+2. Copy missing keys to corresponding translation files in `COSYtools` and `COSYmanuals` to ensure consistent UI labels.
+
+#### Step 4: Deploy WebRTC Ephemeral TURN Credentials (Optional for Live Production)
+1. If deploying dedicated TURN servers (Coturn):
+   - Set up a Supabase Edge Function `/functions/v1/get-turn-credentials`.
+   - Issue temporary HMAC credentials (with `exp` timestamp).
+   - In `classroom.html`, fetch dynamic ICE server configurations from the Edge Function prior to initializing `new Peer()`.
+
+#### Step 5: Final Database Ingestion & Legacy Table Cleanup
+1. In `COSYplatform`, run `node scripts/ingest_roadmaps.js` to ensure all 54 roadmap sequences are ingested into `courses`, `lessons`, `course_lessons`, `lesson_student_content`, and `lesson_protected`.
+2. Once ingestion is complete for all production environments, drop legacy tables `student_lesson_content` and `lesson_content` in Supabase SQL editor.
 
 ---
 
 ## Conclusion
 
-The `COSYplatform` architecture maintains a strong security boundary, leveraging Supabase Row Level Security and automated CI checks to prevent content leaks. By enacting the recommendations above—specifically shared script resolution and legacy fallback cleanup—the `cosylanguages` ecosystem will achieve optimal code reusability, reduced latency, and simplified cross-repository maintenance.
+The `COSYplatform` architecture maintains a strong security boundary, leveraging Supabase Row Level Security and automated CI checks to prevent content leaks. By enacting the recommendations and manual guide steps above, the `cosylanguages` ecosystem will achieve optimal code reusability, reduced latency, and simplified cross-repository maintenance.
