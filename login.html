@@ -155,19 +155,29 @@
 
   <script>
     let supabaseClient = null;
-    (function() {
+    function getLoginSupabaseClient() {
+      if (window.CosyAuth && typeof window.CosyAuth.getSupabaseClient === 'function') {
+        return window.CosyAuth.getSupabaseClient();
+      }
+      if (window.CosyAuth && window.CosyAuth.client) {
+        return window.CosyAuth.client;
+      }
       const config = window.COSY_CONFIG || {};
       const url = config.SUPABASE_URL || "";
       const key = config.SUPABASE_ANON_KEY || "";
       const isConfigured = Boolean(
         url && key && !url.startsWith("REPLACE_WITH") && !key.startsWith("REPLACE_WITH") && url.startsWith("http")
       );
-      if (isConfigured && window.supabase) {
+      if (isConfigured && window.supabase && typeof window.supabase.createClient === 'function') {
         try {
-          supabaseClient = window.supabase.createClient(url, key);
+          const client = window.supabase.createClient(url, key);
+          if (window.CosyAuth) window.CosyAuth.client = client;
+          return client;
         } catch (e) {}
       }
-    })();
+      return null;
+    }
+    supabaseClient = getLoginSupabaseClient();
 
     const form = document.getElementById('login-form');
     const submitBtn = document.getElementById('submit-btn');
@@ -217,6 +227,7 @@
     }
 
     window.CosyI18n.ready.then(async () => {
+      supabaseClient = supabaseClient || getLoginSupabaseClient();
       if (!supabaseClient) {
         showError('login.errNotConfigured', 'Platform not configured. Ask an administrator to set the Supabase details in shared/js/config.js.');
         return;
@@ -248,6 +259,8 @@
           }
         }
       } catch (e) {}
+    }).catch(err => {
+      console.error('[login.html] Error in CosyI18n.ready handler:', err);
     });
 
     form.addEventListener('submit', async (e) => {

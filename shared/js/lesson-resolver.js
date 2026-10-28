@@ -1,6 +1,13 @@
 /**
  * COSYplatform - Lesson Resolver Client
  * Determines lesson availability and resolves lesson file paths for roadmap sequence items.
+ *
+ * @typedef {Object} RoadmapItem
+ * @property {string} [id] - Roadmap item ID
+ * @property {string} [title] - Lesson title
+ * @property {string} [lessonFile] - Relative path to XML/HTML lesson file
+ * @property {boolean} [teacherLed] - Whether lesson is teacher-led
+ * @property {('planned'|'available'|'completed')} [status] - Availability status
  */
 (function (global) {
   'use strict';

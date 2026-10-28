@@ -1,6 +1,14 @@
 /**
  * COSYplatform - CosyProgress
  * Handles saving and loading student lesson answers with Supabase sync and localStorage fallback.
+ *
+ * @typedef {Object} LessonAnswerPayload
+ * @property {string} student_id - Authenticated student UUID
+ * @property {string} lesson_id - Unique lesson identifier or path
+ * @property {string} field_key - Exercise or input field identifier
+ * @property {any} value - Student's saved answer value
+ * @property {boolean|null} [is_correct] - Optional correctness state
+ * @property {string} [updated_at] - ISO timestamp string
  */
 
 window.CosyProgress = window.CosyProgress || {};
@@ -119,7 +127,11 @@ window.CosyProgress = window.CosyProgress || {};
 
       const timer = setTimeout(async () => {
         debounceTimers.delete(timerKey);
-        await performUpsert(userId, lessonId, fieldKey, value, isCorrect, revision);
+        try {
+          await performUpsert(userId, lessonId, fieldKey, value, isCorrect, revision);
+        } catch (err) {
+          console.warn('CosyProgress: error performing debounced upsert', err);
+        }
       }, DEBOUNCE_DELAY);
 
       debounceTimers.set(timerKey, timer);

@@ -10,6 +10,9 @@ window.CosySSO = window.CosySSO || {};
    * Helper to get or initialize the Supabase client
    */
   function getSupabaseClient() {
+    if (window.CosyAuth && typeof window.CosyAuth.getSupabaseClient === 'function') {
+      return window.CosyAuth.getSupabaseClient();
+    }
     if (window.CosyAuth && window.CosyAuth.client) {
       return window.CosyAuth.client;
     }

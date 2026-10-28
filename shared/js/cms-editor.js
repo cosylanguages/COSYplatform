@@ -10,6 +10,9 @@ window.CosyCMS = window.CosyCMS || {};
   let userRole = null;
 
   function getSupabaseClient() {
+    if (window.CosyAuth && typeof window.CosyAuth.getSupabaseClient === 'function') {
+      return window.CosyAuth.getSupabaseClient();
+    }
     if (window.CosyAuth && window.CosyAuth.client) {
       return window.CosyAuth.client;
     }
@@ -300,11 +303,15 @@ window.CosyCMS = window.CosyCMS || {};
    * Init routine
    */
   async function init() {
-    await fetchAndApplyOverrides();
+    try {
+      await fetchAndApplyOverrides();
 
-    const role = await detectUserRole();
-    if (isAuthorisedRole(role)) {
-      renderToolbar();
+      const role = await detectUserRole();
+      if (isAuthorisedRole(role)) {
+        renderToolbar();
+      }
+    } catch (err) {
+      console.error('[CosyCMS] Error initializing CMS editor:', err);
     }
   }
 
