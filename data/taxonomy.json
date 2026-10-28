@@ -14,8 +14,30 @@
         "el": "Γενικό Μάθημα",
         "it": "Corso Generale"
       },
-      "languagesOffered": ["en", "fr", "ru", "es", "de", "it", "pt", "el", "hy", "ka", "tt", "ba", "br"],
-      "cefrLevelsOffered": ["a0", "a1", "a2", "b1", "b2", "c1", "c2"]
+      "languagesOffered": [
+        "en",
+        "fr",
+        "ru",
+        "es",
+        "de",
+        "it",
+        "pt",
+        "el",
+        "hy",
+        "ka",
+        "tt",
+        "ba",
+        "br"
+      ],
+      "cefrLevelsOffered": [
+        "a0",
+        "a1",
+        "a2",
+        "b1",
+        "b2",
+        "c1",
+        "c2"
+      ]
     },
     {
       "id": "spoken",
@@ -28,8 +50,19 @@
         "el": "Μάθημα Συνομιλίας",
         "it": "Corso Parlato"
       },
-      "languagesOffered": ["en", "fr", "ru"],
-      "cefrLevelsOffered": ["a1", "a2", "b1", "b2", "c1", "c2"]
+      "languagesOffered": [
+        "en",
+        "fr",
+        "ru"
+      ],
+      "cefrLevelsOffered": [
+        "a1",
+        "a2",
+        "b1",
+        "b2",
+        "c1",
+        "c2"
+      ]
     },
     {
       "id": "professional",
@@ -42,8 +75,17 @@
         "el": "Επαγγελματικό Μάθημα",
         "it": "Corso Professionale"
       },
-      "languagesOffered": ["en", "fr", "ru"],
-      "cefrLevelsOffered": ["b1", "b2", "c1", "c2"]
+      "languagesOffered": [
+        "en",
+        "fr",
+        "ru"
+      ],
+      "cefrLevelsOffered": [
+        "b1",
+        "b2",
+        "c1",
+        "c2"
+      ]
     },
     {
       "id": "travelling",
@@ -56,8 +98,16 @@
         "el": "Μάθημα Ταξιδιού",
         "it": "Corso per Viaggi"
       },
-      "languagesOffered": ["en", "fr", "ru"],
-      "cefrLevelsOffered": ["a1", "a2", "b1"]
+      "languagesOffered": [
+        "en",
+        "fr",
+        "ru"
+      ],
+      "cefrLevelsOffered": [
+        "a1",
+        "a2",
+        "b1"
+      ]
     },
     {
       "id": "relocation",
@@ -70,8 +120,15 @@
         "el": "Μάθημα Μετεγκατάστασης",
         "it": "Corso di Trasferimento"
       },
-      "languagesOffered": ["en"],
-      "cefrLevelsOffered": ["a2", "b1", "b2", "c1"]
+      "languagesOffered": [
+        "en"
+      ],
+      "cefrLevelsOffered": [
+        "a2",
+        "b1",
+        "b2",
+        "c1"
+      ]
     },
     {
       "id": "exam",
@@ -84,8 +141,16 @@
         "el": "Προετοιμασία Εξετάσεων",
         "it": "Preparazione Esami"
       },
-      "languagesOffered": ["en", "el"],
-      "cefrLevelsOffered": ["b1", "b2", "c1", "c2"]
+      "languagesOffered": [
+        "en",
+        "el"
+      ],
+      "cefrLevelsOffered": [
+        "b1",
+        "b2",
+        "c1",
+        "c2"
+      ]
     },
     {
       "id": "cinema",
@@ -98,8 +163,17 @@
         "el": "Κινηματογραφική Λέσχη",
         "it": "Club del Cinema"
       },
-      "languagesOffered": ["en"],
-      "cefrLevelsOffered": ["a1", "a2", "b1", "b2", "c1", "c2"]
+      "languagesOffered": [
+        "en"
+      ],
+      "cefrLevelsOffered": [
+        "a1",
+        "a2",
+        "b1",
+        "b2",
+        "c1",
+        "c2"
+      ]
     },
     {
       "id": "karaoke",
@@ -112,8 +186,16 @@
         "el": "Συνεδρίες Καραόκε",
         "it": "Sessioni Karaoke"
       },
-      "languagesOffered": ["en", "fr"],
-      "cefrLevelsOffered": ["a1", "a2", "b1", "b2"]
+      "languagesOffered": [
+        "en",
+        "fr"
+      ],
+      "cefrLevelsOffered": [
+        "a1",
+        "a2",
+        "b1",
+        "b2"
+      ]
     },
     {
       "id": "discussion",
@@ -126,8 +208,17 @@
         "el": "Λέσχη Συζήτησης",
         "it": "Club di Discussione"
       },
-      "languagesOffered": ["en"],
-      "cefrLevelsOffered": ["a1", "a2", "b1", "b2", "c1", "c2"]
+      "languagesOffered": [
+        "en"
+      ],
+      "cefrLevelsOffered": [
+        "a1",
+        "a2",
+        "b1",
+        "b2",
+        "c1",
+        "c2"
+      ]
     },
     {
       "id": "pronunciation",
@@ -140,58 +231,268 @@
         "el": "Πρακτική Προφοράς",
         "it": "Pratica di Pronuncia"
       },
-      "languagesOffered": ["en", "fr", "ru"],
-      "cefrLevelsOffered": ["a1", "a2", "b1", "b2", "c1", "c2"]
+      "languagesOffered": [
+        "en",
+        "fr",
+        "ru"
+      ],
+      "cefrLevelsOffered": [
+        "a1",
+        "a2",
+        "b1",
+        "b2",
+        "c1",
+        "c2"
+      ]
     }
   ],
   "roadmapMappings": {
-    "cinema-en-a1.json": { "courseTypeId": "cinema", "lang": "en", "level": "a1", "status": "standard" },
-    "cinema-en-a2.json": { "courseTypeId": "cinema", "lang": "en", "level": "a2", "status": "standard" },
-    "cinema-en-b1.json": { "courseTypeId": "cinema", "lang": "en", "level": "b1", "status": "standard" },
-    "cinema-en-b2.json": { "courseTypeId": "cinema", "lang": "en", "level": "b2", "status": "standard" },
-    "cinema-en-c1.json": { "courseTypeId": "cinema", "lang": "en", "level": "c1", "status": "standard" },
-    "cinema-en-c2.json": { "courseTypeId": "cinema", "lang": "en", "level": "c2", "status": "standard" },
-
-    "discussion-en-a1.json": { "courseTypeId": "discussion", "lang": "en", "level": "a1", "status": "standard" },
-    "discussion-en-a2.json": { "courseTypeId": "discussion", "lang": "en", "level": "a2", "status": "standard" },
-    "discussion-en-b1.json": { "courseTypeId": "discussion", "lang": "en", "level": "b1", "status": "standard" },
-    "discussion-en-b2.json": { "courseTypeId": "discussion", "lang": "en", "level": "b2", "status": "standard" },
-    "discussion-en-c1.json": { "courseTypeId": "discussion", "lang": "en", "level": "c1", "status": "standard" },
-    "discussion-en-c2.json": { "courseTypeId": "discussion", "lang": "en", "level": "c2", "status": "standard" },
-
-    "general-en-a0.json": { "courseTypeId": "general", "lang": "en", "level": "a0", "status": "standard" },
-    "general-en-a1.json": { "courseTypeId": "general", "lang": "en", "level": "a1", "status": "standard" },
-    "general-en-a2.json": { "courseTypeId": "general", "lang": "en", "level": "a2", "status": "standard" },
-    "general-en-b1.json": { "courseTypeId": "general", "lang": "en", "level": "b1", "status": "standard" },
-    "general-en-b2.json": { "courseTypeId": "general", "lang": "en", "level": "b2", "status": "standard" },
-    "general-en-c1.json": { "courseTypeId": "general", "lang": "en", "level": "c1", "status": "standard" },
-
-    "pronunciation-en-a1.json": { "courseTypeId": "pronunciation", "lang": "en", "level": "a1", "status": "standard" },
-    "pronunciation-en-a2.json": { "courseTypeId": "pronunciation", "lang": "en", "level": "a2", "status": "standard" },
-    "pronunciation-en-b1.json": { "courseTypeId": "pronunciation", "lang": "en", "level": "b1", "status": "standard" },
-    "pronunciation-en-b2.json": { "courseTypeId": "pronunciation", "lang": "en", "level": "b2", "status": "standard" },
-    "pronunciation-en-c1.json": { "courseTypeId": "pronunciation", "lang": "en", "level": "c1", "status": "standard" },
-    "pronunciation-en-c2.json": { "courseTypeId": "pronunciation", "lang": "en", "level": "c2", "status": "standard" },
-
-    "pronunciation-fr-a1.json": { "courseTypeId": "pronunciation", "lang": "fr", "level": "a1", "status": "standard" },
-    "pronunciation-fr-a2.json": { "courseTypeId": "pronunciation", "lang": "fr", "level": "a2", "status": "standard" },
-    "pronunciation-fr-b1.json": { "courseTypeId": "pronunciation", "lang": "fr", "level": "b1", "status": "standard" },
-    "pronunciation-fr-b2.json": { "courseTypeId": "pronunciation", "lang": "fr", "level": "b2", "status": "standard" },
-    "pronunciation-fr-c1.json": { "courseTypeId": "pronunciation", "lang": "fr", "level": "c1", "status": "standard" },
-    "pronunciation-fr-c2.json": { "courseTypeId": "pronunciation", "lang": "fr", "level": "c2", "status": "standard" },
-
-    "pronunciation-ru-a1.json": { "courseTypeId": "pronunciation", "lang": "ru", "level": "a1", "status": "standard" },
-    "pronunciation-ru-a2.json": { "courseTypeId": "pronunciation", "lang": "ru", "level": "a2", "status": "standard" },
-    "pronunciation-ru-b1.json": { "courseTypeId": "pronunciation", "lang": "ru", "level": "b1", "status": "standard" },
-    "pronunciation-ru-b2.json": { "courseTypeId": "pronunciation", "lang": "ru", "level": "b2", "status": "standard" },
-    "pronunciation-ru-c1.json": { "courseTypeId": "pronunciation", "lang": "ru", "level": "c1", "status": "standard" },
-    "pronunciation-ru-c2.json": { "courseTypeId": "pronunciation", "lang": "ru", "level": "c2", "status": "standard" },
-
-    "spoken-en-a1.json": { "courseTypeId": "spoken", "lang": "en", "level": "a1", "status": "standard" },
-    "spoken-en-a2.json": { "courseTypeId": "spoken", "lang": "en", "level": "a2", "status": "standard" },
-    "spoken-en-b1.json": { "courseTypeId": "spoken", "lang": "en", "level": "b1", "status": "standard" },
-    "spoken-en-b2.json": { "courseTypeId": "spoken", "lang": "en", "level": "b2", "status": "standard" },
-    "spoken-en-c1.json": { "courseTypeId": "spoken", "lang": "en", "level": "c1", "status": "standard" }
+    "cinema-en-a1.json": {
+      "courseTypeId": "cinema",
+      "lang": "en",
+      "level": "a1",
+      "status": "standard"
+    },
+    "cinema-en-a2.json": {
+      "courseTypeId": "cinema",
+      "lang": "en",
+      "level": "a2",
+      "status": "standard"
+    },
+    "cinema-en-b1.json": {
+      "courseTypeId": "cinema",
+      "lang": "en",
+      "level": "b1",
+      "status": "standard"
+    },
+    "cinema-en-b2.json": {
+      "courseTypeId": "cinema",
+      "lang": "en",
+      "level": "b2",
+      "status": "standard"
+    },
+    "cinema-en-c1.json": {
+      "courseTypeId": "cinema",
+      "lang": "en",
+      "level": "c1",
+      "status": "standard"
+    },
+    "cinema-en-c2.json": {
+      "courseTypeId": "cinema",
+      "lang": "en",
+      "level": "c2",
+      "status": "standard"
+    },
+    "discussion-en-a1.json": {
+      "courseTypeId": "discussion",
+      "lang": "en",
+      "level": "a1",
+      "status": "standard"
+    },
+    "discussion-en-a2.json": {
+      "courseTypeId": "discussion",
+      "lang": "en",
+      "level": "a2",
+      "status": "standard"
+    },
+    "discussion-en-b1.json": {
+      "courseTypeId": "discussion",
+      "lang": "en",
+      "level": "b1",
+      "status": "standard"
+    },
+    "discussion-en-b2.json": {
+      "courseTypeId": "discussion",
+      "lang": "en",
+      "level": "b2",
+      "status": "standard"
+    },
+    "discussion-en-c1.json": {
+      "courseTypeId": "discussion",
+      "lang": "en",
+      "level": "c1",
+      "status": "standard"
+    },
+    "discussion-en-c2.json": {
+      "courseTypeId": "discussion",
+      "lang": "en",
+      "level": "c2",
+      "status": "standard"
+    },
+    "general-en-a0.json": {
+      "courseTypeId": "general",
+      "lang": "en",
+      "level": "a0",
+      "status": "standard"
+    },
+    "general-en-a1.json": {
+      "courseTypeId": "general",
+      "lang": "en",
+      "level": "a1",
+      "status": "standard"
+    },
+    "general-en-a2.json": {
+      "courseTypeId": "general",
+      "lang": "en",
+      "level": "a2",
+      "status": "standard"
+    },
+    "general-en-b1.json": {
+      "courseTypeId": "general",
+      "lang": "en",
+      "level": "b1",
+      "status": "standard"
+    },
+    "general-en-b2.json": {
+      "courseTypeId": "general",
+      "lang": "en",
+      "level": "b2",
+      "status": "standard"
+    },
+    "general-en-c1.json": {
+      "courseTypeId": "general",
+      "lang": "en",
+      "level": "c1",
+      "status": "standard"
+    },
+    "pronunciation-en-a1.json": {
+      "courseTypeId": "pronunciation",
+      "lang": "en",
+      "level": "a1",
+      "status": "standard"
+    },
+    "pronunciation-en-a2.json": {
+      "courseTypeId": "pronunciation",
+      "lang": "en",
+      "level": "a2",
+      "status": "standard"
+    },
+    "pronunciation-en-b1.json": {
+      "courseTypeId": "pronunciation",
+      "lang": "en",
+      "level": "b1",
+      "status": "standard"
+    },
+    "pronunciation-en-b2.json": {
+      "courseTypeId": "pronunciation",
+      "lang": "en",
+      "level": "b2",
+      "status": "standard"
+    },
+    "pronunciation-en-c1.json": {
+      "courseTypeId": "pronunciation",
+      "lang": "en",
+      "level": "c1",
+      "status": "standard"
+    },
+    "pronunciation-en-c2.json": {
+      "courseTypeId": "pronunciation",
+      "lang": "en",
+      "level": "c2",
+      "status": "standard"
+    },
+    "pronunciation-fr-a1.json": {
+      "courseTypeId": "pronunciation",
+      "lang": "fr",
+      "level": "a1",
+      "status": "standard"
+    },
+    "pronunciation-fr-a2.json": {
+      "courseTypeId": "pronunciation",
+      "lang": "fr",
+      "level": "a2",
+      "status": "standard"
+    },
+    "pronunciation-fr-b1.json": {
+      "courseTypeId": "pronunciation",
+      "lang": "fr",
+      "level": "b1",
+      "status": "standard"
+    },
+    "pronunciation-fr-b2.json": {
+      "courseTypeId": "pronunciation",
+      "lang": "fr",
+      "level": "b2",
+      "status": "standard"
+    },
+    "pronunciation-fr-c1.json": {
+      "courseTypeId": "pronunciation",
+      "lang": "fr",
+      "level": "c1",
+      "status": "standard"
+    },
+    "pronunciation-fr-c2.json": {
+      "courseTypeId": "pronunciation",
+      "lang": "fr",
+      "level": "c2",
+      "status": "standard"
+    },
+    "pronunciation-ru-a1.json": {
+      "courseTypeId": "pronunciation",
+      "lang": "ru",
+      "level": "a1",
+      "status": "standard"
+    },
+    "pronunciation-ru-a2.json": {
+      "courseTypeId": "pronunciation",
+      "lang": "ru",
+      "level": "a2",
+      "status": "standard"
+    },
+    "pronunciation-ru-b1.json": {
+      "courseTypeId": "pronunciation",
+      "lang": "ru",
+      "level": "b1",
+      "status": "standard"
+    },
+    "pronunciation-ru-b2.json": {
+      "courseTypeId": "pronunciation",
+      "lang": "ru",
+      "level": "b2",
+      "status": "standard"
+    },
+    "pronunciation-ru-c1.json": {
+      "courseTypeId": "pronunciation",
+      "lang": "ru",
+      "level": "c1",
+      "status": "standard"
+    },
+    "pronunciation-ru-c2.json": {
+      "courseTypeId": "pronunciation",
+      "lang": "ru",
+      "level": "c2",
+      "status": "standard"
+    },
+    "spoken-en-a1.json": {
+      "courseTypeId": "spoken",
+      "lang": "en",
+      "level": "a1",
+      "status": "standard"
+    },
+    "spoken-en-a2.json": {
+      "courseTypeId": "spoken",
+      "lang": "en",
+      "level": "a2",
+      "status": "standard"
+    },
+    "spoken-en-b1.json": {
+      "courseTypeId": "spoken",
+      "lang": "en",
+      "level": "b1",
+      "status": "standard"
+    },
+    "spoken-en-b2.json": {
+      "courseTypeId": "spoken",
+      "lang": "en",
+      "level": "b2",
+      "status": "standard"
+    },
+    "spoken-en-c1.json": {
+      "courseTypeId": "spoken",
+      "lang": "en",
+      "level": "c1",
+      "status": "standard"
+    }
   },
   "nonConformingRoadmaps": {
     "grammar-en-a0.json": {
@@ -218,7 +519,6 @@
       "reason": "Standalone grammar practice module outside the 6 core course types.",
       "proposedPlacement": "Modular Sub-track / Module inside 'general' (General English C1 Grammar Module) or COSYtools grammar reference."
     },
-
     "phrasal-verbs-en-a2.json": {
       "reason": "Specific vocabulary sub-topic (phrasal verbs) not fitting the 6 core course types.",
       "proposedPlacement": "Modular Sub-track / Module inside 'spoken' or 'general' (A2 Phrasal Verbs Module) or COSYdata vocabulary index."
@@ -231,7 +531,6 @@
       "reason": "Specific vocabulary sub-topic (phrasal verbs) not fitting the 6 core course types.",
       "proposedPlacement": "Modular Sub-track / Module inside 'spoken' or 'general' (B2 Phrasal Verbs Module) or COSYdata vocabulary index."
     },
-
     "vocabulary-en-a1.json": {
       "reason": "Standalone vocabulary practice module.",
       "proposedPlacement": "Modular Sub-track / Module inside 'general' (A1 Vocabulary Module) or COSYdata practice."
@@ -244,12 +543,10 @@
       "reason": "Standalone vocabulary practice module.",
       "proposedPlacement": "Modular Sub-track / Module inside 'general' (B1 Vocabulary Module) or COSYdata practice."
     },
-
     "introductory-english.json": {
       "reason": "Diagnostic / placement test roadmap outside standard CEFR course sequence.",
       "proposedPlacement": "Platform Utility / Onboarding Diagnostic Module inside 'general' (General English Placement Test)."
     },
-
     "science-lessons (PR #13)": {
       "reason": "Domain-specific CLIL (Content and Language Integrated Learning) lessons.",
       "proposedPlacement": "Sub-track inside 'discussion' or 'professional' (e.g. Science & Technology Discussion Module)."
@@ -274,5 +571,360 @@
     ],
     "mismatchStatus": "ALIGNMENT_PERFECT",
     "notes": "All 6 core course types in COSYplatform taxonomy match COSYmanuals/curriculums identically. Extra event types (cinema, karaoke, discussion) and pronunciation remain segregated under 'extra' / 'events' ownership."
+  },
+  "vocabularyTaxonomy": {
+    "version": "1.0.0",
+    "description": "Hierarchical CEFR level and educational lexical theme taxonomy for COSYdata practice cards.",
+    "levels": [
+      {
+        "id": "a0_a1",
+        "cefrEquivalent": "A0-A1",
+        "displayName": {
+          "en": "A0-A1 Beginner & Elementary",
+          "fr": "A0-A1 Débutant & Élémentaire",
+          "ru": "A0-A1 Начальный и элементарный",
+          "el": "A0-A1 Αρχάριο & Στοιχειώδες",
+          "it": "A0-A1 Principiante & Elementare"
+        },
+        "description": {
+          "en": "Foundational vocabulary for essential daily needs, basic expressions, personal info, and core surroundings.",
+          "fr": "Vocabulaire de base pour les besoins quotidiens essentiels, expressions simples et environnement immédiat.",
+          "ru": "Базовый словарный запас для основных повседневных потребностей, простых выражений и обихода.",
+          "el": "Βασικό λεξιλόγιο για καθημερινές ανάγκες, απλές εκφράσεις και άμεσο περιβάλλον.",
+          "it": "Vocabolario fondamentale per le esigenze quotidiane essenziali, espressioni di base e ambiente circostante."
+        }
+      },
+      {
+        "id": "a2",
+        "cefrEquivalent": "A2",
+        "displayName": {
+          "en": "A2 Pre-Intermediate",
+          "fr": "A2 Pré-intermédiaire",
+          "ru": "A2 Ниже среднего",
+          "el": "A2 Προ-ενδιάμεσο",
+          "it": "A2 Pre-intermedio"
+        },
+        "description": {
+          "en": "Practical everyday vocabulary for routines, travel, shopping, hobbies, weather, and simple opinions.",
+          "fr": "Vocabulaire pratique pour les routines, les voyages, les achats, les loisirs et les opinions simples.",
+          "ru": "Практический словарный запас для повседневных дел, путешествий, покупок, хобби и простых мнений.",
+          "el": "Πρακτικό λεξιλόγιο για ρουτίνες, ταξίδια, αγορές, χόμπι και απλές γνώμες.",
+          "it": "Vocabolario pratico per routine, viaggi, acquisti, hobby e opinioni semplici."
+        }
+      },
+      {
+        "id": "b1",
+        "cefrEquivalent": "B1",
+        "displayName": {
+          "en": "B1 Intermediate",
+          "fr": "B1 Intermédiaire",
+          "ru": "B1 Средний",
+          "el": "B1 Ενδιάμεσο",
+          "it": "B1 Intermedio"
+        },
+        "description": {
+          "en": "Expanded vocabulary for detailed conversations, workplace context, society, environment, feelings, and media.",
+          "fr": "Vocabulaire élargi pour des conversations détaillées, le travail, la société et les médias.",
+          "ru": "Расширенный словарный запас для подробных бесед, работы, общества, окружающей среды и СМИ.",
+          "el": "Διευρυμένο λεξιλόγιο για λεπτομερείς συζητήσεις, εργασία, κοινωνία και μέσα ενημέρωσης.",
+          "it": "Vocabolario ampliato per conversazioni dettagliate, lavoro, società e media."
+        }
+      },
+      {
+        "id": "b2",
+        "cefrEquivalent": "B2",
+        "displayName": {
+          "en": "B2 Upper-Intermediate",
+          "fr": "B2 Intermédiaire Supérieur",
+          "ru": "B2 Выше среднего",
+          "el": "B2 Ανώτερο Ενδιάμεσο",
+          "it": "B2 Intermedio Superiore"
+        },
+        "description": {
+          "en": "Advanced vocabulary covering complex academic topics, business, politics, science, abstract ideas, and idioms.",
+          "fr": "Vocabulaire avancé couvrant des sujets académiques, affaires, politique, science et idiomes.",
+          "ru": "Продвинутый словарный запас для академии, бизнеса, политики, науки, абстрактных идей и идиом.",
+          "el": "Προχωρημένο λεξιλόγιο για ακαδημαϊκά θέματα, επιχειρήσεις, πολιτική, επιστήμη και ιδιωματισμούς.",
+          "it": "Vocabolario avanzato per argomenti accademici, affari, politica, scienza ed espressioni idiomatiche."
+        }
+      },
+      {
+        "id": "c1",
+        "cefrEquivalent": "C1",
+        "displayName": {
+          "en": "C1 Advanced",
+          "fr": "C1 Avancé",
+          "ru": "C1 Продвинутый",
+          "el": "C1 Προχωρημένο",
+          "it": "C1 Avanzato"
+        },
+        "description": {
+          "en": "Sophisticated vocabulary for fluent academic, legal, financial, literary, rhetoric, and technical expression.",
+          "fr": "Vocabulaire sophistiqué pour une expression fluide dans les domaines académique, juridique et littéraire.",
+          "ru": "Изощренный словарный запас для свободного академического, юридического, финансового и литературного общения.",
+          "el": "Εξειδικευμένο λεξιλόγιο για άνετη ακαδημαϊκή, νομική, οικονομική και λογοτεχνική έκφραση.",
+          "it": "Vocabolario raffinato per espressione fluente in ambito accademico, legale, finanziario e letterario."
+        }
+      },
+      {
+        "id": "c2",
+        "cefrEquivalent": "C2",
+        "displayName": {
+          "en": "C2 Mastery & Proficiency",
+          "fr": "C2 Maîtrise / Perfectionnement",
+          "ru": "C2 Совершенное владение",
+          "el": "C2 Άριστη Γνώση / Επαγγελματικό",
+          "it": "C2 Padrronanza / Madrelingua"
+        },
+        "description": {
+          "en": "Complete mastery of rare nuances, subtle registers, specialized jargon, rhetoric, literary devices, and precision.",
+          "fr": "Maîtrise complète des nuances rares, registres subtils, jargon spécialisé et dispositifs littéraires.",
+          "ru": "Полное владение редкими нюансами, тонкими регистрами, специализированным жаргоном и риторикой.",
+          "el": "Πλήρης κατέχει σπάνιες αποχρώσεις, λεπτές υφολογικές διαφορές και εξειδικευμένη ορολογία.",
+          "it": "Padrronanza completa di sfumature rare, registri sottili, gergo specializzato e dispositivi letterari."
+        }
+      }
+    ],
+    "themes": [
+      {
+        "id": "everyday_basics",
+        "displayName": {
+          "en": "Everyday Life & Basics",
+          "fr": "Vie Quotidienne & Bases",
+          "ru": "Повседневная жизнь и основы",
+          "el": "Καθημερινή Ζωή & Βασικά",
+          "it": "Vita Quotidiana & Basi"
+        },
+        "description": {
+          "en": "Essential daily items, house & home, clothes, money, numbers, time, weather, and basic objects.",
+          "fr": "Objets quotidiens, maison, vêtements, argent, chiffres, temps et météo.",
+          "ru": "Предметы обихода, дом, одежда, деньги, числа, время и погода.",
+          "el": "Καθημερινά αντικείμενα, σπίτι, ρούχα, χρήματα, αριθμοί, χρόνος και καιρός.",
+          "it": "Oggetti quotidiani, casa, vestiti, denaro, numeri, tempo e tempo atmosferico."
+        }
+      },
+      {
+        "id": "travel_places",
+        "displayName": {
+          "en": "Travel, Places & Geography",
+          "fr": "Voyages, Lieux & Géographie",
+          "ru": "Путешествия, места и география",
+          "el": "Ταξίδια, Τοποθεσίες & Γεωγραφία",
+          "it": "Viaggi, Luoghi & Geografia"
+        },
+        "description": {
+          "en": "Navigation, directions, transport, cities, tourism, geographic landscapes, and housing.",
+          "fr": "Navigation, directions, transports, villes, tourisme et paysages.",
+          "ru": "Навигация, направления, транспорт, города, туризм, географические ландшафты.",
+          "el": "Πλοήγηση, κατευθύνσεις, μεταφορές, πόλεις, τουρισμός και γεωγραφικά τοπία.",
+          "it": "Navigazione, indicazioni, trasporti, città, turismo e paesaggi geografici."
+        }
+      },
+      {
+        "id": "people_relationships",
+        "displayName": {
+          "en": "People, Relationships & Feelings",
+          "fr": "Personnes, Relations & Émotions",
+          "ru": "Люди, отношения и чувства",
+          "el": "Άνθρωποι, Σχέσεις & Συναισθήματα",
+          "it": "Persone, Relazioni & Sentimenti"
+        },
+        "description": {
+          "en": "Family, feelings, personality traits, physical appearance, emotions, psychology, and identity.",
+          "fr": "Famille, sentiments, personnalité, apparence physique, émotions et identité.",
+          "ru": "Семья, чувства, черты характера, внешность, эмоции, психология и идентичность.",
+          "el": "Οικογένεια, συναισθήματα, προσωπικότητα, εμφανίσεις, ψυχολογία και ταυτότητα.",
+          "it": "Famiglia, sentimenti, tratti di personalità, aspetto fisico, emozioni e identità."
+        }
+      },
+      {
+        "id": "work_business",
+        "displayName": {
+          "en": "Work, Business & Career",
+          "fr": "Travail, Affaires & Carrière",
+          "ru": "Работа, бизнес и карьера",
+          "el": "Εργασία, Επιχειρήσεις & Καριέρα",
+          "it": "Lavoro, Affari & Carriera"
+        },
+        "description": {
+          "en": "Occupations, workplace culture, business operations, financial sectors, and professional context.",
+          "fr": "Métiers, culture d'entreprise, affaires, secteur financier et contexte professionnel.",
+          "ru": "Профессии, рабочая культура, бизнес-процессы, финансовый сектор и карьера.",
+          "el": "Επαγγέλματα, κουλτούρα εργασίας, επιχειρηματικές δραστηριότητες και οικονομία.",
+          "it": "Professioni, cultura aziendale, operazioni commerciali, settore finanziario."
+        }
+      },
+      {
+        "id": "education_science",
+        "displayName": {
+          "en": "Education, Science & Technology",
+          "fr": "Éducation, Science & Technologie",
+          "ru": "Образование, наука и технологии",
+          "el": "Εκπαίδευση, Επιστήμη & Τεχνολογία",
+          "it": "Istruzione, Scienza & Tecnologia"
+        },
+        "description": {
+          "en": "School, academic vocabulary, scientific concepts, IT specialization, statistics, and innovation.",
+          "fr": "École, vocabulaire académique, concepts scientifiques, informatique et innovation.",
+          "ru": "Школа, академическая лексика, научные понятия, ИТ-специализация и инновации.",
+          "el": "Σχολείο, ακαδημαϊκό λεξιλόγιο, επιστημονικές έννοιες, εξειδίκευση IT και καινοτομία.",
+          "it": "Scuola, vocabolario accademico, concetti scientifici, specializzazione IT e innovazione."
+        }
+      },
+      {
+        "id": "health_lifestyle",
+        "displayName": {
+          "en": "Health, Body & Lifestyle",
+          "fr": "Santé, Corps & Mode de Vie",
+          "ru": "Здоровье, тело и образ жизни",
+          "el": "Υγεία, Σώμα & Τρόπος Ζωής",
+          "it": "Salute, Corpo & Stile di Vita"
+        },
+        "description": {
+          "en": "Human body, health & medicine, cooking, nutrition, sports, hobbies, and leisure activities.",
+          "fr": "Corps humain, santé, médecine, cuisine, sports et activités de loisirs.",
+          "ru": "Тело человека, здоровье, медицина, кулинария, спорт, хобби и досуг.",
+          "el": "Ανθρώπινο σώμα, υγεία, ιατρική, μαγειρική, αθλητισμός, χόμπι και ελεύθερος χρόνος.",
+          "it": "Corpo umano, salute, medicina, cucina, sport, hobby e tempo libero."
+        }
+      },
+      {
+        "id": "society_culture",
+        "displayName": {
+          "en": "Society, Culture, Law & Environment",
+          "fr": "Société, Culture, Droit & Environnement",
+          "ru": "Общество, культура, право и экология",
+          "el": "Κοινωνία, Πολιτισμός, Νόμος & Περιβάλλον",
+          "it": "Società, Cultura, Diritto & Ambiente"
+        },
+        "description": {
+          "en": "Culture, arts, social issues, environment, politics, ethics, legal specialization, and media.",
+          "fr": "Culture, arts, questions sociales, environnement, politique, éthique et droit.",
+          "ru": "Культура, искусство, социальные проблемы, экология, политика, этика и право.",
+          "el": "Πολιτισμός, τέχνες, κοινωνικά θέματα, περιβάλλον, πολιτική, ηθική και νομικά.",
+          "it": "Cultura, arti, questioni sociali, ambiente, politica, etica e diritto."
+        }
+      },
+      {
+        "id": "language_communication",
+        "displayName": {
+          "en": "Language, Grammar & Communication",
+          "fr": "Langue, Grammaire & Communication",
+          "ru": "Язык, грамматика и общение",
+          "el": "Γλώσσα, Γραμματική & Επικοινωνία",
+          "it": "Lingua, Grammatica & Comunicazione"
+        },
+        "description": {
+          "en": "Verbs, adverbs, phrasal verbs, idioms, rhetoric, connectors, register, collocations, and synonyms.",
+          "fr": "Verbes, adverbes, verbes à particule, idiomes, rhétorique, connecteurs et synonymes.",
+          "ru": "Глаголы, наречия, фразовые глаголы, идиомы, риторика, связующие слова и синонимы.",
+          "el": "Ρήματα, επιρρήματα, φραστικά ρήματα, ιδιωματισμοί, ρητορική, σύνδεσμοι και συνώνυμα.",
+          "it": "Verbi, avverbi, verbi frasali, espressioni idiomatiche, retorica, connettori e sinonimi."
+        }
+      }
+    ],
+    "subThemeCategoryMap": {
+      "clothes": "everyday_basics",
+      "colors": "everyday_basics",
+      "common_nouns": "everyday_basics",
+      "family": "everyday_basics",
+      "food_drink": "everyday_basics",
+      "house_furniture": "everyday_basics",
+      "living": "everyday_basics",
+      "measurement": "everyday_basics",
+      "money_shopping": "everyday_basics",
+      "numbers": "everyday_basics",
+      "objects": "everyday_basics",
+      "shopping": "everyday_basics",
+      "time": "everyday_basics",
+      "consumer_items": "everyday_basics",
+      "weather": "everyday_basics",
+      "abstract_nouns": "everyday_basics",
+      "abstract_concepts": "everyday_basics",
+      "directions": "travel_places",
+      "geography": "travel_places",
+      "places_transport": "travel_places",
+      "tourism": "travel_places",
+      "transport": "travel_places",
+      "urban_housing": "travel_places",
+      "animals": "people_relationships",
+      "appearance": "people_relationships",
+      "body_health": "people_relationships",
+      "cultural_identity_belonging": "people_relationships",
+      "emotions": "people_relationships",
+      "feelings": "people_relationships",
+      "nationalities": "people_relationships",
+      "personality": "people_relationships",
+      "psychology": "people_relationships",
+      "relationships": "people_relationships",
+      "business": "work_business",
+      "economy": "work_business",
+      "financial_specialization": "work_business",
+      "jobs": "work_business",
+      "work": "work_business",
+      "work_culture": "work_business",
+      "academic_english": "education_science",
+      "academic_vocabulary": "education_science",
+      "education": "education_science",
+      "innovation": "education_science",
+      "it_specialists": "education_science",
+      "science": "education_science",
+      "school": "education_science",
+      "statistics": "education_science",
+      "technology": "education_science",
+      "teachers_scientists": "education_science",
+      "cooking": "health_lifestyle",
+      "food_health": "health_lifestyle",
+      "health": "health_lifestyle",
+      "lifestyle": "health_lifestyle",
+      "medical_specialization": "health_lifestyle",
+      "sports": "health_lifestyle",
+      "sports_hobbies": "health_lifestyle",
+      "arts": "society_culture",
+      "conflict": "society_culture",
+      "crime": "society_culture",
+      "culture": "society_culture",
+      "environment": "society_culture",
+      "ethics": "society_culture",
+      "global_issues": "society_culture",
+      "legal_english": "society_culture",
+      "legal_specialization": "society_culture",
+      "media": "society_culture",
+      "migration": "society_culture",
+      "nature": "society_culture",
+      "politics": "society_culture",
+      "society": "society_culture",
+      "adjectives": "language_communication",
+      "adverbs_connectors": "language_communication",
+      "advanced_verbs": "language_communication",
+      "auxiliary_verbs": "language_communication",
+      "cause_effect": "language_communication",
+      "classroom_phrases": "language_communication",
+      "collocations": "language_communication",
+      "communication": "language_communication",
+      "comparisons": "language_communication",
+      "daily_verbs": "language_communication",
+      "expressions": "language_communication",
+      "general_adjectives": "language_communication",
+      "grammar": "language_communication",
+      "idioms": "language_communication",
+      "linking_words": "language_communication",
+      "literary_devices": "language_communication",
+      "nuanced_verbs": "language_communication",
+      "opinions": "language_communication",
+      "phrasal_verbs": "language_communication",
+      "prepositions": "language_communication",
+      "pronouns": "language_communication",
+      "rare_adjectives": "language_communication",
+      "rare_verbs": "language_communication",
+      "register": "language_communication",
+      "rhetoric": "language_communication",
+      "shapes_materials": "language_communication",
+      "sophisticated_adjectives": "language_communication",
+      "synonyms": "language_communication",
+      "verbs": "language_communication",
+      "verbs_cognition": "language_communication",
+      "word_building": "language_communication"
+    }
   }
 }
