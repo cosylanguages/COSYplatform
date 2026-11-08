@@ -1,11 +1,61 @@
 {
   "curriculumId": "discussion-english-c1",
   "title": "Special Discussion English C1 Roadmap",
-  "totalLessons": 0,
+  "totalLessons": 7,
   "supportedDurations": [
     "50",
     "80",
     "110"
   ],
-  "sequence": []
+  "sequence": [
+    {
+      "lessonNumber": 1,
+      "id": "brain-cells-motivation-advanced",
+      "title": "Keeping Up with Science: Brain Cells That Keep You Motivated (C1)",
+      "module": "Special: Keeping Up with Science",
+      "lessonFile": "lessons/science-en/brain-cells-motivation-advanced.json"
+    },
+    {
+      "lessonNumber": 2,
+      "id": "coffee-fat-muscle-hormones-advanced",
+      "title": "Keeping Up with Science: Coffee Drinkers: Fat, Muscle, and Hormones",
+      "module": "Special: Keeping Up with Science",
+      "lessonFile": "lessons/science-en/coffee-fat-muscle-hormones-advanced.json"
+    },
+    {
+      "lessonNumber": 3,
+      "id": "grandmother-evolutionary-mystery",
+      "title": "Keeping Up with Science: Why Your Grandmother Is an Evolutionary Mystery",
+      "module": "Special: Keeping Up with Science",
+      "lessonFile": "lessons/science-en/grandmother-evolutionary-mystery.json"
+    },
+    {
+      "lessonNumber": 4,
+      "id": "human-family-tree-rewrite-advanced",
+      "title": "Keeping Up with Science: Rewriting the Human Family Tree",
+      "module": "Special: Keeping Up with Science",
+      "lessonFile": "lessons/science-en/human-family-tree-rewrite-advanced.json"
+    },
+    {
+      "lessonNumber": 5,
+      "id": "living-most-creative-time",
+      "title": "Keeping Up with Science: We Are Living in the Most Creative Time Ever",
+      "module": "Special: Keeping Up with Science",
+      "lessonFile": "lessons/science-en/living-most-creative-time.json"
+    },
+    {
+      "lessonNumber": 6,
+      "id": "mendelian-laws-broken",
+      "title": "Keeping Up with Science: Broken Laws: Rethinking Genetics",
+      "module": "Special: Keeping Up with Science",
+      "lessonFile": "lessons/science-en/mendelian-laws-broken.json"
+    },
+    {
+      "lessonNumber": 7,
+      "id": "social-decisions-brain",
+      "title": "Keeping Up with Science: Your brain starts making social decisions before you do",
+      "module": "Special: Keeping Up with Science",
+      "lessonFile": "lessons/science-en/social-decisions-brain.json"
+    }
+  ]
 }
