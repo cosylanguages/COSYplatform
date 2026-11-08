@@ -46,12 +46,59 @@
           "content": "Master the core scientific vocabulary and collocations for this topic (10 items):"
         },
         {
-          "type": "blockquote",
-          "content": "• Dementia: a chronic neurological decline marked by memory failures and decay.\n   Example: \"Socio-environmental factors play a major role in global dementia incidence.\"\n\n• Particulate: relating to or made of microscopic separate particles suspended in air.\n   Example: \"Particulate matter PM2.5 can cross the blood-brain barrier easily.\"\n\n• Greenery: green plants or vegetation considered collectively as an urban asset.\n   Example: \"Access to green spaces and public greenery mitigates cognitive stress.\"\n\n• Epidemiology: the branch of medicine dealing with the incidence and control of diseases.\n   Example: \"The spatial epidemiology of dementia reveals stark neighborhood contrasts.\"\n\n• Cognitive Reserve: the brain's resilience and ability to improvise around structural damage.\n   Example: \"Intellectual habits and clean air build a strong cognitive reserve.\""
-        },
-        {
-          "type": "blockquote",
-          "content": "• Neurodegenerative: relating to the progressive loss of structure or function of neurons.\n   Example: \"Air pollution is identified as a novel environmental risk for neurodegenerative diseases.\"\n\n• Socio-economic: relating to the interaction of social and economic factors in health.\n   Example: \"Socio-economic variables must be carefully controlled in urban medical studies.\"\n\n• Risk: the possibility of loss, injury, or adverse medical events.\n   Example: \"Inhaling heavy particulate matter increases the overall risk of disease.\"\n\n• Urbanization: the concentration of populations into massive city areas.\n   Example: \"Rapid urbanization poses unprecedented challenges for public cognitive health.\"\n\n• Resilience: the capacity of a bodily organ or system to recover from stress.\n   Example: \"A green neighborhood enhances overall cognitive and cardiac resilience.\""
+          "type": "vocab-cards",
+          "items": [
+            {
+              "word": "Dementia",
+              "definition": "a chronic neurological decline marked by memory failures and decay.",
+              "example": "Socio-environmental factors play a major role in global dementia incidence."
+            },
+            {
+              "word": "Particulate",
+              "definition": "relating to or made of microscopic separate particles suspended in air.",
+              "example": "Particulate matter PM2.5 can cross the blood-brain barrier easily."
+            },
+            {
+              "word": "Greenery",
+              "definition": "green plants or vegetation considered collectively as an urban asset.",
+              "example": "Access to green spaces and public greenery mitigates cognitive stress."
+            },
+            {
+              "word": "Epidemiology",
+              "definition": "the branch of medicine dealing with the incidence and control of diseases.",
+              "example": "The spatial epidemiology of dementia reveals stark neighborhood contrasts."
+            },
+            {
+              "word": "Cognitive Reserve",
+              "definition": "the brain's resilience and ability to improvise around structural damage.",
+              "example": "Intellectual habits and clean air build a strong cognitive reserve."
+            },
+            {
+              "word": "Neurodegenerative",
+              "definition": "relating to the progressive loss of structure or function of neurons.",
+              "example": "Air pollution is identified as a novel environmental risk for neurodegenerative diseases."
+            },
+            {
+              "word": "Socio-economic",
+              "definition": "relating to the interaction of social and economic factors in health.",
+              "example": "Socio-economic variables must be carefully controlled in urban medical studies."
+            },
+            {
+              "word": "Risk",
+              "definition": "the possibility of loss, injury, or adverse medical events.",
+              "example": "Inhaling heavy particulate matter increases the overall risk of disease."
+            },
+            {
+              "word": "Urbanization",
+              "definition": "the concentration of populations into massive city areas.",
+              "example": "Rapid urbanization poses unprecedented challenges for public cognitive health."
+            },
+            {
+              "word": "Resilience",
+              "definition": "the capacity of a bodily organ or system to recover from stress.",
+              "example": "A green neighborhood enhances overall cognitive and cardiac resilience."
+            }
+          ]
         },
         {
           "type": "instruction",
@@ -73,8 +120,9 @@
           "content": "Study the scientific discourse patterns and grammar structures:"
         },
         {
-          "type": "blockquote",
-          "content": "⚡ Grammar Explanation (Upper-Intermediate (B2))\nUse linkers like 'due to', 'consequently', 'therefore', and 'resulting in' to express cause-and-effect relationships.\n🧩 Interactive Word Bank:\nTap a word chip below, then tap any empty bracket [_____] to place it!\nconsequently\nresulting in\ndue to\nas a result of\ntherefore\n📝 Task 1 : Part A: Rule Formulation:\nComplete the rule: Use _____ before a noun phrase. Use _____ to begin a new independent clause showing the result.\n📝 Task 1 : Part B: Structured Practice:\nHigh urban particulate pollution accelerates cognitive decline _____ systemic neural inflammation.\nThe neighborhood lacks greenery; _____, residents face higher stress.\nThe factory closed, _____ improved local air quality.\nThey studied spatial epidemiology; _____, they understood the risk factors.\nDementia rates decreased _____ urban greening programs.\nCheck Answers\nReset Board\n🗣️ Task 2 : Interactive Speaking:\nExplain how the location where we live affects our health, using cause and effect linkers."
+          "type": "grammar-spotlight",
+          "title": "Grammar Explanation (Upper-Intermediate (B2))",
+          "content": "Use linkers like 'due to', 'consequently', 'therefore', and 'resulting in' to express cause-and-effect relationships.\n🧩 Interactive Word Bank:\nTap a word chip below, then tap any empty bracket [_____] to place it!\nconsequently\nresulting in\ndue to\nas a result of\ntherefore\n📝 Task 1 : Part A: Rule Formulation:\nComplete the rule: Use _____ before a noun phrase. Use _____ to begin a new independent clause showing the result.\n📝 Task 1 : Part B: Structured Practice:\nHigh urban particulate pollution accelerates cognitive decline _____ systemic neural inflammation.\nThe neighborhood lacks greenery; _____, residents face higher stress.\nThe factory closed, _____ improved local air quality.\nThey studied spatial epidemiology; _____, they understood the risk factors.\nDementia rates decreased _____ urban greening programs.\nCheck Answers\nReset Board\n🗣️ Task 2 : Interactive Speaking:\nExplain how the location where we live affects our health, using cause and effect linkers."
         },
         {
           "type": "instruction",
@@ -96,12 +144,24 @@
           "content": "Analyze the core scientific findings and discuss the personal prompts in pairs:"
         },
         {
-          "type": "blockquote",
-          "content": "• According to the article, how does rapid urbanization alter the environmental baseline of aging populations?\n\n• What evidence is presented in the study connecting microscopic particulate matter to systemic brain inflammation?\n\n• Based on the research, how does local greenery serve as a psychological and physiological buffer?\n\n• According to the paper, what parameters explain how we can build a strong cognitive reserve in late life?\n\n• What data in the article suggests that spatial epidemiology can help map health disparities?"
+          "type": "discussion-prompts",
+          "prompts": [
+            "According to the article, how does rapid urbanization alter the environmental baseline of aging populations?",
+            "What evidence is presented in the study connecting microscopic particulate matter to systemic brain inflammation?",
+            "Based on the research, how does local greenery serve as a psychological and physiological buffer?",
+            "According to the paper, what parameters explain how we can build a strong cognitive reserve in late life?",
+            "What data in the article suggests that spatial epidemiology can help map health disparities?"
+          ]
         },
         {
-          "type": "blockquote",
-          "content": "• According to researchers, why does a lack of urban parks increase the clinical risk of mental decline?\n\n• Based on the text, what are the primary molecular signs of neurodegenerative diseases caused by pollution?\n\n• What evidence in the paper proves that a high-contrast socio-economic background changes access to healthy spaces?\n\n• How does the article explain the relationship between urban noise and dementia incidence?\n\n• How does the study show that physical activity improves overall cognitive and cardiac resilience?"
+          "type": "discussion-prompts",
+          "prompts": [
+            "According to researchers, why does a lack of urban parks increase the clinical risk of mental decline?",
+            "Based on the text, what are the primary molecular signs of neurodegenerative diseases caused by pollution?",
+            "What evidence in the paper proves that a high-contrast socio-economic background changes access to healthy spaces?",
+            "How does the article explain the relationship between urban noise and dementia incidence?",
+            "How does the study show that physical activity improves overall cognitive and cardiac resilience?"
+          ]
         },
         {
           "type": "essay",
@@ -138,12 +198,24 @@
           "content": "Discuss future societal implications, ethical dilemmas, and technological projections:"
         },
         {
-          "type": "blockquote",
-          "content": "• If future research continues to support this hypothesis, urban planning will mandate that every urbanization project dedicate 40% of its land to micro-forests.\n\n• As our understanding of this discovery develops, biosensors will monitor individual particulate absorption to predict cognitive decline decades before symptoms appear.\n\n• Imagine future research proves that vertical greenery blocks sound waves, cities will cover all expressways in biological ivy.\n\n• If future research continues to support this hypothesis, standard cognitive reserve metrics will determine the zoning and construction of retirement complexes.\n\n• As our understanding of this discovery develops, spatial epidemiology models will direct regional agricultural belts to match population health needs."
+          "type": "discussion-prompts",
+          "prompts": [
+            "If future research continues to support this hypothesis, urban planning will mandate that every urbanization project dedicate 40% of its land to micro-forests.",
+            "As our understanding of this discovery develops, biosensors will monitor individual particulate absorption to predict cognitive decline decades before symptoms appear.",
+            "Imagine future research proves that vertical greenery blocks sound waves, cities will cover all expressways in biological ivy.",
+            "If future research continues to support this hypothesis, standard cognitive reserve metrics will determine the zoning and construction of retirement complexes.",
+            "As our understanding of this discovery develops, spatial epidemiology models will direct regional agricultural belts to match population health needs."
+          ]
         },
         {
-          "type": "blockquote",
-          "content": "• Imagine future research shows that certain plant scents protect against dementia, botanical corridors will be planted next to nursing homes.\n\n• If future research continues to support this hypothesis, clinical studies will prove that neurodegenerative markers decline when seniors spend 10 hours a week in nature.\n\n• As our understanding of this discovery develops, we will isolate the exact genetic pathways where resilience meets environmental clean-air stimuli.\n\n• Imagine future research proves that socio-economic disparities in health can be completely neutralized by free public transit to state parks, governments will make wilderness access a basic right.\n\n• If future research continues to support this hypothesis, we will neutralize 90% of local risk parameters through targeted acoustic and clean air zonation."
+          "type": "discussion-prompts",
+          "prompts": [
+            "Imagine future research shows that certain plant scents protect against dementia, botanical corridors will be planted next to nursing homes.",
+            "If future research continues to support this hypothesis, clinical studies will prove that neurodegenerative markers decline when seniors spend 10 hours a week in nature.",
+            "As our understanding of this discovery develops, we will isolate the exact genetic pathways where resilience meets environmental clean-air stimuli.",
+            "Imagine future research proves that socio-economic disparities in health can be completely neutralized by free public transit to state parks, governments will make wilderness access a basic right.",
+            "If future research continues to support this hypothesis, we will neutralize 90% of local risk parameters through targeted acoustic and clean air zonation."
+          ]
         },
         {
           "type": "essay",
@@ -161,8 +233,19 @@
           "content": "✏️ Common Linguistic Pitfalls & Target Corrections:"
         },
         {
-          "type": "blockquote",
-          "content": "❌ We discussed about the geographical factors. ➔ ✔️ We discussed the geographical factors. (Grammar check: 'discuss' is transitive, do not use the preposition 'about'.)\n❌ Living near the park is gooder for health. ➔ ✔️ Living near the park is better for health. (Comparative form: the comparative of 'good' is 'better'.)"
+          "type": "error-correction",
+          "pairs": [
+            {
+              "incorrect": "We discussed about the geographical factors.",
+              "correct": "We discussed the geographical factors.",
+              "note": "Grammar check: 'discuss' is transitive, do not use the preposition 'about'."
+            },
+            {
+              "incorrect": "Living near the park is gooder for health.",
+              "correct": "Living near the park is better for health.",
+              "note": "Comparative form: the comparative of 'good' is 'better'."
+            }
+          ]
         },
         {
           "type": "instruction",

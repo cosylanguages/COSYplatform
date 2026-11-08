@@ -1992,38 +1992,219 @@
 
     function renderJsonSlideToTeacherHtml(slide) {
       let output = "";
+      const escapeHtml = (val) => String(val == null ? "" : val).replace(/[&<>"']/g, ch => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+      })[ch]);
+
       if (slide.teacherNotes) {
         slide.teacherNotes.forEach(tn => {
           output += `
             <div class="teacher-note-box ${tn.type === 'speech' ? 'teacher-note-speech' : 'teacher-note-instruction'}">
               <div class="teacher-note-header">${tn.type === 'speech' ? '💬 Suggested Speech Script' : '💡 Stage Aim & Guidance'}</div>
-              <div>${tn.content}</div>
+              <div>${escapeHtml(tn.content)}</div>
             </div>
           `;
         });
       }
+
+      function formatStructuredBlockquote(content) {
+        if (!content || typeof content !== "string") return "";
+        const trimmed = content.trim();
+
+        if (trimmed.includes("❌") && trimmed.includes("➔")) {
+          const lines = trimmed.split("\n").filter(l => l.trim().length > 0);
+          let cardsHtml = '<div class="correction-list">';
+          lines.forEach(line => {
+            if (line.includes("❌") && line.includes("➔")) {
+              const parts = line.split("➔");
+              const wrongPart = parts[0].replace(/❌/g, "").trim();
+              const rightPart = parts.slice(1).join("➔").replace(/✔️/g, "").trim();
+              cardsHtml += `
+                <div class="correction-card">
+                  <span class="correction-wrong">❌ ${escapeHtml(wrongPart)}</span>
+                  <span class="correction-arrow">➔</span>
+                  <span class="correction-right">✔️ ${escapeHtml(rightPart)}</span>
+                </div>
+              `;
+            } else {
+              cardsHtml += `<div style="font-size:0.9rem; color:#475569; margin:4px 0;">${escapeHtml(line)}</div>`;
+            }
+          });
+          cardsHtml += '</div>';
+          return cardsHtml;
+        }
+
+        if (trimmed.startsWith("•") && (trimmed.includes(":") || trimmed.includes("Example:"))) {
+          const lines = trimmed.split("\n").map(l => l.trim()).filter(Boolean);
+          const firstLine = lines[0].replace(/^•\s*/, "");
+          const colonIdx = firstLine.indexOf(":");
+          const word = colonIdx !== -1 ? firstLine.slice(0, colonIdx).trim() : firstLine;
+          const def = colonIdx !== -1 ? firstLine.slice(colonIdx + 1).trim() : "";
+          const exampleLine = lines.find(l => l.toLowerCase().startsWith("example:"));
+          const exampleText = exampleLine ? exampleLine.replace(/^example:\s*/i, "").replace(/^["']|["']$/g, "") : "";
+
+          return `
+            <div class="vocab-card">
+              <div class="vocab-word-badge"><span class="vocab-icon">📖</span> ${escapeHtml(word)}</div>
+              ${def ? `<div class="vocab-def">${escapeHtml(def)}</div>` : ''}
+              ${exampleText ? `<div class="vocab-example">“${escapeHtml(exampleText)}”</div>` : ''}
+            </div>
+          `;
+        }
+
+        if (trimmed.startsWith("•") && !trimmed.includes("Example:")) {
+          const items = trimmed.split(/\n\s*•\s*/).map(q => q.replace(/^•\s*/, "").trim()).filter(Boolean);
+          let listHtml = '<div class="discussion-list">';
+          items.forEach((item, idx) => {
+            listHtml += `
+              <div class="discussion-item">
+                <span class="discussion-num">${idx + 1}</span>
+                <span class="discussion-text">${escapeHtml(item)}</span>
+              </div>
+            `;
+          });
+          listHtml += '</div>';
+          return listHtml;
+        }
+
+        if (trimmed.startsWith("⚡") || trimmed.toLowerCase().includes("grammar explanation")) {
+          return `
+            <div class="grammar-box">
+              <div class="grammar-box-header">⚡ Language Focus</div>
+              <div class="grammar-box-body" style="white-space: pre-wrap;">${escapeHtml(trimmed.replace(/^⚡\s*/, ""))}</div>
+            </div>
+          `;
+        }
+
+        if (trimmed.includes("Specimen / Topic") || trimmed.includes("Session Overview:")) {
+          return `
+            <div class="journal-panel">
+              <div class="journal-header">🔬 Research Log &amp; Context</div>
+              <div style="white-space: pre-wrap;">${escapeHtml(trimmed)}</div>
+            </div>
+          `;
+        }
+
+        return `<cosy-blockquote>${escapeHtml(trimmed)}</cosy-blockquote>`;
+      }
+
       if (slide.elements) {
+        let currentVocabBatch = [];
+
+        function flushVocabBatch() {
+          if (currentVocabBatch.length > 0) {
+            output += `<div class="vocab-grid">${currentVocabBatch.join("")}</div>`;
+            currentVocabBatch = [];
+          }
+        }
+
         slide.elements.forEach(el => {
-          if (el.type === "instruction") output += `<cosy-instruction>📋 ${el.content}</cosy-instruction>`;
-          else if (el.type === "blockquote") output += `<cosy-blockquote>${el.content}</cosy-blockquote>`;
-          else if (el.type === "test") {
+          if (el.type === "vocab-cards") {
+            flushVocabBatch();
+            output += '<div class="vocab-grid">';
+            (el.items || []).forEach(v => {
+              output += `
+                <div class="vocab-card">
+                  <div class="vocab-word-badge"><span class="vocab-icon">📖</span> ${escapeHtml(v.word || '')}</div>
+                  ${v.definition ? `<div class="vocab-def">${escapeHtml(v.definition)}</div>` : ''}
+                  ${v.example ? `<div class="vocab-example">“${escapeHtml(v.example)}”</div>` : ''}
+                </div>
+              `;
+            });
+            output += '</div>';
+          } else if (el.type === "grammar-spotlight") {
+            flushVocabBatch();
+            output += `
+              <div class="grammar-box">
+                <div class="grammar-box-header">⚡ ${escapeHtml(el.title || 'Language Focus & Structural Patterns')}</div>
+                <div class="grammar-box-body" style="white-space: pre-wrap;">${escapeHtml(el.content || '')}</div>
+              </div>
+            `;
+          } else if (el.type === "discussion-prompts") {
+            flushVocabBatch();
+            output += '<div class="discussion-list">';
+            (el.prompts || []).forEach((p, pIdx) => {
+              output += `
+                <div class="discussion-item">
+                  <span class="discussion-num">${pIdx + 1}</span>
+                  <span class="discussion-text">${escapeHtml(p)}</span>
+                </div>
+              `;
+            });
+            output += '</div>';
+          } else if (el.type === "headline-builder") {
+            flushVocabBatch();
+            output += `
+              <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 10px; padding: 14px; margin: 12px 0;">
+                <div style="font-weight: 700; color: #1e293b; margin-bottom: 6px;">📰 ${escapeHtml(el.prompt || 'Complete the Headline:')}</div>
+                <div style="font-size: 0.95rem; color: #475569; margin-bottom: 8px;">${escapeHtml(el.headline || '')}</div>
+                <div style="font-size: 0.85rem; color: #64748b;">(Student response field active in student view)</div>
+              </div>
+            `;
+          } else if (el.type === "error-correction") {
+            flushVocabBatch();
+            output += '<div class="correction-list">';
+            (el.pairs || []).forEach(pair => {
+              output += `
+                <div class="correction-card">
+                  <span class="correction-wrong">❌ ${escapeHtml(pair.incorrect || '')}</span>
+                  <span class="correction-arrow">➔</span>
+                  <span class="correction-right">✔️ ${escapeHtml(pair.correct || '')}</span>
+                  ${pair.note ? `<div style="flex-basis: 100%; font-size: 0.84rem; color: #64748b; margin-top: 4px;">💡 ${escapeHtml(pair.note)}</div>` : ''}
+                </div>
+              `;
+            });
+            output += '</div>';
+          } else if (el.type === "instruction") {
+            flushVocabBatch();
+            output += `<cosy-instruction>📋 ${escapeHtml(el.content)}</cosy-instruction>`;
+          } else if (el.type === "blockquote") {
+            const trimmed = (el.content || "").trim();
+            if (trimmed.startsWith("•") && (trimmed.includes(":") || trimmed.includes("Example:"))) {
+              currentVocabBatch.push(formatStructuredBlockquote(trimmed));
+            } else {
+              flushVocabBatch();
+              output += formatStructuredBlockquote(trimmed);
+            }
+          } else if (el.type === "essay") {
+            flushVocabBatch();
+            output += `
+              <div class="modern-essay-box">
+                <div class="modern-essay-label">✍️ Student Response &amp; Presentation Practice</div>
+                <textarea class="modern-essay-textarea" placeholder="Student notes or oral presentation draft..." readonly></textarea>
+                <div class="modern-essay-hint">
+                  <span>Teacher View: live monitoring</span>
+                  <span style="font-style: italic;">Provide spoken or written feedback below</span>
+                </div>
+              </div>
+            `;
+          } else if (el.type === "test" || el.type === "quiz") {
+            flushVocabBatch();
             output += `<div style="background: #f8fafc; padding: 12px; border-radius: 8px; margin: 12px 0; border: 1px solid #e2e8f0;">`;
+            if (el.question) output += `<div style="font-weight: 700; margin-bottom: 8px;">${escapeHtml(el.question)}</div>`;
             if (el.options) {
               el.options.forEach(opt => {
-                const isCorrect = el.answers && el.answers.includes(opt);
-                output += `<div style="padding: 4px 8px; margin: 4px 0; ${isCorrect ? 'background: #dcfce7; font-weight: 600; color: #15803d;' : ''}">${opt} ${isCorrect ? '✔️ (Correct Answer)' : ''}</div>`;
+                const isCorrect = (el.answers && el.answers.includes(opt)) || el.answer === opt;
+                output += `<div style="padding: 4px 8px; margin: 4px 0; ${isCorrect ? 'background: #dcfce7; font-weight: 600; color: #15803d;' : ''}">${escapeHtml(opt)} ${isCorrect ? '✔️ (Correct Answer)' : ''}</div>`;
               });
             }
             output += `</div>`;
-          } else if (el.type === "input" && el.answers) {
-            output += `<div class="answer-key-box"><div class="answer-key-title">🔑 Answer Key:</div><div>${el.answers.join(" / ")}</div></div>`;
+          } else if (el.type === "input") {
+            flushVocabBatch();
+            if (el.answers && el.answers.length > 0) {
+              output += `<div class="answer-key-box"><div class="answer-key-title">🔑 Answer Key:</div><div>${escapeHtml(el.answers.join(" / "))}</div></div>`;
+            } else {
+              output += `<div class="cosy-input-box" style="margin: 12px 0;"><input type="text" placeholder="${escapeHtml(el.placeholder || 'Student input...')}" readonly style="width: 100%; max-width: 480px; padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 6px;" /></div>`;
+            }
           } else if (el.type === "image") {
+            flushVocabBatch();
             const src = el.src || el.resourceId || "";
             if (typeof src === "string" && src.startsWith("https://")) {
               output += `<img src="${src}" loading="lazy" alt="" style="max-width: 100%; border-radius: 8px; margin: 12px 0; display: block;" />`;
             }
           }
         });
+        flushVocabBatch();
       }
       return output;
     }

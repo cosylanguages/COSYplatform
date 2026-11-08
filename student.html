@@ -1907,44 +1907,232 @@
       return output;
     }
 
-    function renderJsonSlideToStudentHtml(slide) {
+    function renderJsonSlideToStudentHtml(slide, slidePrefix) {
       let output = "";
-      const escapeStudioText = (value) => String(value == null ? "" : value).replace(/[&<>"]/g, ch => ({
-        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"
+      const prefix = slidePrefix || (slide.id ? String(slide.id).replace(/[^a-zA-Z0-9_-]/g, '_') : 'slide_' + Math.random().toString(36).substring(2, 7));
+      const escapeHtml = (val) => String(val == null ? "" : val).replace(/[&<>"']/g, ch => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
       })[ch]);
+
+      function formatStructuredBlockquote(content) {
+        if (!content || typeof content !== "string") return "";
+        const trimmed = content.trim();
+
+        if (trimmed.includes("❌") && trimmed.includes("➔")) {
+          const lines = trimmed.split("\n").filter(l => l.trim().length > 0);
+          let cardsHtml = '<div class="correction-list">';
+          lines.forEach(line => {
+            if (line.includes("❌") && line.includes("➔")) {
+              const parts = line.split("➔");
+              const wrongPart = parts[0].replace(/❌/g, "").trim();
+              const rightPart = parts.slice(1).join("➔").replace(/✔️/g, "").trim();
+              cardsHtml += `
+                <div class="correction-card">
+                  <span class="correction-wrong">❌ ${escapeHtml(wrongPart)}</span>
+                  <span class="correction-arrow">➔</span>
+                  <span class="correction-right">✔️ ${escapeHtml(rightPart)}</span>
+                </div>
+              `;
+            } else {
+              cardsHtml += `<div style="font-size:0.9rem; color:#475569; margin:4px 0;">${escapeHtml(line)}</div>`;
+            }
+          });
+          cardsHtml += '</div>';
+          return cardsHtml;
+        }
+
+        if (trimmed.startsWith("•") && (trimmed.includes(":") || trimmed.includes("Example:"))) {
+          const lines = trimmed.split("\n").map(l => l.trim()).filter(Boolean);
+          const firstLine = lines[0].replace(/^•\s*/, "");
+          const colonIdx = firstLine.indexOf(":");
+          const word = colonIdx !== -1 ? firstLine.slice(0, colonIdx).trim() : firstLine;
+          const def = colonIdx !== -1 ? firstLine.slice(colonIdx + 1).trim() : "";
+          const exampleLine = lines.find(l => l.toLowerCase().startsWith("example:"));
+          const exampleText = exampleLine ? exampleLine.replace(/^example:\s*/i, "").replace(/^["']|["']$/g, "") : "";
+
+          return `
+            <div class="vocab-card">
+              <div class="vocab-word-badge"><span class="vocab-icon">📖</span> ${escapeHtml(word)}</div>
+              ${def ? `<div class="vocab-def">${escapeHtml(def)}</div>` : ''}
+              ${exampleText ? `<div class="vocab-example">“${escapeHtml(exampleText)}”</div>` : ''}
+            </div>
+          `;
+        }
+
+        if (trimmed.startsWith("•") && !trimmed.includes("Example:")) {
+          const items = trimmed.split(/\n\s*•\s*/).map(q => q.replace(/^•\s*/, "").trim()).filter(Boolean);
+          let listHtml = '<div class="discussion-list">';
+          items.forEach((item, idx) => {
+            listHtml += `
+              <div class="discussion-item">
+                <span class="discussion-num">${idx + 1}</span>
+                <span class="discussion-text">${escapeHtml(item)}</span>
+              </div>
+            `;
+          });
+          listHtml += '</div>';
+          return listHtml;
+        }
+
+        if (trimmed.startsWith("⚡") || trimmed.toLowerCase().includes("grammar explanation")) {
+          return `
+            <div class="grammar-box">
+              <div class="grammar-box-header">⚡ Language Focus</div>
+              <div class="grammar-box-body" style="white-space: pre-wrap;">${escapeHtml(trimmed.replace(/^⚡\s*/, ""))}</div>
+            </div>
+          `;
+        }
+
+        if (trimmed.includes("Specimen / Topic") || trimmed.includes("Session Overview:")) {
+          return `
+            <div class="journal-panel">
+              <div class="journal-header">🔬 Research Log &amp; Context</div>
+              <div style="white-space: pre-wrap;">${escapeHtml(trimmed)}</div>
+            </div>
+          `;
+        }
+
+        return `<cosy-blockquote>${escapeHtml(trimmed)}</cosy-blockquote>`;
+      }
+
       if (slide.elements) {
+        let currentVocabBatch = [];
+        let elCounter = 0;
+
+        function flushVocabBatch() {
+          if (currentVocabBatch.length > 0) {
+            output += `<div class="vocab-grid">${currentVocabBatch.join("")}</div>`;
+            currentVocabBatch = [];
+          }
+        }
+
         slide.elements.forEach(el => {
-          if (el.type === "studio-text") {
-            output += '<p style="white-space:pre-wrap;line-height:1.7;">' + escapeStudioText(el.content) + '</p>';
+          elCounter++;
+          const elKey = `${prefix}_el_${elCounter}`;
+
+          if (el.type === "vocab-cards") {
+            flushVocabBatch();
+            output += '<div class="vocab-grid">';
+            (el.items || []).forEach(v => {
+              output += `
+                <div class="vocab-card">
+                  <div class="vocab-word-badge"><span class="vocab-icon">📖</span> ${escapeHtml(v.word || '')}</div>
+                  ${v.definition ? `<div class="vocab-def">${escapeHtml(v.definition)}</div>` : ''}
+                  ${v.example ? `<div class="vocab-example">“${escapeHtml(v.example)}”</div>` : ''}
+                </div>
+              `;
+            });
+            output += '</div>';
+          } else if (el.type === "grammar-spotlight") {
+            flushVocabBatch();
+            output += `
+              <div class="grammar-box">
+                <div class="grammar-box-header">⚡ ${escapeHtml(el.title || 'Language Focus & Structural Patterns')}</div>
+                <div class="grammar-box-body" style="white-space: pre-wrap;">${escapeHtml(el.content || '')}</div>
+              </div>
+            `;
+          } else if (el.type === "discussion-prompts") {
+            flushVocabBatch();
+            output += '<div class="discussion-list">';
+            (el.prompts || []).forEach((p, pIdx) => {
+              output += `
+                <div class="discussion-item">
+                  <span class="discussion-num">${pIdx + 1}</span>
+                  <span class="discussion-text">${escapeHtml(p)}</span>
+                </div>
+              `;
+            });
+            output += '</div>';
+          } else if (el.type === "headline-builder") {
+            flushVocabBatch();
+            const inputKey = `${elKey}_headline`;
+            const savedHeadline = getSavedStudentInput(inputKey) || "";
+            output += `
+              <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 12px; padding: 16px; margin: 14px 0; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
+                <div style="font-weight: 700; color: #1e293b; margin-bottom: 8px;">📰 ${escapeHtml(el.prompt || 'Complete the Breaking Headline:')}</div>
+                <div style="font-size: 1rem; color: #334155; margin-bottom: 12px; font-style: italic;">“${escapeHtml(el.headline || '')}”</div>
+                <div class="cosy-input-box"><input type="text" placeholder="Type your completed headline..." value="${escapeHtml(savedHeadline)}" oninput="saveStudentInput('${inputKey}', this.value); if(window.CosyProgress && window.CosyProgress.saveAnswer){ window.CosyProgress.saveAnswer('${inputKey}', this.value); }" style="width: 100%; padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 8px;" /></div>
+              </div>
+            `;
+          } else if (el.type === "error-correction") {
+            flushVocabBatch();
+            output += '<div class="correction-list">';
+            (el.pairs || []).forEach(pair => {
+              output += `
+                <div class="correction-card">
+                  <span class="correction-wrong">❌ ${escapeHtml(pair.incorrect || '')}</span>
+                  <span class="correction-arrow">➔</span>
+                  <span class="correction-right">✔️ ${escapeHtml(pair.correct || '')}</span>
+                  ${pair.note ? `<div style="flex-basis: 100%; font-size: 0.84rem; color: #64748b; margin-top: 4px;">💡 ${escapeHtml(pair.note)}</div>` : ''}
+                </div>
+              `;
+            });
+            output += '</div>';
+          } else if (el.type === "studio-text") {
+            flushVocabBatch();
+            output += '<p style="white-space:pre-wrap;line-height:1.7;">' + escapeHtml(el.content) + '</p>';
           } else if (el.type === "studio-prompt") {
-            output += '<p style="white-space:pre-wrap;line-height:1.7;font-weight:600;">' + escapeStudioText(el.content) + '</p>';
+            flushVocabBatch();
+            output += '<p style="white-space:pre-wrap;line-height:1.7;font-weight:600;">' + escapeHtml(el.content) + '</p>';
           } else if (el.type === "studio-input") {
+            flushVocabBatch();
             const fieldKey = 'studio_' + String(el.fieldKey || slide.id || 'answer').replace(/[^a-zA-Z0-9_-]/g, '_');
-            const placeholder = escapeStudioText(el.placeholder || 'Type answer...');
+            const placeholder = escapeHtml(el.placeholder || 'Type answer...');
             const saved = getSavedStudentInput(fieldKey);
-            output += '<div class="cosy-input-box"><input type="text" aria-label="' + escapeStudioText(el.label || 'Your answer') + '" placeholder="' + placeholder + '" value="' + escapeStudioText(saved) + '" oninput="saveStudentInput(\'' + fieldKey + '\', this.value)" /></div>';
+            output += '<div class="cosy-input-box"><input type="text" aria-label="' + escapeHtml(el.label || 'Your answer') + '" placeholder="' + placeholder + '" value="' + escapeHtml(saved) + '" oninput="saveStudentInput(\'' + fieldKey + '\', this.value)" /></div>';
           } else if (el.type === "instruction") {
-            output += `<cosy-instruction>📋 ${el.content}</cosy-instruction>`;
+            flushVocabBatch();
+            output += `<cosy-instruction>📋 ${escapeHtml(el.content)}</cosy-instruction>`;
           } else if (el.type === "blockquote") {
-            output += `<cosy-blockquote>${el.content}</cosy-blockquote>`;
-          } else if (el.type === "test") {
+            const trimmed = (el.content || "").trim();
+            if (trimmed.startsWith("•") && (trimmed.includes(":") || trimmed.includes("Example:"))) {
+              currentVocabBatch.push(formatStructuredBlockquote(trimmed));
+            } else {
+              flushVocabBatch();
+              output += formatStructuredBlockquote(trimmed);
+            }
+          } else if (el.type === "essay") {
+            flushVocabBatch();
+            const essayKey = `${elKey}_essay`;
+            const savedEssay = getSavedStudentInput(essayKey) || "";
+            const statusId = `${essayKey}_status`;
+            output += `
+              <div class="modern-essay-box">
+                <div class="modern-essay-label">✍️ Your Response &amp; Presentation Practice</div>
+                <textarea id="${essayKey}_textarea" class="modern-essay-textarea" placeholder="${escapeHtml(el.placeholder || 'Write your speaking notes, draft sentences, or presentation summary here...')}" oninput="saveStudentInput('${essayKey}', this.value); if(window.CosyProgress && window.CosyProgress.saveAnswer){ window.CosyProgress.saveAnswer('${essayKey}', this.value); } document.getElementById('${statusId}').innerText='Saved on this device';">${escapeHtml(savedEssay)}</textarea>
+                <div class="modern-essay-hint">
+                  <span id="${statusId}">${savedEssay ? 'Saved on this device' : 'Draft autosaves as you type'}</span>
+                  <button type="button" class="btn btn-secondary" style="padding: 4px 14px; font-size: 0.82rem;" onclick="saveStudentInput('${essayKey}', document.getElementById('${essayKey}_textarea').value); if(window.CosyProgress && window.CosyProgress.saveAnswer){ window.CosyProgress.saveAnswer('${essayKey}', document.getElementById('${essayKey}_textarea').value); } document.getElementById('${statusId}').innerText='Saved on this device'; if(window.CosyUI && window.CosyUI.toast){ window.CosyUI.toast('Response saved!'); }">Save Draft</button>
+                </div>
+              </div>
+            `;
+          } else if (el.type === "test" || el.type === "quiz") {
+            flushVocabBatch();
             output += `<div class="cosy-test-question">`;
+            if (el.question) output += `<div style="font-weight: 700; margin-bottom: 8px;">${escapeHtml(el.question)}</div>`;
             if (el.options) {
-              const qName = "q_" + Math.random().toString(36).substring(2, 8);
+              const qName = `${elKey}_choice`;
+              const savedVal = getSavedStudentInput(qName);
               el.options.forEach(opt => {
-                output += `<label class="cosy-test-option"><input type="radio" name="${qName}" /> ${opt}</label>`;
+                const isChecked = savedVal === opt ? "checked" : "";
+                output += `<label class="cosy-test-option"><input type="radio" name="${qName}" value="${escapeHtml(opt)}" ${isChecked} onchange="saveStudentInput('${qName}', this.value); if(window.CosyProgress && window.CosyProgress.saveAnswer){ window.CosyProgress.saveAnswer('${qName}', this.value); }" /> ${escapeHtml(opt)}</label>`;
               });
             }
             output += `</div>`;
           } else if (el.type === "input") {
-            output += `<div class="cosy-input-box"><input type="text" placeholder="Type answer..." /></div>`;
+            flushVocabBatch();
+            const inputKey = `${elKey}_input`;
+            const savedInput = getSavedStudentInput(inputKey) || "";
+            output += `<div class="cosy-input-box"><input type="text" placeholder="${escapeHtml(el.placeholder || 'Type answer...')}" value="${escapeHtml(savedInput)}" oninput="saveStudentInput('${inputKey}', this.value); if(window.CosyProgress && window.CosyProgress.saveAnswer){ window.CosyProgress.saveAnswer('${inputKey}', this.value); }" style="width: 100%; max-width: 480px; padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 8px;" /></div>`;
           } else if (el.type === "image") {
+            flushVocabBatch();
             const src = el.src || el.resourceId || "";
             if (typeof src === "string" && src.startsWith("https://")) {
               output += `<img src="${src}" loading="lazy" alt="" style="max-width: 100%; border-radius: 8px; margin: 12px 0; display: block;" />`;
             }
           }
         });
+        flushVocabBatch();
       }
       return output;
     }

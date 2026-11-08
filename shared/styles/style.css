@@ -553,14 +553,289 @@ body.projector-mode .teacher-note-speech {
   }
 }
 
+/* Modern Interactive Classroom & Lesson Styling (Skyeng / Edvibe / Preply inspired) */
+.lesson-card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin: 1rem 0;
+}
+
+/* Vocabulary Grid & Cards */
+.vocab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0;
+}
+
+.vocab-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.15rem 1.25rem;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  border-top: 4px solid var(--primary-color, #0284c7);
+}
+
+.vocab-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.09);
+  border-color: #cbd5e1;
+}
+
+.vocab-word-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 750;
+  font-size: 1.1rem;
+  color: #0f172a;
+}
+
+.vocab-word-badge .vocab-icon {
+  font-size: 1.2rem;
+}
+
+.vocab-def {
+  font-size: 0.95rem;
+  color: #334155;
+  line-height: 1.55;
+}
+
+.vocab-example {
+  margin-top: auto;
+  padding-top: 0.65rem;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #64748b;
+  border-top: 1px dashed #e2e8f0;
+}
+
+/* Discussion / Speaking Stage */
+.discussion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin: 1.25rem 0;
+}
+
+.discussion-item {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.15rem 1.35rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.1rem;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.03);
+  transition: border-color 0.15s ease;
+}
+
+.discussion-item:hover {
+  border-color: #94a3b8;
+}
+
+.discussion-num {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--cosy-platform-accent-light, #e0f2fe);
+  color: var(--primary-color, #0284c7);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 750;
+  font-size: 0.92rem;
+}
+
+.discussion-text {
+  font-size: 1.02rem;
+  color: #1e293b;
+  font-weight: 500;
+  line-height: 1.58;
+  flex: 1;
+}
+
+/* Grammar / Language Focus Panel */
+.grammar-box {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  border: 1px solid #bae6fd;
+  border-radius: 12px;
+  padding: 1.35rem 1.5rem;
+  margin: 1.25rem 0;
+  color: #0369a1;
+}
+
+.grammar-box-header {
+  font-weight: 750;
+  font-size: 1.1rem;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #075985;
+}
+
+.grammar-box-body {
+  color: #0c4a6e;
+  font-size: 0.96rem;
+  line-height: 1.62;
+}
+
+/* Journal / Reading / Research Panel */
+.journal-panel {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-left: 5px solid #64748b;
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  margin: 1.25rem 0;
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: #334155;
+}
+
+.journal-header {
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #475569;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Error Corrections / Teacher Feedback Chips */
+.correction-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin: 1.25rem 0;
+}
+
+.correction-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem;
+  background: #ffffff;
+  border: 1px solid #fed7aa;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+}
+
+.correction-wrong {
+  color: #b91c1c;
+  background: #fee2e2;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: line-through;
+}
+
+.correction-arrow {
+  color: #64748b;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.correction-right {
+  color: #15803d;
+  background: #dcfce7;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+/* Modern Essay & Interactive Response Box */
+.modern-essay-box {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 1.35rem;
+  margin: 1.25rem 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+}
+
+.modern-essay-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 750;
+  font-size: 1rem;
+  color: #1e293b;
+  margin-bottom: 0.85rem;
+}
+
+.modern-essay-textarea {
+  width: 100%;
+  min-height: 130px;
+  padding: 12px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #0f172a;
+  background: #f8fafc;
+  resize: vertical;
+  transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.modern-essay-textarea:focus {
+  background: #ffffff;
+  border-color: var(--primary-color, #0284c7) !important;
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.18);
+  outline: none;
+}
+
+.modern-essay-hint {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.82rem;
+  color: #64748b;
+  margin-top: 8px;
+}
+
 /* Dark Mode Card Overrides */
 html[data-theme="dark"] .notice-card,
 html[data-theme="dark"] .section-card,
 html[data-theme="dark"] .unit-card,
 body.theme-dark .notice-card,
 body.theme-dark .section-card,
-body.theme-dark .unit-card {
+body.theme-dark .unit-card,
+body.theme-dark .vocab-card,
+body.theme-dark .discussion-item,
+body.theme-dark .modern-essay-box {
   background: #1e293b !important;
   border-color: rgba(56, 189, 248, 0.25) !important;
   color: #f8fafc !important;
+}
+
+body.theme-dark .vocab-word-badge,
+body.theme-dark .discussion-text,
+body.theme-dark .modern-essay-label {
+  color: #f8fafc !important;
+}
+
+body.theme-dark .vocab-def,
+body.theme-dark .vocab-example {
+  color: #cbd5e1 !important;
+}
+
+body.theme-dark .modern-essay-textarea {
+  background: #0f172a !important;
+  color: #f8fafc !important;
+  border-color: #334155 !important;
 }

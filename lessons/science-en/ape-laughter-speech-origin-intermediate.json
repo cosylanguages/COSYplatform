@@ -46,12 +46,59 @@
           "content": "Master the core scientific vocabulary and collocations for this topic (10 items):"
         },
         {
-          "type": "blockquote",
-          "content": "• Vocalization: the utterance of a sound, particularly by an animal.\n   Example: \"Birds use complex vocalizations to attract mates in the spring.\"\n\n• Evolutionary: relating to the gradual development of something over generations.\n   Example: \"Our thumbs are a vital evolutionary adaptation for using tools.\"\n\n• Induce: to bring about or give rise to.\n   Example: \"Playful physical contact can induce laughter in young mammals.\"\n\n• Chimpanzee: a great ape with large ears, mainly black coloration, and lighter skin on the face.\n   Example: \"The chimpanzee is considered one of our closest living genetic relatives.\"\n\n• Origin: the point or place where something begins or is created.\n   Example: \"Scientists continue to debate the exact geographic origin of modern humans.\""
-        },
-        {
-          "type": "blockquote",
-          "content": "• Structural: relating to the arrangement of and relations between the parts of something complex.\n   Example: \"There are clear structural similarities between ape and human hands.\"\n\n• Matriarchal: relating to a social system ruled by women or female leaders.\n   Example: \"Bonobos live in peaceful, matriarchal communities in the rainforest.\"\n\n• Heredity: the passing on of physical or mental characteristics genetically from one generation to another.\n   Example: \"Heredity determines your natural eye color and blood type.\"\n\n• Acoustic: relating to sound or the sense of hearing.\n   Example: \"Researchers analyzed the acoustic properties of chimpanzee pant-hoots.\"\n\n• Cognitive: relating to the mental action or process of acquiring knowledge.\n   Example: \"Solving complex puzzles is an excellent cognitive task for primates.\""
+          "type": "vocab-cards",
+          "items": [
+            {
+              "word": "Vocalization",
+              "definition": "the utterance of a sound, particularly by an animal.",
+              "example": "Birds use complex vocalizations to attract mates in the spring."
+            },
+            {
+              "word": "Evolutionary",
+              "definition": "relating to the gradual development of something over generations.",
+              "example": "Our thumbs are a vital evolutionary adaptation for using tools."
+            },
+            {
+              "word": "Induce",
+              "definition": "to bring about or give rise to.",
+              "example": "Playful physical contact can induce laughter in young mammals."
+            },
+            {
+              "word": "Chimpanzee",
+              "definition": "a great ape with large ears, mainly black coloration, and lighter skin on the face.",
+              "example": "The chimpanzee is considered one of our closest living genetic relatives."
+            },
+            {
+              "word": "Origin",
+              "definition": "the point or place where something begins or is created.",
+              "example": "Scientists continue to debate the exact geographic origin of modern humans."
+            },
+            {
+              "word": "Structural",
+              "definition": "relating to the arrangement of and relations between the parts of something complex.",
+              "example": "There are clear structural similarities between ape and human hands."
+            },
+            {
+              "word": "Matriarchal",
+              "definition": "relating to a social system ruled by women or female leaders.",
+              "example": "Bonobos live in peaceful, matriarchal communities in the rainforest."
+            },
+            {
+              "word": "Heredity",
+              "definition": "the passing on of physical or mental characteristics genetically from one generation to another.",
+              "example": "Heredity determines your natural eye color and blood type."
+            },
+            {
+              "word": "Acoustic",
+              "definition": "relating to sound or the sense of hearing.",
+              "example": "Researchers analyzed the acoustic properties of chimpanzee pant-hoots."
+            },
+            {
+              "word": "Cognitive",
+              "definition": "relating to the mental action or process of acquiring knowledge.",
+              "example": "Solving complex puzzles is an excellent cognitive task for primates."
+            }
+          ]
         },
         {
           "type": "instruction",
@@ -73,8 +120,9 @@
           "content": "Study the scientific discourse patterns and grammar structures:"
         },
         {
-          "type": "blockquote",
-          "content": "⚡ Grammar Explanation (Intermediate (B1))\nUse modal verbs like 'must', 'might', 'could', and 'can't' to make deductions based on current evidence.\n🧩 Interactive Word Bank:\nTap a word chip below, then tap any empty bracket [_____] to place it!\ncan't be\nmust be\ncould not\nmust\nmust have\ncan't\nmight explain\n📝 Task 1 : Part A: Rule Formulation:\nComplete the rule: Use _____ when you are 100% certain something is true. Use _____ when you are certain it is impossible.\n📝 Task 1 : Part B: Structured Practice:\nApe play tickling _____ closely related to human speech origins.\nThey _____ speak because their breathing was too limited.\nThis acoustic overlap _____ how early phonemes developed.\nThe researchers _____ verified their results before publishing.\nThat sound _____ a bird call; it sounds exactly like a chimpanzee.\nCheck Answers\nReset Board\n🗣️ Task 2 : Interactive Speaking:\nLook at a weird pet behavior. Speculate using 'must' and 'might' to explain why they do it."
+          "type": "grammar-spotlight",
+          "title": "Grammar Explanation (Intermediate (B1))",
+          "content": "Use modal verbs like 'must', 'might', 'could', and 'can't' to make deductions based on current evidence.\n🧩 Interactive Word Bank:\nTap a word chip below, then tap any empty bracket [_____] to place it!\ncan't be\nmust be\ncould not\nmust\nmust have\ncan't\nmight explain\n📝 Task 1 : Part A: Rule Formulation:\nComplete the rule: Use _____ when you are 100% certain something is true. Use _____ when you are certain it is impossible.\n📝 Task 1 : Part B: Structured Practice:\nApe play tickling _____ closely related to human speech origins.\nThey _____ speak because their breathing was too limited.\nThis acoustic overlap _____ how early phonemes developed.\nThe researchers _____ verified their results before publishing.\nThat sound _____ a bird call; it sounds exactly like a chimpanzee.\nCheck Answers\nReset Board\n🗣️ Task 2 : Interactive Speaking:\nLook at a weird pet behavior. Speculate using 'must' and 'might' to explain why they do it."
         },
         {
           "type": "instruction",
@@ -96,12 +144,24 @@
           "content": "Analyze the core scientific findings and discuss the personal prompts in pairs:"
         },
         {
-          "type": "blockquote",
-          "content": "• According to the article, what evolutionary pathways explain the origin of human speech?\n\n• What data presented in the paper shows that tickle sessions can induce play-laughter in chimpanzees?\n\n• According to the article, how do the acoustic parameters of wild great apes compare to human syllables?\n\n• Based on the research findings, what are the primary structural differences between ape play-calls and formal speech?\n\n• According to the study, how do social bonobos organize peaceful, matriarchal hierarchies?"
+          "type": "discussion-prompts",
+          "prompts": [
+            "According to the article, what evolutionary pathways explain the origin of human speech?",
+            "What data presented in the paper shows that tickle sessions can induce play-laughter in chimpanzees?",
+            "According to the article, how do the acoustic parameters of wild great apes compare to human syllables?",
+            "Based on the research findings, what are the primary structural differences between ape play-calls and formal speech?",
+            "According to the study, how do social bonobos organize peaceful, matriarchal hierarchies?"
+          ]
         },
         {
-          "type": "blockquote",
-          "content": "• What evidence is there that genetic heredity limits vocal breath control in primates?\n\n• According to the article, how does cooperative play boost high-level cognitive development?\n\n• Based on the text, what unique vocalization is shared between bonobos, chimpanzees, and humans?\n\n• How did the research team isolate the play sounds of a captive chimpanzee?\n\n• What evolutionary factors listed in the article explain why evolutionary biology must look at ancient primate networks?"
+          "type": "discussion-prompts",
+          "prompts": [
+            "What evidence is there that genetic heredity limits vocal breath control in primates?",
+            "According to the article, how does cooperative play boost high-level cognitive development?",
+            "Based on the text, what unique vocalization is shared between bonobos, chimpanzees, and humans?",
+            "How did the research team isolate the play sounds of a captive chimpanzee?",
+            "What evolutionary factors listed in the article explain why evolutionary biology must look at ancient primate networks?"
+          ]
         },
         {
           "type": "essay",
@@ -138,12 +198,24 @@
           "content": "Discuss future societal implications, ethical dilemmas, and technological projections:"
         },
         {
-          "type": "blockquote",
-          "content": "• If future research continues to support this hypothesis, synthetic biology will enable humans to genetically modify vocalization networks in other mammals.\n\n• As our understanding of this discovery develops, acoustic filters will isolate the exact genetic origin of laughter across species.\n\n• Imagine future research proves that play-laughter can induce high-speed neural healing, how would hospitals use sound therapy?\n\n• If future research continues to support this hypothesis, we will prove that a wild chimpanzee shares our basic cognitive structures for sarcasm.\n\n• As our understanding of this discovery develops, we will rewrite the evolutionary history of speech to date languages back 10 million years."
+          "type": "discussion-prompts",
+          "prompts": [
+            "If future research continues to support this hypothesis, synthetic biology will enable humans to genetically modify vocalization networks in other mammals.",
+            "As our understanding of this discovery develops, acoustic filters will isolate the exact genetic origin of laughter across species.",
+            "Imagine future research proves that play-laughter can induce high-speed neural healing, how would hospitals use sound therapy?",
+            "If future research continues to support this hypothesis, we will prove that a wild chimpanzee shares our basic cognitive structures for sarcasm.",
+            "As our understanding of this discovery develops, we will rewrite the evolutionary history of speech to date languages back 10 million years."
+          ]
         },
         {
-          "type": "blockquote",
-          "content": "• Imagine future research shows that structural phonetic shifts in ape calls are regional, what would this tell us about animal geography?\n\n• If future research continues to support this hypothesis, human child education will incorporate cooperative play patterns modeled after matriarchal bonobo groups.\n\n• As our understanding of this discovery develops, we will prove that vocal heredity restricts how foreign accents are acquired.\n\n• Imagine future research proves that acoustic laughter builds a shared field of empathy, how would public speakers leverage this data?\n\n• If future research continues to support this hypothesis, we will design cognitive therapy systems that use primate play calls to relieve depression."
+          "type": "discussion-prompts",
+          "prompts": [
+            "Imagine future research shows that structural phonetic shifts in ape calls are regional, what would this tell us about animal geography?",
+            "If future research continues to support this hypothesis, human child education will incorporate cooperative play patterns modeled after matriarchal bonobo groups.",
+            "As our understanding of this discovery develops, we will prove that vocal heredity restricts how foreign accents are acquired.",
+            "Imagine future research proves that acoustic laughter builds a shared field of empathy, how would public speakers leverage this data?",
+            "If future research continues to support this hypothesis, we will design cognitive therapy systems that use primate play calls to relieve depression."
+          ]
         },
         {
           "type": "essay",
@@ -161,8 +233,19 @@
           "content": "✏️ Common Linguistic Pitfalls & Target Corrections:"
         },
         {
-          "type": "blockquote",
-          "content": "❌ The chimpanzees pant-hoots are acoustic ➔ ✔️ Chimpanzee pant-hoots are acoustic (Omit definite article for general plurals)\n❌ I am interesting in bonobos ➔ ✔️ I am interested in bonobos (Use participle adjective 'interested')"
+          "type": "error-correction",
+          "pairs": [
+            {
+              "incorrect": "The chimpanzees pant-hoots are acoustic",
+              "correct": "Chimpanzee pant-hoots are acoustic",
+              "note": "Omit definite article for general plurals"
+            },
+            {
+              "incorrect": "I am interesting in bonobos",
+              "correct": "I am interested in bonobos",
+              "note": "Use participle adjective 'interested'"
+            }
+          ]
         },
         {
           "type": "instruction",

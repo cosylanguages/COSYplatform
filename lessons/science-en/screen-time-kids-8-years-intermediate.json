@@ -38,12 +38,59 @@
           "content": "Master the core scientific vocabulary and collocations for this topic (10 items):"
         },
         {
-          "type": "blockquote",
-          "content": "• Longitudinal ≠ Cross-sectional: conducted over a long period of time to track changes.\n   Example: \"Longitudinal studies help scientists understand developmental patterns over decades.\"\n\n• Executive Functioning ≠ Impulsivity: cognitive processes including self-control, working memory, and focus.\n   Example: \"High executive functioning helps children solve complex puzzles.\"\n\n• Sedentary ≠ Active: involving a lot of sitting and little physical exercise.\n   Example: \"A sedentary lifestyle can harm both physical health and attention span.\"\n\n• Cognitive Load ≠ Mental ease: the total amount of mental effort used in working memory.\n   Example: \"Fast-paced videos increase cognitive load in young minds.\"\n\n• Regulation ≠ Dysregulation: the ability to manage and control emotional responses.\n   Example: \"Emotional regulation improves when children spend time outdoors.\""
-        },
-        {
-          "type": "blockquote",
-          "content": "• Exposure ≠ Protection: the state of experiencing or being subjected to an influence.\n   Example: \"Limiting screen exposure before bedtime leads to better sleep quality.\"\n\n• Attentive ≠ Distracted: paying close attention to something.\n   Example: \"Children are more attentive when engaging in interactive storytelling.\"\n\n• Intervention ≠ Neglect: action taken to improve a situation or prevent harm.\n   Example: \"Parental intervention can guide healthier digital media habits.\"\n\n• Stimulation ≠ Boredom: encouraging activity, growth, or interest.\n   Example: \"Over-stimulation from rapid animations can cause fatigue.\"\n\n• Correlation ≠ Independence: a mutual relationship or connection between two things.\n   Example: \"The study highlighted a strong correlation between outdoor play and focus.\""
+          "type": "vocab-cards",
+          "items": [
+            {
+              "word": "Longitudinal ≠ Cross-sectional",
+              "definition": "conducted over a long period of time to track changes.",
+              "example": "Longitudinal studies help scientists understand developmental patterns over decades."
+            },
+            {
+              "word": "Executive Functioning ≠ Impulsivity",
+              "definition": "cognitive processes including self-control, working memory, and focus.",
+              "example": "High executive functioning helps children solve complex puzzles."
+            },
+            {
+              "word": "Sedentary ≠ Active",
+              "definition": "involving a lot of sitting and little physical exercise.",
+              "example": "A sedentary lifestyle can harm both physical health and attention span."
+            },
+            {
+              "word": "Cognitive Load ≠ Mental ease",
+              "definition": "the total amount of mental effort used in working memory.",
+              "example": "Fast-paced videos increase cognitive load in young minds."
+            },
+            {
+              "word": "Regulation ≠ Dysregulation",
+              "definition": "the ability to manage and control emotional responses.",
+              "example": "Emotional regulation improves when children spend time outdoors."
+            },
+            {
+              "word": "Exposure ≠ Protection",
+              "definition": "the state of experiencing or being subjected to an influence.",
+              "example": "Limiting screen exposure before bedtime leads to better sleep quality."
+            },
+            {
+              "word": "Attentive ≠ Distracted",
+              "definition": "paying close attention to something.",
+              "example": "Children are more attentive when engaging in interactive storytelling."
+            },
+            {
+              "word": "Intervention ≠ Neglect",
+              "definition": "action taken to improve a situation or prevent harm.",
+              "example": "Parental intervention can guide healthier digital media habits."
+            },
+            {
+              "word": "Stimulation ≠ Boredom",
+              "definition": "encouraging activity, growth, or interest.",
+              "example": "Over-stimulation from rapid animations can cause fatigue."
+            },
+            {
+              "word": "Correlation ≠ Independence",
+              "definition": "a mutual relationship or connection between two things.",
+              "example": "The study highlighted a strong correlation between outdoor play and focus."
+            }
+          ]
         },
         {
           "type": "instruction",
@@ -80,8 +127,14 @@
           "content": "Analyze the core scientific findings and discuss the personal prompts in pairs:"
         },
         {
-          "type": "blockquote",
-          "content": "• According to the eight-year study, how does early screen exposure affect a child's executive functioning and attention?\n\n• Why do scientists emphasize the difference between passive video viewing and interactive stimulation?\n\n• What role does parental intervention play in establishing healthy digital routines for young kids?\n\n• How can excessive sedentary behavior during early development influence long-term physical health?\n\n• Is there a clear correlation between early device usage and emotional regulation challenges later in school?"
+          "type": "discussion-prompts",
+          "prompts": [
+            "According to the eight-year study, how does early screen exposure affect a child's executive functioning and attention?",
+            "Why do scientists emphasize the difference between passive video viewing and interactive stimulation?",
+            "What role does parental intervention play in establishing healthy digital routines for young kids?",
+            "How can excessive sedentary behavior during early development influence long-term physical health?",
+            "Is there a clear correlation between early device usage and emotional regulation challenges later in school?"
+          ]
         },
         {
           "type": "essay",

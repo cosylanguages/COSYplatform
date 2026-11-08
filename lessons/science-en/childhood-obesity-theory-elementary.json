@@ -46,12 +46,59 @@
           "content": "Master the core scientific vocabulary and collocations for this topic (10 items):"
         },
         {
-          "type": "blockquote",
-          "content": "• Overweight: fat or heavier than is healthy.\n   Example: \"Eating too much sugar can make children overweight.\"\n\n• Healthy: strong and not sick.\n   Example: \"Eating fresh vegetables keeps your body healthy.\"\n\n• Activity: physical movement or exercise.\n   Example: \"Running in the playground is a fun outdoor activity.\"\n\n• Habit: something you do regularly.\n   Example: \"Drinking water in the morning is a good daily habit.\"\n\n• Prevent: to stop something from happening.\n   Example: \"Washing your hands helps to prevent catching a cold.\""
-        },
-        {
-          "type": "blockquote",
-          "content": "• Calorie: a unit of energy from food.\n   Example: \"A sweet apple has fewer calories than a chocolate bar.\"\n\n• Balance: a state where things are equal.\n   Example: \"We need a good balance between work and rest.\"\n\n• Theory: an explanation or idea.\n   Example: \"The teacher explained a new science theory to the class.\"\n\n• Fast food: quick and easy food from restaurants.\n   Example: \"Burgers and French fries are popular types of fast food.\"\n\n• Active: moving a lot or doing exercise.\n   Example: \"Dogs are very active animals that love to run.\""
+          "type": "vocab-cards",
+          "items": [
+            {
+              "word": "Overweight",
+              "definition": "fat or heavier than is healthy.",
+              "example": "Eating too much sugar can make children overweight."
+            },
+            {
+              "word": "Healthy",
+              "definition": "strong and not sick.",
+              "example": "Eating fresh vegetables keeps your body healthy."
+            },
+            {
+              "word": "Activity",
+              "definition": "physical movement or exercise.",
+              "example": "Running in the playground is a fun outdoor activity."
+            },
+            {
+              "word": "Habit",
+              "definition": "something you do regularly.",
+              "example": "Drinking water in the morning is a good daily habit."
+            },
+            {
+              "word": "Prevent",
+              "definition": "to stop something from happening.",
+              "example": "Washing your hands helps to prevent catching a cold."
+            },
+            {
+              "word": "Calorie",
+              "definition": "a unit of energy from food.",
+              "example": "A sweet apple has fewer calories than a chocolate bar."
+            },
+            {
+              "word": "Balance",
+              "definition": "a state where things are equal.",
+              "example": "We need a good balance between work and rest."
+            },
+            {
+              "word": "Theory",
+              "definition": "an explanation or idea.",
+              "example": "The teacher explained a new science theory to the class."
+            },
+            {
+              "word": "Fast food",
+              "definition": "quick and easy food from restaurants.",
+              "example": "Burgers and French fries are popular types of fast food."
+            },
+            {
+              "word": "Active",
+              "definition": "moving a lot or doing exercise.",
+              "example": "Dogs are very active animals that love to run."
+            }
+          ]
         },
         {
           "type": "instruction",
@@ -88,12 +135,24 @@
           "content": "Analyze the core scientific findings and discuss the personal prompts in pairs:"
         },
         {
-          "type": "blockquote",
-          "content": "• According to the article, why are more children becoming overweight today than 40 years ago?\n\n• How does the study define a healthy daily diet for young children?\n\n• What evidence in the study shows that physical activity does not prevent weight gain by itself?\n\n• According to the article, what is the hardest eating habit to change in modern families?\n\n• How does the paper explain how we can prevent children from eating too much sugar?"
+          "type": "discussion-prompts",
+          "prompts": [
+            "According to the article, why are more children becoming overweight today than 40 years ago?",
+            "How does the study define a healthy daily diet for young children?",
+            "What evidence in the study shows that physical activity does not prevent weight gain by itself?",
+            "According to the article, what is the hardest eating habit to change in modern families?",
+            "How does the paper explain how we can prevent children from eating too much sugar?"
+          ]
         },
         {
-          "type": "blockquote",
-          "content": "• What data in the article compares the daily calorie intake of kids today with kids in 1980?\n\n• According to the researchers, how do we find a good balance between eating and exercising?\n\n• Why does the study say the old 42-year-old theory about weight gain is wrong?\n\n• Based on the study, how does cheap fast food affect school lunch choices?\n\n• According to the paper, were children in the past more active than children today?"
+          "type": "discussion-prompts",
+          "prompts": [
+            "What data in the article compares the daily calorie intake of kids today with kids in 1980?",
+            "According to the researchers, how do we find a good balance between eating and exercising?",
+            "Why does the study say the old 42-year-old theory about weight gain is wrong?",
+            "Based on the study, how does cheap fast food affect school lunch choices?",
+            "According to the paper, were children in the past more active than children today?"
+          ]
         },
         {
           "type": "essay",
@@ -130,12 +189,24 @@
           "content": "Discuss future societal implications, ethical dilemmas, and technological projections:"
         },
         {
-          "type": "blockquote",
-          "content": "• Imagine future research proves that eating too much sugar makes children overweight even if they run 5 kilometers every day.\n\n• As our understanding of this scientific breakthrough develops, schools will only serve healthy food and completely ban sweet snacks.\n\n• Imagine biotechnology allows us to create a pill that increases physical activity levels automatically without effort.\n\n• If future research continues to support this hypothesis, a daily eating habit will be tracked by smart home devices to help families.\n\n• Imagine biotechnology allows us to prevent weight gain by modifying human metabolism genes before birth."
+          "type": "discussion-prompts",
+          "prompts": [
+            "Imagine future research proves that eating too much sugar makes children overweight even if they run 5 kilometers every day.",
+            "As our understanding of this scientific breakthrough develops, schools will only serve healthy food and completely ban sweet snacks.",
+            "Imagine biotechnology allows us to create a pill that increases physical activity levels automatically without effort.",
+            "If future research continues to support this hypothesis, a daily eating habit will be tracked by smart home devices to help families.",
+            "Imagine biotechnology allows us to prevent weight gain by modifying human metabolism genes before birth."
+          ]
         },
         {
-          "type": "blockquote",
-          "content": "• As our understanding of this scientific breakthrough develops, every food package will display the exact calorie cost in terms of exercise.\n\n• Imagine future research shows that a perfect balance of gut bacteria is more important for health than counting calories.\n\n• If future research proves this classic theory wrong, will we stop telling children to go outside to lose weight?\n\n• As our understanding of this scientific breakthrough develops, cheap fast food restaurants will be replaced by healthy public cafeterias.\n\n• Imagine future research proves that keeping children active is good for their brain but has zero effect on their physical weight."
+          "type": "discussion-prompts",
+          "prompts": [
+            "As our understanding of this scientific breakthrough develops, every food package will display the exact calorie cost in terms of exercise.",
+            "Imagine future research shows that a perfect balance of gut bacteria is more important for health than counting calories.",
+            "If future research proves this classic theory wrong, will we stop telling children to go outside to lose weight?",
+            "As our understanding of this scientific breakthrough develops, cheap fast food restaurants will be replaced by healthy public cafeterias.",
+            "Imagine future research proves that keeping children active is good for their brain but has zero effect on their physical weight."
+          ]
         },
         {
           "type": "essay",
@@ -153,8 +224,19 @@
           "content": "✏️ Common Linguistic Pitfalls & Target Corrections:"
         },
         {
-          "type": "blockquote",
-          "content": "❌ I am more active than my brother. ➔ ✔️ I am more active than my brother. (Underlined structure is actually correct!)\n❌ Children eat too much fast foods. ➔ ✔️ Children eat too much fast food. (Underlined error: 'fast food' is an uncountable noun, do not pluralize it)"
+          "type": "error-correction",
+          "pairs": [
+            {
+              "incorrect": "I am more active than my brother.",
+              "correct": "I am more active than my brother.",
+              "note": "Underlined structure is actually correct!"
+            },
+            {
+              "incorrect": "Children eat too much fast foods.",
+              "correct": "Children eat too much fast food.",
+              "note": "Underlined error: 'fast food' is an uncountable noun, do not pluralize it"
+            }
+          ]
         },
         {
           "type": "instruction",

@@ -38,12 +38,59 @@
           "content": "Master the core scientific vocabulary and collocations for this topic (10 items):"
         },
         {
-          "type": "blockquote",
-          "content": "• Bilingualism ≠ Monolingualism: the ability to speak two languages fluently.\n   Example: \"Early bilingualism enhances executive control networks.\"\n\n• Neuroplasticity ≠ Rigidity: the ability of the brain to form and reorganize synaptic connections.\n   Example: \"Neuroplasticity allows the brain to adapt throughout adulthood.\"\n\n• Cognitive Reserve ≠ Cognitive vulnerability: the brain's resilience to neuropathological damage.\n   Example: \"Language learning builds substantial cognitive reserve.\"\n\n• Inhibition ≠ Impulsivity: the ability to suppress irrelevant responses or distractions.\n   Example: \"Bilinguals practice active inhibition when selecting words.\"\n\n• Dementia ≠ Mental acuity: a chronic or persistent mental process disorder caused by brain disease.\n   Example: \"Bilingualism can delay dementia onset by several years.\""
-        },
-        {
-          "type": "blockquote",
-          "content": "• Executive Control ≠ Automatic response: higher-level cognitive processes managing goal-directed action.\n   Example: \"Executive control improves through constant task switching.\"\n\n• Stimulus ≠ Sedative: a thing or event that evokes a specific functional reaction.\n   Example: \"Language immersion acts as a powerful cognitive stimulus.\"\n\n• Adaptation ≠ Stagnation: the process of changing to better suit an environment.\n   Example: \"Brain adaptation occurs when learning complex grammar.\"\n\n• Synapse ≠ Degeneration: a junction between two nerve cells.\n   Example: \"Strong synapses support fast memory recall.\"\n\n• Longevity ≠ Short lifespan: long life or existence.\n   Example: \"Mental activity promotes brain health longevity.\""
+          "type": "vocab-cards",
+          "items": [
+            {
+              "word": "Bilingualism ≠ Monolingualism",
+              "definition": "the ability to speak two languages fluently.",
+              "example": "Early bilingualism enhances executive control networks."
+            },
+            {
+              "word": "Neuroplasticity ≠ Rigidity",
+              "definition": "the ability of the brain to form and reorganize synaptic connections.",
+              "example": "Neuroplasticity allows the brain to adapt throughout adulthood."
+            },
+            {
+              "word": "Cognitive Reserve ≠ Cognitive vulnerability",
+              "definition": "the brain's resilience to neuropathological damage.",
+              "example": "Language learning builds substantial cognitive reserve."
+            },
+            {
+              "word": "Inhibition ≠ Impulsivity",
+              "definition": "the ability to suppress irrelevant responses or distractions.",
+              "example": "Bilinguals practice active inhibition when selecting words."
+            },
+            {
+              "word": "Dementia ≠ Mental acuity",
+              "definition": "a chronic or persistent mental process disorder caused by brain disease.",
+              "example": "Bilingualism can delay dementia onset by several years."
+            },
+            {
+              "word": "Executive Control ≠ Automatic response",
+              "definition": "higher-level cognitive processes managing goal-directed action.",
+              "example": "Executive control improves through constant task switching."
+            },
+            {
+              "word": "Stimulus ≠ Sedative",
+              "definition": "a thing or event that evokes a specific functional reaction.",
+              "example": "Language immersion acts as a powerful cognitive stimulus."
+            },
+            {
+              "word": "Adaptation ≠ Stagnation",
+              "definition": "the process of changing to better suit an environment.",
+              "example": "Brain adaptation occurs when learning complex grammar."
+            },
+            {
+              "word": "Synapse ≠ Degeneration",
+              "definition": "a junction between two nerve cells.",
+              "example": "Strong synapses support fast memory recall."
+            },
+            {
+              "word": "Longevity ≠ Short lifespan",
+              "definition": "long life or existence.",
+              "example": "Mental activity promotes brain health longevity."
+            }
+          ]
         },
         {
           "type": "instruction",
@@ -80,8 +127,14 @@
           "content": "Analyze the core scientific findings and discuss the personal prompts in pairs:"
         },
         {
-          "type": "blockquote",
-          "content": "• How does bilingualism stimulate neuroplasticity across different age groups?\n\n• Why does language switching strengthen executive control and active inhibition?\n\n• How does building cognitive reserve help delay symptoms of dementia?\n\n• Why is language immersion such an effective cognitive stimulus?\n\n• How does structural brain adaptation support lifelong mental longevity?"
+          "type": "discussion-prompts",
+          "prompts": [
+            "How does bilingualism stimulate neuroplasticity across different age groups?",
+            "Why does language switching strengthen executive control and active inhibition?",
+            "How does building cognitive reserve help delay symptoms of dementia?",
+            "Why is language immersion such an effective cognitive stimulus?",
+            "How does structural brain adaptation support lifelong mental longevity?"
+          ]
         },
         {
           "type": "essay",

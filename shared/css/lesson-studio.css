@@ -15,5 +15,38 @@
 @media(max-width:900px){.studio-workspace{grid-template-columns:1fr}.studio-heading{flex-direction:column}.studio-draft-note{max-width:none;width:auto}.studio-preview-panel{order:2}}
 @media(max-width:600px){.studio-metadata{grid-template-columns:1fr}.studio-topbar{align-items:flex-start}.studio-top-actions{width:100%}.studio-top-actions #save-status{flex-basis:100%}.studio-shell{padding:16px}.studio-panel-header{align-items:flex-start;flex-direction:column}.studio-mode-switch{align-self:flex-start}}
 
+/* Constructor Card Variants & Interactive Types */
+.studio-block-card[data-type="vocab_list"] { border-left: 4px solid #0284c7; }
+.studio-block-card[data-type="quiz"] { border-left: 4px solid #10b981; }
+.studio-block-card[data-type="discussion"] { border-left: 4px solid #f59e0b; }
+.studio-block-card[data-type="essay"] { border-left: 4px solid #8b5cf6; }
+.studio-block-card[data-type="correction"] { border-left: 4px solid #ef4444; }
+
+.studio-item-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.studio-item-row input, .studio-item-row textarea {
+  flex: 1;
+}
+
+.studio-mini-btn {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #475569;
+}
+
+.studio-mini-btn:hover {
+  background: #e2e8f0;
+}
+
 .studio-publish-panel{margin:0 0 20px;padding:20px;background:#fff;border:1px solid #bfdbfe;border-radius:16px;box-shadow:0 4px 18px rgba(15,23,42,.035)}
 .studio-publish-panel[hidden]{display:none}.studio-publish-panel h2{font-size:1.05rem;margin:0 0 6px;color:#172033}.studio-publish-panel p{font-size:.82rem;line-height:1.55;color:#64748b}.studio-publish-fields{display:grid;grid-template-columns:minmax(240px,1fr) minmax(130px,.35fr) auto;gap:12px;align-items:end}.studio-publish-fields label{display:flex;flex-direction:column;gap:7px;font-size:.8rem;font-weight:700;color:#475569}.studio-publish-fields select,.studio-publish-fields input{box-sizing:border-box;width:100%;min-height:40px;border:1px solid #cbd5e1;border-radius:9px;padding:10px 12px;background:#fff;color:#172033;font:inherit}.studio-publish-panel a{color:#1d4ed8;font-weight:700}@media(max-width:700px){.studio-publish-fields{grid-template-columns:1fr}}
