@@ -207,10 +207,10 @@ window.CosyAuth.FULL_MANIFEST = [
   {"id":"cinema-en-c1","title":"Cinema Club English C1","track":"Cinema","lang":"en","level":"c1","status":"not_yet_available"},
   {"id":"cinema-en-c2","title":"Cinema Club English C2","track":"Cinema","lang":"en","level":"c2","status":"not_yet_available"},
   {"id":"discussion-en-a1","title":"Special Discussion English A1","track":"Discussion","lang":"en","level":"a1","status":"not_yet_available"},
-  {"id":"discussion-en-a2","title":"Special Discussion English A2","track":"Discussion","lang":"en","level":"a2","status":"not_yet_available"},
+  {"id":"discussion-en-a2","title":"Special Discussion English A2","track":"Discussion","lang":"en","level":"a2"},
   {"id":"discussion-en-b1","title":"Special Discussion English B1","track":"Discussion","lang":"en","level":"b1"},
-  {"id":"discussion-en-b2","title":"Special Discussion English B2","track":"Discussion","lang":"en","level":"b2","status":"not_yet_available"},
-  {"id":"discussion-en-c1","title":"Special Discussion English C1","track":"Discussion","lang":"en","level":"c1","status":"not_yet_available"},
+  {"id":"discussion-en-b2","title":"Special Discussion English B2","track":"Discussion","lang":"en","level":"b2"},
+  {"id":"discussion-en-c1","title":"Special Discussion English C1","track":"Discussion","lang":"en","level":"c1"},
   {"id":"discussion-en-c2","title":"Special Discussion English C2","track":"Discussion","lang":"en","level":"c2","status":"not_yet_available"}
 ];
 // Backwards compatibility alias
