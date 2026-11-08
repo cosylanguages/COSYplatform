@@ -46,12 +46,59 @@
           "content": "Master the core scientific vocabulary and collocations for this topic (10 items):"
         },
         {
-          "type": "blockquote",
-          "content": "• Synapse: a junction between two nerve cells in the brain.\n   Example: \"Signals travel across the synapse to connect brain cells.\"\n\n• Artificial ≠ Natural: made or produced by human beings rather than occurring naturally ≠ existing in or caused by nature; not made or caused by humankind.\n   Example: \"There is a massive contrast between artificial networks and natural biological brains.\"\n\n• Contrast: the state of being strikingly different from something else.\n   Example: \"There is a massive contrast between biological and digital brains.\"\n\n• Network: a complex system of interconnected things, cells, or computers.\n   Example: \"Our brain is a vast biological network of billions of cells.\"\n\n• Energy: power derived from physical or chemical resources.\n   Example: \"The brain uses very little energy to perform complex calculations.\""
-        },
-        {
-          "type": "blockquote",
-          "content": "• Plasticity: the brain's ability to adapt and change its structure.\n   Example: \"Synaptic plasticity is the biological basis of learning.\"\n\n• Node: a connection point in a system or artificial network.\n   Example: \"An artificial neural network consists of thousands of nodes.\"\n\n• Efficiency ≠ Inefficiency: the state or quality of being efficient and saving resources ≠ lack of efficiency; waste of time or energy.\n   Example: \"Biological brains possess superior energy efficiency, whereas standard digital chips show thermodynamic inefficiency.\"\n\n• Structure: the arrangement of and relations between parts of something.\n   Example: \"The brain's structure is fundamentally different from a chip.\"\n\n• Compare: estimate, measure, or note the similarity or dissimilarity.\n   Example: \"Scientists compare artificial nodes to biological synapses.\""
+          "type": "vocab-cards",
+          "items": [
+            {
+              "word": "Synapse",
+              "definition": "a junction between two nerve cells in the brain.",
+              "example": "Signals travel across the synapse to connect brain cells."
+            },
+            {
+              "word": "Artificial ≠ Natural",
+              "definition": "made or produced by human beings rather than occurring naturally ≠ existing in or caused by nature; not made or caused by humankind.",
+              "example": "There is a massive contrast between artificial networks and natural biological brains."
+            },
+            {
+              "word": "Contrast",
+              "definition": "the state of being strikingly different from something else.",
+              "example": "There is a massive contrast between biological and digital brains."
+            },
+            {
+              "word": "Network",
+              "definition": "a complex system of interconnected things, cells, or computers.",
+              "example": "Our brain is a vast biological network of billions of cells."
+            },
+            {
+              "word": "Energy",
+              "definition": "power derived from physical or chemical resources.",
+              "example": "The brain uses very little energy to perform complex calculations."
+            },
+            {
+              "word": "Plasticity",
+              "definition": "the brain's ability to adapt and change its structure.",
+              "example": "Synaptic plasticity is the biological basis of learning."
+            },
+            {
+              "word": "Node",
+              "definition": "a connection point in a system or artificial network.",
+              "example": "An artificial neural network consists of thousands of nodes."
+            },
+            {
+              "word": "Efficiency ≠ Inefficiency",
+              "definition": "the state or quality of being efficient and saving resources ≠ lack of efficiency; waste of time or energy.",
+              "example": "Biological brains possess superior energy efficiency, whereas standard digital chips show thermodynamic inefficiency."
+            },
+            {
+              "word": "Structure",
+              "definition": "the arrangement of and relations between parts of something.",
+              "example": "The brain's structure is fundamentally different from a chip."
+            },
+            {
+              "word": "Compare",
+              "definition": "estimate, measure, or note the similarity or dissimilarity.",
+              "example": "Scientists compare artificial nodes to biological synapses."
+            }
+          ]
         },
         {
           "type": "instruction",
@@ -73,8 +120,9 @@
           "content": "Study the scientific discourse patterns and grammar structures:"
         },
         {
-          "type": "blockquote",
-          "content": "⚡ Grammar Explanation (Intermediate (B1))\nContrast connectors show a difference. Connectors like 'whereas' link two clauses, while 'despite' takes a noun or gerund.\n🧩 Interactive Word Bank:\nTap a word chip below, then tap any empty bracket [_____] to place it!\nconversely\nwhereas\nDespite\ndespite\nin spite of\nwhile\n📝 Task 1 : Part A: Rule Formulation:\nComplete the rule: Use _____ or 'while' to connect two complete clauses. Use _____ or 'in spite of' before noun phrases.\n📝 Task 1 : Part B: Structured Practice:\nThe brain uses sparse coding, _____ AI chips use massive energy.\n_____ being highly complex, artificial nodes lack biological plasticity.\nA biological synapse is dynamic, _____ an artificial connection is static.\nThey achieved energy efficiency _____ the high processing load.\nComputers excel at calculation, _____ humans excel at context.\nCheck Answers\nReset Board\n🗣️ Task 2 : Interactive Speaking:\nContrast biological brains with artificial neural networks using contrast connectors."
+          "type": "grammar-spotlight",
+          "title": "Grammar Explanation (Intermediate (B1))",
+          "content": "Contrast connectors show a difference. Connectors like 'whereas' link two clauses, while 'despite' takes a noun or gerund.\n🧩 Interactive Word Bank:\nTap a word chip below, then tap any empty bracket [_____] to place it!\nconversely\nwhereas\nDespite\ndespite\nin spite of\nwhile\n📝 Task 1 : Part A: Rule Formulation:\nComplete the rule: Use _____ or 'while' to connect two complete clauses. Use _____ or 'in spite of' before noun phrases.\n📝 Task 1 : Part B: Structured Practice:\nThe brain uses sparse coding, _____ AI chips use massive energy.\n_____ being highly complex, artificial nodes lack biological plasticity.\nA biological synapse is dynamic, _____ an artificial connection is static.\nThey achieved energy efficiency _____ the high processing load.\nComputers excel at calculation, _____ humans excel at context.\nCheck Answers\nReset Board\n🗣️ Task 2 : Interactive Speaking:\nContrast biological brains with artificial neural networks using contrast connectors."
         },
         {
           "type": "instruction",
@@ -96,12 +144,24 @@
           "content": "Analyze the core scientific findings and discuss the personal prompts in pairs:"
         },
         {
-          "type": "blockquote",
-          "content": "• According to the article, how does a biological synapse pass signals, and what makes it superior to a computer?\n\n• What evidence presented in the study highlights why artificial intelligence uses different principles to process information?\n\n• How does the article contrast the human brain with a microchip's structural layout?\n\n• According to the research, how does the brain's network of cells adapt when we acquire a new skill?\n\n• What empirical findings in the study show that human brains require very little energy compared to AI?"
+          "type": "discussion-prompts",
+          "prompts": [
+            "According to the article, how does a biological synapse pass signals, and what makes it superior to a computer?",
+            "What evidence presented in the study highlights why artificial intelligence uses different principles to process information?",
+            "How does the article contrast the human brain with a microchip's structural layout?",
+            "According to the research, how does the brain's network of cells adapt when we acquire a new skill?",
+            "What empirical findings in the study show that human brains require very little energy compared to AI?"
+          ]
         },
         {
-          "type": "blockquote",
-          "content": "• How does the article describe the role of biological plasticity during continuous learning?\n\n• According to the article, how does a standard AI node differ from a biological neuron?\n\n• What specific evidence does the article present to show the brain's superior efficiency?\n\n• How does the article show that the physical structure of the brain supports sparse coding?\n\n• When scientists compare an AI's backpropagation with brain learning, what core differences do they highlight?"
+          "type": "discussion-prompts",
+          "prompts": [
+            "How does the article describe the role of biological plasticity during continuous learning?",
+            "According to the article, how does a standard AI node differ from a biological neuron?",
+            "What specific evidence does the article present to show the brain's superior efficiency?",
+            "How does the article show that the physical structure of the brain supports sparse coding?",
+            "When scientists compare an AI's backpropagation with brain learning, what core differences do they highlight?"
+          ]
         },
         {
           "type": "essay",
@@ -127,8 +187,9 @@
           "content": "📰 Creative Task: Complete the Headline:"
         },
         {
-          "type": "blockquote",
-          "content": "Imagine researchers publish a breaking science story about bio-computing. Complete the headlines below with your own creative discoveries:\n\"Bio-engineers finally construct...\"\n\"New neuromorphic test reveals...\"\n\"AI simulation replicates synaptic plasticity and discovers...\""
+          "type": "headline-builder",
+          "prompt": "Complete the Breaking Science Headline:",
+          "headline": "Imagine researchers publish a breaking science story about bio-computing. Complete the headlines below with your own creative discoveries:\n\"Bio-engineers finally construct...\"\n\"New neuromorphic test reveals...\"\n\"AI simulation replicates synaptic plasticity and discovers...\""
         },
         {
           "type": "input",
@@ -146,12 +207,24 @@
           "content": "Discuss future societal implications, ethical dilemmas, and technological projections:"
         },
         {
-          "type": "blockquote",
-          "content": "• If future research continues to support this study, how will bio-computing chips change our digital networks?\n\n• Imagine future research proves that artificial synapses can adapt using biological plasticity. Would that mean robots possess real self-awareness?\n\n• Imagine biotechnology allows us to double human synaptic plasticity. Would this alter the core physical structure of our brain?\n\n• If future research proves that microchips can operate close to the brain's thermodynamic efficiency, how will this affect global digital energy consumption?\n\n• Imagine future neuromorphic chips replace standard computer processors. Will we finally build robots that can compare directly with humans in learning speed?"
+          "type": "discussion-prompts",
+          "prompts": [
+            "If future research continues to support this study, how will bio-computing chips change our digital networks?",
+            "Imagine future research proves that artificial synapses can adapt using biological plasticity. Would that mean robots possess real self-awareness?",
+            "Imagine biotechnology allows us to double human synaptic plasticity. Would this alter the core physical structure of our brain?",
+            "If future research proves that microchips can operate close to the brain's thermodynamic efficiency, how will this affect global digital energy consumption?",
+            "Imagine future neuromorphic chips replace standard computer processors. Will we finally build robots that can compare directly with humans in learning speed?"
+          ]
         },
         {
-          "type": "blockquote",
-          "content": "• Imagine AI models simulate biological synapses perfectly. Would this make physical brain-imaging research completely obsolete?\n\n• As our understanding of this discovery develops, if we prove that artificial nodes will never match organic efficiency, should we stop building large-scale AI?\n\n• If future research proves that a biological synapse is 10,000x more efficient than digital chips, will we build organic computers using actual human cells?\n\n• Imagine biotechnology allows us to change our brain's structure to match digital transfer rates. Would this create a massive cognitive contrast in society?\n\n• As our understanding of this study develops, if we find similar neural structures in other mammals, how will we adjust our ideas of animal intelligence?"
+          "type": "discussion-prompts",
+          "prompts": [
+            "Imagine AI models simulate biological synapses perfectly. Would this make physical brain-imaging research completely obsolete?",
+            "As our understanding of this discovery develops, if we prove that artificial nodes will never match organic efficiency, should we stop building large-scale AI?",
+            "If future research proves that a biological synapse is 10,000x more efficient than digital chips, will we build organic computers using actual human cells?",
+            "Imagine biotechnology allows us to change our brain's structure to match digital transfer rates. Would this create a massive cognitive contrast in society?",
+            "As our understanding of this study develops, if we find similar neural structures in other mammals, how will we adjust our ideas of animal intelligence?"
+          ]
         },
         {
           "type": "essay",
@@ -188,8 +261,19 @@
           "content": "✏️ Common Linguistic Pitfalls & Target Corrections:"
         },
         {
-          "type": "blockquote",
-          "content": "❌ The AI is more better than human. ➔ ✔️ The AI is much better than a human / superior to a human (Double comparison: Do not combine 'more' with comparative adjectives like 'better')\n❌ We must discuss about this new chip. ➔ ✔️ We must discuss this new chip. (Do not use 'about' after the transitive verb 'discuss')"
+          "type": "error-correction",
+          "pairs": [
+            {
+              "incorrect": "The AI is more better than human.",
+              "correct": "The AI is much better than a human / superior to a human",
+              "note": "Double comparison: Do not combine 'more' with comparative adjectives like 'better'"
+            },
+            {
+              "incorrect": "We must discuss about this new chip.",
+              "correct": "We must discuss this new chip.",
+              "note": "Do not use 'about' after the transitive verb 'discuss'"
+            }
+          ]
         },
         {
           "type": "instruction",

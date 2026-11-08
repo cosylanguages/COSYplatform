@@ -64,6 +64,17 @@
       } else if (block.type === 'fill_blank') {
         if (typeof block.prompt !== 'string') return 'Fill-in-the-blank block ' + (i + 1) + ' needs a prompt.';
         if (!Array.isArray(block.answers) || !block.answers.every((a) => typeof a === 'string')) return 'Answers for block ' + (i + 1) + ' must be a list of strings.';
+      } else if (block.type === 'vocab_list') {
+        if (!Array.isArray(block.items)) return 'Vocabulary block ' + (i + 1) + ' needs an items array.';
+      } else if (block.type === 'quiz') {
+        if (typeof block.question !== 'string') return 'Quiz block ' + (i + 1) + ' needs a question.';
+        if (!Array.isArray(block.options)) return 'Quiz block ' + (i + 1) + ' needs options.';
+      } else if (block.type === 'discussion') {
+        if (!Array.isArray(block.prompts)) return 'Discussion block ' + (i + 1) + ' needs prompts.';
+      } else if (block.type === 'essay') {
+        if (typeof block.prompt !== 'string') return 'Writing block ' + (i + 1) + ' needs a prompt.';
+      } else if (block.type === 'correction') {
+        if (!Array.isArray(block.pairs)) return 'Correction block ' + (i + 1) + ' needs pairs.';
       } else {
         return 'Block ' + (i + 1) + ' has unsupported type "' + String(block.type) + '".';
       }
@@ -95,13 +106,24 @@
       host.appendChild(empty);
       return;
     }
+    const typeLabels = {
+      text: 'Text',
+      fill_blank: 'Fill-in-the-blank',
+      vocab_list: 'Vocabulary Set',
+      quiz: 'Multiple Choice Quiz',
+      discussion: 'Discussion Prompts',
+      essay: 'Writing / Essay Task',
+      correction: 'Error Correction'
+    };
+
     state.doc.blocks.forEach((block, index) => {
       const card = document.createElement('article');
       card.className = 'studio-block-card';
+      card.setAttribute('data-type', block.type);
       const head = document.createElement('div');
       head.className = 'studio-block-head';
       const name = document.createElement('strong');
-      name.textContent = (index + 1) + '. ' + (block.type === 'text' ? 'Text' : 'Fill-in-the-blank');
+      name.textContent = (index + 1) + '. ' + (typeLabels[block.type] || block.type);
       const controls = document.createElement('div');
       controls.className = 'studio-block-controls';
       const up = document.createElement('button');
@@ -117,35 +139,205 @@
       head.append(name, controls);
       card.appendChild(head);
 
-      const field = document.createElement('label');
-      field.className = 'studio-field';
-      const label = document.createElement('span');
-      label.textContent = block.type === 'text' ? 'Text content' : 'Sentence / prompt';
-      const input = block.type === 'text' ? document.createElement('textarea') : document.createElement('input');
-      input.value = block.type === 'text' ? block.content : block.prompt;
-      input.rows = 3;
-      input.addEventListener('input', () => {
-        if (block.type === 'text') block.content = input.value;
-        else block.prompt = input.value;
-        changed(false);
-      });
-      field.append(label, input);
-      card.appendChild(field);
+      if (block.type === 'text') {
+        const field = document.createElement('label');
+        field.className = 'studio-field';
+        const label = document.createElement('span');
+        label.textContent = 'Text content';
+        const input = document.createElement('textarea');
+        input.value = block.content || '';
+        input.rows = 3;
+        input.addEventListener('input', () => { block.content = input.value; changed(false); });
+        field.append(label, input);
+        card.appendChild(field);
+      } else if (block.type === 'fill_blank') {
+        const field = document.createElement('label');
+        field.className = 'studio-field';
+        const label = document.createElement('span');
+        label.textContent = 'Sentence / prompt (use ___ for blank)';
+        const input = document.createElement('input');
+        input.value = block.prompt || '';
+        input.addEventListener('input', () => { block.prompt = input.value; changed(false); });
+        field.append(label, input);
+        card.appendChild(field);
 
-      if (block.type === 'fill_blank') {
         const answerField = document.createElement('label');
         answerField.className = 'studio-field';
         const answerLabel = document.createElement('span');
         answerLabel.textContent = 'Accepted answers (separate alternatives with |)';
         const answerInput = document.createElement('input');
-        answerInput.value = block.answers.join(' | ');
+        answerInput.value = (block.answers || []).join(' | ');
         answerInput.addEventListener('input', () => {
           block.answers = answerInput.value.split('|').map((a) => a.trim()).filter(Boolean);
           changed(false);
         });
         answerField.append(answerLabel, answerInput);
         card.appendChild(answerField);
+      } else if (block.type === 'vocab_list') {
+        block.items = block.items || [];
+        const container = document.createElement('div');
+        container.className = 'studio-field';
+        const label = document.createElement('span');
+        label.textContent = 'Target Words (Word | Definition | Example)';
+        container.appendChild(label);
+
+        block.items.forEach((item, itemIdx) => {
+          const row = document.createElement('div');
+          row.className = 'studio-item-row';
+          const wInput = document.createElement('input');
+          wInput.placeholder = 'Word';
+          wInput.value = item.word || '';
+          wInput.addEventListener('input', () => { item.word = wInput.value; changed(false); });
+          const dInput = document.createElement('input');
+          dInput.placeholder = 'Definition';
+          dInput.value = item.definition || '';
+          dInput.addEventListener('input', () => { item.definition = dInput.value; changed(false); });
+          const eInput = document.createElement('input');
+          eInput.placeholder = 'Example';
+          eInput.value = item.example || '';
+          eInput.addEventListener('input', () => { item.example = eInput.value; changed(false); });
+          const delBtn = document.createElement('button');
+          delBtn.className = 'studio-mini-btn';
+          delBtn.textContent = '×';
+          delBtn.addEventListener('click', () => { block.items.splice(itemIdx, 1); changed(); });
+          row.append(wInput, dInput, eInput, delBtn);
+          container.appendChild(row);
+        });
+
+        const addBtn = document.createElement('button');
+        addBtn.className = 'studio-mini-btn';
+        addBtn.type = 'button';
+        addBtn.textContent = '＋ Add Word';
+        addBtn.addEventListener('click', () => { block.items.push({ word: '', definition: '', example: '' }); changed(); });
+        container.appendChild(addBtn);
+        card.appendChild(container);
+      } else if (block.type === 'quiz') {
+        block.options = block.options || [];
+        const qField = document.createElement('label');
+        qField.className = 'studio-field';
+        const qLabel = document.createElement('span');
+        qLabel.textContent = 'Question Prompt';
+        const qInput = document.createElement('input');
+        qInput.value = block.question || '';
+        qInput.addEventListener('input', () => { block.question = qInput.value; changed(false); });
+        qField.append(qLabel, qInput);
+        card.appendChild(qField);
+
+        const optContainer = document.createElement('div');
+        optContainer.className = 'studio-field';
+        const optLabel = document.createElement('span');
+        optLabel.textContent = 'Options (select radio for correct answer)';
+        optContainer.appendChild(optLabel);
+
+        block.options.forEach((opt, optIdx) => {
+          const row = document.createElement('div');
+          row.className = 'studio-item-row';
+          const radio = document.createElement('input');
+          radio.type = 'radio';
+          radio.name = `quiz_${index}_correct`;
+          radio.checked = block.answer === opt;
+          radio.addEventListener('change', () => { block.answer = opt; changed(false); });
+          const oInput = document.createElement('input');
+          oInput.value = opt;
+          oInput.addEventListener('input', () => {
+            const wasCorrect = block.answer === block.options[optIdx];
+            block.options[optIdx] = oInput.value;
+            if (wasCorrect) block.answer = oInput.value;
+            changed(false);
+          });
+          const delBtn = document.createElement('button');
+          delBtn.className = 'studio-mini-btn';
+          delBtn.textContent = '×';
+          delBtn.addEventListener('click', () => { block.options.splice(optIdx, 1); changed(); });
+          row.append(radio, oInput, delBtn);
+          optContainer.appendChild(row);
+        });
+
+        const addOptBtn = document.createElement('button');
+        addOptBtn.className = 'studio-mini-btn';
+        addOptBtn.type = 'button';
+        addOptBtn.textContent = '＋ Add Option';
+        addOptBtn.addEventListener('click', () => { block.options.push('Option'); changed(); });
+        optContainer.appendChild(addOptBtn);
+        card.appendChild(optContainer);
+      } else if (block.type === 'discussion') {
+        block.prompts = block.prompts || [];
+        const container = document.createElement('div');
+        container.className = 'studio-field';
+        const label = document.createElement('span');
+        label.textContent = 'Speaking / Discussion Prompts';
+        container.appendChild(label);
+
+        block.prompts.forEach((prompt, pIdx) => {
+          const row = document.createElement('div');
+          row.className = 'studio-item-row';
+          const pInput = document.createElement('input');
+          pInput.value = prompt;
+          pInput.addEventListener('input', () => { block.prompts[pIdx] = pInput.value; changed(false); });
+          const delBtn = document.createElement('button');
+          delBtn.className = 'studio-mini-btn';
+          delBtn.textContent = '×';
+          delBtn.addEventListener('click', () => { block.prompts.splice(pIdx, 1); changed(); });
+          row.append(pInput, delBtn);
+          container.appendChild(row);
+        });
+
+        const addPromptBtn = document.createElement('button');
+        addPromptBtn.className = 'studio-mini-btn';
+        addPromptBtn.type = 'button';
+        addPromptBtn.textContent = '＋ Add Discussion Prompt';
+        addPromptBtn.addEventListener('click', () => { block.prompts.push('Discuss...'); changed(); });
+        container.appendChild(addPromptBtn);
+        card.appendChild(container);
+      } else if (block.type === 'essay') {
+        const field = document.createElement('label');
+        field.className = 'studio-field';
+        const label = document.createElement('span');
+        label.textContent = 'Writing Task Instructions / Prompt';
+        const input = document.createElement('textarea');
+        input.value = block.prompt || '';
+        input.rows = 3;
+        input.addEventListener('input', () => { block.prompt = input.value; changed(false); });
+        field.append(label, input);
+        card.appendChild(field);
+      } else if (block.type === 'correction') {
+        block.pairs = block.pairs || [];
+        const container = document.createElement('div');
+        container.className = 'studio-field';
+        const label = document.createElement('span');
+        label.textContent = 'Linguistic Pitfall Pairs (Incorrect ➔ Correct & Note)';
+        container.appendChild(label);
+
+        block.pairs.forEach((pair, pairIdx) => {
+          const row = document.createElement('div');
+          row.className = 'studio-item-row';
+          const wrongInput = document.createElement('input');
+          wrongInput.placeholder = '❌ Incorrect expression';
+          wrongInput.value = pair.incorrect || '';
+          wrongInput.addEventListener('input', () => { pair.incorrect = wrongInput.value; changed(false); });
+          const arrow = document.createElement('span');
+          arrow.textContent = '➔';
+          const rightInput = document.createElement('input');
+          rightInput.placeholder = '✔️ Correct expression';
+          rightInput.value = pair.correct || '';
+          rightInput.addEventListener('input', () => { pair.correct = rightInput.value; changed(false); });
+          const delBtn = document.createElement('button');
+          delBtn.className = 'studio-mini-btn';
+          delBtn.textContent = '×';
+          delBtn.addEventListener('click', () => { block.pairs.splice(pairIdx, 1); changed(); });
+          row.append(wrongInput, arrow, rightInput, delBtn);
+          container.appendChild(row);
+        });
+
+        const addPairBtn = document.createElement('button');
+        addPairBtn.className = 'studio-mini-btn';
+        addPairBtn.type = 'button';
+        addPairBtn.textContent = '＋ Add Error Pair';
+        addPairBtn.addEventListener('click', () => { block.pairs.push({ incorrect: '', correct: '' }); changed(); });
+        container.appendChild(addPairBtn);
+        card.appendChild(container);
       }
+
       host.appendChild(card);
     });
   }
@@ -160,6 +352,7 @@
     meta.className = 'preview-meta';
     meta.textContent = [state.doc.language, state.doc.level].filter(Boolean).join(' · ');
     host.appendChild(meta);
+
     state.doc.blocks.forEach((block, index) => {
       const item = document.createElement('section');
       item.className = 'preview-block';
@@ -167,6 +360,7 @@
       number.className = 'preview-block-number';
       number.textContent = String(index + 1).padStart(2, '0');
       item.appendChild(number);
+
       if (block.type === 'text') {
         const p = document.createElement('p');
         p.textContent = block.content;
@@ -180,9 +374,83 @@
         input.placeholder = 'Type your answer…';
         input.setAttribute('aria-label', 'Preview answer for activity ' + (index + 1));
         item.appendChild(input);
+      } else if (block.type === 'vocab_list') {
+        const grid = document.createElement('div');
+        grid.className = 'vocab-grid';
+        (block.items || []).forEach(v => {
+          const card = document.createElement('div');
+          card.className = 'vocab-card';
+          card.innerHTML = `
+            <div class="vocab-word-badge"><span class="vocab-icon">📖</span> ${escapeHtml(v.word || 'Word')}</div>
+            ${v.definition ? `<div class="vocab-def">${escapeHtml(v.definition)}</div>` : ''}
+            ${v.example ? `<div class="vocab-example">“${escapeHtml(v.example)}”</div>` : ''}
+          `;
+          grid.appendChild(card);
+        });
+        item.appendChild(grid);
+      } else if (block.type === 'quiz') {
+        const p = document.createElement('p');
+        p.style.fontWeight = '700';
+        p.textContent = block.question || 'Quiz question:';
+        item.appendChild(p);
+        const optList = document.createElement('div');
+        optList.style.display = 'flex';
+        optList.style.flexDirection = 'column';
+        optList.style.gap = '6px';
+        (block.options || []).forEach(opt => {
+          const label = document.createElement('label');
+          label.style.display = 'flex';
+          label.style.alignItems = 'center';
+          label.style.gap = '8px';
+          label.style.fontSize = '0.95rem';
+          label.innerHTML = `<input type="radio" name="preview_quiz_${index}" /> ${escapeHtml(opt)}`;
+          optList.appendChild(label);
+        });
+        item.appendChild(optList);
+      } else if (block.type === 'discussion') {
+        const list = document.createElement('div');
+        list.className = 'discussion-list';
+        (block.prompts || []).forEach((prompt, pIdx) => {
+          const row = document.createElement('div');
+          row.className = 'discussion-item';
+          row.innerHTML = `
+            <span class="discussion-num">${pIdx + 1}</span>
+            <span class="discussion-text">${escapeHtml(prompt)}</span>
+          `;
+          list.appendChild(row);
+        });
+        item.appendChild(list);
+      } else if (block.type === 'essay') {
+        const p = document.createElement('p');
+        p.style.fontWeight = '600';
+        p.textContent = block.prompt || 'Writing challenge:';
+        item.appendChild(p);
+        const box = document.createElement('div');
+        box.className = 'modern-essay-box';
+        box.innerHTML = `
+          <div class="modern-essay-label">✍️ Your Written Response</div>
+          <textarea class="modern-essay-textarea" placeholder="Draft your answer here..."></textarea>
+        `;
+        item.appendChild(box);
+      } else if (block.type === 'correction') {
+        const list = document.createElement('div');
+        list.className = 'correction-list';
+        (block.pairs || []).forEach(pair => {
+          const card = document.createElement('div');
+          card.className = 'correction-card';
+          card.innerHTML = `
+            <span class="correction-wrong">❌ ${escapeHtml(pair.incorrect || '')}</span>
+            <span class="correction-arrow">➔</span>
+            <span class="correction-right">✔️ ${escapeHtml(pair.correct || '')}</span>
+          `;
+          list.appendChild(card);
+        });
+        item.appendChild(list);
       }
+
       host.appendChild(item);
     });
+
     if (!state.doc.blocks.length) {
       const p = document.createElement('p');
       p.className = 'studio-empty';
@@ -391,6 +659,63 @@ function normalizeLanguage(value) {
       state.doc.blocks.push({ id: makeId(), type: 'fill_blank', prompt: 'Complete the sentence: ___', answers: ['answer'] });
       changed();
     });
+    const addVocabBtn = $('add-vocab');
+    if (addVocabBtn) {
+      addVocabBtn.addEventListener('click', () => {
+        state.doc.blocks.push({
+          id: makeId(),
+          type: 'vocab_list',
+          items: [{ word: 'Discovery', definition: 'The act of finding or learning something for the first time.', example: 'The discovery of the new particle amazed scientists.' }]
+        });
+        changed();
+      });
+    }
+    const addQuizBtn = $('add-quiz');
+    if (addQuizBtn) {
+      addQuizBtn.addEventListener('click', () => {
+        state.doc.blocks.push({
+          id: makeId(),
+          type: 'quiz',
+          question: 'What is the main hypothesis of the study?',
+          options: ['Option A', 'Option B', 'Option C'],
+          answer: 'Option A'
+        });
+        changed();
+      });
+    }
+    const addDiscussionBtn = $('add-discussion');
+    if (addDiscussionBtn) {
+      addDiscussionBtn.addEventListener('click', () => {
+        state.doc.blocks.push({
+          id: makeId(),
+          type: 'discussion',
+          prompts: ['How does this technology affect modern daily communication?', 'What ethical considerations should researchers prioritize?']
+        });
+        changed();
+      });
+    }
+    const addEssayBtn = $('add-essay');
+    if (addEssayBtn) {
+      addEssayBtn.addEventListener('click', () => {
+        state.doc.blocks.push({
+          id: makeId(),
+          type: 'essay',
+          prompt: 'Deliver your 1-minute science summary or write your reflection based on the findings discussed above.'
+        });
+        changed();
+      });
+    }
+    const addCorrectionBtn = $('add-correction');
+    if (addCorrectionBtn) {
+      addCorrectionBtn.addEventListener('click', () => {
+        state.doc.blocks.push({
+          id: makeId(),
+          type: 'correction',
+          pairs: [{ incorrect: 'The AI is more better than human.', correct: 'The AI is much better than a human.' }]
+        });
+        changed();
+      });
+    }
     $('save-button').addEventListener('click', saveDraft);
     $('publish-open-button').addEventListener('click', async () => {
       $('publish-panel').hidden = !$('publish-panel').hidden;
