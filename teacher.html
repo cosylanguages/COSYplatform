@@ -2085,7 +2085,114 @@
           `;
         }
 
+        if (trimmed.includes("Your Task:") || trimmed.includes("Imagine you are") || trimmed.includes("Which computing unit") || trimmed.includes("Visual comparison:") || trimmed.includes("What evidence would convince you?")) {
+          return `
+            <div class="scenario-card">
+              <div class="scenario-card-header">🎯 Interactive Scenario &amp; Focus</div>
+              <div class="scenario-card-body">${escapeHtml(trimmed)}</div>
+            </div>
+          `;
+        }
+
         return `<cosy-blockquote>${escapeHtml(trimmed)}</cosy-blockquote>`;
+      }
+
+      function renderGrammarSpotlight(title, content) {
+        if (!content || typeof content !== "string") {
+          return `<div class="grammar-box"><div class="grammar-box-header">⚡ ${escapeHtml(title || 'Language Focus')}</div></div>`;
+        }
+        const lines = content.split("\n").map(l => l.trim()).filter(Boolean);
+        const explanationLines = [];
+        const wordBank = [];
+        const tasks = [];
+        let speakingPrompt = "";
+        let mode = "explanation";
+        let currentTask = null;
+
+        lines.forEach(line => {
+          if (line.includes("Interactive Word Bank:") || line.includes("Word Bank:")) {
+            mode = "word_bank";
+            return;
+          }
+          if (line.includes("Task 1") || line.includes("Task 2") || line.startsWith("📝") || line.startsWith("🗣️")) {
+            if (line.includes("Speaking") || line.startsWith("🗣️")) {
+              mode = "speaking";
+              currentTask = null;
+              return;
+            } else {
+              mode = "tasks";
+              currentTask = { title: line.replace(/^📝\s*/, ""), sentences: [] };
+              tasks.push(currentTask);
+              return;
+            }
+          }
+          if (line.startsWith("Tap a word chip") || line.startsWith("Check Answers") || line.startsWith("Reset Board")) {
+            return;
+          }
+          if (mode === "explanation") {
+            explanationLines.push(line);
+          } else if (mode === "word_bank") {
+            wordBank.push(line);
+          } else if (mode === "tasks") {
+            if (currentTask) {
+              currentTask.sentences.push(line);
+            } else {
+              tasks.push({ title: "Structured Practice", sentences: [line] });
+            }
+          } else if (mode === "speaking") {
+            speakingPrompt += (speakingPrompt ? " " : "") + line;
+          }
+        });
+
+        let html = '<div class="grammar-box">';
+        html += `<div class="grammar-box-header">⚡ ${escapeHtml(title || 'Language Focus & Structural Patterns')}</div>`;
+
+        if (explanationLines.length > 0) {
+          html += `<div class="grammar-rule-text">${escapeHtml(explanationLines.join(" "))}</div>`;
+        }
+
+        if (wordBank.length > 0) {
+          html += `
+            <div class="grammar-word-bank">
+              <div class="word-bank-title">🧩 Word Bank (Tap / Copy into gaps):</div>
+              <div class="word-bank-chips">
+                ${wordBank.map(w => `<span class="word-bank-chip">${escapeHtml(w)}</span>`).join("")}
+              </div>
+            </div>
+          `;
+        }
+
+        if (tasks.length > 0) {
+          tasks.forEach(t => {
+            html += `
+              <div class="grammar-task-block">
+                <div class="grammar-task-title">📝 ${escapeHtml(t.title)}</div>
+                <div class="grammar-task-sentences">
+                  ${t.sentences.map((s, sIdx) => {
+                    const formatted = escapeHtml(s).replace(/_{3,}/g, '<span class="grammar-gap">[ _____ ]</span>');
+                    return `
+                      <div class="grammar-sentence-item">
+                        <span class="grammar-sentence-num">${sIdx + 1}.</span>
+                        <span>${formatted}</span>
+                      </div>
+                    `;
+                  }).join("")}
+                </div>
+              </div>
+            `;
+          });
+        }
+
+        if (speakingPrompt) {
+          html += `
+            <div class="grammar-speaking-box">
+              <strong>🗣️ Active Speaking Prompt:</strong> ${escapeHtml(speakingPrompt)}
+            </div>
+          `;
+        }
+
+        html += '</div>';
+        return html;
       }
 
       if (slide.elements) {
@@ -2114,12 +2221,7 @@
             output += '</div>';
           } else if (el.type === "grammar-spotlight") {
             flushVocabBatch();
-            output += `
-              <div class="grammar-box">
-                <div class="grammar-box-header">⚡ ${escapeHtml(el.title || 'Language Focus & Structural Patterns')}</div>
-                <div class="grammar-box-body" style="white-space: pre-wrap;">${escapeHtml(el.content || '')}</div>
-              </div>
-            `;
+            output += renderGrammarSpotlight(el.title, el.content);
           } else if (el.type === "discussion-prompts") {
             flushVocabBatch();
             output += '<div class="discussion-list">';
