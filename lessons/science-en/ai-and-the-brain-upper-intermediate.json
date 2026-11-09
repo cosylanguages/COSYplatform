@@ -2,44 +2,37 @@
   "id": "ai-and-the-brain-upper-intermediate",
   "title": "Keeping Up with Science: AI And The Brain",
   "level": "B2",
-  "templateType": "speaking_club",
+  "templateType": "interactive_lesson",
   "durationMinutes": 60,
   "slides": [
     {
       "id": "slide-1",
-      "title": "Lead-in & Field Journal Context",
+      "title": "Lead-in & Topic Discovery",
       "stage": "Warm-up & Context",
       "elements": [
         {
-          "type": "instruction",
-          "content": "Welcome to Keeping Up with Science. Review the research context and metadata below:"
-        },
-        {
-          "type": "blockquote",
-          "content": "Session Overview:\n• Duration: 60 minutes\n• Languages: 🇬🇧 English\n• Level: Upper-Intermediate (B2)\n• Topic: Synaptic vs Artificial Node Learning\n• Resources: Nature Article 📖"
-        },
-        {
-          "type": "instruction",
-          "content": "🔬 Field Journal Research Log:"
-        },
-        {
-          "type": "blockquote",
-          "content": "Specimen / Topic\nSynaptic vs Artificial Node Learning\n\nPrimary Hypothesis\nBackpropagation differs fundamentally from biological plasticity.\n\nExperimental Findings\nHuman brains use 10,000x less energy via sparse spike coding.\n\nLinguistic Focus\nContrast connectors (e.g. whereas, on the contrary, conversely)"
+          "type": "lead-in",
+          "title": "Topic Warm-up & Discovery",
+          "context": "Today we explore Synaptic vs Artificial Node Learning. Recent research explores whether backpropagation differs fundamentally from biological plasticity. Key insights show that: Human brains use 10,000x less energy via sparse spike coding.",
+          "questions": [
+            "Are you comfortable with the idea of AI outperforming human intelligence in analytical tasks?",
+            "What is one human brain capability that you think computers will never be able to duplicate?"
+          ]
         },
         {
           "type": "instruction",
-          "content": "Lead-in / Warm-up Questions:"
+          "content": "Share your initial impressions and thoughts with your partner or teacher:"
         },
         {
-          "type": "blockquote",
-          "content": "Are you comfortable with the idea of AI outperforming human intelligence in analytical tasks?\nWhat is one human brain capability that you think computers will never be able to duplicate?"
+          "type": "essay",
+          "placeholder": "Type your warm-up thoughts and speaking notes here..."
         }
       ]
     },
     {
       "id": "slide-2",
-      "title": "Target Vocabulary & Key Terms",
-      "stage": "Vocabulary Presentation",
+      "title": "Core Vocabulary & Collocations",
+      "stage": "Vocabulary Discovery",
       "elements": [
         {
           "type": "instruction",
@@ -112,8 +105,8 @@
     },
     {
       "id": "slide-3",
-      "title": "Language Focus & Structural Patterns",
-      "stage": "Language Focus",
+      "title": "Language Focus & Grammar Spotlight",
+      "stage": "Grammar & Patterns",
       "elements": [
         {
           "type": "instruction",
@@ -136,12 +129,19 @@
     },
     {
       "id": "slide-4",
-      "title": "Round 1: Comprehension & Core Findings",
-      "stage": "Fluency Practice",
+      "title": "Reading Insight & Comprehension",
+      "stage": "Reading & Discovery",
       "elements": [
         {
+          "type": "reading-insight",
+          "source": "Research Digest & Findings",
+          "title": "Key Study Insights & Core Takeaways",
+          "text": "Researchers conducted in-depth investigations and empirical trials to analyze these phenomena. The findings reveal critical mechanisms that challenge earlier assumptions.",
+          "takeaway": "Understanding both biological and empirical evidence allows us to draw more grounded conclusions."
+        },
+        {
           "type": "instruction",
-          "content": "Analyze the core scientific findings and discuss the personal prompts in pairs:"
+          "content": "Examine the core research findings and discuss the comprehension questions below:"
         },
         {
           "type": "discussion-prompts",
@@ -150,12 +150,7 @@
             "Why does the research claim that synaptic plasticity remains unmatched by any silicon chip?",
             "What empirical findings in the study demonstrate the superior energy efficiency of human neurons?",
             "How does the article describe the way sparse coding prevents cognitive energy drain?",
-            "What are the main scientific differences between a biological dendrite and an artificial node highlighted in the study?"
-          ]
-        },
-        {
-          "type": "discussion-prompts",
-          "prompts": [
+            "What are the main scientific differences between a biological dendrite and an artificial node highlighted in the study?",
             "According to the article, why are neuromorphic computing systems still far from achieving true thermodynamic limits of efficiency?",
             "How does the mathematical deep learning algorithm compare structurally to the biological plasticity of human brain paths?",
             "What evidence from neurobiology does the study present to show that artificial nodes lack local computing complexity?",
@@ -165,14 +160,14 @@
         },
         {
           "type": "essay",
-          "placeholder": "Record your partner's key arguments or shared hypotheses..."
+          "placeholder": "Draft your answers and key takeaways here..."
         }
       ]
     },
     {
       "id": "slide-5",
-      "title": "Scientific Thinking & Creative Task",
-      "stage": "Deep Analysis",
+      "title": "Deep Dive & Critical Analysis",
+      "stage": "Critical Analysis",
       "elements": [
         {
           "type": "instruction",
@@ -199,12 +194,12 @@
     },
     {
       "id": "slide-6",
-      "title": "Round 2: Future Projections & Debate",
-      "stage": "Debate & Future Outlook",
+      "title": "Collaborative Discussion & Perspectives",
+      "stage": "Interactive Discussion",
       "elements": [
         {
           "type": "instruction",
-          "content": "Discuss future societal implications, ethical dilemmas, and technological projections:"
+          "content": "Explore broader perspectives, future societal impacts, and ethical considerations:"
         },
         {
           "type": "discussion-prompts",
@@ -213,12 +208,7 @@
             "Imagine future research proves that artificial synapses can adapt using biological plasticity. Would that mean robots possess real self-awareness?",
             "Imagine biotechnology allows us to double human synaptic plasticity. Would this alter the core physical structure of our brain?",
             "If future research proves that microchips can operate close to the brain's thermodynamic efficiency, how will this affect global digital energy consumption?",
-            "Imagine future neuromorphic chips replace standard computer processors. Will we finally build robots that can compete directly with humans in learning speed?"
-          ]
-        },
-        {
-          "type": "discussion-prompts",
-          "prompts": [
+            "Imagine future neuromorphic chips replace standard computer processors. Will we finally build robots that can compete directly with humans in learning speed?",
             "Imagine AI models simulate biological synapses perfectly. Would this make physical brain-imaging research completely obsolete?",
             "As our understanding of this discovery develops, if we prove that artificial nodes will never match organic energy efficiency, should we stop building large-scale AI?",
             "If future research proves that a biological synapse is 10,000x more efficient than digital chips, will we build organic computers using actual human cells?",
@@ -228,18 +218,18 @@
         },
         {
           "type": "essay",
-          "placeholder": "Take notes on ethical dilemmas or future consensus reached..."
+          "placeholder": "Reflect on these questions and write down your arguments..."
         }
       ]
     },
     {
       "id": "slide-7",
-      "title": "Final Challenge: Science Presentation",
-      "stage": "Presentation & Production",
+      "title": "Guided Speaking & Production Task",
+      "stage": "Speaking & Production",
       "elements": [
         {
           "type": "instruction",
-          "content": "Deliver your 1-minute presentation or summary based on the challenge below:"
+          "content": "Prepare a clear 2-minute spoken summary or personal pitch based on the scenario below:"
         },
         {
           "type": "blockquote",
@@ -253,7 +243,7 @@
     },
     {
       "id": "slide-8",
-      "title": "Linguistic Corrections & Teacher Feedback",
+      "title": "Language Reflection & Feedback",
       "stage": "Wrap-up & Feedback",
       "elements": [
         {

@@ -2,44 +2,37 @@
   "id": "mendelian-laws-broken",
   "title": "Keeping Up with Science: Broken Laws: Rethinking Genetics",
   "level": "C1",
-  "templateType": "speaking_club",
+  "templateType": "interactive_lesson",
   "durationMinutes": 60,
   "slides": [
     {
       "id": "slide-1",
-      "title": "Lead-in & Field Journal Context",
+      "title": "Lead-in & Topic Discovery",
       "stage": "Warm-up & Context",
       "elements": [
         {
-          "type": "instruction",
-          "content": "Welcome to Keeping Up with Science. Review the research context and metadata below:"
-        },
-        {
-          "type": "blockquote",
-          "content": "Session Overview:\n• Duration: 60 minutes\n• Languages: 🇬🇧 🇫🇷 🇷🇺\n• Level: Advanced (C1)\n• Topic: Genetics / Heredity\n• Resources: Breaking Mendel's Laws 📖"
-        },
-        {
-          "type": "instruction",
-          "content": "🔬 Field Journal Research Log:"
-        },
-        {
-          "type": "blockquote",
-          "content": "Specimen / Topic\nMeiotic Drive & Non-Mendelian Genetics\n\nPrimary Hypothesis\nSuper-mendelian 'selfish' alleles force their own inheritance.\n\nExperimental Findings\nGene-drive mechanisms achieve 99% inheritance bias in mouse cohorts.\n\nLinguistic Focus\nSpeculative continuous conditions (e.g. If the gene-drive were mutating...)."
+          "type": "lead-in",
+          "title": "Topic Warm-up & Discovery",
+          "context": "Today we explore Meiotic Drive & Non-Mendelian Genetics. Recent research explores whether super-mendelian 'selfish' alleles force their own inheritance. Key insights show that: Gene-drive mechanisms achieve 99% inheritance bias in mouse cohorts.",
+          "questions": [
+            "Which physical trait do you share with your parents?",
+            "Do you think \"personality\" is mostly genetic or environmental?"
+          ]
         },
         {
           "type": "instruction",
-          "content": "Lead-in / Warm-up Questions:"
+          "content": "Share your initial impressions and thoughts with your partner or teacher:"
         },
         {
-          "type": "blockquote",
-          "content": "Which physical trait do you share with your parents?\nDo you think \"personality\" is mostly genetic or environmental?"
+          "type": "essay",
+          "placeholder": "Type your warm-up thoughts and speaking notes here..."
         }
       ]
     },
     {
       "id": "slide-2",
-      "title": "Target Vocabulary & Key Terms",
-      "stage": "Vocabulary Presentation",
+      "title": "Core Vocabulary & Collocations",
+      "stage": "Vocabulary Discovery",
       "elements": [
         {
           "type": "instruction",
@@ -112,8 +105,8 @@
     },
     {
       "id": "slide-3",
-      "title": "Language Focus & Structural Patterns",
-      "stage": "Language Focus",
+      "title": "Language Focus & Grammar Spotlight",
+      "stage": "Grammar & Patterns",
       "elements": [
         {
           "type": "instruction",
@@ -128,12 +121,19 @@
     },
     {
       "id": "slide-4",
-      "title": "Round 1: Comprehension & Core Findings",
-      "stage": "Fluency Practice",
+      "title": "Reading Insight & Comprehension",
+      "stage": "Reading & Discovery",
       "elements": [
         {
+          "type": "reading-insight",
+          "source": "Research Digest & Findings",
+          "title": "Key Study Insights & Core Takeaways",
+          "text": "Researchers conducted in-depth investigations and empirical trials to analyze these phenomena. The findings reveal critical mechanisms that challenge earlier assumptions.",
+          "takeaway": "Understanding both biological and empirical evidence allows us to draw more grounded conclusions."
+        },
+        {
           "type": "instruction",
-          "content": "Analyze the core scientific findings and discuss the personal prompts in pairs:"
+          "content": "Examine the core research findings and discuss the comprehension questions below:"
         },
         {
           "type": "discussion-prompts",
@@ -142,12 +142,7 @@
             "What evidence is presented in the study to show that a super-Mendelian trait can achieve near 100% inheritance in wild mice?",
             "According to the research, what physical traits make a selfish allele capable of eliminating other competitors during meiosis?",
             "How does the study analyze the role of spontaneous mutation in neutralized gene-drive systems?",
-            "What structural factors determine why a selfish gene becomes dominant over classic Mendelian expectations?"
-          ]
-        },
-        {
-          "type": "discussion-prompts",
-          "prompts": [
+            "What structural factors determine why a selfish gene becomes dominant over classic Mendelian expectations?",
             "Under what biological parameters can a highly recessive trait be forced to express itself across generations?",
             "How did the research team map the complete mouse genome to track inheritance bias over multiple cohorts?",
             "According to the paper, how does the science of epigenetics prove that environmental variables alter allele expression?",
@@ -157,13 +152,82 @@
         },
         {
           "type": "essay",
-          "placeholder": "Record your partner's key arguments or shared hypotheses..."
+          "placeholder": "Draft your answers and key takeaways here..."
         }
       ]
     },
     {
       "id": "slide-5",
-      "title": "Linguistic Corrections & Teacher Feedback",
+      "title": "Deep Dive & Critical Analysis",
+      "stage": "Critical Analysis",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Work with your partner to critically analyze the mechanisms, implications, and controversies of this research:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Critical Scenario & Analytical Challenge:\nEvaluate the real-world applications of: \"Broken Laws: Rethinking Genetics\". Consider potential secondary consequences, ethical challenges, and whether mainstream media interpretations accurately reflect the empirical science."
+        },
+        {
+          "type": "instruction",
+          "content": "Synthesize your analysis and prepare key arguments:"
+        },
+        {
+          "type": "essay",
+          "placeholder": "Draft your critical perspectives and evidence points here..."
+        }
+      ]
+    },
+    {
+      "id": "slide-6",
+      "title": "Collaborative Discussion & Perspectives",
+      "stage": "Interactive Discussion",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Explore broader perspectives, future societal impacts, and ethical considerations:"
+        },
+        {
+          "type": "discussion-prompts",
+          "prompts": [
+            "How do these findings regarding broken laws: rethinking genetics challenge common public assumptions?",
+            "If you had the opportunity to interview the lead researchers, which unresolved question would you ask?",
+            "What policies or practical guidelines should organizations implement based on this empirical evidence?"
+          ]
+        },
+        {
+          "type": "essay",
+          "placeholder": "Reflect on these questions and write down your arguments..."
+        }
+      ]
+    },
+    {
+      "id": "slide-7",
+      "title": "Guided Speaking & Production Task",
+      "stage": "Speaking & Production",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Prepare a clear 2-minute spoken summary or personal pitch based on the scenario below:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Spoken Presentation Task:\nYou are presenting a lightning briefing to an interdisciplinary scientific panel. Summarize the core findings on \"Broken Laws: Rethinking Genetics\", explain why it matters to society, and propose the next vital step in this domain."
+        },
+        {
+          "type": "instruction",
+          "content": "Structure your pitch using target vocabulary and newly studied grammar structures:"
+        },
+        {
+          "type": "essay",
+          "placeholder": "Write your speaking outline, bullet points, and key discourse markers..."
+        }
+      ]
+    },
+    {
+      "id": "slide-8",
+      "title": "Language Reflection & Feedback",
       "stage": "Wrap-up & Feedback",
       "elements": [
         {

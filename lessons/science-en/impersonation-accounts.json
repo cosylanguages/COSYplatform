@@ -2,44 +2,37 @@
   "id": "impersonation-accounts",
   "title": "Keeping Up with Science: Impersonation Accounts: Digital Identity Theft",
   "level": "B1",
-  "templateType": "speaking_club",
+  "templateType": "interactive_lesson",
   "durationMinutes": 60,
   "slides": [
     {
       "id": "slide-1",
-      "title": "Lead-in & Field Journal Context",
+      "title": "Lead-in & Topic Discovery",
       "stage": "Warm-up & Context",
       "elements": [
         {
-          "type": "instruction",
-          "content": "Welcome to Keeping Up with Science. Review the research context and metadata below:"
-        },
-        {
-          "type": "blockquote",
-          "content": "Session Overview:\n• Duration: 60 minutes\n• Languages: 🇬🇧 🇫🇷 🇷🇺\n• Level: Intermediate (B1)\n• Topic: Cybersecurity and Digital Fraud"
-        },
-        {
-          "type": "instruction",
-          "content": "🔬 Field Journal Research Log:"
-        },
-        {
-          "type": "blockquote",
-          "content": "Specimen / Topic\nSocial Media Identity Fraud\n\nPrimary Hypothesis\nTrust verification latency is exploited by automated bot accounts.\n\nExperimental Findings\nHigh social-proof signals (such as fake badges) bypass manual visual scrutiny.\n\nLinguistic Focus\nPhrasal verbs with 'look' (e.g. look into, look out for)."
+          "type": "lead-in",
+          "title": "Topic Warm-up & Discovery",
+          "context": "Today we explore Social Media Identity Fraud. Recent research explores whether trust verification latency is exploited by automated bot accounts. Key insights show that: High social-proof signals (such as fake badges) bypass manual visual scrutiny.",
+          "questions": [
+            "Have you ever received a message from someone you knew, but it \"felt\" wrong?",
+            "How many online identities do you manage?"
+          ]
         },
         {
           "type": "instruction",
-          "content": "Lead-in / Warm-up Questions:"
+          "content": "Share your initial impressions and thoughts with your partner or teacher:"
         },
         {
-          "type": "blockquote",
-          "content": "Have you ever received a message from someone you knew, but it \"felt\" wrong?\nHow many online identities do you manage?"
+          "type": "essay",
+          "placeholder": "Type your warm-up thoughts and speaking notes here..."
         }
       ]
     },
     {
       "id": "slide-2",
-      "title": "Target Vocabulary & Key Terms",
-      "stage": "Vocabulary Presentation",
+      "title": "Core Vocabulary & Collocations",
+      "stage": "Vocabulary Discovery",
       "elements": [
         {
           "type": "instruction",
@@ -112,8 +105,8 @@
     },
     {
       "id": "slide-3",
-      "title": "Language Focus & Structural Patterns",
-      "stage": "Language Focus",
+      "title": "Language Focus & Grammar Spotlight",
+      "stage": "Grammar & Patterns",
       "elements": [
         {
           "type": "instruction",
@@ -128,12 +121,19 @@
     },
     {
       "id": "slide-4",
-      "title": "Round 1: Comprehension & Core Findings",
-      "stage": "Fluency Practice",
+      "title": "Reading Insight & Comprehension",
+      "stage": "Reading & Discovery",
       "elements": [
         {
+          "type": "reading-insight",
+          "source": "Research Digest & Findings",
+          "title": "Key Study Insights & Core Takeaways",
+          "text": "Researchers conducted in-depth investigations and empirical trials to analyze these phenomena. The findings reveal critical mechanisms that challenge earlier assumptions.",
+          "takeaway": "Understanding both biological and empirical evidence allows us to draw more grounded conclusions."
+        },
+        {
           "type": "instruction",
-          "content": "Analyze the core scientific findings and discuss the personal prompts in pairs:"
+          "content": "Examine the core research findings and discuss the comprehension questions below:"
         },
         {
           "type": "discussion-prompts",
@@ -142,12 +142,7 @@
             "What empirical evidence shows that standard trust verification badges can be bypassed using automated web bots?",
             "Based on clinical behavioral data, how does the trauma of digital identity theft damage a victim's real-world social trust scores?",
             "What parameters make a modern automated phishing campaign significantly harder to identify than simple spam filters?",
-            "What biometric indicators are researchers using to prove a remote speaker's streams are authentic?"
-          ]
-        },
-        {
-          "type": "discussion-prompts",
-          "prompts": [
+            "What biometric indicators are researchers using to prove a remote speaker's streams are authentic?",
             "According to behavioral studies, what psychological vulnerability is targeted most effectively by fake support profiles?",
             "What technical weaknesses allow a malicious script to harvest a user's master credential folder?",
             "How does the paper differentiate simple profile scraping from highly targeted, malicious deepfake video scams?",
@@ -157,13 +152,82 @@
         },
         {
           "type": "essay",
-          "placeholder": "Record your partner's key arguments or shared hypotheses..."
+          "placeholder": "Draft your answers and key takeaways here..."
         }
       ]
     },
     {
       "id": "slide-5",
-      "title": "Linguistic Corrections & Teacher Feedback",
+      "title": "Deep Dive & Critical Analysis",
+      "stage": "Critical Analysis",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Work with your partner to critically analyze the mechanisms, implications, and controversies of this research:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Critical Scenario & Analytical Challenge:\nEvaluate the real-world applications of: \"Impersonation Accounts: Digital Identity Theft\". Consider potential secondary consequences, ethical challenges, and whether mainstream media interpretations accurately reflect the empirical science."
+        },
+        {
+          "type": "instruction",
+          "content": "Synthesize your analysis and prepare key arguments:"
+        },
+        {
+          "type": "essay",
+          "placeholder": "Draft your critical perspectives and evidence points here..."
+        }
+      ]
+    },
+    {
+      "id": "slide-6",
+      "title": "Collaborative Discussion & Perspectives",
+      "stage": "Interactive Discussion",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Explore broader perspectives, future societal impacts, and ethical considerations:"
+        },
+        {
+          "type": "discussion-prompts",
+          "prompts": [
+            "How do these findings regarding impersonation accounts: digital identity theft challenge common public assumptions?",
+            "If you had the opportunity to interview the lead researchers, which unresolved question would you ask?",
+            "What policies or practical guidelines should organizations implement based on this empirical evidence?"
+          ]
+        },
+        {
+          "type": "essay",
+          "placeholder": "Reflect on these questions and write down your arguments..."
+        }
+      ]
+    },
+    {
+      "id": "slide-7",
+      "title": "Guided Speaking & Production Task",
+      "stage": "Speaking & Production",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Prepare a clear 2-minute spoken summary or personal pitch based on the scenario below:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Spoken Presentation Task:\nYou are presenting a lightning briefing to an interdisciplinary scientific panel. Summarize the core findings on \"Impersonation Accounts: Digital Identity Theft\", explain why it matters to society, and propose the next vital step in this domain."
+        },
+        {
+          "type": "instruction",
+          "content": "Structure your pitch using target vocabulary and newly studied grammar structures:"
+        },
+        {
+          "type": "essay",
+          "placeholder": "Write your speaking outline, bullet points, and key discourse markers..."
+        }
+      ]
+    },
+    {
+      "id": "slide-8",
+      "title": "Language Reflection & Feedback",
       "stage": "Wrap-up & Feedback",
       "elements": [
         {
