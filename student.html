@@ -2080,6 +2080,36 @@
             const placeholder = escapeHtml(el.placeholder || 'Type answer...');
             const saved = getSavedStudentInput(fieldKey);
             output += '<div class="cosy-input-box"><input type="text" aria-label="' + escapeHtml(el.label || 'Your answer') + '" placeholder="' + placeholder + '" value="' + escapeHtml(saved) + '" oninput="saveStudentInput(\'' + fieldKey + '\', this.value)" /></div>';
+          } else if (el.type === "lead-in") {
+            flushVocabBatch();
+            output += `
+              <div class="lead-in-hero-box">
+                <div class="lead-in-header">
+                  <span>☕ ${escapeHtml(el.title || 'Lead-in & Warm-up')}</span>
+                </div>
+                ${el.context ? `<div class="lead-in-context-text">${escapeHtml(el.context)}</div>` : ''}
+                ${el.questions && el.questions.length ? `
+                  <div class="lead-in-questions">
+                    ${el.questions.map((q, qIdx) => `
+                      <div class="lead-in-question-item">
+                        <span class="q-badge">${qIdx + 1}</span>
+                        <span>${escapeHtml(q)}</span>
+                      </div>
+                    `).join('')}
+                  </div>
+                ` : ''}
+              </div>
+            `;
+          } else if (el.type === "reading-insight") {
+            flushVocabBatch();
+            output += `
+              <div class="reading-insight-card">
+                <div class="article-badge">📖 ${escapeHtml(el.source || 'Article Insight')}</div>
+                ${el.title ? `<h3 style="margin-top:0; color:#0f172a; font-size:1.15rem;">${escapeHtml(el.title)}</h3>` : ''}
+                <div class="article-body">${escapeHtml(el.text || el.content || '')}</div>
+                ${el.takeaway ? `<div class="key-takeaway">💡 <strong>Core Takeaway:</strong> ${escapeHtml(el.takeaway)}</div>` : ''}
+              </div>
+            `;
           } else if (el.type === "instruction") {
             flushVocabBatch();
             output += `<cosy-instruction>📋 ${escapeHtml(el.content)}</cosy-instruction>`;

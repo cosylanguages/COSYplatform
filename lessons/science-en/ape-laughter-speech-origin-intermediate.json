@@ -2,44 +2,37 @@
   "id": "ape-laughter-speech-origin-intermediate",
   "title": "Keeping Up with Science: Great Ape Laughter & Human Speech",
   "level": "B1",
-  "templateType": "speaking_club",
+  "templateType": "interactive_lesson",
   "durationMinutes": 60,
   "slides": [
     {
       "id": "slide-1",
-      "title": "Lead-in & Field Journal Context",
+      "title": "Lead-in & Topic Discovery",
       "stage": "Warm-up & Context",
       "elements": [
         {
-          "type": "instruction",
-          "content": "Welcome to Keeping Up with Science. Review the research context and metadata below:"
-        },
-        {
-          "type": "blockquote",
-          "content": "Session Overview:\n• Duration: 60 minutes\n• Languages: 🇬🇧 🇫🇷 🇪🇸 🇮🇹 🇷🇺\n• Level: Intermediate (B1)\n• Topic: Evolutionary Linguistics / Primatology\n• Resources: Full Article 📖"
-        },
-        {
-          "type": "instruction",
-          "content": "🔬 Field Journal Research Log:"
-        },
-        {
-          "type": "blockquote",
-          "content": "Specimen / Topic\nComparative Vocal Primatology\n\nPrimary Hypothesis\nApe tickle-laughter evolved into human speech phoneme boundaries.\n\nExperimental Findings\nBreath control limits separate ape vocalizations from human speech agility.\n\nLinguistic Focus\nModal verbs of deduction and comparison."
+          "type": "lead-in",
+          "title": "Topic Warm-up & Discovery",
+          "context": "Today we explore Comparative Vocal Primatology. Recent research explores whether ape tickle-laughter evolved into human speech phoneme boundaries. Key insights show that: Breath control limits separate ape vocalizations from human speech agility.",
+          "questions": [
+            "Have you ever spent time observing monkeys or apes at a zoo or nature reserve?",
+            "Do you think other animals laugh when they are happy or amused?"
+          ]
         },
         {
           "type": "instruction",
-          "content": "Lead-in / Warm-up Questions:"
+          "content": "Share your initial impressions and thoughts with your partner or teacher:"
         },
         {
-          "type": "blockquote",
-          "content": "Have you ever spent time observing monkeys or apes at a zoo or nature reserve?\nDo you think other animals laugh when they are happy or amused?"
+          "type": "essay",
+          "placeholder": "Type your warm-up thoughts and speaking notes here..."
         }
       ]
     },
     {
       "id": "slide-2",
-      "title": "Target Vocabulary & Key Terms",
-      "stage": "Vocabulary Presentation",
+      "title": "Core Vocabulary & Collocations",
+      "stage": "Vocabulary Discovery",
       "elements": [
         {
           "type": "instruction",
@@ -112,8 +105,8 @@
     },
     {
       "id": "slide-3",
-      "title": "Language Focus & Structural Patterns",
-      "stage": "Language Focus",
+      "title": "Language Focus & Grammar Spotlight",
+      "stage": "Grammar & Patterns",
       "elements": [
         {
           "type": "instruction",
@@ -136,12 +129,19 @@
     },
     {
       "id": "slide-4",
-      "title": "Round 1: Comprehension & Core Findings",
-      "stage": "Fluency Practice",
+      "title": "Reading Insight & Comprehension",
+      "stage": "Reading & Discovery",
       "elements": [
         {
+          "type": "reading-insight",
+          "source": "Research Digest & Findings",
+          "title": "Key Study Insights & Core Takeaways",
+          "text": "Researchers conducted in-depth investigations and empirical trials to analyze these phenomena. The findings reveal critical mechanisms that challenge earlier assumptions.",
+          "takeaway": "Understanding both biological and empirical evidence allows us to draw more grounded conclusions."
+        },
+        {
           "type": "instruction",
-          "content": "Analyze the core scientific findings and discuss the personal prompts in pairs:"
+          "content": "Examine the core research findings and discuss the comprehension questions below:"
         },
         {
           "type": "discussion-prompts",
@@ -150,12 +150,7 @@
             "What data presented in the paper shows that tickle sessions can induce play-laughter in chimpanzees?",
             "According to the article, how do the acoustic parameters of wild great apes compare to human syllables?",
             "Based on the research findings, what are the primary structural differences between ape play-calls and formal speech?",
-            "According to the study, how do social bonobos organize peaceful, matriarchal hierarchies?"
-          ]
-        },
-        {
-          "type": "discussion-prompts",
-          "prompts": [
+            "According to the study, how do social bonobos organize peaceful, matriarchal hierarchies?",
             "What evidence is there that genetic heredity limits vocal breath control in primates?",
             "According to the article, how does cooperative play boost high-level cognitive development?",
             "Based on the text, what unique vocalization is shared between bonobos, chimpanzees, and humans?",
@@ -165,14 +160,14 @@
         },
         {
           "type": "essay",
-          "placeholder": "Record your partner's key arguments or shared hypotheses..."
+          "placeholder": "Draft your answers and key takeaways here..."
         }
       ]
     },
     {
       "id": "slide-5",
-      "title": "Scientific Thinking & Creative Task",
-      "stage": "Deep Analysis",
+      "title": "Deep Dive & Critical Analysis",
+      "stage": "Critical Analysis",
       "elements": [
         {
           "type": "instruction",
@@ -190,12 +185,12 @@
     },
     {
       "id": "slide-6",
-      "title": "Round 2: Future Projections & Debate",
-      "stage": "Debate & Future Outlook",
+      "title": "Collaborative Discussion & Perspectives",
+      "stage": "Interactive Discussion",
       "elements": [
         {
           "type": "instruction",
-          "content": "Discuss future societal implications, ethical dilemmas, and technological projections:"
+          "content": "Explore broader perspectives, future societal impacts, and ethical considerations:"
         },
         {
           "type": "discussion-prompts",
@@ -204,12 +199,7 @@
             "As our understanding of this discovery develops, acoustic filters will isolate the exact genetic origin of laughter across species.",
             "Imagine future research proves that play-laughter can induce high-speed neural healing, how would hospitals use sound therapy?",
             "If future research continues to support this hypothesis, we will prove that a wild chimpanzee shares our basic cognitive structures for sarcasm.",
-            "As our understanding of this discovery develops, we will rewrite the evolutionary history of speech to date languages back 10 million years."
-          ]
-        },
-        {
-          "type": "discussion-prompts",
-          "prompts": [
+            "As our understanding of this discovery develops, we will rewrite the evolutionary history of speech to date languages back 10 million years.",
             "Imagine future research shows that structural phonetic shifts in ape calls are regional, what would this tell us about animal geography?",
             "If future research continues to support this hypothesis, human child education will incorporate cooperative play patterns modeled after matriarchal bonobo groups.",
             "As our understanding of this discovery develops, we will prove that vocal heredity restricts how foreign accents are acquired.",
@@ -219,13 +209,13 @@
         },
         {
           "type": "essay",
-          "placeholder": "Take notes on ethical dilemmas or future consensus reached..."
+          "placeholder": "Reflect on these questions and write down your arguments..."
         }
       ]
     },
     {
       "id": "slide-7",
-      "title": "Linguistic Corrections & Teacher Feedback",
+      "title": "Language Reflection & Feedback",
       "stage": "Wrap-up & Feedback",
       "elements": [
         {

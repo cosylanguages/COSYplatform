@@ -2,44 +2,37 @@
   "id": "losing-spoken-words",
   "title": "Keeping Up with Science: We’re Losing 338 Spoken Words Every Day",
   "level": "B1",
-  "templateType": "speaking_club",
+  "templateType": "interactive_lesson",
   "durationMinutes": 60,
   "slides": [
     {
       "id": "slide-1",
-      "title": "Lead-in & Field Journal Context",
+      "title": "Lead-in & Topic Discovery",
       "stage": "Warm-up & Context",
       "elements": [
         {
-          "type": "instruction",
-          "content": "Welcome to Keeping Up with Science. Review the research context and metadata below:"
-        },
-        {
-          "type": "blockquote",
-          "content": "Session Overview:\n• Duration: 60 minutes\n• Languages: 🇬🇧 🇫🇷 🇪🇸 🇮🇹 🇷🇺\n• Level: Intermediate (B1)\n• Topic: Sociolinguistics / Digital Communication\n• Resources: Full Article 📖"
-        },
-        {
-          "type": "instruction",
-          "content": "🔬 Field Journal Research Log:"
-        },
-        {
-          "type": "blockquote",
-          "content": "Specimen / Topic\nLanguage Attrition & Cognition\n\nPrimary Hypothesis\nDigital screen saturation accelerates native lexical attrition.\n\nExperimental Findings\nSpeech variety in teenagers has contracted by 15% over a 10-year study.\n\nLinguistic Focus\nPassive voice vs Active voice in news."
+          "type": "lead-in",
+          "title": "Topic Warm-up & Discovery",
+          "context": "Today we explore Language Attrition & Cognition. Recent research explores whether digital screen saturation accelerates native lexical attrition. Key insights show that: Speech variety in teenagers has contracted by 15% over a 10-year study.",
+          "questions": [
+            "Do you talk more or type more during an average day?",
+            "Who is the most \"talkative\" person you know?"
+          ]
         },
         {
           "type": "instruction",
-          "content": "Lead-in / Warm-up Questions:"
+          "content": "Share your initial impressions and thoughts with your partner or teacher:"
         },
         {
-          "type": "blockquote",
-          "content": "Do you talk more or type more during an average day?\nWho is the most \"talkative\" person you know?"
+          "type": "essay",
+          "placeholder": "Type your warm-up thoughts and speaking notes here..."
         }
       ]
     },
     {
       "id": "slide-2",
-      "title": "Target Vocabulary & Key Terms",
-      "stage": "Vocabulary Presentation",
+      "title": "Core Vocabulary & Collocations",
+      "stage": "Vocabulary Discovery",
       "elements": [
         {
           "type": "instruction",
@@ -112,8 +105,8 @@
     },
     {
       "id": "slide-3",
-      "title": "Language Focus & Structural Patterns",
-      "stage": "Language Focus",
+      "title": "Language Focus & Grammar Spotlight",
+      "stage": "Grammar & Patterns",
       "elements": [
         {
           "type": "instruction",
@@ -128,12 +121,19 @@
     },
     {
       "id": "slide-4",
-      "title": "Round 1: Comprehension & Core Findings",
-      "stage": "Fluency Practice",
+      "title": "Reading Insight & Comprehension",
+      "stage": "Reading & Discovery",
       "elements": [
         {
+          "type": "reading-insight",
+          "source": "Research Digest & Findings",
+          "title": "Key Study Insights & Core Takeaways",
+          "text": "Researchers conducted in-depth investigations and empirical trials to analyze these phenomena. The findings reveal critical mechanisms that challenge earlier assumptions.",
+          "takeaway": "Understanding both biological and empirical evidence allows us to draw more grounded conclusions."
+        },
+        {
           "type": "instruction",
-          "content": "Analyze the core scientific findings and discuss the personal prompts in pairs:"
+          "content": "Examine the core research findings and discuss the comprehension questions below:"
         },
         {
           "type": "discussion-prompts",
@@ -142,12 +142,7 @@
             "What evidence in the study shows that face-to-face interaction is crucial to prevent the erosion of rare words?",
             "According to researchers, what are the cognitive risks of a purely monosyllabic verbal habit in teenagers?",
             "Based on the clinical observations, how does texting minimize the overall cognitive load during social communication?",
-            "How does the study map the correlation between standard reading habits and verbal eloquence?"
-          ]
-        },
-        {
-          "type": "discussion-prompts",
-          "prompts": [
+            "How does the study map the correlation between standard reading habits and verbal eloquence?",
             "What data metrics prove that our overall vocabulary range has contracted significantly over the last decade?",
             "According to the paper, how does physical isolation accelerate native language attrition?",
             "What findings show that young speakers are losing their appreciation for conversational nuance?",
@@ -157,13 +152,13 @@
         },
         {
           "type": "essay",
-          "placeholder": "Record your partner's key arguments or shared hypotheses..."
+          "placeholder": "Draft your answers and key takeaways here..."
         }
       ]
     },
     {
       "id": "slide-5",
-      "title": "Linguistic Corrections & Teacher Feedback",
+      "title": "Language Reflection & Feedback",
       "stage": "Wrap-up & Feedback",
       "elements": [
         {

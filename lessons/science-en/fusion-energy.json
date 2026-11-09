@@ -2,44 +2,37 @@
   "id": "fusion-energy",
   "title": "Keeping Up with Science: The Future of Fusion Energy: Clean power for everyone?",
   "level": "B2",
-  "templateType": "speaking_club",
+  "templateType": "interactive_lesson",
   "durationMinutes": 60,
   "slides": [
     {
       "id": "slide-1",
-      "title": "Lead-in & Field Journal Context",
+      "title": "Lead-in & Topic Discovery",
       "stage": "Warm-up & Context",
       "elements": [
         {
-          "type": "instruction",
-          "content": "Welcome to Keeping Up with Science. Review the research context and metadata below:"
-        },
-        {
-          "type": "blockquote",
-          "content": "Session Overview:\n• Duration: 60 minutes\n• Languages: 🇬🇧 🇫🇷 🇪🇸 🇮🇹 🇷🇺\n• Level: Upper-Intermediate (B2)\n• Topic: Nuclear Physics / Clean Energy\n• Resources: What is Fusion? 📖"
-        },
-        {
-          "type": "instruction",
-          "content": "🔬 Field Journal Research Log:"
-        },
-        {
-          "type": "blockquote",
-          "content": "Specimen / Topic\nControlled Thermonuclear Fusion\n\nPrimary Hypothesis\nTokamak magnetic confinement can produce sustained net energy.\n\nExperimental Findings\nLaser-ignition systems achieve Q-factor ignition threshold exceeding 1.5.\n\nLinguistic Focus\nFuture passive voice (e.g. Fusion energy will be commercialized)."
+          "type": "lead-in",
+          "title": "Topic Warm-up & Discovery",
+          "context": "Today we explore Controlled Thermonuclear Fusion. Recent research explores whether tokamak magnetic confinement can produce sustained net energy. Key insights show that: Laser-ignition systems achieve Q-factor ignition threshold exceeding 1.5.",
+          "questions": [
+            "If you could have a small \"sun\" in your basement providing unlimited power, would you want it?",
+            "What is the most \"futuristic\" thing you've heard about energy lately?"
+          ]
         },
         {
           "type": "instruction",
-          "content": "Lead-in / Warm-up Questions:"
+          "content": "Share your initial impressions and thoughts with your partner or teacher:"
         },
         {
-          "type": "blockquote",
-          "content": "If you could have a small \"sun\" in your basement providing unlimited power, would you want it?\nWhat is the most \"futuristic\" thing you've heard about energy lately?"
+          "type": "essay",
+          "placeholder": "Type your warm-up thoughts and speaking notes here..."
         }
       ]
     },
     {
       "id": "slide-2",
-      "title": "Target Vocabulary & Key Terms",
-      "stage": "Vocabulary Presentation",
+      "title": "Core Vocabulary & Collocations",
+      "stage": "Vocabulary Discovery",
       "elements": [
         {
           "type": "instruction",
@@ -112,8 +105,8 @@
     },
     {
       "id": "slide-3",
-      "title": "Language Focus & Structural Patterns",
-      "stage": "Language Focus",
+      "title": "Language Focus & Grammar Spotlight",
+      "stage": "Grammar & Patterns",
       "elements": [
         {
           "type": "instruction",
@@ -136,12 +129,19 @@
     },
     {
       "id": "slide-4",
-      "title": "Round 1: Comprehension & Core Findings",
-      "stage": "Fluency Practice",
+      "title": "Reading Insight & Comprehension",
+      "stage": "Reading & Discovery",
       "elements": [
         {
+          "type": "reading-insight",
+          "source": "Research Digest & Findings",
+          "title": "Key Study Insights & Core Takeaways",
+          "text": "Researchers conducted in-depth investigations and empirical trials to analyze these phenomena. The findings reveal critical mechanisms that challenge earlier assumptions.",
+          "takeaway": "Understanding both biological and empirical evidence allows us to draw more grounded conclusions."
+        },
+        {
           "type": "instruction",
-          "content": "Analyze the core scientific findings and discuss the personal prompts in pairs:"
+          "content": "Examine the core research findings and discuss the comprehension questions below:"
         },
         {
           "type": "discussion-prompts",
@@ -150,12 +150,7 @@
             "Based on the study, what distinguishes traditional nuclear fission from controlled stellar fusion?",
             "According to the paper, what extreme thermal barriers must scientists overcome to stabilize superheated plasma?",
             "What data presented in the article suggests that fusion could guarantee global energy sustainability for millions of years?",
-            "According to researchers, what recent laboratory breakthrough brought us closer to ignition?"
-          ]
-        },
-        {
-          "type": "discussion-prompts",
-          "prompts": [
+            "According to researchers, what recent laboratory breakthrough brought us closer to ignition?",
             "Based on the text, why are deuterium and tritium preferred isotopes for laser-ignition systems?",
             "What unique parameters define a tokamak's magnetic confinement configuration?",
             "What empirical evidence in the report supports the claims of achieving a true net energy gain?",
@@ -165,14 +160,14 @@
         },
         {
           "type": "essay",
-          "placeholder": "Record your partner's key arguments or shared hypotheses..."
+          "placeholder": "Draft your answers and key takeaways here..."
         }
       ]
     },
     {
       "id": "slide-5",
-      "title": "Scientific Thinking & Creative Task",
-      "stage": "Deep Analysis",
+      "title": "Deep Dive & Critical Analysis",
+      "stage": "Critical Analysis",
       "elements": [
         {
           "type": "instruction",
@@ -190,12 +185,12 @@
     },
     {
       "id": "slide-6",
-      "title": "Round 2: Future Projections & Debate",
-      "stage": "Debate & Future Outlook",
+      "title": "Collaborative Discussion & Perspectives",
+      "stage": "Interactive Discussion",
       "elements": [
         {
           "type": "instruction",
-          "content": "Discuss future societal implications, ethical dilemmas, and technological projections:"
+          "content": "Explore broader perspectives, future societal impacts, and ethical considerations:"
         },
         {
           "type": "discussion-prompts",
@@ -204,12 +199,7 @@
             "As our understanding of this discovery develops, traditional nuclear fission facilities will be phased out to protect public health.",
             "Imagine future research proves that superheated plasma can be sustained indefinitely inside micro-reactors, how would transportation systems change?",
             "If future research continues to support this hypothesis, global energy sustainability indexes will reach 100% across all continents.",
-            "As our understanding of this discovery develops, a portable reactor breakthrough will enable deep space travel within the next century."
-          ]
-        },
-        {
-          "type": "discussion-prompts",
-          "prompts": [
+            "As our understanding of this discovery develops, a portable reactor breakthrough will enable deep space travel within the next century.",
             "Imagine future research shows that harvesting ocean isotopes causes no marine damage, how would scientists expand fuel extraction?",
             "If future research continues to support this hypothesis, advanced magnetic confinement fields will make solar and wind storage completely obsolete.",
             "As our understanding of this discovery develops, achieving a stable net energy gain of Q=50 will make electrical power virtually free.",
@@ -219,13 +209,13 @@
         },
         {
           "type": "essay",
-          "placeholder": "Take notes on ethical dilemmas or future consensus reached..."
+          "placeholder": "Reflect on these questions and write down your arguments..."
         }
       ]
     },
     {
       "id": "slide-7",
-      "title": "Linguistic Corrections & Teacher Feedback",
+      "title": "Language Reflection & Feedback",
       "stage": "Wrap-up & Feedback",
       "elements": [
         {

@@ -2,44 +2,37 @@
   "id": "football-beats-shamrock-upper-intermediate",
   "title": "Keeping Up with Science: Why 'Football' Beats 'Shamrock'",
   "level": "B2",
-  "templateType": "speaking_club",
+  "templateType": "interactive_lesson",
   "durationMinutes": 60,
   "slides": [
     {
       "id": "slide-1",
-      "title": "Lead-in & Field Journal Context",
+      "title": "Lead-in & Topic Discovery",
       "stage": "Warm-up & Context",
       "elements": [
         {
-          "type": "instruction",
-          "content": "Welcome to Keeping Up with Science. Review the research context and metadata below:"
-        },
-        {
-          "type": "blockquote",
-          "content": "Session Overview:\n• Duration: 60 minutes\n• Languages: 🇬🇧 🇫🇷 🇪🇸 🇮🇹 🇷🇺\n• Level: Upper-Intermediate (B2)\n• Topic: Cognitive Science / Psycholinguistics\n• Resources: Full Article 📖"
-        },
-        {
-          "type": "instruction",
-          "content": "🔬 Field Journal Research Log:"
-        },
-        {
-          "type": "blockquote",
-          "content": "Specimen / Topic\nCognitive Word Memory Metrics\n\nPrimary Hypothesis\nConcrete semantic nouns are recalled faster than abstract symbols.\n\nExperimental Findings\nHigher sensory-motor association score yields 40% superior recall latency.\n\nLinguistic Focus\nComparative and superlative modifiers (e.g. far more concrete, slightly faster)"
+          "type": "lead-in",
+          "title": "Topic Warm-up & Discovery",
+          "context": "Today we explore Cognitive Word Memory Metrics. Recent research explores whether concrete semantic nouns are recalled faster than abstract symbols. Key insights show that: Higher sensory-motor association score yields 40% superior recall latency.",
+          "questions": [
+            "What is your favorite word in English, and why?",
+            "Do you think reading in a foreign language feels different for your brain?"
+          ]
         },
         {
           "type": "instruction",
-          "content": "Lead-in / Warm-up Questions:"
+          "content": "Share your initial impressions and thoughts with your partner or teacher:"
         },
         {
-          "type": "blockquote",
-          "content": "What is your favorite word in English, and why?\nDo you think reading in a foreign language feels different for your brain?"
+          "type": "essay",
+          "placeholder": "Type your warm-up thoughts and speaking notes here..."
         }
       ]
     },
     {
       "id": "slide-2",
-      "title": "Target Vocabulary & Key Terms",
-      "stage": "Vocabulary Presentation",
+      "title": "Core Vocabulary & Collocations",
+      "stage": "Vocabulary Discovery",
       "elements": [
         {
           "type": "instruction",
@@ -112,8 +105,8 @@
     },
     {
       "id": "slide-3",
-      "title": "Language Focus & Structural Patterns",
-      "stage": "Language Focus",
+      "title": "Language Focus & Grammar Spotlight",
+      "stage": "Grammar & Patterns",
       "elements": [
         {
           "type": "instruction",
@@ -128,12 +121,19 @@
     },
     {
       "id": "slide-4",
-      "title": "Round 1: Comprehension & Core Findings",
-      "stage": "Fluency Practice",
+      "title": "Reading Insight & Comprehension",
+      "stage": "Reading & Discovery",
       "elements": [
         {
+          "type": "reading-insight",
+          "source": "Research Digest & Findings",
+          "title": "Key Study Insights & Core Takeaways",
+          "text": "Researchers conducted in-depth investigations and empirical trials to analyze these phenomena. The findings reveal critical mechanisms that challenge earlier assumptions.",
+          "takeaway": "Understanding both biological and empirical evidence allows us to draw more grounded conclusions."
+        },
+        {
           "type": "instruction",
-          "content": "Analyze the core scientific findings and discuss the personal prompts in pairs:"
+          "content": "Examine the core research findings and discuss the comprehension questions below:"
         },
         {
           "type": "discussion-prompts",
@@ -142,12 +142,7 @@
             "What evidence presented in the study makes it clear that cognitive processing loads are reduced for real compound structures?",
             "According to the study, what neural pathways are activated when processing a concrete word like 'football'?",
             "According to the research, why does an abstract word structure exhibit slower response times than sensory-motor nouns?",
-            "What experimental data shows that a semantic connection between compound components is parsed before conscious awareness?"
-          ]
-        },
-        {
-          "type": "discussion-prompts",
-          "prompts": [
+            "What experimental data shows that a semantic connection between compound components is parsed before conscious awareness?",
             "According to the study's parameters, how is a neural association mapped in the brain during word recognition?",
             "What does the article reveal about how scientific nomenclature separates real compound structures from single nouns?",
             "Based on the data, what factors determine the long-term retention of compound versus single words?",
@@ -157,13 +152,13 @@
         },
         {
           "type": "essay",
-          "placeholder": "Record your partner's key arguments or shared hypotheses..."
+          "placeholder": "Draft your answers and key takeaways here..."
         }
       ]
     },
     {
       "id": "slide-5",
-      "title": "Linguistic Corrections & Teacher Feedback",
+      "title": "Language Reflection & Feedback",
       "stage": "Wrap-up & Feedback",
       "elements": [
         {
