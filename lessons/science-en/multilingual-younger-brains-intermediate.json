@@ -109,11 +109,12 @@
       "elements": [
         {
           "type": "instruction",
-          "content": "Study the scientific discourse patterns and grammar structures:"
+          "content": "Master the key grammatical structures and discourse patterns below:"
         },
         {
-          "type": "blockquote",
-          "content": "Use cause-and-effect linkers to explain research findings: \"Due to constant task switching, bilinguals develop stronger executive control.\" / \"Consequently, symptoms of dementia appear later.\""
+          "type": "grammar-spotlight",
+          "title": "Grammar Spotlight: Linking Devices for Complex Cause & Consequence (B1)",
+          "content": "Connect related scientific arguments using cause-and-effect linkers: 'due to (+ noun)', 'as a consequence of', 'consequently', and 'thereby (+ -ing)'.\n🧩 Interactive Word Bank:\nTap a word chip below, then tap any empty bracket [_____] to place it!\nDue to\nConsequently\nthereby\nAs a result of\ntherefore\n📝 Task 1 : Part A: Rule Formulation:\nComplete the rule: 'Due to' is followed by a _____ phrase, whereas 'consequently' introduces an independent clause.\n📝 Task 1 : Part B: Structured Practice:\n_____ continual linguistic conflict resolution, bilingual brains develop robust executive control.\nPolyglots engage distinct neural networks; _____, symptoms of cognitive impairment manifest later.\nActive language practice stimulates neural plasticity, _____ preserving grey matter density.\n_____ early immersive bilingual education, children demonstrate heightened attention flexibility.\nOlder multilingual adults maintain richer synaptic reserve; _____, their mental agility persists longer.\nCheck Answers\nReset Board\n🗣️ Task 2 : Interactive Speaking:\nHow does learning a foreign language challenge your cognitive focus and problem-solving abilities?"
         }
       ]
     },
@@ -151,16 +152,104 @@
     },
     {
       "id": "slide-5",
+      "title": "Deep Dive & Critical Analysis",
+      "stage": "Critical Analysis",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Work with your partner to critically analyze the mechanisms, implications, and controversies of this research:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Critical Scenario & Analytical Challenge:\nEvaluate the real-world applications of: \"Multilingual People Have Younger Brains (B1)\". Consider potential secondary consequences, ethical challenges, and whether mainstream media interpretations accurately reflect the empirical science."
+        },
+        {
+          "type": "instruction",
+          "content": "Synthesize your analysis and prepare key arguments:"
+        },
+        {
+          "type": "essay",
+          "placeholder": "Draft your critical perspectives and evidence points here..."
+        }
+      ]
+    },
+    {
+      "id": "slide-6",
+      "title": "Collaborative Discussion & Perspectives",
+      "stage": "Interactive Discussion",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Explore broader perspectives, future societal impacts, and ethical considerations:"
+        },
+        {
+          "type": "discussion-prompts",
+          "prompts": [
+            "How do these findings regarding multilingual people have younger brains (b1) challenge common public assumptions?",
+            "If you had the opportunity to interview the lead researchers, which unresolved question would you ask?",
+            "What policies or practical guidelines should organizations implement based on this empirical evidence?"
+          ]
+        },
+        {
+          "type": "essay",
+          "placeholder": "Reflect on these questions and write down your arguments..."
+        }
+      ]
+    },
+    {
+      "id": "slide-7",
+      "title": "Guided Speaking & Production Task",
+      "stage": "Speaking & Production",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Prepare a clear 2-minute spoken summary or personal pitch based on the scenario below:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Spoken Presentation Task:\nYou are presenting a lightning briefing to an interdisciplinary scientific panel. Summarize the core findings on \"Multilingual People Have Younger Brains (B1)\", explain why it matters to society, and propose the next vital step in this domain."
+        },
+        {
+          "type": "instruction",
+          "content": "Structure your pitch using target vocabulary and newly studied grammar structures:"
+        },
+        {
+          "type": "essay",
+          "placeholder": "Write your speaking outline, bullet points, and key discourse markers..."
+        }
+      ]
+    },
+    {
+      "id": "slide-8",
       "title": "Language Reflection & Feedback",
       "stage": "Wrap-up & Feedback",
       "elements": [
         {
           "type": "instruction",
-          "content": "Teacher's real-time error corrections, pronunciation feedback, and notes:"
+          "content": "Examine common linguistic pitfalls and refine your accuracy with teacher guidance:"
+        },
+        {
+          "type": "error-correction",
+          "pairs": [
+            {
+              "incorrect": "Due to he speaks two languages, his brain is active.",
+              "correct": "Because he speaks two languages / Due to speaking two languages, his brain is active.",
+              "note": "'Due to' must be followed by a noun or gerund, not a full subject-verb clause."
+            },
+            {
+              "incorrect": "Learning words keep the hippocampus healthy.",
+              "correct": "Learning words keeps the hippocampus healthy.",
+              "note": "A gerund subject ('learning') is grammatically singular and takes 'keeps'."
+            }
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Teacher's real-time personalized feedback, pronunciation notes, and target goals:"
         },
         {
           "type": "essay",
-          "placeholder": "Teacher live feedback notes..."
+          "placeholder": "Record your personal language takeaways, error corrections, and goals for the next session..."
         }
       ]
     }
