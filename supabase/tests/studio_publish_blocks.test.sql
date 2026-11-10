@@ -1,0 +1,101 @@
+-- pgTAP: publishing every Lesson Studio block type, and keeping answers private.
+-- File: supabase/tests/studio_publish_blocks.test.sql
+BEGIN;
+
+SELECT plan(8);
+
+CREATE SCHEMA IF NOT EXISTS tests;
+CREATE OR REPLACE FUNCTION tests.studio_authenticate_as(p_user_id UUID)
+RETURNS VOID LANGUAGE plpgsql AS $$
+BEGIN
+  PERFORM set_config('role', 'authenticated', true);
+  PERFORM set_config('request.jwt.claim.sub', p_user_id::text, true);
+  PERFORM set_config('request.jwt.claims', json_build_object('sub', p_user_id, 'role', 'authenticated')::text, true);
+END;
+$$;
+GRANT USAGE ON SCHEMA tests TO authenticated;
+GRANT EXECUTE ON ALL FUNCTIONS IN SCHEMA tests TO authenticated;
+
+INSERT INTO auth.users (id, instance_id, aud, role, email, encrypted_password, email_confirmed_at, created_at, updated_at)
+VALUES ('aaaaaaaa-0000-0000-0000-00000000000f', '00000000-0000-0000-0000-000000000000', 'authenticated', 'authenticated',
+        'studio-founder@cosy.platform', '', NOW(), NOW(), NOW())
+ON CONFLICT (id) DO NOTHING;
+
+INSERT INTO public.profiles (id, role, language_access, course_level)
+VALUES ('aaaaaaaa-0000-0000-0000-00000000000f', 'founder', '{"*"}', '*')
+ON CONFLICT (id) DO UPDATE SET role = EXCLUDED.role, language_access = EXCLUDED.language_access, course_level = EXCLUDED.course_level;
+
+INSERT INTO public.courses (id, language, cefr, course_type, title, description, total_lessons, is_public_preview)
+VALUES ('studio-test-en-a2', 'en', 'a2', 'general', 'Studio test course', 'Test', 1, false)
+ON CONFLICT (id) DO NOTHING;
+
+-- Drafts are inserted as the table owner; publishing runs as the founder.
+INSERT INTO public.lesson_studio_drafts (id, owner_id, title, language, level, document) VALUES
+('all-blocks', 'aaaaaaaa-0000-0000-0000-00000000000f', 'All blocks', 'English', 'A2', $json$
+{"schemaVersion":1,"title":"All blocks","language":"English","level":"A2","blocks":[
+ {"id":"b1","type":"text","content":"Hello"},
+ {"id":"b2","type":"fill_blank","prompt":"___ a coffee","answers":["I'd like"]},
+ {"id":"b3","type":"vocab_list","items":[{"word":"menu","definition":"list of dishes","example":"See the menu","teacherNote":"SECRET-NOTE"}]},
+ {"id":"b4","type":"quiz","question":"Pick one","options":["red","green","blue"],"answer":"green"},
+ {"id":"b5","type":"discussion","prompts":["Favourite food?"]},
+ {"id":"b6","type":"essay","prompt":"Describe a meal"},
+ {"id":"b7","type":"correction","pairs":[{"incorrect":"I goed home","correct":"I went home"}]}
+]}$json$::jsonb),
+('bad-quiz', 'aaaaaaaa-0000-0000-0000-00000000000f', 'Bad quiz', 'English', 'A2', $json$
+{"schemaVersion":1,"title":"Bad quiz","language":"English","level":"A2","blocks":[
+ {"id":"q","type":"quiz","question":"x","options":["a"],"answer":"z"}]}$json$::jsonb);
+
+SELECT tests.studio_authenticate_as('aaaaaaaa-0000-0000-0000-00000000000f');
+
+SELECT lives_ok(
+  $$SELECT public.publish_lesson_studio_draft('all-blocks', 'studio-test-en-a2', 1)$$,
+  'STUDIO-1: a lesson using all seven block types publishes'
+);
+
+SELECT throws_ok(
+  $$SELECT public.publish_lesson_studio_draft('bad-quiz', 'studio-test-en-a2', 2)$$,
+  NULL,
+  'Draft contains an invalid or unsupported lesson block.',
+  'STUDIO-2: a quiz whose answer is not one of its options is rejected'
+);
+
+RESET role;
+
+SELECT ok(
+  (SELECT jsonb_array_length(body::jsonb->'slides') FROM public.lesson_student_content WHERE lesson_id = 'studio:all-blocks') = 7,
+  'STUDIO-3: student content has one slide per block'
+);
+
+SELECT ok(
+  (SELECT body NOT LIKE '%"answer"%' AND body NOT LIKE '%acceptedAnswers%'
+   FROM public.lesson_student_content WHERE lesson_id = 'studio:all-blocks'),
+  'STUDIO-4: student content carries no answer fields'
+);
+
+SELECT ok(
+  (SELECT body NOT LIKE '%I went home%' AND body NOT LIKE '%SECRET-NOTE%'
+   FROM public.lesson_student_content WHERE lesson_id = 'studio:all-blocks'),
+  'STUDIO-5: corrections and extra vocabulary fields never reach students'
+);
+
+SELECT ok(
+  (SELECT content::jsonb @> '{"answers":[{"blockId":"b4","acceptedAnswers":["green"]}]}'::jsonb
+   FROM public.lesson_protected WHERE lesson_id = 'studio:all-blocks' AND kind = 'answer-key'),
+  'STUDIO-6: the quiz answer is stored in the protected answer key'
+);
+
+SELECT ok(
+  (SELECT content::jsonb @> '{"answers":[{"blockId":"b7-1","acceptedAnswers":["I went home"]}]}'::jsonb
+   FROM public.lesson_protected WHERE lesson_id = 'studio:all-blocks' AND kind = 'answer-key'),
+  'STUDIO-7: the correction is stored in the protected answer key'
+);
+
+SELECT ok(
+  (SELECT content::jsonb @> '{"answers":[{"blockId":"b2","acceptedAnswers":["I''d like"]}]}'::jsonb
+   FROM public.lesson_protected WHERE lesson_id = 'studio:all-blocks' AND kind = 'answer-key'),
+  'STUDIO-8: fill-in-the-blank answers are still protected'
+);
+
+SELECT * FROM finish();
+
+ROLLBACK;

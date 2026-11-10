@@ -82,6 +82,36 @@
     return '';
   }
 
+  /**
+   * Stricter than validateDocument: what the server requires to publish.
+   * Drafts may be saved half-finished, so this runs only when publishing.
+   * Returns '' when the lesson can be published, else a message for the teacher.
+   */
+  function validateForPublish(doc) {
+    const base = validateDocument(doc);
+    if (base) return base;
+    if (!doc.blocks.length) return 'Add at least one block before publishing.';
+    for (let i = 0; i < doc.blocks.length; i++) {
+      const block = doc.blocks[i];
+      const n = i + 1;
+      if (block.type === 'quiz') {
+        if (!block.options.every((o) => typeof o === 'string')) return 'Quiz block ' + n + ' options must be text.';
+        if (typeof block.answer !== 'string' || block.options.indexOf(block.answer) === -1) {
+          return 'Quiz block ' + n + ' needs a correct answer chosen from its options.';
+        }
+      } else if (block.type === 'vocab_list') {
+        if (!block.items.every((it) => it && typeof it.word === 'string' && it.word.trim())) return 'Every vocabulary item in block ' + n + ' needs a word.';
+      } else if (block.type === 'correction') {
+        if (!block.pairs.every((pr) => pr && typeof pr.incorrect === 'string' && typeof pr.correct === 'string')) {
+          return 'Every pair in correction block ' + n + ' needs an incorrect and a correct sentence.';
+        }
+      } else if (block.type === 'discussion') {
+        if (!block.prompts.every((pr) => typeof pr === 'string')) return 'Discussion block ' + n + ' prompts must be text.';
+      }
+    }
+    return '';
+  }
+
   function isValidDocument(doc) {
     return validateDocument(doc) === '';
   }
@@ -607,6 +637,8 @@ function normalizeLanguage(value) {
     if (!courseId || !Number.isInteger(lessonNumber) || lessonNumber < 1) {
       $('publish-status').textContent = 'Choose a course and a lesson number greater than zero.'; return;
     }
+    const publishProblem = validateForPublish(state.doc);
+    if (publishProblem) { $('publish-status').textContent = publishProblem; return; }
     $('publish-confirm-button').disabled = true;
     $('publish-status').textContent = 'Saving draft and publishing…';
     try {
