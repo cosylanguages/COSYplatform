@@ -75,6 +75,8 @@
         if (typeof block.prompt !== 'string') return 'Writing block ' + (i + 1) + ' needs a prompt.';
       } else if (block.type === 'correction') {
         if (!Array.isArray(block.pairs)) return 'Correction block ' + (i + 1) + ' needs pairs.';
+      } else if (block.type === 'matching') {
+        if (!Array.isArray(block.pairs)) return 'Matching block ' + (i + 1) + ' needs pairs.';
       } else {
         return 'Block ' + (i + 1) + ' has unsupported type "' + String(block.type) + '".';
       }
@@ -107,6 +109,13 @@
         }
       } else if (block.type === 'discussion') {
         if (!block.prompts.every((pr) => typeof pr === 'string')) return 'Discussion block ' + n + ' prompts must be text.';
+      } else if (block.type === 'matching') {
+        if (block.pairs.length < 2) return 'Matching block ' + n + ' needs at least two pairs.';
+        if (!block.pairs.every((pr) => pr && typeof pr.left === 'string' && pr.left.trim() && typeof pr.right === 'string' && pr.right.trim())) {
+          return 'Every pair in matching block ' + n + ' needs a left and a right item.';
+        }
+        const rights = block.pairs.map((pr) => pr.right.trim().toLowerCase());
+        if (new Set(rights).size !== rights.length) return 'Matching block ' + n + ' has the same right-hand item twice, so the pairing would be ambiguous.';
       }
     }
     return '';
@@ -143,7 +152,8 @@
       quiz: 'Multiple Choice Quiz',
       discussion: 'Discussion Prompts',
       essay: 'Writing / Essay Task',
-      correction: 'Error Correction'
+      correction: 'Error Correction',
+      matching: 'Matching'
     };
 
     state.doc.blocks.forEach((block, index) => {
@@ -366,6 +376,52 @@
         addPairBtn.addEventListener('click', () => { block.pairs.push({ incorrect: '', correct: '' }); changed(); });
         container.appendChild(addPairBtn);
         card.appendChild(container);
+      } else if (block.type === 'matching') {
+        block.pairs = block.pairs || [];
+        const intro = document.createElement('div');
+        intro.className = 'studio-field';
+        const introLabel = document.createElement('span');
+        introLabel.textContent = 'Instructions (optional)';
+        const introInput = document.createElement('input');
+        introInput.value = block.instructions || '';
+        introInput.placeholder = 'Match each country to its capital.';
+        introInput.addEventListener('input', () => { block.instructions = introInput.value; changed(false); });
+        intro.append(introLabel, introInput);
+        card.appendChild(intro);
+
+        const container = document.createElement('div');
+        container.className = 'studio-field';
+        const label = document.createElement('span');
+        label.textContent = 'Pairs (Item ➔ Its match). Students see the matches shuffled.';
+        container.appendChild(label);
+        block.pairs.forEach((pair, pairIdx) => {
+          const row = document.createElement('div');
+          row.className = 'studio-item-row';
+          const leftInput = document.createElement('input');
+          leftInput.placeholder = 'Item';
+          leftInput.value = pair.left || '';
+          leftInput.addEventListener('input', () => { pair.left = leftInput.value; changed(false); });
+          const arrow = document.createElement('span');
+          arrow.textContent = '➔';
+          const rightInput = document.createElement('input');
+          rightInput.placeholder = 'Its match';
+          rightInput.value = pair.right || '';
+          rightInput.addEventListener('input', () => { pair.right = rightInput.value; changed(false); });
+          const delBtn = document.createElement('button');
+          delBtn.className = 'studio-mini-btn';
+          delBtn.type = 'button';
+          delBtn.textContent = '×';
+          delBtn.addEventListener('click', () => { block.pairs.splice(pairIdx, 1); changed(); });
+          row.append(leftInput, arrow, rightInput, delBtn);
+          container.appendChild(row);
+        });
+        const addMatchBtn = document.createElement('button');
+        addMatchBtn.className = 'studio-mini-btn';
+        addMatchBtn.type = 'button';
+        addMatchBtn.textContent = '＋ Add Pair';
+        addMatchBtn.addEventListener('click', () => { block.pairs.push({ left: '', right: '' }); changed(); });
+        container.appendChild(addMatchBtn);
+        card.appendChild(container);
       }
 
       host.appendChild(card);
@@ -476,6 +532,25 @@
           list.appendChild(card);
         });
         item.appendChild(list);
+      } else if (block.type === 'matching') {
+        const note = document.createElement('p');
+        note.className = 'studio-hint';
+        note.textContent = (block.instructions || 'Match each item with its pair.');
+        item.appendChild(note);
+        const rows = (block.pairs || []).map((pair) => ({ left: pair.left || '', right: pair.right || '' }));
+        const bank = document.createElement('p');
+        bank.textContent = 'Choose from: ' + rows.map((r) => r.right).filter(Boolean).sort((a, b) => a.localeCompare(b)).join(' · ');
+        item.appendChild(bank);
+        rows.forEach((r) => {
+          const line = document.createElement('div');
+          line.className = 'correction-card';
+          const left = document.createElement('span');
+          left.textContent = r.left;
+          const input = document.createElement('input');
+          input.placeholder = 'Type the matching item...';
+          line.append(left, input);
+          item.appendChild(line);
+        });
       }
 
       host.appendChild(item);
@@ -733,6 +808,18 @@ function normalizeLanguage(value) {
           id: makeId(),
           type: 'essay',
           prompt: 'Deliver your 1-minute science summary or write your reflection based on the findings discussed above.'
+        });
+        changed();
+      });
+    }
+    const addMatchingBtn = $('add-matching');
+    if (addMatchingBtn) {
+      addMatchingBtn.addEventListener('click', () => {
+        state.doc.blocks.push({
+          id: makeId(),
+          type: 'matching',
+          instructions: 'Match each country to its capital.',
+          pairs: [{ left: 'France', right: 'Paris' }, { left: 'Italy', right: 'Rome' }]
         });
         changed();
       });
