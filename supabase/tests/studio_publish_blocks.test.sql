@@ -2,7 +2,7 @@
 -- File: supabase/tests/studio_publish_blocks.test.sql
 BEGIN;
 
-SELECT plan(8);
+SELECT plan(12);
 
 CREATE SCHEMA IF NOT EXISTS tests;
 CREATE OR REPLACE FUNCTION tests.studio_authenticate_as(p_user_id UUID)
@@ -41,6 +41,12 @@ INSERT INTO public.lesson_studio_drafts (id, owner_id, title, language, level, d
  {"id":"b6","type":"essay","prompt":"Describe a meal"},
  {"id":"b7","type":"correction","pairs":[{"incorrect":"I goed home","correct":"I went home"}]}
 ]}$json$::jsonb),
+('match-ok', 'aaaaaaaa-0000-0000-0000-00000000000f', 'Match ok', 'English', 'A2', $json$
+{"schemaVersion":1,"title":"Match ok","language":"English","level":"A2","blocks":[
+ {"id":"m1","type":"matching","instructions":"Match country and capital.","pairs":[{"left":"France","right":"Paris"},{"left":"Italy","right":"Rome"}]}]}$json$::jsonb),
+('match-dup', 'aaaaaaaa-0000-0000-0000-00000000000f', 'Match dup', 'English', 'A2', $json$
+{"schemaVersion":1,"title":"Match dup","language":"English","level":"A2","blocks":[
+ {"id":"m1","type":"matching","pairs":[{"left":"a","right":"Same"},{"left":"b","right":" same "}]}]}$json$::jsonb),
 ('bad-quiz', 'aaaaaaaa-0000-0000-0000-00000000000f', 'Bad quiz', 'English', 'A2', $json$
 {"schemaVersion":1,"title":"Bad quiz","language":"English","level":"A2","blocks":[
  {"id":"q","type":"quiz","question":"x","options":["a"],"answer":"z"}]}$json$::jsonb);
@@ -59,7 +65,33 @@ SELECT throws_ok(
   'STUDIO-2: a quiz whose answer is not one of its options is rejected'
 );
 
+SELECT lives_ok(
+  $$SELECT public.publish_lesson_studio_draft('match-ok', 'studio-test-en-a2', 3)$$,
+  'STUDIO-9: a matching lesson publishes'
+);
+
+SELECT throws_ok(
+  $$SELECT public.publish_lesson_studio_draft('match-dup', 'studio-test-en-a2', 4)$$,
+  NULL,
+  'Draft contains an invalid or unsupported lesson block.',
+  'STUDIO-10: matching with the same right-hand item twice is rejected'
+);
+
 RESET role;
+
+SELECT ok(
+  (SELECT content::jsonb @> '{"answers":[{"blockId":"m1-1","acceptedAnswers":["Paris"]},{"blockId":"m1-2","acceptedAnswers":["Rome"]}]}'::jsonb
+   FROM public.lesson_protected WHERE lesson_id = 'studio:match-ok' AND kind = 'answer-key'),
+  'STUDIO-11: the matching pairing is stored in the protected answer key'
+);
+
+SELECT ok(
+  (SELECT body NOT LIKE '%"pairs"%' AND body NOT LIKE '%acceptedAnswers%'
+          AND (body::jsonb->'slides'->0->'elements'->0->>'content' LIKE '%Choose from: Paris · Rome%'
+               OR body::jsonb->'slides'->0->'elements'->0->>'content' LIKE '%Choose from: Rome · Paris%')
+   FROM public.lesson_student_content WHERE lesson_id = 'studio:match-ok'),
+  'STUDIO-12: students get a shuffled bank and no pairing'
+);
 
 SELECT ok(
   (SELECT jsonb_array_length(body::jsonb->'slides') FROM public.lesson_student_content WHERE lesson_id = 'studio:all-blocks') = 7,
