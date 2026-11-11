@@ -2,7 +2,7 @@
 -- File: supabase/tests/studio_publish_blocks.test.sql
 BEGIN;
 
-SELECT plan(12);
+SELECT plan(18);
 
 CREATE SCHEMA IF NOT EXISTS tests;
 CREATE OR REPLACE FUNCTION tests.studio_authenticate_as(p_user_id UUID)
@@ -47,6 +47,17 @@ INSERT INTO public.lesson_studio_drafts (id, owner_id, title, language, level, d
 ('match-dup', 'aaaaaaaa-0000-0000-0000-00000000000f', 'Match dup', 'English', 'A2', $json$
 {"schemaVersion":1,"title":"Match dup","language":"English","level":"A2","blocks":[
  {"id":"m1","type":"matching","pairs":[{"left":"a","right":"Same"},{"left":"b","right":" same "}]}]}$json$::jsonb),
+('more-blocks', 'aaaaaaaa-0000-0000-0000-00000000000f', 'More blocks', 'English', 'A2', $json$
+{"schemaVersion":1,"title":"More blocks","language":"English","level":"A2","blocks":[
+ {"id":"f1","type":"fill_blank","prompt":"She ___ home.","answers":["went"],"bank":["went","goes","gone"]},
+ {"id":"t1","type":"true_false","statements":[{"text":"The sun is a star.","answer":true},{"text":"Paris is in Spain.","answer":false}]},
+ {"id":"w1","type":"word_order","sentences":["I would like a coffee"]},
+ {"id":"s1","type":"sort_columns","columns":["Past","Present"],"items":[{"text":"went","column":"Past"},{"text":"goes","column":"Present"}]},
+ {"id":"o1","type":"put_in_order","items":["Wake up","Have breakfast","Go to work"]}
+]}$json$::jsonb),
+('order-dup', 'aaaaaaaa-0000-0000-0000-00000000000f', 'Order dup', 'English', 'A2', $json$
+{"schemaVersion":1,"title":"Order dup","language":"English","level":"A2","blocks":[
+ {"id":"o1","type":"put_in_order","items":["a","A ","b"]}]}$json$::jsonb),
 ('bad-quiz', 'aaaaaaaa-0000-0000-0000-00000000000f', 'Bad quiz', 'English', 'A2', $json$
 {"schemaVersion":1,"title":"Bad quiz","language":"English","level":"A2","blocks":[
  {"id":"q","type":"quiz","question":"x","options":["a"],"answer":"z"}]}$json$::jsonb);
@@ -77,7 +88,50 @@ SELECT throws_ok(
   'STUDIO-10: matching with the same right-hand item twice is rejected'
 );
 
+SELECT lives_ok(
+  $$SELECT public.publish_lesson_studio_draft('more-blocks', 'studio-test-en-a2', 5)$$,
+  'STUDIO-13: true/false, word order, sorting, ordering and a word box publish'
+);
+
+SELECT throws_ok(
+  $$SELECT public.publish_lesson_studio_draft('order-dup', 'studio-test-en-a2', 6)$$,
+  NULL,
+  'Draft contains an invalid or unsupported lesson block.',
+  'STUDIO-14: an ordering block with a repeated item is rejected'
+);
+
 RESET role;
+
+SELECT ok(
+  (SELECT content::jsonb @> '{"answers":[
+      {"blockId":"t1-1","acceptedAnswers":["True"]},{"blockId":"t1-2","acceptedAnswers":["False"]},
+      {"blockId":"w1-1","acceptedAnswers":["I would like a coffee"]},
+      {"blockId":"s1-1","acceptedAnswers":["Past"]},{"blockId":"s1-2","acceptedAnswers":["Present"]},
+      {"blockId":"o1-1","acceptedAnswers":["Wake up"]},{"blockId":"o1-2","acceptedAnswers":["Have breakfast"]},{"blockId":"o1-3","acceptedAnswers":["Go to work"]}
+    ]}'::jsonb
+   FROM public.lesson_protected WHERE lesson_id = 'studio:more-blocks' AND kind = 'answer-key'),
+  'STUDIO-15: true/false, word order, sorting and ordering answers are protected'
+);
+
+SELECT ok(
+  (SELECT body NOT LIKE '%acceptedAnswers%' AND body NOT LIKE '%"statements"%'
+          AND body NOT LIKE '%"sentences"%' AND body NOT LIKE '%"columns"%'
+   FROM public.lesson_student_content WHERE lesson_id = 'studio:more-blocks'),
+  'STUDIO-16: student content carries no answers or authoring fields for the new blocks'
+);
+
+SELECT ok(
+  (SELECT body::jsonb->'slides'->2->'elements'->0->>'content' NOT LIKE '%I / would / like / a / coffee%'
+          AND body::jsonb->'slides'->2->'elements'->0->>'content' LIKE 'Put the words in order: %'
+   FROM public.lesson_student_content WHERE lesson_id = 'studio:more-blocks'),
+  'STUDIO-17: word order words are shuffled, never in the original order'
+);
+
+SELECT ok(
+  (SELECT body::jsonb->'slides'->0->'elements'->0->>'content' LIKE '%Word box: %'
+   FROM public.lesson_student_content WHERE lesson_id = 'studio:more-blocks'),
+  'STUDIO-18: the word box is shown to students'
+);
 
 SELECT ok(
   (SELECT content::jsonb @> '{"answers":[{"blockId":"m1-1","acceptedAnswers":["Paris"]},{"blockId":"m1-2","acceptedAnswers":["Rome"]}]}'::jsonb

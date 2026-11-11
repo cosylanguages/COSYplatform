@@ -77,6 +77,14 @@
         if (!Array.isArray(block.pairs)) return 'Correction block ' + (i + 1) + ' needs pairs.';
       } else if (block.type === 'matching') {
         if (!Array.isArray(block.pairs)) return 'Matching block ' + (i + 1) + ' needs pairs.';
+      } else if (block.type === 'true_false') {
+        if (!Array.isArray(block.statements)) return 'True/False block ' + (i + 1) + ' needs statements.';
+      } else if (block.type === 'word_order') {
+        if (!Array.isArray(block.sentences)) return 'Word order block ' + (i + 1) + ' needs sentences.';
+      } else if (block.type === 'sort_columns') {
+        if (!Array.isArray(block.columns) || !Array.isArray(block.items)) return 'Sorting block ' + (i + 1) + ' needs columns and items.';
+      } else if (block.type === 'put_in_order') {
+        if (!Array.isArray(block.items)) return 'Ordering block ' + (i + 1) + ' needs items.';
       } else {
         return 'Block ' + (i + 1) + ' has unsupported type "' + String(block.type) + '".';
       }
@@ -96,6 +104,9 @@
     for (let i = 0; i < doc.blocks.length; i++) {
       const block = doc.blocks[i];
       const n = i + 1;
+      if (block.type === 'fill_blank' && block.bank !== undefined && (!Array.isArray(block.bank) || !block.bank.every((w) => typeof w === 'string'))) {
+        return 'The word box in block ' + n + ' must be a list of words.';
+      }
       if (block.type === 'quiz') {
         if (!block.options.every((o) => typeof o === 'string')) return 'Quiz block ' + n + ' options must be text.';
         if (typeof block.answer !== 'string' || block.options.indexOf(block.answer) === -1) {
@@ -109,6 +120,28 @@
         }
       } else if (block.type === 'discussion') {
         if (!block.prompts.every((pr) => typeof pr === 'string')) return 'Discussion block ' + n + ' prompts must be text.';
+      } else if (block.type === 'true_false') {
+        if (!block.statements.length) return 'True/False block ' + n + ' needs at least one statement.';
+        if (!block.statements.every((st) => st && typeof st.text === 'string' && st.text.trim() && typeof st.answer === 'boolean')) {
+          return 'Every statement in True/False block ' + n + ' needs text and a True or False answer.';
+        }
+      } else if (block.type === 'word_order') {
+        if (!block.sentences.length) return 'Word order block ' + n + ' needs at least one sentence.';
+        if (!block.sentences.every((sn) => typeof sn === 'string' && sn.trim().split(/\s+/).length >= 3)) {
+          return 'Every sentence in word order block ' + n + ' needs at least three words.';
+        }
+      } else if (block.type === 'sort_columns') {
+        const cols = block.columns.map((c) => (typeof c === 'string' ? c.trim() : ''));
+        if (cols.length < 2 || cols.some((c) => !c)) return 'Sorting block ' + n + ' needs at least two named columns.';
+        if (new Set(cols.map((c) => c.toLowerCase())).size !== cols.length) return 'Sorting block ' + n + ' has two columns with the same name.';
+        if (block.items.length < 2) return 'Sorting block ' + n + ' needs at least two items.';
+        if (!block.items.every((it) => it && typeof it.text === 'string' && it.text.trim() && block.columns.indexOf(it.column) !== -1)) {
+          return 'Every item in sorting block ' + n + ' needs text and one of the columns.';
+        }
+      } else if (block.type === 'put_in_order') {
+        const items = block.items.map((it) => (typeof it === 'string' ? it.trim() : ''));
+        if (items.length < 3 || items.some((it) => !it)) return 'Ordering block ' + n + ' needs at least three items.';
+        if (new Set(items.map((it) => it.toLowerCase())).size !== items.length) return 'Ordering block ' + n + ' has the same item twice.';
       } else if (block.type === 'matching') {
         if (block.pairs.length < 2) return 'Matching block ' + n + ' needs at least two pairs.';
         if (!block.pairs.every((pr) => pr && typeof pr.left === 'string' && pr.left.trim() && typeof pr.right === 'string' && pr.right.trim())) {
@@ -153,7 +186,11 @@
       discussion: 'Discussion Prompts',
       essay: 'Writing / Essay Task',
       correction: 'Error Correction',
-      matching: 'Matching'
+      matching: 'Matching',
+      true_false: 'True or False',
+      word_order: 'Word Order',
+      sort_columns: 'Sort into Columns',
+      put_in_order: 'Put in Order'
     };
 
     state.doc.blocks.forEach((block, index) => {
@@ -213,6 +250,20 @@
         });
         answerField.append(answerLabel, answerInput);
         card.appendChild(answerField);
+
+        const bankField = document.createElement('label');
+        bankField.className = 'studio-field';
+        const bankLabel = document.createElement('span');
+        bankLabel.textContent = 'Word box (optional, separate words with |; students see them shuffled)';
+        const bankInput = document.createElement('input');
+        bankInput.value = (block.bank || []).join(' | ');
+        bankInput.addEventListener('input', () => {
+          const words = bankInput.value.split('|').map((w) => w.trim()).filter(Boolean);
+          if (words.length) block.bank = words; else delete block.bank;
+          changed(false);
+        });
+        bankField.append(bankLabel, bankInput);
+        card.appendChild(bankField);
       } else if (block.type === 'vocab_list') {
         block.items = block.items || [];
         const container = document.createElement('div');
@@ -422,6 +473,146 @@
         addMatchBtn.addEventListener('click', () => { block.pairs.push({ left: '', right: '' }); changed(); });
         container.appendChild(addMatchBtn);
         card.appendChild(container);
+      } else if (block.type === 'true_false') {
+        block.statements = block.statements || [];
+        const container = document.createElement('div');
+        container.className = 'studio-field';
+        const label = document.createElement('span');
+        label.textContent = 'Statements (students answer True or False)';
+        container.appendChild(label);
+        block.statements.forEach((st, idx) => {
+          const row = document.createElement('div');
+          row.className = 'studio-item-row';
+          const text = document.createElement('input');
+          text.placeholder = 'Statement';
+          text.value = st.text || '';
+          text.addEventListener('input', () => { st.text = text.value; changed(false); });
+          const answer = document.createElement('select');
+          [['true', 'True'], ['false', 'False']].forEach(([v, t]) => {
+            const o = document.createElement('option'); o.value = v; o.textContent = t; answer.appendChild(o);
+          });
+          answer.value = st.answer === false ? 'false' : 'true';
+          answer.addEventListener('change', () => { st.answer = answer.value === 'true'; changed(false); });
+          const del = document.createElement('button');
+          del.className = 'studio-mini-btn'; del.type = 'button'; del.textContent = '×';
+          del.addEventListener('click', () => { block.statements.splice(idx, 1); changed(); });
+          row.append(text, answer, del);
+          container.appendChild(row);
+        });
+        const add = document.createElement('button');
+        add.className = 'studio-mini-btn'; add.type = 'button'; add.textContent = '＋ Add Statement';
+        add.addEventListener('click', () => { block.statements.push({ text: '', answer: true }); changed(); });
+        container.appendChild(add);
+        card.appendChild(container);
+      } else if (block.type === 'word_order') {
+        block.sentences = block.sentences || [];
+        const container = document.createElement('div');
+        container.className = 'studio-field';
+        const label = document.createElement('span');
+        label.textContent = 'Correct sentences (students see the words shuffled and type the sentence)';
+        container.appendChild(label);
+        block.sentences.forEach((sn, idx) => {
+          const row = document.createElement('div');
+          row.className = 'studio-item-row';
+          const input = document.createElement('input');
+          input.placeholder = 'I would like a coffee';
+          input.value = sn || '';
+          input.addEventListener('input', () => { block.sentences[idx] = input.value; changed(false); });
+          const del = document.createElement('button');
+          del.className = 'studio-mini-btn'; del.type = 'button'; del.textContent = '×';
+          del.addEventListener('click', () => { block.sentences.splice(idx, 1); changed(); });
+          row.append(input, del);
+          container.appendChild(row);
+        });
+        const add = document.createElement('button');
+        add.className = 'studio-mini-btn'; add.type = 'button'; add.textContent = '＋ Add Sentence';
+        add.addEventListener('click', () => { block.sentences.push(''); changed(); });
+        container.appendChild(add);
+        card.appendChild(container);
+      } else if (block.type === 'sort_columns') {
+        block.columns = block.columns || [];
+        block.items = block.items || [];
+        const colField = document.createElement('label');
+        colField.className = 'studio-field';
+        const colLabel = document.createElement('span');
+        colLabel.textContent = 'Columns (separate with |)';
+        const colInput = document.createElement('input');
+        colInput.value = block.columns.join(' | ');
+        // 'change' (not 'input'): the item menus below are rebuilt from the columns.
+        colInput.addEventListener('change', () => {
+          block.columns = colInput.value.split('|').map((c) => c.trim()).filter(Boolean);
+          block.items.forEach((it) => { if (block.columns.indexOf(it.column) === -1) it.column = block.columns[0] || ''; });
+          changed();
+        });
+        colField.append(colLabel, colInput);
+        card.appendChild(colField);
+
+        const container = document.createElement('div');
+        container.className = 'studio-field';
+        const label = document.createElement('span');
+        label.textContent = 'Items (and the column each belongs to)';
+        container.appendChild(label);
+        block.items.forEach((it, idx) => {
+          const row = document.createElement('div');
+          row.className = 'studio-item-row';
+          const text = document.createElement('input');
+          text.placeholder = 'Item';
+          text.value = it.text || '';
+          text.addEventListener('input', () => { it.text = text.value; changed(false); });
+          const col = document.createElement('select');
+          block.columns.forEach((c) => { const o = document.createElement('option'); o.value = c; o.textContent = c; col.appendChild(o); });
+          col.value = block.columns.indexOf(it.column) !== -1 ? it.column : (block.columns[0] || '');
+          if (it.column !== col.value) it.column = col.value;
+          col.addEventListener('change', () => { it.column = col.value; changed(false); });
+          const del = document.createElement('button');
+          del.className = 'studio-mini-btn'; del.type = 'button'; del.textContent = '×';
+          del.addEventListener('click', () => { block.items.splice(idx, 1); changed(); });
+          row.append(text, col, del);
+          container.appendChild(row);
+        });
+        const add = document.createElement('button');
+        add.className = 'studio-mini-btn'; add.type = 'button'; add.textContent = '＋ Add Item';
+        add.addEventListener('click', () => { block.items.push({ text: '', column: block.columns[0] || '' }); changed(); });
+        container.appendChild(add);
+        card.appendChild(container);
+      } else if (block.type === 'put_in_order') {
+        block.items = block.items || [];
+        const intro = document.createElement('label');
+        intro.className = 'studio-field';
+        const introLabel = document.createElement('span');
+        introLabel.textContent = 'Instructions (optional)';
+        const introInput = document.createElement('input');
+        introInput.value = block.instructions || '';
+        introInput.placeholder = 'Put the morning routine in order.';
+        introInput.addEventListener('input', () => { block.instructions = introInput.value; changed(false); });
+        intro.append(introLabel, introInput);
+        card.appendChild(intro);
+
+        const container = document.createElement('div');
+        container.className = 'studio-field';
+        const label = document.createElement('span');
+        label.textContent = 'Items in the CORRECT order (students see them shuffled)';
+        container.appendChild(label);
+        block.items.forEach((it, idx) => {
+          const row = document.createElement('div');
+          row.className = 'studio-item-row';
+          const num = document.createElement('span');
+          num.textContent = String(idx + 1) + '.';
+          const input = document.createElement('input');
+          input.placeholder = 'Step ' + (idx + 1);
+          input.value = it || '';
+          input.addEventListener('input', () => { block.items[idx] = input.value; changed(false); });
+          const del = document.createElement('button');
+          del.className = 'studio-mini-btn'; del.type = 'button'; del.textContent = '×';
+          del.addEventListener('click', () => { block.items.splice(idx, 1); changed(); });
+          row.append(num, input, del);
+          container.appendChild(row);
+        });
+        const add = document.createElement('button');
+        add.className = 'studio-mini-btn'; add.type = 'button'; add.textContent = '＋ Add Step';
+        add.addEventListener('click', () => { block.items.push(''); changed(); });
+        container.appendChild(add);
+        card.appendChild(container);
       }
 
       host.appendChild(card);
@@ -455,6 +646,12 @@
         const p = document.createElement('p');
         p.textContent = block.prompt;
         item.appendChild(p);
+        if (Array.isArray(block.bank) && block.bank.length) {
+          const box = document.createElement('p');
+          box.className = 'studio-hint';
+          box.textContent = 'Word box: ' + block.bank.slice().sort((a, b) => String(a).localeCompare(String(b))).join(' · ');
+          item.appendChild(box);
+        }
         const input = document.createElement('input');
         input.type = 'text';
         input.placeholder = 'Type your answer…';
@@ -551,6 +748,53 @@
           line.append(left, input);
           item.appendChild(line);
         });
+      } else if (block.type === 'true_false') {
+        (block.statements || []).forEach((st) => {
+          const line = document.createElement('div');
+          line.className = 'correction-card';
+          const t = document.createElement('span');
+          t.textContent = st.text || '';
+          line.appendChild(t);
+          ['True', 'False'].forEach((v) => {
+            const b = document.createElement('button');
+            b.type = 'button'; b.textContent = v;
+            line.appendChild(b);
+          });
+          item.appendChild(line);
+        });
+      } else if (block.type === 'word_order') {
+        (block.sentences || []).forEach((sn) => {
+          const words = String(sn || '').trim().split(/\s+/).filter(Boolean).sort((a, b) => a.localeCompare(b));
+          const p = document.createElement('p');
+          p.textContent = 'Put the words in order: ' + words.join(' / ');
+          item.appendChild(p);
+          const input = document.createElement('input');
+          input.placeholder = 'Type the sentence...';
+          item.appendChild(input);
+        });
+      } else if (block.type === 'sort_columns') {
+        const note = document.createElement('p');
+        note.className = 'studio-hint';
+        note.textContent = 'Columns: ' + (block.columns || []).join(' | ');
+        item.appendChild(note);
+        (block.items || []).forEach((it) => {
+          const line = document.createElement('div');
+          line.className = 'correction-card';
+          const t = document.createElement('span');
+          t.textContent = it.text || '';
+          const sel = document.createElement('select');
+          (block.columns || []).forEach((c) => { const o = document.createElement('option'); o.textContent = c; sel.appendChild(o); });
+          line.append(t, sel);
+          item.appendChild(line);
+        });
+      } else if (block.type === 'put_in_order') {
+        const note = document.createElement('p');
+        note.className = 'studio-hint';
+        note.textContent = block.instructions || 'Put these in the correct order.';
+        item.appendChild(note);
+        const bank = document.createElement('p');
+        bank.textContent = (block.items || []).slice().sort((a, b) => String(a).localeCompare(String(b))).join(' · ');
+        item.appendChild(bank);
       }
 
       host.appendChild(item);
@@ -824,6 +1068,14 @@ function normalizeLanguage(value) {
         changed();
       });
     }
+    const addBlockButton = (id, make) => {
+      const el = $(id);
+      if (el) el.addEventListener('click', () => { state.doc.blocks.push(Object.assign({ id: makeId() }, make())); changed(); });
+    };
+    addBlockButton('add-truefalse', () => ({ type: 'true_false', statements: [{ text: 'The sun is a star.', answer: true }, { text: 'Paris is in Spain.', answer: false }] }));
+    addBlockButton('add-wordorder', () => ({ type: 'word_order', sentences: ['I would like a coffee'] }));
+    addBlockButton('add-sort', () => ({ type: 'sort_columns', instructions: 'Is it past or present?', columns: ['Past', 'Present'], items: [{ text: 'went', column: 'Past' }, { text: 'goes', column: 'Present' }] }));
+    addBlockButton('add-order', () => ({ type: 'put_in_order', instructions: 'Put the morning routine in order.', items: ['Wake up', 'Have breakfast', 'Go to work'] }));
     const addCorrectionBtn = $('add-correction');
     if (addCorrectionBtn) {
       addCorrectionBtn.addEventListener('click', () => {
