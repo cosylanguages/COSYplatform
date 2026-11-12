@@ -1,0 +1,39 @@
+{
+  "curriculumId": "science-english-b2",
+  "title": "Keeping Up With Science: B2 Speaking Club Series",
+  "totalLessons": 4,
+  "supportedDurations": [
+    "50",
+    "80"
+  ],
+  "sequence": [
+    {
+      "lessonNumber": 1,
+      "id": "artificial-intelligence-everyday-life",
+      "title": "Keeping Up With Science #1: Artificial Intelligence in Everyday Life",
+      "module": "Science & Emerging Tech",
+      "lessonFile": "lessons/science-en/artificial-intelligence-everyday-life.json"
+    },
+    {
+      "lessonNumber": 2,
+      "id": "gene-editing-and-crispr",
+      "title": "Keeping Up With Science #2: Gene Editing & Bioethics (CRISPR)",
+      "module": "Biotechnology & Medicine",
+      "lessonFile": "lessons/science-en/gene-editing-and-crispr.json"
+    },
+    {
+      "lessonNumber": 3,
+      "id": "space-exploration-mars-colonization",
+      "title": "Keeping Up With Science #3: Space Exploration & Commercializing Mars",
+      "module": "Astrophysics & Space Economy",
+      "lessonFile": "lessons/science-en/space-exploration-mars-colonization.json"
+    },
+    {
+      "lessonNumber": 4,
+      "id": "renewable-energy-and-climate-tech",
+      "title": "Keeping Up With Science #4: Renewable Energy & Climate Innovations",
+      "module": "Environmental Science & Climate Tech",
+      "lessonFile": "lessons/science-en/renewable-energy-and-climate-tech.json"
+    }
+  ]
+}
