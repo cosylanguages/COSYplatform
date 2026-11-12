@@ -49,6 +49,33 @@
     })[ch]);
   }
 
+  const MB = 1024 * 1024;
+  const MEDIA_RULES = {
+    image: { label: 'picture', max: 5 * MB, accept: 'image/png,image/jpeg,image/webp,image/gif', types: { 'image/png': 'png', 'image/jpeg': 'jpg', 'image/webp': 'webp', 'image/gif': 'gif' } },
+    audio: { label: 'audio', max: 20 * MB, accept: 'audio/mpeg,audio/mp4,audio/x-m4a,audio/ogg,audio/webm,audio/wav', types: { 'audio/mpeg': 'mp3', 'audio/mp4': 'm4a', 'audio/x-m4a': 'm4a', 'audio/ogg': 'ogg', 'audio/webm': 'webm', 'audio/wav': 'wav', 'audio/x-wav': 'wav' } },
+    video: { label: 'video', max: 50 * MB, accept: 'video/mp4,video/webm', types: { 'video/mp4': 'mp4', 'video/webm': 'webm' } },
+    pdf: { label: 'PDF', max: 15 * MB, accept: 'application/pdf', types: { 'application/pdf': 'pdf' } }
+  };
+  const MEDIA_KINDS = Object.keys(MEDIA_RULES);
+
+  /** Upload to the private lesson-media bucket under the author's own folder. Returns the stored path. */
+  async function uploadLessonMedia(kind, file) {
+    const rule = MEDIA_RULES[kind];
+    const ext = rule.types[file.type];
+    if (!ext) throw new Error('That file type is not allowed for a ' + rule.label + ' block.');
+    if (file.size > rule.max) throw new Error('That file is too large (limit ' + Math.round(rule.max / MB) + ' MB for a ' + rule.label + ').');
+    const client = window.CosyAuth ? window.CosyAuth.client : null;
+    if (!client || !client.storage) throw new Error('Sign in to upload files.');
+    const { data: authData, error: authError } = await client.auth.getUser();
+    if (authError || !authData || !authData.user) throw new Error('Could not verify your signed-in account.');
+    const path = authData.user.id + '/' + crypto.randomUUID() + '.' + ext;
+    const { error } = await client.storage.from('lesson-media').upload(path, file, { contentType: file.type, upsert: false, cacheControl: '3600' });
+    if (error) throw new Error(error.message || 'Upload failed.');
+    return path;
+  }
+
+  const MEDIA_LABELS = { image: 'Picture', audio: 'Audio', video: 'Video', pdf: 'PDF' };
+
   function validateDocument(doc) {
     if (!doc || typeof doc !== 'object' || Array.isArray(doc)) return 'Document must be a JSON object.';
     if (doc.schemaVersion !== 1) return 'schemaVersion must be 1.';
@@ -85,6 +112,8 @@
         if (!Array.isArray(block.columns) || !Array.isArray(block.items)) return 'Sorting block ' + (i + 1) + ' needs columns and items.';
       } else if (block.type === 'put_in_order') {
         if (!Array.isArray(block.items)) return 'Ordering block ' + (i + 1) + ' needs items.';
+      } else if (MEDIA_KINDS.indexOf(block.type) !== -1) {
+        // path / embed / alt / caption are checked when publishing, so a draft can be saved half-finished.
       } else {
         return 'Block ' + (i + 1) + ' has unsupported type "' + String(block.type) + '".';
       }
@@ -120,6 +149,22 @@
         }
       } else if (block.type === 'discussion') {
         if (!block.prompts.every((pr) => typeof pr === 'string')) return 'Discussion block ' + n + ' prompts must be text.';
+      } else if (MEDIA_KINDS.indexOf(block.type) !== -1) {
+        const media = window.CosyStudioMedia;
+        const hasFile = typeof block.path === 'string' && block.path !== '';
+        const hasEmbed = !!(block.embed && media && media.embedSrc(block.embed.provider, block.embed.id));
+        const label = MEDIA_LABELS[block.type] || block.type;
+        if (block.type === 'video') {
+          if (hasFile && block.embed) return label + ' block ' + n + ' has both an uploaded file and a link. Keep one.';
+          if (!hasFile && !hasEmbed) return label + ' block ' + n + ' needs an uploaded file or a YouTube, Vimeo or Rutube link.';
+        } else if (!hasFile) {
+          return label + ' block ' + n + ' needs an uploaded file.';
+        }
+        if (hasFile && media && !media.isValidPath(block.path)) return label + ' block ' + n + ' has an invalid file. Upload it again.';
+        if (block.type === 'image' && !(typeof block.alt === 'string' && block.alt.trim())) {
+          return 'Picture block ' + n + ' needs alt text (a short description for people who cannot see it).';
+        }
+        if (block.caption !== undefined && typeof block.caption !== 'string') return label + ' block ' + n + ' caption must be text.';
       } else if (block.type === 'true_false') {
         if (!block.statements.length) return 'True/False block ' + n + ' needs at least one statement.';
         if (!block.statements.every((st) => st && typeof st.text === 'string' && st.text.trim() && typeof st.answer === 'boolean')) {
@@ -190,7 +235,11 @@
       true_false: 'True or False',
       word_order: 'Word Order',
       sort_columns: 'Sort into Columns',
-      put_in_order: 'Put in Order'
+      put_in_order: 'Put in Order',
+      image: 'Picture',
+      audio: 'Audio',
+      video: 'Video',
+      pdf: 'PDF'
     };
 
     state.doc.blocks.forEach((block, index) => {
@@ -613,6 +662,85 @@
         add.addEventListener('click', () => { block.items.push(''); changed(); });
         container.appendChild(add);
         card.appendChild(container);
+      } else if (MEDIA_KINDS.indexOf(block.type) !== -1) {
+        const rule = MEDIA_RULES[block.type];
+        const status = document.createElement('p');
+        status.className = 'studio-hint';
+        const describe = () => {
+          if (block.path) status.textContent = 'File: ' + (block.fileName || 'uploaded') + '. Choose another file to replace it.';
+          else if (block.embed) status.textContent = 'Linked: ' + block.embed.provider + ' video ' + block.embed.id + '.';
+          else status.textContent = block.type === 'video' ? 'Upload a video file (up to ' + Math.round(rule.max / MB) + ' MB) or paste a link.' : 'Choose a ' + rule.label + ' file (up to ' + Math.round(rule.max / MB) + ' MB).';
+        };
+        describe();
+
+        const fileField = document.createElement('label');
+        fileField.className = 'studio-field';
+        const fileLabel = document.createElement('span');
+        fileLabel.textContent = 'Upload ' + rule.label + ' file';
+        const fileInput = document.createElement('input');
+        fileInput.type = 'file';
+        fileInput.accept = rule.accept;
+        fileInput.addEventListener('change', async () => {
+          const file = fileInput.files && fileInput.files[0];
+          if (!file) return;
+          status.textContent = 'Uploading…';
+          try {
+            const path = await uploadLessonMedia(block.type, file);
+            block.path = path;
+            block.fileName = file.name;
+            delete block.embed;
+            changed();
+          } catch (err) {
+            status.textContent = err.message || 'Upload failed.';
+            fileInput.value = '';
+          }
+        });
+        fileField.append(fileLabel, fileInput);
+        card.append(fileField, status);
+
+        if (block.type === 'video') {
+          const linkField = document.createElement('label');
+          linkField.className = 'studio-field';
+          const linkLabel = document.createElement('span');
+          linkLabel.textContent = 'Or paste a YouTube, Vimeo or Rutube link';
+          const linkInput = document.createElement('input');
+          linkInput.placeholder = 'https://www.youtube.com/watch?v=…';
+          linkInput.value = block.embed ? block.embed.provider + ': ' + block.embed.id : '';
+          linkInput.addEventListener('change', () => {
+            const text = linkInput.value.trim();
+            if (!text) { delete block.embed; changed(); return; }
+            const parsed = window.CosyStudioMedia ? window.CosyStudioMedia.parseVideoUrl(text) : null;
+            if (!parsed) { status.textContent = 'That link is not a YouTube, Vimeo or Rutube video address.'; return; }
+            block.embed = parsed;
+            delete block.path;
+            delete block.fileName;
+            changed();
+          });
+          linkField.append(linkLabel, linkInput);
+          card.appendChild(linkField);
+        }
+
+        if (block.type === 'image') {
+          const altField = document.createElement('label');
+          altField.className = 'studio-field';
+          const altLabel = document.createElement('span');
+          altLabel.textContent = 'Alt text (required: describe the picture)';
+          const altInput = document.createElement('input');
+          altInput.value = block.alt || '';
+          altInput.addEventListener('input', () => { block.alt = altInput.value; changed(false); });
+          altField.append(altLabel, altInput);
+          card.appendChild(altField);
+        }
+
+        const capField = document.createElement('label');
+        capField.className = 'studio-field';
+        const capLabel = document.createElement('span');
+        capLabel.textContent = 'Caption (optional)';
+        const capInput = document.createElement('input');
+        capInput.value = block.caption || '';
+        capInput.addEventListener('input', () => { if (capInput.value) block.caption = capInput.value; else delete block.caption; changed(false); });
+        capField.append(capLabel, capInput);
+        card.appendChild(capField);
       }
 
       host.appendChild(card);
@@ -795,6 +923,16 @@
         const bank = document.createElement('p');
         bank.textContent = (block.items || []).slice().sort((a, b) => String(a).localeCompare(String(b))).join(' · ');
         item.appendChild(bank);
+      } else if (MEDIA_KINDS.indexOf(block.type) !== -1) {
+        const media = window.CosyStudioMedia;
+        const el = block.type === 'video' && block.embed
+          ? { type: 'video-embed', provider: block.embed.provider, id: block.embed.id, caption: block.caption }
+          : { type: 'media', kind: block.type, path: block.path, alt: block.alt, caption: block.caption };
+        const holder = document.createElement('div');
+        holder.innerHTML = media ? media.renderElement(el) : '';
+        if (!holder.innerHTML) holder.textContent = 'Add a file or link to see a preview.';
+        item.appendChild(holder);
+        if (media) media.hydrate(holder, window.CosyAuth ? window.CosyAuth.client : null);
       }
 
       host.appendChild(item);
@@ -1076,6 +1214,10 @@ function normalizeLanguage(value) {
     addBlockButton('add-wordorder', () => ({ type: 'word_order', sentences: ['I would like a coffee'] }));
     addBlockButton('add-sort', () => ({ type: 'sort_columns', instructions: 'Is it past or present?', columns: ['Past', 'Present'], items: [{ text: 'went', column: 'Past' }, { text: 'goes', column: 'Present' }] }));
     addBlockButton('add-order', () => ({ type: 'put_in_order', instructions: 'Put the morning routine in order.', items: ['Wake up', 'Have breakfast', 'Go to work'] }));
+    addBlockButton('add-image', () => ({ type: 'image', alt: '' }));
+    addBlockButton('add-audio', () => ({ type: 'audio' }));
+    addBlockButton('add-video', () => ({ type: 'video' }));
+    addBlockButton('add-pdf', () => ({ type: 'pdf' }));
     const addCorrectionBtn = $('add-correction');
     if (addCorrectionBtn) {
       addCorrectionBtn.addEventListener('click', () => {
