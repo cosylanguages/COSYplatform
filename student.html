@@ -1665,7 +1665,7 @@
 
     function renderStudentSlideCard(slide, idx) {
       return `
-        <div class="slide-card">
+        <div class="slide-card" data-slide-idx="${idx}">
           <div class="slide-title">
             <span>Slide ${idx + 1}: ${slide.title}</span>
             ${slide.stage ? `<span class="slide-stage-tag">${slide.stage}</span>` : ''}
@@ -1673,8 +1673,64 @@
           <div class="slide-body">
             ${slide.htmlContent}
           </div>
+          ${checkAnswersControl(slide)}
         </div>
       `;
+    }
+
+    /** "Check answers" appears only on studio lessons, for slides that have answerable fields. */
+    function checkAnswersControl(slide) {
+      const path = window.currentStudentLessonPath || '';
+      if (path.indexOf('studio:') !== 0 || String(slide.htmlContent || '').indexOf('data-studio-field') === -1) return '';
+      return '<div class="check-answers-bar" style="padding:0 16px 16px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">' +
+        '<button type="button" class="btn btn-primary" onclick="checkStudioAnswers(this)">Check answers</button>' +
+        '<span class="check-answers-summary" role="status" aria-live="polite"></span></div>';
+    }
+
+    async function checkStudioAnswers(button) {
+      const card = button.closest('.slide-card');
+      const summary = card.querySelector('.check-answers-summary');
+      const answers = {};
+      card.querySelectorAll('[data-studio-field]').forEach(box => {
+        const key = box.getAttribute('data-studio-field');
+        if (!key) return;
+        const input = box.querySelector('input[type="text"]');
+        const picked = box.querySelector('input[type="radio"]:checked');
+        const value = input ? input.value : (picked ? picked.value : '');
+        if (String(value).trim()) answers[key] = value;
+      });
+      if (!Object.keys(answers).length) { summary.textContent = 'Answer something first.'; return; }
+      const client = window.CosyAuth && window.CosyAuth.client;
+      if (!client) { summary.textContent = 'Sign in to check answers.'; return; }
+      button.disabled = true;
+      summary.textContent = 'Checking…';
+      try {
+        const { data, error } = await client.rpc('check_studio_answers', {
+          p_lesson_id: window.currentStudentLessonPath,
+          p_answers: answers
+        });
+        if (error) throw error;
+        let right = 0, total = 0;
+        card.querySelectorAll('[data-studio-field]').forEach(box => {
+          const key = box.getAttribute('data-studio-field');
+          const old = box.querySelector('.check-badge');
+          if (old) old.remove();
+          if (!Object.prototype.hasOwnProperty.call(answers, key) || !Object.prototype.hasOwnProperty.call(data || {}, key)) return;
+          const ok = data[key] === true;
+          total++; if (ok) right++;
+          const badge = document.createElement('span');
+          badge.className = 'check-badge';
+          badge.style.cssText = 'margin-left:8px;font-weight:700;color:' + (ok ? '#047857' : '#b91c1c');
+          badge.textContent = ok ? '✓ Correct' : '✗ Try again';
+          box.appendChild(badge);
+        });
+        const skipped = card.querySelectorAll('[data-studio-field]').length - total;
+        summary.textContent = total + ' answered, ' + right + ' correct' + (skipped > 0 ? ' (' + skipped + ' not answered yet)' : '');
+      } catch (e) {
+        summary.textContent = 'Could not check answers right now. Try again in a moment.';
+      } finally {
+        button.disabled = false;
+      }
     }
 
     function goToStudentSlide(idx) {
@@ -2181,7 +2237,7 @@
             const fieldKey = 'studio_' + String(el.fieldKey || slide.id || 'answer').replace(/[^a-zA-Z0-9_-]/g, '_');
             const placeholder = escapeHtml(el.placeholder || 'Type answer...');
             const saved = getSavedStudentInput(fieldKey);
-            output += '<div class="cosy-input-box"><input type="text" aria-label="' + escapeHtml(el.label || 'Your answer') + '" placeholder="' + placeholder + '" value="' + escapeHtml(saved) + '" oninput="saveStudentInput(\'' + fieldKey + '\', this.value)" /></div>';
+            output += '<div class="cosy-input-box" data-studio-field="' + escapeHtml(String(el.fieldKey || '')) + '"><input type="text" aria-label="' + escapeHtml(el.label || 'Your answer') + '" placeholder="' + placeholder + '" value="' + escapeHtml(saved) + '" oninput="saveStudentInput(\'' + fieldKey + '\', this.value)" /></div>';
           } else if (el.type === "lead-in") {
             flushVocabBatch();
             output += `
@@ -2240,10 +2296,12 @@
             `;
           } else if (el.type === "test" || el.type === "quiz") {
             flushVocabBatch();
-            output += `<div class="cosy-test-question">`;
+            // Studio quizzes carry a fieldKey so their answers can be checked on the server.
+            const studioKey = el.fieldKey ? String(el.fieldKey) : '';
+            output += `<div class="cosy-test-question"${studioKey ? ` data-studio-field="${escapeHtml(studioKey)}"` : ''}>`;
             if (el.question) output += `<div style="font-weight: 700; margin-bottom: 8px;">${escapeHtml(el.question)}</div>`;
             if (el.options) {
-              const qName = `${elKey}_choice`;
+              const qName = studioKey ? 'studio_' + studioKey.replace(/[^a-zA-Z0-9_-]/g, '_') : `${elKey}_choice`;
               const savedVal = getSavedStudentInput(qName);
               el.options.forEach(opt => {
                 const isChecked = savedVal === opt ? "checked" : "";
