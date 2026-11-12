@@ -1,9 +1,8 @@
 -- Answer checking for Lesson Studio lessons.
 -- Students send what they typed/picked; the server answers true/false per field.
--- The answer key itself is never returned. Access mirrors who may read the lesson:
--- founders, teachers of the lesson's language, and students with a valid grant to a
--- course containing the lesson (same predicates as the lesson_student_content and
--- lesson_protected policies in 20261030000000).
+-- The answer key itself is never returned. Access is exactly who may read the
+-- published lesson (public.can_read_published_studio_lesson, 20261102000000):
+-- founders, teachers of the course's language, and students with a valid grant.
 
 -- Forgiving comparison: case, repeated spaces, curly apostrophes and trailing
 -- . ! ? … are ignored. Everything else (including accents) must match.
@@ -36,27 +35,8 @@ BEGIN
     RAISE EXCEPTION 'Answers must be an object with at most 200 fields.' USING ERRCODE = '22023';
   END IF;
 
-  v_allowed := public.is_founder()
-    OR EXISTS (
-      SELECT 1 FROM public.lessons l
-      JOIN public.teacher_languages tl ON tl.language = l.language
-      WHERE l.id = p_lesson_id AND public.is_teacher()
-        AND (tl.user_id = v_uid OR tl.teacher_id = v_uid)
-    )
-    OR (public.is_student() AND EXISTS (
-      SELECT 1 FROM public.access_grants ag
-      JOIN public.courses c ON (c.id = ag.course_id OR c.id = ag.course)
-      JOIN public.course_lessons cl ON cl.course_id = c.id
-      JOIN public.lessons l ON l.id = p_lesson_id
-      WHERE (ag.user_id = v_uid OR ag.student_id = v_uid)
-        AND ag.valid_from <= CURRENT_DATE
-        AND (ag.valid_until IS NULL OR ag.valid_until >= CURRENT_DATE)
-        AND cl.lesson_id = p_lesson_id
-        AND c.language = l.language
-        AND c.cefr = l.cefr
-        AND l.kind IN ('lesson', 'workbook')
-        AND (ag.expires_at IS NULL OR ag.expires_at > NOW())
-    ));
+  -- The same gate that decides who may read the published lesson body.
+  v_allowed := public.can_read_published_studio_lesson(p_lesson_id);
   IF NOT v_allowed THEN
     RAISE EXCEPTION 'You do not have access to this lesson.' USING ERRCODE = '42501';
   END IF;
