@@ -112,6 +112,10 @@
         if (!Array.isArray(block.columns) || !Array.isArray(block.items)) return 'Sorting block ' + (i + 1) + ' needs columns and items.';
       } else if (block.type === 'put_in_order') {
         if (!Array.isArray(block.items)) return 'Ordering block ' + (i + 1) + ' needs items.';
+      } else if (block.type === 'flashcards') {
+        if (!Array.isArray(block.cards)) return 'Flashcards block ' + (i + 1) + ' needs cards.';
+      } else if (block.type === 'memory_match') {
+        if (!Array.isArray(block.pairs)) return 'Memory match block ' + (i + 1) + ' needs pairs.';
       } else if (MEDIA_KINDS.indexOf(block.type) !== -1) {
         // path / embed / alt / caption are checked when publishing, so a draft can be saved half-finished.
       } else {
@@ -149,6 +153,21 @@
         }
       } else if (block.type === 'discussion') {
         if (!block.prompts.every((pr) => typeof pr === 'string')) return 'Discussion block ' + n + ' prompts must be text.';
+      } else if (block.type === 'flashcards') {
+        const games = window.CosyStudioGames;
+        if (!block.cards.length) return 'Flashcards block ' + n + ' needs at least one card.';
+        if (block.cards.length > 60) return 'Flashcards block ' + n + ' can have at most 60 cards.';
+        if (games && !games.validCards(block.cards)) return 'Every card in flashcards block ' + n + ' needs a front and a back (up to 200 characters each).';
+      } else if (block.type === 'memory_match') {
+        const games = window.CosyStudioGames;
+        if (block.pairs.length < 3) return 'Memory match block ' + n + ' needs at least 3 pairs.';
+        if (block.pairs.length > 12) return 'Memory match block ' + n + ' can have at most 12 pairs.';
+        const sides = [];
+        const complete = block.pairs.every((pr) => pr && typeof pr.a === 'string' && pr.a.trim() && typeof pr.b === 'string' && pr.b.trim() && pr.a.trim().length <= 60 && pr.b.trim().length <= 60);
+        if (!complete) return 'Every pair in memory match block ' + n + ' needs two words (up to 60 characters each).';
+        block.pairs.forEach((pr) => { sides.push(pr.a.trim().toLowerCase(), pr.b.trim().toLowerCase()); });
+        if (new Set(sides).size !== sides.length) return 'Every word in memory match block ' + n + ' must be different, or a match would be ambiguous.';
+        if (games && !games.validPairs(block.pairs)) return 'Memory match block ' + n + ' has an invalid pair.';
       } else if (MEDIA_KINDS.indexOf(block.type) !== -1) {
         const media = window.CosyStudioMedia;
         const hasFile = typeof block.path === 'string' && block.path !== '';
@@ -239,7 +258,9 @@
       image: 'Picture',
       audio: 'Audio',
       video: 'Video',
-      pdf: 'PDF'
+      pdf: 'PDF',
+      flashcards: 'Flashcards',
+      memory_match: 'Memory Match'
     };
 
     state.doc.blocks.forEach((block, index) => {
@@ -741,6 +762,44 @@
         capInput.addEventListener('input', () => { if (capInput.value) block.caption = capInput.value; else delete block.caption; changed(false); });
         capField.append(capLabel, capInput);
         card.appendChild(capField);
+      } else if (block.type === 'flashcards' || block.type === 'memory_match') {
+        const isDeck = block.type === 'flashcards';
+        const key = isDeck ? 'cards' : 'pairs';
+        const f1 = isDeck ? 'front' : 'a';
+        const f2 = isDeck ? 'back' : 'b';
+        block[key] = block[key] || [];
+        const container = document.createElement('div');
+        container.className = 'studio-field';
+        const label = document.createElement('span');
+        label.textContent = isDeck
+          ? 'Cards (front ➔ back). Students flip through them and mark what they know.'
+          : 'Pairs (3 to 12). Students flip tiles to find the matches. Every word must be different.';
+        container.appendChild(label);
+        block[key].forEach((row, idx) => {
+          const line = document.createElement('div');
+          line.className = 'studio-item-row';
+          const one = document.createElement('input');
+          one.placeholder = isDeck ? 'Front' : 'Word';
+          one.value = row[f1] || '';
+          one.addEventListener('input', () => { row[f1] = one.value; changed(false); });
+          const arrow = document.createElement('span');
+          arrow.textContent = '➔';
+          const two = document.createElement('input');
+          two.placeholder = isDeck ? 'Back' : 'Its match';
+          two.value = row[f2] || '';
+          two.addEventListener('input', () => { row[f2] = two.value; changed(false); });
+          const del = document.createElement('button');
+          del.className = 'studio-mini-btn'; del.type = 'button'; del.textContent = '×';
+          del.addEventListener('click', () => { block[key].splice(idx, 1); changed(); });
+          line.append(one, arrow, two, del);
+          container.appendChild(line);
+        });
+        const add = document.createElement('button');
+        add.className = 'studio-mini-btn'; add.type = 'button';
+        add.textContent = isDeck ? '＋ Add Card' : '＋ Add Pair';
+        add.addEventListener('click', () => { block[key].push(isDeck ? { front: '', back: '' } : { a: '', b: '' }); changed(); });
+        container.appendChild(add);
+        card.appendChild(container);
       }
 
       host.appendChild(card);
@@ -933,6 +992,17 @@
         if (!holder.innerHTML) holder.textContent = 'Add a file or link to see a preview.';
         item.appendChild(holder);
         if (media) media.hydrate(holder, window.CosyAuth ? window.CosyAuth.client : null);
+      } else if (block.type === 'flashcards' || block.type === 'memory_match') {
+        const games = window.CosyStudioGames;
+        const holder = document.createElement('div');
+        holder.innerHTML = games ? games.renderElement(block.type === 'flashcards'
+          ? { type: 'flashcards', cards: block.cards }
+          : { type: 'memory-match', pairs: block.pairs }) : '';
+        if (!holder.innerHTML) holder.textContent = block.type === 'flashcards'
+          ? 'Add at least one card with a front and a back to see the deck.'
+          : 'Add 3 to 12 pairs, every word different, to play the game.';
+        item.appendChild(holder);
+        if (games) games.init(holder);
       }
 
       host.appendChild(item);
@@ -1218,6 +1288,8 @@ function normalizeLanguage(value) {
     addBlockButton('add-audio', () => ({ type: 'audio' }));
     addBlockButton('add-video', () => ({ type: 'video' }));
     addBlockButton('add-pdf', () => ({ type: 'pdf' }));
+    addBlockButton('add-flashcards', () => ({ type: 'flashcards', cards: [{ front: 'hola', back: 'hello' }, { front: 'adiós', back: 'goodbye' }] }));
+    addBlockButton('add-memory', () => ({ type: 'memory_match', pairs: [{ a: 'cat', b: 'gato' }, { a: 'dog', b: 'perro' }, { a: 'house', b: 'casa' }] }));
     const addCorrectionBtn = $('add-correction');
     if (addCorrectionBtn) {
       addCorrectionBtn.addEventListener('click', () => {

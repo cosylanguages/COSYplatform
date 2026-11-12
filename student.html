@@ -464,6 +464,7 @@
   <script src="shared/js/i18n.js"></script>
   <script src="shared/js/lang-switcher.js"></script>
   <script src="shared/js/studio-media.js"></script>
+  <script src="shared/js/studio-games.js"></script>
 </head>
 <body>
 
@@ -1663,6 +1664,7 @@
       appRoot.innerHTML = html;
       // Studio pictures/audio/video/PDFs load through short-lived signed links.
       if (window.CosyStudioMedia) window.CosyStudioMedia.hydrate(appRoot, window.CosyAuth && window.CosyAuth.client);
+      if (window.CosyStudioGames) window.CosyStudioGames.init(appRoot);
       if (window.activeDrawer === 'verbs') searchIrregularVerbs('');
     }
 
@@ -2232,6 +2234,9 @@
           } else if ((el.type === "media" || el.type === "video-embed") && window.CosyStudioMedia) {
             flushVocabBatch();
             output += window.CosyStudioMedia.renderElement(el);
+          } else if ((el.type === "flashcards" || el.type === "memory-match") && window.CosyStudioGames) {
+            flushVocabBatch();
+            output += window.CosyStudioGames.renderElement(el);
           } else if (el.type === "studio-text") {
             flushVocabBatch();
             output += '<p style="white-space:pre-wrap;line-height:1.7;">' + escapeHtml(el.content) + '</p>';
