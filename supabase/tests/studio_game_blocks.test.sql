@@ -77,7 +77,7 @@ SELECT is(
 );
 
 SELECT ok(
-  (SELECT body NOT LIKE '%"memory_match"%' AND body NOT LIKE '%"cards":null%'
+  (SELECT strpos(body, '"memory_match"') = 0 AND strpos(body, '"cards":null') = 0
    FROM public.lesson_student_content WHERE lesson_id = 'studio:games-ok'),
   'GAMES-8: no authoring-only block names leak into the student body'
 );
