@@ -116,6 +116,8 @@
         if (!Array.isArray(block.cards)) return 'Flashcards block ' + (i + 1) + ' needs cards.';
       } else if (block.type === 'memory_match') {
         if (!Array.isArray(block.pairs)) return 'Memory match block ' + (i + 1) + ' needs pairs.';
+      } else if (block.type === 'hangman' || block.type === 'anagram' || block.type === 'word_search') {
+        if (!Array.isArray(block.words)) return 'Word game block ' + (i + 1) + ' needs words.';
       } else if (MEDIA_KINDS.indexOf(block.type) !== -1) {
         // path / embed / alt / caption are checked when publishing, so a draft can be saved half-finished.
       } else {
@@ -158,6 +160,40 @@
         if (!block.cards.length) return 'Flashcards block ' + n + ' needs at least one card.';
         if (block.cards.length > 60) return 'Flashcards block ' + n + ' can have at most 60 cards.';
         if (games && !games.validCards(block.cards)) return 'Every card in flashcards block ' + n + ' needs a front and a back (up to 200 characters each).';
+      } else if (block.type === 'hangman' || block.type === 'anagram') {
+        const games = window.CosyStudioGames;
+        const isHang = block.type === 'hangman';
+        const name = isHang ? 'Hangman' : 'Anagram';
+        const max = isHang ? 30 : 30, min = isHang ? 2 : 3;
+        if (!block.words.length) return name + ' block ' + n + ' needs at least one word.';
+        if (block.words.length > 20) return name + ' block ' + n + ' can have at most 20 words.';
+        const seen = new Set();
+        for (const w of block.words) {
+          const text = w && typeof w.word === 'string' ? w.word.trim() : '';
+          if (!text) return 'Every word in ' + name.toLowerCase() + ' block ' + n + ' needs text.';
+          if (text.length < min || text.length > max) return 'Words in ' + name.toLowerCase() + ' block ' + n + ' must be ' + min + ' to ' + max + ' characters long.';
+          if (!isHang && /\s/.test(text)) return 'Anagram words in block ' + n + ' must be single words (no spaces).';
+          if (isHang && !/\p{L}/u.test(text)) return 'Every hangman word in block ' + n + ' needs at least one letter.';
+          if (w.hint !== undefined && w.hint !== null && (typeof w.hint !== 'string' || w.hint.trim().length > 120)) return 'Hints in ' + name.toLowerCase() + ' block ' + n + ' can be up to 120 characters.';
+          if (seen.has(text.toLowerCase())) return 'Every word in ' + name.toLowerCase() + ' block ' + n + ' must be different.';
+          seen.add(text.toLowerCase());
+        }
+        if (games && !games.validWordList(block.words, block.type)) return name + ' block ' + n + ' has an invalid word.';
+      } else if (block.type === 'word_search') {
+        const games = window.CosyStudioGames;
+        if (block.words.length < 3) return 'Word search block ' + n + ' needs at least 3 words.';
+        if (block.words.length > 12) return 'Word search block ' + n + ' can have at most 12 words.';
+        const seen = new Set();
+        for (const w of block.words) {
+          const text = typeof w === 'string' ? w.trim() : '';
+          if (!text) return 'Every word in word search block ' + n + ' needs text.';
+          if (/\s/.test(text)) return 'Word search words in block ' + n + ' must be single words (no spaces).';
+          if (Array.from(text).length < 3 || Array.from(text).length > 12) return 'Word search words in block ' + n + ' must be 3 to 12 letters long.';
+          if (seen.has(text.toLowerCase())) return 'Every word in word search block ' + n + ' must be different.';
+          seen.add(text.toLowerCase());
+        }
+        if (block.directions !== undefined && block.directions !== 'basic' && block.directions !== 'all') return 'Word search block ' + n + ' has an unknown direction setting.';
+        if (games && !games.validWords(block.words)) return 'Word search block ' + n + ' has an invalid word.';
       } else if (block.type === 'memory_match') {
         const games = window.CosyStudioGames;
         if (block.pairs.length < 3) return 'Memory match block ' + n + ' needs at least 3 pairs.';
@@ -260,7 +296,10 @@
       video: 'Video',
       pdf: 'PDF',
       flashcards: 'Flashcards',
-      memory_match: 'Memory Match'
+      memory_match: 'Memory Match',
+      hangman: 'Hangman',
+      anagram: 'Anagram',
+      word_search: 'Word Search'
     };
 
     state.doc.blocks.forEach((block, index) => {
@@ -762,6 +801,58 @@
         capInput.addEventListener('input', () => { if (capInput.value) block.caption = capInput.value; else delete block.caption; changed(false); });
         capField.append(capLabel, capInput);
         card.appendChild(capField);
+      } else if (block.type === 'hangman' || block.type === 'anagram' || block.type === 'word_search') {
+        const isSearch = block.type === 'word_search';
+        block.words = block.words || [];
+        const container = document.createElement('div');
+        container.className = 'studio-field';
+        const label = document.createElement('span');
+        label.textContent = block.type === 'hangman'
+          ? 'Words (1 to 20). Students guess the letters. The optional hint is shown to them.'
+          : block.type === 'anagram'
+            ? 'Words (1 to 20, single words). Students rebuild each word from shuffled letters.'
+            : 'Words (3 to 12, 3 to 12 letters each, no spaces). Students find them in a letter grid.';
+        container.appendChild(label);
+        block.words.forEach((row, idx) => {
+          const line = document.createElement('div');
+          line.className = 'studio-item-row';
+          const one = document.createElement('input');
+          one.placeholder = 'Word';
+          one.value = isSearch ? (typeof row === 'string' ? row : '') : (row.word || '');
+          one.addEventListener('input', () => { if (isSearch) block.words[idx] = one.value; else row.word = one.value; changed(false); });
+          line.appendChild(one);
+          if (!isSearch) {
+            const two = document.createElement('input');
+            two.placeholder = 'Hint (optional)';
+            two.value = row.hint || '';
+            two.addEventListener('input', () => { if (two.value) row.hint = two.value; else delete row.hint; changed(false); });
+            line.appendChild(two);
+          }
+          const del = document.createElement('button');
+          del.className = 'studio-mini-btn'; del.type = 'button'; del.textContent = '×';
+          del.addEventListener('click', () => { block.words.splice(idx, 1); changed(); });
+          line.appendChild(del);
+          container.appendChild(line);
+        });
+        const add = document.createElement('button');
+        add.className = 'studio-mini-btn'; add.type = 'button'; add.textContent = '＋ Add Word';
+        add.addEventListener('click', () => { block.words.push(isSearch ? '' : { word: '' }); changed(); });
+        container.appendChild(add);
+        if (isSearch) {
+          const dirField = document.createElement('label');
+          dirField.className = 'studio-field';
+          const dirText = document.createElement('span');
+          dirText.textContent = 'Directions';
+          const sel = document.createElement('select');
+          [['basic', 'Across, down and diagonal'], ['all', 'Also backwards (harder)']].forEach(([v, t]) => {
+            const o = document.createElement('option'); o.value = v; o.textContent = t; sel.appendChild(o);
+          });
+          sel.value = block.directions === 'all' ? 'all' : 'basic';
+          sel.addEventListener('change', () => { block.directions = sel.value; changed(false); });
+          dirField.append(dirText, sel);
+          container.appendChild(dirField);
+        }
+        card.appendChild(container);
       } else if (block.type === 'flashcards' || block.type === 'memory_match') {
         const isDeck = block.type === 'flashcards';
         const key = isDeck ? 'cards' : 'pairs';
@@ -992,6 +1083,17 @@
         if (!holder.innerHTML) holder.textContent = 'Add a file or link to see a preview.';
         item.appendChild(holder);
         if (media) media.hydrate(holder, window.CosyAuth ? window.CosyAuth.client : null);
+      } else if (block.type === 'hangman' || block.type === 'anagram' || block.type === 'word_search') {
+        const games = window.CosyStudioGames;
+        const holder = document.createElement('div');
+        holder.innerHTML = games ? games.renderElement(block.type === 'word_search'
+          ? { type: 'word-search', words: block.words, directions: block.directions }
+          : { type: block.type, words: block.words }) : '';
+        if (!holder.innerHTML) holder.textContent = block.type === 'word_search'
+          ? 'Add 3 to 12 different single words (3 to 12 letters) to play the word search.'
+          : 'Add valid, different words to play the game.';
+        item.appendChild(holder);
+        if (games) games.init(holder);
       } else if (block.type === 'flashcards' || block.type === 'memory_match') {
         const games = window.CosyStudioGames;
         const holder = document.createElement('div');
@@ -1289,6 +1391,9 @@ function normalizeLanguage(value) {
     addBlockButton('add-video', () => ({ type: 'video' }));
     addBlockButton('add-pdf', () => ({ type: 'pdf' }));
     addBlockButton('add-flashcards', () => ({ type: 'flashcards', cards: [{ front: 'hola', back: 'hello' }, { front: 'adiós', back: 'goodbye' }] }));
+    addBlockButton('add-hangman', () => ({ type: 'hangman', words: [{ word: 'house', hint: 'where you live' }, { word: 'garden' }] }));
+    addBlockButton('add-anagram', () => ({ type: 'anagram', words: [{ word: 'teacher', hint: 'works at a school' }, { word: 'window' }] }));
+    addBlockButton('add-wordsearch', () => ({ type: 'word_search', directions: 'basic', words: ['apple', 'bread', 'cheese', 'water'] }));
     addBlockButton('add-memory', () => ({ type: 'memory_match', pairs: [{ a: 'cat', b: 'gato' }, { a: 'dog', b: 'perro' }, { a: 'house', b: 'casa' }] }));
     const addCorrectionBtn = $('add-correction');
     if (addCorrectionBtn) {
