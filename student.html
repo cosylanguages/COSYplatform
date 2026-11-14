@@ -2237,6 +2237,10 @@
           } else if ((el.type === "flashcards" || el.type === "memory-match" || el.type === "hangman" || el.type === "anagram" || el.type === "word-search" || el.type === "crossword") && window.CosyStudioGames) {
             flushVocabBatch();
             output += window.CosyStudioGames.renderElement(el);
+          } else if (el.type === "studio-heading") {
+            flushVocabBatch();
+            output += '<h2 style="font-size:1.6rem;font-weight:700;margin:1.5rem 0 .25rem;">' + escapeHtml(el.content) + '</h2>' +
+              (el.subtitle ? '<p style="color:#475569;margin:0 0 1rem;">' + escapeHtml(el.subtitle) + '</p>' : '');
           } else if (el.type === "studio-text") {
             flushVocabBatch();
             output += '<p style="white-space:pre-wrap;line-height:1.7;">' + escapeHtml(el.content) + '</p>';
