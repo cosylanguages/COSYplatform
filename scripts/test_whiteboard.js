@@ -159,6 +159,42 @@ t('simplify keeps endpoints and caps the length; ids are valid', () => {
   for (let i = 0; i < 50; i++) assert.ok(/^[A-Za-z0-9_-]{1,40}$/.test(WB.newId()));
 });
 
+t('move: owners and the host can move; others cannot; items stay on the board', () => {
+  const b = WB.createBoard();
+  WB.applyOp(b, { op: 'add', obj: { id: 'r', type: 'rect', c: '#111827', w: 6, x: 100, y: 100, bw: 200, bh: 100 } }, stu);
+  WB.applyOp(b, { op: 'add', obj: stroke('s', [[10, 10], [50, 60]]) }, stu);
+  WB.applyOp(b, { op: 'add', obj: { id: 'n', type: 'sticky', c: '#fde68a', x: 1300, y: 700, text: 'hi' } }, stu);
+  WB.applyOp(b, { op: 'add', obj: { id: 'l', type: 'line', c: '#111827', w: 6, x1: 10, y1: 10, x2: 60, y2: 40 } }, host);
+  let r = WB.applyOp(b, { op: 'move', id: 'r', dx: 50, dy: -20 }, stu);
+  assert.ok(r.ok); assert.deepStrictEqual([b.objects[0].x, b.objects[0].y], [150, 80]);
+  assert.strictEqual(WB.applyOp(b, { op: 'move', id: 'r', dx: 5, dy: 5 }, stu2).reason, 'not-yours');
+  assert.ok(WB.applyOp(b, { op: 'move', id: 'r', dx: 5, dy: 5 }, host).ok);
+  // clamped: the stroke cannot leave through the top-left; the sticky cannot leave through the bottom-right
+  r = WB.applyOp(b, { op: 'move', id: 's', dx: -500, dy: -500 }, stu);
+  assert.deepStrictEqual(r.op && [r.op.dx, r.op.dy], [-10, -10]); assert.deepStrictEqual(b.objects[1].pts, [[0, 0], [40, 50]]);
+  r = WB.applyOp(b, { op: 'move', id: 'n', dx: 9999, dy: 9999 }, stu);
+  assert.deepStrictEqual([b.objects[2].x, b.objects[2].y], [1360, 740]);
+  assert.strictEqual(WB.applyOp(b, { op: 'move', id: 'n', dx: 5, dy: 5 }, stu).reason, 'no-change');
+  r = WB.applyOp(b, { op: 'move', id: 'l', dx: 100, dy: 100 }, host);
+  assert.deepStrictEqual([b.objects[3].x1, b.objects[3].y2], [110, 140]);
+  ['x', NaN, Infinity, null, undefined].forEach(v => assert.strictEqual(WB.applyOp(b, { op: 'move', id: 'r', dx: v, dy: 1 }, host).ok, false));
+  assert.strictEqual(WB.applyOp(b, { op: 'move', id: 'zz', dx: 1, dy: 1 }, host).reason, 'missing');
+  WB.applyOp(b, { op: 'lock', locked: true }, host);
+  assert.strictEqual(WB.applyOp(b, { op: 'move', id: 'r', dx: 1, dy: 1 }, stu).reason, 'locked');
+  assert.ok(WB.applyOp(b, { op: 'move', id: 'r', dx: 1, dy: 1 }, host).ok);
+});
+
+t('a student applies an accepted move the same way the host did', () => {
+  const host_b = WB.createBoard(), stu_b = WB.createBoard();
+  const add = { op: 'add', obj: { id: 'r', type: 'ellipse', c: '#ef4444', w: 3, x: 1500, y: 800, bw: 80, bh: 80 } };
+  const a = WB.applyOp(host_b, add, stu); WB.applyAccepted(stu_b, a.op);
+  const m = WB.applyOp(host_b, { op: 'move', id: 'r', dx: 500, dy: 500 }, stu);
+  assert.ok(WB.applyAccepted(stu_b, m.op));
+  assert.deepStrictEqual(stu_b.objects[0], host_b.objects[0]);
+  assert.strictEqual(WB.applyAccepted(stu_b, { op: 'move', id: 'nope', dx: 1, dy: 1 }), false);
+  assert.strictEqual(WB.applyAccepted(stu_b, { op: 'move', id: 'r', dx: 'x', dy: 1 }), false);
+});
+
 t('students apply accepted ops, keeping the host-stamped owner and ignoring junk', () => {
   const b = WB.createBoard();
   assert.ok(WB.applyAccepted(b, { op: 'add', obj: { ...stroke('s1'), owner: 'peer-a' } }));
