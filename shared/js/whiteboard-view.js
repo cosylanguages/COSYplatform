@@ -21,7 +21,7 @@
   'use strict';
 
   var TOOLS = [
-    ['pen', 'Pen'], ['eraser', 'Eraser'], ['line', 'Line'], ['rect', 'Rectangle'],
+    ['pen', 'Pen'], ['move', 'Move'], ['eraser', 'Eraser'], ['line', 'Line'], ['rect', 'Rectangle'],
     ['ellipse', 'Ellipse'], ['text', 'Text'], ['sticky', 'Note']
   ];
   var COLOR_NAMES = { '#111827': 'Black', '#ef4444': 'Red', '#3b82f6': 'Blue', '#10b981': 'Green', '#f59e0b': 'Orange', '#8b5cf6': 'Purple' };
@@ -44,7 +44,7 @@
       '.cwb-swatch[aria-pressed="true"]{box-shadow:0 0 0 3px #1e3a8a}' +
       '.cwb-stage{position:relative;flex:1;min-height:240px;border:1px solid #cbd5e1;border-radius:10px;background:#e2e8f0;overflow:hidden}' +
       '.cwb-canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:crosshair}' +
-      '.cwb-canvas[data-tool="eraser"]{cursor:cell}.cwb-canvas.cwb-ro{cursor:not-allowed}' +
+      '.cwb-canvas[data-tool="eraser"]{cursor:cell}.cwb-canvas[data-tool="move"]{cursor:grab}.cwb-canvas.cwb-ro{cursor:not-allowed}' +
       '.cwb-edit{position:absolute;z-index:2;font:inherit;border:2px solid #1d4ed8;border-radius:6px;padding:4px;background:#fff;color:#0f172a;resize:none;min-width:140px}' +
       '.cwb-note{display:flex;gap:6px;align-items:center;flex-wrap:wrap}' +
       '.cwb-note input{flex:1;min-width:160px;font:inherit;font-size:.85rem;padding:6px 8px;border:1px solid #94a3b8;border-radius:8px}' +
@@ -59,6 +59,7 @@
     var tool = 'pen', color = WB.COLORS[0], width = 6, size = 2, stickyColor = WB.STICKY_COLORS[0];
     var draft = null;          // shape being dragged right now (not yet sent)
     var drawing = false;
+    var moving = null;         // item being dragged: {id, sx, sy, dx, dy}
     var requested = {};        // ids already asked to be erased (waiting for the host's echo)
     var rate = {};             // per-student rate limit state, keyed by peer id
     var editor = null;
@@ -151,6 +152,7 @@
       addText.disabled = ro; addSticky.disabled = ro; noteInput.disabled = ro;
       canvas.classList.toggle('cwb-ro', ro);
       canvas.setAttribute('data-tool', tool);
+      if (moving && board.objects.every(function (o) { return o.id !== moving.id; })) moving = null;
       if (ro && !isHost()) status.textContent = 'The teacher has locked the board. You can look but not draw.';
       else if (status.textContent.indexOf('locked') !== -1) status.textContent = '';
     }
@@ -229,6 +231,15 @@
       drawing = true;
       try { canvas.setPointerCapture(e.pointerId); } catch (err) { /* older browsers */ }
       if (tool === 'eraser') { eraseAt(p); return; }
+      if (tool === 'move') {
+        var mine = me().id;
+        var pool = { objects: isHost() ? board.objects : board.objects.filter(function (o) { return o.owner === mine; }) };
+        var hit = WB.objectAt(pool, p[0], p[1], 14);
+        if (!hit) { drawing = false; say(isHost() ? '' : 'You can only move your own items.'); return; }
+        moving = { id: hit.id, sx: p[0], sy: p[1], dx: 0, dy: 0 };
+        render();
+        return;
+      }
       if (tool === 'pen') draft = { type: 'stroke', c: color, w: width, pts: [p] };
       else draft = { type: tool, c: color, w: width, x0: p[0], y0: p[1], x1: p[0], y1: p[1] };
       render();
@@ -237,6 +248,16 @@
       if (!drawing) return;
       var p = toBoard(e);
       if (tool === 'eraser') { eraseAt(p); return; }
+      if (tool === 'move') {
+        if (moving) {
+          var obj = board.objects.filter(function (o) { return o.id === moving.id; })[0];
+          if (!obj) { moving = null; return; }
+          var sh = WB.clampShift(obj, p[0] - moving.sx, p[1] - moving.sy);
+          moving.dx = sh[0]; moving.dy = sh[1];
+          render();
+        }
+        return;
+      }
       if (!draft) return;
       if (draft.type === 'stroke') {
         var last = draft.pts[draft.pts.length - 1];
@@ -247,6 +268,12 @@
     function finish() {
       if (!drawing) return;
       drawing = false;
+      if (moving) {
+        var mv = moving; moving = null;
+        if (Math.abs(mv.dx) + Math.abs(mv.dy) >= 3) submit({ op: 'move', id: mv.id, dx: mv.dx, dy: mv.dy });
+        render();
+        return;
+      }
       var d = draft; draft = null;
       if (d) {
         if (d.type === 'stroke') {
@@ -259,7 +286,7 @@
       render();
     }
     canvas.addEventListener('pointerup', finish);
-    canvas.addEventListener('pointercancel', function () { drawing = false; draft = null; render(); });
+    canvas.addEventListener('pointercancel', function () { drawing = false; draft = null; moving = null; render(); });
 
     // ---- text and notes ------------------------------------------------------------
     function closeEditor() { if (editor) { var e = editor; editor = null; e.remove(); } }
@@ -375,7 +402,11 @@
 
     function paint(c, withBackground) {
       if (withBackground) { c.fillStyle = '#ffffff'; c.fillRect(0, 0, WB.W, WB.H); }
-      board.objects.forEach(function (o) { c.save(); drawObject(c, o); c.restore(); });
+      board.objects.forEach(function (o) {
+        var shown = o;
+        if (moving && moving.id === o.id) { shown = JSON.parse(JSON.stringify(o)); WB.translate(shown, moving.dx, moving.dy); }
+        c.save(); drawObject(c, shown); c.restore();
+      });
       var d = draftObject();
       if (d) { c.save(); c.globalAlpha = 0.75; drawObject(c, d); c.restore(); }
     }

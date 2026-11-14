@@ -16,8 +16,8 @@
  *   text    { c, s, x, y, text }               up to 200 characters, s = 1|2|3
  *   sticky  { c, x, y, text }                  up to 200 characters, fixed size note
  *
- * Ops: {op:'add', obj} {op:'remove', id} {op:'clear'} {op:'lock', locked}
- * Rules: students can add (when the board is not locked) and remove only their own
+ * Ops: {op:'add', obj} {op:'remove', id} {op:'move', id, dx, dy} {op:'clear'} {op:'lock', locked}
+ * Rules: students can add (when the board is not locked) and remove or move only their own
  * objects; only the host can clear or lock. Limits keep a board from growing without bound.
  */
 (function (root, factory) {
@@ -82,6 +82,37 @@
     return o;
   }
 
+  // ---- moving ---------------------------------------------------------------
+
+  /** Bounding box {x1,y1,x2,y2} of an object in board units. */
+  function bounds(o) {
+    if (o.type === 'stroke') {
+      var x1 = Infinity, y1 = Infinity, x2 = -Infinity, y2 = -Infinity;
+      o.pts.forEach(function (p) { x1 = Math.min(x1, p[0]); y1 = Math.min(y1, p[1]); x2 = Math.max(x2, p[0]); y2 = Math.max(y2, p[1]); });
+      return { x1: x1, y1: y1, x2: x2, y2: y2 };
+    }
+    if (o.type === 'line') return { x1: Math.min(o.x1, o.x2), y1: Math.min(o.y1, o.y2), x2: Math.max(o.x1, o.x2), y2: Math.max(o.y1, o.y2) };
+    if (o.type === 'rect' || o.type === 'ellipse') return { x1: o.x, y1: o.y, x2: o.x + o.bw, y2: o.y + o.bh };
+    if (o.type === 'sticky') return { x1: o.x, y1: o.y, x2: o.x + STICKY_W, y2: o.y + STICKY_H };
+    var b = textBox(o);
+    return { x1: b.x, y1: b.y, x2: b.x + b.w, y2: b.y + b.h };
+  }
+
+  /** Shift by (dx, dy), reduced so the whole object stays on the board. Returns the shift used. */
+  function clampShift(o, dx, dy) {
+    var b = bounds(o);
+    dx = Math.min(W - b.x2, Math.max(-b.x1, dx));
+    dy = Math.min(H - b.y2, Math.max(-b.y1, dy));
+    return [Math.round(dx * 10) / 10, Math.round(dy * 10) / 10];
+  }
+
+  function translate(o, dx, dy) {
+    function r(v) { return Math.round(v * 10) / 10; }
+    if (o.type === 'stroke') o.pts = o.pts.map(function (p) { return [r(p[0] + dx), r(p[1] + dy)]; });
+    else if (o.type === 'line') { o.x1 = r(o.x1 + dx); o.y1 = r(o.y1 + dy); o.x2 = r(o.x2 + dx); o.y2 = r(o.y2 + dy); }
+    else { o.x = r(o.x + dx); o.y = r(o.y + dy); }
+  }
+
   function createBoard() { return { objects: [], locked: false }; }
 
   function countOwner(board, owner) {
@@ -121,6 +152,20 @@
       board.objects.splice(idx, 1);
       return { ok: true, op: { op: 'remove', id: rawOp.id } };
     }
+    if (rawOp.op === 'move') {
+      if (!validId(rawOp.id) || typeof rawOp.dx !== 'number' || typeof rawOp.dy !== 'number' || !isFinite(rawOp.dx) || !isFinite(rawOp.dy)) return { ok: false, reason: 'bad-op' };
+      var target = null;
+      for (var m = 0; m < board.objects.length; m++) if (board.objects[m].id === rawOp.id) target = board.objects[m];
+      if (!target) return { ok: false, reason: 'missing' };
+      if (!isHost) {
+        if (board.locked) return { ok: false, reason: 'locked' };
+        if (target.owner !== actor.id) return { ok: false, reason: 'not-yours' };
+      }
+      var sh = clampShift(target, rawOp.dx, rawOp.dy);
+      if (sh[0] === 0 && sh[1] === 0) return { ok: false, reason: 'no-change' };
+      translate(target, sh[0], sh[1]);
+      return { ok: true, op: { op: 'move', id: rawOp.id, dx: sh[0], dy: sh[1] } };
+    }
     if (rawOp.op === 'clear') {
       if (!isHost) return { ok: false, reason: 'host-only' };
       board.objects = [];
@@ -151,6 +196,17 @@
     if (rawOp.op === 'remove') {
       for (var j = 0; j < board.objects.length; j++) {
         if (board.objects[j].id === rawOp.id) { board.objects.splice(j, 1); return true; }
+      }
+      return false;
+    }
+    if (rawOp.op === 'move') {
+      if (typeof rawOp.dx !== 'number' || typeof rawOp.dy !== 'number' || !isFinite(rawOp.dx) || !isFinite(rawOp.dy)) return false;
+      for (var m = 0; m < board.objects.length; m++) {
+        if (board.objects[m].id === rawOp.id) {
+          var sh = clampShift(board.objects[m], rawOp.dx, rawOp.dy);
+          translate(board.objects[m], sh[0], sh[1]);
+          return true;
+        }
       }
       return false;
     }
@@ -261,6 +317,6 @@
   return {
     W: W, H: H, LIMITS: LIMITS, COLORS: COLORS, STICKY_COLORS: STICKY_COLORS, STICKY_W: STICKY_W, STICKY_H: STICKY_H, TEXT_PX: TEXT_PX,
     sanitizeObject: sanitizeObject, createBoard: createBoard, applyOp: applyOp, applyAccepted: applyAccepted, loadSync: loadSync, syncMessage: syncMessage,
-    allowRate: allowRate, hitTest: hitTest, objectAt: objectAt, lastOwnedBy: lastOwnedBy, newId: newId, simplify: simplify, textBox: textBox
+    allowRate: allowRate, hitTest: hitTest, bounds: bounds, clampShift: clampShift, translate: translate, objectAt: objectAt, lastOwnedBy: lastOwnedBy, newId: newId, simplify: simplify, textBox: textBox
   };
 });
