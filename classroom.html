@@ -27,6 +27,8 @@
   <script src="shared/js/cms-editor.js"></script>
   <script src="shared/js/ui-toast.js"></script>
   <script src="shared/js/lesson-resolver.js"></script>
+  <script src="shared/js/whiteboard-core.js"></script>
+  <script src="shared/js/whiteboard-view.js"></script>
   <!-- Design Tokens -->
   <link rel="stylesheet" href="shared/css/tokens.css">
 
@@ -482,22 +484,10 @@
           Reset Student Answers
         </button>
 
-        <!-- Whiteboard Drawing Tools -->
-        <div class="flex items-center space-x-2">
-          <div class="flex items-center space-x-1 bg-white p-1 rounded-xl border border-gray-200 shadow-sm">
-            <button onclick="setBrushColor('#ef4444')" class="w-5 h-5 rounded-full bg-red-500 border border-gray-300 hover:scale-110 transition touch-target" title="Red"></button>
-            <button onclick="setBrushColor('#3b82f6')" class="w-5 h-5 rounded-full bg-blue-500 border border-gray-300 hover:scale-110 transition touch-target" title="Blue"></button>
-            <button onclick="setBrushColor('#10b981')" class="w-5 h-5 rounded-full bg-emerald-500 border border-gray-300 hover:scale-110 transition touch-target" title="Green"></button>
-            <button onclick="setBrushColor('#111827')" class="w-5 h-5 rounded-full bg-gray-900 border border-gray-300 hover:scale-110 transition touch-target" title="Black"></button>
-          </div>
-          <select id="brush-size" onchange="setBrushSize(this.value)" class="bg-white border border-gray-300 rounded-lg px-2 py-1 text-xs">
-            <option value="2">Thin</option>
-            <option value="5" selected>Medium</option>
-            <option value="10">Thick</option>
-          </select>
-          <button onclick="clearWhiteboard()" data-requires="clear-board" class="px-2 py-1 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium rounded-lg text-xs transition touch-target">
-            Clear
-          </button>
+        <!-- Lesson / Board switch -->
+        <div class="flex items-center space-x-1" role="group" aria-label="Stage view">
+          <button id="stage-lesson-btn" type="button" onclick="setStageView('lesson')" aria-pressed="true" class="px-3 py-1.5 rounded-lg text-xs font-semibold border border-gray-300 bg-cosy-700 text-white touch-target">Lesson</button>
+          <button id="stage-board-btn" type="button" onclick="setStageView('board')" aria-pressed="false" class="px-3 py-1.5 rounded-lg text-xs font-semibold border border-gray-300 bg-white text-gray-800 touch-target">Whiteboard</button>
         </div>
       </div>
 
@@ -523,8 +513,8 @@
       </div>
 
       <!-- Slide & Stage Container -->
+      <div id="board-stage" class="hidden flex-1 p-3 min-h-0 overflow-hidden"></div>
       <div id="slide-container" class="flex-1 p-3 md:p-6 overflow-y-auto relative flex flex-col items-center justify-start">
-        <canvas id="whiteboard" class="absolute inset-0 z-10 pointer-events-auto"></canvas>
 
         <!-- Slide 1: General English Sample -->
         <div id="slide-1" class="slide-content w-full max-w-3xl space-y-4 relative z-0">
@@ -572,7 +562,7 @@
           <div class="bg-cosy-50 p-4 rounded-2xl border border-cosy-100 mb-3 flex-none">
             <span class="bg-cosy-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">Interactive Canvas</span>
             <h2 class="text-xl font-extrabold text-cosy-900 mt-1">Free Whiteboard & Drawing Stage</h2>
-            <p class="text-xs text-gray-600 mt-1">Draw or write on the canvas above using your mouse or touch screen.</p>
+            <p class="text-xs text-gray-600 mt-1">Open the Whiteboard view above to draw, write and add notes together.</p>
           </div>
         </div>
       </div>
@@ -852,13 +842,10 @@
     let activeVideoLink = '';
     let currentLessonPath = 'default';
 
-    // Whiteboard Canvas State
-    let canvas, ctx;
-    let isDrawing = false;
-    let lastX = 0;
-    let lastY = 0;
-    let brushColor = '#2b2d42';
-    let brushSize = 5;
+    // Whiteboard: board rules in shared/js/whiteboard-core.js, drawing in whiteboard-view.js.
+    // The host (teacher) keeps the board; students send ops to the host, which checks and shares them.
+    let boardView = null;
+    let stageView = 'lesson'; // 'lesson' or 'board'
 
     // Correct Answers Map
     const answersMap = {
@@ -1247,7 +1234,7 @@
         videoFrame.classList.add('flex-none', 'h-52', 'md:h-[44vh]', 'md:min-h-[280px]', 'md:max-h-[520px]');
       }
 
-      setTimeout(resizeCanvas, 150);
+      setTimeout(refreshBoard, 150);
 
       if (broadcast) {
         sendData({ type: 'layout-preset', preset: preset, mode: lessonMode });
@@ -2472,6 +2459,9 @@
         } else {
           c.send({ type: 'slide', slide: currentSlide });
         }
+        // Give the new student the whole board as it stands, and the view the teacher is on.
+        if (boardView) c.send(boardView.syncMessage());
+        c.send({ type: 'stage-view', view: stageView });
       });
 
       peer.on('error', (err) => {
@@ -2557,7 +2547,7 @@
       });
 
       c.on('data', (data) => {
-        handleIncomingData(data);
+        handleIncomingData(data, c);
       });
 
       c.on('close', () => {
@@ -2577,11 +2567,11 @@
     }
 
     // Handle incoming PeerJS data packet
-    function handleIncomingData(data) {
+    function handleIncomingData(data, fromConn) {
       if (!data) return;
 
       if (isHost) {
-        const allowedTypesOnHost = ['chat', 'blank', 'choice', 'whiteboard-draw', 'role', 'note-sync', 'call-teacher', 'breakout-move'];
+        const allowedTypesOnHost = ['chat', 'blank', 'choice', 'board-op', 'role', 'note-sync', 'call-teacher', 'breakout-move'];
         if (!allowedTypesOnHost.includes(data.type)) {
           console.warn(`Ignored unauthorized packet type '${data.type}' from participant on host.`);
           return;
@@ -2613,11 +2603,16 @@
             }
           }
           break;
-        case 'whiteboard-draw':
-          drawOnCanvas(data.lastX, data.lastY, data.x, data.y, data.color, data.size, false);
+        case 'board-op':
+          if (!boardView) break;
+          if (isHost) boardView.receiveFromStudent(data, fromConn && fromConn.peer);
+          else boardView.receiveFromHost(data);
           break;
-        case 'whiteboard-clear':
-          clearWhiteboard(false);
+        case 'board-sync':
+          if (boardView && !isHost) boardView.receiveFromHost(data);
+          break;
+        case 'stage-view':
+          if (!isHost && (data.view === 'lesson' || data.view === 'board')) setStageView(data.view, false);
           break;
         case 'chat':
           const senderName = isHost ? 'Student' : (data.sender || 'Student');
@@ -2909,10 +2904,6 @@
 
       updateSlideToolbar();
 
-      if (currentSlide === 3) {
-        setTimeout(resizeCanvas, 100);
-      }
-
       if (broadcast) {
         sendData({ type: 'slide', slide: currentSlide });
       }
@@ -3053,128 +3044,35 @@
 
     // Collaborative Whiteboard
     function initWhiteboard() {
-      canvas = document.getElementById('whiteboard');
-      if (!canvas) return;
-      ctx = canvas.getContext('2d');
-
-      resizeCanvas();
-      window.addEventListener('resize', resizeCanvas);
-
-      // Mouse Listeners
-      canvas.addEventListener('mousedown', startDrawing);
-      canvas.addEventListener('mousemove', draw);
-      canvas.addEventListener('mouseup', stopDrawing);
-      canvas.addEventListener('mouseleave', stopDrawing);
-
-      // Touch Listeners
-      canvas.addEventListener('touchstart', handleTouchStart, { passive: false });
-      canvas.addEventListener('touchmove', handleTouchMove, { passive: false });
-      canvas.addEventListener('touchend', stopDrawing);
+      const host = document.getElementById('board-stage');
+      if (!host || !window.CosyWhiteboardView) return;
+      boardView = CosyWhiteboardView.mount(host, {
+        isHost: () => isHost,
+        selfId: () => (peer && peer.id) || 'student',
+        toHost: (msg) => { if (conn && conn.open) conn.send(msg); },
+        broadcast: (msg) => { connections.forEach(c => { if (c && c.open) c.send(msg); }); }
+      });
     }
 
-    function resizeCanvas() {
-      if (!canvas) return;
-      const rect = canvas.parentElement.getBoundingClientRect();
-      if (rect.width > 0 && rect.height > 0) {
-        // Save current canvas content before resize
-        const tempCanvas = document.createElement('canvas');
-        tempCanvas.width = canvas.width;
-        tempCanvas.height = canvas.height;
-        const tempCtx = tempCanvas.getContext('2d');
-        if (canvas.width > 0) tempCtx.drawImage(canvas, 0, 0);
-
-        canvas.width = rect.width;
-        canvas.height = rect.height;
-
-        // Restore image
-        ctx.drawImage(tempCanvas, 0, 0);
-      }
+    function refreshBoard() {
+      if (boardView && stageView === 'board') boardView.refresh();
     }
 
-    function setBrushColor(color) {
-      brushColor = color;
-    }
-
-    function setBrushSize(size) {
-      brushSize = parseInt(size, 10);
-    }
-
-    function getCanvasPos(e) {
-      const rect = canvas.getBoundingClientRect();
-      return {
-        x: e.clientX - rect.left,
-        y: e.clientY - rect.top
-      };
-    }
-
-    function startDrawing(e) {
-      isDrawing = true;
-      const pos = getCanvasPos(e);
-      lastX = pos.x;
-      lastY = pos.y;
-    }
-
-    function draw(e) {
-      if (!isDrawing) return;
-      const pos = getCanvasPos(e);
-      drawOnCanvas(lastX, lastY, pos.x, pos.y, brushColor, brushSize, true);
-      lastX = pos.x;
-      lastY = pos.y;
-    }
-
-    function handleTouchStart(e) {
-      e.preventDefault();
-      if (e.touches.length > 0) {
-        startDrawing(e.touches[0]);
-      }
-    }
-
-    function handleTouchMove(e) {
-      e.preventDefault();
-      if (e.touches.length > 0) {
-        draw(e.touches[0]);
-      }
-    }
-
-    function stopDrawing() {
-      isDrawing = false;
-    }
-
-    function drawOnCanvas(x1, y1, x2, y2, color, size, broadcast = true) {
-      if (!ctx) return;
-      ctx.beginPath();
-      ctx.strokeStyle = color;
-      ctx.lineWidth = size;
-      ctx.lineCap = 'round';
-      ctx.lineJoin = 'round';
-      ctx.moveTo(x1, y1);
-      ctx.lineTo(x2, y2);
-      ctx.stroke();
-      ctx.closePath();
-
-      if (broadcast) {
-        sendData({
-          type: 'whiteboard-draw',
-          lastX: x1,
-          lastY: y1,
-          x: x2,
-          y: y2,
-          color: color,
-          size: size
-        });
-      }
-    }
-
-    function clearWhiteboard(broadcast = true) {
-      if (broadcast && !can('clear-board')) {
-        showTeacherOnlyToast();
-        return;
-      }
-      if (!ctx || !canvas) return;
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      if (broadcast) {
-        sendData({ type: 'whiteboard-clear' });
-      }
+    // Switch the centre stage between the lesson and the whiteboard. The teacher's switch is
+    // shared with students so everyone can be brought to the board; students can still look around.
+    function setStageView(view, broadcast = true) {
+      if (view !== 'lesson' && view !== 'board') return;
+      stageView = view;
+      const board = document.getElementById('board-stage');
+      const lesson = document.getElementById('slide-container');
+      if (board) board.classList.toggle('hidden', view !== 'board');
+      if (lesson) lesson.classList.toggle('hidden', view === 'board');
+      const lb = document.getElementById('stage-lesson-btn');
+      const bb = document.getElementById('stage-board-btn');
+      if (lb) { lb.setAttribute('aria-pressed', String(view === 'lesson')); lb.classList.toggle('bg-cosy-700', view === 'lesson'); lb.classList.toggle('text-white', view === 'lesson'); }
+      if (bb) { bb.setAttribute('aria-pressed', String(view === 'board')); bb.classList.toggle('bg-cosy-700', view === 'board'); bb.classList.toggle('text-white', view === 'board'); }
+      if (view === 'board') setTimeout(refreshBoard, 0);
+      if (broadcast && isHost) sendData({ type: 'stage-view', view });
     }
 
     // Class Chat Logic
@@ -3738,7 +3636,7 @@
 
     window.addEventListener('orientationchange', async () => {
       setTimeout(async () => {
-        resizeCanvas();
+        refreshBoard();
         await checkAndReconnectPeerSession();
       }, 300);
     });
@@ -3820,7 +3718,7 @@
         joinAndLoadLessonNote();
       }
 
-      (window.requestAnimationFrame || setTimeout)(() => resizeCanvas(), 0);
+      (window.requestAnimationFrame || setTimeout)(() => refreshBoard(), 0);
     }
 
     function closeDrawer() {
@@ -3840,7 +3738,7 @@
       const pinBtn = document.getElementById('pin-drawer-btn');
       if (pinBtn) pinBtn.classList.remove('bg-cosy-100', 'text-cosy-800');
 
-      (window.requestAnimationFrame || setTimeout)(() => resizeCanvas(), 0);
+      (window.requestAnimationFrame || setTimeout)(() => refreshBoard(), 0);
     }
 
     function togglePinDrawer() {
@@ -3857,7 +3755,7 @@
         const msg = isDrawerPinned ? ((window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t('classroom.pinDrawer') : 'Drawer pinned') : ((window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t('classroom.unpinDrawer') : 'Drawer unpinned');
         CosyUI.toast(msg, 'info');
       }
-      (window.requestAnimationFrame || setTimeout)(() => resizeCanvas(), 0);
+      (window.requestAnimationFrame || setTimeout)(() => refreshBoard(), 0);
     }
 
     function switchSidebarTab(tabName) {
@@ -3915,7 +3813,7 @@
         }
       }
 
-      (window.requestAnimationFrame || setTimeout)(() => resizeCanvas(), 0);
+      (window.requestAnimationFrame || setTimeout)(() => refreshBoard(), 0);
     }
 
     // Touch Swipe Page Navigation on Stage
@@ -4022,7 +3920,7 @@
         if (textarea) textarea.value = localStorage.getItem('cosy_lesson_notes') || '';
       }
 
-      (window.requestAnimationFrame || setTimeout)(() => resizeCanvas(), 0);
+      (window.requestAnimationFrame || setTimeout)(() => refreshBoard(), 0);
     }
 
     function closeBottomSheet() {
@@ -4040,7 +3938,7 @@
         }
       });
 
-      (window.requestAnimationFrame || setTimeout)(() => resizeCanvas(), 0);
+      (window.requestAnimationFrame || setTimeout)(() => refreshBoard(), 0);
     }
 
     function toggleOwnTileControls(e) {
