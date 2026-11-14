@@ -22,7 +22,8 @@
     memory: { min: 3, max: 12, text: 60 },
     hangman: { min: 1, max: 20, minLen: 2, maxLen: 30, hint: 120 },
     anagram: { min: 1, max: 20, minLen: 3, maxLen: 30, hint: 120 },
-    wordsearch: { min: 3, max: 12, minLen: 3, maxLen: 12 }
+    wordsearch: { min: 3, max: 12, minLen: 3, maxLen: 12 },
+    crossword: { min: 3, max: 15, minLen: 2, maxLen: 15, clue: 120 }
   };
   var HANGMAN_LIVES = 6;
 
@@ -100,6 +101,24 @@
     return out;
   }
 
+  /** [{word, clue}] for a crossword, or null. Single words, all different, every entry has a clue. */
+  function validEntries(entries) {
+    var L = LIMITS.crossword;
+    if (!Array.isArray(entries) || entries.length < L.min || entries.length > L.max) return null;
+    var out = [], seen = {};
+    for (var i = 0; i < entries.length; i++) {
+      var it = entries[i];
+      var w = it && clean(it.word), c = it && clean(it.clue);
+      if (!w || /\s/.test(w) || Array.from(w).length < L.minLen || Array.from(w).length > L.maxLen) return null;
+      if (!c || c.length > L.clue) return null;
+      var k = w.toLowerCase();
+      if (seen[k]) return null;
+      seen[k] = true;
+      out.push({ word: w, clue: c });
+    }
+    return out;
+  }
+
   function sourceList(tag, itemsHtml) { return '<' + tag + ' class="sg-source" hidden>' + itemsHtml + '</' + tag + '>'; }
 
   function renderElement(el) {
@@ -116,6 +135,13 @@
       if (!list) return '';
       return '<section class="sg-game" data-game="' + el.type + '" aria-label="' + (el.type === 'hangman' ? 'Hangman' : 'Anagram') + '">' +
         sourceList('ol', list.map(function (w) { return '<li><span data-x>' + esc(w.word) + '</span><span data-y>' + esc(w.hint) + '</span></li>'; }).join('')) +
+        '<div class="sg-mount"></div></section>';
+    }
+    if (el.type === 'crossword') {
+      var ents = validEntries(el.entries);
+      if (!ents) return '';
+      return '<section class="sg-game" data-game="crossword" aria-label="Crossword">' +
+        sourceList('ol', ents.map(function (e) { return '<li><span data-x>' + esc(e.word) + '</span><span data-y>' + esc(e.clue) + '</span></li>'; }).join('')) +
         '<div class="sg-mount"></div></section>';
     }
     if (el.type === 'word-search') {
@@ -162,6 +188,20 @@
       '.sg-cell{width:34px;height:34px;padding:0;font:inherit;font-weight:700;border:1px solid #cbd5e1;background:#fff;color:#0f172a;cursor:pointer}' +
       '.sg-cell.sg-start{background:#fde68a}.sg-cell.sg-found{background:#bbf7d0;color:#064e3b}' +
       '.sg-cell:focus-visible{outline:3px solid #1d4ed8;outline-offset:-3px;position:relative}' +
+      '.sg-cw{display:inline-block;max-width:100%;overflow:auto}' +
+      '.sg-cwrow{display:flex}' +
+      '.sg-cwcell{position:relative;width:36px;height:36px;box-sizing:border-box}' +
+      '.sg-cwcell.sg-block{background:transparent}' +
+      '.sg-cwnum{position:absolute;top:1px;left:3px;font-size:.6rem;line-height:1;pointer-events:none;color:#334155}' +
+      '.sg-cwin{width:100%;height:100%;box-sizing:border-box;padding:6px 0 0;border:1px solid #475569;background:#fff;color:#0f172a;font:inherit;font-weight:700;text-align:center;text-transform:uppercase}' +
+      '.sg-cwin.sg-inword{background:#dbeafe}' +
+      '.sg-cwin:focus-visible{outline:3px solid #1d4ed8;outline-offset:-3px;position:relative}' +
+      '.sg-cwin.sg-wrong{border:2px dashed #b91c1c;background:#fee2e2}' +
+      '.sg-cwin.sg-right{background:#bbf7d0}' +
+      '.sg-clues{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}' +
+      '.sg-clues ol{margin:0;padding-left:0;list-style:none}' +
+      '.sg-clue{display:block;width:100%;text-align:left;font:inherit;padding:6px 8px;border:1px solid transparent;border-radius:6px;background:transparent;color:#0f172a;cursor:pointer}' +
+      '.sg-clue.sg-cur{border-color:#1d4ed8;background:#dbeafe}' +
       '.sg-wordlist{display:flex;gap:8px 16px;flex-wrap:wrap;list-style:none;padding:0;margin:10px 0}' +
       '.sg-wordlist .sg-got{text-decoration:line-through;color:#047857}' +
       '@media (prefers-reduced-motion:no-preference){.sg-card,.sg-tile{transition:background .15s}}';
@@ -604,6 +644,213 @@
     start();
   }
 
+
+  var CW_DIRS = [[0, 1], [1, 0]]; // across, down
+
+  /** Lay the words out on a grid so they cross. Returns {placed, size rows/cols, cells} or null. */
+  function layoutCrossword(entries) {
+    var best = null;
+    for (var attempt = 0; attempt < 150; attempt++) {
+      var order = entries.map(function (e, i) { return { e: e, i: i, ch: Array.from(e.word.toUpperCase()) }; });
+      order.sort(function (a, b) { return b.ch.length - a.ch.length || Math.random() - 0.5; });
+      if (attempt > 0) { var f = order.shift(); shuffle(order); order.unshift(f); }
+      var cells = {}, placed = [];
+      function get(r, c) { return cells[r + ',' + c]; }
+      function fits(w, r, c, d) {
+        var before = get(r - d[0], c - d[1]), after = get(r + d[0] * w.length, c + d[1] * w.length);
+        if (before || after) return -1;
+        var cross = 0;
+        for (var k = 0; k < w.length; k++) {
+          var rr = r + d[0] * k, cc = c + d[1] * k, cur = get(rr, cc);
+          if (cur) { if (cur !== w[k]) return -1; cross++; continue; }
+          // an empty cell must not touch letters sideways
+          if (get(rr + d[1], cc + d[0]) || get(rr - d[1], cc - d[0])) return -1;
+        }
+        return cross === w.length ? -1 : cross;
+      }
+      for (var oi = 0; oi < order.length; oi++) {
+        var o = order[oi], w = o.ch, cand = [];
+        if (!placed.length) { cand.push({ r: 0, c: 0, d: CW_DIRS[0], x: 0 }); }
+        else {
+          placed.forEach(function (pl) {
+            pl.ch.forEach(function (pc, pk) {
+              w.forEach(function (wc, wk) {
+                if (pc !== wc) return;
+                var d = pl.d === CW_DIRS[0] ? CW_DIRS[1] : CW_DIRS[0];
+                var r = pl.r + pl.d[0] * pk - d[0] * wk, c = pl.c + pl.d[1] * pk - d[1] * wk;
+                var x = fits(w, r, c, d);
+                if (x >= 1) cand.push({ r: r, c: c, d: d, x: x });
+              });
+            });
+          });
+        }
+        if (!cand.length) continue;
+        cand.sort(function (a, b) { return b.x - a.x || Math.random() - 0.5; });
+        var pick = cand[0];
+        for (var k = 0; k < w.length; k++) cells[(pick.r + pick.d[0] * k) + ',' + (pick.c + pick.d[1] * k)] = w[k];
+        placed.push({ entry: o.e, idx: o.i, ch: w, r: pick.r, c: pick.c, d: pick.d });
+      }
+      if (!best || placed.length > best.placed.length) best = { placed: placed, cells: cells };
+      if (placed.length === entries.length) break;
+    }
+    if (!best) return null;
+    var minR = Infinity, minC = Infinity, maxR = -Infinity, maxC = -Infinity;
+    Object.keys(best.cells).forEach(function (k) {
+      var p = k.split(','), r = +p[0], c = +p[1];
+      minR = Math.min(minR, r); minC = Math.min(minC, c); maxR = Math.max(maxR, r); maxC = Math.max(maxC, c);
+    });
+    best.placed.forEach(function (pl) { pl.r -= minR; pl.c -= minC; });
+    best.rows = maxR - minR + 1; best.cols = maxC - minC + 1;
+    // number entries by reading order of their starting cell
+    var starts = {}, n = 0;
+    best.placed.slice().sort(function (a, b) { return a.r - b.r || a.c - b.c; }).forEach(function (pl) {
+      var key = pl.r + ',' + pl.c;
+      if (!starts[key]) starts[key] = ++n;
+      pl.num = starts[key];
+    });
+    return best;
+  }
+
+  function initCrossword(section, doc) {
+    var entries = readSource(section).map(function (e) { return { word: e.x, clue: e.y }; });
+    var mount = section.querySelector('.sg-mount');
+    var lay = layoutCrossword(entries);
+    mount.textContent = '';
+    if (!lay) { mount.appendChild(el(doc, 'p', 'sg-status', 'Could not build this crossword.')); return; }
+    var inputs = {}; // 'r,c' -> input
+    var letterAt = {};
+    lay.placed.forEach(function (pl) {
+      pl.ch.forEach(function (ch, k) { letterAt[(pl.r + pl.d[0] * k) + ',' + (pl.c + pl.d[1] * k)] = ch; });
+    });
+    var cur = lay.placed[0], live = el(doc, 'p', 'sg-status');
+    live.setAttribute('role', 'status');
+    var grid = el(doc, 'div', 'sg-cw');
+    var clueBtns = [];
+    function across(pl) { return pl.d === CW_DIRS[0]; }
+    function cellsOf(pl) {
+      return pl.ch.map(function (_, k) { return (pl.r + pl.d[0] * k) + ',' + (pl.c + pl.d[1] * k); });
+    }
+    function select(pl, focusKey) {
+      cur = pl;
+      Object.keys(inputs).forEach(function (k) { inputs[k].classList.remove('sg-inword'); });
+      cellsOf(pl).forEach(function (k) { inputs[k].classList.add('sg-inword'); });
+      clueBtns.forEach(function (b) { b.btn.classList.toggle('sg-cur', b.pl === pl); if (b.pl === pl) b.btn.setAttribute('aria-current', 'true'); else b.btn.removeAttribute('aria-current'); });
+      if (focusKey) inputs[focusKey].focus();
+    }
+    function entriesAt(key) {
+      return lay.placed.filter(function (pl) { return cellsOf(pl).indexOf(key) !== -1; });
+    }
+    function move(key, dr, dc) {
+      var p = key.split(','), nk = (+p[0] + dr) + ',' + (+p[1] + dc);
+      if (inputs[nk]) { inputs[nk].focus(); return true; }
+      return false;
+    }
+
+    for (var r = 0; r < lay.rows; r++) {
+      var row = el(doc, 'div', 'sg-cwrow');
+      for (var c = 0; c < lay.cols; c++) {
+        var key = r + ',' + c, cell = el(doc, 'div', 'sg-cwcell');
+        if (!letterAt[key]) { cell.classList.add('sg-block'); row.appendChild(cell); continue; }
+        var inp = el(doc, 'input', 'sg-cwin');
+        inp.type = 'text'; inp.maxLength = 2; inp.autocomplete = 'off'; inp.setAttribute('autocapitalize', 'off');
+        inp.tabIndex = -1;
+        inp.setAttribute('aria-label', 'Row ' + (r + 1) + ', column ' + (c + 1));
+        inputs[key] = inp;
+        (function (key, inp) {
+          inp.addEventListener('focus', function () {
+            var here = entriesAt(key);
+            if (here.indexOf(cur) === -1) select(here[0]);
+            Object.keys(inputs).forEach(function (k) { inputs[k].tabIndex = -1; });
+            inp.tabIndex = 0;
+            if (inp.select) inp.select();
+          });
+          inp.addEventListener('input', function () {
+            var typed = Array.from(inp.value.trim());
+            var ch = typed[typed.length - 1] || '';
+            inp.value = ch.toUpperCase();
+            inp.classList.remove('sg-wrong', 'sg-right'); inp.removeAttribute('aria-invalid');
+            if (ch && cur) {
+              var ks = cellsOf(cur), at = ks.indexOf(key);
+              if (at !== -1 && at + 1 < ks.length) inputs[ks[at + 1]].focus();
+            }
+          });
+          inp.addEventListener('click', function () {
+            var here = entriesAt(key);
+            if (here.length > 1 && here.indexOf(cur) !== -1) select(here[(here.indexOf(cur) + 1) % here.length]);
+          });
+          inp.addEventListener('keydown', function (e) {
+            if (e.key === 'ArrowRight') { if (move(key, 0, 1)) e.preventDefault(); else e.preventDefault(); }
+            else if (e.key === 'ArrowLeft') { move(key, 0, -1); e.preventDefault(); }
+            else if (e.key === 'ArrowDown') { move(key, 1, 0); e.preventDefault(); }
+            else if (e.key === 'ArrowUp') { move(key, -1, 0); e.preventDefault(); }
+            else if (e.key === 'Backspace' && !inp.value && cur) {
+              var ks = cellsOf(cur), at = ks.indexOf(key);
+              if (at > 0) { e.preventDefault(); inputs[ks[at - 1]].value = ''; inputs[ks[at - 1]].focus(); }
+            }
+          });
+        })(key, inp);
+        cell.appendChild(inp);
+        row.appendChild(cell);
+      }
+      grid.appendChild(row);
+    }
+    lay.placed.forEach(function (pl) {
+      var num = el(doc, 'span', 'sg-cwnum', String(pl.num));
+      num.setAttribute('aria-hidden', 'true');
+      var first = inputs[pl.r + ',' + pl.c].parentNode;
+      if (!first.querySelector('.sg-cwnum')) first.appendChild(num);
+    });
+
+    var clues = el(doc, 'div', 'sg-clues');
+    [['Across', true], ['Down', false]].forEach(function (g) {
+      var list = lay.placed.filter(function (pl) { return across(pl) === g[1]; }).sort(function (a, b) { return a.num - b.num; });
+      var box = el(doc, 'div');
+      box.appendChild(el(doc, 'h4', '', g[0]));
+      var ol = el(doc, 'ol');
+      if (!list.length) ol.appendChild(el(doc, 'li', '', '—'));
+      list.forEach(function (pl) {
+        var li = el(doc, 'li');
+        var b = el(doc, 'button', 'sg-clue', pl.num + '. ' + pl.entry.clue + ' (' + pl.ch.length + ')');
+        b.type = 'button';
+        b.addEventListener('click', function () { select(pl, pl.r + ',' + pl.c); });
+        li.appendChild(b); ol.appendChild(li);
+        clueBtns.push({ pl: pl, btn: b });
+      });
+      box.appendChild(ol); clues.appendChild(box);
+    });
+
+    function check() {
+      var wrong = 0, empty = 0;
+      Object.keys(inputs).forEach(function (k) {
+        var i = inputs[k], v = i.value;
+        i.classList.remove('sg-wrong', 'sg-right'); i.removeAttribute('aria-invalid');
+        if (!v) { empty++; return; }
+        if (v.toUpperCase() === letterAt[k]) i.classList.add('sg-right');
+        else { wrong++; i.classList.add('sg-wrong'); i.setAttribute('aria-invalid', 'true'); }
+      });
+      if (!wrong && !empty) live.textContent = 'Perfect! The crossword is complete.';
+      else live.textContent = wrong + ' wrong' + (wrong === 1 ? ' letter' : ' letters') + ' (dashed red), ' + empty + ' still empty.';
+    }
+    var controls = el(doc, 'div', 'sg-row');
+    controls.append(
+      btn(doc, 'Check', check),
+      btn(doc, 'Reveal this word', function () {
+        cellsOf(cur).forEach(function (k) { inputs[k].value = letterAt[k]; inputs[k].classList.remove('sg-wrong'); });
+        live.textContent = 'Revealed: ' + cur.entry.word + '.';
+      }),
+      btn(doc, 'Clear all', function () {
+        Object.keys(inputs).forEach(function (k) { inputs[k].value = ''; inputs[k].classList.remove('sg-wrong', 'sg-right'); inputs[k].removeAttribute('aria-invalid'); });
+        live.textContent = '';
+      })
+    );
+    var skipped = entries.length - lay.placed.length;
+    mount.append(grid, clues, controls, live);
+    if (skipped > 0) mount.appendChild(el(doc, 'p', 'sg-status', skipped + ' word(s) could not be fitted into the grid and were left out. Try adding words that share letters.'));
+    var f0 = inputs[lay.placed[0].r + ',' + lay.placed[0].c];
+    f0.tabIndex = 0;
+    select(lay.placed[0]);
+  }
+
   /** Make every game under `rootEl` playable. Safe to call again; each game starts once. */
   function init(rootEl) {
     if (!rootEl || !rootEl.querySelectorAll) return;
@@ -617,8 +864,9 @@
       else if (kind === 'hangman') initHangman(section, doc);
       else if (kind === 'anagram') initAnagram(section, doc);
       else if (kind === 'wordsearch') initWordSearch(section, doc);
+      else if (kind === 'crossword') initCrossword(section, doc);
     });
   }
 
-  return { LIMITS: LIMITS, validCards: validCards, validPairs: validPairs, validWordList: validWordList, validWords: validWords, renderElement: renderElement, init: init };
+  return { LIMITS: LIMITS, validCards: validCards, validPairs: validPairs, validWordList: validWordList, validWords: validWords, validEntries: validEntries, renderElement: renderElement, init: init };
 });

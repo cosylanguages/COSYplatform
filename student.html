@@ -2234,7 +2234,7 @@
           } else if ((el.type === "media" || el.type === "video-embed") && window.CosyStudioMedia) {
             flushVocabBatch();
             output += window.CosyStudioMedia.renderElement(el);
-          } else if ((el.type === "flashcards" || el.type === "memory-match" || el.type === "hangman" || el.type === "anagram" || el.type === "word-search") && window.CosyStudioGames) {
+          } else if ((el.type === "flashcards" || el.type === "memory-match" || el.type === "hangman" || el.type === "anagram" || el.type === "word-search" || el.type === "crossword") && window.CosyStudioGames) {
             flushVocabBatch();
             output += window.CosyStudioGames.renderElement(el);
           } else if (el.type === "studio-text") {

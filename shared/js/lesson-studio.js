@@ -118,6 +118,8 @@
         if (!Array.isArray(block.pairs)) return 'Memory match block ' + (i + 1) + ' needs pairs.';
       } else if (block.type === 'hangman' || block.type === 'anagram' || block.type === 'word_search') {
         if (!Array.isArray(block.words)) return 'Word game block ' + (i + 1) + ' needs words.';
+      } else if (block.type === 'crossword') {
+        if (!Array.isArray(block.entries)) return 'Crossword block ' + (i + 1) + ' needs entries.';
       } else if (MEDIA_KINDS.indexOf(block.type) !== -1) {
         // path / embed / alt / caption are checked when publishing, so a draft can be saved half-finished.
       } else {
@@ -179,6 +181,23 @@
           seen.add(text.toLowerCase());
         }
         if (games && !games.validWordList(block.words, block.type)) return name + ' block ' + n + ' has an invalid word.';
+      } else if (block.type === 'crossword') {
+        const games = window.CosyStudioGames;
+        if (block.entries.length < 3) return 'Crossword block ' + n + ' needs at least 3 entries.';
+        if (block.entries.length > 15) return 'Crossword block ' + n + ' can have at most 15 entries.';
+        const seen = new Set();
+        for (const e of block.entries) {
+          const text = e && typeof e.word === 'string' ? e.word.trim() : '';
+          const clue = e && typeof e.clue === 'string' ? e.clue.trim() : '';
+          if (!text) return 'Every entry in crossword block ' + n + ' needs a word.';
+          if (/\s/.test(text)) return 'Crossword words in block ' + n + ' must be single words (no spaces).';
+          if (Array.from(text).length < 2 || Array.from(text).length > 15) return 'Crossword words in block ' + n + ' must be 2 to 15 letters long.';
+          if (!clue) return 'Every crossword entry in block ' + n + ' needs a clue.';
+          if (clue.length > 120) return 'Crossword clues in block ' + n + ' can be up to 120 characters.';
+          if (seen.has(text.toLowerCase())) return 'Every word in crossword block ' + n + ' must be different.';
+          seen.add(text.toLowerCase());
+        }
+        if (games && !games.validEntries(block.entries)) return 'Crossword block ' + n + ' has an invalid entry.';
       } else if (block.type === 'word_search') {
         const games = window.CosyStudioGames;
         if (block.words.length < 3) return 'Word search block ' + n + ' needs at least 3 words.';
@@ -299,7 +318,8 @@
       memory_match: 'Memory Match',
       hangman: 'Hangman',
       anagram: 'Anagram',
-      word_search: 'Word Search'
+      word_search: 'Word Search',
+      crossword: 'Crossword'
     };
 
     state.doc.blocks.forEach((block, index) => {
@@ -801,6 +821,35 @@
         capInput.addEventListener('input', () => { if (capInput.value) block.caption = capInput.value; else delete block.caption; changed(false); });
         capField.append(capLabel, capInput);
         card.appendChild(capField);
+      } else if (block.type === 'crossword') {
+        block.entries = block.entries || [];
+        const container = document.createElement('div');
+        container.className = 'studio-field';
+        const label = document.createElement('span');
+        label.textContent = 'Entries (3 to 15). Each needs a single word and a clue. The grid is built automatically, so choose words that share letters.';
+        container.appendChild(label);
+        block.entries.forEach((row, idx) => {
+          const line = document.createElement('div');
+          line.className = 'studio-item-row';
+          const one = document.createElement('input');
+          one.placeholder = 'Word';
+          one.value = row.word || '';
+          one.addEventListener('input', () => { row.word = one.value; changed(false); });
+          const two = document.createElement('input');
+          two.placeholder = 'Clue';
+          two.value = row.clue || '';
+          two.addEventListener('input', () => { row.clue = two.value; changed(false); });
+          const del = document.createElement('button');
+          del.className = 'studio-mini-btn'; del.type = 'button'; del.textContent = '×';
+          del.addEventListener('click', () => { block.entries.splice(idx, 1); changed(); });
+          line.append(one, two, del);
+          container.appendChild(line);
+        });
+        const add = document.createElement('button');
+        add.className = 'studio-mini-btn'; add.type = 'button'; add.textContent = '＋ Add Entry';
+        add.addEventListener('click', () => { block.entries.push({ word: '', clue: '' }); changed(); });
+        container.appendChild(add);
+        card.appendChild(container);
       } else if (block.type === 'hangman' || block.type === 'anagram' || block.type === 'word_search') {
         const isSearch = block.type === 'word_search';
         block.words = block.words || [];
@@ -1083,6 +1132,13 @@
         if (!holder.innerHTML) holder.textContent = 'Add a file or link to see a preview.';
         item.appendChild(holder);
         if (media) media.hydrate(holder, window.CosyAuth ? window.CosyAuth.client : null);
+      } else if (block.type === 'crossword') {
+        const games = window.CosyStudioGames;
+        const holder = document.createElement('div');
+        holder.innerHTML = games ? games.renderElement({ type: 'crossword', entries: block.entries }) : '';
+        if (!holder.innerHTML) holder.textContent = 'Add 3 to 15 different single words, each with a clue, to see the crossword.';
+        item.appendChild(holder);
+        if (games) games.init(holder);
       } else if (block.type === 'hangman' || block.type === 'anagram' || block.type === 'word_search') {
         const games = window.CosyStudioGames;
         const holder = document.createElement('div');
@@ -1394,6 +1450,7 @@ function normalizeLanguage(value) {
     addBlockButton('add-hangman', () => ({ type: 'hangman', words: [{ word: 'house', hint: 'where you live' }, { word: 'garden' }] }));
     addBlockButton('add-anagram', () => ({ type: 'anagram', words: [{ word: 'teacher', hint: 'works at a school' }, { word: 'window' }] }));
     addBlockButton('add-wordsearch', () => ({ type: 'word_search', directions: 'basic', words: ['apple', 'bread', 'cheese', 'water'] }));
+    addBlockButton('add-crossword', () => ({ type: 'crossword', entries: [{ word: 'teacher', clue: 'works at a school' }, { word: 'student', clue: 'learns at a school' }, { word: 'lesson', clue: 'a class' }, { word: 'homework', clue: 'work to do at home' }] }));
     addBlockButton('add-memory', () => ({ type: 'memory_match', pairs: [{ a: 'cat', b: 'gato' }, { a: 'dog', b: 'perro' }, { a: 'house', b: 'casa' }] }));
     const addCorrectionBtn = $('add-correction');
     if (addCorrectionBtn) {
