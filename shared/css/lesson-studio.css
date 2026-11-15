@@ -55,3 +55,5 @@
 .studio-block-card[data-type="word_order"] { border-left: 4px solid #f59e0b; }
 .studio-block-card[data-type="sort_columns"] { border-left: 4px solid #0ea5e9; }
 .studio-block-card[data-type="put_in_order"] { border-left: 4px solid #ec4899; }
+.studio-preview-toggle{display:flex;gap:0;border:1px solid #94a3b8;border-radius:8px;overflow:hidden}.studio-preview-toggle button{font:inherit;font-size:.75rem;font-weight:700;padding:6px 12px;border:0;background:#fff;color:#0f172a;cursor:pointer}.studio-preview-toggle button[aria-pressed="true"]{background:#1e3a8a;color:#fff}.studio-preview-toggle button:focus-visible{outline:3px solid #1d4ed8;outline-offset:-3px}
+.preview-teacher-only{background:#fffbe3;border-left:4px solid #b45309;color:#78350f!important;padding:8px 10px;border-radius:0 8px 8px 0;font-size:.85rem}

@@ -100,7 +100,11 @@
       </section>
 
       <aside class="studio-preview-panel">
-        <div class="studio-panel-header"><div><h2>Student preview</h2><p>Safe preview of the current draft</p></div><span class="studio-preview-pill">PREVIEW</span></div>
+        <div class="studio-panel-header"><div><h2 id="preview-title">Student preview</h2><p id="preview-subtitle">Exactly what students will see</p></div>
+          <div class="studio-preview-toggle" role="group" aria-label="Preview as">
+            <button id="preview-mode-student" type="button" aria-pressed="true">Student</button>
+            <button id="preview-mode-teacher" type="button" aria-pressed="false">Teacher</button>
+          </div></div>
         <div id="lesson-preview" class="lesson-preview"></div>
       </aside>
     </div>
