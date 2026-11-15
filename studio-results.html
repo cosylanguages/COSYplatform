@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="shared/img/favicon.svg" type="image/svg+xml">
+  <title>Student results · COSYlanguages</title>
+  <link rel="stylesheet" href="shared/css/tokens.css">
+  <link rel="stylesheet" href="shared/styles/style.css">
+  <script src="vendor/supabase-js-2.49.1/supabase.js"></script>
+  <script src="shared/js/config.js"></script>
+  <script src="shared/js/auth-guard.js"></script>
+  <script src="shared/js/auth-sso.js"></script>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 0; background: #f8fafc; color: #0f172a; }
+    main { max-width: 56rem; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
+    h1 { font-size: 1.5rem; margin: 0 0 .25rem; } h2 { font-size: 1.1rem; margin: 2rem 0 .5rem; }
+    .note { color: #475569; font-size: .9rem; margin: .25rem 0; }
+    table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid #e2e8f0; border-radius: .5rem; }
+    th, td { text-align: left; padding: .5rem .75rem; border-bottom: 1px solid #e2e8f0; font-size: .9rem; vertical-align: top; }
+    th { background: #f1f5f9; }
+    .bar { display: inline-block; height: .6rem; background: #e2e8f0; border-radius: 1rem; width: 8rem; vertical-align: middle; overflow: hidden; }
+    .bar > span { display: block; height: 100%; background: #0369a1; }
+    .err { color: #b91c1c; }
+  </style>
+</head>
+<body>
+<main>
+  <p><a href="lesson-studio.html">← Back to Lesson Studio</a></p>
+  <h1>Student results</h1>
+  <p class="note" id="lesson-name"></p>
+  <p class="note">Answer checks come from the server. Game results are reported by the student's own device, so treat them as a hint, not proof. Results are kept for 12 months, and students can delete their own history. Every teacher of this lesson's language can see these results.</p>
+  <p id="status" class="note" role="status">Loading…</p>
+  <section id="questions-section" hidden>
+    <h2>Questions, hardest first</h2>
+    <table><thead><tr><th>Question</th><th>Students</th><th>Correct (latest answer)</th><th>Total checks</th></tr></thead><tbody id="questions"></tbody></table>
+  </section>
+  <section id="students-section" hidden>
+    <h2>Students</h2>
+    <table><thead><tr><th>Student</th><th>Answered</th><th>Correct</th><th>Checks</th><th>Games (best)</th><th>Last active</th></tr></thead><tbody id="students"></tbody></table>
+  </section>
+</main>
+<script>
+(function () {
+  var statusEl = document.getElementById('status');
+  function td(tr, text) { var c = document.createElement('td'); c.textContent = text; tr.appendChild(c); return c; }
+  function gameLabel(g) {
+    var names = { hangman: 'Hangman', anagram: 'Anagram', wordsearch: 'Word search', crossword: 'Crossword', memory: 'Memory', flashcards: 'Flashcards' };
+    return (names[g.game] || g.game) + ' (' + g.slide.replace('slide-', 'slide ') + '): ' + g.best + '/' + g.total + (g.plays > 1 ? ' · ' + g.plays + ' plays' : '');
+  }
+  async function main() {
+    var lesson = new URLSearchParams(location.search).get('lesson') || '';
+    if (lesson.indexOf('studio:') !== 0) { statusEl.textContent = 'Open this page from a published Studio lesson.'; return; }
+    var auth = await window.CosyAuth.requireRole(['teacher', 'founder']);
+    if (!auth) return;
+    document.getElementById('lesson-name').textContent = 'Lesson: ' + lesson;
+    var res = await window.CosyAuth.client.rpc('get_studio_lesson_results', { p_lesson_id: lesson });
+    if (res.error) { statusEl.textContent = res.error.message; statusEl.className = 'note err'; return; }
+    var d = res.data || {}, qs = d.questions || [], ss = d.students || [];
+    if (!qs.length && !ss.length) { statusEl.textContent = 'No student results yet.'; return; }
+    statusEl.textContent = '';
+    var qb = document.getElementById('questions');
+    qs.forEach(function (q) {
+      var tr = document.createElement('tr'), pct = q.students ? Math.round(100 * q.correct / q.students) : 0;
+      td(tr, q.fieldKey); td(tr, String(q.students));
+      var c = td(tr, ''); var bar = document.createElement('span'); bar.className = 'bar';
+      var fill = document.createElement('span'); fill.style.width = pct + '%'; bar.appendChild(fill);
+      c.appendChild(bar); c.appendChild(document.createTextNode(' ' + pct + '% (' + q.correct + '/' + q.students + ')'));
+      td(tr, String(q.attempts)); qb.appendChild(tr);
+    });
+    var sb = document.getElementById('students');
+    ss.forEach(function (s) {
+      var tr = document.createElement('tr');
+      td(tr, s.name || s.studentId.slice(0, 8)); td(tr, String(s.answered)); td(tr, String(s.correct)); td(tr, String(s.attempts));
+      td(tr, (s.games || []).map(gameLabel).join('; ') || '—');
+      td(tr, s.lastActive ? new Date(s.lastActive).toLocaleString() : '—'); sb.appendChild(tr);
+    });
+    document.getElementById('questions-section').hidden = !qs.length;
+    document.getElementById('students-section').hidden = false;
+  }
+  main().catch(function (e) { statusEl.textContent = 'Could not load results.'; statusEl.className = 'note err'; });
+})();
+</script>
+</body>
+</html>
