@@ -602,6 +602,8 @@
   <script src="shared/js/cms-editor.js"></script>
   <script src="shared/js/lazy-script.js"></script>
   <script src="shared/js/lesson-resolver.js"></script>
+  <script src="shared/js/studio-media.js"></script>
+  <script src="shared/js/studio-games.js"></script>
   <script src="shared/js/ui-toast.js"></script>
   <script src="shared/js/i18n.js"></script>
   <script src="shared/js/lang-switcher.js"></script>
@@ -1806,6 +1808,8 @@
       `;
 
       appRoot.innerHTML = html;
+      if (window.CosyStudioMedia) window.CosyStudioMedia.hydrate(appRoot, window.CosyAuth && window.CosyAuth.client);
+      if (window.CosyStudioGames) window.CosyStudioGames.init(appRoot);
       applyTeacherFilters();
       if (window.activeDrawer === 'verbs') searchIrregularVerbs('');
     }
@@ -2316,7 +2320,7 @@
             if (el.question) output += `<div style="font-weight: 700; margin-bottom: 8px;">${escapeHtml(el.question)}</div>`;
             if (el.options) {
               el.options.forEach(opt => {
-                const isCorrect = (el.answers && el.answers.includes(opt)) || el.answer === opt;
+                const isCorrect = (el.answers && el.answers.includes(opt)) || el.answer === opt || (Array.isArray(el.teacherKey) && el.teacherKey.includes(opt));
                 output += `<div style="padding: 4px 8px; margin: 4px 0; ${isCorrect ? 'background: #dcfce7; font-weight: 600; color: #15803d;' : ''}">${escapeHtml(opt)} ${isCorrect ? '✔️ (Correct Answer)' : ''}</div>`;
               });
             }
@@ -2328,6 +2332,23 @@
             } else {
               output += `<div class="cosy-input-box" style="margin: 12px 0;"><input type="text" placeholder="${escapeHtml(el.placeholder || 'Student input...')}" readonly style="width: 100%; max-width: 480px; padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 6px;" /></div>`;
             }
+          } else if (el.type === "studio-heading") {
+            flushVocabBatch();
+            output += `<h3 style="font-size:1.25rem; font-weight:800; color:#0f172a; margin:12px 0 4px;">${escapeHtml(el.content || '')}</h3>${el.subtitle ? `<p style="color:#475569; margin:0 0 8px;">${escapeHtml(el.subtitle)}</p>` : ''}`;
+          } else if (el.type === "studio-text" || el.type === "studio-prompt") {
+            flushVocabBatch();
+            output += `<p style="white-space:pre-wrap; line-height:1.6; margin:10px 0; ${el.type === 'studio-prompt' ? 'font-weight:700;' : ''}">${escapeHtml(el.content || '')}</p>`;
+          } else if (el.type === "studio-input") {
+            flushVocabBatch();
+            const key = Array.isArray(el.teacherKey) && el.teacherKey.length
+              ? `<div class="answer-key-box"><div class="answer-key-title">🔑 Answer Key:</div><div>${el.teacherKey.map(escapeHtml).join(" / ")}</div></div>` : '';
+            output += `<div style="margin:12px 0;"><input type="text" readonly placeholder="${escapeHtml(el.placeholder || el.label || 'Student input...')}" style="width:100%; max-width:480px; padding:8px 12px; border:1px solid #cbd5e1; border-radius:6px;" />${key}</div>`;
+          } else if ((el.type === "media" || el.type === "video-embed") && window.CosyStudioMedia) {
+            flushVocabBatch();
+            output += window.CosyStudioMedia.renderElement(el);
+          } else if (["flashcards", "memory-match", "hangman", "anagram", "word-search", "crossword"].includes(el.type) && window.CosyStudioGames) {
+            flushVocabBatch();
+            output += window.CosyStudioGames.renderElement(el);
           } else if (el.type === "image") {
             flushVocabBatch();
             const src = el.src || el.resourceId || "";
