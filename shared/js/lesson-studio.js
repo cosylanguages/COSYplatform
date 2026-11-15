@@ -1413,6 +1413,7 @@ function normalizeLanguage(value) {
       if (!publishedId) throw new Error('The server did not return a published lesson identifier.');
       state.publishedLessonId = publishedId;
       $('published-link').href = 'student.html?lesson=' + encodeURIComponent(publishedId);
+      var rl = $('results-link'); if (rl) rl.href = 'studio-results.html?lesson=' + encodeURIComponent(publishedId);
       $('published-link-row').hidden = false;
       $('publish-status').textContent = 'Published successfully. The student player will load the published content.';
       $('save-status').textContent = 'Draft saved · Published';

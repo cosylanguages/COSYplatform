@@ -318,6 +318,7 @@
               ? 'All ' + pairs.length + ' pairs matched in ' + moves + ' moves.'
               : 'Matched! Moves: ' + moves;
             if (matched === pairs.length) {
+              report(section, 'memory', pairs.length, pairs.length);
               var again = el(doc, 'button', 'sg-btn', 'Play again');
               again.type = 'button';
               again.addEventListener('click', start);
@@ -342,6 +343,18 @@
   }
 
 
+  /**
+   * Tell the page a game was finished: a 'cosy-game-result' event that bubbles from the game.
+   * detail: { game, score, total } with 0 <= score <= total. The student page saves it for the
+   * teacher. The Studio preview ignores it, so trying a game while authoring records nothing.
+   */
+  function report(section, game, score, total) {
+    try {
+      var Ev = (section.ownerDocument.defaultView || {}).CustomEvent;
+      if (Ev && total >= 1) section.dispatchEvent(new Ev('cosy-game-result', { bubbles: true, detail: { game: game, score: Math.max(0, Math.min(score, total)), total: total } }));
+    } catch (e) { /* reporting must never break a game */ }
+  }
+
   function btn(doc, text, fn) {
     var b = el(doc, 'button', 'sg-btn', text);
     b.type = 'button';
@@ -360,6 +373,7 @@
     function round() {
       mount.textContent = '';
       if (pos >= order.length) {
+        report(section, 'hangman', won, order.length);
         var done = el(doc, 'p', 'sg-status', 'Finished: ' + won + ' of ' + order.length + ' words solved.');
         done.setAttribute('role', 'status');
         mount.append(done, btn(doc, 'Play again', function () { order = shuffle(words.slice()); pos = 0; won = 0; round(); }));
@@ -443,6 +457,7 @@
     function round() {
       mount.textContent = '';
       if (pos >= order.length) {
+        report(section, 'anagram', solved, order.length);
         var done = el(doc, 'p', 'sg-status', 'Finished: ' + solved + ' of ' + order.length + ' solved.');
         done.setAttribute('role', 'status');
         mount.append(done, btn(doc, 'Play again', function () { order = shuffle(words.slice()); pos = 0; solved = 0; round(); }));
@@ -603,6 +618,7 @@
         live.textContent = 'Found ' + words[hit] + '. ' + foundCount + ' of ' + words.length + '.';
         if (foundCount === words.length) {
           live.textContent = 'You found all ' + words.length + ' words!';
+          report(section, 'wordsearch', words.length, words.length);
           var again = btn(doc, 'Play again', start);
           mount.appendChild(again);
           again.focus();
@@ -828,7 +844,7 @@
         if (v.toUpperCase() === letterAt[k]) i.classList.add('sg-right');
         else { wrong++; i.classList.add('sg-wrong'); i.setAttribute('aria-invalid', 'true'); }
       });
-      if (!wrong && !empty) live.textContent = 'Perfect! The crossword is complete.';
+      if (!wrong && !empty) { live.textContent = 'Perfect! The crossword is complete.'; report(section, 'crossword', lay.placed.length, lay.placed.length); }
       else live.textContent = wrong + ' wrong' + (wrong === 1 ? ' letter' : ' letters') + ' (dashed red), ' + empty + ' still empty.';
     }
     var controls = el(doc, 'div', 'sg-row');

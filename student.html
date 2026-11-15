@@ -1665,7 +1665,29 @@
       // Studio pictures/audio/video/PDFs load through short-lived signed links.
       if (window.CosyStudioMedia) window.CosyStudioMedia.hydrate(appRoot, window.CosyAuth && window.CosyAuth.client);
       if (window.CosyStudioGames) window.CosyStudioGames.init(appRoot);
+      attachGameResultSaving(appRoot);
       if (window.activeDrawer === 'verbs') searchIrregularVerbs('');
+    }
+
+    // Save finished games for the teacher. Self-reported: the game runs on this device.
+    // Only Studio lessons keep results, and a failed save never interrupts the lesson.
+    function attachGameResultSaving(root) {
+      if (root.dataset.gameResultsAttached) return;
+      root.dataset.gameResultsAttached = '1';
+      root.addEventListener('cosy-game-result', async (e) => {
+        try {
+          const lessonId = window.currentStudentLessonPath || '';
+          const client = window.CosyAuth && window.CosyAuth.client;
+          const card = e.target.closest && e.target.closest('.slide-card');
+          const d = e.detail || {};
+          if (!client || lessonId.indexOf('studio:') !== 0 || !card || !card.dataset.slideIdx) return;
+          await client.rpc('record_game_result', {
+            p_lesson_id: lessonId,
+            p_slide_id: 'slide-' + (Number(card.dataset.slideIdx) + 1),
+            p_game: d.game, p_score: d.score, p_total: d.total
+          });
+        } catch (err) { /* results are optional */ }
+      });
     }
 
     function renderStudentSlideCard(slide, idx) {
