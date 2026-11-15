@@ -984,6 +984,29 @@
     });
   }
 
+  // 'student' shows exactly what students get. 'teacher' adds the teacher's notes and answer keys.
+  let previewMode = 'student';
+
+  function setPreviewMode(mode) {
+    previewMode = mode === 'teacher' ? 'teacher' : 'student';
+    [['student', 'preview-mode-student'], ['teacher', 'preview-mode-teacher']].forEach(([m, id]) => {
+      const b = $(id);
+      if (b) b.setAttribute('aria-pressed', String(previewMode === m));
+    });
+    const title = $('preview-title');
+    if (title) title.textContent = previewMode === 'teacher' ? 'Teacher preview' : 'Student preview';
+    const sub = $('preview-subtitle');
+    if (sub) sub.textContent = previewMode === 'teacher' ? 'Adds teacher notes and answer keys. Students never see these.' : 'Exactly what students will see';
+    renderPreview();
+  }
+
+  function teacherKeyBox(text) {
+    const box = document.createElement('p');
+    box.className = 'preview-teacher-only';
+    box.textContent = text;
+    return box;
+  }
+
   function renderPreview() {
     const host = $('lesson-preview');
     host.replaceChildren();
@@ -995,12 +1018,16 @@
     meta.textContent = [state.doc.language, state.doc.level].filter(Boolean).join(' · ');
     host.appendChild(meta);
 
+    let shown = 0;
     state.doc.blocks.forEach((block, index) => {
+      // A teacher note is not a slide: students never get it, so it is skipped in the student view.
+      if (block.type === 'teacher_note' && previewMode !== 'teacher') return;
       const item = document.createElement('section');
       item.className = 'preview-block';
       const number = document.createElement('span');
       number.className = 'preview-block-number';
-      number.textContent = String(index + 1).padStart(2, '0');
+      if (block.type === 'teacher_note') number.textContent = '🔒';
+      else number.textContent = String(++shown).padStart(2, '0');
       item.appendChild(number);
 
       if (block.type === 'text') {
@@ -1022,6 +1049,9 @@
         input.placeholder = 'Type your answer…';
         input.setAttribute('aria-label', 'Preview answer for activity ' + (index + 1));
         item.appendChild(input);
+        if (previewMode === 'teacher' && Array.isArray(block.answers) && block.answers.length) {
+          item.appendChild(teacherKeyBox('🔑 Key: ' + block.answers.join(' / ')));
+        }
       } else if (block.type === 'vocab_list') {
         const grid = document.createElement('div');
         grid.className = 'vocab-grid';
@@ -1051,7 +1081,7 @@
           label.style.alignItems = 'center';
           label.style.gap = '8px';
           label.style.fontSize = '0.95rem';
-          label.innerHTML = `<input type="radio" name="preview_quiz_${index}" /> ${escapeHtml(opt)}`;
+          label.innerHTML = `<input type="radio" name="preview_quiz_${index}" /> ${escapeHtml(opt)}${previewMode === 'teacher' && opt === block.answer ? ' <strong>✔ correct</strong>' : ''}`;
           optList.appendChild(label);
         });
         item.appendChild(optList);
@@ -1123,6 +1153,7 @@
           ['True', 'False'].forEach((v) => {
             const b = document.createElement('button');
             b.type = 'button'; b.textContent = v;
+            if (previewMode === 'teacher' && (v === 'True') === (st.answer === true)) b.textContent = v + ' ✔';
             line.appendChild(b);
           });
           item.appendChild(line);
@@ -1171,10 +1202,7 @@
         item.appendChild(holder);
         if (media) media.hydrate(holder, window.CosyAuth ? window.CosyAuth.client : null);
       } else if (block.type === 'teacher_note') {
-        const note = document.createElement('p');
-        note.className = 'studio-hint';
-        note.textContent = '🔒 Teacher only: ' + (block.text || '');
-        item.appendChild(note);
+        item.appendChild(teacherKeyBox('Teacher note: ' + (block.text || '')));
       } else if (block.type === 'heading') {
         const h = document.createElement('h3');
         h.textContent = block.text || '';
@@ -1435,6 +1463,10 @@ function normalizeLanguage(value) {
         changed();
       });
     }
+    ['student', 'teacher'].forEach((m) => {
+      const b = $('preview-mode-' + m);
+      if (b) b.addEventListener('click', () => setPreviewMode(m));
+    });
     const addQuizBtn = $('add-quiz');
     if (addQuizBtn) {
       addQuizBtn.addEventListener('click', () => {
