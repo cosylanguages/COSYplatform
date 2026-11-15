@@ -24,6 +24,9 @@ jobs:
       - name: Test live classroom answer feedback
         run: node scripts/test_live_feedback.js
 
+      - name: Test Studio teacher view
+        run: node scripts/test_studio_teacher_view.js
+
       - name: Test live whiteboard rules
         run: node scripts/test_whiteboard.js
 

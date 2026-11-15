@@ -12,6 +12,35 @@
 (function (global) {
   'use strict';
 
+  /**
+   * Turn the server's teacher view of a Studio lesson ({body, answerKey, notes}) into a lesson body
+   * the classroom can show: teacher notes become slide.teacherNotes, and each answer in the key is
+   * attached to its question as element.teacherKey. Returns the body as a JSON string.
+   */
+  function mergeStudioTeacherView(view) {
+    const body = view && view.body && typeof view.body === 'object' ? JSON.parse(JSON.stringify(view.body)) : null;
+    if (!body || !Array.isArray(body.slides)) throw new Error('Lesson content is unavailable.');
+    const keys = {};
+    (Array.isArray(view.answerKey) ? view.answerKey : []).forEach((e) => {
+      if (e && typeof e.blockId === 'string' && Array.isArray(e.acceptedAnswers)) {
+        keys[e.blockId] = e.acceptedAnswers.filter((a) => typeof a === 'string');
+      }
+    });
+    body.slides.forEach((slide) => {
+      (Array.isArray(slide && slide.elements) ? slide.elements : []).forEach((el) => {
+        if (el && typeof el.fieldKey === 'string' && keys[el.fieldKey]) el.teacherKey = keys[el.fieldKey];
+      });
+    });
+    (Array.isArray(view.notes) ? view.notes : []).forEach((n) => {
+      const slide = n && Number.isInteger(n.slide) ? body.slides[n.slide] : null;
+      if (!slide || !Array.isArray(n.texts)) return;
+      slide.teacherNotes = (slide.teacherNotes || []).concat(
+        n.texts.filter((t) => typeof t === 'string' && t).map((t) => ({ type: 'instruction', title: 'Teacher note', content: t }))
+      );
+    });
+    return JSON.stringify(body);
+  }
+
   async function loadLessonContent(client, lessonPath, role) {
     const pathParts = typeof lessonPath === 'string' ? lessonPath.split('/') : [];
     if (
@@ -24,6 +53,14 @@
     const studentView = role === 'student';
     if (!studentView && role !== 'teacher' && role !== 'founder') {
       throw new Error('Lesson content is unavailable.');
+    }
+
+    // Studio lessons have no teacher body in `lessons`. Teachers get the student body plus the
+    // answer key and notes from one server function that checks they may read the lesson.
+    if (client && !studentView && lessonPath.startsWith('studio:')) {
+      const { data, error } = await client.rpc('get_studio_lesson_teacher_view', { p_lesson_id: lessonPath });
+      if (error || !data) throw new Error('Lesson content is unavailable.');
+      return mergeStudioTeacherView(data);
     }
 
     if (client) {
@@ -152,8 +189,9 @@
     }
   };
 
+  CosyLessons.mergeStudioTeacherView = mergeStudioTeacherView;
   global.CosyLessons = CosyLessons;
   if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { loadLessonContent };
+    module.exports = { loadLessonContent, mergeStudioTeacherView };
   }
 })(typeof window !== 'undefined' ? window : global);
