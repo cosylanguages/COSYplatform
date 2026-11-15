@@ -27,6 +27,8 @@
   <script src="shared/js/cms-editor.js"></script>
   <script src="shared/js/ui-toast.js"></script>
   <script src="shared/js/lesson-resolver.js"></script>
+  <script src="shared/js/studio-media.js"></script>
+  <script src="shared/js/studio-games.js"></script>
   <script src="shared/js/whiteboard-core.js"></script>
   <script src="shared/js/whiteboard-view.js"></script>
   <!-- Design Tokens -->
@@ -1766,6 +1768,10 @@
         container.appendChild(slideDiv);
       });
 
+      // Studio lessons: sign media links and start the games that were drawn above.
+      if (window.CosyStudioMedia) window.CosyStudioMedia.hydrate(container, window.CosyAuth && window.CosyAuth.client);
+      if (window.CosyStudioGames) window.CosyStudioGames.init(container);
+
       // Restore this authenticated student's saved work after every lesson render.
       // This also covers reconnects and teacher/student view re-renders without
       // broadcasting another student's answers or overwriting the offline queue.
@@ -1977,6 +1983,31 @@
               });
             }
             output += `</div><div id="feedback-${fKey}" class="text-xs font-medium mt-2"></div></div>`;
+          } else if (el.type === "studio-heading") {
+            output += `<h3 class="text-xl font-black text-gray-900 mt-2">${escapeHtml(el.content || '')}</h3>${el.subtitle ? `<p class="text-sm text-gray-600 mb-2">${escapeHtml(el.subtitle)}</p>` : ''}`;
+          } else if (el.type === "studio-text") {
+            output += `<p class="text-sm leading-relaxed whitespace-pre-wrap my-2">${escapeHtml(el.content || '')}</p>`;
+          } else if (el.type === "studio-prompt") {
+            output += `<p class="text-sm leading-relaxed whitespace-pre-wrap font-semibold my-2">${escapeHtml(el.content || '')}</p>`;
+          } else if (el.type === "studio-input") {
+            const keyHtml = currentRole === 'teacher' && Array.isArray(el.teacherKey) && el.teacherKey.length
+              ? `<div class="answer-key-box">🔑 Key: ${el.teacherKey.map(escapeHtml).join(' / ')}</div>` : '';
+            output += `
+              <div class="my-3 space-y-1">
+                <input type="text" id="${fKey}" aria-label="${escapeHtml(el.label || 'Your answer')}" oninput="handleBlankInput('${fKey}', this.value)" placeholder="${escapeHtml(el.placeholder || 'Type response...')}" class="px-3 py-1.5 border border-gray-300 rounded-lg text-sm w-full max-w-sm focus:ring-2 focus:ring-cosy-500 font-medium">
+                ${keyHtml}
+              </div>`;
+          } else if (el.type === "quiz") {
+            const correct = currentRole === 'teacher' && Array.isArray(el.teacherKey) ? el.teacherKey : [];
+            output += `<div class="bg-gray-50 border border-gray-200 rounded-xl p-4 my-3"><strong class="text-sm text-gray-800">${escapeHtml(el.question || '')}</strong><div class="space-y-1.5 mt-2" role="radiogroup">`;
+            (Array.isArray(el.options) ? el.options : []).forEach(opt => {
+              output += `<label class="flex items-center space-x-2 text-xs p-2 rounded-lg border border-gray-200 bg-white hover:bg-cosy-50 cursor-pointer"><input type="radio" name="${fKey}" value="${escapeHtml(opt)}" onchange="handleChoiceInput('${fKey}', this.value)"><span>${escapeHtml(opt)}</span> ${correct.includes(opt) ? '<span class="text-green-600 font-bold ml-auto">✔️ Correct</span>' : ''}</label>`;
+            });
+            output += `</div></div>`;
+          } else if ((el.type === "media" || el.type === "video-embed") && window.CosyStudioMedia) {
+            output += window.CosyStudioMedia.renderElement(el);
+          } else if (["flashcards", "memory-match", "hangman", "anagram", "word-search", "crossword"].includes(el.type) && window.CosyStudioGames) {
+            output += window.CosyStudioGames.renderElement(el);
           } else if (el.type === "essay") {
             output += `
               <div class="bg-gray-50 border border-dashed border-gray-300 rounded-xl p-4 my-3 text-xs">

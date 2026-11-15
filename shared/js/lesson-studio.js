@@ -120,6 +120,8 @@
         if (!Array.isArray(block.words)) return 'Word game block ' + (i + 1) + ' needs words.';
       } else if (block.type === 'heading') {
         if (typeof block.text !== 'string') return 'Heading block ' + (i + 1) + ' needs text.';
+      } else if (block.type === 'teacher_note') {
+        if (typeof block.text !== 'string') return 'Teacher note block ' + (i + 1) + ' needs text.';
       } else if (block.type === 'crossword') {
         if (!Array.isArray(block.entries)) return 'Crossword block ' + (i + 1) + ' needs entries.';
       } else if (MEDIA_KINDS.indexOf(block.type) !== -1) {
@@ -140,6 +142,7 @@
     const base = validateDocument(doc);
     if (base) return base;
     if (!doc.blocks.length) return 'Add at least one block before publishing.';
+    if (doc.blocks.every((b) => b && b.type === 'teacher_note')) return 'Add at least one block students can see. Teacher notes are not shown to students.';
     for (let i = 0; i < doc.blocks.length; i++) {
       const block = doc.blocks[i];
       const n = i + 1;
@@ -183,6 +186,10 @@
           seen.add(text.toLowerCase());
         }
         if (games && !games.validWordList(block.words, block.type)) return name + ' block ' + n + ' has an invalid word.';
+      } else if (block.type === 'teacher_note') {
+        const t = block.text.trim();
+        if (!t) return 'Teacher note block ' + n + ' needs text.';
+        if (t.length > 2000) return 'Teacher note block ' + n + ' can be up to 2000 characters.';
       } else if (block.type === 'heading') {
         const t = block.text.trim();
         if (!t) return 'Heading block ' + n + ' needs text.';
@@ -327,7 +334,8 @@
       anagram: 'Anagram',
       word_search: 'Word Search',
       crossword: 'Crossword',
-      heading: 'Section Heading'
+      heading: 'Section Heading',
+      teacher_note: 'Teacher Note (not shown to students)'
     };
 
     state.doc.blocks.forEach((block, index) => {
@@ -829,6 +837,16 @@
         capInput.addEventListener('input', () => { if (capInput.value) block.caption = capInput.value; else delete block.caption; changed(false); });
         capField.append(capLabel, capInput);
         card.appendChild(capField);
+      } else if (block.type === 'teacher_note') {
+        const field = document.createElement('label');
+        field.className = 'studio-field';
+        const span = document.createElement('span');
+        span.textContent = 'Note for the teacher (up to 2000 characters). Students never see it. The teacher sees it on the next block\'s slide in the live classroom.';
+        const area = document.createElement('textarea');
+        area.rows = 4; area.maxLength = 2000; area.value = block.text || '';
+        area.addEventListener('input', () => { block.text = area.value; changed(false); });
+        field.append(span, area);
+        card.appendChild(field);
       } else if (block.type === 'heading') {
         [['text', 'Heading (up to 120 characters)', 120], ['subtitle', 'Subtitle (optional, up to 200 characters)', 200]].forEach(([key, text, max]) => {
           const field = document.createElement('label');
@@ -1152,6 +1170,11 @@
         if (!holder.innerHTML) holder.textContent = 'Add a file or link to see a preview.';
         item.appendChild(holder);
         if (media) media.hydrate(holder, window.CosyAuth ? window.CosyAuth.client : null);
+      } else if (block.type === 'teacher_note') {
+        const note = document.createElement('p');
+        note.className = 'studio-hint';
+        note.textContent = '🔒 Teacher only: ' + (block.text || '');
+        item.appendChild(note);
       } else if (block.type === 'heading') {
         const h = document.createElement('h3');
         h.textContent = block.text || '';
@@ -1475,6 +1498,7 @@ function normalizeLanguage(value) {
     addBlockButton('add-hangman', () => ({ type: 'hangman', words: [{ word: 'house', hint: 'where you live' }, { word: 'garden' }] }));
     addBlockButton('add-anagram', () => ({ type: 'anagram', words: [{ word: 'teacher', hint: 'works at a school' }, { word: 'window' }] }));
     addBlockButton('add-wordsearch', () => ({ type: 'word_search', directions: 'basic', words: ['apple', 'bread', 'cheese', 'water'] }));
+    addBlockButton('add-teachernote', () => ({ type: 'teacher_note', text: 'Warm-up: ask students what they did last weekend. Aim: 5 minutes.' }));
     addBlockButton('add-heading', () => ({ type: 'heading', text: 'New section', subtitle: '' }));
     addBlockButton('add-crossword', () => ({ type: 'crossword', entries: [{ word: 'teacher', clue: 'works at a school' }, { word: 'student', clue: 'learns at a school' }, { word: 'lesson', clue: 'a class' }, { word: 'homework', clue: 'work to do at home' }] }));
     addBlockButton('add-memory', () => ({ type: 'memory_match', pairs: [{ a: 'cat', b: 'gato' }, { a: 'dog', b: 'perro' }, { a: 'house', b: 'casa' }] }));
