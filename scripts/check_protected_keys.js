@@ -8,6 +8,11 @@
  * - <cosy-teacher-notes>
  * - <teacher-notes>
  *
+ * It also lists, WITHOUT failing, other spellings that usually hold answers or teacher notes
+ * (see ADVISORY_KEYS). Those exist today in public lessons that are not yet served through
+ * Supabase; the list shows how much remains to be moved. Move a key into PROHIBITED_KEYS once
+ * its files are clean so it can never come back.
+ *
  * Exit code 0 on success, exit code 1 if protected keys are found.
  */
 
@@ -26,6 +31,8 @@ const IGNORED_PATHS = [
 
 const PROHIBITED_KEYS = ['answers', 'teacherNotes', 'answer-key'];
 const PROHIBITED_TAGS = ['<cosy-teacher-notes', '<teacher-notes'];
+// 'explanation' is deliberately not listed: it is normal public teaching text in grammar references.
+const ADVISORY_KEYS = ['answer', 'answerKey', 'answer_key', 'correct', 'isCorrect', 'correctAnswer', 'correct_answer', 'solution', 'teacher_notes', 'teacher-notes'];
 
 function isIgnored(relativeFilePath) {
   return IGNORED_PATHS.some(ignored =>
@@ -33,7 +40,7 @@ function isIgnored(relativeFilePath) {
   );
 }
 
-function scanDirectory(dir, violations) {
+function scanDirectory(dir, violations, advisories) {
   if (!fs.existsSync(dir)) return;
 
   const entries = fs.readdirSync(dir, { withFileTypes: true });
@@ -45,7 +52,7 @@ function scanDirectory(dir, violations) {
     if (isIgnored(relPath)) continue;
 
     if (entry.isDirectory()) {
-      scanDirectory(fullPath, violations);
+      scanDirectory(fullPath, violations, advisories);
     } else if (entry.isFile()) {
       const ext = path.extname(entry.name).toLowerCase();
       if (ext === '.json' || ext === '.xml') {
@@ -63,6 +70,12 @@ function scanDirectory(dir, violations) {
             });
           }
         });
+
+        if (advisories) {
+          ADVISORY_KEYS.forEach(key => {
+            if (new RegExp(`"${key}"\\s*:`, 'i').test(content)) advisories.push({ file: relPath, item: key });
+          });
+        }
 
         PROHIBITED_TAGS.forEach(tag => {
           if (content.toLowerCase().includes(tag.toLowerCase())) {
@@ -83,7 +96,8 @@ function checkProtectedKeys() {
 
   const violations = [];
 
-  scanDirectory(REPO_ROOT, violations);
+  const advisories = [];
+  scanDirectory(REPO_ROOT, violations, advisories);
 
   if (violations.length > 0) {
     console.error('\n❌ CRITICAL SECURITY FAILURE: Prohibited keys/tags found in public files!');
@@ -92,6 +106,17 @@ function checkProtectedKeys() {
     });
     console.error('\nProtected keys and teacher notes must be removed and stored in lesson_protected Supabase table.');
     process.exit(1);
+  }
+
+  if (advisories.length > 0) {
+    const byKey = {};
+    advisories.forEach(a => { (byKey[a.item] = byKey[a.item] || new Set()).add(a.file); });
+    console.log('\nℹ️  Advisory (does not fail the check): possible answer/teacher-note fields in public files:');
+    Object.keys(byKey).sort().forEach(k => {
+      const files = Array.from(byKey[k]);
+      console.log(`  "${k}": ${files.length} file(s), e.g. ${files.slice(0, 2).join(', ')}`);
+    });
+    console.log('');
   }
 
   console.log('✅ PASS: No protected keys or teacher notes found repository-wide. All public files clean.');
