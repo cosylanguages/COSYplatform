@@ -1,0 +1,98 @@
+{
+  "unitId": "EN-A1-PRESENT-SIMPLE-01",
+  "title": "Present Simple",
+  "level": "A1",
+  "language": "en",
+  "leadIn": {
+    "title": "Lead-In & Context: Present Simple",
+    "content": "Daily routines and facts: Every day, Anna drinks coffee, works at a bank, and walks her dog in the evening."
+  },
+  "instructionCheck": [
+    {
+      "question": "Do you select one correct option or write full sentences in this quiz?",
+      "expectedAnswer": "Select one correct option",
+      "attachedTo": "controlledPractice"
+    }
+  ],
+  "meaningCheck": [
+    {
+      "question": "\"She works in a bank.\" — Is she working in the bank right now at this exact second, or is it her regular job?",
+      "targetStructure": "present-simple",
+      "options": [
+        "It is her permanent regular job / habit",
+        "She is inside the bank building right now",
+        "She worked there in the past"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Correct · Present simple describes permanent states, routines, and habits."
+    },
+    {
+      "question": "\"I eat breakfast at 8 AM.\" — Does this mean I am eating breakfast right now?",
+      "targetStructure": "present-simple",
+      "options": [
+        "Yes, you have food in your mouth right now",
+        "No, it is a daily routine that happens regularly",
+        "No, it only happened once yesterday"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Correct · Present simple expresses routines, not current in-progress actions."
+    }
+  ],
+  "form": {
+    "title": "Form & Structure: Present Simple",
+    "content": "I/you/we/they + base verb. He/she/it + verb-s. Negative: don't/doesn't + base verb. Question: Do/Does + subject + base verb?"
+  },
+  "pronunciation": {
+    "title": "Pronunciation Notes: Present Simple",
+    "content": "Spoken stress, weak forms, intonation, and articulation patterns for Present Simple."
+  },
+  "controlledPractice": [
+    {
+      "question": "'She ___ in a school.'",
+      "targetStructure": "present-simple",
+      "options": [
+        "work",
+        "works",
+        "working"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "He/she/it takes the -s form in present simple: works."
+    },
+    {
+      "question": "Negative of 'He likes tea.'",
+      "targetStructure": "present-simple",
+      "options": [
+        "He don't like tea.",
+        "He doesn't like tea.",
+        "He not likes tea."
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "He/she/it uses doesn't + base verb in negatives."
+    },
+    {
+      "question": "Question form: '___ she like pizza?'",
+      "targetStructure": "present-simple",
+      "options": [
+        "Do",
+        "Does",
+        "Is"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "He/she/it questions use 'does' + base verb: Does she like pizza?"
+    }
+  ],
+  "freerPractice": {
+    "title": "Freer Practice: Present Simple",
+    "content": "Guided communicative exchanges applying Present Simple in everyday conversation.",
+    "links": [
+      "COSYgames/scene_match"
+    ]
+  },
+  "production": {
+    "title": "Communicative Production: Present Simple",
+    "content": "Independent oral production and real-world task execution using Present Simple.",
+    "links": [
+      "COSYevents/speaking-club"
+    ]
+  }
+}
