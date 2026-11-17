@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cosylanguages.com/cefr/schemas/functions.schema.json",
+  "title": "CEFR Functions Schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "level_code",
+      "level",
+      "sublevel",
+      "functions"
+    ],
+    "properties": {
+      "level_code": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+$"
+      },
+      "level": {
+        "type": "string",
+        "enum": ["A1", "A2", "B1", "B2", "C1", "C2"]
+      },
+      "sublevel": {
+        "type": ["string", "null"],
+        "enum": [null, "start", "p"]
+      },
+      "functions": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["id", "text"],
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+            },
+            "text": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      }
+    },
+    "additionalProperties": false
+  }
+}
