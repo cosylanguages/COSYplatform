@@ -1,0 +1,22 @@
+name: Supabase Database Keepalive
+
+on:
+  schedule:
+    # Runs at 00:00 UTC every 3 days to prevent Supabase free-tier database auto-pausing (7-day rule)
+    - cron: '0 0 */3 * *'
+  workflow_dispatch:
+
+jobs:
+  ping-supabase:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase REST API
+        run: |
+          echo "Pinging Supabase REST API to maintain database activity..."
+          HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://iajkejcmoykubthlwfra.supabase.co/rest/v1/)
+          echo "Supabase REST API HTTP Status Code: $HTTP_STATUS"
+          if [ "$HTTP_STATUS" -ge 200 ] && [ "$HTTP_STATUS" -lt 500 ]; then
+            echo "✅ Supabase ping successful."
+          else
+            echo "⚠️ Warning: Received HTTP Status $HTTP_STATUS from Supabase."
+          fi
