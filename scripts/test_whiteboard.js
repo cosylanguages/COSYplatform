@@ -208,4 +208,58 @@ t('students apply accepted ops, keeping the host-stamped owner and ignoring junk
   assert.ok(WB.applyAccepted(b, { op: 'clear' })); assert.strictEqual(b.objects.length, 0);
 });
 
+const PNG = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==';
+const pic = (id, extra) => ({ id, type: 'image', x: 100, y: 100, bw: 300, bh: 200, src: PNG, ...extra });
+
+t('only the teacher can add a picture; a student is refused', () => {
+  const b = WB.createBoard();
+  assert.strictEqual(WB.applyOp(b, { op: 'add', obj: pic('i1') }, stu).reason, 'host-only');
+  const r = WB.applyOp(b, { op: 'add', obj: pic('i1') }, host);
+  assert.ok(r.ok); assert.strictEqual(b.objects[0].src, PNG);
+});
+
+t('picture data is checked: only jpeg/png/webp data URLs of limited size', () => {
+  const b = WB.createBoard();
+  const bad = [
+    'data:image/svg+xml;base64,PHN2Zz48L3N2Zz4=', 'data:text/html;base64,PGI+', 'https://example.com/a.png',
+    'javascript:alert(1)', 'data:image/png;base64,AAAA" onerror="x', 'data:image/png;base64,', '',
+    'data:image/png;base64,' + 'A'.repeat(WB.LIMITS.imageChars)
+  ];
+  bad.forEach((src) => assert.strictEqual(WB.applyOp(b, { op: 'add', obj: pic('i' + Math.random().toString(36).slice(2, 8), { src }) }, host).reason, 'bad-object', src.slice(0, 30)));
+  assert.strictEqual(WB.applyOp(b, { op: 'add', obj: pic('z1', { src: 123 }) }, host).reason, 'bad-object');
+  assert.strictEqual(b.objects.length, 0);
+});
+
+t('picture size is clamped to the board; a sliver at the edge is refused', () => {
+  const b = WB.createBoard();
+  assert.ok(WB.applyOp(b, { op: 'add', obj: pic('big', { x: 1500, y: 800, bw: 1600, bh: 900 }) }, host).ok);
+  assert.strictEqual(b.objects[0].bw, 100); assert.strictEqual(b.objects[0].bh, 100);
+  assert.ok(WB.applyOp(b, { op: 'add', obj: pic('tiny', { bw: 5 }) }, host).ok);
+  assert.strictEqual(b.objects[1].bw, 20);
+  assert.strictEqual(WB.applyOp(b, { op: 'add', obj: pic('edge', { x: 1595, bw: 400 }) }, host).reason, 'bad-object');
+});
+
+t('a board holds at most six pictures, in live ops and in a sync', () => {
+  const b = WB.createBoard();
+  for (let i = 0; i < WB.LIMITS.images; i++) assert.ok(WB.applyOp(b, { op: 'add', obj: pic('p' + i) }, host).ok);
+  assert.strictEqual(WB.applyOp(b, { op: 'add', obj: pic('p-extra') }, host).reason, 'too-many-images');
+  const mirror = WB.createBoard();
+  assert.strictEqual(WB.applyAccepted(mirror, { op: 'add', obj: { ...pic('q0'), owner: 'host' } }), true);
+  for (let i = 1; i < WB.LIMITS.images; i++) WB.applyAccepted(mirror, { op: 'add', obj: { ...pic('q' + i), owner: 'host' } });
+  assert.strictEqual(WB.applyAccepted(mirror, { op: 'add', obj: { ...pic('q-extra'), owner: 'host' } }), false);
+  const synced = WB.loadSync({ locked: false, objects: Array.from({ length: 9 }, (_, i) => ({ ...pic('s' + i), owner: 'host' })) });
+  assert.strictEqual(synced.objects.length, WB.LIMITS.images);
+});
+
+t('pictures can be hit, moved and erased like other objects', () => {
+  const b = WB.createBoard();
+  WB.applyOp(b, { op: 'add', obj: pic('i1') }, host);
+  assert.strictEqual(WB.objectAt(b, 200, 150).id, 'i1');
+  assert.strictEqual(WB.objectAt(b, 900, 700), null);
+  assert.ok(WB.applyOp(b, { op: 'move', id: 'i1', dx: 5000, dy: 0 }, host).ok);
+  assert.strictEqual(b.objects[0].x, 1300);
+  assert.strictEqual(WB.applyOp(b, { op: 'remove', id: 'i1' }, stu).reason, 'not-yours');
+  assert.ok(WB.applyOp(b, { op: 'remove', id: 'i1' }, host).ok);
+});
+
 console.log(`\n${n} whiteboard tests passed`);

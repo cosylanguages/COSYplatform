@@ -114,7 +114,15 @@
     });
     var lockBtn = el('button', 'cwb-btn', 'Lock for students'); lockBtn.type = 'button';
     lockBtn.addEventListener('click', function () { if (isHost()) submit({ op: 'lock', locked: !board.locked }); });
-    gActions.append(undoBtn, saveBtn, clearBtn, lockBtn);
+    var imageBtn = el('button', 'cwb-btn', 'Add picture'); imageBtn.type = 'button';
+    var imageInput = el('input'); imageInput.type = 'file'; imageInput.accept = 'image/jpeg,image/png,image/webp'; imageInput.hidden = true;
+    imageInput.setAttribute('aria-label', 'Choose a picture for the board');
+    imageBtn.addEventListener('click', function () { if (isHost()) imageInput.click(); });
+    imageInput.addEventListener('change', function () {
+      var f = imageInput.files && imageInput.files[0]; imageInput.value = '';
+      if (f && isHost()) addPicture(f);
+    });
+    gActions.append(undoBtn, saveBtn, imageBtn, imageInput, clearBtn, lockBtn);
     bar.append(gTools, gColor, gWidth, gActions);
 
     var stage = el('div', 'cwb-stage');
@@ -146,7 +154,7 @@
       WB.COLORS.forEach(function (c) { colorBtns[c].setAttribute('aria-pressed', String(color === c)); colorBtns[c].disabled = ro; });
       WB.LIMITS.widths.forEach(function (w) { widthBtns[w].setAttribute('aria-pressed', String(width === w)); widthBtns[w].disabled = ro; });
       undoBtn.disabled = ro || !WB.lastOwnedBy(board, me().id);
-      clearBtn.hidden = !isHost(); lockBtn.hidden = !isHost();
+      clearBtn.hidden = !isHost(); lockBtn.hidden = !isHost(); imageBtn.hidden = !isHost();
       lockBtn.setAttribute('aria-pressed', String(board.locked));
       lockBtn.textContent = board.locked ? 'Unlock for students' : 'Lock for students';
       addText.disabled = ro; addSticky.disabled = ro; noteInput.disabled = ro;
@@ -172,7 +180,44 @@
     }
 
     function reasonText(r) {
-      return { locked: 'The board is locked.', 'board-full': 'The board is full. Ask your teacher to clear it.', 'too-many': 'You have added the maximum number of items.', 'not-yours': 'You can only erase your own drawings.', 'bad-object': 'That item could not be added.' }[r] || 'That change was not allowed.';
+      return { locked: 'The board is locked.', 'board-full': 'The board is full. Ask your teacher to clear it.', 'too-many': 'You have added the maximum number of items.', 'not-yours': 'You can only erase your own drawings.', 'bad-object': 'That item could not be added.', 'host-only': 'Only the teacher can add pictures.', 'too-many-images': 'The board already has the maximum of ' + WB.LIMITS.images + ' pictures. Erase one first.' }[r] || 'That change was not allowed.';
+    }
+
+    // Pictures: shrunk in this browser to a small JPEG and sent to everyone over the live
+    // connection. Nothing is uploaded or stored; they disappear when the board is cleared.
+    function shrinkPicture(img) {
+      var w = img.naturalWidth || img.width, h = img.naturalHeight || img.height;
+      var longest = Math.max(w, h), k = Math.min(1, 1000 / longest);
+      for (var tries = 0; tries < 8; tries++) {
+        var cw = Math.max(20, Math.round(w * k)), ch = Math.max(20, Math.round(h * k));
+        var cv = doc.createElement('canvas'); cv.width = cw; cv.height = ch;
+        var c2 = cv.getContext('2d'); c2.fillStyle = '#ffffff'; c2.fillRect(0, 0, cw, ch); c2.drawImage(img, 0, 0, cw, ch);
+        var url = cv.toDataURL('image/jpeg', tries < 3 ? 0.8 : 0.6);
+        if (url.length <= WB.LIMITS.imageChars) return { src: url, w: cw, h: ch };
+        k *= 0.75;
+      }
+      return null;
+    }
+    function addPicture(file) {
+      if (!/^image\/(jpeg|png|webp)$/.test(file.type) || file.size > 15 * 1024 * 1024) { say('Choose a JPEG, PNG or WebP picture under 15 MB.'); return; }
+      var win = doc.defaultView, url = win.URL.createObjectURL(file), img = new win.Image();
+      img.onload = function () {
+        win.URL.revokeObjectURL(url);
+        var small = shrinkPicture(img);
+        if (!small) { say('That picture is too detailed to send. Try a smaller one.'); return; }
+        var fitK = Math.min(900 / small.w, 600 / small.h, 1.5), bw = Math.round(small.w * fitK), bh = Math.round(small.h * fitK);
+        addObject({ type: 'image', src: small.src, x: Math.round((WB.W - bw) / 2), y: Math.round((WB.H - bh) / 2), bw: bw, bh: bh });
+      };
+      img.onerror = function () { win.URL.revokeObjectURL(url); say('That picture could not be read.'); };
+      img.src = url;
+    }
+    var pictureCache = {};     // object id -> loaded Image
+    function pictureFor(o) {
+      var hit = pictureCache[o.id];
+      if (hit && hit.src === o.src) return hit;
+      var im = new (doc.defaultView.Image)(); im.src = o.src;
+      im.onload = function () { render(); };
+      pictureCache[o.id] = im; return im;
     }
 
     function addObject(o) { o.id = WB.newId(); return submit({ op: 'add', obj: o }); }
@@ -375,6 +420,10 @@
         c.strokeRect(o.x, o.y, o.bw, o.bh);
       } else if (o.type === 'ellipse') {
         c.beginPath(); c.ellipse(o.x + o.bw / 2, o.y + o.bh / 2, Math.max(0.5, o.bw / 2), Math.max(0.5, o.bh / 2), 0, 0, Math.PI * 2); c.stroke();
+      } else if (o.type === 'image') {
+        var pic = pictureFor(o);
+        if (pic.complete && pic.naturalWidth) c.drawImage(pic, o.x, o.y, o.bw, o.bh);
+        else { c.fillStyle = '#f1f5f9'; c.fillRect(o.x, o.y, o.bw, o.bh); }
       } else if (o.type === 'text') {
         var px = WB.TEXT_PX[o.s] || 44;
         c.font = '600 ' + px + 'px system-ui, sans-serif'; c.textBaseline = 'top';
