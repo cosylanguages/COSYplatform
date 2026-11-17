@@ -1,0 +1,98 @@
+{
+  "unitId": "EN-A1-GOING-TO-01",
+  "title": "Going To",
+  "level": "A1",
+  "language": "en",
+  "leadIn": {
+    "title": "Lead-In & Context: Going To",
+    "content": "Future plans: Look at the dark clouds! It is going to rain. Next weekend, Sarah is going to visit her grandmother."
+  },
+  "instructionCheck": [
+    {
+      "question": "How many minutes do you have to present your weekend plans to your group?",
+      "expectedAnswer": "2 minutes",
+      "attachedTo": "production"
+    }
+  ],
+  "meaningCheck": [
+    {
+      "question": "Function check: What is the primary purpose of using Going To?",
+      "targetStructure": "going-to",
+      "options": [
+        "To express clear, level-appropriate meaning in structured context",
+        "To translate sentences word-for-word from another language",
+        "It is an obsolete form never used by native speakers"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Correct · This structure provides explicit grammatical function and clarity."
+    },
+    {
+      "question": "Form check: Does correct usage of Going To require matching subject, verb, and modifier agreements?",
+      "targetStructure": "going-to",
+      "options": [
+        "No, agreement rules are optional in English",
+        "Yes, matching grammatical forms ensures natural, accurate communication",
+        "Agreement only matters in formal academic writing"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Correct · Accurate form and agreement choices prevent misunderstandings."
+    }
+  ],
+  "form": {
+    "title": "Form & Structure: Going To",
+    "content": "Subject + am/is/are + going to + base verb. Negative: am/is/are + not + going to + base verb."
+  },
+  "pronunciation": {
+    "title": "Pronunciation Notes: Going To",
+    "content": "Spoken stress, weak forms, intonation, and articulation patterns for Going To."
+  },
+  "controlledPractice": [
+    {
+      "question": "'Look at those clouds! It ___ rain.'",
+      "targetStructure": "going-to",
+      "options": [
+        "will",
+        "is going to",
+        "goes to"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A prediction based on present evidence uses 'going to'."
+    },
+    {
+      "question": "Fix: 'She is going travel.'",
+      "targetStructure": "going-to",
+      "options": [
+        "She is going to travel.",
+        "She going to travel.",
+        "She is go to travel."
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The structure needs 'to' before the base verb: is going to travel."
+    },
+    {
+      "question": "'Going to' mainly expresses:",
+      "targetStructure": "going-to",
+      "options": [
+        "plans/predictions based on evidence",
+        "polite requests",
+        "past habits"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Going to is used for plans, intentions and evidence-based predictions."
+    }
+  ],
+  "freerPractice": {
+    "title": "Freer Practice: Going To",
+    "content": "Guided communicative exchanges applying Going To in everyday conversation.",
+    "links": [
+      "COSYgames/scene_match"
+    ]
+  },
+  "production": {
+    "title": "Communicative Production: Going To",
+    "content": "Independent oral production and real-world task execution using Going To.",
+    "links": [
+      "COSYevents/speaking-club"
+    ]
+  }
+}
