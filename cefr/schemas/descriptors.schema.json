@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cosylanguages.com/cefr/schemas/descriptors.schema.json",
+  "title": "CEFR Descriptors Schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "id",
+      "scale",
+      "level",
+      "sublevel",
+      "text",
+      "source_tag",
+      "source_version",
+      "verified_date"
+    ],
+    "properties": {
+      "id": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+      },
+      "scale": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+      },
+      "level": {
+        "type": "string",
+        "enum": ["A1", "A2", "B1", "B2", "C1", "C2"]
+      },
+      "sublevel": {
+        "type": ["string", "null"],
+        "enum": [null, "start", "p"]
+      },
+      "text": {
+        "type": "string"
+      },
+      "source_tag": {
+        "type": "string"
+      },
+      "source_version": {
+        "type": "string"
+      },
+      "verified_date": {
+        "type": ["string", "null"],
+        "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+      }
+    },
+    "additionalProperties": false
+  }
+}
