@@ -15,10 +15,11 @@
  *   ellipse { c, w, x, y, bw, bh }
  *   text    { c, s, x, y, text }               up to 200 characters, s = 1|2|3
  *   sticky  { c, x, y, text }                  up to 200 characters, fixed size note
+ *   image   { x, y, bw, bh, src }              src is a small data: URL (jpeg, png or webp); teacher only, 6 per board
  *
  * Ops: {op:'add', obj} {op:'remove', id} {op:'move', id, dx, dy} {op:'clear'} {op:'lock', locked}
  * Rules: students can add (when the board is not locked) and remove or move only their own
- * objects; only the host can clear or lock. Limits keep a board from growing without bound.
+ * objects; only the host can clear, lock or add images. Limits keep a board from growing without bound.
  */
 (function (root, factory) {
   if (typeof module === 'object' && typeof module.exports === 'object') module.exports = factory();
@@ -27,12 +28,13 @@
   'use strict';
 
   var W = 1600, H = 900;
-  var LIMITS = { objects: 500, perOwner: 200, points: 400, text: 200, widths: [3, 6, 12], sizes: [1, 2, 3], opsPerSecond: 30 };
+  var LIMITS = { objects: 500, perOwner: 200, points: 400, text: 200, widths: [3, 6, 12], sizes: [1, 2, 3], opsPerSecond: 30, images: 6, imageChars: 140000 };
+  var IMAGE_RE = /^data:image\/(jpeg|png|webp);base64,[A-Za-z0-9+\/]+={0,2}$/;
   var COLORS = ['#111827', '#ef4444', '#3b82f6', '#10b981', '#f59e0b', '#8b5cf6'];
   var STICKY_COLORS = ['#fde68a', '#bbf7d0', '#bfdbfe', '#fbcfe8'];
   var STICKY_W = 240, STICKY_H = 160;
   var TEXT_PX = { 1: 28, 2: 44, 3: 72 };
-  var TYPES = ['stroke', 'line', 'rect', 'ellipse', 'text', 'sticky'];
+  var TYPES = ['stroke', 'line', 'rect', 'ellipse', 'text', 'sticky', 'image'];
 
   function num(v, lo, hi) {
     if (typeof v !== 'number' || !isFinite(v)) return null;
@@ -72,6 +74,13 @@
       var rx = num(raw.x, 0, W), ry = num(raw.y, 0, H), bw = num(raw.bw, 0, W), bh = num(raw.bh, 0, H);
       if (rx === null || ry === null || bw === null || bh === null) return null;
       o.x = rx; o.y = ry; o.bw = Math.min(bw, W - rx); o.bh = Math.min(bh, H - ry);
+    } else if (raw.type === 'image') {
+      if (typeof raw.src !== 'string' || raw.src.length > LIMITS.imageChars || !IMAGE_RE.test(raw.src)) return null;
+      var ix = num(raw.x, 0, W), iy = num(raw.y, 0, H), iw = num(raw.bw, 20, W), ih = num(raw.bh, 20, H);
+      if (ix === null || iy === null || iw === null || ih === null) return null;
+      o.x = ix; o.y = iy; o.bw = Math.min(iw, W - ix); o.bh = Math.min(ih, H - iy);
+      if (o.bw < 20 || o.bh < 20) return null;
+      o.src = raw.src;
     } else if (raw.type === 'text' || raw.type === 'sticky') {
       o.text = str(raw.text, LIMITS.text);
       if (!o.text) return null;
@@ -92,7 +101,7 @@
       return { x1: x1, y1: y1, x2: x2, y2: y2 };
     }
     if (o.type === 'line') return { x1: Math.min(o.x1, o.x2), y1: Math.min(o.y1, o.y2), x2: Math.max(o.x1, o.x2), y2: Math.max(o.y1, o.y2) };
-    if (o.type === 'rect' || o.type === 'ellipse') return { x1: o.x, y1: o.y, x2: o.x + o.bw, y2: o.y + o.bh };
+    if (o.type === 'rect' || o.type === 'ellipse' || o.type === 'image') return { x1: o.x, y1: o.y, x2: o.x + o.bw, y2: o.y + o.bh };
     if (o.type === 'sticky') return { x1: o.x, y1: o.y, x2: o.x + STICKY_W, y2: o.y + STICKY_H };
     var b = textBox(o);
     return { x1: b.x, y1: b.y, x2: b.x + b.w, y2: b.y + b.h };
@@ -115,6 +124,12 @@
 
   function createBoard() { return { objects: [], locked: false }; }
 
+  function countImages(board) {
+    var n = 0;
+    for (var i = 0; i < board.objects.length; i++) if (board.objects[i].type === 'image') n++;
+    return n;
+  }
+
   function countOwner(board, owner) {
     var n = 0;
     for (var i = 0; i < board.objects.length; i++) if (board.objects[i].owner === owner) n++;
@@ -133,6 +148,10 @@
       if (!isHost && board.locked) return { ok: false, reason: 'locked' };
       var obj = sanitizeObject(rawOp.obj);
       if (!obj) return { ok: false, reason: 'bad-object' };
+      if (obj.type === 'image') {
+        if (!isHost) return { ok: false, reason: 'host-only' };
+        if (countImages(board) >= LIMITS.images) return { ok: false, reason: 'too-many-images' };
+      }
       obj.owner = actor.id.slice(0, 60);
       for (var i = 0; i < board.objects.length; i++) if (board.objects[i].id === obj.id) return { ok: false, reason: 'duplicate' };
       if (board.objects.length >= LIMITS.objects) return { ok: false, reason: 'board-full' };
@@ -188,6 +207,7 @@
     if (rawOp.op === 'add') {
       var obj = sanitizeObject(rawOp.obj);
       if (!obj || board.objects.length >= LIMITS.objects) return false;
+      if (obj.type === 'image' && countImages(board) >= LIMITS.images) return false;
       obj.owner = str(rawOp.obj.owner, 60);
       for (var i = 0; i < board.objects.length; i++) if (board.objects[i].id === obj.id) return false;
       board.objects.push(obj);
@@ -223,6 +243,7 @@
     if (Array.isArray(raw.objects)) {
       for (var i = 0; i < raw.objects.length && b.objects.length < LIMITS.objects; i++) {
         var o = sanitizeObject(raw.objects[i]);
+        if (o && o.type === 'image' && countImages(b) >= LIMITS.images) continue;
         if (o) { o.owner = str(raw.objects[i].owner, 60); b.objects.push(o); }
       }
     }
@@ -285,6 +306,7 @@
       return x >= b.x - tol && x <= b.x + b.w + tol && y >= b.y - tol && y <= b.y + b.h + tol;
     }
     if (o.type === 'sticky') return x >= o.x && x <= o.x + STICKY_W && y >= o.y && y <= o.y + STICKY_H;
+    if (o.type === 'image') return x >= o.x && x <= o.x + o.bw && y >= o.y && y <= o.y + o.bh;
     return false;
   }
 
