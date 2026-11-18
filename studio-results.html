@@ -24,8 +24,10 @@
     .bar > span { display: block; height: 100%; background: #0369a1; }
     .err { color: #b91c1c; }
   </style>
+  <link rel="stylesheet" href="https://cosylanguages.github.io/COSYlanguages/css/ecosystem-strip.css">
 </head>
 <body>
+<div data-ecosystem-strip data-self="platform"></div>
 <main>
   <p><a href="lesson-studio.html">← Back to Lesson Studio</a></p>
   <h1>Student results</h1>
@@ -82,5 +84,6 @@
   main().catch(function (e) { statusEl.textContent = 'Could not load results.'; statusEl.className = 'note err'; });
 })();
 </script>
+  <script src="https://cosylanguages.github.io/COSYlanguages/js/ecosystem-strip.js" defer></script>
 </body>
 </html>
