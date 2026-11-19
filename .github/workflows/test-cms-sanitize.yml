@@ -1,0 +1,20 @@
+name: CMS sanitizer test
+on:
+  pull_request:
+    paths: ['shared/js/cms-editor.js', 'tests/cms-sanitize.test.mjs', '.github/workflows/test-cms-sanitize.yml']
+  push:
+    branches: [main]
+    paths: ['shared/js/cms-editor.js', 'tests/cms-sanitize.test.mjs', '.github/workflows/test-cms-sanitize.yml']
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-save playwright@1.64.1
+      - run: npx playwright install --with-deps chromium
+      - run: node --test tests/cms-sanitize.test.mjs
