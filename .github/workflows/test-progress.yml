@@ -32,3 +32,9 @@ jobs:
 
       - name: Test SSO token and role security
         run: node scripts/test_auth_security.js
+
+      - name: Install test dependency (jsdom)
+        run: npm install --no-save --no-audit --no-fund jsdom
+
+      - name: Test interface language resolution
+        run: node scripts/test-i18n-resolution.js
