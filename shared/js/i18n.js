@@ -55,7 +55,24 @@
   }
 
   function resolveLanguage(profile) {
-    // Step 1: Pinned choice in localStorage "cosy_ui_lang"
+    // A language-specific learning context must override a general UI preference.
+    // Otherwise a learner entering a French course could see English or Russian chrome.
+    // A concrete course ID is the most specific learning context.
+    const courseParam = getUrlParam('course');
+    if (courseParam) {
+      const courseLang = getCourseLangFromManifest(courseParam);
+      if (courseLang && SUPPORTED_LANGS.includes(courseLang)) {
+        return courseLang;
+      }
+    }
+
+    // Otherwise use an explicit language context before general UI preferences.
+    const langParam = getUrlParam('lang');
+    if (langParam && SUPPORTED_LANGS.includes(langParam.toLowerCase())) {
+      return langParam.toLowerCase();
+    }
+
+    // Step 3: Pinned choice in localStorage "cosy_ui_lang" (only outside course context)
     try {
       const pinned = localStorage.getItem(STORAGE_PIN_KEY);
       if (pinned && SUPPORTED_LANGS.includes(pinned.toLowerCase())) {
@@ -63,25 +80,12 @@
       }
     } catch (e) {}
 
-    // Step 2: URL ?ui=<code> (supported code or "pseudo")
+    // Step 4: URL ?ui=<code> (supported code or "pseudo"), only outside course context
     const uiParam = getUrlParam('ui');
     if (uiParam) {
       const uiLower = uiParam.toLowerCase();
       if (uiLower === 'pseudo' || SUPPORTED_LANGS.includes(uiLower)) {
         return uiLower;
-      }
-    }
-
-    // Step 3: Context language: ?lang=<code>, or ?course= (from manifest)
-    const langParam = getUrlParam('lang');
-    if (langParam && SUPPORTED_LANGS.includes(langParam.toLowerCase())) {
-      return langParam.toLowerCase();
-    }
-    const courseParam = getUrlParam('course');
-    if (courseParam) {
-      const courseLang = getCourseLangFromManifest(courseParam);
-      if (courseLang && SUPPORTED_LANGS.includes(courseLang)) {
-        return courseLang;
       }
     }
 
