@@ -86,14 +86,15 @@ Historically, platform code resided in a legacy repository (`COSYplatform-source
 2. **Manifest Duplication in `auth-guard.js`:**
    * `window.CosyAuth.FULL_MANIFEST` hardcodes course list metadata in JS alongside `roadmaps/*.json` files and the `courses` Supabase table.
 
-### 2.3 Legacy Repository Status (`COSYplatform-source` Migration)
+### 2.3 Content Repository Status (`COSYplatform-source` Migration)
 
-`COSYplatform-source` represents the historical repository prior to separating static host application files from backend assets and database migrations:
-* **Active Status:** `COSYplatform` is the sole active source of truth for runtime web applications, database migrations (`supabase/migrations/`), and CI verification scripts.
-* **Migration Audit:**
-  * All active application pages (`index.html`, `login.html`, `hub.html`, `student.html`, `teacher.html`, `founder.html`, `classroom.html`, `lesson-studio.html`) are housed in `COSYplatform`.
-  * Database schema definitions and RLS policies are version-controlled in `supabase/migrations/`.
-  * `COSYplatform-source` can be archived as legacy, as all core scripts, schemas, and assets have been successfully transferred and verified in `COSYplatform`.
+`COSYplatform-source` was the original repository before application files were separated from backend assets. Its status was re-audited on 2026-11-19 (the earlier text of this section claimed everything had been transferred; that was incorrect).
+
+* **Application and runtime:** `COSYplatform` is the source of truth for the web application pages, current migrations (`supabase/migrations/`) and CI checks.
+* **Lessons:** the 448 spoken-English/French/Russian lessons referenced by the roadmaps were missing here and were migrated as **sanitized student copies** (`lessons/spoken-*`), produced with `scripts/sanitize-student-lesson.js`. Every roadmap `lessonFile` now resolves. Teacher notes and answer keys cannot live in this public repository (enforced by `scripts/check_protected_keys.js`); the unsanitized masters are kept privately.
+* **Tooling:** the sanitizer and the two session-to-lesson converters now live in `scripts/`. The legacy publisher is in `scripts/legacy-source/` (reference only, see its README).
+* **Database definitions:** the old migrations `0001`-`0009` define tables and functions the live app still uses and that no migration here creates (`lesson_content`, `student_lesson_content`, `session_content`, `manual_content`, `lesson_notes`, `cms_page_overrides`, `handle_new_user`, `join_lesson_note`, `save_lesson_note`). They are kept as reference in `supabase/legacy-source/` and must not be run.
+* **Not migrated:** the unsanitized lesson masters, the 685 lesson blueprints in `drafts/` (they contain answer keys), the old lesson schema and validator, and the old `publish-content.yml` workflow (it needs service-role secrets).
 
 ---
 
