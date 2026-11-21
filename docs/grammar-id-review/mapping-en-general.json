@@ -1,6 +1,7 @@
 {
- "en/general/A1/M01-L01": {
+ "en/general/A1/u01-l01": {
   "title": "1.1 Hello! First Contact",
+  "ref": "M01-L01",
   "items": [
    {
     "text": "Subject pronouns, verb 'be' affirmative",
@@ -27,8 +28,9 @@
   ],
   "grammarIds": []
  },
- "en/general/A1/M01-L02": {
+ "en/general/A1/u01-l02": {
   "title": "1.2 My Name Is... Asking Names",
+  "ref": "M01-L02",
   "items": [
    {
     "text": "Questions with 'be', short answers",
@@ -57,8 +59,9 @@
    "en-a1-to-be"
   ]
  },
- "en/general/A1/M01-L03": {
+ "en/general/A1/u01-l03": {
   "title": "1.3 Alphabet & Spelling",
+  "ref": "M01-L03",
   "items": [
    {
     "text": "How do you spell...?",
@@ -85,8 +88,9 @@
   ],
   "grammarIds": []
  },
- "en/general/A1/M01-L04": {
+ "en/general/A1/u01-l04": {
   "title": "1.4 Countries & Nationalities",
+  "ref": "M01-L04",
   "items": [
    {
     "text": "Verb 'be' + nationality adjectives, prep 'from'",
@@ -115,8 +119,9 @@
    "en-a1-to-be"
   ]
  },
- "en/general/A1/M01-L05": {
+ "en/general/A1/u01-l05": {
   "title": "1.5 Languages I Speak",
+  "ref": "M01-L05",
   "items": [
    {
     "text": "Modal verb 'can' / 'can't' for ability",
@@ -145,36 +150,38 @@
    "en-a1-can-cant"
   ]
  },
- "en/general/A1/M01-L06": {
+ "en/general/A1/u01-l06": {
   "title": "1.6 Numbers 0–20",
+  "ref": "M01-L06",
   "items": [
    {
     "text": "Singular and plural nouns with numbers 0-20",
     "confidence": "medium",
-    "grammarId": "en-a1-plurals-irregular",
+    "grammarId": "en-a1-countable-uncountable",
     "alternatives": [
-     {
-      "id": "en-a1-plurals-irregular",
-      "title": "Plural Nouns · Irregular Forms",
-      "score": 0.61
-     },
-     {
-      "id": "en-a1-plurals-regular",
-      "title": "Plural Nouns · Regular Forms",
-      "score": 0.61
-     },
      {
       "id": "en-a1-countable-uncountable",
       "title": "Countable & Uncountable Nouns",
-      "score": 0.34
+      "score": 0.42
+     },
+     {
+      "id": "en-a1-numbers-dates",
+      "title": "Numbers, Days & Months",
+      "score": 0.36
+     },
+     {
+      "id": "en-b2-compound-nouns",
+      "title": "Compound Nouns",
+      "score": 0.23
      }
     ]
    }
   ],
   "grammarIds": []
  },
- "en/general/A1/M01-L07": {
+ "en/general/A1/u01-l07": {
   "title": "1.7 Age & Birthday",
+  "ref": "M01-L07",
   "items": [
    {
     "text": "How old are you?, possessive adjectives",
@@ -201,8 +208,9 @@
   ],
   "grammarIds": []
  },
- "en/general/A1/M01-L08": {
+ "en/general/A1/u01-l08": {
   "title": "1.8 Phone Numbers & Contact Details",
+  "ref": "M01-L08",
   "items": [
    {
     "text": "Possessive adjectives, question words (What, Where)",
@@ -229,36 +237,38 @@
   ],
   "grammarIds": []
  },
- "en/general/A1/M01-L09": {
+ "en/general/A1/u01-l09": {
   "title": "1.9 Numbers 20–100 & Prices",
+  "ref": "M01-L09",
   "items": [
    {
     "text": "How much...?, plural nouns with prices",
-    "confidence": "medium",
-    "grammarId": "en-a1-plurals-irregular",
+    "confidence": "none",
+    "grammarId": null,
     "alternatives": [
-     {
-      "id": "en-a1-plurals-irregular",
-      "title": "Plural Nouns · Irregular Forms",
-      "score": 0.55
-     },
-     {
-      "id": "en-a1-plurals-regular",
-      "title": "Plural Nouns · Regular Forms",
-      "score": 0.54
-     },
      {
       "id": "en-a1-countable-uncountable",
       "title": "Countable & Uncountable Nouns",
-      "score": 0.31
+      "score": 0.36
+     },
+     {
+      "id": "en-a2-how-questions",
+      "title": "How Questions",
+      "score": 0.3
+     },
+     {
+      "id": "en-a1-much-many",
+      "title": "Much / Many / A few / A little",
+      "score": 0.27
      }
     ]
    }
   ],
   "grammarIds": []
  },
- "en/general/A1/M01-L10": {
+ "en/general/A1/u01-l10": {
   "title": "1.10 Personal Profile Project",
+  "ref": "M01-L10",
   "items": [
    {
     "text": "Grammar recycling: be, have, can, possessives",
@@ -285,8 +295,9 @@
   ],
   "grammarIds": []
  },
- "en/general/A1/M02-L01": {
+ "en/general/A1/u02-l01": {
   "title": "2.1 Family",
+  "ref": "M02-L01",
   "items": [
    {
     "text": "Possession (my family, her brother)",
@@ -343,8 +354,9 @@
    "en-a1-possessive-s"
   ]
  },
- "en/general/A1/M02-L02": {
+ "en/general/A1/u02-l02": {
   "title": "2.2 Personal Appearance",
+  "ref": "M02-L02",
   "items": [
    {
     "text": "Adjectives (adjective + noun)",
@@ -354,17 +366,17 @@
      {
       "id": "en-a1-adjectives",
       "title": "Adjectives",
-      "score": 0.71
+      "score": 0.69
      },
      {
       "id": "en-a1-countable-uncountable",
       "title": "Countable & Uncountable Nouns",
-      "score": 0.48
+      "score": 0.51
      },
      {
       "id": "en-a1-comparative-adjectives",
       "title": "Comparative Adjectives",
-      "score": 0.46
+      "score": 0.44
      }
     ]
    },
@@ -396,8 +408,9 @@
    "en-a1-present-simple"
   ]
  },
- "en/general/A1/M02-L03": {
+ "en/general/A1/u02-l03": {
   "title": "2.3 Personality & Basic Characteristics",
+  "ref": "M02-L03",
   "items": [
    {
     "text": "Be + adjective",
@@ -449,8 +462,9 @@
    "en-a1-conjunctions"
   ]
  },
- "en/general/A1/M03-L01": {
+ "en/general/A1/u03-l01": {
   "title": "3.1 Everyday Objects",
+  "ref": "M03-L01",
   "items": [
    {
     "text": "Articles (a / an / the)",
@@ -492,8 +506,9 @@
    "en-a1-demonstratives"
   ]
  },
- "en/general/A1/M03-L02": {
+ "en/general/A1/u03-l02": {
   "title": "3.2 Possessions",
+  "ref": "M03-L02",
   "items": [
    {
     "text": "Have / have got",
@@ -525,7 +540,7 @@
      {
       "id": "en-a1-possessive-s",
       "title": "Whose…? Possessive ’s",
-      "score": 0.5
+      "score": 0.49
      },
      {
       "id": "en-a2-pronouns-review",
@@ -566,8 +581,9 @@
    "en-a1-have-got"
   ]
  },
- "en/general/A1/M03-L03": {
+ "en/general/A1/u03-l03": {
   "title": "3.3 Colours, Shapes & Basic Descriptions",
+  "ref": "M03-L03",
   "items": [
    {
     "text": "Adjective order",
@@ -619,8 +635,9 @@
    "en-a1-comparative-adjectives"
   ]
  },
- "en/general/A1/M04-L01": {
+ "en/general/A1/u04-l01": {
   "title": "4.1 Types of Homes",
+  "ref": "M04-L01",
   "items": [
    {
     "text": "Verb \"live\"",
@@ -669,8 +686,9 @@
   ],
   "grammarIds": []
  },
- "en/general/A1/M04-L02": {
+ "en/general/A1/u04-l02": {
   "title": "4.2 Rooms",
+  "ref": "M04-L02",
   "items": [
    {
     "text": "There is / There are",
@@ -694,8 +712,9 @@
    "en-a1-there-is-are"
   ]
  },
- "en/general/A1/M04-L03": {
+ "en/general/A1/u04-l03": {
   "title": "4.3 Furniture & Household Items",
+  "ref": "M04-L03",
   "items": [
    {
     "text": "Prepositions of place (on, under, next to, behind, in front of)",
@@ -724,8 +743,9 @@
    "en-a1-prepositions-place"
   ]
  },
- "en/general/A1/M04-L04": {
+ "en/general/A1/u04-l04": {
   "title": "4.4 Household Actions",
+  "ref": "M04-L04",
   "items": [
    {
     "text": "Imperatives",
@@ -767,8 +787,9 @@
    "en-a1-present-simple"
   ]
  },
- "en/general/A1/EN-051": {
+ "en/general/A1/u05-l01": {
   "title": "5.1 Food Vocabulary & Categories",
+  "ref": "EN-051",
   "items": [
    {
     "text": "Countable & Uncountable Nouns + Quantifiers",
@@ -781,14 +802,14 @@
       "score": 0.97
      },
      {
-      "id": "en-a1-plurals-irregular",
-      "title": "Plural Nouns · Irregular Forms",
-      "score": 0.36
+      "id": "en-b2-compound-nouns",
+      "title": "Compound Nouns",
+      "score": 0.24
      },
      {
-      "id": "en-a1-plurals-regular",
-      "title": "Plural Nouns · Regular Forms",
-      "score": 0.35
+      "id": "en-b2-dependent-prepositions-noun-preposition",
+      "title": "Dependent Prepositions Noun Preposition",
+      "score": 0.21
      }
     ]
    }
@@ -797,8 +818,9 @@
    "en-a1-countable-uncountable"
   ]
  },
- "en/general/A1/EN-052": {
+ "en/general/A1/u05-l02": {
   "title": "5.2 Meals & Daily Eating Habits",
+  "ref": "EN-052",
   "items": [
    {
     "text": "Verbs 'eat' and 'drink' + Present Simple Habitual",
@@ -827,8 +849,9 @@
    "en-a1-present-simple"
   ]
  },
- "en/general/A1/EN-053": {
+ "en/general/A1/u05-l03": {
   "title": "5.3 Drinks & Café Ordering",
+  "ref": "EN-053",
   "items": [
    {
     "text": "Polite Requests & Modal Structures ('I would like...')",
@@ -855,8 +878,9 @@
   ],
   "grammarIds": []
  },
- "en/general/A1/EN-054": {
+ "en/general/A1/u05-l04": {
   "title": "5.4 Restaurant Dining & Menus",
+  "ref": "EN-054",
   "items": [
    {
     "text": "Ordering Phrases & Restaurant Questions",
@@ -883,8 +907,9 @@
   ],
   "grammarIds": []
  },
- "en/general/A1/EN-055": {
+ "en/general/A1/u05-l05": {
   "title": "5.5 Cooking Verbs & Simple Recipes",
+  "ref": "EN-055",
   "items": [
    {
     "text": "Imperatives for Recipe Steps",
@@ -903,8 +928,9 @@
    "en-a1-imperatives"
   ]
  },
- "en/general/A1/EN-056": {
+ "en/general/A1/u05-l06": {
   "title": "5.6 Restaurant Paying & Food Shopping",
+  "ref": "EN-056",
   "items": [
    {
     "text": "Payment Questions & Quantity Expressions",
@@ -931,8 +957,9 @@
   ],
   "grammarIds": []
  },
- "en/general/A1/M06-L01": {
+ "en/general/A1/u06-l01": {
   "title": "6.1 Shop Types & Places to Buy",
+  "ref": "M06-L01",
   "items": [
    {
     "text": "How much is / How much are...?",
@@ -940,13 +967,13 @@
     "grammarId": null,
     "alternatives": [
      {
-      "id": "en-a1-much-many",
-      "title": "Much / Many / A few / A little",
+      "id": "en-a2-how-questions",
+      "title": "How Questions",
       "score": 0.36
      },
      {
-      "id": "en-a2-how-questions",
-      "title": "How Questions",
+      "id": "en-a1-much-many",
+      "title": "Much / Many / A few / A little",
       "score": 0.36
      },
      {
@@ -981,8 +1008,9 @@
   ],
   "grammarIds": []
  },
- "en/general/A1/M06-L02": {
+ "en/general/A1/u06-l02": {
   "title": "6.2 Product Categories & Availability",
+  "ref": "M06-L02",
   "items": [
    {
     "text": "How much is / How much are...?",
@@ -990,13 +1018,13 @@
     "grammarId": null,
     "alternatives": [
      {
-      "id": "en-a1-much-many",
-      "title": "Much / Many / A few / A little",
+      "id": "en-a2-how-questions",
+      "title": "How Questions",
       "score": 0.36
      },
      {
-      "id": "en-a2-how-questions",
-      "title": "How Questions",
+      "id": "en-a1-much-many",
+      "title": "Much / Many / A few / A little",
       "score": 0.36
      },
      {
@@ -1031,8 +1059,9 @@
   ],
   "grammarIds": []
  },
- "en/general/A1/M06-L03": {
+ "en/general/A1/u06-l03": {
   "title": "6.3 Money, Currency & Prices",
+  "ref": "M06-L03",
   "items": [
    {
     "text": "How much is / How much are...?",
@@ -1040,13 +1069,13 @@
     "grammarId": null,
     "alternatives": [
      {
-      "id": "en-a1-much-many",
-      "title": "Much / Many / A few / A little",
+      "id": "en-a2-how-questions",
+      "title": "How Questions",
       "score": 0.36
      },
      {
-      "id": "en-a2-how-questions",
-      "title": "How Questions",
+      "id": "en-a1-much-many",
+      "title": "Much / Many / A few / A little",
       "score": 0.36
      },
      {
@@ -1081,8 +1110,9 @@
   ],
   "grammarIds": []
  },
- "en/general/A1/M06-L04": {
+ "en/general/A1/u06-l04": {
   "title": "6.4 Paying & Payment Methods",
+  "ref": "M06-L04",
   "items": [
    {
     "text": "How much is / How much are...?",
@@ -1090,13 +1120,13 @@
     "grammarId": null,
     "alternatives": [
      {
-      "id": "en-a1-much-many",
-      "title": "Much / Many / A few / A little",
+      "id": "en-a2-how-questions",
+      "title": "How Questions",
       "score": 0.36
      },
      {
-      "id": "en-a2-how-questions",
-      "title": "How Questions",
+      "id": "en-a1-much-many",
+      "title": "Much / Many / A few / A little",
       "score": 0.36
      },
      {
@@ -1131,8 +1161,9 @@
   ],
   "grammarIds": []
  },
- "en/general/A1/M06-L05": {
+ "en/general/A1/u06-l05": {
   "title": "6.5 Discounts & Quantities",
+  "ref": "M06-L05",
   "items": [
    {
     "text": "How much is / How much are...?",
@@ -1140,13 +1171,13 @@
     "grammarId": null,
     "alternatives": [
      {
-      "id": "en-a1-much-many",
-      "title": "Much / Many / A few / A little",
+      "id": "en-a2-how-questions",
+      "title": "How Questions",
       "score": 0.36
      },
      {
-      "id": "en-a2-how-questions",
-      "title": "How Questions",
+      "id": "en-a1-much-many",
+      "title": "Much / Many / A few / A little",
       "score": 0.36
      },
      {
@@ -1181,8 +1212,9 @@
   ],
   "grammarIds": []
  },
- "en/general/A1/M06-L06": {
+ "en/general/A1/u06-l06": {
   "title": "6.6 Shopping Transactions Capstone",
+  "ref": "M06-L06",
   "items": [
    {
     "text": "How much is / How much are...?",
@@ -1190,13 +1222,13 @@
     "grammarId": null,
     "alternatives": [
      {
-      "id": "en-a1-much-many",
-      "title": "Much / Many / A few / A little",
+      "id": "en-a2-how-questions",
+      "title": "How Questions",
       "score": 0.36
      },
      {
-      "id": "en-a2-how-questions",
-      "title": "How Questions",
+      "id": "en-a1-much-many",
+      "title": "Much / Many / A few / A little",
       "score": 0.36
      },
      {
@@ -1231,8 +1263,9 @@
   ],
   "grammarIds": []
  },
- "en/general/A1/M07-L01": {
+ "en/general/A1/u07-l01": {
   "title": "7.1 Essential Clothing Items",
+  "ref": "M07-L01",
   "items": [
    {
     "text": "Demonstratives (this/that/these/those)",
@@ -1279,8 +1312,9 @@
    "en-a1-demonstratives"
   ]
  },
- "en/general/A1/M07-L02": {
+ "en/general/A1/u07-l02": {
   "title": "7.2 Accessories & Footwear",
+  "ref": "M07-L02",
   "items": [
    {
     "text": "Demonstratives (this/that/these/those)",
@@ -1327,8 +1361,9 @@
    "en-a1-demonstratives"
   ]
  },
- "en/general/A1/M07-L03": {
+ "en/general/A1/u07-l03": {
   "title": "7.3 Describing Clothes: Colour, Size & Style",
+  "ref": "M07-L03",
   "items": [
    {
     "text": "Demonstratives (this/that/these/those)",
@@ -1375,8 +1410,9 @@
    "en-a1-demonstratives"
   ]
  },
- "en/general/A1/M07-L04": {
+ "en/general/A1/u07-l04": {
   "title": "7.4 Clothes Shopping: Trying On & Fitting",
+  "ref": "M07-L04",
   "items": [
    {
     "text": "Demonstratives (this/that/these/those)",
@@ -1423,8 +1459,9 @@
    "en-a1-demonstratives"
   ]
  },
- "en/general/A1/M07-L05": {
+ "en/general/A1/u07-l05": {
   "title": "7.5 Clothes Shopping: Comparisons & Buying",
+  "ref": "M07-L05",
   "items": [
    {
     "text": "Demonstratives (this/that/these/those)",
@@ -1471,8 +1508,9 @@
    "en-a1-demonstratives"
   ]
  },
- "en/general/A1/M07-L06": {
+ "en/general/A1/u07-l06": {
   "title": "7.6 Wardrobe & Fashion Capstone",
+  "ref": "M07-L06",
   "items": [
    {
     "text": "Demonstratives (this/that/these/those)",
@@ -1519,8 +1557,9 @@
    "en-a1-demonstratives"
   ]
  },
- "en/general/A1/M08-L01": {
+ "en/general/A1/u08-l01": {
   "title": "8.1 Body Parts & Physical Self",
+  "ref": "M08-L01",
   "items": [
    {
     "text": "Expressing pain with 'have got' / 'feel'",
@@ -1562,8 +1601,9 @@
    "en-a1-imperatives"
   ]
  },
- "en/general/A1/M08-L02": {
+ "en/general/A1/u08-l02": {
   "title": "8.2 Basic Health States & Feeling Unwell",
+  "ref": "M08-L02",
   "items": [
    {
     "text": "Expressing pain with 'have got' / 'feel'",
@@ -1605,8 +1645,9 @@
    "en-a1-imperatives"
   ]
  },
- "en/general/A1/M08-L03": {
+ "en/general/A1/u08-l03": {
   "title": "8.3 Common Ailments & Symptoms",
+  "ref": "M08-L03",
   "items": [
    {
     "text": "Expressing pain with 'have got' / 'feel'",
@@ -1648,8 +1689,9 @@
    "en-a1-imperatives"
   ]
  },
- "en/general/A1/M08-L04": {
+ "en/general/A1/u08-l04": {
   "title": "8.4 At the Doctor's Office",
+  "ref": "M08-L04",
   "items": [
    {
     "text": "Expressing pain with 'have got' / 'feel'",
@@ -1691,8 +1733,9 @@
    "en-a1-imperatives"
   ]
  },
- "en/general/A1/M08-L05": {
+ "en/general/A1/u08-l05": {
   "title": "8.5 At the Pharmacy & Buying Medicine",
+  "ref": "M08-L05",
   "items": [
    {
     "text": "Expressing pain with 'have got' / 'feel'",
@@ -1734,8 +1777,9 @@
    "en-a1-imperatives"
   ]
  },
- "en/general/A1/M08-L06": {
+ "en/general/A1/u08-l06": {
   "title": "8.6 Healthy Lifestyle & Wellness Capstone",
+  "ref": "M08-L06",
   "items": [
    {
     "text": "Expressing pain with 'have got' / 'feel'",
@@ -1777,8 +1821,9 @@
    "en-a1-imperatives"
   ]
  },
- "en/general/A1/M09-L01": {
+ "en/general/A1/u09-l01": {
   "title": "9.1 Jobs & Professions",
+  "ref": "M09-L01",
   "items": [
    {
     "text": "Present Simple for work routines",
@@ -1788,7 +1833,7 @@
      {
       "id": "en-a1-present-simple",
       "title": "Present Simple",
-      "score": 0.88
+      "score": 0.87
      },
      {
       "id": "en-a1-simple-vs-continuous",
@@ -1830,8 +1875,9 @@
    "en-a1-present-simple"
   ]
  },
- "en/general/A1/M09-L02": {
+ "en/general/A1/u09-l02": {
   "title": "9.2 Workplaces & Work Locations",
+  "ref": "M09-L02",
   "items": [
    {
     "text": "Present Simple for work routines",
@@ -1841,7 +1887,7 @@
      {
       "id": "en-a1-present-simple",
       "title": "Present Simple",
-      "score": 0.88
+      "score": 0.87
      },
      {
       "id": "en-a1-simple-vs-continuous",
@@ -1883,8 +1929,9 @@
    "en-a1-present-simple"
   ]
  },
- "en/general/A1/M09-L03": {
+ "en/general/A1/u09-l03": {
   "title": "9.3 Working Hours & Work Communication",
+  "ref": "M09-L03",
   "items": [
    {
     "text": "Present Simple for work routines",
@@ -1894,7 +1941,7 @@
      {
       "id": "en-a1-present-simple",
       "title": "Present Simple",
-      "score": 0.88
+      "score": 0.87
      },
      {
       "id": "en-a1-simple-vs-continuous",
@@ -1936,8 +1983,9 @@
    "en-a1-present-simple"
   ]
  },
- "en/general/A1/M09-L04": {
+ "en/general/A1/u09-l04": {
   "title": "9.4 Education Places & School Subjects",
+  "ref": "M09-L04",
   "items": [
    {
     "text": "Present Simple for work routines",
@@ -1947,7 +1995,7 @@
      {
       "id": "en-a1-present-simple",
       "title": "Present Simple",
-      "score": 0.88
+      "score": 0.87
      },
      {
       "id": "en-a1-simple-vs-continuous",
@@ -1989,8 +2037,9 @@
    "en-a1-present-simple"
   ]
  },
- "en/general/A1/M09-L05": {
+ "en/general/A1/u09-l05": {
   "title": "9.5 Study Habits, Homework & Exams",
+  "ref": "M09-L05",
   "items": [
    {
     "text": "Present Simple for work routines",
@@ -2000,7 +2049,7 @@
      {
       "id": "en-a1-present-simple",
       "title": "Present Simple",
-      "score": 0.88
+      "score": 0.87
      },
      {
       "id": "en-a1-simple-vs-continuous",
@@ -2042,8 +2091,9 @@
    "en-a1-present-simple"
   ]
  },
- "en/general/A1/M09-L06": {
+ "en/general/A1/u09-l06": {
   "title": "9.6 Work & Education Profile Capstone",
+  "ref": "M09-L06",
   "items": [
    {
     "text": "Present Simple for work routines",
@@ -2053,7 +2103,7 @@
      {
       "id": "en-a1-present-simple",
       "title": "Present Simple",
-      "score": 0.88
+      "score": 0.87
      },
      {
       "id": "en-a1-simple-vs-continuous",
@@ -2095,8 +2145,9 @@
    "en-a1-present-simple"
   ]
  },
- "en/general/A1/M10-L01": {
+ "en/general/A1/u10-l01": {
   "title": "10.1 Languages & Communication Verbs",
+  "ref": "M10-L01",
   "items": [
    {
     "text": "Can / Can't for language ability",
@@ -2148,8 +2199,9 @@
    "en-a1-can-cant"
   ]
  },
- "en/general/A1/M10-L02": {
+ "en/general/A1/u10-l02": {
   "title": "10.2 Language Ability & Learning Progress",
+  "ref": "M10-L02",
   "items": [
    {
     "text": "Can / Can't for language ability",
@@ -2201,8 +2253,9 @@
    "en-a1-can-cant"
   ]
  },
- "en/general/A1/M10-L03": {
+ "en/general/A1/u10-l03": {
   "title": "10.3 Classroom Interaction & Requests",
+  "ref": "M10-L03",
   "items": [
    {
     "text": "Can / Can't for language ability",
@@ -2254,8 +2307,9 @@
    "en-a1-can-cant"
   ]
  },
- "en/general/A1/M10-L04": {
+ "en/general/A1/u10-l04": {
   "title": "10.4 Translation, Spelling & Pronunciation",
+  "ref": "M10-L04",
   "items": [
    {
     "text": "Can / Can't for language ability",
@@ -2307,8 +2361,9 @@
    "en-a1-can-cant"
   ]
  },
- "en/general/A1/M10-L05": {
+ "en/general/A1/u10-l05": {
   "title": "10.5 Communication Channels & Messages",
+  "ref": "M10-L05",
   "items": [
    {
     "text": "Can / Can't for language ability",
@@ -2360,8 +2415,9 @@
    "en-a1-can-cant"
   ]
  },
- "en/general/A1/M10-L06": {
+ "en/general/A1/u10-l06": {
   "title": "10.6 Multilingual Learner Profile Capstone",
+  "ref": "M10-L06",
   "items": [
    {
     "text": "Can / Can't for language ability",
@@ -2413,8 +2469,9 @@
    "en-a1-can-cant"
   ]
  },
- "en/general/A1/M11-L01": {
+ "en/general/A1/u11-l01": {
   "title": "11.1 Modes of Transport & Commuting",
+  "ref": "M11-L01",
   "items": [
    {
     "text": "Prepositions of transport (by bus, on foot)",
@@ -2455,8 +2512,9 @@
    "en-a1-imperatives"
   ]
  },
- "en/general/A1/M11-L02": {
+ "en/general/A1/u11-l02": {
   "title": "11.2 Travel Places & Stations",
+  "ref": "M11-L02",
   "items": [
    {
     "text": "Prepositions of transport (by bus, on foot)",
@@ -2497,8 +2555,9 @@
    "en-a1-imperatives"
   ]
  },
- "en/general/A1/M11-L03": {
+ "en/general/A1/u11-l03": {
   "title": "11.3 Asking & Giving Directions",
+  "ref": "M11-L03",
   "items": [
    {
     "text": "Prepositions of transport (by bus, on foot)",
@@ -2539,8 +2598,9 @@
    "en-a1-imperatives"
   ]
  },
- "en/general/A1/M11-L04": {
+ "en/general/A1/u11-l04": {
   "title": "11.4 Buying Tickets & Travel Schedules",
+  "ref": "M11-L04",
   "items": [
    {
     "text": "Prepositions of transport (by bus, on foot)",
@@ -2581,8 +2641,9 @@
    "en-a1-imperatives"
   ]
  },
- "en/general/A1/M11-L05": {
+ "en/general/A1/u11-l05": {
   "title": "11.5 Travel Situations: Checking In & Luggage",
+  "ref": "M11-L05",
   "items": [
    {
     "text": "Prepositions of transport (by bus, on foot)",
@@ -2623,8 +2684,9 @@
    "en-a1-imperatives"
   ]
  },
- "en/general/A1/M11-L06": {
+ "en/general/A1/u11-l06": {
   "title": "11.6 Transport & Travel Capstone",
+  "ref": "M11-L06",
   "items": [
    {
     "text": "Prepositions of transport (by bus, on foot)",
@@ -2665,8 +2727,9 @@
    "en-a1-imperatives"
   ]
  },
- "en/general/A1/M12-L01": {
+ "en/general/A1/u12-l01": {
   "title": "12.1 Places in Town & Public Buildings",
+  "ref": "M12-L01",
   "items": [
    {
     "text": "There is / There are for places in town",
@@ -2713,8 +2776,9 @@
    "en-a1-there-is-are"
   ]
  },
- "en/general/A1/M12-L02": {
+ "en/general/A1/u12-l02": {
   "title": "12.2 City Landmarks & Services",
+  "ref": "M12-L02",
   "items": [
    {
     "text": "There is / There are for places in town",
@@ -2761,8 +2825,9 @@
    "en-a1-there-is-are"
   ]
  },
- "en/general/A1/M12-L03": {
+ "en/general/A1/u12-l03": {
   "title": "12.3 Asking Directions in Town",
+  "ref": "M12-L03",
   "items": [
    {
     "text": "There is / There are for places in town",
@@ -2809,8 +2874,9 @@
    "en-a1-there-is-are"
   ]
  },
- "en/general/A1/M12-L04": {
+ "en/general/A1/u12-l04": {
   "title": "12.4 Describing Neighborhoods & City Life",
+  "ref": "M12-L04",
   "items": [
    {
     "text": "There is / There are for places in town",
@@ -2857,8 +2923,9 @@
    "en-a1-there-is-are"
   ]
  },
- "en/general/A1/M12-L05": {
+ "en/general/A1/u12-l05": {
   "title": "12.5 City Transport & Urban Navigation",
+  "ref": "M12-L05",
   "items": [
    {
     "text": "There is / There are for places in town",
@@ -2905,8 +2972,9 @@
    "en-a1-there-is-are"
   ]
  },
- "en/general/A1/M12-L06": {
+ "en/general/A1/u12-l06": {
   "title": "12.6 City Guide & Navigation Capstone",
+  "ref": "M12-L06",
   "items": [
    {
     "text": "There is / There are for places in town",
@@ -2953,8 +3021,9 @@
    "en-a1-there-is-are"
   ]
  },
- "en/general/A1/M13-L01": {
+ "en/general/A1/u13-l01": {
   "title": "13.1 Weather Conditions & Temperature",
+  "ref": "M13-L01",
   "items": [
    {
     "text": "It is + weather adjective",
@@ -3005,8 +3074,9 @@
    "en-a1-adjectives"
   ]
  },
- "en/general/A1/M13-L02": {
+ "en/general/A1/u13-l02": {
   "title": "13.2 The Four Seasons & Seasonal Activities",
+  "ref": "M13-L02",
   "items": [
    {
     "text": "It is + weather adjective",
@@ -3057,8 +3127,9 @@
    "en-a1-adjectives"
   ]
  },
- "en/general/A1/M13-L03": {
+ "en/general/A1/u13-l03": {
   "title": "13.3 Nature Landscapes & Natural Places",
+  "ref": "M13-L03",
   "items": [
    {
     "text": "It is + weather adjective",
@@ -3109,8 +3180,9 @@
    "en-a1-adjectives"
   ]
  },
- "en/general/A1/M13-L04": {
+ "en/general/A1/u13-l04": {
   "title": "13.4 Weather Forecasts & Planning Activities",
+  "ref": "M13-L04",
   "items": [
    {
     "text": "It is + weather adjective",
@@ -3161,8 +3233,9 @@
    "en-a1-adjectives"
   ]
  },
- "en/general/A1/M13-L05": {
+ "en/general/A1/u13-l05": {
   "title": "13.5 Environmental Habits & Caring for Nature",
+  "ref": "M13-L05",
   "items": [
    {
     "text": "It is + weather adjective",
@@ -3213,8 +3286,9 @@
    "en-a1-adjectives"
   ]
  },
- "en/general/A1/M13-L06": {
+ "en/general/A1/u13-l06": {
   "title": "13.6 Nature & Weather Capstone",
+  "ref": "M13-L06",
   "items": [
    {
     "text": "It is + weather adjective",
@@ -3265,8 +3339,9 @@
    "en-a1-adjectives"
   ]
  },
- "en/general/A1/M14-L01": {
+ "en/general/A1/u14-l01": {
   "title": "14.1 Leisure Activities & Everyday Hobbies",
+  "ref": "M14-L01",
   "items": [
    {
     "text": "Like / Love / Hate + -ing",
@@ -3318,8 +3393,9 @@
    "en-a1-like-love-hate"
   ]
  },
- "en/general/A1/M14-L02": {
+ "en/general/A1/u14-l02": {
   "title": "14.2 Sports & Physical Activities",
+  "ref": "M14-L02",
   "items": [
    {
     "text": "Like / Love / Hate + -ing",
@@ -3371,8 +3447,9 @@
    "en-a1-like-love-hate"
   ]
  },
- "en/general/A1/M14-L03": {
+ "en/general/A1/u14-l03": {
   "title": "14.3 Cinema, Music & Entertainment",
+  "ref": "M14-L03",
   "items": [
    {
     "text": "Like / Love / Hate + -ing",
@@ -3424,8 +3501,9 @@
    "en-a1-like-love-hate"
   ]
  },
- "en/general/A1/M14-L04": {
+ "en/general/A1/u14-l04": {
   "title": "14.4 Weekend Plans & Free Time Activities",
+  "ref": "M14-L04",
   "items": [
    {
     "text": "Like / Love / Hate + -ing",
@@ -3477,8 +3555,9 @@
    "en-a1-like-love-hate"
   ]
  },
- "en/general/A1/M14-L05": {
+ "en/general/A1/u14-l05": {
   "title": "14.5 Hobbies & Personal Interests Survey",
+  "ref": "M14-L05",
   "items": [
    {
     "text": "Like / Love / Hate + -ing",
@@ -3530,8 +3609,9 @@
    "en-a1-like-love-hate"
   ]
  },
- "en/general/A1/M14-L06": {
+ "en/general/A1/u14-l06": {
   "title": "14.6 Free Time & Hobbies Portfolio Capstone",
+  "ref": "M14-L06",
   "items": [
    {
     "text": "Like / Love / Hate + -ing",
@@ -3583,8 +3663,9 @@
    "en-a1-like-love-hate"
   ]
  },
- "en/general/A1/M15-L01": {
+ "en/general/A1/u15-l01": {
   "title": "15.1 Digital Devices & Hardware",
+  "ref": "M15-L01",
   "items": [
    {
     "text": "Imperatives for tech instructions",
@@ -3626,8 +3707,9 @@
    "en-a1-present-simple"
   ]
  },
- "en/general/A1/M15-L02": {
+ "en/general/A1/u15-l02": {
   "title": "15.2 Tech Action Verbs & Operations",
+  "ref": "M15-L02",
   "items": [
    {
     "text": "Imperatives for tech instructions",
@@ -3669,8 +3751,9 @@
    "en-a1-present-simple"
   ]
  },
- "en/general/A1/M15-L03": {
+ "en/general/A1/u15-l03": {
   "title": "15.3 Internet Vocabulary & Online Activities",
+  "ref": "M15-L03",
   "items": [
    {
     "text": "Imperatives for tech instructions",
@@ -3712,8 +3795,9 @@
    "en-a1-present-simple"
   ]
  },
- "en/general/A1/M15-L04": {
+ "en/general/A1/u15-l04": {
   "title": "15.4 Social Media & Digital Messages",
+  "ref": "M15-L04",
   "items": [
    {
     "text": "Imperatives for tech instructions",
@@ -3755,8 +3839,9 @@
    "en-a1-present-simple"
   ]
  },
- "en/general/A1/M15-L05": {
+ "en/general/A1/u15-l05": {
   "title": "15.5 Digital Safety & Troubleshooting",
+  "ref": "M15-L05",
   "items": [
    {
     "text": "Imperatives for tech instructions",
@@ -3798,8 +3883,9 @@
    "en-a1-present-simple"
   ]
  },
- "en/general/A1/M15-L06": {
+ "en/general/A1/u15-l06": {
   "title": "15.6 Digital Life & Technology Profile Capstone",
+  "ref": "M15-L06",
   "items": [
    {
     "text": "Imperatives for tech instructions",
@@ -3841,8 +3927,9 @@
    "en-a1-present-simple"
   ]
  },
- "en/general/A1/M16-L01": {
+ "en/general/A1/u16-l01": {
   "title": "16.1 Birthdays & Personal Celebrations",
+  "ref": "M16-L01",
   "items": [
    {
     "text": "Would like to + verb for invitations",
@@ -3893,8 +3980,9 @@
    "en-a1-id-like"
   ]
  },
- "en/general/A1/M16-L02": {
+ "en/general/A1/u16-l02": {
   "title": "16.2 Invitations & Party Planning",
+  "ref": "M16-L02",
   "items": [
    {
     "text": "Would like to + verb for invitations",
@@ -3945,8 +4033,9 @@
    "en-a1-id-like"
   ]
  },
- "en/general/A1/M16-L03": {
+ "en/general/A1/u16-l03": {
   "title": "16.3 Holidays & National Traditions",
+  "ref": "M16-L03",
   "items": [
    {
     "text": "Would like to + verb for invitations",
@@ -3997,8 +4086,9 @@
    "en-a1-id-like"
   ]
  },
- "en/general/A1/M16-L04": {
+ "en/general/A1/u16-l04": {
   "title": "16.4 Cultural Outings & Venues",
+  "ref": "M16-L04",
   "items": [
    {
     "text": "Would like to + verb for invitations",
@@ -4049,8 +4139,9 @@
    "en-a1-id-like"
   ]
  },
- "en/general/A1/M16-L05": {
+ "en/general/A1/u16-l05": {
   "title": "16.5 Social Events & Going Out",
+  "ref": "M16-L05",
   "items": [
    {
     "text": "Would like to + verb for invitations",
@@ -4101,8 +4192,9 @@
    "en-a1-id-like"
   ]
  },
- "en/general/A1/M16-L06": {
+ "en/general/A1/u16-l06": {
   "title": "16.6 Celebrations & Cultural Events Capstone",
+  "ref": "M16-L06",
   "items": [
    {
     "text": "Would like to + verb for invitations",
@@ -4153,8 +4245,9 @@
    "en-a1-id-like"
   ]
  },
- "en/general/A1/M17-L01": {
+ "en/general/A1/u17-l01": {
   "title": "17.1 Yesterday & Recent Past",
+  "ref": "M17-L01",
   "items": [
    {
     "text": "Past Simple (regular & irregular verbs)",
@@ -4169,7 +4262,7 @@
      {
       "id": "en-a1-past-simple-irregular",
       "title": "Past Simple: Irregular Verbs",
-      "score": 0.8
+      "score": 0.79
      },
      {
       "id": "en-a1-irregular-verbs",
@@ -4203,8 +4296,9 @@
   ],
   "grammarIds": []
  },
- "en/general/A1/M17-L02": {
+ "en/general/A1/u17-l02": {
   "title": "17.2 Weekend Activities & Past Events",
+  "ref": "M17-L02",
   "items": [
    {
     "text": "Past Simple (regular & irregular verbs)",
@@ -4219,7 +4313,7 @@
      {
       "id": "en-a1-past-simple-irregular",
       "title": "Past Simple: Irregular Verbs",
-      "score": 0.8
+      "score": 0.79
      },
      {
       "id": "en-a1-irregular-verbs",
@@ -4253,8 +4347,9 @@
   ],
   "grammarIds": []
  },
- "en/general/A1/M17-L03": {
+ "en/general/A1/u17-l03": {
   "title": "17.3 Childhood & Early Memories",
+  "ref": "M17-L03",
   "items": [
    {
     "text": "Past Simple (regular & irregular verbs)",
@@ -4269,7 +4364,7 @@
      {
       "id": "en-a1-past-simple-irregular",
       "title": "Past Simple: Irregular Verbs",
-      "score": 0.8
+      "score": 0.79
      },
      {
       "id": "en-a1-irregular-verbs",
@@ -4303,8 +4398,9 @@
   ],
   "grammarIds": []
  },
- "en/general/A1/M17-L04": {
+ "en/general/A1/u17-l04": {
   "title": "17.4 Past Travel & Holidays",
+  "ref": "M17-L04",
   "items": [
    {
     "text": "Past Simple (regular & irregular verbs)",
@@ -4319,7 +4415,7 @@
      {
       "id": "en-a1-past-simple-irregular",
       "title": "Past Simple: Irregular Verbs",
-      "score": 0.8
+      "score": 0.79
      },
      {
       "id": "en-a1-irregular-verbs",
@@ -4353,8 +4449,9 @@
   ],
   "grammarIds": []
  },
- "en/general/A1/M17-L05": {
+ "en/general/A1/u17-l05": {
   "title": "17.5 Life Events & Personal Milestones",
+  "ref": "M17-L05",
   "items": [
    {
     "text": "Past Simple (regular & irregular verbs)",
@@ -4369,7 +4466,7 @@
      {
       "id": "en-a1-past-simple-irregular",
       "title": "Past Simple: Irregular Verbs",
-      "score": 0.8
+      "score": 0.79
      },
      {
       "id": "en-a1-irregular-verbs",
@@ -4403,8 +4500,9 @@
   ],
   "grammarIds": []
  },
- "en/general/A1/M17-L06": {
+ "en/general/A1/u17-l06": {
   "title": "17.6 Past Experiences Portfolio Capstone",
+  "ref": "M17-L06",
   "items": [
    {
     "text": "Past Simple (regular & irregular verbs)",
@@ -4419,7 +4517,7 @@
      {
       "id": "en-a1-past-simple-irregular",
       "title": "Past Simple: Irregular Verbs",
-      "score": 0.8
+      "score": 0.79
      },
      {
       "id": "en-a1-irregular-verbs",
@@ -4453,8 +4551,9 @@
   ],
   "grammarIds": []
  },
- "en/general/A1/M18-L01": {
+ "en/general/A1/u18-l01": {
   "title": "18.1 Immediate Future & Personal Plans",
+  "ref": "M18-L01",
   "items": [
    {
     "text": "Be going to for future plans",
@@ -4506,8 +4605,9 @@
    "en-a1-will"
   ]
  },
- "en/general/A1/M18-L02": {
+ "en/general/A1/u18-l02": {
   "title": "18.2 Dreams & Personal Goals",
+  "ref": "M18-L02",
   "items": [
    {
     "text": "Be going to for future plans",
@@ -4559,8 +4659,9 @@
    "en-a1-will"
   ]
  },
- "en/general/A1/M18-L03": {
+ "en/general/A1/u18-l03": {
   "title": "18.3 Career & Education Plans",
+  "ref": "M18-L03",
   "items": [
    {
     "text": "Be going to for future plans",
@@ -4612,8 +4713,9 @@
    "en-a1-will"
   ]
  },
- "en/general/A1/M18-L04": {
+ "en/general/A1/u18-l04": {
   "title": "18.4 Future Travel & Holiday Plans",
+  "ref": "M18-L04",
   "items": [
    {
     "text": "Be going to for future plans",
@@ -4665,8 +4767,9 @@
    "en-a1-will"
   ]
  },
- "en/general/A1/M18-L05": {
+ "en/general/A1/u18-l05": {
   "title": "18.5 Simple Predictions & Opinions About Future",
+  "ref": "M18-L05",
   "items": [
    {
     "text": "Be going to for future plans",
@@ -4718,8 +4821,9 @@
    "en-a1-will"
   ]
  },
- "en/general/A1/M18-L06": {
+ "en/general/A1/u18-l06": {
   "title": "18.6 Future Plans & Dreams Capstone",
+  "ref": "M18-L06",
   "items": [
    {
     "text": "Be going to for future plans",
@@ -4771,8 +4875,9 @@
    "en-a1-will"
   ]
  },
- "en/general/A1/M19-L01": {
+ "en/general/A1/u19-l01": {
   "title": "19.1 Comparing People & Physical Objects",
+  "ref": "M19-L01",
   "items": [
    {
     "text": "Comparative adjectives (-er than, more ... than)",
@@ -4824,8 +4929,9 @@
    "en-a1-conjunctions"
   ]
  },
- "en/general/A1/M19-L02": {
+ "en/general/A1/u19-l02": {
   "title": "19.2 Comparing Places & Cities",
+  "ref": "M19-L02",
   "items": [
    {
     "text": "Comparative adjectives (-er than, more ... than)",
@@ -4877,8 +4983,9 @@
    "en-a1-conjunctions"
   ]
  },
- "en/general/A1/M19-L03": {
+ "en/general/A1/u19-l03": {
   "title": "19.3 Comparing Lifestyles & Habits",
+  "ref": "M19-L03",
   "items": [
    {
     "text": "Comparative adjectives (-er than, more ... than)",
@@ -4930,8 +5037,9 @@
    "en-a1-conjunctions"
   ]
  },
- "en/general/A1/M19-L04": {
+ "en/general/A1/u19-l04": {
   "title": "19.4 Likes, Dislikes & Preferences",
+  "ref": "M19-L04",
   "items": [
    {
     "text": "Comparative adjectives (-er than, more ... than)",
@@ -4983,8 +5091,9 @@
    "en-a1-conjunctions"
   ]
  },
- "en/general/A1/M19-L05": {
+ "en/general/A1/u19-l05": {
   "title": "19.5 Making Choices & Recommendations",
+  "ref": "M19-L05",
   "items": [
    {
     "text": "Comparative adjectives (-er than, more ... than)",
@@ -5036,8 +5145,9 @@
    "en-a1-conjunctions"
   ]
  },
- "en/general/A1/M19-L06": {
+ "en/general/A1/u19-l06": {
   "title": "19.6 Comparing My World Capstone",
+  "ref": "M19-L06",
   "items": [
    {
     "text": "Comparative adjectives (-er than, more ... than)",
@@ -5089,8 +5199,9 @@
    "en-a1-conjunctions"
   ]
  },
- "en/general/A1/M20-L01": {
+ "en/general/A1/u20-l01": {
   "title": "20.1 Expressing Simple Opinions",
+  "ref": "M20-L01",
   "items": [
    {
     "text": "Opinion structures (I think, I believe)",
@@ -5123,8 +5234,9 @@
   ],
   "grammarIds": []
  },
- "en/general/A1/M20-L02": {
+ "en/general/A1/u20-l02": {
   "title": "20.2 Agreeing & Disagreeing Politely",
+  "ref": "M20-L02",
   "items": [
    {
     "text": "Opinion structures (I think, I believe)",
@@ -5157,8 +5269,9 @@
   ],
   "grammarIds": []
  },
- "en/general/A1/M20-L03": {
+ "en/general/A1/u20-l03": {
   "title": "20.3 Expressing Problems & Seeking Help",
+  "ref": "M20-L03",
   "items": [
    {
     "text": "Opinion structures (I think, I believe)",
@@ -5191,8 +5304,9 @@
   ],
   "grammarIds": []
  },
- "en/general/A1/M20-L04": {
+ "en/general/A1/u20-l04": {
   "title": "20.4 Giving Advice & Simple Solutions",
+  "ref": "M20-L04",
   "items": [
    {
     "text": "Opinion structures (I think, I believe)",
@@ -5225,8 +5339,9 @@
   ],
   "grammarIds": []
  },
- "en/general/A1/M20-L05": {
+ "en/general/A1/u20-l05": {
   "title": "20.5 Polite Requests & Permission",
+  "ref": "M20-L05",
   "items": [
    {
     "text": "Opinion structures (I think, I believe)",
@@ -5259,8 +5374,9 @@
   ],
   "grammarIds": []
  },
- "en/general/A1/M20-L06": {
+ "en/general/A1/u20-l06": {
   "title": "20.6 Social Interaction & Opinion Survey Capstone",
+  "ref": "M20-L06",
   "items": [
    {
     "text": "Opinion structures (I think, I believe)",
@@ -5293,8 +5409,9 @@
   ],
   "grammarIds": []
  },
- "en/general/A1/M21-L01": {
+ "en/general/A1/u21-l01": {
   "title": "21.1 At the Airport & Train Station",
+  "ref": "M21-L01",
   "items": [
    {
     "text": "Imperatives & Polite requests",
@@ -5340,8 +5457,9 @@
    "en-a1-imperatives"
   ]
  },
- "en/general/A1/M21-L02": {
+ "en/general/A1/u21-l02": {
   "title": "21.2 At the Hotel & Accommodation",
+  "ref": "M21-L02",
   "items": [
    {
     "text": "Imperatives & Polite requests",
@@ -5387,8 +5505,9 @@
    "en-a1-imperatives"
   ]
  },
- "en/general/A1/M21-L03": {
+ "en/general/A1/u21-l03": {
   "title": "21.3 Medical Emergencies & Pharmacy",
+  "ref": "M21-L03",
   "items": [
    {
     "text": "Imperatives & Polite requests",
@@ -5434,8 +5553,9 @@
    "en-a1-imperatives"
   ]
  },
- "en/general/A1/M21-L04": {
+ "en/general/A1/u21-l04": {
   "title": "21.4 Lost Property & Police Services",
+  "ref": "M21-L04",
   "items": [
    {
     "text": "Imperatives & Polite requests",
@@ -5481,8 +5601,9 @@
    "en-a1-imperatives"
   ]
  },
- "en/general/A1/M21-L05": {
+ "en/general/A1/u21-l05": {
   "title": "21.5 Communication Breakdown & Survival Strategies",
+  "ref": "M21-L05",
   "items": [
    {
     "text": "Imperatives & Polite requests",
@@ -5528,8 +5649,9 @@
    "en-a1-imperatives"
   ]
  },
- "en/general/A1/M21-L06": {
+ "en/general/A1/u21-l06": {
   "title": "21.6 Survival Skills Real-World Roleplay Capstone",
+  "ref": "M21-L06",
   "items": [
    {
     "text": "Imperatives & Polite requests",
@@ -5575,8 +5697,9 @@
    "en-a1-imperatives"
   ]
  },
- "en/general/A1/M22-L01": {
+ "en/general/A1/u22-l01": {
   "title": "22.1 Project 1. My Personal & Professional Profile",
+  "ref": "M22-L01",
   "items": [
    {
     "text": "Present Simple & Past Simple review",
@@ -5651,8 +5774,9 @@
    "en-a1-present-simple"
   ]
  },
- "en/general/A1/M22-L02": {
+ "en/general/A1/u22-l02": {
   "title": "22.2 Project 2. My Daily Routine & Perfect Day",
+  "ref": "M22-L02",
   "items": [
    {
     "text": "Present Simple & Past Simple review",
@@ -5727,8 +5851,9 @@
    "en-a1-present-simple"
   ]
  },
- "en/general/A1/M22-L03": {
+ "en/general/A1/u22-l03": {
   "title": "22.3 Project 3. My Home & Neighborhood Guide",
+  "ref": "M22-L03",
   "items": [
    {
     "text": "Present Simple & Past Simple review",
@@ -5803,8 +5928,9 @@
    "en-a1-present-simple"
   ]
  },
- "en/general/A1/M22-L04": {
+ "en/general/A1/u22-l04": {
   "title": "22.4 Project 4. My Life Journey: Past & Future",
+  "ref": "M22-L04",
   "items": [
    {
     "text": "Present Simple & Past Simple review",
@@ -5879,8 +6005,9 @@
    "en-a1-present-simple"
   ]
  },
- "en/general/A1/M22-L05": {
+ "en/general/A1/u22-l05": {
   "title": "22.5 Project 5. My Opinions & Cultural Perspectives",
+  "ref": "M22-L05",
   "items": [
    {
     "text": "Present Simple & Past Simple review",
@@ -5955,8 +6082,9 @@
    "en-a1-present-simple"
   ]
  },
- "en/general/A1/M22-L06": {
+ "en/general/A1/u22-l06": {
   "title": "22.6 Final A1 Capstone Showcase & Self-Assessment",
+  "ref": "M22-L06",
   "items": [
    {
     "text": "Present Simple & Past Simple review",
@@ -6031,8 +6159,9 @@
    "en-a1-present-simple"
   ]
  },
- "en/general/A2/past-simple": {
+ "en/general/A2/u01-l01": {
   "title": "Past Simple vs Past Continuous",
+  "ref": "past-simple",
   "items": [
    {
     "text": "Past Simple for completed past actions and main storyline events",
@@ -6100,8 +6229,9 @@
    "en-a2-past-simple-review"
   ]
  },
- "en/general/A2/present-perfect": {
+ "en/general/A2/u01-l02": {
   "title": "Past Habits & Life Experiences (Used to & Present Perfect)",
+  "ref": "present-perfect",
   "items": [
    {
     "text": "Used to + infinitive for past habits and states no longer true",
@@ -6176,88 +6306,167 @@
    "en-a2-used-to"
   ]
  },
- "en/general/A2/L1": {
-  "title": "Reported Speech Statements & Backshift",
+ "en/general/A2/u02-l01": {
+  "title": "Obligation & Rules in Housing (Have to / Must / Mustn't)",
+  "ref": 1,
   "items": [
    {
-    "text": "Reported speech for statements (He said that..., She told me that...)",
-    "confidence": "high",
-    "grammarId": "en-a2-reported-speech",
+    "text": "Have to / don't have to for external obligation and lack of obligation",
+    "confidence": "medium",
+    "grammarId": "en-a2-have-to-must-mustnt",
     "alternatives": [
      {
-      "id": "en-a2-reported-speech",
-      "title": "Reported Speech",
-      "score": 0.63
+      "id": "en-a2-have-to-must-mustnt",
+      "title": "Have To, Must, Mustn't, Don't Have To",
+      "score": 0.54
      },
      {
-      "id": "en-b1-reported-speech-statements",
-      "title": "Reported Speech Statements",
-      "score": 0.41
+      "id": "en-a1-have-got",
+      "title": "Have Got",
+      "score": 0.31
      },
      {
-      "id": "en-b1-it-is-said-that",
-      "title": "It Is Said That",
-      "score": 0.28
+      "id": "en-b2-permission-obligation-and-prohibition",
+      "title": "Permission Obligation And Prohibition",
+      "score": 0.18
      }
     ]
    },
    {
-    "text": "Tense backshift rules (Present Simple -> Past Simple)",
+    "text": "Must for strong personal obligation; Mustn't for prohibition",
     "confidence": "medium",
-    "grammarId": "en-a2-present-perfect-vs-past-simple",
+    "grammarId": "en-a2-have-to-must-mustnt",
     "alternatives": [
      {
-      "id": "en-a2-present-perfect-vs-past-simple",
-      "title": "Present Perfect vs Past Simple",
-      "score": 0.78
+      "id": "en-a2-have-to-must-mustnt",
+      "title": "Have To, Must, Mustn't, Don't Have To",
+      "score": 0.48
      },
      {
-      "id": "en-a2-present-and-past-simple-passive",
-      "title": "Present And Past Simple Passive",
-      "score": 0.77
+      "id": "en-b2-permission-obligation-and-prohibition",
+      "title": "Permission Obligation And Prohibition",
+      "score": 0.31
      },
      {
-      "id": "en-a2-past-simple-review",
-      "title": "Past Simple Review",
-      "score": 0.72
-     }
-    ]
-   }
-  ],
-  "grammarIds": [
-   "en-a2-reported-speech"
-  ]
- },
- "en/general/A2/L2": {
-  "title": "A2 General Course Master Review & Consolidation",
-  "items": [
-   {
-    "text": "Comprehensive review of all A2 grammar: past simple/continuous, present perfect, future forms, modals, conditionals, and passive voice",
-    "confidence": "medium",
-    "grammarId": "en-a2-present-and-past-simple-passive",
-    "alternatives": [
-     {
-      "id": "en-a2-present-and-past-simple-passive",
-      "title": "Present And Past Simple Passive",
-      "score": 0.59
-     },
-     {
-      "id": "en-a2-present-perfect-vs-past-simple",
-      "title": "Present Perfect vs Past Simple",
-      "score": 0.59
-     },
-     {
-      "id": "en-a2-present-simple-vs-present-continuous",
-      "title": "Present Simple vs Present Continuous",
-      "score": 0.55
+      "id": "en-b1-have-to-must-should-had-better",
+      "title": "Have To Must Should Had Better",
+      "score": 0.11
      }
     ]
    }
   ],
   "grammarIds": []
  },
- "en/general/A2/present-past-passive": {
+ "en/general/A2/u02-l02": {
+  "title": "Describing Homes & Prepositions of Place",
+  "ref": 2,
+  "items": [
+   {
+    "text": "Prepositions of place and location (opposite, next to, between, across from)",
+    "confidence": "high",
+    "grammarId": "en-a1-prepositions-place",
+    "alternatives": [
+     {
+      "id": "en-a1-prepositions-place",
+      "title": "Prepositions of Place",
+      "score": 0.79
+     },
+     {
+      "id": "en-a1-prepositions-time",
+      "title": "Prepositions of Time",
+      "score": 0.37
+     },
+     {
+      "id": "en-a2-prepositions-of-movement",
+      "title": "Prepositions Of Movement",
+      "score": 0.36
+     }
+    ]
+   },
+   {
+    "text": "There is / There are with quantifiers (some, any, several)",
+    "confidence": "high",
+    "grammarId": "en-a1-some-vs-any",
+    "alternatives": [
+     {
+      "id": "en-a1-some-vs-any",
+      "title": "Some vs Any",
+      "score": 0.73
+     },
+     {
+      "id": "en-a1-there-is-are",
+      "title": "There is / There are",
+      "score": 0.56
+     },
+     {
+      "id": "en-a1-there-was-were",
+      "title": "There was/were & There will be",
+      "score": 0.3
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "en-a1-prepositions-place",
+   "en-a1-some-vs-any"
+  ]
+ },
+ "en/general/A2/u03-l01": {
+  "title": "Workplace Tasks & Verb Collocations (Do vs Make)",
+  "ref": 1,
+  "items": [
+   {
+    "text": "Workplace verb collocations: do business/research vs make a decision/effort",
+    "confidence": "high",
+    "grammarId": "en-a2-do-vs-make",
+    "alternatives": [
+     {
+      "id": "en-a2-do-vs-make",
+      "title": "Do vs Make",
+      "score": 0.81
+     },
+     {
+      "id": "en-a1-play-do-go",
+      "title": "Play vs Do vs Go",
+      "score": 0.29
+     },
+     {
+      "id": "en-a2-review-of-verb-tenses",
+      "title": "Review of Verb Tenses",
+      "score": 0.19
+     }
+    ]
+   },
+   {
+    "text": "Present Simple vs Present Continuous for current projects vs regular job duties",
+    "confidence": "medium",
+    "grammarId": "en-a2-present-simple-vs-present-continuous",
+    "alternatives": [
+     {
+      "id": "en-a2-present-simple-vs-present-continuous",
+      "title": "Present Simple vs Present Continuous",
+      "score": 0.72
+     },
+     {
+      "id": "en-a1-simple-vs-continuous",
+      "title": "Present Simple vs Continuous",
+      "score": 0.66
+     },
+     {
+      "id": "en-a1-present-continuous",
+      "title": "Present Continuous",
+      "score": 0.62
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "en-a2-do-vs-make"
+  ]
+ },
+ "en/general/A2/u03-l02": {
   "title": "Present & Past Passive in Workplace Processes",
+  "ref": "present-past-passive",
   "items": [
    {
     "text": "Present Simple Passive (is/are + past participle) for workflow routines",
@@ -6308,8 +6517,255 @@
    "en-a2-present-and-past-simple-passive"
   ]
  },
- "en/general/A2/indefinite-pronouns": {
+ "en/general/A2/u04-l01": {
+  "title": "Describing Health Symptoms & Giving Advice (Should / Shouldn't)",
+  "ref": 1,
+  "items": [
+   {
+    "text": "Should / shouldn't for health recommendations",
+    "confidence": "high",
+    "grammarId": "en-a2-should-shouldnt",
+    "alternatives": [
+     {
+      "id": "en-a2-should-shouldnt",
+      "title": "Should & Shouldn't",
+      "score": 0.94
+     },
+     {
+      "id": "en-c1-inverted-conditionals-with-should-were-had",
+      "title": "Inverted Conditionals (Should, Were, Had)",
+      "score": 0.18
+     },
+     {
+      "id": "en-b1-have-to-must-should-had-better",
+      "title": "Have To Must Should Had Better",
+      "score": 0.17
+     }
+    ]
+   },
+   {
+    "text": "Expressing physical symptoms (have got a headache, feel dizzy, hurt)",
+    "confidence": "high",
+    "grammarId": "en-a1-have-got",
+    "alternatives": [
+     {
+      "id": "en-a1-have-got",
+      "title": "Have Got",
+      "score": 0.68
+     },
+     {
+      "id": "en-a2-expressing-purpose-to-for",
+      "title": "Expressing Purpose: To vs For",
+      "score": 0.37
+     },
+     {
+      "id": "en-a2-have-to-must-mustnt",
+      "title": "Have To, Must, Mustn't, Don't Have To",
+      "score": 0.22
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "en-a1-have-got",
+   "en-a2-should-shouldnt"
+  ]
+ },
+ "en/general/A2/u04-l02": {
+  "title": "Healthy Lifestyle & Physical Wellbeing",
+  "ref": 2,
+  "items": [
+   {
+    "text": "Adverbs of degree and frequency (extremely, fairly, regularly, rarely)",
+    "confidence": "high",
+    "grammarId": "en-a1-adverbs-frequency",
+    "alternatives": [
+     {
+      "id": "en-a1-adverbs-frequency",
+      "title": "Adverbs of Frequency",
+      "score": 0.8
+     },
+     {
+      "id": "en-a1-adverbs-manner",
+      "title": "Adverbs of Manner",
+      "score": 0.34
+     },
+     {
+      "id": "en-b2-adverbs-position-and-types",
+      "title": "Adverbs Position And Types",
+      "score": 0.17
+     }
+    ]
+   },
+   {
+    "text": "Imperatives for fitness and wellbeing instructions",
+    "confidence": "high",
+    "grammarId": "en-a1-imperatives",
+    "alternatives": [
+     {
+      "id": "en-a1-imperatives",
+      "title": "Imperatives",
+      "score": 0.79
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "en-a1-adverbs-frequency",
+   "en-a1-imperatives"
+  ]
+ },
+ "en/general/A2/u05-l01": {
+  "title": "Booking Travel & Asking for Information (Indirect Questions)",
+  "ref": 1,
+  "items": [
+   {
+    "text": "Indirect questions for polite enquiry (Could you tell me where... / Do you know if...)",
+    "confidence": "medium",
+    "grammarId": "en-a2-question-forms",
+    "alternatives": [
+     {
+      "id": "en-a2-question-forms",
+      "title": "Question Forms",
+      "score": 0.47
+     },
+     {
+      "id": "en-a2-could",
+      "title": "Could: Past Ability & Polite Requests",
+      "score": 0.33
+     },
+     {
+      "id": "en-a1-telling-time",
+      "title": "Telling the Time",
+      "score": 0.32
+     }
+    ]
+   },
+   {
+    "text": "Modals for polite requests (Could I, Would you mind)",
+    "confidence": "medium",
+    "grammarId": "en-a2-could",
+    "alternatives": [
+     {
+      "id": "en-a2-could",
+      "title": "Could: Past Ability & Polite Requests",
+      "score": 0.56
+     },
+     {
+      "id": "en-a1-id-like",
+      "title": "I'd Like / Would You Like…?",
+      "score": 0.37
+     },
+     {
+      "id": "en-b2-used-to-vs-would",
+      "title": "Used To Vs Would",
+      "score": 0.29
+     }
+    ]
+   }
+  ],
+  "grammarIds": []
+ },
+ "en/general/A2/u05-l02": {
+  "title": "Sightseeing & Prepositions of Movement",
+  "ref": 2,
+  "items": [
+   {
+    "text": "Prepositions of movement (along, across, through, past, towards)",
+    "confidence": "high",
+    "grammarId": "en-a2-prepositions-of-movement",
+    "alternatives": [
+     {
+      "id": "en-a2-prepositions-of-movement",
+      "title": "Prepositions Of Movement",
+      "score": 0.81
+     },
+     {
+      "id": "en-a2-past-simple-review",
+      "title": "Past Simple Review",
+      "score": 0.41
+     },
+     {
+      "id": "en-a1-prepositions-time",
+      "title": "Prepositions of Time",
+      "score": 0.35
+     }
+    ]
+   },
+   {
+    "text": "Imperatives and directional phrases for giving directions",
+    "confidence": "high",
+    "grammarId": "en-a1-imperatives",
+    "alternatives": [
+     {
+      "id": "en-a1-imperatives",
+      "title": "Imperatives",
+      "score": 0.76
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "en-a1-imperatives",
+   "en-a2-prepositions-of-movement"
+  ]
+ },
+ "en/general/A2/u06-l01": {
+  "title": "Comparing Options (Comparatives & Superlatives)",
+  "ref": 1,
+  "items": [
+   {
+    "text": "Comparative and superlative adjectives (cheaper, more expensive, the best, as...as)",
+    "confidence": "high",
+    "grammarId": "en-a2-comparatives-and-superlatives",
+    "alternatives": [
+     {
+      "id": "en-a2-comparatives-and-superlatives",
+      "title": "Comparatives And Superlatives",
+      "score": 0.78
+     },
+     {
+      "id": "en-a1-superlative-adjectives",
+      "title": "Superlative Adjectives",
+      "score": 0.69
+     },
+     {
+      "id": "en-a1-comparative-adjectives",
+      "title": "Comparative Adjectives",
+      "score": 0.68
+     }
+    ]
+   },
+   {
+    "text": "Modifying comparatives (a bit cheaper, much better)",
+    "confidence": "medium",
+    "grammarId": "en-b1-modifying-comparatives",
+    "alternatives": [
+     {
+      "id": "en-b1-modifying-comparatives",
+      "title": "Modifying Comparatives",
+      "score": 0.39
+     },
+     {
+      "id": "en-a1-comparative-adjectives",
+      "title": "Comparative Adjectives",
+      "score": 0.34
+     },
+     {
+      "id": "en-a2-comparatives-and-superlatives",
+      "title": "Comparatives And Superlatives",
+      "score": 0.34
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "en-a2-comparatives-and-superlatives"
+  ]
+ },
+ "en/general/A2/u06-l02": {
   "title": "Too & Enough / Indefinite Pronouns",
+  "ref": "indefinite-pronouns",
   "items": [
    {
     "text": "Too + adjective / Adjective + enough for suitability",
@@ -6360,8 +6816,63 @@
    "en-a2-indefinite-pronouns"
   ]
  },
- "en/general/A2/first-conditional-a2": {
+ "en/general/A2/u07-l01": {
+  "title": "Future Plans & Intentions (Will vs Be Going To)",
+  "ref": 1,
+  "items": [
+   {
+    "text": "Be going to for intentions and planned tech upgrades",
+    "confidence": "high",
+    "grammarId": "en-a1-going-to",
+    "alternatives": [
+     {
+      "id": "en-a1-going-to",
+      "title": "Going To",
+      "score": 0.63
+     },
+     {
+      "id": "en-a1-to-be",
+      "title": "The Verb 'To Be'",
+      "score": 0.48
+     },
+     {
+      "id": "en-a2-will-vs-going-to",
+      "title": "Will vs Going To",
+      "score": 0.47
+     }
+    ]
+   },
+   {
+    "text": "Will for spontaneous decisions, predictions, and tech promises",
+    "confidence": "high",
+    "grammarId": "en-a1-will",
+    "alternatives": [
+     {
+      "id": "en-a1-will",
+      "title": "Will",
+      "score": 0.72
+     },
+     {
+      "id": "en-a2-will-vs-going-to",
+      "title": "Will vs Going To",
+      "score": 0.55
+     },
+     {
+      "id": "en-a1-there-was-were",
+      "title": "There was/were & There will be",
+      "score": 0.44
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "en-a1-going-to",
+   "en-a1-will"
+  ]
+ },
+ "en/general/A2/u07-l02": {
   "title": "First Conditional in Tech & Daily Life",
+  "ref": "first-conditional-a2",
   "items": [
    {
     "text": "First conditional: If + Present Simple, Will + infinitive",
@@ -6413,8 +6924,299 @@
    "en-a2-future-time-clauses"
   ]
  },
- "en/general/B1/present-perfect-continuous": {
+ "en/general/A2/u08-l01": {
+  "title": "Gerunds vs Infinitives in Learning Goals",
+  "ref": 1,
+  "items": [
+   {
+    "text": "Verbs followed by gerund (-ing): enjoy, practice, mind, consider",
+    "confidence": "medium",
+    "grammarId": "en-a2-infinitives-and-gerunds",
+    "alternatives": [
+     {
+      "id": "en-a2-infinitives-and-gerunds",
+      "title": "Infinitives & Gerunds",
+      "score": 0.51
+     },
+     {
+      "id": "en-a1-before-after-ing",
+      "title": "Before & After + -ing",
+      "score": 0.39
+     },
+     {
+      "id": "en-a1-verb-patterns-infinitive-ing",
+      "title": "Verb Patterns: Infinitive vs -ing",
+      "score": 0.39
+     }
+    ]
+   },
+   {
+    "text": "Verbs followed by infinitive (to + verb): decide, hope, plan, want, agree",
+    "confidence": "medium",
+    "grammarId": "en-a1-verb-patterns-infinitive-ing",
+    "alternatives": [
+     {
+      "id": "en-a1-verb-patterns-infinitive-ing",
+      "title": "Verb Patterns: Infinitive vs -ing",
+      "score": 0.48
+     },
+     {
+      "id": "en-a2-infinitives-and-gerunds",
+      "title": "Infinitives & Gerunds",
+      "score": 0.48
+     },
+     {
+      "id": "en-b2-verb-object-infinitive-gerund",
+      "title": "Verb Object Infinitive Gerund",
+      "score": 0.29
+     }
+    ]
+   }
+  ],
+  "grammarIds": []
+ },
+ "en/general/A2/u08-l02": {
+  "title": "Second Conditional Intro (Hypothetical Dreams)",
+  "ref": 2,
+  "items": [
+   {
+    "text": "Second conditional intro: If + Past Simple, Would + infinitive for imaginary situations",
+    "confidence": "medium",
+    "grammarId": "en-a2-second-conditional",
+    "alternatives": [
+     {
+      "id": "en-a2-second-conditional",
+      "title": "Second Conditional",
+      "score": 0.61
+     },
+     {
+      "id": "en-a2-past-simple-review",
+      "title": "Past Simple Review",
+      "score": 0.53
+     },
+     {
+      "id": "en-b1-second-conditional",
+      "title": "Second Conditional",
+      "score": 0.34
+     }
+    ]
+   },
+   {
+    "text": "If I were you, I would...",
+    "confidence": "medium",
+    "grammarId": "en-a1-id-like",
+    "alternatives": [
+     {
+      "id": "en-a1-id-like",
+      "title": "I'd Like / Would You Like…?",
+      "score": 0.46
+     },
+     {
+      "id": "en-a1-to-be",
+      "title": "The Verb 'To Be'",
+      "score": 0.4
+     },
+     {
+      "id": "en-a1-past-simple-be",
+      "title": "Past Simple of 'To Be'",
+      "score": 0.32
+     }
+    ]
+   }
+  ],
+  "grammarIds": []
+ },
+ "en/general/A2/u09-l01": {
+  "title": "Defining Relative Clauses (Who, Which, That, Where)",
+  "ref": 1,
+  "items": [
+   {
+    "text": "Defining relative clauses: who for people, which/that for things, where for places",
+    "confidence": "high",
+    "grammarId": "en-a2-defining-relative-clauses",
+    "alternatives": [
+     {
+      "id": "en-a2-defining-relative-clauses",
+      "title": "Defining Relative Clauses",
+      "score": 0.72
+     },
+     {
+      "id": "en-b1-defining-vs-non-defining-relative-clauses",
+      "title": "Defining Vs Non Defining Relative Clauses",
+      "score": 0.32
+     },
+     {
+      "id": "en-a1-who-subject-vs-object",
+      "title": "Who: Subject vs Object Questions",
+      "score": 0.25
+     }
+    ]
+   },
+   {
+    "text": "Omitting relative pronouns when they are object of the clause",
+    "confidence": "medium",
+    "grammarId": "en-a1-pronouns",
+    "alternatives": [
+     {
+      "id": "en-a1-pronouns",
+      "title": "Pronouns",
+      "score": 0.5
+     },
+     {
+      "id": "en-a2-defining-relative-clauses",
+      "title": "Defining Relative Clauses",
+      "score": 0.47
+     },
+     {
+      "id": "en-a2-pronouns-review",
+      "title": "Pronouns Review: Subject, Object, Possessive",
+      "score": 0.41
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "en-a2-defining-relative-clauses"
+  ]
+ },
+ "en/general/A2/u09-l02": {
+  "title": "Question Tags & Social Agreement",
+  "ref": 2,
+  "items": [
+   {
+    "text": "Question tags for checking information and seeking agreement (is it?, don't you?)",
+    "confidence": "medium",
+    "grammarId": "en-a2-question-forms",
+    "alternatives": [
+     {
+      "id": "en-a2-question-forms",
+      "title": "Question Forms",
+      "score": 0.48
+     },
+     {
+      "id": "en-b1-question-tags",
+      "title": "Question Tags",
+      "score": 0.32
+     },
+     {
+      "id": "en-a2-have-to-must-mustnt",
+      "title": "Have To, Must, Mustn't, Don't Have To",
+      "score": 0.23
+     }
+    ]
+   },
+   {
+    "text": "So / Neither for expressing agreement (So do I / Neither am I)",
+    "confidence": "high",
+    "grammarId": "en-a2-so-neither",
+    "alternatives": [
+     {
+      "id": "en-a2-so-neither",
+      "title": "So Neither",
+      "score": 0.65
+     },
+     {
+      "id": "en-a1-to-be",
+      "title": "The Verb 'To Be'",
+      "score": 0.39
+     },
+     {
+      "id": "en-a2-expressing-purpose-to-for",
+      "title": "Expressing Purpose: To vs For",
+      "score": 0.34
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "en-a2-so-neither"
+  ]
+ },
+ "en/general/A2/u10-l01": {
+  "title": "Reported Speech Statements & Backshift",
+  "ref": 1,
+  "items": [
+   {
+    "text": "Reported speech for statements (He said that..., She told me that...)",
+    "confidence": "high",
+    "grammarId": "en-a2-reported-speech",
+    "alternatives": [
+     {
+      "id": "en-a2-reported-speech",
+      "title": "Reported Speech",
+      "score": 0.63
+     },
+     {
+      "id": "en-b1-reported-speech-statements",
+      "title": "Reported Speech Statements",
+      "score": 0.41
+     },
+     {
+      "id": "en-b1-it-is-said-that",
+      "title": "It Is Said That",
+      "score": 0.28
+     }
+    ]
+   },
+   {
+    "text": "Tense backshift rules (Present Simple -> Past Simple)",
+    "confidence": "medium",
+    "grammarId": "en-a2-present-perfect-vs-past-simple",
+    "alternatives": [
+     {
+      "id": "en-a2-present-perfect-vs-past-simple",
+      "title": "Present Perfect vs Past Simple",
+      "score": 0.78
+     },
+     {
+      "id": "en-a2-present-and-past-simple-passive",
+      "title": "Present And Past Simple Passive",
+      "score": 0.77
+     },
+     {
+      "id": "en-a2-past-simple-review",
+      "title": "Past Simple Review",
+      "score": 0.72
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "en-a2-reported-speech"
+  ]
+ },
+ "en/general/A2/u10-l02": {
+  "title": "A2 General Course Master Review & Consolidation",
+  "ref": 2,
+  "items": [
+   {
+    "text": "Comprehensive review of all A2 grammar: past simple/continuous, present perfect, future forms, modals, conditionals, and passive voice",
+    "confidence": "medium",
+    "grammarId": "en-a2-present-and-past-simple-passive",
+    "alternatives": [
+     {
+      "id": "en-a2-present-and-past-simple-passive",
+      "title": "Present And Past Simple Passive",
+      "score": 0.59
+     },
+     {
+      "id": "en-a2-present-perfect-vs-past-simple",
+      "title": "Present Perfect vs Past Simple",
+      "score": 0.59
+     },
+     {
+      "id": "en-a2-present-simple-vs-present-continuous",
+      "title": "Present Simple vs Present Continuous",
+      "score": 0.55
+     }
+    ]
+   }
+  ],
+  "grammarIds": []
+ },
+ "en/general/B1/u01-l01": {
   "title": "Present Perfect Continuous vs Present Perfect Simple",
+  "ref": "present-perfect-continuous",
   "items": [
    {
     "text": "Present Perfect Continuous for ongoing actions and duration up to now",
@@ -6487,8 +7289,9 @@
    "en-b1-present-perfect-simple-vs-continuous"
   ]
  },
- "en/general/B1/modals-of-speculation-present": {
+ "en/general/B1/u01-l02": {
   "title": "Modals of Deduction & Speculation (Present & Past)",
+  "ref": "modals-of-speculation-present",
   "items": [
    {
     "text": "Modals of present deduction (must be, can't be, might/could be)",
@@ -6540,8 +7343,9 @@
    "en-b1-modals-of-deduction-present"
   ]
  },
- "en/general/B1/past-perfect": {
+ "en/general/B1/u02-l01": {
   "title": "Narrative Tenses & Past Perfect Simple / Continuous",
+  "ref": "past-perfect",
   "items": [
    {
     "text": "Past Perfect Simple for actions completed before another past event",
@@ -6614,8 +7418,9 @@
    "en-b1-past-perfect-continuous"
   ]
  },
- "en/general/B1/have-something-done": {
+ "en/general/B1/u02-l02": {
   "title": "Causative Passive (Have / Get Something Done)",
+  "ref": "have-something-done",
   "items": [
    {
     "text": "Have something done / Get something done for arranged professional services",
@@ -6667,60 +7472,60 @@
    "en-b1-passive-with-modals"
   ]
  },
- "en/general/B1/L1": {
-  "title": "Complex Conditionals & Hypothetical Reasoning",
+ "en/general/B1/u03-l01": {
+  "title": "Discourse Connectors & Linking Words Masterclass",
+  "ref": 1,
   "items": [
    {
-    "text": "Mixed conditionals review for moral and ethical dilemmas",
-    "confidence": "high",
-    "grammarId": "en-b1-mixed-conditionals",
+    "text": "Connectors of contrast (however, whereas, on the other hand, despite, in spite of)",
+    "confidence": "medium",
+    "grammarId": "en-a1-conjunctions",
     "alternatives": [
      {
-      "id": "en-b1-mixed-conditionals",
-      "title": "Mixed Conditionals",
-      "score": 0.89
+      "id": "en-a1-conjunctions",
+      "title": "Conjunctions",
+      "score": 0.45
      },
      {
-      "id": "en-b2-mixed-conditionals",
-      "title": "Mixed Conditionals",
-      "score": 0.49
+      "id": "en-b1-another-other-others-the-other",
+      "title": "Another Other Others The Other",
+      "score": 0.33
      },
      {
-      "id": "en-b1-second-conditional",
-      "title": "Second Conditional",
-      "score": 0.35
+      "id": "en-b1-connectors-and-linking-words",
+      "title": "Connectors And Linking Words",
+      "score": 0.26
      }
     ]
    },
    {
-    "text": "In Case vs If / Provided that / As long as",
-    "confidence": "none",
-    "grammarId": null,
+    "text": "Connectors of cause and result (consequently, therefore, due to, as a result)",
+    "confidence": "medium",
+    "grammarId": "en-a1-conjunctions",
     "alternatives": [
      {
-      "id": "en-b1-it-is-said-that",
-      "title": "It Is Said That",
-      "score": 0.37
+      "id": "en-a1-conjunctions",
+      "title": "Conjunctions",
+      "score": 0.52
      },
      {
-      "id": "en-b1-wish-if-only",
-      "title": "Wish If Only",
-      "score": 0.37
+      "id": "en-b1-connectors-and-linking-words",
+      "title": "Connectors And Linking Words",
+      "score": 0.35
      },
      {
-      "id": "en-a1-demonstratives",
-      "title": "This, That, These, Those",
-      "score": 0.25
+      "id": "en-b2-clauses-of-contrast-purpose-reason-and-result",
+      "title": "Clauses Of Contrast Purpose Reason And Result",
+      "score": 0.19
      }
     ]
    }
   ],
-  "grammarIds": [
-   "en-b1-mixed-conditionals"
-  ]
+  "grammarIds": []
  },
- "en/general/B1/indirect-questions": {
+ "en/general/B1/u03-l02": {
   "title": "Embedded Indirect Questions & Politeness",
+  "ref": "indirect-questions",
   "items": [
    {
     "text": "Embedded indirect questions (Do you happen to know whether... / I was wondering if you could clarify...)",
@@ -6769,36 +7574,159 @@
   ],
   "grammarIds": []
  },
- "en/general/B1/L2": {
-  "title": "B1 General Course Master Review & Consolidation",
+ "en/general/B1/u04-l01": {
+  "title": "Second & Third Conditionals + Mixed Conditionals Recognition",
+  "ref": 1,
   "items": [
    {
-    "text": "Comprehensive review of all B1 grammar systems: tenses, passives, conditionals, indirect speech, discourse connectors, and clefts",
+    "text": "Second conditional for hypothetical present policy choices",
     "confidence": "medium",
-    "grammarId": "en-a2-reported-speech",
+    "grammarId": "en-b1-second-conditional",
     "alternatives": [
      {
-      "id": "en-a2-reported-speech",
-      "title": "Reported Speech",
-      "score": 0.51
+      "id": "en-b1-second-conditional",
+      "title": "Second Conditional",
+      "score": 0.7
      },
      {
-      "id": "en-a1-conjunctions",
-      "title": "Conjunctions",
-      "score": 0.4
+      "id": "en-a2-second-conditional",
+      "title": "Second Conditional",
+      "score": 0.64
      },
      {
-      "id": "en-b1-reported-speech-statements",
-      "title": "Reported Speech Statements",
-      "score": 0.39
+      "id": "en-a1-present-simple",
+      "title": "Present Simple",
+      "score": 0.33
+     }
+    ]
+   },
+   {
+    "text": "Third conditional for past environmental decisions (If we had invested in solar...)",
+    "confidence": "high",
+    "grammarId": "en-b1-third-conditional",
+    "alternatives": [
+     {
+      "id": "en-b1-third-conditional",
+      "title": "Third Conditional",
+      "score": 0.64
+     },
+     {
+      "id": "en-a2-past-perfect",
+      "title": "Past Perfect: Had + Past Participle",
+      "score": 0.36
+     },
+     {
+      "id": "en-a2-past-simple-review",
+      "title": "Past Simple Review",
+      "score": 0.34
+     }
+    ]
+   },
+   {
+    "text": "Mixed conditional intro (If we had protected wetlands then, we would have less flooding now)",
+    "confidence": "medium",
+    "grammarId": "en-b1-mixed-conditionals",
+    "alternatives": [
+     {
+      "id": "en-b1-mixed-conditionals",
+      "title": "Mixed Conditionals",
+      "score": 0.59
+     },
+     {
+      "id": "en-b1-have-to-must-should-had-better",
+      "title": "Have To Must Should Had Better",
+      "score": 0.33
+     },
+     {
+      "id": "en-b2-mixed-conditionals",
+      "title": "Mixed Conditionals",
+      "score": 0.32
      }
     ]
    }
   ],
-  "grammarIds": []
+  "grammarIds": [
+   "en-b1-third-conditional"
+  ]
  },
- "en/general/B1/modals-of-obligation": {
+ "en/general/B1/u04-l02": {
+  "title": "Expressing Wishes & Regrets (Wish / If Only)",
+  "ref": 2,
+  "items": [
+   {
+    "text": "Wish + Past Simple for present desires (I wish governments did more)",
+    "confidence": "medium",
+    "grammarId": "en-b1-past-simple-vs-present-perfect",
+    "alternatives": [
+     {
+      "id": "en-b1-past-simple-vs-present-perfect",
+      "title": "Past Simple vs Present Perfect",
+      "score": 0.55
+     },
+     {
+      "id": "en-a2-past-simple-review",
+      "title": "Past Simple Review",
+      "score": 0.54
+     },
+     {
+      "id": "en-a2-present-perfect-vs-past-simple",
+      "title": "Present Perfect vs Past Simple",
+      "score": 0.51
+     }
+    ]
+   },
+   {
+    "text": "Wish + Past Perfect for past regrets (If only we had acted sooner)",
+    "confidence": "high",
+    "grammarId": "en-b1-wish-if-only",
+    "alternatives": [
+     {
+      "id": "en-b1-wish-if-only",
+      "title": "Wish If Only",
+      "score": 0.71
+     },
+     {
+      "id": "en-b1-past-perfect",
+      "title": "Past Perfect",
+      "score": 0.55
+     },
+     {
+      "id": "en-a2-past-perfect",
+      "title": "Past Perfect: Had + Past Participle",
+      "score": 0.46
+     }
+    ]
+   },
+   {
+    "text": "Wish + Would for complaints about annoying habits",
+    "confidence": "none",
+    "grammarId": null,
+    "alternatives": [
+     {
+      "id": "en-b1-wish-if-only",
+      "title": "Wish If Only",
+      "score": 0.33
+     },
+     {
+      "id": "en-b2-used-to-vs-would",
+      "title": "Used To Vs Would",
+      "score": 0.33
+     },
+     {
+      "id": "en-a2-used-to",
+      "title": "Used To: Past Habits & Past States",
+      "score": 0.33
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "en-b1-wish-if-only"
+  ]
+ },
+ "en/general/B1/u05-l01": {
   "title": "Modals of Obligation & Necessity Review (Must, Have to, Should, Had Better)",
+  "ref": "modals-of-obligation",
   "items": [
    {
     "text": "Had better / had better not for urgent warnings",
@@ -6850,8 +7778,62 @@
    "en-b1-neednt-didnt-need-to-neednt-have"
   ]
  },
- "en/general/B1/future-continuous": {
+ "en/general/B1/u05-l02": {
+  "title": "-ed / -ing Adjectives & Verbs of the Senses",
+  "ref": 2,
+  "items": [
+   {
+    "text": "-ed vs -ing adjectives for feelings vs sources (exhausted vs exhausting)",
+    "confidence": "high",
+    "grammarId": "en-b1-ed-ing-adjectives",
+    "alternatives": [
+     {
+      "id": "en-b1-ed-ing-adjectives",
+      "title": "Ed Ing Adjectives",
+      "score": 0.93
+     },
+     {
+      "id": "en-a1-adjectives",
+      "title": "Adjectives",
+      "score": 0.47
+     },
+     {
+      "id": "en-b1-adjective-preposition",
+      "title": "Adjective Preposition",
+      "score": 0.35
+     }
+    ]
+   },
+   {
+    "text": "Verbs of the senses + adjective / + as if + clause (look, sound, feel, taste, smell)",
+    "confidence": "medium",
+    "grammarId": "en-b1-verbs-of-the-senses",
+    "alternatives": [
+     {
+      "id": "en-b1-verbs-of-the-senses",
+      "title": "Verbs Of The Senses",
+      "score": 0.6
+     },
+     {
+      "id": "en-a1-adjectives",
+      "title": "Adjectives",
+      "score": 0.44
+     },
+     {
+      "id": "en-b1-adjective-preposition",
+      "title": "Adjective Preposition",
+      "score": 0.32
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "en-b1-ed-ing-adjectives"
+  ]
+ },
+ "en/general/B1/u06-l01": {
   "title": "Future Continuous & Future Perfect Simple",
+  "ref": "future-continuous",
   "items": [
    {
     "text": "Future Continuous (will be doing) for actions in progress at a future time",
@@ -6902,8 +7884,115 @@
    "en-b1-future-continuous"
   ]
  },
- "en/general/B1/reporting-verbs-b1": {
+ "en/general/B1/u06-l02": {
+  "title": "Relative Clauses (Defining, Non-defining & Whose)",
+  "ref": 2,
+  "items": [
+   {
+    "text": "Non-defining relative clauses with commas for supplementary detail",
+    "confidence": "high",
+    "grammarId": "en-b1-defining-vs-non-defining-relative-clauses",
+    "alternatives": [
+     {
+      "id": "en-b1-defining-vs-non-defining-relative-clauses",
+      "title": "Defining Vs Non Defining Relative Clauses",
+      "score": 0.95
+     },
+     {
+      "id": "en-a2-defining-relative-clauses",
+      "title": "Defining Relative Clauses",
+      "score": 0.74
+     },
+     {
+      "id": "en-b2-relative-clauses-review-and-deepening",
+      "title": "Relative Clauses Review And Deepening",
+      "score": 0.27
+     }
+    ]
+   },
+   {
+    "text": "Possessive relative pronoun whose for people and organizations",
+    "confidence": "medium",
+    "grammarId": "en-a1-possessive-s",
+    "alternatives": [
+     {
+      "id": "en-a1-possessive-s",
+      "title": "Whose…? Possessive ’s",
+      "score": 0.46
+     },
+     {
+      "id": "en-a1-pronouns",
+      "title": "Pronouns",
+      "score": 0.45
+     },
+     {
+      "id": "en-a2-pronouns-review",
+      "title": "Pronouns Review: Subject, Object, Possessive",
+      "score": 0.42
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "en-b1-defining-vs-non-defining-relative-clauses"
+  ]
+ },
+ "en/general/B1/u07-l01": {
+  "title": "Modifying Comparatives & Superlatives",
+  "ref": 1,
+  "items": [
+   {
+    "text": "Modifying comparatives (substantially higher, far more expensive, slightly lower)",
+    "confidence": "high",
+    "grammarId": "en-b1-modifying-comparatives",
+    "alternatives": [
+     {
+      "id": "en-b1-modifying-comparatives",
+      "title": "Modifying Comparatives",
+      "score": 0.83
+     },
+     {
+      "id": "en-a2-comparatives-and-superlatives",
+      "title": "Comparatives And Superlatives",
+      "score": 0.36
+     },
+     {
+      "id": "en-a1-comparative-adjectives",
+      "title": "Comparative Adjectives",
+      "score": 0.34
+     }
+    ]
+   },
+   {
+    "text": "Double comparatives (the more you invest, the higher the return)",
+    "confidence": "none",
+    "grammarId": null,
+    "alternatives": [
+     {
+      "id": "en-b1-modifying-comparatives",
+      "title": "Modifying Comparatives",
+      "score": 0.35
+     },
+     {
+      "id": "en-a2-comparatives-and-superlatives",
+      "title": "Comparatives And Superlatives",
+      "score": 0.33
+     },
+     {
+      "id": "en-a1-comparative-adjectives",
+      "title": "Comparative Adjectives",
+      "score": 0.31
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "en-b1-modifying-comparatives"
+  ]
+ },
+ "en/general/B1/u07-l02": {
   "title": "Reporting Verbs & Reported Questions",
+  "ref": "reporting-verbs-b1",
   "items": [
    {
     "text": "Reporting verbs with specific patterns (advise to, warn against -ing, suggest that)",
@@ -6952,8 +8041,9 @@
   ],
   "grammarIds": []
  },
- "en/general/B1/passive-voice-b1": {
+ "en/general/B1/u08-l01": {
   "title": "Passive Voice Across Tenses (Simple, Continuous, Perfect)",
+  "ref": "passive-voice-b1",
   "items": [
    {
     "text": "Passive voice across tenses (is being developed, has been discovered, will be launched)",
@@ -7004,8 +8094,9 @@
    "en-b1-passive-with-modals"
   ]
  },
- "en/general/B1/phrasal-verbs-b1-lesson-1": {
+ "en/general/B1/u08-l02": {
   "title": "Phrasal Verbs Grammar Patterns & Separation Rules",
+  "ref": "phrasal-verbs-b1-lesson-1",
   "items": [
    {
     "text": "Separable vs non-separable phrasal verbs (carry out research, set up a system)",
@@ -7043,6 +8134,176 @@
       "id": "en-b2-phrasal-verbs-extended-patterns",
       "title": "Phrasal Verbs Extended Patterns",
       "score": 0.26
+     }
+    ]
+   }
+  ],
+  "grammarIds": []
+ },
+ "en/general/B1/u09-l01": {
+  "title": "Basic Cleft Sentences & Structural Emphasis",
+  "ref": 1,
+  "items": [
+   {
+    "text": "It-clefts for focus (It is the artistic expression that captivates...)",
+    "confidence": "medium",
+    "grammarId": "en-b1-it-is-said-that",
+    "alternatives": [
+     {
+      "id": "en-b1-it-is-said-that",
+      "title": "It Is Said That",
+      "score": 0.5
+     },
+     {
+      "id": "en-b2-cleft-sentences-and-emphasis",
+      "title": "Cleft Sentences And Emphasis",
+      "score": 0.18
+     },
+     {
+      "id": "en-c1-cleft-sentences-for-emphasis",
+      "title": "Cleft Sentences for Emphasis",
+      "score": 0.18
+     }
+    ]
+   },
+   {
+    "text": "Wh-clefts for emphasis (What I appreciate most about the exhibition is...)",
+    "confidence": "medium",
+    "grammarId": "en-a2-most-most-of-the-most",
+    "alternatives": [
+     {
+      "id": "en-a2-most-most-of-the-most",
+      "title": "Most Most Of The Most",
+      "score": 0.53
+     },
+     {
+      "id": "en-b1-wh-questions-in-the-past",
+      "title": "Wh Questions In The Past",
+      "score": 0.38
+     },
+     {
+      "id": "en-b2-cleft-sentences-and-emphasis",
+      "title": "Cleft Sentences And Emphasis",
+      "score": 0.37
+     }
+    ]
+   }
+  ],
+  "grammarIds": []
+ },
+ "en/general/B1/u09-l02": {
+  "title": "Question Tags & Conversational Floor Management",
+  "ref": 2,
+  "items": [
+   {
+    "text": "Advanced question tags for checking assumptions and encouraging floor participation",
+    "confidence": "high",
+    "grammarId": "en-b1-question-tags",
+    "alternatives": [
+     {
+      "id": "en-b1-question-tags",
+      "title": "Question Tags",
+      "score": 0.72
+     },
+     {
+      "id": "en-a2-question-forms",
+      "title": "Question Forms",
+      "score": 0.47
+     },
+     {
+      "id": "en-c1-advanced-punctuation-mechanics",
+      "title": "Advanced Punctuation Mechanics",
+      "score": 0.16
+     }
+    ]
+   },
+   {
+    "text": "Interrupting politely and clarifying points",
+    "confidence": "none",
+    "grammarId": null,
+    "alternatives": []
+   }
+  ],
+  "grammarIds": [
+   "en-b1-question-tags"
+  ]
+ },
+ "en/general/B1/u10-l01": {
+  "title": "Complex Conditionals & Hypothetical Reasoning",
+  "ref": 1,
+  "items": [
+   {
+    "text": "Mixed conditionals review for moral and ethical dilemmas",
+    "confidence": "high",
+    "grammarId": "en-b1-mixed-conditionals",
+    "alternatives": [
+     {
+      "id": "en-b1-mixed-conditionals",
+      "title": "Mixed Conditionals",
+      "score": 0.89
+     },
+     {
+      "id": "en-b2-mixed-conditionals",
+      "title": "Mixed Conditionals",
+      "score": 0.49
+     },
+     {
+      "id": "en-b1-second-conditional",
+      "title": "Second Conditional",
+      "score": 0.35
+     }
+    ]
+   },
+   {
+    "text": "In Case vs If / Provided that / As long as",
+    "confidence": "none",
+    "grammarId": null,
+    "alternatives": [
+     {
+      "id": "en-b1-it-is-said-that",
+      "title": "It Is Said That",
+      "score": 0.37
+     },
+     {
+      "id": "en-b1-wish-if-only",
+      "title": "Wish If Only",
+      "score": 0.37
+     },
+     {
+      "id": "en-a1-demonstratives",
+      "title": "This, That, These, Those",
+      "score": 0.25
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "en-b1-mixed-conditionals"
+  ]
+ },
+ "en/general/B1/u10-l02": {
+  "title": "B1 General Course Master Review & Consolidation",
+  "ref": 2,
+  "items": [
+   {
+    "text": "Comprehensive review of all B1 grammar systems: tenses, passives, conditionals, indirect speech, discourse connectors, and clefts",
+    "confidence": "medium",
+    "grammarId": "en-a2-reported-speech",
+    "alternatives": [
+     {
+      "id": "en-a2-reported-speech",
+      "title": "Reported Speech",
+      "score": 0.51
+     },
+     {
+      "id": "en-a1-conjunctions",
+      "title": "Conjunctions",
+      "score": 0.4
+     },
+     {
+      "id": "en-b1-reported-speech-statements",
+      "title": "Reported Speech Statements",
+      "score": 0.39
      }
     ]
    }

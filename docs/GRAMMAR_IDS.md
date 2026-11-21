@@ -39,12 +39,32 @@ Limits: scoring is tuned on English. Other languages need their own synonym tabl
 
 | Lang | Levels | Lessons with `grammarIds` | Items high / medium / none | Notes |
 |---|---|---|---|---|
-| en | A1-B1 | 125 | 210 / 92 / 28 | A2/B1 lessons are mostly title-only; use `roadmaps/grammar-en-*.json` |
+| en | A1-B1 | 128 (A1 99, A2 15, B1 14) | 210 / 91 / 29 | A2/B1 lessons are mostly title-only; use `roadmaps/grammar-en-*.json` |
 | fr | A1-C2 | 249 | 443 / 116 / 31 | B1-C2 manual titles match curriculum text almost word for word; A1 is the weak level |
-| ru | A1-C2 | 102 (A1: 92, A2: 10) | 183 / 242 / 161 | Manuals have few B1-C2 pages (127), so B1-C2 have no high matches; all medium rows need review |
+| ru | A1-C2 | 143 (A1 92, A2 18, B1 13, B2 5, C1 7, C2 8) | 183 / 242 / 161 | Manuals have few B1-C2 pages, so most B1-C2 items are medium and need review |
 | it | A1 | 79 | 79 / 110 / 55 | Only A1 is in scope (A2-C2 sit in `_out_of_scope`); manuals have 60 pages in total |
 
-Review `review-<lang>-general.csv` (column `reviewer_decision`) for every medium row before applying more IDs.
+Review `review-<lang>-general.csv` before applying more IDs. Two columns matter:
+`reviewer_decision` is for the human reviewer and is left empty; `draft_decision`, `draft_ids` and
+`draft_note` hold decisions drafted by Claude for every medium row (see "Draft decisions" below).
+
+### Correction (lesson keys)
+
+The first versions of `map_grammar_ids.py` and `apply_mapping.py` identified a lesson by its `code`,
+`slug` or `lesson` number. Those are not unique: in French A2-C2, Russian A2+ and part of English
+A2/B1 the lesson number restarts in every unit (French B1: 50 lessons, 5 distinct keys), so several
+lessons received the IDs of another lesson. Lessons are now identified by position
+(`u<unit>-l<lesson>`, always unique), the matcher asserts that no key repeats, and `apply_mapping.py`
+replaces any existing `grammarIds` instead of keeping them. A1 files were never affected because they
+have unique `code` fields.
+
+### Draft decisions for medium rows
+
+`decisions-<lang>.json` lists, for every distinct medium pair, a drafted decision:
+`accept` (proposed page is right), `accept+` (right, and more pages apply), `replace` (use the listed
+pages instead) or `reject` (the manuals have no suitable page; most rejects are real gaps, for example
+no page on possessive adjectives, "Let's...", weather, or payment prepositions). Every id in the drafts
+is validated against the registry. These are drafts: nothing has been applied to the curricula yet.
 
 ## The `grammar-focus` lesson element (implemented)
 

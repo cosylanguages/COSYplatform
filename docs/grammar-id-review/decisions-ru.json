@@ -1,0 +1,1577 @@
+{
+ "lang": "ru",
+ "status": "DRAFT - suggested by Claude, not yet confirmed by a reviewer",
+ "decisions": [
+  {
+   "grammar_text": "Личные местоимения + Глагол \"быть\" (опущение в настоящем времени)",
+   "proposed_id": "ru-a1-bez-glagola-byt",
+   "decision": "accept+",
+   "ids": [
+    "ru-a1-bez-glagola-byt",
+    "ru-a1-lichnye-mestoimeniya-i-nulevaya-svyazka"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Род имен существительных (введение)",
+   "proposed_id": "ru-a1-noun-gender",
+   "decision": "accept+",
+   "ids": [
+    "ru-a1-noun-gender",
+    "ru-a1-rod-imyen-sushchestvitelnykh"
+   ],
+   "note": "near-duplicate page"
+  },
+  {
+   "grammar_text": "Вежливые просьбы (Скажите, пожалуйста)",
+   "proposed_id": "ru-a1-vezhlivye-prosby-i-poveleniya",
+   "decision": "accept",
+   "ids": [
+    "ru-a1-vezhlivye-prosby-i-poveleniya"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Глагол 'говорить' + 'по-русски', 'могу'",
+   "proposed_id": "ru-a1-poryadok-slov-v-predlozhenii",
+   "decision": "reject",
+   "ids": [],
+   "note": "gap: no page on govorit / mogu; word-order page is wrong"
+  },
+  {
+   "grammar_text": "Прилагательные характера и модификаторы степени ('очень', 'немного')",
+   "proposed_id": "ru-a1-prilagatelnye",
+   "decision": "accept",
+   "ids": [
+    "ru-a1-prilagatelnye"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Глаголы 'знать', 'познакомиться' и предлоги контекста",
+   "proposed_id": "ru-a1-predlogi-vremeni",
+   "decision": "reject",
+   "ids": [],
+   "note": "gap: no page on znat / poznakomitsya"
+  },
+  {
+   "grammar_text": "Глаголы настоящего времени и Повелительное наклонение",
+   "proposed_id": "ru-a1-bez-glagola-byt",
+   "decision": "replace",
+   "ids": [
+    "ru-a1-nastoyashchee-vremya",
+    "ru-a1-povelitelnoe-naklonenie"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Вопросы о времени и называние часов",
+   "proposed_id": "ru-a1-vremya-i-chasy",
+   "decision": "accept",
+   "ids": [
+    "ru-a1-vremya-i-chasy"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Предлоги времени с днями и месяцами",
+   "proposed_id": "ru-a1-predlogi-vremeni",
+   "decision": "accept+",
+   "ids": [
+    "ru-a1-predlogi-vremeni",
+    "ru-a1-dni-nedeli-i-mesyatsy"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Возвратные глаголы и Настоящее время привычных действий",
+   "proposed_id": "ru-a1-bez-glagola-byt",
+   "decision": "replace",
+   "ids": [
+    "ru-a1-nastoyashchee-vremya"
+   ],
+   "note": "proposed page is about omitting byt"
+  },
+  {
+   "grammar_text": "Вопросы настоящего времени и назначение встреч",
+   "proposed_id": "ru-a1-bez-glagola-byt",
+   "decision": "replace",
+   "ids": [
+    "ru-a1-nastoyashchee-vremya",
+    "ru-a1-voprositelnye-slova"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Глаголы 'есть' и 'пить' в настоящем времени",
+   "proposed_id": "ru-a1-bez-glagola-byt",
+   "decision": "replace",
+   "ids": [
+    "ru-a1-nastoyashchee-vremya",
+    "ru-a1-osobye-glagoly-zhit-pisat-pit"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Вежливые конструкции просьбы ('Я хотел бы...')",
+   "proposed_id": "ru-a1-ya-khotel-by-khotite",
+   "decision": "accept",
+   "ids": [
+    "ru-a1-ya-khotel-by-khotite"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Сколько стоит / стоят...?",
+   "proposed_id": "ru-a1-mnogo-malo-skolko",
+   "decision": "accept",
+   "ids": [
+    "ru-a1-mnogo-malo-skolko"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Предлоги и падежи при оплате (картой, наличными)",
+   "proposed_id": "ru-a1-predlogi-vremeni",
+   "decision": "replace",
+   "ids": [
+    "ru-a1-tvoritelnyy-padezh"
+   ],
+   "note": "kartoy / nalichnymi are instrumental"
+  },
+  {
+   "grammar_text": "Конструкции со словом 'болит / болят'",
+   "proposed_id": "ru-a1-voprositelnye-slova",
+   "decision": "reject",
+   "ids": [],
+   "note": "gap: no page on bolit / bolyat"
+  },
+  {
+   "grammar_text": "Настоящее время для работы и учебы",
+   "proposed_id": "ru-a1-bez-glagola-byt",
+   "decision": "replace",
+   "ids": [
+    "ru-a1-nastoyashchee-vremya"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Конструкция 'Здесь есть / Находятся'",
+   "proposed_id": "ru-a1-narechiya-mesta-i-napravleniya",
+   "decision": "reject",
+   "ids": [],
+   "note": "gap: no page on Zdes est / Nakhodyatsya"
+  },
+  {
+   "grammar_text": "Настоящее время для погоды",
+   "proposed_id": "ru-a1-bez-glagola-byt",
+   "decision": "replace",
+   "ids": [
+    "ru-a1-nastoyashchee-vremya"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Настоящее время для цифровых привычек",
+   "proposed_id": "ru-a1-bez-glagola-byt",
+   "decision": "replace",
+   "ids": [
+    "ru-a1-nastoyashchee-vremya"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Глаголы приглашения и поздравления",
+   "proposed_id": "ru-a1-glagoly-dvizheniya",
+   "decision": "reject",
+   "ids": [],
+   "note": "vocabulary-style lesson; motion verbs page is wrong"
+  },
+  {
+   "grammar_text": "Винительный падеж существительных (подарок, праздник)",
+   "proposed_id": "ru-a1-vinitelnyy-padezh-neodushevlennye",
+   "decision": "accept+",
+   "ids": [
+    "ru-a1-vinitelnyy-padezh-neodushevlennye",
+    "ru-a1-vinitelnyy-padezh"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Будущее время глаголов (буду делать / сделаю)",
+   "proposed_id": "ru-a1-budushchee-vremya",
+   "decision": "accept+",
+   "ids": [
+    "ru-a1-budushchee-vremya",
+    "ru-a1-budushchee-vremya-slozhashchee"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Согласование прилагательных",
+   "proposed_id": "ru-a1-soglasovanie-prilagatelnykh",
+   "decision": "accept",
+   "ids": [
+    "ru-a1-soglasovanie-prilagatelnykh"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Модальные слова (нужно, следует, можно) и вежливые просьбы",
+   "proposed_id": "ru-a1-mozhno-nelzya-nuzhno",
+   "decision": "accept+",
+   "ids": [
+    "ru-a1-mozhno-nelzya-nuzhno",
+    "ru-a1-konstruktsii-mozhno-nelzya-nuzhno",
+    "ru-a1-vezhlivye-prosby-i-poveleniya"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Сводное повторение прошедшего, настоящего и будущего времени",
+   "proposed_id": "ru-a1-to-be",
+   "decision": "replace",
+   "ids": [
+    "ru-a1-proshedshee-vremya",
+    "ru-a1-nastoyashchee-vremya",
+    "ru-a1-budushchee-vremya"
+   ],
+   "note": "review lesson"
+  },
+  {
+   "grammar_text": "НСВ для процесса и повторяющихся действий (писал, читал)",
+   "proposed_id": "ru-a2-vidy-glagola-osnovy-nsv-sv",
+   "decision": "accept",
+   "ids": [
+    "ru-a2-vidy-glagola-osnovy-nsv-sv"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "СВ для результата и однократного действия (написал, прочитал)",
+   "proposed_id": "ru-a2-vidy-glagola-osnovy-nsv-sv",
+   "decision": "accept",
+   "ids": [
+    "ru-a2-vidy-glagola-osnovy-nsv-sv"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Винительный падеж с предлогами в/на (Куда? в прошлую среду, на прошлую неделю)",
+   "proposed_id": "ru-a1-vinitelnyy-padezh",
+   "decision": "accept+",
+   "ids": [
+    "ru-a1-vinitelnyy-padezh",
+    "ru-a1-vinitelnyy-padezh-napravlenie"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Окончания существительных и прилагательных в винительном падеже",
+   "proposed_id": "ru-a1-vinitelnyy-padezh",
+   "decision": "accept+",
+   "ids": [
+    "ru-a1-vinitelnyy-padezh",
+    "ru-a1-vinitelnyy-padezh-neodushevlennye"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Счет времени и лет (два года, пять лет)",
+   "proposed_id": "ru-a1-dni-nedeli-i-mesyatsy",
+   "decision": "reject",
+   "ids": [],
+   "note": "gap: no page on counting years (dva goda, pyat let)"
+  },
+  {
+   "grammar_text": "Связный рассказ в прошедшем времени с временными союзами (когда, когда я был...)",
+   "proposed_id": "ru-a2-vremenni-soyuzy-kogda-poka-posle-togo-kak",
+   "decision": "accept+",
+   "ids": [
+    "ru-a2-vremenni-soyuzy-kogda-poka-posle-togo-kak",
+    "ru-a1-proshedshee-vremya"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Конструкция 'Если + настоящее/будущее, то + будущее'",
+   "proposed_id": "ru-a1-budushchee-vremya",
+   "decision": "replace",
+   "ids": [
+    "ru-a1-esli-realnoe-uslovie"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Реальное условие в будущем",
+   "proposed_id": "ru-a1-esli-realnoe-uslovie",
+   "decision": "accept",
+   "ids": [
+    "ru-a1-esli-realnoe-uslovie"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Глаголы с инфинитивом (хотеть, собираться, планировать, мечтать)",
+   "proposed_id": "ru-a1-osobyy-glagol-khotet",
+   "decision": "accept+",
+   "ids": [
+    "ru-a1-osobyy-glagol-khotet",
+    "ru-a1-glagol-khotet"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Дательный падеж для выражения возраста и необходимости (мне нужно, ему надо)",
+   "proposed_id": "ru-a1-datelnyy-padezh",
+   "decision": "accept+",
+   "ids": [
+    "ru-a1-datelnyy-padezh",
+    "ru-a1-datelnyy-padezh-vozrast-i-adresat"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Сослагательное наклонение (прошедшее время + бы)",
+   "proposed_id": "ru-a2-soslagatelnoe-naklonenie-by",
+   "decision": "accept",
+   "ids": [
+    "ru-a2-soslagatelnoe-naklonenie-by"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Выражение желаний (Я хотел бы, Я мечтал бы)",
+   "proposed_id": "ru-a1-ya-khotel-by-khotite",
+   "decision": "accept",
+   "ids": [
+    "ru-a1-ya-khotel-by-khotite"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Предложный падеж существительных и прилагательных (Где? в большом доме, на улице)",
+   "proposed_id": "ru-a2-predlozhnyy-padezh-prilagatelnykh-i-mestoimeniy",
+   "decision": "accept+",
+   "ids": [
+    "ru-a2-predlozhnyy-padezh-prilagatelnykh-i-mestoimeniy",
+    "ru-a1-predlozhnyy-padezh"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Сравнительная степень (более + прил. / суффикс -ее: красивее, быстрее)",
+   "proposed_id": "ru-a1-sravnitelnaya-stepen-bolee-i-sufiks-ee",
+   "decision": "accept",
+   "ids": [
+    "ru-a1-sravnitelnaya-stepen-bolee-i-sufiks-ee"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Разница между однонаправленным (идти/ехать) и многонаправленным/регулярным (ходить/ездить) движением",
+   "proposed_id": "ru-a1-glagoly-dvizheniya-idti-ekhat",
+   "decision": "accept+",
+   "ids": [
+    "ru-a1-glagoly-dvizheniya-idti-ekhat",
+    "ru-a1-glagoly-dvizheniya-khodit-ezdit"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Предлоги места и направления (напротив, около, мимо, вдоль)",
+   "proposed_id": "ru-a1-predlogi-mesta",
+   "decision": "accept",
+   "ids": [
+    "ru-a1-predlogi-mesta"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Безличные предложения о состоянии (мне плохо, ему тошно, ей жарко)",
+   "proposed_id": "ru-a2-datelnyy-padezh-bezlichnye-predlozheniya",
+   "decision": "accept",
+   "ids": [
+    "ru-a2-datelnyy-padezh-bezlichnye-predlozheniya"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Творительный падеж занятия спортом (заниматься спортом, увлекаться плаванием)",
+   "proposed_id": "ru-a1-tvoritelnyy-padezh",
+   "decision": "accept",
+   "ids": [
+    "ru-a1-tvoritelnyy-padezh"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Конструкции времени (во сколько? в 15:00, во вторник)",
+   "proposed_id": "ru-a1-vremya-i-chasy",
+   "decision": "accept+",
+   "ids": [
+    "ru-a1-vremya-i-chasy",
+    "ru-a1-predlogi-vremeni"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Глаголы с частицей -ся (волноваться, радоваться, сердиться + Дательный падеж)",
+   "proposed_id": "ru-a1-datelnyy-padezh",
+   "decision": "replace",
+   "ids": [
+    "ru-a2-vozvratnye-glagoly-na-sya"
+   ],
+   "note": "proposed dative page is wrong"
+  },
+  {
+   "grammar_text": "Прилагательные эмоционального состояния",
+   "proposed_id": "ru-a1-prilagatelnye",
+   "decision": "accept",
+   "ids": [
+    "ru-a1-prilagatelnye"
+   ],
+   "note": "generic adjectives page"
+  },
+  {
+   "grammar_text": "Родительный падеж количества (килограмм яблок, много хлеба)",
+   "proposed_id": "ru-a1-roditelnyy-padezh",
+   "decision": "accept",
+   "ids": [
+    "ru-a1-roditelnyy-padezh"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Склонение указательных местоимений этот, эта, это, эти",
+   "proposed_id": "ru-a1-lichnye-mestoimeniya-padezhi",
+   "decision": "replace",
+   "ids": [
+    "ru-a1-ukazatelnye-mestoimeniya-etot-eta-eto-eti"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Причинно-следственные союзы (потому что, так как)",
+   "proposed_id": "ru-a2-soyuzy-prichiny-i-sledstviya-poetomu-tak-kak",
+   "decision": "accept+",
+   "ids": [
+    "ru-a2-soyuzy-prichiny-i-sledstviya-poetomu-tak-kak",
+    "ru-a1-soyuzy-prichiny-potomu-chto-tak-kak"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Глаголы платить / заплатить, переводить / перевести",
+   "proposed_id": "ru-a1-glagoly-dvizheniya",
+   "decision": "reject",
+   "ids": [],
+   "note": "gap: no page on platit / zaplatit; motion verbs page is wrong"
+  },
+  {
+   "grammar_text": "Дательный и Творительный падежи при финансовых операциях",
+   "proposed_id": "ru-a1-datelnyy-padezh",
+   "decision": "accept+",
+   "ids": [
+    "ru-a1-datelnyy-padezh",
+    "ru-a1-tvoritelnyy-padezh"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Образование пар НСВ/СВ (приходить/прийти, уезжать/уехать)",
+   "proposed_id": "ru-a2-vidy-glagola-v-budushchem-vremeni",
+   "decision": "replace",
+   "ids": [
+    "ru-a2-vidovye-pary-glagolov"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Конструкции с предлогами к, от, до",
+   "proposed_id": "ru-a1-predlogi-vremeni",
+   "decision": "replace",
+   "ids": [
+    "ru-a2-datelnyy-padezh-predlogi-k-i-po",
+    "ru-a2-roditelnyy-padezh-predlogi-iz-ot-do-dlya-bez"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Родительный падеж даты (с какого по какое число)",
+   "proposed_id": "ru-a2-roditelnyy-padezh-mnozhestvennogo-chisla",
+   "decision": "replace",
+   "ids": [
+    "ru-a1-roditelnyy-padezh"
+   ],
+   "note": "proposed page is plural genitive"
+  },
+  {
+   "grammar_text": "Связка 'который' в разных падежах (музей, который мы посетили; гид, с которым мы говорили)",
+   "proposed_id": "ru-a1-kotoryy",
+   "decision": "replace",
+   "ids": [
+    "ru-a2-kotoryi-v-kosvennyh-padezhah"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Возвратные глаголы в профессиональном контексте (заниматься, встречаться, готовиться)",
+   "proposed_id": "ru-a2-vozvratnye-glagoly-na-sya",
+   "decision": "accept",
+   "ids": [
+    "ru-a2-vozvratnye-glagoly-na-sya"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Творительный падеж с предлогом с (встреча с клиентом)",
+   "proposed_id": "ru-a2-tvoritelnyy-padezh-predlogi-za-pod-nad-peryed",
+   "decision": "replace",
+   "ids": [
+    "ru-a1-tvoritelnyy-padezh"
+   ],
+   "note": "proposed page is spatial prepositions, lesson is 's' (with)"
+  },
+  {
+   "grammar_text": "Дательный падеж помощи (помогать / помочь кому? коллеге)",
+   "proposed_id": "ru-a1-datelnyy-padezh",
+   "decision": "accept",
+   "ids": [
+    "ru-a1-datelnyy-padezh"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Формулы благодарности и поддержки на работе",
+   "proposed_id": "ru-a1-vezhlivye-prosby-i-poveleniya",
+   "decision": "accept",
+   "ids": [
+    "ru-a1-vezhlivye-prosby-i-poveleniya"
+   ],
+   "note": "weak: closest politeness-formulas page"
+  },
+  {
+   "grammar_text": "Прилагательные оценки (потрясающий, скучный, затягивающий)",
+   "proposed_id": "ru-a1-prilagatelnye",
+   "decision": "accept",
+   "ids": [
+    "ru-a1-prilagatelnye"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Дательный падеж нравиться / понравиться (мне понравился фильм)",
+   "proposed_id": "ru-a1-datelnyy-padezh",
+   "decision": "accept+",
+   "ids": [
+    "ru-a1-datelnyy-padezh",
+    "ru-a1-lyubit-nravitsya"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Короткие придаточные причины и следствия (так как, поэтому)",
+   "proposed_id": "ru-a1-soyuzy-prichiny-potomu-chto-tak-kak",
+   "decision": "accept+",
+   "ids": [
+    "ru-a1-soyuzy-prichiny-potomu-chto-tak-kak",
+    "ru-a2-soyuzy-prichiny-i-sledstviya-poetomu-tak-kak"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Связка 'главный герой'",
+   "proposed_id": "ru-a1-lichnye-mestoimeniya-i-nulevaya-svyazka",
+   "decision": "reject",
+   "ids": [],
+   "note": "proposed page is unrelated"
+  },
+  {
+   "grammar_text": "Родительный частичный (попробуйте сока, дайте хлеба)",
+   "proposed_id": "ru-a1-roditelnyy-padezh",
+   "decision": "accept",
+   "ids": [
+    "ru-a1-roditelnyy-padezh"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Творительный падеж времени года (зимой, летом, весной, осенью)",
+   "proposed_id": "ru-a1-tvoritelnyy-padezh",
+   "decision": "accept",
+   "ids": [
+    "ru-a1-tvoritelnyy-padezh"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Безличные глаголы природы (подмораживает, тает, смеркается)",
+   "proposed_id": "ru-a2-bezlichnye-glagoly-mne-ne-seditsya",
+   "decision": "accept",
+   "ids": [
+    "ru-a2-bezlichnye-glagoly-mne-ne-seditsya"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Глаголы защиты и сохранения (защищать, беречь, перерабатывать)",
+   "proposed_id": "ru-a1-glagoly-dvizheniya",
+   "decision": "reject",
+   "ids": [],
+   "note": "vocabulary-style lesson; motion verbs page is wrong"
+  },
+  {
+   "grammar_text": "Множественное число одушевленных существительных во всех падежах",
+   "proposed_id": "ru-a2-roditelnyy-padezh-mnozhestvennogo-chisla",
+   "decision": "replace",
+   "ids": [
+    "ru-a1-mnozhestvennoe-chislo"
+   ],
+   "note": "proposed page is genitive plural only"
+  },
+  {
+   "grammar_text": "Глаголы движения в условиях природы (подняться в гору, идти по лесу)",
+   "proposed_id": "ru-a1-glagoly-dvizheniya",
+   "decision": "accept",
+   "ids": [
+    "ru-a1-glagoly-dvizheniya"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Сложноподчиненные предложения следствия",
+   "proposed_id": "ru-b1-sloznopodchinennye-izyasnitelnye-s-soyuzom-chto-chtoby",
+   "decision": "reject",
+   "ids": [],
+   "note": "proposed page is about izyasnitelnye clauses, not consequence"
+  },
+  {
+   "grammar_text": "Систематизация окончаний всех 6 падежей в единственном и множественном числе",
+   "proposed_id": "ru-a2-roditelnyy-padezh-mnozhestvennogo-chisla",
+   "decision": "reject",
+   "ids": [],
+   "note": "systematisation lesson across all cases; no single page"
+  },
+  {
+   "grammar_text": "Приставочные и бесприставочные глаголы движения",
+   "proposed_id": "ru-a2-glagoly-dvizheniya-bez-pristavok",
+   "decision": "accept+",
+   "ids": [
+    "ru-a2-glagoly-dvizheniya-bez-pristavok",
+    "ru-a2-pristavochnye-glagoly-dvizheniya"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Союзы и связующие слова для построения связного текста (потому что, поэтому, хотя, который)",
+   "proposed_id": "ru-a1-kotoryy",
+   "decision": "replace",
+   "ids": [
+    "ru-a1-soyuzy"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Вводные слова и конструкции (совершенно верно, я сомнениях, вряд ли)",
+   "proposed_id": "ru-b1-vvodnye-slova-poryadok-mysley",
+   "decision": "accept+",
+   "ids": [
+    "ru-b1-vvodnye-slova-poryadok-mysley",
+    "ru-b1-vvodnye-slova-stepen-dostovernosti"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Конструкция 'чтобы + инфинитивой' (при совпадении субъектов)",
+   "proposed_id": "ru-a1-soyuzy-tseli-chtoby",
+   "decision": "accept",
+   "ids": [
+    "ru-a1-soyuzy-tseli-chtoby"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Конструкция 'чтобы + прошедшее время' (при разных субъектах)",
+   "proposed_id": "ru-a1-proshedshee-vremya",
+   "decision": "replace",
+   "ids": [
+    "ru-b1-soyuzy-tseli-dlya-togo-chtoby"
+   ],
+   "note": "proposed past-tense page is wrong"
+  },
+  {
+   "grammar_text": "Изменение местоимений при косвенной речи",
+   "proposed_id": "ru-b1-kosvennaya-rech-izmenenie-mestoimeniy-i-glagolov",
+   "decision": "accept",
+   "ids": [
+    "ru-b1-kosvennaya-rech-izmenenie-mestoimeniy-i-glagolov"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Отглагольные существительные для описания функций (руководство, управление, разработка)",
+   "proposed_id": "ru-b1-otglagolnye-sushchestvitelnye-vvedenie",
+   "decision": "accept",
+   "ids": [
+    "ru-b1-otglagolnye-sushchestvitelnye-vvedenie"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Полная и краткая формы прилагательных в деловом стиле",
+   "proposed_id": "ru-a1-kratkie-prilagatelnye",
+   "decision": "accept+",
+   "ids": [
+    "ru-a1-kratkie-prilagatelnye",
+    "ru-a1-prilagatelnye"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Глаголы совершенного вида для презентации успехов",
+   "proposed_id": "ru-b1-deeprichastie-sovershennogo-vida",
+   "decision": "replace",
+   "ids": [
+    "ru-a1-sovershennyy-i-nesovershennyy-vid"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Уступительные конструкции в деловых переговорах (при условии если, в случае если)",
+   "proposed_id": "ru-b1-soyuzy-usloviya-pri-uslovii-esli-by",
+   "decision": "replace",
+   "ids": [
+    "ru-b1-soyuzy-ustupki-nesmotrya-na-vopreki"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Сложные предлоги (в течение, ввиду, в связи с)",
+   "proposed_id": "ru-b1-soyuzy-prichiny-blagodarya-iz-za-vvidu",
+   "decision": "accept",
+   "ids": [
+    "ru-b1-soyuzy-prichiny-blagodarya-iz-za-vvidu"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Глаголы разрешения конфликтов",
+   "proposed_id": "ru-a1-glagoly-dvizheniya",
+   "decision": "reject",
+   "ids": [],
+   "note": "vocabulary-style lesson; motion verbs page is wrong"
+  },
+  {
+   "grammar_text": "Газетно-публицистические обороты",
+   "proposed_id": "ru-b1-deeprichastnyy-oborot-i-ego-normy",
+   "decision": "reject",
+   "ids": [],
+   "note": "stylistic topic; no matching page"
+  },
+  {
+   "grammar_text": "Причастия настоящего времени (действительные на -ущ-/-ющ-, -ащ-/-ящ-: читающий, работающий)",
+   "proposed_id": "ru-b1-stradatelnye-prichastiya-nastoyashchego-i-proshedshego",
+   "decision": "replace",
+   "ids": [
+    "ru-b1-prichastnyy-oborot-i-punktuatsiya"
+   ],
+   "note": "proposed page is passive participles, lesson is active"
+  },
+  {
+   "grammar_text": "Глаголы интернет-коммуникации",
+   "proposed_id": "ru-a1-glagoly-dvizheniya",
+   "decision": "reject",
+   "ids": [],
+   "note": "vocabulary-style lesson; motion verbs page is wrong"
+  },
+  {
+   "grammar_text": "Причастия прошедшего времени (действительные на -вш-, -ш-: прочитавший, сказавший)",
+   "proposed_id": "ru-b1-stradatelnye-prichastiya-nastoyashchego-i-proshedshego",
+   "decision": "replace",
+   "ids": [
+    "ru-b1-prichastnyy-oborot-i-punktuatsiya"
+   ],
+   "note": "proposed page is passive participles, lesson is active"
+  },
+  {
+   "grammar_text": "Сравнительные конструкции с родителем и союзом 'чем'",
+   "proposed_id": "ru-a2-sravnenie-s-soyuzom-chem-i-roditelnym-padezhem",
+   "decision": "accept",
+   "ids": [
+    "ru-a2-sravnenie-s-soyuzom-chem-i-roditelnym-padezhem"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Рецензирование и оценка",
+   "proposed_id": "ru-b1-datelnyy-padezh-subyekta-otsenki",
+   "decision": "accept",
+   "ids": [
+    "ru-b1-datelnyy-padezh-subyekta-otsenki"
+   ],
+   "note": "weak"
+  },
+  {
+   "grammar_text": "Деепричастия несовершенного вида (на -а/-я: читая, делая)",
+   "proposed_id": "ru-b1-deeprichastie-nesovershennogo-vida",
+   "decision": "accept",
+   "ids": [
+    "ru-b1-deeprichastie-nesovershennogo-vida"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Определительные конструкции",
+   "proposed_id": "ru-a2-mestoimenie-kotoryy",
+   "decision": "reject",
+   "ids": [],
+   "note": "name overlap only: attributive constructions vs determinative pronouns"
+  },
+  {
+   "grammar_text": "Глаголы утилизации и переработки",
+   "proposed_id": "ru-a1-glagoly-dvizheniya",
+   "decision": "reject",
+   "ids": [],
+   "note": "vocabulary-style lesson; motion verbs page is wrong"
+  },
+  {
+   "grammar_text": "Сложноподчиненные предложения времени (прежде чем, после того как, по мере того как)",
+   "proposed_id": "ru-b1-sloznopodchinennye-izyasnitelnye-s-soyuzom-chto-chtoby",
+   "decision": "replace",
+   "ids": [
+    "ru-a2-vremenni-soyuzy-kogda-poka-posle-togo-kak"
+   ],
+   "note": "proposed izyasnitelnye page is wrong"
+  },
+  {
+   "grammar_text": "Местоимение 'себя' и 'друг друга' в социальном контексте",
+   "proposed_id": "ru-b1-mestoimennie-sebya-i-svoy",
+   "decision": "accept+",
+   "ids": [
+    "ru-b1-mestoimennie-sebya-i-svoy",
+    "ru-b1-vzaimnye-mestoimeniya-drug-druga"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Конструкции сравнения социальных ролей",
+   "proposed_id": "ru-a2-sravnenie-s-soyuzom-chem-i-roditelnym-padezhem",
+   "decision": "accept",
+   "ids": [
+    "ru-a2-sravnenie-s-soyuzom-chem-i-roditelnym-padezhem"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Конструкции оценки качества образования",
+   "proposed_id": "ru-b1-datelnyy-padezh-subyekta-otsenki",
+   "decision": "accept",
+   "ids": [
+    "ru-b1-datelnyy-padezh-subyekta-otsenki"
+   ],
+   "note": "weak"
+  },
+  {
+   "grammar_text": "Сложноподчиненные предложения с союзом 'где' и 'куда' в историческом описании",
+   "proposed_id": "ru-b1-sloznopodchinennye-izyasnitelnye-s-soyuzom-chto-chtoby",
+   "decision": "reject",
+   "ids": [],
+   "note": "proposed izyasnitelnye page is wrong; no gde/kuda page"
+  },
+  {
+   "grammar_text": "Пассивные формы описания памятников",
+   "proposed_id": "ru-b1-passivnyy-zalog-tvoritnyy-subyekt",
+   "decision": "accept+",
+   "ids": [
+    "ru-b1-passivnyy-zalog-tvoritnyy-subyekt",
+    "ru-b1-kratkie-stradatelnye-prichastiya"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Сложные прилагательные (темно-синий, архитектурно-художественный)",
+   "proposed_id": "ru-a1-prilagatelnye",
+   "decision": "accept",
+   "ids": [
+    "ru-a1-prilagatelnye"
+   ],
+   "note": "generic adjectives page"
+  },
+  {
+   "grammar_text": "Сравнительные конструкции акустических характеристик",
+   "proposed_id": "ru-a1-sravnitelnaya-stepen",
+   "decision": "accept+",
+   "ids": [
+    "ru-a1-sravnitelnaya-stepen",
+    "ru-a2-sravnenie-i-prevoskhodnaya-stepen"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Глаголы звучания и исполнения",
+   "proposed_id": "ru-a1-glagoly-dvizheniya",
+   "decision": "reject",
+   "ids": [],
+   "note": "vocabulary-style lesson; motion verbs page is wrong"
+  },
+  {
+   "grammar_text": "Пассивные конструкции изготовления вещей (изготавливается из..., расписывается вручную)",
+   "proposed_id": "ru-b1-passivnyy-zalog-tvoritnyy-subyekt",
+   "decision": "accept",
+   "ids": [
+    "ru-b1-passivnyy-zalog-tvoritnyy-subyekt"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Числительные в косвенных падежах (около пятисот рублей, с тысячей рублей)",
+   "proposed_id": "ru-a1-chislitelnye-i-padezh",
+   "decision": "accept",
+   "ids": [
+    "ru-a1-chislitelnye-i-padezh"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Конструкции взаимовыгоды (выгодно как..., так и...)",
+   "proposed_id": "ru-a2-soyuzy-prichiny-i-sledstviya-poetomu-tak-kak",
+   "decision": "reject",
+   "ids": [],
+   "note": "proposed causal page is wrong; no kak..., tak i... page"
+  },
+  {
+   "grammar_text": "Отглагольные существительные экономики",
+   "proposed_id": "ru-b1-otglagolnye-sushchestvitelnye-vvedenie",
+   "decision": "accept",
+   "ids": [
+    "ru-b1-otglagolnye-sushchestvitelnye-vvedenie"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Терминологические сочетания",
+   "proposed_id": "ru-b1-frazeologizmy-i-ustoychivye-sochetaniya-b1",
+   "decision": "accept",
+   "ids": [
+    "ru-b1-frazeologizmy-i-ustoychivye-sochetaniya-b1"
+   ],
+   "note": "weak"
+  },
+  {
+   "grammar_text": "Причастия в бизнес-плане",
+   "proposed_id": "ru-b1-stradatelnye-prichastiya-nastoyashchego-i-proshedshego",
+   "decision": "accept",
+   "ids": [
+    "ru-b1-stradatelnye-prichastiya-nastoyashchego-i-proshedshego"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Формулы убеждения",
+   "proposed_id": "ru-a1-vezhlivye-prosby-i-poveleniya",
+   "decision": "reject",
+   "ids": [],
+   "note": "A1 politeness page is the wrong level and topic"
+  },
+  {
+   "grammar_text": "Сложноподчиненные предложения гипотезы о будущем (если алгоритмы заменят..., то...)",
+   "proposed_id": "ru-b1-sloznopodchinennye-izyasnitelnye-s-soyuzom-chto-chtoby",
+   "decision": "replace",
+   "ids": [
+    "ru-a2-uslovnye-predlozheniya-esli"
+   ],
+   "note": "proposed izyasnitelnye page is wrong"
+  },
+  {
+   "grammar_text": "Пассивные формы инноваций",
+   "proposed_id": "ru-b1-passivnyy-zalog-tvoritnyy-subyekt",
+   "decision": "accept",
+   "ids": [
+    "ru-b1-passivnyy-zalog-tvoritnyy-subyekt"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Деепричастные обороты научной статьи (исследуя космос, ученые обнаружили...)",
+   "proposed_id": "ru-b1-deeprichastnyy-oborot-i-ego-normy",
+   "decision": "accept",
+   "ids": [
+    "ru-b1-deeprichastnyy-oborot-i-ego-normy"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Причастия и причастные обороты в медицинском контексте",
+   "proposed_id": "ru-b1-prichastnyy-oborot-i-punktuatsiya",
+   "decision": "accept",
+   "ids": [
+    "ru-b1-prichastnyy-oborot-i-punktuatsiya"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Будущее время сложных систем",
+   "proposed_id": "ru-a1-budushchee-vremya",
+   "decision": "accept+",
+   "ids": [
+    "ru-a1-budushchee-vremya",
+    "ru-a2-budushchee-vremya-nsv-sv"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Глаголы защиты и правила безопасности в форме повелительного наклонения и инфинитива",
+   "proposed_id": "ru-a2-vidy-glagola-v-povelitelnom-naklonenii",
+   "decision": "accept",
+   "ids": [
+    "ru-a2-vidy-glagola-v-povelitelnom-naklonenii"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Трансформация регистров общения",
+   "proposed_id": "ru-c2-transformatsiya-stilisticheskikh-registrov",
+   "decision": "reject",
+   "ids": [],
+   "note": "proposed page is C2; no B1 register page"
+  },
+  {
+   "grammar_text": "Интегрированное использование всех типов союзов и связующих элементов",
+   "proposed_id": "ru-a1-soyuzy",
+   "decision": "accept",
+   "ids": [
+    "ru-a1-soyuzy"
+   ],
+   "note": "integration lesson; generic conjunctions page"
+  },
+  {
+   "grammar_text": "Фиксация ключевых фактов при аудировании",
+   "proposed_id": "ru-a2-vidy-glagola-osnovy-nsv-sv",
+   "decision": "reject",
+   "ids": [],
+   "note": "listening skill lesson; no grammar page"
+  },
+  {
+   "grammar_text": "Финишная систематизация причастных и деепричастных оборотов, видов глагола и союзов",
+   "proposed_id": "ru-b1-deeprichastnyy-oborot-i-ego-normy",
+   "decision": "accept+",
+   "ids": [
+    "ru-b1-deeprichastnyy-oborot-i-ego-normy",
+    "ru-b1-prichastnyy-oborot-i-punktuatsiya"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Анализ и исправление типичных грамматических ошибок",
+   "proposed_id": "ru-a1-grammaticheskiy-rod",
+   "decision": "reject",
+   "ids": [],
+   "note": "error-analysis lesson; no single grammar page"
+  },
+  {
+   "grammar_text": "Действительные и страдательные причастия в сложном синтаксисе",
+   "proposed_id": "ru-b1-stradatelnye-prichastiya-nastoyashchego-i-proshedshego",
+   "decision": "accept+",
+   "ids": [
+    "ru-b1-stradatelnye-prichastiya-nastoyashchego-i-proshedshego",
+    "ru-b2-slozhnyy-sintaksis-prichastiy-i-deeprichastiy"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Порядок слов в русском предложении для выделения смыслового центра",
+   "proposed_id": "ru-a1-poryadok-slov",
+   "decision": "replace",
+   "ids": [
+    "ru-b1-poryadok-slov-emfatiko-b1"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Выражение сожаления, альтернативных сценариев и гипотез",
+   "proposed_id": "ru-b2-sintaksis-diplomaticheskoy-peregovornoy-rechi",
+   "decision": "replace",
+   "ids": [
+    "ru-b2-slozhnye-uslovnye-konstruktsii-s-by"
+   ],
+   "note": "regret / alternative scenarios use by-constructions"
+  },
+  {
+   "grammar_text": "Вводные слова категории уверенности/неуверенности и эвфемизмы",
+   "proposed_id": "ru-b2-vvodnye-slova-kategorii-dostovernosti",
+   "decision": "accept",
+   "ids": [
+    "ru-b2-vvodnye-slova-kategorii-dostovernosti"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Сжатие информации в аналитических отчетах",
+   "proposed_id": "ru-b2-substantivatsiya-szhatie-informatsii",
+   "decision": "accept",
+   "ids": [
+    "ru-b2-substantivatsiya-szhatie-informatsii"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Пассивный залог дипломатических нот",
+   "proposed_id": "ru-b1-kratkie-stradatelnye-prichastiya",
+   "decision": "accept+",
+   "ids": [
+    "ru-b1-kratkie-stradatelnye-prichastiya",
+    "ru-b1-passivnyy-zalog-tvoritnyy-subyekt"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Деепричастные обороты в праве",
+   "proposed_id": "ru-b1-deeprichastnyy-oborot-i-ego-normy",
+   "decision": "accept",
+   "ids": [
+    "ru-b1-deeprichastnyy-oborot-i-ego-normy"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Причастия демографических тенденций",
+   "proposed_id": "ru-b1-stradatelnye-prichastiya-nastoyashchego-i-proshedshego",
+   "decision": "accept",
+   "ids": [
+    "ru-b1-stradatelnye-prichastiya-nastoyashchego-i-proshedshego"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Отглагольные формы стратегического планирования",
+   "proposed_id": "ru-b2-substantivatsiya-szhatie-informatsii",
+   "decision": "accept+",
+   "ids": [
+    "ru-b2-substantivatsiya-szhatie-informatsii",
+    "ru-b1-otglagolnye-sushchestvitelnye-vvedenie"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Будущее время финансового прогнозирования",
+   "proposed_id": "ru-a1-budushchee-vremya",
+   "decision": "accept+",
+   "ids": [
+    "ru-a1-budushchee-vremya",
+    "ru-a2-vidy-glagola-v-budushchem-vremeni"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Пассивные конструкции бизнес-сделок (компания была поглощена, сделка оценена в...)",
+   "proposed_id": "ru-b1-passivnyy-zalog-tvoritnyy-subyekt",
+   "decision": "accept",
+   "ids": [
+    "ru-b1-passivnyy-zalog-tvoritnyy-subyekt"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Сложноподчиненные предложения с союзом 'в случае если'",
+   "proposed_id": "ru-b1-soyuzy-usloviya-pri-uslovii-esli-by",
+   "decision": "accept",
+   "ids": [
+    "ru-b1-soyuzy-usloviya-pri-uslovii-esli-by"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Сложноподчиненные предложения с условием 'при условии что / под угрозой того что'",
+   "proposed_id": "ru-b1-sloznopodchinennye-izyasnitelnye-s-soyuzom-chto-chtoby",
+   "decision": "replace",
+   "ids": [
+    "ru-b1-soyuzy-usloviya-pri-uslovii-esli-by"
+   ],
+   "note": "proposed izyasnitelnye page is wrong"
+  },
+  {
+   "grammar_text": "Научные причастные обороты",
+   "proposed_id": "ru-b1-prichastnyy-oborot-i-punktuatsiya",
+   "decision": "accept",
+   "ids": [
+    "ru-b1-prichastnyy-oborot-i-punktuatsiya"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Сослагательные конструкции 3-го типа",
+   "proposed_id": "ru-a2-soslagatelnoe-naklonenie-by",
+   "decision": "accept+",
+   "ids": [
+    "ru-a2-soslagatelnoe-naklonenie-by",
+    "ru-b2-slozhnye-uslovnye-konstruktsii-s-by"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Конструкции уступки (как бы ни..., каким бы ни был...)",
+   "proposed_id": "ru-b2-soyuzy-ustupki-kak-by-ni-skolko-by-ni",
+   "decision": "accept",
+   "ids": [
+    "ru-b2-soyuzy-ustupki-kak-by-ni-skolko-by-ni"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Сайты зависимости результатов",
+   "proposed_id": "ru-a2-vidy-glagola-osnovy-nsv-sv",
+   "decision": "reject",
+   "ids": [],
+   "note": "lesson title is garbled; no grammar topic"
+  },
+  {
+   "grammar_text": "Деепричастные обороты академической статьи",
+   "proposed_id": "ru-b1-deeprichastnyy-oborot-i-ego-normy",
+   "decision": "accept",
+   "ids": [
+    "ru-b1-deeprichastnyy-oborot-i-ego-normy"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Прилагательные киноведение",
+   "proposed_id": "ru-a1-prilagatelnye",
+   "decision": "reject",
+   "ids": [],
+   "note": "vocabulary-style lesson; generic adjectives page is wrong level"
+  },
+  {
+   "grammar_text": "Сложноподчиненные предложения цели и контекста",
+   "proposed_id": "ru-b1-sloznopodchinennye-izyasnitelnye-s-soyuzom-chto-chtoby",
+   "decision": "replace",
+   "ids": [
+    "ru-b1-soyuzy-tseli-dlya-togo-chtoby"
+   ],
+   "note": "proposed izyasnitelnye page is wrong"
+  },
+  {
+   "grammar_text": "Сравнительные конструкции эстетической ценности",
+   "proposed_id": "ru-b1-sravnitelnye-oboroty-kak-budto-slovno",
+   "decision": "accept",
+   "ids": [
+    "ru-b1-sravnitelnye-oboroty-kak-budto-slovno"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Пассивный залог судебных постановлений (процесс был отложен, приговор вынесен)",
+   "proposed_id": "ru-b1-kratkie-stradatelnye-prichastiya",
+   "decision": "accept",
+   "ids": [
+    "ru-b1-kratkie-stradatelnye-prichastiya"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Сложноподчиненные предложения сопоставления эффективности наказаний",
+   "proposed_id": "ru-b1-sloznopodchinennye-izyasnitelnye-s-soyuzom-chto-chtoby",
+   "decision": "replace",
+   "ids": [
+    "ru-b2-soyuzy-protivopostavleniya-mezhdu-tem-kak"
+   ],
+   "note": "proposed izyasnitelnye page is wrong"
+  },
+  {
+   "grammar_text": "Условные предложения ресоциализации",
+   "proposed_id": "ru-a2-uslovnye-predlozheniya-esli",
+   "decision": "accept+",
+   "ids": [
+    "ru-a2-uslovnye-predlozheniya-esli",
+    "ru-a2-uslovnye-predlozheniya-esli-esli-by"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Деепричастные обороты расследования",
+   "proposed_id": "ru-b1-deeprichastnyy-oborot-i-ego-normy",
+   "decision": "accept",
+   "ids": [
+    "ru-b1-deeprichastnyy-oborot-i-ego-normy"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Конструкции социального расслоения (в то время как..., на фоне...)",
+   "proposed_id": "ru-b2-soyuzy-protivopostavleniya-mezhdu-tem-kak",
+   "decision": "accept",
+   "ids": [
+    "ru-b2-soyuzy-protivopostavleniya-mezhdu-tem-kak"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Причастные обороты урбанистики",
+   "proposed_id": "ru-b2-slozhnyy-sintaksis-prichastiy-i-deeprichastiy",
+   "decision": "accept",
+   "ids": [
+    "ru-b2-slozhnyy-sintaksis-prichastiy-i-deeprichastiy"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Деепричастия технологического управления",
+   "proposed_id": "ru-b2-glagolnoe-upravlenie-divergentsiya",
+   "decision": "replace",
+   "ids": [
+    "ru-b1-deeprichastie-nesovershennogo-vida",
+    "ru-b1-deeprichastie-sovershennogo-vida"
+   ],
+   "note": "proposed page is vague management-verbs page"
+  },
+  {
+   "grammar_text": "Сложные терминологические прилагательные",
+   "proposed_id": "ru-a1-prilagatelnye",
+   "decision": "accept",
+   "ids": [
+    "ru-a1-prilagatelnye"
+   ],
+   "note": "generic adjectives page"
+  },
+  {
+   "grammar_text": "Историко-градостроительный контекст",
+   "proposed_id": "ru-a2-kratkie-prichastiya-vvedenie",
+   "decision": "reject",
+   "ids": [],
+   "note": "topic-only lesson; no grammar page"
+  },
+  {
+   "grammar_text": "Анализ и исправление речевых, грамматических и орфоэпических ошибок",
+   "proposed_id": "ru-b2-poyasnitelnye-i-vstavnye-konstruktsii",
+   "decision": "reject",
+   "ids": [],
+   "note": "error-analysis lesson; no single grammar page"
+  },
+  {
+   "grammar_text": "Нормы произношения и ударения",
+   "proposed_id": "ru-b2-sintaksis-nauchnogo-doklada",
+   "decision": "reject",
+   "ids": [],
+   "note": "pronunciation lesson; no matching grammar page"
+  },
+  {
+   "grammar_text": "Синонимия синтаксических конструкций",
+   "proposed_id": "ru-b1-sinonimiya-sintaksicheskikh-konstruktsiy",
+   "decision": "accept",
+   "ids": [
+    "ru-b1-sinonimiya-sintaksicheskikh-konstruktsiy"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Использование тропов (метафора, метонимия, синекдоха, гипербола) в публицистике",
+   "proposed_id": "ru-b2-otsenochnyy-sintaksis-i-ekspressivnyy-poryadok",
+   "decision": "reject",
+   "ids": [],
+   "note": "stylistic devices; proposed page is expressive syntax"
+  },
+  {
+   "grammar_text": "Экспрессивный синтаксис",
+   "proposed_id": "ru-b2-otsenochnyy-sintaksis-i-ekspressivnyy-poryadok",
+   "decision": "accept",
+   "ids": [
+    "ru-b2-otsenochnyy-sintaksis-i-ekspressivnyy-poryadok"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Язык сетевого общения",
+   "proposed_id": "ru-b2-intonatsionnye-konstruktsii-ik-1-ik-5",
+   "decision": "reject",
+   "ids": [],
+   "note": "topic-only lesson; intonation page is wrong"
+  },
+  {
+   "grammar_text": "Сложноподчиненные предложения с союзом 'в то время как'",
+   "proposed_id": "ru-b1-sloznopodchinennye-izyasnitelnye-s-soyuzom-chto-chtoby",
+   "decision": "replace",
+   "ids": [
+    "ru-b2-soyuzy-protivopostavleniya-mezhdu-tem-kak"
+   ],
+   "note": "proposed izyasnitelnye page is wrong"
+  },
+  {
+   "grammar_text": "Глаголы эмоций",
+   "proposed_id": "ru-b2-deeprichastiya-ot-glagolov-dvizheniya",
+   "decision": "reject",
+   "ids": [],
+   "note": "vocabulary-style lesson; participles page is wrong"
+  },
+  {
+   "grammar_text": "Деепричастные обороты минимализма",
+   "proposed_id": "ru-b1-deeprichastnyy-oborot-i-ego-normy",
+   "decision": "accept",
+   "ids": [
+    "ru-b1-deeprichastnyy-oborot-i-ego-normy"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Конструкции побуждения и формирования привычек",
+   "proposed_id": "ru-b1-povelitelnoe-naklonenie-vezhlivaya-prosba",
+   "decision": "accept",
+   "ids": [
+    "ru-b1-povelitelnoe-naklonenie-vezhlivaya-prosba"
+   ],
+   "note": "weak"
+  },
+  {
+   "grammar_text": "Условные предложения отдыха",
+   "proposed_id": "ru-a2-uslovnye-predlozheniya-esli",
+   "decision": "accept+",
+   "ids": [
+    "ru-a2-uslovnye-predlozheniya-esli",
+    "ru-a2-uslovnye-predlozheniya-esli-esli-by"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Проработка всех сложных случаев падежного управления, причастных и деепричастных оборотов",
+   "proposed_id": "ru-b2-slozhnyy-sintaksis-prichastiy-i-deeprichastiy",
+   "decision": "reject",
+   "ids": [],
+   "note": "review lesson across all case government; no single page"
+  },
+  {
+   "grammar_text": "Анализ тонких грамматических ошибок",
+   "proposed_id": "ru-b2-poyasnitelnye-i-vstavnye-konstruktsii",
+   "decision": "reject",
+   "ids": [],
+   "note": "error-analysis lesson; no single grammar page"
+  },
+  {
+   "grammar_text": "Сложноподчиненные условные предложения с частицей «бы»",
+   "proposed_id": "ru-b1-sloznopodchinennye-izyasnitelnye-s-soyuzom-chto-chtoby",
+   "decision": "replace",
+   "ids": [
+    "ru-b2-slozhnye-uslovnye-konstruktsii-s-by"
+   ],
+   "note": "proposed izyasnitelnye page is wrong"
+  },
+  {
+   "grammar_text": "Инверсия условий в официальной дискуссии",
+   "proposed_id": "ru-c1-inversiya-usloviya-v-ofitsialnoy-diskussii",
+   "decision": "accept",
+   "ids": [
+    "ru-c1-inversiya-usloviya-v-ofitsialnoy-diskussii"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Причастные и деепричастные обороты (включая обособленные причастные и деепричастные конструкции)",
+   "proposed_id": "ru-b2-slozhnyy-sintaksis-prichastiy-i-deeprichastiy",
+   "decision": "accept",
+   "ids": [
+    "ru-b2-slozhnyy-sintaksis-prichastiy-i-deeprichastiy"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Выражение степеней достоверности и модальности (должно быть, безусловно, по всей видимости)",
+   "proposed_id": "ru-b1-vvodnye-slova-stepen-dostovernosti",
+   "decision": "accept+",
+   "ids": [
+    "ru-b1-vvodnye-slova-stepen-dostovernosti",
+    "ru-b2-vvodnye-slova-kategorii-dostovernosti"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Пунктуация в сложных синтаксических конструкциях (двоеточие и тире для пояснения)",
+   "proposed_id": "ru-b2-sinonimiya-soyuznykh-i-bessoyuznykh-svyazey",
+   "decision": "accept",
+   "ids": [
+    "ru-b2-sinonimiya-soyuznykh-i-bessoyuznykh-svyazey"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Периодические и сбалансированные предложения в публицистике",
+   "proposed_id": "ru-c1-ritm-periodicheskogo-predlozheniya",
+   "decision": "accept",
+   "ids": [
+    "ru-c1-ritm-periodicheskogo-predlozheniya"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Книжные союзы и вводные слова (в силу того что, между тем как, за исключением того что)",
+   "proposed_id": "ru-b1-soyuzy-tseli-dlya-togo-chtoby",
+   "decision": "accept",
+   "ids": [
+    "ru-b1-soyuzy-tseli-dlya-togo-chtoby"
+   ],
+   "note": "partial"
+  },
+  {
+   "grammar_text": "Пассивные конструкции с глаголами на -ся и страдательными причастиями",
+   "proposed_id": "ru-b1-kratkie-stradatelnye-prichastiya",
+   "decision": "accept+",
+   "ids": [
+    "ru-b1-kratkie-stradatelnye-prichastiya",
+    "ru-b1-stradatelnye-prichastiya-nastoyashchego-i-proshedshego"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Сложноподчиненные предложения с союзами уступки",
+   "proposed_id": "ru-b1-sloznopodchinennye-izyasnitelnye-s-soyuzom-chto-chtoby",
+   "decision": "replace",
+   "ids": [
+    "ru-b1-soyuzy-ustupki-nesmotrya-na-vopreki",
+    "ru-b2-soyuzy-ustupki-kak-by-ni-skolko-by-ni"
+   ],
+   "note": "proposed izyasnitelnye page is wrong"
+  },
+  {
+   "grammar_text": "Позиция наречных модификаторов для выражения эстетических нюансов",
+   "proposed_id": "ru-c1-zarechnye-modifikatory-registra",
+   "decision": "accept",
+   "ids": [
+    "ru-c1-zarechnye-modifikatory-registra"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Эпистемическая модальность (Обязано имманентно являться..., Могло бы означать)",
+   "proposed_id": "ru-c2-epistemicheskaya-modalnost-filosofskogo-diskursa",
+   "decision": "accept",
+   "ids": [
+    "ru-c2-epistemicheskaya-modalnost-filosofskogo-diskursa"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Деепричастные и причастные конструкции в официальных соглашениях",
+   "proposed_id": "ru-b2-slozhnyy-sintaksis-prichastiy-i-deeprichastiy",
+   "decision": "accept",
+   "ids": [
+    "ru-b2-slozhnyy-sintaksis-prichastiy-i-deeprichastiy"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Ритмика и каденция периодического предложения",
+   "proposed_id": "ru-c1-ritm-periodicheskogo-predlozheniya",
+   "decision": "accept",
+   "ids": [
+    "ru-c1-ritm-periodicheskogo-predlozheniya"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Синтез и итоговая проверка владения синтаксическими конструкциями C2",
+   "proposed_id": "ru-c2-absolutnyy-c2-sintez-vsekh-sintaksicheskikh-struktur",
+   "decision": "accept",
+   "ids": [
+    "ru-c2-absolutnyy-c2-sintez-vsekh-sintaksicheskikh-struktur"
+   ],
+   "note": ""
+  }
+ ]
+}

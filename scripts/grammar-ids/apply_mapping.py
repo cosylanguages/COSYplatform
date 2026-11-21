@@ -11,10 +11,11 @@ m = json.load(open(a.mapping, encoding="utf-8")); n = 0
 for lv in sorted({k.split("/")[2] for k in m}):
     src = Path(a.platform) / "curriculums" / a.lang / a.track / f"{lv}.json"
     d = json.load(open(src, encoding="utf-8"))
-    for u in d["units"]:
+    for ui, u in enumerate(d["units"]):
         for i, l in enumerate(u["lessons"]):
-            key = f"{a.lang}/{a.track}/{lv}/{l.get('code') or l.get('slug') or 'L'+str(l.get('lesson', i))}"
+            key = f"{a.lang}/{a.track}/{lv}/u{ui + 1:02d}-l{i + 1:02d}"
             ids = m.get(key, {}).get("grammarIds")
+            l.pop("grammarIds", None)  # replace, never keep stale ids
             if ids: l["grammarIds"] = ids; n += 1
     raw = open(src, encoding="utf-8").read()
     fmt = next(((ea, nl) for ea in (True, False) for nl in ("\n", "")

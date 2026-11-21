@@ -1,0 +1,491 @@
+{
+ "lang": "en",
+ "status": "DRAFT - suggested by Claude, not yet confirmed by a reviewer",
+ "decisions": [
+  {
+   "grammar_text": "Subject pronouns, verb 'be' affirmative",
+   "proposed_id": "en-a1-to-be",
+   "decision": "accept+",
+   "ids": [
+    "en-a1-to-be",
+    "en-a1-pronouns"
+   ],
+   "note": "also covers subject pronouns"
+  },
+  {
+   "grammar_text": "How old are you?, possessive adjectives",
+   "proposed_id": "en-a1-adjectives",
+   "decision": "reject",
+   "ids": [],
+   "note": "gap: no possessive-adjectives page; a1-adjectives is descriptive adjectives"
+  },
+  {
+   "grammar_text": "Possessive adjectives, question words (What, Where)",
+   "proposed_id": "en-a1-question-words",
+   "decision": "accept",
+   "ids": [
+    "en-a1-question-words"
+   ],
+   "note": "possessive adjectives have no page; question words match"
+  },
+  {
+   "grammar_text": "Grammar recycling: be, have, can, possessives",
+   "proposed_id": "en-a1-to-be",
+   "decision": "accept+",
+   "ids": [
+    "en-a1-to-be",
+    "en-a1-have-got",
+    "en-a1-can-cant"
+   ],
+   "note": "recycling lesson"
+  },
+  {
+   "grammar_text": "Verb \"have\"",
+   "proposed_id": "en-a1-have-got",
+   "decision": "accept",
+   "ids": [
+    "en-a1-have-got"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Possessives (my, your, his, her)",
+   "proposed_id": "en-a1-possessive-s",
+   "decision": "reject",
+   "ids": [],
+   "note": "gap: no possessive-adjectives page (a1-possessive-s is possessive 's)"
+  },
+  {
+   "grammar_text": "Whose questions",
+   "proposed_id": "en-a1-possessive-s",
+   "decision": "accept",
+   "ids": [
+    "en-a1-possessive-s"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Verb \"live\"",
+   "proposed_id": "en-a1-to-be",
+   "decision": "reject",
+   "ids": [],
+   "note": "gap: no page on 'live'"
+  },
+  {
+   "grammar_text": "Prepositions (in, near)",
+   "proposed_id": "en-a1-prepositions-time",
+   "decision": "replace",
+   "ids": [
+    "en-a1-prepositions-place"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Polite Requests & Modal Structures ('I would like...')",
+   "proposed_id": "en-a1-id-like",
+   "decision": "accept+",
+   "ids": [
+    "en-a1-id-like",
+    "en-a2-could"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Ordering Phrases & Restaurant Questions",
+   "proposed_id": "en-a2-question-forms",
+   "decision": "replace",
+   "ids": [
+    "en-a1-id-like"
+   ],
+   "note": "ordering uses I'd like"
+  },
+  {
+   "grammar_text": "Payment prepositions (by card, in cash)",
+   "proposed_id": "en-a1-prepositions-time",
+   "decision": "reject",
+   "ids": [],
+   "note": "gap: no 'by + means' page"
+  },
+  {
+   "grammar_text": "Prepositions of transport (by bus, on foot)",
+   "proposed_id": "en-a1-prepositions-time",
+   "decision": "reject",
+   "ids": [],
+   "note": "gap: no 'by + means' page"
+  },
+  {
+   "grammar_text": "Present Continuous for weather right now",
+   "proposed_id": "en-a1-present-continuous",
+   "decision": "accept",
+   "ids": [
+    "en-a1-present-continuous"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Let's + verb for social plans",
+   "proposed_id": "en-a1-to-be",
+   "decision": "reject",
+   "ids": [],
+   "note": "gap: no page on Let's"
+  },
+  {
+   "grammar_text": "Past Simple (regular & irregular verbs)",
+   "proposed_id": "en-a1-past-simple-regular",
+   "decision": "accept+",
+   "ids": [
+    "en-a1-past-simple-regular",
+    "en-a1-past-simple-irregular"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Time expressions (yesterday, last, ago)",
+   "proposed_id": "en-a1-prepositions-time",
+   "decision": "reject",
+   "ids": [],
+   "note": "gap: no time-expressions page"
+  },
+  {
+   "grammar_text": "Question words (Where, When, How much)",
+   "proposed_id": "en-a1-question-words",
+   "decision": "accept",
+   "ids": [
+    "en-a1-question-words"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Past Continuous for background actions in progress (was/were + -ing)",
+   "proposed_id": "en-a2-past-continuous",
+   "decision": "accept",
+   "ids": [
+    "en-a2-past-continuous"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Have to / don't have to for external obligation and lack of obligation",
+   "proposed_id": "en-a2-have-to-must-mustnt",
+   "decision": "accept",
+   "ids": [
+    "en-a2-have-to-must-mustnt"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Must for strong personal obligation; Mustn't for prohibition",
+   "proposed_id": "en-a2-have-to-must-mustnt",
+   "decision": "accept",
+   "ids": [
+    "en-a2-have-to-must-mustnt"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Present Simple vs Present Continuous for current projects vs regular job duties",
+   "proposed_id": "en-a2-present-simple-vs-present-continuous",
+   "decision": "accept",
+   "ids": [
+    "en-a2-present-simple-vs-present-continuous"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Past Simple Passive (was/were + past participle) for completed reports and tasks",
+   "proposed_id": "en-a1-past-simple-be",
+   "decision": "replace",
+   "ids": [
+    "en-a2-present-and-past-simple-passive"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Indirect questions for polite enquiry (Could you tell me where... / Do you know if...)",
+   "proposed_id": "en-a2-question-forms",
+   "decision": "replace",
+   "ids": [
+    "en-b1-embedded-indirect-questions"
+   ],
+   "note": "page is B1, lesson is A2"
+  },
+  {
+   "grammar_text": "Modals for polite requests (Could I, Would you mind)",
+   "proposed_id": "en-a2-could",
+   "decision": "accept",
+   "ids": [
+    "en-a2-could"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Modifying comparatives (a bit cheaper, much better)",
+   "proposed_id": "en-b1-modifying-comparatives",
+   "decision": "accept+",
+   "ids": [
+    "en-b1-modifying-comparatives",
+    "en-a2-comparatives-and-superlatives"
+   ],
+   "note": "page is B1, lesson is A2"
+  },
+  {
+   "grammar_text": "Too + adjective / Adjective + enough for suitability",
+   "proposed_id": "en-a2-too-and-enough",
+   "decision": "accept",
+   "ids": [
+    "en-a2-too-and-enough"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Verbs followed by gerund (-ing): enjoy, practice, mind, consider",
+   "proposed_id": "en-a2-infinitives-and-gerunds",
+   "decision": "accept",
+   "ids": [
+    "en-a2-infinitives-and-gerunds"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Verbs followed by infinitive (to + verb): decide, hope, plan, want, agree",
+   "proposed_id": "en-a1-verb-patterns-infinitive-ing",
+   "decision": "replace",
+   "ids": [
+    "en-a2-infinitives-and-gerunds"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Second conditional intro: If + Past Simple, Would + infinitive for imaginary situations",
+   "proposed_id": "en-a2-second-conditional",
+   "decision": "accept",
+   "ids": [
+    "en-a2-second-conditional"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "If I were you, I would...",
+   "proposed_id": "en-a1-id-like",
+   "decision": "replace",
+   "ids": [
+    "en-a2-second-conditional",
+    "en-a2-should-shouldnt"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Omitting relative pronouns when they are object of the clause",
+   "proposed_id": "en-a1-pronouns",
+   "decision": "replace",
+   "ids": [
+    "en-a2-defining-relative-clauses"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Question tags for checking information and seeking agreement (is it?, don't you?)",
+   "proposed_id": "en-a2-question-forms",
+   "decision": "replace",
+   "ids": [
+    "en-b1-question-tags"
+   ],
+   "note": "page is B1, lesson is A2"
+  },
+  {
+   "grammar_text": "Tense backshift rules (Present Simple -> Past Simple)",
+   "proposed_id": "en-a2-present-perfect-vs-past-simple",
+   "decision": "replace",
+   "ids": [
+    "en-a2-reported-speech"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Comprehensive review of all A2 grammar: past simple/continuous, present perfect, future forms, modals, conditionals, and passive voice",
+   "proposed_id": "en-a2-present-and-past-simple-passive",
+   "decision": "replace",
+   "ids": [
+    "en-a2-review-of-verb-tenses"
+   ],
+   "note": "review lesson"
+  },
+  {
+   "grammar_text": "Present Perfect Simple for completed achievements and life results",
+   "proposed_id": "en-a2-present-perfect-form-use",
+   "decision": "accept",
+   "ids": [
+    "en-a2-present-perfect-form-use"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "State verbs vs action verbs in continuous tenses",
+   "proposed_id": "en-b1-passive-continuous-and-perfect-tenses",
+   "decision": "reject",
+   "ids": [],
+   "note": "gap: no state/action verbs page"
+  },
+  {
+   "grammar_text": "Past Perfect Simple for actions completed before another past event",
+   "proposed_id": "en-b1-past-perfect",
+   "decision": "accept",
+   "ids": [
+    "en-b1-past-perfect"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Future in the Past (was going to, was due to, was about to)",
+   "proposed_id": "en-b1-future-forms-review",
+   "decision": "replace",
+   "ids": [
+    "en-b2-future-in-the-past"
+   ],
+   "note": "page is B2, lesson is B1"
+  },
+  {
+   "grammar_text": "Connectors of contrast (however, whereas, on the other hand, despite, in spite of)",
+   "proposed_id": "en-a1-conjunctions",
+   "decision": "replace",
+   "ids": [
+    "en-b1-connectors-and-linking-words"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Connectors of cause and result (consequently, therefore, due to, as a result)",
+   "proposed_id": "en-a1-conjunctions",
+   "decision": "replace",
+   "ids": [
+    "en-b1-connectors-and-linking-words"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Embedded indirect questions (Do you happen to know whether... / I was wondering if you could clarify...)",
+   "proposed_id": "en-b1-embedded-indirect-questions",
+   "decision": "accept",
+   "ids": [
+    "en-b1-embedded-indirect-questions"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Second conditional for hypothetical present policy choices",
+   "proposed_id": "en-b1-second-conditional",
+   "decision": "accept",
+   "ids": [
+    "en-b1-second-conditional"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Mixed conditional intro (If we had protected wetlands then, we would have less flooding now)",
+   "proposed_id": "en-b1-mixed-conditionals",
+   "decision": "accept",
+   "ids": [
+    "en-b1-mixed-conditionals"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Wish + Past Simple for present desires (I wish governments did more)",
+   "proposed_id": "en-b1-past-simple-vs-present-perfect",
+   "decision": "replace",
+   "ids": [
+    "en-b1-wish-if-only"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Verbs of the senses + adjective / + as if + clause (look, sound, feel, taste, smell)",
+   "proposed_id": "en-b1-verbs-of-the-senses",
+   "decision": "accept",
+   "ids": [
+    "en-b1-verbs-of-the-senses"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Future Perfect Simple (will have done) for actions completed before a future deadline",
+   "proposed_id": "en-b1-future-perfect",
+   "decision": "accept",
+   "ids": [
+    "en-b1-future-perfect"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Possessive relative pronoun whose for people and organizations",
+   "proposed_id": "en-a1-possessive-s",
+   "decision": "replace",
+   "ids": [
+    "en-a2-defining-relative-clauses"
+   ],
+   "note": "whose in relative clauses; a1-possessive-s is the question Whose"
+  },
+  {
+   "grammar_text": "Reporting verbs with specific patterns (advise to, warn against -ing, suggest that)",
+   "proposed_id": "en-b1-reporting-verbs",
+   "decision": "accept",
+   "ids": [
+    "en-b1-reporting-verbs"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Reported questions with word order shift and if/whether",
+   "proposed_id": "en-a1-word-order",
+   "decision": "replace",
+   "ids": [
+    "en-b1-reported-questions-and-commands"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Passive voice across tenses (is being developed, has been discovered, will be launched)",
+   "proposed_id": "en-b1-passive-simple-and-future-tenses",
+   "decision": "accept+",
+   "ids": [
+    "en-b1-passive-simple-and-future-tenses",
+    "en-b1-passive-continuous-and-perfect-tenses"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Three-part phrasal verbs (come up with, look forward to)",
+   "proposed_id": "en-b1-phrasal-verbs-grammar-patterns",
+   "decision": "accept",
+   "ids": [
+    "en-b1-phrasal-verbs-grammar-patterns"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "It-clefts for focus (It is the artistic expression that captivates...)",
+   "proposed_id": "en-b1-it-is-said-that",
+   "decision": "replace",
+   "ids": [
+    "en-b2-cleft-sentences-and-emphasis"
+   ],
+   "note": "page is B2, lesson is B1"
+  },
+  {
+   "grammar_text": "Wh-clefts for emphasis (What I appreciate most about the exhibition is...)",
+   "proposed_id": "en-a2-most-most-of-the-most",
+   "decision": "replace",
+   "ids": [
+    "en-b2-cleft-sentences-and-emphasis"
+   ],
+   "note": "page is B2, lesson is B1"
+  },
+  {
+   "grammar_text": "Comprehensive review of all B1 grammar systems: tenses, passives, conditionals, indirect speech, discourse connectors, and clefts",
+   "proposed_id": "en-a2-reported-speech",
+   "decision": "reject",
+   "ids": [],
+   "note": "comprehensive review spanning many topics"
+  }
+ ]
+}

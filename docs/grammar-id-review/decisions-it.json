@@ -1,0 +1,330 @@
+{
+ "lang": "it",
+ "status": "DRAFT - suggested by Claude, not yet confirmed by a reviewer",
+ "decisions": [
+  {
+   "grammar_text": "Verbo essere (presente) — forme affermative",
+   "proposed_id": "it-a1-essere-avere",
+   "decision": "accept",
+   "ids": [
+    "it-a1-essere-avere"
+   ],
+   "note": "low token overlap but right page"
+  },
+  {
+   "grammar_text": "Verbo chiamarsi (presente)",
+   "proposed_id": "it-a1-essere-avere",
+   "decision": "replace",
+   "ids": [
+    "it-a1-verbi-riflessivi"
+   ],
+   "note": "chiamarsi is reflexive"
+  },
+  {
+   "grammar_text": "Il plurale dei nomi (introduzione)",
+   "proposed_id": "it-a1-genere-nomi",
+   "decision": "replace",
+   "ids": [
+    "it-a1-singolare-plurale"
+   ],
+   "note": "proposed page is gender"
+  },
+  {
+   "grammar_text": "Pronomi soggetto, verbo 'essere' al presente, 'chiamarsi'",
+   "proposed_id": "it-a1-it-pronomi",
+   "decision": "accept+",
+   "ids": [
+    "it-a1-it-pronomi",
+    "it-a1-essere-avere",
+    "it-a1-verbi-riflessivi"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Domande con 'chiamarsi', presentazioni con 'Questo è...'",
+   "proposed_id": "it-a1-interrogativi",
+   "decision": "accept+",
+   "ids": [
+    "it-a1-interrogativi",
+    "it-a1-verbi-riflessivi"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Accordo aggettivi di nazionalità, preposizioni 'da' / 'di'",
+   "proposed_id": "it-a1-aggettivi-qualificativi",
+   "decision": "accept+",
+   "ids": [
+    "it-a1-aggettivi-qualificativi",
+    "it-a1-preposizioni-semplici"
+   ],
+   "note": "da/di are simple prepositions"
+  },
+  {
+   "grammar_text": "Verbo 'avere' per l'età, aggettivi possessivi (il mio, la mia)",
+   "proposed_id": "it-a1-essere-avere",
+   "decision": "accept+",
+   "ids": [
+    "it-a1-essere-avere",
+    "it-a1-pronomi-possessivi"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Sintesi: essere, avere, chiamarsi, parlare, potere",
+   "proposed_id": "it-a1-essere-avere",
+   "decision": "accept+",
+   "ids": [
+    "it-a1-essere-avere",
+    "it-a1-verbi-riflessivi",
+    "it-a1-verbi-modali"
+   ],
+   "note": "synthesis lesson"
+  },
+  {
+   "grammar_text": "Aggettivi di personalità e avverbi (molto, un po')",
+   "proposed_id": "it-a1-aggettivi-qualificativi",
+   "decision": "accept+",
+   "ids": [
+    "it-a1-aggettivi-qualificativi",
+    "it-a1-avverbi-frequenza-modo"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Verbi 'conoscere' / 'incontrare' e preposizioni",
+   "proposed_id": "it-a1-preposizioni-articolate",
+   "decision": "reject",
+   "ids": [],
+   "note": "gap: no page on conoscere/incontrare"
+  },
+  {
+   "grammar_text": "Formazione delle domande e dimostrativi (Questo è...)",
+   "proposed_id": "it-a1-dimostrativi",
+   "decision": "accept+",
+   "ids": [
+    "it-a1-dimostrativi",
+    "it-a1-interrogativi"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Formule di invito e verbi modali (Vuoi venire...?)",
+   "proposed_id": "it-a1-verbi-modali",
+   "decision": "accept",
+   "ids": [
+    "it-a1-verbi-modali"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Verbi d'azione al presente e L'Imperativo",
+   "proposed_id": "it-a1-imperativo",
+   "decision": "accept+",
+   "ids": [
+    "it-a1-imperativo",
+    "it-a1-presente-regolare"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Chiedere e dire l'ora",
+   "proposed_id": "it-a1-numeri-ora-tempo",
+   "decision": "accept",
+   "ids": [
+    "it-a1-numeri-ora-tempo"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Preposizioni di tempo con giorni e mesi",
+   "proposed_id": "it-a1-numeri-ora-tempo",
+   "decision": "accept+",
+   "ids": [
+    "it-a1-numeri-ora-tempo",
+    "it-a1-preposizioni-tempo"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Preposizioni temporali ('alle 8', 'di mattina', 'di sera')",
+   "proposed_id": "it-a1-preposizioni-articolate",
+   "decision": "replace",
+   "ids": [
+    "it-a1-preposizioni-tempo"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Domande al presente & Organizzare appuntamenti",
+   "proposed_id": "it-a1-interrogativi",
+   "decision": "accept+",
+   "ids": [
+    "it-a1-interrogativi",
+    "it-a1-presente-regolare"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Articoli partitivi ('del', 'della', 'dei', 'degli')",
+   "proposed_id": "it-a1-articoli-determinativi",
+   "decision": "reject",
+   "ids": [],
+   "note": "gap: no partitive-articles page; determinativi is wrong"
+  },
+  {
+   "grammar_text": "Verbi 'mangiare' e 'bere' al presente",
+   "proposed_id": "it-a1-essere-avere",
+   "decision": "replace",
+   "ids": [
+    "it-a1-presente-regolare"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Domande sul conto & Espressioni di quantità",
+   "proposed_id": "it-a1-interrogativi",
+   "decision": "accept",
+   "ids": [
+    "it-a1-interrogativi"
+   ],
+   "note": "quantity expressions have no page"
+  },
+  {
+   "grammar_text": "Preposizioni di pagamento (con carta, in contanti)",
+   "proposed_id": "it-a1-preposizioni-articolate",
+   "decision": "reject",
+   "ids": [],
+   "note": "gap: no payment-prepositions page"
+  },
+  {
+   "grammar_text": "Accordo degli aggettivi di colore e taglia",
+   "proposed_id": "it-a1-aggettivi-qualificativi",
+   "decision": "accept",
+   "ids": [
+    "it-a1-aggettivi-qualificativi"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Avere male a + articolo",
+   "proposed_id": "it-a1-essere-avere",
+   "decision": "replace",
+   "ids": [
+    "it-a1-it-avere",
+    "it-a1-preposizioni-articolate"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Presente per routine lavorative",
+   "proposed_id": "it-a1-presente-regolare",
+   "decision": "accept",
+   "ids": [
+    "it-a1-presente-regolare"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Sapere / Potere per abilità linguistiche",
+   "proposed_id": "it-a1-verbi-modali",
+   "decision": "accept",
+   "ids": [
+    "it-a1-verbi-modali"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Avverbi (bene, correntemente)",
+   "proposed_id": "it-a1-interrogativi",
+   "decision": "replace",
+   "ids": [
+    "it-a1-avverbi-frequenza-modo"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Preposizioni di trasporto (in autobus, a piedi)",
+   "proposed_id": "it-a1-preposizioni-articolate",
+   "decision": "replace",
+   "ids": [
+    "it-a1-preposizioni-semplici"
+   ],
+   "note": "in autobus, a piedi: in/a"
+  },
+  {
+   "grammar_text": "Presente per tempo atmosferico",
+   "proposed_id": "it-a1-preposizioni-tempo",
+   "decision": "replace",
+   "ids": [
+    "it-a1-presente-regolare"
+   ],
+   "note": "no weather page; proposed page is time prepositions"
+  },
+  {
+   "grammar_text": "Presente per abitudini digitali",
+   "proposed_id": "it-a1-presente-regolare",
+   "decision": "accept",
+   "ids": [
+    "it-a1-presente-regolare"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Espressioni di tempo (ieri, la settimana scorsa)",
+   "proposed_id": "it-a1-preposizioni-tempo",
+   "decision": "accept",
+   "ids": [
+    "it-a1-preposizioni-tempo"
+   ],
+   "note": "weak: ieri/scorsa are time adverbs"
+  },
+  {
+   "grammar_text": "Futuro semplice ed espressioni di intenzione",
+   "proposed_id": "it-a2-il-futuro-semplice",
+   "decision": "accept",
+   "ids": [
+    "it-a2-il-futuro-semplice"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Volere + infinito / Stare per",
+   "proposed_id": "it-a1-stare-gerundio",
+   "decision": "accept+",
+   "ids": [
+    "it-a1-stare-gerundio",
+    "it-a1-verbi-modali"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Accordo degli aggettivi",
+   "proposed_id": "it-a1-aggettivi-qualificativi",
+   "decision": "accept",
+   "ids": [
+    "it-a1-aggettivi-qualificativi"
+   ],
+   "note": ""
+  },
+  {
+   "grammar_text": "Verbi modali (Potrebbe, Dovresti) per cortesia e consigli",
+   "proposed_id": "it-a1-verbi-modali",
+   "decision": "accept+",
+   "ids": [
+    "it-a1-verbi-modali",
+    "it-a2-il-condizionale-presente"
+   ],
+   "note": "page is A2, lesson is A1"
+  },
+  {
+   "grammar_text": "Domande con Dove, Quando, Quanto",
+   "proposed_id": "it-a1-interrogativi",
+   "decision": "accept",
+   "ids": [
+    "it-a1-interrogativi"
+   ],
+   "note": ""
+  }
+ ]
+}

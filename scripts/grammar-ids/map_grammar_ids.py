@@ -214,8 +214,14 @@ def split_items(g):
     return [x for x in (g if isinstance(g, list) else [g]) if isinstance(x, str) and x.strip()]
 
 
-def lesson_key(l, idx):
-    return l.get("code") or l.get("slug") or f"L{l.get('lesson', idx)}"
+def lesson_key(ui, i):
+    """Unique per lesson: unit position + lesson position. (Lesson numbers, slugs and even
+    codes repeat or restart across units in some curricula, so they cannot identify a lesson.)"""
+    return f"u{ui + 1:02d}-l{i + 1:02d}"
+
+
+def lesson_ref(l):
+    return l.get("code") or l.get("slug") or l.get("lesson")
 
 
 def main():
@@ -244,9 +250,9 @@ def main():
         f = Path(a.platform) / "curriculums" / a.lang / a.track / f"{lv}.json"
         d = json.load(open(f))
         lvl = lv.lower()
-        for u in d.get("units", []):
+        for ui, u in enumerate(d.get("units", [])):
             for i, l in enumerate(u.get("lessons", [])):
-                key = f"{a.lang}/{a.track}/{lv}/{lesson_key(l, i)}"
+                key = f"{a.lang}/{a.track}/{lv}/{lesson_key(ui, i)}"
                 items = split_items(l.get("grammar"))
                 stats["lessons"] += 1
                 if not items:
@@ -272,7 +278,8 @@ def main():
                     rows.append([key, l.get("title", ""), it, tier, e["grammarId"] or "",
                                  best[1]["title"] if best[1] else "", round(best[0], 2),
                                  " | ".join(f"{p['id']} ({s:.2f})" for s, p in top[1:])])
-                mapping[key] = {"title": l.get("title"), "items": entries,
+                assert key not in mapping, f"duplicate lesson key {key}"
+                mapping[key] = {"title": l.get("title"), "ref": lesson_ref(l), "items": entries,
                                 "grammarIds": sorted({e["grammarId"] for e in entries if e["grammarId"] and e["confidence"] == "high"})}
 
     json.dump(mapping, open(out / f"mapping-{a.lang}-{a.track}.json", "w"), ensure_ascii=False, indent=1)
