@@ -39,10 +39,13 @@ Limits: scoring is tuned on English. Other languages need their own synonym tabl
 
 | Lang | Levels | Lessons with `grammarIds` | Items high / medium / none | Notes |
 |---|---|---|---|---|
-| en | A1-B1 | 128 (A1 99, A2 15, B1 14) | 210 / 91 / 29 | A2/B1 lessons are mostly title-only; use `roadmaps/grammar-en-*.json` |
-| fr | A1-C2 | 249 | 443 / 116 / 31 | B1-C2 manual titles match curriculum text almost word for word; A1 is the weak level |
-| ru | A1-C2 | 143 (A1 92, A2 18, B1 13, B2 5, C1 7, C2 8) | 183 / 242 / 161 | Manuals have few B1-C2 pages, so most B1-C2 items are medium and need review |
-| it | A1 | 79 | 79 / 110 / 55 | Only A1 is in scope (A2-C2 sit in `_out_of_scope`); manuals have 60 pages in total |
+| en | A1-B1 | 150 of 518 | 210 / 91 / 29 | Many A2/B1 lessons are title-only reading stories with no grammar text; use `roadmaps/grammar-en-*.json` for those |
+| fr | A1-C2 | 302 of 333 | 443 / 116 / 31 | B1-C2 manual titles match curriculum text almost word for word; A1 is the weak level |
+| ru | A1-C2 | 260 of 333 | 183 / 242 / 161 | Manuals have few B1-C2 pages; many B1-C2 ids come from drafted decisions, not high-confidence matches |
+| it | A1 | 121 of 142 | 79 / 110 / 55 | Only A1 is in scope (A2-C2 sit in `_out_of_scope`); manuals have 60 pages in total |
+
+The counts include ids that come from the drafted decisions below. Re-create them with
+`python3 scripts/grammar-ids/apply_drafts.py --platform . --lang en --lang fr --lang ru --lang it`.
 
 Review `review-<lang>-general.csv` before applying more IDs. Two columns matter:
 `reviewer_decision` is for the human reviewer and is left empty; `draft_decision`, `draft_ids` and
@@ -64,7 +67,7 @@ have unique `code` fields.
 `accept` (proposed page is right), `accept+` (right, and more pages apply), `replace` (use the listed
 pages instead) or `reject` (the manuals have no suitable page; most rejects are real gaps, for example
 no page on possessive adjectives, "Let's...", weather, or payment prepositions). Every id in the drafts
-is validated against the registry. These are drafts: nothing has been applied to the curricula yet.
+is validated against the registry. `scripts/grammar-ids/apply_drafts.py` applies them: a lesson gets the ids of its high-confidence items plus the drafted ids of its medium items (a `reject` adds nothing). These are drafts written without a native-speaker check; edit `reviewer_decision` / the decisions files and re-run the script to change them.
 
 ## The `grammar-focus` lesson element (implemented)
 

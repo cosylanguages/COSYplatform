@@ -23,7 +23,11 @@
           "teacher_notes": "code: \"RU-001\"\npronunciation: [{\"point\":\"Русский алфавит (Кириллица)\",\"explain\":\"В русском алфавите 33 буквы. Некоторые звучат как в английском, другие — нет.\",\"alphabet\":[{\"l\":\"А\",\"ipa\":\"/a/\"},{\"l\":\"Б\",\"ipa\":\"/b/\"},{\"l\":\"В\",\"ipa\":\"/v/\"},{\"l\":\"Г\",\"ipa\":\"/ɡ/\"},{\"l\":\"Д\",\"ipa\":\"/d/\"},{\"l\":\"Е\",\"ipa\":\"/je/\"},{\"l\":\"Ё\",\"ipa\":\"/jo/\"},{\"l\":\"Ж\",\"ipa\":\"/ʐ/\"},{\"l\":\"З\",\"ipa\":\"/z/\"},{\"l\":\"И\",\"ipa\":\"/i/\"},{\"l\":\"Й\",\"ipa\":\"/j/\"},{\"l\":\"К\",\"ipa\":\"/k/\"},{\"l\":\"Л\",\"ipa\":\"/l/\"},{\"l\":\"М\",\"ipa\":\"/m/\"},{\"l\":\"Н\",\"ipa\":\"/n/\"},{\"l\":\"О\",\"ipa\":\"/o/\"},{\"l\":\"П\",\"ipa\":\"/p/\"},{\"l\":\"Р\",\"ipa\":\"/r/\"},{\"l\":\"С\",\"ipa\":\"/s/\"},{\"l\":\"Т\",\"ipa\":\"/t/\"},{\"l\":\"У\",\"ipa\":\"/u/\"},{\"l\":\"Ф\",\"ipa\":\"/f/\"},{\"l\":\"Х\",\"ipa\":\"/x/\"},{\"l\":\"Ц\",\"ipa\":\"/ts/\"},{\"l\":\"Ч\",\"ipa\":\"/tɕ/\"},{\"l\":\"Ш\",\"ipa\":\"/ʂ/\"},{\"l\":\"Щ\",\"ipa\":\"/ɕː/\"},{\"l\":\"Ъ\",\"ipa\":\"-\"},{\"l\":\"Ы\",\"ipa\":\"/ɨ/\"},{\"l\":\"Ь\",\"ipa\":\"-\"},{\"l\":\"Э\",\"ipa\":\"/e/\"},{\"l\":\"Ю\",\"ipa\":\"/ju/\"},{\"l\":\"Я\",\"ipa\":\"/ja/\"}],\"extension\":\"Кириллица может показаться сложной, но она очень логична. Как только вы выучите буквы, вы сможете прочитать любое русское слово!\",\"visual\":\"🇷🇺🔤\"}]\ncando: \"Может приветствовать людей и прощаться\"\nhw: \"Выучить алфавит\"",
           "recycled": "Foundational communication & basic level vocabulary",
           "num": 1,
-          "code": "M00-L01"
+          "code": "M00-L01",
+          "grammarIds": [
+            "ru-a1-bez-glagola-byt",
+            "ru-a1-lichnye-mestoimeniya-i-nulevaya-svyazka"
+          ]
         },
         {
           "lesson": 2,
@@ -60,7 +64,11 @@
           "teacher_notes": "code: \"RU-003\"\npronunciation: [{\"point\":\"Оглушение согласных\",\"explain\":\"Звонкие согласные на конце слова становятся глухими (Б→П, В→Ф, Г→К, Д→Т, Ж→Ш, З→С).\",\"examples\":[{\"pattern\":\"Хлеб\",\"ipa\":\"/xlʲep/\",\"word\":\"хлеб\"},{\"pattern\":\"Город\",\"ipa\":\"/ˈɡorət/\",\"word\":\"город\"},{\"pattern\":\"Друг\",\"ipa\":\"/druk/\",\"word\":\"друг\"}]}]\ncando: \"Может считать от 1 до 20\"\nhw: \"Посчитайте предметы в комнате\"",
           "recycled": "Личные местоимения + Глагол \"быть\" (опущение в настоящем времени), Конструкция \"Меня зовут...\", Имя",
           "num": 3,
-          "code": "M00-L03"
+          "code": "M00-L03",
+          "grammarIds": [
+            "ru-a1-noun-gender",
+            "ru-a1-rod-imyen-sushchestvitelnykh"
+          ]
         },
         {
           "lesson": 4,
@@ -93,7 +101,10 @@
           "teacher_notes": "code: \"RU-005\"\npronunciation: [{\"point\":\"Интонация\",\"explain\":\"В вопросах без вопросительного слова тон резко повышается на ударном слоге слова, к которому относится вопрос.\",\"examples\":[{\"pattern\":\"Это стол?\",\"ipa\":\"/ˈetə stoɫ?/\",\"word\":\"Это стол?\"},{\"pattern\":\"Ты дома?\",\"ipa\":\"/tɨ ˈdomə?/\",\"word\":\"Ты дома?\"}]}]\ncando: \"Может использовать базовые вежливые фразы\"\nhw: \"Используйте три вежливые фразы завтра\"",
           "recycled": "Род имен существительных (введение), Базовая структура предложения, мать",
           "num": 5,
-          "code": "M00-L05"
+          "code": "M00-L05",
+          "grammarIds": [
+            "ru-a1-vezhlivye-prosby-i-poveleniya"
+          ]
         }
       ],
       "num": 0,
@@ -434,7 +445,10 @@
           "writing": "Написать 5 предложений о характере лучшего друга",
           "task": "Подбор пар по характеру",
           "cando": "Может описывать черты характера и личность",
-          "hw": "Написать 5 предложений с описанием характера"
+          "hw": "Написать 5 предложений с описанием характера",
+          "grammarIds": [
+            "ru-a1-prilagatelnye"
+          ]
         },
         {
           "code": "RU-025",
@@ -645,7 +659,11 @@
           "writing": "Написать 5 предложений о домашних привычках",
           "task": "Ролевая игра по распределению обязанностей",
           "cando": "Может описывать повседневные домашние дела и действия",
-          "hw": "Написать 5 предложений о своих домашних делах"
+          "hw": "Написать 5 предложений о своих домашних делах",
+          "grammarIds": [
+            "ru-a1-nastoyashchee-vremya",
+            "ru-a1-povelitelnoe-naklonenie"
+          ]
         },
         {
           "code": "RU-035",
@@ -745,7 +763,10 @@
           "writing": "Написать 5 предложений с указанием времени",
           "task": "Ролевая игра 'Который час'",
           "cando": "Может спрашивать и называть время в часах и минутах",
-          "hw": "Написать 5 предложений о времени событий дня"
+          "hw": "Написать 5 предложений о времени событий дня",
+          "grammarIds": [
+            "ru-a1-vremya-i-chasy"
+          ]
         },
         {
           "code": "RU-042",
@@ -772,7 +793,11 @@
           "writing": "Написать 5 предложений о важных датах",
           "task": "Сопоставление дат в календаре",
           "cando": "Может называть дни недели, месяцы и даты",
-          "hw": "Написать 5 предложений о своём календаре"
+          "hw": "Написать 5 предложений о своём календаре",
+          "grammarIds": [
+            "ru-a1-predlogi-vremeni",
+            "ru-a1-dni-nedeli-i-mesyatsy"
+          ]
         },
         {
           "code": "RU-043",
@@ -825,7 +850,10 @@
           "writing": "Написать короткий абзац о своём распорядке дня",
           "task": "Интервью о распорядке дня",
           "cando": "Может описывать свой типичный распорядок дня с утра до вечера",
-          "hw": "Написать абзац с описанием своего обычного дня"
+          "hw": "Написать абзац с описанием своего обычного дня",
+          "grammarIds": [
+            "ru-a1-nastoyashchee-vremya"
+          ]
         },
         {
           "code": "RU-045",
@@ -880,7 +908,11 @@
           "writing": "Написать сообщение для назначения встречи",
           "task": "Ролевая игра по назначению встречи",
           "cando": "Может обсуждать расписание и назначать встречу",
-          "hw": "Написать записку с подтверждением времени встречи"
+          "hw": "Написать записку с подтверждением времени встречи",
+          "grammarIds": [
+            "ru-a1-nastoyashchee-vremya",
+            "ru-a1-voprositelnye-slova"
+          ]
         }
       ],
       "num": 4,
@@ -949,7 +981,11 @@
           "writing": "Написать короткий абзац о своём режиме питания",
           "task": "Опрос о времени приёма пищи",
           "cando": "Я могу описывать свои ежедневные приёмы пищи и выражать предпочтения в еде и напитках.",
-          "hw": "Написать 5 предложений о том, что вы едите на завтрак и ужин"
+          "hw": "Написать 5 предложений о том, что вы едите на завтрак и ужин",
+          "grammarIds": [
+            "ru-a1-nastoyashchee-vremya",
+            "ru-a1-osobye-glagoly-zhit-pisat-pit"
+          ]
         },
         {
           "code": "RU-053",
@@ -977,7 +1013,10 @@
           "writing": "Составить диалог заказа в кафе",
           "task": "Ролевая игра 'В кафе'",
           "cando": "Я могу вежливо заказывать горячие и холодные напитки в кафе или баре.",
-          "hw": "Написать диалог заказа кофе и воды в кафе"
+          "hw": "Написать диалог заказа кофе и воды в кафе",
+          "grammarIds": [
+            "ru-a1-ya-khotel-by-khotite"
+          ]
         },
         {
           "code": "RU-054",
@@ -1107,7 +1146,11 @@
           "hw": "Homework practice for 6.1 Типы магазинов и места покупок",
           "cando": "Я могу назвать разные типы магазинов и сказать, где купить товары.",
           "teacher_notes": "code: \"M06-L01\"\ncando: \"Я могу назвать разные типы магазинов и сказать, где купить товары.\"",
-          "recycled": "Module 6 progression"
+          "recycled": "Module 6 progression",
+          "grammarIds": [
+            "ru-a1-mnogo-malo-skolko",
+            "ru-a1-tvoritelnyy-padezh"
+          ]
         },
         {
           "code": "M06-L02",
@@ -1133,7 +1176,11 @@
           "hw": "Homework practice for 6.2 Категории товаров и наличие",
           "cando": "Я могу спрашивать о категориях товаров и уточнять их наличие.",
           "teacher_notes": "code: \"M06-L02\"\ncando: \"Я могу спрашивать о категориях товаров и уточнять их наличие.\"",
-          "recycled": "Module 6 progression"
+          "recycled": "Module 6 progression",
+          "grammarIds": [
+            "ru-a1-mnogo-malo-skolko",
+            "ru-a1-tvoritelnyy-padezh"
+          ]
         },
         {
           "code": "M06-L03",
@@ -1159,7 +1206,11 @@
           "hw": "Homework practice for 6.3 Деньги, валюта и цены",
           "cando": "Я могу спрашивать стоимость товаров и понимать цены в местной валюте.",
           "teacher_notes": "code: \"M06-L03\"\ncando: \"Я могу спрашивать стоимость товаров и понимать цены в местной валюте.\"",
-          "recycled": "Module 6 progression"
+          "recycled": "Module 6 progression",
+          "grammarIds": [
+            "ru-a1-mnogo-malo-skolko",
+            "ru-a1-tvoritelnyy-padezh"
+          ]
         },
         {
           "code": "M06-L04",
@@ -1185,7 +1236,11 @@
           "hw": "Homework practice for 6.4 Оплата и способы оплаты",
           "cando": "Я могу оплачивать товары картой или наличными, просить чек и сдачу.",
           "teacher_notes": "code: \"M06-L04\"\ncando: \"Я могу оплачивать товары картой или наличными, просить чек и сдачу.\"",
-          "recycled": "Module 6 progression"
+          "recycled": "Module 6 progression",
+          "grammarIds": [
+            "ru-a1-mnogo-malo-skolko",
+            "ru-a1-tvoritelnyy-padezh"
+          ]
         },
         {
           "code": "M06-L05",
@@ -1211,7 +1266,11 @@
           "hw": "Homework practice for 6.5 Скидки и количество",
           "cando": "Я могу понимать цены со скидкой, распродажи и просить точное количество товара.",
           "teacher_notes": "code: \"M06-L05\"\ncando: \"Я могу понимать цены со скидкой, распродажи и просить точное количество товара.\"",
-          "recycled": "Module 6 progression"
+          "recycled": "Module 6 progression",
+          "grammarIds": [
+            "ru-a1-mnogo-malo-skolko",
+            "ru-a1-tvoritelnyy-padezh"
+          ]
         },
         {
           "code": "M06-L06",
@@ -1237,7 +1296,11 @@
           "hw": "Homework practice for 6.6 Итоговый урок: Покупки и транзакции",
           "cando": "Я могу провести полный цикл покупки в магазине от выбора до оплаты.",
           "teacher_notes": "code: \"M06-L06\"\ncando: \"Я могу провести полный цикл покупки в магазине от выбора до оплаты.\"",
-          "recycled": "Module 6 progression"
+          "recycled": "Module 6 progression",
+          "grammarIds": [
+            "ru-a1-mnogo-malo-skolko",
+            "ru-a1-tvoritelnyy-padezh"
+          ]
         }
       ]
     },
@@ -1277,8 +1340,8 @@
           "teacher_notes": "code: \"M07-L01\"\ncando: \"Я могу называть повседневную одежду и описывать, во что я одет сегодня.\"",
           "recycled": "Module 7 progression",
           "grammarIds": [
-            "ru-a1-soglasovanie-prilagatelnykh",
-            "ru-a1-ukazatelnye-mestoimeniya-etot-eta-eto-eti"
+            "ru-a1-ukazatelnye-mestoimeniya-etot-eta-eto-eti",
+            "ru-a1-soglasovanie-prilagatelnykh"
           ]
         },
         {
@@ -1307,8 +1370,8 @@
           "teacher_notes": "code: \"M07-L02\"\ncando: \"Я могу называть аксессуары и обувь и описывать личный стиль.\"",
           "recycled": "Module 7 progression",
           "grammarIds": [
-            "ru-a1-soglasovanie-prilagatelnykh",
-            "ru-a1-ukazatelnye-mestoimeniya-etot-eta-eto-eti"
+            "ru-a1-ukazatelnye-mestoimeniya-etot-eta-eto-eti",
+            "ru-a1-soglasovanie-prilagatelnykh"
           ]
         },
         {
@@ -1337,8 +1400,8 @@
           "teacher_notes": "code: \"M07-L03\"\ncando: \"Я могу описывать одежду, используя прилагательные цвета, размера и стиля.\"",
           "recycled": "Module 7 progression",
           "grammarIds": [
-            "ru-a1-soglasovanie-prilagatelnykh",
-            "ru-a1-ukazatelnye-mestoimeniya-etot-eta-eto-eti"
+            "ru-a1-ukazatelnye-mestoimeniya-etot-eta-eto-eti",
+            "ru-a1-soglasovanie-prilagatelnykh"
           ]
         },
         {
@@ -1367,8 +1430,8 @@
           "teacher_notes": "code: \"M07-L04\"\ncando: \"Я могу просить примерить одежду и говорить, подходит ли размер.\"",
           "recycled": "Module 7 progression",
           "grammarIds": [
-            "ru-a1-soglasovanie-prilagatelnykh",
-            "ru-a1-ukazatelnye-mestoimeniya-etot-eta-eto-eti"
+            "ru-a1-ukazatelnye-mestoimeniya-etot-eta-eto-eti",
+            "ru-a1-soglasovanie-prilagatelnykh"
           ]
         },
         {
@@ -1397,8 +1460,8 @@
           "teacher_notes": "code: \"M07-L05\"\ncando: \"Я могу сравнивать одежду, обсуждать цены и делать покупки в магазине.\"",
           "recycled": "Module 7 progression",
           "grammarIds": [
-            "ru-a1-soglasovanie-prilagatelnykh",
-            "ru-a1-ukazatelnye-mestoimeniya-etot-eta-eto-eti"
+            "ru-a1-ukazatelnye-mestoimeniya-etot-eta-eto-eti",
+            "ru-a1-soglasovanie-prilagatelnykh"
           ]
         },
         {
@@ -1427,8 +1490,8 @@
           "teacher_notes": "code: \"M07-L06\"\ncando: \"Я могу описывать свой гардероб, любимые наряды и вести диалоги покупки одежды.\"",
           "recycled": "Module 7 progression",
           "grammarIds": [
-            "ru-a1-soglasovanie-prilagatelnykh",
-            "ru-a1-ukazatelnye-mestoimeniya-etot-eta-eto-eti"
+            "ru-a1-ukazatelnye-mestoimeniya-etot-eta-eto-eti",
+            "ru-a1-soglasovanie-prilagatelnykh"
           ]
         }
       ]
@@ -1655,6 +1718,7 @@
           "teacher_notes": "code: \"M09-L01\"\ncando: \"Я могу называть распространенные профессии и спрашивать о работе.\"",
           "recycled": "Module 9 progression",
           "grammarIds": [
+            "ru-a1-nastoyashchee-vremya",
             "ru-a1-predlozhnyy-padezh"
           ]
         },
@@ -1684,6 +1748,7 @@
           "teacher_notes": "code: \"M09-L02\"\ncando: \"Я могу описывать рабочие места и указывать, где работают люди.\"",
           "recycled": "Module 9 progression",
           "grammarIds": [
+            "ru-a1-nastoyashchee-vremya",
             "ru-a1-predlozhnyy-padezh"
           ]
         },
@@ -1713,6 +1778,7 @@
           "teacher_notes": "code: \"M09-L03\"\ncando: \"Я могу говорить о рабочих часах, расписании и базовых задачах.\"",
           "recycled": "Module 9 progression",
           "grammarIds": [
+            "ru-a1-nastoyashchee-vremya",
             "ru-a1-predlozhnyy-padezh"
           ]
         },
@@ -1742,6 +1808,7 @@
           "teacher_notes": "code: \"M09-L04\"\ncando: \"Я могу говорить о школах, университетах и любимых предметах.\"",
           "recycled": "Module 9 progression",
           "grammarIds": [
+            "ru-a1-nastoyashchee-vremya",
             "ru-a1-predlozhnyy-padezh"
           ]
         },
@@ -1771,6 +1838,7 @@
           "teacher_notes": "code: \"M09-L05\"\ncando: \"Я могу описывать свои занятия, домашнюю работу и подготовку к экзаменам.\"",
           "recycled": "Module 9 progression",
           "grammarIds": [
+            "ru-a1-nastoyashchee-vremya",
             "ru-a1-predlozhnyy-padezh"
           ]
         },
@@ -1800,6 +1868,7 @@
           "teacher_notes": "code: \"M09-L06\"\ncando: \"Я могу представить полный обзор своей работы и образования.\"",
           "recycled": "Module 9 progression",
           "grammarIds": [
+            "ru-a1-nastoyashchee-vremya",
             "ru-a1-predlozhnyy-padezh"
           ]
         }
@@ -2027,8 +2096,8 @@
           "teacher_notes": "code: \"M11-L01\"\ncando: \"Я могу называть транспортные средства и говорить, как добираюсь до работы.\"",
           "recycled": "Module 11 progression",
           "grammarIds": [
-            "ru-a1-povelitelnoe-naklonenie",
-            "ru-a1-tvoritelnyy-padezh"
+            "ru-a1-tvoritelnyy-padezh",
+            "ru-a1-povelitelnoe-naklonenie"
           ]
         },
         {
@@ -2057,8 +2126,8 @@
           "teacher_notes": "code: \"M11-L02\"\ncando: \"Я могу называть вокзалы, аэропорты и остановки транспорта.\"",
           "recycled": "Module 11 progression",
           "grammarIds": [
-            "ru-a1-povelitelnoe-naklonenie",
-            "ru-a1-tvoritelnyy-padezh"
+            "ru-a1-tvoritelnyy-padezh",
+            "ru-a1-povelitelnoe-naklonenie"
           ]
         },
         {
@@ -2087,8 +2156,8 @@
           "teacher_notes": "code: \"M11-L03\"\ncando: \"Я могу спрашивать дорогу и понимать простые указания направления.\"",
           "recycled": "Module 11 progression",
           "grammarIds": [
-            "ru-a1-povelitelnoe-naklonenie",
-            "ru-a1-tvoritelnyy-padezh"
+            "ru-a1-tvoritelnyy-padezh",
+            "ru-a1-povelitelnoe-naklonenie"
           ]
         },
         {
@@ -2117,8 +2186,8 @@
           "teacher_notes": "code: \"M11-L04\"\ncando: \"Я могу покупать билеты на транспорт и спрашивать время отправления.\"",
           "recycled": "Module 11 progression",
           "grammarIds": [
-            "ru-a1-povelitelnoe-naklonenie",
-            "ru-a1-tvoritelnyy-padezh"
+            "ru-a1-tvoritelnyy-padezh",
+            "ru-a1-povelitelnoe-naklonenie"
           ]
         },
         {
@@ -2147,8 +2216,8 @@
           "teacher_notes": "code: \"M11-L05\"\ncando: \"Я могу проходить регистрацию в аэропорту/отеле и говорить о багаже.\"",
           "recycled": "Module 11 progression",
           "grammarIds": [
-            "ru-a1-povelitelnoe-naklonenie",
-            "ru-a1-tvoritelnyy-padezh"
+            "ru-a1-tvoritelnyy-padezh",
+            "ru-a1-povelitelnoe-naklonenie"
           ]
         },
         {
@@ -2177,8 +2246,8 @@
           "teacher_notes": "code: \"M11-L06\"\ncando: \"Я могу провести полный маршрут поездки от покупки билета до прибытия.\"",
           "recycled": "Module 11 progression",
           "grammarIds": [
-            "ru-a1-povelitelnoe-naklonenie",
-            "ru-a1-tvoritelnyy-padezh"
+            "ru-a1-tvoritelnyy-padezh",
+            "ru-a1-povelitelnoe-naklonenie"
           ]
         }
       ]
@@ -2403,7 +2472,10 @@
           "hw": "Homework practice for 13.1 Погодные условия и температура",
           "cando": "Я могу описывать ежедневную погоду и температуру воздуха.",
           "teacher_notes": "code: \"M13-L01\"\ncando: \"Я могу описывать ежедневную погоду и температуру воздуха.\"",
-          "recycled": "Module 13 progression"
+          "recycled": "Module 13 progression",
+          "grammarIds": [
+            "ru-a1-nastoyashchee-vremya"
+          ]
         },
         {
           "code": "M13-L02",
@@ -2429,7 +2501,10 @@
           "hw": "Homework practice for 13.2 Четыре сезона и занятия по сезонам",
           "cando": "Я могу называть 4 сезона года и говорить о любимых занятиях по сезонам.",
           "teacher_notes": "code: \"M13-L02\"\ncando: \"Я могу называть 4 сезона года и говорить о любимых занятиях по сезонам.\"",
-          "recycled": "Module 13 progression"
+          "recycled": "Module 13 progression",
+          "grammarIds": [
+            "ru-a1-nastoyashchee-vremya"
+          ]
         },
         {
           "code": "M13-L03",
@@ -2455,7 +2530,10 @@
           "hw": "Homework practice for 13.3 Природные ландшафты и места",
           "cando": "Я могу называть природные места: море, горы, лес, река.",
           "teacher_notes": "code: \"M13-L03\"\ncando: \"Я могу называть природные места: море, горы, лес, река.\"",
-          "recycled": "Module 13 progression"
+          "recycled": "Module 13 progression",
+          "grammarIds": [
+            "ru-a1-nastoyashchee-vremya"
+          ]
         },
         {
           "code": "M13-L04",
@@ -2481,7 +2559,10 @@
           "hw": "Homework practice for 13.4 Прогноз погоды и планы",
           "cando": "Я могу понимать простой прогноз погоды и планировать отдых.",
           "teacher_notes": "code: \"M13-L04\"\ncando: \"Я могу понимать простой прогноз погоды и планировать отдых.\"",
-          "recycled": "Module 13 progression"
+          "recycled": "Module 13 progression",
+          "grammarIds": [
+            "ru-a1-nastoyashchee-vremya"
+          ]
         },
         {
           "code": "M13-L05",
@@ -2507,7 +2588,10 @@
           "hw": "Homework practice for 13.5 Экологичные привычки и забота о природе",
           "cando": "Я могу обсуждать простые экологичные привычки и чистоту природы.",
           "teacher_notes": "code: \"M13-L05\"\ncando: \"Я могу обсуждать простые экологичные привычки и чистоту природы.\"",
-          "recycled": "Module 13 progression"
+          "recycled": "Module 13 progression",
+          "grammarIds": [
+            "ru-a1-nastoyashchee-vremya"
+          ]
         },
         {
           "code": "M13-L06",
@@ -2533,7 +2617,10 @@
           "hw": "Homework practice for 13.6 Итоговый урок: Природа и климат",
           "cando": "Я могу описывать природу и климат в своей стране.",
           "teacher_notes": "code: \"M13-L06\"\ncando: \"Я могу описывать природу и климат в своей стране.\"",
-          "recycled": "Module 13 progression"
+          "recycled": "Module 13 progression",
+          "grammarIds": [
+            "ru-a1-nastoyashchee-vremya"
+          ]
         }
       ]
     },
@@ -2765,7 +2852,8 @@
           "teacher_notes": "code: \"M15-L01\"\ncando: \"Я могу называть технику: смартфон, ноутбук, планшет, наушники.\"",
           "recycled": "Module 15 progression",
           "grammarIds": [
-            "ru-a1-povelitelnoe-naklonenie"
+            "ru-a1-povelitelnoe-naklonenie",
+            "ru-a1-nastoyashchee-vremya"
           ]
         },
         {
@@ -2794,7 +2882,8 @@
           "teacher_notes": "code: \"M15-L02\"\ncando: \"Я могу описывать действия с техникой: включать, заряжать, открывать, скачивать.\"",
           "recycled": "Module 15 progression",
           "grammarIds": [
-            "ru-a1-povelitelnoe-naklonenie"
+            "ru-a1-povelitelnoe-naklonenie",
+            "ru-a1-nastoyashchee-vremya"
           ]
         },
         {
@@ -2823,7 +2912,8 @@
           "teacher_notes": "code: \"M15-L03\"\ncando: \"Я могу говорить об онлайн-занятиях: поиске информации, просмотре сайтов, почте.\"",
           "recycled": "Module 15 progression",
           "grammarIds": [
-            "ru-a1-povelitelnoe-naklonenie"
+            "ru-a1-povelitelnoe-naklonenie",
+            "ru-a1-nastoyashchee-vremya"
           ]
         },
         {
@@ -2852,7 +2942,8 @@
           "teacher_notes": "code: \"M15-L04\"\ncando: \"Я могу писать короткие цифровые сообщения и использовать термины соцсетей.\"",
           "recycled": "Module 15 progression",
           "grammarIds": [
-            "ru-a1-povelitelnoe-naklonenie"
+            "ru-a1-povelitelnoe-naklonenie",
+            "ru-a1-nastoyashchee-vremya"
           ]
         },
         {
@@ -2881,7 +2972,8 @@
           "teacher_notes": "code: \"M15-L05\"\ncando: \"Я могу понимать базовые правила безопасности в сети и называть проблемы с техникой.\"",
           "recycled": "Module 15 progression",
           "grammarIds": [
-            "ru-a1-povelitelnoe-naklonenie"
+            "ru-a1-povelitelnoe-naklonenie",
+            "ru-a1-nastoyashchee-vremya"
           ]
         },
         {
@@ -2910,7 +3002,8 @@
           "teacher_notes": "code: \"M15-L06\"\ncando: \"Я могу рассказать о своих ежедневных цифровых привычках и общении.\"",
           "recycled": "Module 15 progression",
           "grammarIds": [
-            "ru-a1-povelitelnoe-naklonenie"
+            "ru-a1-povelitelnoe-naklonenie",
+            "ru-a1-nastoyashchee-vremya"
           ]
         }
       ]
@@ -2949,7 +3042,11 @@
           "hw": "Homework practice for 16.1 Дни рождения и личные праздники",
           "cando": "Я могу говорить о днях рождения, подарках и личных праздниках.",
           "teacher_notes": "code: \"M16-L01\"\ncando: \"Я могу говорить о днях рождения, подарках и личных праздниках.\"",
-          "recycled": "Module 16 progression"
+          "recycled": "Module 16 progression",
+          "grammarIds": [
+            "ru-a1-vinitelnyy-padezh-neodushevlennye",
+            "ru-a1-vinitelnyy-padezh"
+          ]
         },
         {
           "code": "M16-L02",
@@ -2975,7 +3072,11 @@
           "hw": "Homework practice for 16.2 Приглашения и организация праздников",
           "cando": "Я могу приглашать на праздник и отвечать на приглашения.",
           "teacher_notes": "code: \"M16-L02\"\ncando: \"Я могу приглашать на праздник и отвечать на приглашения.\"",
-          "recycled": "Module 16 progression"
+          "recycled": "Module 16 progression",
+          "grammarIds": [
+            "ru-a1-vinitelnyy-padezh-neodushevlennye",
+            "ru-a1-vinitelnyy-padezh"
+          ]
         },
         {
           "code": "M16-L03",
@@ -3001,7 +3102,11 @@
           "hw": "Homework practice for 16.3 Праздники и национальные традиции",
           "cando": "Я могу описывать национальные праздники, семейные обычаи и традиции.",
           "teacher_notes": "code: \"M16-L03\"\ncando: \"Я могу описывать национальные праздники, семейные обычаи и традиции.\"",
-          "recycled": "Module 16 progression"
+          "recycled": "Module 16 progression",
+          "grammarIds": [
+            "ru-a1-vinitelnyy-padezh-neodushevlennye",
+            "ru-a1-vinitelnyy-padezh"
+          ]
         },
         {
           "code": "M16-L04",
@@ -3027,7 +3132,11 @@
           "hw": "Homework practice for 16.4 Культурный досуг и места",
           "cando": "Я могу говорить о посещении музеев, кино, театров и концертов.",
           "teacher_notes": "code: \"M16-L04\"\ncando: \"Я могу говорить о посещении музеев, кино, театров и концертов.\"",
-          "recycled": "Module 16 progression"
+          "recycled": "Module 16 progression",
+          "grammarIds": [
+            "ru-a1-vinitelnyy-padezh-neodushevlennye",
+            "ru-a1-vinitelnyy-padezh"
+          ]
         },
         {
           "code": "M16-L05",
@@ -3053,7 +3162,11 @@
           "hw": "Homework practice for 16.5 Социальные события и встречи",
           "cando": "Я могу договариваться о встрече с друзьями на мероприятиях и прогулках.",
           "teacher_notes": "code: \"M16-L05\"\ncando: \"Я могу договариваться о встрече с друзьями на мероприятиях и прогулках.\"",
-          "recycled": "Module 16 progression"
+          "recycled": "Module 16 progression",
+          "grammarIds": [
+            "ru-a1-vinitelnyy-padezh-neodushevlennye",
+            "ru-a1-vinitelnyy-padezh"
+          ]
         },
         {
           "code": "M16-L06",
@@ -3079,7 +3192,11 @@
           "hw": "Homework practice for 16.6 Итоговый урок: Праздники и культура",
           "cando": "Я могу представить план праздника или культурного мероприятия.",
           "teacher_notes": "code: \"M16-L06\"\ncando: \"Я могу представить план праздника или культурного мероприятия.\"",
-          "recycled": "Module 16 progression"
+          "recycled": "Module 16 progression",
+          "grammarIds": [
+            "ru-a1-vinitelnyy-padezh-neodushevlennye",
+            "ru-a1-vinitelnyy-padezh"
+          ]
         }
       ]
     },
@@ -3119,8 +3236,8 @@
           "teacher_notes": "code: \"M17-L01\"\ncando: \"Я могу говорить о действиях, совершенных вчера или на прошлой неделе.\"",
           "recycled": "Module 17 progression",
           "grammarIds": [
-            "ru-a1-predlozhnyy-padezh",
-            "ru-a1-sovershennyy-i-nesovershennyy-vid"
+            "ru-a1-sovershennyy-i-nesovershennyy-vid",
+            "ru-a1-predlozhnyy-padezh"
           ]
         },
         {
@@ -3149,8 +3266,8 @@
           "teacher_notes": "code: \"M17-L02\"\ncando: \"Я могу описывать, что делал на выходных и на прошедших мероприятиях.\"",
           "recycled": "Module 17 progression",
           "grammarIds": [
-            "ru-a1-predlozhnyy-padezh",
-            "ru-a1-sovershennyy-i-nesovershennyy-vid"
+            "ru-a1-sovershennyy-i-nesovershennyy-vid",
+            "ru-a1-predlozhnyy-padezh"
           ]
         },
         {
@@ -3179,8 +3296,8 @@
           "teacher_notes": "code: \"M17-L03\"\ncando: \"Я могу делиться простыми фактами и воспоминаниями из детства.\"",
           "recycled": "Module 17 progression",
           "grammarIds": [
-            "ru-a1-predlozhnyy-padezh",
-            "ru-a1-sovershennyy-i-nesovershennyy-vid"
+            "ru-a1-sovershennyy-i-nesovershennyy-vid",
+            "ru-a1-predlozhnyy-padezh"
           ]
         },
         {
@@ -3209,8 +3326,8 @@
           "teacher_notes": "code: \"M17-L04\"\ncando: \"Я могу рассказывать о поездке или отпуске в прошлом.\"",
           "recycled": "Module 17 progression",
           "grammarIds": [
-            "ru-a1-predlozhnyy-padezh",
-            "ru-a1-sovershennyy-i-nesovershennyy-vid"
+            "ru-a1-sovershennyy-i-nesovershennyy-vid",
+            "ru-a1-predlozhnyy-padezh"
           ]
         },
         {
@@ -3239,8 +3356,8 @@
           "teacher_notes": "code: \"M17-L05\"\ncando: \"Я могу говорить о главных этапах жизни (переезд, учеба, новая работа).\"",
           "recycled": "Module 17 progression",
           "grammarIds": [
-            "ru-a1-predlozhnyy-padezh",
-            "ru-a1-sovershennyy-i-nesovershennyy-vid"
+            "ru-a1-sovershennyy-i-nesovershennyy-vid",
+            "ru-a1-predlozhnyy-padezh"
           ]
         },
         {
@@ -3269,8 +3386,8 @@
           "teacher_notes": "code: \"M17-L06\"\ncando: \"Я могу сделать короткий рассказ о важном событии из прошлого.\"",
           "recycled": "Module 17 progression",
           "grammarIds": [
-            "ru-a1-predlozhnyy-padezh",
-            "ru-a1-sovershennyy-i-nesovershennyy-vid"
+            "ru-a1-sovershennyy-i-nesovershennyy-vid",
+            "ru-a1-predlozhnyy-padezh"
           ]
         }
       ]
@@ -3309,7 +3426,11 @@
           "hw": "Homework practice for 18.1 Ближайшее будущее и личные планы",
           "cando": "Я могу говорить о том, что собираюсь делать завтра или на следующей неделе.",
           "teacher_notes": "code: \"M18-L01\"\ncando: \"Я могу говорить о том, что собираюсь делать завтра или на следующей неделе.\"",
-          "recycled": "Module 18 progression"
+          "recycled": "Module 18 progression",
+          "grammarIds": [
+            "ru-a1-budushchee-vremya",
+            "ru-a1-budushchee-vremya-slozhashchee"
+          ]
         },
         {
           "code": "M18-L02",
@@ -3335,7 +3456,11 @@
           "hw": "Homework practice for 18.2 Мечты и личные цели",
           "cando": "Я могу говорить о своих мечтах, надеждах и личных целях.",
           "teacher_notes": "code: \"M18-L02\"\ncando: \"Я могу говорить о своих мечтах, надеждах и личных целях.\"",
-          "recycled": "Module 18 progression"
+          "recycled": "Module 18 progression",
+          "grammarIds": [
+            "ru-a1-budushchee-vremya",
+            "ru-a1-budushchee-vremya-slozhashchee"
+          ]
         },
         {
           "code": "M18-L03",
@@ -3361,7 +3486,11 @@
           "hw": "Homework practice for 18.3 Картера и планы на учебу",
           "cando": "Я могу выражать намерения относительно будущей работы и учебы.",
           "teacher_notes": "code: \"M18-L03\"\ncando: \"Я могу выражать намерения относительно будущей работы и учебы.\"",
-          "recycled": "Module 18 progression"
+          "recycled": "Module 18 progression",
+          "grammarIds": [
+            "ru-a1-budushchee-vremya",
+            "ru-a1-budushchee-vremya-slozhashchee"
+          ]
         },
         {
           "code": "M18-L04",
@@ -3387,7 +3516,11 @@
           "hw": "Homework practice for 18.4 Будущие путешествия и отпуск",
           "cando": "Я могу обсуждать будущие направления для поездок и планы на отпуск.",
           "teacher_notes": "code: \"M18-L04\"\ncando: \"Я могу обсуждать будущие направления для поездок и планы на отпуск.\"",
-          "recycled": "Module 18 progression"
+          "recycled": "Module 18 progression",
+          "grammarIds": [
+            "ru-a1-budushchee-vremya",
+            "ru-a1-budushchee-vremya-slozhashchee"
+          ]
         },
         {
           "code": "M18-L05",
@@ -3413,7 +3546,11 @@
           "hw": "Homework practice for 18.5 Простые прогнозы и мнение о будущем",
           "cando": "Я могу делать простые прогнозы о городах, технологиях или погоде в будущем.",
           "teacher_notes": "code: \"M18-L05\"\ncando: \"Я могу делать простые прогнозы о городах, технологиях или погоде в будущем.\"",
-          "recycled": "Module 18 progression"
+          "recycled": "Module 18 progression",
+          "grammarIds": [
+            "ru-a1-budushchee-vremya",
+            "ru-a1-budushchee-vremya-slozhashchee"
+          ]
         },
         {
           "code": "M18-L06",
@@ -3439,7 +3576,11 @@
           "hw": "Homework practice for 18.6 Итоговый урок: Карта будущего",
           "cando": "Я могу представить личную карту целей на ближайшее и отдаленное будущее.",
           "teacher_notes": "code: \"M18-L06\"\ncando: \"Я могу представить личную карту целей на ближайшее и отдаленное будущее.\"",
-          "recycled": "Module 18 progression"
+          "recycled": "Module 18 progression",
+          "grammarIds": [
+            "ru-a1-budushchee-vremya",
+            "ru-a1-budushchee-vremya-slozhashchee"
+          ]
         }
       ]
     },
@@ -3479,7 +3620,8 @@
           "teacher_notes": "code: \"M19-L01\"\ncando: \"Я могу сравнивать двух людей или предметы, используя слова сравнения.\"",
           "recycled": "Module 19 progression",
           "grammarIds": [
-            "ru-a1-sravnitelnaya-stepen-bolee-i-sufiks-ee"
+            "ru-a1-sravnitelnaya-stepen-bolee-i-sufiks-ee",
+            "ru-a1-soglasovanie-prilagatelnykh"
           ]
         },
         {
@@ -3508,7 +3650,8 @@
           "teacher_notes": "code: \"M19-L02\"\ncando: \"Я могу сравнивать жизнь в разных городах, поселках или странах.\"",
           "recycled": "Module 19 progression",
           "grammarIds": [
-            "ru-a1-sravnitelnaya-stepen-bolee-i-sufiks-ee"
+            "ru-a1-sravnitelnaya-stepen-bolee-i-sufiks-ee",
+            "ru-a1-soglasovanie-prilagatelnykh"
           ]
         },
         {
@@ -3537,7 +3680,8 @@
           "teacher_notes": "code: \"M19-L03\"\ncando: \"Я могу сравнивать современный и традиционный образ жизни и привычки.\"",
           "recycled": "Module 19 progression",
           "grammarIds": [
-            "ru-a1-sravnitelnaya-stepen-bolee-i-sufiks-ee"
+            "ru-a1-sravnitelnaya-stepen-bolee-i-sufiks-ee",
+            "ru-a1-soglasovanie-prilagatelnykh"
           ]
         },
         {
@@ -3566,7 +3710,8 @@
           "teacher_notes": "code: \"M19-L04\"\ncando: \"Я могу выражать предпочтения и делать выбор между вариантами.\"",
           "recycled": "Module 19 progression",
           "grammarIds": [
-            "ru-a1-sravnitelnaya-stepen-bolee-i-sufiks-ee"
+            "ru-a1-sravnitelnaya-stepen-bolee-i-sufiks-ee",
+            "ru-a1-soglasovanie-prilagatelnykh"
           ]
         },
         {
@@ -3595,7 +3740,8 @@
           "teacher_notes": "code: \"M19-L05\"\ncando: \"Я могу рекомендовать вариант на основе сравнения.\"",
           "recycled": "Module 19 progression",
           "grammarIds": [
-            "ru-a1-sravnitelnaya-stepen-bolee-i-sufiks-ee"
+            "ru-a1-sravnitelnaya-stepen-bolee-i-sufiks-ee",
+            "ru-a1-soglasovanie-prilagatelnykh"
           ]
         },
         {
@@ -3624,7 +3770,8 @@
           "teacher_notes": "code: \"M19-L06\"\ncando: \"Я могу выступить с презентацией-сравнением двух товаров, мест или способов жизни.\"",
           "recycled": "Module 19 progression",
           "grammarIds": [
-            "ru-a1-sravnitelnaya-stepen-bolee-i-sufiks-ee"
+            "ru-a1-sravnitelnaya-stepen-bolee-i-sufiks-ee",
+            "ru-a1-soglasovanie-prilagatelnykh"
           ]
         }
       ]
@@ -3665,7 +3812,10 @@
           "teacher_notes": "code: \"M20-L01\"\ncando: \"Я могу четко выражать свое мнение по повседневным темам.\"",
           "recycled": "Module 20 progression",
           "grammarIds": [
-            "ru-a1-vvodnye-slova-kazhetsya-po-moemu"
+            "ru-a1-vvodnye-slova-kazhetsya-po-moemu",
+            "ru-a1-mozhno-nelzya-nuzhno",
+            "ru-a1-konstruktsii-mozhno-nelzya-nuzhno",
+            "ru-a1-vezhlivye-prosby-i-poveleniya"
           ]
         },
         {
@@ -3694,7 +3844,10 @@
           "teacher_notes": "code: \"M20-L02\"\ncando: \"Я могу выражать согласие или вежливое несогласие в беседе.\"",
           "recycled": "Module 20 progression",
           "grammarIds": [
-            "ru-a1-vvodnye-slova-kazhetsya-po-moemu"
+            "ru-a1-vvodnye-slova-kazhetsya-po-moemu",
+            "ru-a1-mozhno-nelzya-nuzhno",
+            "ru-a1-konstruktsii-mozhno-nelzya-nuzhno",
+            "ru-a1-vezhlivye-prosby-i-poveleniya"
           ]
         },
         {
@@ -3723,7 +3876,10 @@
           "teacher_notes": "code: \"M20-L03\"\ncando: \"Я могу описывать бытовые проблемы (потерял, сломал, опоздал) и просить о помощи.\"",
           "recycled": "Module 20 progression",
           "grammarIds": [
-            "ru-a1-vvodnye-slova-kazhetsya-po-moemu"
+            "ru-a1-vvodnye-slova-kazhetsya-po-moemu",
+            "ru-a1-mozhno-nelzya-nuzhno",
+            "ru-a1-konstruktsii-mozhno-nelzya-nuzhno",
+            "ru-a1-vezhlivye-prosby-i-poveleniya"
           ]
         },
         {
@@ -3752,7 +3908,10 @@
           "teacher_notes": "code: \"M20-L04\"\ncando: \"Я могу давать простые советы и предложения по решению проблем.\"",
           "recycled": "Module 20 progression",
           "grammarIds": [
-            "ru-a1-vvodnye-slova-kazhetsya-po-moemu"
+            "ru-a1-vvodnye-slova-kazhetsya-po-moemu",
+            "ru-a1-mozhno-nelzya-nuzhno",
+            "ru-a1-konstruktsii-mozhno-nelzya-nuzhno",
+            "ru-a1-vezhlivye-prosby-i-poveleniya"
           ]
         },
         {
@@ -3781,7 +3940,10 @@
           "teacher_notes": "code: \"M20-L05\"\ncando: \"Я могу формулировать вежливые просьбы и спрашивать разрешение в общественных местах.\"",
           "recycled": "Module 20 progression",
           "grammarIds": [
-            "ru-a1-vvodnye-slova-kazhetsya-po-moemu"
+            "ru-a1-vvodnye-slova-kazhetsya-po-moemu",
+            "ru-a1-mozhno-nelzya-nuzhno",
+            "ru-a1-konstruktsii-mozhno-nelzya-nuzhno",
+            "ru-a1-vezhlivye-prosby-i-poveleniya"
           ]
         },
         {
@@ -3810,7 +3972,10 @@
           "teacher_notes": "code: \"M20-L06\"\ncando: \"Я могу провести простой опрос мнений и решить бытовую ситуацию в игре.\"",
           "recycled": "Module 20 progression",
           "grammarIds": [
-            "ru-a1-vvodnye-slova-kazhetsya-po-moemu"
+            "ru-a1-vvodnye-slova-kazhetsya-po-moemu",
+            "ru-a1-mozhno-nelzya-nuzhno",
+            "ru-a1-konstruktsii-mozhno-nelzya-nuzhno",
+            "ru-a1-vezhlivye-prosby-i-poveleniya"
           ]
         }
       ]
@@ -4041,7 +4206,12 @@
           "hw": "Homework practice for 22.1 Проект 1. Мой личный и профессиональный профиль",
           "cando": "Я могу составлять полный личный и профессиональный профиль.",
           "teacher_notes": "code: \"M22-L01\"\ncando: \"Я могу составлять полный личный и профессиональный профиль.\"",
-          "recycled": "Module 22 progression"
+          "recycled": "Module 22 progression",
+          "grammarIds": [
+            "ru-a1-proshedshee-vremya",
+            "ru-a1-nastoyashchee-vremya",
+            "ru-a1-budushchee-vremya"
+          ]
         },
         {
           "code": "M22-L02",
@@ -4067,7 +4237,12 @@
           "hw": "Homework practice for 22.2 Проект 2. Мой распорядок и идеальный день",
           "cando": "Я могу рассказать историю, сравнивая свой обычный распорядок дня с идеальным днем.",
           "teacher_notes": "code: \"M22-L02\"\ncando: \"Я могу рассказать историю, сравнивая свой обычный распорядок дня с идеальным днем.\"",
-          "recycled": "Module 22 progression"
+          "recycled": "Module 22 progression",
+          "grammarIds": [
+            "ru-a1-proshedshee-vremya",
+            "ru-a1-nastoyashchee-vremya",
+            "ru-a1-budushchee-vremya"
+          ]
         },
         {
           "code": "M22-L03",
@@ -4093,7 +4268,12 @@
           "hw": "Homework practice for 22.3 Проект 3. Путеводитель по моему дому и району",
           "cando": "Я могу создавать путеводитель с описанием дома, района и услуг поблизости.",
           "teacher_notes": "code: \"M22-L03\"\ncando: \"Я могу создавать путеводитель с описанием дома, района и услуг поблизости.\"",
-          "recycled": "Module 22 progression"
+          "recycled": "Module 22 progression",
+          "grammarIds": [
+            "ru-a1-proshedshee-vremya",
+            "ru-a1-nastoyashchee-vremya",
+            "ru-a1-budushchee-vremya"
+          ]
         },
         {
           "code": "M22-L04",
@@ -4119,7 +4299,12 @@
           "hw": "Homework practice for 22.4 Проект 4. Мой жизненный путь: прошлое и будущее",
           "cando": "Я могу составлять хронологическую ленту жизни, объединяя прошлый опыт и будущие цели.",
           "teacher_notes": "code: \"M22-L04\"\ncando: \"Я могу составлять хронологическую ленту жизни, объединяя прошлый опыт и будущие цели.\"",
-          "recycled": "Module 22 progression"
+          "recycled": "Module 22 progression",
+          "grammarIds": [
+            "ru-a1-proshedshee-vremya",
+            "ru-a1-nastoyashchee-vremya",
+            "ru-a1-budushchee-vremya"
+          ]
         },
         {
           "code": "M22-L05",
@@ -4145,7 +4330,12 @@
           "hw": "Homework practice for 22.5 Проект 5. Мои мнения и культурные взгляды",
           "cando": "Я могу презентовать раздел портфолио со своими мнениями и культурными предпочтениями.",
           "teacher_notes": "code: \"M22-L05\"\ncando: \"Я могу презентовать раздел портфолио со своими мнениями и культурными предпочтениями.\"",
-          "recycled": "Module 22 progression"
+          "recycled": "Module 22 progression",
+          "grammarIds": [
+            "ru-a1-proshedshee-vremya",
+            "ru-a1-nastoyashchee-vremya",
+            "ru-a1-budushchee-vremya"
+          ]
         },
         {
           "code": "M22-L06",
@@ -4171,7 +4361,12 @@
           "hw": "Homework practice for 22.6 Итоговый выпускной урок: Презентация портфолио A1 и самооценка",
           "cando": "Я могу презентовать свое полное портфолио уровня A1 и провести самооценку своих навыков.",
           "teacher_notes": "code: \"M22-L06\"\ncando: \"Я могу презентовать свое полное портфолио уровня A1 и провести самооценку своих навыков.\"",
-          "recycled": "Module 22 progression"
+          "recycled": "Module 22 progression",
+          "grammarIds": [
+            "ru-a1-proshedshee-vremya",
+            "ru-a1-nastoyashchee-vremya",
+            "ru-a1-budushchee-vremya"
+          ]
         }
       ]
     }

@@ -23,7 +23,10 @@
           "teacher_notes": "code: \"IT-001\"\npronunciation: [{\"point\":\"L'alfabeto italiano\",\"explain\":\"L'italiano ha 21 lettere. Le vocali sono sempre chiare e distinte.\",\"alphabet\":[{\"l\":\"A\",\"ipa\":\"/a/\"},{\"l\":\"B\",\"ipa\":\"/be/\"},{\"l\":\"C\",\"ipa\":\"/tʃe/\"},{\"l\":\"D\",\"ipa\":\"/de/\"},{\"l\":\"E\",\"ipa\":\"/e/\"},{\"l\":\"F\",\"ipa\":\"/ɛf.fe/\"},{\"l\":\"G\",\"ipa\":\"/dʒe/\"},{\"l\":\"H\",\"ipa\":\"/ak.ka/\"},{\"l\":\"I\",\"ipa\":\"/i/\"},{\"l\":\"L\",\"ipa\":\"/ɛl.le/\"},{\"l\":\"M\",\"ipa\":\"/ɛm.me/\"},{\"l\":\"N\",\"ipa\":\"/ɛn.ne/\"},{\"l\":\"O\",\"ipa\":\"/o/\"},{\"l\":\"P\",\"ipa\":\"/pe/\"},{\"l\":\"Q\",\"ipa\":\"/ku/\"},{\"l\":\"R\",\"ipa\":\"/ɛr.re/\"},{\"l\":\"S\",\"ipa\":\"/ɛs.se/\"},{\"l\":\"T\",\"ipa\":\"/te/\"},{\"l\":\"U\",\"ipa\":\"/u/\"},{\"l\":\"V\",\"ipa\":\"/vu/\"},{\"l\":\"Z\",\"ipa\":\"/dzɛ.ta/\"}],\"extension\":\"L'italiano è una lingua fonetica: si scrive quasi esattamente come si pronuncia. Imparare l'alfabeto è il primo passo per leggere correttamente ogni parola.\",\"visual\":\"🇮🇹🔤\"}]\ncando: \"Sa salutare e dire arrivederci\"\nhw: \"Imparare la canzone dell'alfabeto\"",
           "recycled": "Foundational communication & basic level vocabulary",
           "num": 1,
-          "code": "M00-L01"
+          "code": "M00-L01",
+          "grammarIds": [
+            "it-a1-essere-avere"
+          ]
         },
         {
           "lesson": 2,
@@ -39,7 +42,10 @@
           "teacher_notes": "code: \"IT-002\"\npronunciation: [{\"point\":\"La Doppia Consonante\",\"explain\":\"In italiano, le doppie consonanti si pronunciano con più forza e durata.\",\"examples\":[{\"pattern\":\"nn\",\"ipa\":\"/ˈnon.no/\",\"word\":\"nonno\"},{\"pattern\":\"tt\",\"ipa\":\"/ˈfat.to/\",\"word\":\"fatto\"},{\"pattern\":\"ll\",\"ipa\":\"/ˈbel.lo/\",\"word\":\"bello\"}],\"tip\":\"Immagina di fare una piccola pausa sulla doppia.\",\"extension\":\"Le doppie sono fondamentali! Cambiano il significato delle parole: 'casa' (house) vs 'cassa' (box). Ascolta bene la vibrazione più lunga.\",\"visual\":\"⚡\"}]\ncando: \"Sa presentarsi\"\nhw: \"Compitare il proprio nome in italiano\"",
           "recycled": "Verbo essere (presente) — forme affermative, Benvenuti, Grazie",
           "num": 2,
-          "code": "M00-L02"
+          "code": "M00-L02",
+          "grammarIds": [
+            "it-a1-verbi-riflessivi"
+          ]
         },
         {
           "lesson": 3,
@@ -57,7 +63,10 @@
           "teacher_notes": "code: \"IT-003\"\npronunciation: [{\"point\":\"Accento sulle parole\",\"explain\":\"La maggior parte delle parole italiane ha l'accento sulla penultima sillaba.\",\"examples\":[{\"pattern\":\"undici\",\"ipa\":\"/ˈun.di.tʃi/\",\"word\":\"undici\"},{\"pattern\":\"dodici\",\"ipa\":\"/ˈdo.di.tʃi/\",\"word\":\"dodici\"},{\"pattern\":\"venti\",\"ipa\":\"/ˈven.ti/\",\"word\":\"venti\"}]}]\ncando: \"Sa contare da 1 a 20\"\nhw: \"Contare gli oggetti nella stanza\"",
           "recycled": "Verbo essere (presente) — forme affermative, Verbo chiamarsi (presente), Nome",
           "num": 3,
-          "code": "M00-L03"
+          "code": "M00-L03",
+          "grammarIds": [
+            "it-a1-singolare-plurale"
+          ]
         },
         {
           "lesson": 4,
@@ -118,7 +127,12 @@
           "teacher_notes": "code: \"IT-01\"\ncando: \"Sa salutare, dire arrivederci, presentarsi e usare il linguaggio della classe\"\nspeaking: \"Presentarsi e salutare in classe\"\nlistening: \"Tre persone si presentano\"\nreading: \"Un breve dialogo di presentazione\"\nwriting: \"Scrivere 5 frasi per presentarsi\"",
           "recycled": "Module 1 foundational progression",
           "num": 1,
-          "code": "M01-L01"
+          "code": "M01-L01",
+          "grammarIds": [
+            "it-a1-it-pronomi",
+            "it-a1-essere-avere",
+            "it-a1-verbi-riflessivi"
+          ]
         },
         {
           "lesson": 2,
@@ -136,7 +150,11 @@
           "teacher_notes": "code: \"IT-02\"\ncando: \"Sa chiedere e dire il nome e presentare un'altra persona\"\nspeaking: \"Chiedere i nomi e presentare un amico in trio\"\nlistening: \"Persone che chiedono e danno il nome\"\nreading: \"Dialoghi semplici a un incontro\"\nwriting: \"Scrivere un breve dialogo di presentazione\"",
           "recycled": "Module 1 foundational progression",
           "num": 2,
-          "code": "M01-L02"
+          "code": "M01-L02",
+          "grammarIds": [
+            "it-a1-interrogativi",
+            "it-a1-verbi-riflessivi"
+          ]
         },
         {
           "lesson": 3,
@@ -172,7 +190,11 @@
           "teacher_notes": "code: \"IT-04\"\ncando: \"Sa dire da quale paese viene e chiedere la nazionalità\"\nspeaking: \"Chiedere l'origine e la nazionalità in gruppo\"\nlistening: \"Interviste al controllo passaporti\"\nreading: \"Schede di passaporto\"\nwriting: \"Scrivere 5 frasi sull'origine di persone famose\"",
           "recycled": "Module 1 foundational progression",
           "num": 4,
-          "code": "M01-L04"
+          "code": "M01-L04",
+          "grammarIds": [
+            "it-a1-aggettivi-qualificativi",
+            "it-a1-preposizioni-semplici"
+          ]
         },
         {
           "lesson": 5,
@@ -232,7 +254,11 @@
           "teacher_notes": "code: \"IT-07\"\ncando: \"Sa chiedere e dire l'età e parlare del compleanno\"\nspeaking: \"Chiedere l'età e il mese di compleanno\"\nlistening: \"Annunci di compleanni famosi\"\nreading: \"Calendario di compleanni\"\nwriting: \"Scrivere 5 frasi sull'età di familiari\"",
           "recycled": "Module 1 foundational progression",
           "num": 7,
-          "code": "M01-L07"
+          "code": "M01-L07",
+          "grammarIds": [
+            "it-a1-essere-avere",
+            "it-a1-pronomi-possessivi"
+          ]
         },
         {
           "lesson": 8,
@@ -289,7 +315,12 @@
           "teacher_notes": "code: \"IT-10\"\ncando: \"Sa presentare un profilo personale completo\"\nspeaking: \"Presentazione orale del profilo in 1 minuto\"\nlistening: \"Ascolto delle presentazioni dei compagni\"\nreading: \"Esempi di schede profilo\"\nwriting: \"Scrivere un profilo personale completo di 100 parole\"",
           "recycled": "Module 1 foundational progression",
           "num": 10,
-          "code": "M01-L10"
+          "code": "M01-L10",
+          "grammarIds": [
+            "it-a1-essere-avere",
+            "it-a1-verbi-riflessivi",
+            "it-a1-verbi-modali"
+          ]
         }
       ],
       "num": 1,
@@ -418,7 +449,11 @@
           "writing": "Scrivere 5 frasi sul carattere del migliore amico",
           "task": "Attività di abbinamento dei caratteri",
           "cando": "Sa descrivere personalità e carattere",
-          "hw": "Scrivere 5 frasi di descrizione del carattere"
+          "hw": "Scrivere 5 frasi di descrizione del carattere",
+          "grammarIds": [
+            "it-a1-aggettivi-qualificativi",
+            "it-a1-avverbi-frequenza-modo"
+          ]
         },
         {
           "code": "IT-025",
@@ -472,7 +507,11 @@
           "writing": "Scrivere 5 domande e risposte sulla famiglia",
           "task": "Gioco di ruolo ad una festa",
           "cando": "Sa presentare qualcuno e fare domande sulla famiglia",
-          "hw": "Preparare 5 domande per un compagno"
+          "hw": "Preparare 5 domande per un compagno",
+          "grammarIds": [
+            "it-a1-dimostrativi",
+            "it-a1-interrogativi"
+          ]
         },
         {
           "code": "IT-027",
@@ -499,7 +538,10 @@
           "writing": "Scrivere un invito e una risposta",
           "task": "Pianificazione di una festa in gioco di ruolo",
           "cando": "Sa invitare parenti/amici e accettare o rifiutare con cortesia",
-          "hw": "Scrivere un'email di invito a un amico"
+          "hw": "Scrivere un'email di invito a un amico",
+          "grammarIds": [
+            "it-a1-verbi-modali"
+          ]
         }
       ],
       "num": 2,
@@ -626,7 +668,11 @@
           "writing": "Scrivere 5 frasi sulle abitudini in casa",
           "task": "Gioco di ruolo per la divisione dei compiti",
           "cando": "Posso parlare delle azioni quotidiane e delle attività in casa",
-          "hw": "Scrivere 5 frasi sulle faccende domestiche"
+          "hw": "Scrivere 5 frasi sulle faccende domestiche",
+          "grammarIds": [
+            "it-a1-imperativo",
+            "it-a1-presente-regolare"
+          ]
         },
         {
           "code": "IT-035",
@@ -725,7 +771,10 @@
           "writing": "Scrivere 5 frasi indicando gli orari",
           "task": "Gioco di ruolo sugli orari",
           "cando": "Posso chiedere e dire l'ora in ore e minuti",
-          "hw": "Scrivere 5 frasi sugli orari della giornata"
+          "hw": "Scrivere 5 frasi sugli orari della giornata",
+          "grammarIds": [
+            "it-a1-numeri-ora-tempo"
+          ]
         },
         {
           "code": "IT-042",
@@ -752,7 +801,11 @@
           "writing": "Scrivere 5 frasi su date importanti",
           "task": "Abbinamento sul calendario",
           "cando": "Posso parlare di giorni, mesi e date",
-          "hw": "Scrivere 5 frasi sul proprio calendario"
+          "hw": "Scrivere 5 frasi sul proprio calendario",
+          "grammarIds": [
+            "it-a1-numeri-ora-tempo",
+            "it-a1-preposizioni-tempo"
+          ]
         },
         {
           "code": "IT-043",
@@ -779,7 +832,10 @@
           "writing": "Scrivere 5 frasi sui momenti della giornata",
           "task": "Presentazione della linea del tempo della giornata",
           "cando": "Posso esprimere quando si svolgono le attività",
-          "hw": "Scrivere 5 frasi sulle abitudini mattutine e serali"
+          "hw": "Scrivere 5 frasi sulle abitudini mattutine e serali",
+          "grammarIds": [
+            "it-a1-preposizioni-tempo"
+          ]
         },
         {
           "code": "IT-044",
@@ -863,7 +919,11 @@
           "writing": "Scrivere un'email per fissare un appuntamento",
           "task": "Gioco di ruolo per fissare appuntamenti",
           "cando": "Posso parlare dei miei orari e fissare un appuntamento",
-          "hw": "Scrivere una nota per confermare un appuntamento"
+          "hw": "Scrivere una nota per confermare un appuntamento",
+          "grammarIds": [
+            "it-a1-interrogativi",
+            "it-a1-presente-regolare"
+          ]
         }
       ],
       "num": 4,
@@ -929,7 +989,10 @@
           "writing": "Scrivere un breve paragrafo sui propri pasti quotidiani",
           "task": "Sondaggio sugli orari dei pasti",
           "cando": "Posso descrivere i miei pasti quotidiani ed esprimere cosa mi piace mangiare e bere.",
-          "hw": "Scrivere 5 frasi su cosa mangi a colazione e a cena"
+          "hw": "Scrivere 5 frasi su cosa mangi a colazione e a cena",
+          "grammarIds": [
+            "it-a1-presente-regolare"
+          ]
         },
         {
           "code": "IT-053",
@@ -1045,7 +1108,10 @@
           "writing": "Scrivere 5 frasi sul pagamento al ristorante o in negozio",
           "task": "Simulazione cassa e pagamento",
           "cando": "Posso chiedere il conto al ristorante e comprare cibo al supermercato o al mercato.",
-          "hw": "Scrivere 5 domande per chiedere il conto e fare la spesa"
+          "hw": "Scrivere 5 domande per chiedere il conto e fare la spesa",
+          "grammarIds": [
+            "it-a1-interrogativi"
+          ]
         }
       ],
       "num": 5,
@@ -1257,7 +1323,8 @@
           "teacher_notes": "code: \"M07-L01\"\ncando: \"Posso nominare i capi di abbigliamento di tutti i giorni e descrivere cosa indosso.\"",
           "recycled": "Module 7 progression",
           "grammarIds": [
-            "it-a1-dimostrativi"
+            "it-a1-dimostrativi",
+            "it-a1-aggettivi-qualificativi"
           ]
         },
         {
@@ -1286,7 +1353,8 @@
           "teacher_notes": "code: \"M07-L02\"\ncando: \"Posso identificare accessori e calzature e descrivere lo stile personale.\"",
           "recycled": "Module 7 progression",
           "grammarIds": [
-            "it-a1-dimostrativi"
+            "it-a1-dimostrativi",
+            "it-a1-aggettivi-qualificativi"
           ]
         },
         {
@@ -1315,7 +1383,8 @@
           "teacher_notes": "code: \"M07-L03\"\ncando: \"Posso descrivere i vestiti usando aggettivi di colore, taglia e stile.\"",
           "recycled": "Module 7 progression",
           "grammarIds": [
-            "it-a1-dimostrativi"
+            "it-a1-dimostrativi",
+            "it-a1-aggettivi-qualificativi"
           ]
         },
         {
@@ -1344,7 +1413,8 @@
           "teacher_notes": "code: \"M07-L04\"\ncando: \"Posso chiedere di provare i vestiti ed esprimere preferenze di vestibilità.\"",
           "recycled": "Module 7 progression",
           "grammarIds": [
-            "it-a1-dimostrativi"
+            "it-a1-dimostrativi",
+            "it-a1-aggettivi-qualificativi"
           ]
         },
         {
@@ -1373,7 +1443,8 @@
           "teacher_notes": "code: \"M07-L05\"\ncando: \"Posso confrontare capi d'abbigliamento, discutere i prezzi e comprare vestiti.\"",
           "recycled": "Module 7 progression",
           "grammarIds": [
-            "it-a1-dimostrativi"
+            "it-a1-dimostrativi",
+            "it-a1-aggettivi-qualificativi"
           ]
         },
         {
@@ -1402,7 +1473,8 @@
           "teacher_notes": "code: \"M07-L06\"\ncando: \"Posso descrivere il mio guardaroba, i miei outfit preferiti e gestire i dialoghi di acquisto.\"",
           "recycled": "Module 7 progression",
           "grammarIds": [
-            "it-a1-dimostrativi"
+            "it-a1-dimostrativi",
+            "it-a1-aggettivi-qualificativi"
           ]
         }
       ]
@@ -1443,6 +1515,8 @@
           "teacher_notes": "code: \"M08-L01\"\ncando: \"Posso nominare le parti del corpo e indicare dove sento dolore.\"",
           "recycled": "Module 8 progression",
           "grammarIds": [
+            "it-a1-it-avere",
+            "it-a1-preposizioni-articolate",
             "it-a1-imperativo"
           ]
         },
@@ -1472,6 +1546,8 @@
           "teacher_notes": "code: \"M08-L02\"\ncando: \"Posso esprimere sensazioni fisiche e stati di salute di base.\"",
           "recycled": "Module 8 progression",
           "grammarIds": [
+            "it-a1-it-avere",
+            "it-a1-preposizioni-articolate",
             "it-a1-imperativo"
           ]
         },
@@ -1501,6 +1577,8 @@
           "teacher_notes": "code: \"M08-L03\"\ncando: \"Posso descrivere disturbi comuni come mal di testa, raffreddore e febbre.\"",
           "recycled": "Module 8 progression",
           "grammarIds": [
+            "it-a1-it-avere",
+            "it-a1-preposizioni-articolate",
             "it-a1-imperativo"
           ]
         },
@@ -1530,6 +1608,8 @@
           "teacher_notes": "code: \"M08-L04\"\ncando: \"Posso spiegare i problemi di salute al medico e capire i consigli di base.\"",
           "recycled": "Module 8 progression",
           "grammarIds": [
+            "it-a1-it-avere",
+            "it-a1-preposizioni-articolate",
             "it-a1-imperativo"
           ]
         },
@@ -1559,6 +1639,8 @@
           "teacher_notes": "code: \"M08-L05\"\ncando: \"Posso chiedere medicinali in farmacia e capire le istruzioni sul dosaggio.\"",
           "recycled": "Module 8 progression",
           "grammarIds": [
+            "it-a1-it-avere",
+            "it-a1-preposizioni-articolate",
             "it-a1-imperativo"
           ]
         },
@@ -1588,6 +1670,8 @@
           "teacher_notes": "code: \"M08-L06\"\ncando: \"Posso descrivere routine quotidiane sane e discutere semplici abitudini di benessere.\"",
           "recycled": "Module 8 progression",
           "grammarIds": [
+            "it-a1-it-avere",
+            "it-a1-preposizioni-articolate",
             "it-a1-imperativo"
           ]
         }
@@ -1629,6 +1713,7 @@
           "teacher_notes": "code: \"M09-L01\"\ncando: \"Posso nominare professioni comuni e chiedere a qualcuno del suo lavoro.\"",
           "recycled": "Module 9 progression",
           "grammarIds": [
+            "it-a1-presente-regolare",
             "it-a1-preposizioni-luogo"
           ]
         },
@@ -1658,6 +1743,7 @@
           "teacher_notes": "code: \"M09-L02\"\ncando: \"Posso descrivere luoghi di lavoro e indicare dove lavorano le persone.\"",
           "recycled": "Module 9 progression",
           "grammarIds": [
+            "it-a1-presente-regolare",
             "it-a1-preposizioni-luogo"
           ]
         },
@@ -1687,6 +1773,7 @@
           "teacher_notes": "code: \"M09-L03\"\ncando: \"Posso parlare di orari di lavoro, programmi e mansioni di base.\"",
           "recycled": "Module 9 progression",
           "grammarIds": [
+            "it-a1-presente-regolare",
             "it-a1-preposizioni-luogo"
           ]
         },
@@ -1716,6 +1803,7 @@
           "teacher_notes": "code: \"M09-L04\"\ncando: \"Posso parlare di scuole, università e materie preferite.\"",
           "recycled": "Module 9 progression",
           "grammarIds": [
+            "it-a1-presente-regolare",
             "it-a1-preposizioni-luogo"
           ]
         },
@@ -1745,6 +1833,7 @@
           "teacher_notes": "code: \"M09-L05\"\ncando: \"Posso descrivere le routine di studio, i compiti e la preparazione agli esami.\"",
           "recycled": "Module 9 progression",
           "grammarIds": [
+            "it-a1-presente-regolare",
             "it-a1-preposizioni-luogo"
           ]
         },
@@ -1774,6 +1863,7 @@
           "teacher_notes": "code: \"M09-L06\"\ncando: \"Posso presentare una panoramica completa del mio percorso di lavoro e studio.\"",
           "recycled": "Module 9 progression",
           "grammarIds": [
+            "it-a1-presente-regolare",
             "it-a1-preposizioni-luogo"
           ]
         }
@@ -1813,7 +1903,11 @@
           "hw": "Homework practice for 10.1 Lingue e Verbi di comunicazione",
           "cando": "Posso indicare quali lingue parlo, leggo, scrivo e capisco.",
           "teacher_notes": "code: \"M10-L01\"\ncando: \"Posso indicare quali lingue parlo, leggo, scrivo e capisco.\"",
-          "recycled": "Module 10 progression"
+          "recycled": "Module 10 progression",
+          "grammarIds": [
+            "it-a1-verbi-modali",
+            "it-a1-avverbi-frequenza-modo"
+          ]
         },
         {
           "code": "M10-L02",
@@ -1839,7 +1933,11 @@
           "hw": "Homework practice for 10.2 Livello linguistico e Progressi",
           "cando": "Posso descrivere il mio livello di competenza e i miei progressi nello studio.",
           "teacher_notes": "code: \"M10-L02\"\ncando: \"Posso descrivere il mio livello di competenza e i miei progressi nello studio.\"",
-          "recycled": "Module 10 progression"
+          "recycled": "Module 10 progression",
+          "grammarIds": [
+            "it-a1-verbi-modali",
+            "it-a1-avverbi-frequenza-modo"
+          ]
         },
         {
           "code": "M10-L03",
@@ -1865,7 +1963,11 @@
           "hw": "Homework practice for 10.3 Interazione in classe e Richieste",
           "cando": "Posso usare frasi utili in classe e chiedere chiarimenti.",
           "teacher_notes": "code: \"M10-L03\"\ncando: \"Posso usare frasi utili in classe e chiedere chiarimenti.\"",
-          "recycled": "Module 10 progression"
+          "recycled": "Module 10 progression",
+          "grammarIds": [
+            "it-a1-verbi-modali",
+            "it-a1-avverbi-frequenza-modo"
+          ]
         },
         {
           "code": "M10-L04",
@@ -1891,7 +1993,11 @@
           "hw": "Homework practice for 10.4 Traduzione, Ortografia e Pronuncia",
           "cando": "Posso chiedere traduzioni, l'ortografia corretta e aiuto per la pronuncia.",
           "teacher_notes": "code: \"M10-L04\"\ncando: \"Posso chiedere traduzioni, l'ortografia corretta e aiuto per la pronuncia.\"",
-          "recycled": "Module 10 progression"
+          "recycled": "Module 10 progression",
+          "grammarIds": [
+            "it-a1-verbi-modali",
+            "it-a1-avverbi-frequenza-modo"
+          ]
         },
         {
           "code": "M10-L05",
@@ -1917,7 +2023,11 @@
           "hw": "Homework practice for 10.5 Canali di comunicazione e Messaggi",
           "cando": "Posso parlare dei metodi di comunicazione e inviare brevi messaggi.",
           "teacher_notes": "code: \"M10-L05\"\ncando: \"Posso parlare dei metodi di comunicazione e inviare brevi messaggi.\"",
-          "recycled": "Module 10 progression"
+          "recycled": "Module 10 progression",
+          "grammarIds": [
+            "it-a1-verbi-modali",
+            "it-a1-avverbi-frequenza-modo"
+          ]
         },
         {
           "code": "M10-L06",
@@ -1943,7 +2053,11 @@
           "hw": "Homework practice for 10.6 Sintesi: Profilo dello studente multilingue",
           "cando": "Posso presentare il mio portfolio linguistico e comunicare efficacemente.",
           "teacher_notes": "code: \"M10-L06\"\ncando: \"Posso presentare il mio portfolio linguistico e comunicare efficacemente.\"",
-          "recycled": "Module 10 progression"
+          "recycled": "Module 10 progression",
+          "grammarIds": [
+            "it-a1-verbi-modali",
+            "it-a1-avverbi-frequenza-modo"
+          ]
         }
       ]
     },
@@ -1983,6 +2097,7 @@
           "teacher_notes": "code: \"M11-L01\"\ncando: \"Posso nominare i mezzi di trasporto comuni e dire come viaggio.\"",
           "recycled": "Module 11 progression",
           "grammarIds": [
+            "it-a1-preposizioni-semplici",
             "it-a1-imperativo"
           ]
         },
@@ -2012,6 +2127,7 @@
           "teacher_notes": "code: \"M11-L02\"\ncando: \"Posso nominare luoghi di viaggio come aeroporti e stazioni e individuarli.\"",
           "recycled": "Module 11 progression",
           "grammarIds": [
+            "it-a1-preposizioni-semplici",
             "it-a1-imperativo"
           ]
         },
@@ -2041,6 +2157,7 @@
           "teacher_notes": "code: \"M11-L03\"\ncando: \"Posso chiedere dove si trovano i luoghi e capire le indicazioni di base.\"",
           "recycled": "Module 11 progression",
           "grammarIds": [
+            "it-a1-preposizioni-semplici",
             "it-a1-imperativo"
           ]
         },
@@ -2070,6 +2187,7 @@
           "teacher_notes": "code: \"M11-L04\"\ncando: \"Posso comprare biglietti di trasporto e chiedere orari di partenza e arrivo.\"",
           "recycled": "Module 11 progression",
           "grammarIds": [
+            "it-a1-preposizioni-semplici",
             "it-a1-imperativo"
           ]
         },
@@ -2099,6 +2217,7 @@
           "teacher_notes": "code: \"M11-L05\"\ncando: \"Posso gestire il check-in in aeroporto o hotel e parlare dei bagagli.\"",
           "recycled": "Module 11 progression",
           "grammarIds": [
+            "it-a1-preposizioni-semplici",
             "it-a1-imperativo"
           ]
         },
@@ -2128,6 +2247,7 @@
           "teacher_notes": "code: \"M11-L06\"\ncando: \"Posso gestire un itinerario di viaggio completo dalla richiesta di indicazioni all'arrivo.\"",
           "recycled": "Module 11 progression",
           "grammarIds": [
+            "it-a1-preposizioni-semplici",
             "it-a1-imperativo"
           ]
         }
@@ -2353,7 +2473,10 @@
           "hw": "Homework practice for 13.1 Condizioni meteo e Temperatura",
           "cando": "Posso descrivere le condizioni meteo giornaliere e la temperatura.",
           "teacher_notes": "code: \"M13-L01\"\ncando: \"Posso descrivere le condizioni meteo giornaliere e la temperatura.\"",
-          "recycled": "Module 13 progression"
+          "recycled": "Module 13 progression",
+          "grammarIds": [
+            "it-a1-presente-regolare"
+          ]
         },
         {
           "code": "M13-L02",
@@ -2379,7 +2502,10 @@
           "hw": "Homework practice for 13.2 Le quattro stagioni e Attività",
           "cando": "Posso nominare le quattro stagioni e parlare delle attività preferite.",
           "teacher_notes": "code: \"M13-L02\"\ncando: \"Posso nominare le quattro stagioni e parlare delle attività preferite.\"",
-          "recycled": "Module 13 progression"
+          "recycled": "Module 13 progression",
+          "grammarIds": [
+            "it-a1-presente-regolare"
+          ]
         },
         {
           "code": "M13-L03",
@@ -2405,7 +2531,10 @@
           "hw": "Homework practice for 13.3 Paesaggi naturali e Luoghi",
           "cando": "Posso nominare luoghi naturali come mare, montagna e foresta.",
           "teacher_notes": "code: \"M13-L03\"\ncando: \"Posso nominare luoghi naturali come mare, montagna e foresta.\"",
-          "recycled": "Module 13 progression"
+          "recycled": "Module 13 progression",
+          "grammarIds": [
+            "it-a1-presente-regolare"
+          ]
         },
         {
           "code": "M13-L04",
@@ -2431,7 +2560,10 @@
           "hw": "Homework practice for 13.4 Previsioni meteo e Programmazione",
           "cando": "Posso capire semplici previsioni meteo e pianificare attività all'aperto.",
           "teacher_notes": "code: \"M13-L04\"\ncando: \"Posso capire semplici previsioni meteo e pianificare attività all'aperto.\"",
-          "recycled": "Module 13 progression"
+          "recycled": "Module 13 progression",
+          "grammarIds": [
+            "it-a1-presente-regolare"
+          ]
         },
         {
           "code": "M13-L05",
@@ -2457,7 +2589,10 @@
           "hw": "Homework practice for 13.5 Abitudini ecologiche e Natura",
           "cando": "Posso discutere di semplici abitudini ecologiche come il riciclaggio.",
           "teacher_notes": "code: \"M13-L05\"\ncando: \"Posso discutere di semplici abitudini ecologiche come il riciclaggio.\"",
-          "recycled": "Module 13 progression"
+          "recycled": "Module 13 progression",
+          "grammarIds": [
+            "it-a1-presente-regolare"
+          ]
         },
         {
           "code": "M13-L06",
@@ -2483,7 +2618,10 @@
           "hw": "Homework practice for 13.6 Sintesi: Natura e Meteo",
           "cando": "Posso descrivere gli ambienti naturali e il clima del mio paese.",
           "teacher_notes": "code: \"M13-L06\"\ncando: \"Posso descrivere gli ambienti naturali e il clima del mio paese.\"",
-          "recycled": "Module 13 progression"
+          "recycled": "Module 13 progression",
+          "grammarIds": [
+            "it-a1-presente-regolare"
+          ]
         }
       ]
     },
@@ -2709,7 +2847,8 @@
           "teacher_notes": "code: \"M15-L01\"\ncando: \"Posso nominare dispositivi tech come smartphone, laptop e cuffie.\"",
           "recycled": "Module 15 progression",
           "grammarIds": [
-            "it-a1-imperativo"
+            "it-a1-imperativo",
+            "it-a1-presente-regolare"
           ]
         },
         {
@@ -2738,7 +2877,8 @@
           "teacher_notes": "code: \"M15-L02\"\ncando: \"Posso descrivere azioni tech di base (accendere, caricare, scaricare).\"",
           "recycled": "Module 15 progression",
           "grammarIds": [
-            "it-a1-imperativo"
+            "it-a1-imperativo",
+            "it-a1-presente-regolare"
           ]
         },
         {
@@ -2767,7 +2907,8 @@
           "teacher_notes": "code: \"M15-L03\"\ncando: \"Posso parlare di attività online (ricerche, email, navigazione siti).\"",
           "recycled": "Module 15 progression",
           "grammarIds": [
-            "it-a1-imperativo"
+            "it-a1-imperativo",
+            "it-a1-presente-regolare"
           ]
         },
         {
@@ -2796,7 +2937,8 @@
           "teacher_notes": "code: \"M15-L04\"\ncando: \"Posso scrivere brevi messaggi digitali e usare i termini dei social media.\"",
           "recycled": "Module 15 progression",
           "grammarIds": [
-            "it-a1-imperativo"
+            "it-a1-imperativo",
+            "it-a1-presente-regolare"
           ]
         },
         {
@@ -2825,7 +2967,8 @@
           "teacher_notes": "code: \"M15-L05\"\ncando: \"Posso capire le regole base di sicurezza digitale e descrivere problemi tecnici.\"",
           "recycled": "Module 15 progression",
           "grammarIds": [
-            "it-a1-imperativo"
+            "it-a1-imperativo",
+            "it-a1-presente-regolare"
           ]
         },
         {
@@ -2854,7 +2997,8 @@
           "teacher_notes": "code: \"M15-L06\"\ncando: \"Posso presentare una panoramica delle mie abitudini tech e comunicazione digitale.\"",
           "recycled": "Module 15 progression",
           "grammarIds": [
-            "it-a1-imperativo"
+            "it-a1-imperativo",
+            "it-a1-presente-regolare"
           ]
         }
       ]
@@ -3063,7 +3207,8 @@
           "teacher_notes": "code: \"M17-L01\"\ncando: \"Posso parlare di azioni completate ieri o la settimana scorsa.\"",
           "recycled": "Module 17 progression",
           "grammarIds": [
-            "it-a1-passato-prossimo"
+            "it-a1-passato-prossimo",
+            "it-a1-preposizioni-tempo"
           ]
         },
         {
@@ -3092,7 +3237,8 @@
           "teacher_notes": "code: \"M17-L02\"\ncando: \"Posso descrivere cosa ho fatto nel fine settimana e durante eventi passati.\"",
           "recycled": "Module 17 progression",
           "grammarIds": [
-            "it-a1-passato-prossimo"
+            "it-a1-passato-prossimo",
+            "it-a1-preposizioni-tempo"
           ]
         },
         {
@@ -3121,7 +3267,8 @@
           "teacher_notes": "code: \"M17-L03\"\ncando: \"Posso condividere semplici ricordi della mia infanzia.\"",
           "recycled": "Module 17 progression",
           "grammarIds": [
-            "it-a1-passato-prossimo"
+            "it-a1-passato-prossimo",
+            "it-a1-preposizioni-tempo"
           ]
         },
         {
@@ -3150,7 +3297,8 @@
           "teacher_notes": "code: \"M17-L04\"\ncando: \"Posso descrivere un viaggio o una vacanza passata.\"",
           "recycled": "Module 17 progression",
           "grammarIds": [
-            "it-a1-passato-prossimo"
+            "it-a1-passato-prossimo",
+            "it-a1-preposizioni-tempo"
           ]
         },
         {
@@ -3179,7 +3327,8 @@
           "teacher_notes": "code: \"M17-L05\"\ncando: \"Posso parlare di tappe importanti (trasferimento, fine studi, nuovo lavoro).\"",
           "recycled": "Module 17 progression",
           "grammarIds": [
-            "it-a1-passato-prossimo"
+            "it-a1-passato-prossimo",
+            "it-a1-preposizioni-tempo"
           ]
         },
         {
@@ -3208,7 +3357,8 @@
           "teacher_notes": "code: \"M17-L06\"\ncando: \"Posso fare una breve presentazione su un'importante esperienza passata.\"",
           "recycled": "Module 17 progression",
           "grammarIds": [
-            "it-a1-passato-prossimo"
+            "it-a1-passato-prossimo",
+            "it-a1-preposizioni-tempo"
           ]
         }
       ]
@@ -3247,7 +3397,12 @@
           "hw": "Homework practice for 18.1 Futuro immediato e Progetti personali",
           "cando": "Posso dire cosa farò domani o la prossima settimana.",
           "teacher_notes": "code: \"M18-L01\"\ncando: \"Posso dire cosa farò domani o la prossima settimana.\"",
-          "recycled": "Module 18 progression"
+          "recycled": "Module 18 progression",
+          "grammarIds": [
+            "it-a2-il-futuro-semplice",
+            "it-a1-stare-gerundio",
+            "it-a1-verbi-modali"
+          ]
         },
         {
           "code": "M18-L02",
@@ -3273,7 +3428,12 @@
           "hw": "Homework practice for 18.2 Sogni e Obiettivi personali",
           "cando": "Posso parlare dei miei sogni, speranze e obiettivi personali.",
           "teacher_notes": "code: \"M18-L02\"\ncando: \"Posso parlare dei miei sogni, speranze e obiettivi personali.\"",
-          "recycled": "Module 18 progression"
+          "recycled": "Module 18 progression",
+          "grammarIds": [
+            "it-a2-il-futuro-semplice",
+            "it-a1-stare-gerundio",
+            "it-a1-verbi-modali"
+          ]
         },
         {
           "code": "M18-L03",
@@ -3299,7 +3459,12 @@
           "hw": "Homework practice for 18.3 Progetti di carriera ed Istruzione",
           "cando": "Posso esprimere intenzioni future sul lavoro e gli studi.",
           "teacher_notes": "code: \"M18-L03\"\ncando: \"Posso esprimere intenzioni future sul lavoro e gli studi.\"",
-          "recycled": "Module 18 progression"
+          "recycled": "Module 18 progression",
+          "grammarIds": [
+            "it-a2-il-futuro-semplice",
+            "it-a1-stare-gerundio",
+            "it-a1-verbi-modali"
+          ]
         },
         {
           "code": "M18-L04",
@@ -3325,7 +3490,12 @@
           "hw": "Homework practice for 18.4 Viaggi futuri e Progetti di vacanza",
           "cando": "Posso parlare di destinazioni di viaggio e progetti di vacanza.",
           "teacher_notes": "code: \"M18-L04\"\ncando: \"Posso parlare di destinazioni di viaggio e progetti di vacanza.\"",
-          "recycled": "Module 18 progression"
+          "recycled": "Module 18 progression",
+          "grammarIds": [
+            "it-a2-il-futuro-semplice",
+            "it-a1-stare-gerundio",
+            "it-a1-verbi-modali"
+          ]
         },
         {
           "code": "M18-L05",
@@ -3351,7 +3521,12 @@
           "hw": "Homework practice for 18.5 Semplici previsioni ed Opinioni sul futuro",
           "cando": "Posso fare semplici previsioni su città, tecnologia o clima nel futuro.",
           "teacher_notes": "code: \"M18-L05\"\ncando: \"Posso fare semplici previsioni su città, tecnologia o clima nel futuro.\"",
-          "recycled": "Module 18 progression"
+          "recycled": "Module 18 progression",
+          "grammarIds": [
+            "it-a2-il-futuro-semplice",
+            "it-a1-stare-gerundio",
+            "it-a1-verbi-modali"
+          ]
         },
         {
           "code": "M18-L06",
@@ -3377,7 +3552,12 @@
           "hw": "Homework practice for 18.6 Sintesi: Progetti futuri e Mappa del futuro",
           "cando": "Posso presentare una mappa personale con i miei obiettivi a breve e lungo termine.",
           "teacher_notes": "code: \"M18-L06\"\ncando: \"Posso presentare una mappa personale con i miei obiettivi a breve e lungo termine.\"",
-          "recycled": "Module 18 progression"
+          "recycled": "Module 18 progression",
+          "grammarIds": [
+            "it-a2-il-futuro-semplice",
+            "it-a1-stare-gerundio",
+            "it-a1-verbi-modali"
+          ]
         }
       ]
     },
@@ -3417,7 +3597,8 @@
           "teacher_notes": "code: \"M19-L01\"\ncando: \"Posso confrontare due persone o oggetti usando semplici comparativi.\"",
           "recycled": "Module 19 progression",
           "grammarIds": [
-            "it-a1-comparativo-superlativo"
+            "it-a1-comparativo-superlativo",
+            "it-a1-aggettivi-qualificativi"
           ]
         },
         {
@@ -3446,7 +3627,8 @@
           "teacher_notes": "code: \"M19-L02\"\ncando: \"Posso confrontare la vita in diverse città, paesi o nazioni.\"",
           "recycled": "Module 19 progression",
           "grammarIds": [
-            "it-a1-comparativo-superlativo"
+            "it-a1-comparativo-superlativo",
+            "it-a1-aggettivi-qualificativi"
           ]
         },
         {
@@ -3475,7 +3657,8 @@
           "teacher_notes": "code: \"M19-L03\"\ncando: \"Posso confrontare stili di vita moderni e tradizionali.\"",
           "recycled": "Module 19 progression",
           "grammarIds": [
-            "it-a1-comparativo-superlativo"
+            "it-a1-comparativo-superlativo",
+            "it-a1-aggettivi-qualificativi"
           ]
         },
         {
@@ -3504,7 +3687,8 @@
           "teacher_notes": "code: \"M19-L04\"\ncando: \"Posso esprimere preferenze e scegliere tra diverse opzioni.\"",
           "recycled": "Module 19 progression",
           "grammarIds": [
-            "it-a1-comparativo-superlativo"
+            "it-a1-comparativo-superlativo",
+            "it-a1-aggettivi-qualificativi"
           ]
         },
         {
@@ -3533,7 +3717,8 @@
           "teacher_notes": "code: \"M19-L05\"\ncando: \"Posso raccomandare un'opzione a qualcuno in base a un confronto.\"",
           "recycled": "Module 19 progression",
           "grammarIds": [
-            "it-a1-comparativo-superlativo"
+            "it-a1-comparativo-superlativo",
+            "it-a1-aggettivi-qualificativi"
           ]
         },
         {
@@ -3562,7 +3747,8 @@
           "teacher_notes": "code: \"M19-L06\"\ncando: \"Posso fare una presentazione comparativa di due prodotti, luoghi o stili di vita.\"",
           "recycled": "Module 19 progression",
           "grammarIds": [
-            "it-a1-comparativo-superlativo"
+            "it-a1-comparativo-superlativo",
+            "it-a1-aggettivi-qualificativi"
           ]
         }
       ]
@@ -3601,7 +3787,11 @@
           "hw": "Homework practice for 20.1 Esprimere semplici opinioni",
           "cando": "Posso esprimere chiaramente la mia opinione su argomenti quotidiani.",
           "teacher_notes": "code: \"M20-L01\"\ncando: \"Posso esprimere chiaramente la mia opinione su argomenti quotidiani.\"",
-          "recycled": "Module 20 progression"
+          "recycled": "Module 20 progression",
+          "grammarIds": [
+            "it-a1-verbi-modali",
+            "it-a2-il-condizionale-presente"
+          ]
         },
         {
           "code": "M20-L02",
@@ -3627,7 +3817,11 @@
           "hw": "Homework practice for 20.2 Esprimere accordo e disaccordo con cortesia",
           "cando": "Posso mostrare accordo o disaccordo cortese durante una discussione.",
           "teacher_notes": "code: \"M20-L02\"\ncando: \"Posso mostrare accordo o disaccordo cortese durante una discussione.\"",
-          "recycled": "Module 20 progression"
+          "recycled": "Module 20 progression",
+          "grammarIds": [
+            "it-a1-verbi-modali",
+            "it-a2-il-condizionale-presente"
+          ]
         },
         {
           "code": "M20-L03",
@@ -3653,7 +3847,11 @@
           "hw": "Homework practice for 20.3 Spiegare un problema e Chiedere aiuto",
           "cando": "Posso descrivere problemi quotidiani (perso, rotto, in ritardo) e chiedere aiuto.",
           "teacher_notes": "code: \"M20-L03\"\ncando: \"Posso descrivere problemi quotidiani (perso, rotto, in ritardo) e chiedere aiuto.\"",
-          "recycled": "Module 20 progression"
+          "recycled": "Module 20 progression",
+          "grammarIds": [
+            "it-a1-verbi-modali",
+            "it-a2-il-condizionale-presente"
+          ]
         },
         {
           "code": "M20-L04",
@@ -3679,7 +3877,11 @@
           "hw": "Homework practice for 20.4 Dare consigli e Soluzioni semplici",
           "cando": "Posso offrire semplici consigli o suggerimenti pratici per problemi comuni.",
           "teacher_notes": "code: \"M20-L04\"\ncando: \"Posso offrire semplici consigli o suggerimenti pratici per problemi comuni.\"",
-          "recycled": "Module 20 progression"
+          "recycled": "Module 20 progression",
+          "grammarIds": [
+            "it-a1-verbi-modali",
+            "it-a2-il-condizionale-presente"
+          ]
         },
         {
           "code": "M20-L05",
@@ -3705,7 +3907,11 @@
           "hw": "Homework practice for 20.5 Richieste cortesi e Permessi",
           "cando": "Posso fare richieste cortesi e chiedere il permesso in contesti pubblici.",
           "teacher_notes": "code: \"M20-L05\"\ncando: \"Posso fare richieste cortesi e chiedere il permesso in contesti pubblici.\"",
-          "recycled": "Module 20 progression"
+          "recycled": "Module 20 progression",
+          "grammarIds": [
+            "it-a1-verbi-modali",
+            "it-a2-il-condizionale-presente"
+          ]
         },
         {
           "code": "M20-L06",
@@ -3731,7 +3937,11 @@
           "hw": "Homework practice for 20.6 Sintesi: Interazione sociale e Sondaggio d'opinione",
           "cando": "Posso condurre un semplice sondaggio d'opinione e risolvere un problema pratico.",
           "teacher_notes": "code: \"M20-L06\"\ncando: \"Posso condurre un semplice sondaggio d'opinione e risolvere un problema pratico.\"",
-          "recycled": "Module 20 progression"
+          "recycled": "Module 20 progression",
+          "grammarIds": [
+            "it-a1-verbi-modali",
+            "it-a2-il-condizionale-presente"
+          ]
         }
       ]
     },
@@ -3771,7 +3981,8 @@
           "teacher_notes": "code: \"M21-L01\"\ncando: \"Posso orientarmi in aeroporto/stazione, capire gli annunci ed effettuare il check-in.\"",
           "recycled": "Module 21 progression",
           "grammarIds": [
-            "it-a1-imperativo"
+            "it-a1-imperativo",
+            "it-a1-interrogativi"
           ]
         },
         {
@@ -3800,7 +4011,8 @@
           "teacher_notes": "code: \"M21-L02\"\ncando: \"Posso fare il check-in in hotel, chiedere informazioni sui servizi e segnalare problemi.\"",
           "recycled": "Module 21 progression",
           "grammarIds": [
-            "it-a1-imperativo"
+            "it-a1-imperativo",
+            "it-a1-interrogativi"
           ]
         },
         {
@@ -3829,7 +4041,8 @@
           "teacher_notes": "code: \"M21-L03\"\ncando: \"Posso comunicare un'emergenza medica, comprare farmaci e chiedere di un medico.\"",
           "recycled": "Module 21 progression",
           "grammarIds": [
-            "it-a1-imperativo"
+            "it-a1-imperativo",
+            "it-a1-interrogativi"
           ]
         },
         {
@@ -3858,7 +4071,8 @@
           "teacher_notes": "code: \"M21-L04\"\ncando: \"Posso segnalare oggetti smarriti o rubati alla polizia o all'ufficio informazioni.\"",
           "recycled": "Module 21 progression",
           "grammarIds": [
-            "it-a1-imperativo"
+            "it-a1-imperativo",
+            "it-a1-interrogativi"
           ]
         },
         {
@@ -3887,7 +4101,8 @@
           "teacher_notes": "code: \"M21-L05\"\ncando: \"Posso usare strategie di chiarimento quando non capisco.\"",
           "recycled": "Module 21 progression",
           "grammarIds": [
-            "it-a1-imperativo"
+            "it-a1-imperativo",
+            "it-a1-interrogativi"
           ]
         },
         {
@@ -3916,7 +4131,8 @@
           "teacher_notes": "code: \"M21-L06\"\ncando: \"Posso gestire una simulazione completa di viaggio (aeroporto, hotel, imprevisti).\"",
           "recycled": "Module 21 progression",
           "grammarIds": [
-            "it-a1-imperativo"
+            "it-a1-imperativo",
+            "it-a1-interrogativi"
           ]
         }
       ]
