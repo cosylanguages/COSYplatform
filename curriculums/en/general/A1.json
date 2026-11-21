@@ -61,7 +61,10 @@
           "growingTask": {
             "selfPortrait": "I am a student. I am not a teacher.",
             "dialogue": "A: Are you a student?\nB: Yes, I am. You are a friend."
-          }
+          },
+          "grammarIds": [
+            "en-a1-to-be"
+          ]
         },
         {
           "lesson": 3,
@@ -117,7 +120,10 @@
           "growingTask": {
             "dialogue": "A: Welcome! Excuse me, is this the English class?\nB: Yes, it is! Take care and see you later."
           },
-          "slug": "countries-nationalities-a1"
+          "slug": "countries-nationalities-a1",
+          "grammarIds": [
+            "en-a1-to-be"
+          ]
         },
         {
           "lesson": 5,
@@ -141,7 +147,10 @@
             "teens": "Gamified digital quiz competition with instant leaderboard feedback covering alphabet, greetings, and 'to be' questions.",
             "adults": "Self-assessment check-grid with targeted error-analysis exercise and practical written/spoken grammar review tasks.",
             "seniors": "Unhurried paper-based or group review session with clear visual layouts, reviewing core Unit 1 concepts through shared recall."
-          }
+          },
+          "grammarIds": [
+            "en-a1-can-cant"
+          ]
         },
         {
           "lesson": 6,
@@ -480,7 +489,10 @@
           "growingTask": {
             "selfPortrait": "I am from France. I speak French and English.",
             "dialogue": "A: Where are you from?\nB: I am from France. I speak French."
-          }
+          },
+          "grammarIds": [
+            "en-a1-possessive-s"
+          ]
         },
         {
           "lesson": 2,
@@ -518,7 +530,11 @@
           "growingTask": {
             "selfPortrait": "My friend is from Italy. She is Italian.",
             "dialogue": "A: Where is she from?\nB: She is from Italy. She is Italian."
-          }
+          },
+          "grammarIds": [
+            "en-a1-adjectives",
+            "en-a1-present-simple"
+          ]
         },
         {
           "lesson": 3,
@@ -551,7 +567,11 @@
           "growingTask": {
             "selfPortrait": "I come from France, but I live in London.",
             "dialogue": "A: Where do you live?\nB: I live in London, but I come from France."
-          }
+          },
+          "grammarIds": [
+            "en-a1-adjectives",
+            "en-a1-conjunctions"
+          ]
         },
         {
           "lesson": 4,
@@ -719,7 +739,11 @@
           "growingTask": {
             "selfPortrait": "My mother is 50 years old. I have one brother and one sister.",
             "dialogue": "A: How old is your mother?\nB: She is 50 years old."
-          }
+          },
+          "grammarIds": [
+            "en-a1-articles",
+            "en-a1-demonstratives"
+          ]
         },
         {
           "lesson": 2,
@@ -748,7 +772,10 @@
           "growingTask": {
             "selfPortrait": "My brother's name is Mark. His wife is my aunt's daughter.",
             "dialogue": "A: What is your brother's name?\nB: His name is Mark."
-          }
+          },
+          "grammarIds": [
+            "en-a1-have-got"
+          ]
         },
         {
           "lesson": 3,
@@ -782,7 +809,11 @@
           "growingTask": {
             "selfPortrait": "My younger sister is single. We live together in a close family.",
             "dialogue": "A: Is your sister married?\nB: No, she is single. We live together."
-          }
+          },
+          "grammarIds": [
+            "en-a1-adjectives",
+            "en-a1-comparative-adjectives"
+          ]
         },
         {
           "lesson": 4,
@@ -904,7 +935,10 @@
           "growingTask": {
             "selfPortrait": "There is a sofa and a television in my living room.",
             "dialogue": "A: Is there a balcony in the flat?\nB: Yes, there is. There are two rooms."
-          }
+          },
+          "grammarIds": [
+            "en-a1-there-is-are"
+          ]
         },
         {
           "lesson": 3,
@@ -937,7 +971,10 @@
           "growingTask": {
             "selfPortrait": "I live in a small, quiet flat. It is very cozy and clean.",
             "dialogue": "A: Is your house big?\nB: No, it is small, but it is comfortable and quiet."
-          }
+          },
+          "grammarIds": [
+            "en-a1-prepositions-place"
+          ]
         },
         {
           "lesson": 4,
@@ -970,7 +1007,11 @@
           },
           "growingTask": {
             "dialogue": "A: What is your dream house like?\nB: I like a cozy house near the park. It has got a beautiful view."
-          }
+          },
+          "grammarIds": [
+            "en-a1-imperatives",
+            "en-a1-present-simple"
+          ]
         },
         {
           "lesson": 5,
@@ -1235,7 +1276,10 @@
           "growingTask": {
             "selfPortrait": "I wake up at 7 o'clock in the morning. I go to bed at 11 o'clock.",
             "dialogue": "A: What time do you wake up?\nB: I wake up at 7 o'clock."
-          }
+          },
+          "grammarIds": [
+            "en-a1-countable-uncountable"
+          ]
         },
         {
           "code": "EN-052",
@@ -1273,7 +1317,10 @@
           "growingTask": {
             "selfPortrait": "I usually drink coffee in the morning. On weekdays, I always start work at 9.",
             "dialogue": "A: Do you always drink coffee in the morning?\nB: Yes, I always do."
-          }
+          },
+          "grammarIds": [
+            "en-a1-present-simple"
+          ]
         },
         {
           "code": "EN-053",
@@ -1384,7 +1431,10 @@
             "teens": "Digital speed review quiz testing frequency adverbs and Present Simple forms.",
             "adults": "Self-assessment checklist and written error-correction exercise on routines.",
             "seniors": "Paper-based review exercise summarizing daily schedule concepts calmly."
-          }
+          },
+          "grammarIds": [
+            "en-a1-imperatives"
+          ]
         },
         {
           "code": "EN-056",
@@ -1688,7 +1738,11 @@
           "hw": "Homework practice for 7.1 Essential Clothing Items",
           "cando": "I can name everyday clothing items and describe what I am wearing today.",
           "teacher_notes": "code: \"M07-L01\"\ncando: \"I can name everyday clothing items and describe what I am wearing today.\"",
-          "recycled": "Module 7 progression"
+          "recycled": "Module 7 progression",
+          "grammarIds": [
+            "en-a1-adjectives",
+            "en-a1-demonstratives"
+          ]
         },
         {
           "code": "M07-L02",
@@ -1714,7 +1768,11 @@
           "hw": "Homework practice for 7.2 Accessories & Footwear",
           "cando": "I can identify accessories and footwear and describe personal style.",
           "teacher_notes": "code: \"M07-L02\"\ncando: \"I can identify accessories and footwear and describe personal style.\"",
-          "recycled": "Module 7 progression"
+          "recycled": "Module 7 progression",
+          "grammarIds": [
+            "en-a1-adjectives",
+            "en-a1-demonstratives"
+          ]
         },
         {
           "code": "M07-L03",
@@ -1741,7 +1799,11 @@
           "cando": "I can describe clothes using colour, size, and style adjectives.",
           "teacher_notes": "code: \"M07-L03\"\ncando: \"I can describe clothes using colour, size, and style adjectives.\"",
           "recycled": "Module 7 progression",
-          "slug": "clothes"
+          "slug": "clothes",
+          "grammarIds": [
+            "en-a1-adjectives",
+            "en-a1-demonstratives"
+          ]
         },
         {
           "code": "M07-L04",
@@ -1767,7 +1829,11 @@
           "hw": "Homework practice for 7.4 Clothes Shopping: Trying On & Fitting",
           "cando": "I can ask to try on clothes and express fitting preferences.",
           "teacher_notes": "code: \"M07-L04\"\ncando: \"I can ask to try on clothes and express fitting preferences.\"",
-          "recycled": "Module 7 progression"
+          "recycled": "Module 7 progression",
+          "grammarIds": [
+            "en-a1-adjectives",
+            "en-a1-demonstratives"
+          ]
         },
         {
           "code": "M07-L05",
@@ -1793,7 +1859,11 @@
           "hw": "Homework practice for 7.5 Clothes Shopping: Comparisons & Buying",
           "cando": "I can compare clothing choices, discuss prices, and buy clothes in a shop.",
           "teacher_notes": "code: \"M07-L05\"\ncando: \"I can compare clothing choices, discuss prices, and buy clothes in a shop.\"",
-          "recycled": "Module 7 progression"
+          "recycled": "Module 7 progression",
+          "grammarIds": [
+            "en-a1-adjectives",
+            "en-a1-demonstratives"
+          ]
         },
         {
           "code": "M07-L06",
@@ -1819,7 +1889,11 @@
           "hw": "Homework practice for 7.6 Wardrobe & Fashion Capstone",
           "cando": "I can describe my wardrobe, favourite outfits, and handle clothes shopping dialogues.",
           "teacher_notes": "code: \"M07-L06\"\ncando: \"I can describe my wardrobe, favourite outfits, and handle clothes shopping dialogues.\"",
-          "recycled": "Module 7 progression"
+          "recycled": "Module 7 progression",
+          "grammarIds": [
+            "en-a1-adjectives",
+            "en-a1-demonstratives"
+          ]
         },
         {
           "lesson": 7,
@@ -1874,7 +1948,11 @@
           "hw": "Homework practice for 8.1 Body Parts & Physical Self",
           "cando": "I can name human body parts and point out physical pain locations.",
           "teacher_notes": "code: \"M08-L01\"\ncando: \"I can name human body parts and point out physical pain locations.\"",
-          "recycled": "Module 8 progression"
+          "recycled": "Module 8 progression",
+          "grammarIds": [
+            "en-a1-have-got",
+            "en-a1-imperatives"
+          ]
         },
         {
           "code": "M08-L02",
@@ -1900,7 +1978,11 @@
           "hw": "Homework practice for 8.2 Basic Health States & Feeling Unwell",
           "cando": "I can express physical feelings and basic health states.",
           "teacher_notes": "code: \"M08-L02\"\ncando: \"I can express physical feelings and basic health states.\"",
-          "recycled": "Module 8 progression"
+          "recycled": "Module 8 progression",
+          "grammarIds": [
+            "en-a1-have-got",
+            "en-a1-imperatives"
+          ]
         },
         {
           "code": "M08-L03",
@@ -1926,7 +2008,11 @@
           "hw": "Homework practice for 8.3 Common Ailments & Symptoms",
           "cando": "I can describe common ailments like headaches, colds, and fevers.",
           "teacher_notes": "code: \"M08-L03\"\ncando: \"I can describe common ailments like headaches, colds, and fevers.\"",
-          "recycled": "Module 8 progression"
+          "recycled": "Module 8 progression",
+          "grammarIds": [
+            "en-a1-have-got",
+            "en-a1-imperatives"
+          ]
         },
         {
           "code": "M08-L04",
@@ -1952,7 +2038,11 @@
           "hw": "Homework practice for 8.4 At the Doctor's Office",
           "cando": "I can explain health problems to a doctor and understand basic medical advice.",
           "teacher_notes": "code: \"M08-L04\"\ncando: \"I can explain health problems to a doctor and understand basic medical advice.\"",
-          "recycled": "Module 8 progression"
+          "recycled": "Module 8 progression",
+          "grammarIds": [
+            "en-a1-have-got",
+            "en-a1-imperatives"
+          ]
         },
         {
           "code": "M08-L05",
@@ -1978,7 +2068,11 @@
           "hw": "Homework practice for 8.5 At the Pharmacy & Buying Medicine",
           "cando": "I can request medicine at a pharmacy and understand dosage instructions.",
           "teacher_notes": "code: \"M08-L05\"\ncando: \"I can request medicine at a pharmacy and understand dosage instructions.\"",
-          "recycled": "Module 8 progression"
+          "recycled": "Module 8 progression",
+          "grammarIds": [
+            "en-a1-have-got",
+            "en-a1-imperatives"
+          ]
         },
         {
           "code": "M08-L06",
@@ -2004,7 +2098,11 @@
           "hw": "Homework practice for 8.6 Healthy Lifestyle & Wellness Capstone",
           "cando": "I can describe healthy daily routines and discuss simple wellness habits.",
           "teacher_notes": "code: \"M08-L06\"\ncando: \"I can describe healthy daily routines and discuss simple wellness habits.\"",
-          "recycled": "Module 8 progression"
+          "recycled": "Module 8 progression",
+          "grammarIds": [
+            "en-a1-have-got",
+            "en-a1-imperatives"
+          ]
         },
         {
           "lesson": 7,
@@ -2051,7 +2149,11 @@
           "hw": "Homework practice for 9.1 Jobs & Professions",
           "cando": "I can name common occupations and ask someone about their job.",
           "teacher_notes": "code: \"M09-L01\"\ncando: \"I can name common occupations and ask someone about their job.\"",
-          "recycled": "Module 9 progression"
+          "recycled": "Module 9 progression",
+          "grammarIds": [
+            "en-a1-prepositions-place",
+            "en-a1-present-simple"
+          ]
         },
         {
           "code": "M09-L02",
@@ -2077,7 +2179,11 @@
           "hw": "Homework practice for 9.2 Workplaces & Work Locations",
           "cando": "I can describe workplaces and state where people work.",
           "teacher_notes": "code: \"M09-L02\"\ncando: \"I can describe workplaces and state where people work.\"",
-          "recycled": "Module 9 progression"
+          "recycled": "Module 9 progression",
+          "grammarIds": [
+            "en-a1-prepositions-place",
+            "en-a1-present-simple"
+          ]
         },
         {
           "code": "M09-L03",
@@ -2103,7 +2209,11 @@
           "hw": "Homework practice for 9.3 Working Hours & Work Communication",
           "cando": "I can talk about working hours, schedules, and basic workplace tasks.",
           "teacher_notes": "code: \"M09-L03\"\ncando: \"I can talk about working hours, schedules, and basic workplace tasks.\"",
-          "recycled": "Module 9 progression"
+          "recycled": "Module 9 progression",
+          "grammarIds": [
+            "en-a1-prepositions-place",
+            "en-a1-present-simple"
+          ]
         },
         {
           "code": "M09-L04",
@@ -2129,7 +2239,11 @@
           "hw": "Homework practice for 9.4 Education Places & School Subjects",
           "cando": "I can talk about schools, universities, and favourite academic subjects.",
           "teacher_notes": "code: \"M09-L04\"\ncando: \"I can talk about schools, universities, and favourite academic subjects.\"",
-          "recycled": "Module 9 progression"
+          "recycled": "Module 9 progression",
+          "grammarIds": [
+            "en-a1-prepositions-place",
+            "en-a1-present-simple"
+          ]
         },
         {
           "code": "M09-L05",
@@ -2155,7 +2269,11 @@
           "hw": "Homework practice for 9.5 Study Habits, Homework & Exams",
           "cando": "I can describe study routines, homework tasks, and exam preparation.",
           "teacher_notes": "code: \"M09-L05\"\ncando: \"I can describe study routines, homework tasks, and exam preparation.\"",
-          "recycled": "Module 9 progression"
+          "recycled": "Module 9 progression",
+          "grammarIds": [
+            "en-a1-prepositions-place",
+            "en-a1-present-simple"
+          ]
         },
         {
           "code": "M09-L06",
@@ -2181,7 +2299,11 @@
           "hw": "Homework practice for 9.6 Work & Education Profile Capstone",
           "cando": "I can present a complete overview of my professional and educational background.",
           "teacher_notes": "code: \"M09-L06\"\ncando: \"I can present a complete overview of my professional and educational background.\"",
-          "recycled": "Module 9 progression"
+          "recycled": "Module 9 progression",
+          "grammarIds": [
+            "en-a1-prepositions-place",
+            "en-a1-present-simple"
+          ]
         }
       ],
       "section": 5
@@ -2220,7 +2342,11 @@
           "hw": "Homework practice for 10.1 Languages & Communication Verbs",
           "cando": "I can state which languages I speak, read, write, and understand.",
           "teacher_notes": "code: \"M10-L01\"\ncando: \"I can state which languages I speak, read, write, and understand.\"",
-          "recycled": "Module 10 progression"
+          "recycled": "Module 10 progression",
+          "grammarIds": [
+            "en-a1-adverbs-manner",
+            "en-a1-can-cant"
+          ]
         },
         {
           "code": "M10-L02",
@@ -2246,7 +2372,11 @@
           "hw": "Homework practice for 10.2 Language Ability & Learning Progress",
           "cando": "I can describe my language proficiency level and learning progress.",
           "teacher_notes": "code: \"M10-L02\"\ncando: \"I can describe my language proficiency level and learning progress.\"",
-          "recycled": "Module 10 progression"
+          "recycled": "Module 10 progression",
+          "grammarIds": [
+            "en-a1-adverbs-manner",
+            "en-a1-can-cant"
+          ]
         },
         {
           "code": "M10-L03",
@@ -2272,7 +2402,11 @@
           "hw": "Homework practice for 10.3 Classroom Interaction & Requests",
           "cando": "I can use classroom communication phrases and request clarification.",
           "teacher_notes": "code: \"M10-L03\"\ncando: \"I can use classroom communication phrases and request clarification.\"",
-          "recycled": "Module 10 progression"
+          "recycled": "Module 10 progression",
+          "grammarIds": [
+            "en-a1-adverbs-manner",
+            "en-a1-can-cant"
+          ]
         },
         {
           "code": "M10-L04",
@@ -2298,7 +2432,11 @@
           "hw": "Homework practice for 10.4 Translation, Spelling & Pronunciation",
           "cando": "I can ask for translations, correct spelling, and pronunciation help.",
           "teacher_notes": "code: \"M10-L04\"\ncando: \"I can ask for translations, correct spelling, and pronunciation help.\"",
-          "recycled": "Module 10 progression"
+          "recycled": "Module 10 progression",
+          "grammarIds": [
+            "en-a1-adverbs-manner",
+            "en-a1-can-cant"
+          ]
         },
         {
           "code": "M10-L05",
@@ -2324,7 +2462,11 @@
           "hw": "Homework practice for 10.5 Communication Channels & Messages",
           "cando": "I can talk about methods of communication and send short digital messages.",
           "teacher_notes": "code: \"M10-L05\"\ncando: \"I can talk about methods of communication and send short digital messages.\"",
-          "recycled": "Module 10 progression"
+          "recycled": "Module 10 progression",
+          "grammarIds": [
+            "en-a1-adverbs-manner",
+            "en-a1-can-cant"
+          ]
         },
         {
           "code": "M10-L06",
@@ -2350,7 +2492,11 @@
           "hw": "Homework practice for 10.6 Multilingual Learner Profile Capstone",
           "cando": "I can present my language learning portfolio and communicate effectively in class.",
           "teacher_notes": "code: \"M10-L06\"\ncando: \"I can present my language learning portfolio and communicate effectively in class.\"",
-          "recycled": "Module 10 progression"
+          "recycled": "Module 10 progression",
+          "grammarIds": [
+            "en-a1-adverbs-manner",
+            "en-a1-can-cant"
+          ]
         }
       ],
       "section": 5
@@ -2389,7 +2535,10 @@
           "hw": "Homework practice for 11.1 Modes of Transport & Commuting",
           "cando": "I can name common modes of transport and say how I travel to work or school.",
           "teacher_notes": "code: \"M11-L01\"\ncando: \"I can name common modes of transport and say how I travel to work or school.\"",
-          "recycled": "Module 11 progression"
+          "recycled": "Module 11 progression",
+          "grammarIds": [
+            "en-a1-imperatives"
+          ]
         },
         {
           "code": "M11-L02",
@@ -2415,7 +2564,10 @@
           "hw": "Homework practice for 11.2 Travel Places & Stations",
           "cando": "I can name travel locations like airports and train stations and locate them.",
           "teacher_notes": "code: \"M11-L02\"\ncando: \"I can name travel locations like airports and train stations and locate them.\"",
-          "recycled": "Module 11 progression"
+          "recycled": "Module 11 progression",
+          "grammarIds": [
+            "en-a1-imperatives"
+          ]
         },
         {
           "code": "M11-L03",
@@ -2441,7 +2593,10 @@
           "hw": "Homework practice for 11.3 Asking & Giving Directions",
           "cando": "I can ask where places are and understand basic directions.",
           "teacher_notes": "code: \"M11-L03\"\ncando: \"I can ask where places are and understand basic directions.\"",
-          "recycled": "Module 11 progression"
+          "recycled": "Module 11 progression",
+          "grammarIds": [
+            "en-a1-imperatives"
+          ]
         },
         {
           "code": "M11-L04",
@@ -2467,7 +2622,10 @@
           "hw": "Homework practice for 11.4 Buying Tickets & Travel Schedules",
           "cando": "I can buy transport tickets and ask about departure and arrival times.",
           "teacher_notes": "code: \"M11-L04\"\ncando: \"I can buy transport tickets and ask about departure and arrival times.\"",
-          "recycled": "Module 11 progression"
+          "recycled": "Module 11 progression",
+          "grammarIds": [
+            "en-a1-imperatives"
+          ]
         },
         {
           "code": "M11-L05",
@@ -2493,7 +2651,10 @@
           "hw": "Homework practice for 11.5 Travel Situations: Checking In & Luggage",
           "cando": "I can handle basic airport/hotel check-in situations and talk about luggage.",
           "teacher_notes": "code: \"M11-L05\"\ncando: \"I can handle basic airport/hotel check-in situations and talk about luggage.\"",
-          "recycled": "Module 11 progression"
+          "recycled": "Module 11 progression",
+          "grammarIds": [
+            "en-a1-imperatives"
+          ]
         },
         {
           "code": "M11-L06",
@@ -2519,7 +2680,10 @@
           "hw": "Homework practice for 11.6 Transport & Travel Capstone",
           "cando": "I can navigate a full travel itinerary from asking directions to buying tickets and arriving.",
           "teacher_notes": "code: \"M11-L06\"\ncando: \"I can navigate a full travel itinerary from asking directions to buying tickets and arriving.\"",
-          "recycled": "Module 11 progression"
+          "recycled": "Module 11 progression",
+          "grammarIds": [
+            "en-a1-imperatives"
+          ]
         }
       ],
       "section": 6
@@ -2558,7 +2722,11 @@
           "hw": "Homework practice for 12.1 Places in Town & Public Buildings",
           "cando": "I can name town locations like banks, parks, museums, cinemas, and libraries.",
           "teacher_notes": "code: \"M12-L01\"\ncando: \"I can name town locations like banks, parks, museums, cinemas, and libraries.\"",
-          "recycled": "Module 12 progression"
+          "recycled": "Module 12 progression",
+          "grammarIds": [
+            "en-a1-prepositions-place",
+            "en-a1-there-is-are"
+          ]
         },
         {
           "code": "M12-L02",
@@ -2584,7 +2752,11 @@
           "hw": "Homework practice for 12.2 City Landmarks & Services",
           "cando": "I can describe public city landmarks and municipal services.",
           "teacher_notes": "code: \"M12-L02\"\ncando: \"I can describe public city landmarks and municipal services.\"",
-          "recycled": "Module 12 progression"
+          "recycled": "Module 12 progression",
+          "grammarIds": [
+            "en-a1-prepositions-place",
+            "en-a1-there-is-are"
+          ]
         },
         {
           "code": "M12-L03",
@@ -2610,7 +2782,11 @@
           "hw": "Homework practice for 12.3 Asking Directions in Town",
           "cando": "I can ask how to reach city landmarks and understand town orientation.",
           "teacher_notes": "code: \"M12-L03\"\ncando: \"I can ask how to reach city landmarks and understand town orientation.\"",
-          "recycled": "Module 12 progression"
+          "recycled": "Module 12 progression",
+          "grammarIds": [
+            "en-a1-prepositions-place",
+            "en-a1-there-is-are"
+          ]
         },
         {
           "code": "M12-L04",
@@ -2636,7 +2812,11 @@
           "hw": "Homework practice for 12.4 Describing Neighborhoods & City Life",
           "cando": "I can describe my neighborhood and express what I like about my city.",
           "teacher_notes": "code: \"M12-L04\"\ncando: \"I can describe my neighborhood and express what I like about my city.\"",
-          "recycled": "Module 12 progression"
+          "recycled": "Module 12 progression",
+          "grammarIds": [
+            "en-a1-prepositions-place",
+            "en-a1-there-is-are"
+          ]
         },
         {
           "code": "M12-L05",
@@ -2662,7 +2842,11 @@
           "hw": "Homework practice for 12.5 City Transport & Urban Navigation",
           "cando": "I can navigate city transport systems like metro, bus lines, and taxi stands.",
           "teacher_notes": "code: \"M12-L05\"\ncando: \"I can navigate city transport systems like metro, bus lines, and taxi stands.\"",
-          "recycled": "Module 12 progression"
+          "recycled": "Module 12 progression",
+          "grammarIds": [
+            "en-a1-prepositions-place",
+            "en-a1-there-is-are"
+          ]
         },
         {
           "code": "M12-L06",
@@ -2688,7 +2872,11 @@
           "hw": "Homework practice for 12.6 City Guide & Navigation Capstone",
           "cando": "I can present a city tour guide and give directions to multiple places in town.",
           "teacher_notes": "code: \"M12-L06\"\ncando: \"I can present a city tour guide and give directions to multiple places in town.\"",
-          "recycled": "Module 12 progression"
+          "recycled": "Module 12 progression",
+          "grammarIds": [
+            "en-a1-prepositions-place",
+            "en-a1-there-is-are"
+          ]
         }
       ],
       "section": 6
@@ -2727,7 +2915,10 @@
           "hw": "Homework practice for 13.1 Weather Conditions & Temperature",
           "cando": "I can describe daily weather conditions and temperature.",
           "teacher_notes": "code: \"M13-L01\"\ncando: \"I can describe daily weather conditions and temperature.\"",
-          "recycled": "Module 13 progression"
+          "recycled": "Module 13 progression",
+          "grammarIds": [
+            "en-a1-adjectives"
+          ]
         },
         {
           "code": "M13-L02",
@@ -2753,7 +2944,10 @@
           "hw": "Homework practice for 13.2 The Four Seasons & Seasonal Activities",
           "cando": "I can name the four seasons and talk about favourite seasonal activities.",
           "teacher_notes": "code: \"M13-L02\"\ncando: \"I can name the four seasons and talk about favourite seasonal activities.\"",
-          "recycled": "Module 13 progression"
+          "recycled": "Module 13 progression",
+          "grammarIds": [
+            "en-a1-adjectives"
+          ]
         },
         {
           "code": "M13-L03",
@@ -2779,7 +2973,10 @@
           "hw": "Homework practice for 13.3 Nature Landscapes & Natural Places",
           "cando": "I can name natural places and landscapes like seas, mountains, and forests.",
           "teacher_notes": "code: \"M13-L03\"\ncando: \"I can name natural places and landscapes like seas, mountains, and forests.\"",
-          "recycled": "Module 13 progression"
+          "recycled": "Module 13 progression",
+          "grammarIds": [
+            "en-a1-adjectives"
+          ]
         },
         {
           "code": "M13-L04",
@@ -2806,7 +3003,10 @@
           "cando": "I can understand simple weather forecasts and plan outdoor activities.",
           "teacher_notes": "code: \"M13-L04\"\ncando: \"I can understand simple weather forecasts and plan outdoor activities.\"",
           "recycled": "Module 13 progression",
-          "slug": "weather-forecast"
+          "slug": "weather-forecast",
+          "grammarIds": [
+            "en-a1-adjectives"
+          ]
         },
         {
           "code": "M13-L05",
@@ -2832,7 +3032,10 @@
           "hw": "Homework practice for 13.5 Environmental Habits & Caring for Nature",
           "cando": "I can discuss simple eco-friendly habits like recycling and keeping places clean.",
           "teacher_notes": "code: \"M13-L05\"\ncando: \"I can discuss simple eco-friendly habits like recycling and keeping places clean.\"",
-          "recycled": "Module 13 progression"
+          "recycled": "Module 13 progression",
+          "grammarIds": [
+            "en-a1-adjectives"
+          ]
         },
         {
           "code": "M13-L06",
@@ -2858,7 +3061,10 @@
           "hw": "Homework practice for 13.6 Nature & Weather Capstone",
           "cando": "I can describe natural environments, climate in my country, and discuss weather.",
           "teacher_notes": "code: \"M13-L06\"\ncando: \"I can describe natural environments, climate in my country, and discuss weather.\"",
-          "recycled": "Module 13 progression"
+          "recycled": "Module 13 progression",
+          "grammarIds": [
+            "en-a1-adjectives"
+          ]
         },
         {
           "lesson": 7,
@@ -2905,7 +3111,11 @@
           "hw": "Homework practice for 14.1 Leisure Activities & Everyday Hobbies",
           "cando": "I can talk about leisure activities like watching TV, listening to music, and reading.",
           "teacher_notes": "code: \"M14-L01\"\ncando: \"I can talk about leisure activities like watching TV, listening to music, and reading.\"",
-          "recycled": "Module 14 progression"
+          "recycled": "Module 14 progression",
+          "grammarIds": [
+            "en-a1-adverbs-frequency",
+            "en-a1-like-love-hate"
+          ]
         },
         {
           "code": "M14-L02",
@@ -2931,7 +3141,11 @@
           "hw": "Homework practice for 14.2 Sports & Physical Activities",
           "cando": "I can name sports and describe my physical activities and abilities.",
           "teacher_notes": "code: \"M14-L02\"\ncando: \"I can name sports and describe my physical activities and abilities.\"",
-          "recycled": "Module 14 progression"
+          "recycled": "Module 14 progression",
+          "grammarIds": [
+            "en-a1-adverbs-frequency",
+            "en-a1-like-love-hate"
+          ]
         },
         {
           "code": "M14-L03",
@@ -2957,7 +3171,11 @@
           "hw": "Homework practice for 14.3 Cinema, Music & Entertainment",
           "cando": "I can express preferences for movies, music, books, and cultural events.",
           "teacher_notes": "code: \"M14-L03\"\ncando: \"I can express preferences for movies, music, books, and cultural events.\"",
-          "recycled": "Module 14 progression"
+          "recycled": "Module 14 progression",
+          "grammarIds": [
+            "en-a1-adverbs-frequency",
+            "en-a1-like-love-hate"
+          ]
         },
         {
           "code": "M14-L04",
@@ -2983,7 +3201,11 @@
           "hw": "Homework practice for 14.4 Weekend Plans & Free Time Activities",
           "cando": "I can talk about weekend plans and invite friends to leisure events.",
           "teacher_notes": "code: \"M14-L04\"\ncando: \"I can talk about weekend plans and invite friends to leisure events.\"",
-          "recycled": "Module 14 progression"
+          "recycled": "Module 14 progression",
+          "grammarIds": [
+            "en-a1-adverbs-frequency",
+            "en-a1-like-love-hate"
+          ]
         },
         {
           "code": "M14-L05",
@@ -3009,7 +3231,11 @@
           "hw": "Homework practice for 14.5 Hobbies & Personal Interests Survey",
           "cando": "I can interview peers about hobbies and compare leisure interests.",
           "teacher_notes": "code: \"M14-L05\"\ncando: \"I can interview peers about hobbies and compare leisure interests.\"",
-          "recycled": "Module 14 progression"
+          "recycled": "Module 14 progression",
+          "grammarIds": [
+            "en-a1-adverbs-frequency",
+            "en-a1-like-love-hate"
+          ]
         },
         {
           "code": "M14-L06",
@@ -3035,7 +3261,11 @@
           "hw": "Homework practice for 14.6 Free Time & Hobbies Portfolio Capstone",
           "cando": "I can give a presentation about my hobbies, favourite sports, and leisure routine.",
           "teacher_notes": "code: \"M14-L06\"\ncando: \"I can give a presentation about my hobbies, favourite sports, and leisure routine.\"",
-          "recycled": "Module 14 progression"
+          "recycled": "Module 14 progression",
+          "grammarIds": [
+            "en-a1-adverbs-frequency",
+            "en-a1-like-love-hate"
+          ]
         },
         {
           "lesson": 7,
@@ -3130,7 +3360,11 @@
           "hw": "Homework practice for 15.1 Digital Devices & Hardware",
           "cando": "I can name common tech devices like smartphones, laptops, and headphones.",
           "teacher_notes": "code: \"M15-L01\"\ncando: \"I can name common tech devices like smartphones, laptops, and headphones.\"",
-          "recycled": "Module 15 progression"
+          "recycled": "Module 15 progression",
+          "grammarIds": [
+            "en-a1-imperatives",
+            "en-a1-present-simple"
+          ]
         },
         {
           "code": "M15-L02",
@@ -3156,7 +3390,11 @@
           "hw": "Homework practice for 15.2 Tech Action Verbs & Operations",
           "cando": "I can describe basic tech actions like turning on, charging, opening, and downloading.",
           "teacher_notes": "code: \"M15-L02\"\ncando: \"I can describe basic tech actions like turning on, charging, opening, and downloading.\"",
-          "recycled": "Module 15 progression"
+          "recycled": "Module 15 progression",
+          "grammarIds": [
+            "en-a1-imperatives",
+            "en-a1-present-simple"
+          ]
         },
         {
           "code": "M15-L03",
@@ -3182,7 +3420,11 @@
           "hw": "Homework practice for 15.3 Internet Vocabulary & Online Activities",
           "cando": "I can talk about online activities like searching, checking email, and browsing websites.",
           "teacher_notes": "code: \"M15-L03\"\ncando: \"I can talk about online activities like searching, checking email, and browsing websites.\"",
-          "recycled": "Module 15 progression"
+          "recycled": "Module 15 progression",
+          "grammarIds": [
+            "en-a1-imperatives",
+            "en-a1-present-simple"
+          ]
         },
         {
           "code": "M15-L04",
@@ -3208,7 +3450,11 @@
           "hw": "Homework practice for 15.4 Social Media & Digital Messages",
           "cando": "I can write short digital messages and use basic social media terms.",
           "teacher_notes": "code: \"M15-L04\"\ncando: \"I can write short digital messages and use basic social media terms.\"",
-          "recycled": "Module 15 progression"
+          "recycled": "Module 15 progression",
+          "grammarIds": [
+            "en-a1-imperatives",
+            "en-a1-present-simple"
+          ]
         },
         {
           "code": "M15-L05",
@@ -3234,7 +3480,11 @@
           "hw": "Homework practice for 15.5 Digital Safety & Troubleshooting",
           "cando": "I can understand basic digital safety rules and describe simple tech problems.",
           "teacher_notes": "code: \"M15-L05\"\ncando: \"I can understand basic digital safety rules and describe simple tech problems.\"",
-          "recycled": "Module 15 progression"
+          "recycled": "Module 15 progression",
+          "grammarIds": [
+            "en-a1-imperatives",
+            "en-a1-present-simple"
+          ]
         },
         {
           "code": "M15-L06",
@@ -3260,7 +3510,11 @@
           "hw": "Homework practice for 15.6 Digital Life & Technology Profile Capstone",
           "cando": "I can present an overview of my daily tech habits and digital communication.",
           "teacher_notes": "code: \"M15-L06\"\ncando: \"I can present an overview of my daily tech habits and digital communication.\"",
-          "recycled": "Module 15 progression"
+          "recycled": "Module 15 progression",
+          "grammarIds": [
+            "en-a1-imperatives",
+            "en-a1-present-simple"
+          ]
         }
       ],
       "section": 8
@@ -3299,7 +3553,10 @@
           "hw": "Homework practice for 16.1 Birthdays & Personal Celebrations",
           "cando": "I can talk about birthdays, gifts, and personal celebrations.",
           "teacher_notes": "code: \"M16-L01\"\ncando: \"I can talk about birthdays, gifts, and personal celebrations.\"",
-          "recycled": "Module 16 progression"
+          "recycled": "Module 16 progression",
+          "grammarIds": [
+            "en-a1-id-like"
+          ]
         },
         {
           "code": "M16-L02",
@@ -3325,7 +3582,10 @@
           "hw": "Homework practice for 16.2 Invitations & Party Planning",
           "cando": "I can invite people to a party and respond to invitations.",
           "teacher_notes": "code: \"M16-L02\"\ncando: \"I can invite people to a party and respond to invitations.\"",
-          "recycled": "Module 16 progression"
+          "recycled": "Module 16 progression",
+          "grammarIds": [
+            "en-a1-id-like"
+          ]
         },
         {
           "code": "M16-L03",
@@ -3351,7 +3611,10 @@
           "hw": "Homework practice for 16.3 Holidays & National Traditions",
           "cando": "I can describe national holidays, family customs, and seasonal celebrations.",
           "teacher_notes": "code: \"M16-L03\"\ncando: \"I can describe national holidays, family customs, and seasonal celebrations.\"",
-          "recycled": "Module 16 progression"
+          "recycled": "Module 16 progression",
+          "grammarIds": [
+            "en-a1-id-like"
+          ]
         },
         {
           "code": "M16-L04",
@@ -3377,7 +3640,10 @@
           "hw": "Homework practice for 16.4 Cultural Outings & Venues",
           "cando": "I can talk about visiting museums, cinemas, theatres, and concerts.",
           "teacher_notes": "code: \"M16-L04\"\ncando: \"I can talk about visiting museums, cinemas, theatres, and concerts.\"",
-          "recycled": "Module 16 progression"
+          "recycled": "Module 16 progression",
+          "grammarIds": [
+            "en-a1-id-like"
+          ]
         },
         {
           "code": "M16-L05",
@@ -3403,7 +3669,10 @@
           "hw": "Homework practice for 16.5 Social Events & Going Out",
           "cando": "I can arrange to meet friends for social events and outings.",
           "teacher_notes": "code: \"M16-L05\"\ncando: \"I can arrange to meet friends for social events and outings.\"",
-          "recycled": "Module 16 progression"
+          "recycled": "Module 16 progression",
+          "grammarIds": [
+            "en-a1-id-like"
+          ]
         },
         {
           "code": "M16-L06",
@@ -3429,7 +3698,10 @@
           "hw": "Homework practice for 16.6 Celebrations & Cultural Events Capstone",
           "cando": "I can present a plan for a holiday celebration or cultural outing.",
           "teacher_notes": "code: \"M16-L06\"\ncando: \"I can present a plan for a holiday celebration or cultural outing.\"",
-          "recycled": "Module 16 progression"
+          "recycled": "Module 16 progression",
+          "grammarIds": [
+            "en-a1-id-like"
+          ]
         }
       ],
       "section": 8
@@ -3669,7 +3941,11 @@
           "hw": "Homework practice for 18.1 Immediate Future & Personal Plans",
           "cando": "I can state what I am going to do tomorrow or next week.",
           "teacher_notes": "code: \"M18-L01\"\ncando: \"I can state what I am going to do tomorrow or next week.\"",
-          "recycled": "Module 18 progression"
+          "recycled": "Module 18 progression",
+          "grammarIds": [
+            "en-a1-going-to",
+            "en-a1-will"
+          ]
         },
         {
           "code": "M18-L02",
@@ -3695,7 +3971,11 @@
           "hw": "Homework practice for 18.2 Dreams & Personal Goals",
           "cando": "I can talk about my dreams, hopes, and self-improvement goals.",
           "teacher_notes": "code: \"M18-L02\"\ncando: \"I can talk about my dreams, hopes, and self-improvement goals.\"",
-          "recycled": "Module 18 progression"
+          "recycled": "Module 18 progression",
+          "grammarIds": [
+            "en-a1-going-to",
+            "en-a1-will"
+          ]
         },
         {
           "code": "M18-L03",
@@ -3721,7 +4001,11 @@
           "hw": "Homework practice for 18.3 Career & Education Plans",
           "cando": "I can express future intentions regarding work and studies.",
           "teacher_notes": "code: \"M18-L03\"\ncando: \"I can express future intentions regarding work and studies.\"",
-          "recycled": "Module 18 progression"
+          "recycled": "Module 18 progression",
+          "grammarIds": [
+            "en-a1-going-to",
+            "en-a1-will"
+          ]
         },
         {
           "code": "M18-L04",
@@ -3747,7 +4031,11 @@
           "hw": "Homework practice for 18.4 Future Travel & Holiday Plans",
           "cando": "I can discuss future travel destinations and holiday intentions.",
           "teacher_notes": "code: \"M18-L04\"\ncando: \"I can discuss future travel destinations and holiday intentions.\"",
-          "recycled": "Module 18 progression"
+          "recycled": "Module 18 progression",
+          "grammarIds": [
+            "en-a1-going-to",
+            "en-a1-will"
+          ]
         },
         {
           "code": "M18-L05",
@@ -3774,7 +4062,11 @@
           "cando": "I can make simple predictions about cities, technology, or weather in the future.",
           "teacher_notes": "code: \"M18-L05\"\ncando: \"I can make simple predictions about cities, technology, or weather in the future.\"",
           "recycled": "Module 18 progression",
-          "slug": "future-simple-a0"
+          "slug": "future-simple-a0",
+          "grammarIds": [
+            "en-a1-going-to",
+            "en-a1-will"
+          ]
         },
         {
           "code": "M18-L06",
@@ -3800,7 +4092,11 @@
           "hw": "Homework practice for 18.6 Future Plans & Dreams Capstone",
           "cando": "I can present a personal roadmap detailing my short-term and long-term future goals.",
           "teacher_notes": "code: \"M18-L06\"\ncando: \"I can present a personal roadmap detailing my short-term and long-term future goals.\"",
-          "recycled": "Module 18 progression"
+          "recycled": "Module 18 progression",
+          "grammarIds": [
+            "en-a1-going-to",
+            "en-a1-will"
+          ]
         }
       ],
       "section": 9
@@ -3839,7 +4135,11 @@
           "hw": "Homework practice for 19.1 Comparing People & Physical Objects",
           "cando": "I can compare two people or objects using simple comparative words.",
           "teacher_notes": "code: \"M19-L01\"\ncando: \"I can compare two people or objects using simple comparative words.\"",
-          "recycled": "Module 19 progression"
+          "recycled": "Module 19 progression",
+          "grammarIds": [
+            "en-a1-comparative-adjectives",
+            "en-a1-conjunctions"
+          ]
         },
         {
           "code": "M19-L02",
@@ -3865,7 +4165,11 @@
           "hw": "Homework practice for 19.2 Comparing Places & Cities",
           "cando": "I can compare life in different cities, towns, or countries.",
           "teacher_notes": "code: \"M19-L02\"\ncando: \"I can compare life in different cities, towns, or countries.\"",
-          "recycled": "Module 19 progression"
+          "recycled": "Module 19 progression",
+          "grammarIds": [
+            "en-a1-comparative-adjectives",
+            "en-a1-conjunctions"
+          ]
         },
         {
           "code": "M19-L03",
@@ -3891,7 +4195,11 @@
           "hw": "Homework practice for 19.3 Comparing Lifestyles & Habits",
           "cando": "I can compare modern vs traditional lifestyles and daily habits.",
           "teacher_notes": "code: \"M19-L03\"\ncando: \"I can compare modern vs traditional lifestyles and daily habits.\"",
-          "recycled": "Module 19 progression"
+          "recycled": "Module 19 progression",
+          "grammarIds": [
+            "en-a1-comparative-adjectives",
+            "en-a1-conjunctions"
+          ]
         },
         {
           "code": "M19-L04",
@@ -3917,7 +4225,11 @@
           "hw": "Homework practice for 19.4 Likes, Dislikes & Preferences",
           "cando": "I can express preferences and choose between different options.",
           "teacher_notes": "code: \"M19-L04\"\ncando: \"I can express preferences and choose between different options.\"",
-          "recycled": "Module 19 progression"
+          "recycled": "Module 19 progression",
+          "grammarIds": [
+            "en-a1-comparative-adjectives",
+            "en-a1-conjunctions"
+          ]
         },
         {
           "code": "M19-L05",
@@ -3943,7 +4255,11 @@
           "hw": "Homework practice for 19.5 Making Choices & Recommendations",
           "cando": "I can recommend an option to someone based on a comparison.",
           "teacher_notes": "code: \"M19-L05\"\ncando: \"I can recommend an option to someone based on a comparison.\"",
-          "recycled": "Module 19 progression"
+          "recycled": "Module 19 progression",
+          "grammarIds": [
+            "en-a1-comparative-adjectives",
+            "en-a1-conjunctions"
+          ]
         },
         {
           "code": "M19-L06",
@@ -3969,7 +4285,11 @@
           "hw": "Homework practice for 19.6 Comparing My World Capstone",
           "cando": "I can give a comparative presentation comparing two products, places, or ways of living.",
           "teacher_notes": "code: \"M19-L06\"\ncando: \"I can give a comparative presentation comparing two products, places, or ways of living.\"",
-          "recycled": "Module 19 progression"
+          "recycled": "Module 19 progression",
+          "grammarIds": [
+            "en-a1-comparative-adjectives",
+            "en-a1-conjunctions"
+          ]
         }
       ],
       "section": 10
@@ -4177,7 +4497,10 @@
           "hw": "Homework practice for 21.1 At the Airport & Train Station",
           "cando": "I can navigate transit hubs, understand gate announcements, and check in baggage.",
           "teacher_notes": "code: \"M21-L01\"\ncando: \"I can navigate transit hubs, understand gate announcements, and check in baggage.\"",
-          "recycled": "Module 21 progression"
+          "recycled": "Module 21 progression",
+          "grammarIds": [
+            "en-a1-imperatives"
+          ]
         },
         {
           "code": "M21-L02",
@@ -4203,7 +4526,10 @@
           "hw": "Homework practice for 21.2 At the Hotel & Accommodation",
           "cando": "I can check in at a hotel, ask about amenities, and report room issues.",
           "teacher_notes": "code: \"M21-L02\"\ncando: \"I can check in at a hotel, ask about amenities, and report room issues.\"",
-          "recycled": "Module 21 progression"
+          "recycled": "Module 21 progression",
+          "grammarIds": [
+            "en-a1-imperatives"
+          ]
         },
         {
           "code": "M21-L03",
@@ -4229,7 +4555,10 @@
           "hw": "Homework practice for 21.3 Medical Emergencies & Pharmacy",
           "cando": "I can communicate urgent health needs, buy medicine, and ask for a doctor.",
           "teacher_notes": "code: \"M21-L03\"\ncando: \"I can communicate urgent health needs, buy medicine, and ask for a doctor.\"",
-          "recycled": "Module 21 progression"
+          "recycled": "Module 21 progression",
+          "grammarIds": [
+            "en-a1-imperatives"
+          ]
         },
         {
           "code": "M21-L04",
@@ -4255,7 +4584,10 @@
           "hw": "Homework practice for 21.4 Lost Property & Police Services",
           "cando": "I can report lost or stolen belongings to police or information desks.",
           "teacher_notes": "code: \"M21-L04\"\ncando: \"I can report lost or stolen belongings to police or information desks.\"",
-          "recycled": "Module 21 progression"
+          "recycled": "Module 21 progression",
+          "grammarIds": [
+            "en-a1-imperatives"
+          ]
         },
         {
           "code": "M21-L05",
@@ -4281,7 +4613,10 @@
           "hw": "Homework practice for 21.5 Communication Breakdown & Survival Strategies",
           "cando": "I can use clarification strategies when I do not understand or need repetition.",
           "teacher_notes": "code: \"M21-L05\"\ncando: \"I can use clarification strategies when I do not understand or need repetition.\"",
-          "recycled": "Module 21 progression"
+          "recycled": "Module 21 progression",
+          "grammarIds": [
+            "en-a1-imperatives"
+          ]
         },
         {
           "code": "M21-L06",
@@ -4307,7 +4642,10 @@
           "hw": "Homework practice for 21.6 Survival Skills Real-World Roleplay Capstone",
           "cando": "I can navigate a multi-stage real-world travel survival simulation.",
           "teacher_notes": "code: \"M21-L06\"\ncando: \"I can navigate a multi-stage real-world travel survival simulation.\"",
-          "recycled": "Module 21 progression"
+          "recycled": "Module 21 progression",
+          "grammarIds": [
+            "en-a1-imperatives"
+          ]
         }
       ],
       "section": 11
@@ -4347,7 +4685,12 @@
           "hw": "Homework practice for 22.1 Project 1. My Personal & Professional Profile",
           "cando": "I can create a complete personal and professional profile sheet.",
           "teacher_notes": "code: \"M22-L01\"\ncando: \"I can create a complete personal and professional profile sheet.\"",
-          "recycled": "Module 22 progression"
+          "recycled": "Module 22 progression",
+          "grammarIds": [
+            "en-a1-comparative-adjectives",
+            "en-a1-going-to",
+            "en-a1-present-simple"
+          ]
         },
         {
           "code": "M22-L02",
@@ -4375,7 +4718,12 @@
           "cando": "I can present a narrative comparing my normal daily routine with my ideal day.",
           "teacher_notes": "code: \"M22-L02\"\ncando: \"I can present a narrative comparing my normal daily routine with my ideal day.\"",
           "recycled": "Module 22 progression",
-          "slug": "my-daily-routine"
+          "slug": "my-daily-routine",
+          "grammarIds": [
+            "en-a1-comparative-adjectives",
+            "en-a1-going-to",
+            "en-a1-present-simple"
+          ]
         },
         {
           "code": "M22-L03",
@@ -4402,7 +4750,12 @@
           "hw": "Homework practice for 22.3 Project 3. My Home & Neighborhood Guide",
           "cando": "I can create a descriptive guide about my home, neighborhood, and local services.",
           "teacher_notes": "code: \"M22-L03\"\ncando: \"I can create a descriptive guide about my home, neighborhood, and local services.\"",
-          "recycled": "Module 22 progression"
+          "recycled": "Module 22 progression",
+          "grammarIds": [
+            "en-a1-comparative-adjectives",
+            "en-a1-going-to",
+            "en-a1-present-simple"
+          ]
         },
         {
           "code": "M22-L04",
@@ -4429,7 +4782,12 @@
           "hw": "Homework practice for 22.4 Project 4. My Life Journey: Past & Future",
           "cando": "I can create a personal timeline combining past life experiences with future goals.",
           "teacher_notes": "code: \"M22-L04\"\ncando: \"I can create a personal timeline combining past life experiences with future goals.\"",
-          "recycled": "Module 22 progression"
+          "recycled": "Module 22 progression",
+          "grammarIds": [
+            "en-a1-comparative-adjectives",
+            "en-a1-going-to",
+            "en-a1-present-simple"
+          ]
         },
         {
           "code": "M22-L05",
@@ -4456,7 +4814,12 @@
           "hw": "Homework practice for 22.5 Project 5. My Opinions & Cultural Perspectives",
           "cando": "I can present a portfolio section expressing my opinions and cultural preferences.",
           "teacher_notes": "code: \"M22-L05\"\ncando: \"I can present a portfolio section expressing my opinions and cultural preferences.\"",
-          "recycled": "Module 22 progression"
+          "recycled": "Module 22 progression",
+          "grammarIds": [
+            "en-a1-comparative-adjectives",
+            "en-a1-going-to",
+            "en-a1-present-simple"
+          ]
         },
         {
           "code": "M22-L06",
@@ -4483,7 +4846,12 @@
           "hw": "Homework practice for 22.6 Final A1 Capstone Showcase & Self-Assessment",
           "cando": "I can showcase my complete A1 portfolio and perform a self-assessment against A1 can-do goals.",
           "teacher_notes": "code: \"M22-L06\"\ncando: \"I can showcase my complete A1 portfolio and perform a self-assessment against A1 can-do goals.\"",
-          "recycled": "Module 22 progression"
+          "recycled": "Module 22 progression",
+          "grammarIds": [
+            "en-a1-comparative-adjectives",
+            "en-a1-going-to",
+            "en-a1-present-simple"
+          ]
         },
         {
           "lesson": 7,
