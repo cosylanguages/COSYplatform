@@ -45,3 +45,20 @@ Limits: scoring is tuned on English. Other languages need their own synonym tabl
 | it | A1 | 79 | 79 / 110 / 55 | Only A1 is in scope (A2-C2 sit in `_out_of_scope`); manuals have 60 pages in total |
 
 Review `review-<lang>-general.csv` (column `reviewer_decision`) for every medium row before applying more IDs.
+
+## The `grammar-focus` lesson element (implemented)
+
+Add it to any slide's `elements` to show a COSYmanuals grammar point by id:
+
+```json
+{ "type": "grammar-focus", "grammarId": "en-a2-used-to" }
+{ "type": "grammar-focus", "grammarId": "en-a2-used-to", "title": "Look back" }
+{ "type": "grammar-focus", "grammarId": "en-a2-used-to", "display": "link" }
+```
+
+- `display: "embed"` (default) renders the manual's explanation through the COSYmanuals grammar embed (shadow DOM, fetched from GitHub Pages). `display: "link"` renders only a link to the manual page.
+- An "open in COSYmanuals" link is always shown, so the lesson still works if the embed cannot load.
+- An id that is not well-formed renders a small "unavailable" note; an id with no manual page shows the embed's own "unavailable" message.
+- Implementation: `shared/js/grammar-focus.js`, used by `student.html` and `teacher.html`. Tests: `tests/grammar-focus.test.js` (also checks every `grammarIds` entry in `curriculums/` is well-formed).
+- Not yet done: the Lesson Studio editor has no palette entry for this element, and curriculum `grammarIds` are not yet turned into `grammar-focus` slides automatically.
+- Known embed limitation: the manual's interactive widgets (for example "tap to see the correct form") are not active inside the embed.

@@ -594,6 +594,12 @@
       margin: 16px 0;
       border-radius: 0 8px 8px 0;
     }
+    .grammar-focus { margin: 14px 0; }
+    .grammar-focus__title { font-weight: 700; color: #1e293b; margin-bottom: 8px; }
+    .grammar-focus__bar { margin-top: 8px; font-size: 0.85rem; }
+    .grammar-focus__link { color: #0369a1; font-weight: 600; text-decoration: none; }
+    .grammar-focus__link:hover { text-decoration: underline; }
+    .grammar-focus--invalid { color: #64748b; font-style: italic; border: 1px dashed #cbd5e1; border-radius: 8px; padding: 10px 14px; }
   </style>
   <script src="vendor/supabase-js-2.49.1/supabase.js"></script>
   <script src="shared/js/config.js"></script>
@@ -601,6 +607,7 @@
   <script src="shared/js/auth-sso.js"></script>
   <script src="shared/js/cms-editor.js"></script>
   <script src="shared/js/lazy-script.js"></script>
+  <script src="shared/js/grammar-focus.js"></script>
   <script src="shared/js/lesson-resolver.js"></script>
   <script src="shared/js/studio-media.js"></script>
   <script src="shared/js/studio-games.js"></script>
@@ -1812,6 +1819,8 @@
       appRoot.innerHTML = html;
       if (window.CosyStudioMedia) window.CosyStudioMedia.hydrate(appRoot, window.CosyAuth && window.CosyAuth.client);
       if (window.CosyStudioGames) window.CosyStudioGames.init(appRoot);
+      // grammar-focus elements show a COSYmanuals grammar point by id.
+      if (window.CosyGrammarFocus) window.CosyGrammarFocus.hydrate(appRoot);
       applyTeacherFilters();
       if (window.activeDrawer === 'verbs') searchIrregularVerbs('');
     }
@@ -2225,6 +2234,9 @@
               `;
             });
             output += '</div>';
+          } else if (el.type === "grammar-focus" && window.CosyGrammarFocus) {
+            flushVocabBatch();
+            output += window.CosyGrammarFocus.renderHtml(el, escapeHtml);
           } else if (el.type === "grammar-spotlight") {
             flushVocabBatch();
             output += renderGrammarSpotlight(el.title, el.content);
