@@ -23,7 +23,10 @@
           "teacher_notes": "code: \"FR-001\"\npronunciation: [{\"point\":\"L'alphabet français\",\"explain\":\"Le français a 26 lettres. Les voyelles sont essentielles pour la prononciation.\",\"alphabet\":[{\"l\":\"A\",\"ipa\":\"/a/\"},{\"l\":\"B\",\"ipa\":\"/be/\"},{\"l\":\"C\",\"ipa\":\"/se/\"},{\"l\":\"D\",\"ipa\":\"/de/\"},{\"l\":\"E\",\"ipa\":\"/ə/\"},{\"l\":\"F\",\"ipa\":\"/ef/\"},{\"l\":\"G\",\"ipa\":\"/ʒe/\"},{\"l\":\"H\",\"ipa\":\"/aʃ/\"},{\"l\":\"I\",\"ipa\":\"/i/\"},{\"l\":\"J\",\"ipa\":\"/ʒi/\"},{\"l\":\"K\",\"ipa\":\"/ka/\"},{\"l\":\"L\",\"ipa\":\"/el/\"},{\"l\":\"M\",\"ipa\":\"/em/\"},{\"l\":\"N\",\"ipa\":\"/en/\"},{\"l\":\"O\",\"ipa\":\"/o/\"},{\"l\":\"P\",\"ipa\":\"/pe/\"},{\"l\":\"Q\",\"ipa\":\"/ky/\"},{\"l\":\"R\",\"ipa\":\"/ɛʁ/\"},{\"l\":\"S\",\"ipa\":\"/es/\"},{\"l\":\"T\",\"ipa\":\"/te/\"},{\"l\":\"U\",\"ipa\":\"/y/\"},{\"l\":\"V\",\"ipa\":\"/ve/\"},{\"l\":\"W\",\"ipa\":\"/dubləve/\"},{\"l\":\"X\",\"ipa\":\"/iks/\"},{\"l\":\"Y\",\"ipa\":\"/igʁɛk/\"},{\"l\":\"Z\",\"ipa\":\"/zɛd/\"}],\"extension\":\"L'alphabet français utilise les mêmes lettres que l'anglais, mais les sons sont très différents, surtout pour les voyelles.\",\"visual\":\"🇫🇷🔤\"}]\ncando: \"Peut saluer et dire au revoir\"\nhw: \"Apprendre la chanson de l'alphabet\"",
           "recycled": "Foundational communication & basic level vocabulary",
           "num": 1,
-          "code": "M00-L01"
+          "code": "M00-L01",
+          "grammarIds": [
+            "fr-a1-verbe-etre-present-formes-affirmatives"
+          ]
         },
         {
           "lesson": 2,
@@ -39,7 +42,10 @@
           "teacher_notes": "code: \"FR-002\"\npronunciation: [{\"point\":\"La liaison\",\"explain\":\"En français, on lie souvent la consonne finale muette d'un mot à la voyelle initiale du mot suivant.\",\"examples\":[{\"pattern\":\"Vous avez\",\"ipa\":\"/vu.za.ve/\",\"word\":\"vous avez\"},{\"pattern\":\"Mes amis\",\"ipa\":\"/me.za.mi/\",\"word\":\"mes amis\"}],\"tip\":\"La liaison transforme un 's' muet en un son 'z'.\",\"extension\":\"La liaison est obligatoire dans certains cas (comme après 'vous', 'nous', 'mes') et interdite dans d'autres. Elle donne au français son rythme fluide caractéristique.\",\"visual\":\"🔗\"}]\ncando: \"Peut se présenter\"\nhw: \"Épeler son nom en français\"",
           "recycled": "Verbe être (présent) — formes affirmatives, Bienvenue, Merci",
           "num": 2,
-          "code": "M00-L02"
+          "code": "M00-L02",
+          "grammarIds": [
+            "fr-a1-verbe-sappeler-present"
+          ]
         },
         {
           "lesson": 3,
@@ -73,7 +79,10 @@
           "teacher_notes": "code: \"FR-004\"\npronunciation: [{\"point\":\"Le son /u/ vs /y/\",\"explain\":\"Distinguer entre 'ou' and 'u' est crucial en français.\",\"minimalPairs\":[{\"w1\":\"roue\",\"p1\":\"/ʁu/\",\"w2\":\"rue\",\"p2\":\"/ʁy/\"},{\"w1\":\"dessous\",\"p1\":\"/də.su/\",\"w2\":\"dessus\",\"p2\":\"/də.sy/\"},{\"w1\":\"bu\",\"p1\":\"/by/\",\"w2\":\"bout\",\"p2\":\"/bu/\"}]}]\ncando: \"Peut distinguer les sons /u/ et /y/\"\nhw: \"S'enregistrer en disant rue et roue\"",
           "recycled": "Verbe s'appeler (présent), Le pluriel des noms (introduction), trois",
           "num": 4,
-          "code": "M00-L04"
+          "code": "M00-L04",
+          "grammarIds": [
+            "fr-a1-structure-de-base-de-la-phrase"
+          ]
         },
         {
           "lesson": 5,
@@ -90,7 +99,10 @@
           "teacher_notes": "code: \"FR-005\"\npronunciation: [{\"point\":\"L'accent tonique\",\"explain\":\"En français, l'accent est toujours sur la dernière syllabe prononcée du groupe de mots.\",\"examples\":[{\"pattern\":\"S'il vous plaît\",\"ipa\":\"/sil.vu.ple/\",\"word\":\"S'il vous plaît\"},{\"pattern\":\"Pardon\",\"ipa\":\"/paʁ.dɔ̃/\",\"word\":\"Pardon\"},{\"pattern\":\"Désolé\",\"ipa\":\"/de.zɔ.le/\",\"word\":\"Désolé\"}]}]\ncando: \"Peut utiliser les phrases de politesse de base\"\nhw: \"Utiliser trois phrases de politesse demain\"",
           "recycled": "Le pluriel des noms (introduction), Structure de base de la phrase, rue",
           "num": 5,
-          "code": "M00-L05"
+          "code": "M00-L05",
+          "grammarIds": [
+            "fr-a1-requetes-polies-sil-vous-plait"
+          ]
         }
       ],
       "num": 0,
@@ -172,7 +184,10 @@
           "teacher_notes": "code: \"FR-04\"\ncando: \"Peut indiquer son pays d'origine et demander la nationalité\"\nspeaking: \"Demander l'origine et la nationalité en groupe\"\nlistening: \"Entretiens de contrôle aux frontières\"\nreading: \"Fiches de passeport\"\nwriting: \"Écrire 5 phrases sur l'origine de personnes connues\"",
           "recycled": "Module 1 foundational progression",
           "num": 4,
-          "code": "M01-L04"
+          "code": "M01-L04",
+          "grammarIds": [
+            "fr-a1-accord-des-adjectifs"
+          ]
         },
         {
           "lesson": 5,
@@ -262,7 +277,10 @@
           "teacher_notes": "code: \"FR-09\"\ncando: \"Peut comprendre les nombres de 20 à 100 et demander des prix\"\nspeaking: \"Demander des prix et acheter au marché\"\nlistening: \"Transactions en caisse de magasin\"\nreading: \"Étiquettes de prix et tickets de caisse\"\nwriting: \"Écrire 5 phrases indiquant des prix\"",
           "recycled": "Module 1 foundational progression",
           "num": 9,
-          "code": "M01-L09"
+          "code": "M01-L09",
+          "grammarIds": [
+            "fr-a1-combien-coute"
+          ]
         },
         {
           "lesson": 10,
@@ -373,7 +391,10 @@
           "writing": "Écrire 5 phrases décrivant l'apparence d'un ami",
           "task": "Jeu 'Qui est-ce ?'",
           "cando": "Peut décrire l'apparence physique de proches",
-          "hw": "Décrire l'apparence d'une célébrité"
+          "hw": "Décrire l'apparence d'une célébrité",
+          "grammarIds": [
+            "fr-a1-accord-des-adjectifs"
+          ]
         },
         {
           "code": "FR-024",
@@ -519,7 +540,10 @@
           "writing": "Écrire 5 phrases sur son logement et son emplacement",
           "task": "Échange sur l'emplacement du logement",
           "cando": "Peut décrire son type de logement et indiquer où il se trouve",
-          "hw": "Écrire 5 phrases sur son lieu de résidence"
+          "hw": "Écrire 5 phrases sur son lieu de résidence",
+          "grammarIds": [
+            "fr-a1-habiter-prepositions-de-lieu-a-en"
+          ]
         },
         {
           "code": "FR-032",
@@ -602,7 +626,10 @@
           "writing": "Écrire 5 phrases sur ses habitudes à la maison",
           "task": "Jeu de rôle de répartition des tâches",
           "cando": "Peut parler des actions quotidiennes et des activités à la maison",
-          "hw": "Écrire 5 phrases sur ses activités ménagères"
+          "hw": "Écrire 5 phrases sur ses activités ménagères",
+          "grammarIds": [
+            "fr-a1-imperatif"
+          ]
         },
         {
           "code": "FR-035",
@@ -658,7 +685,10 @@
           "writing": "Écrire un mot d'invitation pour une crémaillère",
           "task": "Jeu de rôle d'organisation de crémaillère",
           "cando": "Peut discuter de location et inviter des amis à une crémaillère",
-          "hw": "Rédiger un message d'invitation pour une crémaillère"
+          "hw": "Rédiger un message d'invitation pour une crémaillère",
+          "grammarIds": [
+            "fr-a1-imperatif"
+          ]
         }
       ],
       "num": 3,
@@ -722,7 +752,10 @@
           "writing": "Écrire 5 phrases sur des dates importantes",
           "task": "Correspondance de calendrier",
           "cando": "Peut parler des jours, mois et dates",
-          "hw": "Écrire 5 phrases sur son calendrier"
+          "hw": "Écrire 5 phrases sur son calendrier",
+          "grammarIds": [
+            "fr-a1-nombres-jours-mois"
+          ]
         },
         {
           "code": "FR-043",
@@ -749,7 +782,10 @@
           "writing": "Écrire 5 phrases sur les moments de la journée",
           "task": "Présentation de chronologie quotidienne",
           "cando": "Peut exprimer quand les activités se déroulent",
-          "hw": "Écrire 5 phrases sur ses habitudes du matin et du soir"
+          "hw": "Écrire 5 phrases sur ses habitudes du matin et du soir",
+          "grammarIds": [
+            "fr-a1-prepositions-temps"
+          ]
         },
         {
           "code": "FR-044",
@@ -775,7 +811,10 @@
           "writing": "Écrire un paragraphe sur sa routine quotidienne",
           "task": "Interview de routine quotidienne",
           "cando": "Peut décrire sa routine quotidienne du matin au soir",
-          "hw": "Rédiger un paragraphe décrivant sa journée type"
+          "hw": "Rédiger un paragraphe décrivant sa journée type",
+          "grammarIds": [
+            "fr-a1-verbes-pronominaux"
+          ]
         },
         {
           "code": "FR-045",
@@ -921,7 +960,10 @@
           "writing": "Rédiger un dialogue de commande au café",
           "task": "Jeu de rôle au café",
           "cando": "Je peux commander poliment des boissons chaudes et froides dans un café.",
-          "hw": "Rédiger un dialogue pour commander un café et de l'eau"
+          "hw": "Rédiger un dialogue pour commander un café et de l'eau",
+          "grammarIds": [
+            "fr-a1-conditionnel-souhaits"
+          ]
         },
         {
           "code": "FR-054",
@@ -978,7 +1020,10 @@
           "writing": "Rédiger 5 étapes à l'impératif pour une recette",
           "task": "Échange d'instructions de recette",
           "cando": "Je peux expliquer les étapes de base de la cuisine et lister les ingrédients d'une recette simple.",
-          "hw": "Écrire les ingrédients et les étapes de votre plat préféré"
+          "hw": "Écrire les ingrédients et les étapes de votre plat préféré",
+          "grammarIds": [
+            "fr-a1-imperatif"
+          ]
         },
         {
           "code": "FR-056",
@@ -1048,7 +1093,10 @@
           "hw": "Homework practice for 6.1 Types de magasins & Lieux d'achat",
           "cando": "Je peux nommer différents types de magasins et dire où acheter des produits.",
           "teacher_notes": "code: \"M06-L01\"\ncando: \"Je peux nommer différents types de magasins et dire où acheter des produits.\"",
-          "recycled": "Module 6 progression"
+          "recycled": "Module 6 progression",
+          "grammarIds": [
+            "fr-a1-combien-coute"
+          ]
         },
         {
           "code": "M06-L02",
@@ -1074,7 +1122,10 @@
           "hw": "Homework practice for 6.2 Catégories de produits & Disponibilité",
           "cando": "Je peux demander des catégories de produits et vérifier leur disponibilité.",
           "teacher_notes": "code: \"M06-L02\"\ncando: \"Je peux demander des catégories de produits et vérifier leur disponibilité.\"",
-          "recycled": "Module 6 progression"
+          "recycled": "Module 6 progression",
+          "grammarIds": [
+            "fr-a1-combien-coute"
+          ]
         },
         {
           "code": "M06-L03",
@@ -1100,7 +1151,10 @@
           "hw": "Homework practice for 6.3 Argent, Monnaie & Prix",
           "cando": "Je peux demander le prix d'articles et comprendre le coût en monnaie locale.",
           "teacher_notes": "code: \"M06-L03\"\ncando: \"Je peux demander le prix d'articles et comprendre le coût en monnaie locale.\"",
-          "recycled": "Module 6 progression"
+          "recycled": "Module 6 progression",
+          "grammarIds": [
+            "fr-a1-combien-coute"
+          ]
         },
         {
           "code": "M06-L04",
@@ -1126,7 +1180,10 @@
           "hw": "Homework practice for 6.4 Paiement & Modes de paiement",
           "cando": "Je peux payer en espèces ou par carte et demander un ticket et de la monnaie.",
           "teacher_notes": "code: \"M06-L04\"\ncando: \"Je peux payer en espèces ou par carte et demander un ticket et de la monnaie.\"",
-          "recycled": "Module 6 progression"
+          "recycled": "Module 6 progression",
+          "grammarIds": [
+            "fr-a1-combien-coute"
+          ]
         },
         {
           "code": "M06-L05",
@@ -1152,7 +1209,10 @@
           "hw": "Homework practice for 6.5 Réductions & Quantités",
           "cando": "Je peux comprendre les prix en solde, les réductions et demander des quantités précises.",
           "teacher_notes": "code: \"M06-L05\"\ncando: \"Je peux comprendre les prix en solde, les réductions et demander des quantités précises.\"",
-          "recycled": "Module 6 progression"
+          "recycled": "Module 6 progression",
+          "grammarIds": [
+            "fr-a1-combien-coute"
+          ]
         },
         {
           "code": "M06-L06",
@@ -1178,7 +1238,10 @@
           "hw": "Homework practice for 6.6 Bilan des achats & Transactions",
           "cando": "Je peux effectuer une transaction d'achat complète du début à la fin.",
           "teacher_notes": "code: \"M06-L06\"\ncando: \"Je peux effectuer une transaction d'achat complète du début à la fin.\"",
-          "recycled": "Module 6 progression"
+          "recycled": "Module 6 progression",
+          "grammarIds": [
+            "fr-a1-combien-coute"
+          ]
         }
       ]
     },
@@ -1216,7 +1279,11 @@
           "hw": "Homework practice for 7.1 Vêtements essentiels",
           "cando": "Je peux nommer les vêtements du quotidien et décrire ce que je porte aujourd'hui.",
           "teacher_notes": "code: \"M07-L01\"\ncando: \"Je peux nommer les vêtements du quotidien et décrire ce que je porte aujourd'hui.\"",
-          "recycled": "Module 7 progression"
+          "recycled": "Module 7 progression",
+          "grammarIds": [
+            "fr-a1-accord-des-adjectifs",
+            "fr-a1-adjectifs-demonstratifs-ce-cet-cette-ces"
+          ]
         },
         {
           "code": "M07-L02",
@@ -1242,7 +1309,11 @@
           "hw": "Homework practice for 7.2 Accessoires & Chaussures",
           "cando": "Je peux identifier les accessoires et les chaussures et décrire un style personnel.",
           "teacher_notes": "code: \"M07-L02\"\ncando: \"Je peux identifier les accessoires et les chaussures et décrire un style personnel.\"",
-          "recycled": "Module 7 progression"
+          "recycled": "Module 7 progression",
+          "grammarIds": [
+            "fr-a1-accord-des-adjectifs",
+            "fr-a1-adjectifs-demonstratifs-ce-cet-cette-ces"
+          ]
         },
         {
           "code": "M07-L03",
@@ -1268,7 +1339,11 @@
           "hw": "Homework practice for 7.3 Décrire les vêtements : Couleur, Taille & Style",
           "cando": "Je peux décrire des vêtements en utilisant des adjectifs de couleur, taille et style.",
           "teacher_notes": "code: \"M07-L03\"\ncando: \"Je peux décrire des vêtements en utilisant des adjectifs de couleur, taille et style.\"",
-          "recycled": "Module 7 progression"
+          "recycled": "Module 7 progression",
+          "grammarIds": [
+            "fr-a1-accord-des-adjectifs",
+            "fr-a1-adjectifs-demonstratifs-ce-cet-cette-ces"
+          ]
         },
         {
           "code": "M07-L04",
@@ -1294,7 +1369,11 @@
           "hw": "Homework practice for 7.4 Achats de vêtements : Essayages & Tailles",
           "cando": "Je peux demander à essayer des vêtements et exprimer mon avis sur la taille.",
           "teacher_notes": "code: \"M07-L04\"\ncando: \"Je peux demander à essayer des vêtements et exprimer mon avis sur la taille.\"",
-          "recycled": "Module 7 progression"
+          "recycled": "Module 7 progression",
+          "grammarIds": [
+            "fr-a1-accord-des-adjectifs",
+            "fr-a1-adjectifs-demonstratifs-ce-cet-cette-ces"
+          ]
         },
         {
           "code": "M07-L05",
@@ -1320,7 +1399,11 @@
           "hw": "Homework practice for 7.5 Achats de vêtements : Comparaisons & Achat",
           "cando": "Je peux comparer des vêtements, discuter des prix et acheter des vêtements.",
           "teacher_notes": "code: \"M07-L05\"\ncando: \"Je peux comparer des vêtements, discuter des prix et acheter des vêtements.\"",
-          "recycled": "Module 7 progression"
+          "recycled": "Module 7 progression",
+          "grammarIds": [
+            "fr-a1-accord-des-adjectifs",
+            "fr-a1-adjectifs-demonstratifs-ce-cet-cette-ces"
+          ]
         },
         {
           "code": "M07-L06",
@@ -1346,7 +1429,11 @@
           "hw": "Homework practice for 7.6 Bilan : Garde-robe & Mode",
           "cando": "Je peux décrire ma garde-robe, mes tenues préférées et gérer un dialogue d'achat.",
           "teacher_notes": "code: \"M07-L06\"\ncando: \"Je peux décrire ma garde-robe, mes tenues préférées et gérer un dialogue d'achat.\"",
-          "recycled": "Module 7 progression"
+          "recycled": "Module 7 progression",
+          "grammarIds": [
+            "fr-a1-accord-des-adjectifs",
+            "fr-a1-adjectifs-demonstratifs-ce-cet-cette-ces"
+          ]
         }
       ]
     },
@@ -2056,7 +2143,10 @@
           "hw": "Homework practice for 12.1 Lieux en ville & Bâtiments publics",
           "cando": "Je peux nommer des lieux de la ville comme la banque, le parc, le musée et le cinéma.",
           "teacher_notes": "code: \"M12-L01\"\ncando: \"Je peux nommer des lieux de la ville comme la banque, le parc, le musée et le cinéma.\"",
-          "recycled": "Module 12 progression"
+          "recycled": "Module 12 progression",
+          "grammarIds": [
+            "fr-a1-prepositions-de-lieu-a-cote-de-en-face-de-dans"
+          ]
         },
         {
           "code": "M12-L02",
@@ -2082,7 +2172,10 @@
           "hw": "Homework practice for 12.2 Monuments & Services de la ville",
           "cando": "Je peux décrire les monuments publics et les services municipaux.",
           "teacher_notes": "code: \"M12-L02\"\ncando: \"Je peux décrire les monuments publics et les services municipaux.\"",
-          "recycled": "Module 12 progression"
+          "recycled": "Module 12 progression",
+          "grammarIds": [
+            "fr-a1-prepositions-de-lieu-a-cote-de-en-face-de-dans"
+          ]
         },
         {
           "code": "M12-L03",
@@ -2108,7 +2201,10 @@
           "hw": "Homework practice for 12.3 Demander son chemin en ville",
           "cando": "Je peux demander comment rejoindre des monuments et comprendre l'orientation.",
           "teacher_notes": "code: \"M12-L03\"\ncando: \"Je peux demander comment rejoindre des monuments et comprendre l'orientation.\"",
-          "recycled": "Module 12 progression"
+          "recycled": "Module 12 progression",
+          "grammarIds": [
+            "fr-a1-prepositions-de-lieu-a-cote-de-en-face-de-dans"
+          ]
         },
         {
           "code": "M12-L04",
@@ -2134,7 +2230,10 @@
           "hw": "Homework practice for 12.4 Décrire les quartiers & La vie urbaine",
           "cando": "Je peux décrire mon quartier et exprimer ce que j'aime dans ma ville.",
           "teacher_notes": "code: \"M12-L04\"\ncando: \"Je peux décrire mon quartier et exprimer ce que j'aime dans ma ville.\"",
-          "recycled": "Module 12 progression"
+          "recycled": "Module 12 progression",
+          "grammarIds": [
+            "fr-a1-prepositions-de-lieu-a-cote-de-en-face-de-dans"
+          ]
         },
         {
           "code": "M12-L05",
@@ -2160,7 +2259,10 @@
           "hw": "Homework practice for 12.5 Transports urbains & Navigation",
           "cando": "Je peux naviguer dans les transports urbains (métro, bus, taxis).",
           "teacher_notes": "code: \"M12-L05\"\ncando: \"Je peux naviguer dans les transports urbains (métro, bus, taxis).\"",
-          "recycled": "Module 12 progression"
+          "recycled": "Module 12 progression",
+          "grammarIds": [
+            "fr-a1-prepositions-de-lieu-a-cote-de-en-face-de-dans"
+          ]
         },
         {
           "code": "M12-L06",
@@ -2186,7 +2288,10 @@
           "hw": "Homework practice for 12.6 Bilan : Guide de la ville & Navigation",
           "cando": "Je peux présenter un guide de la ville et donner des directions à un visiteur.",
           "teacher_notes": "code: \"M12-L06\"\ncando: \"Je peux présenter un guide de la ville et donner des directions à un visiteur.\"",
-          "recycled": "Module 12 progression"
+          "recycled": "Module 12 progression",
+          "grammarIds": [
+            "fr-a1-prepositions-de-lieu-a-cote-de-en-face-de-dans"
+          ]
         }
       ]
     },
@@ -2392,7 +2497,11 @@
           "hw": "Homework practice for 14.1 Activités de loisirs & Hobbies",
           "cando": "Je peux parler de mes loisirs (regarder la télé, écouter de la musique, lire).",
           "teacher_notes": "code: \"M14-L01\"\ncando: \"Je peux parler de mes loisirs (regarder la télé, écouter de la musique, lire).\"",
-          "recycled": "Module 14 progression"
+          "recycled": "Module 14 progression",
+          "grammarIds": [
+            "fr-a1-adverbes-de-frequence-toujours-dhabitude-parfois-jamais",
+            "fr-a1-aimer-adorer-detester"
+          ]
         },
         {
           "code": "M14-L02",
@@ -2418,7 +2527,11 @@
           "hw": "Homework practice for 14.2 Sports & Activités physiques",
           "cando": "Je peux nommer des sports et décrire mes activités physiques et capacités.",
           "teacher_notes": "code: \"M14-L02\"\ncando: \"Je peux nommer des sports et décrire mes activités physiques et capacités.\"",
-          "recycled": "Module 14 progression"
+          "recycled": "Module 14 progression",
+          "grammarIds": [
+            "fr-a1-adverbes-de-frequence-toujours-dhabitude-parfois-jamais",
+            "fr-a1-aimer-adorer-detester"
+          ]
         },
         {
           "code": "M14-L03",
@@ -2444,7 +2557,11 @@
           "hw": "Homework practice for 14.3 Cinéma, Musique & Divertissement",
           "cando": "Je peux exprimer mes préférences pour les films, la musique et les livres.",
           "teacher_notes": "code: \"M14-L03\"\ncando: \"Je peux exprimer mes préférences pour les films, la musique et les livres.\"",
-          "recycled": "Module 14 progression"
+          "recycled": "Module 14 progression",
+          "grammarIds": [
+            "fr-a1-adverbes-de-frequence-toujours-dhabitude-parfois-jamais",
+            "fr-a1-aimer-adorer-detester"
+          ]
         },
         {
           "code": "M14-L04",
@@ -2470,7 +2587,11 @@
           "hw": "Homework practice for 14.4 Projets de week-end & Temps libre",
           "cando": "Je peux parler de mes projets de week-end et inviter des amis.",
           "teacher_notes": "code: \"M14-L04\"\ncando: \"Je peux parler de mes projets de week-end et inviter des amis.\"",
-          "recycled": "Module 14 progression"
+          "recycled": "Module 14 progression",
+          "grammarIds": [
+            "fr-a1-adverbes-de-frequence-toujours-dhabitude-parfois-jamais",
+            "fr-a1-aimer-adorer-detester"
+          ]
         },
         {
           "code": "M14-L05",
@@ -2496,7 +2617,11 @@
           "hw": "Homework practice for 14.5 Sondage sur les hobbies & Intérêts",
           "cando": "Je peux interroger mes camarades sur leurs hobbies et comparer.",
           "teacher_notes": "code: \"M14-L05\"\ncando: \"Je peux interroger mes camarades sur leurs hobbies et comparer.\"",
-          "recycled": "Module 14 progression"
+          "recycled": "Module 14 progression",
+          "grammarIds": [
+            "fr-a1-adverbes-de-frequence-toujours-dhabitude-parfois-jamais",
+            "fr-a1-aimer-adorer-detester"
+          ]
         },
         {
           "code": "M14-L06",
@@ -2522,7 +2647,11 @@
           "hw": "Homework practice for 14.6 Bilan : Loisirs & Portfolio d'intérêts",
           "cando": "Je peux faire une présentation de mes hobbies, de mes sports et loisirs.",
           "teacher_notes": "code: \"M14-L06\"\ncando: \"Je peux faire une présentation de mes hobbies, de mes sports et loisirs.\"",
-          "recycled": "Module 14 progression"
+          "recycled": "Module 14 progression",
+          "grammarIds": [
+            "fr-a1-adverbes-de-frequence-toujours-dhabitude-parfois-jamais",
+            "fr-a1-aimer-adorer-detester"
+          ]
         }
       ]
     },
@@ -2560,7 +2689,11 @@
           "hw": "Homework practice for 15.1 Appareils numériques & Équipements",
           "cando": "Je peux nommer des appareils tech comme les smartphones, laptops et casques.",
           "teacher_notes": "code: \"M15-L01\"\ncando: \"Je peux nommer des appareils tech comme les smartphones, laptops et casques.\"",
-          "recycled": "Module 15 progression"
+          "recycled": "Module 15 progression",
+          "grammarIds": [
+            "fr-a1-imperatif",
+            "fr-a1-synthese-du-present-des-habitudes-des-connecteurs-temporels-et-des-possessifs"
+          ]
         },
         {
           "code": "M15-L02",
@@ -2586,7 +2719,11 @@
           "hw": "Homework practice for 15.2 Verbes d'action tech & Opérations",
           "cando": "Je peux décrire des actions tech de base (allumer, charger, télécharger).",
           "teacher_notes": "code: \"M15-L02\"\ncando: \"Je peux décrire des actions tech de base (allumer, charger, télécharger).\"",
-          "recycled": "Module 15 progression"
+          "recycled": "Module 15 progression",
+          "grammarIds": [
+            "fr-a1-imperatif",
+            "fr-a1-synthese-du-present-des-habitudes-des-connecteurs-temporels-et-des-possessifs"
+          ]
         },
         {
           "code": "M15-L03",
@@ -2612,7 +2749,11 @@
           "hw": "Homework practice for 15.3 Vocabulaire Internet & Activités en ligne",
           "cando": "Je peux parler des activités en ligne (recherche, e-mails, navigation).",
           "teacher_notes": "code: \"M15-L03\"\ncando: \"Je peux parler des activités en ligne (recherche, e-mails, navigation).\"",
-          "recycled": "Module 15 progression"
+          "recycled": "Module 15 progression",
+          "grammarIds": [
+            "fr-a1-imperatif",
+            "fr-a1-synthese-du-present-des-habitudes-des-connecteurs-temporels-et-des-possessifs"
+          ]
         },
         {
           "code": "M15-L04",
@@ -2638,7 +2779,11 @@
           "hw": "Homework practice for 15.4 Réseaux sociaux & Messages numériques",
           "cando": "Je peux écrire de courts messages numériques et utiliser les termes des réseaux sociaux.",
           "teacher_notes": "code: \"M15-L04\"\ncando: \"Je peux écrire de courts messages numériques et utiliser les termes des réseaux sociaux.\"",
-          "recycled": "Module 15 progression"
+          "recycled": "Module 15 progression",
+          "grammarIds": [
+            "fr-a1-imperatif",
+            "fr-a1-synthese-du-present-des-habitudes-des-connecteurs-temporels-et-des-possessifs"
+          ]
         },
         {
           "code": "M15-L05",
@@ -2664,7 +2809,11 @@
           "hw": "Homework practice for 15.5 Sécurité numérique & Dépannage",
           "cando": "Je peux comprendre des règles de sécurité numérique et décrire un problème simple.",
           "teacher_notes": "code: \"M15-L05\"\ncando: \"Je peux comprendre des règles de sécurité numérique et décrire un problème simple.\"",
-          "recycled": "Module 15 progression"
+          "recycled": "Module 15 progression",
+          "grammarIds": [
+            "fr-a1-imperatif",
+            "fr-a1-synthese-du-present-des-habitudes-des-connecteurs-temporels-et-des-possessifs"
+          ]
         },
         {
           "code": "M15-L06",
@@ -2690,7 +2839,11 @@
           "hw": "Homework practice for 15.6 Bilan : Vie numérique & Profil tech",
           "cando": "Je peux présenter un aperçu de mes habitudes tech et de ma communication numérique.",
           "teacher_notes": "code: \"M15-L06\"\ncando: \"Je peux présenter un aperçu de mes habitudes tech et de ma communication numérique.\"",
-          "recycled": "Module 15 progression"
+          "recycled": "Module 15 progression",
+          "grammarIds": [
+            "fr-a1-imperatif",
+            "fr-a1-synthese-du-present-des-habitudes-des-connecteurs-temporels-et-des-possessifs"
+          ]
         }
       ]
     },
@@ -3064,7 +3217,11 @@
           "hw": "Homework practice for 18.1 Futur immédiat & Projets personnels",
           "cando": "Je peux dire ce que je vais faire demain ou la semaine prochaine.",
           "teacher_notes": "code: \"M18-L01\"\ncando: \"Je peux dire ce que je vais faire demain ou la semaine prochaine.\"",
-          "recycled": "Module 18 progression"
+          "recycled": "Module 18 progression",
+          "grammarIds": [
+            "fr-a1-aller-au-present-infinitif-futur-proche",
+            "fr-a1-vouloir-infinitif"
+          ]
         },
         {
           "code": "M18-L02",
@@ -3090,7 +3247,11 @@
           "hw": "Homework practice for 18.2 Rêves & Objectifs personnels",
           "cando": "Je peux parler de mes rêves, espoirs et objectifs personnels.",
           "teacher_notes": "code: \"M18-L02\"\ncando: \"Je peux parler de mes rêves, espoirs et objectifs personnels.\"",
-          "recycled": "Module 18 progression"
+          "recycled": "Module 18 progression",
+          "grammarIds": [
+            "fr-a1-aller-au-present-infinitif-futur-proche",
+            "fr-a1-vouloir-infinitif"
+          ]
         },
         {
           "code": "M18-L03",
@@ -3116,7 +3277,11 @@
           "hw": "Homework practice for 18.3 Projets professionnels & Études",
           "cando": "Je peux exprimer des intentions futures concernant le travail et les études.",
           "teacher_notes": "code: \"M18-L03\"\ncando: \"Je peux exprimer des intentions futures concernant le travail et les études.\"",
-          "recycled": "Module 18 progression"
+          "recycled": "Module 18 progression",
+          "grammarIds": [
+            "fr-a1-aller-au-present-infinitif-futur-proche",
+            "fr-a1-vouloir-infinitif"
+          ]
         },
         {
           "code": "M18-L04",
@@ -3142,7 +3307,11 @@
           "hw": "Homework practice for 18.4 Voyages futurs & Projets de vacances",
           "cando": "Je peux discuter de destinations de voyage et projets de vacances.",
           "teacher_notes": "code: \"M18-L04\"\ncando: \"Je peux discuter de destinations de voyage et projets de vacances.\"",
-          "recycled": "Module 18 progression"
+          "recycled": "Module 18 progression",
+          "grammarIds": [
+            "fr-a1-aller-au-present-infinitif-futur-proche",
+            "fr-a1-vouloir-infinitif"
+          ]
         },
         {
           "code": "M18-L05",
@@ -3168,7 +3337,11 @@
           "hw": "Homework practice for 18.5 Prédictions simples & Opinions sur l'avenir",
           "cando": "Je peux faire de simples prédictions sur les villes, la technologie ou le climat.",
           "teacher_notes": "code: \"M18-L05\"\ncando: \"Je peux faire de simples prédictions sur les villes, la technologie ou le climat.\"",
-          "recycled": "Module 18 progression"
+          "recycled": "Module 18 progression",
+          "grammarIds": [
+            "fr-a1-aller-au-present-infinitif-futur-proche",
+            "fr-a1-vouloir-infinitif"
+          ]
         },
         {
           "code": "M18-L06",
@@ -3194,7 +3367,11 @@
           "hw": "Homework practice for 18.6 Bilan : Projets futurs & Feuille de route",
           "cando": "Je peux présenter une feuille de route personnelle détaillant mes objectifs à court et long terme.",
           "teacher_notes": "code: \"M18-L06\"\ncando: \"Je peux présenter une feuille de route personnelle détaillant mes objectifs à court et long terme.\"",
-          "recycled": "Module 18 progression"
+          "recycled": "Module 18 progression",
+          "grammarIds": [
+            "fr-a1-aller-au-present-infinitif-futur-proche",
+            "fr-a1-vouloir-infinitif"
+          ]
         }
       ]
     },
@@ -3232,7 +3409,10 @@
           "hw": "Homework practice for 19.1 Comparer personnes & Objets physiques",
           "cando": "Je peux comparer deux personnes ou objets avec des comparatifs simples.",
           "teacher_notes": "code: \"M19-L01\"\ncando: \"Je peux comparer deux personnes ou objets avec des comparatifs simples.\"",
-          "recycled": "Module 19 progression"
+          "recycled": "Module 19 progression",
+          "grammarIds": [
+            "fr-a1-accord-des-adjectifs"
+          ]
         },
         {
           "code": "M19-L02",
@@ -3258,7 +3438,10 @@
           "hw": "Homework practice for 19.2 Comparer villes & Lieux",
           "cando": "Je peux comparer la vie dans différentes villes, villages ou pays.",
           "teacher_notes": "code: \"M19-L02\"\ncando: \"Je peux comparer la vie dans différentes villes, villages ou pays.\"",
-          "recycled": "Module 19 progression"
+          "recycled": "Module 19 progression",
+          "grammarIds": [
+            "fr-a1-accord-des-adjectifs"
+          ]
         },
         {
           "code": "M19-L03",
@@ -3284,7 +3467,10 @@
           "hw": "Homework practice for 19.3 Comparer modes de vie & Habitudes",
           "cando": "Je peux comparer les modes de vie modernes et traditionnels.",
           "teacher_notes": "code: \"M19-L03\"\ncando: \"Je peux comparer les modes de vie modernes et traditionnels.\"",
-          "recycled": "Module 19 progression"
+          "recycled": "Module 19 progression",
+          "grammarIds": [
+            "fr-a1-accord-des-adjectifs"
+          ]
         },
         {
           "code": "M19-L04",
@@ -3310,7 +3496,10 @@
           "hw": "Homework practice for 19.4 Goûts, Dégoûts & Préférences",
           "cando": "Je peux exprimer des préférences et choisir entre différentes options.",
           "teacher_notes": "code: \"M19-L04\"\ncando: \"Je peux exprimer des préférences et choisir entre différentes options.\"",
-          "recycled": "Module 19 progression"
+          "recycled": "Module 19 progression",
+          "grammarIds": [
+            "fr-a1-accord-des-adjectifs"
+          ]
         },
         {
           "code": "M19-L05",
@@ -3336,7 +3525,10 @@
           "hw": "Homework practice for 19.5 Faire des choix & Recommandations",
           "cando": "Je peux recommander une option à quelqu'un sur la base d'une comparaison.",
           "teacher_notes": "code: \"M19-L05\"\ncando: \"Je peux recommander une option à quelqu'un sur la base d'une comparaison.\"",
-          "recycled": "Module 19 progression"
+          "recycled": "Module 19 progression",
+          "grammarIds": [
+            "fr-a1-accord-des-adjectifs"
+          ]
         },
         {
           "code": "M19-L06",
@@ -3362,7 +3554,10 @@
           "hw": "Homework practice for 19.6 Bilan : Comparer mon monde",
           "cando": "Je peux faire une présentation comparative de deux produits, lieux ou modes de vie.",
           "teacher_notes": "code: \"M19-L06\"\ncando: \"Je peux faire une présentation comparative de deux produits, lieux ou modes de vie.\"",
-          "recycled": "Module 19 progression"
+          "recycled": "Module 19 progression",
+          "grammarIds": [
+            "fr-a1-accord-des-adjectifs"
+          ]
         }
       ]
     },
@@ -3400,7 +3595,10 @@
           "hw": "Homework practice for 20.1 Exprimer des opinions simples",
           "cando": "Je peux exprimer clairement mon avis sur des sujets quotidiens.",
           "teacher_notes": "code: \"M20-L01\"\ncando: \"Je peux exprimer clairement mon avis sur des sujets quotidiens.\"",
-          "recycled": "Module 20 progression"
+          "recycled": "Module 20 progression",
+          "grammarIds": [
+            "fr-a1-je-pense-que-a-mon-avis"
+          ]
         },
         {
           "code": "M20-L02",
@@ -3426,7 +3624,10 @@
           "hw": "Homework practice for 20.2 Exprimer l'accord & le désaccord poli",
           "cando": "Je peux exprimer un accord ou un désaccord poli pendant une discussion.",
           "teacher_notes": "code: \"M20-L02\"\ncando: \"Je peux exprimer un accord ou un désaccord poli pendant une discussion.\"",
-          "recycled": "Module 20 progression"
+          "recycled": "Module 20 progression",
+          "grammarIds": [
+            "fr-a1-je-pense-que-a-mon-avis"
+          ]
         },
         {
           "code": "M20-L03",
@@ -3452,7 +3653,10 @@
           "hw": "Homework practice for 20.3 Expliquer un problème & Demander de l'aide",
           "cando": "Je peux décrire des problèmes quotidiens (perdu, cassé, en retard) et demander de l'aide.",
           "teacher_notes": "code: \"M20-L03\"\ncando: \"Je peux décrire des problèmes quotidiens (perdu, cassé, en retard) et demander de l'aide.\"",
-          "recycled": "Module 20 progression"
+          "recycled": "Module 20 progression",
+          "grammarIds": [
+            "fr-a1-je-pense-que-a-mon-avis"
+          ]
         },
         {
           "code": "M20-L04",
@@ -3478,7 +3682,10 @@
           "hw": "Homework practice for 20.4 Donner des conseils & Solutions simples",
           "cando": "Je peux offrir de simples conseils ou suggestions pratiques pour des problèmes courants.",
           "teacher_notes": "code: \"M20-L04\"\ncando: \"Je peux offrir de simples conseils ou suggestions pratiques pour des problèmes courants.\"",
-          "recycled": "Module 20 progression"
+          "recycled": "Module 20 progression",
+          "grammarIds": [
+            "fr-a1-je-pense-que-a-mon-avis"
+          ]
         },
         {
           "code": "M20-L05",
@@ -3504,7 +3711,10 @@
           "hw": "Homework practice for 20.5 Requêtes polies & Demandes de permission",
           "cando": "Je peux faire des demandes polies et demander la permission dans des lieux publics.",
           "teacher_notes": "code: \"M20-L05\"\ncando: \"Je peux faire des demandes polies et demander la permission dans des lieux publics.\"",
-          "recycled": "Module 20 progression"
+          "recycled": "Module 20 progression",
+          "grammarIds": [
+            "fr-a1-je-pense-que-a-mon-avis"
+          ]
         },
         {
           "code": "M20-L06",
@@ -3530,7 +3740,10 @@
           "hw": "Homework practice for 20.6 Bilan : Interactions sociales & Enquête d'opinion",
           "cando": "Je peux mener une simple enquête d'opinion et résoudre un problème pratique.",
           "teacher_notes": "code: \"M20-L06\"\ncando: \"Je peux mener une simple enquête d'opinion et résoudre un problème pratique.\"",
-          "recycled": "Module 20 progression"
+          "recycled": "Module 20 progression",
+          "grammarIds": [
+            "fr-a1-je-pense-que-a-mon-avis"
+          ]
         }
       ]
     },
@@ -3568,7 +3781,10 @@
           "hw": "Homework practice for 21.1 À l'aéroport & à la gare",
           "cando": "Je peux me repérer dans un aéroport/une gare, comprendre les annonces et enregistrer mes bagages.",
           "teacher_notes": "code: \"M21-L01\"\ncando: \"Je peux me repérer dans un aéroport/une gare, comprendre les annonces et enregistrer mes bagages.\"",
-          "recycled": "Module 21 progression"
+          "recycled": "Module 21 progression",
+          "grammarIds": [
+            "fr-a1-combien-de"
+          ]
         },
         {
           "code": "M21-L02",
@@ -3594,7 +3810,10 @@
           "hw": "Homework practice for 21.2 À l'hôtel & Hébergement",
           "cando": "Je peux faire le check-in à l'hôtel, me renseigner sur les services et signaler un problème.",
           "teacher_notes": "code: \"M21-L02\"\ncando: \"Je peux faire le check-in à l'hôtel, me renseigner sur les services et signaler un problème.\"",
-          "recycled": "Module 21 progression"
+          "recycled": "Module 21 progression",
+          "grammarIds": [
+            "fr-a1-combien-de"
+          ]
         },
         {
           "code": "M21-L03",
@@ -3620,7 +3839,10 @@
           "hw": "Homework practice for 21.3 Urgences médicales & Pharmacie",
           "cando": "Je peux communiquer un besoin de santé urgent, acheter des médicaments et demander un médecin.",
           "teacher_notes": "code: \"M21-L03\"\ncando: \"Je peux communiquer un besoin de santé urgent, acheter des médicaments et demander un médecin.\"",
-          "recycled": "Module 21 progression"
+          "recycled": "Module 21 progression",
+          "grammarIds": [
+            "fr-a1-combien-de"
+          ]
         },
         {
           "code": "M21-L04",
@@ -3646,7 +3868,10 @@
           "hw": "Homework practice for 21.4 Objets perdus & Services de police",
           "cando": "Je peux signaler des objets perdus ou volés à la police ou au bureau d'information.",
           "teacher_notes": "code: \"M21-L04\"\ncando: \"Je peux signaler des objets perdus ou volés à la police ou au bureau d'information.\"",
-          "recycled": "Module 21 progression"
+          "recycled": "Module 21 progression",
+          "grammarIds": [
+            "fr-a1-combien-de"
+          ]
         },
         {
           "code": "M21-L05",
@@ -3672,7 +3897,10 @@
           "hw": "Homework practice for 21.5 Difficultés de communication & Stratégies de survie",
           "cando": "Je peux utiliser des stratégies de clarification quand je ne comprends pas.",
           "teacher_notes": "code: \"M21-L05\"\ncando: \"Je peux utiliser des stratégies de clarification quand je ne comprends pas.\"",
-          "recycled": "Module 21 progression"
+          "recycled": "Module 21 progression",
+          "grammarIds": [
+            "fr-a1-combien-de"
+          ]
         },
         {
           "code": "M21-L06",
@@ -3698,7 +3926,10 @@
           "hw": "Homework practice for 21.6 Bilan : Mise en situation de survie en voyage",
           "cando": "Je peux réussir une simulation complète de voyage (aéroport, hôtel, imprévus).",
           "teacher_notes": "code: \"M21-L06\"\ncando: \"Je peux réussir une simulation complète de voyage (aéroport, hôtel, imprévus).\"",
-          "recycled": "Module 21 progression"
+          "recycled": "Module 21 progression",
+          "grammarIds": [
+            "fr-a1-combien-de"
+          ]
         }
       ]
     },
@@ -3736,7 +3967,10 @@
           "hw": "Homework practice for 22.1 Projet 1. Mon profil personnel & professionnel",
           "cando": "Je peux créer une fiche de profil personnel et professionnel complète.",
           "teacher_notes": "code: \"M22-L01\"\ncando: \"Je peux créer une fiche de profil personnel et professionnel complète.\"",
-          "recycled": "Module 22 progression"
+          "recycled": "Module 22 progression",
+          "grammarIds": [
+            "fr-a1-synthese-du-present-du-passe-compose-et-du-futur-proche"
+          ]
         },
         {
           "code": "M22-L02",
@@ -3762,7 +3996,10 @@
           "hw": "Homework practice for 22.2 Projet 2. Ma routine & Ma journée idéale",
           "cando": "Je peux présenter un récit comparant ma routine quotidienne et ma journée idéale.",
           "teacher_notes": "code: \"M22-L02\"\ncando: \"Je peux présenter un récit comparant ma routine quotidienne et ma journée idéale.\"",
-          "recycled": "Module 22 progression"
+          "recycled": "Module 22 progression",
+          "grammarIds": [
+            "fr-a1-synthese-du-present-du-passe-compose-et-du-futur-proche"
+          ]
         },
         {
           "code": "M22-L03",
@@ -3788,7 +4025,10 @@
           "hw": "Homework practice for 22.3 Projet 3. Guide de mon logement & de mon quartier",
           "cando": "Je peux créer un guide descriptif de mon logement, quartier et services locaux.",
           "teacher_notes": "code: \"M22-L03\"\ncando: \"Je peux créer un guide descriptif de mon logement, quartier et services locaux.\"",
-          "recycled": "Module 22 progression"
+          "recycled": "Module 22 progression",
+          "grammarIds": [
+            "fr-a1-synthese-du-present-du-passe-compose-et-du-futur-proche"
+          ]
         },
         {
           "code": "M22-L04",
@@ -3814,7 +4054,10 @@
           "hw": "Homework practice for 22.4 Projet 4. Mon parcours : Passé & Avenir",
           "cando": "Je peux créer une frise chronologique combinant mes expériences passées et futurs objectifs.",
           "teacher_notes": "code: \"M22-L04\"\ncando: \"Je peux créer une frise chronologique combinant mes expériences passées et futurs objectifs.\"",
-          "recycled": "Module 22 progression"
+          "recycled": "Module 22 progression",
+          "grammarIds": [
+            "fr-a1-synthese-du-present-du-passe-compose-et-du-futur-proche"
+          ]
         },
         {
           "code": "M22-L05",
@@ -3840,7 +4083,10 @@
           "hw": "Homework practice for 22.5 Projet 5. Mes opinions & Perspectives culturelles",
           "cando": "Je peux présenter une section de portfolio exprimant mes opinions et préférences culturelles.",
           "teacher_notes": "code: \"M22-L05\"\ncando: \"Je peux présenter une section de portfolio exprimant mes opinions et préférences culturelles.\"",
-          "recycled": "Module 22 progression"
+          "recycled": "Module 22 progression",
+          "grammarIds": [
+            "fr-a1-synthese-du-present-du-passe-compose-et-du-futur-proche"
+          ]
         },
         {
           "code": "M22-L06",
@@ -3866,7 +4112,10 @@
           "hw": "Homework practice for 22.6 Bilan final : Présentation du portfolio A1 & Auto-évaluation",
           "cando": "Je peux présenter mon portfolio A1 complet et réaliser une auto-évaluation des objectifs A1.",
           "teacher_notes": "code: \"M22-L06\"\ncando: \"Je peux présenter mon portfolio A1 complet et réaliser une auto-évaluation des objectifs A1.\"",
-          "recycled": "Module 22 progression"
+          "recycled": "Module 22 progression",
+          "grammarIds": [
+            "fr-a1-synthese-du-present-du-passe-compose-et-du-futur-proche"
+          ]
         }
       ]
     }

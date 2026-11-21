@@ -69,11 +69,55 @@ def toks(s):
     return out
 
 
+
+import unicodedata
+FR_STOP = set("""le la les l un une des du de d et ou en au aux a à dans sur pour par avec sans se s
+ce cet cette ces c qui que qu quoi dont où est sont etre être avoir ai as ont il elle on nous vous ils elles
+je tu me te y ne pas plus ni son sa ses mon ma mes ton ta tes leur leurs notre votre nos vos
+cours lecon unite module bilan introduction revision exercices usage emploi formation formes forme
+regle regles structure structures expression expressions utilisation""".split())
+FR_SYN = {
+  "passe": "passe", "compose": "compose", "composee": "compose",
+  "imparfait": "imparfait", "plusqueparfait": "plusqueparfait",
+  "subjonctif": "subjonctif", "conditionnel": "conditionnel",
+  "futur": "futur", "proche": "proche", "simple": "simple",
+  "comparatifs": "comparatif", "comparatif": "comparatif", "comparaison": "comparatif",
+  "superlatifs": "superlatif", "superlatif": "superlatif",
+  "adjectifs": "adjectif", "adjectif": "adjectif", "adverbes": "adverbe", "adverbe": "adverbe",
+  "pronoms": "pronom", "pronom": "pronom", "articles": "article", "article": "article",
+  "possessifs": "possessif", "possessif": "possessif", "demonstratifs": "demonstratif",
+  "connecteurs": "connecteur", "marqueurs": "connecteur", "mots": "mot",
+  "negation": "negation", "negatif": "negation", "negative": "negation",
+  "interrogation": "question", "interrogatif": "question", "interrogative": "question", "questions": "question",
+  "imperatif": "imperatif", "prepositions": "preposition", "gerondif": "gerondif",
+  "relatifs": "relatif", "relatif": "relatif", "partitifs": "partitif", "partitif": "partitif",
+  "reflechis": "reflechi", "pronominaux": "reflechi", "pronominal": "reflechi",
+  "cod": "cod", "coi": "coi", "participe": "participe", "participes": "participe",
+  "hypothese": "hypothese", "condition": "hypothese", "conditions": "hypothese", "si": "si",
+}
+def _fold(w):
+    return "".join(c for c in unicodedata.normalize("NFD", w) if unicodedata.category(c) != "Mn")
+def toks_fr(s):
+    s = s.lower().replace("\u2019", "'").replace("'", " ")
+    ws = re.findall(r"[a-z\u00e0-\u00ff0-9]+", s)
+    out = []
+    for w in ws:
+        w = _fold(w)
+        if w in FR_STOP or _fold(w) in FR_STOP or len(w) < 2 and w not in ("y", "en"): continue
+        if w in FR_SYN: out.append(FR_SYN[w]); continue
+        for suf in ("ements", "ement", "ment", "ees", "es", "ee", "s", "x"):
+            if len(w) > len(suf) + 3 and w.endswith(suf): w = w[: -len(suf)]; break
+        out.append(FR_SYN.get(w, w))
+    return out
+TOK = toks
+MODES = set()
+
+
 def is_junk(p):
     t, slug = p["title"].lower(), p["slug"]
-    if t.startswith("page moved"): return True
-    if slug.startswith(("part-", "confusing-")) or slug == p["lang"]: return True
-    if "master guide" in t or "around the world" in t: return True
+    if t.startswith("page moved") or t.startswith("page d\u00e9plac"): return True
+    if slug.startswith(("part-", "partie-", "confusing-")) or slug == p["lang"]: return True
+    if "master guide" in t or "around the world" in t or t.startswith("mastery of all"): return True
     return False
 
 
@@ -87,7 +131,7 @@ def load_registry(manuals, lang):
 def build_index(points):
     df = collections.Counter()
     for p in points:
-        p["_t"] = set(toks(p["title"] + " " + p["slug"].replace("-", " ")))
+        p["_t"] = set(TOK(p["title"] + " " + p["slug"].replace("-", " ")))
         df.update(p["_t"])
     n = len(points)
     idf = {t: math.log((n + 1) / (c + 0.5)) + 0.3 for t, c in df.items()}
@@ -108,6 +152,9 @@ def score(query_tokens, p, idf, lvl):
     prec = w(inter) / w(q)               # how much of the lesson text is explained by the title
     s = 0.45 * cover + 0.55 * prec
     # time-reference contradiction: page says present/past/future, lesson text names a different one
+    if MODES:
+        pm = p["_t"] & MODES
+        if pm and not (q & MODES): s *= 0.75
     TIME = {"present", "past", "future"}
     qt, pt = q & TIME, p["_t"] & TIME
     if qt and pt and not (qt & pt): s *= 0.7
@@ -135,6 +182,10 @@ def main():
     ap.add_argument("--out", required=True)
     ap.add_argument("--hi", type=float, default=0.62); ap.add_argument("--lo", type=float, default=0.38)
     a = ap.parse_args()
+    global TOK, MODES
+    if a.lang == "fr":
+        TOK = toks_fr
+        MODES = {"subjonctif", "conditionnel", "imparfait", "futur", "plusqueparfait", "imperatif", "gerondif"}
     out = Path(a.out); out.mkdir(parents=True, exist_ok=True)
 
     pts, junk = load_registry(a.manuals, a.lang)
@@ -157,7 +208,7 @@ def main():
                     continue
                 entries = []
                 for it in items:
-                    q = toks(it)
+                    q = TOK(it)
                     # also use lesson title as weak context only when the item itself is very short
                     scored = sorted(((score(q, p, idf, lvl), p) for p in pts), key=lambda x: -x[0])
                     top = [(s, p) for s, p in scored[:3] if s > 0]
