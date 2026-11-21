@@ -34,3 +34,14 @@ python3 scripts/grammar-ids/apply_mapping.py --platform ../cosyplatform --mappin
 python3 scripts/grammar-ids/check_grammar_ids.py --manuals ../cosymanuals --curricula patched
 ```
 Limits: scoring is tuned on English. Other languages need their own synonym table, and Bashkir/Tatar etc. curricula are written in Russian while their manuals are in the target language, so those need a manual mapping or an LLM-assisted pass.
+
+## Status by language (general track)
+
+| Lang | Levels | Lessons with `grammarIds` | Items high / medium / none | Notes |
+|---|---|---|---|---|
+| en | A1-B1 | 125 | 210 / 92 / 28 | A2/B1 lessons are mostly title-only; use `roadmaps/grammar-en-*.json` |
+| fr | A1-C2 | 249 | 443 / 116 / 31 | B1-C2 manual titles match curriculum text almost word for word; A1 is the weak level |
+| ru | A1-C2 | 102 (A1: 92, A2: 10) | 183 / 242 / 161 | Manuals have few B1-C2 pages (127), so B1-C2 have no high matches; all medium rows need review |
+| it | A1 | 79 | 79 / 110 / 55 | Only A1 is in scope (A2-C2 sit in `_out_of_scope`); manuals have 60 pages in total |
+
+Review `review-<lang>-general.csv` (column `reviewer_decision`) for every medium row before applying more IDs.

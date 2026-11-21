@@ -112,11 +112,55 @@ def toks_fr(s):
 TOK = toks
 MODES = set()
 
+RU_STOP = set("""и в во не на с со к ко по из за от до для о об обо у при что как или а но же ли бы это этот эта эти его ее их
+быть есть был была было были будет при про над под без через между перед после также только уже еще очень весь вся все всё
+тема урок правило правила употребление образование формы форма конструкция конструкции""".split())
+RU_SUF = sorted("""ого его ому ему ыми ими ой ей ую юю ая яя ое ее ые ие ых их ом ем ам ям ах ях ов ев ами ями ть ться
+ый ий а я ы и у ю е о ь""".split(), key=len, reverse=True)
+RU_SYN = {"падеж": "падеж", "падежи": "падеж", "падежа": "падеж", "времен": "время", "время": "время", "времена": "время",
+          "вид": "вид", "виды": "вид", "глагол": "глагол", "глаголы": "глагол", "глаголов": "глагол"}
+def toks_ru(s):
+    s = s.lower().replace("\u0451", "\u0435")
+    out = []
+    for w in re.findall(r"[\u0430-\u044f0-9]+", s):
+        if w in RU_STOP or len(w) < 2: continue
+        if w in RU_SYN: out.append(RU_SYN[w]); continue
+        for suf in RU_SUF:
+            if len(w) >= len(suf) + 4 and w.endswith(suf): w = w[: -len(suf)]; break
+        out.append(RU_SYN.get(w, w))
+    return out
+
+IT_STOP = set("""il lo la i gli le un uno una di a da in con su per tra fra e o ed del dello della dei degli delle al allo alla ai
+agli alle nel nello nella nei negli nelle sul sullo sulla sui sugli sulle che si ci ne non piu come ho ha sono e essere
+uso usi forma forme regole regola base introduzione lezione""".split())
+IT_SYN = {"presente": "presente", "passato": "passato", "prossimo": "prossimo", "imperfetto": "imperfetto",
+          "futuro": "futuro", "condizionale": "condizionale", "congiuntivo": "congiuntivo", "imperativo": "imperativo",
+          "pronomi": "pronome", "pronome": "pronome", "articoli": "articolo", "articolo": "articolo",
+          "preposizioni": "preposizione", "preposizione": "preposizione", "aggettivi": "aggettivo", "aggettivo": "aggettivo",
+          "avverbi": "avverbio", "avverbio": "avverbio", "verbi": "verbo", "verbo": "verbo", "riflessivi": "riflessivo",
+          "numeri": "numero", "numerali": "numero", "ipotetico": "ipotesi", "ipotesi": "ipotesi", "periodo": "periodo",
+          "modali": "modale", "negazione": "negazione", "domande": "interrogativo", "interrogativi": "interrogativo",
+          "possessivi": "possessivo", "dimostrativi": "dimostrativo", "comparativo": "comparativo", "superlativo": "superlativo"}
+def _it_stem(w):
+    if len(w) > 5 and w[-1] in "aeio": w = w[:-1]
+    return w
+_IT_SYN2 = {_it_stem(k): _it_stem(v) for k, v in IT_SYN.items()}
+def toks_it(s):
+    s = s.lower().replace("\u2019", "'").replace("'", " ")
+    out = []
+    for w in re.findall(r"[a-z\u00e0-\u00ff0-9]+", s):
+        w = _fold(w)
+        if w in IT_STOP or len(w) < 2: continue
+        w = _it_stem(w)
+        out.append(_IT_SYN2.get(w, w))
+    return out
 
 def is_junk(p):
     t, slug = p["title"].lower(), p["slug"]
     if t.startswith("page moved") or t.startswith("page d\u00e9plac"): return True
     if slug.startswith(("part-", "partie-", "confusing-")) or slug == p["lang"]: return True
+    if re.search("[\U0001F1E6-\U0001F1FF]", p["title"]) or "\u00b7" in p["title"]: return True
+    if t.startswith(("i fondamenti", "\u043e\u0441\u043d\u043e\u0432\u044b ")): return True
     if "master guide" in t or "around the world" in t or t.startswith("mastery of all"): return True
     return False
 
@@ -183,6 +227,8 @@ def main():
     ap.add_argument("--hi", type=float, default=0.62); ap.add_argument("--lo", type=float, default=0.38)
     a = ap.parse_args()
     global TOK, MODES
+    if a.lang == "ru": TOK = toks_ru
+    if a.lang == "it": TOK = toks_it
     if a.lang == "fr":
         TOK = toks_fr
         MODES = {"subjonctif", "conditionnel", "imparfait", "futur", "plusqueparfait", "imperatif", "gerondif"}

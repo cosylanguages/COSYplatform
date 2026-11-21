@@ -1,0 +1,644 @@
+{
+ "stats": {
+  "lessons": 333,
+  "items_medium": 242,
+  "items": 586,
+  "items_high": 183,
+  "items_none": 161,
+  "lessons_no_grammar_text": 18
+ },
+ "registry_junk_excluded": [
+  "ru-a1-part-1-building-blocks",
+  "ru-a1-ru"
+ ],
+ "orphan_manual_pages": [
+  {
+   "id": "ru-a1-alfavit-i-zvuki",
+   "title": "Алфавит, буквы и гласные звуки"
+  },
+  {
+   "id": "ru-a1-bez-artikley",
+   "title": "Без артиклей"
+  },
+  {
+   "id": "ru-a1-budushchee-vremya-spryazhenie",
+   "title": "Будущее время: спряжение и слова-помощники"
+  },
+  {
+   "id": "ru-a1-chisla-dni-mesyatsy",
+   "title": "Числа, дни, месяцы"
+  },
+  {
+   "id": "ru-a1-chto-takoe-padezh",
+   "title": "Что такое падеж?"
+  },
+  {
+   "id": "ru-a1-esli-by-nerealnoe-uslovie",
+   "title": "Если бы... — нереальное условие"
+  },
+  {
+   "id": "ru-a1-etot-eta-eto-eti",
+   "title": "Этот, эта, это, эти"
+  },
+  {
+   "id": "ru-a1-glagol-khotet",
+   "title": "Особый глагол «хотеть» и конструкция «я хотел бы»"
+  },
+  {
+   "id": "ru-a1-glagoly-dvizheniya-khodit-ezdit",
+   "title": "Глаголы движения: многонаправленные «ходить» и «ездить»"
+  },
+  {
+   "id": "ru-a1-intonatsiya",
+   "title": "Интонация"
+  },
+  {
+   "id": "ru-a1-kolichestvennye-chislitelnye-1-100",
+   "title": "Количественные числительные (1–100)"
+  },
+  {
+   "id": "ru-a1-konstruktsii-mozhno-nelzya-nuzhno",
+   "title": "Безличные конструкции: «можно», «нельзя», «нужно / надо»"
+  },
+  {
+   "id": "ru-a1-konstruktsii-skuchno-veselo-interesno",
+   "title": "Предикативные наречия состояния (мне скучно, интересно, жарко)"
+  },
+  {
+   "id": "ru-a1-konstruktsiya-nravitsya-lyubit",
+   "title": "Различие конструкций «любить» и «нравиться»"
+  },
+  {
+   "id": "ru-a1-konstruktsiya-u-menya-est",
+   "title": "Конструкция «У меня есть...» и её отрицание «У меня нет...»"
+  },
+  {
+   "id": "ru-a1-koren-pristavka-suffiks",
+   "title": "Корень, приставка, суффикс"
+  },
+  {
+   "id": "ru-a1-kotoryy-chas",
+   "title": "Который час?"
+  },
+  {
+   "id": "ru-a1-mnozhestvennoe-chislo",
+   "title": "Множественное число существительных"
+  },
+  {
+   "id": "ru-a1-mnozhestvennoe-chislo-sushchestvitelnykh",
+   "title": "Множественное число существительных"
+  },
+  {
+   "id": "ru-a1-moch-i-umet",
+   "title": "Мочь и уметь"
+  },
+  {
+   "id": "ru-a1-nado-ili-dolzhen",
+   "title": "На́до или до́лжен?"
+  },
+  {
+   "id": "ru-a1-narechiya-obraza-deystviya",
+   "title": "Наречия образа действия"
+  },
+  {
+   "id": "ru-a1-nastoyashchee-vremya",
+   "title": "Настоящее время глагола"
+  },
+  {
+   "id": "ru-a1-nastoyashchee-vremya-spryazhenie-1",
+   "title": "Настоящее время: 1-е спряжение глаголов (-ать, -ять)"
+  },
+  {
+   "id": "ru-a1-nastoyashchee-vremya-spryazhenie-2",
+   "title": "Настоящее время: 2-е спряжение глаголов (-ить, -еть)"
+  },
+  {
+   "id": "ru-a1-osobye-glagoly-zhit-pisat-pit",
+   "title": "Особые глаголы настоящего времени (жить, писать, пить, петь)"
+  },
+  {
+   "id": "ru-a1-otnegative-mestoimeniya-nikto-nishto",
+   "title": "Отрицательные местоимения и наречия (никто, ничто, никогда)"
+  },
+  {
+   "id": "ru-a1-polnoe-sklonenie",
+   "title": "Полное склонение по падежам"
+  },
+  {
+   "id": "ru-a1-poryadkovye-chislitelnye",
+   "title": "Порядковые числительные"
+  },
+  {
+   "id": "ru-a1-poryadkovye-chislitelnye-1-10",
+   "title": "Порядковые числительные (1–10)"
+  },
+  {
+   "id": "ru-a1-povelitelnoe-naklonenie-imperativ",
+   "title": "Повелительное наклонение (Императив: читай! читайте!)"
+  },
+  {
+   "id": "ru-a1-predlozhnyy-padezh-mesto",
+   "title": "Предложный падеж: местоположение (где? в/на)"
+  },
+  {
+   "id": "ru-a1-predlozhnyy-padezh-o-kom-o-chem",
+   "title": "Предложный падеж: объект мысли и речи (о ком? о чём?)"
+  },
+  {
+   "id": "ru-a1-prevoskhodnaya-stepen",
+   "title": "Превосходная степень"
+  },
+  {
+   "id": "ru-a1-proshedshee-vremya-glagola-byt",
+   "title": "Прошедшее время глагола «быть» (был, была, было, были)"
+  },
+  {
+   "id": "ru-a1-proshedshee-vremya-glagolov",
+   "title": "Прошедшее время глаголов: образование и согласование в роде"
+  },
+  {
+   "id": "ru-a1-pryamaya-i-kosvennaya-rech",
+   "title": "Прямая и косвенная речь"
+  },
+  {
+   "id": "ru-a1-reduktsiya-glasnykh",
+   "title": "Редукция гласных и свободное ударение"
+  },
+  {
+   "id": "ru-a1-rod-imyen-sushchestvitelnykh",
+   "title": "Род имён существительных (мужской, женский, средний)"
+  },
+  {
+   "id": "ru-a1-roditelnyy-padezh-prinadlezhnost",
+   "title": "Родительный падеж: принадлежность и отсутствие (кого? чего? нет...)"
+  },
+  {
+   "id": "ru-a1-ru-be",
+   "title": "Страница перемещена"
+  },
+  {
+   "id": "ru-a1-ru-nouns-gender",
+   "title": "Страница перемещена"
+  },
+  {
+   "id": "ru-a1-ru-pronouns",
+   "title": "Страница перемещена"
+  },
+  {
+   "id": "ru-a1-shkala-uverennosti",
+   "title": "Шкала уверенности"
+  },
+  {
+   "id": "ru-a1-skuchnyy-ili-skuchno",
+   "title": "Ску́чный или ску́чно?"
+  },
+  {
+   "id": "ru-a1-soyuzy-i-a-no",
+   "title": "Соединительные и противительные союз (и, а, но)"
+  },
+  {
+   "id": "ru-a1-tipy-predlozheniy",
+   "title": "Типы предложений"
+  },
+  {
+   "id": "ru-a1-tverdye-i-myagkie-soglasnye",
+   "title": "Твёрдые и мягкие согласные"
+  },
+  {
+   "id": "ru-a1-tvoritelnyy-padezh-professii",
+   "title": "Творительный падеж: профессии и интересы (быть/работать/заниматься)"
+  },
+  {
+   "id": "ru-a1-tvoritelnyy-padezh-sovmestnost",
+   "title": "Творительный падеж: совместность действий (с кем? с чем?)"
+  },
+  {
+   "id": "ru-a1-ty-i-vy",
+   "title": "Ты и вы"
+  },
+  {
+   "id": "ru-a1-udarenie-i-reduktsiya-glasnykh",
+   "title": "Ударение и редукция гласных"
+  },
+  {
+   "id": "ru-a1-usiliteli",
+   "title": "Усилители"
+  },
+  {
+   "id": "ru-a1-ves-kazhdyy-nikto-nishto",
+   "title": "Весь, каждый, никто, ничто"
+  },
+  {
+   "id": "ru-a1-vinitelnyy-padezh-napravlenie",
+   "title": "Винительный падеж направления (куда? в/на)"
+  },
+  {
+   "id": "ru-a1-vinitelnyy-padezh-odushevlennye",
+   "title": "Винительный падеж: одушевлённые существительные (кого?)"
+  },
+  {
+   "id": "ru-a1-voprositelnye-slova-kto-chto-gde-kuda",
+   "title": "Вопросительные слова (Кто, Что, Где, Куда, Откуда)"
+  },
+  {
+   "id": "ru-a1-zvonkie-i-glukhie-soglasnye",
+   "title": "Звонкие и глухие согласные"
+  },
+  {
+   "id": "ru-a2-chislitelnye-sostavnye-i-drobi",
+   "title": "Составные количественные и порядковые числительные"
+  },
+  {
+   "id": "ru-a2-datelnyy-padezh-predlogi-k-i-po",
+   "title": "Предлоги дательного падежа «к» и «по»"
+  },
+  {
+   "id": "ru-a2-datelnyy-padezh-prilagatelnykh-i-mestoimeniy",
+   "title": "Дательный падеж прилагательных и местоимений"
+  },
+  {
+   "id": "ru-a2-glagolnye-konstruktsii-soit-zanimatsya",
+   "title": "Глагольные конструкции предпочтения и интересов (увлекаться, заниматься)"
+  },
+  {
+   "id": "ru-a2-glagoly-chuvstv-i-vospriyatiya",
+   "title": "Глаголы чувств и восприятия (слышать/увидеть, казаться)"
+  },
+  {
+   "id": "ru-a2-glagoly-dvizheniya-s-pristavkami-po-pri-u",
+   "title": "Глаголы движения с приставками по-, при-, у- (пойти, приехать, уйти)"
+  },
+  {
+   "id": "ru-a2-glagoly-dvizheniya-s-pristavkami-v-vy-dop-pere",
+   "title": "Глаголы движения с приставками в-, вы-, до-, пере-, под-, от-"
+  },
+  {
+   "id": "ru-a2-konstruktsii-dolzhen-obyazan-nado",
+   "title": "Выражение должествования: «должен», «обязан», «приходится»"
+  },
+  {
+   "id": "ru-a2-kosvennaya-rech-i-mestoimeniya",
+   "title": "Косвенная речь и союзные слова"
+  },
+  {
+   "id": "ru-a2-kosvennaya-rech-vvedenie",
+   "title": "Перевод прямой речи в косвенную (он сказал, что... / спросил, ли...)"
+  },
+  {
+   "id": "ru-a2-kotoryi-v-kosvennyh-padezhah",
+   "title": "Союзное слово «который» в косвенных падежах"
+  },
+  {
+   "id": "ru-a2-kratkie-prilagatelnye",
+   "title": "Краткие прилагательные (рад, должен, занят, достоин)"
+  },
+  {
+   "id": "ru-a2-mestoimeniya-ves-kazhdyy-lyuboy-sam",
+   "title": "Определительные местоимения (весь, каждый, любой, сам)"
+  },
+  {
+   "id": "ru-a2-poryadok-slov-tema-rema-a2",
+   "title": "Актуальное членение предложения: Тема и Рема"
+  },
+  {
+   "id": "ru-a2-povelitelnaya-mnojestvennaya-forma",
+   "title": "Совместное действие и вежливый императив"
+  },
+  {
+   "id": "ru-a2-povelitelnoe-naklonenie-pust-pust-davaite",
+   "title": "Побудительные конструкции («Давай!», «Пусть...», «Давайте...»)"
+  },
+  {
+   "id": "ru-a2-prevochodnaya-stepen-naibolee-samyy",
+   "title": "Способы выражения превосходной степени (наиболее, наименее)"
+  },
+  {
+   "id": "ru-a2-pristavochnye-glagoly-dvizheniya",
+   "title": "Приставочные глаголы движения"
+  },
+  {
+   "id": "ru-a2-proshedshee-vremya-i-vid",
+   "title": "Прошедшее время и вид глагола"
+  },
+  {
+   "id": "ru-a2-proshedshee-vremya-osobennosti",
+   "title": "Прошедшее время: особенные глаголы и беглые гласные"
+  },
+  {
+   "id": "ru-a2-roditelnyy-padezh-predlogi-iz-ot-do-dlya-bez",
+   "title": "Предлоги родительного падежа (из, от, до, для, без, около, после)"
+  },
+  {
+   "id": "ru-a2-roditelnyy-padezh-prilagatelnykh-i-mestoimeniy",
+   "title": "Родительный падеж прилагательных и местоимений"
+  },
+  {
+   "id": "ru-a2-soglasovanie-chislitelnykh-s-prilagatelnymi",
+   "title": "Согласование числительных 2, 3, 4 с прилагательными"
+  },
+  {
+   "id": "ru-a2-sravnenie-i-prevoskhodnaya-stepen",
+   "title": "Сравнительная и превосходная степень прилагательных"
+  },
+  {
+   "id": "ru-a2-substantivirovannye-prilagatelnye",
+   "title": "Субстантивированные прилагательные (столовая, ванная, больной)"
+  },
+  {
+   "id": "ru-a2-tvoritelnyy-padezh-prilagatelnykh-i-mestoimeniy",
+   "title": "Творительный падеж прилагательных и местоимений"
+  },
+  {
+   "id": "ru-a2-uslovnye-predlozheniya-esli-esli-by",
+   "title": "Условные предложения: реальное «если» и нереальное «если бы»"
+  },
+  {
+   "id": "ru-a2-vidovye-pary-glagolov",
+   "title": "Образование видов: суффиксы и приставки видов пар"
+  },
+  {
+   "id": "ru-a2-vinityelnyy-padezh-prilagatelnykh-i-mestoimeniy",
+   "title": "Винительный падеж прилагательных и притяжательных местоимений"
+  },
+  {
+   "id": "ru-a2-vse-padezhi-mnozhestvennoe-chislo-obzor",
+   "title": "Падежные окончания множественного числа (полный обзор)"
+  },
+  {
+   "id": "ru-a2-vyrazhenie-doba-i-chasa-vremeni",
+   "title": "Точное выражение времени, дат и лет (в двух тысяча двадцать четвёртом году)"
+  },
+  {
+   "id": "ru-b1-bezlichnye-predlozheniya-s-kratkimi-stradatelynymi",
+   "title": "Безличные предложения («сказано», «написано», «принято»)"
+  },
+  {
+   "id": "ru-b1-chastitsy-zhe-ved-daje-li",
+   "title": "Усилительные частицы (же, ведь, даже, -то)"
+  },
+  {
+   "id": "ru-b1-chislitelnye-sklonenie-kolichestvennykh",
+   "title": "Склонение простых и составных количественных числительных"
+  },
+  {
+   "id": "ru-b1-chislitelnye-sklonenie-poryadkovykh",
+   "title": "Склонение порядковых числительных и дат"
+  },
+  {
+   "id": "ru-b1-drobnye-i-drobno-kolichestvennye-chislitelnye",
+   "title": "Дробные и смешанные числительные (полтора, полтораста)"
+  },
+  {
+   "id": "ru-b1-glagolnyy-upravlenie-predlogi-v-na-o-k",
+   "title": "Глагольное управление: сложные предложные связи"
+  },
+  {
+   "id": "ru-b1-glagoly-dvizheniya-perezatno-perenostnoe-znachenie",
+   "title": "Переносные значения глаголов движения (время идёт, речь идёт)"
+  },
+  {
+   "id": "ru-b1-glagoly-dvizheniya-s-pristavkami-obzor",
+   "title": "Система приставочных глаголов движения (пере-, про-, об-, за-)"
+  },
+  {
+   "id": "ru-b1-glagoly-myshleniya-i-rechi",
+   "title": "Глаголы речи и мысли в научном и деловом стиле"
+  },
+  {
+   "id": "ru-b1-kosvennyy-vopros-chastitsa-li",
+   "title": "Косвенный вопрос с частицей «ли»"
+  },
+  {
+   "id": "ru-b1-otnegalnye-mestoimeniya-nekovo-nechego",
+   "title": "Отрицательные местоимения «некого», «нечего» и их синтаксис"
+  },
+  {
+   "id": "ru-b1-otnositeilnye-mestoimeniya-chey-kakoy-kakov",
+   "title": "Относительные местоимения «чей», «какой», «каков»"
+  },
+  {
+   "id": "ru-b1-poyasnitelnye-konstruktsii-to-est-a-imenno",
+   "title": "Пояснительные конструкции (то есть, а именно, другими словами)"
+  },
+  {
+   "id": "ru-b1-predlogi-mesta-iz-pod-iz-za",
+   "title": "Составные предлоги места (из-под, из-за)"
+  },
+  {
+   "id": "ru-b1-roditelnyy-padezh-chasti-s-predlogom-iz-za",
+   "title": "Родительный падеж части целого (чашка чаю, килограмм сахара)"
+  },
+  {
+   "id": "ru-b1-slozhnosochinennye-predlozheniya-tozhe-takzhe",
+   "title": "Сложносочинённые предложения с союзами «тоже», «также», «зато»"
+  },
+  {
+   "id": "ru-b1-slozhnosokrashchennye-slova-i-abbreviatury",
+   "title": "Сложносокращённые слова, аббревиатуры и их род"
+  },
+  {
+   "id": "ru-b1-sobiratelnye-chislitelnye-dvoe-troe",
+   "title": "Собирательные числительные (двое, трое, четверо) и их синтаксис"
+  },
+  {
+   "id": "ru-b1-soyuzy-ustupki-nesmotrya-na-vopreki",
+   "title": "Уступительные конструкции (несмотря на, вопреки, хотя)"
+  },
+  {
+   "id": "ru-b1-substantivatsiya-i-perekhod-chastey-rechi",
+   "title": "Субстантивация и переход частей речи в русский синтаксис"
+  },
+  {
+   "id": "ru-b1-tvoritelnyy-padezh-vremeni-i-mesta",
+   "title": "Творительный падеж времени и пространства (утром, дорогой, зимой)"
+  },
+  {
+   "id": "ru-b1-vidy-glagola-v-infinitive",
+   "title": "Виды глагола при инфинитиве (надо сделать / не надо делать)"
+  },
+  {
+   "id": "ru-b1-vzaimnye-mestoimeniya-drug-druga",
+   "title": "Взаимно-возвратное местоимение «друг друга» во всех падежах"
+  },
+  {
+   "id": "ru-b2-bezlichnye-i-neopredelenno-lichnye-predlozheniya-b2",
+   "title": "Неопределённо-личные и безличные конструкции в аналитическом стиле"
+  },
+  {
+   "id": "ru-b2-chastitsy-obosobleniya-i-vydeleniya",
+   "title": "Выделительно-ограничительные частицы (именно, лишь, исключительно)"
+  },
+  {
+   "id": "ru-b2-frazeologiya-ofitsialno-delovogo-stilya",
+   "title": "Официально-деловой синтаксис и канцеляризмы"
+  },
+  {
+   "id": "ru-b2-itogovaya-sintaksicheskaya-norma-b2",
+   "title": "Нормы согласования и распространенные ошибки синтаксиса B2"
+  },
+  {
+   "id": "ru-b2-kosvennaya-rech-ritoricheskie-priemy",
+   "title": "Косвенная речь в официальном стиле и цитирование"
+  },
+  {
+   "id": "ru-b2-lexicheskaya-i-sintaksicheskaya-izbytochnost",
+   "title": "Плеоназм, тавтология и нормы синтаксической полноты"
+  },
+  {
+   "id": "ru-b2-modalnye-slova-i-glagoly-dovoda",
+   "title": "Модальные обороты аргументации (следует признать, невозможно отрицать)"
+  },
+  {
+   "id": "ru-b2-morfologicheskaya-stilistika-glagola",
+   "title": "Стилистические варианты глагольных форм (инфинитив, наклонения)"
+  },
+  {
+   "id": "ru-b2-morfologicheskaya-stilistika-prilagatelnyh",
+   "title": "Полные и краткие формы прилагательных в книжной речи"
+  },
+  {
+   "id": "ru-b2-morfologicheskaya-stilistika-sushchestvitelnyh",
+   "title": "Стилистические варианты падежных окончаний существительных"
+  },
+  {
+   "id": "ru-b2-poryadkovye-i-kolichestvennye-chislitelnye-v-delovoy-rechi",
+   "title": "Синтаксис числительных в юриспруденции и экономике"
+  },
+  {
+   "id": "ru-b2-predlogi-otglagolnogo-proiskhozhdeniya",
+   "title": "Отглагольные предлоги (включая, спустя, благодаря, исходя из)"
+  },
+  {
+   "id": "ru-b2-predlogi-otimennogo-proiskhozhdeniya",
+   "title": "Отыменные предлоги (в течение, в продолжение, ввиду, вплоть до)"
+  },
+  {
+   "id": "ru-b2-sintaksicheskaya-svyaznost-abzatsa",
+   "title": "Средства межфразовой и межабзацной связности"
+  },
+  {
+   "id": "ru-b2-sintaksis-sravnitelynykh-stipeney",
+   "title": "Синтаксические конструкции с градацией и параллельным изменением"
+  },
+  {
+   "id": "ru-b2-stilisticheskaya-inversiya-i-ritm-frazy",
+   "title": "Риторическая инверсия и ритмическая организация текста"
+  },
+  {
+   "id": "ru-b2-substantivnye-konstruktsii-s-roditelnym-padezhem",
+   "title": "Цепочки родительного падежа (род.п. низания)"
+  },
+  {
+   "id": "ru-b2-subyektno-obyektnye-otnosheniya-v-slozhnom-predlozhenii",
+   "title": "Субъектно-объектные отношения в многосоставном предложении"
+  },
+  {
+   "id": "ru-b2-vyrazhenie-vremennoy-soshedshosti",
+   "title": "Синхронность и последовательность событий в сложном синтаксисе"
+  },
+  {
+   "id": "ru-c1-akusticheskaya-adaptivnost-i-govor",
+   "title": "Фонетико-синтаксические особенности публичной монологической речи"
+  },
+  {
+   "id": "ru-c1-emfaticheskaya-inversiya-i-poryadok-slov",
+   "title": "Эмфатическая инверсия (Не только..., но и... / Едва ли...)"
+  },
+  {
+   "id": "ru-c1-inversionnye-ustupki-v-spore",
+   "title": "Инверсионные уступки в публичных дебатах"
+  },
+  {
+   "id": "ru-c1-knizhnye-soyuzy-i-stilisticheskie-svyazki",
+   "title": "Книжные союзы (невероятно, но..., коль скоро, постольку поскольку)"
+  },
+  {
+   "id": "ru-c1-kosvennaya-vezhlivost-i-evfemizmy",
+   "title": "Косвенная вежливость, эвфемизмы и дипломатический протокол"
+  },
+  {
+   "id": "ru-c1-modalnost-i-veroyatnost-v-nauchnykh-gipotezakh",
+   "title": "Модальность вероятности и гипотетичности в исследовании"
+  },
+  {
+   "id": "ru-c1-modalnost-uverennosti-i-filosofskogo-poiska",
+   "title": "Модальность эпистемического поиска и каденция размышления"
+  },
+  {
+   "id": "ru-c1-modalnye-glagoly-zanizheniya-riskov",
+   "title": "Модальные глаголы заверения и минимизации рисков"
+  },
+  {
+   "id": "ru-c1-otglagolnye-sushchestvitelnye-v-ritme-publitsistiki",
+   "title": "Конденсированная номинализация и ритм литературного обзора"
+  },
+  {
+   "id": "ru-c1-perekluchenie-registrov-i-stilisticheskaya-gibkost",
+   "title": "Морфосинтаксические правила переключения регистров"
+  },
+  {
+   "id": "ru-c1-poyasnitelnye-vstavki-v-retsezii",
+   "title": "Пояснительные вставки и стилистические паузы в критика"
+  },
+  {
+   "id": "ru-c1-prichastnye-konstruktsii-v-ekspromte",
+   "title": "Причастные конструкции в устных ответах под давлением"
+  },
+  {
+   "id": "ru-c1-priemy-ustnogo-ukhoda-ot-provokatsiy",
+   "title": "Приёмы устного ухода от провокаций («Хотя X, суть в Y»)"
+  },
+  {
+   "id": "ru-c1-razvernutaya-metafora-v-sintaksise",
+   "title": "Развёрнутая метафора и её синтаксическое развёртывание"
+  },
+  {
+   "id": "ru-c1-sbalansirovannye-trekhchlennye-konstruktsii-trikolon",
+   "title": "Параллелизм и триколон (Правило трёх элементов в риторике)"
+  },
+  {
+   "id": "ru-c1-sintez-akademichskogo-i-ritoricheskogo-sintaksisa",
+   "title": "Синтез риторических, академических и экспромтных синтаксических структур C1"
+  },
+  {
+   "id": "ru-c1-slozhnye-poyasnitelnye-pridatochnye",
+   "title": "Сложные пояснительные придаточные с союзами «насколько», «постольку»"
+  },
+  {
+   "id": "ru-c1-spontannaya-sintaksicheskaya-svyaznost",
+   "title": "Спонтанная синтаксическая связность экспромтного монолога"
+  },
+  {
+   "id": "ru-c1-vvodnye-konstruktsii-avtorskogo-kommentariya",
+   "title": "Вводные конструкции авторского комментария и рефлексии"
+  },
+  {
+   "id": "ru-c2-deonticheskaya-modalnost-ustavnykh-dokumentov",
+   "title": "Деонтическая модальность уставных документов"
+  },
+  {
+   "id": "ru-c2-literaturnye-allyuzii-i-podtekstovaya-podrazumevaemost",
+   "title": "Литературные аллюзии и подтекстовая подразумеваемость"
+  },
+  {
+   "id": "ru-c2-plotnaya-administrativno-pravovaya-nominalizatsiya",
+   "title": "Плотная административно-правовая номинализация"
+  },
+  {
+   "id": "ru-c2-prosodicheskie-intonatsionnye-konstruktsii-ik-6-ik-7",
+   "title": "Интонационные конструкции ИК-6, ИК-7 и подтекст"
+  },
+  {
+   "id": "ru-c2-sintaksis-sokraticheskogo-dialoga-i-dekonstruktsii",
+   "title": "Синтаксис сократического диалога и деконструкции"
+  },
+  {
+   "id": "ru-c2-sintaksis-takticheskogo-rychaga-v-peregovorakh",
+   "title": "Синтаксис тактического рычага давления и деэскалации"
+  },
+  {
+   "id": "ru-c2-subversivnaya-inversiya-i-ironicheskiy-freming",
+   "title": "Субверсивная инверсия и ироническое фреймирование"
+  }
+ ]
+}
