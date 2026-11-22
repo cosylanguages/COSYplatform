@@ -1,0 +1,18 @@
+{
+  "_comment": "Single list of COSY course types. The schema enum in curriculum.schema.json, the folders under curriculums/<lang>/ and the course_type field of every curriculum file must match the keys of `types` (tests/course-types.test.js).",
+  "types": {
+    "general":      { "kind": "course", "status": "live",    "cosylanguagesPage": "general.html",          "manualsFolder": "general" },
+    "spoken":       { "kind": "course", "status": "live",    "cosylanguagesPage": "spoken.html",           "manualsFolder": "spoken" },
+    "professional": { "kind": "course", "status": "live",    "cosylanguagesPage": "professional.html",     "manualsFolder": "professional" },
+    "travelling":   { "kind": "course", "status": "live",    "cosylanguagesPage": "travelling.html",       "manualsFolder": "travelling" },
+    "relocation":   { "kind": "course", "status": "live",    "cosylanguagesPage": "relocation.html",       "manualsFolder": "relocation" },
+    "exam":         { "kind": "course", "status": "live",    "cosylanguagesPage": "exam-preparation.html", "manualsFolder": "exam" },
+    "discussion":   { "kind": "platform-only", "status": "live", "cosylanguagesPage": null, "manualsFolder": null,
+                      "note": "Speaking clubs run in COSYevents, converted to lessons on COSYplatform. Not a course on the COSYlanguages site." },
+    "pronunciation":{ "kind": "planned", "status": "planned", "cosylanguagesPage": null, "manualsFolder": null,
+                      "note": "Planned as a marathon / course on COSYplatform. Curricula exist; not launched as a course yet." }
+  },
+  "manualOnly": {
+    "communication": "Exists only as a COSYmanuals folder (manuals/<lang>/communication). Not a course type and has no curriculum."
+  }
+}
