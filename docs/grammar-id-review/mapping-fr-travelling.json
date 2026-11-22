@@ -1,0 +1,3140 @@
+{
+ "fr/travelling/A1/u01-l01": {
+  "title": "Vocabulaire de l'aéroport et embarquement",
+  "ref": 1,
+  "items": [
+   {
+    "text": "Où est... / Où sont... ?",
+    "confidence": "none",
+    "grammarId": null,
+    "alternatives": []
+   },
+   {
+    "text": "Articles définis (le, la, l', les)",
+    "confidence": "high",
+    "grammarId": "fr-a1-articles-definis-le-la-l-les",
+    "alternatives": [
+     {
+      "id": "fr-a1-articles-definis-le-la-l-les",
+      "title": "Articles définis (le, la, l', les)",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a1-articles",
+      "title": "Les articles définis et indéfinis",
+      "score": 0.84
+     },
+     {
+      "id": "fr-a1-articles-partitifs",
+      "title": "Les articles partitifs",
+      "score": 0.45
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-a1-articles-definis-le-la-l-les"
+  ]
+ },
+ "fr/travelling/A1/u01-l02": {
+  "title": "Enregistrement à l'aéroport et contrôle de sécurité",
+  "ref": 2,
+  "items": [
+   {
+    "text": "Puis-je voir... ?",
+    "confidence": "high",
+    "grammarId": "fr-a1-puis-je-voir",
+    "alternatives": [
+     {
+      "id": "fr-a1-puis-je-voir",
+      "title": "Puis-je voir... ?",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a1-je-vais-taider-on-va-voir",
+      "title": "Je vais t'aider / On va voir",
+      "score": 0.38
+     },
+     {
+      "id": "fr-a1-puis-je-laisser-mes-bagages-ici",
+      "title": "Puis-je laisser mes bagages ici ?",
+      "score": 0.35
+     }
+    ]
+   },
+   {
+    "text": "J'ai... / Je n'ai pas de...",
+    "confidence": "none",
+    "grammarId": null,
+    "alternatives": []
+   }
+  ],
+  "grammarIds": [
+   "fr-a1-puis-je-voir"
+  ]
+ },
+ "fr/travelling/A1/u01-l03": {
+  "title": "Retrait des bagages et informations de vol",
+  "ref": 3,
+  "items": [
+   {
+    "text": "À quelle heure est... ?",
+    "confidence": "high",
+    "grammarId": "fr-a1-a-quelle-heure-est",
+    "alternatives": [
+     {
+      "id": "fr-a1-a-quelle-heure-est",
+      "title": "À quelle heure est... ?",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a1-questions-au-present-a-quelle-heure-tu",
+      "title": "Questions au présent (À quelle heure tu... ?)",
+      "score": 0.86
+     },
+     {
+      "id": "fr-a1-quelle-heure-est-il-a-heure-fixe",
+      "title": "Quelle heure est-il ? / À + heure fixe",
+      "score": 0.82
+     }
+    ]
+   },
+   {
+    "text": "Quelle porte... ?",
+    "confidence": "high",
+    "grammarId": "fr-a1-quelle-porte",
+    "alternatives": [
+     {
+      "id": "fr-a1-quelle-porte",
+      "title": "Quelle porte... ?",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a1-a-quelle-heure-est",
+      "title": "À quelle heure est... ?",
+      "score": 0.46
+     },
+     {
+      "id": "fr-a1-questions-au-present-a-quelle-heure-tu",
+      "title": "Questions au présent (À quelle heure tu... ?)",
+      "score": 0.39
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-a1-a-quelle-heure-est",
+   "fr-a1-quelle-porte"
+  ]
+ },
+ "fr/travelling/A1/u01-l04": {
+  "title": "Transports en commun et navette aéroport",
+  "ref": 4,
+  "items": [
+   {
+    "text": "Combien coûte un billet pour... ?",
+    "confidence": "high",
+    "grammarId": "fr-a1-combien-coute-un-billet-pour",
+    "alternatives": [
+     {
+      "id": "fr-a1-combien-coute-un-billet-pour",
+      "title": "Combien coûte un billet pour... ?",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a1-combien-coute",
+      "title": "Combien coûte... ?",
+      "score": 0.79
+     },
+     {
+      "id": "fr-a1-combien-de",
+      "title": "Combien de... ?",
+      "score": 0.61
+     }
+    ]
+   },
+   {
+    "text": "Ligne directe / Correspondance",
+    "confidence": "high",
+    "grammarId": "fr-a1-ligne-directe-correspondance",
+    "alternatives": [
+     {
+      "id": "fr-a1-ligne-directe-correspondance",
+      "title": "Ligne directe / Correspondance",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a1-tous-les-temps",
+      "title": "Tous les temps sur une seule ligne",
+      "score": 0.3
+     },
+     {
+      "id": "fr-a2-jai-manque-ma-correspondance-pour",
+      "title": "J'ai manqué ma correspondance pour...",
+      "score": 0.18
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-a1-combien-coute-un-billet-pour",
+   "fr-a1-ligne-directe-correspondance"
+  ]
+ },
+ "fr/travelling/A1/u02-l01": {
+  "title": "Arrivée à l'hôtel et réservation",
+  "ref": 1,
+  "items": [
+   {
+    "text": "J'ai une réservation au nom de...",
+    "confidence": "high",
+    "grammarId": "fr-a1-jai-une-reservation-au-nom-de",
+    "alternatives": [
+     {
+      "id": "fr-a1-jai-une-reservation-au-nom-de",
+      "title": "J'ai une réservation au nom de...",
+      "score": 0.86
+     },
+     {
+      "id": "fr-a1-aimer-ne-pas-aimer-nom",
+      "title": "Aimer / Ne pas aimer + nom",
+      "score": 0.43
+     },
+     {
+      "id": "fr-a1-avoir-besoin-de-nom",
+      "title": "Avoir besoin de + nom",
+      "score": 0.43
+     }
+    ]
+   },
+   {
+    "text": "Est-ce que je peux avoir... ?",
+    "confidence": "high",
+    "grammarId": "fr-a1-est-ce-que-je-peux-avoir",
+    "alternatives": [
+     {
+      "id": "fr-a1-est-ce-que-je-peux-avoir",
+      "title": "Est-ce que je peux avoir... ?",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a1-est-ce-que-je-peux-essayer",
+      "title": "Est-ce que je peux essayer... ?",
+      "score": 0.76
+     },
+     {
+      "id": "fr-b1-en-raison-dintolerances-medicales-severes-je-ne-peux-consommer",
+      "title": "En raison d'intolérances médicales sévères, je ne peux consommer...",
+      "score": 0.33
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-a1-est-ce-que-je-peux-avoir",
+   "fr-a1-jai-une-reservation-au-nom-de"
+  ]
+ },
+ "fr/travelling/A1/u02-l02": {
+  "title": "Équipements de la chambre et demandes",
+  "ref": 2,
+  "items": [
+   {
+    "text": "Est-ce qu'il y a... dans la chambre ?",
+    "confidence": "high",
+    "grammarId": "fr-a1-est-ce-quil-y-a-dans-la-chambre",
+    "alternatives": [
+     {
+      "id": "fr-a1-est-ce-quil-y-a-dans-la-chambre",
+      "title": "Est-ce qu'il y a... dans la chambre ?",
+      "score": 0.77
+     },
+     {
+      "id": "fr-a1-je-voudrais-regler-la-note-et-liberer-la-chambre",
+      "title": "Je voudrais régler la note et libérer la chambre",
+      "score": 0.63
+     },
+     {
+      "id": "fr-a2-pourrais-je-avoir-une-chambre-avec",
+      "title": "Pourrais-je avoir une chambre avec... ?",
+      "score": 0.42
+     }
+    ]
+   },
+   {
+    "text": "Pouvez-vous me donner plus de... ?",
+    "confidence": "high",
+    "grammarId": "fr-a1-pouvez-vous-me-donner-plus-de",
+    "alternatives": [
+     {
+      "id": "fr-a1-pouvez-vous-me-donner-plus-de",
+      "title": "Pouvez-vous me donner plus de... ?",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a1-pouvez-vous-maider",
+      "title": "Pouvez-vous m'aider ?",
+      "score": 0.39
+     },
+     {
+      "id": "fr-a1-pouvoir-pour-les-requetes-polies-pouvez-vous",
+      "title": "Pouvoir pour les requêtes polies (Pouvez-vous...?)",
+      "score": 0.37
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-a1-est-ce-quil-y-a-dans-la-chambre",
+   "fr-a1-pouvez-vous-me-donner-plus-de"
+  ]
+ },
+ "fr/travelling/A1/u02-l03": {
+  "title": "Petit-déjeuner et services de l'hôtel",
+  "ref": 3,
+  "items": [
+   {
+    "text": "À quelle heure est servi le petit-déjeuner ?",
+    "confidence": "high",
+    "grammarId": "fr-a1-a-quelle-heure-est-servi-le-petit-dejeuner",
+    "alternatives": [
+     {
+      "id": "fr-a1-a-quelle-heure-est-servi-le-petit-dejeuner",
+      "title": "À quelle heure est servi le petit-déjeuner ?",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a1-a-quelle-heure-est",
+      "title": "À quelle heure est... ?",
+      "score": 0.64
+     },
+     {
+      "id": "fr-a1-heure",
+      "title": "L'heure",
+      "score": 0.55
+     }
+    ]
+   },
+   {
+    "text": "Où se trouve... ?",
+    "confidence": "high",
+    "grammarId": "fr-a1-ou-se-trouve",
+    "alternatives": [
+     {
+      "id": "fr-a1-ou-se-trouve",
+      "title": "Où se trouve... ?",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a1-ou-se-trouve-le-la-plus-proche",
+      "title": "Où se trouve le / la plus proche ?",
+      "score": 0.79
+     },
+     {
+      "id": "fr-a1-ou-se-trouve-le-distributeur-le-plus-proche",
+      "title": "Où se trouve le distributeur le plus proche ?",
+      "score": 0.69
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-a1-a-quelle-heure-est-servi-le-petit-dejeuner",
+   "fr-a1-ou-se-trouve"
+  ]
+ },
+ "fr/travelling/A1/u02-l04": {
+  "title": "Départ de l'hôtel et bagagerie",
+  "ref": 4,
+  "items": [
+   {
+    "text": "Je voudrais régler la note et libérer la chambre",
+    "confidence": "high",
+    "grammarId": "fr-a1-je-voudrais-regler-la-note-et-liberer-la-chambre",
+    "alternatives": [
+     {
+      "id": "fr-a1-je-voudrais-regler-la-note-et-liberer-la-chambre",
+      "title": "Je voudrais régler la note et libérer la chambre",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a1-est-ce-quil-y-a-dans-la-chambre",
+      "title": "Est-ce qu'il y a... dans la chambre ?",
+      "score": 0.32
+     },
+     {
+      "id": "fr-a1-je-voudrais",
+      "title": "Je voudrais / Voulez-vous... ?",
+      "score": 0.31
+     }
+    ]
+   },
+   {
+    "text": "Puis-je laisser mes bagages ici ?",
+    "confidence": "high",
+    "grammarId": "fr-a1-puis-je-laisser-mes-bagages-ici",
+    "alternatives": [
+     {
+      "id": "fr-a1-puis-je-laisser-mes-bagages-ici",
+      "title": "Puis-je laisser mes bagages ici ?",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a1-puis-je-voir",
+      "title": "Puis-je voir... ?",
+      "score": 0.33
+     },
+     {
+      "id": "fr-a1-est-ce-loin-dici",
+      "title": "Est-ce loin d'ici ?",
+      "score": 0.27
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-a1-je-voudrais-regler-la-note-et-liberer-la-chambre",
+   "fr-a1-puis-je-laisser-mes-bagages-ici"
+  ]
+ },
+ "fr/travelling/A1/u03-l01": {
+  "title": "Commander au café et à emporter",
+  "ref": 1,
+  "items": [
+   {
+    "text": "Je voudrais..., s'il vous plaît",
+    "confidence": "high",
+    "grammarId": "fr-a1-je-voudrais-sil-vous-plait",
+    "alternatives": [
+     {
+      "id": "fr-a1-je-voudrais-sil-vous-plait",
+      "title": "Je voudrais..., s'il vous plaît",
+      "score": 0.86
+     },
+     {
+      "id": "fr-a1-je-voudrais",
+      "title": "Je voudrais / Voulez-vous... ?",
+      "score": 0.49
+     },
+     {
+      "id": "fr-a1-requetes-polies-sil-vous-plait",
+      "title": "Requêtes polies (S'il vous plaît)",
+      "score": 0.39
+     }
+    ]
+   },
+   {
+    "text": "Sur place ou à emporter",
+    "confidence": "high",
+    "grammarId": "fr-a1-sur-place-ou-a-emporter",
+    "alternatives": [
+     {
+      "id": "fr-a1-sur-place-ou-a-emporter",
+      "title": "Sur place ou à emporter",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a2-cette-place-est-elle-reservee",
+      "title": "Cette place est-elle réservée ?",
+      "score": 0.25
+     },
+     {
+      "id": "fr-a2-place-des-adverbes-par-rapport-au-verbe",
+      "title": "Place des adverbes par rapport au verbe",
+      "score": 0.2
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-a1-je-voudrais-sil-vous-plait",
+   "fr-a1-sur-place-ou-a-emporter"
+  ]
+ },
+ "fr/travelling/A1/u03-l02": {
+  "title": "Réservation et accueil au restaurant",
+  "ref": 2,
+  "items": [
+   {
+    "text": "Une table pour deux personnes, s'il vous plaît",
+    "confidence": "high",
+    "grammarId": "fr-a1-une-table-pour-deux-personnes-sil-vous-plait",
+    "alternatives": [
+     {
+      "id": "fr-a1-une-table-pour-deux-personnes-sil-vous-plait",
+      "title": "Une table pour deux personnes, s'il vous plaît",
+      "score": 0.92
+     },
+     {
+      "id": "fr-a1-je-voudrais-sil-vous-plait",
+      "title": "Je voudrais..., s'il vous plaît",
+      "score": 0.28
+     },
+     {
+      "id": "fr-a1-avez-vous-une-table-pres-de",
+      "title": "Avez-vous une table près de... ?",
+      "score": 0.27
+     }
+    ]
+   },
+   {
+    "text": "Avez-vous une table près de... ?",
+    "confidence": "high",
+    "grammarId": "fr-a1-avez-vous-une-table-pres-de",
+    "alternatives": [
+     {
+      "id": "fr-a1-avez-vous-une-table-pres-de",
+      "title": "Avez-vous une table près de... ?",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a1-prepositions-de-lieu-simples-dans-la-cuisine-sur-la-table",
+      "title": "Prépositions de lieu simples (dans la cuisine, sur la table)",
+      "score": 0.27
+     },
+     {
+      "id": "fr-a1-une-table-pour-deux-personnes-sil-vous-plait",
+      "title": "Une table pour deux personnes, s'il vous plaît",
+      "score": 0.26
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-a1-avez-vous-une-table-pres-de",
+   "fr-a1-une-table-pour-deux-personnes-sil-vous-plait"
+  ]
+ },
+ "fr/travelling/A1/u03-l03": {
+  "title": "Commander un repas et préférences alimentaires",
+  "ref": 3,
+  "items": [
+   {
+    "text": "Je vais prendre...",
+    "confidence": "high",
+    "grammarId": "fr-a1-je-vais-prendre",
+    "alternatives": [
+     {
+      "id": "fr-a1-je-vais-prendre",
+      "title": "Je vais prendre...",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a1-je-vais-taider-on-va-voir",
+      "title": "Je vais t'aider / On va voir",
+      "score": 0.37
+     },
+     {
+      "id": "fr-a2-pourriez-vous-nous-prendre-en-photo",
+      "title": "Pourriez-vous nous prendre en photo ?",
+      "score": 0.23
+     }
+    ]
+   },
+   {
+    "text": "Je ne mange pas de...",
+    "confidence": "high",
+    "grammarId": "fr-a1-je-ne-mange-pas-de",
+    "alternatives": [
+     {
+      "id": "fr-a1-je-ne-mange-pas-de",
+      "title": "Je ne mange pas de...",
+      "score": 1.0
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-a1-je-ne-mange-pas-de",
+   "fr-a1-je-vais-prendre"
+  ]
+ },
+ "fr/travelling/A1/u03-l04": {
+  "title": "Demander l'addition et régler",
+  "ref": 4,
+  "items": [
+   {
+    "text": "L'addition, s'il vous plaît",
+    "confidence": "high",
+    "grammarId": "fr-a1-laddition-sil-vous-plait",
+    "alternatives": [
+     {
+      "id": "fr-a1-laddition-sil-vous-plait",
+      "title": "L'addition, s'il vous plaît",
+      "score": 0.78
+     },
+     {
+      "id": "fr-a1-je-voudrais-sil-vous-plait",
+      "title": "Je voudrais..., s'il vous plaît",
+      "score": 0.41
+     },
+     {
+      "id": "fr-a1-requetes-polies-sil-vous-plait",
+      "title": "Requêtes polies (S'il vous plaît)",
+      "score": 0.37
+     }
+    ]
+   },
+   {
+    "text": "Acceptez-vous la carte bancaire ?",
+    "confidence": "high",
+    "grammarId": "fr-a1-acceptez-vous-la-carte-bancaire",
+    "alternatives": [
+     {
+      "id": "fr-a1-acceptez-vous-la-carte-bancaire",
+      "title": "Acceptez-vous la carte bancaire ?",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a2-je-dois-faire-opposition-sur-ma-carte-bancaire-immediatement",
+      "title": "Je dois faire opposition sur ma carte bancaire immédiatement",
+      "score": 0.28
+     },
+     {
+      "id": "fr-a2-pourrions-nous-avoir-la-carte-des-specialites",
+      "title": "Pourrions-nous avoir la carte des spécialités ?",
+      "score": 0.17
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-a1-acceptez-vous-la-carte-bancaire",
+   "fr-a1-laddition-sil-vous-plait"
+  ]
+ },
+ "fr/travelling/A1/u04-l01": {
+  "title": "S'orienter en ville et lieux touristiques",
+  "ref": 1,
+  "items": [
+   {
+    "text": "Où se trouve le / la plus proche ?",
+    "confidence": "high",
+    "grammarId": "fr-a1-ou-se-trouve-le-la-plus-proche",
+    "alternatives": [
+     {
+      "id": "fr-a1-ou-se-trouve-le-la-plus-proche",
+      "title": "Où se trouve le / la plus proche ?",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a1-ou-se-trouve-le-distributeur-le-plus-proche",
+      "title": "Où se trouve le distributeur le plus proche ?",
+      "score": 0.82
+     },
+     {
+      "id": "fr-a1-ou-se-trouve",
+      "title": "Où se trouve... ?",
+      "score": 0.74
+     }
+    ]
+   },
+   {
+    "text": "Est-ce loin d'ici ?",
+    "confidence": "high",
+    "grammarId": "fr-a1-est-ce-loin-dici",
+    "alternatives": [
+     {
+      "id": "fr-a1-est-ce-loin-dici",
+      "title": "Est-ce loin d'ici ?",
+      "score": 0.84
+     },
+     {
+      "id": "fr-a1-puis-je-laisser-mes-bagages-ici",
+      "title": "Puis-je laisser mes bagages ici ?",
+      "score": 0.38
+     },
+     {
+      "id": "fr-a2-puis-je-prendre-une-photo-ici",
+      "title": "Puis-je prendre une photo ici ?",
+      "score": 0.21
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-a1-est-ce-loin-dici",
+   "fr-a1-ou-se-trouve-le-la-plus-proche"
+  ]
+ },
+ "fr/travelling/A1/u04-l02": {
+  "title": "Demander et indiquer son chemin",
+  "ref": 2,
+  "items": [
+   {
+    "text": "Allez tout droit",
+    "confidence": "high",
+    "grammarId": "fr-a1-allez-tout-droit",
+    "alternatives": [
+     {
+      "id": "fr-a1-allez-tout-droit",
+      "title": "Allez tout droit",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a1-imperatif-de-direction-tournez-a-gauche-allez-tout-droit",
+      "title": "Impératif de direction (Tournez à gauche, Allez tout droit)",
+      "score": 0.55
+     },
+     {
+      "id": "fr-b1-expressions-de-droit-et-de-devoir",
+      "title": "Expressions de droit et de devoir",
+      "score": 0.22
+     }
+    ]
+   },
+   {
+    "text": "Tournez à gauche / à droite",
+    "confidence": "high",
+    "grammarId": "fr-a1-tournez-a-gauche-a-droite",
+    "alternatives": [
+     {
+      "id": "fr-a1-tournez-a-gauche-a-droite",
+      "title": "Tournez à gauche / à droite",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a1-imperatif-de-direction-tournez-a-gauche-allez-tout-droit",
+      "title": "Impératif de direction (Tournez à gauche, Allez tout droit)",
+      "score": 0.38
+     },
+     {
+      "id": "fr-a2-expressions-de-direction-et-imperatif-dorientation-tournez-a-droite-continuez-tout-droit",
+      "title": "Expressions de direction et impératif d'orientation (tournez à droite, continuez tout droit)",
+      "score": 0.2
+     }
+    ]
+   },
+   {
+    "text": "C'est à côté de...",
+    "confidence": "high",
+    "grammarId": "fr-a1-cest-a-cote-de",
+    "alternatives": [
+     {
+      "id": "fr-a1-cest-a-cote-de",
+      "title": "C'est à côté de...",
+      "score": 0.82
+     },
+     {
+      "id": "fr-a1-prepositions-de-lieu-a-cote-de-en-face-de-dans",
+      "title": "Prépositions de lieu (à côté de, en face de, dans)",
+      "score": 0.68
+     },
+     {
+      "id": "fr-a2-prepositions-complexes-au-milieu-de-en-face-de-a-cote-de-au-bout-de",
+      "title": "Prépositions complexes (au milieu de, en face de, à côté de, au bout de)",
+      "score": 0.35
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-a1-allez-tout-droit",
+   "fr-a1-cest-a-cote-de",
+   "fr-a1-tournez-a-gauche-a-droite"
+  ]
+ },
+ "fr/travelling/A1/u04-l03": {
+  "title": "Prendre un taxi ou un VTC",
+  "ref": 3,
+  "items": [
+   {
+    "text": "Emmenez-moi à cette adresse, s'il vous plaît",
+    "confidence": "high",
+    "grammarId": "fr-a1-emmenez-moi-a-cette-adresse-sil-vous-plait",
+    "alternatives": [
+     {
+      "id": "fr-a1-emmenez-moi-a-cette-adresse-sil-vous-plait",
+      "title": "Emmenez-moi à cette adresse, s'il vous plaît",
+      "score": 0.92
+     },
+     {
+      "id": "fr-a1-je-voudrais-sil-vous-plait",
+      "title": "Je voudrais..., s'il vous plaît",
+      "score": 0.28
+     },
+     {
+      "id": "fr-a1-requetes-polies-sil-vous-plait",
+      "title": "Requêtes polies (S'il vous plaît)",
+      "score": 0.24
+     }
+    ]
+   },
+   {
+    "text": "Combien va coûter la course ?",
+    "confidence": "high",
+    "grammarId": "fr-a1-combien-va-couter-la-course",
+    "alternatives": [
+     {
+      "id": "fr-a1-combien-va-couter-la-course",
+      "title": "Combien va coûter la course ?",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a1-combien-de",
+      "title": "Combien de... ?",
+      "score": 0.57
+     },
+     {
+      "id": "fr-a1-tu-veux-on-va",
+      "title": "Tu veux... ? / On va... ?",
+      "score": 0.34
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-a1-combien-va-couter-la-course",
+   "fr-a1-emmenez-moi-a-cette-adresse-sil-vous-plait"
+  ]
+ },
+ "fr/travelling/A1/u04-l04": {
+  "title": "Acheter des billets de train et de bus",
+  "ref": 4,
+  "items": [
+   {
+    "text": "Quel train va à... ?",
+    "confidence": "high",
+    "grammarId": "fr-a1-quel-train-va-a",
+    "alternatives": [
+     {
+      "id": "fr-a1-quel-train-va-a",
+      "title": "Quel train va à... ?",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a1-quel-train-quel-bus",
+      "title": "Quel train / Quel bus... ?",
+      "score": 0.65
+     },
+     {
+      "id": "fr-a1-tu-veux-on-va",
+      "title": "Tu veux... ? / On va... ?",
+      "score": 0.4
+     }
+    ]
+   },
+   {
+    "text": "Sur quel quai... ?",
+    "confidence": "high",
+    "grammarId": "fr-a1-sur-quel-quai",
+    "alternatives": [
+     {
+      "id": "fr-a1-sur-quel-quai",
+      "title": "Sur quel quai... ?",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a1-quel-train-va-a",
+      "title": "Quel train va à... ?",
+      "score": 0.39
+     },
+     {
+      "id": "fr-a1-quel-train-quel-bus",
+      "title": "Quel train / Quel bus... ?",
+      "score": 0.38
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-a1-quel-train-va-a",
+   "fr-a1-sur-quel-quai"
+  ]
+ },
+ "fr/travelling/A1/u05-l01": {
+  "title": "À la pharmacie et petits malaises",
+  "ref": 1,
+  "items": [
+   {
+    "text": "J'ai besoin d'un médicament pour...",
+    "confidence": "high",
+    "grammarId": "fr-a1-jai-besoin-dun-medicament-pour",
+    "alternatives": [
+     {
+      "id": "fr-a1-jai-besoin-dun-medicament-pour",
+      "title": "J'ai besoin d'un médicament pour...",
+      "score": 0.8
+     },
+     {
+      "id": "fr-a1-avoir-besoin-de-nom",
+      "title": "Avoir besoin de + nom",
+      "score": 0.52
+     },
+     {
+      "id": "fr-a2-faut-il-une-ordonnance-pour-ce-medicament",
+      "title": "Faut-il une ordonnance pour ce médicament ?",
+      "score": 0.24
+     }
+    ]
+   },
+   {
+    "text": "J'ai mal à la tête / au ventre",
+    "confidence": "high",
+    "grammarId": "fr-a1-jai-mal-a-la-tete-au-ventre",
+    "alternatives": [
+     {
+      "id": "fr-a1-jai-mal-a-la-tete-au-ventre",
+      "title": "J'ai mal à la tête / au ventre",
+      "score": 0.9
+     },
+     {
+      "id": "fr-a1-avoir-mal-a-partie-du-corps-jai-mal-a-la-tete",
+      "title": "Avoir mal à + partie du corps (J'ai mal à la tête)",
+      "score": 0.51
+     },
+     {
+      "id": "fr-a1-lexpression-avoir-mal-a",
+      "title": "L'expression \"avoir mal à...\"",
+      "score": 0.38
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-a1-jai-besoin-dun-medicament-pour",
+   "fr-a1-jai-mal-a-la-tete-au-ventre"
+  ]
+ },
+ "fr/travelling/A1/u05-l02": {
+  "title": "Objets perdus et demande d'assistance",
+  "ref": 2,
+  "items": [
+   {
+    "text": "J'ai perdu mon / ma...",
+    "confidence": "high",
+    "grammarId": "fr-a1-jai-perdu-mon-ma",
+    "alternatives": [
+     {
+      "id": "fr-a1-jai-perdu-mon-ma",
+      "title": "J'ai perdu mon / ma...",
+      "score": 0.81
+     }
+    ]
+   },
+   {
+    "text": "Pouvez-vous m'aider ?",
+    "confidence": "high",
+    "grammarId": "fr-a1-pouvez-vous-maider",
+    "alternatives": [
+     {
+      "id": "fr-a1-pouvez-vous-maider",
+      "title": "Pouvez-vous m'aider ?",
+      "score": 0.83
+     },
+     {
+      "id": "fr-a1-pouvez-vous-me-donner-plus-de",
+      "title": "Pouvez-vous me donner plus de... ?",
+      "score": 0.47
+     },
+     {
+      "id": "fr-a1-je-vais-taider-on-va-voir",
+      "title": "Je vais t'aider / On va voir",
+      "score": 0.39
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-a1-jai-perdu-mon-ma",
+   "fr-a1-pouvez-vous-maider"
+  ]
+ },
+ "fr/travelling/A1/u05-l03": {
+  "title": "Bureau de change et distributeurs",
+  "ref": 3,
+  "items": [
+   {
+    "text": "Où puis-je changer de l'argent ?",
+    "confidence": "high",
+    "grammarId": "fr-a1-ou-puis-je-changer-de-largent",
+    "alternatives": [
+     {
+      "id": "fr-a1-ou-puis-je-changer-de-largent",
+      "title": "Où puis-je changer de l'argent ?",
+      "score": 0.88
+     },
+     {
+      "id": "fr-a1-puis-je-voir",
+      "title": "Puis-je voir... ?",
+      "score": 0.36
+     },
+     {
+      "id": "fr-a1-puis-je-laisser-mes-bagages-ici",
+      "title": "Puis-je laisser mes bagages ici ?",
+      "score": 0.25
+     }
+    ]
+   },
+   {
+    "text": "Où se trouve le distributeur le plus proche ?",
+    "confidence": "high",
+    "grammarId": "fr-a1-ou-se-trouve-le-distributeur-le-plus-proche",
+    "alternatives": [
+     {
+      "id": "fr-a1-ou-se-trouve-le-distributeur-le-plus-proche",
+      "title": "Où se trouve le distributeur le plus proche ?",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a1-ou-se-trouve-le-la-plus-proche",
+      "title": "Où se trouve le / la plus proche ?",
+      "score": 0.78
+     },
+     {
+      "id": "fr-a1-ou-se-trouve",
+      "title": "Où se trouve... ?",
+      "score": 0.62
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-a1-ou-puis-je-changer-de-largent",
+   "fr-a1-ou-se-trouve-le-distributeur-le-plus-proche"
+  ]
+ },
+ "fr/travelling/A1/u05-l04": {
+  "title": "Signaler un problème et numéros d'urgence",
+  "ref": 4,
+  "items": [
+   {
+    "text": "Appelez une ambulance / la police !",
+    "confidence": "high",
+    "grammarId": "fr-a1-appelez-une-ambulance-la-police",
+    "alternatives": [
+     {
+      "id": "fr-a1-appelez-une-ambulance-la-police",
+      "title": "Appelez une ambulance / la police !",
+      "score": 1.0
+     }
+    ]
+   },
+   {
+    "text": "C'est une urgence",
+    "confidence": "high",
+    "grammarId": "fr-a1-cest-une-urgence",
+    "alternatives": [
+     {
+      "id": "fr-a1-cest-une-urgence",
+      "title": "C'est une urgence",
+      "score": 0.81
+     },
+     {
+      "id": "fr-a2-expressions-durgence-et-de-frequence",
+      "title": "Expressions d'urgence et de fréquence",
+      "score": 0.38
+     },
+     {
+      "id": "fr-b1-exprimer-des-decisions-durgence",
+      "title": "Exprimer des décisions d'urgence",
+      "score": 0.36
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-a1-appelez-une-ambulance-la-police",
+   "fr-a1-cest-une-urgence"
+  ]
+ },
+ "fr/travelling/A2/u01-l01": {
+  "title": "Gérer les retards et changements d'horaires",
+  "ref": 1,
+  "items": [
+   {
+    "text": "À quelle heure part le train pour... ?",
+    "confidence": "high",
+    "grammarId": "fr-a2-a-quelle-heure-part-le-train-pour",
+    "alternatives": [
+     {
+      "id": "fr-a2-a-quelle-heure-part-le-train-pour",
+      "title": "À quelle heure part le train pour... ?",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a1-a-quelle-heure-est",
+      "title": "À quelle heure est... ?",
+      "score": 0.65
+     },
+     {
+      "id": "fr-a1-heure",
+      "title": "L'heure",
+      "score": 0.53
+     }
+    ]
+   },
+   {
+    "text": "Est-ce qu'il y a un retard prévu ?",
+    "confidence": "high",
+    "grammarId": "fr-a2-est-ce-quil-y-a-un-retard-prevu",
+    "alternatives": [
+     {
+      "id": "fr-a2-est-ce-quil-y-a-un-retard-prevu",
+      "title": "Est-ce qu'il y a un retard prévu ?",
+      "score": 0.86
+     },
+     {
+      "id": "fr-b1-passe-compose-pour-expliquer-un-incident-ou-retard",
+      "title": "Passé composé pour expliquer un incident ou retard",
+      "score": 0.21
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-a2-a-quelle-heure-part-le-train-pour",
+   "fr-a2-est-ce-quil-y-a-un-retard-prevu"
+  ]
+ },
+ "fr/travelling/A2/u01-l02": {
+  "title": "Correspondances manquées et réémission de billets",
+  "ref": 2,
+  "items": [
+   {
+    "text": "J'ai manqué ma correspondance pour...",
+    "confidence": "high",
+    "grammarId": "fr-a2-jai-manque-ma-correspondance-pour",
+    "alternatives": [
+     {
+      "id": "fr-a2-jai-manque-ma-correspondance-pour",
+      "title": "J'ai manqué ma correspondance pour...",
+      "score": 0.88
+     },
+     {
+      "id": "fr-a1-ligne-directe-correspondance",
+      "title": "Ligne directe / Correspondance",
+      "score": 0.38
+     }
+    ]
+   },
+   {
+    "text": "Y a-t-il des places disponibles sur le prochain vol ?",
+    "confidence": "high",
+    "grammarId": "fr-a2-y-a-t-il-des-places-disponibles-sur-le-prochain-vol",
+    "alternatives": [
+     {
+      "id": "fr-a2-y-a-t-il-des-places-disponibles-sur-le-prochain-vol",
+      "title": "Y a-t-il des places disponibles sur le prochain vol ?",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a2-indicateurs-temporels-du-futur-dans-deux-jours-le-mois-prochain",
+      "title": "Indicateurs temporels du futur (dans deux jours, le mois prochain)",
+      "score": 0.15
+     },
+     {
+      "id": "fr-a1-indicateurs-de-temps-futurs-demain-le-mois-prochain-lannee-prochaine",
+      "title": "Indicateurs de temps futurs (demain, le mois prochain, l'année prochaine)",
+      "score": 0.13
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-a2-jai-manque-ma-correspondance-pour",
+   "fr-a2-y-a-t-il-des-places-disponibles-sur-le-prochain-vol"
+  ]
+ },
+ "fr/travelling/A2/u01-l03": {
+  "title": "Location de voiture et conduite à l'étranger",
+  "ref": 3,
+  "items": [
+   {
+    "text": "Je viens récupérer le véhicule de location",
+    "confidence": "high",
+    "grammarId": "fr-a2-je-viens-recuperer-le-vehicule-de-location",
+    "alternatives": [
+     {
+      "id": "fr-a2-je-viens-recuperer-le-vehicule-de-location",
+      "title": "Je viens récupérer le véhicule de location",
+      "score": 1.0
+     },
+     {
+      "id": "fr-b1-verbes-de-modalite-dans-les-reglements-de-location",
+      "title": "Verbes de modalité dans les règlements de location",
+      "score": 0.15
+     }
+    ]
+   },
+   {
+    "text": "Le kilométrage est-il illimité ?",
+    "confidence": "high",
+    "grammarId": "fr-a2-le-kilometrage-est-il-illimite",
+    "alternatives": [
+     {
+      "id": "fr-a2-le-kilometrage-est-il-illimite",
+      "title": "Le kilométrage est-il illimité ?",
+      "score": 1.0
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-a2-je-viens-recuperer-le-vehicule-de-location",
+   "fr-a2-le-kilometrage-est-il-illimite"
+  ]
+ },
+ "fr/travelling/A2/u01-l04": {
+  "title": "Voyages en train grande vitesse et car interurbain",
+  "ref": 4,
+  "items": [
+   {
+    "text": "Cette place est-elle réservée ?",
+    "confidence": "high",
+    "grammarId": "fr-a2-cette-place-est-elle-reservee",
+    "alternatives": [
+     {
+      "id": "fr-a2-cette-place-est-elle-reservee",
+      "title": "Cette place est-elle réservée ?",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a1-sur-place-ou-a-emporter",
+      "title": "Sur place ou à emporter",
+      "score": 0.43
+     },
+     {
+      "id": "fr-a2-place-des-adverbes-par-rapport-au-verbe",
+      "title": "Place des adverbes par rapport au verbe",
+      "score": 0.39
+     }
+    ]
+   },
+   {
+    "text": "Dans quelle voiture se trouve mon siège ?",
+    "confidence": "high",
+    "grammarId": "fr-a2-dans-quelle-voiture-se-trouve-mon-siege",
+    "alternatives": [
+     {
+      "id": "fr-a2-dans-quelle-voiture-se-trouve-mon-siege",
+      "title": "Dans quelle voiture se trouve mon siège ?",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a1-ou-se-trouve",
+      "title": "Où se trouve... ?",
+      "score": 0.53
+     },
+     {
+      "id": "fr-a1-ou-se-trouve-le-la-plus-proche",
+      "title": "Où se trouve le / la plus proche ?",
+      "score": 0.33
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-a2-cette-place-est-elle-reservee",
+   "fr-a2-dans-quelle-voiture-se-trouve-mon-siege"
+  ]
+ },
+ "fr/travelling/A2/u02-l01": {
+  "title": "Problèmes de chambre et demande de changement",
+  "ref": 1,
+  "items": [
+   {
+    "text": "La douche ne fonctionne pas correctement",
+    "confidence": "high",
+    "grammarId": "fr-a2-la-douche-ne-fonctionne-pas-correctement",
+    "alternatives": [
+     {
+      "id": "fr-a2-la-douche-ne-fonctionne-pas-correctement",
+      "title": "La douche ne fonctionne pas correctement",
+      "score": 1.0
+     }
+    ]
+   },
+   {
+    "text": "Serait-il possible de changer pour une chambre plus calme ?",
+    "confidence": "high",
+    "grammarId": "fr-a2-serait-il-possible-de-changer-pour-une-chambre-plus-calme",
+    "alternatives": [
+     {
+      "id": "fr-a2-serait-il-possible-de-changer-pour-une-chambre-plus-calme",
+      "title": "Serait-il possible de changer pour une chambre plus calme ?",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a2-est-il-possible-de-conserver-la-chambre-quelques-heures-de-plus",
+      "title": "Est-il possible de conserver la chambre quelques heures de plus ?",
+      "score": 0.36
+     },
+     {
+      "id": "fr-a2-formules-de-politesse-et-requetes-conditionnelles-je-souhaiterais-serait-il-possible-de",
+      "title": "Formules de politesse et requêtes conditionnelles (je souhaiterais, serait-il possible de)",
+      "score": 0.33
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-a2-la-douche-ne-fonctionne-pas-correctement",
+   "fr-a2-serait-il-possible-de-changer-pour-une-chambre-plus-calme"
+  ]
+ },
+ "fr/travelling/A2/u02-l02": {
+  "title": "Réservation de meublés et hébergements atypiques",
+  "ref": 2,
+  "items": [
+   {
+    "text": "Comment récupère-t-on les clés ?",
+    "confidence": "high",
+    "grammarId": "fr-a2-comment-recupere-t-on-les-cles",
+    "alternatives": [
+     {
+      "id": "fr-a2-comment-recupere-t-on-les-cles",
+      "title": "Comment récupère-t-on les clés ?",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a1-mots-interrogatifs-comment-ou-quest-ce-que",
+      "title": "Mots interrogatifs (Comment, Où, Qu'est-ce que)",
+      "score": 0.27
+     },
+     {
+      "id": "fr-a2-comment-puis-je-recevoir-un-virement-durgence",
+      "title": "Comment puis-je recevoir un virement d'urgence ?",
+      "score": 0.23
+     }
+    ]
+   },
+   {
+    "text": "Existe-t-il une procédure d'arrivée autonome ?",
+    "confidence": "high",
+    "grammarId": "fr-a2-existe-t-il-une-procedure-darrivee-autonome",
+    "alternatives": [
+     {
+      "id": "fr-a2-existe-t-il-une-procedure-darrivee-autonome",
+      "title": "Existe-t-il une procédure d'arrivée autonome ?",
+      "score": 0.91
+     },
+     {
+      "id": "fr-a2-imperatif-de-procedure-dabord-cliquez-ici-ensuite-appuyez-sur",
+      "title": "Impératif de procédure (D'abord cliquez ici, ensuite appuyez sur...)",
+      "score": 0.14
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-a2-comment-recupere-t-on-les-cles",
+   "fr-a2-existe-t-il-une-procedure-darrivee-autonome"
+  ]
+ },
+ "fr/travelling/A2/u02-l03": {
+  "title": "Demande de départ tardif et services annexes",
+  "ref": 3,
+  "items": [
+   {
+    "text": "Est-il possible de conserver la chambre quelques heures de plus ?",
+    "confidence": "high",
+    "grammarId": "fr-a2-est-il-possible-de-conserver-la-chambre-quelques-heures-de-plus",
+    "alternatives": [
+     {
+      "id": "fr-a2-est-il-possible-de-conserver-la-chambre-quelques-heures-de-plus",
+      "title": "Est-il possible de conserver la chambre quelques heures de plus ?",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a2-serait-il-possible-de-changer-pour-une-chambre-plus-calme",
+      "title": "Serait-il possible de changer pour une chambre plus calme ?",
+      "score": 0.36
+     },
+     {
+      "id": "fr-a2-pourrais-je-avoir-une-chambre-avec",
+      "title": "Pourrais-je avoir une chambre avec... ?",
+      "score": 0.32
+     }
+    ]
+   },
+   {
+    "text": "Combien facturez-vous pour le service de... ?",
+    "confidence": "high",
+    "grammarId": "fr-a2-combien-facturez-vous-pour-le-service-de",
+    "alternatives": [
+     {
+      "id": "fr-a2-combien-facturez-vous-pour-le-service-de",
+      "title": "Combien facturez-vous pour le service de... ?",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a1-combien-de",
+      "title": "Combien de... ?",
+      "score": 0.56
+     },
+     {
+      "id": "fr-a1-combien-coute",
+      "title": "Combien coûte... ?",
+      "score": 0.34
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-a2-combien-facturez-vous-pour-le-service-de",
+   "fr-a2-est-il-possible-de-conserver-la-chambre-quelques-heures-de-plus"
+  ]
+ },
+ "fr/travelling/A2/u02-l04": {
+  "title": "Contester une erreur sur la facture d'hôtel",
+  "ref": 4,
+  "items": [
+   {
+    "text": "Il semble y avoir une erreur sur ma note",
+    "confidence": "high",
+    "grammarId": "fr-a2-il-semble-y-avoir-une-erreur-sur-ma-note",
+    "alternatives": [
+     {
+      "id": "fr-a2-il-semble-y-avoir-une-erreur-sur-ma-note",
+      "title": "Il semble y avoir une erreur sur ma note",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a1-je-voudrais-regler-la-note-et-liberer-la-chambre",
+      "title": "Je voudrais régler la note et libérer la chambre",
+      "score": 0.24
+     },
+     {
+      "id": "fr-b2-techniques-de-prise-de-notes-rapides",
+      "title": "Techniques de prise de notes rapides",
+      "score": 0.16
+     }
+    ]
+   },
+   {
+    "text": "Je n'ai pas consommé cet article du minibar",
+    "confidence": "high",
+    "grammarId": "fr-a2-je-nai-pas-consomme-cet-article-du-minibar",
+    "alternatives": [
+     {
+      "id": "fr-a2-je-nai-pas-consomme-cet-article-du-minibar",
+      "title": "Je n'ai pas consommé cet article du minibar",
+      "score": 0.89
+     },
+     {
+      "id": "fr-a1-articles-partitifs",
+      "title": "Les articles partitifs",
+      "score": 0.32
+     },
+     {
+      "id": "fr-a1-articles-partitifs-du-de-la-des",
+      "title": "Articles partitifs (du, de la, des)",
+      "score": 0.32
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-a2-il-semble-y-avoir-une-erreur-sur-ma-note",
+   "fr-a2-je-nai-pas-consomme-cet-article-du-minibar"
+  ]
+ },
+ "fr/travelling/A2/u03-l01": {
+  "title": "Commander des spécialités régionales et suggestions",
+  "ref": 1,
+  "items": [
+   {
+    "text": "Pourrions-nous avoir la carte des spécialités ?",
+    "confidence": "high",
+    "grammarId": "fr-a2-pourrions-nous-avoir-la-carte-des-specialites",
+    "alternatives": [
+     {
+      "id": "fr-a2-pourrions-nous-avoir-la-carte-des-specialites",
+      "title": "Pourrions-nous avoir la carte des spécialités ?",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a1-acceptez-vous-la-carte-bancaire",
+      "title": "Acceptez-vous la carte bancaire ?",
+      "score": 0.29
+     },
+     {
+      "id": "fr-a2-je-dois-faire-opposition-sur-ma-carte-bancaire-immediatement",
+      "title": "Je dois faire opposition sur ma carte bancaire immédiatement",
+      "score": 0.24
+     }
+    ]
+   },
+   {
+    "text": "Je suis allergique à...",
+    "confidence": "high",
+    "grammarId": "fr-a2-je-suis-allergique-a",
+    "alternatives": [
+     {
+      "id": "fr-a2-je-suis-allergique-a",
+      "title": "Je suis allergique à...",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a2-je-nen-suis-pas-si-sur-je-comprends-mais",
+      "title": "Je n'en suis pas si sûr / Je comprends, mais...",
+      "score": 0.33
+     },
+     {
+      "id": "fr-a2-je-suis-tout-a-fait-daccord-cest-vrai",
+      "title": "Je suis tout à fait d'accord / C'est vrai",
+      "score": 0.31
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-a2-je-suis-allergique-a",
+   "fr-a2-pourrions-nous-avoir-la-carte-des-specialites"
+  ]
+ },
+ "fr/travelling/A2/u03-l02": {
+  "title": "Exprimer des restrictions et allergies alimentaires",
+  "ref": 2,
+  "items": [
+   {
+    "text": "Est-ce que ce plat contient du / de la... ?",
+    "confidence": "high",
+    "grammarId": "fr-a2-est-ce-que-ce-plat-contient-du-de-la",
+    "alternatives": [
+     {
+      "id": "fr-a2-est-ce-que-ce-plat-contient-du-de-la",
+      "title": "Est-ce que ce plat contient du / de la... ?",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a2-pouvez-vous-preparer-ce-plat-sans",
+      "title": "Pouvez-vous préparer ce plat sans... ?",
+      "score": 0.41
+     },
+     {
+      "id": "fr-b1-pourriez-vous-mexpliquer-le-mode-de-preparation-de-ce-plat",
+      "title": "Pourriez-vous m'expliquer le mode de préparation de ce plat ?",
+      "score": 0.18
+     }
+    ]
+   },
+   {
+    "text": "Pouvez-vous préparer ce plat sans... ?",
+    "confidence": "high",
+    "grammarId": "fr-a2-pouvez-vous-preparer-ce-plat-sans",
+    "alternatives": [
+     {
+      "id": "fr-a2-pouvez-vous-preparer-ce-plat-sans",
+      "title": "Pouvez-vous préparer ce plat sans... ?",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a2-est-ce-que-ce-plat-contient-du-de-la",
+      "title": "Est-ce que ce plat contient du / de la... ?",
+      "score": 0.39
+     },
+     {
+      "id": "fr-a1-pouvez-vous-me-donner-plus-de",
+      "title": "Pouvez-vous me donner plus de... ?",
+      "score": 0.35
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-a2-est-ce-que-ce-plat-contient-du-de-la",
+   "fr-a2-pouvez-vous-preparer-ce-plat-sans"
+  ]
+ },
+ "fr/travelling/A2/u03-l03": {
+  "title": "Faire ses courses aux marchés locaux et halles",
+  "ref": 3,
+  "items": [
+   {
+    "text": "Combien coûte une demi-livre de... ?",
+    "confidence": "high",
+    "grammarId": "fr-a2-combien-coute-une-demi-livre-de",
+    "alternatives": [
+     {
+      "id": "fr-a2-combien-coute-une-demi-livre-de",
+      "title": "Combien coûte une demi-livre de... ?",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a1-combien-coute",
+      "title": "Combien coûte... ?",
+      "score": 0.65
+     },
+     {
+      "id": "fr-a1-combien-de",
+      "title": "Combien de... ?",
+      "score": 0.52
+     }
+    ]
+   },
+   {
+    "text": "Puis-je gouter un morceau ?",
+    "confidence": "high",
+    "grammarId": "fr-a2-puis-je-gouter-un-morceau",
+    "alternatives": [
+     {
+      "id": "fr-a2-puis-je-gouter-un-morceau",
+      "title": "Puis-je gouter un morceau ?",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a1-puis-je-voir",
+      "title": "Puis-je voir... ?",
+      "score": 0.33
+     },
+     {
+      "id": "fr-a2-puis-je-prendre-une-photo-ici",
+      "title": "Puis-je prendre une photo ici ?",
+      "score": 0.25
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-a2-combien-coute-une-demi-livre-de",
+   "fr-a2-puis-je-gouter-un-morceau"
+  ]
+ },
+ "fr/travelling/A2/u03-l04": {
+  "title": "Usages du pourboire et partage de l'addition",
+  "ref": 4,
+  "items": [
+   {
+    "text": "Est-il possible de séparer l'addition ?",
+    "confidence": "high",
+    "grammarId": "fr-a2-est-il-possible-de-separer-laddition",
+    "alternatives": [
+     {
+      "id": "fr-a2-est-il-possible-de-separer-laddition",
+      "title": "Est-il possible de séparer l'addition ?",
+      "score": 0.88
+     },
+     {
+      "id": "fr-a1-laddition-sil-vous-plait",
+      "title": "L'addition, s'il vous plaît",
+      "score": 0.29
+     },
+     {
+      "id": "fr-a2-serait-il-possible-de-changer-pour-une-chambre-plus-calme",
+      "title": "Serait-il possible de changer pour une chambre plus calme ?",
+      "score": 0.24
+     }
+    ]
+   },
+   {
+    "text": "Le service est-il inclus dans le prix ?",
+    "confidence": "high",
+    "grammarId": "fr-a2-le-service-est-il-inclus-dans-le-prix",
+    "alternatives": [
+     {
+      "id": "fr-a2-le-service-est-il-inclus-dans-le-prix",
+      "title": "Le service est-il inclus dans le prix ?",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a2-combien-facturez-vous-pour-le-service-de",
+      "title": "Combien facturez-vous pour le service de... ?",
+      "score": 0.3
+     },
+     {
+      "id": "fr-a1-synthese-des-formules-dachat-de-sante-et-de-reclamation-de-service",
+      "title": "Synthèse des formules d'achat, de santé et de réclamation de service",
+      "score": 0.2
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-a2-est-il-possible-de-separer-laddition",
+   "fr-a2-le-service-est-il-inclus-dans-le-prix"
+  ]
+ },
+ "fr/travelling/A2/u04-l01": {
+  "title": "Acheter des billets de musée et pass touristiques",
+  "ref": 1,
+  "items": [
+   {
+    "text": "Y a-t-il des réductions pour les étudiants / séniors ?",
+    "confidence": "high",
+    "grammarId": "fr-a2-y-a-t-il-des-reductions-pour-les-etudiants-seniors",
+    "alternatives": [
+     {
+      "id": "fr-a2-y-a-t-il-des-reductions-pour-les-etudiants-seniors",
+      "title": "Y a-t-il des réductions pour les étudiants / séniors ?",
+      "score": 1.0
+     },
+     {
+      "id": "fr-c1-syntaxe-de-denescalade-et-de-reduction-des-risques-juridiques",
+      "title": "Syntaxe de dénescalade et de réduction des risques juridiques",
+      "score": 0.15
+     }
+    ]
+   },
+   {
+    "text": "L'entrée est-elle incluse dans ce pass ?",
+    "confidence": "high",
+    "grammarId": "fr-a2-lentree-est-elle-incluse-dans-ce-pass",
+    "alternatives": [
+     {
+      "id": "fr-a2-lentree-est-elle-incluse-dans-ce-pass",
+      "title": "L'entrée est-elle incluse dans ce pass ?",
+      "score": 0.89
+     },
+     {
+      "id": "fr-a1-indicateurs-de-temps-passes-hier-hier-soir-la-semaine-derniere",
+      "title": "Indicateurs de temps passés (hier, hier soir, la semaine dernière)",
+      "score": 0.22
+     },
+     {
+      "id": "fr-c2-langage-de-la-ratification-juridique-et-de-lentree-en-vigueur",
+      "title": "Langage de la ratification juridique et de l’entrée en vigueur",
+      "score": 0.14
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-a2-lentree-est-elle-incluse-dans-ce-pass",
+   "fr-a2-y-a-t-il-des-reductions-pour-les-etudiants-seniors"
+  ]
+ },
+ "fr/travelling/A2/u04-l02": {
+  "title": "Participer à une visite guidée à pied",
+  "ref": 2,
+  "items": [
+   {
+    "text": "Où se trouve le point de rendez-vous de la visite ?",
+    "confidence": "high",
+    "grammarId": "fr-a2-ou-se-trouve-le-point-de-rendez-vous-de-la-visite",
+    "alternatives": [
+     {
+      "id": "fr-a2-ou-se-trouve-le-point-de-rendez-vous-de-la-visite",
+      "title": "Où se trouve le point de rendez-vous de la visite ?",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a1-ou-se-trouve",
+      "title": "Où se trouve... ?",
+      "score": 0.53
+     },
+     {
+      "id": "fr-a1-ou-se-trouve-le-la-plus-proche",
+      "title": "Où se trouve le / la plus proche ?",
+      "score": 0.34
+     }
+    ]
+   },
+   {
+    "text": "Combien de temps dure la visite ?",
+    "confidence": "high",
+    "grammarId": "fr-a2-combien-de-temps-dure-la-visite",
+    "alternatives": [
+     {
+      "id": "fr-a2-combien-de-temps-dure-la-visite",
+      "title": "Combien de temps dure la visite ?",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a1-combien-de",
+      "title": "Combien de... ?",
+      "score": 0.53
+     },
+     {
+      "id": "fr-a2-depuis-combien-de-temps-avez-vous",
+      "title": "Depuis combien de temps avez-vous... ?",
+      "score": 0.43
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-a2-combien-de-temps-dure-la-visite",
+   "fr-a2-ou-se-trouve-le-point-de-rendez-vous-de-la-visite"
+  ]
+ },
+ "fr/travelling/A2/u04-l03": {
+  "title": "Demander des conseils secrets aux habitants",
+  "ref": 3,
+  "items": [
+   {
+    "text": "Quel est votre endroit préféré pour... ?",
+    "confidence": "high",
+    "grammarId": "fr-a2-quel-est-votre-endroit-prefere-pour",
+    "alternatives": [
+     {
+      "id": "fr-a2-quel-est-votre-endroit-prefere-pour",
+      "title": "Quel est votre endroit préféré pour... ?",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a1-sur-quel-quai",
+      "title": "Sur quel quai... ?",
+      "score": 0.33
+     },
+     {
+      "id": "fr-a1-quel-train-va-a",
+      "title": "Quel train va à... ?",
+      "score": 0.28
+     }
+    ]
+   },
+   {
+    "text": "Où les habitants ont-ils l'habitude d'aller ?",
+    "confidence": "high",
+    "grammarId": "fr-a2-ou-les-habitants-ont-ils-lhabitude-daller",
+    "alternatives": [
+     {
+      "id": "fr-a2-ou-les-habitants-ont-ils-lhabitude-daller",
+      "title": "Où les habitants ont-ils l'habitude d'aller ?",
+      "score": 0.81
+     },
+     {
+      "id": "fr-a1-aller",
+      "title": "Aller",
+      "score": 0.57
+     },
+     {
+      "id": "fr-a2-quel-est-le-meilleur-moyen-pour-aller-a",
+      "title": "Quel est le meilleur moyen pour aller à... ?",
+      "score": 0.27
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-a2-ou-les-habitants-ont-ils-lhabitude-daller",
+   "fr-a2-quel-est-votre-endroit-prefere-pour"
+  ]
+ },
+ "fr/travelling/A2/u04-l04": {
+  "title": "Explorer les quartiers et étiquette photographique",
+  "ref": 4,
+  "items": [
+   {
+    "text": "Puis-je prendre une photo ici ?",
+    "confidence": "high",
+    "grammarId": "fr-a2-puis-je-prendre-une-photo-ici",
+    "alternatives": [
+     {
+      "id": "fr-a2-puis-je-prendre-une-photo-ici",
+      "title": "Puis-je prendre une photo ici ?",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a2-pourriez-vous-nous-prendre-en-photo",
+      "title": "Pourriez-vous nous prendre en photo ?",
+      "score": 0.61
+     },
+     {
+      "id": "fr-a1-puis-je-laisser-mes-bagages-ici",
+      "title": "Puis-je laisser mes bagages ici ?",
+      "score": 0.42
+     }
+    ]
+   },
+   {
+    "text": "Pourriez-vous nous prendre en photo ?",
+    "confidence": "high",
+    "grammarId": "fr-a2-pourriez-vous-nous-prendre-en-photo",
+    "alternatives": [
+     {
+      "id": "fr-a2-pourriez-vous-nous-prendre-en-photo",
+      "title": "Pourriez-vous nous prendre en photo ?",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a2-puis-je-prendre-une-photo-ici",
+      "title": "Puis-je prendre une photo ici ?",
+      "score": 0.62
+     },
+     {
+      "id": "fr-a1-je-vais-prendre",
+      "title": "Je vais prendre...",
+      "score": 0.37
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-a2-pourriez-vous-nous-prendre-en-photo",
+   "fr-a2-puis-je-prendre-une-photo-ici"
+  ]
+ },
+ "fr/travelling/A2/u05-l01": {
+  "title": "Consulter un médecin ou aller aux urgences",
+  "ref": 1,
+  "items": [
+   {
+    "text": "Je me sens mal depuis ce matin...",
+    "confidence": "high",
+    "grammarId": "fr-a2-je-me-sens-mal-depuis-ce-matin",
+    "alternatives": [
+     {
+      "id": "fr-a2-je-me-sens-mal-depuis-ce-matin",
+      "title": "Je me sens mal depuis ce matin...",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a1-lexpression-avoir-mal-a",
+      "title": "L'expression \"avoir mal à...\"",
+      "score": 0.32
+     },
+     {
+      "id": "fr-a2-utilisation-de-il-y-a-pendant-depuis-et-dans-au-passe",
+      "title": "Utilisation de il y a, pendant, depuis, et dans au passé",
+      "score": 0.29
+     }
+    ]
+   },
+   {
+    "text": "Faut-il une ordonnance pour ce médicament ?",
+    "confidence": "high",
+    "grammarId": "fr-a2-faut-il-une-ordonnance-pour-ce-medicament",
+    "alternatives": [
+     {
+      "id": "fr-a2-faut-il-une-ordonnance-pour-ce-medicament",
+      "title": "Faut-il une ordonnance pour ce médicament ?",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a2-vous-devriez-absolument-il-faut-absolument",
+      "title": "Vous devriez absolument... / Il faut absolument...",
+      "score": 0.3
+     },
+     {
+      "id": "fr-a1-jai-besoin-dun-medicament-pour",
+      "title": "J'ai besoin d'un médicament pour...",
+      "score": 0.29
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-a2-faut-il-une-ordonnance-pour-ce-medicament",
+   "fr-a2-je-me-sens-mal-depuis-ce-matin"
+  ]
+ },
+ "fr/travelling/A2/u05-l02": {
+  "title": "Faire opposition sur une carte bancaire perdue",
+  "ref": 2,
+  "items": [
+   {
+    "text": "Je dois faire opposition sur ma carte bancaire immédiatement",
+    "confidence": "high",
+    "grammarId": "fr-a2-je-dois-faire-opposition-sur-ma-carte-bancaire-immediatement",
+    "alternatives": [
+     {
+      "id": "fr-a2-je-dois-faire-opposition-sur-ma-carte-bancaire-immediatement",
+      "title": "Je dois faire opposition sur ma carte bancaire immédiatement",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a1-acceptez-vous-la-carte-bancaire",
+      "title": "Acceptez-vous la carte bancaire ?",
+      "score": 0.44
+     },
+     {
+      "id": "fr-a1-faire-du-de-la-des-activite",
+      "title": "Faire du / de la / des + activité",
+      "score": 0.25
+     }
+    ]
+   },
+   {
+    "text": "Comment puis-je recevoir un virement d'urgence ?",
+    "confidence": "high",
+    "grammarId": "fr-a2-comment-puis-je-recevoir-un-virement-durgence",
+    "alternatives": [
+     {
+      "id": "fr-a2-comment-puis-je-recevoir-un-virement-durgence",
+      "title": "Comment puis-je recevoir un virement d'urgence ?",
+      "score": 0.93
+     },
+     {
+      "id": "fr-a1-cest-une-urgence",
+      "title": "C'est une urgence",
+      "score": 0.33
+     },
+     {
+      "id": "fr-a1-puis-je-voir",
+      "title": "Puis-je voir... ?",
+      "score": 0.28
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-a2-comment-puis-je-recevoir-un-virement-durgence",
+   "fr-a2-je-dois-faire-opposition-sur-ma-carte-bancaire-immediatement"
+  ]
+ },
+ "fr/travelling/A2/u05-l03": {
+  "title": "Adapter ses activités à la météo et aux fermetures",
+  "ref": 3,
+  "items": [
+   {
+    "text": "Le parc est-il ouvert malgré la pluie ?",
+    "confidence": "high",
+    "grammarId": "fr-a2-le-parc-est-il-ouvert-malgre-la-pluie",
+    "alternatives": [
+     {
+      "id": "fr-a2-le-parc-est-il-ouvert-malgre-la-pluie",
+      "title": "Le parc est-il ouvert malgré la pluie ?",
+      "score": 1.0
+     },
+     {
+      "id": "fr-b1-questions-ouvertes-sur-les-etapes-de-fabrication",
+      "title": "Questions ouvertes sur les étapes de fabrication",
+      "score": 0.14
+     },
+     {
+      "id": "fr-b1-questions-ouvertes-pour-briser-la-glace-avez-vous-fait-bon-voyage",
+      "title": "Questions ouvertes pour briser la glace (Avez-vous fait bon voyage ?)",
+      "score": 0.1
+     }
+    ]
+   },
+   {
+    "text": "Quelles activités en intérieur proposez-vous ?",
+    "confidence": "high",
+    "grammarId": "fr-a2-quelles-activites-en-interieur-proposez-vous",
+    "alternatives": [
+     {
+      "id": "fr-a2-quelles-activites-en-interieur-proposez-vous",
+      "title": "Quelles activités en intérieur proposez-vous ?",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a1-le-verbe-faire-activites",
+      "title": "Le verbe \"faire\" + activités",
+      "score": 0.27
+     },
+     {
+      "id": "fr-a1-synthese-de-la-presentation-des-activites-avis-et-invitations",
+      "title": "Synthèse de la présentation des activités, avis et invitations",
+      "score": 0.21
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-a2-le-parc-est-il-ouvert-malgre-la-pluie",
+   "fr-a2-quelles-activites-en-interieur-proposez-vous"
+  ]
+ },
+ "fr/travelling/A2/u05-l04": {
+  "title": "Déclaration au bureau des objets trouvés et police touristique",
+  "ref": 4,
+  "items": [
+   {
+    "text": "J'ai oublié ma veste dans le train",
+    "confidence": "high",
+    "grammarId": "fr-a2-jai-oublie-ma-veste-dans-le-train",
+    "alternatives": [
+     {
+      "id": "fr-a2-jai-oublie-ma-veste-dans-le-train",
+      "title": "J'ai oublié ma veste dans le train",
+      "score": 0.91
+     },
+     {
+      "id": "fr-a1-quel-train-va-a",
+      "title": "Quel train va à... ?",
+      "score": 0.29
+     },
+     {
+      "id": "fr-a1-quel-train-quel-bus",
+      "title": "Quel train / Quel bus... ?",
+      "score": 0.28
+     }
+    ]
+   },
+   {
+    "text": "Je souhaite effectuer une déclaration de perte",
+    "confidence": "high",
+    "grammarId": "fr-a2-je-souhaite-effectuer-une-declaration-de-perte",
+    "alternatives": [
+     {
+      "id": "fr-a2-je-souhaite-effectuer-une-declaration-de-perte",
+      "title": "Je souhaite effectuer une déclaration de perte",
+      "score": 1.0
+     },
+     {
+      "id": "fr-b2-style-officiel-des-declarations-de-politique-culturelle",
+      "title": "Style officiel des déclarations de politique culturelle",
+      "score": 0.12
+     },
+     {
+      "id": "fr-c1-subjonctif-obligatoire-dans-les-declarations-officielles-il-est-indispensable-que-le-conseil-ratifie",
+      "title": "Subjonctif obligatoire dans les déclarations officielles (Il est indispensable que le conseil ratifie...)",
+      "score": 0.08
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-a2-jai-oublie-ma-veste-dans-le-train",
+   "fr-a2-je-souhaite-effectuer-une-declaration-de-perte"
+  ]
+ },
+ "fr/travelling/B1/u01-l01": {
+  "title": "Annulations de vol, indemnisations et droits du voyageur",
+  "ref": 1,
+  "items": [
+   {
+    "text": "En cas d'annulation de vol, les passagers ont droit à...",
+    "confidence": "high",
+    "grammarId": "fr-b1-en-cas-dannulation-de-vol-les-passagers-ont-droit-a",
+    "alternatives": [
+     {
+      "id": "fr-b1-en-cas-dannulation-de-vol-les-passagers-ont-droit-a",
+      "title": "En cas d'annulation de vol, les passagers ont droit à...",
+      "score": 0.92
+     },
+     {
+      "id": "fr-b1-expressions-de-droit-et-de-devoir",
+      "title": "Expressions de droit et de devoir",
+      "score": 0.31
+     },
+     {
+      "id": "fr-a2-confirmation-et-annulation-de-creneau",
+      "title": "Confirmation et annulation de créneau",
+      "score": 0.24
+     }
+    ]
+   },
+   {
+    "text": "Pouvez-vous me préciser les modalités de prise en charge ?",
+    "confidence": "high",
+    "grammarId": "fr-b1-pouvez-vous-me-preciser-les-modalites-de-prise-en-charge",
+    "alternatives": [
+     {
+      "id": "fr-b1-pouvez-vous-me-preciser-les-modalites-de-prise-en-charge",
+      "title": "Pouvez-vous me préciser les modalités de prise en charge ?",
+      "score": 1.0
+     },
+     {
+      "id": "fr-b1-conditionnel-dans-la-prise-en-charge-des-garanties",
+      "title": "Conditionnel dans la prise en charge des garanties",
+      "score": 0.34
+     },
+     {
+      "id": "fr-a2-etre-charge-e-de-infinitif",
+      "title": "Être chargé(e) de + infinitif",
+      "score": 0.33
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-b1-en-cas-dannulation-de-vol-les-passagers-ont-droit-a",
+   "fr-b1-pouvez-vous-me-preciser-les-modalites-de-prise-en-charge"
+  ]
+ },
+ "fr/travelling/B1/u01-l02": {
+  "title": "Déclaration de perte de bagages et assurance voyage",
+  "ref": 2,
+  "items": [
+   {
+    "text": "Utilisation du passé composé et de l'imparfait pour décrire l'incident",
+    "confidence": "high",
+    "grammarId": "fr-b1-utilisation-du-passe-compose-et-de-limparfait-pour-decrire-lincident",
+    "alternatives": [
+     {
+      "id": "fr-b1-utilisation-du-passe-compose-et-de-limparfait-pour-decrire-lincident",
+      "title": "Utilisation du passé composé et de l'imparfait pour décrire l'incident",
+      "score": 0.84
+     },
+     {
+      "id": "fr-b1-alternance-passe-compose-imparfait-pour-decrire-sa-carriere",
+      "title": "Alternance passé composé / imparfait pour décrire sa carrière",
+      "score": 0.65
+     },
+     {
+      "id": "fr-a1-bilan-passe-compose-imparfait",
+      "title": "Bilan Passé composé / Imparfait",
+      "score": 0.57
+     }
+    ]
+   },
+   {
+    "text": "Questions indirectes pour suivre un dossier",
+    "confidence": "high",
+    "grammarId": "fr-b1-questions-indirectes-pour-suivre-un-dossier",
+    "alternatives": [
+     {
+      "id": "fr-b1-questions-indirectes-pour-suivre-un-dossier",
+      "title": "Questions indirectes pour suivre un dossier",
+      "score": 1.0
+     },
+     {
+      "id": "fr-b1-questions-indirectes-je-voulais-savoir-si",
+      "title": "Questions indirectes (Je voulais savoir si...)",
+      "score": 0.3
+     },
+     {
+      "id": "fr-a2-questions-indirectes-polies-sauriez-vous-si",
+      "title": "Questions indirectes polies (Sauriez-vous si... ?)",
+      "score": 0.28
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-b1-questions-indirectes-pour-suivre-un-dossier",
+   "fr-b1-utilisation-du-passe-compose-et-de-limparfait-pour-decrire-lincident"
+  ]
+ },
+ "fr/travelling/B1/u01-l03": {
+  "title": "Logistique de réacheminement d'urgence",
+  "ref": 3,
+  "items": [
+   {
+    "text": "Emploi du conditionnel pour émettre des propositions (Il vaudrait mieux...)",
+    "confidence": "high",
+    "grammarId": "fr-b1-emploi-du-conditionnel-pour-emettre-des-propositions-il-vaudrait-mieux",
+    "alternatives": [
+     {
+      "id": "fr-b1-emploi-du-conditionnel-pour-emettre-des-propositions-il-vaudrait-mieux",
+      "title": "Emploi du conditionnel pour émettre des propositions (Il vaudrait mieux...)",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a1-conditionnel",
+      "title": "Conditionnel",
+      "score": 0.42
+     },
+     {
+      "id": "fr-b1-vous-feriez-mieux-de-il-vaut-mieux",
+      "title": "Vous feriez mieux de... / Il vaut mieux...",
+      "score": 0.27
+     }
+    ]
+   },
+   {
+    "text": "Exprimer des alternatives d'itinéraire",
+    "confidence": "high",
+    "grammarId": "fr-b1-exprimer-des-alternatives-ditineraire",
+    "alternatives": [
+     {
+      "id": "fr-b1-exprimer-des-alternatives-ditineraire",
+      "title": "Exprimer des alternatives d'itinéraire",
+      "score": 0.88
+     },
+     {
+      "id": "fr-b1-proposer-des-alternatives-pourquoi-ne-pas-et-si-nous",
+      "title": "Proposer des alternatives (Pourquoi ne pas..., Et si nous...)",
+      "score": 0.34
+     },
+     {
+      "id": "fr-b1-exprimer-la-cause-et-la-consequence",
+      "title": "Exprimer la cause et la conséquence",
+      "score": 0.27
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-b1-emploi-du-conditionnel-pour-emettre-des-propositions-il-vaudrait-mieux",
+   "fr-b1-exprimer-des-alternatives-ditineraire"
+  ]
+ },
+ "fr/travelling/B1/u01-l04": {
+  "title": "Négocier un surclassement et utiliser des avoirs",
+  "ref": 4,
+  "items": [
+   {
+    "text": "Je me demandais s'il serait possible de...",
+    "confidence": "high",
+    "grammarId": "fr-b1-je-me-demandais-sil-serait-possible-de",
+    "alternatives": [
+     {
+      "id": "fr-b1-je-me-demandais-sil-serait-possible-de",
+      "title": "Je me demandais s'il serait possible de...",
+      "score": 0.9
+     },
+     {
+      "id": "fr-a2-serait-il-possible-de-changer-pour-une-chambre-plus-calme",
+      "title": "Serait-il possible de changer pour une chambre plus calme ?",
+      "score": 0.45
+     },
+     {
+      "id": "fr-a2-formules-de-politesse-et-requetes-conditionnelles-je-souhaiterais-serait-il-possible-de",
+      "title": "Formules de politesse et requêtes conditionnelles (je souhaiterais, serait-il possible de)",
+      "score": 0.43
+     }
+    ]
+   },
+   {
+    "text": "Pourrais-je faire valoir cet avoir sur... ?",
+    "confidence": "high",
+    "grammarId": "fr-b1-pourrais-je-faire-valoir-cet-avoir-sur",
+    "alternatives": [
+     {
+      "id": "fr-b1-pourrais-je-faire-valoir-cet-avoir-sur",
+      "title": "Pourrais-je faire valoir cet avoir sur... ?",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a2-pourrais-je-avoir-une-chambre-avec",
+      "title": "Pourrais-je avoir une chambre avec... ?",
+      "score": 0.39
+     },
+     {
+      "id": "fr-b1-passe-compose-present-pour-faire-le-bilan",
+      "title": "Passé composé & Présent pour faire le bilan",
+      "score": 0.3
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-b1-je-me-demandais-sil-serait-possible-de",
+   "fr-b1-pourrais-je-faire-valoir-cet-avoir-sur"
+  ]
+ },
+ "fr/travelling/B1/u02-l01": {
+  "title": "Contrats de location saisonnière et échange de logement",
+  "ref": 1,
+  "items": [
+   {
+    "text": "Hypothèses pour négocier les conditions (Si nous restons trois semaines...)",
+    "confidence": "high",
+    "grammarId": "fr-b1-hypotheses-pour-negocier-les-conditions-si-nous-restons-trois-semaines",
+    "alternatives": [
+     {
+      "id": "fr-b1-hypotheses-pour-negocier-les-conditions-si-nous-restons-trois-semaines",
+      "title": "Hypothèses pour négocier les conditions (Si nous restons trois semaines...)",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a1-hypotheses",
+      "title": "Hypothèses",
+      "score": 0.42
+     },
+     {
+      "id": "fr-a2-l-hypothese-au-present",
+      "title": "L'Hypothèse au Présent (Si...)",
+      "score": 0.39
+     }
+    ]
+   },
+   {
+    "text": "Verbes de modalité dans les règlements de location",
+    "confidence": "high",
+    "grammarId": "fr-b1-verbes-de-modalite-dans-les-reglements-de-location",
+    "alternatives": [
+     {
+      "id": "fr-b1-verbes-de-modalite-dans-les-reglements-de-location",
+      "title": "Verbes de modalité dans les règlements de location",
+      "score": 1.0
+     },
+     {
+      "id": "fr-b1-verbes-de-modalite-pour-les-convenances-il-est-dusage-de-il-est-mal-vu-de",
+      "title": "Verbes de modalité pour les convenances (Il est d'usage de..., Il est mal vu de...)",
+      "score": 0.27
+     },
+     {
+      "id": "fr-a2-je-viens-recuperer-le-vehicule-de-location",
+      "title": "Je viens récupérer le véhicule de location",
+      "score": 0.26
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-b1-hypotheses-pour-negocier-les-conditions-si-nous-restons-trois-semaines",
+   "fr-b1-verbes-de-modalite-dans-les-reglements-de-location"
+  ]
+ },
+ "fr/travelling/B1/u02-l02": {
+  "title": "Négocier des tarifs de groupe et offres sur mesure",
+  "ref": 2,
+  "items": [
+   {
+    "text": "Compte tenu de l'effectif de notre groupe, pourriez-vous accorder...",
+    "confidence": "high",
+    "grammarId": "fr-b1-compte-tenu-de-leffectif-de-notre-groupe-pourriez-vous-accorder",
+    "alternatives": [
+     {
+      "id": "fr-b1-compte-tenu-de-leffectif-de-notre-groupe-pourriez-vous-accorder",
+      "title": "Compte tenu de l'effectif de notre groupe, pourriez-vous accorder...",
+      "score": 0.93
+     },
+     {
+      "id": "fr-b1-en-fin-de-compte-pour-conclure",
+      "title": "En fin de compte / Pour conclure",
+      "score": 0.22
+     },
+     {
+      "id": "fr-a1-verbes-en-er-groupe-1-au-present",
+      "title": "Verbes en -ER (groupe 1) au présent",
+      "score": 0.2
+     }
+    ]
+   },
+   {
+    "text": "Structures comparatives de tarifs hôteliers",
+    "confidence": "high",
+    "grammarId": "fr-b1-structures-comparatives-de-tarifs-hoteliers",
+    "alternatives": [
+     {
+      "id": "fr-b1-structures-comparatives-de-tarifs-hoteliers",
+      "title": "Structures comparatives de tarifs hôteliers",
+      "score": 1.0
+     },
+     {
+      "id": "fr-b2-passage-de-la-phrase-verbale-a-la-phrase-nominale-on-a-augmente-le-tarif-laugmentation-du-tarif",
+      "title": "Passage de la phrase verbale à la phrase nominale (On a augmenté le tarif -> L'augmentation du tarif)",
+      "score": 0.13
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-b1-compte-tenu-de-leffectif-de-notre-groupe-pourriez-vous-accorder",
+   "fr-b1-structures-comparatives-de-tarifs-hoteliers"
+  ]
+ },
+ "fr/travelling/B1/u02-l03": {
+  "title": "Réclamation formelle et escalade auprès de la direction",
+  "ref": 3,
+  "items": [
+   {
+    "text": "J'exige de m'entretenir avec la direction générale",
+    "confidence": "high",
+    "grammarId": "fr-b1-jexige-de-mentretenir-avec-la-direction-generale",
+    "alternatives": [
+     {
+      "id": "fr-b1-jexige-de-mentretenir-avec-la-direction-generale",
+      "title": "J'exige de m'entretenir avec la direction générale",
+      "score": 0.84
+     },
+     {
+      "id": "fr-c2-elaboration-des-criteres-de-succession-de-la-direction-generale",
+      "title": "Élaboration des critères de succession de la direction générale",
+      "score": 0.22
+     },
+     {
+      "id": "fr-a1-synthese-des-formules-de-commande-de-direction-et-de-transport",
+      "title": "Synthèse des formules de commande, de direction et de transport",
+      "score": 0.16
+     }
+    ]
+   },
+   {
+    "text": "La prestation fournie ne correspond absolument pas au descriptif",
+    "confidence": "high",
+    "grammarId": "fr-b1-la-prestation-fournie-ne-correspond-absolument-pas-au-descriptif",
+    "alternatives": [
+     {
+      "id": "fr-b1-la-prestation-fournie-ne-correspond-absolument-pas-au-descriptif",
+      "title": "La prestation fournie ne correspond absolument pas au descriptif",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a2-vous-devriez-absolument-il-faut-absolument",
+      "title": "Vous devriez absolument... / Il faut absolument...",
+      "score": 0.24
+     },
+     {
+      "id": "fr-b1-la-cuisson-de-la-viande-ne-correspond-pas-a-ma-commande",
+      "title": "La cuisson de la viande ne correspond pas à ma commande",
+      "score": 0.22
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-b1-jexige-de-mentretenir-avec-la-direction-generale",
+   "fr-b1-la-prestation-fournie-ne-correspond-absolument-pas-au-descriptif"
+  ]
+ },
+ "fr/travelling/B1/u02-l04": {
+  "title": "Règles de copropriété et communication avec l'hôte",
+  "ref": 4,
+  "items": [
+   {
+    "text": "Voix passive pour exprimer les consignes (Les poubelles sont ramassées le...)",
+    "confidence": "high",
+    "grammarId": "fr-b1-voix-passive-pour-exprimer-les-consignes-les-poubelles-sont-ramassees-le",
+    "alternatives": [
+     {
+      "id": "fr-b1-voix-passive-pour-exprimer-les-consignes-les-poubelles-sont-ramassees-le",
+      "title": "Voix passive pour exprimer les consignes (Les poubelles sont ramassées le...)",
+      "score": 1.0
+     },
+     {
+      "id": "fr-b1-voix-passive-pour-raconter-les-faits-historiques",
+      "title": "Voix passive pour raconter les faits historiques",
+      "score": 0.33
+     },
+     {
+      "id": "fr-b1-voix-passive-pour-decrire-un-processus-operationnel",
+      "title": "Voix passive pour décrire un processus opérationnel",
+      "score": 0.33
+     }
+    ]
+   },
+   {
+    "text": "Formules de politesse et requêtes auprès de l'hôte",
+    "confidence": "high",
+    "grammarId": "fr-b1-formules-de-politesse-et-requetes-aupres-de-lhote",
+    "alternatives": [
+     {
+      "id": "fr-b1-formules-de-politesse-et-requetes-aupres-de-lhote",
+      "title": "Formules de politesse et requêtes auprès de l'hôte",
+      "score": 0.91
+     },
+     {
+      "id": "fr-a2-formules-de-politesse-et-requetes-conditionnelles-je-souhaiterais-serait-il-possible-de",
+      "title": "Formules de politesse et requêtes conditionnelles (je souhaiterais, serait-il possible de)",
+      "score": 0.43
+     },
+     {
+      "id": "fr-a1-formules-de-politesse-sociales",
+      "title": "Formules de politesse sociales",
+      "score": 0.33
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-b1-formules-de-politesse-et-requetes-aupres-de-lhote",
+   "fr-b1-voix-passive-pour-exprimer-les-consignes-les-poubelles-sont-ramassees-le"
+  ]
+ },
+ "fr/travelling/B1/u03-l01": {
+  "title": "Gastronomie française, menu dégustation et accords mets-vins",
+  "ref": 1,
+  "items": [
+   {
+    "text": "Pourriez-vous nous conseiller un vin qui s'accorde avec...",
+    "confidence": "high",
+    "grammarId": "fr-b1-pourriez-vous-nous-conseiller-un-vin-qui-saccorde-avec",
+    "alternatives": [
+     {
+      "id": "fr-b1-pourriez-vous-nous-conseiller-un-vin-qui-saccorde-avec",
+      "title": "Pourriez-vous nous conseiller un vin qui s'accorde avec...",
+      "score": 0.91
+     },
+     {
+      "id": "fr-a2-pourriez-vous-nous-prendre-en-photo",
+      "title": "Pourriez-vous nous prendre en photo ?",
+      "score": 0.23
+     },
+     {
+      "id": "fr-a2-puis-je-parler-a-pourriez-vous-lui-dire-que",
+      "title": "Puis-je parler à... ?, Pourriez-vous lui dire que... ?",
+      "score": 0.18
+     }
+    ]
+   },
+   {
+    "text": "Que recommande le chef pour accompagner... ?",
+    "confidence": "high",
+    "grammarId": "fr-b1-que-recommande-le-chef-pour-accompagner",
+    "alternatives": [
+     {
+      "id": "fr-b1-que-recommande-le-chef-pour-accompagner",
+      "title": "Que recommande le chef pour accompagner... ?",
+      "score": 1.0
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-b1-pourriez-vous-nous-conseiller-un-vin-qui-saccorde-avec",
+   "fr-b1-que-recommande-le-chef-pour-accompagner"
+  ]
+ },
+ "fr/travelling/B1/u03-l02": {
+  "title": "Exigences alimentaires strictes et méthodes de préparation",
+  "ref": 2,
+  "items": [
+   {
+    "text": "En raison d'intolérances médicales sévères, je ne peux consommer...",
+    "confidence": "high",
+    "grammarId": "fr-b1-en-raison-dintolerances-medicales-severes-je-ne-peux-consommer",
+    "alternatives": [
+     {
+      "id": "fr-b1-en-raison-dintolerances-medicales-severes-je-ne-peux-consommer",
+      "title": "En raison d'intolérances médicales sévères, je ne peux consommer...",
+      "score": 0.93
+     },
+     {
+      "id": "fr-a1-est-ce-que-je-peux-avoir",
+      "title": "Est-ce que je peux avoir... ?",
+      "score": 0.43
+     },
+     {
+      "id": "fr-a1-est-ce-que-je-peux-essayer",
+      "title": "Est-ce que je peux essayer... ?",
+      "score": 0.23
+     }
+    ]
+   },
+   {
+    "text": "Pourriez-vous m'expliquer le mode de préparation de ce plat ?",
+    "confidence": "high",
+    "grammarId": "fr-b1-pourriez-vous-mexpliquer-le-mode-de-preparation-de-ce-plat",
+    "alternatives": [
+     {
+      "id": "fr-b1-pourriez-vous-mexpliquer-le-mode-de-preparation-de-ce-plat",
+      "title": "Pourriez-vous m'expliquer le mode de préparation de ce plat ?",
+      "score": 0.92
+     },
+     {
+      "id": "fr-a2-est-ce-que-ce-plat-contient-du-de-la",
+      "title": "Est-ce que ce plat contient du / de la... ?",
+      "score": 0.29
+     },
+     {
+      "id": "fr-a2-pouvez-vous-preparer-ce-plat-sans",
+      "title": "Pouvez-vous préparer ce plat sans... ?",
+      "score": 0.24
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-b1-en-raison-dintolerances-medicales-severes-je-ne-peux-consommer",
+   "fr-b1-pourriez-vous-mexpliquer-le-mode-de-preparation-de-ce-plat"
+  ]
+ },
+ "fr/travelling/B1/u03-l03": {
+  "title": "Visites de vignobles, dégustations et cours de cuisine",
+  "ref": 3,
+  "items": [
+   {
+    "text": "Questions ouvertes sur les étapes de fabrication",
+    "confidence": "high",
+    "grammarId": "fr-b1-questions-ouvertes-sur-les-etapes-de-fabrication",
+    "alternatives": [
+     {
+      "id": "fr-b1-questions-ouvertes-sur-les-etapes-de-fabrication",
+      "title": "Questions ouvertes sur les étapes de fabrication",
+      "score": 1.0
+     },
+     {
+      "id": "fr-b1-questions-ouvertes-pour-briser-la-glace-avez-vous-fait-bon-voyage",
+      "title": "Questions ouvertes pour briser la glace (Avez-vous fait bon voyage ?)",
+      "score": 0.28
+     },
+     {
+      "id": "fr-a2-le-parc-est-il-ouvert-malgre-la-pluie",
+      "title": "Le parc est-il ouvert malgré la pluie ?",
+      "score": 0.24
+     }
+    ]
+   },
+   {
+    "text": "Voix passive appliquée aux procédés de transformation (Les raisins sont récoltés en...)",
+    "confidence": "high",
+    "grammarId": "fr-b1-voix-passive-appliquee-aux-procedes-de-transformation-les-raisins-sont-recoltes-en",
+    "alternatives": [
+     {
+      "id": "fr-b1-voix-passive-appliquee-aux-procedes-de-transformation-les-raisins-sont-recoltes-en",
+      "title": "Voix passive appliquée aux procédés de transformation (Les raisins sont récoltés en...)",
+      "score": 1.0
+     },
+     {
+      "id": "fr-b1-voix-passive-pour-raconter-les-faits-historiques",
+      "title": "Voix passive pour raconter les faits historiques",
+      "score": 0.3
+     },
+     {
+      "id": "fr-b1-voix-passive-pour-decrire-un-processus-operationnel",
+      "title": "Voix passive pour décrire un processus opérationnel",
+      "score": 0.3
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-b1-questions-ouvertes-sur-les-etapes-de-fabrication",
+   "fr-b1-voix-passive-appliquee-aux-procedes-de-transformation-les-raisins-sont-recoltes-en"
+  ]
+ },
+ "fr/travelling/B1/u03-l04": {
+  "title": "Résoudre un litige sur la note ou le service au restaurant",
+  "ref": 4,
+  "items": [
+   {
+    "text": "Je conteste les frais de service appliqués car...",
+    "confidence": "high",
+    "grammarId": "fr-b1-je-conteste-les-frais-de-service-appliques-car",
+    "alternatives": [
+     {
+      "id": "fr-b1-je-conteste-les-frais-de-service-appliques-car",
+      "title": "Je conteste les frais de service appliqués car...",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a2-combien-facturez-vous-pour-le-service-de",
+      "title": "Combien facturez-vous pour le service de... ?",
+      "score": 0.22
+     },
+     {
+      "id": "fr-a2-le-service-est-il-inclus-dans-le-prix",
+      "title": "Le service est-il inclus dans le prix ?",
+      "score": 0.2
+     }
+    ]
+   },
+   {
+    "text": "La cuisson de la viande ne correspond pas à ma commande",
+    "confidence": "high",
+    "grammarId": "fr-b1-la-cuisson-de-la-viande-ne-correspond-pas-a-ma-commande",
+    "alternatives": [
+     {
+      "id": "fr-b1-la-cuisson-de-la-viande-ne-correspond-pas-a-ma-commande",
+      "title": "La cuisson de la viande ne correspond pas à ma commande",
+      "score": 1.0
+     },
+     {
+      "id": "fr-b1-la-prestation-fournie-ne-correspond-absolument-pas-au-descriptif",
+      "title": "La prestation fournie ne correspond absolument pas au descriptif",
+      "score": 0.22
+     },
+     {
+      "id": "fr-a1-synthese-des-formules-de-commande-de-direction-et-de-transport",
+      "title": "Synthèse des formules de commande, de direction et de transport",
+      "score": 0.2
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-b1-je-conteste-les-frais-de-service-appliques-car",
+   "fr-b1-la-cuisson-de-la-viande-ne-correspond-pas-a-ma-commande"
+  ]
+ },
+ "fr/travelling/B1/u04-l01": {
+  "title": "Visites guidées historiques et échanges culturels",
+  "ref": 1,
+  "items": [
+   {
+    "text": "Voix passive pour raconter les faits historiques",
+    "confidence": "high",
+    "grammarId": "fr-b1-voix-passive-pour-raconter-les-faits-historiques",
+    "alternatives": [
+     {
+      "id": "fr-b1-voix-passive-pour-raconter-les-faits-historiques",
+      "title": "Voix passive pour raconter les faits historiques",
+      "score": 1.0
+     },
+     {
+      "id": "fr-b1-voix-passive-pour-limpartialite-des-faits",
+      "title": "Voix passive pour l'impartialité des faits",
+      "score": 0.53
+     },
+     {
+      "id": "fr-b1-voix-passive-pour-decrire-un-processus-operationnel",
+      "title": "Voix passive pour décrire un processus opérationnel",
+      "score": 0.36
+     }
+    ]
+   },
+   {
+    "text": "Pronoms relatifs complexes (qui, que, où, dont)",
+    "confidence": "medium",
+    "grammarId": "fr-b1-pronoms-relatifs-complexes-ce-qui-ce-que",
+    "alternatives": [
+     {
+      "id": "fr-b1-pronoms-relatifs-complexes-ce-qui-ce-que",
+      "title": "Pronoms relatifs complexes (ce qui, ce que)",
+      "score": 1.0
+     },
+     {
+      "id": "fr-b1-pronoms-relatifs-complexes-qui-que-ou-dont",
+      "title": "Pronoms relatifs complexes (qui, que, où, dont)",
+      "score": 1.0
+     },
+     {
+      "id": "fr-b1-pronoms-relatifs-ou-et-dont",
+      "title": "Pronoms relatifs où et dont",
+      "score": 0.82
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-b1-voix-passive-pour-raconter-les-faits-historiques"
+  ]
+ },
+ "fr/travelling/B1/u04-l02": {
+  "title": "Assister à des festivals et spectacles vivants",
+  "ref": 2,
+  "items": [
+   {
+    "text": "Interrogation indirecte pour les réservations (Sauriez-vous s'il reste des places... ?)",
+    "confidence": "high",
+    "grammarId": "fr-b1-interrogation-indirecte-pour-les-reservations-sauriez-vous-sil-reste-des-places",
+    "alternatives": [
+     {
+      "id": "fr-b1-interrogation-indirecte-pour-les-reservations-sauriez-vous-sil-reste-des-places",
+      "title": "Interrogation indirecte pour les réservations (Sauriez-vous s'il reste des places... ?)",
+      "score": 0.94
+     },
+     {
+      "id": "fr-a2-questions-indirectes-polies-sauriez-vous-si",
+      "title": "Questions indirectes polies (Sauriez-vous si... ?)",
+      "score": 0.27
+     },
+     {
+      "id": "fr-a1-jai-une-reservation-au-nom-de",
+      "title": "J'ai une réservation au nom de...",
+      "score": 0.23
+     }
+    ]
+   },
+   {
+    "text": "Exprimer des appréciations artistiques",
+    "confidence": "high",
+    "grammarId": "fr-b1-exprimer-des-appreciations-artistiques",
+    "alternatives": [
+     {
+      "id": "fr-b1-exprimer-des-appreciations-artistiques",
+      "title": "Exprimer des appréciations artistiques",
+      "score": 1.0
+     },
+     {
+      "id": "fr-b1-exprimer-la-cause-et-la-consequence",
+      "title": "Exprimer la cause et la conséquence",
+      "score": 0.27
+     },
+     {
+      "id": "fr-b1-exprimer-la-sensibilisation-environnementale",
+      "title": "Exprimer la sensibilisation environnementale",
+      "score": 0.25
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-b1-exprimer-des-appreciations-artistiques",
+   "fr-b1-interrogation-indirecte-pour-les-reservations-sauriez-vous-sil-reste-des-places"
+  ]
+ },
+ "fr/travelling/B1/u04-l03": {
+  "title": "Usages sociaux, codes vestimentaires et tabous culturels",
+  "ref": 3,
+  "items": [
+   {
+    "text": "Verbes de modalité pour les convenances (Il est d'usage de..., Il est mal vu de...)",
+    "confidence": "high",
+    "grammarId": "fr-b1-verbes-de-modalite-pour-les-convenances-il-est-dusage-de-il-est-mal-vu-de",
+    "alternatives": [
+     {
+      "id": "fr-b1-verbes-de-modalite-pour-les-convenances-il-est-dusage-de-il-est-mal-vu-de",
+      "title": "Verbes de modalité pour les convenances (Il est d'usage de..., Il est mal vu de...)",
+      "score": 0.9
+     },
+     {
+      "id": "fr-b1-verbes-de-modalite-dans-les-reglements-de-location",
+      "title": "Verbes de modalité dans les règlements de location",
+      "score": 0.29
+     },
+     {
+      "id": "fr-a1-lexpression-avoir-mal-a",
+      "title": "L'expression \"avoir mal à...\"",
+      "score": 0.27
+     }
+    ]
+   },
+   {
+    "text": "Exprimer des comparaisons d'usages culturels",
+    "confidence": "high",
+    "grammarId": "fr-b1-exprimer-des-comparaisons-dusages-culturels",
+    "alternatives": [
+     {
+      "id": "fr-b1-exprimer-des-comparaisons-dusages-culturels",
+      "title": "Exprimer des comparaisons d'usages culturels",
+      "score": 0.89
+     },
+     {
+      "id": "fr-a1-comparatif",
+      "title": "Le comparatif",
+      "score": 0.45
+     },
+     {
+      "id": "fr-a1-comparatifs",
+      "title": "Comparatifs",
+      "score": 0.45
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-b1-exprimer-des-comparaisons-dusages-culturels",
+   "fr-b1-verbes-de-modalite-pour-les-convenances-il-est-dusage-de-il-est-mal-vu-de"
+  ]
+ },
+ "fr/travelling/B1/u04-l04": {
+  "title": "Écotourisme, parcs nationaux et règles de préservation",
+  "ref": 4,
+  "items": [
+   {
+    "text": "Formulations d'obligation et de protection (Les visiteurs sont tenus de...)",
+    "confidence": "high",
+    "grammarId": "fr-b1-formulations-dobligation-et-de-protection-les-visiteurs-sont-tenus-de",
+    "alternatives": [
+     {
+      "id": "fr-b1-formulations-dobligation-et-de-protection-les-visiteurs-sont-tenus-de",
+      "title": "Formulations d'obligation et de protection (Les visiteurs sont tenus de...)",
+      "score": 0.93
+     },
+     {
+      "id": "fr-a2-formulations-de-reclamation-simple",
+      "title": "Formulations de réclamation simple",
+      "score": 0.22
+     },
+     {
+      "id": "fr-b1-verbes-modaux-dobligation-dans-lurgence",
+      "title": "Verbes modaux d'obligation dans l'urgence",
+      "score": 0.19
+     }
+    ]
+   },
+   {
+    "text": "Exprimer la sensibilisation environnementale",
+    "confidence": "high",
+    "grammarId": "fr-b1-exprimer-la-sensibilisation-environnementale",
+    "alternatives": [
+     {
+      "id": "fr-b1-exprimer-la-sensibilisation-environnementale",
+      "title": "Exprimer la sensibilisation environnementale",
+      "score": 1.0
+     },
+     {
+      "id": "fr-b1-imperatif-de-sensibilisation",
+      "title": "Impératif de sensibilisation",
+      "score": 0.35
+     },
+     {
+      "id": "fr-b1-pronom-en-de-quantite-et-de-provenance-environnementale",
+      "title": "Pronom 'en' de quantité et de provenance environnementale",
+      "score": 0.32
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-b1-exprimer-la-sensibilisation-environnementale",
+   "fr-b1-formulations-dobligation-et-de-protection-les-visiteurs-sont-tenus-de"
+  ]
+ },
+ "fr/travelling/B1/u05-l01": {
+  "title": "Prise en charge médicale lourde et hospitalisation",
+  "ref": 1,
+  "items": [
+   {
+    "text": "Rapport détaillé d'antécédents médicaux",
+    "confidence": "high",
+    "grammarId": "fr-b1-rapport-detaille-dantecedents-medicaux",
+    "alternatives": [
+     {
+      "id": "fr-b1-rapport-detaille-dantecedents-medicaux",
+      "title": "Rapport détaillé d'antécédents médicaux",
+      "score": 0.91
+     },
+     {
+      "id": "fr-a2-place-des-adverbes-par-rapport-au-verbe",
+      "title": "Place des adverbes par rapport au verbe",
+      "score": 0.21
+     },
+     {
+      "id": "fr-b1-anteriorite-dune-action-passee-par-rapport-a-une-autre",
+      "title": "Antériorité d'une action passée par rapport à une autre",
+      "score": 0.17
+     }
+    ]
+   },
+   {
+    "text": "Description précise de l'évolution des symptômes",
+    "confidence": "high",
+    "grammarId": "fr-b1-description-precise-de-levolution-des-symptomes",
+    "alternatives": [
+     {
+      "id": "fr-b1-description-precise-de-levolution-des-symptomes",
+      "title": "Description précise de l'évolution des symptômes",
+      "score": 0.9
+     },
+     {
+      "id": "fr-a2-synthese-de-la-description-des-symptomes-adjectifs-demotion-conseils-et-empathie",
+      "title": "Synthèse de la description des symptômes, adjectifs d'émotion, conseils et empathie",
+      "score": 0.34
+     },
+     {
+      "id": "fr-a2-utilisation-pour-les-descriptions-et-habitudes",
+      "title": "Utilisation pour les descriptions et habitudes",
+      "score": 0.3
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-b1-description-precise-de-levolution-des-symptomes",
+   "fr-b1-rapport-detaille-dantecedents-medicaux"
+  ]
+ },
+ "fr/travelling/B1/u05-l02": {
+  "title": "Déposer plainte et assistance consulaire à l'ambassade",
+  "ref": 2,
+  "items": [
+   {
+    "text": "Plus-que-parfait et passé composé pour la chronologie d'un vol",
+    "confidence": "high",
+    "grammarId": "fr-b1-plus-que-parfait-et-passe-compose-pour-la-chronologie-dun-vol",
+    "alternatives": [
+     {
+      "id": "fr-b1-plus-que-parfait-et-passe-compose-pour-la-chronologie-dun-vol",
+      "title": "Plus-que-parfait et passé composé pour la chronologie d'un vol",
+      "score": 0.92
+     },
+     {
+      "id": "fr-a2-passe-compose-avoir-etre",
+      "title": "Le Passé Composé avec Avoir et Être",
+      "score": 0.56
+     },
+     {
+      "id": "fr-a1-passe-compose-avoir",
+      "title": "Le passé composé avec avoir",
+      "score": 0.49
+     }
+    ]
+   },
+   {
+    "text": "Style administratif dans une déposition officielle",
+    "confidence": "high",
+    "grammarId": "fr-b1-style-administratif-dans-une-deposition-officielle",
+    "alternatives": [
+     {
+      "id": "fr-b1-style-administratif-dans-une-deposition-officielle",
+      "title": "Style administratif dans une déposition officielle",
+      "score": 1.0
+     },
+     {
+      "id": "fr-c1-nominalisation-dense-et-style-administratif-academique",
+      "title": "Nominalisation dense et style administratif/académique",
+      "score": 0.23
+     },
+     {
+      "id": "fr-b1-style-indirect-simple-pour-rapporter-des-decisions",
+      "title": "Style indirect simple pour rapporter des décisions",
+      "score": 0.18
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-b1-plus-que-parfait-et-passe-compose-pour-la-chronologie-dun-vol",
+   "fr-b1-style-administratif-dans-une-deposition-officielle"
+  ]
+ },
+ "fr/travelling/B1/u05-l03": {
+  "title": "Gestion des dossiers d'assurance et rapatriement",
+  "ref": 3,
+  "items": [
+   {
+    "text": "Formules épistolaires pour la gestion de sinistre",
+    "confidence": "high",
+    "grammarId": "fr-b1-formules-epistolaires-pour-la-gestion-de-sinistre",
+    "alternatives": [
+     {
+      "id": "fr-b1-formules-epistolaires-pour-la-gestion-de-sinistre",
+      "title": "Formules épistolaires pour la gestion de sinistre",
+      "score": 1.0
+     },
+     {
+      "id": "fr-b1-formules-de-rectification",
+      "title": "Formules de rectification",
+      "score": 0.26
+     },
+     {
+      "id": "fr-b1-formules-modales-de-concession",
+      "title": "Formules modales de concession",
+      "score": 0.22
+     }
+    ]
+   },
+   {
+    "text": "Conditionnel dans la prise en charge des garanties",
+    "confidence": "high",
+    "grammarId": "fr-b1-conditionnel-dans-la-prise-en-charge-des-garanties",
+    "alternatives": [
+     {
+      "id": "fr-b1-conditionnel-dans-la-prise-en-charge-des-garanties",
+      "title": "Conditionnel dans la prise en charge des garanties",
+      "score": 1.0
+     },
+     {
+      "id": "fr-b1-pouvez-vous-me-preciser-les-modalites-de-prise-en-charge",
+      "title": "Pouvez-vous me préciser les modalités de prise en charge ?",
+      "score": 0.46
+     },
+     {
+      "id": "fr-a1-conditionnel",
+      "title": "Conditionnel",
+      "score": 0.43
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-b1-conditionnel-dans-la-prise-en-charge-des-garanties",
+   "fr-b1-formules-epistolaires-pour-la-gestion-de-sinistre"
+  ]
+ },
+ "fr/travelling/B1/u05-l04": {
+  "title": "Consignes de sécurité et évacuation lors de crises régionales",
+  "ref": 4,
+  "items": [
+   {
+    "text": "Futur du passé (Nous étions sur le point de partir quand...)",
+    "confidence": "high",
+    "grammarId": "fr-b1-futur-du-passe-nous-etions-sur-le-point-de-partir-quand",
+    "alternatives": [
+     {
+      "id": "fr-b1-futur-du-passe-nous-etions-sur-le-point-de-partir-quand",
+      "title": "Futur du passé (Nous étions sur le point de partir quand...)",
+      "score": 1.0
+     },
+     {
+      "id": "fr-a1-bilan-futur",
+      "title": "Bilan Futur",
+      "score": 0.42
+     },
+     {
+      "id": "fr-a2-le-futur-simple",
+      "title": "Le Futur Simple",
+      "score": 0.35
+     }
+    ]
+   },
+   {
+    "text": "Exprimer des décisions d'urgence",
+    "confidence": "high",
+    "grammarId": "fr-b1-exprimer-des-decisions-durgence",
+    "alternatives": [
+     {
+      "id": "fr-b1-exprimer-des-decisions-durgence",
+      "title": "Exprimer des décisions d'urgence",
+      "score": 0.88
+     },
+     {
+      "id": "fr-a1-cest-une-urgence",
+      "title": "C'est une urgence",
+      "score": 0.35
+     },
+     {
+      "id": "fr-b1-exprimer-lurgence-avec-le-subjonctif-ou-des-tournures-impersonnelles-il-est-urgent-que",
+      "title": "Exprimer l'urgence avec le subjonctif ou des tournures impersonnelles (Il est urgent que...)",
+      "score": 0.34
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "fr-b1-exprimer-des-decisions-durgence",
+   "fr-b1-futur-du-passe-nous-etions-sur-le-point-de-partir-quand"
+  ]
+ }
+}

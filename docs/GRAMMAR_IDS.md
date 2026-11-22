@@ -44,6 +44,18 @@ Limits: scoring is tuned on English. Other languages need their own synonym tabl
 | ru | A1-C2 | 260 of 333 | 183 / 242 / 161 | Manuals have few B1-C2 pages; many B1-C2 ids come from drafted decisions, not high-confidence matches |
 | it | A1 | 121 of 142 | 79 / 110 / 55 | Only A1 is in scope (A2-C2 sit in `_out_of_scope`); manuals have 60 pages in total |
 
+### Other French tracks
+
+High-confidence ids only (no drafted decisions). These curricula copy the manual page titles almost verbatim, so nearly every match is an exact title match.
+
+| Track | Levels | Lessons with `grammarIds` | Items high / medium / none |
+|---|---|---|---|
+| fr/spoken | A1-C2 | 180 of 180 | 317 / 8 / 1 |
+| fr/professional | B1-C2 | 96 of 96 | 191 / 1 / 0 |
+| fr/travelling | A1-B1 | 60 of 60 | 118 / 1 / 2 |
+
+`fr/pronunciation` is deliberately skipped: its lessons teach sounds, not grammar points (1 of 38 items matched with high confidence). Review files: `docs/grammar-id-review/{mapping,review,report}-fr-<track>.*`. The 10 medium/none items have no id yet.
+
 The counts include ids that come from the drafted decisions below. Re-create them with
 `python3 scripts/grammar-ids/apply_drafts.py --platform . --lang en --lang fr --lang ru --lang it`.
 
