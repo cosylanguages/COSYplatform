@@ -1,0 +1,2402 @@
+{
+  "ru/travelling/A1/u01-l01": {
+    "title": "Словарь аэропорта и посадка",
+    "ref": 1,
+    "items": [
+      {
+        "text": "Где находится... ? / Где находятся... ?",
+        "confidence": "medium",
+        "grammarId": "ru-a1-predlozhnyy-padezh-mesto",
+        "alternatives": [
+          {
+            "id": "ru-a1-predlozhnyy-padezh-mesto",
+            "title": "Предложный падеж: местоположение (где? в/на)",
+            "score": 0.58
+          },
+          {
+            "id": "ru-a1-voprositelnye-slova-kto-chto-gde-kuda",
+            "title": "Вопросительные слова (Кто, Что, Где, Куда, Откуда)",
+            "score": 0.52
+          }
+        ]
+      },
+      {
+        "text": "Указательные местоимения (этот, эта, это, эти)",
+        "confidence": "high",
+        "grammarId": "ru-a1-ukazatelnye-mestoimeniya-etot-eta-eto-eti",
+        "alternatives": [
+          {
+            "id": "ru-a1-ukazatelnye-mestoimeniya-etot-eta-eto-eti",
+            "title": "Указательные местоимения (этот, эта, это, эти)",
+            "score": 1.0
+          },
+          {
+            "id": "ru-a1-prityazhatelnye-mestoimeniya",
+            "title": "Притяжательные местоимения",
+            "score": 0.43
+          },
+          {
+            "id": "ru-a1-lichnye-mestoimeniya-i-nulevaya-svyazka",
+            "title": "Личные местоимения и нулевая связка",
+            "score": 0.31
+          }
+        ]
+      }
+    ],
+    "grammarIds": [
+      "ru-a1-ukazatelnye-mestoimeniya-etot-eta-eto-eti"
+    ]
+  },
+  "ru/travelling/A1/u01-l02": {
+    "title": "Регистрация в аэропорту и досмотр",
+    "ref": 2,
+    "items": [
+      {
+        "text": "Покажите, пожалуйста...",
+        "confidence": "medium",
+        "grammarId": "ru-a1-vezhlivye-prosby-i-poveleniya",
+        "alternatives": [
+          {
+            "id": "ru-a1-vezhlivye-prosby-i-poveleniya",
+            "title": "Формулы вежливости и просьбы (Скажите, пожалуйста / Будьте добры)",
+            "score": 0.56
+          }
+        ]
+      },
+      {
+        "text": "У меня есть... / У меня нет...",
+        "confidence": "high",
+        "grammarId": "ru-a1-konstruktsiya-u-menya-est",
+        "alternatives": [
+          {
+            "id": "ru-a1-konstruktsiya-u-menya-est",
+            "title": "Конструкция «У меня есть...» и её отрицание «У меня нет...»",
+            "score": 0.85
+          },
+          {
+            "id": "ru-a1-u-menya-est",
+            "title": "У меня есть...",
+            "score": 0.72
+          },
+          {
+            "id": "ru-a1-konstruktsiya-menya-zovut",
+            "title": "Конструкция «Меня зовут...»",
+            "score": 0.47
+          }
+        ]
+      }
+    ],
+    "grammarIds": [
+      "ru-a1-konstruktsiya-u-menya-est"
+    ]
+  },
+  "ru/travelling/A1/u01-l03": {
+    "title": "Получение багажа и информация о рейсе",
+    "ref": 3,
+    "items": [
+      {
+        "text": "В котором часу... ?",
+        "confidence": "high",
+        "grammarId": "ru-a1-kotoryy",
+        "alternatives": [
+          {
+            "id": "ru-a1-kotoryy",
+            "title": "Который",
+            "score": 0.93
+          },
+          {
+            "id": "ru-a1-kotoryy-chas",
+            "title": "Который час?",
+            "score": 0.69
+          },
+          {
+            "id": "ru-a1-vremya-i-chasy",
+            "title": "Обозначение времени и часов (Который час? Во сколько?)",
+            "score": 0.55
+          }
+        ]
+      },
+      {
+        "text": "Какой выход... ?",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-b1-otnositeilnye-mestoimeniya-chey-kakoy-kakov",
+            "title": "Относительные местоимения «чей», «какой», «каков»",
+            "score": 0.33
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/A1/u01-l04": {
+    "title": "Общественный транспорт и экспресс в аэропорт",
+    "ref": 4,
+    "items": [
+      {
+        "text": "Сколько стоит билет до... ?",
+        "confidence": "medium",
+        "grammarId": "ru-a1-mnogo-malo-skolko",
+        "alternatives": [
+          {
+            "id": "ru-a1-mnogo-malo-skolko",
+            "title": "Много / мало / сколько",
+            "score": 0.57
+          },
+          {
+            "id": "ru-a1-vremya-i-chasy",
+            "title": "Обозначение времени и часов (Который час? Во сколько?)",
+            "score": 0.51
+          },
+          {
+            "id": "ru-b2-soyuzy-ustupki-kak-by-ni-skolko-by-ni",
+            "title": "Уступительные конструкции с частицей «ни» (как бы ни, сколько бы ни)",
+            "score": 0.3
+          }
+        ]
+      },
+      {
+        "text": "Прямой маршрут / Пересадка",
+        "confidence": "medium",
+        "grammarId": "ru-a1-pryamaya-i-kosvennaya-rech",
+        "alternatives": [
+          {
+            "id": "ru-a1-pryamaya-i-kosvennaya-rech",
+            "title": "Прямая и косвенная речь",
+            "score": 0.6
+          },
+          {
+            "id": "ru-b1-kosvennaya-rech-izmenenie-mestoimeniy-i-glagolov",
+            "title": "Трансформация прямой речи в косвенную: союзы что, чтобы, ли",
+            "score": 0.29
+          },
+          {
+            "id": "ru-a2-kosvennaya-rech-vvedenie",
+            "title": "Перевод прямой речи в косвенную (он сказал, что... / спросил, ли...)",
+            "score": 0.28
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/A1/u02-l01": {
+    "title": "Заселение в отель и бронь",
+    "ref": 1,
+    "items": [
+      {
+        "text": "У меня забронирован номер на имя...",
+        "confidence": "high",
+        "grammarId": "ru-a1-u-menya-est",
+        "alternatives": [
+          {
+            "id": "ru-a1-u-menya-est",
+            "title": "У меня есть...",
+            "score": 0.85
+          },
+          {
+            "id": "ru-a1-konstruktsiya-menya-zovut",
+            "title": "Конструкция «Меня зовут...»",
+            "score": 0.61
+          },
+          {
+            "id": "ru-a1-konstruktsiya-u-menya-est",
+            "title": "Конструкция «У меня есть...» и её отрицание «У меня нет...»",
+            "score": 0.54
+          }
+        ]
+      },
+      {
+        "text": "Можно мне... ?",
+        "confidence": "medium",
+        "grammarId": "ru-a1-mozhno-nelzya-nuzhno",
+        "alternatives": [
+          {
+            "id": "ru-a1-mozhno-nelzya-nuzhno",
+            "title": "Можно, нельзя, нужно",
+            "score": 0.45
+          },
+          {
+            "id": "ru-a1-konstruktsii-mozhno-nelzya-nuzhno",
+            "title": "Безличные конструкции: «можно», «нельзя», «нужно / надо»",
+            "score": 0.39
+          },
+          {
+            "id": "ru-a1-datelnyy-padezh-vozrast-i-adresat",
+            "title": "Дательный падеж: возраст (мне... лет) и адресат (кому?)",
+            "score": 0.31
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/A1/u02-l02": {
+    "title": "Удобства в номере и просьбы",
+    "ref": 2,
+    "items": [
+      {
+        "text": "Есть ли в номере... ?",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      },
+      {
+        "text": "Принесите, пожалуйста, еще...",
+        "confidence": "medium",
+        "grammarId": "ru-a1-vezhlivye-prosby-i-poveleniya",
+        "alternatives": [
+          {
+            "id": "ru-a1-vezhlivye-prosby-i-poveleniya",
+            "title": "Формулы вежливости и просьбы (Скажите, пожалуйста / Будьте добры)",
+            "score": 0.56
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/A1/u02-l03": {
+    "title": "Завтрак и услуги отеля",
+    "ref": 3,
+    "items": [
+      {
+        "text": "Во сколько подают завтрак ?",
+        "confidence": "medium",
+        "grammarId": "ru-a1-mnogo-malo-skolko",
+        "alternatives": [
+          {
+            "id": "ru-a1-mnogo-malo-skolko",
+            "title": "Много / мало / сколько",
+            "score": 0.57
+          },
+          {
+            "id": "ru-a1-vremya-i-chasy",
+            "title": "Обозначение времени и часов (Который час? Во сколько?)",
+            "score": 0.51
+          },
+          {
+            "id": "ru-b2-soyuzy-ustupki-kak-by-ni-skolko-by-ni",
+            "title": "Уступительные конструкции с частицей «ни» (как бы ни, сколько бы ни)",
+            "score": 0.3
+          }
+        ]
+      },
+      {
+        "text": "Где находится... ?",
+        "confidence": "medium",
+        "grammarId": "ru-a1-predlozhnyy-padezh-mesto",
+        "alternatives": [
+          {
+            "id": "ru-a1-predlozhnyy-padezh-mesto",
+            "title": "Предложный падеж: местоположение (где? в/на)",
+            "score": 0.62
+          },
+          {
+            "id": "ru-a1-voprositelnye-slova-kto-chto-gde-kuda",
+            "title": "Вопросительные слова (Кто, Что, Где, Куда, Откуда)",
+            "score": 0.57
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/A1/u02-l04": {
+    "title": "Выезд из отеля и багажная комната",
+    "ref": 4,
+    "items": [
+      {
+        "text": "Я бы хотел выехать и оплатить счет",
+        "confidence": "high",
+        "grammarId": "ru-a1-ya-khotel-by-khotite",
+        "alternatives": [
+          {
+            "id": "ru-a1-ya-khotel-by-khotite",
+            "title": "Я хотел(а) бы... / Хотите...?",
+            "score": 0.62
+          },
+          {
+            "id": "ru-a1-glagol-khotet",
+            "title": "Особый глагол «хотеть» и конструкция «я хотел бы»",
+            "score": 0.54
+          }
+        ]
+      },
+      {
+        "text": "Можно оставить багаж здесь ?",
+        "confidence": "medium",
+        "grammarId": "ru-a1-mozhno-nelzya-nuzhno",
+        "alternatives": [
+          {
+            "id": "ru-a1-mozhno-nelzya-nuzhno",
+            "title": "Можно, нельзя, нужно",
+            "score": 0.39
+          },
+          {
+            "id": "ru-a1-konstruktsii-mozhno-nelzya-nuzhno",
+            "title": "Безличные конструкции: «можно», «нельзя», «нужно / надо»",
+            "score": 0.33
+          },
+          {
+            "id": "ru-a1-narechiya-mesta-i-napravleniya",
+            "title": "Наречия места и направления (здесь/сюда, там/туда, дома/домой)",
+            "score": 0.31
+          }
+        ]
+      }
+    ],
+    "grammarIds": [
+      "ru-a1-ya-khotel-by-khotite"
+    ]
+  },
+  "ru/travelling/A1/u03-l01": {
+    "title": "Заказ в кафе и еда навынос",
+    "ref": 1,
+    "items": [
+      {
+        "text": "Принесите, пожалуйста...",
+        "confidence": "medium",
+        "grammarId": "ru-a1-vezhlivye-prosby-i-poveleniya",
+        "alternatives": [
+          {
+            "id": "ru-a1-vezhlivye-prosby-i-poveleniya",
+            "title": "Формулы вежливости и просьбы (Скажите, пожалуйста / Будьте добры)",
+            "score": 0.56
+          }
+        ]
+      },
+      {
+        "text": "Здесь или с собой",
+        "confidence": "medium",
+        "grammarId": "ru-a1-narechiya-mesta-i-napravleniya",
+        "alternatives": [
+          {
+            "id": "ru-a1-narechiya-mesta-i-napravleniya",
+            "title": "Наречия места и направления (здесь/сюда, там/туда, дома/домой)",
+            "score": 0.55
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/A1/u03-l02": {
+    "title": "Бронь столика и встреча в ресторане",
+    "ref": 2,
+    "items": [
+      {
+        "text": "Столик на двоих, пожалуйста",
+        "confidence": "medium",
+        "grammarId": "ru-a1-vezhlivye-prosby-i-poveleniya",
+        "alternatives": [
+          {
+            "id": "ru-a1-vezhlivye-prosby-i-poveleniya",
+            "title": "Формулы вежливости и просьбы (Скажите, пожалуйста / Будьте добры)",
+            "score": 0.52
+          }
+        ]
+      },
+      {
+        "text": "Есть ли столик около... ?",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-a2-roditelnyy-padezh-predlogi-iz-ot-do-dlya-bez",
+            "title": "Предлоги родительного падежа (из, от, до, для, без, около, после)",
+            "score": 0.36
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/A1/u03-l03": {
+    "title": "Заказ блюд и предпочтения в еде",
+    "ref": 3,
+    "items": [
+      {
+        "text": "Я буду...",
+        "confidence": "high",
+        "grammarId": "ru-a1-budushchee-vremya-slozhashchee",
+        "alternatives": [
+          {
+            "id": "ru-a1-budushchee-vremya-slozhashchee",
+            "title": "Сложное будущее время (буду + инфинитив)",
+            "score": 0.66
+          },
+          {
+            "id": "ru-a2-vidy-glagola-v-budushchem-vremeni",
+            "title": "Будущее время: НСВ (буду делать) vs СВ (сделаю)",
+            "score": 0.34
+          }
+        ]
+      },
+      {
+        "text": "Я не ем...",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      }
+    ],
+    "grammarIds": [
+      "ru-a1-budushchee-vremya-slozhashchee"
+    ]
+  },
+  "ru/travelling/A1/u03-l04": {
+    "title": "Просьба о счете и оплата",
+    "ref": 4,
+    "items": [
+      {
+        "text": "Счет, пожалуйста",
+        "confidence": "medium",
+        "grammarId": "ru-a1-vezhlivye-prosby-i-poveleniya",
+        "alternatives": [
+          {
+            "id": "ru-a1-vezhlivye-prosby-i-poveleniya",
+            "title": "Формулы вежливости и просьбы (Скажите, пожалуйста / Будьте добры)",
+            "score": 0.56
+          }
+        ]
+      },
+      {
+        "text": "Вы принимаете карты ?",
+        "confidence": "high",
+        "grammarId": "ru-a1-ty-i-vy",
+        "alternatives": [
+          {
+            "id": "ru-a1-ty-i-vy",
+            "title": "Ты и вы",
+            "score": 0.66
+          },
+          {
+            "id": "ru-a2-glagoly-dvizheniya-s-pristavkami-v-vy-dop-pere",
+            "title": "Глаголы движения с приставками в-, вы-, до-, пере-, под-, от-",
+            "score": 0.31
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/A1/u04-l01": {
+    "title": "Карта города и достопримечательности",
+    "ref": 1,
+    "items": [
+      {
+        "text": "Где ближайший / ближайшая... ?",
+        "confidence": "medium",
+        "grammarId": "ru-a1-predlozhnyy-padezh-mesto",
+        "alternatives": [
+          {
+            "id": "ru-a1-predlozhnyy-padezh-mesto",
+            "title": "Предложный падеж: местоположение (где? в/на)",
+            "score": 0.62
+          },
+          {
+            "id": "ru-a1-voprositelnye-slova-kto-chto-gde-kuda",
+            "title": "Вопросительные слова (Кто, Что, Где, Куда, Откуда)",
+            "score": 0.57
+          }
+        ]
+      },
+      {
+        "text": "Это далеко отсюда ?",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/A1/u04-l02": {
+    "title": "Как проехать и пройти",
+    "ref": 2,
+    "items": [
+      {
+        "text": "Идите прямо",
+        "confidence": "high",
+        "grammarId": "ru-a1-pryamaya-i-kosvennaya-rech",
+        "alternatives": [
+          {
+            "id": "ru-a1-pryamaya-i-kosvennaya-rech",
+            "title": "Прямая и косвенная речь",
+            "score": 0.65
+          },
+          {
+            "id": "ru-b1-kosvennaya-rech-izmenenie-mestoimeniy-i-glagolov",
+            "title": "Трансформация прямой речи в косвенную: союзы что, чтобы, ли",
+            "score": 0.32
+          },
+          {
+            "id": "ru-a2-kosvennaya-rech-vvedenie",
+            "title": "Перевод прямой речи в косвенную (он сказал, что... / спросил, ли...)",
+            "score": 0.3
+          }
+        ]
+      },
+      {
+        "text": "Поверните налево / направо",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      },
+      {
+        "text": "Это рядом с...",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/A1/u04-l03": {
+    "title": "Поездка на такси",
+    "ref": 3,
+    "items": [
+      {
+        "text": "Отвезите меня по этому адресу, пожалуйста",
+        "confidence": "high",
+        "grammarId": "ru-a1-u-menya-est",
+        "alternatives": [
+          {
+            "id": "ru-a1-u-menya-est",
+            "title": "У меня есть...",
+            "score": 0.66
+          },
+          {
+            "id": "ru-a1-konstruktsiya-menya-zovut",
+            "title": "Конструкция «Меня зовут...»",
+            "score": 0.42
+          },
+          {
+            "id": "ru-a1-konstruktsiya-u-menya-est",
+            "title": "Конструкция «У меня есть...» и её отрицание «У меня нет...»",
+            "score": 0.36
+          }
+        ]
+      },
+      {
+        "text": "Сколько будет стоить поездка ?",
+        "confidence": "medium",
+        "grammarId": "ru-a1-mnogo-malo-skolko",
+        "alternatives": [
+          {
+            "id": "ru-a1-mnogo-malo-skolko",
+            "title": "Много / мало / сколько",
+            "score": 0.57
+          },
+          {
+            "id": "ru-a1-vremya-i-chasy",
+            "title": "Обозначение времени и часов (Который час? Во сколько?)",
+            "score": 0.51
+          },
+          {
+            "id": "ru-b2-soyuzy-ustupki-kak-by-ni-skolko-by-ni",
+            "title": "Уступительные конструкции с частицей «ни» (как бы ни, сколько бы ни)",
+            "score": 0.3
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/A1/u04-l04": {
+    "title": "Покупка билетов на поезд и автобус",
+    "ref": 4,
+    "items": [
+      {
+        "text": "Какой поезд идет до... ?",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-b1-otnositeilnye-mestoimeniya-chey-kakoy-kakov",
+            "title": "Относительные местоимения «чей», «какой», «каков»",
+            "score": 0.2
+          },
+          {
+            "id": "ru-b1-glagoly-dvizheniya-perezatno-perenostnoe-znachenie",
+            "title": "Переносные значения глаголов движения (время идёт, речь идёт)",
+            "score": 0.19
+          }
+        ]
+      },
+      {
+        "text": "С какой платформы... ?",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-b1-otnositeilnye-mestoimeniya-chey-kakoy-kakov",
+            "title": "Относительные местоимения «чей», «какой», «каков»",
+            "score": 0.33
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/A1/u05-l01": {
+    "title": "В аптеке и недомогание",
+    "ref": 1,
+    "items": [
+      {
+        "text": "Мне нужно лекарство от...",
+        "confidence": "medium",
+        "grammarId": "ru-a1-mozhno-nelzya-nuzhno",
+        "alternatives": [
+          {
+            "id": "ru-a1-mozhno-nelzya-nuzhno",
+            "title": "Можно, нельзя, нужно",
+            "score": 0.43
+          },
+          {
+            "id": "ru-a1-konstruktsii-mozhno-nelzya-nuzhno",
+            "title": "Безличные конструкции: «можно», «нельзя», «нужно / надо»",
+            "score": 0.37
+          },
+          {
+            "id": "ru-a1-datelnyy-padezh-vozrast-i-adresat",
+            "title": "Дательный падеж: возраст (мне... лет) и адресат (кому?)",
+            "score": 0.3
+          }
+        ]
+      },
+      {
+        "text": "У меня болит голова / живот",
+        "confidence": "high",
+        "grammarId": "ru-a1-u-menya-est",
+        "alternatives": [
+          {
+            "id": "ru-a1-u-menya-est",
+            "title": "У меня есть...",
+            "score": 0.85
+          },
+          {
+            "id": "ru-a1-konstruktsiya-menya-zovut",
+            "title": "Конструкция «Меня зовут...»",
+            "score": 0.61
+          },
+          {
+            "id": "ru-a1-konstruktsiya-u-menya-est",
+            "title": "Конструкция «У меня есть...» и её отрицание «У меня нет...»",
+            "score": 0.54
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/A1/u05-l02": {
+    "title": "Потерянные вещи и просьба о помощи",
+    "ref": 2,
+    "items": [
+      {
+        "text": "Я потерял / потеряла...",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      },
+      {
+        "text": "Помогите мне, пожалуйста",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-a1-vezhlivye-prosby-i-poveleniya",
+            "title": "Формулы вежливости и просьбы (Скажите, пожалуйста / Будьте добры)",
+            "score": 0.36
+          },
+          {
+            "id": "ru-a1-datelnyy-padezh-vozrast-i-adresat",
+            "title": "Дательный падеж: возраст (мне... лет) и адресат (кому?)",
+            "score": 0.28
+          },
+          {
+            "id": "ru-a1-konstruktsii-skuchno-veselo-interesno",
+            "title": "Предикативные наречия состояния (мне скучно, интересно, жарко)",
+            "score": 0.28
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/A1/u05-l03": {
+    "title": "Обмен валюты и банкоматы",
+    "ref": 3,
+    "items": [
+      {
+        "text": "Где я могу обменять деньги ?",
+        "confidence": "medium",
+        "grammarId": "ru-a1-predlozhnyy-padezh-mesto",
+        "alternatives": [
+          {
+            "id": "ru-a1-predlozhnyy-padezh-mesto",
+            "title": "Предложный падеж: местоположение (где? в/на)",
+            "score": 0.54
+          },
+          {
+            "id": "ru-a1-voprositelnye-slova-kto-chto-gde-kuda",
+            "title": "Вопросительные слова (Кто, Что, Где, Куда, Откуда)",
+            "score": 0.48
+          }
+        ]
+      },
+      {
+        "text": "Где находится ближайший банкомат ?",
+        "confidence": "medium",
+        "grammarId": "ru-a1-predlozhnyy-padezh-mesto",
+        "alternatives": [
+          {
+            "id": "ru-a1-predlozhnyy-padezh-mesto",
+            "title": "Предложный падеж: местоположение (где? в/на)",
+            "score": 0.54
+          },
+          {
+            "id": "ru-a1-voprositelnye-slova-kto-chto-gde-kuda",
+            "title": "Вопросительные слова (Кто, Что, Где, Куда, Откуда)",
+            "score": 0.48
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/A1/u05-l04": {
+    "title": "Сообщение о проблеме и экстренные службы",
+    "ref": 4,
+    "items": [
+      {
+        "text": "Вызовите скорую / полицию !",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-c1-knizhnye-soyuzy-i-stilisticheskie-svyazki",
+            "title": "Книжные союзы (невероятно, но..., коль скоро, постольку поскольку)",
+            "score": 0.29
+          }
+        ]
+      },
+      {
+        "text": "Это экстренная ситуация",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/A2/u01-l01": {
+    "title": "Задержки рейсов и расписание транспорта",
+    "ref": 1,
+    "items": [
+      {
+        "text": "Во сколько отправляется поезд на... ?",
+        "confidence": "medium",
+        "grammarId": "ru-a1-mnogo-malo-skolko",
+        "alternatives": [
+          {
+            "id": "ru-a1-mnogo-malo-skolko",
+            "title": "Много / мало / сколько",
+            "score": 0.53
+          },
+          {
+            "id": "ru-a1-vremya-i-chasy",
+            "title": "Обозначение времени и часов (Который час? Во сколько?)",
+            "score": 0.47
+          },
+          {
+            "id": "ru-b2-soyuzy-ustupki-kak-by-ni-skolko-by-ni",
+            "title": "Уступительные конструкции с частицей «ни» (как бы ни, сколько бы ни)",
+            "score": 0.3
+          }
+        ]
+      },
+      {
+        "text": "Есть ли задержка рейса ?",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/A2/u01-l02": {
+    "title": "Опоздание на стыковочный рейс и обмен билетов",
+    "ref": 2,
+    "items": [
+      {
+        "text": "Я опоздал / опоздала на стыковочный рейс",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      },
+      {
+        "text": "Есть ли свободные места на следующий рейс ?",
+        "confidence": "medium",
+        "grammarId": "ru-a1-predlogi-mesta",
+        "alternatives": [
+          {
+            "id": "ru-a1-predlogi-mesta",
+            "title": "Предлоги места",
+            "score": 0.44
+          },
+          {
+            "id": "ru-a1-reduktsiya-glasnykh",
+            "title": "Редукция гласных и свободное ударение",
+            "score": 0.36
+          },
+          {
+            "id": "ru-a1-narechiya-mesta-i-napravleniya",
+            "title": "Наречия места и направления (здесь/сюда, там/туда, дома/домой)",
+            "score": 0.25
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/A2/u01-l03": {
+    "title": "Аренда автомобиля и правила вождения",
+    "ref": 3,
+    "items": [
+      {
+        "text": "Я хочу забрать забронированный автомобиль",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      },
+      {
+        "text": "Входит ли в стоимость неограниченный пробег ?",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/A2/u01-l04": {
+    "title": "Поездки на поездах дальнего следования и автобусах",
+    "ref": 4,
+    "items": [
+      {
+        "text": "Это место занято ?",
+        "confidence": "medium",
+        "grammarId": "ru-a1-predlogi-mesta",
+        "alternatives": [
+          {
+            "id": "ru-a1-predlogi-mesta",
+            "title": "Предлоги места",
+            "score": 0.47
+          },
+          {
+            "id": "ru-a2-kratkie-prilagatelnye",
+            "title": "Краткие прилагательные (рад, должен, занят, достоин)",
+            "score": 0.38
+          },
+          {
+            "id": "ru-a1-narechiya-mesta-i-napravleniya",
+            "title": "Наречия места и направления (здесь/сюда, там/туда, дома/домой)",
+            "score": 0.27
+          }
+        ]
+      },
+      {
+        "text": "В каком вагоне находится мое место ?",
+        "confidence": "medium",
+        "grammarId": "ru-a1-predlogi-mesta",
+        "alternatives": [
+          {
+            "id": "ru-a1-predlogi-mesta",
+            "title": "Предлоги места",
+            "score": 0.57
+          },
+          {
+            "id": "ru-a1-narechiya-mesta-i-napravleniya",
+            "title": "Наречия места и направления (здесь/сюда, там/туда, дома/домой)",
+            "score": 0.38
+          },
+          {
+            "id": "ru-b1-predlogi-mesta-iz-pod-iz-za",
+            "title": "Составные предлоги места (из-под, из-за)",
+            "score": 0.29
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/A2/u02-l01": {
+    "title": "Жалобы на номер и просьба о замене",
+    "ref": 1,
+    "items": [
+      {
+        "text": "Душ не работает должным образом",
+        "confidence": "medium",
+        "grammarId": "ru-a1-narechiya-obraza-deystviya",
+        "alternatives": [
+          {
+            "id": "ru-a1-narechiya-obraza-deystviya",
+            "title": "Наречия образа действия",
+            "score": 0.52
+          },
+          {
+            "id": "ru-b1-vvodnye-slova-poryadok-mysley",
+            "title": "Вводные слова структуры текста (следовательно, таким образом)",
+            "score": 0.26
+          }
+        ]
+      },
+      {
+        "text": "Можно переехать в тихий номер ?",
+        "confidence": "medium",
+        "grammarId": "ru-a1-mozhno-nelzya-nuzhno",
+        "alternatives": [
+          {
+            "id": "ru-a1-mozhno-nelzya-nuzhno",
+            "title": "Можно, нельзя, нужно",
+            "score": 0.51
+          },
+          {
+            "id": "ru-a1-konstruktsii-mozhno-nelzya-nuzhno",
+            "title": "Безличные конструкции: «можно», «нельзя», «нужно / надо»",
+            "score": 0.46
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/A2/u02-l02": {
+    "title": "Аренда апартаментов и частного жилья",
+    "ref": 2,
+    "items": [
+      {
+        "text": "Как мы можем получить ключи ?",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-c1-inversiya-usloviya-v-ofitsialnoy-diskussii",
+            "title": "Инверсия условий в официальной речи («Будь у нас X, мы бы...»)",
+            "score": 0.27
+          }
+        ]
+      },
+      {
+        "text": "Есть ли возможность бесконтактного заселения ?",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/A2/u02-l03": {
+    "title": "Просьба о позднем выезде и дополнительные услуги",
+    "ref": 3,
+    "items": [
+      {
+        "text": "Возможен ли поздний выезд ?",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      },
+      {
+        "text": "Какая доплата за... ?",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/A2/u02-l04": {
+    "title": "Решение спорных вопросов по счету в отеле",
+    "ref": 4,
+    "items": [
+      {
+        "text": "Кажется, в моем счете ошибка",
+        "confidence": "medium",
+        "grammarId": "ru-a1-vvodnye-slova-kazhetsya-po-moemu",
+        "alternatives": [
+          {
+            "id": "ru-a1-vvodnye-slova-kazhetsya-po-moemu",
+            "title": "Вводные слова мнения (по-моему, кажется, конечно)",
+            "score": 0.47
+          },
+          {
+            "id": "ru-b2-itogovaya-sintaksicheskaya-norma-b2",
+            "title": "Нормы согласования и распространенные ошибки синтаксиса B2",
+            "score": 0.16
+          },
+          {
+            "id": "ru-b1-datelnyy-padezh-subyekta-otsenki",
+            "title": "Дательный падеж субъекта оценки (мне кажется, ему видится)",
+            "score": 0.12
+          }
+        ]
+      },
+      {
+        "text": "Я не пользовался / не пользовалась мини-баром",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/A2/u03-l01": {
+    "title": "Заказ местных блюд и рекомендации",
+    "ref": 1,
+    "items": [
+      {
+        "text": "Можно ли посмотреть меню с фирменными блюдами ?",
+        "confidence": "medium",
+        "grammarId": "ru-a1-mozhno-nelzya-nuzhno",
+        "alternatives": [
+          {
+            "id": "ru-a1-mozhno-nelzya-nuzhno",
+            "title": "Можно, нельзя, нужно",
+            "score": 0.48
+          },
+          {
+            "id": "ru-a1-konstruktsii-mozhno-nelzya-nuzhno",
+            "title": "Безличные конструкции: «можно», «нельзя», «нужно / надо»",
+            "score": 0.43
+          }
+        ]
+      },
+      {
+        "text": "У меня аллергия на...",
+        "confidence": "high",
+        "grammarId": "ru-a1-u-menya-est",
+        "alternatives": [
+          {
+            "id": "ru-a1-u-menya-est",
+            "title": "У меня есть...",
+            "score": 0.86
+          },
+          {
+            "id": "ru-a1-konstruktsiya-menya-zovut",
+            "title": "Конструкция «Меня зовут...»",
+            "score": 0.64
+          },
+          {
+            "id": "ru-a1-konstruktsiya-u-menya-est",
+            "title": "Конструкция «У меня есть...» и её отрицание «У меня нет...»",
+            "score": 0.58
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/A2/u03-l02": {
+    "title": "Особые диеты и ограничения в еде",
+    "ref": 2,
+    "items": [
+      {
+        "text": "Содержит ли это блюдо... ?",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      },
+      {
+        "text": "Можно приготовить это без... ?",
+        "confidence": "medium",
+        "grammarId": "ru-a1-mozhno-nelzya-nuzhno",
+        "alternatives": [
+          {
+            "id": "ru-a1-mozhno-nelzya-nuzhno",
+            "title": "Можно, нельзя, нужно",
+            "score": 0.59
+          },
+          {
+            "id": "ru-a1-konstruktsii-mozhno-nelzya-nuzhno",
+            "title": "Безличные конструкции: «можно», «нельзя», «нужно / надо»",
+            "score": 0.54
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/A2/u03-l03": {
+    "title": "Покупки на фермерских рынках и в рядах",
+    "ref": 3,
+    "items": [
+      {
+        "text": "Сколько стоит полкило... ?",
+        "confidence": "medium",
+        "grammarId": "ru-a1-mnogo-malo-skolko",
+        "alternatives": [
+          {
+            "id": "ru-a1-mnogo-malo-skolko",
+            "title": "Много / мало / сколько",
+            "score": 0.53
+          },
+          {
+            "id": "ru-a1-vremya-i-chasy",
+            "title": "Обозначение времени и часов (Который час? Во сколько?)",
+            "score": 0.47
+          },
+          {
+            "id": "ru-b2-soyuzy-ustupki-kak-by-ni-skolko-by-ni",
+            "title": "Уступительные конструкции с частицей «ни» (как бы ни, сколько бы ни)",
+            "score": 0.3
+          }
+        ]
+      },
+      {
+        "text": "Можно попробовать кусочек ?",
+        "confidence": "medium",
+        "grammarId": "ru-a1-mozhno-nelzya-nuzhno",
+        "alternatives": [
+          {
+            "id": "ru-a1-mozhno-nelzya-nuzhno",
+            "title": "Можно, нельзя, нужно",
+            "score": 0.55
+          },
+          {
+            "id": "ru-a1-konstruktsii-mozhno-nelzya-nuzhno",
+            "title": "Безличные конструкции: «можно», «нельзя», «нужно / надо»",
+            "score": 0.5
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/A2/u03-l04": {
+    "title": "Чаевые и раздельная оплата счета",
+    "ref": 4,
+    "items": [
+      {
+        "text": "Можно разделить счет поровну ?",
+        "confidence": "medium",
+        "grammarId": "ru-a1-mozhno-nelzya-nuzhno",
+        "alternatives": [
+          {
+            "id": "ru-a1-mozhno-nelzya-nuzhno",
+            "title": "Можно, нельзя, нужно",
+            "score": 0.51
+          },
+          {
+            "id": "ru-a1-konstruktsii-mozhno-nelzya-nuzhno",
+            "title": "Безличные конструкции: «можно», «нельзя», «нужно / надо»",
+            "score": 0.46
+          }
+        ]
+      },
+      {
+        "text": "Включены ли чаевые в стоимость ?",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/A2/u04-l01": {
+    "title": "Билеты в музеи и туристические карты",
+    "ref": 1,
+    "items": [
+      {
+        "text": "Есть ли скидки для студентов или пенсионеров ?",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      },
+      {
+        "text": "Входит ли вход в эту карту ?",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/A2/u04-l02": {
+    "title": "Пешеходные экскурсии с гидом",
+    "ref": 2,
+    "items": [
+      {
+        "text": "Где собирается экскурсионная группа ?",
+        "confidence": "medium",
+        "grammarId": "ru-a1-predlozhnyy-padezh-mesto",
+        "alternatives": [
+          {
+            "id": "ru-a1-predlozhnyy-padezh-mesto",
+            "title": "Предложный падеж: местоположение (где? в/на)",
+            "score": 0.5
+          },
+          {
+            "id": "ru-a1-voprositelnye-slova-kto-chto-gde-kuda",
+            "title": "Вопросительные слова (Кто, Что, Где, Куда, Откуда)",
+            "score": 0.44
+          }
+        ]
+      },
+      {
+        "text": "Сколько длится экскурсия ?",
+        "confidence": "medium",
+        "grammarId": "ru-a1-mnogo-malo-skolko",
+        "alternatives": [
+          {
+            "id": "ru-a1-mnogo-malo-skolko",
+            "title": "Много / мало / сколько",
+            "score": 0.53
+          },
+          {
+            "id": "ru-a1-vremya-i-chasy",
+            "title": "Обозначение времени и часов (Который час? Во сколько?)",
+            "score": 0.47
+          },
+          {
+            "id": "ru-b2-soyuzy-ustupki-kak-by-ni-skolko-by-ni",
+            "title": "Уступительные конструкции с частицей «ни» (как бы ни, сколько бы ни)",
+            "score": 0.3
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/A2/u04-l03": {
+    "title": "Советы местных жителей о секретных местах",
+    "ref": 3,
+    "items": [
+      {
+        "text": "Какое ваше любимое место в городе ?",
+        "confidence": "medium",
+        "grammarId": "ru-a1-predlogi-mesta",
+        "alternatives": [
+          {
+            "id": "ru-a1-predlogi-mesta",
+            "title": "Предлоги места",
+            "score": 0.57
+          },
+          {
+            "id": "ru-a1-narechiya-mesta-i-napravleniya",
+            "title": "Наречия места и направления (здесь/сюда, там/туда, дома/домой)",
+            "score": 0.38
+          },
+          {
+            "id": "ru-b1-predlogi-mesta-iz-pod-iz-za",
+            "title": "Составные предлоги места (из-под, из-за)",
+            "score": 0.29
+          }
+        ]
+      },
+      {
+        "text": "Куда обычно ходят местные жители ?",
+        "confidence": "medium",
+        "grammarId": "ru-a1-vinitelnyy-padezh-napravlenie",
+        "alternatives": [
+          {
+            "id": "ru-a1-vinitelnyy-padezh-napravlenie",
+            "title": "Винительный падеж направления (куда? в/на)",
+            "score": 0.47
+          },
+          {
+            "id": "ru-a1-voprositelnye-slova-kto-chto-gde-kuda",
+            "title": "Вопросительные слова (Кто, Что, Где, Куда, Откуда)",
+            "score": 0.41
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/A2/u04-l04": {
+    "title": "Прогулки по районам и фотоэтикет",
+    "ref": 4,
+    "items": [
+      {
+        "text": "Можно здесь сфотографировать ?",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-a1-mozhno-nelzya-nuzhno",
+            "title": "Можно, нельзя, нужно",
+            "score": 0.37
+          },
+          {
+            "id": "ru-a1-konstruktsii-mozhno-nelzya-nuzhno",
+            "title": "Безличные конструкции: «можно», «нельзя», «нужно / надо»",
+            "score": 0.31
+          },
+          {
+            "id": "ru-a1-narechiya-mesta-i-napravleniya",
+            "title": "Наречия места и направления (здесь/сюда, там/туда, дома/домой)",
+            "score": 0.3
+          }
+        ]
+      },
+      {
+        "text": "Не могли бы вы нас сфотографировать ?",
+        "confidence": "medium",
+        "grammarId": "ru-a1-ty-i-vy",
+        "alternatives": [
+          {
+            "id": "ru-a1-ty-i-vy",
+            "title": "Ты и вы",
+            "score": 0.42
+          },
+          {
+            "id": "ru-a2-glagoly-dvizheniya-s-pristavkami-v-vy-dop-pere",
+            "title": "Глаголы движения с приставками в-, вы-, до-, пере-, под-, от-",
+            "score": 0.36
+          },
+          {
+            "id": "ru-c1-vydelitelnye-cleft-konstruktsii",
+            "title": "Выделительные конструкции («Что нас действительно волнует, так это...»)",
+            "score": 0.18
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/A2/u05-l01": {
+    "title": "Визит к врачу или в медицинский центр",
+    "ref": 1,
+    "items": [
+      {
+        "text": "Я чувствую себя плохо с самого утра...",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-a2-glagoly-chuvstv-i-vospriyatiya",
+            "title": "Глаголы чувств и восприятия (слышать/увидеть, казаться)",
+            "score": 0.32
+          },
+          {
+            "id": "ru-b1-mestoimennie-sebya-i-svoy",
+            "title": "Возвратно-притяжательное местоимение «свой» и местоимение «себя»",
+            "score": 0.19
+          }
+        ]
+      },
+      {
+        "text": "Нужен ли рецепт на это лекарство ?",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/A2/u05-l02": {
+    "title": "Блокировка банковской карты при утере",
+    "ref": 2,
+    "items": [
+      {
+        "text": "Мне нужно срочно заблокировать банковскую карту",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-a1-mozhno-nelzya-nuzhno",
+            "title": "Можно, нельзя, нужно",
+            "score": 0.36
+          },
+          {
+            "id": "ru-a1-konstruktsii-mozhno-nelzya-nuzhno",
+            "title": "Безличные конструкции: «можно», «нельзя», «нужно / надо»",
+            "score": 0.3
+          },
+          {
+            "id": "ru-a2-bezlichnye-glagoly-mne-ne-seditsya",
+            "title": "Безличные глаголы состояния и ощущения (мне не сидится, темнеет)",
+            "score": 0.26
+          }
+        ]
+      },
+      {
+        "text": "Как я могу получить экстренный денежный перевод ?",
+        "confidence": "medium",
+        "grammarId": "ru-a2-kosvennaya-rech-vvedenie",
+        "alternatives": [
+          {
+            "id": "ru-a2-kosvennaya-rech-vvedenie",
+            "title": "Перевод прямой речи в косвенную (он сказал, что... / спросил, ли...)",
+            "score": 0.46
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/A2/u05-l03": {
+    "title": "Изменение планов из-за погоды и закрытия объектов",
+    "ref": 3,
+    "items": [
+      {
+        "text": "Открыт ли парк, несмотря на дождь ?",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-a2-ustupitelnye-soyuzy-khotya-nesmotrya-na",
+            "title": "Уступительные конструкции («хотя», «несмотря на то что»)",
+            "score": 0.36
+          },
+          {
+            "id": "ru-a2-kratkie-prichastiya-vvedenie",
+            "title": "Краткие страдательные причастия в простом контексте (открыт, закрыт)",
+            "score": 0.33
+          },
+          {
+            "id": "ru-b1-soyuzy-ustupki-nesmotrya-na-vopreki",
+            "title": "Уступительные конструкции (несмотря на, вопреки, хотя)",
+            "score": 0.19
+          }
+        ]
+      },
+      {
+        "text": "Какие мероприятия в помещении вы посоветуете ?",
+        "confidence": "medium",
+        "grammarId": "ru-a1-ty-i-vy",
+        "alternatives": [
+          {
+            "id": "ru-a1-ty-i-vy",
+            "title": "Ты и вы",
+            "score": 0.54
+          },
+          {
+            "id": "ru-a2-glagoly-dvizheniya-s-pristavkami-v-vy-dop-pere",
+            "title": "Глаголы движения с приставками в-, вы-, до-, пере-, под-, от-",
+            "score": 0.48
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/A2/u05-l04": {
+    "title": "Обращение в бюро находок и туристическую полицию",
+    "ref": 4,
+    "items": [
+      {
+        "text": "Я забыл / забыла куртку в поезде",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      },
+      {
+        "text": "Я хочу подать заявление об утере",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/B1/u01-l01": {
+    "title": "Отмена рейсов, компенсации и права пассажиров",
+    "ref": 1,
+    "items": [
+      {
+        "text": "В случае отмены рейса пассажиры имеют право на...",
+        "confidence": "medium",
+        "grammarId": "ru-b1-soyuzy-usloviya-pri-uslovii-esli-by",
+        "alternatives": [
+          {
+            "id": "ru-b1-soyuzy-usloviya-pri-uslovii-esli-by",
+            "title": "Сложные условные союзы (при условии если, в случае если)",
+            "score": 0.45
+          }
+        ]
+      },
+      {
+        "text": "Уточните, пожалуйста, условия предоставления компенсации ?",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-b1-soyuzy-usloviya-pri-uslovii-esli-by",
+            "title": "Сложные условные союзы (при условии если, в случае если)",
+            "score": 0.31
+          },
+          {
+            "id": "ru-a1-vezhlivye-prosby-i-poveleniya",
+            "title": "Формулы вежливости и просьбы (Скажите, пожалуйста / Будьте добры)",
+            "score": 0.25
+          },
+          {
+            "id": "ru-b2-slozhnye-uslovnye-konstruktsii-s-by",
+            "title": "Сложные гипотетические условия с частицей «бы» (если бы... то бы...)",
+            "score": 0.17
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/B1/u01-l02": {
+    "title": "Заявление об утере багажа и страховые выплаты",
+    "ref": 2,
+    "items": [
+      {
+        "text": "Использование прошедшего времени (совершенного и несовершенного вида) для описания происшествия",
+        "confidence": "medium",
+        "grammarId": "ru-a1-proshedshee-vremya",
+        "alternatives": [
+          {
+            "id": "ru-a1-proshedshee-vremya",
+            "title": "Прошедшее время",
+            "score": 0.48
+          },
+          {
+            "id": "ru-a1-sovershennyy-i-nesovershennyy-vid",
+            "title": "Совершенный и несовершенный вид",
+            "score": 0.44
+          },
+          {
+            "id": "ru-b1-deeprichastie-sovershennogo-vida",
+            "title": "Деепричастия совершенного вида (-в/-вши, -ши)",
+            "score": 0.41
+          }
+        ]
+      },
+      {
+        "text": "Косвенные вопросы для отслеживания статуса заявления",
+        "confidence": "high",
+        "grammarId": "ru-b1-kosvennyy-vopros-chastitsa-li",
+        "alternatives": [
+          {
+            "id": "ru-b1-kosvennyy-vopros-chastitsa-li",
+            "title": "Косвенный вопрос с частицей «ли»",
+            "score": 0.77
+          },
+          {
+            "id": "ru-a2-kosvennaya-rech-i-mestoimeniya",
+            "title": "Косвенная речь и союзные слова",
+            "score": 0.26
+          },
+          {
+            "id": "ru-b1-povelitelnoe-naklonenie-vezhlivaya-prosba",
+            "title": "Формы косвенного побуждения и вежливые модальные обороты",
+            "score": 0.25
+          }
+        ]
+      }
+    ],
+    "grammarIds": [
+      "ru-b1-kosvennyy-vopros-chastitsa-li"
+    ]
+  },
+  "ru/travelling/B1/u01-l03": {
+    "title": "Логистика экстренного маршрута и альтернативный транспорт",
+    "ref": 3,
+    "items": [
+      {
+        "text": "Сослагательное наклонение для предложений (Было бы лучше...)",
+        "confidence": "medium",
+        "grammarId": "ru-a2-soslagatelnoe-naklonenie-by",
+        "alternatives": [
+          {
+            "id": "ru-a2-soslagatelnoe-naklonenie-by",
+            "title": "Сослагательное наклонение с частицей «бы»",
+            "score": 0.6
+          },
+          {
+            "id": "ru-a1-tipy-predlozheniy",
+            "title": "Типы предложений",
+            "score": 0.32
+          },
+          {
+            "id": "ru-a1-povelitelnoe-naklonenie",
+            "title": "Повелительное наклонение",
+            "score": 0.31
+          }
+        ]
+      },
+      {
+        "text": "Выражение альтернативных вариантов маршрута",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-a2-konstruktsii-dolzhen-obyazan-nado",
+            "title": "Выражение должествования: «должен», «обязан», «приходится»",
+            "score": 0.3
+          },
+          {
+            "id": "ru-a2-vyrazhenie-doba-i-chasa-vremeni",
+            "title": "Точное выражение времени, дат и лет (в двух тысяча двадцать четвёртом году)",
+            "score": 0.26
+          },
+          {
+            "id": "ru-b2-sintaksis-diplomaticheskoy-peregovornoy-rechi",
+            "title": "Дипломатический синтаксис: эвфемизмы и косвенное выражение",
+            "score": 0.19
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/B1/u01-l04": {
+    "title": "Переговоры о повышении класса и использование ваучеров",
+    "ref": 4,
+    "items": [
+      {
+        "text": "Я хотел / хотела бы узнать, есть ли возможность...",
+        "confidence": "medium",
+        "grammarId": "ru-a1-ya-khotel-by-khotite",
+        "alternatives": [
+          {
+            "id": "ru-a1-ya-khotel-by-khotite",
+            "title": "Я хотел(а) бы... / Хотите...?",
+            "score": 0.53
+          },
+          {
+            "id": "ru-a1-glagol-khotet",
+            "title": "Особый глагол «хотеть» и конструкция «я хотел бы»",
+            "score": 0.46
+          }
+        ]
+      },
+      {
+        "text": "Могу ли я использовать этот ваучер для... ?",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/B1/u02-l01": {
+    "title": "Договоры долгосрочной аренды и обмен жильем",
+    "ref": 1,
+    "items": [
+      {
+        "text": "Условные предложения для обсуждения условий (Если мы снимем жилье на три недели...)",
+        "confidence": "medium",
+        "grammarId": "ru-a2-uslovnye-predlozheniya-esli",
+        "alternatives": [
+          {
+            "id": "ru-a2-uslovnye-predlozheniya-esli",
+            "title": "Условные предложения с союзом «если»",
+            "score": 0.54
+          },
+          {
+            "id": "ru-a2-uslovnye-predlozheniya-esli-esli-by",
+            "title": "Условные предложения: реальное «если» и нереальное «если бы»",
+            "score": 0.43
+          },
+          {
+            "id": "ru-a1-esli-by-nerealnoe-uslovie",
+            "title": "Если бы... — нереальное условие",
+            "score": 0.36
+          }
+        ]
+      },
+      {
+        "text": "Модальные глаголы в правилах аренды",
+        "confidence": "medium",
+        "grammarId": "ru-a1-glagoly-moch-i-umet",
+        "alternatives": [
+          {
+            "id": "ru-a1-glagoly-moch-i-umet",
+            "title": "Модальные глаголы «мочь» и «уметь»",
+            "score": 0.52
+          },
+          {
+            "id": "ru-b1-povelitelnoe-naklonenie-vezhlivaya-prosba",
+            "title": "Формы косвенного побуждения и вежливые модальные обороты",
+            "score": 0.39
+          },
+          {
+            "id": "ru-c1-modalnye-glagoly-zanizheniya-riskov",
+            "title": "Модальные глаголы заверения и минимизации рисков",
+            "score": 0.33
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/B1/u02-l02": {
+    "title": "Согласование групповых скидок и индивидуальных условий",
+    "ref": 2,
+    "items": [
+      {
+        "text": "Учитывая количество человек в нашей группе, могли бы вы предоставить...",
+        "confidence": "medium",
+        "grammarId": "ru-a1-ty-i-vy",
+        "alternatives": [
+          {
+            "id": "ru-a1-ty-i-vy",
+            "title": "Ты и вы",
+            "score": 0.41
+          },
+          {
+            "id": "ru-a2-glagoly-dvizheniya-s-pristavkami-v-vy-dop-pere",
+            "title": "Глаголы движения с приставками в-, вы-, до-, пере-, под-, от-",
+            "score": 0.38
+          }
+        ]
+      },
+      {
+        "text": "Сравнительные конструкции гостиничных тарифов",
+        "confidence": "medium",
+        "grammarId": "ru-a1-sravnitelnaya-stepen",
+        "alternatives": [
+          {
+            "id": "ru-a1-sravnitelnaya-stepen",
+            "title": "Сравнительная степень",
+            "score": 0.54
+          },
+          {
+            "id": "ru-a2-sravnenie-i-prevoskhodnaya-stepen",
+            "title": "Сравнительная и превосходная степень прилагательных",
+            "score": 0.51
+          },
+          {
+            "id": "ru-b1-sravnitelnye-oboroty-kak-budto-slovno",
+            "title": "Сравнительные обороты с союзами «как будто», «словно», «точно»",
+            "score": 0.51
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/B1/u02-l03": {
+    "title": "Официальные претензии и обращение к руководству",
+    "ref": 3,
+    "items": [
+      {
+        "text": "Я настаиваю на разговоре с управляющим отеля",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      },
+      {
+        "text": "Качество услуг совершенно не соответствует заявленному",
+        "confidence": "medium",
+        "grammarId": "ru-b1-deeprichastie-sovershennogo-vida",
+        "alternatives": [
+          {
+            "id": "ru-b1-deeprichastie-sovershennogo-vida",
+            "title": "Деепричастия совершенного вида (-в/-вши, -ши)",
+            "score": 0.46
+          },
+          {
+            "id": "ru-a1-sovershennyy-i-nesovershennyy-vid",
+            "title": "Совершенный и несовершенный вид",
+            "score": 0.43
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/B1/u02-l04": {
+    "title": "Правила проживания и общение с собственником",
+    "ref": 4,
+    "items": [
+      {
+        "text": "Пассивный залог для выражения правил (Мусор выносится по...)",
+        "confidence": "medium",
+        "grammarId": "ru-b1-kratkie-stradatelnye-prichastiya",
+        "alternatives": [
+          {
+            "id": "ru-b1-kratkie-stradatelnye-prichastiya",
+            "title": "Краткие страдательные причастия и пассивный залог",
+            "score": 0.51
+          },
+          {
+            "id": "ru-b1-passivnyy-zalog-tvoritnyy-subyekt",
+            "title": "Пассивные конструкции с творительным падежом субъекта",
+            "score": 0.27
+          },
+          {
+            "id": "ru-a2-prevochodnaya-stepen-naibolee-samyy",
+            "title": "Способы выражения превосходной степени (наиболее, наименее)",
+            "score": 0.23
+          }
+        ]
+      },
+      {
+        "text": "Вежливые формулировки просьб к хозяину жилья",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-b1-povelitelnoe-naklonenie-vezhlivaya-prosba",
+            "title": "Формы косвенного побуждения и вежливые модальные обороты",
+            "score": 0.32
+          },
+          {
+            "id": "ru-a2-povelitelnaya-mnojestvennaya-forma",
+            "title": "Совместное действие и вежливый императив",
+            "score": 0.31
+          },
+          {
+            "id": "ru-a1-vezhlivye-prosby-i-poveleniya",
+            "title": "Формулы вежливости и просьбы (Скажите, пожалуйста / Будьте добры)",
+            "score": 0.25
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/B1/u03-l01": {
+    "title": "Гастрономический ресторан, дегустационное меню и эногастрономия",
+    "ref": 1,
+    "items": [
+      {
+        "text": "Посоветуйте, пожалуйста, вино, которое подходит к...",
+        "confidence": "medium",
+        "grammarId": "ru-a1-kotoryy",
+        "alternatives": [
+          {
+            "id": "ru-a1-kotoryy",
+            "title": "Который",
+            "score": 0.52
+          },
+          {
+            "id": "ru-a1-kotoryy-chas",
+            "title": "Который час?",
+            "score": 0.33
+          },
+          {
+            "id": "ru-a2-mestoimenie-kotoryy",
+            "title": "Определительное местоимение «который» и его склонение",
+            "score": 0.29
+          }
+        ]
+      },
+      {
+        "text": "Что шеф-повар рекомендует к... ?",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/B1/u03-l02": {
+    "title": "Строгие медицинские диеты и вопросы о приготовлении",
+    "ref": 2,
+    "items": [
+      {
+        "text": "Из-за строгих медицинских ограничений мне нельзя...",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-a1-mozhno-nelzya-nuzhno",
+            "title": "Можно, нельзя, нужно",
+            "score": 0.32
+          },
+          {
+            "id": "ru-a1-konstruktsii-mozhno-nelzya-nuzhno",
+            "title": "Безличные конструкции: «можно», «нельзя», «нужно / надо»",
+            "score": 0.28
+          },
+          {
+            "id": "ru-b1-datelnyy-padezh-subyekta-otsenki",
+            "title": "Дательный падеж субъекта оценки (мне кажется, ему видится)",
+            "score": 0.26
+          }
+        ]
+      },
+      {
+        "text": "Не могли бы вы объяснить, как именно готовится это блюдо ?",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-a1-ty-i-vy",
+            "title": "Ты и вы",
+            "score": 0.36
+          },
+          {
+            "id": "ru-a2-glagoly-dvizheniya-s-pristavkami-v-vy-dop-pere",
+            "title": "Глаголы движения с приставками в-, вы-, до-, пере-, под-, от-",
+            "score": 0.32
+          },
+          {
+            "id": "ru-b1-poyasnitelnye-konstruktsii-to-est-a-imenno",
+            "title": "Пояснительные конструкции (то есть, а именно, другими словами)",
+            "score": 0.3
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/B1/u03-l03": {
+    "title": "Винодельни, дегустации и кулинарные мастер-классы",
+    "ref": 3,
+    "items": [
+      {
+        "text": "Вопросы о технологии и этапах производства",
+        "confidence": "medium",
+        "grammarId": "ru-b1-kosvennyy-vopros-chastitsa-li",
+        "alternatives": [
+          {
+            "id": "ru-b1-kosvennyy-vopros-chastitsa-li",
+            "title": "Косвенный вопрос с частицей «ли»",
+            "score": 0.61
+          }
+        ]
+      },
+      {
+        "text": "Пассивный залог при описании процессов (Виноград собирают в...)",
+        "confidence": "medium",
+        "grammarId": "ru-b1-kratkie-stradatelnye-prichastiya",
+        "alternatives": [
+          {
+            "id": "ru-b1-kratkie-stradatelnye-prichastiya",
+            "title": "Краткие страдательные причастия и пассивный залог",
+            "score": 0.51
+          },
+          {
+            "id": "ru-b1-passivnyy-zalog-tvoritnyy-subyekt",
+            "title": "Пассивные конструкции с творительным падежом субъекта",
+            "score": 0.27
+          },
+          {
+            "id": "ru-a2-vidy-glagola-osnovy-nsv-sv",
+            "title": "Виды глагола: значение НСВ (процесс, повтор) и СВ (результат, факт)",
+            "score": 0.21
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/B1/u03-l04": {
+    "title": "Разрешение споров по счету и качеству обслуживания",
+    "ref": 4,
+    "items": [
+      {
+        "text": "Я возражаю против включения платы за обслуживание, так как...",
+        "confidence": "medium",
+        "grammarId": "ru-a2-soyuzy-prichiny-i-sledstviya-poetomu-tak-kak",
+        "alternatives": [
+          {
+            "id": "ru-a2-soyuzy-prichiny-i-sledstviya-poetomu-tak-kak",
+            "title": "Причинно-следственные связи: «поэтому», «так как», «из-за»",
+            "score": 0.39
+          },
+          {
+            "id": "ru-a1-soyuzy-prichiny-potomu-chto-tak-kak",
+            "title": "Союзы причины: «потому что» и «так как»",
+            "score": 0.36
+          },
+          {
+            "id": "ru-c1-vydelitelnye-cleft-konstruktsii",
+            "title": "Выделительные конструкции («Что нас действительно волнует, так это...»)",
+            "score": 0.23
+          }
+        ]
+      },
+      {
+        "text": "Степень прожарки мяса не соответствует заказу",
+        "confidence": "medium",
+        "grammarId": "ru-a1-prevoskhodnaya-stepen",
+        "alternatives": [
+          {
+            "id": "ru-a1-prevoskhodnaya-stepen",
+            "title": "Превосходная степень",
+            "score": 0.44
+          },
+          {
+            "id": "ru-a1-sravnitelnaya-stepen",
+            "title": "Сравнительная степень",
+            "score": 0.44
+          },
+          {
+            "id": "ru-a2-sravnenie-i-prevoskhodnaya-stepen",
+            "title": "Сравнительная и превосходная степень прилагательных",
+            "score": 0.42
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/B1/u04-l01": {
+    "title": "Исторические экскурсии и культурный обмен",
+    "ref": 1,
+    "items": [
+      {
+        "text": "Страдательный залог при описании исторических событий",
+        "confidence": "medium",
+        "grammarId": "ru-b1-kratkie-stradatelnye-prichastiya",
+        "alternatives": [
+          {
+            "id": "ru-b1-kratkie-stradatelnye-prichastiya",
+            "title": "Краткие страдательные причастия и пассивный залог",
+            "score": 0.52
+          },
+          {
+            "id": "ru-b1-stradatelnye-prichastiya-nastoyashchego-i-proshedshego",
+            "title": "Страдательные причастия настоящего и прошедшего времени",
+            "score": 0.26
+          },
+          {
+            "id": "ru-a2-kratkie-prichastiya-vvedenie",
+            "title": "Краткие страдательные причастия в простом контексте (открыт, закрыт)",
+            "score": 0.2
+          }
+        ]
+      },
+      {
+        "text": "Сложные придаточные предложения с союзом \"который\"",
+        "confidence": "medium",
+        "grammarId": "ru-a1-kotoryy",
+        "alternatives": [
+          {
+            "id": "ru-a1-kotoryy",
+            "title": "Который",
+            "score": 0.46
+          },
+          {
+            "id": "ru-a1-soyuzy",
+            "title": "Союзы",
+            "score": 0.43
+          },
+          {
+            "id": "ru-a2-uslovnye-predlozheniya-esli",
+            "title": "Условные предложения с союзом «если»",
+            "score": 0.34
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/B1/u04-l02": {
+    "title": "Посещение фестивалей и театрально-концертных мероприятий",
+    "ref": 2,
+    "items": [
+      {
+        "text": "Косвенный вопрос при бронировании (Не подскажете ли, остались ли билеты... ?)",
+        "confidence": "high",
+        "grammarId": "ru-b1-kosvennyy-vopros-chastitsa-li",
+        "alternatives": [
+          {
+            "id": "ru-b1-kosvennyy-vopros-chastitsa-li",
+            "title": "Косвенный вопрос с частицей «ли»",
+            "score": 0.75
+          },
+          {
+            "id": "ru-a2-kosvennaya-rech-i-mestoimeniya",
+            "title": "Косвенная речь и союзные слова",
+            "score": 0.25
+          },
+          {
+            "id": "ru-b1-povelitelnoe-naklonenie-vezhlivaya-prosba",
+            "title": "Формы косвенного побуждения и вежливые модальные обороты",
+            "score": 0.24
+          }
+        ]
+      },
+      {
+        "text": "Выражение впечатлений об искусстве",
+        "confidence": "medium",
+        "grammarId": "ru-a2-konstruktsii-dolzhen-obyazan-nado",
+        "alternatives": [
+          {
+            "id": "ru-a2-konstruktsii-dolzhen-obyazan-nado",
+            "title": "Выражение должествования: «должен», «обязан», «приходится»",
+            "score": 0.48
+          },
+          {
+            "id": "ru-a2-vyrazhenie-doba-i-chasa-vremeni",
+            "title": "Точное выражение времени, дат и лет (в двух тысяча двадцать четвёртом году)",
+            "score": 0.44
+          },
+          {
+            "id": "ru-b2-sintaksis-diplomaticheskoy-peregovornoy-rechi",
+            "title": "Дипломатический синтаксис: эвфемизмы и косвенное выражение",
+            "score": 0.3
+          }
+        ]
+      }
+    ],
+    "grammarIds": [
+      "ru-b1-kosvennyy-vopros-chastitsa-li"
+    ]
+  },
+  "ru/travelling/B1/u04-l03": {
+    "title": "Социальные нормы, дресс-код и культурные табу",
+    "ref": 3,
+    "items": [
+      {
+        "text": "Глаголы должествования для описания традиций (Принято..., Не принято...)",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-b1-bezlichnye-predlozheniya-s-kratkimi-stradatelynymi",
+            "title": "Безличные предложения («сказано», «написано», «принято»)",
+            "score": 0.31
+          },
+          {
+            "id": "ru-a2-konstruktsii-dolzhen-obyazan-nado",
+            "title": "Выражение должествования: «должен», «обязан», «приходится»",
+            "score": 0.28
+          },
+          {
+            "id": "ru-a1-glagoly-dvizheniya",
+            "title": "Глаголы движения",
+            "score": 0.22
+          }
+        ]
+      },
+      {
+        "text": "Сравнение культурных особенностей",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-c1-akusticheskaya-adaptivnost-i-govor",
+            "title": "Фонетико-синтаксические особенности публичной монологической речи",
+            "score": 0.3
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/B1/u04-l04": {
+    "title": "Экотуризм, национальные парки и охрана природы",
+    "ref": 4,
+    "items": [
+      {
+        "text": "Конструкции обязательства и запрета (Посетители обязаны следовать по...)",
+        "confidence": "medium",
+        "grammarId": "ru-a2-konstruktsii-dolzhen-obyazan-nado",
+        "alternatives": [
+          {
+            "id": "ru-a2-konstruktsii-dolzhen-obyazan-nado",
+            "title": "Выражение должествования: «должен», «обязан», «приходится»",
+            "score": 0.44
+          }
+        ]
+      },
+      {
+        "text": "Выражение экологической осознанности",
+        "confidence": "medium",
+        "grammarId": "ru-a2-konstruktsii-dolzhen-obyazan-nado",
+        "alternatives": [
+          {
+            "id": "ru-a2-konstruktsii-dolzhen-obyazan-nado",
+            "title": "Выражение должествования: «должен», «обязан», «приходится»",
+            "score": 0.48
+          },
+          {
+            "id": "ru-a2-vyrazhenie-doba-i-chasa-vremeni",
+            "title": "Точное выражение времени, дат и лет (в двух тысяча двадцать четвёртом году)",
+            "score": 0.44
+          },
+          {
+            "id": "ru-b2-sintaksis-diplomaticheskoy-peregovornoy-rechi",
+            "title": "Дипломатический синтаксис: эвфемизмы и косвенное выражение",
+            "score": 0.3
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/B1/u05-l01": {
+    "title": "Серьезная медицинская помощь и госпитализация",
+    "ref": 1,
+    "items": [
+      {
+        "text": "Подробный отчет об анамнезе и хронических заболеваниях",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      },
+      {
+        "text": "Точное описание динамики симптомов",
+        "confidence": "medium",
+        "grammarId": "ru-b1-sravnitelnye-oboroty-kak-budto-slovno",
+        "alternatives": [
+          {
+            "id": "ru-b1-sravnitelnye-oboroty-kak-budto-slovno",
+            "title": "Сравнительные обороты с союзами «как будто», «словно», «точно»",
+            "score": 0.48
+          },
+          {
+            "id": "ru-a2-vyrazhenie-doba-i-chasa-vremeni",
+            "title": "Точное выражение времени, дат и лет (в двух тысяча двадцать четвёртом году)",
+            "score": 0.41
+          },
+          {
+            "id": "ru-c2-tochnyy-kontrol-sfery-deystviya-chastits",
+            "title": "Точный контроль сферы действия с помощью частиц (именно, едва ли)",
+            "score": 0.25
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/B1/u05-l02": {
+    "title": "Подача заявления в полицию и помощь в посольстве",
+    "ref": 2,
+    "items": [
+      {
+        "text": "Прошедшее время при составлении хронологии кражи",
+        "confidence": "high",
+        "grammarId": "ru-a1-proshedshee-vremya",
+        "alternatives": [
+          {
+            "id": "ru-a1-proshedshee-vremya",
+            "title": "Прошедшее время",
+            "score": 0.71
+          },
+          {
+            "id": "ru-a1-proshedshee-vremya-glagola-byt",
+            "title": "Прошедшее время глагола «быть» (был, была, было, были)",
+            "score": 0.61
+          },
+          {
+            "id": "ru-a2-proshedshee-vremya-i-vid",
+            "title": "Прошедшее время и вид глагола",
+            "score": 0.6
+          }
+        ]
+      },
+      {
+        "text": "Официально-деловой стиль при оформлении документов",
+        "confidence": "medium",
+        "grammarId": "ru-b1-glagoly-myshleniya-i-rechi",
+        "alternatives": [
+          {
+            "id": "ru-b1-glagoly-myshleniya-i-rechi",
+            "title": "Глаголы речи и мысли в научном и деловом стиле",
+            "score": 0.42
+          },
+          {
+            "id": "ru-c2-sintaksis-ofitsialno-delovogo-i-yuridicheskogo-stilya",
+            "title": "Синтаксис официально-делового и юридического стиля",
+            "score": 0.36
+          },
+          {
+            "id": "ru-b2-frazeologiya-ofitsialno-delovogo-stilya",
+            "title": "Официально-деловой синтаксис и канцеляризмы",
+            "score": 0.26
+          }
+        ]
+      }
+    ],
+    "grammarIds": [
+      "ru-a1-proshedshee-vremya"
+    ]
+  },
+  "ru/travelling/B1/u05-l03": {
+    "title": "Оформление страхового случая и медицинская эвакуация",
+    "ref": 3,
+    "items": [
+      {
+        "text": "Формулировки деловой переписки по страховым страховым выплатам",
+        "confidence": "medium",
+        "grammarId": "ru-b1-glagoly-myshleniya-i-rechi",
+        "alternatives": [
+          {
+            "id": "ru-b1-glagoly-myshleniya-i-rechi",
+            "title": "Глаголы речи и мысли в научном и деловом стиле",
+            "score": 0.45
+          },
+          {
+            "id": "ru-b2-frazeologiya-ofitsialno-delovogo-stilya",
+            "title": "Официально-деловой синтаксис и канцеляризмы",
+            "score": 0.27
+          },
+          {
+            "id": "ru-c2-sintaksis-ofitsialno-delovogo-i-yuridicheskogo-stilya",
+            "title": "Синтаксис официально-делового и юридического стиля",
+            "score": 0.25
+          }
+        ]
+      },
+      {
+        "text": "Условия покрытия расходов в страховом полисе",
+        "confidence": "medium",
+        "grammarId": "ru-b1-soyuzy-usloviya-pri-uslovii-esli-by",
+        "alternatives": [
+          {
+            "id": "ru-b1-soyuzy-usloviya-pri-uslovii-esli-by",
+            "title": "Сложные условные союзы (при условии если, в случае если)",
+            "score": 0.46
+          },
+          {
+            "id": "ru-b2-slozhnye-uslovnye-konstruktsii-s-by",
+            "title": "Сложные гипотетические условия с частицей «бы» (если бы... то бы...)",
+            "score": 0.25
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/travelling/B1/u05-l04": {
+    "title": "Чрезвычайные ситуации и план эвакуации при кризисах",
+    "ref": 4,
+    "items": [
+      {
+        "text": "Прошедшее время при описании неожиданных событий (Мы собиирались уезжать, когда...)",
+        "confidence": "medium",
+        "grammarId": "ru-a1-proshedshee-vremya",
+        "alternatives": [
+          {
+            "id": "ru-a1-proshedshee-vremya",
+            "title": "Прошедшее время",
+            "score": 0.47
+          },
+          {
+            "id": "ru-a1-proshedshee-vremya-glagola-byt",
+            "title": "Прошедшее время глагола «быть» (был, была, было, были)",
+            "score": 0.37
+          },
+          {
+            "id": "ru-a2-proshedshee-vremya-i-vid",
+            "title": "Прошедшее время и вид глагола",
+            "score": 0.33
+          }
+        ]
+      },
+      {
+        "text": "Принятие решений в кризисных ситуациях",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-b1-bezlichnye-predlozheniya-s-kratkimi-stradatelynymi",
+            "title": "Безличные предложения («сказано», «написано», «принято»)",
+            "score": 0.35
+          },
+          {
+            "id": "ru-b1-frazeologizmy-i-ustoychivye-sochetaniya-b1",
+            "title": "Устойчивые глагольно-именные сочетания (принимать решение, иметь значение)",
+            "score": 0.31
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  }
+}

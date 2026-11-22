@@ -1,0 +1,4265 @@
+{
+  "ru/professional/B1/u01-l01": {
+    "title": "Написание деловых писем и этикет переписки",
+    "ref": 1,
+    "items": [
+      {
+        "text": "Формулы обращения и вежливости (Уважаемый..., С уважением)",
+        "confidence": "medium",
+        "grammarId": "ru-a1-vezhlivye-prosby-i-poveleniya",
+        "alternatives": [
+          {
+            "id": "ru-a1-vezhlivye-prosby-i-poveleniya",
+            "title": "Формулы вежливости и просьбы (Скажите, пожалуйста / Будьте добры)",
+            "score": 0.48
+          }
+        ]
+      },
+      {
+        "text": "Конструкции будущего времени для планирования встреч",
+        "confidence": "high",
+        "grammarId": "ru-a1-budushchee-vremya",
+        "alternatives": [
+          {
+            "id": "ru-a1-budushchee-vremya",
+            "title": "Будущее время",
+            "score": 0.74
+          },
+          {
+            "id": "ru-a2-vidy-glagola-v-budushchem-vremeni",
+            "title": "Будущее время: НСВ (буду делать) vs СВ (сделаю)",
+            "score": 0.52
+          },
+          {
+            "id": "ru-a1-budushchee-vremya-slozhashchee",
+            "title": "Сложное будущее время (буду + инфинитив)",
+            "score": 0.5
+          }
+        ]
+      }
+    ],
+    "grammarIds": [
+      "ru-a1-budushchee-vremya"
+    ]
+  },
+  "ru/professional/B1/u01-l02": {
+    "title": "Деловые запросы, уточнения и напоминания",
+    "ref": 2,
+    "items": [
+      {
+        "text": "Вежливое наклонение (Не могли бы вы..., Просим вас)",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-a1-ty-i-vy",
+            "title": "Ты и вы",
+            "score": 0.31
+          },
+          {
+            "id": "ru-a1-povelitelnoe-naklonenie",
+            "title": "Повелительное наклонение",
+            "score": 0.3
+          },
+          {
+            "id": "ru-a2-soslagatelnoe-naklonenie-by",
+            "title": "Сослагательное наклонение с частицей «бы»",
+            "score": 0.28
+          }
+        ]
+      },
+      {
+        "text": "Косвенные вопросы (Уточните, пожалуйста, доступен ли...)",
+        "confidence": "high",
+        "grammarId": "ru-b1-kosvennyy-vopros-chastitsa-li",
+        "alternatives": [
+          {
+            "id": "ru-b1-kosvennyy-vopros-chastitsa-li",
+            "title": "Косвенный вопрос с частицей «ли»",
+            "score": 0.63
+          },
+          {
+            "id": "ru-a2-kosvennaya-rech-i-mestoimeniya",
+            "title": "Косвенная речь и союзные слова",
+            "score": 0.21
+          },
+          {
+            "id": "ru-a1-vezhlivye-prosby-i-poveleniya",
+            "title": "Формулы вежливости и просьбы (Скажите, пожалуйста / Будьте добры)",
+            "score": 0.2
+          }
+        ]
+      }
+    ],
+    "grammarIds": [
+      "ru-b1-kosvennyy-vopros-chastitsa-li"
+    ]
+  },
+  "ru/professional/B1/u01-l03": {
+    "title": "Составление служебных записок, конспектов и отчетов",
+    "ref": 3,
+    "items": [
+      {
+        "text": "Страдательный залог для объективного изложения (было принято решение, установлено)",
+        "confidence": "medium",
+        "grammarId": "ru-b1-kratkie-stradatelnye-prichastiya",
+        "alternatives": [
+          {
+            "id": "ru-b1-kratkie-stradatelnye-prichastiya",
+            "title": "Краткие страдательные причастия и пассивный залог",
+            "score": 0.44
+          },
+          {
+            "id": "ru-b1-bezlichnye-predlozheniya-s-kratkimi-stradatelynymi",
+            "title": "Безличные предложения («сказано», «написано», «принято»)",
+            "score": 0.23
+          },
+          {
+            "id": "ru-b1-stradatelnye-prichastiya-nastoyashchego-i-proshedshego",
+            "title": "Страдательные причастия настоящего и прошедшего времени",
+            "score": 0.22
+          }
+        ]
+      },
+      {
+        "text": "Списки и побудительные конструкции",
+        "confidence": "medium",
+        "grammarId": "ru-a2-povelitelnoe-naklonenie-pust-pust-davaite",
+        "alternatives": [
+          {
+            "id": "ru-a2-povelitelnoe-naklonenie-pust-pust-davaite",
+            "title": "Побудительные конструкции («Давай!», «Пусть...», «Давайте...»)",
+            "score": 0.56
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/B1/u01-l04": {
+    "title": "Уведомления об отсутствии, задержках и извинения",
+    "ref": 4,
+    "items": [
+      {
+        "text": "Прошедшее время глаголов совершенного вида для объяснения причин",
+        "confidence": "medium",
+        "grammarId": "ru-a1-proshedshee-vremya-glagola-byt",
+        "alternatives": [
+          {
+            "id": "ru-a1-proshedshee-vremya-glagola-byt",
+            "title": "Прошедшее время глагола «быть» (был, была, было, были)",
+            "score": 0.52
+          },
+          {
+            "id": "ru-a1-proshedshee-vremya",
+            "title": "Прошедшее время",
+            "score": 0.47
+          },
+          {
+            "id": "ru-a2-proshedshee-vremya-i-vid",
+            "title": "Прошедшее время и вид глагола",
+            "score": 0.46
+          }
+        ]
+      },
+      {
+        "text": "Условные предложения для предложения альтернатив (В случае срочности свяжитесь с...)",
+        "confidence": "medium",
+        "grammarId": "ru-b1-soyuzy-usloviya-pri-uslovii-esli-by",
+        "alternatives": [
+          {
+            "id": "ru-b1-soyuzy-usloviya-pri-uslovii-esli-by",
+            "title": "Сложные условные союзы (при условии если, в случае если)",
+            "score": 0.54
+          },
+          {
+            "id": "ru-a2-uslovnye-predlozheniya-esli",
+            "title": "Условные предложения с союзом «если»",
+            "score": 0.48
+          },
+          {
+            "id": "ru-a2-uslovnye-predlozheniya-esli-esli-by",
+            "title": "Условные предложения: реальное «если» и нереальное «если бы»",
+            "score": 0.41
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/B1/u02-l01": {
+    "title": "Участие в совещаниях и отчет о статусе задач",
+    "ref": 1,
+    "items": [
+      {
+        "text": "Совершенный вид глагола для отчета о выполненных задачах",
+        "confidence": "medium",
+        "grammarId": "ru-a1-sovershennyy-i-nesovershennyy-vid",
+        "alternatives": [
+          {
+            "id": "ru-a1-sovershennyy-i-nesovershennyy-vid",
+            "title": "Совершенный и несовершенный вид",
+            "score": 0.53
+          },
+          {
+            "id": "ru-a2-proshedshee-vremya-i-vid",
+            "title": "Прошедшее время и вид глагола",
+            "score": 0.46
+          },
+          {
+            "id": "ru-b1-vidy-glagola-v-infinitive",
+            "title": "Виды глагола при инфинитиве (надо сделать / не надо делать)",
+            "score": 0.39
+          }
+        ]
+      },
+      {
+        "text": "Модальные глаголы для предложений (следует, можно, нужно)",
+        "confidence": "medium",
+        "grammarId": "ru-a1-mozhno-nelzya-nuzhno",
+        "alternatives": [
+          {
+            "id": "ru-a1-mozhno-nelzya-nuzhno",
+            "title": "Можно, нельзя, нужно",
+            "score": 0.4
+          },
+          {
+            "id": "ru-a1-konstruktsii-mozhno-nelzya-nuzhno",
+            "title": "Безличные конструкции: «можно», «нельзя», «нужно / надо»",
+            "score": 0.31
+          },
+          {
+            "id": "ru-a1-glagoly-moch-i-umet",
+            "title": "Модальные глаголы «мочь» и «уметь»",
+            "score": 0.26
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/B1/u02-l02": {
+    "title": "Уточнение информации и вежливое перебивание",
+    "ref": 2,
+    "items": [
+      {
+        "text": "Выражения для уточнения (Правильно ли я понимаю, Что вы имеете в виду)",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-a1-ty-i-vy",
+            "title": "Ты и вы",
+            "score": 0.33
+          },
+          {
+            "id": "ru-a2-glagoly-dvizheniya-s-pristavkami-v-vy-dop-pere",
+            "title": "Глаголы движения с приставками в-, вы-, до-, пере-, под-, от-",
+            "score": 0.29
+          },
+          {
+            "id": "ru-a2-prevochodnaya-stepen-naibolee-samyy",
+            "title": "Способы выражения превосходной степени (наиболее, наименее)",
+            "score": 0.28
+          }
+        ]
+      },
+      {
+        "text": "Формулы вежливого вмешательства (Позвольте уточнить, Можно добавить)",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-b1-povelitelnoe-naklonenie-vezhlivaya-prosba",
+            "title": "Формы косвенного побуждения и вежливые модальные обороты",
+            "score": 0.25
+          },
+          {
+            "id": "ru-a1-mozhno-nelzya-nuzhno",
+            "title": "Можно, нельзя, нужно",
+            "score": 0.24
+          },
+          {
+            "id": "ru-a2-povelitelnaya-mnojestvennaya-forma",
+            "title": "Совместное действие и вежливый императив",
+            "score": 0.24
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/B1/u02-l03": {
+    "title": "Выражение согласия, несогласия и внесение предложений",
+    "ref": 3,
+    "items": [
+      {
+        "text": "Смягчение несогласия (Я согласен с этой частью, но...)",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      },
+      {
+        "text": "Вводные слова и конструкции предложения (Предлагаю, Что если мы...)",
+        "confidence": "medium",
+        "grammarId": "ru-a2-uslovnye-predlozheniya-esli",
+        "alternatives": [
+          {
+            "id": "ru-a2-uslovnye-predlozheniya-esli",
+            "title": "Условные предложения с союзом «если»",
+            "score": 0.39
+          },
+          {
+            "id": "ru-a1-poryadok-slov",
+            "title": "Порядок слов в предложении",
+            "score": 0.35
+          },
+          {
+            "id": "ru-a2-uslovnye-predlozheniya-esli-esli-by",
+            "title": "Условные предложения: реальное «если» и нереальное «если бы»",
+            "score": 0.32
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/B1/u02-l04": {
+    "title": "Ведение протокола встречи, конспектирование и поручения",
+    "ref": 4,
+    "items": [
+      {
+        "text": "Косвенная речь для фиксации поручений",
+        "confidence": "medium",
+        "grammarId": "ru-a2-kosvennaya-rech-i-mestoimeniya",
+        "alternatives": [
+          {
+            "id": "ru-a2-kosvennaya-rech-i-mestoimeniya",
+            "title": "Косвенная речь и союзные слова",
+            "score": 0.65
+          },
+          {
+            "id": "ru-a1-pryamaya-i-kosvennaya-rech",
+            "title": "Прямая и косвенная речь",
+            "score": 0.61
+          },
+          {
+            "id": "ru-b2-kosvennaya-rech-ritoricheskie-priemy",
+            "title": "Косвенная речь в официальном стиле и цитирование",
+            "score": 0.35
+          }
+        ]
+      },
+      {
+        "text": "Конструкции должествования (Задача должна быть выполнена до...)",
+        "confidence": "medium",
+        "grammarId": "ru-a2-konstruktsii-dolzhen-obyazan-nado",
+        "alternatives": [
+          {
+            "id": "ru-a2-konstruktsii-dolzhen-obyazan-nado",
+            "title": "Выражение должествования: «должен», «обязан», «приходится»",
+            "score": 0.47
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/B1/u03-l01": {
+    "title": "Структура бизнес-презентации или учебной лекции",
+    "ref": 1,
+    "items": [
+      {
+        "text": "Слова-связки и вводные слова (Во-первых, перейдем к, в заключение)",
+        "confidence": "medium",
+        "grammarId": "ru-a2-vvodnye-slova-i-frazy-a2",
+        "alternatives": [
+          {
+            "id": "ru-a2-vvodnye-slova-i-frazy-a2",
+            "title": "Вводные слова для структурирования речи (во-первых, во-вторых)",
+            "score": 0.53
+          },
+          {
+            "id": "ru-b1-vvodnye-slova-poryadok-mysley",
+            "title": "Вводные слова структуры текста (следовательно, таким образом)",
+            "score": 0.31
+          },
+          {
+            "id": "ru-b1-vvodnye-slova-stepen-dostovernosti",
+            "title": "Вводные слова степени достоверности (безусловно, вероятно, едва ли)",
+            "score": 0.31
+          }
+        ]
+      },
+      {
+        "text": "Настоящее время для представления компании, курса и продукта",
+        "confidence": "medium",
+        "grammarId": "ru-a1-bez-glagola-byt",
+        "alternatives": [
+          {
+            "id": "ru-a1-bez-glagola-byt",
+            "title": "Без глагола «быть» в настоящем времени",
+            "score": 0.59
+          },
+          {
+            "id": "ru-a1-nastoyashchee-vremya",
+            "title": "Настоящее время глагола",
+            "score": 0.59
+          },
+          {
+            "id": "ru-b1-stradatelnye-prichastiya-nastoyashchego-i-proshedshego",
+            "title": "Страдательные причастия настоящего и прошедшего времени",
+            "score": 0.56
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/B1/u03-l02": {
+    "title": "Презентация данных, графиков и научных показателей",
+    "ref": 2,
+    "items": [
+      {
+        "text": "Глаголы изменения и динамики (вырасти на 5%, снизиться, стабилизироваться)",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-a1-glagoly-dvizheniya",
+            "title": "Глаголы движения",
+            "score": 0.25
+          },
+          {
+            "id": "ru-b2-sintaksis-sravnitelynykh-stipeney",
+            "title": "Синтаксические конструкции с градацией и параллельным изменением",
+            "score": 0.23
+          },
+          {
+            "id": "ru-a2-pristavochnye-glagoly-dvizheniya",
+            "title": "Приставочные глаголы движения",
+            "score": 0.22
+          }
+        ]
+      },
+      {
+        "text": "Предлоги места и количества (составить, достигнуть)",
+        "confidence": "medium",
+        "grammarId": "ru-b1-predlogi-mesta-iz-pod-iz-za",
+        "alternatives": [
+          {
+            "id": "ru-b1-predlogi-mesta-iz-pod-iz-za",
+            "title": "Составные предлоги места (из-под, из-за)",
+            "score": 0.74
+          },
+          {
+            "id": "ru-a1-predlogi-mesta",
+            "title": "Предлоги места",
+            "score": 0.72
+          },
+          {
+            "id": "ru-a1-predlogi-vremeni",
+            "title": "Предлоги времени",
+            "score": 0.36
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/B1/u03-l03": {
+    "title": "Описание рабочих процессов, лабораторных процедур и инструкций",
+    "ref": 3,
+    "items": [
+      {
+        "text": "Наречия последовательности (сначала, затем, после того как)",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-b1-soyuzy-tseli-dlya-togo-chtoby",
+            "title": "Союзы цели (для того чтобы, с тем чтобы)",
+            "score": 0.35
+          },
+          {
+            "id": "ru-a1-narechiya-chastoty",
+            "title": "Наречия частоты",
+            "score": 0.33
+          },
+          {
+            "id": "ru-a2-vremenni-soyuzy-kogda-poka-posle-togo-kak",
+            "title": "Временные союзы (когда, пока, после того как, перед тем как)",
+            "score": 0.3
+          }
+        ]
+      },
+      {
+        "text": "Страдательные конструкции для описания алгоритма действий",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-b1-stradatelnye-prichastiya-nastoyashchego-i-proshedshego",
+            "title": "Страдательные причастия настоящего и прошедшего времени",
+            "score": 0.34
+          },
+          {
+            "id": "ru-a2-povelitelnaya-mnojestvennaya-forma",
+            "title": "Совместное действие и вежливый императив",
+            "score": 0.33
+          },
+          {
+            "id": "ru-b1-kratkie-stradatelnye-prichastiya",
+            "title": "Краткие страдательные причастия и пассивный залог",
+            "score": 0.33
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/B1/u03-l04": {
+    "title": "Ответы на вопросы аудитории и студентов (Q&A)",
+    "ref": 4,
+    "items": [
+      {
+        "text": "Фразы вежливого ответа и отсрочки ответа (Отличный вопрос, я уточню это...)",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-b1-kosvennyy-vopros-chastitsa-li",
+            "title": "Косвенный вопрос с частицей «ли»",
+            "score": 0.36
+          },
+          {
+            "id": "ru-b1-povelitelnoe-naklonenie-vezhlivaya-prosba",
+            "title": "Формы косвенного побуждения и вежливые модальные обороты",
+            "score": 0.25
+          },
+          {
+            "id": "ru-a2-povelitelnaya-mnojestvennaya-forma",
+            "title": "Совместное действие и вежливый императив",
+            "score": 0.24
+          }
+        ]
+      },
+      {
+        "text": "Условные предложения вежливости (Если вас интересуют детали, я направлю...)",
+        "confidence": "high",
+        "grammarId": "ru-a2-uslovnye-predlozheniya-esli",
+        "alternatives": [
+          {
+            "id": "ru-a2-uslovnye-predlozheniya-esli",
+            "title": "Условные предложения с союзом «если»",
+            "score": 0.64
+          },
+          {
+            "id": "ru-a2-uslovnye-predlozheniya-esli-esli-by",
+            "title": "Условные предложения: реальное «если» и нереальное «если бы»",
+            "score": 0.54
+          },
+          {
+            "id": "ru-b1-soyuzy-usloviya-pri-uslovii-esli-by",
+            "title": "Сложные условные союзы (при условии если, в случае если)",
+            "score": 0.4
+          }
+        ]
+      }
+    ],
+    "grammarIds": [
+      "ru-a2-uslovnye-predlozheniya-esli"
+    ]
+  },
+  "ru/professional/B1/u04-l01": {
+    "title": "Основы коммерческих переговоров, расценок и условий",
+    "ref": 1,
+    "items": [
+      {
+        "text": "Условные предложения первого типа (Если вы предоставите скидку, мы согласимся...)",
+        "confidence": "medium",
+        "grammarId": "ru-a2-uslovnye-predlozheniya-esli",
+        "alternatives": [
+          {
+            "id": "ru-a2-uslovnye-predlozheniya-esli",
+            "title": "Условные предложения с союзом «если»",
+            "score": 0.53
+          },
+          {
+            "id": "ru-a2-uslovnye-predlozheniya-esli-esli-by",
+            "title": "Условные предложения: реальное «если» и нереальное «если бы»",
+            "score": 0.43
+          },
+          {
+            "id": "ru-b1-soyuzy-usloviya-pri-uslovii-esli-by",
+            "title": "Сложные условные союзы (при условии если, в случае если)",
+            "score": 0.31
+          }
+        ]
+      },
+      {
+        "text": "Числительные и бюджетные выражения",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-a1-chislitelnye-i-padezh",
+            "title": "Числительные и падеж",
+            "score": 0.37
+          },
+          {
+            "id": "ru-a2-prevochodnaya-stepen-naibolee-samyy",
+            "title": "Способы выражения превосходной степени (наиболее, наименее)",
+            "score": 0.37
+          },
+          {
+            "id": "ru-a1-poryadkovye-chislitelnye",
+            "title": "Порядковые числительные",
+            "score": 0.31
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/B1/u04-l02": {
+    "title": "Формулирование предложений и встречных условий",
+    "ref": 2,
+    "items": [
+      {
+        "text": "Сослагательное наклонение (Что если бы мы предложили...)",
+        "confidence": "medium",
+        "grammarId": "ru-a2-soslagatelnoe-naklonenie-by",
+        "alternatives": [
+          {
+            "id": "ru-a2-soslagatelnoe-naklonenie-by",
+            "title": "Сослагательное наклонение с частицей «бы»",
+            "score": 0.53
+          },
+          {
+            "id": "ru-a1-povelitelnoe-naklonenie",
+            "title": "Повелительное наклонение",
+            "score": 0.28
+          },
+          {
+            "id": "ru-c1-slozhno-soslagatelnyy-sintaksis-diplomatii",
+            "title": "Сослагательное наклонение в официальных актах и нотах",
+            "score": 0.23
+          }
+        ]
+      },
+      {
+        "text": "Сравнительные конструкции (значительно выгоднее, немного дороже)",
+        "confidence": "medium",
+        "grammarId": "ru-a1-sravnitelnaya-stepen",
+        "alternatives": [
+          {
+            "id": "ru-a1-sravnitelnaya-stepen",
+            "title": "Сравнительная степень",
+            "score": 0.48
+          },
+          {
+            "id": "ru-a2-sravnenie-i-prevoskhodnaya-stepen",
+            "title": "Сравнительная и превосходная степень прилагательных",
+            "score": 0.44
+          },
+          {
+            "id": "ru-b1-sravnitelnye-oboroty-kak-budto-slovno",
+            "title": "Сравнительные обороты с союзами «как будто», «словно», «точно»",
+            "score": 0.43
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/B1/u04-l03": {
+    "title": "Работа с претензиями, спорами и речевой конфликт",
+    "ref": 3,
+    "items": [
+      {
+        "text": "Смягчающие обороты (Похоже, произошло недоразумение)",
+        "confidence": "medium",
+        "grammarId": "ru-b1-deeprichastnyy-oborot-i-ego-normy",
+        "alternatives": [
+          {
+            "id": "ru-b1-deeprichastnyy-oborot-i-ego-normy",
+            "title": "Деепричастный оборот и правила его употребления",
+            "score": 0.47
+          },
+          {
+            "id": "ru-b1-prichastnyy-oborot-i-punktuatsiya",
+            "title": "Причастный оборот, его согласование и пунктуация",
+            "score": 0.45
+          },
+          {
+            "id": "ru-b1-povelitelnoe-naklonenie-vezhlivaya-prosba",
+            "title": "Формы косвенного побуждения и вежливые модальные обороты",
+            "score": 0.43
+          }
+        ]
+      },
+      {
+        "text": "Прошедшее время несовершенного вида для описания фона проблемы",
+        "confidence": "medium",
+        "grammarId": "ru-a1-proshedshee-vremya",
+        "alternatives": [
+          {
+            "id": "ru-a1-proshedshee-vremya",
+            "title": "Прошедшее время",
+            "score": 0.52
+          },
+          {
+            "id": "ru-b1-deeprichastie-nesovershennogo-vida",
+            "title": "Деепричастия несовершенного вида (-ая/-яя, -учи/-ючи)",
+            "score": 0.42
+          },
+          {
+            "id": "ru-a1-proshedshee-vremya-glagola-byt",
+            "title": "Прошедшее время глагола «быть» (был, была, было, были)",
+            "score": 0.42
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/B1/u04-l04": {
+    "title": "Заключение договоренностей и фиксация условий",
+    "ref": 4,
+    "items": [
+      {
+        "text": "Фразы подтверждения согласия (Мы договорились о..., Подтверждаем согласие)",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-c1-inversiya-usloviya-v-ofitsialnoy-diskussii",
+            "title": "Инверсия условий в официальной речи («Будь у нас X, мы бы...»)",
+            "score": 0.23
+          }
+        ]
+      },
+      {
+        "text": "Будущее время для принятия твердых обязательств",
+        "confidence": "medium",
+        "grammarId": "ru-a1-budushchee-vremya",
+        "alternatives": [
+          {
+            "id": "ru-a1-budushchee-vremya",
+            "title": "Будущее время",
+            "score": 0.58
+          },
+          {
+            "id": "ru-a1-budushchee-vremya-slozhashchee",
+            "title": "Сложное будущее время (буду + инфинитив)",
+            "score": 0.35
+          },
+          {
+            "id": "ru-a2-vidy-glagola-v-budushchem-vremeni",
+            "title": "Будущее время: НСВ (буду делать) vs СВ (сделаю)",
+            "score": 0.35
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/B1/u05-l01": {
+    "title": "Неформальное общение в офисе и прием гостей / клиентов",
+    "ref": 1,
+    "items": [
+      {
+        "text": "Вопросы для поддержания светской беседы (Как добрались?, Удобно ли разместились?)",
+        "confidence": "medium",
+        "grammarId": "ru-b1-kosvennyy-vopros-chastitsa-li",
+        "alternatives": [
+          {
+            "id": "ru-b1-kosvennyy-vopros-chastitsa-li",
+            "title": "Косвенный вопрос с частицей «ли»",
+            "score": 0.52
+          }
+        ]
+      },
+      {
+        "text": "Настоящее время для разговора о текущих задачах",
+        "confidence": "medium",
+        "grammarId": "ru-a1-bez-glagola-byt",
+        "alternatives": [
+          {
+            "id": "ru-a1-bez-glagola-byt",
+            "title": "Без глагола «быть» в настоящем времени",
+            "score": 0.61
+          },
+          {
+            "id": "ru-a1-nastoyashchee-vremya",
+            "title": "Настоящее время глагола",
+            "score": 0.61
+          },
+          {
+            "id": "ru-b1-stradatelnye-prichastiya-nastoyashchego-i-proshedshego",
+            "title": "Страдательные причастия настоящего и прошедшего времени",
+            "score": 0.59
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/B1/u05-l02": {
+    "title": "Нетворкинг на выставках, симпозиумах и конференциях",
+    "ref": 2,
+    "items": [
+      {
+        "text": "Краткая самопрезентация (базовый питч о себе)",
+        "confidence": "medium",
+        "grammarId": "ru-a1-kratkie-prilagatelnye",
+        "alternatives": [
+          {
+            "id": "ru-a1-kratkie-prilagatelnye",
+            "title": "Краткие прилагательные",
+            "score": 0.49
+          },
+          {
+            "id": "ru-b1-kratkie-stradatelnye-prichastiya",
+            "title": "Краткие страдательные причастия и пассивный залог",
+            "score": 0.43
+          },
+          {
+            "id": "ru-a2-kratkie-prilagatelnye",
+            "title": "Краткие прилагательные (рад, должен, занят, достоин)",
+            "score": 0.38
+          }
+        ]
+      },
+      {
+        "text": "Прошедшее время с предлогами времени (работаю в сфере... уже 3 года)",
+        "confidence": "medium",
+        "grammarId": "ru-a1-proshedshee-vremya",
+        "alternatives": [
+          {
+            "id": "ru-a1-proshedshee-vremya",
+            "title": "Прошедшее время",
+            "score": 0.47
+          },
+          {
+            "id": "ru-a1-predlogi-vremeni",
+            "title": "Предлоги времени",
+            "score": 0.46
+          },
+          {
+            "id": "ru-a1-proshedshee-vremya-glagola-byt",
+            "title": "Прошедшее время глагола «быть» (был, была, было, были)",
+            "score": 0.37
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/B1/u05-l03": {
+    "title": "Выражение Вы/Ты и субординация в русской бизнес-культуре",
+    "ref": 3,
+    "items": [
+      {
+        "text": "Различие обращения на Вы и на Ты в российской корпоративной среде",
+        "confidence": "medium",
+        "grammarId": "ru-a1-ty-i-vy",
+        "alternatives": [
+          {
+            "id": "ru-a1-ty-i-vy",
+            "title": "Ты и вы",
+            "score": 0.61
+          },
+          {
+            "id": "ru-a2-glagoly-dvizheniya-s-pristavkami-v-vy-dop-pere",
+            "title": "Глаголы движения с приставками в-, вы-, до-, пере-, под-, от-",
+            "score": 0.24
+          },
+          {
+            "id": "ru-a1-konstruktsiya-nravitsya-lyubit",
+            "title": "Различие конструкций «любить» и «нравиться»",
+            "score": 0.23
+          }
+        ]
+      },
+      {
+        "text": "Вежливые обращения по имени и отчеству / по имени",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-b1-povelitelnoe-naklonenie-vezhlivaya-prosba",
+            "title": "Формы косвенного побуждения и вежливые модальные обороты",
+            "score": 0.34
+          },
+          {
+            "id": "ru-a2-povelitelnaya-mnojestvennaya-forma",
+            "title": "Совместное действие и вежливый императив",
+            "score": 0.32
+          },
+          {
+            "id": "ru-a1-rod-imyen-sushchestvitelnykh",
+            "title": "Род имён существительных (мужской, женский, средний)",
+            "score": 0.27
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/B1/u05-l04": {
+    "title": "Организация и перенос бизнес-обедов, консультаций и звонков",
+    "ref": 4,
+    "items": [
+      {
+        "text": "Предложение времени и даты (Удобно ли вам во вторник?, Подойдет ли 15:00?)",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-a1-tipy-predlozheniy",
+            "title": "Типы предложений",
+            "score": 0.36
+          },
+          {
+            "id": "ru-b1-sinonimiya-sintaksicheskikh-konstruktsiy",
+            "title": "Синтаксическая синонимия причастных и придаточных предложений",
+            "score": 0.33
+          },
+          {
+            "id": "ru-a1-predlogi-vremeni",
+            "title": "Предлоги времени",
+            "score": 0.26
+          }
+        ]
+      },
+      {
+        "text": "Предлоги времени и места",
+        "confidence": "medium",
+        "grammarId": "ru-b1-predlogi-mesta-iz-pod-iz-za",
+        "alternatives": [
+          {
+            "id": "ru-b1-predlogi-mesta-iz-pod-iz-za",
+            "title": "Составные предлоги места (из-под, из-за)",
+            "score": 0.7
+          },
+          {
+            "id": "ru-a1-predlogi-mesta",
+            "title": "Предлоги места",
+            "score": 0.69
+          },
+          {
+            "id": "ru-a1-predlogi-vremeni",
+            "title": "Предлоги времени",
+            "score": 0.61
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/B1/u06-l01": {
+    "title": "Составление резюме (CV) и академического профиля",
+    "ref": 1,
+    "items": [
+      {
+        "text": "Глаголы действия в прошедшем времени для описания достижений",
+        "confidence": "medium",
+        "grammarId": "ru-a1-proshedshee-vremya-glagola-byt",
+        "alternatives": [
+          {
+            "id": "ru-a1-proshedshee-vremya-glagola-byt",
+            "title": "Прошедшее время глагола «быть» (был, была, было, были)",
+            "score": 0.62
+          },
+          {
+            "id": "ru-a2-proshedshee-vremya-i-vid",
+            "title": "Прошедшее время и вид глагола",
+            "score": 0.58
+          },
+          {
+            "id": "ru-a2-vidy-glagola-v-proshedshem-vremeni",
+            "title": "Употребление видов глагола в прошедшем времени",
+            "score": 0.57
+          }
+        ]
+      },
+      {
+        "text": "Отглагольные существительные в блоке навыков (управление, организация)",
+        "confidence": "medium",
+        "grammarId": "ru-b1-otglagolnye-sushchestvitelnye-vvedenie",
+        "alternatives": [
+          {
+            "id": "ru-b1-otglagolnye-sushchestvitelnye-vvedenie",
+            "title": "Отглагольные существительные на -ние/-тие и их синтаксис",
+            "score": 0.39
+          },
+          {
+            "id": "ru-b1-glagolnyy-upravlenie-predlogi-v-na-o-k",
+            "title": "Глагольное управление: сложные предложные связи",
+            "score": 0.26
+          },
+          {
+            "id": "ru-a1-noun-gender",
+            "title": "Род существительных",
+            "score": 0.24
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/B1/u06-l02": {
+    "title": "Написание сопроводительного письма (Cover Letter)",
+    "ref": 2,
+    "items": [
+      {
+        "text": "Формальные конструкции обращения (Направляю отклик на вакансию...)",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      },
+      {
+        "text": "Связка прошедшего опыта и требований вакансии",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-a1-proshedshee-vremya",
+            "title": "Прошедшее время",
+            "score": 0.36
+          },
+          {
+            "id": "ru-a1-lichnye-mestoimeniya-i-nulevaya-svyazka",
+            "title": "Личные местоимения и нулевая связка",
+            "score": 0.32
+          },
+          {
+            "id": "ru-a1-proshedshee-vremya-glagola-byt",
+            "title": "Прошедшее время глагола «быть» (был, была, было, были)",
+            "score": 0.3
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/B1/u06-l03": {
+    "title": "Собеседование: описание опыта и сильных сторон",
+    "ref": 3,
+    "items": [
+      {
+        "text": "Прошедшее совершенное / несовершенное время при рассказе о карьере",
+        "confidence": "medium",
+        "grammarId": "ru-a1-proshedshee-vremya",
+        "alternatives": [
+          {
+            "id": "ru-a1-proshedshee-vremya",
+            "title": "Прошедшее время",
+            "score": 0.52
+          },
+          {
+            "id": "ru-a1-sovershennyy-i-nesovershennyy-vid",
+            "title": "Совершенный и несовершенный вид",
+            "score": 0.5
+          },
+          {
+            "id": "ru-a1-proshedshee-vremya-glagola-byt",
+            "title": "Прошедшее время глагола «быть» (был, была, было, были)",
+            "score": 0.42
+          }
+        ]
+      },
+      {
+        "text": "Формулирование преимуществ (Моей сильной стороной является..., Имею опыт в...)",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/B1/u06-l04": {
+    "title": "Подготовка к годовой оценке и педагогической аттестации",
+    "ref": 4,
+    "items": [
+      {
+        "text": "Выражение планов и целей (Планирую развивать..., Целью является...)",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-a2-konstruktsii-dolzhen-obyazan-nado",
+            "title": "Выражение должествования: «должен», «обязан», «приходится»",
+            "score": 0.36
+          },
+          {
+            "id": "ru-a2-vyrazhenie-doba-i-chasa-vremeni",
+            "title": "Точное выражение времени, дат и лет (в двух тысяча двадцать четвёртом году)",
+            "score": 0.33
+          },
+          {
+            "id": "ru-b2-sintaksis-diplomaticheskoy-peregovornoy-rechi",
+            "title": "Дипломатический синтаксис: эвфемизмы и косвенное выражение",
+            "score": 0.23
+          }
+        ]
+      },
+      {
+        "text": "Формулировки конструктивной обратной связи",
+        "confidence": "medium",
+        "grammarId": "ru-b1-glagolnyy-upravlenie-predlogi-v-na-o-k",
+        "alternatives": [
+          {
+            "id": "ru-b1-glagolnyy-upravlenie-predlogi-v-na-o-k",
+            "title": "Глагольное управление: сложные предложные связи",
+            "score": 0.49
+          },
+          {
+            "id": "ru-b1-soyuzy-prichiny-blagodarya-iz-za-vvidu",
+            "title": "Причинные союзы и предлоги (благодаря, из-за, ввиду, в связи с)",
+            "score": 0.48
+          },
+          {
+            "id": "ru-a2-soyuzy-prichiny-i-sledstviya-poetomu-tak-kak",
+            "title": "Причинно-следственные связи: «поэтому», «так как», «из-за»",
+            "score": 0.44
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/B2/u01-l01": {
+    "title": "Подготовка аналитических отчетов, аннотаций и резюме",
+    "ref": 1,
+    "items": [
+      {
+        "text": "Пассивный залог и безличные конструкции в официальном стиле",
+        "confidence": "medium",
+        "grammarId": "ru-b1-kratkie-stradatelnye-prichastiya",
+        "alternatives": [
+          {
+            "id": "ru-b1-kratkie-stradatelnye-prichastiya",
+            "title": "Краткие страдательные причастия и пассивный залог",
+            "score": 0.4
+          },
+          {
+            "id": "ru-b2-kosvennaya-rech-ritoricheskie-priemy",
+            "title": "Косвенная речь в официальном стиле и цитирование",
+            "score": 0.38
+          },
+          {
+            "id": "ru-b2-bezlichnye-i-neopredelenno-lichnye-predlozheniya-b2",
+            "title": "Неопределённо-личные и безличные конструкции в аналитическом стиле",
+            "score": 0.38
+          }
+        ]
+      },
+      {
+        "text": "Сложные отглагольные существительные в заголовках",
+        "confidence": "medium",
+        "grammarId": "ru-b2-substantivatsiya-szhatie-informatsii",
+        "alternatives": [
+          {
+            "id": "ru-b2-substantivatsiya-szhatie-informatsii",
+            "title": "Номинализация (сжатие информации отглагольными существительными)",
+            "score": 0.52
+          },
+          {
+            "id": "ru-b1-otglagolnye-sushchestvitelnye-vvedenie",
+            "title": "Отглагольные существительные на -ние/-тие и их синтаксис",
+            "score": 0.48
+          },
+          {
+            "id": "ru-b2-predlogi-otglagolnogo-proiskhozhdeniya",
+            "title": "Отглагольные предлоги (включая, спустя, благодаря, исходя из)",
+            "score": 0.28
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/B2/u01-l02": {
+    "title": "Составление коммерческих предложений и заявок на гранты",
+    "ref": 2,
+    "items": [
+      {
+        "text": "Модальные конструкции рекомендации (целесообразно, представляется необходимым)",
+        "confidence": "medium",
+        "grammarId": "ru-b2-modalnye-slova-i-glagoly-dovoda",
+        "alternatives": [
+          {
+            "id": "ru-b2-modalnye-slova-i-glagoly-dovoda",
+            "title": "Модальные обороты аргументации (следует признать, невозможно отрицать)",
+            "score": 0.41
+          },
+          {
+            "id": "ru-b1-povelitelnoe-naklonenie-vezhlivaya-prosba",
+            "title": "Формы косвенного побуждения и вежливые модальные обороты",
+            "score": 0.41
+          },
+          {
+            "id": "ru-a1-glagoly-moch-i-umet",
+            "title": "Модальные глаголы «мочь» и «уметь»",
+            "score": 0.29
+          }
+        ]
+      },
+      {
+        "text": "Сложные союзы причины и следствия (ввиду этого, вследствие чего)",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-a1-soyuzy",
+            "title": "Союзы",
+            "score": 0.31
+          },
+          {
+            "id": "ru-b1-soyuzy-prichiny-blagodarya-iz-za-vvidu",
+            "title": "Причинные союзы и предлоги (благодаря, из-за, ввиду, в связи с)",
+            "score": 0.29
+          },
+          {
+            "id": "ru-b1-soyuzy-usloviya-pri-uslovii-esli-by",
+            "title": "Сложные условные союзы (при условии если, в случае если)",
+            "score": 0.25
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/B2/u01-l03": {
+    "title": "Урегулирование претензий, споров и кризисные коммуникации",
+    "ref": 3,
+    "items": [
+      {
+        "text": "Сослагательное наклонение в сложных претензионных письмах",
+        "confidence": "medium",
+        "grammarId": "ru-a2-soslagatelnoe-naklonenie-by",
+        "alternatives": [
+          {
+            "id": "ru-a2-soslagatelnoe-naklonenie-by",
+            "title": "Сослагательное наклонение с частицей «бы»",
+            "score": 0.54
+          },
+          {
+            "id": "ru-c1-slozhno-soslagatelnyy-sintaksis-diplomatii",
+            "title": "Сослагательное наклонение в официальных актах и нотах",
+            "score": 0.29
+          },
+          {
+            "id": "ru-a1-povelitelnoe-naklonenie",
+            "title": "Повелительное наклонение",
+            "score": 0.24
+          }
+        ]
+      },
+      {
+        "text": "Смягчающая лексика для снижения конфликтности",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-c1-zarechnye-modifikatory-registra",
+            "title": "Наречные модификаторы регистра и лексико-синтаксический тон",
+            "score": 0.27
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/B2/u01-l04": {
+    "title": "Информационные рассылки, регламенты и учебные программы",
+    "ref": 4,
+    "items": [
+      {
+        "text": "Будущее время и причастия для оформления регламентов",
+        "confidence": "medium",
+        "grammarId": "ru-a1-budushchee-vremya",
+        "alternatives": [
+          {
+            "id": "ru-a1-budushchee-vremya",
+            "title": "Будущее время",
+            "score": 0.45
+          },
+          {
+            "id": "ru-b1-stradatelnye-prichastiya-nastoyashchego-i-proshedshego",
+            "title": "Страдательные причастия настоящего и прошедшего времени",
+            "score": 0.45
+          },
+          {
+            "id": "ru-a2-vidy-glagola-v-budushchem-vremeni",
+            "title": "Будущее время: НСВ (буду делать) vs СВ (сделаю)",
+            "score": 0.32
+          }
+        ]
+      },
+      {
+        "text": "Конструкции приказа и предписания в вежливой форме",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-b2-morfologicheskaya-stilistika-glagola",
+            "title": "Стилистические варианты глагольных форм (инфинитив, наклонения)",
+            "score": 0.35
+          },
+          {
+            "id": "ru-b1-povelitelnoe-naklonenie-vezhlivaya-prosba",
+            "title": "Формы косвенного побуждения и вежливые модальные обороты",
+            "score": 0.31
+          },
+          {
+            "id": "ru-a2-povelitelnaya-mnojestvennaya-forma",
+            "title": "Совместное действие и вежливый императив",
+            "score": 0.28
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/B2/u02-l01": {
+    "title": "Модерация рабочих встреч, научные семинары и тайминг",
+    "ref": 1,
+    "items": [
+      {
+        "text": "Конструкции управления дискуссией (Перейдем к следующему пункту, Вернемся к теме)",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-b2-glagolnoe-upravlenie-divergentsiya",
+            "title": "Вариативность глагольного управления и синонимия предлогов",
+            "score": 0.32
+          },
+          {
+            "id": "ru-b2-sintaksis-nauchnogo-doklada",
+            "title": "Синтаксические нормы академической презентации и дискуссии",
+            "score": 0.32
+          }
+        ]
+      },
+      {
+        "text": "Вводные слова управления временем (Призываю уложиться в тайминг)",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-b1-vvodnye-slova-poryadok-mysley",
+            "title": "Вводные слова структуры текста (следовательно, таким образом)",
+            "score": 0.31
+          },
+          {
+            "id": "ru-b1-vvodnye-slova-stepen-dostovernosti",
+            "title": "Вводные слова степени достоверности (безусловно, вероятно, едва ли)",
+            "score": 0.31
+          },
+          {
+            "id": "ru-a2-vvodnye-slova-i-frazy-a2",
+            "title": "Вводные слова для структурирования речи (во-первых, во-вторых)",
+            "score": 0.29
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/B2/u02-l02": {
+    "title": "Управление разногласиями и фасилитация споров",
+    "ref": 2,
+    "items": [
+      {
+        "text": "Формулы дипломатичного возражения (Понимаю вашу позицию, однако стоит учесть...)",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-a1-vezhlivye-prosby-i-poveleniya",
+            "title": "Формулы вежливости и просьбы (Скажите, пожалуйста / Будьте добры)",
+            "score": 0.22
+          }
+        ]
+      },
+      {
+        "text": "Сложноподчиненные условные предложения для анализа рисков",
+        "confidence": "medium",
+        "grammarId": "ru-b1-sloznopodchinennye-izyasnitelnye-s-soyuzom-chto-chtoby",
+        "alternatives": [
+          {
+            "id": "ru-b1-sloznopodchinennye-izyasnitelnye-s-soyuzom-chto-chtoby",
+            "title": "Сложноподчинённые изъяснительные предложения",
+            "score": 0.49
+          },
+          {
+            "id": "ru-a2-uslovnye-predlozheniya-esli",
+            "title": "Условные предложения с союзом «если»",
+            "score": 0.37
+          },
+          {
+            "id": "ru-a2-uslovnye-predlozheniya-esli-esli-by",
+            "title": "Условные предложения: реальное «если» и нереальное «если бы»",
+            "score": 0.31
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/B2/u02-l03": {
+    "title": "Проведение онлайн-лекций, вебинаров и гибридных встреч",
+    "ref": 3,
+    "items": [
+      {
+        "text": "Косвенные вопросы для опроса участников в онлайне",
+        "confidence": "high",
+        "grammarId": "ru-b1-kosvennyy-vopros-chastitsa-li",
+        "alternatives": [
+          {
+            "id": "ru-b1-kosvennyy-vopros-chastitsa-li",
+            "title": "Косвенный вопрос с частицей «ли»",
+            "score": 0.71
+          },
+          {
+            "id": "ru-b2-sintaksis-diplomaticheskoy-peregovornoy-rechi",
+            "title": "Дипломатический синтаксис: эвфемизмы и косвенное выражение",
+            "score": 0.26
+          },
+          {
+            "id": "ru-b2-kosvennaya-rech-ritoricheskie-priemy",
+            "title": "Косвенная речь в официальном стиле и цитирование",
+            "score": 0.25
+          }
+        ]
+      },
+      {
+        "text": "Речевые клише решения технических проблем (Вас плохо слышно, переподключитесь)",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      }
+    ],
+    "grammarIds": [
+      "ru-b1-kosvennyy-vopros-chastitsa-li"
+    ]
+  },
+  "ru/professional/B2/u02-l04": {
+    "title": "Фиксация консенсуса, научных итогов и распределение KPI",
+    "ref": 4,
+    "items": [
+      {
+        "text": "Косвенная речь с глаголами постановки задач (поручить, зафиксировать, обязать)",
+        "confidence": "medium",
+        "grammarId": "ru-b2-kosvennaya-rech-ritoricheskie-priemy",
+        "alternatives": [
+          {
+            "id": "ru-b2-kosvennaya-rech-ritoricheskie-priemy",
+            "title": "Косвенная речь в официальном стиле и цитирование",
+            "score": 0.49
+          },
+          {
+            "id": "ru-a2-kosvennaya-rech-i-mestoimeniya",
+            "title": "Косвенная речь и союзные слова",
+            "score": 0.44
+          },
+          {
+            "id": "ru-a1-pryamaya-i-kosvennaya-rech",
+            "title": "Прямая и косвенная речь",
+            "score": 0.37
+          }
+        ]
+      },
+      {
+        "text": "Страдательные причастия назначения ответственных",
+        "confidence": "medium",
+        "grammarId": "ru-b1-stradatelnye-prichastiya-nastoyashchego-i-proshedshego",
+        "alternatives": [
+          {
+            "id": "ru-b1-stradatelnye-prichastiya-nastoyashchego-i-proshedshego",
+            "title": "Страдательные причастия настоящего и прошедшего времени",
+            "score": 0.64
+          },
+          {
+            "id": "ru-b1-kratkie-stradatelnye-prichastiya",
+            "title": "Краткие страдательные причастия и пассивный залог",
+            "score": 0.61
+          },
+          {
+            "id": "ru-a2-kratkie-prichastiya-vvedenie",
+            "title": "Краткие страдательные причастия в простом контексте (открыт, закрыт)",
+            "score": 0.49
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/B2/u03-l01": {
+    "title": "Проведение презентаций и университетских лекций",
+    "ref": 1,
+    "items": [
+      {
+        "text": "Развернутые вводные конструкции (Обращаясь к следующему аспекту, Подчеркну)",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-b1-vvodnye-slova-poryadok-mysley",
+            "title": "Вводные слова структуры текста (следовательно, таким образом)",
+            "score": 0.23
+          },
+          {
+            "id": "ru-b1-vvodnye-slova-stepen-dostovernosti",
+            "title": "Вводные слова степени достоверности (безусловно, вероятно, едва ли)",
+            "score": 0.23
+          },
+          {
+            "id": "ru-a2-vvodnye-slova-i-frazy-a2",
+            "title": "Вводные слова для структурирования речи (во-первых, во-вторых)",
+            "score": 0.21
+          }
+        ]
+      },
+      {
+        "text": "Пассивные обороты нейтральной подачи",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-b1-passivnyy-zalog-tvoritnyy-subyekt",
+            "title": "Пассивные конструкции с творительным падежом субъекта",
+            "score": 0.35
+          },
+          {
+            "id": "ru-b1-deeprichastnyy-oborot-i-ego-normy",
+            "title": "Деепричастный оборот и правила его употребления",
+            "score": 0.32
+          },
+          {
+            "id": "ru-b1-kratkie-stradatelnye-prichastiya",
+            "title": "Краткие страдательные причастия и пассивный залог",
+            "score": 0.32
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/B2/u03-l02": {
+    "title": "Питчинг идей, научных проектов и продуктов",
+    "ref": 2,
+    "items": [
+      {
+        "text": "Риторические вопросы для привлечения внимания аудитории",
+        "confidence": "medium",
+        "grammarId": "ru-b1-kosvennyy-vopros-chastitsa-li",
+        "alternatives": [
+          {
+            "id": "ru-b1-kosvennyy-vopros-chastitsa-li",
+            "title": "Косвенный вопрос с частицей «ли»",
+            "score": 0.4
+          },
+          {
+            "id": "ru-b2-stilisticheskaya-inversiya-i-ritm-frazy",
+            "title": "Риторическая инверсия и ритмическая организация текста",
+            "score": 0.32
+          },
+          {
+            "id": "ru-c1-sintez-akademichskogo-i-ritoricheskogo-sintaksisa",
+            "title": "Синтез риторических, академических и экспромтных синтаксических структур C1",
+            "score": 0.17
+          }
+        ]
+      },
+      {
+        "text": "Выделительные конструкции (Именно уникальность подхода обеспечивает...)",
+        "confidence": "medium",
+        "grammarId": "ru-b2-chastitsy-obosobleniya-i-vydeleniya",
+        "alternatives": [
+          {
+            "id": "ru-b2-chastitsy-obosobleniya-i-vydeleniya",
+            "title": "Выделительно-ограничительные частицы (именно, лишь, исключительно)",
+            "score": 0.6
+          },
+          {
+            "id": "ru-b1-poyasnitelnye-konstruktsii-to-est-a-imenno",
+            "title": "Пояснительные конструкции (то есть, а именно, другими словами)",
+            "score": 0.29
+          },
+          {
+            "id": "ru-b1-frazeologizmy-i-ustoychivye-sochetaniya-b1",
+            "title": "Устойчивые глагольно-именные сочетания (принимать решение, иметь значение)",
+            "score": 0.25
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/B2/u03-l03": {
+    "title": "Защита финансовых бюджетов, метрик и исследовательских данных",
+    "ref": 3,
+    "items": [
+      {
+        "text": "Сравнительные обороты финансового анализа (существенно выше, незначительно ниже)",
+        "confidence": "medium",
+        "grammarId": "ru-b1-sravnitelnye-oboroty-kak-budto-slovno",
+        "alternatives": [
+          {
+            "id": "ru-b1-sravnitelnye-oboroty-kak-budto-slovno",
+            "title": "Сравнительные обороты с союзами «как будто», «словно», «точно»",
+            "score": 0.49
+          },
+          {
+            "id": "ru-b1-deeprichastnyy-oborot-i-ego-normy",
+            "title": "Деепричастный оборот и правила его употребления",
+            "score": 0.29
+          },
+          {
+            "id": "ru-b2-slozhnyy-sintaksis-prichastiy-i-deeprichastiy",
+            "title": "Причастные и деепричастные обороты в аналитических текстах",
+            "score": 0.26
+          }
+        ]
+      },
+      {
+        "text": "Предложно-падежные сочетания анализа (в сравнении с, по отношению к)",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-a1-predlozhnyy-padezh",
+            "title": "Предложный падеж",
+            "score": 0.22
+          },
+          {
+            "id": "ru-b2-subyektno-obyektnye-otnosheniya-v-slozhnom-predlozhenii",
+            "title": "Субъектно-объектные отношения в многосоставном предложении",
+            "score": 0.22
+          },
+          {
+            "id": "ru-b2-morfologicheskaya-stilistika-sushchestvitelnyh",
+            "title": "Стилистические варианты падежных окончаний существительных",
+            "score": 0.2
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/B2/u03-l04": {
+    "title": "Защита результатов исследований и ответы на острые вопросы",
+    "ref": 4,
+    "items": [
+      {
+        "text": "Клише паузы и уклонения от прямого ответа (Настоящий вопрос требует дополнительного анализа)",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-b1-kosvennyy-vopros-chastitsa-li",
+            "title": "Косвенный вопрос с частицей «ли»",
+            "score": 0.28
+          },
+          {
+            "id": "ru-b2-poyasnitelnye-i-vstavnye-konstruktsii",
+            "title": "Вставные предложения и грамматические паузы",
+            "score": 0.22
+          },
+          {
+            "id": "ru-b1-kosvennaya-rech-izmenenie-mestoimeniy-i-glagolov",
+            "title": "Трансформация прямой речи в косвенную: союзы что, чтобы, ли",
+            "score": 0.16
+          }
+        ]
+      },
+      {
+        "text": "Условные формулировки осторожности",
+        "confidence": "medium",
+        "grammarId": "ru-b1-soyuzy-usloviya-pri-uslovii-esli-by",
+        "alternatives": [
+          {
+            "id": "ru-b1-soyuzy-usloviya-pri-uslovii-esli-by",
+            "title": "Сложные условные союзы (при условии если, в случае если)",
+            "score": 0.48
+          },
+          {
+            "id": "ru-a2-uslovnye-predlozheniya-esli",
+            "title": "Условные предложения с союзом «если»",
+            "score": 0.46
+          },
+          {
+            "id": "ru-a2-uslovnye-predlozheniya-esli-esli-by",
+            "title": "Условные предложения: реальное «если» и нереальное «если бы»",
+            "score": 0.43
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/B2/u04-l01": {
+    "title": "Коммерческие и институциональные переговоры",
+    "ref": 1,
+    "items": [
+      {
+        "text": "Условные предложения в торгах (При условии повышения объема мы предоставим...)",
+        "confidence": "medium",
+        "grammarId": "ru-b1-soyuzy-usloviya-pri-uslovii-esli-by",
+        "alternatives": [
+          {
+            "id": "ru-b1-soyuzy-usloviya-pri-uslovii-esli-by",
+            "title": "Сложные условные союзы (при условии если, в случае если)",
+            "score": 0.39
+          },
+          {
+            "id": "ru-a2-uslovnye-predlozheniya-esli",
+            "title": "Условные предложения с союзом «если»",
+            "score": 0.36
+          },
+          {
+            "id": "ru-a2-uslovnye-predlozheniya-esli-esli-by",
+            "title": "Условные предложения: реальное «если» и нереальное «если бы»",
+            "score": 0.3
+          }
+        ]
+      },
+      {
+        "text": "Лексика осторожных обещаний",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-c1-zarechnye-modifikatory-registra",
+            "title": "Наречные модификаторы регистра и лексико-синтаксический тон",
+            "score": 0.29
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/B2/u04-l02": {
+    "title": "Согласование условий договора, штрафов и интеллектуальной собственности",
+    "ref": 2,
+    "items": [
+      {
+        "text": "Сложные условные конструкции правового характера",
+        "confidence": "medium",
+        "grammarId": "ru-b1-soyuzy-usloviya-pri-uslovii-esli-by",
+        "alternatives": [
+          {
+            "id": "ru-b1-soyuzy-usloviya-pri-uslovii-esli-by",
+            "title": "Сложные условные союзы (при условии если, в случае если)",
+            "score": 0.42
+          },
+          {
+            "id": "ru-a2-uslovnye-predlozheniya-esli",
+            "title": "Условные предложения с союзом «если»",
+            "score": 0.25
+          },
+          {
+            "id": "ru-a2-uslovnye-predlozheniya-esli-esli-by",
+            "title": "Условные предложения: реальное «если» и нереальное «если бы»",
+            "score": 0.22
+          }
+        ]
+      },
+      {
+        "text": "Глаголы обязательства (обязуется, вправе, несет ответственность)",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-b2-deeprichastiya-ot-glagolov-dvizheniya",
+            "title": "Деепричастия приставочных глаголов движения",
+            "score": 0.32
+          },
+          {
+            "id": "ru-a2-pristavochnye-glagoly-dvizheniya",
+            "title": "Приставочные глаголы движения",
+            "score": 0.28
+          },
+          {
+            "id": "ru-b1-glagoly-dvizheniya-s-pristavkami-obzor",
+            "title": "Система приставочных глаголов движения (пере-, про-, об-, за-)",
+            "score": 0.28
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/B2/u04-l03": {
+    "title": "Приемы убеждения и фрейминг ценности",
+    "ref": 3,
+    "items": [
+      {
+        "text": "Усилительные конструкции (Именно научная обоснованность делает наш подход...)",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-b1-chastitsy-zhe-ved-daje-li",
+            "title": "Усилительные частицы (же, ведь, даже, -то)",
+            "score": 0.25
+          },
+          {
+            "id": "ru-b1-glagoly-myshleniya-i-rechi",
+            "title": "Глаголы речи и мысли в научном и деловом стиле",
+            "score": 0.23
+          },
+          {
+            "id": "ru-b1-poyasnitelnye-konstruktsii-to-est-a-imenno",
+            "title": "Пояснительные конструкции (то есть, а именно, другими словами)",
+            "score": 0.22
+          }
+        ]
+      },
+      {
+        "text": "Вводные слова уверенности (несомненно, безусловно, очевидно)",
+        "confidence": "medium",
+        "grammarId": "ru-b1-vvodnye-slova-stepen-dostovernosti",
+        "alternatives": [
+          {
+            "id": "ru-b1-vvodnye-slova-stepen-dostovernosti",
+            "title": "Вводные слова степени достоверности (безусловно, вероятно, едва ли)",
+            "score": 0.51
+          },
+          {
+            "id": "ru-b1-vvodnye-slova-poryadok-mysley",
+            "title": "Вводные слова структуры текста (следовательно, таким образом)",
+            "score": 0.29
+          },
+          {
+            "id": "ru-a2-vvodnye-slova-i-frazy-a2",
+            "title": "Вводные слова для структурирования речи (во-первых, во-вторых)",
+            "score": 0.27
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/B2/u04-l04": {
+    "title": "Завершение переговоров и подписание соглашений",
+    "ref": 4,
+    "items": [
+      {
+        "text": "Формулы официального подтверждения договоренностей (Настоящим подтверждаем...)",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-b2-frazeologiya-ofitsialno-delovogo-stilya",
+            "title": "Официально-деловой синтаксис и канцеляризмы",
+            "score": 0.3
+          },
+          {
+            "id": "ru-b2-kosvennaya-rech-ritoricheskie-priemy",
+            "title": "Косвенная речь в официальном стиле и цитирование",
+            "score": 0.28
+          },
+          {
+            "id": "ru-a1-vezhlivye-prosby-i-poveleniya",
+            "title": "Формулы вежливости и просьбы (Скажите, пожалуйста / Будьте добры)",
+            "score": 0.19
+          }
+        ]
+      },
+      {
+        "text": "Инфинитивные конструкции юридического намерения",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-c2-sintaksis-ofitsialno-delovogo-i-yuridicheskogo-stilya",
+            "title": "Синтаксис официально-делового и юридического стиля",
+            "score": 0.31
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/B2/u05-l01": {
+    "title": "Установление контактов на конференциях и симпозиумах",
+    "ref": 1,
+    "items": [
+      {
+        "text": "Вежливое начало разговора (Не подскажете ли..., Вы тоже участвуете в сессии...)",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-b1-slozhnosochinennye-predlozheniya-tozhe-takzhe",
+            "title": "Сложносочинённые предложения с союзами «тоже», «также», «зато»",
+            "score": 0.25
+          },
+          {
+            "id": "ru-b1-povelitelnoe-naklonenie-vezhlivaya-prosba",
+            "title": "Формы косвенного побуждения и вежливые модальные обороты",
+            "score": 0.23
+          },
+          {
+            "id": "ru-a1-ty-i-vy",
+            "title": "Ты и вы",
+            "score": 0.22
+          }
+        ]
+      },
+      {
+        "text": "Настоящее время процессов для описания текущих исследований / проектов",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-b1-stradatelnye-prichastiya-nastoyashchego-i-proshedshego",
+            "title": "Страдательные причастия настоящего и прошедшего времени",
+            "score": 0.37
+          },
+          {
+            "id": "ru-a1-bez-glagola-byt",
+            "title": "Без глагола «быть» в настоящем времени",
+            "score": 0.35
+          },
+          {
+            "id": "ru-a1-nastoyashchee-vremya",
+            "title": "Настоящее время глагола",
+            "score": 0.35
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/B2/u05-l02": {
+    "title": "Удержание клиентов и научные коллаборации",
+    "ref": 2,
+    "items": [
+      {
+        "text": "Вопросы клиентского и академического контроля (Как продвигается реализация...)",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-b1-kosvennyy-vopros-chastitsa-li",
+            "title": "Косвенный вопрос с частицей «ли»",
+            "score": 0.33
+          },
+          {
+            "id": "ru-b2-sintaksis-nauchnogo-doklada",
+            "title": "Синтаксические нормы академической презентации и дискуссии",
+            "score": 0.24
+          },
+          {
+            "id": "ru-c1-akademicheskoe-smyagchenie-hedging",
+            "title": "Конструкции академического смягчения утверждений (hedging)",
+            "score": 0.15
+          }
+        ]
+      },
+      {
+        "text": "Модальные формулы сервисного и научного сопровождения",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-b1-glagoly-myshleniya-i-rechi",
+            "title": "Глаголы речи и мысли в научном и деловом стиле",
+            "score": 0.24
+          },
+          {
+            "id": "ru-b1-povelitelnoe-naklonenie-vezhlivaya-prosba",
+            "title": "Формы косвенного побуждения и вежливые модальные обороты",
+            "score": 0.22
+          },
+          {
+            "id": "ru-b2-modalnye-slova-i-glagoly-dovoda",
+            "title": "Модальные обороты аргументации (следует признать, невозможно отрицать)",
+            "score": 0.21
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/B2/u05-l03": {
+    "title": "Деловой этикет и международные особенности",
+    "ref": 3,
+    "items": [
+      {
+        "text": "Выбор официального стиля в зависимости от корпоративной культуры",
+        "confidence": "medium",
+        "grammarId": "ru-b2-kosvennaya-rech-ritoricheskie-priemy",
+        "alternatives": [
+          {
+            "id": "ru-b2-kosvennaya-rech-ritoricheskie-priemy",
+            "title": "Косвенная речь в официальном стиле и цитирование",
+            "score": 0.61
+          },
+          {
+            "id": "ru-c2-sintaksis-ofitsialno-delovogo-i-yuridicheskogo-stilya",
+            "title": "Синтаксис официально-делового и юридического стиля",
+            "score": 0.33
+          },
+          {
+            "id": "ru-b2-frazeologiya-ofitsialno-delovogo-stilya",
+            "title": "Официально-деловой синтаксис и канцеляризмы",
+            "score": 0.32
+          }
+        ]
+      },
+      {
+        "text": "Модальные глаголы предположения о культурных нормах",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-b2-sintaksis-nauchnogo-doklada",
+            "title": "Синтаксические нормы академической презентации и дискуссии",
+            "score": 0.29
+          },
+          {
+            "id": "ru-a1-glagoly-moch-i-umet",
+            "title": "Модальные глаголы «мочь» и «уметь»",
+            "score": 0.29
+          },
+          {
+            "id": "ru-b2-itogovaya-sintaksicheskaya-norma-b2",
+            "title": "Нормы согласования и распространенные ошибки синтаксиса B2",
+            "score": 0.29
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/B2/u05-l04": {
+    "title": "Прием делегаций, банкеты и торжественные ужины",
+    "ref": 4,
+    "items": [
+      {
+        "text": "Правила ведения разговора за обеденным столом",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      },
+      {
+        "text": "Формулирование мнения по нейтральным академическим и экономическим темам",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-a1-vvodnye-slova-kazhetsya-po-moemu",
+            "title": "Вводные слова мнения (по-моему, кажется, конечно)",
+            "score": 0.27
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/B2/u06-l01": {
+    "title": "Совершенствование резюме, списка трудов и портфолио",
+    "ref": 1,
+    "items": [
+      {
+        "text": "Сильные глаголы действия и лаконичные формулировки",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-a1-narechiya-obraza-deystviya",
+            "title": "Наречия образа действия",
+            "score": 0.27
+          },
+          {
+            "id": "ru-b2-deeprichastiya-ot-glagolov-dvizheniya",
+            "title": "Деепричастия приставочных глаголов движения",
+            "score": 0.22
+          },
+          {
+            "id": "ru-a2-pristavochnye-glagoly-dvizheniya",
+            "title": "Приставочные глаголы движения",
+            "score": 0.2
+          }
+        ]
+      },
+      {
+        "text": "Оцифровка результатов (Опубликовано 5 статей VAK / Увеличил продажи на 20%)",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-a1-roditelnyy-padezh-chislitelnye",
+            "title": "Согласование существительных с числительными (1, 2-4, 5-20)",
+            "score": 0.22
+          },
+          {
+            "id": "ru-a2-vidy-glagola-osnovy-nsv-sv",
+            "title": "Виды глагола: значение НСВ (процесс, повтор) и СВ (результат, факт)",
+            "score": 0.22
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/B2/u06-l02": {
+    "title": "Прохождение собеседования и академического конкурса (STAR)",
+    "ref": 2,
+    "items": [
+      {
+        "text": "Времена повествования (совершенный / несовершенный вид) при описании примеров из опыта",
+        "confidence": "medium",
+        "grammarId": "ru-a1-sovershennyy-i-nesovershennyy-vid",
+        "alternatives": [
+          {
+            "id": "ru-a1-sovershennyy-i-nesovershennyy-vid",
+            "title": "Совершенный и несовершенный вид",
+            "score": 0.51
+          },
+          {
+            "id": "ru-a2-proshedshee-vremya-i-vid",
+            "title": "Прошедшее время и вид глагола",
+            "score": 0.35
+          },
+          {
+            "id": "ru-b1-deeprichastie-sovershennogo-vida",
+            "title": "Деепричастия совершенного вида (-в/-вши, -ши)",
+            "score": 0.21
+          }
+        ]
+      },
+      {
+        "text": "Структура STAR: Ситуация, Задача, Действие, Результат",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-a2-povelitelnaya-mnojestvennaya-forma",
+            "title": "Совместное действие и вежливый императив",
+            "score": 0.22
+          },
+          {
+            "id": "ru-a2-vidy-glagola-osnovy-nsv-sv",
+            "title": "Виды глагола: значение НСВ (процесс, повтор) и СВ (результат, факт)",
+            "score": 0.2
+          },
+          {
+            "id": "ru-b1-vvodnye-slova-poryadok-mysley",
+            "title": "Вводные слова структуры текста (следовательно, таким образом)",
+            "score": 0.2
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/B2/u06-l03": {
+    "title": "Переговоры о зарплате, нагрузке и грантовом финансировании",
+    "ref": 3,
+    "items": [
+      {
+        "text": "Сослагательное наклонение и вежливость в переговорах о зарплате",
+        "confidence": "medium",
+        "grammarId": "ru-a2-soslagatelnoe-naklonenie-by",
+        "alternatives": [
+          {
+            "id": "ru-a2-soslagatelnoe-naklonenie-by",
+            "title": "Сослагательное наклонение с частицей «бы»",
+            "score": 0.51
+          },
+          {
+            "id": "ru-c1-slozhno-soslagatelnyy-sintaksis-diplomatii",
+            "title": "Сослагательное наклонение в официальных актах и нотах",
+            "score": 0.27
+          },
+          {
+            "id": "ru-a1-povelitelnoe-naklonenie",
+            "title": "Повелительное наклонение",
+            "score": 0.22
+          }
+        ]
+      },
+      {
+        "text": "Формулы встречного финансового предложения",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-b1-sloznopodchinennye-izyasnitelnye-s-soyuzom-chto-chtoby",
+            "title": "Сложноподчинённые изъяснительные предложения",
+            "score": 0.27
+          },
+          {
+            "id": "ru-b2-poyasnitelnye-i-vstavnye-konstruktsii",
+            "title": "Вставные предложения и грамматические паузы",
+            "score": 0.26
+          },
+          {
+            "id": "ru-b2-sinonimiya-soyuznykh-i-bessoyuznykh-svyazey",
+            "title": "Бессоюзные сложные предложения (двоеточие и тире)",
+            "score": 0.25
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/B2/u06-l04": {
+    "title": "Проведение годовой аттестации (KPI) и педагогический анализ",
+    "ref": 4,
+    "items": [
+      {
+        "text": "Конструкции развивающей обратной связи (Проявляет инициативу, однако стоит доработать...)",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-b1-glagolnyy-upravlenie-predlogi-v-na-o-k",
+            "title": "Глагольное управление: сложные предложные связи",
+            "score": 0.36
+          },
+          {
+            "id": "ru-b1-soyuzy-prichiny-blagodarya-iz-za-vvidu",
+            "title": "Причинные союзы и предлоги (благодаря, из-за, ввиду, в связи с)",
+            "score": 0.34
+          },
+          {
+            "id": "ru-a2-soyuzy-prichiny-i-sledstviya-poetomu-tak-kak",
+            "title": "Причинно-следственные связи: «поэтому», «так как», «из-за»",
+            "score": 0.3
+          }
+        ]
+      },
+      {
+        "text": "Формулирование KPI и целей исследования на будущее",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-a1-budushchee-vremya",
+            "title": "Будущее время",
+            "score": 0.29
+          },
+          {
+            "id": "ru-a2-budushchee-vremya-nsv-sv",
+            "title": "Будущее сложное и будущее простое",
+            "score": 0.29
+          },
+          {
+            "id": "ru-a2-vidy-glagola-v-budushchem-vremeni",
+            "title": "Будущее время: НСВ (буду делать) vs СВ (сделаю)",
+            "score": 0.22
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/C1/u01-l01": {
+    "title": "Подготовка аналитических концепций, монографий и White Papers",
+    "ref": 1,
+    "items": [
+      {
+        "text": "Плотные отглагольные существительные и академический стиль",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-b2-substantivatsiya-szhatie-informatsii",
+            "title": "Номинализация (сжатие информации отглагольными существительными)",
+            "score": 0.33
+          },
+          {
+            "id": "ru-b1-otglagolnye-sushchestvitelnye-vvedenie",
+            "title": "Отглагольные существительные на -ние/-тие и их синтаксис",
+            "score": 0.29
+          },
+          {
+            "id": "ru-c1-akademicheskoe-smyagchenie-hedging",
+            "title": "Конструкции академического смягчения утверждений (hedging)",
+            "score": 0.25
+          }
+        ]
+      },
+      {
+        "text": "Высокий лексико-синтаксический регистр",
+        "confidence": "high",
+        "grammarId": "ru-c1-zarechnye-modifikatory-registra",
+        "alternatives": [
+          {
+            "id": "ru-c1-zarechnye-modifikatory-registra",
+            "title": "Наречные модификаторы регистра и лексико-синтаксический тон",
+            "score": 0.73
+          },
+          {
+            "id": "ru-c1-perekluchenie-registrov-i-stilisticheskaya-gibkost",
+            "title": "Морфосинтаксические правила переключения регистров",
+            "score": 0.31
+          },
+          {
+            "id": "ru-b2-otsenochnyy-sintaksis-i-ekspressivnyy-poryadok",
+            "title": "Экспрессивные синтаксические конструкции публицистики",
+            "score": 0.22
+          }
+        ]
+      }
+    ],
+    "grammarIds": [
+      "ru-c1-zarechnye-modifikatory-registra"
+    ]
+  },
+  "ru/professional/C1/u01-l02": {
+    "title": "Подготовка решений совета директоров и академического совета",
+    "ref": 2,
+    "items": [
+      {
+        "text": "Пассивные модальные конструкции (Рекомендовано принять..., Решение вступает в силу...)",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-c1-otrushenie-subyekta-i-passivnyy-distantsirovannyi-sintaksis",
+            "title": "Пассивные и неопределённо-личные структуры дистанцирования",
+            "score": 0.24
+          },
+          {
+            "id": "ru-c1-modalnye-glagoly-zanizheniya-riskov",
+            "title": "Модальные глаголы заверения и минимизации рисков",
+            "score": 0.23
+          },
+          {
+            "id": "ru-b1-passivnyy-zalog-tvoritnyy-subyekt",
+            "title": "Пассивные конструкции с творительным падежом субъекта",
+            "score": 0.22
+          }
+        ]
+      },
+      {
+        "text": "Сослагательное наклонение в корпоративных документах",
+        "confidence": "medium",
+        "grammarId": "ru-c1-slozhno-soslagatelnyy-sintaksis-diplomatii",
+        "alternatives": [
+          {
+            "id": "ru-c1-slozhno-soslagatelnyy-sintaksis-diplomatii",
+            "title": "Сослагательное наклонение в официальных актах и нотах",
+            "score": 0.5
+          },
+          {
+            "id": "ru-a2-soslagatelnoe-naklonenie-by",
+            "title": "Сослагательное наклонение с частицей «бы»",
+            "score": 0.39
+          },
+          {
+            "id": "ru-a1-povelitelnoe-naklonenie",
+            "title": "Повелительное наклонение",
+            "score": 0.23
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/C1/u01-l03": {
+    "title": "Антикризисная коммуникация и обращения к стейкхолдерам",
+    "ref": 3,
+    "items": [
+      {
+        "text": "Снятие правовых рисков через синтаксические конструкции",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-c1-modalnye-glagoly-zanizheniya-riskov",
+            "title": "Модальные глаголы заверения и минимизации рисков",
+            "score": 0.31
+          },
+          {
+            "id": "ru-b2-otsenochnyy-sintaksis-i-ekspressivnyy-poryadok",
+            "title": "Экспрессивные синтаксические конструкции публицистики",
+            "score": 0.21
+          },
+          {
+            "id": "ru-c1-razvernutaya-metafora-v-sintaksise",
+            "title": "Развёрнутая метафора и её синтаксическое развёртывание",
+            "score": 0.2
+          }
+        ]
+      },
+      {
+        "text": "Сложные гипотетические конструкции предотвращения убытков",
+        "confidence": "medium",
+        "grammarId": "ru-b2-slozhnye-uslovnye-konstruktsii-s-by",
+        "alternatives": [
+          {
+            "id": "ru-b2-slozhnye-uslovnye-konstruktsii-s-by",
+            "title": "Сложные гипотетические условия с частицей «бы» (если бы... то бы...)",
+            "score": 0.58
+          },
+          {
+            "id": "ru-c2-slozhnye-gipoteticheskie-sintaksicheskie-seti",
+            "title": "Сложные гипотетические синтаксические сети",
+            "score": 0.39
+          },
+          {
+            "id": "ru-c1-slozhnye-poyasnitelnye-pridatochnye",
+            "title": "Сложные пояснительные придаточные с союзами «насколько», «постольку»",
+            "score": 0.27
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/C1/u01-l04": {
+    "title": "Заявления для СМИ и официальные пресс-релизы",
+    "ref": 4,
+    "items": [
+      {
+        "text": "Инверсия подлежащего и сказуемого для риторического акцента",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-b2-stilisticheskaya-inversiya-i-ritm-frazy",
+            "title": "Риторическая инверсия и ритмическая организация текста",
+            "score": 0.33
+          },
+          {
+            "id": "ru-c2-stilisticheskaya-inversiya-hudozhestvennoy-prozy",
+            "title": "Стилистическая инверсия подлежащего и сказуемого в прозе",
+            "score": 0.33
+          },
+          {
+            "id": "ru-c1-emfaticheskaya-inversiya-i-poryadok-slov",
+            "title": "Эмфатическая инверсия (Не только..., но и... / Едва ли...)",
+            "score": 0.21
+          }
+        ]
+      },
+      {
+        "text": "Точность терминологии публичных выступлений",
+        "confidence": "medium",
+        "grammarId": "ru-c1-inversionnye-ustupki-v-spore",
+        "alternatives": [
+          {
+            "id": "ru-c1-inversionnye-ustupki-v-spore",
+            "title": "Инверсионные уступки в публичных дебатах",
+            "score": 0.5
+          },
+          {
+            "id": "ru-c1-akusticheskaya-adaptivnost-i-govor",
+            "title": "Фонетико-синтаксические особенности публичной монологической речи",
+            "score": 0.47
+          },
+          {
+            "id": "ru-b2-vvodnye-slova-kategorii-dostovernosti",
+            "title": "Градации уверенности и категории эвфемизмов в публичной речи",
+            "score": 0.43
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/C1/u02-l01": {
+    "title": "Медиация на заседаниях совета директоров и ученого совета",
+    "ref": 1,
+    "items": [
+      {
+        "text": "Дипломатические формулы высшего порядка",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-c1-kosvennaya-vezhlivost-i-evfemizmy",
+            "title": "Косвенная вежливость, эвфемизмы и дипломатический протокол",
+            "score": 0.22
+          },
+          {
+            "id": "ru-b2-sintaksis-diplomaticheskoy-peregovornoy-rechi",
+            "title": "Дипломатический синтаксис: эвфемизмы и косвенное выражение",
+            "score": 0.21
+          },
+          {
+            "id": "ru-c2-morfosintaksicheskie-varianty-vysshego-registra",
+            "title": "Морфосинтаксические варианты высшего книжного регистра",
+            "score": 0.13
+          }
+        ]
+      },
+      {
+        "text": "Интонационные нюансы тона и акцентов",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-b2-intonatsionnye-konstruktsii-ik-1-ik-5",
+            "title": "Интонационные конструкции русского языка (ИК-1 – ИК-5)",
+            "score": 0.32
+          },
+          {
+            "id": "ru-c2-prosodicheskie-intonatsionnye-konstruktsii-ik-6-ik-7",
+            "title": "Интонационные конструкции ИК-6, ИК-7 и подтекст",
+            "score": 0.21
+          },
+          {
+            "id": "ru-c2-smyslovye-sdvigi-poryadka-slov",
+            "title": "Смысловые сдвиги порядка слов и тончайшие акценты",
+            "score": 0.19
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/C1/u02-l02": {
+    "title": "Управление дискуссией совета и работа с разногласиями",
+    "ref": 2,
+    "items": [
+      {
+        "text": "Конструкции управления дискуссией топ-менеджмента",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-b2-glagolnoe-upravlenie-divergentsiya",
+            "title": "Вариативность глагольного управления и синонимия предлогов",
+            "score": 0.32
+          },
+          {
+            "id": "ru-b2-sintaksis-nauchnogo-doklada",
+            "title": "Синтаксические нормы академической презентации и дискуссии",
+            "score": 0.32
+          }
+        ]
+      },
+      {
+        "text": "Дипломатичное опровержение (Разделяя финансовое опасение, подчеркну...)",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/C1/u02-l03": {
+    "title": "Соблюдение регуляторного комплаенса и деонтология",
+    "ref": 3,
+    "items": [
+      {
+        "text": "Деонтическая модальность высшего стиля (обязан неукоснительно следовать, гарантирует)",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-c2-deonticheskaya-modalnost-ustavnykh-dokumentov",
+            "title": "Деонтическая модальность уставных документов",
+            "score": 0.23
+          },
+          {
+            "id": "ru-c1-modalnost-i-veroyatnost-v-nauchnykh-gipotezakh",
+            "title": "Модальность вероятности и гипотетичности в исследовании",
+            "score": 0.18
+          },
+          {
+            "id": "ru-c1-modalnost-uverennosti-i-filosofskogo-poiska",
+            "title": "Модальность эпистемического поиска и каденция размышления",
+            "score": 0.17
+          }
+        ]
+      },
+      {
+        "text": "Сложноподчиненное нормативное условие",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-b1-sloznopodchinennye-izyasnitelnye-s-soyuzom-chto-chtoby",
+            "title": "Сложноподчинённые изъяснительные предложения",
+            "score": 0.37
+          },
+          {
+            "id": "ru-c1-inversiya-usloviya-v-ofitsialnoy-diskussii",
+            "title": "Инверсия условий в официальной речи («Будь у нас X, мы бы...»)",
+            "score": 0.3
+          },
+          {
+            "id": "ru-a1-esli-by-nerealnoe-uslovie",
+            "title": "Если бы... — нереальное условие",
+            "score": 0.23
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/C1/u02-l04": {
+    "title": "Согласование приоритетов стейкхолдеров и стратегии",
+    "ref": 4,
+    "items": [
+      {
+        "text": "Выделительные конструкции расстановки приоритетов (Что является определяющим, так это...)",
+        "confidence": "medium",
+        "grammarId": "ru-c1-vydelitelnye-cleft-konstruktsii",
+        "alternatives": [
+          {
+            "id": "ru-c1-vydelitelnye-cleft-konstruktsii",
+            "title": "Выделительные конструкции («Что нас действительно волнует, так это...»)",
+            "score": 0.6
+          },
+          {
+            "id": "ru-c1-tema-rema-i-informatsionnaya-upakovka",
+            "title": "Организация информации Тема-Рема и выделительные конструкции",
+            "score": 0.33
+          },
+          {
+            "id": "ru-b2-chastitsy-obosobleniya-i-vydeleniya",
+            "title": "Выделительно-ограничительные частицы (именно, лишь, исключительно)",
+            "score": 0.27
+          }
+        ]
+      },
+      {
+        "text": "Союзы уступки и синтеза",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-a1-soyuzy",
+            "title": "Союзы",
+            "score": 0.34
+          },
+          {
+            "id": "ru-c1-inversionnye-ustupki-v-spore",
+            "title": "Инверсионные уступки в публичных дебатах",
+            "score": 0.34
+          },
+          {
+            "id": "ru-c1-sintez-akademichskogo-i-ritoricheskogo-sintaksisa",
+            "title": "Синтез риторических, академических и экспромтных синтаксических структур C1",
+            "score": 0.28
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/C1/u03-l01": {
+    "title": "Ключевые доклады (Keynote) и актовые университетские лекции",
+    "ref": 1,
+    "items": [
+      {
+        "text": "Ораторские приемы (анафора, градация, риторический вопрос)",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-b1-kosvennyy-vopros-chastitsa-li",
+            "title": "Косвенный вопрос с частицей «ли»",
+            "score": 0.24
+          },
+          {
+            "id": "ru-c1-ritm-periodicheskogo-predlozheniya",
+            "title": "Ритм периодического предложения в ораторской речи",
+            "score": 0.22
+          },
+          {
+            "id": "ru-b2-sintaksis-sravnitelynykh-stipeney",
+            "title": "Синтаксические конструкции с градацией и параллельным изменением",
+            "score": 0.2
+          }
+        ]
+      },
+      {
+        "text": "Управление темпом и паузами высокого ораторского стиля",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-c1-ritm-periodicheskogo-predlozheniya",
+            "title": "Ритм периодического предложения в ораторской речи",
+            "score": 0.25
+          },
+          {
+            "id": "ru-b2-poyasnitelnye-i-vstavnye-konstruktsii",
+            "title": "Вставные предложения и грамматические паузы",
+            "score": 0.23
+          },
+          {
+            "id": "ru-c1-poyasnitelnye-vstavki-v-retsezii",
+            "title": "Пояснительные вставки и стилистические паузы в критика",
+            "score": 0.22
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/C1/u03-l02": {
+    "title": "Выступления перед инвестфондами и защита стоимости",
+    "ref": 2,
+    "items": [
+      {
+        "text": "Язык финансовой убедительности",
+        "confidence": "medium",
+        "grammarId": "ru-b2-intonatsionnye-konstruktsii-ik-1-ik-5",
+        "alternatives": [
+          {
+            "id": "ru-b2-intonatsionnye-konstruktsii-ik-1-ik-5",
+            "title": "Интонационные конструкции русского языка (ИК-1 – ИК-5)",
+            "score": 0.53
+          }
+        ]
+      },
+      {
+        "text": "Гипотетические прогнозы в сослагательном наклонении (Если бы мы вышли на рынок...)",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-b2-slozhnye-uslovnye-konstruktsii-s-by",
+            "title": "Сложные гипотетические условия с частицей «бы» (если бы... то бы...)",
+            "score": 0.33
+          },
+          {
+            "id": "ru-c2-inversiya-soslagatelnogo-nakloneniya-v-makroekonomike",
+            "title": "Инверсия сослагательного наклонения в моделировании",
+            "score": 0.23
+          },
+          {
+            "id": "ru-c1-inversiya-usloviya-v-ofitsialnoy-diskussii",
+            "title": "Инверсия условий в официальной речи («Будь у нас X, мы бы...»)",
+            "score": 0.19
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/C1/u03-l03": {
+    "title": "Пресс-конференции и интервью в жестких условиях",
+    "ref": 3,
+    "items": [
+      {
+        "text": "Техники перехвата инициативы и ухода от провокаций (Это важный аспект, но главное...)",
+        "confidence": "medium",
+        "grammarId": "ru-c1-priemy-ustnogo-ukhoda-ot-provokatsiy",
+        "alternatives": [
+          {
+            "id": "ru-c1-priemy-ustnogo-ukhoda-ot-provokatsiy",
+            "title": "Приёмы устного ухода от провокаций («Хотя X, суть в Y»)",
+            "score": 0.57
+          }
+        ]
+      },
+      {
+        "text": "Сдержанно-дипломатические формулировки",
+        "confidence": "medium",
+        "grammarId": "ru-c1-kosvennaya-vezhlivost-i-evfemizmy",
+        "alternatives": [
+          {
+            "id": "ru-c1-kosvennaya-vezhlivost-i-evfemizmy",
+            "title": "Косвенная вежливость, эвфемизмы и дипломатический протокол",
+            "score": 0.54
+          },
+          {
+            "id": "ru-b2-sintaksis-diplomaticheskoy-peregovornoy-rechi",
+            "title": "Дипломатический синтаксис: эвфемизмы и косвенное выражение",
+            "score": 0.51
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/C1/u03-l04": {
+    "title": "Модерация экспертных панелей и научных симпозиумов",
+    "ref": 4,
+    "items": [
+      {
+        "text": "Формулы модерации дискуссий высокого уровня",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-a1-vezhlivye-prosby-i-poveleniya",
+            "title": "Формулы вежливости и просьбы (Скажите, пожалуйста / Будьте добры)",
+            "score": 0.27
+          }
+        ]
+      },
+      {
+        "text": "Синтез тезисов экспертов в режиме реального времени",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-c1-sintez-akademichskogo-i-ritoricheskogo-sintaksisa",
+            "title": "Синтез риторических, академических и экспромтных синтаксических структур C1",
+            "score": 0.27
+          },
+          {
+            "id": "ru-a1-esli-realnoe-uslovie",
+            "title": "Е́сли... — реальное условие",
+            "score": 0.2
+          },
+          {
+            "id": "ru-a1-predlogi-vremeni",
+            "title": "Предлоги времени",
+            "score": 0.18
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/C1/u04-l01": {
+    "title": "Переговоры по сделкам слияний, поглощений и интеграции лабораторий",
+    "ref": 1,
+    "items": [
+      {
+        "text": "Инверсия условия при анализе юридических рисков",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-c1-modalnye-glagoly-zanizheniya-riskov",
+            "title": "Модальные глаголы заверения и минимизации рисков",
+            "score": 0.25
+          },
+          {
+            "id": "ru-c1-emfaticheskaya-inversiya-i-poryadok-slov",
+            "title": "Эмфатическая инверсия (Не только..., но и... / Едва ли...)",
+            "score": 0.23
+          },
+          {
+            "id": "ru-b2-slozhnye-uslovnye-konstruktsii-s-by",
+            "title": "Сложные гипотетические условия с частицей «бы» (если бы... то бы...)",
+            "score": 0.2
+          }
+        ]
+      },
+      {
+        "text": "Осторожные финансовые формулировки",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/C1/u04-l02": {
+    "title": "Преодоление тупиков в переговорах и арбитраж",
+    "ref": 2,
+    "items": [
+      {
+        "text": "Фразы рефрейминга тупиковых ситуаций (Переформулируем эту проблему как возможность...)",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      },
+      {
+        "text": "Условные уступки с оговорками",
+        "confidence": "medium",
+        "grammarId": "ru-c1-inversionnye-ustupki-v-spore",
+        "alternatives": [
+          {
+            "id": "ru-c1-inversionnye-ustupki-v-spore",
+            "title": "Инверсионные уступки в публичных дебатах",
+            "score": 0.4
+          },
+          {
+            "id": "ru-b1-soyuzy-usloviya-pri-uslovii-esli-by",
+            "title": "Сложные условные союзы (при условии если, в случае если)",
+            "score": 0.26
+          },
+          {
+            "id": "ru-a2-uslovnye-predlozheniya-esli",
+            "title": "Условные предложения с союзом «если»",
+            "score": 0.23
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/C1/u04-l03": {
+    "title": "Тактика убеждения, фрейминг и архитектура влияния",
+    "ref": 3,
+    "items": [
+      {
+        "text": "Сложный синтаксис риторического фрейминга",
+        "confidence": "medium",
+        "grammarId": "ru-b2-vyrazhenie-vremennoy-soshedshosti",
+        "alternatives": [
+          {
+            "id": "ru-b2-vyrazhenie-vremennoy-soshedshosti",
+            "title": "Синхронность и последовательность событий в сложном синтаксисе",
+            "score": 0.41
+          },
+          {
+            "id": "ru-c1-sintez-akademichskogo-i-ritoricheskogo-sintaksisa",
+            "title": "Синтез риторических, академических и экспромтных синтаксических структур C1",
+            "score": 0.3
+          },
+          {
+            "id": "ru-b2-stilisticheskaya-inversiya-i-ritm-frazy",
+            "title": "Риторическая инверсия и ритмическая организация текста",
+            "score": 0.29
+          }
+        ]
+      },
+      {
+        "text": "Метафорический язык стратегического менеджмента",
+        "confidence": "medium",
+        "grammarId": "ru-b2-intonatsionnye-konstruktsii-ik-1-ik-5",
+        "alternatives": [
+          {
+            "id": "ru-b2-intonatsionnye-konstruktsii-ik-1-ik-5",
+            "title": "Интонационные конструкции русского языка (ИК-1 – ИК-5)",
+            "score": 0.5
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/C1/u04-l04": {
+    "title": "Переговоры по международным совместным предприятиям и консорциумам",
+    "ref": 4,
+    "items": [
+      {
+        "text": "Официально-деловой юридический стиль международных договоров",
+        "confidence": "medium",
+        "grammarId": "ru-c2-sintaksis-ofitsialno-delovogo-i-yuridicheskogo-stilya",
+        "alternatives": [
+          {
+            "id": "ru-c2-sintaksis-ofitsialno-delovogo-i-yuridicheskogo-stilya",
+            "title": "Синтаксис официально-делового и юридического стиля",
+            "score": 0.49
+          },
+          {
+            "id": "ru-b2-frazeologiya-ofitsialno-delovogo-stilya",
+            "title": "Официально-деловой синтаксис и канцеляризмы",
+            "score": 0.43
+          },
+          {
+            "id": "ru-b2-kosvennaya-rech-ritoricheskie-priemy",
+            "title": "Косвенная речь в официальном стиле и цитирование",
+            "score": 0.38
+          }
+        ]
+      },
+      {
+        "text": "Точность формулирования зон ответственности",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/C1/u05-l01": {
+    "title": "Развитие связей в топ-менеджменте и филантропии",
+    "ref": 1,
+    "items": [
+      {
+        "text": "Изысканный стиль деловой беседы высшего уровня",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-b1-glagoly-myshleniya-i-rechi",
+            "title": "Глаголы речи и мысли в научном и деловом стиле",
+            "score": 0.37
+          },
+          {
+            "id": "ru-c2-sintaksis-ofitsialno-delovogo-i-yuridicheskogo-stilya",
+            "title": "Синтаксис официально-делового и юридического стиля",
+            "score": 0.27
+          },
+          {
+            "id": "ru-b2-frazeologiya-ofitsialno-delovogo-stilya",
+            "title": "Официально-деловой синтаксис и канцеляризмы",
+            "score": 0.25
+          }
+        ]
+      },
+      {
+        "text": "Завуалированное зондирование стратегических намерений",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/C1/u05-l02": {
+    "title": "Деловая дипломатия и международные связи",
+    "ref": 2,
+    "items": [
+      {
+        "text": "Переключение регистров с учетом высококонтекстных культур",
+        "confidence": "medium",
+        "grammarId": "ru-c1-perekluchenie-registrov-i-stilisticheskaya-gibkost",
+        "alternatives": [
+          {
+            "id": "ru-c1-perekluchenie-registrov-i-stilisticheskaya-gibkost",
+            "title": "Морфосинтаксические правила переключения регистров",
+            "score": 0.49
+          },
+          {
+            "id": "ru-c1-zarechnye-modifikatory-registra",
+            "title": "Наречные модификаторы регистра и лексико-синтаксический тон",
+            "score": 0.42
+          },
+          {
+            "id": "ru-c2-transformatsiya-stilisticheskikh-registrov",
+            "title": "Мгновенная трансформация стилистических регистров",
+            "score": 0.25
+          }
+        ]
+      },
+      {
+        "text": "Выражения уважения и субординации в международных отношениях",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-b2-subyektno-obyektnye-otnosheniya-v-slozhnom-predlozhenii",
+            "title": "Субъектно-объектные отношения в многосоставном предложении",
+            "score": 0.31
+          },
+          {
+            "id": "ru-a2-prevochodnaya-stepen-naibolee-samyy",
+            "title": "Способы выражения превосходной степени (наиболее, наименее)",
+            "score": 0.19
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/C1/u05-l03": {
+    "title": "Работа с экспертными советами и научно-техническими комиссиями",
+    "ref": 3,
+    "items": [
+      {
+        "text": "Запрос авторитетного мнения (Обращаемся к вашему экспертному видению...)",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-a1-vvodnye-slova-kazhetsya-po-moemu",
+            "title": "Вводные слова мнения (по-моему, кажется, конечно)",
+            "score": 0.25
+          }
+        ]
+      },
+      {
+        "text": "Официальные предложные конструкции",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-c1-slozhno-soslagatelnyy-sintaksis-diplomatii",
+            "title": "Сослагательное наклонение в официальных актах и нотах",
+            "score": 0.36
+          },
+          {
+            "id": "ru-b2-frazeologiya-ofitsialno-delovogo-stilya",
+            "title": "Официально-деловой синтаксис и канцеляризмы",
+            "score": 0.36
+          },
+          {
+            "id": "ru-c1-inversiya-usloviya-v-ofitsialnoy-diskussii",
+            "title": "Инверсия условий в официальной речи («Будь у нас X, мы бы...»)",
+            "score": 0.34
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/C1/u05-l04": {
+    "title": "Проведение стратегических сессий и академических саммитов",
+    "ref": 4,
+    "items": [
+      {
+        "text": "Клише ведущего стратегических сессий",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      },
+      {
+        "text": "Обобщение результатов работы групп стратегического планирования",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-a2-vidy-glagola-osnovy-nsv-sv",
+            "title": "Виды глагола: значение НСВ (процесс, повтор) и СВ (результат, факт)",
+            "score": 0.25
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/C1/u06-l01": {
+    "title": "Составление портфолио топ-менеджера и материалов на профессуру",
+    "ref": 1,
+    "items": [
+      {
+        "text": "Плотная номинализация в биографиях высшего руководства",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-c2-plotnaya-administrativno-pravovaya-nominalizatsiya",
+            "title": "Плотная административно-правовая номинализация",
+            "score": 0.3
+          },
+          {
+            "id": "ru-c1-otglagolnye-sushchestvitelnye-v-ritme-publitsistiki",
+            "title": "Конденсированная номинализация и ритм литературного обзора",
+            "score": 0.24
+          },
+          {
+            "id": "ru-b2-substantivatsiya-szhatie-informatsii",
+            "title": "Номинализация (сжатие информации отглагольными существительными)",
+            "score": 0.22
+          }
+        ]
+      },
+      {
+        "text": "Формулирование опыта членства в советах и академических заслуг",
+        "confidence": "medium",
+        "grammarId": "ru-c1-akademicheskoe-smyagchenie-hedging",
+        "alternatives": [
+          {
+            "id": "ru-c1-akademicheskoe-smyagchenie-hedging",
+            "title": "Конструкции академического смягчения утверждений (hedging)",
+            "score": 0.47
+          },
+          {
+            "id": "ru-c1-sintez-akademichskogo-i-ritoricheskogo-sintaksisa",
+            "title": "Синтез риторических, академических и экспромтных синтаксических структур C1",
+            "score": 0.41
+          },
+          {
+            "id": "ru-b2-sintaksis-nauchnogo-doklada",
+            "title": "Синтаксические нормы академической презентации и дискуссии",
+            "score": 0.39
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/C1/u06-l02": {
+    "title": "Собеседование при подборе топ-менеджеров и конкурсах на кафедры",
+    "ref": 2,
+    "items": [
+      {
+        "text": "Гипотетические конструкции обсуждения управленческого видения",
+        "confidence": "medium",
+        "grammarId": "ru-b2-slozhnye-uslovnye-konstruktsii-s-by",
+        "alternatives": [
+          {
+            "id": "ru-b2-slozhnye-uslovnye-konstruktsii-s-by",
+            "title": "Сложные гипотетические условия с частицей «бы» (если бы... то бы...)",
+            "score": 0.45
+          },
+          {
+            "id": "ru-c2-slozhnye-gipoteticheskie-sintaksicheskie-seti",
+            "title": "Сложные гипотетические синтаксические сети",
+            "score": 0.29
+          }
+        ]
+      },
+      {
+        "text": "Оформление философии лидерства",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/C1/u06-l03": {
+    "title": "Переговоры по контракту топ-менеджера, лабораториям и компенсациям",
+    "ref": 3,
+    "items": [
+      {
+        "text": "Переговоры по опционным программам и финансированию исследований",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      },
+      {
+        "text": "Условия реализации опционов и ограничения по конкуренции",
+        "confidence": "medium",
+        "grammarId": "ru-b2-slozhnye-uslovnye-konstruktsii-s-by",
+        "alternatives": [
+          {
+            "id": "ru-b2-slozhnye-uslovnye-konstruktsii-s-by",
+            "title": "Сложные гипотетические условия с частицей «бы» (если бы... то бы...)",
+            "score": 0.42
+          },
+          {
+            "id": "ru-b1-soyuzy-usloviya-pri-uslovii-esli-by",
+            "title": "Сложные условные союзы (при условии если, в случае если)",
+            "score": 0.37
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/C1/u06-l04": {
+    "title": "Аудит лидерства, академические проверки и оценка 360°",
+    "ref": 4,
+    "items": [
+      {
+        "text": "Формулирование результатов 360° (При высокой гибкости управления наблюдается...)",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-b2-glagolnoe-upravlenie-divergentsiya",
+            "title": "Вариативность глагольного управления и синонимия предлогов",
+            "score": 0.3
+          },
+          {
+            "id": "ru-a2-vidy-glagola-osnovy-nsv-sv",
+            "title": "Виды глагола: значение НСВ (процесс, повтор) и СВ (результат, факт)",
+            "score": 0.16
+          }
+        ]
+      },
+      {
+        "text": "Постановка целей преемственности руководства",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/C2/u01-l01": {
+    "title": "Выступления высшего руководства, ректората и перед инвесторами",
+    "ref": 1,
+    "items": [
+      {
+        "text": "Свободное переключение регистров и мастерство риторических фигур",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-c1-perekluchenie-registrov-i-stilisticheskaya-gibkost",
+            "title": "Морфосинтаксические правила переключения регистров",
+            "score": 0.26
+          },
+          {
+            "id": "ru-c2-transformatsiya-stilisticheskikh-registrov",
+            "title": "Мгновенная трансформация стилистических регистров",
+            "score": 0.25
+          },
+          {
+            "id": "ru-c2-morfosintaksicheskie-varianty-vysshego-registra",
+            "title": "Морфосинтаксические варианты высшего книжного регистра",
+            "score": 0.23
+          }
+        ]
+      },
+      {
+        "text": "Ораторская уверенность перед международными финансовыми и академическими институтами",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-c1-ritm-periodicheskogo-predlozheniya",
+            "title": "Ритм периодического предложения в ораторской речи",
+            "score": 0.32
+          },
+          {
+            "id": "ru-c1-akademicheskoe-smyagchenie-hedging",
+            "title": "Конструкции академического смягчения утверждений (hedging)",
+            "score": 0.31
+          },
+          {
+            "id": "ru-c1-sintez-akademichskogo-i-ritoricheskogo-sintaksisa",
+            "title": "Синтез риторических, академических и экспромтных синтаксических структур C1",
+            "score": 0.26
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/C2/u01-l02": {
+    "title": "Составление нормативных записок и законопроектов для органов власти",
+    "ref": 2,
+    "items": [
+      {
+        "text": "Плотная административно-правовая номинализация",
+        "confidence": "high",
+        "grammarId": "ru-c2-plotnaya-administrativno-pravovaya-nominalizatsiya",
+        "alternatives": [
+          {
+            "id": "ru-c2-plotnaya-administrativno-pravovaya-nominalizatsiya",
+            "title": "Плотная административно-правовая номинализация",
+            "score": 1.0
+          },
+          {
+            "id": "ru-c1-otglagolnye-sushchestvitelnye-v-ritme-publitsistiki",
+            "title": "Конденсированная номинализация и ритм литературного обзора",
+            "score": 0.19
+          },
+          {
+            "id": "ru-b2-substantivatsiya-szhatie-informatsii",
+            "title": "Номинализация (сжатие информации отглагольными существительными)",
+            "score": 0.17
+          }
+        ]
+      },
+      {
+        "text": "Высокий официально-юридический стиль",
+        "confidence": "high",
+        "grammarId": "ru-c2-sintaksis-ofitsialno-delovogo-i-yuridicheskogo-stilya",
+        "alternatives": [
+          {
+            "id": "ru-c2-sintaksis-ofitsialno-delovogo-i-yuridicheskogo-stilya",
+            "title": "Синтаксис официально-делового и юридического стиля",
+            "score": 0.81
+          },
+          {
+            "id": "ru-b2-kosvennaya-rech-ritoricheskie-priemy",
+            "title": "Косвенная речь в официальном стиле и цитирование",
+            "score": 0.4
+          },
+          {
+            "id": "ru-c1-slozhno-soslagatelnyy-sintaksis-diplomatii",
+            "title": "Сослагательное наклонение в официальных актах и нотах",
+            "score": 0.22
+          }
+        ]
+      }
+    ],
+    "grammarIds": [
+      "ru-c2-plotnaya-administrativno-pravovaya-nominalizatsiya",
+      "ru-c2-sintaksis-ofitsialno-delovogo-i-yuridicheskogo-stilya"
+    ]
+  },
+  "ru/professional/C2/u01-l03": {
+    "title": "Защита репутации компании в условиях форс-мажора",
+    "ref": 3,
+    "items": [
+      {
+        "text": "Синтаксис деэскалации и юридическая точность формулировок",
+        "confidence": "medium",
+        "grammarId": "ru-c2-sintaksis-ofitsialno-delovogo-i-yuridicheskogo-stilya",
+        "alternatives": [
+          {
+            "id": "ru-c2-sintaksis-ofitsialno-delovogo-i-yuridicheskogo-stilya",
+            "title": "Синтаксис официально-делового и юридического стиля",
+            "score": 0.49
+          },
+          {
+            "id": "ru-c2-sintaksis-takticheskogo-rychaga-v-peregovorakh",
+            "title": "Синтаксис тактического рычага давления и деэскалации",
+            "score": 0.48
+          },
+          {
+            "id": "ru-c2-sintaksis-sokraticheskogo-dialoga-i-dekonstruktsii",
+            "title": "Синтаксис сократического диалога и деконструкции",
+            "score": 0.2
+          }
+        ]
+      },
+      {
+        "text": "Владение дискурсом в условиях жесткого оппонирования",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-c2-epistemicheskaya-modalnost-filosofskogo-diskursa",
+            "title": "Эпистемическая модальность философского дискурса",
+            "score": 0.37
+          },
+          {
+            "id": "ru-b2-slozhnye-uslovnye-konstruktsii-s-by",
+            "title": "Сложные гипотетические условия с частицей «бы» (если бы... то бы...)",
+            "score": 0.25
+          },
+          {
+            "id": "ru-b1-soyuzy-usloviya-pri-uslovii-esli-by",
+            "title": "Сложные условные союзы (при условии если, в случае если)",
+            "score": 0.19
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/C2/u01-l04": {
+    "title": "Общее собрание акционеров и обращение председателя",
+    "ref": 4,
+    "items": [
+      {
+        "text": "Управление ритмом и каденцией официальной речи",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-c1-ritm-periodicheskogo-predlozheniya",
+            "title": "Ритм периодического предложения в ораторской речи",
+            "score": 0.34
+          },
+          {
+            "id": "ru-c1-inversiya-usloviya-v-ofitsialnoy-diskussii",
+            "title": "Инверсия условий в официальной речи («Будь у нас X, мы бы...»)",
+            "score": 0.26
+          },
+          {
+            "id": "ru-c1-modalnost-uverennosti-i-filosofskogo-poiska",
+            "title": "Модальность эпистемического поиска и каденция размышления",
+            "score": 0.21
+          }
+        ]
+      },
+      {
+        "text": "Риторические формулировки представления отчетов и рисков",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-c1-modalnye-glagoly-zanizheniya-riskov",
+            "title": "Модальные глаголы заверения и минимизации рисков",
+            "score": 0.32
+          },
+          {
+            "id": "ru-c1-sintez-akademichskogo-i-ritoricheskogo-sintaksisa",
+            "title": "Синтез риторических, академических и экспромтных синтаксических структур C1",
+            "score": 0.28
+          },
+          {
+            "id": "ru-b2-stilisticheskaya-inversiya-i-ritm-frazy",
+            "title": "Риторическая инверсия и ритмическая организация текста",
+            "score": 0.25
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/C2/u02-l01": {
+    "title": "Фидуциарная ответственность и корпоративные стандарты",
+    "ref": 1,
+    "items": [
+      {
+        "text": "Деонтическая модальность уставных документов (Совет контролирует, Члены обязаны...)",
+        "confidence": "high",
+        "grammarId": "ru-c2-deonticheskaya-modalnost-ustavnykh-dokumentov",
+        "alternatives": [
+          {
+            "id": "ru-c2-deonticheskaya-modalnost-ustavnykh-dokumentov",
+            "title": "Деонтическая модальность уставных документов",
+            "score": 0.86
+          },
+          {
+            "id": "ru-c2-epistemicheskaya-modalnost-filosofskogo-diskursa",
+            "title": "Эпистемическая модальность философского дискурса",
+            "score": 0.18
+          },
+          {
+            "id": "ru-c1-modalnost-i-veroyatnost-v-nauchnykh-gipotezakh",
+            "title": "Модальность вероятности и гипотетичности в исследовании",
+            "score": 0.17
+          }
+        ]
+      },
+      {
+        "text": "Точность понятийной базы корпоративного права",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      }
+    ],
+    "grammarIds": [
+      "ru-c2-deonticheskaya-modalnost-ustavnykh-dokumentov"
+    ]
+  },
+  "ru/professional/C2/u02-l02": {
+    "title": "Конфликты с активистскими инвесторами и корпоративные войны",
+    "ref": 2,
+    "items": [
+      {
+        "text": "Синтаксис удерживания повестки дня и нейтрализации корпоративных атак",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-c2-sintaksis-sokraticheskogo-dialoga-i-dekonstruktsii",
+            "title": "Синтаксис сократического диалога и деконструкции",
+            "score": 0.35
+          },
+          {
+            "id": "ru-c2-sintaksis-ofitsialno-delovogo-i-yuridicheskogo-stilya",
+            "title": "Синтаксис официально-делового и юридического стиля",
+            "score": 0.34
+          },
+          {
+            "id": "ru-c2-sintaksis-takticheskogo-rychaga-v-peregovorakh",
+            "title": "Синтаксис тактического рычага давления и деэскалации",
+            "score": 0.33
+          }
+        ]
+      },
+      {
+        "text": "Формулировки парирования попыток враждебного поглощения",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/C2/u02-l03": {
+    "title": "Антимонопольное право и международные санкции",
+    "ref": 3,
+    "items": [
+      {
+        "text": "Сложноподчиненное антимонопольное законодательство",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-b1-sloznopodchinennye-izyasnitelnye-s-soyuzom-chto-chtoby",
+            "title": "Сложноподчинённые изъяснительные предложения",
+            "score": 0.38
+          }
+        ]
+      },
+      {
+        "text": "Формулировки условий исключений и преференций",
+        "confidence": "medium",
+        "grammarId": "ru-c1-inversiya-usloviya-v-ofitsialnoy-diskussii",
+        "alternatives": [
+          {
+            "id": "ru-c1-inversiya-usloviya-v-ofitsialnoy-diskussii",
+            "title": "Инверсия условий в официальной речи («Будь у нас X, мы бы...»)",
+            "score": 0.43
+          },
+          {
+            "id": "ru-a1-esli-by-nerealnoe-uslovie",
+            "title": "Если бы... — нереальное условие",
+            "score": 0.33
+          },
+          {
+            "id": "ru-a1-esli-realnoe-uslovie",
+            "title": "Е́сли... — реальное условие",
+            "score": 0.32
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/C2/u02-l04": {
+    "title": "Корпоративная этика, комплаенс и защита осведомителей",
+    "ref": 4,
+    "items": [
+      {
+        "text": "Риторика безупречной деловой репутации и моральной ответственности",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-c1-sbalansirovannye-trekhchlennye-konstruktsii-trikolon",
+            "title": "Параллелизм и триколон (Правило трёх элементов в риторике)",
+            "score": 0.31
+          },
+          {
+            "id": "ru-c2-sintaksis-ofitsialno-delovogo-i-yuridicheskogo-stilya",
+            "title": "Синтаксис официально-делового и юридического стиля",
+            "score": 0.3
+          },
+          {
+            "id": "ru-b2-frazeologiya-ofitsialno-delovogo-stilya",
+            "title": "Официально-деловой синтаксис и канцеляризмы",
+            "score": 0.26
+          }
+        ]
+      },
+      {
+        "text": "Инфинитивные конструкции в этических кодексах",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/C2/u03-l01": {
+    "title": "Доклады на международных экономических форумах и саммитах",
+    "ref": 1,
+    "items": [
+      {
+        "text": "Высокий ораторский регистр с использованием метафор",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-c1-razvernutaya-metafora-v-sintaksise",
+            "title": "Развёрнутая метафора и её синтаксическое развёртывание",
+            "score": 0.28
+          },
+          {
+            "id": "ru-c1-ritm-periodicheskogo-predlozheniya",
+            "title": "Ритм периодического предложения в ораторской речи",
+            "score": 0.27
+          },
+          {
+            "id": "ru-c1-perekluchenie-registrov-i-stilisticheskaya-gibkost",
+            "title": "Морфосинтаксические правила переключения регистров",
+            "score": 0.26
+          }
+        ]
+      },
+      {
+        "text": "Владение триадой убеждения (этос, пафос, логос)",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/C2/u03-l02": {
+    "title": "Прямой эфир на ТВ-каналах и кризисное интервью",
+    "ref": 2,
+    "items": [
+      {
+        "text": "Мгновенный сдвиг фокуса и техники рефрейминга вопросов в прямом эфире",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-c2-transformatsiya-stilisticheskikh-registrov",
+            "title": "Мгновенная трансформация стилистических регистров",
+            "score": 0.26
+          },
+          {
+            "id": "ru-c2-smyslovye-sdvigi-poryadka-slov",
+            "title": "Смысловые сдвиги порядка слов и тончайшие акценты",
+            "score": 0.21
+          },
+          {
+            "id": "ru-b1-kosvennyy-vopros-chastitsa-li",
+            "title": "Косвенный вопрос с частицей «ли»",
+            "score": 0.19
+          }
+        ]
+      },
+      {
+        "text": "Абсолютное хладнокровие под объективами телекамер",
+        "confidence": "medium",
+        "grammarId": "ru-c2-absolutnyy-c2-sintez-vsekh-sintaksicheskikh-struktur",
+        "alternatives": [
+          {
+            "id": "ru-c2-absolutnyy-c2-sintez-vsekh-sintaksicheskikh-struktur",
+            "title": "Абсолютный C2 синтез всех устных и письменных синтаксических структур",
+            "score": 0.49
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/C2/u03-l03": {
+    "title": "Публикация фундаментальных монографий и деловых книг",
+    "ref": 3,
+    "items": [
+      {
+        "text": "Литературно-публицистический стиль в сочетании с аналитической глубиной",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-b2-bezlichnye-i-neopredelenno-lichnye-predlozheniya-b2",
+            "title": "Неопределённо-личные и безличные конструкции в аналитическом стиле",
+            "score": 0.35
+          },
+          {
+            "id": "ru-c2-literaturnye-allyuzii-i-podtekstovaya-podrazumevaemost",
+            "title": "Литературные аллюзии и подтекстовая подразумеваемость",
+            "score": 0.23
+          },
+          {
+            "id": "ru-c2-sintaksis-ofitsialno-delovogo-i-yuridicheskogo-stilya",
+            "title": "Синтаксис официально-делового и юридического стиля",
+            "score": 0.2
+          }
+        ]
+      },
+      {
+        "text": "Средства межабзацной связности в объемных текстах",
+        "confidence": "medium",
+        "grammarId": "ru-b2-sintaksicheskaya-svyaznost-abzatsa",
+        "alternatives": [
+          {
+            "id": "ru-b2-sintaksicheskaya-svyaznost-abzatsa",
+            "title": "Средства межфразовой и межабзацной связности",
+            "score": 0.6
+          },
+          {
+            "id": "ru-b2-slozhnyy-sintaksis-prichastiy-i-deeprichastiy",
+            "title": "Причастные и деепричастные обороты в аналитических текстах",
+            "score": 0.17
+          },
+          {
+            "id": "ru-b2-stilisticheskaya-inversiya-i-ritm-frazy",
+            "title": "Риторическая инверсия и ритмическая организация текста",
+            "score": 0.16
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/C2/u03-l04": {
+    "title": "Руководство международными экспертными комиссиями",
+    "ref": 4,
+    "items": [
+      {
+        "text": "Синтаксис ведения дискуссий ученых и отраслевых лидеров",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-c2-sintaksis-sokraticheskogo-dialoga-i-dekonstruktsii",
+            "title": "Синтаксис сократического диалога и деконструкции",
+            "score": 0.37
+          },
+          {
+            "id": "ru-c2-sintaksis-ofitsialno-delovogo-i-yuridicheskogo-stilya",
+            "title": "Синтаксис официально-делового и юридического стиля",
+            "score": 0.36
+          },
+          {
+            "id": "ru-c2-sintaksis-takticheskogo-rychaga-v-peregovorakh",
+            "title": "Синтаксис тактического рычага давления и деэскалации",
+            "score": 0.36
+          }
+        ]
+      },
+      {
+        "text": "Синтез кардинально противоположных позиций в концептуальный документ",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-c2-deonticheskaya-modalnost-ustavnykh-dokumentov",
+            "title": "Деонтическая модальность уставных документов",
+            "score": 0.35
+          },
+          {
+            "id": "ru-c2-absolutnyy-c2-sintez-vsekh-sintaksicheskikh-struktur",
+            "title": "Абсолютный C2 синтез всех устных и письменных синтаксических структур",
+            "score": 0.28
+          },
+          {
+            "id": "ru-c1-sintez-akademichskogo-i-ritoricheskogo-sintaksisa",
+            "title": "Синтез риторических, академических и экспромтных синтаксических структур C1",
+            "score": 0.27
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/C2/u04-l01": {
+    "title": "Переговоры с правительственными структурами и суверенами",
+    "ref": 1,
+    "items": [
+      {
+        "text": "Дипломатический протокольный стиль государственного уровня",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-c1-kosvennaya-vezhlivost-i-evfemizmy",
+            "title": "Косвенная вежливость, эвфемизмы и дипломатический протокол",
+            "score": 0.31
+          },
+          {
+            "id": "ru-c2-sintaksis-ofitsialno-delovogo-i-yuridicheskogo-stilya",
+            "title": "Синтаксис официально-делового и юридического стиля",
+            "score": 0.31
+          },
+          {
+            "id": "ru-b2-sintaksis-diplomaticheskoy-peregovornoy-rechi",
+            "title": "Дипломатический синтаксис: эвфемизмы и косвенное выражение",
+            "score": 0.28
+          }
+        ]
+      },
+      {
+        "text": "Юридически безупречные формулировки межгосударственных обязательств",
+        "confidence": "medium",
+        "grammarId": "ru-c2-sintaksis-ofitsialno-delovogo-i-yuridicheskogo-stilya",
+        "alternatives": [
+          {
+            "id": "ru-c2-sintaksis-ofitsialno-delovogo-i-yuridicheskogo-stilya",
+            "title": "Синтаксис официально-делового и юридического стиля",
+            "score": 0.5
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/C2/u04-l02": {
+    "title": "Многосторонние международные консорциумы",
+    "ref": 2,
+    "items": [
+      {
+        "text": "Сложные гипотетические синтаксические сети многосторонних соглашений",
+        "confidence": "high",
+        "grammarId": "ru-c2-slozhnye-gipoteticheskie-sintaksicheskie-seti",
+        "alternatives": [
+          {
+            "id": "ru-c2-slozhnye-gipoteticheskie-sintaksicheskie-seti",
+            "title": "Сложные гипотетические синтаксические сети",
+            "score": 0.97
+          },
+          {
+            "id": "ru-b2-slozhnye-uslovnye-konstruktsii-s-by",
+            "title": "Сложные гипотетические условия с частицей «бы» (если бы... то бы...)",
+            "score": 0.32
+          },
+          {
+            "id": "ru-b2-otsenochnyy-sintaksis-i-ekspressivnyy-poryadok",
+            "title": "Экспрессивные синтаксические конструкции публицистики",
+            "score": 0.17
+          }
+        ]
+      },
+      {
+        "text": "Балансировка геополитических интересов участников",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-a2-glagolnye-konstruktsii-soit-zanimatsya",
+            "title": "Глагольные конструкции предпочтения и интересов (увлекаться, заниматься)",
+            "score": 0.3
+          },
+          {
+            "id": "ru-a1-tvoritelnyy-padezh-professii",
+            "title": "Творительный падеж: профессии и интересы (быть/работать/заниматься)",
+            "score": 0.29
+          }
+        ]
+      }
+    ],
+    "grammarIds": [
+      "ru-c2-slozhnye-gipoteticheskie-sintaksicheskie-seti"
+    ]
+  },
+  "ru/professional/C2/u04-l03": {
+    "title": "Защита от враждебных поглощений и «ядовитых пилюль»",
+    "ref": 3,
+    "items": [
+      {
+        "text": "Синтаксис тактического рычага давления",
+        "confidence": "high",
+        "grammarId": "ru-c2-sintaksis-takticheskogo-rychaga-v-peregovorakh",
+        "alternatives": [
+          {
+            "id": "ru-c2-sintaksis-takticheskogo-rychaga-v-peregovorakh",
+            "title": "Синтаксис тактического рычага давления и деэскалации",
+            "score": 0.9
+          },
+          {
+            "id": "ru-c1-prichastnye-konstruktsii-v-ekspromte",
+            "title": "Причастные конструкции в устных ответах под давлением",
+            "score": 0.24
+          },
+          {
+            "id": "ru-c2-sintaksis-sokraticheskogo-dialoga-i-dekonstruktsii",
+            "title": "Синтаксис сократического диалога и деконструкции",
+            "score": 0.17
+          }
+        ]
+      },
+      {
+        "text": "Нейтрализация агрессивного давления в тупиковых точках",
+        "confidence": "medium",
+        "grammarId": "ru-c2-sintaksis-takticheskogo-rychaga-v-peregovorakh",
+        "alternatives": [
+          {
+            "id": "ru-c2-sintaksis-takticheskogo-rychaga-v-peregovorakh",
+            "title": "Синтаксис тактического рычага давления и деэскалации",
+            "score": 0.46
+          },
+          {
+            "id": "ru-c1-prichastnye-konstruktsii-v-ekspromte",
+            "title": "Причастные конструкции в устных ответах под давлением",
+            "score": 0.45
+          }
+        ]
+      }
+    ],
+    "grammarIds": [
+      "ru-c2-sintaksis-takticheskogo-rychaga-v-peregovorakh"
+    ]
+  },
+  "ru/professional/C2/u04-l04": {
+    "title": "Подписание соглашений суверенного уровня и ратификация",
+    "ref": 4,
+    "items": [
+      {
+        "text": "Язык юридической ратификации и вступления в силу",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-c2-sintaksis-ofitsialno-delovogo-i-yuridicheskogo-stilya",
+            "title": "Синтаксис официально-делового и юридического стиля",
+            "score": 0.35
+          },
+          {
+            "id": "ru-b2-intonatsionnye-konstruktsii-ik-1-ik-5",
+            "title": "Интонационные конструкции русского языка (ИК-1 – ИК-5)",
+            "score": 0.29
+          }
+        ]
+      },
+      {
+        "text": "Торжественный церемониальный стиль",
+        "confidence": "medium",
+        "grammarId": "ru-c2-sintaksis-ofitsialno-delovogo-i-yuridicheskogo-stilya",
+        "alternatives": [
+          {
+            "id": "ru-c2-sintaksis-ofitsialno-delovogo-i-yuridicheskogo-stilya",
+            "title": "Синтаксис официально-делового и юридического стиля",
+            "score": 0.52
+          },
+          {
+            "id": "ru-b2-kosvennaya-rech-ritoricheskie-priemy",
+            "title": "Косвенная речь в официальном стиле и цитирование",
+            "score": 0.42
+          },
+          {
+            "id": "ru-b2-bezlichnye-i-neopredelenno-lichnye-predlozheniya-b2",
+            "title": "Неопределённо-личные и безличные конструкции в аналитическом стиле",
+            "score": 0.42
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/C2/u05-l01": {
+    "title": "Коммуникация в элитных бизнес-клубах и закрытых сообществах",
+    "ref": 1,
+    "items": [
+      {
+        "text": "Непринужденная светская беседа высшего делового общества",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-c2-morfosintaksicheskie-varianty-vysshego-registra",
+            "title": "Морфосинтаксические варианты высшего книжного регистра",
+            "score": 0.34
+          },
+          {
+            "id": "ru-c2-sintaksis-ofitsialno-delovogo-i-yuridicheskogo-stilya",
+            "title": "Синтаксис официально-делового и юридического стиля",
+            "score": 0.3
+          },
+          {
+            "id": "ru-b2-frazeologiya-ofitsialno-delovogo-stilya",
+            "title": "Официально-деловой синтаксис и канцеляризмы",
+            "score": 0.26
+          }
+        ]
+      },
+      {
+        "text": "Управление невербальными и подтекстовыми сигналами статуса",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-c2-literaturnye-allyuzii-i-podtekstovaya-podrazumevaemost",
+            "title": "Литературные аллюзии и подтекстовая подразумеваемость",
+            "score": 0.35
+          },
+          {
+            "id": "ru-b1-glagolnyy-upravlenie-predlogi-v-na-o-k",
+            "title": "Глагольное управление: сложные предложные связи",
+            "score": 0.21
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/C2/u05-l02": {
+    "title": "Глобальное меценатство и благотворительные фонды",
+    "ref": 2,
+    "items": [
+      {
+        "text": "Язык социальной ответственности и филантропии",
+        "confidence": "medium",
+        "grammarId": "ru-b2-intonatsionnye-konstruktsii-ik-1-ik-5",
+        "alternatives": [
+          {
+            "id": "ru-b2-intonatsionnye-konstruktsii-ik-1-ik-5",
+            "title": "Интонационные конструкции русского языка (ИК-1 – ИК-5)",
+            "score": 0.43
+          }
+        ]
+      },
+      {
+        "text": "Сочетание коммерческого успеха и общественной миссии",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/C2/u05-l03": {
+    "title": "Патронаж мировых культурных и спортивных событий",
+    "ref": 3,
+    "items": [
+      {
+        "text": "Формулирование ценностного партнерства брендов",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      },
+      {
+        "text": "Юридические нюансы контрактов статусных спонсоров",
+        "confidence": "medium",
+        "grammarId": "ru-c2-sintaksis-ofitsialno-delovogo-i-yuridicheskogo-stilya",
+        "alternatives": [
+          {
+            "id": "ru-c2-sintaksis-ofitsialno-delovogo-i-yuridicheskogo-stilya",
+            "title": "Синтаксис официально-делового и юридического стиля",
+            "score": 0.5
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/C2/u05-l04": {
+    "title": "Руководство промышленными союзами и бизнес-ассоциациями",
+    "ref": 4,
+    "items": [
+      {
+        "text": "Синтаксис выработки общего мнения конкурирующих гигантов",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-c2-sintaksis-sokraticheskogo-dialoga-i-dekonstruktsii",
+            "title": "Синтаксис сократического диалога и деконструкции",
+            "score": 0.24
+          },
+          {
+            "id": "ru-c2-sintaksis-ofitsialno-delovogo-i-yuridicheskogo-stilya",
+            "title": "Синтаксис официально-делового и юридического стиля",
+            "score": 0.24
+          },
+          {
+            "id": "ru-c2-sintaksis-takticheskogo-rychaga-v-peregovorakh",
+            "title": "Синтаксис тактического рычага давления и деэскалации",
+            "score": 0.23
+          }
+        ]
+      },
+      {
+        "text": "Лоббирование интересов отрасли в органах власти",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-a2-glagolnye-konstruktsii-soit-zanimatsya",
+            "title": "Глагольные конструкции предпочтения и интересов (увлекаться, заниматься)",
+            "score": 0.28
+          },
+          {
+            "id": "ru-a1-tvoritelnyy-padezh-professii",
+            "title": "Творительный падеж: профессии и интересы (быть/работать/заниматься)",
+            "score": 0.27
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/C2/u06-l01": {
+    "title": "Формирование портфолио независимого директора",
+    "ref": 1,
+    "items": [
+      {
+        "text": "Конденсированный стиль биографий высших директоров",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-c2-morfosintaksicheskie-varianty-vysshego-registra",
+            "title": "Морфосинтаксические варианты высшего книжного регистра",
+            "score": 0.29
+          },
+          {
+            "id": "ru-c1-otglagolnye-sushchestvitelnye-v-ritme-publitsistiki",
+            "title": "Конденсированная номинализация и ритм литературного обзора",
+            "score": 0.26
+          },
+          {
+            "id": "ru-c2-sintaksis-ofitsialno-delovogo-i-yuridicheskogo-stilya",
+            "title": "Синтаксис официально-делового и юридического стиля",
+            "score": 0.24
+          }
+        ]
+      },
+      {
+        "text": "Отражение многолетнего опыта в органах управления",
+        "confidence": "medium",
+        "grammarId": "ru-b2-glagolnoe-upravlenie-divergentsiya",
+        "alternatives": [
+          {
+            "id": "ru-b2-glagolnoe-upravlenie-divergentsiya",
+            "title": "Вариативность глагольного управления и синонимия предлогов",
+            "score": 0.39
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/C2/u06-l02": {
+    "title": "Подбор председателя совета и преемственность CEO",
+    "ref": 2,
+    "items": [
+      {
+        "text": "Вопросительные техники глубинной оценки управленческой философии",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-a1-voprositelnye-slova",
+            "title": "Вопросительные слова",
+            "score": 0.29
+          },
+          {
+            "id": "ru-b1-datelnyy-padezh-subyekta-otsenki",
+            "title": "Дательный падеж субъекта оценки (мне кажется, ему видится)",
+            "score": 0.18
+          },
+          {
+            "id": "ru-a1-voprositelnye-slova-kto-chto-gde-kuda",
+            "title": "Вопросительные слова (Кто, Что, Где, Куда, Откуда)",
+            "score": 0.17
+          }
+        ]
+      },
+      {
+        "text": "Разработка критериев смены генерального директора",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/C2/u06-l03": {
+    "title": "Контракты C-Suite, «золотые парашюты» и гарантии",
+    "ref": 3,
+    "items": [
+      {
+        "text": "Строгие юридические формулировки компенсационных договоров",
+        "confidence": "medium",
+        "grammarId": "ru-c2-sintaksis-ofitsialno-delovogo-i-yuridicheskogo-stilya",
+        "alternatives": [
+          {
+            "id": "ru-c2-sintaksis-ofitsialno-delovogo-i-yuridicheskogo-stilya",
+            "title": "Синтаксис официально-делового и юридического стиля",
+            "score": 0.5
+          }
+        ]
+      },
+      {
+        "text": "Условия выплаты компенсаций, защиты от исков и соглашений о неконкуренции",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-b2-slozhnye-uslovnye-konstruktsii-s-by",
+            "title": "Сложные гипотетические условия с частицей «бы» (если бы... то бы...)",
+            "score": 0.33
+          },
+          {
+            "id": "ru-b1-soyuzy-usloviya-pri-uslovii-esli-by",
+            "title": "Сложные условные союзы (при условии если, в случае если)",
+            "score": 0.24
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  },
+  "ru/professional/C2/u06-l04": {
+    "title": "Аудит и оценка эффективности работы совета директоров",
+    "ref": 4,
+    "items": [
+      {
+        "text": "Мастерство институционального анализа и отчетов",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": []
+      },
+      {
+        "text": "Формулирование задач трансформации системы корпоративного управления",
+        "confidence": "none",
+        "grammarId": null,
+        "alternatives": [
+          {
+            "id": "ru-c2-transformatsiya-stilisticheskikh-registrov",
+            "title": "Мгновенная трансформация стилистических регистров",
+            "score": 0.27
+          },
+          {
+            "id": "ru-b2-glagolnoe-upravlenie-divergentsiya",
+            "title": "Вариативность глагольного управления и синонимия предлогов",
+            "score": 0.22
+          },
+          {
+            "id": "ru-b1-glagoly-dvizheniya-s-pristavkami-obzor",
+            "title": "Система приставочных глаголов движения (пере-, про-, об-, за-)",
+            "score": 0.17
+          }
+        ]
+      }
+    ],
+    "grammarIds": []
+  }
+}

@@ -54,6 +54,16 @@ High-confidence ids only (no drafted decisions). These curricula copy the manual
 | fr/professional | B1-C2 | 96 of 96 | 191 / 1 / 0 |
 | fr/travelling | A1-B1 | 60 of 60 | 118 / 1 / 2 |
 
+### Other Russian tracks
+
+Russian has only 296 manual pages, so most items have no page to point to. Only high-confidence matches were applied, after removing 13 that were clearly wrong (e.g. «Идите прямо» matched «Прямая и косвенная речь»; symptom and hotel phrases matched «У меня есть...»). Medium matches are NOT applied: they need a native-speaker review. The saved `review-ru-<track>.csv` files still list the unfiltered matches.
+
+| Track | Lessons with `grammarIds` | Items matched (high, after filtering) / total |
+|---|---|---|
+| ru/spoken | 48 of 180 | ~50 / 326 |
+| ru/professional | 9 of 96 | ~9 / 192 |
+| ru/travelling | 7 of 60 | ~8 / 121 |
+
 `fr/pronunciation` is deliberately skipped: its lessons teach sounds, not grammar points (1 of 38 items matched with high confidence). Review files: `docs/grammar-id-review/{mapping,review,report}-fr-<track>.*`. The 10 medium/none items have no id yet.
 
 The counts include ids that come from the drafted decisions below. Re-create them with
