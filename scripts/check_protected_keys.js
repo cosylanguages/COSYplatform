@@ -34,7 +34,7 @@ const PROHIBITED_TAGS = ['<cosy-teacher-notes', '<teacher-notes'];
 // 'explanation' is deliberately not listed: it is normal public teaching text in grammar references.
 // 'correct' and 'teacher_notes' are not listed: 'correct' is the shown fix in error-correction examples and
 // 'teacher_notes' is a syllabus metadata field in curriculums/, both intended to be public.
-const ADVISORY_KEYS = ['answer', 'answerKey', 'answer_key', 'isCorrect', 'correctAnswer', 'correct_answer', 'solution', 'teacher-notes'];
+const ADVISORY_KEYS = ['answer', 'ans', 'answerKey', 'answer_key', 'isCorrect', 'correctAnswer', 'correct_answer', 'solution', 'teacher-notes'];
 
 function isIgnored(relativeFilePath) {
   return IGNORED_PATHS.some(ignored =>

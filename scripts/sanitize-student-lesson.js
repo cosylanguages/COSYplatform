@@ -3,6 +3,7 @@ const { JSDOM } = require('jsdom');
 const SENSITIVE_KEYS = new Set([
   'answer',
   'answers',
+  'ans',
   'answerkey',
   'correct',
   'correctanswer',
