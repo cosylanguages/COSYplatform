@@ -130,6 +130,24 @@ def toks_ru(s):
         out.append(RU_SYN.get(w, w))
     return out
 
+EL_STOP = set("ο η το οι τα του της των τον την τους τις ενα μια ενας και η με σε για απο να που ως ειναι vs kai".split())
+EL_SUF = sorted("""ων ους ες ας ης ος οι ου α η ο ι ς ες ια ιο ιου ιες ματα μα τα σεις ση σης ση ει ουν ω ω""".split(), key=len, reverse=True)
+def _el_fold(w):
+    import unicodedata
+    w = unicodedata.normalize("NFD", w.lower())
+    w = "".join(c for c in w if not unicodedata.combining(c))
+    return w.replace("\u03c2", "\u03c3")  # final sigma -> sigma
+def toks_el(s):
+    out = []
+    for w in re.findall(r"[\u0370-\u03ff\u1f00-\u1fff0-9]+", s):
+        w = _el_fold(w)
+        if w in EL_STOP or len(w) < 2: continue
+        for suf in EL_SUF:
+            suf = _el_fold(suf)
+            if len(w) >= len(suf) + 4 and w.endswith(suf): w = w[: -len(suf)]; break
+        out.append(w)
+    return out
+
 IT_STOP = set("""il lo la i gli le un uno una di a da in con su per tra fra e o ed del dello della dei degli delle al allo alla ai
 agli alle nel nello nella nei negli nelle sul sullo sulla sui sugli sulle che si ci ne non piu come ho ha sono e essere
 uso usi forma forme regole regola base introduzione lezione""".split())
@@ -235,6 +253,7 @@ def main():
     global TOK, MODES
     if a.lang == "ru": TOK = toks_ru
     if a.lang == "it": TOK = toks_it
+    if a.lang == "el": TOK = toks_el
     if a.lang == "fr":
         TOK = toks_fr
         MODES = {"subjonctif", "conditionnel", "imparfait", "futur", "plusqueparfait", "imperatif", "gerondif"}
