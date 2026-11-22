@@ -2,7 +2,8 @@
   "name": "cosyplatform",
   "private": true,
   "scripts": {
-    "test": "node --test"
+    "test": "node --test",
+    "check:legacy-tables": "node scripts/check-legacy-table-references.js"
   },
   "devDependencies": {
     "jsdom": "^29.1.1"

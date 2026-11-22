@@ -199,7 +199,7 @@ To complete the ecosystem synchronization across sister repositories and cloud s
 
 #### Step 5: Final Database Ingestion & Legacy Table Cleanup
 1. In `COSYplatform`, run `node scripts/ingest_roadmaps.js` to ensure all 54 roadmap sequences are ingested into `courses`, `lessons`, `course_lessons`, `lesson_student_content`, and `lesson_protected`.
-2. Once ingestion is complete for all production environments, drop legacy tables `student_lesson_content` and `lesson_content` in Supabase SQL editor.
+2. **Do not drop the legacy tables yet.** `shared/js/lesson-resolver.js`, `teacher.html` and `index.html` still read or write `lesson_content` / `student_lesson_content`. Run `npm run check:legacy-tables`; it must exit 0 before any drop. See `docs/legacy-table-cleanup.md` for the migration path and the guarded drop procedure.
 
 ---
 
