@@ -1,0 +1,247 @@
+{
+ "es/general/A1/u01-l01": {
+  "title": "Hola & Bienvenidos",
+  "ref": 1,
+  "items": [
+   {
+    "text": "Verbo \"ser\" (presente) — formas afirmativas",
+    "confidence": "high",
+    "grammarId": "es-a1-es-ser",
+    "alternatives": [
+     {
+      "id": "es-a1-es-ser",
+      "title": "Verbo SER",
+      "score": 0.64
+     },
+     {
+      "id": "es-a1-ser-vs-estar",
+      "title": "Ser vs Estar",
+      "score": 0.4
+     },
+     {
+      "id": "es-a1-verbos-reflexivos",
+      "title": "Verbos reflexivos",
+      "score": 0.35
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "es-a1-es-ser"
+  ]
+ },
+ "es/general/A1/u01-l02": {
+  "title": "¿Cómo te llamas?",
+  "ref": 2,
+  "items": [
+   {
+    "text": "Verbo \"llamarse\" (presente)",
+    "confidence": "medium",
+    "grammarId": "es-a1-verbos-reflexivos",
+    "alternatives": [
+     {
+      "id": "es-a1-verbos-reflexivos",
+      "title": "Verbos reflexivos",
+      "score": 0.44
+     },
+     {
+      "id": "es-a1-presente-indicativo",
+      "title": "Presente de indicativo",
+      "score": 0.41
+     },
+     {
+      "id": "es-a1-es-estar",
+      "title": "Verbo ESTAR",
+      "score": 0.4
+     }
+    ]
+   }
+  ],
+  "grammarIds": []
+ },
+ "es/general/A1/u01-l03": {
+  "title": "Números 1-20",
+  "ref": 3,
+  "items": [
+   {
+    "text": "Género de los sustantivos (introducción)",
+    "confidence": "high",
+    "grammarId": "es-a1-genero-sustantivos",
+    "alternatives": [
+     {
+      "id": "es-a1-genero-sustantivos",
+      "title": "El género de los sustantivos",
+      "score": 0.72
+     },
+     {
+      "id": "es-a1-es-articulos",
+      "title": "Artículos y Género",
+      "score": 0.31
+     },
+     {
+      "id": "es-a1-plural-sustantivos",
+      "title": "Formación del plural",
+      "score": 0.28
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "es-a1-genero-sustantivos"
+  ]
+ },
+ "es/general/A1/u01-l04": {
+  "title": "Pares Mínimos: C, Z, S",
+  "ref": 4,
+  "items": [
+   {
+    "text": "Estructura básica de la oración",
+    "confidence": "medium",
+    "grammarId": "es-a1-conjunciones-basicas",
+    "alternatives": [
+     {
+      "id": "es-a1-conjunciones-basicas",
+      "title": "Conjunciones básicas",
+      "score": 0.48
+     },
+     {
+      "id": "es-a1-negacion",
+      "title": "La negación",
+      "score": 0.33
+     },
+     {
+      "id": "es-a1-numeros-fecha-hora",
+      "title": "Números, la hora, días y meses",
+      "score": 0.23
+     }
+    ]
+   }
+  ],
+  "grammarIds": []
+ },
+ "es/general/A1/u01-l05": {
+  "title": "Frases de Cortesía",
+  "ref": 5,
+  "items": [
+   {
+    "text": "Peticiones amables (Por favor, Gracias)",
+    "confidence": "none",
+    "grammarId": null,
+    "alternatives": []
+   }
+  ],
+  "grammarIds": []
+ },
+ "es/general/A1/u02-l01": {
+  "title": "Hola, soy...",
+  "ref": 1,
+  "items": [
+   {
+    "text": "Verbo ser vs estar (introducción)",
+    "confidence": "high",
+    "grammarId": "es-a1-ser-vs-estar",
+    "alternatives": [
+     {
+      "id": "es-a1-ser-vs-estar",
+      "title": "Ser vs Estar",
+      "score": 0.68
+     },
+     {
+      "id": "es-a1-es-estar",
+      "title": "Verbo ESTAR",
+      "score": 0.54
+     },
+     {
+      "id": "es-a1-es-ser",
+      "title": "Verbo SER",
+      "score": 0.54
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "es-a1-ser-vs-estar"
+  ]
+ },
+ "es/general/A1/u02-l02": {
+  "title": "Mi trabajo y oficina",
+  "ref": 2,
+  "items": [
+   {
+    "text": "Verbo tener + artículos indeterminados",
+    "confidence": "medium",
+    "grammarId": "es-a1-articulos-definidos",
+    "alternatives": [
+     {
+      "id": "es-a1-articulos-definidos",
+      "title": "Artículos determinados e indeterminados",
+      "score": 0.52
+     },
+     {
+      "id": "es-a1-es-articulos",
+      "title": "Artículos y Género",
+      "score": 0.35
+     },
+     {
+      "id": "es-a1-verbos-reflexivos",
+      "title": "Verbos reflexivos",
+      "score": 0.29
+     }
+    ]
+   }
+  ],
+  "grammarIds": []
+ },
+ "es/general/A1/u02-l03": {
+  "title": "Mi casa y barrio",
+  "ref": 3,
+  "items": [
+   {
+    "text": "Estar + preposiciones de lugar",
+    "confidence": "high",
+    "grammarId": "es-a1-preposiciones-lugar",
+    "alternatives": [
+     {
+      "id": "es-a1-preposiciones-lugar",
+      "title": "Preposiciones de lugar",
+      "score": 0.85
+     },
+     {
+      "id": "es-a1-preposiciones-tiempo",
+      "title": "Preposiciones de tiempo",
+      "score": 0.49
+     },
+     {
+      "id": "es-a1-ser-vs-estar",
+      "title": "Ser vs Estar",
+      "score": 0.37
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "es-a1-preposiciones-lugar"
+  ]
+ },
+ "es/general/A1/u02-l04": {
+  "title": "Mi familia",
+  "ref": 4,
+  "items": [
+   {
+    "text": "Adjetivos posesivos",
+    "confidence": "high",
+    "grammarId": "es-a1-posesivos",
+    "alternatives": [
+     {
+      "id": "es-a1-posesivos",
+      "title": "Adjetivos y pronombres posesivos",
+      "score": 0.84
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "es-a1-posesivos"
+  ]
+ }
+}
