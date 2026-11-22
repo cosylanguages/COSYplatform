@@ -119,3 +119,27 @@ test('every grammarIds entry in the curricula is a well-formed id', () => {
   assert.deepEqual(bad, []);
   assert.ok(total > 0, 'expected some grammarIds in the curricula');
 });
+
+test('every grammar-focus element in the lesson files has a well-formed id', () => {
+  const base = path.join(__dirname, '..', 'lessons');
+  let total = 0;
+  const bad = [];
+  (function walk(d) {
+    for (const e of fs.readdirSync(d, { withFileTypes: true })) {
+      const p = path.join(d, e.name);
+      if (e.isDirectory()) { walk(p); continue; }
+      if (!e.name.endsWith('.json')) continue;
+      let data;
+      try { data = JSON.parse(fs.readFileSync(p, 'utf8')); } catch (_) { continue; }
+      for (const s of (data && data.slides) || []) {
+        for (const el of s.elements || []) {
+          if (el.type !== 'grammar-focus') continue;
+          total++;
+          if (!GF.isValidId(el.grammarId)) bad.push(`${path.relative(base, p)}: ${el.grammarId}`);
+        }
+      }
+    }
+  })(base);
+  assert.deepEqual(bad, []);
+  assert.ok(total > 0, 'expected some grammar-focus elements in the lessons');
+});

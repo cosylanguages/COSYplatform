@@ -111,3 +111,17 @@ Add it to any slide's `elements` to show a COSYmanuals grammar point by id:
 - Implementation: `shared/js/grammar-focus.js`, used by `student.html` and `teacher.html`. Tests: `tests/grammar-focus.test.js` (also checks every `grammarIds` entry in `curriculums/` is well-formed).
 - Not yet done: the Lesson Studio editor has no palette entry for this element, and curriculum `grammarIds` are not yet turned into `grammar-focus` slides automatically.
 - Known embed limitation: the manual's interactive widgets (for example "tap to see the correct form") are not active inside the embed.
+
+## Generating grammar-focus slides from existing lesson links
+
+Lesson files already carry `links.grammar[].topic_id` (the manual page slug). `scripts/grammar-ids/add_grammar_focus.py` turns those links into a real "Grammar Focus" slide with one `grammar-focus` element per topic, placed right after the lesson's input slide:
+
+```
+python3 scripts/grammar-ids/add_grammar_focus.py --manuals ../cosymanuals --lessons lessons [--dry-run]
+```
+
+- Resolution: same level first, then the nearest higher level (A0 lessons use the A1 manual page).
+- Re-running adds nothing twice. Files are only rewritten if their compact-JSON formatting can be reproduced exactly.
+- Applied to 25 English lessons (`general-english-a0`, `general-english-a1`). 15 links are unresolved because the manuals have no page for that topic yet (e.g. `can-ability`, `frequency-adverbs`, `articles-a-an`, `work-collocations`): add the manual page or fix the `topic_id`.
+- Only English lessons carry these links today. The fr/ru/it/el curricula have `grammarIds`, but there are no lesson files for them yet, so there is nothing to generate.
+
