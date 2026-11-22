@@ -1,0 +1,32 @@
+{
+  "language": "xx",
+  "course_type": "general",
+  "level": "starter",
+  "units": [
+    {
+      "unit": 0,
+      "title": "Unit 0 Title",
+      "lessons": [
+        {
+          "lesson": 1,
+          "type": "gv",
+          "title": "Lesson Title",
+          "recycled": null,
+          "duration_minutes": 60,
+          "grammar": [
+            "grammar_group_id"
+          ],
+          "vocabulary": [
+            "theme_slug"
+          ],
+          "practice_types": [
+            "flashcards",
+            "quiz"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "Notes for the teacher regarding this lesson."
+        }
+      ]
+    }
+  ]
+}
