@@ -1,0 +1,32 @@
+name: Validate Content & Integrity
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Check content integrity
+        run: node scripts/check-content-integrity.js
+
+      - name: Check lesson languages
+        run: node scripts/check-lesson-languages.js
+
+      - name: Check protected keys
+        run: node scripts/check_protected_keys.js
+
+      - name: Run tests
+        run: npm test

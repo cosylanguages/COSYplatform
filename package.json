@@ -3,7 +3,11 @@
   "private": true,
   "scripts": {
     "test": "node --test",
-    "check:legacy-tables": "node scripts/check-legacy-table-references.js"
+    "check:legacy-tables": "node scripts/check-legacy-table-references.js",
+    "check:content": "node scripts/check-content-integrity.js",
+    "check:languages": "node scripts/check-lesson-languages.js",
+    "check:protected": "node scripts/check_protected_keys.js",
+    "validate": "npm run check:content && npm run check:languages && npm run check:protected && npm test"
   },
   "devDependencies": {
     "jsdom": "^29.1.1"
