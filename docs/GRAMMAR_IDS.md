@@ -54,6 +54,10 @@ High-confidence ids only (no drafted decisions). These curricula copy the manual
 | fr/professional | B1-C2 | 96 of 96 | 191 / 1 / 0 |
 | fr/travelling | A1-B1 | 60 of 60 | 118 / 1 / 2 |
 
+### Spanish, German, Portuguese (general A1)
+
+These curricula are tiny (8-9 lessons each, A1 only), so coverage is small: es 5, de 1, pt 3 lessons got a high-confidence id (9 in total). The matcher uses its default tokenizer for them, so wording that differs from the page title (e.g. German "Verb sein (Präsens)") is missed rather than mismatched; a language-specific tokenizer would raise coverage. Medium matches are not applied. Review files: `docs/grammar-id-review/*-{es,de,pt}-general.*`.
+
 ### Greek (el/general A1)
 
 A Greek tokenizer was added to the matcher (accent folding, final sigma, suffix stemming). 88 of 142 lessons get `grammarIds` from high-confidence matches (26 unique item-to-page links, all checked by hand; many lessons repeat the same grammar items). 112 medium matches are NOT applied: many are wrong (e.g. demonstrative pronouns matched to personal pronouns) and Greek has only 60 A1 manual pages. Review files: `docs/grammar-id-review/*-el-general.*`.

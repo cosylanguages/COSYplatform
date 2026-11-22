@@ -1,0 +1,225 @@
+{
+ "pt/general/A1/u01-l01": {
+  "title": "Olá & Bem-vindos",
+  "ref": 1,
+  "items": [
+   {
+    "text": "Verbo \"ser\" (presente) — formas afirmativas",
+    "confidence": "none",
+    "grammarId": null,
+    "alternatives": [
+     {
+      "id": "pt-a1-verbos-reflexivos",
+      "title": "Verbos reflexivos",
+      "score": 0.37
+     },
+     {
+      "id": "pt-a1-ser-vs-estar",
+      "title": "Ser vs Estar",
+      "score": 0.35
+     },
+     {
+      "id": "pt-a1-pt-ser-estar",
+      "title": "Ser vs Estar",
+      "score": 0.27
+     }
+    ]
+   }
+  ],
+  "grammarIds": []
+ },
+ "pt/general/A1/u01-l02": {
+  "title": "Como se chama?",
+  "ref": 2,
+  "items": [
+   {
+    "text": "Verbo \"chamar-se\" (presente)",
+    "confidence": "medium",
+    "grammarId": "pt-a1-verbos-reflexivos",
+    "alternatives": [
+     {
+      "id": "pt-a1-verbos-reflexivos",
+      "title": "Verbos reflexivos",
+      "score": 0.42
+     },
+     {
+      "id": "pt-a1-presente-do-indicativo",
+      "title": "Presente do indicativo",
+      "score": 0.27
+     },
+     {
+      "id": "pt-a2-se-presente-futuro",
+      "title": "A Hipótese no Presente (Se + Presente...)",
+      "score": 0.25
+     }
+    ]
+   }
+  ],
+  "grammarIds": []
+ },
+ "pt/general/A1/u01-l03": {
+  "title": "Números 1-20",
+  "ref": 3,
+  "items": [
+   {
+    "text": "Género dos nomes (masculino e feminino)",
+    "confidence": "high",
+    "grammarId": "pt-a1-genero-dos-substantivos",
+    "alternatives": [
+     {
+      "id": "pt-a1-genero-dos-substantivos",
+      "title": "Gênero dos substantivos",
+      "score": 0.68
+     },
+     {
+      "id": "pt-a1-plural-dos-substantivos",
+      "title": "Formação do plural",
+      "score": 0.2
+     },
+     {
+      "id": "pt-a1-comparativo-superlativo",
+      "title": "Comparativo e superlativo",
+      "score": 0.15
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "pt-a1-genero-dos-substantivos"
+  ]
+ },
+ "pt/general/A1/u01-l04": {
+  "title": "Dígrafos: LH, NH, CH",
+  "ref": 4,
+  "items": [
+   {
+    "text": "Estrutura básica da frase em português",
+    "confidence": "medium",
+    "grammarId": "pt-a1-conjuncoes-basicas",
+    "alternatives": [
+     {
+      "id": "pt-a1-conjuncoes-basicas",
+      "title": "Conjunções básicas",
+      "score": 0.5
+     },
+     {
+      "id": "pt-a1-imperativo",
+      "title": "Imperativo afirmativo básico",
+      "score": 0.26
+     }
+    ]
+   }
+  ],
+  "grammarIds": []
+ },
+ "pt/general/A1/u01-l05": {
+  "title": "Frases Essenciais",
+  "ref": 5,
+  "items": [
+   {
+    "text": "Pedidos educados (Por favor, Com licença)",
+    "confidence": "none",
+    "grammarId": null,
+    "alternatives": [
+     {
+      "id": "pt-a2-futuro-do-presente-e-ir",
+      "title": "O Futuro com 'Ir + Infinitivo' e Futuro Simples",
+      "score": 0.2
+     }
+    ]
+   }
+  ],
+  "grammarIds": []
+ },
+ "pt/general/A1/u02-l01": {
+  "title": "Olá, eu sou...",
+  "ref": 1,
+  "items": [
+   {
+    "text": "Verbos \"ser\" e \"estar\" (presente)",
+    "confidence": "high",
+    "grammarId": "pt-a1-ser-vs-estar",
+    "alternatives": [
+     {
+      "id": "pt-a1-ser-vs-estar",
+      "title": "Ser vs Estar",
+      "score": 0.69
+     },
+     {
+      "id": "pt-a1-pt-ser-estar",
+      "title": "Ser vs Estar",
+      "score": 0.53
+     },
+     {
+      "id": "pt-a1-verbos-reflexivos",
+      "title": "Verbos reflexivos",
+      "score": 0.37
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "pt-a1-ser-vs-estar"
+  ]
+ },
+ "pt/general/A1/u02-l02": {
+  "title": "O meu trabalho",
+  "ref": 2,
+  "items": [
+   {
+    "text": "Verbo ter + artigos indefinidos",
+    "confidence": "medium",
+    "grammarId": "pt-a1-artigos-definidos",
+    "alternatives": [
+     {
+      "id": "pt-a1-artigos-definidos",
+      "title": "Artigos definidos e indefinidos",
+      "score": 0.55
+     },
+     {
+      "id": "pt-a1-verbos-reflexivos",
+      "title": "Verbos reflexivos",
+      "score": 0.37
+     },
+     {
+      "id": "pt-a1-ha-vs-tem",
+      "title": "Haver vs Ter",
+      "score": 0.22
+     }
+    ]
+   }
+  ],
+  "grammarIds": []
+ },
+ "pt/general/A1/u02-l03": {
+  "title": "A minha casa",
+  "ref": 3,
+  "items": [
+   {
+    "text": "Verbos de lugar + preposições",
+    "confidence": "high",
+    "grammarId": "pt-a1-preposicoes-lugar",
+    "alternatives": [
+     {
+      "id": "pt-a1-preposicoes-lugar",
+      "title": "Preposições de lugar",
+      "score": 0.78
+     },
+     {
+      "id": "pt-a1-preposicoes-tempo",
+      "title": "Preposições de tempo",
+      "score": 0.53
+     },
+     {
+      "id": "pt-a1-verbos-reflexivos",
+      "title": "Verbos reflexivos",
+      "score": 0.36
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "pt-a1-preposicoes-lugar"
+  ]
+ }
+}

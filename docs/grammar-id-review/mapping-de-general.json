@@ -1,0 +1,220 @@
+{
+ "de/general/A1/u01-l01": {
+  "title": "Hallo & Willkommen",
+  "ref": 1,
+  "items": [
+   {
+    "text": "Verb \"sein\" (Präsens) — Aussagesätze",
+    "confidence": "none",
+    "grammarId": null,
+    "alternatives": [
+     {
+      "id": "de-a1-praesens-regelmaessig",
+      "title": "Präsens regelmäßiger Verben",
+      "score": 0.37
+     },
+     {
+      "id": "de-a1-sein-und-haben",
+      "title": "Verben sein und haben",
+      "score": 0.24
+     },
+     {
+      "id": "de-a1-perfekt",
+      "title": "Perfekt mit haben und sein",
+      "score": 0.21
+     }
+    ]
+   }
+  ],
+  "grammarIds": []
+ },
+ "de/general/A1/u01-l02": {
+  "title": "Wie heißt du?",
+  "ref": 2,
+  "items": [
+   {
+    "text": "Verb \"heißen\" (Präsens)",
+    "confidence": "medium",
+    "grammarId": "de-a1-praesens-regelmaessig",
+    "alternatives": [
+     {
+      "id": "de-a1-praesens-regelmaessig",
+      "title": "Präsens regelmäßiger Verben",
+      "score": 0.54
+     },
+     {
+      "id": "de-a1-praepositionen-ort",
+      "title": "Lokale Präpositionen",
+      "score": 0.24
+     },
+     {
+      "id": "de-a1-praepositionen-zeit",
+      "title": "Temporale Präpositionen",
+      "score": 0.24
+     }
+    ]
+   }
+  ],
+  "grammarIds": []
+ },
+ "de/general/A1/u01-l03": {
+  "title": "Zahlen 1-20",
+  "ref": 3,
+  "items": [
+   {
+    "text": "Nomen: Artikel (der, die, das) - Einführung",
+    "confidence": "none",
+    "grammarId": null,
+    "alternatives": [
+     {
+      "id": "de-a1-artikel-und-genus",
+      "title": "Artikel und Genus",
+      "score": 0.32
+     },
+     {
+      "id": "de-a1-imperativ",
+      "title": "Der Imperativ",
+      "score": 0.29
+     },
+     {
+      "id": "de-a1-es-gibt",
+      "title": "Die Konstruktion «Es gibt»",
+      "score": 0.28
+     }
+    ]
+   }
+  ],
+  "grammarIds": []
+ },
+ "de/general/A1/u01-l04": {
+  "title": "Minimale Paare: CH-Laute",
+  "ref": 4,
+  "items": [
+   {
+    "text": "Satzbau: Subjekt-Verb-Objekt",
+    "confidence": "none",
+    "grammarId": null,
+    "alternatives": []
+   }
+  ],
+  "grammarIds": []
+ },
+ "de/general/A1/u01-l05": {
+  "title": "Wichtige Phrasen",
+  "ref": 5,
+  "items": [
+   {
+    "text": "Höfliche Bitten und Fragen",
+    "confidence": "none",
+    "grammarId": null,
+    "alternatives": [
+     {
+      "id": "de-a1-w-fragen-und-ja-nein-fragen",
+      "title": "Fragesätze: W-Fragen und Ja/Nein-Fragen",
+      "score": 0.37
+     },
+     {
+      "id": "de-a1-adverbien-frequenz-art",
+      "title": "Adverbien der Häufigkeit und Art und Weise",
+      "score": 0.36
+     },
+     {
+      "id": "de-a1-komparativ-und-superlativ",
+      "title": "Komparativ und Superlativ",
+      "score": 0.15
+     }
+    ]
+   }
+  ],
+  "grammarIds": []
+ },
+ "de/general/A1/u02-l01": {
+  "title": "Hallo, ich bin...",
+  "ref": 1,
+  "items": [
+   {
+    "text": "Verb \"sein\" und \"haben\" im Präsens",
+    "confidence": "medium",
+    "grammarId": "de-a1-sein-und-haben",
+    "alternatives": [
+     {
+      "id": "de-a1-sein-und-haben",
+      "title": "Verben sein und haben",
+      "score": 0.52
+     },
+     {
+      "id": "de-a1-perfekt",
+      "title": "Perfekt mit haben und sein",
+      "score": 0.46
+     },
+     {
+      "id": "de-a1-praesens-regelmaessig",
+      "title": "Präsens regelmäßiger Verben",
+      "score": 0.31
+     }
+    ]
+   }
+  ],
+  "grammarIds": []
+ },
+ "de/general/A1/u02-l02": {
+  "title": "Mein Beruf",
+  "ref": 2,
+  "items": [
+   {
+    "text": "Berufe und Artikel",
+    "confidence": "high",
+    "grammarId": "de-a1-artikel-und-genus",
+    "alternatives": [
+     {
+      "id": "de-a1-artikel-und-genus",
+      "title": "Artikel und Genus",
+      "score": 0.72
+     },
+     {
+      "id": "de-a1-bestimmter-unbestimmter-artikel",
+      "title": "Bestimmter & Unbestimmter Artikel",
+      "score": 0.47
+     },
+     {
+      "id": "de-a1-komparativ-und-superlativ",
+      "title": "Komparativ und Superlativ",
+      "score": 0.21
+     }
+    ]
+   }
+  ],
+  "grammarIds": [
+   "de-a1-artikel-und-genus"
+  ]
+ },
+ "de/general/A1/u02-l03": {
+  "title": "Wo ich wohne",
+  "ref": 3,
+  "items": [
+   {
+    "text": "Wohnen und Präpositionen",
+    "confidence": "medium",
+    "grammarId": "de-a1-praepositionen-ort",
+    "alternatives": [
+     {
+      "id": "de-a1-praepositionen-ort",
+      "title": "Lokale Präpositionen",
+      "score": 0.55
+     },
+     {
+      "id": "de-a1-praepositionen-zeit",
+      "title": "Temporale Präpositionen",
+      "score": 0.55
+     },
+     {
+      "id": "de-a1-praesens-regelmaessig",
+      "title": "Präsens regelmäßiger Verben",
+      "score": 0.23
+     }
+    ]
+   }
+  ],
+  "grammarIds": []
+ }
+}
