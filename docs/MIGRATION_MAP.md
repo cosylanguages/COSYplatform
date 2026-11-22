@@ -10,8 +10,8 @@ This document maps all source directories from `cosylanguages/COSYmanuals` (and 
 | `curriculums/_archive/` | `curriculums/_archive/` | Contains archived legacy flat files (`curriculums/_archive/legacy-flat/`) and historical materials |
 | `marathons/` | *Removed* | Removed from COSYplatform (marathon content lives exclusively in `cosylanguages/COSYmanuals`) |
 | `teacher-guides/` | `teacher-guides/` | Copied as-is (teacher manuals and guides) |
-| `student-workbooks/data/workbooks/{lang}/{level}.json` | `student-workbooks/data/workbooks/{lang}/{level}.json` | Copied normalized workbook data files |
-| `student-workbooks/data/workbook_data.js` | `student-workbooks/data/workbook_data.js` | Copied as-is |
+| `student-workbooks/data/workbooks/{lang}/{level}.json` | `student-workbooks/data/workbooks/{lang}/{level}.json` | **Local-only and git-ignored.** Contains answer keys; seed with `scripts/seed-workbooks.js`. Never commit. |
+| `student-workbooks/data/workbook_data.js` | *Skipped* | Superseded by the normalized JSON workbooks |
 | `shared/` | `shared/` | Copied as-is (shared CSS styles and templates) |
 | `templates/` | `templates/` | Copied as-is (HTML and JSON curriculum templates) |
 | *COSYlanguages (Separate migration)* | `reference/manuals/` | Placeholder README created |
