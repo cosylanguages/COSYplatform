@@ -186,10 +186,16 @@ To complete the ecosystem synchronization across sister repositories and cloud s
 2. Copy missing keys to corresponding translation files in `COSYtools` and `COSYmanuals` to ensure consistent UI labels.
 
 #### Step 4: Deploy WebRTC Ephemeral TURN Credentials (Optional for Live Production)
-1. If deploying dedicated TURN servers (Coturn):
-   - Set up a Supabase Edge Function `/functions/v1/get-turn-credentials`.
-   - Issue temporary HMAC credentials (with `exp` timestamp).
-   - In `classroom.html`, fetch dynamic ICE server configurations from the Edge Function prior to initializing `new Peer()`.
+1. The client helper and Edge Function are in place:
+   - `shared/js/turn.js` fetches, caches and merges ephemeral ICE servers, with a STUN fallback.
+   - `supabase/functions/get-turn-credentials/index.ts` issues Coturn REST credentials after verifying the Supabase user JWT.
+2. Deploy and configure the function:
+   ```bash
+   supabase functions deploy get-turn-credentials
+   supabase secrets set TURN_URL="turn:turn.example.com:3478?transport=udp" TURN_SECRET="<coturn-static-auth-secret>" TURN_TTL=3600
+   ```
+3. Set `TURN_ENABLED: true` in `shared/js/config.js`. `classroom.html` awaits `CosyTurn.getIceServers()` before creating the PeerJS peer.
+4. Credentials are never hardcoded; the function returns an `exp`-based username and HMAC credential with a configurable TTL.
 
 #### Step 5: Final Database Ingestion & Legacy Table Cleanup
 1. In `COSYplatform`, run `node scripts/ingest_roadmaps.js` to ensure all 54 roadmap sequences are ingested into `courses`, `lessons`, `course_lessons`, `lesson_student_content`, and `lesson_protected`.
