@@ -181,9 +181,14 @@ To complete the ecosystem synchronization across sister repositories and cloud s
 1. Copy `shared/js/vocab-resolver.js` and `shared/js/vocab-index.js` from `COSYplatform` into `COSYtools` and `COSYgames`.
 2. Verify that term searches in practice apps invoke `window.CosyVocabResolver.resolveWord()`.
 
-#### Step 3: Align i18n Translation Dictionaries (`shared/i18n/*.json`)
-1. Review `shared/i18n/en.json`, `fr.json`, `ru.json`, `it.json`, `el.json` in `COSYplatform`.
-2. Copy missing keys to corresponding translation files in `COSYtools` and `COSYmanuals` to ensure consistent UI labels.
+#### Step 3: Align i18n Translation Dictionaries
+1. Each product owns its own dictionary format; there is no shared JSON file to copy between them.
+2. Current status (2026-11-22):
+   - `COSYplatform`: `shared/i18n/{en,fr,ru,it,el}.json` — 461 keys each, identical key sets.
+   - `COSYtools`: `shared/js/hub-i18n.js` — 66 keys in each of 5 locales; `shared/js/supplemental_lexicon.js` — 8 strings in each of 14 languages. `npm run test:supplemental-i18n` passes.
+   - `COSYgames`: `shared/js/i18n.js` and `i18n/games/*.js` — 7 locales; the key-parity and `T()` coverage tests pass.
+   - `COSYmanuals`: `shared/i18n/ui-strings.json` — 7 ready locales (fr, de, es, it, pt, ru, el); ba, br, cv, hy, ka and tt still need native-speaker strings.
+3. Do not copy `COSYplatform` keys into the other repositories: the key namespaces and page sets differ. When adding a shared chrome string, add it to each product's own table and run that product's i18n check.
 
 #### Step 4: Deploy WebRTC Ephemeral TURN Credentials (Optional for Live Production)
 1. The client helper and Edge Function are in place:
