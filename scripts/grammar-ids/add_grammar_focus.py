@@ -6,7 +6,7 @@ COSYmanuals grammar page). This resolves each topic_id to a registry id
 (`<lang>-<level>-<slug>`) and inserts one slide with a `grammar-focus` element per
 resolved id, right after the lesson's input slide.
 
-Resolution: same level first, then the nearest higher level (an A0 lesson uses the
+Resolution: topic-aliases.json first (slugs that differ from the page slug), then same level first, then the nearest higher level (an A0 lesson uses the
 A1 manual page). Topics with no page in the registry are reported and skipped.
 
 Safe to re-run: ids already shown by a grammar-focus element are not added again.
@@ -26,7 +26,17 @@ def load_registry(manuals):
     return {p["id"] for p in reg["points"]}
 
 
-def resolve(reg, lang, level, topic_id):
+def load_aliases():
+    f = Path(__file__).with_name("topic-aliases.json")
+    if not f.exists():
+        return {}
+    return {k: v for k, v in json.load(open(f, encoding="utf-8")).items() if not k.startswith("_")}
+
+
+def resolve(reg, lang, level, topic_id, aliases=None):
+    for alias in (aliases or {}).get(f"{lang}:{topic_id}", []):
+        if alias in reg:
+            return alias
     level = (level or "a1").lower()
     start = LEVELS.index(level) if level in LEVELS else 1
     for lv in LEVELS[start:] + LEVELS[:start][::-1]:
@@ -56,6 +66,7 @@ def main():
     ap.add_argument("--dry-run", action="store_true")
     a = ap.parse_args()
     reg = load_registry(a.manuals)
+    aliases = load_aliases()
     changed = skipped_format = 0
     dangling = []
     for f in sorted(Path(a.lessons).rglob("*.json")):
@@ -72,7 +83,7 @@ def main():
             tid = t.get("topic_id") if isinstance(t, dict) else t
             if not isinstance(tid, str):
                 continue
-            gid = resolve(reg, data.get("language", "en"), data.get("level"), tid)
+            gid = resolve(reg, data.get("language", "en"), data.get("level"), tid, aliases)
             if gid is None:
                 dangling.append((str(f), tid))
             elif gid not in ids and gid not in existing_focus_ids(data):
