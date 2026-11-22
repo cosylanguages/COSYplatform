@@ -1,8 +1,8 @@
-// Browser test: the founder CMS editor must clean saved HTML before it is saved or rendered.
+// The founder CMS editor must clean saved HTML before it is saved or rendered.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import { chromium } from 'playwright';
+import { JSDOM } from 'jsdom';
 
 const editor = fs.readFileSync(new URL('../shared/js/cms-editor.js', import.meta.url), 'utf8');
 
@@ -25,18 +25,15 @@ const cases = [
   [42, '']
 ];
 
-test('cms-editor sanitizeHTML removes script, handlers, unsafe URLs and keeps safe markup', async () => {
-  const browser = await chromium.launch();
-  try {
-    const page = await browser.newPage();
-    await page.setContent('<html><body></body></html>');
-    await page.addScriptTag({ content: editor });
-    assert.equal(await page.evaluate(() => typeof (window.CosyCMS && window.CosyCMS.sanitizeHTML)), 'function');
-    for (const [input, expected] of cases) {
-      const got = await page.evaluate(x => window.CosyCMS.sanitizeHTML(x), input);
-      assert.equal(got, expected, 'input: ' + JSON.stringify(input));
-    }
-  } finally {
-    await browser.close();
+test('cms-editor sanitizeHTML removes script, handlers, unsafe URLs and keeps safe markup', () => {
+  const dom = new JSDOM('<!doctype html><html><body></body></html>', {
+    runScripts: 'outside-only',
+    url: 'https://example.test/'
+  });
+  dom.window.eval(editor);
+  assert.equal(typeof dom.window.CosyCMS?.sanitizeHTML, 'function');
+  for (const [input, expected] of cases) {
+    const got = dom.window.CosyCMS.sanitizeHTML(input);
+    assert.equal(got, expected, 'input: ' + JSON.stringify(input));
   }
 });
