@@ -7,6 +7,7 @@
     "check:content": "node scripts/check-content-integrity.js",
     "check:languages": "node scripts/check-lesson-languages.js",
     "check:protected": "node scripts/check_protected_keys.js",
+    "seed:workbooks": "node scripts/seed-workbooks.js",
     "validate": "npm run check:content && npm run check:languages && npm run check:protected && npm test"
   },
   "devDependencies": {

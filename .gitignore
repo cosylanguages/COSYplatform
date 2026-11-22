@@ -24,5 +24,9 @@ Thumbs.db
 seed_data/
 local_content/
 
+# Protected workbook source. Contains answer keys; seed it with
+# scripts/seed-workbooks.js instead of committing it.
+student-workbooks/
+
 # Dependencies
 node_modules/

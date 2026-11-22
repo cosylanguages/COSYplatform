@@ -312,6 +312,7 @@ USING (
 The pilot course `general-en-a1` is seeded via `scripts/seed_pilot.js`.
 - Public repository file `roadmaps/general-en-a1.json` stores sequence metadata, titles, and levels only.
 - Lesson bodies, sanitized student views, and protected answer keys/teacher notes are read from git-ignored local content folders and seeded directly into Supabase tables (`courses`, `lessons`, `course_lessons`, `lesson_student_content`, `lesson_protected`).
+- Workbook JSON lives in the git-ignored `student-workbooks/data/workbooks/` folder. `scripts/seed-workbooks.js` writes each topic to `lessons` (`kind='workbook'`), strips `ans`/`fb` into `lesson_student_content`, and stores the full exercises in `lesson_protected` (`kind='answer-key'`). `scripts/publish_to_supabase.js` deliberately skips `student-workbooks/` so answers cannot reach `lesson_content`.
 
 ---
 

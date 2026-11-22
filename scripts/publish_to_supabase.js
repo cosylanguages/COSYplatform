@@ -5,7 +5,6 @@
  *
  * Script run locally or in CI to read gated content from:
  * - lessons/ (XML/JSON)
- * - student-workbooks/
  * - activities/
  * - manuals/
  * - teacher-guides/
@@ -37,7 +36,8 @@ function loadEnv() {
 // Folders containing gated lesson & teaching content
 const GATED_DIRECTORIES = [
   'lessons',
-  'student-workbooks',
+  // student-workbooks/ is intentionally excluded: its answer keys are
+  // split into lesson_protected by scripts/seed-workbooks.js.
   'activities',
   'manuals',
   'teacher-guides',

@@ -18,6 +18,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { execFileSync } = require('child_process');
 
 const REPO_ROOT = path.join(__dirname, '..');
 const IGNORED_PATHS = [
@@ -26,7 +27,9 @@ const IGNORED_PATHS = [
   '.vscode',
   'package.json',
   'package-lock.json',
-  'verification'
+  'verification',
+  // Git-ignored local source; answers are seeded to lesson_protected.
+  'student-workbooks'
 ];
 
 const PROHIBITED_KEYS = ['answers', 'teacherNotes', 'answer-key'];
@@ -93,12 +96,29 @@ function scanDirectory(dir, violations, advisories) {
   }
 }
 
+function checkProtectedFolderNotTracked(violations) {
+  try {
+    const tracked = execFileSync('git', ['ls-files', 'student-workbooks'], {
+      cwd: REPO_ROOT,
+      encoding: 'utf8'
+    }).trim();
+    if (!tracked) return;
+
+    tracked.split('\n').forEach(file => {
+      violations.push({ file, type: 'tracked-protected-folder', item: 'student-workbooks' });
+    });
+  } catch (error) {
+    if (error.code !== 'ENOENT') throw error;
+  }
+}
+
 function checkProtectedKeys() {
   console.log('=== CI Check: Verifying No Protected Keys or Teacher Notes Repository-Wide ===');
 
   const violations = [];
 
   const advisories = [];
+  checkProtectedFolderNotTracked(violations);
   scanDirectory(REPO_ROOT, violations, advisories);
 
   if (violations.length > 0) {
