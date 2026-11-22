@@ -19,6 +19,12 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Validate content before publish
+        run: |
+          node scripts/check-content-integrity.js
+          node scripts/check-lesson-languages.js
+          node scripts/check_protected_keys.js
+
       - name: Publish to Supabase
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
