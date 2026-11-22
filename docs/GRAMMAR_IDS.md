@@ -54,6 +54,10 @@ High-confidence ids only (no drafted decisions). These curricula copy the manual
 | fr/professional | B1-C2 | 96 of 96 | 191 / 1 / 0 |
 | fr/travelling | A1-B1 | 60 of 60 | 118 / 1 / 2 |
 
+### Greek (el/general A1)
+
+A Greek tokenizer was added to the matcher (accent folding, final sigma, suffix stemming). 88 of 142 lessons get `grammarIds` from high-confidence matches (26 unique item-to-page links, all checked by hand; many lessons repeat the same grammar items). 112 medium matches are NOT applied: many are wrong (e.g. demonstrative pronouns matched to personal pronouns) and Greek has only 60 A1 manual pages. Review files: `docs/grammar-id-review/*-el-general.*`.
+
 ### Other Russian tracks
 
 Russian has only 296 manual pages, so most items have no page to point to. Only high-confidence matches were applied, after removing 13 that were clearly wrong (e.g. «Идите прямо» matched «Прямая и косвенная речь»; symptom and hotel phrases matched «У меня есть...»). Medium matches are NOT applied: they need a native-speaker review. The saved `review-ru-<track>.csv` files still list the unfiltered matches.
