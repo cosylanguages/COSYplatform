@@ -2,6 +2,12 @@
   "language": "fr",
   "course_type": "exam",
   "level": "C2",
+  "examFormat": [
+    "Épreuve orale : écoute deux fois d'un document audio authentique d'environ 15 min, 1 h de préparation, exposé d'environ 15 min (5 min de présentation + 10 min d'argumentation), débat d'environ 10 min.",
+    "Épreuve écrite : dossier d'environ 2 000 mots, 3 h 30, texte structuré de 700 mots minimum.",
+    "Depuis janvier 2026, les dossiers ne contiennent plus de documents iconographiques : uniquement des textes informatifs ou argumentatifs.",
+    "L'usage d'un dictionnaire monolingue français est autorisé à l'écrit."
+  ],
   "units": [
     {
       "unit": 1,
@@ -348,45 +354,12 @@
         {
           "lesson": 11,
           "type": "exam",
-          "title": "Production écrite : Compte rendu critique",
+          "title": "Production écrite : Analyse du dossier et problématisation",
           "duration_minutes": 60,
           "grammar": [
             "Maîtrise des registres et des niveaux de langue",
             "Syntaxe de la phrase longue et de la période",
             "Implicite, présupposés et sous-entendus"
-          ],
-          "vocabulary": [
-            "Classe inversée",
-            "École numérique",
-            "Avenir du métier d'enseignant",
-            "Devoirs de vacances",
-            "Jeux vidéo en classe",
-            "Rythmes scolaires",
-            "Enseignement de la littérature",
-            "Enseignement des langues mortes"
-          ],
-          "practice_types": [
-            "writing",
-            "exam"
-          ],
-          "speaking_percent": 10,
-          "teacher_notes": "code: \"FR-EXM-C2-011\"\ncando: \"Peut rendre compte d'un document exigeant, développer une position personnelle et en négocier les limites.\"\nstrategy: \"Distinguer les faits des interprétations, expliciter les présupposés et tenir une position constante du début à la fin. Consigne de type DALF C2 : Compte rendu critique de 250 mots puis texte argumenté de 300 mots (3 h).\"",
-          "recycled": "Thèmes et structures de l'unité précédente",
-          "themeIds": [
-            "c2-ecole",
-            "c2-sante",
-            "c2-economie"
-          ]
-        },
-        {
-          "lesson": 12,
-          "type": "exam",
-          "title": "Production écrite : Texte argumenté",
-          "duration_minutes": 60,
-          "grammar": [
-            "Syntaxe de la phrase longue et de la période",
-            "Implicite, présupposés et sous-entendus",
-            "Ironie, distance critique et point de vue"
           ],
           "vocabulary": [
             "Enfant roi",
@@ -403,23 +376,35 @@
             "exam"
           ],
           "speaking_percent": 10,
-          "teacher_notes": "code: \"FR-EXM-C2-012\"\ncando: \"Peut rendre compte d'un document exigeant, développer une position personnelle et en négocier les limites.\"\nstrategy: \"Distinguer les faits des interprétations, expliciter les présupposés et tenir une position constante du début à la fin. Consigne de type DALF C2 : Compte rendu critique de 250 mots puis texte argumenté de 300 mots (3 h).\"",
+          "teacher_notes": "code: \"FR-EXM-C2-011\"\ncando: \"Peut rendre compte d'un document exigeant, développer une position personnelle et en négocier les limites.\"\nstrategy: \"Distinguer les faits des interprétations, expliciter les présupposés et tenir une position constante du début à la fin. Consigne de type DALF C2 : Texte structuré de 700 mots minimum à partir d'un dossier (3 h 30).\"\nexample: \"Tourisme : quel équilibre entre développement et préservation ? — Vous rédigez un article pour un numéro spécial du magazine de votre région. Reconnaissez le rôle économique du tourisme, analysez ses conséquences négatives et proposez des solutions pour concilier attractivité et préservation.\"",
           "recycled": "Thèmes et structures de l'unité précédente",
           "themeIds": [
             "c2-vie-sociale-familiale",
             "c2-culture-loisirs",
             "c2-tourisme"
-          ]
+          ],
+          "exampleTask": {
+            "title": "Tourisme : quel équilibre entre développement et préservation ?",
+            "type": "Article pour un magazine régional",
+            "documents": [
+              "Le tourisme de masse menace-t-il certaines destinations ?",
+              "Le tourisme durable : une alternative crédible ?",
+              "Quand les habitants de Barcelone se révoltent",
+              "Voyager autrement, c'est possible ?"
+            ],
+            "task": "Vous rédigez un article pour un numéro spécial du magazine de votre région. Reconnaissez le rôle économique du tourisme, analysez ses conséquences négatives et proposez des solutions pour concilier attractivité et préservation.",
+            "theme": "c2-tourisme"
+          }
         },
         {
-          "lesson": 13,
+          "lesson": 12,
           "type": "exam",
-          "title": "Production écrite : Compte rendu de dossier",
+          "title": "Production écrite : Plan et prise de position",
           "duration_minutes": 60,
           "grammar": [
+            "Syntaxe de la phrase longue et de la période",
             "Implicite, présupposés et sous-entendus",
-            "Ironie, distance critique et point de vue",
-            "Néologismes, emprunts et évolution lexicale"
+            "Ironie, distance critique et point de vue"
           ],
           "vocabulary": [
             "Relation âge/emploi",
@@ -436,18 +421,72 @@
             "exam"
           ],
           "speaking_percent": 10,
-          "teacher_notes": "code: \"FR-EXM-C2-013\"\ncando: \"Peut rendre compte d'un document exigeant, développer une position personnelle et en négocier les limites.\"\nstrategy: \"Distinguer les faits des interprétations, expliciter les présupposés et tenir une position constante du début à la fin. Consigne de type DALF C2 : Compte rendu critique de 250 mots puis texte argumenté de 300 mots (3 h).\"",
+          "teacher_notes": "code: \"FR-EXM-C2-012\"\ncando: \"Peut rendre compte d'un document exigeant, développer une position personnelle et en négocier les limites.\"\nstrategy: \"Distinguer les faits des interprétations, expliciter les présupposés et tenir une position constante du début à la fin. Consigne de type DALF C2 : Texte structuré de 700 mots minimum à partir d'un dossier (3 h 30).\"\nexample: \"Vers une consommation plus responsable ? — Vous rédigez un article pour le site d'une association de consommateurs. Défendez l'idée que nos choix ont un impact réel, en prenant en compte les limites et contradictions de la consommation responsable.\"",
           "recycled": "Thèmes et structures de l'unité précédente",
           "themeIds": [
             "c2-travail",
             "c2-consommation",
             "c2-langues-francophonie"
-          ]
+          ],
+          "exampleTask": {
+            "title": "Vers une consommation plus responsable ?",
+            "type": "Article pour une association de consommateurs",
+            "documents": [
+              "Je consomme donc je suis : la fin d'un modèle dépassé",
+              "Seconde main : pourquoi vendre quand on peut donner",
+              "Publicitaires et influenceurs : quels impacts sur nos choix ?"
+            ],
+            "task": "Vous rédigez un article pour le site d'une association de consommateurs. Défendez l'idée que nos choix ont un impact réel, en prenant en compte les limites et contradictions de la consommation responsable.",
+            "theme": "c2-consommation"
+          }
+        },
+        {
+          "lesson": 13,
+          "type": "exam",
+          "title": "Production écrite : Rédaction du texte structuré (700 mots)",
+          "duration_minutes": 60,
+          "grammar": [
+            "Implicite, présupposés et sous-entendus",
+            "Ironie, distance critique et point de vue",
+            "Néologismes, emprunts et évolution lexicale"
+          ],
+          "vocabulary": [
+            "Jeunes et les réseaux sociaux",
+            "Méfiance à l'égard des médias",
+            "Invasion du numérique chez les enfants",
+            "Pouvoir des médias",
+            "Avenir de la presse",
+            "Protection des données personnelles",
+            "Pollution numérique",
+            "Métavers"
+          ],
+          "practice_types": [
+            "writing",
+            "exam"
+          ],
+          "speaking_percent": 10,
+          "teacher_notes": "code: \"FR-EXM-C2-013\"\ncando: \"Peut rendre compte d'un document exigeant, développer une position personnelle et en négocier les limites.\"\nstrategy: \"Distinguer les faits des interprétations, expliciter les présupposés et tenir une position constante du début à la fin. Consigne de type DALF C2 : Texte structuré de 700 mots minimum à partir d'un dossier (3 h 30).\"\nexample: \"Repenser nos déplacements — Vous répondez à un appel à contributions pour un dossier « Se déplacer autrement ». Reconnaissez la nécessité de réduire la voiture, mais critiquez les alternatives qui ne répondent pas aux besoins des usagers, et proposez des solutions.\"",
+          "recycled": "Thèmes et structures de l'unité précédente",
+          "themeIds": [
+            "c2-medias-numerique",
+            "c2-urbanisme"
+          ],
+          "exampleTask": {
+            "title": "Repenser nos déplacements",
+            "type": "Appel à contributions",
+            "documents": [
+              "Réduire l'usage de la voiture sans braquer les usagers : un casse-tête loin d'être résolu",
+              "Le train, souvent plus rapide que l'avion",
+              "La mobilité douce, un modèle bientôt incontournable ?"
+            ],
+            "task": "Vous répondez à un appel à contributions pour un dossier « Se déplacer autrement ». Reconnaissez la nécessité de réduire la voiture, mais critiquez les alternatives qui ne répondent pas aux besoins des usagers, et proposez des solutions.",
+            "theme": "c2-urbanisme"
+          }
         },
         {
           "lesson": 14,
           "type": "exam",
-          "title": "Production écrite : Texte argumenté et concession",
+          "title": "Production écrite : Concession et réponse aux objections",
           "duration_minutes": 60,
           "grammar": [
             "Ironie, distance critique et point de vue",
@@ -469,7 +508,7 @@
             "exam"
           ],
           "speaking_percent": 10,
-          "teacher_notes": "code: \"FR-EXM-C2-014\"\ncando: \"Peut rendre compte d'un document exigeant, développer une position personnelle et en négocier les limites.\"\nstrategy: \"Distinguer les faits des interprétations, expliciter les présupposés et tenir une position constante du début à la fin. Consigne de type DALF C2 : Compte rendu critique de 250 mots puis texte argumenté de 300 mots (3 h).\"",
+          "teacher_notes": "code: \"FR-EXM-C2-014\"\ncando: \"Peut rendre compte d'un document exigeant, développer une position personnelle et en négocier les limites.\"\nstrategy: \"Distinguer les faits des interprétations, expliciter les présupposés et tenir une position constante du début à la fin. Consigne de type DALF C2 : Texte structuré de 700 mots minimum à partir d'un dossier (3 h 30).\"",
           "recycled": "Thèmes et structures de l'unité précédente",
           "themeIds": [
             "c2-medias-numerique",
@@ -501,7 +540,7 @@
             "exam"
           ],
           "speaking_percent": 10,
-          "teacher_notes": "code: \"FR-EXM-C2-015\"\ncando: \"Peut rendre compte d'un document exigeant, développer une position personnelle et en négocier les limites.\"\nstrategy: \"Distinguer les faits des interprétations, expliciter les présupposés et tenir une position constante du début à la fin. Consigne de type DALF C2 : Compte rendu critique de 250 mots puis texte argumenté de 300 mots (3 h).\"",
+          "teacher_notes": "code: \"FR-EXM-C2-015\"\ncando: \"Peut rendre compte d'un document exigeant, développer une position personnelle et en négocier les limites.\"\nstrategy: \"Distinguer les faits des interprétations, expliciter les présupposés et tenir une position constante du début à la fin. Consigne de type DALF C2 : Texte structuré de 700 mots minimum à partir d'un dossier (3 h 30).\"",
           "recycled": "Thèmes et structures de l'unité précédente",
           "themeIds": [
             "c2-environnement",
@@ -525,27 +564,32 @@
             "Implicite, présupposés et sous-entendus"
           ],
           "vocabulary": [
-            "Classe inversée",
-            "École numérique",
-            "Avenir du métier d'enseignant",
-            "Devoirs de vacances",
-            "Jeux vidéo en classe",
-            "Rythmes scolaires",
-            "Enseignement de la littérature",
-            "Enseignement des langues mortes"
+            "Avenir de l'écologie",
+            "Relation homme/animal",
+            "Crise de l'eau",
+            "Éco-criminalité",
+            "Déchets radioactifs",
+            "Décroissance",
+            "Vivre sans pétrole",
+            "Vivre sans énergie nucléaire"
           ],
           "practice_types": [
             "speaking",
             "exam"
           ],
           "speaking_percent": 80,
-          "teacher_notes": "code: \"FR-EXM-C2-016\"\ncando: \"Peut rendre compte d'un document exigeant, développer une position personnelle et en négocier les limites.\"\nstrategy: \"Distinguer les faits des interprétations, expliciter les présupposés et tenir une position constante du début à la fin. Tâche orale de type DALF C2 : Compte rendu d'un document audio puis développement argumenté et entretien (1 h, 1 h de préparation).\"",
+          "teacher_notes": "code: \"FR-EXM-C2-016\"\ncando: \"Peut rendre compte d'un document exigeant, développer une position personnelle et en négocier les limites.\"\nstrategy: \"Distinguer les faits des interprétations, expliciter les présupposés et tenir une position constante du début à la fin. Tâche orale de type DALF C2 : Compte rendu de 5 min, développement argumenté de 10 min et débat de 10 min (1 h, 1 h de préparation).\"\nexample: \"Interdire les vols courts — En tant que militant écologiste, intervenez dans un débat public sur les alternatives à l'avion pour les trajets intérieurs ; défendez l'interdiction des vols courts lorsqu'une alternative ferroviaire existe, avec des données environnementales et des mesures complémentaires.\"",
           "recycled": "Thèmes et structures de l'unité précédente",
           "themeIds": [
-            "c2-ecole",
-            "c2-sante",
-            "c2-economie"
-          ]
+            "c2-environnement",
+            "c2-science"
+          ],
+          "exampleTask": {
+            "title": "Interdire les vols courts",
+            "type": "Point de vue argumenté",
+            "task": "En tant que militant écologiste, intervenez dans un débat public sur les alternatives à l'avion pour les trajets intérieurs ; défendez l'interdiction des vols courts lorsqu'une alternative ferroviaire existe, avec des données environnementales et des mesures complémentaires.",
+            "theme": "c2-environnement"
+          }
         },
         {
           "lesson": 17,
@@ -572,13 +616,19 @@
             "exam"
           ],
           "speaking_percent": 80,
-          "teacher_notes": "code: \"FR-EXM-C2-017\"\ncando: \"Peut rendre compte d'un document exigeant, développer une position personnelle et en négocier les limites.\"\nstrategy: \"Distinguer les faits des interprétations, expliciter les présupposés et tenir une position constante du début à la fin. Tâche orale de type DALF C2 : Compte rendu d'un document audio puis développement argumenté et entretien (1 h, 1 h de préparation).\"",
+          "teacher_notes": "code: \"FR-EXM-C2-017\"\ncando: \"Peut rendre compte d'un document exigeant, développer une position personnelle et en négocier les limites.\"\nstrategy: \"Distinguer les faits des interprétations, expliciter les présupposés et tenir une position constante du début à la fin. Tâche orale de type DALF C2 : Compte rendu de 5 min, développement argumenté de 10 min et débat de 10 min (1 h, 1 h de préparation).\"\nexample: \"Redonner le goût de la lecture — Bibliothécaire, participez à une émission de radio sur l'évolution des pratiques culturelles ; analysez la baisse de la lecture chez les jeunes et proposez des pistes pour lui redonner une place dans les loisirs quotidiens.\"",
           "recycled": "Thèmes et structures de l'unité précédente",
           "themeIds": [
             "c2-vie-sociale-familiale",
             "c2-culture-loisirs",
             "c2-tourisme"
-          ]
+          ],
+          "exampleTask": {
+            "title": "Redonner le goût de la lecture",
+            "type": "Point de vue argumenté",
+            "task": "Bibliothécaire, participez à une émission de radio sur l'évolution des pratiques culturelles ; analysez la baisse de la lecture chez les jeunes et proposez des pistes pour lui redonner une place dans les loisirs quotidiens.",
+            "theme": "c2-culture-loisirs"
+          }
         },
         {
           "lesson": 18,
@@ -605,13 +655,19 @@
             "exam"
           ],
           "speaking_percent": 80,
-          "teacher_notes": "code: \"FR-EXM-C2-018\"\ncando: \"Peut rendre compte d'un document exigeant, développer une position personnelle et en négocier les limites.\"\nstrategy: \"Distinguer les faits des interprétations, expliciter les présupposés et tenir une position constante du début à la fin. Tâche orale de type DALF C2 : Compte rendu d'un document audio puis développement argumenté et entretien (1 h, 1 h de préparation).\"",
+          "teacher_notes": "code: \"FR-EXM-C2-018\"\ncando: \"Peut rendre compte d'un document exigeant, développer une position personnelle et en négocier les limites.\"\nstrategy: \"Distinguer les faits des interprétations, expliciter les présupposés et tenir une position constante du début à la fin. Tâche orale de type DALF C2 : Compte rendu de 5 min, développement argumenté de 10 min et débat de 10 min (1 h, 1 h de préparation).\"\nexample: \"La durée de vie des produits — Responsable d'une entreprise technologique, défendez l'idée que le renouvellement régulier des appareils stimule l'innovation, tout en répondant aux critiques environnementales et en proposant une gestion responsable des ressources.\"",
           "recycled": "Thèmes et structures de l'unité précédente",
           "themeIds": [
             "c2-travail",
             "c2-consommation",
             "c2-langues-francophonie"
-          ]
+          ],
+          "exampleTask": {
+            "title": "La durée de vie des produits",
+            "type": "Point de vue argumenté",
+            "task": "Responsable d'une entreprise technologique, défendez l'idée que le renouvellement régulier des appareils stimule l'innovation, tout en répondant aux critiques environnementales et en proposant une gestion responsable des ressources.",
+            "theme": "c2-consommation"
+          }
         },
         {
           "lesson": 19,
@@ -638,7 +694,7 @@
             "exam"
           ],
           "speaking_percent": 80,
-          "teacher_notes": "code: \"FR-EXM-C2-019\"\ncando: \"Peut rendre compte d'un document exigeant, développer une position personnelle et en négocier les limites.\"\nstrategy: \"Distinguer les faits des interprétations, expliciter les présupposés et tenir une position constante du début à la fin. Tâche orale de type DALF C2 : Compte rendu d'un document audio puis développement argumenté et entretien (1 h, 1 h de préparation).\"",
+          "teacher_notes": "code: \"FR-EXM-C2-019\"\ncando: \"Peut rendre compte d'un document exigeant, développer une position personnelle et en négocier les limites.\"\nstrategy: \"Distinguer les faits des interprétations, expliciter les présupposés et tenir une position constante du début à la fin. Tâche orale de type DALF C2 : Compte rendu de 5 min, développement argumenté de 10 min et débat de 10 min (1 h, 1 h de préparation).\"",
           "recycled": "Thèmes et structures de l'unité précédente",
           "themeIds": [
             "c2-medias-numerique",
@@ -670,7 +726,7 @@
             "exam"
           ],
           "speaking_percent": 80,
-          "teacher_notes": "code: \"FR-EXM-C2-020\"\ncando: \"Peut rendre compte d'un document exigeant, développer une position personnelle et en négocier les limites.\"\nstrategy: \"Distinguer les faits des interprétations, expliciter les présupposés et tenir une position constante du début à la fin. Tâche orale de type DALF C2 : Compte rendu d'un document audio puis développement argumenté et entretien (1 h, 1 h de préparation).\"",
+          "teacher_notes": "code: \"FR-EXM-C2-020\"\ncando: \"Peut rendre compte d'un document exigeant, développer une position personnelle et en négocier les limites.\"\nstrategy: \"Distinguer les faits des interprétations, expliciter les présupposés et tenir une position constante du début à la fin. Tâche orale de type DALF C2 : Compte rendu de 5 min, développement argumenté de 10 min et débat de 10 min (1 h, 1 h de préparation).\"",
           "recycled": "Thèmes et structures de l'unité précédente",
           "themeIds": [
             "c2-environnement",

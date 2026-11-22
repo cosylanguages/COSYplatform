@@ -2,6 +2,12 @@
   "language": "fr",
   "course_type": "exam",
   "level": "B1",
+  "examFormat": [
+    "Quatre épreuves : compréhension de l'oral (25 min), compréhension de l'écrit (45 min), production écrite (45 min, 160–180 mots) et production orale (15 min, 10 min de préparation).",
+    "Compréhension de l'oral : 3 exercices ; une conversation de la vie quotidienne, puis deux extraits d'émission radio, chaque document écouté deux fois.",
+    "Compréhension de l'écrit : 3 exercices ; comparer des documents, puis lire deux articles de presse et répondre à des questions à choix multiple.",
+    "Production orale : entretien dirigé, exercice en interaction, expression d'un point de vue à partir d'un document déclencheur."
+  ],
   "units": [
     {
       "unit": 1,
@@ -352,27 +358,32 @@
             "Conditionnel présent pour formuler une demande polie"
           ],
           "vocabulary": [
-            "Centres de langue",
-            "Séjours linguistiques en France",
-            "Apprentissage du français sur Internet",
-            "Accents régionaux",
-            "Bilinguisme",
-            "Examens de français",
-            "Décrire son centre de langue",
-            "Centres d'intérêts"
+            "Projets de carrière",
+            "Recherche d'emploi",
+            "Nouveaux métiers",
+            "Handicaps au travail",
+            "Stress des employés",
+            "Événements importants d'une entreprise",
+            "Télétravail",
+            "Inégalités entre les femmes et les hommes"
           ],
           "practice_types": [
             "writing",
             "exam"
           ],
           "speaking_percent": 10,
-          "teacher_notes": "code: \"FR-EXM-B1-011\"\ncando: \"Peut comprendre les points essentiels d'un document clair et argumenter simplement sur un thème du quotidien.\"\nstrategy: \"Repérer les mots-clés de la consigne, structurer la réponse en deux ou trois parties et réutiliser les connecteurs vus en cours. Consigne de type DELF B1 : Message court puis article ou essai argumentatif (45 min, 160-180 mots).\"",
+          "teacher_notes": "code: \"FR-EXM-B1-011\"\ncando: \"Peut comprendre les points essentiels d'un document clair et argumenter simplement sur un thème du quotidien.\"\nstrategy: \"Repérer les mots-clés de la consigne, structurer la réponse en deux ou trois parties et réutiliser les connecteurs vus en cours. Consigne de type DELF B1 : Message court puis article ou essai argumentatif (45 min, 160-180 mots).\"\nexample: \"Conseils à une amie qui commence un nouveau travail — Vous répondez à Nora : parlez de votre expérience professionnelle et donnez des conseils pour réussir son intégration. 160 mots minimum.\"",
           "recycled": "Thèmes et structures de l'unité précédente",
           "themeIds": [
-            "b1-apprentissage-francais",
-            "b1-loisirs-culture",
-            "b1-transports"
-          ]
+            "b1-vie-professionnelle",
+            "b1-voyages"
+          ],
+          "exampleTask": {
+            "title": "Conseils à une amie qui commence un nouveau travail",
+            "type": "Message / lettre amicale",
+            "task": "Vous répondez à Nora : parlez de votre expérience professionnelle et donnez des conseils pour réussir son intégration. 160 mots minimum.",
+            "theme": "b1-vie-professionnelle"
+          }
         },
         {
           "lesson": 12,
@@ -519,27 +530,32 @@
             "Conditionnel présent pour formuler une demande polie"
           ],
           "vocabulary": [
-            "Centres de langue",
-            "Séjours linguistiques en France",
-            "Apprentissage du français sur Internet",
-            "Accents régionaux",
-            "Bilinguisme",
-            "Examens de français",
-            "Décrire son centre de langue",
-            "Centres d'intérêts"
+            "Projets de carrière",
+            "Recherche d'emploi",
+            "Nouveaux métiers",
+            "Handicaps au travail",
+            "Stress des employés",
+            "Événements importants d'une entreprise",
+            "Télétravail",
+            "Inégalités entre les femmes et les hommes"
           ],
           "practice_types": [
             "speaking",
             "exam"
           ],
           "speaking_percent": 80,
-          "teacher_notes": "code: \"FR-EXM-B1-016\"\ncando: \"Peut comprendre les points essentiels d'un document clair et argumenter simplement sur un thème du quotidien.\"\nstrategy: \"Repérer les mots-clés de la consigne, structurer la réponse en deux ou trois parties et réutiliser les connecteurs vus en cours. Tâche orale de type DELF B1 : Entretien dirigé, exercice en interaction et expression d'un point de vue (15 min, 10 min de préparation).\"",
+          "teacher_notes": "code: \"FR-EXM-B1-016\"\ncando: \"Peut comprendre les points essentiels d'un document clair et argumenter simplement sur un thème du quotidien.\"\nstrategy: \"Repérer les mots-clés de la consigne, structurer la réponse en deux ou trois parties et réutiliser les connecteurs vus en cours. Tâche orale de type DELF B1 : Entretien dirigé, exercice en interaction et expression d'un point de vue (15 min, 10 min de préparation).\"\nexample: \"Hôtel complet — Vous avez réservé une chambre d'hôtel pour une nuit. À votre arrivée, le réceptionniste annonce qu'il n'y a plus de chambre. Vous demandez une solution ; il n'en propose aucune. Vous insistez.\"",
           "recycled": "Thèmes et structures de l'unité précédente",
           "themeIds": [
-            "b1-apprentissage-francais",
-            "b1-loisirs-culture",
-            "b1-transports"
-          ]
+            "b1-vie-professionnelle",
+            "b1-voyages"
+          ],
+          "exampleTask": {
+            "title": "Hôtel complet",
+            "type": "Exercice en interaction",
+            "task": "Vous avez réservé une chambre d'hôtel pour une nuit. À votre arrivée, le réceptionniste annonce qu'il n'y a plus de chambre. Vous demandez une solution ; il n'en propose aucune. Vous insistez.",
+            "theme": "b1-voyages"
+          }
         },
         {
           "lesson": 17,
@@ -566,12 +582,18 @@
             "exam"
           ],
           "speaking_percent": 80,
-          "teacher_notes": "code: \"FR-EXM-B1-017\"\ncando: \"Peut comprendre les points essentiels d'un document clair et argumenter simplement sur un thème du quotidien.\"\nstrategy: \"Repérer les mots-clés de la consigne, structurer la réponse en deux ou trois parties et réutiliser les connecteurs vus en cours. Tâche orale de type DELF B1 : Entretien dirigé, exercice en interaction et expression d'un point de vue (15 min, 10 min de préparation).\"",
+          "teacher_notes": "code: \"FR-EXM-B1-017\"\ncando: \"Peut comprendre les points essentiels d'un document clair et argumenter simplement sur un thème du quotidien.\"\nstrategy: \"Repérer les mots-clés de la consigne, structurer la réponse en deux ou trois parties et réutiliser les connecteurs vus en cours. Tâche orale de type DELF B1 : Entretien dirigé, exercice en interaction et expression d'un point de vue (15 min, 10 min de préparation).\"\nexample: \"Acheter moins, mais mieux ? — À partir d'un court document sur la consommation responsable, présentez le sujet puis donnez votre opinion avec des arguments et des exemples simples.\"",
           "recycled": "Thèmes et structures de l'unité précédente",
           "themeIds": [
             "b1-vie-sociale",
             "b1-consommation"
-          ]
+          ],
+          "exampleTask": {
+            "title": "Acheter moins, mais mieux ?",
+            "type": "Expression d'un point de vue",
+            "task": "À partir d'un court document sur la consommation responsable, présentez le sujet puis donnez votre opinion avec des arguments et des exemples simples.",
+            "theme": "b1-consommation"
+          }
         },
         {
           "lesson": 18,

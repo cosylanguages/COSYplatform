@@ -2,6 +2,12 @@
   "language": "fr",
   "course_type": "exam",
   "level": "B2",
+  "examFormat": [
+    "Quatre parties : compréhension de l'oral (30 min), compréhension de l'écrit (1 h), production écrite (60 min, 250 mots) et production orale (20 min, 30 min de préparation).",
+    "Production orale : tirage de deux sujets, choix d'un sujet, exposé argumenté à partir d'un document déclencheur, puis débat avec l'examinateur.",
+    "Compréhension de l'écrit : 3 exercices ; deux textes informatifs ou argumentatifs, puis trois opinions à associer.",
+    "Compréhension de l'oral : 3 exercices ; deux extraits d'émission radio écoutés deux fois, puis trois documents courts écoutés une fois."
+  ],
   "units": [
     {
       "unit": 1,
@@ -358,27 +364,32 @@
             "Hypothèse : si + plus-que-parfait, conditionnel passé"
           ],
           "vocabulary": [
-            "Punitions à l'école",
-            "Ordinateurs portables à l'université",
-            "MOOC",
-            "Créer une émission de radio à l'école",
-            "École à la maison",
-            "Suppression des notes",
-            "Éducation musicale des enfants",
-            "Éducation globale"
+            "Nouvelles tendances",
+            "Achats en ligne",
+            "Obsolescence programmée",
+            "Repair cafés",
+            "Récupération",
+            "Achat de musique sur Internet",
+            "Téléchargement illégal",
+            "Séries télévisées"
           ],
           "practice_types": [
             "writing",
             "exam"
           ],
           "speaking_percent": 10,
-          "teacher_notes": "code: \"FR-EXM-B2-011\"\ncando: \"Peut comprendre un document complexe, défendre une position nuancée et produire un texte argumenté structuré.\"\nstrategy: \"Identifier la thèse et les arguments du document, anticiper les objections et illustrer chaque idée par un exemple précis. Consigne de type DELF B2 : Lettre formelle, article ou essai argumenté (60 min, 250 mots).\"",
+          "teacher_notes": "code: \"FR-EXM-B2-011\"\ncando: \"Peut comprendre un document complexe, défendre une position nuancée et produire un texte argumenté structuré.\"\nstrategy: \"Identifier la thèse et les arguments du document, anticiper les objections et illustrer chaque idée par un exemple précis. Consigne de type DELF B2 : Lettre formelle, article ou essai argumenté (60 min, 250 mots).\"\nexample: \"Panneaux solaires sur les bâtiments publics — Vous écrivez à votre mairie pour suggérer l'installation de panneaux solaires sur les bâtiments publics et expliquer les bénéfices. 250 mots minimum.\"",
           "recycled": "Thèmes et structures de l'unité précédente",
           "themeIds": [
-            "b2-etudes",
-            "b2-alimentation",
-            "b2-medias-internet"
-          ]
+            "b2-consommation",
+            "b2-environnement"
+          ],
+          "exampleTask": {
+            "title": "Panneaux solaires sur les bâtiments publics",
+            "type": "Lettre formelle",
+            "task": "Vous écrivez à votre mairie pour suggérer l'installation de panneaux solaires sur les bâtiments publics et expliquer les bénéfices. 250 mots minimum.",
+            "theme": "b2-environnement"
+          }
         },
         {
           "lesson": 12,
@@ -528,27 +539,33 @@
             "Hypothèse : si + plus-que-parfait, conditionnel passé"
           ],
           "vocabulary": [
-            "Punitions à l'école",
-            "Ordinateurs portables à l'université",
-            "MOOC",
-            "Créer une émission de radio à l'école",
-            "École à la maison",
-            "Suppression des notes",
-            "Éducation musicale des enfants",
-            "Éducation globale"
+            "Bien-être au travail",
+            "Télétravail",
+            "Travail hybride",
+            "Robotisation",
+            "Réseaux sociaux",
+            "Génération Y",
+            "Fêtes dans l'entreprise",
+            "Travail des séniors"
           ],
           "practice_types": [
             "speaking",
             "exam"
           ],
           "speaking_percent": 80,
-          "teacher_notes": "code: \"FR-EXM-B2-016\"\ncando: \"Peut comprendre un document complexe, défendre une position nuancée et produire un texte argumenté structuré.\"\nstrategy: \"Identifier la thèse et les arguments du document, anticiper les objections et illustrer chaque idée par un exemple précis. Tâche orale de type DELF B2 : Monologue suivi à partir d'un document puis exercice en interaction (20 min, 30 min de préparation).\"",
+          "teacher_notes": "code: \"FR-EXM-B2-016\"\ncando: \"Peut comprendre un document complexe, défendre une position nuancée et produire un texte argumenté structuré.\"\nstrategy: \"Identifier la thèse et les arguments du document, anticiper les objections et illustrer chaque idée par un exemple précis. Tâche orale de type DELF B2 : Monologue suivi à partir d'un document puis exercice en interaction (20 min, 30 min de préparation).\"\nexample: \"Aller au travail à vélo, une solution d'avenir ? — À partir du document sur le vélotaf, présentez le problème posé puis donnez votre opinion de manière claire et argumentée.\"",
           "recycled": "Thèmes et structures de l'unité précédente",
           "themeIds": [
-            "b2-etudes",
-            "b2-alimentation",
-            "b2-medias-internet"
-          ]
+            "b2-travail",
+            "b2-relations-sociales",
+            "b2-transports"
+          ],
+          "exampleTask": {
+            "title": "Aller au travail à vélo, une solution d'avenir ?",
+            "type": "Exposé + débat",
+            "task": "À partir du document sur le vélotaf, présentez le problème posé puis donnez votre opinion de manière claire et argumentée.",
+            "theme": "b2-transports"
+          }
         },
         {
           "lesson": 17,
