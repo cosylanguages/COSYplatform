@@ -16,6 +16,9 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Check external references
+        run: node scripts/check-external-refs.js
+
       - name: Install dependencies
         run: npm install
 
