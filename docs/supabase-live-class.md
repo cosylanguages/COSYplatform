@@ -84,19 +84,21 @@ RLS is enabled on `public.lesson_notes`. Client operations respect the following
 
 ## 5. PeerJS WebRTC ICE Server Configuration
 
-PeerJS WebRTC call initialization in `classroom.html` uses STUN/TURN server configurations specified in `shared/js/config.js` (`window.COSY_CONFIG.ICE_SERVERS`):
+PeerJS WebRTC call initialization in `classroom.html` uses STUN/TURN server configurations from `shared/js/config.js` (`window.COSY_CONFIG.ICE_SERVERS`) plus optional ephemeral TURN credentials from `shared/js/turn.js`.
 
 ```javascript
 window.COSY_CONFIG = {
   SUPABASE_URL: "...",
   SUPABASE_ANON_KEY: "...",
+  TURN_ENABLED: false,
+  TURN_CREDENTIALS_URL: "", // defaults to <SUPABASE_URL>/functions/v1/get-turn-credentials
   ICE_SERVERS: [
     { urls: "stun:stun.l.google.com:19302" },
     { urls: "stun:stun1.l.google.com:19302" }
-    // TURN server placeholder:
-    // { urls: "turn:turn.example.com:3478", username: "user", credential: "password" }
   ]
 };
 ```
 
-When PeerJS video calling starts (`startPeerJsVideoCall`), `window.COSY_CONFIG.ICE_SERVERS` is passed directly into the PeerJS Peer options (`{ config: { iceServers: ... } }`) to ensure consistent NAT traversal across client environments.
+When `TURN_ENABLED` is true, `CosyTurn.getIceServers()` fetches short-lived HMAC credentials from the `get-turn-credentials` Edge Function, caches them in `sessionStorage` until they expire, and merges them with the STUN servers. If the function is unavailable or returns an error, the classroom falls back to STUN so a lesson can still start. No TURN secret or static credential is stored in the repository.
+
+The host and join paths await `resolveIceServers()` before calling `new Peer(...)`, so the PeerJS configuration always contains the current ICE server list.
