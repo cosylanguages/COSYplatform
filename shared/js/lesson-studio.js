@@ -120,6 +120,8 @@
         if (!Array.isArray(block.words)) return 'Word game block ' + (i + 1) + ' needs words.';
       } else if (block.type === 'heading') {
         if (typeof block.text !== 'string') return 'Heading block ' + (i + 1) + ' needs text.';
+      } else if (block.type === 'grammar_focus') {
+        if (typeof block.grammarId !== 'string') return 'Grammar focus block ' + (i + 1) + ' needs a grammar point id.';
       } else if (block.type === 'teacher_note') {
         if (typeof block.text !== 'string') return 'Teacher note block ' + (i + 1) + ' needs text.';
       } else if (block.type === 'crossword') {
@@ -186,6 +188,12 @@
           seen.add(text.toLowerCase());
         }
         if (games && !games.validWordList(block.words, block.type)) return name + ' block ' + n + ' has an invalid word.';
+      } else if (block.type === 'grammar_focus') {
+        const gid = block.grammarId.trim();
+        if (!gid) return 'Grammar focus block ' + n + ' needs a grammar point id.';
+        if (gid.length > 100 || !/^[a-z]{2,3}-[a-z0-9]+-[a-z0-9][a-z0-9-]*$/.test(gid)) return 'Grammar focus block ' + n + ' needs an id like en-a2-used-to (language, level, topic).';
+        if (block.title !== undefined && block.title !== null && (typeof block.title !== 'string' || block.title.trim().length > 120)) return 'The title in grammar focus block ' + n + ' can be up to 120 characters.';
+        if (block.display !== undefined && block.display !== null && block.display !== 'embed' && block.display !== 'link') return 'Grammar focus block ' + n + ' must show the explanation or only a link.';
       } else if (block.type === 'teacher_note') {
         const t = block.text.trim();
         if (!t) return 'Teacher note block ' + n + ' needs text.';
@@ -335,6 +343,7 @@
       word_search: 'Word Search',
       crossword: 'Crossword',
       heading: 'Section Heading',
+      grammar_focus: 'Grammar Focus',
       teacher_note: 'Teacher Note (not shown to students)'
     };
 
@@ -847,6 +856,32 @@
         area.addEventListener('input', () => { block.text = area.value; changed(false); });
         field.append(span, area);
         card.appendChild(field);
+      } else if (block.type === 'grammar_focus') {
+        [['grammarId', 'Grammar point id from COSYmanuals, e.g. en-a2-used-to', 100], ['title', 'Title (optional, up to 120 characters)', 120]].forEach(([key, text, max]) => {
+          const field = document.createElement('label');
+          field.className = 'studio-field';
+          const span = document.createElement('span');
+          span.textContent = text;
+          const input = document.createElement('input');
+          input.type = 'text'; input.maxLength = max; input.value = block[key] || '';
+          input.addEventListener('input', () => { if (input.value || key === 'grammarId') block[key] = input.value; else delete block[key]; changed(false); });
+          field.append(span, input);
+          card.appendChild(field);
+        });
+        const dfield = document.createElement('label');
+        dfield.className = 'studio-field';
+        const dspan = document.createElement('span');
+        dspan.textContent = 'Show';
+        const select = document.createElement('select');
+        [['embed', 'The explanation (with a link to the manual)'], ['link', 'Only a link to the manual']].forEach(([value, label]) => {
+          const option = document.createElement('option');
+          option.value = value; option.textContent = label;
+          select.appendChild(option);
+        });
+        select.value = block.display === 'link' ? 'link' : 'embed';
+        select.addEventListener('change', () => { if (select.value === 'embed') delete block.display; else block.display = select.value; changed(false); });
+        dfield.append(dspan, select);
+        card.appendChild(dfield);
       } else if (block.type === 'heading') {
         [['text', 'Heading (up to 120 characters)', 120], ['subtitle', 'Subtitle (optional, up to 200 characters)', 200]].forEach(([key, text, max]) => {
           const field = document.createElement('label');
@@ -1203,6 +1238,16 @@
         if (media) media.hydrate(holder, window.CosyAuth ? window.CosyAuth.client : null);
       } else if (block.type === 'teacher_note') {
         item.appendChild(teacherKeyBox('Teacher note: ' + (block.text || '')));
+      } else if (block.type === 'grammar_focus') {
+        const gf = window.CosyGrammarFocus;
+        const holder = document.createElement('div');
+        if (gf && gf.isValidId(block.grammarId)) {
+          holder.innerHTML = gf.renderHtml({ type: 'grammar-focus', grammarId: block.grammarId, title: block.title, display: block.display });
+          gf.hydrate(holder);
+        } else {
+          holder.textContent = 'Enter a grammar point id such as en-a2-used-to to see a preview.';
+        }
+        item.appendChild(holder);
       } else if (block.type === 'heading') {
         const h = document.createElement('h3');
         h.textContent = block.text || '';
@@ -1533,6 +1578,7 @@ function normalizeLanguage(value) {
     addBlockButton('add-wordsearch', () => ({ type: 'word_search', directions: 'basic', words: ['apple', 'bread', 'cheese', 'water'] }));
     addBlockButton('add-teachernote', () => ({ type: 'teacher_note', text: 'Warm-up: ask students what they did last weekend. Aim: 5 minutes.' }));
     addBlockButton('add-heading', () => ({ type: 'heading', text: 'New section', subtitle: '' }));
+    addBlockButton('add-grammarfocus', () => ({ type: 'grammar_focus', grammarId: '' }));
     addBlockButton('add-crossword', () => ({ type: 'crossword', entries: [{ word: 'teacher', clue: 'works at a school' }, { word: 'student', clue: 'learns at a school' }, { word: 'lesson', clue: 'a class' }, { word: 'homework', clue: 'work to do at home' }] }));
     addBlockButton('add-memory', () => ({ type: 'memory_match', pairs: [{ a: 'cat', b: 'gato' }, { a: 'dog', b: 'perro' }, { a: 'house', b: 'casa' }] }));
     const addCorrectionBtn = $('add-correction');

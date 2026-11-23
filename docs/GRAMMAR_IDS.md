@@ -129,3 +129,14 @@ python3 scripts/grammar-ids/add_grammar_focus.py --manuals ../cosymanuals --less
 - Applied to 40 English lessons in total (`general-english-a0`, `general-english-a1`): 25 by direct slug match, 10 through the alias file and 5 through the newly written pages. The 10 alias lessons were linked through `scripts/grammar-ids/topic-aliases.json`: their lesson `topic_id` differs from the manual page slug (e.g. `frequency-adverbs` -> `en-a1-adverbs-frequency`, `can-ability` -> `en-a1-can-cant`). The 5 remaining topics (`possessive-adjectives`, `how-much-cost`, `sequence-words`, `impersonal-it`, `work-collocations`) had no manual page; the pages were written in COSYmanuals (draft, awaiting teacher review) and are linked through the same alias file.
 - Only English lessons carry these links today. The fr/ru/it/el curricula have `grammarIds`, but there are no lesson files for them yet, so there is nothing to generate.
 
+## Lesson Studio: Grammar Focus block
+
+Teachers can add a Grammar Focus block in Lesson Studio (`＋ Grammar Focus`): they enter a COSYmanuals id such as `en-a2-used-to`, an optional title, and choose to show the explanation or only a link. The preview uses the same rendering as the student page.
+
+Rolling it out is a two-step change, in this order:
+
+1. Apply `supabase/migrations/20261123000000_publish_grammar_focus_block.sql` to the Supabase project (migrations are applied by hand; no workflow does it). It adds the block type `grammar_focus` to `publish_lesson_studio_draft`, validates it (id format `<lang>-<level>-<slug>`, at most 100 characters; optional title up to 120; display `embed` or `link`), and gives students `{type: "grammar-focus", grammarId, title?, display}`, which `student.html` already renders.
+2. Then merge the front-end change (`lesson-studio.html`, `shared/js/lesson-studio.js`). If it goes live first, publishing a lesson that contains the block fails with "Draft contains an invalid or unsupported lesson block."
+
+The migration is a copy of the newest definition of the function (`20261117000000`) with three small edits. `supabase/tests/studio_grammar_focus.test.sql` covers it (11 checks). The block stores only the id, never the manual's text.
+
