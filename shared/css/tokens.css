@@ -66,6 +66,9 @@
        Shared hue family across both student and teacher views. */
     --cosy-platform-accent:              #0369a1;
     --cosy-platform-accent-light:        #e0f2fe;
+    --accent-tint:                      #f0f9ff;
+    --accent-ink:                       #0369a1;
+
     --cosy-platform-accent-deep:         #075985;
 
     /* Student View Variant: Vibrant Active Sapphire Blue */
@@ -235,6 +238,7 @@
 
 /* ── 12. Dark Mode Theme Overrides ───────────────────────────────────────── */
 html[data-theme="dark"], body.theme-dark {
+
     --cosy-color-cream:                  #0f172a;
     --cosy-color-cream-dark:             #0284c7;
     --cosy-color-warm-white:             #1e293b;
@@ -248,5 +252,36 @@ html[data-theme="dark"], body.theme-dark {
 
     --cosy-platform-accent:              #38bdf8;
     --cosy-platform-student:             #38bdf8;
+    --subtle-surface:                   #243244;
+    --on-primary:                       #082f49;
+    --accent-tint:                      #16304f;
+    --accent-ink:                       #7dd3fc;
     --cosy-platform-teacher:             #7dd3fc;
+    color-scheme: dark;
+}
+
+/* Follow the OS preference when the page has not pinned a theme. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+
+    --cosy-color-cream:                  #0f172a;
+    --cosy-color-cream-dark:             #0284c7;
+    --cosy-color-warm-white:             #1e293b;
+    --cosy-color-surface:                #1e293b;
+
+    --cosy-color-ink:                    #f8fafc;
+    --cosy-color-ink-soft:               #cbd5e1;
+    --cosy-color-ink-muted:              #94a3b8;
+    --cosy-color-border:                 rgba(56, 189, 248, 0.20);
+    --cosy-color-border-hover:           rgba(56, 189, 248, 0.35);
+
+    --cosy-platform-accent:              #38bdf8;
+    --cosy-platform-student:             #38bdf8;
+    --subtle-surface:                   #243244;
+    --on-primary:                       #082f49;
+    --accent-tint:                      #16304f;
+    --accent-ink:                       #7dd3fc;
+    --cosy-platform-teacher:             #7dd3fc;
+    color-scheme: dark;
+  }
 }

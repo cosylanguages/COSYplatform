@@ -96,7 +96,7 @@ window.COSY_CURRICULUM_A1 = {
       "num": 0,
       "id": "u0",
       "label": "Раздел 0: Первые шаги (A0)",
-      "color": "#0000F6"
+      "color": "#8C8CFB"
     },
     {
       "unit": 1,
@@ -286,7 +286,7 @@ window.COSY_CURRICULUM_A1 = {
       "num": 1,
       "id": "u1",
       "label": "ПЕРВЫЙ КОНТАКТ И ЛИЧНЫЙ ПРОФИЛЬ",
-      "color": "#0a14F6"
+      "color": "#9195FB"
     },
     {
       "unit": 2,
@@ -485,7 +485,7 @@ window.COSY_CURRICULUM_A1 = {
       "num": 2,
       "id": "u2",
       "label": "МОДУЛЬ 2. СЕМЬЯ И СОЦИАЛЬНЫЕ СВЯЗИ",
-      "color": "#1428F6"
+      "color": "#959EFB"
     },
     {
       "unit": 3,
@@ -662,7 +662,7 @@ window.COSY_CURRICULUM_A1 = {
       "num": 3,
       "id": "u3",
       "label": "МОДУЛЬ 3. ДОМ И ПОВСЕДНЕВНАЯ ЖИЗНЬ",
-      "color": "#1e3cF6"
+      "color": "#9AA7FB"
     },
     {
       "unit": 4,
@@ -832,7 +832,7 @@ window.COSY_CURRICULUM_A1 = {
       "num": 4,
       "id": "u4",
       "label": "МОДУЛЬ 4. РАСПОРЯДОК ДНЯ И ВРЕМЯ",
-      "color": "#2850F6"
+      "color": "#9EB0FB"
     },
     {
       "unit": 5,
@@ -1011,7 +1011,7 @@ window.COSY_CURRICULUM_A1 = {
       "num": 5,
       "id": "u5",
       "label": "МОДУЛЬ 5. ЕДА И НАПИТКИ",
-      "color": "#3264F6"
+      "color": "#A3B9FB"
     },
     {
       "unit": 6,
@@ -1019,7 +1019,7 @@ window.COSY_CURRICULUM_A1 = {
       "id": "u6",
       "label": "ПОКУПКИ И ДЕНЬГИ",
       "title": "MODULE 6. ПОКУПКИ И ДЕНЬГИ",
-      "color": "#3c78F6",
+      "color": "#A7C2FB",
       "arc": "Ориентация в магазинах, вопросы о ценах, оплата и скидки",
       "lessons_count": 6,
       "lessons": [
@@ -1187,7 +1187,7 @@ window.COSY_CURRICULUM_A1 = {
       "id": "u7",
       "label": "ОДЕЖДА И ВНЕШНОСТЬ",
       "title": "MODULE 7. ОДЕЖДА И ВНЕШНОСТЬ",
-      "color": "#468cF6",
+      "color": "#ACCBFB",
       "arc": "Описание одежды, аксессуаров, примерка, размеры и личный стиль",
       "lessons_count": 6,
       "lessons": [
@@ -1355,7 +1355,7 @@ window.COSY_CURRICULUM_A1 = {
       "id": "u8",
       "label": "ЗДОРОВЬЕ И ТЕЛО",
       "title": "MODULE 8. ЗДОРОВЬЕ И ТЕЛО",
-      "color": "#50a0F6",
+      "color": "#B0D4FB",
       "arc": "Части тела, симптомы, визит к врачу, аптека и здоровые привычки",
       "lessons_count": 6,
       "lessons": [
@@ -1523,7 +1523,7 @@ window.COSY_CURRICULUM_A1 = {
       "id": "u9",
       "label": "РАБОТА И ОБРАЗОВАНИЕ",
       "title": "MODULE 9. РАБОТА И ОБРАЗОВАНИЕ",
-      "color": "#5ab4F6",
+      "color": "#B5DDFB",
       "arc": "Профессии, места работы, рабочее время, учеба, экзамены и резюме",
       "lessons_count": 6,
       "lessons": [
@@ -1691,7 +1691,7 @@ window.COSY_CURRICULUM_A1 = {
       "id": "u10",
       "label": "ЯЗЫКИ И ОБЩЕНИЕ",
       "title": "MODULE 10. ЯЗЫКИ И ОБЩЕНИЕ",
-      "color": "#64c8F6",
+      "color": "#B9E6FB",
       "arc": "Языковые навыки, уровни, фразы в классе, перевод, сообщения и портфолио",
       "lessons_count": 6,
       "lessons": [
@@ -1859,7 +1859,7 @@ window.COSY_CURRICULUM_A1 = {
       "id": "u11",
       "label": "ТРАНСПОРТ И ПУТЕШЕСТВИЯ",
       "title": "MODULE 11. ТРАНСПОРТ И ПУТЕШЕСТВИЯ",
-      "color": "#6edcF6",
+      "color": "#BEEFFB",
       "arc": "Виды транспорта, места поездок, маршруты, билеты, расписание и регистрация",
       "lessons_count": 6,
       "lessons": [
@@ -2027,7 +2027,7 @@ window.COSY_CURRICULUM_A1 = {
       "id": "u12",
       "label": "ГОРОД И МЕСТА",
       "title": "MODULE 12. ГОРОД И МЕСТА",
-      "color": "#78f0F6",
+      "color": "#C2F8FB",
       "arc": "Места в городе, здания, достопримечательности, ориентирование и гид по району",
       "lessons_count": 6,
       "lessons": [

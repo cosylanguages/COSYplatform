@@ -50,11 +50,11 @@
     .login-header h1 {
       font-size: 1.75rem;
       font-weight: 700;
-      color: #0f172a;
+      color: var(--cosy-color-ink, #0f172a);
       margin: 0 0 8px 0;
     }
     .login-header p {
-      color: #64748b;
+      color: var(--cosy-color-ink-muted, #64748b);
       font-size: 0.9rem;
       margin: 0;
     }
@@ -65,13 +65,15 @@
       display: block;
       font-size: 0.85rem;
       font-weight: 600;
-      color: #334155;
+      color: var(--cosy-color-ink-soft, #334155);
       margin-bottom: 6px;
     }
     .form-group input {
       width: 100%;
       padding: 10px 14px;
-      border: 1px solid #cbd5e1;
+      border: 1px solid var(--cosy-color-border, #cbd5e1);
+      background: var(--cosy-color-warm-white, #ffffff);
+      color: var(--cosy-color-ink, #0f172a);
       border-radius: 8px;
       font-size: 0.95rem;
       box-sizing: border-box;
@@ -79,14 +81,14 @@
     }
     .form-group input:focus {
       outline: none;
-      border-color: #0284c7;
+      border-color: var(--cosy-platform-accent, #0284c7);
       box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
     }
     .btn-submit {
       width: 100%;
       padding: 12px;
-      background-color: #0284c7;
-      color: #ffffff;
+      background-color: var(--login-btn-bg, #0369a1);
+      color: var(--login-btn-ink, #ffffff);
       border: none;
       border-radius: 8px;
       font-size: 0.95rem;
@@ -95,14 +97,14 @@
       transition: background-color 0.15s ease;
     }
     .btn-submit:hover {
-      background-color: #0369a1;
+      background-color: var(--login-btn-bg-hover, #075985);
     }
     .btn-submit:disabled {
-      background-color: #94a3b8;
+      background-color: var(--login-btn-disabled, #64748b);
       cursor: not-allowed;
     }
     .error-banner {
-      background-color: #fef2f2;
+      background-color: var(--accent-tint, #fef2f2);
       border: 1px solid #fca5a5;
       color: #991b1b;
       padding: 12px;
@@ -115,7 +117,21 @@
       text-align: center;
       margin-top: 24px;
       font-size: 0.8rem;
-      color: #94a3b8;
+      color: var(--cosy-color-ink-muted, #475569);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --login-btn-bg: #38bdf8;
+        --login-btn-ink: #082f49;
+        --login-btn-bg-hover: #7dd3fc;
+        --login-btn-disabled: #475569;
+      }
+    }
+    html[data-theme="dark"] {
+      --login-btn-bg: #38bdf8;
+      --login-btn-ink: #082f49;
+      --login-btn-bg-hover: #7dd3fc;
+      --login-btn-disabled: #475569;
     }
   </style>
   <link rel="stylesheet" href="https://cosylanguages.github.io/COSYlanguages/css/ecosystem-strip.css">

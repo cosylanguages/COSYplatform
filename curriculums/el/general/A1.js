@@ -96,7 +96,7 @@ window.COSY_CURRICULUM_A1 = {
       "num": 0,
       "id": "u0",
       "label": "Ενότητα 0: Πρώτα Βήματα (A0)",
-      "color": "#0000F6"
+      "color": "#8C8CFB"
     },
     {
       "unit": 1,
@@ -286,7 +286,7 @@ window.COSY_CURRICULUM_A1 = {
       "num": 1,
       "id": "u1",
       "label": "ΠΡΩΤΗ ΕΠΑΦΗ & ΠΡΟΣΩΠΙΚΗ ΤΑΥΤΟΤΗΤΑ",
-      "color": "#0a14F6"
+      "color": "#9195FB"
     },
     {
       "unit": 2,
@@ -484,7 +484,7 @@ window.COSY_CURRICULUM_A1 = {
       "num": 2,
       "id": "u2",
       "label": "ΟΙΚΟΓΕΝΕΙΑ & ΚΟΙΝΩΝΙΚΕΣ ΣΧΕΣΕΙΣ",
-      "color": "#1428F6"
+      "color": "#959EFB"
     },
     {
       "unit": 3,
@@ -661,7 +661,7 @@ window.COSY_CURRICULUM_A1 = {
       "num": 3,
       "id": "u3",
       "label": "ΣΠΙΤΙ & ΚΑΘΗΜΕΡΙΝΗ ΖΩΗ",
-      "color": "#1e3cF6"
+      "color": "#9AA7FB"
     },
     {
       "unit": 4,
@@ -831,7 +831,7 @@ window.COSY_CURRICULUM_A1 = {
       "num": 4,
       "id": "u4",
       "label": "ΚΑΘΗΜΕΡΙΝΗ ΡΟΥΤΙΝΑ & ΧΡΟΝΟΣ",
-      "color": "#2850F6"
+      "color": "#9EB0FB"
     },
     {
       "unit": 5,
@@ -1010,7 +1010,7 @@ window.COSY_CURRICULUM_A1 = {
       "num": 5,
       "id": "u5",
       "label": "ΦΑΓΗΤΟ & ΠΟΤΟ",
-      "color": "#3264F6"
+      "color": "#A3B9FB"
     },
     {
       "unit": 6,
@@ -1018,7 +1018,7 @@ window.COSY_CURRICULUM_A1 = {
       "id": "u6",
       "label": "ΑΓΟΡΕΣ ΚΑΙ ΧΡΗΜΑΤΑ",
       "title": "MODULE 6. ΑΓΟΡΕΣ ΚΑΙ ΧΡΗΜΑΤΑ",
-      "color": "#3c78F6",
+      "color": "#A7C2FB",
       "arc": "Πλοήγηση στα καταστήματα, τιμές, πληρωμή και εκπτώσεις",
       "lessons_count": 6,
       "lessons": [
@@ -1186,7 +1186,7 @@ window.COSY_CURRICULUM_A1 = {
       "id": "u7",
       "label": "ΡΟΥΧΑ ΚΑΙ ΕΜΦΑΝΙΣΗ",
       "title": "MODULE 7. ΡΟΥΧΑ ΚΑΙ ΕΜΦΑΝΙΣΗ",
-      "color": "#468cF6",
+      "color": "#ACCBFB",
       "arc": "Περιγραφή ρούχων, αξεσουάρ, δοκιμές, μεγέθη και προσωπικό στυλ",
       "lessons_count": 6,
       "lessons": [
@@ -1354,7 +1354,7 @@ window.COSY_CURRICULUM_A1 = {
       "id": "u8",
       "label": "ΥΓΕΙΑ ΚΑΙ ΣΩΜΑ",
       "title": "MODULE 8. ΥΓΕΙΑ ΚΑΙ ΣΩΜΑ",
-      "color": "#50a0F6",
+      "color": "#B0D4FB",
       "arc": "Μέρη του σώματος, συμπτώματα, γιατρός, φαρμακείο και υγιεινές συνήθειες",
       "lessons_count": 6,
       "lessons": [
@@ -1522,7 +1522,7 @@ window.COSY_CURRICULUM_A1 = {
       "id": "u9",
       "label": "ΕΡΓΑΣΙΑ ΚΑΙ ΕΚΠΑΙΔΕΥΣΗ",
       "title": "MODULE 9. ΕΡΓΑΣΙΑ ΚΑΙ ΕΚΠΑΙΔΕΥΣΗ",
-      "color": "#5ab4F6",
+      "color": "#B5DDFB",
       "arc": "Επαγγέλματα, χώροι εργασίας, ωράριο, σπουδές, εξετάσεις και επαγγελματικό προφίλ",
       "lessons_count": 6,
       "lessons": [
@@ -1690,7 +1690,7 @@ window.COSY_CURRICULUM_A1 = {
       "id": "u10",
       "label": "ΓΛΩΣΣΕΣ ΚΑΙ ΕΠΙΚΟΙΝΩΝΙΑ",
       "title": "MODULE 10. ΓΛΩΣΣΕΣ ΚΑΙ ΕΠΙΚΟΙΝΩΝΙΑ",
-      "color": "#64c8F6",
+      "color": "#B9E6FB",
       "arc": "Γλωσσικές δεξιότητες, επίπεδα, φράσεις τάξης, μετάφραση, μηνύματα και προφίλ",
       "lessons_count": 6,
       "lessons": [
@@ -1858,7 +1858,7 @@ window.COSY_CURRICULUM_A1 = {
       "id": "u11",
       "label": "ΜΕΤΑΦΟΡΕΣ ΚΑΙ ΤΑΞΙΔΙΑ",
       "title": "MODULE 11. ΜΕΤΑΦΟΡΕΣ ΚΑΙ ΤΑΞΙΔΙΑ",
-      "color": "#6edcF6",
+      "color": "#BEEFFB",
       "arc": "Μέσα μεταφοράς, ταξιδιωτικά μέρη, οδηγίες, εισιτήρια, δρομολόγια και check-in",
       "lessons_count": 6,
       "lessons": [
@@ -2026,7 +2026,7 @@ window.COSY_CURRICULUM_A1 = {
       "id": "u12",
       "label": "ΠΟΛΗ ΚΑΙ ΤΟΠΟΘΕΣΙΕΣ",
       "title": "MODULE 12. ΠΟΛΗ ΚΑΙ ΤΟΠΟΘΕΣΙΕΣ",
-      "color": "#78f0F6",
+      "color": "#C2F8FB",
       "arc": "Μέρη στην πόλη, δημόσια κτίρια, αξιοθέατα, προσανατολισμός και γειτονιά",
       "lessons_count": 6,
       "lessons": [

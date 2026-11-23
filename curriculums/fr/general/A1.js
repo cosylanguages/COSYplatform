@@ -96,7 +96,7 @@ window.COSY_CURRICULUM_A1 = {
       "num": 0,
       "id": "u0",
       "label": "Unité 0 : Premiers pas (A0)",
-      "color": "#0000F6"
+      "color": "#8C8CFB"
     },
     {
       "unit": 1,
@@ -286,7 +286,7 @@ window.COSY_CURRICULUM_A1 = {
       "num": 1,
       "id": "u1",
       "label": "PREMIER CONTACT & IDENTITÉ PERSONNELLE",
-      "color": "#0a14F6"
+      "color": "#9195FB"
     },
     {
       "unit": 2,
@@ -487,7 +487,7 @@ window.COSY_CURRICULUM_A1 = {
       "num": 2,
       "id": "u2",
       "label": "FAMILLE & RELATIONS SOCIALES",
-      "color": "#1428F6"
+      "color": "#959EFB"
     },
     {
       "unit": 3,
@@ -664,7 +664,7 @@ window.COSY_CURRICULUM_A1 = {
       "num": 3,
       "id": "u3",
       "label": "LOGEMENT & VIE QUOTIDIENNE",
-      "color": "#1e3cF6"
+      "color": "#9AA7FB"
     },
     {
       "unit": 4,
@@ -833,7 +833,7 @@ window.COSY_CURRICULUM_A1 = {
       "num": 4,
       "id": "u4",
       "label": "ROUTINE QUOTIDIENNE & TEMPS",
-      "color": "#2850F6"
+      "color": "#9EB0FB"
     },
     {
       "unit": 5,
@@ -1012,7 +1012,7 @@ window.COSY_CURRICULUM_A1 = {
       "num": 5,
       "id": "u5",
       "label": "NOURRITURE & BOISSONS",
-      "color": "#3264F6"
+      "color": "#A3B9FB"
     },
     {
       "unit": 6,
@@ -1020,7 +1020,7 @@ window.COSY_CURRICULUM_A1 = {
       "id": "u6",
       "label": "ACHATS & ARGENT",
       "title": "MODULE 6. ACHATS & ARGENT",
-      "color": "#3c78F6",
+      "color": "#A7C2FB",
       "arc": "Naviguer dans les magasins, demander les prix, payer et comprendre les réductions",
       "lessons_count": 6,
       "lessons": [
@@ -1188,7 +1188,7 @@ window.COSY_CURRICULUM_A1 = {
       "id": "u7",
       "label": "VÊTEMENTS & APPARENCE",
       "title": "MODULE 7. VÊTEMENTS & APPARENCE",
-      "color": "#468cF6",
+      "color": "#ACCBFB",
       "arc": "Décrire les vêtements, les accessoires, les essayages, les tailles et le style",
       "lessons_count": 6,
       "lessons": [
@@ -1356,7 +1356,7 @@ window.COSY_CURRICULUM_A1 = {
       "id": "u8",
       "label": "SANTÉ & CORPS",
       "title": "MODULE 8. SANTÉ & CORPS",
-      "color": "#50a0F6",
+      "color": "#B0D4FB",
       "arc": "Parties du corps, symptômes, visites chez le médecin, pharmacie et habitudes saines",
       "lessons_count": 6,
       "lessons": [
@@ -1524,7 +1524,7 @@ window.COSY_CURRICULUM_A1 = {
       "id": "u9",
       "label": "TRAVAIL & ÉDUCATION",
       "title": "MODULE 9. TRAVAIL & ÉDUCATION",
-      "color": "#5ab4F6",
+      "color": "#B5DDFB",
       "arc": "Professions, lieux de travail, horaires, études, examens et profil de carrière",
       "lessons_count": 6,
       "lessons": [
@@ -1692,7 +1692,7 @@ window.COSY_CURRICULUM_A1 = {
       "id": "u10",
       "label": "LANGUES & COMMUNICATION",
       "title": "MODULE 10. LANGUES & COMMUNICATION",
-      "color": "#64c8F6",
+      "color": "#B9E6FB",
       "arc": "Compétences linguistiques, niveaux d'apprentissage, expressions de classe, traduction et portfolio",
       "lessons_count": 6,
       "lessons": [
@@ -1860,7 +1860,7 @@ window.COSY_CURRICULUM_A1 = {
       "id": "u11",
       "label": "TRANSPORTS & VOYAGES",
       "title": "MODULE 11. TRANSPORTS & VOYAGES",
-      "color": "#6edcF6",
+      "color": "#BEEFFB",
       "arc": "Modes de transport, lieux de voyage, directions, billets, horaires et enregistrement",
       "lessons_count": 6,
       "lessons": [
@@ -2028,7 +2028,7 @@ window.COSY_CURRICULUM_A1 = {
       "id": "u12",
       "label": "VILLE & LIEUX",
       "title": "MODULE 12. VILLE & LIEUX",
-      "color": "#78f0F6",
+      "color": "#C2F8FB",
       "arc": "Lieux en ville, bâtiments publics, monuments, orientation et guide du quartier",
       "lessons_count": 6,
       "lessons": [
