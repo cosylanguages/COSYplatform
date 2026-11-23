@@ -10,6 +10,7 @@
  */
 
 :root {
+    color-scheme: light;
     /* ── 1. Base Neutrals & Surface Palette (Light Mode) ──────────────── */
     --cosy-color-cream:                  #fdfcf8;
     --cosy-color-cream-dark:             #f5ede0;
@@ -240,7 +241,7 @@
 html[data-theme="dark"], body.theme-dark {
 
     --cosy-color-cream:                  #0f172a;
-    --cosy-color-cream-dark:             #0284c7;
+    --cosy-color-cream-dark:             #16202e;
     --cosy-color-warm-white:             #1e293b;
     --cosy-color-surface:                #1e293b;
 
@@ -265,7 +266,7 @@ html[data-theme="dark"], body.theme-dark {
   :root:not([data-theme="light"]) {
 
     --cosy-color-cream:                  #0f172a;
-    --cosy-color-cream-dark:             #0284c7;
+    --cosy-color-cream-dark:             #16202e;
     --cosy-color-warm-white:             #1e293b;
     --cosy-color-surface:                #1e293b;
 
