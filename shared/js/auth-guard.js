@@ -70,7 +70,7 @@ window.CosyAuth.FULL_MANIFEST = [
   {"id":"general-en-a0","title":"General English A0","track":"General","lang":"en","level":"a0"},
   {"id":"general-en-a1","title":"General English A1","track":"General","lang":"en","level":"a1"},
   {"id":"vocabulary-en-a1","title":"Vocabulary Practice A1 - Elementary","track":"General","lang":"en","level":"a1","status":"not_yet_available"},
-  {"id":"general-en-a2","title":"General English A2","track":"General","lang":"en","level":"a2","status":"not_yet_available"},
+  {"id":"general-en-a2","title":"General English A2","track":"General","lang":"en","level":"a2"},
   {"id":"phrasal-verbs-en-a2","title":"Phrasal Verbs A2 - Pre-Intermediate","track":"General","lang":"en","level":"a2","status":"not_yet_available"},
   {"id":"vocabulary-en-a2","title":"Vocabulary Practice A2 - Pre-Intermediate","track":"General","lang":"en","level":"a2","status":"not_yet_available"},
   {"id":"general-en-b1","title":"General English B1","track":"General","lang":"en","level":"b1","status":"not_yet_available"},

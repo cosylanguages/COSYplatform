@@ -1583,11 +1583,22 @@
 
         let seqHtml = `<div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5">`;
         roadmap.sequence.forEach(item => {
-          let lPath = item.lessonFile || item.lesson_file || (`lessons/${safeCourseId}/${item.id}.json`);
-          const safeLPath = escapeHtml(lPath);
+          let lPath = item.lessonFile || item.lesson_file;
           const safeTitle = escapeHtml(item.title || '');
           const safeNum = escapeHtml(String(item.lessonNumber || ''));
+          const isPlanned = item.status === 'planned' || !lPath;
 
+          if (isPlanned) {
+            seqHtml += `
+              <div class="p-2 bg-gray-50 border border-dashed border-gray-200 rounded-lg flex items-center justify-between opacity-70">
+                <div class="font-bold text-gray-600 text-[11px]">#${safeNum}: ${safeTitle}</div>
+                <span class="text-[10px] bg-gray-200 text-gray-600 font-bold px-1.5 py-0.5 rounded">Planned</span>
+              </div>
+            `;
+            return;
+          }
+
+          const safeLPath = escapeHtml(lPath);
           seqHtml += `
             <div onclick="selectAndBroadcastLesson('${safeLPath}')" class="p-2 bg-white border border-gray-200 hover:border-cosy-500 rounded-lg cursor-pointer transition flex items-center justify-between">
               <div>

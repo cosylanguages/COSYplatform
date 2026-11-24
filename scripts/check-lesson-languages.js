@@ -18,6 +18,7 @@ const FOLDER_LANGUAGE = {
   'russian-pronunciation': 'ru',
   'general-english-a0': 'en',
   'general-english-a1': 'en',
+  'general-english-a2': 'en',
   'science-en': 'en',
   introductory: 'en'
 };
