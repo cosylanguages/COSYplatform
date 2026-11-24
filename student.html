@@ -582,7 +582,12 @@
         if (!isEntitled) return false;
         if (currentLang !== 'all' && c.lang !== currentLang) return false;
         if (currentTrack !== 'all' && c.track.toLowerCase() !== currentTrack.toLowerCase()) return false;
-        if (currentLevel !== 'all' && c.level.toLowerCase() !== currentLevel.toLowerCase()) return false;
+        if (currentLevel !== 'all') {
+          const courseLevels = Array.isArray(c.levels) ? c.levels : String(c.level || '').split('-');
+          const filterLevels = String(currentLevel).split('-');
+          const levelMatches = filterLevels.some(level => courseLevels.map(l => l.toLowerCase()).includes(level.toLowerCase()));
+          if (!levelMatches) return false;
+        }
         return true;
       });
 
@@ -886,6 +891,7 @@
                 <label style="font-size: 0.85rem; font-weight: 600; color: var(--cosy-color-ink-muted, #475569); margin-right: 6px;">CEFR Level:</label>
                 <select id="levelFilter" onchange="updateStudentFilters()" style="padding: 6px 12px; border-radius: 6px; border: 1px solid #cbd5e1;">
                   <option value="all" ${currentLevel==='all'?'selected':''}>All Levels</option>
+                  <option value="a0-a1" ${currentLevel==='a0-a1'?'selected':''}>A0–A1</option>
                   <option value="a0" ${currentLevel==='a0'?'selected':''}>A0</option>
                   <option value="a1" ${currentLevel==='a1'?'selected':''}>A1</option>
                   <option value="a2" ${currentLevel==='a2'?'selected':''}>A2</option>

@@ -87,7 +87,7 @@ function checkDuplicates() {
       if (slug === 'introductory-english') {
         key = 'en:introductory:all';
       } else {
-        const match = slug.match(/^([a-z-]+)-([a-z]{2})-([a-z0-9]+)$/);
+        const match = slug.match(/^([a-z-]+)-([a-z]{2})-([a-z0-9-]+)$/);
         if (match) {
           const track = match[1].toLowerCase();
           const lang = match[2].toLowerCase();
@@ -240,8 +240,13 @@ function checkOrphanCurriculums() {
   for (const m of manifest) {
     const lang = m.lang ? m.lang.toLowerCase() : '';
     const track = m.track ? m.track.toLowerCase() : '';
-    const level = m.level ? m.level.toLowerCase() : '';
-    manifestSet.add(`${lang}:${track}:${level}`);
+    const levels = Array.isArray(m.levels) && m.levels.length
+      ? m.levels
+      : [m.level];
+    for (const level of levels) {
+      if (!level) continue;
+      manifestSet.add(`${lang}:${track}:${level.toLowerCase()}`);
+    }
   }
 
   const currDir = path.join(ROOT_DIR, 'curriculums');

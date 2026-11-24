@@ -18,6 +18,7 @@ const FOLDER_LANGUAGE = {
   'russian-pronunciation': 'ru',
   'general-english-a0': 'en',
   'general-english-a1': 'en',
+  'general-english-a0-a1-inspired': 'en',
   'science-en': 'en',
   introductory: 'en'
 };
@@ -64,7 +65,7 @@ function checkRoadmaps() {
   const dir = path.join(ROOT, 'roadmaps');
   if (!fs.existsSync(dir)) return;
   for (const name of fs.readdirSync(dir).filter(name => name.endsWith('.json'))) {
-    const match = name.match(/^[a-z-]+-([a-z]{2})-[a-z0-9]+\.json$/);
+    const match = name.match(/^[a-z-]+-([a-z]{2})-[a-z0-9-]+\.json$/);
     if (!match) continue;
     const expected = match[1];
     const data = JSON.parse(fs.readFileSync(path.join(dir, name), 'utf8'));

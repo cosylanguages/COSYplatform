@@ -8,7 +8,7 @@ This pack gives teachers one consistent way to assess speaking across the Genera
 |---|---|---|
 | Mid-course | End of A0 Unit 4 | `my-daily-routine`, `who-does-it`, `a-man-of-100-faces`, `temperament-matters` |
 | A0 exit | End of A0 Unit 9, after the review unit | `live-long`, `remarkable-people`, `how-i-met-my-friend`, `what-a-record`, plus `inspired-01` to `inspired-04` |
-| End of course | End of A1 Unit 13, after the review unit | A1 core lessons plus `inspired-05` to `inspired-08` |
+| End of course | End of A1 Unit 3, after the review unit | A1 core lessons plus `inspired-05` to `inspired-08` |
 
 ## 16-point speaking rubric
 
