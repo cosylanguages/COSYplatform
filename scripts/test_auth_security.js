@@ -96,9 +96,23 @@ async function main() {
   assert.equal(authData.user.id, 'user-1');
   assert.equal(authData.profile.role, 'student');
 
+  const combinedCourse = { lang: 'en', level: 'a0-a1', levels: ['a0', 'a1'] };
+  const a0Profile = { role: 'student', language_access: ['en'], course_level: 'a0' };
+  const a1Profile = { role: 'student', language_access: ['en'], course_level: 'a1' };
+  const a2Profile = { role: 'student', language_access: ['en'], course_level: 'a2' };
+  assert.equal(validStudent.auth.isCourseAccessible(combinedCourse, a0Profile), true, 'A0 entitlement opens the combined A0-A1 course');
+  assert.equal(validStudent.auth.isCourseAccessible(combinedCourse, a1Profile), true, 'A1 entitlement opens the combined A0-A1 course');
+  assert.equal(validStudent.auth.isCourseAccessible(combinedCourse, a2Profile), false, 'A2 entitlement must not open the combined A0-A1 course');
+  assert.equal(
+    validStudent.auth.isCourseAccessible({ lang: 'en', level: 'a0' }, { role: 'student', language_access: ['en'], course_level: 'a0-a1' }),
+    true,
+    'an A0-A1 entitlement opens the A0 part of the range'
+  );
+
   console.log('PASS: SSO tokens stay on trusted HTTPS origins.');
   console.log('PASS: missing, failed, and invalid profiles fail closed.');
   console.log('PASS: a valid student profile is accepted.');
+  console.log('PASS: combined A0-A1 courses respect single-level entitlements.');
 }
 
 main().catch(error => {

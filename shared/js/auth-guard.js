@@ -16,11 +16,12 @@
 
 /**
  * @typedef {Object} CourseManifestItem
- * @property {string} id - Course identifier (e.g. 'general-en-a1')
+ * @property {string} id - Course identifier (e.g. 'general-en-a0-a1')
  * @property {string} title - Human readable course title
  * @property {string} track - Course track ('General'|'Grammar'|'Spoken'|'Exam'|'Professional'|'Pronunciation'|'Relocation'|'Travelling'|'Cinema'|'Discussion')
  * @property {string} lang - ISO 2-letter language code
  * @property {string} level - CEFR level code
+ * @property {string[]} [levels] - CEFR levels covered by a combined course (e.g. ['a0','a1'])
  * @property {string} [status] - Availability status ('not_yet_available'|'available')
  */
 
@@ -67,8 +68,7 @@ window.CosyAuth.FULL_MANIFEST = [
   {"id":"exam-fr-b2","title":"Exam FR B2","track":"Exam","lang":"fr","level":"b2"},
   {"id":"exam-fr-c1","title":"Exam FR C1","track":"Exam","lang":"fr","level":"c1"},
   {"id":"exam-fr-c2","title":"Exam FR C2","track":"Exam","lang":"fr","level":"c2"},
-  {"id":"general-en-a0","title":"General English A0","track":"General","lang":"en","level":"a0"},
-  {"id":"general-en-a1","title":"General English A1","track":"General","lang":"en","level":"a1"},
+  {"id":"general-en-a0-a1","title":"General English A0–A1","track":"General","lang":"en","level":"a0-a1","levels":["a0","a1"]},
   {"id":"vocabulary-en-a1","title":"Vocabulary Practice A1 - Elementary","track":"General","lang":"en","level":"a1","status":"not_yet_available"},
   {"id":"general-en-a2","title":"General English A2","track":"General","lang":"en","level":"a2","status":"not_yet_available"},
   {"id":"phrasal-verbs-en-a2","title":"Phrasal Verbs A2 - Pre-Intermediate","track":"General","lang":"en","level":"a2","status":"not_yet_available"},
@@ -399,17 +399,25 @@ window.CosyAuth.isCourseAccessible = function(course, profile) {
 
   if (!langAllowed) return false;
 
-  // 2. Level Check
-  const reqLevel = (course.level || '').toLowerCase();
-  let levelAllowed = false;
+  // 2. Level Check. Combined courses can declare `levels` (for example A0 and A1)
+  // while a profile may be entitled to one level, both, or a range such as "a0-a1".
+  const normalizeLevels = (value) => {
+    const values = Array.isArray(value) ? value : [value];
+    return values.flatMap((entry) => {
+      if (typeof entry !== 'string') return [];
+      const normalized = entry.trim().toLowerCase();
+      if (!normalized) return [];
+      if (normalized === '*') return ['*'];
+      if (/^[a-c][0-2]-[a-c][0-2]$/.test(normalized)) return normalized.split('-');
+      return normalized.split(',').map(part => part.trim()).filter(Boolean);
+    });
+  };
 
-  if (courseLevel === '*' || !courseLevel) {
-    levelAllowed = true;
-  } else if (Array.isArray(courseLevel)) {
-    levelAllowed = courseLevel.includes('*') || courseLevel.some(lvl => lvl.toLowerCase() === reqLevel);
-  } else if (typeof courseLevel === 'string') {
-    levelAllowed = courseLevel === '*' || courseLevel.toLowerCase() === reqLevel;
-  }
+  const requestedLevels = normalizeLevels(course.levels).concat(normalizeLevels(course.level));
+  const allowedLevels = normalizeLevels(courseLevel);
+  const levelAllowed = allowedLevels.includes('*') ||
+    requestedLevels.includes('*') ||
+    requestedLevels.some(level => allowedLevels.includes(level));
 
   return levelAllowed;
 };

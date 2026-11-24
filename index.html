@@ -303,7 +303,10 @@
           window.location.href = loginUrl;
           return;
         }
-        renderLessonFromSupabase(lessonParam, authState);
+        const isTeacher = authState.role === 'teacher' || authState.role === 'founder';
+        const targetPage = isTeacher ? 'teacher.html' : 'student.html';
+        window.location.replace(`${targetPage}${window.location.search}`);
+        return;
       } else if (courseParam && levelParam) {
         renderPublicRoadmap(courseParam, levelParam);
       } else {
