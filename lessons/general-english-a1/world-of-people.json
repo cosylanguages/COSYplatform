@@ -1,1 +1,471 @@
-{"id":"world-of-people","title":"World of people","level":"A1","language":"en","defaultDuration":50,"defaultMode":"all","objectives":["discuss global nationalities and cultural backgrounds","use Wh- question intonation"],"links":{"vocabulary":["foreign","language","speak","passport","world"],"grammar":[{"topic_id":"word-order","manual_url":"https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/word-order.html"}],"communication":[{"phrase_id":"en:general:asking-and-giving-personal-info:where-are-you-from","manual_url":"https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/asking-and-giving-personal-info.html"}]},"slides":[{"id":"world-of-people-slide-1","title":"Warm-up & Overview","stage":"warm-up","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Lesson Objectives for World of people:"},{"type":"blockquote","content":"discuss global nationalities and cultural backgrounds; use Wh- question intonation"}]},{"id":"world-of-people-slide-2","title":"Vocabulary & Input","stage":"input","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Review key terms and target language below:"},{"type":"blockquote","content":"Key terms: foreign, language, speak, passport, world"}]},{"id":"world-of-people-slide-grammar","title":"Grammar Focus","stage":"input","duration":50,"mode":"all","elements":[{"type":"grammar-focus","grammarId":"en-a1-word-order"}]},{"id":"world-of-people-slide-3","title":"Controlled Practice","stage":"controlled-practice","duration":50,"mode":"all","elements":[{"type":"instruction","content":"What document do international travelers need?"},{"type":"test","options":["passport","table","chair"]}]},{"id":"world-of-people-slide-4","title":"Reading & Listening Skills","stage":"reading-listening","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Read the short passage below (recycling introduced vocabulary):"},{"type":"blockquote","content":"We live in a big world of people. Many foreign students speak English and carry a passport when traveling."},{"type":"instruction","content":"Listening Task: Listen to your teacher / audio prompt and answer the comprehension question."}]},{"id":"world-of-people-slide-5","title":"Freer Speaking Practice","stage":"freer-practice","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Discuss international origins and cultural diversity in global cities."}]},{"id":"world-of-people-slide-6","title":"Cool-down & Summary","stage":"cool-down","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Lesson Summary & Feedback:"},{"type":"blockquote","content":"Today you practiced: discuss global nationalities and cultural backgrounds, use Wh- question intonation."}]}]}
+{
+  "id": "world-of-people",
+  "title": "World of people",
+  "level": "A1",
+  "language": "en",
+  "unit": "Unit 1. Nice to meet you!",
+  "canDo": "I can talk about people from different countries and cultures.",
+  "defaultDuration": 50,
+  "defaultMode": "all",
+  "objectives": [
+    "discuss global nationalities and cultural backgrounds",
+    "use Wh- question intonation"
+  ],
+  "materials": "World map, country cards, survey sheet, COSYmanuals 'question words' and 'to be' pages.",
+  "assessment": "Check Wh- question order and nationality language.",
+  "homework": "Write five sentences about countries and languages you know.",
+  "recycling": {
+    "prior": "Recycles personal details, nationalities, and 'to be'.",
+    "next": "Lesson 5 moves to jobs and community heroes."
+  },
+  "differentiation": {
+    "individual": "Use a world map and country cards.",
+    "group": "International survey and class map display.",
+    "children": "Use flag cards and a 'hello around the world' song.",
+    "teens": "Use a global-culture quiz and a short presentation.",
+    "adults": "Discuss international work and cultural awareness.",
+    "seniors": "Use large-print maps and a gentle travel discussion."
+  },
+  "links": {
+    "vocabulary": [
+      "foreign",
+      "language",
+      "speak",
+      "passport",
+      "world",
+      "country",
+      "nationality",
+      "travel",
+      "learn",
+      "culture"
+    ],
+    "grammar": [
+      {
+        "topic_id": "question-words",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/question-words.html"
+      },
+      {
+        "topic_id": "to-be",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/to-be.html"
+      }
+    ],
+    "phonetics": "Wh- question intonation and the /w/ sound in 'world'",
+    "communication": [
+      {
+        "phrase_id": "en:general:asking-and-giving-personal-info:where-are-you-from",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/asking-and-giving-personal-info.html"
+      }
+    ]
+  },
+  "slides": [
+    {
+      "id": "world-of-people-slide-1",
+      "title": "1. Communication Goal & Overview",
+      "stage": "warm-up",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Communication Goal: I can talk about people from different countries and cultures."
+        },
+        {
+          "type": "blockquote",
+          "content": "Lesson overview:\n- Level: A1 General English\n- Unit: Unit 1. Nice to meet you!\n- Time: 60 min (Essential) / 90 min (Expanded) / 120 min (Full Workshop)\n- Focus: World of people\n- Materials: World map, country cards, survey sheet, COSYmanuals 'question words' and 'to be' pages."
+        },
+        {
+          "type": "instruction",
+          "content": "By the end of this lesson, you can:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• discuss global nationalities and cultural backgrounds\n• use Wh- question intonation"
+        }
+      ]
+    },
+    {
+      "id": "world-of-people-slide-2",
+      "title": "2. Recycling & Continuity",
+      "stage": "recycling",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Recycling & Course Continuity:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Prior learning: Recycles personal details, nationalities, and 'to be'.\n\nNext lesson: Lesson 5 moves to jobs and community heroes."
+        },
+        {
+          "type": "instruction",
+          "content": "Quick retrieval task: which words or phrases do you remember?"
+        },
+        {
+          "type": "test",
+          "content": "Which word belongs to the previous lesson?",
+          "options": [
+            "foreign",
+            "banana",
+            "airport"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "world-of-people-slide-3",
+      "title": "3. Vocabulary & Essential Chunks",
+      "stage": "input",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Core Active Vocabulary (10 items):"
+        },
+        {
+          "type": "blockquote",
+          "content": "foreign — from another country. Example: She speaks two foreign languages.\nlanguage — a system of words people speak. Example: English is a world language.\nspeak — to say words. Example: She can speak three languages.\npassport — a document for international travel. Example: You need a passport to travel.\nworld — the earth and all people. Example: She is famous around the world.\ncountry — a nation with its own government. Example: Which country are you from?\nnationality — the country you belong to. Example: What is your nationality?\ntravel — to go to another place. Example: I want to travel to Italy.\nlearn — to get new knowledge or skills. Example: I learn English every day.\nculture — the way of life of a group. Example: I like learning about other cultures."
+        },
+        {
+          "type": "instruction",
+          "content": "Essential Chunks & Functional Collocations:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• Where are you from? (asking about origin)\n• What language do you speak? (asking about language)\n• I speak... (stating language)\n• I have a passport. (talking about travel documents)\n• People from many countries... (describing diversity)\n• I want to learn about... (expressing interest)"
+        },
+        {
+          "type": "instruction",
+          "content": "Vocabulary practice: choose the correct word."
+        },
+        {
+          "type": "test",
+          "content": "Which word means 'from another country'?",
+          "options": [
+            "foreign",
+            "speak",
+            "passport"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Which word means 'a system of words people speak'?",
+          "options": [
+            "language",
+            "world",
+            "country"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Complete the sentence with a word from the list."
+        },
+        {
+          "type": "input",
+          "placeholder": "Complete: She speaks two ___ languages."
+        }
+      ]
+    },
+    {
+      "id": "world-of-people-slide-4",
+      "title": "4. Pronunciation Focus",
+      "stage": "pronunciation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Pronunciation Focus: Wh- question intonation and the /w/ sound in 'world'"
+        },
+        {
+          "type": "blockquote",
+          "content": "world /wɜːld/ — one syllable\nforeign /ˈfɒrən/ — stress the first syllable\npassport /ˈpɑːspɔːt/ — stress the first syllable\nculture /ˈkʌltʃə/ — stress the first syllable"
+        },
+        {
+          "type": "instruction",
+          "content": "Listen and repeat:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Where are you from? What language do you speak?"
+        },
+        {
+          "type": "instruction",
+          "content": "Mark the stressed syllable in these words:"
+        },
+        {
+          "type": "input",
+          "placeholder": "Mark the stress: world, foreign, passport"
+        }
+      ]
+    },
+    {
+      "id": "world-of-people-slide-5",
+      "title": "5. Grammar Focus & Controlled Practice",
+      "stage": "grammar",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Grammar Focus: Use question words to ask for different kinds of information."
+        },
+        {
+          "type": "grammar-focus",
+          "grammarId": "en-a1-question-words"
+        },
+        {
+          "type": "blockquote",
+          "content": "Form:\nQuestion words: Who (person), what (thing), where (place), when (time), why (reason), how (manner), how many (number). Question word + auxiliary + subject + verb.\n\nExamples:\n• Where are you from?\n• Who is your teacher?\n• How many brothers have you got?\n• Why are you late?"
+        },
+        {
+          "type": "instruction",
+          "content": "Controlled practice: choose the correct form."
+        },
+        {
+          "type": "test",
+          "content": "___ are you from?",
+          "options": [
+            "Where",
+            "Who",
+            "When"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "___ is your best friend?",
+          "options": [
+            "Who",
+            "What",
+            "Where"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "___ many sisters have you got?",
+          "options": [
+            "How",
+            "What",
+            "Who"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "___ is your birthday?",
+          "options": [
+            "When",
+            "Where",
+            "Who"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Substitution drill: say the sentence with the new words."
+        },
+        {
+          "type": "blockquote",
+          "content": "• ___ is your teacher? (Who / Where / When)\n• ___ do you live? (Where / Who / Why)\n• ___ many people are in your family? (How / What / Who)"
+        },
+        {
+          "type": "instruction",
+          "content": "Question-answer practice: ask and answer with your partner."
+        },
+        {
+          "type": "blockquote",
+          "content": "• What is your name?\n• Where are you from?\n• How many people are in your family?"
+        },
+        {
+          "type": "instruction",
+          "content": "Personalised production: use the structure about your own life."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Write three questions about your partner's family.\n• Write three questions about your partner's home."
+        }
+      ]
+    },
+    {
+      "id": "world-of-people-slide-6",
+      "title": "6. Four Skills Distribution (Listening & Reading)",
+      "stage": "reading-listening",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Reading: World of people"
+        },
+        {
+          "type": "blockquote",
+          "content": "We live in a big world of people. Many foreign students speak English and carry a passport when they travel. People from many countries learn English for work, study, and travel. I want to learn about other cultures. Where are you from? What language do you speak? How many countries have you visited?"
+        },
+        {
+          "type": "test",
+          "content": "Why do many students learn English?",
+          "options": [
+            "for work, study, and travel",
+            "only for fun",
+            "only for exams"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "What do travellers carry?",
+          "options": [
+            "a passport",
+            "a book",
+            "a ticket"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Listening: listen to the dialogue and answer the questions."
+        },
+        {
+          "type": "blockquote",
+          "content": "A: Where are you from?\nB: I'm from Brazil. And you?\nA: I'm from Japan. What language do you speak?\nB: I speak Portuguese and English.\nA: How many countries have you visited?\nB: I have visited five countries."
+        },
+        {
+          "type": "test",
+          "content": "Where is the first speaker from?",
+          "options": [
+            "Brazil",
+            "Japan",
+            "Portugal"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "How many countries has the speaker visited?",
+          "options": [
+            "five",
+            "three",
+            "ten"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "world-of-people-slide-7",
+      "title": "7. Speaking & Writing Production",
+      "stage": "freer-practice",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Speaking task: Survey three classmates about their country, language, and travel. Report two answers."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Where are you from?\n• What language do you speak?\n• How many countries have you visited?\n• Why do people learn English?\n• Which culture do you want to learn about?"
+        },
+        {
+          "type": "instruction",
+          "content": "Role-play: You are at an international food festival. Meet people from three countries and ask about their culture."
+        },
+        {
+          "type": "blockquote",
+          "content": "Work in pairs. Take turns. Use at least five target words and one target grammar structure. Then swap roles."
+        },
+        {
+          "type": "instruction",
+          "content": "Writing task: Write five sentences about people from different countries."
+        },
+        {
+          "type": "blockquote",
+          "content": "Model: He/She is from ... He/She speaks ... People ..."
+        },
+        {
+          "type": "essay",
+          "placeholder": "Write your response here..."
+        }
+      ]
+    },
+    {
+      "id": "world-of-people-slide-8",
+      "title": "8. Multi-Duration Lesson Flows",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Timestamped Multi-Duration Flows:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• 60 min (Essential): 0–8 Warm-up & goal; 8–18 Vocabulary & chunks; 18–28 Grammar & controlled practice; 28–40 Reading/listening + speaking; 40–50 Role-play; 50–60 Cool-down & homework.\n\n• 90 min (Expanded): 0–10 Warm-up; 10–25 Vocabulary & pronunciation; 25–40 Grammar & controlled practice; 40–55 Reading/listening; 55–75 Speaking & role-play; 75–85 Writing; 85–90 Cool-down.\n\n• 120 min (Full Workshop): 0–15 Warm-up & diagnostic; 15–35 Vocabulary lab; 35–55 Grammar workshop; 55–75 Reading/listening; 75–95 Speaking & role-play; 95–110 Writing & portfolio; 110–120 Cool-down & feedback."
+        }
+      ]
+    },
+    {
+      "id": "world-of-people-slide-9",
+      "title": "9. Delivery Adaptations",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Individual Lesson Adaptation:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Use a world map and country cards."
+        },
+        {
+          "type": "instruction",
+          "content": "Group Lesson Adaptation:"
+        },
+        {
+          "type": "blockquote",
+          "content": "International survey and class map display."
+        },
+        {
+          "type": "instruction",
+          "content": "Age Adaptations:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Children: Use flag cards and a 'hello around the world' song.\nTeens: Use a global-culture quiz and a short presentation.\nAdults: Discuss international work and cultural awareness.\nSeniors: Use large-print maps and a gentle travel discussion."
+        }
+      ]
+    },
+    {
+      "id": "world-of-people-slide-10",
+      "title": "10. Homework & Recycling Notes",
+      "stage": "cool-down",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Homework Assignment:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Write five sentences about countries and languages you know."
+        },
+        {
+          "type": "instruction",
+          "content": "Self-Assessment: I can..."
+        },
+        {
+          "type": "blockquote",
+          "content": "• discuss global nationalities and cultural backgrounds\n• use Wh- question intonation\n• use the target vocabulary\n• ask and answer the key questions"
+        },
+        {
+          "type": "instruction",
+          "content": "Recycling into Next Lesson:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Lesson 5 moves to jobs and community heroes."
+        }
+      ]
+    }
+  ]
+}

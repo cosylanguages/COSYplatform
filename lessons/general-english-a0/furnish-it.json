@@ -1,1 +1,471 @@
-{"id":"furnish-it","title":"Furnish it!","level":"A0","language":"en","defaultDuration":50,"defaultMode":"all","objectives":["name items of furniture","describe furniture placement using there is/are and prepositions"],"links":{"vocabulary":["bed","sofa","table","chair","desk","lamp","wardrobe","carpet"],"grammar":[{"topic_id":"there-is-are","manual_url":"https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/there-is-are.html"}],"communication":[{"phrase_id":"en:general:directions-and-transport:it-is-near-the-park","manual_url":"https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/directions-and-transport.html"}]},"slides":[{"id":"furnish-it-slide-1","title":"Warm-up & Overview","stage":"warm-up","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Lesson Objectives for Furnish it!:"},{"type":"blockquote","content":"name items of furniture; describe furniture placement using there is/are and prepositions"}]},{"id":"furnish-it-slide-2","title":"Vocabulary & Input","stage":"input","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Review key terms and target language below:"},{"type":"blockquote","content":"Key terms: bed, sofa, table, chair, desk, lamp"}]},{"id":"furnish-it-slide-grammar","title":"Grammar Focus","stage":"input","duration":50,"mode":"all","elements":[{"type":"grammar-focus","grammarId":"en-a1-there-is-are"}]},{"id":"furnish-it-slide-3","title":"Controlled Practice","stage":"controlled-practice","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Where is the sofa located?"},{"type":"test","options":["next to the table","under the bed","outside"]}]},{"id":"furnish-it-slide-4","title":"Reading & Listening Skills","stage":"reading-listening","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Read the short passage below (recycling introduced vocabulary):"},{"type":"blockquote","content":"Let's furnish the room. There is a big sofa next to the table. Put the lamp on the desk."},{"type":"instruction","content":"Listening Task: Listen to your teacher / audio prompt and answer the comprehension question."}]},{"id":"furnish-it-slide-5","title":"Freer Speaking Practice","stage":"freer-practice","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Describe how you want to furnish your living room or bedroom."}]},{"id":"furnish-it-slide-6","title":"Cool-down & Summary","stage":"cool-down","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Lesson Summary & Feedback:"},{"type":"blockquote","content":"Today you practiced: name items of furniture, describe furniture placement using there is/are and prepositions."}]}]}
+{
+  "id": "furnish-it",
+  "title": "Furnish it!",
+  "level": "A0",
+  "language": "en",
+  "unit": "Unit 6. Home sweet home",
+  "canDo": "I can name furniture and describe where it is in a room.",
+  "defaultDuration": 50,
+  "defaultMode": "all",
+  "objectives": [
+    "name items of furniture",
+    "describe furniture placement using there is/are and prepositions"
+  ],
+  "materials": "Room template, furniture cut-outs, real objects, COSYmanuals 'there is/are', 'prepositions of place', and 'imperatives' pages.",
+  "assessment": "Check preposition choice and furniture vocabulary.",
+  "homework": "Draw your room and label five pieces of furniture. Write five sentences about their positions.",
+  "recycling": {
+    "prior": "Recycles home vocabulary and prepositions from Lesson 21.",
+    "next": "Lesson 23 recycles home vocabulary to plan a party."
+  },
+  "differentiation": {
+    "individual": "Use a room template and furniture cut-outs.",
+    "group": "Furniture-placement challenge: teams design a room from instructions.",
+    "children": "Use a doll's house and furniture stickers.",
+    "teens": "Use a room-design app mock-up.",
+    "adults": "Discuss small-space living and furniture choices.",
+    "seniors": "Use large-print room pictures and a slow placement drill."
+  },
+  "links": {
+    "vocabulary": [
+      "bed",
+      "sofa",
+      "table",
+      "chair",
+      "desk",
+      "lamp",
+      "wardrobe",
+      "carpet",
+      "room",
+      "put"
+    ],
+    "grammar": [
+      {
+        "topic_id": "there-is-are",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/there-is-are.html"
+      },
+      {
+        "topic_id": "prepositions-place",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/prepositions-place.html"
+      },
+      {
+        "topic_id": "imperatives",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/imperatives.html"
+      }
+    ],
+    "phonetics": "Furniture word stress and the /tʃ/ sound in 'chair'",
+    "communication": [
+      {
+        "phrase_id": "en:general:directions-and-transport:it-is-near-the-park",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/directions-and-transport.html"
+      }
+    ]
+  },
+  "slides": [
+    {
+      "id": "furnish-it-slide-1",
+      "title": "1. Communication Goal & Overview",
+      "stage": "warm-up",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Communication Goal: I can name furniture and describe where it is in a room."
+        },
+        {
+          "type": "blockquote",
+          "content": "Lesson overview:\n- Level: A0 General English\n- Unit: Unit 6. Home sweet home\n- Time: 60 min (Essential) / 90 min (Expanded) / 120 min (Full Workshop)\n- Focus: Furnish it!\n- Materials: Room template, furniture cut-outs, real objects, COSYmanuals 'there is/are', 'prepositions of place', and 'imperatives' pages."
+        },
+        {
+          "type": "instruction",
+          "content": "By the end of this lesson, you can:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• name items of furniture\n• describe furniture placement using there is/are and prepositions"
+        }
+      ]
+    },
+    {
+      "id": "furnish-it-slide-2",
+      "title": "2. Recycling & Continuity",
+      "stage": "recycling",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Recycling & Course Continuity:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Prior learning: Recycles home vocabulary and prepositions from Lesson 21.\n\nNext lesson: Lesson 23 recycles home vocabulary to plan a party."
+        },
+        {
+          "type": "instruction",
+          "content": "Quick retrieval task: which words or phrases do you remember?"
+        },
+        {
+          "type": "test",
+          "content": "Which word belongs to the previous lesson?",
+          "options": [
+            "bed",
+            "banana",
+            "airport"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "furnish-it-slide-3",
+      "title": "3. Vocabulary & Essential Chunks",
+      "stage": "input",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Core Active Vocabulary (10 items):"
+        },
+        {
+          "type": "blockquote",
+          "content": "bed — furniture for sleeping. Example: I go to bed at eleven.\nsofa — a long soft seat. Example: The sofa is next to the window.\ntable — a piece of furniture with a flat top. Example: The books are on the table.\nchair — a seat for one person. Example: Please sit on the chair.\ndesk — a table for work or study. Example: My books are on the desk.\nlamp — a light. Example: There is a lamp on the desk.\nwardrobe — a cupboard for clothes. Example: My clothes are in the wardrobe.\ncarpet — a soft floor covering. Example: There is a carpet in the living room.\nroom — a space inside a building. Example: My room is small but nice.\nput — to move something to a place. Example: Put the bag on the floor."
+        },
+        {
+          "type": "instruction",
+          "content": "Essential Chunks & Functional Collocations:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• Let's furnish the room. (starting a task)\n• There is a sofa next to the table. (describing furniture)\n• Put the lamp on the desk. (giving an instruction)\n• There are two chairs. (describing plural furniture)\n• Where is the bed? (asking about location)\n• The carpet is under the table. (describing location)"
+        },
+        {
+          "type": "instruction",
+          "content": "Vocabulary practice: choose the correct word."
+        },
+        {
+          "type": "test",
+          "content": "Which word means 'furniture for sleeping'?",
+          "options": [
+            "bed",
+            "table",
+            "chair"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Which word means 'a long soft seat'?",
+          "options": [
+            "sofa",
+            "desk",
+            "lamp"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Complete the sentence with a word from the list."
+        },
+        {
+          "type": "input",
+          "placeholder": "Complete: I go to ___ at eleven."
+        }
+      ]
+    },
+    {
+      "id": "furnish-it-slide-4",
+      "title": "4. Pronunciation Focus",
+      "stage": "pronunciation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Pronunciation Focus: Furniture word stress and the /tʃ/ sound in 'chair'"
+        },
+        {
+          "type": "blockquote",
+          "content": "sofa /ˈsəʊfə/ — stress the first syllable\nwardrobe /ˈwɔːdrəʊb/ — stress the first syllable\ncarpet /ˈkɑːpɪt/ — stress the first syllable\nchair /tʃeə/ — starts with /tʃ/"
+        },
+        {
+          "type": "instruction",
+          "content": "Listen and repeat:"
+        },
+        {
+          "type": "blockquote",
+          "content": "There is a sofa next to the table. Put the lamp on the desk."
+        },
+        {
+          "type": "instruction",
+          "content": "Mark the stressed syllable in these words:"
+        },
+        {
+          "type": "input",
+          "placeholder": "Mark the stress: sofa, wardrobe, carpet"
+        }
+      ]
+    },
+    {
+      "id": "furnish-it-slide-5",
+      "title": "5. Grammar Focus & Controlled Practice",
+      "stage": "grammar",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Grammar Focus: Use 'there is' and 'there are' to say that something exists or is in a place."
+        },
+        {
+          "type": "grammar-focus",
+          "grammarId": "en-a1-there-is-are"
+        },
+        {
+          "type": "blockquote",
+          "content": "Form:\nThere is / There are: There is + singular noun. There are + plural noun. Negative: There isn't / There aren't. Question: Is there...? Are there...?\n\nExamples:\n• There is a lamp on the desk.\n• There are two chairs in the room.\n• There isn't a TV in my bedroom.\n• Are there any books on the shelf?"
+        },
+        {
+          "type": "instruction",
+          "content": "Controlled practice: choose the correct form."
+        },
+        {
+          "type": "test",
+          "content": "___ a phone in my bag.",
+          "options": [
+            "There is",
+            "There are"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "___ three keys on the table.",
+          "options": [
+            "There is",
+            "There are"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "___ a mirror in the room?",
+          "options": [
+            "Is there",
+            "Are there"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "___ any chairs in the kitchen?",
+          "options": [
+            "Is there",
+            "Are there"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Substitution drill: say the sentence with the new words."
+        },
+        {
+          "type": "blockquote",
+          "content": "• There is ... (a bed / a lamp / a desk) in my room.\n• There are ... (two chairs / three books) on the table.\n• There isn't ... (a TV / a mirror) in my bedroom."
+        },
+        {
+          "type": "instruction",
+          "content": "Question-answer practice: ask and answer with your partner."
+        },
+        {
+          "type": "blockquote",
+          "content": "• What is in your bag?\n• What is in your room?\n• Are there any pictures on your wall?"
+        },
+        {
+          "type": "instruction",
+          "content": "Personalised production: use the structure about your own life."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Write three sentences with 'there is' about your home.\n• Write three sentences with 'there are' about your classroom."
+        }
+      ]
+    },
+    {
+      "id": "furnish-it-slide-6",
+      "title": "6. Four Skills Distribution (Listening & Reading)",
+      "stage": "reading-listening",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Reading: Furnish it!"
+        },
+        {
+          "type": "blockquote",
+          "content": "Let's furnish the room. There is a big sofa next to the table. There are two chairs near the desk. The bed is in the corner, and the wardrobe is behind the door. Put the lamp on the desk. The carpet is under the table. Now the room is comfortable and nice."
+        },
+        {
+          "type": "test",
+          "content": "Where is the sofa?",
+          "options": [
+            "next to the table",
+            "behind the door",
+            "under the table"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Where is the wardrobe?",
+          "options": [
+            "behind the door",
+            "in the corner",
+            "on the desk"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Listening: listen to the dialogue and answer the questions."
+        },
+        {
+          "type": "blockquote",
+          "content": "A: Where is the lamp?\nB: Put it on the desk.\nA: And the carpet?\nB: Put it under the table.\nA: Is there a wardrobe?\nB: Yes, there is. It's behind the door."
+        },
+        {
+          "type": "test",
+          "content": "Where does the lamp go?",
+          "options": [
+            "on the desk",
+            "under the table",
+            "behind the door"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Where is the wardrobe?",
+          "options": [
+            "behind the door",
+            "next to the sofa",
+            "on the desk"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "furnish-it-slide-7",
+      "title": "7. Speaking & Writing Production",
+      "stage": "freer-practice",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Speaking task: Draw an empty room. Give your partner instructions to furnish it, then compare pictures."
+        },
+        {
+          "type": "blockquote",
+          "content": "• What furniture is in your bedroom?\n• Where is your bed?\n• What is your favourite piece of furniture?\n• Do you like big or small rooms?\n• What is in your living room?"
+        },
+        {
+          "type": "instruction",
+          "content": "Role-play: You are an interior designer. Ask a client about their room and suggest furniture placement."
+        },
+        {
+          "type": "blockquote",
+          "content": "Work in pairs. Take turns. Use at least five target words and one target grammar structure. Then swap roles."
+        },
+        {
+          "type": "instruction",
+          "content": "Writing task: Write five sentences describing your room and where the furniture is."
+        },
+        {
+          "type": "blockquote",
+          "content": "Model: There is ... There are ... The ... is ..."
+        },
+        {
+          "type": "essay",
+          "placeholder": "Write your response here..."
+        }
+      ]
+    },
+    {
+      "id": "furnish-it-slide-8",
+      "title": "8. Multi-Duration Lesson Flows",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Timestamped Multi-Duration Flows:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• 60 min (Essential): 0–8 Warm-up & goal; 8–18 Vocabulary & chunks; 18–28 Grammar & controlled practice; 28–40 Reading/listening + speaking; 40–50 Role-play; 50–60 Cool-down & homework.\n\n• 90 min (Expanded): 0–10 Warm-up; 10–25 Vocabulary & pronunciation; 25–40 Grammar & controlled practice; 40–55 Reading/listening; 55–75 Speaking & role-play; 75–85 Writing; 85–90 Cool-down.\n\n• 120 min (Full Workshop): 0–15 Warm-up & diagnostic; 15–35 Vocabulary lab; 35–55 Grammar workshop; 55–75 Reading/listening; 75–95 Speaking & role-play; 95–110 Writing & portfolio; 110–120 Cool-down & feedback."
+        }
+      ]
+    },
+    {
+      "id": "furnish-it-slide-9",
+      "title": "9. Delivery Adaptations",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Individual Lesson Adaptation:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Use a room template and furniture cut-outs."
+        },
+        {
+          "type": "instruction",
+          "content": "Group Lesson Adaptation:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Furniture-placement challenge: teams design a room from instructions."
+        },
+        {
+          "type": "instruction",
+          "content": "Age Adaptations:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Children: Use a doll's house and furniture stickers.\nTeens: Use a room-design app mock-up.\nAdults: Discuss small-space living and furniture choices.\nSeniors: Use large-print room pictures and a slow placement drill."
+        }
+      ]
+    },
+    {
+      "id": "furnish-it-slide-10",
+      "title": "10. Homework & Recycling Notes",
+      "stage": "cool-down",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Homework Assignment:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Draw your room and label five pieces of furniture. Write five sentences about their positions."
+        },
+        {
+          "type": "instruction",
+          "content": "Self-Assessment: I can..."
+        },
+        {
+          "type": "blockquote",
+          "content": "• name items of furniture\n• describe furniture placement using there is/are and prepositions\n• use the target vocabulary\n• ask and answer the key questions"
+        },
+        {
+          "type": "instruction",
+          "content": "Recycling into Next Lesson:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Lesson 23 recycles home vocabulary to plan a party."
+        }
+      ]
+    }
+  ]
+}

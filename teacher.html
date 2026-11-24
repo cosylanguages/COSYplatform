@@ -1632,6 +1632,26 @@
       updateTimerDisplay();
     }
 
+    async function mergeTeacherEditionNotes(lesson, lessonPath) {
+      if (!lessonPath || !lessonPath.startsWith('lessons/')) return lesson;
+      const editionPath = lessonPath.replace(/^lessons\//, 'local_content/teacher-lessons/');
+      try {
+        const res = await fetch(editionPath, { cache: 'no-store' });
+        if (!res.ok) return lesson;
+        const edition = await res.json();
+        const notesById = {};
+        (edition.slides || []).forEach(s => {
+          if (Array.isArray(s.teacherNotes)) notesById[s.id] = s.teacherNotes;
+        });
+        (lesson.slides || []).forEach(s => {
+          if (notesById[s.id]) s.teacherNotes = notesById[s.id];
+        });
+      } catch (e) {
+        // Teacher editions are local-only; the student-safe lesson is still valid.
+      }
+      return lesson;
+    }
+
     async function renderLesson(lessonPath) {
       const appRoot = document.getElementById('app-root');
 
@@ -1661,6 +1681,7 @@
           });
         } else {
           const jsonData = JSON.parse(text);
+          await mergeTeacherEditionNotes(jsonData, lessonPath);
           lessonTitle = jsonData.title || lessonTitle;
           jsonData.slides.forEach(s => {
             window.currentTeacherSlides.push({
@@ -2011,8 +2032,9 @@
         "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
       })[ch]);
 
-      if (slide.teacherNotes) {
-        slide.teacherNotes.forEach(tn => {
+      const slideNotes = slide.teacherNotes || slide.teacher_notes;
+      if (Array.isArray(slideNotes)) {
+        slideNotes.forEach(tn => {
           output += `
             <div class="teacher-note-box ${tn.type === 'speech' ? 'teacher-note-speech' : 'teacher-note-instruction'}">
               <div class="teacher-note-header">${tn.type === 'speech' ? '💬 Suggested Speech Script' : '💡 Stage Aim & Guidance'}</div>

@@ -1,1 +1,467 @@
-{"id":"whats-in-your-bag","title":"What's in your bag?","level":"A0","language":"en","defaultDuration":50,"defaultMode":"all","objectives":["describe items inside bags or containers using there is / there are","distinguish singular and plural items"],"links":{"vocabulary":["bag","phone","key","lamp","mirror","room"],"grammar":[{"topic_id":"there-is-are","manual_url":"https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/there-is-are.html"}],"communication":[{"phrase_id":"en:general:classroom-language:i-have-a-question","manual_url":"https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/classroom-language.html"}]},"slides":[{"id":"whats-in-your-bag-slide-1","title":"Warm-up & Overview","stage":"warm-up","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Lesson Objectives for What's in your bag?:"},{"type":"blockquote","content":"describe items inside bags or containers using there is / there are; distinguish singular and plural items"}]},{"id":"whats-in-your-bag-slide-2","title":"Vocabulary & Input","stage":"input","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Review key terms and target language below:"},{"type":"blockquote","content":"Key terms: bag, phone, key, lamp, mirror, room"}]},{"id":"whats-in-your-bag-slide-grammar","title":"Grammar Focus","stage":"input","duration":50,"mode":"all","elements":[{"type":"grammar-focus","grammarId":"en-a1-there-is-are"}]},{"id":"whats-in-your-bag-slide-3","title":"Controlled Practice","stage":"controlled-practice","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Complete: 'There ___ three keys on the table.'"},{"type":"test","options":["are","is","am"]}]},{"id":"whats-in-your-bag-slide-4","title":"Reading & Listening Skills","stage":"reading-listening","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Read the short passage below (recycling introduced vocabulary):"},{"type":"blockquote","content":"There is a phone in my bag. There are keys on the table. In my room, there is a big lamp."},{"type":"instruction","content":"Listening Task: Listen to your teacher / audio prompt and answer the comprehension question."}]},{"id":"whats-in-your-bag-slide-5","title":"Freer Speaking Practice","stage":"freer-practice","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Describe five objects currently inside your bag or on your desk using there is/are."}]},{"id":"whats-in-your-bag-slide-6","title":"Cool-down & Summary","stage":"cool-down","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Lesson Summary & Feedback:"},{"type":"blockquote","content":"Today you practiced: describe items inside bags or containers using there is / there are, distinguish singular and plural items."}]}]}
+{
+  "id": "whats-in-your-bag",
+  "title": "What's in your bag?",
+  "level": "A0",
+  "language": "en",
+  "unit": "Unit 3. What is it?",
+  "canDo": "I can describe what is in my bag using 'there is' and 'there are'.",
+  "defaultDuration": 50,
+  "defaultMode": "all",
+  "objectives": [
+    "describe items inside bags or containers using there is / there are",
+    "distinguish singular and plural items"
+  ],
+  "materials": "Real bags, item cards, bingo sheets, COSYmanuals 'there is/are' and 'plurals' pages.",
+  "assessment": "Check singular/plural agreement with 'there is/are'.",
+  "homework": "Write five sentences about what is in your bag and on your table.",
+  "recycling": {
+    "prior": "Recycles object vocabulary and prepositions from Lesson 9.",
+    "next": "Lesson 11 recycles everyday objects to talk about daily use."
+  },
+  "differentiation": {
+    "individual": "Use a real bag and pull out items one by one.",
+    "group": "Bag bingo: students find classmates with specific items.",
+    "children": "Use a mystery bag and a 'what's inside?' game.",
+    "teens": "Use a school-bag checklist and a quick pair quiz.",
+    "adults": "Use a work-bag or laptop-bag context.",
+    "seniors": "Use large-print item cards and a slow 'there is/are' drill."
+  },
+  "links": {
+    "vocabulary": [
+      "bag",
+      "phone",
+      "key",
+      "wallet",
+      "lamp",
+      "mirror",
+      "book",
+      "pen",
+      "room",
+      "table"
+    ],
+    "grammar": [
+      {
+        "topic_id": "there-is-are",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/there-is-are.html"
+      },
+      {
+        "topic_id": "plurals-regular",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/plurals-regular.html"
+      }
+    ],
+    "phonetics": "Plural endings and the /ð/ sound in 'there'",
+    "communication": [
+      {
+        "phrase_id": "en:general:classroom-language:i-have-a-question",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/classroom-language.html"
+      }
+    ]
+  },
+  "slides": [
+    {
+      "id": "whats-in-your-bag-slide-1",
+      "title": "1. Communication Goal & Overview",
+      "stage": "warm-up",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Communication Goal: I can describe what is in my bag using 'there is' and 'there are'."
+        },
+        {
+          "type": "blockquote",
+          "content": "Lesson overview:\n- Level: A0 General English\n- Unit: Unit 3. What is it?\n- Time: 60 min (Essential) / 90 min (Expanded) / 120 min (Full Workshop)\n- Focus: What's in your bag?\n- Materials: Real bags, item cards, bingo sheets, COSYmanuals 'there is/are' and 'plurals' pages."
+        },
+        {
+          "type": "instruction",
+          "content": "By the end of this lesson, you can:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• describe items inside bags or containers using there is / there are\n• distinguish singular and plural items"
+        }
+      ]
+    },
+    {
+      "id": "whats-in-your-bag-slide-2",
+      "title": "2. Recycling & Continuity",
+      "stage": "recycling",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Recycling & Course Continuity:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Prior learning: Recycles object vocabulary and prepositions from Lesson 9.\n\nNext lesson: Lesson 11 recycles everyday objects to talk about daily use."
+        },
+        {
+          "type": "instruction",
+          "content": "Quick retrieval task: which words or phrases do you remember?"
+        },
+        {
+          "type": "test",
+          "content": "Which word belongs to the previous lesson?",
+          "options": [
+            "bag",
+            "banana",
+            "airport"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "whats-in-your-bag-slide-3",
+      "title": "3. Vocabulary & Essential Chunks",
+      "stage": "input",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Core Active Vocabulary (10 items):"
+        },
+        {
+          "type": "blockquote",
+          "content": "bag — a container for carrying things. Example: My bag is under the desk.\nphone — a mobile or telephone. Example: My phone is in my bag.\nkey — a small object that opens a door. Example: I can't find my key.\nwallet — a small case for money and cards. Example: My wallet is in my pocket.\nlamp — a light. Example: There is a lamp on the desk.\nmirror — glass that shows your reflection. Example: There is a mirror in the bathroom.\nbook — pages with text or pictures. Example: I read a book every night.\npen — a writing tool. Example: Can I borrow your pen?\nroom — a space inside a building. Example: My room is small but nice.\ntable — a piece of furniture with a flat top. Example: The books are on the table."
+        },
+        {
+          "type": "instruction",
+          "content": "Essential Chunks & Functional Collocations:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• What's in your bag? (asking about contents)\n• There is a phone in my bag. (singular item)\n• There are two keys in my bag. (plural items)\n• Is there a pen? (yes/no question, singular)\n• Are there any books? (yes/no question, plural)\n• There isn't a mirror. (negative singular)"
+        },
+        {
+          "type": "instruction",
+          "content": "Vocabulary practice: choose the correct word."
+        },
+        {
+          "type": "test",
+          "content": "Which word means 'a container for carrying things'?",
+          "options": [
+            "bag",
+            "key",
+            "wallet"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Which word means 'a mobile or telephone'?",
+          "options": [
+            "phone",
+            "lamp",
+            "mirror"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Complete the sentence with a word from the list."
+        },
+        {
+          "type": "input",
+          "placeholder": "Complete: My ___ is under the desk."
+        }
+      ]
+    },
+    {
+      "id": "whats-in-your-bag-slide-4",
+      "title": "4. Pronunciation Focus",
+      "stage": "pronunciation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Pronunciation Focus: Plural endings and the /ð/ sound in 'there'"
+        },
+        {
+          "type": "blockquote",
+          "content": "there /ðeə/ — voiced th\nkeys /kiːz/ — plural /z/\nbooks /bʊks/ — plural /s/\nwallet /ˈwɒlɪt/ — stress the first syllable"
+        },
+        {
+          "type": "instruction",
+          "content": "Listen and repeat:"
+        },
+        {
+          "type": "blockquote",
+          "content": "There is a phone in my bag. There are two keys in my bag."
+        },
+        {
+          "type": "instruction",
+          "content": "Mark the stressed syllable in these words:"
+        },
+        {
+          "type": "input",
+          "placeholder": "Mark the stress: there, keys, books"
+        }
+      ]
+    },
+    {
+      "id": "whats-in-your-bag-slide-5",
+      "title": "5. Grammar Focus & Controlled Practice",
+      "stage": "grammar",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Grammar Focus: Use 'there is' and 'there are' to say that something exists or is in a place."
+        },
+        {
+          "type": "grammar-focus",
+          "grammarId": "en-a1-there-is-are"
+        },
+        {
+          "type": "blockquote",
+          "content": "Form:\nThere is / There are: There is + singular noun. There are + plural noun. Negative: There isn't / There aren't. Question: Is there...? Are there...?\n\nExamples:\n• There is a lamp on the desk.\n• There are two chairs in the room.\n• There isn't a TV in my bedroom.\n• Are there any books on the shelf?"
+        },
+        {
+          "type": "instruction",
+          "content": "Controlled practice: choose the correct form."
+        },
+        {
+          "type": "test",
+          "content": "___ a phone in my bag.",
+          "options": [
+            "There is",
+            "There are"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "___ three keys on the table.",
+          "options": [
+            "There is",
+            "There are"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "___ a mirror in the room?",
+          "options": [
+            "Is there",
+            "Are there"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "___ any chairs in the kitchen?",
+          "options": [
+            "Is there",
+            "Are there"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Substitution drill: say the sentence with the new words."
+        },
+        {
+          "type": "blockquote",
+          "content": "• There is ... (a bed / a lamp / a desk) in my room.\n• There are ... (two chairs / three books) on the table.\n• There isn't ... (a TV / a mirror) in my bedroom."
+        },
+        {
+          "type": "instruction",
+          "content": "Question-answer practice: ask and answer with your partner."
+        },
+        {
+          "type": "blockquote",
+          "content": "• What is in your bag?\n• What is in your room?\n• Are there any pictures on your wall?"
+        },
+        {
+          "type": "instruction",
+          "content": "Personalised production: use the structure about your own life."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Write three sentences with 'there is' about your home.\n• Write three sentences with 'there are' about your classroom."
+        }
+      ]
+    },
+    {
+      "id": "whats-in-your-bag-slide-6",
+      "title": "6. Four Skills Distribution (Listening & Reading)",
+      "stage": "reading-listening",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Reading: What's in your bag?"
+        },
+        {
+          "type": "blockquote",
+          "content": "What's in your bag? In my bag, there is a phone, a wallet, and a pen. There are two keys and three books. There isn't a mirror. My friend's bag is different. There are two lamps and a big mirror in her room, but there isn't a table. We are ready for school!"
+        },
+        {
+          "type": "test",
+          "content": "How many keys are in the bag?",
+          "options": [
+            "two",
+            "three",
+            "one"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Is there a mirror in the bag?",
+          "options": [
+            "No, there isn't.",
+            "Yes, there is.",
+            "We don't know."
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Listening: listen to the dialogue and answer the questions."
+        },
+        {
+          "type": "blockquote",
+          "content": "A: What's in your bag?\nB: There is a phone and a wallet. There are two keys.\nA: Is there a pen?\nB: Yes, there is. And there are three books.\nA: Are there any snacks?\nB: No, there aren't. I'm hungry!"
+        },
+        {
+          "type": "test",
+          "content": "How many keys are in the bag?",
+          "options": [
+            "two",
+            "three",
+            "four"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Are there any snacks?",
+          "options": [
+            "No, there aren't.",
+            "Yes, there are.",
+            "We don't know."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "whats-in-your-bag-slide-7",
+      "title": "7. Speaking & Writing Production",
+      "stage": "freer-practice",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Speaking task: Empty your bag on the table. Describe the contents to your partner using 'there is/are'. Then ask about your partner's bag."
+        },
+        {
+          "type": "blockquote",
+          "content": "• What is always in your bag?\n• What is never in your bag?\n• How many keys have you got?\n• What is in your school bag?\n• Which item is the most important?"
+        },
+        {
+          "type": "instruction",
+          "content": "Role-play: You are at airport security. Open your bag and explain what is inside to the officer."
+        },
+        {
+          "type": "blockquote",
+          "content": "Work in pairs. Take turns. Use at least five target words and one target grammar structure. Then swap roles."
+        },
+        {
+          "type": "instruction",
+          "content": "Writing task: Write five sentences about what is in your bag."
+        },
+        {
+          "type": "blockquote",
+          "content": "Model: There is ... There are ... There isn't ... There aren't ..."
+        },
+        {
+          "type": "essay",
+          "placeholder": "Write your response here..."
+        }
+      ]
+    },
+    {
+      "id": "whats-in-your-bag-slide-8",
+      "title": "8. Multi-Duration Lesson Flows",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Timestamped Multi-Duration Flows:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• 60 min (Essential): 0–8 Warm-up & goal; 8–18 Vocabulary & chunks; 18–28 Grammar & controlled practice; 28–40 Reading/listening + speaking; 40–50 Role-play; 50–60 Cool-down & homework.\n\n• 90 min (Expanded): 0–10 Warm-up; 10–25 Vocabulary & pronunciation; 25–40 Grammar & controlled practice; 40–55 Reading/listening; 55–75 Speaking & role-play; 75–85 Writing; 85–90 Cool-down.\n\n• 120 min (Full Workshop): 0–15 Warm-up & diagnostic; 15–35 Vocabulary lab; 35–55 Grammar workshop; 55–75 Reading/listening; 75–95 Speaking & role-play; 95–110 Writing & portfolio; 110–120 Cool-down & feedback."
+        }
+      ]
+    },
+    {
+      "id": "whats-in-your-bag-slide-9",
+      "title": "9. Delivery Adaptations",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Individual Lesson Adaptation:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Use a real bag and pull out items one by one."
+        },
+        {
+          "type": "instruction",
+          "content": "Group Lesson Adaptation:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Bag bingo: students find classmates with specific items."
+        },
+        {
+          "type": "instruction",
+          "content": "Age Adaptations:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Children: Use a mystery bag and a 'what's inside?' game.\nTeens: Use a school-bag checklist and a quick pair quiz.\nAdults: Use a work-bag or laptop-bag context.\nSeniors: Use large-print item cards and a slow 'there is/are' drill."
+        }
+      ]
+    },
+    {
+      "id": "whats-in-your-bag-slide-10",
+      "title": "10. Homework & Recycling Notes",
+      "stage": "cool-down",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Homework Assignment:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Write five sentences about what is in your bag and on your table."
+        },
+        {
+          "type": "instruction",
+          "content": "Self-Assessment: I can..."
+        },
+        {
+          "type": "blockquote",
+          "content": "• describe items inside bags or containers using there is / there are\n• distinguish singular and plural items\n• use the target vocabulary\n• ask and answer the key questions"
+        },
+        {
+          "type": "instruction",
+          "content": "Recycling into Next Lesson:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Lesson 11 recycles everyday objects to talk about daily use."
+        }
+      ]
+    }
+  ]
+}

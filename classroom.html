@@ -28,6 +28,7 @@
   <script src="shared/js/cms-editor.js"></script>
   <script src="shared/js/ui-toast.js"></script>
   <script src="shared/js/lesson-resolver.js"></script>
+  <script src="shared/js/grammar-focus.js"></script>
   <script src="shared/js/studio-media.js"></script>
   <script src="shared/js/studio-games.js"></script>
   <script src="shared/js/whiteboard-core.js"></script>
@@ -1644,6 +1645,26 @@
       sendData({ type: 'load-lesson', lessonPath: lessonPath, slide: 1 });
     }
 
+    async function mergeTeacherEditionNotes(lesson, lessonPath) {
+      if (!lessonPath || !lessonPath.startsWith('lessons/')) return lesson;
+      const editionPath = lessonPath.replace(/^lessons\//, 'local_content/teacher-lessons/');
+      try {
+        const res = await fetch(editionPath, { cache: 'no-store' });
+        if (!res.ok) return lesson;
+        const edition = await res.json();
+        const notesById = {};
+        (edition.slides || []).forEach(s => {
+          if (Array.isArray(s.teacherNotes)) notesById[s.id] = s.teacherNotes;
+        });
+        (lesson.slides || []).forEach(s => {
+          if (notesById[s.id]) s.teacherNotes = notesById[s.id];
+        });
+      } catch (e) {
+        // Teacher editions are local-only; the student-safe lesson is still valid.
+      }
+      return lesson;
+    }
+
     // Dynamic Platform Material Loader
     async function loadDynamicLesson(lessonPath) {
       if (!isSafeLessonPath(lessonPath)) {
@@ -1679,7 +1700,9 @@
         if (lessonPath.endsWith('.xml')) {
           parseXmlLessonToSlides(content);
         } else {
-          parseJsonLessonToSlides(JSON.parse(content));
+          const jsonData = JSON.parse(content);
+          if (currentRole === 'teacher') await mergeTeacherEditionNotes(jsonData, lessonPath);
+          parseJsonLessonToSlides(jsonData);
         }
 
       } catch (e) {
@@ -1774,6 +1797,7 @@
       // Studio lessons: sign media links and start the games that were drawn above.
       if (window.CosyStudioMedia) window.CosyStudioMedia.hydrate(container, window.CosyAuth && window.CosyAuth.client);
       if (window.CosyStudioGames) window.CosyStudioGames.init(container);
+      if (window.CosyGrammarFocus) window.CosyGrammarFocus.hydrate(container);
 
       // Restore this authenticated student's saved work after every lesson render.
       // This also covers reconnects and teacher/student view re-renders without
@@ -1945,8 +1969,9 @@
       let output = "";
 
       // Teacher Notes rendering
-      if (currentRole === 'teacher' && slide.teacherNotes) {
-        slide.teacherNotes.forEach((tn) => {
+      const slideNotes = slide.teacherNotes || slide.teacher_notes;
+      if (currentRole === 'teacher' && Array.isArray(slideNotes)) {
+        slideNotes.forEach((tn) => {
           const noteClass = tn.type === "speech" ? "teacher-note-speech" : "teacher-note-instruction";
           const icon = tn.type === "speech" ? "💬" : "💡";
           const title = tn.title || (tn.type === "speech" ? "Suggested Speech Script & CCQs" : "Stage Aim & Guidance");
@@ -1986,6 +2011,8 @@
               });
             }
             output += `</div><div id="feedback-${fKey}" class="text-xs font-medium mt-2"></div></div>`;
+          } else if (el.type === "grammar-focus" && window.CosyGrammarFocus) {
+            output += window.CosyGrammarFocus.renderHtml(el, escapeHtml);
           } else if (el.type === "studio-heading") {
             output += `<h3 class="text-xl font-black text-gray-900 mt-2">${escapeHtml(el.content || '')}</h3>${el.subtitle ? `<p class="text-sm text-gray-600 mb-2">${escapeHtml(el.subtitle)}</p>` : ''}`;
           } else if (el.type === "studio-text") {

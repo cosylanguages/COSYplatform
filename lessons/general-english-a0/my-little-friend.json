@@ -1,1 +1,471 @@
-{"id":"my-little-friend","title":"My little friend","level":"A0","language":"en","defaultDuration":50,"defaultMode":"all","objectives":["use possessive adjectives my, your, his, her, our, their","express possession using 's"],"links":{"vocabulary":["my","your","his","her","our","their","relative","cousin","uncle","aunt"],"grammar":[{"topic_id":"possessive-adjectives"}],"communication":[{"phrase_id":"en:general:describing-family:these-are-my-parents","manual_url":"https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/describing-family.html"}]},"slides":[{"id":"my-little-friend-slide-1","title":"Warm-up & Overview","stage":"warm-up","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Lesson Objectives for My little friend:"},{"type":"blockquote","content":"use possessive adjectives my, your, his, her, our, their; express possession using 's"}]},{"id":"my-little-friend-slide-2","title":"Vocabulary & Input","stage":"input","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Review key terms and target language below:"},{"type":"blockquote","content":"Key terms: my, your, his, her, our, their"}]},{"id":"my-little-friend-slide-grammar","title":"Grammar Focus","stage":"input","duration":50,"mode":"all","elements":[{"type":"grammar-focus","grammarId":"en-a1-possessive-adjectives"}]},{"id":"my-little-friend-slide-3","title":"Controlled Practice","stage":"controlled-practice","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Which possessive adjective matches 'she'?"},{"type":"test","options":["her","his","their"]}]},{"id":"my-little-friend-slide-4","title":"Reading & Listening Skills","stage":"reading-listening","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Read the short passage below (recycling introduced vocabulary):"},{"type":"blockquote","content":"This is my cousin. Her name is Sarah. His uncle is nice, and our aunt lives in a small house."},{"type":"instruction","content":"Listening Task: Listen to your teacher / audio prompt and answer the comprehension question."}]},{"id":"my-little-friend-slide-5","title":"Freer Speaking Practice","stage":"freer-practice","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Show a photo or object and describe family relationships using possessive adjectives and 's."}]},{"id":"my-little-friend-slide-6","title":"Cool-down & Summary","stage":"cool-down","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Lesson Summary & Feedback:"},{"type":"blockquote","content":"Today you practiced: use possessive adjectives my, your, his, her, our, their, express possession using 's."}]}]}
+{
+  "id": "my-little-friend",
+  "title": "My little friend",
+  "level": "A0",
+  "language": "en",
+  "unit": "Unit 2. Big happy family",
+  "canDo": "I can use possessive adjectives and 's to talk about family and friends.",
+  "defaultDuration": 50,
+  "defaultMode": "all",
+  "objectives": [
+    "use possessive adjectives my, your, his, her, our, their",
+    "express possession using 's"
+  ],
+  "materials": "Photos, object cards, lost-property box, COSYmanuals 'possessive adjectives' and 'possessive 's' pages.",
+  "assessment": "Check possessive adjective choice and 's placement.",
+  "homework": "Write five sentences with possessive adjectives. Label five things in your room with 'my' or 'our'.",
+  "recycling": {
+    "prior": "Recycles family vocabulary and 'have got' from Lesson 5.",
+    "next": "Lesson 8 recycles family vocabulary to ask Wh- questions."
+  },
+  "differentiation": {
+    "individual": "Use a photo album and point to ownership with 'my/your/his/her'.",
+    "group": "Whose-is-it? game with bags and objects.",
+    "children": "Use a 'lost property' box and a possessive song.",
+    "teens": "Use phone-photo prompts and a quick possessive quiz.",
+    "adults": "Discuss shared family responsibilities and possessions.",
+    "seniors": "Use large-print photos and a slow 'whose...?' drill."
+  },
+  "links": {
+    "vocabulary": [
+      "my",
+      "your",
+      "his",
+      "her",
+      "our",
+      "their",
+      "cousin",
+      "uncle",
+      "aunt",
+      "relative"
+    ],
+    "grammar": [
+      {
+        "topic_id": "possessive-adjectives",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/possessive-adjectives.html"
+      },
+      {
+        "topic_id": "possessive-s",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/possessive-s.html"
+      }
+    ],
+    "phonetics": "Possessive adjective vowels and the /ð/ sound in 'their'",
+    "communication": [
+      {
+        "phrase_id": "en:general:describing-family:these-are-my-parents",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/describing-family.html"
+      }
+    ]
+  },
+  "slides": [
+    {
+      "id": "my-little-friend-slide-1",
+      "title": "1. Communication Goal & Overview",
+      "stage": "warm-up",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Communication Goal: I can use possessive adjectives and 's to talk about family and friends."
+        },
+        {
+          "type": "blockquote",
+          "content": "Lesson overview:\n- Level: A0 General English\n- Unit: Unit 2. Big happy family\n- Time: 60 min (Essential) / 90 min (Expanded) / 120 min (Full Workshop)\n- Focus: My little friend\n- Materials: Photos, object cards, lost-property box, COSYmanuals 'possessive adjectives' and 'possessive 's' pages."
+        },
+        {
+          "type": "instruction",
+          "content": "By the end of this lesson, you can:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• use possessive adjectives my, your, his, her, our, their\n• express possession using 's"
+        }
+      ]
+    },
+    {
+      "id": "my-little-friend-slide-2",
+      "title": "2. Recycling & Continuity",
+      "stage": "recycling",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Recycling & Course Continuity:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Prior learning: Recycles family vocabulary and 'have got' from Lesson 5.\n\nNext lesson: Lesson 8 recycles family vocabulary to ask Wh- questions."
+        },
+        {
+          "type": "instruction",
+          "content": "Quick retrieval task: which words or phrases do you remember?"
+        },
+        {
+          "type": "test",
+          "content": "Which word belongs to the previous lesson?",
+          "options": [
+            "my",
+            "banana",
+            "airport"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "my-little-friend-slide-3",
+      "title": "3. Vocabulary & Essential Chunks",
+      "stage": "input",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Core Active Vocabulary (10 items):"
+        },
+        {
+          "type": "blockquote",
+          "content": "my — belonging to me. Example: This is my bag.\nyour — belonging to you. Example: Is this your phone?\nhis — belonging to a man or boy. Example: His name is Omar.\nher — belonging to a woman or girl. Example: Her bag is red.\nour — belonging to us. Example: Our house is small.\ntheir — belonging to them. Example: Their children are at school.\ncousin — a child of your aunt or uncle. Example: My cousin lives in London.\nuncle — the brother of your mother or father. Example: My uncle is very funny.\naunt — the sister of your mother or father. Example: My aunt lives near us.\nrelative — a person in your family. Example: We visit our relatives at Eid."
+        },
+        {
+          "type": "instruction",
+          "content": "Essential Chunks & Functional Collocations:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• This is my cousin. (introducing a family member)\n• Her name is Sarah. (giving a name)\n• His uncle is nice. (describing a relative)\n• Our aunt lives in a small house. (talking about a relative's home)\n• Their children are at school. (talking about another family)\n• Whose bag is this? (asking about possession)"
+        },
+        {
+          "type": "instruction",
+          "content": "Vocabulary practice: choose the correct word."
+        },
+        {
+          "type": "test",
+          "content": "Which word means 'belonging to me'?",
+          "options": [
+            "my",
+            "his",
+            "her"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Which word means 'belonging to you'?",
+          "options": [
+            "your",
+            "our",
+            "their"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Complete the sentence with a word from the list."
+        },
+        {
+          "type": "input",
+          "placeholder": "Complete: This is ___ bag."
+        }
+      ]
+    },
+    {
+      "id": "my-little-friend-slide-4",
+      "title": "4. Pronunciation Focus",
+      "stage": "pronunciation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Pronunciation Focus: Possessive adjective vowels and the /ð/ sound in 'their'"
+        },
+        {
+          "type": "blockquote",
+          "content": "my /maɪ/ — long /aɪ/\nher /hɜː/ — long /ɜː/\nour /aʊə/ — two vowel sounds\ntheir /ðeə/ — voiced th"
+        },
+        {
+          "type": "instruction",
+          "content": "Listen and repeat:"
+        },
+        {
+          "type": "blockquote",
+          "content": "This is my cousin. Her name is Sarah. Their children are at school."
+        },
+        {
+          "type": "instruction",
+          "content": "Mark the stressed syllable in these words:"
+        },
+        {
+          "type": "input",
+          "placeholder": "Mark the stress: my, her, our"
+        }
+      ]
+    },
+    {
+      "id": "my-little-friend-slide-5",
+      "title": "5. Grammar Focus & Controlled Practice",
+      "stage": "grammar",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Grammar Focus: Use possessive adjectives to say who something belongs to."
+        },
+        {
+          "type": "grammar-focus",
+          "grammarId": "en-a1-possessive-adjectives"
+        },
+        {
+          "type": "blockquote",
+          "content": "Form:\nPossessive adjectives: my, your, his, her, its, our, their + noun. They do not change with the noun: 'my books', 'her book'.\n\nExamples:\n• This is my bag.\n• Her name is Sara.\n• Our house is small.\n• Their children are at school."
+        },
+        {
+          "type": "instruction",
+          "content": "Controlled practice: choose the correct form."
+        },
+        {
+          "type": "test",
+          "content": "This is ___ bag. (I)",
+          "options": [
+            "my",
+            "your",
+            "his"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "___ name is Omar. (he)",
+          "options": [
+            "Her",
+            "His",
+            "Their"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "___ house is big. (we)",
+          "options": [
+            "Our",
+            "Their",
+            "Her"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "The children love ___ school. (they)",
+          "options": [
+            "their",
+            "our",
+            "his"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Substitution drill: say the sentence with the new words."
+        },
+        {
+          "type": "blockquote",
+          "content": "• This is ... (my / your / his) phone.\n• ... (Her / His / Their) name is Maria.\n• We love ... (our / their / her) city."
+        },
+        {
+          "type": "instruction",
+          "content": "Question-answer practice: ask and answer with your partner."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Whose bag is this?\n• What is your favourite place in your city?\n• Who is your best friend?"
+        },
+        {
+          "type": "instruction",
+          "content": "Personalised production: use the structure about your own life."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Write three sentences about your family with possessive adjectives.\n• Write three sentences about your things with possessive adjectives."
+        }
+      ]
+    },
+    {
+      "id": "my-little-friend-slide-6",
+      "title": "6. Four Skills Distribution (Listening & Reading)",
+      "stage": "reading-listening",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Reading: My little friend"
+        },
+        {
+          "type": "blockquote",
+          "content": "This is my little friend. Her name is Sarah. She is my cousin. Her mother is my aunt, and her father is my uncle. They live in a small house near our home. Sarah's brother is at school. His name is Adam. Their dog is very friendly. We play together every weekend."
+        },
+        {
+          "type": "test",
+          "content": "Who is Sarah?",
+          "options": [
+            "the writer's cousin",
+            "the writer's sister",
+            "the writer's teacher"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Whose dog is friendly?",
+          "options": [
+            "Sarah and Adam's",
+            "the writer's",
+            "the aunt's"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Listening: listen to the dialogue and answer the questions."
+        },
+        {
+          "type": "blockquote",
+          "content": "A: Is this your bag?\nB: No, it isn't. It's my cousin's bag.\nA: What is her name?\nB: Her name is Sarah. That is her brother, Adam.\nA: And is this their dog?\nB: Yes, it is. Their dog is very friendly."
+        },
+        {
+          "type": "test",
+          "content": "Whose bag is it?",
+          "options": [
+            "the cousin's",
+            "the speaker's",
+            "Adam's"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "What is the cousin's name?",
+          "options": [
+            "Sarah",
+            "Adam",
+            "Anna"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "my-little-friend-slide-7",
+      "title": "7. Speaking & Writing Production",
+      "stage": "freer-practice",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Speaking task: Show your partner three photos or drawings of family/friends. Say who they are and whose things are in the picture."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Who is your favourite relative?\n• Whose house do you visit most often?\n• What is your cousin's name?\n• Do you share things with your family?\n• Whose phone is on the table?"
+        },
+        {
+          "type": "instruction",
+          "content": "Role-play: You are at a family gathering. Introduce your cousin and uncle to a friend, and answer questions about whose bag and phone are on the table."
+        },
+        {
+          "type": "blockquote",
+          "content": "Work in pairs. Take turns. Use at least five target words and one target grammar structure. Then swap roles."
+        },
+        {
+          "type": "instruction",
+          "content": "Writing task: Write five sentences about a friend or relative using possessive adjectives and 's."
+        },
+        {
+          "type": "blockquote",
+          "content": "Model: This is my ... His/Her name is ... His/Her ... is ... Our ... Their ..."
+        },
+        {
+          "type": "essay",
+          "placeholder": "Write your response here..."
+        }
+      ]
+    },
+    {
+      "id": "my-little-friend-slide-8",
+      "title": "8. Multi-Duration Lesson Flows",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Timestamped Multi-Duration Flows:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• 60 min (Essential): 0–8 Warm-up & goal; 8–18 Vocabulary & chunks; 18–28 Grammar & controlled practice; 28–40 Reading/listening + speaking; 40–50 Role-play; 50–60 Cool-down & homework.\n\n• 90 min (Expanded): 0–10 Warm-up; 10–25 Vocabulary & pronunciation; 25–40 Grammar & controlled practice; 40–55 Reading/listening; 55–75 Speaking & role-play; 75–85 Writing; 85–90 Cool-down.\n\n• 120 min (Full Workshop): 0–15 Warm-up & diagnostic; 15–35 Vocabulary lab; 35–55 Grammar workshop; 55–75 Reading/listening; 75–95 Speaking & role-play; 95–110 Writing & portfolio; 110–120 Cool-down & feedback."
+        }
+      ]
+    },
+    {
+      "id": "my-little-friend-slide-9",
+      "title": "9. Delivery Adaptations",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Individual Lesson Adaptation:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Use a photo album and point to ownership with 'my/your/his/her'."
+        },
+        {
+          "type": "instruction",
+          "content": "Group Lesson Adaptation:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Whose-is-it? game with bags and objects."
+        },
+        {
+          "type": "instruction",
+          "content": "Age Adaptations:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Children: Use a 'lost property' box and a possessive song.\nTeens: Use phone-photo prompts and a quick possessive quiz.\nAdults: Discuss shared family responsibilities and possessions.\nSeniors: Use large-print photos and a slow 'whose...?' drill."
+        }
+      ]
+    },
+    {
+      "id": "my-little-friend-slide-10",
+      "title": "10. Homework & Recycling Notes",
+      "stage": "cool-down",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Homework Assignment:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Write five sentences with possessive adjectives. Label five things in your room with 'my' or 'our'."
+        },
+        {
+          "type": "instruction",
+          "content": "Self-Assessment: I can..."
+        },
+        {
+          "type": "blockquote",
+          "content": "• use possessive adjectives my, your, his, her, our, their\n• express possession using 's\n• use the target vocabulary\n• ask and answer the key questions"
+        },
+        {
+          "type": "instruction",
+          "content": "Recycling into Next Lesson:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Lesson 8 recycles family vocabulary to ask Wh- questions."
+        }
+      ]
+    }
+  ]
+}

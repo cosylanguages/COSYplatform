@@ -1,1 +1,471 @@
-{"id":"more-about-me","title":"More about me","level":"A1","language":"en","defaultDuration":50,"defaultMode":"all","objectives":["state nationality, origin, and city of residence","use capital letters for countries and languages"],"links":{"vocabulary":["france","french","england","english","city","country"],"grammar":[{"topic_id":"to-be","manual_url":"https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/to-be.html"}],"communication":[{"phrase_id":"en:general:asking-and-giving-personal-info:i-am-from-spain","manual_url":"https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/asking-and-giving-personal-info.html"}]},"slides":[{"id":"more-about-me-slide-1","title":"Warm-up & Overview","stage":"warm-up","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Lesson Objectives for More about me:"},{"type":"blockquote","content":"state nationality, origin, and city of residence; use capital letters for countries and languages"}]},{"id":"more-about-me-slide-2","title":"Vocabulary & Input","stage":"input","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Review key terms and target language below:"},{"type":"blockquote","content":"Key terms: france, french, england, english, city, country"}]},{"id":"more-about-me-slide-grammar","title":"Grammar Focus","stage":"input","duration":50,"mode":"all","elements":[{"type":"grammar-focus","grammarId":"en-a1-to-be"}]},{"id":"more-about-me-slide-3","title":"Controlled Practice","stage":"controlled-practice","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Which category requires capital letters in English?"},{"type":"test","options":["Countries and languages","All adjectives","Verbs"]}]},{"id":"more-about-me-slide-4","title":"Reading & Listening Skills","stage":"reading-listening","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Read the short passage below (recycling introduced vocabulary):"},{"type":"blockquote","content":"I come from France and I live in Paris. I speak French and English. Paris is a beautiful city."},{"type":"instruction","content":"Listening Task: Listen to your teacher / audio prompt and answer the comprehension question."}]},{"id":"more-about-me-slide-5","title":"Freer Speaking Practice","stage":"freer-practice","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Introduce yourself in detail including your origin country, city, and spoken languages."}]},{"id":"more-about-me-slide-6","title":"Cool-down & Summary","stage":"cool-down","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Lesson Summary & Feedback:"},{"type":"blockquote","content":"Today you practiced: state nationality, origin, and city of residence, use capital letters for countries and languages."}]}]}
+{
+  "id": "more-about-me",
+  "title": "More about me",
+  "level": "A1",
+  "language": "en",
+  "unit": "Unit 1. Nice to meet you!",
+  "canDo": "I can talk about my nationality, origin, language, and city.",
+  "defaultDuration": 50,
+  "defaultMode": "all",
+  "objectives": [
+    "state nationality, origin, and city of residence",
+    "use capital letters for countries and languages"
+  ],
+  "materials": "World map, flag cards, profile template, COSYmanuals 'to be' and 'articles' pages.",
+  "assessment": "Check capital letters, nationality adjectives, and origin sentences.",
+  "homework": "Write five sentences about your country and languages. Remember capital letters.",
+  "recycling": {
+    "prior": "Recycles introductions and 'to be' from Lesson 1.",
+    "next": "Lesson 3 recycles family vocabulary in a cultural-exchange context."
+  },
+  "differentiation": {
+    "individual": "Use a world map and personal profile template.",
+    "group": "International profile exchange: students present and compare.",
+    "children": "Use flag stickers and a 'hello in many languages' activity.",
+    "teens": "Use a social-media profile template and a short presentation.",
+    "adults": "Discuss nationality, relocation, and languages at work.",
+    "seniors": "Use large-print maps and a gentle personal-history discussion."
+  },
+  "links": {
+    "vocabulary": [
+      "france",
+      "french",
+      "england",
+      "english",
+      "country",
+      "come from",
+      "nationality",
+      "language",
+      "city",
+      "live"
+    ],
+    "grammar": [
+      {
+        "topic_id": "to-be",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/to-be.html"
+      },
+      {
+        "topic_id": "articles",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/articles.html"
+      }
+    ],
+    "phonetics": "Country and language stress; capital letters in writing",
+    "communication": [
+      {
+        "phrase_id": "en:general:asking-and-giving-personal-info:i-am-from-spain",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/asking-and-giving-personal-info.html"
+      }
+    ]
+  },
+  "slides": [
+    {
+      "id": "more-about-me-slide-1",
+      "title": "1. Communication Goal & Overview",
+      "stage": "warm-up",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Communication Goal: I can talk about my nationality, origin, language, and city."
+        },
+        {
+          "type": "blockquote",
+          "content": "Lesson overview:\n- Level: A1 General English\n- Unit: Unit 1. Nice to meet you!\n- Time: 60 min (Essential) / 90 min (Expanded) / 120 min (Full Workshop)\n- Focus: More about me\n- Materials: World map, flag cards, profile template, COSYmanuals 'to be' and 'articles' pages."
+        },
+        {
+          "type": "instruction",
+          "content": "By the end of this lesson, you can:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• state nationality, origin, and city of residence\n• use capital letters for countries and languages"
+        }
+      ]
+    },
+    {
+      "id": "more-about-me-slide-2",
+      "title": "2. Recycling & Continuity",
+      "stage": "recycling",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Recycling & Course Continuity:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Prior learning: Recycles introductions and 'to be' from Lesson 1.\n\nNext lesson: Lesson 3 recycles family vocabulary in a cultural-exchange context."
+        },
+        {
+          "type": "instruction",
+          "content": "Quick retrieval task: which words or phrases do you remember?"
+        },
+        {
+          "type": "test",
+          "content": "Which word belongs to the previous lesson?",
+          "options": [
+            "france",
+            "banana",
+            "airport"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "more-about-me-slide-3",
+      "title": "3. Vocabulary & Essential Chunks",
+      "stage": "input",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Core Active Vocabulary (10 items):"
+        },
+        {
+          "type": "blockquote",
+          "content": "france — a country in Europe. Example: I come from France.\nfrench — the language of France. Example: I speak French.\nengland — a country in the UK. Example: She lives in England.\nenglish — the language of England. Example: We are learning English.\ncountry — a nation with its own government. Example: Which country are you from?\ncome from — to have your origin in a place. Example: I come from Egypt.\nnationality — the country you belong to. Example: What is your nationality?\nlanguage — a system of words people speak. Example: English is a world language.\ncity — a large town. Example: Cairo is a big city.\nlive — to have your home in a place. Example: I live in Cairo."
+        },
+        {
+          "type": "instruction",
+          "content": "Essential Chunks & Functional Collocations:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• I come from... (stating origin)\n• I live in... (stating residence)\n• I speak... (stating language)\n• My nationality is... (stating nationality)\n• Where are you from? (asking about origin)\n• What language do you speak? (asking about language)"
+        },
+        {
+          "type": "instruction",
+          "content": "Vocabulary practice: choose the correct word."
+        },
+        {
+          "type": "test",
+          "content": "Which word means 'a country in Europe'?",
+          "options": [
+            "france",
+            "england",
+            "english"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Which word means 'the language of France'?",
+          "options": [
+            "french",
+            "country",
+            "come from"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Complete the sentence with a word from the list."
+        },
+        {
+          "type": "input",
+          "placeholder": "Complete: I come from France."
+        }
+      ]
+    },
+    {
+      "id": "more-about-me-slide-4",
+      "title": "4. Pronunciation Focus",
+      "stage": "pronunciation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Pronunciation Focus: Country and language stress; capital letters in writing"
+        },
+        {
+          "type": "blockquote",
+          "content": "France /frɑːns/ — one syllable\nFrench /frentʃ/ — ends with /tʃ/\nEngland /ˈɪŋɡlənd/ — stress the first syllable\nnationality /ˌnæʃəˈnæləti/ — stress the third syllable"
+        },
+        {
+          "type": "instruction",
+          "content": "Listen and repeat:"
+        },
+        {
+          "type": "blockquote",
+          "content": "I come from France. I live in Paris. I speak French and English."
+        },
+        {
+          "type": "instruction",
+          "content": "Mark the stressed syllable in these words:"
+        },
+        {
+          "type": "input",
+          "placeholder": "Mark the stress: France, French, England"
+        }
+      ]
+    },
+    {
+      "id": "more-about-me-slide-5",
+      "title": "5. Grammar Focus & Controlled Practice",
+      "stage": "grammar",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Grammar Focus: Use 'be' to say who someone is, how they feel, and where they are from."
+        },
+        {
+          "type": "grammar-focus",
+          "grammarId": "en-a1-to-be"
+        },
+        {
+          "type": "blockquote",
+          "content": "Form:\nThe verb 'to be': I am / You are / He, she, it is / We are / They are. Negative: I'm not, isn't, aren't. Question: Am I...? Are you...? Is he...?\n\nExamples:\n• I am a student.\n• She is from Spain.\n• We are happy today.\n• They are not teachers."
+        },
+        {
+          "type": "instruction",
+          "content": "Controlled practice: choose the correct form."
+        },
+        {
+          "type": "test",
+          "content": "My name ___ Alex.",
+          "options": [
+            "am",
+            "is",
+            "are"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "They ___ from Italy.",
+          "options": [
+            "am",
+            "is",
+            "are"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "I ___ tired today.",
+          "options": [
+            "am",
+            "is",
+            "are"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "She ___ not a teacher.",
+          "options": [
+            "am",
+            "is",
+            "are"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Substitution drill: say the sentence with the new words."
+        },
+        {
+          "type": "blockquote",
+          "content": "• I am ... (a student / happy / from Egypt).\n• She is ... (a teacher / tired / from Spain).\n• They are ... (students / at home / happy)."
+        },
+        {
+          "type": "instruction",
+          "content": "Question-answer practice: ask and answer with your partner."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Are you a student? — Yes, I am. / No, I'm not.\n• Is she from France? — Yes, she is. / No, she isn't.\n• Are they happy? — Yes, they are. / No, they aren't."
+        },
+        {
+          "type": "instruction",
+          "content": "Personalised production: use the structure about your own life."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Write two true sentences with 'I am...' and 'I am not...'.\n• Introduce two people in the class with 'He/She is...'."
+        }
+      ]
+    },
+    {
+      "id": "more-about-me-slide-6",
+      "title": "6. Four Skills Distribution (Listening & Reading)",
+      "stage": "reading-listening",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Reading: More about me"
+        },
+        {
+          "type": "blockquote",
+          "content": "I come from France and I live in Paris. I speak French and English. My nationality is French. Paris is a beautiful city. My friend comes from England. She lives in London and speaks English. We are from different countries, but we are good friends. Where are you from? What language do you speak?"
+        },
+        {
+          "type": "test",
+          "content": "Where does the writer live?",
+          "options": [
+            "Paris",
+            "London",
+            "Rome"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "What language does the friend speak?",
+          "options": [
+            "English",
+            "French",
+            "Spanish"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Listening: listen to the dialogue and answer the questions."
+        },
+        {
+          "type": "blockquote",
+          "content": "A: Where are you from?\nB: I come from France, but I live in England.\nA: What language do you speak?\nB: I speak French and English.\nA: What is your nationality?\nB: I am French."
+        },
+        {
+          "type": "test",
+          "content": "Where does the speaker live?",
+          "options": [
+            "England",
+            "France",
+            "Spain"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "What is the speaker's nationality?",
+          "options": [
+            "French",
+            "English",
+            "Spanish"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "more-about-me-slide-7",
+      "title": "7. Speaking & Writing Production",
+      "stage": "freer-practice",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Speaking task: Create a personal profile card with your country, city, nationality, and languages. Present it to your partner."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Where are you from?\n• Where do you live now?\n• What languages do you speak?\n• What is your nationality?\n• Which country would you like to visit?"
+        },
+        {
+          "type": "instruction",
+          "content": "Role-play: You are at an international student welcome event. Introduce your background and ask three people about theirs."
+        },
+        {
+          "type": "blockquote",
+          "content": "Work in pairs. Take turns. Use at least five target words and one target grammar structure. Then swap roles."
+        },
+        {
+          "type": "instruction",
+          "content": "Writing task: Write a personal profile (5–6 sentences) about your origin, city, nationality, and languages."
+        },
+        {
+          "type": "blockquote",
+          "content": "Model: I come from ... I live in ... I speak ... My nationality is ..."
+        },
+        {
+          "type": "essay",
+          "placeholder": "Write your response here..."
+        }
+      ]
+    },
+    {
+      "id": "more-about-me-slide-8",
+      "title": "8. Multi-Duration Lesson Flows",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Timestamped Multi-Duration Flows:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• 60 min (Essential): 0–8 Warm-up & goal; 8–18 Vocabulary & chunks; 18–28 Grammar & controlled practice; 28–40 Reading/listening + speaking; 40–50 Role-play; 50–60 Cool-down & homework.\n\n• 90 min (Expanded): 0–10 Warm-up; 10–25 Vocabulary & pronunciation; 25–40 Grammar & controlled practice; 40–55 Reading/listening; 55–75 Speaking & role-play; 75–85 Writing; 85–90 Cool-down.\n\n• 120 min (Full Workshop): 0–15 Warm-up & diagnostic; 15–35 Vocabulary lab; 35–55 Grammar workshop; 55–75 Reading/listening; 75–95 Speaking & role-play; 95–110 Writing & portfolio; 110–120 Cool-down & feedback."
+        }
+      ]
+    },
+    {
+      "id": "more-about-me-slide-9",
+      "title": "9. Delivery Adaptations",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Individual Lesson Adaptation:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Use a world map and personal profile template."
+        },
+        {
+          "type": "instruction",
+          "content": "Group Lesson Adaptation:"
+        },
+        {
+          "type": "blockquote",
+          "content": "International profile exchange: students present and compare."
+        },
+        {
+          "type": "instruction",
+          "content": "Age Adaptations:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Children: Use flag stickers and a 'hello in many languages' activity.\nTeens: Use a social-media profile template and a short presentation.\nAdults: Discuss nationality, relocation, and languages at work.\nSeniors: Use large-print maps and a gentle personal-history discussion."
+        }
+      ]
+    },
+    {
+      "id": "more-about-me-slide-10",
+      "title": "10. Homework & Recycling Notes",
+      "stage": "cool-down",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Homework Assignment:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Write five sentences about your country and languages. Remember capital letters."
+        },
+        {
+          "type": "instruction",
+          "content": "Self-Assessment: I can..."
+        },
+        {
+          "type": "blockquote",
+          "content": "• state nationality, origin, and city of residence\n• use capital letters for countries and languages\n• use the target vocabulary\n• ask and answer the key questions"
+        },
+        {
+          "type": "instruction",
+          "content": "Recycling into Next Lesson:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Lesson 3 recycles family vocabulary in a cultural-exchange context."
+        }
+      ]
+    }
+  ]
+}

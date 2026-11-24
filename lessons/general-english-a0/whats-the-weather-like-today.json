@@ -1,1 +1,471 @@
-{"id":"whats-the-weather-like-today","title":"What's the weather like today?","level":"A0","language":"en","defaultDuration":50,"defaultMode":"all","objectives":["ask and describe basic weather conditions","use weather adjectives with impersonal it is"],"links":{"vocabulary":["weather","hot","cold","sunny","rainy","wind"],"grammar":[{"topic_id":"impersonal-it"}],"communication":[{"phrase_id":"en:general:free-time-invitations:are-you-free-this-weekend","manual_url":"https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/free-time-invitations.html"}]},"slides":[{"id":"whats-the-weather-like-today-slide-1","title":"Warm-up & Overview","stage":"warm-up","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Lesson Objectives for What's the weather like today?:"},{"type":"blockquote","content":"ask and describe basic weather conditions; use weather adjectives with impersonal it is"}]},{"id":"whats-the-weather-like-today-slide-2","title":"Vocabulary & Input","stage":"input","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Review key terms and target language below:"},{"type":"blockquote","content":"Key terms: weather, hot, cold, sunny, rainy, wind"}]},{"id":"whats-the-weather-like-today-slide-grammar","title":"Grammar Focus","stage":"input","duration":50,"mode":"all","elements":[{"type":"grammar-focus","grammarId":"en-a1-impersonal-it"}]},{"id":"whats-the-weather-like-today-slide-3","title":"Controlled Practice","stage":"controlled-practice","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Complete: 'It is ___ and hot today.'"},{"type":"test","options":["sunny","table","chair"]}]},{"id":"whats-the-weather-like-today-slide-4","title":"Reading & Listening Skills","stage":"reading-listening","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Read the short passage below (recycling introduced vocabulary):"},{"type":"blockquote","content":"What is the weather like today? It is sunny and hot. Yesterday it was cold and rainy."},{"type":"instruction","content":"Listening Task: Listen to your teacher / audio prompt and answer the comprehension question."}]},{"id":"whats-the-weather-like-today-slide-5","title":"Freer Speaking Practice","stage":"freer-practice","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Describe today's weather in your city and compare it to yesterday."}]},{"id":"whats-the-weather-like-today-slide-6","title":"Cool-down & Summary","stage":"cool-down","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Lesson Summary & Feedback:"},{"type":"blockquote","content":"Today you practiced: ask and describe basic weather conditions, use weather adjectives with impersonal it is."}]}]}
+{
+  "id": "whats-the-weather-like-today",
+  "title": "What's the weather like today?",
+  "level": "A0",
+  "language": "en",
+  "unit": "Unit 5. Free time",
+  "canDo": "I can ask about and describe the weather.",
+  "defaultDuration": 50,
+  "defaultMode": "all",
+  "objectives": [
+    "ask and describe basic weather conditions",
+    "use weather adjectives with impersonal it is"
+  ],
+  "materials": "Weather cards, weather map, symbols, COSYmanuals 'impersonal it' and 'adjectives' pages.",
+  "assessment": "Check impersonal 'it' and weather adjective accuracy.",
+  "homework": "Write five sentences about the weather in your city this week. Draw weather symbols.",
+  "recycling": {
+    "prior": "Recycles adjectives and 'it is' from earlier lessons.",
+    "next": "Lesson 18 moves to hobbies and like/love/hate."
+  },
+  "differentiation": {
+    "individual": "Use weather picture cards and a window view.",
+    "group": "Weather map activity: students present different regions.",
+    "children": "Use weather symbols, actions, and a weather song.",
+    "teens": "Use a weather-app screenshot and a mini forecast.",
+    "adults": "Discuss weather and travel or work plans.",
+    "seniors": "Use large-print weather cards and a slow 'what's it like?' drill."
+  },
+  "links": {
+    "vocabulary": [
+      "weather",
+      "hot",
+      "cold",
+      "sunny",
+      "rainy",
+      "windy",
+      "cloudy",
+      "snow",
+      "warm",
+      "cool"
+    ],
+    "grammar": [
+      {
+        "topic_id": "impersonal-it",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/impersonal-it.html"
+      },
+      {
+        "topic_id": "adjectives",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/adjectives.html"
+      }
+    ],
+    "phonetics": "Weather adjective stress and the /w/ sound",
+    "communication": [
+      {
+        "phrase_id": "en:general:free-time-invitations:are-you-free-this-weekend",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/free-time-invitations.html"
+      }
+    ]
+  },
+  "slides": [
+    {
+      "id": "whats-the-weather-like-today-slide-1",
+      "title": "1. Communication Goal & Overview",
+      "stage": "warm-up",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Communication Goal: I can ask about and describe the weather."
+        },
+        {
+          "type": "blockquote",
+          "content": "Lesson overview:\n- Level: A0 General English\n- Unit: Unit 5. Free time\n- Time: 60 min (Essential) / 90 min (Expanded) / 120 min (Full Workshop)\n- Focus: What's the weather like today?\n- Materials: Weather cards, weather map, symbols, COSYmanuals 'impersonal it' and 'adjectives' pages."
+        },
+        {
+          "type": "instruction",
+          "content": "By the end of this lesson, you can:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• ask and describe basic weather conditions\n• use weather adjectives with impersonal it is"
+        }
+      ]
+    },
+    {
+      "id": "whats-the-weather-like-today-slide-2",
+      "title": "2. Recycling & Continuity",
+      "stage": "recycling",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Recycling & Course Continuity:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Prior learning: Recycles adjectives and 'it is' from earlier lessons.\n\nNext lesson: Lesson 18 moves to hobbies and like/love/hate."
+        },
+        {
+          "type": "instruction",
+          "content": "Quick retrieval task: which words or phrases do you remember?"
+        },
+        {
+          "type": "test",
+          "content": "Which word belongs to the previous lesson?",
+          "options": [
+            "weather",
+            "banana",
+            "airport"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "whats-the-weather-like-today-slide-3",
+      "title": "3. Vocabulary & Essential Chunks",
+      "stage": "input",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Core Active Vocabulary (10 items):"
+        },
+        {
+          "type": "blockquote",
+          "content": "weather — the state of the air outside. Example: The weather is sunny today.\nhot — having a high temperature. Example: It is hot in summer.\ncold — having a low temperature. Example: It is cold in winter.\nsunny — with a lot of sun. Example: It is sunny today.\nrainy — with a lot of rain. Example: It is rainy in April.\nwindy — with a lot of wind. Example: It is windy at the beach.\ncloudy — with many clouds. Example: The sky is cloudy.\nsnow — soft white ice from the sky. Example: There is snow in the mountains.\nwarm — a little hot, comfortable. Example: It is warm in spring.\ncool — a little cold, comfortable. Example: The evening is cool."
+        },
+        {
+          "type": "instruction",
+          "content": "Essential Chunks & Functional Collocations:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• What's the weather like today? (asking about the weather)\n• It's sunny. (describing the weather)\n• It's cold today. (describing temperature)\n• It's raining. (describing rain)\n• It's windy. (describing wind)\n• It's warm and nice. (describing pleasant weather)"
+        },
+        {
+          "type": "instruction",
+          "content": "Vocabulary practice: choose the correct word."
+        },
+        {
+          "type": "test",
+          "content": "Which word means 'the state of the air outside'?",
+          "options": [
+            "weather",
+            "cold",
+            "sunny"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Which word means 'having a high temperature'?",
+          "options": [
+            "hot",
+            "rainy",
+            "windy"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Complete the sentence with a word from the list."
+        },
+        {
+          "type": "input",
+          "placeholder": "Complete: The ___ is sunny today."
+        }
+      ]
+    },
+    {
+      "id": "whats-the-weather-like-today-slide-4",
+      "title": "4. Pronunciation Focus",
+      "stage": "pronunciation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Pronunciation Focus: Weather adjective stress and the /w/ sound"
+        },
+        {
+          "type": "blockquote",
+          "content": "weather /ˈweðə/ — voiced th\nsunny /ˈsʌni/ — stress the first syllable\nrainy /ˈreɪni/ — long /eɪ/\nwindy /ˈwɪndi/ — short /ɪ/"
+        },
+        {
+          "type": "instruction",
+          "content": "Listen and repeat:"
+        },
+        {
+          "type": "blockquote",
+          "content": "What's the weather like today? It's sunny and warm."
+        },
+        {
+          "type": "instruction",
+          "content": "Mark the stressed syllable in these words:"
+        },
+        {
+          "type": "input",
+          "placeholder": "Mark the stress: weather, sunny, rainy"
+        }
+      ]
+    },
+    {
+      "id": "whats-the-weather-like-today-slide-5",
+      "title": "5. Grammar Focus & Controlled Practice",
+      "stage": "grammar",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Grammar Focus: Use 'it' to talk about weather, time, temperature, and distance."
+        },
+        {
+          "type": "grammar-focus",
+          "grammarId": "en-a1-impersonal-it"
+        },
+        {
+          "type": "blockquote",
+          "content": "Form:\nImpersonal 'it': It is + adjective: It's cold. It's sunny. It's five o'clock. It's ten kilometres.\n\nExamples:\n• It is cold today.\n• It's sunny in summer.\n• It's five o'clock.\n• It's ten kilometres to the city."
+        },
+        {
+          "type": "instruction",
+          "content": "Controlled practice: choose the correct form."
+        },
+        {
+          "type": "test",
+          "content": "___ is sunny today.",
+          "options": [
+            "It",
+            "He",
+            "She"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "___ is cold in winter.",
+          "options": [
+            "It",
+            "They",
+            "We"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "___ is five o'clock.",
+          "options": [
+            "It",
+            "He",
+            "They"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Is ___ raining?",
+          "options": [
+            "it",
+            "he",
+            "they"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Substitution drill: say the sentence with the new words."
+        },
+        {
+          "type": "blockquote",
+          "content": "• It is ... (hot / cold / sunny / rainy) today.\n• It is ... o'clock.\n• It is ... in my city."
+        },
+        {
+          "type": "instruction",
+          "content": "Question-answer practice: ask and answer with your partner."
+        },
+        {
+          "type": "blockquote",
+          "content": "• What is the weather like today?\n• What is the weather like in your favourite season?\n• What time is it now?"
+        },
+        {
+          "type": "instruction",
+          "content": "Personalised production: use the structure about your own life."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Write three sentences about the weather with 'it is'.\n• Write three sentences about time and temperature with 'it is'."
+        }
+      ]
+    },
+    {
+      "id": "whats-the-weather-like-today-slide-6",
+      "title": "6. Four Skills Distribution (Listening & Reading)",
+      "stage": "reading-listening",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Reading: What's the weather like today?"
+        },
+        {
+          "type": "blockquote",
+          "content": "What's the weather like today? It's sunny and warm in my city. In the north, it's cold and windy. In the east, it's cloudy and rainy. In the mountains, there is snow. I like sunny weather, but my sister likes cool weather. What's the weather like in your city?"
+        },
+        {
+          "type": "test",
+          "content": "What is the weather like in the writer's city?",
+          "options": [
+            "sunny and warm",
+            "cold and windy",
+            "cloudy and rainy"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Where is there snow?",
+          "options": [
+            "in the mountains",
+            "in the city",
+            "in the east"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Listening: listen to the dialogue and answer the questions."
+        },
+        {
+          "type": "blockquote",
+          "content": "A: What's the weather like today?\nB: It's sunny and warm.\nA: Is it windy?\nB: No, it isn't. It's very nice.\nA: What about tomorrow?\nB: Tomorrow it's cloudy and rainy."
+        },
+        {
+          "type": "test",
+          "content": "What is the weather like today?",
+          "options": [
+            "sunny and warm",
+            "cloudy and rainy",
+            "cold and windy"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "What is the weather like tomorrow?",
+          "options": [
+            "cloudy and rainy",
+            "sunny and warm",
+            "snowy"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "whats-the-weather-like-today-slide-7",
+      "title": "7. Speaking & Writing Production",
+      "stage": "freer-practice",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Speaking task: Ask your partner about the weather today and in their favourite season. Give a weather report for two cities."
+        },
+        {
+          "type": "blockquote",
+          "content": "• What's the weather like today?\n• What is your favourite weather?\n• What do you do on a rainy day?\n• Is the weather different in the north and south of your country?\n• Do you prefer hot or cool weather?"
+        },
+        {
+          "type": "instruction",
+          "content": "Role-play: You are a weather presenter. Give a short weather report for three cities."
+        },
+        {
+          "type": "blockquote",
+          "content": "Work in pairs. Take turns. Use at least five target words and one target grammar structure. Then swap roles."
+        },
+        {
+          "type": "instruction",
+          "content": "Writing task: Write five sentences about the weather today and tomorrow."
+        },
+        {
+          "type": "blockquote",
+          "content": "Model: Today it's ... Tomorrow it's ... In ... it's ..."
+        },
+        {
+          "type": "essay",
+          "placeholder": "Write your response here..."
+        }
+      ]
+    },
+    {
+      "id": "whats-the-weather-like-today-slide-8",
+      "title": "8. Multi-Duration Lesson Flows",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Timestamped Multi-Duration Flows:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• 60 min (Essential): 0–8 Warm-up & goal; 8–18 Vocabulary & chunks; 18–28 Grammar & controlled practice; 28–40 Reading/listening + speaking; 40–50 Role-play; 50–60 Cool-down & homework.\n\n• 90 min (Expanded): 0–10 Warm-up; 10–25 Vocabulary & pronunciation; 25–40 Grammar & controlled practice; 40–55 Reading/listening; 55–75 Speaking & role-play; 75–85 Writing; 85–90 Cool-down.\n\n• 120 min (Full Workshop): 0–15 Warm-up & diagnostic; 15–35 Vocabulary lab; 35–55 Grammar workshop; 55–75 Reading/listening; 75–95 Speaking & role-play; 95–110 Writing & portfolio; 110–120 Cool-down & feedback."
+        }
+      ]
+    },
+    {
+      "id": "whats-the-weather-like-today-slide-9",
+      "title": "9. Delivery Adaptations",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Individual Lesson Adaptation:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Use weather picture cards and a window view."
+        },
+        {
+          "type": "instruction",
+          "content": "Group Lesson Adaptation:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Weather map activity: students present different regions."
+        },
+        {
+          "type": "instruction",
+          "content": "Age Adaptations:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Children: Use weather symbols, actions, and a weather song.\nTeens: Use a weather-app screenshot and a mini forecast.\nAdults: Discuss weather and travel or work plans.\nSeniors: Use large-print weather cards and a slow 'what's it like?' drill."
+        }
+      ]
+    },
+    {
+      "id": "whats-the-weather-like-today-slide-10",
+      "title": "10. Homework & Recycling Notes",
+      "stage": "cool-down",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Homework Assignment:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Write five sentences about the weather in your city this week. Draw weather symbols."
+        },
+        {
+          "type": "instruction",
+          "content": "Self-Assessment: I can..."
+        },
+        {
+          "type": "blockquote",
+          "content": "• ask and describe basic weather conditions\n• use weather adjectives with impersonal it is\n• use the target vocabulary\n• ask and answer the key questions"
+        },
+        {
+          "type": "instruction",
+          "content": "Recycling into Next Lesson:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Lesson 18 moves to hobbies and like/love/hate."
+        }
+      ]
+    }
+  ]
+}

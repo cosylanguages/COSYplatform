@@ -1,1 +1,475 @@
-{"id":"pack-up","title":"Pack up!","level":"A0","language":"en","defaultDuration":50,"defaultMode":"all","objectives":["synthesize prepositions of place and there is/are in packing tasks","describe room arrangements"],"links":{"vocabulary":["house","flat","bag","wardrobe","table","chair"],"grammar":[{"topic_id":"there-is-are","manual_url":"https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/there-is-are.html"}],"communication":[{"phrase_id":"en:general:classroom-language:open-your-books-to-page-ten","manual_url":"https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/classroom-language.html"}]},"slides":[{"id":"pack-up-slide-1","title":"Warm-up & Overview","stage":"warm-up","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Lesson Objectives for Pack up!:"},{"type":"blockquote","content":"synthesize prepositions of place and there is/are in packing tasks; describe room arrangements"}]},{"id":"pack-up-slide-2","title":"Vocabulary & Input","stage":"input","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Review key terms and target language below:"},{"type":"blockquote","content":"Key terms: house, flat, bag, wardrobe, table, chair"}]},{"id":"pack-up-slide-grammar","title":"Grammar Focus","stage":"input","duration":50,"mode":"all","elements":[{"type":"grammar-focus","grammarId":"en-a1-there-is-are"}]},{"id":"pack-up-slide-3","title":"Controlled Practice","stage":"controlled-practice","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Where is the bag in the text?"},{"type":"test","options":["under the table","on the window","behind the door"]}]},{"id":"pack-up-slide-4","title":"Reading & Listening Skills","stage":"reading-listening","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Read the short passage below (recycling introduced vocabulary):"},{"type":"blockquote","content":"We need to pack up. There is a bag under the table. Put the keys in the bag and chairs near the wardrobe."},{"type":"instruction","content":"Listening Task: Listen to your teacher / audio prompt and answer the comprehension question."}]},{"id":"pack-up-slide-5","title":"Freer Speaking Practice","stage":"freer-practice","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Give instructions on where to pack items when moving or cleaning a room."}]},{"id":"pack-up-slide-6","title":"Cool-down & Summary","stage":"cool-down","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Lesson Summary & Feedback:"},{"type":"blockquote","content":"Today you practiced: synthesize prepositions of place and there is/are in packing tasks, describe room arrangements."}]}]}
+{
+  "id": "pack-up",
+  "title": "Pack up!",
+  "level": "A0",
+  "language": "en",
+  "unit": "Unit 3. What is it?",
+  "canDo": "I can describe where things are and pack them using simple instructions.",
+  "defaultDuration": 50,
+  "defaultMode": "all",
+  "objectives": [
+    "synthesize prepositions of place and there is/are in packing tasks",
+    "describe room arrangements"
+  ],
+  "materials": "Box, objects, room plan, instruction cards, COSYmanuals 'imperatives', 'there is/are', and 'prepositions of place' pages.",
+  "assessment": "Check imperative form, preposition choice, and singular/plural agreement.",
+  "homework": "Write five packing instructions for your bedroom. Draw a simple plan of where things go.",
+  "recycling": {
+    "prior": "Recycles prepositions and 'there is/are' from Lessons 9–10.",
+    "next": "Lesson 13 moves to daily routines and telling the time."
+  },
+  "differentiation": {
+    "individual": "Use a real box and objects; teacher and student take turns giving instructions.",
+    "group": "Packing relay: teams race to follow a sequence of instructions correctly.",
+    "children": "Use toy furniture and a doll's house.",
+    "teens": "Use a 'moving out' room-plan challenge.",
+    "adults": "Use a real relocation checklist and prioritise items.",
+    "seniors": "Use large-print room pictures and a slow instruction drill."
+  },
+  "links": {
+    "vocabulary": [
+      "house",
+      "flat",
+      "bag",
+      "wardrobe",
+      "table",
+      "chair",
+      "box",
+      "keys",
+      "put",
+      "pack"
+    ],
+    "grammar": [
+      {
+        "topic_id": "imperatives",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/imperatives.html"
+      },
+      {
+        "topic_id": "there-is-are",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/there-is-are.html"
+      },
+      {
+        "topic_id": "prepositions-place",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/prepositions-place.html"
+      }
+    ],
+    "phonetics": "Imperative stress and the /ʊ/ sound in 'put'",
+    "communication": [
+      {
+        "phrase_id": "en:general:classroom-language:open-your-books-to-page-ten",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/classroom-language.html"
+      }
+    ]
+  },
+  "slides": [
+    {
+      "id": "pack-up-slide-1",
+      "title": "1. Communication Goal & Overview",
+      "stage": "warm-up",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Communication Goal: I can describe where things are and pack them using simple instructions."
+        },
+        {
+          "type": "blockquote",
+          "content": "Lesson overview:\n- Level: A0 General English\n- Unit: Unit 3. What is it?\n- Time: 60 min (Essential) / 90 min (Expanded) / 120 min (Full Workshop)\n- Focus: Pack up!\n- Materials: Box, objects, room plan, instruction cards, COSYmanuals 'imperatives', 'there is/are', and 'prepositions of place' pages."
+        },
+        {
+          "type": "instruction",
+          "content": "By the end of this lesson, you can:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• synthesize prepositions of place and there is/are in packing tasks\n• describe room arrangements"
+        }
+      ]
+    },
+    {
+      "id": "pack-up-slide-2",
+      "title": "2. Recycling & Continuity",
+      "stage": "recycling",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Recycling & Course Continuity:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Prior learning: Recycles prepositions and 'there is/are' from Lessons 9–10.\n\nNext lesson: Lesson 13 moves to daily routines and telling the time."
+        },
+        {
+          "type": "instruction",
+          "content": "Quick retrieval task: which words or phrases do you remember?"
+        },
+        {
+          "type": "test",
+          "content": "Which word belongs to the previous lesson?",
+          "options": [
+            "house",
+            "banana",
+            "airport"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pack-up-slide-3",
+      "title": "3. Vocabulary & Essential Chunks",
+      "stage": "input",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Core Active Vocabulary (10 items):"
+        },
+        {
+          "type": "blockquote",
+          "content": "house — a building where people live. Example: They live in a big house.\nflat — an apartment. Example: We rent a small flat.\nbag — a container for carrying things. Example: My bag is under the desk.\nwardrobe — a cupboard for clothes. Example: My clothes are in the wardrobe.\ntable — a piece of furniture with a flat top. Example: The books are on the table.\nchair — a seat for one person. Example: Please sit on the chair.\nbox — a container with straight sides. Example: The books are in a box.\nkeys — small objects that open doors. Example: The keys are on the table.\nput — to move something to a place. Example: Put the bag on the floor.\npack — to put things in a bag or box. Example: We need to pack our clothes."
+        },
+        {
+          "type": "instruction",
+          "content": "Essential Chunks & Functional Collocations:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• Put the books in the box. (giving an instruction)\n• There is a bag under the table. (describing location)\n• There are two chairs near the wardrobe. (describing plural location)\n• We need to pack. (stating a need)\n• Is there a box in the room? (asking about existence)\n• Are there any keys on the table? (asking about plural existence)"
+        },
+        {
+          "type": "instruction",
+          "content": "Vocabulary practice: choose the correct word."
+        },
+        {
+          "type": "test",
+          "content": "Which word means 'a building where people live'?",
+          "options": [
+            "house",
+            "bag",
+            "wardrobe"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Which word means 'an apartment'?",
+          "options": [
+            "flat",
+            "table",
+            "chair"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Complete the sentence with a word from the list."
+        },
+        {
+          "type": "input",
+          "placeholder": "Complete: They live in a big ___."
+        }
+      ]
+    },
+    {
+      "id": "pack-up-slide-4",
+      "title": "4. Pronunciation Focus",
+      "stage": "pronunciation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Pronunciation Focus: Imperative stress and the /ʊ/ sound in 'put'"
+        },
+        {
+          "type": "blockquote",
+          "content": "put /pʊt/ — short /ʊ/\npack /pæk/ — short /æ/\nwardrobe /ˈwɔːdrəʊb/ — stress the first syllable\nchair /tʃeə/ — one syllable"
+        },
+        {
+          "type": "instruction",
+          "content": "Listen and repeat:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Put the books in the box. Pack the clothes in the bag."
+        },
+        {
+          "type": "instruction",
+          "content": "Mark the stressed syllable in these words:"
+        },
+        {
+          "type": "input",
+          "placeholder": "Mark the stress: put, pack, wardrobe"
+        }
+      ]
+    },
+    {
+      "id": "pack-up-slide-5",
+      "title": "5. Grammar Focus & Controlled Practice",
+      "stage": "grammar",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Grammar Focus: Use imperatives to give instructions, directions, and advice."
+        },
+        {
+          "type": "grammar-focus",
+          "grammarId": "en-a1-imperatives"
+        },
+        {
+          "type": "blockquote",
+          "content": "Form:\nImperatives: Base verb + object: Open the door. Negative: Don't + base verb. Add 'please' to be polite.\n\nExamples:\n• Open your book, please.\n• Turn left at the bank.\n• Don't touch the screen.\n• Click the link to order."
+        },
+        {
+          "type": "instruction",
+          "content": "Controlled practice: choose the correct form."
+        },
+        {
+          "type": "test",
+          "content": "___ the door, please.",
+          "options": [
+            "Open",
+            "Opens",
+            "Opening"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "___ touch the screen.",
+          "options": [
+            "Don't",
+            "Doesn't",
+            "Not"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "___ left at the bank.",
+          "options": [
+            "Turn",
+            "Turns",
+            "Turning"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "___ your name here.",
+          "options": [
+            "Write",
+            "Writes",
+            "Writing"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Substitution drill: say the sentence with the new words."
+        },
+        {
+          "type": "blockquote",
+          "content": "• ... (Open / Close / Click) the ...\n• Don't ... (touch / open / click) the ...\n• Please ... (turn / go / write) ..."
+        },
+        {
+          "type": "instruction",
+          "content": "Question-answer practice: ask and answer with your partner."
+        },
+        {
+          "type": "blockquote",
+          "content": "• How do you make a cup of tea? Give three instructions.\n• How do you get to the station from here?\n• What are three classroom instructions?"
+        },
+        {
+          "type": "instruction",
+          "content": "Personalised production: use the structure about your own life."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Write three instructions for using a phone.\n• Write three instructions for making your favourite drink."
+        }
+      ]
+    },
+    {
+      "id": "pack-up-slide-6",
+      "title": "6. Four Skills Distribution (Listening & Reading)",
+      "stage": "reading-listening",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Reading: Pack up!"
+        },
+        {
+          "type": "blockquote",
+          "content": "We are moving to a new flat. We need to pack. There is a big box under the table. There are two chairs near the wardrobe. Put the books in the box. Put the keys on the table. Is there a bag in the room? Yes, there is. It is behind the door. Now the room is empty and clean."
+        },
+        {
+          "type": "test",
+          "content": "Where is the big box?",
+          "options": [
+            "under the table",
+            "near the wardrobe",
+            "behind the door"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Where are the chairs?",
+          "options": [
+            "near the wardrobe",
+            "under the table",
+            "on the table"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Listening: listen to the dialogue and answer the questions."
+        },
+        {
+          "type": "blockquote",
+          "content": "A: Where is the bag?\nB: It's behind the door.\nA: Put the books in the bag, please.\nB: Okay. Are there any keys on the table?\nA: Yes, there are. Put them in the box.\nB: Done! The room is ready."
+        },
+        {
+          "type": "test",
+          "content": "Where is the bag?",
+          "options": [
+            "behind the door",
+            "under the table",
+            "near the wardrobe"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Where do the keys go?",
+          "options": [
+            "in the box",
+            "in the bag",
+            "on the chair"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pack-up-slide-7",
+      "title": "7. Speaking & Writing Production",
+      "stage": "freer-practice",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Speaking task: Give your partner five packing instructions using 'put' and prepositions. Your partner follows them."
+        },
+        {
+          "type": "blockquote",
+          "content": "• What do you pack when you move house?\n• Where do you put your clothes?\n• What is in your room?\n• How do you help your family at home?\n• What is the heaviest thing in your room?"
+        },
+        {
+          "type": "instruction",
+          "content": "Role-play: You are moving to a new flat. A friend helps you pack. Give clear instructions and answer questions about where things are."
+        },
+        {
+          "type": "blockquote",
+          "content": "Work in pairs. Take turns. Use at least five target words and one target grammar structure. Then swap roles."
+        },
+        {
+          "type": "instruction",
+          "content": "Writing task: Write five instructions for packing a room. Use 'put' and prepositions."
+        },
+        {
+          "type": "blockquote",
+          "content": "Model: Put the ... in the ... There is ... There are ..."
+        },
+        {
+          "type": "essay",
+          "placeholder": "Write your response here..."
+        }
+      ]
+    },
+    {
+      "id": "pack-up-slide-8",
+      "title": "8. Multi-Duration Lesson Flows",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Timestamped Multi-Duration Flows:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• 60 min (Essential): 0–8 Warm-up & goal; 8–18 Vocabulary & chunks; 18–28 Grammar & controlled practice; 28–40 Reading/listening + speaking; 40–50 Role-play; 50–60 Cool-down & homework.\n\n• 90 min (Expanded): 0–10 Warm-up; 10–25 Vocabulary & pronunciation; 25–40 Grammar & controlled practice; 40–55 Reading/listening; 55–75 Speaking & role-play; 75–85 Writing; 85–90 Cool-down.\n\n• 120 min (Full Workshop): 0–15 Warm-up & diagnostic; 15–35 Vocabulary lab; 35–55 Grammar workshop; 55–75 Reading/listening; 75–95 Speaking & role-play; 95–110 Writing & portfolio; 110–120 Cool-down & feedback."
+        }
+      ]
+    },
+    {
+      "id": "pack-up-slide-9",
+      "title": "9. Delivery Adaptations",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Individual Lesson Adaptation:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Use a real box and objects; teacher and student take turns giving instructions."
+        },
+        {
+          "type": "instruction",
+          "content": "Group Lesson Adaptation:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Packing relay: teams race to follow a sequence of instructions correctly."
+        },
+        {
+          "type": "instruction",
+          "content": "Age Adaptations:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Children: Use toy furniture and a doll's house.\nTeens: Use a 'moving out' room-plan challenge.\nAdults: Use a real relocation checklist and prioritise items.\nSeniors: Use large-print room pictures and a slow instruction drill."
+        }
+      ]
+    },
+    {
+      "id": "pack-up-slide-10",
+      "title": "10. Homework & Recycling Notes",
+      "stage": "cool-down",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Homework Assignment:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Write five packing instructions for your bedroom. Draw a simple plan of where things go."
+        },
+        {
+          "type": "instruction",
+          "content": "Self-Assessment: I can..."
+        },
+        {
+          "type": "blockquote",
+          "content": "• synthesize prepositions of place and there is/are in packing tasks\n• describe room arrangements\n• use the target vocabulary\n• ask and answer the key questions"
+        },
+        {
+          "type": "instruction",
+          "content": "Recycling into Next Lesson:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Lesson 13 moves to daily routines and telling the time."
+        }
+      ]
+    }
+  ]
+}

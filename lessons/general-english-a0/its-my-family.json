@@ -1,1 +1,471 @@
-{"id":"its-my-family","title":"It’s my family","level":"A0","language":"en","defaultDuration":50,"defaultMode":"all","objectives":["identify core family member vocabulary","use numbers 1-100 and plural noun endings"],"links":{"vocabulary":["mother","father","parent","son","daughter","brother","sister","child"],"grammar":[{"topic_id":"plural-nouns"}],"communication":[{"phrase_id":"en:general:describing-family:this-is-my-mother","manual_url":"https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/describing-family.html"}],"phonetics":"en-pron-a1-07-plural-s-endings"},"slides":[{"id":"its-my-family-slide-1","title":"Warm-up & Overview","stage":"warm-up","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Lesson Objectives for It’s my family:"},{"type":"blockquote","content":"identify core family member vocabulary; use numbers 1-100 and plural noun endings"}]},{"id":"its-my-family-slide-2","title":"Vocabulary & Input","stage":"input","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Review key terms and target language below:"},{"type":"blockquote","content":"Key terms: mother, father, parent, son, daughter, brother"}]},{"id":"its-my-family-slide-grammar","title":"Grammar Focus","stage":"input","duration":50,"mode":"all","elements":[{"type":"grammar-focus","grammarId":"en-a1-plurals-regular"}]},{"id":"its-my-family-slide-3","title":"Controlled Practice","stage":"controlled-practice","duration":50,"mode":"all","elements":[{"type":"instruction","content":"What is the plural form of 'child'?"},{"type":"test","options":["children","childs","childrens"]}]},{"id":"its-my-family-slide-4","title":"Reading & Listening Skills","stage":"reading-listening","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Read the short passage below (recycling introduced vocabulary):"},{"type":"blockquote","content":"My family is big. I have one brother and two sisters. We have three children in our home."},{"type":"instruction","content":"Listening Task: Listen to your teacher / audio prompt and answer the comprehension question."}]},{"id":"its-my-family-slide-5","title":"Freer Speaking Practice","stage":"freer-practice","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Talk about your family members and state how many brothers or sisters you have."}]},{"id":"its-my-family-slide-6","title":"Cool-down & Summary","stage":"cool-down","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Lesson Summary & Feedback:"},{"type":"blockquote","content":"Today you practiced: identify core family member vocabulary, use numbers 1-100 and plural noun endings."}]}]}
+{
+  "id": "its-my-family",
+  "title": "It's my family",
+  "level": "A0",
+  "language": "en",
+  "unit": "Unit 2. Big happy family",
+  "canDo": "I can talk about my family and use plural nouns.",
+  "defaultDuration": 50,
+  "defaultMode": "all",
+  "objectives": [
+    "identify core family member vocabulary",
+    "use numbers 1–100 and plural noun endings"
+  ],
+  "materials": "Family-tree template, number cards, plural noun cards, COSYmanuals 'plurals' and 'have got' pages.",
+  "assessment": "Check plural noun forms and accurate family vocabulary.",
+  "homework": "Draw your family tree and label ten people. Write five sentences with plural nouns.",
+  "recycling": {
+    "prior": "Recycles 'to be', pronouns, and adjectives from Unit 1.",
+    "next": "Lesson 6 recycles family vocabulary to describe feelings."
+  },
+  "differentiation": {
+    "individual": "Build a family tree together on paper, one branch at a time.",
+    "group": "Family-tree gallery walk: students present their trees in small groups.",
+    "children": "Use sticker families and a counting song.",
+    "teens": "Use a digital family-tree template and a short presentation.",
+    "adults": "Discuss family size and work–life balance.",
+    "seniors": "Use large-print family photos and a slow, respectful discussion."
+  },
+  "links": {
+    "vocabulary": [
+      "mother",
+      "father",
+      "parent",
+      "son",
+      "daughter",
+      "brother",
+      "sister",
+      "child",
+      "family",
+      "grandparent"
+    ],
+    "grammar": [
+      {
+        "topic_id": "plurals-regular",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/plurals-regular.html"
+      },
+      {
+        "topic_id": "have-got",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/have-got.html"
+      }
+    ],
+    "phonetics": "en-pron-a1-07-plural-s-endings",
+    "communication": [
+      {
+        "phrase_id": "en:general:describing-family:this-is-my-mother",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/describing-family.html"
+      }
+    ]
+  },
+  "slides": [
+    {
+      "id": "its-my-family-slide-1",
+      "title": "1. Communication Goal & Overview",
+      "stage": "warm-up",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Communication Goal: I can talk about my family and use plural nouns."
+        },
+        {
+          "type": "blockquote",
+          "content": "Lesson overview:\n- Level: A0 General English\n- Unit: Unit 2. Big happy family\n- Time: 60 min (Essential) / 90 min (Expanded) / 120 min (Full Workshop)\n- Focus: It's my family\n- Materials: Family-tree template, number cards, plural noun cards, COSYmanuals 'plurals' and 'have got' pages."
+        },
+        {
+          "type": "instruction",
+          "content": "By the end of this lesson, you can:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• identify core family member vocabulary\n• use numbers 1–100 and plural noun endings"
+        }
+      ]
+    },
+    {
+      "id": "its-my-family-slide-2",
+      "title": "2. Recycling & Continuity",
+      "stage": "recycling",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Recycling & Course Continuity:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Prior learning: Recycles 'to be', pronouns, and adjectives from Unit 1.\n\nNext lesson: Lesson 6 recycles family vocabulary to describe feelings."
+        },
+        {
+          "type": "instruction",
+          "content": "Quick retrieval task: which words or phrases do you remember?"
+        },
+        {
+          "type": "test",
+          "content": "Which word belongs to the previous lesson?",
+          "options": [
+            "mother",
+            "banana",
+            "airport"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "its-my-family-slide-3",
+      "title": "3. Vocabulary & Essential Chunks",
+      "stage": "input",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Core Active Vocabulary (10 items):"
+        },
+        {
+          "type": "blockquote",
+          "content": "mother — a female parent. Example: My mother is a nurse.\nfather — a male parent. Example: My father works in an office.\nparent — a mother or father. Example: My parents live in Cairo.\nson — a male child. Example: Their son is ten.\ndaughter — a female child. Example: Her daughter is a student.\nbrother — a male sibling. Example: I have one brother.\nsister — a female sibling. Example: She has two sisters.\nchild — a young person. Example: The child is happy.\nfamily — parents, children, and relatives. Example: My family is big.\ngrandparent — a grandmother or grandfather. Example: My grandparents live in the village."
+        },
+        {
+          "type": "instruction",
+          "content": "Essential Chunks & Functional Collocations:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• This is my mother. (introducing a family member)\n• I have one brother and two sisters. (talking about siblings)\n• How many children are in your family? (asking about family size)\n• We are a big family. (describing family size)\n• My grandparents live in... (talking about grandparents)\n• These are my parents. (introducing parents)"
+        },
+        {
+          "type": "instruction",
+          "content": "Vocabulary practice: choose the correct word."
+        },
+        {
+          "type": "test",
+          "content": "Which word means 'a female parent'?",
+          "options": [
+            "mother",
+            "parent",
+            "son"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Which word means 'a male parent'?",
+          "options": [
+            "father",
+            "daughter",
+            "brother"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Complete the sentence with a word from the list."
+        },
+        {
+          "type": "input",
+          "placeholder": "Complete: My ___ is a nurse."
+        }
+      ]
+    },
+    {
+      "id": "its-my-family-slide-4",
+      "title": "4. Pronunciation Focus",
+      "stage": "pronunciation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Pronunciation Focus: Plural -s endings /s/, /z/, /ɪz/"
+        },
+        {
+          "type": "blockquote",
+          "content": "brothers /ˈbrʌðəz/ — plural /z/\nsisters /ˈsɪstəz/ — plural /z/\nparents /ˈpeərənts/ — plural /s/\nchildren /ˈtʃɪldrən/ — irregular plural"
+        },
+        {
+          "type": "instruction",
+          "content": "Listen and repeat:"
+        },
+        {
+          "type": "blockquote",
+          "content": "My brothers are students. My sisters are teachers. These are my parents."
+        },
+        {
+          "type": "instruction",
+          "content": "Mark the stressed syllable in these words:"
+        },
+        {
+          "type": "input",
+          "placeholder": "Mark the stress: brothers, sisters, parents"
+        }
+      ]
+    },
+    {
+      "id": "its-my-family-slide-5",
+      "title": "5. Grammar Focus & Controlled Practice",
+      "stage": "grammar",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Grammar Focus: Use plural nouns to talk about more than one person or thing."
+        },
+        {
+          "type": "grammar-focus",
+          "grammarId": "en-a1-plurals-regular"
+        },
+        {
+          "type": "blockquote",
+          "content": "Form:\nRegular plural nouns: Most nouns add -s: book → books. Nouns ending in -s, -sh, -ch, -x add -es: box → boxes. Consonant + y → -ies: city → cities.\n\nExamples:\n• one book → two books\n• one box → three boxes\n• one city → two cities\n• one family → two families"
+        },
+        {
+          "type": "instruction",
+          "content": "Controlled practice: choose the correct form."
+        },
+        {
+          "type": "test",
+          "content": "I have two ___. (sister)",
+          "options": [
+            "sister",
+            "sisters",
+            "sisteres"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "There are three ___ on the table. (box)",
+          "options": [
+            "boxs",
+            "boxes",
+            "boxies"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "We live in two ___. (city)",
+          "options": [
+            "citys",
+            "cities",
+            "cityes"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "My ___ are nice. (parent)",
+          "options": [
+            "parent",
+            "parents",
+            "parentes"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Substitution drill: say the sentence with the new words."
+        },
+        {
+          "type": "blockquote",
+          "content": "• I have two ... (brother / sister / child).\n• There are three ... (box / chair / lamp) in the room.\n• My ... (friend / cousin) are here."
+        },
+        {
+          "type": "instruction",
+          "content": "Question-answer practice: ask and answer with your partner."
+        },
+        {
+          "type": "blockquote",
+          "content": "• How many brothers and sisters do you have?\n• How many chairs are in your kitchen?\n• How many books are on your desk?"
+        },
+        {
+          "type": "instruction",
+          "content": "Personalised production: use the structure about your own life."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Write three sentences with plural nouns about your family.\n• Write three sentences with plural nouns about your room."
+        }
+      ]
+    },
+    {
+      "id": "its-my-family-slide-6",
+      "title": "6. Four Skills Distribution (Listening & Reading)",
+      "stage": "reading-listening",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Reading: It's my family"
+        },
+        {
+          "type": "blockquote",
+          "content": "My family is big. I have one brother and two sisters. My brother is a student. My sisters are teachers. My parents are from Egypt. My grandparents live in a small village. We have three children in our home. We are a happy family."
+        },
+        {
+          "type": "test",
+          "content": "How many sisters does the writer have?",
+          "options": [
+            "two",
+            "one",
+            "three"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Where do the grandparents live?",
+          "options": [
+            "in a small village",
+            "in a big city",
+            "in another country"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Listening: listen to the dialogue and answer the questions."
+        },
+        {
+          "type": "blockquote",
+          "content": "A: How many people are in your family?\nB: There are six people: my parents, my two sisters, my brother, and me.\nA: How old is your brother?\nB: He is ten. He is a student.\nA: And your sisters?\nB: They are teachers."
+        },
+        {
+          "type": "test",
+          "content": "How many people are in the family?",
+          "options": [
+            "six",
+            "five",
+            "seven"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "What do the sisters do?",
+          "options": [
+            "They are teachers.",
+            "They are students.",
+            "They are doctors."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "its-my-family-slide-7",
+      "title": "7. Speaking & Writing Production",
+      "stage": "freer-practice",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Speaking task: Draw a simple family tree and explain it to your partner. Use numbers and plural nouns."
+        },
+        {
+          "type": "blockquote",
+          "content": "• How many people are in your family?\n• How many brothers and sisters have you got?\n• Do your grandparents live near you?\n• What is a typical family size in your country?\n• Who is the youngest person in your family?"
+        },
+        {
+          "type": "instruction",
+          "content": "Role-play: You are at a family party. Introduce your family members to a friend and answer questions about them."
+        },
+        {
+          "type": "blockquote",
+          "content": "Work in pairs. Take turns. Use at least five target words and one target grammar structure. Then swap roles."
+        },
+        {
+          "type": "instruction",
+          "content": "Writing task: Write five sentences about your family. Use at least three plural nouns."
+        },
+        {
+          "type": "blockquote",
+          "content": "Model: My family is ... I have ... My parents are ... My grandparents ... We are ..."
+        },
+        {
+          "type": "essay",
+          "placeholder": "Write your response here..."
+        }
+      ]
+    },
+    {
+      "id": "its-my-family-slide-8",
+      "title": "8. Multi-Duration Lesson Flows",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Timestamped Multi-Duration Flows:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• 60 min (Essential): 0–8 Warm-up & goal; 8–18 Vocabulary & chunks; 18–28 Grammar & controlled practice; 28–40 Reading/listening + speaking; 40–50 Role-play; 50–60 Cool-down & homework.\n\n• 90 min (Expanded): 0–10 Warm-up; 10–25 Vocabulary & pronunciation; 25–40 Grammar & controlled practice; 40–55 Reading/listening; 55–75 Speaking & role-play; 75–85 Writing; 85–90 Cool-down.\n\n• 120 min (Full Workshop): 0–15 Warm-up & diagnostic; 15–35 Vocabulary lab; 35–55 Grammar workshop; 55–75 Reading/listening; 75–95 Speaking & role-play; 95–110 Writing & portfolio; 110–120 Cool-down & feedback."
+        }
+      ]
+    },
+    {
+      "id": "its-my-family-slide-9",
+      "title": "9. Delivery Adaptations",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Individual Lesson Adaptation:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Build a family tree together on paper, one branch at a time."
+        },
+        {
+          "type": "instruction",
+          "content": "Group Lesson Adaptation:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Family-tree gallery walk: students present their trees in small groups."
+        },
+        {
+          "type": "instruction",
+          "content": "Age Adaptations:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Children: Use sticker families and a counting song.\nTeens: Use a digital family-tree template and a short presentation.\nAdults: Discuss family size and work–life balance.\nSeniors: Use large-print family photos and a slow, respectful discussion."
+        }
+      ]
+    },
+    {
+      "id": "its-my-family-slide-10",
+      "title": "10. Homework & Recycling Notes",
+      "stage": "cool-down",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Homework Assignment:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Draw your family tree and label ten people. Write five sentences with plural nouns."
+        },
+        {
+          "type": "instruction",
+          "content": "Self-Assessment: I can..."
+        },
+        {
+          "type": "blockquote",
+          "content": "• identify core family member vocabulary\n• use numbers 1–100 and plural noun endings\n• use the target vocabulary\n• ask and answer the key questions"
+        },
+        {
+          "type": "instruction",
+          "content": "Recycling into Next Lesson:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Lesson 6 recycles family vocabulary to describe feelings."
+        }
+      ]
+    }
+  ]
+}

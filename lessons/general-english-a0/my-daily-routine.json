@@ -1,1 +1,486 @@
-{"id":"my-daily-routine","title":"My daily routine","level":"A0","language":"en","defaultDuration":50,"defaultMode":"all","objectives":["describe morning and evening daily routine actions","tell time with o'clock and half past"],"links":{"vocabulary":["wake","get","wash","brush","shower","bed"],"grammar":[{"topic_id":"telling-time","manual_url":"https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/telling-time.html"}],"communication":[{"phrase_id":"en:general:daily-routine-talk:i-wake-up-at-seven-o-clock","manual_url":"https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/daily-routine-talk.html"}]},"slides":[{"id":"my-daily-routine-slide-1","title":"Warm-up & Overview","stage":"warm-up","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Lesson Objectives for My daily routine:"},{"type":"blockquote","content":"describe morning and evening daily routine actions; tell time with o'clock and half past"}]},{"id":"my-daily-routine-slide-2","title":"Vocabulary & Input","stage":"input","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Review key terms and target language below:"},{"type":"blockquote","content":"Key terms: wake, get, wash, brush, shower, bed"}]},{"id":"my-daily-routine-slide-grammar","title":"Grammar Focus","stage":"input","duration":50,"mode":"all","elements":[{"type":"grammar-focus","grammarId":"en-a1-telling-time"}]},{"id":"my-daily-routine-slide-3","title":"Controlled Practice","stage":"controlled-practice","duration":50,"mode":"all","elements":[{"type":"instruction","content":"What time does the speaker go to work?"},{"type":"test","options":["eight o'clock","ten o'clock","five o'clock"]}]},{"id":"my-daily-routine-slide-4","title":"Reading & Listening Skills","stage":"reading-listening","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Read the short passage below (recycling introduced vocabulary):"},{"type":"blockquote","content":"I wake up at seven o'clock. I wash my face and shower. Then I go to work at eight o'clock."},{"type":"instruction","content":"Listening Task: Listen to your teacher / audio prompt and answer the comprehension question."}]},{"id":"my-daily-routine-slide-5","title":"Freer Speaking Practice","stage":"freer-practice","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Walk your partner through your morning routine stating exact times."}]},{"id":"my-daily-routine-slide-6","title":"Cool-down & Summary","stage":"cool-down","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Lesson Summary & Feedback:"},{"type":"blockquote","content":"Today you practiced: describe morning and evening daily routine actions, tell time with o'clock and half past."}]}]}
+{
+  "id": "my-daily-routine",
+  "title": "My daily routine",
+  "level": "A0",
+  "language": "en",
+  "unit": "Unit 4. Daily routine",
+  "canDo": "I can describe my daily routine, tell the time, talk about days, and explain how I travel to work.",
+  "defaultDuration": 50,
+  "defaultMode": "all",
+  "objectives": [
+    "tell time and talk about days",
+    "describe a daily routine",
+    "explain how I travel to work"
+  ],
+  "materials": "Clock face, routine sequence cards, whiteboard, COSYmanuals 'telling the time' and 'present simple' pages.",
+  "assessment": "Check telling the time, at/on/in, and present simple routine sentences.",
+  "homework": "Write a weekday routine log with five times, two days, and one transport sentence.",
+  "recycling": {
+    "prior": "Recycles time expressions and present simple.",
+    "next": "Lesson 5 recycles routines to talk about habits and questions."
+  },
+  "differentiation": {
+    "individual": "Use a clock face and sequence cards to build the routine together.",
+    "group": "Routine mingle: students compare routines and find three differences.",
+    "children": "Use a picture schedule and a daily-routine song.",
+    "teens": "Use a phone calendar and a 'day in my life' mini-presentation.",
+    "adults": "Discuss work–life balance and time management.",
+    "seniors": "Use large-print clock cards and a slow routine drill."
+  },
+  "links": {
+    "vocabulary": [
+      "wake up",
+      "get up",
+      "shower",
+      "breakfast",
+      "work",
+      "bed",
+      "o'clock",
+      "half past",
+      "monday",
+      "friday",
+      "morning",
+      "afternoon",
+      "evening",
+      "night",
+      "commute",
+      "metro",
+      "bus",
+      "train",
+      "walk",
+      "on time"
+    ],
+    "grammar": [
+      {
+        "topic_id": "telling-time",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/telling-time.html"
+      },
+      {
+        "topic_id": "present-simple",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/present-simple.html"
+      },
+      {
+        "topic_id": "prepositions-time",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/prepositions-time.html"
+      }
+    ],
+    "phonetics": "Telling-time stress and the /ʃ/ sound in 'shower'",
+    "communication": [
+      {
+        "phrase_id": "en:general:daily-routine-talk:i-wake-up-at-seven-o-clock",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/daily-routine-talk.html"
+      }
+    ]
+  },
+  "slides": [
+    {
+      "id": "my-daily-routine-slide-1",
+      "title": "1. Communication Goal & Overview",
+      "stage": "warm-up",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Communication Goal: I can describe my daily routine, tell the time, talk about days, and explain how I travel to work."
+        },
+        {
+          "type": "blockquote",
+          "content": "Lesson overview:\n- Level: A0 General English\n- Unit: Unit 4. Daily routine\n- Time: 60 min (Essential) / 90 min (Expanded) / 120 min (Full Workshop)\n- Focus: My daily routine\n- Materials: Clock face, routine sequence cards, whiteboard, COSYmanuals 'telling the time' and 'present simple' pages."
+        },
+        {
+          "type": "instruction",
+          "content": "By the end of this lesson, you can:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• tell time and talk about days\n• describe a daily routine\n• explain how I travel to work"
+        }
+      ]
+    },
+    {
+      "id": "my-daily-routine-slide-2",
+      "title": "2. Recycling & Continuity",
+      "stage": "recycling",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Recycling & Course Continuity:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Prior learning: Recycles time expressions and present simple.\n\nNext lesson: Lesson 5 recycles routines to talk about habits and questions."
+        },
+        {
+          "type": "instruction",
+          "content": "Quick retrieval task: which words or phrases do you remember?"
+        },
+        {
+          "type": "test",
+          "content": "Which word belongs to the previous lesson?",
+          "options": [
+            "wake up",
+            "banana",
+            "airport"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "my-daily-routine-slide-3",
+      "title": "3. Vocabulary & Essential Chunks",
+      "stage": "input",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Core Active Vocabulary (20 items):"
+        },
+        {
+          "type": "blockquote",
+          "content": "wake up — to stop sleeping. Example: I wake up at seven.\nget up — to leave your bed. Example: I get up at seven fifteen.\nshower — a wash under falling water. Example: I take a shower every morning.\nbreakfast — the first meal of the day. Example: I have breakfast at eight.\nwork — a job or activity you do. Example: I work in an office.\nbed — furniture for sleeping. Example: I go to bed at eleven.\no'clock — used to say a full hour. Example: It is seven o'clock.\nhalf past — thirty minutes after the hour. Example: It is half past seven.\nmonday — the first day of the working week. Example: I start work at nine on Monday.\nfriday — the last day of the working week. Example: I finish early on Friday.\nmorning — the early part of the day. Example: I check messages in the morning.\nafternoon — the part of the day after midday. Example: I have lunch in the afternoon.\nevening — the part of the day before night. Example: I go home in the evening.\nnight — the dark part of the day. Example: I don't use my phone at night.\ncommute — to travel to and from work. Example: I commute by metro.\nmetro — a city train system. Example: I take the metro to work.\nbus — a large road vehicle for passengers. Example: She goes by bus.\ntrain — a vehicle that runs on rails. Example: We take the train at eight.\nwalk — to move on foot. Example: I walk to the station.\non time — not early and not late. Example: I am always on time."
+        },
+        {
+          "type": "instruction",
+          "content": "Essential Chunks & Functional Collocations:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• I wake up at seven o'clock. (starting a routine)\n• I get up at half past seven. (morning action and time)\n• I have breakfast at eight. (meal time)\n• I go to work at nine on Monday. (work time and day)\n• I take the metro. / I walk. (talking about transport)\n• I get off at Central Station. (ending a journey)\n• What time do you...? / How do you get to work? (asking about routine and transport)"
+        },
+        {
+          "type": "instruction",
+          "content": "Vocabulary practice: choose the correct word."
+        },
+        {
+          "type": "test",
+          "content": "Which word means 'to stop sleeping'?",
+          "options": [
+            "wake up",
+            "shower",
+            "breakfast"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Which word means 'to leave your bed'?",
+          "options": [
+            "get up",
+            "work",
+            "bed"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Complete the sentence with a word from the list."
+        },
+        {
+          "type": "input",
+          "placeholder": "Complete: I ___ at seven."
+        }
+      ]
+    },
+    {
+      "id": "my-daily-routine-slide-4",
+      "title": "4. Pronunciation Focus",
+      "stage": "pronunciation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Pronunciation Focus: Telling-time stress and the /ʃ/ sound in 'shower'"
+        },
+        {
+          "type": "blockquote",
+          "content": "o'clock /əˈklɒk/ — stress the second syllable\nhalf past /hɑːf pɑːst/ — link the words\nshower /ˈʃaʊə/ — starts with /ʃ/\nbreakfast /ˈbrekfəst/ — stress the first syllable"
+        },
+        {
+          "type": "instruction",
+          "content": "Listen and repeat:"
+        },
+        {
+          "type": "blockquote",
+          "content": "I wake up at seven o'clock. I go to bed at half past ten."
+        },
+        {
+          "type": "instruction",
+          "content": "Mark the stressed syllable in these words:"
+        },
+        {
+          "type": "input",
+          "placeholder": "Mark the stress: o'clock, half past, shower"
+        }
+      ]
+    },
+    {
+      "id": "my-daily-routine-slide-5",
+      "title": "5. Grammar Focus & Controlled Practice",
+      "stage": "grammar",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Grammar Focus: Use time expressions to say when you do something."
+        },
+        {
+          "type": "grammar-focus",
+          "grammarId": "en-a1-telling-time"
+        },
+        {
+          "type": "blockquote",
+          "content": "Form:\nTelling the time: What time is it? It's seven o'clock. It's half past seven. It's quarter past seven. It's quarter to eight. Use 'at' + time: at seven o'clock.\n\nExamples:\n• I wake up at seven o'clock.\n• The class starts at half past nine.\n• We have lunch at quarter past twelve.\n• She goes to bed at ten o'clock."
+        },
+        {
+          "type": "instruction",
+          "content": "Controlled practice: choose the correct form."
+        },
+        {
+          "type": "test",
+          "content": "It's 7:00. It's ___ o'clock.",
+          "options": [
+            "seven",
+            "six",
+            "eight"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "It's 7:30. It's half ___ seven.",
+          "options": [
+            "past",
+            "to",
+            "at"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "It's 7:45. It's quarter ___ eight.",
+          "options": [
+            "to",
+            "past",
+            "at"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "I wake up ___ seven o'clock.",
+          "options": [
+            "at",
+            "on",
+            "in"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Substitution drill: say the sentence with the new words."
+        },
+        {
+          "type": "blockquote",
+          "content": "• I wake up at ...\n• I have breakfast at ...\n• I go to bed at ..."
+        },
+        {
+          "type": "instruction",
+          "content": "Question-answer practice: ask and answer with your partner."
+        },
+        {
+          "type": "blockquote",
+          "content": "• What time do you wake up?\n• What time do you start work or school?\n• What time do you go to bed?"
+        },
+        {
+          "type": "instruction",
+          "content": "Personalised production: use the structure about your own life."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Write three sentences about your day with times.\n• Write three sentences about a family member's day with times."
+        }
+      ]
+    },
+    {
+      "id": "my-daily-routine-slide-6",
+      "title": "6. Four Skills Distribution (Listening & Reading)",
+      "stage": "reading-listening",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Reading: My daily routine"
+        },
+        {
+          "type": "blockquote",
+          "content": "I wake up at seven o'clock on Monday. I get up at half past seven and take a shower. I have breakfast at eight. I go to work at nine. I take the metro and get off at Central Station. I start work at half past nine. In the afternoon, I have lunch at one. I finish work at six in the evening. I go to bed at half past ten. On Saturday, I don't work. I usually walk in the park."
+        },
+        {
+          "type": "test",
+          "content": "What time does the writer wake up?",
+          "options": [
+            "seven o'clock",
+            "half past seven",
+            "eight o'clock"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "How does the writer get to work?",
+          "options": [
+            "by metro",
+            "by bus",
+            "on foot"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Listening: listen to the dialogue and answer the questions."
+        },
+        {
+          "type": "blockquote",
+          "content": "A: What time do you wake up?\nB: I wake up at six thirty.\nA: And how do you get to work?\nB: I take the bus and get off at the park.\nA: What time do you start work?\nB: At eight o'clock on Monday, Tuesday, and Wednesday.\nA: Do you work on Saturday?\nB: No, I don't. I relax at home."
+        },
+        {
+          "type": "test",
+          "content": "How does the speaker get to work?",
+          "options": [
+            "by bus",
+            "by metro",
+            "by train"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Does the speaker work on Saturday?",
+          "options": [
+            "No, they don't.",
+            "Yes, they do.",
+            "Sometimes."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "my-daily-routine-slide-7",
+      "title": "7. Speaking & Writing Production",
+      "stage": "freer-practice",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Speaking task: Compare your daily routine and commute with your partner. Find two differences."
+        },
+        {
+          "type": "blockquote",
+          "content": "• What time do you wake up?\n• What do you do on Monday morning?\n• How do you get to work or school?\n• What do you do in the evening?\n• Are you usually on time?"
+        },
+        {
+          "type": "instruction",
+          "content": "Role-play: You are planning a coffee chat. Compare your weekly schedules and find a free time on Wednesday or Friday."
+        },
+        {
+          "type": "blockquote",
+          "content": "Work in pairs. Take turns. Use at least five target words and one target grammar structure. Then swap roles."
+        },
+        {
+          "type": "instruction",
+          "content": "Writing task: Write five sentences about your weekday routine with times, days, and transport."
+        },
+        {
+          "type": "blockquote",
+          "content": "Model: I wake up at ... On Monday, I ... I take the ... I get off at ..."
+        },
+        {
+          "type": "essay",
+          "placeholder": "Write your response here..."
+        }
+      ]
+    },
+    {
+      "id": "my-daily-routine-slide-8",
+      "title": "8. Multi-Duration Lesson Flows",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Timestamped Multi-Duration Flows:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• 60 min (Essential): 0–8 Warm-up & goal; 8–18 Vocabulary & chunks; 18–28 Grammar & controlled practice; 28–40 Reading/listening + speaking; 40–50 Role-play; 50–60 Cool-down & homework.\n\n• 90 min (Expanded): 0–10 Warm-up; 10–25 Vocabulary & pronunciation; 25–40 Grammar & controlled practice; 40–55 Reading/listening; 55–75 Speaking & role-play; 75–85 Writing; 85–90 Cool-down.\n\n• 120 min (Full Workshop): 0–15 Warm-up & diagnostic; 15–35 Vocabulary lab; 35–55 Grammar workshop; 55–75 Reading/listening; 75–95 Speaking & role-play; 95–110 Writing & portfolio; 110–120 Cool-down & feedback."
+        }
+      ]
+    },
+    {
+      "id": "my-daily-routine-slide-9",
+      "title": "9. Delivery Adaptations",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Individual Lesson Adaptation:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Use a clock face and sequence cards to build the routine together."
+        },
+        {
+          "type": "instruction",
+          "content": "Group Lesson Adaptation:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Routine mingle: students compare routines and find three differences."
+        },
+        {
+          "type": "instruction",
+          "content": "Age Adaptations:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Children: Use a picture schedule and a daily-routine song.\nTeens: Use a phone calendar and a 'day in my life' mini-presentation.\nAdults: Discuss work–life balance and time management.\nSeniors: Use large-print clock cards and a slow routine drill."
+        }
+      ]
+    },
+    {
+      "id": "my-daily-routine-slide-10",
+      "title": "10. Homework & Recycling Notes",
+      "stage": "cool-down",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Homework Assignment:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Write a weekday routine log with five times, two days, and one transport sentence."
+        },
+        {
+          "type": "instruction",
+          "content": "Self-Assessment: I can..."
+        },
+        {
+          "type": "blockquote",
+          "content": "• tell time and talk about days\n• describe a daily routine\n• explain how I travel to work\n• use the target vocabulary\n• ask and answer the key questions"
+        },
+        {
+          "type": "instruction",
+          "content": "Recycling into Next Lesson:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Lesson 5 recycles routines to talk about habits and questions."
+        }
+      ]
+    }
+  ]
+}

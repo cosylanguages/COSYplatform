@@ -1,1 +1,471 @@
-{"id":"a-man-of-100-faces","title":"A man of 100 faces","level":"A0","language":"en","defaultDuration":50,"defaultMode":"all","objectives":["apply Present Simple 3rd person singular -s rules","describe professional daily schedules"],"links":{"vocabulary":["eat","drink","work","doctor","teacher","man"],"grammar":[{"topic_id":"present-simple-3rd-person"}],"communication":[{"phrase_id":"en:general:daily-routine-talk:i-finish-work-at-five","manual_url":"https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/daily-routine-talk.html"}]},"slides":[{"id":"a-man-of-100-faces-slide-1","title":"Warm-up & Overview","stage":"warm-up","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Lesson Objectives for A man of 100 faces:"},{"type":"blockquote","content":"apply Present Simple 3rd person singular -s rules; describe professional daily schedules"}]},{"id":"a-man-of-100-faces-slide-2","title":"Vocabulary & Input","stage":"input","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Review key terms and target language below:"},{"type":"blockquote","content":"Key terms: eat, drink, work, doctor, teacher, man"}]},{"id":"a-man-of-100-faces-slide-grammar","title":"Grammar Focus","stage":"input","duration":50,"mode":"all","elements":[{"type":"grammar-focus","grammarId":"en-a1-present-simple"}]},{"id":"a-man-of-100-faces-slide-3","title":"Controlled Practice","stage":"controlled-practice","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Choose the correct form: 'He ___ breakfast at six.'"},{"type":"test","options":["eats","eat","eating"]}]},{"id":"a-man-of-100-faces-slide-4","title":"Reading & Listening Skills","stage":"reading-listening","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Read the short passage below (recycling introduced vocabulary):"},{"type":"blockquote","content":"He works as a doctor. He eats breakfast at six and drinks tea. He works hard every day."},{"type":"instruction","content":"Listening Task: Listen to your teacher / audio prompt and answer the comprehension question."}]},{"id":"a-man-of-100-faces-slide-5","title":"Freer Speaking Practice","stage":"freer-practice","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Describe the daily routine of a family member or professional using 3rd person -s forms."}]},{"id":"a-man-of-100-faces-slide-6","title":"Cool-down & Summary","stage":"cool-down","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Lesson Summary & Feedback:"},{"type":"blockquote","content":"Today you practiced: apply Present Simple 3rd person singular -s rules, describe professional daily schedules."}]}]}
+{
+  "id": "a-man-of-100-faces",
+  "title": "A man of 100 faces",
+  "level": "A0",
+  "language": "en",
+  "unit": "Unit 4. Daily routine",
+  "canDo": "I can describe another person's daily routine using the third person.",
+  "defaultDuration": 50,
+  "defaultMode": "all",
+  "objectives": [
+    "apply Present Simple 3rd person singular -s rules",
+    "describe professional daily schedules"
+  ],
+  "materials": "Job cards, photo prompts, -s ending cards, COSYmanuals 'present simple' and 'question words' pages.",
+  "assessment": "Check third-person -s in speech and writing.",
+  "homework": "Write five sentences about a family member's routine. Remember the -s.",
+  "recycling": {
+    "prior": "Recycles present simple and daily routine from Lessons 13–14.",
+    "next": "Lesson 16 recycles routines to talk about sequence and pace."
+  },
+  "differentiation": {
+    "individual": "Use a photo of a professional and build the routine sentence by sentence.",
+    "group": "Guess-the-job game: students describe a routine and others guess the job.",
+    "children": "Use community-helper puppets and a -s clap game.",
+    "teens": "Use a 'day in the life' social-media profile.",
+    "adults": "Discuss shift work and professional routines.",
+    "seniors": "Use large-print job cards and a slow third-person drill."
+  },
+  "links": {
+    "vocabulary": [
+      "eat",
+      "drink",
+      "work",
+      "doctor",
+      "teacher",
+      "man",
+      "tea",
+      "hard",
+      "breakfast",
+      "every day"
+    ],
+    "grammar": [
+      {
+        "topic_id": "present-simple",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/present-simple.html"
+      },
+      {
+        "topic_id": "question-words",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/question-words.html"
+      }
+    ],
+    "phonetics": "Third-person -s endings /s/, /z/, /ɪz/",
+    "communication": [
+      {
+        "phrase_id": "en:general:daily-routine-talk:i-finish-work-at-five",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/daily-routine-talk.html"
+      }
+    ]
+  },
+  "slides": [
+    {
+      "id": "a-man-of-100-faces-slide-1",
+      "title": "1. Communication Goal & Overview",
+      "stage": "warm-up",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Communication Goal: I can describe another person's daily routine using the third person."
+        },
+        {
+          "type": "blockquote",
+          "content": "Lesson overview:\n- Level: A0 General English\n- Unit: Unit 4. Daily routine\n- Time: 60 min (Essential) / 90 min (Expanded) / 120 min (Full Workshop)\n- Focus: A man of 100 faces\n- Materials: Job cards, photo prompts, -s ending cards, COSYmanuals 'present simple' and 'question words' pages."
+        },
+        {
+          "type": "instruction",
+          "content": "By the end of this lesson, you can:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• apply Present Simple 3rd person singular -s rules\n• describe professional daily schedules"
+        }
+      ]
+    },
+    {
+      "id": "a-man-of-100-faces-slide-2",
+      "title": "2. Recycling & Continuity",
+      "stage": "recycling",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Recycling & Course Continuity:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Prior learning: Recycles present simple and daily routine from Lessons 13–14.\n\nNext lesson: Lesson 16 recycles routines to talk about sequence and pace."
+        },
+        {
+          "type": "instruction",
+          "content": "Quick retrieval task: which words or phrases do you remember?"
+        },
+        {
+          "type": "test",
+          "content": "Which word belongs to the previous lesson?",
+          "options": [
+            "eat",
+            "banana",
+            "airport"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a-man-of-100-faces-slide-3",
+      "title": "3. Vocabulary & Essential Chunks",
+      "stage": "input",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Core Active Vocabulary (10 items):"
+        },
+        {
+          "type": "blockquote",
+          "content": "eat — to put food in your mouth. Example: We eat lunch at one.\ndrink — to take liquid into your mouth. Example: I drink tea in the morning.\nwork — a job or activity you do. Example: I work in an office.\ndoctor — a person who helps sick people. Example: The doctor works in a hospital.\nteacher — a person who helps students learn. Example: She is my English teacher.\nman — a male person. Example: The man is a teacher.\ntea — a hot drink made from leaves. Example: She drinks tea every day.\nhard — with a lot of effort. Example: He works hard.\nbreakfast — the first meal of the day. Example: I have breakfast at eight.\nevery day — each day. Example: I study English every day."
+        },
+        {
+          "type": "instruction",
+          "content": "Essential Chunks & Functional Collocations:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• He works as a doctor. (talking about a job)\n• He eats breakfast at six. (describing a routine)\n• He drinks tea. (describing a habit)\n• He works hard every day. (describing effort)\n• She works in a hospital. (talking about a workplace)\n• What does he do? (asking about a job)"
+        },
+        {
+          "type": "instruction",
+          "content": "Vocabulary practice: choose the correct word."
+        },
+        {
+          "type": "test",
+          "content": "Which word means 'to put food in your mouth'?",
+          "options": [
+            "eat",
+            "work",
+            "doctor"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Which word means 'to take liquid into your mouth'?",
+          "options": [
+            "drink",
+            "teacher",
+            "man"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Complete the sentence with a word from the list."
+        },
+        {
+          "type": "input",
+          "placeholder": "Complete: We ___ lunch at one."
+        }
+      ]
+    },
+    {
+      "id": "a-man-of-100-faces-slide-4",
+      "title": "4. Pronunciation Focus",
+      "stage": "pronunciation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Pronunciation Focus: Third-person -s endings /s/, /z/, /ɪz/"
+        },
+        {
+          "type": "blockquote",
+          "content": "works /wɜːks/ — final /s/\neats /iːts/ — final /s/\ndrinks /drɪŋks/ — final /s/\nteaches /ˈtiːtʃɪz/ — final /ɪz/"
+        },
+        {
+          "type": "instruction",
+          "content": "Listen and repeat:"
+        },
+        {
+          "type": "blockquote",
+          "content": "He works as a doctor. He eats breakfast at six. She teaches English."
+        },
+        {
+          "type": "instruction",
+          "content": "Mark the stressed syllable in these words:"
+        },
+        {
+          "type": "input",
+          "placeholder": "Mark the stress: works, eats, drinks"
+        }
+      ]
+    },
+    {
+      "id": "a-man-of-100-faces-slide-5",
+      "title": "5. Grammar Focus & Controlled Practice",
+      "stage": "grammar",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Grammar Focus: Use the present simple for habits, routines, facts, and things that happen regularly."
+        },
+        {
+          "type": "grammar-focus",
+          "grammarId": "en-a1-present-simple"
+        },
+        {
+          "type": "blockquote",
+          "content": "Form:\nPresent simple: I / You / We / They + verb. He / She / It + verb + -s. Negative: don't / doesn't + verb. Question: Do / Does + subject + verb?\n\nExamples:\n• I work in a school.\n• She works in a hospital.\n• We don't work on Sunday.\n• Does he drink coffee?"
+        },
+        {
+          "type": "instruction",
+          "content": "Controlled practice: choose the correct form."
+        },
+        {
+          "type": "test",
+          "content": "He ___ tea every morning.",
+          "options": [
+            "drink",
+            "drinks",
+            "drinking"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "They ___ in a hospital.",
+          "options": [
+            "work",
+            "works",
+            "working"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "She ___ like coffee.",
+          "options": [
+            "don't",
+            "doesn't",
+            "isn't"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "___ you work here?",
+          "options": [
+            "Do",
+            "Does",
+            "Are"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Substitution drill: say the sentence with the new words."
+        },
+        {
+          "type": "blockquote",
+          "content": "• I ... (work / study / live) in ...\n• He ... (work / study / live) in ...\n• They ... (don't / doesn't) ... on Sunday."
+        },
+        {
+          "type": "instruction",
+          "content": "Question-answer practice: ask and answer with your partner."
+        },
+        {
+          "type": "blockquote",
+          "content": "• What do you do every day?\n• Where does your best friend work or study?\n• Do you drink coffee in the morning?"
+        },
+        {
+          "type": "instruction",
+          "content": "Personalised production: use the structure about your own life."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Write three sentences about your daily routine.\n• Write three sentences about a family member's routine."
+        }
+      ]
+    },
+    {
+      "id": "a-man-of-100-faces-slide-6",
+      "title": "6. Four Skills Distribution (Listening & Reading)",
+      "stage": "reading-listening",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Reading: A man of 100 faces"
+        },
+        {
+          "type": "blockquote",
+          "content": "This is Mr Khan. He is a man of many faces. He works as a doctor in a big hospital. He eats breakfast at six and drinks tea. He works hard every day. He helps many people. His wife is a teacher. She works in a school. They are both busy, but they are happy."
+        },
+        {
+          "type": "test",
+          "content": "What is Mr Khan's job?",
+          "options": [
+            "a doctor",
+            "a teacher",
+            "a driver"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "What does his wife do?",
+          "options": [
+            "She is a teacher.",
+            "She is a doctor.",
+            "She is a nurse."
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Listening: listen to the dialogue and answer the questions."
+        },
+        {
+          "type": "blockquote",
+          "content": "A: What does Mr Khan do?\nB: He is a doctor. He works in a big hospital.\nA: What time does he start work?\nB: He starts at eight. He eats breakfast at six and drinks tea.\nA: Does he work hard?\nB: Yes, he does. He helps many people every day."
+        },
+        {
+          "type": "test",
+          "content": "Where does Mr Khan work?",
+          "options": [
+            "in a big hospital",
+            "in a school",
+            "in an office"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "What does he drink?",
+          "options": [
+            "tea",
+            "coffee",
+            "water"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a-man-of-100-faces-slide-7",
+      "title": "7. Speaking & Writing Production",
+      "stage": "freer-practice",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Speaking task: Describe a family member's daily routine to your partner. Use 'he/she + verb-s'."
+        },
+        {
+          "type": "blockquote",
+          "content": "• What does your mother/father do?\n• What time does he/she start work?\n• Does he/she work hard?\n• What does he/she do after work?\n• Who is a busy person in your family?"
+        },
+        {
+          "type": "instruction",
+          "content": "Role-play: You are a journalist. Interview a classmate about a busy person they know and report the routine."
+        },
+        {
+          "type": "blockquote",
+          "content": "Work in pairs. Take turns. Use at least five target words and one target grammar structure. Then swap roles."
+        },
+        {
+          "type": "instruction",
+          "content": "Writing task: Write five sentences about a family member's daily routine."
+        },
+        {
+          "type": "blockquote",
+          "content": "Model: He/She works ... He/She eats ... He/She drinks ... He/She goes ..."
+        },
+        {
+          "type": "essay",
+          "placeholder": "Write your response here..."
+        }
+      ]
+    },
+    {
+      "id": "a-man-of-100-faces-slide-8",
+      "title": "8. Multi-Duration Lesson Flows",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Timestamped Multi-Duration Flows:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• 60 min (Essential): 0–8 Warm-up & goal; 8–18 Vocabulary & chunks; 18–28 Grammar & controlled practice; 28–40 Reading/listening + speaking; 40–50 Role-play; 50–60 Cool-down & homework.\n\n• 90 min (Expanded): 0–10 Warm-up; 10–25 Vocabulary & pronunciation; 25–40 Grammar & controlled practice; 40–55 Reading/listening; 55–75 Speaking & role-play; 75–85 Writing; 85–90 Cool-down.\n\n• 120 min (Full Workshop): 0–15 Warm-up & diagnostic; 15–35 Vocabulary lab; 35–55 Grammar workshop; 55–75 Reading/listening; 75–95 Speaking & role-play; 95–110 Writing & portfolio; 110–120 Cool-down & feedback."
+        }
+      ]
+    },
+    {
+      "id": "a-man-of-100-faces-slide-9",
+      "title": "9. Delivery Adaptations",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Individual Lesson Adaptation:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Use a photo of a professional and build the routine sentence by sentence."
+        },
+        {
+          "type": "instruction",
+          "content": "Group Lesson Adaptation:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Guess-the-job game: students describe a routine and others guess the job."
+        },
+        {
+          "type": "instruction",
+          "content": "Age Adaptations:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Children: Use community-helper puppets and a -s clap game.\nTeens: Use a 'day in the life' social-media profile.\nAdults: Discuss shift work and professional routines.\nSeniors: Use large-print job cards and a slow third-person drill."
+        }
+      ]
+    },
+    {
+      "id": "a-man-of-100-faces-slide-10",
+      "title": "10. Homework & Recycling Notes",
+      "stage": "cool-down",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Homework Assignment:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Write five sentences about a family member's routine. Remember the -s."
+        },
+        {
+          "type": "instruction",
+          "content": "Self-Assessment: I can..."
+        },
+        {
+          "type": "blockquote",
+          "content": "• apply Present Simple 3rd person singular -s rules\n• describe professional daily schedules\n• use the target vocabulary\n• ask and answer the key questions"
+        },
+        {
+          "type": "instruction",
+          "content": "Recycling into Next Lesson:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Lesson 16 recycles routines to talk about sequence and pace."
+        }
+      ]
+    }
+  ]
+}
