@@ -7,7 +7,7 @@ It is integrated into the main General English A0–A1 course as two required re
 | Course | Unit | Lessons |
 |---|---|---|
 | A0 | Unit 9. Review & Consolidation | `inspired-01` to `inspired-04` |
-| A1 | Unit 13. Review & Consolidation | `inspired-05` to `inspired-08` |
+| A1 | Unit 3. Review & Consolidation | `inspired-05` to `inspired-08` |
 
 The same eight lessons also work as a standalone intensive track. The standalone roadmap is `roadmaps/general-en-a0-a1-inspired.json`.
 
@@ -36,7 +36,7 @@ The student-safe lessons are in `lessons/general-english-a0-a1-inspired/`. Full 
 
 ## How to use the review units
 
-- In the main course, use A0 Unit 9 after Unit 8 and A1 Unit 13 after Unit 12. They recycle the language of the preceding units and give learners a strong speaking win before the progress test.
+- In the delivered A0–A1 course, use A0 Unit 9 after Unit 8 and A1 Unit 3 after Unit 2. In the full A1 planning roadmap the same review unit sits after Unit 12 as Unit 13. They recycle the language of the preceding units and give learners a strong speaking win before the progress test.
 - As a standalone track, load `roadmaps/general-en-a0-a1-inspired.json` for a short intensive course, a summer programme, or a diagnostic track for adults who need a fast A0–A1 overview.
 - Use the 40-lesson core course when you need more recycling, more micro-lessons, and more assessment points.
 - Both tracks use the same 10-slide lesson format, so teachers can move between them without learning a new structure.

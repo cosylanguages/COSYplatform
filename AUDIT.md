@@ -96,7 +96,7 @@
 * **Language Codes Covered**: `en` (English), `fr` (French), `ru` (Russian).
 * **CEFR Levels Covered**: `A0`, `A1`, `A2`, `B1`, `B2`, `C1`, `C2`.
 * **Breakdown by Topic**:
-  * **General English**: `A0`, `A1`, `A2`, `B1`, `B2`, `C1` (`general-en-a0.json` through `general-en-c1.json`).
+  * **General English**: delivered A0–A1 course (`general-en-a0-a1.json`); A2–C2 roadmaps remain (`general-en-a2.json` through `general-en-c2.json`). The separate `general-en-a0.json` and `general-en-a1.json` files are retained as planning sources.
   * **English Grammar**: `A0`, `A1`, `A2`, `B1`, `B2`, `C1` (`grammar-en-a0.json` through `grammar-en-c1.json`).
   * **Spoken English**: `A1`, `A2`, `B1`, `B2`, `C1` (`spoken-en-a1.json` through `spoken-en-c1.json`).
   * **Cinema Club (English)**: `A1`, `A2`, `B1`, `B2`, `C1`, `C2` (`cinema-en-a1.json` through `cinema-en-c2.json`).

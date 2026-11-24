@@ -5,6 +5,7 @@
 | Item | Detail |
 |---|---|
 | Course | General English A0–A1 for adults |
+| Catalog course ID | `general-en-a0-a1` |
 | Audience | Adults aged 18 and over, from true beginner to basic user |
 | Delivery | Group classes or one-to-one coaching |
 | Lessons | 48 lessons in 12 units: 40 core lessons plus 8 review lessons |
@@ -54,7 +55,7 @@ The eight inspired lessons are integrated into the course as required review uni
 | Course | Unit | Lessons |
 |---|---|---|
 | A0 | Unit 9. Review & Consolidation | `inspired-01-first-contact`, `inspired-02-everyday-spaces`, `inspired-03-daily-rhythm`, `inspired-04-people-and-likes` |
-| A1 | Unit 13. Review & Consolidation | `inspired-05-out-and-about`, `inspired-06-food-money-choices`, `inspired-07-looking-back`, `inspired-08-next-steps` |
+| A1 | Unit 3. Review & Consolidation | `inspired-05-out-and-about`, `inspired-06-food-money-choices`, `inspired-07-looking-back`, `inspired-08-next-steps` |
 
 They recycle the language of the preceding units and add a strong speaking task. They are marked required in the roadmaps. The same eight lessons can also be used as a standalone intensive track.
 
@@ -117,7 +118,7 @@ This mapping is thematic. The repo course is more granular: 40 focused core less
 - Continuous assessment: every lesson ends with two strengths and one concrete target.
 - Mid-course checkpoint: end of A0 Unit 4. Covers introductions, objects, rooms, time, routines, frequency, likes, and basic questions.
 - A0 exit check: end of A0 Unit 9 after the review unit. Covers the full A0 range.
-- End-of-course checkpoint: end of A1 Unit 13 after the review unit. Covers present routines, past experiences, future plans, transactions, and collaborative decisions.
+- End-of-course checkpoint: end of A1 Unit 3 after the review unit. Covers present routines, past experiences, future plans, transactions, and collaborative decisions.
 - Scoring: 16-point speaking rubric across task completion, grammar, vocabulary, and pronunciation.
 - Certificate: 11/16 or higher and at least 80% attendance.
 
