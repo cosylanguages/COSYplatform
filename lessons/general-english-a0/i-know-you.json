@@ -1,1 +1,471 @@
-{"id":"i-know-you","title":"I know you","level":"A0","language":"en","defaultDuration":50,"defaultMode":"all","objectives":["ask Wh- questions about family members","describe family relationships in detail"],"links":{"vocabulary":["many","tell","nice","close","together"],"grammar":[{"topic_id":"wh-questions"}],"communication":[{"phrase_id":"en:general:describing-family:how-many-brothers-and-sisters-do-you-have","manual_url":"https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/describing-family.html"}]},"slides":[{"id":"i-know-you-slide-1","title":"Warm-up & Overview","stage":"warm-up","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Lesson Objectives for I know you:"},{"type":"blockquote","content":"ask Wh- questions about family members; describe family relationships in detail"}]},{"id":"i-know-you-slide-2","title":"Vocabulary & Input","stage":"input","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Review key terms and target language below:"},{"type":"blockquote","content":"Key terms: many, tell, nice, close, together"}]},{"id":"i-know-you-slide-grammar","title":"Grammar Focus","stage":"input","duration":50,"mode":"all","elements":[{"type":"grammar-focus","grammarId":"en-a1-question-words"}]},{"id":"i-know-you-slide-3","title":"Controlled Practice","stage":"controlled-practice","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Complete the question: '___ cousins do you have?'"},{"type":"test","options":["How many","Where","What"]}]},{"id":"i-know-you-slide-4","title":"Reading & Listening Skills","stage":"reading-listening","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Read the short passage below (recycling introduced vocabulary):"},{"type":"blockquote","content":"Tell me about your family. How many relatives do you have? We are close and live together."},{"type":"instruction","content":"Listening Task: Listen to your teacher / audio prompt and answer the comprehension question."}]},{"id":"i-know-you-slide-5","title":"Freer Speaking Practice","stage":"freer-practice","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Interview your partner about their family size, relatives, and close relationships."}]},{"id":"i-know-you-slide-6","title":"Cool-down & Summary","stage":"cool-down","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Lesson Summary & Feedback:"},{"type":"blockquote","content":"Today you practiced: ask Wh- questions about family members, describe family relationships in detail."}]}]}
+{
+  "id": "i-know-you",
+  "title": "I know you",
+  "level": "A0",
+  "language": "en",
+  "unit": "Unit 2. Big happy family",
+  "canDo": "I can ask and answer Wh- questions about family and friends.",
+  "defaultDuration": 50,
+  "defaultMode": "all",
+  "objectives": [
+    "ask Wh- questions about family members",
+    "describe family relationships in detail"
+  ],
+  "materials": "Family photos, question dice, interview sheet, COSYmanuals 'question words' and 'to be' pages.",
+  "assessment": "Check correct Wh- question order and appropriate answers.",
+  "homework": "Write five Wh- questions about family and answer them about yourself.",
+  "recycling": {
+    "prior": "Recycles family vocabulary and possessives from Lessons 5–7.",
+    "next": "Lesson 9 moves to objects and prepositions of place."
+  },
+  "differentiation": {
+    "individual": "Use a family photo and ask one Wh- question at a time.",
+    "group": "Class survey: students interview three classmates and report the most interesting answer.",
+    "children": "Use a question dice and a family-photo guessing game.",
+    "teens": "Use a 'family interview' video project outline.",
+    "adults": "Discuss family responsibilities and cultural differences.",
+    "seniors": "Use large-print photo cards and a slow interview format."
+  },
+  "links": {
+    "vocabulary": [
+      "who",
+      "what",
+      "how many",
+      "where",
+      "when",
+      "why",
+      "family",
+      "relative",
+      "close",
+      "together"
+    ],
+    "grammar": [
+      {
+        "topic_id": "question-words",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/question-words.html"
+      },
+      {
+        "topic_id": "to-be",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/to-be.html"
+      }
+    ],
+    "phonetics": "Wh- question intonation and the /h/ sound in 'who'",
+    "communication": [
+      {
+        "phrase_id": "en:general:describing-family:how-many-brothers-and-sisters-do-you-have",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/describing-family.html"
+      }
+    ]
+  },
+  "slides": [
+    {
+      "id": "i-know-you-slide-1",
+      "title": "1. Communication Goal & Overview",
+      "stage": "warm-up",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Communication Goal: I can ask and answer Wh- questions about family and friends."
+        },
+        {
+          "type": "blockquote",
+          "content": "Lesson overview:\n- Level: A0 General English\n- Unit: Unit 2. Big happy family\n- Time: 60 min (Essential) / 90 min (Expanded) / 120 min (Full Workshop)\n- Focus: I know you\n- Materials: Family photos, question dice, interview sheet, COSYmanuals 'question words' and 'to be' pages."
+        },
+        {
+          "type": "instruction",
+          "content": "By the end of this lesson, you can:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• ask Wh- questions about family members\n• describe family relationships in detail"
+        }
+      ]
+    },
+    {
+      "id": "i-know-you-slide-2",
+      "title": "2. Recycling & Continuity",
+      "stage": "recycling",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Recycling & Course Continuity:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Prior learning: Recycles family vocabulary and possessives from Lessons 5–7.\n\nNext lesson: Lesson 9 moves to objects and prepositions of place."
+        },
+        {
+          "type": "instruction",
+          "content": "Quick retrieval task: which words or phrases do you remember?"
+        },
+        {
+          "type": "test",
+          "content": "Which word belongs to the previous lesson?",
+          "options": [
+            "who",
+            "banana",
+            "airport"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "i-know-you-slide-3",
+      "title": "3. Vocabulary & Essential Chunks",
+      "stage": "input",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Core Active Vocabulary (10 items):"
+        },
+        {
+          "type": "blockquote",
+          "content": "who — a question word for a person. Example: Who is your teacher?\nwhat — a question word for a thing. Example: What is your name?\nhow many — a question phrase for number. Example: How many brothers have you got?\nwhere — a question word for a place. Example: Where do you live?\nwhen — a question word for time. Example: When is your birthday?\nwhy — a question word for a reason. Example: Why are you late?\nfamily — parents, children, and relatives. Example: My family is big.\nrelative — a person in your family. Example: We visit our relatives at Eid.\nclose — near or emotionally connected. Example: We are a close family.\ntogether — with each other. Example: We eat together every evening."
+        },
+        {
+          "type": "instruction",
+          "content": "Essential Chunks & Functional Collocations:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• Who is this? (asking about a person)\n• How many relatives have you got? (asking about family size)\n• Where do they live? (asking about place)\n• When do you visit them? (asking about time)\n• Why are you close? (asking about a reason)\n• Tell me about your family. (asking for a description)"
+        },
+        {
+          "type": "instruction",
+          "content": "Vocabulary practice: choose the correct word."
+        },
+        {
+          "type": "test",
+          "content": "Which word means 'a question word for a person'?",
+          "options": [
+            "who",
+            "how many",
+            "where"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Which word means 'a question word for a thing'?",
+          "options": [
+            "what",
+            "when",
+            "why"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Complete the sentence with a word from the list."
+        },
+        {
+          "type": "input",
+          "placeholder": "Complete: Who is your teacher?"
+        }
+      ]
+    },
+    {
+      "id": "i-know-you-slide-4",
+      "title": "4. Pronunciation Focus",
+      "stage": "pronunciation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Pronunciation Focus: Wh- question intonation and the /h/ sound in 'who'"
+        },
+        {
+          "type": "blockquote",
+          "content": "who /huː/ — long /uː/\nwhere /weə/ — starts with /w/\nwhen /wen/ — short /e/\nwhy /waɪ/ — long /aɪ/"
+        },
+        {
+          "type": "instruction",
+          "content": "Listen and repeat:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Who is this? Where do they live? How many relatives have you got?"
+        },
+        {
+          "type": "instruction",
+          "content": "Mark the stressed syllable in these words:"
+        },
+        {
+          "type": "input",
+          "placeholder": "Mark the stress: who, where, when"
+        }
+      ]
+    },
+    {
+      "id": "i-know-you-slide-5",
+      "title": "5. Grammar Focus & Controlled Practice",
+      "stage": "grammar",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Grammar Focus: Use question words to ask for different kinds of information."
+        },
+        {
+          "type": "grammar-focus",
+          "grammarId": "en-a1-question-words"
+        },
+        {
+          "type": "blockquote",
+          "content": "Form:\nQuestion words: Who (person), what (thing), where (place), when (time), why (reason), how (manner), how many (number). Question word + auxiliary + subject + verb.\n\nExamples:\n• Where are you from?\n• Who is your teacher?\n• How many brothers have you got?\n• Why are you late?"
+        },
+        {
+          "type": "instruction",
+          "content": "Controlled practice: choose the correct form."
+        },
+        {
+          "type": "test",
+          "content": "___ are you from?",
+          "options": [
+            "Where",
+            "Who",
+            "When"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "___ is your best friend?",
+          "options": [
+            "Who",
+            "What",
+            "Where"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "___ many sisters have you got?",
+          "options": [
+            "How",
+            "What",
+            "Who"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "___ is your birthday?",
+          "options": [
+            "When",
+            "Where",
+            "Who"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Substitution drill: say the sentence with the new words."
+        },
+        {
+          "type": "blockquote",
+          "content": "• ___ is your teacher? (Who / Where / When)\n• ___ do you live? (Where / Who / Why)\n• ___ many people are in your family? (How / What / Who)"
+        },
+        {
+          "type": "instruction",
+          "content": "Question-answer practice: ask and answer with your partner."
+        },
+        {
+          "type": "blockquote",
+          "content": "• What is your name?\n• Where are you from?\n• How many people are in your family?"
+        },
+        {
+          "type": "instruction",
+          "content": "Personalised production: use the structure about your own life."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Write three questions about your partner's family.\n• Write three questions about your partner's home."
+        }
+      ]
+    },
+    {
+      "id": "i-know-you-slide-6",
+      "title": "6. Four Skills Distribution (Listening & Reading)",
+      "stage": "reading-listening",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Reading: I know you"
+        },
+        {
+          "type": "blockquote",
+          "content": "Tell me about your family. Who are they? How many relatives have you got? Where do they live? My family is big. I have many relatives. My grandparents live in a village, and my cousins live in the city. We are close and we spend holidays together. When do we meet? We meet every summer. Why? Because family is important."
+        },
+        {
+          "type": "test",
+          "content": "Where do the grandparents live?",
+          "options": [
+            "in a village",
+            "in the city",
+            "in another country"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "When does the family meet?",
+          "options": [
+            "every summer",
+            "every winter",
+            "every weekend"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Listening: listen to the dialogue and answer the questions."
+        },
+        {
+          "type": "blockquote",
+          "content": "A: Who is that woman in the photo?\nB: She is my aunt. She lives in Cairo.\nA: How many cousins have you got?\nB: I have five cousins.\nA: When do you see them?\nB: We meet every summer, and we are very close."
+        },
+        {
+          "type": "test",
+          "content": "Where does the aunt live?",
+          "options": [
+            "in Cairo",
+            "in a village",
+            "in London"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "How many cousins does the speaker have?",
+          "options": [
+            "five",
+            "three",
+            "seven"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "i-know-you-slide-7",
+      "title": "7. Speaking & Writing Production",
+      "stage": "freer-practice",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Speaking task: Interview your partner about their family. Ask at least five Wh- questions and report two answers to the class."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Who is the most important person in your family?\n• How many relatives do you see every week?\n• Where does your family usually meet?\n• When do you spend time together?\n• Why is family important in your culture?"
+        },
+        {
+          "type": "instruction",
+          "content": "Role-play: You are a journalist writing about family life. Interview a classmate and ask five Wh- questions about their family."
+        },
+        {
+          "type": "blockquote",
+          "content": "Work in pairs. Take turns. Use at least five target words and one target grammar structure. Then swap roles."
+        },
+        {
+          "type": "instruction",
+          "content": "Writing task: Write five Wh- questions about a friend's family, then write the answers."
+        },
+        {
+          "type": "blockquote",
+          "content": "Model: Who...? What...? Where...? When...? Why...?"
+        },
+        {
+          "type": "essay",
+          "placeholder": "Write your response here..."
+        }
+      ]
+    },
+    {
+      "id": "i-know-you-slide-8",
+      "title": "8. Multi-Duration Lesson Flows",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Timestamped Multi-Duration Flows:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• 60 min (Essential): 0–8 Warm-up & goal; 8–18 Vocabulary & chunks; 18–28 Grammar & controlled practice; 28–40 Reading/listening + speaking; 40–50 Role-play; 50–60 Cool-down & homework.\n\n• 90 min (Expanded): 0–10 Warm-up; 10–25 Vocabulary & pronunciation; 25–40 Grammar & controlled practice; 40–55 Reading/listening; 55–75 Speaking & role-play; 75–85 Writing; 85–90 Cool-down.\n\n• 120 min (Full Workshop): 0–15 Warm-up & diagnostic; 15–35 Vocabulary lab; 35–55 Grammar workshop; 55–75 Reading/listening; 75–95 Speaking & role-play; 95–110 Writing & portfolio; 110–120 Cool-down & feedback."
+        }
+      ]
+    },
+    {
+      "id": "i-know-you-slide-9",
+      "title": "9. Delivery Adaptations",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Individual Lesson Adaptation:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Use a family photo and ask one Wh- question at a time."
+        },
+        {
+          "type": "instruction",
+          "content": "Group Lesson Adaptation:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Class survey: students interview three classmates and report the most interesting answer."
+        },
+        {
+          "type": "instruction",
+          "content": "Age Adaptations:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Children: Use a question dice and a family-photo guessing game.\nTeens: Use a 'family interview' video project outline.\nAdults: Discuss family responsibilities and cultural differences.\nSeniors: Use large-print photo cards and a slow interview format."
+        }
+      ]
+    },
+    {
+      "id": "i-know-you-slide-10",
+      "title": "10. Homework & Recycling Notes",
+      "stage": "cool-down",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Homework Assignment:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Write five Wh- questions about family and answer them about yourself."
+        },
+        {
+          "type": "instruction",
+          "content": "Self-Assessment: I can..."
+        },
+        {
+          "type": "blockquote",
+          "content": "• ask Wh- questions about family members\n• describe family relationships in detail\n• use the target vocabulary\n• ask and answer the key questions"
+        },
+        {
+          "type": "instruction",
+          "content": "Recycling into Next Lesson:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Lesson 9 moves to objects and prepositions of place."
+        }
+      ]
+    }
+  ]
+}

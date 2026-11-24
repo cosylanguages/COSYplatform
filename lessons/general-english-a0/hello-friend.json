@@ -1,1 +1,481 @@
-{"id":"hello-friend","title":"Hello, friend!","level":"A0","language":"en","defaultDuration":50,"defaultMode":"all","objectives":["greet people politely in English","spell name aloud using the alphabet","introduce oneself to others"],"links":{"vocabulary":["hello","hi","goodbye","bye","name","spell","student","teacher"],"grammar":[{"topic_id":"to-be","manual_url":"https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/to-be.html"}],"communication":[{"phrase_id":"en:general:greetings-and-introductions:hello-nice-to-meet-you","manual_url":"https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/greetings-and-introductions.html"}],"phonetics":"en-pron-a1-01-alphabet"},"slides":[{"id":"hello-friend-slide-1","title":"Warm-up & Overview","stage":"warm-up","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Lesson Objectives for Hello, friend!:"},{"type":"blockquote","content":"greet people politely in English; spell name aloud using the alphabet; introduce oneself to others"}]},{"id":"hello-friend-slide-2","title":"Vocabulary & Input","stage":"input","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Review key terms and target language below:"},{"type":"blockquote","content":"Key terms: hello, hi, goodbye, bye, name, spell"}]},{"id":"hello-friend-slide-grammar","title":"Grammar Focus","stage":"input","duration":50,"mode":"all","elements":[{"type":"grammar-focus","grammarId":"en-a1-to-be"}]},{"id":"hello-friend-slide-3","title":"Controlled Practice","stage":"controlled-practice","duration":50,"mode":"all","elements":[{"type":"instruction","content":"What is the polite greeting for the morning?"},{"type":"test","options":["Good morning","Good night","Goodbye"]}]},{"id":"hello-friend-slide-4","title":"Reading & Listening Skills","stage":"reading-listening","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Read the short passage below (recycling introduced vocabulary):"},{"type":"blockquote","content":"Hello! My name is Alex. I am a student. Good morning to my teacher and my friend."},{"type":"instruction","content":"Listening Task: Listen to your teacher / audio prompt and answer the comprehension question."}]},{"id":"hello-friend-slide-5","title":"Freer Speaking Practice","stage":"freer-practice","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Practice saying hello, stating your name, and spelling your full name to your teacher."}]},{"id":"hello-friend-slide-6","title":"Cool-down & Summary","stage":"cool-down","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Lesson Summary & Feedback:"},{"type":"blockquote","content":"Today you practiced: greet people politely in English, spell name aloud using the alphabet, introduce oneself to others."}]}]}
+{
+  "id": "hello-friend",
+  "title": "Hello, friend!",
+  "level": "A0",
+  "language": "en",
+  "unit": "Unit 1. Hello there!",
+  "canDo": "I can greet people, introduce myself, spell my name, and share contact details.",
+  "defaultDuration": 50,
+  "defaultMode": "all",
+  "objectives": [
+    "greet people politely in English",
+    "spell my name and share my email and phone number",
+    "use survival phrases to keep a conversation going"
+  ],
+  "materials": "Whiteboard, name cards, alphabet chart, audio script, COSYmanuals 'to be' and 'pronouns' pages.",
+  "assessment": "Check greetings, spelling, email/phone phrasing, and survival phrases.",
+  "homework": "Make a contact card for yourself. Practise spelling your name and saying your email aloud three times.",
+  "recycling": {
+    "prior": "Recycles greetings and names from the first lesson.",
+    "next": "Lesson 2 recycles introductions and adds jobs with a/an."
+  },
+  "differentiation": {
+    "individual": "Teacher models each greeting, uses mirror work for mouth position, and repeats the alphabet chant.",
+    "group": "Speed-greeting mingle: students greet five classmates and collect names.",
+    "children": "Use a puppet and an alphabet song; children clap for each letter.",
+    "teens": "Use a name-badge challenge and a short selfie-style introduction.",
+    "adults": "Link greetings to workplace introductions and business cards.",
+    "seniors": "Use large-print name cards, a slower pace, and repeated choral practice."
+  },
+  "links": {
+    "vocabulary": [
+      "hello",
+      "hi",
+      "goodbye",
+      "name",
+      "spell",
+      "student",
+      "teacher",
+      "friend",
+      "alphabet",
+      "email",
+      "phone",
+      "number",
+      "at",
+      "dot",
+      "hyphen"
+    ],
+    "grammar": [
+      {
+        "topic_id": "to-be",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/to-be.html"
+      },
+      {
+        "topic_id": "pronouns",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/pronouns.html"
+      },
+      {
+        "topic_id": "question-words",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/question-words.html"
+      }
+    ],
+    "phonetics": "en-pron-a1-01-alphabet",
+    "communication": [
+      {
+        "phrase_id": "en:general:greetings-and-introductions:hello-nice-to-meet-you",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/greetings-and-introductions.html"
+      }
+    ]
+  },
+  "slides": [
+    {
+      "id": "hello-friend-slide-1",
+      "title": "1. Communication Goal & Overview",
+      "stage": "warm-up",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Communication Goal: I can greet people, introduce myself, spell my name, and share contact details."
+        },
+        {
+          "type": "blockquote",
+          "content": "Lesson overview:\n- Level: A0 General English\n- Unit: Unit 1. Hello there!\n- Time: 60 min (Essential) / 90 min (Expanded) / 120 min (Full Workshop)\n- Focus: Hello, friend!\n- Materials: Whiteboard, name cards, alphabet chart, audio script, COSYmanuals 'to be' and 'pronouns' pages."
+        },
+        {
+          "type": "instruction",
+          "content": "By the end of this lesson, you can:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• greet people politely in English\n• spell my name and share my email and phone number\n• use survival phrases to keep a conversation going"
+        }
+      ]
+    },
+    {
+      "id": "hello-friend-slide-2",
+      "title": "2. Recycling & Continuity",
+      "stage": "recycling",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Recycling & Course Continuity:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Prior learning: Recycles greetings and names from the first lesson.\n\nNext lesson: Lesson 2 recycles introductions and adds jobs with a/an."
+        },
+        {
+          "type": "instruction",
+          "content": "Quick retrieval task: which words or phrases do you remember?"
+        },
+        {
+          "type": "test",
+          "content": "Which word belongs to the previous lesson?",
+          "options": [
+            "hello",
+            "banana",
+            "airport"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hello-friend-slide-3",
+      "title": "3. Vocabulary & Essential Chunks",
+      "stage": "input",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Core Active Vocabulary (15 items):"
+        },
+        {
+          "type": "blockquote",
+          "content": "hello — a greeting when you meet someone. Example: Hello, my name is Alex.\nhi — an informal greeting. Example: Hi, how are you?\ngoodbye — a word you say when you leave. Example: Goodbye, see you tomorrow.\nname — the word people use to call you. Example: My name is Sara.\nspell — to say the letters of a word. Example: Can you spell your name, please?\nstudent — a person who studies. Example: I am a student.\nteacher — a person who helps students learn. Example: She is my English teacher.\nfriend — a person you like and know well. Example: Tom is my best friend.\nalphabet — the letters A to Z. Example: The English alphabet has 26 letters.\nemail — an electronic address for messages. Example: My email is alex at school dot com.\nphone — a device for calls and messages. Example: My phone number is 078-452-9103.\nnumber — a set of digits used to identify something. Example: What is your phone number?\nat — the symbol @ in an email address. Example: Write 'alex at school dot com'.\ndot — the symbol . in an email address. Example: It is alex dot brown at mail dot com.\nhyphen — the short line - in a word or number. Example: My email has a hyphen in it."
+        },
+        {
+          "type": "instruction",
+          "content": "Essential Chunks & Functional Collocations:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• Hello, my name is... (introducing yourself)\n• Nice to meet you. (polite response when you meet someone)\n• How are you? I'm fine, thanks. (greeting and answer)\n• Can you spell your name, please? (asking for spelling)\n• My email is ... at ... dot com. (sharing an email address)\n• Sorry, can you repeat that? (asking someone to say it again)\n• What does ... mean? (asking for meaning)"
+        },
+        {
+          "type": "instruction",
+          "content": "Vocabulary practice: choose the correct word."
+        },
+        {
+          "type": "test",
+          "content": "Which word means 'a greeting when you meet someone'?",
+          "options": [
+            "hello",
+            "goodbye",
+            "name"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Which word means 'an informal greeting'?",
+          "options": [
+            "hi",
+            "spell",
+            "student"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Complete the sentence with a word from the list."
+        },
+        {
+          "type": "input",
+          "placeholder": "Complete: Hello, my name is Alex."
+        }
+      ]
+    },
+    {
+      "id": "hello-friend-slide-4",
+      "title": "4. Pronunciation Focus",
+      "stage": "pronunciation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Pronunciation Focus: Alphabet vowels and falling intonation in greetings"
+        },
+        {
+          "type": "blockquote",
+          "content": "hello /həˈləʊ/ — stress the second syllable\nname /neɪm/ — long /eɪ/ sound\nfriend /frend/ — silent i\ngoodbye /ɡʊdˈbaɪ/ — stress the second syllable"
+        },
+        {
+          "type": "instruction",
+          "content": "Listen and repeat:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Hello! My name is Alex. I am a student. Goodbye, friend!"
+        },
+        {
+          "type": "instruction",
+          "content": "Mark the stressed syllable in these words:"
+        },
+        {
+          "type": "input",
+          "placeholder": "Mark the stress: hello, name, friend"
+        }
+      ]
+    },
+    {
+      "id": "hello-friend-slide-5",
+      "title": "5. Grammar Focus & Controlled Practice",
+      "stage": "grammar",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Grammar Focus: Use 'be' to say who someone is, how they feel, and where they are from."
+        },
+        {
+          "type": "grammar-focus",
+          "grammarId": "en-a1-to-be"
+        },
+        {
+          "type": "blockquote",
+          "content": "Form:\nThe verb 'to be': I am / You are / He, she, it is / We are / They are. Negative: I'm not, isn't, aren't. Question: Am I...? Are you...? Is he...?\n\nExamples:\n• I am a student.\n• She is from Spain.\n• We are happy today.\n• They are not teachers."
+        },
+        {
+          "type": "instruction",
+          "content": "Controlled practice: choose the correct form."
+        },
+        {
+          "type": "test",
+          "content": "My name ___ Alex.",
+          "options": [
+            "am",
+            "is",
+            "are"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "They ___ from Italy.",
+          "options": [
+            "am",
+            "is",
+            "are"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "I ___ tired today.",
+          "options": [
+            "am",
+            "is",
+            "are"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "She ___ not a teacher.",
+          "options": [
+            "am",
+            "is",
+            "are"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Substitution drill: say the sentence with the new words."
+        },
+        {
+          "type": "blockquote",
+          "content": "• I am ... (a student / happy / from Egypt).\n• She is ... (a teacher / tired / from Spain).\n• They are ... (students / at home / happy)."
+        },
+        {
+          "type": "instruction",
+          "content": "Question-answer practice: ask and answer with your partner."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Are you a student? — Yes, I am. / No, I'm not.\n• Is she from France? — Yes, she is. / No, she isn't.\n• Are they happy? — Yes, they are. / No, they aren't."
+        },
+        {
+          "type": "instruction",
+          "content": "Personalised production: use the structure about your own life."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Write two true sentences with 'I am...' and 'I am not...'.\n• Introduce two people in the class with 'He/She is...'."
+        }
+      ]
+    },
+    {
+      "id": "hello-friend-slide-6",
+      "title": "6. Four Skills Distribution (Listening & Reading)",
+      "stage": "reading-listening",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Reading: Hello, friend!"
+        },
+        {
+          "type": "blockquote",
+          "content": "Hello! My name is Alex. I am a student. My email is alex at school dot com. My phone number is 078-452-9103. This is my friend Maria. She is a student too. Our teacher is Mr Brown. He is very nice. Sorry, can you repeat that? Yes, of course. What does 'email' mean? It is an electronic address. Goodbye, see you tomorrow!"
+        },
+        {
+          "type": "test",
+          "content": "What is Alex's email?",
+          "options": [
+            "alex at school dot com",
+            "alex at home dot com",
+            "maria at school dot com"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "What is Alex's phone number?",
+          "options": [
+            "078-452-9103",
+            "078-542-9103",
+            "087-452-9103"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Listening: listen to the dialogue and answer the questions."
+        },
+        {
+          "type": "blockquote",
+          "content": "A: Hello! My name is Alex.\nB: Hi, Alex. I'm Maria.\nA: Nice to meet you, Maria. Can you spell your name?\nB: Yes, M-A-R-I-A.\nA: And what is your email?\nB: It's maria at school dot com.\nA: Sorry, can you repeat that?\nB: Maria at school dot com. M-A-R-I-A at school dot com."
+        },
+        {
+          "type": "test",
+          "content": "How does Maria spell her name?",
+          "options": [
+            "M-A-R-I-A",
+            "M-A-R-I-E",
+            "M-A-R-Y"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "What is Maria's email?",
+          "options": [
+            "maria at school dot com",
+            "alex at school dot com",
+            "maria at home dot com"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hello-friend-slide-7",
+      "title": "7. Speaking & Writing Production",
+      "stage": "freer-practice",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Speaking task: Introduce yourself to three classmates. Spell your name and share your email or phone number."
+        },
+        {
+          "type": "blockquote",
+          "content": "• What do you say when you meet someone new?\n• How do you spell your name?\n• How do you say an email address in English?\n• What do you say when you don't understand?\n• Which survival phrase is most useful for you?"
+        },
+        {
+          "type": "instruction",
+          "content": "Role-play: You are at a workshop check-in. Give your name, spell it, share your email, and ask the staff member to repeat one detail."
+        },
+        {
+          "type": "blockquote",
+          "content": "Work in pairs. Take turns. Use at least five target words and one target grammar structure. Then swap roles."
+        },
+        {
+          "type": "instruction",
+          "content": "Writing task: Write a contact card with your name, job or studies, email, phone number, and one survival phrase."
+        },
+        {
+          "type": "blockquote",
+          "content": "Model: Hi, I'm ... I'm a ... My email is ... at ... dot com. My phone number is ... Sorry, can you repeat that?"
+        },
+        {
+          "type": "essay",
+          "placeholder": "Write your response here..."
+        }
+      ]
+    },
+    {
+      "id": "hello-friend-slide-8",
+      "title": "8. Multi-Duration Lesson Flows",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Timestamped Multi-Duration Flows:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• 60 min (Essential): 0–8 Warm-up & goal; 8–18 Vocabulary & chunks; 18–28 Grammar & controlled practice; 28–40 Reading/listening + speaking; 40–50 Role-play; 50–60 Cool-down & homework.\n\n• 90 min (Expanded): 0–10 Warm-up; 10–25 Vocabulary & pronunciation; 25–40 Grammar & controlled practice; 40–55 Reading/listening; 55–75 Speaking & role-play; 75–85 Writing; 85–90 Cool-down.\n\n• 120 min (Full Workshop): 0–15 Warm-up & diagnostic; 15–35 Vocabulary lab; 35–55 Grammar workshop; 55–75 Reading/listening; 75–95 Speaking & role-play; 95–110 Writing & portfolio; 110–120 Cool-down & feedback."
+        }
+      ]
+    },
+    {
+      "id": "hello-friend-slide-9",
+      "title": "9. Delivery Adaptations",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Individual Lesson Adaptation:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Teacher models each greeting, uses mirror work for mouth position, and repeats the alphabet chant."
+        },
+        {
+          "type": "instruction",
+          "content": "Group Lesson Adaptation:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Speed-greeting mingle: students greet five classmates and collect names."
+        },
+        {
+          "type": "instruction",
+          "content": "Age Adaptations:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Children: Use a puppet and an alphabet song; children clap for each letter.\nTeens: Use a name-badge challenge and a short selfie-style introduction.\nAdults: Link greetings to workplace introductions and business cards.\nSeniors: Use large-print name cards, a slower pace, and repeated choral practice."
+        }
+      ]
+    },
+    {
+      "id": "hello-friend-slide-10",
+      "title": "10. Homework & Recycling Notes",
+      "stage": "cool-down",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Homework Assignment:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Make a contact card for yourself. Practise spelling your name and saying your email aloud three times."
+        },
+        {
+          "type": "instruction",
+          "content": "Self-Assessment: I can..."
+        },
+        {
+          "type": "blockquote",
+          "content": "• greet people politely in English\n• spell my name and share my email and phone number\n• use survival phrases to keep a conversation going\n• use the target vocabulary\n• ask and answer the key questions"
+        },
+        {
+          "type": "instruction",
+          "content": "Recycling into Next Lesson:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Lesson 2 recycles introductions and adds jobs with a/an."
+        }
+      ]
+    }
+  ]
+}

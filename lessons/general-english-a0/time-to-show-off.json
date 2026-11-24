@@ -1,1 +1,481 @@
-{"id":"time-to-show-off","title":"Time to show off","level":"A0","language":"en","defaultDuration":50,"defaultMode":"all","objectives":["consolidate greetings, self-introductions, and basic Q&A","respond to common polite prompts"],"links":{"vocabulary":["nice","welcome","excuse","happy","student","teacher"],"grammar":[{"topic_id":"to-be","manual_url":"https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/to-be.html"}],"communication":[{"phrase_id":"en:general:greetings-and-introductions:good-morning-how-are-you","manual_url":"https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/greetings-and-introductions.html"}]},"slides":[{"id":"time-to-show-off-slide-1","title":"Warm-up & Overview","stage":"warm-up","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Lesson Objectives for Time to show off:"},{"type":"blockquote","content":"consolidate greetings, self-introductions, and basic Q&A; respond to common polite prompts"}]},{"id":"time-to-show-off-slide-2","title":"Vocabulary & Input","stage":"input","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Review key terms and target language below:"},{"type":"blockquote","content":"Key terms: nice, welcome, excuse, happy, student, teacher"}]},{"id":"time-to-show-off-slide-grammar","title":"Grammar Focus","stage":"input","duration":50,"mode":"all","elements":[{"type":"grammar-focus","grammarId":"en-a1-to-be"}]},{"id":"time-to-show-off-slide-3","title":"Controlled Practice","stage":"controlled-practice","duration":50,"mode":"all","elements":[{"type":"instruction","content":"What is the polite response to 'Nice to meet you'?"},{"type":"test","options":["Nice to meet you too!","Goodbye!","I am not fine."]}]},{"id":"time-to-show-off-slide-4","title":"Reading & Listening Skills","stage":"reading-listening","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Read the short passage below (recycling introduced vocabulary):"},{"type":"blockquote","content":"Hello! Nice to meet you. How are you? I am fine, thanks. Welcome to our English class."},{"type":"instruction","content":"Listening Task: Listen to your teacher / audio prompt and answer the comprehension question."}]},{"id":"time-to-show-off-slide-5","title":"Freer Speaking Practice","stage":"freer-practice","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Roleplay a first-meeting conversation with your partner covering name, origin, and feelings."}]},{"id":"time-to-show-off-slide-6","title":"Cool-down & Summary","stage":"cool-down","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Lesson Summary & Feedback:"},{"type":"blockquote","content":"Today you practiced: consolidate greetings, self-introductions, and basic Q&A, respond to common polite prompts."}]}]}
+{
+  "id": "time-to-show-off",
+  "title": "Time to show off",
+  "level": "A0",
+  "language": "en",
+  "unit": "Unit 1. Hello there!",
+  "canDo": "I can introduce myself, say what I do, and ask others about their jobs.",
+  "defaultDuration": 50,
+  "defaultMode": "all",
+  "objectives": [
+    "greet and introduce yourself",
+    "talk about jobs with a/an",
+    "ask and answer 'What do you do?'"
+  ],
+  "materials": "Dialogue cards, name badges, whiteboard, COSYmanuals 'to be' and 'question words' pages.",
+  "assessment": "Check a/an with jobs and accurate job questions.",
+  "homework": "Write five sentences about jobs in your family. Use a/an correctly.",
+  "recycling": {
+    "prior": "Recycles greetings and introductions from Lesson 1.",
+    "next": "Lesson 3 recycles jobs to talk about daily routines."
+  },
+  "differentiation": {
+    "individual": "Teacher plays both roles first, then swaps roles and gives feedback.",
+    "group": "Speed-meeting carousel with a new partner every two minutes.",
+    "children": "Use puppets and a 'hello song' with actions.",
+    "teens": "Use a mock 'new school' scenario and record a short introduction.",
+    "adults": "Use a networking-event roleplay with business cards.",
+    "seniors": "Use large-print dialogue cards and a slow, repeated roleplay."
+  },
+  "links": {
+    "vocabulary": [
+      "nice",
+      "welcome",
+      "excuse",
+      "happy",
+      "student",
+      "teacher",
+      "friend",
+      "fine",
+      "thank",
+      "goodbye",
+      "designer",
+      "engineer",
+      "nurse",
+      "chef",
+      "manager"
+    ],
+    "grammar": [
+      {
+        "topic_id": "articles",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/articles.html"
+      },
+      {
+        "topic_id": "to-be",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/to-be.html"
+      },
+      {
+        "topic_id": "question-words",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/question-words.html"
+      }
+    ],
+    "phonetics": "Polite intonation and the /w/ sound in 'welcome'",
+    "communication": [
+      {
+        "phrase_id": "en:general:greetings-and-introductions:good-morning-how-are-you",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/greetings-and-introductions.html"
+      }
+    ]
+  },
+  "slides": [
+    {
+      "id": "time-to-show-off-slide-1",
+      "title": "1. Communication Goal & Overview",
+      "stage": "warm-up",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Communication Goal: I can introduce myself, say what I do, and ask others about their jobs."
+        },
+        {
+          "type": "blockquote",
+          "content": "Lesson overview:\n- Level: A0 General English\n- Unit: Unit 1. Hello there!\n- Time: 60 min (Essential) / 90 min (Expanded) / 120 min (Full Workshop)\n- Focus: Time to show off\n- Materials: Dialogue cards, name badges, whiteboard, COSYmanuals 'to be' and 'question words' pages."
+        },
+        {
+          "type": "instruction",
+          "content": "By the end of this lesson, you can:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• greet and introduce yourself\n• talk about jobs with a/an\n• ask and answer 'What do you do?'"
+        }
+      ]
+    },
+    {
+      "id": "time-to-show-off-slide-2",
+      "title": "2. Recycling & Continuity",
+      "stage": "recycling",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Recycling & Course Continuity:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Prior learning: Recycles greetings and introductions from Lesson 1.\n\nNext lesson: Lesson 3 recycles jobs to talk about daily routines."
+        },
+        {
+          "type": "instruction",
+          "content": "Quick retrieval task: which words or phrases do you remember?"
+        },
+        {
+          "type": "test",
+          "content": "Which word belongs to the previous lesson?",
+          "options": [
+            "nice",
+            "banana",
+            "airport"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "time-to-show-off-slide-3",
+      "title": "3. Vocabulary & Essential Chunks",
+      "stage": "input",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Core Active Vocabulary (15 items):"
+        },
+        {
+          "type": "blockquote",
+          "content": "nice — pleasant or kind. Example: She is a nice person.\nwelcome — a friendly greeting to a guest. Example: Welcome to our home!\nexcuse — a polite word used to get attention or say sorry. Example: Excuse me, is this your book?\nhappy — feeling good and positive. Example: I am happy today.\nstudent — a person who studies. Example: I am a student.\nteacher — a person who helps students learn. Example: She is my English teacher.\nfriend — a person you like and know well. Example: Tom is my best friend.\nfine — well or okay. Example: I am fine, thank you.\nthank — to say you are grateful. Example: Thank you for your help.\ngoodbye — a word you say when you leave. Example: Goodbye, see you tomorrow.\ndesigner — a person who designs things. Example: She is a UX designer.\nengineer — a person who designs or builds machines and systems. Example: He is a software engineer.\nnurse — a person who cares for sick people. Example: She is a nurse in a hospital.\nchef — a person who cooks in a restaurant. Example: He is a chef in a small bistro.\nmanager — a person who leads a team. Example: She is a project manager."
+        },
+        {
+          "type": "instruction",
+          "content": "Essential Chunks & Functional Collocations:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• Nice to meet you. (polite introduction)\n• What do you do? (asking about a job)\n• I'm a designer. (stating a job with a/an)\n• I'm an engineer. (stating a job with a/an)\n• Are you a student? — No, I'm a freelancer. (asking and answering about work)\n• I work in an office. / I work from home. (talking about a workplace)\n• Excuse me, can you repeat that? (polite survival phrase)"
+        },
+        {
+          "type": "instruction",
+          "content": "Vocabulary practice: choose the correct word."
+        },
+        {
+          "type": "test",
+          "content": "Which word means 'pleasant or kind'?",
+          "options": [
+            "nice",
+            "excuse",
+            "happy"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Which word means 'a friendly greeting to a guest'?",
+          "options": [
+            "welcome",
+            "student",
+            "teacher"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Complete the sentence with a word from the list."
+        },
+        {
+          "type": "input",
+          "placeholder": "Complete: She is a ___ person."
+        }
+      ]
+    },
+    {
+      "id": "time-to-show-off-slide-4",
+      "title": "4. Pronunciation Focus",
+      "stage": "pronunciation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Pronunciation Focus: Polite intonation and the /w/ sound in 'welcome'"
+        },
+        {
+          "type": "blockquote",
+          "content": "welcome /ˈwelkəm/ — stress the first syllable\nexcuse /ɪkˈskjuːz/ — stress the second syllable\nthank /θæŋk/ — voiceless th\ngoodbye /ɡʊdˈbaɪ/ — stress the second syllable"
+        },
+        {
+          "type": "instruction",
+          "content": "Listen and repeat:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Nice to meet you. Welcome to our class. How are you? I'm fine, thanks."
+        },
+        {
+          "type": "instruction",
+          "content": "Mark the stressed syllable in these words:"
+        },
+        {
+          "type": "input",
+          "placeholder": "Mark the stress: welcome, excuse, thank"
+        }
+      ]
+    },
+    {
+      "id": "time-to-show-off-slide-5",
+      "title": "5. Grammar Focus & Controlled Practice",
+      "stage": "grammar",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Grammar Focus: Use 'a/an' for one non-specific countable noun and 'the' for a specific noun."
+        },
+        {
+          "type": "grammar-focus",
+          "grammarId": "en-a1-articles"
+        },
+        {
+          "type": "blockquote",
+          "content": "Form:\nArticles: a / an / the: a + consonant sound (a teacher), an + vowel sound (an engineer), the + specific noun (the teacher in our class).\n\nExamples:\n• She is a teacher.\n• He is an engineer.\n• The teacher is in the classroom.\n• I have a book and an apple."
+        },
+        {
+          "type": "instruction",
+          "content": "Controlled practice: choose the correct form."
+        },
+        {
+          "type": "test",
+          "content": "My mother is ___ nurse.",
+          "options": [
+            "a",
+            "an",
+            "the"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "He is ___ engineer.",
+          "options": [
+            "a",
+            "an",
+            "the"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "___ doctor in our town is very kind.",
+          "options": [
+            "A",
+            "An",
+            "The"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "I have ___ apple and ___ banana.",
+          "options": [
+            "a / a",
+            "an / a",
+            "the / the"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Substitution drill: say the sentence with the new words."
+        },
+        {
+          "type": "blockquote",
+          "content": "• She is a ... (teacher / doctor / manager).\n• He is an ... (engineer / actor / artist).\n• The ... is ..."
+        },
+        {
+          "type": "instruction",
+          "content": "Question-answer practice: ask and answer with your partner."
+        },
+        {
+          "type": "blockquote",
+          "content": "• What is your job or dream job?\n• Who is a hero in your community?\n• Where does a nurse work?"
+        },
+        {
+          "type": "instruction",
+          "content": "Personalised production: use the structure about your own life."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Write three sentences about jobs with 'a' and 'an'.\n• Write three sentences about people in your community with 'the'."
+        }
+      ]
+    },
+    {
+      "id": "time-to-show-off-slide-6",
+      "title": "6. Four Skills Distribution (Listening & Reading)",
+      "stage": "reading-listening",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Reading: Time to show off"
+        },
+        {
+          "type": "blockquote",
+          "content": "Hello! My name is David. I am a new student. This is my friend Sara. She is a teacher. She works in a school. My brother is an engineer. He works for a big company. My sister is a nurse. She works in a hospital. What do you do? Are you a student? Excuse me, can you repeat that? Yes, of course. Goodbye, see you tomorrow!"
+        },
+        {
+          "type": "test",
+          "content": "What is Sara's job?",
+          "options": [
+            "a teacher",
+            "a nurse",
+            "an engineer"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Where does David's brother work?",
+          "options": [
+            "for a big company",
+            "in a hospital",
+            "in a school"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Listening: listen to the dialogue and answer the questions."
+        },
+        {
+          "type": "blockquote",
+          "content": "A: Good morning! Welcome to our class.\nB: Good morning. Nice to meet you.\nA: Nice to meet you too. What do you do?\nB: I'm a designer. I work from home. And you?\nA: I'm a teacher. I work in a school.\nB: Excuse me, can you repeat that?\nA: Yes, I'm a teacher. I work in a school."
+        },
+        {
+          "type": "test",
+          "content": "What does the first speaker do?",
+          "options": [
+            "a designer",
+            "a teacher",
+            "a nurse"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Where does the teacher work?",
+          "options": [
+            "in a school",
+            "in a hospital",
+            "from home"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "time-to-show-off-slide-7",
+      "title": "7. Speaking & Writing Production",
+      "stage": "freer-practice",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Speaking task: Ask three classmates what they do and where they work. Report one answer to the group."
+        },
+        {
+          "type": "blockquote",
+          "content": "• What do you do?\n• Where do you work or study?\n• Do you work from home or in an office?\n• What job do you want?\n• Which job helps people most?"
+        },
+        {
+          "type": "instruction",
+          "content": "Role-play: You are at a networking event. Introduce yourself, say what you do, and ask three people about their jobs."
+        },
+        {
+          "type": "blockquote",
+          "content": "Work in pairs. Take turns. Use at least five target words and one target grammar structure. Then swap roles."
+        },
+        {
+          "type": "instruction",
+          "content": "Writing task: Write five sentences about you and your family's jobs."
+        },
+        {
+          "type": "blockquote",
+          "content": "Model: I'm a ... My mother is a ... My father is an ... She works in ... He works for ..."
+        },
+        {
+          "type": "essay",
+          "placeholder": "Write your response here..."
+        }
+      ]
+    },
+    {
+      "id": "time-to-show-off-slide-8",
+      "title": "8. Multi-Duration Lesson Flows",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Timestamped Multi-Duration Flows:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• 60 min (Essential): 0–8 Warm-up & goal; 8–18 Vocabulary & chunks; 18–28 Grammar & controlled practice; 28–40 Reading/listening + speaking; 40–50 Role-play; 50–60 Cool-down & homework.\n\n• 90 min (Expanded): 0–10 Warm-up; 10–25 Vocabulary & pronunciation; 25–40 Grammar & controlled practice; 40–55 Reading/listening; 55–75 Speaking & role-play; 75–85 Writing; 85–90 Cool-down.\n\n• 120 min (Full Workshop): 0–15 Warm-up & diagnostic; 15–35 Vocabulary lab; 35–55 Grammar workshop; 55–75 Reading/listening; 75–95 Speaking & role-play; 95–110 Writing & portfolio; 110–120 Cool-down & feedback."
+        }
+      ]
+    },
+    {
+      "id": "time-to-show-off-slide-9",
+      "title": "9. Delivery Adaptations",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Individual Lesson Adaptation:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Teacher plays both roles first, then swaps roles and gives feedback."
+        },
+        {
+          "type": "instruction",
+          "content": "Group Lesson Adaptation:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Speed-meeting carousel with a new partner every two minutes."
+        },
+        {
+          "type": "instruction",
+          "content": "Age Adaptations:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Children: Use puppets and a 'hello song' with actions.\nTeens: Use a mock 'new school' scenario and record a short introduction.\nAdults: Use a networking-event roleplay with business cards.\nSeniors: Use large-print dialogue cards and a slow, repeated roleplay."
+        }
+      ]
+    },
+    {
+      "id": "time-to-show-off-slide-10",
+      "title": "10. Homework & Recycling Notes",
+      "stage": "cool-down",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Homework Assignment:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Write five sentences about jobs in your family. Use a/an correctly."
+        },
+        {
+          "type": "instruction",
+          "content": "Self-Assessment: I can..."
+        },
+        {
+          "type": "blockquote",
+          "content": "• greet and introduce yourself\n• talk about jobs with a/an\n• ask and answer 'What do you do?'\n• use the target vocabulary\n• ask and answer the key questions"
+        },
+        {
+          "type": "instruction",
+          "content": "Recycling into Next Lesson:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Lesson 3 recycles jobs to talk about daily routines."
+        }
+      ]
+    }
+  ]
+}

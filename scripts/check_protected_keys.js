@@ -29,7 +29,8 @@ const IGNORED_PATHS = [
   'package-lock.json',
   'verification',
   // Git-ignored local source; answers are seeded to lesson_protected.
-  'student-workbooks'
+  'student-workbooks',
+  'local_content'
 ];
 
 const PROHIBITED_KEYS = ['answers', 'teacherNotes', 'answer-key'];

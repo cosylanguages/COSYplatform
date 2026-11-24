@@ -1,1 +1,475 @@
-{"id":"family-exchange","title":"Family exchange","level":"A1","language":"en","defaultDuration":50,"defaultMode":"all","objectives":["discuss family structure in cultural exchange contexts","use possessive adjectives and 's accurately"],"links":{"vocabulary":["mother","father","brother","sister","husband","wife","cousin","uncle","aunt"],"grammar":[{"topic_id":"to-be","manual_url":"https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/to-be.html"}],"communication":[{"phrase_id":"en:general:describing-family:this-is-my-mother","manual_url":"https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/describing-family.html"}]},"slides":[{"id":"family-exchange-slide-1","title":"Warm-up & Overview","stage":"warm-up","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Lesson Objectives for Family exchange:"},{"type":"blockquote","content":"discuss family structure in cultural exchange contexts; use possessive adjectives and 's accurately"}]},{"id":"family-exchange-slide-2","title":"Vocabulary & Input","stage":"input","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Review key terms and target language below:"},{"type":"blockquote","content":"Key terms: mother, father, brother, sister, husband, wife"}]},{"id":"family-exchange-slide-grammar","title":"Grammar Focus","stage":"input","duration":50,"mode":"all","elements":[{"type":"grammar-focus","grammarId":"en-a1-to-be"}]},{"id":"family-exchange-slide-3","title":"Controlled Practice","stage":"controlled-practice","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Where does the host family live in the reading passage?"},{"type":"test","options":["England","Italy","Japan"]}]},{"id":"family-exchange-slide-4","title":"Reading & Listening Skills","stage":"reading-listening","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Read the short passage below (recycling introduced vocabulary):"},{"type":"blockquote","content":"My host family in England is very nice. My host mother and father have two children and an aunt."},{"type":"instruction","content":"Listening Task: Listen to your teacher / audio prompt and answer the comprehension question."}]},{"id":"family-exchange-slide-5","title":"Freer Speaking Practice","stage":"freer-practice","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Describe your host or exchange family structure to your partner."}]},{"id":"family-exchange-slide-6","title":"Cool-down & Summary","stage":"cool-down","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Lesson Summary & Feedback:"},{"type":"blockquote","content":"Today you practiced: discuss family structure in cultural exchange contexts, use possessive adjectives and 's accurately."}]}]}
+{
+  "id": "family-exchange",
+  "title": "Family exchange",
+  "level": "A1",
+  "language": "en",
+  "unit": "Unit 1. Nice to meet you!",
+  "canDo": "I can describe a family in a cultural-exchange context.",
+  "defaultDuration": 50,
+  "defaultMode": "all",
+  "objectives": [
+    "discuss family structure in cultural exchange contexts",
+    "use possessive adjectives and 's accurately"
+  ],
+  "materials": "Family photos, family-tree template, COSYmanuals 'possessive adjectives', 'possessive 's', and 'have got' pages.",
+  "assessment": "Check possessive adjective choice and 's placement.",
+  "homework": "Write five sentences about your family. Use at least three possessive forms.",
+  "recycling": {
+    "prior": "Recycles family vocabulary and possessives from A0.",
+    "next": "Lesson 4 recycles personal details to discuss world nationalities."
+  },
+  "differentiation": {
+    "individual": "Use family photos and a possessive-question drill.",
+    "group": "Host-family roleplay with exchange-student scenarios.",
+    "children": "Use a family-tree craft and a possessive song.",
+    "teens": "Use a 'meet my family' presentation.",
+    "adults": "Discuss cultural differences in family life.",
+    "seniors": "Use large-print photos and a respectful family discussion."
+  },
+  "links": {
+    "vocabulary": [
+      "mother",
+      "father",
+      "brother",
+      "sister",
+      "husband",
+      "wife",
+      "cousin",
+      "uncle",
+      "aunt",
+      "family"
+    ],
+    "grammar": [
+      {
+        "topic_id": "possessive-adjectives",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/possessive-adjectives.html"
+      },
+      {
+        "topic_id": "possessive-s",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/possessive-s.html"
+      },
+      {
+        "topic_id": "have-got",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/have-got.html"
+      }
+    ],
+    "phonetics": "Family word stress and the /ʌ/ sound in 'husband'",
+    "communication": [
+      {
+        "phrase_id": "en:general:describing-family:this-is-my-mother",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/describing-family.html"
+      }
+    ]
+  },
+  "slides": [
+    {
+      "id": "family-exchange-slide-1",
+      "title": "1. Communication Goal & Overview",
+      "stage": "warm-up",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Communication Goal: I can describe a family in a cultural-exchange context."
+        },
+        {
+          "type": "blockquote",
+          "content": "Lesson overview:\n- Level: A1 General English\n- Unit: Unit 1. Nice to meet you!\n- Time: 60 min (Essential) / 90 min (Expanded) / 120 min (Full Workshop)\n- Focus: Family exchange\n- Materials: Family photos, family-tree template, COSYmanuals 'possessive adjectives', 'possessive 's', and 'have got' pages."
+        },
+        {
+          "type": "instruction",
+          "content": "By the end of this lesson, you can:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• discuss family structure in cultural exchange contexts\n• use possessive adjectives and 's accurately"
+        }
+      ]
+    },
+    {
+      "id": "family-exchange-slide-2",
+      "title": "2. Recycling & Continuity",
+      "stage": "recycling",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Recycling & Course Continuity:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Prior learning: Recycles family vocabulary and possessives from A0.\n\nNext lesson: Lesson 4 recycles personal details to discuss world nationalities."
+        },
+        {
+          "type": "instruction",
+          "content": "Quick retrieval task: which words or phrases do you remember?"
+        },
+        {
+          "type": "test",
+          "content": "Which word belongs to the previous lesson?",
+          "options": [
+            "mother",
+            "banana",
+            "airport"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "family-exchange-slide-3",
+      "title": "3. Vocabulary & Essential Chunks",
+      "stage": "input",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Core Active Vocabulary (10 items):"
+        },
+        {
+          "type": "blockquote",
+          "content": "mother — a female parent. Example: My mother is a nurse.\nfather — a male parent. Example: My father works in an office.\nbrother — a male sibling. Example: I have one brother.\nsister — a female sibling. Example: She has two sisters.\nhusband — a married man. Example: Her husband is a doctor.\nwife — a married woman. Example: His wife is a teacher.\ncousin — a child of your aunt or uncle. Example: My cousin lives in London.\nuncle — the brother of your mother or father. Example: My uncle is very funny.\naunt — the sister of your mother or father. Example: My aunt lives near us.\nfamily — parents, children, and relatives. Example: My family is big."
+        },
+        {
+          "type": "instruction",
+          "content": "Essential Chunks & Functional Collocations:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• This is my host family. (introducing a family)\n• My host mother is... (describing a host parent)\n• Her husband is... (describing a relation)\n• Their children are... (describing children)\n• I have two cousins. (talking about cousins)\n• We are like a family. (describing a close relationship)"
+        },
+        {
+          "type": "instruction",
+          "content": "Vocabulary practice: choose the correct word."
+        },
+        {
+          "type": "test",
+          "content": "Which word means 'a female parent'?",
+          "options": [
+            "mother",
+            "brother",
+            "sister"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Which word means 'a male parent'?",
+          "options": [
+            "father",
+            "husband",
+            "wife"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Complete the sentence with a word from the list."
+        },
+        {
+          "type": "input",
+          "placeholder": "Complete: My ___ is a nurse."
+        }
+      ]
+    },
+    {
+      "id": "family-exchange-slide-4",
+      "title": "4. Pronunciation Focus",
+      "stage": "pronunciation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Pronunciation Focus: Family word stress and the /ʌ/ sound in 'husband'"
+        },
+        {
+          "type": "blockquote",
+          "content": "mother /ˈmʌðə/ — voiced th\nfather /ˈfɑːðə/ — voiced th\nhusband /ˈhʌzbənd/ — stress the first syllable\ncousin /ˈkʌzn/ — silent i"
+        },
+        {
+          "type": "instruction",
+          "content": "Listen and repeat:"
+        },
+        {
+          "type": "blockquote",
+          "content": "This is my host family. Her husband is a teacher."
+        },
+        {
+          "type": "instruction",
+          "content": "Mark the stressed syllable in these words:"
+        },
+        {
+          "type": "input",
+          "placeholder": "Mark the stress: mother, father, husband"
+        }
+      ]
+    },
+    {
+      "id": "family-exchange-slide-5",
+      "title": "5. Grammar Focus & Controlled Practice",
+      "stage": "grammar",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Grammar Focus: Use possessive adjectives to say who something belongs to."
+        },
+        {
+          "type": "grammar-focus",
+          "grammarId": "en-a1-possessive-adjectives"
+        },
+        {
+          "type": "blockquote",
+          "content": "Form:\nPossessive adjectives: my, your, his, her, its, our, their + noun. They do not change with the noun: 'my books', 'her book'.\n\nExamples:\n• This is my bag.\n• Her name is Sara.\n• Our house is small.\n• Their children are at school."
+        },
+        {
+          "type": "instruction",
+          "content": "Controlled practice: choose the correct form."
+        },
+        {
+          "type": "test",
+          "content": "This is ___ bag. (I)",
+          "options": [
+            "my",
+            "your",
+            "his"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "___ name is Omar. (he)",
+          "options": [
+            "Her",
+            "His",
+            "Their"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "___ house is big. (we)",
+          "options": [
+            "Our",
+            "Their",
+            "Her"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "The children love ___ school. (they)",
+          "options": [
+            "their",
+            "our",
+            "his"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Substitution drill: say the sentence with the new words."
+        },
+        {
+          "type": "blockquote",
+          "content": "• This is ... (my / your / his) phone.\n• ... (Her / His / Their) name is Maria.\n• We love ... (our / their / her) city."
+        },
+        {
+          "type": "instruction",
+          "content": "Question-answer practice: ask and answer with your partner."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Whose bag is this?\n• What is your favourite place in your city?\n• Who is your best friend?"
+        },
+        {
+          "type": "instruction",
+          "content": "Personalised production: use the structure about your own life."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Write three sentences about your family with possessive adjectives.\n• Write three sentences about your things with possessive adjectives."
+        }
+      ]
+    },
+    {
+      "id": "family-exchange-slide-6",
+      "title": "6. Four Skills Distribution (Listening & Reading)",
+      "stage": "reading-listening",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Reading: Family exchange"
+        },
+        {
+          "type": "blockquote",
+          "content": "My host family in England is very nice. My host mother and father have two children. Their son is ten, and their daughter is fourteen. My host mother's sister lives nearby. Her husband is a doctor. I have two cousins in the family. We eat together and play games. We are like a family now."
+        },
+        {
+          "type": "test",
+          "content": "How many children do the host parents have?",
+          "options": [
+            "two",
+            "three",
+            "four"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Whose husband is a doctor?",
+          "options": [
+            "the host mother's sister's",
+            "the host mother's",
+            "the daughter's"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Listening: listen to the dialogue and answer the questions."
+        },
+        {
+          "type": "blockquote",
+          "content": "A: Tell me about your host family.\nB: My host mother is a teacher. Her husband is a doctor.\nA: Have they got children?\nB: Yes, they have got two children. Their son is ten.\nA: And who is the woman in the photo?\nB: She is my host mother's sister."
+        },
+        {
+          "type": "test",
+          "content": "What is the host mother's job?",
+          "options": [
+            "a teacher",
+            "a doctor",
+            "a nurse"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "How many children have they got?",
+          "options": [
+            "two",
+            "three",
+            "one"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "family-exchange-slide-7",
+      "title": "7. Speaking & Writing Production",
+      "stage": "freer-practice",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Speaking task: Describe your family or host family to your partner. Use possessive adjectives and 's."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Who is in your family?\n• Who is the youngest person in your family?\n• Whose house do you visit most?\n• What is a host family?\n• How is family life different in other countries?"
+        },
+        {
+          "type": "instruction",
+          "content": "Role-play: You are an exchange student. Introduce your host family to your parents on a video call."
+        },
+        {
+          "type": "blockquote",
+          "content": "Work in pairs. Take turns. Use at least five target words and one target grammar structure. Then swap roles."
+        },
+        {
+          "type": "instruction",
+          "content": "Writing task: Write five sentences about your family or host family using possessives."
+        },
+        {
+          "type": "blockquote",
+          "content": "Model: My ... is ... His/Her ... is ... Their ... is ..."
+        },
+        {
+          "type": "essay",
+          "placeholder": "Write your response here..."
+        }
+      ]
+    },
+    {
+      "id": "family-exchange-slide-8",
+      "title": "8. Multi-Duration Lesson Flows",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Timestamped Multi-Duration Flows:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• 60 min (Essential): 0–8 Warm-up & goal; 8–18 Vocabulary & chunks; 18–28 Grammar & controlled practice; 28–40 Reading/listening + speaking; 40–50 Role-play; 50–60 Cool-down & homework.\n\n• 90 min (Expanded): 0–10 Warm-up; 10–25 Vocabulary & pronunciation; 25–40 Grammar & controlled practice; 40–55 Reading/listening; 55–75 Speaking & role-play; 75–85 Writing; 85–90 Cool-down.\n\n• 120 min (Full Workshop): 0–15 Warm-up & diagnostic; 15–35 Vocabulary lab; 35–55 Grammar workshop; 55–75 Reading/listening; 75–95 Speaking & role-play; 95–110 Writing & portfolio; 110–120 Cool-down & feedback."
+        }
+      ]
+    },
+    {
+      "id": "family-exchange-slide-9",
+      "title": "9. Delivery Adaptations",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Individual Lesson Adaptation:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Use family photos and a possessive-question drill."
+        },
+        {
+          "type": "instruction",
+          "content": "Group Lesson Adaptation:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Host-family roleplay with exchange-student scenarios."
+        },
+        {
+          "type": "instruction",
+          "content": "Age Adaptations:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Children: Use a family-tree craft and a possessive song.\nTeens: Use a 'meet my family' presentation.\nAdults: Discuss cultural differences in family life.\nSeniors: Use large-print photos and a respectful family discussion."
+        }
+      ]
+    },
+    {
+      "id": "family-exchange-slide-10",
+      "title": "10. Homework & Recycling Notes",
+      "stage": "cool-down",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Homework Assignment:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Write five sentences about your family. Use at least three possessive forms."
+        },
+        {
+          "type": "instruction",
+          "content": "Self-Assessment: I can..."
+        },
+        {
+          "type": "blockquote",
+          "content": "• discuss family structure in cultural exchange contexts\n• use possessive adjectives and 's accurately\n• use the target vocabulary\n• ask and answer the key questions"
+        },
+        {
+          "type": "instruction",
+          "content": "Recycling into Next Lesson:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Lesson 4 recycles personal details to discuss world nationalities."
+        }
+      ]
+    }
+  ]
+}

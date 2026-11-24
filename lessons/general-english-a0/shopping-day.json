@@ -1,1 +1,484 @@
-{"id":"shopping-day","title":"Shopping day","level":"A0","language":"en","defaultDuration":50,"defaultMode":"all","objectives":["inquire about prices with How much is it?","handle cash and card payment interactions"],"links":{"vocabulary":["buy","cost","pay","cash","card","price","shop"],"grammar":[{"topic_id":"how-much-cost"}],"communication":[{"phrase_id":"en:general:shopping-basics:how-much-does-this-cost","manual_url":"https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/shopping-basics.html"}]},"slides":[{"id":"shopping-day-slide-1","title":"Warm-up & Overview","stage":"warm-up","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Lesson Objectives for Shopping day:"},{"type":"blockquote","content":"inquire about prices with How much is it?; handle cash and card payment interactions"}]},{"id":"shopping-day-slide-2","title":"Vocabulary & Input","stage":"input","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Review key terms and target language below:"},{"type":"blockquote","content":"Key terms: buy, cost, pay, cash, card, price"}]},{"id":"shopping-day-slide-grammar","title":"Grammar Focus","stage":"input","duration":50,"mode":"all","elements":[{"type":"grammar-focus","grammarId":"en-a1-how-much-cost"}]},{"id":"shopping-day-slide-3","title":"Controlled Practice","stage":"controlled-practice","duration":50,"mode":"all","elements":[{"type":"instruction","content":"What phrase asks for the price of an item?"},{"type":"test","options":["How much does this cost?","What is your name?","Where are you going?"]}]},{"id":"shopping-day-slide-4","title":"Reading & Listening Skills","stage":"reading-listening","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Read the short passage below (recycling introduced vocabulary):"},{"type":"blockquote","content":"Today is shopping day! How much does this cost? I want to buy it and pay with my card."},{"type":"instruction","content":"Listening Task: Listen to your teacher / audio prompt and answer the comprehension question."}]},{"id":"shopping-day-slide-5","title":"Freer Speaking Practice","stage":"freer-practice","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Roleplay buying items at a store and making payments with cash or card."}]},{"id":"shopping-day-slide-6","title":"Cool-down & Summary","stage":"cool-down","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Lesson Summary & Feedback:"},{"type":"blockquote","content":"Today you practiced: inquire about prices with How much is it?, handle cash and card payment interactions."}]}]}
+{
+  "id": "shopping-day",
+  "title": "Shopping day",
+  "level": "A0",
+  "language": "en",
+  "unit": "Unit 7. Shopping",
+  "canDo": "I can ask about prices, compare options, and choose what to buy.",
+  "defaultDuration": 50,
+  "defaultMode": "all",
+  "objectives": [
+    "ask about prices",
+    "compare options with one/ones and too + adjective",
+    "choose and pay for an item"
+  ],
+  "materials": "Price cards, toy till, play money, receipts, COSYmanuals 'how much' and 'demonstratives' pages.",
+  "assessment": "Check how much, one/ones, and too + adjective.",
+  "homework": "Compare three items you want to buy. Write five sentences with one/ones and too + adjective.",
+  "recycling": {
+    "prior": "Recycles clothes and demonstratives.",
+    "next": "Lesson 10 recycles shopping language for online orders."
+  },
+  "differentiation": {
+    "individual": "Use price cards and a toy till.",
+    "group": "Class shop: students buy and sell items with a budget.",
+    "children": "Use play money and a simple shop game.",
+    "teens": "Use a sneaker-shop roleplay and a budget challenge.",
+    "adults": "Discuss budgeting, receipts, and payment methods.",
+    "seniors": "Use large-print price cards and a slow shopping dialogue."
+  },
+  "links": {
+    "vocabulary": [
+      "buy",
+      "cost",
+      "pay",
+      "cash",
+      "card",
+      "price",
+      "shop",
+      "cheap",
+      "expensive",
+      "receipt",
+      "one",
+      "ones",
+      "too",
+      "choose",
+      "option",
+      "try",
+      "size",
+      "colour"
+    ],
+    "grammar": [
+      {
+        "topic_id": "how-much-cost",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/how-much-cost.html"
+      },
+      {
+        "topic_id": "demonstratives",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/demonstratives.html"
+      },
+      {
+        "topic_id": "adjectives",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/adjectives.html"
+      }
+    ],
+    "phonetics": "The /aʊ/ sound in 'how' and price intonation",
+    "communication": [
+      {
+        "phrase_id": "en:general:shopping-basics:how-much-does-this-cost",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/shopping-basics.html"
+      }
+    ]
+  },
+  "slides": [
+    {
+      "id": "shopping-day-slide-1",
+      "title": "1. Communication Goal & Overview",
+      "stage": "warm-up",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Communication Goal: I can ask about prices, compare options, and choose what to buy."
+        },
+        {
+          "type": "blockquote",
+          "content": "Lesson overview:\n- Level: A0 General English\n- Unit: Unit 7. Shopping\n- Time: 60 min (Essential) / 90 min (Expanded) / 120 min (Full Workshop)\n- Focus: Shopping day\n- Materials: Price cards, toy till, play money, receipts, COSYmanuals 'how much' and 'demonstratives' pages."
+        },
+        {
+          "type": "instruction",
+          "content": "By the end of this lesson, you can:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• ask about prices\n• compare options with one/ones and too + adjective\n• choose and pay for an item"
+        }
+      ]
+    },
+    {
+      "id": "shopping-day-slide-2",
+      "title": "2. Recycling & Continuity",
+      "stage": "recycling",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Recycling & Course Continuity:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Prior learning: Recycles clothes and demonstratives.\n\nNext lesson: Lesson 10 recycles shopping language for online orders."
+        },
+        {
+          "type": "instruction",
+          "content": "Quick retrieval task: which words or phrases do you remember?"
+        },
+        {
+          "type": "test",
+          "content": "Which word belongs to the previous lesson?",
+          "options": [
+            "buy",
+            "banana",
+            "airport"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shopping-day-slide-3",
+      "title": "3. Vocabulary & Essential Chunks",
+      "stage": "input",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Core Active Vocabulary (18 items):"
+        },
+        {
+          "type": "blockquote",
+          "content": "buy — to get something with money. Example: I want to buy a gift.\ncost — to have a price. Example: How much does it cost?\npay — to give money for something. Example: I pay by card.\ncash — money in notes and coins. Example: Can I pay in cash?\ncard — a plastic payment card. Example: I pay by card.\nprice — the amount of money something costs. Example: The price is twenty euros.\nshop — a place where you buy things. Example: The shop opens at nine.\ncheap — not expensive. Example: This bag is cheap.\nexpensive — costing a lot of money. Example: That phone is expensive.\nreceipt — a paper that shows you paid. Example: Keep the receipt.\none — a single item already mentioned. Example: I'll take this one.\nones — the plural pronoun for things already mentioned. Example: The small ones are cheap.\ntoo — more than is good or possible. Example: It's too expensive.\nchoose — to decide between options. Example: I choose the blue one.\noption — one of several choices. Example: The red one is a good option.\ntry — to test something before you buy it. Example: Can I try this shirt?\nsize — how big or small something is. Example: What size are you?\ncolour — red, blue, green, and so on. Example: What colour is your bag?"
+        },
+        {
+          "type": "instruction",
+          "content": "Essential Chunks & Functional Collocations:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• How much is it? (asking about price)\n• How much does it cost? (asking about price)\n• I'll pay by card. (choosing a payment method)\n• Can I have a receipt, please? (asking for proof of payment)\n• The red one is nice. The small ones are cheap. (using one/ones)\n• It's too expensive. / It's too small. (using too + adjective)\n• I'll take this one. (choosing an item)"
+        },
+        {
+          "type": "instruction",
+          "content": "Vocabulary practice: choose the correct word."
+        },
+        {
+          "type": "test",
+          "content": "Which word means 'to get something with money'?",
+          "options": [
+            "buy",
+            "pay",
+            "cash"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Which word means 'to have a price'?",
+          "options": [
+            "cost",
+            "card",
+            "price"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Complete the sentence with a word from the list."
+        },
+        {
+          "type": "input",
+          "placeholder": "Complete: I want to ___ a gift."
+        }
+      ]
+    },
+    {
+      "id": "shopping-day-slide-4",
+      "title": "4. Pronunciation Focus",
+      "stage": "pronunciation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Pronunciation Focus: The /aʊ/ sound in 'how' and price intonation"
+        },
+        {
+          "type": "blockquote",
+          "content": "how /haʊ/ — long /aʊ/\ncost /kɒst/ — short /ɒ/\ncash /kæʃ/ — ends with /ʃ/\nreceipt /rɪˈsiːt/ — silent p"
+        },
+        {
+          "type": "instruction",
+          "content": "Listen and repeat:"
+        },
+        {
+          "type": "blockquote",
+          "content": "How much is it? How much does it cost? I'll pay by card."
+        },
+        {
+          "type": "instruction",
+          "content": "Mark the stressed syllable in these words:"
+        },
+        {
+          "type": "input",
+          "placeholder": "Mark the stress: how, cost, cash"
+        }
+      ]
+    },
+    {
+      "id": "shopping-day-slide-5",
+      "title": "5. Grammar Focus & Controlled Practice",
+      "stage": "grammar",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Grammar Focus: Use 'How much...?' to ask about price."
+        },
+        {
+          "type": "grammar-focus",
+          "grammarId": "en-a1-how-much-cost"
+        },
+        {
+          "type": "blockquote",
+          "content": "Form:\nHow much is it? Prices and cost: How much is it? How much are they? How much does it cost? It costs... / They cost... / It's...\n\nExamples:\n• How much is this shirt?\n• It's twenty pounds.\n• How much do these shoes cost?\n• They cost forty euros."
+        },
+        {
+          "type": "instruction",
+          "content": "Controlled practice: choose the correct form."
+        },
+        {
+          "type": "test",
+          "content": "___ much is this bag?",
+          "options": [
+            "How",
+            "What",
+            "Who"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "It ___ twenty euros.",
+          "options": [
+            "cost",
+            "costs",
+            "costing"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "How much ___ these shoes?",
+          "options": [
+            "is",
+            "are",
+            "do"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "How much does it ___?",
+          "options": [
+            "cost",
+            "costs",
+            "costing"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Substitution drill: say the sentence with the new words."
+        },
+        {
+          "type": "blockquote",
+          "content": "• How much is ...?\n• How much are ...?\n• It costs ..."
+        },
+        {
+          "type": "instruction",
+          "content": "Question-answer practice: ask and answer with your partner."
+        },
+        {
+          "type": "blockquote",
+          "content": "• How much is your phone?\n• How much are your shoes?\n• How much does a coffee cost in your city?"
+        },
+        {
+          "type": "instruction",
+          "content": "Personalised production: use the structure about your own life."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Write three price questions and answers.\n• Write three sentences about the prices of things you want to buy."
+        }
+      ]
+    },
+    {
+      "id": "shopping-day-slide-6",
+      "title": "6. Four Skills Distribution (Listening & Reading)",
+      "stage": "reading-listening",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Reading: Shopping day"
+        },
+        {
+          "type": "blockquote",
+          "content": "Today is shopping day! How much is this bag? It is twenty pounds. How much do those shoes cost? They cost forty pounds. That shirt is cheap, but this jacket is too expensive. I like the blue one, but the black ones are nicer. The small ones are too small. I'll take the blue one. I'll pay by card. Can I have a receipt, please? Yes, of course."
+        },
+        {
+          "type": "test",
+          "content": "How much is the bag?",
+          "options": [
+            "twenty pounds",
+            "forty pounds",
+            "ten pounds"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Why doesn't the writer take the small ones?",
+          "options": [
+            "They are too small.",
+            "They are too expensive.",
+            "They are too big."
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Listening: listen to the dialogue and answer the questions."
+        },
+        {
+          "type": "blockquote",
+          "content": "A: How much is this shirt?\nB: It's fifteen pounds.\nA: And how much do these shoes cost?\nB: They cost thirty pounds. The black ones are cheaper.\nA: The black ones are nice, but they are too small. I'll take the blue ones.\nB: Good choice. Cash or card?\nA: Card, please. Can I have a receipt?"
+        },
+        {
+          "type": "test",
+          "content": "Which shoes does the customer take?",
+          "options": [
+            "the blue ones",
+            "the black ones",
+            "the red ones"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Why doesn't the customer take the black ones?",
+          "options": [
+            "They are too small.",
+            "They are too expensive.",
+            "They are too big."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shopping-day-slide-7",
+      "title": "7. Speaking & Writing Production",
+      "stage": "freer-practice",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Speaking task: Compare three items in a shop. Ask about prices and choose one using one/ones and too + adjective."
+        },
+        {
+          "type": "blockquote",
+          "content": "• How much is your phone?\n• Do you prefer cash or card?\n• Do you compare prices before you buy?\n• What do you do when something is too expensive?\n• Do you keep receipts?"
+        },
+        {
+          "type": "instruction",
+          "content": "Role-play: You are at a market. Ask about three prices, compare the options, and choose one item."
+        },
+        {
+          "type": "blockquote",
+          "content": "Work in pairs. Take turns. Use at least five target words and one target grammar structure. Then swap roles."
+        },
+        {
+          "type": "instruction",
+          "content": "Writing task: Write a shopping dialogue with price questions, one/ones, and too + adjective."
+        },
+        {
+          "type": "blockquote",
+          "content": "Model: A: How much is ...? B: It's ... A: The ... one is too ... I'll take ..."
+        },
+        {
+          "type": "essay",
+          "placeholder": "Write your response here..."
+        }
+      ]
+    },
+    {
+      "id": "shopping-day-slide-8",
+      "title": "8. Multi-Duration Lesson Flows",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Timestamped Multi-Duration Flows:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• 60 min (Essential): 0–8 Warm-up & goal; 8–18 Vocabulary & chunks; 18–28 Grammar & controlled practice; 28–40 Reading/listening + speaking; 40–50 Role-play; 50–60 Cool-down & homework.\n\n• 90 min (Expanded): 0–10 Warm-up; 10–25 Vocabulary & pronunciation; 25–40 Grammar & controlled practice; 40–55 Reading/listening; 55–75 Speaking & role-play; 75–85 Writing; 85–90 Cool-down.\n\n• 120 min (Full Workshop): 0–15 Warm-up & diagnostic; 15–35 Vocabulary lab; 35–55 Grammar workshop; 55–75 Reading/listening; 75–95 Speaking & role-play; 95–110 Writing & portfolio; 110–120 Cool-down & feedback."
+        }
+      ]
+    },
+    {
+      "id": "shopping-day-slide-9",
+      "title": "9. Delivery Adaptations",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Individual Lesson Adaptation:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Use price cards and a toy till."
+        },
+        {
+          "type": "instruction",
+          "content": "Group Lesson Adaptation:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Class shop: students buy and sell items with a budget."
+        },
+        {
+          "type": "instruction",
+          "content": "Age Adaptations:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Children: Use play money and a simple shop game.\nTeens: Use a sneaker-shop roleplay and a budget challenge.\nAdults: Discuss budgeting, receipts, and payment methods.\nSeniors: Use large-print price cards and a slow shopping dialogue."
+        }
+      ]
+    },
+    {
+      "id": "shopping-day-slide-10",
+      "title": "10. Homework & Recycling Notes",
+      "stage": "cool-down",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Homework Assignment:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Compare three items you want to buy. Write five sentences with one/ones and too + adjective."
+        },
+        {
+          "type": "instruction",
+          "content": "Self-Assessment: I can..."
+        },
+        {
+          "type": "blockquote",
+          "content": "• ask about prices\n• compare options with one/ones and too + adjective\n• choose and pay for an item\n• use the target vocabulary\n• ask and answer the key questions"
+        },
+        {
+          "type": "instruction",
+          "content": "Recycling into Next Lesson:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Lesson 10 recycles shopping language for online orders."
+        }
+      ]
+    }
+  ]
+}

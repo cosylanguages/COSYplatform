@@ -1,1 +1,471 @@
-{"id":"try-this-shirt","title":"Try this shirt","level":"A0","language":"en","defaultDuration":50,"defaultMode":"all","objectives":["use demonstratives (this, that, these, those)","try on clothing and ask about sizes"],"links":{"vocabulary":["shirt","shoes","pants","size","small","large"],"grammar":[{"topic_id":"demonstratives"}],"communication":[{"phrase_id":"en:general:shopping-basics:can-i-try-this-on","manual_url":"https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/shopping-basics.html"}]},"slides":[{"id":"try-this-shirt-slide-1","title":"Warm-up & Overview","stage":"warm-up","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Lesson Objectives for Try this shirt:"},{"type":"blockquote","content":"use demonstratives (this, that, these, those); try on clothing and ask about sizes"}]},{"id":"try-this-shirt-slide-2","title":"Vocabulary & Input","stage":"input","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Review key terms and target language below:"},{"type":"blockquote","content":"Key terms: shirt, shoes, pants, size, small, large"}]},{"id":"try-this-shirt-slide-grammar","title":"Grammar Focus","stage":"input","duration":50,"mode":"all","elements":[{"type":"grammar-focus","grammarId":"en-a1-demonstratives"}]},{"id":"try-this-shirt-slide-3","title":"Controlled Practice","stage":"controlled-practice","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Which demonstrative points to singular items near you?"},{"type":"test","options":["this","these","those"]}]},{"id":"try-this-shirt-slide-4","title":"Reading & Listening Skills","stage":"reading-listening","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Read the short passage below (recycling introduced vocabulary):"},{"type":"blockquote","content":"Try this shirt! It is size small. Those shoes are very nice. I like this blue shirt."},{"type":"instruction","content":"Listening Task: Listen to your teacher / audio prompt and answer the comprehension question."}]},{"id":"try-this-shirt-slide-5","title":"Freer Speaking Practice","stage":"freer-practice","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Roleplay trying on clothes in a store and asking for different sizes."}]},{"id":"try-this-shirt-slide-6","title":"Cool-down & Summary","stage":"cool-down","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Lesson Summary & Feedback:"},{"type":"blockquote","content":"Today you practiced: use demonstratives (this, that, these, those), try on clothing and ask about sizes."}]}]}
+{
+  "id": "try-this-shirt",
+  "title": "Try this shirt",
+  "level": "A0",
+  "language": "en",
+  "unit": "Unit 7. Shopping",
+  "canDo": "I can talk about clothes, sizes, and trying things on.",
+  "defaultDuration": 50,
+  "defaultMode": "all",
+  "objectives": [
+    "use demonstratives (this, that, these, those)",
+    "try on clothing and ask about sizes"
+  ],
+  "materials": "Clothes pictures, size labels, colour cards, COSYmanuals 'demonstratives' and 'adjectives' pages.",
+  "assessment": "Check demonstrative choice and size/colour language.",
+  "homework": "Write five sentences about your favourite clothes. Use this/that/these/those.",
+  "recycling": {
+    "prior": "Recycles shopping and adjective vocabulary.",
+    "next": "Lesson 27 recycles shopping language to ask about prices."
+  },
+  "differentiation": {
+    "individual": "Use real clothes or pictures and practise try-on phrases.",
+    "group": "Clothes-shop roleplay with shop assistant and customer roles.",
+    "children": "Use a dressing-up box and a colour/size game.",
+    "teens": "Use an online-fashion mock-up and a style discussion.",
+    "adults": "Discuss dress codes and workplace clothing.",
+    "seniors": "Use large-print clothing cards and a slow size/colour drill."
+  },
+  "links": {
+    "vocabulary": [
+      "shirt",
+      "shoes",
+      "pants",
+      "size",
+      "small",
+      "large",
+      "try on",
+      "fit",
+      "colour",
+      "blue"
+    ],
+    "grammar": [
+      {
+        "topic_id": "demonstratives",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/demonstratives.html"
+      },
+      {
+        "topic_id": "adjectives",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/adjectives.html"
+      }
+    ],
+    "phonetics": "The /ʃ/ sound in 'shirt' and the /aɪ/ sound in 'try'",
+    "communication": [
+      {
+        "phrase_id": "en:general:shopping-basics:can-i-try-this-on",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/shopping-basics.html"
+      }
+    ]
+  },
+  "slides": [
+    {
+      "id": "try-this-shirt-slide-1",
+      "title": "1. Communication Goal & Overview",
+      "stage": "warm-up",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Communication Goal: I can talk about clothes, sizes, and trying things on."
+        },
+        {
+          "type": "blockquote",
+          "content": "Lesson overview:\n- Level: A0 General English\n- Unit: Unit 7. Shopping\n- Time: 60 min (Essential) / 90 min (Expanded) / 120 min (Full Workshop)\n- Focus: Try this shirt\n- Materials: Clothes pictures, size labels, colour cards, COSYmanuals 'demonstratives' and 'adjectives' pages."
+        },
+        {
+          "type": "instruction",
+          "content": "By the end of this lesson, you can:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• use demonstratives (this, that, these, those)\n• try on clothing and ask about sizes"
+        }
+      ]
+    },
+    {
+      "id": "try-this-shirt-slide-2",
+      "title": "2. Recycling & Continuity",
+      "stage": "recycling",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Recycling & Course Continuity:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Prior learning: Recycles shopping and adjective vocabulary.\n\nNext lesson: Lesson 27 recycles shopping language to ask about prices."
+        },
+        {
+          "type": "instruction",
+          "content": "Quick retrieval task: which words or phrases do you remember?"
+        },
+        {
+          "type": "test",
+          "content": "Which word belongs to the previous lesson?",
+          "options": [
+            "shirt",
+            "banana",
+            "airport"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "try-this-shirt-slide-3",
+      "title": "3. Vocabulary & Essential Chunks",
+      "stage": "input",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Core Active Vocabulary (10 items):"
+        },
+        {
+          "type": "blockquote",
+          "content": "shirt — a piece of clothing for the top. Example: This shirt is blue.\nshoes — things you wear on your feet. Example: These shoes are small.\npants — clothing for your legs. Example: Those pants are black.\nsize — how big or small something is. Example: What size are you?\nsmall — little in size. Example: I have a small bag.\nlarge — big. Example: This shirt is large.\ntry on — to put on clothes to see if they fit. Example: Can I try on this shirt?\nfit — to be the right size. Example: These shoes fit well.\ncolour — red, blue, green, and so on. Example: What colour is your bag?\nblue — the colour of the sky. Example: I like this blue shirt."
+        },
+        {
+          "type": "instruction",
+          "content": "Essential Chunks & Functional Collocations:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• Can I try on this shirt? (asking to try clothes)\n• What size are you? (asking about size)\n• These shoes are small. (describing fit)\n• Those pants are large. (describing fit)\n• It fits well. (saying something is the right size)\n• Do you have this in blue? (asking about colour)"
+        },
+        {
+          "type": "instruction",
+          "content": "Vocabulary practice: choose the correct word."
+        },
+        {
+          "type": "test",
+          "content": "Which word means 'a piece of clothing for the top'?",
+          "options": [
+            "shirt",
+            "pants",
+            "size"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Which word means 'things you wear on your feet'?",
+          "options": [
+            "shoes",
+            "small",
+            "large"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Complete the sentence with a word from the list."
+        },
+        {
+          "type": "input",
+          "placeholder": "Complete: This ___ is blue."
+        }
+      ]
+    },
+    {
+      "id": "try-this-shirt-slide-4",
+      "title": "4. Pronunciation Focus",
+      "stage": "pronunciation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Pronunciation Focus: The /ʃ/ sound in 'shirt' and the /aɪ/ sound in 'try'"
+        },
+        {
+          "type": "blockquote",
+          "content": "shirt /ʃɜːt/ — starts with /ʃ/\nshoes /ʃuːz/ — starts with /ʃ/\nsize /saɪz/ — long /aɪ/\ncolour /ˈkʌlə/ — stress the first syllable"
+        },
+        {
+          "type": "instruction",
+          "content": "Listen and repeat:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Can I try on this shirt? These shoes are small."
+        },
+        {
+          "type": "instruction",
+          "content": "Mark the stressed syllable in these words:"
+        },
+        {
+          "type": "input",
+          "placeholder": "Mark the stress: shirt, shoes, size"
+        }
+      ]
+    },
+    {
+      "id": "try-this-shirt-slide-5",
+      "title": "5. Grammar Focus & Controlled Practice",
+      "stage": "grammar",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Grammar Focus: Use demonstratives to point to things near and far."
+        },
+        {
+          "type": "grammar-focus",
+          "grammarId": "en-a1-demonstratives"
+        },
+        {
+          "type": "blockquote",
+          "content": "Form:\nThis, that, these, those: this (one thing near), these (many things near), that (one thing far), those (many things far).\n\nExamples:\n• This shirt is nice.\n• These shoes are small.\n• That shop is closed.\n• Those chairs are old."
+        },
+        {
+          "type": "instruction",
+          "content": "Controlled practice: choose the correct form."
+        },
+        {
+          "type": "test",
+          "content": "___ shirt is nice. (near, one)",
+          "options": [
+            "This",
+            "These",
+            "Those"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "___ shoes are small. (near, many)",
+          "options": [
+            "This",
+            "These",
+            "That"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "___ shop is closed. (far, one)",
+          "options": [
+            "This",
+            "That",
+            "These"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "___ chairs are old. (far, many)",
+          "options": [
+            "This",
+            "That",
+            "Those"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Substitution drill: say the sentence with the new words."
+        },
+        {
+          "type": "blockquote",
+          "content": "• ... (This / That) ... is ...\n• ... (These / Those) ... are ...\n• I like ... (this / these) ..."
+        },
+        {
+          "type": "instruction",
+          "content": "Question-answer practice: ask and answer with your partner."
+        },
+        {
+          "type": "blockquote",
+          "content": "• What is near you?\n• What is far from you?\n• Which clothes do you like?"
+        },
+        {
+          "type": "instruction",
+          "content": "Personalised production: use the structure about your own life."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Write three sentences with 'this' and 'these' about your things.\n• Write three sentences with 'that' and 'those' about things in the room."
+        }
+      ]
+    },
+    {
+      "id": "try-this-shirt-slide-6",
+      "title": "6. Four Skills Distribution (Listening & Reading)",
+      "stage": "reading-listening",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Reading: Try this shirt"
+        },
+        {
+          "type": "blockquote",
+          "content": "Welcome to our clothes shop. Can I try on this shirt? Yes, of course. What size are you? I am a small. These shoes are small, but those pants are large. This blue shirt fits well. Do you have this in a different colour? Yes, we have it in white and black. Great, I'll take it."
+        },
+        {
+          "type": "test",
+          "content": "What size is the customer?",
+          "options": [
+            "small",
+            "large",
+            "medium"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "What colour is the shirt?",
+          "options": [
+            "blue",
+            "white",
+            "black"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Listening: listen to the dialogue and answer the questions."
+        },
+        {
+          "type": "blockquote",
+          "content": "A: Can I help you?\nB: Yes, can I try on this shirt?\nA: Of course. What size are you?\nB: I'm a medium. Do you have this in blue?\nA: Yes, here you are. The changing room is over there.\nB: Thank you. It fits well!"
+        },
+        {
+          "type": "test",
+          "content": "What does the customer want to try on?",
+          "options": [
+            "a shirt",
+            "shoes",
+            "pants"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "What size is the customer?",
+          "options": [
+            "medium",
+            "small",
+            "large"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "try-this-shirt-slide-7",
+      "title": "7. Speaking & Writing Production",
+      "stage": "freer-practice",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Speaking task: Roleplay a clothes shop. Ask to try on three items and talk about size and colour."
+        },
+        {
+          "type": "blockquote",
+          "content": "• What clothes do you like wearing?\n• What size are you?\n• Do you prefer small shops or big shops?\n• What colour do you like?\n• Do you try on clothes before you buy them?"
+        },
+        {
+          "type": "instruction",
+          "content": "Role-play: You are shopping for a party. Ask the assistant for help, try on two items, and choose one."
+        },
+        {
+          "type": "blockquote",
+          "content": "Work in pairs. Take turns. Use at least five target words and one target grammar structure. Then swap roles."
+        },
+        {
+          "type": "instruction",
+          "content": "Writing task: Write five sentences about clothes you like using demonstratives."
+        },
+        {
+          "type": "blockquote",
+          "content": "Model: This ... is ... These ... are ... I like that ... Those ... are ..."
+        },
+        {
+          "type": "essay",
+          "placeholder": "Write your response here..."
+        }
+      ]
+    },
+    {
+      "id": "try-this-shirt-slide-8",
+      "title": "8. Multi-Duration Lesson Flows",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Timestamped Multi-Duration Flows:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• 60 min (Essential): 0–8 Warm-up & goal; 8–18 Vocabulary & chunks; 18–28 Grammar & controlled practice; 28–40 Reading/listening + speaking; 40–50 Role-play; 50–60 Cool-down & homework.\n\n• 90 min (Expanded): 0–10 Warm-up; 10–25 Vocabulary & pronunciation; 25–40 Grammar & controlled practice; 40–55 Reading/listening; 55–75 Speaking & role-play; 75–85 Writing; 85–90 Cool-down.\n\n• 120 min (Full Workshop): 0–15 Warm-up & diagnostic; 15–35 Vocabulary lab; 35–55 Grammar workshop; 55–75 Reading/listening; 75–95 Speaking & role-play; 95–110 Writing & portfolio; 110–120 Cool-down & feedback."
+        }
+      ]
+    },
+    {
+      "id": "try-this-shirt-slide-9",
+      "title": "9. Delivery Adaptations",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Individual Lesson Adaptation:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Use real clothes or pictures and practise try-on phrases."
+        },
+        {
+          "type": "instruction",
+          "content": "Group Lesson Adaptation:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Clothes-shop roleplay with shop assistant and customer roles."
+        },
+        {
+          "type": "instruction",
+          "content": "Age Adaptations:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Children: Use a dressing-up box and a colour/size game.\nTeens: Use an online-fashion mock-up and a style discussion.\nAdults: Discuss dress codes and workplace clothing.\nSeniors: Use large-print clothing cards and a slow size/colour drill."
+        }
+      ]
+    },
+    {
+      "id": "try-this-shirt-slide-10",
+      "title": "10. Homework & Recycling Notes",
+      "stage": "cool-down",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Homework Assignment:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Write five sentences about your favourite clothes. Use this/that/these/those."
+        },
+        {
+          "type": "instruction",
+          "content": "Self-Assessment: I can..."
+        },
+        {
+          "type": "blockquote",
+          "content": "• use demonstratives (this, that, these, those)\n• try on clothing and ask about sizes\n• use the target vocabulary\n• ask and answer the key questions"
+        },
+        {
+          "type": "instruction",
+          "content": "Recycling into Next Lesson:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Lesson 27 recycles shopping language to ask about prices."
+        }
+      ]
+    }
+  ]
+}

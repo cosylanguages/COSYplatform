@@ -1,1 +1,470 @@
-{"id":"young-and-beautiful","title":"Young and beautiful","level":"A0","language":"en","defaultDuration":50,"defaultMode":"all","objectives":["describe people using to be and basic adjectives","ask simple questions about age and appearance"],"links":{"vocabulary":["married","single","big","small","beautiful","young","old"],"grammar":[{"topic_id":"to-be","manual_url":"https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/to-be.html"}],"communication":[{"phrase_id":"en:general:greetings-and-introductions:nice-to-meet-you-too","manual_url":"https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/greetings-and-introductions.html"}]},"slides":[{"id":"young-and-beautiful-slide-1","title":"Warm-up & Overview","stage":"warm-up","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Lesson Objectives for Young and beautiful:"},{"type":"blockquote","content":"describe people using to be and basic adjectives; ask simple questions about age and appearance"}]},{"id":"young-and-beautiful-slide-2","title":"Vocabulary & Input","stage":"input","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Review key terms and target language below:"},{"type":"blockquote","content":"Key terms: married, single, big, small, beautiful, young"}]},{"id":"young-and-beautiful-slide-grammar","title":"Grammar Focus","stage":"input","duration":50,"mode":"all","elements":[{"type":"grammar-focus","grammarId":"en-a1-to-be"}]},{"id":"young-and-beautiful-slide-3","title":"Controlled Practice","stage":"controlled-practice","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Which sentence describes appearance correctly?"},{"type":"test","options":["She is young and beautiful.","She am young and beautiful.","She are young and beautiful."]}]},{"id":"young-and-beautiful-slide-4","title":"Reading & Listening Skills","stage":"reading-listening","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Read the short passage below (recycling introduced vocabulary):"},{"type":"blockquote","content":"She is young and beautiful. He is single and happy. They are a big and nice team."},{"type":"instruction","content":"Listening Task: Listen to your teacher / audio prompt and answer the comprehension question."}]},{"id":"young-and-beautiful-slide-5","title":"Freer Speaking Practice","stage":"freer-practice","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Describe two famous people or friends using adjectives (young, beautiful, single, married)."}]},{"id":"young-and-beautiful-slide-6","title":"Cool-down & Summary","stage":"cool-down","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Lesson Summary & Feedback:"},{"type":"blockquote","content":"Today you practiced: describe people using to be and basic adjectives, ask simple questions about age and appearance."}]}]}
+{
+  "id": "young-and-beautiful",
+  "title": "Young and beautiful",
+  "level": "A0",
+  "language": "en",
+  "unit": "Unit 1. Hello there!",
+  "canDo": "I can describe people with 'to be' and basic adjectives.",
+  "defaultDuration": 50,
+  "defaultMode": "all",
+  "objectives": [
+    "describe people using to be and basic adjectives",
+    "ask simple questions about age and appearance"
+  ],
+  "materials": "Family photos, adjective cards, COSYmanuals 'to be' and 'adjectives' pages.",
+  "assessment": "Check adjective position after 'be' and correct pronoun use.",
+  "homework": "Write five sentences about a person you admire. Use at least four adjectives.",
+  "recycling": {
+    "prior": "Recycles 'to be' and pronouns from Lesson 2.",
+    "next": "Lesson 4 recycles greetings and descriptions in a consolidation lesson."
+  },
+  "differentiation": {
+    "individual": "Use family photos and a set of adjective cards.",
+    "group": "Describe-and-guess game: one student describes a person, the group guesses who.",
+    "children": "Use cartoon characters and simple adjective flashcards.",
+    "teens": "Use celebrity photos and a 'describe the star' challenge.",
+    "adults": "Discuss how appearance is described politely at work.",
+    "seniors": "Use large-print family photos and a slow, supportive drill."
+  },
+  "links": {
+    "vocabulary": [
+      "young",
+      "old",
+      "beautiful",
+      "handsome",
+      "married",
+      "single",
+      "tall",
+      "short",
+      "big",
+      "small"
+    ],
+    "grammar": [
+      {
+        "topic_id": "to-be",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/to-be.html"
+      },
+      {
+        "topic_id": "adjectives",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/adjectives.html"
+      }
+    ],
+    "phonetics": "Adjective stress and the /j/ sound in 'young'",
+    "communication": [
+      {
+        "phrase_id": "en:general:greetings-and-introductions:nice-to-meet-you-too",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/greetings-and-introductions.html"
+      }
+    ]
+  },
+  "slides": [
+    {
+      "id": "young-and-beautiful-slide-1",
+      "title": "1. Communication Goal & Overview",
+      "stage": "warm-up",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Communication Goal: I can describe people with 'to be' and basic adjectives."
+        },
+        {
+          "type": "blockquote",
+          "content": "Lesson overview:\n- Level: A0 General English\n- Unit: Unit 1. Hello there!\n- Time: 60 min (Essential) / 90 min (Expanded) / 120 min (Full Workshop)\n- Focus: Young and beautiful\n- Materials: Family photos, adjective cards, COSYmanuals 'to be' and 'adjectives' pages."
+        },
+        {
+          "type": "instruction",
+          "content": "By the end of this lesson, you can:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• describe people using to be and basic adjectives\n• ask simple questions about age and appearance"
+        }
+      ]
+    },
+    {
+      "id": "young-and-beautiful-slide-2",
+      "title": "2. Recycling & Continuity",
+      "stage": "recycling",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Recycling & Course Continuity:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Prior learning: Recycles 'to be' and pronouns from Lesson 2.\n\nNext lesson: Lesson 4 recycles greetings and descriptions in a consolidation lesson."
+        },
+        {
+          "type": "instruction",
+          "content": "Quick retrieval task: which words or phrases do you remember?"
+        },
+        {
+          "type": "test",
+          "content": "Which word belongs to the previous lesson?",
+          "options": [
+            "young",
+            "banana",
+            "airport"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "young-and-beautiful-slide-3",
+      "title": "3. Vocabulary & Essential Chunks",
+      "stage": "input",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Core Active Vocabulary (10 items):"
+        },
+        {
+          "type": "blockquote",
+          "content": "young — not old. Example: My sister is young.\nold — not young; having lived a long time. Example: My grandfather is old.\nbeautiful — very nice to look at. Example: She is beautiful.\nhandsome — good-looking, often for a man. Example: He is a handsome man.\nmarried — having a husband or wife. Example: They are married.\nsingle — not married. Example: She is single.\ntall — having a long height. Example: My brother is tall.\nshort — not tall. Example: The child is short.\nbig — large in size. Example: They live in a big house.\nsmall — little in size. Example: I have a small bag."
+        },
+        {
+          "type": "instruction",
+          "content": "Essential Chunks & Functional Collocations:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• She is young and beautiful. (describing appearance)\n• He is tall and handsome. (describing a man)\n• They are married. (describing a couple)\n• She is single. (describing marital status)\n• Is he tall or short? (asking about appearance)\n• How old is she? (asking about age)"
+        },
+        {
+          "type": "instruction",
+          "content": "Vocabulary practice: choose the correct word."
+        },
+        {
+          "type": "test",
+          "content": "Which word means 'not old'?",
+          "options": [
+            "young",
+            "beautiful",
+            "handsome"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Which word means 'not young; having lived a long time'?",
+          "options": [
+            "old",
+            "married",
+            "single"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Complete the sentence with a word from the list."
+        },
+        {
+          "type": "input",
+          "placeholder": "Complete: My sister is ___."
+        }
+      ]
+    },
+    {
+      "id": "young-and-beautiful-slide-4",
+      "title": "4. Pronunciation Focus",
+      "stage": "pronunciation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Pronunciation Focus: Adjective stress and the /j/ sound in 'young'"
+        },
+        {
+          "type": "blockquote",
+          "content": "young /jʌŋ/ — starts with /j/\nbeautiful /ˈbjuːtɪfl/ — stress the first syllable\nhandsome /ˈhænsəm/ — silent d\nmarried /ˈmærid/ — two syllables"
+        },
+        {
+          "type": "instruction",
+          "content": "Listen and repeat:"
+        },
+        {
+          "type": "blockquote",
+          "content": "She is young and beautiful. He is tall and handsome."
+        },
+        {
+          "type": "instruction",
+          "content": "Mark the stressed syllable in these words:"
+        },
+        {
+          "type": "input",
+          "placeholder": "Mark the stress: young, beautiful, handsome"
+        }
+      ]
+    },
+    {
+      "id": "young-and-beautiful-slide-5",
+      "title": "5. Grammar Focus & Controlled Practice",
+      "stage": "grammar",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Grammar Focus: Use 'be' to say who someone is, how they feel, and where they are from."
+        },
+        {
+          "type": "grammar-focus",
+          "grammarId": "en-a1-to-be"
+        },
+        {
+          "type": "blockquote",
+          "content": "Form:\nThe verb 'to be': I am / You are / He, she, it is / We are / They are. Negative: I'm not, isn't, aren't. Question: Am I...? Are you...? Is he...?\n\nExamples:\n• I am a student.\n• She is from Spain.\n• We are happy today.\n• They are not teachers."
+        },
+        {
+          "type": "instruction",
+          "content": "Controlled practice: choose the correct form."
+        },
+        {
+          "type": "test",
+          "content": "My name ___ Alex.",
+          "options": [
+            "am",
+            "is",
+            "are"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "They ___ from Italy.",
+          "options": [
+            "am",
+            "is",
+            "are"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "I ___ tired today.",
+          "options": [
+            "am",
+            "is",
+            "are"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "She ___ not a teacher.",
+          "options": [
+            "am",
+            "is",
+            "are"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Substitution drill: say the sentence with the new words."
+        },
+        {
+          "type": "blockquote",
+          "content": "• I am ... (a student / happy / from Egypt).\n• She is ... (a teacher / tired / from Spain).\n• They are ... (students / at home / happy)."
+        },
+        {
+          "type": "instruction",
+          "content": "Question-answer practice: ask and answer with your partner."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Are you a student? — Yes, I am. / No, I'm not.\n• Is she from France? — Yes, she is. / No, she isn't.\n• Are they happy? — Yes, they are. / No, they aren't."
+        },
+        {
+          "type": "instruction",
+          "content": "Personalised production: use the structure about your own life."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Write two true sentences with 'I am...' and 'I am not...'.\n• Introduce two people in the class with 'He/She is...'."
+        }
+      ]
+    },
+    {
+      "id": "young-and-beautiful-slide-6",
+      "title": "6. Four Skills Distribution (Listening & Reading)",
+      "stage": "reading-listening",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Reading: Young and beautiful"
+        },
+        {
+          "type": "blockquote",
+          "content": "This is my family. My sister is young and beautiful. She is tall and she has long hair. My brother is tall and handsome. He is single. My parents are married. They are not old. They are happy and healthy. We are a big family."
+        },
+        {
+          "type": "test",
+          "content": "Who is young and beautiful?",
+          "options": [
+            "the sister",
+            "the brother",
+            "the parents"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Are the parents married?",
+          "options": [
+            "yes",
+            "no"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Listening: listen to the dialogue and answer the questions."
+        },
+        {
+          "type": "blockquote",
+          "content": "A: Who is that man?\nB: He is my brother. He is tall and handsome.\nA: Is he married?\nB: No, he is single.\nA: And who is that woman?\nB: She is my sister. She is young and beautiful."
+        },
+        {
+          "type": "test",
+          "content": "Is the brother married?",
+          "options": [
+            "No, he is single.",
+            "Yes, he is married.",
+            "We don't know."
+          ]
+        },
+        {
+          "type": "test",
+          "content": "How is the sister described?",
+          "options": [
+            "young and beautiful",
+            "old and tired",
+            "short and quiet"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "young-and-beautiful-slide-7",
+      "title": "7. Speaking & Writing Production",
+      "stage": "freer-practice",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Speaking task: Describe two people in your family. Use three adjectives for each person."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Who is the youngest person in your family?\n• Who is the tallest person in your family?\n• Are your grandparents old?\n• What does 'beautiful' mean to you?\n• Do people in your country talk about age?"
+        },
+        {
+          "type": "instruction",
+          "content": "Role-play: You are looking at a family photo with a friend. Describe the people and ask three questions about them."
+        },
+        {
+          "type": "blockquote",
+          "content": "Work in pairs. Take turns. Use at least five target words and one target grammar structure. Then swap roles."
+        },
+        {
+          "type": "instruction",
+          "content": "Writing task: Write five sentences describing your family with 'to be' and adjectives."
+        },
+        {
+          "type": "blockquote",
+          "content": "Model: My mother is ... My father is ... My sister is ... They are ... I am ..."
+        },
+        {
+          "type": "essay",
+          "placeholder": "Write your response here..."
+        }
+      ]
+    },
+    {
+      "id": "young-and-beautiful-slide-8",
+      "title": "8. Multi-Duration Lesson Flows",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Timestamped Multi-Duration Flows:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• 60 min (Essential): 0–8 Warm-up & goal; 8–18 Vocabulary & chunks; 18–28 Grammar & controlled practice; 28–40 Reading/listening + speaking; 40–50 Role-play; 50–60 Cool-down & homework.\n\n• 90 min (Expanded): 0–10 Warm-up; 10–25 Vocabulary & pronunciation; 25–40 Grammar & controlled practice; 40–55 Reading/listening; 55–75 Speaking & role-play; 75–85 Writing; 85–90 Cool-down.\n\n• 120 min (Full Workshop): 0–15 Warm-up & diagnostic; 15–35 Vocabulary lab; 35–55 Grammar workshop; 55–75 Reading/listening; 75–95 Speaking & role-play; 95–110 Writing & portfolio; 110–120 Cool-down & feedback."
+        }
+      ]
+    },
+    {
+      "id": "young-and-beautiful-slide-9",
+      "title": "9. Delivery Adaptations",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Individual Lesson Adaptation:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Use family photos and a set of adjective cards."
+        },
+        {
+          "type": "instruction",
+          "content": "Group Lesson Adaptation:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Describe-and-guess game: one student describes a person, the group guesses who."
+        },
+        {
+          "type": "instruction",
+          "content": "Age Adaptations:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Children: Use cartoon characters and simple adjective flashcards.\nTeens: Use celebrity photos and a 'describe the star' challenge.\nAdults: Discuss how appearance is described politely at work.\nSeniors: Use large-print family photos and a slow, supportive drill."
+        }
+      ]
+    },
+    {
+      "id": "young-and-beautiful-slide-10",
+      "title": "10. Homework & Recycling Notes",
+      "stage": "cool-down",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Homework Assignment:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Write five sentences about a person you admire. Use at least four adjectives."
+        },
+        {
+          "type": "instruction",
+          "content": "Self-Assessment: I can..."
+        },
+        {
+          "type": "blockquote",
+          "content": "• describe people using to be and basic adjectives\n• ask simple questions about age and appearance\n• use the target vocabulary\n• ask and answer the key questions"
+        },
+        {
+          "type": "instruction",
+          "content": "Recycling into Next Lesson:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Lesson 4 recycles greetings and descriptions in a consolidation lesson."
+        }
+      ]
+    }
+  ]
+}

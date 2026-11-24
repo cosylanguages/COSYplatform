@@ -1,1 +1,481 @@
-{"id":"perfect-hobby","title":"Perfect hobby","level":"A0","language":"en","defaultDuration":50,"defaultMode":"all","objectives":["talk about leisure preferences using like/love/hate + -ing","identify popular hobbies"],"links":{"vocabulary":["reading","cooking","painting","dancing","music","cinema"],"grammar":[{"topic_id":"verb-patterns-and-confusions","manual_url":"https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/verb-patterns-and-confusions.html"}],"communication":[{"phrase_id":"en:general:free-time-invitations:i-like-playing-football","manual_url":"https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/free-time-invitations.html"}]},"slides":[{"id":"perfect-hobby-slide-1","title":"Warm-up & Overview","stage":"warm-up","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Lesson Objectives for Perfect hobby:"},{"type":"blockquote","content":"talk about leisure preferences using like/love/hate + -ing; identify popular hobbies"}]},{"id":"perfect-hobby-slide-2","title":"Vocabulary & Input","stage":"input","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Review key terms and target language below:"},{"type":"blockquote","content":"Key terms: reading, cooking, painting, dancing, music, cinema"}]},{"id":"perfect-hobby-slide-grammar","title":"Grammar Focus","stage":"input","duration":50,"mode":"all","elements":[{"type":"grammar-focus","grammarId":"en-a1-verb-patterns-and-confusions"}]},{"id":"perfect-hobby-slide-3","title":"Controlled Practice","stage":"controlled-practice","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Complete: 'I love ___ books in my free time.'"},{"type":"test","options":["reading","read","reads"]}]},{"id":"perfect-hobby-slide-4","title":"Reading & Listening Skills","stage":"reading-listening","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Read the short passage below (recycling introduced vocabulary):"},{"type":"blockquote","content":"My perfect hobby is reading. My sister loves dancing and painting. We both enjoy good music."},{"type":"instruction","content":"Listening Task: Listen to your teacher / audio prompt and answer the comprehension question."}]},{"id":"perfect-hobby-slide-5","title":"Freer Speaking Practice","stage":"freer-practice","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Share three hobbies you love doing in your free time and one you dislike."}]},{"id":"perfect-hobby-slide-6","title":"Cool-down & Summary","stage":"cool-down","duration":50,"mode":"all","elements":[{"type":"instruction","content":"Lesson Summary & Feedback:"},{"type":"blockquote","content":"Today you practiced: talk about leisure preferences using like/love/hate + -ing, identify popular hobbies."}]}]}
+{
+  "id": "perfect-hobby",
+  "title": "Perfect hobby",
+  "level": "A0",
+  "language": "en",
+  "unit": "Unit 5. Free time",
+  "canDo": "I can talk about hobbies, express preferences, and use object pronouns.",
+  "defaultDuration": 50,
+  "defaultMode": "all",
+  "objectives": [
+    "talk about hobbies",
+    "use like/love/hate + -ing",
+    "use object pronouns to avoid repetition"
+  ],
+  "materials": "Hobby cards, preference chart, survey sheet, COSYmanuals 'like/love/hate' and 'adverbs of frequency' pages.",
+  "assessment": "Check -ing forms after preference verbs and object pronoun choice.",
+  "homework": "Write five sentences about your hobbies. Use at least two object pronouns.",
+  "recycling": {
+    "prior": "Recycles present simple and frequency adverbs.",
+    "next": "Lesson 7 recycles everyday objects to talk about places and directions."
+  },
+  "differentiation": {
+    "individual": "Use hobby picture cards and a personal preference chart.",
+    "group": "Hobby survey and class graph.",
+    "children": "Use hobby action cards and a 'move like...' game.",
+    "teens": "Use a hobby-profile challenge and a short presentation.",
+    "adults": "Discuss hobbies and work–life balance.",
+    "seniors": "Use large-print hobby cards and a gentle preference discussion."
+  },
+  "links": {
+    "vocabulary": [
+      "reading",
+      "cooking",
+      "painting",
+      "dancing",
+      "music",
+      "cinema",
+      "hobby",
+      "sport",
+      "game",
+      "enjoy",
+      "them",
+      "him",
+      "her",
+      "it",
+      "prefer"
+    ],
+    "grammar": [
+      {
+        "topic_id": "like-love-hate",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/like-love-hate.html"
+      },
+      {
+        "topic_id": "adverbs-frequency",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/adverbs-frequency.html"
+      },
+      {
+        "topic_id": "pronouns",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/grammar/a1/topics/pronouns.html"
+      }
+    ],
+    "phonetics": "The -ing ending and stress in hobby words",
+    "communication": [
+      {
+        "phrase_id": "en:general:free-time-invitations:i-like-playing-football",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/en/communication/a1/topics/free-time-invitations.html"
+      }
+    ]
+  },
+  "slides": [
+    {
+      "id": "perfect-hobby-slide-1",
+      "title": "1. Communication Goal & Overview",
+      "stage": "warm-up",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Communication Goal: I can talk about hobbies, express preferences, and use object pronouns."
+        },
+        {
+          "type": "blockquote",
+          "content": "Lesson overview:\n- Level: A0 General English\n- Unit: Unit 5. Free time\n- Time: 60 min (Essential) / 90 min (Expanded) / 120 min (Full Workshop)\n- Focus: Perfect hobby\n- Materials: Hobby cards, preference chart, survey sheet, COSYmanuals 'like/love/hate' and 'adverbs of frequency' pages."
+        },
+        {
+          "type": "instruction",
+          "content": "By the end of this lesson, you can:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• talk about hobbies\n• use like/love/hate + -ing\n• use object pronouns to avoid repetition"
+        }
+      ]
+    },
+    {
+      "id": "perfect-hobby-slide-2",
+      "title": "2. Recycling & Continuity",
+      "stage": "recycling",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Recycling & Course Continuity:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Prior learning: Recycles present simple and frequency adverbs.\n\nNext lesson: Lesson 7 recycles everyday objects to talk about places and directions."
+        },
+        {
+          "type": "instruction",
+          "content": "Quick retrieval task: which words or phrases do you remember?"
+        },
+        {
+          "type": "test",
+          "content": "Which word belongs to the previous lesson?",
+          "options": [
+            "reading",
+            "banana",
+            "airport"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "perfect-hobby-slide-3",
+      "title": "3. Vocabulary & Essential Chunks",
+      "stage": "input",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Core Active Vocabulary (15 items):"
+        },
+        {
+          "type": "blockquote",
+          "content": "reading — looking at and understanding text. Example: Reading is my favourite hobby.\ncooking — making food. Example: He loves cooking.\npainting — making pictures with paint. Example: She enjoys painting.\ndancing — moving your body to music. Example: They like dancing.\nmusic — sounds made with voices or instruments. Example: We listen to music together.\ncinema — a place to watch films. Example: We go to the cinema on Friday.\nhobby — an activity you enjoy in free time. Example: My hobby is reading.\nsport — a physical game or activity. Example: Football is a popular sport.\ngame — an activity with rules. Example: We play a game after class.\nenjoy — to like doing something. Example: I enjoy swimming.\nthem — the object pronoun for plural things. Example: I love films. I love them.\nhim — the object pronoun for a man. Example: I know him.\nher — belonging to a woman or girl. Example: Her bag is red.\nit — a thing or animal. Example: It is a big city.\nprefer — to like one thing more. Example: I prefer tea."
+        },
+        {
+          "type": "instruction",
+          "content": "Essential Chunks & Functional Collocations:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• My hobby is reading. (naming a hobby)\n• I like reading. / I love dancing. (expressing preference)\n• I hate cooking. (expressing dislike)\n• I like them. / I don't like it. (using object pronouns)\n• My brother loves music. I love it too. (agreeing with an object pronoun)\n• How often do you...? (asking about frequency)"
+        },
+        {
+          "type": "instruction",
+          "content": "Vocabulary practice: choose the correct word."
+        },
+        {
+          "type": "test",
+          "content": "Which word means 'looking at and understanding text'?",
+          "options": [
+            "reading",
+            "painting",
+            "dancing"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Which word means 'making food'?",
+          "options": [
+            "cooking",
+            "music",
+            "cinema"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Complete the sentence with a word from the list."
+        },
+        {
+          "type": "input",
+          "placeholder": "Complete: Reading is my favourite hobby."
+        }
+      ]
+    },
+    {
+      "id": "perfect-hobby-slide-4",
+      "title": "4. Pronunciation Focus",
+      "stage": "pronunciation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Pronunciation Focus: The -ing ending and stress in hobby words"
+        },
+        {
+          "type": "blockquote",
+          "content": "reading /ˈriːdɪŋ/ — stress the first syllable\ncooking /ˈkʊkɪŋ/ — short /ʊ/\npainting /ˈpeɪntɪŋ/ — long /eɪ/\ndancing /ˈdɑːnsɪŋ/ — long /ɑː/"
+        },
+        {
+          "type": "instruction",
+          "content": "Listen and repeat:"
+        },
+        {
+          "type": "blockquote",
+          "content": "I like reading. She loves dancing. We enjoy playing music."
+        },
+        {
+          "type": "instruction",
+          "content": "Mark the stressed syllable in these words:"
+        },
+        {
+          "type": "input",
+          "placeholder": "Mark the stress: reading, cooking, painting"
+        }
+      ]
+    },
+    {
+      "id": "perfect-hobby-slide-5",
+      "title": "5. Grammar Focus & Controlled Practice",
+      "stage": "grammar",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Grammar Focus: Use 'like', 'love', 'enjoy', and 'hate' to talk about preferences."
+        },
+        {
+          "type": "grammar-focus",
+          "grammarId": "en-a1-like-love-hate"
+        },
+        {
+          "type": "blockquote",
+          "content": "Form:\nLike / love / hate + -ing: Subject + like / love / enjoy / hate + verb-ing. I like reading. She loves dancing. They hate cooking.\n\nExamples:\n• I like reading.\n• She loves dancing.\n• We enjoy playing football.\n• He hates cooking."
+        },
+        {
+          "type": "instruction",
+          "content": "Controlled practice: choose the correct form."
+        },
+        {
+          "type": "test",
+          "content": "I like ___. (read)",
+          "options": [
+            "read",
+            "reading",
+            "reads"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "She loves ___. (dance)",
+          "options": [
+            "dance",
+            "dancing",
+            "dances"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "They hate ___. (cook)",
+          "options": [
+            "cook",
+            "cooking",
+            "cooks"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "We enjoy ___. (play) football.",
+          "options": [
+            "play",
+            "playing",
+            "plays"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Substitution drill: say the sentence with the new words."
+        },
+        {
+          "type": "blockquote",
+          "content": "• I like ... (-ing).\n• I love ... (-ing).\n• I hate ... (-ing)."
+        },
+        {
+          "type": "instruction",
+          "content": "Question-answer practice: ask and answer with your partner."
+        },
+        {
+          "type": "blockquote",
+          "content": "• What do you like doing in your free time?\n• What do you hate doing?\n• What does your friend love doing?"
+        },
+        {
+          "type": "instruction",
+          "content": "Personalised production: use the structure about your own life."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Write three sentences about your hobbies with 'like/love/hate + -ing'.\n• Write three sentences about a friend's hobbies."
+        }
+      ]
+    },
+    {
+      "id": "perfect-hobby-slide-6",
+      "title": "6. Four Skills Distribution (Listening & Reading)",
+      "stage": "reading-listening",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Reading: Perfect hobby"
+        },
+        {
+          "type": "blockquote",
+          "content": "My perfect hobby is reading. I read every evening. I like it because it is relaxing. My sister loves dancing and painting. She does them every weekend. My brother likes cooking, but he hates washing the dishes. He doesn't like it. My friend goes to the cinema every weekend. She loves films, and I love them too. What is your perfect hobby? How often do you do it?"
+        },
+        {
+          "type": "test",
+          "content": "What is the writer's hobby?",
+          "options": [
+            "reading",
+            "dancing",
+            "cooking"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "What does the brother hate?",
+          "options": [
+            "washing the dishes",
+            "cooking",
+            "reading"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Listening: listen to the dialogue and answer the questions."
+        },
+        {
+          "type": "blockquote",
+          "content": "A: What's your hobby?\nB: I love painting. I paint every weekend.\nA: Do you like music?\nB: Yes, I enjoy listening to music while I paint.\nA: What about sport?\nB: I don't like sport, but I sometimes play games with my friends. I like them because they are fun."
+        },
+        {
+          "type": "test",
+          "content": "What is the speaker's hobby?",
+          "options": [
+            "painting",
+            "reading",
+            "cooking"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Why does the speaker like games?",
+          "options": [
+            "They are fun.",
+            "They are cheap.",
+            "They are easy."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "perfect-hobby-slide-7",
+      "title": "7. Speaking & Writing Production",
+      "stage": "freer-practice",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Speaking task: Compare your hobbies and preferences. Use object pronouns when you agree or disagree."
+        },
+        {
+          "type": "blockquote",
+          "content": "• What is your hobby?\n• What do you love doing?\n• What do you hate doing?\n• Do you like films? Why?\n• How often do you do your hobby?"
+        },
+        {
+          "type": "instruction",
+          "content": "Role-play: You are at a hobby club fair. Ask three people about their hobbies and say what you think of them."
+        },
+        {
+          "type": "blockquote",
+          "content": "Work in pairs. Take turns. Use at least five target words and one target grammar structure. Then swap roles."
+        },
+        {
+          "type": "instruction",
+          "content": "Writing task: Write five sentences about your hobbies using like/love/hate + -ing and object pronouns."
+        },
+        {
+          "type": "blockquote",
+          "content": "Model: I like ... I love ... I hate ... I like them because ..."
+        },
+        {
+          "type": "essay",
+          "placeholder": "Write your response here..."
+        }
+      ]
+    },
+    {
+      "id": "perfect-hobby-slide-8",
+      "title": "8. Multi-Duration Lesson Flows",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Timestamped Multi-Duration Flows:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• 60 min (Essential): 0–8 Warm-up & goal; 8–18 Vocabulary & chunks; 18–28 Grammar & controlled practice; 28–40 Reading/listening + speaking; 40–50 Role-play; 50–60 Cool-down & homework.\n\n• 90 min (Expanded): 0–10 Warm-up; 10–25 Vocabulary & pronunciation; 25–40 Grammar & controlled practice; 40–55 Reading/listening; 55–75 Speaking & role-play; 75–85 Writing; 85–90 Cool-down.\n\n• 120 min (Full Workshop): 0–15 Warm-up & diagnostic; 15–35 Vocabulary lab; 35–55 Grammar workshop; 55–75 Reading/listening; 75–95 Speaking & role-play; 95–110 Writing & portfolio; 110–120 Cool-down & feedback."
+        }
+      ]
+    },
+    {
+      "id": "perfect-hobby-slide-9",
+      "title": "9. Delivery Adaptations",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Individual Lesson Adaptation:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Use hobby picture cards and a personal preference chart."
+        },
+        {
+          "type": "instruction",
+          "content": "Group Lesson Adaptation:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Hobby survey and class graph."
+        },
+        {
+          "type": "instruction",
+          "content": "Age Adaptations:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Children: Use hobby action cards and a 'move like...' game.\nTeens: Use a hobby-profile challenge and a short presentation.\nAdults: Discuss hobbies and work–life balance.\nSeniors: Use large-print hobby cards and a gentle preference discussion."
+        }
+      ]
+    },
+    {
+      "id": "perfect-hobby-slide-10",
+      "title": "10. Homework & Recycling Notes",
+      "stage": "cool-down",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Homework Assignment:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Write five sentences about your hobbies. Use at least two object pronouns."
+        },
+        {
+          "type": "instruction",
+          "content": "Self-Assessment: I can..."
+        },
+        {
+          "type": "blockquote",
+          "content": "• talk about hobbies\n• use like/love/hate + -ing\n• use object pronouns to avoid repetition\n• use the target vocabulary\n• ask and answer the key questions"
+        },
+        {
+          "type": "instruction",
+          "content": "Recycling into Next Lesson:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Lesson 7 recycles everyday objects to talk about places and directions."
+        }
+      ]
+    }
+  ]
+}
