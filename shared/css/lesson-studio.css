@@ -57,3 +57,26 @@
 .studio-block-card[data-type="put_in_order"] { border-left: 4px solid #ec4899; }
 .studio-preview-toggle{display:flex;gap:0;border:1px solid #94a3b8;border-radius:8px;overflow:hidden}.studio-preview-toggle button{font:inherit;font-size:.75rem;font-weight:700;padding:6px 12px;border:0;background:#fff;color:#0f172a;cursor:pointer}.studio-preview-toggle button[aria-pressed="true"]{background:#1e3a8a;color:#fff}.studio-preview-toggle button:focus-visible{outline:3px solid #1d4ed8;outline-offset:-3px}
 .preview-teacher-only{background:#fffbe3;border-left:4px solid #b45309;color:#78350f!important;padding:8px 10px;border-radius:0 8px 8px 0;font-size:.85rem}
+
+/* Grammar picker */
+.grammar-picker{display:flex;flex-direction:column;gap:12px;padding:14px;border:1px solid #dce4ef;border-radius:12px;background:#f8fbff}
+.grammar-picker--loading{opacity:.72}
+.grammar-picker-selected{display:flex;flex-direction:column;gap:3px;padding:11px 12px;background:#fff;border:1px solid #dbe4f0;border-radius:9px}
+.grammar-picker-selected-title{font-size:.9rem;color:#172033}
+.grammar-picker-selected-meta,.grammar-picker-selected-subtitle{font-size:.76rem;line-height:1.45;color:#64748b}
+.grammar-picker-manual-link{align-self:flex-start;margin-top:3px;font-size:.76rem;font-weight:700;color:#1d4ed8}
+.grammar-picker-filters{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.grammar-picker-status{margin:0}
+.grammar-picker-results{display:flex;flex-direction:column;gap:6px;max-height:320px;overflow:auto;padding-right:3px}
+.grammar-picker-option{display:flex;flex-direction:column;gap:2px;width:100%;box-sizing:border-box;padding:9px 11px;border:1px solid #dce4ef;border-radius:9px;background:#fff;color:#172033;font:inherit;text-align:left;cursor:pointer}
+.grammar-picker-option:hover{border-color:#93c5fd;background:#f0f7ff}
+.grammar-picker-option:focus-visible{outline:2px solid #2563eb;outline-offset:1px}
+.grammar-picker-option[aria-pressed="true"]{border-color:#2563eb;background:#eff6ff;box-shadow:inset 3px 0 0 #2563eb}
+.grammar-picker-option-title{font-size:.84rem;line-height:1.35}
+.grammar-picker-option-meta{font-size:.72rem;line-height:1.4;color:#64748b}
+.grammar-picker-option-subtitle{font-size:.75rem;line-height:1.4;color:#475569}
+.grammar-picker-empty{margin:0}
+.grammar-picker-advanced{padding:0 2px}
+.grammar-picker-advanced summary{cursor:pointer;font-size:.78rem;font-weight:700;color:#475569;padding:2px 0}
+.grammar-picker-advanced .studio-field{margin-top:8px}
+@media(max-width:600px){.grammar-picker-filters{grid-template-columns:1fr}}
