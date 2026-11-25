@@ -91,11 +91,32 @@ function fakeProfileClient(role) {
   };
 }
 
-test('an existing teacher session returns to the hub root, not a role page', async () => {
+test('an existing session returns to the profile instead of the public catalog', async () => {
   const target = encodeURIComponent('https://cosylanguages.github.io/COSYplatform/');
   const window = loadSso(`?redirect=${target}`);
   await window.CosySSO.autoRedirectFromLogin(fakeProfileClient('teacher'), { id: 'user-1' });
-  assert.equal(window.location.href, 'index.html');
+  assert.equal(window.location.href, 'profile.html');
+});
+
+test('an existing session keeps a catalog deep link', async () => {
+  const target = encodeURIComponent('https://cosylanguages.github.io/COSYplatform/index.html?lesson=studio:one');
+  const window = loadSso(`?redirect=${target}`);
+  await window.CosySSO.autoRedirectFromLogin(fakeProfileClient('student'), { id: 'user-1' });
+  assert.equal(window.location.href, 'index.html?lesson=studio:one');
+});
+
+test('an existing session returns to another COSY app root unchanged', async () => {
+  const target = encodeURIComponent('https://cosylanguages.github.io/COSYmanuals/');
+  const window = loadSso(`?redirect=${target}`);
+  await window.CosySSO.autoRedirectFromLogin(fakeProfileClient('student'), { id: 'user-1' });
+  assert.equal(window.location.href, 'https://cosylanguages.github.io/COSYmanuals/');
+});
+
+test('an existing session treats the app root without a trailing slash as the catalog', async () => {
+  const target = encodeURIComponent('https://cosylanguages.github.io/COSYplatform');
+  const window = loadSso(`?redirect=${target}`);
+  await window.CosySSO.autoRedirectFromLogin(fakeProfileClient('student'), { id: 'user-1' });
+  assert.equal(window.location.href, 'profile.html');
 });
 
 test('an existing session returns to the exact page it left', async () => {
@@ -108,4 +129,18 @@ test('an existing session returns to the exact page it left', async () => {
 test('the platform sign-in page keeps root redirects', () => {
   const html = fs.readFileSync(path.join(root, 'login.html'), 'utf8');
   assert.match(html, /\(relPath \|\| 'index\.html'\)/);
+});
+
+test('the sign-in page sends a plain catalog sign-in to the profile', () => {
+  const html = fs.readFileSync(path.join(root, 'login.html'), 'utf8');
+  assert.ok(html.includes('function isCatalogRoot('));
+  assert.ok(html.includes('function postLoginDestination('));
+  assert.ok(html.includes("isCatalogRoot(safeTarget) ? 'profile.html' : safeTarget"));
+});
+
+test('the public catalog offers profile links to signed-in users', () => {
+  const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
+  assert.ok(html.includes('renderPublicCatalog(authState)'));
+  assert.ok(html.includes('href="profile.html"'));
+  assert.ok(html.includes('Open workspace →'));
 });

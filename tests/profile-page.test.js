@@ -10,8 +10,8 @@ test('profile page is the post-login landing page', () => {
   const login = read('login.html');
   const sso = read('shared/js/auth-sso.js');
 
-  assert.ok(login.includes("safeTarget || 'profile.html'"));
-  assert.ok(sso.includes("safeTarget || 'profile.html'"));
+  assert.ok(login.includes("isCatalogRoot(safeTarget) ? 'profile.html' : safeTarget"));
+  assert.ok(sso.includes("isCatalogRoot(safeTarget) ? 'profile.html' : safeTarget"));
   assert.ok(login.includes('profile.html'));
 });
 
@@ -48,4 +48,29 @@ test('workspace pages link back to the profile', () => {
   for (const file of ['hub.html', 'student.html', 'teacher.html', 'founder.html']) {
     assert.ok(read(file).includes('href="profile.html"'), `${file} links to profile.html`);
   }
+});
+
+test('profile page has role panels and a founder-only mode switcher', () => {
+  const html = read('profile.html');
+
+  for (const mode of ['student', 'teacher', 'founder']) {
+    assert.ok(html.includes(`data-panel="${mode}"`), `${mode} panel exists`);
+    assert.ok(html.includes(`data-mode="${mode}"`), `${mode} tab exists`);
+  }
+  assert.ok(html.includes('id="mode-switcher"'));
+  assert.ok(html.includes('Founder-only: switch between all modes'));
+  assert.ok(html.includes("if (role !== 'founder' && mode !== role) return Promise.resolve();"));
+  assert.ok(html.includes('id="teacher-stat-students"'));
+  assert.ok(html.includes('id="founder-stat-courses"'));
+});
+
+test('workspace headers expose the founder-only mode switcher', () => {
+  for (const [file, active] of [['student.html', 'student'], ['teacher.html', 'teacher'], ['founder.html', 'founder'], ['hub.html', '']]) {
+    const html = read(file);
+    assert.ok(html.includes('shared/js/mode-switcher.js'), `${file} loads the switcher`);
+    assert.ok(html.includes('id="founder-mode-switcher"'), `${file} has a switcher host`);
+    assert.ok(html.includes(`active: '${active}'`), `${file} marks its active mode`);
+  }
+  const switcher = read('shared/js/mode-switcher.js');
+  assert.ok(switcher.includes("role !== 'founder'"), 'switcher hides for non-founders');
 });

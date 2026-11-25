@@ -614,6 +614,7 @@
   <script src="shared/js/ui-toast.js"></script>
   <script src="shared/js/i18n.js"></script>
   <script src="shared/js/lang-switcher.js"></script>
+  <script src="shared/js/mode-switcher.js"></script>
   <script src="shared/js/authoring.js"></script>
   <link rel="stylesheet" href="https://cosylanguages.github.io/COSYlanguages/css/ecosystem-strip.css">
 </head>
@@ -630,6 +631,7 @@
         <span class="badge-teacher">Teacher Catalog &amp; Guide</span>
       </div>
       <div style="display: flex; align-items: center; gap: 12px;">
+        <div id="founder-mode-switcher"></div>
         <a href="profile.html" class="btn" style="background: #e0f2fe; color: #0369a1; padding: 4px 12px; text-decoration: none; font-size: 0.8rem; border-radius: 6px; font-weight: 700;">👤 My Profile</a>
         <a href="classroom.html" class="btn" style="background: #047857; color: white; padding: 4px 12px; text-decoration: none; font-size: 0.8rem; border-radius: 6px; font-weight: 600;">Live Classroom 🎥</a>
         <div id="user-info" style="font-size: 0.85rem; color: var(--cosy-color-ink-muted, #64748b);"></div>
@@ -696,6 +698,10 @@
       }
 
       window.currentTeacherAuthData = authData;
+
+      if (window.CosyModeSwitcher) {
+        window.CosyModeSwitcher.mount('#founder-mode-switcher', { role: authData.profile.role, active: 'teacher' });
+      }
 
       const userEmail = authData.user ? authData.user.email : '';
       let userInfoText = `Teacher: ${userEmail || 'Teacher'}`;

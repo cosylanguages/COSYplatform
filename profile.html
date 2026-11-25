@@ -1,40 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-mode="student">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#0369a1">
-  <meta name="description" content="Your COSY platform profile, access and learning summary.">
+  <meta name="description" content="Your COSY platform profile: student, teacher and founder views, access and learning summary.">
   <link rel="icon" href="shared/img/favicon.svg" type="image/svg+xml">
   <title>My Profile · COSY platform</title>
   <link rel="stylesheet" href="shared/css/tokens.css">
   <link rel="stylesheet" href="shared/styles/style.css">
   <style>
     :root {
-      --profile-accent: #0369a1;
-      --profile-accent-dark: #075985;
-      --profile-teal: #0f766e;
+      --mode-accent: #0369a1;
+      --mode-accent-deep: #075985;
+      --mode-accent-soft: #e0f2fe;
+      --mode-accent-2: #0f766e;
       --profile-card: var(--cosy-color-warm-white, #ffffff);
       --profile-border: var(--cosy-color-border, #e2e8f0);
       --profile-ink: var(--cosy-color-ink, #0f172a);
       --profile-muted: var(--cosy-color-ink-muted, #64748b);
+      --profile-cream: var(--cosy-color-cream, #f8fafc);
     }
 
+    html[data-mode="teacher"] {
+      --mode-accent: #6d28d9;
+      --mode-accent-deep: #4c1d95;
+      --mode-accent-soft: #f3e8ff;
+      --mode-accent-2: #a21caf;
+    }
+
+    html[data-mode="founder"] {
+      --mode-accent: #0f172a;
+      --mode-accent-deep: #020617;
+      --mode-accent-soft: #e2e8f0;
+      --mode-accent-2: #0369a1;
+    }
+
+    [hidden] { display: none !important; }
+
     body {
-      background: var(--cosy-color-cream, #f8fafc);
+      background: var(--profile-cream);
       color: var(--profile-ink);
+      font-family: var(--cosy-font-sans, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
     }
 
     .profile-header {
       background: var(--profile-card);
       border-bottom: 1px solid var(--profile-border);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(8px);
     }
 
     .profile-header-inner {
-      max-width: 1120px;
+      max-width: 1180px;
       margin: 0 auto;
-      padding: 14px 20px;
+      padding: 12px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -53,6 +76,17 @@
 
     .profile-brand img { width: 36px; height: 36px; object-fit: contain; }
 
+    .profile-brand-sub {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--mode-accent);
+      background: var(--mode-accent-soft);
+      border-radius: 999px;
+      padding: 3px 9px;
+    }
+
     .profile-header-actions {
       display: flex;
       align-items: center;
@@ -66,7 +100,7 @@
       font-size: 0.82rem;
       font-weight: 700;
       padding: 7px 12px;
-      border-radius: 8px;
+      border-radius: 9px;
       border: 1px solid var(--profile-border);
       background: var(--profile-card);
       color: var(--profile-ink);
@@ -74,88 +108,95 @@
       cursor: pointer;
     }
 
+    .profile-header-actions a:hover,
+    .profile-header-actions button:hover { border-color: var(--mode-accent); }
+
     .profile-header-actions .primary {
-      background: var(--profile-accent);
-      border-color: var(--profile-accent);
+      background: var(--mode-accent);
+      border-color: var(--mode-accent);
       color: #fff;
     }
 
     .profile-main {
-      max-width: 1120px;
+      max-width: 1180px;
       margin: 0 auto;
-      padding: 26px 20px 50px;
+      padding: 24px 20px 56px;
     }
 
     .profile-loading {
       background: var(--profile-card);
       border: 1px solid var(--profile-border);
       border-radius: 16px;
-      padding: 32px;
+      padding: 40px;
       text-align: center;
       color: var(--profile-muted);
+      font-weight: 600;
     }
 
     .profile-hero {
       position: relative;
       overflow: hidden;
-      border-radius: 18px;
-      padding: 28px;
+      border-radius: 22px;
+      padding: 30px;
       color: #fff;
-      background: linear-gradient(135deg, #075985 0%, #0369a1 55%, #0f766e 100%);
-      box-shadow: 0 12px 30px rgba(3, 105, 161, 0.18);
+      background: linear-gradient(130deg, var(--mode-accent-deep) 0%, var(--mode-accent) 58%, var(--mode-accent-2) 100%);
+      box-shadow: 0 16px 40px rgba(2, 132, 199, 0.18);
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 24px;
       flex-wrap: wrap;
-      margin-bottom: 22px;
+      margin-bottom: 18px;
+      transition: background 0.3s ease;
     }
 
-    .profile-hero::after {
+    .profile-hero::after,
+    .profile-hero::before {
       content: "";
       position: absolute;
-      width: 260px;
-      height: 260px;
-      right: -90px;
-      top: -120px;
       border-radius: 50%;
       background: rgba(255, 255, 255, 0.08);
       pointer-events: none;
     }
 
+    .profile-hero::after { width: 300px; height: 300px; right: -110px; top: -150px; }
+    .profile-hero::before { width: 180px; height: 180px; right: 120px; bottom: -130px; background: rgba(255,255,255,0.06); }
+
     .profile-identity {
       display: flex;
       align-items: center;
-      gap: 18px;
+      gap: 20px;
       min-width: 0;
       position: relative;
       z-index: 1;
     }
 
     .profile-avatar {
-      width: 74px;
-      height: 74px;
+      width: 82px;
+      height: 82px;
       border-radius: 50%;
       display: grid;
       place-items: center;
-      font-size: 1.7rem;
+      font-size: 1.9rem;
       font-weight: 800;
-      color: #075985;
-      background: #e0f2fe;
-      border: 3px solid rgba(255, 255, 255, 0.65);
+      color: var(--mode-accent-deep);
+      background: #fff;
+      border: 3px solid rgba(255, 255, 255, 0.6);
+      box-shadow: 0 8px 22px rgba(2, 6, 23, 0.2);
       flex: 0 0 auto;
     }
 
     .profile-hero h1 {
-      font-size: clamp(1.45rem, 3vw, 2rem);
-      line-height: 1.15;
+      font-size: clamp(1.5rem, 3vw, 2.1rem);
+      line-height: 1.1;
       margin: 0 0 5px;
       font-weight: 800;
+      letter-spacing: -0.01em;
     }
 
     .profile-email {
       margin: 0;
-      color: #dbeafe;
+      color: rgba(255, 255, 255, 0.82);
       font-size: 0.9rem;
       word-break: break-word;
     }
@@ -164,20 +205,20 @@
       display: flex;
       gap: 8px;
       flex-wrap: wrap;
-      margin-top: 10px;
+      margin-top: 12px;
     }
 
     .profile-pill {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 5px 10px;
+      padding: 5px 11px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.15);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      color: #f0f9ff;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      color: #f8fafc;
       font-size: 0.76rem;
-      font-weight: 700;
+      font-weight: 800;
     }
 
     .profile-hero-actions {
@@ -193,40 +234,125 @@
       align-items: center;
       justify-content: center;
       gap: 6px;
-      padding: 10px 15px;
-      border-radius: 10px;
-      font-size: 0.85rem;
+      padding: 11px 16px;
+      border-radius: 11px;
+      font-size: 0.86rem;
       font-weight: 800;
       text-decoration: none;
-      color: #075985;
-      background: #f0f9ff;
-      border: 1px solid rgba(255, 255, 255, 0.4);
+      color: var(--mode-accent-deep);
+      background: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      transition: transform 0.15s ease;
     }
+
+    .profile-hero-actions a:hover { transform: translateY(-1px); }
 
     .profile-hero-actions a.secondary {
       color: #fff;
-      background: rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.14);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .mode-switcher {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      background: var(--profile-card);
+      border: 1px solid var(--profile-border);
+      border-radius: 14px;
+      padding: 10px 14px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+    }
+
+    .mode-switcher-label {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--profile-muted);
+    }
+
+    .mode-tabs {
+      display: inline-flex;
+      gap: 4px;
+      padding: 4px;
+      border-radius: 999px;
+      background: rgba(148, 163, 184, 0.16);
+    }
+
+    .mode-tab {
+      border: 0;
+      background: transparent;
+      padding: 8px 15px;
+      border-radius: 999px;
+      font: inherit;
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: var(--profile-muted);
+      cursor: pointer;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+
+    .mode-tab:hover { color: var(--profile-ink); }
+
+    .mode-tab.is-active {
+      background: var(--mode-accent);
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(2, 6, 23, 0.18);
+    }
+
+    .mode-switcher-hint {
+      margin-left: auto;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--profile-muted);
+    }
+
+    .mode-preview-banner {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      border: 1px solid #fcd34d;
+      background: #fffbeb;
+      color: #92400e;
+      border-radius: 12px;
+      padding: 11px 14px;
+      margin-bottom: 16px;
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+
+    .mode-preview-banner button {
+      font: inherit;
+      font-size: 0.8rem;
+      font-weight: 800;
+      border: 0;
+      border-radius: 8px;
+      padding: 6px 12px;
+      background: #b45309;
+      color: #fff;
+      cursor: pointer;
     }
 
     .profile-layout {
       display: grid;
-      grid-template-columns: minmax(0, 1.65fr) minmax(280px, 1fr);
+      grid-template-columns: minmax(0, 1.65fr) minmax(290px, 1fr);
       gap: 20px;
       align-items: start;
     }
 
-    .profile-stack {
-      display: grid;
-      gap: 20px;
-      min-width: 0;
-    }
+    .profile-stack { display: grid; gap: 20px; min-width: 0; }
+    .profile-panel { display: grid; gap: 20px; min-width: 0; }
 
     .profile-card {
       background: var(--profile-card);
       border: 1px solid var(--profile-border);
       border-radius: 16px;
       padding: 20px;
-      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.035);
+      box-shadow: 0 2px 10px rgba(15, 23, 42, 0.035);
     }
 
     .profile-card h2 {
@@ -234,7 +360,7 @@
       align-items: center;
       gap: 8px;
       margin: 0 0 14px;
-      font-size: 1.05rem;
+      font-size: 1.02rem;
       font-weight: 800;
       color: var(--profile-ink);
     }
@@ -248,7 +374,7 @@
     }
 
     .profile-stat {
-      background: var(--cosy-color-cream, #f8fafc);
+      background: var(--profile-cream);
       border: 1px solid var(--profile-border);
       border-radius: 12px;
       padding: 14px;
@@ -257,7 +383,7 @@
 
     .profile-stat-label {
       color: var(--profile-muted);
-      font-size: 0.71rem;
+      font-size: 0.7rem;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.055em;
@@ -266,22 +392,19 @@
 
     .profile-stat-value {
       color: var(--profile-ink);
-      font-size: 1.65rem;
+      font-size: 1.7rem;
       font-weight: 800;
       line-height: 1;
     }
 
     .profile-stat-note {
-      margin-top: 5px;
+      margin-top: 6px;
       color: var(--profile-muted);
       font-size: 0.72rem;
+      line-height: 1.35;
     }
 
-    .profile-detail-list {
-      display: grid;
-      gap: 11px;
-      margin: 0;
-    }
+    .profile-detail-list { display: grid; gap: 11px; margin: 0; }
 
     .profile-detail-row {
       display: flex;
@@ -324,13 +447,13 @@
       border-radius: 11px;
       text-decoration: none;
       color: var(--profile-ink);
-      background: var(--cosy-color-cream, #f8fafc);
+      background: var(--profile-cream);
+      transition: border-color 0.15s ease, transform 0.15s ease;
     }
 
-    .profile-action:hover { border-color: var(--profile-accent); }
+    .profile-action:hover { border-color: var(--mode-accent); transform: translateY(-1px); }
 
     .profile-action-icon { font-size: 1.1rem; line-height: 1.2; }
-
     .profile-action strong { display: block; font-size: 0.84rem; }
     .profile-action small { display: block; color: var(--profile-muted); font-size: 0.72rem; margin-top: 2px; }
 
@@ -373,13 +496,7 @@
     .grant-status.expired { color: #991b1b; background: #fee2e2; }
     .grant-status.pending { color: #92400e; background: #fef3c7; }
 
-    .profile-activity {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: grid;
-      gap: 0;
-    }
+    .profile-activity { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
 
     .profile-activity li {
       display: flex;
@@ -391,12 +508,12 @@
     .profile-activity li:last-child { border-bottom: 0; padding-bottom: 0; }
 
     .activity-icon {
-      width: 30px;
-      height: 30px;
+      width: 32px;
+      height: 32px;
       border-radius: 9px;
       display: grid;
       place-items: center;
-      background: #e0f2fe;
+      background: var(--mode-accent-soft);
       flex: 0 0 auto;
     }
 
@@ -410,31 +527,57 @@
       padding: 18px;
       color: var(--profile-muted);
       font-size: 0.84rem;
-      background: var(--cosy-color-cream, #f8fafc);
+      background: var(--profile-cream);
     }
 
+    .shortcut-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .shortcut-card {
+      display: block;
+      padding: 14px;
+      border-radius: 12px;
+      border: 1px solid var(--profile-border);
+      background: var(--profile-cream);
+      text-decoration: none;
+      color: var(--profile-ink);
+      transition: border-color 0.15s ease, transform 0.15s ease;
+    }
+
+    .shortcut-card:hover { border-color: var(--mode-accent); transform: translateY(-1px); }
+    .shortcut-card .shortcut-icon { font-size: 1.3rem; }
+    .shortcut-card strong { display: block; margin-top: 6px; font-size: 0.86rem; }
+    .shortcut-card small { display: block; color: var(--profile-muted); font-size: 0.72rem; margin-top: 2px; }
+
     .profile-footer {
-      max-width: 1120px;
+      max-width: 1180px;
       margin: 0 auto;
       padding: 0 20px 30px;
       color: var(--profile-muted);
       font-size: 0.78rem;
     }
 
-    @media (max-width: 900px) {
+    .profile-footer a { color: inherit; }
+
+    @media (max-width: 980px) {
       .profile-layout { grid-template-columns: 1fr; }
       .profile-stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .shortcut-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 560px) {
-      .profile-main { padding: 18px 14px 36px; }
+      .profile-main { padding: 18px 14px 40px; }
       .profile-hero { padding: 20px; }
       .profile-identity { align-items: flex-start; }
-      .profile-avatar { width: 58px; height: 58px; font-size: 1.35rem; }
+      .profile-avatar { width: 60px; height: 60px; font-size: 1.4rem; }
       .profile-stat-grid { grid-template-columns: 1fr 1fr; }
       .profile-actions-grid { grid-template-columns: 1fr; }
       .profile-detail-row { display: block; }
       .profile-detail-row dd { text-align: left; margin-top: 3px; }
+      .mode-switcher-hint { margin-left: 0; }
     }
   </style>
   <link rel="stylesheet" href="https://cosylanguages.github.io/COSYlanguages/css/ecosystem-strip.css">
@@ -449,9 +592,10 @@
 
 <header class="profile-header">
   <div class="profile-header-inner">
-    <a class="profile-brand" href="index.html">
+    <a class="profile-brand" href="profile.html">
       <img src="shared/img/logo.svg" alt="COSY platform">
       <span>COSY platform</span>
+      <span class="profile-brand-sub">Profile</span>
     </a>
     <div class="profile-header-actions">
       <a href="index.html">Catalog</a>
@@ -475,6 +619,7 @@
           <div class="profile-hero-meta">
             <span id="profile-role-pill" class="profile-pill">👤 Member</span>
             <span id="profile-member-pill" class="profile-pill">📅 Member</span>
+            <span id="profile-viewing-pill" class="profile-pill" hidden>Viewing as Student</span>
           </div>
         </div>
       </div>
@@ -484,43 +629,173 @@
       </div>
     </section>
 
+    <div id="mode-switcher" class="mode-switcher" hidden>
+      <span class="mode-switcher-label">View as</span>
+      <div class="mode-tabs" role="tablist" aria-label="Profile mode">
+        <button type="button" class="mode-tab" data-mode="student" role="tab">🎓 Student</button>
+        <button type="button" class="mode-tab" data-mode="teacher" role="tab">🧑‍🏫 Teacher</button>
+        <button type="button" class="mode-tab" data-mode="founder" role="tab">👑 Founder</button>
+      </div>
+      <span class="mode-switcher-hint">Founder-only: switch between all modes</span>
+    </div>
+
+    <div id="mode-preview-banner" class="mode-preview-banner" hidden>
+      <span id="mode-preview-text">You are previewing another profile mode.</span>
+      <button type="button" id="mode-preview-return">Back to Founder view</button>
+    </div>
+
     <div class="profile-layout">
       <div class="profile-stack">
-        <section class="profile-card" aria-labelledby="profile-stats-title">
-          <h2 id="profile-stats-title">📊 Learning Summary</h2>
-          <div class="profile-stat-grid">
-            <div class="profile-stat">
-              <div class="profile-stat-label">Active courses</div>
-              <div id="stat-active-courses" class="profile-stat-value">—</div>
-              <div class="profile-stat-note">Current access grants</div>
+        <!-- Student profile -->
+        <div class="profile-panel" data-panel="student">
+          <section class="profile-card" aria-labelledby="profile-stats-title">
+            <h2 id="profile-stats-title">📊 Learning Summary</h2>
+            <div class="profile-stat-grid">
+              <div class="profile-stat">
+                <div class="profile-stat-label">Active courses</div>
+                <div id="stat-active-courses" class="profile-stat-value">—</div>
+                <div class="profile-stat-note">Current access grants</div>
+              </div>
+              <div class="profile-stat">
+                <div class="profile-stat-label">Lessons practised</div>
+                <div id="stat-lessons-practised" class="profile-stat-value">—</div>
+                <div class="profile-stat-note">With progress records</div>
+              </div>
+              <div class="profile-stat">
+                <div class="profile-stat-label">Tasks submitted</div>
+                <div id="stat-tasks-submitted" class="profile-stat-value">—</div>
+                <div class="profile-stat-note">Essays, audio and answers</div>
+              </div>
+              <div class="profile-stat">
+                <div class="profile-stat-label">Study events</div>
+                <div id="stat-study-events" class="profile-stat-value">—</div>
+                <div class="profile-stat-note">Checks and game rounds</div>
+              </div>
             </div>
-            <div class="profile-stat">
-              <div class="profile-stat-label">Lessons practised</div>
-              <div id="stat-lessons-practised" class="profile-stat-value">—</div>
-              <div class="profile-stat-note">With progress records</div>
-            </div>
-            <div class="profile-stat">
-              <div class="profile-stat-label">Tasks submitted</div>
-              <div id="stat-tasks-submitted" class="profile-stat-value">—</div>
-              <div class="profile-stat-note">Essays, audio and answers</div>
-            </div>
-            <div class="profile-stat">
-              <div class="profile-stat-label">Study events</div>
-              <div id="stat-study-events" class="profile-stat-value">—</div>
-              <div class="profile-stat-note">Checks and game rounds</div>
-            </div>
-          </div>
-        </section>
+          </section>
 
-        <section class="profile-card" aria-labelledby="profile-courses-title">
-          <h2 id="profile-courses-title">📚 My Courses &amp; Access</h2>
-          <div id="profile-grants"></div>
-        </section>
+          <section class="profile-card" aria-labelledby="profile-courses-title">
+            <h2 id="profile-courses-title">📚 My Courses &amp; Access</h2>
+            <div id="profile-grants"></div>
+          </section>
 
-        <section class="profile-card" aria-labelledby="profile-activity-title">
-          <h2 id="profile-activity-title">🕘 Recent Activity</h2>
-          <ul id="profile-activity" class="profile-activity"></ul>
-        </section>
+          <section class="profile-card" aria-labelledby="profile-activity-title">
+            <h2 id="profile-activity-title">🕘 Recent Activity</h2>
+            <ul id="profile-activity" class="profile-activity"></ul>
+          </section>
+        </div>
+
+        <!-- Teacher profile -->
+        <div class="profile-panel" data-panel="teacher" hidden>
+          <section class="profile-card" aria-labelledby="teacher-stats-title">
+            <h2 id="teacher-stats-title">🧑‍🏫 Teaching Summary</h2>
+            <div class="profile-stat-grid">
+              <div class="profile-stat">
+                <div class="profile-stat-label">Assigned languages</div>
+                <div id="teacher-stat-languages" class="profile-stat-value">—</div>
+                <div id="teacher-stat-languages-note" class="profile-stat-note">From your teacher profile</div>
+              </div>
+              <div class="profile-stat">
+                <div class="profile-stat-label">Students</div>
+                <div id="teacher-stat-students" class="profile-stat-value">—</div>
+                <div id="teacher-stat-students-note" class="profile-stat-note">Linked learners</div>
+              </div>
+              <div class="profile-stat">
+                <div class="profile-stat-label">Hosted sessions</div>
+                <div id="teacher-stat-sessions" class="profile-stat-value">—</div>
+                <div class="profile-stat-note">Events you facilitate</div>
+              </div>
+              <div class="profile-stat">
+                <div class="profile-stat-label">Classroom notes</div>
+                <div id="teacher-stat-notes" class="profile-stat-value">—</div>
+                <div class="profile-stat-note">Shared lesson notes</div>
+              </div>
+            </div>
+          </section>
+
+          <section class="profile-card" aria-labelledby="teacher-spaces-title">
+            <h2 id="teacher-spaces-title">🗂️ My Teaching Spaces</h2>
+            <div id="teacher-spaces" class="profile-actions-grid"></div>
+          </section>
+
+          <section class="profile-card" aria-labelledby="teacher-activity-title">
+            <h2 id="teacher-activity-title">🕘 Recent Teaching Activity</h2>
+            <ul id="teacher-activity" class="profile-activity"></ul>
+          </section>
+        </div>
+
+        <!-- Founder profile -->
+        <div class="profile-panel" data-panel="founder" hidden>
+          <section class="profile-card" aria-labelledby="founder-stats-title">
+            <h2 id="founder-stats-title">👑 Executive Overview</h2>
+            <div class="profile-stat-grid">
+              <div class="profile-stat">
+                <div class="profile-stat-label">Languages with courses</div>
+                <div id="founder-stat-languages" class="profile-stat-value">—</div>
+                <div id="founder-stat-languages-note" class="profile-stat-note">Published catalog</div>
+              </div>
+              <div class="profile-stat">
+                <div class="profile-stat-label">Courses available</div>
+                <div id="founder-stat-courses" class="profile-stat-value">—</div>
+                <div id="founder-stat-courses-note" class="profile-stat-note">Out of all planned courses</div>
+              </div>
+              <div class="profile-stat">
+                <div class="profile-stat-label">Lessons available</div>
+                <div id="founder-stat-lessons" class="profile-stat-value">—</div>
+                <div id="founder-stat-lessons-note" class="profile-stat-note">Ready to teach</div>
+              </div>
+              <div class="profile-stat">
+                <div class="profile-stat-label">Members</div>
+                <div id="founder-stat-members" class="profile-stat-value">—</div>
+                <div id="founder-stat-members-note" class="profile-stat-note">Students and teachers</div>
+              </div>
+            </div>
+          </section>
+
+          <section class="profile-card" aria-labelledby="founder-switch-title">
+            <h2 id="founder-switch-title">🔀 Switch Workspace</h2>
+            <p style="margin:0 0 12px;font-size:0.84rem;">As founder you can open every workspace. Other roles cannot switch modes.</p>
+            <div class="shortcut-grid">
+              <a class="shortcut-card" href="student.html">
+                <span class="shortcut-icon">🎓</span>
+                <strong>Student workspace</strong>
+                <small>Lessons, homework and progress</small>
+              </a>
+              <a class="shortcut-card" href="teacher.html">
+                <span class="shortcut-icon">🧑‍🏫</span>
+                <strong>Teacher workspace</strong>
+                <small>Students, classes and lesson studio</small>
+              </a>
+              <a class="shortcut-card" href="founder.html">
+                <span class="shortcut-icon">👑</span>
+                <strong>Founder portal</strong>
+                <small>Users, access and platform oversight</small>
+              </a>
+            </div>
+          </section>
+
+          <section class="profile-card" aria-labelledby="founder-tools-title">
+            <h2 id="founder-tools-title">🛠️ Admin Tools</h2>
+            <div class="profile-actions-grid">
+              <a class="profile-action" href="founder.html">
+                <span class="profile-action-icon">👑</span>
+                <span><strong>Founder Portal</strong><small>Manage users and access</small></span>
+              </a>
+              <a class="profile-action" href="lesson-studio.html">
+                <span class="profile-action-icon">🛠️</span>
+                <span><strong>Lesson Studio</strong><small>Author and publish lessons</small></span>
+              </a>
+              <a class="profile-action" href="classroom.html">
+                <span class="profile-action-icon">🎥</span>
+                <span><strong>Live Classroom</strong><small>Join or host sessions</small></span>
+              </a>
+              <a class="profile-action" href="index.html">
+                <span class="profile-action-icon">🧭</span>
+                <span><strong>Public Catalog</strong><small>See the learner-facing catalog</small></span>
+              </a>
+            </div>
+          </section>
+        </div>
       </div>
 
       <aside class="profile-stack">
@@ -543,6 +818,10 @@
             <a id="action-workspace" class="profile-action" href="student.html">
               <span class="profile-action-icon">🎓</span>
               <span><strong>My Workspace</strong><small>Lessons and homework</small></span>
+            </a>
+            <a id="action-studio" class="profile-action" href="lesson-studio.html" hidden>
+              <span class="profile-action-icon">🛠️</span>
+              <span><strong>Lesson Studio</strong><small>Author lesson content</small></span>
             </a>
             <a class="profile-action" href="classroom.html">
               <span class="profile-action-icon">🎥</span>
@@ -591,15 +870,28 @@
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#039;');
 
-  const roleLabels = {
-    student: { label: 'Student', icon: '🎓', workspace: 'student.html', workspaceName: 'Student Workspace' },
-    teacher: { label: 'Teacher', icon: '🧑‍🏫', workspace: 'teacher.html', workspaceName: 'Teacher Workspace' },
-    founder: { label: 'Founder', icon: '👑', workspace: 'founder.html', workspaceName: 'Founder Portal' }
+  const MODES = ['student', 'teacher', 'founder'];
+  const STORAGE_KEY = 'cosy_profile_mode';
+  const modeStore = (function () {
+    try { return window.sessionStorage; } catch (e) { return null; }
+  })();
+  const ROLE_META = {
+    student: { label: 'Student', icon: '🎓', workspace: 'student.html', workspaceName: 'Student Workspace', workspaceShort: 'My Workspace', blurb: 'Lessons and homework' },
+    teacher: { label: 'Teacher', icon: '🧑‍🏫', workspace: 'teacher.html', workspaceName: 'Teacher Workspace', workspaceShort: 'Teacher Workspace', blurb: 'Students, classes and studio' },
+    founder: { label: 'Founder', icon: '👑', workspace: 'founder.html', workspaceName: 'Founder Portal', workspaceShort: 'Founder Portal', blurb: 'Users, access and oversight' }
   };
+
+  let client = null;
+  let user = null;
+  let profile = null;
+  let role = 'student';
+  let currentMode = 'student';
+  const loaded = { student: false, teacher: false, founder: false };
 
   function formatDate(value) {
     if (!value) return '—';
-    const date = new Date(value);
+    const raw = String(value);
+    const date = new Date(/^\d{4}-\d{2}-\d{2}$/.test(raw) ? raw + 'T00:00:00' : value);
     if (Number.isNaN(date.getTime())) return '—';
     return date.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
   }
@@ -611,25 +903,25 @@
     return date.toLocaleString(undefined, { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
   }
 
-  function initials(profile, user) {
-    const name = (profile && profile.display_name) || (user && user.email) || 'COSY';
+  function initials(person, authUser) {
+    const name = (person && person.display_name) || (authUser && authUser.email) || 'COSY';
     const parts = String(name).replace(/@.*/, '').split(/[\s._-]+/).filter(Boolean);
     return (parts.slice(0, 2).map(part => part.charAt(0).toUpperCase()).join('') || 'C');
   }
 
-  function normaliseRole(role) {
-    const value = String(role || 'student').toLowerCase();
-    return roleLabels[value] ? value : 'student';
+  function normaliseRole(value) {
+    const key = String(value || 'student').toLowerCase();
+    return ROLE_META[key] ? key : 'student';
   }
 
-  function languageList(profile) {
-    const values = Array.isArray(profile && profile.language_access) ? profile.language_access : [];
+  function languageList(person) {
+    const values = Array.isArray(person && person.language_access) ? person.language_access : [];
     if (!values.length) return 'Not assigned';
     return values.map(value => value === '*' ? 'All languages' : String(value).toUpperCase()).join(', ');
   }
 
-  function courseLevel(profile) {
-    const value = profile && profile.course_level;
+  function courseLevel(person) {
+    const value = person && person.course_level;
     if (!value || value === '*') return 'All levels';
     return Array.isArray(value) ? value.join(', ').toUpperCase() : String(value).toUpperCase();
   }
@@ -655,11 +947,122 @@
     return from + ' → ' + until;
   }
 
-  async function loadGrants(client, userId) {
-    let query = client
+  function settledValue(result, fallback) {
+    return result && result.status === 'fulfilled' ? result.value : fallback;
+  }
+
+  // ── Mode handling ───────────────────────────────────────────────────────
+
+  function initialMode() {
+    const params = new URLSearchParams(window.location.search);
+    const requested = (params.get('mode') || '').toLowerCase();
+    if (role === 'founder') {
+      if (MODES.includes(requested)) return requested;
+      try {
+        const saved = modeStore && modeStore.getItem(STORAGE_KEY);
+        if (MODES.includes(saved)) return saved;
+      } catch (e) {}
+      return 'founder';
+    }
+    return role;
+  }
+
+  function ensureModeData(mode) {
+    if (loaded[mode]) return Promise.resolve();
+    loaded[mode] = true;
+    if (mode === 'student') return loadStudentData();
+    if (mode === 'teacher') return loadTeacherData();
+    if (mode === 'founder') return loadFounderData();
+    return Promise.resolve();
+  }
+
+  function setMode(mode, options) {
+    if (!MODES.includes(mode)) return Promise.resolve();
+    // Only founders may move between modes.
+    if (role !== 'founder' && mode !== role) return Promise.resolve();
+
+    currentMode = mode;
+    document.documentElement.setAttribute('data-mode', mode);
+
+    document.querySelectorAll('[data-panel]').forEach(panel => {
+      panel.hidden = panel.getAttribute('data-panel') !== mode;
+    });
+
+    document.querySelectorAll('.mode-tab').forEach(tab => {
+      const active = tab.getAttribute('data-mode') === mode;
+      tab.classList.toggle('is-active', active);
+      tab.setAttribute('aria-selected', active ? 'true' : 'false');
+    });
+
+    const meta = ROLE_META[mode];
+    const header = $('header-workspace-link');
+    if (header) { header.href = meta.workspace; header.textContent = meta.workspaceName; }
+
+    const hero = $('hero-workspace-link');
+    if (hero) { hero.href = meta.workspace; hero.textContent = 'Open ' + meta.label.toLowerCase() + ' workspace →'; }
+
+    const action = $('action-workspace');
+    if (action) {
+      action.href = meta.workspace;
+      const strong = action.querySelector('strong');
+      const small = action.querySelector('small');
+      if (strong) strong.textContent = meta.workspaceShort;
+      if (small) small.textContent = meta.blurb;
+    }
+
+    const viewing = $('profile-viewing-pill');
+    if (viewing) {
+      viewing.hidden = role !== 'founder';
+      viewing.textContent = 'Viewing as ' + meta.label;
+    }
+
+    const banner = $('mode-preview-banner');
+    if (banner) banner.hidden = !(role === 'founder' && mode !== 'founder');
+    const bannerText = $('mode-preview-text');
+    if (bannerText) bannerText.textContent = 'You are previewing the ' + meta.label + ' profile.';
+
+    const studio = $('action-studio');
+    if (studio) studio.hidden = !(mode === 'teacher' || mode === 'founder');
+
+    if (role === 'founder') {
+      try { modeStore && modeStore.setItem(STORAGE_KEY, mode); } catch (e) {}
+    }
+
+    if (!options || options.updateUrl !== false) {
+      try {
+        const url = new URL(window.location.href);
+        if (role === 'founder') url.searchParams.set('mode', mode);
+        else url.searchParams.delete('mode');
+        window.history.replaceState(null, '', url.pathname + url.search + url.hash);
+      } catch (e) {}
+    }
+
+    return ensureModeData(mode);
+  }
+
+  function setupModeSwitcher() {
+    const switcher = $('mode-switcher');
+    if (role === 'founder') {
+      switcher.hidden = false;
+      switcher.querySelectorAll('.mode-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          setMode(tab.getAttribute('data-mode')).catch(error => console.warn('[profile] Mode switch failed:', error));
+        });
+      });
+      const back = $('mode-preview-return');
+      if (back) back.addEventListener('click', () => setMode('founder').catch(() => {}));
+    } else {
+      switcher.hidden = true;
+    }
+  }
+
+  // ── Student data ────────────────────────────────────────────────────────
+
+  async function loadGrants() {
+    const query = client
       .from('access_grants')
       .select('grant_id, course, course_id, valid_from, valid_until, expires_at, created_at')
-      .or('user_id.eq.' + userId + ',student_id.eq.' + userId)
+      .or('user_id.eq.' + user.id + ',student_id.eq.' + user.id)
       .order('created_at', { ascending: false });
 
     let { data, error } = await query;
@@ -672,7 +1075,7 @@
     return data || [];
   }
 
-  async function loadCourseTitles(client, grants) {
+  async function loadCourseTitles(grants) {
     const ids = [...new Set(grants.map(grant => grant.course_id || grant.course).filter(Boolean))];
     if (!ids.length) return {};
     const { data, error } = await client
@@ -685,10 +1088,10 @@
     return map;
   }
 
-  async function countRows(client, table, buildQuery) {
+  async function countRows(table, buildQuery) {
     try {
       let query = client.from(table).select('*', { count: 'exact', head: true });
-      query = buildQuery(query);
+      if (buildQuery) query = buildQuery(query);
       const { count, error } = await query;
       if (error) return null;
       return typeof count === 'number' ? count : null;
@@ -697,7 +1100,7 @@
     }
   }
 
-  async function loadRecent(client, userId) {
+  async function loadRecent() {
     const out = [];
     const tasks = [];
 
@@ -705,7 +1108,7 @@
       const { data, error } = await client
         .from('lesson_submissions')
         .select('id, lesson_id, field_key, kind, status, created_at')
-        .eq('student_id', userId)
+        .eq('student_id', user.id)
         .order('created_at', { ascending: false })
         .limit(20);
       if (error || !data) return;
@@ -736,7 +1139,7 @@
       const { data, error } = await client
         .from('study_events')
         .select('id, lesson_id, kind, correct, score, total, created_at')
-        .eq('student_id', userId)
+        .eq('student_id', user.id)
         .order('created_at', { ascending: false })
         .limit(20);
       if (error || !data) return;
@@ -753,17 +1156,311 @@
     return out.slice(0, 8);
   }
 
+  function renderActivityList(elementId, items, emptyText) {
+    const el = $(elementId);
+    if (!el) return;
+    if (!items.length) {
+      el.innerHTML = '<li><div class="profile-empty" style="width:100%;">' + esc(emptyText) + '</div></li>';
+      return;
+    }
+    el.innerHTML = items.map(item =>
+      '<li><span class="activity-icon">' + esc(item.icon) + '</span><div class="activity-copy">' +
+      '<strong>' + esc(item.title) + '</strong><span>' + esc(item.text) + ' · ' + esc(formatDateTime(item.at)) + '</span>' +
+      '</div></li>'
+    ).join('');
+  }
+
+  async function loadStudentData() {
+    if (!client || !user) return;
+    try {
+      const [grantsResult, progressCount, submissionsCount, studyCount, recent] = await Promise.allSettled([
+        loadGrants(),
+        countRows('lesson_progress', query => query.eq('student_id', user.id)),
+        countRows('lesson_submissions', query => query.eq('student_id', user.id)),
+        countRows('study_events', query => query.eq('student_id', user.id)),
+        loadRecent()
+      ]);
+
+      const grants = settledValue(grantsResult, []);
+      const courses = await loadCourseTitles(grants);
+      const activeCourseIds = new Set(
+        grants
+          .filter(grant => grantStatus(grant).key === 'active')
+          .map(grant => grant.course_id || grant.course || grant.grant_id)
+      );
+
+      $('stat-active-courses').textContent = String(activeCourseIds.size);
+      const progress = settledValue(progressCount, null);
+      const submissions = settledValue(submissionsCount, null);
+      const study = settledValue(studyCount, null);
+      $('stat-lessons-practised').textContent = progress != null ? String(progress) : '—';
+      $('stat-tasks-submitted').textContent = submissions != null ? String(submissions) : '—';
+      $('stat-study-events').textContent = study != null ? String(study) : '—';
+
+      const grantsEl = $('profile-grants');
+      if (!grants.length) {
+        grantsEl.innerHTML = '<div class="profile-empty">No course access grants are attached to this account yet. The public catalog remains available from the <a href="index.html">COSY platform catalog</a>.</div>';
+      } else {
+        const rows = grants.map(grant => {
+          const courseId = grant.course_id || grant.course || '';
+          const course = courses[courseId] || {};
+          const status = grantStatus(grant);
+          const title = course.title || courseId || 'Course access';
+          const meta = [course.language ? String(course.language).toUpperCase() : '', course.cefr ? String(course.cefr).toUpperCase() : ''].filter(Boolean).join(' · ');
+          return '<tr>' +
+            '<td><strong>' + esc(title) + '</strong>' + (meta ? '<br><span style="color:var(--profile-muted);font-size:0.75rem;">' + esc(meta) + '</span>' : '') + '</td>' +
+            '<td><span class="grant-status ' + status.key + '">' + status.label + '</span></td>' +
+            '<td>' + esc(grantWindow(grant)) + '</td>' +
+            '</tr>';
+        }).join('');
+        grantsEl.innerHTML = '<div class="profile-table-wrap"><table class="profile-table">' +
+          '<thead><tr><th>Course</th><th>Status</th><th>Access window</th></tr></thead>' +
+          '<tbody>' + rows + '</tbody></table></div>';
+      }
+
+      renderActivityList('profile-activity', settledValue(recent, []),
+        'No recent activity yet. Open a lesson or submit a task to start your learning history.');
+    } catch (error) {
+      console.warn('[profile] Could not load student summary:', error);
+    }
+  }
+
+  // ── Teacher data ────────────────────────────────────────────────────────
+
+  async function fetchTeacherLanguages() {
+    const uid = user.id;
+    try {
+      const { data, error } = await client
+        .from('teacher_languages')
+        .select('language')
+        .or('user_id.eq.' + uid + ',teacher_id.eq.' + uid);
+      if (!error && data) return data.map(row => row.language).filter(Boolean);
+    } catch (error) {}
+    try {
+      const { data, error } = await client
+        .from('teacher_languages')
+        .select('language')
+        .eq('user_id', uid);
+      if (!error && data) return data.map(row => row.language).filter(Boolean);
+    } catch (error) {}
+    return (Array.isArray(profile.language_access) ? profile.language_access : []).filter(lang => lang && lang !== '*');
+  }
+
+  async function fetchHostedSessions() {
+    try {
+      const { data, error } = await client
+        .from('profiles')
+        .select('hosted_sessions')
+        .eq('id', user.id)
+        .maybeSingle();
+      if (!error && data && Array.isArray(data.hosted_sessions)) return data.hosted_sessions;
+    } catch (error) {}
+    return Array.isArray(profile.hosted_sessions) ? profile.hosted_sessions : [];
+  }
+
+  async function fetchStudentCount() {
+    try {
+      if (role === 'founder') {
+        const { count, error } = await client
+          .from('profiles')
+          .select('*', { count: 'exact', head: true })
+          .neq('role', 'founder');
+        if (!error && typeof count === 'number') return count;
+        return null;
+      }
+      const { count, error } = await client
+        .from('teacher_students')
+        .select('*', { count: 'exact', head: true })
+        .eq('teacher_id', user.id);
+      if (!error && typeof count === 'number') return count;
+    } catch (error) {}
+    return null;
+  }
+
+  async function fetchRecentTeachingActivity() {
+    const out = [];
+    try {
+      const { data, error } = await client
+        .from('lesson_notes')
+        .select('id, lesson_id, updated_at')
+        .order('updated_at', { ascending: false })
+        .limit(8);
+      if (!error && data) {
+        data.forEach(row => out.push({
+          at: row.updated_at,
+          icon: '📝',
+          title: 'Lesson note updated',
+          text: row.lesson_id || 'Classroom note'
+        }));
+      }
+    } catch (error) {}
+
+    if (role === 'teacher') {
+      try {
+        const { data: links } = await client
+          .from('teacher_students')
+          .select('student_id')
+          .eq('teacher_id', user.id);
+        const studentIds = (links || []).map(link => link.student_id).filter(Boolean);
+        if (studentIds.length) {
+          const { data, error } = await client
+            .from('lesson_submissions')
+            .select('id, student_id, lesson_id, kind, status, created_at')
+            .in('student_id', studentIds)
+            .order('created_at', { ascending: false })
+            .limit(8);
+          if (!error && data) {
+            data.forEach(row => out.push({
+              at: row.created_at,
+              icon: row.kind === 'audio' ? '🎙️' : '📝',
+              title: 'Student task submitted',
+              text: (row.lesson_id || 'Lesson') + (row.status ? ' · ' + row.status : '')
+            }));
+          }
+        }
+      } catch (error) {}
+    }
+
+    out.sort((a, b) => new Date(b.at || 0) - new Date(a.at || 0));
+    return out.slice(0, 8);
+  }
+
+  function renderTeacherSpaces(languages) {
+    const el = $('teacher-spaces');
+    if (!el) return;
+    if (!languages.length) {
+      el.innerHTML = '<div class="profile-empty" style="grid-column:1 / -1;">No languages are assigned to this teacher profile yet. A founder can assign languages in the Founder Portal.</div>';
+      return;
+    }
+    const cards = languages.map(lang =>
+      '<a class="profile-action" href="teacher.html?lang=' + encodeURIComponent(lang) + '">' +
+      '<span class="profile-action-icon">🌍</span>' +
+      '<span><strong>' + esc(String(lang).toUpperCase()) + ' teaching space</strong><small>Students and lessons</small></span>' +
+      '</a>'
+    ).join('');
+    el.innerHTML = cards +
+      '<a class="profile-action" href="teacher.html">' +
+      '<span class="profile-action-icon">🧑‍🏫</span>' +
+      '<span><strong>Master teaching space</strong><small>All languages</small></span>' +
+      '</a>';
+  }
+
+  async function loadTeacherData() {
+    if (!client || !user) return;
+    try {
+      const results = await Promise.allSettled([
+        fetchTeacherLanguages(),
+        fetchHostedSessions(),
+        fetchStudentCount(),
+        countRows('lesson_notes'),
+        fetchRecentTeachingActivity()
+      ]);
+
+      const languages = settledValue(results[0], []);
+      const hosted = settledValue(results[1], []);
+      const studentCount = settledValue(results[2], null);
+      const noteCount = settledValue(results[3], null);
+      const activity = settledValue(results[4], []);
+
+      $('teacher-stat-languages').textContent = languages.length ? String(languages.length) : '—';
+      $('teacher-stat-languages-note').textContent = languages.length
+        ? languages.map(lang => String(lang).toUpperCase()).join(', ')
+        : 'No languages assigned yet';
+      $('teacher-stat-students').textContent = studentCount != null ? String(studentCount) : '—';
+      const studentsNote = $('teacher-stat-students-note');
+      if (studentsNote) {
+        studentsNote.textContent = role === 'founder' ? 'All non-founder members' : 'Linked learners';
+      }
+      $('teacher-stat-sessions').textContent = String(hosted.length);
+      $('teacher-stat-notes').textContent = noteCount != null ? String(noteCount) : '—';
+
+      renderTeacherSpaces(languages);
+      renderActivityList('teacher-activity', activity,
+        'No teaching activity yet. Open a classroom note or review student submissions from the teacher workspace.');
+    } catch (error) {
+      console.warn('[profile] Could not load teacher summary:', error);
+    }
+  }
+
+  // ── Founder data ────────────────────────────────────────────────────────
+
+  async function loadFounderData() {
+    let stats = null;
+    try {
+      const response = await fetch('data/platform-stats.json');
+      if (response.ok) stats = await response.json();
+    } catch (error) {}
+
+    let studentCount = null;
+    let teacherCount = null;
+    try {
+      const [students, teachers] = await Promise.all([
+        client.from('profiles').select('*', { count: 'exact', head: true }).eq('role', 'student'),
+        client.from('profiles').select('*', { count: 'exact', head: true }).eq('role', 'teacher')
+      ]);
+      if (!students.error && typeof students.count === 'number') studentCount = students.count;
+      if (!teachers.error && typeof teachers.count === 'number') teacherCount = teachers.count;
+    } catch (error) {}
+
+    const manifest = (window.CosyAuth && window.CosyAuth.FULL_MANIFEST) || [];
+    const fallbackLanguages = new Set(manifest.filter(course => course.status !== 'not_yet_available').map(course => course.lang)).size;
+    const fallbackCourses = manifest.filter(course => course.status !== 'not_yet_available').length;
+
+    const languages = stats ? stats.languages.withAvailableCourse : (fallbackLanguages || null);
+    const courses = stats ? stats.courses.available : (fallbackCourses || null);
+    const lessons = stats ? stats.lessons.available : null;
+
+    $('founder-stat-languages').textContent = languages != null ? String(languages) : '—';
+    if (stats) {
+      $('founder-stat-languages-note').textContent = stats.languages.total + ' languages · ' + (stats.languages.codes || []).map(code => String(code).toUpperCase()).join(', ');
+    }
+    $('founder-stat-courses').textContent = courses != null ? String(courses) : '—';
+    if (stats) $('founder-stat-courses-note').textContent = 'Out of ' + stats.courses.total + ' planned courses';
+    $('founder-stat-lessons').textContent = lessons != null ? String(lessons) : '—';
+    if (stats) $('founder-stat-lessons-note').textContent = 'Out of ' + stats.lessons.total + ' planned lessons';
+
+    const memberTotal = (studentCount != null || teacherCount != null)
+      ? (studentCount || 0) + (teacherCount || 0)
+      : null;
+    $('founder-stat-members').textContent = memberTotal != null ? String(memberTotal) : '—';
+    if (memberTotal != null) {
+      $('founder-stat-members-note').textContent = (studentCount || 0) + ' students · ' + (teacherCount || 0) + ' teachers';
+    }
+  }
+
+  // ── Init ────────────────────────────────────────────────────────────────
+
+  function renderIdentity(displayName, email) {
+    $('profile-avatar').textContent = initials(profile, user);
+    $('profile-name').textContent = displayName;
+    $('profile-email').textContent = email;
+    $('profile-role-pill').textContent = ROLE_META[role].icon + ' ' + ROLE_META[role].label;
+    $('profile-member-pill').textContent = '📅 Joined ' + formatDate(profile.created_at || user.created_at);
+
+    $('detail-name').textContent = displayName;
+    $('detail-email').textContent = email || '—';
+    $('detail-role').textContent = ROLE_META[role].label;
+    $('detail-languages').textContent = languageList(profile);
+    $('detail-level').textContent = courseLevel(profile);
+    $('detail-member-since').textContent = formatDate(profile.created_at || user.created_at);
+    $('detail-last-signin').textContent = formatDateTime(user.last_sign_in_at);
+  }
+
   async function init() {
     if (window.CosyI18n && window.CosyI18n.ready) {
       try { await window.CosyI18n.ready; } catch (error) {}
     }
 
     const authData = await window.CosyAuth.getAuthAndProfile();
-    if (!authData) return;
+    if (!authData) {
+      const loading = $('profile-loading');
+      if (loading) loading.textContent = 'Please sign in to view your profile.';
+      return;
+    }
 
-    const client = window.CosyAuth.client;
-    const user = authData.user;
-    let profile = Object.assign({}, authData.profile, {
+    client = window.CosyAuth.client;
+    user = authData.user;
+    profile = Object.assign({}, authData.profile, {
       display_name: authData.profile.display_name || (user.email || '').split('@')[0],
       created_at: authData.profile.created_at || user.created_at,
       language_access: authData.profile.language_access || [],
@@ -781,91 +1478,24 @@
       console.warn('[profile] Could not load extended profile details:', error);
     }
 
-    const role = normaliseRole(profile.role);
-    const roleMeta = roleLabels[role];
+    // hosted_sessions is optional in older deployments; fetch it separately so a
+    // missing column cannot break the core profile read.
+    try {
+      const { data, error } = await client
+        .from('profiles')
+        .select('hosted_sessions')
+        .eq('id', user.id)
+        .maybeSingle();
+      if (!error && data && Array.isArray(data.hosted_sessions)) profile.hosted_sessions = data.hosted_sessions;
+    } catch (error) {}
+
+    role = normaliseRole(profile.role);
     const displayName = profile.display_name || user.email || 'COSY member';
     const email = user.email || '';
 
-    $('profile-avatar').textContent = initials(profile, user);
-    $('profile-name').textContent = displayName;
-    $('profile-email').textContent = email;
-    $('profile-role-pill').textContent = roleMeta.icon + ' ' + roleMeta.label;
-    $('profile-member-pill').textContent = '📅 Joined ' + formatDate(profile.created_at || user.created_at);
-
-    ['header-workspace-link', 'hero-workspace-link', 'action-workspace'].forEach(id => {
-      const link = $(id);
-      if (!link) return;
-      link.href = roleMeta.workspace;
-      if (id === 'action-workspace') {
-        link.querySelector('strong').textContent = roleMeta.workspaceName;
-      } else if (id === 'header-workspace-link') {
-        link.textContent = roleMeta.workspaceName;
-      } else {
-        link.textContent = 'Open my ' + roleMeta.label.toLowerCase() + ' workspace →';
-      }
-    });
-
-    $('detail-name').textContent = displayName;
-    $('detail-email').textContent = email || '—';
-    $('detail-role').textContent = roleMeta.label;
-    $('detail-languages').textContent = languageList(profile);
-    $('detail-level').textContent = courseLevel(profile);
-    $('detail-member-since').textContent = formatDate(profile.created_at || user.created_at);
-    $('detail-last-signin').textContent = formatDateTime(user.last_sign_in_at);
-
-    const [grantsResult, progressCount, submissionsCount, studyCount, recent] = await Promise.allSettled([
-      loadGrants(client, user.id),
-      countRows(client, 'lesson_progress', query => query.eq('student_id', user.id)),
-      countRows(client, 'lesson_submissions', query => query.eq('student_id', user.id)),
-      countRows(client, 'study_events', query => query.eq('student_id', user.id)),
-      loadRecent(client, user.id)
-    ]);
-
-    const grants = grantsResult.status === 'fulfilled' ? grantsResult.value : [];
-    const courses = await loadCourseTitles(client, grants);
-    const activeCourseIds = new Set(
-      grants
-        .filter(grant => grantStatus(grant).key === 'active')
-        .map(grant => grant.course_id || grant.course || grant.grant_id)
-    );
-
-    $('stat-active-courses').textContent = String(activeCourseIds.size);
-    $('stat-lessons-practised').textContent = progressCount.status === 'fulfilled' && progressCount.value != null ? String(progressCount.value) : '—';
-    $('stat-tasks-submitted').textContent = submissionsCount.status === 'fulfilled' && submissionsCount.value != null ? String(submissionsCount.value) : '—';
-    $('stat-study-events').textContent = studyCount.status === 'fulfilled' && studyCount.value != null ? String(studyCount.value) : '—';
-
-    const grantsEl = $('profile-grants');
-    if (!grants.length) {
-      grantsEl.innerHTML = '<div class="profile-empty">No course access grants are attached to this account yet. The public catalog remains available from the <a href="index.html">COSY platform catalog</a>.</div>';
-    } else {
-      const rows = grants.map(grant => {
-        const courseId = grant.course_id || grant.course || '';
-        const course = courses[courseId] || {};
-        const status = grantStatus(grant);
-        const title = course.title || courseId || 'Course access';
-        const meta = [course.language ? String(course.language).toUpperCase() : '', course.cefr ? String(course.cefr).toUpperCase() : ''].filter(Boolean).join(' · ');
-        return '<tr>' +
-          '<td><strong>' + esc(title) + '</strong>' + (meta ? '<br><span style="color:var(--profile-muted);font-size:0.75rem;">' + esc(meta) + '</span>' : '') + '</td>' +
-          '<td><span class="grant-status ' + status.key + '">' + status.label + '</span></td>' +
-          '<td>' + esc(grantWindow(grant)) + '</td>' +
-          '</tr>';
-      }).join('');
-      grantsEl.innerHTML = '<div class="profile-table-wrap"><table class="profile-table">' +
-        '<thead><tr><th>Course</th><th>Status</th><th>Access window</th></tr></thead>' +
-        '<tbody>' + rows + '</tbody></table></div>';
-    }
-
-    const activityEl = $('profile-activity');
-    const activity = recent.status === 'fulfilled' ? recent.value : [];
-    if (!activity.length) {
-      activityEl.innerHTML = '<li><div class="profile-empty" style="width:100%;">No recent activity yet. Open a lesson or submit a task to start your learning history.</div></li>';
-    } else {
-      activityEl.innerHTML = activity.map(item =>
-        '<li><span class="activity-icon">' + esc(item.icon) + '</span><div class="activity-copy">' +
-        '<strong>' + esc(item.title) + '</strong><span>' + esc(item.text) + ' · ' + esc(formatDateTime(item.at)) + '</span>' +
-        '</div></li>'
-      ).join('');
-    }
+    renderIdentity(displayName, email);
+    setupModeSwitcher();
+    await setMode(initialMode(), { updateUrl: false });
 
     $('profile-loading').hidden = true;
     $('profile-content').hidden = false;

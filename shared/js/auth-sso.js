@@ -151,9 +151,24 @@ window.CosySSO = window.CosySSO || {};
     }
   }
 
-  /**
-   * Export functions on window.CosySSO
-   */
+  // The public catalog root is index.html. A plain sign-in must land on the
+  // personal profile, while deep links (lesson/course/level) keep their page.
+  function isCatalogRoot(target) {
+    if (!target) return true;
+    try {
+      const parsed = new URL(target, window.location.href);
+      const pathname = window.location.pathname;
+      const folder = pathname.substring(0, pathname.lastIndexOf('/') + 1);
+      const rootPaths = [folder, folder + 'index.html', folder.replace(/\/$/, '') || '/'];
+      if (!rootPaths.includes(parsed.pathname)) return false;
+      return !parsed.searchParams.get('lesson') &&
+        !parsed.searchParams.get('course') &&
+        !parsed.searchParams.get('level');
+    } catch (e) {
+      return false;
+    }
+  }
+
   async function autoRedirectFromLogin(supabase, user) {
     if (!user) return;
     const urlParams = new URLSearchParams(window.location.search);
@@ -183,9 +198,12 @@ window.CosySSO = window.CosySSO || {};
         }
       } catch (e) {}
     }
-    window.location.href = safeTarget || 'profile.html';
+    window.location.href = isCatalogRoot(safeTarget) ? 'profile.html' : safeTarget;
   }
 
+  /**
+   * Export functions on window.CosySSO
+   */
   window.CosySSO.parseHashTokens = parseHashTokens;
   window.CosySSO.restoreSessionFromHash = restoreSessionFromHash;
   window.CosySSO.buildEcosystemUrlWithTokens = buildEcosystemUrlWithTokens;

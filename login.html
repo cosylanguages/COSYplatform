@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="shared/styles/style.css">
   <script src="vendor/supabase-js-2.49.1/supabase.js"></script>
   <script src="shared/js/config.js"></script>
-  <script src="shared/js/auth-sso.js?v=20261125-2"></script>
+  <script src="shared/js/auth-sso.js?v=20261125-3"></script>
   <script src="shared/js/cms-editor.js"></script>
   <script src="shared/js/i18n.js"></script>
   <script src="shared/js/lang-switcher.js"></script>
@@ -236,6 +236,30 @@
       }
     }
 
+    // The public catalog is index.html. A plain sign-in from there must land on
+    // the personal profile, not bounce the user back to the catalog. Deep links
+    // (lesson/course/level) still return to the exact page they left.
+    function isCatalogRoot(target) {
+      if (!target) return true;
+      try {
+        const parsed = new URL(target, window.location.href);
+        const pathname = window.location.pathname;
+        const folder = pathname.substring(0, pathname.lastIndexOf('/') + 1);
+        const rootPaths = [folder, folder + 'index.html', folder.replace(/\/$/, '') || '/'];
+        if (!rootPaths.includes(parsed.pathname)) return false;
+        return !parsed.searchParams.get('lesson') &&
+          !parsed.searchParams.get('course') &&
+          !parsed.searchParams.get('level');
+      } catch (e) {
+        return false;
+      }
+    }
+
+    function postLoginDestination() {
+      const safeTarget = safeRedirect(redirectTarget);
+      return isCatalogRoot(safeTarget) ? 'profile.html' : safeTarget;
+    }
+
     function showError(msgKey, fallbackMsg) {
       const translated = (window.CosyI18n && typeof window.CosyI18n.t === 'function')
         ? window.CosyI18n.t(msgKey)
@@ -263,8 +287,7 @@
           if (window.CosySSO && window.CosySSO.autoRedirectFromLogin) {
             await window.CosySSO.autoRedirectFromLogin(supabaseClient, session.user);
           } else {
-            const safeTarget = safeRedirect(redirectTarget);
-            window.location.href = safeTarget || 'profile.html';
+            window.location.href = postLoginDestination();
           }
         }
       } catch (e) {}
@@ -314,8 +337,7 @@
             await window.CosyI18n.recompute(profile);
           }
 
-          const safeTarget = safeRedirect(redirectTarget);
-          window.location.href = safeTarget || 'profile.html';
+          window.location.href = postLoginDestination();
         }
       } catch (err) {
         showError('login.errUnexpected', 'An unexpected error occurred during sign in.');

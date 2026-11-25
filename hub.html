@@ -278,6 +278,7 @@
   <script src="shared/js/cms-editor.js"></script>
   <script src="shared/js/i18n.js"></script>
   <script src="shared/js/lang-switcher.js"></script>
+  <script src="shared/js/mode-switcher.js"></script>
   <script src="shared/js/lesson-resolver.js"></script>
   <link rel="stylesheet" href="https://cosylanguages.github.io/COSYlanguages/css/ecosystem-strip.css">
 </head>
@@ -295,6 +296,7 @@
       </div>
       <div style="display: flex; align-items: center; gap: 16px;">
         <div id="header-lang-switcher"></div>
+        <div id="founder-mode-switcher"></div>
         <a href="profile.html" class="btn" style="background: #1e293b; color: #e0f2fe; padding: 6px 12px; text-decoration: none; font-size: 0.8rem; border-radius: 6px; font-weight: 700;">👤 My Profile</a>
         <div id="user-info" style="font-size: 0.85rem; color: var(--cosy-color-ink-muted, #64748b);"></div>
       </div>
@@ -334,6 +336,10 @@
 
       const authData = await window.CosyAuth.getAuthAndProfile();
       if (!authData) return;
+
+      if (window.CosyModeSwitcher) {
+        window.CosyModeSwitcher.mount('#founder-mode-switcher', { role: authData.profile.role, active: '' });
+      }
 
       if (authData.profile && window.CosyI18n && typeof window.CosyI18n.recompute === 'function') {
         await window.CosyI18n.recompute(authData.profile);
