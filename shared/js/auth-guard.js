@@ -255,7 +255,9 @@ window.CosyAuth.getSupabaseClient = function() {
 
   if (isConfigured && window.supabase && typeof window.supabase.createClient === 'function') {
     try {
-      window.CosyAuth.client = window.supabase.createClient(url, key);
+      window.CosyAuth.client = window.supabase.createClient(url, key, {
+        auth: { storageKey: 'cosy-auth', persistSession: true, autoRefreshToken: true }
+      });
       return window.CosyAuth.client;
     } catch (e) {
       console.error("Failed to initialize Supabase client:", e);
