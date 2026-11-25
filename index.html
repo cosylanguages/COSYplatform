@@ -268,18 +268,13 @@
     const courseParam = urlParams.get('course');
     const levelParam = urlParams.get('level');
 
-    function trackLabel(track) {
-      const key = 'track.' + track;
-      const v = window.CosyI18n.t(key);
-      return (v === key) ? `<span data-i18n-skip>${track}</span>` : v;
-    }
-
     async function checkAuthentication() {
       const client = window.CosyAuth ? window.CosyAuth.client : null;
       if (client) {
         const { data: { session } } = await client.auth.getSession();
         if (session && session.user) {
           let role = 'student';
+          let languageAccess = [];
           try {
             const { data: profile } = await client
               .from('profiles')
@@ -288,12 +283,15 @@
               .maybeSingle();
             if (profile) {
               if (profile.role) role = String(profile.role).toLowerCase();
+              if (Array.isArray(profile.language_access)) {
+                languageAccess = profile.language_access;
+              }
               if (window.CosyI18n && typeof window.CosyI18n.recompute === 'function') {
                 await window.CosyI18n.recompute(profile);
               }
             }
           } catch (e) {}
-          return { authenticated: true, user: session.user, role };
+          return { authenticated: true, user: session.user, role, language_access: languageAccess };
         }
       }
 
@@ -338,19 +336,294 @@
       }
     }
 
+    const CATALOG_LANGUAGE_META = {
+      en: { name: 'English', native: 'English', flag: '🇬🇧', order: 1 },
+      fr: { name: 'French', native: 'Français', flag: '🇫🇷', order: 2 },
+      ru: { name: 'Russian', native: 'Русский', flag: '🇷🇺', order: 3 },
+      es: { name: 'Spanish', native: 'Español', flag: '🇪🇸', order: 4 },
+      el: { name: 'Greek', native: 'Ελληνικά', flag: '🇬🇷', order: 5 },
+      de: { name: 'German', native: 'Deutsch', flag: '🇩🇪', order: 6 },
+      it: { name: 'Italian', native: 'Italiano', flag: '🇮🇹', order: 7 },
+      pt: { name: 'Portuguese', native: 'Português', flag: '🇵🇹', order: 8 },
+      hy: { name: 'Armenian', native: 'Հայերեն', flag: '🇦🇲', order: 9 },
+      ka: { name: 'Georgian', native: 'ქართული', flag: '🇬🇪', order: 10 },
+      ba: { name: 'Bashkir', native: 'Башҡортса', flag: '🌐', order: 11 },
+      br: { name: 'Breton', native: 'Brezhoneg', flag: '🌐', order: 12 },
+      tt: { name: 'Tatar', native: 'Татарча', flag: '🌐', order: 13 }
+    };
+
+    const CATALOG_TRACK_META = {
+      General: { label: 'General courses', note: 'Everyday language across all four skills', code: 'G' },
+      Spoken: { label: 'Speaking', note: 'Confidence, fluency and real conversation', code: 'SP' },
+      Exam: { label: 'Exam preparation', note: 'Targeted practice for formal exams', code: 'EX' },
+      Relocation: { label: 'Relocation', note: 'Language for settling into a new country', code: 'RE' },
+      Professional: { label: 'Professional', note: 'Workplace and career communication', code: 'PR' },
+      Pronunciation: { label: 'Pronunciation', note: 'Sounds, stress and clarity', code: 'PH' },
+      Travelling: { label: 'Travel', note: 'Practical language for trips', code: 'TR' },
+      Grammar: { label: 'Grammar', note: 'Patterns, accuracy and control', code: 'GR' },
+      Vocabulary: { label: 'Vocabulary', note: 'Words and phrases in context', code: 'VO' },
+      'Phrasal Verbs': { label: 'Phrasal verbs', note: 'Natural spoken patterns', code: 'PV' },
+      Cinema: { label: 'Cinema club', note: 'Language through film', code: 'CI' },
+      Discussion: { label: 'Discussion club', note: 'Ideas, opinions and debate', code: 'DI' },
+      Introductory: { label: 'Introductory', note: 'A gentle place to start', code: 'IN' }
+    };
+
+    const CATALOG_TRACK_ORDER = [
+      'General', 'Spoken', 'Exam', 'Relocation', 'Professional', 'Pronunciation',
+      'Travelling', 'Grammar', 'Vocabulary', 'Phrasal Verbs', 'Cinema', 'Discussion', 'Introductory'
+    ];
+    const CATALOG_LEVEL_ORDER = { a0: 0, a1: 1, a2: 2, b1: 3, b2: 4, c1: 5, c2: 6 };
+
+    function catalogEscape(value) {
+      return String(value == null ? '' : value).replace(/[&<>"']/g, ch => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+      })[ch]);
+    }
+
+    function catalogInlineArg(value) {
+      return String(value == null ? '' : value).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+    }
+
+    function catalogLangMeta(code) {
+      const key = String(code || '').toLowerCase();
+      return CATALOG_LANGUAGE_META[key] || {
+        name: key ? key.toUpperCase() : 'Language',
+        native: '',
+        flag: '🌐',
+        order: 99
+      };
+    }
+
+    function catalogTrackMeta(track) {
+      return CATALOG_TRACK_META[track] || {
+        label: track || 'Other courses',
+        note: 'More learning material',
+        code: '•'
+      };
+    }
+
+    function catalogIsPublished(course) {
+      return course.status !== 'not_yet_available';
+    }
+
+    function catalogLevels(course) {
+      if (Array.isArray(course.levels) && course.levels.length) {
+        return course.levels.map(level => String(level).toLowerCase());
+      }
+      const matches = String(course.level || '').toLowerCase().match(/a0|a1|a2|b1|b2|c1|c2/g);
+      return matches || [];
+    }
+
+    function catalogLevelLabel(course) {
+      if (Array.isArray(course.levels) && course.levels.length) {
+        return course.levels.map(level => String(level).toUpperCase()).join('–');
+      }
+      const levels = catalogLevels(course);
+      if (levels.length) return levels.map(level => level.toUpperCase()).join('–');
+      return String(course.level || '').toUpperCase();
+    }
+
+    function catalogLevelRank(course) {
+      const levels = catalogLevels(course);
+      if (!levels.length) return 99;
+      return Math.min(...levels.map(level => CATALOG_LEVEL_ORDER[level] == null ? 99 : CATALOG_LEVEL_ORDER[level]));
+    }
+
+    function catalogLanguageStats(lang, manifest) {
+      const courses = (manifest || []).filter(course => String(course.lang || '').toLowerCase() === lang);
+      const published = courses.filter(catalogIsPublished).length;
+      return { courses, published, coming: courses.length - published };
+    }
+
+    function catalogSortLanguages(a, b, manifest) {
+      const statsA = catalogLanguageStats(a, manifest);
+      const statsB = catalogLanguageStats(b, manifest);
+      return (statsB.published - statsA.published)
+        || (catalogLangMeta(a).order - catalogLangMeta(b).order)
+        || catalogLangMeta(a).name.localeCompare(catalogLangMeta(b).name);
+    }
+
+    function catalogTrackNames(courses) {
+      const present = [...new Set(courses.map(course => course.track || 'General'))];
+      return present.sort((a, b) => {
+        const ai = CATALOG_TRACK_ORDER.indexOf(a);
+        const bi = CATALOG_TRACK_ORDER.indexOf(b);
+        return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi) || a.localeCompare(b);
+      });
+    }
+
+    function catalogInitState(authState, manifest) {
+      const languages = [...new Set((manifest || []).map(course => String(course.lang || '').toLowerCase()))];
+      const available = languages.filter(lang => catalogLanguageStats(lang, manifest).published > 0);
+      const profileLanguages = authState && Array.isArray(authState.language_access)
+        ? authState.language_access.map(lang => String(lang).toLowerCase()).filter(lang => lang !== '*')
+        : [];
+
+      let stored = '';
+      try { stored = localStorage.getItem('cosy_catalog_lang') || ''; } catch (e) {}
+
+      const requested = String(urlParams.get('lang') || stored || profileLanguages[0] || '').toLowerCase();
+      const selected = languages.includes(requested)
+        ? requested
+        : (available.includes('en') ? 'en' : (available[0] || languages[0] || 'en'));
+
+      return {
+        lang: selected,
+        track: urlParams.get('track') || 'all',
+        level: urlParams.get('level') || 'all',
+        query: '',
+        showMore: false
+      };
+    }
+
+    function catalogUpdateUrl() {
+      const state = window.catalogState;
+      if (!state) return;
+      try {
+        const url = new URL(window.location.href);
+        url.searchParams.set('lang', state.lang);
+        if (state.track && state.track !== 'all') url.searchParams.set('track', state.track);
+        else url.searchParams.delete('track');
+        if (state.level && state.level !== 'all') url.searchParams.set('level', state.level);
+        else url.searchParams.delete('level');
+        window.history.replaceState({}, '', url);
+      } catch (e) {}
+      try { localStorage.setItem('cosy_catalog_lang', state.lang); } catch (e) {}
+    }
+
+    function catalogMoreLabel(showMore, count) {
+      return window.CosyI18n.t(showMore ? 'index.fewerLanguages' : 'index.moreLanguages', { count });
+    }
+
+    function catalogLanguageCard(code, active, manifest) {
+      const meta = catalogLangMeta(code);
+      const stats = catalogLanguageStats(code, manifest);
+      return `
+        <button type="button" class="catalog-language-card${active ? ' is-active' : ''}${stats.published ? '' : ' is-planned'}" data-catalog-language="${catalogEscape(code)}" aria-pressed="${active ? 'true' : 'false'}" onclick="selectCatalogLanguage('${catalogInlineArg(code)}')">
+          <span class="catalog-language-code" aria-hidden="true">${catalogEscape(code.toUpperCase())}</span>
+          <span class="catalog-language-name">${catalogEscape(meta.name)}</span>
+          ${meta.native && meta.native !== meta.name ? `<span class="catalog-language-native">${catalogEscape(meta.native)}</span>` : ''}
+          <span class="catalog-language-count">${stats.published ? `${stats.published} ${window.CosyI18n.t('index.publishedShort')}` : window.CosyI18n.t('index.inPreparation')}</span>
+        </button>
+      `;
+    }
+
+    function catalogCourseCard(course) {
+      const published = catalogIsPublished(course);
+      const levels = catalogLevels(course);
+      const levelLabel = catalogLevelLabel(course);
+      const title = String(course.title || course.id || 'Untitled course');
+      const searchText = `${title} ${course.track || ''} ${levelLabel}`.toLowerCase();
+
+      return `
+        <article class="catalog-course${published ? '' : ' is-coming'}" data-title="${catalogEscape(searchText)}" data-levels="${catalogEscape(levels.join(' '))}" data-track="${catalogEscape(course.track || 'General')}">
+          <div class="catalog-course-main">
+            <span class="catalog-course-level">${catalogEscape(levelLabel)}</span>
+            <div>
+              <h4 class="catalog-course-title">${catalogEscape(title)}</h4>
+              <p class="catalog-course-meta">${published ? window.CosyI18n.t('index.publishedCourse') : window.CosyI18n.t('index.plannedCourse')}</p>
+            </div>
+          </div>
+          ${published
+            ? `<a class="catalog-course-link" href="index.html?course=${encodeURIComponent(course.id)}&level=${encodeURIComponent(String(course.level || '').toLowerCase())}">${window.CosyI18n.t('index.viewRoadmap')}</a>`
+            : `<span class="catalog-course-soon">${window.CosyI18n.t('common.comingSoon')}</span>`}
+        </article>
+      `;
+    }
+
+    function catalogTrackSection(track, courses) {
+      const meta = catalogTrackMeta(track);
+      const published = courses.filter(catalogIsPublished).length;
+      const coming = courses.length - published;
+      const items = courses.slice().sort((a, b) => catalogLevelRank(a) - catalogLevelRank(b) || String(a.title).localeCompare(String(b.title)));
+      return `
+        <section class="catalog-category" data-track="${catalogEscape(track)}">
+          <header class="catalog-category-head">
+            <div class="catalog-category-heading">
+              <span class="catalog-category-icon" aria-hidden="true">${catalogEscape(meta.code || '•')}</span>
+              <div>
+                <h3>${catalogEscape(meta.label)}</h3>
+                <p class="catalog-category-note">${catalogEscape(meta.note)}</p>
+              </div>
+            </div>
+            <span class="catalog-category-count"><strong>${published}</strong> ${window.CosyI18n.t('index.publishedShort')}${coming ? ` <em>+${coming}</em>` : ''}</span>
+          </header>
+          <div class="catalog-category-body">
+            ${items.map(catalogCourseCard).join('')}
+          </div>
+        </section>
+      `;
+    }
+
     function renderPublicCatalog(authState) {
-      const fullManifest = window.CosyAuth ? window.CosyAuth.FULL_MANIFEST : [];
-      const signInUrl = `login.html?redirect=${encodeURIComponent(window.location.href)}&v=20261125-1`;
+      window.catalogAuthState = authState || window.catalogAuthState || {};
+      authState = window.catalogAuthState;
+      const fullManifest = (window.CosyAuth && window.CosyAuth.FULL_MANIFEST) || [];
+      const languages = [...new Set(fullManifest.map(course => String(course.lang || '').toLowerCase()))]
+        .sort((a, b) => catalogSortLanguages(a, b, fullManifest));
+
+      if (!window.catalogState) {
+        window.catalogState = catalogInitState(authState, fullManifest);
+      }
+      const state = window.catalogState;
+      if (!languages.includes(state.lang)) {
+        state.lang = languages.includes('en') ? 'en' : (languages[0] || 'en');
+      }
+
+      const selectedMeta = catalogLangMeta(state.lang);
+      const languageCourses = fullManifest.filter(course => String(course.lang || '').toLowerCase() === state.lang);
+      const publishedCount = languageCourses.filter(catalogIsPublished).length;
+      const comingCount = languageCourses.length - publishedCount;
+      const trackNames = catalogTrackNames(languageCourses);
+      if (state.track !== 'all' && !trackNames.includes(state.track)) state.track = 'all';
+      const levels = [...new Set(languageCourses.flatMap(catalogLevels))];
+      if (state.level !== 'all' && !levels.includes(state.level)) state.level = 'all';
+
+      const availableLanguages = languages.filter(lang => catalogLanguageStats(lang, fullManifest).published > 0);
+      const primaryLanguages = availableLanguages.slice();
+      if (!primaryLanguages.includes(state.lang)) primaryLanguages.unshift(state.lang);
+      const moreLanguages = languages.filter(lang => !primaryLanguages.includes(lang));
+
       const signedIn = Boolean(authState && authState.authenticated);
       const workspaceHref = signedIn
         ? (authState.role === 'founder' ? 'founder.html' : authState.role === 'teacher' ? 'teacher.html' : 'student.html')
         : '';
       const accountActions = signedIn
-        ? `<a href="profile.html" class="btn" style="background: #e0f2fe; color: #0369a1; padding: 6px 14px; text-decoration: none; font-size: 0.85rem; border-radius: 6px; font-weight: 700;">👤 My Profile</a>
-              <a href="${workspaceHref}" class="btn" style="background: var(--hub-primary); color: var(--on-primary, #ffffff); padding: 6px 14px; text-decoration: none; font-size: 0.85rem; border-radius: 6px; font-weight: 600;">Open workspace →</a>`
-        : `<a href="${signInUrl}" class="btn" style="background: var(--hub-primary); color: var(--on-primary, #ffffff); padding: 6px 14px; text-decoration: none; font-size: 0.85rem; border-radius: 6px;" data-i18n="common.signIn">${window.CosyI18n.t('common.signIn')} 🔒</a>`;
+        ? `<a href="profile.html" class="btn catalog-profile-button">My Profile</a>
+           <a href="${workspaceHref}" class="btn" style="background: var(--hub-primary) !important; color: var(--editorial-on-accent) !important; border-color: transparent !important;">Open workspace →</a>`
+        : `<a href="login.html?redirect=${encodeURIComponent(window.location.href)}&v=20261125-1" class="btn" style="background: var(--hub-primary) !important; color: var(--editorial-on-accent) !important; border-color: transparent !important;">${window.CosyI18n.t('common.signIn')}</a>`;
 
-      let html = `
+      const totalPublished = fullManifest.filter(catalogIsPublished).length;
+      const selectedLevels = levels.slice().sort((a, b) => (CATALOG_LEVEL_ORDER[a] == null ? 99 : CATALOG_LEVEL_ORDER[a]) - (CATALOG_LEVEL_ORDER[b] == null ? 99 : CATALOG_LEVEL_ORDER[b]));
+      const levelOptions = ['all', ...selectedLevels].map(level => {
+        const label = level === 'all' ? window.CosyI18n.t('index.allLevels') : level.toUpperCase();
+        return `<option value="${catalogEscape(level)}"${state.level === level ? ' selected' : ''}>${catalogEscape(label)}</option>`;
+      }).join('');
+
+      const trackChipHtml = ['all', ...trackNames].map(track => {
+        const isAll = track === 'all';
+        const label = isAll ? window.CosyI18n.t('index.allCourses') : catalogTrackMeta(track).label;
+        const count = isAll ? languageCourses.length : languageCourses.filter(course => (course.track || 'General') === track).length;
+        return `<button type="button" class="catalog-track-chip${state.track === track ? ' is-active' : ''}" data-catalog-track="${catalogEscape(track)}" aria-pressed="${state.track === track ? 'true' : 'false'}" onclick="selectCatalogTrack('${catalogInlineArg(track)}')">${catalogEscape(label)}<span>${count}</span></button>`;
+      }).join('');
+
+      const gridHtml = trackNames.length
+        ? trackNames.map(track => catalogTrackSection(track, languageCourses.filter(course => (course.track || 'General') === track))).join('')
+        : '';
+
+      const languageRails = `
+        <div class="catalog-language-rail">
+          ${primaryLanguages.map(lang => catalogLanguageCard(lang, lang === state.lang, fullManifest)).join('')}
+        </div>
+        ${moreLanguages.length ? `
+          <button type="button" class="catalog-more-languages" id="catalog-more-toggle" onclick="toggleCatalogMoreLanguages()">${catalogMoreLabel(state.showMore, moreLanguages.length)}</button>
+          <div class="catalog-language-rail" id="catalog-more-languages" ${state.showMore ? '' : 'hidden'}>
+            ${moreLanguages.map(lang => catalogLanguageCard(lang, lang === state.lang, fullManifest)).join('')}
+          </div>
+        ` : ''}
+      `;
+
+      document.getElementById('app-root').innerHTML = `
         <header class="hub-header">
           <div class="hub-header-content">
             <div style="display: flex; align-items: center; gap: 12px;">
@@ -362,99 +635,148 @@
             </div>
             <div style="display: flex; align-items: center; gap: 8px;">
               <div id="header-lang-switcher"></div>
-              <a href="classroom.html" class="btn" style="background: #047857; color: white; padding: 6px 14px; text-decoration: none; font-size: 0.85rem; border-radius: 6px; font-weight: 600;" data-i18n="common.liveClassroom">${window.CosyI18n.t('common.liveClassroom')}</a>
+              <a href="classroom.html" class="btn" style="background: var(--editorial-sage) !important; color: var(--editorial-on-accent) !important; border-color: transparent !important;" data-i18n="index.liveClassroom">${window.CosyI18n.t('index.liveClassroom')}</a>
               ${accountActions}
             </div>
           </div>
         </header>
 
-        <main class="hub-container">
-          <div style="margin-bottom: 24px;">
-            <h1 style="font-size: 1.6rem; color: var(--cosy-color-ink, #0f172a); margin-bottom: 6px;" data-i18n="index.heading">${window.CosyI18n.t('index.heading')}</h1>
-            <p style="color: var(--cosy-color-ink-muted, #64748b);" data-i18n="index.subheading">${window.CosyI18n.t('index.subheading')}</p>
-          </div>
-
-          <div class="filter-bar">
-            <div class="filter-group" style="flex: 1; min-width: 200px;">
-              <label data-i18n="index.searchLabel">${window.CosyI18n.t('index.searchLabel')}</label>
-              <input type="text" id="searchFilter" placeholder="${window.CosyI18n.t('index.searchPlaceholder')}" data-i18n-placeholder="index.searchPlaceholder" oninput="applySearch()" style="width: 100%;" />
+        <main class="hub-container catalog-page">
+          <section class="catalog-intro">
+            <div>
+              <p class="cosy-kicker">COSY platform · Course catalog</p>
+              <h1 data-i18n="index.heading">${window.CosyI18n.t('index.heading')}</h1>
+              <p data-i18n="index.subheading">${window.CosyI18n.t('index.subheading')}</p>
             </div>
-            <div class="filter-group">
-              <label data-i18n="index.languageLabel">${window.CosyI18n.t('index.languageLabel')}</label>
-              <select id="langFilter" onchange="filterCatalog()">
-                <option value="all" data-i18n="index.allLanguages">${window.CosyI18n.t('index.allLanguages')}</option>
-                <option value="en" data-i18n="index.langEn">${window.CosyI18n.t('index.langEn')}</option>
-                <option value="fr" data-i18n="index.langFr">${window.CosyI18n.t('index.langFr')}</option>
-                <option value="ru" data-i18n="index.langRu">${window.CosyI18n.t('index.langRu')}</option>
-                <option value="es" data-i18n="index.langEs">${window.CosyI18n.t('index.langEs')}</option>
-                <option value="el" data-i18n="index.langEl">${window.CosyI18n.t('index.langEl')}</option>
-              </select>
+            <div class="catalog-intro-note">
+              <strong>${totalPublished}</strong>
+              <span>${window.CosyI18n.t('index.publishedCoursesCount', { count: totalPublished })}</span>
             </div>
-          </div>
+          </section>
 
-          <div class="catalog-category-grid" id="catalog-grid">
+          <section class="catalog-language-panel" aria-labelledby="catalog-language-heading">
+            <div class="catalog-panel-head">
+              <div>
+                <p class="cosy-kicker">Step 1</p>
+                <h2 id="catalog-language-heading">${window.CosyI18n.t('index.chooseLanguage')}</h2>
+                <p>${window.CosyI18n.t('index.chooseLanguageNote')}</p>
+              </div>
+              <span class="catalog-stat"><strong>${availableLanguages.length}</strong> ${window.CosyI18n.t('index.languagesAvailable')}</span>
+            </div>
+            ${languageRails}
+          </section>
+
+          <section class="catalog-workspace" aria-labelledby="catalog-language-title">
+            <div class="catalog-selected-head">
+              <div class="catalog-selected-title">
+                <span class="catalog-selected-code" aria-hidden="true">${catalogEscape(state.lang.toUpperCase())}</span>
+                <div>
+                  <h2 id="catalog-language-title">${catalogEscape(selectedMeta.name)}</h2>
+                  <p>${selectedMeta.native && selectedMeta.native !== selectedMeta.name ? `${catalogEscape(selectedMeta.native)} · ` : ''}${window.CosyI18n.t('index.languageCatalogNote')}</p>
+                </div>
+              </div>
+              <div class="catalog-language-stats">
+                <span class="catalog-stat"><strong>${publishedCount}</strong> ${window.CosyI18n.t('index.publishedShort')}</span>
+                <span class="catalog-stat"><strong>${comingCount}</strong> ${window.CosyI18n.t('index.plannedShort')}</span>
+              </div>
+            </div>
+
+            ${publishedCount === 0 ? `<div class="catalog-notice">${window.CosyI18n.t('index.noPublishedCourses', { language: selectedMeta.name })}</div>` : ''}
+
+            <div class="catalog-toolbar">
+              <label class="catalog-field">
+                <span>${window.CosyI18n.t('index.searchLabel')}</span>
+                <input type="search" id="searchFilter" value="${catalogEscape(state.query)}" placeholder="${catalogEscape(window.CosyI18n.t('index.searchPlaceholder'))}" oninput="applySearch()" />
+              </label>
+              <label class="catalog-field catalog-field--level">
+                <span>${window.CosyI18n.t('index.levelLabel')}</span>
+                <select id="levelFilter" onchange="applySearch()">${levelOptions}</select>
+              </label>
+              <span class="catalog-visible-count" id="catalog-visible-count"></span>
+            </div>
+
+            <div class="catalog-track-bar" role="tablist" aria-label="${catalogEscape(window.CosyI18n.t('index.courseTypes'))}">
+              ${trackChipHtml}
+            </div>
+
+            <div class="catalog-track-grid" id="catalog-grid">${gridHtml}</div>
+            <p class="catalog-empty" id="catalog-empty" hidden>${window.CosyI18n.t('index.noCoursesMatch')}</p>
+          </section>
+        </main>
       `;
-
-      const groupedByTrack = {};
-      fullManifest.forEach(c => {
-        const track = c.track || 'General';
-        if (!groupedByTrack[track]) groupedByTrack[track] = [];
-        groupedByTrack[track].push(c);
-      });
-
-      Object.keys(groupedByTrack).forEach(trackName => {
-        const courses = groupedByTrack[trackName];
-        const availableCount = courses.filter(c => c.status !== 'not_yet_available').length;
-        const comingSoonCount = courses.filter(c => c.status === 'not_yet_available').length;
-
-        const trackHeadingText = window.CosyI18n.t('index.trackTitle', { track: trackLabel(trackName), count: availableCount }) +
-          (comingSoonCount > 0 ? `<span style="font-size: 0.8em; font-weight: normal; color: var(--cosy-color-ink-muted, #64748b);" data-i18n-skip>${window.CosyI18n.t('index.trackTitlePlus', { count: comingSoonCount })}</span>` : '');
-
-        html += `
-          <div class="category-card" data-track="${trackName}">
-            <div class="category-header">
-              <h3>${trackHeadingText}</h3>
-            </div>
-            <div class="category-body">
-        `;
-
-        courses.forEach(c => {
-          const isAvailable = c.status !== 'not_yet_available';
-          if (isAvailable) {
-            html += `
-              <div class="course-item-card" data-lang="${c.lang}" data-title="${c.title.toLowerCase()}">
-                <div>
-                  <span class="course-item-level" data-i18n-skip>${c.level.toUpperCase()}</span>
-                  <span class="course-item-title" style="margin-left: 8px;" data-i18n-skip>${c.title}</span>
-                </div>
-                <a href="index.html?course=${c.id}&level=${c.level.toLowerCase()}" class="btn" style="background: var(--hub-primary); color: var(--on-primary, #ffffff); padding: 6px 12px; font-size: 0.8rem; text-decoration: none; border-radius: 6px;" data-i18n="common.viewRoadmap">
-                  ${window.CosyI18n.t('common.viewRoadmap')}
-                </a>
-              </div>
-            `;
-          } else {
-            html += `
-              <div class="course-item-card disabled" data-lang="${c.lang}" data-title="${c.title.toLowerCase()}" style="opacity: 0.6;">
-                <div>
-                  <span class="course-item-level" data-i18n-skip>${c.level.toUpperCase()}</span>
-                  <span class="course-item-title" style="margin-left: 8px;" data-i18n-skip>${c.title}</span>
-                </div>
-                <span style="font-size: 0.8rem; color: var(--cosy-color-ink-muted, #64748b); font-weight: 500;" data-i18n="common.comingSoon">${window.CosyI18n.t('common.comingSoon')}</span>
-              </div>
-            `;
-          }
-        });
-
-        html += `</div></div>`;
-      });
-
-      html += `</div></main>`;
-      document.getElementById('app-root').innerHTML = html;
 
       if (window.CosyLangSwitcher) {
         window.CosyLangSwitcher.mount('#header-lang-switcher');
       }
       window.CosyI18n.applyDom(document);
+      applyCatalogFilters();
+    }
+
+    function selectCatalogLanguage(code) {
+      if (!window.catalogState) return;
+      window.catalogState.lang = String(code || '').toLowerCase();
+      window.catalogState.track = 'all';
+      window.catalogState.level = 'all';
+      window.catalogState.query = '';
+      const manifest = (window.CosyAuth && window.CosyAuth.FULL_MANIFEST) || [];
+      if (catalogLanguageStats(window.catalogState.lang, manifest).published === 0) {
+        window.catalogState.showMore = true;
+      }
+      catalogUpdateUrl();
+      renderPublicCatalog(window.catalogAuthState);
+    }
+
+    function toggleCatalogMoreLanguages() {
+      const state = window.catalogState;
+      if (!state) return;
+      state.showMore = !state.showMore;
+      const row = document.getElementById('catalog-more-languages');
+      const button = document.getElementById('catalog-more-toggle');
+      if (row) row.hidden = !state.showMore;
+      if (button) button.textContent = catalogMoreLabel(state.showMore, document.querySelectorAll('#catalog-more-languages .catalog-language-card').length);
+    }
+
+    function selectCatalogTrack(track) {
+      if (!window.catalogState) return;
+      window.catalogState.track = track || 'all';
+      document.querySelectorAll('.catalog-track-chip').forEach(chip => {
+        const active = chip.getAttribute('data-catalog-track') === window.catalogState.track;
+        chip.classList.toggle('is-active', active);
+        chip.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+      catalogUpdateUrl();
+      applyCatalogFilters();
+    }
+
+    function applyCatalogFilters() {
+      const state = window.catalogState || { track: 'all', level: 'all', query: '' };
+      const query = String((document.getElementById('searchFilter') || {}).value || '').toLowerCase().trim();
+      const levelSelect = document.getElementById('levelFilter');
+      const level = levelSelect ? levelSelect.value : 'all';
+      state.query = query;
+      state.level = level;
+
+      let visible = 0;
+      document.querySelectorAll('.catalog-category').forEach(category => {
+        let categoryVisible = 0;
+        category.querySelectorAll('.catalog-course').forEach(course => {
+          const levels = String(course.getAttribute('data-levels') || '').split(/\s+/).filter(Boolean);
+          const title = course.getAttribute('data-title') || '';
+          const matchesSearch = !query || title.includes(query);
+          const matchesLevel = level === 'all' || levels.includes(level);
+          const show = matchesSearch && matchesLevel;
+          course.hidden = !show;
+          if (show) categoryVisible += 1;
+        });
+        const showCategory = categoryVisible > 0 && (state.track === 'all' || category.getAttribute('data-track') === state.track);
+        category.hidden = !showCategory;
+        if (showCategory) visible += categoryVisible;
+      });
+
+      const empty = document.getElementById('catalog-empty');
+      if (empty) empty.hidden = visible > 0;
+      const count = document.getElementById('catalog-visible-count');
+      if (count) count.textContent = window.CosyI18n.t('index.coursesShown', { count: visible });
     }
 
     async function renderPublicRoadmap(courseId, level) {
@@ -750,19 +1072,11 @@
     }
 
     function applySearch() {
-      const query = (document.getElementById('searchFilter')?.value || '').toLowerCase().trim();
-      document.querySelectorAll('.course-item-card').forEach(card => {
-        const title = card.getAttribute('data-title') || '';
-        card.style.display = title.includes(query) ? 'flex' : 'none';
-      });
+      applyCatalogFilters();
     }
 
     function filterCatalog() {
-      const lang = document.getElementById('langFilter').value;
-      document.querySelectorAll('.course-item-card').forEach(card => {
-        const cardLang = card.getAttribute('data-lang');
-        card.style.display = (lang === 'all' || cardLang === lang) ? 'flex' : 'none';
-      });
+      applyCatalogFilters();
     }
 
     window.onload = initCatalog;
