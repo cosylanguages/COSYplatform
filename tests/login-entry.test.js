@@ -44,10 +44,16 @@ test('the sign-in page has no role-based destination', () => {
   assert.match(html, /auth-sso\.js\?v=\d+/);
 });
 
-test('hub and classroom sign-in links carry the cache version', () => {
+test('hub, 404 and classroom sign-in links carry the current page and cache version', () => {
   const index = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
+  const notFound = fs.readFileSync(path.join(root, '404.html'), 'utf8');
   const classroom = fs.readFileSync(path.join(root, 'classroom.html'), 'utf8');
-  assert.match(index, /login\.html\?redirect=\$\{encodeURIComponent\(window\.location\.href\)\}&v=\d+/);
+
+  assert.ok(index.includes('const signInUrl = `login.html?redirect=${encodeURIComponent(window.location.href)}&v=20261125-1`;'));
+  assert.ok(index.includes('href="${signInUrl}"'));
+  assert.ok(notFound.includes("loginUrl = basePath + 'login.html?redirect='"));
+  assert.ok(notFound.includes("encodeURIComponent(window.location.href) + '&v=20261125-1'"));
+  assert.ok(notFound.includes('signInBtn.href = loginUrl'));
   assert.match(classroom, /login\.html\?redirect=classroom\.html&v=\d+/);
 });
 
