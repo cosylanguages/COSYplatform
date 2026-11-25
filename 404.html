@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <meta name="theme-color" content="#0369a1">
+  <meta name="theme-color" content="#FAF7F2">
   <meta name="description" content="The requested page could not be found or requires different access permissions." data-i18n-placeholder="notfound.metaDescription">
   <title data-i18n="notfound.title">Page Not Found · COSYlanguages</title>
 
@@ -79,18 +79,19 @@
     })();
   </script>
   <link rel="stylesheet" href="https://cosylanguages.github.io/COSYlanguages/css/ecosystem-strip.css">
+  <link rel="stylesheet" href="shared/css/editorial.css">
 </head>
-<body style="background-color: var(--cosy-color-cream, #fdfcf8); display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; padding: 20px; box-sizing: border-box; font-family: var(--cosy-font-sans, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);">
+<body class="not-found-page" style="background-color: var(--cosy-color-cream, #fdfcf8); min-height: 100vh; margin: 0; box-sizing: border-box; font-family: var(--cosy-font-sans, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);">
 <div data-ecosystem-strip data-self="platform" data-theme-toggle></div>
 
-  <div style="background: var(--card-bg, white); border: 1px solid var(--cosy-color-border, #cbd5e1); border-radius: var(--cosy-radius-md, 14px); padding: 40px; max-width: 480px; width: 100%; text-align: center; box-shadow: var(--cosy-shadow-sm, 0 4px 12px rgba(0,0,0,0.05)); position: relative;">
-    <div style="display: flex; justify-content: flex-end; margin-bottom: 12px;" id="lang-switcher-container"></div>
-    <div style="font-size: 3rem; margin-bottom: 12px;">🔎</div>
-    <h1 style="font-size: 1.6rem; font-weight: 700; color: var(--cosy-color-ink, #0f172a); margin: 0 0 12px 0;" data-i18n="notfound.heading">Page not found</h1>
-    <p style="color: var(--cosy-color-ink-muted, #64748b); font-size: 0.95rem; line-height: 1.6; margin: 0 0 28px 0;" data-i18n="notfound.message">That page doesn't exist or you may not have access to it.</p>
+  <div class="not-found-card" style="background: var(--cosy-paper-card); border: 1px solid var(--cosy-paper-rule); border-radius: 22px; padding: clamp(28px, 5vw, 52px); max-width: 560px; width: 100%; text-align: center; box-shadow: var(--cosy-shadow-lift); position: relative;">
+    <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;" id="lang-switcher-container"></div>
+    <div class="not-found-code" aria-hidden="true">404</div>
+    <h1 style="font-size: clamp(1.7rem, 3vw, 2.3rem); font-weight: 560; color: var(--cosy-color-ink); margin: 0 0 12px 0;" data-i18n="notfound.heading">Page not found</h1>
+    <p style="color: var(--cosy-color-ink-muted); font-size: 1rem; line-height: 1.6; margin: 0 auto 28px; max-width: 36ch;" data-i18n="notfound.message">That page doesn't exist or you may not have access to it.</p>
     <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
-      <a id="btn-signin" href="#" class="btn btn-outline" style="padding: 10px 20px; text-decoration: none; font-size: 0.9rem; font-weight: 600;" data-i18n="notfound.signIn">Sign in</a>
-      <button id="btn-workspace" class="btn" style="background: var(--cosy-platform-accent, #0369a1); color: var(--on-primary, #ffffff); border: none; padding: 10px 20px; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer;" data-i18n="notfound.backToWorkspace">Back to your workspace</button>
+      <a id="btn-signin" href="#" class="btn btn-outline" style="padding: 10px 20px; text-decoration: none; font-size: 0.9rem; font-weight: 700;" data-i18n="notfound.signIn">Sign in</a>
+      <button id="btn-workspace" class="btn" style="background: var(--cosy-platform-accent); color: var(--on-primary, #ffffff); border: none; padding: 10px 20px; border-radius: 999px; font-size: 0.9rem; font-weight: 700; cursor: pointer;" data-i18n="notfound.backToWorkspace">Back to your workspace</button>
     </div>
   </div>
 

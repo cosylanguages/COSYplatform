@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <meta name="theme-color" content="#0369a1">
+  <meta name="theme-color" content="#FAF7F2">
   <meta name="description" content="Study interactive lessons, practice vocabulary, and track learning progress.">
   <link rel="icon" href="shared/img/favicon.svg" type="image/svg+xml">
   <title>Student Workspace · COSYlanguages</title>
@@ -474,6 +474,7 @@
   <script src="shared/js/studio-media.js"></script>
   <script src="shared/js/studio-games.js"></script>
   <link rel="stylesheet" href="https://cosylanguages.github.io/COSYlanguages/css/ecosystem-strip.css">
+  <link rel="stylesheet" href="shared/css/editorial.css">
 </head>
 <body>
 <div data-ecosystem-strip data-self="platform" data-theme-toggle></div>
@@ -604,32 +605,32 @@
             <h1 style="font-size: 1.6rem; color: var(--cosy-color-ink, #0f172a); margin-bottom: 8px;">Your Student Workspace 📚</h1>
           </div>
 
-          <!-- Skyeng / Edvibe Style Top Hero Bar: Balance & Teacher Unit -->
-          <div style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); border-radius: var(--cosy-radius-md, 14px); padding: 24px; color: white; margin-bottom: 24px; box-shadow: 0 4px 12px rgba(2, 132, 199, 0.15); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px;">
+          <!-- Editorial student cover: teacher, balance and the next step -->
+          <div class="student-hero" style="background: linear-gradient(135deg, var(--cosy-platform-student-hover) 0%, var(--cosy-platform-student) 100%); border-radius: 22px; padding: 26px; color: white; margin-bottom: 24px; box-shadow: var(--cosy-shadow-lift); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px;">
             <div style="display: flex; align-items: center; gap: 16px;">
-              <div style="width: 56px; height: 56px; border-radius: 50%; background: rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; font-size: 1.6rem; border: 2px solid rgba(255,255,255,0.4);">
+              <div style="width: 58px; height: 58px; border-radius: 50%; background: rgba(255,255,255,0.18); display: flex; align-items: center; justify-content: center; font-size: 1.6rem; border: 2px solid rgba(255,255,255,0.4);">
                 👩‍🏫
               </div>
               <div>
-                <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: #bae6fd; font-weight: 700;">Assigned Teacher</div>
-                <div id="assigned-teacher-name" style="font-size: 1.25rem; font-weight: 800;">Elena Rostova</div>
-                <div id="lessons-together-badge" style="font-size: 0.8rem; color: #e0f2fe; margin-top: 2px;">🤝 12 lessons completed together</div>
+                <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.72); font-weight: 800;">Assigned Teacher</div>
+                <div id="assigned-teacher-name" style="font-family: var(--font-serif); font-size: 1.55rem; font-weight: 560;">Elena Rostova</div>
+                <div id="lessons-together-badge" style="font-size: 0.8rem; color: rgba(255,255,255,0.82); margin-top: 2px;">🤝 12 lessons completed together</div>
               </div>
             </div>
 
-            <div style="display: flex; align-items: center; gap: 24px; background: rgba(255,255,255,0.1); padding: 12px 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.2);">
+            <div style="display: flex; align-items: center; gap: 24px; background: rgba(255,255,255,0.1); padding: 12px 20px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.2);">
               <div>
-                <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: #bae6fd; font-weight: 700;">Lesson Balance</div>
-                <div id="student-lesson-balance" style="font-size: 1.6rem; font-weight: 800;">8 lessons</div>
+                <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.72); font-weight: 800;">Lesson Balance</div>
+                <div id="student-lesson-balance" style="font-family: var(--font-serif); font-size: 1.8rem; font-weight: 560;">8 lessons</div>
               </div>
-              <button onclick="openTopUpModal()" class="btn" style="background: #22c55e; color: white; font-weight: 700; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">+ Refill Balance</button>
+              <button onclick="openTopUpModal()" class="btn" style="background: var(--cosy-color-lamp); color: #3B2A05; font-weight: 800; padding: 9px 17px; border-radius: 999px; border: none; cursor: pointer; box-shadow: 0 4px 10px -6px rgba(0,0,0,0.35);">+ Refill Balance</button>
             </div>
           </div>
 
           <!-- Upcoming Live Session Hero Banner -->
-          <div style="background: var(--card-bg, white); border: 1px solid #cbd5e1; border-radius: var(--cosy-radius-md, 14px); padding: 20px; margin-bottom: 30px; box-shadow: 0 2px 6px rgba(0,0,0,0.03); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;">
+          <div class="student-session-card" style="background: var(--cosy-paper-card); border: 1px solid var(--cosy-paper-rule); border-radius: 18px; padding: 20px; margin-bottom: 30px; box-shadow: var(--cosy-shadow-paper); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;">
             <div style="display: flex; align-items: center; gap: 16px;">
-              <div style="background: var(--accent-tint, #e0f2fe); color: var(--accent-ink, #0369a1); padding: 12px 16px; border-radius: 12px; font-weight: 800; font-size: 1.1rem; text-align: center;">
+              <div style="background: var(--cosy-platform-student-light); color: var(--cosy-platform-student-hover); padding: 12px 16px; border-radius: 14px; font-weight: 800; font-size: 1.1rem; text-align: center;">
                 <div>WED</div>
                 <div style="font-size: 1.4rem;">28</div>
               </div>
@@ -647,12 +648,12 @@
           </div>
 
           <!-- COSYlanguages Official Lesson Regulations & Cancellation Policy Card -->
-          <div id="cosy-regulations-card" style="background: var(--accent-tint, #f0f9ff); border: 1px solid #bae6fd; border-radius: var(--cosy-radius-md, 14px); padding: 20px; margin-bottom: 30px; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
+          <div id="cosy-regulations-card" style="background: var(--cosy-color-sage-mist); border: 1px solid var(--cosy-paper-rule); border-radius: 18px; padding: 20px; margin-bottom: 30px; box-shadow: var(--cosy-shadow-paper);">
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; cursor: pointer;" onclick="toggleRegulationsFold()">
-              <h3 style="font-size: 1.15rem; font-weight: 800; color: var(--accent-ink, #0369a1); margin: 0; display: flex; align-items: center; gap: 8px;">
+              <h3 style="font-size: 1.15rem; font-weight: 600; color: var(--cosy-color-sage-dark); margin: 0; display: flex; align-items: center; gap: 8px;">
                 <span>📜 COSYlanguages Lesson Regulations & Policy</span>
               </h3>
-              <span id="regulations-toggle-icon" style="font-size: 0.9rem; color: var(--accent-ink, #0369a1); font-weight: 700;">▼ View Rules</span>
+              <span id="regulations-toggle-icon" style="font-size: 0.9rem; color: var(--cosy-color-sage-dark); font-weight: 700;">▼ View Rules</span>
             </div>
 
             <div id="regulations-body" style="display: none; border-top: 1px solid #e0f2fe; pt-12px; margin-top: 10px; font-size: 0.88rem; color: var(--cosy-color-ink-soft, #334155); line-height: 1.6;">
@@ -806,25 +807,25 @@
 
           <!-- Homework & Vocabulary Widgets (Skyeng / ProgressMe inspired) -->
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; margin-bottom: 30px;">
-            <div style="background: var(--card-bg, white); border: 1px solid #cbd5e1; border-radius: var(--cosy-radius-md, 14px); padding: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
-              <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--accent-ink, #0369a1); margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;">
+            <div class="student-widget-card" style="background: var(--cosy-paper-card); border: 1px solid var(--cosy-paper-rule); border-radius: 18px; padding: 20px; box-shadow: var(--cosy-shadow-paper);">
+              <h3 style="font-size: 1.1rem; font-weight: 600; color: var(--cosy-color-ink); margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;">
                 <span>📚 Assigned Homework</span>
-                <span style="font-size: 0.75rem; background: var(--accent-tint, #e0f2fe); color: var(--accent-ink, #0369a1); padding: 2px 8px; border-radius: 12px; font-weight: 700;">1 Pending</span>
+                <span style="font-size: 0.75rem; background: var(--cosy-platform-student-light); color: var(--cosy-platform-student-hover); padding: 3px 9px; border-radius: 999px; font-weight: 800;">1 Pending</span>
               </h3>
-              <div style="background: var(--subtle-surface, #f8fafc); border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; margin-bottom: 10px;">
-                <div style="font-weight: 700; font-size: 0.9rem; color: var(--cosy-color-ink, #0f172a);">Lesson #4: Essay & Voice Recording</div>
-                <div style="font-size: 0.8rem; color: var(--cosy-color-ink-muted, #64748b); margin-top: 4px;">Due before next live class</div>
-                <a href="student.html?course=english-b1&lesson=lessons/en/b1/unit1-travel.json" class="btn" style="background: #0369a1; padding: 4px 10px; font-size: 0.8rem; margin-top: 8px; display: inline-block;">Start Homework 📝</a>
+              <div style="background: var(--cosy-paper-aged); border: 1px solid var(--cosy-paper-rule); border-radius: 12px; padding: 12px; margin-bottom: 10px;">
+                <div style="font-weight: 700; font-size: 0.9rem; color: var(--cosy-color-ink);">Lesson #4: Essay & Voice Recording</div>
+                <div style="font-size: 0.8rem; color: var(--cosy-color-ink-muted); margin-top: 4px;">Due before next live class</div>
+                <a href="student.html?course=english-b1&lesson=lessons/en/b1/unit1-travel.json" class="btn" style="background: var(--cosy-color-sage); padding: 5px 12px; font-size: 0.8rem; margin-top: 8px; display: inline-block;">Start Homework 📝</a>
               </div>
             </div>
 
-            <div style="background: var(--card-bg, white); border: 1px solid #cbd5e1; border-radius: var(--cosy-radius-md, 14px); padding: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
-              <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--accent-ink, #0369a1); margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;">
+            <div class="student-widget-card" style="background: var(--cosy-paper-card); border: 1px solid var(--cosy-paper-rule); border-radius: 18px; padding: 20px; box-shadow: var(--cosy-shadow-paper);">
+              <h3 style="font-size: 1.1rem; font-weight: 600; color: var(--cosy-color-ink); margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;">
                 <span>🧠 Vocabulary Trainer</span>
-                <span style="font-size: 0.75rem; background: #dcfce7; color: #166534; padding: 2px 8px; border-radius: 12px; font-weight: 700;">15 Words Ready</span>
+                <span style="font-size: 0.75rem; background: var(--cosy-color-sage-mist); color: var(--cosy-color-sage-dark); padding: 3px 9px; border-radius: 999px; font-weight: 800;">15 Words Ready</span>
               </h3>
-              <p style="font-size: 0.85rem; color: var(--cosy-color-ink-muted, #64748b); margin-bottom: 12px;">Practice words saved from your recent lessons using spaced repetition.</p>
-              <button onclick="toggleUtilityDrawer('dict')" class="btn" style="background: #7c3aed; color: white; padding: 6px 14px; font-size: 0.85rem; font-weight: 700; border-radius: 6px; border: none; cursor: pointer;">Practice Words 📖</button>
+              <p style="font-size: 0.85rem; color: var(--cosy-color-ink-muted); margin-bottom: 12px;">Practice words saved from your recent lessons using spaced repetition.</p>
+              <button onclick="toggleUtilityDrawer('dict')" class="btn" style="background: var(--cosy-platform-student); color: white; padding: 6px 14px; font-size: 0.85rem; font-weight: 700; border-radius: 999px; border: none; cursor: pointer;">Practice Words 📖</button>
             </div>
           </div>
 

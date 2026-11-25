@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <meta name="theme-color" content="#0369a1">
+  <meta name="theme-color" content="#FAF7F2">
   <meta name="description" content="Sign in to your COSYlanguages student, teacher, or founder account." data-i18n-placeholder="login.metaDescription">
   <link rel="icon" href="shared/img/favicon.svg" type="image/svg+xml">
   <title data-i18n="login.title">Sign in · COSYlanguages</title>
@@ -135,41 +135,73 @@
     }
   </style>
   <link rel="stylesheet" href="https://cosylanguages.github.io/COSYlanguages/css/ecosystem-strip.css">
+  <link rel="stylesheet" href="shared/css/editorial.css">
 </head>
-<body>
+<body class="login-page">
 <div data-ecosystem-strip data-self="platform" data-theme-toggle></div>
 
-  <div class="login-card">
-    <div class="login-card-top-bar" id="lang-switcher-container"></div>
+  <main class="login-shell">
+    <section class="login-story" aria-label="About COSY platform">
+      <p class="login-kicker">COSY platform · Language school</p>
+      <h1>Your learning,<br><em>with a little more room to breathe.</em></h1>
+      <p class="login-lede">One calm place for lessons, progress and the people who teach you. Sign in and pick up exactly where you left off.</p>
 
-    <div class="login-header">
-      <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 8px;">
-        <img src="shared/img/logo.svg" alt="COSY platform" style="height: 48px; width: 48px; object-fit: contain;">
-        <h1 data-i18n-skip style="margin: 0;">COSY platform</h1>
+      <div class="login-role-grid">
+        <article class="login-role login-role--student">
+          <span>01</span>
+          <h2>For students</h2>
+          <p>Lessons, practice and feedback in one quiet workspace.</p>
+        </article>
+        <article class="login-role login-role--teacher">
+          <span>02</span>
+          <h2>For teachers</h2>
+          <p>Plans, students and class notes without the noise.</p>
+        </article>
+        <article class="login-role login-role--founder">
+          <span>03</span>
+          <h2>For the school</h2>
+          <p>A clear view of the whole learning ecosystem.</p>
+        </article>
       </div>
-      <p data-i18n="login.subheading">Log in to access your workspace</p>
-    </div>
 
-    <div id="error-banner" class="error-banner"></div>
+      <blockquote class="login-quote">“A language is a place you visit every day.”</blockquote>
+    </section>
 
-    <form id="login-form">
-      <div class="form-group">
-        <label for="email" data-i18n="login.emailLabel">Email Address</label>
-        <input type="email" id="email" required placeholder="name@domain.com" autocomplete="email" data-i18n-placeholder="login.emailPlaceholder">
+    <section class="login-card" aria-labelledby="login-title">
+      <div class="login-card-top-bar" id="lang-switcher-container"></div>
+
+      <div class="login-header">
+        <div class="login-brand-row">
+          <img src="shared/img/logo.svg" alt="COSY platform">
+          <div>
+            <p class="login-eyebrow">Welcome back</p>
+            <h1 id="login-title" data-i18n-skip>COSY platform</h1>
+          </div>
+        </div>
+        <p data-i18n="login.subheading">Log in to access your workspace</p>
       </div>
 
-      <div class="form-group">
-        <label for="password" data-i18n="login.passwordLabel">Password</label>
-        <input type="password" id="password" required placeholder="••••••••" autocomplete="current-password" data-i18n-placeholder="login.passwordPlaceholder">
+      <div id="error-banner" class="error-banner"></div>
+
+      <form id="login-form">
+        <div class="form-group">
+          <label for="email" data-i18n="login.emailLabel">Email Address</label>
+          <input type="email" id="email" required placeholder="name@domain.com" autocomplete="email" data-i18n-placeholder="login.emailPlaceholder">
+        </div>
+
+        <div class="form-group">
+          <label for="password" data-i18n="login.passwordLabel">Password</label>
+          <input type="password" id="password" required placeholder="••••••••" autocomplete="current-password" data-i18n-placeholder="login.passwordPlaceholder">
+        </div>
+
+        <button type="submit" id="submit-btn" class="btn-submit" data-i18n="login.submitBtn">Sign In</button>
+      </form>
+
+      <div class="footer-note" data-i18n="login.footerNote">
+        Account creation is managed by platform administration.
       </div>
-
-      <button type="submit" id="submit-btn" class="btn-submit" data-i18n="login.submitBtn">Sign In</button>
-    </form>
-
-    <div class="footer-note" data-i18n="login.footerNote">
-      Account creation is managed by platform administration.
-    </div>
-  </div>
+    </section>
+  </main>
 
   <script>
     let supabaseClient = null;

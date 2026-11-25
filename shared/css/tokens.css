@@ -6,25 +6,36 @@
  *
  * COSYplatform is the flagship paid, full-course, live-classroom product
  * (student view + teacher view). It shares the ecosystem base tokens, typography,
- * spacing, and component shapes, while defining its own distinct Sapphire Blue accent palette.
+ * spacing, and component shapes, with a warm editorial skin drawn from COSYmagazine.
  */
+
+@import url("fonts.css");
 
 :root {
     color-scheme: light;
     /* ── 1. Base Neutrals & Surface Palette (Light Mode) ──────────────── */
-    --cosy-color-cream:                  #fdfcf8;
-    --cosy-color-cream-dark:             #f5ede0;
-    --cosy-color-warm-white:             #FFFEFB;
+    --cosy-color-cream:                  #FAF7F2;
+    --cosy-color-cream-dark:             #F3EDE4;
+    --cosy-color-warm-white:             #FFFDF8;
     --cosy-color-surface:                #FFFFFF;
 
-    --cosy-color-ink:                    #2a2a2a;
-    --cosy-color-ink-soft:               #4a4a4a;
-    --cosy-color-ink-muted:              #4a4a4a;
-    --cosy-color-ink-faint:              #5c5957;
-    --cosy-color-muted:                  #5c5957;
+    --cosy-color-ink:                    #1C1917;
+    --cosy-color-ink-soft:               #44403C;
+    --cosy-color-ink-muted:              #6F6862;
+    --cosy-color-ink-faint:              #8A8580;
+    --cosy-color-muted:                  #6F6862;
 
-    --cosy-color-border:                 rgba(74, 107, 80, 0.12);
-    --cosy-color-border-hover:           rgba(74, 107, 80, 0.25);
+    --cosy-color-border:                 rgba(65, 107, 73, 0.16);
+    --cosy-color-border-hover:           rgba(65, 107, 73, 0.32);
+
+    /* Editorial paper surfaces and texture */
+    --cosy-paper:                        #FAF7F2;
+    --cosy-paper-card:                   #FFFDF8;
+    --cosy-paper-aged:                   #F3EDE4;
+    --cosy-paper-rule:                   rgba(65, 107, 73, 0.14);
+    --cosy-paper-grain:                  url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+    --cosy-shadow-paper:                 0 1px 0 rgba(65, 107, 73, 0.04), 0 10px 26px -18px rgba(28, 25, 23, 0.32);
+    --cosy-shadow-lift:                  0 2px 0 rgba(65, 107, 73, 0.04), 0 18px 36px -22px rgba(28, 25, 23, 0.42);
 
     /* Direct System Aliases for Neutrals */
     --cream:                             var(--cosy-color-cream);
@@ -41,6 +52,12 @@
     --light-gray:                        var(--cosy-color-cream-dark);
     --border:                            var(--cosy-color-border);
     --border-hover:                      var(--cosy-color-border-hover);
+    --card-bg:                           var(--cosy-paper-card);
+    --subtle-surface:                    var(--cosy-paper-aged);
+    --border-color:                      var(--cosy-paper-rule);
+    --hub-primary:                       var(--cosy-color-sage-dark);
+    --on-primary:                        #FFFDF8;
+    --founder-accent:                    var(--cosy-platform-accent);
 
     /* ── 2. Sage Base Brand Palette (Forest Green / Sage Base) ────────── */
     --cosy-color-forest-green:           #416b49;
@@ -63,26 +80,32 @@
     --primary-color:                     var(--sage);
 
     /* ── 3. COSYplatform Flagship Paid Product Accent Palette ─────────── */
-    /* COSYplatform distinct accent: Confident Sapphire / Cerulean Blue (#0284c7)
-       Shared hue family across both student and teacher views. */
-    --cosy-platform-accent:              #0369a1;
-    --cosy-platform-accent-light:        #e0f2fe;
-    --accent-tint:                      #f0f9ff;
-    --accent-ink:                       #0369a1;
+    /* Editorial role palette: ink navy for the platform, terracotta for
+       students, forest sage for teachers, warm umber for the founder view. */
+    --cosy-platform-accent:              #1E2F6B;
+    --cosy-platform-accent-light:        #E8ECF5;
+    --accent-tint:                      #EEF1F8;
+    --accent-ink:                       #1E2F6B;
 
-    --cosy-platform-accent-deep:         #075985;
+    --cosy-platform-accent-deep:         #16234F;
 
-    /* Student View Variant: Vibrant Active Sapphire Blue */
-    --cosy-platform-student:             #0369a1;
-    --cosy-platform-student-light:       #e0f2fe;
-    --cosy-platform-student-hover:       #075985;
-    --cosy-platform-student-border:      #bae6fd;
+    /* Student View Variant: Warm Terracotta */
+    --cosy-platform-student:             #B84318;
+    --cosy-platform-student-light:       #FAEEE8;
+    --cosy-platform-student-hover:       #8F3212;
+    --cosy-platform-student-border:      #EBCDBF;
 
-    /* Teacher View Variant: Royal Deep Purple */
-    --cosy-platform-teacher:             #6d28d9;
-    --cosy-platform-teacher-light:       #f3e8ff;
-    --cosy-platform-teacher-hover:       #5b21b6;
-    --cosy-platform-teacher-border:      #ddd6fe;
+    /* Teacher View Variant: Forest Sage */
+    --cosy-platform-teacher:             #416B49;
+    --cosy-platform-teacher-light:       #E8F0E9;
+    --cosy-platform-teacher-hover:       #375742;
+    --cosy-platform-teacher-border:      #C9DCCB;
+
+    /* Founder View Variant: Deep Ink / Warm Umber */
+    --cosy-platform-founder:             #1E2F6B;
+    --cosy-platform-founder-light:       #E8ECF5;
+    --cosy-platform-founder-hover:       #16234F;
+    --cosy-platform-founder-border:      #C9D2E5;
 
     /* System Aliases for COSYplatform */
     --platform-primary:                  var(--cosy-platform-accent);
@@ -119,17 +142,19 @@
     --cosy-semantic-success-light:       #e5f4ec;
     --cosy-semantic-warning:             #945e05;
     --cosy-semantic-warning-light:       #fff8e7;
-    --cosy-semantic-focus:               #0369a1;
+    --cosy-semantic-focus:               #416B49;
 
-    --focus-ring:                        0 0 0 3px rgba(3, 105, 161, 0.35);
+    --focus-ring:                        0 0 0 3px rgba(243, 201, 105, 0.65);
 
     /* ── 6. Typography Scale & Font Stacks ──────────────────────────────── */
-    --cosy-font-sans:                    'Nunito', 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    --cosy-font-serif:                   'Fraunces', 'Lora', serif;
+    --cosy-font-sans:                    'Commissioner', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --cosy-font-serif:                   'Fraunces', 'Literata', Georgia, 'Times New Roman', serif;
+    --cosy-font-hand:                    'Caveat', 'Segoe Script', 'Bradley Hand', cursive;
     --cosy-font-mono:                    'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
 
     --font-sans:                         var(--cosy-font-sans);
     --font-serif:                        var(--cosy-font-serif);
+    --font-hand:                         var(--cosy-font-hand);
     --font-mono:                         var(--cosy-font-mono);
 
     --cosy-font-size-xs:                 0.75rem;   /* 12px */
@@ -186,10 +211,10 @@
     --border-radius:                     var(--cosy-radius-base);
 
     /* ── 9. Elevation & Shadows ────────────────────────────────────────── */
-    --cosy-shadow-sm:                    0 2px 12px rgba(2, 132, 199, 0.07);
-    --cosy-shadow-base:                  0 6px 28px rgba(2, 132, 199, 0.10);
-    --cosy-shadow-md:                    0 4px 14px rgba(2, 132, 199, 0.15);
-    --cosy-shadow-lg:                    0 6px 20px rgba(2, 132, 199, 0.25);
+    --cosy-shadow-sm:                    0 1px 2px rgba(28, 25, 23, 0.04), 0 8px 20px -16px rgba(28, 25, 23, 0.28);
+    --cosy-shadow-base:                  0 2px 4px rgba(28, 25, 23, 0.04), 0 16px 36px -24px rgba(28, 25, 23, 0.36);
+    --cosy-shadow-md:                    0 4px 10px rgba(28, 25, 23, 0.06), 0 20px 40px -24px rgba(28, 25, 23, 0.42);
+    --cosy-shadow-lg:                    0 8px 18px rgba(28, 25, 23, 0.08), 0 28px 52px -28px rgba(28, 25, 23, 0.48);
 
     --shadow-sm:                         var(--cosy-shadow-sm);
     --shadow:                            var(--cosy-shadow-base);
@@ -212,12 +237,12 @@
 
 /* ── 11. Shared Ecosystem Strip & Footer Component Styles ─────────────── */
 .cosy-ecosystem-strip-footer {
-    background: #0f172a;
-    color: #94a3b8;
+    background: #233827;
+    color: #C9DCCB;
     font-family: var(--cosy-font-sans);
     font-size: 0.8rem;
-    padding: 12px 1.5rem;
-    border-top: 1px solid #1e293b;
+    padding: 14px 1.5rem;
+    border-top: 1px solid #3A5640;
     width: 100%;
     box-sizing: border-box;
     text-align: center;
@@ -225,7 +250,7 @@
 }
 
 .cosy-ecosystem-strip-footer a {
-    color: #cbd5e1;
+    color: #E8F0E9;
     text-decoration: none;
     font-weight: 600;
     margin: 0 4px;
@@ -233,31 +258,60 @@
 }
 
 .cosy-ecosystem-strip-footer a:hover {
-    color: #38bdf8;
+    color: #F3C969;
     text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
 /* ── 12. Dark Mode Theme Overrides ───────────────────────────────────────── */
 html[data-theme="dark"], body.theme-dark {
 
-    --cosy-color-cream:                  #0f172a;
-    --cosy-color-cream-dark:             #16202e;
-    --cosy-color-warm-white:             #1e293b;
-    --cosy-color-surface:                #1e293b;
+    --cosy-color-cream:                  #141B16;
+    --cosy-color-cream-dark:             #1C2620;
+    --cosy-color-warm-white:             #1B251E;
+    --cosy-color-surface:                #1B251E;
 
-    --cosy-color-ink:                    #f8fafc;
-    --cosy-color-ink-soft:               #cbd5e1;
-    --cosy-color-ink-muted:              #94a3b8;
-    --cosy-color-border:                 rgba(56, 189, 248, 0.20);
-    --cosy-color-border-hover:           rgba(56, 189, 248, 0.35);
+    --cosy-color-ink:                    #F5F5F4;
+    --cosy-color-ink-soft:               #D6D3D1;
+    --cosy-color-ink-muted:              #A8A29E;
+    --cosy-color-border:                 rgba(168, 192, 171, 0.16);
+    --cosy-color-border-hover:           rgba(168, 192, 171, 0.30);
 
-    --cosy-platform-accent:              #38bdf8;
-    --cosy-platform-student:             #38bdf8;
-    --subtle-surface:                   #243244;
-    --on-primary:                       #082f49;
-    --accent-tint:                      #16304f;
-    --accent-ink:                       #7dd3fc;
-    --cosy-platform-teacher:             #7dd3fc;
+    --cosy-paper:                        #141B16;
+    --cosy-paper-card:                   #1B251E;
+    --cosy-paper-aged:                   #242F27;
+    --cosy-paper-rule:                   rgba(255, 255, 255, 0.10);
+    --cosy-shadow-paper:                 0 1px 0 rgba(255, 255, 255, 0.04), 0 12px 28px -18px rgba(0, 0, 0, 0.72);
+    --cosy-shadow-lift:                  0 2px 0 rgba(255, 255, 255, 0.04), 0 22px 44px -24px rgba(0, 0, 0, 0.85);
+
+    --cosy-platform-accent:              #AFC0E8;
+    --cosy-platform-accent-light:        #26334E;
+    --cosy-platform-accent-deep:         #C9D2E5;
+    --cosy-platform-student:             #F0A58C;
+    --cosy-platform-student-light:       #3A251E;
+    --cosy-platform-student-hover:       #F6C1AE;
+    --cosy-platform-student-border:      #5A3A30;
+    --cosy-platform-teacher:             #A8C0AB;
+    --cosy-platform-teacher-light:       #233027;
+    --cosy-platform-teacher-hover:       #C9DCCB;
+    --cosy-platform-teacher-border:      #3A5640;
+    --cosy-platform-founder:             #AFC0E8;
+    --cosy-platform-founder-light:       #26334E;
+    --cosy-platform-founder-hover:       #C9D2E5;
+    --cosy-platform-founder-border:      #3D4C6B;
+    --subtle-surface:                    #242F27;
+    --on-primary:                        #141B16;
+    --accent-tint:                       #26334E;
+    --accent-ink:                        #C9D2E5;
+    --card-bg:                           #1B251E;
+    --border-color:                      rgba(255, 255, 255, 0.10);
+    --hub-primary:                       var(--cosy-color-sage);
+    --founder-accent:                    var(--cosy-platform-accent);
+    --cosy-color-sage:                   #A8C0AB;
+    --cosy-color-sage-dark:              #C9DCCB;
+    --cosy-color-sage-mist:              #233027;
+    --cosy-color-sage-pale:              #1E2A22;
+    --focus-ring:                        0 0 0 3px rgba(243, 201, 105, 0.55);
     color-scheme: dark;
 }
 
@@ -265,24 +319,52 @@ html[data-theme="dark"], body.theme-dark {
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
 
-    --cosy-color-cream:                  #0f172a;
-    --cosy-color-cream-dark:             #16202e;
-    --cosy-color-warm-white:             #1e293b;
-    --cosy-color-surface:                #1e293b;
+    --cosy-color-cream:                  #141B16;
+    --cosy-color-cream-dark:             #1C2620;
+    --cosy-color-warm-white:             #1B251E;
+    --cosy-color-surface:                #1B251E;
 
-    --cosy-color-ink:                    #f8fafc;
-    --cosy-color-ink-soft:               #cbd5e1;
-    --cosy-color-ink-muted:              #94a3b8;
-    --cosy-color-border:                 rgba(56, 189, 248, 0.20);
-    --cosy-color-border-hover:           rgba(56, 189, 248, 0.35);
+    --cosy-color-ink:                    #F5F5F4;
+    --cosy-color-ink-soft:               #D6D3D1;
+    --cosy-color-ink-muted:              #A8A29E;
+    --cosy-color-border:                 rgba(168, 192, 171, 0.16);
+    --cosy-color-border-hover:           rgba(168, 192, 171, 0.30);
 
-    --cosy-platform-accent:              #38bdf8;
-    --cosy-platform-student:             #38bdf8;
-    --subtle-surface:                   #243244;
-    --on-primary:                       #082f49;
-    --accent-tint:                      #16304f;
-    --accent-ink:                       #7dd3fc;
-    --cosy-platform-teacher:             #7dd3fc;
+    --cosy-paper:                        #141B16;
+    --cosy-paper-card:                   #1B251E;
+    --cosy-paper-aged:                   #242F27;
+    --cosy-paper-rule:                   rgba(255, 255, 255, 0.10);
+    --cosy-shadow-paper:                 0 1px 0 rgba(255, 255, 255, 0.04), 0 12px 28px -18px rgba(0, 0, 0, 0.72);
+    --cosy-shadow-lift:                  0 2px 0 rgba(255, 255, 255, 0.04), 0 22px 44px -24px rgba(0, 0, 0, 0.85);
+
+    --cosy-platform-accent:              #AFC0E8;
+    --cosy-platform-accent-light:        #26334E;
+    --cosy-platform-accent-deep:         #C9D2E5;
+    --cosy-platform-student:             #F0A58C;
+    --cosy-platform-student-light:       #3A251E;
+    --cosy-platform-student-hover:       #F6C1AE;
+    --cosy-platform-student-border:      #5A3A30;
+    --cosy-platform-teacher:             #A8C0AB;
+    --cosy-platform-teacher-light:       #233027;
+    --cosy-platform-teacher-hover:       #C9DCCB;
+    --cosy-platform-teacher-border:      #3A5640;
+    --cosy-platform-founder:             #AFC0E8;
+    --cosy-platform-founder-light:       #26334E;
+    --cosy-platform-founder-hover:       #C9D2E5;
+    --cosy-platform-founder-border:      #3D4C6B;
+    --subtle-surface:                    #242F27;
+    --on-primary:                        #141B16;
+    --accent-tint:                       #26334E;
+    --accent-ink:                        #C9D2E5;
+    --card-bg:                           #1B251E;
+    --border-color:                      rgba(255, 255, 255, 0.10);
+    --hub-primary:                       var(--cosy-color-sage);
+    --founder-accent:                    var(--cosy-platform-accent);
+    --cosy-color-sage:                   #A8C0AB;
+    --cosy-color-sage-dark:              #C9DCCB;
+    --cosy-color-sage-mist:              #233027;
+    --cosy-color-sage-pale:              #1E2A22;
+    --focus-ring:                        0 0 0 3px rgba(243, 201, 105, 0.55);
     color-scheme: dark;
   }
 }

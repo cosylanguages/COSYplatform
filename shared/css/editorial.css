@@ -1,0 +1,2083 @@
+/* COSYplatform editorial skin
+   Warm paper, forest ink and magazine typography, adapted from COSYmagazine.
+   Loaded after page styles so it can soften the older utility layouts. */
+
+:root {
+  --editorial-max: 1180px;
+  --editorial-rule: rgba(65, 107, 73, 0.16);
+  --editorial-rule-strong: rgba(65, 107, 73, 0.28);
+  --editorial-lamp: #F3C969;
+  --editorial-lamp-soft: #FBEBC0;
+  --editorial-umber: #7A5C3A;
+  --editorial-terracotta: #B84318;
+  --editorial-navy: #1E2F6B;
+  --editorial-sage: #416B49;
+  --editorial-on-accent: #FFFDF8;
+}
+
+html[data-theme="dark"] {
+  --editorial-rule: rgba(168, 192, 171, 0.18);
+  --editorial-rule-strong: rgba(168, 192, 171, 0.30);
+  --editorial-sage: #A8C0AB;
+  --editorial-on-accent: #141B16;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --editorial-rule: rgba(168, 192, 171, 0.18);
+    --editorial-rule-strong: rgba(168, 192, 171, 0.30);
+    --editorial-sage: #A8C0AB;
+    --editorial-on-accent: #141B16;
+  }
+}
+
+/* ── Page canvas ─────────────────────────────────────────────────────── */
+body {
+  background-color: var(--cosy-paper) !important;
+  background-image: var(--cosy-paper-grain);
+  color: var(--cosy-color-ink);
+  font-family: var(--font-sans);
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--editorial-lamp-soft);
+  color: var(--cosy-color-ink);
+}
+
+h1, h2, h3, h4, .display-title {
+  font-family: var(--font-serif);
+  font-weight: 560;
+  letter-spacing: -0.018em;
+  line-height: 1.12;
+  text-wrap: balance;
+}
+
+p { line-height: 1.62; }
+
+a { text-underline-offset: 3px; }
+
+:focus-visible {
+  outline: 3px solid var(--editorial-lamp);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+/* ── Editorial atoms ─────────────────────────────────────────────────── */
+.cosy-kicker,
+.teacher-eyebrow,
+.studio-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--editorial-sage);
+}
+
+.cosy-rule {
+  height: 1px;
+  border: 0;
+  background: var(--editorial-rule);
+}
+
+.cosy-stamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.22rem 0.6rem;
+  border: 1.5px solid var(--cosy-color-ink);
+  background: var(--cosy-paper-card);
+  color: var(--cosy-color-ink);
+  box-shadow: 2px 2px 0 rgba(28, 25, 23, 0.85);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transform: rotate(-1.5deg);
+}
+
+.cosy-hand {
+  font-family: var(--font-hand);
+  font-size: 1.15em;
+  color: var(--editorial-umber);
+}
+
+/* ── Shell headers ───────────────────────────────────────────────────── */
+header.manual-header,
+.hub-header,
+.founder-header,
+.profile-header,
+.studio-topbar {
+  background: color-mix(in srgb, var(--cosy-paper) 94%, transparent) !important;
+  color: var(--cosy-color-ink) !important;
+  border-bottom: 1px solid var(--editorial-rule) !important;
+  box-shadow: none !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+header.manual-header {
+  padding: 0.85rem 0;
+  margin-bottom: 1.5rem;
+}
+
+.header-content,
+.hub-header-content,
+.founder-header-content,
+.profile-header-inner {
+  max-width: var(--editorial-max);
+}
+
+.manual-header .logo-badge,
+.hub-header .logo-badge,
+.hub-header .hub-header-content a span,
+.profile-brand,
+.studio-brand,
+.founder-header .logo-badge {
+  font-family: var(--font-serif) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.02em;
+  color: var(--cosy-color-ink) !important;
+}
+
+.studio-brand span {
+  color: var(--cosy-color-ink-muted) !important;
+  font-family: var(--font-sans) !important;
+  font-weight: 600 !important;
+}
+
+.badge-teacher,
+.badge-student,
+.badge-public,
+.badge-founder,
+.role-badge,
+.profile-brand-sub,
+.badge-teacher-role,
+.badge-student-role,
+.badge-founder-role {
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 4px 11px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.badge-teacher,
+.badge-teacher-role {
+  background: var(--cosy-platform-teacher-light) !important;
+  color: var(--cosy-platform-teacher-hover) !important;
+  border-color: var(--cosy-platform-teacher-border) !important;
+}
+
+.badge-student,
+.badge-student-role {
+  background: var(--cosy-platform-student-light) !important;
+  color: var(--cosy-platform-student-hover) !important;
+  border-color: var(--cosy-platform-student-border) !important;
+}
+
+.badge-public,
+.badge-founder,
+.badge-founder-role,
+.profile-brand-sub {
+  background: var(--cosy-color-sage-mist) !important;
+  color: var(--cosy-color-sage-dark) !important;
+  border-color: var(--cosy-color-sage-pale) !important;
+}
+
+.btn-logout {
+  background: var(--cosy-color-ink) !important;
+  color: var(--editorial-on-accent) !important;
+  border: 1px solid var(--cosy-color-ink) !important;
+  border-radius: 999px !important;
+  padding: 7px 16px !important;
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.01em;
+}
+
+.btn-logout:hover {
+  background: var(--editorial-sage) !important;
+  border-color: var(--editorial-sage) !important;
+}
+
+/* ── Buttons, pills and links ────────────────────────────────────────── */
+.btn,
+.btn-submit,
+.ns-btn,
+.studio-button,
+.nav-cta,
+.focus-action,
+.btn-start {
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: 0.005em;
+}
+
+.btn {
+  transition: transform 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--cosy-shadow-sm);
+}
+
+.btn-submit {
+  background: var(--editorial-sage) !important;
+  color: #fff !important;
+  border: 1px solid var(--editorial-sage) !important;
+  min-height: 46px;
+  box-shadow: 0 8px 18px -12px rgba(65, 107, 73, 0.75);
+}
+
+.btn-submit:hover {
+  background: var(--cosy-color-sage-dark) !important;
+}
+
+.hub-header .btn {
+  background: var(--cosy-paper-card) !important;
+  color: var(--cosy-color-ink) !important;
+  border: 1px solid var(--editorial-rule) !important;
+  box-shadow: none !important;
+}
+
+.hub-header .btn:hover {
+  border-color: var(--editorial-sage) !important;
+  color: var(--cosy-color-sage-dark) !important;
+}
+
+.hub-header .btn[href*="classroom"],
+.hub-header .btn[href*="workspace"] {
+  background: var(--cosy-color-ink) !important;
+  color: var(--editorial-on-accent) !important;
+  border-color: var(--cosy-color-ink) !important;
+}
+
+.hub-header .btn[href*="workspace"]:hover,
+.hub-header .btn[href*="classroom"]:hover {
+  background: var(--editorial-sage) !important;
+  border-color: var(--editorial-sage) !important;
+}
+
+/* ── Form controls ───────────────────────────────────────────────────── */
+input:not([type="checkbox"]):not([type="radio"]),
+select,
+textarea {
+  border-color: var(--editorial-rule) !important;
+  background-color: var(--cosy-paper-card) !important;
+  color: var(--cosy-color-ink) !important;
+  border-radius: 12px !important;
+}
+
+input:not([type="checkbox"]):not([type="radio"]):focus,
+select:focus,
+textarea:focus {
+  border-color: var(--editorial-sage) !important;
+  box-shadow: var(--focus-ring) !important;
+  outline: 0 !important;
+}
+
+.code-editor textarea,
+#lesson-json {
+  background: #18221C !important;
+  color: #E8F0E9 !important;
+  border-color: #3A5640 !important;
+}
+
+/* ── Shared cards and filters ────────────────────────────────────────── */
+.filter-bar,
+.notice-card,
+.unauth-card,
+.access-denied,
+.instructions-card,
+.portal-section,
+.stat-card,
+.teacher-link-card,
+.category-card,
+.unit-card,
+.profile-card,
+.teacher-card,
+.teacher-catalog-panel,
+.teacher-kpi,
+.teacher-section-card,
+.studio-metadata,
+.studio-editor-panel,
+.studio-preview-panel,
+.studio-publish-panel,
+.login-card {
+  background: var(--cosy-paper-card) !important;
+  border: 1px solid var(--editorial-rule) !important;
+  border-radius: 18px !important;
+  box-shadow: var(--cosy-shadow-paper) !important;
+}
+
+.filter-bar {
+  padding: 18px 20px !important;
+  border-top: 3px solid var(--editorial-sage) !important;
+}
+
+.filter-group {
+  color: var(--cosy-color-ink-muted) !important;
+  font-size: 0.76rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.filter-group select,
+.filter-group input {
+  margin-top: 4px;
+  font-size: 0.88rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.category-card {
+  border-top: 3px solid var(--editorial-sage) !important;
+  padding: 18px !important;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--cosy-shadow-lift) !important;
+}
+
+.category-header {
+  border-bottom: 1px solid var(--editorial-rule) !important;
+  padding-bottom: 10px !important;
+}
+
+.category-header h3 {
+  font-family: var(--font-serif) !important;
+  font-size: 1.08rem !important;
+  font-weight: 600 !important;
+  color: var(--cosy-color-ink) !important;
+}
+
+.category-toggle-icon {
+  color: var(--editorial-sage) !important;
+}
+
+.course-item-card {
+  border-bottom: 1px solid var(--editorial-rule) !important;
+  padding: 11px 0 !important;
+}
+
+.course-item-card:last-child { border-bottom: 0 !important; }
+
+.course-item-card:hover {
+  background: var(--cosy-color-sage-mist) !important;
+  border-radius: 10px;
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+}
+
+.course-item-title {
+  font-family: var(--font-serif);
+  font-size: 0.96rem;
+  font-weight: 600;
+  color: var(--cosy-color-ink);
+}
+
+.category-card .course-item-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.category-card .course-item-card .btn {
+  flex: 0 0 auto;
+  background: transparent !important;
+  color: var(--cosy-color-sage-dark) !important;
+  border: 1px solid var(--editorial-rule) !important;
+  padding: 4px 10px !important;
+  font-size: 0.7rem !important;
+  font-weight: 800 !important;
+  border-radius: 999px !important;
+  box-shadow: none !important;
+  white-space: nowrap;
+}
+
+.category-card .course-item-card .btn:hover {
+  background: var(--cosy-color-sage-mist) !important;
+  border-color: var(--cosy-color-sage-soft) !important;
+}
+
+.course-item-level,
+.slide-stage-tag,
+.section-num {
+  border-radius: 999px !important;
+  font-family: var(--font-sans);
+  font-size: 0.62rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.course-item-level {
+  background: var(--cosy-color-sage-mist) !important;
+  color: var(--cosy-color-sage-dark) !important;
+}
+
+.unit-card {
+  padding: 16px !important;
+}
+
+.unit-card h3 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+}
+
+/* ── Public catalog / hub headings ───────────────────────────────────── */
+.hub-container,
+.container {
+  max-width: var(--editorial-max);
+}
+
+.hub-container {
+  margin: clamp(24px, 4vw, 46px) auto !important;
+}
+
+.hub-container > div > h1,
+#app-root .hub-container h1 {
+  font-family: var(--font-serif) !important;
+  font-size: clamp(2rem, 4vw, 3.1rem) !important;
+  font-weight: 560 !important;
+  line-height: 1.05 !important;
+  color: var(--cosy-color-ink) !important;
+  margin-bottom: 8px !important;
+}
+
+.hub-container > div > h1 + p {
+  max-width: 62ch;
+  font-size: 1.02rem;
+  color: var(--cosy-color-ink-muted) !important;
+}
+
+.hub-container h2,
+.hub-container h3 {
+  color: var(--cosy-color-ink) !important;
+}
+
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+
+.course-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 18px;
+  min-height: 190px;
+  padding: 20px;
+  background: var(--cosy-paper-card) !important;
+  border: 1px solid var(--editorial-rule) !important;
+  border-top: 3px solid var(--editorial-sage) !important;
+  border-radius: 4px 4px 18px 18px !important;
+  box-shadow: var(--cosy-shadow-paper) !important;
+}
+
+.course-card h3 {
+  font-family: var(--font-serif) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.01em;
+}
+
+.course-card .btn {
+  background: transparent !important;
+  color: var(--cosy-color-sage-dark) !important;
+  border: 1px solid var(--editorial-rule) !important;
+  padding: 7px 12px !important;
+  font-size: 0.76rem !important;
+  border-radius: 999px !important;
+}
+
+.course-card .btn:hover {
+  background: var(--cosy-color-sage-mist) !important;
+}
+
+.badge-hub {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--cosy-color-sage-mist) !important;
+  color: var(--cosy-color-sage-dark) !important;
+  border: 1px solid var(--cosy-platform-teacher-border);
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.not-found-page {
+  display: flex !important;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 0 !important;
+}
+
+.not-found-card {
+  margin: auto !important;
+  border-top: 4px solid var(--editorial-sage) !important;
+}
+
+.not-found-code {
+  font-family: var(--font-serif);
+  font-size: clamp(4.5rem, 12vw, 7rem);
+  font-weight: 560;
+  line-height: 0.8;
+  letter-spacing: -0.07em;
+  color: var(--editorial-sage);
+  margin-bottom: 18px;
+}
+
+.not-found-card h1 {
+  font-family: var(--font-serif);
+  letter-spacing: -0.03em;
+}
+
+.not-found-card .btn:not(.btn-outline) {
+  background: var(--editorial-sage) !important;
+  border-color: var(--editorial-sage) !important;
+  color: var(--editorial-on-accent) !important;
+}
+
+.not-found-card .btn-outline {
+  background: transparent !important;
+  border-color: var(--editorial-rule) !important;
+  color: var(--cosy-color-ink) !important;
+}
+
+/* ── Studio results ─────────────────────────────────────────────────── */
+body:has(#questions-section) {
+  background: var(--cosy-color-cream) !important;
+  font-family: var(--font-sans) !important;
+}
+
+body:has(#questions-section) main h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  letter-spacing: -0.03em;
+}
+
+body:has(#questions-section) main h2 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  color: var(--cosy-color-sage-dark);
+}
+
+body:has(#questions-section) table {
+  background: var(--cosy-paper-card);
+  border-color: var(--editorial-rule);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+body:has(#questions-section) th {
+  background: var(--cosy-paper-aged);
+  color: var(--cosy-color-ink);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+body:has(#questions-section) th,
+body:has(#questions-section) td {
+  border-bottom-color: var(--editorial-rule);
+}
+
+body:has(#questions-section) .bar {
+  background: var(--cosy-color-sage-mist);
+}
+
+body:has(#questions-section) .bar > span {
+  background: var(--editorial-sage);
+}
+
+.lang-title {
+  font-family: var(--font-serif);
+  font-weight: 600 !important;
+  border-bottom-color: var(--editorial-rule) !important;
+}
+
+.hub-container .btn {
+  background: var(--editorial-sage);
+  color: #fff;
+  border: 1px solid var(--editorial-sage);
+}
+
+/* ── Login page ──────────────────────────────────────────────────────── */
+body.login-page {
+  display: block !important;
+  padding: 0 !important;
+  min-height: 100vh;
+}
+
+.login-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(360px, 0.85fr);
+  gap: clamp(28px, 5vw, 72px);
+  align-items: center;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(28px, 6vw, 80px) clamp(20px, 4vw, 40px);
+  min-height: calc(100vh - 44px);
+}
+
+.login-story {
+  position: relative;
+  min-width: 0;
+}
+
+.login-story::before {
+  content: "";
+  position: absolute;
+  top: -18px;
+  left: -16px;
+  width: 92px;
+  height: 24px;
+  background: rgba(243, 201, 105, 0.72);
+  transform: rotate(-4deg);
+  clip-path: polygon(0 8%, 5% 0, 10% 10%, 15% 0, 90% 0, 95% 10%, 100% 0, 100% 90%, 95% 100%, 90% 90%, 10% 90%, 5% 100%, 0 90%);
+  opacity: 0.9;
+}
+
+.login-kicker {
+  margin: 0 0 14px;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--editorial-sage);
+}
+
+.login-story h1 {
+  margin: 0 0 18px;
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 5.2vw, 4.4rem);
+  font-weight: 560;
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  color: var(--cosy-color-ink);
+  max-width: 13ch;
+}
+
+.login-story h1 em {
+  font-style: italic;
+  font-weight: 450;
+  color: var(--editorial-sage);
+}
+
+.login-lede {
+  max-width: 48ch;
+  margin: 0 0 30px;
+  font-size: 1.05rem;
+  line-height: 1.62;
+  color: var(--cosy-color-ink-muted);
+}
+
+.login-role-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.login-role {
+  position: relative;
+  padding: 16px 15px 15px;
+  border: 1px solid var(--editorial-rule);
+  border-radius: 4px 4px 14px 14px;
+  background: var(--cosy-paper-card);
+  box-shadow: var(--cosy-shadow-paper);
+}
+
+.login-role::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 18px;
+  width: 46px;
+  height: 14px;
+  background: rgba(243, 201, 105, 0.75);
+  transform: rotate(-2deg);
+  clip-path: polygon(0 8%, 6% 0, 12% 10%, 18% 0, 88% 0, 94% 10%, 100% 0, 100% 92%, 94% 100%, 88% 90%, 12% 90%, 6% 100%, 0 92%);
+}
+
+.login-role span {
+  display: block;
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--cosy-color-ink-faint);
+  margin-bottom: 8px;
+}
+
+.login-role h2 {
+  margin: 0 0 5px;
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--cosy-color-ink);
+}
+
+.login-role p {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--cosy-color-ink-muted);
+}
+
+.login-role--student { border-top: 3px solid var(--cosy-platform-student); }
+.login-role--teacher { border-top: 3px solid var(--cosy-platform-teacher); }
+.login-role--founder { border-top: 3px solid var(--cosy-platform-accent); }
+
+.login-quote {
+  margin: 0;
+  padding-left: 18px;
+  border-left: 3px solid var(--editorial-lamp);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.12rem;
+  line-height: 1.45;
+  color: var(--cosy-color-ink-soft);
+}
+
+.login-card {
+  width: 100%;
+  max-width: 430px;
+  justify-self: end;
+  padding: clamp(24px, 4vw, 40px) !important;
+  border-radius: 22px !important;
+  border-top: 4px solid var(--editorial-sage) !important;
+  box-shadow: var(--cosy-shadow-lift) !important;
+}
+
+.login-card-top-bar {
+  margin-bottom: 10px !important;
+}
+
+.login-header {
+  text-align: left !important;
+  margin-bottom: 26px !important;
+}
+
+.login-brand-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.login-brand-row img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.login-eyebrow {
+  margin: 0 0 2px;
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--editorial-sage);
+}
+
+.login-header h1 {
+  margin: 0 !important;
+  font-family: var(--font-serif) !important;
+  font-size: 1.85rem !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.025em !important;
+  color: var(--cosy-color-ink) !important;
+}
+
+.login-header p {
+  margin: 8px 0 0 !important;
+  font-size: 0.9rem !important;
+  line-height: 1.5 !important;
+  color: var(--cosy-color-ink-muted) !important;
+}
+
+.login-card .form-group {
+  margin-bottom: 16px !important;
+}
+
+.login-card .form-group label {
+  font-size: 0.72rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  color: var(--cosy-color-ink-muted) !important;
+  margin-bottom: 7px !important;
+}
+
+.login-card .form-group input {
+  padding: 12px 14px !important;
+  border-radius: 12px !important;
+  font-size: 0.95rem !important;
+}
+
+.login-card .btn-submit {
+  margin-top: 4px;
+  border-radius: 999px !important;
+  font-size: 0.9rem !important;
+}
+
+.login-card .footer-note {
+  margin-top: 20px !important;
+  padding-top: 16px;
+  border-top: 1px solid var(--editorial-rule);
+  font-size: 0.74rem !important;
+  line-height: 1.45;
+  color: var(--cosy-color-ink-muted) !important;
+}
+
+@media (max-width: 860px) {
+  .login-shell {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding-top: 28px;
+    padding-bottom: 40px;
+    min-height: 0;
+  }
+
+  .login-story h1 {
+    max-width: 16ch;
+  }
+
+  .login-card {
+    justify-self: stretch;
+    max-width: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .login-role-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .login-role:nth-child(2),
+  .login-role:nth-child(3) {
+    display: none;
+  }
+
+  .login-quote {
+    display: none;
+  }
+
+  .login-story h1 {
+    font-size: clamp(2.3rem, 12vw, 3.2rem);
+  }
+}
+
+/* ── Profile workspace ───────────────────────────────────────────────── */
+html[data-mode="student"] {
+  --mode-accent: var(--cosy-platform-student);
+  --mode-accent-deep: var(--cosy-platform-student-hover);
+  --mode-accent-soft: var(--cosy-platform-student-light);
+  --mode-accent-2: #D66161;
+}
+
+html[data-mode="teacher"] {
+  --mode-accent: var(--cosy-platform-teacher);
+  --mode-accent-deep: var(--cosy-platform-teacher-hover);
+  --mode-accent-soft: var(--cosy-platform-teacher-light);
+  --mode-accent-2: #7A5C3A;
+}
+
+html[data-mode="founder"] {
+  --mode-accent: var(--cosy-platform-accent);
+  --mode-accent-deep: var(--cosy-platform-accent-deep);
+  --mode-accent-soft: var(--cosy-platform-accent-light);
+  --mode-accent-2: #945E05;
+}
+
+.profile-header {
+  background: color-mix(in srgb, var(--cosy-paper) 94%, transparent) !important;
+}
+
+.profile-header-actions a,
+.profile-header-actions button {
+  border-radius: 999px !important;
+  border-color: var(--editorial-rule) !important;
+  background: var(--cosy-paper-card) !important;
+  color: var(--cosy-color-ink) !important;
+  font-weight: 700 !important;
+}
+
+.profile-header-actions .primary {
+  background: var(--mode-accent) !important;
+  border-color: var(--mode-accent) !important;
+  color: #fff !important;
+}
+
+.profile-main {
+  padding-top: clamp(20px, 4vw, 38px) !important;
+}
+
+.profile-hero {
+  background: var(--cosy-paper-card) !important;
+  color: var(--cosy-color-ink) !important;
+  border: 1px solid var(--editorial-rule) !important;
+  border-top: 5px solid var(--mode-accent) !important;
+  box-shadow: var(--cosy-shadow-paper) !important;
+  border-radius: 24px !important;
+  padding: clamp(24px, 4vw, 40px) !important;
+}
+
+.profile-hero::after {
+  width: 360px !important;
+  height: 360px !important;
+  right: -120px !important;
+  top: -190px !important;
+  background: var(--mode-accent-soft) !important;
+  opacity: 0.45;
+}
+
+.profile-hero::before {
+  width: 220px !important;
+  height: 220px !important;
+  right: 110px !important;
+  bottom: -150px !important;
+  background: var(--editorial-lamp-soft) !important;
+  opacity: 0.55;
+}
+
+.profile-hero h1 {
+  font-family: var(--font-serif) !important;
+  font-size: clamp(1.8rem, 3.4vw, 2.6rem) !important;
+  font-weight: 560 !important;
+  letter-spacing: -0.03em !important;
+  color: var(--cosy-color-ink) !important;
+}
+
+.profile-avatar {
+  font-family: var(--font-serif) !important;
+  background: var(--mode-accent) !important;
+  color: var(--editorial-on-accent) !important;
+  border: 3px solid var(--cosy-paper-card) !important;
+  box-shadow: var(--cosy-shadow-paper) !important;
+}
+
+.profile-email {
+  color: var(--cosy-color-ink-muted) !important;
+}
+
+.profile-pill {
+  background: var(--cosy-color-sage-mist) !important;
+  border-color: var(--cosy-color-sage-pale) !important;
+  color: var(--cosy-color-ink-soft) !important;
+  font-weight: 700 !important;
+}
+
+.profile-hero .role-badge.student {
+  background: var(--cosy-platform-student-light) !important;
+  border-color: var(--cosy-platform-student-border) !important;
+  color: var(--cosy-platform-student-hover) !important;
+}
+
+.profile-hero .role-badge.teacher {
+  background: var(--cosy-platform-teacher-light) !important;
+  border-color: var(--cosy-platform-teacher-border) !important;
+  color: var(--cosy-platform-teacher-hover) !important;
+}
+
+.profile-hero .role-badge.founder {
+  background: var(--cosy-platform-accent-light) !important;
+  border-color: var(--cosy-platform-founder-border) !important;
+  color: var(--cosy-platform-accent-deep) !important;
+}
+
+.profile-hero-actions a {
+  border-radius: 999px !important;
+  background: var(--mode-accent) !important;
+  color: var(--editorial-on-accent) !important;
+  border-color: var(--mode-accent) !important;
+  font-weight: 700 !important;
+}
+
+.profile-hero-actions a:hover {
+  background: var(--mode-accent-deep) !important;
+  border-color: var(--mode-accent-deep) !important;
+}
+
+.profile-hero-actions a.secondary {
+  background: transparent !important;
+  color: var(--cosy-color-ink) !important;
+  border-color: var(--editorial-rule) !important;
+}
+
+.profile-hero-actions a.secondary:hover {
+  background: var(--cosy-color-sage-mist) !important;
+  border-color: var(--cosy-color-sage-soft) !important;
+}
+
+.mode-switcher {
+  background: var(--cosy-paper-card) !important;
+  border-color: var(--editorial-rule) !important;
+  border-radius: 999px !important;
+  box-shadow: var(--cosy-shadow-paper) !important;
+  padding: 9px 12px !important;
+}
+
+.mode-tabs {
+  background: var(--cosy-paper-aged) !important;
+}
+
+.mode-tab {
+  border-radius: 999px !important;
+}
+
+.mode-tab.is-active {
+  background: var(--mode-accent) !important;
+  box-shadow: 0 6px 14px -10px rgba(0, 0, 0, 0.5) !important;
+}
+
+.mode-preview-banner {
+  border-color: var(--editorial-lamp) !important;
+  background: var(--editorial-lamp-soft) !important;
+  color: #6B4A05 !important;
+  border-radius: 14px !important;
+}
+
+.mode-preview-banner button {
+  border-radius: 999px !important;
+  background: var(--editorial-umber) !important;
+}
+
+.profile-workspace {
+  background: transparent !important;
+}
+
+.profile-section-nav {
+  background: var(--cosy-paper-card) !important;
+  border: 1px solid var(--editorial-rule) !important;
+  border-radius: 20px !important;
+  box-shadow: var(--cosy-shadow-paper) !important;
+}
+
+.profile-nav-avatar {
+  background: var(--mode-accent-soft) !important;
+  color: var(--mode-accent-deep) !important;
+  font-family: var(--font-serif) !important;
+}
+
+.profile-nav-buttons button {
+  border-radius: 999px !important;
+  font-weight: 700 !important;
+}
+
+.profile-nav-buttons button.is-active {
+  background: var(--mode-accent) !important;
+  color: var(--editorial-on-accent) !important;
+  box-shadow: none !important;
+}
+
+.profile-card h2 {
+  font-family: var(--font-serif) !important;
+  font-size: 1.28rem !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.02em;
+}
+
+.profile-card-lead,
+.profile-card p {
+  color: var(--cosy-color-ink-muted) !important;
+}
+
+.profile-card p a,
+.profile-empty a,
+.profile-inline-actions a:not(.focus-action) {
+  color: var(--mode-accent) !important;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+}
+
+.profile-stat {
+  background: var(--cosy-paper-aged) !important;
+  border-color: transparent !important;
+  border-radius: 14px !important;
+}
+
+.profile-stat-label {
+  color: var(--cosy-color-ink-muted) !important;
+  letter-spacing: 0.08em !important;
+}
+
+.profile-stat-value {
+  font-family: var(--font-serif) !important;
+  font-size: 2.05rem !important;
+  font-weight: 560 !important;
+  color: var(--mode-accent-deep) !important;
+}
+
+.profile-action,
+.focus-card,
+.shortcut-card,
+.profile-empty {
+  background: var(--cosy-paper-aged) !important;
+  border-color: transparent !important;
+  border-radius: 14px !important;
+}
+
+.profile-action:hover,
+.shortcut-card:hover {
+  border-color: var(--mode-accent) !important;
+}
+
+.focus-action {
+  border-radius: 999px !important;
+  background: var(--mode-accent) !important;
+  color: var(--editorial-on-accent) !important;
+  text-decoration: none !important;
+}
+
+.role-badge.founder {
+  color: var(--cosy-platform-accent-deep) !important;
+  background: var(--cosy-platform-accent-light) !important;
+}
+
+.role-badge.teacher {
+  color: var(--cosy-platform-teacher-hover) !important;
+  background: var(--cosy-platform-teacher-light) !important;
+}
+
+.role-badge.student {
+  color: var(--cosy-platform-student-hover) !important;
+  background: var(--cosy-platform-student-light) !important;
+}
+
+.profile-table th {
+  color: var(--cosy-color-ink-muted) !important;
+  letter-spacing: 0.09em !important;
+}
+
+.profile-table th,
+.profile-table td {
+  border-bottom-color: var(--editorial-rule) !important;
+}
+
+.profile-activity li {
+  border-bottom-color: var(--editorial-rule) !important;
+}
+
+.activity-icon {
+  border-radius: 999px !important;
+  background: var(--mode-accent-soft) !important;
+}
+
+.profile-footer {
+  border-top: 1px solid var(--editorial-rule) !important;
+  color: var(--cosy-color-ink-muted) !important;
+}
+
+/* ── Teacher workspace ───────────────────────────────────────────────── */
+.teacher-dashboard-shell,
+.teacher-dashboard-grid {
+  background: transparent !important;
+}
+
+.teacher-sidebar {
+  background: var(--cosy-paper-card) !important;
+  border: 1px solid var(--editorial-rule) !important;
+  border-radius: 22px !important;
+  box-shadow: var(--cosy-shadow-paper) !important;
+}
+
+.teacher-sidebar__brand strong {
+  font-family: var(--font-serif) !important;
+  font-size: 1.22rem !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.02em !important;
+  color: var(--cosy-color-ink) !important;
+}
+
+.teacher-sidebar__brand small {
+  color: var(--cosy-color-ink-muted) !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  font-size: 0.62rem !important;
+}
+
+.teacher-sidebar__user {
+  background: var(--cosy-color-sage-mist) !important;
+  border: 1px solid var(--editorial-rule) !important;
+  border-radius: 16px !important;
+}
+
+.teacher-sidebar__avatar {
+  background: var(--cosy-platform-teacher) !important;
+  color: #fff !important;
+  font-family: var(--font-serif) !important;
+}
+
+.teacher-sidebar__nav a {
+  border-radius: 999px !important;
+  font-weight: 700 !important;
+}
+
+.teacher-sidebar__nav a:hover {
+  background: var(--cosy-color-sage-mist) !important;
+}
+
+.teacher-sidebar__nav a.is-active {
+  background: var(--cosy-platform-teacher) !important;
+  color: #fff !important;
+  box-shadow: inset 3px 0 0 var(--editorial-lamp);
+}
+
+.teacher-sidebar__label {
+  color: var(--cosy-color-ink-faint) !important;
+  letter-spacing: 0.12em !important;
+}
+
+.teacher-sidebar__foot {
+  color: var(--cosy-color-ink-muted) !important;
+}
+
+.teacher-catalog-panel {
+  padding: clamp(20px, 3vw, 32px) !important;
+  border-radius: 24px !important;
+}
+
+.teacher-catalog-head h1 {
+  font-family: var(--font-serif) !important;
+  font-size: clamp(2rem, 3.4vw, 2.9rem) !important;
+  font-weight: 560 !important;
+  letter-spacing: -0.03em !important;
+}
+
+.teacher-catalog-head p:not(.teacher-eyebrow) {
+  color: var(--cosy-color-ink-muted) !important;
+  font-size: 0.95rem !important;
+  max-width: 52ch;
+}
+
+.teacher-catalog-language select {
+  background: var(--cosy-paper-aged) !important;
+  border-color: var(--editorial-rule) !important;
+  border-radius: 999px !important;
+}
+
+.teacher-catalog-tabs {
+  border-bottom-color: var(--editorial-rule) !important;
+  margin-top: 26px !important;
+}
+
+.teacher-catalog-tab {
+  font-size: 0.84rem !important;
+  letter-spacing: 0.01em;
+}
+
+.teacher-catalog-tab.is-active {
+  color: var(--cosy-color-ink) !important;
+}
+
+.teacher-catalog-tab.is-active::after {
+  background: var(--editorial-sage) !important;
+  height: 3px !important;
+}
+
+.teacher-catalog-hide {
+  color: var(--cosy-color-ink-muted) !important;
+}
+
+.teacher-catalog-search {
+  background: var(--cosy-paper-card) !important;
+  border-color: var(--editorial-rule) !important;
+}
+
+.teacher-catalog-box {
+  background: var(--cosy-paper-aged) !important;
+  border: 1px solid var(--editorial-rule) !important;
+  border-radius: 20px !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.teacher-category-card {
+  background: var(--cosy-paper-card) !important;
+  border: 1px solid var(--editorial-rule) !important;
+  border-top: 3px solid var(--editorial-sage) !important;
+  border-radius: 4px 4px 16px 16px !important;
+  box-shadow: var(--cosy-shadow-paper) !important;
+}
+
+.teacher-category-card__head h2 {
+  font-family: var(--font-serif) !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.01em;
+}
+
+.teacher-category-card__count {
+  background: var(--cosy-color-sage-mist) !important;
+  color: var(--cosy-color-sage-dark) !important;
+}
+
+.teacher-course-link:hover {
+  background: var(--cosy-color-sage-mist) !important;
+}
+
+.teacher-course-copy strong {
+  font-size: 0.82rem !important;
+}
+
+.teacher-course-badge {
+  background: var(--editorial-lamp-soft) !important;
+  color: #6B4A05 !important;
+}
+
+.teacher-card {
+  border-radius: 20px !important;
+}
+
+.teacher-card h2,
+.teacher-topbar h1 {
+  font-family: var(--font-serif) !important;
+  font-weight: 600 !important;
+}
+
+.teacher-card h2 {
+  font-size: 1.22rem !important;
+}
+
+.teacher-card__eyebrow {
+  color: var(--editorial-sage) !important;
+  letter-spacing: 0.12em !important;
+}
+
+.teacher-chip {
+  border-radius: 999px !important;
+  border-color: var(--editorial-rule) !important;
+  background: var(--cosy-paper-card) !important;
+}
+
+.teacher-chip--green {
+  background: var(--cosy-color-sage-mist) !important;
+  border-color: var(--cosy-platform-teacher-border) !important;
+  color: var(--cosy-color-sage-dark) !important;
+}
+
+.teacher-kpi {
+  background: var(--cosy-paper-aged) !important;
+  border-color: transparent !important;
+  border-radius: 14px !important;
+}
+
+.teacher-kpi strong,
+.teacher-appreciation__metric strong {
+  font-family: var(--font-serif) !important;
+  font-weight: 560 !important;
+}
+
+.teacher-day {
+  border-top-color: var(--editorial-rule) !important;
+}
+
+.teacher-day.is-today .teacher-day__head strong {
+  color: var(--editorial-sage) !important;
+}
+
+.teacher-appreciation {
+  background: var(--cosy-paper-card) !important;
+  border-color: var(--editorial-rule) !important;
+  border-top: 4px solid var(--editorial-lamp) !important;
+}
+
+.teacher-appreciation__note {
+  border-color: rgba(148, 94, 5, 0.28) !important;
+  background: rgba(255, 253, 248, 0.72) !important;
+  color: #6B4A05 !important;
+}
+
+/* ── Student workspace ───────────────────────────────────────────────── */
+.student-workspace,
+.catalog-container {
+  max-width: 1440px;
+}
+
+.catalog-header h1,
+#app-root h1 {
+  font-family: var(--font-serif) !important;
+  font-weight: 560 !important;
+  letter-spacing: -0.03em;
+}
+
+.catalog-header h1 {
+  font-size: clamp(2rem, 4vw, 3.1rem) !important;
+  line-height: 1.05 !important;
+  margin-bottom: 14px !important;
+}
+
+.student-widget-card h3 {
+  font-family: var(--font-serif) !important;
+  font-weight: 600 !important;
+}
+
+#student-stats-summary > div {
+  background: var(--cosy-paper-card) !important;
+  border: 1px solid var(--editorial-rule) !important;
+  border-top: 3px solid var(--cosy-platform-student) !important;
+  border-radius: 16px !important;
+  box-shadow: var(--cosy-shadow-paper) !important;
+}
+
+#student-stats-summary > div > div:first-child {
+  color: var(--cosy-color-ink-muted) !important;
+  letter-spacing: 0.09em !important;
+}
+
+#stat-enrolled-courses,
+#stat-lessons-practiced,
+#stat-exercises-answered,
+#stat-tasks-submitted {
+  font-family: var(--font-serif) !important;
+  font-size: 2.1rem !important;
+  font-weight: 560 !important;
+  color: var(--cosy-color-ink) !important;
+  line-height: 1 !important;
+}
+
+.student-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.student-hero::after {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  right: -100px;
+  top: -150px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+}
+
+.student-session-card {
+  position: relative;
+}
+
+.manual-header .btn,
+.founder-header .btn {
+  background: var(--cosy-paper-card) !important;
+  color: var(--cosy-color-ink) !important;
+  border: 1px solid var(--editorial-rule) !important;
+}
+
+.manual-header .btn:hover,
+.founder-header .btn:hover {
+  border-color: var(--editorial-sage) !important;
+  color: var(--cosy-color-sage-dark) !important;
+}
+
+.manual-header .btn[href*="classroom"],
+.founder-header .btn[href*="classroom"] {
+  background: var(--cosy-color-ink) !important;
+  color: var(--editorial-on-accent) !important;
+  border-color: var(--cosy-color-ink) !important;
+}
+
+.manual-header .btn[href*="classroom"]:hover,
+.founder-header .btn[href*="classroom"]:hover {
+  background: var(--editorial-sage) !important;
+  border-color: var(--editorial-sage) !important;
+}
+
+.hub-header .btn-outline,
+.manual-header .btn-outline,
+.founder-header .btn-outline {
+  background: transparent !important;
+  border-color: var(--editorial-rule) !important;
+  color: var(--cosy-color-ink) !important;
+}
+
+.hub-header .btn-outline:hover,
+.manual-header .btn-outline:hover,
+.founder-header .btn-outline:hover {
+  background: var(--cosy-color-sage-mist) !important;
+  border-color: var(--cosy-color-sage-soft) !important;
+}
+
+.left-utility-rail,
+.right-sections-sidebar,
+.lesson-nav-header,
+.slide-card {
+  background: var(--cosy-paper-card) !important;
+  border-color: var(--editorial-rule) !important;
+  box-shadow: var(--cosy-shadow-paper) !important;
+}
+
+.left-utility-rail,
+.right-sections-sidebar {
+  border-radius: 18px !important;
+}
+
+.rail-btn {
+  border-radius: 999px !important;
+  border-color: var(--editorial-rule) !important;
+  background: var(--cosy-paper-aged) !important;
+  color: var(--cosy-color-ink-muted) !important;
+}
+
+.rail-btn:hover,
+.rail-btn.active {
+  background: var(--cosy-platform-student) !important;
+  border-color: var(--cosy-platform-student) !important;
+  color: #fff !important;
+}
+
+.sections-header {
+  font-family: var(--font-serif) !important;
+  font-size: 1.18rem !important;
+  font-weight: 600 !important;
+  border-bottom-color: var(--editorial-rule) !important;
+}
+
+.section-item {
+  background: transparent !important;
+  border-radius: 999px !important;
+}
+
+.section-item:hover {
+  background: var(--cosy-paper-aged) !important;
+}
+
+.section-item.active {
+  background: var(--cosy-platform-student-light) !important;
+  border-color: var(--cosy-platform-student-border) !important;
+  color: var(--cosy-platform-student-hover) !important;
+  box-shadow: inset 3px 0 0 var(--cosy-platform-student);
+}
+
+.section-item.active .section-num {
+  background: var(--cosy-platform-student) !important;
+}
+
+.slide-card {
+  border-radius: 20px !important;
+  padding: clamp(22px, 3vw, 36px) !important;
+}
+
+.slide-title {
+  font-family: var(--font-serif) !important;
+  font-size: clamp(1.5rem, 2.4vw, 2rem) !important;
+  font-weight: 560 !important;
+  border-bottom-color: var(--editorial-rule) !important;
+}
+
+.slide-stage-tag {
+  background: var(--editorial-lamp-soft) !important;
+  color: #6B4A05 !important;
+}
+
+.back-btn {
+  color: var(--cosy-color-ink-muted) !important;
+}
+
+.back-btn:hover {
+  color: var(--cosy-platform-student-hover) !important;
+}
+
+.student-hero,
+.student-banner {
+  background: var(--cosy-platform-student) !important;
+  box-shadow: var(--cosy-shadow-lift) !important;
+}
+
+/* ── Lesson Studio ───────────────────────────────────────────────────── */
+.lesson-studio-page {
+  background: var(--cosy-paper) !important;
+  background-image: var(--cosy-paper-grain);
+  color: var(--cosy-color-ink) !important;
+}
+
+.studio-topbar {
+  color: var(--cosy-color-ink) !important;
+}
+
+.studio-brand {
+  color: var(--cosy-color-ink) !important;
+}
+
+.studio-top-actions #save-status {
+  color: var(--cosy-color-ink-muted) !important;
+}
+
+.studio-heading h1 {
+  font-family: var(--font-serif) !important;
+  font-size: clamp(2rem, 3.6vw, 3rem) !important;
+  font-weight: 560 !important;
+  letter-spacing: -0.03em;
+  color: var(--cosy-color-ink) !important;
+}
+
+.studio-intro {
+  color: var(--cosy-color-ink-muted) !important;
+}
+
+.studio-draft-note {
+  background: var(--editorial-lamp-soft) !important;
+  border-color: rgba(148, 94, 5, 0.22) !important;
+  border-radius: 4px 4px 14px 14px !important;
+  color: #6B4A05 !important;
+}
+
+.studio-metadata {
+  border-top: 3px solid var(--editorial-sage) !important;
+}
+
+.studio-metadata label,
+.studio-field,
+.studio-publish-fields label {
+  color: var(--cosy-color-ink-muted) !important;
+  letter-spacing: 0.04em;
+}
+
+.studio-panel-header {
+  border-bottom-color: var(--editorial-rule) !important;
+}
+
+.studio-panel-header h2 {
+  font-family: var(--font-serif) !important;
+  font-size: 1.2rem !important;
+  font-weight: 600 !important;
+  color: var(--cosy-color-ink) !important;
+}
+
+.studio-mode-switch {
+  background: var(--cosy-paper-aged) !important;
+  border-radius: 999px !important;
+}
+
+.studio-mode {
+  border-radius: 999px !important;
+}
+
+.studio-mode.active {
+  background: var(--cosy-paper-card) !important;
+  color: var(--cosy-color-sage-dark) !important;
+  box-shadow: 0 2px 6px -4px rgba(0, 0, 0, 0.3) !important;
+}
+
+.studio-block-card {
+  background: var(--cosy-paper-card) !important;
+  border-color: var(--editorial-rule) !important;
+  border-radius: 14px !important;
+}
+
+.studio-button {
+  border-radius: 999px !important;
+}
+
+.studio-button-primary {
+  background: var(--editorial-sage) !important;
+  border-color: var(--editorial-sage) !important;
+}
+
+.studio-button-primary:hover:not(:disabled) {
+  background: var(--cosy-color-sage-dark) !important;
+}
+
+.studio-button-secondary {
+  background: var(--cosy-paper-card) !important;
+  border-color: var(--editorial-rule) !important;
+  color: var(--cosy-color-ink-soft) !important;
+}
+
+.studio-button-secondary:hover {
+  background: var(--cosy-color-sage-mist) !important;
+}
+
+.studio-publish-panel {
+  border-top: 3px solid var(--editorial-sage) !important;
+}
+
+.studio-preview-pill {
+  background: var(--cosy-color-sage-mist) !important;
+  color: var(--cosy-color-sage-dark) !important;
+  border-radius: 999px !important;
+}
+
+.lesson-preview {
+  background: var(--cosy-paper-card) !important;
+}
+
+.preview-block {
+  border-color: var(--editorial-rule) !important;
+  background: var(--cosy-paper) !important;
+  border-radius: 14px !important;
+}
+
+.grammar-picker {
+  background: var(--cosy-color-sage-mist) !important;
+  border-color: var(--editorial-rule) !important;
+}
+
+.grammar-picker-option {
+  border-color: var(--editorial-rule) !important;
+  background: var(--cosy-paper-card) !important;
+}
+
+.grammar-picker-option:hover {
+  border-color: var(--cosy-platform-teacher-border) !important;
+  background: var(--cosy-color-sage-mist) !important;
+}
+
+.grammar-picker-option[aria-pressed="true"] {
+  border-color: var(--editorial-sage) !important;
+  background: var(--cosy-color-sage-mist) !important;
+  box-shadow: inset 3px 0 0 var(--editorial-sage) !important;
+}
+
+/* ── Founder portal ──────────────────────────────────────────────────── */
+.founder-header {
+  color: var(--cosy-color-ink) !important;
+}
+
+.founder-header .logo-badge,
+.founder-header h1,
+.founder-header h2 {
+  color: var(--cosy-color-ink) !important;
+}
+
+.founder-header a[href="index.html"] span {
+  font-family: var(--font-serif) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.02em;
+}
+
+.portal-section h2,
+.portal-section h3 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+}
+
+.portal-section .instructions-card {
+  background: var(--cosy-color-sage-mist) !important;
+  border-color: var(--cosy-color-sage-pale) !important;
+  color: var(--cosy-color-ink-soft) !important;
+}
+
+.portal-section .instructions-card strong {
+  color: var(--cosy-color-sage-dark) !important;
+}
+
+.admin-table {
+  background: var(--cosy-paper-card);
+  border: 1px solid var(--editorial-rule);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.admin-table th {
+  background: var(--cosy-paper-aged) !important;
+  color: var(--cosy-color-ink) !important;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--editorial-rule) !important;
+}
+
+.admin-table td {
+  border-bottom: 1px solid var(--editorial-rule) !important;
+}
+
+.admin-table select,
+.admin-table input[type="text"] {
+  background: var(--cosy-paper-card) !important;
+  border-color: var(--editorial-rule) !important;
+  border-radius: 8px !important;
+  color: var(--cosy-color-ink) !important;
+}
+
+.btn-save-row {
+  background: var(--editorial-sage) !important;
+  border-radius: 999px !important;
+}
+
+.dashboard-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
+}
+
+.stat-card {
+  border-top: 3px solid var(--cosy-platform-accent) !important;
+}
+
+.stat-number {
+  font-family: var(--font-serif) !important;
+  font-weight: 560 !important;
+  color: var(--cosy-platform-accent-deep) !important;
+}
+
+.teacher-link-card {
+  border-top: 3px solid var(--cosy-platform-teacher) !important;
+}
+
+.teacher-link-card .btn {
+  background: transparent !important;
+  border: 1px solid var(--editorial-rule) !important;
+  color: var(--cosy-color-ink) !important;
+  border-radius: 999px !important;
+}
+
+.teacher-link-card .btn:hover {
+  background: var(--cosy-color-sage-mist) !important;
+  border-color: var(--cosy-color-sage-soft) !important;
+}
+
+/* ── Misc surfaces ───────────────────────────────────────────────────── */
+.notice-card h1,
+.notice-card h2,
+.unauth-card h1,
+.access-denied h2,
+.studio-access-denied h1 {
+  font-family: var(--font-serif) !important;
+  font-weight: 600 !important;
+}
+
+.notice-card,
+.unauth-card,
+.access-denied,
+.studio-access-denied {
+  border-top: 3px solid var(--editorial-sage) !important;
+}
+
+.profile-loading {
+  background: var(--cosy-paper-card) !important;
+  border-color: var(--editorial-rule) !important;
+}
+
+/* ── Dark theme corrections ──────────────────────────────────────────── */
+html[data-theme="dark"] body,
+body.theme-dark {
+  background-color: var(--cosy-paper) !important;
+}
+
+html[data-theme="dark"] header.manual-header,
+html[data-theme="dark"] .hub-header,
+html[data-theme="dark"] .founder-header,
+html[data-theme="dark"] .profile-header,
+html[data-theme="dark"] .studio-topbar,
+body.theme-dark header.manual-header,
+body.theme-dark .hub-header,
+body.theme-dark .founder-header,
+body.theme-dark .profile-header,
+body.theme-dark .studio-topbar {
+  background: color-mix(in srgb, var(--cosy-paper) 94%, transparent) !important;
+  color: var(--cosy-color-ink) !important;
+  border-bottom-color: var(--editorial-rule) !important;
+}
+
+html[data-theme="dark"] .teacher-catalog-box,
+body.theme-dark .teacher-catalog-box {
+  background: var(--cosy-paper-aged) !important;
+  border-color: var(--editorial-rule) !important;
+}
+
+html[data-theme="dark"] .teacher-category-card,
+html[data-theme="dark"] .category-card,
+html[data-theme="dark"] .profile-card,
+html[data-theme="dark"] .teacher-card,
+html[data-theme="dark"] .teacher-catalog-panel,
+html[data-theme="dark"] .studio-metadata,
+html[data-theme="dark"] .studio-editor-panel,
+html[data-theme="dark"] .studio-preview-panel,
+html[data-theme="dark"] .login-card,
+html[data-theme="dark"] .login-role,
+html[data-theme="dark"] .slide-card,
+html[data-theme="dark"] .right-sections-sidebar,
+html[data-theme="dark"] .left-utility-rail,
+html[data-theme="dark"] .profile-section-nav,
+body.theme-dark .teacher-category-card,
+body.theme-dark .category-card,
+body.theme-dark .profile-card,
+body.theme-dark .teacher-card,
+body.theme-dark .teacher-catalog-panel,
+body.theme-dark .studio-metadata,
+body.theme-dark .studio-editor-panel,
+body.theme-dark .studio-preview-panel,
+body.theme-dark .login-card,
+body.theme-dark .login-role,
+body.theme-dark .slide-card,
+body.theme-dark .right-sections-sidebar,
+body.theme-dark .left-utility-rail,
+body.theme-dark .profile-section-nav {
+  background: var(--cosy-paper-card) !important;
+  border-color: var(--editorial-rule) !important;
+}
+
+html[data-theme="dark"] .profile-stat,
+html[data-theme="dark"] .profile-action,
+html[data-theme="dark"] .focus-card,
+html[data-theme="dark"] .shortcut-card,
+html[data-theme="dark"] .teacher-kpi,
+body.theme-dark .profile-stat,
+body.theme-dark .profile-action,
+body.theme-dark .focus-card,
+body.theme-dark .shortcut-card,
+body.theme-dark .teacher-kpi {
+  background: var(--cosy-paper-aged) !important;
+}
+
+html[data-theme="dark"] .teacher-sidebar__user,
+html[data-theme="dark"] .teacher-sidebar__nav a:hover,
+html[data-theme="dark"] .teacher-course-link:hover,
+body.theme-dark .teacher-sidebar__user,
+body.theme-dark .teacher-sidebar__nav a:hover,
+body.theme-dark .teacher-course-link:hover {
+  background: var(--cosy-color-sage-mist) !important;
+}
+
+/* ── Motion & print ──────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── Student session actions ─────────────────────────────────────────── */
+.student-session-card .btn {
+  border-radius: 999px !important;
+}
+
+.student-session-card .btn-outline {
+  background: transparent !important;
+  border-color: var(--editorial-rule) !important;
+  color: var(--cosy-color-ink) !important;
+}
+
+.student-session-card .btn[onclick*="cancel"] {
+  background: var(--cosy-platform-student-light) !important;
+  border-color: var(--cosy-platform-student-border) !important;
+  color: var(--cosy-platform-student-hover) !important;
+}
+
+.student-session-card .btn[href*="classroom"] {
+  background: var(--editorial-sage) !important;
+  border-color: var(--editorial-sage) !important;
+  color: var(--editorial-on-accent) !important;
+}
+
+/* ── Teacher workspace chrome ────────────────────────────────────────── */
+.teacher-sidebar__brand strong {
+  font-family: var(--font-serif) !important;
+  font-weight: 600 !important;
+}
+
+.teacher-sidebar__brand small {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+#user-info span[data-i18n="teacher.mainTeacherBadge"] {
+  background: var(--cosy-color-sage-mist) !important;
+  border-color: var(--cosy-color-sage-pale) !important;
+  color: var(--cosy-color-sage-dark) !important;
+}
+
+/* ── Hub header actions ──────────────────────────────────────────────── */
+.hub-header .btn {
+  background: transparent !important;
+  border: 1px solid var(--editorial-rule) !important;
+  color: var(--cosy-color-ink) !important;
+  border-radius: 999px !important;
+}
+
+.hub-header .btn[href*="classroom"] {
+  background: var(--editorial-sage) !important;
+  border-color: var(--editorial-sage) !important;
+  color: var(--editorial-on-accent) !important;
+}
+
+/* ── Catalog category grid ───────────────────────────────────────────── */
+.catalog-category-grid {
+  align-items: start;
+}
+
+/* ── Lesson studio preview toggle ────────────────────────────────────── */
+.studio-preview-toggle button {
+  border-radius: 999px !important;
+}
+
+.studio-preview-toggle button[aria-pressed="true"] {
+  background: var(--editorial-sage) !important;
+  border-color: var(--editorial-sage) !important;
+  color: var(--editorial-on-accent) !important;
+}
+
+/* ── Dark theme action buttons ───────────────────────────────────────── */
+html[data-theme="dark"] .btn-logout,
+body.theme-dark .btn-logout {
+  background: transparent !important;
+  border-color: var(--editorial-rule) !important;
+  color: var(--cosy-color-ink) !important;
+}
+
+/* ── Founder balance and timetable actions ───────────────────────────── */
+#founder-student-id + .btn {
+  background: var(--editorial-sage) !important;
+  border-radius: 999px !important;
+  color: var(--editorial-on-accent) !important;
+}
+
+.portal-section a.btn[href="teacher.html"] {
+  background: transparent !important;
+  border: 1px solid var(--editorial-rule) !important;
+  color: var(--cosy-color-ink) !important;
+  border-radius: 999px !important;
+}
+
+/* ── Dark theme student workspace ────────────────────────────────────── */
+html[data-theme="dark"] .student-hero,
+body.theme-dark .student-hero {
+  color: #141B16 !important;
+}
+
+html[data-theme="dark"] .student-hero *,
+body.theme-dark .student-hero * {
+  color: #141B16 !important;
+}
+
+html[data-theme="dark"] .student-widget-card .btn,
+body.theme-dark .student-widget-card .btn {
+  color: var(--editorial-on-accent) !important;
+}
+
+/* ── Dark theme accent buttons ───────────────────────────────────────── */
+html[data-theme="dark"] .btn[style*="--teacher-primary"],
+html[data-theme="dark"] .btn[style*="--student-primary"],
+html[data-theme="dark"] .btn[style*="--cosy-platform-teacher"],
+html[data-theme="dark"] .btn[style*="--cosy-platform-student"],
+html[data-theme="dark"] .btn[style*="--cosy-color-sage"],
+body.theme-dark .btn[style*="--teacher-primary"],
+body.theme-dark .btn[style*="--student-primary"],
+body.theme-dark .btn[style*="--cosy-platform-teacher"],
+body.theme-dark .btn[style*="--cosy-platform-student"],
+body.theme-dark .btn[style*="--cosy-color-sage"] {
+  color: #141B16 !important;
+}

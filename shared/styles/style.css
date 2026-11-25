@@ -6,19 +6,19 @@
   --primary-hover: var(--cosy-platform-accent-deep);
   --secondary-color: var(--cosy-platform-teacher);
   --bg-color: var(--cosy-color-cream);
-  --card-bg: var(--cosy-color-warm-white);
+  --card-bg: var(--cosy-paper-card);
   --text-color: var(--cosy-color-ink);
   --text-muted: var(--cosy-color-ink-muted);
-  --border-color: var(--cosy-color-border);
+  --border-color: var(--cosy-paper-rule);
   --accent-light: var(--cosy-platform-accent-light);
   --success-color: var(--cosy-semantic-success);
   --radius: var(--cosy-radius-base);
   --shadow: var(--cosy-shadow-sm);
   --shadow-lg: var(--cosy-shadow-base);
   --font-family: var(--cosy-font-sans);
-  --focus-ring: 0 0 0 3px rgba(3, 105, 161, 0.35);
-  --subtle-surface: #f8fafc;
-  --on-primary: #ffffff;
+  --focus-ring: 0 0 0 3px rgba(243, 201, 105, 0.55);
+  --subtle-surface: var(--cosy-paper-aged);
+  --on-primary: #FFFDF8;
 }
 
 /* Toast Notification Utility */
