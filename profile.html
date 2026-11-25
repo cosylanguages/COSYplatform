@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0369a1">
+  <meta name="description" content="Your COSY platform profile, access and learning summary.">
+  <link rel="icon" href="shared/img/favicon.svg" type="image/svg+xml">
+  <title>My Profile · COSY platform</title>
+  <link rel="stylesheet" href="shared/css/tokens.css">
+  <link rel="stylesheet" href="shared/styles/style.css">
+  <style>
+    :root {
+      --profile-accent: #0369a1;
+      --profile-accent-dark: #075985;
+      --profile-teal: #0f766e;
+      --profile-card: var(--cosy-color-warm-white, #ffffff);
+      --profile-border: var(--cosy-color-border, #e2e8f0);
+      --profile-ink: var(--cosy-color-ink, #0f172a);
+      --profile-muted: var(--cosy-color-ink-muted, #64748b);
+    }
+
+    body {
+      background: var(--cosy-color-cream, #f8fafc);
+      color: var(--profile-ink);
+    }
+
+    .profile-header {
+      background: var(--profile-card);
+      border-bottom: 1px solid var(--profile-border);
+    }
+
+    .profile-header-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .profile-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
+      font-weight: 800;
+    }
+
+    .profile-brand img { width: 36px; height: 36px; object-fit: contain; }
+
+    .profile-header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .profile-header-actions a,
+    .profile-header-actions button {
+      font: inherit;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 7px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--profile-border);
+      background: var(--profile-card);
+      color: var(--profile-ink);
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .profile-header-actions .primary {
+      background: var(--profile-accent);
+      border-color: var(--profile-accent);
+      color: #fff;
+    }
+
+    .profile-main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 26px 20px 50px;
+    }
+
+    .profile-loading {
+      background: var(--profile-card);
+      border: 1px solid var(--profile-border);
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+      color: var(--profile-muted);
+    }
+
+    .profile-hero {
+      position: relative;
+      overflow: hidden;
+      border-radius: 18px;
+      padding: 28px;
+      color: #fff;
+      background: linear-gradient(135deg, #075985 0%, #0369a1 55%, #0f766e 100%);
+      box-shadow: 0 12px 30px rgba(3, 105, 161, 0.18);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 22px;
+    }
+
+    .profile-hero::after {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      right: -90px;
+      top: -120px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      pointer-events: none;
+    }
+
+    .profile-identity {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      min-width: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .profile-avatar {
+      width: 74px;
+      height: 74px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: #075985;
+      background: #e0f2fe;
+      border: 3px solid rgba(255, 255, 255, 0.65);
+      flex: 0 0 auto;
+    }
+
+    .profile-hero h1 {
+      font-size: clamp(1.45rem, 3vw, 2rem);
+      line-height: 1.15;
+      margin: 0 0 5px;
+      font-weight: 800;
+    }
+
+    .profile-email {
+      margin: 0;
+      color: #dbeafe;
+      font-size: 0.9rem;
+      word-break: break-word;
+    }
+
+    .profile-hero-meta {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .profile-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #f0f9ff;
+      font-size: 0.76rem;
+      font-weight: 700;
+    }
+
+    .profile-hero-actions {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .profile-hero-actions a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 10px 15px;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      text-decoration: none;
+      color: #075985;
+      background: #f0f9ff;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .profile-hero-actions a.secondary {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .profile-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.65fr) minmax(280px, 1fr);
+      gap: 20px;
+      align-items: start;
+    }
+
+    .profile-stack {
+      display: grid;
+      gap: 20px;
+      min-width: 0;
+    }
+
+    .profile-card {
+      background: var(--profile-card);
+      border: 1px solid var(--profile-border);
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.035);
+    }
+
+    .profile-card h2 {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 14px;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--profile-ink);
+    }
+
+    .profile-card p { color: var(--profile-muted); }
+
+    .profile-stat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .profile-stat {
+      background: var(--cosy-color-cream, #f8fafc);
+      border: 1px solid var(--profile-border);
+      border-radius: 12px;
+      padding: 14px;
+      min-width: 0;
+    }
+
+    .profile-stat-label {
+      color: var(--profile-muted);
+      font-size: 0.71rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.055em;
+      margin-bottom: 5px;
+    }
+
+    .profile-stat-value {
+      color: var(--profile-ink);
+      font-size: 1.65rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .profile-stat-note {
+      margin-top: 5px;
+      color: var(--profile-muted);
+      font-size: 0.72rem;
+    }
+
+    .profile-detail-list {
+      display: grid;
+      gap: 11px;
+      margin: 0;
+    }
+
+    .profile-detail-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--profile-border);
+    }
+
+    .profile-detail-row:last-child { border-bottom: 0; padding-bottom: 0; }
+
+    .profile-detail-row dt {
+      color: var(--profile-muted);
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .profile-detail-row dd {
+      margin: 0;
+      color: var(--profile-ink);
+      font-size: 0.86rem;
+      font-weight: 700;
+      text-align: right;
+      word-break: break-word;
+    }
+
+    .profile-actions-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .profile-action {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 12px;
+      border: 1px solid var(--profile-border);
+      border-radius: 11px;
+      text-decoration: none;
+      color: var(--profile-ink);
+      background: var(--cosy-color-cream, #f8fafc);
+    }
+
+    .profile-action:hover { border-color: var(--profile-accent); }
+
+    .profile-action-icon { font-size: 1.1rem; line-height: 1.2; }
+
+    .profile-action strong { display: block; font-size: 0.84rem; }
+    .profile-action small { display: block; color: var(--profile-muted); font-size: 0.72rem; margin-top: 2px; }
+
+    .profile-table-wrap { overflow-x: auto; }
+
+    .profile-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 520px;
+      font-size: 0.82rem;
+    }
+
+    .profile-table th,
+    .profile-table td {
+      padding: 10px 8px;
+      border-bottom: 1px solid var(--profile-border);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .profile-table th {
+      color: var(--profile-muted);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .profile-table tr:last-child td { border-bottom: 0; }
+
+    .grant-status {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .grant-status.active { color: #166534; background: #dcfce7; }
+    .grant-status.expired { color: #991b1b; background: #fee2e2; }
+    .grant-status.pending { color: #92400e; background: #fef3c7; }
+
+    .profile-activity {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 0;
+    }
+
+    .profile-activity li {
+      display: flex;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--profile-border);
+    }
+
+    .profile-activity li:last-child { border-bottom: 0; padding-bottom: 0; }
+
+    .activity-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 9px;
+      display: grid;
+      place-items: center;
+      background: #e0f2fe;
+      flex: 0 0 auto;
+    }
+
+    .activity-copy { min-width: 0; }
+    .activity-copy strong { display: block; font-size: 0.82rem; }
+    .activity-copy span { display: block; color: var(--profile-muted); font-size: 0.72rem; margin-top: 2px; }
+
+    .profile-empty {
+      border: 1px dashed #cbd5e1;
+      border-radius: 10px;
+      padding: 18px;
+      color: var(--profile-muted);
+      font-size: 0.84rem;
+      background: var(--cosy-color-cream, #f8fafc);
+    }
+
+    .profile-footer {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 20px 30px;
+      color: var(--profile-muted);
+      font-size: 0.78rem;
+    }
+
+    @media (max-width: 900px) {
+      .profile-layout { grid-template-columns: 1fr; }
+      .profile-stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 560px) {
+      .profile-main { padding: 18px 14px 36px; }
+      .profile-hero { padding: 20px; }
+      .profile-identity { align-items: flex-start; }
+      .profile-avatar { width: 58px; height: 58px; font-size: 1.35rem; }
+      .profile-stat-grid { grid-template-columns: 1fr 1fr; }
+      .profile-actions-grid { grid-template-columns: 1fr; }
+      .profile-detail-row { display: block; }
+      .profile-detail-row dd { text-align: left; margin-top: 3px; }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cosylanguages.github.io/COSYlanguages/css/ecosystem-strip.css">
+  <script src="vendor/supabase-js-2.49.1/supabase.js"></script>
+  <script src="shared/js/config.js"></script>
+  <script src="shared/js/auth-guard.js"></script>
+  <script src="shared/js/auth-sso.js"></script>
+  <script src="shared/js/i18n.js"></script>
+</head>
+<body>
+<div data-ecosystem-strip data-self="platform" data-theme-toggle></div>
+
+<header class="profile-header">
+  <div class="profile-header-inner">
+    <a class="profile-brand" href="index.html">
+      <img src="shared/img/logo.svg" alt="COSY platform">
+      <span>COSY platform</span>
+    </a>
+    <div class="profile-header-actions">
+      <a href="index.html">Catalog</a>
+      <a href="classroom.html">Live Classroom 🎥</a>
+      <a id="header-workspace-link" class="primary" href="student.html">My Workspace</a>
+      <button type="button" onclick="window.CosyAuth.logout()">Log Out</button>
+    </div>
+  </div>
+</header>
+
+<main class="profile-main">
+  <div id="profile-loading" class="profile-loading">Loading your profile…</div>
+
+  <div id="profile-content" hidden>
+    <section class="profile-hero" aria-labelledby="profile-name">
+      <div class="profile-identity">
+        <div id="profile-avatar" class="profile-avatar" aria-hidden="true">?</div>
+        <div>
+          <h1 id="profile-name">My Profile</h1>
+          <p id="profile-email" class="profile-email"></p>
+          <div class="profile-hero-meta">
+            <span id="profile-role-pill" class="profile-pill">👤 Member</span>
+            <span id="profile-member-pill" class="profile-pill">📅 Member</span>
+          </div>
+        </div>
+      </div>
+      <div class="profile-hero-actions">
+        <a id="hero-workspace-link" href="student.html">Open my workspace →</a>
+        <a class="secondary" href="classroom.html">🎥 Live Classroom</a>
+      </div>
+    </section>
+
+    <div class="profile-layout">
+      <div class="profile-stack">
+        <section class="profile-card" aria-labelledby="profile-stats-title">
+          <h2 id="profile-stats-title">📊 Learning Summary</h2>
+          <div class="profile-stat-grid">
+            <div class="profile-stat">
+              <div class="profile-stat-label">Active courses</div>
+              <div id="stat-active-courses" class="profile-stat-value">—</div>
+              <div class="profile-stat-note">Current access grants</div>
+            </div>
+            <div class="profile-stat">
+              <div class="profile-stat-label">Lessons practised</div>
+              <div id="stat-lessons-practised" class="profile-stat-value">—</div>
+              <div class="profile-stat-note">With progress records</div>
+            </div>
+            <div class="profile-stat">
+              <div class="profile-stat-label">Tasks submitted</div>
+              <div id="stat-tasks-submitted" class="profile-stat-value">—</div>
+              <div class="profile-stat-note">Essays, audio and answers</div>
+            </div>
+            <div class="profile-stat">
+              <div class="profile-stat-label">Study events</div>
+              <div id="stat-study-events" class="profile-stat-value">—</div>
+              <div class="profile-stat-note">Checks and game rounds</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="profile-card" aria-labelledby="profile-courses-title">
+          <h2 id="profile-courses-title">📚 My Courses &amp; Access</h2>
+          <div id="profile-grants"></div>
+        </section>
+
+        <section class="profile-card" aria-labelledby="profile-activity-title">
+          <h2 id="profile-activity-title">🕘 Recent Activity</h2>
+          <ul id="profile-activity" class="profile-activity"></ul>
+        </section>
+      </div>
+
+      <aside class="profile-stack">
+        <section class="profile-card" aria-labelledby="profile-details-title">
+          <h2 id="profile-details-title">👤 Account Details</h2>
+          <dl class="profile-detail-list">
+            <div class="profile-detail-row"><dt>Name</dt><dd id="detail-name">—</dd></div>
+            <div class="profile-detail-row"><dt>Email</dt><dd id="detail-email">—</dd></div>
+            <div class="profile-detail-row"><dt>Role</dt><dd id="detail-role">—</dd></div>
+            <div class="profile-detail-row"><dt>Languages</dt><dd id="detail-languages">—</dd></div>
+            <div class="profile-detail-row"><dt>Course level</dt><dd id="detail-level">—</dd></div>
+            <div class="profile-detail-row"><dt>Member since</dt><dd id="detail-member-since">—</dd></div>
+            <div class="profile-detail-row"><dt>Last sign-in</dt><dd id="detail-last-signin">—</dd></div>
+          </dl>
+        </section>
+
+        <section class="profile-card" aria-labelledby="profile-actions-title">
+          <h2 id="profile-actions-title">⚡ Quick Actions</h2>
+          <div class="profile-actions-grid">
+            <a id="action-workspace" class="profile-action" href="student.html">
+              <span class="profile-action-icon">🎓</span>
+              <span><strong>My Workspace</strong><small>Lessons and homework</small></span>
+            </a>
+            <a class="profile-action" href="classroom.html">
+              <span class="profile-action-icon">🎥</span>
+              <span><strong>Live Classroom</strong><small>Join booked sessions</small></span>
+            </a>
+            <a class="profile-action" href="https://cosylanguages.github.io/COSYmanuals/">
+              <span class="profile-action-icon">📚</span>
+              <span><strong>COSYmanuals</strong><small>Full lesson materials</small></span>
+            </a>
+            <a class="profile-action" href="https://cosylanguages.github.io/COSYevents/">
+              <span class="profile-action-icon">🎉</span>
+              <span><strong>COSYevents</strong><small>Live events and clubs</small></span>
+            </a>
+          </div>
+        </section>
+
+        <section class="profile-card" aria-labelledby="profile-privacy-title">
+          <h2 id="profile-privacy-title">🔒 Your Data</h2>
+          <p style="font-size:0.82rem;line-height:1.55;margin:0;">
+            Your profile and learning records are stored in your COSY account and protected by row-level security.
+            Profile details are managed by platform administration.
+          </p>
+        </section>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer class="profile-footer">
+  🌐 Part of the COSY ecosystem ·
+  <a href="https://cosylanguages.github.io/COSYlanguages/">COSYlanguages</a> ·
+  <a href="https://cosylanguages.github.io/COSYdata/">COSYdata</a> ·
+  <a href="https://cosylanguages.github.io/COSYtools/">COSYtools</a> ·
+  <a href="https://cosylanguages.github.io/COSYgames/">COSYgames</a>
+</footer>
+
+<script>
+(async function () {
+  'use strict';
+
+  const $ = (id) => document.getElementById(id);
+  const esc = (value) => String(value == null ? '' : value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+
+  const roleLabels = {
+    student: { label: 'Student', icon: '🎓', workspace: 'student.html', workspaceName: 'Student Workspace' },
+    teacher: { label: 'Teacher', icon: '🧑‍🏫', workspace: 'teacher.html', workspaceName: 'Teacher Workspace' },
+    founder: { label: 'Founder', icon: '👑', workspace: 'founder.html', workspaceName: 'Founder Portal' }
+  };
+
+  function formatDate(value) {
+    if (!value) return '—';
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return '—';
+    return date.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
+  }
+
+  function formatDateTime(value) {
+    if (!value) return '—';
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return '—';
+    return date.toLocaleString(undefined, { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+  }
+
+  function initials(profile, user) {
+    const name = (profile && profile.display_name) || (user && user.email) || 'COSY';
+    const parts = String(name).replace(/@.*/, '').split(/[\s._-]+/).filter(Boolean);
+    return (parts.slice(0, 2).map(part => part.charAt(0).toUpperCase()).join('') || 'C');
+  }
+
+  function normaliseRole(role) {
+    const value = String(role || 'student').toLowerCase();
+    return roleLabels[value] ? value : 'student';
+  }
+
+  function languageList(profile) {
+    const values = Array.isArray(profile && profile.language_access) ? profile.language_access : [];
+    if (!values.length) return 'Not assigned';
+    return values.map(value => value === '*' ? 'All languages' : String(value).toUpperCase()).join(', ');
+  }
+
+  function courseLevel(profile) {
+    const value = profile && profile.course_level;
+    if (!value || value === '*') return 'All levels';
+    return Array.isArray(value) ? value.join(', ').toUpperCase() : String(value).toUpperCase();
+  }
+
+  function grantStatus(grant) {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const dateOnly = (value, endOfDay) => value
+      ? new Date(String(value).slice(0, 10) + (endOfDay ? 'T23:59:59' : 'T00:00:00'))
+      : null;
+    const starts = dateOnly(grant.valid_from, false);
+    const ends = dateOnly(grant.valid_until, true);
+    const expires = grant.expires_at ? new Date(grant.expires_at) : null;
+    if (starts && starts > today) return { key: 'pending', label: 'Starts soon' };
+    if ((ends && ends < today) || (expires && expires < new Date())) return { key: 'expired', label: 'Expired' };
+    return { key: 'active', label: 'Active' };
+  }
+
+  function grantWindow(grant) {
+    if (!grant.valid_from && !grant.valid_until && !grant.expires_at) return 'No expiry';
+    const from = grant.valid_from ? formatDate(grant.valid_from) : 'Open';
+    const until = grant.valid_until ? formatDate(grant.valid_until) : (grant.expires_at ? formatDate(grant.expires_at) : 'No expiry');
+    return from + ' → ' + until;
+  }
+
+  async function loadGrants(client, userId) {
+    let query = client
+      .from('access_grants')
+      .select('grant_id, course, course_id, valid_from, valid_until, expires_at, created_at')
+      .or('user_id.eq.' + userId + ',student_id.eq.' + userId)
+      .order('created_at', { ascending: false });
+
+    let { data, error } = await query;
+    if (error) {
+      const fallback = await client.from('access_grants').select('*').order('created_at', { ascending: false });
+      data = fallback.data;
+      error = fallback.error;
+    }
+    if (error) throw error;
+    return data || [];
+  }
+
+  async function loadCourseTitles(client, grants) {
+    const ids = [...new Set(grants.map(grant => grant.course_id || grant.course).filter(Boolean))];
+    if (!ids.length) return {};
+    const { data, error } = await client
+      .from('courses')
+      .select('id, title, language, cefr')
+      .in('id', ids);
+    if (error) return {};
+    const map = {};
+    (data || []).forEach(course => { map[course.id] = course; });
+    return map;
+  }
+
+  async function countRows(client, table, buildQuery) {
+    try {
+      let query = client.from(table).select('*', { count: 'exact', head: true });
+      query = buildQuery(query);
+      const { count, error } = await query;
+      if (error) return null;
+      return typeof count === 'number' ? count : null;
+    } catch (error) {
+      return null;
+    }
+  }
+
+  async function loadRecent(client, userId) {
+    const out = [];
+    const tasks = [];
+
+    tasks.push((async () => {
+      const { data, error } = await client
+        .from('lesson_submissions')
+        .select('id, lesson_id, field_key, kind, status, created_at')
+        .eq('student_id', userId)
+        .order('created_at', { ascending: false })
+        .limit(20);
+      if (error || !data) return;
+      data.forEach(row => out.push({
+        at: row.created_at,
+        icon: row.kind === 'audio' ? '🎙️' : '📝',
+        title: row.kind === 'audio' ? 'Audio task submitted' : 'Written task submitted',
+        text: (row.lesson_id || 'Lesson') + (row.status ? ' · ' + row.status : '')
+      }));
+    })());
+
+    tasks.push((async () => {
+      const { data, error } = await client
+        .from('lesson_notes')
+        .select('id, lesson_id, content, updated_at')
+        .order('updated_at', { ascending: false })
+        .limit(10);
+      if (error || !data) return;
+      data.forEach(row => out.push({
+        at: row.updated_at,
+        icon: '📝',
+        title: 'Lesson note updated',
+        text: row.lesson_id || 'Classroom note'
+      }));
+    })());
+
+    tasks.push((async () => {
+      const { data, error } = await client
+        .from('study_events')
+        .select('id, lesson_id, kind, correct, score, total, created_at')
+        .eq('student_id', userId)
+        .order('created_at', { ascending: false })
+        .limit(20);
+      if (error || !data) return;
+      data.forEach(row => out.push({
+        at: row.created_at,
+        icon: row.kind === 'game' ? '🎮' : '✅',
+        title: row.kind === 'game' ? 'Game round completed' : 'Answers checked',
+        text: (row.lesson_id || 'Studio lesson') + (row.kind === 'game' && row.total ? ' · ' + row.score + '/' + row.total : '')
+      }));
+    })());
+
+    await Promise.allSettled(tasks);
+    out.sort((a, b) => new Date(b.at || 0) - new Date(a.at || 0));
+    return out.slice(0, 8);
+  }
+
+  async function init() {
+    if (window.CosyI18n && window.CosyI18n.ready) {
+      try { await window.CosyI18n.ready; } catch (error) {}
+    }
+
+    const authData = await window.CosyAuth.getAuthAndProfile();
+    if (!authData) return;
+
+    const client = window.CosyAuth.client;
+    const user = authData.user;
+    let profile = Object.assign({}, authData.profile, {
+      display_name: authData.profile.display_name || (user.email || '').split('@')[0],
+      created_at: authData.profile.created_at || user.created_at,
+      language_access: authData.profile.language_access || [],
+      course_level: authData.profile.course_level || '*'
+    });
+
+    try {
+      const { data, error } = await client
+        .from('profiles')
+        .select('id, role, display_name, language_access, course_level, ui_lang, created_at, updated_at')
+        .eq('id', user.id)
+        .maybeSingle();
+      if (!error && data) profile = Object.assign(profile, data);
+    } catch (error) {
+      console.warn('[profile] Could not load extended profile details:', error);
+    }
+
+    const role = normaliseRole(profile.role);
+    const roleMeta = roleLabels[role];
+    const displayName = profile.display_name || user.email || 'COSY member';
+    const email = user.email || '';
+
+    $('profile-avatar').textContent = initials(profile, user);
+    $('profile-name').textContent = displayName;
+    $('profile-email').textContent = email;
+    $('profile-role-pill').textContent = roleMeta.icon + ' ' + roleMeta.label;
+    $('profile-member-pill').textContent = '📅 Joined ' + formatDate(profile.created_at || user.created_at);
+
+    ['header-workspace-link', 'hero-workspace-link', 'action-workspace'].forEach(id => {
+      const link = $(id);
+      if (!link) return;
+      link.href = roleMeta.workspace;
+      if (id === 'action-workspace') {
+        link.querySelector('strong').textContent = roleMeta.workspaceName;
+      } else if (id === 'header-workspace-link') {
+        link.textContent = roleMeta.workspaceName;
+      } else {
+        link.textContent = 'Open my ' + roleMeta.label.toLowerCase() + ' workspace →';
+      }
+    });
+
+    $('detail-name').textContent = displayName;
+    $('detail-email').textContent = email || '—';
+    $('detail-role').textContent = roleMeta.label;
+    $('detail-languages').textContent = languageList(profile);
+    $('detail-level').textContent = courseLevel(profile);
+    $('detail-member-since').textContent = formatDate(profile.created_at || user.created_at);
+    $('detail-last-signin').textContent = formatDateTime(user.last_sign_in_at);
+
+    const [grantsResult, progressCount, submissionsCount, studyCount, recent] = await Promise.allSettled([
+      loadGrants(client, user.id),
+      countRows(client, 'lesson_progress', query => query.eq('student_id', user.id)),
+      countRows(client, 'lesson_submissions', query => query.eq('student_id', user.id)),
+      countRows(client, 'study_events', query => query.eq('student_id', user.id)),
+      loadRecent(client, user.id)
+    ]);
+
+    const grants = grantsResult.status === 'fulfilled' ? grantsResult.value : [];
+    const courses = await loadCourseTitles(client, grants);
+    const activeCourseIds = new Set(
+      grants
+        .filter(grant => grantStatus(grant).key === 'active')
+        .map(grant => grant.course_id || grant.course || grant.grant_id)
+    );
+
+    $('stat-active-courses').textContent = String(activeCourseIds.size);
+    $('stat-lessons-practised').textContent = progressCount.status === 'fulfilled' && progressCount.value != null ? String(progressCount.value) : '—';
+    $('stat-tasks-submitted').textContent = submissionsCount.status === 'fulfilled' && submissionsCount.value != null ? String(submissionsCount.value) : '—';
+    $('stat-study-events').textContent = studyCount.status === 'fulfilled' && studyCount.value != null ? String(studyCount.value) : '—';
+
+    const grantsEl = $('profile-grants');
+    if (!grants.length) {
+      grantsEl.innerHTML = '<div class="profile-empty">No course access grants are attached to this account yet. The public catalog remains available from the <a href="index.html">COSY platform catalog</a>.</div>';
+    } else {
+      const rows = grants.map(grant => {
+        const courseId = grant.course_id || grant.course || '';
+        const course = courses[courseId] || {};
+        const status = grantStatus(grant);
+        const title = course.title || courseId || 'Course access';
+        const meta = [course.language ? String(course.language).toUpperCase() : '', course.cefr ? String(course.cefr).toUpperCase() : ''].filter(Boolean).join(' · ');
+        return '<tr>' +
+          '<td><strong>' + esc(title) + '</strong>' + (meta ? '<br><span style="color:var(--profile-muted);font-size:0.75rem;">' + esc(meta) + '</span>' : '') + '</td>' +
+          '<td><span class="grant-status ' + status.key + '">' + status.label + '</span></td>' +
+          '<td>' + esc(grantWindow(grant)) + '</td>' +
+          '</tr>';
+      }).join('');
+      grantsEl.innerHTML = '<div class="profile-table-wrap"><table class="profile-table">' +
+        '<thead><tr><th>Course</th><th>Status</th><th>Access window</th></tr></thead>' +
+        '<tbody>' + rows + '</tbody></table></div>';
+    }
+
+    const activityEl = $('profile-activity');
+    const activity = recent.status === 'fulfilled' ? recent.value : [];
+    if (!activity.length) {
+      activityEl.innerHTML = '<li><div class="profile-empty" style="width:100%;">No recent activity yet. Open a lesson or submit a task to start your learning history.</div></li>';
+    } else {
+      activityEl.innerHTML = activity.map(item =>
+        '<li><span class="activity-icon">' + esc(item.icon) + '</span><div class="activity-copy">' +
+        '<strong>' + esc(item.title) + '</strong><span>' + esc(item.text) + ' · ' + esc(formatDateTime(item.at)) + '</span>' +
+        '</div></li>'
+      ).join('');
+    }
+
+    $('profile-loading').hidden = true;
+    $('profile-content').hidden = false;
+  }
+
+  init().catch(error => {
+    console.error('[profile] Failed to initialise profile page:', error);
+    $('profile-loading').textContent = 'We could not load your profile. Please refresh the page or sign in again.';
+  });
+})();
+</script>
+</body>
+</html>
