@@ -104,12 +104,12 @@
       if (window.mountCosyLangSwitcher) window.mountCosyLangSwitcher();
 
       if (signInBtn) {
-        signInBtn.href = basePath + 'login.html';
+        signInBtn.href = basePath + 'login.html?v=20261125-1';
       }
 
       if (workspaceBtn) {
         workspaceBtn.addEventListener('click', async () => {
-          let targetPage = 'login.html';
+          let targetPage = 'login.html?v=20261125-1';
           if (window.CosyAuth && typeof window.CosyAuth.getAuthAndProfile === 'function') {
             try {
               const authData = await window.CosyAuth.getAuthAndProfile();

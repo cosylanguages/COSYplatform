@@ -188,8 +188,8 @@ window.CosySSO = window.CosySSO || {};
           parsed.pathname.startsWith(folderPath)
         ) {
           const rel = parsed.pathname.substring(folderPath.length);
-          if (rel && !rel.includes('/') && rel.endsWith('.html') && rel !== 'login.html') {
-            safeTarget = rel + parsed.search + parsed.hash;
+          if ((rel === '' || (rel && !rel.includes('/') && rel.endsWith('.html'))) && rel !== 'login.html') {
+            safeTarget = (rel || 'index.html') + parsed.search + parsed.hash;
           }
         }
       } catch (e) {}

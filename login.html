@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="shared/styles/style.css">
   <script src="vendor/supabase-js-2.49.1/supabase.js"></script>
   <script src="shared/js/config.js"></script>
-  <script src="shared/js/auth-sso.js"></script>
+  <script src="shared/js/auth-sso.js?v=20261125-1"></script>
   <script src="shared/js/cms-editor.js"></script>
   <script src="shared/js/i18n.js"></script>
   <script src="shared/js/lang-switcher.js"></script>
@@ -227,7 +227,7 @@
 
         if (relPath !== '' && !relPath.endsWith('.html')) return null;
 
-        return relPath + parsed.search + parsed.hash;
+        return (relPath || 'index.html') + parsed.search + parsed.hash;
       } catch (e) {
         return null;
       }

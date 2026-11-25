@@ -29,7 +29,12 @@
  * Full Platform Course Manifest
  * Generated dynamically from all curriculums across all languages and levels.
  */
+// Bump this when the sign-in page changes so a cached copy cannot keep an
+// older post-login destination.
+const COSY_LOGIN_VERSION = '20261125-1';
+
 window.CosyAuth = window.CosyAuth || {};
+window.CosyAuth.LOGIN_VERSION = COSY_LOGIN_VERSION;
 window.CosyAuth.FULL_MANIFEST = [
   {"id":"general-ba-a0","title":"General BA A0","track":"General","lang":"ba","level":"a0","status":"not_yet_available"},
   {"id":"general-ba-a1","title":"General BA A1","track":"General","lang":"ba","level":"a1","status":"not_yet_available"},
@@ -336,7 +341,7 @@ window.CosyAuth.getAuthAndProfile = async function() {
  */
 window.CosyAuth.redirectToLogin = function() {
   const currentUrl = window.location.href;
-  const loginUrl = `login.html?redirect=${encodeURIComponent(currentUrl)}`;
+  const loginUrl = `login.html?redirect=${encodeURIComponent(currentUrl)}&v=${COSY_LOGIN_VERSION}`;
   window.location.href = loginUrl;
 };
 
@@ -374,7 +379,7 @@ window.CosyAuth.renderAccessDenied = function(title, message) {
       <p style="margin-bottom: 24px; font-size: 0.95rem; color: #b91c1c;">${message}</p>
       <div style="display: flex; gap: 12px; justify-content: center;">
         <button onclick="window.CosyAuth.logout()" style="background-color: #dc2626; color: white; border: none; padding: 10px 20px; border-radius: 6px; font-weight: 600; cursor: pointer;">Log Out</button>
-        <a href="login.html" style="background-color: #6b7280; color: white; text-decoration: none; padding: 10px 20px; border-radius: 6px; font-weight: 600;">Back to Login</a>
+        <a href="login.html?v=${COSY_LOGIN_VERSION}" style="background-color: #6b7280; color: white; text-decoration: none; padding: 10px 20px; border-radius: 6px; font-weight: 600;">Back to Login</a>
       </div>
     </div>
   `;
@@ -464,5 +469,5 @@ window.CosyAuth.logout = async function() {
   if (window.CosyAuth.client) {
     await window.CosyAuth.client.auth.signOut();
   }
-  window.location.href = "login.html";
+  window.location.href = `login.html?v=${COSY_LOGIN_VERSION}`;
 };
