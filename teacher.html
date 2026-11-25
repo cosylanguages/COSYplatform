@@ -921,6 +921,38 @@
     .teacher-event__body strong { font-size: 0.82rem; }
     .teacher-event__body small { font-size: 0.7rem; color: var(--cosy-color-ink-muted, #64748b); }
     .teacher-event__arrow { margin-left: auto; color: var(--cosy-color-ink-muted, #94a3b8); font-weight: 800; }
+    .teacher-delete-panel { display: grid; gap: 12px; }
+    .teacher-delete-panel h3 { margin: 0; color: var(--cosy-color-ink, #0f172a); font-size: 1.1rem; }
+    .teacher-delete-panel > p { margin: 0; color: var(--cosy-color-ink-muted, #64748b); font-size: 0.82rem; line-height: 1.5; }
+    .teacher-delete-options { display: grid; gap: 8px; }
+    .teacher-scope-option {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 12px;
+      border: 1px solid var(--cosy-color-border, #e2e8f0);
+      border-radius: 10px;
+      background: var(--cosy-paper-aged, #f8fafc);
+      cursor: pointer;
+    }
+    .teacher-scope-option input { margin: 3px 0 0; accent-color: var(--cosy-platform-teacher, #b45309); }
+    .teacher-scope-option strong { display: block; color: var(--cosy-color-ink, #0f172a); font-size: 0.84rem; }
+    .teacher-scope-option small { display: block; margin-top: 3px; color: var(--cosy-color-ink-muted, #64748b); font-size: 0.73rem; line-height: 1.4; }
+    .teacher-delete-note {
+      padding: 10px 12px;
+      border-radius: 9px;
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      color: #92400e;
+      font-size: 0.75rem;
+      line-height: 1.45;
+    }
+    .teacher-delete-actions { display: flex; justify-content: flex-end; gap: 8px; flex-wrap: wrap; margin-top: 2px; }
+    .teacher-delete-actions .btn { padding: 8px 12px; font-size: 0.8rem; }
+    html[data-theme="dark"] .teacher-scope-option,
+    body.theme-dark .teacher-scope-option { background: rgba(255, 255, 255, 0.04); border-color: rgba(255, 255, 255, 0.15); }
+    html[data-theme="dark"] .teacher-delete-note,
+    body.theme-dark .teacher-delete-note { background: rgba(245, 158, 11, 0.12); border-color: rgba(245, 158, 11, 0.35); color: #fcd34d; }
 
     .teacher-empty {
       margin: 0;
@@ -2165,6 +2197,31 @@
       renderTeacherSchedule();
     }
 
+    const TEACHER_REMOVED_SESSIONS_KEY = 'cosy_teacher_removed_sessions_v1';
+
+    function readTeacherRemovedSessions() {
+      try {
+        const raw = window.localStorage.getItem(TEACHER_REMOVED_SESSIONS_KEY);
+        const parsed = raw ? JSON.parse(raw) : null;
+        return {
+          sessionIds: parsed && Array.isArray(parsed.sessionIds) ? parsed.sessionIds : [],
+          students: parsed && Array.isArray(parsed.students) ? parsed.students : []
+        };
+      } catch (error) {
+        return { sessionIds: [], students: [] };
+      }
+    }
+
+    function writeTeacherRemovedSessions(value) {
+      try { window.localStorage.setItem(TEACHER_REMOVED_SESSIONS_KEY, JSON.stringify(value)); } catch (error) {}
+    }
+
+    function teacherSessionId(day, event) {
+      const month = String(day.getMonth() + 1).padStart(2, '0');
+      const date = String(day.getDate()).padStart(2, '0');
+      return day.getFullYear() + '-' + month + '-' + date + '|' + event.time + '|' + event.student;
+    }
+
     function renderTeacherSchedule() {
       const container = document.getElementById("schedule-grid-target");
       if (!container) return;
@@ -2186,25 +2243,41 @@
         5: [{ time: "11:00", student: "Kirill", kind: "Individual lesson", tone: "green" }]
       };
 
+      const removed = readTeacherRemovedSessions();
       let eventCount = 0;
+      let weekSessions = [];
       let timeline = '<div class="teacher-timeline">';
       for (let i = 0; i < 7; i++) {
         const day = new Date(start);
         day.setDate(start.getDate() + i);
         const isToday = day.toDateString() === now.toDateString();
-        const events = eventsByDay[i] || [];
-        eventCount += events.length;
         const dateLabel = day.getDate() + ' ' + monthNames[day.getMonth()];
+        const events = (eventsByDay[i] || []).map(event => ({
+          time: event.time,
+          student: event.student,
+          kind: event.kind,
+          tone: event.tone,
+          dateLabel,
+          id: teacherSessionId(day, event)
+        })).filter(event => !removed.sessionIds.includes(event.id) && !removed.students.includes(event.student));
+        eventCount += events.length;
+        weekSessions = weekSessions.concat(events);
         timeline += '<div class="teacher-day' + (isToday ? ' is-today' : '') + '">';
         timeline += '<div class="teacher-day__head"><strong>' + dayNames[i] + (isToday ? ' · Today' : '') + '</strong><span>' + dateLabel + '</span></div>';
         timeline += '<div class="teacher-day__body">';
         if (events.length === 0) {
           timeline += '<p class="teacher-empty">No sessions scheduled.</p>';
         } else {
-          events.forEach(ev => {
-            timeline += '<button type="button" class="teacher-event teacher-event--' + ev.tone + '" onclick="openClassroomSession(\'' + ev.student + '\')" title="Open classroom session with ' + ev.student + '">' +
-              '<span class="teacher-event__time">' + ev.time + '</span>' +
-              '<span class="teacher-event__body"><strong>' + ev.student + '</strong><small>' + ev.kind + ' · 50 min</small></span>' +
+          events.forEach(event => {
+            timeline += '<button type="button" class="teacher-event teacher-event--' + event.tone + '"' +
+              ' data-session-id="' + escapeHtml(event.id) + '"' +
+              ' data-student="' + escapeHtml(event.student) + '"' +
+              ' data-time="' + escapeHtml(event.time) + '"' +
+              ' data-date="' + escapeHtml(event.dateLabel) + '"' +
+              ' data-kind="' + escapeHtml(event.kind) + '"' +
+              ' title="Open classroom session with ' + escapeHtml(event.student) + '">' +
+              '<span class="teacher-event__time">' + event.time + '</span>' +
+              '<span class="teacher-event__body"><strong>' + escapeHtml(event.student) + '</strong><small>' + escapeHtml(event.kind) + ' · 50 min</small></span>' +
               '<span class="teacher-event__arrow">→</span>' +
               '</button>';
           });
@@ -2213,6 +2286,16 @@
       }
       timeline += '</div>';
       container.innerHTML = timeline;
+      container.querySelectorAll('[data-session-id]').forEach(button => {
+        button.addEventListener('click', () => openClassroomSession(
+          button.getAttribute('data-session-id'),
+          button.getAttribute('data-student'),
+          button.getAttribute('data-time'),
+          button.getAttribute('data-date'),
+          button.getAttribute('data-kind')
+        ));
+      });
+      window.teacherWeekSessions = weekSessions;
 
       const range = document.getElementById('schedule-week-range');
       if (range) {
@@ -2225,7 +2308,7 @@
       setTeacherText('teacher-week-sessions', eventCount);
     }
 
-    function openClassroomSession(studentName) {
+    function openClassroomSession(sessionId, studentName, timeLabel, dateLabel, kind) {
       let modal = document.getElementById('teacher-event-modal');
       if (!modal) {
         modal = document.createElement('div');
@@ -2237,32 +2320,110 @@
         `;
         document.body.appendChild(modal);
       }
+      if (!modal.dataset.bound) {
+        modal.dataset.bound = 'true';
+        modal.addEventListener('click', event => {
+          if (event.target === modal) closeTeacherEventModal();
+        });
+        document.addEventListener('keydown', event => {
+          if (event.key === 'Escape' && modal.style.display === 'flex') closeTeacherEventModal();
+        });
+      }
 
+      const student = escapeHtml(studentName || 'Student');
+      const when = escapeHtml((dateLabel || 'Scheduled') + ' at ' + (timeLabel || '—') + ' (UTC+2)');
+      const lessonKind = escapeHtml(kind || 'Individual lesson');
       modal.innerHTML = `
-        <div style="background: var(--card-bg, white); border-radius: 14px; width: 100%; max-width: 480px; padding: 24px; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.3); border: 1px solid #cbd5e1;">
+        <div role="dialog" aria-modal="true" aria-label="Scheduled lesson" style="background: var(--card-bg, white); border-radius: 14px; width: 100%; max-width: 480px; padding: 24px; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.3); border: 1px solid #cbd5e1;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px;">
-            <h3 style="margin: 0; font-size: 1.2rem; color: var(--cosy-color-ink, #0f172a);">📅 Scheduled Lesson: ${escapeHtml(studentName)}</h3>
+            <h3 style="margin: 0; font-size: 1.2rem; color: var(--cosy-color-ink, #0f172a);">📅 Scheduled Lesson</h3>
             <button onclick="closeTeacherEventModal()" style="border: none; background: var(--subtle-surface, #f1f5f9); border-radius: 8px; width: 32px; height: 32px; font-size: 1.1rem; cursor: pointer;">✖</button>
           </div>
 
-          <p style="font-size: 0.9rem; color: var(--cosy-color-ink-soft, #334155); margin-bottom: 16px;">
-            Student: <strong>${escapeHtml(studentName)}</strong><br>
-            Level: <strong>B1 Intermediate</strong><br>
-            Time: <strong>Wednesday at 18:00 (UTC+2)</strong>
+          <p style="font-size: 0.9rem; color: var(--cosy-color-ink-soft, #334155); margin-bottom: 16px; line-height: 1.7;">
+            Student: <strong>${student}</strong><br>
+            Lesson: <strong>${lessonKind}</strong><br>
+            Time: <strong>${when}</strong>
           </p>
 
-          <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 12px; margin-bottom: 16px; font-size: 0.82rem; color: #166534;">
-            ℹ️ Teacher Notice: Teacher-initiated cancellations preserve student lesson credits and do not deduct balance.
-          </div>
-
           <div style="display: flex; flex-direction: column; gap: 8px;">
-            <a href="classroom.html?student=${encodeURIComponent(studentName)}" class="btn" style="background: #047857; color: white; padding: 10px; font-size: 0.9rem; font-weight: 700; border-radius: 8px; text-decoration: none; text-align: center;">Enter Live Classroom 🎥</a>
-            <button onclick="rescheduleTeacherSession('${escapeHtml(studentName)}')" class="btn btn-outline" style="padding: 8px; font-size: 0.85rem; font-weight: 600;">Reschedule Session 🔄</button>
-            <button onclick="cancelTeacherSession('${escapeHtml(studentName)}')" class="btn" style="background: #fee2e2; color: #991b1b; padding: 8px; font-size: 0.85rem; font-weight: 700; border: 1px solid #fca5a5; border-radius: 8px; cursor: pointer;">Cancel Session ❌</button>
+            <a href="classroom.html?student=${encodeURIComponent(studentName || '')}" class="btn" style="background: #047857; color: white; padding: 10px; font-size: 0.9rem; font-weight: 700; border-radius: 8px; text-decoration: none; text-align: center;">Enter Live Classroom 🎥</a>
+            <button onclick="rescheduleTeacherSession(teacherDeleteContext.studentName)" class="btn btn-outline" style="padding: 8px; font-size: 0.85rem; font-weight: 600;">Reschedule Session 🔄</button>
+            <button onclick="openTeacherDeleteScope()" class="btn" style="background: #fff7ed; color: #9a3412; padding: 8px; font-size: 0.85rem; font-weight: 700; border: 1px solid #fdba74; border-radius: 8px; cursor: pointer;">Delete Session…</button>
+          </div>
+          <p style="margin: 12px 0 0; color: var(--cosy-color-ink-muted, #64748b); font-size: 0.72rem; line-height: 1.45;">Deleting a session never changes the student's lesson credits.</p>
+        </div>
+      `;
+      window.teacherDeleteContext = {
+        sessionId: sessionId || '',
+        studentName: studentName || 'Student',
+        timeLabel: timeLabel || '',
+        dateLabel: dateLabel || '',
+        kind: kind || 'Individual lesson'
+      };
+      modal.style.display = 'flex';
+    }
+
+    function openTeacherDeleteScope() {
+      const context = window.teacherDeleteContext;
+      const modal = document.getElementById('teacher-event-modal');
+      if (!context || !modal) return;
+      const sessions = (window.teacherWeekSessions || []).filter(item => item.student === context.studentName);
+      const count = sessions.length;
+      const countLabel = count + ' ' + (count === 1 ? 'session' : 'sessions') + ' this week';
+      const thisSession = escapeHtml((context.dateLabel || 'Scheduled') + ' · ' + (context.timeLabel || ''));
+      modal.innerHTML = `
+        <div role="dialog" aria-modal="true" aria-label="Delete from schedule" style="background: var(--card-bg, white); border-radius: 14px; width: 100%; max-width: 480px; padding: 24px; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.3); border: 1px solid #cbd5e1;">
+          <div class="teacher-delete-panel">
+            <button type="button" onclick="openClassroomSession(teacherDeleteContext.sessionId, teacherDeleteContext.studentName, teacherDeleteContext.timeLabel, teacherDeleteContext.dateLabel, teacherDeleteContext.kind)" class="btn btn-outline" style="justify-self: start; padding: 5px 9px; font-size: 0.74rem;">← Back to lesson</button>
+            <h3>Delete from your schedule</h3>
+            <p>Choose how much to remove. Past sessions, lesson materials and student notes are not affected.</p>
+            <div class="teacher-delete-options">
+              <label class="teacher-scope-option">
+                <input type="radio" name="teacher-delete-scope" value="one" checked onchange="updateTeacherDeleteAction()">
+                <span><strong>This session only</strong><small>${thisSession}</small></span>
+              </label>
+              <label class="teacher-scope-option">
+                <input type="radio" name="teacher-delete-scope" value="all" onchange="updateTeacherDeleteAction()">
+                <span><strong>All sessions with ${escapeHtml(context.studentName)}</strong><small>Remove every scheduled session with this student. ${countLabel}.</small></span>
+              </label>
+            </div>
+            <div class="teacher-delete-note">Student credits are preserved. The lesson record stays in the student's history.</div>
+            <div class="teacher-delete-actions">
+              <button type="button" class="btn btn-outline" onclick="closeTeacherEventModal()">Keep sessions</button>
+              <button type="button" class="btn" id="teacher-delete-confirm" onclick="confirmTeacherSessionDelete()" style="background: #b91c1c; color: #fff; border-color: #b91c1c;">Delete this session</button>
+            </div>
           </div>
         </div>
       `;
       modal.style.display = 'flex';
+    }
+
+    function updateTeacherDeleteAction() {
+      const action = document.getElementById('teacher-delete-confirm');
+      const selected = document.querySelector('input[name="teacher-delete-scope"]:checked');
+      if (!action || !selected) return;
+      action.textContent = selected.value === 'all' ? 'Delete all sessions' : 'Delete this session';
+    }
+
+    function confirmTeacherSessionDelete() {
+      const context = window.teacherDeleteContext;
+      const selected = document.querySelector('input[name="teacher-delete-scope"]:checked');
+      if (!context || !selected) return;
+      const removed = readTeacherRemovedSessions();
+      if (selected.value === 'all') {
+        if (!removed.students.includes(context.studentName)) removed.students.push(context.studentName);
+      } else if (context.sessionId && !removed.sessionIds.includes(context.sessionId)) {
+        removed.sessionIds.push(context.sessionId);
+      }
+      writeTeacherRemovedSessions(removed);
+      renderTeacherSchedule();
+      closeTeacherEventModal();
+      if (window.CosyUI && typeof window.CosyUI.toast === 'function') {
+        window.CosyUI.toast(selected.value === 'all'
+          ? 'All sessions with ' + context.studentName + ' removed. Credits preserved.'
+          : 'Session with ' + context.studentName + ' removed. Credit preserved.');
+      }
     }
 
     function closeTeacherEventModal() {
@@ -2275,14 +2436,11 @@
       closeTeacherEventModal();
     }
 
-    function cancelTeacherSession(studentName) {
-      if (window.CosyUI) window.CosyUI.toast(`Session with ${studentName} cancelled. Credit preserved.`);
-      closeTeacherEventModal();
-    }
-
     window.closeTeacherEventModal = closeTeacherEventModal;
     window.rescheduleTeacherSession = rescheduleTeacherSession;
-    window.cancelTeacherSession = cancelTeacherSession;
+    window.openTeacherDeleteScope = openTeacherDeleteScope;
+    window.updateTeacherDeleteAction = updateTeacherDeleteAction;
+    window.confirmTeacherSessionDelete = confirmTeacherSessionDelete;
 
     window.renderTeacherSchedule = renderTeacherSchedule;
     window.changeScheduleWeek = changeScheduleWeek;

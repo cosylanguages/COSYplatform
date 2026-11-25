@@ -585,13 +585,14 @@
       const moreLanguages = languages.filter(lang => !primaryLanguages.includes(lang));
 
       const signedIn = Boolean(authState && authState.authenticated);
+      const signInUrl = `login.html?redirect=${encodeURIComponent(window.location.href)}&v=20261125-1`;
       const workspaceHref = signedIn
         ? (authState.role === 'founder' ? 'founder.html' : authState.role === 'teacher' ? 'teacher.html' : 'student.html')
         : '';
       const accountActions = signedIn
         ? `<a href="profile.html" class="btn catalog-profile-button">My Profile</a>
            <a href="${workspaceHref}" class="btn" style="background: var(--hub-primary) !important; color: var(--editorial-on-accent) !important; border-color: transparent !important;">Open workspace →</a>`
-        : `<a href="login.html?redirect=${encodeURIComponent(window.location.href)}&v=20261125-1" class="btn" style="background: var(--hub-primary) !important; color: var(--editorial-on-accent) !important; border-color: transparent !important;">${window.CosyI18n.t('common.signIn')}</a>`;
+        : `<a href="${signInUrl}" class="btn" style="background: var(--hub-primary) !important; color: var(--editorial-on-accent) !important; border-color: transparent !important;">${window.CosyI18n.t('common.signIn')}</a>`;
 
       const totalPublished = fullManifest.filter(catalogIsPublished).length;
       const selectedLevels = levels.slice().sort((a, b) => (CATALOG_LEVEL_ORDER[a] == null ? 99 : CATALOG_LEVEL_ORDER[a]) - (CATALOG_LEVEL_ORDER[b] == null ? 99 : CATALOG_LEVEL_ORDER[b]));

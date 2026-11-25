@@ -780,6 +780,321 @@
       text-transform: uppercase;
     }
 
+    .vocab-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .vocab-head-copy { min-width: 0; flex: 1 1 280px; }
+    .vocab-head h2 { margin-bottom: 6px; }
+    .vocab-eyebrow {
+      margin: 0 0 4px;
+      color: var(--mode-accent);
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+    .vocab-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      border: 1px solid var(--profile-border);
+      border-radius: 9px;
+      background: var(--profile-card);
+      color: var(--profile-ink);
+      padding: 8px 12px;
+      font: inherit;
+      font-size: 0.78rem;
+      font-weight: 800;
+      cursor: pointer;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+    .vocab-btn:hover { border-color: var(--mode-accent); }
+    .vocab-btn-primary {
+      background: var(--mode-accent);
+      border-color: var(--mode-accent);
+      color: #fff;
+    }
+    .vocab-btn-primary:hover { background: var(--mode-accent-deep); }
+    .vocab-btn-quiet { background: transparent; }
+    .vocab-btn-danger { color: #b91c1c; background: #fef2f2; border-color: #fecaca; }
+    .vocab-btn-danger:hover { border-color: #b91c1c; }
+    .vocab-btn-icon {
+      width: 30px;
+      height: 30px;
+      padding: 0;
+      border-radius: 8px;
+      font-size: 0.9rem;
+    }
+    .vocab-btn-small {
+      padding: 5px 8px;
+      font-size: 0.68rem;
+      color: var(--profile-muted);
+    }
+    .vocab-status {
+      min-height: 1.2em;
+      margin: 10px 0 0;
+      color: var(--profile-muted);
+      font-size: 0.76rem;
+    }
+    .vocab-status.is-error { color: #b91c1c; }
+    .vocab-summary {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 12px 0 14px;
+      padding: 9px 12px;
+      border: 1px solid var(--profile-border);
+      border-radius: 10px;
+      background: var(--profile-cream);
+      color: var(--profile-muted);
+      font-size: 0.76rem;
+    }
+    .vocab-summary strong { color: var(--profile-ink); }
+    .vocab-summary__sync { margin-left: auto; font-size: 0.7rem; }
+    .vocab-lists {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
+    }
+    .vocab-list-card {
+      display: grid;
+      max-width: 380px;
+      gap: 9px;
+      padding: 14px;
+      border: 1px solid var(--profile-border);
+      border-radius: 12px;
+      background: var(--profile-cream);
+    }
+    .vocab-list-card__top { display: flex; align-items: flex-start; gap: 10px; }
+    .vocab-list-code {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      flex: 0 0 32px;
+      border-radius: 9px;
+      background: var(--mode-accent-soft);
+      color: var(--mode-accent);
+      font-size: 0.7rem;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .vocab-list-card h3 {
+      margin: 0;
+      color: var(--profile-ink);
+      font-size: 0.92rem;
+      line-height: 1.3;
+      overflow-wrap: anywhere;
+    }
+    .vocab-list-card__meta { margin: 2px 0 0; color: var(--profile-muted); font-size: 0.71rem; }
+    .vocab-list-card__note {
+      margin: 0;
+      color: var(--profile-muted);
+      font-size: 0.76rem;
+      line-height: 1.45;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .vocab-list-card__actions { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+    .vocab-empty {
+      padding: 22px 16px;
+      border: 1px dashed var(--profile-border);
+      border-radius: 12px;
+      background: var(--profile-cream);
+      text-align: center;
+    }
+    .vocab-empty strong { display: block; color: var(--profile-ink); font-size: 0.9rem; }
+    .vocab-empty p { margin: 5px 0 0; font-size: 0.8rem; }
+
+    .vocab-detail-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+    .vocab-back {
+      border: 0;
+      background: transparent;
+      color: var(--mode-accent);
+      font: inherit;
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 0;
+      cursor: pointer;
+    }
+    .vocab-back:hover { text-decoration: underline; }
+    .vocab-detail-actions { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+    .vocab-detail-head { margin-bottom: 12px; }
+    .vocab-detail-head h3 {
+      margin: 0;
+      color: var(--profile-ink);
+      font-size: 1.35rem;
+      line-height: 1.25;
+      overflow-wrap: anywhere;
+    }
+    .vocab-detail-meta { margin: 0 0 4px; color: var(--profile-muted); font-size: 0.73rem; }
+    .vocab-detail-note { margin: 6px 0 0; color: var(--profile-muted); font-size: 0.82rem; line-height: 1.5; }
+    .vocab-words { display: grid; gap: 7px; margin-bottom: 12px; }
+    .vocab-word-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr) auto;
+      gap: 12px;
+      align-items: center;
+      padding: 10px 11px;
+      border: 1px solid var(--profile-border);
+      border-radius: 10px;
+      background: var(--profile-cream);
+    }
+    .vocab-word-row__term { color: var(--profile-ink); font-size: 0.88rem; font-weight: 800; overflow-wrap: anywhere; }
+    .vocab-word-row__meaning { color: var(--profile-ink); font-size: 0.82rem; overflow-wrap: anywhere; }
+    .vocab-word-row__example { color: var(--profile-muted); font-size: 0.74rem; line-height: 1.4; margin-top: 2px; }
+    .vocab-word-row__source { color: var(--profile-muted); font-size: 0.68rem; margin-top: 2px; }
+    .vocab-word-row__actions { display: flex; gap: 4px; }
+    .vocab-word-empty { color: var(--profile-muted); font-size: 0.8rem; padding: 10px 0; }
+
+    .vocab-practice-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+    .vocab-practice-progress { color: var(--profile-muted); font-size: 0.74rem; font-variant-numeric: tabular-nums; }
+    .vocab-progress-track {
+      height: 4px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: var(--profile-border);
+      margin-bottom: 18px;
+    }
+    .vocab-progress-fill {
+      display: block;
+      height: 100%;
+      width: 0;
+      border-radius: inherit;
+      background: var(--mode-accent);
+      transition: width 0.2s ease;
+    }
+    .vocab-practice-card {
+      display: grid;
+      justify-items: center;
+      gap: 10px;
+      min-height: 290px;
+      padding: 28px 18px;
+      border: 1px solid var(--profile-border);
+      border-radius: 14px;
+      background: var(--profile-cream);
+      text-align: center;
+    }
+    .vocab-practice-card h3 {
+      margin: 0;
+      color: var(--profile-ink);
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      line-height: 1.15;
+      overflow-wrap: anywhere;
+    }
+    .vocab-practice-pos { margin: 0; color: var(--profile-muted); font-size: 0.74rem; }
+    .vocab-practice-answer { display: grid; gap: 5px; max-width: 480px; }
+    .vocab-practice-meaning { margin: 5px 0 0; color: var(--profile-ink); font-size: 1rem; font-weight: 700; }
+    .vocab-practice-example { margin: 0; color: var(--profile-muted); font-size: 0.86rem; line-height: 1.5; }
+    .vocab-practice-source { margin: 0; color: var(--profile-muted); font-size: 0.67rem; }
+    .vocab-practice-actions { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-top: 4px; }
+    .vocab-kbd-hint { margin: 6px 0 0; color: var(--profile-muted); font-size: 0.67rem; }
+    .vocab-practice-summary { padding: 24px 16px; text-align: center; }
+    .vocab-practice-summary h3 { margin: 0 0 6px; color: var(--profile-ink); font-size: 1.3rem; }
+    .vocab-practice-summary p { margin: 0 0 14px; }
+
+    .vocab-lookup { padding: 0; overflow: hidden; }
+    .vocab-lookup summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 16px 20px;
+      cursor: pointer;
+      list-style: none;
+    }
+    .vocab-lookup summary::-webkit-details-marker { display: none; }
+    .vocab-lookup summary strong { display: block; color: var(--profile-ink); font-size: 0.92rem; }
+    .vocab-lookup summary small { display: block; margin-top: 2px; color: var(--profile-muted); font-size: 0.74rem; }
+    .vocab-lookup-mark { color: var(--mode-accent); font-size: 1.1rem; font-weight: 800; }
+    .vocab-lookup[open] summary { border-bottom: 1px solid var(--profile-border); }
+    .vocab-lookup-body { padding: 16px 20px 20px; }
+    .vocab-result__actions { display: flex; align-items: center; gap: 6px; flex: 0 0 auto; }
+
+    .vocab-dialog {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: grid;
+      place-items: center;
+      padding: 18px;
+      background: rgba(15, 23, 42, 0.48);
+    }
+    .vocab-dialog-card {
+      width: min(100%, 480px);
+      max-height: min(88vh, 720px);
+      overflow: auto;
+      border: 1px solid var(--profile-border);
+      border-radius: 16px;
+      background: var(--profile-card);
+      box-shadow: 0 24px 70px rgba(15, 23, 42, 0.3);
+    }
+    .vocab-dialog-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--profile-border);
+    }
+    .vocab-dialog-head h3 { margin: 0; color: var(--profile-ink); font-size: 1rem; }
+    .vocab-dialog-body { padding: 18px; }
+    .vocab-form { display: grid; gap: 12px; }
+    .vocab-field { display: grid; gap: 5px; }
+    .vocab-field > span { color: var(--profile-muted); font-size: 0.68rem; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; }
+    .vocab-field input,
+    .vocab-field select,
+    .vocab-field textarea {
+      width: 100%;
+      box-sizing: border-box;
+      border: 1px solid var(--profile-border);
+      border-radius: 9px;
+      background: var(--profile-cream);
+      color: var(--profile-ink);
+      padding: 9px 11px;
+      font: inherit;
+      font-size: 0.86rem;
+      outline: none;
+    }
+    .vocab-field textarea { min-height: 68px; resize: vertical; }
+    .vocab-field input:focus,
+    .vocab-field select:focus,
+    .vocab-field textarea:focus { border-color: var(--mode-accent); }
+    .vocab-form-hint { margin: -2px 0 0; color: var(--profile-muted); font-size: 0.72rem; line-height: 1.45; }
+    .vocab-dialog-actions { display: flex; justify-content: flex-end; gap: 8px; flex-wrap: wrap; margin-top: 6px; }
+    .vocab-confirm-copy { margin: 0 0 14px; color: var(--profile-muted); font-size: 0.85rem; line-height: 1.55; }
+    .vocab-confirm-copy strong { color: var(--profile-ink); }
+
+    @media (max-width: 640px) {
+      .vocab-word-row { grid-template-columns: 1fr auto; }
+      .vocab-word-row__meaning { grid-column: 1 / -1; }
+      .vocab-list-card__actions { gap: 4px; }
+    }
+
     @keyframes profileSectionIn {
       from { opacity: 0; transform: translateY(4px); }
       to { opacity: 1; transform: none; }
@@ -938,6 +1253,17 @@
               <h2 id="student-continue-title">▶️ Continue Learning</h2>
               <div id="student-continue"></div>
             </section>
+
+            <section class="profile-card" aria-labelledby="student-vocab-shortcut-title">
+              <div class="vocab-head">
+                <div class="vocab-head-copy">
+                  <p class="vocab-eyebrow">Personal vocabulary</p>
+                  <h2 id="student-vocab-shortcut-title">Words worth keeping</h2>
+                  <p class="profile-card-lead">Turn words from lessons into your own lists, then practise them in short recall rounds.</p>
+                </div>
+                <a class="vocab-btn vocab-btn-primary" href="#vocabulary">Open vocabulary →</a>
+              </div>
+            </section>
           </section>
 
           <section class="profile-section" data-section="homework" hidden>
@@ -958,26 +1284,96 @@
           </section>
 
           <section class="profile-section" data-section="vocabulary" hidden>
-            <section class="profile-card">
-              <h2>🧠 Vocabulary Trainer</h2>
-              <p class="profile-card-lead">Search the COSY vocabulary index and practise words from your lessons.</p>
-              <div class="vocab-search-wrap">
-                <input id="vocab-search" type="search" placeholder="Search a word, e.g. travel, family, work..." autocomplete="off">
-                <span class="vocab-search-hint">Type at least 2 letters to search the COSYdata vocabulary index.</span>
+            <section class="profile-card" aria-labelledby="vocab-title">
+              <div class="vocab-head">
+                <div class="vocab-head-copy">
+                  <p class="vocab-eyebrow">Personal vocabulary</p>
+                  <h2 id="vocab-title">Words you are learning</h2>
+                  <p class="profile-card-lead">Build your own lists, return to weak words and practise a little every day.</p>
+                </div>
+                <button type="button" class="vocab-btn vocab-btn-primary" id="vocab-new-list">+ New list</button>
               </div>
-              <div id="vocab-results" class="vocab-results" aria-live="polite">
-                <div class="profile-empty">Start typing to search the vocabulary index.</div>
+              <p id="vocab-status" class="vocab-status" role="status" aria-live="polite"></p>
+              <div id="vocab-summary" class="vocab-summary" hidden></div>
+
+              <div id="vocab-lists-view">
+                <div id="vocab-lists" class="vocab-lists"></div>
+              </div>
+
+              <div id="vocab-detail-view" hidden>
+                <div class="vocab-detail-bar">
+                  <button type="button" class="vocab-back" id="vocab-back">← All lists</button>
+                  <div class="vocab-detail-actions">
+                    <button type="button" class="vocab-btn vocab-btn-primary" id="vocab-practice">Practise</button>
+                    <button type="button" class="vocab-btn" id="vocab-edit">Edit list</button>
+                    <button type="button" class="vocab-btn vocab-btn-danger" id="vocab-delete">Delete</button>
+                  </div>
+                </div>
+                <header class="vocab-detail-head">
+                  <p id="vocab-detail-meta" class="vocab-detail-meta"></p>
+                  <h3 id="vocab-detail-title"></h3>
+                  <p id="vocab-detail-note" class="vocab-detail-note"></p>
+                </header>
+                <div id="vocab-detail-words" class="vocab-words"></div>
+                <button type="button" class="vocab-btn" id="vocab-add-word">+ Add word</button>
+              </div>
+
+              <div id="vocab-practice-view" hidden>
+                <div class="vocab-practice-bar">
+                  <button type="button" class="vocab-back" id="vocab-practice-exit">← Exit practice</button>
+                  <span id="vocab-practice-progress" class="vocab-practice-progress"></span>
+                </div>
+                <div class="vocab-progress-track"><span id="vocab-progress-fill" class="vocab-progress-fill"></span></div>
+
+                <div id="vocab-practice-card" class="vocab-practice-card">
+                  <p id="vocab-practice-list" class="vocab-eyebrow"></p>
+                  <h3 id="vocab-practice-term"></h3>
+                  <p id="vocab-practice-pos" class="vocab-practice-pos"></p>
+                  <div id="vocab-practice-answer" class="vocab-practice-answer" hidden>
+                    <p id="vocab-practice-meaning" class="vocab-practice-meaning"></p>
+                    <p id="vocab-practice-example" class="vocab-practice-example"></p>
+                    <p id="vocab-practice-source" class="vocab-practice-source"></p>
+                  </div>
+                  <div class="vocab-practice-actions">
+                    <button type="button" class="vocab-btn vocab-btn-primary" id="vocab-practice-reveal">Show answer</button>
+                    <div id="vocab-practice-grade" class="vocab-practice-actions" hidden>
+                      <button type="button" class="vocab-btn vocab-btn-danger" data-vocab-grade="again">Again</button>
+                      <button type="button" class="vocab-btn vocab-btn-primary" data-vocab-grade="known">Got it</button>
+                    </div>
+                  </div>
+                  <p class="vocab-kbd-hint">Space to reveal · 1 again · 2 got it</p>
+                </div>
+
+                <div id="vocab-practice-summary" class="vocab-practice-summary" hidden>
+                  <p class="vocab-eyebrow">Round complete</p>
+                  <h3 id="vocab-summary-title"></h3>
+                  <p id="vocab-summary-copy"></p>
+                  <div class="vocab-practice-actions">
+                    <button type="button" class="vocab-btn vocab-btn-primary" id="vocab-summary-again">Practise again</button>
+                    <button type="button" class="vocab-btn" id="vocab-summary-back">Back to list</button>
+                  </div>
+                </div>
               </div>
             </section>
 
-            <section class="profile-card">
-              <h2>🎮 Practise vocabulary</h2>
-              <p>Turn your word list into a game or open the full dictionary in the student workspace.</p>
-              <div class="profile-inline-actions">
-                <a class="focus-action" href="https://cosylanguages.github.io/COSYgames/">Play COSYgames 🎮</a>
-                <a class="profile-text-link" href="student.html">Open student workspace →</a>
+            <details class="profile-card vocab-lookup" id="vocab-lookup">
+              <summary>
+                <span>
+                  <strong>Find a word</strong>
+                  <small>Add a word from the COSY dictionary index</small>
+                </span>
+                <span class="vocab-lookup-mark" aria-hidden="true">+</span>
+              </summary>
+              <div class="vocab-lookup-body">
+                <div class="vocab-search-wrap">
+                  <input id="vocab-search" type="search" placeholder="Search a word, e.g. travel, family, work..." autocomplete="off">
+                  <span class="vocab-search-hint">Type at least 2 letters. Saved words keep the source, so you can trace them back.</span>
+                </div>
+                <div id="vocab-results" class="vocab-results" aria-live="polite">
+                  <div class="profile-empty">Start typing to search the vocabulary index.</div>
+                </div>
               </div>
-            </section>
+            </details>
           </section>
 
           <section class="profile-section" data-section="courses" hidden>
@@ -1267,6 +1663,16 @@
   </div>
 </main>
 
+<div id="vocab-dialog" class="vocab-dialog" hidden>
+  <div class="vocab-dialog-card" role="dialog" aria-modal="true" aria-labelledby="vocab-dialog-title">
+    <div class="vocab-dialog-head">
+      <h3 id="vocab-dialog-title"></h3>
+      <button type="button" class="vocab-btn vocab-btn-icon vocab-btn-quiet" id="vocab-dialog-close" aria-label="Close">×</button>
+    </div>
+    <div id="vocab-dialog-body" class="vocab-dialog-body"></div>
+  </div>
+</div>
+
 <footer class="profile-footer">
   🌐 Part of the COSY ecosystem ·
   <a href="https://cosylanguages.github.io/COSYlanguages/">COSYlanguages</a> ·
@@ -1498,7 +1904,7 @@
     }
 
     if (opts.updateHash !== false) updateSectionHash(section);
-    if (section === 'vocabulary') initVocabularySearch();
+    if (section === 'vocabulary') initVocabularyWorkspace();
   }
 
   function setupSectionNav() {
@@ -2555,8 +2961,744 @@
     }
   }
 
+  const VOCAB_STORAGE_PREFIX = 'cosy_vocab_lists_v1:';
+  const VOCAB_LANGUAGES = [
+    ['en', 'English'], ['fr', 'French'], ['ru', 'Russian'], ['es', 'Spanish'],
+    ['el', 'Greek'], ['de', 'German'], ['it', 'Italian'], ['pt', 'Portuguese'],
+    ['hy', 'Armenian'], ['ka', 'Georgian'], ['ba', 'Bashkir'], ['br', 'Breton'], ['tt', 'Tatar']
+  ];
   let vocabSearchReady = false;
   let vocabIndexPromise = null;
+  let vocabWorkspaceReady = false;
+  let vocabLists = [];
+  let vocabActiveId = null;
+  let vocabView = 'lists';
+  let vocabPractice = null;
+  let vocabRemoteAvailable = false;
+  let vocabStatusTimer = null;
+  let vocabDialogContext = null;
+  let vocabDialogReturnFocus = null;
+
+  function vocabUuid() {
+    if (window.crypto && typeof window.crypto.randomUUID === 'function') {
+      return window.crypto.randomUUID();
+    }
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, ch => {
+      const value = Math.random() * 16 | 0;
+      return (ch === 'x' ? value : (value & 0x3) | 0x8).toString(16);
+    });
+  }
+
+  function vocabNow() { return new Date().toISOString(); }
+
+  function vocabLanguageName(code) {
+    const key = String(code || 'en').toLowerCase();
+    const found = VOCAB_LANGUAGES.find(item => item[0] === key);
+    return found ? found[1] : key.toUpperCase();
+  }
+
+  function vocabDefaultLanguage() {
+    const access = Array.isArray(profile && profile.language_access)
+      ? profile.language_access.filter(code => code && code !== '*')
+      : [];
+    return access[0] || 'en';
+  }
+
+  function vocabCacheKey() {
+    return VOCAB_STORAGE_PREFIX + ((user && user.id) || 'guest');
+  }
+
+  function normaliseVocabWord(value) {
+    const source = value && typeof value === 'object' ? value : {};
+    const term = String(source.term || '').trim().slice(0, 80);
+    if (!term) return null;
+    return {
+      id: String(source.id || vocabUuid()),
+      term,
+      meaning: String(source.meaning || '').trim().slice(0, 240),
+      example: String(source.example || '').trim().slice(0, 300),
+      pos: String(source.pos || '').trim().slice(0, 24),
+      source: String(source.source || '').trim().slice(0, 120)
+    };
+  }
+
+  function normaliseVocabList(value) {
+    const source = value && typeof value === 'object' ? value : {};
+    const words = Array.isArray(source.words)
+      ? source.words.map(normaliseVocabWord).filter(Boolean)
+      : [];
+    return {
+      id: String(source.id || vocabUuid()),
+      title: String(source.title || 'Untitled list').trim().slice(0, 80) || 'Untitled list',
+      language: String(source.language || 'en').trim().toLowerCase().slice(0, 8) || 'en',
+      note: String(source.note || '').trim().slice(0, 400),
+      words,
+      createdAt: source.created_at || source.createdAt || vocabNow(),
+      updatedAt: source.updated_at || source.updatedAt || vocabNow(),
+      lastPracticedAt: source.last_practiced_at || source.lastPracticedAt || '',
+      practiceRounds: Number(source.practice_rounds || source.practiceRounds || 0) || 0
+    };
+  }
+
+  function sortVocabLists(lists) {
+    return lists.sort((a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime());
+  }
+
+  function readVocabCache() {
+    try {
+      const raw = window.localStorage.getItem(vocabCacheKey());
+      if (!raw) return [];
+      const parsed = JSON.parse(raw);
+      return Array.isArray(parsed) ? sortVocabLists(parsed.map(normaliseVocabList)) : [];
+    } catch (error) {
+      console.warn('[vocabulary] Could not read local cache:', error);
+      return [];
+    }
+  }
+
+  function writeVocabCache() {
+    try {
+      window.localStorage.setItem(vocabCacheKey(), JSON.stringify(vocabLists));
+    } catch (error) {
+      console.warn('[vocabulary] Could not write local cache:', error);
+    }
+  }
+
+  function getVocabList(id) {
+    return vocabLists.find(list => list.id === id) || null;
+  }
+
+  function activeVocabList() {
+    return vocabActiveId ? getVocabList(vocabActiveId) : null;
+  }
+
+  function setVocabStatus(message, isError) {
+    const el = $('vocab-status');
+    if (!el) return;
+    if (vocabStatusTimer) clearTimeout(vocabStatusTimer);
+    el.textContent = message || '';
+    el.classList.toggle('is-error', Boolean(isError));
+    if (message && !isError) {
+      vocabStatusTimer = setTimeout(() => {
+        if (el.textContent === message) el.textContent = '';
+      }, 3600);
+    }
+  }
+
+  function vocabResultSource(file, id) {
+    if (file && id) return file + ' · ' + id;
+    return file || id || '';
+  }
+
+  function vocabListRow(list) {
+    return {
+      id: list.id,
+      student_id: user.id,
+      title: list.title,
+      language: list.language,
+      note: list.note || null,
+      words: list.words,
+      last_practiced_at: list.lastPracticedAt || null,
+      practice_rounds: Number(list.practiceRounds) || 0,
+      created_at: list.createdAt,
+      updated_at: list.updatedAt
+    };
+  }
+
+  async function syncVocabList(list) {
+    if (!client || !user) return false;
+    try {
+      const { error } = await client
+        .from('vocabulary_lists')
+        .upsert(vocabListRow(list), { onConflict: 'id' });
+      if (error) throw error;
+      vocabRemoteAvailable = true;
+      renderVocabSummary();
+      return true;
+    } catch (error) {
+      vocabRemoteAvailable = false;
+      renderVocabSummary();
+      console.warn('[vocabulary] Cloud sync unavailable:', error);
+      return false;
+    }
+  }
+
+  async function deleteRemoteVocabList(id) {
+    if (!client || !user) return;
+    try {
+      const { error } = await client
+        .from('vocabulary_lists')
+        .delete()
+        .eq('id', id)
+        .eq('student_id', user.id);
+      if (error) throw error;
+      vocabRemoteAvailable = true;
+    } catch (error) {
+      console.warn('[vocabulary] Could not delete cloud list:', error);
+    }
+  }
+
+  async function loadVocabularyLists() {
+    vocabLists = readVocabCache();
+    renderVocabulary();
+    if (!client || !user) return;
+    try {
+      const { data, error } = await client
+        .from('vocabulary_lists')
+        .select('*')
+        .eq('student_id', user.id)
+        .order('updated_at', { ascending: false });
+      if (error) throw error;
+      vocabRemoteAvailable = true;
+      const remote = Array.isArray(data) ? data.map(normaliseVocabList) : [];
+      const remoteIds = new Set(remote.map(list => list.id));
+      const localOnly = vocabLists.filter(list => !remoteIds.has(list.id));
+      vocabLists = sortVocabLists(remote.concat(localOnly));
+      writeVocabCache();
+      for (const list of localOnly) syncVocabList(list);
+    } catch (error) {
+      vocabRemoteAvailable = false;
+      console.warn('[vocabulary] Using this-device storage:', error);
+    }
+    renderVocabulary();
+  }
+
+  function commitVocabListLocally(list) {
+    vocabLists = sortVocabLists([list].concat(vocabLists.filter(item => item.id !== list.id)));
+    writeVocabCache();
+    renderVocabulary();
+  }
+
+  function renderVocabSummary() {
+    const el = $('vocab-summary');
+    if (!el) return;
+    if (!vocabLists.length || vocabView !== 'lists') {
+      el.hidden = true;
+      return;
+    }
+    const words = vocabLists.reduce((total, list) => total + list.words.length, 0);
+    el.hidden = false;
+    el.innerHTML =
+      '<span><strong>' + vocabLists.length + '</strong> ' + (vocabLists.length === 1 ? 'list' : 'lists') + ' · <strong>' + words + '</strong> ' + (words === 1 ? 'word' : 'words') + '</span>' +
+      '<span class="vocab-summary__sync">' + (vocabRemoteAvailable ? 'Synced to your account' : 'Saved on this device') + '</span>';
+  }
+
+  function renderVocabLists() {
+    const el = $('vocab-lists');
+    if (!el) return;
+    if (!vocabLists.length) {
+      el.innerHTML =
+        '<div class="vocab-empty"><strong>No lists yet</strong>' +
+        '<p>Make a list for a lesson, a trip, or the words you keep forgetting.</p>' +
+        '<p><button type="button" class="vocab-btn vocab-btn-primary" data-vocab-action="new-list">Create your first list</button></p></div>';
+      return;
+    }
+    el.innerHTML = vocabLists.map(list => {
+      const count = list.words.length;
+      const meta = vocabLanguageName(list.language) + ' · ' + count + ' ' + (count === 1 ? 'word' : 'words') +
+        (list.lastPracticedAt ? ' · Practised ' + formatDate(list.lastPracticedAt) : '');
+      const code = String(list.language || 'en').toUpperCase();
+      return '<article class="vocab-list-card">' +
+        '<div class="vocab-list-card__top">' +
+          '<span class="vocab-list-code" aria-hidden="true">' + esc(code) + '</span>' +
+          '<div><h3>' + esc(list.title) + '</h3><p class="vocab-list-card__meta">' + esc(meta) + '</p></div>' +
+        '</div>' +
+        (list.note ? '<p class="vocab-list-card__note">' + esc(list.note) + '</p>' : '') +
+        '<div class="vocab-list-card__actions">' +
+          '<button type="button" class="vocab-btn" data-vocab-action="open" data-list-id="' + esc(list.id) + '">Open</button>' +
+          '<button type="button" class="vocab-btn vocab-btn-quiet" data-vocab-action="practice" data-list-id="' + esc(list.id) + '">Practise</button>' +
+        '</div>' +
+      '</article>';
+    }).join('');
+  }
+
+  function renderVocabDetail() {
+    const list = activeVocabList();
+    if (!list) { vocabView = 'lists'; vocabActiveId = null; renderVocabulary(); return; }
+    const title = $('vocab-detail-title');
+    const meta = $('vocab-detail-meta');
+    const note = $('vocab-detail-note');
+    const wordsEl = $('vocab-detail-words');
+    if (title) title.textContent = list.title;
+    if (meta) {
+      const count = list.words.length;
+      meta.textContent = vocabLanguageName(list.language) + ' · ' + count + ' ' + (count === 1 ? 'word' : 'words') +
+        (list.lastPracticedAt ? ' · Practised ' + formatDate(list.lastPracticedAt) : '');
+    }
+    if (note) {
+      note.textContent = list.note || '';
+      note.hidden = !list.note;
+    }
+    if (!wordsEl) return;
+    if (!list.words.length) {
+      wordsEl.innerHTML = '<p class="vocab-word-empty">No words in this list yet. Add the first one below.</p>';
+      return;
+    }
+    wordsEl.innerHTML = list.words.map(word => {
+      const pos = word.pos ? '<span class="vocab-pos">' + esc(word.pos) + '</span>' : '';
+      const example = word.example ? '<div class="vocab-word-row__example">“' + esc(word.example) + '”</div>' : '';
+      const source = word.source ? '<div class="vocab-word-row__source">' + esc(word.source) + '</div>' : '';
+      return '<div class="vocab-word-row">' +
+        '<div><div class="vocab-word-row__term">' + esc(word.term) + pos + '</div>' + source + '</div>' +
+        '<div><div class="vocab-word-row__meaning">' + esc(word.meaning || '—') + '</div>' + example + '</div>' +
+        '<div class="vocab-word-row__actions">' +
+          '<button type="button" class="vocab-btn vocab-btn-small" data-vocab-action="edit-word" data-word-id="' + esc(word.id) + '" aria-label="Edit ' + esc(word.term) + '">Edit</button>' +
+          '<button type="button" class="vocab-btn vocab-btn-small vocab-btn-quiet" data-vocab-action="delete-word" data-word-id="' + esc(word.id) + '" aria-label="Remove ' + esc(word.term) + '">Remove</button>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+  }
+
+  function shuffleVocabWords(words) {
+    const copy = words.slice();
+    for (let i = copy.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+    return copy;
+  }
+
+  function startVocabPractice(listId) {
+    const list = getVocabList(listId);
+    if (!list) return;
+    if (!list.words.length) {
+      setVocabStatus('Add at least one word before practising.', true);
+      openVocabDetail(list.id);
+      return;
+    }
+    vocabActiveId = list.id;
+    vocabView = 'practice';
+    vocabPractice = {
+      listId: list.id,
+      queue: shuffleVocabWords(list.words),
+      index: 0,
+      revealed: false,
+      known: 0,
+      again: 0,
+      total: list.words.length,
+      recorded: false
+    };
+    renderVocabulary();
+  }
+
+  function renderVocabPractice() {
+    const state = vocabPractice;
+    const list = state ? getVocabList(state.listId) : null;
+    const card = $('vocab-practice-card');
+    const summary = $('vocab-practice-summary');
+    const progress = $('vocab-practice-progress');
+    const fill = $('vocab-progress-fill');
+    const answer = $('vocab-practice-answer');
+    const reveal = $('vocab-practice-reveal');
+    const grade = $('vocab-practice-grade');
+    if (!state || !list || !card || !summary || !progress || !fill || !answer || !reveal || !grade) return;
+
+    if (state.index >= state.total) {
+      if (!state.recorded) {
+        state.recorded = true;
+        list.lastPracticedAt = vocabNow();
+        list.practiceRounds = (Number(list.practiceRounds) || 0) + 1;
+        writeVocabCache();
+        syncVocabList(list);
+      }
+      card.hidden = true;
+      summary.hidden = false;
+      progress.textContent = state.total + ' / ' + state.total;
+      fill.style.width = '100%';
+      $('vocab-summary-title').textContent = state.again === 0 ? 'Every word felt solid.' : state.known + ' of ' + state.total + ' solid';
+      $('vocab-summary-copy').textContent = state.again === 0
+        ? 'You marked ' + (state.total === 1 ? 'the word' : 'all ' + state.total + ' words') + ' as known. Come back in a few days to keep them fresh.'
+        : state.again + ' ' + (state.again === 1 ? 'word' : 'words') + ' marked for another round. Repeat the list while it is short.';
+      return;
+    }
+
+    const word = state.queue[state.index];
+    card.hidden = false;
+    summary.hidden = true;
+    $('vocab-practice-list').textContent = list.title;
+    $('vocab-practice-term').textContent = word.term;
+    $('vocab-practice-pos').textContent = word.pos || '';
+    $('vocab-practice-pos').hidden = !word.pos;
+    $('vocab-practice-meaning').textContent = word.meaning || 'No meaning saved yet.';
+    $('vocab-practice-example').textContent = word.example ? '“' + word.example + '”' : '';
+    $('vocab-practice-example').hidden = !word.example;
+    $('vocab-practice-source').textContent = word.source || '';
+    $('vocab-practice-source').hidden = !word.source;
+    answer.hidden = !state.revealed;
+    reveal.hidden = state.revealed;
+    grade.hidden = !state.revealed;
+    progress.textContent = (state.index + 1) + ' / ' + state.total;
+    fill.style.width = Math.round((state.index / state.total) * 100) + '%';
+  }
+
+  function renderVocabulary() {
+    const listsView = $('vocab-lists-view');
+    const detailView = $('vocab-detail-view');
+    const practiceView = $('vocab-practice-view');
+    const newButton = $('vocab-new-list');
+    const lookup = $('vocab-lookup');
+    if (!listsView || !detailView || !practiceView) return;
+
+    if (vocabView !== 'lists' && !activeVocabList()) vocabView = 'lists';
+    if (vocabView === 'practice' && !vocabPractice) vocabView = activeVocabList() ? 'detail' : 'lists';
+
+    listsView.hidden = vocabView !== 'lists';
+    detailView.hidden = vocabView !== 'detail';
+    practiceView.hidden = vocabView !== 'practice';
+    if (newButton) newButton.hidden = vocabView !== 'lists';
+    if (lookup) lookup.hidden = vocabView === 'practice';
+
+    renderVocabSummary();
+    if (vocabView === 'lists') renderVocabLists();
+    else if (vocabView === 'detail') renderVocabDetail();
+    else renderVocabPractice();
+  }
+
+  function openVocabDetail(listId) {
+    if (!getVocabList(listId)) return;
+    vocabActiveId = listId;
+    vocabPractice = null;
+    vocabView = 'detail';
+    renderVocabulary();
+  }
+
+  function backToVocabLists() {
+    vocabActiveId = null;
+    vocabPractice = null;
+    vocabView = 'lists';
+    renderVocabulary();
+  }
+
+  function exitVocabPractice() {
+    vocabPractice = null;
+    vocabView = activeVocabList() ? 'detail' : 'lists';
+    renderVocabulary();
+  }
+
+  function revealVocabAnswer() {
+    if (!vocabPractice || vocabPractice.revealed) return;
+    vocabPractice.revealed = true;
+    renderVocabPractice();
+  }
+
+  function gradeVocabWord(grade) {
+    if (!vocabPractice || !vocabPractice.revealed) return;
+    if (grade === 'known') vocabPractice.known += 1;
+    else vocabPractice.again += 1;
+    vocabPractice.index += 1;
+    vocabPractice.revealed = false;
+    renderVocabPractice();
+  }
+
+  function vocabLanguageOptions(selected) {
+    return VOCAB_LANGUAGES.map(item =>
+      '<option value="' + esc(item[0]) + '"' + (item[0] === selected ? ' selected' : '') + '>' + esc(item[1]) + '</option>'
+    ).join('');
+  }
+
+  function setVocabDialogError(message) {
+    const error = $('vocab-dialog-error');
+    if (error) {
+      error.textContent = message || '';
+      error.hidden = !message;
+    }
+  }
+
+  function openVocabDialog(kind, options) {
+    const opts = options || {};
+    const dialog = $('vocab-dialog');
+    const title = $('vocab-dialog-title');
+    const body = $('vocab-dialog-body');
+    if (!dialog || !title || !body) return;
+    vocabDialogReturnFocus = document.activeElement;
+    vocabDialogContext = { kind, options: opts };
+    body.innerHTML = '';
+    setVocabDialogError('');
+
+    if (kind === 'list') {
+      const list = opts.list || null;
+      const selected = (list && list.language) || vocabDefaultLanguage();
+      title.textContent = list ? 'Edit list' : 'New list';
+      body.innerHTML = '<form id="vocab-list-form" class="vocab-form">' +
+        '<label class="vocab-field"><span>List name</span><input name="title" required maxlength="80" autocomplete="off" value="' + esc(list ? list.title : '') + '" placeholder="e.g. Travel essentials"></label>' +
+        '<label class="vocab-field"><span>Language</span><select name="language">' + vocabLanguageOptions(selected) + '</select></label>' +
+        '<label class="vocab-field"><span>Note <em>optional</em></span><input name="note" maxlength="400" autocomplete="off" value="' + esc(list ? list.note : '') + '" placeholder="Where these words came from"></label>' +
+        '<p id="vocab-dialog-error" class="vocab-form-hint" hidden></p>' +
+        '<div class="vocab-dialog-actions"><button type="button" class="vocab-btn" data-vocab-dialog-cancel>Cancel</button>' +
+        '<button type="submit" class="vocab-btn vocab-btn-primary">' + (list ? 'Save changes' : 'Create list') + '</button></div>' +
+      '</form>';
+    } else if (kind === 'word') {
+      if (!vocabLists.length) {
+        setVocabStatus('Create a list first, then save this word.');
+        openVocabDialog('list', { afterCreate: opts.prefill || null });
+        return;
+      }
+      const word = opts.word || null;
+      const prefill = opts.prefill || {};
+      const listId = opts.listId || (word && activeVocabList() ? activeVocabList().id : '') || (vocabLists.length === 1 ? vocabLists[0].id : '');
+      const listOptions = '<option value="" disabled' + (listId ? '' : ' selected') + '>Choose a list</option>' +
+        vocabLists.map(list => '<option value="' + esc(list.id) + '"' + (list.id === listId ? ' selected' : '') + '>' + esc(list.title) + '</option>').join('');
+      title.textContent = word ? 'Edit word' : 'Add word';
+      body.innerHTML = '<form id="vocab-word-form" class="vocab-form">' +
+        (vocabLists.length > 1 || !listId
+          ? '<label class="vocab-field"><span>List</span><select name="listId" required>' + listOptions + '</select></label>'
+          : '<input type="hidden" name="listId" value="' + esc(listId) + '">') +
+        '<label class="vocab-field"><span>Word or phrase</span><input name="term" required maxlength="80" autocomplete="off" value="' + esc(word ? word.term : (prefill.term || '')) + '" placeholder="e.g. a blessing in disguise"></label>' +
+        '<label class="vocab-field"><span>Meaning</span><input name="meaning" maxlength="240" autocomplete="off" value="' + esc(word ? word.meaning : '') + '" placeholder="Your translation or a short definition"></label>' +
+        '<label class="vocab-field"><span>Example <em>optional</em></span><textarea name="example" maxlength="300" placeholder="A sentence you want to remember">' + esc(word ? word.example : '') + '</textarea></label>' +
+        '<input type="hidden" name="pos" value="' + esc(word ? word.pos : (prefill.pos || '')) + '">' +
+        '<input type="hidden" name="source" value="' + esc(word ? word.source : (prefill.source || '')) + '">' +
+        '<p class="vocab-form-hint">' + (prefill.source || (word && word.source) ? 'Source: ' + esc(prefill.source || word.source) : 'Saved words stay in your account. Removing a word never changes the COSY dictionary.') + '</p>' +
+        '<p id="vocab-dialog-error" class="vocab-form-hint" hidden></p>' +
+        '<div class="vocab-dialog-actions"><button type="button" class="vocab-btn" data-vocab-dialog-cancel>Cancel</button>' +
+        '<button type="submit" class="vocab-btn vocab-btn-primary">' + (word ? 'Save word' : 'Add word') + '</button></div>' +
+      '</form>';
+    } else if (kind === 'delete-list' || kind === 'delete-word') {
+      const list = opts.list || activeVocabList();
+      const word = opts.word || null;
+      title.textContent = kind === 'delete-list' ? 'Delete list' : 'Remove word';
+      const isList = kind === 'delete-list';
+      const name = isList ? (list ? list.title : 'this list') : (word ? word.term : 'this word');
+      const detail = isList
+        ? 'This removes <strong>' + esc(name) + '</strong> and its saved words from your vocabulary. It does not change any COSY course, lesson or dictionary content.'
+        : 'Remove <strong>' + esc(name) + '</strong> from this list? The dictionary entry stays untouched.';
+      body.innerHTML = '<p class="vocab-confirm-copy">' + detail + '</p>' +
+        '<div class="vocab-dialog-actions"><button type="button" class="vocab-btn" data-vocab-dialog-cancel>Keep it</button>' +
+        '<button type="button" class="vocab-btn vocab-btn-danger" id="vocab-confirm-delete">' + (isList ? 'Delete list' : 'Remove word') + '</button></div>';
+    }
+
+    dialog.hidden = false;
+    document.body.style.overflow = 'hidden';
+    const focusTarget = body.querySelector('input, select, textarea, button');
+    if (focusTarget) focusTarget.focus();
+  }
+
+  function closeVocabDialog() {
+    const dialog = $('vocab-dialog');
+    if (!dialog) return;
+    dialog.hidden = true;
+    document.body.style.overflow = '';
+    vocabDialogContext = null;
+    if (vocabDialogReturnFocus && typeof vocabDialogReturnFocus.focus === 'function') {
+      vocabDialogReturnFocus.focus();
+    }
+    vocabDialogReturnFocus = null;
+  }
+
+  function saveVocabListFromForm(form) {
+    const data = new FormData(form);
+    const title = String(data.get('title') || '').trim();
+    if (!title) { setVocabDialogError('Give the list a name.'); return; }
+    const context = vocabDialogContext && vocabDialogContext.options || {};
+    const existing = context.list || null;
+    const now = vocabNow();
+    const list = normaliseVocabList({
+      id: existing ? existing.id : vocabUuid(),
+      title,
+      language: data.get('language') || 'en',
+      note: data.get('note'),
+      words: existing ? existing.words : [],
+      created_at: existing ? existing.createdAt : now,
+      updated_at: now,
+      last_practiced_at: existing ? existing.lastPracticedAt : '',
+      practice_rounds: existing ? existing.practiceRounds : 0
+    });
+    commitVocabListLocally(list);
+    closeVocabDialog();
+    setVocabStatus(existing ? 'List updated.' : 'List created.');
+    syncVocabList(list);
+    if (!existing && context.afterCreate) {
+      openVocabDialog('word', { listId: list.id, prefill: context.afterCreate });
+    } else if (!existing) {
+      openVocabDetail(list.id);
+    }
+  }
+
+  function saveVocabWordFromForm(form) {
+    const data = new FormData(form);
+    const list = getVocabList(String(data.get('listId') || ''));
+    if (!list) { setVocabDialogError('Choose a list first.'); return; }
+    const term = String(data.get('term') || '').trim();
+    if (!term) { setVocabDialogError('Add a word or phrase.'); return; }
+    const context = vocabDialogContext && vocabDialogContext.options || {};
+    const existing = context.word || null;
+    const duplicate = list.words.some(word =>
+      word.id !== (existing && existing.id) && word.term.toLowerCase() === term.toLowerCase()
+    );
+    if (duplicate) { setVocabDialogError('This word is already in the list.'); return; }
+
+    const word = normaliseVocabWord({
+      id: existing ? existing.id : vocabUuid(),
+      term,
+      meaning: data.get('meaning'),
+      example: data.get('example'),
+      pos: data.get('pos'),
+      source: data.get('source')
+    });
+    if (!word) { setVocabDialogError('Add a word or phrase.'); return; }
+    if (existing) {
+      list.words = list.words.map(item => item.id === existing.id ? word : item);
+    } else {
+      list.words = list.words.concat(word);
+    }
+    list.updatedAt = vocabNow();
+    commitVocabListLocally(list);
+    closeVocabDialog();
+    setVocabStatus(existing ? 'Word updated.' : 'Word added to ' + list.title + '.');
+    syncVocabList(list);
+  }
+
+  function deleteVocabList(list) {
+    if (!list) return;
+    vocabLists = vocabLists.filter(item => item.id !== list.id);
+    writeVocabCache();
+    vocabActiveId = null;
+    vocabView = 'lists';
+    renderVocabulary();
+    closeVocabDialog();
+    setVocabStatus('List deleted.');
+    deleteRemoteVocabList(list.id);
+  }
+
+  function deleteVocabWord(list, word) {
+    if (!list || !word) return;
+    list.words = list.words.filter(item => item.id !== word.id);
+    list.updatedAt = vocabNow();
+    commitVocabListLocally(list);
+    closeVocabDialog();
+    setVocabStatus('Word removed.');
+    syncVocabList(list);
+  }
+
+  function saveVocabularyFromSearch(term, pos, source) {
+    if (!term) return;
+    if (!vocabLists.length) {
+      setVocabStatus('Create a list first, then save this word.');
+      openVocabDialog('list', { afterCreate: { term, pos, source } });
+      return;
+    }
+    const listId = vocabActiveId || (vocabLists.length === 1 ? vocabLists[0].id : '');
+    openVocabDialog('word', { listId, prefill: { term, pos, source } });
+  }
+
+  function bindVocabularyWorkspace() {
+    const newButton = $('vocab-new-list');
+    if (newButton) newButton.addEventListener('click', () => openVocabDialog('list'));
+    const back = $('vocab-back');
+    if (back) back.addEventListener('click', backToVocabLists);
+    const practice = $('vocab-practice');
+    if (practice) practice.addEventListener('click', () => { if (vocabActiveId) startVocabPractice(vocabActiveId); });
+    const edit = $('vocab-edit');
+    if (edit) edit.addEventListener('click', () => {
+      const list = activeVocabList();
+      if (list) openVocabDialog('list', { list });
+    });
+    const remove = $('vocab-delete');
+    if (remove) remove.addEventListener('click', () => {
+      const list = activeVocabList();
+      if (list) openVocabDialog('delete-list', { list });
+    });
+    const addWord = $('vocab-add-word');
+    if (addWord) addWord.addEventListener('click', () => {
+      if (vocabActiveId) openVocabDialog('word', { listId: vocabActiveId });
+    });
+    const reveal = $('vocab-practice-reveal');
+    if (reveal) reveal.addEventListener('click', revealVocabAnswer);
+    const exit = $('vocab-practice-exit');
+    if (exit) exit.addEventListener('click', exitVocabPractice);
+    const summaryAgain = $('vocab-summary-again');
+    if (summaryAgain) summaryAgain.addEventListener('click', () => {
+      if (vocabPractice && vocabPractice.listId) startVocabPractice(vocabPractice.listId);
+    });
+    const summaryBack = $('vocab-summary-back');
+    if (summaryBack) summaryBack.addEventListener('click', exitVocabPractice);
+
+    document.querySelectorAll('[data-vocab-grade]').forEach(button => {
+      button.addEventListener('click', () => gradeVocabWord(button.getAttribute('data-vocab-grade')));
+    });
+
+    const listsEl = $('vocab-lists');
+    if (listsEl) listsEl.addEventListener('click', event => {
+      const button = event.target.closest('[data-vocab-action]');
+      if (!button) return;
+      const action = button.getAttribute('data-vocab-action');
+      const listId = button.getAttribute('data-list-id');
+      if (action === 'new-list') openVocabDialog('list');
+      else if (action === 'open' && listId) openVocabDetail(listId);
+      else if (action === 'practice' && listId) startVocabPractice(listId);
+    });
+
+    const wordsEl = $('vocab-detail-words');
+    if (wordsEl) wordsEl.addEventListener('click', event => {
+      const button = event.target.closest('[data-vocab-action]');
+      if (!button) return;
+      const list = activeVocabList();
+      if (!list) return;
+      const word = list.words.find(item => item.id === button.getAttribute('data-word-id'));
+      if (!word) return;
+      if (button.getAttribute('data-vocab-action') === 'edit-word') {
+        openVocabDialog('word', { listId: list.id, word });
+      } else if (button.getAttribute('data-vocab-action') === 'delete-word') {
+        openVocabDialog('delete-word', { list, word });
+      }
+    });
+
+    const dialog = $('vocab-dialog');
+    const close = $('vocab-dialog-close');
+    if (close) close.addEventListener('click', closeVocabDialog);
+    if (dialog) {
+      dialog.addEventListener('click', event => {
+        if (event.target === dialog) closeVocabDialog();
+        if (event.target.closest('[data-vocab-dialog-cancel]')) closeVocabDialog();
+        if (event.target.closest('#vocab-confirm-delete')) {
+          const context = vocabDialogContext || {};
+          const opts = context.options || {};
+          if (context.kind === 'delete-list') deleteVocabList(opts.list || activeVocabList());
+          else if (context.kind === 'delete-word') deleteVocabWord(opts.list || activeVocabList(), opts.word);
+        }
+      });
+    }
+    const dialogBody = $('vocab-dialog-body');
+    if (dialogBody) dialogBody.addEventListener('submit', event => {
+      event.preventDefault();
+      if (event.target.id === 'vocab-list-form') saveVocabListFromForm(event.target);
+      else if (event.target.id === 'vocab-word-form') saveVocabWordFromForm(event.target);
+    });
+
+    document.addEventListener('keydown', event => {
+      const dialog = $('vocab-dialog');
+      if (dialog && !dialog.hidden) {
+        if (event.key === 'Escape') closeVocabDialog();
+        return;
+      }
+      if (vocabView !== 'practice' || !vocabPractice) return;
+      const tag = (document.activeElement && document.activeElement.tagName) || '';
+      if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+      if (event.repeat) return;
+      if (event.code === 'Space') {
+        event.preventDefault();
+        revealVocabAnswer();
+      } else if (event.key === '1') {
+        event.preventDefault();
+        gradeVocabWord('again');
+      } else if (event.key === '2') {
+        event.preventDefault();
+        gradeVocabWord('known');
+      }
+    });
+  }
+
+  function initVocabularyWorkspace() {
+    if (vocabWorkspaceReady) {
+      initVocabularySearch();
+      renderVocabulary();
+      return;
+    }
+    vocabWorkspaceReady = true;
+    bindVocabularyWorkspace();
+    initVocabularySearch();
+    loadVocabularyLists();
+  }
 
   function loadVocabIndex() {
     if (window.CosyVocabIndex) return Promise.resolve();
@@ -2611,11 +3753,14 @@
       results.innerHTML = '<div class="profile-empty">No vocabulary found for “' + esc(q) + '”.</div>';
       return;
     }
-    results.innerHTML = top.map(item => (
-      '<div class="vocab-result"><div><strong>' + esc(item.word) + '</strong>' +
-      (item.pos ? '<span class="vocab-pos">' + esc(item.pos) + '</span>' : '') +
-      '<small>' + esc(item.file || 'COSYdata vocabulary') + (item.id ? ' · ' + esc(item.id) : '') + '</small></div></div>'
-    )).join('');
+    results.innerHTML = top.map(item => {
+      const source = vocabResultSource(item.file, item.id);
+      return '<div class="vocab-result"><div><strong>' + esc(item.word) + '</strong>' +
+        (item.pos ? '<span class="vocab-pos">' + esc(item.pos) + '</span>' : '') +
+        '<small>' + esc(source || 'COSYdata vocabulary') + '</small></div>' +
+        '<div class="vocab-result__actions"><button type="button" class="vocab-btn" ' +
+          'data-vocab-save="' + esc(item.word) + '" data-vocab-pos="' + esc(item.pos || '') + '" data-vocab-source="' + esc(source) + '">+ Save</button></div></div>';
+    }).join('');
   }
 
   function initVocabularySearch() {
@@ -2627,6 +3772,16 @@
     input.addEventListener('input', () => {
       if (timer) clearTimeout(timer);
       timer = setTimeout(() => searchVocabulary(input.value), 180);
+    });
+    const results = $('vocab-results');
+    if (results) results.addEventListener('click', event => {
+      const button = event.target.closest('[data-vocab-save]');
+      if (!button) return;
+      saveVocabularyFromSearch(
+        button.getAttribute('data-vocab-save'),
+        button.getAttribute('data-vocab-pos'),
+        button.getAttribute('data-vocab-source')
+      );
     });
     searchVocabulary('');
   }
