@@ -16,6 +16,7 @@
       --teacher-primary: var(--cosy-platform-teacher);
       --teacher-hover: var(--cosy-platform-teacher-hover);
       --teacher-light: var(--cosy-platform-teacher-light);
+      --teacher-border: var(--cosy-platform-teacher-border);
       --teacher-note-bg: var(--cosy-color-honey-pale);
       --teacher-note-border: var(--cosy-color-honey);
       --speech-bg: var(--cosy-semantic-success-light);
@@ -33,7 +34,11 @@
       border-radius: var(--cosy-radius-full, 100px);
       font-size: 0.8rem;
       font-weight: 700;
+      white-space: nowrap;
     }
+
+    .manual-header .logo-badge a span { white-space: nowrap; }
+    .manual-header .header-content { gap: 12px; max-width: 1500px; }
 
     .btn-logout {
       background-color: #334155;
@@ -600,6 +605,754 @@
     .grammar-focus__link { color: var(--accent-ink, #0369a1); font-weight: 600; text-decoration: none; }
     .grammar-focus__link:hover { text-decoration: underline; }
     .grammar-focus--invalid { color: var(--cosy-color-ink-muted, #64748b); font-style: italic; border: 1px dashed #cbd5e1; border-radius: 8px; padding: 10px 14px; }
+    /* ── Teacher dashboard shell ─────────────────────────────────────── */
+    main.teacher-dashboard-mode {
+      max-width: 1500px;
+      width: min(1500px, calc(100% - 32px));
+      padding: 22px 0 48px;
+      margin: 0 auto;
+    }
+
+    .teacher-dashboard-shell {
+      display: grid;
+      grid-template-columns: 248px minmax(0, 1fr);
+      gap: 24px;
+      align-items: start;
+      text-align: left;
+    }
+
+    .teacher-sidebar {
+      position: sticky;
+      top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      max-height: calc(100vh - 32px);
+      overflow: auto;
+      padding: 18px 14px;
+      border: 1px solid var(--border-color, #e2e8f0);
+      border-radius: 22px;
+      background: var(--card-bg, #fff);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+    }
+
+    .teacher-sidebar__brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 2px 8px 12px;
+      border-bottom: 1px solid var(--border-color, #e2e8f0);
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .teacher-sidebar__brand img { border-radius: 10px; }
+    .teacher-sidebar__brand span { display: flex; flex-direction: column; line-height: 1.1; }
+    .teacher-sidebar__brand strong { font-size: 1.05rem; letter-spacing: -0.02em; color: var(--cosy-color-ink, #0f172a); }
+    .teacher-sidebar__brand small { margin-top: 3px; font-size: 0.7rem; font-weight: 700; color: var(--cosy-color-ink-muted, #64748b); }
+
+    .teacher-sidebar__user {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px;
+      border-radius: 14px;
+      background: var(--teacher-light, #f3e8ff);
+    }
+
+    .teacher-avatar {
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--teacher-primary, #6d28d9);
+      color: var(--on-primary, #fff);
+      font-size: 0.95rem;
+      font-weight: 800;
+    }
+
+    .teacher-sidebar__user strong { display: block; font-size: 0.82rem; color: var(--cosy-color-ink, #0f172a); }
+    .teacher-sidebar__user small { display: block; margin-top: 2px; font-size: 0.7rem; font-weight: 700; color: var(--cosy-color-ink-muted, #64748b); }
+
+    .teacher-sidebar__nav { display: flex; flex-direction: column; gap: 3px; }
+    .teacher-sidebar__nav a {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 10px;
+      border-radius: 10px;
+      color: var(--cosy-color-ink-muted, #475569);
+      font-size: 0.82rem;
+      font-weight: 700;
+      line-height: 1.2;
+      text-decoration: none;
+      transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
+    }
+
+    .teacher-sidebar__nav a:hover {
+      background: var(--subtle-surface, #f8fafc);
+      color: var(--cosy-color-ink, #0f172a);
+      transform: translateX(1px);
+    }
+
+    .teacher-sidebar__nav a.is-active {
+      background: var(--teacher-primary, #6d28d9);
+      color: var(--on-primary, #fff);
+      box-shadow: 0 6px 14px rgba(109, 40, 217, 0.22);
+    }
+
+    .teacher-nav-badge {
+      display: grid;
+      place-items: center;
+      min-width: 18px;
+      height: 18px;
+      margin-left: auto;
+      padding: 0 5px;
+      border-radius: 999px;
+      background: #f97316;
+      color: #fff;
+      font-size: 0.64rem;
+      font-weight: 800;
+    }
+
+    .teacher-nav-badge[hidden] { display: none; }
+
+    .teacher-sidebar__label {
+      padding: 4px 10px 0;
+      font-size: 0.64rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--cosy-color-ink-muted, #94a3b8);
+    }
+
+    .teacher-sidebar__foot {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: auto;
+      padding: 10px 8px 2px;
+      border-top: 1px solid var(--border-color, #e2e8f0);
+      font-size: 0.68rem;
+      color: var(--cosy-color-ink-muted, #94a3b8);
+    }
+
+    .teacher-sidebar__dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.15);
+    }
+
+    .teacher-main { display: flex; flex-direction: column; gap: 20px; min-width: 0; }
+
+    .teacher-topbar {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 18px;
+      padding: 2px 2px 0;
+      scroll-margin-top: 18px;
+    }
+
+    .teacher-eyebrow {
+      margin: 0 0 5px;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--cosy-color-ink-muted, #64748b);
+    }
+
+    .teacher-topbar h1 {
+      margin: 0;
+      font-size: clamp(1.5rem, 2.6vw, 2.05rem);
+      letter-spacing: -0.04em;
+      color: var(--cosy-color-ink, #0f172a);
+    }
+
+    .teacher-subtitle { margin: 6px 0 0; font-size: 0.9rem; color: var(--cosy-color-ink-muted, #64748b); }
+    .teacher-topbar__actions { display: flex; flex-wrap: wrap; gap: 8px; }
+
+    .teacher-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 13px;
+      border: 1px solid var(--border-color, #e2e8f0);
+      border-radius: 999px;
+      background: var(--card-bg, #fff);
+      color: var(--cosy-color-ink-soft, #334155);
+      font-size: 0.77rem;
+      font-weight: 800;
+      line-height: 1;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+    }
+
+    .teacher-chip:hover {
+      transform: translateY(-1px);
+      border-color: var(--teacher-primary, #6d28d9);
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+    }
+
+    .teacher-chip--green { border-color: #a7f3d0; background: #ecfdf5; color: #047857; }
+    .teacher-chip--ghost { background: transparent; }
+    .teacher-chip #topbar-review-count:not([hidden]) {
+      display: grid;
+      place-items: center;
+      min-width: 18px;
+      height: 18px;
+      padding: 0 5px;
+      border-radius: 999px;
+      background: #f97316;
+      color: #fff;
+      font-size: 0.64rem;
+    }
+
+    .teacher-dashboard-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.55fr) minmax(300px, 0.85fr);
+      gap: 20px;
+      align-items: start;
+    }
+
+    .teacher-column { display: flex; flex-direction: column; gap: 20px; min-width: 0; }
+
+    .teacher-card {
+      padding: 20px;
+      border: 1px solid var(--border-color, #e2e8f0);
+      border-radius: 22px;
+      background: var(--card-bg, #fff);
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
+    }
+
+    .teacher-card__head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .teacher-card__eyebrow {
+      margin: 0 0 3px;
+      font-size: 0.64rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--cosy-color-ink-muted, #94a3b8);
+    }
+
+    .teacher-card h2 { margin: 0; font-size: 1.05rem; letter-spacing: -0.02em; color: var(--cosy-color-ink, #0f172a); }
+    .teacher-card__hint { max-width: 46ch; margin: 6px 0 0; font-size: 0.8rem; color: var(--cosy-color-ink-muted, #64748b); }
+    .teacher-card__actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
+
+    .teacher-schedule-controls { display: flex; align-items: center; gap: 6px; }
+
+    .teacher-icon-btn {
+      display: grid;
+      place-items: center;
+      width: 30px;
+      height: 30px;
+      border: 1px solid var(--border-color, #e2e8f0);
+      border-radius: 50%;
+      background: var(--subtle-surface, #f8fafc);
+      color: var(--cosy-color-ink-soft, #334155);
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .teacher-week-range {
+      padding: 6px 11px;
+      border: 1px solid var(--border-color, #e2e8f0);
+      border-radius: 999px;
+      background: var(--subtle-surface, #f8fafc);
+      color: var(--cosy-color-ink-soft, #334155);
+      font-size: 0.77rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .teacher-timeline-container { display: flex; flex-direction: column; }
+
+    .teacher-day {
+      display: grid;
+      grid-template-columns: 82px minmax(0, 1fr);
+      gap: 12px;
+      padding: 10px 0;
+      border-top: 1px solid var(--border-color, #f1f5f9);
+    }
+
+    .teacher-day:first-child { padding-top: 0; border-top: 0; }
+    .teacher-day__head { display: flex; flex-direction: column; gap: 2px; }
+    .teacher-day__head strong { font-size: 0.8rem; color: var(--cosy-color-ink, #0f172a); }
+    .teacher-day__head span { font-size: 0.7rem; font-weight: 700; color: var(--cosy-color-ink-muted, #94a3b8); }
+    .teacher-day.is-today .teacher-day__head strong { color: var(--teacher-primary, #6d28d9); }
+    .teacher-day__body { display: flex; flex-direction: column; gap: 6px; }
+
+    .teacher-event {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      padding: 9px 12px;
+      border: 1px solid transparent;
+      border-left: 4px solid var(--teacher-primary, #6d28d9);
+      border-radius: 12px;
+      background: var(--subtle-surface, #f8fafc);
+      color: var(--cosy-color-ink, #0f172a);
+      font: inherit;
+      text-align: left;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .teacher-event:hover { transform: translateX(2px); box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08); }
+    .teacher-event--green { border-left-color: #22c55e; background: #f0fdf4; }
+    .teacher-event--amber { border-left-color: #f59e0b; background: #fffbeb; }
+    .teacher-event__time { min-width: 42px; font-size: 0.76rem; font-weight: 800; font-variant-numeric: tabular-nums; color: var(--cosy-color-ink-soft, #334155); }
+    .teacher-event__body { display: flex; flex-direction: column; min-width: 0; }
+    .teacher-event__body strong { font-size: 0.82rem; }
+    .teacher-event__body small { font-size: 0.7rem; color: var(--cosy-color-ink-muted, #64748b); }
+    .teacher-event__arrow { margin-left: auto; color: var(--cosy-color-ink-muted, #94a3b8); font-weight: 800; }
+
+    .teacher-empty {
+      margin: 0;
+      padding: 9px 12px;
+      border: 1px dashed var(--border-color, #e2e8f0);
+      border-radius: 10px;
+      color: var(--cosy-color-ink-muted, #94a3b8);
+      font-size: 0.78rem;
+    }
+
+    .teacher-appreciation {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 14px;
+      align-items: center;
+      border-color: var(--teacher-border, #ddd6fe);
+      background: linear-gradient(135deg, var(--teacher-light, #f3e8ff), var(--card-bg, #fff) 72%);
+    }
+
+    .teacher-appreciation__metric { display: flex; flex-direction: column; min-width: 0; }
+    .teacher-appreciation__label { font-size: 0.68rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--cosy-color-ink-muted, #64748b); }
+    .teacher-appreciation__metric strong { margin: 2px 0; font-size: 1.9rem; font-variant-numeric: tabular-nums; letter-spacing: -0.04em; color: var(--cosy-color-ink, #0f172a); }
+    .teacher-appreciation__metric small { font-size: 0.7rem; font-weight: 700; color: var(--cosy-color-ink-muted, #64748b); }
+    .teacher-appreciation__divider { width: 1px; height: 46px; background: var(--teacher-border, #ddd6fe); }
+    .teacher-appreciation__note {
+      grid-column: 1 / -1;
+      margin: 0;
+      padding: 10px 12px;
+      border: 1px solid #fde68a;
+      border-radius: 10px;
+      background: #fffbeb;
+      color: #92400e;
+      font-size: 0.76rem;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .teacher-kpi-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .teacher-kpi {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      padding: 12px;
+      border: 1px solid var(--border-color, #e2e8f0);
+      border-radius: 16px;
+      background: var(--subtle-surface, #f8fafc);
+    }
+    .teacher-kpi__icon { font-size: 1rem; line-height: 1.2; }
+    .teacher-kpi strong { font-size: 1.45rem; font-variant-numeric: tabular-nums; letter-spacing: -0.03em; color: var(--cosy-color-ink, #0f172a); }
+    .teacher-kpi small { font-size: 0.7rem; font-weight: 700; color: var(--cosy-color-ink-muted, #64748b); }
+
+    .teacher-status-pill { padding: 5px 9px; border-radius: 999px; font-size: 0.66rem; font-weight: 800; white-space: nowrap; }
+    .teacher-status-pill--green { border: 1px solid #a7f3d0; background: #ecfdf5; color: #047857; }
+    .teacher-status-pill--amber { border: 1px solid #fde68a; background: #fffbeb; color: #b45309; }
+
+    .teacher-quality-list { display: flex; flex-direction: column; gap: 12px; }
+    .teacher-quality-row__top { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 5px; font-size: 0.75rem; font-weight: 700; color: var(--cosy-color-ink-soft, #334155); }
+    .teacher-quality-row__top strong { font-variant-numeric: tabular-nums; }
+    .teacher-quality-bar { height: 6px; overflow: hidden; border-radius: 999px; background: var(--subtle-surface, #f1f5f9); }
+    .teacher-quality-bar span { display: block; height: 100%; border-radius: 999px; background: #22c55e; transition: width 0.35s ease; }
+    .teacher-quality-bar span.is-amber { background: #f59e0b; }
+    .teacher-quality-note { margin: 14px 0 0; font-size: 0.72rem; line-height: 1.45; color: var(--cosy-color-ink-muted, #94a3b8); }
+
+    .teacher-quick-links { display: grid; gap: 6px; }
+    .teacher-quick-links a {
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      grid-template-rows: auto auto;
+      column-gap: 9px;
+      align-items: center;
+      padding: 9px 10px;
+      border: 1px solid transparent;
+      border-radius: 12px;
+      color: inherit;
+      text-decoration: none;
+    }
+    .teacher-quick-links a:hover { border-color: var(--border-color, #e2e8f0); background: var(--subtle-surface, #f8fafc); }
+    .teacher-quick-links a > span { grid-row: 1 / 3; font-size: 1.1rem; }
+    .teacher-quick-links strong { font-size: 0.8rem; }
+    .teacher-quick-links small { font-size: 0.7rem; color: var(--cosy-color-ink-muted, #64748b); }
+
+    .teacher-lower-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 20px; align-items: start; }
+    .teacher-section-card { scroll-margin-top: 18px; }
+    .teacher-section-card .admin-table-wrapper { margin-top: 4px; }
+    .teacher-section-card .admin-table th { font-size: 0.72rem; }
+
+    /* ── Catalog-first workspace ─────────────────────────────────────── */
+    .teacher-catalog-main { gap: 0; }
+
+    .teacher-catalog-panel {
+      padding: 26px;
+      border: 1px solid var(--border-color, #e2e8f0);
+      border-radius: 24px;
+      background: var(--card-bg, #fff);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+    }
+
+    .teacher-catalog-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .teacher-catalog-head h1 {
+      margin: 0;
+      font-size: clamp(1.55rem, 2.4vw, 2.05rem);
+      letter-spacing: -0.04em;
+      color: var(--cosy-color-ink, #0f172a);
+    }
+
+    .teacher-catalog-head p:not(.teacher-eyebrow) {
+      margin: 6px 0 0;
+      font-size: 0.88rem;
+      color: var(--cosy-color-ink-muted, #64748b);
+    }
+
+    .teacher-catalog-language {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      flex: 0 0 auto;
+    }
+
+    .teacher-catalog-language select {
+      appearance: none;
+      border: 1px solid var(--border-color, #e2e8f0);
+      border-radius: 999px;
+      background: var(--subtle-surface, #f1f5f9);
+      color: var(--cosy-color-ink, #0f172a);
+      font: inherit;
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 10px 34px 10px 38px;
+      cursor: pointer;
+    }
+
+    .teacher-catalog-language__globe {
+      position: absolute;
+      left: 13px;
+      font-size: 0.9rem;
+      pointer-events: none;
+    }
+
+    .teacher-catalog-language__chevron {
+      position: absolute;
+      right: 13px;
+      font-size: 0.7rem;
+      color: var(--cosy-color-ink-muted, #64748b);
+      pointer-events: none;
+    }
+
+    .teacher-catalog-tabs {
+      display: flex;
+      gap: 24px;
+      margin-top: 22px;
+      border-bottom: 1px solid var(--border-color, #e2e8f0);
+    }
+
+    .teacher-catalog-tab {
+      position: relative;
+      border: 0;
+      background: none;
+      padding: 10px 0 12px;
+      color: var(--cosy-color-ink-muted, #64748b);
+      font: inherit;
+      font-size: 0.82rem;
+      font-weight: 800;
+      cursor: default;
+    }
+
+    .teacher-catalog-tab.is-active { color: var(--cosy-platform-accent, #0891b2); }
+
+    .teacher-catalog-tab.is-active::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -1px;
+      height: 3px;
+      border-radius: 3px 3px 0 0;
+      background: var(--cosy-platform-accent, #0891b2);
+    }
+
+    .teacher-catalog-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin: 16px 0;
+    }
+
+    .teacher-catalog-hide {
+      border: 0;
+      background: none;
+      padding: 8px 0;
+      color: var(--cosy-color-ink-muted, #64748b);
+      font: inherit;
+      font-size: 0.78rem;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .teacher-catalog-hide:hover { color: var(--cosy-color-ink, #0f172a); }
+
+    .teacher-catalog-search {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-width: 260px;
+      padding: 9px 14px;
+      border: 1px solid var(--border-color, #e2e8f0);
+      border-radius: 999px;
+      background: var(--card-bg, #fff);
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .teacher-catalog-search:focus-within {
+      border-color: var(--cosy-platform-accent, #0891b2);
+      box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.14);
+    }
+
+    .teacher-catalog-search input {
+      width: 100%;
+      border: 0;
+      outline: 0;
+      background: transparent;
+      color: var(--cosy-color-ink, #0f172a);
+      font: inherit;
+      font-size: 0.84rem;
+    }
+
+    .teacher-catalog-box {
+      padding: 18px;
+      border: 1px solid #dbeafe;
+      border-radius: 20px;
+      background: #eef6ff;
+    }
+
+    .teacher-catalog-matrix {
+      column-count: 4;
+      column-gap: 16px;
+    }
+
+    .teacher-category-card {
+      display: inline-block;
+      width: 100%;
+      break-inside: avoid;
+      margin: 0 0 16px;
+      padding: 16px;
+      border: 1px solid var(--border-color, #e2e8f0);
+      border-radius: 16px;
+      background: var(--card-bg, #fff);
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+      vertical-align: top;
+    }
+
+    .teacher-category-card__head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .teacher-category-card__head h2 {
+      margin: 0;
+      font-size: 0.9rem;
+      line-height: 1.25;
+      color: var(--cosy-color-ink, #0f172a);
+    }
+
+    .teacher-category-card__count {
+      flex: 0 0 auto;
+      padding: 3px 7px;
+      border-radius: 999px;
+      background: var(--subtle-surface, #f1f5f9);
+      color: var(--cosy-color-ink-muted, #64748b);
+      font-size: 0.65rem;
+      font-weight: 800;
+    }
+
+    .teacher-category-card__list { display: flex; flex-direction: column; gap: 2px; }
+
+    .teacher-course-link {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      margin: 0 -7px;
+      padding: 8px 7px;
+      border-radius: 9px;
+      color: inherit;
+      text-decoration: none;
+      transition: background 0.15s ease;
+    }
+
+    .teacher-course-link:hover { background: var(--subtle-surface, #f8fafc); }
+    .teacher-course-link.is-disabled { opacity: 0.62; cursor: default; }
+
+    .teacher-course-dot {
+      flex: 0 0 auto;
+      width: 9px;
+      height: 9px;
+      margin-top: 5px;
+      border-radius: 50%;
+      background: var(--course-dot, #0ea5e9);
+    }
+
+    .teacher-course-copy { flex: 1; min-width: 0; }
+
+    .teacher-course-copy strong {
+      display: block;
+      color: var(--cosy-color-ink, #0f172a);
+      font-size: 0.78rem;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .teacher-course-copy small {
+      display: block;
+      margin-top: 2px;
+      color: var(--cosy-color-ink-muted, #64748b);
+      font-size: 0.66rem;
+      line-height: 1.25;
+    }
+
+    .teacher-course-badge {
+      flex: 0 0 auto;
+      padding: 3px 6px;
+      border-radius: 999px;
+      background: #fef3c7;
+      color: #b45309;
+      font-size: 0.58rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .teacher-course-arrow {
+      flex: 0 0 auto;
+      margin-top: 1px;
+      color: var(--cosy-color-ink-muted, #94a3b8);
+      font-size: 0.8rem;
+    }
+
+    .teacher-catalog-empty {
+      margin: 0;
+      padding: 42px 20px;
+      text-align: center;
+      color: var(--cosy-color-ink-muted, #64748b);
+      font-size: 0.86rem;
+    }
+
+    .teacher-catalog-box.is-hidden { display: none; }
+
+    .teacher-catalog-footer {
+      margin: 14px 0 0;
+      color: var(--cosy-color-ink-muted, #64748b);
+      font-size: 0.72rem;
+    }
+
+    html[data-theme="dark"],
+    body.theme-dark { --teacher-light: rgba(56, 189, 248, 0.14); --teacher-border: rgba(56, 189, 248, 0.3); }
+
+    html[data-theme="dark"] .teacher-catalog-box,
+    body.theme-dark .teacher-catalog-box { border-color: rgba(56, 189, 248, 0.2); background: rgba(56, 189, 248, 0.08); }
+    html[data-theme="dark"] .teacher-catalog-language select,
+    body.theme-dark .teacher-catalog-language select { background: var(--subtle-surface, #243244); }
+    html[data-theme="dark"] .teacher-course-badge,
+    body.theme-dark .teacher-course-badge { background: rgba(245, 158, 11, 0.16); color: #fcd34d; }
+
+    @media (max-width: 1400px) { .teacher-catalog-matrix { column-count: 3; } }
+    @media (max-width: 1100px) { .teacher-catalog-matrix { column-count: 2; } }
+    @media (max-width: 760px) {
+      .teacher-catalog-matrix { column-count: 1; }
+      .teacher-catalog-panel { padding: 18px; }
+      .teacher-catalog-toolbar { align-items: stretch; }
+      .teacher-catalog-search { width: 100%; min-width: 0; }
+      .teacher-catalog-language { width: 100%; }
+      .teacher-catalog-language select { width: 100%; }
+    }
+
+    html[data-theme="dark"] .teacher-event--green,
+    body.theme-dark .teacher-event--green { background: rgba(34, 197, 94, 0.14); }
+    html[data-theme="dark"] .teacher-event--amber,
+    body.theme-dark .teacher-event--amber { background: rgba(245, 158, 11, 0.14); }
+    html[data-theme="dark"] .teacher-appreciation__note,
+    body.theme-dark .teacher-appreciation__note { border-color: rgba(245, 158, 11, 0.35); background: rgba(245, 158, 11, 0.12); color: #fcd34d; }
+    html[data-theme="dark"] .teacher-chip--green,
+    body.theme-dark .teacher-chip--green { border-color: rgba(34, 197, 94, 0.3); background: rgba(34, 197, 94, 0.14); color: #86efac; }
+    html[data-theme="dark"] .teacher-status-pill--green,
+    body.theme-dark .teacher-status-pill--green { border-color: rgba(34, 197, 94, 0.3); background: rgba(34, 197, 94, 0.14); color: #86efac; }
+    html[data-theme="dark"] .teacher-status-pill--amber,
+    body.theme-dark .teacher-status-pill--amber { border-color: rgba(245, 158, 11, 0.35); background: rgba(245, 158, 11, 0.12); color: #fcd34d; }
+
+    @media (max-width: 1180px) {
+      .teacher-dashboard-grid { grid-template-columns: minmax(0, 1fr); }
+      .teacher-column--side { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .teacher-quick-card { grid-column: 1 / -1; }
+    }
+
+    @media (max-width: 980px) {
+      main.teacher-dashboard-mode { width: min(100% - 24px, 1500px); }
+      .teacher-dashboard-shell { grid-template-columns: 1fr; }
+      .teacher-sidebar { position: static; max-height: none; }
+      .teacher-sidebar__nav { flex-direction: row; flex-wrap: wrap; }
+      .teacher-sidebar__nav a { flex: 1 1 auto; }
+      .teacher-sidebar__label, .teacher-sidebar__foot { display: none; }
+      .teacher-lower-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 720px) {
+      .manual-header { padding: 10px 0; margin-bottom: 16px; }
+      .manual-header .header-content { padding: 0 12px; align-items: flex-start; }
+      .manual-header .logo-badge { flex-wrap: wrap; row-gap: 4px; }
+      .manual-header .badge-teacher { display: none; }
+      .manual-header .header-content > div:last-child { flex-wrap: wrap; gap: 8px; width: 100%; justify-content: space-between; }
+      #user-info { flex: 1 1 auto; white-space: normal !important; }
+      #user-info span { display: none; }
+      main.teacher-dashboard-mode { width: min(100% - 16px, 1500px); padding-top: 14px; }
+      .teacher-column--side { grid-template-columns: 1fr; }
+      .teacher-quick-card { grid-column: auto; }
+      .teacher-appreciation { grid-template-columns: 1fr; }
+      .teacher-appreciation__divider { display: none; }
+      .teacher-day { grid-template-columns: 1fr; gap: 4px; }
+      .teacher-day__head { flex-direction: row; align-items: baseline; gap: 8px; }
+      .teacher-topbar__actions { width: 100%; }
+      .teacher-chip { flex: 1 1 auto; justify-content: center; }
+      .teacher-card { padding: 16px; border-radius: 18px; }
+    }
   </style>
   <script src="vendor/supabase-js-2.49.1/supabase.js"></script>
   <script src="shared/js/config.js"></script>
@@ -624,18 +1377,16 @@
   <header class="manual-header">
     <div class="header-content">
       <div class="logo-badge" style="display: flex; align-items: center; gap: 10px;">
-        <a href="index.html" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: inherit;">
+        <a href="teacher.html" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: inherit;">
           <img src="shared/img/logo.svg" alt="COSY platform" style="height: 36px; width: 36px; object-fit: contain;">
           <span>COSY platform</span>
         </a>
-        <span class="badge-teacher">Teacher Catalog &amp; Guide</span>
+        <span class="badge-teacher">Teacher Workspace</span>
       </div>
       <div style="display: flex; align-items: center; gap: 12px;">
         <div id="founder-mode-switcher"></div>
-        <a href="profile.html" class="btn" style="background: #e0f2fe; color: #0369a1; padding: 4px 12px; text-decoration: none; font-size: 0.8rem; border-radius: 6px; font-weight: 700;">👤 My Profile</a>
-        <a href="classroom.html" class="btn" style="background: #047857; color: white; padding: 4px 12px; text-decoration: none; font-size: 0.8rem; border-radius: 6px; font-weight: 600;">Live Classroom 🎥</a>
-        <div id="user-info" style="font-size: 0.85rem; color: var(--cosy-color-ink-muted, #64748b);"></div>
-        <button onclick="window.CosyAuth.logout()" class="btn-logout">Log Out</button>
+        <div id="user-info" style="font-size: 0.85rem; color: var(--cosy-color-ink-muted, #64748b); white-space: nowrap;"></div>
+        <button onclick="window.CosyAuth.logout()" class="btn-logout" style="white-space: nowrap;">Log Out</button>
       </div>
     </div>
   </header>
@@ -659,6 +1410,7 @@
     const levelParam = urlParams.get('level');
     const lessonParam = urlParams.get('lesson');
     const langParam = urlParams.get('lang');
+    const viewParam = urlParams.get('view');
 
     async function initTeacherApp() {
       if (window.CosyI18n && window.CosyI18n.ready) {
@@ -674,7 +1426,7 @@
       if (client) {
         const { data: serverProfile, error: profileErr } = await client
           .from('profiles')
-          .select('id, role, language_access, course_level')
+          .select('id, role, display_name, language_access, course_level')
           .eq('id', authData.user.id)
           .maybeSingle();
 
@@ -704,7 +1456,13 @@
       }
 
       const userEmail = authData.user ? authData.user.email : '';
-      let userInfoText = `Teacher: ${userEmail || 'Teacher'}`;
+      const userMeta = authData.user && authData.user.user_metadata ? authData.user.user_metadata : {};
+      const displayName = (authData.profile && authData.profile.display_name)
+        || userMeta.full_name
+        || userMeta.name
+        || (userEmail ? userEmail.split('@')[0] : 'Teacher');
+      window.currentTeacherName = displayName;
+      let userInfoText = `Teacher: ${escapeHtml(displayName)}`;
 
       const isAuthor = window.CosyAuthoring && typeof window.CosyAuthoring.canAuthor === 'function'
         ? await window.CosyAuthoring.canAuthor('teacher')
@@ -728,6 +1486,8 @@
         renderLesson(lessonParam, authData.profile);
       } else if (courseParam) {
         renderCourseRoadmap(courseParam, levelParam, authData.profile);
+      } else if ((viewParam || '').toLowerCase() === 'dashboard') {
+        await renderTeacherOverview(authData.profile, fullManifest);
       } else {
         await renderTeacherCatalog(authData.profile, fullManifest);
       }
@@ -757,8 +1517,341 @@
       return flags[code.toLowerCase()] || '';
     }
 
+    function getTeacherGreeting() {
+      const hour = new Date().getHours();
+      if (hour < 12) return 'Good morning';
+      if (hour < 18) return 'Good afternoon';
+      return 'Good evening';
+    }
+
+    function formatTeacherClock() {
+      try {
+        return new Intl.DateTimeFormat(undefined, {
+          weekday: 'long',
+          day: 'numeric',
+          month: 'long',
+          hour: '2-digit',
+          minute: '2-digit',
+          timeZoneName: 'short'
+        }).format(new Date());
+      } catch (e) {
+        return new Date().toLocaleString();
+      }
+    }
+
+    function setupTeacherSidebar() {
+      document.querySelectorAll('[data-teacher-nav]').forEach(link => {
+        link.addEventListener('click', event => {
+          const href = link.getAttribute('href') || '';
+          if (!href.startsWith('#')) return;
+          const target = document.querySelector(href);
+          if (!target) return;
+          event.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          document.querySelectorAll('.teacher-sidebar__nav a').forEach(item => {
+            item.classList.toggle('is-active', item.getAttribute('href') === href);
+          });
+        });
+      });
+    }
+
+    function setTeacherText(id, value) {
+      const el = document.getElementById(id);
+      if (el) el.textContent = String(value);
+    }
+
+    function setTeacherBar(id, value) {
+      const el = document.getElementById(id);
+      if (el) el.style.width = Math.max(0, Math.min(100, Number(value) || 0)) + '%';
+    }
+
+    function refreshTeacherDashboardMetrics() {
+      const progressRows = Array.isArray(window.myStudentsProgressData) ? window.myStudentsProgressData : [];
+      const submissions = Array.isArray(window.allTeacherSubmissions) ? window.allTeacherSubmissions : [];
+
+      const byStudent = new Map();
+      progressRows.forEach(row => {
+        const id = row.student_id || 'unknown';
+        const current = byStudent.get(id) || { answered: 0, correct: 0, last: 0 };
+        current.answered += Number(row.answered || 0);
+        current.correct += Number(row.correct || 0);
+        const at = row.last_activity ? new Date(row.last_activity).getTime() : 0;
+        if (at > current.last) current.last = at;
+        byStudent.set(id, current);
+      });
+
+      const studentCount = byStudent.size;
+      const staleBefore = Date.now() - 14 * 24 * 60 * 60 * 1000;
+      let attention = 0;
+      byStudent.forEach(student => {
+        const accuracy = student.answered > 0 ? student.correct / student.answered : 0;
+        if (accuracy < 0.6 || !student.last || student.last < staleBefore) attention += 1;
+      });
+
+      const unreviewed = submissions.filter(item => item.status !== 'reviewed').length;
+      const unreviewedPct = submissions.length ? Math.round((unreviewed / submissions.length) * 100) : 0;
+      const attentionPct = studentCount ? Math.round((attention / studentCount) * 100) : 0;
+
+      setTeacherText('kpi-students', studentCount);
+      setTeacherText('kpi-reviews', unreviewed);
+      setTeacherText('topbar-review-count', unreviewed);
+      setTeacherText('sidebar-review-count', unreviewed);
+      setTeacherText('quality-unreviewed-value', unreviewedPct + '%');
+      setTeacherText('quality-attention-value', attentionPct + '%');
+      setTeacherBar('quality-unreviewed-bar', unreviewedPct);
+      setTeacherBar('quality-attention-bar', attentionPct);
+
+      const topbarCount = document.getElementById('topbar-review-count');
+      if (topbarCount) topbarCount.hidden = unreviewed === 0;
+      const sidebarCount = document.getElementById('sidebar-review-count');
+      if (sidebarCount) sidebarCount.hidden = unreviewed === 0;
+
+      const pill = document.getElementById('quality-status-pill');
+      if (pill) {
+        const needsAttention = unreviewedPct > 0 || attentionPct > 0;
+        pill.textContent = needsAttention ? 'Needs attention' : 'On track';
+        pill.classList.toggle('teacher-status-pill--green', !needsAttention);
+        pill.classList.toggle('teacher-status-pill--amber', needsAttention);
+      }
+    }
+
+    window.refreshTeacherDashboardMetrics = refreshTeacherDashboardMetrics;
+    function renderTeacherSidebar({ active = 'catalog', teacherName = 'Teacher', isFounder = false } = {}) {
+      const initial = teacherName.trim().charAt(0).toUpperCase() || 'T';
+      const roleLabel = isFounder ? 'Founder view' : 'Teacher';
+      const dashboardActive = active === 'dashboard';
+      const catalogActive = active === 'catalog';
+      const dashboardViewPrefix = dashboardActive ? '' : 'teacher.html?view=dashboard';
+
+      return `
+        <aside class="teacher-sidebar" aria-label="Teacher workspace navigation">
+          <a class="teacher-sidebar__brand" href="teacher.html">
+            <img src="shared/img/logo.svg" alt="" width="34" height="34">
+            <span><strong>COSY</strong><small>Teacher space</small></span>
+          </a>
+          <div class="teacher-sidebar__user">
+            <span class="teacher-avatar">${escapeHtml(initial)}</span>
+            <span><strong>${escapeHtml(teacherName)}</strong><small>${escapeHtml(roleLabel)}</small></span>
+          </div>
+          <nav class="teacher-sidebar__nav" aria-label="Teacher sections">
+            <a href="teacher.html?view=dashboard" class="${dashboardActive ? 'is-active' : ''}">🏠 <span>Dashboard</span></a>
+            <a href="teacher.html" class="${catalogActive ? 'is-active' : ''}">📚 <span>Lesson catalog</span></a>
+            <a href="${dashboardViewPrefix}#my-students-section" data-teacher-nav>👥 <span>My students</span></a>
+            <a href="${dashboardViewPrefix}#student-roster-section" data-teacher-nav>📝 <span>Assignments</span><span class="teacher-nav-badge" id="sidebar-review-count" hidden>0</span></a>
+            <a href="${dashboardViewPrefix}#my-notes-section" data-teacher-nav>🗒️ <span>Class notes</span></a>
+            <a href="lesson-studio.html">✨ <span>Lesson Studio</span></a>
+            <a href="classroom.html">🎥 <span>Live Classroom</span></a>
+          </nav>
+          <div class="teacher-sidebar__label">Account</div>
+          <nav class="teacher-sidebar__nav teacher-sidebar__nav--secondary" aria-label="Account and help">
+            <a href="profile.html">👤 <span>My profile</span></a>
+            ${isFounder ? '<a href="founder.html">👑 <span>Founder portal</span></a>' : ''}
+            <a href="https://cosylanguages.github.io/COSYmanuals/" target="_blank" rel="noopener">📖 <span>Help center</span></a>
+          </nav>
+          <div class="teacher-sidebar__foot"><span class="teacher-sidebar__dot"></span><span>Private teacher workspace</span></div>
+        </aside>
+      `;
+    }
+
+
+
+    const TEACHER_TRACK_META = {
+      General: { label: 'General', color: '#0ea5e9' },
+      Grammar: { label: 'Grammar', color: '#6366f1' },
+      Vocabulary: { label: 'Vocabulary', color: '#8b5cf6' },
+      'Phrasal Verbs': { label: 'Phrasal verbs', color: '#a855f7' },
+      Spoken: { label: 'Conversation', color: '#06b6d4' },
+      Pronunciation: { label: 'Pronunciation', color: '#14b8a6' },
+      Professional: { label: 'Professional', color: '#f59e0b' },
+      Travelling: { label: 'Travel', color: '#22c55e' },
+      Relocation: { label: 'Relocation', color: '#84cc16' },
+      Exam: { label: 'Exams', color: '#ef4444' },
+      Introductory: { label: 'Introductory', color: '#64748b' }
+    };
+
+    function getTeacherTrackMeta(track) {
+      return TEACHER_TRACK_META[track] || { label: track || 'General', color: '#0ea5e9' };
+    }
+
+    function teacherLevelOrder(level) {
+      const order = ['a0', 'a1', 'a2', 'b1', 'b2', 'c1', 'c2'];
+      const first = String(level || '').toLowerCase().split('-')[0];
+      const index = order.indexOf(first);
+      return index === -1 ? 99 : index;
+    }
+
+    function renderTeacherCatalogCourse(course, track) {
+      const meta = getTeacherTrackMeta(track);
+      const level = String(course.level || '').toUpperCase();
+      const title = escapeHtml(course.title || course.id);
+      const metaLine = escapeHtml([level, meta.label].filter(Boolean).join(' · '));
+      const dot = `<span class="teacher-course-dot" style="--course-dot:${meta.color}" aria-hidden="true"></span>`;
+      const copy = `<span class="teacher-course-copy"><strong>${title}</strong><small>${metaLine}</small></span>`;
+
+      if (course.status === 'not_yet_available') {
+        return `<div class="teacher-course-link is-disabled" aria-disabled="true" title="Coming soon">${dot}${copy}<span class="teacher-course-badge">Soon</span></div>`;
+      }
+
+      const href = `teacher.html?course=${encodeURIComponent(course.id)}&level=${encodeURIComponent(String(course.level || '').toLowerCase())}`;
+      return `<a class="teacher-course-link" href="${href}" data-course-id="${escapeHtml(course.id)}">${dot}${copy}<span class="teacher-course-arrow" aria-hidden="true">→</span></a>`;
+    }
+
     async function renderTeacherCatalog(profile, fullManifest) {
       const appRoot = document.getElementById('app-root');
+      appRoot.classList.add('teacher-dashboard-mode');
+
+      const accessible = fullManifest.filter(c => window.CosyAuth.isCourseAccessible(c, profile));
+      const languages = [...new Set(accessible.map(c => String(c.lang || 'en').toLowerCase()))]
+        .sort((a, b) => getLangName(a).localeCompare(getLangName(b)));
+      const requested = (langParam || '').toLowerCase();
+      const profileLanguages = Array.isArray(profile.language_access)
+        ? profile.language_access.map(l => String(l).toLowerCase())
+        : [];
+      const preferredLanguage = languages.includes(requested)
+        ? requested
+        : (profileLanguages.find(l => languages.includes(l)) || (languages.includes('en') ? 'en' : languages[0] || 'en'));
+
+      window.teacherCatalogCourses = accessible;
+      window.teacherCatalogState = { lang: preferredLanguage, query: '' };
+
+      const teacherName = window.currentTeacherName || 'Teacher';
+      const isFounder = profile && profile.role === 'founder';
+      const languageOptions = languages.length
+        ? languages.map(code => `<option value="${escapeHtml(code)}"${code === preferredLanguage ? ' selected' : ''}>${escapeHtml(getLangName(code))}</option>`).join('')
+        : '<option value="en">English</option>';
+
+      appRoot.innerHTML = `
+        <div class="teacher-dashboard-shell">
+          ${renderTeacherSidebar({ active: 'catalog', teacherName, isFounder })}
+          <div class="teacher-main teacher-catalog-main">
+            <section class="teacher-catalog-panel" aria-labelledby="teacher-catalog-title">
+              <header class="teacher-catalog-head">
+                <div>
+                  <p class="teacher-eyebrow">Teacher workspace</p>
+                  <h1 id="teacher-catalog-title">Lesson catalog</h1>
+                  <p>Choose a course, open the roadmap and prepare your next class.</p>
+                </div>
+                <label class="teacher-catalog-language">
+                  <span class="teacher-catalog-language__globe" aria-hidden="true">🌐</span>
+                  <select id="teacher-catalog-language" onchange="changeTeacherCatalogLanguage(this.value)" aria-label="Catalog language">${languageOptions}</select>
+                  <span class="teacher-catalog-language__chevron" aria-hidden="true">▾</span>
+                </label>
+              </header>
+
+              <div class="teacher-catalog-tabs" role="tablist" aria-label="Catalog views">
+                <button type="button" class="teacher-catalog-tab is-active" role="tab" aria-selected="true">Recommended lessons</button>
+              </div>
+
+              <div class="teacher-catalog-toolbar">
+                <button type="button" class="teacher-catalog-hide" id="teacher-catalog-toggle" onclick="toggleTeacherCatalogVisibility()" aria-expanded="true">× Hide catalog</button>
+                <label class="teacher-catalog-search">
+                  <span aria-hidden="true">🔍</span>
+                  <input id="teacher-catalog-search" type="search" placeholder="Search material" autocomplete="off" oninput="filterTeacherCatalog(this.value)">
+                </label>
+              </div>
+
+              <div class="teacher-catalog-box" id="teacher-catalog-box">
+                <div class="teacher-catalog-matrix" id="teacher-catalog-matrix"></div>
+                <p class="teacher-catalog-empty" id="teacher-catalog-empty" hidden>No courses match your search.</p>
+              </div>
+              <p class="teacher-catalog-footer" id="teacher-catalog-count"></p>
+            </section>
+          </div>
+        </div>
+      `;
+
+      renderTeacherCatalogMatrix();
+    }
+
+    function renderTeacherCatalogMatrix() {
+      const matrix = document.getElementById('teacher-catalog-matrix');
+      const empty = document.getElementById('teacher-catalog-empty');
+      const count = document.getElementById('teacher-catalog-count');
+      if (!matrix || !empty || !count) return;
+
+      const state = window.teacherCatalogState || { lang: 'en', query: '' };
+      const allCourses = window.teacherCatalogCourses || [];
+      const query = String(state.query || '').trim().toLowerCase();
+      const courses = allCourses
+        .filter(c => String(c.lang || 'en').toLowerCase() === state.lang)
+        .filter(c => !query || [c.title, c.track, c.level, c.id, getLangName(c.lang)].join(' ').toLowerCase().includes(query));
+
+      count.textContent = `${courses.length} course${courses.length === 1 ? '' : 's'} shown${query ? ` for “${state.query.trim()}”` : ''}.`;
+
+      if (courses.length === 0) {
+        matrix.innerHTML = '';
+        empty.hidden = false;
+        empty.textContent = query ? 'No courses match your search.' : 'No courses are available for this language yet.';
+        return;
+      }
+
+      empty.hidden = true;
+      const groups = {};
+      courses.forEach(c => {
+        const track = c.track || 'General';
+        if (!groups[track]) groups[track] = [];
+        groups[track].push(c);
+      });
+
+      const trackOrder = ['General', 'Grammar', 'Vocabulary', 'Phrasal Verbs', 'Spoken', 'Pronunciation', 'Professional', 'Travelling', 'Relocation', 'Exam', 'Introductory'];
+      const tracks = Object.keys(groups).sort((a, b) => {
+        const ai = trackOrder.indexOf(a);
+        const bi = trackOrder.indexOf(b);
+        return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi) || a.localeCompare(b);
+      });
+      const languageName = getLangName(state.lang);
+
+      matrix.innerHTML = tracks.map(track => {
+        const items = groups[track]
+          .slice()
+          .sort((a, b) => teacherLevelOrder(a.level) - teacherLevelOrder(b.level) || String(a.title).localeCompare(String(b.title)));
+        const available = items.filter(c => c.status !== 'not_yet_available').length;
+        const comingSoon = items.length - available;
+        const meta = getTeacherTrackMeta(track);
+
+        return `
+          <article class="teacher-category-card">
+            <div class="teacher-category-card__head">
+              <h2>${escapeHtml(languageName)} · ${escapeHtml(meta.label)}</h2>
+              <span class="teacher-category-card__count">${available}${comingSoon > 0 ? ` +${comingSoon}` : ''}</span>
+            </div>
+            <div class="teacher-category-card__list">
+              ${items.map(course => renderTeacherCatalogCourse(course, track)).join('')}
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    function changeTeacherCatalogLanguage(value) {
+      if (!window.teacherCatalogState) return;
+      window.teacherCatalogState.lang = value;
+      const url = new URL(window.location.href);
+      url.searchParams.set('lang', value);
+      window.history.replaceState({}, '', url);
+      renderTeacherCatalogMatrix();
+    }
+
+    function filterTeacherCatalog(value) {
+      if (!window.teacherCatalogState) return;
+      window.teacherCatalogState.query = value || '';
+      renderTeacherCatalogMatrix();
+    }
+
+    function toggleTeacherCatalogVisibility() {
+      const box = document.getElementById('teacher-catalog-box');
+      const button = document.getElementById('teacher-catalog-toggle');
+      if (!box || !button) return;
+      const hidden = box.classList.toggle('is-hidden');
+      button.textContent = hidden ? '+ Show catalog' : '× Hide catalog';
+      button.setAttribute('aria-expanded', String(!hidden));
+    }
+
+
+
+    async function renderTeacherOverview(profile, fullManifest) {
+      const appRoot = document.getElementById('app-root');
+      appRoot.classList.add('teacher-dashboard-mode');
 
       let courseList = fullManifest.filter(c => window.CosyAuth.isCourseAccessible(c, profile));
       if (langParam) {
@@ -767,106 +1860,83 @@
 
       const langFlag = langParam ? getLangFlag(langParam) : '';
       const langName = langParam ? getLangName(langParam) : '';
-      const headingText = langName ? `${langFlag ? langFlag + ' ' : ''}${langName} Teacher Space` : 'Teacher Catalog 📚';
+      const catalogHeading = langName ? `${langFlag ? langFlag + ' ' : ''}${langName} courses` : 'Lesson catalog';
+      const teacherName = window.currentTeacherName || 'Teacher';
+      const firstName = teacherName.trim().split(/\s+/)[0] || teacherName;
+      const isFounder = profile && profile.role === 'founder';
+      const greeting = getTeacherGreeting();
+      const clock = formatTeacherClock();
 
       let html = `
-        <div class="catalog-container">
-          <div class="catalog-header">
-            <div>
-              <h1 style="font-size: 1.6rem; color: var(--cosy-color-ink, #0f172a);">${headingText}</h1>
-              <p style="color: var(--cosy-color-ink-muted, #64748b);">Teachers have access to all assigned tracks, curriculums, and speech scripts.</p>
-            </div>
-            <div style="display: flex; gap: 8px;">
-              <button id="create-lesson-btn" onclick="openLessonCreatorModal()" class="btn" style="display: none; background: #0284c7; color: white; padding: 6px 14px; font-size: 0.85rem; font-weight: 600; cursor: pointer; border-radius: 6px; border: none;">➕ Create New Lesson</button>
-              <a href="lesson-studio.html" class="btn" style="background: #7c3aed; color: white; padding: 6px 14px; text-decoration: none; font-size: 0.85rem; font-weight: 700; border-radius: 6px;">✦ Lesson Studio</a>
-              ${profile && profile.role === 'founder' ? '<a href="founder.html" class="btn btn-outline" style="font-size: 0.85rem;">← Founder Portal</a>' : ''}
-            </div>
-          </div>
+        <div class="teacher-dashboard-shell">
+          ${renderTeacherSidebar({ active: 'dashboard', teacherName, isFounder })}
 
-          <!-- Weekly Schedule Section (Edvibe / Skyeng Timetable) -->
-          <div id="teacher-schedule-section" class="schedule-wrapper">
-            <div class="schedule-header">
-              <div style="display: flex; align-items: center; gap: 12px;">
-                <h2 style="font-size: 1.3rem; font-weight: 800; color: var(--cosy-color-ink, #0f172a); margin: 0;">📅 Schedule & Live Timetable</h2>
-                <span class="badge-teacher" style="background: var(--accent-tint, #e0f2fe); color: var(--accent-ink, #0369a1);">Interactive Grid</span>
+          <div class="teacher-main">
+            <div class="teacher-topbar" id="teacher-overview">
+              <div>
+                <p class="teacher-eyebrow">${escapeHtml(clock)}</p>
+                <h1>${escapeHtml(greeting)}, ${escapeHtml(firstName)}</h1>
+                <p class="teacher-subtitle">Your lessons, students and review queue in one place.</p>
               </div>
-              <div class="schedule-nav">
-                <button onclick="changeScheduleWeek(-1)" class="btn btn-outline" style="padding: 4px 10px; font-weight: 700;">←</button>
-                <span id="schedule-week-range" style="font-weight: 700; color: var(--cosy-color-ink-soft, #334155); font-size: 0.95rem; background: var(--subtle-surface, #f8fafc); padding: 6px 14px; border: 1px solid #cbd5e1; border-radius: 8px;">26 Oct. - 1 Nov.</span>
-                <button onclick="changeScheduleWeek(1)" class="btn btn-outline" style="padding: 4px 10px; font-weight: 700;">→</button>
-                <select id="schedule-tz-select" style="padding: 6px 10px; border-radius: 8px; border: 1px solid #cbd5e1; font-size: 0.85rem; background: var(--subtle-surface, #f8fafc);">
-                  <option value="UTC+2" selected>10:39 (UTC+2)</option>
-                  <option value="UTC+0">UTC+0 (GMT)</option>
-                  <option value="UTC+3">UTC+3 (MSK)</option>
-                </select>
-              </div>
-            </div>
-            <div id="schedule-grid-target" class="schedule-grid-container">
-              <!-- Rendered via JS -->
-            </div>
-          </div>
-
-          <!-- My Students Progress Table Section -->
-          <div id="my-students-section" style="margin-bottom: 30px; background: var(--card-bg, white); border: 1px solid #cbd5e1; border-radius: var(--cosy-radius-md, 14px); padding: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
-              <h2 style="font-size: 1.2rem; font-weight: 700; color: var(--teacher-primary, #6d28d9); margin: 0;">
-                <span>${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.myStudentsTitle") : "🧑‍🎓 My Students"}</span>
-              </h2>
-              <button onclick="loadMyStudentsProgress()" style="font-size: 0.8rem; padding: 4px 10px; background: #f3e8ff; color: var(--teacher-primary, #6d28d9); border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.refreshStudents") : "Refresh 🔄"}</button>
-            </div>
-            <div id="my-students-table-container">
-              <p style="color: var(--cosy-color-ink-muted, #64748b); font-size: 0.85rem;">${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.loadingStudents") : "Loading student progress..."}</p>
-            </div>
-          </div>
-
-          <!-- Grid Layout for Submissions & Notes Side by Side -->
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 20px; margin-bottom: 30px; align-items: start;">
-            <!-- Student Submissions Section -->
-            <div id="student-roster-section" style="background: var(--card-bg, white); border: 1px solid #cbd5e1; border-radius: var(--cosy-radius-md, 14px); padding: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
-              <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 12px;">
-                <div style="display: flex; align-items: center; gap: 8px;">
-                  <h2 style="font-size: 1.2rem; font-weight: 700; color: var(--accent-ink, #0369a1); margin: 0;">
-                    <span>${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.submissionsTitle") : "🧑‍🎓 Student Submissions"}</span>
-                  </h2>
-                  <span id="unreviewed-count-badge" style="background: #ef4444; color: white; font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 12px; display: none;"></span>
-                </div>
-                <button onclick="loadTeacherSubmissions()" style="font-size: 0.8rem; padding: 4px 10px; background: var(--accent-tint, #e0f2fe); color: var(--accent-ink, #0369a1); border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.refreshRoster") : "Refresh Submissions 🔄"}</button>
-              </div>
-
-              <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px;">
-                <select id="teacher-status-filter" onchange="renderGroupedSubmissions()" style="padding: 6px 10px; border-radius: 6px; border: 1px solid #cbd5e1; font-size: 0.85rem;">
-                  <option value="all">${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.filterAll") : "All Submissions"}</option>
-                  <option value="unreviewed" selected>${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.filterUnreviewed") : "Unreviewed Only"}</option>
-                  <option value="reviewed">${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.filterReviewed") : "Reviewed Only"}</option>
-                </select>
-
-                <select id="teacher-student-select" onchange="renderGroupedSubmissions()" style="padding: 6px 10px; border-radius: 6px; border: 1px solid #cbd5e1; font-size: 0.85rem; flex: 1; min-width: 150px;">
-                  <option value="">${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.selectStudent") : "Select Student:"}</option>
-                </select>
-              </div>
-
-              <div id="student-submissions-container">
-                <p style="color: var(--cosy-color-ink-muted, #64748b); font-size: 0.85rem;">Loading submissions...</p>
+              <div class="teacher-topbar__actions">
+                <a class="teacher-chip teacher-chip--green" href="classroom.html">🎥 Open classroom</a>
+                <a class="teacher-chip" href="#student-roster-section" data-teacher-nav>🕘 Review queue <span id="topbar-review-count" hidden>0</span></a>
+                <a class="teacher-chip teacher-chip--ghost" href="profile.html">👤 My profile</a>
               </div>
             </div>
 
-            <!-- My Shared Notes Section -->
-            <div id="my-notes-section" style="background: var(--card-bg, white); border: 1px solid #cbd5e1; border-radius: var(--cosy-radius-md, 14px); padding: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
-              <h2 style="font-size: 1.2rem; font-weight: 700; color: var(--teacher-primary, #6d28d9); margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;">
-                <span>📝 My Classroom Notes</span>
-                <button onclick="loadUserNotes('teacher')" style="font-size: 0.8rem; padding: 4px 10px; background: #f3e8ff; color: var(--teacher-primary, #6d28d9); border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">Refresh 🔄</button>
-              </h2>
-              <div id="user-notes-container">
-                <p style="color: var(--cosy-color-ink-muted, #64748b); font-size: 0.85rem;">Loading your notes...</p>
-              </div>
-            </div>
-          </div>
+            <div class="teacher-dashboard-grid">
+              <div class="teacher-column teacher-column--main">
+                <section class="teacher-card" id="teacher-schedule-section">
+                  <div class="teacher-card__head">
+                    <div>
+                      <p class="teacher-card__eyebrow">This week</p>
+                      <h2>🗓️ Schedule</h2>
+                      <p class="teacher-card__hint">Your local time · 50 minute lessons</p>
+                    </div>
+                    <div class="teacher-schedule-controls">
+                      <button type="button" onclick="changeScheduleWeek(-1)" class="teacher-icon-btn" aria-label="Previous week">←</button>
+                      <span id="schedule-week-range" class="teacher-week-range">This week</span>
+                      <button type="button" onclick="changeScheduleWeek(1)" class="teacher-icon-btn" aria-label="Next week">→</button>
+                    </div>
+                  </div>
+                  <div id="schedule-grid-target" class="teacher-timeline-container">
+                    <p class="teacher-empty">Loading schedule…</p>
+                  </div>
+                </section>
 
-          <div class="catalog-grid">
+                <section class="teacher-card teacher-appreciation">
+                  <div class="teacher-appreciation__metric">
+                    <span class="teacher-appreciation__label">Sessions this week</span>
+                    <strong id="teacher-week-sessions">4</strong>
+                    <small>Upcoming live lessons</small>
+                  </div>
+                  <div class="teacher-appreciation__divider"></div>
+                  <div class="teacher-appreciation__metric">
+                    <span class="teacher-appreciation__label">Courses available</span>
+                    <strong>${courseList.length}</strong>
+                    <small>Across your assigned languages</small>
+                  </div>
+                  <p class="teacher-appreciation__note">🌟 Thank you for showing up for your students. Small moments make a big difference.</p>
+                </section>
+
+                <section class="teacher-card" id="teacher-catalog-section">
+                  <div class="teacher-card__head">
+                    <div>
+                      <p class="teacher-card__eyebrow">Curriculum</p>
+                      <h2>📚 ${escapeHtml(catalogHeading)}</h2>
+                      <p class="teacher-card__hint">Open a roadmap, review lesson scripts and prepare your next class.</p>
+                    </div>
+                    <div class="teacher-card__actions">
+                      <button id="create-lesson-btn" onclick="openLessonCreatorModal()" class="teacher-chip teacher-chip--green" style="display:none;">➕ Create lesson</button>
+                      <a href="lesson-studio.html" class="teacher-chip">✨ Lesson Studio</a>
+                    </div>
+                  </div>
+                  <div class="catalog-grid">
       `;
 
       if (courseList.length === 0) {
-        html += `<p style="grid-column: 1/-1; color: var(--cosy-color-ink-muted, #64748b);">No courses match the selected filters.</p>`;
+        html += `<p class="teacher-empty">No courses match the selected filters.</p>`;
       } else {
         const groupedByLangTrack = {};
         courseList.forEach(c => {
@@ -874,11 +1944,7 @@
           const langCode = (c.lang || 'en').toLowerCase();
           const groupKey = `${langCode}_${trackKey}`;
           if (!groupedByLangTrack[groupKey]) {
-            groupedByLangTrack[groupKey] = {
-              lang: langCode,
-              track: trackKey,
-              courses: []
-            };
+            groupedByLangTrack[groupKey] = { lang: langCode, track: trackKey, courses: [] };
           }
           groupedByLangTrack[groupKey].courses.push(c);
         });
@@ -890,12 +1956,12 @@
           const trackCourses = group.courses;
           const availableCount = trackCourses.filter(c => c.status !== 'not_yet_available').length;
           const comingSoonCount = trackCourses.filter(c => c.status === 'not_yet_available').length;
-          const langName = getLangName(group.lang);
+          const groupLangName = getLangName(group.lang);
 
           html += `
             <div class="category-card" id="tcat-${groupKey}">
               <div class="category-header" onclick="toggleTeacherCategoryFold('tcat-${groupKey}')">
-                <h3>${langName} • ${group.track} (${availableCount})${comingSoonCount > 0 ? ` <span style="font-size: 0.8em; font-weight: normal; color: var(--cosy-color-ink-muted, #64748b);">+ ${comingSoonCount} coming soon</span>` : ''}</h3>
+                <h3>${groupLangName} • ${group.track} (${availableCount})${comingSoonCount > 0 ? ` <span style="font-size:0.8em;font-weight:normal;color:var(--cosy-color-ink-muted,#64748b);">+ ${comingSoonCount} coming soon</span>` : ''}</h3>
                 <span class="category-toggle-icon">▼</span>
               </div>
               <div class="category-body">
@@ -907,49 +1973,183 @@
               html += `
                 <div class="course-item-card" data-course-id="${c.id}">
                   <div>
-                    <div style="display: flex; align-items: center; gap: 8px;">
+                    <div style="display:flex;align-items:center;gap:8px;">
                       <span class="course-item-level badge-teacher">${c.level.toUpperCase()}</span>
                       <span class="course-item-title">${c.title}</span>
                     </div>
                   </div>
-                  <a href="teacher.html?course=${c.id}&level=${c.level.toLowerCase()}" class="btn" style="background: var(--teacher-primary); padding: 6px 12px; font-size: 0.8rem; white-space: nowrap;">
-                    Roadmap 📚
-                  </a>
+                  <a href="teacher.html?course=${c.id}&level=${c.level.toLowerCase()}" class="btn" style="background:var(--teacher-primary);padding:6px 12px;font-size:0.8rem;white-space:nowrap;">Roadmap 📚</a>
                 </div>
               `;
             } else {
               html += `
-                <div class="course-item-card disabled" data-course-id="${c.id}" style="opacity: 0.6;">
+                <div class="course-item-card disabled" data-course-id="${c.id}" style="opacity:0.6;">
                   <div>
-                    <div style="display: flex; align-items: center; gap: 8px;">
+                    <div style="display:flex;align-items:center;gap:8px;">
                       <span class="course-item-level badge-teacher">${c.level.toUpperCase()}</span>
                       <span class="course-item-title">${c.title}</span>
                     </div>
                   </div>
-                  <span style="font-size: 0.8rem; color: var(--cosy-color-ink-muted, #64748b); font-weight: 500; white-space: nowrap;">Coming soon</span>
+                  <span style="font-size:0.8rem;color:var(--cosy-color-ink-muted,#64748b);font-weight:500;white-space:nowrap;">Coming soon</span>
                 </div>
               `;
             }
           });
 
-          html += `
-              </div>
-            </div>
-          `;
+          html += `</div></div>`;
         });
 
         html += `</div>`;
       }
 
-      html += `</div>`;
+      html += `
+                  </div>
+                </section>
+              </div>
+
+              <aside class="teacher-column teacher-column--side">
+                <section class="teacher-card teacher-kpi-card">
+                  <div class="teacher-card__head">
+                    <div><p class="teacher-card__eyebrow">At a glance</p><h2>Teaching snapshot</h2></div>
+                  </div>
+                  <div class="teacher-kpi-grid">
+                    <div class="teacher-kpi">
+                      <span class="teacher-kpi__icon">👥</span>
+                      <strong id="kpi-students">—</strong>
+                      <small>Active students</small>
+                    </div>
+                    <div class="teacher-kpi">
+                      <span class="teacher-kpi__icon">📝</span>
+                      <strong id="kpi-reviews">—</strong>
+                      <small>Awaiting review</small>
+                    </div>
+                    <div class="teacher-kpi">
+                      <span class="teacher-kpi__icon">🎥</span>
+                      <strong id="kpi-sessions">4</strong>
+                      <small>Sessions this week</small>
+                    </div>
+                    <div class="teacher-kpi">
+                      <span class="teacher-kpi__icon">📚</span>
+                      <strong id="kpi-courses">${courseList.length}</strong>
+                      <small>Courses available</small>
+                    </div>
+                  </div>
+                </section>
+
+                <section class="teacher-card teacher-quality-card">
+                  <div class="teacher-card__head">
+                    <div><p class="teacher-card__eyebrow">Quality watch</p><h2>Class health</h2></div>
+                    <span id="quality-status-pill" class="teacher-status-pill teacher-status-pill--green">On track</span>
+                  </div>
+                  <div class="teacher-quality-list">
+                    <div class="teacher-quality-row">
+                      <div class="teacher-quality-row__top"><span>Unreviewed work</span><strong id="quality-unreviewed-value">0%</strong></div>
+                      <div class="teacher-quality-bar"><span id="quality-unreviewed-bar" style="width:0%"></span></div>
+                    </div>
+                    <div class="teacher-quality-row">
+                      <div class="teacher-quality-row__top"><span>Students needing attention</span><strong id="quality-attention-value">0%</strong></div>
+                      <div class="teacher-quality-bar"><span id="quality-attention-bar" class="is-amber" style="width:0%"></span></div>
+                    </div>
+                    <div class="teacher-quality-row">
+                      <div class="teacher-quality-row__top"><span>Missed sessions</span><strong>0</strong></div>
+                      <div class="teacher-quality-bar"><span style="width:0%"></span></div>
+                    </div>
+                    <div class="teacher-quality-row">
+                      <div class="teacher-quality-row__top"><span>Open complaints</span><strong>0</strong></div>
+                      <div class="teacher-quality-bar"><span style="width:0%"></span></div>
+                    </div>
+                  </div>
+                  <p class="teacher-quality-note">Keep the review queue clear and reach out early when a student goes quiet.</p>
+                </section>
+
+                <section class="teacher-card teacher-quick-card">
+                  <div class="teacher-card__head"><div><p class="teacher-card__eyebrow">Shortcuts</p><h2>Quick actions</h2></div></div>
+                  <div class="teacher-quick-links">
+                    <a href="classroom.html"><span>🎥</span><strong>Open classroom</strong><small>Join a live session</small></a>
+                    <a href="lesson-studio.html"><span>✨</span><strong>Lesson Studio</strong><small>Build or edit a lesson</small></a>
+                    <a href="#my-students-section" data-teacher-nav><span>👥</span><strong>My students</strong><small>Progress and next steps</small></a>
+                    <a href="https://cosylanguages.github.io/COSYmanuals/" target="_blank" rel="noopener"><span>📖</span><strong>Teacher manuals</strong><small>Guides and scripts</small></a>
+                  </div>
+                </section>
+              </aside>
+            </div>
+
+            <section class="teacher-card teacher-section-card" id="my-students-section">
+              <div class="teacher-card__head">
+                <div>
+                  <p class="teacher-card__eyebrow">Progress</p>
+                  <h2>👥 My students</h2>
+                  <p class="teacher-card__hint">Recent practice, accuracy and next sessions.</p>
+                </div>
+                <button onclick="loadMyStudentsProgress()" class="teacher-chip">Refresh 🔄</button>
+              </div>
+              <div id="my-students-table-container">
+                <p class="teacher-empty">Loading student progress…</p>
+              </div>
+            </section>
+
+            <div class="teacher-lower-grid">
+              <section class="teacher-card teacher-section-card" id="student-roster-section">
+                <div class="teacher-card__head">
+                  <div>
+                    <p class="teacher-card__eyebrow">Review queue</p>
+                    <h2>📝 Assignments to check</h2>
+                    <p class="teacher-card__hint">Student submissions waiting for your feedback.</p>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end;">
+                    <span id="unreviewed-count-badge" style="background:#ef4444;color:#fff;font-size:0.7rem;font-weight:800;padding:3px 8px;border-radius:999px;display:none;"></span>
+                    <button onclick="loadTeacherSubmissions()" class="teacher-chip">Refresh 🔄</button>
+                  </div>
+                </div>
+                <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px;">
+                  <select id="teacher-status-filter" onchange="renderGroupedSubmissions()" style="padding:7px 10px;border-radius:10px;border:1px solid var(--border-color,#cbd5e1);font-size:0.82rem;background:var(--card-bg,#fff);color:var(--cosy-color-ink,#0f172a);">
+                    <option value="all">${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.filterAll") : "All submissions"}</option>
+                    <option value="unreviewed" selected>${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.filterUnreviewed") : "Unreviewed only"}</option>
+                    <option value="reviewed">${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.filterReviewed") : "Reviewed only"}</option>
+                  </select>
+                  <select id="teacher-student-select" onchange="renderGroupedSubmissions()" style="padding:7px 10px;border-radius:10px;border:1px solid var(--border-color,#cbd5e1);font-size:0.82rem;background:var(--card-bg,#fff);color:var(--cosy-color-ink,#0f172a);flex:1;min-width:150px;">
+                    <option value="">${(window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.selectStudent") : "All students"}</option>
+                  </select>
+                </div>
+                <div id="student-submissions-container">
+                  <p class="teacher-empty">Loading submissions…</p>
+                </div>
+              </section>
+
+              <section class="teacher-card teacher-section-card" id="my-notes-section">
+                <div class="teacher-card__head">
+                  <div>
+                    <p class="teacher-card__eyebrow">Private</p>
+                    <h2>🗒️ Class notes</h2>
+                    <p class="teacher-card__hint">Only you can see these notes.</p>
+                  </div>
+                  <button onclick="loadUserNotes('teacher')" class="teacher-chip">Refresh 🔄</button>
+                </div>
+                <div id="user-notes-container">
+                  <p class="teacher-empty">Loading your notes…</p>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      `;
+
       appRoot.innerHTML = html;
+      setupTeacherSidebar();
+
+      if (window.location.hash) {
+        const target = document.getElementById(window.location.hash.slice(1));
+        if (target && typeof target.scrollIntoView === 'function') {
+          setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 0);
+        }
+      }
 
       const createBtn = document.getElementById('create-lesson-btn');
       if (createBtn) {
         const canCreate = window.CosyAuthoring && typeof window.CosyAuthoring.canAuthor === 'function'
           ? await window.CosyAuthoring.canAuthor('teacher')
           : false;
-        createBtn.style.display = canCreate ? 'inline-block' : 'none';
+        createBtn.style.display = canCreate ? 'inline-flex' : 'none';
       }
 
       renderTeacherSchedule();
@@ -968,60 +2168,60 @@
       const container = document.getElementById("schedule-grid-target");
       if (!container) return;
 
-      const days = [
-        { name: "Mon", dateNum: 26, key: "mon" },
-        { name: "Tue", dateNum: 27, key: "tue" },
-        { name: "Wed", dateNum: 28, key: "wed", isToday: true },
-        { name: "Thu", dateNum: 29, key: "thu" },
-        { name: "Fri", dateNum: 30, key: "fri" },
-        { name: "Sat", dateNum: 31, key: "sat" },
-        { name: "Sun", dateNum: 1, key: "sun" }
-      ];
+      const now = new Date();
+      const start = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+      start.setDate(start.getDate() + (window.currentScheduleOffsetDays || 0));
+      const mondayOffset = (start.getDay() + 6) % 7;
+      start.setDate(start.getDate() - mondayOffset);
 
-      const hours = ["11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00"];
-
-      // Mock schedule events matching Edvibe schedule screenshot
-      const eventsMap = {
-        "mon_16:00": { student: "Valerii", avatar: "V", colorClass: "event-green" },
-        "wed_17:00": { student: "Valerii", avatar: "V", colorClass: "event-orange" },
-        "wed_18:00": { student: "Kirill", avatar: "K", colorClass: "event-orange" },
-        "sat_11:00": { student: "Kirill", avatar: "K", colorClass: "event-orange" }
+      const dayNames = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+      const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+      const eventsByDay = {
+        0: [{ time: "16:00", student: "Valerii", kind: "Individual lesson", tone: "green" }],
+        2: [
+          { time: "17:00", student: "Valerii", kind: "Individual lesson", tone: "amber" },
+          { time: "18:00", student: "Kirill", kind: "Individual lesson", tone: "amber" }
+        ],
+        5: [{ time: "11:00", student: "Kirill", kind: "Individual lesson", tone: "green" }]
       };
 
-      let gridHtml = `<div class="schedule-grid">`;
+      let eventCount = 0;
+      let timeline = '<div class="teacher-timeline">';
+      for (let i = 0; i < 7; i++) {
+        const day = new Date(start);
+        day.setDate(start.getDate() + i);
+        const isToday = day.toDateString() === now.toDateString();
+        const events = eventsByDay[i] || [];
+        eventCount += events.length;
+        const dateLabel = day.getDate() + ' ' + monthNames[day.getMonth()];
+        timeline += '<div class="teacher-day' + (isToday ? ' is-today' : '') + '">';
+        timeline += '<div class="teacher-day__head"><strong>' + dayNames[i] + (isToday ? ' · Today' : '') + '</strong><span>' + dateLabel + '</span></div>';
+        timeline += '<div class="teacher-day__body">';
+        if (events.length === 0) {
+          timeline += '<p class="teacher-empty">No sessions scheduled.</p>';
+        } else {
+          events.forEach(ev => {
+            timeline += '<button type="button" class="teacher-event teacher-event--' + ev.tone + '" onclick="openClassroomSession(\'' + ev.student + '\')" title="Open classroom session with ' + ev.student + '">' +
+              '<span class="teacher-event__time">' + ev.time + '</span>' +
+              '<span class="teacher-event__body"><strong>' + ev.student + '</strong><small>' + ev.kind + ' · 50 min</small></span>' +
+              '<span class="teacher-event__arrow">→</span>' +
+              '</button>';
+          });
+        }
+        timeline += '</div></div>';
+      }
+      timeline += '</div>';
+      container.innerHTML = timeline;
 
-      // Top Header Row
-      gridHtml += `<div class="schedule-day-header" style="background: var(--subtle-surface, #f1f5f9); color: var(--cosy-color-ink-muted, #64748b);">GMT</div>`;
-      days.forEach(d => {
-        gridHtml += `
-          <div class="schedule-day-header ${d.isToday ? 'today' : ''}">
-            ${d.name}, ${d.dateNum}
-          </div>
-        `;
-      });
+      const range = document.getElementById('schedule-week-range');
+      if (range) {
+        const end = new Date(start);
+        end.setDate(start.getDate() + 6);
+        range.textContent = start.getDate() + ' ' + monthNames[start.getMonth()] + ' – ' + end.getDate() + ' ' + monthNames[end.getMonth()];
+      }
 
-      // Hour rows
-      hours.forEach(h => {
-        gridHtml += `<div class="schedule-time-label">${h}</div>`;
-        days.forEach(d => {
-          const slotKey = `${d.key}_${h}`;
-          const ev = eventsMap[slotKey];
-
-          gridHtml += `<div class="schedule-cell">`;
-          if (ev) {
-            gridHtml += `
-              <div class="schedule-card-event ${ev.colorClass}" onclick="openClassroomSession('${ev.student}')" title="Click to open classroom session with ${ev.student}">
-                <span class="schedule-avatar">${ev.avatar}</span>
-                <span>${ev.student}</span>
-              </div>
-            `;
-          }
-          gridHtml += `</div>`;
-        });
-      });
-
-      gridHtml += `</div>`;
-      container.innerHTML = gridHtml;
+      setTeacherText('kpi-sessions', eventCount);
+      setTeacherText('teacher-week-sessions', eventCount);
     }
 
     function openClassroomSession(studentName) {
@@ -1112,13 +2312,13 @@
         let studentsMap = {};
 
         if (isFounder) {
-          const { data: nonFounders, error: nfErr } = await client
+          const { data: studentProfiles, error: nfErr } = await client
             .from("profiles")
             .select("id, display_name, role, language_access, course_level")
-            .neq("role", "founder");
+            .eq("role", "student");
 
           if (nfErr) throw nfErr;
-          (nonFounders || []).forEach(s => {
+          (studentProfiles || []).forEach(s => {
             studentsMap[s.id] = s;
           });
           targetStudentIds = Object.keys(studentsMap);
@@ -1184,6 +2384,7 @@
       if (rows.length === 0) {
         const noDataMsg = (window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.noStudents") : "No student progress recorded yet.";
         container.innerHTML = `<p style="color: var(--cosy-color-ink-muted, #64748b); font-size: 0.85rem;">${noDataMsg}</p>`;
+        refreshTeacherDashboardMetrics();
         return;
       }
 
@@ -1253,6 +2454,7 @@
 
       html += `</tbody></table></div>`;
       container.innerHTML = html;
+      refreshTeacherDashboardMetrics();
     }
 
     window.loadMyStudentsProgress = loadMyStudentsProgress;
@@ -1292,7 +2494,7 @@
         let html = `
           <div class="catalog-container">
             <div class="teacher-controls-bar">
-              <a href="teacher.html" class="back-btn" style="color: var(--cosy-color-ink-muted, #64748b); font-weight: 500;">← Back to Catalog</a>
+              <a href="teacher.html" class="back-btn" style="color: var(--cosy-color-ink-muted, #64748b); font-weight: 500;">← Back to Teacher Workspace</a>
               <span class="badge-teacher">${roadmap.title}</span>
             </div>
 
@@ -2554,7 +3756,7 @@
           const { data, error } = await client
             .from("profiles")
             .select("id, display_name, role, language_access, course_level, created_at")
-            .neq("role", "founder")
+            .eq("role", "student")
             .order("created_at", { ascending: false });
 
           return (!error && data) ? data : [];
@@ -2602,17 +3804,17 @@
         });
         window.studentProfilesMap = profilesMap;
 
-        let query = client.from("lesson_submissions").select("*").order("created_at", { ascending: false });
-
-        const authData = window.currentTeacherAuthData;
-        const isFounder = authData?.profile?.role === "founder";
-        if (!isFounder && studentIds.length > 0) {
-          query = query.in("student_id", studentIds);
-        } else if (!isFounder && studentIds.length === 0) {
+        if (studentIds.length === 0) {
           window.allTeacherSubmissions = [];
           updateSubmissionsUI();
           return;
         }
+
+        const query = client
+          .from("lesson_submissions")
+          .select("*")
+          .in("student_id", studentIds)
+          .order("created_at", { ascending: false });
 
         const { data: subs, error } = await query;
         if (error) throw error;
@@ -2675,6 +3877,7 @@
       }
 
       renderGroupedSubmissions();
+      refreshTeacherDashboardMetrics();
     }
 
     async function renderGroupedSubmissions() {

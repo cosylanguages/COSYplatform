@@ -12,6 +12,23 @@
   <script src="shared/js/config.js"></script>
   <script src="shared/js/auth-guard.js"></script>
   <script src="shared/js/auth-sso.js"></script>
+  <script>
+    (function () {
+      document.documentElement.setAttribute('data-auth-pending', 'true');
+      var style = document.createElement('style');
+      style.textContent = 'html[data-auth-pending="true"] body{visibility:hidden}';
+      document.head.appendChild(style);
+      window.addEventListener('DOMContentLoaded', async function () {
+        try {
+          await window.CosyAuth.requireRole(['teacher', 'founder']);
+        } catch (error) {
+          console.warn('Lesson Studio access check failed', error);
+        } finally {
+          document.documentElement.removeAttribute('data-auth-pending');
+        }
+      });
+    })();
+  </script>
   <script src="shared/js/authoring.js"></script>
   <script src="shared/js/lesson-resolver.js"></script>
   <link rel="stylesheet" href="https://cosylanguages.github.io/COSYlanguages/css/ecosystem-strip.css">

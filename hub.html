@@ -275,6 +275,7 @@
   <script src="shared/js/config.js"></script>
   <script src="shared/js/auth-guard.js"></script>
   <script src="shared/js/auth-sso.js"></script>
+  <script src="shared/js/access-rules.js"></script>
   <script src="shared/js/cms-editor.js"></script>
   <script src="shared/js/i18n.js"></script>
   <script src="shared/js/lang-switcher.js"></script>
@@ -337,19 +338,33 @@
       const authData = await window.CosyAuth.getAuthAndProfile();
       if (!authData) return;
 
+      const role = window.CosyAccess
+        ? window.CosyAccess.normalizeRole(authData.profile && authData.profile.role)
+        : ((authData.profile && authData.profile.role) || 'student');
+      const isStaff = window.CosyAccess
+        ? window.CosyAccess.isStaff(role)
+        : (role === 'teacher' || role === 'founder');
+
+      if (lessonParam) {
+        const targetPage = isStaff ? 'teacher.html' : 'student.html';
+        window.location.replace(`${targetPage}${window.location.search}`);
+        return;
+      }
+
+      if (!isStaff) {
+        const destination = window.CosyAccess
+          ? window.CosyAccess.catalogRedirect(role, window.location.search)
+          : `student.html${window.location.search}`;
+        window.location.replace(destination);
+        return;
+      }
+
       if (window.CosyModeSwitcher) {
         window.CosyModeSwitcher.mount('#founder-mode-switcher', { role: authData.profile.role, active: '' });
       }
 
       if (authData.profile && window.CosyI18n && typeof window.CosyI18n.recompute === 'function') {
         await window.CosyI18n.recompute(authData.profile);
-      }
-
-      if (lessonParam) {
-        const isTeacher = authData.profile && (authData.profile.role === 'teacher' || authData.profile.role === 'founder');
-        const targetPage = isTeacher ? 'teacher.html' : 'student.html';
-        window.location.replace(`${targetPage}${window.location.search}`);
-        return;
       }
 
       const userEmail = authData.user ? authData.user.email : '';

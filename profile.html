@@ -618,6 +618,173 @@
     .shortcut-card strong { display: block; margin-top: 6px; font-size: 0.86rem; }
     .shortcut-card small { display: block; color: var(--profile-muted); font-size: 0.72rem; margin-top: 2px; }
 
+    .profile-workspace {
+      display: grid;
+      grid-template-columns: 232px minmax(0, 1fr);
+      gap: 20px;
+      align-items: start;
+    }
+
+    .profile-section-nav {
+      position: sticky;
+      top: 16px;
+      background: var(--profile-card);
+      border: 1px solid var(--profile-border);
+      border-radius: 16px;
+      padding: 10px;
+      box-shadow: 0 2px 10px rgba(15, 23, 42, 0.035);
+    }
+
+    .profile-nav-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 8px 12px;
+      border-bottom: 1px solid var(--profile-border);
+      margin-bottom: 8px;
+    }
+
+    .profile-nav-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: var(--mode-accent);
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 800;
+      flex: 0 0 auto;
+    }
+
+    .profile-nav-copy { min-width: 0; }
+    .profile-nav-copy strong {
+      display: block;
+      color: var(--profile-ink);
+      font-size: 0.84rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .profile-nav-copy small {
+      display: block;
+      color: var(--profile-muted);
+      font-size: 0.72rem;
+      margin-top: 2px;
+    }
+
+    .profile-nav-buttons { display: grid; gap: 3px; }
+
+    .profile-nav-buttons button {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      padding: 10px 11px;
+      border: 0;
+      border-radius: 10px;
+      background: transparent;
+      color: var(--profile-muted);
+      font: inherit;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-align: left;
+      cursor: pointer;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+
+    .profile-nav-buttons button:hover {
+      background: var(--profile-cream);
+      color: var(--profile-ink);
+    }
+
+    .profile-nav-buttons button.is-active {
+      background: var(--mode-accent);
+      color: #fff;
+      box-shadow: 0 6px 16px rgba(2, 6, 23, 0.14);
+    }
+
+    .profile-nav-icon { width: 20px; text-align: center; }
+    .profile-nav-divider { height: 1px; background: var(--profile-border); margin: 6px 4px; }
+
+    .profile-section-content { min-width: 0; }
+    .profile-section { display: grid; gap: 20px; animation: profileSectionIn 0.18s ease; }
+    .profile-section-account { display: grid; gap: 20px; }
+
+    .account-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 20px;
+      align-items: start;
+    }
+
+    .profile-card-lead {
+      margin: -6px 0 14px;
+      font-size: 0.84rem;
+      line-height: 1.5;
+    }
+
+    .profile-inline-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .profile-text-link {
+      color: var(--mode-accent);
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-decoration: none;
+    }
+    .profile-text-link:hover { text-decoration: underline; }
+
+    .vocab-search-wrap { display: grid; gap: 6px; margin-bottom: 14px; }
+    .vocab-search-wrap input {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 12px 14px;
+      border: 1px solid var(--profile-border);
+      border-radius: 12px;
+      background: var(--profile-cream);
+      color: var(--profile-ink);
+      font: inherit;
+      font-size: 0.9rem;
+      outline: none;
+    }
+    .vocab-search-wrap input:focus { border-color: var(--mode-accent); }
+    .vocab-search-hint { color: var(--profile-muted); font-size: 0.72rem; }
+
+    .vocab-results { display: grid; gap: 8px; }
+    .vocab-result {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 11px 12px;
+      border: 1px solid var(--profile-border);
+      border-radius: 10px;
+      background: var(--profile-cream);
+    }
+    .vocab-result strong { color: var(--profile-ink); font-size: 0.9rem; }
+    .vocab-result small { display: block; color: var(--profile-muted); font-size: 0.72rem; margin-top: 3px; }
+    .vocab-pos {
+      display: inline-block;
+      margin-left: 6px;
+      padding: 1px 7px;
+      border-radius: 999px;
+      background: var(--mode-accent-soft);
+      color: var(--mode-accent);
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    @keyframes profileSectionIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: none; }
+    }
+
     .profile-footer {
       max-width: 1180px;
       margin: 0 auto;
@@ -630,6 +797,17 @@
 
     @media (max-width: 980px) {
       .profile-layout { grid-template-columns: 1fr; }
+      .profile-workspace { grid-template-columns: 1fr; }
+      .profile-section-nav { position: static; }
+      .profile-nav-buttons {
+        display: flex;
+        gap: 6px;
+        overflow-x: auto;
+        padding-bottom: 2px;
+      }
+      .profile-nav-buttons button { width: auto; white-space: nowrap; }
+      .profile-nav-divider { display: none; }
+      .account-grid { grid-template-columns: 1fr; }
       .profile-stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .shortcut-grid { grid-template-columns: 1fr; }
     }
@@ -644,6 +822,8 @@
       .profile-detail-row { display: block; }
       .profile-detail-row dd { text-align: left; margin-top: 3px; }
       .mode-switcher-hint { margin-left: 0; }
+      .profile-nav-head { display: none; }
+      .profile-nav-buttons button { font-size: 0.78rem; padding: 8px 10px; }
     }
   </style>
   <link rel="stylesheet" href="https://cosylanguages.github.io/COSYlanguages/css/ecosystem-strip.css">
@@ -651,6 +831,7 @@
   <script src="shared/js/config.js"></script>
   <script src="shared/js/auth-guard.js"></script>
   <script src="shared/js/auth-sso.js"></script>
+  <script src="shared/js/lazy-script.js"></script>
   <script src="shared/js/i18n.js"></script>
 </head>
 <body>
@@ -664,7 +845,7 @@
       <span class="profile-brand-sub">Profile</span>
     </a>
     <div class="profile-header-actions">
-      <a href="index.html">Catalog</a>
+      <a id="header-catalog-link" href="index.html">Catalog</a>
       <a href="classroom.html">Live Classroom 🎥</a>
       <a id="header-workspace-link" class="primary" href="student.html">My Workspace</a>
       <button type="button" onclick="window.CosyAuth.logout()">Log Out</button>
@@ -710,286 +891,377 @@
       <button type="button" id="mode-preview-return">Back to Founder view</button>
     </div>
 
-    <div class="profile-layout">
-      <div class="profile-stack">
+    <div class="profile-workspace">
+      <nav id="profile-section-nav" class="profile-section-nav" aria-label="Profile sections">
+        <div class="profile-nav-head">
+          <span id="nav-avatar" class="profile-nav-avatar" aria-hidden="true">?</span>
+          <div class="profile-nav-copy">
+            <strong id="nav-name">My Profile</strong>
+            <small id="nav-role">Member</small>
+          </div>
+        </div>
+        <div id="profile-nav-buttons" class="profile-nav-buttons" role="tablist" aria-label="Profile sections"></div>
+      </nav>
+
+      <div class="profile-section-content">
         <!-- Student profile -->
         <div class="profile-panel" data-panel="student">
-          <section class="profile-card" aria-labelledby="profile-stats-title">
-            <h2 id="profile-stats-title">📊 Learning Summary</h2>
-            <div class="profile-stat-grid">
-              <div class="profile-stat">
-                <div class="profile-stat-label">Active courses</div>
-                <div id="stat-active-courses" class="profile-stat-value">—</div>
-                <div class="profile-stat-note">Current access grants</div>
+          <section class="profile-section" data-section="overview">
+            <section class="profile-card" aria-labelledby="profile-stats-title">
+              <h2 id="profile-stats-title">📊 Learning Summary</h2>
+              <div class="profile-stat-grid">
+                <div class="profile-stat">
+                  <div class="profile-stat-label">Active courses</div>
+                  <div id="stat-active-courses" class="profile-stat-value">—</div>
+                  <div class="profile-stat-note">Current access grants</div>
+                </div>
+                <div class="profile-stat">
+                  <div class="profile-stat-label">Lessons practised</div>
+                  <div id="stat-lessons-practised" class="profile-stat-value">—</div>
+                  <div class="profile-stat-note">With progress records</div>
+                </div>
+                <div class="profile-stat">
+                  <div class="profile-stat-label">Tasks submitted</div>
+                  <div id="stat-tasks-submitted" class="profile-stat-value">—</div>
+                  <div class="profile-stat-note">Essays, audio and answers</div>
+                </div>
+                <div class="profile-stat">
+                  <div class="profile-stat-label">Study events</div>
+                  <div id="stat-study-events" class="profile-stat-value">—</div>
+                  <div class="profile-stat-note">Checks and game rounds</div>
+                </div>
               </div>
-              <div class="profile-stat">
-                <div class="profile-stat-label">Lessons practised</div>
-                <div id="stat-lessons-practised" class="profile-stat-value">—</div>
-                <div class="profile-stat-note">With progress records</div>
+            </section>
+
+            <section class="profile-card" aria-labelledby="student-continue-title">
+              <h2 id="student-continue-title">▶️ Continue Learning</h2>
+              <div id="student-continue"></div>
+            </section>
+          </section>
+
+          <section class="profile-section" data-section="homework" hidden>
+            <section class="profile-card" aria-labelledby="student-assignments-title">
+              <h2 id="student-assignments-title">📝 Homework &amp; Feedback</h2>
+              <p class="profile-card-lead">Essays, audio and answers your teacher has assigned.</p>
+              <div id="student-assignments"></div>
+            </section>
+
+            <section class="profile-card">
+              <h2>🚀 Open homework workspace</h2>
+              <p>Continue assigned tasks, record audio and submit answers in your student workspace.</p>
+              <div class="profile-inline-actions">
+                <a class="focus-action" href="student.html">Open student workspace →</a>
+                <a class="profile-text-link" href="classroom.html">Join live classroom 🎥</a>
               </div>
-              <div class="profile-stat">
-                <div class="profile-stat-label">Tasks submitted</div>
-                <div id="stat-tasks-submitted" class="profile-stat-value">—</div>
-                <div class="profile-stat-note">Essays, audio and answers</div>
+            </section>
+          </section>
+
+          <section class="profile-section" data-section="vocabulary" hidden>
+            <section class="profile-card">
+              <h2>🧠 Vocabulary Trainer</h2>
+              <p class="profile-card-lead">Search the COSY vocabulary index and practise words from your lessons.</p>
+              <div class="vocab-search-wrap">
+                <input id="vocab-search" type="search" placeholder="Search a word, e.g. travel, family, work..." autocomplete="off">
+                <span class="vocab-search-hint">Type at least 2 letters to search the COSYdata vocabulary index.</span>
               </div>
-              <div class="profile-stat">
-                <div class="profile-stat-label">Study events</div>
-                <div id="stat-study-events" class="profile-stat-value">—</div>
-                <div class="profile-stat-note">Checks and game rounds</div>
+              <div id="vocab-results" class="vocab-results" aria-live="polite">
+                <div class="profile-empty">Start typing to search the vocabulary index.</div>
               </div>
-            </div>
+            </section>
+
+            <section class="profile-card">
+              <h2>🎮 Practise vocabulary</h2>
+              <p>Turn your word list into a game or open the full dictionary in the student workspace.</p>
+              <div class="profile-inline-actions">
+                <a class="focus-action" href="https://cosylanguages.github.io/COSYgames/">Play COSYgames 🎮</a>
+                <a class="profile-text-link" href="student.html">Open student workspace →</a>
+              </div>
+            </section>
           </section>
 
-          <section class="profile-card" aria-labelledby="student-continue-title">
-            <h2 id="student-continue-title">▶️ Continue Learning</h2>
-            <div id="student-continue"></div>
+          <section class="profile-section" data-section="courses" hidden>
+            <section class="profile-card" aria-labelledby="profile-courses-title">
+              <h2 id="profile-courses-title">📚 My Courses &amp; Access</h2>
+              <p class="profile-card-lead">Your active access grants and course windows.</p>
+              <div id="profile-grants"></div>
+            </section>
           </section>
 
-          <section class="profile-card" aria-labelledby="profile-courses-title">
-            <h2 id="profile-courses-title">📚 My Courses &amp; Access</h2>
-            <div id="profile-grants"></div>
+          <section class="profile-section" data-section="sessions" hidden>
+            <section class="profile-card" aria-labelledby="student-sessions-title">
+              <h2 id="student-sessions-title">🎟️ My Sessions</h2>
+              <p class="profile-card-lead">Booked and completed sessions with your teacher.</p>
+              <div id="student-sessions"></div>
+            </section>
           </section>
 
-          <section class="profile-card" aria-labelledby="student-assignments-title">
-            <h2 id="student-assignments-title">📝 Assignments &amp; Feedback</h2>
-            <div id="student-assignments"></div>
-          </section>
-
-          <section class="profile-card" aria-labelledby="student-sessions-title">
-            <h2 id="student-sessions-title">🎟️ My Sessions</h2>
-            <div id="student-sessions"></div>
-          </section>
-
-          <section class="profile-card" aria-labelledby="profile-activity-title">
-            <h2 id="profile-activity-title">🕘 Recent Activity</h2>
-            <ul id="profile-activity" class="profile-activity"></ul>
+          <section class="profile-section" data-section="activity" hidden>
+            <section class="profile-card" aria-labelledby="profile-activity-title">
+              <h2 id="profile-activity-title">🕘 Recent Activity</h2>
+              <ul id="profile-activity" class="profile-activity"></ul>
+            </section>
           </section>
         </div>
 
         <!-- Teacher profile -->
         <div class="profile-panel" data-panel="teacher" hidden>
-          <section class="profile-card" aria-labelledby="teacher-stats-title">
-            <h2 id="teacher-stats-title">🧑‍🏫 Teaching Summary</h2>
-            <div class="profile-stat-grid">
-              <div class="profile-stat">
-                <div class="profile-stat-label">Assigned languages</div>
-                <div id="teacher-stat-languages" class="profile-stat-value">—</div>
-                <div id="teacher-stat-languages-note" class="profile-stat-note">From your teacher profile</div>
+          <section class="profile-section" data-section="overview">
+            <section class="profile-card" aria-labelledby="teacher-stats-title">
+              <h2 id="teacher-stats-title">🧑‍🏫 Teaching Summary</h2>
+              <div class="profile-stat-grid">
+                <div class="profile-stat">
+                  <div class="profile-stat-label">Assigned languages</div>
+                  <div id="teacher-stat-languages" class="profile-stat-value">—</div>
+                  <div id="teacher-stat-languages-note" class="profile-stat-note">From your teacher profile</div>
+                </div>
+                <div class="profile-stat">
+                  <div class="profile-stat-label">Students</div>
+                  <div id="teacher-stat-students" class="profile-stat-value">—</div>
+                  <div id="teacher-stat-students-note" class="profile-stat-note">Linked learners</div>
+                </div>
+                <div class="profile-stat">
+                  <div class="profile-stat-label">Hosted sessions</div>
+                  <div id="teacher-stat-sessions" class="profile-stat-value">—</div>
+                  <div class="profile-stat-note">Events you facilitate</div>
+                </div>
+                <div class="profile-stat">
+                  <div class="profile-stat-label">Classroom notes</div>
+                  <div id="teacher-stat-notes" class="profile-stat-value">—</div>
+                  <div class="profile-stat-note">Shared lesson notes</div>
+                </div>
               </div>
-              <div class="profile-stat">
-                <div class="profile-stat-label">Students</div>
-                <div id="teacher-stat-students" class="profile-stat-value">—</div>
-                <div id="teacher-stat-students-note" class="profile-stat-note">Linked learners</div>
-              </div>
-              <div class="profile-stat">
-                <div class="profile-stat-label">Hosted sessions</div>
-                <div id="teacher-stat-sessions" class="profile-stat-value">—</div>
-                <div class="profile-stat-note">Events you facilitate</div>
-              </div>
-              <div class="profile-stat">
-                <div class="profile-stat-label">Classroom notes</div>
-                <div id="teacher-stat-notes" class="profile-stat-value">—</div>
-                <div class="profile-stat-note">Shared lesson notes</div>
-              </div>
-            </div>
+            </section>
+
+            <section class="profile-card" aria-labelledby="teacher-review-title">
+              <h2 id="teacher-review-title">📝 Review Queue</h2>
+              <p class="profile-card-lead">Student submissions waiting for your feedback.</p>
+              <div id="teacher-review-queue"></div>
+            </section>
           </section>
 
-          <section class="profile-card" aria-labelledby="teacher-review-title">
-            <h2 id="teacher-review-title">📝 Review Queue</h2>
-            <div id="teacher-review-queue"></div>
+          <section class="profile-section" data-section="students" hidden>
+            <section class="profile-card" aria-labelledby="teacher-spaces-title">
+              <h2 id="teacher-spaces-title">🗂️ My Teaching Spaces</h2>
+              <div id="teacher-spaces" class="profile-actions-grid"></div>
+            </section>
+
+            <section class="profile-card" aria-labelledby="teacher-students-title">
+              <h2 id="teacher-students-title">👥 My Students</h2>
+              <div id="teacher-student-list"></div>
+            </section>
           </section>
 
-          <section class="profile-card" aria-labelledby="teacher-spaces-title">
-            <h2 id="teacher-spaces-title">🗂️ My Teaching Spaces</h2>
-            <div id="teacher-spaces" class="profile-actions-grid"></div>
+          <section class="profile-section" data-section="sessions" hidden>
+            <section class="profile-card" aria-labelledby="teacher-sessions-title">
+              <h2 id="teacher-sessions-title">🎥 Hosted Sessions</h2>
+              <div id="teacher-sessions"></div>
+              <p style="margin:12px 0 0;font-size:0.78rem;"><a href="https://cosylanguages.github.io/COSYevents/">Open COSYevents →</a></p>
+            </section>
           </section>
 
-          <section class="profile-card" aria-labelledby="teacher-sessions-title">
-            <h2 id="teacher-sessions-title">🎥 Hosted Sessions</h2>
-            <div id="teacher-sessions"></div>
-            <p style="margin:12px 0 0;font-size:0.78rem;"><a href="https://cosylanguages.github.io/COSYevents/">Open COSYevents →</a></p>
+          <section class="profile-section" data-section="coverage" hidden>
+            <section class="profile-card" aria-labelledby="teacher-coverage-title">
+              <h2 id="teacher-coverage-title">🌍 Content Coverage</h2>
+              <div id="teacher-coverage"></div>
+            </section>
           </section>
 
-          <section class="profile-card" aria-labelledby="teacher-students-title">
-            <h2 id="teacher-students-title">👥 My Students</h2>
-            <div id="teacher-student-list"></div>
-          </section>
-
-          <section class="profile-card" aria-labelledby="teacher-coverage-title">
-            <h2 id="teacher-coverage-title">🌍 Content Coverage</h2>
-            <div id="teacher-coverage"></div>
-          </section>
-
-          <section class="profile-card" aria-labelledby="teacher-activity-title">
-            <h2 id="teacher-activity-title">🕘 Recent Teaching Activity</h2>
-            <ul id="teacher-activity" class="profile-activity"></ul>
+          <section class="profile-section" data-section="activity" hidden>
+            <section class="profile-card" aria-labelledby="teacher-activity-title">
+              <h2 id="teacher-activity-title">🕘 Recent Teaching Activity</h2>
+              <ul id="teacher-activity" class="profile-activity"></ul>
+            </section>
           </section>
         </div>
 
         <!-- Founder profile -->
         <div class="profile-panel" data-panel="founder" hidden>
-          <section class="profile-card" aria-labelledby="founder-stats-title">
-            <h2 id="founder-stats-title">👑 Executive Overview</h2>
-            <div class="profile-stat-grid">
-              <div class="profile-stat">
-                <div class="profile-stat-label">Languages with courses</div>
-                <div id="founder-stat-languages" class="profile-stat-value">—</div>
-                <div id="founder-stat-languages-note" class="profile-stat-note">Published catalog</div>
+          <section class="profile-section" data-section="overview">
+            <section class="profile-card" aria-labelledby="founder-stats-title">
+              <h2 id="founder-stats-title">👑 Executive Overview</h2>
+              <div class="profile-stat-grid">
+                <div class="profile-stat">
+                  <div class="profile-stat-label">Languages with courses</div>
+                  <div id="founder-stat-languages" class="profile-stat-value">—</div>
+                  <div id="founder-stat-languages-note" class="profile-stat-note">Published catalog</div>
+                </div>
+                <div class="profile-stat">
+                  <div class="profile-stat-label">Courses available</div>
+                  <div id="founder-stat-courses" class="profile-stat-value">—</div>
+                  <div id="founder-stat-courses-note" class="profile-stat-note">Out of all planned courses</div>
+                </div>
+                <div class="profile-stat">
+                  <div class="profile-stat-label">Lessons available</div>
+                  <div id="founder-stat-lessons" class="profile-stat-value">—</div>
+                  <div id="founder-stat-lessons-note" class="profile-stat-note">Ready to teach</div>
+                </div>
+                <div class="profile-stat">
+                  <div class="profile-stat-label">Members</div>
+                  <div id="founder-stat-members" class="profile-stat-value">—</div>
+                  <div id="founder-stat-members-note" class="profile-stat-note">Students and teachers</div>
+                </div>
               </div>
-              <div class="profile-stat">
-                <div class="profile-stat-label">Courses available</div>
-                <div id="founder-stat-courses" class="profile-stat-value">—</div>
-                <div id="founder-stat-courses-note" class="profile-stat-note">Out of all planned courses</div>
+            </section>
+
+            <section class="profile-card">
+              <h2>🔎 Staff catalog</h2>
+              <p>You have full access to the teacher and founder catalog. Students are routed to homework and vocabulary instead.</p>
+              <div class="profile-inline-actions">
+                <a class="focus-action" href="index.html">Open catalog →</a>
+                <a class="profile-text-link" href="founder.html">Open founder portal →</a>
               </div>
-              <div class="profile-stat">
-                <div class="profile-stat-label">Lessons available</div>
-                <div id="founder-stat-lessons" class="profile-stat-value">—</div>
-                <div id="founder-stat-lessons-note" class="profile-stat-note">Ready to teach</div>
+            </section>
+          </section>
+
+          <section class="profile-section" data-section="members" hidden>
+            <section class="profile-card" aria-labelledby="founder-members-title">
+              <h2 id="founder-members-title">🆕 Newest Members</h2>
+              <div id="founder-new-members"></div>
+            </section>
+          </section>
+
+          <section class="profile-section" data-section="catalog" hidden>
+            <section class="profile-card" aria-labelledby="founder-coverage-title">
+              <h2 id="founder-coverage-title">🌍 Language Coverage</h2>
+              <div id="founder-language-coverage"></div>
+            </section>
+
+            <section class="profile-card" aria-labelledby="founder-health-title">
+              <h2 id="founder-health-title">🩺 Platform Health</h2>
+              <div id="founder-health"></div>
+            </section>
+          </section>
+
+          <section class="profile-section" data-section="workspaces" hidden>
+            <section class="profile-card" aria-labelledby="founder-switch-title">
+              <h2 id="founder-switch-title">🔀 Switch Workspace</h2>
+              <p style="margin:0 0 12px;font-size:0.84rem;">As founder you can open every workspace. Other roles cannot switch modes.</p>
+              <div class="shortcut-grid">
+                <a class="shortcut-card" href="student.html">
+                  <span class="shortcut-icon">🎓</span>
+                  <strong>Student workspace</strong>
+                  <small>Lessons, homework and progress</small>
+                </a>
+                <a class="shortcut-card" href="teacher.html">
+                  <span class="shortcut-icon">🧑‍🏫</span>
+                  <strong>Teacher workspace</strong>
+                  <small>Students, classes and lesson studio</small>
+                </a>
+                <a class="shortcut-card" href="founder.html">
+                  <span class="shortcut-icon">👑</span>
+                  <strong>Founder portal</strong>
+                  <small>Users, access and platform oversight</small>
+                </a>
               </div>
-              <div class="profile-stat">
-                <div class="profile-stat-label">Members</div>
-                <div id="founder-stat-members" class="profile-stat-value">—</div>
-                <div id="founder-stat-members-note" class="profile-stat-note">Students and teachers</div>
+            </section>
+
+            <section class="profile-card" aria-labelledby="founder-tools-title">
+              <h2 id="founder-tools-title">🛠️ Admin Tools</h2>
+              <div class="profile-actions-grid">
+                <a class="profile-action" href="founder.html">
+                  <span class="profile-action-icon">👑</span>
+                  <span><strong>Founder Portal</strong><small>Manage users and access</small></span>
+                </a>
+                <a class="profile-action" href="lesson-studio.html">
+                  <span class="profile-action-icon">🛠️</span>
+                  <span><strong>Lesson Studio</strong><small>Author and publish lessons</small></span>
+                </a>
+                <a class="profile-action" href="classroom.html">
+                  <span class="profile-action-icon">🎥</span>
+                  <span><strong>Live Classroom</strong><small>Join or host sessions</small></span>
+                </a>
+                <a class="profile-action" href="index.html">
+                  <span class="profile-action-icon">🧭</span>
+                  <span><strong>Staff Catalog</strong><small>Teacher and founder catalog</small></span>
+                </a>
               </div>
-            </div>
-          </section>
-
-          <section class="profile-card" aria-labelledby="founder-members-title">
-            <h2 id="founder-members-title">🆕 Newest Members</h2>
-            <div id="founder-new-members"></div>
-          </section>
-
-          <section class="profile-card" aria-labelledby="founder-coverage-title">
-            <h2 id="founder-coverage-title">🌍 Language Coverage</h2>
-            <div id="founder-language-coverage"></div>
-          </section>
-
-          <section class="profile-card" aria-labelledby="founder-health-title">
-            <h2 id="founder-health-title">🩺 Platform Health</h2>
-            <div id="founder-health"></div>
-          </section>
-
-          <section class="profile-card" aria-labelledby="founder-switch-title">
-            <h2 id="founder-switch-title">🔀 Switch Workspace</h2>
-            <p style="margin:0 0 12px;font-size:0.84rem;">As founder you can open every workspace. Other roles cannot switch modes.</p>
-            <div class="shortcut-grid">
-              <a class="shortcut-card" href="student.html">
-                <span class="shortcut-icon">🎓</span>
-                <strong>Student workspace</strong>
-                <small>Lessons, homework and progress</small>
-              </a>
-              <a class="shortcut-card" href="teacher.html">
-                <span class="shortcut-icon">🧑‍🏫</span>
-                <strong>Teacher workspace</strong>
-                <small>Students, classes and lesson studio</small>
-              </a>
-              <a class="shortcut-card" href="founder.html">
-                <span class="shortcut-icon">👑</span>
-                <strong>Founder portal</strong>
-                <small>Users, access and platform oversight</small>
-              </a>
-            </div>
-          </section>
-
-          <section class="profile-card" aria-labelledby="founder-tools-title">
-            <h2 id="founder-tools-title">🛠️ Admin Tools</h2>
-            <div class="profile-actions-grid">
-              <a class="profile-action" href="founder.html">
-                <span class="profile-action-icon">👑</span>
-                <span><strong>Founder Portal</strong><small>Manage users and access</small></span>
-              </a>
-              <a class="profile-action" href="lesson-studio.html">
-                <span class="profile-action-icon">🛠️</span>
-                <span><strong>Lesson Studio</strong><small>Author and publish lessons</small></span>
-              </a>
-              <a class="profile-action" href="classroom.html">
-                <span class="profile-action-icon">🎥</span>
-                <span><strong>Live Classroom</strong><small>Join or host sessions</small></span>
-              </a>
-              <a class="profile-action" href="index.html">
-                <span class="profile-action-icon">🧭</span>
-                <span><strong>Public Catalog</strong><small>See the learner-facing catalog</small></span>
-              </a>
-            </div>
+            </section>
           </section>
         </div>
+
+        <!-- Shared account section -->
+        <section id="profile-account-section" class="profile-section profile-section-account" data-section="account" hidden>
+          <div class="account-grid">
+            <div class="profile-stack">
+              <section class="profile-card" aria-labelledby="profile-details-title">
+                <h2 id="profile-details-title">👤 Account Details</h2>
+                <dl class="profile-detail-list">
+                  <div class="profile-detail-row"><dt>Name</dt><dd id="detail-name">—</dd></div>
+                  <div class="profile-detail-row"><dt>Email</dt><dd id="detail-email">—</dd></div>
+                  <div class="profile-detail-row"><dt>Role</dt><dd id="detail-role">—</dd></div>
+                  <div class="profile-detail-row"><dt>Assigned teacher</dt><dd id="detail-teacher">—</dd></div>
+                  <div class="profile-detail-row"><dt>User ID</dt><dd><code id="detail-user-id" style="font-size:0.72rem;">—</code></dd></div>
+                  <div class="profile-detail-row"><dt>Languages</dt><dd id="detail-languages">—</dd></div>
+                  <div class="profile-detail-row"><dt>Course level</dt><dd id="detail-level">—</dd></div>
+                  <div class="profile-detail-row"><dt>Member since</dt><dd id="detail-member-since">—</dd></div>
+                  <div class="profile-detail-row"><dt>Last sign-in</dt><dd id="detail-last-signin">—</dd></div>
+                </dl>
+              </section>
+            </div>
+
+            <div class="profile-stack">
+              <section class="profile-card" aria-labelledby="profile-actions-title">
+                <h2 id="profile-actions-title">⚡ Quick Actions</h2>
+                <div class="profile-actions-grid">
+                  <a id="action-workspace" class="profile-action" href="student.html">
+                    <span class="profile-action-icon">🎓</span>
+                    <span><strong>My Workspace</strong><small>Lessons and homework</small></span>
+                  </a>
+                  <a id="action-studio" class="profile-action" href="lesson-studio.html" hidden>
+                    <span class="profile-action-icon">🛠️</span>
+                    <span><strong>Lesson Studio</strong><small>Author lesson content</small></span>
+                  </a>
+                  <a id="action-results" class="profile-action" href="studio-results.html" hidden>
+                    <span class="profile-action-icon">📈</span>
+                    <span><strong>Studio Results</strong><small>See student answer results</small></span>
+                  </a>
+                  <a class="profile-action" href="classroom.html">
+                    <span class="profile-action-icon">🎥</span>
+                    <span><strong>Live Classroom</strong><small>Join booked sessions</small></span>
+                  </a>
+                  <a class="profile-action" href="https://cosylanguages.github.io/COSYmanuals/">
+                    <span class="profile-action-icon">📚</span>
+                    <span><strong>COSYmanuals</strong><small>Full lesson materials</small></span>
+                  </a>
+                  <a class="profile-action" href="https://cosylanguages.github.io/COSYgames/">
+                    <span class="profile-action-icon">🎮</span>
+                    <span><strong>COSYgames</strong><small>Practice with word games</small></span>
+                  </a>
+                  <a class="profile-action" href="https://cosylanguages.github.io/COSYevents/">
+                    <span class="profile-action-icon">🎉</span>
+                    <span><strong>COSYevents</strong><small>Live events and clubs</small></span>
+                  </a>
+                </div>
+              </section>
+
+              <section class="profile-card" aria-labelledby="profile-security-title">
+                <h2 id="profile-security-title">🔐 Account &amp; Security</h2>
+                <div class="profile-actions-grid">
+                  <button type="button" id="action-download-data" class="profile-action">
+                    <span class="profile-action-icon">💾</span>
+                    <span><strong>Download my data</strong><small>Save a copy of your profile</small></span>
+                  </button>
+                  <button type="button" id="action-copy-id" class="profile-action">
+                    <span class="profile-action-icon">🆔</span>
+                    <span><strong>Copy user ID</strong><small>Useful for support requests</small></span>
+                  </button>
+                </div>
+                <p id="security-note" style="font-size:0.78rem;color:var(--profile-muted);margin:10px 0 0;">
+                  Profile details are managed by platform administration.
+                </p>
+              </section>
+
+              <section class="profile-card" aria-labelledby="profile-privacy-title">
+                <h2 id="profile-privacy-title">🔒 Your Data</h2>
+                <p style="font-size:0.82rem;line-height:1.55;margin:0;">
+                  Your profile and learning records are stored in your COSY account and protected by row-level security.
+                  Profile details are managed by platform administration.
+                </p>
+              </section>
+            </div>
+          </div>
+        </section>
       </div>
-
-      <aside class="profile-stack">
-        <section class="profile-card" aria-labelledby="profile-details-title">
-          <h2 id="profile-details-title">👤 Account Details</h2>
-          <dl class="profile-detail-list">
-            <div class="profile-detail-row"><dt>Name</dt><dd id="detail-name">—</dd></div>
-            <div class="profile-detail-row"><dt>Email</dt><dd id="detail-email">—</dd></div>
-            <div class="profile-detail-row"><dt>Role</dt><dd id="detail-role">—</dd></div>
-            <div class="profile-detail-row"><dt>Assigned teacher</dt><dd id="detail-teacher">—</dd></div>
-            <div class="profile-detail-row"><dt>User ID</dt><dd><code id="detail-user-id" style="font-size:0.72rem;">—</code></dd></div>
-            <div class="profile-detail-row"><dt>Languages</dt><dd id="detail-languages">—</dd></div>
-            <div class="profile-detail-row"><dt>Course level</dt><dd id="detail-level">—</dd></div>
-            <div class="profile-detail-row"><dt>Member since</dt><dd id="detail-member-since">—</dd></div>
-            <div class="profile-detail-row"><dt>Last sign-in</dt><dd id="detail-last-signin">—</dd></div>
-          </dl>
-        </section>
-
-        <section class="profile-card" aria-labelledby="profile-actions-title">
-          <h2 id="profile-actions-title">⚡ Quick Actions</h2>
-          <div class="profile-actions-grid">
-            <a id="action-workspace" class="profile-action" href="student.html">
-              <span class="profile-action-icon">🎓</span>
-              <span><strong>My Workspace</strong><small>Lessons and homework</small></span>
-            </a>
-            <a id="action-studio" class="profile-action" href="lesson-studio.html" hidden>
-              <span class="profile-action-icon">🛠️</span>
-              <span><strong>Lesson Studio</strong><small>Author lesson content</small></span>
-            </a>
-            <a id="action-results" class="profile-action" href="studio-results.html" hidden>
-              <span class="profile-action-icon">📈</span>
-              <span><strong>Studio Results</strong><small>See student answer results</small></span>
-            </a>
-            <a class="profile-action" href="classroom.html">
-              <span class="profile-action-icon">🎥</span>
-              <span><strong>Live Classroom</strong><small>Join booked sessions</small></span>
-            </a>
-            <a class="profile-action" href="https://cosylanguages.github.io/COSYmanuals/">
-              <span class="profile-action-icon">📚</span>
-              <span><strong>COSYmanuals</strong><small>Full lesson materials</small></span>
-            </a>
-            <a class="profile-action" href="https://cosylanguages.github.io/COSYgames/">
-              <span class="profile-action-icon">🎮</span>
-              <span><strong>COSYgames</strong><small>Practice with word games</small></span>
-            </a>
-            <a class="profile-action" href="https://cosylanguages.github.io/COSYevents/">
-              <span class="profile-action-icon">🎉</span>
-              <span><strong>COSYevents</strong><small>Live events and clubs</small></span>
-            </a>
-          </div>
-        </section>
-
-        <section class="profile-card" aria-labelledby="profile-security-title">
-          <h2 id="profile-security-title">🔐 Account &amp; Security</h2>
-          <div class="profile-actions-grid">
-            <button type="button" id="action-download-data" class="profile-action">
-              <span class="profile-action-icon">💾</span>
-              <span><strong>Download my data</strong><small>Save a copy of your profile</small></span>
-            </button>
-            <button type="button" id="action-copy-id" class="profile-action">
-              <span class="profile-action-icon">🆔</span>
-              <span><strong>Copy user ID</strong><small>Useful for support requests</small></span>
-            </button>
-          </div>
-          <p id="security-note" style="font-size:0.78rem;color:var(--profile-muted);margin:10px 0 0;">
-            Profile details are managed by platform administration.
-          </p>
-        </section>
-
-        <section class="profile-card" aria-labelledby="profile-privacy-title">
-          <h2 id="profile-privacy-title">🔒 Your Data</h2>
-          <p style="font-size:0.82rem;line-height:1.55;margin:0;">
-            Your profile and learning records are stored in your COSY account and protected by row-level security.
-            Profile details are managed by platform administration.
-          </p>
-        </section>
-      </aside>
     </div>
   </div>
 </main>
@@ -1024,6 +1296,30 @@
     teacher: { label: 'Teacher', icon: '🧑‍🏫', workspace: 'teacher.html', workspaceName: 'Teacher Workspace', workspaceShort: 'Teacher Workspace', blurb: 'Students, classes and studio' },
     founder: { label: 'Founder', icon: '👑', workspace: 'founder.html', workspaceName: 'Founder Portal', workspaceShort: 'Founder Portal', blurb: 'Users, access and oversight' }
   };
+  const SECTION_CONFIG = {
+    student: [
+      { id: 'overview', label: 'Overview', icon: '🏠' },
+      { id: 'homework', label: 'Homework', icon: '📝' },
+      { id: 'vocabulary', label: 'Vocabulary', icon: '🧠' },
+      { id: 'courses', label: 'Courses', icon: '📚' },
+      { id: 'sessions', label: 'Sessions', icon: '🎟️' },
+      { id: 'activity', label: 'Activity', icon: '🕘' }
+    ],
+    teacher: [
+      { id: 'overview', label: 'Overview', icon: '🏠' },
+      { id: 'students', label: 'Students', icon: '👥' },
+      { id: 'sessions', label: 'Sessions', icon: '🎥' },
+      { id: 'coverage', label: 'Coverage', icon: '🌍' },
+      { id: 'activity', label: 'Activity', icon: '🕘' }
+    ],
+    founder: [
+      { id: 'overview', label: 'Overview', icon: '🏠' },
+      { id: 'members', label: 'Members', icon: '🆕' },
+      { id: 'catalog', label: 'Catalog', icon: '🌍' },
+      { id: 'workspaces', label: 'Workspaces', icon: '🔀' }
+    ]
+  };
+  const ACCOUNT_SECTION = { id: 'account', label: 'Account', icon: '👤' };
 
   let client = null;
   let user = null;
@@ -1097,11 +1393,30 @@
 
   // ── Mode handling ───────────────────────────────────────────────────────
 
+  function sectionList(mode) {
+    return (SECTION_CONFIG[mode] || []).concat([ACCOUNT_SECTION]);
+  }
+
+  function sectionBelongsToMode(section, mode) {
+    if (section === ACCOUNT_SECTION.id) return true;
+    return (SECTION_CONFIG[mode] || []).some(item => item.id === section);
+  }
+
+  function modeForSection(section) {
+    return MODES.find(mode => (SECTION_CONFIG[mode] || []).some(item => item.id === section)) || null;
+  }
+
+  function sectionFromHash() {
+    return String(window.location.hash || '').replace(/^#/, '');
+  }
+
   function initialMode() {
     const params = new URLSearchParams(window.location.search);
     const requested = (params.get('mode') || '').toLowerCase();
+    const hashMode = modeForSection(sectionFromHash());
     if (role === 'founder') {
       if (MODES.includes(requested)) return requested;
+      if (hashMode) return hashMode;
       try {
         const saved = modeStore && modeStore.getItem(STORAGE_KEY);
         if (MODES.includes(saved)) return saved;
@@ -1109,6 +1424,12 @@
       return 'founder';
     }
     return role;
+  }
+
+  function initialSectionForMode(mode) {
+    const hashSection = sectionFromHash();
+    if (hashSection && sectionBelongsToMode(hashSection, mode)) return hashSection;
+    return 'overview';
   }
 
   function ensureModeData(mode) {
@@ -1120,6 +1441,90 @@
     return Promise.resolve();
   }
 
+  function renderSectionNav(mode, active) {
+    const nav = $('profile-nav-buttons');
+    if (!nav) return;
+    nav.innerHTML = sectionList(mode).map(item => {
+      const isActive = item.id === active;
+      const divider = item.id === ACCOUNT_SECTION.id
+        ? '<div class="profile-nav-divider" role="presentation"></div>'
+        : '';
+      return divider +
+        '<button type="button" role="tab" data-section="' + item.id + '"' +
+        ' aria-selected="' + (isActive ? 'true' : 'false') + '"' +
+        ' class="' + (isActive ? 'is-active' : '') + '">' +
+        '<span class="profile-nav-icon" aria-hidden="true">' + item.icon + '</span>' +
+        '<span>' + item.label + '</span></button>';
+    }).join('');
+  }
+
+  function updateSectionHash(section) {
+    try {
+      const url = new URL(window.location.href);
+      url.hash = section && section !== 'overview' ? section : '';
+      window.history.replaceState(null, '', url.pathname + url.search + url.hash);
+    } catch (e) {}
+  }
+
+  function showSection(section, options) {
+    const opts = options || {};
+    if (section !== ACCOUNT_SECTION.id && !sectionBelongsToMode(section, currentMode)) {
+      section = 'overview';
+    }
+
+    document.querySelectorAll('.profile-section').forEach(el => { el.hidden = true; });
+    document.querySelectorAll('[data-panel]').forEach(panel => { panel.hidden = true; });
+
+    if (section === ACCOUNT_SECTION.id) {
+      const account = $('profile-account-section');
+      if (account) account.hidden = false;
+    } else {
+      const panel = document.querySelector('[data-panel="' + currentMode + '"]');
+      if (panel) {
+        panel.hidden = false;
+        const target = panel.querySelector('.profile-section[data-section="' + section + '"]');
+        if (target) target.hidden = false;
+      }
+    }
+
+    const nav = $('profile-nav-buttons');
+    if (nav) {
+      nav.querySelectorAll('button[data-section]').forEach(btn => {
+        const active = btn.getAttribute('data-section') === section;
+        btn.classList.toggle('is-active', active);
+        btn.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+    }
+
+    if (opts.updateHash !== false) updateSectionHash(section);
+    if (section === 'vocabulary') initVocabularySearch();
+  }
+
+  function setupSectionNav() {
+    const nav = $('profile-nav-buttons');
+    if (!nav) return;
+    nav.addEventListener('click', event => {
+      const button = event.target.closest('button[data-section]');
+      if (!button) return;
+      showSection(button.getAttribute('data-section'));
+    });
+  }
+
+  function setupSectionHash() {
+    window.addEventListener('hashchange', () => {
+      const section = sectionFromHash();
+      if (!section) return;
+      if (role === 'founder') {
+        const targetMode = modeForSection(section);
+        if (targetMode && targetMode !== currentMode) {
+          setMode(targetMode, { section }).catch(error => console.warn('[profile] Section mode switch failed:', error));
+          return;
+        }
+      }
+      if (sectionBelongsToMode(section, currentMode)) showSection(section, { updateHash: false });
+    });
+  }
+
   function setMode(mode, options) {
     if (!MODES.includes(mode)) return Promise.resolve();
     // Only founders may move between modes.
@@ -1127,10 +1532,6 @@
 
     currentMode = mode;
     document.documentElement.setAttribute('data-mode', mode);
-
-    document.querySelectorAll('[data-panel]').forEach(panel => {
-      panel.hidden = panel.getAttribute('data-panel') !== mode;
-    });
 
     document.querySelectorAll('.mode-tab').forEach(tab => {
       const active = tab.getAttribute('data-mode') === mode;
@@ -1170,6 +1571,23 @@
 
     const results = $('action-results');
     if (results) results.hidden = !(mode === 'teacher' || mode === 'founder');
+
+    const requestedSection = options && options.section;
+    let section = 'overview';
+    if (requestedSection && sectionBelongsToMode(requestedSection, mode)) {
+      section = requestedSection;
+    } else if (options && options.preserveHash) {
+      section = initialSectionForMode(mode);
+    }
+    renderSectionNav(mode, section);
+    showSection(section, { updateHash: false });
+    updateSectionHash(section);
+
+    const navRole = $('nav-role');
+    if (navRole) navRole.textContent = role === 'founder' ? 'Viewing as ' + meta.label : meta.label;
+
+    const catalogLink = $('header-catalog-link');
+    if (catalogLink) catalogLink.hidden = role === 'student';
 
     if (role === 'founder') {
       try { modeStore && modeStore.setItem(STORAGE_KEY, mode); } catch (e) {}
@@ -1338,7 +1756,7 @@
     const el = $('student-continue');
     if (!el) return;
     if (!row || !row.lesson_id) {
-      el.innerHTML = '<div class="profile-empty">No lesson progress yet. Pick a course from the <a href="index.html">catalog</a> and start your first lesson.</div>';
+      el.innerHTML = '<div class="profile-empty">No lesson progress yet. Open your <a href="student.html">student workspace</a> and start your first lesson.</div>';
       return;
     }
     const answered = Number(row.answered || 0);
@@ -1486,7 +1904,7 @@
 
       const grantsEl = $('profile-grants');
       if (!grants.length) {
-        grantsEl.innerHTML = '<div class="profile-empty">No course access grants are attached to this account yet. The public catalog remains available from the <a href="index.html">COSY platform catalog</a>.</div>';
+        grantsEl.innerHTML = '<div class="profile-empty">No course access grants are attached to this account yet. Your teacher can add access, then you can continue in your <a href="student.html">student workspace</a>.</div>';
       } else {
         const rows = grants.map(grant => {
           const courseId = grant.course_id || grant.course || '';
@@ -2048,6 +2466,13 @@
     $('profile-role-pill').textContent = ROLE_META[role].icon + ' ' + ROLE_META[role].label;
     $('profile-member-pill').textContent = '📅 Joined ' + formatDate(profile.created_at || user.created_at);
 
+    const navAvatar = $('nav-avatar');
+    if (navAvatar) navAvatar.textContent = initials(profile, user);
+    const navName = $('nav-name');
+    if (navName) navName.textContent = displayName;
+    const navRole = $('nav-role');
+    if (navRole) navRole.textContent = ROLE_META[role].label;
+
     $('detail-name').textContent = displayName;
     $('detail-email').textContent = email || '—';
     $('detail-role').textContent = ROLE_META[role].label;
@@ -2129,6 +2554,82 @@
     }
   }
 
+  let vocabSearchReady = false;
+  let vocabIndexPromise = null;
+
+  function loadVocabIndex() {
+    if (window.CosyVocabIndex) return Promise.resolve();
+    if (vocabIndexPromise) return vocabIndexPromise;
+    if (window.CosyLazy && typeof window.CosyLazy.load === 'function') {
+      vocabIndexPromise = window.CosyLazy.load('shared/js/vocab-index.js');
+      return vocabIndexPromise;
+    }
+    vocabIndexPromise = new Promise((resolve, reject) => {
+      const script = document.createElement('script');
+      script.src = 'shared/js/vocab-index.js';
+      script.onload = () => resolve();
+      script.onerror = () => reject(new Error('Vocabulary index failed to load'));
+      (document.head || document.documentElement).appendChild(script);
+    });
+    return vocabIndexPromise;
+  }
+
+  async function searchVocabulary(query) {
+    const results = $('vocab-results');
+    if (!results) return;
+    const q = String(query || '').trim().toLowerCase();
+    if (!q) {
+      results.innerHTML = '<div class="profile-empty">Start typing to search the vocabulary index.</div>';
+      return;
+    }
+    if (q.length < 2) {
+      results.innerHTML = '<div class="profile-empty">Type at least 2 letters to search.</div>';
+      return;
+    }
+    results.innerHTML = '<div class="profile-empty">Loading vocabulary…</div>';
+    try {
+      await loadVocabIndex();
+    } catch (error) {
+      results.innerHTML = '<div class="profile-empty">Could not load the vocabulary index. Please try again.</div>';
+      return;
+    }
+
+    const index = window.CosyVocabIndex || {};
+    const matches = [];
+    for (const word in index) {
+      const normalized = word.toLowerCase();
+      if (!normalized.includes(q)) continue;
+      const priority = normalized === q ? 1 : normalized.startsWith(q) ? 2 : 3;
+      (index[word] || []).forEach(entry => {
+        matches.push({ word, pos: entry.pos, id: entry.id, file: entry.file, priority });
+      });
+    }
+    matches.sort((a, b) => a.priority - b.priority || a.word.length - b.word.length || a.word.localeCompare(b.word));
+    const top = matches.slice(0, 24);
+    if (!top.length) {
+      results.innerHTML = '<div class="profile-empty">No vocabulary found for “' + esc(q) + '”.</div>';
+      return;
+    }
+    results.innerHTML = top.map(item => (
+      '<div class="vocab-result"><div><strong>' + esc(item.word) + '</strong>' +
+      (item.pos ? '<span class="vocab-pos">' + esc(item.pos) + '</span>' : '') +
+      '<small>' + esc(item.file || 'COSYdata vocabulary') + (item.id ? ' · ' + esc(item.id) : '') + '</small></div></div>'
+    )).join('');
+  }
+
+  function initVocabularySearch() {
+    if (vocabSearchReady) return;
+    vocabSearchReady = true;
+    const input = $('vocab-search');
+    if (!input) return;
+    let timer = null;
+    input.addEventListener('input', () => {
+      if (timer) clearTimeout(timer);
+      timer = setTimeout(() => searchVocabulary(input.value), 180);
+    });
+    searchVocabulary('');
+  }
+
   async function init() {
     if (window.CosyI18n && window.CosyI18n.ready) {
       try { await window.CosyI18n.ready; } catch (error) {}
@@ -2168,7 +2669,9 @@
     renderIdentity(displayName, email);
     setupSecurityActions();
     setupModeSwitcher();
-    await setMode(initialMode(), { updateUrl: false });
+    setupSectionNav();
+    setupSectionHash();
+    await setMode(initialMode(), { updateUrl: false, preserveHash: true });
 
     $('profile-loading').hidden = true;
     $('profile-content').hidden = false;

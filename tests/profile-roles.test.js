@@ -261,3 +261,105 @@ test('the shared mode switcher only renders links for founders', () => {
   dom.window.close();
 });
 
+
+test('student profile is tabbed and only the selected section is visible', async () => {
+  const dom = makeDom('student');
+  await new Promise(resolve => setTimeout(resolve, 300));
+  const document = dom.window.document;
+  const nav = document.getElementById('profile-nav-buttons');
+  const labels = Array.from(nav.querySelectorAll('button[data-section]')).map(btn => btn.textContent.trim());
+
+  assert.ok(labels.some(label => label.includes('Overview')));
+  assert.ok(labels.some(label => label.includes('Homework')));
+  assert.ok(labels.some(label => label.includes('Vocabulary')));
+  assert.ok(labels.some(label => label.includes('Courses')));
+  assert.ok(labels.some(label => label.includes('Account')));
+  assert.ok(!labels.some(label => label.includes('Members')));
+
+  const overview = document.querySelector('[data-panel="student"] .profile-section[data-section="overview"]');
+  const homework = document.querySelector('[data-panel="student"] .profile-section[data-section="homework"]');
+  assert.equal(overview.hidden, false);
+  assert.equal(homework.hidden, true);
+  assert.equal(document.getElementById('header-catalog-link').hidden, true);
+
+  nav.querySelector('button[data-section="homework"]').click();
+  await new Promise(resolve => setTimeout(resolve, 50));
+  assert.equal(overview.hidden, true);
+  assert.equal(homework.hidden, false);
+  assert.ok(document.getElementById('student-assignments').innerHTML.includes('Great pronunciation'));
+
+  nav.querySelector('button[data-section="vocabulary"]').click();
+  await new Promise(resolve => setTimeout(resolve, 50));
+  assert.equal(homework.hidden, true);
+  assert.equal(document.querySelector('[data-panel="student"] .profile-section[data-section="vocabulary"]').hidden, false);
+  assert.ok(document.getElementById('vocab-search'));
+  assert.ok(document.getElementById('vocab-results').textContent.includes('Start typing'));
+
+  nav.querySelector('button[data-section="account"]').click();
+  await new Promise(resolve => setTimeout(resolve, 50));
+  assert.equal(document.getElementById('profile-account-section').hidden, false);
+  assert.equal(document.querySelector('[data-panel="student"]').hidden, true);
+  assert.equal(document.getElementById('detail-user-id').textContent, 'user-1');
+
+  nav.querySelector('button[data-section="overview"]').click();
+  await new Promise(resolve => setTimeout(resolve, 50));
+  assert.equal(document.getElementById('profile-account-section').hidden, true);
+  assert.equal(document.querySelector('[data-panel="student"]').hidden, false);
+  assert.equal(overview.hidden, false);
+
+  dom.window.close();
+});
+
+test('teacher profile exposes teaching tabs without student homework or vocabulary', async () => {
+  const dom = makeDom('teacher');
+  await new Promise(resolve => setTimeout(resolve, 300));
+  const document = dom.window.document;
+  const nav = document.getElementById('profile-nav-buttons');
+  const labels = Array.from(nav.querySelectorAll('button[data-section]')).map(btn => btn.textContent.trim());
+
+  assert.ok(labels.some(label => label.includes('Students')));
+  assert.ok(labels.some(label => label.includes('Sessions')));
+  assert.ok(labels.some(label => label.includes('Coverage')));
+  assert.ok(!labels.some(label => label.includes('Homework')));
+  assert.ok(!labels.some(label => label.includes('Vocabulary')));
+  assert.equal(document.getElementById('header-catalog-link').hidden, false);
+
+  nav.querySelector('button[data-section="students"]').click();
+  await new Promise(resolve => setTimeout(resolve, 50));
+  assert.equal(document.querySelector('[data-panel="teacher"] .profile-section[data-section="students"]').hidden, false);
+  assert.equal(document.querySelector('[data-panel="teacher"] .profile-section[data-section="overview"]').hidden, true);
+  assert.ok(document.getElementById('teacher-student-list').innerHTML.includes('Sam Learner'));
+
+  dom.window.close();
+});
+
+test('founder profile exposes founder tabs and can switch to student mode', async () => {
+  const dom = makeDom('founder');
+  await new Promise(resolve => setTimeout(resolve, 300));
+  const document = dom.window.document;
+  const nav = document.getElementById('profile-nav-buttons');
+  const labels = Array.from(nav.querySelectorAll('button[data-section]')).map(btn => btn.textContent.trim());
+
+  assert.ok(labels.some(label => label.includes('Overview')));
+  assert.ok(labels.some(label => label.includes('Members')));
+  assert.ok(labels.some(label => label.includes('Catalog')));
+  assert.ok(labels.some(label => label.includes('Workspaces')));
+  assert.ok(!labels.some(label => label.includes('Homework')));
+  assert.equal(document.getElementById('header-catalog-link').hidden, false);
+
+  nav.querySelector('button[data-section="members"]').click();
+  await new Promise(resolve => setTimeout(resolve, 50));
+  assert.equal(document.querySelector('[data-panel="founder"] .profile-section[data-section="members"]').hidden, false);
+  assert.ok(document.getElementById('founder-new-members').innerHTML.includes('Fiona Founder'));
+
+  document.querySelector('.mode-tab[data-mode="student"]').click();
+  await new Promise(resolve => setTimeout(resolve, 300));
+  const studentLabels = Array.from(document.querySelectorAll('#profile-nav-buttons button[data-section]')).map(btn => btn.textContent.trim());
+  assert.ok(studentLabels.some(label => label.includes('Homework')));
+  assert.ok(studentLabels.some(label => label.includes('Vocabulary')));
+  assert.equal(document.querySelector('[data-panel="student"]').hidden, false);
+  assert.equal(document.getElementById('header-catalog-link').hidden, false);
+
+  dom.window.close();
+});
+

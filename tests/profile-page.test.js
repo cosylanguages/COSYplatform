@@ -81,6 +81,16 @@ test('profile page has role panels and a founder-only mode switcher', () => {
   assert.ok(html.includes('id="teacher-sessions"'));
   assert.ok(html.includes("from('session_content')"));
   assert.ok(html.includes('id="founder-stat-courses"'));
+
+  assert.ok(html.includes('id="profile-section-nav"'));
+  assert.ok(html.includes('id="profile-nav-buttons"'));
+  assert.ok(html.includes('data-section="homework"'));
+  assert.ok(html.includes('data-section="vocabulary"'));
+  assert.ok(html.includes('data-section="account"'));
+  assert.ok(html.includes('id="profile-account-section"'));
+  assert.ok(html.includes('SECTION_CONFIG'));
+  assert.ok(html.includes('showSection'));
+  assert.ok(html.includes('id="vocab-search"'));
 });
 
 test('workspace headers expose the founder-only mode switcher', () => {
