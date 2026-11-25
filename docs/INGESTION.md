@@ -20,7 +20,7 @@ This document outlines the procedure and tooling for ingesting curriculum roadma
 ## 2. Ingestion Commands & Flags
 
 ### 2.1 Dry Run Simulation
-To parse all 54 roadmaps and inspect deduplicated courses, lessons, and placement junction records without modifying database state:
+To parse all 60 roadmaps and inspect deduplicated courses, lessons, and placement junction records without modifying database state:
 
 ```bash
 node scripts/ingest_roadmaps.js --dry-run

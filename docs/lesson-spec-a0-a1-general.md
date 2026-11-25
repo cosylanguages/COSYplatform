@@ -497,4 +497,4 @@ Lesson JSON files reference external indexes and manual pages in the `"links"` o
 - `communication`: Functional phrase objects with `phrase_id` and `manual_url`.
 - `phonetics`: Phonetic topic references.
 
-All links are checked using `npm run check:links` (`scripts/check-links.mjs`). Schema validation is executed via `npm run validate` (`scripts/validate-lessons.js`).
+Pinned external URLs are checked with `node scripts/check-external-refs.js`. Content, language, protected-key, catalog-roadmap and platform-stats checks run through `npm run validate`; it also runs the unit/jsdom test suite.

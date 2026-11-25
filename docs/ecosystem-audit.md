@@ -91,7 +91,7 @@ Historically, platform code resided in a legacy repository (`COSYplatform-source
 `COSYplatform-source` was the original repository before application files were separated from backend assets. Its status was re-audited on 2026-11-19 (the earlier text of this section claimed everything had been transferred; that was incorrect).
 
 * **Application and runtime:** `COSYplatform` is the source of truth for the web application pages, current migrations (`supabase/migrations/`) and CI checks.
-* **Lessons:** the 448 spoken-English/French/Russian lessons referenced by the roadmaps were missing here and were migrated as **sanitized student copies** (`lessons/spoken-*`), produced with `scripts/sanitize-student-lesson.js`. Every roadmap `lessonFile` now resolves. Teacher notes and answer keys cannot live in this public repository (enforced by `scripts/check_protected_keys.js`); the unsanitized masters are kept privately.
+* **Lessons:** the 448 spoken-English/French/Russian lessons referenced by the roadmaps were missing here and were migrated as **sanitized student copies** (`lessons/spoken-*`), produced with `scripts/sanitize-student-lesson.js`. Every roadmap `lessonFile` now resolves. `scripts/check_protected_keys.js` blocks `answers`, `teacherNotes` and `answer-key`, but it treats legacy `teacher_notes` as an advisory. Some committed lessons still contain teacher scripts under that key; see `docs/known-limitations.md`.
 * **Tooling:** the sanitizer and the two session-to-lesson converters now live in `scripts/`. The legacy publisher is in `scripts/legacy-source/` (reference only, see its README).
 * **Database definitions:** the old migrations `0001`-`0009` define tables and functions the live app still uses and that no migration here creates (`lesson_content`, `student_lesson_content`, `session_content`, `manual_content`, `lesson_notes`, `cms_page_overrides`, `handle_new_user`, `join_lesson_note`, `save_lesson_note`). They are kept as reference in `supabase/legacy-source/` and must not be run.
 * **Not migrated:** the unsanitized lesson masters, the 685 lesson blueprints in `drafts/` (they contain answer keys), the old lesson schema and validator, and the old `publish-content.yml` workflow (it needs service-role secrets).
@@ -109,7 +109,7 @@ Historically, platform code resided in a legacy repository (`COSYplatform-source
 
 * **Automated CI Security Shield (`scripts/check_protected_keys.js`):**
   * `check_protected_keys.js` scans all repository XML and JSON files for prohibited keys (`answers`, `teacherNotes`, `answer-key`) and prohibited tags (`<cosy-teacher-notes>`, `<teacher-notes>`).
-  * Ensures static client assets never contain leakable teacher notes or answer keys.
+  * Blocks prohibited answer and teacher-note keys. Legacy `teacher_notes` is advisory, so this is not a guarantee that no teacher notes remain in public source.
 
 * **WebRTC Credentials Security:**
   * `shared/js/config.js` includes STUN configuration and guidelines for TURN deployment:
@@ -184,7 +184,7 @@ To complete the ecosystem synchronization across sister repositories and cloud s
 #### Step 3: Align i18n Translation Dictionaries
 1. Each product owns its own dictionary format; there is no shared JSON file to copy between them.
 2. Current status (2026-11-22):
-   - `COSYplatform`: `shared/i18n/{en,fr,ru,it,el}.json` — 461 keys each, identical key sets.
+   - `COSYplatform`: `shared/i18n/{en,fr,ru,it,el}.json` — 481 keys each, identical key sets.
    - `COSYtools`: `shared/js/hub-i18n.js` — 66 keys in each of 5 locales; `shared/js/supplemental_lexicon.js` — 8 strings in each of 14 languages. `npm run test:supplemental-i18n` passes.
    - `COSYgames`: `shared/js/i18n.js` and `i18n/games/*.js` — 7 locales; the key-parity and `T()` coverage tests pass.
    - `COSYmanuals`: `shared/i18n/ui-strings.json` — 7 ready locales (fr, de, es, it, pt, ru, el); ba, br, cv, hy, ka and tt still need native-speaker strings.
@@ -203,7 +203,7 @@ To complete the ecosystem synchronization across sister repositories and cloud s
 4. Credentials are never hardcoded; the function returns an `exp`-based username and HMAC credential with a configurable TTL.
 
 #### Step 5: Final Database Ingestion & Legacy Table Cleanup
-1. In `COSYplatform`, run `node scripts/ingest_roadmaps.js` to ensure all 54 roadmap sequences are ingested into `courses`, `lessons`, `course_lessons`, `lesson_student_content`, and `lesson_protected`.
+1. In `COSYplatform`, run `node scripts/ingest_roadmaps.js` to ensure all 60 roadmap sequences are ingested into `courses`, `lessons`, `course_lessons`, `lesson_student_content`, and `lesson_protected`.
 2. **Do not drop the legacy tables yet.** `shared/js/lesson-resolver.js`, `teacher.html` and `index.html` still read or write `lesson_content` / `student_lesson_content`. Run `npm run check:legacy-tables`; it must exit 0 before any drop. See `docs/legacy-table-cleanup.md` for the migration path and the guarded drop procedure.
 
 ---

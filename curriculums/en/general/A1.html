@@ -519,7 +519,7 @@ function renderVocabPills(words){
   ];
   return words.map(w=>{
     const cls = w.endsWith(' verb')||verbs.includes(w.toLowerCase()) ? 'verb' : 'noun';
-    return `<a href="../../vocabulary-reference.html?lang=en&search=${encodeURIComponent(w)}" class="vp ${cls}">${w}</a>`;
+    return `<a href="https://cosylanguages.github.io/COSYdata/vocabulary/en/" class="vp ${cls}">${w}</a>`;
   }).join('');
 }
 
@@ -558,12 +558,12 @@ function buildContent(){
     const col=themeColours[theme]||'#666';
     vocabHtml+=`<div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;
       padding:.65rem .8rem;border-left:3px solid ${col}">
-      <a href="../../vocabulary-reference.html?lang=en&search=${encodeURIComponent(theme)}" style="text-decoration:none;display:block;">
+      <a href="https://cosylanguages.github.io/COSYdata/vocabulary/en/" style="text-decoration:none;display:block;">
         <div style="font-size:.62rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;
           color:${col};margin-bottom:.45rem">${theme}</div>
       </a>
       <div style="display:flex;flex-wrap:wrap;gap:.25rem">
-        ${words.map(w=>`<a href="../../vocabulary-reference.html?lang=en&search=${encodeURIComponent(w)}" style="text-decoration:none;">
+        ${words.map(w=>`<a href="https://cosylanguages.github.io/COSYdata/vocabulary/en/" style="text-decoration:none;">
           <span style="font-size:.68rem;font-weight:700;
           background:rgba(255,255,255,.06);border:1px solid var(--border);
           border-radius:4px;padding:.1rem .4rem;color:var(--muted);transition:all .1s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">${w}</span>
@@ -580,7 +580,7 @@ function buildContent(){
 
   const allGrammar=UNITS.flatMap(u=>u.grammar_summary || []).filter(Boolean);
   allGrammar.forEach(g=>{
-    const href = g.ref ? (g.ref.includes('.html') ? `../../${g.ref}` : `../../grammar-reference.html#${g.ref}`) : '../../grammar-reference.html';
+    const href = g.ref ? (g.ref.includes('.html') ? `../../${g.ref}` : `https://cosylanguages.github.io/COSYtools/`) : 'https://cosylanguages.github.io/COSYtools/';
     grammarHtml+=`<a href="${href}" style="text-decoration:none;"><div class="gp-item">
       <div class="gp-name">${g.name}</div>
       <div class="gp-desc">${g.desc}</div>
@@ -642,7 +642,7 @@ function buildContent(){
           <div class="hw-box">${l.hw}</div>
           <div class="can-do">${l.cando}</div>
           <div style="margin-top:1.2rem;text-align:center;">
-            <a href="../../lesson.html?lang=en&lesson=${lessonId}" class="tb-btn active" style="font-size:.85rem;padding:.5rem 1.5rem">🚀 Start Lesson Practice</a>
+            <a href="../../student.html?course=general-en-a0-a1" class="tb-btn active" style="font-size:.85rem;padding:.5rem 1.5rem">🚀 Start Lesson Practice</a>
           </div>
         </div>
       </div>`;

@@ -30,3 +30,15 @@ student-workbooks/
 
 # Dependencies
 node_modules/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Local secrets and tool state
+.env
+.env.*
+!.env.example
+supabase/.temp/
+.pages-site/
+.cosy/

@@ -1402,7 +1402,7 @@
   <script src="shared/js/mode-switcher.js"></script>
   <script src="shared/js/authoring.js"></script>
   <link rel="stylesheet" href="https://cosylanguages.github.io/COSYlanguages/css/ecosystem-strip.css">
-  <link rel="stylesheet" href="shared/css/editorial.css?v=20261125-2">
+  <link rel="stylesheet" href="shared/css/editorial.css?v=20261125-3">
 </head>
 <body>
 <div data-ecosystem-strip data-self="platform" data-theme-toggle></div>
@@ -1518,6 +1518,10 @@
         }
         renderLesson(lessonParam, authData.profile);
       } else if (courseParam) {
+        if (!window.CosyAuth.canAccessCourseId(courseParam, authData.profile)) {
+          renderAccessDenied('Course unavailable', 'You do not have access to this course.');
+          return;
+        }
         renderCourseRoadmap(courseParam, levelParam, authData.profile);
       } else if ((viewParam || '').toLowerCase() === 'dashboard') {
         await renderTeacherOverview(authData.profile, fullManifest);

@@ -242,7 +242,7 @@
   <script src="shared/js/lesson-resolver.js"></script>
 
   <link rel="stylesheet" href="https://cosylanguages.github.io/COSYlanguages/css/ecosystem-strip.css">
-  <link rel="stylesheet" href="shared/css/editorial.css?v=20261125-2">
+  <link rel="stylesheet" href="shared/css/editorial.css?v=20261125-3">
 </head>
 <body>
 <div data-ecosystem-strip data-self="platform" data-theme-toggle></div>
@@ -275,10 +275,11 @@
         if (session && session.user) {
           let role = 'student';
           let languageAccess = [];
+          let courseLevel = '*';
           try {
             const { data: profile } = await client
               .from('profiles')
-              .select('role, language_access')
+              .select('role, language_access, course_level')
               .eq('id', session.user.id)
               .maybeSingle();
             if (profile) {
@@ -286,12 +287,13 @@
               if (Array.isArray(profile.language_access)) {
                 languageAccess = profile.language_access;
               }
+              if (profile.course_level) courseLevel = profile.course_level;
               if (window.CosyI18n && typeof window.CosyI18n.recompute === 'function') {
                 await window.CosyI18n.recompute(profile);
               }
             }
           } catch (e) {}
-          return { authenticated: true, user: session.user, role, language_access: languageAccess };
+          return { authenticated: true, user: session.user, role, language_access: languageAccess, course_level: courseLevel };
         }
       }
 
@@ -339,6 +341,14 @@
       }
 
       if (courseParam && levelParam) {
+        const canOpenCourse = role === 'founder' ||
+          !window.CosyAuth ||
+          typeof window.CosyAuth.canAccessCourseId !== 'function' ||
+          window.CosyAuth.canAccessCourseId(courseParam, authState);
+        if (!canOpenCourse) {
+          window.CosyAuth.renderAccessDenied('Course unavailable', 'You do not have access to this course.');
+          return;
+        }
         renderPublicRoadmap(courseParam, levelParam);
       } else {
         renderPublicCatalog(authState);

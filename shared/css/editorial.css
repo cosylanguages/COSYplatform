@@ -2845,3 +2845,209 @@ body.theme-dark .cosy-inline-error {
     width: 100%;
   }
 }
+
+/* ── Live classroom ─────────────────────────────────────────────────── */
+.classroom-shell {
+  --classroom-deep: #17211B;
+  --classroom-deep-soft: #1E2A22;
+  --classroom-stage: var(--cosy-paper-aged);
+}
+
+body.classroom-shell {
+  background: var(--cosy-paper) !important;
+  color: var(--cosy-color-ink) !important;
+  font-family: var(--font-sans) !important;
+}
+
+body.classroom-shell #desktop-top-bar,
+body.classroom-shell #phone-top-bar {
+  background: var(--cosy-paper) !important;
+  background: color-mix(in srgb, var(--cosy-paper) 94%, transparent) !important;
+  border-bottom-color: var(--editorial-rule) !important;
+  box-shadow: none !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+body.classroom-shell #desktop-top-bar span.font-bold,
+body.classroom-shell #phone-top-bar .font-bold span:first-child {
+  font-family: var(--font-serif);
+  font-weight: 600 !important;
+  letter-spacing: -0.02em;
+}
+
+.classroom-role-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 9px;
+  border: 1px solid var(--cosy-platform-teacher-border);
+  border-radius: 999px;
+  background: var(--cosy-platform-teacher-light);
+  color: var(--cosy-platform-teacher-hover);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.classroom-role-chip[data-role="student"] {
+  border-color: var(--cosy-platform-student-border);
+  background: var(--cosy-platform-student-light);
+  color: var(--cosy-platform-student-hover);
+}
+
+.classroom-role-chip[data-role="founder"] {
+  border-color: var(--cosy-platform-founder-border);
+  background: var(--cosy-platform-founder-light);
+  color: var(--cosy-platform-founder-hover);
+}
+
+body.classroom-shell .bg-white {
+  background-color: var(--cosy-paper-card) !important;
+}
+
+body.classroom-shell .bg-gray-50,
+body.classroom-shell .bg-gray-100 {
+  background-color: var(--cosy-paper-aged) !important;
+}
+
+body.classroom-shell .bg-gray-200 {
+  background-color: var(--cosy-paper-rule) !important;
+}
+
+body.classroom-shell .border-gray-100,
+body.classroom-shell .border-gray-200,
+body.classroom-shell .border-gray-300 {
+  border-color: var(--cosy-color-border) !important;
+}
+
+body.classroom-shell .text-gray-900,
+body.classroom-shell .text-gray-800,
+body.classroom-shell .text-gray-700 {
+  color: var(--cosy-color-ink) !important;
+}
+
+body.classroom-shell .text-gray-600,
+body.classroom-shell .text-gray-500,
+body.classroom-shell .text-gray-400 {
+  color: var(--cosy-color-ink-muted) !important;
+}
+
+body.classroom-shell #left-video-column .text-gray-400,
+body.classroom-shell #left-video-column .text-gray-500,
+body.classroom-shell #left-video-column .text-gray-600,
+body.classroom-shell #mobile-camera-controls-popup .text-gray-400,
+body.classroom-shell #mobile-camera-controls-popup .text-gray-500 {
+  color: rgba(245, 245, 244, 0.68) !important;
+}
+
+body.classroom-shell .bg-cosy-50 {
+  background-color: var(--cosy-color-sage-mist) !important;
+}
+
+body.classroom-shell .bg-cosy-100 {
+  background-color: var(--cosy-color-sage-pale) !important;
+}
+
+body.classroom-shell .bg-cosy-600,
+body.classroom-shell .bg-cosy-700 {
+  background-color: var(--editorial-sage) !important;
+  color: var(--editorial-on-accent) !important;
+}
+
+body.classroom-shell .text-cosy-900,
+body.classroom-shell .text-cosy-800,
+body.classroom-shell .text-cosy-700 {
+  color: var(--cosy-color-sage-dark) !important;
+}
+
+body.classroom-shell .border-cosy-100,
+body.classroom-shell .border-cosy-200 {
+  border-color: var(--editorial-rule) !important;
+}
+
+body.classroom-shell #room-chip-btn {
+  background: var(--cosy-paper-card) !important;
+  border-color: var(--cosy-color-border) !important;
+  color: var(--cosy-color-sage-dark) !important;
+}
+
+body.classroom-shell #workspace-container {
+  background: var(--cosy-paper) !important;
+}
+
+body.classroom-shell #center-stage-column {
+  background: var(--classroom-stage) !important;
+}
+
+body.classroom-shell #slide-container {
+  background: transparent !important;
+}
+
+body.classroom-shell #slide-container .shadow-sm,
+body.classroom-shell #slide-container .shadow {
+  box-shadow: var(--cosy-shadow-paper) !important;
+}
+
+body.classroom-shell #left-video-column {
+  background: var(--classroom-deep) !important;
+  border-right-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+body.classroom-shell #right-tool-drawer,
+body.classroom-shell #bottom-sheet-drawer {
+  background: var(--cosy-paper-card) !important;
+  border-color: var(--editorial-rule) !important;
+  box-shadow: var(--cosy-shadow-lift) !important;
+}
+
+body.classroom-shell #stage-nav-pill {
+  background: var(--cosy-paper-card) !important;
+  border-color: var(--cosy-color-border) !important;
+}
+
+body.classroom-shell #lesson-catalog-modal > div,
+body.classroom-shell #breakout-rooms-modal > div {
+  border: 1px solid var(--editorial-rule);
+  box-shadow: var(--cosy-shadow-lift);
+}
+
+body.classroom-shell #center-stage-column input[type="text"],
+body.classroom-shell #center-stage-column select,
+body.classroom-shell #right-tool-drawer input,
+body.classroom-shell #right-tool-drawer textarea,
+body.classroom-shell #right-tool-drawer select,
+body.classroom-shell #lesson-catalog-modal input,
+body.classroom-shell #lesson-catalog-modal select,
+body.classroom-shell #breakout-rooms-modal select {
+  background-color: var(--cosy-paper-card) !important;
+  border-color: var(--cosy-color-border) !important;
+  color: var(--cosy-color-ink) !important;
+}
+
+body.classroom-shell #center-stage-column input[type="text"]::placeholder,
+body.classroom-shell #right-tool-drawer input::placeholder,
+body.classroom-shell #right-tool-drawer textarea::placeholder,
+body.classroom-shell #lesson-catalog-modal input::placeholder {
+  color: var(--cosy-color-ink-faint) !important;
+}
+
+body.classroom-shell #left-video-column select,
+body.classroom-shell #left-video-column input,
+body.classroom-shell #mobile-camera-controls-popup select,
+body.classroom-shell #mobile-camera-controls-popup input {
+  background-color: var(--classroom-deep-soft) !important;
+  border-color: rgba(255, 255, 255, 0.16) !important;
+  color: #F5F5F4 !important;
+}
+
+body.classroom-shell .bg-red-600 {
+  background-color: var(--editorial-terracotta) !important;
+}
+
+body.classroom-shell .hover\:bg-red-700:hover {
+  background-color: #8F3212 !important;
+}

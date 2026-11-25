@@ -138,10 +138,10 @@
     }
   </style>
   <link rel="stylesheet" href="https://cosylanguages.github.io/COSYlanguages/css/ecosystem-strip.css">
-  <link rel="stylesheet" href="shared/css/editorial.css?v=20261125-2">
+  <link rel="stylesheet" href="shared/css/editorial.css?v=20261125-3">
 </head>
 
-<body class="bg-gray-100 text-gray-800 h-[100dvh] flex flex-col font-sans overflow-hidden role-pending">
+<body class="classroom-shell bg-gray-100 text-gray-800 h-[100dvh] flex flex-col font-sans overflow-hidden role-pending">
 <div data-ecosystem-strip data-self="platform" data-theme-toggle></div>
 
   <!-- TOP BAR (Desktop & Tablet >=600px) -->
@@ -153,6 +153,7 @@
         <span class="font-bold text-gray-800 text-sm tracking-tight group-hover:text-cosy-700 hidden lg:inline">cosy platform</span>
       </button>
       <a id="portal-link" href="student.html" class="hidden">← Portal</a>
+      <span id="classroom-role-chip" class="classroom-role-chip" data-role="student">Student</span>
     </div>
 
     <!-- Unified Room Chip & Provider Selector Dropdown -->
@@ -296,6 +297,7 @@
       <span>cosy</span>
       <span>·</span>
       <button onclick="copyShareLink()" class="font-mono text-cosy-700 hover:underline">#<span id="display-room-id-mobile">------</span></button>
+      <span id="classroom-role-chip-mobile" class="classroom-role-chip" data-role="student">Student</span>
     </div>
 
     <div class="flex items-center space-x-2">
@@ -1126,6 +1128,14 @@
         else portalLink.href = 'student.html';
       }
 
+      const chipLabel = role === 'founder' ? 'Founder' : role === 'teacher' ? 'Teacher' : 'Student';
+      ['classroom-role-chip', 'classroom-role-chip-mobile'].forEach(id => {
+        const chip = document.getElementById(id);
+        if (!chip) return;
+        chip.textContent = chipLabel;
+        if (chip.dataset) chip.dataset.role = role;
+      });
+
       if (role === 'student') {
         // Students cannot switch views or see answer keys
         if (teacherBtn) teacherBtn.classList.add('hidden');
@@ -1538,17 +1548,18 @@
     async function populateLessonCatalogModal() {
       const body = document.getElementById('catalog-modal-body');
       const manifest = window.CosyAuth ? window.CosyAuth.FULL_MANIFEST : [];
+      const canOpen = (c) => !window.CosyAuth || typeof window.CosyAuth.isCourseAccessible !== 'function' ||
+        window.CosyAuth.isCourseAccessible(c, userProfile);
+      const accessible = manifest.filter(c => c.status !== 'not_yet_available' && canOpen(c));
 
-      if (manifest.length === 0) {
-        body.innerHTML = '<div class="text-center py-4 text-gray-400">No active manifest items found.</div>';
+      if (accessible.length === 0) {
+        body.innerHTML = '<div class="text-center py-4 text-gray-400">No accessible courses found.</div>';
         return;
       }
 
       let html = `<div class="space-y-4">`;
 
-      for (const c of manifest) {
-        if (c.status === 'not_yet_available') continue;
-
+      for (const c of accessible) {
         const safeTitle = escapeHtml(c.title);
         const safeLevel = escapeHtml(c.level);
         const safeId = escapeHtml(c.id);

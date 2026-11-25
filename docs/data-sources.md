@@ -24,7 +24,7 @@ This document details the external data integrations wired into **COSYplatform**
 ## 1. Vocabulary → COSYdata
 
 - **Source Repository**: `cosylanguages/COSYdata`
-- **Integration Client**: `shared/vocab-resolver.js` and `shared/js/vocab-resolver.js`
+- **Integration Client**: `shared/js/vocab-resolver.js` (not loaded by the deployed pages; retained as an integration helper)
 - **Client Helper**: `CosyVocabResolver` (`resolveWord(term, lang)`, `search(query, lang)`)
 - **Data Resolution Mechanism**:
   1. Primary resolution checks local index loaded in browser (`window.CosyVocabIndex` from `shared/js/vocab-index.js`).

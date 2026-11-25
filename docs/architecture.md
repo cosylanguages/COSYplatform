@@ -8,19 +8,20 @@ This repository serves as the central content repository for all curriculums, ro
 
 ---
 
-## 🔑 Access Control & Grant Types (`data/access-grants.json`)
+## 🔑 Access control
 
-Platform access control is managed via URL parameters (e.g. `?key=unique-token`) checked in the browser against `data/access-grants.json` using the client-side helper module `shared/js/access-grants.js`. The system supports two distinct grant types:
+Authentication is handled by **Supabase Auth**. Authorisation is stored in
+`public.profiles.role` (`student`, `teacher`, `founder`) and enforced by Supabase
+Row Level Security on profiles, grants, lesson content, progress, vocabulary and
+submissions. The browser receives only the public anon key.
 
-### 1. Explicit Course Grants (`"courses": [...]`)
-- **Structure**: An array of exact course IDs or the wildcard `"*"` (e.g., `["general-en-a1", "spoken-en-a1"]`).
-- **Resolution**: Evaluated via direct string matching.
-- **When to Use**: Ideal for individual student enrollments, targeted trial keys, or master teacher keys requiring explicit static boundaries or full unrestricted access (`"*"`).
+- **Students** see their workspace and only courses granted in `public.access_grants`.
+- **Teachers** can browse the catalog and author lessons for their permitted languages.
+- **The founder** has unrestricted access and is the only role that can switch between student, teacher and founder modes.
 
-### 2. Segment Filter Grants (`"filter": { ... }`)
-- **Structure**: A key-value filter object scoping access by language, CEFR level, or course track (e.g., `{ "language": "en", "level": ["a0", "a1"] }`).
-- **Resolution**: Evaluated dynamically at load time against the platform course manifest (`CosyAccessGrants.FULL_MANIFEST`).
-- **When to Use**: Perfect for shared department keys (e.g., all English teachers) or student study cohorts. When new curriculums or roadmaps matching the filter criteria are added to the platform, holders of segment filter grants automatically gain entitlement without needing manual updates to `data/access-grants.json`.
+`shared/js/access-rules.js` and the per-page `requireRole()` checks control navigation and
+visible UI. They are not a security boundary; RLS remains authoritative. The old
+`?key=` / `data/access-grants.json` scheme has been retired.
 
 ---
 
@@ -34,7 +35,7 @@ Platform access control is managed via URL parameters (e.g. `?key=unique-token`)
 
 ## 👥 Dual-View Architecture (Teacher Page vs. Student Page)
 
-> **Architecture Correction Note**: Previously, this document described a backend "CosyLanguages Server" for real-time state synchronization. To align with the serverless, static philosophy of the platform ecosystem, CosyLanguages is implemented as a **static client-side renderer**. Two static pages (`teacher.html` and `student.html`) read lesson JSON/XML markup files directly and render role-appropriate views entirely in the browser.
+> **Architecture Correction Note**: The platform is a static client-side renderer backed by Supabase. `teacher.html` and `student.html` resolve a lesson through `shared/js/lesson-resolver.js`, which prefers the RLS-guarded `lessons` / `lesson_student_content` / `lesson_protected` tables and falls back to legacy static paths only where they still exist. The browser never receives teacher notes or answer keys for student views.
 
 Every lesson in CosyLanguages renders into two role-specific views from the same source lesson file (`.json` or `.xml`):
 

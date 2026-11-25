@@ -19,15 +19,10 @@ This document provides a comprehensive audit of the live classroom functionality
 
 ### References in Documentation & Automated Tests
 * **`docs/architecture.md`**: References interactive live classroom concepts, dual-view rendering, and group/breakout room mechanics.
-* **`scripts/smoke-pages.js`**: Includes `classroom.html` in mandatory page smoke tests to verify DOM compilation and rendering without script exceptions or blank pages.
-* **`scripts/test-classroom-security.js`**: Dedicated security & integration test suite (`npm run test:classroom`) verifying:
-  * Safe lesson path validation (`isSafeLessonPath`).
-  * XSS payload sanitization in live class chat.
-  * Host command authorization filtering (ignoring restricted student packets).
-  * Room key handshake verification (`?room=<id>&k=<key>`).
-  * Role-based room creation controls (students blocked from host initialization).
-  * External video URL domain whitelisting and `rel="noopener,noreferrer"` enforcement.
-  * On-demand dynamic script loading (`vocab-index.js`, `irregular-verbs.js`).
+* **`scripts/test_live_feedback.js`**: Checks the inline classroom feedback code and normalisation helpers.
+* **`scripts/test_whiteboard.js`**: Checks the shared whiteboard rules in `shared/js/whiteboard-core.js`.
+* **`scripts/test_auth_security.js`**: Checks auth and redirect guards used by the classroom and portal pages.
+* **`scripts/test_studio_teacher_view.js`**: Checks answer-key hiding in the studio teacher preview.
 
 ---
 
@@ -69,7 +64,7 @@ The live classroom in `classroom.html` supports four multi-provider video modes 
 * **Initialization Script**: `shared/js/auth-guard.js` reads `window.COSY_CONFIG` and instantiates `window.CosyAuth.client = supabase.createClient(...)`.
 * **SSO Handler**: `shared/js/auth-sso.js` restores user sessions automatically from `#access_token=...&refresh_token=...` URL hash fragments and transfers tokens across ecosystem domains.
 
-### Database Tables (`supabase/schema.sql` & `supabase/migrations/`)
+### Database Tables (`supabase/migrations/`)
 1. **`profiles`**:
    * Columns: `id` (UUID, FK auth.users), `role` (`founder`, `teacher`, `student`), `language_access` (`TEXT[]`), `course_level` (`TEXT`), `created_at`, `updated_at`.
 2. **`lesson_content`**:
@@ -122,30 +117,25 @@ The live classroom in `classroom.html` supports four multi-provider video modes 
 * **`roadmaps/`**: Sequence definitions for course tracks (e.g., `roadmaps/spoken-en-a1.json`).
 * **`lessons/`**: Individual lesson markup files in XML or JSON.
 * **`shared/js/`**: Centralized JavaScript modules (`config.js`, `auth-guard.js`, `auth-sso.js`, `cms-editor.js`, `lesson-resolver.js`, `i18n.js`, `ui-toast.js`).
-* **`shared/css/`**: Styling tokens and base styles (`tokens.css`, `base.css`).
+* **`shared/css/`**: Styling tokens and skins (`tokens.css`, `editorial.css`, `lesson-studio.css`).
 
 ### CSS & Design System
 * **Tailwind CSS**: CDN loaded (`https://cdn.tailwindcss.com`) across `classroom.html` and portal pages.
 * **Tokens (`shared/css/tokens.css`)**: Primary role colors `--cosy-platform-student` / `--student-primary` (`#0369a1` / `bg-cosy-600`) and `--cosy-platform-teacher` / `--teacher-primary` (`#6d28d9` / `bg-teacher-primary`).
-* **Contrast Compliance**: `scripts/check-contrast.js` enforces WCAG AA (>= 4.5:1) for all UI tokens.
+* **Editorial skin (`shared/css/editorial.css`)**: Warm paper, forest ink and magazine typography layered over the role styles.
+* **Studio styles (`shared/css/lesson-studio.css`)**: Only loaded by `lesson-studio.html`.
 
-### Testing & Validation Pipeline (`npm run validate`)
-Executing `npm run validate` runs a chain of rigorous checks:
-1. `node scripts/check-content-integrity.js`: Verifies duplicate curriculums/roadmaps, roadmap entries, manifest consistency, and orphan curriculums.
-2. `node scripts/validate-curriculums.js`: Validates curriculum JSON schemas.
-3. `node scripts/validate-lessons.js`: Validates lesson XML/JSON formatting.
-4. `node scripts/sync-manifest-status.js --check`: Checks availability status in `FULL_MANIFEST`.
-5. `npm run check:stats`: Verifies platform stats calculation.
-6. `npm run check:cefr`: Validates CEFR json specifications and descriptor IDs.
-7. `npm run check:contrast`: Validates WCAG AA contrast ratios across CSS tokens.
-8. `npm run test:i18n`: Runs i18n dictionary integrity, resolution rules, and page pseudo-locale checks.
-9. `npm run test:founder`: Tests Founder portal role management and permission failure warnings.
-10. `npm run test:classroom`: Runs JSDOM classroom security suite (XSS, path safety, host filtering, key verification).
-11. `npm run test:sso`: Tests SSO hash restoration and ecosystem transfer tokens.
-12. `npm run test:cms`: Tests Founder Visual CMS live overrides and Supabase upserts.
-13. `node scripts/test-pages-build.js`: Asserts GitHub Pages build artifacts integrity (`.pages-site`).
-14. `node scripts/test-publish-labels.js`: Checks live lesson publishing rules and prune guards.
-15. `npm run smoke`: Executes JSDOM smoke tests across 22 portal URL combinations.
+### Testing & Validation Pipeline
+
+`npm run validate` is the authoritative local gate. It runs:
+
+1. `node scripts/check-content-integrity.js`: duplicate curriculums/roadmaps, roadmap entries, manifest files, orphan curriculums and active catalog roadmaps.
+2. `node scripts/check-lesson-languages.js`: lesson language metadata.
+3. `node scripts/check_protected_keys.js`: prohibited answer/teacher-note keys, with an advisory list for legacy `teacher_notes`.
+4. `node scripts/build-platform-stats.js --check`: keeps `data/platform-stats.json` in sync with the manifest, roadmaps and lesson files.
+5. `npm test`: the jsdom/unit test suite.
+
+Additional checks: `npm run check:legacy-tables` (blocked by documented debt), `node scripts/check-external-refs.js` (pinned raw GitHub URLs), and `node scripts/test_whiteboard.js`.
 
 ---
 
@@ -181,6 +171,6 @@ Executing `npm run validate` runs a chain of rigorous checks:
    * *Proposed Plan*: PeerJS WebRTC video for live class.
    * *Risk/Conflict*: PeerJS is an unsfubbed P2P WebRTC mesh. While 1-on-1 calls (2 peers = 1 stream each direction) perform well, group classes with 4+ students require $N \times (N-1)$ connections, quickly causing CPU throttling and bandwidth degradation. Embedded Jitsi Meet is currently used as the scalable fallback for group lessons.
 
-5. **Test Suite Regressions in `scripts/test-classroom-security.js`**:
-   * *Current*: `scripts/test-classroom-security.js` tests specific element IDs (e.g., `#quick-lesson-select`, `#chat-messages`, `#jitsi-container`, `#host-btn`, `#connection-status`).
-   * *Risk*: Refactoring the top bar or sidebar DOM element IDs to match the new layout will fail existing automated security unit tests unless element IDs are strictly preserved or updated in lockstep inside `scripts/test-classroom-security.js`.
+5. **Partial classroom test coverage**:
+   * *Current*: `scripts/test_live_feedback.js`, `scripts/test_whiteboard.js` and `scripts/test_auth_security.js` cover feedback helpers, whiteboard rules and auth guards. There is no full DOM smoke test for the classroom layout.
+   * *Risk*: A top-bar or sidebar refactor can break element IDs such as `#quick-lesson-select`, `#chat-messages`, `#jitsi-container`, `#host-btn` or `#connection-status` without a failing test. Add a focused DOM regression test before changing that markup.

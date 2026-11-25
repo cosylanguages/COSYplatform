@@ -277,6 +277,34 @@ function checkOrphanCurriculums() {
 }
 
 // ---------------------------------------------------------------------------
+// Check 5: Active Catalog Courses Must Have a Local Roadmap
+// ---------------------------------------------------------------------------
+function checkActiveCatalogRoadmaps() {
+  console.log('\n🔍 Check 5: Active Catalog Roadmaps...');
+  let checkPassed = true;
+  const manifest = parseFullManifest();
+
+  for (const course of manifest) {
+    if (course.status === 'not_yet_available') continue;
+
+    const roadmapPath = path.join(ROOT_DIR, 'roadmaps', `${course.id}.json`);
+    if (!fs.existsSync(roadmapPath)) {
+      logError(
+        'Check 5 (Catalog Roadmaps)',
+        `Active catalog course "${course.id}" has no roadmaps/${course.id}.json. ` +
+        'The catalog fetches this file when a visitor opens the roadmap. ' +
+        'Add the roadmap or mark the course "not_yet_available".'
+      );
+      checkPassed = false;
+    }
+  }
+
+  if (checkPassed) {
+    logSuccess('Check 5 (Catalog Roadmaps)', 'Every active catalog course has a roadmap file.');
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Main Runner
 // ---------------------------------------------------------------------------
 function main() {
@@ -286,6 +314,7 @@ function main() {
   checkRoadmapSequenceEntries();
   checkManifestFilesExist();
   checkOrphanCurriculums();
+  checkActiveCatalogRoadmaps();
 
   console.log('\n---------------------------------------------------');
   if (hasErrors) {

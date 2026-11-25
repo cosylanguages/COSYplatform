@@ -36,9 +36,10 @@ const IGNORED_PATHS = [
 const PROHIBITED_KEYS = ['answers', 'teacherNotes', 'answer-key'];
 const PROHIBITED_TAGS = ['<cosy-teacher-notes', '<teacher-notes'];
 // 'explanation' is deliberately not listed: it is normal public teaching text in grammar references.
-// 'correct' and 'teacher_notes' are not listed: 'correct' is the shown fix in error-correction examples and
-// 'teacher_notes' is a syllabus metadata field in curriculums/, both intended to be public.
-const ADVISORY_KEYS = ['answer', 'ans', 'answerKey', 'answer_key', 'isCorrect', 'correctAnswer', 'correct_answer', 'solution', 'teacher-notes'];
+// 'correct' is not listed: it is the shown fix in error-correction examples.
+// 'teacher_notes' is advisory: it is syllabus metadata in curriculums/ but teacher scripts in some
+// lessons/. Report it so reviewers can decide, without failing historical content.
+const ADVISORY_KEYS = ['answer', 'ans', 'answerKey', 'answer_key', 'isCorrect', 'correctAnswer', 'correct_answer', 'solution', 'teacher-notes', 'teacher_notes'];
 
 function isIgnored(relativeFilePath) {
   return IGNORED_PATHS.some(ignored =>
@@ -142,7 +143,11 @@ function checkProtectedKeys() {
     console.log('');
   }
 
-  console.log('✅ PASS: No protected keys or teacher notes found repository-wide. All public files clean.');
+  if (advisories.length > 0) {
+    console.log(`✅ PASS: No prohibited keys or tags found. ${advisories.length} advisory field(s) need review before new content is published.`);
+  } else {
+    console.log('✅ PASS: No protected keys or teacher notes found repository-wide. All public files clean.');
+  }
 }
 
 if (require.main === module) {

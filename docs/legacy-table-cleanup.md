@@ -13,10 +13,10 @@ writing it reports:
 
 | Location | Use |
 | --- | --- |
-| `shared/js/lesson-resolver.js:141` | `saveLessonToSupabase()` upserts into `lesson_content`. |
-| `teacher.html:3037` | Calls `CosyLessons.saveLessonToSupabase()` after editing a lesson. |
-| `shared/js/lesson-resolver.js:101` | Falls back to `student_lesson_content` / `lesson_content` for legacy `lessons/` paths. |
-| `index.html:556,570` | Reads `lesson_content` for the public catalog preview. |
+| `shared/js/lesson-resolver.js:129,141,161` | `saveLessonToSupabase()` upserts into `lesson_content`. |
+| `teacher.html:4427` | Calls `CosyLessons.saveLessonToSupabase()` after editing a lesson. |
+| `shared/js/lesson-resolver.js:67,101` | Falls back to `student_lesson_content` / `lesson_content` through the legacy `lessons/` path. |
+| `index.html:915,929` | Reads `lesson_content` for the public catalog preview. |
 
 The canonical tables are `lessons`, `lesson_student_content` and
 `lesson_protected`. `scripts/ingest_roadmaps.js` populates them, and

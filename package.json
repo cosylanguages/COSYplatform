@@ -7,8 +7,10 @@
     "check:content": "node scripts/check-content-integrity.js",
     "check:languages": "node scripts/check-lesson-languages.js",
     "check:protected": "node scripts/check_protected_keys.js",
+    "stats:build": "node scripts/build-platform-stats.js",
+    "stats:check": "node scripts/build-platform-stats.js --check",
     "seed:workbooks": "node scripts/seed-workbooks.js",
-    "validate": "npm run check:content && npm run check:languages && npm run check:protected && npm test"
+    "validate": "npm run check:content && npm run check:languages && npm run check:protected && npm run stats:check && npm test"
   },
   "devDependencies": {
     "jsdom": "^29.1.1"

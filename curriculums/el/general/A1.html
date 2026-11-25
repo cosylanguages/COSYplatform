@@ -226,7 +226,7 @@ function markDone(code,e){
   saveState(); updateProgress(); buildSidebar();
 }
 function renderVocabPills(words){
-  return words.map(w=>`<a href="../../vocabulary-reference.html?lang=el&search=${encodeURIComponent(w)}" class="vp">${w}</a>`).join('');
+  return words.map(w=>`<a href="https://cosylanguages.github.io/COSYdata/vocabulary/el/" class="vp">${w}</a>`).join('');
 }
 function buildContent(){
   const area=document.getElementById('content');
@@ -252,7 +252,7 @@ function buildContent(){
           </div>
           <div style="margin-top:.8rem"><div class="vocab-pills">${renderVocabPills(vocabDisplay)}</div></div>
           <div class="can-do">${l.cando}</div>
-          <div style="margin-top:1.2rem;text-align:center;"><a href="../../lesson.html?lang=el&lesson=${l.num}" class="tb-btn active">🚀 Εξάσκηση μαθήματος</a></div>
+          <div style="margin-top:1.2rem;text-align:center;"><a href="../../student.html" class="tb-btn active">🚀 Εξάσκηση μαθήματος</a></div>
         </div>
       </div>`;
     }).join('');
