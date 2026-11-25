@@ -31,7 +31,7 @@
  */
 // Bump this when the sign-in page changes so a cached copy cannot keep an
 // older post-login destination.
-const COSY_LOGIN_VERSION = '20261125-1';
+const COSY_LOGIN_VERSION = '20261125-2';
 
 window.CosyAuth = window.CosyAuth || {};
 window.CosyAuth.LOGIN_VERSION = COSY_LOGIN_VERSION;
@@ -69,10 +69,10 @@ window.CosyAuth.FULL_MANIFEST = [
   {"id":"exam-en-b2","title":"Exam EN B2","track":"Exam","lang":"en","level":"b2","status":"not_yet_available"},
   {"id":"exam-en-c1","title":"Exam EN C1","track":"Exam","lang":"en","level":"c1","status":"not_yet_available"},
   {"id":"exam-en-c2","title":"Exam EN C2","track":"Exam","lang":"en","level":"c2","status":"not_yet_available"},
-  {"id":"exam-fr-b1","title":"Exam FR B1","track":"Exam","lang":"fr","level":"b1"},
-  {"id":"exam-fr-b2","title":"Exam FR B2","track":"Exam","lang":"fr","level":"b2"},
-  {"id":"exam-fr-c1","title":"Exam FR C1","track":"Exam","lang":"fr","level":"c1"},
-  {"id":"exam-fr-c2","title":"Exam FR C2","track":"Exam","lang":"fr","level":"c2"},
+  {"id":"exam-fr-b1","title":"Exam FR B1","track":"Exam","lang":"fr","level":"b1","status":"not_yet_available"},
+  {"id":"exam-fr-b2","title":"Exam FR B2","track":"Exam","lang":"fr","level":"b2","status":"not_yet_available"},
+  {"id":"exam-fr-c1","title":"Exam FR C1","track":"Exam","lang":"fr","level":"c1","status":"not_yet_available"},
+  {"id":"exam-fr-c2","title":"Exam FR C2","track":"Exam","lang":"fr","level":"c2","status":"not_yet_available"},
   {"id":"general-en-a0-a1","title":"General English A0–A1","track":"General","lang":"en","level":"a0-a1","levels":["a0","a1"]},
   {"id":"vocabulary-en-a1","title":"Vocabulary Practice A1 - Elementary","track":"General","lang":"en","level":"a1","status":"not_yet_available"},
   {"id":"general-en-a2","title":"General English A2","track":"General","lang":"en","level":"a2"},
@@ -275,6 +275,35 @@ window.CosyAuth.getSupabaseClient = function() {
   window.CosyAuth.getSupabaseClient();
 })();
 
+function escapeStateText(value) {
+  return String(value == null ? '' : value).replace(/[&<>"']/g, function (character) {
+    return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[character];
+  });
+}
+
+/**
+ * Renders a full-page status card using the shared editorial skin.
+ * Actions are trusted HTML supplied by the caller; all text is escaped.
+ */
+window.CosyAuth.renderState = function(options) {
+  const opts = options || {};
+  const alert = Boolean(opts.alert);
+  document.body.innerHTML = `
+    <main class="cosy-state${alert ? ' cosy-state--alert' : ''}">
+      <section class="cosy-state__card" role="${alert ? 'alert' : 'status'}">
+        <span class="cosy-state__brand">
+          <img src="shared/img/logo.svg" alt="">
+          <span>COSY platform</span>
+        </span>
+        <p class="cosy-state__kicker">${escapeStateText(opts.kicker || 'Platform')}</p>
+        <h1>${escapeStateText(opts.title || '')}</h1>
+        <p>${escapeStateText(opts.message || '')}</p>
+        <div class="cosy-state__actions">${opts.actions || ''}</div>
+      </section>
+    </main>`;
+  if (opts.onMount) opts.onMount();
+};
+
 /**
  * Loads the current session and associated user profile from Supabase.
  * Redirects to login.html if unauthenticated.
@@ -284,12 +313,12 @@ window.CosyAuth.getAuthAndProfile = async function() {
   try {
     const supabaseClient = window.CosyAuth.getSupabaseClient();
     if (!window.CosyAuth.isConfigured || !supabaseClient) {
-      document.body.innerHTML = `
-        <div style="max-width: 500px; margin: 100px auto; padding: 30px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; text-align: center; border: 1px solid #fca5a5; border-radius: 12px; background-color: #fef2f2; color: #991b1b; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);">
-          <h2 style="margin-top: 0; color: #991b1b; font-size: 1.5rem;">Platform Not Configured</h2>
-          <p style="margin-bottom: 0; font-size: 0.95rem; color: #b91c1c;">Platform not configured. Ask an administrator to set the Supabase details in shared/js/config.js.</p>
-        </div>
-      `;
+      window.CosyAuth.renderState({
+        kicker: 'Setup required',
+        title: 'Platform not configured',
+        message: 'Ask an administrator to set the Supabase URL and anon key in shared/js/config.js.',
+        actions: '<a class="btn btn-outline" href="login.html?v=' + encodeURIComponent(COSY_LOGIN_VERSION) + '">Back to sign in</a>'
+      });
       return null;
     }
 
@@ -373,16 +402,18 @@ window.CosyAuth.requireRole = async function(allowedRoles = []) {
  * Renders an access denied message onto the page.
  */
 window.CosyAuth.renderAccessDenied = function(title, message) {
-  document.body.innerHTML = `
-    <div style="max-width: 500px; margin: 100px auto; padding: 30px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; text-align: center; border: 1px solid #fca5a5; border-radius: 12px; background-color: #fef2f2; color: #991b1b; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);">
-      <h2 style="margin-top: 0; color: #991b1b; font-size: 1.5rem;">${title}</h2>
-      <p style="margin-bottom: 24px; font-size: 0.95rem; color: #b91c1c;">${message}</p>
-      <div style="display: flex; gap: 12px; justify-content: center;">
-        <button onclick="window.CosyAuth.logout()" style="background-color: #dc2626; color: white; border: none; padding: 10px 20px; border-radius: 6px; font-weight: 600; cursor: pointer;">Log Out</button>
-        <a href="login.html?v=${COSY_LOGIN_VERSION}" style="background-color: #6b7280; color: white; text-decoration: none; padding: 10px 20px; border-radius: 6px; font-weight: 600;">Back to Login</a>
-      </div>
-    </div>
-  `;
+  window.CosyAuth.renderState({
+    alert: true,
+    kicker: 'Access check',
+    title: title,
+    message: message,
+    actions: '<button type="button" class="btn" id="cosy-state-logout">Log Out</button>' +
+      '<a class="btn btn-outline" href="login.html?v=' + encodeURIComponent(COSY_LOGIN_VERSION) + '">Back to sign in</a>',
+    onMount: function() {
+      const button = document.getElementById('cosy-state-logout');
+      if (button) button.addEventListener('click', function() { window.CosyAuth.logout(); });
+    }
+  });
 };
 
 /**

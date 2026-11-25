@@ -8,8 +8,8 @@
   <meta name="description" content="Study interactive lessons, practice vocabulary, and track learning progress.">
   <link rel="icon" href="shared/img/favicon.svg" type="image/svg+xml">
   <title>Student Workspace · COSYlanguages</title>
-  <link rel="stylesheet" href="shared/css/tokens.css">
-  <link rel="stylesheet" href="shared/styles/style.css">
+  <link rel="stylesheet" href="shared/css/tokens.css?v=20261125-2">
+  <link rel="stylesheet" href="shared/styles/style.css?v=20261125-2">
   <style>
     /* Student Workspace Specific Styles */
     :root {
@@ -474,7 +474,7 @@
   <script src="shared/js/studio-media.js"></script>
   <script src="shared/js/studio-games.js"></script>
   <link rel="stylesheet" href="https://cosylanguages.github.io/COSYlanguages/css/ecosystem-strip.css">
-  <link rel="stylesheet" href="shared/css/editorial.css">
+  <link rel="stylesheet" href="shared/css/editorial.css?v=20261125-2">
 </head>
 <body>
 <div data-ecosystem-strip data-self="platform" data-theme-toggle></div>
@@ -490,7 +490,7 @@
       </div>
       <div style="display: flex; align-items: center; gap: 12px;">
         <div id="founder-mode-switcher"></div>
-        <a href="profile.html" class="btn" style="background: #e0f2fe; color: #0369a1; padding: 4px 12px; text-decoration: none; font-size: 0.8rem; border-radius: 6px; font-weight: 700;">👤 My Profile</a>
+        <a href="profile.html?mode=student" class="btn" style="background: #e0f2fe; color: #0369a1; padding: 4px 12px; text-decoration: none; font-size: 0.8rem; border-radius: 6px; font-weight: 700;">👤 My Profile</a>
         <a href="classroom.html" class="btn" style="background: #047857; color: white; padding: 4px 12px; text-decoration: none; font-size: 0.8rem; border-radius: 6px; font-weight: 600;">Live Classroom 🎥</a>
         <div id="user-info" style="font-size: 0.85rem; color: var(--cosy-color-ink-muted, #64748b);"></div>
         <button onclick="window.CosyAuth.logout()" class="btn-logout">Log Out</button>
@@ -794,7 +794,7 @@
                   <strong style="color: var(--cosy-color-ink, #0f172a); font-size: 1rem;">9. Контакты администрации / Direct Administration Contacts</strong>
                   <p style="margin: 6px 0 10px 0; color: var(--cosy-color-ink-muted, #475569); font-size: 0.85rem;">По всем вопросам (оплата, жалобы, предложения):</p>
                   <div style="display: flex; flex-wrap: wrap; gap: 12px; font-size: 0.85rem;">
-                    <a href="https://cosylanguages.github.io/" target="_blank" rel="noopener" style="background: var(--accent-tint, #e0f2fe); color: var(--accent-ink, #0369a1); padding: 6px 12px; border-radius: 6px; font-weight: 700; text-decoration: none;">🌐 cosylanguages.github.io</a>
+                    <a href="https://cosylanguages.github.io/COSYlanguages/" target="_blank" rel="noopener" style="background: var(--accent-tint, #e0f2fe); color: var(--accent-ink, #0369a1); padding: 6px 12px; border-radius: 6px; font-weight: 700; text-decoration: none;">🌐 COSYlanguages</a>
                     <a href="mailto:jamesyork_and_co@yahoo.com" style="background: var(--subtle-surface, #f1f5f9); color: var(--cosy-color-ink-soft, #334155); padding: 6px 12px; border-radius: 6px; font-weight: 600; text-decoration: none;">✉️ jamesyork_and_co@yahoo.com</a>
                     <a href="https://wa.me/33766784195" target="_blank" rel="noopener" style="background: #dcfce7; color: #15803d; padding: 6px 12px; border-radius: 6px; font-weight: 700; text-decoration: none;">💬 WhatsApp (+33766784195)</a>
                     <a href="https://t.me/jamesyork" target="_blank" rel="noopener" style="background: var(--accent-tint, #e0f2fe); color: var(--accent-ink, #0284c7); padding: 6px 12px; border-radius: 6px; font-weight: 700; text-decoration: none;">✈️ Telegram (@jamesyork)</a>
@@ -835,9 +835,9 @@
           <!-- Student Stats Summary Cards -->
           <div id="student-stats-summary" style="margin-bottom: 30px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
             <div style="background: var(--card-bg, white); border: 1px solid #bae6fd; border-radius: var(--cosy-radius-md, 14px); padding: 16px; box-shadow: 0 2px 6px rgba(3, 105, 161, 0.05);">
-              <div style="font-size: 0.8rem; font-weight: 700; color: var(--accent-ink, #0369a1); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px;">Enrolled Courses</div>
+              <div style="font-size: 0.8rem; font-weight: 700; color: var(--accent-ink, #0369a1); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px;">Available courses</div>
               <div id="stat-enrolled-courses" style="font-size: 1.8rem; font-weight: 800; color: var(--cosy-color-ink, #0f172a);">${allowedCourses.length}</div>
-              <div style="font-size: 0.75rem; color: var(--cosy-color-ink-muted, #64748b); margin-top: 4px;">Available in catalog</div>
+              <div style="font-size: 0.75rem; color: var(--cosy-color-ink-muted, #64748b); margin-top: 4px;">In your access plan</div>
             </div>
             <div style="background: var(--card-bg, white); border: 1px solid #bae6fd; border-radius: var(--cosy-radius-md, 14px); padding: 16px; box-shadow: 0 2px 6px rgba(3, 105, 161, 0.05);">
               <div style="font-size: 0.8rem; font-weight: 700; color: var(--accent-ink, #0369a1); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px;">Lessons Practiced</div>
@@ -1172,7 +1172,7 @@
         appRoot.innerHTML = html;
 
       } catch (err) {
-        appRoot.innerHTML = `<div class="access-denied"><h2>Error</h2><p>${err.message}</p></div>`;
+        appRoot.innerHTML = `<div class="access-denied"><h2>Error</h2><p>${window.cosyEscapeHtml(err.message)}</p></div>`;
       }
     }
 
@@ -1303,7 +1303,7 @@
       }
 
       if (allMatches.length === 0) {
-        resultsDiv.innerHTML = `<p style="color: #ef4444;">No matching COSYdata key found for "${q}".</p>`;
+        resultsDiv.innerHTML = `<p style="color: #ef4444;">No matching COSYdata key found for "${window.cosyEscapeHtml(q)}".</p>`;
         return;
       }
 
@@ -1390,7 +1390,7 @@
       const matches = verbs.filter(v => v.v1.includes(q) || v.v2.includes(q) || v.v3.includes(q));
 
       if (matches.length === 0) {
-        resultsDiv.innerHTML = `<p style="color: #ef4444;">No irregular verb found for "${q}".</p>`;
+        resultsDiv.innerHTML = `<p style="color: #ef4444;">No irregular verb found for "${window.cosyEscapeHtml(q)}".</p>`;
         return;
       }
 
@@ -2789,7 +2789,7 @@
         for (const groupHeader in grouped) {
           html += `
             <div style="border-bottom: 1px solid #e2e8f0; pb: 8px;">
-              <h3 style="font-size: 0.95rem; font-weight: 700; color: var(--cosy-color-ink-soft, #334155); margin-bottom: 8px;">${groupHeader}</h3>
+              <h3 style="font-size: 0.95rem; font-weight: 700; color: var(--cosy-color-ink-soft, #334155); margin-bottom: 8px;">${window.cosyEscapeHtml(groupHeader)}</h3>
               <div style="display: flex; flex-direction: column; gap: 10px;">
           `;
 
@@ -2801,10 +2801,10 @@
             html += `
               <div id="${cardId}" style="background: var(--subtle-surface, #f8fafc); border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px;">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-                  <strong style="font-size: 0.88rem; color: var(--accent-ink, #0369a1);">${n.lesson_id}</strong>
+                  <strong style="font-size: 0.88rem; color: var(--accent-ink, #0369a1);">${window.cosyEscapeHtml(n.lesson_id)}</strong>
                   <span id="${statusId}" style="font-size: 0.75rem; font-weight: 700; color: var(--cosy-color-ink-muted, #64748b);">v${n.version || 0}</span>
                 </div>
-                <textarea id="${textareaId}" style="width: 100%; height: 80px; padding: 8px; font-size: 0.85rem; border: 1px solid #cbd5e1; border-radius: 6px; resize: vertical; font-family: inherit;">${n.content || ''}</textarea>
+                <textarea id="${textareaId}" style="width: 100%; height: 80px; padding: 8px; font-size: 0.85rem; border: 1px solid #cbd5e1; border-radius: 6px; resize: vertical; font-family: inherit;">${window.cosyEscapeHtml(n.content || '')}</textarea>
                 <div style="display: flex; justify-content: flex-end; gap: 8px; margin-top: 6px;">
                   <button onclick="savePortalNote('${n.id}', '${textareaId}', '${statusId}', ${n.version || 0})" style="background: var(--student-primary, #0369a1); color: white; border: none; border-radius: 6px; padding: 4px 12px; font-size: 0.8rem; font-weight: 600; cursor: pointer;">Save Note</button>
                 </div>
@@ -2819,7 +2819,7 @@
 
       } catch (err) {
         console.warn('Error loading notes:', err);
-        container.innerHTML = `<p style="color: #ef4444; font-size: 0.85rem;">Could not load notes: ${err.message || 'Error'}</p>`;
+        container.innerHTML = `<div class="cosy-inline-error" role="alert"><div><strong>Classroom notes could not be loaded.</strong><p>Refresh the page or try again in a moment.</p></div></div>`;
       }
     }
 

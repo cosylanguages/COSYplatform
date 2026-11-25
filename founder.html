@@ -8,8 +8,8 @@
   <meta name="description" content="Manage platform users, language access permissions, and administrative settings." data-i18n-placeholder="founder.metaDescription">
   <link rel="icon" href="shared/img/favicon.svg" type="image/svg+xml">
   <title data-i18n="founder.title">Founder Portal · COSYlanguages</title>
-  <link rel="stylesheet" href="shared/css/tokens.css">
-  <link rel="stylesheet" href="shared/styles/style.css">
+  <link rel="stylesheet" href="shared/css/tokens.css?v=20261125-2">
+  <link rel="stylesheet" href="shared/styles/style.css?v=20261125-2">
   <style>
     :root {
       --founder-primary: #0f172a;
@@ -24,10 +24,10 @@
     }
 
     .founder-header {
-      background: var(--founder-primary);
-      color: white;
-      padding: 1.5rem 0;
-      border-bottom: 1px solid #1e293b;
+      background: var(--cosy-paper) !important;
+      color: var(--cosy-color-ink) !important;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--cosy-color-border);
     }
 
     .founder-header-content {
@@ -35,8 +35,152 @@
       margin: 0 auto;
       padding: 0 1.5rem;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      gap: 14px 20px;
+      flex-wrap: wrap;
+    }
+
+    .founder-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+    }
+
+    .founder-brand img {
+      width: 34px;
+      height: 34px;
+      object-fit: contain;
+      border-radius: 9px;
+    }
+
+    .founder-account {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .founder-identity {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      max-width: 220px;
+      color: var(--cosy-color-ink-muted);
+      font-size: 0.78rem;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .founder-identity::before {
+      content: 'F';
+      display: inline-grid;
+      place-items: center;
+      width: 24px;
+      height: 24px;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      background: var(--cosy-platform-founder-light);
+      color: var(--cosy-platform-founder);
+      font-family: var(--font-serif);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .founder-account .btn,
+    .founder-account .btn-logout {
+      white-space: nowrap;
+    }
+
+    .founder-toolbar {
+      background: color-mix(in srgb, var(--cosy-paper-aged) 72%, transparent);
+      border-bottom: 1px solid var(--cosy-color-border);
+    }
+
+    .founder-toolbar__inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 10px 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px 20px;
+      flex-wrap: wrap;
+    }
+
+    .founder-toolbar__actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .founder-create {
+      background: var(--cosy-platform-founder) !important;
+      border: 1px solid var(--cosy-platform-founder) !important;
+      color: var(--editorial-on-accent) !important;
+      border-radius: 999px !important;
+      padding: 7px 15px !important;
+      font-size: 0.8rem !important;
+      font-weight: 700 !important;
+      line-height: 1.2;
+    }
+
+    .founder-create:hover {
+      background: var(--cosy-platform-founder-hover) !important;
+      border-color: var(--cosy-platform-founder-hover) !important;
+    }
+
+    .founder-toolbar .cosy-mode-switcher__label {
+      color: var(--cosy-color-ink-muted);
+    }
+
+    .founder-toolbar .cosy-mode-switcher__chip {
+      background: var(--cosy-paper-card);
+      border-color: var(--cosy-color-border);
+      color: var(--cosy-color-ink-soft);
+    }
+
+    .founder-toolbar .cosy-mode-switcher__chip:hover {
+      border-color: var(--cosy-platform-founder);
+      color: var(--cosy-platform-founder);
+    }
+
+    .founder-toolbar .cosy-mode-switcher__chip.is-active {
+      background: var(--cosy-platform-founder);
+      border-color: var(--cosy-platform-founder);
+      color: var(--editorial-on-accent);
+    }
+
+    @media (max-width: 760px) {
+      .founder-header-content,
+      .founder-toolbar__inner {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      .founder-account {
+        width: 100%;
+        justify-content: flex-end;
+      }
+
+      .founder-identity {
+        max-width: none;
+      }
+
+      .founder-toolbar__actions {
+        width: 100%;
+        justify-content: space-between;
+      }
     }
 
     .badge-founder {
@@ -216,30 +360,35 @@
   <script src="shared/js/mode-switcher.js"></script>
   <script src="shared/js/authoring.js"></script>
   <link rel="stylesheet" href="https://cosylanguages.github.io/COSYlanguages/css/ecosystem-strip.css">
-  <link rel="stylesheet" href="shared/css/editorial.css">
+  <link rel="stylesheet" href="shared/css/editorial.css?v=20261125-2">
 </head>
 <body>
 <div data-ecosystem-strip data-self="platform" data-theme-toggle></div>
 
   <header class="founder-header">
     <div class="founder-header-content">
-      <div style="display: flex; align-items: center; gap: 12px;">
-        <a href="index.html" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: inherit;">
-          <img src="shared/img/logo.svg" alt="COSY platform" style="height: 36px; width: 36px; object-fit: contain;">
-          <span style="font-size: 1.4rem; font-weight: 800;" data-i18n-skip>COSY platform</span>
-        </a>
-        <span class="badge-founder" data-i18n="founder.badge">Founder &amp; Executive Portal</span>
-      </div>
-      <div style="display: flex; align-items: center; gap: 16px;">
-        <button onclick="openFounderLessonCreatorModal()" class="btn" style="background: #0284c7; color: white; border: none; border-radius: 6px; padding: 6px 14px; font-size: 0.85rem; font-weight: 600; cursor: pointer;">➕ Create New Lesson</button>
-        <div id="header-lang-switcher"></div>
-        <div id="founder-mode-switcher"></div>
-        <a href="profile.html" class="btn" style="background: #1e293b; color: #e0f2fe; border: 1px solid #334155; padding: 6px 14px; text-decoration: none; font-size: 0.85rem; border-radius: 6px; font-weight: 700;">👤 My Profile</a>
-        <div id="user-info" style="font-size: 0.85rem; color: var(--cosy-color-ink-muted, #94a3b8);"></div>
+      <a class="founder-brand" href="index.html">
+        <img src="shared/img/logo.svg" alt="">
+        <span data-i18n-skip>COSY platform</span>
+      </a>
+      <span class="badge-founder" data-i18n="founder.badge">Founder &amp; Executive Portal</span>
+      <div class="founder-account">
+        <div id="user-info" class="founder-identity"></div>
+        <a href="profile.html?mode=founder" class="btn" data-i18n="common.myProfile">My Profile</a>
         <button onclick="window.CosyAuth.logout()" class="btn-logout" data-i18n="common.logout">Log Out</button>
       </div>
     </div>
   </header>
+
+  <div class="founder-toolbar">
+    <div class="founder-toolbar__inner">
+      <div id="founder-mode-switcher"></div>
+      <div class="founder-toolbar__actions">
+        <button type="button" onclick="openFounderLessonCreatorModal()" class="btn founder-create" data-i18n="founder.createLesson">+ New lesson</button>
+        <div id="header-lang-switcher"></div>
+      </div>
+    </div>
+  </div>
 
   <main id="app-root" class="container" style="max-width: 1100px;">
     <!-- Rendered via JS -->
@@ -606,7 +755,7 @@
         const errMsg = (window.CosyI18n && window.CosyI18n.t)
           ? window.CosyI18n.t('founder.authorChangeError')
           : 'Failed to update main teacher authoring status.';
-        if (window.CosyUI) CosyUI.toast(errMsg + ' (' + (err.message || err) + ')', 'error');
+        if (window.CosyUI) CosyUI.toast(errMsg, 'error');
       }
     }
 
@@ -620,7 +769,10 @@
 
       const client = window.CosyAuth.client;
       if (!client) {
-        container.innerHTML = `<p style="color: #ef4444;" data-i18n="founder.clientOffline">Client offline</p>`;
+        container.innerHTML = `<div class="cosy-inline-error" role="alert">
+          <div><strong>${window.CosyI18n.t('founder.clientOffline')}</strong>
+          <p>${window.CosyI18n.t('founder.errFetchingProfilesHint')}</p></div>
+        </div>`;
         return;
       }
 
@@ -631,7 +783,14 @@
         ]);
 
         if (pError) {
-          container.innerHTML = `<p style="color: #ef4444;">${window.CosyI18n.t('founder.errFetchingProfiles', { message: `<span data-i18n-skip>${pError.message}</span>` })}</p>`;
+          console.error('[founder] Could not load member profiles:', pError);
+          container.innerHTML = `<div class="cosy-inline-error" role="alert">
+            <div>
+              <strong>${window.CosyI18n.t('founder.errFetchingProfiles')}</strong>
+              <p>${window.CosyI18n.t('founder.errFetchingProfilesHint')}</p>
+            </div>
+            <button type="button" class="btn btn-outline" onclick="loadUserProfiles()">${window.CosyI18n.t('founder.retry')}</button>
+          </div>`;
           return;
         }
 
@@ -716,7 +875,14 @@
         window.CosyI18n.applyDom(container);
 
       } catch (err) {
-        container.innerHTML = `<p style="color: #ef4444;">${window.CosyI18n.t('founder.errSystem', { message: `<span data-i18n-skip>${err.message}</span>` })}</p>`;
+        console.error('[founder] Member profile loading failed:', err);
+        container.innerHTML = `<div class="cosy-inline-error" role="alert">
+          <div>
+            <strong>${window.CosyI18n.t('founder.errSystem')}</strong>
+            <p>${window.CosyI18n.t('founder.errFetchingProfilesHint')}</p>
+          </div>
+          <button type="button" class="btn btn-outline" onclick="loadUserProfiles()">${window.CosyI18n.t('founder.retry')}</button>
+        </div>`;
       }
     }
 

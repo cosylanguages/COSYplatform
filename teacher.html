@@ -8,8 +8,8 @@
   <meta name="description" content="Manage course roadmaps, view lesson materials, and guide student sessions.">
   <link rel="icon" href="shared/img/favicon.svg" type="image/svg+xml">
   <title>Teacher Workspace · COSYlanguages</title>
-  <link rel="stylesheet" href="shared/css/tokens.css">
-  <link rel="stylesheet" href="shared/styles/style.css">
+  <link rel="stylesheet" href="shared/css/tokens.css?v=20261125-2">
+  <link rel="stylesheet" href="shared/styles/style.css?v=20261125-2">
   <style>
     /* Teacher Page Specific Styles */
     :root {
@@ -1402,7 +1402,7 @@
   <script src="shared/js/mode-switcher.js"></script>
   <script src="shared/js/authoring.js"></script>
   <link rel="stylesheet" href="https://cosylanguages.github.io/COSYlanguages/css/ecosystem-strip.css">
-  <link rel="stylesheet" href="shared/css/editorial.css">
+  <link rel="stylesheet" href="shared/css/editorial.css?v=20261125-2">
 </head>
 <body>
 <div data-ecosystem-strip data-self="platform" data-theme-toggle></div>
@@ -1677,7 +1677,7 @@
           </nav>
           <div class="teacher-sidebar__label">Account</div>
           <nav class="teacher-sidebar__nav teacher-sidebar__nav--secondary" aria-label="Account and help">
-            <a href="profile.html">👤 <span>My profile</span></a>
+            <a href="profile.html?mode=teacher">👤 <span>My profile</span></a>
             ${isFounder ? '<a href="founder.html">👑 <span>Founder portal</span></a>' : ''}
             <a href="https://cosylanguages.github.io/COSYmanuals/" target="_blank" rel="noopener">📖 <span>Help center</span></a>
           </nav>
@@ -1914,7 +1914,7 @@
               <div class="teacher-topbar__actions">
                 <a class="teacher-chip teacher-chip--green" href="classroom.html">🎥 Open classroom</a>
                 <a class="teacher-chip" href="#student-roster-section" data-teacher-nav>🕘 Review queue <span id="topbar-review-count" hidden>0</span></a>
-                <a class="teacher-chip teacher-chip--ghost" href="profile.html">👤 My profile</a>
+                <a class="teacher-chip teacher-chip--ghost" href="profile.html?mode=teacher">👤 My profile</a>
               </div>
             </div>
 
@@ -2524,8 +2524,8 @@
         renderMyStudentsProgressTable();
       } catch (err) {
         console.warn("loadMyStudentsProgress error:", err);
-        const errMsg = (window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.errLoadingStudents", { error: err.message }) : `Could not load student progress: ${err.message}`;
-        container.innerHTML = `<p style="color: #ef4444; font-size: 0.85rem;">${escapeHtml(errMsg)}</p>`;
+        const errMsg = (window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t('teacher.errLoadingStudents') : 'Student progress could not be loaded. Refresh the page or try again.';
+        container.innerHTML = `<div class="cosy-inline-error" role="alert"><div><strong>${escapeHtml(errMsg)}</strong><p>Refresh the page or try again in a moment.</p></div></div>`;
       }
     }
 
@@ -2703,7 +2703,7 @@
         appRoot.innerHTML = html;
 
       } catch (err) {
-        appRoot.innerHTML = `<div class="access-denied"><h2>Error</h2><p>${err.message}</p></div>`;
+        appRoot.innerHTML = `<div class="access-denied"><h2>Error</h2><p>${window.cosyEscapeHtml(err.message)}</p></div>`;
       }
     }
 
@@ -2843,7 +2843,7 @@
       }
 
       if (allMatches.length === 0) {
-        resultsDiv.innerHTML = `<p style="color: #ef4444;">No matching COSYdata key found for "${q}".</p>`;
+        resultsDiv.innerHTML = `<p style="color: #ef4444;">No matching COSYdata key found for "${window.cosyEscapeHtml(q)}".</p>`;
         return;
       }
 
@@ -2930,7 +2930,7 @@
       const matches = verbs.filter(v => v.v1.includes(q) || v.v2.includes(q) || v.v3.includes(q));
 
       if (matches.length === 0) {
-        resultsDiv.innerHTML = `<p style="color: #ef4444;">No irregular verb found for "${q}".</p>`;
+        resultsDiv.innerHTML = `<p style="color: #ef4444;">No irregular verb found for "${window.cosyEscapeHtml(q)}".</p>`;
         return;
       }
 
@@ -3806,7 +3806,7 @@
         for (const groupHeader in grouped) {
           html += `
             <div style="border-bottom: 1px solid #e2e8f0; pb: 8px;">
-              <h3 style="font-size: 0.95rem; font-weight: 700; color: var(--cosy-color-ink-soft, #334155); margin-bottom: 8px;">${groupHeader}</h3>
+              <h3 style="font-size: 0.95rem; font-weight: 700; color: var(--cosy-color-ink-soft, #334155); margin-bottom: 8px;">${window.cosyEscapeHtml(groupHeader)}</h3>
               <div style="display: flex; flex-direction: column; gap: 10px;">
           `;
 
@@ -3818,10 +3818,10 @@
             html += `
               <div id="${cardId}" style="background: var(--subtle-surface, #f8fafc); border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px;">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-                  <strong style="font-size: 0.88rem; color: var(--teacher-primary, #6d28d9);">${n.lesson_id}</strong>
+                  <strong style="font-size: 0.88rem; color: var(--teacher-primary, #6d28d9);">${window.cosyEscapeHtml(n.lesson_id)}</strong>
                   <span id="${statusId}" style="font-size: 0.75rem; font-weight: 700; color: var(--cosy-color-ink-muted, #64748b);">v${n.version || 0}</span>
                 </div>
-                <textarea id="${textareaId}" style="width: 100%; height: 80px; padding: 8px; font-size: 0.85rem; border: 1px solid #cbd5e1; border-radius: 6px; resize: vertical; font-family: inherit;">${n.content || ''}</textarea>
+                <textarea id="${textareaId}" style="width: 100%; height: 80px; padding: 8px; font-size: 0.85rem; border: 1px solid #cbd5e1; border-radius: 6px; resize: vertical; font-family: inherit;">${window.cosyEscapeHtml(n.content || '')}</textarea>
                 <div style="display: flex; justify-content: flex-end; gap: 8px; margin-top: 6px;">
                   <button onclick="savePortalNote('${n.id}', '${textareaId}', '${statusId}', ${n.version || 0})" style="background: var(--teacher-primary, #6d28d9); color: white; border: none; border-radius: 6px; padding: 4px 12px; font-size: 0.8rem; font-weight: 600; cursor: pointer;">Save Note</button>
                 </div>
@@ -3836,7 +3836,7 @@
 
       } catch (err) {
         console.warn('Error loading notes:', err);
-        container.innerHTML = `<p style="color: #ef4444; font-size: 0.85rem;">Could not load notes: ${err.message || 'Error'}</p>`;
+        container.innerHTML = `<div class="cosy-inline-error" role="alert"><div><strong>Classroom notes could not be loaded.</strong><p>Refresh the page or try again in a moment.</p></div></div>`;
       }
     }
 
@@ -3998,8 +3998,8 @@
 
       } catch (err) {
         console.warn("loadTeacherSubmissions error:", err);
-        const errMsg = (window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t("teacher.couldNotLoadSubmissions", { error: err.message }) : `Could not load submissions: ${err.message}`;
-        container.innerHTML = `<p style="color: #ef4444; font-size: 0.85rem;">${escapeHtml(errMsg)}</p>`;
+        const errMsg = (window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t('teacher.couldNotLoadSubmissions') : 'Submissions could not be loaded. Refresh the page or try again.';
+        container.innerHTML = `<div class="cosy-inline-error" role="alert"><div><strong>${escapeHtml(errMsg)}</strong><p>Refresh the page or try again in a moment.</p></div></div>`;
       }
     }
 
@@ -4448,7 +4448,8 @@
           ))
         );
 
-        const errorToast = isPermissionErr ? permMsg : ('Error saving lesson: ' + (err.message || err));
+        const saveMsg = (window.CosyI18n && window.CosyI18n.t) ? window.CosyI18n.t('teacher.saveLessonError') : 'The lesson could not be saved. Try again.';
+        const errorToast = isPermissionErr ? permMsg : saveMsg;
         if (window.CosyUI && window.CosyUI.toast) {
           CosyUI.toast(errorToast, 'error');
         } else {

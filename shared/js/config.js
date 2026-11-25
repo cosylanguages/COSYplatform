@@ -13,3 +13,10 @@ window.COSY_CONFIG = {
     { urls: "stun:stun1.l.google.com:19302" }
   ]
 };
+
+/* Shared HTML escaper for values interpolated into innerHTML. */
+window.cosyEscapeHtml = function (value) {
+  return String(value == null ? '' : value).replace(/[&<>"']/g, function (character) {
+    return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[character];
+  });
+};

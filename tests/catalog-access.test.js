@@ -42,6 +42,13 @@ test('students are sent to their workspace from the catalog', () => {
   assert.equal(access.normalizeRole('FOUNDER'), 'founder');
 });
 
+test('the bare app root opens the profile while index.html stays the catalog', () => {
+  const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
+  assert.ok(html.includes('const isBareAppRoot ='));
+  assert.ok(html.includes("window.location.replace('profile.html')"));
+  assert.ok(html.indexOf('if (isBareAppRoot') < html.indexOf('if (!isStaff)'));
+});
+
 test('the catalog page checks the signed-in role before rendering', () => {
   const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
   assert.ok(html.includes('shared/js/access-rules.js'));

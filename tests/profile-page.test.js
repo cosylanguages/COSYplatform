@@ -63,8 +63,11 @@ test('profile page loads and renders the signed-in user data', () => {
 
 test('workspace pages link back to the profile', () => {
   for (const file of ['hub.html', 'student.html', 'teacher.html', 'founder.html']) {
-    assert.ok(read(file).includes('href="profile.html"'), `${file} links to profile.html`);
+    assert.match(read(file), /href="profile\.html(?:\?mode=(?:student|teacher|founder))?"/, `${file} links to profile.html`);
   }
+  assert.match(read('student.html'), /href="profile\.html\?mode=student"/);
+  assert.match(read('teacher.html'), /href="profile\.html\?mode=teacher"/);
+  assert.match(read('founder.html'), /href="profile\.html\?mode=founder"/);
 });
 
 test('profile page has role panels and a founder-only mode switcher', () => {

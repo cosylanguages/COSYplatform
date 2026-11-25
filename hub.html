@@ -8,8 +8,8 @@
   <meta name="description" content="Access your course tracks, learning resources, and portal navigation." data-i18n-placeholder="hub.metaDescription">
   <link rel="icon" href="shared/img/favicon.svg" type="image/svg+xml">
   <title data-i18n="hub.title">Learning Hub · COSYlanguages</title>
-  <link rel="stylesheet" href="shared/css/tokens.css">
-  <link rel="stylesheet" href="shared/styles/style.css">
+  <link rel="stylesheet" href="shared/css/tokens.css?v=20261125-2">
+  <link rel="stylesheet" href="shared/styles/style.css?v=20261125-2">
   <style>
     :root {
       --hub-primary: var(--cosy-platform-accent);
@@ -282,7 +282,7 @@
   <script src="shared/js/mode-switcher.js"></script>
   <script src="shared/js/lesson-resolver.js"></script>
   <link rel="stylesheet" href="https://cosylanguages.github.io/COSYlanguages/css/ecosystem-strip.css">
-  <link rel="stylesheet" href="shared/css/editorial.css">
+  <link rel="stylesheet" href="shared/css/editorial.css?v=20261125-2">
 </head>
 <body>
 <div data-ecosystem-strip data-self="platform" data-theme-toggle></div>
@@ -516,7 +516,7 @@
         appRoot.innerHTML = html;
         window.CosyI18n.applyDom(document);
       } catch (err) {
-        appRoot.innerHTML = `<div class="access-denied"><h2 data-i18n="hub.error">${window.CosyI18n.t('hub.error')}</h2><p data-i18n-skip>${err.message}</p></div>`;
+        appRoot.innerHTML = `<div class="access-denied"><h2 data-i18n="hub.error">${window.CosyI18n.t('hub.error')}</h2><p data-i18n-skip>${window.cosyEscapeHtml(err.message)}</p></div>`;
         window.CosyI18n.applyDom(document);
       }
     }

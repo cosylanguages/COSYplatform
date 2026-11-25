@@ -35,7 +35,7 @@ test('an unauthenticated visit returns to the page that requested sign-in', () =
   const target = new URL(window.location.href, 'https://cosylanguages.github.io/COSYplatform/');
   assert.equal(target.pathname.endsWith('/COSYplatform/login.html'), true);
   assert.equal(target.searchParams.get('redirect'), 'https://cosylanguages.github.io/COSYplatform/student.html?course=en-a1');
-  assert.match(target.searchParams.get('v') || '', /^20261125-1$/);
+  assert.match(target.searchParams.get('v') || '', /^20261125-2$/);
 });
 
 test('the sign-in page has no role-based destination', () => {
@@ -49,10 +49,10 @@ test('hub, 404 and classroom sign-in links carry the current page and cache vers
   const notFound = fs.readFileSync(path.join(root, '404.html'), 'utf8');
   const classroom = fs.readFileSync(path.join(root, 'classroom.html'), 'utf8');
 
-  assert.ok(index.includes('const signInUrl = `login.html?redirect=${encodeURIComponent(window.location.href)}&v=20261125-1`;'));
+  assert.ok(index.includes('const signInUrl = `login.html?redirect=${encodeURIComponent(window.location.href)}&v=20261125-2`;'));
   assert.ok(index.includes('href="${signInUrl}"'));
   assert.ok(notFound.includes("loginUrl = basePath + 'login.html?redirect='"));
-  assert.ok(notFound.includes("encodeURIComponent(window.location.href) + '&v=20261125-1'"));
+  assert.ok(notFound.includes("encodeURIComponent(window.location.href) + '&v=20261125-2'"));
   assert.ok(notFound.includes('signInBtn.href = loginUrl'));
   assert.match(classroom, /login\.html\?redirect=classroom\.html&v=\d+/);
 });

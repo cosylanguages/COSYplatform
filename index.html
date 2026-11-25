@@ -8,8 +8,8 @@
   <meta name="description" content="Browse available language learning courses and curriculum roadmaps." data-i18n-placeholder="index.metaDescription">
   <link rel="icon" href="shared/img/favicon.svg" type="image/svg+xml">
   <title data-i18n="index.title">Course Catalog · COSYlanguages</title>
-  <link rel="stylesheet" href="shared/css/tokens.css">
-  <link rel="stylesheet" href="shared/styles/style.css">
+  <link rel="stylesheet" href="shared/css/tokens.css?v=20261125-2">
+  <link rel="stylesheet" href="shared/styles/style.css?v=20261125-2">
   <style>
     :root {
       --hub-primary: var(--cosy-platform-accent);
@@ -242,7 +242,7 @@
   <script src="shared/js/lesson-resolver.js"></script>
 
   <link rel="stylesheet" href="https://cosylanguages.github.io/COSYlanguages/css/ecosystem-strip.css">
-  <link rel="stylesheet" href="shared/css/editorial.css">
+  <link rel="stylesheet" href="shared/css/editorial.css?v=20261125-2">
 </head>
 <body>
 <div data-ecosystem-strip data-self="platform" data-theme-toggle></div>
@@ -303,7 +303,7 @@
 
       const authState = await checkAuthentication();
       if (!authState.authenticated) {
-        const loginUrl = `login.html?redirect=${encodeURIComponent(window.location.href)}&v=20261125-1`;
+        const loginUrl = `login.html?redirect=${encodeURIComponent(window.location.href)}&v=20261125-2`;
         window.location.href = loginUrl;
         return;
       }
@@ -314,6 +314,15 @@
       const isStaff = window.CosyAccess
         ? window.CosyAccess.isStaff(role)
         : (role === 'teacher' || role === 'founder');
+
+      // The bare app root is the entry point: signed-in people land on their
+      // profile. The catalog stays available at the explicit index.html URL.
+      const currentPath = window.location.pathname;
+      const isBareAppRoot = /\/$/.test(currentPath) || /\/COSYplatform$/.test(currentPath);
+      if (isBareAppRoot && !lessonParam && !courseParam && !levelParam) {
+        window.location.replace('profile.html');
+        return;
+      }
 
       if (lessonParam) {
         const targetPage = isStaff ? 'teacher.html' : 'student.html';
@@ -585,7 +594,7 @@
       const moreLanguages = languages.filter(lang => !primaryLanguages.includes(lang));
 
       const signedIn = Boolean(authState && authState.authenticated);
-      const signInUrl = `login.html?redirect=${encodeURIComponent(window.location.href)}&v=20261125-1`;
+      const signInUrl = `login.html?redirect=${encodeURIComponent(window.location.href)}&v=20261125-2`;
       const workspaceHref = signedIn
         ? (authState.role === 'founder' ? 'founder.html' : authState.role === 'teacher' ? 'teacher.html' : 'student.html')
         : '';
@@ -900,7 +909,7 @@
         document.getElementById('app-root').innerHTML = `
           <div class="hub-container">
             <h2 data-i18n="index.roadmapTitle">${window.CosyI18n.t('index.roadmapTitle')}</h2>
-            <p style="color: #ef4444;" data-i18n-skip>${err.message}</p>
+            <p style="color: #ef4444;" data-i18n-skip>${window.cosyEscapeHtml(err.message)}</p>
             <a href="index.html" class="btn" data-i18n="common.backToCatalog">${window.CosyI18n.t('common.backToCatalog')}</a>
           </div>
         `;

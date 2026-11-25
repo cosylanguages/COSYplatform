@@ -8,8 +8,8 @@
   <meta name="description" content="Your COSY platform profile: student, teacher and founder views, access and learning summary.">
   <link rel="icon" href="shared/img/favicon.svg" type="image/svg+xml">
   <title>My Profile · COSY platform</title>
-  <link rel="stylesheet" href="shared/css/tokens.css">
-  <link rel="stylesheet" href="shared/styles/style.css">
+  <link rel="stylesheet" href="shared/css/tokens.css?v=20261125-2">
+  <link rel="stylesheet" href="shared/styles/style.css?v=20261125-2">
   <style>
     :root {
       --mode-accent: #0369a1;
@@ -1100,15 +1100,6 @@
       to { opacity: 1; transform: none; }
     }
 
-    .profile-footer {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 0 20px 30px;
-      color: var(--profile-muted);
-      font-size: 0.78rem;
-    }
-
-    .profile-footer a { color: inherit; }
 
     @media (max-width: 980px) {
       .profile-layout { grid-template-columns: 1fr; }
@@ -1148,7 +1139,7 @@
   <script src="shared/js/auth-sso.js"></script>
   <script src="shared/js/lazy-script.js"></script>
   <script src="shared/js/i18n.js"></script>
-  <link rel="stylesheet" href="shared/css/editorial.css">
+  <link rel="stylesheet" href="shared/css/editorial.css?v=20261125-2">
 </head>
 <body>
 <div data-ecosystem-strip data-self="platform" data-theme-toggle></div>
@@ -1673,12 +1664,13 @@
   </div>
 </div>
 
-<footer class="profile-footer">
-  🌐 Part of the COSY ecosystem ·
-  <a href="https://cosylanguages.github.io/COSYlanguages/">COSYlanguages</a> ·
-  <a href="https://cosylanguages.github.io/COSYdata/">COSYdata</a> ·
-  <a href="https://cosylanguages.github.io/COSYtools/">COSYtools</a> ·
-  <a href="https://cosylanguages.github.io/COSYgames/">COSYgames</a>
+<footer class="cosy-ecosystem-strip-footer">
+  🌐 Part of the COSY ecosystem •
+  <a href="https://cosylanguages.github.io/COSYlanguages/" target="_blank" rel="noopener">COSYlanguages 🏠</a> •
+  <a href="https://cosylanguages.github.io/COSYdata/" target="_blank" rel="noopener">COSYdata 📚</a> •
+  <a href="https://cosylanguages.github.io/COSYtools/" target="_blank" rel="noopener">COSYtools 🔎</a> •
+  <a href="https://cosylanguages.github.io/COSYgames/" target="_blank" rel="noopener">COSYgames 🎮</a> •
+  <a href="https://cosylanguages.github.io/COSYevents/" target="_blank" rel="noopener">COSYevents 🎉</a>
 </footer>
 
 <script>
