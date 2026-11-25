@@ -35,6 +35,17 @@ function makeClient(profile) {
           return { data: [{ id: 'n1', lesson_id: 'lesson/one', updated_at: '2026-11-21T10:00:00Z' }], error: null };
         }
         if (table === 'teacher_students') return { data: [{ student_id: 's1' }], error: null };
+        if (table === 'session_content') {
+          return {
+            data: [{
+              session_id: 'event-1',
+              full_notes: 'Session notes',
+              recording_url: 'https://example.com/recording',
+              updated_at: '2026-11-19T10:00:00Z'
+            }],
+            error: null
+          };
+        }
         return { data: [], error: null };
       };
 
@@ -118,6 +129,27 @@ test('founders can switch to the teacher profile', async () => {
   assert.equal(document.getElementById('teacher-stat-languages').textContent, '2');
   assert.equal(document.getElementById('teacher-stat-students').textContent, '7');
   assert.ok(document.getElementById('teacher-spaces').innerHTML.includes('teacher.html?lang=en'));
+  assert.ok(document.getElementById('teacher-sessions').innerHTML.includes('event-1'));
+  assert.ok(document.getElementById('teacher-sessions').innerHTML.includes('Notes'));
+  assert.ok(document.getElementById('teacher-sessions').innerHTML.includes('Recording'));
+
+  dom.window.close();
+});
+
+test('teachers get their own profile with real hosted session content', async () => {
+  const dom = makeDom('teacher');
+  await new Promise(resolve => setTimeout(resolve, 300));
+  const document = dom.window.document;
+
+  assert.equal(document.getElementById('mode-switcher').hidden, true);
+  assert.equal(document.querySelector('[data-panel="teacher"]').hidden, false);
+  assert.equal(document.querySelector('[data-panel="student"]').hidden, true);
+  assert.equal(document.querySelector('[data-panel="founder"]').hidden, true);
+  assert.equal(document.getElementById('header-workspace-link').getAttribute('href'), 'teacher.html');
+  assert.equal(document.getElementById('teacher-stat-sessions').textContent, '1');
+  assert.ok(document.getElementById('teacher-sessions').innerHTML.includes('event-1'));
+  assert.ok(document.getElementById('teacher-sessions').innerHTML.includes('Notes'));
+  assert.ok(document.getElementById('teacher-sessions').innerHTML.includes('Recording'));
 
   dom.window.close();
 });

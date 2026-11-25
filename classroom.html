@@ -1126,13 +1126,17 @@
       }
 
       if (role === 'student') {
-        // Students cannot switch to teacher view or view answer keys
-        if (teacherBtn) {
-          teacherBtn.classList.add('hidden');
-        }
+        // Students cannot switch views or see answer keys
+        if (teacherBtn) teacherBtn.classList.add('hidden');
+        if (studentBtn) studentBtn.classList.add('hidden');
         switchRole('student');
+      } else if (role === 'teacher') {
+        // Teachers stay in teacher view; only founders may switch modes
+        if (teacherBtn) teacherBtn.classList.add('hidden');
+        if (studentBtn) studentBtn.classList.add('hidden');
+        switchRole('teacher');
       } else {
-        // Teachers / Founders can view both views
+        // Founders can switch between student and teacher views
         if (teacherBtn) teacherBtn.classList.remove('hidden');
         if (studentBtn) studentBtn.classList.remove('hidden');
         switchRole('teacher');
@@ -2110,9 +2114,11 @@
     function switchRole(role) {
       const actualUserRole = (userProfile && userProfile.role) ? userProfile.role.toLowerCase() : 'student';
 
-      // Security check: If actual user profile is student, prevent switching to teacher mode
-      if (role === 'teacher' && actualUserRole === 'student') {
-        if (window.CosyUI && window.CosyUI.toast) CosyUI.toast('Access denied: Student accounts cannot access Teacher view mode or answer keys.', 'error');
+      // Only founders may move between student and teacher views.
+      if (actualUserRole !== 'founder' && role !== actualUserRole) {
+        if (window.CosyUI && window.CosyUI.toast) {
+          CosyUI.toast('Access denied: only founder accounts can switch between student and teacher views.', 'error');
+        }
         return;
       }
 

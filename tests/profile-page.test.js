@@ -61,6 +61,8 @@ test('profile page has role panels and a founder-only mode switcher', () => {
   assert.ok(html.includes('Founder-only: switch between all modes'));
   assert.ok(html.includes("if (role !== 'founder' && mode !== role) return Promise.resolve();"));
   assert.ok(html.includes('id="teacher-stat-students"'));
+  assert.ok(html.includes('id="teacher-sessions"'));
+  assert.ok(html.includes("from('session_content')"));
   assert.ok(html.includes('id="founder-stat-courses"'));
 });
 

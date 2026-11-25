@@ -718,6 +718,11 @@
             <div id="teacher-spaces" class="profile-actions-grid"></div>
           </section>
 
+          <section class="profile-card" aria-labelledby="teacher-sessions-title">
+            <h2 id="teacher-sessions-title">🎥 Hosted Sessions</h2>
+            <div id="teacher-sessions"></div>
+          </section>
+
           <section class="profile-card" aria-labelledby="teacher-activity-title">
             <h2 id="teacher-activity-title">🕘 Recent Teaching Activity</h2>
             <ul id="teacher-activity" class="profile-activity"></ul>
@@ -1258,6 +1263,47 @@
     return Array.isArray(profile.hosted_sessions) ? profile.hosted_sessions : [];
   }
 
+  async function fetchSessionContent(sessionIds) {
+    if (!sessionIds.length) return {};
+    try {
+      const { data, error } = await client
+        .from('session_content')
+        .select('session_id, full_notes, recording_url, updated_at')
+        .in('session_id', sessionIds);
+      if (error) return {};
+      const map = {};
+      (data || []).forEach(row => { map[row.session_id] = row; });
+      return map;
+    } catch (error) {
+      return {};
+    }
+  }
+
+  function renderTeacherSessions(sessionIds, content) {
+    const el = $('teacher-sessions');
+    if (!el) return;
+    if (!sessionIds.length) {
+      el.innerHTML = '<div class="profile-empty">No sessions are assigned to this profile yet. A founder can assign session IDs in the <a href="founder.html">Founder Portal</a>.</div>';
+      return;
+    }
+    const rows = sessionIds.map(id => {
+      const detail = content[id] || {};
+      const flags = [];
+      if (detail.full_notes) flags.push('<span class="grant-status active">Notes</span>');
+      if (detail.recording_url) flags.push('<span class="grant-status active">Recording</span>');
+      if (!flags.length) flags.push('<span class="grant-status pending">No content yet</span>');
+      return '<tr>' +
+        '<td><strong>' + esc(id) + '</strong></td>' +
+        '<td>' + flags.join(' ') + '</td>' +
+        '<td>' + esc(detail.updated_at ? formatDateTime(detail.updated_at) : '—') + '</td>' +
+        '</tr>';
+    }).join('');
+    el.innerHTML = '<div class="profile-table-wrap"><table class="profile-table">' +
+      '<thead><tr><th>Session</th><th>Content</th><th>Updated</th></tr></thead>' +
+      '<tbody>' + rows + '</tbody></table></div>' +
+      '<p style="margin:12px 0 0;font-size:0.78rem;"><a href="https://cosylanguages.github.io/COSYevents/">Open COSYevents →</a></p>';
+  }
+
   async function fetchStudentCount() {
     try {
       if (role === 'founder') {
@@ -1361,6 +1407,7 @@
       const studentCount = settledValue(results[2], null);
       const noteCount = settledValue(results[3], null);
       const activity = settledValue(results[4], []);
+      const sessionContent = await fetchSessionContent(hosted);
 
       $('teacher-stat-languages').textContent = languages.length ? String(languages.length) : '—';
       $('teacher-stat-languages-note').textContent = languages.length
@@ -1375,6 +1422,7 @@
       $('teacher-stat-notes').textContent = noteCount != null ? String(noteCount) : '—';
 
       renderTeacherSpaces(languages);
+      renderTeacherSessions(hosted, sessionContent);
       renderActivityList('teacher-activity', activity,
         'No teaching activity yet. Open a classroom note or review student submissions from the teacher workspace.');
     } catch (error) {
@@ -1477,17 +1525,6 @@
     } catch (error) {
       console.warn('[profile] Could not load extended profile details:', error);
     }
-
-    // hosted_sessions is optional in older deployments; fetch it separately so a
-    // missing column cannot break the core profile read.
-    try {
-      const { data, error } = await client
-        .from('profiles')
-        .select('hosted_sessions')
-        .eq('id', user.id)
-        .maybeSingle();
-      if (!error && data && Array.isArray(data.hosted_sessions)) profile.hosted_sessions = data.hosted_sessions;
-    } catch (error) {}
 
     role = normaliseRole(profile.role);
     const displayName = profile.display_name || user.email || 'COSY member';
