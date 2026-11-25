@@ -113,7 +113,8 @@ Add it to any slide's `elements` to show a COSYmanuals grammar point by id:
 - An "open in COSYmanuals" link is always shown, so the lesson still works if the embed cannot load.
 - An id that is not well-formed renders a small "unavailable" note; an id with no manual page shows the embed's own "unavailable" message.
 - Implementation: `shared/js/grammar-focus.js`, used by `student.html` and `teacher.html`. Tests: `tests/grammar-focus.test.js` (also checks every `grammarIds` entry in `curriculums/` is well-formed).
-- Not yet done: the Lesson Studio editor has no palette entry for this element, and curriculum `grammarIds` are not yet turned into `grammar-focus` slides automatically.
+- Lesson Studio has a `＋ Grammar Focus` palette entry. Its editor loads the COSYmanuals registry and lets the author search by name or id, filter by language and CEFR level, and select the grammar point. A manual id field remains available under "Use a grammar point ID directly".
+- Still not automatic: curriculum `grammarIds` are not yet turned into `grammar-focus` slides.
 - Known embed limitation: the manual's interactive widgets (for example "tap to see the correct form") are not active inside the embed.
 
 ## Generating grammar-focus slides from existing lesson links
@@ -131,7 +132,7 @@ python3 scripts/grammar-ids/add_grammar_focus.py --manuals ../cosymanuals --less
 
 ## Lesson Studio: Grammar Focus block
 
-Teachers can add a Grammar Focus block in Lesson Studio (`＋ Grammar Focus`): they enter a COSYmanuals id such as `en-a2-used-to`, an optional title, and choose to show the explanation or only a link. The preview uses the same rendering as the student page.
+Teachers can add a Grammar Focus block in Lesson Studio (`＋ Grammar Focus`). The picker loads `COSYmanuals/data/grammar-points.json` and defaults to the lesson language and level. The author can filter by language and CEFR level, search by title, subtitle or id, and choose a point from the list. A manual id field remains available under "Use a grammar point ID directly". The author can also add an optional title and choose to show the explanation or only a link. The preview uses the same rendering as the student page.
 
 Rolling it out is a two-step change, in this order:
 

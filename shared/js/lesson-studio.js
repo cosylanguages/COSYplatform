@@ -121,7 +121,7 @@
       } else if (block.type === 'heading') {
         if (typeof block.text !== 'string') return 'Heading block ' + (i + 1) + ' needs text.';
       } else if (block.type === 'grammar_focus') {
-        if (typeof block.grammarId !== 'string') return 'Grammar focus block ' + (i + 1) + ' needs a grammar point id.';
+        if (typeof block.grammarId !== 'string') return 'Choose a grammar point for block ' + (i + 1) + '.';
       } else if (block.type === 'teacher_note') {
         if (typeof block.text !== 'string') return 'Teacher note block ' + (i + 1) + ' needs text.';
       } else if (block.type === 'crossword') {
@@ -190,7 +190,7 @@
         if (games && !games.validWordList(block.words, block.type)) return name + ' block ' + n + ' has an invalid word.';
       } else if (block.type === 'grammar_focus') {
         const gid = block.grammarId.trim();
-        if (!gid) return 'Grammar focus block ' + n + ' needs a grammar point id.';
+        if (!gid) return 'Choose a grammar point for block ' + n + ' before publishing.';
         if (gid.length > 100 || !/^[a-z]{2,3}-[a-z0-9]+-[a-z0-9][a-z0-9-]*$/.test(gid)) return 'Grammar focus block ' + n + ' needs an id like en-a2-used-to (language, level, topic).';
         if (block.title !== undefined && block.title !== null && (typeof block.title !== 'string' || block.title.trim().length > 120)) return 'The title in grammar focus block ' + n + ' can be up to 120 characters.';
         if (block.display !== undefined && block.display !== null && block.display !== 'embed' && block.display !== 'link') return 'Grammar focus block ' + n + ' must show the explanation or only a link.';
@@ -857,17 +857,37 @@
         field.append(span, area);
         card.appendChild(field);
       } else if (block.type === 'grammar_focus') {
-        [['grammarId', 'Grammar point id from COSYmanuals, e.g. en-a2-used-to', 100], ['title', 'Title (optional, up to 120 characters)', 120]].forEach(([key, text, max]) => {
-          const field = document.createElement('label');
-          field.className = 'studio-field';
-          const span = document.createElement('span');
-          span.textContent = text;
-          const input = document.createElement('input');
-          input.type = 'text'; input.maxLength = max; input.value = block[key] || '';
-          input.addEventListener('input', () => { if (input.value || key === 'grammarId') block[key] = input.value; else delete block[key]; changed(false); });
-          field.append(span, input);
-          card.appendChild(field);
+        let picker = null;
+        let idInput = null;
+        if (window.CosyGrammarPicker) {
+          picker = window.CosyGrammarPicker.createPicker({
+            selectedId: block.grammarId || '',
+            language: state.doc.language,
+            level: state.doc.level,
+            onSelect: (point) => {
+              block.grammarId = point.id;
+              if (idInput) idInput.value = point.id;
+              refreshPreview();
+            }
+          });
+          card.appendChild(picker);
+        }
+
+        const titleField = document.createElement('label');
+        titleField.className = 'studio-field';
+        const titleLabel = document.createElement('span');
+        titleLabel.textContent = 'Title above the explanation (optional, up to 120 characters)';
+        const titleInput = document.createElement('input');
+        titleInput.type = 'text';
+        titleInput.maxLength = 120;
+        titleInput.value = block.title || '';
+        titleInput.addEventListener('input', () => {
+          if (titleInput.value) block.title = titleInput.value; else delete block.title;
+          refreshPreview();
         });
+        titleField.append(titleLabel, titleInput);
+        card.appendChild(titleField);
+
         const dfield = document.createElement('label');
         dfield.className = 'studio-field';
         const dspan = document.createElement('span');
@@ -879,9 +899,34 @@
           select.appendChild(option);
         });
         select.value = block.display === 'link' ? 'link' : 'embed';
-        select.addEventListener('change', () => { if (select.value === 'embed') delete block.display; else block.display = select.value; changed(false); });
+        select.addEventListener('change', () => {
+          if (select.value === 'embed') delete block.display; else block.display = select.value;
+          refreshPreview();
+        });
         dfield.append(dspan, select);
         card.appendChild(dfield);
+
+        const advanced = document.createElement('details');
+        advanced.className = 'grammar-picker-advanced';
+        const advancedSummary = document.createElement('summary');
+        advancedSummary.textContent = 'Use a grammar point ID directly';
+        const idField = document.createElement('label');
+        idField.className = 'studio-field';
+        const idLabel = document.createElement('span');
+        idLabel.textContent = 'Grammar point ID from COSYmanuals, e.g. en-a2-used-to';
+        idInput = document.createElement('input');
+        idInput.type = 'text';
+        idInput.maxLength = 100;
+        idInput.placeholder = 'en-a2-used-to';
+        idInput.value = block.grammarId || '';
+        idInput.addEventListener('input', () => {
+          block.grammarId = idInput.value;
+          if (picker) picker.setSelection(idInput.value);
+          refreshPreview();
+        });
+        idField.append(idLabel, idInput);
+        advanced.append(advancedSummary, idField);
+        card.appendChild(advanced);
       } else if (block.type === 'heading') {
         [['text', 'Heading (up to 120 characters)', 120], ['subtitle', 'Subtitle (optional, up to 200 characters)', 200]].forEach(([key, text, max]) => {
           const field = document.createElement('label');
@@ -1245,7 +1290,7 @@
           holder.innerHTML = gf.renderHtml({ type: 'grammar-focus', grammarId: block.grammarId, title: block.title, display: block.display });
           gf.hydrate(holder);
         } else {
-          holder.textContent = 'Enter a grammar point id such as en-a2-used-to to see a preview.';
+          holder.textContent = 'Choose a grammar point above, or enter an id, to see a preview.';
         }
         item.appendChild(holder);
       } else if (block.type === 'heading') {
@@ -1299,8 +1344,19 @@
     state.doc.title = $('lesson-title').value;
     state.doc.language = $('lesson-language').value;
     state.doc.level = $('lesson-level').value;
-    if (updateCode !== false) syncCode();
-    renderVisual();
+    if (updateCode !== false) {
+      syncCode();
+      renderVisual();
+    }
+    renderPreview();
+    $('save-status').textContent = 'Unsaved changes';
+  }
+
+  function refreshPreview() {
+    state.doc.title = $('lesson-title').value;
+    state.doc.language = $('lesson-language').value;
+    state.doc.level = $('lesson-level').value;
+    syncCode();
     renderPreview();
     $('save-status').textContent = 'Unsaved changes';
   }
