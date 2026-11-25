@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="shared/styles/style.css">
   <script src="vendor/supabase-js-2.49.1/supabase.js"></script>
   <script src="shared/js/config.js"></script>
-  <script src="shared/js/auth-sso.js?v=20261125-1"></script>
+  <script src="shared/js/auth-sso.js?v=20261125-2"></script>
   <script src="shared/js/cms-editor.js"></script>
   <script src="shared/js/i18n.js"></script>
   <script src="shared/js/lang-switcher.js"></script>
@@ -217,17 +217,20 @@
         if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') return null;
         if (parsed.origin !== window.location.origin) return null;
 
+        // Never loop back to a login page.
+        if (/\/login(?:\.html)?\/?$/i.test(parsed.pathname)) return null;
+
+        // Keep same-folder redirects relative; allow other same-origin COSY
+        // pages (for example COSYmanuals) as absolute URLs.
         const loginPath = window.location.pathname;
         const folderPath = loginPath.substring(0, loginPath.lastIndexOf('/') + 1);
-
-        if (!parsed.pathname.startsWith(folderPath)) return null;
-
-        const relPath = parsed.pathname.substring(folderPath.length);
-        if (relPath.includes('/')) return null;
-
-        if (relPath !== '' && !relPath.endsWith('.html')) return null;
-
-        return (relPath || 'index.html') + parsed.search + parsed.hash;
+        if (parsed.pathname.startsWith(folderPath)) {
+          const relPath = parsed.pathname.substring(folderPath.length);
+          if (!relPath.includes('/')) {
+            return (relPath || 'index.html') + parsed.search + parsed.hash;
+          }
+        }
+        return parsed.href;
       } catch (e) {
         return null;
       }
@@ -260,22 +263,8 @@
           if (window.CosySSO && window.CosySSO.autoRedirectFromLogin) {
             await window.CosySSO.autoRedirectFromLogin(supabaseClient, session.user);
           } else {
-            let targetPage = 'student.html';
-            const { data: profile } = await supabaseClient
-              .from('profiles')
-              .select('role')
-              .eq('id', session.user.id)
-              .maybeSingle();
-
-            if (profile && profile.role) {
-              const role = profile.role.toLowerCase();
-              if (role === 'founder') targetPage = 'founder.html';
-              else if (role === 'teacher') targetPage = 'teacher.html';
-              else targetPage = 'student.html';
-            }
-
             const safeTarget = safeRedirect(redirectTarget);
-            window.location.href = safeTarget || targetPage;
+            window.location.href = safeTarget || 'profile.html';
           }
         }
       } catch (e) {}
@@ -314,33 +303,19 @@
         }
 
         if (data && data.user) {
-          let targetPage = 'student.html';
           const { data: profile } = await supabaseClient
             .from('profiles')
-            .select('role, language_access')
+            .select('role, language_access, course_level, ui_lang')
             .eq('id', data.user.id)
             .maybeSingle();
 
-          if (profile) {
-            if (profile.role) {
-              const role = profile.role.toLowerCase();
-              if (role === 'founder') targetPage = 'founder.html';
-              else if (role === 'teacher') targetPage = 'teacher.html';
-              else targetPage = 'student.html';
-            }
-
-            // Recompute language with profile and save cosy_ui_lang_last
-            if (window.CosyI18n && typeof window.CosyI18n.recompute === 'function') {
-              await window.CosyI18n.recompute(profile);
-            }
+          // Recompute language with profile and save cosy_ui_lang_last
+          if (profile && window.CosyI18n && typeof window.CosyI18n.recompute === 'function') {
+            await window.CosyI18n.recompute(profile);
           }
 
           const safeTarget = safeRedirect(redirectTarget);
-          if (safeTarget) {
-            window.location.href = safeTarget;
-          } else {
-            window.location.href = targetPage;
-          }
+          window.location.href = safeTarget || 'profile.html';
         }
       } catch (err) {
         showError('login.errUnexpected', 'An unexpected error occurred during sign in.');

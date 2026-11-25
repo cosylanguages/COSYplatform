@@ -156,45 +156,34 @@ window.CosySSO = window.CosySSO || {};
    */
   async function autoRedirectFromLogin(supabase, user) {
     if (!user) return;
-    let targetPage = 'student.html';
-    try {
-      const { data: profile } = await supabase
-        .from('profiles')
-        .select('role')
-        .eq('id', user.id)
-        .maybeSingle();
-
-      if (profile && profile.role) {
-        const role = profile.role.toLowerCase();
-        if (role === 'founder') targetPage = 'founder.html';
-        else if (role === 'teacher') targetPage = 'teacher.html';
-        else targetPage = 'student.html';
-      }
-    } catch (e) {}
-
     const urlParams = new URLSearchParams(window.location.search);
     const redirectTarget = urlParams.get('redirect');
-    // Only follow redirects to another .html page in this same app folder.
-    // Anything else (other sites, other repos, deeper paths) is ignored.
+    // Return to any same-origin COSY page after sign-in, but never back to a
+    // login page. The default landing page is the personal profile.
     let safeTarget = null;
     if (redirectTarget) {
       try {
         const parsed = new URL(redirectTarget, window.location.href);
-        const loginPath = window.location.pathname;
-        const folderPath = loginPath.substring(0, loginPath.lastIndexOf('/') + 1);
         if (
           (parsed.protocol === 'http:' || parsed.protocol === 'https:') &&
           parsed.origin === window.location.origin &&
-          parsed.pathname.startsWith(folderPath)
+          !/\/login(?:\.html)?\/?$/i.test(parsed.pathname)
         ) {
-          const rel = parsed.pathname.substring(folderPath.length);
-          if ((rel === '' || (rel && !rel.includes('/') && rel.endsWith('.html'))) && rel !== 'login.html') {
-            safeTarget = (rel || 'index.html') + parsed.search + parsed.hash;
+          const loginPath = window.location.pathname;
+          const folderPath = loginPath.substring(0, loginPath.lastIndexOf('/') + 1);
+          if (parsed.pathname.startsWith(folderPath)) {
+            const rel = parsed.pathname.substring(folderPath.length);
+            if (!rel.includes('/')) {
+              safeTarget = (rel || 'index.html') + parsed.search + parsed.hash;
+            }
+          } else {
+            // A different same-origin COSY app (for example COSYmanuals).
+            safeTarget = parsed.href;
           }
         }
       } catch (e) {}
     }
-    window.location.href = safeTarget || targetPage;
+    window.location.href = safeTarget || 'profile.html';
   }
 
   window.CosySSO.parseHashTokens = parseHashTokens;
