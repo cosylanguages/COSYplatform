@@ -28,6 +28,19 @@ test('profile page loads and renders the signed-in user data', () => {
     'stat-study-events',
     'profile-grants',
     'profile-activity',
+    'student-continue',
+    'student-assignments',
+    'student-sessions',
+    'teacher-review-queue',
+    'teacher-student-list',
+    'teacher-coverage',
+    'founder-new-members',
+    'founder-language-coverage',
+    'founder-health',
+    'action-download-data',
+    'action-copy-id',
+    'detail-teacher',
+    'detail-user-id',
     'detail-languages',
     'detail-level',
     'detail-member-since',
@@ -42,6 +55,10 @@ test('profile page loads and renders the signed-in user data', () => {
   assert.ok(html.includes("'lesson_progress'"));
   assert.ok(html.includes("from('lesson_submissions')"));
   assert.ok(html.includes("from('study_events')"));
+  assert.ok(html.includes("from('teacher_students')"));
+  assert.ok(html.includes("from('session_content')"));
+  assert.ok(html.includes('downloadProfileData'));
+  assert.ok(html.includes('cosy-profile.json'));
 });
 
 test('workspace pages link back to the profile', () => {

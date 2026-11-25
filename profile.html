@@ -457,6 +457,72 @@
     .profile-action strong { display: block; font-size: 0.84rem; }
     .profile-action small { display: block; color: var(--profile-muted); font-size: 0.72rem; margin-top: 2px; }
 
+    button.profile-action {
+      font: inherit;
+      width: 100%;
+      text-align: left;
+      cursor: pointer;
+      color: var(--profile-ink);
+    }
+
+    .focus-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px;
+      border: 1px solid var(--profile-border);
+      border-radius: 12px;
+      background: var(--profile-cream);
+      flex-wrap: wrap;
+    }
+
+    .focus-copy { min-width: 0; }
+    .focus-copy strong { display: block; font-size: 0.95rem; }
+    .focus-copy span { display: block; color: var(--profile-muted); font-size: 0.76rem; margin-top: 3px; }
+
+    .focus-action {
+      display: inline-flex;
+      align-items: center;
+      padding: 9px 14px;
+      border-radius: 9px;
+      background: var(--mode-accent);
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .role-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: capitalize;
+      white-space: nowrap;
+    }
+
+    .role-badge.founder { color: #5b21b6; background: #ede9fe; }
+    .role-badge.teacher { color: #1d4ed8; background: #dbeafe; }
+    .role-badge.student { color: #334155; background: #e2e8f0; }
+
+    .coverage { min-width: 150px; }
+    .coverage-bar {
+      height: 7px;
+      border-radius: 999px;
+      background: #e2e8f0;
+      overflow: hidden;
+      margin-bottom: 4px;
+    }
+    .coverage-bar span { display: block; height: 100%; background: var(--mode-accent); border-radius: inherit; }
+    .coverage small { color: var(--profile-muted); font-size: 0.7rem; }
+
+    .profile-table a { color: var(--mode-accent); font-weight: 700; text-decoration: none; white-space: nowrap; }
+    .profile-table a:hover { text-decoration: underline; }
+    .profile-table small { color: var(--profile-muted); }
+
     .profile-table-wrap { overflow-x: auto; }
 
     .profile-table {
@@ -674,9 +740,24 @@
             </div>
           </section>
 
+          <section class="profile-card" aria-labelledby="student-continue-title">
+            <h2 id="student-continue-title">▶️ Continue Learning</h2>
+            <div id="student-continue"></div>
+          </section>
+
           <section class="profile-card" aria-labelledby="profile-courses-title">
             <h2 id="profile-courses-title">📚 My Courses &amp; Access</h2>
             <div id="profile-grants"></div>
+          </section>
+
+          <section class="profile-card" aria-labelledby="student-assignments-title">
+            <h2 id="student-assignments-title">📝 Assignments &amp; Feedback</h2>
+            <div id="student-assignments"></div>
+          </section>
+
+          <section class="profile-card" aria-labelledby="student-sessions-title">
+            <h2 id="student-sessions-title">🎟️ My Sessions</h2>
+            <div id="student-sessions"></div>
           </section>
 
           <section class="profile-card" aria-labelledby="profile-activity-title">
@@ -713,6 +794,11 @@
             </div>
           </section>
 
+          <section class="profile-card" aria-labelledby="teacher-review-title">
+            <h2 id="teacher-review-title">📝 Review Queue</h2>
+            <div id="teacher-review-queue"></div>
+          </section>
+
           <section class="profile-card" aria-labelledby="teacher-spaces-title">
             <h2 id="teacher-spaces-title">🗂️ My Teaching Spaces</h2>
             <div id="teacher-spaces" class="profile-actions-grid"></div>
@@ -721,6 +807,17 @@
           <section class="profile-card" aria-labelledby="teacher-sessions-title">
             <h2 id="teacher-sessions-title">🎥 Hosted Sessions</h2>
             <div id="teacher-sessions"></div>
+            <p style="margin:12px 0 0;font-size:0.78rem;"><a href="https://cosylanguages.github.io/COSYevents/">Open COSYevents →</a></p>
+          </section>
+
+          <section class="profile-card" aria-labelledby="teacher-students-title">
+            <h2 id="teacher-students-title">👥 My Students</h2>
+            <div id="teacher-student-list"></div>
+          </section>
+
+          <section class="profile-card" aria-labelledby="teacher-coverage-title">
+            <h2 id="teacher-coverage-title">🌍 Content Coverage</h2>
+            <div id="teacher-coverage"></div>
           </section>
 
           <section class="profile-card" aria-labelledby="teacher-activity-title">
@@ -755,6 +852,21 @@
                 <div id="founder-stat-members-note" class="profile-stat-note">Students and teachers</div>
               </div>
             </div>
+          </section>
+
+          <section class="profile-card" aria-labelledby="founder-members-title">
+            <h2 id="founder-members-title">🆕 Newest Members</h2>
+            <div id="founder-new-members"></div>
+          </section>
+
+          <section class="profile-card" aria-labelledby="founder-coverage-title">
+            <h2 id="founder-coverage-title">🌍 Language Coverage</h2>
+            <div id="founder-language-coverage"></div>
+          </section>
+
+          <section class="profile-card" aria-labelledby="founder-health-title">
+            <h2 id="founder-health-title">🩺 Platform Health</h2>
+            <div id="founder-health"></div>
           </section>
 
           <section class="profile-card" aria-labelledby="founder-switch-title">
@@ -810,6 +922,8 @@
             <div class="profile-detail-row"><dt>Name</dt><dd id="detail-name">—</dd></div>
             <div class="profile-detail-row"><dt>Email</dt><dd id="detail-email">—</dd></div>
             <div class="profile-detail-row"><dt>Role</dt><dd id="detail-role">—</dd></div>
+            <div class="profile-detail-row"><dt>Assigned teacher</dt><dd id="detail-teacher">—</dd></div>
+            <div class="profile-detail-row"><dt>User ID</dt><dd><code id="detail-user-id" style="font-size:0.72rem;">—</code></dd></div>
             <div class="profile-detail-row"><dt>Languages</dt><dd id="detail-languages">—</dd></div>
             <div class="profile-detail-row"><dt>Course level</dt><dd id="detail-level">—</dd></div>
             <div class="profile-detail-row"><dt>Member since</dt><dd id="detail-member-since">—</dd></div>
@@ -828,6 +942,10 @@
               <span class="profile-action-icon">🛠️</span>
               <span><strong>Lesson Studio</strong><small>Author lesson content</small></span>
             </a>
+            <a id="action-results" class="profile-action" href="studio-results.html" hidden>
+              <span class="profile-action-icon">📈</span>
+              <span><strong>Studio Results</strong><small>See student answer results</small></span>
+            </a>
             <a class="profile-action" href="classroom.html">
               <span class="profile-action-icon">🎥</span>
               <span><strong>Live Classroom</strong><small>Join booked sessions</small></span>
@@ -836,11 +954,32 @@
               <span class="profile-action-icon">📚</span>
               <span><strong>COSYmanuals</strong><small>Full lesson materials</small></span>
             </a>
+            <a class="profile-action" href="https://cosylanguages.github.io/COSYgames/">
+              <span class="profile-action-icon">🎮</span>
+              <span><strong>COSYgames</strong><small>Practice with word games</small></span>
+            </a>
             <a class="profile-action" href="https://cosylanguages.github.io/COSYevents/">
               <span class="profile-action-icon">🎉</span>
               <span><strong>COSYevents</strong><small>Live events and clubs</small></span>
             </a>
           </div>
+        </section>
+
+        <section class="profile-card" aria-labelledby="profile-security-title">
+          <h2 id="profile-security-title">🔐 Account &amp; Security</h2>
+          <div class="profile-actions-grid">
+            <button type="button" id="action-download-data" class="profile-action">
+              <span class="profile-action-icon">💾</span>
+              <span><strong>Download my data</strong><small>Save a copy of your profile</small></span>
+            </button>
+            <button type="button" id="action-copy-id" class="profile-action">
+              <span class="profile-action-icon">🆔</span>
+              <span><strong>Copy user ID</strong><small>Useful for support requests</small></span>
+            </button>
+          </div>
+          <p id="security-note" style="font-size:0.78rem;color:var(--profile-muted);margin:10px 0 0;">
+            Profile details are managed by platform administration.
+          </p>
         </section>
 
         <section class="profile-card" aria-labelledby="profile-privacy-title">
@@ -1029,6 +1168,9 @@
     const studio = $('action-studio');
     if (studio) studio.hidden = !(mode === 'teacher' || mode === 'founder');
 
+    const results = $('action-results');
+    if (results) results.hidden = !(mode === 'teacher' || mode === 'founder');
+
     if (role === 'founder') {
       try { modeStore && modeStore.setItem(STORAGE_KEY, mode); } catch (e) {}
     }
@@ -1175,15 +1317,139 @@
     ).join('');
   }
 
+  async function fetchLatestProgress() {
+    try {
+      const { data, error } = await client
+        .from('lesson_progress')
+        .select('lesson_id, answered, correct, incorrect, last_activity')
+        .eq('student_id', user.id)
+        .order('last_activity', { ascending: false })
+        .limit(1)
+        .maybeSingle();
+      if (error) return null;
+      if (Array.isArray(data)) return data[0] || null;
+      return data || null;
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function renderContinueLearning(row) {
+    const el = $('student-continue');
+    if (!el) return;
+    if (!row || !row.lesson_id) {
+      el.innerHTML = '<div class="profile-empty">No lesson progress yet. Pick a course from the <a href="index.html">catalog</a> and start your first lesson.</div>';
+      return;
+    }
+    const answered = Number(row.answered || 0);
+    const correct = Number(row.correct || 0);
+    const incorrect = Number(row.incorrect || 0);
+    const attempts = correct + incorrect;
+    const accuracy = attempts ? Math.round((correct / attempts) * 100) + '% accuracy' : 'No checks yet';
+    const lesson = String(row.lesson_id);
+    el.innerHTML = '<div class="focus-card">' +
+      '<div class="focus-copy"><strong>' + esc(lesson) + '</strong>' +
+      '<span>' + esc(answered) + ' answered · ' + esc(accuracy) + ' · last active ' +
+      esc(row.last_activity ? formatDateTime(row.last_activity) : 'recently') + '</span></div>' +
+      '<a class="focus-action" href="student.html?lesson=' + encodeURIComponent(lesson) + '">Resume lesson →</a>' +
+      '</div>';
+  }
+
+  async function fetchStudentAssignments() {
+    try {
+      const { data, error } = await client
+        .from('lesson_submissions')
+        .select('id, lesson_id, kind, status, feedback, created_at')
+        .eq('student_id', user.id)
+        .order('created_at', { ascending: false })
+        .limit(5);
+      if (error) return [];
+      return Array.isArray(data) ? data : [];
+    } catch (error) {
+      return [];
+    }
+  }
+
+  function renderStudentAssignments(rows) {
+    const el = $('student-assignments');
+    if (!el) return;
+    if (!rows.length) {
+      el.innerHTML = '<div class="profile-empty">No tasks submitted yet. Open a lesson in your <a href="student.html">workspace</a> to submit your first task.</div>';
+      return;
+    }
+    const body = rows.map(row => {
+      const status = String(row.status || 'pending').toLowerCase();
+      const badge = status === 'reviewed'
+        ? '<span class="grant-status active">Reviewed</span>'
+        : '<span class="grant-status pending">Awaiting review</span>';
+      const feedback = row.feedback
+        ? String(row.feedback).slice(0, 90) + (String(row.feedback).length > 90 ? '…' : '')
+        : '—';
+      const lesson = row.lesson_id || '';
+      return '<tr>' +
+        '<td><a href="student.html?lesson=' + encodeURIComponent(lesson) + '"><strong>' + esc(lesson || 'Task') + '</strong></a>' +
+        '<br><small>' + esc(row.kind || 'submission') + '</small></td>' +
+        '<td>' + badge + '</td>' +
+        '<td>' + esc(formatDateTime(row.created_at)) + '</td>' +
+        '<td>' + esc(feedback) + '</td>' +
+        '</tr>';
+    }).join('');
+    el.innerHTML = '<div class="profile-table-wrap"><table class="profile-table">' +
+      '<thead><tr><th>Lesson</th><th>Status</th><th>Submitted</th><th>Feedback</th></tr></thead>' +
+      '<tbody>' + body + '</tbody></table></div>';
+  }
+
+  async function fetchEnrolledSessions() {
+    try {
+      const { data, error } = await client
+        .from('profiles')
+        .select('enrolled_sessions')
+        .eq('id', user.id)
+        .maybeSingle();
+      if (error) return [];
+      const row = Array.isArray(data) ? data[0] : data;
+      return row && Array.isArray(row.enrolled_sessions) ? row.enrolled_sessions : [];
+    } catch (error) {
+      return [];
+    }
+  }
+
+  async function fetchStudentTeacher() {
+    try {
+      const { data, error } = await client
+        .from('teacher_students')
+        .select('teacher_id')
+        .eq('student_id', user.id)
+        .maybeSingle();
+      if (error) return null;
+      const link = Array.isArray(data) ? data[0] : data;
+      const teacherId = link && link.teacher_id;
+      if (!teacherId) return null;
+      const { data: teacherData, error: teacherError } = await client
+        .from('profiles')
+        .select('display_name')
+        .eq('id', teacherId)
+        .maybeSingle();
+      if (teacherError) return null;
+      const teacher = Array.isArray(teacherData) ? teacherData[0] : teacherData;
+      return teacher && teacher.display_name ? teacher.display_name : null;
+    } catch (error) {
+      return null;
+    }
+  }
+
   async function loadStudentData() {
     if (!client || !user) return;
     try {
-      const [grantsResult, progressCount, submissionsCount, studyCount, recent] = await Promise.allSettled([
+      const [grantsResult, progressCount, submissionsCount, studyCount, recent, latestProgress, assignments, enrolled] = await Promise.allSettled([
         loadGrants(),
         countRows('lesson_progress', query => query.eq('student_id', user.id)),
         countRows('lesson_submissions', query => query.eq('student_id', user.id)),
         countRows('study_events', query => query.eq('student_id', user.id)),
-        loadRecent()
+        loadRecent(),
+        fetchLatestProgress(),
+        fetchStudentAssignments(),
+        fetchEnrolledSessions()
       ]);
 
       const grants = settledValue(grantsResult, []);
@@ -1201,6 +1467,22 @@
       $('stat-lessons-practised').textContent = progress != null ? String(progress) : '—';
       $('stat-tasks-submitted').textContent = submissions != null ? String(submissions) : '—';
       $('stat-study-events').textContent = study != null ? String(study) : '—';
+
+      renderContinueLearning(settledValue(latestProgress, null));
+      renderStudentAssignments(settledValue(assignments, []));
+
+      const enrolledIds = settledValue(enrolled, []);
+      const enrolledContent = await fetchSessionContent(enrolledIds);
+      renderSessions(
+        'student-sessions',
+        enrolledIds,
+        enrolledContent,
+        '<div class="profile-empty">No paid sessions are attached to this account yet. Browse <a href="https://cosylanguages.github.io/COSYevents/">COSYevents</a> to join a live session.</div>'
+      );
+
+      const teacherName = await fetchStudentTeacher();
+      const teacherEl = $('detail-teacher');
+      if (teacherEl) teacherEl.textContent = teacherName || 'Not linked yet';
 
       const grantsEl = $('profile-grants');
       if (!grants.length) {
@@ -1234,6 +1516,16 @@
 
   async function fetchTeacherLanguages() {
     const uid = user.id;
+    if (role === 'founder') {
+      const manifest = (window.CosyAuth && window.CosyAuth.FULL_MANIFEST) || [];
+      const available = [...new Set(
+        manifest
+          .filter(course => course.status !== 'not_yet_available')
+          .map(course => String(course.lang || '').toLowerCase())
+          .filter(Boolean)
+      )];
+      if (available.length) return available;
+    }
     try {
       const { data, error } = await client
         .from('teacher_languages')
@@ -1279,11 +1571,11 @@
     }
   }
 
-  function renderTeacherSessions(sessionIds, content) {
-    const el = $('teacher-sessions');
+  function renderSessions(elementId, sessionIds, content, emptyHtml) {
+    const el = $(elementId);
     if (!el) return;
     if (!sessionIds.length) {
-      el.innerHTML = '<div class="profile-empty">No sessions are assigned to this profile yet. A founder can assign session IDs in the <a href="founder.html">Founder Portal</a>.</div>';
+      el.innerHTML = emptyHtml;
       return;
     }
     const rows = sessionIds.map(id => {
@@ -1300,8 +1592,161 @@
     }).join('');
     el.innerHTML = '<div class="profile-table-wrap"><table class="profile-table">' +
       '<thead><tr><th>Session</th><th>Content</th><th>Updated</th></tr></thead>' +
-      '<tbody>' + rows + '</tbody></table></div>' +
-      '<p style="margin:12px 0 0;font-size:0.78rem;"><a href="https://cosylanguages.github.io/COSYevents/">Open COSYevents →</a></p>';
+      '<tbody>' + rows + '</tbody></table></div>';
+  }
+
+  function renderTeacherSessions(sessionIds, content) {
+    renderSessions(
+      'teacher-sessions',
+      sessionIds,
+      content,
+      '<div class="profile-empty">No sessions are assigned to this profile yet. A founder can assign session IDs in the <a href="founder.html">Founder Portal</a>.</div>'
+    );
+  }
+
+  async function fetchTeacherStudentIds() {
+    try {
+      const { data, error } = await client
+        .from('teacher_students')
+        .select('student_id')
+        .eq('teacher_id', user.id);
+      if (error) return [];
+      return (Array.isArray(data) ? data : []).map(row => row.student_id).filter(Boolean);
+    } catch (error) {
+      return [];
+    }
+  }
+
+  async function fetchReviewQueue() {
+    try {
+      let query = client
+        .from('lesson_submissions')
+        .select('id, student_id, lesson_id, kind, status, created_at')
+        .or('status.neq.reviewed,status.is.null')
+        .order('created_at', { ascending: false })
+        .limit(5);
+
+      if (role !== 'founder') {
+        const ids = await fetchTeacherStudentIds();
+        if (!ids.length) return [];
+        query = query.in('student_id', ids);
+      }
+
+      const { data, error } = await query;
+      if (error) return [];
+      const rows = Array.isArray(data) ? data : [];
+      const studentIds = [...new Set(rows.map(row => row.student_id).filter(Boolean))];
+      if (!studentIds.length) return rows;
+
+      const { data: profileRows } = await client
+        .from('profiles')
+        .select('id, display_name')
+        .in('id', studentIds);
+      const names = {};
+      (Array.isArray(profileRows) ? profileRows : []).forEach(row => { names[row.id] = row.display_name; });
+      return rows.map(row => Object.assign({}, row, { student_name: names[row.student_id] || 'Student' }));
+    } catch (error) {
+      return [];
+    }
+  }
+
+  function renderReviewQueue(rows) {
+    const el = $('teacher-review-queue');
+    if (!el) return;
+    if (!rows.length) {
+      el.innerHTML = '<div class="profile-empty">Nothing is waiting for review. New student submissions will appear here.</div>';
+      return;
+    }
+    const body = rows.map(row => {
+      const kind = row.kind === 'audio' ? 'Audio' : (row.kind || 'Task');
+      return '<tr>' +
+        '<td><strong>' + esc(row.student_name || 'Student') + '</strong></td>' +
+        '<td>' + esc(row.lesson_id || 'Lesson') + '<br><small>' + esc(kind) + '</small></td>' +
+        '<td>' + esc(formatDateTime(row.created_at)) + '</td>' +
+        '</tr>';
+    }).join('');
+    el.innerHTML = '<div class="profile-table-wrap"><table class="profile-table">' +
+      '<thead><tr><th>Student</th><th>Submission</th><th>Received</th></tr></thead>' +
+      '<tbody>' + body + '</tbody></table></div>' +
+      '<p style="margin:12px 0 0;font-size:0.78rem;"><a href="teacher.html#student-submissions-container">Open the review workspace →</a></p>';
+  }
+
+  async function fetchTeacherStudentProfiles() {
+    try {
+      if (role === 'founder') {
+        const { data, error } = await client
+          .from('profiles')
+          .select('id, display_name, role, course_level, language_access')
+          .eq('role', 'student')
+          .order('created_at', { ascending: false })
+          .limit(6);
+        if (error) return [];
+        return Array.isArray(data) ? data : [];
+      }
+      const ids = await fetchTeacherStudentIds();
+      if (!ids.length) return [];
+      const { data, error } = await client
+        .from('profiles')
+        .select('id, display_name, role, course_level, language_access')
+        .in('id', ids);
+      if (error) return [];
+      return Array.isArray(data) ? data : [];
+    } catch (error) {
+      return [];
+    }
+  }
+
+  function renderTeacherStudents(rows) {
+    const el = $('teacher-student-list');
+    if (!el) return;
+    if (!rows.length) {
+      el.innerHTML = '<div class="profile-empty">No students are linked to this profile yet. A founder can link students in the <a href="founder.html">Founder Portal</a>.</div>';
+      return;
+    }
+    const body = rows.map(row => {
+      const level = row.course_level && row.course_level !== '*' ? String(row.course_level).toUpperCase() : 'All levels';
+      const languages = Array.isArray(row.language_access) && row.language_access.length && row.language_access[0] !== '*'
+        ? row.language_access.map(lang => String(lang).toUpperCase()).join(', ')
+        : 'All languages';
+      return '<tr>' +
+        '<td><strong>' + esc(row.display_name || 'Student') + '</strong></td>' +
+        '<td>' + esc(level) + '</td>' +
+        '<td>' + esc(languages) + '</td>' +
+        '</tr>';
+    }).join('');
+    el.innerHTML = '<div class="profile-table-wrap"><table class="profile-table">' +
+      '<thead><tr><th>Student</th><th>Level</th><th>Languages</th></tr></thead>' +
+      '<tbody>' + body + '</tbody></table></div>';
+  }
+
+  function renderContentCoverage(languages) {
+    const el = $('teacher-coverage');
+    if (!el) return;
+    if (!languages.length) {
+      el.innerHTML = '<div class="profile-empty">No languages are assigned yet, so there is no coverage to show.</div>';
+      return;
+    }
+    const manifest = (window.CosyAuth && window.CosyAuth.FULL_MANIFEST) || [];
+    const rows = languages.map(lang => {
+      const code = String(lang).toLowerCase();
+      const courses = manifest.filter(course => String(course.lang || '').toLowerCase() === code);
+      const available = courses.filter(course => course.status !== 'not_yet_available');
+      const levels = [...new Set(available.map(course => String(course.level || '').toUpperCase()).filter(Boolean))];
+      return { code, total: courses.length, available: available.length, levels };
+    }).sort((a, b) => b.available - a.available || a.code.localeCompare(b.code));
+
+    const body = rows.map(row => {
+      const pct = row.total ? Math.round((row.available / row.total) * 100) : 0;
+      return '<tr>' +
+        '<td><a href="teacher.html?lang=' + encodeURIComponent(row.code) + '"><strong>' + esc(row.code.toUpperCase()) + '</strong></a></td>' +
+        '<td><div class="coverage"><div class="coverage-bar"><span style="width:' + pct + '%"></span></div>' +
+        '<small>' + esc(row.available) + '/' + esc(row.total) + ' courses · ' + pct + '%</small></div></td>' +
+        '<td>' + (row.levels.length ? esc(row.levels.join(', ')) : '—') + '</td>' +
+        '</tr>';
+    }).join('');
+    el.innerHTML = '<div class="profile-table-wrap"><table class="profile-table">' +
+      '<thead><tr><th>Language</th><th>Courses ready</th><th>Levels</th></tr></thead>' +
+      '<tbody>' + body + '</tbody></table></div>';
   }
 
   async function fetchStudentCount() {
@@ -1385,7 +1830,7 @@
       '</a>'
     ).join('');
     el.innerHTML = cards +
-      '<a class="profile-action" href="teacher.html">' +
+      '<a class="profile-action" href="teacher.html" style="grid-column:1 / -1;">' +
       '<span class="profile-action-icon">🧑‍🏫</span>' +
       '<span><strong>Master teaching space</strong><small>All languages</small></span>' +
       '</a>';
@@ -1399,7 +1844,9 @@
         fetchHostedSessions(),
         fetchStudentCount(),
         countRows('lesson_notes'),
-        fetchRecentTeachingActivity()
+        fetchRecentTeachingActivity(),
+        fetchReviewQueue(),
+        fetchTeacherStudentProfiles()
       ]);
 
       const languages = settledValue(results[0], []);
@@ -1407,6 +1854,8 @@
       const studentCount = settledValue(results[2], null);
       const noteCount = settledValue(results[3], null);
       const activity = settledValue(results[4], []);
+      const review = settledValue(results[5], []);
+      const studentList = settledValue(results[6], []);
       const sessionContent = await fetchSessionContent(hosted);
 
       $('teacher-stat-languages').textContent = languages.length ? String(languages.length) : '—';
@@ -1422,7 +1871,10 @@
       $('teacher-stat-notes').textContent = noteCount != null ? String(noteCount) : '—';
 
       renderTeacherSpaces(languages);
+      renderReviewQueue(review);
       renderTeacherSessions(hosted, sessionContent);
+      renderTeacherStudents(studentList);
+      renderContentCoverage(languages);
       renderActivityList('teacher-activity', activity,
         'No teaching activity yet. Open a classroom note or review student submissions from the teacher workspace.');
     } catch (error) {
@@ -1431,6 +1883,110 @@
   }
 
   // ── Founder data ────────────────────────────────────────────────────────
+
+  async function fetchNewestMembers() {
+    try {
+      const { data, error } = await client
+        .from('profiles')
+        .select('id, display_name, role, created_at')
+        .order('created_at', { ascending: false })
+        .limit(5);
+      if (error) return [];
+      return Array.isArray(data) ? data : [];
+    } catch (error) {
+      return [];
+    }
+  }
+
+  function renderNewestMembers(rows) {
+    const el = $('founder-new-members');
+    if (!el) return;
+    if (!rows.length) {
+      el.innerHTML = '<div class="profile-empty">No member profiles found yet.</div>';
+      return;
+    }
+    const body = rows.map(row => {
+      const roleName = String(row.role || 'student').toLowerCase();
+      return '<tr>' +
+        '<td><strong>' + esc(row.display_name || 'Member') + '</strong></td>' +
+        '<td><span class="role-badge ' + esc(roleName) + '">' + esc(roleName) + '</span></td>' +
+        '<td>' + esc(formatDate(row.created_at)) + '</td>' +
+        '</tr>';
+    }).join('');
+    el.innerHTML = '<div class="profile-table-wrap"><table class="profile-table">' +
+      '<thead><tr><th>Member</th><th>Role</th><th>Joined</th></tr></thead>' +
+      '<tbody>' + body + '</tbody></table></div>' +
+      '<p style="margin:12px 0 0;font-size:0.78rem;"><a href="founder.html#user-management-section">Manage members →</a></p>';
+  }
+
+  function renderLanguageCoverage() {
+    const el = $('founder-language-coverage');
+    if (!el) return;
+    const manifest = (window.CosyAuth && window.CosyAuth.FULL_MANIFEST) || [];
+    const byLanguage = {};
+    manifest.forEach(course => {
+      const code = String(course.lang || '').toLowerCase();
+      if (!code) return;
+      if (!byLanguage[code]) byLanguage[code] = { total: 0, available: 0, levels: new Set() };
+      byLanguage[code].total += 1;
+      if (course.status !== 'not_yet_available') {
+        byLanguage[code].available += 1;
+        if (course.level) byLanguage[code].levels.add(String(course.level).toUpperCase());
+      }
+    });
+    const rows = Object.keys(byLanguage).map(code => Object.assign({ code }, byLanguage[code]))
+      .sort((a, b) => b.available - a.available || a.code.localeCompare(b.code));
+
+    if (!rows.length) {
+      el.innerHTML = '<div class="profile-empty">No catalog manifest is available.</div>';
+      return;
+    }
+
+    const published = rows.filter(row => row.available > 0);
+    const planned = rows.length - published.length;
+    const visible = published.length ? published : rows;
+
+    const body = visible.map(row => {
+      const pct = row.total ? Math.round((row.available / row.total) * 100) : 0;
+      const levels = [...row.levels];
+      return '<tr>' +
+        '<td><strong>' + esc(row.code.toUpperCase()) + '</strong></td>' +
+        '<td><div class="coverage"><div class="coverage-bar"><span style="width:' + pct + '%"></span></div>' +
+        '<small>' + esc(row.available) + '/' + esc(row.total) + ' courses · ' + pct + '%</small></div></td>' +
+        '<td>' + (levels.length ? esc(levels.join(', ')) : '—') + '</td>' +
+        '</tr>';
+    }).join('');
+    el.innerHTML = '<div class="profile-table-wrap"><table class="profile-table">' +
+      '<thead><tr><th>Language</th><th>Courses ready</th><th>Levels</th></tr></thead>' +
+      '<tbody>' + body + '</tbody></table></div>' +
+      (planned > 0
+        ? '<p style="margin:12px 0 0;font-size:0.78rem;color:var(--profile-muted);">' +
+          esc(planned) + ' more ' + (planned === 1 ? 'language is' : 'languages are') +
+          ' planned but have no published courses yet.</p>'
+        : '');
+  }
+
+  function renderPlatformHealth(stats) {
+    const el = $('founder-health');
+    if (!el) return;
+    if (!stats) {
+      el.innerHTML = '<div class="profile-empty">Platform statistics are not available right now.</div>';
+      return;
+    }
+    const unlinked = Number(stats.unlinkedLessonFiles || 0);
+    const courses = stats.courses || {};
+    const lessons = stats.lessons || {};
+    const rows = [
+      ['Catalog snapshot', esc(stats.generatedAt ? formatDate(stats.generatedAt) : '—')],
+      ['Courses available', esc((courses.available != null ? courses.available : '—') + ' / ' + (courses.total != null ? courses.total : '—'))],
+      ['Lessons available', esc((lessons.available != null ? lessons.available : '—') + ' / ' + (lessons.total != null ? lessons.total : '—'))],
+      ['Lesson files on disk', esc(stats.lessonFilesOnDisk != null ? stats.lessonFilesOnDisk : '—')],
+      ['Unlinked lesson files', '<span class="grant-status ' + (unlinked ? 'pending' : 'active') + '">' + esc(unlinked) + '</span>']
+    ];
+    el.innerHTML = '<dl class="profile-detail-list">' + rows.map(row =>
+      '<div class="profile-detail-row"><dt>' + row[0] + '</dt><dd>' + row[1] + '</dd></div>'
+    ).join('') + '</dl>';
+  }
 
   async function loadFounderData() {
     let stats = null;
@@ -1441,13 +1997,16 @@
 
     let studentCount = null;
     let teacherCount = null;
+    let newestMembers = [];
     try {
-      const [students, teachers] = await Promise.all([
+      const [students, teachers, newest] = await Promise.all([
         client.from('profiles').select('*', { count: 'exact', head: true }).eq('role', 'student'),
-        client.from('profiles').select('*', { count: 'exact', head: true }).eq('role', 'teacher')
+        client.from('profiles').select('*', { count: 'exact', head: true }).eq('role', 'teacher'),
+        fetchNewestMembers()
       ]);
       if (!students.error && typeof students.count === 'number') studentCount = students.count;
       if (!teachers.error && typeof teachers.count === 'number') teacherCount = teachers.count;
+      newestMembers = newest;
     } catch (error) {}
 
     const manifest = (window.CosyAuth && window.CosyAuth.FULL_MANIFEST) || [];
@@ -1474,6 +2033,10 @@
     if (memberTotal != null) {
       $('founder-stat-members-note').textContent = (studentCount || 0) + ' students · ' + (teacherCount || 0) + ' teachers';
     }
+
+    renderNewestMembers(newestMembers);
+    renderLanguageCoverage();
+    renderPlatformHealth(stats);
   }
 
   // ── Init ────────────────────────────────────────────────────────────────
@@ -1488,10 +2051,82 @@
     $('detail-name').textContent = displayName;
     $('detail-email').textContent = email || '—';
     $('detail-role').textContent = ROLE_META[role].label;
+    $('detail-user-id').textContent = user.id || '—';
+    const teacherEl = $('detail-teacher');
+    if (teacherEl && (!teacherEl.textContent || teacherEl.textContent === '—')) teacherEl.textContent = '—';
     $('detail-languages').textContent = languageList(profile);
     $('detail-level').textContent = courseLevel(profile);
     $('detail-member-since').textContent = formatDate(profile.created_at || user.created_at);
     $('detail-last-signin').textContent = formatDateTime(user.last_sign_in_at);
+  }
+
+  let securityTimer = null;
+
+  function securityMessage(text, isError) {
+    const el = $('security-note');
+    if (!el) return;
+    el.textContent = text;
+    el.style.color = isError ? '#b91c1c' : 'var(--profile-muted)';
+    if (securityTimer) clearTimeout(securityTimer);
+    securityTimer = setTimeout(() => {
+      el.textContent = 'Profile details are managed by platform administration.';
+      el.style.color = 'var(--profile-muted)';
+    }, 7000);
+  }
+
+  function downloadProfileData() {
+    const payload = {
+      exported_at: new Date().toISOString(),
+      user: { id: user.id, email: user.email, last_sign_in_at: user.last_sign_in_at },
+      profile: {
+        id: profile.id,
+        display_name: profile.display_name,
+        role: profile.role,
+        language_access: profile.language_access,
+        course_level: profile.course_level,
+        created_at: profile.created_at
+      }
+    };
+    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'cosy-profile.json';
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
+
+  function setupSecurityActions() {
+    const download = $('action-download-data');
+    if (download) {
+      download.addEventListener('click', () => {
+        try {
+          downloadProfileData();
+          securityMessage('Profile data downloaded.', false);
+        } catch (error) {
+          securityMessage('Could not prepare the download: ' + (error.message || error), true);
+        }
+      });
+    }
+
+    const copy = $('action-copy-id');
+    if (copy) {
+      copy.addEventListener('click', async () => {
+        const id = user && user.id;
+        if (!id) return;
+        try {
+          if (!navigator.clipboard || typeof navigator.clipboard.writeText !== 'function') {
+            throw new Error('Clipboard unavailable');
+          }
+          await navigator.clipboard.writeText(id);
+          securityMessage('User ID copied to the clipboard.', false);
+        } catch (error) {
+          securityMessage('Your user ID: ' + id, false);
+        }
+      });
+    }
   }
 
   async function init() {
@@ -1531,6 +2166,7 @@
     const email = user.email || '';
 
     renderIdentity(displayName, email);
+    setupSecurityActions();
     setupModeSwitcher();
     await setMode(initialMode(), { updateUrl: false });
 

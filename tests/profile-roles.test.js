@@ -17,9 +17,23 @@ const user = {
 };
 
 function makeClient(profile) {
+  const studentProfile = {
+    id: 's1',
+    display_name: 'Sam Learner',
+    role: 'student',
+    course_level: 'a2',
+    language_access: ['en'],
+    created_at: '2026-02-01T00:00:00Z'
+  };
+  const submissions = [
+    { id: 'sub-1', student_id: 's1', lesson_id: 'studio:one', kind: 'essay', status: 'submitted', feedback: null, created_at: '2026-11-22T10:00:00Z' },
+    { id: 'sub-2', student_id: user.id, lesson_id: 'studio:two', kind: 'audio', status: 'reviewed', feedback: 'Great pronunciation', created_at: '2026-11-20T10:00:00Z' },
+    { id: 'sub-3', student_id: user.id, lesson_id: 'studio:three', kind: 'essay', status: 'submitted', feedback: null, created_at: '2026-11-23T09:00:00Z' }
+  ];
+
   return {
     from(table) {
-      const state = { head: false, eqs: {} };
+      const state = { head: false, eqs: {}, inColumn: null, inValues: [], single: false };
       const result = () => {
         if (state.head) {
           if (table === 'profiles') {
@@ -29,22 +43,43 @@ function makeClient(profile) {
           }
           return { count: table === 'lesson_notes' ? 3 : 4, error: null };
         }
-        if (table === 'profiles') return { data: profile, error: null };
+        if (table === 'profiles') {
+          if (state.inColumn === 'id') return { data: [studentProfile], error: null };
+          if (state.single) {
+            if (state.eqs.id === 'teacher-1') return { data: { display_name: 'Tara Teacher' }, error: null };
+            return { data: profile, error: null };
+          }
+          if (state.eqs.role === 'student') return { data: [studentProfile], error: null };
+          return { data: [profile, studentProfile], error: null };
+        }
         if (table === 'teacher_languages') return { data: [{ language: 'en' }, { language: 'fr' }], error: null };
         if (table === 'lesson_notes') {
           return { data: [{ id: 'n1', lesson_id: 'lesson/one', updated_at: '2026-11-21T10:00:00Z' }], error: null };
         }
-        if (table === 'teacher_students') return { data: [{ student_id: 's1' }], error: null };
+        if (table === 'teacher_students') {
+          if (state.single) return { data: { teacher_id: 'teacher-1' }, error: null };
+          return { data: [{ student_id: 's1' }], error: null };
+        }
         if (table === 'session_content') {
           return {
-            data: [{
-              session_id: 'event-1',
-              full_notes: 'Session notes',
-              recording_url: 'https://example.com/recording',
-              updated_at: '2026-11-19T10:00:00Z'
-            }],
+            data: [
+              { session_id: 'event-1', full_notes: 'Session notes', recording_url: 'https://example.com/recording', updated_at: '2026-11-19T10:00:00Z' },
+              { session_id: 'event-2', full_notes: 'Student session notes', recording_url: 'https://example.com/recording-2', updated_at: '2026-11-18T10:00:00Z' }
+            ],
             error: null
           };
+        }
+        if (table === 'lesson_progress') {
+          return {
+            data: [{ lesson_id: 'studio:one', answered: 12, correct: 9, incorrect: 3, last_activity: '2026-11-23T10:00:00Z' }],
+            error: null
+          };
+        }
+        if (table === 'lesson_submissions') {
+          let rows = submissions;
+          if (state.eqs.student_id) rows = rows.filter(row => row.student_id === state.eqs.student_id);
+          if (state.inColumn === 'student_id') rows = rows.filter(row => state.inValues.includes(row.student_id));
+          return { data: rows, error: null };
         }
         return { data: [], error: null };
       };
@@ -54,10 +89,10 @@ function makeClient(profile) {
         eq(column, value) { state.eqs[column] = value; return query; },
         neq() { return query; },
         or() { return query; },
-        in() { return query; },
+        in(column, values) { state.inColumn = column; state.inValues = values; return query; },
         order() { return query; },
         limit() { return query; },
-        maybeSingle: async () => result(),
+        maybeSingle: async () => { state.single = true; return result(); },
         then(resolve, reject) { return Promise.resolve(result()).then(resolve, reject); }
       };
       return query;
@@ -73,6 +108,7 @@ function makeDom(role) {
     language_access: role === 'founder' ? ['*'] : ['en'],
     course_level: '*',
     hosted_sessions: ['event-1'],
+    enrolled_sessions: ['event-2'],
     created_at: user.created_at
   };
 
@@ -80,6 +116,17 @@ function makeDom(role) {
     url: 'https://cosylanguages.github.io/COSYplatform/profile.html',
     runScripts: 'dangerously',
     beforeParse(window) {
+      window.fetch = async () => ({
+        ok: true,
+        json: async () => ({
+          languages: { total: 13, withAvailableCourse: 2, codes: ['en', 'fr'] },
+          courses: { available: 3, total: 4 },
+          lessons: { available: 6, planned: 10, total: 10 },
+          lessonFilesOnDisk: 6,
+          unlinkedLessonFiles: 0,
+          generatedAt: '2026-10-02'
+        })
+      });
       window.CosyAuth = {
         client: makeClient(profile),
         getAuthAndProfile: async () => ({
@@ -109,6 +156,14 @@ test('founders see the mode switcher and land in the founder profile', async () 
   assert.equal(document.getElementById('header-workspace-link').getAttribute('href'), 'founder.html');
   assert.equal(document.getElementById('profile-viewing-pill').hidden, false);
   assert.equal(document.getElementById('profile-viewing-pill').textContent, 'Viewing as Founder');
+  assert.ok(document.getElementById('founder-new-members').innerHTML.includes('Fiona Founder'));
+  assert.ok(document.getElementById('founder-new-members').innerHTML.includes('role-badge founder'));
+  assert.ok(document.getElementById('founder-language-coverage').innerHTML.includes('EN'));
+  assert.ok(document.getElementById('founder-language-coverage').innerHTML.includes('2/2 courses'));
+  assert.ok(document.getElementById('founder-health').innerHTML.includes('Lesson files on disk'));
+  assert.ok(document.getElementById('founder-health').innerHTML.includes('6'));
+  assert.equal(document.getElementById('action-results').hidden, false);
+  assert.equal(document.getElementById('detail-user-id').textContent, 'user-1');
 
   dom.window.close();
 });
@@ -132,6 +187,12 @@ test('founders can switch to the teacher profile', async () => {
   assert.ok(document.getElementById('teacher-sessions').innerHTML.includes('event-1'));
   assert.ok(document.getElementById('teacher-sessions').innerHTML.includes('Notes'));
   assert.ok(document.getElementById('teacher-sessions').innerHTML.includes('Recording'));
+  assert.ok(document.getElementById('teacher-review-queue').innerHTML.includes('Sam Learner'));
+  assert.ok(document.getElementById('teacher-review-queue').innerHTML.includes('studio:one'));
+  assert.ok(document.getElementById('teacher-student-list').innerHTML.includes('Sam Learner'));
+  assert.ok(document.getElementById('teacher-student-list').innerHTML.includes('A2'));
+  assert.ok(document.getElementById('teacher-coverage').innerHTML.includes('EN'));
+  assert.ok(document.getElementById('teacher-coverage').innerHTML.includes('2/2 courses'));
 
   dom.window.close();
 });
@@ -150,6 +211,10 @@ test('teachers get their own profile with real hosted session content', async ()
   assert.ok(document.getElementById('teacher-sessions').innerHTML.includes('event-1'));
   assert.ok(document.getElementById('teacher-sessions').innerHTML.includes('Notes'));
   assert.ok(document.getElementById('teacher-sessions').innerHTML.includes('Recording'));
+  assert.ok(document.getElementById('teacher-review-queue').innerHTML.includes('Sam Learner'));
+  assert.ok(document.getElementById('teacher-review-queue').innerHTML.includes('studio:one'));
+  assert.ok(document.getElementById('teacher-student-list').innerHTML.includes('Sam Learner'));
+  assert.ok(document.getElementById('teacher-coverage').innerHTML.includes('EN'));
 
   dom.window.close();
 });
@@ -163,6 +228,16 @@ test('students do not get a mode switcher', async () => {
   assert.equal(document.querySelector('[data-panel="student"]').hidden, false);
   assert.equal(document.querySelector('[data-panel="founder"]').hidden, true);
   assert.equal(document.getElementById('header-workspace-link').getAttribute('href'), 'student.html');
+  assert.ok(document.getElementById('student-continue').innerHTML.includes('studio:one'));
+  assert.ok(document.getElementById('student-continue').innerHTML.includes('Resume lesson'));
+  assert.ok(document.getElementById('student-assignments').innerHTML.includes('Reviewed'));
+  assert.ok(document.getElementById('student-assignments').innerHTML.includes('Great pronunciation'));
+  assert.ok(document.getElementById('student-assignments').innerHTML.includes('Awaiting review'));
+  assert.ok(document.getElementById('student-sessions').innerHTML.includes('event-2'));
+  assert.ok(document.getElementById('student-sessions').innerHTML.includes('Notes'));
+  assert.equal(document.getElementById('detail-teacher').textContent, 'Tara Teacher');
+  assert.equal(document.getElementById('detail-user-id').textContent, 'user-1');
+  assert.equal(document.getElementById('action-results').hidden, true);
 
   dom.window.close();
 });
