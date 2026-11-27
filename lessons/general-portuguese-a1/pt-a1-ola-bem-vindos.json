@@ -1,0 +1,403 @@
+{
+  "id": "pt-a1-ola-bem-vindos",
+  "title": "Olá & Bem-vindos",
+  "level": "A1",
+  "language": "pt",
+  "unit": "Unidade 0: Primeiros Passos",
+  "canDo": "Consigo cumprimentar, apresentar-me e despedir-me.",
+  "defaultDuration": 50,
+  "defaultMode": "all",
+  "objectives": [
+    "usar a estrutura-alvo: verbo \"ser\" (presente) — formas afirmativas",
+    "usar 5 palavras novas: Olá, Bom dia, Obrigado, Por favor, Adeus"
+  ],
+  "materials": "Cartões de vocabulário, áudio do texto, ficha de leitura, imagens ou objectos reais, páginas de gramática A1 do COSYmanuals sobre verbo \"ser\" (presente) — formas afirmativas.",
+  "assessment": "Verifica o uso correcto de verbo \"ser\" (presente) — formas afirmativas e a pronúncia clara das palavras-alvo.",
+  "homework": "Escreve cinco frases: cumprimentar, apresentar-te, despedir-te.",
+  "recycling": {
+    "prior": "Esta é a primeira aula do curso.",
+    "next": "A aula 0.2 revê o cumprimento e acrescenta o nome."
+  },
+  "differentiation": {
+    "individual": "Uma ficha de trabalho: cinco frases sobre o tema da aula (PT-001).",
+    "group": "Uma tarefa em pares ou pequenos grupos.",
+    "children": "Uma tarefa com cartões de cumprimento.",
+    "teens": "Um jogo de apresentação em cadeia.",
+    "adults": "Uma apresentação curta com duas frases.",
+    "seniors": "Cartões grandes, lidos devagar."
+  },
+  "links": {
+    "vocabulary": [
+      "Olá",
+      "Bom dia",
+      "Obrigado",
+      "Por favor",
+      "Adeus"
+    ],
+    "grammar": [
+      {
+        "topic_id": "pt-ser-estar",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/pt/grammar/a1/topics/pt-ser-estar.html"
+      }
+    ],
+    "phonetics": "O português tem vogais nasais como em não e pão."
+  },
+  "slides": [
+    {
+      "id": "pt-a1-ola-bem-vindos-slide-1",
+      "title": "1. Objectivo comunicativo e visão geral",
+      "stage": "warm-up",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Objectivo comunicativo: Consigo cumprimentar, apresentar-me e despedir-me."
+        },
+        {
+          "type": "blockquote",
+          "content": "Visão geral da aula:\n- Nível: A1 Português Geral\n- Unidade: Unidade 0: Primeiros Passos\n- Duração: 60 min (base) / 90 min (alargada) / 120 min (oficina completa)\n- Foco: Olá & Bem-vindos\n- Materiais: cartões de vocabulário, áudio, ficha de leitura"
+        },
+        {
+          "type": "instruction",
+          "content": "Aquecimento: diz uma palavra que já conheces sobre este tema."
+        },
+        {
+          "type": "input",
+          "placeholder": "Escreve uma palavra que conheces ..."
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-ola-bem-vindos-slide-2",
+      "title": "2. Revisão e ligação",
+      "stage": "recycling",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Esta é a primeira aula do curso."
+        },
+        {
+          "type": "blockquote",
+          "content": "Vocabulário revisto: Olá, Bom dia, Obrigado."
+        },
+        {
+          "type": "instruction",
+          "content": "Responde de memória: que palavra pertence a este tema?"
+        },
+        {
+          "type": "test",
+          "content": "Que palavra pertence a este tema?",
+          "options": [
+            "Olá",
+            "aeroporto",
+            "guarda-chuva"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-ola-bem-vindos-slide-3",
+      "title": "3. Vocabulário e expressões essenciais",
+      "stage": "input",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Vocabulário activo de base (5 elementos):"
+        },
+        {
+          "type": "blockquote",
+          "content": "Olá — cumprimento informal. Exemplo: Olá, como estás?\nBom dia — cumprimento da manhã. Exemplo: Bom dia, senhora Silva!\nObrigado — palavra para agradecer. Exemplo: Muito obrigado!\nPor favor — palavra para pedir com educação. Exemplo: Um café, por favor.\nAdeus — despedida. Exemplo: Adeus! Até amanhã."
+        },
+        {
+          "type": "instruction",
+          "content": "Expressões essenciais e combinações funcionais:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• Bom dia!\n• Eu sou a Ana.\n• Como estás?\n• Obrigado, bem.\n• Adeus!"
+        },
+        {
+          "type": "instruction",
+          "content": "Prática de vocabulário: escolhe a palavra correcta."
+        },
+        {
+          "type": "test",
+          "content": "Que palavra significa 'cumprimento informal'?",
+          "options": [
+            "Olá",
+            "Bom dia",
+            "Obrigado"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Que palavra significa 'cumprimento da manhã'?",
+          "options": [
+            "Bom dia",
+            "Olá",
+            "Obrigado"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Completa a frase com uma palavra da lista."
+        },
+        {
+          "type": "input",
+          "placeholder": "Completa: ___, como estás?"
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-ola-bem-vindos-slide-4",
+      "title": "4. Foco na pronúncia",
+      "stage": "pronunciation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "O português tem vogais nasais como em não e pão."
+        },
+        {
+          "type": "blockquote",
+          "content": "não /nɐ̃w̃/, pão /pɐ̃w̃/"
+        },
+        {
+          "type": "instruction",
+          "content": "Ouve e repete três vezes."
+        },
+        {
+          "type": "test",
+          "content": "Qual é a palavra com a sílaba tónica na primeira sílaba?",
+          "options": [
+            "Olá",
+            "o",
+            "um"
+          ]
+        },
+        {
+          "type": "input",
+          "placeholder": "Escreve a sílaba tónica: ..."
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-ola-bem-vindos-slide-5",
+      "title": "5. Foco na gramática e prática guiada",
+      "stage": "grammar",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Foco na gramática: Verbo \"ser\" (presente) — formas afirmativas."
+        },
+        {
+          "type": "blockquote",
+          "content": "Com o verbo ser apresentas-te: Eu sou a Ana. Tu és professor. Ser é irregular: eu sou, tu és, ele é, nós somos, vós sois, eles são."
+        },
+        {
+          "type": "grammar-focus",
+          "grammarId": "pt-a1-pt-ser-estar"
+        },
+        {
+          "type": "instruction",
+          "content": "Prática guiada: escolhe a opção correcta."
+        },
+        {
+          "type": "test",
+          "content": "Escolhe a forma correcta.",
+          "options": [
+            "Eu sou a Ana.",
+            "Eu és a Ana.",
+            "Eu somos a Ana."
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Escolhe a frase correcta.",
+          "options": [
+            "Bom dia!",
+            "Bom dia tu.",
+            "Dia bom."
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Completa a frase."
+        },
+        {
+          "type": "input",
+          "placeholder": "Eu ___ estudante."
+        },
+        {
+          "type": "input",
+          "placeholder": "Adeus! Até ___."
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-ola-bem-vindos-slide-6",
+      "title": "6. As quatro competências (ouvir e ler)",
+      "stage": "reading-listening",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Ler: lê o texto e responde às perguntas."
+        },
+        {
+          "type": "blockquote",
+          "content": "Bom dia! Eu sou a Ana. Sou estudante. Este é o Pedro. Ele é professor. Como estás, Pedro? Obrigado, bem! Adeus!"
+        },
+        {
+          "type": "input",
+          "placeholder": "Como se chama a mulher?"
+        },
+        {
+          "type": "input",
+          "placeholder": "O que é o Pedro?"
+        },
+        {
+          "type": "instruction",
+          "content": "Ouvir: ouve o diálogo e responde às perguntas."
+        },
+        {
+          "type": "blockquote",
+          "content": "A: Bom dia! B: Bom dia! A: Eu sou a Ana. E tu? B: Eu sou o Pedro. Muito prazer!"
+        },
+        {
+          "type": "input",
+          "placeholder": "Como se chama o homem?"
+        },
+        {
+          "type": "input",
+          "placeholder": "Como cumprimenta a Ana?"
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-ola-bem-vindos-slide-7",
+      "title": "7. Falar e escrever",
+      "stage": "freer-practice",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Falar: pratica as expressões da aula em pares."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Bom dia!\n• Eu sou a Ana.\n• Como estás?"
+        },
+        {
+          "type": "instruction",
+          "content": "Escrever: escreve um texto curto com o vocabulário da aula."
+        },
+        {
+          "type": "essay",
+          "placeholder": "Escreve a tua resposta aqui ..."
+        },
+        {
+          "type": "input",
+          "placeholder": "Uma frase que dizes no trabalho de pares:"
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-ola-bem-vindos-slide-8",
+      "title": "8. Roteiros de aula por duração",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Escolhe o roteiro que se adapta ao teu tempo."
+        },
+        {
+          "type": "blockquote",
+          "content": "60 min (base): aquecimento, vocabulário, gramática e uma tarefa de fala.\n90 min (alargada): acrescenta pronúncia, leitura e audição.\n120 min (oficina completa): acrescenta escrita, correcção entre pares e o projecto da unidade."
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-ola-bem-vindos-slide-9",
+      "title": "9. Adaptações para o grupo",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Adapta a aula ao teu grupo."
+        },
+        {
+          "type": "blockquote",
+          "content": "Crianças: Uma tarefa com cartões de cumprimento."
+        },
+        {
+          "type": "blockquote",
+          "content": "Adolescentes: Um jogo de apresentação em cadeia."
+        },
+        {
+          "type": "blockquote",
+          "content": "Adultos: Uma apresentação curta com duas frases."
+        },
+        {
+          "type": "blockquote",
+          "content": "Séniores: Cartões grandes, lidos devagar."
+        },
+        {
+          "type": "blockquote",
+          "content": "Aulas individuais: Uma ficha de trabalho: cinco frases sobre o tema da aula (PT-001)."
+        },
+        {
+          "type": "blockquote",
+          "content": "Grupo: Uma tarefa em pares ou pequenos grupos."
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-ola-bem-vindos-slide-10",
+      "title": "10. Trabalho de casa e notas de revisão",
+      "stage": "cool-down",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Trabalho de casa:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Escreve cinco frases: cumprimentar, apresentar-te, despedir-te."
+        },
+        {
+          "type": "input",
+          "placeholder": "Escreve aqui a tua frase de trabalho de casa ..."
+        },
+        {
+          "type": "instruction",
+          "content": "Resposta modelo para comparar:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Olá, como estás?"
+        },
+        {
+          "type": "blockquote",
+          "content": "A aula 0.2 revê o cumprimento e acrescenta o nome."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,404 @@
+{
+  "id": "pt-a1-digrafos-lh-nh-ch",
+  "title": "Dígrafos: LH, NH, CH",
+  "level": "A1",
+  "language": "pt",
+  "unit": "Unidade 0: Primeiros Passos",
+  "canDo": "Consigo distinguir lh, nh e ch e construir frases simples.",
+  "defaultDuration": 50,
+  "defaultMode": "all",
+  "objectives": [
+    "usar a estrutura-alvo: estrutura básica da frase em português",
+    "usar 6 palavras novas: filha, banho, chave, frase, pão, leite"
+  ],
+  "materials": "Cartões de vocabulário, áudio do texto, ficha de leitura, imagens ou objectos reais, páginas de gramática A1 do COSYmanuals sobre estrutura básica da frase em português.",
+  "assessment": "Verifica o uso correcto de estrutura básica da frase em português e a pronúncia clara das palavras-alvo.",
+  "homework": "Escreve cinco frases simples com sujeito, verbo e objecto.",
+  "recycling": {
+    "prior": "Revê os números da aula 0.3.",
+    "next": "A aula 0.5 revê a cortesia."
+  },
+  "differentiation": {
+    "individual": "Uma ficha de trabalho: cinco frases sobre o tema da aula (PT-004).",
+    "group": "Uma tarefa em pares ou pequenos grupos.",
+    "children": "Um jogo de sons com imagens.",
+    "teens": "Um ditado curto em pares.",
+    "adults": "Uma lista de palavras para ler em voz alta.",
+    "seniors": "Cartões grandes com palavras com lh, nh e ch."
+  },
+  "links": {
+    "vocabulary": [
+      "filha",
+      "banho",
+      "chave",
+      "frase",
+      "pão",
+      "leite"
+    ],
+    "grammar": [
+      {
+        "topic_id": "presente-do-indicativo",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/pt/grammar/a1/topics/presente-do-indicativo.html"
+      }
+    ],
+    "phonetics": "lh = /ʎ/, nh = /ɲ/ e ch = /ʃ/."
+  },
+  "slides": [
+    {
+      "id": "pt-a1-digrafos-lh-nh-ch-slide-1",
+      "title": "1. Objectivo comunicativo e visão geral",
+      "stage": "warm-up",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Objectivo comunicativo: Consigo distinguir lh, nh e ch e construir frases simples."
+        },
+        {
+          "type": "blockquote",
+          "content": "Visão geral da aula:\n- Nível: A1 Português Geral\n- Unidade: Unidade 0: Primeiros Passos\n- Duração: 60 min (base) / 90 min (alargada) / 120 min (oficina completa)\n- Foco: Dígrafos: LH, NH, CH\n- Materiais: cartões de vocabulário, áudio, ficha de leitura"
+        },
+        {
+          "type": "instruction",
+          "content": "Aquecimento: diz uma palavra que já conheces sobre este tema."
+        },
+        {
+          "type": "input",
+          "placeholder": "Escreve uma palavra que conheces ..."
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-digrafos-lh-nh-ch-slide-2",
+      "title": "2. Revisão e ligação",
+      "stage": "recycling",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Revê os números da aula 0.3."
+        },
+        {
+          "type": "blockquote",
+          "content": "Vocabulário revisto: filha, banho, chave."
+        },
+        {
+          "type": "instruction",
+          "content": "Responde de memória: que palavra pertence a este tema?"
+        },
+        {
+          "type": "test",
+          "content": "Que palavra pertence a este tema?",
+          "options": [
+            "filha",
+            "aeroporto",
+            "guarda-chuva"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-digrafos-lh-nh-ch-slide-3",
+      "title": "3. Vocabulário e expressões essenciais",
+      "stage": "input",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Vocabulário activo de base (6 elementos):"
+        },
+        {
+          "type": "blockquote",
+          "content": "filha — a criança do sexo feminino de alguém. Exemplo: A minha filha toma banho.\nbanho — o acto de lavar o corpo. Exemplo: A filha toma banho.\nchave — objecto que abre a porta. Exemplo: A chave está na mesa.\nfrase — um conjunto de palavras com sentido. Exemplo: A frase tem um verbo.\npão — alimento feito de farinha. Exemplo: Como pão ao pequeno-almoço.\nleite — bebida branca dos animais. Exemplo: Bebo leite."
+        },
+        {
+          "type": "instruction",
+          "content": "Expressões essenciais e combinações funcionais:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• filha /ˈfiʎɐ/\n• banho /ˈbɐɲu/\n• chave /ˈʃavɨ/\n• A filha toma banho.\n• A frase tem sujeito, verbo e objecto."
+        },
+        {
+          "type": "instruction",
+          "content": "Prática de vocabulário: escolhe a palavra correcta."
+        },
+        {
+          "type": "test",
+          "content": "Que palavra significa 'a criança do sexo feminino de alguém'?",
+          "options": [
+            "filha",
+            "banho",
+            "chave"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Que palavra significa 'o acto de lavar o corpo'?",
+          "options": [
+            "banho",
+            "filha",
+            "chave"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Completa a frase com uma palavra da lista."
+        },
+        {
+          "type": "input",
+          "placeholder": "Completa: A minha ___ toma banho."
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-digrafos-lh-nh-ch-slide-4",
+      "title": "4. Foco na pronúncia",
+      "stage": "pronunciation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "lh = /ʎ/, nh = /ɲ/ e ch = /ʃ/."
+        },
+        {
+          "type": "blockquote",
+          "content": "filha /ˈfiʎɐ/, banho /ˈbɐɲu/, chave /ˈʃavɨ/"
+        },
+        {
+          "type": "instruction",
+          "content": "Ouve e repete três vezes."
+        },
+        {
+          "type": "test",
+          "content": "Qual é a palavra com a sílaba tónica na primeira sílaba?",
+          "options": [
+            "filha",
+            "o",
+            "um"
+          ]
+        },
+        {
+          "type": "input",
+          "placeholder": "Escreve a sílaba tónica: ..."
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-digrafos-lh-nh-ch-slide-5",
+      "title": "5. Foco na gramática e prática guiada",
+      "stage": "grammar",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Foco na gramática: Estrutura básica da frase em português."
+        },
+        {
+          "type": "blockquote",
+          "content": "A frase simples tem sujeito, verbo e objecto: A Ana bebe café. O sujeito vem primeiro e o verbo depois."
+        },
+        {
+          "type": "grammar-focus",
+          "grammarId": "pt-a1-presente-do-indicativo"
+        },
+        {
+          "type": "instruction",
+          "content": "Prática guiada: escolhe a opção correcta."
+        },
+        {
+          "type": "test",
+          "content": "Escolhe a frase correcta.",
+          "options": [
+            "A Ana bebe café.",
+            "A Ana café bebe.",
+            "Bebe a Ana café."
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Qual é a palavra com o som /ɲ/?",
+          "options": [
+            "banho",
+            "filha",
+            "chave"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Completa a frase."
+        },
+        {
+          "type": "input",
+          "placeholder": "A minha ___ toma banho."
+        },
+        {
+          "type": "input",
+          "placeholder": "A ___ está na mesa."
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-digrafos-lh-nh-ch-slide-6",
+      "title": "6. As quatro competências (ouvir e ler)",
+      "stage": "reading-listening",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Ler: lê o texto e responde às perguntas."
+        },
+        {
+          "type": "blockquote",
+          "content": "A minha filha toma banho todos os dias. Depois come pão e bebe leite. A chave está na mesa."
+        },
+        {
+          "type": "input",
+          "placeholder": "Quem toma banho?"
+        },
+        {
+          "type": "input",
+          "placeholder": "Onde está a chave?"
+        },
+        {
+          "type": "instruction",
+          "content": "Ouvir: ouve o diálogo e responde às perguntas."
+        },
+        {
+          "type": "blockquote",
+          "content": "A: Como se pronuncia? B: Filha, /ˈfiʎɐ/. A: E esta palavra? B: Chave, /ˈʃavɨ/."
+        },
+        {
+          "type": "input",
+          "placeholder": "Como se pronuncia filha?"
+        },
+        {
+          "type": "input",
+          "placeholder": "Como se pronuncia chave?"
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-digrafos-lh-nh-ch-slide-7",
+      "title": "7. Falar e escrever",
+      "stage": "freer-practice",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Falar: pratica as expressões da aula em pares."
+        },
+        {
+          "type": "blockquote",
+          "content": "• filha /ˈfiʎɐ/\n• banho /ˈbɐɲu/\n• chave /ˈʃavɨ/"
+        },
+        {
+          "type": "instruction",
+          "content": "Escrever: escreve um texto curto com o vocabulário da aula."
+        },
+        {
+          "type": "essay",
+          "placeholder": "Escreve a tua resposta aqui ..."
+        },
+        {
+          "type": "input",
+          "placeholder": "Uma frase que dizes no trabalho de pares:"
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-digrafos-lh-nh-ch-slide-8",
+      "title": "8. Roteiros de aula por duração",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Escolhe o roteiro que se adapta ao teu tempo."
+        },
+        {
+          "type": "blockquote",
+          "content": "60 min (base): aquecimento, vocabulário, gramática e uma tarefa de fala.\n90 min (alargada): acrescenta pronúncia, leitura e audição.\n120 min (oficina completa): acrescenta escrita, correcção entre pares e o projecto da unidade."
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-digrafos-lh-nh-ch-slide-9",
+      "title": "9. Adaptações para o grupo",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Adapta a aula ao teu grupo."
+        },
+        {
+          "type": "blockquote",
+          "content": "Crianças: Um jogo de sons com imagens."
+        },
+        {
+          "type": "blockquote",
+          "content": "Adolescentes: Um ditado curto em pares."
+        },
+        {
+          "type": "blockquote",
+          "content": "Adultos: Uma lista de palavras para ler em voz alta."
+        },
+        {
+          "type": "blockquote",
+          "content": "Séniores: Cartões grandes com palavras com lh, nh e ch."
+        },
+        {
+          "type": "blockquote",
+          "content": "Aulas individuais: Uma ficha de trabalho: cinco frases sobre o tema da aula (PT-004)."
+        },
+        {
+          "type": "blockquote",
+          "content": "Grupo: Uma tarefa em pares ou pequenos grupos."
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-digrafos-lh-nh-ch-slide-10",
+      "title": "10. Trabalho de casa e notas de revisão",
+      "stage": "cool-down",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Trabalho de casa:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Escreve cinco frases simples com sujeito, verbo e objecto."
+        },
+        {
+          "type": "input",
+          "placeholder": "Escreve aqui a tua frase de trabalho de casa ..."
+        },
+        {
+          "type": "instruction",
+          "content": "Resposta modelo para comparar:"
+        },
+        {
+          "type": "blockquote",
+          "content": "A minha filha toma banho."
+        },
+        {
+          "type": "blockquote",
+          "content": "A aula 0.5 revê a cortesia."
+        }
+      ]
+    }
+  ]
+}
