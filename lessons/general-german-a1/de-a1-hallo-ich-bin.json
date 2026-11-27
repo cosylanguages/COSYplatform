@@ -1,0 +1,404 @@
+{
+  "id": "de-a1-hallo-ich-bin",
+  "title": "Hallo, ich bin...",
+  "level": "A1",
+  "language": "de",
+  "unit": "Einheit 1: Mein Alltag",
+  "canDo": "Ich kann mich vorstellen und sagen, was ich habe.",
+  "defaultDuration": 50,
+  "defaultMode": "all",
+  "objectives": [
+    "die Zielstruktur verwenden: verb \"sein\" und \"haben\" im präsens",
+    "6 neue Wörter verwenden: Student, Lehrer, Deutsch, kommen, wohnen, die Sprache"
+  ],
+  "materials": "Wortschatzkarten, Audio zum Hörtext, Leseblatt, Bilder oder echte Gegenstände, A1-Grammatikseiten von COSYmanuals zu verb \"sein\" und \"haben\" im präsens.",
+  "assessment": "Prüfe den korrekten Gebrauch von verb \"sein\" und \"haben\" im präsens und die klare Aussprache der Zielwörter.",
+  "homework": "Schreibe fünf Sätze mit sein und haben über dich.",
+  "recycling": {
+    "prior": "Wiederholt die Begrüßung aus Einheit 0.",
+    "next": "Stunde 1.2 wiederholt die Vorstellung und ergänzt den Beruf."
+  },
+  "differentiation": {
+    "individual": "Ein Arbeitsblatt: fünf Sätze zum Thema der Stunde (DE-01).",
+    "group": "Eine Aufgabe in Partner- oder Kleingruppenarbeit.",
+    "children": "Eine Vorstellungskarte mit Bild und zwei Sätzen.",
+    "teens": "Ein Ketten-Vorstellspiel mit Herkunft.",
+    "adults": "Eine Vorstellung mit Beruf und Wohnort.",
+    "seniors": "Große Karten mit sein und haben, langsam vorgelesen."
+  },
+  "links": {
+    "vocabulary": [
+      "Student",
+      "Lehrer",
+      "Deutsch",
+      "kommen",
+      "wohnen",
+      "die Sprache"
+    ],
+    "grammar": [
+      {
+        "topic_id": "sein-und-haben",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/de/grammar/a1/topics/sein-und-haben.html"
+      }
+    ],
+    "phonetics": "Die Endung -er in Lehrer spricht man vokalisch."
+  },
+  "slides": [
+    {
+      "id": "de-a1-hallo-ich-bin-slide-1",
+      "title": "1. Kommunikatives Ziel und Überblick",
+      "stage": "warm-up",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Kommunikatives Ziel: Ich kann mich vorstellen und sagen, was ich habe."
+        },
+        {
+          "type": "blockquote",
+          "content": "Überblick über die Stunde:\n- Niveau: A1 Deutsch Allgemein\n- Einheit: Einheit 1: Mein Alltag\n- Zeit: 60 Min. (Basis) / 90 Min. (Erweitert) / 120 Min. (Vollwerkstatt)\n- Fokus: Hallo, ich bin...\n- Material: Wortschatzkarten, Audio, Leseblatt"
+        },
+        {
+          "type": "instruction",
+          "content": "Warm-up: Nenne ein Wort, das du zu diesem Thema schon kennst."
+        },
+        {
+          "type": "input",
+          "placeholder": "Schreibe ein Wort, das du kennst ..."
+        }
+      ]
+    },
+    {
+      "id": "de-a1-hallo-ich-bin-slide-2",
+      "title": "2. Wiederholung und Anschluss",
+      "stage": "recycling",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Wiederholt die Begrüßung aus Einheit 0."
+        },
+        {
+          "type": "blockquote",
+          "content": "Wiederholter Wortschatz: Student, Lehrer, Deutsch."
+        },
+        {
+          "type": "instruction",
+          "content": "Antworte aus dem Gedächtnis: Welches Wort gehört zu diesem Thema?"
+        },
+        {
+          "type": "test",
+          "content": "Welches Wort gehört zu diesem Thema?",
+          "options": [
+            "Student",
+            "Flughafen",
+            "Regenschirm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "de-a1-hallo-ich-bin-slide-3",
+      "title": "3. Wortschatz und wichtige Wendungen",
+      "stage": "input",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Aktiver Grundwortschatz (6 Elemente):"
+        },
+        {
+          "type": "blockquote",
+          "content": "Student — eine Person, die an einer Hochschule lernt. Beispiel: Ich bin Student.\nLehrer — eine Person, die unterrichtet. Beispiel: Mein Vater ist Lehrer.\nDeutsch — die Sprache aus Deutschland. Beispiel: Ich spreche Deutsch und Englisch.\nkommen — sich zu einem Ort bewegen. Beispiel: Ich komme aus Spanien.\nwohnen — seinen Wohnort haben. Beispiel: Ich wohne in Berlin.\ndie Sprache — ein System zum Sprechen und Schreiben. Beispiel: Ich habe zwei Sprachen."
+        },
+        {
+          "type": "instruction",
+          "content": "Wichtige Wendungen und funktionale Wortverbindungen:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• Ich bin Student.\n• Ich komme aus Spanien.\n• Ich habe ein Buch.\n• Woher kommst du?\n• Ich spreche Deutsch und Englisch."
+        },
+        {
+          "type": "instruction",
+          "content": "Wortschatzübung: Wähle das richtige Wort."
+        },
+        {
+          "type": "test",
+          "content": "Welches Wort bedeutet 'eine Person, die an einer Hochschule lernt'?",
+          "options": [
+            "Student",
+            "Lehrer",
+            "Deutsch"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Welches Wort bedeutet 'eine Person, die unterrichtet'?",
+          "options": [
+            "Lehrer",
+            "Student",
+            "Deutsch"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Ergänze den Satz mit einem Wort aus der Liste."
+        },
+        {
+          "type": "input",
+          "placeholder": "Ergänze: Ich bin ___."
+        }
+      ]
+    },
+    {
+      "id": "de-a1-hallo-ich-bin-slide-4",
+      "title": "4. Aussprachefokus",
+      "stage": "pronunciation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Die Endung -er in Lehrer spricht man vokalisch."
+        },
+        {
+          "type": "blockquote",
+          "content": "Lehrer /ˈleːʁɐ/, Sprache /ˈʃpʁaːxə/"
+        },
+        {
+          "type": "instruction",
+          "content": "Höre zu und sprich dreimal nach."
+        },
+        {
+          "type": "test",
+          "content": "Welches Wort trägt die Hauptbetonung?",
+          "options": [
+            "Student",
+            "der",
+            "ein"
+          ]
+        },
+        {
+          "type": "input",
+          "placeholder": "Schreibe den betonten Teil: ..."
+        }
+      ]
+    },
+    {
+      "id": "de-a1-hallo-ich-bin-slide-5",
+      "title": "5. Grammatikfokus und gelenkte Übung",
+      "stage": "grammar",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Grammatikfokus: Verb \"sein\" und \"haben\" im Präsens."
+        },
+        {
+          "type": "blockquote",
+          "content": "sein und haben sind unregelmäßig: ich bin, du bist, er ist; ich habe, du hast, er hat. Mit sein sagst du, wer du bist, mit haben, was du hast."
+        },
+        {
+          "type": "grammar-focus",
+          "grammarId": "de-a1-sein-und-haben"
+        },
+        {
+          "type": "instruction",
+          "content": "Gelenkte Übung: Wähle die richtige Option."
+        },
+        {
+          "type": "test",
+          "content": "Wähle die richtige Form.",
+          "options": [
+            "Ich bin Lehrerin.",
+            "Ich bist Lehrerin.",
+            "Ich sind Lehrerin."
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Wähle die richtige Form.",
+          "options": [
+            "Ich habe ein Buch.",
+            "Ich habt ein Buch.",
+            "Ich haben ein Buch."
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Ergänze den Satz."
+        },
+        {
+          "type": "input",
+          "placeholder": "Ich ___ aus Spanien."
+        },
+        {
+          "type": "input",
+          "placeholder": "Ich ___ Deutsch."
+        }
+      ]
+    },
+    {
+      "id": "de-a1-hallo-ich-bin-slide-6",
+      "title": "6. Die vier Fertigkeiten (Hören und Lesen)",
+      "stage": "reading-listening",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Lesen: Lies den Text und beantworte die Fragen."
+        },
+        {
+          "type": "blockquote",
+          "content": "Hallo, ich bin Marta. Ich bin Lehrerin und komme aus Spanien. Ich habe zwei Sprachen: Spanisch und Deutsch. Ich wohne in Berlin."
+        },
+        {
+          "type": "input",
+          "placeholder": "Was ist Marta von Beruf?"
+        },
+        {
+          "type": "input",
+          "placeholder": "Woher kommt Marta?"
+        },
+        {
+          "type": "instruction",
+          "content": "Hören: Höre den Dialog und beantworte die Fragen."
+        },
+        {
+          "type": "blockquote",
+          "content": "A: Hallo, ich bin Kenji. B: Freut mich. Woher kommst du? A: Aus Japan. Ich habe hier einen Kurs."
+        },
+        {
+          "type": "input",
+          "placeholder": "Woher kommt Kenji?"
+        },
+        {
+          "type": "input",
+          "placeholder": "Was hat Kenji hier?"
+        }
+      ]
+    },
+    {
+      "id": "de-a1-hallo-ich-bin-slide-7",
+      "title": "7. Sprechen und Schreiben",
+      "stage": "freer-practice",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Sprechen: Übe die Wendungen der Stunde in Partnerarbeit."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Ich bin Student.\n• Ich komme aus Spanien.\n• Ich habe ein Buch."
+        },
+        {
+          "type": "instruction",
+          "content": "Schreiben: Schreibe einen kurzen Text mit dem Wortschatz der Stunde."
+        },
+        {
+          "type": "essay",
+          "placeholder": "Schreibe deine Antwort hier ..."
+        },
+        {
+          "type": "input",
+          "placeholder": "Ein Satz, den du in der Partnerarbeit sagst:"
+        }
+      ]
+    },
+    {
+      "id": "de-a1-hallo-ich-bin-slide-8",
+      "title": "8. Unterrichtsabläufe nach Dauer",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Wähle den Ablauf, der zu deiner Zeit passt."
+        },
+        {
+          "type": "blockquote",
+          "content": "60 Min. (Basis): Warm-up, Wortschatz, Grammatik und eine Sprechaufgabe.\n90 Min. (Erweitert): zusätzlich Aussprache, Lesen und Hören.\n120 Min. (Vollwerkstatt): zusätzlich Schreibaufgabe, Peer-Korrektur und das Projekt der Einheit."
+        }
+      ]
+    },
+    {
+      "id": "de-a1-hallo-ich-bin-slide-9",
+      "title": "9. Anpassungen für die Lerngruppe",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Passe die Stunde an deine Gruppe an."
+        },
+        {
+          "type": "blockquote",
+          "content": "Kinder: Eine Vorstellungskarte mit Bild und zwei Sätzen."
+        },
+        {
+          "type": "blockquote",
+          "content": "Jugendliche: Ein Ketten-Vorstellspiel mit Herkunft."
+        },
+        {
+          "type": "blockquote",
+          "content": "Erwachsene: Eine Vorstellung mit Beruf und Wohnort."
+        },
+        {
+          "type": "blockquote",
+          "content": "Senioren: Große Karten mit sein und haben, langsam vorgelesen."
+        },
+        {
+          "type": "blockquote",
+          "content": "Einzelunterricht: Ein Arbeitsblatt: fünf Sätze zum Thema der Stunde (DE-01)."
+        },
+        {
+          "type": "blockquote",
+          "content": "Gruppe: Eine Aufgabe in Partner- oder Kleingruppenarbeit."
+        }
+      ]
+    },
+    {
+      "id": "de-a1-hallo-ich-bin-slide-10",
+      "title": "10. Hausaufgaben und Wiederholungsnotizen",
+      "stage": "cool-down",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Hausaufgaben:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Schreibe fünf Sätze mit sein und haben über dich."
+        },
+        {
+          "type": "input",
+          "placeholder": "Schreibe hier deinen Hausaufgabensatz ..."
+        },
+        {
+          "type": "instruction",
+          "content": "Musterlösung zum Vergleichen:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Ich bin Student."
+        },
+        {
+          "type": "blockquote",
+          "content": "Stunde 1.2 wiederholt die Vorstellung und ergänzt den Beruf."
+        }
+      ]
+    }
+  ]
+}

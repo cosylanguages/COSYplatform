@@ -178,7 +178,10 @@
           "vocabulary": [
             "Student",
             "Lehrer",
-            "Deutsch"
+            "Deutsch",
+            "kommen",
+            "wohnen",
+            "die Sprache"
           ],
           "teacher_notes": "code: \"DE-01\"\npronunciation: [{\"point\":\"Der Vokalneueinsatz (Glottal Stop)\",\"explain\":\"Wörter, die mit einem Vokal beginnen, werden mit einem kleinen harten Einsatz gesprochen.\",\"examples\":[{\"pattern\":\"Apfel\",\"ipa\":\"/ˈʔapfl̩/\",\"word\":\"Apfel\"},{\"pattern\":\"Eis\",\"ipa\":\"/ˈʔaɪs/\",\"word\":\"Eis\"}],\"extension\":\"Im Deutschen klingen Wörter, die mit Vokalen beginnen, oft 'abgehackt'. Das liegt an diesem Glottal-Stopp. Er ist kein Buchstabe, aber ein wichtiger Laut für den deutschen Rhythmus.\",\"visual\":\"⏹️\"}]\ncando: \"sich vorstellen und grundlegende Verben benutzen\"\nhw: \"Write 3 sentences about your job in German\"",
           "recycled": "Satzbau: Subjekt-Verb-Objekt, Höfliche Bitten und Fragen, Tut mir leid",
@@ -192,7 +195,10 @@
             "reading",
             "writing"
           ],
-          "speaking_percent": 55
+          "speaking_percent": 55,
+          "grammarIds": [
+            "de-a1-sein-und-haben"
+          ]
         },
         {
           "lesson": 2,
@@ -255,7 +261,10 @@
             "reading",
             "writing"
           ],
-          "speaking_percent": 55
+          "speaking_percent": 55,
+          "grammarIds": [
+            "de-a1-praepositionen-ort"
+          ]
         },
         {
           "lesson": 4,
@@ -285,7 +294,10 @@
             "writing"
           ],
           "speaking_percent": 55,
-          "recycled": "Wiederholt den vorherigen Wortschatz und die Grammatik."
+          "recycled": "Wiederholt den vorherigen Wortschatz und die Grammatik.",
+          "grammarIds": [
+            "de-a1-wortstellung-v2"
+          ]
         },
         {
           "lesson": 5,
@@ -315,7 +327,10 @@
             "writing"
           ],
           "speaking_percent": 55,
-          "recycled": "Wiederholt den vorherigen Wortschatz und die Grammatik."
+          "recycled": "Wiederholt den vorherigen Wortschatz und die Grammatik.",
+          "grammarIds": [
+            "de-a1-adverbien-frequenz-art"
+          ]
         }
       ]
     },
@@ -351,7 +366,10 @@
             "writing"
           ],
           "speaking_percent": 55,
-          "recycled": "Wiederholt den vorherigen Wortschatz und die Grammatik."
+          "recycled": "Wiederholt den vorherigen Wortschatz und die Grammatik.",
+          "grammarIds": [
+            "de-a1-possessivartikel"
+          ]
         },
         {
           "lesson": 2,
@@ -381,7 +399,10 @@
             "writing"
           ],
           "speaking_percent": 55,
-          "recycled": "Wiederholt den vorherigen Wortschatz und die Grammatik."
+          "recycled": "Wiederholt den vorherigen Wortschatz und die Grammatik.",
+          "grammarIds": [
+            "de-a1-de-artikel"
+          ]
         },
         {
           "lesson": 3,
@@ -411,7 +432,10 @@
             "writing"
           ],
           "speaking_percent": 55,
-          "recycled": "Wiederholt den vorherigen Wortschatz und die Grammatik."
+          "recycled": "Wiederholt den vorherigen Wortschatz und die Grammatik.",
+          "grammarIds": [
+            "de-a1-de-sein"
+          ]
         },
         {
           "lesson": 4,
@@ -441,7 +465,10 @@
             "writing"
           ],
           "speaking_percent": 55,
-          "recycled": "Wiederholt den vorherigen Wortschatz und die Grammatik."
+          "recycled": "Wiederholt den vorherigen Wortschatz und die Grammatik.",
+          "grammarIds": [
+            "de-a1-zahlen-uhrzeit-datum"
+          ]
         },
         {
           "lesson": 5,
@@ -471,7 +498,10 @@
             "writing"
           ],
           "speaking_percent": 55,
-          "recycled": "Wiederholt den vorherigen Wortschatz und die Grammatik."
+          "recycled": "Wiederholt den vorherigen Wortschatz und die Grammatik.",
+          "grammarIds": [
+            "de-a1-praesens-regelmaessig"
+          ]
         }
       ]
     },
