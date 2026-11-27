@@ -1,0 +1,406 @@
+{
+  "id": "fr-a1-les-pieces-de-la-maison",
+  "title": "Les pièces de la maison",
+  "level": "A1",
+  "language": "fr",
+  "unit": "Module 3 : Logement et vie quotidienne",
+  "canDo": "Je peux nommer les pièces et dire ce qu’il y a dans la maison.",
+  "defaultDuration": 50,
+  "defaultMode": "all",
+  "objectives": [
+    "utiliser la structure cible : structure d'existence 'il y a'",
+    "utiliser 8 nouveaux mots : cuisine, chambre, salle de bains, salon, balcon, jardin, couloir, toilettes"
+  ],
+  "materials": "Cartes de vocabulaire, audio du texte, fiche de lecture, images ou objets réels, pages de grammaire A1 de COSYmanuals sur structure d'existence 'il y a'.",
+  "assessment": "Vérifie l’usage correct de structure d'existence 'il y a' et la prononciation claire des mots cibles.",
+  "homework": "Dessine ta maison et écris huit phrases avec il y a.",
+  "recycling": {
+    "prior": "Révise le cours 3.1.",
+    "next": "Le cours 3.3 ajoute les meubles."
+  },
+  "differentiation": {
+    "individual": "Une fiche : cinq phrases sur le thème du cours (FR-032).",
+    "group": "Une tâche en binôme ou en petits groupes.",
+    "children": "Une maison en carton avec des étiquettes.",
+    "teens": "Un plan à compléter en binôme.",
+    "adults": "Une description du logement réel.",
+    "seniors": "Grandes images de pièces."
+  },
+  "links": {
+    "vocabulary": [
+      "cuisine",
+      "chambre",
+      "salle de bains",
+      "salon",
+      "balcon",
+      "jardin",
+      "couloir",
+      "toilettes"
+    ],
+    "grammar": [
+      {
+        "topic_id": "il-y-a",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/fr/grammar/a1/topics/il-y-a.html"
+      }
+    ],
+    "phonetics": "Le ch de chambre est /ʃ/."
+  },
+  "slides": [
+    {
+      "id": "fr-a1-les-pieces-de-la-maison-slide-1",
+      "title": "1. Objectif communicatif et vue d’ensemble",
+      "stage": "warm-up",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Objectif communicatif : Je peux nommer les pièces et dire ce qu’il y a dans la maison."
+        },
+        {
+          "type": "blockquote",
+          "content": "Vue d’ensemble du cours :\n- Niveau : A1 Français général\n- Unité : Module 3 : Logement et vie quotidienne\n- Durée : 60 min (base) / 90 min (étendu) / 120 min (atelier complet)\n- Focus : Les pièces de la maison\n- Matériel : cartes de vocabulaire, audio, fiche de lecture"
+        },
+        {
+          "type": "instruction",
+          "content": "Échauffement : dis un mot que tu connais déjà sur ce thème."
+        },
+        {
+          "type": "input",
+          "placeholder": "Écris un mot que tu connais ..."
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-les-pieces-de-la-maison-slide-2",
+      "title": "2. Révision et lien",
+      "stage": "recycling",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Révise le cours 3.1."
+        },
+        {
+          "type": "blockquote",
+          "content": "Vocabulaire révisé : cuisine, chambre, salle de bains."
+        },
+        {
+          "type": "instruction",
+          "content": "Réponds de mémoire : quel mot appartient à ce thème ?"
+        },
+        {
+          "type": "test",
+          "content": "Quel mot appartient à ce thème ?",
+          "options": [
+            "cuisine",
+            "aéroport",
+            "parapluie"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-les-pieces-de-la-maison-slide-3",
+      "title": "3. Vocabulaire et expressions essentielles",
+      "stage": "input",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Vocabulaire actif de base (8 éléments) :"
+        },
+        {
+          "type": "blockquote",
+          "content": "cuisine — la pièce pour cuisiner. Exemple: La cuisine est grande.\nchambre — la pièce pour dormir. Exemple: Il y a deux chambres.\nsalle de bains — la pièce pour se laver. Exemple: Il y a une salle de bains.\nsalon — la pièce pour recevoir. Exemple: Le salon est lumineux.\nbalcon — une petite terrasse. Exemple: Il y a un petit balcon.\njardin — un espace avec des plantes dehors. Exemple: Il n’y a pas de jardin.\ncouloir — le passage entre les pièces. Exemple: Le couloir est long.\ntoilettes — la pièce avec les WC. Exemple: Les toilettes sont à droite."
+        },
+        {
+          "type": "instruction",
+          "content": "Expressions essentielles et combinaisons fonctionnelles :"
+        },
+        {
+          "type": "blockquote",
+          "content": "• Il y a trois chambres.\n• La cuisine est grande.\n• Il y a une salle de bains et un salon.\n• Le balcon est petit.\n• Il n’y a pas de jardin."
+        },
+        {
+          "type": "instruction",
+          "content": "Pratique du vocabulaire : choisis le mot correct."
+        },
+        {
+          "type": "test",
+          "content": "Quel mot signifie « la pièce pour cuisiner » ?",
+          "options": [
+            "cuisine",
+            "chambre",
+            "salle de bains"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Quel mot signifie « la pièce pour dormir » ?",
+          "options": [
+            "chambre",
+            "cuisine",
+            "salle de bains"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Complète la phrase avec un mot de la liste."
+        },
+        {
+          "type": "input",
+          "placeholder": "Complète : La ___ est grande."
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-les-pieces-de-la-maison-slide-4",
+      "title": "4. Point de prononciation",
+      "stage": "pronunciation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Le ch de chambre est /ʃ/."
+        },
+        {
+          "type": "blockquote",
+          "content": "chambre /ʃɑ̃bʁ/, cuisine /kɥizin/"
+        },
+        {
+          "type": "instruction",
+          "content": "Écoute et répète trois fois."
+        },
+        {
+          "type": "test",
+          "content": "Quel mot entends-tu dans l’audio ?",
+          "options": [
+            "cuisine",
+            "le",
+            "un"
+          ]
+        },
+        {
+          "type": "input",
+          "placeholder": "Écris le mot entendu : ..."
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-les-pieces-de-la-maison-slide-5",
+      "title": "5. Point de grammaire et pratique guidée",
+      "stage": "grammar",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Point de grammaire : Structure d'existence 'Il y a'."
+        },
+        {
+          "type": "blockquote",
+          "content": "Il y a exprime l’existence : il y a un salon, il y a des chambres. La négation est il n’y a pas de jardin."
+        },
+        {
+          "type": "grammar-focus",
+          "grammarId": "fr-a1-il-y-a"
+        },
+        {
+          "type": "instruction",
+          "content": "Pratique guidée : choisis la bonne option."
+        },
+        {
+          "type": "test",
+          "content": "Choisis la forme correcte.",
+          "options": [
+            "Il y a trois chambres.",
+            "Il a trois chambres y a.",
+            "Il y a trois chambre."
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Choisis la négation correcte.",
+          "options": [
+            "Il n’y a pas de jardin.",
+            "Il n’y a pas un jardin de.",
+            "Il y a pas de jardin non."
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Complète la phrase."
+        },
+        {
+          "type": "input",
+          "placeholder": "La ___ est grande."
+        },
+        {
+          "type": "input",
+          "placeholder": "Il y a une ___ de bains."
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-les-pieces-de-la-maison-slide-6",
+      "title": "6. Les quatre compétences (écouter et lire)",
+      "stage": "reading-listening",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Lire : lis le texte et réponds aux questions."
+        },
+        {
+          "type": "blockquote",
+          "content": "Dans mon appartement il y a un salon, une cuisine, deux chambres et une salle de bains. Il y a aussi un petit balcon. Il n’y a pas de jardin, mais il y a un parc près de l’immeuble."
+        },
+        {
+          "type": "input",
+          "placeholder": "Combien de chambres y a-t-il ?"
+        },
+        {
+          "type": "input",
+          "placeholder": "Y a-t-il un jardin ?"
+        },
+        {
+          "type": "instruction",
+          "content": "Écouter : écoute le dialogue et réponds aux questions."
+        },
+        {
+          "type": "blockquote",
+          "content": "A : Il y a combien de pièces ? B : Quatre. A : Il y a un balcon ? B : Oui, un petit balcon."
+        },
+        {
+          "type": "input",
+          "placeholder": "Combien de pièces ?"
+        },
+        {
+          "type": "input",
+          "placeholder": "Y a-t-il un balcon ?"
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-les-pieces-de-la-maison-slide-7",
+      "title": "7. Parler et écrire",
+      "stage": "freer-practice",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Parler : pratique les expressions du cours en binôme."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Il y a trois chambres.\n• La cuisine est grande.\n• Il y a une salle de bains et un salon."
+        },
+        {
+          "type": "instruction",
+          "content": "Écrire : écris un texte court avec le vocabulaire du cours."
+        },
+        {
+          "type": "essay",
+          "placeholder": "Écris ta réponse ici ..."
+        },
+        {
+          "type": "input",
+          "placeholder": "Une phrase que tu dis en binôme :"
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-les-pieces-de-la-maison-slide-8",
+      "title": "8. Déroulés de cours selon la durée",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Choisis le déroulé qui correspond à ton temps."
+        },
+        {
+          "type": "blockquote",
+          "content": "60 min (base) : échauffement, vocabulaire, grammaire et une tâche orale.\n90 min (étendu) : ajoute prononciation, lecture et écoute.\n120 min (atelier complet) : ajoute écriture, correction entre pairs et le projet de l’unité."
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-les-pieces-de-la-maison-slide-9",
+      "title": "9. Adaptations pour le groupe",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Adapte le cours à ton groupe."
+        },
+        {
+          "type": "blockquote",
+          "content": "Enfants : Une maison en carton avec des étiquettes."
+        },
+        {
+          "type": "blockquote",
+          "content": "Adolescents : Un plan à compléter en binôme."
+        },
+        {
+          "type": "blockquote",
+          "content": "Adultes : Une description du logement réel."
+        },
+        {
+          "type": "blockquote",
+          "content": "Seniors : Grandes images de pièces."
+        },
+        {
+          "type": "blockquote",
+          "content": "Cours individuels : Une fiche : cinq phrases sur le thème du cours (FR-032)."
+        },
+        {
+          "type": "blockquote",
+          "content": "Groupe : Une tâche en binôme ou en petits groupes."
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-les-pieces-de-la-maison-slide-10",
+      "title": "10. Devoirs et notes de révision",
+      "stage": "cool-down",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Devoirs :"
+        },
+        {
+          "type": "blockquote",
+          "content": "Dessine ta maison et écris huit phrases avec il y a."
+        },
+        {
+          "type": "input",
+          "placeholder": "Écris ici ta phrase de devoir ..."
+        },
+        {
+          "type": "instruction",
+          "content": "Réponse modèle à comparer :"
+        },
+        {
+          "type": "blockquote",
+          "content": "La cuisine est grande."
+        },
+        {
+          "type": "blockquote",
+          "content": "Le cours 3.3 ajoute les meubles."
+        }
+      ]
+    }
+  ]
+}
