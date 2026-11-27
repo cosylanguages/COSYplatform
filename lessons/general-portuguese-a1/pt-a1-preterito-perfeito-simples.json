@@ -1,0 +1,406 @@
+{
+  "id": "pt-a1-preterito-perfeito-simples",
+  "title": "Pretérito perfeito simples",
+  "level": "A1",
+  "language": "pt",
+  "unit": "Unidade 10: Contar o Passado",
+  "canDo": "Consigo contar o que fiz com o pretérito perfeito simples.",
+  "defaultDuration": 50,
+  "defaultMode": "all",
+  "objectives": [
+    "usar a estrutura-alvo: pretérito perfeito simples (verbos regulares)",
+    "usar 8 palavras novas: fui, estive, tive, fiz, vim, cheguei, passei, saí"
+  ],
+  "materials": "Cartões de vocabulário, áudio do texto, ficha de leitura, imagens ou objectos reais, páginas de gramática A1 do COSYmanuals sobre pretérito perfeito simples (verbos regulares).",
+  "assessment": "Verifica o uso correcto de pretérito perfeito simples (verbos regulares) e a pronúncia clara das palavras-alvo.",
+  "homework": "Escreve cinco frases no pretérito perfeito simples sobre ontem.",
+  "recycling": {
+    "prior": "Revê o pretérito composto da aula 10.1.",
+    "next": "A aula 10.3 revê o passado e acrescenta os marcadores temporais."
+  },
+  "differentiation": {
+    "individual": "Uma ficha de trabalho: cinco frases sobre o tema da aula (PT-A1-052).",
+    "group": "Uma tarefa em pares ou pequenos grupos.",
+    "children": "Uma sequência de imagens para contar.",
+    "teens": "Uma lista de ontem para escrever.",
+    "adults": "Um diálogo sobre ontem.",
+    "seniors": "Cartões grandes com verbos no passado."
+  },
+  "links": {
+    "vocabulary": [
+      "fui",
+      "estive",
+      "tive",
+      "fiz",
+      "vim",
+      "cheguei",
+      "passei",
+      "saí"
+    ],
+    "grammar": [
+      {
+        "topic_id": "preterito-perfeito",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/pt/grammar/a1/topics/preterito-perfeito.html"
+      }
+    ],
+    "phonetics": "O ui em fui é /uj/."
+  },
+  "slides": [
+    {
+      "id": "pt-a1-preterito-perfeito-simples-slide-1",
+      "title": "1. Objectivo comunicativo e visão geral",
+      "stage": "warm-up",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Objectivo comunicativo: Consigo contar o que fiz com o pretérito perfeito simples."
+        },
+        {
+          "type": "blockquote",
+          "content": "Visão geral da aula:\n- Nível: A1 Português Geral\n- Unidade: Unidade 10: Contar o Passado\n- Duração: 60 min (base) / 90 min (alargada) / 120 min (oficina completa)\n- Foco: Pretérito perfeito simples\n- Materiais: cartões de vocabulário, áudio, ficha de leitura"
+        },
+        {
+          "type": "instruction",
+          "content": "Aquecimento: diz uma palavra que já conheces sobre este tema."
+        },
+        {
+          "type": "input",
+          "placeholder": "Escreve uma palavra que conheces ..."
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-preterito-perfeito-simples-slide-2",
+      "title": "2. Revisão e ligação",
+      "stage": "recycling",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Revê o pretérito composto da aula 10.1."
+        },
+        {
+          "type": "blockquote",
+          "content": "Vocabulário revisto: fui, estive, tive."
+        },
+        {
+          "type": "instruction",
+          "content": "Responde de memória: que palavra pertence a este tema?"
+        },
+        {
+          "type": "test",
+          "content": "Que palavra pertence a este tema?",
+          "options": [
+            "fui",
+            "aeroporto",
+            "guarda-chuva"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-preterito-perfeito-simples-slide-3",
+      "title": "3. Vocabulário e expressões essenciais",
+      "stage": "input",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Vocabulário activo de base (8 elementos):"
+        },
+        {
+          "type": "blockquote",
+          "content": "fui — pretérito de ir e de ser. Exemplo: Fui ao cinema.\nestive — pretérito de estar. Exemplo: Estive em casa.\ntive — pretérito de ter. Exemplo: Tive uma boa semana.\nfiz — pretérito de fazer. Exemplo: Fiz um trabalho novo.\nvim — pretérito de vir. Exemplo: Vim de Lisboa.\ncheguei — pretérito de chegar. Exemplo: Cheguei tarde.\npassei — pretérito de passar. Exemplo: Passei o dia em casa.\nsaí — pretérito de sair. Exemplo: Saí às oito."
+        },
+        {
+          "type": "instruction",
+          "content": "Expressões essenciais e combinações funcionais:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• Fui ao cinema.\n• Estive em casa.\n• Tive uma boa semana.\n• Cheguei tarde.\n• Saí às oito."
+        },
+        {
+          "type": "instruction",
+          "content": "Prática de vocabulário: escolhe a palavra correcta."
+        },
+        {
+          "type": "test",
+          "content": "Que palavra significa 'pretérito de ir e de ser'?",
+          "options": [
+            "fui",
+            "estive",
+            "tive"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Que palavra significa 'pretérito de estar'?",
+          "options": [
+            "estive",
+            "fui",
+            "tive"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Completa a frase com uma palavra da lista."
+        },
+        {
+          "type": "input",
+          "placeholder": "Completa: ___ ao cinema."
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-preterito-perfeito-simples-slide-4",
+      "title": "4. Foco na pronúncia",
+      "stage": "pronunciation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "O ui em fui é /uj/."
+        },
+        {
+          "type": "blockquote",
+          "content": "fui /fuj/, estive /ɨʃˈtivɨ/"
+        },
+        {
+          "type": "instruction",
+          "content": "Ouve e repete três vezes."
+        },
+        {
+          "type": "test",
+          "content": "Qual é a palavra com a sílaba tónica na primeira sílaba?",
+          "options": [
+            "fui",
+            "o",
+            "um"
+          ]
+        },
+        {
+          "type": "input",
+          "placeholder": "Escreve a sílaba tónica: ..."
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-preterito-perfeito-simples-slide-5",
+      "title": "5. Foco na gramática e prática guiada",
+      "stage": "grammar",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Foco na gramática: Pretérito perfeito simples (verbos regulares)."
+        },
+        {
+          "type": "blockquote",
+          "content": "O pretérito perfeito simples conta uma acção terminada: fui, estive, tive, fiz, vim, cheguei, passei, saí. Regulares: trabalhei, comi, abri."
+        },
+        {
+          "type": "grammar-focus",
+          "grammarId": "pt-a1-preterito-perfeito"
+        },
+        {
+          "type": "instruction",
+          "content": "Prática guiada: escolhe a opção correcta."
+        },
+        {
+          "type": "test",
+          "content": "Escolhe a forma correcta.",
+          "options": [
+            "Fui ao cinema.",
+            "Sou ido ao cinema.",
+            "Tenho foi ao cinema."
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Escolhe a forma correcta.",
+          "options": [
+            "Cheguei tarde.",
+            "Cheguei tarde eu.",
+            "Eu tarde cheguei eu."
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Completa a frase."
+        },
+        {
+          "type": "input",
+          "placeholder": "___ em casa todo o dia."
+        },
+        {
+          "type": "input",
+          "placeholder": "___ às oito."
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-preterito-perfeito-simples-slide-6",
+      "title": "6. As quatro competências (ouvir e ler)",
+      "stage": "reading-listening",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Ler: lê o texto e responde às perguntas."
+        },
+        {
+          "type": "blockquote",
+          "content": "Ontem fui ao cinema e estive com amigos. Tive uma boa semana: fiz um trabalho novo, vim de Lisboa e cheguei tarde a casa. Passei o dia em casa e saí só à noite."
+        },
+        {
+          "type": "input",
+          "placeholder": "Onde foi a pessoa?"
+        },
+        {
+          "type": "input",
+          "placeholder": "A que horas saiu?"
+        },
+        {
+          "type": "instruction",
+          "content": "Ouvir: ouve o diálogo e responde às perguntas."
+        },
+        {
+          "type": "blockquote",
+          "content": "A: O que fizeste ontem? B: Fui ao cinema. A: A que horas chegaste? B: Cheguei tarde."
+        },
+        {
+          "type": "input",
+          "placeholder": "Onde foi ele?"
+        },
+        {
+          "type": "input",
+          "placeholder": "A que horas chegou?"
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-preterito-perfeito-simples-slide-7",
+      "title": "7. Falar e escrever",
+      "stage": "freer-practice",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Falar: pratica as expressões da aula em pares."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Fui ao cinema.\n• Estive em casa.\n• Tive uma boa semana."
+        },
+        {
+          "type": "instruction",
+          "content": "Escrever: escreve um texto curto com o vocabulário da aula."
+        },
+        {
+          "type": "essay",
+          "placeholder": "Escreve a tua resposta aqui ..."
+        },
+        {
+          "type": "input",
+          "placeholder": "Uma frase que dizes no trabalho de pares:"
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-preterito-perfeito-simples-slide-8",
+      "title": "8. Roteiros de aula por duração",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Escolhe o roteiro que se adapta ao teu tempo."
+        },
+        {
+          "type": "blockquote",
+          "content": "60 min (base): aquecimento, vocabulário, gramática e uma tarefa de fala.\n90 min (alargada): acrescenta pronúncia, leitura e audição.\n120 min (oficina completa): acrescenta escrita, correcção entre pares e o projecto da unidade."
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-preterito-perfeito-simples-slide-9",
+      "title": "9. Adaptações para o grupo",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Adapta a aula ao teu grupo."
+        },
+        {
+          "type": "blockquote",
+          "content": "Crianças: Uma sequência de imagens para contar."
+        },
+        {
+          "type": "blockquote",
+          "content": "Adolescentes: Uma lista de ontem para escrever."
+        },
+        {
+          "type": "blockquote",
+          "content": "Adultos: Um diálogo sobre ontem."
+        },
+        {
+          "type": "blockquote",
+          "content": "Séniores: Cartões grandes com verbos no passado."
+        },
+        {
+          "type": "blockquote",
+          "content": "Aulas individuais: Uma ficha de trabalho: cinco frases sobre o tema da aula (PT-A1-052)."
+        },
+        {
+          "type": "blockquote",
+          "content": "Grupo: Uma tarefa em pares ou pequenos grupos."
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-preterito-perfeito-simples-slide-10",
+      "title": "10. Trabalho de casa e notas de revisão",
+      "stage": "cool-down",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Trabalho de casa:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Escreve cinco frases no pretérito perfeito simples sobre ontem."
+        },
+        {
+          "type": "input",
+          "placeholder": "Escreve aqui a tua frase de trabalho de casa ..."
+        },
+        {
+          "type": "instruction",
+          "content": "Resposta modelo para comparar:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Fui ao cinema."
+        },
+        {
+          "type": "blockquote",
+          "content": "A aula 10.3 revê o passado e acrescenta os marcadores temporais."
+        }
+      ]
+    }
+  ]
+}
