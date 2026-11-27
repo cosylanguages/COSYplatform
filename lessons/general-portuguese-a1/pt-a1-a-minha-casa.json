@@ -1,0 +1,406 @@
+{
+  "id": "pt-a1-a-minha-casa",
+  "title": "A minha casa",
+  "level": "A1",
+  "language": "pt",
+  "unit": "Unidade 1: A Minha Vida",
+  "canDo": "Consigo descrever a minha casa e o meu bairro.",
+  "defaultDuration": 50,
+  "defaultMode": "all",
+  "objectives": [
+    "usar a estrutura-alvo: verbos de lugar + preposições",
+    "usar 8 palavras novas: a casa, o bairro, a rua, o andar, a loja, o parque, perto, morar"
+  ],
+  "materials": "Cartões de vocabulário, áudio do texto, ficha de leitura, imagens ou objectos reais, páginas de gramática A1 do COSYmanuals sobre verbos de lugar + preposições.",
+  "assessment": "Verifica o uso correcto de verbos de lugar + preposições e a pronúncia clara das palavras-alvo.",
+  "homework": "Escreve cinco frases sobre a tua casa e o teu bairro.",
+  "recycling": {
+    "prior": "Revê o trabalho da aula 1.2.",
+    "next": "A aula 1.4 revê a casa e acrescenta a rotina."
+  },
+  "differentiation": {
+    "individual": "Uma ficha de trabalho: cinco frases sobre o tema da aula (PT-03).",
+    "group": "Uma tarefa em pares ou pequenos grupos.",
+    "children": "Um desenho do bairro com etiquetas.",
+    "teens": "Uma descrição do bairro ideal.",
+    "adults": "Um diálogo sobre casas e bairros.",
+    "seniors": "Fotografias de casas com letra grande."
+  },
+  "links": {
+    "vocabulary": [
+      "a casa",
+      "o bairro",
+      "a rua",
+      "o andar",
+      "a loja",
+      "o parque",
+      "perto",
+      "morar"
+    ],
+    "grammar": [
+      {
+        "topic_id": "preposicoes-lugar",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/pt/grammar/a1/topics/preposicoes-lugar.html"
+      }
+    ],
+    "phonetics": "O rr em bairro pronuncia-se /ʁ/."
+  },
+  "slides": [
+    {
+      "id": "pt-a1-a-minha-casa-slide-1",
+      "title": "1. Objectivo comunicativo e visão geral",
+      "stage": "warm-up",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Objectivo comunicativo: Consigo descrever a minha casa e o meu bairro."
+        },
+        {
+          "type": "blockquote",
+          "content": "Visão geral da aula:\n- Nível: A1 Português Geral\n- Unidade: Unidade 1: A Minha Vida\n- Duração: 60 min (base) / 90 min (alargada) / 120 min (oficina completa)\n- Foco: A minha casa\n- Materiais: cartões de vocabulário, áudio, ficha de leitura"
+        },
+        {
+          "type": "instruction",
+          "content": "Aquecimento: diz uma palavra que já conheces sobre este tema."
+        },
+        {
+          "type": "input",
+          "placeholder": "Escreve uma palavra que conheces ..."
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-a-minha-casa-slide-2",
+      "title": "2. Revisão e ligação",
+      "stage": "recycling",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Revê o trabalho da aula 1.2."
+        },
+        {
+          "type": "blockquote",
+          "content": "Vocabulário revisto: a casa, o bairro, a rua."
+        },
+        {
+          "type": "instruction",
+          "content": "Responde de memória: que palavra pertence a este tema?"
+        },
+        {
+          "type": "test",
+          "content": "Que palavra pertence a este tema?",
+          "options": [
+            "a casa",
+            "aeroporto",
+            "guarda-chuva"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-a-minha-casa-slide-3",
+      "title": "3. Vocabulário e expressões essenciais",
+      "stage": "input",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Vocabulário activo de base (8 elementos):"
+        },
+        {
+          "type": "blockquote",
+          "content": "a casa — o edifício onde se mora. Exemplo: A minha casa é pequena.\no bairro — uma zona da cidade. Exemplo: O bairro é calmo.\na rua — o caminho entre as casas. Exemplo: A minha rua é calma.\no andar — o nível de um edifício. Exemplo: Moro no terceiro andar.\na loja — o lugar onde se compra. Exemplo: Há uma loja na minha rua.\no parque — um espaço verde na cidade. Exemplo: A casa é perto do parque.\nperto — a pouca distância. Exemplo: A casa é perto do parque.\nmorar — ter a casa num lugar. Exemplo: Moro em Lisboa."
+        },
+        {
+          "type": "instruction",
+          "content": "Expressões essenciais e combinações funcionais:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• Moro num apartamento.\n• A casa é perto do parque.\n• Há uma loja na minha rua.\n• Moro no terceiro andar.\n• O bairro é calmo."
+        },
+        {
+          "type": "instruction",
+          "content": "Prática de vocabulário: escolhe a palavra correcta."
+        },
+        {
+          "type": "test",
+          "content": "Que palavra significa 'o edifício onde se mora'?",
+          "options": [
+            "a casa",
+            "o bairro",
+            "a rua"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Que palavra significa 'uma zona da cidade'?",
+          "options": [
+            "o bairro",
+            "a casa",
+            "a rua"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Completa a frase com uma palavra da lista."
+        },
+        {
+          "type": "input",
+          "placeholder": "Completa: A minh___ é pequena."
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-a-minha-casa-slide-4",
+      "title": "4. Foco na pronúncia",
+      "stage": "pronunciation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "O rr em bairro pronuncia-se /ʁ/."
+        },
+        {
+          "type": "blockquote",
+          "content": "bairro /ˈbajʁu/, andar /ɐ̃ˈdaɾ/"
+        },
+        {
+          "type": "instruction",
+          "content": "Ouve e repete três vezes."
+        },
+        {
+          "type": "test",
+          "content": "Qual é a palavra com a sílaba tónica na primeira sílaba?",
+          "options": [
+            "a casa",
+            "o",
+            "um"
+          ]
+        },
+        {
+          "type": "input",
+          "placeholder": "Escreve a sílaba tónica: ..."
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-a-minha-casa-slide-5",
+      "title": "5. Foco na gramática e prática guiada",
+      "stage": "grammar",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Foco na gramática: Verbos de lugar + preposições."
+        },
+        {
+          "type": "blockquote",
+          "content": "Para o lugar usam-se preposições: em (moro em Lisboa), perto de, ao lado de. Em com o dá no, em com a dá na."
+        },
+        {
+          "type": "grammar-focus",
+          "grammarId": "pt-a1-preposicoes-lugar"
+        },
+        {
+          "type": "instruction",
+          "content": "Prática guiada: escolhe a opção correcta."
+        },
+        {
+          "type": "test",
+          "content": "Escolhe a preposição correcta.",
+          "options": [
+            "Moro num apartamento.",
+            "Moro em um apartamento em.",
+            "Moro no um apartamento."
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Escolhe a frase correcta.",
+          "options": [
+            "A casa é perto do parque.",
+            "A casa é perto de o parque é.",
+            "A casa é perto parque."
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Completa a frase."
+        },
+        {
+          "type": "input",
+          "placeholder": "Há uma ___ na minha rua."
+        },
+        {
+          "type": "input",
+          "placeholder": "Moro no terceiro ___."
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-a-minha-casa-slide-6",
+      "title": "6. As quatro competências (ouvir e ler)",
+      "stage": "reading-listening",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Ler: lê o texto e responde às perguntas."
+        },
+        {
+          "type": "blockquote",
+          "content": "Moro num apartamento no terceiro andar. A casa é perto do parque e há uma loja na minha rua. O bairro é calmo e os vizinhos são simpáticos."
+        },
+        {
+          "type": "input",
+          "placeholder": "Em que andar mora a pessoa?"
+        },
+        {
+          "type": "input",
+          "placeholder": "Onde fica a loja?"
+        },
+        {
+          "type": "instruction",
+          "content": "Ouvir: ouve o diálogo e responde às perguntas."
+        },
+        {
+          "type": "blockquote",
+          "content": "A: Onde moras? B: Num apartamento no centro. A: É perto do parque? B: Sim, muito perto."
+        },
+        {
+          "type": "input",
+          "placeholder": "Onde mora ele?"
+        },
+        {
+          "type": "input",
+          "placeholder": "É perto do parque?"
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-a-minha-casa-slide-7",
+      "title": "7. Falar e escrever",
+      "stage": "freer-practice",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Falar: pratica as expressões da aula em pares."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Moro num apartamento.\n• A casa é perto do parque.\n• Há uma loja na minha rua."
+        },
+        {
+          "type": "instruction",
+          "content": "Escrever: escreve um texto curto com o vocabulário da aula."
+        },
+        {
+          "type": "essay",
+          "placeholder": "Escreve a tua resposta aqui ..."
+        },
+        {
+          "type": "input",
+          "placeholder": "Uma frase que dizes no trabalho de pares:"
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-a-minha-casa-slide-8",
+      "title": "8. Roteiros de aula por duração",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Escolhe o roteiro que se adapta ao teu tempo."
+        },
+        {
+          "type": "blockquote",
+          "content": "60 min (base): aquecimento, vocabulário, gramática e uma tarefa de fala.\n90 min (alargada): acrescenta pronúncia, leitura e audição.\n120 min (oficina completa): acrescenta escrita, correcção entre pares e o projecto da unidade."
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-a-minha-casa-slide-9",
+      "title": "9. Adaptações para o grupo",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Adapta a aula ao teu grupo."
+        },
+        {
+          "type": "blockquote",
+          "content": "Crianças: Um desenho do bairro com etiquetas."
+        },
+        {
+          "type": "blockquote",
+          "content": "Adolescentes: Uma descrição do bairro ideal."
+        },
+        {
+          "type": "blockquote",
+          "content": "Adultos: Um diálogo sobre casas e bairros."
+        },
+        {
+          "type": "blockquote",
+          "content": "Séniores: Fotografias de casas com letra grande."
+        },
+        {
+          "type": "blockquote",
+          "content": "Aulas individuais: Uma ficha de trabalho: cinco frases sobre o tema da aula (PT-03)."
+        },
+        {
+          "type": "blockquote",
+          "content": "Grupo: Uma tarefa em pares ou pequenos grupos."
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-a-minha-casa-slide-10",
+      "title": "10. Trabalho de casa e notas de revisão",
+      "stage": "cool-down",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Trabalho de casa:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Escreve cinco frases sobre a tua casa e o teu bairro."
+        },
+        {
+          "type": "input",
+          "placeholder": "Escreve aqui a tua frase de trabalho de casa ..."
+        },
+        {
+          "type": "instruction",
+          "content": "Resposta modelo para comparar:"
+        },
+        {
+          "type": "blockquote",
+          "content": "A minha casa é pequena."
+        },
+        {
+          "type": "blockquote",
+          "content": "A aula 1.4 revê a casa e acrescenta a rotina."
+        }
+      ]
+    }
+  ]
+}

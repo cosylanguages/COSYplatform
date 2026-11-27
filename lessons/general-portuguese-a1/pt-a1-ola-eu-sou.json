@@ -1,0 +1,404 @@
+{
+  "id": "pt-a1-ola-eu-sou",
+  "title": "Olá, eu sou...",
+  "level": "A1",
+  "language": "pt",
+  "unit": "Unidade 1: A Minha Vida",
+  "canDo": "Consigo apresentar-me e dizer de onde sou.",
+  "defaultDuration": 50,
+  "defaultMode": "all",
+  "objectives": [
+    "usar a estrutura-alvo: verbos \"ser\" e \"estar\" (presente)",
+    "usar 6 palavras novas: estudante, professor, português, morar, falar, língua"
+  ],
+  "materials": "Cartões de vocabulário, áudio do texto, ficha de leitura, imagens ou objectos reais, páginas de gramática A1 do COSYmanuals sobre verbos \"ser\" e \"estar\" (presente).",
+  "assessment": "Verifica o uso correcto de verbos \"ser\" e \"estar\" (presente) e a pronúncia clara das palavras-alvo.",
+  "homework": "Escreve cinco frases com ser e estar sobre ti.",
+  "recycling": {
+    "prior": "Revê o cumprimento da Unidade 0.",
+    "next": "A aula 1.2 revê a apresentação e acrescenta o trabalho."
+  },
+  "differentiation": {
+    "individual": "Uma ficha de trabalho: cinco frases sobre o tema da aula (PT-01).",
+    "group": "Uma tarefa em pares ou pequenos grupos.",
+    "children": "Um cartão de apresentação com duas frases.",
+    "teens": "Um jogo de apresentação em cadeia.",
+    "adults": "Uma apresentação com profissão e cidade.",
+    "seniors": "Cartões grandes com ser e estar."
+  },
+  "links": {
+    "vocabulary": [
+      "estudante",
+      "professor",
+      "português",
+      "morar",
+      "falar",
+      "língua"
+    ],
+    "grammar": [
+      {
+        "topic_id": "ser-vs-estar",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/pt/grammar/a1/topics/ser-vs-estar.html"
+      }
+    ],
+    "phonetics": "O ã é uma vogal nasal."
+  },
+  "slides": [
+    {
+      "id": "pt-a1-ola-eu-sou-slide-1",
+      "title": "1. Objectivo comunicativo e visão geral",
+      "stage": "warm-up",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Objectivo comunicativo: Consigo apresentar-me e dizer de onde sou."
+        },
+        {
+          "type": "blockquote",
+          "content": "Visão geral da aula:\n- Nível: A1 Português Geral\n- Unidade: Unidade 1: A Minha Vida\n- Duração: 60 min (base) / 90 min (alargada) / 120 min (oficina completa)\n- Foco: Olá, eu sou...\n- Materiais: cartões de vocabulário, áudio, ficha de leitura"
+        },
+        {
+          "type": "instruction",
+          "content": "Aquecimento: diz uma palavra que já conheces sobre este tema."
+        },
+        {
+          "type": "input",
+          "placeholder": "Escreve uma palavra que conheces ..."
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-ola-eu-sou-slide-2",
+      "title": "2. Revisão e ligação",
+      "stage": "recycling",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Revê o cumprimento da Unidade 0."
+        },
+        {
+          "type": "blockquote",
+          "content": "Vocabulário revisto: estudante, professor, português."
+        },
+        {
+          "type": "instruction",
+          "content": "Responde de memória: que palavra pertence a este tema?"
+        },
+        {
+          "type": "test",
+          "content": "Que palavra pertence a este tema?",
+          "options": [
+            "estudante",
+            "aeroporto",
+            "guarda-chuva"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-ola-eu-sou-slide-3",
+      "title": "3. Vocabulário e expressões essenciais",
+      "stage": "input",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Vocabulário activo de base (6 elementos):"
+        },
+        {
+          "type": "blockquote",
+          "content": "estudante — pessoa que estuda. Exemplo: Sou estudante.\nprofessor — pessoa que ensina. Exemplo: O meu pai é professor.\nportuguês — a língua de Portugal. Exemplo: Falo português e inglês.\nmorar — ter a casa num lugar. Exemplo: Moro em Lisboa.\nfalar — dizer palavras. Exemplo: Falo português.\nlíngua — o sistema para falar e escrever. Exemplo: Falo duas línguas."
+        },
+        {
+          "type": "instruction",
+          "content": "Expressões essenciais e combinações funcionais:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• Eu sou estudante.\n• Sou de Portugal.\n• Estou em Lisboa.\n• Falo português e inglês.\n• Onde moras?"
+        },
+        {
+          "type": "instruction",
+          "content": "Prática de vocabulário: escolhe a palavra correcta."
+        },
+        {
+          "type": "test",
+          "content": "Que palavra significa 'pessoa que estuda'?",
+          "options": [
+            "estudante",
+            "professor",
+            "português"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Que palavra significa 'pessoa que ensina'?",
+          "options": [
+            "professor",
+            "estudante",
+            "português"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Completa a frase com uma palavra da lista."
+        },
+        {
+          "type": "input",
+          "placeholder": "Completa: Sou ___."
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-ola-eu-sou-slide-4",
+      "title": "4. Foco na pronúncia",
+      "stage": "pronunciation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "O ã é uma vogal nasal."
+        },
+        {
+          "type": "blockquote",
+          "content": "não /nɐ̃w̃/, irmã /irˈmɐ̃/"
+        },
+        {
+          "type": "instruction",
+          "content": "Ouve e repete três vezes."
+        },
+        {
+          "type": "test",
+          "content": "Qual é a palavra com a sílaba tónica na primeira sílaba?",
+          "options": [
+            "estudante",
+            "o",
+            "um"
+          ]
+        },
+        {
+          "type": "input",
+          "placeholder": "Escreve a sílaba tónica: ..."
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-ola-eu-sou-slide-5",
+      "title": "5. Foco na gramática e prática guiada",
+      "stage": "grammar",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Foco na gramática: Verbos \"ser\" e \"estar\" (presente)."
+        },
+        {
+          "type": "blockquote",
+          "content": "Usa ser para o que é permanente: Eu sou estudante, sou de Portugal. Usa estar para o estado e o lugar: Estou em Lisboa, estou bem."
+        },
+        {
+          "type": "grammar-focus",
+          "grammarId": "pt-a1-ser-vs-estar"
+        },
+        {
+          "type": "instruction",
+          "content": "Prática guiada: escolhe a opção correcta."
+        },
+        {
+          "type": "test",
+          "content": "Escolhe a forma correcta.",
+          "options": [
+            "Eu sou professora.",
+            "Eu estou professora.",
+            "Eu sou estar professora."
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Escolhe a forma correcta.",
+          "options": [
+            "Estou em Lisboa.",
+            "Sou em Lisboa.",
+            "Estou ser Lisboa."
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Completa a frase."
+        },
+        {
+          "type": "input",
+          "placeholder": "Eu ___ de Portugal."
+        },
+        {
+          "type": "input",
+          "placeholder": "Eu ___ português e inglês."
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-ola-eu-sou-slide-6",
+      "title": "6. As quatro competências (ouvir e ler)",
+      "stage": "reading-listening",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Ler: lê o texto e responde às perguntas."
+        },
+        {
+          "type": "blockquote",
+          "content": "Olá, eu sou a Marta. Sou professora e sou de Portugal. Estou em Lisboa esta semana. Falo português e inglês e moro num apartamento pequeno."
+        },
+        {
+          "type": "input",
+          "placeholder": "De onde é a Marta?"
+        },
+        {
+          "type": "input",
+          "placeholder": "Onde está esta semana?"
+        },
+        {
+          "type": "instruction",
+          "content": "Ouvir: ouve o diálogo e responde às perguntas."
+        },
+        {
+          "type": "blockquote",
+          "content": "A: Olá, eu sou o Kenji. B: Muito prazer. De onde és? A: Sou do Japão. Estou aqui num curso."
+        },
+        {
+          "type": "input",
+          "placeholder": "De onde é o Kenji?"
+        },
+        {
+          "type": "input",
+          "placeholder": "O que faz aqui?"
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-ola-eu-sou-slide-7",
+      "title": "7. Falar e escrever",
+      "stage": "freer-practice",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Falar: pratica as expressões da aula em pares."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Eu sou estudante.\n• Sou de Portugal.\n• Estou em Lisboa."
+        },
+        {
+          "type": "instruction",
+          "content": "Escrever: escreve um texto curto com o vocabulário da aula."
+        },
+        {
+          "type": "essay",
+          "placeholder": "Escreve a tua resposta aqui ..."
+        },
+        {
+          "type": "input",
+          "placeholder": "Uma frase que dizes no trabalho de pares:"
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-ola-eu-sou-slide-8",
+      "title": "8. Roteiros de aula por duração",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Escolhe o roteiro que se adapta ao teu tempo."
+        },
+        {
+          "type": "blockquote",
+          "content": "60 min (base): aquecimento, vocabulário, gramática e uma tarefa de fala.\n90 min (alargada): acrescenta pronúncia, leitura e audição.\n120 min (oficina completa): acrescenta escrita, correcção entre pares e o projecto da unidade."
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-ola-eu-sou-slide-9",
+      "title": "9. Adaptações para o grupo",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Adapta a aula ao teu grupo."
+        },
+        {
+          "type": "blockquote",
+          "content": "Crianças: Um cartão de apresentação com duas frases."
+        },
+        {
+          "type": "blockquote",
+          "content": "Adolescentes: Um jogo de apresentação em cadeia."
+        },
+        {
+          "type": "blockquote",
+          "content": "Adultos: Uma apresentação com profissão e cidade."
+        },
+        {
+          "type": "blockquote",
+          "content": "Séniores: Cartões grandes com ser e estar."
+        },
+        {
+          "type": "blockquote",
+          "content": "Aulas individuais: Uma ficha de trabalho: cinco frases sobre o tema da aula (PT-01)."
+        },
+        {
+          "type": "blockquote",
+          "content": "Grupo: Uma tarefa em pares ou pequenos grupos."
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-ola-eu-sou-slide-10",
+      "title": "10. Trabalho de casa e notas de revisão",
+      "stage": "cool-down",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Trabalho de casa:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Escreve cinco frases com ser e estar sobre ti."
+        },
+        {
+          "type": "input",
+          "placeholder": "Escreve aqui a tua frase de trabalho de casa ..."
+        },
+        {
+          "type": "instruction",
+          "content": "Resposta modelo para comparar:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Sou estudante."
+        },
+        {
+          "type": "blockquote",
+          "content": "A aula 1.2 revê a apresentação e acrescenta o trabalho."
+        }
+      ]
+    }
+  ]
+}
