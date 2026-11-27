@@ -1,0 +1,406 @@
+{
+  "id": "fr-a1-boissons-commander-au-cafe",
+  "title": "Boissons & Commander au café",
+  "level": "A1",
+  "language": "fr",
+  "unit": "Module 5 : Nourriture et boissons",
+  "canDo": "Je peux commander une boisson au café.",
+  "defaultDuration": 50,
+  "defaultMode": "all",
+  "objectives": [
+    "utiliser la structure cible : formules de politesse & conditionnel de souhait ('je voudrais...')",
+    "utiliser 8 nouveaux mots : café, thé, eau, jus, lait, sucre, tasse, verre"
+  ],
+  "materials": "Cartes de vocabulaire, audio du texte, fiche de lecture, images ou objets réels, pages de grammaire A1 de COSYmanuals sur formules de politesse & conditionnel de souhait ('je voudrais...').",
+  "assessment": "Vérifie l’usage correct de formules de politesse & conditionnel de souhait ('je voudrais...') et la prononciation claire des mots cibles.",
+  "homework": "Écris une commande au café avec cinq phrases.",
+  "recycling": {
+    "prior": "Révise le cours 5.2.",
+    "next": "Le cours 5.4 ajoute le restaurant."
+  },
+  "differentiation": {
+    "individual": "Une fiche : cinq phrases sur le thème du cours (FR-053).",
+    "group": "Une tâche en binôme ou en petits groupes.",
+    "children": "Un café de jeu avec des tasses.",
+    "teens": "Un dialogue de commande en binôme.",
+    "adults": "Une commande réelle au café.",
+    "seniors": "Grandes cartes de boissons."
+  },
+  "links": {
+    "vocabulary": [
+      "café",
+      "thé",
+      "eau",
+      "jus",
+      "lait",
+      "sucre",
+      "tasse",
+      "verre"
+    ],
+    "grammar": [
+      {
+        "topic_id": "conditionnel-souhaits",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/fr/grammar/a1/topics/conditionnel-souhaits.html"
+      }
+    ],
+    "phonetics": "Le é de café est fermé."
+  },
+  "slides": [
+    {
+      "id": "fr-a1-boissons-commander-au-cafe-slide-1",
+      "title": "1. Objectif communicatif et vue d’ensemble",
+      "stage": "warm-up",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Objectif communicatif : Je peux commander une boisson au café."
+        },
+        {
+          "type": "blockquote",
+          "content": "Vue d’ensemble du cours :\n- Niveau : A1 Français général\n- Unité : Module 5 : Nourriture et boissons\n- Durée : 60 min (base) / 90 min (étendu) / 120 min (atelier complet)\n- Focus : Boissons & Commander au café\n- Matériel : cartes de vocabulaire, audio, fiche de lecture"
+        },
+        {
+          "type": "instruction",
+          "content": "Échauffement : dis un mot que tu connais déjà sur ce thème."
+        },
+        {
+          "type": "input",
+          "placeholder": "Écris un mot que tu connais ..."
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-boissons-commander-au-cafe-slide-2",
+      "title": "2. Révision et lien",
+      "stage": "recycling",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Révise le cours 5.2."
+        },
+        {
+          "type": "blockquote",
+          "content": "Vocabulaire révisé : café, thé, eau."
+        },
+        {
+          "type": "instruction",
+          "content": "Réponds de mémoire : quel mot appartient à ce thème ?"
+        },
+        {
+          "type": "test",
+          "content": "Quel mot appartient à ce thème ?",
+          "options": [
+            "café",
+            "aéroport",
+            "parapluie"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-boissons-commander-au-cafe-slide-3",
+      "title": "3. Vocabulaire et expressions essentielles",
+      "stage": "input",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Vocabulaire actif de base (8 éléments) :"
+        },
+        {
+          "type": "blockquote",
+          "content": "café — boisson chaude et foncée. Exemple: Un café, s’il vous plaît.\nthé — boisson chaude de feuilles. Exemple: Un thé, s’il vous plaît.\neau — la boisson sans couleur. Exemple: Un verre d’eau, s’il vous plaît.\njus — la boisson faite avec des fruits. Exemple: Un jus d’orange.\nlait — la boisson blanche des animaux. Exemple: Je bois du lait.\nsucre — la poudre blanche et douce. Exemple: Un thé avec du sucre.\ntasse — le petit récipient pour le café. Exemple: Une tasse de café.\nverre — le récipient pour boire. Exemple: Deux verres d’eau."
+        },
+        {
+          "type": "instruction",
+          "content": "Expressions essentielles et combinaisons fonctionnelles :"
+        },
+        {
+          "type": "blockquote",
+          "content": "• Je voudrais un café, s’il vous plaît.\n• Un thé avec du sucre.\n• Une eau minérale.\n• Un jus d’orange.\n• Deux verres, s’il vous plaît."
+        },
+        {
+          "type": "instruction",
+          "content": "Pratique du vocabulaire : choisis le mot correct."
+        },
+        {
+          "type": "test",
+          "content": "Quel mot signifie « boisson chaude et foncée » ?",
+          "options": [
+            "café",
+            "thé",
+            "eau"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Quel mot signifie « boisson chaude de feuilles » ?",
+          "options": [
+            "thé",
+            "café",
+            "eau"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Complète la phrase avec un mot de la liste."
+        },
+        {
+          "type": "input",
+          "placeholder": "Complète : Un ___, s’il vous plaît."
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-boissons-commander-au-cafe-slide-4",
+      "title": "4. Point de prononciation",
+      "stage": "pronunciation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Le é de café est fermé."
+        },
+        {
+          "type": "blockquote",
+          "content": "café /kafe/, verre /vɛʁ/"
+        },
+        {
+          "type": "instruction",
+          "content": "Écoute et répète trois fois."
+        },
+        {
+          "type": "test",
+          "content": "Quel mot entends-tu dans l’audio ?",
+          "options": [
+            "café",
+            "le",
+            "un"
+          ]
+        },
+        {
+          "type": "input",
+          "placeholder": "Écris le mot entendu : ..."
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-boissons-commander-au-cafe-slide-5",
+      "title": "5. Point de grammaire et pratique guidée",
+      "stage": "grammar",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Point de grammaire : Formules de politesse & Conditionnel de souhait ('Je voudrais...')."
+        },
+        {
+          "type": "blockquote",
+          "content": "Pour commander poliment : je voudrais + nom. Je voudrais un café, je voudrais de l’eau. C’est le conditionnel de souhait."
+        },
+        {
+          "type": "grammar-focus",
+          "grammarId": "fr-a1-conditionnel-souhaits"
+        },
+        {
+          "type": "instruction",
+          "content": "Pratique guidée : choisis la bonne option."
+        },
+        {
+          "type": "test",
+          "content": "Choisis la forme polie.",
+          "options": [
+            "Je voudrais un café.",
+            "Je veux un café maintenant.",
+            "Donne-moi un café."
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Choisis la forme correcte.",
+          "options": [
+            "un verre d’eau",
+            "un verre de l’eau de",
+            "une verre d’eau"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Complète la phrase."
+        },
+        {
+          "type": "input",
+          "placeholder": "Je voudrais un thé avec du ___."
+        },
+        {
+          "type": "input",
+          "placeholder": "Le serveur apporte une ___ de café."
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-boissons-commander-au-cafe-slide-6",
+      "title": "6. Les quatre compétences (écouter et lire)",
+      "stage": "reading-listening",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Lire : lis le texte et réponds aux questions."
+        },
+        {
+          "type": "blockquote",
+          "content": "Au café, je dis : Je voudrais un café, s’il vous plaît. Mon amie commande un thé avec du sucre et un jus d’orange. Le serveur apporte deux verres d’eau et une tasse. C’est parfait."
+        },
+        {
+          "type": "input",
+          "placeholder": "Que commande-t-il ?"
+        },
+        {
+          "type": "input",
+          "placeholder": "Que commande son amie ?"
+        },
+        {
+          "type": "instruction",
+          "content": "Écouter : écoute le dialogue et réponds aux questions."
+        },
+        {
+          "type": "blockquote",
+          "content": "A : Je voudrais un thé, s’il vous plaît. B : Avec du sucre ? A : Oui, et un verre d’eau. B : Très bien."
+        },
+        {
+          "type": "input",
+          "placeholder": "Que commande-t-il ?"
+        },
+        {
+          "type": "input",
+          "placeholder": "Veut-il du sucre ?"
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-boissons-commander-au-cafe-slide-7",
+      "title": "7. Parler et écrire",
+      "stage": "freer-practice",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Parler : pratique les expressions du cours en binôme."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Je voudrais un café, s’il vous plaît.\n• Un thé avec du sucre.\n• Une eau minérale."
+        },
+        {
+          "type": "instruction",
+          "content": "Écrire : écris un texte court avec le vocabulaire du cours."
+        },
+        {
+          "type": "essay",
+          "placeholder": "Écris ta réponse ici ..."
+        },
+        {
+          "type": "input",
+          "placeholder": "Une phrase que tu dis en binôme :"
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-boissons-commander-au-cafe-slide-8",
+      "title": "8. Déroulés de cours selon la durée",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Choisis le déroulé qui correspond à ton temps."
+        },
+        {
+          "type": "blockquote",
+          "content": "60 min (base) : échauffement, vocabulaire, grammaire et une tâche orale.\n90 min (étendu) : ajoute prononciation, lecture et écoute.\n120 min (atelier complet) : ajoute écriture, correction entre pairs et le projet de l’unité."
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-boissons-commander-au-cafe-slide-9",
+      "title": "9. Adaptations pour le groupe",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Adapte le cours à ton groupe."
+        },
+        {
+          "type": "blockquote",
+          "content": "Enfants : Un café de jeu avec des tasses."
+        },
+        {
+          "type": "blockquote",
+          "content": "Adolescents : Un dialogue de commande en binôme."
+        },
+        {
+          "type": "blockquote",
+          "content": "Adultes : Une commande réelle au café."
+        },
+        {
+          "type": "blockquote",
+          "content": "Seniors : Grandes cartes de boissons."
+        },
+        {
+          "type": "blockquote",
+          "content": "Cours individuels : Une fiche : cinq phrases sur le thème du cours (FR-053)."
+        },
+        {
+          "type": "blockquote",
+          "content": "Groupe : Une tâche en binôme ou en petits groupes."
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-boissons-commander-au-cafe-slide-10",
+      "title": "10. Devoirs et notes de révision",
+      "stage": "cool-down",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Devoirs :"
+        },
+        {
+          "type": "blockquote",
+          "content": "Écris une commande au café avec cinq phrases."
+        },
+        {
+          "type": "input",
+          "placeholder": "Écris ici ta phrase de devoir ..."
+        },
+        {
+          "type": "instruction",
+          "content": "Réponse modèle à comparer :"
+        },
+        {
+          "type": "blockquote",
+          "content": "Un café, s’il vous plaît."
+        },
+        {
+          "type": "blockquote",
+          "content": "Le cours 5.4 ajoute le restaurant."
+        }
+      ]
+    }
+  ]
+}
