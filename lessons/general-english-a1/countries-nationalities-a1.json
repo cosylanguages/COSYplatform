@@ -255,20 +255,15 @@
       "elements": [
         {
           "type": "instruction",
-          "content": "Reading (Reading passport profiles):"
+          "content": "Reading: read the text and answer the questions."
         },
         {
           "type": "blockquote",
           "content": "Lucia is from Brazil. She is Brazilian. She lives in Sao Paulo. The capital of Brazil is Brasilia."
         },
         {
-          "type": "test",
-          "content": "Where is Lucia from?",
-          "options": [
-            "Yes",
-            "No",
-            "Not in the text"
-          ]
+          "type": "input",
+          "placeholder": "Where is Lucia from?"
         },
         {
           "type": "input",
@@ -276,20 +271,15 @@
         },
         {
           "type": "instruction",
-          "content": "Listening (Passport control interviews):"
+          "content": "Listening: listen to the dialogue and answer the questions."
         },
         {
           "type": "blockquote",
           "content": "A: Where are you from? B: I am from Japan. A: What is your nationality? B: Japanese."
         },
         {
-          "type": "test",
-          "content": "Where is the person from?",
-          "options": [
-            "Yes",
-            "No",
-            "Not in the text"
-          ]
+          "type": "input",
+          "placeholder": "Where is the person from?"
         },
         {
           "type": "input",

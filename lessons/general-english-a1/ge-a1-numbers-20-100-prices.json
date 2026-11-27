@@ -247,20 +247,15 @@
       "elements": [
         {
           "type": "instruction",
-          "content": "Reading (Reading store price tags and receipts):"
+          "content": "Reading: read the text and answer the questions."
         },
         {
           "type": "blockquote",
           "content": "This book costs ten euros. That pen costs two euros. The bag is forty euros."
         },
         {
-          "type": "test",
-          "content": "How much is the book?",
-          "options": [
-            "Yes",
-            "No",
-            "Not in the text"
-          ]
+          "type": "input",
+          "placeholder": "How much is the book?"
         },
         {
           "type": "input",
@@ -268,20 +263,15 @@
         },
         {
           "type": "instruction",
-          "content": "Listening (Listening to store cash register transactions):"
+          "content": "Listening: listen to the dialogue and answer the questions."
         },
         {
           "type": "blockquote",
           "content": "A: How much is this bag? B: It costs forty euros. A: And this pen? B: Two euros."
         },
         {
-          "type": "test",
-          "content": "How much is the bag?",
-          "options": [
-            "Yes",
-            "No",
-            "Not in the text"
-          ]
+          "type": "input",
+          "placeholder": "How much is the bag?"
         },
         {
           "type": "input",

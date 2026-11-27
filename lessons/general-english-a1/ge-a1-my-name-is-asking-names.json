@@ -255,20 +255,15 @@
       "elements": [
         {
           "type": "instruction",
-          "content": "Reading (Short dialogues at a conference):"
+          "content": "Reading: read the text and answer the questions."
         },
         {
           "type": "blockquote",
           "content": "A: Hello, what is your name? B: My name is Daniel. A: And who is this? B: This is Lucia, my friend."
         },
         {
-          "type": "test",
-          "content": "What is the man's name?",
-          "options": [
-            "Yes",
-            "No",
-            "Not in the text"
-          ]
+          "type": "input",
+          "placeholder": "What is the man's name?"
         },
         {
           "type": "input",
@@ -276,20 +271,15 @@
         },
         {
           "type": "instruction",
-          "content": "Listening (People asking and giving names):"
+          "content": "Listening: listen to the dialogue and answer the questions."
         },
         {
           "type": "blockquote",
           "content": "A: What is your name? B: My name is Peter. A: Who is she? B: She is Maria, my friend."
         },
         {
-          "type": "test",
-          "content": "What is his name?",
-          "options": [
-            "Yes",
-            "No",
-            "Not in the text"
-          ]
+          "type": "input",
+          "placeholder": "What is his name?"
         },
         {
           "type": "input",

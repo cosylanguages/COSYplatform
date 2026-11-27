@@ -246,20 +246,15 @@
       "elements": [
         {
           "type": "instruction",
-          "content": "Reading (Reading letter names and codes):"
+          "content": "Reading: read the text and answer the questions."
         },
         {
           "type": "blockquote",
           "content": "My surname is Rossi. R-O-S-S-I. My email is rossi at mail point com. Please spell your surname."
         },
         {
-          "type": "test",
-          "content": "How do you spell Rossi?",
-          "options": [
-            "Yes",
-            "No",
-            "Not in the text"
-          ]
+          "type": "input",
+          "placeholder": "How do you spell Rossi?"
         },
         {
           "type": "input",
@@ -267,20 +262,15 @@
         },
         {
           "type": "instruction",
-          "content": "Listening (Dictation of names and email addresses):"
+          "content": "Listening: listen to the dialogue and answer the questions."
         },
         {
           "type": "blockquote",
           "content": "A: How do you spell your surname? B: S-M-I-T-H. A: Thank you. And your email? B: smith at mail point com."
         },
         {
-          "type": "test",
-          "content": "How do you spell the surname?",
-          "options": [
-            "Yes",
-            "No",
-            "Not in the text"
-          ]
+          "type": "input",
+          "placeholder": "How do you spell the surname?"
         },
         {
           "type": "input",

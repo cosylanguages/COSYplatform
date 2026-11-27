@@ -259,20 +259,15 @@
       "elements": [
         {
           "type": "instruction",
-          "content": "Reading (Reading classroom instructions and greetings):"
+          "content": "Reading: read the text and answer the questions."
         },
         {
           "type": "blockquote",
           "content": "Hello! My name is Marta. I am a student. This is Mr Brown. He is a teacher. Goodbye!"
         },
         {
-          "type": "test",
-          "content": "Who is Mr Brown?",
-          "options": [
-            "Yes",
-            "No",
-            "Not in the text"
-          ]
+          "type": "input",
+          "placeholder": "Who is Mr Brown?"
         },
         {
           "type": "input",
@@ -280,20 +275,15 @@
         },
         {
           "type": "instruction",
-          "content": "Listening (Short dialogue of people meeting for first time):"
+          "content": "Listening: listen to the dialogue and answer the questions."
         },
         {
           "type": "blockquote",
           "content": "A: Hello! B: Hi! A: My name is Ana. B: Nice to meet you, Ana. A: Goodbye! B: See you later!"
         },
         {
-          "type": "test",
-          "content": "What is the woman's name?",
-          "options": [
-            "Yes",
-            "No",
-            "Not in the text"
-          ]
+          "type": "input",
+          "placeholder": "What is the woman's name?"
         },
         {
           "type": "input",

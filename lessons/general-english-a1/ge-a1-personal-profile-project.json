@@ -263,20 +263,15 @@
       "elements": [
         {
           "type": "instruction",
-          "content": "Reading (Reading model personal profile cards):"
+          "content": "Reading: read the text and answer the questions."
         },
         {
           "type": "blockquote",
           "content": "I am Marta Rossi. I am twenty years old. I live in Rome. I can speak Italian, English and a little French."
         },
         {
-          "type": "test",
-          "content": "Where does Marta live?",
-          "options": [
-            "Yes",
-            "No",
-            "Not in the text"
-          ]
+          "type": "input",
+          "placeholder": "Where does Marta live?"
         },
         {
           "type": "input",
@@ -284,20 +279,15 @@
         },
         {
           "type": "instruction",
-          "content": "Listening (Listening to classmate profile presentations):"
+          "content": "Listening: listen to the dialogue and answer the questions."
         },
         {
           "type": "blockquote",
           "content": "A: Tell me about yourself. B: I am Paolo. I am twenty-two. I live in Milan and I can speak English."
         },
         {
-          "type": "test",
-          "content": "Where does Paolo live?",
-          "options": [
-            "Yes",
-            "No",
-            "Not in the text"
-          ]
+          "type": "input",
+          "placeholder": "Where does Paolo live?"
         },
         {
           "type": "input",

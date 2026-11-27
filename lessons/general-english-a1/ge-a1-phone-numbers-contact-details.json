@@ -255,20 +255,15 @@
       "elements": [
         {
           "type": "instruction",
-          "content": "Reading (Reading hotel registration forms):"
+          "content": "Reading: read the text and answer the questions."
         },
         {
           "type": "blockquote",
           "content": "Name: Daniel Costa. Phone number: 555 0182. Email: daniel at mail point com. Address: 14 Green Street."
         },
         {
-          "type": "test",
-          "content": "What is Daniel's phone number?",
-          "options": [
-            "Yes",
-            "No",
-            "Not in the text"
-          ]
+          "type": "input",
+          "placeholder": "What is Daniel's phone number?"
         },
         {
           "type": "input",
@@ -276,20 +271,15 @@
         },
         {
           "type": "instruction",
-          "content": "Listening (Dictation of phone numbers and email addresses):"
+          "content": "Listening: listen to the dialogue and answer the questions."
         },
         {
           "type": "blockquote",
           "content": "A: What is your phone number? B: 555 0182. A: And your email? B: ana at mail point com."
         },
         {
-          "type": "test",
-          "content": "What is the phone number?",
-          "options": [
-            "Yes",
-            "No",
-            "Not in the text"
-          ]
+          "type": "input",
+          "placeholder": "What is the phone number?"
         },
         {
           "type": "input",

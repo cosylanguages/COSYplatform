@@ -246,20 +246,15 @@
       "elements": [
         {
           "type": "instruction",
-          "content": "Reading (Reading short birthday calendar entries):"
+          "content": "Reading: read the text and answer the questions."
         },
         {
           "type": "blockquote",
           "content": "Anna is twenty years old. Her birthday is in January. Her brother is twelve years old."
         },
         {
-          "type": "test",
-          "content": "How old is Anna?",
-          "options": [
-            "Yes",
-            "No",
-            "Not in the text"
-          ]
+          "type": "input",
+          "placeholder": "How old is Anna?"
         },
         {
           "type": "input",
@@ -267,20 +262,15 @@
         },
         {
           "type": "instruction",
-          "content": "Listening (Celebrity birthday announcements):"
+          "content": "Listening: listen to the dialogue and answer the questions."
         },
         {
           "type": "blockquote",
           "content": "A: How old are you? B: I am nineteen years old. A: When is your birthday? B: In January."
         },
         {
-          "type": "test",
-          "content": "How old is the person?",
-          "options": [
-            "Yes",
-            "No",
-            "Not in the text"
-          ]
+          "type": "input",
+          "placeholder": "How old is the person?"
         },
         {
           "type": "input",

@@ -255,20 +255,15 @@
       "elements": [
         {
           "type": "instruction",
-          "content": "Reading (Language portfolio descriptions):"
+          "content": "Reading: read the text and answer the questions."
         },
         {
           "type": "blockquote",
           "content": "I can speak Spanish and English. I can't speak German. My sister can speak three languages well."
         },
         {
-          "type": "test",
-          "content": "How many languages can the writer speak?",
-          "options": [
-            "Yes",
-            "No",
-            "Not in the text"
-          ]
+          "type": "input",
+          "placeholder": "How many languages can the writer speak?"
         },
         {
           "type": "input",
@@ -276,20 +271,15 @@
         },
         {
           "type": "instruction",
-          "content": "Listening (Interviews with polyglots):"
+          "content": "Listening: listen to the dialogue and answer the questions."
         },
         {
           "type": "blockquote",
           "content": "A: Do you speak French? B: A little. I can understand it, but I can't speak it well."
         },
         {
-          "type": "test",
-          "content": "Can the person speak French well?",
-          "options": [
-            "Yes",
-            "No",
-            "Not in the text"
-          ]
+          "type": "input",
+          "placeholder": "Can the person speak French well?"
         },
         {
           "type": "input",

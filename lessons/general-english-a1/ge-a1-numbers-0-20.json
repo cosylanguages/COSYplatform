@@ -246,20 +246,15 @@
       "elements": [
         {
           "type": "instruction",
-          "content": "Reading (Reading short stock inventory lists):"
+          "content": "Reading: read the text and answer the questions."
         },
         {
           "type": "blockquote",
           "content": "There are twenty students in the class. There are ten chairs and two tables. One student is absent."
         },
         {
-          "type": "test",
-          "content": "How many students are there?",
-          "options": [
-            "Yes",
-            "No",
-            "Not in the text"
-          ]
+          "type": "input",
+          "placeholder": "How many students are there?"
         },
         {
           "type": "input",
@@ -267,20 +262,15 @@
         },
         {
           "type": "instruction",
-          "content": "Listening (Number dictations and quantities):"
+          "content": "Listening: listen to the dialogue and answer the questions."
         },
         {
           "type": "blockquote",
           "content": "A: How many chairs are there? B: There are twelve chairs. A: And how many tables? B: Two tables."
         },
         {
-          "type": "test",
-          "content": "How many chairs?",
-          "options": [
-            "Yes",
-            "No",
-            "Not in the text"
-          ]
+          "type": "input",
+          "placeholder": "How many chairs?"
         },
         {
           "type": "input",
