@@ -1,0 +1,406 @@
+{
+  "id": "pt-a1-os-alimentos",
+  "title": "Os alimentos",
+  "level": "A1",
+  "language": "pt",
+  "unit": "Unidade 3: A Comida e a Bebida",
+  "canDo": "Consigo nomear alimentos e usar os artigos indefinidos.",
+  "defaultDuration": 50,
+  "defaultMode": "all",
+  "objectives": [
+    "usar a estrutura-alvo: artigos indefinidos e quantidades",
+    "usar 8 palavras novas: o pão, o queijo, a carne, os legumes, a fruta, o leite, o arroz, o ovo"
+  ],
+  "materials": "Cartões de vocabulário, áudio do texto, ficha de leitura, imagens ou objectos reais, páginas de gramática A1 do COSYmanuals sobre artigos indefinidos e quantidades.",
+  "assessment": "Verifica o uso correcto de artigos indefinidos e quantidades e a pronúncia clara das palavras-alvo.",
+  "homework": "Escreve cinco frases sobre alimentos que compras.",
+  "recycling": {
+    "prior": "Revê a comida da Unidade 2.",
+    "next": "A aula 3.2 revê os alimentos e acrescenta o restaurante."
+  },
+  "differentiation": {
+    "individual": "Uma ficha de trabalho: cinco frases sobre o tema da aula (PT-A1-016).",
+    "group": "Uma tarefa em pares ou pequenos grupos.",
+    "children": "Um jogo de memória com alimentos.",
+    "teens": "Um menu semanal para a família.",
+    "adults": "Uma lista de compras real.",
+    "seniors": "Cartões grandes de alimentos, lidos devagar."
+  },
+  "links": {
+    "vocabulary": [
+      "o pão",
+      "o queijo",
+      "a carne",
+      "os legumes",
+      "a fruta",
+      "o leite",
+      "o arroz",
+      "o ovo"
+    ],
+    "grammar": [
+      {
+        "topic_id": "pt-artigos",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/pt/grammar/a1/topics/pt-artigos.html"
+      }
+    ],
+    "phonetics": "O ão em pão é nasal."
+  },
+  "slides": [
+    {
+      "id": "pt-a1-os-alimentos-slide-1",
+      "title": "1. Objectivo comunicativo e visão geral",
+      "stage": "warm-up",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Objectivo comunicativo: Consigo nomear alimentos e usar os artigos indefinidos."
+        },
+        {
+          "type": "blockquote",
+          "content": "Visão geral da aula:\n- Nível: A1 Português Geral\n- Unidade: Unidade 3: A Comida e a Bebida\n- Duração: 60 min (base) / 90 min (alargada) / 120 min (oficina completa)\n- Foco: Os alimentos\n- Materiais: cartões de vocabulário, áudio, ficha de leitura"
+        },
+        {
+          "type": "instruction",
+          "content": "Aquecimento: diz uma palavra que já conheces sobre este tema."
+        },
+        {
+          "type": "input",
+          "placeholder": "Escreve uma palavra que conheces ..."
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-os-alimentos-slide-2",
+      "title": "2. Revisão e ligação",
+      "stage": "recycling",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Revê a comida da Unidade 2."
+        },
+        {
+          "type": "blockquote",
+          "content": "Vocabulário revisto: o pão, o queijo, a carne."
+        },
+        {
+          "type": "instruction",
+          "content": "Responde de memória: que palavra pertence a este tema?"
+        },
+        {
+          "type": "test",
+          "content": "Que palavra pertence a este tema?",
+          "options": [
+            "o pão",
+            "aeroporto",
+            "guarda-chuva"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-os-alimentos-slide-3",
+      "title": "3. Vocabulário e expressões essenciais",
+      "stage": "input",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Vocabulário activo de base (8 elementos):"
+        },
+        {
+          "type": "blockquote",
+          "content": "o pão — alimento feito de farinha. Exemplo: Compro um pão.\no queijo — alimento feito de leite. Exemplo: Este queijo é fresco.\na carne — alimento que vem de um animal. Exemplo: Como pouca carne.\nos legumes — plantas que se comem. Exemplo: Como muitos legumes.\na fruta — frutos doces. Exemplo: Tenho fruta em casa.\no leite — bebida branca dos animais. Exemplo: Preciso de leite.\no arroz — grãos brancos para acompanhar. Exemplo: Tenho pouco arroz.\no ovo — alimento que vem da galinha. Exemplo: Compro dois ovos."
+        },
+        {
+          "type": "instruction",
+          "content": "Expressões essenciais e combinações funcionais:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• Compro um pão e um queijo.\n• Preciso de uma fruta.\n• Há legumes na sopa.\n• Compro dois ovos.\n• Bebo leite ao pequeno-almoço."
+        },
+        {
+          "type": "instruction",
+          "content": "Prática de vocabulário: escolhe a palavra correcta."
+        },
+        {
+          "type": "test",
+          "content": "Que palavra significa 'alimento feito de farinha'?",
+          "options": [
+            "o pão",
+            "o queijo",
+            "a carne"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Que palavra significa 'alimento feito de leite'?",
+          "options": [
+            "o queijo",
+            "o pão",
+            "a carne"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Completa a frase com uma palavra da lista."
+        },
+        {
+          "type": "input",
+          "placeholder": "Completa: Compro um pão."
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-os-alimentos-slide-4",
+      "title": "4. Foco na pronúncia",
+      "stage": "pronunciation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "O ão em pão é nasal."
+        },
+        {
+          "type": "blockquote",
+          "content": "pão /pɐ̃w̃/, queijo /ˈkɐjʒu/"
+        },
+        {
+          "type": "instruction",
+          "content": "Ouve e repete três vezes."
+        },
+        {
+          "type": "test",
+          "content": "Qual é a palavra com a sílaba tónica na primeira sílaba?",
+          "options": [
+            "o pão",
+            "o",
+            "um"
+          ]
+        },
+        {
+          "type": "input",
+          "placeholder": "Escreve a sílaba tónica: ..."
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-os-alimentos-slide-5",
+      "title": "5. Foco na gramática e prática guiada",
+      "stage": "grammar",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Foco na gramática: Artigos indefinidos e quantidades."
+        },
+        {
+          "type": "blockquote",
+          "content": "Com nomes contáveis usa um, uma: um pão, uma maçã. Com nomes não contáveis usa o nome sem artigo ou uma quantidade: compro leite, um quilo de arroz."
+        },
+        {
+          "type": "grammar-focus",
+          "grammarId": "pt-a1-pt-artigos"
+        },
+        {
+          "type": "instruction",
+          "content": "Prática guiada: escolhe a opção correcta."
+        },
+        {
+          "type": "test",
+          "content": "Escolhe o artigo correcto.",
+          "options": [
+            "um pão",
+            "uma pão",
+            "uns pão"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Escolhe a frase correcta.",
+          "options": [
+            "Preciso de leite.",
+            "Preciso de um leite um.",
+            "Preciso leite de."
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Completa a frase."
+        },
+        {
+          "type": "input",
+          "placeholder": "Compro ___ queijo."
+        },
+        {
+          "type": "input",
+          "placeholder": "Compro dois ___."
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-os-alimentos-slide-6",
+      "title": "6. As quatro competências (ouvir e ler)",
+      "stage": "reading-listening",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Ler: lê o texto e responde às perguntas."
+        },
+        {
+          "type": "blockquote",
+          "content": "Para o jantar compro um pão, um queijo e dois ovos. Preciso também de leite, arroz e legumes. Fruta já tenho em casa."
+        },
+        {
+          "type": "input",
+          "placeholder": "O que compra a pessoa?"
+        },
+        {
+          "type": "input",
+          "placeholder": "O que já tem em casa?"
+        },
+        {
+          "type": "instruction",
+          "content": "Ouvir: ouve o diálogo e responde às perguntas."
+        },
+        {
+          "type": "blockquote",
+          "content": "A: O que compras? B: Um pão, um queijo e leite. A: E fruta? B: Não, tenho fruta em casa."
+        },
+        {
+          "type": "input",
+          "placeholder": "O que compra ele?"
+        },
+        {
+          "type": "input",
+          "placeholder": "Compra fruta?"
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-os-alimentos-slide-7",
+      "title": "7. Falar e escrever",
+      "stage": "freer-practice",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Falar: pratica as expressões da aula em pares."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Compro um pão e um queijo.\n• Preciso de uma fruta.\n• Há legumes na sopa."
+        },
+        {
+          "type": "instruction",
+          "content": "Escrever: escreve um texto curto com o vocabulário da aula."
+        },
+        {
+          "type": "essay",
+          "placeholder": "Escreve a tua resposta aqui ..."
+        },
+        {
+          "type": "input",
+          "placeholder": "Uma frase que dizes no trabalho de pares:"
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-os-alimentos-slide-8",
+      "title": "8. Roteiros de aula por duração",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Escolhe o roteiro que se adapta ao teu tempo."
+        },
+        {
+          "type": "blockquote",
+          "content": "60 min (base): aquecimento, vocabulário, gramática e uma tarefa de fala.\n90 min (alargada): acrescenta pronúncia, leitura e audição.\n120 min (oficina completa): acrescenta escrita, correcção entre pares e o projecto da unidade."
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-os-alimentos-slide-9",
+      "title": "9. Adaptações para o grupo",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Adapta a aula ao teu grupo."
+        },
+        {
+          "type": "blockquote",
+          "content": "Crianças: Um jogo de memória com alimentos."
+        },
+        {
+          "type": "blockquote",
+          "content": "Adolescentes: Um menu semanal para a família."
+        },
+        {
+          "type": "blockquote",
+          "content": "Adultos: Uma lista de compras real."
+        },
+        {
+          "type": "blockquote",
+          "content": "Séniores: Cartões grandes de alimentos, lidos devagar."
+        },
+        {
+          "type": "blockquote",
+          "content": "Aulas individuais: Uma ficha de trabalho: cinco frases sobre o tema da aula (PT-A1-016)."
+        },
+        {
+          "type": "blockquote",
+          "content": "Grupo: Uma tarefa em pares ou pequenos grupos."
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-os-alimentos-slide-10",
+      "title": "10. Trabalho de casa e notas de revisão",
+      "stage": "cool-down",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Trabalho de casa:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Escreve cinco frases sobre alimentos que compras."
+        },
+        {
+          "type": "input",
+          "placeholder": "Escreve aqui a tua frase de trabalho de casa ..."
+        },
+        {
+          "type": "instruction",
+          "content": "Resposta modelo para comparar:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Compro um pão."
+        },
+        {
+          "type": "blockquote",
+          "content": "A aula 3.2 revê os alimentos e acrescenta o restaurante."
+        }
+      ]
+    }
+  ]
+}

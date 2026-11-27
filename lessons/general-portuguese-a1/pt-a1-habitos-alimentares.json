@@ -1,0 +1,406 @@
+{
+  "id": "pt-a1-habitos-alimentares",
+  "title": "Hábitos alimentares",
+  "level": "A1",
+  "language": "pt",
+  "unit": "Unidade 3: A Comida e a Bebida",
+  "canDo": "Consigo falar dos meus hábitos alimentares.",
+  "defaultDuration": 50,
+  "defaultMode": "all",
+  "objectives": [
+    "usar a estrutura-alvo: advérbios de frequência",
+    "usar 8 palavras novas: sempre, muitas vezes, às vezes, raramente, nunca, saudável, pouco saudável, o hábito"
+  ],
+  "materials": "Cartões de vocabulário, áudio do texto, ficha de leitura, imagens ou objectos reais, páginas de gramática A1 do COSYmanuals sobre advérbios de frequência.",
+  "assessment": "Verifica o uso correcto de advérbios de frequência e a pronúncia clara das palavras-alvo.",
+  "homework": "Escreve cinco frases sobre os teus hábitos alimentares.",
+  "recycling": {
+    "prior": "Revê o pequeno-almoço da aula 3.4.",
+    "next": "A Unidade 4 revê a comida e acrescenta as compras."
+  },
+  "differentiation": {
+    "individual": "Uma ficha de trabalho: cinco frases sobre o tema da aula (PT-A1-020).",
+    "group": "Uma tarefa em pares ou pequenos grupos.",
+    "children": "Um semáforo com hábitos saudáveis.",
+    "teens": "Um diário alimentar de três dias.",
+    "adults": "Um diálogo sobre hábitos e saúde.",
+    "seniors": "Cartões grandes, lidos devagar."
+  },
+  "links": {
+    "vocabulary": [
+      "sempre",
+      "muitas vezes",
+      "às vezes",
+      "raramente",
+      "nunca",
+      "saudável",
+      "pouco saudável",
+      "o hábito"
+    ],
+    "grammar": [
+      {
+        "topic_id": "adverbios-frequencia-modo",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/pt/grammar/a1/topics/adverbios-frequencia-modo.html"
+      }
+    ],
+    "phonetics": "O z em vezes é /z/."
+  },
+  "slides": [
+    {
+      "id": "pt-a1-habitos-alimentares-slide-1",
+      "title": "1. Objectivo comunicativo e visão geral",
+      "stage": "warm-up",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Objectivo comunicativo: Consigo falar dos meus hábitos alimentares."
+        },
+        {
+          "type": "blockquote",
+          "content": "Visão geral da aula:\n- Nível: A1 Português Geral\n- Unidade: Unidade 3: A Comida e a Bebida\n- Duração: 60 min (base) / 90 min (alargada) / 120 min (oficina completa)\n- Foco: Hábitos alimentares\n- Materiais: cartões de vocabulário, áudio, ficha de leitura"
+        },
+        {
+          "type": "instruction",
+          "content": "Aquecimento: diz uma palavra que já conheces sobre este tema."
+        },
+        {
+          "type": "input",
+          "placeholder": "Escreve uma palavra que conheces ..."
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-habitos-alimentares-slide-2",
+      "title": "2. Revisão e ligação",
+      "stage": "recycling",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Revê o pequeno-almoço da aula 3.4."
+        },
+        {
+          "type": "blockquote",
+          "content": "Vocabulário revisto: sempre, muitas vezes, às vezes."
+        },
+        {
+          "type": "instruction",
+          "content": "Responde de memória: que palavra pertence a este tema?"
+        },
+        {
+          "type": "test",
+          "content": "Que palavra pertence a este tema?",
+          "options": [
+            "sempre",
+            "aeroporto",
+            "guarda-chuva"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-habitos-alimentares-slide-3",
+      "title": "3. Vocabulário e expressões essenciais",
+      "stage": "input",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Vocabulário activo de base (8 elementos):"
+        },
+        {
+          "type": "blockquote",
+          "content": "sempre — todas as vezes. Exemplo: Bebo sempre água.\nmuitas vezes — com muita frequência. Exemplo: Como muitas vezes legumes.\nàs vezes — de vez em quando. Exemplo: Às vezes como carne.\nraramente — quase nunca. Exemplo: Raramente como doces.\nnunca — nenhuma vez. Exemplo: Nunca bebo refrigerantes.\nsaudável — bom para a saúde. Exemplo: Os meus hábitos são saudáveis.\npouco saudável — não bom para a saúde. Exemplo: Comer doces é pouco saudável.\no hábito — o que se faz sempre. Exemplo: Os meus hábitos são bons."
+        },
+        {
+          "type": "instruction",
+          "content": "Expressões essenciais e combinações funcionais:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• Bebo sempre água.\n• Como muitas vezes legumes.\n• Às vezes como carne.\n• Raramente como doces.\n• Nunca bebo refrigerantes."
+        },
+        {
+          "type": "instruction",
+          "content": "Prática de vocabulário: escolhe a palavra correcta."
+        },
+        {
+          "type": "test",
+          "content": "Que palavra significa 'todas as vezes'?",
+          "options": [
+            "sempre",
+            "muitas vezes",
+            "às vezes"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Que palavra significa 'com muita frequência'?",
+          "options": [
+            "muitas vezes",
+            "sempre",
+            "às vezes"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Completa a frase com uma palavra da lista."
+        },
+        {
+          "type": "input",
+          "placeholder": "Completa: Bebo ___ água."
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-habitos-alimentares-slide-4",
+      "title": "4. Foco na pronúncia",
+      "stage": "pronunciation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "O z em vezes é /z/."
+        },
+        {
+          "type": "blockquote",
+          "content": "vezes /ˈvezɨʃ/, raramente /ʁaɾɐˈmẽtɨ/"
+        },
+        {
+          "type": "instruction",
+          "content": "Ouve e repete três vezes."
+        },
+        {
+          "type": "test",
+          "content": "Qual é a palavra com a sílaba tónica na primeira sílaba?",
+          "options": [
+            "sempre",
+            "o",
+            "um"
+          ]
+        },
+        {
+          "type": "input",
+          "placeholder": "Escreve a sílaba tónica: ..."
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-habitos-alimentares-slide-5",
+      "title": "5. Foco na gramática e prática guiada",
+      "stage": "grammar",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Foco na gramática: Advérbios de frequência."
+        },
+        {
+          "type": "blockquote",
+          "content": "A frequência ordena-se assim: sempre, muitas vezes, às vezes, raramente, nunca. O advérbio vem depois do verbo: Bebo sempre água."
+        },
+        {
+          "type": "grammar-focus",
+          "grammarId": "pt-a1-adverbios-frequencia-modo"
+        },
+        {
+          "type": "instruction",
+          "content": "Prática guiada: escolhe a opção correcta."
+        },
+        {
+          "type": "test",
+          "content": "Escolhe o advérbio correcto.",
+          "options": [
+            "Bebo sempre água.",
+            "Bebo nunca água sempre.",
+            "Sempre bebo água sempre."
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Escolhe a frase correcta.",
+          "options": [
+            "Raramente como doces.",
+            "Como doces raramente não.",
+            "Raramente eu como doces não."
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Completa a frase."
+        },
+        {
+          "type": "input",
+          "placeholder": "Como ___ carne."
+        },
+        {
+          "type": "input",
+          "placeholder": "Refrigerantes bebo ___."
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-habitos-alimentares-slide-6",
+      "title": "6. As quatro competências (ouvir e ler)",
+      "stage": "reading-listening",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Ler: lê o texto e responde às perguntas."
+        },
+        {
+          "type": "blockquote",
+          "content": "Os meus hábitos são saudáveis. Bebo sempre água e como muitas vezes legumes. Às vezes como carne, raramente doces e nunca refrigerantes."
+        },
+        {
+          "type": "input",
+          "placeholder": "O que bebe a pessoa sempre?"
+        },
+        {
+          "type": "input",
+          "placeholder": "Com que frequência come carne?"
+        },
+        {
+          "type": "instruction",
+          "content": "Ouvir: ouve o diálogo e responde às perguntas."
+        },
+        {
+          "type": "blockquote",
+          "content": "A: Comes carne? B: Às vezes. A: E legumes? B: Muitas vezes, todos os dias."
+        },
+        {
+          "type": "input",
+          "placeholder": "Com que frequência come carne?"
+        },
+        {
+          "type": "input",
+          "placeholder": "Com que frequência come legumes?"
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-habitos-alimentares-slide-7",
+      "title": "7. Falar e escrever",
+      "stage": "freer-practice",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Falar: pratica as expressões da aula em pares."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Bebo sempre água.\n• Como muitas vezes legumes.\n• Às vezes como carne."
+        },
+        {
+          "type": "instruction",
+          "content": "Escrever: escreve um texto curto com o vocabulário da aula."
+        },
+        {
+          "type": "essay",
+          "placeholder": "Escreve a tua resposta aqui ..."
+        },
+        {
+          "type": "input",
+          "placeholder": "Uma frase que dizes no trabalho de pares:"
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-habitos-alimentares-slide-8",
+      "title": "8. Roteiros de aula por duração",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Escolhe o roteiro que se adapta ao teu tempo."
+        },
+        {
+          "type": "blockquote",
+          "content": "60 min (base): aquecimento, vocabulário, gramática e uma tarefa de fala.\n90 min (alargada): acrescenta pronúncia, leitura e audição.\n120 min (oficina completa): acrescenta escrita, correcção entre pares e o projecto da unidade."
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-habitos-alimentares-slide-9",
+      "title": "9. Adaptações para o grupo",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Adapta a aula ao teu grupo."
+        },
+        {
+          "type": "blockquote",
+          "content": "Crianças: Um semáforo com hábitos saudáveis."
+        },
+        {
+          "type": "blockquote",
+          "content": "Adolescentes: Um diário alimentar de três dias."
+        },
+        {
+          "type": "blockquote",
+          "content": "Adultos: Um diálogo sobre hábitos e saúde."
+        },
+        {
+          "type": "blockquote",
+          "content": "Séniores: Cartões grandes, lidos devagar."
+        },
+        {
+          "type": "blockquote",
+          "content": "Aulas individuais: Uma ficha de trabalho: cinco frases sobre o tema da aula (PT-A1-020)."
+        },
+        {
+          "type": "blockquote",
+          "content": "Grupo: Uma tarefa em pares ou pequenos grupos."
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-habitos-alimentares-slide-10",
+      "title": "10. Trabalho de casa e notas de revisão",
+      "stage": "cool-down",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Trabalho de casa:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Escreve cinco frases sobre os teus hábitos alimentares."
+        },
+        {
+          "type": "input",
+          "placeholder": "Escreve aqui a tua frase de trabalho de casa ..."
+        },
+        {
+          "type": "instruction",
+          "content": "Resposta modelo para comparar:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Bebo sempre água."
+        },
+        {
+          "type": "blockquote",
+          "content": "A Unidade 4 revê a comida e acrescenta as compras."
+        }
+      ]
+    }
+  ]
+}

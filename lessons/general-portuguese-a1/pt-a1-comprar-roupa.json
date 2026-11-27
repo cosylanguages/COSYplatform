@@ -1,0 +1,406 @@
+{
+  "id": "pt-a1-comprar-roupa",
+  "title": "Comprar roupa",
+  "level": "A1",
+  "language": "pt",
+  "unit": "Unidade 4: As Compras",
+  "canDo": "Consigo comprar roupa e falar de tamanho e cor.",
+  "defaultDuration": 50,
+  "defaultMode": "all",
+  "objectives": [
+    "usar a estrutura-alvo: concordância de adjetivos",
+    "usar 8 palavras novas: a camisa, as calças, o vestido, os sapatos, o tamanho, experimentar, ficar bem, a cor"
+  ],
+  "materials": "Cartões de vocabulário, áudio do texto, ficha de leitura, imagens ou objectos reais, páginas de gramática A1 do COSYmanuals sobre concordância de adjetivos.",
+  "assessment": "Verifica o uso correcto de concordância de adjetivos e a pronúncia clara das palavras-alvo.",
+  "homework": "Escreve cinco frases sobre roupa que queres comprar.",
+  "recycling": {
+    "prior": "Revê o supermercado da aula 4.1.",
+    "next": "A aula 4.3 revê a roupa e acrescenta os preços."
+  },
+  "differentiation": {
+    "individual": "Uma ficha de trabalho: cinco frases sobre o tema da aula (PT-A1-022).",
+    "group": "Uma tarefa em pares ou pequenos grupos.",
+    "children": "Um jogo de vestir e descrever.",
+    "teens": "Uma compra de roupa com orçamento.",
+    "adults": "Uma compra real de roupa.",
+    "seniors": "Fotografias grandes de roupa, descritas devagar."
+  },
+  "links": {
+    "vocabulary": [
+      "a camisa",
+      "as calças",
+      "o vestido",
+      "os sapatos",
+      "o tamanho",
+      "experimentar",
+      "ficar bem",
+      "a cor"
+    ],
+    "grammar": [
+      {
+        "topic_id": "genero-dos-substantivos",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/pt/grammar/a1/topics/genero-dos-substantivos.html"
+      }
+    ],
+    "phonetics": "O s em vestido é /z/."
+  },
+  "slides": [
+    {
+      "id": "pt-a1-comprar-roupa-slide-1",
+      "title": "1. Objectivo comunicativo e visão geral",
+      "stage": "warm-up",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Objectivo comunicativo: Consigo comprar roupa e falar de tamanho e cor."
+        },
+        {
+          "type": "blockquote",
+          "content": "Visão geral da aula:\n- Nível: A1 Português Geral\n- Unidade: Unidade 4: As Compras\n- Duração: 60 min (base) / 90 min (alargada) / 120 min (oficina completa)\n- Foco: Comprar roupa\n- Materiais: cartões de vocabulário, áudio, ficha de leitura"
+        },
+        {
+          "type": "instruction",
+          "content": "Aquecimento: diz uma palavra que já conheces sobre este tema."
+        },
+        {
+          "type": "input",
+          "placeholder": "Escreve uma palavra que conheces ..."
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-comprar-roupa-slide-2",
+      "title": "2. Revisão e ligação",
+      "stage": "recycling",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Revê o supermercado da aula 4.1."
+        },
+        {
+          "type": "blockquote",
+          "content": "Vocabulário revisto: a camisa, as calças, o vestido."
+        },
+        {
+          "type": "instruction",
+          "content": "Responde de memória: que palavra pertence a este tema?"
+        },
+        {
+          "type": "test",
+          "content": "Que palavra pertence a este tema?",
+          "options": [
+            "a camisa",
+            "aeroporto",
+            "guarda-chuva"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-comprar-roupa-slide-3",
+      "title": "3. Vocabulário e expressões essenciais",
+      "stage": "input",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Vocabulário activo de base (8 elementos):"
+        },
+        {
+          "type": "blockquote",
+          "content": "a camisa — roupa para a parte de cima do corpo. Exemplo: Procuro uma camisa azul.\nas calças — roupa para as pernas. Exemplo: As calças são pequenas.\no vestido — peça de roupa inteira para mulher. Exemplo: Posso experimentar o vestido?\nos sapatos — roupa para os pés. Exemplo: Os sapatos ficam bem.\no tamanho — a medida da roupa. Exemplo: Qual é o seu tamanho?\nexperimentar — vestir para ver se serve. Exemplo: Experimento a camisa.\nficar bem — ter a medida certa. Exemplo: A camisa fica bem.\na cor — azul, preto, vermelho. Exemplo: Que cor prefere?"
+        },
+        {
+          "type": "instruction",
+          "content": "Expressões essenciais e combinações funcionais:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• Procuro uma camisa azul.\n• Qual é o seu tamanho?\n• Posso experimentar o vestido?\n• Os sapatos ficam bem.\n• A camisa é demasiado grande."
+        },
+        {
+          "type": "instruction",
+          "content": "Prática de vocabulário: escolhe a palavra correcta."
+        },
+        {
+          "type": "test",
+          "content": "Que palavra significa 'roupa para a parte de cima do corpo'?",
+          "options": [
+            "a camisa",
+            "as calças",
+            "o vestido"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Que palavra significa 'roupa para as pernas'?",
+          "options": [
+            "as calças",
+            "a camisa",
+            "o vestido"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Completa a frase com uma palavra da lista."
+        },
+        {
+          "type": "input",
+          "placeholder": "Completa: Procuro um___ azul."
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-comprar-roupa-slide-4",
+      "title": "4. Foco na pronúncia",
+      "stage": "pronunciation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "O s em vestido é /z/."
+        },
+        {
+          "type": "blockquote",
+          "content": "vestido /vɨʃˈtidu/, tamanho /tɐˈmɐɲu/"
+        },
+        {
+          "type": "instruction",
+          "content": "Ouve e repete três vezes."
+        },
+        {
+          "type": "test",
+          "content": "Qual é a palavra com a sílaba tónica na primeira sílaba?",
+          "options": [
+            "a camisa",
+            "o",
+            "um"
+          ]
+        },
+        {
+          "type": "input",
+          "placeholder": "Escreve a sílaba tónica: ..."
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-comprar-roupa-slide-5",
+      "title": "5. Foco na gramática e prática guiada",
+      "stage": "grammar",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Foco na gramática: Concordância de adjetivos."
+        },
+        {
+          "type": "blockquote",
+          "content": "O adjectivo concorda com o nome: uma camisa azul, umas calças pretas, uns sapatos novos."
+        },
+        {
+          "type": "grammar-focus",
+          "grammarId": "pt-a1-genero-dos-substantivos"
+        },
+        {
+          "type": "instruction",
+          "content": "Prática guiada: escolhe a opção correcta."
+        },
+        {
+          "type": "test",
+          "content": "Escolhe a concordância correcta.",
+          "options": [
+            "uma camisa azul",
+            "um camisa azul",
+            "uma camisa azuis"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Escolhe a concordância correcta.",
+          "options": [
+            "umas calças pretas",
+            "umas calças preto",
+            "um calças pretas"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Completa a frase."
+        },
+        {
+          "type": "input",
+          "placeholder": "Os sapatos ___ bem."
+        },
+        {
+          "type": "input",
+          "placeholder": "Procuro uma camisa ___."
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-comprar-roupa-slide-6",
+      "title": "6. As quatro competências (ouvir e ler)",
+      "stage": "reading-listening",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Ler: lê o texto e responde às perguntas."
+        },
+        {
+          "type": "blockquote",
+          "content": "Procuro uma camisa azul e umas calças pretas. A vendedora pergunta pelo meu tamanho e experimento tudo. A camisa fica bem, mas as calças são pequenas."
+        },
+        {
+          "type": "input",
+          "placeholder": "O que procura a pessoa?"
+        },
+        {
+          "type": "input",
+          "placeholder": "Como ficam as calças?"
+        },
+        {
+          "type": "instruction",
+          "content": "Ouvir: ouve o diálogo e responde às perguntas."
+        },
+        {
+          "type": "blockquote",
+          "content": "A: Posso experimentar o vestido? B: Sim, qual é o tamanho? A: Trinta e oito. B: O provador é ali."
+        },
+        {
+          "type": "input",
+          "placeholder": "O que quer experimentar o cliente?"
+        },
+        {
+          "type": "input",
+          "placeholder": "Qual é o tamanho?"
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-comprar-roupa-slide-7",
+      "title": "7. Falar e escrever",
+      "stage": "freer-practice",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Falar: pratica as expressões da aula em pares."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Procuro uma camisa azul.\n• Qual é o seu tamanho?\n• Posso experimentar o vestido?"
+        },
+        {
+          "type": "instruction",
+          "content": "Escrever: escreve um texto curto com o vocabulário da aula."
+        },
+        {
+          "type": "essay",
+          "placeholder": "Escreve a tua resposta aqui ..."
+        },
+        {
+          "type": "input",
+          "placeholder": "Uma frase que dizes no trabalho de pares:"
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-comprar-roupa-slide-8",
+      "title": "8. Roteiros de aula por duração",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Escolhe o roteiro que se adapta ao teu tempo."
+        },
+        {
+          "type": "blockquote",
+          "content": "60 min (base): aquecimento, vocabulário, gramática e uma tarefa de fala.\n90 min (alargada): acrescenta pronúncia, leitura e audição.\n120 min (oficina completa): acrescenta escrita, correcção entre pares e o projecto da unidade."
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-comprar-roupa-slide-9",
+      "title": "9. Adaptações para o grupo",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Adapta a aula ao teu grupo."
+        },
+        {
+          "type": "blockquote",
+          "content": "Crianças: Um jogo de vestir e descrever."
+        },
+        {
+          "type": "blockquote",
+          "content": "Adolescentes: Uma compra de roupa com orçamento."
+        },
+        {
+          "type": "blockquote",
+          "content": "Adultos: Uma compra real de roupa."
+        },
+        {
+          "type": "blockquote",
+          "content": "Séniores: Fotografias grandes de roupa, descritas devagar."
+        },
+        {
+          "type": "blockquote",
+          "content": "Aulas individuais: Uma ficha de trabalho: cinco frases sobre o tema da aula (PT-A1-022)."
+        },
+        {
+          "type": "blockquote",
+          "content": "Grupo: Uma tarefa em pares ou pequenos grupos."
+        }
+      ]
+    },
+    {
+      "id": "pt-a1-comprar-roupa-slide-10",
+      "title": "10. Trabalho de casa e notas de revisão",
+      "stage": "cool-down",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Trabalho de casa:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Escreve cinco frases sobre roupa que queres comprar."
+        },
+        {
+          "type": "input",
+          "placeholder": "Escreve aqui a tua frase de trabalho de casa ..."
+        },
+        {
+          "type": "instruction",
+          "content": "Resposta modelo para comparar:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Procuro uma camisa azul."
+        },
+        {
+          "type": "blockquote",
+          "content": "A aula 4.3 revê a roupa e acrescenta os preços."
+        }
+      ]
+    }
+  ]
+}
