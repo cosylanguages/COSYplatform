@@ -1,0 +1,403 @@
+{
+  "id": "de-a1-hallo-willkommen",
+  "title": "Hallo & Willkommen",
+  "level": "A1",
+  "language": "de",
+  "unit": "Einheit 0: Erste Schritte",
+  "canDo": "Ich kann grüßen, mich vorstellen und mich verabschieden.",
+  "defaultDuration": 50,
+  "defaultMode": "all",
+  "objectives": [
+    "die Zielstruktur verwenden: verb \"sein\" (präsens) — aussagesätze",
+    "5 neue Wörter verwenden: Hallo, Guten Morgen, Danke, Bitte, Auf Wiedersehen"
+  ],
+  "materials": "Wortschatzkarten, Audio zum Hörtext, Leseblatt, Bilder oder echte Gegenstände, A1-Grammatikseiten von COSYmanuals zu verb \"sein\" (präsens) — aussagesätze.",
+  "assessment": "Prüfe den korrekten Gebrauch von verb \"sein\" (präsens) — aussagesätze und die klare Aussprache der Zielwörter.",
+  "homework": "Schreibe fünf Sätze: grüßen, vorstellen, verabschieden.",
+  "recycling": {
+    "prior": "Das ist die erste Stunde des Kurses.",
+    "next": "Stunde 0.2 wiederholt die Begrüßung und ergänzt den Namen."
+  },
+  "differentiation": {
+    "individual": "Ein Arbeitsblatt: fünf Sätze zum Thema der Stunde (DE-001).",
+    "group": "Eine Aufgabe in Partner- oder Kleingruppenarbeit.",
+    "children": "Eine Grußkarten-Aufgabe mit Bildern.",
+    "teens": "Ein Ketten-Vorstellspiel.",
+    "adults": "Eine kurze Selbstvorstellung mit zwei Sätzen.",
+    "seniors": "Große Karten, langsam vorgelesen."
+  },
+  "links": {
+    "vocabulary": [
+      "Hallo",
+      "Guten Morgen",
+      "Danke",
+      "Bitte",
+      "Auf Wiedersehen"
+    ],
+    "grammar": [
+      {
+        "topic_id": "de-sein",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/de/grammar/a1/topics/de-sein.html"
+      }
+    ],
+    "phonetics": "Die Umlaute ä, ö, ü und das ß sind typisch für das Deutsche."
+  },
+  "slides": [
+    {
+      "id": "de-a1-hallo-willkommen-slide-1",
+      "title": "1. Kommunikatives Ziel und Überblick",
+      "stage": "warm-up",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Kommunikatives Ziel: Ich kann grüßen, mich vorstellen und mich verabschieden."
+        },
+        {
+          "type": "blockquote",
+          "content": "Überblick über die Stunde:\n- Niveau: A1 Deutsch Allgemein\n- Einheit: Einheit 0: Erste Schritte\n- Zeit: 60 Min. (Basis) / 90 Min. (Erweitert) / 120 Min. (Vollwerkstatt)\n- Fokus: Hallo & Willkommen\n- Material: Wortschatzkarten, Audio, Leseblatt"
+        },
+        {
+          "type": "instruction",
+          "content": "Warm-up: Nenne ein Wort, das du zu diesem Thema schon kennst."
+        },
+        {
+          "type": "input",
+          "placeholder": "Schreibe ein Wort, das du kennst ..."
+        }
+      ]
+    },
+    {
+      "id": "de-a1-hallo-willkommen-slide-2",
+      "title": "2. Wiederholung und Anschluss",
+      "stage": "recycling",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Das ist die erste Stunde des Kurses."
+        },
+        {
+          "type": "blockquote",
+          "content": "Wiederholter Wortschatz: Hallo, Guten Morgen, Danke."
+        },
+        {
+          "type": "instruction",
+          "content": "Antworte aus dem Gedächtnis: Welches Wort gehört zu diesem Thema?"
+        },
+        {
+          "type": "test",
+          "content": "Welches Wort gehört zu diesem Thema?",
+          "options": [
+            "Hallo",
+            "Flughafen",
+            "Regenschirm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "de-a1-hallo-willkommen-slide-3",
+      "title": "3. Wortschatz und wichtige Wendungen",
+      "stage": "input",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Aktiver Grundwortschatz (5 Elemente):"
+        },
+        {
+          "type": "blockquote",
+          "content": "Hallo — Gruß zum Anfang eines Gesprächs. Beispiel: Hallo, wie geht es dir?\nGuten Morgen — Gruß am Morgen. Beispiel: Guten Morgen, Frau Müller!\nDanke — Wort, mit dem man dankt. Beispiel: Danke schön!\nBitte — Wort zum höflichen Bitten und Antworten. Beispiel: Einen Kaffee, bitte.\nAuf Wiedersehen — Abschiedsgruß. Beispiel: Auf Wiedersehen! Bis morgen."
+        },
+        {
+          "type": "instruction",
+          "content": "Wichtige Wendungen und funktionale Wortverbindungen:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• Guten Morgen!\n• Ich bin Anna.\n• Wie geht es dir?\n• Danke, gut.\n• Auf Wiedersehen!"
+        },
+        {
+          "type": "instruction",
+          "content": "Wortschatzübung: Wähle das richtige Wort."
+        },
+        {
+          "type": "test",
+          "content": "Welches Wort bedeutet 'Gruß zum Anfang eines Gesprächs'?",
+          "options": [
+            "Hallo",
+            "Guten Morgen",
+            "Danke"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Welches Wort bedeutet 'Gruß am Morgen'?",
+          "options": [
+            "Guten Morgen",
+            "Hallo",
+            "Danke"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Ergänze den Satz mit einem Wort aus der Liste."
+        },
+        {
+          "type": "input",
+          "placeholder": "Ergänze: ___, wie geht es dir?"
+        }
+      ]
+    },
+    {
+      "id": "de-a1-hallo-willkommen-slide-4",
+      "title": "4. Aussprachefokus",
+      "stage": "pronunciation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Die Umlaute ä, ö, ü und das ß sind typisch für das Deutsche."
+        },
+        {
+          "type": "blockquote",
+          "content": "Ä /ɛː/, Ö /øː/, Ü /yː/, ß /s/"
+        },
+        {
+          "type": "instruction",
+          "content": "Höre zu und sprich dreimal nach."
+        },
+        {
+          "type": "test",
+          "content": "Welches Wort trägt die Hauptbetonung?",
+          "options": [
+            "Hallo",
+            "der",
+            "ein"
+          ]
+        },
+        {
+          "type": "input",
+          "placeholder": "Schreibe den betonten Teil: ..."
+        }
+      ]
+    },
+    {
+      "id": "de-a1-hallo-willkommen-slide-5",
+      "title": "5. Grammatikfokus und gelenkte Übung",
+      "stage": "grammar",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Grammatikfokus: Verb \"sein\" (Präsens) — Aussagesätze."
+        },
+        {
+          "type": "blockquote",
+          "content": "Mit sein stellst du dich vor: Ich bin Anna. Du bist Lehrer. Sein ist unregelmäßig: ich bin, du bist, er ist, wir sind, ihr seid, sie sind."
+        },
+        {
+          "type": "grammar-focus",
+          "grammarId": "de-a1-de-sein"
+        },
+        {
+          "type": "instruction",
+          "content": "Gelenkte Übung: Wähle die richtige Option."
+        },
+        {
+          "type": "test",
+          "content": "Wähle die richtige Form.",
+          "options": [
+            "Ich bin Anna.",
+            "Ich bist Anna.",
+            "Ich sind Anna."
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Wähle den richtigen Satz.",
+          "options": [
+            "Guten Morgen!",
+            "Guten Morgen du.",
+            "Morgen gut."
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Ergänze den Satz."
+        },
+        {
+          "type": "input",
+          "placeholder": "___ Studentin. (ich)"
+        },
+        {
+          "type": "input",
+          "placeholder": "Auf ___! Bis morgen."
+        }
+      ]
+    },
+    {
+      "id": "de-a1-hallo-willkommen-slide-6",
+      "title": "6. Die vier Fertigkeiten (Hören und Lesen)",
+      "stage": "reading-listening",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Lesen: Lies den Text und beantworte die Fragen."
+        },
+        {
+          "type": "blockquote",
+          "content": "Guten Morgen! Ich bin Anna. Ich bin Studentin. Das ist Peter. Er ist Lehrer. Wie geht es dir, Peter? Danke, gut! Auf Wiedersehen!"
+        },
+        {
+          "type": "input",
+          "placeholder": "Wie heißt die Frau?"
+        },
+        {
+          "type": "input",
+          "placeholder": "Was ist Peter?"
+        },
+        {
+          "type": "instruction",
+          "content": "Hören: Höre den Dialog und beantworte die Fragen."
+        },
+        {
+          "type": "blockquote",
+          "content": "A: Guten Morgen! B: Guten Morgen! A: Ich bin Anna. Und du? B: Ich bin Peter. Freut mich!"
+        },
+        {
+          "type": "input",
+          "placeholder": "Wie heißt der Mann?"
+        },
+        {
+          "type": "input",
+          "placeholder": "Wie begrüßt Anna?"
+        }
+      ]
+    },
+    {
+      "id": "de-a1-hallo-willkommen-slide-7",
+      "title": "7. Sprechen und Schreiben",
+      "stage": "freer-practice",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Sprechen: Übe die Wendungen der Stunde in Partnerarbeit."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Guten Morgen!\n• Ich bin Anna.\n• Wie geht es dir?"
+        },
+        {
+          "type": "instruction",
+          "content": "Schreiben: Schreibe einen kurzen Text mit dem Wortschatz der Stunde."
+        },
+        {
+          "type": "essay",
+          "placeholder": "Schreibe deine Antwort hier ..."
+        },
+        {
+          "type": "input",
+          "placeholder": "Ein Satz, den du in der Partnerarbeit sagst:"
+        }
+      ]
+    },
+    {
+      "id": "de-a1-hallo-willkommen-slide-8",
+      "title": "8. Unterrichtsabläufe nach Dauer",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Wähle den Ablauf, der zu deiner Zeit passt."
+        },
+        {
+          "type": "blockquote",
+          "content": "60 Min. (Basis): Warm-up, Wortschatz, Grammatik und eine Sprechaufgabe.\n90 Min. (Erweitert): zusätzlich Aussprache, Lesen und Hören.\n120 Min. (Vollwerkstatt): zusätzlich Schreibaufgabe, Peer-Korrektur und das Projekt der Einheit."
+        }
+      ]
+    },
+    {
+      "id": "de-a1-hallo-willkommen-slide-9",
+      "title": "9. Anpassungen für die Lerngruppe",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Passe die Stunde an deine Gruppe an."
+        },
+        {
+          "type": "blockquote",
+          "content": "Kinder: Eine Grußkarten-Aufgabe mit Bildern."
+        },
+        {
+          "type": "blockquote",
+          "content": "Jugendliche: Ein Ketten-Vorstellspiel."
+        },
+        {
+          "type": "blockquote",
+          "content": "Erwachsene: Eine kurze Selbstvorstellung mit zwei Sätzen."
+        },
+        {
+          "type": "blockquote",
+          "content": "Senioren: Große Karten, langsam vorgelesen."
+        },
+        {
+          "type": "blockquote",
+          "content": "Einzelunterricht: Ein Arbeitsblatt: fünf Sätze zum Thema der Stunde (DE-001)."
+        },
+        {
+          "type": "blockquote",
+          "content": "Gruppe: Eine Aufgabe in Partner- oder Kleingruppenarbeit."
+        }
+      ]
+    },
+    {
+      "id": "de-a1-hallo-willkommen-slide-10",
+      "title": "10. Hausaufgaben und Wiederholungsnotizen",
+      "stage": "cool-down",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Hausaufgaben:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Schreibe fünf Sätze: grüßen, vorstellen, verabschieden."
+        },
+        {
+          "type": "input",
+          "placeholder": "Schreibe hier deinen Hausaufgabensatz ..."
+        },
+        {
+          "type": "instruction",
+          "content": "Musterlösung zum Vergleichen:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Hallo, wie geht es dir?"
+        },
+        {
+          "type": "blockquote",
+          "content": "Stunde 0.2 wiederholt die Begrüßung und ergänzt den Namen."
+        }
+      ]
+    }
+  ]
+}

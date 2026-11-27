@@ -1,0 +1,403 @@
+{
+  "id": "de-a1-wie-heisst-du",
+  "title": "Wie heißt du?",
+  "level": "A1",
+  "language": "de",
+  "unit": "Einheit 0: Erste Schritte",
+  "canDo": "Ich kann nach dem Namen fragen und meinen Namen sagen.",
+  "defaultDuration": 50,
+  "defaultMode": "all",
+  "objectives": [
+    "die Zielstruktur verwenden: verb \"heißen\" (präsens)",
+    "5 neue Wörter verwenden: Name, Wie?, Freut mich, Vorname, Nachname"
+  ],
+  "materials": "Wortschatzkarten, Audio zum Hörtext, Leseblatt, Bilder oder echte Gegenstände, A1-Grammatikseiten von COSYmanuals zu verb \"heißen\" (präsens).",
+  "assessment": "Prüfe den korrekten Gebrauch von verb \"heißen\" (präsens) und die klare Aussprache der Zielwörter.",
+  "homework": "Schreibe fünf Sätze: nach dem Namen fragen und antworten.",
+  "recycling": {
+    "prior": "Wiederholt die Begrüßung aus Stunde 0.1.",
+    "next": "Stunde 0.3 wiederholt die Namen und ergänzt die Zahlen."
+  },
+  "differentiation": {
+    "individual": "Ein Arbeitsblatt: fünf Sätze zum Thema der Stunde (DE-002).",
+    "group": "Eine Aufgabe in Partner- oder Kleingruppenarbeit.",
+    "children": "Ein Namensspiel mit einem Ball.",
+    "teens": "Ein kurzes Interview in Partnerarbeit.",
+    "adults": "Eine Vorstellung mit Name und Beruf.",
+    "seniors": "Große Namenskarten, langsam vorgelesen."
+  },
+  "links": {
+    "vocabulary": [
+      "Name",
+      "Wie?",
+      "Freut mich",
+      "Vorname",
+      "Nachname"
+    ],
+    "grammar": [
+      {
+        "topic_id": "de-verben",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/de/grammar/a1/topics/de-verben.html"
+      }
+    ],
+    "phonetics": "Das ß spricht man wie ein scharfes s."
+  },
+  "slides": [
+    {
+      "id": "de-a1-wie-heisst-du-slide-1",
+      "title": "1. Kommunikatives Ziel und Überblick",
+      "stage": "warm-up",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Kommunikatives Ziel: Ich kann nach dem Namen fragen und meinen Namen sagen."
+        },
+        {
+          "type": "blockquote",
+          "content": "Überblick über die Stunde:\n- Niveau: A1 Deutsch Allgemein\n- Einheit: Einheit 0: Erste Schritte\n- Zeit: 60 Min. (Basis) / 90 Min. (Erweitert) / 120 Min. (Vollwerkstatt)\n- Fokus: Wie heißt du?\n- Material: Wortschatzkarten, Audio, Leseblatt"
+        },
+        {
+          "type": "instruction",
+          "content": "Warm-up: Nenne ein Wort, das du zu diesem Thema schon kennst."
+        },
+        {
+          "type": "input",
+          "placeholder": "Schreibe ein Wort, das du kennst ..."
+        }
+      ]
+    },
+    {
+      "id": "de-a1-wie-heisst-du-slide-2",
+      "title": "2. Wiederholung und Anschluss",
+      "stage": "recycling",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Wiederholt die Begrüßung aus Stunde 0.1."
+        },
+        {
+          "type": "blockquote",
+          "content": "Wiederholter Wortschatz: Name, Wie?, Freut mich."
+        },
+        {
+          "type": "instruction",
+          "content": "Antworte aus dem Gedächtnis: Welches Wort gehört zu diesem Thema?"
+        },
+        {
+          "type": "test",
+          "content": "Welches Wort gehört zu diesem Thema?",
+          "options": [
+            "Name",
+            "Flughafen",
+            "Regenschirm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "de-a1-wie-heisst-du-slide-3",
+      "title": "3. Wortschatz und wichtige Wendungen",
+      "stage": "input",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Aktiver Grundwortschatz (5 Elemente):"
+        },
+        {
+          "type": "blockquote",
+          "content": "Name — das Wort, mit dem man dich ruft. Beispiel: Mein Name ist Anna.\nWie? — Fragewort für die Art und Weise. Beispiel: Wie heißt du?\nFreut mich — Wendung beim Kennenlernen. Beispiel: Freut mich, Peter!\nVorname — der erste Name einer Person. Beispiel: Mein Vorname ist Anna.\nNachname — der Familienname. Beispiel: Mein Nachname ist Müller."
+        },
+        {
+          "type": "instruction",
+          "content": "Wichtige Wendungen und funktionale Wortverbindungen:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• Wie heißt du?\n• Ich heiße Anna.\n• Mein Name ist Peter.\n• Freut mich!\n• Wie ist dein Nachname?"
+        },
+        {
+          "type": "instruction",
+          "content": "Wortschatzübung: Wähle das richtige Wort."
+        },
+        {
+          "type": "test",
+          "content": "Welches Wort bedeutet 'das Wort, mit dem man dich ruft'?",
+          "options": [
+            "Name",
+            "Wie?",
+            "Freut mich"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Welches Wort bedeutet 'Fragewort für die Art und Weise'?",
+          "options": [
+            "Wie?",
+            "Name",
+            "Freut mich"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Ergänze den Satz mit einem Wort aus der Liste."
+        },
+        {
+          "type": "input",
+          "placeholder": "Ergänze: Mein ___ ist Anna."
+        }
+      ]
+    },
+    {
+      "id": "de-a1-wie-heisst-du-slide-4",
+      "title": "4. Aussprachefokus",
+      "stage": "pronunciation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Das ß spricht man wie ein scharfes s."
+        },
+        {
+          "type": "blockquote",
+          "content": "heiße /ˈhaɪsə/, groß /ɡʁoːs/"
+        },
+        {
+          "type": "instruction",
+          "content": "Höre zu und sprich dreimal nach."
+        },
+        {
+          "type": "test",
+          "content": "Welches Wort trägt die Hauptbetonung?",
+          "options": [
+            "Name",
+            "der",
+            "ein"
+          ]
+        },
+        {
+          "type": "input",
+          "placeholder": "Schreibe den betonten Teil: ..."
+        }
+      ]
+    },
+    {
+      "id": "de-a1-wie-heisst-du-slide-5",
+      "title": "5. Grammatikfokus und gelenkte Übung",
+      "stage": "grammar",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Grammatikfokus: Verb \"heißen\" (Präsens)."
+        },
+        {
+          "type": "blockquote",
+          "content": "Mit heißen sagst du deinen Namen: Ich heiße Anna. Du heißt Peter. Die Frage lautet: Wie heißt du?"
+        },
+        {
+          "type": "grammar-focus",
+          "grammarId": "de-a1-de-verben"
+        },
+        {
+          "type": "instruction",
+          "content": "Gelenkte Übung: Wähle die richtige Option."
+        },
+        {
+          "type": "test",
+          "content": "Wähle die richtige Form.",
+          "options": [
+            "Ich heiße Anna.",
+            "Ich heißt Anna.",
+            "Ich heißen Anna."
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Wähle die richtige Frage.",
+          "options": [
+            "Wie heißt du?",
+            "Wie du heißt?",
+            "Wie heißen du?"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Ergänze den Satz."
+        },
+        {
+          "type": "input",
+          "placeholder": "Wie ___ dein Freund?"
+        },
+        {
+          "type": "input",
+          "placeholder": "___ mich! (Freut)"
+        }
+      ]
+    },
+    {
+      "id": "de-a1-wie-heisst-du-slide-6",
+      "title": "6. Die vier Fertigkeiten (Hören und Lesen)",
+      "stage": "reading-listening",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Lesen: Lies den Text und beantworte die Fragen."
+        },
+        {
+          "type": "blockquote",
+          "content": "Hallo! Ich heiße Lucia. Wie heißt du? Mein Name ist Thomas. Freut mich, Thomas! Und wie heißt dein Freund?"
+        },
+        {
+          "type": "input",
+          "placeholder": "Wie heißt die Frau?"
+        },
+        {
+          "type": "input",
+          "placeholder": "Wie heißt der Mann?"
+        },
+        {
+          "type": "instruction",
+          "content": "Hören: Höre den Dialog und beantworte die Fragen."
+        },
+        {
+          "type": "blockquote",
+          "content": "A: Wie heißt du? B: Ich heiße Peter. Und du? A: Ich heiße Anna. Freut mich!"
+        },
+        {
+          "type": "input",
+          "placeholder": "Wie heißt der Mann?"
+        },
+        {
+          "type": "input",
+          "placeholder": "Wie heißt die Frau?"
+        }
+      ]
+    },
+    {
+      "id": "de-a1-wie-heisst-du-slide-7",
+      "title": "7. Sprechen und Schreiben",
+      "stage": "freer-practice",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Sprechen: Übe die Wendungen der Stunde in Partnerarbeit."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Wie heißt du?\n• Ich heiße Anna.\n• Mein Name ist Peter."
+        },
+        {
+          "type": "instruction",
+          "content": "Schreiben: Schreibe einen kurzen Text mit dem Wortschatz der Stunde."
+        },
+        {
+          "type": "essay",
+          "placeholder": "Schreibe deine Antwort hier ..."
+        },
+        {
+          "type": "input",
+          "placeholder": "Ein Satz, den du in der Partnerarbeit sagst:"
+        }
+      ]
+    },
+    {
+      "id": "de-a1-wie-heisst-du-slide-8",
+      "title": "8. Unterrichtsabläufe nach Dauer",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Wähle den Ablauf, der zu deiner Zeit passt."
+        },
+        {
+          "type": "blockquote",
+          "content": "60 Min. (Basis): Warm-up, Wortschatz, Grammatik und eine Sprechaufgabe.\n90 Min. (Erweitert): zusätzlich Aussprache, Lesen und Hören.\n120 Min. (Vollwerkstatt): zusätzlich Schreibaufgabe, Peer-Korrektur und das Projekt der Einheit."
+        }
+      ]
+    },
+    {
+      "id": "de-a1-wie-heisst-du-slide-9",
+      "title": "9. Anpassungen für die Lerngruppe",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Passe die Stunde an deine Gruppe an."
+        },
+        {
+          "type": "blockquote",
+          "content": "Kinder: Ein Namensspiel mit einem Ball."
+        },
+        {
+          "type": "blockquote",
+          "content": "Jugendliche: Ein kurzes Interview in Partnerarbeit."
+        },
+        {
+          "type": "blockquote",
+          "content": "Erwachsene: Eine Vorstellung mit Name und Beruf."
+        },
+        {
+          "type": "blockquote",
+          "content": "Senioren: Große Namenskarten, langsam vorgelesen."
+        },
+        {
+          "type": "blockquote",
+          "content": "Einzelunterricht: Ein Arbeitsblatt: fünf Sätze zum Thema der Stunde (DE-002)."
+        },
+        {
+          "type": "blockquote",
+          "content": "Gruppe: Eine Aufgabe in Partner- oder Kleingruppenarbeit."
+        }
+      ]
+    },
+    {
+      "id": "de-a1-wie-heisst-du-slide-10",
+      "title": "10. Hausaufgaben und Wiederholungsnotizen",
+      "stage": "cool-down",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Hausaufgaben:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Schreibe fünf Sätze: nach dem Namen fragen und antworten."
+        },
+        {
+          "type": "input",
+          "placeholder": "Schreibe hier deinen Hausaufgabensatz ..."
+        },
+        {
+          "type": "instruction",
+          "content": "Musterlösung zum Vergleichen:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Mein Name ist Anna."
+        },
+        {
+          "type": "blockquote",
+          "content": "Stunde 0.3 wiederholt die Namen und ergänzt die Zahlen."
+        }
+      ]
+    }
+  ]
+}
