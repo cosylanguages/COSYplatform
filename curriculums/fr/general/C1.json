@@ -5,583 +5,1899 @@
   "units": [
     {
       "unit": 1,
-      "title": "Science, Tech et Société",
+      "title": "Science et recherche",
       "lessons": [
         {
           "lesson": 1,
-          "type": "vocab",
-          "title": "Science, Tech et Société - Vocabulaire I",
+          "type": "gv",
+          "title": "Conception de la recherche et méthodologie",
+          "grammar": "Voix passive et substituts du passif (se faire, se voir + infinitif)",
           "duration_minutes": 60,
           "vocabulary": [
-            "Preuve empirique",
-            "Revue systématique",
-            "Méta-analyse",
-            "Rigueur méthodologique",
-            "Évaluation par les pairs",
-            "Crise de la réplicabilité",
-            "Synthétiser",
-            "Étayer",
-            "Extrapoler",
-            "Changement de paradigme"
+            "protocole",
+            "hypothèse",
+            "échantillon",
+            "enquête",
+            "analyse",
+            "résultat",
+            "validité",
+            "reproductibilité"
           ],
           "practice_types": [
-            "reading",
-            "listening",
+            "vocabulary",
+            "grammar",
             "speaking",
+            "listening",
+            "reading",
             "writing"
           ],
-          "speaking_percent": 40,
-          "teacher_notes": "code: \"FR-C1-001\"\npronunciation: [{\"point\":\"Accent tonique et rythme en français académique\",\"explain\":\"Mastering stress on final syllables of complex multi-syllable academic terms (e.g. mé-tha-do-lo-GIQUE).\",\"examples\":[{\"pattern\":\"méthodologique\",\"ipa\":\"/me.to.do.lo.ʒik/\",\"word\":\"méthodologique\"}],\"visual\":\"🔬\"}]\ncando: \"Peut évaluer et synthétiser la terminologie de recherche scientifique complexe dans des registres formels\"",
-          "recycled": "Carried over from B2: Synthèse des pièges B2, DELF B2 preparation, Examen bilan B2"
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-001\"\ncando: \"décrire un protocole de recherche\"\nhw: \"Décris un protocole de recherche.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
         },
         {
           "lesson": 2,
-          "type": "grammar",
-          "title": "Science, Tech et Société - Grammaire Avancée",
+          "type": "gv",
+          "title": "Empirie et statistique",
+          "grammar": "Constructions participiales absolues",
           "duration_minutes": 60,
-          "grammar": [
-            "Propositions relatives complexes avec prépositions composées (auquel, duquel, pour lesquelles)",
-            "Subjonctif passé et tournures d’atténuation académique"
+          "vocabulary": [
+            "indicateur",
+            "corrélation",
+            "significativité",
+            "échantillon",
+            "tendance",
+            "écart",
+            "jeu de données",
+            "relevé"
           ],
           "practice_types": [
-            "writing",
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
             "reading",
-            "speaking"
+            "writing"
           ],
-          "speaking_percent": 45,
-          "teacher_notes": "code: \"FR-C1-002\"\npronunciation: [{\"point\":\"Intonation de la réserve scientifique\",\"explain\":\"Utiliser des contours intonatifs descendants modérés lors de l'énoncé d'hypothèses qualifiées.\",\"examples\":[{\"pattern\":\"Il semblerait que la donnée suggère...\",\"ipa\":\"/il sɑ̃bləʁɛ kə/\",\"word\":\"semblerait\"}],\"visual\":\"🗣️\"}]\ncando: \"Peut introduire des réserves scientifiques et organiser la mise en relief d'informations complexes\"",
-          "recycled": "Étayer, Extrapoler, Changement de paradigme",
-          "grammarIds": [
-            "fr-c1-propositions-relatives-complexes-avec-prepositions-composees-auquel-duquel-pour-lesquelles",
-            "fr-c1-subjonctif-passe-et-tournures-dattenuation-academique"
-          ]
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-002\"\ncando: \"interpréter des résultats statistiques\"\nhw: \"Interprète un jeu de données.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
         },
         {
           "lesson": 3,
-          "type": "spoken",
-          "title": "Science, Tech et Société - Séminaire & Débat",
-          "duration_minutes": 90,
-          "grammar": [
-            "Inversion du sujet après les adverbes de tête (À peine..., Peut-être..., Aussi...)",
-            "Expression de la concession au conditionnel"
-          ],
+          "type": "gv",
+          "title": "Science et société",
+          "grammar": "Discours rapporté et verbes de modalisation",
+          "duration_minutes": 60,
           "vocabulary": [
-            "Comité d'éthique",
-            "Biais algorithmique",
-            "Singularité technologique",
-            "Bioéthique",
-            "Technologie de rupture"
+            "transfert",
+            "acceptation",
+            "scepticisme",
+            "vulgarisation",
+            "discours",
+            "crédibilité",
+            "public spécialisé",
+            "grand public"
           ],
           "practice_types": [
+            "vocabulary",
+            "grammar",
             "speaking",
-            "listening"
+            "listening",
+            "reading",
+            "writing"
           ],
-          "speaking_percent": 80,
-          "teacher_notes": "code: \"FR-C1-003\"\ncando: \"Peut animer et participer de façon fluide à des séminaires académiques débattant de l'éthique technologique et des politiques scientifiques\"",
-          "recycled": "La précaution oratoire et le conditionnel de réserve, L'inversion du sujet et les structures clivées, Étayer",
-          "discourse": [
-            "Désaccord diplomatique et cadrage du débat académique"
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-003\"\ncando: \"vulgariser des résultats scientifiques\"\nhw: \"Résume une étude pour le grand public.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
+        },
+        {
+          "lesson": 4,
+          "type": "gv",
+          "title": "Éthique de la recherche",
+          "grammar": "Nominalisation et verbes supports (procéder à, faire l'objet de)",
+          "duration_minutes": 60,
+          "vocabulary": [
+            "comité d'éthique",
+            "consentement",
+            "protection des données",
+            "conflit d'intérêts",
+            "intégrité",
+            "directive",
+            "examen",
+            "responsabilité"
           ],
-          "grammarIds": [
-            "fr-c1-inversion-du-sujet-apres-les-adverbes-de-tete-a-peine-peut-etre-aussi",
-            "fr-c1-expression-de-la-concession-au-conditionnel"
-          ]
+          "practice_types": [
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-004\"\ncando: \"débattre de questions éthiques\"\nhw: \"Analyse un conflit d'intérêts.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
+        },
+        {
+          "lesson": 5,
+          "type": "gv",
+          "title": "Politique scientifique",
+          "grammar": "Litote, euphémisme et atténuation",
+          "duration_minutes": 60,
+          "vocabulary": [
+            "financement",
+            "appel à projets",
+            "priorité",
+            "évaluation",
+            "excellence",
+            "concurrence",
+            "site",
+            "bilan"
+          ],
+          "practice_types": [
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-005\"\ncando: \"évaluer la politique scientifique\"\nhw: \"Évalue un programme de financement.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
         }
       ]
     },
     {
       "unit": 2,
-      "title": "Pouvoir et Institutions",
+      "title": "Technologie, éthique et société",
       "lessons": [
         {
           "lesson": 1,
-          "type": "vocab",
-          "title": "Pouvoir et Institutions - Vocabulaire I",
+          "type": "gv",
+          "title": "Automatisation et travail",
+          "grammar": "Conditionnel journalistique et modalisateurs de probabilité",
           "duration_minutes": 60,
           "vocabulary": [
-            "Gouvernance institutionnelle",
-            "Hégémonie",
-            "Tutelle administrative",
-            "Mandat législatif",
-            "Ressort juridique",
-            "Souveraineté",
-            "Ratifier",
-            "Pouvoir consolidé",
-            "Séparation des pouvoirs",
-            "Cadre constitutionnel"
+            "automatisation",
+            "valeur ajoutée",
+            "qualification",
+            "rationalisation",
+            "interface",
+            "poste de travail",
+            "reconversion",
+            "acceptation"
           ],
           "practice_types": [
-            "reading",
-            "listening",
+            "vocabulary",
+            "grammar",
             "speaking",
+            "listening",
+            "reading",
             "writing"
           ],
-          "speaking_percent": 40,
-          "teacher_notes": "code: \"FR-C1-004\"\npronunciation: [{\"point\":\"Intonation du discours politique et institutionnel\",\"explain\":\"Marquer des pauses délibérées et une cadence rythmique formelle dans les débats de politique publique.\",\"examples\":[{\"pattern\":\"souveraineté\",\"ipa\":\"/su.vʁɛn.te/\",\"word\":\"souveraineté\"}],\"visual\":\"🏛️\"}]\ncando: \"Peut employer le lexique spécialisé des institutions politiques et juridiques avec une grande précision\"",
-          "recycled": "Inversion stylistique après les adverbes négatifs, Réfutation diplomatique, Singularité technologique"
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-006\"\ncando: \"décrire les effets de l'automatisation\"\nhw: \"Décris les effets de l'automatisation.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
         },
         {
           "lesson": 2,
-          "type": "grammar",
-          "title": "Pouvoir et Institutions - Grammaire Avancée",
+          "type": "gv",
+          "title": "Intelligence artificielle",
+          "grammar": "Hypothèse avec subjonctif (à supposer que + subjonctif)",
           "duration_minutes": 60,
-          "grammar": [
-            "Tournures passives pronominales et impersonnelles (Il appert que..., Se voir + infinitif)",
-            "Subjonctif dans les textes réglementaires et juridiques"
+          "vocabulary": [
+            "algorithme",
+            "données d'entraînement",
+            "modèle",
+            "transparence",
+            "traçabilité",
+            "biais",
+            "régulation",
+            "responsabilité"
           ],
           "practice_types": [
-            "writing",
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
             "reading",
-            "speaking"
+            "writing"
           ],
-          "speaking_percent": 45,
-          "teacher_notes": "code: \"FR-C1-005\"\npronunciation: [{\"point\":\"Prononciation nette des formes subjonctives soutenues\",\"explain\":\"Articulation soignée des verbes au subjonctif dans les textes officiels.\",\"examples\":[{\"pattern\":\"qu'il soit nommé\",\"ipa\":\"/kil swa nɔ.me/\",\"word\":\"soit\"}],\"visual\":\"⚖️\"}]\ncando: \"Peut formuler des déclarations légales et institutionnelles formelles à l'aide de tournures passives et du subjonctif administratif\"",
-          "recycled": "Inversion stylistique après les adverbes négatifs, Réfutation diplomatique, Pouvoir consolidé",
-          "grammarIds": [
-            "fr-c1-tournures-passives-pronominales-et-impersonnelles-il-appert-que-se-voir-infinitif",
-            "fr-c1-subjonctif-dans-les-textes-reglementaires-et-juridiques"
-          ]
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-007\"\ncando: \"peser les risques de l'IA\"\nhw: \"Pèse un risque lié à l'IA.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
         },
         {
           "lesson": 3,
-          "type": "spoken",
-          "title": "Pouvoir et Institutions - Séminaire & Débat",
-          "duration_minutes": 90,
-          "grammar": [
-            "Mise en relief et phrases clivées (C’est... qui/que, Ce qui..., c’est...)",
-            "Inversion littéraire et poétique du sujet"
-          ],
+          "type": "gv",
+          "title": "Données personnelles et surveillance",
+          "grammar": "Passif impersonnel et agent effacé",
+          "duration_minutes": 60,
           "vocabulary": [
-            "Note d'orientation",
-            "Conformité réglementaire",
-            "Imputabilité",
-            "Déficit démocratique",
-            "Réforme institutionnelle"
+            "consentement",
+            "finalité",
+            "surveillance",
+            "chiffrement",
+            "accès",
+            "abus",
+            "autorité",
+            "transparence"
           ],
           "practice_types": [
+            "vocabulary",
+            "grammar",
             "speaking",
-            "listening"
+            "listening",
+            "reading",
+            "writing"
           ],
-          "speaking_percent": 80,
-          "teacher_notes": "code: \"FR-C1-006\"\ncando: \"Peut débattre de la gouvernance institutionnelle et des réformes publiques en utilisant l'emphase rhétorique avancée\"",
-          "recycled": "Passif de distanciation et tournures de rapport institutionnel, Subjonctif dans les subordonnées relatives, Pouvoir consolidé",
-          "grammarIds": [
-            "fr-c1-mise-en-relief-et-phrases-clivees-cest-qui-que-ce-qui-cest",
-            "fr-c1-inversion-litteraire-et-poetique-du-sujet"
-          ]
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-008\"\ncando: \"clarifier les questions de données personnelles\"\nhw: \"Explique la limitation de finalité.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
+        },
+        {
+          "lesson": 4,
+          "type": "gv",
+          "title": "Souveraineté numérique",
+          "grammar": "Style nominal et style verbal",
+          "duration_minutes": 60,
+          "vocabulary": [
+            "souveraineté",
+            "dépendance",
+            "infrastructure",
+            "standard",
+            "régulation",
+            "concurrence",
+            "sécurité d'approvisionnement",
+            "alliance"
+          ],
+          "practice_types": [
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-009\"\ncando: \"évaluer les dépendances numériques\"\nhw: \"Évalue une dépendance numérique.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
+        },
+        {
+          "lesson": 5,
+          "type": "gv",
+          "title": "Évaluation des technologies",
+          "grammar": "Concession avec quand bien même",
+          "duration_minutes": 60,
+          "vocabulary": [
+            "évaluation des risques",
+            "scénario",
+            "risque",
+            "bénéfice",
+            "arbitrage",
+            "expertise",
+            "participation",
+            "recommandation"
+          ],
+          "practice_types": [
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-010\"\ncando: \"présenter une évaluation des risques\"\nhw: \"Présente une évaluation des risques.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
         }
       ]
     },
     {
       "unit": 3,
-      "title": "Structures Sociales",
+      "title": "Pouvoir, État et institutions",
       "lessons": [
         {
           "lesson": 1,
-          "type": "vocab",
-          "title": "Structures Sociales - Vocabulaire I",
+          "type": "gv",
+          "title": "Gouvernance institutionnelle",
+          "grammar": "Subjonctif à valeur injonctive",
           "duration_minutes": 60,
           "vocabulary": [
-            "Stratification socio-économique",
-            "Mobilité sociale",
-            "Transition démographique",
-            "Marginalisation",
-            "Égalitarisme",
-            "Assimilation culturelle",
-            "Cohésion sociale",
-            "Disparité",
-            "Inégalité systémique",
-            "Reproduction sociale"
+            "gouvernance",
+            "compétence",
+            "tutelle",
+            "instance",
+            "délibération",
+            "procédure",
+            "légitimation",
+            "redevabilité"
           ],
           "practice_types": [
-            "reading",
-            "listening",
+            "vocabulary",
+            "grammar",
             "speaking",
+            "listening",
+            "reading",
             "writing"
           ],
-          "speaking_percent": 40,
-          "teacher_notes": "code: \"FR-C1-007\"\npronunciation: [{\"point\":\"Accentuation du lexique sociologique\",\"explain\":\"Placer correctement l'accent final sur les dérivés complexes en -tion et -isme.\",\"examples\":[{\"pattern\":\"stratification\",\"ipa\":\"/stʁa.ti.fi.ka.sjɔ̃/\",\"word\":\"stratification\"}],\"visual\":\"🌐\"}]\ncando: \"Peut analyser et commenter les structures sociétales et les tendances démographiques complexes avec le lexique sociologique approprié\"",
-          "recycled": "Phrases clivées et pseudo-clivées pour le renforcement de l'argument, Questions rhétoriques et structures du débat parlementaire, Imputabilité"
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-011\"\ncando: \"expliquer les procédures institutionnelles\"\nhw: \"Explique une procédure administrative.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
         },
         {
           "lesson": 2,
-          "type": "grammar",
-          "title": "Structures Sociales - Grammaire Avancée",
+          "type": "gv",
+          "title": "Constitution et séparation des pouvoirs",
+          "grammar": "Discours rapporté et distanciation",
           "duration_minutes": 60,
-          "grammar": [
-            "Nominalisation et condensation syntaxique dans le discours sociologique",
-            "Proposition participiale absolue et gérondif complexe (L’accord ayant été signé...)"
+          "vocabulary": [
+            "constitution",
+            "séparation des pouvoirs",
+            "droit fondamental",
+            "arrêt",
+            "contrôle",
+            "majorité",
+            "opposition",
+            "conseil constitutionnel"
           ],
           "practice_types": [
-            "writing",
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
             "reading",
-            "speaking"
+            "writing"
           ],
-          "speaking_percent": 45,
-          "teacher_notes": "code: \"FR-C1-008\"\npronunciation: [{\"point\":\"Enchaînement fluide des propositions participiales\",\"explain\":\"Lier sans heurt les clauses participiales à la proposition principale.\",\"examples\":[{\"pattern\":\"Ayant examiné...\",\"ipa\":\"/ɛ.jɑ̃ ɛɡ.za.mi.ne/\",\"word\":\"Ayant\"}],\"visual\":\"📝\"}]\ncando: \"Peut rédiger des analyses sociologiques cohérentes en maîtrisant l'ellipse, la substitution lexicale et les participes complexes\"",
-          "recycled": "Phrases clivées et pseudo-clivées pour le renforcement de l'argument, Questions rhétoriques et structures du débat parlementaire, Disparité",
-          "grammarIds": [
-            "fr-c1-nominalisation-et-condensation-syntaxique-dans-le-discours-sociologique",
-            "fr-c1-proposition-participiale-absolue-et-gerondif-complexe-laccord-ayant-ete-signe"
-          ]
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-012\"\ncando: \"expliquer la séparation des pouvoirs\"\nhw: \"Explique un droit fondamental.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
         },
         {
           "lesson": 3,
-          "type": "spoken",
-          "title": "Structures Sociales - Séminaire & Débat",
-          "duration_minutes": 90,
-          "grammar": [
-            "Propositions conditionnelles et hypothétiques complexes (Quand bien même..., Si tant est que...)",
-            "Adverbes et locutions conjonctives de proportion"
-          ],
+          "type": "gv",
+          "title": "Élections et légitimité",
+          "grammar": "Phrases clivées (c'est X qui ...)",
+          "duration_minutes": 60,
           "vocabulary": [
-            "Gentrification",
-            "Rénovation urbaine",
-            "Filet de sécurité sociale",
-            "Politique inclusive",
-            "Engagement communautaire"
+            "participation électorale",
+            "mandat",
+            "coalition",
+            "légitimité",
+            "rapport de forces",
+            "circonscription",
+            "voix",
+            "alternance"
           ],
           "practice_types": [
+            "vocabulary",
+            "grammar",
             "speaking",
-            "listening"
+            "listening",
+            "reading",
+            "writing"
           ],
-          "speaking_percent": 80,
-          "teacher_notes": "code: \"FR-C1-009\"\ncando: \"Peut articuler et défendre des positions complexes sur les mutations sociales et la justice distributive\"",
-          "recycled": "Cohésion textuelle, ellipse et substitution lexicale, Participe présent et gérondif complexes, Disparité",
-          "grammarIds": [
-            "fr-c1-propositions-conditionnelles-et-hypothetiques-complexes-quand-bien-meme-si-tant-est-que",
-            "fr-c1-adverbes-et-locutions-conjonctives-de-proportion"
-          ]
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-013\"\ncando: \"interpréter des résultats électoraux\"\nhw: \"Interprète un résultat électoral.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
+        },
+        {
+          "lesson": 4,
+          "type": "gv",
+          "title": "Réforme administrative",
+          "grammar": "Conditionnelles à protase implicite",
+          "duration_minutes": 60,
+          "vocabulary": [
+            "réforme",
+            "débureaucratisation",
+            "dématérialisation",
+            "effectifs",
+            "budget",
+            "efficacité",
+            "acceptabilité",
+            "mise en œuvre"
+          ],
+          "practice_types": [
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-014\"\ncando: \"évaluer des propositions de réforme\"\nhw: \"Évalue une proposition de réforme.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
+        },
+        {
+          "lesson": 5,
+          "type": "gv",
+          "title": "État et espace public",
+          "grammar": "Marqueurs de politesse et de mise à distance",
+          "duration_minutes": 60,
+          "vocabulary": [
+            "espace public",
+            "participation",
+            "transparence",
+            "audition",
+            "consultation",
+            "confiance",
+            "distance",
+            "redevabilité"
+          ],
+          "practice_types": [
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-015\"\ncando: \"débattre de l'État et de l'espace public\"\nhw: \"Débat d'un processus participatif.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
         }
       ]
     },
     {
       "unit": 4,
-      "title": "Connaissance et Vérité",
+      "title": "Droit et administration",
       "lessons": [
         {
           "lesson": 1,
-          "type": "vocab",
-          "title": "Connaissance et Vérité - Vocabulaire I",
+          "type": "gv",
+          "title": "Ordre juridique",
+          "grammar": "Passif et forme pronominale à valeur passive",
           "duration_minutes": 60,
           "vocabulary": [
-            "Épistémologie",
-            "Biais cognitif",
-            "Empirisme",
-            "Rationalisme",
-            "Réfutabilité",
-            "Heuristique",
-            "Désinformation",
-            "Véracité",
-            "Sophisme",
-            "Humilité intellectuelle"
+            "ordre juridique",
+            "norme",
+            "règlement",
+            "pouvoir discrétionnaire",
+            "délai",
+            "recours",
+            "décision",
+            "voie de droit"
           ],
           "practice_types": [
-            "reading",
-            "listening",
+            "vocabulary",
+            "grammar",
             "speaking",
+            "listening",
+            "reading",
             "writing"
           ],
-          "speaking_percent": 40,
-          "teacher_notes": "code: \"FR-C1-010\"\npronunciation: [{\"point\":\"Prononciation des termes philosophiques d'origine grecque\",\"explain\":\"Mastering vowel quality and rhythm in abstract philosophical terms (e.g. é-pis-té-mo-lo-GIE, heu-RIS-tique).\",\"examples\":[{\"pattern\":\"épistémologie\",\"ipa\":\"/e.pis.te.mo.lo.ʒi/\",\"word\":\"épistémologie\"}],\"visual\":\"💡\"}]\ncando: \"Peut évaluer des concepts philosophiques de vérité, de validation des connaissances et de biais cognitifs\"",
-          "recycled": "Conditionnel de concession et d'hypothèse, Gestion nuancée du temps de parole, Filet de sécurité sociale"
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-016\"\ncando: \"expliquer l'ordre juridique\"\nhw: \"Explique une décision administrative.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
         },
         {
           "lesson": 2,
-          "type": "grammar",
-          "title": "Connaissance et Vérité - Grammaire Avancée",
+          "type": "gv",
+          "title": "Contrats et responsabilité",
+          "grammar": "Conditionnel de politesse",
           "duration_minutes": 60,
-          "grammar": [
-            "Ne explétif et ne littéraire après les verbes de crainte et les locutions (à moins que, avant que)",
-            "Moyents morphosyntaxiques de l’expression du doute et de la certitude"
+          "vocabulary": [
+            "contrat",
+            "clause",
+            "responsabilité",
+            "garantie",
+            "résiliation",
+            "délai",
+            "droit",
+            "indemnisation"
           ],
           "practice_types": [
-            "writing",
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
             "reading",
-            "speaking"
+            "writing"
           ],
-          "speaking_percent": 45,
-          "teacher_notes": "code: \"FR-C1-011\"\npronunciation: [{\"point\":\"Baisse de hauteur tonale dans les parenthèses énonciatives\",\"explain\":\"Abaisser légèrement la voix lors de l'énoncé de commentaires incisifs entre tirets.\",\"examples\":[{\"pattern\":\"L'hypothèse — bien que contestée — fut retenue...\",\"ipa\":\"/la.pi.pɔ.tɛz/\",\"word\":\"hypothèse\"}],\"visual\":\"🖊️\"}]\ncando: \"Peut exprimer des degrés de certitude épistémique d'une grande finesse et structurer des incises complexes\"",
-          "recycled": "Conditionnel de concession et d'hypothèse, Gestion nuancée du temps de parole, Véracité",
-          "grammarIds": [
-            "fr-c1-ne-expletif-et-ne-litteraire-apres-les-verbes-de-crainte-et-les-locutions-a-moins-que-avant-que",
-            "fr-c1-moyents-morphosyntaxiques-de-lexpression-du-doute-et-de-la-certitude"
-          ]
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-017\"\ncando: \"clarifier des questions contractuelles\"\nhw: \"Rédige une résiliation.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
         },
         {
           "lesson": 3,
-          "type": "spoken",
-          "title": "Connaissance et Vérité - Séminaire & Débat",
-          "duration_minutes": 90,
-          "grammar": [
-            "Propositions subordonnées concessives (Bien que, Quoique, En dépit du fait que)",
-            "Inversion du sujet dans les propositions hypothétiques"
-          ],
+          "type": "gv",
+          "title": "Droit pénal et prévention",
+          "grammar": "Nominalisation juridique",
+          "duration_minutes": 60,
           "vocabulary": [
-            "Chambre d'écho",
-            "Biais de confirmation",
-            "Éducation aux médias",
-            "Ère de la post-vérité",
-            "Examen critique"
+            "droit pénal",
+            "qualification pénale",
+            "instruction",
+            "jugement",
+            "prévention",
+            "réinsertion",
+            "protection des victimes",
+            "proportionnalité"
           ],
           "practice_types": [
+            "vocabulary",
+            "grammar",
             "speaking",
-            "listening"
+            "listening",
+            "reading",
+            "writing"
           ],
-          "speaking_percent": 80,
-          "teacher_notes": "code: \"FR-C1-012\"\ncando: \"Peut contester en direct des erreurs de logique et débattre des phénomènes de post-vérité dans le discours académique\"",
-          "recycled": "Expressions de modalité pour exprimer divers degrés de certitude, Ponctuation stylistique et parenthèses énonciatives, Véracité",
-          "grammarIds": [
-            "fr-c1-propositions-subordonnees-concessives-bien-que-quoique-en-depit-du-fait-que",
-            "fr-c1-inversion-du-sujet-dans-les-propositions-hypothetiques"
-          ]
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-018\"\ncando: \"débattre des finalités de la peine\"\nhw: \"Analyse la proportionnalité.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
+        },
+        {
+          "lesson": 4,
+          "type": "gv",
+          "title": "Droit européen",
+          "grammar": "Locutions prépositives (en vertu de, au titre de)",
+          "duration_minutes": 60,
+          "vocabulary": [
+            "directive",
+            "règlement",
+            "compétence",
+            "marché intérieur",
+            "subsidiarité",
+            "transposition",
+            "primauté",
+            "interprétation"
+          ],
+          "practice_types": [
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-019\"\ncando: \"situer la norme européenne\"\nhw: \"Situe une directive européenne.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
+        },
+        {
+          "lesson": 5,
+          "type": "gv",
+          "title": "Droit et justice",
+          "grammar": "Périodes subordonnées complexes",
+          "duration_minutes": 60,
+          "vocabulary": [
+            "justice",
+            "équité",
+            "égalité",
+            "arbitraire",
+            "motivation",
+            "arbitrage",
+            "précédent",
+            "État de droit"
+          ],
+          "practice_types": [
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-020\"\ncando: \"débattre de questions de justice\"\nhw: \"Analyse un précédent.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
         }
       ]
     },
     {
       "unit": 5,
-      "title": "Discours et Argumentation",
+      "title": "Structures sociales et démographie",
       "lessons": [
         {
           "lesson": 1,
-          "type": "vocab",
-          "title": "Discours et Argumentation - Vocabulaire I",
+          "type": "gv",
+          "title": "Structure sociale",
+          "grammar": "Connecteurs discursifs complexes (dans la mesure où, ce nonobstant)",
           "duration_minutes": 60,
           "vocabulary": [
-            "Stratégie rhétorique",
-            "Prémisse",
-            "Syllogisme",
-            "Concession",
-            "Réfutation",
-            "Éloquent",
-            "Persuasif",
-            "Cohérent",
-            "Incisif",
-            "Prise de position"
+            "structure sociale",
+            "milieu social",
+            "classe",
+            "ascension",
+            "inégalité",
+            "patrimoine",
+            "éducation",
+            "mobilité"
           ],
           "practice_types": [
-            "reading",
-            "listening",
+            "vocabulary",
+            "grammar",
             "speaking",
+            "listening",
+            "reading",
             "writing"
           ],
-          "speaking_percent": 40,
-          "teacher_notes": "code: \"FR-C1-013\"\npronunciation: [{\"point\":\"Rythme oratoire et accent d'insistance\",\"explain\":\"Utiliser l'accent d'insistance intellectuel sur la première syllabe du mot pour faire ressortir un contraste.\",\"examples\":[{\"pattern\":\"incisif\",\"ipa\":\"/ɛ̃.si.zif/\",\"word\":\"incisif\"}],\"visual\":\"🗣️\"}]\ncando: \"Peut déployer un large éventail de procédés rhétoriques et de vocabulaire argumentatif persuasif\"",
-          "recycled": "Réfutation et contre-argumentation, Détection et déconstruction des sophismes, Éducation aux médias"
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-021\"\ncando: \"décrire les structures sociales\"\nhw: \"Décris une structure sociale.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
         },
         {
           "lesson": 2,
-          "type": "grammar",
-          "title": "Discours et Argumentation - Grammaire Avancée",
+          "type": "gv",
+          "title": "Changement démographique",
+          "grammar": "Subjonctif dans les subordonnées de valuation",
           "duration_minutes": 60,
-          "grammar": [
-            "Concordance des temps complexes à l’indicatif et au subjonctif",
-            "Connecteurs logiques et articulateurs du discours soutenu (Nonobstant, Bien que, Dans la mesure où)"
+          "vocabulary": [
+            "natalité",
+            "espérance de vie",
+            "pyramide des âges",
+            "immigration",
+            "pénurie de main-d'œuvre",
+            "retraite",
+            "dépendance",
+            "projection"
           ],
           "practice_types": [
-            "writing",
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
             "reading",
-            "speaking"
+            "writing"
           ],
-          "speaking_percent": 45,
-          "teacher_notes": "code: \"FR-C1-014\"\npronunciation: [{\"point\":\"Cadence de la phrase périodique\",\"explain\":\"Soutenir l'intonation suspendue jusqu'à la proposition principale finale dans une phrase périodique.\",\"examples\":[{\"pattern\":\"Nonobstant les obstacles, nous avons réussi.\",\"ipa\":\"/nɔ.nɔps.tɑ̃/\",\"word\":\"Nonobstant\"}],\"visual\":\"📐\"}]\ncando: \"Peut composer des phrases aux structures variées (périodiques, équilibrées) enrichies de connecteurs de haut niveau\"",
-          "recycled": "Réfutation et contre-argumentation, Détection et déconstruction des sophismes, Cohérent",
-          "grammarIds": [
-            "fr-c1-concordance-des-temps-complexes-a-lindicatif-et-au-subjonctif",
-            "fr-c1-connecteurs-logiques-et-articulateurs-du-discours-soutenu-nonobstant-bien-que-dans-la-mesure-ou"
-          ]
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-022\"\ncando: \"interpréter des projections démographiques\"\nhw: \"Interprète une projection démographique.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
         },
         {
           "lesson": 3,
-          "type": "spoken",
-          "title": "Discours et Argumentation - Séminaire & Débat",
-          "duration_minutes": 90,
-          "grammar": [
-            "Formes surcomposées et conditionnel passé 2e forme (eût été, eût fallu)",
-            "Tournures passives et factitives (Faire + infinitif, Laisser + infinitif)"
-          ],
+          "type": "gv",
+          "title": "Ville et logement",
+          "grammar": "Participiales détachées",
+          "duration_minutes": 60,
           "vocabulary": [
-            "Discours d'ouverture",
-            "Table ronde",
-            "Recherche de consensus",
-            "Droit de réponse",
-            "Allocution finale"
+            "gentrification",
+            "prix du loyer",
+            "densification",
+            "infrastructure",
+            "quartier",
+            "logement vacant",
+            "réhabilitation",
+            "éviction"
           ],
           "practice_types": [
+            "vocabulary",
+            "grammar",
             "speaking",
-            "listening"
+            "listening",
+            "reading",
+            "writing"
           ],
-          "speaking_percent": 80,
-          "teacher_notes": "code: \"FR-C1-015\"\ncando: \"Peut prononcer un discours inaugural structuré et mener des débats professionnels à haut enjeu de façon très fluide\"",
-          "recycled": "Variété de la structure de la phrase, Connecteurs de discours de niveau soutenu, Cohérent",
-          "grammarIds": [
-            "fr-c1-formes-surcomposees-et-conditionnel-passe-2e-forme-eut-ete-eut-fallu",
-            "fr-c1-tournures-passives-et-factitives-faire-infinitif-laisser-infinitif"
-          ]
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-023\"\ncando: \"évaluer le développement urbain\"\nhw: \"Évalue un projet de quartier.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
+        },
+        {
+          "lesson": 4,
+          "type": "gv",
+          "title": "École et égalité des chances",
+          "grammar": "Concession avancée",
+          "duration_minutes": 60,
+          "vocabulary": [
+            "égalité des chances",
+            "sélection",
+            "programme",
+            "encadrement",
+            "passerelles",
+            "diplôme",
+            "origine",
+            "accompagnement"
+          ],
+          "practice_types": [
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-024\"\ncando: \"débattre de l'équité scolaire\"\nhw: \"Débat de l'équité scolaire.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
+        },
+        {
+          "lesson": 5,
+          "type": "gv",
+          "title": "État social",
+          "grammar": "Tournures impersonnelles d'obligation (il incombe de)",
+          "duration_minutes": 60,
+          "vocabulary": [
+            "État social",
+            "redistribution",
+            "cotisation",
+            "droit",
+            "besoin",
+            "couverture",
+            "solidarité",
+            "financement"
+          ],
+          "practice_types": [
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-025\"\ncando: \"débattre de l'État social\"\nhw: \"Débat de l'État social.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
         }
       ]
     },
     {
       "unit": 6,
-      "title": "Économie, Marchés Globaux et Géopolitique",
+      "title": "Migration et mutations culturelles",
       "lessons": [
         {
           "lesson": 1,
-          "type": "vocab",
-          "title": "Économie et Marchés Globaux - Vocabulaire I",
+          "type": "gv",
+          "title": "Migration et intégration",
+          "grammar": "Passif avec verbes modaux",
           "duration_minutes": 60,
           "vocabulary": [
-            "Stabilité macroéconomique",
-            "Élasticité-prix",
-            "Risque systémique",
-            "Déficit budgétaire",
-            "Contagion financière",
-            "Matelas de liquidité",
-            "Protectionnisme",
-            "Dette souveraine",
-            "Équilibre du marché",
-            "Arbitrage"
+            "immigration",
+            "intégration",
+            "participation",
+            "cours de langue",
+            "reconnaissance",
+            "séjour",
+            "nationalité",
+            "diversité"
           ],
           "practice_types": [
-            "reading",
-            "listening",
+            "vocabulary",
+            "grammar",
             "speaking",
+            "listening",
+            "reading",
             "writing"
           ],
-          "speaking_percent": 40,
-          "teacher_notes": "code: \"FR-C1-016\"\npronunciation: [{\"point\":\"Accentuation de la terminologie financière soutenue\",\"explain\":\"Maintenir une prononciation claire et sans contraction des termes financiers techniques.\",\"examples\":[{\"pattern\":\"arbitrage\",\"ipa\":\"/aʁ.bi.tʁaʒ/\",\"word\":\"arbitrage\"}],\"visual\":\"📈\"}]\ncando: \"Peut analyser les politiques macroéconomiques, le risque systémique et les dynamiques de marché avec aisance\"",
-          "recycled": "Négociation avancée, précaution oratoire et gestion de la parole, Discours liminaire, Recherche de consensus"
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-026\"\ncando: \"décrire les politiques d'intégration\"\nhw: \"Décris un dispositif d'intégration.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
         },
         {
           "lesson": 2,
-          "type": "grammar",
-          "title": "Économie et Marchés Globaux - Grammaire Avancée",
+          "type": "gv",
+          "title": "Asile et refuge",
+          "grammar": "Discours rapporté dans l'exposé",
           "duration_minutes": 60,
-          "grammar": [
-            "Conditionnel passé 2e forme dans le discours économique et prévisionnel",
-            "Inversion du sujet et antéposition de l’adjectif ou du participe"
+          "vocabulary": [
+            "asile",
+            "statut de protection",
+            "pays d'origine",
+            "procédure",
+            "hébergement",
+            "retour",
+            "protection",
+            "examen"
           ],
           "practice_types": [
-            "writing",
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
             "reading",
-            "speaking"
+            "writing"
           ],
-          "speaking_percent": 45,
-          "teacher_notes": "code: \"FR-C1-017\"\npronunciation: [{\"point\":\"Prosodie de l'inversion poétique/soutenue\",\"explain\":\"Utiliser un ton soutenu et ferme lors des incises hypothétiques au subjonctif impératif/imparfait.\",\"examples\":[{\"pattern\":\"Dussent les banques centrales...\",\"ipa\":\"/dys.tə le bɑ̃k/\",\"word\":\"Dussent\"}],\"visual\":\"📊\"}]\ncando: \"Peut présenter des prévisions économiques élaborées à l'aide d'hypothèses soutenues et de la mise en relief\"",
-          "recycled": "Négociation avancée, précaution oratoire et gestion de la parole, Discours liminaire, Dette souveraine",
-          "grammarIds": [
-            "fr-c1-conditionnel-passe-2e-forme-dans-le-discours-economique-et-previsionnel",
-            "fr-c1-inversion-du-sujet-et-anteposition-de-ladjectif-ou-du-participe"
-          ]
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-027\"\ncando: \"expliquer la procédure d'asile\"\nhw: \"Explique une procédure d'asile.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
         },
         {
           "lesson": 3,
-          "type": "spoken",
-          "title": "Économie et Marchés Globaux - Séminaire & Débat",
-          "duration_minutes": 90,
-          "grammar": [
-            "Style indirect libre et discours rapporté complexe",
-            "Pronoms démonstratifs et possessifs complexes de substitution"
-          ],
+          "type": "gv",
+          "title": "Interculturalité",
+          "grammar": "Concession avec encore que",
+          "duration_minutes": 60,
           "vocabulary": [
-            "Traité bilatéral",
-            "Embargo commercial",
-            "Sanction économique",
-            "Alliance multilatérale",
-            "Volatilité géopolitique"
+            "interculturalité",
+            "stéréotype",
+            "préjugé",
+            "assignation",
+            "dialogue",
+            "traduction",
+            "malentendu",
+            "respect"
           ],
           "practice_types": [
+            "vocabulary",
+            "grammar",
             "speaking",
-            "listening"
+            "listening",
+            "reading",
+            "writing"
           ],
-          "speaking_percent": 80,
-          "teacher_notes": "code: \"FR-C1-018\"\ncando: \"Peut mener des débats stratégiques sur les politiques commerciales internationales et la stabilité géopolitique\"",
-          "recycled": "Inversion de l'hypothèse dans la prévision économique, Anticipation et principe du poids final, Dette souveraine",
-          "grammarIds": [
-            "fr-c1-style-indirect-libre-et-discours-rapporte-complexe",
-            "fr-c1-pronoms-demonstratifs-et-possessifs-complexes-de-substitution"
-          ]
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-028\"\ncando: \"interpréter des malentendus culturels\"\nhw: \"Interprète un malentendu.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
+        },
+        {
+          "lesson": 4,
+          "type": "gv",
+          "title": "Langue et identité",
+          "grammar": "Nominalisation",
+          "duration_minutes": 60,
+          "vocabulary": [
+            "langue maternelle",
+            "langue seconde",
+            "plurilinguisme",
+            "accent",
+            "politique linguistique",
+            "identité",
+            "appartenance",
+            "valorisation"
+          ],
+          "practice_types": [
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-029\"\ncando: \"parler de langue et d'identité\"\nhw: \"Débat de la politique linguistique.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
+        },
+        {
+          "lesson": 5,
+          "type": "gv",
+          "title": "Mutations culturelles",
+          "grammar": "Périodes oratoires",
+          "duration_minutes": 60,
+          "vocabulary": [
+            "mutation",
+            "tradition",
+            "évolution des valeurs",
+            "génération",
+            "norme",
+            "usage",
+            "débat",
+            "acceptation"
+          ],
+          "practice_types": [
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-030\"\ncando: \"décrire les mutations culturelles\"\nhw: \"Décris une évolution des valeurs.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
         }
       ]
     },
     {
       "unit": 7,
-      "title": "Esthétique, Beaux-Arts et Bilan C1",
+      "title": "Connaissance et vérité",
       "lessons": [
         {
           "lesson": 1,
-          "type": "vocab",
-          "title": "Esthétique, Beaux-Arts et Critique Culturelle",
+          "type": "gv",
+          "title": "Épistémologie",
+          "grammar": "Modalisation épistémique (devoir + infinitif, se pouvoir que)",
           "duration_minutes": 60,
           "vocabulary": [
-            "Évaluation esthétique",
-            "Iconographie",
-            "Propos curatorial",
-            "Avant-garde",
-            "Analyse herméneutique",
-            "Symétrie structurale",
-            "Patrimoine culturel",
-            "Clair-obscur",
-            "Juxtaposition",
-            "Critique incisive"
+            "connaissance",
+            "certitude",
+            "doute",
+            "fondement",
+            "intuition",
+            "expérience",
+            "conclusion",
+            "présupposé"
           ],
           "practice_types": [
-            "reading",
-            "listening",
+            "vocabulary",
+            "grammar",
             "speaking",
+            "listening",
+            "reading",
             "writing"
           ],
-          "speaking_percent": 45,
-          "teacher_notes": "code: \"FR-C1-019\"\npronunciation: [{\"point\":\"Prononciation soignée du vocabulaire de l'art\",\"explain\":\"Respecter la sonorité poétique et l'articulation des termes de la critique d'art.\",\"examples\":[{\"pattern\":\"clair-obscur\",\"ipa\":\"/klɛʁ.ɔps.kyʁ/\",\"word\":\"clair-obscur\"}],\"visual\":\"🎨\"}]\ncando: \"Peut formuler des critiques d'art élaborées et articuler des analyses esthétiques poussées dans un registre soutenu\"",
-          "recycled": "Mise en avant syntaxique et tournures passives, Concession diplomatique, Sanction économique"
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-031\"\ncando: \"examiner des prétentions à la connaissance\"\nhw: \"Examine une prétention à la connaissance.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
         },
         {
           "lesson": 2,
-          "type": "grammar",
-          "title": "Esthétique et Critique Culturelle - Grammaire Avancée",
+          "type": "gv",
+          "title": "Vérité et perspective",
+          "grammar": "Adjectifs et participes substantivés",
           "duration_minutes": 60,
-          "grammar": [
-            "Nominalisation stylistique et cadence de la phrase dans l’essai critique",
-            "Placement des adverbes modificateurs pour exprimer les nuances esthétiques"
-          ],
-          "practice_types": [
-            "writing",
-            "reading",
-            "speaking"
-          ],
-          "speaking_percent": 45,
-          "teacher_notes": "code: \"FR-C1-020\"\ncando: \"Peut composer des commentaires culturels riches et stylistiquement aboutis en maîtrisant la nominalisation et la cadence réflexive\"",
-          "recycled": "Mise en avant syntaxique et tournures passives, Concession diplomatique, Clair-obscur",
-          "grammarIds": [
-            "fr-c1-nominalisation-stylistique-et-cadence-de-la-phrase-dans-lessai-critique",
-            "fr-c1-placement-des-adverbes-modificateurs-pour-exprimer-les-nuances-esthetiques"
-          ]
-        },
-        {
-          "lesson": 3,
-          "type": "srev",
-          "title": "Examen Bilan de Maîtrise du Niveau C1",
-          "duration_minutes": 90,
-          "grammar": [
-            "Synthèse générale de la grammaire C1 : subjonctif soutenu, ne explétif, inversion littéraire, participiales et phrases clivées"
-          ],
           "vocabulary": [
-            "TOUT le lexique C1 spécialisé",
-            "Locutions académiques et connecteurs soutenus C1",
-            "Procédés rhétoriques C1"
+            "vérité",
+            "perspective",
+            "interprétation",
+            "consensus",
+            "objectivité",
+            "relativisme",
+            "témoignage",
+            "preuve"
           ],
           "practice_types": [
+            "vocabulary",
+            "grammar",
             "speaking",
             "listening",
             "reading",
             "writing"
           ],
-          "speaking_percent": 80,
-          "teacher_notes": "code: \"FR-C1-021\"\ncando: \"Démontre une autonomie et une maîtrise opérationnelle accomplie du niveau C1 (DALF C1) dans les domaines académiques, professionnels, économiques et culturels\"",
-          "recycled": "Nominalisation stylistique et rythme de la phrase, Place des adjectifs et modificateurs, Clair-obscur",
-          "grammarIds": [
-            "fr-c1-synthese-generale-de-la-grammaire-c1-subjonctif-soutenu-ne-expletif-inversion-litteraire-participiales-et-phrases-clivees"
-          ]
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-032\"\ncando: \"distinguer des prétentions à la vérité\"\nhw: \"Distingue deux prétentions à la vérité.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
+        },
+        {
+          "lesson": 3,
+          "type": "gv",
+          "title": "Preuve et indice",
+          "grammar": "Voix passive et effacement de l'agent",
+          "duration_minutes": 60,
+          "vocabulary": [
+            "preuve",
+            "indice",
+            "causalité",
+            "fausse causalité",
+            "source",
+            "vérification",
+            "démonstration",
+            "corroboration"
+          ],
+          "practice_types": [
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-033\"\ncando: \"évaluer des preuves\"\nhw: \"Évalue une preuve.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
+        },
+        {
+          "lesson": 4,
+          "type": "gv",
+          "title": "Esprit critique",
+          "grammar": "Structures de réfutation",
+          "duration_minutes": 60,
+          "vocabulary": [
+            "sophisme",
+            "biais",
+            "postulat",
+            "prémisse",
+            "conclusion",
+            "contradiction",
+            "examen",
+            "jugement"
+          ],
+          "practice_types": [
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-034\"\ncando: \"repérer des sophismes\"\nhw: \"Repère un sophisme.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
+        },
+        {
+          "lesson": 5,
+          "type": "gv",
+          "title": "Savoir et société",
+          "grammar": "Conditionnel irréel de distanciation",
+          "duration_minutes": 60,
+          "vocabulary": [
+            "société de la connaissance",
+            "expertise",
+            "confiance",
+            "scepticisme",
+            "Lumières",
+            "autonomie",
+            "discours",
+            "responsabilité"
+          ],
+          "practice_types": [
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-035\"\ncando: \"débattre de la société de la connaissance\"\nhw: \"Débat de l'expertise.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
+        }
+      ]
+    },
+    {
+      "unit": 8,
+      "title": "Médias, espace public et post-vérité",
+      "lessons": [
+        {
+          "lesson": 1,
+          "type": "gv",
+          "title": "Paysage médiatique",
+          "grammar": "Style nominal journalistique",
+          "duration_minutes": 60,
+          "vocabulary": [
+            "paysage médiatique",
+            "tirage",
+            "audience",
+            "format",
+            "rédaction",
+            "correspondant",
+            "presse à sensation",
+            "journalisme de qualité"
+          ],
+          "practice_types": [
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-036\"\ncando: \"situer l'offre médiatique\"\nhw: \"Situe deux médias.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
+        },
+        {
+          "lesson": 2,
+          "type": "gv",
+          "title": "Désinformation",
+          "grammar": "Discours rapporté et attribution",
+          "duration_minutes": 60,
+          "vocabulary": [
+            "désinformation",
+            "falsification",
+            "narratif",
+            "diffusion",
+            "plateforme",
+            "bulle informationnelle",
+            "vérification",
+            "réfutation"
+          ],
+          "practice_types": [
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-037\"\ncando: \"démonter la désinformation\"\nhw: \"Démonte une fausse nouvelle.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
+        },
+        {
+          "lesson": 3,
+          "type": "gv",
+          "title": "Critique des sources",
+          "grammar": "Passif impersonnel",
+          "duration_minutes": 60,
+          "vocabulary": [
+            "source",
+            "preuve",
+            "témoin",
+            "document",
+            "anonymat",
+            "vérification",
+            "intérêt",
+            "crédibilité"
+          ],
+          "practice_types": [
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-038\"\ncando: \"évaluer des sources avec méthode\"\nhw: \"Évalue deux sources.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
+        },
+        {
+          "lesson": 4,
+          "type": "gv",
+          "title": "Liberté d'expression",
+          "grammar": "Concession",
+          "duration_minutes": 60,
+          "vocabulary": [
+            "liberté d'expression",
+            "censure",
+            "limite",
+            "injure",
+            "satire",
+            "protection",
+            "arbitrage",
+            "espace public"
+          ],
+          "practice_types": [
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-039\"\ncando: \"débattre des limites de la liberté d'expression\"\nhw: \"Débat d'une limite.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
+        },
+        {
+          "lesson": 5,
+          "type": "gv",
+          "title": "Débat public",
+          "grammar": "Périodes et ponctuation",
+          "duration_minutes": 60,
+          "vocabulary": [
+            "débat",
+            "polarisation",
+            "indignation",
+            "compromis",
+            "camp",
+            "médiation",
+            "ton",
+            "respect"
+          ],
+          "practice_types": [
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-040\"\ncando: \"animer un débat\"\nhw: \"Anime un débat.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
+        }
+      ]
+    },
+    {
+      "unit": 9,
+      "title": "Rhétorique et argumentation",
+      "lessons": [
+        {
+          "lesson": 1,
+          "type": "gv",
+          "title": "Procédés rhétoriques",
+          "grammar": "Périodes et symétrie",
+          "duration_minutes": 60,
+          "vocabulary": [
+            "rhétorique",
+            "métaphore",
+            "antithèse",
+            "répétition",
+            "gradation",
+            "allusion",
+            "rythme",
+            "effet"
+          ],
+          "practice_types": [
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-041\"\ncando: \"analyser des procédés rhétoriques\"\nhw: \"Analyse un discours.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
+        },
+        {
+          "lesson": 2,
+          "type": "gv",
+          "title": "Structure argumentative",
+          "grammar": "Connecteurs d'opposition et d'ordonnancement",
+          "duration_minutes": 60,
+          "vocabulary": [
+            "thèse",
+            "argument",
+            "preuve",
+            "objection",
+            "réfutation",
+            "conclusion",
+            "prémisse",
+            "pondération"
+          ],
+          "practice_types": [
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-042\"\ncando: \"construire une argumentation\"\nhw: \"Construis une argumentation.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
+        },
+        {
+          "lesson": 3,
+          "type": "gv",
+          "title": "Conduite de débat",
+          "grammar": "Reformulateurs discursifs",
+          "duration_minutes": 60,
+          "vocabulary": [
+            "prise de parole",
+            "droit de réponse",
+            "interruption",
+            "rappel à l'ordre",
+            "synthèse",
+            "compromis",
+            "majorité",
+            "vote"
+          ],
+          "practice_types": [
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-043\"\ncando: \"conduire un débat\"\nhw: \"Conduis un débat.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
+        },
+        {
+          "lesson": 4,
+          "type": "gv",
+          "title": "Négociation",
+          "grammar": "Formules de recherche de consensus",
+          "duration_minutes": 60,
+          "vocabulary": [
+            "offre",
+            "concession",
+            "exigence",
+            "compromis",
+            "marge",
+            "accord",
+            "délai",
+            "renégociation"
+          ],
+          "practice_types": [
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-044\"\ncando: \"négocier\"\nhw: \"Négocie un accord.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
+        },
+        {
+          "lesson": 5,
+          "type": "gv",
+          "title": "Conférence et table ronde",
+          "grammar": "Reformulation spontanée et mise en relief",
+          "duration_minutes": 60,
+          "vocabulary": [
+            "conférence",
+            "table ronde",
+            "modération",
+            "public",
+            "question",
+            "réponse",
+            "chute",
+            "clôture"
+          ],
+          "practice_types": [
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-045\"\ncando: \"prononcer une conférence\"\nhw: \"Prononce une conférence brève.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
+        }
+      ]
+    },
+    {
+      "unit": 10,
+      "title": "Économie et marchés financiers",
+      "lessons": [
+        {
+          "lesson": 1,
+          "type": "gv",
+          "title": "Macroéconomie",
+          "grammar": "Conditionnelles à protase réduite",
+          "duration_minutes": 60,
+          "vocabulary": [
+            "conjoncture",
+            "croissance",
+            "inflation",
+            "taux d'intérêt",
+            "chômage",
+            "budget",
+            "prévision",
+            "indicateur"
+          ],
+          "practice_types": [
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-046\"\ncando: \"interpréter des données conjoncturelles\"\nhw: \"Interprète un indicateur.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
+        },
+        {
+          "lesson": 2,
+          "type": "gv",
+          "title": "Marchés financiers",
+          "grammar": "Passif et antéposition focale",
+          "duration_minutes": 60,
+          "vocabulary": [
+            "obligation",
+            "rendement",
+            "risque",
+            "bulle",
+            "supervision",
+            "régulation",
+            "liquidité",
+            "cotation"
+          ],
+          "practice_types": [
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-047\"\ncando: \"expliquer des risques financiers\"\nhw: \"Explique un risque financier.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
+        },
+        {
+          "lesson": 3,
+          "type": "gv",
+          "title": "Gouvernance d'entreprise",
+          "grammar": "Nominalisation économique",
+          "duration_minutes": 60,
+          "vocabulary": [
+            "stratégie",
+            "bilan",
+            "indicateur",
+            "investissement",
+            "site",
+            "concurrence",
+            "responsabilité",
+            "supervision"
+          ],
+          "practice_types": [
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-048\"\ncando: \"évaluer des décisions d'entreprise\"\nhw: \"Évalue un investissement.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
+        },
+        {
+          "lesson": 4,
+          "type": "gv",
+          "title": "Marché du travail",
+          "grammar": "Tournures d'obligation et de nécessité",
+          "duration_minutes": 60,
+          "vocabulary": [
+            "qualification",
+            "convention collective",
+            "précarité",
+            "formation continue",
+            "intermédiation",
+            "taux",
+            "incitation",
+            "profil"
+          ],
+          "practice_types": [
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-049\"\ncando: \"débattre de la politique de l'emploi\"\nhw: \"Débat d'une mesure pour l'emploi.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
+        },
+        {
+          "lesson": 5,
+          "type": "gv",
+          "title": "Commerce et chaînes d'approvisionnement",
+          "grammar": "Ordre des constituants et poids final",
+          "duration_minutes": 60,
+          "vocabulary": [
+            "chaîne d'approvisionnement",
+            "droit de douane",
+            "dépendance",
+            "diversification",
+            "standard",
+            "certification",
+            "sanction",
+            "exportation"
+          ],
+          "practice_types": [
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-050\"\ncando: \"analyser des chaînes d'approvisionnement\"\nhw: \"Analyse une chaîne d'approvisionnement.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
+        }
+      ]
+    },
+    {
+      "unit": 11,
+      "title": "Géopolitique et relations internationales",
+      "lessons": [
+        {
+          "lesson": 1,
+          "type": "gv",
+          "title": "Situation géopolitique",
+          "grammar": "Formules diplomatiques et atténuation",
+          "duration_minutes": 60,
+          "vocabulary": [
+            "alliance",
+            "intérêt",
+            "influence",
+            "dissuasion",
+            "souveraineté",
+            "médiation",
+            "sanction",
+            "négociation"
+          ],
+          "practice_types": [
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-051\"\ncando: \"évaluer une situation géopolitique\"\nhw: \"Évalue une situation géopolitique.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
+        },
+        {
+          "lesson": 2,
+          "type": "gv",
+          "title": "Organisations internationales",
+          "grammar": "Passif impersonnel dans les rapports",
+          "duration_minutes": 60,
+          "vocabulary": [
+            "charte",
+            "mandat",
+            "résolution",
+            "droit de veto",
+            "contribution",
+            "mission",
+            "légitimation",
+            "réforme"
+          ],
+          "practice_types": [
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-052\"\ncando: \"expliquer le rôle des organisations internationales\"\nhw: \"Explique un mandat.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
+        },
+        {
+          "lesson": 3,
+          "type": "gv",
+          "title": "Politique commerciale",
+          "grammar": "Conditionnelles à protase implicite",
+          "duration_minutes": 60,
+          "vocabulary": [
+            "droit de douane",
+            "quota",
+            "accord",
+            "règlement des différends",
+            "protectionnisme",
+            "libre-échange",
+            "exception",
+            "rétorsion"
+          ],
+          "practice_types": [
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-053\"\ncando: \"débattre de conflits commerciaux\"\nhw: \"Débat d'un conflit commercial.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
+        },
+        {
+          "lesson": 4,
+          "type": "gv",
+          "title": "Politique de sécurité",
+          "grammar": "Subjonctif en concessive",
+          "duration_minutes": 60,
+          "vocabulary": [
+            "menace",
+            "alliance",
+            "armement",
+            "désarmement",
+            "contrôle",
+            "dialogue",
+            "risque",
+            "stabilité"
+          ],
+          "practice_types": [
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-054\"\ncando: \"peser des risques de sécurité\"\nhw: \"Pèse un risque de sécurité.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
+        },
+        {
+          "lesson": 5,
+          "type": "gv",
+          "title": "Coopération mondiale",
+          "grammar": "Périodes complexes",
+          "duration_minutes": 60,
+          "vocabulary": [
+            "climat",
+            "développement",
+            "financement",
+            "partenariat",
+            "engagement",
+            "mise en œuvre",
+            "contrôle",
+            "solidarité"
+          ],
+          "practice_types": [
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-055\"\ncando: \"évaluer la coopération mondiale\"\nhw: \"Évalue un partenariat.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
+        }
+      ]
+    },
+    {
+      "unit": 12,
+      "title": "Esthétique et critique culturelle",
+      "lessons": [
+        {
+          "lesson": 1,
+          "type": "gv",
+          "title": "Esthétique",
+          "grammar": "Nominalisation esthétique",
+          "duration_minutes": 60,
+          "vocabulary": [
+            "esthétique",
+            "perception",
+            "forme",
+            "matière",
+            "effet",
+            "style",
+            "canon",
+            "réception"
+          ],
+          "practice_types": [
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-056\"\ncando: \"expliciter des catégories esthétiques\"\nhw: \"Explicite une catégorie esthétique.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
+        },
+        {
+          "lesson": 2,
+          "type": "gv",
+          "title": "Critique d'art",
+          "grammar": "Adjectivation antéposée",
+          "duration_minutes": 60,
+          "vocabulary": [
+            "critique",
+            "œuvre",
+            "interprétation",
+            "contexte",
+            "citation",
+            "référence",
+            "jugement",
+            "motivation"
+          ],
+          "practice_types": [
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-057\"\ncando: \"commenter une œuvre\"\nhw: \"Commente une œuvre.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
+        },
+        {
+          "lesson": 3,
+          "type": "gv",
+          "title": "Littérature et canon",
+          "grammar": "Périodes de rythme essayiste",
+          "duration_minutes": 60,
+          "vocabulary": [
+            "canon",
+            "genre",
+            "narrateur",
+            "motif",
+            "interprétation",
+            "époque",
+            "traduction",
+            "portée"
+          ],
+          "practice_types": [
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-058\"\ncando: \"parler de littérature\"\nhw: \"Interprète un motif.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
+        },
+        {
+          "lesson": 4,
+          "type": "gv",
+          "title": "Critique culturelle",
+          "grammar": "Concession et nuance",
+          "duration_minutes": 60,
+          "vocabulary": [
+            "critique culturelle",
+            "consommation",
+            "marchandisation",
+            "authenticité",
+            "tradition",
+            "culture populaire",
+            "distinction",
+            "mutation"
+          ],
+          "practice_types": [
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-059\"\ncando: \"formuler une critique culturelle\"\nhw: \"Formule une critique culturelle.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
+        },
+        {
+          "lesson": 5,
+          "type": "gv",
+          "title": "Patrimoine culturel",
+          "grammar": "Incises et ponctuation",
+          "duration_minutes": 60,
+          "vocabulary": [
+            "patrimoine",
+            "monument",
+            "restauration",
+            "valorisation",
+            "tourisme",
+            "conservation",
+            "accès",
+            "identité"
+          ],
+          "practice_types": [
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-060\"\ncando: \"parler du patrimoine culturel\"\nhw: \"Débat d'un projet de restauration.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
+        }
+      ]
+    },
+    {
+      "unit": 13,
+      "title": "Examen et consolidation",
+      "lessons": [
+        {
+          "lesson": 1,
+          "type": "gv",
+          "title": "Grammaire : passif et subjonctif",
+          "grammar": "Synthèse du passif et du subjonctif",
+          "duration_minutes": 60,
+          "vocabulary": [
+            "passif",
+            "subjonctif",
+            "périphrase",
+            "accord",
+            "subordonnée",
+            "connecteur",
+            "modalité",
+            "registre"
+          ],
+          "practice_types": [
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-061\"\ncando: \"employer le passif et le subjonctif avec sûreté\"\nhw: \"Résous dix exercices sur le passif.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
+        },
+        {
+          "lesson": 2,
+          "type": "gv",
+          "title": "Grammaire : discours rapporté et conditionnelles",
+          "grammar": "Discours rapporté et conditionnelles",
+          "duration_minutes": 60,
+          "vocabulary": [
+            "discours rapporté",
+            "conditionnel",
+            "irréel",
+            "attribution",
+            "concordance des temps",
+            "reformulation",
+            "nuance",
+            "distance"
+          ],
+          "practice_types": [
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-062\"\ncando: \"employer le discours rapporté et les conditionnelles\"\nhw: \"Transforme dix phrases.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
+        },
+        {
+          "lesson": 3,
+          "type": "gv",
+          "title": "Lexique et collocations",
+          "grammar": "Collocations et registre",
+          "duration_minutes": 60,
+          "vocabulary": [
+            "collocation",
+            "style nominal",
+            "style verbal",
+            "terme technique",
+            "synonyme",
+            "registre",
+            "nuance",
+            "précision"
+          ],
+          "practice_types": [
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-063\"\ncando: \"employer le lexique avec précision\"\nhw: \"Forme dix collocations.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
+        },
+        {
+          "lesson": 4,
+          "type": "gv",
+          "title": "Compréhension écrite et orale",
+          "grammar": "Formats d'examen",
+          "duration_minutes": 60,
+          "vocabulary": [
+            "texte",
+            "tâche",
+            "appariement",
+            "énoncé",
+            "détail",
+            "idée principale",
+            "enregistrement",
+            "note"
+          ],
+          "practice_types": [
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-064\"\ncando: \"traiter des tâches de compréhension\"\nhw: \"Résous une tâche de lecture.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
+        },
+        {
+          "lesson": 5,
+          "type": "gv",
+          "title": "Expression écrite et orale",
+          "grammar": "Formats d'examen",
+          "duration_minutes": 60,
+          "vocabulary": [
+            "dissertation",
+            "prise de position",
+            "synthèse",
+            "exposé",
+            "discussion",
+            "évaluation",
+            "structure",
+            "expression"
+          ],
+          "practice_types": [
+            "vocabulary",
+            "grammar",
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 55,
+          "teacher_notes": "code: \"FR-C1-065\"\ncando: \"écrire et parler à l'examen\"\nhw: \"Rédige une dissertation.\"",
+          "recycled": "Reprend le vocabulaire et la grammaire des leçons précédentes."
         }
       ]
     }
