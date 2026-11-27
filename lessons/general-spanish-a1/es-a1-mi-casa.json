@@ -1,0 +1,406 @@
+{
+  "id": "es-a1-mi-casa",
+  "title": "Mi casa",
+  "level": "A1",
+  "language": "es",
+  "unit": "Unidad 5: La vivienda",
+  "canDo": "Puedo describir mi casa y decir dónde están las cosas.",
+  "defaultDuration": 50,
+  "defaultMode": "all",
+  "objectives": [
+    "usar la estructura objetivo: preposiciones de lugar",
+    "usar 8 palabras nuevas: la casa, la habitación, la cocina, el baño, el balcón, los muebles, el armario, acogedor"
+  ],
+  "materials": "Tarjetas de vocabulario, audio de la audición, hoja de lectura, fotos u objetos reales, páginas de gramática A1 de COSYmanuals sobre preposiciones de lugar.",
+  "assessment": "Comprobar el uso correcto de preposiciones de lugar y la pronunciación clara de las palabras objetivo.",
+  "homework": "Escribe cinco frases describiendo tu casa.",
+  "recycling": {
+    "prior": "Recicla la casa de la lección 1.3.",
+    "next": "La lección 5.2 recicla la casa y añade los muebles."
+  },
+  "differentiation": {
+    "individual": "Una ficha de trabajo: cinco frases sobre el tema de la lección (ES-A1-026).",
+    "group": "Una tarea de clase en parejas o grupos pequeños.",
+    "children": "Un plano de la casa dibujado y etiquetado.",
+    "teens": "Una descripción de la casa ideal.",
+    "adults": "Una conversación sobre pisos y casas.",
+    "seniors": "Fotos de habitaciones con letra grande."
+  },
+  "links": {
+    "vocabulary": [
+      "la casa",
+      "la habitación",
+      "la cocina",
+      "el baño",
+      "el balcón",
+      "los muebles",
+      "el armario",
+      "acogedor"
+    ],
+    "grammar": [
+      {
+        "topic_id": "preposiciones-lugar",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/es/grammar/a1/topics/preposiciones-lugar.html"
+      }
+    ],
+    "phonetics": "La h de habitación es muda."
+  },
+  "slides": [
+    {
+      "id": "es-a1-mi-casa-slide-1",
+      "title": "1. Objetivo Comunicativo y Panorama",
+      "stage": "warm-up",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Objetivo comunicativo: Puedo describir mi casa y decir dónde están las cosas."
+        },
+        {
+          "type": "blockquote",
+          "content": "Panorama de la lección:\n- Nivel: A1 Español General\n- Unidad: Unidad 5: La vivienda\n- Tiempo: 60 min (Esencial) / 90 min (Ampliado) / 120 min (Taller completo)\n- Enfoque: Mi casa\n- Materiales: tarjetas de vocabulario, audio, hoja de lectura"
+        },
+        {
+          "type": "instruction",
+          "content": "Calentamiento: di una palabra que ya conoces sobre este tema."
+        },
+        {
+          "type": "input",
+          "placeholder": "Escribe una palabra que conozcas..."
+        }
+      ]
+    },
+    {
+      "id": "es-a1-mi-casa-slide-2",
+      "title": "2. Reciclaje y Continuidad",
+      "stage": "recycling",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Recicla la casa de la lección 1.3."
+        },
+        {
+          "type": "blockquote",
+          "content": "Lengua reciclada: la casa, la habitación, la cocina."
+        },
+        {
+          "type": "instruction",
+          "content": "Responde de memoria: ¿qué palabra pertenece a este tema?"
+        },
+        {
+          "type": "test",
+          "content": "¿Qué palabra pertenece a este tema?",
+          "options": [
+            "la casa",
+            "aeropuerto",
+            "paraguas"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "es-a1-mi-casa-slide-3",
+      "title": "3. Vocabulario y Expresiones Esenciales",
+      "stage": "input",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Vocabulario activo básico (8 elementos):"
+        },
+        {
+          "type": "blockquote",
+          "content": "la casa — el lugar donde vives. Ejemplo: Mi casa está cerca del parque.\nla habitación — una sala para dormir. Ejemplo: El armario está en la habitación.\nla cocina — la sala donde se cocina. Ejemplo: La cocina está cerca del baño.\nel baño — la sala con la ducha. Ejemplo: El baño está al lado de la cocina.\nel balcón — la terraza pequeña fuera de casa. Ejemplo: Hay un balcón con plantas.\nlos muebles — la mesa, la silla, la cama. Ejemplo: Los muebles son nuevos.\nel armario — el mueble para la ropa. Ejemplo: El armario está en la habitación.\nacogedor — cómodo y agradable. Ejemplo: Mi casa es pequeña y acogedora."
+        },
+        {
+          "type": "instruction",
+          "content": "Expresiones esenciales y combinaciones funcionales:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• Mi casa es pequeña y acogedora.\n• El baño está al lado de la cocina.\n• Hay un balcón.\n• Los muebles son nuevos.\n• El armario está en la habitación."
+        },
+        {
+          "type": "instruction",
+          "content": "Práctica de vocabulario: elige la palabra correcta."
+        },
+        {
+          "type": "test",
+          "content": "¿Qué palabra significa 'el lugar donde vives'?",
+          "options": [
+            "la casa",
+            "la habitación",
+            "la cocina"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "¿Qué palabra significa 'una sala para dormir'?",
+          "options": [
+            "la habitación",
+            "la casa",
+            "la cocina"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Completa la frase con una palabra de la lista."
+        },
+        {
+          "type": "input",
+          "placeholder": "Completa: Mi casa está cerca del parque."
+        }
+      ]
+    },
+    {
+      "id": "es-a1-mi-casa-slide-4",
+      "title": "4. Enfoque de Pronunciación",
+      "stage": "pronunciation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "La h de habitación es muda."
+        },
+        {
+          "type": "blockquote",
+          "content": "habitación /aβitaˈθjon/"
+        },
+        {
+          "type": "instruction",
+          "content": "Escucha y repite tres veces."
+        },
+        {
+          "type": "test",
+          "content": "¿Qué palabra lleva el acento principal?",
+          "options": [
+            "la casa",
+            "el",
+            "la"
+          ]
+        },
+        {
+          "type": "input",
+          "placeholder": "Escribe la parte acentuada: ..."
+        }
+      ]
+    },
+    {
+      "id": "es-a1-mi-casa-slide-5",
+      "title": "5. Enfoque Gramatical y Práctica Controlada",
+      "stage": "grammar",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Enfoque gramatical: Preposiciones de lugar."
+        },
+        {
+          "type": "blockquote",
+          "content": "Usa estar + preposición para la ubicación: El baño está al lado de la cocina. El armario está en la habitación."
+        },
+        {
+          "type": "grammar-focus",
+          "grammarId": "es-a1-preposiciones-lugar"
+        },
+        {
+          "type": "instruction",
+          "content": "Práctica controlada: elige la opción correcta."
+        },
+        {
+          "type": "test",
+          "content": "Elige la preposición correcta.",
+          "options": [
+            "El baño está al lado de la cocina.",
+            "El baño está al lado la cocina.",
+            "El baño es al lado de la cocina."
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Elige la frase correcta.",
+          "options": [
+            "Hay un balcón.",
+            "Es un balcón hay.",
+            "Está un balcón."
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Completa la frase."
+        },
+        {
+          "type": "input",
+          "placeholder": "Los ___ son nuevos."
+        },
+        {
+          "type": "input",
+          "placeholder": "Mi casa es pequeña pero ___."
+        }
+      ]
+    },
+    {
+      "id": "es-a1-mi-casa-slide-6",
+      "title": "6. Distribución de las Cuatro Destrezas (Comprensión Auditiva y Lectora)",
+      "stage": "reading-listening",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Lectura: lee el texto y responde a las preguntas."
+        },
+        {
+          "type": "blockquote",
+          "content": "Mi casa es pequeña y acogedora. La cocina está cerca del baño y hay un balcón con plantas. Los muebles son nuevos y el armario está en la habitación."
+        },
+        {
+          "type": "input",
+          "placeholder": "¿Cómo es la casa?"
+        },
+        {
+          "type": "input",
+          "placeholder": "¿Dónde está el armario?"
+        },
+        {
+          "type": "instruction",
+          "content": "Audición: escucha el diálogo y responde a las preguntas."
+        },
+        {
+          "type": "blockquote",
+          "content": "A: ¿Cómo es tu casa? B: Pequeña, pero muy acogedora. A: ¿Tiene balcón? B: Sí, al lado de la cocina."
+        },
+        {
+          "type": "input",
+          "placeholder": "¿Cómo es la casa?"
+        },
+        {
+          "type": "input",
+          "placeholder": "¿Dónde está el balcón?"
+        }
+      ]
+    },
+    {
+      "id": "es-a1-mi-casa-slide-7",
+      "title": "7. Producción Oral y Escrita",
+      "stage": "freer-practice",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Expresión oral: practica en parejas las expresiones de la lección."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Mi casa es pequeña y acogedora.\n• El baño está al lado de la cocina.\n• Hay un balcón."
+        },
+        {
+          "type": "instruction",
+          "content": "Expresión escrita: escribe un texto corto con el vocabulario de la lección."
+        },
+        {
+          "type": "essay",
+          "placeholder": "Escribe tu respuesta aquí..."
+        },
+        {
+          "type": "input",
+          "placeholder": "Una frase que dirás en el trabajo en parejas:"
+        }
+      ]
+    },
+    {
+      "id": "es-a1-mi-casa-slide-8",
+      "title": "8. Flujos de Clase según la Duración",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Elige el flujo que se adapte a tu tiempo."
+        },
+        {
+          "type": "blockquote",
+          "content": "60 min (Esencial): calentamiento, vocabulario, gramática y una tarea oral.\n90 min (Ampliado): añade pronunciación, lectura y audición.\n120 min (Taller completo): añade la tarea escrita, la corrección entre iguales y el proyecto de la unidad."
+        }
+      ]
+    },
+    {
+      "id": "es-a1-mi-casa-slide-9",
+      "title": "9. Adaptaciones de Entrega",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Adapta la lección a tu grupo."
+        },
+        {
+          "type": "blockquote",
+          "content": "Niños: Un plano de la casa dibujado y etiquetado."
+        },
+        {
+          "type": "blockquote",
+          "content": "Adolescentes: Una descripción de la casa ideal."
+        },
+        {
+          "type": "blockquote",
+          "content": "Adultos: Una conversación sobre pisos y casas."
+        },
+        {
+          "type": "blockquote",
+          "content": "Personas mayores: Fotos de habitaciones con letra grande."
+        },
+        {
+          "type": "blockquote",
+          "content": "Individual: una ficha de trabajo con cinco frases (ES-A1-026)."
+        },
+        {
+          "type": "blockquote",
+          "content": "Grupo: una tarea de clase en parejas o grupos pequeños."
+        }
+      ]
+    },
+    {
+      "id": "es-a1-mi-casa-slide-10",
+      "title": "10. Deberes y Notas de Reciclaje",
+      "stage": "cool-down",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Deberes:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Escribe cinco frases describiendo tu casa."
+        },
+        {
+          "type": "input",
+          "placeholder": "Escribe aquí la frase de tus deberes..."
+        },
+        {
+          "type": "instruction",
+          "content": "Respuesta modelo para comparar:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Mi casa está cerca del parque."
+        },
+        {
+          "type": "blockquote",
+          "content": "La lección 5.2 recicla la casa y añade los muebles."
+        }
+      ]
+    }
+  ]
+}

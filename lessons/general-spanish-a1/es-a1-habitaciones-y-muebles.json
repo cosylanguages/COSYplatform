@@ -1,0 +1,406 @@
+{
+  "id": "es-a1-habitaciones-y-muebles",
+  "title": "Habitaciones y muebles",
+  "level": "A1",
+  "language": "es",
+  "unit": "Unidad 5: La vivienda",
+  "canDo": "Puedo decir qué muebles hay en cada habitación.",
+  "defaultDuration": 50,
+  "defaultMode": "all",
+  "objectives": [
+    "usar la estructura objetivo: hay + sustantivos",
+    "usar 8 palabras nuevas: la mesa, la silla, la cama, el sofá, la lámpara, la alfombra, la estantería, poner"
+  ],
+  "materials": "Tarjetas de vocabulario, audio de la audición, hoja de lectura, fotos u objetos reales, páginas de gramática A1 de COSYmanuals sobre hay + sustantivos.",
+  "assessment": "Comprobar el uso correcto de hay + sustantivos y la pronunciación clara de las palabras objetivo.",
+  "homework": "Escribe cinco frases sobre los muebles de tu casa.",
+  "recycling": {
+    "prior": "Recicla la casa de la lección 5.1.",
+    "next": "La lección 5.3 recicla la vivienda y añade el alquiler."
+  },
+  "differentiation": {
+    "individual": "Una ficha de trabajo: cinco frases sobre el tema de la lección (ES-A1-027).",
+    "group": "Una tarea de clase en parejas o grupos pequeños.",
+    "children": "Un juego de poner muebles en habitaciones.",
+    "teens": "Una descripción de su habitación.",
+    "adults": "Una conversación sobre muebles.",
+    "seniors": "Fotos de muebles con letra grande."
+  },
+  "links": {
+    "vocabulary": [
+      "la mesa",
+      "la silla",
+      "la cama",
+      "el sofá",
+      "la lámpara",
+      "la alfombra",
+      "la estantería",
+      "poner"
+    ],
+    "grammar": [
+      {
+        "topic_id": "hay-vs-esta",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/es/grammar/a1/topics/hay-vs-esta.html"
+      }
+    ],
+    "phonetics": "La ll de silla suena como /ʝ/ en muchas regiones."
+  },
+  "slides": [
+    {
+      "id": "es-a1-habitaciones-y-muebles-slide-1",
+      "title": "1. Objetivo Comunicativo y Panorama",
+      "stage": "warm-up",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Objetivo comunicativo: Puedo decir qué muebles hay en cada habitación."
+        },
+        {
+          "type": "blockquote",
+          "content": "Panorama de la lección:\n- Nivel: A1 Español General\n- Unidad: Unidad 5: La vivienda\n- Tiempo: 60 min (Esencial) / 90 min (Ampliado) / 120 min (Taller completo)\n- Enfoque: Habitaciones y muebles\n- Materiales: tarjetas de vocabulario, audio, hoja de lectura"
+        },
+        {
+          "type": "instruction",
+          "content": "Calentamiento: di una palabra que ya conoces sobre este tema."
+        },
+        {
+          "type": "input",
+          "placeholder": "Escribe una palabra que conozcas..."
+        }
+      ]
+    },
+    {
+      "id": "es-a1-habitaciones-y-muebles-slide-2",
+      "title": "2. Reciclaje y Continuidad",
+      "stage": "recycling",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Recicla la casa de la lección 5.1."
+        },
+        {
+          "type": "blockquote",
+          "content": "Lengua reciclada: la mesa, la silla, la cama."
+        },
+        {
+          "type": "instruction",
+          "content": "Responde de memoria: ¿qué palabra pertenece a este tema?"
+        },
+        {
+          "type": "test",
+          "content": "¿Qué palabra pertenece a este tema?",
+          "options": [
+            "la mesa",
+            "aeropuerto",
+            "paraguas"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "es-a1-habitaciones-y-muebles-slide-3",
+      "title": "3. Vocabulario y Expresiones Esenciales",
+      "stage": "input",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Vocabulario activo básico (8 elementos):"
+        },
+        {
+          "type": "blockquote",
+          "content": "la mesa — el mueble con cuatro patas. Ejemplo: En el salón hay una mesa.\nla silla — el mueble para sentarse. Ejemplo: Hay muchas sillas.\nla cama — el mueble para dormir. Ejemplo: En la habitación hay una cama.\nel sofá — el asiento blando del salón. Ejemplo: En el salón hay un sofá.\nla lámpara — el objeto que da luz. Ejemplo: Hay dos lámparas.\nla alfombra — la tela que cubre el suelo. Ejemplo: Hay una alfombra en el salón.\nla estantería — el mueble para libros. Ejemplo: No hay estantería.\nponer — colocar algo en un lugar. Ejemplo: Pon la mesa en la cocina."
+        },
+        {
+          "type": "instruction",
+          "content": "Expresiones esenciales y combinaciones funcionales:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• En el salón hay un sofá.\n• En la habitación hay una cama.\n• Hay dos lámparas.\n• No hay estantería.\n• Pon la mesa en la cocina."
+        },
+        {
+          "type": "instruction",
+          "content": "Práctica de vocabulario: elige la palabra correcta."
+        },
+        {
+          "type": "test",
+          "content": "¿Qué palabra significa 'el mueble con cuatro patas'?",
+          "options": [
+            "la mesa",
+            "la silla",
+            "la cama"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "¿Qué palabra significa 'el mueble para sentarse'?",
+          "options": [
+            "la silla",
+            "la mesa",
+            "la cama"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Completa la frase con una palabra de la lista."
+        },
+        {
+          "type": "input",
+          "placeholder": "Completa: En el salón hay una mesa."
+        }
+      ]
+    },
+    {
+      "id": "es-a1-habitaciones-y-muebles-slide-4",
+      "title": "4. Enfoque de Pronunciación",
+      "stage": "pronunciation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "La ll de silla suena como /ʝ/ en muchas regiones."
+        },
+        {
+          "type": "blockquote",
+          "content": "silla /ˈsiʝa/, lámpara /ˈlampara/"
+        },
+        {
+          "type": "instruction",
+          "content": "Escucha y repite tres veces."
+        },
+        {
+          "type": "test",
+          "content": "¿Qué palabra lleva el acento principal?",
+          "options": [
+            "la mesa",
+            "el",
+            "la"
+          ]
+        },
+        {
+          "type": "input",
+          "placeholder": "Escribe la parte acentuada: ..."
+        }
+      ]
+    },
+    {
+      "id": "es-a1-habitaciones-y-muebles-slide-5",
+      "title": "5. Enfoque Gramatical y Práctica Controlada",
+      "stage": "grammar",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Enfoque gramatical: Hay + sustantivos."
+        },
+        {
+          "type": "blockquote",
+          "content": "Usa hay para decir que algo existe, en singular o en plural: Hay una cama. Hay dos lámparas. No hay alfombra."
+        },
+        {
+          "type": "grammar-focus",
+          "grammarId": "es-a1-hay-vs-esta"
+        },
+        {
+          "type": "instruction",
+          "content": "Práctica controlada: elige la opción correcta."
+        },
+        {
+          "type": "test",
+          "content": "Elige la forma correcta.",
+          "options": [
+            "Hay dos lámparas.",
+            "Hay dos lámpara.",
+            "Están dos lámparas hay."
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Elige la frase correcta.",
+          "options": [
+            "No hay alfombra.",
+            "No está alfombra.",
+            "No hay alfombra es."
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Completa la frase."
+        },
+        {
+          "type": "input",
+          "placeholder": "En la habitación hay una ___."
+        },
+        {
+          "type": "input",
+          "placeholder": "En el salón hay un ___."
+        }
+      ]
+    },
+    {
+      "id": "es-a1-habitaciones-y-muebles-slide-6",
+      "title": "6. Distribución de las Cuatro Destrezas (Comprensión Auditiva y Lectora)",
+      "stage": "reading-listening",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Lectura: lee el texto y responde a las preguntas."
+        },
+        {
+          "type": "blockquote",
+          "content": "En el salón hay un sofá, una mesa y una alfombra. En la habitación hay una cama y dos lámparas. En el salón no hay estantería, pero hay muchas sillas."
+        },
+        {
+          "type": "input",
+          "placeholder": "¿Qué hay en el salón?"
+        },
+        {
+          "type": "input",
+          "placeholder": "¿Qué hay en la habitación?"
+        },
+        {
+          "type": "instruction",
+          "content": "Audición: escucha el diálogo y responde a las preguntas."
+        },
+        {
+          "type": "blockquote",
+          "content": "A: ¿Qué hay en el salón? B: Un sofá y una alfombra. A: ¿Y estanterías? B: No, no hay."
+        },
+        {
+          "type": "input",
+          "placeholder": "¿Qué hay en el salón?"
+        },
+        {
+          "type": "input",
+          "placeholder": "¿Hay estanterías?"
+        }
+      ]
+    },
+    {
+      "id": "es-a1-habitaciones-y-muebles-slide-7",
+      "title": "7. Producción Oral y Escrita",
+      "stage": "freer-practice",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Expresión oral: practica en parejas las expresiones de la lección."
+        },
+        {
+          "type": "blockquote",
+          "content": "• En el salón hay un sofá.\n• En la habitación hay una cama.\n• Hay dos lámparas."
+        },
+        {
+          "type": "instruction",
+          "content": "Expresión escrita: escribe un texto corto con el vocabulario de la lección."
+        },
+        {
+          "type": "essay",
+          "placeholder": "Escribe tu respuesta aquí..."
+        },
+        {
+          "type": "input",
+          "placeholder": "Una frase que dirás en el trabajo en parejas:"
+        }
+      ]
+    },
+    {
+      "id": "es-a1-habitaciones-y-muebles-slide-8",
+      "title": "8. Flujos de Clase según la Duración",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Elige el flujo que se adapte a tu tiempo."
+        },
+        {
+          "type": "blockquote",
+          "content": "60 min (Esencial): calentamiento, vocabulario, gramática y una tarea oral.\n90 min (Ampliado): añade pronunciación, lectura y audición.\n120 min (Taller completo): añade la tarea escrita, la corrección entre iguales y el proyecto de la unidad."
+        }
+      ]
+    },
+    {
+      "id": "es-a1-habitaciones-y-muebles-slide-9",
+      "title": "9. Adaptaciones de Entrega",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Adapta la lección a tu grupo."
+        },
+        {
+          "type": "blockquote",
+          "content": "Niños: Un juego de poner muebles en habitaciones."
+        },
+        {
+          "type": "blockquote",
+          "content": "Adolescentes: Una descripción de su habitación."
+        },
+        {
+          "type": "blockquote",
+          "content": "Adultos: Una conversación sobre muebles."
+        },
+        {
+          "type": "blockquote",
+          "content": "Personas mayores: Fotos de muebles con letra grande."
+        },
+        {
+          "type": "blockquote",
+          "content": "Individual: una ficha de trabajo con cinco frases (ES-A1-027)."
+        },
+        {
+          "type": "blockquote",
+          "content": "Grupo: una tarea de clase en parejas o grupos pequeños."
+        }
+      ]
+    },
+    {
+      "id": "es-a1-habitaciones-y-muebles-slide-10",
+      "title": "10. Deberes y Notas de Reciclaje",
+      "stage": "cool-down",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Deberes:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Escribe cinco frases sobre los muebles de tu casa."
+        },
+        {
+          "type": "input",
+          "placeholder": "Escribe aquí la frase de tus deberes..."
+        },
+        {
+          "type": "instruction",
+          "content": "Respuesta modelo para comparar:"
+        },
+        {
+          "type": "blockquote",
+          "content": "En el salón hay una mesa."
+        },
+        {
+          "type": "blockquote",
+          "content": "La lección 5.3 recicla la vivienda y añade el alquiler."
+        }
+      ]
+    }
+  ]
+}
