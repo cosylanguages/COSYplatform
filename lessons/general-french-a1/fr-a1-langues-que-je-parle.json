@@ -1,0 +1,406 @@
+{
+  "id": "fr-a1-langues-que-je-parle",
+  "title": "Langues que je parle",
+  "level": "A1",
+  "language": "fr",
+  "unit": "Module 1 : Premier contact et identité personnelle",
+  "canDo": "Je peux dire quelles langues je parle.",
+  "defaultDuration": 50,
+  "defaultMode": "all",
+  "objectives": [
+    "utiliser la structure cible : verbe 'parler', verbe 'pouvoir' + infinitif, négation 'ne... pas'",
+    "utiliser 8 nouveaux mots : langue, français, anglais, parler, un peu, espagnol, allemand, couramment"
+  ],
+  "materials": "Cartes de vocabulaire, audio du texte, fiche de lecture, images ou objets réels, pages de grammaire A1 de COSYmanuals sur verbe 'parler', verbe 'pouvoir' + infinitif, négation 'ne... pas'.",
+  "assessment": "Vérifie l’usage correct de verbe 'parler', verbe 'pouvoir' + infinitif, négation 'ne... pas' et la prononciation claire des mots cibles.",
+  "homework": "Écris cinq phrases sur les langues que tu parles.",
+  "recycling": {
+    "prior": "Révise le cours 1.4.",
+    "next": "Le cours 1.6 ajoute les nombres de 0 à 20."
+  },
+  "differentiation": {
+    "individual": "Une fiche : cinq phrases sur le thème du cours (FR-05).",
+    "group": "Une tâche en binôme ou en petits groupes.",
+    "children": "Un jeu de langues avec des drapeaux.",
+    "teens": "Un sondage sur les langues de la classe.",
+    "adults": "Un dialogue sur les langues au travail.",
+    "seniors": "Grandes cartes de langues."
+  },
+  "links": {
+    "vocabulary": [
+      "langue",
+      "français",
+      "anglais",
+      "parler",
+      "un peu",
+      "espagnol",
+      "allemand",
+      "couramment"
+    ],
+    "grammar": [
+      {
+        "topic_id": "negation",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/fr/grammar/a1/topics/negation.html"
+      }
+    ],
+    "phonetics": "Le u de tu se prononce /y/."
+  },
+  "slides": [
+    {
+      "id": "fr-a1-langues-que-je-parle-slide-1",
+      "title": "1. Objectif communicatif et vue d’ensemble",
+      "stage": "warm-up",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Objectif communicatif : Je peux dire quelles langues je parle."
+        },
+        {
+          "type": "blockquote",
+          "content": "Vue d’ensemble du cours :\n- Niveau : A1 Français général\n- Unité : Module 1 : Premier contact et identité personnelle\n- Durée : 60 min (base) / 90 min (étendu) / 120 min (atelier complet)\n- Focus : Langues que je parle\n- Matériel : cartes de vocabulaire, audio, fiche de lecture"
+        },
+        {
+          "type": "instruction",
+          "content": "Échauffement : dis un mot que tu connais déjà sur ce thème."
+        },
+        {
+          "type": "input",
+          "placeholder": "Écris un mot que tu connais ..."
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-langues-que-je-parle-slide-2",
+      "title": "2. Révision et lien",
+      "stage": "recycling",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Révise le cours 1.4."
+        },
+        {
+          "type": "blockquote",
+          "content": "Vocabulaire révisé : langue, français, anglais."
+        },
+        {
+          "type": "instruction",
+          "content": "Réponds de mémoire : quel mot appartient à ce thème ?"
+        },
+        {
+          "type": "test",
+          "content": "Quel mot appartient à ce thème ?",
+          "options": [
+            "langue",
+            "aéroport",
+            "parapluie"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-langues-que-je-parle-slide-3",
+      "title": "3. Vocabulaire et expressions essentielles",
+      "stage": "input",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Vocabulaire actif de base (8 éléments) :"
+        },
+        {
+          "type": "blockquote",
+          "content": "langue — le système pour parler. Exemple: Je parle deux langues.\nfrançais — la langue de la France. Exemple: Je parle français.\nanglais — la langue de l’Angleterre. Exemple: Il est anglais.\nparler — dire des mots. Exemple: Je parle français.\nun peu — pas beaucoup. Exemple: Je parle un peu anglais.\nespagnol — la langue de l’Espagne. Exemple: Je parle un peu espagnol.\nallemand — la langue de l’Allemagne. Exemple: Je ne parle pas allemand.\ncouramment — vite et bien. Exemple: Je parle anglais couramment."
+        },
+        {
+          "type": "instruction",
+          "content": "Expressions essentielles et combinaisons fonctionnelles :"
+        },
+        {
+          "type": "blockquote",
+          "content": "• Je parle français.\n• Je parle un peu anglais.\n• Tu parles espagnol ?\n• Je ne parle pas allemand.\n• Je peux parler italien."
+        },
+        {
+          "type": "instruction",
+          "content": "Pratique du vocabulaire : choisis le mot correct."
+        },
+        {
+          "type": "test",
+          "content": "Quel mot signifie « le système pour parler » ?",
+          "options": [
+            "langue",
+            "français",
+            "anglais"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Quel mot signifie « la langue de la France » ?",
+          "options": [
+            "français",
+            "langue",
+            "anglais"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Complète la phrase avec un mot de la liste."
+        },
+        {
+          "type": "input",
+          "placeholder": "Complète : Je parle deux ___s."
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-langues-que-je-parle-slide-4",
+      "title": "4. Point de prononciation",
+      "stage": "pronunciation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Le u de tu se prononce /y/."
+        },
+        {
+          "type": "blockquote",
+          "content": "tu /ty/, parle /paʁl/"
+        },
+        {
+          "type": "instruction",
+          "content": "Écoute et répète trois fois."
+        },
+        {
+          "type": "test",
+          "content": "Quel mot entends-tu dans l’audio ?",
+          "options": [
+            "langue",
+            "le",
+            "un"
+          ]
+        },
+        {
+          "type": "input",
+          "placeholder": "Écris le mot entendu : ..."
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-langues-que-je-parle-slide-5",
+      "title": "5. Point de grammaire et pratique guidée",
+      "stage": "grammar",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Point de grammaire : Verbe 'parler', verbe 'pouvoir' + infinitif, négation 'ne... pas'."
+        },
+        {
+          "type": "blockquote",
+          "content": "Parler : je parle, tu parles, il parle. La négation est ne … pas : je ne parle pas allemand. Avec pouvoir : je peux parler anglais."
+        },
+        {
+          "type": "grammar-focus",
+          "grammarId": "fr-a1-negation"
+        },
+        {
+          "type": "instruction",
+          "content": "Pratique guidée : choisis la bonne option."
+        },
+        {
+          "type": "test",
+          "content": "Choisis la négation correcte.",
+          "options": [
+            "Je ne parle pas allemand.",
+            "Je parle ne pas allemand.",
+            "Je ne parle allemand pas."
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Choisis la forme correcte.",
+          "options": [
+            "Je peux parler italien.",
+            "Je peux parle italien.",
+            "Je pouvoir parler italien."
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Complète la phrase."
+        },
+        {
+          "type": "input",
+          "placeholder": "Je parle un ___ anglais."
+        },
+        {
+          "type": "input",
+          "placeholder": "Tu ___ espagnol ?"
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-langues-que-je-parle-slide-6",
+      "title": "6. Les quatre compétences (écouter et lire)",
+      "stage": "reading-listening",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Lire : lis le texte et réponds aux questions."
+        },
+        {
+          "type": "blockquote",
+          "content": "Je parle français et anglais. Je parle un peu espagnol, mais je ne parle pas allemand. Je peux parler italien, parce que ma mère est italienne."
+        },
+        {
+          "type": "input",
+          "placeholder": "Quelles langues parle-t-il ?"
+        },
+        {
+          "type": "input",
+          "placeholder": "Quelle langue ne parle-t-il pas ?"
+        },
+        {
+          "type": "instruction",
+          "content": "Écouter : écoute le dialogue et réponds aux questions."
+        },
+        {
+          "type": "blockquote",
+          "content": "A : Tu parles anglais ? B : Oui, un peu. A : Et allemand ? B : Non, je ne parle pas allemand."
+        },
+        {
+          "type": "input",
+          "placeholder": "Parle-t-il anglais ?"
+        },
+        {
+          "type": "input",
+          "placeholder": "Parle-t-il allemand ?"
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-langues-que-je-parle-slide-7",
+      "title": "7. Parler et écrire",
+      "stage": "freer-practice",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Parler : pratique les expressions du cours en binôme."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Je parle français.\n• Je parle un peu anglais.\n• Tu parles espagnol ?"
+        },
+        {
+          "type": "instruction",
+          "content": "Écrire : écris un texte court avec le vocabulaire du cours."
+        },
+        {
+          "type": "essay",
+          "placeholder": "Écris ta réponse ici ..."
+        },
+        {
+          "type": "input",
+          "placeholder": "Une phrase que tu dis en binôme :"
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-langues-que-je-parle-slide-8",
+      "title": "8. Déroulés de cours selon la durée",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Choisis le déroulé qui correspond à ton temps."
+        },
+        {
+          "type": "blockquote",
+          "content": "60 min (base) : échauffement, vocabulaire, grammaire et une tâche orale.\n90 min (étendu) : ajoute prononciation, lecture et écoute.\n120 min (atelier complet) : ajoute écriture, correction entre pairs et le projet de l’unité."
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-langues-que-je-parle-slide-9",
+      "title": "9. Adaptations pour le groupe",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Adapte le cours à ton groupe."
+        },
+        {
+          "type": "blockquote",
+          "content": "Enfants : Un jeu de langues avec des drapeaux."
+        },
+        {
+          "type": "blockquote",
+          "content": "Adolescents : Un sondage sur les langues de la classe."
+        },
+        {
+          "type": "blockquote",
+          "content": "Adultes : Un dialogue sur les langues au travail."
+        },
+        {
+          "type": "blockquote",
+          "content": "Seniors : Grandes cartes de langues."
+        },
+        {
+          "type": "blockquote",
+          "content": "Cours individuels : Une fiche : cinq phrases sur le thème du cours (FR-05)."
+        },
+        {
+          "type": "blockquote",
+          "content": "Groupe : Une tâche en binôme ou en petits groupes."
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-langues-que-je-parle-slide-10",
+      "title": "10. Devoirs et notes de révision",
+      "stage": "cool-down",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Devoirs :"
+        },
+        {
+          "type": "blockquote",
+          "content": "Écris cinq phrases sur les langues que tu parles."
+        },
+        {
+          "type": "input",
+          "placeholder": "Écris ici ta phrase de devoir ..."
+        },
+        {
+          "type": "instruction",
+          "content": "Réponse modèle à comparer :"
+        },
+        {
+          "type": "blockquote",
+          "content": "Je parle deux langues."
+        },
+        {
+          "type": "blockquote",
+          "content": "Le cours 1.6 ajoute les nombres de 0 à 20."
+        }
+      ]
+    }
+  ]
+}

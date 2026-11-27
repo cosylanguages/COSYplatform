@@ -132,7 +132,7 @@
       "lessons": [
         {
           "lesson": 1,
-          "title": "1.1 Bonjour ! Premier contact",
+          "title": "Bonjour ! Premier contact",
           "grammar": [
             "Pronoms sujets, verbe 'être' au présent, 's'appeler'"
           ],
@@ -141,7 +141,10 @@
             "salut",
             "au revoir",
             "merci",
-            "s'il vous plaît"
+            "s'il vous plaît",
+            "madame",
+            "monsieur",
+            "à bientôt"
           ],
           "teacher_notes": "code: \"FR-01\"\ncando: \"Peut saluer, dire au revoir, se présenter et utiliser le vocabulaire de la classe\"\nspeaking: \"Se présenter et saluer en classe\"\nlistening: \"Trois personnes se présentent\"\nreading: \"Un court dialogue de présentation\"\nwriting: \"Écrire 5 phrases pour se présenter\"",
           "recycled": "Module 1 foundational progression",
@@ -154,7 +157,7 @@
         },
         {
           "lesson": 2,
-          "title": "1.2 Comment t'appelles-tu ? Demander le nom",
+          "title": "Comment t'appelles-tu ? Demander le nom",
           "grammar": [
             "Questions avec 's'appeler', présentations avec 'C'est'"
           ],
@@ -163,7 +166,10 @@
             "prénom",
             "ami",
             "qui",
-            "comment"
+            "comment",
+            "comment t'appelles-tu",
+            "enchanté",
+            "voici"
           ],
           "teacher_notes": "code: \"FR-02\"\ncando: \"Peut demander et donner un nom, et présenter une autre personne\"\nspeaking: \"Demander les noms et présenter un ami en trio\"\nlistening: \"Personnes demandant et donnant leur nom\"\nreading: \"Dialogues simples lors d'une rencontre\"\nwriting: \"Rédiger un court dialogue de présentation\"",
           "recycled": "Module 1 foundational progression",
@@ -175,7 +181,7 @@
         },
         {
           "lesson": 3,
-          "title": "1.3 Alphabet & Épellation",
+          "title": "Alphabet & Épellation",
           "grammar": [
             "Comment ça s'écrit ?, accents et cédille"
           ],
@@ -184,16 +190,22 @@
             "lettre",
             "épeler",
             "voyelle",
-            "consonne"
+            "consonne",
+            "accent",
+            "cédille",
+            "majuscule"
           ],
           "teacher_notes": "code: \"FR-03\"\ncando: \"Peut épeler son nom et comprendre des mots épelés\"\nspeaking: \"Épeler son nom et son courriel à voix haute\"\nlistening: \"Dictée de noms et d'adresses courriel\"\nreading: \"Lecture de lettres et de codes\"\nwriting: \"Épeler par écrit des noms propres\"",
           "recycled": "Module 1 foundational progression",
           "num": 3,
-          "code": "M01-L03"
+          "code": "M01-L03",
+          "grammarIds": [
+            "fr-a1-mots-interrogatifs"
+          ]
         },
         {
           "lesson": 4,
-          "title": "1.4 Pays & Nationalités",
+          "title": "Pays & Nationalités",
           "grammar": [
             "Accord des adjectifs de nationalité, préposition 'de/du/d''"
           ],
@@ -202,7 +214,10 @@
             "nationalité",
             "ville",
             "passeport",
-            "France"
+            "France",
+            "français",
+            "anglais",
+            "étranger"
           ],
           "teacher_notes": "code: \"FR-04\"\ncando: \"Peut indiquer son pays d'origine et demander la nationalité\"\nspeaking: \"Demander l'origine et la nationalité en groupe\"\nlistening: \"Entretiens de contrôle aux frontières\"\nreading: \"Fiches de passeport\"\nwriting: \"Écrire 5 phrases sur l'origine de personnes connues\"",
           "recycled": "Module 1 foundational progression",
@@ -214,7 +229,7 @@
         },
         {
           "lesson": 5,
-          "title": "1.5 Langues que je parle",
+          "title": "Langues que je parle",
           "grammar": [
             "Verbe 'parler', verbe 'pouvoir' + infinitif, négation 'ne... pas'"
           ],
@@ -223,7 +238,10 @@
             "français",
             "anglais",
             "parler",
-            "un peu"
+            "un peu",
+            "espagnol",
+            "allemand",
+            "couramment"
           ],
           "teacher_notes": "code: \"FR-05\"\ncando: \"Peut parler des langues connues et exprimer ses capacités\"\nspeaking: \"Sondage de classe sur les langues parlées\"\nlistening: \"Interviews de polyglottes\"\nreading: \"Descriptions de portefeuilles linguistiques\"\nwriting: \"Écrire 5 phrases sur ses compétences linguistiques\"",
           "recycled": "Module 1 foundational progression",
@@ -235,7 +253,7 @@
         },
         {
           "lesson": 6,
-          "title": "1.6 Les nombres de 0 à 20",
+          "title": "Les nombres de 0 à 20",
           "grammar": [
             "Pluriel des noms (-s), articles indéfinis 'des'"
           ],
@@ -244,7 +262,10 @@
             "un",
             "deux",
             "trois",
-            "vingt"
+            "vingt",
+            "quatre",
+            "cinq",
+            "dix"
           ],
           "teacher_notes": "code: \"FR-06\"\ncando: \"Peut compter de 0 à 20 et compter des objets\"\nspeaking: \"Comptage des objets de la classe et inventaire\"\nlistening: \"Dictées de nombres et quantités\"\nreading: \"Listes de stock courtes\"\nwriting: \"Écrire 5 groupes d'objets comptés au pluriel\"",
           "recycled": "Module 1 foundational progression",
@@ -257,7 +278,7 @@
         },
         {
           "lesson": 7,
-          "title": "1.7 Âge & Anniversaire",
+          "title": "Âge & Anniversaire",
           "grammar": [
             "Verbe 'avoir' pour l'âge, adjectifs possessifs (mon, ma, mes)"
           ],
@@ -266,7 +287,10 @@
             "an",
             "anniversaire",
             "mois",
-            "janvier"
+            "janvier",
+            "février",
+            "juin",
+            "décembre"
           ],
           "teacher_notes": "code: \"FR-07\"\ncando: \"Peut demander et dire son âge et parler de son anniversaire\"\nspeaking: \"Demander l'âge et le mois d'anniversaire\"\nlistening: \"Annonces d'anniversaires célèbres\"\nreading: \"Calendrier d'anniversaires\"\nwriting: \"Écrire 5 phrases sur l'âge de proches\"",
           "recycled": "Module 1 foundational progression",
@@ -278,7 +302,7 @@
         },
         {
           "lesson": 8,
-          "title": "1.8 Numéro de téléphone & Coordonnées",
+          "title": "Numéro de téléphone & Coordonnées",
           "grammar": [
             "Quel / Quelle, adjectifs possessifs"
           ],
@@ -287,7 +311,10 @@
             "portable",
             "courriel",
             "adresse",
-            "rue"
+            "rue",
+            "code postal",
+            "ville",
+            "habiter"
           ],
           "teacher_notes": "code: \"FR-08\"\ncando: \"Peut échanger des coordonnées complètes\"\nspeaking: \"Échanger des cartes de visite et coordonnées\"\nlistening: \"Dictée de numéros de téléphone et courriels\"\nreading: \"Formulaires de réservation d'hôtel\"\nwriting: \"Remplir une fiche de contact personnelle\"",
           "recycled": "Module 1 foundational progression",
@@ -299,7 +326,7 @@
         },
         {
           "lesson": 9,
-          "title": "1.9 Nombres de 20 à 100 & Prix",
+          "title": "Nombres de 20 à 100 & Prix",
           "grammar": [
             "Combien ça coûte ?, pluriel des prix"
           ],
@@ -308,7 +335,10 @@
             "quarante",
             "prix",
             "coût",
-            "euro"
+            "euro",
+            "cinquante",
+            "cent",
+            "cher"
           ],
           "teacher_notes": "code: \"FR-09\"\ncando: \"Peut comprendre les nombres de 20 à 100 et demander des prix\"\nspeaking: \"Demander des prix et acheter au marché\"\nlistening: \"Transactions en caisse de magasin\"\nreading: \"Étiquettes de prix et tickets de caisse\"\nwriting: \"Écrire 5 phrases indiquant des prix\"",
           "recycled": "Module 1 foundational progression",
@@ -320,7 +350,7 @@
         },
         {
           "lesson": 10,
-          "title": "1.10 Projet : Profil personnel",
+          "title": "Projet : Profil personnel",
           "grammar": [
             "Synthèse : être, avoir, s'appeler, parler, pouvoir"
           ],
@@ -329,12 +359,18 @@
             "identité",
             "information",
             "personnel",
-            "à propos de moi"
+            "à propos de moi",
+            "nom",
+            "âge",
+            "adresse"
           ],
           "teacher_notes": "code: \"FR-10\"\ncando: \"Peut présenter son profil personnel complet\"\nspeaking: \"Présentation orale de son profil en 1 minute\"\nlistening: \"Écoute des présentations de camarades\"\nreading: \"Exemples de cartes de profil\"\nwriting: \"Rédiger un profil personnel complet de 100 mots\"",
           "recycled": "Module 1 foundational progression",
           "num": 10,
-          "code": "M01-L10"
+          "code": "M01-L10",
+          "grammarIds": [
+            "fr-a1-recapitulatif-present-articles-et-possessifs"
+          ]
         }
       ],
       "num": 1,

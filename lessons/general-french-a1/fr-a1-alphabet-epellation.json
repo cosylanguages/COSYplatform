@@ -1,0 +1,406 @@
+{
+  "id": "fr-a1-alphabet-epellation",
+  "title": "Alphabet & Épellation",
+  "level": "A1",
+  "language": "fr",
+  "unit": "Module 1 : Premier contact et identité personnelle",
+  "canDo": "Je peux épeler un mot et nommer les accents.",
+  "defaultDuration": 50,
+  "defaultMode": "all",
+  "objectives": [
+    "utiliser la structure cible : comment ça s'écrit ?, accents et cédille",
+    "utiliser 8 nouveaux mots : alphabet, lettre, épeler, voyelle, consonne, accent, cédille, majuscule"
+  ],
+  "materials": "Cartes de vocabulaire, audio du texte, fiche de lecture, images ou objets réels, pages de grammaire A1 de COSYmanuals sur comment ça s'écrit ?, accents et cédille.",
+  "assessment": "Vérifie l’usage correct de comment ça s'écrit ?, accents et cédille et la prononciation claire des mots cibles.",
+  "homework": "Épelle ton nom et ton prénom à l’écrit.",
+  "recycling": {
+    "prior": "Révise le cours 1.2.",
+    "next": "Le cours 1.4 ajoute les pays et les nationalités."
+  },
+  "differentiation": {
+    "individual": "Une fiche : cinq phrases sur le thème du cours (FR-03).",
+    "group": "Une tâche en binôme ou en petits groupes.",
+    "children": "Un jeu d’épellation avec des cartes.",
+    "teens": "Une dictée de noms en binôme.",
+    "adults": "Une épellation de son propre nom.",
+    "seniors": "Grandes cartes de lettres, lues lentement."
+  },
+  "links": {
+    "vocabulary": [
+      "alphabet",
+      "lettre",
+      "épeler",
+      "voyelle",
+      "consonne",
+      "accent",
+      "cédille",
+      "majuscule"
+    ],
+    "grammar": [
+      {
+        "topic_id": "mots-interrogatifs",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/fr/grammar/a1/topics/mots-interrogatifs.html"
+      }
+    ],
+    "phonetics": "Les voyelles sont a, e, i, o, u, y."
+  },
+  "slides": [
+    {
+      "id": "fr-a1-alphabet-epellation-slide-1",
+      "title": "1. Objectif communicatif et vue d’ensemble",
+      "stage": "warm-up",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Objectif communicatif : Je peux épeler un mot et nommer les accents."
+        },
+        {
+          "type": "blockquote",
+          "content": "Vue d’ensemble du cours :\n- Niveau : A1 Français général\n- Unité : Module 1 : Premier contact et identité personnelle\n- Durée : 60 min (base) / 90 min (étendu) / 120 min (atelier complet)\n- Focus : Alphabet & Épellation\n- Matériel : cartes de vocabulaire, audio, fiche de lecture"
+        },
+        {
+          "type": "instruction",
+          "content": "Échauffement : dis un mot que tu connais déjà sur ce thème."
+        },
+        {
+          "type": "input",
+          "placeholder": "Écris un mot que tu connais ..."
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-alphabet-epellation-slide-2",
+      "title": "2. Révision et lien",
+      "stage": "recycling",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Révise le cours 1.2."
+        },
+        {
+          "type": "blockquote",
+          "content": "Vocabulaire révisé : alphabet, lettre, épeler."
+        },
+        {
+          "type": "instruction",
+          "content": "Réponds de mémoire : quel mot appartient à ce thème ?"
+        },
+        {
+          "type": "test",
+          "content": "Quel mot appartient à ce thème ?",
+          "options": [
+            "alphabet",
+            "aéroport",
+            "parapluie"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-alphabet-epellation-slide-3",
+      "title": "3. Vocabulaire et expressions essentielles",
+      "stage": "input",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Vocabulaire actif de base (8 éléments) :"
+        },
+        {
+          "type": "blockquote",
+          "content": "alphabet — les lettres d’une langue. Exemple: L’alphabet français a vingt-six lettres.\nlettre — un signe de l’alphabet. Exemple: La lettre A est une voyelle.\népeler — dire les lettres d’un mot. Exemple: Comment ça s’écrit ?\nvoyelle — a, e, i, o, u, y. Exemple: Les voyelles sont a, e, i, o, u, y.\nconsonne — lettre qui n’est pas une voyelle. Exemple: B est une consonne.\naccent — signe sur une lettre. Exemple: Il y a un accent aigu dans é.\ncédille — signe sous le c pour le son /s/. Exemple: Le ç s’appelle cédille.\nmajuscule — grande lettre. Exemple: Une majuscule au début."
+        },
+        {
+          "type": "instruction",
+          "content": "Expressions essentielles et combinaisons fonctionnelles :"
+        },
+        {
+          "type": "blockquote",
+          "content": "• Comment ça s’écrit ?\n• Ça s’écrit D-U-P-O-N-T.\n• Il y a un accent aigu.\n• Le ç s’appelle cédille.\n• Une majuscule, une minuscule."
+        },
+        {
+          "type": "instruction",
+          "content": "Pratique du vocabulaire : choisis le mot correct."
+        },
+        {
+          "type": "test",
+          "content": "Quel mot signifie « les lettres d’une langue » ?",
+          "options": [
+            "alphabet",
+            "lettre",
+            "épeler"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Quel mot signifie « un signe de l’alphabet » ?",
+          "options": [
+            "lettre",
+            "alphabet",
+            "épeler"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Complète la phrase avec un mot de la liste."
+        },
+        {
+          "type": "input",
+          "placeholder": "Complète : L’___ français a vingt-six lettres."
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-alphabet-epellation-slide-4",
+      "title": "4. Point de prononciation",
+      "stage": "pronunciation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Les voyelles sont a, e, i, o, u, y."
+        },
+        {
+          "type": "blockquote",
+          "content": "é /e/, è /ɛ/, ç /s/"
+        },
+        {
+          "type": "instruction",
+          "content": "Écoute et répète trois fois."
+        },
+        {
+          "type": "test",
+          "content": "Quel mot entends-tu dans l’audio ?",
+          "options": [
+            "alphabet",
+            "le",
+            "un"
+          ]
+        },
+        {
+          "type": "input",
+          "placeholder": "Écris le mot entendu : ..."
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-alphabet-epellation-slide-5",
+      "title": "5. Point de grammaire et pratique guidée",
+      "stage": "grammar",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Point de grammaire : Comment ça s'écrit ?, accents et cédille."
+        },
+        {
+          "type": "blockquote",
+          "content": "Pour épeler, nomme les lettres une par une. Les accents changent le son : é (aigu), è (grave), ê (circonflexe). La cédille ç donne le son /s/."
+        },
+        {
+          "type": "grammar-focus",
+          "grammarId": "fr-a1-mots-interrogatifs"
+        },
+        {
+          "type": "instruction",
+          "content": "Pratique guidée : choisis la bonne option."
+        },
+        {
+          "type": "test",
+          "content": "Choisis la phrase correcte.",
+          "options": [
+            "Ça s’écrit D-U-P-O-N-T.",
+            "Ça écrit D-U-P-O-N-T.",
+            "Ça s’écrit le D-U-P-O-N-T."
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Quel signe donne le son /s/ ?",
+          "options": [
+            "la cédille",
+            "l’accent aigu",
+            "la majuscule"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Complète la phrase."
+        },
+        {
+          "type": "input",
+          "placeholder": "Il y a un ___ aigu dans é."
+        },
+        {
+          "type": "input",
+          "placeholder": "Le ç s’appelle ___."
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-alphabet-epellation-slide-6",
+      "title": "6. Les quatre compétences (écouter et lire)",
+      "stage": "reading-listening",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Lire : lis le texte et réponds aux questions."
+        },
+        {
+          "type": "blockquote",
+          "content": "Mon nom est Dupont : D-U-P-O-N-T. Mon prénom est Élodie : E accent aigu, L-O-D-I-E. Il y a aussi une cédille dans le mot français et une majuscule au début."
+        },
+        {
+          "type": "input",
+          "placeholder": "Comment s’écrit le nom ?"
+        },
+        {
+          "type": "input",
+          "placeholder": "Quel accent y a-t-il dans Élodie ?"
+        },
+        {
+          "type": "instruction",
+          "content": "Écouter : écoute le dialogue et réponds aux questions."
+        },
+        {
+          "type": "blockquote",
+          "content": "A : Comment ça s’écrit ? B : F-R-A-N-Ç-A-I-S. A : Merci ! B : Il y a une cédille sous le c."
+        },
+        {
+          "type": "input",
+          "placeholder": "Quel mot épelle-t-il ?"
+        },
+        {
+          "type": "input",
+          "placeholder": "Quel signe y a-t-il sous le c ?"
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-alphabet-epellation-slide-7",
+      "title": "7. Parler et écrire",
+      "stage": "freer-practice",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Parler : pratique les expressions du cours en binôme."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Comment ça s’écrit ?\n• Ça s’écrit D-U-P-O-N-T.\n• Il y a un accent aigu."
+        },
+        {
+          "type": "instruction",
+          "content": "Écrire : écris un texte court avec le vocabulaire du cours."
+        },
+        {
+          "type": "essay",
+          "placeholder": "Écris ta réponse ici ..."
+        },
+        {
+          "type": "input",
+          "placeholder": "Une phrase que tu dis en binôme :"
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-alphabet-epellation-slide-8",
+      "title": "8. Déroulés de cours selon la durée",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Choisis le déroulé qui correspond à ton temps."
+        },
+        {
+          "type": "blockquote",
+          "content": "60 min (base) : échauffement, vocabulaire, grammaire et une tâche orale.\n90 min (étendu) : ajoute prononciation, lecture et écoute.\n120 min (atelier complet) : ajoute écriture, correction entre pairs et le projet de l’unité."
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-alphabet-epellation-slide-9",
+      "title": "9. Adaptations pour le groupe",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Adapte le cours à ton groupe."
+        },
+        {
+          "type": "blockquote",
+          "content": "Enfants : Un jeu d’épellation avec des cartes."
+        },
+        {
+          "type": "blockquote",
+          "content": "Adolescents : Une dictée de noms en binôme."
+        },
+        {
+          "type": "blockquote",
+          "content": "Adultes : Une épellation de son propre nom."
+        },
+        {
+          "type": "blockquote",
+          "content": "Seniors : Grandes cartes de lettres, lues lentement."
+        },
+        {
+          "type": "blockquote",
+          "content": "Cours individuels : Une fiche : cinq phrases sur le thème du cours (FR-03)."
+        },
+        {
+          "type": "blockquote",
+          "content": "Groupe : Une tâche en binôme ou en petits groupes."
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-alphabet-epellation-slide-10",
+      "title": "10. Devoirs et notes de révision",
+      "stage": "cool-down",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Devoirs :"
+        },
+        {
+          "type": "blockquote",
+          "content": "Épelle ton nom et ton prénom à l’écrit."
+        },
+        {
+          "type": "input",
+          "placeholder": "Écris ici ta phrase de devoir ..."
+        },
+        {
+          "type": "instruction",
+          "content": "Réponse modèle à comparer :"
+        },
+        {
+          "type": "blockquote",
+          "content": "L’alphabet français a vingt-six lettres."
+        },
+        {
+          "type": "blockquote",
+          "content": "Le cours 1.4 ajoute les pays et les nationalités."
+        }
+      ]
+    }
+  ]
+}
