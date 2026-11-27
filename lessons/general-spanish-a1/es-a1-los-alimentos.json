@@ -1,0 +1,406 @@
+{
+  "id": "es-a1-los-alimentos",
+  "title": "Los alimentos",
+  "level": "A1",
+  "language": "es",
+  "unit": "Unidad 3: La comida y la bebida",
+  "canDo": "Puedo nombrar alimentos y usar artículos y cantidades.",
+  "defaultDuration": 50,
+  "defaultMode": "all",
+  "objectives": [
+    "usar la estructura objetivo: artículos indeterminados y cantidades",
+    "usar 8 palabras nuevas: el pan, el queso, la carne, la verdura, la fruta, la leche, el arroz, el huevo"
+  ],
+  "materials": "Tarjetas de vocabulario, audio de la audición, hoja de lectura, fotos u objetos reales, páginas de gramática A1 de COSYmanuals sobre artículos indeterminados y cantidades.",
+  "assessment": "Comprobar el uso correcto de artículos indeterminados y cantidades y la pronunciación clara de las palabras objetivo.",
+  "homework": "Escribe cinco frases sobre la comida que hay en tu cocina.",
+  "recycling": {
+    "prior": "Recicla las tareas de la lección 2.5.",
+    "next": "La lección 3.2 recicla los alimentos y añade el restaurante."
+  },
+  "differentiation": {
+    "individual": "Una ficha de trabajo: cinco frases sobre el tema de la lección (ES-A1-016).",
+    "group": "Una tarea de clase en parejas o grupos pequeños.",
+    "children": "Un juego de memoria con tarjetas de alimentos.",
+    "teens": "Un menú semanal saludable.",
+    "adults": "Una lista de la compra real.",
+    "seniors": "Tarjetas de alimentos con letra grande."
+  },
+  "links": {
+    "vocabulary": [
+      "el pan",
+      "el queso",
+      "la carne",
+      "la verdura",
+      "la fruta",
+      "la leche",
+      "el arroz",
+      "el huevo"
+    ],
+    "grammar": [
+      {
+        "topic_id": "es-articulos",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/es/grammar/a1/topics/es-articulos.html"
+      }
+    ],
+    "phonetics": "La r simple de arroz frente a la r fuerte de carne."
+  },
+  "slides": [
+    {
+      "id": "es-a1-los-alimentos-slide-1",
+      "title": "1. Objetivo Comunicativo y Panorama",
+      "stage": "warm-up",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Objetivo comunicativo: Puedo nombrar alimentos y usar artículos y cantidades."
+        },
+        {
+          "type": "blockquote",
+          "content": "Panorama de la lección:\n- Nivel: A1 Español General\n- Unidad: Unidad 3: La comida y la bebida\n- Tiempo: 60 min (Esencial) / 90 min (Ampliado) / 120 min (Taller completo)\n- Enfoque: Los alimentos\n- Materiales: tarjetas de vocabulario, audio, hoja de lectura"
+        },
+        {
+          "type": "instruction",
+          "content": "Calentamiento: di una palabra que ya conoces sobre este tema."
+        },
+        {
+          "type": "input",
+          "placeholder": "Escribe una palabra que conozcas..."
+        }
+      ]
+    },
+    {
+      "id": "es-a1-los-alimentos-slide-2",
+      "title": "2. Reciclaje y Continuidad",
+      "stage": "recycling",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Recicla las tareas de la lección 2.5."
+        },
+        {
+          "type": "blockquote",
+          "content": "Lengua reciclada: el pan, el queso, la carne."
+        },
+        {
+          "type": "instruction",
+          "content": "Responde de memoria: ¿qué palabra pertenece a este tema?"
+        },
+        {
+          "type": "test",
+          "content": "¿Qué palabra pertenece a este tema?",
+          "options": [
+            "el pan",
+            "aeropuerto",
+            "paraguas"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "es-a1-los-alimentos-slide-3",
+      "title": "3. Vocabulario y Expresiones Esenciales",
+      "stage": "input",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Vocabulario activo básico (8 elementos):"
+        },
+        {
+          "type": "blockquote",
+          "content": "el pan — un alimento de harina y agua. Ejemplo: Compro pan cada día.\nel queso — un alimento de leche. Ejemplo: Hay queso en la nevera.\nla carne — el alimento que viene de un animal. Ejemplo: Fríe la carne en la sartén.\nla verdura — las plantas que comemos. Ejemplo: Como verdura a menudo.\nla fruta — el alimento dulce de las plantas. Ejemplo: Hay fruta en la nevera.\nla leche — la bebida blanca del animal. Ejemplo: Compro una botella de leche.\nel arroz — un cereal blanco pequeño. Ejemplo: Compro un kilo de arroz.\nel huevo — el alimento de la gallina. Ejemplo: Mezcla los huevos en la olla."
+        },
+        {
+          "type": "instruction",
+          "content": "Expresiones esenciales y combinaciones funcionales:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• Compro pan y queso.\n• Hay fruta en la nevera.\n• Un kilo de arroz.\n• Una botella de leche.\n• Me gustan los huevos."
+        },
+        {
+          "type": "instruction",
+          "content": "Práctica de vocabulario: elige la palabra correcta."
+        },
+        {
+          "type": "test",
+          "content": "¿Qué palabra significa 'un alimento de harina y agua'?",
+          "options": [
+            "el pan",
+            "el queso",
+            "la carne"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "¿Qué palabra significa 'un alimento de leche'?",
+          "options": [
+            "el queso",
+            "el pan",
+            "la carne"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Completa la frase con una palabra de la lista."
+        },
+        {
+          "type": "input",
+          "placeholder": "Completa: Compro pan cada día."
+        }
+      ]
+    },
+    {
+      "id": "es-a1-los-alimentos-slide-4",
+      "title": "4. Enfoque de Pronunciación",
+      "stage": "pronunciation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "La r simple de arroz frente a la r fuerte de carne."
+        },
+        {
+          "type": "blockquote",
+          "content": "arroz /aˈroθ/, carne /ˈkarne/"
+        },
+        {
+          "type": "instruction",
+          "content": "Escucha y repite tres veces."
+        },
+        {
+          "type": "test",
+          "content": "¿Qué palabra lleva el acento principal?",
+          "options": [
+            "el pan",
+            "el",
+            "la"
+          ]
+        },
+        {
+          "type": "input",
+          "placeholder": "Escribe la parte acentuada: ..."
+        }
+      ]
+    },
+    {
+      "id": "es-a1-los-alimentos-slide-5",
+      "title": "5. Enfoque Gramatical y Práctica Controlada",
+      "stage": "grammar",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Enfoque gramatical: Artículos indeterminados y cantidades."
+        },
+        {
+          "type": "blockquote",
+          "content": "Usa un, una, unos, unas con los alimentos: un pan, una manzana, unos huevos. Para cantidades usa mucho, poco y un kilo de."
+        },
+        {
+          "type": "grammar-focus",
+          "grammarId": "es-a1-es-articulos"
+        },
+        {
+          "type": "instruction",
+          "content": "Práctica controlada: elige la opción correcta."
+        },
+        {
+          "type": "test",
+          "content": "Elige el artículo correcto.",
+          "options": [
+            "unos huevos",
+            "un huevos",
+            "unas huevos"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Elige la frase correcta.",
+          "options": [
+            "Hay fruta en la nevera.",
+            "Hay frutas en la nevera es.",
+            "Está fruta en nevera."
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Completa la frase."
+        },
+        {
+          "type": "input",
+          "placeholder": "Compro un ___ de arroz."
+        },
+        {
+          "type": "input",
+          "placeholder": "Hay una ___ de leche."
+        }
+      ]
+    },
+    {
+      "id": "es-a1-los-alimentos-slide-6",
+      "title": "6. Distribución de las Cuatro Destrezas (Comprensión Auditiva y Lectora)",
+      "stage": "reading-listening",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Lectura: lee el texto y responde a las preguntas."
+        },
+        {
+          "type": "blockquote",
+          "content": "En mi nevera hay pan, queso, carne y verdura. Compro fruta y leche cada semana y hay arroz y huevos para el domingo."
+        },
+        {
+          "type": "input",
+          "placeholder": "¿Qué hay en la nevera?"
+        },
+        {
+          "type": "input",
+          "placeholder": "¿Qué compra cada semana?"
+        },
+        {
+          "type": "instruction",
+          "content": "Audición: escucha el diálogo y responde a las preguntas."
+        },
+        {
+          "type": "blockquote",
+          "content": "A: ¿Qué compras? B: Pan, queso y fruta. A: ¿Y leche? B: Sí, una botella."
+        },
+        {
+          "type": "input",
+          "placeholder": "¿Qué compra?"
+        },
+        {
+          "type": "input",
+          "placeholder": "¿Compra leche?"
+        }
+      ]
+    },
+    {
+      "id": "es-a1-los-alimentos-slide-7",
+      "title": "7. Producción Oral y Escrita",
+      "stage": "freer-practice",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Expresión oral: practica en parejas las expresiones de la lección."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Compro pan y queso.\n• Hay fruta en la nevera.\n• Un kilo de arroz."
+        },
+        {
+          "type": "instruction",
+          "content": "Expresión escrita: escribe un texto corto con el vocabulario de la lección."
+        },
+        {
+          "type": "essay",
+          "placeholder": "Escribe tu respuesta aquí..."
+        },
+        {
+          "type": "input",
+          "placeholder": "Una frase que dirás en el trabajo en parejas:"
+        }
+      ]
+    },
+    {
+      "id": "es-a1-los-alimentos-slide-8",
+      "title": "8. Flujos de Clase según la Duración",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Elige el flujo que se adapte a tu tiempo."
+        },
+        {
+          "type": "blockquote",
+          "content": "60 min (Esencial): calentamiento, vocabulario, gramática y una tarea oral.\n90 min (Ampliado): añade pronunciación, lectura y audición.\n120 min (Taller completo): añade la tarea escrita, la corrección entre iguales y el proyecto de la unidad."
+        }
+      ]
+    },
+    {
+      "id": "es-a1-los-alimentos-slide-9",
+      "title": "9. Adaptaciones de Entrega",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Adapta la lección a tu grupo."
+        },
+        {
+          "type": "blockquote",
+          "content": "Niños: Un juego de memoria con tarjetas de alimentos."
+        },
+        {
+          "type": "blockquote",
+          "content": "Adolescentes: Un menú semanal saludable."
+        },
+        {
+          "type": "blockquote",
+          "content": "Adultos: Una lista de la compra real."
+        },
+        {
+          "type": "blockquote",
+          "content": "Personas mayores: Tarjetas de alimentos con letra grande."
+        },
+        {
+          "type": "blockquote",
+          "content": "Individual: una ficha de trabajo con cinco frases (ES-A1-016)."
+        },
+        {
+          "type": "blockquote",
+          "content": "Grupo: una tarea de clase en parejas o grupos pequeños."
+        }
+      ]
+    },
+    {
+      "id": "es-a1-los-alimentos-slide-10",
+      "title": "10. Deberes y Notas de Reciclaje",
+      "stage": "cool-down",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Deberes:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Escribe cinco frases sobre la comida que hay en tu cocina."
+        },
+        {
+          "type": "input",
+          "placeholder": "Escribe aquí la frase de tus deberes..."
+        },
+        {
+          "type": "instruction",
+          "content": "Respuesta modelo para comparar:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Compro pan cada día."
+        },
+        {
+          "type": "blockquote",
+          "content": "La lección 3.2 recicla los alimentos y añade el restaurante."
+        }
+      ]
+    }
+  ]
+}
