@@ -1,0 +1,406 @@
+{
+  "id": "de-a1-essgewohnheiten",
+  "title": "Essgewohnheiten",
+  "level": "A1",
+  "language": "de",
+  "unit": "Einheit 3: Essen und Trinken",
+  "canDo": "Ich kann über meine Essgewohnheiten sprechen.",
+  "defaultDuration": 50,
+  "defaultMode": "all",
+  "objectives": [
+    "die Zielstruktur verwenden: häufigkeitsadverbien",
+    "8 neue Wörter verwenden: immer, oft, manchmal, selten, nie, gesund, ungesund, die Gewohnheit"
+  ],
+  "materials": "Wortschatzkarten, Audio zum Hörtext, Leseblatt, Bilder oder echte Gegenstände, A1-Grammatikseiten von COSYmanuals zu häufigkeitsadverbien.",
+  "assessment": "Prüfe den korrekten Gebrauch von häufigkeitsadverbien und die klare Aussprache der Zielwörter.",
+  "homework": "Schreibe fünf Sätze über deine Essgewohnheiten mit Häufigkeitsadverbien.",
+  "recycling": {
+    "prior": "Wiederholt das Frühstück aus Stunde 3.4.",
+    "next": "Einheit 4 wiederholt das Essen und ergänzt das Einkaufen."
+  },
+  "differentiation": {
+    "individual": "Ein Arbeitsblatt: fünf Sätze zum Thema der Stunde (DE-A1-020).",
+    "group": "Eine Aufgabe in Partner- oder Kleingruppenarbeit.",
+    "children": "Eine Ampel mit gesunden und ungesunden Gewohnheiten.",
+    "teens": "Ein Ess-Tagebuch für drei Tage.",
+    "adults": "Ein Gespräch über Gewohnheiten und Gesundheit.",
+    "seniors": "Große Karten zu Gewohnheiten, langsam gelesen."
+  },
+  "links": {
+    "vocabulary": [
+      "immer",
+      "oft",
+      "manchmal",
+      "selten",
+      "nie",
+      "gesund",
+      "ungesund",
+      "die Gewohnheit"
+    ],
+    "grammar": [
+      {
+        "topic_id": "adverbien-frequenz-art",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/de/grammar/a1/topics/adverbien-frequenz-art.html"
+      }
+    ],
+    "phonetics": "Das ie in nie spricht man /iː/."
+  },
+  "slides": [
+    {
+      "id": "de-a1-essgewohnheiten-slide-1",
+      "title": "1. Kommunikatives Ziel und Überblick",
+      "stage": "warm-up",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Kommunikatives Ziel: Ich kann über meine Essgewohnheiten sprechen."
+        },
+        {
+          "type": "blockquote",
+          "content": "Überblick über die Stunde:\n- Niveau: A1 Deutsch Allgemein\n- Einheit: Einheit 3: Essen und Trinken\n- Zeit: 60 Min. (Basis) / 90 Min. (Erweitert) / 120 Min. (Vollwerkstatt)\n- Fokus: Essgewohnheiten\n- Material: Wortschatzkarten, Audio, Leseblatt"
+        },
+        {
+          "type": "instruction",
+          "content": "Warm-up: Nenne ein Wort, das du zu diesem Thema schon kennst."
+        },
+        {
+          "type": "input",
+          "placeholder": "Schreibe ein Wort, das du kennst ..."
+        }
+      ]
+    },
+    {
+      "id": "de-a1-essgewohnheiten-slide-2",
+      "title": "2. Wiederholung und Anschluss",
+      "stage": "recycling",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Wiederholt das Frühstück aus Stunde 3.4."
+        },
+        {
+          "type": "blockquote",
+          "content": "Wiederholter Wortschatz: immer, oft, manchmal."
+        },
+        {
+          "type": "instruction",
+          "content": "Antworte aus dem Gedächtnis: Welches Wort gehört zu diesem Thema?"
+        },
+        {
+          "type": "test",
+          "content": "Welches Wort gehört zu diesem Thema?",
+          "options": [
+            "immer",
+            "Flughafen",
+            "Regenschirm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "de-a1-essgewohnheiten-slide-3",
+      "title": "3. Wortschatz und wichtige Wendungen",
+      "stage": "input",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Aktiver Grundwortschatz (8 Elemente):"
+        },
+        {
+          "type": "blockquote",
+          "content": "immer — jedes Mal. Beispiel: Ich trinke immer Wasser.\noft — viele Male. Beispiel: Ich esse oft Gemüse.\nmanchmal — zu einigen Zeiten. Beispiel: Manchmal esse ich Fleisch.\nselten — fast nie. Beispiel: Ich esse selten Süßes.\nnie — kein einziges Mal. Beispiel: Ich trinke nie Cola.\ngesund — gut für den Körper. Beispiel: Meine Gewohnheiten sind gesund.\nungesund — nicht gut für den Körper. Beispiel: Cola ist ungesund.\ndie Gewohnheit — was man immer wieder tut. Beispiel: Meine Gewohnheiten sind gesund."
+        },
+        {
+          "type": "instruction",
+          "content": "Wichtige Wendungen und funktionale Wortverbindungen:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• Ich trinke immer Wasser.\n• Ich esse oft Gemüse.\n• Manchmal esse ich Fleisch.\n• Ich esse selten Süßes.\n• Ich trinke nie Cola."
+        },
+        {
+          "type": "instruction",
+          "content": "Wortschatzübung: Wähle das richtige Wort."
+        },
+        {
+          "type": "test",
+          "content": "Welches Wort bedeutet 'jedes Mal'?",
+          "options": [
+            "immer",
+            "oft",
+            "manchmal"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Welches Wort bedeutet 'viele Male'?",
+          "options": [
+            "oft",
+            "immer",
+            "manchmal"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Ergänze den Satz mit einem Wort aus der Liste."
+        },
+        {
+          "type": "input",
+          "placeholder": "Ergänze: Ich trinke ___ Wasser."
+        }
+      ]
+    },
+    {
+      "id": "de-a1-essgewohnheiten-slide-4",
+      "title": "4. Aussprachefokus",
+      "stage": "pronunciation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Das ie in nie spricht man /iː/."
+        },
+        {
+          "type": "blockquote",
+          "content": "nie /niː/, manchmal /ˈmançmaːl/"
+        },
+        {
+          "type": "instruction",
+          "content": "Höre zu und sprich dreimal nach."
+        },
+        {
+          "type": "test",
+          "content": "Welches Wort trägt die Hauptbetonung?",
+          "options": [
+            "immer",
+            "der",
+            "ein"
+          ]
+        },
+        {
+          "type": "input",
+          "placeholder": "Schreibe den betonten Teil: ..."
+        }
+      ]
+    },
+    {
+      "id": "de-a1-essgewohnheiten-slide-5",
+      "title": "5. Grammatikfokus und gelenkte Übung",
+      "stage": "grammar",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Grammatikfokus: Häufigkeitsadverbien."
+        },
+        {
+          "type": "blockquote",
+          "content": "Die Häufigkeit ordnest du so: immer, oft, manchmal, selten, nie. Das Adverb steht meist nach dem Verb: Ich trinke oft Wasser."
+        },
+        {
+          "type": "grammar-focus",
+          "grammarId": "de-a1-adverbien-frequenz-art"
+        },
+        {
+          "type": "instruction",
+          "content": "Gelenkte Übung: Wähle die richtige Option."
+        },
+        {
+          "type": "test",
+          "content": "Wähle das richtige Adverb.",
+          "options": [
+            "Ich trinke immer Wasser.",
+            "Ich trinke nie Wasser immer.",
+            "Immer ich trinke Wasser."
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Wähle den richtigen Satz.",
+          "options": [
+            "Ich esse selten Süßes.",
+            "Ich esse Süßes selten nicht.",
+            "Ich selten esse Süßes."
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Ergänze den Satz."
+        },
+        {
+          "type": "input",
+          "placeholder": "Ich esse ___ Fleisch."
+        },
+        {
+          "type": "input",
+          "placeholder": "Cola trinke ich ___."
+        }
+      ]
+    },
+    {
+      "id": "de-a1-essgewohnheiten-slide-6",
+      "title": "6. Die vier Fertigkeiten (Hören und Lesen)",
+      "stage": "reading-listening",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Lesen: Lies den Text und beantworte die Fragen."
+        },
+        {
+          "type": "blockquote",
+          "content": "Meine Gewohnheiten sind ziemlich gesund. Ich trinke immer Wasser und esse oft Gemüse. Manchmal esse ich Fleisch, selten Süßes und nie Cola."
+        },
+        {
+          "type": "input",
+          "placeholder": "Was trinkt die Person immer?"
+        },
+        {
+          "type": "input",
+          "placeholder": "Wie oft isst sie Fleisch?"
+        },
+        {
+          "type": "instruction",
+          "content": "Hören: Höre den Dialog und beantworte die Fragen."
+        },
+        {
+          "type": "blockquote",
+          "content": "A: Isst du Fleisch? B: Manchmal. A: Und Gemüse? B: Oft, jeden Tag."
+        },
+        {
+          "type": "input",
+          "placeholder": "Wie oft isst er Fleisch?"
+        },
+        {
+          "type": "input",
+          "placeholder": "Wie oft isst er Gemüse?"
+        }
+      ]
+    },
+    {
+      "id": "de-a1-essgewohnheiten-slide-7",
+      "title": "7. Sprechen und Schreiben",
+      "stage": "freer-practice",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Sprechen: Übe die Wendungen der Stunde in Partnerarbeit."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Ich trinke immer Wasser.\n• Ich esse oft Gemüse.\n• Manchmal esse ich Fleisch."
+        },
+        {
+          "type": "instruction",
+          "content": "Schreiben: Schreibe einen kurzen Text mit dem Wortschatz der Stunde."
+        },
+        {
+          "type": "essay",
+          "placeholder": "Schreibe deine Antwort hier ..."
+        },
+        {
+          "type": "input",
+          "placeholder": "Ein Satz, den du in der Partnerarbeit sagst:"
+        }
+      ]
+    },
+    {
+      "id": "de-a1-essgewohnheiten-slide-8",
+      "title": "8. Unterrichtsabläufe nach Dauer",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Wähle den Ablauf, der zu deiner Zeit passt."
+        },
+        {
+          "type": "blockquote",
+          "content": "60 Min. (Basis): Warm-up, Wortschatz, Grammatik und eine Sprechaufgabe.\n90 Min. (Erweitert): zusätzlich Aussprache, Lesen und Hören.\n120 Min. (Vollwerkstatt): zusätzlich Schreibaufgabe, Peer-Korrektur und das Projekt der Einheit."
+        }
+      ]
+    },
+    {
+      "id": "de-a1-essgewohnheiten-slide-9",
+      "title": "9. Anpassungen für die Lerngruppe",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Passe die Stunde an deine Gruppe an."
+        },
+        {
+          "type": "blockquote",
+          "content": "Kinder: Eine Ampel mit gesunden und ungesunden Gewohnheiten."
+        },
+        {
+          "type": "blockquote",
+          "content": "Jugendliche: Ein Ess-Tagebuch für drei Tage."
+        },
+        {
+          "type": "blockquote",
+          "content": "Erwachsene: Ein Gespräch über Gewohnheiten und Gesundheit."
+        },
+        {
+          "type": "blockquote",
+          "content": "Senioren: Große Karten zu Gewohnheiten, langsam gelesen."
+        },
+        {
+          "type": "blockquote",
+          "content": "Einzelunterricht: Ein Arbeitsblatt: fünf Sätze zum Thema der Stunde (DE-A1-020)."
+        },
+        {
+          "type": "blockquote",
+          "content": "Gruppe: Eine Aufgabe in Partner- oder Kleingruppenarbeit."
+        }
+      ]
+    },
+    {
+      "id": "de-a1-essgewohnheiten-slide-10",
+      "title": "10. Hausaufgaben und Wiederholungsnotizen",
+      "stage": "cool-down",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Hausaufgaben:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Schreibe fünf Sätze über deine Essgewohnheiten mit Häufigkeitsadverbien."
+        },
+        {
+          "type": "input",
+          "placeholder": "Schreibe hier deinen Hausaufgabensatz ..."
+        },
+        {
+          "type": "instruction",
+          "content": "Musterlösung zum Vergleichen:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Ich trinke immer Wasser."
+        },
+        {
+          "type": "blockquote",
+          "content": "Einheit 4 wiederholt das Essen und ergänzt das Einkaufen."
+        }
+      ]
+    }
+  ]
+}
