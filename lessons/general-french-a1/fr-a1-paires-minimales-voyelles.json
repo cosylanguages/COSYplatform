@@ -1,0 +1,404 @@
+{
+  "id": "fr-a1-paires-minimales-voyelles",
+  "title": "Paires minimales : Voyelles",
+  "level": "A1",
+  "language": "fr",
+  "unit": "Unité 0 : Premiers pas",
+  "canDo": "Je peux distinguer les voyelles et construire des phrases simples.",
+  "defaultDuration": 50,
+  "defaultMode": "all",
+  "objectives": [
+    "utiliser la structure cible : structure de base de la phrase",
+    "utiliser 6 nouveaux mots : rue, dessus, dessous, phrase, table, café"
+  ],
+  "materials": "Cartes de vocabulaire, audio du texte, fiche de lecture, images ou objets réels, pages de grammaire A1 de COSYmanuals sur structure de base de la phrase.",
+  "assessment": "Vérifie l’usage correct de structure de base de la phrase et la prononciation claire des mots cibles.",
+  "homework": "Écris cinq phrases simples avec un sujet et un verbe.",
+  "recycling": {
+    "prior": "Révise les nombres du cours 0.3.",
+    "next": "Le cours 0.5 révise la politesse."
+  },
+  "differentiation": {
+    "individual": "Une fiche : cinq phrases sur le thème du cours (FR-004).",
+    "group": "Une tâche en binôme ou en petits groupes.",
+    "children": "Un jeu de sons avec des images.",
+    "teens": "Une dictée courte en binôme.",
+    "adults": "Une liste de mots à lire à voix haute.",
+    "seniors": "Grandes cartes de mots, lues lentement."
+  },
+  "links": {
+    "vocabulary": [
+      "rue",
+      "dessus",
+      "dessous",
+      "phrase",
+      "table",
+      "café"
+    ],
+    "grammar": [
+      {
+        "topic_id": "structure-de-base-de-la-phrase",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/fr/grammar/a1/topics/structure-de-base-de-la-phrase.html"
+      }
+    ],
+    "phonetics": "u se prononce /y/ et ou se prononce /u/ : rue contre roue."
+  },
+  "slides": [
+    {
+      "id": "fr-a1-paires-minimales-voyelles-slide-1",
+      "title": "1. Objectif communicatif et vue d’ensemble",
+      "stage": "warm-up",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Objectif communicatif : Je peux distinguer les voyelles et construire des phrases simples."
+        },
+        {
+          "type": "blockquote",
+          "content": "Vue d’ensemble du cours :\n- Niveau : A1 Français général\n- Unité : Unité 0 : Premiers pas\n- Durée : 60 min (base) / 90 min (étendu) / 120 min (atelier complet)\n- Focus : Paires minimales : Voyelles\n- Matériel : cartes de vocabulaire, audio, fiche de lecture"
+        },
+        {
+          "type": "instruction",
+          "content": "Échauffement : dis un mot que tu connais déjà sur ce thème."
+        },
+        {
+          "type": "input",
+          "placeholder": "Écris un mot que tu connais ..."
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-paires-minimales-voyelles-slide-2",
+      "title": "2. Révision et lien",
+      "stage": "recycling",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Révise les nombres du cours 0.3."
+        },
+        {
+          "type": "blockquote",
+          "content": "Vocabulaire révisé : rue, dessus, dessous."
+        },
+        {
+          "type": "instruction",
+          "content": "Réponds de mémoire : quel mot appartient à ce thème ?"
+        },
+        {
+          "type": "test",
+          "content": "Quel mot appartient à ce thème ?",
+          "options": [
+            "rue",
+            "aéroport",
+            "parapluie"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-paires-minimales-voyelles-slide-3",
+      "title": "3. Vocabulaire et expressions essentielles",
+      "stage": "input",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Vocabulaire actif de base (6 éléments) :"
+        },
+        {
+          "type": "blockquote",
+          "content": "rue — chemin entre les maisons. Exemple: La rue est petite.\ndessus — sur quelque chose. Exemple: Le livre est dessus.\ndessous — sous quelque chose. Exemple: Le chat est dessous.\nphrase — un ensemble de mots avec un sens. Exemple: La phrase a un verbe.\ntable — meuble pour travailler ou manger. Exemple: Il y a dix tables.\ncafé — boisson chaude et foncée. Exemple: Un café, s’il vous plaît."
+        },
+        {
+          "type": "instruction",
+          "content": "Expressions essentielles et combinaisons fonctionnelles :"
+        },
+        {
+          "type": "blockquote",
+          "content": "• rue /ʁy/\n• dessus /dəsy/\n• dessous /dəsu/\n• La phrase a un sujet et un verbe.\n• Marie boit du café."
+        },
+        {
+          "type": "instruction",
+          "content": "Pratique du vocabulaire : choisis le mot correct."
+        },
+        {
+          "type": "test",
+          "content": "Quel mot signifie « chemin entre les maisons » ?",
+          "options": [
+            "rue",
+            "dessus",
+            "dessous"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Quel mot signifie « sur quelque chose » ?",
+          "options": [
+            "dessus",
+            "rue",
+            "dessous"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Complète la phrase avec un mot de la liste."
+        },
+        {
+          "type": "input",
+          "placeholder": "Complète : La ___ est petite."
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-paires-minimales-voyelles-slide-4",
+      "title": "4. Point de prononciation",
+      "stage": "pronunciation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "u se prononce /y/ et ou se prononce /u/ : rue contre roue."
+        },
+        {
+          "type": "blockquote",
+          "content": "rue /ʁy/, roue /ʁu/"
+        },
+        {
+          "type": "instruction",
+          "content": "Écoute et répète trois fois."
+        },
+        {
+          "type": "test",
+          "content": "Quel mot entends-tu dans l’audio ?",
+          "options": [
+            "rue",
+            "le",
+            "un"
+          ]
+        },
+        {
+          "type": "input",
+          "placeholder": "Écris le mot entendu : ..."
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-paires-minimales-voyelles-slide-5",
+      "title": "5. Point de grammaire et pratique guidée",
+      "stage": "grammar",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Point de grammaire : Structure de base de la phrase."
+        },
+        {
+          "type": "blockquote",
+          "content": "La phrase simple a un sujet, un verbe et un complément : Marie boit du café. Le sujet vient d’abord, le verbe ensuite."
+        },
+        {
+          "type": "grammar-focus",
+          "grammarId": "fr-a1-structure-de-base-de-la-phrase"
+        },
+        {
+          "type": "instruction",
+          "content": "Pratique guidée : choisis la bonne option."
+        },
+        {
+          "type": "test",
+          "content": "Choisis la phrase correcte.",
+          "options": [
+            "Marie boit du café.",
+            "Marie café boit.",
+            "Boit Marie du café le."
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Quel mot a le son /y/ ?",
+          "options": [
+            "rue",
+            "roue",
+            "rose"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Complète la phrase."
+        },
+        {
+          "type": "input",
+          "placeholder": "La phrase a un ___ et un verbe."
+        },
+        {
+          "type": "input",
+          "placeholder": "Le livre est sur la ___."
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-paires-minimales-voyelles-slide-6",
+      "title": "6. Les quatre compétences (écouter et lire)",
+      "stage": "reading-listening",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Lire : lis le texte et réponds aux questions."
+        },
+        {
+          "type": "blockquote",
+          "content": "Marie boit du café le matin. Le livre est sur la table. La rue est petite."
+        },
+        {
+          "type": "input",
+          "placeholder": "Que boit Marie ?"
+        },
+        {
+          "type": "input",
+          "placeholder": "Où est le livre ?"
+        },
+        {
+          "type": "instruction",
+          "content": "Écouter : écoute le dialogue et réponds aux questions."
+        },
+        {
+          "type": "blockquote",
+          "content": "A : Comment prononce-t-on ce mot ? B : Rue, /ʁy/. A : Et celui-ci ? B : Roue, /ʁu/."
+        },
+        {
+          "type": "input",
+          "placeholder": "Comment prononce-t-on rue ?"
+        },
+        {
+          "type": "input",
+          "placeholder": "Comment prononce-t-on roue ?"
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-paires-minimales-voyelles-slide-7",
+      "title": "7. Parler et écrire",
+      "stage": "freer-practice",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Parler : pratique les expressions du cours en binôme."
+        },
+        {
+          "type": "blockquote",
+          "content": "• rue /ʁy/\n• dessus /dəsy/\n• dessous /dəsu/"
+        },
+        {
+          "type": "instruction",
+          "content": "Écrire : écris un texte court avec le vocabulaire du cours."
+        },
+        {
+          "type": "essay",
+          "placeholder": "Écris ta réponse ici ..."
+        },
+        {
+          "type": "input",
+          "placeholder": "Une phrase que tu dis en binôme :"
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-paires-minimales-voyelles-slide-8",
+      "title": "8. Déroulés de cours selon la durée",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Choisis le déroulé qui correspond à ton temps."
+        },
+        {
+          "type": "blockquote",
+          "content": "60 min (base) : échauffement, vocabulaire, grammaire et une tâche orale.\n90 min (étendu) : ajoute prononciation, lecture et écoute.\n120 min (atelier complet) : ajoute écriture, correction entre pairs et le projet de l’unité."
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-paires-minimales-voyelles-slide-9",
+      "title": "9. Adaptations pour le groupe",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Adapte le cours à ton groupe."
+        },
+        {
+          "type": "blockquote",
+          "content": "Enfants : Un jeu de sons avec des images."
+        },
+        {
+          "type": "blockquote",
+          "content": "Adolescents : Une dictée courte en binôme."
+        },
+        {
+          "type": "blockquote",
+          "content": "Adultes : Une liste de mots à lire à voix haute."
+        },
+        {
+          "type": "blockquote",
+          "content": "Seniors : Grandes cartes de mots, lues lentement."
+        },
+        {
+          "type": "blockquote",
+          "content": "Cours individuels : Une fiche : cinq phrases sur le thème du cours (FR-004)."
+        },
+        {
+          "type": "blockquote",
+          "content": "Groupe : Une tâche en binôme ou en petits groupes."
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-paires-minimales-voyelles-slide-10",
+      "title": "10. Devoirs et notes de révision",
+      "stage": "cool-down",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Devoirs :"
+        },
+        {
+          "type": "blockquote",
+          "content": "Écris cinq phrases simples avec un sujet et un verbe."
+        },
+        {
+          "type": "input",
+          "placeholder": "Écris ici ta phrase de devoir ..."
+        },
+        {
+          "type": "instruction",
+          "content": "Réponse modèle à comparer :"
+        },
+        {
+          "type": "blockquote",
+          "content": "La rue est petite."
+        },
+        {
+          "type": "blockquote",
+          "content": "Le cours 0.5 révise la politesse."
+        }
+      ]
+    }
+  ]
+}

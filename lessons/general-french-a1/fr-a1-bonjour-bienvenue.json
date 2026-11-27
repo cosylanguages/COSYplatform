@@ -1,0 +1,403 @@
+{
+  "id": "fr-a1-bonjour-bienvenue",
+  "title": "Bonjour & Bienvenue",
+  "level": "A1",
+  "language": "fr",
+  "unit": "Unité 0 : Premiers pas",
+  "canDo": "Je peux saluer, me présenter et prendre congé.",
+  "defaultDuration": 50,
+  "defaultMode": "all",
+  "objectives": [
+    "utiliser la structure cible : verbe être (présent) — formes affirmatives",
+    "utiliser 5 nouveaux mots : Bonjour, Salut, Bienvenue, Merci, Au revoir"
+  ],
+  "materials": "Cartes de vocabulaire, audio du texte, fiche de lecture, images ou objets réels, pages de grammaire A1 de COSYmanuals sur verbe être (présent) — formes affirmatives.",
+  "assessment": "Vérifie l’usage correct de verbe être (présent) — formes affirmatives et la prononciation claire des mots cibles.",
+  "homework": "Écris cinq phrases : saluer, te présenter, prendre congé.",
+  "recycling": {
+    "prior": "C’est le premier cours du parcours.",
+    "next": "Le cours 0.2 révise la salutation et ajoute le nom."
+  },
+  "differentiation": {
+    "individual": "Une fiche : cinq phrases sur le thème du cours (FR-001).",
+    "group": "Une tâche en binôme ou en petits groupes.",
+    "children": "Une tâche avec des cartes de salutation.",
+    "teens": "Un jeu de présentation en chaîne.",
+    "adults": "Une présentation courte en deux phrases.",
+    "seniors": "Grandes cartes, lues lentement."
+  },
+  "links": {
+    "vocabulary": [
+      "Bonjour",
+      "Salut",
+      "Bienvenue",
+      "Merci",
+      "Au revoir"
+    ],
+    "grammar": [
+      {
+        "topic_id": "verbe-etre-present-formes-affirmatives",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/fr/grammar/a1/topics/verbe-etre-present-formes-affirmatives.html"
+      }
+    ],
+    "phonetics": "Le français a des voyelles nasales comme dans bonjour et enfant."
+  },
+  "slides": [
+    {
+      "id": "fr-a1-bonjour-bienvenue-slide-1",
+      "title": "1. Objectif communicatif et vue d’ensemble",
+      "stage": "warm-up",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Objectif communicatif : Je peux saluer, me présenter et prendre congé."
+        },
+        {
+          "type": "blockquote",
+          "content": "Vue d’ensemble du cours :\n- Niveau : A1 Français général\n- Unité : Unité 0 : Premiers pas\n- Durée : 60 min (base) / 90 min (étendu) / 120 min (atelier complet)\n- Focus : Bonjour & Bienvenue\n- Matériel : cartes de vocabulaire, audio, fiche de lecture"
+        },
+        {
+          "type": "instruction",
+          "content": "Échauffement : dis un mot que tu connais déjà sur ce thème."
+        },
+        {
+          "type": "input",
+          "placeholder": "Écris un mot que tu connais ..."
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-bonjour-bienvenue-slide-2",
+      "title": "2. Révision et lien",
+      "stage": "recycling",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "C’est le premier cours du parcours."
+        },
+        {
+          "type": "blockquote",
+          "content": "Vocabulaire révisé : Bonjour, Salut, Bienvenue."
+        },
+        {
+          "type": "instruction",
+          "content": "Réponds de mémoire : quel mot appartient à ce thème ?"
+        },
+        {
+          "type": "test",
+          "content": "Quel mot appartient à ce thème ?",
+          "options": [
+            "Bonjour",
+            "aéroport",
+            "parapluie"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-bonjour-bienvenue-slide-3",
+      "title": "3. Vocabulaire et expressions essentielles",
+      "stage": "input",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Vocabulaire actif de base (5 éléments) :"
+        },
+        {
+          "type": "blockquote",
+          "content": "Bonjour — salutation de la journée. Exemple: Bonjour, madame Dupont !\nSalut — salutation familière. Exemple: Salut, ça va ?\nBienvenue — mot pour accueillir quelqu’un. Exemple: Bienvenue au cours !\nMerci — mot pour remercier. Exemple: Merci beaucoup !\nAu revoir — salutation quand on part. Exemple: Au revoir, à demain !"
+        },
+        {
+          "type": "instruction",
+          "content": "Expressions essentielles et combinaisons fonctionnelles :"
+        },
+        {
+          "type": "blockquote",
+          "content": "• Bonjour !\n• Je suis Anne.\n• Comment ça va ?\n• Merci, ça va.\n• Au revoir !"
+        },
+        {
+          "type": "instruction",
+          "content": "Pratique du vocabulaire : choisis le mot correct."
+        },
+        {
+          "type": "test",
+          "content": "Quel mot signifie « salutation de la journée » ?",
+          "options": [
+            "Bonjour",
+            "Salut",
+            "Bienvenue"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Quel mot signifie « salutation familière » ?",
+          "options": [
+            "Salut",
+            "Bonjour",
+            "Bienvenue"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Complète la phrase avec un mot de la liste."
+        },
+        {
+          "type": "input",
+          "placeholder": "Complète : ___, madame Dupont !"
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-bonjour-bienvenue-slide-4",
+      "title": "4. Point de prononciation",
+      "stage": "pronunciation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Le français a des voyelles nasales comme dans bonjour et enfant."
+        },
+        {
+          "type": "blockquote",
+          "content": "bonjour /bɔ̃ʒuʁ/, enfant /ɑ̃fɑ̃/"
+        },
+        {
+          "type": "instruction",
+          "content": "Écoute et répète trois fois."
+        },
+        {
+          "type": "test",
+          "content": "Quel mot entends-tu dans l’audio ?",
+          "options": [
+            "Bonjour",
+            "le",
+            "un"
+          ]
+        },
+        {
+          "type": "input",
+          "placeholder": "Écris le mot entendu : ..."
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-bonjour-bienvenue-slide-5",
+      "title": "5. Point de grammaire et pratique guidée",
+      "stage": "grammar",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Point de grammaire : Verbe être (présent) — formes affirmatives."
+        },
+        {
+          "type": "blockquote",
+          "content": "Avec le verbe être tu te présentes : Je suis Anne. Tu es professeur. Être est irrégulier : je suis, tu es, il est, nous sommes, vous êtes, ils sont."
+        },
+        {
+          "type": "grammar-focus",
+          "grammarId": "fr-a1-verbe-etre-present-formes-affirmatives"
+        },
+        {
+          "type": "instruction",
+          "content": "Pratique guidée : choisis la bonne option."
+        },
+        {
+          "type": "test",
+          "content": "Choisis la forme correcte.",
+          "options": [
+            "Je suis Anne.",
+            "Je es Anne.",
+            "Je sommes Anne."
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Choisis la phrase correcte.",
+          "options": [
+            "Bonjour !",
+            "Bonjour toi.",
+            "Jour bon."
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Complète la phrase."
+        },
+        {
+          "type": "input",
+          "placeholder": "Je ___ étudiant."
+        },
+        {
+          "type": "input",
+          "placeholder": "Au revoir ! À ___."
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-bonjour-bienvenue-slide-6",
+      "title": "6. Les quatre compétences (écouter et lire)",
+      "stage": "reading-listening",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Lire : lis le texte et réponds aux questions."
+        },
+        {
+          "type": "blockquote",
+          "content": "Bonjour ! Je suis Anne. Je suis étudiante. Voici Paul. Il est professeur. Comment ça va, Paul ? Merci, ça va ! Au revoir !"
+        },
+        {
+          "type": "input",
+          "placeholder": "Comment s’appelle la femme ?"
+        },
+        {
+          "type": "input",
+          "placeholder": "Quel est le métier de Paul ?"
+        },
+        {
+          "type": "instruction",
+          "content": "Écouter : écoute le dialogue et réponds aux questions."
+        },
+        {
+          "type": "blockquote",
+          "content": "A : Bonjour ! B : Bonjour ! A : Je suis Anne. Et toi ? B : Je suis Paul. Enchanté !"
+        },
+        {
+          "type": "input",
+          "placeholder": "Comment s’appelle l’homme ?"
+        },
+        {
+          "type": "input",
+          "placeholder": "Comment Anne salue-t-elle ?"
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-bonjour-bienvenue-slide-7",
+      "title": "7. Parler et écrire",
+      "stage": "freer-practice",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Parler : pratique les expressions du cours en binôme."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Bonjour !\n• Je suis Anne.\n• Comment ça va ?"
+        },
+        {
+          "type": "instruction",
+          "content": "Écrire : écris un texte court avec le vocabulaire du cours."
+        },
+        {
+          "type": "essay",
+          "placeholder": "Écris ta réponse ici ..."
+        },
+        {
+          "type": "input",
+          "placeholder": "Une phrase que tu dis en binôme :"
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-bonjour-bienvenue-slide-8",
+      "title": "8. Déroulés de cours selon la durée",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Choisis le déroulé qui correspond à ton temps."
+        },
+        {
+          "type": "blockquote",
+          "content": "60 min (base) : échauffement, vocabulaire, grammaire et une tâche orale.\n90 min (étendu) : ajoute prononciation, lecture et écoute.\n120 min (atelier complet) : ajoute écriture, correction entre pairs et le projet de l’unité."
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-bonjour-bienvenue-slide-9",
+      "title": "9. Adaptations pour le groupe",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Adapte le cours à ton groupe."
+        },
+        {
+          "type": "blockquote",
+          "content": "Enfants : Une tâche avec des cartes de salutation."
+        },
+        {
+          "type": "blockquote",
+          "content": "Adolescents : Un jeu de présentation en chaîne."
+        },
+        {
+          "type": "blockquote",
+          "content": "Adultes : Une présentation courte en deux phrases."
+        },
+        {
+          "type": "blockquote",
+          "content": "Seniors : Grandes cartes, lues lentement."
+        },
+        {
+          "type": "blockquote",
+          "content": "Cours individuels : Une fiche : cinq phrases sur le thème du cours (FR-001)."
+        },
+        {
+          "type": "blockquote",
+          "content": "Groupe : Une tâche en binôme ou en petits groupes."
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-bonjour-bienvenue-slide-10",
+      "title": "10. Devoirs et notes de révision",
+      "stage": "cool-down",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Devoirs :"
+        },
+        {
+          "type": "blockquote",
+          "content": "Écris cinq phrases : saluer, te présenter, prendre congé."
+        },
+        {
+          "type": "input",
+          "placeholder": "Écris ici ta phrase de devoir ..."
+        },
+        {
+          "type": "instruction",
+          "content": "Réponse modèle à comparer :"
+        },
+        {
+          "type": "blockquote",
+          "content": "Bonjour, madame Dupont !"
+        },
+        {
+          "type": "blockquote",
+          "content": "Le cours 0.2 révise la salutation et ajoute le nom."
+        }
+      ]
+    }
+  ]
+}

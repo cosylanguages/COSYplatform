@@ -1,0 +1,404 @@
+{
+  "id": "fr-a1-comment-t-appelles-tu",
+  "title": "Comment t'appelles-tu ?",
+  "level": "A1",
+  "language": "fr",
+  "unit": "Unité 0 : Premiers pas",
+  "canDo": "Je peux demander le nom et dire mon nom.",
+  "defaultDuration": 50,
+  "defaultMode": "all",
+  "objectives": [
+    "utiliser la structure cible : verbe s'appeler (présent)",
+    "utiliser 6 nouveaux mots : Nom, Comment, Enchanté, Prénom, Nom de famille, Épeler"
+  ],
+  "materials": "Cartes de vocabulaire, audio du texte, fiche de lecture, images ou objets réels, pages de grammaire A1 de COSYmanuals sur verbe s'appeler (présent).",
+  "assessment": "Vérifie l’usage correct de verbe s'appeler (présent) et la prononciation claire des mots cibles.",
+  "homework": "Écris cinq phrases : demander le nom et répondre.",
+  "recycling": {
+    "prior": "Révise la salutation du cours 0.1.",
+    "next": "Le cours 0.3 révise les noms et ajoute les nombres."
+  },
+  "differentiation": {
+    "individual": "Une fiche : cinq phrases sur le thème du cours (FR-002).",
+    "group": "Une tâche en binôme ou en petits groupes.",
+    "children": "Un jeu de noms avec une balle.",
+    "teens": "Une interview courte en binôme.",
+    "adults": "Une présentation avec nom et métier.",
+    "seniors": "Grandes cartes de noms, lues lentement."
+  },
+  "links": {
+    "vocabulary": [
+      "Nom",
+      "Comment",
+      "Enchanté",
+      "Prénom",
+      "Nom de famille",
+      "Épeler"
+    ],
+    "grammar": [
+      {
+        "topic_id": "verbe-sappeler-present",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/fr/grammar/a1/topics/verbe-sappeler-present.html"
+      }
+    ],
+    "phonetics": "Le son « elle » se prononce /ɛl/."
+  },
+  "slides": [
+    {
+      "id": "fr-a1-comment-t-appelles-tu-slide-1",
+      "title": "1. Objectif communicatif et vue d’ensemble",
+      "stage": "warm-up",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Objectif communicatif : Je peux demander le nom et dire mon nom."
+        },
+        {
+          "type": "blockquote",
+          "content": "Vue d’ensemble du cours :\n- Niveau : A1 Français général\n- Unité : Unité 0 : Premiers pas\n- Durée : 60 min (base) / 90 min (étendu) / 120 min (atelier complet)\n- Focus : Comment t'appelles-tu ?\n- Matériel : cartes de vocabulaire, audio, fiche de lecture"
+        },
+        {
+          "type": "instruction",
+          "content": "Échauffement : dis un mot que tu connais déjà sur ce thème."
+        },
+        {
+          "type": "input",
+          "placeholder": "Écris un mot que tu connais ..."
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-comment-t-appelles-tu-slide-2",
+      "title": "2. Révision et lien",
+      "stage": "recycling",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Révise la salutation du cours 0.1."
+        },
+        {
+          "type": "blockquote",
+          "content": "Vocabulaire révisé : Nom, Comment, Enchanté."
+        },
+        {
+          "type": "instruction",
+          "content": "Réponds de mémoire : quel mot appartient à ce thème ?"
+        },
+        {
+          "type": "test",
+          "content": "Quel mot appartient à ce thème ?",
+          "options": [
+            "Nom",
+            "aéroport",
+            "parapluie"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-comment-t-appelles-tu-slide-3",
+      "title": "3. Vocabulaire et expressions essentielles",
+      "stage": "input",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Vocabulaire actif de base (6 éléments) :"
+        },
+        {
+          "type": "blockquote",
+          "content": "Nom — le mot qui identifie une personne. Exemple: Mon nom est Anne.\nComment — mot interrogatif. Exemple: Comment t’appelles-tu ?\nEnchanté — formule quand on rencontre quelqu’un. Exemple: Enchanté, Paul !\nPrénom — le premier nom d’une personne. Exemple: Mon prénom est Anne.\nNom de famille — le nom de la famille. Exemple: Mon nom de famille est Dupont.\nÉpeler — dire les lettres d’un mot. Exemple: Peux-tu épeler ton nom ?"
+        },
+        {
+          "type": "instruction",
+          "content": "Expressions essentielles et combinaisons fonctionnelles :"
+        },
+        {
+          "type": "blockquote",
+          "content": "• Comment t’appelles-tu ?\n• Je m’appelle Anne.\n• Mon nom est Paul.\n• Enchanté !\n• Comment vous appelez-vous ?"
+        },
+        {
+          "type": "instruction",
+          "content": "Pratique du vocabulaire : choisis le mot correct."
+        },
+        {
+          "type": "test",
+          "content": "Quel mot signifie « le mot qui identifie une personne » ?",
+          "options": [
+            "Nom",
+            "Comment",
+            "Enchanté"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Quel mot signifie « mot interrogatif » ?",
+          "options": [
+            "Comment",
+            "Nom",
+            "Enchanté"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Complète la phrase avec un mot de la liste."
+        },
+        {
+          "type": "input",
+          "placeholder": "Complète : Mon ___ est Anne."
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-comment-t-appelles-tu-slide-4",
+      "title": "4. Point de prononciation",
+      "stage": "pronunciation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Le son « elle » se prononce /ɛl/."
+        },
+        {
+          "type": "blockquote",
+          "content": "appelle /apɛl/, enchanté /ɑ̃ʃɑ̃te/"
+        },
+        {
+          "type": "instruction",
+          "content": "Écoute et répète trois fois."
+        },
+        {
+          "type": "test",
+          "content": "Quel mot entends-tu dans l’audio ?",
+          "options": [
+            "Nom",
+            "le",
+            "un"
+          ]
+        },
+        {
+          "type": "input",
+          "placeholder": "Écris le mot entendu : ..."
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-comment-t-appelles-tu-slide-5",
+      "title": "5. Point de grammaire et pratique guidée",
+      "stage": "grammar",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Point de grammaire : Verbe s'appeler (présent)."
+        },
+        {
+          "type": "blockquote",
+          "content": "Le verbe s’appeler est pronominal : je m’appelle, tu t’appelles, il s’appelle. La question est : Comment t’appelles-tu ?"
+        },
+        {
+          "type": "grammar-focus",
+          "grammarId": "fr-a1-verbe-sappeler-present"
+        },
+        {
+          "type": "instruction",
+          "content": "Pratique guidée : choisis la bonne option."
+        },
+        {
+          "type": "test",
+          "content": "Choisis la forme correcte.",
+          "options": [
+            "Je m’appelle Anne.",
+            "Je appelles Anne.",
+            "Je m’appelle-toi Anne."
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Choisis la question correcte.",
+          "options": [
+            "Comment t’appelles-tu ?",
+            "Comment tu appelles ?",
+            "Comment s’appelles-tu ?"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Complète la phrase."
+        },
+        {
+          "type": "input",
+          "placeholder": "Comment ___ ton ami ?"
+        },
+        {
+          "type": "input",
+          "placeholder": "___ !"
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-comment-t-appelles-tu-slide-6",
+      "title": "6. Les quatre compétences (écouter et lire)",
+      "stage": "reading-listening",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Lire : lis le texte et réponds aux questions."
+        },
+        {
+          "type": "blockquote",
+          "content": "Bonjour ! Je m’appelle Lucie. Comment t’appelles-tu ? Mon nom est Thomas. Enchanté, Thomas ! Et comment s’appelle ton ami ?"
+        },
+        {
+          "type": "input",
+          "placeholder": "Comment s’appelle la femme ?"
+        },
+        {
+          "type": "input",
+          "placeholder": "Comment s’appelle l’homme ?"
+        },
+        {
+          "type": "instruction",
+          "content": "Écouter : écoute le dialogue et réponds aux questions."
+        },
+        {
+          "type": "blockquote",
+          "content": "A : Comment t’appelles-tu ? B : Je m’appelle Paul. Et toi ? A : Je m’appelle Anne. Enchanté !"
+        },
+        {
+          "type": "input",
+          "placeholder": "Comment s’appelle l’homme ?"
+        },
+        {
+          "type": "input",
+          "placeholder": "Comment s’appelle la femme ?"
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-comment-t-appelles-tu-slide-7",
+      "title": "7. Parler et écrire",
+      "stage": "freer-practice",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Parler : pratique les expressions du cours en binôme."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Comment t’appelles-tu ?\n• Je m’appelle Anne.\n• Mon nom est Paul."
+        },
+        {
+          "type": "instruction",
+          "content": "Écrire : écris un texte court avec le vocabulaire du cours."
+        },
+        {
+          "type": "essay",
+          "placeholder": "Écris ta réponse ici ..."
+        },
+        {
+          "type": "input",
+          "placeholder": "Une phrase que tu dis en binôme :"
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-comment-t-appelles-tu-slide-8",
+      "title": "8. Déroulés de cours selon la durée",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Choisis le déroulé qui correspond à ton temps."
+        },
+        {
+          "type": "blockquote",
+          "content": "60 min (base) : échauffement, vocabulaire, grammaire et une tâche orale.\n90 min (étendu) : ajoute prononciation, lecture et écoute.\n120 min (atelier complet) : ajoute écriture, correction entre pairs et le projet de l’unité."
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-comment-t-appelles-tu-slide-9",
+      "title": "9. Adaptations pour le groupe",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Adapte le cours à ton groupe."
+        },
+        {
+          "type": "blockquote",
+          "content": "Enfants : Un jeu de noms avec une balle."
+        },
+        {
+          "type": "blockquote",
+          "content": "Adolescents : Une interview courte en binôme."
+        },
+        {
+          "type": "blockquote",
+          "content": "Adultes : Une présentation avec nom et métier."
+        },
+        {
+          "type": "blockquote",
+          "content": "Seniors : Grandes cartes de noms, lues lentement."
+        },
+        {
+          "type": "blockquote",
+          "content": "Cours individuels : Une fiche : cinq phrases sur le thème du cours (FR-002)."
+        },
+        {
+          "type": "blockquote",
+          "content": "Groupe : Une tâche en binôme ou en petits groupes."
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-comment-t-appelles-tu-slide-10",
+      "title": "10. Devoirs et notes de révision",
+      "stage": "cool-down",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Devoirs :"
+        },
+        {
+          "type": "blockquote",
+          "content": "Écris cinq phrases : demander le nom et répondre."
+        },
+        {
+          "type": "input",
+          "placeholder": "Écris ici ta phrase de devoir ..."
+        },
+        {
+          "type": "instruction",
+          "content": "Réponse modèle à comparer :"
+        },
+        {
+          "type": "blockquote",
+          "content": "Mon nom est Anne."
+        },
+        {
+          "type": "blockquote",
+          "content": "Le cours 0.3 révise les noms et ajoute les nombres."
+        }
+      ]
+    }
+  ]
+}
