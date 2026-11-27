@@ -1,0 +1,406 @@
+{
+  "id": "es-a1-mi-familia",
+  "title": "Mi familia",
+  "level": "A1",
+  "language": "es",
+  "unit": "Unidad 1: Mi Vida Diaria",
+  "canDo": "Puedo presentar a mi familia y hablar de su edad y su trabajo.",
+  "defaultDuration": 50,
+  "defaultMode": "all",
+  "objectives": [
+    "usar la estructura objetivo: posesivos mi/mis, tu/tus",
+    "usar 8 palabras nuevas: la familia, la madre, el padre, la hermana, el hermano, los abuelos, el hijo, casado"
+  ],
+  "materials": "Tarjetas de vocabulario, audio de la audición, hoja de lectura, fotos u objetos reales, páginas de gramática A1 de COSYmanuals sobre posesivos mi/mis, tu/tus.",
+  "assessment": "Comprobar el uso correcto de posesivos mi/mis, tu/tus y la pronunciación clara de las palabras objetivo.",
+  "homework": "Escribe cinco frases sobre tu familia con mi, mis, tu y tus.",
+  "recycling": {
+    "prior": "Recicla estar y hay de la lección 1.3.",
+    "next": "La lección 1.5 recicla la familia y añade la rutina."
+  },
+  "differentiation": {
+    "individual": "Una ficha de trabajo: cinco frases sobre el tema de la lección (ES-04).",
+    "group": "Una tarea de clase en parejas o grupos pequeños.",
+    "children": "Un árbol genealógico con fotos y nombres.",
+    "teens": "Una presentación de la familia con edades.",
+    "adults": "Una conversación sobre la familia y el trabajo.",
+    "seniors": "Fotos de familia con letra grande comentadas despacio."
+  },
+  "links": {
+    "vocabulary": [
+      "la familia",
+      "la madre",
+      "el padre",
+      "la hermana",
+      "el hermano",
+      "los abuelos",
+      "el hijo",
+      "casado"
+    ],
+    "grammar": [
+      {
+        "topic_id": "posesivos",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/es/grammar/a1/topics/posesivos.html"
+      }
+    ],
+    "phonetics": "La v y la b suenan igual en español."
+  },
+  "slides": [
+    {
+      "id": "es-a1-mi-familia-slide-1",
+      "title": "1. Objetivo Comunicativo y Panorama",
+      "stage": "warm-up",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Objetivo comunicativo: Puedo presentar a mi familia y hablar de su edad y su trabajo."
+        },
+        {
+          "type": "blockquote",
+          "content": "Panorama de la lección:\n- Nivel: A1 Español General\n- Unidad: Unidad 1: Mi Vida Diaria\n- Tiempo: 60 min (Esencial) / 90 min (Ampliado) / 120 min (Taller completo)\n- Enfoque: Mi familia\n- Materiales: tarjetas de vocabulario, audio, hoja de lectura"
+        },
+        {
+          "type": "instruction",
+          "content": "Calentamiento: di una palabra que ya conoces sobre este tema."
+        },
+        {
+          "type": "input",
+          "placeholder": "Escribe una palabra que conozcas..."
+        }
+      ]
+    },
+    {
+      "id": "es-a1-mi-familia-slide-2",
+      "title": "2. Reciclaje y Continuidad",
+      "stage": "recycling",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Recicla estar y hay de la lección 1.3."
+        },
+        {
+          "type": "blockquote",
+          "content": "Lengua reciclada: la familia, la madre, el padre."
+        },
+        {
+          "type": "instruction",
+          "content": "Responde de memoria: ¿qué palabra pertenece a este tema?"
+        },
+        {
+          "type": "test",
+          "content": "¿Qué palabra pertenece a este tema?",
+          "options": [
+            "la familia",
+            "aeropuerto",
+            "paraguas"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "es-a1-mi-familia-slide-3",
+      "title": "3. Vocabulario y Expresiones Esenciales",
+      "stage": "input",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Vocabulario activo básico (8 elementos):"
+        },
+        {
+          "type": "blockquote",
+          "content": "la familia — los padres, los hijos y los parientes. Ejemplo: Esta es mi familia.\nla madre — la mujer que tiene hijos. Ejemplo: Mi madre es médico.\nel padre — el hombre que tiene hijos. Ejemplo: Mi padre es profesor.\nla hermana — la hija de tus padres, mujer. Ejemplo: Mi hermana tiene veinte años.\nel hermano — el hijo de tus padres, hombre. Ejemplo: Mi hermano está casado.\nlos abuelos — los padres de tus padres. Ejemplo: Mis abuelos viven en el sur.\nel hijo — el niño o joven de una familia. Ejemplo: Mi hermano tiene un hijo.\ncasado — con marido o mujer. Ejemplo: Mi hermano está casado."
+        },
+        {
+          "type": "instruction",
+          "content": "Expresiones esenciales y combinaciones funcionales:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• Esta es mi madre.\n• Mi hermano tiene veinte años.\n• Mis abuelos viven en el sur.\n• Mi hermana está casada.\n• Somos cinco en casa."
+        },
+        {
+          "type": "instruction",
+          "content": "Práctica de vocabulario: elige la palabra correcta."
+        },
+        {
+          "type": "test",
+          "content": "¿Qué palabra significa 'los padres, los hijos y los parientes'?",
+          "options": [
+            "la familia",
+            "la madre",
+            "el padre"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "¿Qué palabra significa 'la mujer que tiene hijos'?",
+          "options": [
+            "la madre",
+            "la familia",
+            "el padre"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Completa la frase con una palabra de la lista."
+        },
+        {
+          "type": "input",
+          "placeholder": "Completa: Esta es mi familia."
+        }
+      ]
+    },
+    {
+      "id": "es-a1-mi-familia-slide-4",
+      "title": "4. Enfoque de Pronunciación",
+      "stage": "pronunciation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "La v y la b suenan igual en español."
+        },
+        {
+          "type": "blockquote",
+          "content": "vaca y baca suenan /ˈbaka/"
+        },
+        {
+          "type": "instruction",
+          "content": "Escucha y repite tres veces."
+        },
+        {
+          "type": "test",
+          "content": "¿Qué palabra lleva el acento principal?",
+          "options": [
+            "la familia",
+            "el",
+            "la"
+          ]
+        },
+        {
+          "type": "input",
+          "placeholder": "Escribe la parte acentuada: ..."
+        }
+      ]
+    },
+    {
+      "id": "es-a1-mi-familia-slide-5",
+      "title": "5. Enfoque Gramatical y Práctica Controlada",
+      "stage": "grammar",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Enfoque gramatical: Posesivos mi/mis, tu/tus."
+        },
+        {
+          "type": "blockquote",
+          "content": "Usa mi y tu con un sustantivo y mis y tus con varios: mi madre, mis padres, tu hermano, tus abuelos."
+        },
+        {
+          "type": "grammar-focus",
+          "grammarId": "es-a1-posesivos"
+        },
+        {
+          "type": "instruction",
+          "content": "Práctica controlada: elige la opción correcta."
+        },
+        {
+          "type": "test",
+          "content": "Elige la forma correcta.",
+          "options": [
+            "mis abuelos",
+            "mi abuelos",
+            "mis abuelo"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Elige la frase correcta.",
+          "options": [
+            "Esta es mi madre.",
+            "Esta mi madre es.",
+            "Esta es madre mi."
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Completa la frase."
+        },
+        {
+          "type": "input",
+          "placeholder": "___ hermanos viven en Madrid."
+        },
+        {
+          "type": "input",
+          "placeholder": "Mi padre ___ casado."
+        }
+      ]
+    },
+    {
+      "id": "es-a1-mi-familia-slide-6",
+      "title": "6. Distribución de las Cuatro Destrezas (Comprensión Auditiva y Lectora)",
+      "stage": "reading-listening",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Lectura: lee el texto y responde a las preguntas."
+        },
+        {
+          "type": "blockquote",
+          "content": "Esta es mi familia. Mi padre es profesor y mi madre es médico. Mi hermana tiene veinte años y mis abuelos viven en el sur. Mi hermano está casado y tiene un hijo."
+        },
+        {
+          "type": "input",
+          "placeholder": "¿Qué hace el padre?"
+        },
+        {
+          "type": "input",
+          "placeholder": "¿Dónde viven los abuelos?"
+        },
+        {
+          "type": "instruction",
+          "content": "Audición: escucha el diálogo y responde a las preguntas."
+        },
+        {
+          "type": "blockquote",
+          "content": "A: ¿Es tu hermana? B: Sí, es mi hermana Ana. A: ¿Y ellos? B: Mis abuelos. Viven con nosotros."
+        },
+        {
+          "type": "input",
+          "placeholder": "¿Quién es Ana?"
+        },
+        {
+          "type": "input",
+          "placeholder": "¿Quiénes viven con la familia?"
+        }
+      ]
+    },
+    {
+      "id": "es-a1-mi-familia-slide-7",
+      "title": "7. Producción Oral y Escrita",
+      "stage": "freer-practice",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Expresión oral: practica en parejas las expresiones de la lección."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Esta es mi madre.\n• Mi hermano tiene veinte años.\n• Mis abuelos viven en el sur."
+        },
+        {
+          "type": "instruction",
+          "content": "Expresión escrita: escribe un texto corto con el vocabulario de la lección."
+        },
+        {
+          "type": "essay",
+          "placeholder": "Escribe tu respuesta aquí..."
+        },
+        {
+          "type": "input",
+          "placeholder": "Una frase que dirás en el trabajo en parejas:"
+        }
+      ]
+    },
+    {
+      "id": "es-a1-mi-familia-slide-8",
+      "title": "8. Flujos de Clase según la Duración",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Elige el flujo que se adapte a tu tiempo."
+        },
+        {
+          "type": "blockquote",
+          "content": "60 min (Esencial): calentamiento, vocabulario, gramática y una tarea oral.\n90 min (Ampliado): añade pronunciación, lectura y audición.\n120 min (Taller completo): añade la tarea escrita, la corrección entre iguales y el proyecto de la unidad."
+        }
+      ]
+    },
+    {
+      "id": "es-a1-mi-familia-slide-9",
+      "title": "9. Adaptaciones de Entrega",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Adapta la lección a tu grupo."
+        },
+        {
+          "type": "blockquote",
+          "content": "Niños: Un árbol genealógico con fotos y nombres."
+        },
+        {
+          "type": "blockquote",
+          "content": "Adolescentes: Una presentación de la familia con edades."
+        },
+        {
+          "type": "blockquote",
+          "content": "Adultos: Una conversación sobre la familia y el trabajo."
+        },
+        {
+          "type": "blockquote",
+          "content": "Personas mayores: Fotos de familia con letra grande comentadas despacio."
+        },
+        {
+          "type": "blockquote",
+          "content": "Individual: una ficha de trabajo con cinco frases (ES-04)."
+        },
+        {
+          "type": "blockquote",
+          "content": "Grupo: una tarea de clase en parejas o grupos pequeños."
+        }
+      ]
+    },
+    {
+      "id": "es-a1-mi-familia-slide-10",
+      "title": "10. Deberes y Notas de Reciclaje",
+      "stage": "cool-down",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Deberes:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Escribe cinco frases sobre tu familia con mi, mis, tu y tus."
+        },
+        {
+          "type": "input",
+          "placeholder": "Escribe aquí la frase de tus deberes..."
+        },
+        {
+          "type": "instruction",
+          "content": "Respuesta modelo para comparar:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Esta es mi familia."
+        },
+        {
+          "type": "blockquote",
+          "content": "La lección 1.5 recicla la familia y añade la rutina."
+        }
+      ]
+    }
+  ]
+}

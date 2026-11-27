@@ -1,0 +1,404 @@
+{
+  "id": "es-a1-hola-soy",
+  "title": "Hola, soy...",
+  "level": "A1",
+  "language": "es",
+  "unit": "Unidad 1: Mi Vida Diaria",
+  "canDo": "Puedo presentarme con ser y decir cómo estoy con estar.",
+  "defaultDuration": 50,
+  "defaultMode": "all",
+  "objectives": [
+    "usar la estructura objetivo: verbo ser vs estar (introducción)",
+    "usar 6 palabras nuevas: estudiante, profesor, español, nacionalidad, idioma, ingeniero"
+  ],
+  "materials": "Tarjetas de vocabulario, audio de la audición, hoja de lectura, fotos u objetos reales, páginas de gramática A1 de COSYmanuals sobre verbo ser vs estar (introducción).",
+  "assessment": "Comprobar el uso correcto de verbo ser vs estar (introducción) y la pronunciación clara de las palabras objetivo.",
+  "homework": "Escribe cinco frases con ser y estar sobre ti.",
+  "recycling": {
+    "prior": "Recicla los saludos de la unidad 0.",
+    "next": "La lección 1.2 recicla ser y estar y añade el trabajo."
+  },
+  "differentiation": {
+    "individual": "Una ficha de trabajo: cinco frases sobre el tema de la lección (ES-01).",
+    "group": "Una tarea de clase en parejas o grupos pequeños.",
+    "children": "Una tarjeta de presentación con dibujo y dos frases.",
+    "teens": "Una ronda de presentaciones con país y estado.",
+    "adults": "Una presentación con profesión y origen.",
+    "seniors": "Tarjetas de letra grande con ser y estar leídas despacio."
+  },
+  "links": {
+    "vocabulary": [
+      "estudiante",
+      "profesor",
+      "español",
+      "nacionalidad",
+      "idioma",
+      "ingeniero"
+    ],
+    "grammar": [
+      {
+        "topic_id": "ser-vs-estar",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/es/grammar/a1/topics/ser-vs-estar.html"
+      }
+    ],
+    "phonetics": "La g suena suave en gato y fuerte en gente."
+  },
+  "slides": [
+    {
+      "id": "es-a1-hola-soy-slide-1",
+      "title": "1. Objetivo Comunicativo y Panorama",
+      "stage": "warm-up",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Objetivo comunicativo: Puedo presentarme con ser y decir cómo estoy con estar."
+        },
+        {
+          "type": "blockquote",
+          "content": "Panorama de la lección:\n- Nivel: A1 Español General\n- Unidad: Unidad 1: Mi Vida Diaria\n- Tiempo: 60 min (Esencial) / 90 min (Ampliado) / 120 min (Taller completo)\n- Enfoque: Hola, soy...\n- Materiales: tarjetas de vocabulario, audio, hoja de lectura"
+        },
+        {
+          "type": "instruction",
+          "content": "Calentamiento: di una palabra que ya conoces sobre este tema."
+        },
+        {
+          "type": "input",
+          "placeholder": "Escribe una palabra que conozcas..."
+        }
+      ]
+    },
+    {
+      "id": "es-a1-hola-soy-slide-2",
+      "title": "2. Reciclaje y Continuidad",
+      "stage": "recycling",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Recicla los saludos de la unidad 0."
+        },
+        {
+          "type": "blockquote",
+          "content": "Lengua reciclada: estudiante, profesor, español."
+        },
+        {
+          "type": "instruction",
+          "content": "Responde de memoria: ¿qué palabra pertenece a este tema?"
+        },
+        {
+          "type": "test",
+          "content": "¿Qué palabra pertenece a este tema?",
+          "options": [
+            "estudiante",
+            "aeropuerto",
+            "paraguas"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "es-a1-hola-soy-slide-3",
+      "title": "3. Vocabulario y Expresiones Esenciales",
+      "stage": "input",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Vocabulario activo básico (6 elementos):"
+        },
+        {
+          "type": "blockquote",
+          "content": "estudiante — la persona que estudia. Ejemplo: Soy estudiante de español.\nprofesor — la persona que enseña. Ejemplo: Mi padre es profesor.\nespañol — la lengua de España. Ejemplo: Hablo español y un poco de inglés.\nnacionalidad — el país de donde eres. Ejemplo: Mi nacionalidad es japonesa.\nidioma — la lengua que hablas. Ejemplo: Mi idioma es el español.\ningeniero — la persona que diseña máquinas o edificios. Ejemplo: Soy ingeniero en una empresa."
+        },
+        {
+          "type": "instruction",
+          "content": "Expresiones esenciales y combinaciones funcionales:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• Soy estudiante.\n• Soy de España.\n• Estoy bien, gracias.\n• ¿De dónde eres?\n• Mi idioma es el español."
+        },
+        {
+          "type": "instruction",
+          "content": "Práctica de vocabulario: elige la palabra correcta."
+        },
+        {
+          "type": "test",
+          "content": "¿Qué palabra significa 'la persona que estudia'?",
+          "options": [
+            "estudiante",
+            "profesor",
+            "español"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "¿Qué palabra significa 'la persona que enseña'?",
+          "options": [
+            "profesor",
+            "estudiante",
+            "español"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Completa la frase con una palabra de la lista."
+        },
+        {
+          "type": "input",
+          "placeholder": "Completa: Soy ___ de español."
+        }
+      ]
+    },
+    {
+      "id": "es-a1-hola-soy-slide-4",
+      "title": "4. Enfoque de Pronunciación",
+      "stage": "pronunciation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "La g suena suave en gato y fuerte en gente."
+        },
+        {
+          "type": "blockquote",
+          "content": "gato /ˈɡato/, gente /ˈxente/"
+        },
+        {
+          "type": "instruction",
+          "content": "Escucha y repite tres veces."
+        },
+        {
+          "type": "test",
+          "content": "¿Qué palabra lleva el acento principal?",
+          "options": [
+            "estudiante",
+            "el",
+            "la"
+          ]
+        },
+        {
+          "type": "input",
+          "placeholder": "Escribe la parte acentuada: ..."
+        }
+      ]
+    },
+    {
+      "id": "es-a1-hola-soy-slide-5",
+      "title": "5. Enfoque Gramatical y Práctica Controlada",
+      "stage": "grammar",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Enfoque gramatical: Verbo ser vs estar (introducción)."
+        },
+        {
+          "type": "blockquote",
+          "content": "Usa ser para la identidad, el origen y la profesión: Soy Ana. Soy de España. Soy profesora. Usa estar para el estado: Estoy bien. Estoy en casa."
+        },
+        {
+          "type": "grammar-focus",
+          "grammarId": "es-a1-ser-vs-estar"
+        },
+        {
+          "type": "instruction",
+          "content": "Práctica controlada: elige la opción correcta."
+        },
+        {
+          "type": "test",
+          "content": "Elige la forma correcta.",
+          "options": [
+            "Soy de España.",
+            "Estoy de España.",
+            "Soy España de."
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Elige la forma correcta.",
+          "options": [
+            "Estoy bien.",
+            "Soy bien.",
+            "Estoy ser bien."
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Completa la frase."
+        },
+        {
+          "type": "input",
+          "placeholder": "___ profesora. (identidad)"
+        },
+        {
+          "type": "input",
+          "placeholder": "Hoy ___ contenta. (estado)"
+        }
+      ]
+    },
+    {
+      "id": "es-a1-hola-soy-slide-6",
+      "title": "6. Distribución de las Cuatro Destrezas (Comprensión Auditiva y Lectora)",
+      "stage": "reading-listening",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Lectura: lee el texto y responde a las preguntas."
+        },
+        {
+          "type": "blockquote",
+          "content": "Hola, soy Marta. Soy profesora y soy de España. Mi idioma es el español y también hablo inglés. Hoy estoy contenta porque es mi primer día."
+        },
+        {
+          "type": "input",
+          "placeholder": "¿De dónde es Marta?"
+        },
+        {
+          "type": "input",
+          "placeholder": "¿Cómo está hoy?"
+        },
+        {
+          "type": "instruction",
+          "content": "Audición: escucha el diálogo y responde a las preguntas."
+        },
+        {
+          "type": "blockquote",
+          "content": "A: Hola, soy Kenji. Soy de Japón. B: Mucho gusto. ¿Cómo estás? A: Estoy bien, gracias. ¿Y tú? B: Muy bien."
+        },
+        {
+          "type": "input",
+          "placeholder": "¿De dónde es Kenji?"
+        },
+        {
+          "type": "input",
+          "placeholder": "¿Cómo está Kenji?"
+        }
+      ]
+    },
+    {
+      "id": "es-a1-hola-soy-slide-7",
+      "title": "7. Producción Oral y Escrita",
+      "stage": "freer-practice",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Expresión oral: practica en parejas las expresiones de la lección."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Soy estudiante.\n• Soy de España.\n• Estoy bien, gracias."
+        },
+        {
+          "type": "instruction",
+          "content": "Expresión escrita: escribe un texto corto con el vocabulario de la lección."
+        },
+        {
+          "type": "essay",
+          "placeholder": "Escribe tu respuesta aquí..."
+        },
+        {
+          "type": "input",
+          "placeholder": "Una frase que dirás en el trabajo en parejas:"
+        }
+      ]
+    },
+    {
+      "id": "es-a1-hola-soy-slide-8",
+      "title": "8. Flujos de Clase según la Duración",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Elige el flujo que se adapte a tu tiempo."
+        },
+        {
+          "type": "blockquote",
+          "content": "60 min (Esencial): calentamiento, vocabulario, gramática y una tarea oral.\n90 min (Ampliado): añade pronunciación, lectura y audición.\n120 min (Taller completo): añade la tarea escrita, la corrección entre iguales y el proyecto de la unidad."
+        }
+      ]
+    },
+    {
+      "id": "es-a1-hola-soy-slide-9",
+      "title": "9. Adaptaciones de Entrega",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Adapta la lección a tu grupo."
+        },
+        {
+          "type": "blockquote",
+          "content": "Niños: Una tarjeta de presentación con dibujo y dos frases."
+        },
+        {
+          "type": "blockquote",
+          "content": "Adolescentes: Una ronda de presentaciones con país y estado."
+        },
+        {
+          "type": "blockquote",
+          "content": "Adultos: Una presentación con profesión y origen."
+        },
+        {
+          "type": "blockquote",
+          "content": "Personas mayores: Tarjetas de letra grande con ser y estar leídas despacio."
+        },
+        {
+          "type": "blockquote",
+          "content": "Individual: una ficha de trabajo con cinco frases (ES-01)."
+        },
+        {
+          "type": "blockquote",
+          "content": "Grupo: una tarea de clase en parejas o grupos pequeños."
+        }
+      ]
+    },
+    {
+      "id": "es-a1-hola-soy-slide-10",
+      "title": "10. Deberes y Notas de Reciclaje",
+      "stage": "cool-down",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Deberes:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Escribe cinco frases con ser y estar sobre ti."
+        },
+        {
+          "type": "input",
+          "placeholder": "Escribe aquí la frase de tus deberes..."
+        },
+        {
+          "type": "instruction",
+          "content": "Respuesta modelo para comparar:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Soy estudiante de español."
+        },
+        {
+          "type": "blockquote",
+          "content": "La lección 1.2 recicla ser y estar y añade el trabajo."
+        }
+      ]
+    }
+  ]
+}
