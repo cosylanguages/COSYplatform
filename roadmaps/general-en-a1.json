@@ -1,609 +1,1643 @@
 {
-  "curriculumId": "curriculum-english-a1",
-  "title": "General English A1 Elementary Roadmap",
-  "totalLessons": 67,
+  "curriculumId": "general-en-a1",
+  "title": "General English A1",
+  "totalLessons": 180,
   "sequence": [
     {
       "lessonNumber": 1,
-      "id": "ge-a1-more-about-the-course",
-      "title": "More about the course",
-      "section": 0,
+      "id": "ge-a1-hello-first-contact",
+      "title": "1.1 Hello! First Contact",
+      "section": 1,
+      "unit": "MODULE 1. FIRST CONTACT & PERSONAL IDENTITY",
       "isOptional": false,
-      "ageRestriction": "18+",
-      "status": "planned"
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-a1/ge-a1-hello-first-contact.json"
     },
     {
       "lessonNumber": 2,
-      "id": "ge-a1-grammar-topics",
-      "title": "Grammar topics",
-      "section": 0,
+      "id": "ge-a1-my-name-is-asking-names",
+      "title": "1.2 My Name Is... Asking Names",
+      "section": 1,
+      "unit": "MODULE 1. FIRST CONTACT & PERSONAL IDENTITY",
       "isOptional": false,
-      "status": "planned"
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-a1/ge-a1-my-name-is-asking-names.json"
     },
     {
       "lessonNumber": 3,
-      "id": "grammar-translation",
-      "title": "Grammar translation",
-      "section": 0,
+      "id": "ge-a1-alphabet-spelling",
+      "title": "1.3 Alphabet & Spelling",
+      "section": 1,
+      "unit": "MODULE 1. FIRST CONTACT & PERSONAL IDENTITY",
       "isOptional": false,
-      "status": "planned"
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-a1/ge-a1-alphabet-spelling.json"
     },
     {
       "lessonNumber": 4,
-      "id": "ge-a1-pronunciation-topics",
-      "title": "Pronunciation topics",
-      "section": 0,
+      "id": "countries-nationalities-a1",
+      "title": "1.4 Countries & Nationalities",
+      "section": 1,
+      "unit": "MODULE 1. FIRST CONTACT & PERSONAL IDENTITY",
       "isOptional": false,
-      "status": "planned"
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-a1/countries-nationalities-a1.json"
     },
     {
       "lessonNumber": 5,
-      "id": "ge-a1-vocabulary-topics",
-      "title": "Vocabulary topics",
-      "section": 0,
+      "id": "ge-a1-languages-i-speak",
+      "title": "1.5 Languages I Speak",
+      "section": 1,
+      "unit": "MODULE 1. FIRST CONTACT & PERSONAL IDENTITY",
       "isOptional": false,
-      "status": "planned"
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-a1/ge-a1-languages-i-speak.json"
     },
     {
       "lessonNumber": 6,
-      "id": "nice-to-meet-you",
-      "title": "Nice to meet you!",
+      "id": "ge-a1-numbers-0-20",
+      "title": "1.6 Numbers 0–20",
       "section": 1,
-      "unit": "Unit 1. Nice to meet you!",
+      "unit": "MODULE 1. FIRST CONTACT & PERSONAL IDENTITY",
       "isOptional": false,
       "status": "drafted",
-      "lessonFile": "lessons/general-english-a1/nice-to-meet-you.json"
+      "lessonFile": "lessons/general-english-a1/ge-a1-numbers-0-20.json"
     },
     {
       "lessonNumber": 7,
-      "id": "more-about-me",
-      "title": "More about me",
+      "id": "ge-a1-age-birthday",
+      "title": "1.7 Age & Birthday",
       "section": 1,
-      "unit": "Unit 1. Nice to meet you!",
+      "unit": "MODULE 1. FIRST CONTACT & PERSONAL IDENTITY",
       "isOptional": false,
       "status": "drafted",
-      "lessonFile": "lessons/general-english-a1/more-about-me.json"
+      "lessonFile": "lessons/general-english-a1/ge-a1-age-birthday.json"
     },
     {
       "lessonNumber": 8,
-      "id": "family-exchange",
-      "title": "Family exchange",
+      "id": "ge-a1-phone-numbers-contact-details",
+      "title": "1.8 Phone Numbers & Contact Details",
       "section": 1,
-      "unit": "Unit 1. Nice to meet you!",
+      "unit": "MODULE 1. FIRST CONTACT & PERSONAL IDENTITY",
       "isOptional": false,
       "status": "drafted",
-      "lessonFile": "lessons/general-english-a1/family-exchange.json"
+      "lessonFile": "lessons/general-english-a1/ge-a1-phone-numbers-contact-details.json"
     },
     {
       "lessonNumber": 9,
-      "id": "world-of-people",
-      "title": "World of people",
+      "id": "ge-a1-numbers-20-100-prices",
+      "title": "1.9 Numbers 20–100 & Prices",
       "section": 1,
-      "unit": "Unit 1. Nice to meet you!",
-      "isOptional": true,
+      "unit": "MODULE 1. FIRST CONTACT & PERSONAL IDENTITY",
+      "isOptional": false,
       "status": "drafted",
-      "lessonFile": "lessons/general-english-a1/world-of-people.json"
+      "lessonFile": "lessons/general-english-a1/ge-a1-numbers-20-100-prices.json"
     },
     {
       "lessonNumber": 10,
-      "id": "where-do-real-heroes-work",
-      "title": "Where do real heroes work?",
+      "id": "ge-a1-personal-profile-project",
+      "title": "1.10 Personal Profile Project",
       "section": 1,
-      "unit": "Unit 2. Routine and fun",
+      "unit": "MODULE 1. FIRST CONTACT & PERSONAL IDENTITY",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-a1/ge-a1-personal-profile-project.json"
+    },
+    {
+      "lessonNumber": 11,
+      "id": "where-do-real-heroes-work",
+      "title": "Where Do Real Heroes Work",
+      "section": 1,
+      "unit": "MODULE 1. FIRST CONTACT & PERSONAL IDENTITY",
       "isOptional": false,
       "status": "drafted",
       "lessonFile": "lessons/general-english-a1/where-do-real-heroes-work.json"
     },
     {
-      "lessonNumber": 11,
-      "id": "daily-routine",
-      "title": "Daily routine",
-      "section": 1,
-      "unit": "Unit 2. Routine and fun",
-      "isOptional": false,
-      "status": "drafted",
-      "lessonFile": "lessons/general-english-a1/daily-routine.json"
-    },
-    {
       "lessonNumber": 12,
-      "id": "lets-have-fun-together",
-      "title": "Let's have fun together!",
+      "id": "where-i-live",
+      "title": "Where I Live",
       "section": 1,
-      "unit": "Unit 2. Routine and fun",
+      "unit": "MODULE 1. FIRST CONTACT & PERSONAL IDENTITY",
       "isOptional": false,
-      "status": "drafted",
-      "lessonFile": "lessons/general-english-a1/lets-have-fun-together.json"
+      "status": "planned"
     },
     {
       "lessonNumber": 13,
-      "id": "corporate-culture",
-      "title": "Corporate culture",
+      "id": "what-a-mess",
+      "title": "What a Mess",
       "section": 1,
-      "unit": "Unit 2. Routine and fun",
-      "isOptional": true,
-      "status": "drafted",
-      "lessonFile": "lessons/general-english-a1/corporate-culture.json"
+      "unit": "MODULE 1. FIRST CONTACT & PERSONAL IDENTITY",
+      "isOptional": false,
+      "status": "planned"
     },
     {
       "lessonNumber": 14,
-      "id": "ge-a1-progress-test-1",
-      "title": "Progress test 1",
+      "id": "making-it-cosy",
+      "title": "Making It Cosy",
       "section": 1,
-      "isMilestone": true,
+      "unit": "MODULE 1. FIRST CONTACT & PERSONAL IDENTITY",
+      "isOptional": false,
       "status": "planned"
     },
     {
       "lessonNumber": 15,
-      "id": "where-i-live",
-      "title": "Where I live",
-      "section": 2,
-      "unit": "Unit 3. Where I live",
+      "id": "a-room-for-two",
+      "title": "A Room for Two",
+      "section": 1,
+      "unit": "MODULE 1. FIRST CONTACT & PERSONAL IDENTITY",
       "isOptional": false,
       "status": "planned"
     },
     {
       "lessonNumber": 16,
-      "id": "what-a-mess",
-      "title": "What a mess!",
-      "section": 2,
-      "unit": "Unit 3. Where I live",
+      "id": "are-you-ok",
+      "title": "Are You Ok",
+      "section": 1,
+      "unit": "MODULE 1. FIRST CONTACT & PERSONAL IDENTITY",
       "isOptional": false,
-      "ageRestriction": "18+",
       "status": "planned"
     },
     {
       "lessonNumber": 17,
-      "id": "making-it-cosy",
-      "title": "Making it cosy",
-      "section": 2,
-      "unit": "Unit 3. Where I live",
+      "id": "how-can-i-get-to-the-hotel",
+      "title": "How Can I Get to the Hotel",
+      "section": 1,
+      "unit": "MODULE 1. FIRST CONTACT & PERSONAL IDENTITY",
       "isOptional": false,
       "status": "planned"
     },
     {
       "lessonNumber": 18,
-      "id": "a-room-for-two",
-      "title": "A room for two",
-      "section": 2,
-      "unit": "Unit 3. Where I live",
-      "isOptional": true,
+      "id": "you-must-behave",
+      "title": "You Must Behave",
+      "section": 1,
+      "unit": "MODULE 1. FIRST CONTACT & PERSONAL IDENTITY",
+      "isOptional": false,
       "status": "planned"
     },
     {
       "lessonNumber": 19,
-      "id": "on-cloud-nine",
-      "title": "On cloud nine",
-      "section": 2,
-      "unit": "Unit 4. Free time",
+      "id": "for-better-or-for-worse",
+      "title": "For Better or for Worse",
+      "section": 1,
+      "unit": "MODULE 1. FIRST CONTACT & PERSONAL IDENTITY",
       "isOptional": false,
       "status": "planned"
     },
     {
       "lessonNumber": 20,
-      "id": "join-a-group",
-      "title": "Join a group!",
-      "section": 2,
-      "unit": "Unit 4. Free time",
+      "id": "ge-a1-numbers-1-12",
+      "title": "Ge A1 Numbers 1 12",
+      "section": 1,
+      "unit": "MODULE 1. FIRST CONTACT & PERSONAL IDENTITY",
       "isOptional": false,
       "status": "planned"
     },
     {
       "lessonNumber": 21,
-      "id": "no-limit",
-      "title": "No limit",
+      "id": "ge-a1-family",
+      "title": "2.1 Family",
       "section": 2,
-      "unit": "Unit 4. Free time",
+      "unit": "MODULE 2. PEOPLE & RELATIONSHIPS",
       "isOptional": false,
       "status": "planned"
     },
     {
       "lessonNumber": 22,
-      "id": "the-art-of-doing-nothing",
-      "title": "The art of doing nothing",
+      "id": "ge-a1-personal-appearance",
+      "title": "2.2 Personal Appearance",
       "section": 2,
-      "unit": "Unit 4. Free time",
-      "isOptional": true,
+      "unit": "MODULE 2. PEOPLE & RELATIONSHIPS",
+      "isOptional": false,
       "status": "planned"
     },
     {
       "lessonNumber": 23,
-      "id": "ge-a1-progress-test-2",
-      "title": "Progress test 2",
+      "id": "ge-a1-personality-basic-characteristics",
+      "title": "2.3 Personality & Basic Characteristics",
       "section": 2,
-      "isMilestone": true,
+      "unit": "MODULE 2. PEOPLE & RELATIONSHIPS",
+      "isOptional": false,
       "status": "planned"
     },
     {
       "lessonNumber": 24,
-      "id": "whats-in-your-fridge",
-      "title": "What's in your fridge?",
-      "section": 3,
-      "unit": "Unit 5. Food",
+      "id": "nice-to-meet-you",
+      "title": "Nice to Meet You",
+      "section": 2,
+      "unit": "MODULE 2. PEOPLE & RELATIONSHIPS",
       "isOptional": false,
-      "status": "planned"
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-a1/nice-to-meet-you.json"
     },
     {
       "lessonNumber": 25,
-      "id": "ready-to-order",
-      "title": "Ready to order?",
-      "section": 3,
-      "unit": "Unit 5. Food",
+      "id": "more-about-me",
+      "title": "More About Me",
+      "section": 2,
+      "unit": "MODULE 2. PEOPLE & RELATIONSHIPS",
       "isOptional": false,
-      "status": "planned"
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-a1/more-about-me.json"
     },
     {
       "lessonNumber": 26,
-      "id": "happy-diet",
-      "title": "Happy diet",
-      "section": 3,
-      "unit": "Unit 5. Food",
+      "id": "family-exchange",
+      "title": "Family Exchange",
+      "section": 2,
+      "unit": "MODULE 2. PEOPLE & RELATIONSHIPS",
       "isOptional": false,
-      "status": "planned"
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-a1/family-exchange.json"
     },
     {
       "lessonNumber": 27,
-      "id": "eating-tasty",
-      "title": "Eating tasty",
-      "section": 3,
-      "unit": "Unit 5. Food",
-      "isOptional": true,
-      "status": "planned"
+      "id": "world-of-people",
+      "title": "World of People",
+      "section": 2,
+      "unit": "MODULE 2. PEOPLE & RELATIONSHIPS",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-a1/world-of-people.json"
     },
     {
       "lessonNumber": 28,
-      "id": "biographies",
-      "title": "Biographies",
-      "section": 3,
-      "unit": "Unit 6. Past",
+      "id": "lets-have-fun-together",
+      "title": "Lets Have Fun Together",
+      "section": 2,
+      "unit": "MODULE 2. PEOPLE & RELATIONSHIPS",
       "isOptional": false,
-      "status": "planned"
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-a1/lets-have-fun-together.json"
     },
     {
       "lessonNumber": 29,
-      "id": "history",
-      "title": "History",
-      "section": 3,
-      "unit": "Unit 6. Past",
+      "id": "corporate-culture",
+      "title": "Corporate Culture",
+      "section": 2,
+      "unit": "MODULE 2. PEOPLE & RELATIONSHIPS",
       "isOptional": false,
-      "status": "planned"
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-a1/corporate-culture.json"
     },
     {
       "lessonNumber": 30,
-      "id": "odd-coincidences",
-      "title": "Odd coincidences",
-      "section": 3,
-      "unit": "Unit 6. Past",
+      "id": "world-fashion",
+      "title": "World Fashion",
+      "section": 2,
+      "unit": "MODULE 2. PEOPLE & RELATIONSHIPS",
       "isOptional": false,
       "status": "planned"
     },
     {
       "lessonNumber": 31,
-      "id": "the-power-of-storytelling",
-      "title": "The power of storytelling",
+      "id": "ge-a1-everyday-objects",
+      "title": "3.1 Everyday Objects",
       "section": 3,
-      "unit": "Unit 6. Past",
-      "isOptional": true,
+      "unit": "MODULE 3. OBJECTS & PERSONAL SPACE",
+      "isOptional": false,
       "status": "planned"
     },
     {
       "lessonNumber": 32,
-      "id": "ge-a1-progress-test-3",
-      "title": "Progress test 3",
+      "id": "ge-a1-possessions",
+      "title": "3.2 Possessions",
       "section": 3,
-      "isMilestone": true,
+      "unit": "MODULE 3. OBJECTS & PERSONAL SPACE",
+      "isOptional": false,
       "status": "planned"
     },
     {
       "lessonNumber": 33,
-      "id": "ge-a1-midterm-exam",
-      "title": "Midterm exam",
+      "id": "ge-a1-colours-shapes-basic-descriptions",
+      "title": "3.3 Colours, Shapes & Basic Descriptions",
       "section": 3,
-      "isExam": true,
+      "unit": "MODULE 3. OBJECTS & PERSONAL SPACE",
+      "isOptional": false,
       "status": "planned"
     },
     {
       "lessonNumber": 34,
-      "id": "how-do-i-look",
-      "title": "How do I look?",
-      "section": 4,
-      "unit": "Unit 7. Appearance",
+      "id": "whats-in-your-fridge",
+      "title": "Whats in Your Fridge",
+      "section": 3,
+      "unit": "MODULE 3. OBJECTS & PERSONAL SPACE",
       "isOptional": false,
       "status": "planned"
     },
     {
       "lessonNumber": 35,
-      "id": "clothes",
-      "title": "Clothes",
+      "id": "ge-a1-types-of-homes",
+      "title": "4.1 Types of Homes",
       "section": 4,
-      "unit": "Unit 7. Appearance",
+      "unit": "MODULE 4. HOME & EVERYDAY ENVIRONMENT",
       "isOptional": false,
       "status": "planned"
     },
     {
       "lessonNumber": 36,
-      "id": "world-fashion",
-      "title": "World fashion",
+      "id": "ge-a1-rooms",
+      "title": "4.2 Rooms",
       "section": 4,
-      "unit": "Unit 7. Appearance",
+      "unit": "MODULE 4. HOME & EVERYDAY ENVIRONMENT",
       "isOptional": false,
       "status": "planned"
     },
     {
       "lessonNumber": 37,
-      "id": "wanted",
-      "title": "Wanted!",
+      "id": "ge-a1-furniture-household-items",
+      "title": "4.3 Furniture & Household Items",
       "section": 4,
-      "unit": "Unit 7. Appearance",
-      "isOptional": true,
+      "unit": "MODULE 4. HOME & EVERYDAY ENVIRONMENT",
+      "isOptional": false,
       "status": "planned"
     },
     {
       "lessonNumber": 38,
-      "id": "let-it-snow",
-      "title": "Let it snow!",
+      "id": "ge-a1-household-actions",
+      "title": "4.4 Household Actions",
       "section": 4,
-      "unit": "Unit 8. Nature",
+      "unit": "MODULE 4. HOME & EVERYDAY ENVIRONMENT",
       "isOptional": false,
       "status": "planned"
     },
     {
       "lessonNumber": 39,
-      "id": "weather-forecast",
-      "title": "Weather forecast",
+      "id": "the-art-of-doing-nothing",
+      "title": "The Art of Doing Nothing",
       "section": 4,
-      "unit": "Unit 8. Nature",
+      "unit": "MODULE 4. HOME & EVERYDAY ENVIRONMENT",
       "isOptional": false,
       "status": "planned"
     },
     {
       "lessonNumber": 40,
-      "id": "going-to-the-zoo",
-      "title": "Going to the zoo",
+      "id": "best-present-ever",
+      "title": "Best Present Ever",
       "section": 4,
-      "unit": "Unit 8. Nature",
+      "unit": "MODULE 4. HOME & EVERYDAY ENVIRONMENT",
       "isOptional": false,
       "status": "planned"
     },
     {
       "lessonNumber": 41,
-      "id": "amazing-water",
-      "title": "Amazing water",
+      "id": "the-best-place-ive-ever-seen",
+      "title": "The Best Place Ive Ever Seen",
       "section": 4,
-      "unit": "Unit 8. Nature",
-      "isOptional": true,
+      "unit": "MODULE 4. HOME & EVERYDAY ENVIRONMENT",
+      "isOptional": false,
       "status": "planned"
     },
     {
       "lessonNumber": 42,
-      "id": "ge-a1-progress-test-4",
-      "title": "Progress test 4",
+      "id": "not-only-sunbathing",
+      "title": "Not Only Sunbathing",
       "section": 4,
-      "isMilestone": true,
+      "unit": "MODULE 4. HOME & EVERYDAY ENVIRONMENT",
+      "isOptional": false,
       "status": "planned"
     },
     {
       "lessonNumber": 43,
-      "id": "at-a-shop",
-      "title": "At a shop",
-      "section": 5,
-      "unit": "Unit 9. Shopping",
+      "id": "the-rich-in-the-city",
+      "title": "The Rich in the City",
+      "section": 4,
+      "unit": "MODULE 4. HOME & EVERYDAY ENVIRONMENT",
       "isOptional": false,
       "status": "planned"
     },
     {
       "lessonNumber": 44,
-      "id": "im-just-looking",
-      "title": "I’m just looking",
-      "section": 5,
-      "unit": "Unit 9. Shopping",
+      "id": "air-or-water",
+      "title": "Air or Water",
+      "section": 4,
+      "unit": "MODULE 4. HOME & EVERYDAY ENVIRONMENT",
       "isOptional": false,
       "status": "planned"
     },
     {
       "lessonNumber": 45,
-      "id": "black-friday",
-      "title": "Black Friday",
-      "section": 5,
-      "unit": "Unit 9. Shopping",
+      "id": "ge-a1-imperative",
+      "title": "Ge A1 Imperative",
+      "section": 4,
+      "unit": "MODULE 4. HOME & EVERYDAY ENVIRONMENT",
       "isOptional": false,
       "status": "planned"
     },
     {
       "lessonNumber": 46,
-      "id": "best-present-ever",
-      "title": "Best present ever!",
-      "section": 5,
-      "unit": "Unit 9. Shopping",
-      "isOptional": true,
+      "id": "ge-a1-possessive-s",
+      "title": "Ge A1 Possessive S",
+      "section": 4,
+      "unit": "MODULE 4. HOME & EVERYDAY ENVIRONMENT",
+      "isOptional": false,
       "status": "planned"
     },
     {
       "lessonNumber": 47,
-      "id": "medical-problems",
-      "title": "Medical problems",
+      "id": "ge-a1-food-vocabulary-categories",
+      "title": "5.1 Food Vocabulary & Categories",
       "section": 5,
-      "unit": "Unit 10. Health",
+      "unit": "MODULE 5. FOOD & DRINK",
       "isOptional": false,
       "status": "planned"
     },
     {
       "lessonNumber": 48,
-      "id": "doctors-advice",
-      "title": "Doctor's advice",
+      "id": "ge-a1-meals-daily-eating-habits",
+      "title": "5.2 Meals & Daily Eating Habits",
       "section": 5,
-      "unit": "Unit 10. Health",
+      "unit": "MODULE 5. FOOD & DRINK",
       "isOptional": false,
       "status": "planned"
     },
     {
       "lessonNumber": 49,
-      "id": "are-you-ok",
-      "title": "Are you OK?",
+      "id": "ge-a1-drinks-caf-ordering",
+      "title": "5.3 Drinks & Café Ordering",
       "section": 5,
-      "unit": "Unit 10. Health",
+      "unit": "MODULE 5. FOOD & DRINK",
       "isOptional": false,
-      "ageRestriction": "18+",
       "status": "planned"
     },
     {
       "lessonNumber": 50,
-      "id": "not-a-disease",
-      "title": "Not a disease!",
+      "id": "ge-a1-restaurant-dining-menus",
+      "title": "5.4 Restaurant Dining & Menus",
       "section": 5,
-      "unit": "Unit 10. Health",
-      "isOptional": true,
+      "unit": "MODULE 5. FOOD & DRINK",
+      "isOptional": false,
       "status": "planned"
     },
     {
       "lessonNumber": 51,
-      "id": "ge-a1-progress-test-5",
-      "title": "Progress test 5",
+      "id": "ge-a1-cooking-verbs-simple-recipes",
+      "title": "5.5 Cooking Verbs & Simple Recipes",
       "section": 5,
-      "isMilestone": true,
+      "unit": "MODULE 5. FOOD & DRINK",
+      "isOptional": false,
       "status": "planned"
     },
     {
       "lessonNumber": 52,
-      "id": "the-best-place-ive-ever-seen",
-      "title": "The best place I’ve ever seen!",
-      "section": 6,
-      "unit": "Unit 11. Holidays",
+      "id": "ge-a1-restaurant-paying-food-shopping",
+      "title": "5.6 Restaurant Paying & Food Shopping",
+      "section": 5,
+      "unit": "MODULE 5. FOOD & DRINK",
       "isOptional": false,
       "status": "planned"
     },
     {
       "lessonNumber": 53,
-      "id": "not-only-sunbathing",
-      "title": "Not only sunbathing",
-      "section": 6,
-      "unit": "Unit 11. Holidays",
+      "id": "ready-to-order",
+      "title": "Ready to Order",
+      "section": 5,
+      "unit": "MODULE 5. FOOD & DRINK",
       "isOptional": false,
       "status": "planned"
     },
     {
       "lessonNumber": 54,
-      "id": "the-rich-in-the-city",
-      "title": "The rich in the city",
-      "section": 6,
-      "unit": "Unit 11. Holidays",
+      "id": "eating-tasty",
+      "title": "Eating Tasty",
+      "section": 5,
+      "unit": "MODULE 5. FOOD & DRINK",
       "isOptional": false,
       "status": "planned"
     },
     {
       "lessonNumber": 55,
-      "id": "work-or-travel",
-      "title": "Work or travel?",
-      "section": 6,
-      "unit": "Unit 11. Holidays",
-      "isOptional": true,
+      "id": "at-a-shop",
+      "title": "At a Shop",
+      "section": 5,
+      "unit": "MODULE 5. FOOD & DRINK",
+      "isOptional": false,
       "status": "planned"
     },
     {
       "lessonNumber": 56,
-      "id": "how-can-i-get-to-the-hotel",
-      "title": "How can I get to the hotel?",
+      "id": "ge-a1-shop-types-places-to-buy",
+      "title": "6.1 Shop Types & Places to Buy",
       "section": 6,
-      "unit": "Unit 12. City",
+      "unit": "MODULE 6. SHOPPING & MONEY",
       "isOptional": false,
       "status": "planned"
     },
     {
       "lessonNumber": 57,
-      "id": "air-or-water",
-      "title": "Air or water?",
+      "id": "ge-a1-product-categories-availability",
+      "title": "6.2 Product Categories & Availability",
       "section": 6,
-      "unit": "Unit 12. City",
+      "unit": "MODULE 6. SHOPPING & MONEY",
       "isOptional": false,
       "status": "planned"
     },
     {
       "lessonNumber": 58,
-      "id": "you-must-behave",
-      "title": "You must behave",
+      "id": "ge-a1-money-currency-prices",
+      "title": "6.3 Money, Currency & Prices",
       "section": 6,
-      "unit": "Unit 12. City",
+      "unit": "MODULE 6. SHOPPING & MONEY",
       "isOptional": false,
       "status": "planned"
     },
     {
       "lessonNumber": 59,
-      "id": "for-better-or-for-worse",
-      "title": "For better or for worse",
+      "id": "ge-a1-paying-payment-methods",
+      "title": "6.4 Paying & Payment Methods",
       "section": 6,
-      "unit": "Unit 12. City",
-      "isOptional": true,
+      "unit": "MODULE 6. SHOPPING & MONEY",
+      "isOptional": false,
       "status": "planned"
     },
     {
-      "id": "inspired-05-out-and-about",
-      "title": "Out and About (Review)",
+      "lessonNumber": 60,
+      "id": "ge-a1-discounts-quantities",
+      "title": "6.5 Discounts & Quantities",
       "section": 6,
-      "unit": "Unit 13. Review & Consolidation",
+      "unit": "MODULE 6. SHOPPING & MONEY",
       "isOptional": false,
-      "status": "drafted",
-      "lessonFile": "lessons/general-english-a0-a1-inspired/inspired-05-out-and-about.json",
-      "lessonNumber": 60
+      "status": "planned"
     },
     {
-      "id": "inspired-06-food-money-choices",
-      "title": "Food, Money and Choices (Review)",
+      "lessonNumber": 61,
+      "id": "ge-a1-shopping-transactions-capstone",
+      "title": "6.6 Shopping Transactions Capstone",
       "section": 6,
-      "unit": "Unit 13. Review & Consolidation",
+      "unit": "MODULE 6. SHOPPING & MONEY",
       "isOptional": false,
-      "status": "drafted",
-      "lessonFile": "lessons/general-english-a0-a1-inspired/inspired-06-food-money-choices.json",
-      "lessonNumber": 61
+      "status": "planned"
     },
     {
-      "id": "inspired-07-looking-back",
-      "title": "Looking Back (Review)",
-      "section": 6,
-      "unit": "Unit 13. Review & Consolidation",
+      "lessonNumber": 62,
+      "id": "ge-a1-essential-clothing-items",
+      "title": "7.1 Essential Clothing Items",
+      "section": 7,
+      "unit": "MODULE 7. CLOTHES & APPEARANCE",
       "isOptional": false,
-      "status": "drafted",
-      "lessonFile": "lessons/general-english-a0-a1-inspired/inspired-07-looking-back.json",
-      "lessonNumber": 62
+      "status": "planned"
     },
     {
-      "id": "inspired-08-next-steps",
-      "title": "Next Steps (Review)",
-      "section": 6,
-      "unit": "Unit 13. Review & Consolidation",
+      "lessonNumber": 63,
+      "id": "ge-a1-accessories-footwear",
+      "title": "7.2 Accessories & Footwear",
+      "section": 7,
+      "unit": "MODULE 7. CLOTHES & APPEARANCE",
       "isOptional": false,
-      "status": "drafted",
-      "lessonFile": "lessons/general-english-a0-a1-inspired/inspired-08-next-steps.json",
-      "lessonNumber": 63
+      "status": "planned"
     },
     {
       "lessonNumber": 64,
-      "id": "ge-a1-progress-test-6",
-      "title": "Progress test 6",
-      "section": 6,
-      "isMilestone": true,
+      "id": "clothes",
+      "title": "7.3 Describing Clothes: Colour, Size & Style",
+      "section": 7,
+      "unit": "MODULE 7. CLOTHES & APPEARANCE",
+      "isOptional": false,
       "status": "planned"
     },
     {
       "lessonNumber": 65,
-      "id": "ge-a1-final-exam-prep",
-      "title": "Final exam preparation",
-      "section": 6,
-      "isExam": true,
+      "id": "ge-a1-clothes-shopping-trying-on-fitting",
+      "title": "7.4 Clothes Shopping: Trying On & Fitting",
+      "section": 7,
+      "unit": "MODULE 7. CLOTHES & APPEARANCE",
+      "isOptional": false,
       "status": "planned"
     },
     {
       "lessonNumber": 66,
-      "id": "ge-a1-final-exam",
-      "title": "Final exam",
-      "section": 6,
-      "isExam": true,
+      "id": "ge-a1-clothes-shopping-comparisons-buying",
+      "title": "7.5 Clothes Shopping: Comparisons & Buying",
+      "section": 7,
+      "unit": "MODULE 7. CLOTHES & APPEARANCE",
+      "isOptional": false,
       "status": "planned"
     },
     {
       "lessonNumber": 67,
-      "id": "ge-a1-final-feedback",
-      "title": "Final feedback",
-      "section": 6,
-      "isMilestone": true,
+      "id": "ge-a1-wardrobe-fashion-capstone",
+      "title": "7.6 Wardrobe & Fashion Capstone",
+      "section": 7,
+      "unit": "MODULE 7. CLOTHES & APPEARANCE",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 68,
+      "id": "ge-a1-body-parts-physical-self",
+      "title": "8.1 Body Parts & Physical Self",
+      "section": 8,
+      "unit": "MODULE 8. HEALTH & BODY",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 69,
+      "id": "ge-a1-basic-health-states-feeling-unwell",
+      "title": "8.2 Basic Health States & Feeling Unwell",
+      "section": 8,
+      "unit": "MODULE 8. HEALTH & BODY",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 70,
+      "id": "ge-a1-common-ailments-symptoms",
+      "title": "8.3 Common Ailments & Symptoms",
+      "section": 8,
+      "unit": "MODULE 8. HEALTH & BODY",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 71,
+      "id": "ge-a1-at-the-doctor-s-office",
+      "title": "8.4 At the Doctor's Office",
+      "section": 8,
+      "unit": "MODULE 8. HEALTH & BODY",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 72,
+      "id": "ge-a1-at-the-pharmacy-buying-medicine",
+      "title": "8.5 At the Pharmacy & Buying Medicine",
+      "section": 8,
+      "unit": "MODULE 8. HEALTH & BODY",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 73,
+      "id": "ge-a1-healthy-lifestyle-wellness-capstone",
+      "title": "8.6 Healthy Lifestyle & Wellness Capstone",
+      "section": 8,
+      "unit": "MODULE 8. HEALTH & BODY",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 74,
+      "id": "doctors-advice",
+      "title": "Doctors Advice",
+      "section": 8,
+      "unit": "MODULE 8. HEALTH & BODY",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 75,
+      "id": "ge-a1-jobs-professions",
+      "title": "9.1 Jobs & Professions",
+      "section": 9,
+      "unit": "MODULE 9. WORK & EDUCATION",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 76,
+      "id": "ge-a1-workplaces-work-locations",
+      "title": "9.2 Workplaces & Work Locations",
+      "section": 9,
+      "unit": "MODULE 9. WORK & EDUCATION",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 77,
+      "id": "ge-a1-working-hours-work-communication",
+      "title": "9.3 Working Hours & Work Communication",
+      "section": 9,
+      "unit": "MODULE 9. WORK & EDUCATION",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 78,
+      "id": "ge-a1-education-places-school-subjects",
+      "title": "9.4 Education Places & School Subjects",
+      "section": 9,
+      "unit": "MODULE 9. WORK & EDUCATION",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 79,
+      "id": "ge-a1-study-habits-homework-exams",
+      "title": "9.5 Study Habits, Homework & Exams",
+      "section": 9,
+      "unit": "MODULE 9. WORK & EDUCATION",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 80,
+      "id": "ge-a1-work-education-profile-capstone",
+      "title": "9.6 Work & Education Profile Capstone",
+      "section": 9,
+      "unit": "MODULE 9. WORK & EDUCATION",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 81,
+      "id": "ge-a1-languages-communication-verbs",
+      "title": "10.1 Languages & Communication Verbs",
+      "section": 10,
+      "unit": "MODULE 10. LANGUAGES & COMMUNICATION",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 82,
+      "id": "ge-a1-language-ability-learning-progress",
+      "title": "10.2 Language Ability & Learning Progress",
+      "section": 10,
+      "unit": "MODULE 10. LANGUAGES & COMMUNICATION",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 83,
+      "id": "ge-a1-classroom-interaction-requests",
+      "title": "10.3 Classroom Interaction & Requests",
+      "section": 10,
+      "unit": "MODULE 10. LANGUAGES & COMMUNICATION",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 84,
+      "id": "ge-a1-translation-spelling-pronunciation",
+      "title": "10.4 Translation, Spelling & Pronunciation",
+      "section": 10,
+      "unit": "MODULE 10. LANGUAGES & COMMUNICATION",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 85,
+      "id": "ge-a1-communication-channels-messages",
+      "title": "10.5 Communication Channels & Messages",
+      "section": 10,
+      "unit": "MODULE 10. LANGUAGES & COMMUNICATION",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 86,
+      "id": "ge-a1-multilingual-learner-profile-capstone",
+      "title": "10.6 Multilingual Learner Profile Capstone",
+      "section": 10,
+      "unit": "MODULE 10. LANGUAGES & COMMUNICATION",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 87,
+      "id": "ge-a1-modes-of-transport-commuting",
+      "title": "11.1 Modes of Transport & Commuting",
+      "section": 11,
+      "unit": "MODULE 11. TRANSPORT & TRAVEL",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 88,
+      "id": "ge-a1-travel-places-stations",
+      "title": "11.2 Travel Places & Stations",
+      "section": 11,
+      "unit": "MODULE 11. TRANSPORT & TRAVEL",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 89,
+      "id": "ge-a1-asking-giving-directions",
+      "title": "11.3 Asking & Giving Directions",
+      "section": 11,
+      "unit": "MODULE 11. TRANSPORT & TRAVEL",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 90,
+      "id": "ge-a1-buying-tickets-travel-schedules",
+      "title": "11.4 Buying Tickets & Travel Schedules",
+      "section": 11,
+      "unit": "MODULE 11. TRANSPORT & TRAVEL",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 91,
+      "id": "ge-a1-travel-situations-checking-in-luggage",
+      "title": "11.5 Travel Situations: Checking In & Luggage",
+      "section": 11,
+      "unit": "MODULE 11. TRANSPORT & TRAVEL",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 92,
+      "id": "ge-a1-transport-travel-capstone",
+      "title": "11.6 Transport & Travel Capstone",
+      "section": 11,
+      "unit": "MODULE 11. TRANSPORT & TRAVEL",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 93,
+      "id": "ge-a1-places-in-town-public-buildings",
+      "title": "12.1 Places in Town & Public Buildings",
+      "section": 12,
+      "unit": "MODULE 12. CITY & PLACES",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 94,
+      "id": "ge-a1-city-landmarks-services",
+      "title": "12.2 City Landmarks & Services",
+      "section": 12,
+      "unit": "MODULE 12. CITY & PLACES",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 95,
+      "id": "ge-a1-asking-directions-in-town",
+      "title": "12.3 Asking Directions in Town",
+      "section": 12,
+      "unit": "MODULE 12. CITY & PLACES",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 96,
+      "id": "ge-a1-describing-neighborhoods-city-life",
+      "title": "12.4 Describing Neighborhoods & City Life",
+      "section": 12,
+      "unit": "MODULE 12. CITY & PLACES",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 97,
+      "id": "ge-a1-city-transport-urban-navigation",
+      "title": "12.5 City Transport & Urban Navigation",
+      "section": 12,
+      "unit": "MODULE 12. CITY & PLACES",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 98,
+      "id": "ge-a1-city-guide-navigation-capstone",
+      "title": "12.6 City Guide & Navigation Capstone",
+      "section": 12,
+      "unit": "MODULE 12. CITY & PLACES",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 99,
+      "id": "ge-a1-weather-conditions-temperature",
+      "title": "13.1 Weather Conditions & Temperature",
+      "section": 13,
+      "unit": "MODULE 13. WEATHER & NATURE",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 100,
+      "id": "ge-a1-the-four-seasons-seasonal-activities",
+      "title": "13.2 The Four Seasons & Seasonal Activities",
+      "section": 13,
+      "unit": "MODULE 13. WEATHER & NATURE",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 101,
+      "id": "ge-a1-nature-landscapes-natural-places",
+      "title": "13.3 Nature Landscapes & Natural Places",
+      "section": 13,
+      "unit": "MODULE 13. WEATHER & NATURE",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 102,
+      "id": "weather-forecast",
+      "title": "13.4 Weather Forecasts & Planning Activities",
+      "section": 13,
+      "unit": "MODULE 13. WEATHER & NATURE",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 103,
+      "id": "ge-a1-environmental-habits-caring-for-nature",
+      "title": "13.5 Environmental Habits & Caring for Nature",
+      "section": 13,
+      "unit": "MODULE 13. WEATHER & NATURE",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 104,
+      "id": "ge-a1-nature-weather-capstone",
+      "title": "13.6 Nature & Weather Capstone",
+      "section": 13,
+      "unit": "MODULE 13. WEATHER & NATURE",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 105,
+      "id": "going-to-the-zoo",
+      "title": "Going to the Zoo",
+      "section": 13,
+      "unit": "MODULE 13. WEATHER & NATURE",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 106,
+      "id": "ge-a1-leisure-activities-everyday-hobbies",
+      "title": "14.1 Leisure Activities & Everyday Hobbies",
+      "section": 14,
+      "unit": "MODULE 14. FREE TIME & HOBBIES",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 107,
+      "id": "ge-a1-sports-physical-activities",
+      "title": "14.2 Sports & Physical Activities",
+      "section": 14,
+      "unit": "MODULE 14. FREE TIME & HOBBIES",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 108,
+      "id": "ge-a1-cinema-music-entertainment",
+      "title": "14.3 Cinema, Music & Entertainment",
+      "section": 14,
+      "unit": "MODULE 14. FREE TIME & HOBBIES",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 109,
+      "id": "ge-a1-weekend-plans-free-time-activities",
+      "title": "14.4 Weekend Plans & Free Time Activities",
+      "section": 14,
+      "unit": "MODULE 14. FREE TIME & HOBBIES",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 110,
+      "id": "ge-a1-hobbies-personal-interests-survey",
+      "title": "14.5 Hobbies & Personal Interests Survey",
+      "section": 14,
+      "unit": "MODULE 14. FREE TIME & HOBBIES",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 111,
+      "id": "ge-a1-free-time-hobbies-portfolio-capstone",
+      "title": "14.6 Free Time & Hobbies Portfolio Capstone",
+      "section": 14,
+      "unit": "MODULE 14. FREE TIME & HOBBIES",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 112,
+      "id": "on-cloud-nine",
+      "title": "On Cloud Nine",
+      "section": 14,
+      "unit": "MODULE 14. FREE TIME & HOBBIES",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 113,
+      "id": "join-a-group",
+      "title": "Join a Group",
+      "section": 14,
+      "unit": "MODULE 14. FREE TIME & HOBBIES",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 114,
+      "id": "no-limit",
+      "title": "No Limit",
+      "section": 14,
+      "unit": "MODULE 14. FREE TIME & HOBBIES",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 115,
+      "id": "ge-a1-digital-devices-hardware",
+      "title": "15.1 Digital Devices & Hardware",
+      "section": 15,
+      "unit": "MODULE 15. TECHNOLOGY",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 116,
+      "id": "ge-a1-tech-action-verbs-operations",
+      "title": "15.2 Tech Action Verbs & Operations",
+      "section": 15,
+      "unit": "MODULE 15. TECHNOLOGY",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 117,
+      "id": "ge-a1-internet-vocabulary-online-activities",
+      "title": "15.3 Internet Vocabulary & Online Activities",
+      "section": 15,
+      "unit": "MODULE 15. TECHNOLOGY",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 118,
+      "id": "ge-a1-social-media-digital-messages",
+      "title": "15.4 Social Media & Digital Messages",
+      "section": 15,
+      "unit": "MODULE 15. TECHNOLOGY",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 119,
+      "id": "ge-a1-digital-safety-troubleshooting",
+      "title": "15.5 Digital Safety & Troubleshooting",
+      "section": 15,
+      "unit": "MODULE 15. TECHNOLOGY",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 120,
+      "id": "ge-a1-digital-life-technology-profile-capstone",
+      "title": "15.6 Digital Life & Technology Profile Capstone",
+      "section": 15,
+      "unit": "MODULE 15. TECHNOLOGY",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 121,
+      "id": "ge-a1-birthdays-personal-celebrations",
+      "title": "16.1 Birthdays & Personal Celebrations",
+      "section": 16,
+      "unit": "MODULE 16. CELEBRATIONS, CULTURE & EVENTS",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 122,
+      "id": "ge-a1-invitations-party-planning",
+      "title": "16.2 Invitations & Party Planning",
+      "section": 16,
+      "unit": "MODULE 16. CELEBRATIONS, CULTURE & EVENTS",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 123,
+      "id": "ge-a1-holidays-national-traditions",
+      "title": "16.3 Holidays & National Traditions",
+      "section": 16,
+      "unit": "MODULE 16. CELEBRATIONS, CULTURE & EVENTS",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 124,
+      "id": "ge-a1-cultural-outings-venues",
+      "title": "16.4 Cultural Outings & Venues",
+      "section": 16,
+      "unit": "MODULE 16. CELEBRATIONS, CULTURE & EVENTS",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 125,
+      "id": "ge-a1-social-events-going-out",
+      "title": "16.5 Social Events & Going Out",
+      "section": 16,
+      "unit": "MODULE 16. CELEBRATIONS, CULTURE & EVENTS",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 126,
+      "id": "ge-a1-celebrations-cultural-events-capstone",
+      "title": "16.6 Celebrations & Cultural Events Capstone",
+      "section": 16,
+      "unit": "MODULE 16. CELEBRATIONS, CULTURE & EVENTS",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 127,
+      "id": "ge-a1-yesterday-recent-past",
+      "title": "17.1 Yesterday & Recent Past",
+      "section": 17,
+      "unit": "MODULE 17. PAST EXPERIENCES (MOVING TOWARDS A2)",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 128,
+      "id": "ge-a1-weekend-activities-past-events",
+      "title": "17.2 Weekend Activities & Past Events",
+      "section": 17,
+      "unit": "MODULE 17. PAST EXPERIENCES (MOVING TOWARDS A2)",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 129,
+      "id": "ge-a1-childhood-early-memories",
+      "title": "17.3 Childhood & Early Memories",
+      "section": 17,
+      "unit": "MODULE 17. PAST EXPERIENCES (MOVING TOWARDS A2)",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 130,
+      "id": "ge-a1-past-travel-holidays",
+      "title": "17.4 Past Travel & Holidays",
+      "section": 17,
+      "unit": "MODULE 17. PAST EXPERIENCES (MOVING TOWARDS A2)",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 131,
+      "id": "ge-a1-life-events-personal-milestones",
+      "title": "17.5 Life Events & Personal Milestones",
+      "section": 17,
+      "unit": "MODULE 17. PAST EXPERIENCES (MOVING TOWARDS A2)",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 132,
+      "id": "ge-a1-past-experiences-portfolio-capstone",
+      "title": "17.6 Past Experiences Portfolio Capstone",
+      "section": 17,
+      "unit": "MODULE 17. PAST EXPERIENCES (MOVING TOWARDS A2)",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 133,
+      "id": "work-or-travel",
+      "title": "Work or Travel",
+      "section": 17,
+      "unit": "MODULE 17. PAST EXPERIENCES (MOVING TOWARDS A2)",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 134,
+      "id": "ge-a1-immediate-future-personal-plans",
+      "title": "18.1 Immediate Future & Personal Plans",
+      "section": 18,
+      "unit": "MODULE 18. FUTURE PLANS & DREAMS",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 135,
+      "id": "ge-a1-dreams-personal-goals",
+      "title": "18.2 Dreams & Personal Goals",
+      "section": 18,
+      "unit": "MODULE 18. FUTURE PLANS & DREAMS",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 136,
+      "id": "ge-a1-career-education-plans",
+      "title": "18.3 Career & Education Plans",
+      "section": 18,
+      "unit": "MODULE 18. FUTURE PLANS & DREAMS",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 137,
+      "id": "ge-a1-future-travel-holiday-plans",
+      "title": "18.4 Future Travel & Holiday Plans",
+      "section": 18,
+      "unit": "MODULE 18. FUTURE PLANS & DREAMS",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 138,
+      "id": "future-simple-a0",
+      "title": "18.5 Simple Predictions & Opinions About Future",
+      "section": 18,
+      "unit": "MODULE 18. FUTURE PLANS & DREAMS",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 139,
+      "id": "ge-a1-future-plans-dreams-capstone",
+      "title": "18.6 Future Plans & Dreams Capstone",
+      "section": 18,
+      "unit": "MODULE 18. FUTURE PLANS & DREAMS",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 140,
+      "id": "ge-a1-comparing-people-physical-objects",
+      "title": "19.1 Comparing People & Physical Objects",
+      "section": 19,
+      "unit": "MODULE 19. COMPARING MY WORLD",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 141,
+      "id": "ge-a1-comparing-places-cities",
+      "title": "19.2 Comparing Places & Cities",
+      "section": 19,
+      "unit": "MODULE 19. COMPARING MY WORLD",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 142,
+      "id": "ge-a1-comparing-lifestyles-habits",
+      "title": "19.3 Comparing Lifestyles & Habits",
+      "section": 19,
+      "unit": "MODULE 19. COMPARING MY WORLD",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 143,
+      "id": "ge-a1-likes-dislikes-preferences",
+      "title": "19.4 Likes, Dislikes & Preferences",
+      "section": 19,
+      "unit": "MODULE 19. COMPARING MY WORLD",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 144,
+      "id": "ge-a1-making-choices-recommendations",
+      "title": "19.5 Making Choices & Recommendations",
+      "section": 19,
+      "unit": "MODULE 19. COMPARING MY WORLD",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 145,
+      "id": "ge-a1-comparing-my-world-capstone",
+      "title": "19.6 Comparing My World Capstone",
+      "section": 19,
+      "unit": "MODULE 19. COMPARING MY WORLD",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 146,
+      "id": "ge-a1-expressing-simple-opinions",
+      "title": "20.1 Expressing Simple Opinions",
+      "section": 20,
+      "unit": "MODULE 20. BASIC OPINIONS & SOCIAL INTERACTION",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 147,
+      "id": "ge-a1-agreeing-disagreeing-politely",
+      "title": "20.2 Agreeing & Disagreeing Politely",
+      "section": 20,
+      "unit": "MODULE 20. BASIC OPINIONS & SOCIAL INTERACTION",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 148,
+      "id": "ge-a1-expressing-problems-seeking-help",
+      "title": "20.3 Expressing Problems & Seeking Help",
+      "section": 20,
+      "unit": "MODULE 20. BASIC OPINIONS & SOCIAL INTERACTION",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 149,
+      "id": "ge-a1-giving-advice-simple-solutions",
+      "title": "20.4 Giving Advice & Simple Solutions",
+      "section": 20,
+      "unit": "MODULE 20. BASIC OPINIONS & SOCIAL INTERACTION",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 150,
+      "id": "ge-a1-polite-requests-permission",
+      "title": "20.5 Polite Requests & Permission",
+      "section": 20,
+      "unit": "MODULE 20. BASIC OPINIONS & SOCIAL INTERACTION",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 151,
+      "id": "ge-a1-social-interaction-opinion-survey-capstone",
+      "title": "20.6 Social Interaction & Opinion Survey Capstone",
+      "section": 20,
+      "unit": "MODULE 20. BASIC OPINIONS & SOCIAL INTERACTION",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 152,
+      "id": "ge-a1-at-the-airport-train-station",
+      "title": "21.1 At the Airport & Train Station",
+      "section": 21,
+      "unit": "MODULE 21. FINAL A1 SURVIVAL SKILLS",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 153,
+      "id": "ge-a1-at-the-hotel-accommodation",
+      "title": "21.2 At the Hotel & Accommodation",
+      "section": 21,
+      "unit": "MODULE 21. FINAL A1 SURVIVAL SKILLS",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 154,
+      "id": "ge-a1-medical-emergencies-pharmacy",
+      "title": "21.3 Medical Emergencies & Pharmacy",
+      "section": 21,
+      "unit": "MODULE 21. FINAL A1 SURVIVAL SKILLS",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 155,
+      "id": "ge-a1-lost-property-police-services",
+      "title": "21.4 Lost Property & Police Services",
+      "section": 21,
+      "unit": "MODULE 21. FINAL A1 SURVIVAL SKILLS",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 156,
+      "id": "ge-a1-communication-breakdown-survival-strategies",
+      "title": "21.5 Communication Breakdown & Survival Strategies",
+      "section": 21,
+      "unit": "MODULE 21. FINAL A1 SURVIVAL SKILLS",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 157,
+      "id": "ge-a1-survival-skills-real-world-roleplay-capstone",
+      "title": "21.6 Survival Skills Real-World Roleplay Capstone",
+      "section": 21,
+      "unit": "MODULE 21. FINAL A1 SURVIVAL SKILLS",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 158,
+      "id": "ge-a1-project-1-my-personal-professional-profile",
+      "title": "22.1 Project 1. My Personal & Professional Profile",
+      "section": 22,
+      "unit": "MODULE 22. A1 INTEGRATED PROJECTS",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 159,
+      "id": "my-daily-routine",
+      "title": "22.2 Project 2. My Daily Routine & Perfect Day",
+      "section": 22,
+      "unit": "MODULE 22. A1 INTEGRATED PROJECTS",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 160,
+      "id": "ge-a1-project-3-my-home-neighborhood-guide",
+      "title": "22.3 Project 3. My Home & Neighborhood Guide",
+      "section": 22,
+      "unit": "MODULE 22. A1 INTEGRATED PROJECTS",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 161,
+      "id": "ge-a1-project-4-my-life-journey-past-future",
+      "title": "22.4 Project 4. My Life Journey: Past & Future",
+      "section": 22,
+      "unit": "MODULE 22. A1 INTEGRATED PROJECTS",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 162,
+      "id": "ge-a1-project-5-my-opinions-cultural-perspectives",
+      "title": "22.5 Project 5. My Opinions & Cultural Perspectives",
+      "section": 22,
+      "unit": "MODULE 22. A1 INTEGRATED PROJECTS",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 163,
+      "id": "ge-a1-final-a1-capstone-showcase-self-assessment",
+      "title": "22.6 Final A1 Capstone Showcase & Self-Assessment",
+      "section": 22,
+      "unit": "MODULE 22. A1 INTEGRATED PROJECTS",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 164,
+      "id": "to-be-going-to-a1",
+      "title": "To Be Going to A1",
+      "section": 22,
+      "unit": "MODULE 22. A1 INTEGRATED PROJECTS",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 165,
+      "id": "happy-diet",
+      "title": "Happy Diet",
+      "section": 23,
+      "unit": "Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 166,
+      "id": "biographies",
+      "title": "Biographies",
+      "section": 23,
+      "unit": "Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 167,
+      "id": "history",
+      "title": "History",
+      "section": 23,
+      "unit": "Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 168,
+      "id": "odd-coincidences",
+      "title": "Odd Coincidences",
+      "section": 23,
+      "unit": "Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 169,
+      "id": "the-power-of-storytelling",
+      "title": "The Power of Storytelling",
+      "section": 23,
+      "unit": "Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 170,
+      "id": "how-do-i-look",
+      "title": "How Do I Look",
+      "section": 23,
+      "unit": "Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 171,
+      "id": "wanted",
+      "title": "Wanted",
+      "section": 23,
+      "unit": "Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 172,
+      "id": "let-it-snow",
+      "title": "Let It Snow",
+      "section": 23,
+      "unit": "Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 173,
+      "id": "amazing-water",
+      "title": "Amazing Water",
+      "section": 23,
+      "unit": "Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 174,
+      "id": "im-just-looking",
+      "title": "Im Just Looking",
+      "section": 23,
+      "unit": "Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 175,
+      "id": "black-friday",
+      "title": "Black Friday",
+      "section": 23,
+      "unit": "Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 176,
+      "id": "medical-problems",
+      "title": "Medical Problems",
+      "section": 23,
+      "unit": "Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 177,
+      "id": "not-a-disease",
+      "title": "Not a Disease",
+      "section": 23,
+      "unit": "Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 178,
+      "id": "time-a1",
+      "title": "Time A1",
+      "section": 23,
+      "unit": "Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 179,
+      "id": "dates-a1",
+      "title": "Dates A1",
+      "section": 23,
+      "unit": "Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "planned"
+    },
+    {
+      "lessonNumber": 180,
+      "id": "numerals-a1",
+      "title": "Numerals A1",
+      "section": 23,
+      "unit": "Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
       "status": "planned"
     }
   ]
