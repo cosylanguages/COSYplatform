@@ -1,0 +1,406 @@
+{
+  "id": "es-a1-la-infancia",
+  "title": "La infancia",
+  "level": "A1",
+  "language": "es",
+  "unit": "Unidad 10: Contar el pasado",
+  "canDo": "Puedo hablar de mi infancia con el pretérito imperfecto.",
+  "defaultDuration": 50,
+  "defaultMode": "all",
+  "objectives": [
+    "usar la estructura objetivo: pretérito imperfecto",
+    "usar 8 palabras nuevas: la infancia, el recuerdo, cuando, entonces, el parque, la escuela, pronto, feliz"
+  ],
+  "materials": "Tarjetas de vocabulario, audio de la audición, hoja de lectura, fotos u objetos reales, páginas de gramática A1 de COSYmanuals sobre pretérito imperfecto.",
+  "assessment": "Comprobar el uso correcto de pretérito imperfecto y la pronunciación clara de las palabras objetivo.",
+  "homework": "Escribe cinco frases sobre tu infancia con el imperfecto.",
+  "recycling": {
+    "prior": "Recicla el pasado de la lección 10.3.",
+    "next": "La lección 10.5 recicla el pasado y añade el viaje."
+  },
+  "differentiation": {
+    "individual": "Una ficha de trabajo: cinco frases sobre el tema de la lección (ES-A1-054).",
+    "group": "Una tarea de clase en parejas o grupos pequeños.",
+    "children": "Un dibujo de cuando era pequeño.",
+    "teens": "Una comparación de infancia y presente.",
+    "adults": "Una conversación sobre recuerdos.",
+    "seniors": "Fotos antiguas con letra grande."
+  },
+  "links": {
+    "vocabulary": [
+      "la infancia",
+      "el recuerdo",
+      "cuando",
+      "entonces",
+      "el parque",
+      "la escuela",
+      "pronto",
+      "feliz"
+    ],
+    "grammar": [
+      {
+        "topic_id": "preterito-indefinido-vs-perfecto",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/es/grammar/a1/topics/preterito-indefinido-vs-perfecto.html"
+      }
+    ],
+    "phonetics": "La b de vivía y la v de jugaba suenan igual."
+  },
+  "slides": [
+    {
+      "id": "es-a1-la-infancia-slide-1",
+      "title": "1. Objetivo Comunicativo y Panorama",
+      "stage": "warm-up",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Objetivo comunicativo: Puedo hablar de mi infancia con el pretérito imperfecto."
+        },
+        {
+          "type": "blockquote",
+          "content": "Panorama de la lección:\n- Nivel: A1 Español General\n- Unidad: Unidad 10: Contar el pasado\n- Tiempo: 60 min (Esencial) / 90 min (Ampliado) / 120 min (Taller completo)\n- Enfoque: La infancia\n- Materiales: tarjetas de vocabulario, audio, hoja de lectura"
+        },
+        {
+          "type": "instruction",
+          "content": "Calentamiento: di una palabra que ya conoces sobre este tema."
+        },
+        {
+          "type": "input",
+          "placeholder": "Escribe una palabra que conozcas..."
+        }
+      ]
+    },
+    {
+      "id": "es-a1-la-infancia-slide-2",
+      "title": "2. Reciclaje y Continuidad",
+      "stage": "recycling",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Recicla el pasado de la lección 10.3."
+        },
+        {
+          "type": "blockquote",
+          "content": "Lengua reciclada: la infancia, el recuerdo, cuando."
+        },
+        {
+          "type": "instruction",
+          "content": "Responde de memoria: ¿qué palabra pertenece a este tema?"
+        },
+        {
+          "type": "test",
+          "content": "¿Qué palabra pertenece a este tema?",
+          "options": [
+            "la infancia",
+            "aeropuerto",
+            "paraguas"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "es-a1-la-infancia-slide-3",
+      "title": "3. Vocabulario y Expresiones Esenciales",
+      "stage": "input",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Vocabulario activo básico (8 elementos):"
+        },
+        {
+          "type": "blockquote",
+          "content": "la infancia — el tiempo de ser niño. Ejemplo: Tengo buenos recuerdos de la infancia.\nel recuerdo — lo que tienes en la memoria. Ejemplo: Es un recuerdo bonito.\ncuando — en el momento en que. Ejemplo: Cuando era niño, vivía en un pueblo.\nentonces — en aquel tiempo. Ejemplo: Entonces era feliz.\nel parque — un lugar verde con árboles. Ejemplo: El parque está al lado de casa.\nla escuela — el lugar donde aprenden los niños. Ejemplo: Iba a la escuela andando.\npronto — en poco tiempo. Ejemplo: Pronto hice amigos.\nfeliz — con alegría. Ejemplo: Entonces era feliz."
+        },
+        {
+          "type": "instruction",
+          "content": "Expresiones esenciales y combinaciones funcionales:"
+        },
+        {
+          "type": "blockquote",
+          "content": "• Cuando era niño, vivía en un pueblo.\n• Jugaba en el parque.\n• Iba a la escuela andando.\n• Entonces era feliz.\n• Pronto hice muchos amigos."
+        },
+        {
+          "type": "instruction",
+          "content": "Práctica de vocabulario: elige la palabra correcta."
+        },
+        {
+          "type": "test",
+          "content": "¿Qué palabra significa 'el tiempo de ser niño'?",
+          "options": [
+            "la infancia",
+            "el recuerdo",
+            "cuando"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "¿Qué palabra significa 'lo que tienes en la memoria'?",
+          "options": [
+            "el recuerdo",
+            "la infancia",
+            "cuando"
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Completa la frase con una palabra de la lista."
+        },
+        {
+          "type": "input",
+          "placeholder": "Completa: Tengo buenos recuerdos de ___."
+        }
+      ]
+    },
+    {
+      "id": "es-a1-la-infancia-slide-4",
+      "title": "4. Enfoque de Pronunciación",
+      "stage": "pronunciation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "La b de vivía y la v de jugaba suenan igual."
+        },
+        {
+          "type": "blockquote",
+          "content": "vivía /biˈβia/, jugaba /xuˈɣaβa/"
+        },
+        {
+          "type": "instruction",
+          "content": "Escucha y repite tres veces."
+        },
+        {
+          "type": "test",
+          "content": "¿Qué palabra lleva el acento principal?",
+          "options": [
+            "la infancia",
+            "el",
+            "la"
+          ]
+        },
+        {
+          "type": "input",
+          "placeholder": "Escribe la parte acentuada: ..."
+        }
+      ]
+    },
+    {
+      "id": "es-a1-la-infancia-slide-5",
+      "title": "5. Enfoque Gramatical y Práctica Controlada",
+      "stage": "grammar",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Enfoque gramatical: Pretérito imperfecto."
+        },
+        {
+          "type": "blockquote",
+          "content": "El imperfecto describe el pasado habitual: vivía, jugaba, iba, era. Con marcadores: cuando era niño, entonces."
+        },
+        {
+          "type": "grammar-focus",
+          "grammarId": "es-a1-preterito-indefinido-vs-perfecto"
+        },
+        {
+          "type": "instruction",
+          "content": "Práctica controlada: elige la opción correcta."
+        },
+        {
+          "type": "test",
+          "content": "Elige la forma correcta.",
+          "options": [
+            "Cuando era niño, vivía en un pueblo.",
+            "Cuando era niño, vivo en un pueblo.",
+            "Cuando soy niño, vivía en un pueblo."
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Elige la frase correcta.",
+          "options": [
+            "Jugaba en el parque.",
+            "Jugué en el parque todos los días de niño.",
+            "Jugar en el parque."
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Completa la frase."
+        },
+        {
+          "type": "input",
+          "placeholder": "Iba a la ___ andando."
+        },
+        {
+          "type": "input",
+          "placeholder": "Entonces era ___."
+        }
+      ]
+    },
+    {
+      "id": "es-a1-la-infancia-slide-6",
+      "title": "6. Distribución de las Cuatro Destrezas (Comprensión Auditiva y Lectora)",
+      "stage": "reading-listening",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Lectura: lee el texto y responde a las preguntas."
+        },
+        {
+          "type": "blockquote",
+          "content": "Cuando era niño, vivía en un pueblo pequeño. Iba a la escuela andando y jugaba en el parque con mis amigos. Entonces era feliz y tengo muchos recuerdos bonitos de la infancia."
+        },
+        {
+          "type": "input",
+          "placeholder": "¿Dónde vivía?"
+        },
+        {
+          "type": "input",
+          "placeholder": "¿Cómo era entonces?"
+        },
+        {
+          "type": "instruction",
+          "content": "Audición: escucha el diálogo y responde a las preguntas."
+        },
+        {
+          "type": "blockquote",
+          "content": "A: ¿Cómo era tu infancia? B: Feliz. Vivía en un pueblo y jugaba en el parque. A: ¿Ibas a la escuela andando? B: Sí, siempre."
+        },
+        {
+          "type": "input",
+          "placeholder": "¿Cómo era la infancia?"
+        },
+        {
+          "type": "input",
+          "placeholder": "¿Iba andando a la escuela?"
+        }
+      ]
+    },
+    {
+      "id": "es-a1-la-infancia-slide-7",
+      "title": "7. Producción Oral y Escrita",
+      "stage": "freer-practice",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Expresión oral: practica en parejas las expresiones de la lección."
+        },
+        {
+          "type": "blockquote",
+          "content": "• Cuando era niño, vivía en un pueblo.\n• Jugaba en el parque.\n• Iba a la escuela andando."
+        },
+        {
+          "type": "instruction",
+          "content": "Expresión escrita: escribe un texto corto con el vocabulario de la lección."
+        },
+        {
+          "type": "essay",
+          "placeholder": "Escribe tu respuesta aquí..."
+        },
+        {
+          "type": "input",
+          "placeholder": "Una frase que dirás en el trabajo en parejas:"
+        }
+      ]
+    },
+    {
+      "id": "es-a1-la-infancia-slide-8",
+      "title": "8. Flujos de Clase según la Duración",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Elige el flujo que se adapte a tu tiempo."
+        },
+        {
+          "type": "blockquote",
+          "content": "60 min (Esencial): calentamiento, vocabulario, gramática y una tarea oral.\n90 min (Ampliado): añade pronunciación, lectura y audición.\n120 min (Taller completo): añade la tarea escrita, la corrección entre iguales y el proyecto de la unidad."
+        }
+      ]
+    },
+    {
+      "id": "es-a1-la-infancia-slide-9",
+      "title": "9. Adaptaciones de Entrega",
+      "stage": "adaptation",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Adapta la lección a tu grupo."
+        },
+        {
+          "type": "blockquote",
+          "content": "Niños: Un dibujo de cuando era pequeño."
+        },
+        {
+          "type": "blockquote",
+          "content": "Adolescentes: Una comparación de infancia y presente."
+        },
+        {
+          "type": "blockquote",
+          "content": "Adultos: Una conversación sobre recuerdos."
+        },
+        {
+          "type": "blockquote",
+          "content": "Personas mayores: Fotos antiguas con letra grande."
+        },
+        {
+          "type": "blockquote",
+          "content": "Individual: una ficha de trabajo con cinco frases (ES-A1-054)."
+        },
+        {
+          "type": "blockquote",
+          "content": "Grupo: una tarea de clase en parejas o grupos pequeños."
+        }
+      ]
+    },
+    {
+      "id": "es-a1-la-infancia-slide-10",
+      "title": "10. Deberes y Notas de Reciclaje",
+      "stage": "cool-down",
+      "duration": 50,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Deberes:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Escribe cinco frases sobre tu infancia con el imperfecto."
+        },
+        {
+          "type": "input",
+          "placeholder": "Escribe aquí la frase de tus deberes..."
+        },
+        {
+          "type": "instruction",
+          "content": "Respuesta modelo para comparar:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Tengo buenos recuerdos de la infancia."
+        },
+        {
+          "type": "blockquote",
+          "content": "La lección 10.5 recicla el pasado y añade el viaje."
+        }
+      ]
+    }
+  ]
+}

@@ -113,7 +113,7 @@ window.CosyAuth.FULL_MANIFEST = [
   {"id":"travelling-en-a2","title":"Travelling EN A2","track":"Travelling","lang":"en","level":"a2","status":"not_yet_available"},
   {"id":"travelling-en-b1","title":"Travelling EN B1","track":"Travelling","lang":"en","level":"b1","status":"not_yet_available"},
   {"id":"general-es-a0","title":"General ES A0","track":"General","lang":"es","level":"a0","status":"not_yet_available"},
-  {"id":"general-es-a1","title":"General ES A1","track":"General","lang":"es","level":"a1","status":"not_yet_available"},
+  {"id":"general-es-a1","title":"General Spanish A1","track":"General","lang":"es","level":"a1"},
   {"id":"general-es-a2","title":"General ES A2","track":"General","lang":"es","level":"a2","status":"not_yet_available"},
   {"id":"general-es-b1","title":"General ES B1","track":"General","lang":"es","level":"b1","status":"not_yet_available"},
   {"id":"general-es-b2","title":"General ES B2","track":"General","lang":"es","level":"b2","status":"not_yet_available"},
