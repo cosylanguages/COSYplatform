@@ -213,8 +213,8 @@ repositories plus the proposed level model. Facts worth remembering before touch
   `teacher_notes`; `build_decks.py` falls back to the manual page's `outcome`, which is the grammar
   point, and that fallback is why the Italian and Greek grammar units read as drills. Rewriting the
   note rewrites the can-do, and the deck copies it into three places (canDo, the objective line and
-  `Produzione libera:`). Italian B1 is finished: all 19 form-first decks rewrote, it-b1 now
-  reports 0. Catalogue form-first went 130 to 108, but only 14 of those 22 are content: the
+  `Produzione libera:`). Italian is finished at every level: B1 19 decks, A1 7 and A2 8 rewrote, and every
+  Italian course now reports 0 form-first. Catalogue form-first went 130 to 108, but only 14 of those 22 are content: the
   classifier had `formulare` swallowed by the `form` prefix (fixed by testing task heads first) and
   was missing `esprimere`, `dire`, `riferire`, `выражать`, `εκφράζω`.
 - `build_decks.py` needs `/workspace/COSYmanuals`, so no deck can be regenerated in a workspace

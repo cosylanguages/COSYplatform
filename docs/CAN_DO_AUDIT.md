@@ -11,7 +11,7 @@ themed unit should look like. The classifier is a triage aid, not a verdict: eve
 deck is sampled below so the call can be checked by eye.
 
 Decks read: 1606.
-form-first: 108 | task-with-grammar: 56 | task: 1378 | empty: 64
+form-first: 93 | task-with-grammar: 60 | task: 1389 | empty: 64
 
 | course | decks | task | task+grammar | form-first | form share |
 |---|---|---|---|---|---|
@@ -19,8 +19,6 @@ form-first: 108 | task-with-grammar: 56 | task: 1378 | empty: 64
 | general-english-b2 | 121 | 99 | 4 | 18 | 15% |
 | general-greek-a1 | 65 | 49 | 0 | 16 | 25% |
 | general-greek-a2 | 65 | 53 | 1 | 11 | 17% |
-| general-italian-a2 | 65 | 55 | 2 | 8 | 12% |
-| general-italian-a1 | 65 | 58 | 0 | 7 | 11% |
 | general-french-c1 | 65 | 60 | 0 | 5 | 8% |
 | general-french-c2 | 65 | 58 | 3 | 4 | 6% |
 | general-english-a1 | 181 | 178 | 0 | 3 | 2% |
@@ -35,6 +33,8 @@ form-first: 108 | task-with-grammar: 56 | task: 1378 | empty: 64
 | english-b2 | 1 | 0 | 0 | 0 | 0% |
 | english-c1 | 1 | 0 | 0 | 0 | 0% |
 | general-english-a2 | 93 | 89 | 4 | 0 | 0% |
+| general-italian-a1 | 65 | 63 | 2 | 0 | 0% |
+| general-italian-a2 | 65 | 61 | 4 | 0 | 0% |
 | general-italian-b1 | 65 | 57 | 8 | 0 | 0% |
 | general-portuguese-a1 | 65 | 65 | 0 | 0 | 0% |
 | introductory | 1 | 0 | 0 | 0 | 0% |
@@ -81,25 +81,6 @@ form-first: 108 | task-with-grammar: 56 | task: 1378 | empty: 64
 - `el-a2-i-prostaktiki.json` - Δίνω οδηγίες με την προστακτική.
 - `el-a2-i-ypotaktiki-me-na.json` - Χρησιμοποιώ την υποτακτική μετά από ρήματα.
 - `el-a2-klitika-me-prostaktiki.json` - Συνδυάζω προστακτική και κλιτικό σωστά.
-
-### general-italian-a2 (8 flagged)
-- `it-a2-ci-e-ne.json` - Usare ci e ne con valore di luogo e quantità.
-- `it-a2-i-pronomi-combinati.json` - Usare due pronomi nello stesso enunciato.
-- `it-a2-il-futuro-irregolare.json` - Usare le forme irregolari del futuro senza esitare.
-- `it-a2-l-accordo-del-participio-passato.json` - Far concordare il participio quando il verbo vuole essere.
-- `it-a2-l-imperativo-con-i-pronomi.json` - Dare istruzioni usando i pronomi.
-- `it-a2-passato-prossimo-o-imperfetto.json` - Scegliere il tempo giusto in un racconto.
-- `it-a2-ripasso-dei-pronomi.json` - Evitare ripetizioni usando i pronomi.
-- `it-a2-servizi-pubblici-e-moduli.json` - Usare i servizi pubblici e compilare un modulo.
-
-### general-italian-a1 (7 flagged)
-- `it-a1-articoli-e-preposizioni-ripasso.json` - Scegliere articoli e preposizioni senza errori.
-- `it-a1-essere-e-avere-ripasso.json` - Usare essere e avere senza confonderli.
-- `it-a1-genere-e-numero-dei-nomi.json` - Riconoscere il genere e formare il plurale.
-- `it-a1-il-futuro-irregolare.json` - Usare le forme irregolari del futuro.
-- `it-a1-il-presente-ripasso.json` - Coniugare i verbi irregolari più frequenti.
-- `it-a1-le-preposizioni-semplici.json` - Scegliere la preposizione semplice giusta.
-- `it-a1-questo-e-meglio-di-quello.json` - Scegliere tra due opzioni e motivare.
 
 ### general-french-c1 (5 flagged)
 - `fr-c1-critique-culturelle.json` - formuler une critique culturelle
