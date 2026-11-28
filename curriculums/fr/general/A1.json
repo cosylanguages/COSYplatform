@@ -6,6 +6,11 @@
     {
       "unit": 0,
       "title": "Unité 0 : Premiers pas (A0)",
+      "theme": "t22",
+      "secondaryThemes": [
+        "t01"
+      ],
+      "macroFunction": "saluer, se présenter et découvrir l'alphabet",
       "lessons": [
         {
           "lesson": 1,
@@ -129,6 +134,8 @@
     {
       "unit": 1,
       "title": "MODULE 1. PREMIER CONTACT & IDENTITÉ PERSONNELLE",
+      "theme": "t01",
+      "macroFunction": "donner son identité et poser des questions simples",
       "lessons": [
         {
           "lesson": 1,
@@ -381,6 +388,8 @@
     {
       "unit": 2,
       "title": "MODULE 2. FAMILLE & RELATIONS SOCIALES",
+      "theme": "t02",
+      "macroFunction": "présenter sa famille et ses relations",
       "lessons": [
         {
           "code": "FR-021",
@@ -610,6 +619,8 @@
     {
       "unit": 3,
       "title": "MODULE 3. LOGEMENT & VIE QUOTIDIENNE",
+      "theme": "t03",
+      "macroFunction": "décrire son logement et sa vie quotidienne",
       "lessons": [
         {
           "code": "FR-031",
@@ -807,6 +818,8 @@
     {
       "unit": 4,
       "title": "MODULE 4. ROUTINE QUOTIDIENNE & TEMPS",
+      "theme": "t04",
+      "macroFunction": "parler de sa routine et de l'heure",
       "lessons": [
         {
           "code": "FR-041",
@@ -1007,6 +1020,8 @@
     {
       "unit": 5,
       "title": "MODULE 5. NOURRITURE & BOISSONS",
+      "theme": "t05",
+      "macroFunction": "parler de la nourriture et commander",
       "lessons": [
         {
           "code": "FR-051",
@@ -1209,6 +1224,8 @@
       "id": "u6",
       "label": "ACHATS & ARGENT",
       "title": "MODULE 6. ACHATS & ARGENT",
+      "theme": "t06",
+      "macroFunction": "acheter et parler d'argent",
       "color": "#A7C2FB",
       "arc": "Naviguer dans les magasins, demander les prix, payer et comprendre les réductions",
       "lessons_count": 6,
@@ -1413,6 +1430,8 @@
       "id": "u7",
       "label": "VÊTEMENTS & APPARENCE",
       "title": "MODULE 7. VÊTEMENTS & APPARENCE",
+      "theme": "t07",
+      "macroFunction": "décrire les vêtements et l'apparence",
       "color": "#ACCBFB",
       "arc": "Décrire les vêtements, les accessoires, les essayages, les tailles et le style",
       "lessons_count": 6,
@@ -1617,6 +1636,8 @@
       "id": "u8",
       "label": "SANTÉ & CORPS",
       "title": "MODULE 8. SANTÉ & CORPS",
+      "theme": "t08",
+      "macroFunction": "parler de la santé et du corps",
       "color": "#B0D4FB",
       "arc": "Parties du corps, symptômes, visites chez le médecin, pharmacie et habitudes saines",
       "lessons_count": 6,
@@ -1821,6 +1842,11 @@
       "id": "u9",
       "label": "TRAVAIL & ÉDUCATION",
       "title": "MODULE 9. TRAVAIL & ÉDUCATION",
+      "theme": "t13",
+      "secondaryThemes": [
+        "t12"
+      ],
+      "macroFunction": "parler de son travail et de ses études",
       "color": "#B5DDFB",
       "arc": "Professions, lieux de travail, horaires, études, examens et profil de carrière",
       "lessons_count": 6,
@@ -2025,6 +2051,8 @@
       "id": "u10",
       "label": "LANGUES & COMMUNICATION",
       "title": "MODULE 10. LANGUES & COMMUNICATION",
+      "theme": "t22",
+      "macroFunction": "parler des langues et communiquer",
       "color": "#B9E6FB",
       "arc": "Compétences linguistiques, niveaux d'apprentissage, expressions de classe, traduction et portfolio",
       "lessons_count": 6,
@@ -2229,6 +2257,8 @@
       "id": "u11",
       "label": "TRANSPORTS & VOYAGES",
       "title": "MODULE 11. TRANSPORTS & VOYAGES",
+      "theme": "t10",
+      "macroFunction": "se déplacer et voyager",
       "color": "#BEEFFB",
       "arc": "Modes de transport, lieux de voyage, directions, billets, horaires et enregistrement",
       "lessons_count": 6,
@@ -2433,6 +2463,8 @@
       "id": "u12",
       "label": "VILLE & LIEUX",
       "title": "MODULE 12. VILLE & LIEUX",
+      "theme": "t11",
+      "macroFunction": "décrire sa ville et s'orienter",
       "color": "#C2F8FB",
       "arc": "Lieux en ville, bâtiments publics, monuments, orientation et guide du quartier",
       "lessons_count": 6,
@@ -2637,6 +2669,8 @@
       "id": "u13",
       "label": "MÉTÉO & NATURE",
       "title": "MODULE 13. MÉTÉO & NATURE",
+      "theme": "t09",
+      "macroFunction": "parler du temps et de la nature",
       "color": "#82104F6",
       "arc": "Météo, saisons, paysages naturels, prévisions météorologiques et habitudes écolos",
       "lessons_count": 6,
@@ -2841,6 +2875,8 @@
       "id": "u14",
       "label": "LOISIRS & HOBBIES",
       "title": "MODULE 14. LOISIRS & HOBBIES",
+      "theme": "t14",
+      "macroFunction": "parler de ses loisirs",
       "color": "#8c118F6",
       "arc": "Activités de loisirs, sports, divertissements, week-end, sondage et portfolio",
       "lessons_count": 6,
@@ -3045,6 +3081,8 @@
       "id": "u15",
       "label": "TECHNOLOGIE",
       "title": "MODULE 15. TECHNOLOGIE",
+      "theme": "t15",
+      "macroFunction": "utiliser les technologies du quotidien",
       "color": "#9612cF6",
       "arc": "Appareils, opérations tech, internet, messagerie, sécurité et vie numérique",
       "lessons_count": 6,
@@ -3249,6 +3287,8 @@
       "id": "u16",
       "label": "CÉLÉBRATIONS, CULTURE & ÉVÉNEMENTS",
       "title": "MODULE 16. CÉLÉBRATIONS, CULTURE & ÉVÉNEMENTS",
+      "theme": "t16",
+      "macroFunction": "parler des fêtes et de la culture",
       "color": "#a0140F6",
       "arc": "Fêtes personnelles, invitations, fêtes nationales, sorties culturelles, événements sociaux et projet final",
       "lessons_count": 6,
@@ -3453,6 +3493,11 @@
       "id": "u17",
       "label": "EXPÉRIENCES PASSÉES",
       "title": "MODULE 17. EXPÉRIENCES PASSÉES (VERS A2)",
+      "theme": "t01",
+      "secondaryThemes": [
+        "t04"
+      ],
+      "macroFunction": "raconter des expériences passées",
       "color": "#aa154F6",
       "arc": "Parler d'événements passés, d'hier, des week-ends, de l'enfance, des voyages et étapes personnelles",
       "lessons_count": 6,
@@ -3658,6 +3703,11 @@
       "id": "u18",
       "label": "PROJETS FUTURS & RÊVES",
       "title": "MODULE 18. PROJETS FUTURS & RÊVES",
+      "theme": "t01",
+      "secondaryThemes": [
+        "t13"
+      ],
+      "macroFunction": "parler de ses projets et de ses rêves",
       "color": "#b4168F6",
       "arc": "Intentions immédiates, objectifs personnels, ambitions, voyages futurs, prédictions simples et feuille de route",
       "lessons_count": 6,
@@ -3862,6 +3912,11 @@
       "id": "u19",
       "label": "COMPARER MON MONDE",
       "title": "MODULE 19. COMPARER MON MONDE",
+      "theme": "t11",
+      "secondaryThemes": [
+        "t03"
+      ],
+      "macroFunction": "comparer son monde et son environnement",
       "color": "#be17cF6",
       "arc": "Comparer les objets, personnes, lieux, modes de vie, préférences, recommandations et bilan",
       "lessons_count": 6,
@@ -4066,6 +4121,8 @@
       "id": "u20",
       "label": "OPINIONS DE BASE & INTERACTIONS",
       "title": "MODULE 20. OPINIONS DE BASE & INTERACTIONS",
+      "theme": "t22",
+      "macroFunction": "donner son opinion et interagir",
       "color": "#c8190F6",
       "arc": "Donner son avis, accord/désaccord poli, gérer les problèmes quotidiens, conseils, requêtes polies et bilan",
       "lessons_count": 6,
@@ -4270,6 +4327,11 @@
       "id": "u21",
       "label": "COMPÉTENCES D'URGENCE A1",
       "title": "MODULE 21. COMPÉTENCES D'URGENCE A1",
+      "theme": "t08",
+      "secondaryThemes": [
+        "t17"
+      ],
+      "macroFunction": "réagir à une situation d'urgence",
       "color": "#d21a4F6",
       "arc": "Aéroport, hôtel, urgences médicales, objets perdus, stratégies de survie et mise en situation réelle",
       "lessons_count": 6,
@@ -4474,6 +4536,8 @@
       "id": "u22",
       "label": "PROJETS INTÉGRÉS A1",
       "title": "MODULE 22. PROJETS INTÉGRÉS A1",
+      "theme": "t22",
+      "macroFunction": "mener un projet intégré en français",
       "color": "#dc1b8F6",
       "arc": "Projets de portfolio intégrant profil, routine, logement, parcours passé/futur, opinions et présentation finale A1",
       "lessons_count": 6,

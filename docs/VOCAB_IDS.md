@@ -66,6 +66,7 @@ column, one row per item.
 ```bash
 # 1. generate (read-only on COSYdata and on the curriculum)
 python3 scripts/build-vocab-id-map.py --cosydata ../COSYdata --course general-fr-b1 --write
+#    any course id works: general-fr-a1, general-en-b2, ...
 
 # 2. review: fill `decision` in review-general-fr-b1.csv
 #    accept id | accept alternative <id> | author new entry | replace item
@@ -88,17 +89,27 @@ python3 scripts/build-vocab-id-map.py --cosydata ../COSYdata --course general-fr
 inserts keys, keeps every existing field and value, and preserves the file formatting:
 
 ```bash
-python3 scripts/apply-unit-metadata.py --course general-fr-b1        # report drift
-python3 scripts/apply-unit-metadata.py --course general-fr-b1 --write
+python3 scripts/apply-unit-metadata.py          # report drift on every declared course
+python3 scripts/apply-unit-metadata.py --write  # apply
 ```
 
-French B1 is the pilot: 13 units, 48 inserted lines, 0 deletions.
+French general is done: 88 units across A1–C2, 264 inserted lines, 0 deletions. Other languages
+have no entry in the map yet, so they are reported as "no metadata" rather than wrong.
 
 ## Status by course
 
 | Course | Levels | Items | Resolved | Note |
 |---|---|---|---|---|
-| fr general | B1 | 520 | 19 % | pilot; unit themes applied |
+| fr general | A1 | 1 135 | 74 % | unit themes applied |
+| fr general | A2 | 520 | 38 % | unit themes applied |
+| fr general | B1 | 520 | 19 % | unit themes applied, first pilot |
+| fr general | B2 | 520 | 7 % | unit themes applied |
+| fr general | C1 | 520 | 12 % | unit themes applied |
+| fr general | C2 | 463 | 9 % | unit themes applied |
+
+French general is now themed end to end (88 units: A1 23, A2–C2 13 each) and every level has a
+review sheet. The fall is not French-specific: A1/A2 vocabulary is concrete and the dictionary
+covers it; from B1 the dictionary holds idioms and part-of-speech buckets instead of themes.
 
 ## Open decisions before scaling
 

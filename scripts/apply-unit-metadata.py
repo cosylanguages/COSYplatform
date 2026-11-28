@@ -23,7 +23,6 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DEFAULT_MAP = os.path.join(ROOT, "scripts", "data", "unit-metadata.json")
 THEMES = os.path.join(ROOT, "cefr", "data", "themes.json")
-UNIT_KEYS = ["unit", "title", "theme", "secondaryThemes", "macroFunction", "lessons"]
 
 
 def course_id(path: str) -> str:
@@ -49,19 +48,17 @@ def load_theme_ids() -> set[str]:
 
 
 def ordered(unit: dict, meta: dict) -> collections.OrderedDict:
+    """Rebuild the unit dict with the metadata right after `title`, every other key untouched."""
     merged = collections.OrderedDict()
-    for key in UNIT_KEYS:
-        if key in ("theme", "secondaryThemes", "macroFunction"):
-            if meta.get(key) not in (None, [], ""):
-                merged[key] = meta[key]
-        elif key == "lessons":
-            if "lessons" in unit:
-                merged[key] = unit[key]
-        elif key in unit:
-            merged[key] = unit[key]
     for key, value in unit.items():
-        if key not in merged and key not in ("theme", "secondaryThemes", "macroFunction"):
-            merged[key] = value
+        merged[key] = value
+        if key == "title":
+            for extra in ("theme", "secondaryThemes", "macroFunction"):
+                if meta.get(extra) not in (None, [], ""):
+                    merged[extra] = meta[extra]
+    for extra in ("theme", "secondaryThemes", "macroFunction"):
+        if extra not in merged and meta.get(extra) not in (None, [], ""):
+            merged[extra] = meta[extra]
     return merged
 
 

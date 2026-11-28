@@ -125,17 +125,20 @@ repositories plus the proposed level model. Facts worth remembering before touch
   `theme` (t01-t22, ids from `cefr/data/themes.json`), `secondaryThemes`, `macroFunction`; lesson
   `vocabularyIds` (`<lang>:<slug>:<form>`), `recycledIds`, `grammarThreads` (T1-T14). All optional,
   so every existing curriculum still validates untouched.
-- `scripts/data/unit-metadata.json` declares theme + macro-function per unit; only `general-fr-b1`
-  is declared so far (13 units). `scripts/apply-unit-metadata.py` inserts the keys and preserves
-  file formatting: `--course general-fr-b1` reports drift (exit 1), `--write` applies. Idempotent;
-  the FR B1 change was 48 insertions and 0 deletions.
+- `scripts/data/unit-metadata.json` declares theme + macro-function per unit for French general
+  A1-C2 (88 units: A1 23, A2-C2 13 each). `scripts/apply-unit-metadata.py` inserts the keys in
+  place, after `title`, and preserves key order and file formatting: no `--course` reports drift
+  (exit 1), `--write` applies. Idempotent; the whole French change was 264 insertions and 0
+  deletions. Inserting metadata must not move pre-existing unit keys: A1 units carry `num`, `id`,
+  `label`, `color`, `arc`, `lessons_count` around `title`, and rebuilding the dict naively
+  reorders them (that produced 119 deletions on the first attempt).
 - `scripts/build-vocab-id-map.py --cosydata ../COSYdata --course general-fr-b1 --write` produces
   `docs/vocab-id-map/mapping-<course>.json` and `review-<course>.csv`, keyed by
   `<lang>/<track>/<LEVEL>/uNN-lNN` like the grammar-id reviews. Statuses: exact, normalized,
   related, missing.
-- FR B1 result: 520 items, 107 resolved (19 %), 413 missing, 75 resolved items sit at another
-  level (mostly A2 recycle). Do not read `different_level` as "wrong level" for vocabulary: B1
-  reusing A2 words is intended.
+- FR results by level: A1 1 135 items 74 % resolved, A2 520 38 %, B1 520 19 %, B2 520 7 %,
+  C1 520 12 %, C2 463 9 %. Do not read `different_level` as "wrong level" for vocabulary: a B1
+  lesson reusing A2 words is intended.
 - `related` matching is deliberately strict (prefix + known ending) after edit-distance candidates
   produced noise (raison->raisin, pétition->petit). Precision over recall.
 - Tests `tests/curriculum-metadata.test.js` and `tests/vocab-id-map.test.js` guard the metadata,

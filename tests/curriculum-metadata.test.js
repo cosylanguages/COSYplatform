@@ -72,12 +72,18 @@ test('macroFunction, vocabularyIds, recycledIds and grammarThreads keep their sh
   assert.deepEqual(bad, []);
 });
 
-test('the French B1 pilot carries a theme on every unit', () => {
-  const file = path.join(base, 'fr', 'general', 'B1.json');
-  const data = JSON.parse(fs.readFileSync(file, 'utf8'));
-  const missing = data.units.filter((u) => !u.theme).map((u) => u.unit);
-  assert.deepEqual(missing, []);
-  assert.equal(data.units.length, 13);
+test('every French general level carries a theme and a macro-function on every unit', () => {
+  const totals = {};
+  for (const level of ['A1', 'A2', 'B1', 'B2', 'C1', 'C2']) {
+    const file = path.join(base, 'fr', 'general', `${level}.json`);
+    const data = JSON.parse(fs.readFileSync(file, 'utf8'));
+    const missing = data.units
+      .filter((u) => !u.theme || !u.macroFunction)
+      .map((u) => u.unit);
+    assert.deepEqual(missing, [], level);
+    totals[level] = data.units.length;
+  }
+  assert.deepEqual(totals, { A1: 23, A2: 13, B1: 13, B2: 13, C1: 13, C2: 13 });
 });
 
 test('declared unit metadata and the curriculum do not drift', () => {

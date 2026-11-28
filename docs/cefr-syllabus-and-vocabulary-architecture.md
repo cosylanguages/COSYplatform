@@ -7,7 +7,8 @@ Italian (A0–B1) and Greek (A0–A2), so that the three repositories describe t
 
 Status (2026-11-28): phase 1 has started. The optional curriculum fields (`theme`,
 `secondaryThemes`, `macroFunction`, `vocabularyIds`, `recycledIds`, `grammarThreads`) exist in the
-schema, French B1 carries unit themes, and the vocabulary id map for that course is generated.
+schema, French general A1–C2 carries unit themes (88 units), and the vocabulary id maps for all
+six French levels are generated.
 See `docs/VOCAB_IDS.md`.
 
 This document is a design + gap report. Part 1 records what the three repositories actually contain
