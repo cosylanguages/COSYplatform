@@ -36,6 +36,7 @@ Every lesson needs two grammar links, or slide 5 loses its `grammar-focus` eleme
 of the French B1 curriculum shipped with `grammarIds: null`; they were filled in by hand.
 
 ## Status (last update)
-- French: A1 142 lessons, A2 65, B1 65 (published in the manifest), B2 55 of 65.
+- French: A1 142 lessons, A2 65, B1 65 (published in the manifest), B2 65 lessons (published as General French B2).
 - French C1, C2: curriculum only, no lesson files.
+- The B2 grammar manual has 9 of 209 pages written; all 130 course links resolve, the rest are boilerplate.
 - Other languages: A1 courses only.
