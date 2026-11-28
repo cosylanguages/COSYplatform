@@ -291,6 +291,17 @@ MAP = {
     "Ripasso dei pronomi": ["it-a2-pronomi-combinati", "it-a2-i-pronomi-ci-e-ne"],
     "Produzione orale guidata": ["it-b1-connettivi-testuali"],
     "Produzione scritta guidata": ["it-a1-congiunzioni-fondamentali", "it-b1-connettivi-testuali"],
+    "Dal medico": ["it-a2-dal-medico", "it-a1-essere-avere"],
+    "Farsi fare qualcosa": ["it-a2-farsi-fare-qualcosa"],
+    "Prenotare e disdire": ["it-a2-prenotare-e-disdire", "it-a2-il-condizionale-presente"],
+    "Sport e tempo libero": ["it-a2-sport-e-tempo-libero", "it-a1-avverbi-frequenza-modo"],
+    "In albergo": ["it-a2-in-albergo"],
+    "Parlare del proprio lavoro": ["it-a2-parlare-del-proprio-lavoro"],
+    "Il curriculum e il colloquio": ["it-a2-curriculum-e-colloquio", "it-a2-studi-e-formazione"],
+    "Parlare di studi e formazione": ["it-a2-studi-e-formazione"],
+    "Scrivere un'email formale": ["it-a2-scrivere-un-email-formale"],
+    "Servizi pubblici e moduli": ["it-a2-servizi-pubblici-e-moduli", "it-a2-obbligo-dovere-bisogna"],
+    "Media e tecnologia": ["it-a2-media-e-tecnologia", "it-a2-passato-prossimo-essere-avere"],
 }
 
 

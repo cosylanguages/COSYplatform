@@ -154,7 +154,7 @@ window.CosyAuth.FULL_MANIFEST = [
   {"id":"general-hy-c2","title":"General HY C2","track":"General","lang":"hy","level":"c2","status":"not_yet_available"},
   {"id":"general-it-a0","title":"General IT A0","track":"General","lang":"it","level":"a0","status":"not_yet_available"},
   {"id":"general-it-a1","title":"General IT A1","track":"General","lang":"it","level":"a1","status":"not_yet_available"},
-  {"id":"general-it-a2","title":"General IT A2","track":"General","lang":"it","level":"a2","status":"not_yet_available"},
+  {"id":"general-it-a2","title":"General Italian A2","track":"General","lang":"it","level":"a2"},
   {"id":"general-it-b1","title":"General IT B1","track":"General","lang":"it","level":"b1","status":"not_yet_available"},
   {"id":"general-it-b2","title":"General IT B2","track":"General","lang":"it","level":"b2","status":"not_yet_available"},
   {"id":"general-it-c1","title":"General IT C1","track":"General","lang":"it","level":"c1","status":"not_yet_available"},
