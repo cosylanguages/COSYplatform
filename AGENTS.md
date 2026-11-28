@@ -25,6 +25,19 @@ vocabulary appears in exactly one deck, and the `recycling` field holds prose ("
 A2 e del modulo precedente") on 130 decks, so nothing can check it. The audit is a floor, not proof:
 presence in text is not learner production.
 
+## Course coverage
+`npm run audit:coverage` -> `docs/COURSE_COVERAGE.md`, checked against `data/course-plan.json`
+(EN/FR/RU general A1-C2, IT A1-B1, EL A1-A2). There is no A0 level and no A0 curriculum file
+anywhere: the entry band is A1, and A1 courses carry 142-180 lessons, i.e. two blocks. Twelve
+`general-*-a0` manifest entries are pure placeholders.
+
+Two things this audit corrected in earlier notes: `general-en-c1` is visible with **1 of 65**
+lessons (its roadmap lists 64 entries with an empty `lessonFile`, and an empty path used to join to
+the repo root and count as present), and Russian has **six curricula written** (A1 142 lessons)
+with no roadmap, so all six entries are hidden. English also carries the entry band twice:
+`general-en-a1` (180, from `curriculums/en/general/A1.json`) and `general-en-a0-a1` (48 decks under
+`lessons/general-english-a0`, from a curriculum id with no JSON file).
+
 ## Chunk registry and retrieval plan
 `npm run chunks:build -- --course general-it-b1` -> `data/chunks/<course>.json` plus
 `docs/CHUNK_REGISTRY_<course>.md`; `npm run chunks:plan -- --course general-it-b1` ->

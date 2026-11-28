@@ -1,0 +1,14 @@
+{
+  "note": "The declared course plan. The platform has no standalone A0 level: the entry band is a single A1 course that covers A0 and A1 descriptors. Where a manifest entry is named a0-a1 it is the same band as a1, and only one of the two should be visible per language.",
+  "entry_band": {
+    "name": "a1",
+    "covers": ["a0", "a1"]
+  },
+  "courses": {
+    "en/general": ["a1", "a2", "b1", "b2", "c1", "c2"],
+    "fr/general": ["a1", "a2", "b1", "b2", "c1", "c2"],
+    "ru/general": ["a1", "a2", "b1", "b2", "c1", "c2"],
+    "it/general": ["a1", "a2", "b1"],
+    "el/general": ["a1", "a2"]
+  }
+}
