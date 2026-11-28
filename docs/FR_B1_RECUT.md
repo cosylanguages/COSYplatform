@@ -46,7 +46,21 @@ a "citizenship" label — and unit 6 keeps the citizenship slot.
 Units 3–10, 12 and 13 keep their titles, themes and lessons. Result: **13 of 13 slots covered**,
 55 lesson titles untouched, 0 new lessons, 0 deleted lessons.
 
-## 4. Blast radius
+## 4. Applying it
+
+The pass is written and dry-run only until `--write`:
+
+```bash
+python3 scripts/apply-recut.py --course general-fr-b1          # prints 3 / 15 / 15, exit 1
+python3 scripts/apply-recut.py --course general-fr-b1 --write  # applies all three places
+npm run slots:report                                           # refresh the coverage reports
+```
+
+Declared in `scripts/data/recut-general-fr-b1.json`; `tests/apply-recut.test.js` proves the three
+places move together, that undeclared units are untouched, that key order is preserved and that a
+second run is a no-op.
+
+## 5. Blast radius
 
 A unit title appears in three committed places, all updated by the same scripted pass:
 
@@ -59,7 +73,7 @@ A unit title appears in three committed places, all updated by the same scripted
 No lesson file is renamed, no lesson id changes, no slide changes. `data/platform-stats.json`
 counts lessons, not titles, so it does not move.
 
-## 5. Phase 2 (deferred, needs approval)
+## 6. Phase 2 (deferred, needs approval)
 
 The ten lessons of units 1–2 still say *Le subjonctif présent — Nécessité et volonté* as a title,
 so the course reads as grammar even where the macro is now ethical or biographical. Phase 2 renames
@@ -77,7 +91,7 @@ Cost: 10 lesson renames, which rename 10 deck files and change 10 ids in the roa
 (`fr-b1-le-subjonctif-present-…` → `fr-b1-peser-une-decision-…`). That is the first step that
 breaks links, so it stays behind an explicit decision.
 
-## 6. What the dictionary gets out of it
+## 7. What the dictionary gets out of it
 
 Backlog of items that exist in the curriculum but not in COSYdata, by theme:
 
@@ -91,7 +105,7 @@ Backlog of items that exist in the curriculum but not in COSYdata, by theme:
 Creating the three units creates the demand: roughly 30–35 items per theme, about 100 new entries
 in COSYdata, which is also where the missing B1 manual pages come from.
 
-## 7. One open design question
+## 8. One open design question
 
 The grid has no dedicated "argue and debate" slot, yet arguing is the core B1 can-do. The re-cut
 above distributes it: debate is the *mode* of t21 (dilemma), t22 (essay, unit 13) and most of units

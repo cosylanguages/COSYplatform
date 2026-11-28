@@ -159,6 +159,10 @@ repositories plus the proposed level model. Facts worth remembering before touch
   environment/culture/identity unit and four t17 units. RU B2 mirrors FR B2 on 7 of 13 slot
   positions; EN B2 is independently ordered (3 of 10), so the "literal translation" note in the
   architecture doc was corrected.
+- `scripts/apply-recut.py --course general-fr-b1` applies the re-cut declared in
+  `scripts/data/recut-general-fr-b1.json` to the three places a unit title lives (curriculum unit,
+  roadmap `unit` strings, deck `unit` fields). Dry run by default, idempotent, renames no file.
+  After `--write`, run `npm run slots:report` or the unit-slot test fails on stale coverage.
 - `docs/FR_B1_RECUT.md` is a proposal, not applied: renaming FR B1 units 1/2/11 (ethics, life
   story, money+rights) takes the course from 10/13 to 13/13 slots with no lesson, deck or id
   change. Phase 2 (renaming the ten grammar-led lessons of units 1-2 to can-dos) renames deck

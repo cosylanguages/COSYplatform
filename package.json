@@ -13,6 +13,8 @@
     "review:vocab-ids": "python3 scripts/build-vocab-id-map.py --cosydata \"${COSYDATA:-/tmp/COSYdata}\" --course general-fr-b1 --write",
     "apply:vocab-ids": "python3 scripts/apply-vocab-ids.py --course general-fr-b1",
     "apply:vocab-ids:write": "python3 scripts/apply-vocab-ids.py --course general-fr-b1 --write",
+    "recut:check": "python3 scripts/apply-recut.py --course general-fr-b1",
+    "recut:write": "python3 scripts/apply-recut.py --course general-fr-b1 --write",
     "slots:report": "python3 scripts/slot-alignment.py --level B1 --write && python3 scripts/slot-alignment.py --level B2 --grid B1 --write",
     "seed:workbooks": "node scripts/seed-workbooks.js",
     "validate": "npm run check:content && npm run check:languages && npm run check:protected && npm run stats:check && npm test"
