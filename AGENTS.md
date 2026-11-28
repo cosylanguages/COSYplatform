@@ -20,13 +20,17 @@ npm run stats:build  # regenerate data/platform-stats.json
 ## Lesson generation
 `/tmp/cosy_build.py` holds the shared `Spec` class: it writes the ten-slide deck from a per-lesson
 dict (`cando`, `chunks`, `reading`, `listen`, `pron`, `adapt`, `practice`, `rule`, `prior`, `next`,
-`hw`) plus a glossary of the curriculum vocabulary. `/tmp/fr_b1_spec.py` configures it for French B1
-and resolves `fr-b1-*` grammar ids to the COSYmanuals B1 topic files.
+`hw`) plus a glossary of the curriculum vocabulary. `/tmp/fr_b1_spec.py` and `/tmp/fr_b2_spec.py` configure it for French B1 and B2 and
+resolve the grammar ids to the COSYmanuals topic files of the matching level.
+
+The base `Spec.roadmap` hard-codes `fr-a1-` in lesson ids; both subclasses override it so
+the ids carry their own level (`fr-b1-…`, `fr-b2-…`). Without that override the generated
+files are named `fr-a1-*` inside a B2 folder.
 
 Every lesson needs two grammar links, or slide 5 loses its `grammar-focus` element. Units 10 to 12
 of the French B1 curriculum shipped with `grammarIds: null`; they were filled in by hand.
 
 ## Status (last update)
-- French: A1 142 lessons, A2 65, B1 65 (built this session, published in the manifest).
-- French B2, C1, C2: curriculum only, no lesson files.
+- French: A1 142 lessons, A2 65, B1 65 (published in the manifest), B2 15 of 65.
+- French C1, C2: curriculum only, no lesson files.
 - Other languages: A1 courses only.
