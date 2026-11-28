@@ -278,7 +278,7 @@ MAP = {
     "Υποθετικά του παρελθόντος": ["el-a2-ypothetikoi-logoi", "el-a2-aoristos"],
     "Ευχές και παράπονα": ["el-a2-ypotaktiki-egklisi", "el-a1-tha-ithela"],
     "Διαπραγμάτευση": ["el-a2-diapragmatefsi"],
-    "Αγγελίες εργασίας": ["el-a2-anggelies-ergasias"],
+    "Αγγελίες εργασίας": ["el-a2-angelies-ergasias"],
     "Βιογραφικό και επιστολή": ["el-a2-viografiko"],
     "Η συνέντευξη": ["el-a2-synentefxi"],
     "Δεξιότητες": ["el-a2-dexiotites"],
