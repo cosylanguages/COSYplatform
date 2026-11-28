@@ -8,17 +8,17 @@ A cell shows the unit number whose **primary** theme matches the slot; `—` mea
 
 | slot | theme | theme name | general-en-b2 | general-fr-b2 | general-ru-b2 |
 |---|---|---|---|---|---|
-| 1 | t01 | Identity and personal details | — | 12 | — |
+| 1 | t01 | Identity and personal details | — | 12 | 12 |
 | 2 | t13 | Work and careers | 7 | — | — |
 | 3 | t15 | Media and technology | 4, 9 | 11 | 11 |
-| 4 | t19 | Environment and sustainability | 3 | 8 | — |
+| 4 | t19 | Environment and sustainability | 3 | 8 | 7 |
 | 5 | t08 | Health and body | — | — | — |
 | 6 | t10 | Travel and transport | — | — | — |
 | 7 | t06 | Shopping and money | — | — | — |
 | 8 | t20 | Science and ideas | 10 | 5 | 4 |
 | 9 | t16 | Culture, arts, literature | 6 | 4 | 5 |
-| 10 | t21 | Values, ethics, beliefs | — | 7 | — |
-| 11 | t17 | Society, politics, law | 2, 5, 8 | 2, 10 | 2, 6, 9, 10, 12 |
+| 10 | t21 | Values, ethics, beliefs | — | 7 | 9 |
+| 11 | t17 | Society, politics, law | 2, 5, 8 | 2, 10 | 2, 6, 10 |
 | 12 | t18 | Economy and business | — | 3 | 3 |
 | 13 | t22 | Language and communication | 1 | 1, 9, 13 | 1, 8, 13 |
 
@@ -34,10 +34,9 @@ A cell shows the unit number whose **primary** theme matches the slot; `—` mea
 - duplicate primary themes: t22 in units [1, 9, 13]; t17 in units [2, 10]
 - off-grid themes: t12 in units [6]
 
-### general-ru-b2 — 6/13 slots, 7 themed units, 0 unthemed
-- missing slots: t01 (Identity and personal details), t13 (Work and careers), t19 (Environment and sustainability), t08 (Health and body), t10 (Travel and transport), t06 (Shopping and money), t21 (Values, ethics, beliefs)
-- duplicate primary themes: t22 in units [1, 8, 13]; t17 in units [2, 6, 9, 10, 12]
-- off-grid themes: t03 in units [7]
+### general-ru-b2 — 9/13 slots, 9 themed units, 0 unthemed
+- missing slots: t13 (Work and careers), t08 (Health and body), t10 (Travel and transport), t06 (Shopping and money)
+- duplicate primary themes: t22 in units [1, 8, 13]; t17 in units [2, 6, 10]
 
 ## Not themed at this level
 

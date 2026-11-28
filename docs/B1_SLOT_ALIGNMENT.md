@@ -8,17 +8,17 @@ A cell shows the unit number whose **primary** theme matches the slot; `—` mea
 
 | slot | theme | theme name | general-en-b1 | general-fr-b1 | general-it-b1 | general-ru-b1 |
 |---|---|---|---|---|---|---|
-| 1 | t01 | Identity and personal details | 1 | 2 | — | — |
+| 1 | t01 | Identity and personal details | 1 | 2 | — | 12 |
 | 2 | t13 | Work and careers | 2 | 3 | 8 | 2 |
 | 3 | t15 | Media and technology | 3 | 4 | 9 | 3 |
 | 4 | t19 | Environment and sustainability | 4 | 5 | 10 | 4 |
 | 5 | t08 | Health and body | 5 | 10 | — | 10 |
 | 6 | t10 | Travel and transport | 6 | 12 | — | — |
-| 7 | t06 | Shopping and money | 7 | 11 | — | 11 |
+| 7 | t06 | Shopping and money | 7 | 11 | — | — |
 | 8 | t20 | Science and ideas | 8 | 9 | — | 8 |
 | 9 | t16 | Culture, arts, literature | 9 | 7 | 11 | 6 |
-| 10 | t21 | Values, ethics, beliefs | 10 | 1 | — | — |
-| 11 | t17 | Society, politics, law | — | 6 | — | 5, 12 |
+| 10 | t21 | Values, ethics, beliefs | 10 | 1 | — | 5 |
+| 11 | t17 | Society, politics, law | — | 6 | — | 11 |
 | 12 | t18 | Economy and business | — | 8 | — | 7 |
 | 13 | t22 | Language and communication | — | 13 | 13 | 1, 9, 13 |
 
@@ -41,9 +41,9 @@ A cell shows the unit number whose **primary** theme matches the slot; `—` mea
 - unthemed unit 6: Unità 6: Pronomi, verbi e preposizioni (5 lessons)
 - unthemed unit 7: Unità 7: Descrizione e sfumature (5 lessons)
 
-### general-ru-b1 — 10/13 slots, 10 themed units, 0 unthemed
-- missing slots: t01 (Identity and personal details), t10 (Travel and transport), t21 (Values, ethics, beliefs)
-- duplicate primary themes: t22 in units [1, 9, 13]; t17 in units [5, 12]
+### general-ru-b1 — 11/13 slots, 11 themed units, 0 unthemed
+- missing slots: t10 (Travel and transport), t06 (Shopping and money)
+- duplicate primary themes: t22 in units [1, 9, 13]
 
 ## Not themed at this level
 

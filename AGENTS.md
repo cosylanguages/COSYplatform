@@ -167,6 +167,13 @@ repositories plus the proposed level model. Facts worth remembering before touch
   "Argent, droits et démarches" (t21, t01, t06), with the 15 roadmap `unit` strings and 15 deck
   `unit` fields updated. general-fr-b1 is the only course at 13/13 slots. Phase 2 (renaming the ten
   grammar-led lessons of units 1-2 to can-dos) is NOT applied: it renames deck files and ids.
+- `npm run status:coverage` renders `docs/COVERAGE_STATUS.md`: every course against the 13 slots,
+  with themed vs grammar-only unit counts. It is the one place to see the platform state; the per
+  level `docs/*_SLOT_ALIGNMENT.md` files are the detail behind it.
+- Russian B1 10/13 -> 11/13 and B2 6/13 -> 9/13 by the same method (values to ethics, emigration to
+  identity, consumer law to rights, sustainable architecture to environment, sociology to ethics,
+  collective memory to identity). Missing as primaries afterwards: ru-b1 t06 and t10, ru-b2 t06,
+  t08, t10, t13 - authoring, not labelling.
 - French B2 was re-themed through `unit-metadata.json` only (no title changed): units 4, 7, 8 and 12
   moved to t16, t21, t19 and t01, taking the course 5/13 -> 9/13. `docs/FR_B2_RECUT.md` explains
   each move and what still needs authoring (money, health, travel, work).
