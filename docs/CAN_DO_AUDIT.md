@@ -11,31 +11,31 @@ themed unit should look like. The classifier is a triage aid, not a verdict: eve
 deck is sampled below so the call can be checked by eye.
 
 Decks read: 1606.
-form-first: 125 | task-with-grammar: 48 | task: 1369 | empty: 64
+form-first: 108 | task-with-grammar: 56 | task: 1378 | empty: 64
 
 | course | decks | task | task+grammar | form-first | form share |
 |---|---|---|---|---|---|
 | general-english-b1 | 120 | 87 | 7 | 26 | 22% |
 | general-english-b2 | 121 | 99 | 4 | 18 | 15% |
 | general-greek-a1 | 65 | 49 | 0 | 16 | 25% |
-| general-italian-b1 | 65 | 49 | 2 | 14 | 22% |
 | general-greek-a2 | 65 | 53 | 1 | 11 | 17% |
-| general-italian-a2 | 65 | 54 | 2 | 9 | 14% |
+| general-italian-a2 | 65 | 55 | 2 | 8 | 12% |
 | general-italian-a1 | 65 | 58 | 0 | 7 | 11% |
 | general-french-c1 | 65 | 60 | 0 | 5 | 8% |
 | general-french-c2 | 65 | 58 | 3 | 4 | 6% |
 | general-english-a1 | 181 | 178 | 0 | 3 | 2% |
-| general-french-a2 | 65 | 57 | 5 | 3 | 5% |
 | general-english-a0 | 32 | 30 | 0 | 2 | 6% |
 | general-french-b1 | 65 | 46 | 17 | 2 | 3% |
 | general-english-a0-a1-inspired | 8 | 7 | 0 | 1 | 12% |
 | general-french-a1 | 142 | 138 | 3 | 1 | 1% |
+| general-french-a2 | 65 | 57 | 7 | 1 | 2% |
 | general-french-b2 | 65 | 64 | 0 | 1 | 2% |
 | general-german-a1 | 65 | 64 | 0 | 1 | 2% |
 | general-spanish-a1 | 65 | 64 | 0 | 1 | 2% |
 | english-b2 | 1 | 0 | 0 | 0 | 0% |
 | english-c1 | 1 | 0 | 0 | 0 | 0% |
 | general-english-a2 | 93 | 89 | 4 | 0 | 0% |
+| general-italian-b1 | 65 | 57 | 8 | 0 | 0% |
 | general-portuguese-a1 | 65 | 65 | 0 | 0 | 0% |
 | introductory | 1 | 0 | 0 | 0 | 0% |
 | science-en | 61 | 0 | 0 | 0 | 0% |
@@ -72,16 +72,6 @@ form-first: 125 | task-with-grammar: 48 | task: 1369 | empty: 64
 - `el-a1-epitatika-moria.json` - Χρησιμοποιώ τα μόρια να, ας, θα.
 - `el-a1-i-klisi-toy-oysiastikoy.json` - Κλίνω ένα ουσιαστικό σε όλες τις πτώσεις.
 
-### general-italian-b1 (14 flagged)
-- `it-b1-ci-e-ne-nei-testi.json` - Evitare ripetizioni con ci e ne in un testo scritto.
-- `it-b1-congiuntivo-o-indicativo.json` - Scegliere tra indicativo e congiuntivo secondo il grado di certezza.
-- `it-b1-gerundio-e-participio.json` - Rendere più dense le frasi con gerundio e participio.
-- `it-b1-gli-avverbi-in-mente.json` - Modificare verbi e aggettivi con gli avverbi giusti.
-- `it-b1-i-connettivi-del-racconto.json` - Collegare le parti di un racconto con i connettivi.
-- `it-b1-i-verbi-pronominali.json` - Usare i verbi pronominali e riconoscere il cambio di senso.
-- `it-b1-il-condizionale-passato.json` - Usare il condizionale passato per il futuro nel passato e per le notizie non confermate.
-- `it-b1-il-congiuntivo-imperfetto.json` - Usare il congiuntivo imperfetto nell'ipotesi e nel desiderio.
-
 ### general-greek-a2 (11 flagged)
 - `el-a2-anomaloi-typoi-sygkrisis.json` - Χρησιμοποιώ τους ανώμαλους τύπους σύγκρισης.
 - `el-a2-epanalipsi-mellonta-kai-ypotaktikis.json` - Συνδυάζω μέλλοντα και υποτακτική.
@@ -92,7 +82,7 @@ form-first: 125 | task-with-grammar: 48 | task: 1369 | empty: 64
 - `el-a2-i-ypotaktiki-me-na.json` - Χρησιμοποιώ την υποτακτική μετά από ρήματα.
 - `el-a2-klitika-me-prostaktiki.json` - Συνδυάζω προστακτική και κλιτικό σωστά.
 
-### general-italian-a2 (9 flagged)
+### general-italian-a2 (8 flagged)
 - `it-a2-ci-e-ne.json` - Usare ci e ne con valore di luogo e quantità.
 - `it-a2-i-pronomi-combinati.json` - Usare due pronomi nello stesso enunciato.
 - `it-a2-il-futuro-irregolare.json` - Usare le forme irregolari del futuro senza esitare.
@@ -100,7 +90,7 @@ form-first: 125 | task-with-grammar: 48 | task: 1369 | empty: 64
 - `it-a2-l-imperativo-con-i-pronomi.json` - Dare istruzioni usando i pronomi.
 - `it-a2-passato-prossimo-o-imperfetto.json` - Scegliere il tempo giusto in un racconto.
 - `it-a2-ripasso-dei-pronomi.json` - Evitare ripetizioni usando i pronomi.
-- `it-a2-se-piu-presente-e-futuro.json` - Formulare un'ipotesi reale sul futuro.
+- `it-a2-servizi-pubblici-e-moduli.json` - Usare i servizi pubblici e compilare un modulo.
 
 ### general-italian-a1 (7 flagged)
 - `it-a1-articoli-e-preposizioni-ripasso.json` - Scegliere articoli e preposizioni senza errori.
@@ -129,11 +119,6 @@ form-first: 125 | task-with-grammar: 48 | task: 1369 | empty: 64
 - `ge-a1-communication-breakdown-survival-strategies.json` - I can use clarification strategies when I do not understand or need repetition.
 - `numerals-a1.json` - I can use numbers up to 100 in everyday situations.
 
-### general-french-a2 (3 flagged)
-- `fr-a2-articles-contractes-et-prepositions-de-pays-villes.json` - Je peux dire d’où je viens et où je vais avec les bonnes prépositions de pays.
-- `fr-a2-articles-partitifs-et-expressions-de-quantite.json` - Je peux acheter des quantités précises et utiliser les articles partitifs.
-- `fr-a2-les-pronoms-possessifs-le-mien-la-tienne-les-leurs.json` - Je peux dire à qui appartient un objet avec les pronoms possessifs.
-
 ### general-english-a0 (2 flagged)
 - `my-little-friend.json` - I can use possessive adjectives and 's to talk about family and friends.
 - `pronouns-plus-to-be.json` - I can use subject pronouns and 'to be' to say who I am and where I am from.
@@ -147,6 +132,9 @@ form-first: 125 | task-with-grammar: 48 | task: 1369 | empty: 64
 
 ### general-french-a1 (1 flagged)
 - `fr-a1-paires-minimales-voyelles.json` - Je peux distinguer les voyelles et construire des phrases simples.
+
+### general-french-a2 (1 flagged)
+- `fr-a2-articles-partitifs-et-expressions-de-quantite.json` - Je peux acheter des quantités précises et utiliser les articles partitifs.
 
 ### general-french-b2 (1 flagged)
 - `fr-b2-l-inversion-du-sujet-apres-les-adverbes-de-tete.json` - Je peux employer l'inversion après les adverbes de tête pour donner du relief.

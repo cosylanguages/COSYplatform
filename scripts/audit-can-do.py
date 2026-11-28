@@ -79,7 +79,8 @@ TASK_HEADS = (
     "modéliser", "rapporter", "nuancer", "mobiliser", "résumer", "traduire", "reformuler",
     "parlare", "descrivere", "raccontare", "spiegare", "discutere", "sostenere",
     "argomentare", "presentare", "chiedere", "rispondere", "evidenziare",
-    "esprimere", "formulare", "motivare", "commentare", "suggerire",
+    "esprimere", "formulare", "motivare", "commentare", "suggerire", "riferire",
+    "dire", "esporre", "riassumere", "citare", "indicare",
     "рассказывать", "описывать", "говорить", "объяснять", "обсуждать", "анализировать",
     "сравнивать", "убеждать", "представлять", "жаловаться", "выражать", "формулировать",
     "μιλάω", "περιγράφω", "διηγούμαι", "εξηγώ", "συζητώ", "συγκρίνω", "εκφράζω", "διατυπώνω",
@@ -100,10 +101,12 @@ def classify(cando: str) -> str:
     # "use the language from Unit 3 in a speaking task" is a task, not a form drill.
     if "use the language" in text or "speaking task" in text or "in a longer" in text:
         return "task"
-    if head.startswith(FORM_HEADS):
-        return "form-first"
+    # Task heads first: "formulare" starts with "form", and a prefix test for form verbs
+    # would swallow it before the task list is consulted.
     if head.startswith(TASK_HEADS):
         return "task-with-grammar" if has_term else "task"
+    if head.startswith(FORM_HEADS):
+        return "form-first"
     return "form-first" if has_term else "task"
 
 
