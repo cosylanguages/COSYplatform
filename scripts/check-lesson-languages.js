@@ -21,6 +21,11 @@ const FOLDER_LANGUAGE = {
   'general-english-a2': 'en',
   'general-english-a0-a1-inspired': 'en',
   'science-en': 'en',
+  'general-italian-a1': 'it',
+  'general-italian-a2': 'it',
+  'general-italian-b1': 'it',
+  'general-greek-a1': 'el',
+  'general-greek-a2': 'el',
   introductory: 'en'
 };
 
