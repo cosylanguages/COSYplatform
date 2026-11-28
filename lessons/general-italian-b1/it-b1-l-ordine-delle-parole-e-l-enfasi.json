@@ -15,17 +15,15 @@
   "assessment": "Verifica l'uso corretto di «ordine delle parole ed enfasi» e la chiarezza dell'esposizione orale.",
   "homework": "Scrivi dieci righe usando «ordine delle parole ed enfasi».",
   "recycling": {
-    "prior": "mentre, visto, durante, Gerundio presente e passato, tuttavia, inoltre, quindi, infatti",
+    "prior": "mentre, visto, tuttavia, inoltre, Passato prossimo e imperfetto insieme, Trapassato per l'anteriorità",
     "next": "La lezione successiva tratta le forme del congiuntivo presente.",
     "priorBlocks": [
       "cosydata:it:mentre:conjunction",
       "cosydata:it:visto:noun",
-      "cosydata:it:durante:preposition",
-      "grammar:it-b1-gerundio-e-participio",
       "cosydata:it:tuttavia:adverb",
       "cosydata:it:inoltre:idiom",
-      "cosydata:it:quindi:adverb",
-      "cosydata:it:infatti:phrase"
+      "grammar:it-a2-passato-prossimo-vs-imperfetto",
+      "grammar:it-a2-trapassato-prossimo"
     ]
   },
   "differentiation": {
@@ -94,16 +92,14 @@
         },
         {
           "type": "blockquote",
-          "content": "1. Che cosa fai mentre aspetti l'autobus?\n2. Spiega una conseguenza che si vede dai fatti: «Visto che…, …»\n3. Che cosa hai fatto durante l'ultima vacanza?\n4. Racconta due azioni che avvengono insieme: «Ascoltando la musica, …»\n5. Sei d'accordo con questa idea? Esprimi un dubbio: «È una buona idea; tuttavia…»\n6. Dammi due motivi per studiare una lingua straniera, il secondo con «inoltre».\n7. Hai perso il treno. Racconta che cosa è successo dopo, con «quindi».\n8. Qualcuno dice che l'italiano è difficile. Rispondi con un esempio, usando «infatti».",
+          "content": "1. Che cosa fai mentre aspetti l'autobus?\n2. Spiega una conseguenza che si vede dai fatti: «Visto che…, …»\n3. Sei d'accordo con questa idea? Esprimi un dubbio: «È una buona idea; tuttavia…»\n4. Dammi due motivi per studiare una lingua straniera, il secondo con «inoltre».\n5. Racconta un pomeriggio di dieci anni fa: com'era la giornata e che cosa è successo all'improvviso?\n6. Ieri sei arrivato a casa e qualcuno aveva già preparato la cena: racconta che cosa aveva già fatto.",
           "usesChunk": [
             "cosydata:it:mentre:conjunction",
             "cosydata:it:visto:noun",
-            "cosydata:it:durante:preposition",
-            "grammar:it-b1-gerundio-e-participio",
             "cosydata:it:tuttavia:adverb",
             "cosydata:it:inoltre:idiom",
-            "cosydata:it:quindi:adverb",
-            "cosydata:it:infatti:phrase"
+            "grammar:it-a2-passato-prossimo-vs-imperfetto",
+            "grammar:it-a2-trapassato-prossimo"
           ]
         },
         {

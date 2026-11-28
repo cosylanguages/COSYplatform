@@ -46,7 +46,8 @@
           "introduced_at": 1,
           "introduced_in": "IT-B1-001",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "past"
         },
         {
           "id": "grammar:it-a2-trapassato-prossimo",
@@ -56,7 +57,8 @@
           "introduced_at": 1,
           "introduced_in": "IT-B1-001",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "past"
         },
         {
           "id": "pending:it:intanto",
@@ -66,17 +68,8 @@
           "introduced_at": 1,
           "introduced_in": "IT-B1-001",
           "return_number": 1,
-          "offset": 1
-        },
-        {
-          "id": "pending:it:frattempo",
-          "text": "frattempo",
-          "kind": "word",
-          "status": "unresolved",
-          "introduced_at": 1,
-          "introduced_in": "IT-B1-001",
-          "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "past"
         }
       ]
     },
@@ -105,7 +98,8 @@
           "introduced_at": 2,
           "introduced_in": "IT-B1-002",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "past"
         },
         {
           "id": "cosydata:it:prima:adverb",
@@ -115,7 +109,8 @@
           "introduced_at": 2,
           "introduced_in": "IT-B1-002",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "past"
         },
         {
           "id": "cosydata:it:quando:adverb",
@@ -125,7 +120,8 @@
           "introduced_at": 2,
           "introduced_in": "IT-B1-002",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "past"
         },
         {
           "id": "grammar:it-a2-passato-prossimo-vs-imperfetto",
@@ -135,47 +131,8 @@
           "introduced_at": 1,
           "introduced_in": "IT-B1-001",
           "return_number": 2,
-          "offset": 2
-        },
-        {
-          "id": "grammar:it-a2-trapassato-prossimo",
-          "text": "Trapassato per l'anteriorità",
-          "kind": "frame",
-          "status": "grammar-id",
-          "introduced_at": 1,
-          "introduced_in": "IT-B1-001",
-          "return_number": 2,
-          "offset": 2
-        },
-        {
-          "id": "pending:it:ancora-non",
-          "text": "ancora non",
-          "kind": "collocation",
-          "status": "unresolved",
-          "introduced_at": 2,
-          "introduced_in": "IT-B1-002",
-          "return_number": 1,
-          "offset": 1
-        },
-        {
-          "id": "pending:it:dopo-che",
-          "text": "dopo che",
-          "kind": "collocation",
-          "status": "unresolved",
-          "introduced_at": 2,
-          "introduced_in": "IT-B1-002",
-          "return_number": 1,
-          "offset": 1
-        },
-        {
-          "id": "pending:it:intanto",
-          "text": "intanto",
-          "kind": "word",
-          "status": "unresolved",
-          "introduced_at": 1,
-          "introduced_in": "IT-B1-001",
-          "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "past"
         }
       ]
     },
@@ -204,7 +161,8 @@
           "introduced_at": 3,
           "introduced_in": "IT-B1-003",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "connector"
         },
         {
           "id": "cosydata:it:inoltre:idiom",
@@ -214,57 +172,8 @@
           "introduced_at": 3,
           "introduced_in": "IT-B1-003",
           "return_number": 1,
-          "offset": 1
-        },
-        {
-          "id": "cosydata:it:quindi:adverb",
-          "text": "quindi",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 3,
-          "introduced_in": "IT-B1-003",
-          "return_number": 1,
-          "offset": 1
-        },
-        {
-          "id": "cosydata:it:infatti:phrase",
-          "text": "infatti",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 3,
-          "introduced_in": "IT-B1-003",
-          "return_number": 1,
-          "offset": 1
-        },
-        {
-          "id": "cosydata:it:invece:idiom",
-          "text": "invece",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 3,
-          "introduced_in": "IT-B1-003",
-          "return_number": 1,
-          "offset": 1
-        },
-        {
-          "id": "cosydata:it:comunque:idiom",
-          "text": "comunque",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 3,
-          "introduced_in": "IT-B1-003",
-          "return_number": 1,
-          "offset": 1
-        },
-        {
-          "id": "grammar:it-b1-connettivi-testuali",
-          "text": "Connettivi temporali e logici",
-          "kind": "frame",
-          "status": "grammar-id",
-          "introduced_at": 3,
-          "introduced_in": "IT-B1-003",
-          "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "connector"
         },
         {
           "id": "cosydata:it:gia:adverb",
@@ -274,7 +183,19 @@
           "introduced_at": 2,
           "introduced_in": "IT-B1-002",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "past"
+        },
+        {
+          "id": "cosydata:it:prima:adverb",
+          "text": "prima",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 2,
+          "introduced_in": "IT-B1-002",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "past"
         }
       ]
     },
@@ -303,7 +224,8 @@
           "introduced_at": 4,
           "introduced_in": "IT-B1-004",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "manner"
         },
         {
           "id": "cosydata:it:visto:noun",
@@ -313,27 +235,8 @@
           "introduced_at": 4,
           "introduced_in": "IT-B1-004",
           "return_number": 1,
-          "offset": 1
-        },
-        {
-          "id": "cosydata:it:durante:preposition",
-          "text": "durante",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 4,
-          "introduced_in": "IT-B1-004",
-          "return_number": 1,
-          "offset": 1
-        },
-        {
-          "id": "grammar:it-b1-gerundio-e-participio",
-          "text": "Gerundio presente e passato",
-          "kind": "frame",
-          "status": "grammar-id",
-          "introduced_at": 4,
-          "introduced_in": "IT-B1-004",
-          "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "manner"
         },
         {
           "id": "cosydata:it:tuttavia:adverb",
@@ -343,7 +246,8 @@
           "introduced_at": 3,
           "introduced_in": "IT-B1-003",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "connector"
         },
         {
           "id": "cosydata:it:inoltre:idiom",
@@ -353,27 +257,30 @@
           "introduced_at": 3,
           "introduced_in": "IT-B1-003",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "connector"
         },
         {
-          "id": "cosydata:it:quindi:adverb",
-          "text": "quindi",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 3,
-          "introduced_in": "IT-B1-003",
-          "return_number": 2,
-          "offset": 2
+          "id": "grammar:it-a2-passato-prossimo-vs-imperfetto",
+          "text": "Passato prossimo e imperfetto insieme",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 1,
+          "introduced_in": "IT-B1-001",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "past"
         },
         {
-          "id": "cosydata:it:infatti:phrase",
-          "text": "infatti",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 3,
-          "introduced_in": "IT-B1-003",
-          "return_number": 2,
-          "offset": 2
+          "id": "grammar:it-a2-trapassato-prossimo",
+          "text": "Trapassato per l'anteriorità",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 1,
+          "introduced_in": "IT-B1-001",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "past"
         }
       ]
     },
@@ -402,7 +309,8 @@
           "introduced_at": 5,
           "introduced_in": "IT-B1-005",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "frame:it-b1-ordine-delle-parole-e-enfasi"
         },
         {
           "id": "cosydata:it:mentre:conjunction",
@@ -412,7 +320,8 @@
           "introduced_at": 4,
           "introduced_in": "IT-B1-004",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "manner"
         },
         {
           "id": "cosydata:it:visto:noun",
@@ -422,27 +331,8 @@
           "introduced_at": 4,
           "introduced_in": "IT-B1-004",
           "return_number": 2,
-          "offset": 2
-        },
-        {
-          "id": "cosydata:it:durante:preposition",
-          "text": "durante",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 4,
-          "introduced_in": "IT-B1-004",
-          "return_number": 2,
-          "offset": 2
-        },
-        {
-          "id": "grammar:it-b1-gerundio-e-participio",
-          "text": "Gerundio presente e passato",
-          "kind": "frame",
-          "status": "grammar-id",
-          "introduced_at": 4,
-          "introduced_in": "IT-B1-004",
-          "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "manner"
         },
         {
           "id": "cosydata:it:gia:adverb",
@@ -452,7 +342,8 @@
           "introduced_at": 2,
           "introduced_in": "IT-B1-002",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "past"
         },
         {
           "id": "cosydata:it:prima:adverb",
@@ -462,17 +353,30 @@
           "introduced_at": 2,
           "introduced_in": "IT-B1-002",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "past"
         },
         {
-          "id": "cosydata:it:quando:adverb",
-          "text": "quando",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 2,
-          "introduced_in": "IT-B1-002",
-          "return_number": 3,
-          "offset": 4
+          "id": "pending:it:e-che",
+          "text": "è che",
+          "kind": "collocation",
+          "status": "unresolved",
+          "introduced_at": 5,
+          "introduced_in": "IT-B1-005",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
+        },
+        {
+          "id": "pending:it:quanto-a",
+          "text": "quanto a",
+          "kind": "collocation",
+          "status": "unresolved",
+          "introduced_at": 5,
+          "introduced_in": "IT-B1-005",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
         }
       ]
     },
@@ -501,7 +405,8 @@
           "introduced_at": 6,
           "introduced_in": "IT-B1-006",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "frame:it-b1-congiuntivo-presente"
         },
         {
           "id": "grammar:it-b1-ordine-delle-parole-e-enfasi",
@@ -511,7 +416,8 @@
           "introduced_at": 5,
           "introduced_in": "IT-B1-005",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "frame:it-b1-ordine-delle-parole-e-enfasi"
         },
         {
           "id": "cosydata:it:tuttavia:adverb",
@@ -521,7 +427,8 @@
           "introduced_at": 3,
           "introduced_in": "IT-B1-003",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "connector"
         },
         {
           "id": "cosydata:it:inoltre:idiom",
@@ -531,47 +438,41 @@
           "introduced_at": 3,
           "introduced_in": "IT-B1-003",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "connector"
         },
         {
-          "id": "cosydata:it:quindi:adverb",
-          "text": "quindi",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 3,
-          "introduced_in": "IT-B1-003",
-          "return_number": 3,
-          "offset": 4
+          "id": "pending:it:che-io-sia",
+          "text": "che io sia",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "introduced_at": 6,
+          "introduced_in": "IT-B1-006",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "subjunctive"
         },
         {
-          "id": "cosydata:it:infatti:phrase",
-          "text": "infatti",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 3,
-          "introduced_in": "IT-B1-003",
-          "return_number": 3,
-          "offset": 4
+          "id": "pending:it:che-tu-abbia",
+          "text": "che tu abbia",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "introduced_at": 6,
+          "introduced_in": "IT-B1-006",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
         },
         {
-          "id": "cosydata:it:invece:idiom",
-          "text": "invece",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 3,
-          "introduced_in": "IT-B1-003",
-          "return_number": 3,
-          "offset": 4
-        },
-        {
-          "id": "cosydata:it:comunque:idiom",
-          "text": "comunque",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 3,
-          "introduced_in": "IT-B1-003",
-          "return_number": 3,
-          "offset": 4
+          "id": "pending:it:e-che",
+          "text": "è che",
+          "kind": "collocation",
+          "status": "unresolved",
+          "introduced_at": 5,
+          "introduced_in": "IT-B1-005",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "general"
         }
       ]
     },
@@ -600,7 +501,8 @@
           "introduced_at": 7,
           "introduced_in": "IT-B1-007",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "frame:it-b1-verbi-che-reggono-il-congiuntivo"
         },
         {
           "id": "grammar:it-b1-congiuntivo-presente",
@@ -610,7 +512,8 @@
           "introduced_at": 6,
           "introduced_in": "IT-B1-006",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "frame:it-b1-congiuntivo-presente"
         },
         {
           "id": "cosydata:it:mentre:conjunction",
@@ -620,7 +523,8 @@
           "introduced_at": 4,
           "introduced_in": "IT-B1-004",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "manner"
         },
         {
           "id": "cosydata:it:visto:noun",
@@ -630,27 +534,8 @@
           "introduced_at": 4,
           "introduced_in": "IT-B1-004",
           "return_number": 3,
-          "offset": 4
-        },
-        {
-          "id": "cosydata:it:durante:preposition",
-          "text": "durante",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 4,
-          "introduced_in": "IT-B1-004",
-          "return_number": 3,
-          "offset": 4
-        },
-        {
-          "id": "grammar:it-b1-gerundio-e-participio",
-          "text": "Gerundio presente e passato",
-          "kind": "frame",
-          "status": "grammar-id",
-          "introduced_at": 4,
-          "introduced_in": "IT-B1-004",
-          "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "manner"
         },
         {
           "id": "pending:it:penso-che",
@@ -660,7 +545,8 @@
           "introduced_at": 7,
           "introduced_in": "IT-B1-007",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "subjunctive"
         },
         {
           "id": "pending:it:credo-che",
@@ -670,7 +556,30 @@
           "introduced_at": 7,
           "introduced_in": "IT-B1-007",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "subjunctive"
+        },
+        {
+          "id": "pending:it:che-tu-abbia",
+          "text": "che tu abbia",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "introduced_at": 6,
+          "introduced_in": "IT-B1-006",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "general"
+        },
+        {
+          "id": "pending:it:che-vada",
+          "text": "che vada",
+          "kind": "collocation",
+          "status": "unresolved",
+          "introduced_at": 6,
+          "introduced_in": "IT-B1-006",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "general"
         }
       ]
     },
@@ -699,7 +608,8 @@
           "introduced_at": 8,
           "introduced_in": "IT-B1-008",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "subjunctive"
         },
         {
           "id": "cosydata:it:a-meno-che:phrase",
@@ -709,7 +619,8 @@
           "introduced_at": 8,
           "introduced_in": "IT-B1-008",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "subjunctive"
         },
         {
           "id": "grammar:it-b1-congiunzioni-con-congiuntivo",
@@ -719,7 +630,8 @@
           "introduced_at": 8,
           "introduced_in": "IT-B1-008",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "frame:it-b1-congiunzioni-con-congiuntivo"
         },
         {
           "id": "grammar:it-b1-verbi-che-reggono-il-congiuntivo",
@@ -729,7 +641,8 @@
           "introduced_at": 7,
           "introduced_in": "IT-B1-007",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "frame:it-b1-verbi-che-reggono-il-congiuntivo"
         },
         {
           "id": "grammar:it-b1-ordine-delle-parole-e-enfasi",
@@ -739,7 +652,8 @@
           "introduced_at": 5,
           "introduced_in": "IT-B1-005",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "frame:it-b1-ordine-delle-parole-e-enfasi"
         },
         {
           "id": "grammar:it-a2-passato-prossimo-vs-imperfetto",
@@ -749,7 +663,8 @@
           "introduced_at": 1,
           "introduced_in": "IT-B1-001",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "past"
         },
         {
           "id": "grammar:it-a2-trapassato-prossimo",
@@ -759,17 +674,19 @@
           "introduced_at": 1,
           "introduced_in": "IT-B1-001",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "past"
         },
         {
-          "id": "pending:it:prima-che",
-          "text": "prima che",
+          "id": "pending:it:spero-che",
+          "text": "spero che",
           "kind": "collocation",
           "status": "unresolved",
-          "introduced_at": 8,
-          "introduced_in": "IT-B1-008",
-          "return_number": 1,
-          "offset": 1
+          "introduced_at": 7,
+          "introduced_in": "IT-B1-007",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "general"
         }
       ]
     },
@@ -798,7 +715,8 @@
           "introduced_at": 9,
           "introduced_in": "IT-B1-009",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-congiuntivo-nelle-relative",
@@ -808,7 +726,8 @@
           "introduced_at": 9,
           "introduced_in": "IT-B1-009",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "frame:it-b1-congiuntivo-nelle-relative"
         },
         {
           "id": "cosydata:it:sebbene:conjunction",
@@ -818,7 +737,8 @@
           "introduced_at": 8,
           "introduced_in": "IT-B1-008",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "subjunctive"
         },
         {
           "id": "cosydata:it:a-meno-che:phrase",
@@ -828,7 +748,8 @@
           "introduced_at": 8,
           "introduced_in": "IT-B1-008",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "subjunctive"
         },
         {
           "id": "grammar:it-b1-congiunzioni-con-congiuntivo",
@@ -838,7 +759,8 @@
           "introduced_at": 8,
           "introduced_in": "IT-B1-008",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "frame:it-b1-congiunzioni-con-congiuntivo"
         },
         {
           "id": "grammar:it-b1-congiuntivo-presente",
@@ -848,7 +770,8 @@
           "introduced_at": 6,
           "introduced_in": "IT-B1-006",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "frame:it-b1-congiuntivo-presente"
         },
         {
           "id": "cosydata:it:gia:adverb",
@@ -858,7 +781,8 @@
           "introduced_at": 2,
           "introduced_in": "IT-B1-002",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "past"
         },
         {
           "id": "cosydata:it:prima:adverb",
@@ -868,7 +792,8 @@
           "introduced_at": 2,
           "introduced_in": "IT-B1-002",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "past"
         }
       ]
     },
@@ -897,7 +822,8 @@
           "introduced_at": 10,
           "introduced_in": "IT-B1-010",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "general"
         },
         {
           "id": "cosydata:it:in-bocca-al-lupo:phrase",
@@ -907,27 +833,8 @@
           "introduced_at": 10,
           "introduced_in": "IT-B1-010",
           "return_number": 1,
-          "offset": 1
-        },
-        {
-          "id": "cosydata:it:buon-lavoro:phrase",
-          "text": "buon lavoro",
-          "kind": "collocation",
-          "status": "exact",
-          "introduced_at": 10,
-          "introduced_in": "IT-B1-010",
-          "return_number": 1,
-          "offset": 1
-        },
-        {
-          "id": "cosydata:it:congratulazioni:phrase",
-          "text": "congratulazioni",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 10,
-          "introduced_in": "IT-B1-010",
-          "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-esortativo-che-congiuntivo",
@@ -937,17 +844,8 @@
           "introduced_at": 10,
           "introduced_in": "IT-B1-010",
           "return_number": 1,
-          "offset": 1
-        },
-        {
-          "id": "cosydata:it:chi:pronoun",
-          "text": "chi",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 9,
-          "introduced_in": "IT-B1-009",
-          "return_number": 2,
-          "offset": 2
+          "offset": 1,
+          "domain": "subjunctive"
         },
         {
           "id": "grammar:it-b1-congiuntivo-nelle-relative",
@@ -957,7 +855,8 @@
           "introduced_at": 9,
           "introduced_in": "IT-B1-009",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "frame:it-b1-congiuntivo-nelle-relative"
         },
         {
           "id": "grammar:it-b1-verbi-che-reggono-il-congiuntivo",
@@ -967,7 +866,41 @@
           "introduced_at": 7,
           "introduced_in": "IT-B1-007",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "frame:it-b1-verbi-che-reggono-il-congiuntivo"
+        },
+        {
+          "id": "cosydata:it:tuttavia:adverb",
+          "text": "tuttavia",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 3,
+          "introduced_in": "IT-B1-003",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "connector"
+        },
+        {
+          "id": "cosydata:it:inoltre:idiom",
+          "text": "inoltre",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 3,
+          "introduced_in": "IT-B1-003",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "connector"
+        },
+        {
+          "id": "pending:it:penso-che",
+          "text": "penso che",
+          "kind": "collocation",
+          "status": "unresolved",
+          "introduced_at": 7,
+          "introduced_in": "IT-B1-007",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "subjunctive"
         }
       ]
     },
@@ -996,7 +929,8 @@
           "introduced_at": 11,
           "introduced_in": "IT-B1-011",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-congiuntivo-passato",
@@ -1006,7 +940,8 @@
           "introduced_at": 11,
           "introduced_in": "IT-B1-011",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "frame:it-b1-congiuntivo-passato"
         },
         {
           "id": "cosydata:it:auguri:phrase",
@@ -1016,37 +951,8 @@
           "introduced_at": 10,
           "introduced_in": "IT-B1-010",
           "return_number": 2,
-          "offset": 2
-        },
-        {
-          "id": "cosydata:it:in-bocca-al-lupo:phrase",
-          "text": "in bocca al lupo",
-          "kind": "set-phrase",
-          "status": "exact",
-          "introduced_at": 10,
-          "introduced_in": "IT-B1-010",
-          "return_number": 2,
-          "offset": 2
-        },
-        {
-          "id": "cosydata:it:buon-lavoro:phrase",
-          "text": "buon lavoro",
-          "kind": "collocation",
-          "status": "exact",
-          "introduced_at": 10,
-          "introduced_in": "IT-B1-010",
-          "return_number": 2,
-          "offset": 2
-        },
-        {
-          "id": "cosydata:it:congratulazioni:phrase",
-          "text": "congratulazioni",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 10,
-          "introduced_in": "IT-B1-010",
-          "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-esortativo-che-congiuntivo",
@@ -1056,7 +962,8 @@
           "introduced_at": 10,
           "introduced_in": "IT-B1-010",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "subjunctive"
         },
         {
           "id": "cosydata:it:sebbene:conjunction",
@@ -1066,7 +973,41 @@
           "introduced_at": 8,
           "introduced_in": "IT-B1-008",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "subjunctive"
+        },
+        {
+          "id": "grammar:it-b1-congiunzioni-con-congiuntivo",
+          "text": "Concessione, scopo, condizione",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 8,
+          "introduced_in": "IT-B1-008",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "frame:it-b1-congiunzioni-con-congiuntivo"
+        },
+        {
+          "id": "cosydata:it:mentre:conjunction",
+          "text": "mentre",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 4,
+          "introduced_in": "IT-B1-004",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "manner"
+        },
+        {
+          "id": "cosydata:it:visto:noun",
+          "text": "visto",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 4,
+          "introduced_in": "IT-B1-004",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "manner"
         }
       ]
     },
@@ -1095,7 +1036,8 @@
           "introduced_at": 12,
           "introduced_in": "IT-B1-012",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "frame:it-b1-congiuntivo-imperfetto"
         },
         {
           "id": "cosydata:it:recentemente:adverb",
@@ -1105,7 +1047,8 @@
           "introduced_at": 11,
           "introduced_in": "IT-B1-011",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-congiuntivo-passato",
@@ -1115,7 +1058,8 @@
           "introduced_at": 11,
           "introduced_in": "IT-B1-011",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "frame:it-b1-congiuntivo-passato"
         },
         {
           "id": "cosydata:it:chi:pronoun",
@@ -1125,7 +1069,8 @@
           "introduced_at": 9,
           "introduced_in": "IT-B1-009",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-congiuntivo-nelle-relative",
@@ -1135,7 +1080,8 @@
           "introduced_at": 9,
           "introduced_in": "IT-B1-009",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "frame:it-b1-congiuntivo-nelle-relative"
         },
         {
           "id": "grammar:it-b1-ordine-delle-parole-e-enfasi",
@@ -1145,7 +1091,8 @@
           "introduced_at": 5,
           "introduced_in": "IT-B1-005",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "frame:it-b1-ordine-delle-parole-e-enfasi"
         },
         {
           "id": "grammar:it-a2-passato-prossimo-vs-imperfetto",
@@ -1155,7 +1102,8 @@
           "introduced_at": 1,
           "introduced_in": "IT-B1-001",
           "return_number": 5,
-          "offset": 12
+          "offset": 12,
+          "domain": "past"
         },
         {
           "id": "grammar:it-a2-trapassato-prossimo",
@@ -1165,7 +1113,8 @@
           "introduced_at": 1,
           "introduced_in": "IT-B1-001",
           "return_number": 5,
-          "offset": 12
+          "offset": 12,
+          "domain": "past"
         }
       ]
     },
@@ -1191,7 +1140,8 @@
           "introduced_at": 13,
           "introduced_in": "IT-B1-013",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "manner"
         },
         {
           "id": "grammar:it-b1-congiuntivo-imperfetto",
@@ -1201,7 +1151,8 @@
           "introduced_at": 12,
           "introduced_in": "IT-B1-012",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "frame:it-b1-congiuntivo-imperfetto"
         },
         {
           "id": "cosydata:it:auguri:phrase",
@@ -1211,7 +1162,8 @@
           "introduced_at": 10,
           "introduced_in": "IT-B1-010",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "general"
         },
         {
           "id": "cosydata:it:in-bocca-al-lupo:phrase",
@@ -1221,27 +1173,8 @@
           "introduced_at": 10,
           "introduced_in": "IT-B1-010",
           "return_number": 3,
-          "offset": 4
-        },
-        {
-          "id": "cosydata:it:buon-lavoro:phrase",
-          "text": "buon lavoro",
-          "kind": "collocation",
-          "status": "exact",
-          "introduced_at": 10,
-          "introduced_in": "IT-B1-010",
-          "return_number": 3,
-          "offset": 4
-        },
-        {
-          "id": "cosydata:it:congratulazioni:phrase",
-          "text": "congratulazioni",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 10,
-          "introduced_in": "IT-B1-010",
-          "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-esortativo-che-congiuntivo",
@@ -1251,7 +1184,8 @@
           "introduced_at": 10,
           "introduced_in": "IT-B1-010",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "subjunctive"
         },
         {
           "id": "grammar:it-b1-congiuntivo-presente",
@@ -1261,7 +1195,30 @@
           "introduced_at": 6,
           "introduced_in": "IT-B1-006",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "frame:it-b1-congiuntivo-presente"
+        },
+        {
+          "id": "cosydata:it:gia:adverb",
+          "text": "già",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 2,
+          "introduced_in": "IT-B1-002",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "past"
+        },
+        {
+          "id": "cosydata:it:prima:adverb",
+          "text": "prima",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 2,
+          "introduced_in": "IT-B1-002",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "past"
         }
       ]
     },
@@ -1287,7 +1244,8 @@
           "introduced_at": 14,
           "introduced_in": "IT-B1-014",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "frame:it-b1-concordanza-dei-tempi"
         },
         {
           "id": "grammar:it-b1-congiuntivo-trapassato",
@@ -1297,7 +1255,8 @@
           "introduced_at": 13,
           "introduced_in": "IT-B1-013",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "manner"
         },
         {
           "id": "cosydata:it:recentemente:adverb",
@@ -1307,7 +1266,8 @@
           "introduced_at": 11,
           "introduced_in": "IT-B1-011",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-congiuntivo-passato",
@@ -1317,7 +1277,8 @@
           "introduced_at": 11,
           "introduced_in": "IT-B1-011",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "frame:it-b1-congiuntivo-passato"
         },
         {
           "id": "grammar:it-b1-verbi-che-reggono-il-congiuntivo",
@@ -1327,7 +1288,8 @@
           "introduced_at": 7,
           "introduced_in": "IT-B1-007",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "frame:it-b1-verbi-che-reggono-il-congiuntivo"
         },
         {
           "id": "cosydata:it:tuttavia:adverb",
@@ -1337,7 +1299,8 @@
           "introduced_at": 3,
           "introduced_in": "IT-B1-003",
           "return_number": 5,
-          "offset": 12
+          "offset": 12,
+          "domain": "connector"
         },
         {
           "id": "cosydata:it:inoltre:idiom",
@@ -1347,17 +1310,19 @@
           "introduced_at": 3,
           "introduced_in": "IT-B1-003",
           "return_number": 5,
-          "offset": 12
+          "offset": 12,
+          "domain": "connector"
         },
         {
-          "id": "cosydata:it:quindi:adverb",
-          "text": "quindi",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 3,
-          "introduced_in": "IT-B1-003",
-          "return_number": 5,
-          "offset": 12
+          "id": "pending:it:pensavo-che",
+          "text": "pensavo che",
+          "kind": "collocation",
+          "status": "unresolved",
+          "introduced_at": 14,
+          "introduced_in": "IT-B1-014",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
         }
       ]
     },
@@ -1385,7 +1350,8 @@
           "introduced_at": 15,
           "introduced_in": "IT-B1-015",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-concordanza-dei-tempi",
@@ -1395,7 +1361,8 @@
           "introduced_at": 14,
           "introduced_in": "IT-B1-014",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "frame:it-b1-concordanza-dei-tempi"
         },
         {
           "id": "grammar:it-b1-congiuntivo-imperfetto",
@@ -1405,7 +1372,8 @@
           "introduced_at": 12,
           "introduced_in": "IT-B1-012",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "frame:it-b1-congiuntivo-imperfetto"
         },
         {
           "id": "cosydata:it:sebbene:conjunction",
@@ -1415,7 +1383,8 @@
           "introduced_at": 8,
           "introduced_in": "IT-B1-008",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "subjunctive"
         },
         {
           "id": "cosydata:it:a-meno-che:phrase",
@@ -1425,7 +1394,8 @@
           "introduced_at": 8,
           "introduced_in": "IT-B1-008",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "subjunctive"
         },
         {
           "id": "grammar:it-b1-congiunzioni-con-congiuntivo",
@@ -1435,7 +1405,8 @@
           "introduced_at": 8,
           "introduced_in": "IT-B1-008",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "frame:it-b1-congiunzioni-con-congiuntivo"
         },
         {
           "id": "cosydata:it:mentre:conjunction",
@@ -1445,7 +1416,8 @@
           "introduced_at": 4,
           "introduced_in": "IT-B1-004",
           "return_number": 5,
-          "offset": 12
+          "offset": 12,
+          "domain": "manner"
         },
         {
           "id": "cosydata:it:visto:noun",
@@ -1455,7 +1427,8 @@
           "introduced_at": 4,
           "introduced_in": "IT-B1-004",
           "return_number": 5,
-          "offset": 12
+          "offset": 12,
+          "domain": "manner"
         }
       ]
     },
@@ -1482,7 +1455,8 @@
           "introduced_at": 16,
           "introduced_in": "IT-B1-016",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "general"
         },
         {
           "id": "grammar:it-a2-periodo-ipotetico-2",
@@ -1492,7 +1466,8 @@
           "introduced_at": 16,
           "introduced_in": "IT-B1-016",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "subjunctive"
         },
         {
           "id": "cosydata:it:secondo-me:phrase",
@@ -1502,7 +1477,8 @@
           "introduced_at": 15,
           "introduced_in": "IT-B1-015",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-congiuntivo-trapassato",
@@ -1512,17 +1488,8 @@
           "introduced_at": 13,
           "introduced_in": "IT-B1-013",
           "return_number": 3,
-          "offset": 4
-        },
-        {
-          "id": "cosydata:it:chi:pronoun",
-          "text": "chi",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 9,
-          "introduced_in": "IT-B1-009",
-          "return_number": 4,
-          "offset": 8
+          "offset": 4,
+          "domain": "manner"
         },
         {
           "id": "grammar:it-b1-congiuntivo-nelle-relative",
@@ -1532,7 +1499,8 @@
           "introduced_at": 9,
           "introduced_in": "IT-B1-009",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "frame:it-b1-congiuntivo-nelle-relative"
         },
         {
           "id": "grammar:it-b1-ordine-delle-parole-e-enfasi",
@@ -1542,17 +1510,8 @@
           "introduced_at": 5,
           "introduced_in": "IT-B1-005",
           "return_number": 5,
-          "offset": 12
-        },
-        {
-          "id": "pending:it:se-potessi",
-          "text": "se potessi",
-          "kind": "collocation",
-          "status": "unresolved",
-          "introduced_at": 16,
-          "introduced_in": "IT-B1-016",
-          "return_number": 1,
-          "offset": 1
+          "offset": 12,
+          "domain": "frame:it-b1-ordine-delle-parole-e-enfasi"
         }
       ]
     },
@@ -1581,7 +1540,8 @@
           "introduced_at": 17,
           "introduced_in": "IT-B1-017",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "subjunctive"
         },
         {
           "id": "cosydata:it:immaginare:verb",
@@ -1591,7 +1551,8 @@
           "introduced_at": 16,
           "introduced_in": "IT-B1-016",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "general"
         },
         {
           "id": "grammar:it-a2-periodo-ipotetico-2",
@@ -1601,7 +1562,8 @@
           "introduced_at": 16,
           "introduced_in": "IT-B1-016",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "subjunctive"
         },
         {
           "id": "grammar:it-b1-concordanza-dei-tempi",
@@ -1611,7 +1573,8 @@
           "introduced_at": 14,
           "introduced_in": "IT-B1-014",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "frame:it-b1-concordanza-dei-tempi"
         },
         {
           "id": "cosydata:it:auguri:phrase",
@@ -1621,37 +1584,19 @@
           "introduced_at": 10,
           "introduced_in": "IT-B1-010",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "general"
         },
         {
-          "id": "cosydata:it:in-bocca-al-lupo:phrase",
-          "text": "in bocca al lupo",
-          "kind": "set-phrase",
-          "status": "exact",
-          "introduced_at": 10,
-          "introduced_in": "IT-B1-010",
-          "return_number": 4,
-          "offset": 8
-        },
-        {
-          "id": "cosydata:it:buon-lavoro:phrase",
-          "text": "buon lavoro",
-          "kind": "collocation",
-          "status": "exact",
-          "introduced_at": 10,
-          "introduced_in": "IT-B1-010",
-          "return_number": 4,
-          "offset": 8
-        },
-        {
-          "id": "cosydata:it:congratulazioni:phrase",
-          "text": "congratulazioni",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 10,
-          "introduced_in": "IT-B1-010",
-          "return_number": 4,
-          "offset": 8
+          "id": "grammar:it-b1-congiuntivo-presente",
+          "text": "Coniugazioni regolari",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 6,
+          "introduced_in": "IT-B1-006",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "frame:it-b1-congiuntivo-presente"
         }
       ]
     },
@@ -1679,7 +1624,8 @@
           "introduced_at": 18,
           "introduced_in": "IT-B1-018",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "general"
         },
         {
           "id": "cosydata:it:oggi:adverb",
@@ -1689,7 +1635,8 @@
           "introduced_at": 18,
           "introduced_in": "IT-B1-018",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-periodo-ipotetico-misto",
@@ -1699,7 +1646,8 @@
           "introduced_at": 18,
           "introduced_in": "IT-B1-018",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "frame:it-b1-periodo-ipotetico-misto"
         },
         {
           "id": "grammar:it-b1-periodo-ipotetico-3",
@@ -1709,27 +1657,8 @@
           "introduced_at": 17,
           "introduced_in": "IT-B1-017",
           "return_number": 2,
-          "offset": 2
-        },
-        {
-          "id": "cosydata:it:secondo-me:phrase",
-          "text": "secondo me",
-          "kind": "collocation",
-          "status": "exact",
-          "introduced_at": 15,
-          "introduced_in": "IT-B1-015",
-          "return_number": 3,
-          "offset": 4
-        },
-        {
-          "id": "cosydata:it:recentemente:adverb",
-          "text": "recentemente",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 11,
-          "introduced_in": "IT-B1-011",
-          "return_number": 4,
-          "offset": 8
+          "offset": 2,
+          "domain": "subjunctive"
         },
         {
           "id": "grammar:it-b1-congiuntivo-passato",
@@ -1739,7 +1668,8 @@
           "introduced_at": 11,
           "introduced_in": "IT-B1-011",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "frame:it-b1-congiuntivo-passato"
         },
         {
           "id": "grammar:it-b1-verbi-che-reggono-il-congiuntivo",
@@ -1749,7 +1679,30 @@
           "introduced_at": 7,
           "introduced_in": "IT-B1-007",
           "return_number": 5,
-          "offset": 12
+          "offset": 12,
+          "domain": "frame:it-b1-verbi-che-reggono-il-congiuntivo"
+        },
+        {
+          "id": "pending:it:abbia-visto",
+          "text": "abbia visto",
+          "kind": "collocation",
+          "status": "unresolved",
+          "introduced_at": 11,
+          "introduced_in": "IT-B1-011",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "manner"
+        },
+        {
+          "id": "pending:it:prima-di",
+          "text": "prima di",
+          "kind": "collocation",
+          "status": "unresolved",
+          "introduced_at": 11,
+          "introduced_in": "IT-B1-011",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "past"
         }
       ]
     },
@@ -1775,7 +1728,8 @@
           "introduced_at": 19,
           "introduced_in": "IT-B1-019",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "frame:it-b1-condizionale-passato"
         },
         {
           "id": "cosydata:it:adesso:adverb",
@@ -1785,7 +1739,8 @@
           "introduced_at": 18,
           "introduced_in": "IT-B1-018",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "general"
         },
         {
           "id": "cosydata:it:oggi:adverb",
@@ -1795,7 +1750,8 @@
           "introduced_at": 18,
           "introduced_in": "IT-B1-018",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-periodo-ipotetico-misto",
@@ -1805,17 +1761,8 @@
           "introduced_at": 18,
           "introduced_in": "IT-B1-018",
           "return_number": 2,
-          "offset": 2
-        },
-        {
-          "id": "cosydata:it:immaginare:verb",
-          "text": "immaginare",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 16,
-          "introduced_in": "IT-B1-016",
-          "return_number": 3,
-          "offset": 4
+          "offset": 2,
+          "domain": "frame:it-b1-periodo-ipotetico-misto"
         },
         {
           "id": "grammar:it-a2-periodo-ipotetico-2",
@@ -1825,7 +1772,8 @@
           "introduced_at": 16,
           "introduced_in": "IT-B1-016",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "subjunctive"
         },
         {
           "id": "grammar:it-b1-congiuntivo-imperfetto",
@@ -1835,7 +1783,8 @@
           "introduced_at": 12,
           "introduced_in": "IT-B1-012",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "frame:it-b1-congiuntivo-imperfetto"
         },
         {
           "id": "cosydata:it:sebbene:conjunction",
@@ -1845,7 +1794,19 @@
           "introduced_at": 8,
           "introduced_in": "IT-B1-008",
           "return_number": 5,
-          "offset": 12
+          "offset": 12,
+          "domain": "subjunctive"
+        },
+        {
+          "id": "grammar:it-b1-congiunzioni-con-congiuntivo",
+          "text": "Concessione, scopo, condizione",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 8,
+          "introduced_in": "IT-B1-008",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "frame:it-b1-congiunzioni-con-congiuntivo"
         }
       ]
     },
@@ -1873,7 +1834,8 @@
           "introduced_at": 20,
           "introduced_in": "IT-B1-020",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "frame:it-b1-futuro-anteriore"
         },
         {
           "id": "grammar:it-b1-condizionale-passato",
@@ -1883,7 +1845,8 @@
           "introduced_at": 19,
           "introduced_in": "IT-B1-019",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "frame:it-b1-condizionale-passato"
         },
         {
           "id": "grammar:it-b1-periodo-ipotetico-3",
@@ -1893,7 +1856,8 @@
           "introduced_at": 17,
           "introduced_in": "IT-B1-017",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "subjunctive"
         },
         {
           "id": "grammar:it-b1-congiuntivo-trapassato",
@@ -1903,7 +1867,8 @@
           "introduced_at": 13,
           "introduced_in": "IT-B1-013",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "manner"
         },
         {
           "id": "cosydata:it:chi:pronoun",
@@ -1913,7 +1878,8 @@
           "introduced_at": 9,
           "introduced_in": "IT-B1-009",
           "return_number": 5,
-          "offset": 12
+          "offset": 12,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-congiuntivo-nelle-relative",
@@ -1923,7 +1889,8 @@
           "introduced_at": 9,
           "introduced_in": "IT-B1-009",
           "return_number": 5,
-          "offset": 12
+          "offset": 12,
+          "domain": "frame:it-b1-congiuntivo-nelle-relative"
         },
         {
           "id": "pending:it:avro-finito",
@@ -1933,17 +1900,8 @@
           "introduced_at": 20,
           "introduced_in": "IT-B1-020",
           "return_number": 1,
-          "offset": 1
-        },
-        {
-          "id": "pending:it:sara-partito",
-          "text": "sarà partito",
-          "kind": "collocation",
-          "status": "unresolved",
-          "introduced_at": 20,
-          "introduced_in": "IT-B1-020",
-          "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "general"
         }
       ]
     },
@@ -1969,7 +1927,8 @@
           "introduced_at": 21,
           "introduced_in": "IT-B1-021",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "general"
         },
         {
           "id": "cosydata:it:domani:adverb",
@@ -1979,7 +1938,8 @@
           "introduced_at": 21,
           "introduced_in": "IT-B1-021",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "future"
         },
         {
           "id": "cosydata:it:ieri:adverb",
@@ -1989,17 +1949,8 @@
           "introduced_at": 21,
           "introduced_in": "IT-B1-021",
           "return_number": 1,
-          "offset": 1
-        },
-        {
-          "id": "grammar:it-b1-discorso-indiretto",
-          "text": "Trasformazione dei tempi",
-          "kind": "frame",
-          "status": "grammar-id",
-          "introduced_at": 21,
-          "introduced_in": "IT-B1-021",
-          "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "past"
         },
         {
           "id": "grammar:it-b1-futuro-anteriore",
@@ -2009,7 +1960,8 @@
           "introduced_at": 20,
           "introduced_in": "IT-B1-020",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "frame:it-b1-futuro-anteriore"
         },
         {
           "id": "cosydata:it:adesso:adverb",
@@ -2019,17 +1971,8 @@
           "introduced_at": 18,
           "introduced_in": "IT-B1-018",
           "return_number": 3,
-          "offset": 4
-        },
-        {
-          "id": "cosydata:it:oggi:adverb",
-          "text": "oggi",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 18,
-          "introduced_in": "IT-B1-018",
-          "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-periodo-ipotetico-misto",
@@ -2039,7 +1982,30 @@
           "introduced_at": 18,
           "introduced_in": "IT-B1-018",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "frame:it-b1-periodo-ipotetico-misto"
+        },
+        {
+          "id": "grammar:it-b1-concordanza-dei-tempi",
+          "text": "Reggente presente e passata",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 14,
+          "introduced_in": "IT-B1-014",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "frame:it-b1-concordanza-dei-tempi"
+        },
+        {
+          "id": "grammar:it-b1-esortativo-che-congiuntivo",
+          "text": "Che più congiuntivo",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 10,
+          "introduced_in": "IT-B1-010",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "subjunctive"
         }
       ]
     },
@@ -2068,7 +2034,8 @@
           "introduced_at": 22,
           "introduced_in": "IT-B1-022",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "general"
         },
         {
           "id": "cosydata:it:qui:adverb",
@@ -2078,7 +2045,8 @@
           "introduced_at": 21,
           "introduced_in": "IT-B1-021",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "general"
         },
         {
           "id": "cosydata:it:domani:adverb",
@@ -2088,7 +2056,8 @@
           "introduced_at": 21,
           "introduced_in": "IT-B1-021",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "future"
         },
         {
           "id": "cosydata:it:ieri:adverb",
@@ -2098,17 +2067,8 @@
           "introduced_at": 21,
           "introduced_in": "IT-B1-021",
           "return_number": 2,
-          "offset": 2
-        },
-        {
-          "id": "grammar:it-b1-discorso-indiretto",
-          "text": "Trasformazione dei tempi",
-          "kind": "frame",
-          "status": "grammar-id",
-          "introduced_at": 21,
-          "introduced_in": "IT-B1-021",
-          "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "past"
         },
         {
           "id": "grammar:it-b1-condizionale-passato",
@@ -2118,27 +2078,41 @@
           "introduced_at": 19,
           "introduced_in": "IT-B1-019",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "frame:it-b1-condizionale-passato"
         },
         {
-          "id": "cosydata:it:secondo-me:phrase",
-          "text": "secondo me",
-          "kind": "collocation",
-          "status": "exact",
-          "introduced_at": 15,
-          "introduced_in": "IT-B1-015",
-          "return_number": 4,
-          "offset": 8
-        },
-        {
-          "id": "cosydata:it:recentemente:adverb",
-          "text": "recentemente",
-          "kind": "word",
-          "status": "exact",
+          "id": "grammar:it-b1-congiuntivo-passato",
+          "text": "Formazione con avere ed essere",
+          "kind": "frame",
+          "status": "grammar-id",
           "introduced_at": 11,
           "introduced_in": "IT-B1-011",
           "return_number": 5,
-          "offset": 12
+          "offset": 12,
+          "domain": "frame:it-b1-congiuntivo-passato"
+        },
+        {
+          "id": "pending:it:il-giorno-prima",
+          "text": "il giorno prima",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "introduced_at": 22,
+          "introduced_in": "IT-B1-022",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "past"
+        },
+        {
+          "id": "pending:it:abbia-visto",
+          "text": "abbia visto",
+          "kind": "collocation",
+          "status": "unresolved",
+          "introduced_at": 11,
+          "introduced_in": "IT-B1-011",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "manner"
         }
       ]
     },
@@ -2167,7 +2141,8 @@
           "introduced_at": 23,
           "introduced_in": "IT-B1-023",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "frame:it-b1-forma-passiva-avanzata"
         },
         {
           "id": "cosydata:it:quello:pronoun",
@@ -2177,7 +2152,8 @@
           "introduced_at": 22,
           "introduced_in": "IT-B1-022",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-futuro-anteriore",
@@ -2187,7 +2163,8 @@
           "introduced_at": 20,
           "introduced_in": "IT-B1-020",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "frame:it-b1-futuro-anteriore"
         },
         {
           "id": "cosydata:it:immaginare:verb",
@@ -2197,7 +2174,8 @@
           "introduced_at": 16,
           "introduced_in": "IT-B1-016",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "general"
         },
         {
           "id": "grammar:it-a2-periodo-ipotetico-2",
@@ -2207,7 +2185,8 @@
           "introduced_at": 16,
           "introduced_in": "IT-B1-016",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "subjunctive"
         },
         {
           "id": "grammar:it-b1-congiuntivo-imperfetto",
@@ -2217,27 +2196,19 @@
           "introduced_at": 12,
           "introduced_in": "IT-B1-012",
           "return_number": 5,
-          "offset": 12
+          "offset": 12,
+          "domain": "frame:it-b1-congiuntivo-imperfetto"
         },
         {
-          "id": "pending:it:viene-pubblicato",
-          "text": "viene pubblicato",
-          "kind": "collocation",
+          "id": "pending:it:il-giorno-prima",
+          "text": "il giorno prima",
+          "kind": "set-phrase",
           "status": "unresolved",
-          "introduced_at": 23,
-          "introduced_in": "IT-B1-023",
-          "return_number": 1,
-          "offset": 1
-        },
-        {
-          "id": "pending:it:va-firmato",
-          "text": "va firmato",
-          "kind": "collocation",
-          "status": "unresolved",
-          "introduced_at": 23,
-          "introduced_in": "IT-B1-023",
-          "return_number": 1,
-          "offset": 1
+          "introduced_at": 22,
+          "introduced_in": "IT-B1-022",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "past"
         }
       ]
     },
@@ -2265,7 +2236,8 @@
           "introduced_at": 24,
           "introduced_in": "IT-B1-024",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "frame:it-b1-si-impersonale-e-passivante"
         },
         {
           "id": "grammar:it-b1-forma-passiva-avanzata",
@@ -2275,7 +2247,8 @@
           "introduced_at": 23,
           "introduced_in": "IT-B1-023",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "frame:it-b1-forma-passiva-avanzata"
         },
         {
           "id": "cosydata:it:qui:adverb",
@@ -2285,7 +2258,8 @@
           "introduced_at": 21,
           "introduced_in": "IT-B1-021",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "general"
         },
         {
           "id": "cosydata:it:domani:adverb",
@@ -2295,7 +2269,8 @@
           "introduced_at": 21,
           "introduced_in": "IT-B1-021",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "future"
         },
         {
           "id": "cosydata:it:ieri:adverb",
@@ -2305,17 +2280,8 @@
           "introduced_at": 21,
           "introduced_in": "IT-B1-021",
           "return_number": 3,
-          "offset": 4
-        },
-        {
-          "id": "grammar:it-b1-discorso-indiretto",
-          "text": "Trasformazione dei tempi",
-          "kind": "frame",
-          "status": "grammar-id",
-          "introduced_at": 21,
-          "introduced_in": "IT-B1-021",
-          "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "past"
         },
         {
           "id": "grammar:it-b1-periodo-ipotetico-3",
@@ -2325,7 +2291,8 @@
           "introduced_at": 17,
           "introduced_in": "IT-B1-017",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "subjunctive"
         },
         {
           "id": "grammar:it-b1-congiuntivo-trapassato",
@@ -2335,7 +2302,19 @@
           "introduced_at": 13,
           "introduced_in": "IT-B1-013",
           "return_number": 5,
-          "offset": 12
+          "offset": 12,
+          "domain": "manner"
+        },
+        {
+          "id": "pending:it:si-dice",
+          "text": "si dice",
+          "kind": "collocation",
+          "status": "unresolved",
+          "introduced_at": 24,
+          "introduced_in": "IT-B1-024",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
         }
       ]
     },
@@ -2364,7 +2343,8 @@
           "introduced_at": 24,
           "introduced_in": "IT-B1-024",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "frame:it-b1-si-impersonale-e-passivante"
         },
         {
           "id": "cosydata:it:quello:pronoun",
@@ -2374,7 +2354,8 @@
           "introduced_at": 22,
           "introduced_in": "IT-B1-022",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "general"
         },
         {
           "id": "cosydata:it:adesso:adverb",
@@ -2384,17 +2365,8 @@
           "introduced_at": 18,
           "introduced_in": "IT-B1-018",
           "return_number": 4,
-          "offset": 8
-        },
-        {
-          "id": "cosydata:it:oggi:adverb",
-          "text": "oggi",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 18,
-          "introduced_in": "IT-B1-018",
-          "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-periodo-ipotetico-misto",
@@ -2404,7 +2376,8 @@
           "introduced_at": 18,
           "introduced_in": "IT-B1-018",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "frame:it-b1-periodo-ipotetico-misto"
         },
         {
           "id": "grammar:it-b1-concordanza-dei-tempi",
@@ -2414,27 +2387,19 @@
           "introduced_at": 14,
           "introduced_in": "IT-B1-014",
           "return_number": 5,
-          "offset": 12
+          "offset": 12,
+          "domain": "frame:it-b1-concordanza-dei-tempi"
         },
         {
-          "id": "pending:it:si-richiede",
-          "text": "si richiede",
-          "kind": "collocation",
-          "status": "unresolved",
-          "introduced_at": 25,
-          "introduced_in": "IT-B1-025",
-          "return_number": 1,
-          "offset": 1
-        },
-        {
-          "id": "pending:it:si-prega-di",
-          "text": "si prega di",
+          "id": "pending:it:il-giorno-prima",
+          "text": "il giorno prima",
           "kind": "set-phrase",
           "status": "unresolved",
-          "introduced_at": 25,
-          "introduced_in": "IT-B1-025",
-          "return_number": 1,
-          "offset": 1
+          "introduced_at": 22,
+          "introduced_in": "IT-B1-022",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "past"
         }
       ]
     },
@@ -2461,7 +2426,8 @@
           "introduced_at": 26,
           "introduced_in": "IT-B1-026",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "general"
         },
         {
           "id": "cosydata:it:spiegare:verb",
@@ -2471,7 +2437,8 @@
           "introduced_at": 26,
           "introduced_in": "IT-B1-026",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-pronomi-combinati",
@@ -2481,7 +2448,8 @@
           "introduced_at": 26,
           "introduced_in": "IT-B1-026",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "frame:it-b1-pronomi-combinati"
         },
         {
           "id": "grammar:it-b1-forma-passiva-avanzata",
@@ -2491,7 +2459,8 @@
           "introduced_at": 23,
           "introduced_in": "IT-B1-023",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "frame:it-b1-forma-passiva-avanzata"
         },
         {
           "id": "grammar:it-b1-condizionale-passato",
@@ -2501,37 +2470,8 @@
           "introduced_at": 19,
           "introduced_in": "IT-B1-019",
           "return_number": 4,
-          "offset": 8
-        },
-        {
-          "id": "cosydata:it:secondo-me:phrase",
-          "text": "secondo me",
-          "kind": "collocation",
-          "status": "exact",
-          "introduced_at": 15,
-          "introduced_in": "IT-B1-015",
-          "return_number": 5,
-          "offset": 12
-        },
-        {
-          "id": "pending:it:me-lo",
-          "text": "me lo",
-          "kind": "collocation",
-          "status": "unresolved",
-          "introduced_at": 26,
-          "introduced_in": "IT-B1-026",
-          "return_number": 1,
-          "offset": 1
-        },
-        {
-          "id": "pending:it:te-la",
-          "text": "te la",
-          "kind": "collocation",
-          "status": "unresolved",
-          "introduced_at": 26,
-          "introduced_in": "IT-B1-026",
-          "return_number": 1,
-          "offset": 1
+          "offset": 8,
+          "domain": "frame:it-b1-condizionale-passato"
         }
       ]
     },
@@ -2560,7 +2500,8 @@
           "introduced_at": 27,
           "introduced_in": "IT-B1-027",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "general"
         },
         {
           "id": "cosydata:it:quale:pronoun",
@@ -2570,17 +2511,8 @@
           "introduced_at": 27,
           "introduced_in": "IT-B1-027",
           "return_number": 1,
-          "offset": 1
-        },
-        {
-          "id": "cosydata:it:quanto:pronoun",
-          "text": "quanto",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 27,
-          "introduced_in": "IT-B1-027",
-          "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-pronomi-relativi-cui-chi",
@@ -2590,27 +2522,8 @@
           "introduced_at": 27,
           "introduced_in": "IT-B1-027",
           "return_number": 1,
-          "offset": 1
-        },
-        {
-          "id": "cosydata:it:prestare:verb",
-          "text": "prestare",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 26,
-          "introduced_in": "IT-B1-026",
-          "return_number": 2,
-          "offset": 2
-        },
-        {
-          "id": "cosydata:it:spiegare:verb",
-          "text": "spiegare",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 26,
-          "introduced_in": "IT-B1-026",
-          "return_number": 2,
-          "offset": 2
+          "offset": 1,
+          "domain": "frame:it-b1-pronomi-relativi-cui-chi"
         },
         {
           "id": "grammar:it-b1-pronomi-combinati",
@@ -2620,7 +2533,8 @@
           "introduced_at": 26,
           "introduced_in": "IT-B1-026",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "frame:it-b1-pronomi-combinati"
         },
         {
           "id": "grammar:it-b1-si-impersonale-e-passivante",
@@ -2630,7 +2544,30 @@
           "introduced_at": 24,
           "introduced_in": "IT-B1-024",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "frame:it-b1-si-impersonale-e-passivante"
+        },
+        {
+          "id": "grammar:it-b1-futuro-anteriore",
+          "text": "Formazione",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 20,
+          "introduced_in": "IT-B1-020",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "frame:it-b1-futuro-anteriore"
+        },
+        {
+          "id": "grammar:it-a2-periodo-ipotetico-2",
+          "text": "Congiuntivo imperfetto e condizionale",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 16,
+          "introduced_in": "IT-B1-016",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "subjunctive"
         }
       ]
     },
@@ -2659,7 +2596,8 @@
           "introduced_at": 28,
           "introduced_in": "IT-B1-028",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "general"
         },
         {
           "id": "cosydata:it:rendersi-conto:phrase",
@@ -2669,7 +2607,8 @@
           "introduced_at": 28,
           "introduced_in": "IT-B1-028",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-verbi-pronominali",
@@ -2679,37 +2618,8 @@
           "introduced_at": 28,
           "introduced_in": "IT-B1-028",
           "return_number": 1,
-          "offset": 1
-        },
-        {
-          "id": "cosydata:it:che:pronoun",
-          "text": "che",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 27,
-          "introduced_in": "IT-B1-027",
-          "return_number": 2,
-          "offset": 2
-        },
-        {
-          "id": "cosydata:it:quale:pronoun",
-          "text": "il quale",
-          "kind": "collocation",
-          "status": "normalized",
-          "introduced_at": 27,
-          "introduced_in": "IT-B1-027",
-          "return_number": 2,
-          "offset": 2
-        },
-        {
-          "id": "cosydata:it:quanto:pronoun",
-          "text": "quanto",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 27,
-          "introduced_in": "IT-B1-027",
-          "return_number": 2,
-          "offset": 2
+          "offset": 1,
+          "domain": "frame:it-b1-verbi-pronominali"
         },
         {
           "id": "grammar:it-b1-pronomi-relativi-cui-chi",
@@ -2719,17 +2629,52 @@
           "introduced_at": 27,
           "introduced_in": "IT-B1-027",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "frame:it-b1-pronomi-relativi-cui-chi"
         },
         {
-          "id": "cosydata:it:qui:adverb",
-          "text": "qui",
+          "id": "cosydata:it:domani:adverb",
+          "text": "domani",
           "kind": "word",
           "status": "exact",
           "introduced_at": 21,
           "introduced_in": "IT-B1-021",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "future"
+        },
+        {
+          "id": "cosydata:it:ieri:adverb",
+          "text": "ieri",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 21,
+          "introduced_in": "IT-B1-021",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "past"
+        },
+        {
+          "id": "grammar:it-b1-discorso-indiretto",
+          "text": "Trasformazione dei tempi",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 21,
+          "introduced_in": "IT-B1-021",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "frame:it-b1-discorso-indiretto"
+        },
+        {
+          "id": "grammar:it-b1-periodo-ipotetico-3",
+          "text": "Congiuntivo trapassato e condizionale passato",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 17,
+          "introduced_in": "IT-B1-017",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "subjunctive"
         }
       ]
     },
@@ -2758,7 +2703,8 @@
           "introduced_at": 29,
           "introduced_in": "IT-B1-029",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "general"
         },
         {
           "id": "cosydata:it:approfittare-di:phrase",
@@ -2768,7 +2714,8 @@
           "introduced_at": 29,
           "introduced_in": "IT-B1-029",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-preposizioni-con-i-verbi",
@@ -2778,27 +2725,8 @@
           "introduced_at": 29,
           "introduced_in": "IT-B1-029",
           "return_number": 1,
-          "offset": 1
-        },
-        {
-          "id": "cosydata:it:farcela:phrase",
-          "text": "farcela",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 28,
-          "introduced_in": "IT-B1-028",
-          "return_number": 2,
-          "offset": 2
-        },
-        {
-          "id": "cosydata:it:rendersi-conto:phrase",
-          "text": "rendersi conto",
-          "kind": "collocation",
-          "status": "exact",
-          "introduced_at": 28,
-          "introduced_in": "IT-B1-028",
-          "return_number": 2,
-          "offset": 2
+          "offset": 1,
+          "domain": "frame:it-b1-preposizioni-con-i-verbi"
         },
         {
           "id": "grammar:it-b1-verbi-pronominali",
@@ -2808,27 +2736,41 @@
           "introduced_at": 28,
           "introduced_in": "IT-B1-028",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "frame:it-b1-verbi-pronominali"
         },
         {
-          "id": "cosydata:it:prestare:verb",
-          "text": "prestare",
-          "kind": "word",
-          "status": "exact",
+          "id": "grammar:it-b1-pronomi-combinati",
+          "text": "Indiretto più diretto",
+          "kind": "frame",
+          "status": "grammar-id",
           "introduced_at": 26,
           "introduced_in": "IT-B1-026",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "frame:it-b1-pronomi-combinati"
         },
         {
-          "id": "cosydata:it:spiegare:verb",
-          "text": "spiegare",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 26,
-          "introduced_in": "IT-B1-026",
-          "return_number": 3,
-          "offset": 4
+          "id": "grammar:it-b1-periodo-ipotetico-misto",
+          "text": "Condizione passata e risultato presente",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 18,
+          "introduced_in": "IT-B1-018",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "frame:it-b1-periodo-ipotetico-misto"
+        },
+        {
+          "id": "pending:it:il-giorno-prima",
+          "text": "il giorno prima",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "introduced_at": 22,
+          "introduced_in": "IT-B1-022",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "past"
         }
       ]
     },
@@ -2855,7 +2797,8 @@
           "introduced_at": 30,
           "introduced_in": "IT-B1-030",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "frame:it-a2-i-pronomi-ci-e-ne"
         },
         {
           "id": "cosydata:it:riuscire-a:phrase",
@@ -2865,7 +2808,8 @@
           "introduced_at": 29,
           "introduced_in": "IT-B1-029",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "general"
         },
         {
           "id": "cosydata:it:approfittare-di:phrase",
@@ -2875,7 +2819,8 @@
           "introduced_at": 29,
           "introduced_in": "IT-B1-029",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-preposizioni-con-i-verbi",
@@ -2885,37 +2830,8 @@
           "introduced_at": 29,
           "introduced_in": "IT-B1-029",
           "return_number": 2,
-          "offset": 2
-        },
-        {
-          "id": "cosydata:it:che:pronoun",
-          "text": "che",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 27,
-          "introduced_in": "IT-B1-027",
-          "return_number": 3,
-          "offset": 4
-        },
-        {
-          "id": "cosydata:it:quale:pronoun",
-          "text": "il quale",
-          "kind": "collocation",
-          "status": "normalized",
-          "introduced_at": 27,
-          "introduced_in": "IT-B1-027",
-          "return_number": 3,
-          "offset": 4
-        },
-        {
-          "id": "cosydata:it:quanto:pronoun",
-          "text": "quanto",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 27,
-          "introduced_in": "IT-B1-027",
-          "return_number": 3,
-          "offset": 4
+          "offset": 2,
+          "domain": "frame:it-b1-preposizioni-con-i-verbi"
         },
         {
           "id": "grammar:it-b1-pronomi-relativi-cui-chi",
@@ -2925,7 +2841,30 @@
           "introduced_at": 27,
           "introduced_in": "IT-B1-027",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "frame:it-b1-pronomi-relativi-cui-chi"
+        },
+        {
+          "id": "grammar:it-b1-forma-passiva-avanzata",
+          "text": "Passivo con andare e venire",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 23,
+          "introduced_in": "IT-B1-023",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "frame:it-b1-forma-passiva-avanzata"
+        },
+        {
+          "id": "grammar:it-b1-condizionale-passato",
+          "text": "Forme e usi",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 19,
+          "introduced_in": "IT-B1-019",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "frame:it-b1-condizionale-passato"
         }
       ]
     },
@@ -2954,7 +2893,8 @@
           "introduced_at": 31,
           "introduced_in": "IT-B1-031",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "general"
         },
         {
           "id": "cosydata:it:nessuno:pronoun",
@@ -2964,27 +2904,8 @@
           "introduced_at": 31,
           "introduced_in": "IT-B1-031",
           "return_number": 1,
-          "offset": 1
-        },
-        {
-          "id": "cosydata:it:ogni:pronoun",
-          "text": "ogni",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 31,
-          "introduced_in": "IT-B1-031",
-          "return_number": 1,
-          "offset": 1
-        },
-        {
-          "id": "cosydata:it:tutti:pronoun",
-          "text": "tutti",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 31,
-          "introduced_in": "IT-B1-031",
-          "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-aggettivi-e-pronomi-indefiniti",
@@ -2994,7 +2915,8 @@
           "introduced_at": 31,
           "introduced_in": "IT-B1-031",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "frame:it-b1-aggettivi-e-pronomi-indefiniti"
         },
         {
           "id": "grammar:it-a2-i-pronomi-ci-e-ne",
@@ -3004,27 +2926,41 @@
           "introduced_at": 30,
           "introduced_in": "IT-B1-030",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "frame:it-a2-i-pronomi-ci-e-ne"
         },
         {
-          "id": "cosydata:it:farcela:phrase",
-          "text": "farcela",
-          "kind": "word",
-          "status": "exact",
+          "id": "grammar:it-b1-verbi-pronominali",
+          "text": "Verbi intrinsecamente pronominali",
+          "kind": "frame",
+          "status": "grammar-id",
           "introduced_at": 28,
           "introduced_in": "IT-B1-028",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "frame:it-b1-verbi-pronominali"
         },
         {
-          "id": "cosydata:it:rendersi-conto:phrase",
-          "text": "rendersi conto",
-          "kind": "collocation",
-          "status": "exact",
-          "introduced_at": 28,
-          "introduced_in": "IT-B1-028",
-          "return_number": 3,
-          "offset": 4
+          "id": "grammar:it-b1-si-impersonale-e-passivante",
+          "text": "Si impersonale",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 24,
+          "introduced_in": "IT-B1-024",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "frame:it-b1-si-impersonale-e-passivante"
+        },
+        {
+          "id": "grammar:it-b1-futuro-anteriore",
+          "text": "Formazione",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 20,
+          "introduced_in": "IT-B1-020",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "frame:it-b1-futuro-anteriore"
         }
       ]
     },
@@ -3053,7 +2989,8 @@
           "introduced_at": 32,
           "introduced_in": "IT-B1-032",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "manner"
         },
         {
           "id": "grammar:it-b1-avverbi-in-mente",
@@ -3063,7 +3000,8 @@
           "introduced_at": 32,
           "introduced_in": "IT-B1-032",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "frame:it-b1-avverbi-in-mente"
         },
         {
           "id": "cosydata:it:alcuni:pronoun",
@@ -3073,7 +3011,8 @@
           "introduced_at": 31,
           "introduced_in": "IT-B1-031",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "general"
         },
         {
           "id": "cosydata:it:nessuno:pronoun",
@@ -3083,27 +3022,8 @@
           "introduced_at": 31,
           "introduced_in": "IT-B1-031",
           "return_number": 2,
-          "offset": 2
-        },
-        {
-          "id": "cosydata:it:ogni:pronoun",
-          "text": "ogni",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 31,
-          "introduced_in": "IT-B1-031",
-          "return_number": 2,
-          "offset": 2
-        },
-        {
-          "id": "cosydata:it:tutti:pronoun",
-          "text": "tutti",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 31,
-          "introduced_in": "IT-B1-031",
-          "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-aggettivi-e-pronomi-indefiniti",
@@ -3113,17 +3033,41 @@
           "introduced_at": 31,
           "introduced_in": "IT-B1-031",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "frame:it-b1-aggettivi-e-pronomi-indefiniti"
         },
         {
-          "id": "cosydata:it:riuscire-a:phrase",
-          "text": "riuscire a",
-          "kind": "collocation",
-          "status": "exact",
+          "id": "grammar:it-b1-preposizioni-con-i-verbi",
+          "text": "Di, a, su, da",
+          "kind": "frame",
+          "status": "grammar-id",
           "introduced_at": 29,
           "introduced_in": "IT-B1-029",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "frame:it-b1-preposizioni-con-i-verbi"
+        },
+        {
+          "id": "cosydata:it:domani:adverb",
+          "text": "domani",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 21,
+          "introduced_in": "IT-B1-021",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "future"
+        },
+        {
+          "id": "cosydata:it:ieri:adverb",
+          "text": "ieri",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 21,
+          "introduced_in": "IT-B1-021",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "past"
         }
       ]
     },
@@ -3152,7 +3096,8 @@
           "introduced_at": 33,
           "introduced_in": "IT-B1-033",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "frame:it-b1-comparativi-e-superlativi-irregolari"
         },
         {
           "id": "cosydata:it:purtroppo:idiom",
@@ -3162,7 +3107,8 @@
           "introduced_at": 32,
           "introduced_in": "IT-B1-032",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "manner"
         },
         {
           "id": "grammar:it-b1-avverbi-in-mente",
@@ -3172,7 +3118,8 @@
           "introduced_at": 32,
           "introduced_in": "IT-B1-032",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "frame:it-b1-avverbi-in-mente"
         },
         {
           "id": "grammar:it-a2-i-pronomi-ci-e-ne",
@@ -3182,7 +3129,8 @@
           "introduced_at": 30,
           "introduced_in": "IT-B1-030",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "frame:it-a2-i-pronomi-ci-e-ne"
         },
         {
           "id": "cosydata:it:prestare:verb",
@@ -3192,7 +3140,8 @@
           "introduced_at": 26,
           "introduced_in": "IT-B1-026",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "general"
         },
         {
           "id": "cosydata:it:spiegare:verb",
@@ -3202,7 +3151,8 @@
           "introduced_at": 26,
           "introduced_in": "IT-B1-026",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-pronomi-combinati",
@@ -3212,17 +3162,19 @@
           "introduced_at": 26,
           "introduced_in": "IT-B1-026",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "frame:it-b1-pronomi-combinati"
         },
         {
-          "id": "cosydata:it:quello:pronoun",
-          "text": "quello",
-          "kind": "word",
-          "status": "exact",
+          "id": "pending:it:il-giorno-prima",
+          "text": "il giorno prima",
+          "kind": "set-phrase",
+          "status": "unresolved",
           "introduced_at": 22,
           "introduced_in": "IT-B1-022",
           "return_number": 5,
-          "offset": 12
+          "offset": 12,
+          "domain": "past"
         }
       ]
     },
@@ -3250,7 +3202,8 @@
           "introduced_at": 34,
           "introduced_in": "IT-B1-034",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "frame:it-b1-nomi-alterati"
         },
         {
           "id": "grammar:it-b1-comparativi-e-superlativi-irregolari",
@@ -3260,7 +3213,8 @@
           "introduced_at": 33,
           "introduced_in": "IT-B1-033",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "frame:it-b1-comparativi-e-superlativi-irregolari"
         },
         {
           "id": "cosydata:it:alcuni:pronoun",
@@ -3270,7 +3224,8 @@
           "introduced_at": 31,
           "introduced_in": "IT-B1-031",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "general"
         },
         {
           "id": "cosydata:it:nessuno:pronoun",
@@ -3280,27 +3235,8 @@
           "introduced_at": 31,
           "introduced_in": "IT-B1-031",
           "return_number": 3,
-          "offset": 4
-        },
-        {
-          "id": "cosydata:it:ogni:pronoun",
-          "text": "ogni",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 31,
-          "introduced_in": "IT-B1-031",
-          "return_number": 3,
-          "offset": 4
-        },
-        {
-          "id": "cosydata:it:tutti:pronoun",
-          "text": "tutti",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 31,
-          "introduced_in": "IT-B1-031",
-          "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-aggettivi-e-pronomi-indefiniti",
@@ -3310,17 +3246,30 @@
           "introduced_at": 31,
           "introduced_in": "IT-B1-031",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "frame:it-b1-aggettivi-e-pronomi-indefiniti"
         },
         {
-          "id": "cosydata:it:che:pronoun",
-          "text": "che",
-          "kind": "word",
-          "status": "exact",
+          "id": "grammar:it-b1-pronomi-relativi-cui-chi",
+          "text": "Che, cui, il quale",
+          "kind": "frame",
+          "status": "grammar-id",
           "introduced_at": 27,
           "introduced_in": "IT-B1-027",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "frame:it-b1-pronomi-relativi-cui-chi"
+        },
+        {
+          "id": "grammar:it-b1-forma-passiva-avanzata",
+          "text": "Passivo con andare e venire",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 23,
+          "introduced_in": "IT-B1-023",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "frame:it-b1-forma-passiva-avanzata"
         }
       ]
     },
@@ -3348,7 +3297,8 @@
           "introduced_at": 35,
           "introduced_in": "IT-B1-035",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-nomi-alterati",
@@ -3358,7 +3308,8 @@
           "introduced_at": 34,
           "introduced_in": "IT-B1-034",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "frame:it-b1-nomi-alterati"
         },
         {
           "id": "cosydata:it:purtroppo:idiom",
@@ -3368,7 +3319,8 @@
           "introduced_at": 32,
           "introduced_in": "IT-B1-032",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "manner"
         },
         {
           "id": "grammar:it-b1-avverbi-in-mente",
@@ -3378,7 +3330,8 @@
           "introduced_at": 32,
           "introduced_in": "IT-B1-032",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "frame:it-b1-avverbi-in-mente"
         },
         {
           "id": "cosydata:it:farcela:phrase",
@@ -3388,17 +3341,8 @@
           "introduced_at": 28,
           "introduced_in": "IT-B1-028",
           "return_number": 4,
-          "offset": 8
-        },
-        {
-          "id": "cosydata:it:rendersi-conto:phrase",
-          "text": "rendersi conto",
-          "kind": "collocation",
-          "status": "exact",
-          "introduced_at": 28,
-          "introduced_in": "IT-B1-028",
-          "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-verbi-pronominali",
@@ -3408,7 +3352,8 @@
           "introduced_at": 28,
           "introduced_in": "IT-B1-028",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "frame:it-b1-verbi-pronominali"
         },
         {
           "id": "grammar:it-b1-si-impersonale-e-passivante",
@@ -3418,7 +3363,8 @@
           "introduced_at": 24,
           "introduced_in": "IT-B1-024",
           "return_number": 5,
-          "offset": 12
+          "offset": 12,
+          "domain": "frame:it-b1-si-impersonale-e-passivante"
         }
       ]
     },
@@ -3447,7 +3393,8 @@
           "introduced_at": 36,
           "introduced_in": "IT-B1-036",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "frame:it-b1-cercare-lavoro"
         },
         {
           "id": "cosydata:it:davvero:adverb",
@@ -3457,7 +3404,8 @@
           "introduced_at": 35,
           "introduced_in": "IT-B1-035",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-comparativi-e-superlativi-irregolari",
@@ -3467,7 +3415,8 @@
           "introduced_at": 33,
           "introduced_in": "IT-B1-033",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "frame:it-b1-comparativi-e-superlativi-irregolari"
         },
         {
           "id": "cosydata:it:riuscire-a:phrase",
@@ -3477,17 +3426,8 @@
           "introduced_at": 29,
           "introduced_in": "IT-B1-029",
           "return_number": 4,
-          "offset": 8
-        },
-        {
-          "id": "cosydata:it:approfittare-di:phrase",
-          "text": "approfittare di",
-          "kind": "collocation",
-          "status": "exact",
-          "introduced_at": 29,
-          "introduced_in": "IT-B1-029",
-          "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-preposizioni-con-i-verbi",
@@ -3497,27 +3437,8 @@
           "introduced_at": 29,
           "introduced_in": "IT-B1-029",
           "return_number": 4,
-          "offset": 8
-        },
-        {
-          "id": "pending:it:full-time",
-          "text": "full time",
-          "kind": "collocation",
-          "status": "unresolved",
-          "introduced_at": 36,
-          "introduced_in": "IT-B1-036",
-          "return_number": 1,
-          "offset": 1
-        },
-        {
-          "id": "pending:it:in-parte",
-          "text": "in parte",
-          "kind": "collocation",
-          "status": "unresolved",
-          "introduced_at": 35,
-          "introduced_in": "IT-B1-035",
-          "return_number": 2,
-          "offset": 2
+          "offset": 8,
+          "domain": "frame:it-b1-preposizioni-con-i-verbi"
         }
       ]
     },
@@ -3545,7 +3466,8 @@
           "introduced_at": 37,
           "introduced_in": "IT-B1-037",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "frame:it-b1-lettera-di-presentazione"
         },
         {
           "id": "grammar:it-b1-cercare-lavoro",
@@ -3555,7 +3477,8 @@
           "introduced_at": 36,
           "introduced_in": "IT-B1-036",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "frame:it-b1-cercare-lavoro"
         },
         {
           "id": "grammar:it-b1-nomi-alterati",
@@ -3565,7 +3488,8 @@
           "introduced_at": 34,
           "introduced_in": "IT-B1-034",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "frame:it-b1-nomi-alterati"
         },
         {
           "id": "grammar:it-a2-i-pronomi-ci-e-ne",
@@ -3575,7 +3499,8 @@
           "introduced_at": 30,
           "introduced_in": "IT-B1-030",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "frame:it-a2-i-pronomi-ci-e-ne"
         },
         {
           "id": "cosydata:it:prestare:verb",
@@ -3585,7 +3510,8 @@
           "introduced_at": 26,
           "introduced_in": "IT-B1-026",
           "return_number": 5,
-          "offset": 12
+          "offset": 12,
+          "domain": "general"
         },
         {
           "id": "cosydata:it:spiegare:verb",
@@ -3595,7 +3521,8 @@
           "introduced_at": 26,
           "introduced_in": "IT-B1-026",
           "return_number": 5,
-          "offset": 12
+          "offset": 12,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-pronomi-combinati",
@@ -3605,17 +3532,8 @@
           "introduced_at": 26,
           "introduced_in": "IT-B1-026",
           "return_number": 5,
-          "offset": 12
-        },
-        {
-          "id": "pending:it:in-riferimento-a",
-          "text": "in riferimento a",
-          "kind": "set-phrase",
-          "status": "unresolved",
-          "introduced_at": 37,
-          "introduced_in": "IT-B1-037",
-          "return_number": 1,
-          "offset": 1
+          "offset": 12,
+          "domain": "frame:it-b1-pronomi-combinati"
         }
       ]
     },
@@ -3643,7 +3561,8 @@
           "introduced_at": 38,
           "introduced_in": "IT-B1-038",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "frame:it-b1-colloquio-di-lavoro"
         },
         {
           "id": "grammar:it-b1-lettera-di-presentazione",
@@ -3653,7 +3572,8 @@
           "introduced_at": 37,
           "introduced_in": "IT-B1-037",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "frame:it-b1-lettera-di-presentazione"
         },
         {
           "id": "cosydata:it:davvero:adverb",
@@ -3663,7 +3583,8 @@
           "introduced_at": 35,
           "introduced_in": "IT-B1-035",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "general"
         },
         {
           "id": "cosydata:it:alcuni:pronoun",
@@ -3673,37 +3594,8 @@
           "introduced_at": 31,
           "introduced_in": "IT-B1-031",
           "return_number": 4,
-          "offset": 8
-        },
-        {
-          "id": "cosydata:it:nessuno:pronoun",
-          "text": "nessuno",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 31,
-          "introduced_in": "IT-B1-031",
-          "return_number": 4,
-          "offset": 8
-        },
-        {
-          "id": "cosydata:it:ogni:pronoun",
-          "text": "ogni",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 31,
-          "introduced_in": "IT-B1-031",
-          "return_number": 4,
-          "offset": 8
-        },
-        {
-          "id": "cosydata:it:tutti:pronoun",
-          "text": "tutti",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 31,
-          "introduced_in": "IT-B1-031",
-          "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-aggettivi-e-pronomi-indefiniti",
@@ -3713,7 +3605,19 @@
           "introduced_at": 31,
           "introduced_in": "IT-B1-031",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "frame:it-b1-aggettivi-e-pronomi-indefiniti"
+        },
+        {
+          "id": "grammar:it-b1-pronomi-relativi-cui-chi",
+          "text": "Che, cui, il quale",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 27,
+          "introduced_in": "IT-B1-027",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "frame:it-b1-pronomi-relativi-cui-chi"
         }
       ]
     },
@@ -3740,7 +3644,8 @@
           "introduced_at": 39,
           "introduced_in": "IT-B1-039",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "past"
         },
         {
           "id": "grammar:it-b1-colloquio-di-lavoro",
@@ -3750,7 +3655,8 @@
           "introduced_at": 38,
           "introduced_in": "IT-B1-038",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "frame:it-b1-colloquio-di-lavoro"
         },
         {
           "id": "grammar:it-b1-cercare-lavoro",
@@ -3760,7 +3666,8 @@
           "introduced_at": 36,
           "introduced_in": "IT-B1-036",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "frame:it-b1-cercare-lavoro"
         },
         {
           "id": "cosydata:it:purtroppo:idiom",
@@ -3770,7 +3677,8 @@
           "introduced_at": 32,
           "introduced_in": "IT-B1-032",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "manner"
         },
         {
           "id": "grammar:it-b1-avverbi-in-mente",
@@ -3780,7 +3688,8 @@
           "introduced_at": 32,
           "introduced_in": "IT-B1-032",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "frame:it-b1-avverbi-in-mente"
         },
         {
           "id": "cosydata:it:farcela:phrase",
@@ -3790,7 +3699,8 @@
           "introduced_at": 28,
           "introduced_in": "IT-B1-028",
           "return_number": 5,
-          "offset": 12
+          "offset": 12,
+          "domain": "general"
         },
         {
           "id": "cosydata:it:rendersi-conto:phrase",
@@ -3800,7 +3710,8 @@
           "introduced_at": 28,
           "introduced_in": "IT-B1-028",
           "return_number": 5,
-          "offset": 12
+          "offset": 12,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-verbi-pronominali",
@@ -3810,7 +3721,8 @@
           "introduced_at": 28,
           "introduced_in": "IT-B1-028",
           "return_number": 5,
-          "offset": 12
+          "offset": 12,
+          "domain": "frame:it-b1-verbi-pronominali"
         }
       ]
     },
@@ -3839,7 +3751,8 @@
           "introduced_at": 40,
           "introduced_in": "IT-B1-040",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "frame:it-b1-competenze-e-formazione"
         },
         {
           "id": "grammar:it-a2-curriculum-e-colloquio",
@@ -3849,7 +3762,8 @@
           "introduced_at": 39,
           "introduced_in": "IT-B1-039",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "past"
         },
         {
           "id": "grammar:it-b1-lettera-di-presentazione",
@@ -3859,7 +3773,8 @@
           "introduced_at": 37,
           "introduced_in": "IT-B1-037",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "frame:it-b1-lettera-di-presentazione"
         },
         {
           "id": "grammar:it-b1-comparativi-e-superlativi-irregolari",
@@ -3869,7 +3784,8 @@
           "introduced_at": 33,
           "introduced_in": "IT-B1-033",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "frame:it-b1-comparativi-e-superlativi-irregolari"
         },
         {
           "id": "cosydata:it:riuscire-a:phrase",
@@ -3879,7 +3795,8 @@
           "introduced_at": 29,
           "introduced_in": "IT-B1-029",
           "return_number": 5,
-          "offset": 12
+          "offset": 12,
+          "domain": "general"
         },
         {
           "id": "cosydata:it:approfittare-di:phrase",
@@ -3889,7 +3806,8 @@
           "introduced_at": 29,
           "introduced_in": "IT-B1-029",
           "return_number": 5,
-          "offset": 12
+          "offset": 12,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-preposizioni-con-i-verbi",
@@ -3899,17 +3817,8 @@
           "introduced_at": 29,
           "introduced_in": "IT-B1-029",
           "return_number": 5,
-          "offset": 12
-        },
-        {
-          "id": "pending:it:soft-skill",
-          "text": "soft skill",
-          "kind": "collocation",
-          "status": "unresolved",
-          "introduced_at": 40,
-          "introduced_in": "IT-B1-040",
-          "return_number": 1,
-          "offset": 1
+          "offset": 12,
+          "domain": "frame:it-b1-preposizioni-con-i-verbi"
         }
       ]
     },
@@ -3933,7 +3842,8 @@
           "introduced_at": 41,
           "introduced_in": "IT-B1-041",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "frame:it-b1-media-e-informazione"
         },
         {
           "id": "grammar:it-b1-competenze-e-formazione",
@@ -3943,7 +3853,8 @@
           "introduced_at": 40,
           "introduced_in": "IT-B1-040",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "frame:it-b1-competenze-e-formazione"
         },
         {
           "id": "grammar:it-b1-colloquio-di-lavoro",
@@ -3953,7 +3864,8 @@
           "introduced_at": 38,
           "introduced_in": "IT-B1-038",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "frame:it-b1-colloquio-di-lavoro"
         },
         {
           "id": "grammar:it-b1-nomi-alterati",
@@ -3963,7 +3875,8 @@
           "introduced_at": 34,
           "introduced_in": "IT-B1-034",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "frame:it-b1-nomi-alterati"
         },
         {
           "id": "grammar:it-a2-i-pronomi-ci-e-ne",
@@ -3973,7 +3886,8 @@
           "introduced_at": 30,
           "introduced_in": "IT-B1-030",
           "return_number": 5,
-          "offset": 12
+          "offset": 12,
+          "domain": "frame:it-a2-i-pronomi-ci-e-ne"
         },
         {
           "id": "pending:it:soft-skill",
@@ -3983,7 +3897,8 @@
           "introduced_at": 40,
           "introduced_in": "IT-B1-040",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "general"
         },
         {
           "id": "pending:it:mi-descriva",
@@ -3993,17 +3908,8 @@
           "introduced_at": 38,
           "introduced_in": "IT-B1-038",
           "return_number": 3,
-          "offset": 4
-        },
-        {
-          "id": "pending:it:punto-di-forza",
-          "text": "punto di forza",
-          "kind": "set-phrase",
-          "status": "unresolved",
-          "introduced_at": 38,
-          "introduced_in": "IT-B1-038",
-          "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "general"
         }
       ]
     },
@@ -4029,7 +3935,8 @@
           "introduced_at": 41,
           "introduced_in": "IT-B1-041",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "frame:it-b1-media-e-informazione"
         },
         {
           "id": "grammar:it-a2-curriculum-e-colloquio",
@@ -4039,7 +3946,8 @@
           "introduced_at": 39,
           "introduced_in": "IT-B1-039",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "past"
         },
         {
           "id": "cosydata:it:davvero:adverb",
@@ -4049,7 +3957,8 @@
           "introduced_at": 35,
           "introduced_in": "IT-B1-035",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "general"
         },
         {
           "id": "cosydata:it:alcuni:pronoun",
@@ -4059,37 +3968,8 @@
           "introduced_at": 31,
           "introduced_in": "IT-B1-031",
           "return_number": 5,
-          "offset": 12
-        },
-        {
-          "id": "cosydata:it:nessuno:pronoun",
-          "text": "nessuno",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 31,
-          "introduced_in": "IT-B1-031",
-          "return_number": 5,
-          "offset": 12
-        },
-        {
-          "id": "cosydata:it:ogni:pronoun",
-          "text": "ogni",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 31,
-          "introduced_in": "IT-B1-031",
-          "return_number": 5,
-          "offset": 12
-        },
-        {
-          "id": "cosydata:it:tutti:pronoun",
-          "text": "tutti",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 31,
-          "introduced_in": "IT-B1-031",
-          "return_number": 5,
-          "offset": 12
+          "offset": 12,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-aggettivi-e-pronomi-indefiniti",
@@ -4099,7 +3979,8 @@
           "introduced_at": 31,
           "introduced_in": "IT-B1-031",
           "return_number": 5,
-          "offset": 12
+          "offset": 12,
+          "domain": "frame:it-b1-aggettivi-e-pronomi-indefiniti"
         }
       ]
     },
@@ -4128,7 +4009,8 @@
           "introduced_at": 43,
           "introduced_in": "IT-B1-043",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "general"
         },
         {
           "id": "cosydata:it:in-conclusione:phrase",
@@ -4138,17 +4020,8 @@
           "introduced_at": 43,
           "introduced_in": "IT-B1-043",
           "return_number": 1,
-          "offset": 1
-        },
-        {
-          "id": "cosydata:it:d-altra-parte:phrase",
-          "text": "d'altra parte",
-          "kind": "set-phrase",
-          "status": "exact",
-          "introduced_at": 43,
-          "introduced_in": "IT-B1-043",
-          "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-argomentare-un-opinione",
@@ -4158,7 +4031,8 @@
           "introduced_at": 43,
           "introduced_in": "IT-B1-043",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "frame:it-b1-argomentare-un-opinione"
         },
         {
           "id": "grammar:it-b1-competenze-e-formazione",
@@ -4168,7 +4042,8 @@
           "introduced_at": 40,
           "introduced_in": "IT-B1-040",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "frame:it-b1-competenze-e-formazione"
         },
         {
           "id": "grammar:it-b1-cercare-lavoro",
@@ -4178,7 +4053,8 @@
           "introduced_at": 36,
           "introduced_in": "IT-B1-036",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "frame:it-b1-cercare-lavoro"
         },
         {
           "id": "cosydata:it:purtroppo:idiom",
@@ -4188,7 +4064,8 @@
           "introduced_at": 32,
           "introduced_in": "IT-B1-032",
           "return_number": 5,
-          "offset": 12
+          "offset": 12,
+          "domain": "manner"
         },
         {
           "id": "grammar:it-b1-avverbi-in-mente",
@@ -4198,7 +4075,8 @@
           "introduced_at": 32,
           "introduced_in": "IT-B1-032",
           "return_number": 5,
-          "offset": 12
+          "offset": 12,
+          "domain": "frame:it-b1-avverbi-in-mente"
         }
       ]
     },
@@ -4226,7 +4104,8 @@
           "introduced_at": 44,
           "introduced_in": "IT-B1-044",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-societa-e-cittadinanza",
@@ -4236,7 +4115,8 @@
           "introduced_at": 44,
           "introduced_in": "IT-B1-044",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "frame:it-b1-societa-e-cittadinanza"
         },
         {
           "id": "cosydata:it:da-un-lato:idiom",
@@ -4246,27 +4126,8 @@
           "introduced_at": 43,
           "introduced_in": "IT-B1-043",
           "return_number": 2,
-          "offset": 2
-        },
-        {
-          "id": "cosydata:it:in-conclusione:phrase",
-          "text": "in conclusione",
-          "kind": "collocation",
-          "status": "exact",
-          "introduced_at": 43,
-          "introduced_in": "IT-B1-043",
-          "return_number": 2,
-          "offset": 2
-        },
-        {
-          "id": "cosydata:it:d-altra-parte:phrase",
-          "text": "d'altra parte",
-          "kind": "set-phrase",
-          "status": "exact",
-          "introduced_at": 43,
-          "introduced_in": "IT-B1-043",
-          "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-argomentare-un-opinione",
@@ -4276,7 +4137,8 @@
           "introduced_at": 43,
           "introduced_in": "IT-B1-043",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "frame:it-b1-argomentare-un-opinione"
         },
         {
           "id": "grammar:it-b1-media-e-informazione",
@@ -4286,7 +4148,8 @@
           "introduced_at": 41,
           "introduced_in": "IT-B1-041",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "frame:it-b1-media-e-informazione"
         },
         {
           "id": "grammar:it-b1-lettera-di-presentazione",
@@ -4296,7 +4159,19 @@
           "introduced_at": 37,
           "introduced_in": "IT-B1-037",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "frame:it-b1-lettera-di-presentazione"
+        },
+        {
+          "id": "grammar:it-b1-comparativi-e-superlativi-irregolari",
+          "text": "Migliore, peggiore, maggiore",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 33,
+          "introduced_in": "IT-B1-033",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "frame:it-b1-comparativi-e-superlativi-irregolari"
         }
       ]
     },
@@ -4325,7 +4200,8 @@
           "introduced_at": 45,
           "introduced_in": "IT-B1-045",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "frame:it-a2-servizi-pubblici-e-moduli"
         },
         {
           "id": "cosydata:it:dovere:verb",
@@ -4335,7 +4211,8 @@
           "introduced_at": 44,
           "introduced_in": "IT-B1-044",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-societa-e-cittadinanza",
@@ -4345,7 +4222,8 @@
           "introduced_at": 44,
           "introduced_in": "IT-B1-044",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "frame:it-b1-societa-e-cittadinanza"
         },
         {
           "id": "grammar:it-b1-colloquio-di-lavoro",
@@ -4355,7 +4233,8 @@
           "introduced_at": 38,
           "introduced_in": "IT-B1-038",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "frame:it-b1-colloquio-di-lavoro"
         },
         {
           "id": "grammar:it-b1-nomi-alterati",
@@ -4365,7 +4244,8 @@
           "introduced_at": 34,
           "introduced_in": "IT-B1-034",
           "return_number": 5,
-          "offset": 12
+          "offset": 12,
+          "domain": "frame:it-b1-nomi-alterati"
         },
         {
           "id": "pending:it:titolo-ingannevole",
@@ -4375,27 +4255,8 @@
           "introduced_at": 42,
           "introduced_in": "IT-B1-042",
           "return_number": 3,
-          "offset": 4
-        },
-        {
-          "id": "pending:it:mi-descriva",
-          "text": "mi descriva",
-          "kind": "collocation",
-          "status": "unresolved",
-          "introduced_at": 38,
-          "introduced_in": "IT-B1-038",
-          "return_number": 4,
-          "offset": 8
-        },
-        {
-          "id": "pending:it:punto-di-forza",
-          "text": "punto di forza",
-          "kind": "set-phrase",
-          "status": "unresolved",
-          "introduced_at": 38,
-          "introduced_in": "IT-B1-038",
-          "return_number": 4,
-          "offset": 8
+          "offset": 4,
+          "domain": "general"
         }
       ]
     },
@@ -4424,7 +4285,8 @@
           "introduced_at": 46,
           "introduced_in": "IT-B1-046",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "frame:it-b1-ambiente-e-clima"
         },
         {
           "id": "grammar:it-a2-servizi-pubblici-e-moduli",
@@ -4434,7 +4296,8 @@
           "introduced_at": 45,
           "introduced_in": "IT-B1-045",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "frame:it-a2-servizi-pubblici-e-moduli"
         },
         {
           "id": "cosydata:it:da-un-lato:idiom",
@@ -4444,7 +4307,8 @@
           "introduced_at": 43,
           "introduced_in": "IT-B1-043",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "general"
         },
         {
           "id": "cosydata:it:in-conclusione:phrase",
@@ -4454,17 +4318,8 @@
           "introduced_at": 43,
           "introduced_in": "IT-B1-043",
           "return_number": 3,
-          "offset": 4
-        },
-        {
-          "id": "cosydata:it:d-altra-parte:phrase",
-          "text": "d'altra parte",
-          "kind": "set-phrase",
-          "status": "exact",
-          "introduced_at": 43,
-          "introduced_in": "IT-B1-043",
-          "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-argomentare-un-opinione",
@@ -4474,7 +4329,8 @@
           "introduced_at": 43,
           "introduced_in": "IT-B1-043",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "frame:it-b1-argomentare-un-opinione"
         },
         {
           "id": "grammar:it-a2-curriculum-e-colloquio",
@@ -4484,17 +4340,8 @@
           "introduced_at": 39,
           "introduced_in": "IT-B1-039",
           "return_number": 4,
-          "offset": 8
-        },
-        {
-          "id": "cosydata:it:davvero:adverb",
-          "text": "davvero",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 35,
-          "introduced_in": "IT-B1-035",
-          "return_number": 5,
-          "offset": 12
+          "offset": 8,
+          "domain": "past"
         }
       ]
     },
@@ -4521,7 +4368,8 @@
           "introduced_at": 47,
           "introduced_in": "IT-B1-047",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "frame:it-b1-sostenibilita-e-consumi"
         },
         {
           "id": "grammar:it-b1-ambiente-e-clima",
@@ -4531,7 +4379,8 @@
           "introduced_at": 46,
           "introduced_in": "IT-B1-046",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "frame:it-b1-ambiente-e-clima"
         },
         {
           "id": "cosydata:it:dovere:verb",
@@ -4541,7 +4390,8 @@
           "introduced_at": 44,
           "introduced_in": "IT-B1-044",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-societa-e-cittadinanza",
@@ -4551,7 +4401,8 @@
           "introduced_at": 44,
           "introduced_in": "IT-B1-044",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "frame:it-b1-societa-e-cittadinanza"
         },
         {
           "id": "grammar:it-b1-competenze-e-formazione",
@@ -4561,7 +4412,8 @@
           "introduced_at": 40,
           "introduced_in": "IT-B1-040",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "frame:it-b1-competenze-e-formazione"
         },
         {
           "id": "grammar:it-b1-cercare-lavoro",
@@ -4571,7 +4423,8 @@
           "introduced_at": 36,
           "introduced_in": "IT-B1-036",
           "return_number": 5,
-          "offset": 12
+          "offset": 12,
+          "domain": "frame:it-b1-cercare-lavoro"
         },
         {
           "id": "pending:it:km-zero",
@@ -4581,17 +4434,8 @@
           "introduced_at": 47,
           "introduced_in": "IT-B1-047",
           "return_number": 1,
-          "offset": 1
-        },
-        {
-          "id": "pending:it:soft-skill",
-          "text": "soft skill",
-          "kind": "collocation",
-          "status": "unresolved",
-          "introduced_at": 40,
-          "introduced_in": "IT-B1-040",
-          "return_number": 4,
-          "offset": 8
+          "offset": 1,
+          "domain": "general"
         }
       ]
     },
@@ -4619,7 +4463,8 @@
           "introduced_at": 47,
           "introduced_in": "IT-B1-047",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "frame:it-b1-sostenibilita-e-consumi"
         },
         {
           "id": "grammar:it-a2-servizi-pubblici-e-moduli",
@@ -4629,7 +4474,8 @@
           "introduced_at": 45,
           "introduced_in": "IT-B1-045",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "frame:it-a2-servizi-pubblici-e-moduli"
         },
         {
           "id": "grammar:it-b1-media-e-informazione",
@@ -4639,7 +4485,8 @@
           "introduced_at": 41,
           "introduced_in": "IT-B1-041",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "frame:it-b1-media-e-informazione"
         },
         {
           "id": "grammar:it-b1-lettera-di-presentazione",
@@ -4649,7 +4496,8 @@
           "introduced_at": 37,
           "introduced_in": "IT-B1-037",
           "return_number": 5,
-          "offset": 12
+          "offset": 12,
+          "domain": "frame:it-b1-lettera-di-presentazione"
         },
         {
           "id": "pending:it:raccolta-differenziata",
@@ -4659,7 +4507,8 @@
           "introduced_at": 48,
           "introduced_in": "IT-B1-048",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "general"
         },
         {
           "id": "pending:it:km-zero",
@@ -4669,27 +4518,8 @@
           "introduced_at": 47,
           "introduced_in": "IT-B1-047",
           "return_number": 2,
-          "offset": 2
-        },
-        {
-          "id": "pending:it:in-riferimento-a",
-          "text": "in riferimento a",
-          "kind": "set-phrase",
-          "status": "unresolved",
-          "introduced_at": 37,
-          "introduced_in": "IT-B1-037",
-          "return_number": 5,
-          "offset": 12
-        },
-        {
-          "id": "pending:it:mi-candido",
-          "text": "mi candido",
-          "kind": "collocation",
-          "status": "unresolved",
-          "introduced_at": 37,
-          "introduced_in": "IT-B1-037",
-          "return_number": 5,
-          "offset": 12
+          "offset": 2,
+          "domain": "general"
         }
       ]
     },
@@ -4716,7 +4546,8 @@
           "introduced_at": 49,
           "introduced_in": "IT-B1-049",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "frame:it-b1-turismo-sostenibile"
         },
         {
           "id": "grammar:it-b1-ambiente-e-clima",
@@ -4726,7 +4557,8 @@
           "introduced_at": 46,
           "introduced_in": "IT-B1-046",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "frame:it-b1-ambiente-e-clima"
         },
         {
           "id": "grammar:it-b1-colloquio-di-lavoro",
@@ -4736,7 +4568,8 @@
           "introduced_at": 38,
           "introduced_in": "IT-B1-038",
           "return_number": 5,
-          "offset": 12
+          "offset": 12,
+          "domain": "frame:it-b1-colloquio-di-lavoro"
         },
         {
           "id": "pending:it:raccolta-differenziata",
@@ -4746,7 +4579,8 @@
           "introduced_at": 48,
           "introduced_in": "IT-B1-048",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "general"
         },
         {
           "id": "pending:it:titolo-ingannevole",
@@ -4756,37 +4590,8 @@
           "introduced_at": 42,
           "introduced_in": "IT-B1-042",
           "return_number": 4,
-          "offset": 8
-        },
-        {
-          "id": "pending:it:mi-descriva",
-          "text": "mi descriva",
-          "kind": "collocation",
-          "status": "unresolved",
-          "introduced_at": 38,
-          "introduced_in": "IT-B1-038",
-          "return_number": 5,
-          "offset": 12
-        },
-        {
-          "id": "pending:it:punto-di-forza",
-          "text": "punto di forza",
-          "kind": "set-phrase",
-          "status": "unresolved",
-          "introduced_at": 38,
-          "introduced_in": "IT-B1-038",
-          "return_number": 5,
-          "offset": 12
-        },
-        {
-          "id": "pending:it:punto-debole",
-          "text": "punto debole",
-          "kind": "collocation",
-          "status": "unresolved",
-          "introduced_at": 38,
-          "introduced_in": "IT-B1-038",
-          "return_number": 5,
-          "offset": 12
+          "offset": 8,
+          "domain": "general"
         }
       ]
     },
@@ -4815,7 +4620,8 @@
           "introduced_at": 50,
           "introduced_in": "IT-B1-050",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-turismo-sostenibile",
@@ -4825,7 +4631,8 @@
           "introduced_at": 49,
           "introduced_in": "IT-B1-049",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "frame:it-b1-turismo-sostenibile"
         },
         {
           "id": "grammar:it-b1-sostenibilita-e-consumi",
@@ -4835,7 +4642,8 @@
           "introduced_at": 47,
           "introduced_in": "IT-B1-047",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "frame:it-b1-sostenibilita-e-consumi"
         },
         {
           "id": "cosydata:it:da-un-lato:idiom",
@@ -4845,27 +4653,8 @@
           "introduced_at": 43,
           "introduced_in": "IT-B1-043",
           "return_number": 4,
-          "offset": 8
-        },
-        {
-          "id": "cosydata:it:in-conclusione:phrase",
-          "text": "in conclusione",
-          "kind": "collocation",
-          "status": "exact",
-          "introduced_at": 43,
-          "introduced_in": "IT-B1-043",
-          "return_number": 4,
-          "offset": 8
-        },
-        {
-          "id": "cosydata:it:d-altra-parte:phrase",
-          "text": "d'altra parte",
-          "kind": "set-phrase",
-          "status": "exact",
-          "introduced_at": 43,
-          "introduced_in": "IT-B1-043",
-          "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-argomentare-un-opinione",
@@ -4875,7 +4664,8 @@
           "introduced_at": 43,
           "introduced_in": "IT-B1-043",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "frame:it-b1-argomentare-un-opinione"
         },
         {
           "id": "grammar:it-a2-curriculum-e-colloquio",
@@ -4885,7 +4675,8 @@
           "introduced_at": 39,
           "introduced_in": "IT-B1-039",
           "return_number": 5,
-          "offset": 12
+          "offset": 12,
+          "domain": "past"
         }
       ]
     },
@@ -4914,7 +4705,8 @@
           "introduced_at": 51,
           "introduced_in": "IT-B1-051",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "frame:it-b1-cultura-e-patrimonio"
         },
         {
           "id": "cosydata:it:a-mio-parere:idiom",
@@ -4924,7 +4716,8 @@
           "introduced_at": 50,
           "introduced_in": "IT-B1-050",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "general"
         },
         {
           "id": "cosydata:it:dovere:verb",
@@ -4934,7 +4727,8 @@
           "introduced_at": 44,
           "introduced_in": "IT-B1-044",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-societa-e-cittadinanza",
@@ -4944,7 +4738,8 @@
           "introduced_at": 44,
           "introduced_in": "IT-B1-044",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "frame:it-b1-societa-e-cittadinanza"
         },
         {
           "id": "grammar:it-b1-competenze-e-formazione",
@@ -4954,37 +4749,8 @@
           "introduced_at": 40,
           "introduced_in": "IT-B1-040",
           "return_number": 5,
-          "offset": 12
-        },
-        {
-          "id": "pending:it:bene-culturale",
-          "text": "bene culturale",
-          "kind": "collocation",
-          "status": "unresolved",
-          "introduced_at": 51,
-          "introduced_in": "IT-B1-051",
-          "return_number": 1,
-          "offset": 1
-        },
-        {
-          "id": "pending:it:al-contrario",
-          "text": "al contrario",
-          "kind": "collocation",
-          "status": "unresolved",
-          "introduced_at": 50,
-          "introduced_in": "IT-B1-050",
-          "return_number": 2,
-          "offset": 2
-        },
-        {
-          "id": "pending:it:raccolta-differenziata",
-          "text": "raccolta differenziata",
-          "kind": "collocation",
-          "status": "unresolved",
-          "introduced_at": 48,
-          "introduced_in": "IT-B1-048",
-          "return_number": 3,
-          "offset": 4
+          "offset": 12,
+          "domain": "frame:it-b1-competenze-e-formazione"
         }
       ]
     },
@@ -5012,7 +4778,8 @@
           "introduced_at": 52,
           "introduced_in": "IT-B1-052",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "frame:it-b1-raccontare-un-libro"
         },
         {
           "id": "grammar:it-b1-cultura-e-patrimonio",
@@ -5022,7 +4789,8 @@
           "introduced_at": 51,
           "introduced_in": "IT-B1-051",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "frame:it-b1-cultura-e-patrimonio"
         },
         {
           "id": "grammar:it-b1-turismo-sostenibile",
@@ -5032,7 +4800,8 @@
           "introduced_at": 49,
           "introduced_in": "IT-B1-049",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "frame:it-b1-turismo-sostenibile"
         },
         {
           "id": "grammar:it-a2-servizi-pubblici-e-moduli",
@@ -5042,7 +4811,8 @@
           "introduced_at": 45,
           "introduced_in": "IT-B1-045",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "frame:it-a2-servizi-pubblici-e-moduli"
         },
         {
           "id": "grammar:it-b1-media-e-informazione",
@@ -5052,7 +4822,8 @@
           "introduced_at": 41,
           "introduced_in": "IT-B1-041",
           "return_number": 5,
-          "offset": 12
+          "offset": 12,
+          "domain": "frame:it-b1-media-e-informazione"
         },
         {
           "id": "pending:it:colpo-di-scena",
@@ -5062,7 +4833,8 @@
           "introduced_at": 52,
           "introduced_in": "IT-B1-052",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "general"
         },
         {
           "id": "pending:it:bene-culturale",
@@ -5072,7 +4844,8 @@
           "introduced_at": 51,
           "introduced_in": "IT-B1-051",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "general"
         }
       ]
     },
@@ -5101,7 +4874,8 @@
           "introduced_at": 53,
           "introduced_in": "IT-B1-053",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "frame:it-b1-scrivere-una-recensione"
         },
         {
           "id": "grammar:it-b1-raccontare-un-libro",
@@ -5111,7 +4885,8 @@
           "introduced_at": 52,
           "introduced_in": "IT-B1-052",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "frame:it-b1-raccontare-un-libro"
         },
         {
           "id": "cosydata:it:a-mio-parere:idiom",
@@ -5121,7 +4896,8 @@
           "introduced_at": 50,
           "introduced_in": "IT-B1-050",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-ambiente-e-clima",
@@ -5131,7 +4907,8 @@
           "introduced_at": 46,
           "introduced_in": "IT-B1-046",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "frame:it-b1-ambiente-e-clima"
         },
         {
           "id": "pending:it:colpo-di-scena",
@@ -5141,27 +4918,8 @@
           "introduced_at": 52,
           "introduced_in": "IT-B1-052",
           "return_number": 2,
-          "offset": 2
-        },
-        {
-          "id": "pending:it:al-contrario",
-          "text": "al contrario",
-          "kind": "collocation",
-          "status": "unresolved",
-          "introduced_at": 50,
-          "introduced_in": "IT-B1-050",
-          "return_number": 3,
-          "offset": 4
-        },
-        {
-          "id": "pending:it:titolo-ingannevole",
-          "text": "titolo ingannevole",
-          "kind": "collocation",
-          "status": "unresolved",
-          "introduced_at": 42,
-          "introduced_in": "IT-B1-042",
-          "return_number": 5,
-          "offset": 12
+          "offset": 2,
+          "domain": "general"
         }
       ]
     },
@@ -5188,7 +4946,8 @@
           "introduced_at": 54,
           "introduced_in": "IT-B1-054",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "frame:it-b1-riassumere-un-testo"
         },
         {
           "id": "grammar:it-b1-scrivere-una-recensione",
@@ -5198,7 +4957,8 @@
           "introduced_at": 53,
           "introduced_in": "IT-B1-053",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "frame:it-b1-scrivere-una-recensione"
         },
         {
           "id": "grammar:it-b1-cultura-e-patrimonio",
@@ -5208,7 +4968,8 @@
           "introduced_at": 51,
           "introduced_in": "IT-B1-051",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "frame:it-b1-cultura-e-patrimonio"
         },
         {
           "id": "grammar:it-b1-sostenibilita-e-consumi",
@@ -5218,7 +4979,8 @@
           "introduced_at": 47,
           "introduced_in": "IT-B1-047",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "frame:it-b1-sostenibilita-e-consumi"
         },
         {
           "id": "cosydata:it:da-un-lato:idiom",
@@ -5228,7 +4990,8 @@
           "introduced_at": 43,
           "introduced_in": "IT-B1-043",
           "return_number": 5,
-          "offset": 12
+          "offset": 12,
+          "domain": "general"
         },
         {
           "id": "cosydata:it:in-conclusione:phrase",
@@ -5238,17 +5001,8 @@
           "introduced_at": 43,
           "introduced_in": "IT-B1-043",
           "return_number": 5,
-          "offset": 12
-        },
-        {
-          "id": "cosydata:it:d-altra-parte:phrase",
-          "text": "d'altra parte",
-          "kind": "set-phrase",
-          "status": "exact",
-          "introduced_at": 43,
-          "introduced_in": "IT-B1-043",
-          "return_number": 5,
-          "offset": 12
+          "offset": 12,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-argomentare-un-opinione",
@@ -5258,7 +5012,8 @@
           "introduced_at": 43,
           "introduced_in": "IT-B1-043",
           "return_number": 5,
-          "offset": 12
+          "offset": 12,
+          "domain": "frame:it-b1-argomentare-un-opinione"
         }
       ]
     },
@@ -5286,7 +5041,8 @@
           "introduced_at": 54,
           "introduced_in": "IT-B1-054",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "frame:it-b1-riassumere-un-testo"
         },
         {
           "id": "grammar:it-b1-raccontare-un-libro",
@@ -5296,7 +5052,8 @@
           "introduced_at": 52,
           "introduced_in": "IT-B1-052",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "frame:it-b1-raccontare-un-libro"
         },
         {
           "id": "cosydata:it:dovere:verb",
@@ -5306,7 +5063,8 @@
           "introduced_at": 44,
           "introduced_in": "IT-B1-044",
           "return_number": 5,
-          "offset": 12
+          "offset": 12,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-societa-e-cittadinanza",
@@ -5316,7 +5074,8 @@
           "introduced_at": 44,
           "introduced_in": "IT-B1-044",
           "return_number": 5,
-          "offset": 12
+          "offset": 12,
+          "domain": "frame:it-b1-societa-e-cittadinanza"
         },
         {
           "id": "pending:it:in-sintesi",
@@ -5326,37 +5085,8 @@
           "introduced_at": 54,
           "introduced_in": "IT-B1-054",
           "return_number": 2,
-          "offset": 2
-        },
-        {
-          "id": "pending:it:in-breve",
-          "text": "in breve",
-          "kind": "collocation",
-          "status": "unresolved",
-          "introduced_at": 54,
-          "introduced_in": "IT-B1-054",
-          "return_number": 2,
-          "offset": 2
-        },
-        {
-          "id": "pending:it:lautore-sostiene",
-          "text": "l'autore sostiene",
-          "kind": "set-phrase",
-          "status": "unresolved",
-          "introduced_at": 54,
-          "introduced_in": "IT-B1-054",
-          "return_number": 2,
-          "offset": 2
-        },
-        {
-          "id": "pending:it:il-testo-tratta",
-          "text": "il testo tratta",
-          "kind": "set-phrase",
-          "status": "unresolved",
-          "introduced_at": 54,
-          "introduced_in": "IT-B1-054",
-          "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "general"
         }
       ]
     },
@@ -5384,7 +5114,8 @@
           "introduced_at": 56,
           "introduced_in": "IT-B1-056",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-scrivere-una-recensione",
@@ -5394,7 +5125,8 @@
           "introduced_at": 53,
           "introduced_in": "IT-B1-053",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "frame:it-b1-scrivere-una-recensione"
         },
         {
           "id": "grammar:it-b1-turismo-sostenibile",
@@ -5404,7 +5136,8 @@
           "introduced_at": 49,
           "introduced_in": "IT-B1-049",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "frame:it-b1-turismo-sostenibile"
         },
         {
           "id": "grammar:it-a2-servizi-pubblici-e-moduli",
@@ -5414,7 +5147,8 @@
           "introduced_at": 45,
           "introduced_in": "IT-B1-045",
           "return_number": 5,
-          "offset": 12
+          "offset": 12,
+          "domain": "frame:it-a2-servizi-pubblici-e-moduli"
         },
         {
           "id": "pending:it:parola-chiave",
@@ -5424,7 +5158,8 @@
           "introduced_at": 56,
           "introduced_in": "IT-B1-056",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "general"
         }
       ]
     },
@@ -5451,7 +5186,8 @@
           "introduced_at": 56,
           "introduced_in": "IT-B1-056",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-riassumere-un-testo",
@@ -5461,7 +5197,8 @@
           "introduced_at": 54,
           "introduced_in": "IT-B1-054",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "frame:it-b1-riassumere-un-testo"
         },
         {
           "id": "cosydata:it:a-mio-parere:idiom",
@@ -5471,7 +5208,8 @@
           "introduced_at": 50,
           "introduced_in": "IT-B1-050",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-ambiente-e-clima",
@@ -5481,47 +5219,8 @@
           "introduced_at": 46,
           "introduced_in": "IT-B1-046",
           "return_number": 5,
-          "offset": 12
-        },
-        {
-          "id": "pending:it:in-altre-parole",
-          "text": "in altre parole",
-          "kind": "set-phrase",
-          "status": "unresolved",
-          "introduced_at": 57,
-          "introduced_in": "IT-B1-057",
-          "return_number": 1,
-          "offset": 1
-        },
-        {
-          "id": "pending:it:significa-che",
-          "text": "significa che",
-          "kind": "collocation",
-          "status": "unresolved",
-          "introduced_at": 57,
-          "introduced_in": "IT-B1-057",
-          "return_number": 1,
-          "offset": 1
-        },
-        {
-          "id": "pending:it:parola-chiave",
-          "text": "parola chiave",
-          "kind": "collocation",
-          "status": "unresolved",
-          "introduced_at": 56,
-          "introduced_in": "IT-B1-056",
-          "return_number": 2,
-          "offset": 2
-        },
-        {
-          "id": "pending:it:in-sintesi",
-          "text": "in sintesi",
-          "kind": "collocation",
-          "status": "unresolved",
-          "introduced_at": 54,
-          "introduced_in": "IT-B1-054",
-          "return_number": 3,
-          "offset": 4
+          "offset": 12,
+          "domain": "frame:it-b1-ambiente-e-clima"
         }
       ]
     },
@@ -5548,7 +5247,8 @@
           "introduced_at": 58,
           "introduced_in": "IT-B1-058",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "frame:it-a2-scrivere-un-email-formale"
         },
         {
           "id": "grammar:it-b1-cultura-e-patrimonio",
@@ -5558,7 +5258,8 @@
           "introduced_at": 51,
           "introduced_in": "IT-B1-051",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "frame:it-b1-cultura-e-patrimonio"
         },
         {
           "id": "grammar:it-b1-sostenibilita-e-consumi",
@@ -5568,7 +5269,8 @@
           "introduced_at": 47,
           "introduced_in": "IT-B1-047",
           "return_number": 5,
-          "offset": 12
+          "offset": 12,
+          "domain": "frame:it-b1-sostenibilita-e-consumi"
         },
         {
           "id": "pending:it:in-riferimento",
@@ -5578,7 +5280,8 @@
           "introduced_at": 58,
           "introduced_in": "IT-B1-058",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "general"
         },
         {
           "id": "pending:it:chiedo-cortesemente",
@@ -5588,37 +5291,8 @@
           "introduced_at": 58,
           "introduced_in": "IT-B1-058",
           "return_number": 1,
-          "offset": 1
-        },
-        {
-          "id": "pending:it:restando-a-disposizione",
-          "text": "restando a disposizione",
-          "kind": "set-phrase",
-          "status": "unresolved",
-          "introduced_at": 58,
-          "introduced_in": "IT-B1-058",
-          "return_number": 1,
-          "offset": 1
-        },
-        {
-          "id": "pending:it:in-altre-parole",
-          "text": "in altre parole",
-          "kind": "set-phrase",
-          "status": "unresolved",
-          "introduced_at": 57,
-          "introduced_in": "IT-B1-057",
-          "return_number": 2,
-          "offset": 2
-        },
-        {
-          "id": "pending:it:significa-che",
-          "text": "significa che",
-          "kind": "collocation",
-          "status": "unresolved",
-          "introduced_at": 57,
-          "introduced_in": "IT-B1-057",
-          "return_number": 2,
-          "offset": 2
+          "offset": 1,
+          "domain": "general"
         }
       ]
     },
@@ -5644,7 +5318,8 @@
           "introduced_at": 59,
           "introduced_in": "IT-B1-059",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "general"
         },
         {
           "id": "cosydata:it:ciononostante:adverb",
@@ -5654,17 +5329,8 @@
           "introduced_at": 59,
           "introduced_in": "IT-B1-059",
           "return_number": 1,
-          "offset": 1
-        },
-        {
-          "id": "cosydata:it:infine:adverb",
-          "text": "infine",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 59,
-          "introduced_in": "IT-B1-059",
-          "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "general"
         },
         {
           "id": "grammar:it-a2-scrivere-un-email-formale",
@@ -5674,17 +5340,8 @@
           "introduced_at": 58,
           "introduced_in": "IT-B1-058",
           "return_number": 2,
-          "offset": 2
-        },
-        {
-          "id": "cosydata:it:segnare:verb",
-          "text": "segnare",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 56,
-          "introduced_in": "IT-B1-056",
-          "return_number": 3,
-          "offset": 4
+          "offset": 2,
+          "domain": "frame:it-a2-scrivere-un-email-formale"
         },
         {
           "id": "grammar:it-b1-raccontare-un-libro",
@@ -5694,27 +5351,8 @@
           "introduced_at": 52,
           "introduced_in": "IT-B1-052",
           "return_number": 4,
-          "offset": 8
-        },
-        {
-          "id": "pending:it:in-particolare",
-          "text": "in particolare",
-          "kind": "collocation",
-          "status": "unresolved",
-          "introduced_at": 59,
-          "introduced_in": "IT-B1-059",
-          "return_number": 1,
-          "offset": 1
-        },
-        {
-          "id": "pending:it:in-riferimento",
-          "text": "in riferimento",
-          "kind": "collocation",
-          "status": "unresolved",
-          "introduced_at": 58,
-          "introduced_in": "IT-B1-058",
-          "return_number": 2,
-          "offset": 2
+          "offset": 8,
+          "domain": "frame:it-b1-raccontare-un-libro"
         }
       ]
     },
@@ -5738,7 +5376,8 @@
           "introduced_at": 59,
           "introduced_in": "IT-B1-059",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "general"
         },
         {
           "id": "cosydata:it:ciononostante:adverb",
@@ -5748,17 +5387,8 @@
           "introduced_at": 59,
           "introduced_in": "IT-B1-059",
           "return_number": 2,
-          "offset": 2
-        },
-        {
-          "id": "cosydata:it:infine:adverb",
-          "text": "infine",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 59,
-          "introduced_in": "IT-B1-059",
-          "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-scrivere-una-recensione",
@@ -5768,7 +5398,8 @@
           "introduced_at": 53,
           "introduced_in": "IT-B1-053",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "frame:it-b1-scrivere-una-recensione"
         },
         {
           "id": "grammar:it-b1-turismo-sostenibile",
@@ -5778,37 +5409,8 @@
           "introduced_at": 49,
           "introduced_in": "IT-B1-049",
           "return_number": 5,
-          "offset": 12
-        },
-        {
-          "id": "pending:it:versione-finale",
-          "text": "versione finale",
-          "kind": "collocation",
-          "status": "unresolved",
-          "introduced_at": 60,
-          "introduced_in": "IT-B1-060",
-          "return_number": 1,
-          "offset": 1
-        },
-        {
-          "id": "pending:it:in-particolare",
-          "text": "in particolare",
-          "kind": "collocation",
-          "status": "unresolved",
-          "introduced_at": 59,
-          "introduced_in": "IT-B1-059",
-          "return_number": 2,
-          "offset": 2
-        },
-        {
-          "id": "pending:it:in-altre-parole",
-          "text": "in altre parole",
-          "kind": "set-phrase",
-          "status": "unresolved",
-          "introduced_at": 57,
-          "introduced_in": "IT-B1-057",
-          "return_number": 3,
-          "offset": 4
+          "offset": 12,
+          "domain": "frame:it-b1-turismo-sostenibile"
         }
       ]
     },
@@ -5827,7 +5429,8 @@
           "introduced_at": 58,
           "introduced_in": "IT-B1-058",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "frame:it-a2-scrivere-un-email-formale"
         },
         {
           "id": "grammar:it-b1-riassumere-un-testo",
@@ -5837,7 +5440,8 @@
           "introduced_at": 54,
           "introduced_in": "IT-B1-054",
           "return_number": 4,
-          "offset": 8
+          "offset": 8,
+          "domain": "frame:it-b1-riassumere-un-testo"
         },
         {
           "id": "cosydata:it:a-mio-parere:idiom",
@@ -5847,7 +5451,8 @@
           "introduced_at": 50,
           "introduced_in": "IT-B1-050",
           "return_number": 5,
-          "offset": 12
+          "offset": 12,
+          "domain": "general"
         },
         {
           "id": "pending:it:versione-finale",
@@ -5857,47 +5462,8 @@
           "introduced_at": 60,
           "introduced_in": "IT-B1-060",
           "return_number": 2,
-          "offset": 2
-        },
-        {
-          "id": "pending:it:in-riferimento",
-          "text": "in riferimento",
-          "kind": "collocation",
-          "status": "unresolved",
-          "introduced_at": 58,
-          "introduced_in": "IT-B1-058",
-          "return_number": 3,
-          "offset": 4
-        },
-        {
-          "id": "pending:it:chiedo-cortesemente",
-          "text": "chiedo cortesemente",
-          "kind": "collocation",
-          "status": "unresolved",
-          "introduced_at": 58,
-          "introduced_in": "IT-B1-058",
-          "return_number": 3,
-          "offset": 4
-        },
-        {
-          "id": "pending:it:restando-a-disposizione",
-          "text": "restando a disposizione",
-          "kind": "set-phrase",
-          "status": "unresolved",
-          "introduced_at": 58,
-          "introduced_in": "IT-B1-058",
-          "return_number": 3,
-          "offset": 4
-        },
-        {
-          "id": "pending:it:in-sintesi",
-          "text": "in sintesi",
-          "kind": "collocation",
-          "status": "unresolved",
-          "introduced_at": 54,
-          "introduced_in": "IT-B1-054",
-          "return_number": 4,
-          "offset": 8
+          "offset": 2,
+          "domain": "general"
         }
       ]
     },
@@ -5919,7 +5485,8 @@
           "introduced_at": 59,
           "introduced_in": "IT-B1-059",
           "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "general"
         },
         {
           "id": "cosydata:it:ciononostante:adverb",
@@ -5929,17 +5496,8 @@
           "introduced_at": 59,
           "introduced_in": "IT-B1-059",
           "return_number": 3,
-          "offset": 4
-        },
-        {
-          "id": "cosydata:it:infine:adverb",
-          "text": "infine",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 59,
-          "introduced_in": "IT-B1-059",
-          "return_number": 3,
-          "offset": 4
+          "offset": 4,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-cultura-e-patrimonio",
@@ -5949,27 +5507,19 @@
           "introduced_at": 51,
           "introduced_in": "IT-B1-051",
           "return_number": 5,
-          "offset": 12
+          "offset": 12,
+          "domain": "frame:it-b1-cultura-e-patrimonio"
         },
         {
-          "id": "pending:it:in-particolare",
-          "text": "in particolare",
-          "kind": "collocation",
-          "status": "unresolved",
+          "id": "cosydata:it:infine:adverb",
+          "text": "infine",
+          "kind": "word",
+          "status": "exact",
           "introduced_at": 59,
           "introduced_in": "IT-B1-059",
           "return_number": 3,
-          "offset": 4
-        },
-        {
-          "id": "pending:it:bene-culturale",
-          "text": "bene culturale",
-          "kind": "collocation",
-          "status": "unresolved",
-          "introduced_at": 51,
-          "introduced_in": "IT-B1-051",
-          "return_number": 5,
-          "offset": 12
+          "offset": 4,
+          "domain": "general"
         }
       ]
     },
@@ -5993,7 +5543,8 @@
           "introduced_at": 63,
           "introduced_in": "IT-B1-063",
           "return_number": 1,
-          "offset": 1
+          "offset": 1,
+          "domain": "general"
         },
         {
           "id": "cosydata:it:ci:pronoun",
@@ -6003,17 +5554,8 @@
           "introduced_at": 63,
           "introduced_in": "IT-B1-063",
           "return_number": 1,
-          "offset": 1
-        },
-        {
-          "id": "cosydata:it:segnare:verb",
-          "text": "segnare",
-          "kind": "word",
-          "status": "exact",
-          "introduced_at": 56,
-          "introduced_in": "IT-B1-056",
-          "return_number": 4,
-          "offset": 8
+          "offset": 1,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-raccontare-un-libro",
@@ -6023,37 +5565,19 @@
           "introduced_at": 52,
           "introduced_in": "IT-B1-052",
           "return_number": 5,
-          "offset": 12
+          "offset": 12,
+          "domain": "frame:it-b1-raccontare-un-libro"
         },
         {
-          "id": "pending:it:versione-finale",
-          "text": "versione finale",
-          "kind": "collocation",
-          "status": "unresolved",
-          "introduced_at": 60,
-          "introduced_in": "IT-B1-060",
-          "return_number": 3,
-          "offset": 4
-        },
-        {
-          "id": "pending:it:parola-chiave",
-          "text": "parola chiave",
-          "kind": "collocation",
-          "status": "unresolved",
+          "id": "cosydata:it:segnare:verb",
+          "text": "segnare",
+          "kind": "word",
+          "status": "exact",
           "introduced_at": 56,
           "introduced_in": "IT-B1-056",
           "return_number": 4,
-          "offset": 8
-        },
-        {
-          "id": "pending:it:colpo-di-scena",
-          "text": "colpo di scena",
-          "kind": "set-phrase",
-          "status": "unresolved",
-          "introduced_at": 52,
-          "introduced_in": "IT-B1-052",
-          "return_number": 5,
-          "offset": 12
+          "offset": 8,
+          "domain": "general"
         }
       ]
     },
@@ -6077,7 +5601,8 @@
           "introduced_at": 63,
           "introduced_in": "IT-B1-063",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "general"
         },
         {
           "id": "cosydata:it:ci:pronoun",
@@ -6087,7 +5612,8 @@
           "introduced_at": 63,
           "introduced_in": "IT-B1-063",
           "return_number": 2,
-          "offset": 2
+          "offset": 2,
+          "domain": "general"
         },
         {
           "id": "grammar:it-b1-scrivere-una-recensione",
@@ -6097,7 +5623,8 @@
           "introduced_at": 53,
           "introduced_in": "IT-B1-053",
           "return_number": 5,
-          "offset": 12
+          "offset": 12,
+          "domain": "frame:it-b1-scrivere-una-recensione"
         },
         {
           "id": "pending:it:capisco-la-posizione",
@@ -6107,47 +5634,8 @@
           "introduced_at": 64,
           "introduced_in": "IT-B1-064",
           "return_number": 1,
-          "offset": 1
-        },
-        {
-          "id": "pending:it:vorrei-aggiungere",
-          "text": "vorrei aggiungere",
-          "kind": "collocation",
-          "status": "unresolved",
-          "introduced_at": 64,
-          "introduced_in": "IT-B1-064",
-          "return_number": 1,
-          "offset": 1
-        },
-        {
-          "id": "pending:it:sono-daccordo-in-parte",
-          "text": "sono d'accordo in parte",
-          "kind": "set-phrase",
-          "status": "unresolved",
-          "introduced_at": 64,
-          "introduced_in": "IT-B1-064",
-          "return_number": 1,
-          "offset": 1
-        },
-        {
-          "id": "pending:it:in-altre-parole",
-          "text": "in altre parole",
-          "kind": "set-phrase",
-          "status": "unresolved",
-          "introduced_at": 57,
-          "introduced_in": "IT-B1-057",
-          "return_number": 4,
-          "offset": 8
-        },
-        {
-          "id": "pending:it:significa-che",
-          "text": "significa che",
-          "kind": "collocation",
-          "status": "unresolved",
-          "introduced_at": 57,
-          "introduced_in": "IT-B1-057",
-          "return_number": 4,
-          "offset": 8
+          "offset": 1,
+          "domain": "general"
         }
       ]
     }
@@ -6155,18 +5643,18 @@
   "summary": {
     "lessons": 65,
     "blocks": 244,
-    "returns_planned": 500,
+    "returns_planned": 408,
     "cap": 8,
     "hold_blocks": 244,
     "recognise_blocks": 256,
-    "lessons_at_cap": 58,
+    "lessons_at_cap": 18,
     "lessons_empty": 1,
     "blocks_never_returned": 1,
     "returns_due": 1168,
-    "returns_skipped": 668,
+    "returns_skipped": 760,
     "slots": 512,
     "capacity_blocks": 102,
     "blocks_per_lesson": 3.8,
-    "unresolved_in_plan": 80
+    "unresolved_in_plan": 40
   }
 }

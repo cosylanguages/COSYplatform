@@ -99,3 +99,58 @@ thinnest lesson is the one whose vocabulary was decoration.
 - Five lessons of 65 are done. The remaining 60 need the same authoring, and lessons beyond unit 1
   will expose whether the plan's theme-spread is usable or whether returns need to be filtered by
   topic after all.
+
+---
+
+# Second pass: the variety constraint, and unit 2
+
+## The constraint
+
+The first plan gave lesson 3 eight past-tense questions. The planner now enforces, per lesson:
+
+- at most **8** returns (the cap);
+- at most **3** from any one earlier lesson;
+- at most **2** from any one **domain** — past, connector, manner, subjunctive, future, or the frame's
+  own grammar point;
+- and if the strict pass leaves fewer than **4**, the domain cap relaxes far enough to reach four,
+  because a stage 2 of two questions is not worth the slot.
+
+Domains are a keyword list in `scripts/plan-retrieval.py`, deliberately crude and readable. It had
+one bug worth recording: *"Gerundio presente e passato"* matched the past domain because of the word
+"passato", so manner is now tested first.
+
+Effect across lessons 2-10: lesson 3 went from 8 questions to 4, lesson 4 from 8 to 4, lesson 5 from
+8 to 6, lessons 6-10 got 7, 7, 8, 8 and 8.
+
+## What the constraint cannot fix
+
+Lesson 3 is still all past. Its only predecessors are lessons 1 and 2, both about narrative past —
+the constraint can spread returns across sources and domains, but it cannot manufacture variety the
+curriculum hasn't produced yet. That is a curriculum fact, not a planner bug, and it is the argument
+for themes that alternate rather than stack.
+
+## Unit 2: lessons 6-10
+
+The pilot now covers nine lessons and **26 distinct blocks**, 40 questions. New in this pass:
+
+| lesson | returns | example question |
+|---|---|---|
+| 6. Le forme del congiuntivo presente | 7 | Metti in rilievo una cosa che hai comprato: «Quella borsa, l'ho comprata…» |
+| 7. I verbi che reggono il congiuntivo | 7 | Che cosa vuoi che faccia il tuo migliore amico questo fine settimana? |
+| 8. Le congiunzioni che vogliono il congiuntivo | 8 | Che cosa credi che cambierà nella tua città fra dieci anni? |
+| 9. Il congiuntivo nelle relative | 8 | Racconta un progetto che porti avanti nonostante una difficoltà: «Sebbene…» |
+| 10. L'esortativo e gli auguri | 8 | Cerchi qualcuno con una qualità precisa: «Cerco una persona che sappia…» |
+
+Reading units 1-2 back to back, the arc is now visible and, more importantly, *audible*: lesson 6
+opens by asking about a purchase (dislocation from lesson 5), then a habit (mentre), a consequence
+(visto che), a day (già/prima), and dissatisfaction (è che). Nothing in it is new. That is the
+difference between a syllabus and a conversation.
+
+## Where this stops
+
+- **The manual is still the source of truth for decks**, and it does not know `returns:`. A rebuild
+  drops all 40 questions. Teaching the builder to render `returns:` into slide 2 is the next
+  engineering step, and it is small.
+- **Units 3-13 have nothing.** 55 lessons to go, and the triage for units 3-13 is still rule-only.
+- **Recognise blocks are unverified.** 262 of them in this course are never returned; whether the
+  reading texts actually use them is unchecked.

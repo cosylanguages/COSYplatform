@@ -46,8 +46,12 @@ curriculum `teacher_notes`, and the same questions on deck slide 2 in a blockquo
 text was read from the curriculum note, so the two cannot diverge. A rebuild from COSYmanuals still
 drops them: the builders do not know `returns:` yet.
 
-The planner lacks a variety constraint - lesson 3 came out with eight past-tense questions because
-lessons 1 and 2 were both about the past. Fix that before extending past unit 1.
+The planner now caps returns per source lesson (3) and per domain (2), relaxing the domain cap only
+to reach four questions. Italian B1 lessons 2-10 carry 40 hand-written questions over 26 blocks.
+Lesson 3 is still all past: its only predecessors are lessons 1 and 2, so the constraint cannot
+manufacture variety the curriculum has not produced - a curriculum fact, not a planner bug.
+Domains are a keyword list; "Gerundio presente e passato" matched the past domain until manner was
+tested first.
 
 ## Lesson generation
 `/tmp/cosy_build.py` holds the shared `Spec` class: it writes the ten-slide deck from a per-lesson

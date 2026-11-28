@@ -28,6 +28,32 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OFFSETS = (1, 2, 4, 8, 12)
 DEFAULT_CAP = 8
 
+# Variety. Without these, a lesson whose predecessors were all about the past fills stage 2 with
+# eight past-tense questions: correct spacing, unusable lesson.
+MAX_PER_SOURCE = 3   # no more than three returns from the same earlier lesson
+MAX_PER_DOMAIN = 2   # no more than two from the same domain
+MIN_RETURNS = 4      # a stage 2 of two questions is not worth the slot; relax the domain cap to reach this
+
+# A domain is what a block is about, for the purpose of not asking the same thing twice.
+DOMAINS = (
+    # manner before past: "Gerundio presente e passato" is a manner frame, not a past-tense one
+    ("manner", ("gerundio", "mentre", "durante", "pur", "visto", "essendo", "avendo", "participio")),
+    ("connector", ("tuttavia", "inoltre", "quindi", "infatti", "invece", "comunque", "dunque",
+                   "pertanto", "connettivi")),
+    ("subjunctive", ("congiuntivo", "penso che", "credo che", "sebbene", "a meno che", "che io sia")),
+    ("future", ("futuro", "domani", "progetto")),
+    ("past", ("passato", "imperfetto", "trapassato", "già", "prima", "quando", "dopo che",
+              "intanto", "frattempo", "ancora non", "ieri")),
+)
+
+
+def domain_of(block: dict) -> str:
+    text = block["text"].lower()
+    for name, keywords in DOMAINS:
+        if any(k in text for k in keywords):
+            return name
+    return "frame:" + block["id"].split(":", 1)[-1] if block["id"].startswith("grammar:") else "general"
+
 
 def load(course: str) -> dict:
     path = os.path.join(ROOT, "data", "chunks", f"{course}.json")
@@ -72,17 +98,36 @@ def plan(registry: dict, cap: int = DEFAULT_CAP) -> dict:
         # resolved blocks first, then the longest-waiting ones: spacing beats freshness
         due.sort(key=lambda item: (item[0]["status"] == "unresolved", -item[1]))
         selected = []
-        for block, intro, ordinal, offset in due[:cap]:
-            selected.append({
-                "id": block["id"],
-                "text": block["text"],
-                "kind": block["kind"],
-                "status": block["status"],
-                "introduced_at": intro,
-                "introduced_in": by_number[intro]["code"],
-                "return_number": ordinal,
-                "offset": offset,
-            })
+        taken: set[str] = set()
+        per_source: collections.Counter[int] = collections.Counter()
+        per_domain: collections.Counter[str] = collections.Counter()
+        # First pass respects every cap; second pass relaxes only the domain cap, and only far
+        # enough to reach a stage 2 worth running.
+        for strict in (True, False):
+            for block, intro, ordinal, offset in due:
+                if len(selected) >= cap:
+                    break
+                if not strict and len(selected) >= MIN_RETURNS:
+                    break
+                if block["id"] in taken or per_source[intro] >= MAX_PER_SOURCE:
+                    continue
+                domain = domain_of(block)
+                if strict and per_domain[domain] >= MAX_PER_DOMAIN:
+                    continue
+                taken.add(block["id"])
+                per_source[intro] += 1
+                per_domain[domain] += 1
+                selected.append({
+                    "id": block["id"],
+                    "text": block["text"],
+                    "kind": block["kind"],
+                    "status": block["status"],
+                    "introduced_at": intro,
+                    "introduced_in": by_number[intro]["code"],
+                    "return_number": ordinal,
+                    "offset": offset,
+                    "domain": domain,
+                })
         chosen[number] = selected
 
     return {
@@ -128,9 +173,11 @@ def render(result: dict) -> str:
         f"# Retrieval plan: {result['course']}",
         "",
         "What each lesson should ask the learner to reactivate, computed from the block registry.",
-        "Spacing: return at +1, +2, then +4, +8, +12 lessons. Five questions per lesson at most,",
-        "resolved blocks and the longest-waiting ones first. This is an input to authoring stage 2,",
-        "not a substitute for it: a row here is a block to ask about, the question still has to be written.",
+        "Spacing: return at +1, +2, then +4, +8, +12 lessons. Eight questions per lesson at most,",
+        "Resolved blocks and the longest-waiting ones first, with variety caps: at most three",
+        "returns from any one earlier lesson and at most two from any one domain, so stage 2 does",
+        "not become eight past-tense questions in a row. This is an input to authoring stage 2, not",
+        "a substitute for it: a row here is a block to ask about, the question still has to be written.",
         "",
         f"- lessons: **{s['lessons']}**, blocks: **{s['blocks']}**",
         f"- scheduled returns: **{s['returns_planned']}**",

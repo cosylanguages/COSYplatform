@@ -15,8 +15,17 @@
   "assessment": "Verifica l'uso corretto di «i verbi che reggono il congiuntivo» e la chiarezza dell'esposizione orale.",
   "homework": "Scrivi dieci righe usando «i verbi che reggono il congiuntivo».",
   "recycling": {
-    "prior": "Lessico del livello A2 e del modulo precedente",
-    "next": "La lezione successiva tratta le congiunzioni che vogliono il congiuntivo."
+    "prior": "Coniugazioni regolari, Dislocazione, tuttavia, inoltre, che io sia, che tu abbia, è che",
+    "next": "La lezione successiva tratta le congiunzioni che vogliono il congiuntivo.",
+    "priorBlocks": [
+      "grammar:it-b1-congiuntivo-presente",
+      "grammar:it-b1-ordine-delle-parole-e-enfasi",
+      "cosydata:it:tuttavia:adverb",
+      "cosydata:it:inoltre:idiom",
+      "pending:it:che-io-sia",
+      "pending:it:che-tu-abbia",
+      "pending:it:e-che"
+    ]
   },
   "differentiation": {
     "individual": "Una scheda: cinque frasi sul tema della lezione.",
@@ -80,19 +89,28 @@
       "elements": [
         {
           "type": "instruction",
-          "content": "Già in possesso: Lessico del livello A2 e del modulo precedente"
+          "content": "Riattiva: rispondi ad alta voce alle domande sui blocchi già incontrati."
         },
         {
           "type": "blockquote",
-          "content": "Lessico da riattivare: penso che, credo che, spero che"
+          "content": "1. Che cosa vuoi che faccia il tuo migliore amico questo fine settimana?\n2. Metti in rilievo una cosa che hai comprato di recente: «Quella borsa, l'ho comprata…»\n3. Sei d'accordo con questa idea? Esprimi un dubbio: «È una buona idea; tuttavia…»\n4. Dammi due motivi per studiare una lingua straniera, il secondo con «inoltre».\n5. Fai un'ipotesi su di te: «Può darsi che io sia…»\n6. Fai un complimento a qualcuno: «Credo che tu abbia…»\n7. Spiega che cosa non ti convince di una decisione, con «il problema è che…»",
+          "usesChunk": [
+            "grammar:it-b1-congiuntivo-presente",
+            "grammar:it-b1-ordine-delle-parole-e-enfasi",
+            "cosydata:it:tuttavia:adverb",
+            "cosydata:it:inoltre:idiom",
+            "pending:it:che-io-sia",
+            "pending:it:che-tu-abbia",
+            "pending:it:e-che"
+          ]
         },
         {
           "type": "instruction",
-          "content": "A memoria: che cosa significa questa parola e dove l'hai incontrata?"
+          "content": "Scegli una domanda e rispondi in tre frasi; poi riprova senza guardare."
         },
         {
           "type": "input",
-          "placeholder": "penso che — significato e contesto"
+          "placeholder": "la tua risposta, tre frasi"
         }
       ]
     },

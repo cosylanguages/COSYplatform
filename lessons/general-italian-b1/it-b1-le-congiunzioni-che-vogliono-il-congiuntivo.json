@@ -15,8 +15,18 @@
   "assessment": "Verifica l'uso corretto di «le congiunzioni che vogliono il congiuntivo» e la chiarezza dell'esposizione orale.",
   "homework": "Scrivi dieci righe usando «le congiunzioni che vogliono il congiuntivo».",
   "recycling": {
-    "prior": "Lessico del livello A2 e del modulo precedente",
-    "next": "La lezione successiva tratta il congiuntivo nelle relative."
+    "prior": "Verbi di opinione e volontà, Coniugazioni regolari, mentre, visto, penso che, credo che, che tu abbia, che vada",
+    "next": "La lezione successiva tratta il congiuntivo nelle relative.",
+    "priorBlocks": [
+      "grammar:it-b1-verbi-che-reggono-il-congiuntivo",
+      "grammar:it-b1-congiuntivo-presente",
+      "cosydata:it:mentre:conjunction",
+      "cosydata:it:visto:noun",
+      "pending:it:penso-che",
+      "pending:it:credo-che",
+      "pending:it:che-tu-abbia",
+      "pending:it:che-vada"
+    ]
   },
   "differentiation": {
     "individual": "Una scheda: cinque frasi sul tema della lezione.",
@@ -80,19 +90,29 @@
       "elements": [
         {
           "type": "instruction",
-          "content": "Già in possesso: Lessico del livello A2 e del modulo precedente"
+          "content": "Riattiva: rispondi ad alta voce alle domande sui blocchi già incontrati."
         },
         {
           "type": "blockquote",
-          "content": "Lessico da riattivare: benché, sebbene, affinché"
+          "content": "1. Esprimi tre opinioni su un film, con tre verbi diversi di opinione.\n2. Che cosa vuoi che faccia il tuo migliore amico questo fine settimana?\n3. Che cosa fai mentre aspetti l'autobus?\n4. Spiega una conseguenza che si vede dai fatti: «Visto che…, …»\n5. Che cosa pensi del modo in cui si impara una lingua da adulti?\n6. Che cosa credi che cambierà nella tua città fra dieci anni?\n7. Fai un complimento a qualcuno: «Credo che tu abbia…»\n8. Secondo te, dove vada a finire tutto questo lavoro?",
+          "usesChunk": [
+            "grammar:it-b1-verbi-che-reggono-il-congiuntivo",
+            "grammar:it-b1-congiuntivo-presente",
+            "cosydata:it:mentre:conjunction",
+            "cosydata:it:visto:noun",
+            "pending:it:penso-che",
+            "pending:it:credo-che",
+            "pending:it:che-tu-abbia",
+            "pending:it:che-vada"
+          ]
         },
         {
           "type": "instruction",
-          "content": "A memoria: che cosa significa questa parola e dove l'hai incontrata?"
+          "content": "Scegli una domanda e rispondi in tre frasi; poi riprova senza guardare."
         },
         {
           "type": "input",
-          "placeholder": "benché — significato e contesto"
+          "placeholder": "la tua risposta, tre frasi"
         }
       ]
     },
