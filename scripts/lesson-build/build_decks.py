@@ -323,7 +323,9 @@ def build_deck(lang, level, t, lesson, unit, next_title, code):
     deck_id = f'{lang}-{level}-{slug(lesson["title"])}'
     duration = lesson.get('duration_minutes', 60)
 
-    ex = page['examples'] or [{'label': '', 'text': r['example'], 'comment': ''} for r in page['table'][:3]]
+    ex = (page['examples']
+          or [{'label': '', 'text': r['example'], 'comment': ''} for r in page['table'][:3]]
+          or [{'label': '', 'text': word, 'comment': ''} for word in vocab[:3]])
     ex_lines = [ex_line(e, lang) for e in ex]
     table_lines = [(f"{r['element']} — {r['role']}: {r['example']}" if r.get('role')
                     else f"{r['element']} — {r.get('note', '')}") for r in page['table'][:6]]

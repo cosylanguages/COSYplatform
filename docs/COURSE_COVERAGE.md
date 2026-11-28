@@ -19,7 +19,7 @@ There is no standalone A0 level: the entry band is one A1 course covering A0-A1.
 | fr/general | B2 | general-fr-b2 | B2 | yes | 65/65 | visible, complete |
 | fr/general | C1 | general-fr-c1 | C1 | yes | 65/65 | visible, complete |
 | fr/general | C2 | general-fr-c2 | C2 | yes | 65/65 | visible, complete |
-| ru/general | A1 | general-ru-a1 | A1 | no | — | hidden |
+| ru/general | A1 | general-ru-a1 | A1 | yes | 142/142 | visible, complete |
 | ru/general | A2 | general-ru-a2 | A2 | no | — | hidden |
 | ru/general | B1 | general-ru-b1 | B1 | no | — | hidden |
 | ru/general | B2 | general-ru-b2 | B2 | no | — | hidden |
@@ -40,7 +40,6 @@ There is no standalone A0 level: the entry band is one A1 course covering A0-A1.
 
 - **en/general C1** — hidden
 - **en/general C2** — hidden
-- **ru/general A1** — hidden
 - **ru/general A2** — hidden
 - **ru/general B1** — hidden
 - **ru/general B2** — hidden

@@ -47,18 +47,22 @@ with no roadmap, so all six entries are hidden. English also carries the entry b
 
 ## Russian A1 and the monolingual rule
 `build_decks.py --lang ru --level a1 --write` builds the 142 decks of `lessons/general-russian-a1/` and
-`roadmaps/general-ru-a1.json`; see `docs/RUSSIAN_A1_BUILD.md`. The course stays hidden: **102 of 142
-lessons carry English vocabulary** (module 6 lists `supermarket, bakery, pharmacy`), so the remaining work
-is translating ~800 items, not code. Supporting changes: the Russian page frame in `manual_page.py`
+`roadmaps/general-ru-a1.json`; see `docs/RUSSIAN_A1_BUILD.md`. **Published** after two content passes:
+`scripts/content/fill_ru_a1_vocabulary.py` replaced 102 English vocabulary lists (module 6 listed
+`supermarket, bakery, pharmacy`; the curriculum now holds 868 Russian words) and
+`scripts/content/normalize_ru_a1_titles.py` turned `Раздел 0: Первые шаги (A0)`, `MODULE 1. ...` and
+`МОДУЛЬ 2. ...` into `Модуль N. Sentence case`. Both scripts are idempotent. The 142 decks carry no empty
+element; six still print an English quiz prompt, `Переведите «I like this book»:`, which lives in
+COSYmanuals and should become a Russian sentence. Supporting changes: the Russian page frame in `manual_page.py`
 (`ul.gv-lines`, `p.gv-formula`, `section.examples`, `box mint` headings, `wrong-line`/`right-line`, and
 two-column reference tables) takes page coverage from 11 to 38 of the 39 ids the curriculum uses; a
 Cyrillic table in `slug()` (without it every deck id was `ru-a1----`); a 70-string `ru` scaffold; and
 `in_language()` so an English `recycled:` field cannot land on slide 2.
 
-`npm run audit:monolingual` -> `docs/MONOLINGUAL_AUDIT.md` measures the rule platform-wide: **213 of 5,149
-lessons** have a fully foreign vocabulary list (ru A1 102, hy A1 55/55, ka A1 55/55 as complete English
-shells, ru C2 1), and 99 of 142 Russian decks leak Latin words. A list counts as foreign only when every
-item is foreign, so a half-translated lesson still reads as clean.
+`npm run audit:monolingual` -> `docs/MONOLINGUAL_AUDIT.md` measures the rule platform-wide: **111 of 5,149
+lessons** still have a fully foreign vocabulary list (hy A1 55/55 and ka A1 55/55 as complete English
+shells, ru C2 1). A list counts as foreign only when every item is foreign, so a half-translated lesson
+still reads as clean.
 
 ## Chunk registry and retrieval plan
 `npm run chunks:build -- --course general-it-b1` -> `data/chunks/<course>.json` plus

@@ -8,7 +8,6 @@ another script is a defect, not a style choice. A vocabulary list counts as fore
 
 | course | lessons | lessons whose vocabulary is entirely foreign | lessons with a foreign cando |
 |---|---|---|---|
-| ru/general/A1.json | 142 | 102 | 0 |
 | hy/general/A1.json | 55 | 55 | 55 |
 | ka/general/A1.json | 55 | 55 | 55 |
 | ru/general/C2.json | 65 | 1 | 0 |
@@ -106,6 +105,7 @@ another script is a defect, not a style choice. A vocabulary list counts as fore
 | pt/general/B1.json | 65 | 0 | 0 |
 | pt/general/B2.json | 65 | 0 | 0 |
 | pt/general/C1.json | 65 | 0 | 0 |
+| ru/general/A1.json | 142 | 0 | 0 |
 | ru/general/A2.json | 65 | 0 | 0 |
 | ru/general/B1.json | 65 | 0 | 0 |
 | ru/general/B2.json | 65 | 0 | 0 |
@@ -140,9 +140,6 @@ another script is a defect, not a style choice. A vocabulary list counts as fore
 - **ka/general/A1.json**: 55/55 lessons fully foreign
   - Hello & Welcome — Hello, Hi, Good morning, Good afternoon
   - What is your name? — Name, What, How, Nice to meet you
-- **ru/general/A1.json**: 102/142 lessons fully foreign
-  - 6.1 Типы магазинов и места покупок — supermarket, bakery, pharmacy, shop
-  - 6.2 Категории товаров и наличие — product, food, clothes, medicine
 - **ru/general/C2.json**: 1/65 lessons fully foreign
   - Латинские крылатые выражения и высочайши — Prima facie, De facto, Raison d'être, Statu quo
 
@@ -160,9 +157,9 @@ written in Latin script. One leak is enough to flag the deck.
 | fr | 467 | 0 |
 | it | 195 | 0 |
 | pt | 65 | 0 |
-| ru | 142 | 99 |
-- ru `general-russian-a1` — recycling: Слова для повторения: ticket, price, time
-- ru `general-russian-a1` — recycling: Слова для повторения: feel, sick, tired
+| ru | 142 | 6 |
+- ru `general-russian-a1` — grammar: 1. Переведите «I like this book»:
+- ru `general-russian-a1` — grammar: 1. Переведите «I like this book»:
 
 ## What this cannot tell you
 
