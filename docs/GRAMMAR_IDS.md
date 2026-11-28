@@ -42,7 +42,7 @@ Limits: scoring is tuned on English. Other languages need their own synonym tabl
 | en | A1-B1 | 150 of 518 | 210 / 91 / 29 | Many A2/B1 lessons are title-only reading stories with no grammar text; use `roadmaps/grammar-en-*.json` for those |
 | fr | A1-C2 | 302 of 333 | 443 / 116 / 31 | B1-C2 manual titles match curriculum text almost word for word; A1 is the weak level |
 | ru | A1-C2 | 260 of 333 | 183 / 242 / 161 | Manuals have few B1-C2 pages; many B1-C2 ids come from drafted decisions, not high-confidence matches |
-| it | A1 | 121 of 142 | 79 / 110 / 55 | Only A1 is in scope (A2-C2 sit in `_out_of_scope`); manuals have 60 pages in total |
+| it | A1-B1 | 121 of 142 | 79 / 110 / 55 | A2 and B1 are now in scope (Italian stops at B1); A2 curriculum written, 13 units and 65 lessons; manuals have 77 pages |
 
 ### Other French tracks
 
@@ -58,9 +58,9 @@ High-confidence ids only (no drafted decisions). These curricula copy the manual
 
 These curricula are tiny (8-9 lessons each, A1 only), so coverage is small: es 5, de 1, pt 3 lessons got a high-confidence id (9 in total). The matcher uses its default tokenizer for them, so wording that differs from the page title (e.g. German "Verb sein (Präsens)") is missed rather than mismatched; a language-specific tokenizer would raise coverage. Medium matches are not applied. Review files: `docs/grammar-id-review/*-{es,de,pt}-general.*`.
 
-### Greek (el/general A1)
+### Greek (el/general A1-A2)
 
-A Greek tokenizer was added to the matcher (accent folding, final sigma, suffix stemming). 88 of 142 lessons get `grammarIds` from high-confidence matches (26 unique item-to-page links, all checked by hand; many lessons repeat the same grammar items). 112 medium matches are NOT applied: many are wrong (e.g. demonstrative pronouns matched to personal pronouns) and Greek has only 60 A1 manual pages. Review files: `docs/grammar-id-review/*-el-general.*`.
+A Greek tokenizer was added to the matcher (accent folding, final sigma, suffix stemming). 88 of 142 lessons get `grammarIds` from high-confidence matches (26 unique item-to-page links, all checked by hand; many lessons repeat the same grammar items). 112 medium matches are NOT applied: many are wrong (e.g. demonstrative pronouns matched to personal pronouns) and Greek has 60 A1 manual pages and 19 A2 pages; A2 is now in scope because Greek stops at A2. Review files: `docs/grammar-id-review/*-el-general.*`.
 
 ### Other Russian tracks
 
