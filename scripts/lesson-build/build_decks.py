@@ -22,24 +22,29 @@ REPO = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), 
 MANUALS = os.environ.get('COSY_MANUALS', '/workspace/COSYmanuals')
 MANUALS_URL = 'https://cosylanguages.github.io/COSYManuals/'
 
-LANGS = ('it', 'el')
+LANGS = ('it', 'el', 'ru')
 
 SETTINGS = {
     'it': dict(code='IT', folder='general-italian-{level}', track='Italiano Generale',
-               previous={'a1': 'il livello A0 e il modulo precedente',
+               previous={'a1': 'i primi moduli del corso',
                          'a2': 'il livello A1 e il modulo precedente',
                          'b1': 'il livello A2 e il modulo precedente'},
                last='il ripasso di fine corso'),
     'el': dict(code='EL', folder='general-greek-{level}', track='Ελληνικά Γενικά',
-               previous={'a1': 'το επίπεδο Α0 και η προηγούμενη ενότητα',
+               previous={'a1': 'οι πρώτες ενότητες του μαθήματος',
                          'a2': 'το επίπεδο Α1 και η προηγούμενη ενότητα',
                          'b1': 'το επίπεδο Α2 και η προηγούμενη ενότητα'},
                last='η επανάληψη στο τέλος του μαθήματος'),
+    'ru': dict(code='RU', folder='general-russian-{level}', track='Русский общий',
+               previous={'a1': 'предыдущие модули курса',
+                         'a2': 'уровень A1 и предыдущий модуль',
+                         'b1': 'уровень A2 и предыдущий модуль'},
+               last='повторение в конце курса'),
 }
 
 SCAFFOLD = {
     'it': dict(
-        recycled_default='Ripasso di {previous}.',
+        recycled_default='{previous}.',
         s1='1. Obiettivo e panoramica', s2='2. Ripasso e collegamento',
         s3='3. Lessico e espressioni chiave', s4='4. Pronuncia e ritmo',
         s5='5. Focus grammaticale e pratica guidata', s6='6. Lettura, ascolto e comprensione',
@@ -83,6 +88,9 @@ SCAFFOLD = {
                     '- Pubblico accademico: trasponila in un paragrafo di analisi.'),
         second_point='Secondo punto della lezione: {second}.', your_adaptation='Il tuo adattamento…',
         do_you='Sai già usare questa struttura?', homework='Compiti: ',
+        check_1='Ho capito la regola «{title}» e so fare un esempio mio.',
+        check_2='Uso le parole nuove della lezione in una frase.',
+        check_3='So fare una domanda sul tema e rispondere.',
         homework_default='Scrivi dieci righe usando «{title}», con almeno due frasi controllate sulla pagina del manuale.',
         next_lesson='Prossima lezione: {next}.',
         obj_structure='usare la struttura: {title}', obj_words='usare {n} parole nuove: {words}',
@@ -99,7 +107,7 @@ SCAFFOLD = {
         diff_seniors='Una scheda di riuso costruita sugli esempi del manuale.',
     ),
     'el': dict(
-        recycled_default='Επανάληψη του {previous}.',
+        recycled_default='{previous}.',
         s1='1. Στόχος και επισκόπηση', s2='2. Επανάληψη και σύνδεση',
         s3='3. Λεξιλόγιο και εκφράσεις-κλειδιά', s4='4. Προφορά και ρυθμός',
         s5='5. Γραμματική εστίαση και καθοδηγούμενη πρακτική', s6='6. Ανάγνωση, ακρόαση και κατανόηση',
@@ -143,6 +151,9 @@ SCAFFOLD = {
                     '- Ακαδημαϊκό κοινό: μεταφέρε τη σε παράγραφο ανάλυσης.'),
         second_point='Δεύτερο σημείο του μαθήματος: {second}.', your_adaptation='Η προσαρμογή σου…',
         do_you='Ξέρεις ήδη να χρησιμοποιείς αυτή τη δομή;', homework='Εργασίες: ',
+        check_1='Κατάλαβα τον κανόνα «{title}» και μπορώ να δώσω δικό μου παράδειγμα.',
+        check_2='Χρησιμοποιώ τις νέες λέξεις του μαθήματος σε μια φράση.',
+        check_3='Μπορώ να κάνω μια ερώτηση για το θέμα και να απαντήσω.',
         homework_default='Γράψε δέκα γραμμές χρησιμοποιώντας «{title}», με τουλάχιστον δύο φράσεις ελεγμένες στη σελίδα του εγχειριδίου.',
         next_lesson='Επόμενο μάθημα: {next}.',
         obj_structure='χρήση της δομής: {title}', obj_words='χρήση {n} νέων λέξεων: {words}',
@@ -158,11 +169,80 @@ SCAFFOLD = {
         diff_adults='Πέντε φράσεις μεταφερμένες σε επαγγελματικό πλαίσιο.',
         diff_seniors='Ένα φύλλο επανάχρησης χτισμένο στα παραδείγματα του εγχειριδίου.',
     ),
+    'ru': dict(
+        recycled_default='{previous}.',
+        s1='1. Цель и обзор', s2='2. Повторение и связь',
+        s3='3. Слова и выражения урока', s4='4. Произношение и ритм',
+        s5='5. Грамматика и управляемая практика', s6='6. Чтение, слушание и понимание',
+        s7='7. Свободная речь', s8='8. Частые ошибки и исправление',
+        s9='9. Как изменить задание', s10='10. Повторение и домашнее задание',
+        objective='Коммуникативная цель: {cando}',
+        overview='Обзор урока:\n- Уровень: {track} {level}\n- Модуль: {unit}\n- Время: {duration} минут\n- Код: {code}',
+        pair_prompt='В парах, три минуты: что вам уже говорит эта фраза? {example}',
+        pair_plain='В парах, три минуты: скажите цель своими словами.',
+        own_words='Ваша формулировка цели…',
+        prior='Уже известно: {recycled}', recycle_label='Слова для повторения: ',
+        recall='По памяти: что значит это слово и где вы его встречали?',
+        retrieval_head='Повторение: ответьте вслух на вопросы о том, что уже пройдено.',
+        retrieval_task='Выберите один вопрос и ответьте тремя фразами; потом повторите, не глядя.',
+        retrieval_answer='ваш ответ, три фразы',
+        vocab_context='{word} — значение и контекст', your_answer='Ваш ответ…',
+        vocab_head='Активные слова урока ({n}):',
+        vocab_sort='Разделите слова на две колонки: действия и предметы — против идей и оценок.',
+        vocab_columns='Действия и предметы: … / Идеи и оценки: …',
+        vocab_use='Используйте три слова в предложении, которое могло бы стоять в тексте на тему «{title}».',
+        pron_note='Замечание о произношении для этого урока:',
+        pron_clear='Произнесите чётко: {example}', pron_plain='Произнесите чётко.',
+        pron_read='Прочитайте вслух, потом запишите себя: ударение падает на гласный в полном слове, а не на частицу.',
+        pron_transcript='Прочитанная фраза (транскрипция или МФА)…',
+        focus='Тема: {title}.', guided='Управляемая практика: выберите правильный вариант.',
+        read='Читайте и слушайте: три примера в контексте.', observe='Что вы замечаете?',
+        state_rule='Сформулируйте правило одной фразой, не глядя в таблицу.',
+        rule_own='Правило одной фразой…', free='Свободная речь: {cando}',
+        criteria='Критерии успеха:\n{items}',
+        roleplay='Ролевая игра: говорите девяносто секунд; партнёр отмечает каждое употребление конструкции.',
+        production='Ваш текст (десять строк)…',
+        mistakes_head='Частые ошибки и исправление:',
+        no_mistakes='Для этой темы ошибок не записано.',
+        correct_these='Исправьте фразы: скажите, что не так, и дайте верный вариант.',
+        correction='Исправление и объяснение…', variants='Допустимые варианты:',
+        adapt='Измените то же задание для группы:',
+        adapt_body=('- Индивидуально: пять фраз с этой конструкцией по теме урока.\n'
+                    '- В парах: диалог из десяти реплик, где {second} держит разговор.\n'
+                    '- В группе: обсуждение на шесть минут, две команды, конструкция обязательна в каждой реплике.\n'
+                    '- Для взрослых: перенесите конструкцию в рабочую ситуацию.\n'
+                    '- Для учёбы: перенесите её в абзац анализа.'),
+        second_point='Вторая тема урока: {second}.', your_adaptation='Ваш вариант задания…',
+        do_you='Вы уже умеете пользоваться этой конструкцией?', homework='Домашнее задание: ',
+        check_1='Я понимаю правило «{title}» и могу привести свой пример.',
+        check_2='Я использую новые слова урока в коротком высказывании.',
+        check_3='Я могу задать вопрос по теме урока и ответить на него.',
+        homework_default='Напишите десять строк с «{title}»; проверьте не меньше двух фраз по странице руководства.',
+        next_lesson='Следующий урок: {next}.',
+        obj_structure='использовать конструкцию: {title}', obj_words='использовать {n} новых {noun}: {words}',
+        materials='Страницы грамматики COSYmanuals по теме «{title}»',
+        materials_second=' и {second}', materials_tail='; карточки слов, аудио, лист для чтения.',
+        assessment='Проверяется правильное употребление «{title}» и ясность устной речи.',
+        homework_short='Напишите десять строк с «{title}».',
+        upcoming='Следующий урок посвящён теме {next}.',
+        diff_individual='Карточка: пять фраз по теме урока.',
+        diff_group='Задание в парах или малой группе с этой конструкцией.',
+        diff_children='Одна фраза, которую нужно закончить, а потом прочитать вслух.',
+        diff_teens='Короткое обсуждение по теме урока.',
+        diff_adults='Пять фраз, перенесённых в рабочую ситуацию.',
+        diff_seniors='Карточка повторения по примерам руководства.',
+    ),
 }
 
-EXAMPLE_LABEL = {'it': r'^(Esempio|Example) \d+$', 'el': r'^(Παράδειγμα|Esempio|Example) \d+$'}
+EXAMPLE_LABEL = {'it': r'^(Esempio|Example) \d+$', 'el': r'^(Παράδειγμα|Esempio|Example) \d+$',
+                 'ru': r'^(Пример|Esempio|Example) \d+$'}
 
 
+CYRILLIC = {'а': 'a', 'б': 'b', 'в': 'v', 'г': 'g', 'д': 'd', 'е': 'e', 'ё': 'e', 'ж': 'zh',
+            'з': 'z', 'и': 'i', 'й': 'y', 'к': 'k', 'л': 'l', 'м': 'm', 'н': 'n', 'о': 'o',
+            'п': 'p', 'р': 'r', 'с': 's', 'т': 't', 'у': 'u', 'ф': 'f', 'х': 'kh', 'ц': 'ts',
+            'ч': 'ch', 'ш': 'sh', 'щ': 'shch', 'ъ': '', 'ы': 'y', 'ь': '', 'э': 'e', 'ю': 'yu',
+            'я': 'ya'}
 GREEK = {'α': 'a', 'β': 'v', 'γ': 'g', 'δ': 'd', 'ε': 'e', 'ζ': 'z', 'η': 'i', 'θ': 'th', 'ι': 'i',
          'κ': 'k', 'λ': 'l', 'μ': 'm', 'ν': 'n', 'ξ': 'x', 'ο': 'o', 'π': 'p', 'ρ': 'r', 'σ': 's',
          'ς': 's', 'τ': 't', 'υ': 'y', 'φ': 'f', 'χ': 'ch', 'ψ': 'ps', 'ω': 'o'}
@@ -172,6 +252,7 @@ def slug(text):
     s = unicodedata.normalize('NFD', text.lower())
     s = ''.join(c for c in s if unicodedata.category(c) != 'Mn')
     s = ''.join(GREEK.get(c, c) for c in s)
+    s = ''.join(CYRILLIC.get(c, c) for c in s)
     s = s.replace('&', ' e ').replace("'", '-').replace('’', '-')
     s = re.sub(r'[^a-z0-9]+', '-', s)
     return s.strip('-')
@@ -182,6 +263,22 @@ def page_for(lang, grammar_id):
     level, topic = parts[1], '-'.join(parts[2:])
     path = os.path.join(MANUALS, 'manuals', lang, 'grammar', level, 'topics', topic + '.html')
     return level, topic, manual_page.parse(open(path, encoding='utf-8').read())
+
+
+def in_language(text, lang):
+    """A curriculum field written in the wrong language would break the monolingual rule."""
+    if lang == 'ru':
+        return bool(re.search('[А-Яа-яЁё]', text))
+    if lang == 'el':
+        return bool(re.search('[Α-Ωα-ω]', text))
+    return True
+
+
+NUMERAL_NOUN = {
+    'it': lambda n: 'parole',
+    'el': lambda n: 'λέξεων',
+    'ru': lambda n: 'слов' if n % 10 in (0, 5, 6, 7, 8, 9) or 11 <= n % 100 <= 14 else ('слово' if n % 10 == 1 else 'слова'),
+}
 
 
 def teacher_note(notes, key):
@@ -236,15 +333,21 @@ def build_deck(lang, level, t, lesson, unit, next_title, code):
     settings = SETTINGS[lang]
     track = settings['track'].format(level=level.upper())
     returns = parse_returns(notes)
-    recycled = lesson.get('recycled') or t['recycled_default'].format(previous=settings['previous'][level])
+    recycled = lesson.get('recycled') or ''
+    if not in_language(recycled, lang):
+        recycled = t['recycled_default'].format(previous=settings['previous'].get(level, settings['previous']['a1']))
     deck_id = f'{lang}-{level}-{slug(lesson["title"])}'
     duration = lesson.get('duration_minutes', 60)
 
-    ex = page['examples']
+    ex = (page['examples']
+          or [{'label': '', 'text': r['example'], 'comment': ''} for r in page['table'][:3]]
+          or [{'label': '', 'text': word, 'comment': ''} for word in vocab[:3]])
     ex_lines = [ex_line(e, lang) for e in ex]
-    table_lines = [f"{r['element']} — {r['role']}: {r['example']}" for r in page['table'][:6]]
+    table_lines = [(f"{r['element']} — {r['role']}: {r['example']}" if r.get('role')
+                    else f"{r['element']} — {r.get('note', '')}") for r in page['table'][:6]]
     trap_lines = [f"❌ {x['wrong']} → ✅ {x['right']}" for x in page['traps'][:2]]
-    check = page['checklist'][:3]
+    check = page['checklist'][:3] or [t['check_1'].format(title=page['title'].lower()),
+                                      t['check_2'], t['check_3']]
     practice = page['practice'][:3]
     ccq = page['ccq'][:2]
     rule = page['rule'] or page['observe']
@@ -329,7 +432,7 @@ def build_deck(lang, level, t, lesson, unit, next_title, code):
         'defaultDuration': duration,
         'defaultMode': 'all',
         'objectives': [t['obj_structure'].format(title=page['title'].lower()),
-                       t['obj_words'].format(n=len(vocab), words=', '.join(vocab))],
+                       t['obj_words'].format(n=len(vocab), words=', '.join(vocab), noun=NUMERAL_NOUN[lang](len(vocab)))],
         'materials': (t['materials'].format(title=page['title'].lower())
                       + (t['materials_second'].format(second=second_title.lower()) if second else '')
                       + t['materials_tail']),
@@ -410,7 +513,7 @@ def main(lang, level, write=False, only=None, keep_roadmap=False):
 if __name__ == '__main__':
     ap = argparse.ArgumentParser()
     ap.add_argument('--lang', default='it', choices=LANGS)
-    ap.add_argument('--level', default='a2', choices=('a1', 'a2', 'b1'))
+    ap.add_argument('--level', default='a2', choices=('a1', 'a2', 'b1', 'b2', 'c1', 'c2'))
     ap.add_argument('--write', action='store_true')
     ap.add_argument('--only', nargs='+', help='regenerate only these lesson slugs')
     ap.add_argument('--keep-roadmap', action='store_true',

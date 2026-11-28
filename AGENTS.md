@@ -25,6 +25,93 @@ vocabulary appears in exactly one deck, and the `recycling` field holds prose ("
 A2 e del modulo precedente") on 130 decks, so nothing can check it. The audit is a floor, not proof:
 presence in text is not learner production.
 
+## Course coverage
+`npm run audit:coverage` -> `docs/COURSE_COVERAGE.md`, checked against `data/course-plan.json`
+(EN/FR/RU general A1-C2, IT A1-B1, EL A1-A2). There is no A0 level and no A0 curriculum file
+anywhere: the entry band is A1, and A1 courses carry 142-180 lessons, i.e. two blocks. Twelve
+`general-*-a0` manifest entries are pure placeholders.
+
+The A0 level does not exist and the manifest no longer claims it: the twelve `general-*-a0` entries and
+`grammar-en-a0` were deleted, `general-en-a0-a1` retired to `not_yet_available` (it has 48 decks under
+`lessons/general-english-a0` but no curriculum JSON), and `general-en-c1` hidden until built. The English
+entry band is `general-en-a1` (180 lessons from `curriculums/en/general/A1.json`). Manifest totals after
+the change: **169 entries, 50 visible, 2357/2859 lesson slots, 2167 lesson files** - the previous
+"2470 available lessons" included 65 C1 slots whose files never existed.
+
+Two things this audit corrected in earlier notes: `general-en-c1` is visible with **1 of 65**
+lessons (its roadmap lists 64 entries with an empty `lessonFile`, and an empty path used to join to
+the repo root and count as present), and Russian has **six curricula written** (A1 142 lessons)
+with no roadmap, so all six entries are hidden. English also carries the entry band twice:
+`general-en-a1` (180, from `curriculums/en/general/A1.json`) and `general-en-a0-a1` (48 decks under
+`lessons/general-english-a0`, from a curriculum id with no JSON file).
+
+## Russian A1 and the monolingual rule
+`build_decks.py --lang ru --level a1 --write` builds the 142 decks of `lessons/general-russian-a1/` and
+`roadmaps/general-ru-a1.json`; see `docs/RUSSIAN_A1_BUILD.md`. **Published** after two content passes:
+`scripts/content/fill_ru_a1_vocabulary.py` replaced 102 English vocabulary lists (module 6 listed
+`supermarket, bakery, pharmacy`; the curriculum now holds 868 Russian words) and
+`scripts/content/normalize_ru_a1_titles.py` turned `Раздел 0: Первые шаги (A0)`, `MODULE 1. ...` and
+`МОДУЛЬ 2. ...` into `Модуль N. Sentence case`. Both scripts are idempotent. The 142 decks carry no empty
+element; six still print an English quiz prompt, `Переведите «I like this book»:`, which lives in
+COSYmanuals and should become a Russian sentence.
+
+Russian A2 is published too: 65 decks, 13 modules, `docs/RUSSIAN_A2_BUILD.md`. The curriculum already read in
+Russian, but 25 lessons had no `grammarIds`, 40 cited the **A1** shelf (`ru-a1-proshedshee-vremya` for a
+lesson the A2 shelf answers with `ru-a2-proshedshee-vremya-i-vid`), the titles used three numbering schemes,
+381 vocabulary items were Title Case where A1 is lowercase, 16 can-do lines were bare infinitives and 15
+homework notes said `ты`. `scripts/grammar-ids/wire_ru_a2.py` and `scripts/content/normalize_ru_a2.py` fix
+all of it; the result is 131 ids over 57 pages (52 of the 55 A2 pages).
+Ten A2 pages carry no checklist block, which used to leave the cool-down slide empty: `build_decks.py` now
+falls back to three scaffold sentences (`check_1..check_3`, added for it, el and ru) when `page['checklist']`
+is empty, and its `recycled_default` no longer repeats the label that `prior` already prints.
+
+Russian B1 is published as well: 65 decks, `docs/RUSSIAN_B1_BUILD.md`. Most of its ids pointed a level down
+(the participles lesson cited `ru-a1-prilagatelnye`), so `scripts/grammar-ids/wire_ru_b1.py` gives all 65
+lessons 136 ids over 45 of the 47 B1 pages plus ten A2 spirals.
+`scripts/content/normalize_ru_level.py --level <A1|B1|...>` now carries the mechanical passes for every
+Russian level: unit titles to `Модуль N.`, vocabulary to lowercase, can-do to the third person (`Я могу X`
+and bare infinitives both), homework to the formal imperative, the English `recycled:` line, and the
+final-exam "vocabulary" that was really a description of the exam. It is idempotent; A2 is already clean.
+`build_decks.py` picks the Russian numeral form for the objectives line (1 слово, 3 слова, 6 слов), which
+`использовать 3 новых слов` had hard-coded wrong for A1's first unit.
+Russian B2 is published too: 65 decks, `docs/RUSSIAN_B2_BUILD.md`. 34 lessons had no ids and the rest
+pointed at B1 or A1; `wire_ru_b2.py` gives 131 ids over 57 points, using all 36 B2 pages. `build_decks.py`
+now takes `--level` up to c2 and carries a `previous` phrase per level (a B2 lesson without `recycled:`
+would have raised `KeyError`).
+Russian C1 and C2 are published as well: 130 decks, `docs/RUSSIAN_C1_C2_BUILD.md`. That completes the shelf:
+A1 142, A2 65, B1 65, B2 65, C1 65, C2 65 = 467 decks, 56/169 courses.
+C1 arrived with zero ids and one `grammar` string per lesson; `wire_ru_c1.py` gives each lesson the C1 page
+that *reframes* its point (the passive becomes agent removal and distancing syntax) plus the B2/B1 page that
+teaches the grammar underneath — 130 ids, all 28 C1 pages used. Its single-string `grammar` field is left as
+it is, so the curriculum still records one point while the deck shows two.
+C2 had ten lessons with no `grammar` and nine with no `vocabulary` at all (the device lessons); the nine now
+carry the metalanguage of their device (`инверсия, ритм, каденция`), added through
+`VOCABULARY_OVERRIDES` in `normalize_ru_level.py`. `wire_ru_c2.py` uses all 20 C2 pages.
+Reuse is the C1 weakness: 65 lessons over 28 pages means two pages carry eight lessons each.
+
+English general C1 and C2 are published too: 159 decks, `docs/ENGLISH_C1_C2_BUILD.md`, 58/169 courses.
+C1's roadmap was the legacy 65-entry course (one built deck, `.xml` paths) while the curriculum had moved to 94
+lessons with the old topics folded into unit 8; `build_en_b2_decks.py --level c1` now rebuilds roadmap and
+decks from the curriculum, and the legacy files stay in `lessons/english-c1/`. 29 C1 lessons had a `grammar`
+phrase and no id — `wire_en_c1.py` fixes them, mostly literally. C2 had no ids and no roadmap at all:
+`wire_en_c2.py` gives 130 ids over all 20 pages.
+`manual_page.parse` now falls back to `<div class="examples">`: 18 of the 26 English C1 pages use that wrapper
+instead of a section, which is why the first C1 build had 55 empty reading blocks while B1/B2 never did. The
+builder also falls back to examples when a page has no readable table, and to the checklist for an index page
+such as `confusing-grammar-guide`.
+Open on the English side: vocabulary case is mixed (194/1203 B2 items capitalised, some are proper nouns, so a
+blanket lowercase pass would damage *Shakespearean*); A2 leaves 81 of its 141 curriculum lessons unscheduled;
+exam, professional, relocation, travelling and spoken C2 are still hidden and unbuilt. Supporting changes: the Russian page frame in `manual_page.py`
+(`ul.gv-lines`, `p.gv-formula`, `section.examples`, `box mint` headings, `wrong-line`/`right-line`, and
+two-column reference tables) takes page coverage from 11 to 38 of the 39 ids the curriculum uses; a
+Cyrillic table in `slug()` (without it every deck id was `ru-a1----`); a 70-string `ru` scaffold; and
+`in_language()` so an English `recycled:` field cannot land on slide 2.
+
+`npm run audit:monolingual` -> `docs/MONOLINGUAL_AUDIT.md` measures the rule platform-wide: **111 of 5,149
+lessons** still have a fully foreign vocabulary list (hy A1 55/55 and ka A1 55/55 as complete English
+shells, ru C2 1). A list counts as foreign only when every item is foreign, so a half-translated lesson
+still reads as clean.
+
 ## Chunk registry and retrieval plan
 `npm run chunks:build -- --course general-it-b1` -> `data/chunks/<course>.json` plus
 `docs/CHUNK_REGISTRY_<course>.md`; `npm run chunks:plan -- --course general-it-b1` ->
