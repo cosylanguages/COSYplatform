@@ -163,10 +163,13 @@ repositories plus the proposed level model. Facts worth remembering before touch
   `scripts/data/recut-general-fr-b1.json` to the three places a unit title lives (curriculum unit,
   roadmap `unit` strings, deck `unit` fields). Dry run by default, idempotent, renames no file.
   After `--write`, run `npm run slots:report` or the unit-slot test fails on stale coverage.
-- `docs/FR_B1_RECUT.md` is a proposal, not applied: renaming FR B1 units 1/2/11 (ethics, life
-  story, money+rights) takes the course from 10/13 to 13/13 slots with no lesson, deck or id
-  change. Phase 2 (renaming the ten grammar-led lessons of units 1-2 to can-dos) renames deck
-  files and ids, so it needs an explicit decision.
+- The FR B1 re-cut is APPLIED: units 1, 2 and 11 are now "Éthique et dilemmes", "Mon parcours" and
+  "Argent, droits et démarches" (t21, t01, t06), with the 15 roadmap `unit` strings and 15 deck
+  `unit` fields updated. general-fr-b1 is the only course at 13/13 slots. Phase 2 (renaming the ten
+  grammar-led lessons of units 1-2 to can-dos) is NOT applied: it renames deck files and ids.
+- A recut spec (`scripts/data/recut-<course>.json`) duplicates theme/macroFunction with
+  `unit-metadata.json`, so a test fails unless both hold the same values. Update both when adding
+  a re-cut.
 - `slot-alignment.py --level B2 --grid B1` renders `docs/B2_SLOT_ALIGNMENT.md`; the test recomputes
   coverage for every committed report from the curricula.
 - Greek A2: units 1, 9-13 themed (remembrance, work, health, home, culture, revision); units 2-8

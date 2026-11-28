@@ -118,9 +118,29 @@ test('secondaryThemes is replaced in place without moving other keys', { skip: !
   fs.rmSync(dir, { recursive: true, force: true });
 });
 
-test('the shipped French B1 spec is a dry run that changes nothing', { skip: !hasPython }, () => {
+test('the shipped French B1 spec is already applied and stays inert', { skip: !hasPython }, () => {
   const result = spawnSync('python3', [script, '--course', 'general-fr-b1'], { encoding: 'utf8' });
-  assert.equal(result.status, 1);
-  assert.match(result.stdout, /3 unit\(s\), 15 roadmap entr\(ies\), 15 deck\(s\) to update/);
-  assert.equal(fs.readFileSync(path.join(root, 'curriculums', 'fr', 'general', 'B1.json'), 'utf8').includes('Éthique et dilemmes'), false);
+  assert.equal(result.status, 0, result.stdout);
+  assert.match(result.stdout, /0 unit\(s\), 0 roadmap entr\(ies\), 0 deck\(s\) to update/);
+});
+
+test('every recut spec agrees with the declared unit metadata', () => {
+  const dir = path.join(root, 'scripts', 'data');
+  const metadata = JSON.parse(fs.readFileSync(path.join(dir, 'unit-metadata.json'), 'utf8'));
+  const specs = fs.readdirSync(dir).filter((f) => f.startsWith('recut-') && f.endsWith('.json'));
+  assert.ok(specs.length > 0);
+  for (const file of specs) {
+    const spec = JSON.parse(fs.readFileSync(path.join(dir, file), 'utf8'));
+    const course = spec.course || file.replace(/^recut-|\.json$/g, '');
+    for (const [number, unit] of Object.entries(spec.units)) {
+      const declared = metadata[course] && metadata[course].units[number];
+      assert.ok(declared, `${course} unit ${number} missing from unit-metadata`);
+      for (const key of ['theme', 'macroFunction']) {
+        if (key in unit) assert.equal(declared[key], unit[key], `${course} unit ${number} ${key}`);
+      }
+      if ('secondaryThemes' in unit) {
+        assert.deepEqual(declared.secondaryThemes || [], unit.secondaryThemes);
+      }
+    }
+  }
 });

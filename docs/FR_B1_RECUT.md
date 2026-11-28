@@ -1,7 +1,13 @@
 # French B1 re-cut — proposal
 
 Goal: bring `general-fr-b1` to the 13-slot grid (`cefr/data/unit-slots.json`) without adding,
-removing or rewriting a single lesson. This document is the proposal; nothing here is applied yet.
+removing or rewriting a single lesson.
+
+**Phase 1 is applied** (2026-11-28): units 1, 2 and 11 were retitled and re-themed together with the
+15 roadmap entries and 15 deck `unit` fields. `general-fr-b1` now reports **13/13 slots, 0
+duplicates, 0 unthemed units, 0 off-grid units** in `docs/B1_SLOT_ALIGNMENT.md`. No lesson title,
+lesson id, deck file or slide changed. Phase 2 (renaming the ten grammar-led lessons) is still not
+applied.
 
 Measured with `python3 scripts/slot-alignment.py --level B1`; evidence files in
 `docs/B1_SLOT_ALIGNMENT.md`, `docs/vocab-id-map/mapping-general-fr-b1.json`,
@@ -48,12 +54,11 @@ Units 3–10, 12 and 13 keep their titles, themes and lessons. Result: **13 of 1
 
 ## 4. Applying it
 
-The pass is written and dry-run only until `--write`:
+The pass ran as:
 
 ```bash
-python3 scripts/apply-recut.py --course general-fr-b1          # prints 3 / 15 / 15, exit 1
-python3 scripts/apply-recut.py --course general-fr-b1 --write  # applies all three places
-npm run slots:report                                           # refresh the coverage reports
+npm run recut:check   # now prints 0 / 0 / 0 and exits 0
+npm run slots:report  # refresh the coverage reports
 ```
 
 Declared in `scripts/data/recut-general-fr-b1.json`; `tests/apply-recut.test.js` proves the three
