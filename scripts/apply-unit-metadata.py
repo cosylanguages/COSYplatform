@@ -48,17 +48,27 @@ def load_theme_ids() -> set[str]:
 
 
 def ordered(unit: dict, meta: dict) -> collections.OrderedDict:
-    """Rebuild the unit dict with the metadata right after `title`, every other key untouched."""
+    """Rebuild the unit dict with the metadata right after `title` / `theme`, other keys untouched.
+
+    Declared values win: an existing `theme` is replaced, not preserved, otherwise a re-theme
+    would silently report "up to date". Missing keys land in canonical order:
+    title, theme, secondaryThemes, macroFunction.
+    """
+    extras = ("theme", "secondaryThemes", "macroFunction")
+    declared = {k: meta[k] for k in extras if meta.get(k) not in (None, [], "")}
     merged = collections.OrderedDict()
     for key, value in unit.items():
-        merged[key] = value
-        if key == "title":
-            for extra in ("theme", "secondaryThemes", "macroFunction"):
-                if meta.get(extra) not in (None, [], ""):
-                    merged[extra] = meta[extra]
-    for extra in ("theme", "secondaryThemes", "macroFunction"):
-        if extra not in merged and meta.get(extra) not in (None, [], ""):
-            merged[extra] = meta[extra]
+        merged[key] = declared.get(key, value)
+        anchor = key == "title" and "theme" in declared and "theme" not in unit
+        if key == "theme" or anchor:
+            if anchor:
+                merged["theme"] = declared["theme"]
+            for extra in ("secondaryThemes", "macroFunction"):
+                if extra not in unit and extra in declared:
+                    merged[extra] = declared[extra]
+    for extra in extras:
+        if extra not in merged and extra in declared:
+            merged[extra] = declared[extra]
     return merged
 
 
