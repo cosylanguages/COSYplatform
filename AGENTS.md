@@ -39,9 +39,9 @@ of the French B1 curriculum shipped with `grammarIds: null`; they were filled in
 - French: A1 142 lessons, A2 65, B1 65 (published in the manifest), B2 65 lessons (published as General French B2).
 - French C1, C2: curriculum and manual scaffolding only, no lesson files.
 - Manual coverage, verified by counting `Voici un exemple clair` in each topic file:
-  A1 202/202, A2 202/202, B1 246/246 complete; B2 112/209 (the 112 the course cites are all
-  written); C1 6/129; C2 0/121. Earlier notes claiming 144 C1 and 137 C2 pages were wrong;
-  the real counts are 129 and 121, and every one of them is still boilerplate.
+  A1 202/202, A2 202/202, B1 246/246, C1 129/129 complete; B2 112/209 (the 112 the course cites
+  are all written; 97 uncited stubs remain); C2 0/121. Earlier notes claiming 144 C1 and 137 C2
+  pages were wrong; the real counts are 129 and 121.
 - C1 and C2 lessons do not use `grammarIds` at all. They carry a free-text `grammar` field
   (e.g. "Voix passive et substituts du passif (se faire, se voir + infinitif)"), so no course
   link points at a manual page and the platform cannot resolve them the way A1-B2 do. Only the
