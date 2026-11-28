@@ -52,6 +52,9 @@ SCAFFOLD = {
         own_words="La tua versione dell'obiettivo…",
         prior='Già in possesso: {recycled}', recycle_label='Lessico da riattivare: ',
         recall="A memoria: che cosa significa questa parola e dove l'hai incontrata?",
+        retrieval_head='Riattiva: rispondi ad alta voce alle domande sui blocchi già incontrati.',
+        retrieval_task='Scegli una domanda e rispondi in tre frasi; poi riprova senza guardare.',
+        retrieval_answer='la tua risposta, tre frasi',
         vocab_context='{word} — significato e contesto', your_answer='La tua risposta…',
         vocab_head='Lessico attivo della lezione ({n} elementi):',
         vocab_sort='Dividi le parole in due colonne: azioni e cose, contro idee e posizioni.',
@@ -109,6 +112,9 @@ SCAFFOLD = {
         own_words='Η δική σου διατύπωση του στόχου…',
         prior='Ήδη γνωστά: {recycled}', recycle_label='Λεξιλόγιο προς ενεργοποίηση: ',
         recall='Από μνήμης: τι σημαίνει αυτή η λέξη και πού τη συνάντησες;',
+        retrieval_head='Επανάληψη: απάντησε δυνατά στις ερωτήσεις για ό,τι έχεις ήδη μάθει.',
+        retrieval_task='Διάλεξε μια ερώτηση και απάντησε σε τρεις προτάσεις· μετά δοκίμασε χωρίς να κοιτάς.',
+        retrieval_answer='η απάντησή σου, τρεις προτάσεις',
         vocab_context='{word} — σημασία και πλαίσιο', your_answer='Η απάντησή σου…',
         vocab_head='Ενεργό λεξιλόγιο του μαθήματος ({n} στοιχεία):',
         vocab_sort='Χώρισε τις λέξεις σε δύο στήλες: πράξεις και πράγματα, έναντι ιδεών και θέσεων.',
@@ -188,6 +194,36 @@ def ex_line(e, lang):
     return head + e['text'] + (f" ({e['comment']})" if e['comment'] else '')
 
 
+def parse_returns(notes):
+    """The curriculum's retrieval set: returns: [{"block": id, "q": question}, ...]"""
+    match = re.search(r'returns:\s*(\[.*?\])\s*$', notes or '', re.S | re.M)
+    if not match:
+        return []
+    try:
+        data = json.loads(match.group(1))
+    except ValueError:
+        return []
+    return [r for r in data if isinstance(r, dict) and r.get('q') and r.get('block')]
+
+
+def recycling_elements(t, returns, vocab, recycled):
+    """Stage 2. A retrieval set replaces the generic recall when the curriculum provides one."""
+    if not returns:
+        return [
+            {'type': 'instruction', 'content': t['prior'].format(recycled=recycled)},
+            {'type': 'blockquote', 'content': t['recycle_label'] + ', '.join(vocab[:3])},
+            {'type': 'instruction', 'content': t['recall']},
+            {'type': 'input', 'placeholder': t['vocab_context'].format(word=vocab[0]) if vocab else t['your_answer']},
+        ]
+    questions = '\n'.join(f"{i}. {r['q']}" for i, r in enumerate(returns, 1))
+    return [
+        {'type': 'instruction', 'content': t['retrieval_head']},
+        {'type': 'blockquote', 'content': questions, 'usesChunk': [r['block'] for r in returns]},
+        {'type': 'instruction', 'content': t['retrieval_task']},
+        {'type': 'input', 'placeholder': t['retrieval_answer']},
+    ]
+
+
 def build_deck(lang, level, t, lesson, unit, next_title, code):
     ids = lesson['grammarIds']
     pages = [page_for(lang, i) for i in ids]
@@ -199,6 +235,7 @@ def build_deck(lang, level, t, lesson, unit, next_title, code):
     homework_note = teacher_note(notes, 'hw')
     settings = SETTINGS[lang]
     track = settings['track'].format(level=level.upper())
+    returns = parse_returns(notes)
     recycled = lesson.get('recycled') or t['recycled_default'].format(previous=settings['previous'][level])
     deck_id = f'{lang}-{level}-{slug(lesson["title"])}'
     duration = lesson.get('duration_minutes', 60)
@@ -222,11 +259,8 @@ def build_deck(lang, level, t, lesson, unit, next_title, code):
              {'type': 'instruction', 'content': (t['pair_prompt'].format(example=ex[0]['text']) if ex else t['pair_plain'])},
              {'type': 'input', 'placeholder': t['own_words']}]},
         {'id': f'{deck_id}-slide-2', 'title': t['s2'], 'stage': 'recycling',
-         'duration': duration, 'mode': 'all', 'elements': [
-             {'type': 'instruction', 'content': t['prior'].format(recycled=recycled)},
-             {'type': 'blockquote', 'content': t['recycle_label'] + ', '.join(vocab[:3])},
-             {'type': 'instruction', 'content': t['recall']},
-             {'type': 'input', 'placeholder': t['vocab_context'].format(word=vocab[0]) if vocab else t['your_answer']}]},
+         'duration': duration, 'mode': 'all',
+         'elements': recycling_elements(t, returns, vocab, recycled)},
         {'id': f'{deck_id}-slide-3', 'title': t['s3'], 'stage': 'input',
          'duration': duration, 'mode': 'all', 'elements': [
              {'type': 'instruction', 'content': t['vocab_head'].format(n=len(vocab))},
@@ -301,7 +335,9 @@ def build_deck(lang, level, t, lesson, unit, next_title, code):
                       + t['materials_tail']),
         'assessment': t['assessment'].format(title=page['title'].lower()),
         'homework': homework_note or t['homework_short'].format(title=page['title'].lower()),
-        'recycling': {'prior': recycled, 'next': t['upcoming'].format(next=next_title.lower())},
+        'recycling': {'prior': ', '.join(r['block'].split(':')[-1].replace('-', ' ') for r in returns) if returns else recycled,
+                      **({'priorBlocks': [r['block'] for r in returns]} if returns else {}),
+                      'next': t['upcoming'].format(next=next_title.lower())},
         'differentiation': {
             'individual': t['diff_individual'],
             'group': t['diff_group'],

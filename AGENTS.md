@@ -43,8 +43,10 @@ Italian B1 lessons 2-5 now carry a hand-written retrieval set: `returns: [{block
 curriculum `teacher_notes`, and the same questions on deck slide 2 in a blockquote with
 `usesChunk`, plus `recycling.prior` naming the blocks and `recycling.priorBlocks` holding the ids.
 `docs/PILOT_RETRIEVAL_IT_B1_UNIT1.md` has the 28 questions and what reading them revealed. Deck
-text was read from the curriculum note, so the two cannot diverge. A rebuild from COSYmanuals still
-drops them: the builders do not know `returns:` yet.
+text was read from the curriculum note, so the two cannot diverge. `scripts/lesson-build/build_decks.py`
+now parses `returns:` (`parse_returns`, `recycling_elements`) and renders the retrieval slide, so a
+rebuild keeps the questions instead of dropping them; `tests/retrieval-returns.test.js` covers it.
+Realms still to re-run: a full rebuild needs the COSYmanuals checkout.
 
 The planner now caps returns per source lesson (3) and per domain (2), relaxing the domain cap only
 to reach four questions. Italian B1 lessons 2-10 carry 40 hand-written questions over 26 blocks.
