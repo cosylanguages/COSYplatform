@@ -4,7 +4,7 @@
   "level": "B1",
   "language": "it",
   "unit": "Unità 1: Raccontare e collegare",
-  "canDo": "Collegare le parti di un racconto con i connettivi.",
+  "canDo": "Raccontare una storia con un inizio, un problema e una fine, collegando le parti tra loro.",
   "defaultDuration": 60,
   "defaultMode": "all",
   "objectives": [
@@ -15,8 +15,14 @@
   "assessment": "Verifica l'uso corretto di «connettivi testuali ed argomentativi» e la chiarezza dell'esposizione orale.",
   "homework": "Scrivi dieci righe usando «connettivi testuali ed argomentativi».",
   "recycling": {
-    "prior": "Lessico del livello A2 e del modulo precedente",
-    "next": "La lezione successiva tratta gerundio e participio."
+    "prior": "già, prima, quando, Passato prossimo e imperfetto insieme",
+    "next": "La lezione successiva tratta gerundio e participio.",
+    "priorBlocks": [
+      "cosydata:it:gia:adverb",
+      "cosydata:it:prima:adverb",
+      "cosydata:it:quando:adverb",
+      "grammar:it-a2-passato-prossimo-vs-imperfetto"
+    ]
   },
   "differentiation": {
     "individual": "Una scheda: cinque frasi sul tema della lezione.",
@@ -55,7 +61,7 @@
       "elements": [
         {
           "type": "instruction",
-          "content": "Obiettivo comunicativo: Collegare le parti di un racconto con i connettivi."
+          "content": "Obiettivo comunicativo: Raccontare una storia con un inizio, un problema e una fine, collegando le parti tra loro."
         },
         {
           "type": "blockquote",
@@ -80,19 +86,25 @@
       "elements": [
         {
           "type": "instruction",
-          "content": "Già in possesso: Lessico del livello A2 e del modulo precedente"
+          "content": "Riattiva: rispondi ad alta voce alle domande sui blocchi già incontrati."
         },
         {
           "type": "blockquote",
-          "content": "Lessico da riattivare: tuttavia, inoltre, quindi"
+          "content": "1. Che cosa avevi già fatto oggi prima di arrivare a lezione?\n2. Che cosa fai sempre prima di uscire di casa?\n3. Che cosa stavi facendo quando hai sentito l'ultima notizia?\n4. Racconta un pomeriggio di dieci anni fa: com'era la giornata e che cosa è successo all'improvviso?",
+          "usesChunk": [
+            "cosydata:it:gia:adverb",
+            "cosydata:it:prima:adverb",
+            "cosydata:it:quando:adverb",
+            "grammar:it-a2-passato-prossimo-vs-imperfetto"
+          ]
         },
         {
           "type": "instruction",
-          "content": "A memoria: che cosa significa questa parola e dove l'hai incontrata?"
+          "content": "Scegli una domanda e rispondi in tre frasi; poi riprova senza guardare."
         },
         {
           "type": "input",
-          "placeholder": "tuttavia — significato e contesto"
+          "placeholder": "la tua risposta, tre frasi"
         }
       ]
     },
@@ -218,7 +230,7 @@
       "elements": [
         {
           "type": "instruction",
-          "content": "Produzione libera: Collegare le parti di un racconto con i connettivi."
+          "content": "Produzione libera: Raccontare una storia con un inizio, un problema e una fine, collegando le parti tra loro."
         },
         {
           "type": "blockquote",

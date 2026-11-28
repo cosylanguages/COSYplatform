@@ -4,7 +4,7 @@
   "level": "B1",
   "language": "it",
   "unit": "Unità 2: Il congiuntivo presente",
-  "canDo": "Distinguere relativa certa e relativa ipotetica.",
+  "canDo": "Descrivere qualcosa che si sta ancora cercando e qualcuno che non si conosce.",
   "defaultDuration": 60,
   "defaultMode": "all",
   "objectives": [
@@ -15,8 +15,18 @@
   "assessment": "Verifica l'uso corretto di «il congiuntivo nelle frasi relative» e la chiarezza dell'esposizione orale.",
   "homework": "Scrivi dieci righe usando «il congiuntivo nelle frasi relative».",
   "recycling": {
-    "prior": "Lessico del livello A2 e del modulo precedente",
-    "next": "La lezione successiva tratta l'esortativo e gli auguri."
+    "prior": "sebbene, a meno che, Concessione, scopo, condizione, Verbi di opinione e volontà, Dislocazione, Passato prossimo e imperfetto insieme, Trapassato per l'anteriorità, spero che",
+    "next": "La lezione successiva tratta l'esortativo e gli auguri.",
+    "priorBlocks": [
+      "cosydata:it:sebbene:conjunction",
+      "cosydata:it:a-meno-che:phrase",
+      "grammar:it-b1-congiunzioni-con-congiuntivo",
+      "grammar:it-b1-verbi-che-reggono-il-congiuntivo",
+      "grammar:it-b1-ordine-delle-parole-e-enfasi",
+      "grammar:it-a2-passato-prossimo-vs-imperfetto",
+      "grammar:it-a2-trapassato-prossimo",
+      "pending:it:spero-che"
+    ]
   },
   "differentiation": {
     "individual": "Una scheda: cinque frasi sul tema della lezione.",
@@ -55,7 +65,7 @@
       "elements": [
         {
           "type": "instruction",
-          "content": "Obiettivo comunicativo: Distinguere relativa certa e relativa ipotetica."
+          "content": "Obiettivo comunicativo: Descrivere qualcosa che si sta ancora cercando e qualcuno che non si conosce."
         },
         {
           "type": "blockquote",
@@ -80,19 +90,29 @@
       "elements": [
         {
           "type": "instruction",
-          "content": "Già in possesso: Lessico del livello A2 e del modulo precedente"
+          "content": "Riattiva: rispondi ad alta voce alle domande sui blocchi già incontrati."
         },
         {
           "type": "blockquote",
-          "content": "Lessico da riattivare: cerco un, non c'è nessuno che, l'unico che"
+          "content": "1. Racconta un progetto che porti avanti nonostante una difficoltà: «Sebbene…»\n2. Racconta un programma che dipende da una condizione: «Domani parto, a meno che…»\n3. Spiega a che scopo fai qualcosa: «Lo faccio affinché…»\n4. Esprimi tre opinioni su un film, con tre verbi diversi di opinione.\n5. Metti in rilievo una cosa che hai comprato di recente: «Quella borsa, l'ho comprata…»\n6. Racconta un pomeriggio di dieci anni fa: com'era la giornata e che cosa è successo all'improvviso?\n7. Ieri sei arrivato a casa e qualcuno aveva già preparato la cena: racconta che cosa aveva già fatto.\n8. Che cosa speri che succeda l'anno prossimo?",
+          "usesChunk": [
+            "cosydata:it:sebbene:conjunction",
+            "cosydata:it:a-meno-che:phrase",
+            "grammar:it-b1-congiunzioni-con-congiuntivo",
+            "grammar:it-b1-verbi-che-reggono-il-congiuntivo",
+            "grammar:it-b1-ordine-delle-parole-e-enfasi",
+            "grammar:it-a2-passato-prossimo-vs-imperfetto",
+            "grammar:it-a2-trapassato-prossimo",
+            "pending:it:spero-che"
+          ]
         },
         {
           "type": "instruction",
-          "content": "A memoria: che cosa significa questa parola e dove l'hai incontrata?"
+          "content": "Scegli una domanda e rispondi in tre frasi; poi riprova senza guardare."
         },
         {
           "type": "input",
-          "placeholder": "cerco un — significato e contesto"
+          "placeholder": "la tua risposta, tre frasi"
         }
       ]
     },
@@ -252,7 +272,7 @@
       "elements": [
         {
           "type": "instruction",
-          "content": "Produzione libera: Distinguere relativa certa e relativa ipotetica."
+          "content": "Produzione libera: Descrivere qualcosa che si sta ancora cercando e qualcuno che non si conosce."
         },
         {
           "type": "blockquote",

@@ -1,0 +1,5660 @@
+{
+  "course": "general-it-b1",
+  "lang": "it",
+  "level": "B1",
+  "plan": [
+    {
+      "number": 1,
+      "unit": 1,
+      "code": "IT-B1-001",
+      "title": "Tempi del passato nel racconto",
+      "introduces": [
+        "pending:it:racconto",
+        "pending:it:sfondo",
+        "pending:it:episodio",
+        "pending:it:improvviso",
+        "pending:it:intanto",
+        "pending:it:frattempo",
+        "pending:it:svolta",
+        "pending:it:ricordo",
+        "grammar:it-a2-passato-prossimo-vs-imperfetto",
+        "grammar:it-a2-trapassato-prossimo"
+      ],
+      "returns": []
+    },
+    {
+      "number": 2,
+      "unit": 1,
+      "code": "IT-B1-002",
+      "title": "L'anteriorità nel racconto",
+      "introduces": [
+        "cosydata:it:gia:adverb",
+        "cosydata:it:prima:adverb",
+        "pending:it:ancora-non",
+        "cosydata:it:quando:adverb",
+        "pending:it:dopo-che",
+        "cosydata:it:precedente:adjective",
+        "pending:it:antefatto",
+        "pending:it:conclusione"
+      ],
+      "returns": [
+        {
+          "id": "grammar:it-a2-passato-prossimo-vs-imperfetto",
+          "text": "Passato prossimo e imperfetto insieme",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 1,
+          "introduced_in": "IT-B1-001",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "past"
+        },
+        {
+          "id": "grammar:it-a2-trapassato-prossimo",
+          "text": "Trapassato per l'anteriorità",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 1,
+          "introduced_in": "IT-B1-001",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "past"
+        },
+        {
+          "id": "pending:it:intanto",
+          "text": "intanto",
+          "kind": "word",
+          "status": "unresolved",
+          "introduced_at": 1,
+          "introduced_in": "IT-B1-001",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "past"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "unit": 1,
+      "code": "IT-B1-003",
+      "title": "I connettivi del racconto",
+      "introduces": [
+        "cosydata:it:tuttavia:adverb",
+        "cosydata:it:inoltre:idiom",
+        "cosydata:it:quindi:adverb",
+        "cosydata:it:infatti:phrase",
+        "pending:it:dunque",
+        "cosydata:it:invece:idiom",
+        "pending:it:pertanto",
+        "cosydata:it:comunque:idiom",
+        "grammar:it-b1-connettivi-testuali"
+      ],
+      "returns": [
+        {
+          "id": "cosydata:it:gia:adverb",
+          "text": "già",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 2,
+          "introduced_in": "IT-B1-002",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "past"
+        },
+        {
+          "id": "cosydata:it:prima:adverb",
+          "text": "prima",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 2,
+          "introduced_in": "IT-B1-002",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "past"
+        },
+        {
+          "id": "cosydata:it:quando:adverb",
+          "text": "quando",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 2,
+          "introduced_in": "IT-B1-002",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "past"
+        },
+        {
+          "id": "grammar:it-a2-passato-prossimo-vs-imperfetto",
+          "text": "Passato prossimo e imperfetto insieme",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 1,
+          "introduced_in": "IT-B1-001",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "past"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "unit": 1,
+      "code": "IT-B1-004",
+      "title": "Gerundio e participio",
+      "introduces": [
+        "cosydata:it:mentre:conjunction",
+        "pending:it:pur",
+        "pending:it:essendo",
+        "pending:it:avendo",
+        "pending:it:finito",
+        "cosydata:it:visto:noun",
+        "pending:it:considerato",
+        "cosydata:it:durante:preposition",
+        "grammar:it-b1-gerundio-e-participio"
+      ],
+      "returns": [
+        {
+          "id": "cosydata:it:tuttavia:adverb",
+          "text": "tuttavia",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 3,
+          "introduced_in": "IT-B1-003",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "connector"
+        },
+        {
+          "id": "cosydata:it:inoltre:idiom",
+          "text": "inoltre",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 3,
+          "introduced_in": "IT-B1-003",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "connector"
+        },
+        {
+          "id": "cosydata:it:gia:adverb",
+          "text": "già",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 2,
+          "introduced_in": "IT-B1-002",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "past"
+        },
+        {
+          "id": "cosydata:it:prima:adverb",
+          "text": "prima",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 2,
+          "introduced_in": "IT-B1-002",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "past"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "unit": 1,
+      "code": "IT-B1-005",
+      "title": "L'ordine delle parole e l'enfasi",
+      "introduces": [
+        "pending:it:e-che",
+        "pending:it:quanto-a",
+        "pending:it:proprio",
+        "pending:it:soprattutto",
+        "pending:it:rilievo",
+        "pending:it:enfasi",
+        "pending:it:tema",
+        "cosydata:it:commento:noun",
+        "grammar:it-b1-ordine-delle-parole-e-enfasi"
+      ],
+      "returns": [
+        {
+          "id": "cosydata:it:mentre:conjunction",
+          "text": "mentre",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 4,
+          "introduced_in": "IT-B1-004",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "manner"
+        },
+        {
+          "id": "cosydata:it:visto:noun",
+          "text": "visto",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 4,
+          "introduced_in": "IT-B1-004",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "manner"
+        },
+        {
+          "id": "cosydata:it:tuttavia:adverb",
+          "text": "tuttavia",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 3,
+          "introduced_in": "IT-B1-003",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "connector"
+        },
+        {
+          "id": "cosydata:it:inoltre:idiom",
+          "text": "inoltre",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 3,
+          "introduced_in": "IT-B1-003",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "connector"
+        },
+        {
+          "id": "grammar:it-a2-passato-prossimo-vs-imperfetto",
+          "text": "Passato prossimo e imperfetto insieme",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 1,
+          "introduced_in": "IT-B1-001",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "past"
+        },
+        {
+          "id": "grammar:it-a2-trapassato-prossimo",
+          "text": "Trapassato per l'anteriorità",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 1,
+          "introduced_in": "IT-B1-001",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "past"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "unit": 2,
+      "code": "IT-B1-006",
+      "title": "Le forme del congiuntivo presente",
+      "introduces": [
+        "pending:it:che-io-sia",
+        "pending:it:che-tu-abbia",
+        "pending:it:che-vada",
+        "pending:it:che-faccia",
+        "pending:it:che-possa",
+        "pending:it:speranza",
+        "pending:it:dubbio",
+        "pending:it:possibilita",
+        "grammar:it-b1-congiuntivo-presente"
+      ],
+      "returns": [
+        {
+          "id": "grammar:it-b1-ordine-delle-parole-e-enfasi",
+          "text": "Dislocazione",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 5,
+          "introduced_in": "IT-B1-005",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "frame:it-b1-ordine-delle-parole-e-enfasi"
+        },
+        {
+          "id": "cosydata:it:mentre:conjunction",
+          "text": "mentre",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 4,
+          "introduced_in": "IT-B1-004",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "manner"
+        },
+        {
+          "id": "cosydata:it:visto:noun",
+          "text": "visto",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 4,
+          "introduced_in": "IT-B1-004",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "manner"
+        },
+        {
+          "id": "cosydata:it:gia:adverb",
+          "text": "già",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 2,
+          "introduced_in": "IT-B1-002",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "past"
+        },
+        {
+          "id": "cosydata:it:prima:adverb",
+          "text": "prima",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 2,
+          "introduced_in": "IT-B1-002",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "past"
+        },
+        {
+          "id": "pending:it:e-che",
+          "text": "è che",
+          "kind": "collocation",
+          "status": "unresolved",
+          "introduced_at": 5,
+          "introduced_in": "IT-B1-005",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
+        },
+        {
+          "id": "pending:it:quanto-a",
+          "text": "quanto a",
+          "kind": "collocation",
+          "status": "unresolved",
+          "introduced_at": 5,
+          "introduced_in": "IT-B1-005",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "unit": 2,
+      "code": "IT-B1-007",
+      "title": "I verbi che reggono il congiuntivo",
+      "introduces": [
+        "pending:it:penso-che",
+        "pending:it:credo-che",
+        "pending:it:spero-che",
+        "pending:it:temo-che",
+        "pending:it:mi-sembra-che",
+        "pending:it:e-importante-che",
+        "pending:it:e-possibile-che",
+        "pending:it:suppongo-che",
+        "grammar:it-b1-verbi-che-reggono-il-congiuntivo"
+      ],
+      "returns": [
+        {
+          "id": "grammar:it-b1-congiuntivo-presente",
+          "text": "Coniugazioni regolari",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 6,
+          "introduced_in": "IT-B1-006",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "frame:it-b1-congiuntivo-presente"
+        },
+        {
+          "id": "grammar:it-b1-ordine-delle-parole-e-enfasi",
+          "text": "Dislocazione",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 5,
+          "introduced_in": "IT-B1-005",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "frame:it-b1-ordine-delle-parole-e-enfasi"
+        },
+        {
+          "id": "cosydata:it:tuttavia:adverb",
+          "text": "tuttavia",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 3,
+          "introduced_in": "IT-B1-003",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "connector"
+        },
+        {
+          "id": "cosydata:it:inoltre:idiom",
+          "text": "inoltre",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 3,
+          "introduced_in": "IT-B1-003",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "connector"
+        },
+        {
+          "id": "pending:it:che-io-sia",
+          "text": "che io sia",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "introduced_at": 6,
+          "introduced_in": "IT-B1-006",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "subjunctive"
+        },
+        {
+          "id": "pending:it:che-tu-abbia",
+          "text": "che tu abbia",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "introduced_at": 6,
+          "introduced_in": "IT-B1-006",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
+        },
+        {
+          "id": "pending:it:e-che",
+          "text": "è che",
+          "kind": "collocation",
+          "status": "unresolved",
+          "introduced_at": 5,
+          "introduced_in": "IT-B1-005",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "general"
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "unit": 2,
+      "code": "IT-B1-008",
+      "title": "Le congiunzioni che vogliono il congiuntivo",
+      "introduces": [
+        "pending:it:benche",
+        "cosydata:it:sebbene:conjunction",
+        "pending:it:affinche",
+        "pending:it:purche",
+        "cosydata:it:a-meno-che:phrase",
+        "pending:it:prima-che",
+        "pending:it:senza-che",
+        "pending:it:nonostante",
+        "grammar:it-b1-congiunzioni-con-congiuntivo"
+      ],
+      "returns": [
+        {
+          "id": "grammar:it-b1-verbi-che-reggono-il-congiuntivo",
+          "text": "Verbi di opinione e volontà",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 7,
+          "introduced_in": "IT-B1-007",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "frame:it-b1-verbi-che-reggono-il-congiuntivo"
+        },
+        {
+          "id": "grammar:it-b1-congiuntivo-presente",
+          "text": "Coniugazioni regolari",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 6,
+          "introduced_in": "IT-B1-006",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "frame:it-b1-congiuntivo-presente"
+        },
+        {
+          "id": "cosydata:it:mentre:conjunction",
+          "text": "mentre",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 4,
+          "introduced_in": "IT-B1-004",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "manner"
+        },
+        {
+          "id": "cosydata:it:visto:noun",
+          "text": "visto",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 4,
+          "introduced_in": "IT-B1-004",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "manner"
+        },
+        {
+          "id": "pending:it:penso-che",
+          "text": "penso che",
+          "kind": "collocation",
+          "status": "unresolved",
+          "introduced_at": 7,
+          "introduced_in": "IT-B1-007",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "subjunctive"
+        },
+        {
+          "id": "pending:it:credo-che",
+          "text": "credo che",
+          "kind": "collocation",
+          "status": "unresolved",
+          "introduced_at": 7,
+          "introduced_in": "IT-B1-007",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "subjunctive"
+        },
+        {
+          "id": "pending:it:che-tu-abbia",
+          "text": "che tu abbia",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "introduced_at": 6,
+          "introduced_in": "IT-B1-006",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "general"
+        },
+        {
+          "id": "pending:it:che-vada",
+          "text": "che vada",
+          "kind": "collocation",
+          "status": "unresolved",
+          "introduced_at": 6,
+          "introduced_in": "IT-B1-006",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "general"
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "unit": 2,
+      "code": "IT-B1-009",
+      "title": "Il congiuntivo nelle relative",
+      "introduces": [
+        "pending:it:cerco-un",
+        "pending:it:non-ce-nessuno-che",
+        "pending:it:lunico-che",
+        "pending:it:il-migliore-che",
+        "pending:it:chiunque",
+        "pending:it:qualunque",
+        "cosydata:it:chi:pronoun",
+        "pending:it:quello-che",
+        "grammar:it-b1-congiuntivo-nelle-relative"
+      ],
+      "returns": [
+        {
+          "id": "cosydata:it:sebbene:conjunction",
+          "text": "sebbene",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 8,
+          "introduced_in": "IT-B1-008",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "subjunctive"
+        },
+        {
+          "id": "cosydata:it:a-meno-che:phrase",
+          "text": "a meno che",
+          "kind": "set-phrase",
+          "status": "exact",
+          "introduced_at": 8,
+          "introduced_in": "IT-B1-008",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "subjunctive"
+        },
+        {
+          "id": "grammar:it-b1-congiunzioni-con-congiuntivo",
+          "text": "Concessione, scopo, condizione",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 8,
+          "introduced_in": "IT-B1-008",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "frame:it-b1-congiunzioni-con-congiuntivo"
+        },
+        {
+          "id": "grammar:it-b1-verbi-che-reggono-il-congiuntivo",
+          "text": "Verbi di opinione e volontà",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 7,
+          "introduced_in": "IT-B1-007",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "frame:it-b1-verbi-che-reggono-il-congiuntivo"
+        },
+        {
+          "id": "grammar:it-b1-ordine-delle-parole-e-enfasi",
+          "text": "Dislocazione",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 5,
+          "introduced_in": "IT-B1-005",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "frame:it-b1-ordine-delle-parole-e-enfasi"
+        },
+        {
+          "id": "grammar:it-a2-passato-prossimo-vs-imperfetto",
+          "text": "Passato prossimo e imperfetto insieme",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 1,
+          "introduced_in": "IT-B1-001",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "past"
+        },
+        {
+          "id": "grammar:it-a2-trapassato-prossimo",
+          "text": "Trapassato per l'anteriorità",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 1,
+          "introduced_in": "IT-B1-001",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "past"
+        },
+        {
+          "id": "pending:it:spero-che",
+          "text": "spero che",
+          "kind": "collocation",
+          "status": "unresolved",
+          "introduced_at": 7,
+          "introduced_in": "IT-B1-007",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "general"
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "unit": 2,
+      "code": "IT-B1-010",
+      "title": "L'esortativo e gli auguri",
+      "introduces": [
+        "pending:it:che-vada-bene",
+        "pending:it:che-sia-chiaro",
+        "pending:it:che-entri",
+        "pending:it:che-si-accomodi",
+        "cosydata:it:auguri:phrase",
+        "cosydata:it:in-bocca-al-lupo:phrase",
+        "cosydata:it:buon-lavoro:phrase",
+        "cosydata:it:congratulazioni:phrase",
+        "grammar:it-b1-esortativo-che-congiuntivo"
+      ],
+      "returns": [
+        {
+          "id": "cosydata:it:chi:pronoun",
+          "text": "chi",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 9,
+          "introduced_in": "IT-B1-009",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-congiuntivo-nelle-relative",
+          "text": "Referente certo e incerto",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 9,
+          "introduced_in": "IT-B1-009",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "frame:it-b1-congiuntivo-nelle-relative"
+        },
+        {
+          "id": "cosydata:it:sebbene:conjunction",
+          "text": "sebbene",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 8,
+          "introduced_in": "IT-B1-008",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "subjunctive"
+        },
+        {
+          "id": "cosydata:it:a-meno-che:phrase",
+          "text": "a meno che",
+          "kind": "set-phrase",
+          "status": "exact",
+          "introduced_at": 8,
+          "introduced_in": "IT-B1-008",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "subjunctive"
+        },
+        {
+          "id": "grammar:it-b1-congiunzioni-con-congiuntivo",
+          "text": "Concessione, scopo, condizione",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 8,
+          "introduced_in": "IT-B1-008",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "frame:it-b1-congiunzioni-con-congiuntivo"
+        },
+        {
+          "id": "grammar:it-b1-congiuntivo-presente",
+          "text": "Coniugazioni regolari",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 6,
+          "introduced_in": "IT-B1-006",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "frame:it-b1-congiuntivo-presente"
+        },
+        {
+          "id": "cosydata:it:gia:adverb",
+          "text": "già",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 2,
+          "introduced_in": "IT-B1-002",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "past"
+        },
+        {
+          "id": "cosydata:it:prima:adverb",
+          "text": "prima",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 2,
+          "introduced_in": "IT-B1-002",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "past"
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "unit": 3,
+      "code": "IT-B1-011",
+      "title": "Il congiuntivo passato",
+      "introduces": [
+        "pending:it:abbia-fatto",
+        "pending:it:sia-andato",
+        "pending:it:abbia-visto",
+        "pending:it:abbia-detto",
+        "pending:it:prima-di",
+        "pending:it:entro",
+        "pending:it:finora",
+        "cosydata:it:recentemente:adverb",
+        "grammar:it-b1-congiuntivo-passato"
+      ],
+      "returns": [
+        {
+          "id": "cosydata:it:auguri:phrase",
+          "text": "auguri",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 10,
+          "introduced_in": "IT-B1-010",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
+        },
+        {
+          "id": "cosydata:it:in-bocca-al-lupo:phrase",
+          "text": "in bocca al lupo",
+          "kind": "set-phrase",
+          "status": "exact",
+          "introduced_at": 10,
+          "introduced_in": "IT-B1-010",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-esortativo-che-congiuntivo",
+          "text": "Che più congiuntivo",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 10,
+          "introduced_in": "IT-B1-010",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "subjunctive"
+        },
+        {
+          "id": "grammar:it-b1-congiuntivo-nelle-relative",
+          "text": "Referente certo e incerto",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 9,
+          "introduced_in": "IT-B1-009",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "frame:it-b1-congiuntivo-nelle-relative"
+        },
+        {
+          "id": "grammar:it-b1-verbi-che-reggono-il-congiuntivo",
+          "text": "Verbi di opinione e volontà",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 7,
+          "introduced_in": "IT-B1-007",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "frame:it-b1-verbi-che-reggono-il-congiuntivo"
+        },
+        {
+          "id": "cosydata:it:tuttavia:adverb",
+          "text": "tuttavia",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 3,
+          "introduced_in": "IT-B1-003",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "connector"
+        },
+        {
+          "id": "cosydata:it:inoltre:idiom",
+          "text": "inoltre",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 3,
+          "introduced_in": "IT-B1-003",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "connector"
+        },
+        {
+          "id": "pending:it:penso-che",
+          "text": "penso che",
+          "kind": "collocation",
+          "status": "unresolved",
+          "introduced_at": 7,
+          "introduced_in": "IT-B1-007",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "subjunctive"
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "unit": 3,
+      "code": "IT-B1-012",
+      "title": "Il congiuntivo imperfetto",
+      "introduces": [
+        "pending:it:fossi",
+        "pending:it:avessi",
+        "pending:it:potessi",
+        "pending:it:volessi",
+        "pending:it:come-se",
+        "pending:it:magari",
+        "pending:it:desiderio",
+        "pending:it:ipotesi",
+        "grammar:it-b1-congiuntivo-imperfetto"
+      ],
+      "returns": [
+        {
+          "id": "cosydata:it:recentemente:adverb",
+          "text": "recentemente",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 11,
+          "introduced_in": "IT-B1-011",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-congiuntivo-passato",
+          "text": "Formazione con avere ed essere",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 11,
+          "introduced_in": "IT-B1-011",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "frame:it-b1-congiuntivo-passato"
+        },
+        {
+          "id": "cosydata:it:auguri:phrase",
+          "text": "auguri",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 10,
+          "introduced_in": "IT-B1-010",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-esortativo-che-congiuntivo",
+          "text": "Che più congiuntivo",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 10,
+          "introduced_in": "IT-B1-010",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "subjunctive"
+        },
+        {
+          "id": "cosydata:it:sebbene:conjunction",
+          "text": "sebbene",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 8,
+          "introduced_in": "IT-B1-008",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "subjunctive"
+        },
+        {
+          "id": "grammar:it-b1-congiunzioni-con-congiuntivo",
+          "text": "Concessione, scopo, condizione",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 8,
+          "introduced_in": "IT-B1-008",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "frame:it-b1-congiunzioni-con-congiuntivo"
+        },
+        {
+          "id": "cosydata:it:mentre:conjunction",
+          "text": "mentre",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 4,
+          "introduced_in": "IT-B1-004",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "manner"
+        },
+        {
+          "id": "cosydata:it:visto:noun",
+          "text": "visto",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 4,
+          "introduced_in": "IT-B1-004",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "manner"
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "unit": 3,
+      "code": "IT-B1-013",
+      "title": "Il congiuntivo trapassato",
+      "introduces": [
+        "pending:it:avessi-saputo",
+        "pending:it:fosse-partito",
+        "pending:it:avrei-voluto",
+        "pending:it:rimpianto",
+        "pending:it:scelta",
+        "cosydata:it:conseguenza:noun",
+        "pending:it:passato",
+        "pending:it:anteriorita",
+        "grammar:it-b1-congiuntivo-trapassato"
+      ],
+      "returns": [
+        {
+          "id": "grammar:it-b1-congiuntivo-imperfetto",
+          "text": "Forme regolari",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 12,
+          "introduced_in": "IT-B1-012",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "frame:it-b1-congiuntivo-imperfetto"
+        },
+        {
+          "id": "cosydata:it:recentemente:adverb",
+          "text": "recentemente",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 11,
+          "introduced_in": "IT-B1-011",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-congiuntivo-passato",
+          "text": "Formazione con avere ed essere",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 11,
+          "introduced_in": "IT-B1-011",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "frame:it-b1-congiuntivo-passato"
+        },
+        {
+          "id": "cosydata:it:chi:pronoun",
+          "text": "chi",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 9,
+          "introduced_in": "IT-B1-009",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-congiuntivo-nelle-relative",
+          "text": "Referente certo e incerto",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 9,
+          "introduced_in": "IT-B1-009",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "frame:it-b1-congiuntivo-nelle-relative"
+        },
+        {
+          "id": "grammar:it-b1-ordine-delle-parole-e-enfasi",
+          "text": "Dislocazione",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 5,
+          "introduced_in": "IT-B1-005",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "frame:it-b1-ordine-delle-parole-e-enfasi"
+        },
+        {
+          "id": "grammar:it-a2-passato-prossimo-vs-imperfetto",
+          "text": "Passato prossimo e imperfetto insieme",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 1,
+          "introduced_in": "IT-B1-001",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "past"
+        },
+        {
+          "id": "grammar:it-a2-trapassato-prossimo",
+          "text": "Trapassato per l'anteriorità",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 1,
+          "introduced_in": "IT-B1-001",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "past"
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "unit": 3,
+      "code": "IT-B1-014",
+      "title": "La concordanza dei tempi",
+      "introduces": [
+        "pending:it:pensavo-che",
+        "pending:it:credevo-che",
+        "pending:it:speravo-che",
+        "pending:it:contemporaneo",
+        "pending:it:anteriore",
+        "grammar:it-b1-concordanza-dei-tempi"
+      ],
+      "returns": [
+        {
+          "id": "grammar:it-b1-congiuntivo-trapassato",
+          "text": "Avessi e fossi più participio",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 13,
+          "introduced_in": "IT-B1-013",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "manner"
+        },
+        {
+          "id": "grammar:it-b1-congiuntivo-imperfetto",
+          "text": "Forme regolari",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 12,
+          "introduced_in": "IT-B1-012",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "frame:it-b1-congiuntivo-imperfetto"
+        },
+        {
+          "id": "cosydata:it:auguri:phrase",
+          "text": "auguri",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 10,
+          "introduced_in": "IT-B1-010",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "general"
+        },
+        {
+          "id": "cosydata:it:in-bocca-al-lupo:phrase",
+          "text": "in bocca al lupo",
+          "kind": "set-phrase",
+          "status": "exact",
+          "introduced_at": 10,
+          "introduced_in": "IT-B1-010",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-esortativo-che-congiuntivo",
+          "text": "Che più congiuntivo",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 10,
+          "introduced_in": "IT-B1-010",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "subjunctive"
+        },
+        {
+          "id": "grammar:it-b1-congiuntivo-presente",
+          "text": "Coniugazioni regolari",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 6,
+          "introduced_in": "IT-B1-006",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "frame:it-b1-congiuntivo-presente"
+        },
+        {
+          "id": "cosydata:it:gia:adverb",
+          "text": "già",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 2,
+          "introduced_in": "IT-B1-002",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "past"
+        },
+        {
+          "id": "cosydata:it:prima:adverb",
+          "text": "prima",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 2,
+          "introduced_in": "IT-B1-002",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "past"
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "unit": 3,
+      "code": "IT-B1-015",
+      "title": "Congiuntivo o indicativo",
+      "introduces": [
+        "pending:it:so-che",
+        "pending:it:e-vero-che",
+        "pending:it:vedo-che",
+        "cosydata:it:secondo-me:phrase",
+        "pending:it:evidentemente",
+        "pending:it:probabilmente"
+      ],
+      "returns": [
+        {
+          "id": "grammar:it-b1-concordanza-dei-tempi",
+          "text": "Reggente presente e passata",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 14,
+          "introduced_in": "IT-B1-014",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "frame:it-b1-concordanza-dei-tempi"
+        },
+        {
+          "id": "grammar:it-b1-congiuntivo-trapassato",
+          "text": "Avessi e fossi più participio",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 13,
+          "introduced_in": "IT-B1-013",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "manner"
+        },
+        {
+          "id": "cosydata:it:recentemente:adverb",
+          "text": "recentemente",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 11,
+          "introduced_in": "IT-B1-011",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-congiuntivo-passato",
+          "text": "Formazione con avere ed essere",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 11,
+          "introduced_in": "IT-B1-011",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "frame:it-b1-congiuntivo-passato"
+        },
+        {
+          "id": "grammar:it-b1-verbi-che-reggono-il-congiuntivo",
+          "text": "Verbi di opinione e volontà",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 7,
+          "introduced_in": "IT-B1-007",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "frame:it-b1-verbi-che-reggono-il-congiuntivo"
+        },
+        {
+          "id": "cosydata:it:tuttavia:adverb",
+          "text": "tuttavia",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 3,
+          "introduced_in": "IT-B1-003",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "connector"
+        },
+        {
+          "id": "cosydata:it:inoltre:idiom",
+          "text": "inoltre",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 3,
+          "introduced_in": "IT-B1-003",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "connector"
+        },
+        {
+          "id": "pending:it:pensavo-che",
+          "text": "pensavo che",
+          "kind": "collocation",
+          "status": "unresolved",
+          "introduced_at": 14,
+          "introduced_in": "IT-B1-014",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "unit": 4,
+      "code": "IT-B1-016",
+      "title": "Il periodo ipotetico del secondo tipo",
+      "introduces": [
+        "pending:it:se-potessi",
+        "pending:it:se-avessi",
+        "pending:it:se-fossi",
+        "pending:it:verrei",
+        "pending:it:cambierei",
+        "cosydata:it:immaginare:verb",
+        "cosydata:it:sogno:noun",
+        "grammar:it-a2-periodo-ipotetico-2"
+      ],
+      "returns": [
+        {
+          "id": "cosydata:it:secondo-me:phrase",
+          "text": "secondo me",
+          "kind": "collocation",
+          "status": "exact",
+          "introduced_at": 15,
+          "introduced_in": "IT-B1-015",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-concordanza-dei-tempi",
+          "text": "Reggente presente e passata",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 14,
+          "introduced_in": "IT-B1-014",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "frame:it-b1-concordanza-dei-tempi"
+        },
+        {
+          "id": "grammar:it-b1-congiuntivo-imperfetto",
+          "text": "Forme regolari",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 12,
+          "introduced_in": "IT-B1-012",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "frame:it-b1-congiuntivo-imperfetto"
+        },
+        {
+          "id": "cosydata:it:sebbene:conjunction",
+          "text": "sebbene",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 8,
+          "introduced_in": "IT-B1-008",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "subjunctive"
+        },
+        {
+          "id": "cosydata:it:a-meno-che:phrase",
+          "text": "a meno che",
+          "kind": "set-phrase",
+          "status": "exact",
+          "introduced_at": 8,
+          "introduced_in": "IT-B1-008",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "subjunctive"
+        },
+        {
+          "id": "grammar:it-b1-congiunzioni-con-congiuntivo",
+          "text": "Concessione, scopo, condizione",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 8,
+          "introduced_in": "IT-B1-008",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "frame:it-b1-congiunzioni-con-congiuntivo"
+        },
+        {
+          "id": "cosydata:it:mentre:conjunction",
+          "text": "mentre",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 4,
+          "introduced_in": "IT-B1-004",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "manner"
+        },
+        {
+          "id": "cosydata:it:visto:noun",
+          "text": "visto",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 4,
+          "introduced_in": "IT-B1-004",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "manner"
+        }
+      ]
+    },
+    {
+      "number": 17,
+      "unit": 4,
+      "code": "IT-B1-017",
+      "title": "Il periodo ipotetico del terzo tipo",
+      "introduces": [
+        "pending:it:se-avessi-saputo",
+        "pending:it:sarei-venuto",
+        "pending:it:avrei-potuto",
+        "pending:it:avrei-dovuto",
+        "pending:it:occasione",
+        "cosydata:it:errore:noun",
+        "grammar:it-b1-periodo-ipotetico-3"
+      ],
+      "returns": [
+        {
+          "id": "cosydata:it:immaginare:verb",
+          "text": "immaginare",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 16,
+          "introduced_in": "IT-B1-016",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-a2-periodo-ipotetico-2",
+          "text": "Congiuntivo imperfetto e condizionale",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 16,
+          "introduced_in": "IT-B1-016",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "subjunctive"
+        },
+        {
+          "id": "cosydata:it:secondo-me:phrase",
+          "text": "secondo me",
+          "kind": "collocation",
+          "status": "exact",
+          "introduced_at": 15,
+          "introduced_in": "IT-B1-015",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-congiuntivo-trapassato",
+          "text": "Avessi e fossi più participio",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 13,
+          "introduced_in": "IT-B1-013",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "manner"
+        },
+        {
+          "id": "grammar:it-b1-congiuntivo-nelle-relative",
+          "text": "Referente certo e incerto",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 9,
+          "introduced_in": "IT-B1-009",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "frame:it-b1-congiuntivo-nelle-relative"
+        },
+        {
+          "id": "grammar:it-b1-ordine-delle-parole-e-enfasi",
+          "text": "Dislocazione",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 5,
+          "introduced_in": "IT-B1-005",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "frame:it-b1-ordine-delle-parole-e-enfasi"
+        }
+      ]
+    },
+    {
+      "number": 18,
+      "unit": 4,
+      "code": "IT-B1-018",
+      "title": "Il periodo ipotetico misto",
+      "introduces": [
+        "cosydata:it:ora:noun",
+        "cosydata:it:adesso:adverb",
+        "cosydata:it:oggi:adverb",
+        "pending:it:allora",
+        "pending:it:se-avessi-studiato",
+        "pending:it:se-fossi-piu",
+        "pending:it:sarei",
+        "pending:it:avrei",
+        "grammar:it-b1-periodo-ipotetico-misto"
+      ],
+      "returns": [
+        {
+          "id": "grammar:it-b1-periodo-ipotetico-3",
+          "text": "Congiuntivo trapassato e condizionale passato",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 17,
+          "introduced_in": "IT-B1-017",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "subjunctive"
+        },
+        {
+          "id": "cosydata:it:immaginare:verb",
+          "text": "immaginare",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 16,
+          "introduced_in": "IT-B1-016",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-a2-periodo-ipotetico-2",
+          "text": "Congiuntivo imperfetto e condizionale",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 16,
+          "introduced_in": "IT-B1-016",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "subjunctive"
+        },
+        {
+          "id": "grammar:it-b1-concordanza-dei-tempi",
+          "text": "Reggente presente e passata",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 14,
+          "introduced_in": "IT-B1-014",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "frame:it-b1-concordanza-dei-tempi"
+        },
+        {
+          "id": "cosydata:it:auguri:phrase",
+          "text": "auguri",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 10,
+          "introduced_in": "IT-B1-010",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-congiuntivo-presente",
+          "text": "Coniugazioni regolari",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 6,
+          "introduced_in": "IT-B1-006",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "frame:it-b1-congiuntivo-presente"
+        }
+      ]
+    },
+    {
+      "number": 19,
+      "unit": 4,
+      "code": "IT-B1-019",
+      "title": "Il condizionale passato",
+      "introduces": [
+        "pending:it:sarei-partito",
+        "pending:it:secondo-le-fonti",
+        "pending:it:sarebbe",
+        "pending:it:avrebbero",
+        "pending:it:indiscrezione",
+        "pending:it:conferma",
+        "pending:it:smentita",
+        "grammar:it-b1-condizionale-passato"
+      ],
+      "returns": [
+        {
+          "id": "cosydata:it:adesso:adverb",
+          "text": "adesso",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 18,
+          "introduced_in": "IT-B1-018",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
+        },
+        {
+          "id": "cosydata:it:oggi:adverb",
+          "text": "oggi",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 18,
+          "introduced_in": "IT-B1-018",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-periodo-ipotetico-misto",
+          "text": "Condizione passata e risultato presente",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 18,
+          "introduced_in": "IT-B1-018",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "frame:it-b1-periodo-ipotetico-misto"
+        },
+        {
+          "id": "grammar:it-b1-periodo-ipotetico-3",
+          "text": "Congiuntivo trapassato e condizionale passato",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 17,
+          "introduced_in": "IT-B1-017",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "subjunctive"
+        },
+        {
+          "id": "grammar:it-b1-congiuntivo-passato",
+          "text": "Formazione con avere ed essere",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 11,
+          "introduced_in": "IT-B1-011",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "frame:it-b1-congiuntivo-passato"
+        },
+        {
+          "id": "grammar:it-b1-verbi-che-reggono-il-congiuntivo",
+          "text": "Verbi di opinione e volontà",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 7,
+          "introduced_in": "IT-B1-007",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "frame:it-b1-verbi-che-reggono-il-congiuntivo"
+        },
+        {
+          "id": "pending:it:abbia-visto",
+          "text": "abbia visto",
+          "kind": "collocation",
+          "status": "unresolved",
+          "introduced_at": 11,
+          "introduced_in": "IT-B1-011",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "manner"
+        },
+        {
+          "id": "pending:it:prima-di",
+          "text": "prima di",
+          "kind": "collocation",
+          "status": "unresolved",
+          "introduced_at": 11,
+          "introduced_in": "IT-B1-011",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "past"
+        }
+      ]
+    },
+    {
+      "number": 20,
+      "unit": 4,
+      "code": "IT-B1-020",
+      "title": "Il futuro anteriore",
+      "introduces": [
+        "pending:it:avro-finito",
+        "pending:it:sara-partito",
+        "pending:it:appena",
+        "pending:it:ormai",
+        "pending:it:concluso",
+        "grammar:it-b1-futuro-anteriore"
+      ],
+      "returns": [
+        {
+          "id": "grammar:it-b1-condizionale-passato",
+          "text": "Forme e usi",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 19,
+          "introduced_in": "IT-B1-019",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "frame:it-b1-condizionale-passato"
+        },
+        {
+          "id": "cosydata:it:adesso:adverb",
+          "text": "adesso",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 18,
+          "introduced_in": "IT-B1-018",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "general"
+        },
+        {
+          "id": "cosydata:it:oggi:adverb",
+          "text": "oggi",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 18,
+          "introduced_in": "IT-B1-018",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-periodo-ipotetico-misto",
+          "text": "Condizione passata e risultato presente",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 18,
+          "introduced_in": "IT-B1-018",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "frame:it-b1-periodo-ipotetico-misto"
+        },
+        {
+          "id": "grammar:it-a2-periodo-ipotetico-2",
+          "text": "Congiuntivo imperfetto e condizionale",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 16,
+          "introduced_in": "IT-B1-016",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "subjunctive"
+        },
+        {
+          "id": "grammar:it-b1-congiuntivo-imperfetto",
+          "text": "Forme regolari",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 12,
+          "introduced_in": "IT-B1-012",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "frame:it-b1-congiuntivo-imperfetto"
+        },
+        {
+          "id": "cosydata:it:sebbene:conjunction",
+          "text": "sebbene",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 8,
+          "introduced_in": "IT-B1-008",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "subjunctive"
+        },
+        {
+          "id": "grammar:it-b1-congiunzioni-con-congiuntivo",
+          "text": "Concessione, scopo, condizione",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 8,
+          "introduced_in": "IT-B1-008",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "frame:it-b1-congiunzioni-con-congiuntivo"
+        }
+      ]
+    },
+    {
+      "number": 21,
+      "unit": 5,
+      "code": "IT-B1-021",
+      "title": "Il discorso indiretto",
+      "introduces": [
+        "pending:it:ha-detto-che",
+        "pending:it:mi-ha-chiesto-se",
+        "pending:it:ha-spiegato-che",
+        "pending:it:ha-promesso-di",
+        "cosydata:it:qui:adverb",
+        "cosydata:it:domani:adverb",
+        "cosydata:it:ieri:adverb",
+        "grammar:it-b1-discorso-indiretto"
+      ],
+      "returns": [
+        {
+          "id": "grammar:it-b1-futuro-anteriore",
+          "text": "Formazione",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 20,
+          "introduced_in": "IT-B1-020",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "frame:it-b1-futuro-anteriore"
+        },
+        {
+          "id": "grammar:it-b1-condizionale-passato",
+          "text": "Forme e usi",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 19,
+          "introduced_in": "IT-B1-019",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "frame:it-b1-condizionale-passato"
+        },
+        {
+          "id": "grammar:it-b1-periodo-ipotetico-3",
+          "text": "Congiuntivo trapassato e condizionale passato",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 17,
+          "introduced_in": "IT-B1-017",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "subjunctive"
+        },
+        {
+          "id": "grammar:it-b1-congiuntivo-trapassato",
+          "text": "Avessi e fossi più participio",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 13,
+          "introduced_in": "IT-B1-013",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "manner"
+        },
+        {
+          "id": "cosydata:it:chi:pronoun",
+          "text": "chi",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 9,
+          "introduced_in": "IT-B1-009",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-congiuntivo-nelle-relative",
+          "text": "Referente certo e incerto",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 9,
+          "introduced_in": "IT-B1-009",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "frame:it-b1-congiuntivo-nelle-relative"
+        },
+        {
+          "id": "pending:it:avro-finito",
+          "text": "avrò finito",
+          "kind": "collocation",
+          "status": "unresolved",
+          "introduced_at": 20,
+          "introduced_in": "IT-B1-020",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
+        }
+      ]
+    },
+    {
+      "number": 22,
+      "unit": 5,
+      "code": "IT-B1-022",
+      "title": "Riferire al passato",
+      "introduces": [
+        "pending:it:aveva-detto-che",
+        "pending:it:mi-aveva-chiesto",
+        "pending:it:il-giorno-prima",
+        "pending:it:il-giorno-dopo",
+        "cosydata:it:la:determiner",
+        "cosydata:it:quello:pronoun"
+      ],
+      "returns": [
+        {
+          "id": "cosydata:it:qui:adverb",
+          "text": "qui",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 21,
+          "introduced_in": "IT-B1-021",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
+        },
+        {
+          "id": "cosydata:it:domani:adverb",
+          "text": "domani",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 21,
+          "introduced_in": "IT-B1-021",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "future"
+        },
+        {
+          "id": "cosydata:it:ieri:adverb",
+          "text": "ieri",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 21,
+          "introduced_in": "IT-B1-021",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "past"
+        },
+        {
+          "id": "grammar:it-b1-futuro-anteriore",
+          "text": "Formazione",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 20,
+          "introduced_in": "IT-B1-020",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "frame:it-b1-futuro-anteriore"
+        },
+        {
+          "id": "cosydata:it:adesso:adverb",
+          "text": "adesso",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 18,
+          "introduced_in": "IT-B1-018",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-periodo-ipotetico-misto",
+          "text": "Condizione passata e risultato presente",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 18,
+          "introduced_in": "IT-B1-018",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "frame:it-b1-periodo-ipotetico-misto"
+        },
+        {
+          "id": "grammar:it-b1-concordanza-dei-tempi",
+          "text": "Reggente presente e passata",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 14,
+          "introduced_in": "IT-B1-014",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "frame:it-b1-concordanza-dei-tempi"
+        },
+        {
+          "id": "grammar:it-b1-esortativo-che-congiuntivo",
+          "text": "Che più congiuntivo",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 10,
+          "introduced_in": "IT-B1-010",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "subjunctive"
+        }
+      ]
+    },
+    {
+      "number": 23,
+      "unit": 5,
+      "code": "IT-B1-023",
+      "title": "La forma passiva avanzata",
+      "introduces": [
+        "pending:it:viene-pubblicato",
+        "pending:it:va-firmato",
+        "pending:it:e-stato-approvato",
+        "pending:it:sara-discusso",
+        "pending:it:autore",
+        "pending:it:agente",
+        "pending:it:processo",
+        "cosydata:it:ufficio:noun",
+        "grammar:it-b1-forma-passiva-avanzata"
+      ],
+      "returns": [
+        {
+          "id": "cosydata:it:quello:pronoun",
+          "text": "quello",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 22,
+          "introduced_in": "IT-B1-022",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
+        },
+        {
+          "id": "cosydata:it:qui:adverb",
+          "text": "qui",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 21,
+          "introduced_in": "IT-B1-021",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "general"
+        },
+        {
+          "id": "cosydata:it:domani:adverb",
+          "text": "domani",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 21,
+          "introduced_in": "IT-B1-021",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "future"
+        },
+        {
+          "id": "cosydata:it:ieri:adverb",
+          "text": "ieri",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 21,
+          "introduced_in": "IT-B1-021",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "past"
+        },
+        {
+          "id": "grammar:it-b1-condizionale-passato",
+          "text": "Forme e usi",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 19,
+          "introduced_in": "IT-B1-019",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "frame:it-b1-condizionale-passato"
+        },
+        {
+          "id": "grammar:it-b1-congiuntivo-passato",
+          "text": "Formazione con avere ed essere",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 11,
+          "introduced_in": "IT-B1-011",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "frame:it-b1-congiuntivo-passato"
+        },
+        {
+          "id": "pending:it:il-giorno-prima",
+          "text": "il giorno prima",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "introduced_at": 22,
+          "introduced_in": "IT-B1-022",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "past"
+        },
+        {
+          "id": "pending:it:abbia-visto",
+          "text": "abbia visto",
+          "kind": "collocation",
+          "status": "unresolved",
+          "introduced_at": 11,
+          "introduced_in": "IT-B1-011",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "manner"
+        }
+      ]
+    },
+    {
+      "number": 24,
+      "unit": 5,
+      "code": "IT-B1-024",
+      "title": "Il si impersonale e passivante",
+      "introduces": [
+        "pending:it:si-dice",
+        "pending:it:si-pensa",
+        "pending:it:si-vendono",
+        "pending:it:si-parla",
+        "pending:it:si-puo",
+        "pending:it:in-italia",
+        "pending:it:generalmente",
+        "cosydata:it:abitudine:noun",
+        "grammar:it-b1-si-impersonale-e-passivante"
+      ],
+      "returns": [
+        {
+          "id": "grammar:it-b1-forma-passiva-avanzata",
+          "text": "Passivo con andare e venire",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 23,
+          "introduced_in": "IT-B1-023",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "frame:it-b1-forma-passiva-avanzata"
+        },
+        {
+          "id": "cosydata:it:quello:pronoun",
+          "text": "quello",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 22,
+          "introduced_in": "IT-B1-022",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-futuro-anteriore",
+          "text": "Formazione",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 20,
+          "introduced_in": "IT-B1-020",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "frame:it-b1-futuro-anteriore"
+        },
+        {
+          "id": "cosydata:it:immaginare:verb",
+          "text": "immaginare",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 16,
+          "introduced_in": "IT-B1-016",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-a2-periodo-ipotetico-2",
+          "text": "Congiuntivo imperfetto e condizionale",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 16,
+          "introduced_in": "IT-B1-016",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "subjunctive"
+        },
+        {
+          "id": "grammar:it-b1-congiuntivo-imperfetto",
+          "text": "Forme regolari",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 12,
+          "introduced_in": "IT-B1-012",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "frame:it-b1-congiuntivo-imperfetto"
+        },
+        {
+          "id": "pending:it:il-giorno-prima",
+          "text": "il giorno prima",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "introduced_at": 22,
+          "introduced_in": "IT-B1-022",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "past"
+        }
+      ]
+    },
+    {
+      "number": 25,
+      "unit": 5,
+      "code": "IT-B1-025",
+      "title": "Scrivere in modo impersonale",
+      "introduces": [
+        "pending:it:si-richiede",
+        "pending:it:si-prega-di",
+        "pending:it:occorre",
+        "pending:it:e-necessario",
+        "pending:it:normativa",
+        "pending:it:procedura",
+        "cosydata:it:domanda:noun",
+        "cosydata:it:scadenza:noun"
+      ],
+      "returns": [
+        {
+          "id": "grammar:it-b1-si-impersonale-e-passivante",
+          "text": "Si impersonale",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 24,
+          "introduced_in": "IT-B1-024",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "frame:it-b1-si-impersonale-e-passivante"
+        },
+        {
+          "id": "grammar:it-b1-forma-passiva-avanzata",
+          "text": "Passivo con andare e venire",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 23,
+          "introduced_in": "IT-B1-023",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "frame:it-b1-forma-passiva-avanzata"
+        },
+        {
+          "id": "cosydata:it:qui:adverb",
+          "text": "qui",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 21,
+          "introduced_in": "IT-B1-021",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "general"
+        },
+        {
+          "id": "cosydata:it:domani:adverb",
+          "text": "domani",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 21,
+          "introduced_in": "IT-B1-021",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "future"
+        },
+        {
+          "id": "cosydata:it:ieri:adverb",
+          "text": "ieri",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 21,
+          "introduced_in": "IT-B1-021",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "past"
+        },
+        {
+          "id": "grammar:it-b1-periodo-ipotetico-3",
+          "text": "Congiuntivo trapassato e condizionale passato",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 17,
+          "introduced_in": "IT-B1-017",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "subjunctive"
+        },
+        {
+          "id": "grammar:it-b1-congiuntivo-trapassato",
+          "text": "Avessi e fossi più participio",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 13,
+          "introduced_in": "IT-B1-013",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "manner"
+        },
+        {
+          "id": "pending:it:si-dice",
+          "text": "si dice",
+          "kind": "collocation",
+          "status": "unresolved",
+          "introduced_at": 24,
+          "introduced_in": "IT-B1-024",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
+        }
+      ]
+    },
+    {
+      "number": 26,
+      "unit": 6,
+      "code": "IT-B1-026",
+      "title": "I pronomi combinati",
+      "introduces": [
+        "pending:it:me-lo",
+        "pending:it:te-la",
+        "pending:it:glielo",
+        "pending:it:ce-ne",
+        "pending:it:ve-li",
+        "pending:it:restituire",
+        "cosydata:it:prestare:verb",
+        "cosydata:it:spiegare:verb",
+        "grammar:it-b1-pronomi-combinati"
+      ],
+      "returns": [
+        {
+          "id": "grammar:it-b1-si-impersonale-e-passivante",
+          "text": "Si impersonale",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 24,
+          "introduced_in": "IT-B1-024",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "frame:it-b1-si-impersonale-e-passivante"
+        },
+        {
+          "id": "cosydata:it:quello:pronoun",
+          "text": "quello",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 22,
+          "introduced_in": "IT-B1-022",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "general"
+        },
+        {
+          "id": "cosydata:it:adesso:adverb",
+          "text": "adesso",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 18,
+          "introduced_in": "IT-B1-018",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-periodo-ipotetico-misto",
+          "text": "Condizione passata e risultato presente",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 18,
+          "introduced_in": "IT-B1-018",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "frame:it-b1-periodo-ipotetico-misto"
+        },
+        {
+          "id": "grammar:it-b1-concordanza-dei-tempi",
+          "text": "Reggente presente e passata",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 14,
+          "introduced_in": "IT-B1-014",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "frame:it-b1-concordanza-dei-tempi"
+        },
+        {
+          "id": "pending:it:il-giorno-prima",
+          "text": "il giorno prima",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "introduced_at": 22,
+          "introduced_in": "IT-B1-022",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "past"
+        }
+      ]
+    },
+    {
+      "number": 27,
+      "unit": 6,
+      "code": "IT-B1-027",
+      "title": "I pronomi relativi",
+      "introduces": [
+        "cosydata:it:che:pronoun",
+        "pending:it:cui",
+        "cosydata:it:quale:pronoun",
+        "cosydata:it:quanto:pronoun",
+        "pending:it:colui-che",
+        "pending:it:il-cui",
+        "grammar:it-b1-pronomi-relativi-cui-chi"
+      ],
+      "returns": [
+        {
+          "id": "cosydata:it:prestare:verb",
+          "text": "prestare",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 26,
+          "introduced_in": "IT-B1-026",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
+        },
+        {
+          "id": "cosydata:it:spiegare:verb",
+          "text": "spiegare",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 26,
+          "introduced_in": "IT-B1-026",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-pronomi-combinati",
+          "text": "Indiretto più diretto",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 26,
+          "introduced_in": "IT-B1-026",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "frame:it-b1-pronomi-combinati"
+        },
+        {
+          "id": "grammar:it-b1-forma-passiva-avanzata",
+          "text": "Passivo con andare e venire",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 23,
+          "introduced_in": "IT-B1-023",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "frame:it-b1-forma-passiva-avanzata"
+        },
+        {
+          "id": "grammar:it-b1-condizionale-passato",
+          "text": "Forme e usi",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 19,
+          "introduced_in": "IT-B1-019",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "frame:it-b1-condizionale-passato"
+        }
+      ]
+    },
+    {
+      "number": 28,
+      "unit": 6,
+      "code": "IT-B1-028",
+      "title": "I verbi pronominali",
+      "introduces": [
+        "pending:it:andarsene",
+        "cosydata:it:farcela:phrase",
+        "pending:it:prendersela",
+        "cosydata:it:rendersi-conto:phrase",
+        "pending:it:accorgersi",
+        "pending:it:pentirsi",
+        "pending:it:arrabbiarsi",
+        "pending:it:trasferirsi",
+        "grammar:it-b1-verbi-pronominali"
+      ],
+      "returns": [
+        {
+          "id": "cosydata:it:che:pronoun",
+          "text": "che",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 27,
+          "introduced_in": "IT-B1-027",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
+        },
+        {
+          "id": "cosydata:it:quale:pronoun",
+          "text": "il quale",
+          "kind": "collocation",
+          "status": "normalized",
+          "introduced_at": 27,
+          "introduced_in": "IT-B1-027",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-pronomi-relativi-cui-chi",
+          "text": "Che, cui, il quale",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 27,
+          "introduced_in": "IT-B1-027",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "frame:it-b1-pronomi-relativi-cui-chi"
+        },
+        {
+          "id": "grammar:it-b1-pronomi-combinati",
+          "text": "Indiretto più diretto",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 26,
+          "introduced_in": "IT-B1-026",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "frame:it-b1-pronomi-combinati"
+        },
+        {
+          "id": "grammar:it-b1-si-impersonale-e-passivante",
+          "text": "Si impersonale",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 24,
+          "introduced_in": "IT-B1-024",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "frame:it-b1-si-impersonale-e-passivante"
+        },
+        {
+          "id": "grammar:it-b1-futuro-anteriore",
+          "text": "Formazione",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 20,
+          "introduced_in": "IT-B1-020",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "frame:it-b1-futuro-anteriore"
+        },
+        {
+          "id": "grammar:it-a2-periodo-ipotetico-2",
+          "text": "Congiuntivo imperfetto e condizionale",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 16,
+          "introduced_in": "IT-B1-016",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "subjunctive"
+        }
+      ]
+    },
+    {
+      "number": 29,
+      "unit": 6,
+      "code": "IT-B1-029",
+      "title": "Le preposizioni dei verbi",
+      "introduces": [
+        "pending:it:cercare-di",
+        "cosydata:it:riuscire-a:phrase",
+        "pending:it:contare-su",
+        "pending:it:dipendere-da",
+        "cosydata:it:approfittare-di:phrase",
+        "pending:it:interessarsi-a",
+        "pending:it:smettere-di",
+        "pending:it:imparare-a",
+        "grammar:it-b1-preposizioni-con-i-verbi"
+      ],
+      "returns": [
+        {
+          "id": "cosydata:it:farcela:phrase",
+          "text": "farcela",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 28,
+          "introduced_in": "IT-B1-028",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
+        },
+        {
+          "id": "cosydata:it:rendersi-conto:phrase",
+          "text": "rendersi conto",
+          "kind": "collocation",
+          "status": "exact",
+          "introduced_at": 28,
+          "introduced_in": "IT-B1-028",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-verbi-pronominali",
+          "text": "Verbi intrinsecamente pronominali",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 28,
+          "introduced_in": "IT-B1-028",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "frame:it-b1-verbi-pronominali"
+        },
+        {
+          "id": "grammar:it-b1-pronomi-relativi-cui-chi",
+          "text": "Che, cui, il quale",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 27,
+          "introduced_in": "IT-B1-027",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "frame:it-b1-pronomi-relativi-cui-chi"
+        },
+        {
+          "id": "cosydata:it:domani:adverb",
+          "text": "domani",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 21,
+          "introduced_in": "IT-B1-021",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "future"
+        },
+        {
+          "id": "cosydata:it:ieri:adverb",
+          "text": "ieri",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 21,
+          "introduced_in": "IT-B1-021",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "past"
+        },
+        {
+          "id": "grammar:it-b1-discorso-indiretto",
+          "text": "Trasformazione dei tempi",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 21,
+          "introduced_in": "IT-B1-021",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "frame:it-b1-discorso-indiretto"
+        },
+        {
+          "id": "grammar:it-b1-periodo-ipotetico-3",
+          "text": "Congiuntivo trapassato e condizionale passato",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 17,
+          "introduced_in": "IT-B1-017",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "subjunctive"
+        }
+      ]
+    },
+    {
+      "number": 30,
+      "unit": 6,
+      "code": "IT-B1-030",
+      "title": "Ci e ne nei testi",
+      "introduces": [
+        "pending:it:ci-penso",
+        "pending:it:ci-credo",
+        "pending:it:ne-parlo",
+        "pending:it:ne-ho-due",
+        "pending:it:non-ci-riesco",
+        "pending:it:me-ne-occupo",
+        "cosydata:it:argomento:noun",
+        "cosydata:it:quantita:noun",
+        "grammar:it-a2-i-pronomi-ci-e-ne"
+      ],
+      "returns": [
+        {
+          "id": "cosydata:it:riuscire-a:phrase",
+          "text": "riuscire a",
+          "kind": "collocation",
+          "status": "exact",
+          "introduced_at": 29,
+          "introduced_in": "IT-B1-029",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
+        },
+        {
+          "id": "cosydata:it:approfittare-di:phrase",
+          "text": "approfittare di",
+          "kind": "collocation",
+          "status": "exact",
+          "introduced_at": 29,
+          "introduced_in": "IT-B1-029",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-preposizioni-con-i-verbi",
+          "text": "Di, a, su, da",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 29,
+          "introduced_in": "IT-B1-029",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "frame:it-b1-preposizioni-con-i-verbi"
+        },
+        {
+          "id": "grammar:it-b1-verbi-pronominali",
+          "text": "Verbi intrinsecamente pronominali",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 28,
+          "introduced_in": "IT-B1-028",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "frame:it-b1-verbi-pronominali"
+        },
+        {
+          "id": "grammar:it-b1-pronomi-combinati",
+          "text": "Indiretto più diretto",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 26,
+          "introduced_in": "IT-B1-026",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "frame:it-b1-pronomi-combinati"
+        },
+        {
+          "id": "grammar:it-b1-periodo-ipotetico-misto",
+          "text": "Condizione passata e risultato presente",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 18,
+          "introduced_in": "IT-B1-018",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "frame:it-b1-periodo-ipotetico-misto"
+        },
+        {
+          "id": "pending:it:il-giorno-prima",
+          "text": "il giorno prima",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "introduced_at": 22,
+          "introduced_in": "IT-B1-022",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "past"
+        }
+      ]
+    },
+    {
+      "number": 31,
+      "unit": 7,
+      "code": "IT-B1-031",
+      "title": "Aggettivi e pronomi indefiniti",
+      "introduces": [
+        "pending:it:qualche",
+        "cosydata:it:alcuni:pronoun",
+        "cosydata:it:nessuno:pronoun",
+        "cosydata:it:ogni:pronoun",
+        "cosydata:it:tutti:pronoun",
+        "pending:it:ciascuno",
+        "grammar:it-b1-aggettivi-e-pronomi-indefiniti"
+      ],
+      "returns": [
+        {
+          "id": "grammar:it-a2-i-pronomi-ci-e-ne",
+          "text": "Ci come luogo e argomento",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 30,
+          "introduced_in": "IT-B1-030",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "frame:it-a2-i-pronomi-ci-e-ne"
+        },
+        {
+          "id": "cosydata:it:riuscire-a:phrase",
+          "text": "riuscire a",
+          "kind": "collocation",
+          "status": "exact",
+          "introduced_at": 29,
+          "introduced_in": "IT-B1-029",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "general"
+        },
+        {
+          "id": "cosydata:it:approfittare-di:phrase",
+          "text": "approfittare di",
+          "kind": "collocation",
+          "status": "exact",
+          "introduced_at": 29,
+          "introduced_in": "IT-B1-029",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-preposizioni-con-i-verbi",
+          "text": "Di, a, su, da",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 29,
+          "introduced_in": "IT-B1-029",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "frame:it-b1-preposizioni-con-i-verbi"
+        },
+        {
+          "id": "grammar:it-b1-pronomi-relativi-cui-chi",
+          "text": "Che, cui, il quale",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 27,
+          "introduced_in": "IT-B1-027",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "frame:it-b1-pronomi-relativi-cui-chi"
+        },
+        {
+          "id": "grammar:it-b1-forma-passiva-avanzata",
+          "text": "Passivo con andare e venire",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 23,
+          "introduced_in": "IT-B1-023",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "frame:it-b1-forma-passiva-avanzata"
+        },
+        {
+          "id": "grammar:it-b1-condizionale-passato",
+          "text": "Forme e usi",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 19,
+          "introduced_in": "IT-B1-019",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "frame:it-b1-condizionale-passato"
+        }
+      ]
+    },
+    {
+      "number": 32,
+      "unit": 7,
+      "code": "IT-B1-032",
+      "title": "Gli avverbi in -mente",
+      "introduces": [
+        "pending:it:lentamente",
+        "pending:it:facilmente",
+        "pending:it:volentieri",
+        "pending:it:bene",
+        "pending:it:male",
+        "cosydata:it:purtroppo:idiom",
+        "pending:it:addirittura",
+        "pending:it:pressappoco",
+        "grammar:it-b1-avverbi-in-mente"
+      ],
+      "returns": [
+        {
+          "id": "cosydata:it:alcuni:pronoun",
+          "text": "alcuni",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 31,
+          "introduced_in": "IT-B1-031",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
+        },
+        {
+          "id": "cosydata:it:nessuno:pronoun",
+          "text": "nessuno",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 31,
+          "introduced_in": "IT-B1-031",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-aggettivi-e-pronomi-indefiniti",
+          "text": "Qualche, alcuni, nessuno",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 31,
+          "introduced_in": "IT-B1-031",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "frame:it-b1-aggettivi-e-pronomi-indefiniti"
+        },
+        {
+          "id": "grammar:it-a2-i-pronomi-ci-e-ne",
+          "text": "Ci come luogo e argomento",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 30,
+          "introduced_in": "IT-B1-030",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "frame:it-a2-i-pronomi-ci-e-ne"
+        },
+        {
+          "id": "grammar:it-b1-verbi-pronominali",
+          "text": "Verbi intrinsecamente pronominali",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 28,
+          "introduced_in": "IT-B1-028",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "frame:it-b1-verbi-pronominali"
+        },
+        {
+          "id": "grammar:it-b1-si-impersonale-e-passivante",
+          "text": "Si impersonale",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 24,
+          "introduced_in": "IT-B1-024",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "frame:it-b1-si-impersonale-e-passivante"
+        },
+        {
+          "id": "grammar:it-b1-futuro-anteriore",
+          "text": "Formazione",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 20,
+          "introduced_in": "IT-B1-020",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "frame:it-b1-futuro-anteriore"
+        }
+      ]
+    },
+    {
+      "number": 33,
+      "unit": 7,
+      "code": "IT-B1-033",
+      "title": "Comparativi e superlativi irregolari",
+      "introduces": [
+        "cosydata:it:migliore:adjective",
+        "cosydata:it:peggiore:adjective",
+        "pending:it:maggiore",
+        "pending:it:minore",
+        "pending:it:ottimo",
+        "pending:it:pessimo",
+        "pending:it:massimo",
+        "pending:it:minimo",
+        "grammar:it-b1-comparativi-e-superlativi-irregolari"
+      ],
+      "returns": [
+        {
+          "id": "cosydata:it:purtroppo:idiom",
+          "text": "purtroppo",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 32,
+          "introduced_in": "IT-B1-032",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "manner"
+        },
+        {
+          "id": "grammar:it-b1-avverbi-in-mente",
+          "text": "Formazione",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 32,
+          "introduced_in": "IT-B1-032",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "frame:it-b1-avverbi-in-mente"
+        },
+        {
+          "id": "cosydata:it:alcuni:pronoun",
+          "text": "alcuni",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 31,
+          "introduced_in": "IT-B1-031",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "general"
+        },
+        {
+          "id": "cosydata:it:nessuno:pronoun",
+          "text": "nessuno",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 31,
+          "introduced_in": "IT-B1-031",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-aggettivi-e-pronomi-indefiniti",
+          "text": "Qualche, alcuni, nessuno",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 31,
+          "introduced_in": "IT-B1-031",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "frame:it-b1-aggettivi-e-pronomi-indefiniti"
+        },
+        {
+          "id": "grammar:it-b1-preposizioni-con-i-verbi",
+          "text": "Di, a, su, da",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 29,
+          "introduced_in": "IT-B1-029",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "frame:it-b1-preposizioni-con-i-verbi"
+        },
+        {
+          "id": "cosydata:it:domani:adverb",
+          "text": "domani",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 21,
+          "introduced_in": "IT-B1-021",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "future"
+        },
+        {
+          "id": "cosydata:it:ieri:adverb",
+          "text": "ieri",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 21,
+          "introduced_in": "IT-B1-021",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "past"
+        }
+      ]
+    },
+    {
+      "number": 34,
+      "unit": 7,
+      "code": "IT-B1-034",
+      "title": "I nomi alterati",
+      "introduces": [
+        "cosydata:it:casetta:noun",
+        "pending:it:librone",
+        "pending:it:gattino",
+        "pending:it:giornataccia",
+        "pending:it:tesoruccio",
+        "pending:it:portone",
+        "cosydata:it:spuntino:noun",
+        "pending:it:attimino",
+        "grammar:it-b1-nomi-alterati"
+      ],
+      "returns": [
+        {
+          "id": "grammar:it-b1-comparativi-e-superlativi-irregolari",
+          "text": "Migliore, peggiore, maggiore",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 33,
+          "introduced_in": "IT-B1-033",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "frame:it-b1-comparativi-e-superlativi-irregolari"
+        },
+        {
+          "id": "cosydata:it:purtroppo:idiom",
+          "text": "purtroppo",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 32,
+          "introduced_in": "IT-B1-032",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "manner"
+        },
+        {
+          "id": "grammar:it-b1-avverbi-in-mente",
+          "text": "Formazione",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 32,
+          "introduced_in": "IT-B1-032",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "frame:it-b1-avverbi-in-mente"
+        },
+        {
+          "id": "grammar:it-a2-i-pronomi-ci-e-ne",
+          "text": "Ci come luogo e argomento",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 30,
+          "introduced_in": "IT-B1-030",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "frame:it-a2-i-pronomi-ci-e-ne"
+        },
+        {
+          "id": "cosydata:it:prestare:verb",
+          "text": "prestare",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 26,
+          "introduced_in": "IT-B1-026",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "general"
+        },
+        {
+          "id": "cosydata:it:spiegare:verb",
+          "text": "spiegare",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 26,
+          "introduced_in": "IT-B1-026",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-pronomi-combinati",
+          "text": "Indiretto più diretto",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 26,
+          "introduced_in": "IT-B1-026",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "frame:it-b1-pronomi-combinati"
+        },
+        {
+          "id": "pending:it:il-giorno-prima",
+          "text": "il giorno prima",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "introduced_at": 22,
+          "introduced_in": "IT-B1-022",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "past"
+        }
+      ]
+    },
+    {
+      "number": 35,
+      "unit": 7,
+      "code": "IT-B1-035",
+      "title": "Valutare e graduare un giudizio",
+      "introduces": [
+        "pending:it:piuttosto",
+        "pending:it:alquanto",
+        "cosydata:it:davvero:adverb",
+        "pending:it:assolutamente",
+        "pending:it:in-parte",
+        "pending:it:senzaltro",
+        "pending:it:moderatamente",
+        "pending:it:notevole"
+      ],
+      "returns": [
+        {
+          "id": "grammar:it-b1-nomi-alterati",
+          "text": "Diminutivi, accrescitivi, dispregiativi",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 34,
+          "introduced_in": "IT-B1-034",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "frame:it-b1-nomi-alterati"
+        },
+        {
+          "id": "grammar:it-b1-comparativi-e-superlativi-irregolari",
+          "text": "Migliore, peggiore, maggiore",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 33,
+          "introduced_in": "IT-B1-033",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "frame:it-b1-comparativi-e-superlativi-irregolari"
+        },
+        {
+          "id": "cosydata:it:alcuni:pronoun",
+          "text": "alcuni",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 31,
+          "introduced_in": "IT-B1-031",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "general"
+        },
+        {
+          "id": "cosydata:it:nessuno:pronoun",
+          "text": "nessuno",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 31,
+          "introduced_in": "IT-B1-031",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-aggettivi-e-pronomi-indefiniti",
+          "text": "Qualche, alcuni, nessuno",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 31,
+          "introduced_in": "IT-B1-031",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "frame:it-b1-aggettivi-e-pronomi-indefiniti"
+        },
+        {
+          "id": "grammar:it-b1-pronomi-relativi-cui-chi",
+          "text": "Che, cui, il quale",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 27,
+          "introduced_in": "IT-B1-027",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "frame:it-b1-pronomi-relativi-cui-chi"
+        },
+        {
+          "id": "grammar:it-b1-forma-passiva-avanzata",
+          "text": "Passivo con andare e venire",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 23,
+          "introduced_in": "IT-B1-023",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "frame:it-b1-forma-passiva-avanzata"
+        }
+      ]
+    },
+    {
+      "number": 36,
+      "unit": 8,
+      "code": "IT-B1-036",
+      "title": "Leggere un annuncio di lavoro",
+      "introduces": [
+        "pending:it:annuncio",
+        "pending:it:requisito",
+        "cosydata:it:esperienza:noun",
+        "cosydata:it:contratto:noun",
+        "pending:it:full-time",
+        "pending:it:stage",
+        "pending:it:candidatura",
+        "grammar:it-b1-cercare-lavoro"
+      ],
+      "returns": [
+        {
+          "id": "cosydata:it:davvero:adverb",
+          "text": "davvero",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 35,
+          "introduced_in": "IT-B1-035",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-nomi-alterati",
+          "text": "Diminutivi, accrescitivi, dispregiativi",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 34,
+          "introduced_in": "IT-B1-034",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "frame:it-b1-nomi-alterati"
+        },
+        {
+          "id": "cosydata:it:purtroppo:idiom",
+          "text": "purtroppo",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 32,
+          "introduced_in": "IT-B1-032",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "manner"
+        },
+        {
+          "id": "grammar:it-b1-avverbi-in-mente",
+          "text": "Formazione",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 32,
+          "introduced_in": "IT-B1-032",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "frame:it-b1-avverbi-in-mente"
+        },
+        {
+          "id": "cosydata:it:farcela:phrase",
+          "text": "farcela",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 28,
+          "introduced_in": "IT-B1-028",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-verbi-pronominali",
+          "text": "Verbi intrinsecamente pronominali",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 28,
+          "introduced_in": "IT-B1-028",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "frame:it-b1-verbi-pronominali"
+        },
+        {
+          "id": "grammar:it-b1-si-impersonale-e-passivante",
+          "text": "Si impersonale",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 24,
+          "introduced_in": "IT-B1-024",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "frame:it-b1-si-impersonale-e-passivante"
+        }
+      ]
+    },
+    {
+      "number": 37,
+      "unit": 8,
+      "code": "IT-B1-037",
+      "title": "Scrivere una lettera di presentazione",
+      "introduces": [
+        "cosydata:it:gentile:adjective",
+        "pending:it:in-riferimento-a",
+        "pending:it:mi-candido",
+        "pending:it:in-allegato",
+        "pending:it:resto-a-disposizione",
+        "pending:it:cordiali-saluti",
+        "cosydata:it:competenza:noun",
+        "cosydata:it:motivazione:noun",
+        "grammar:it-b1-lettera-di-presentazione"
+      ],
+      "returns": [
+        {
+          "id": "grammar:it-b1-cercare-lavoro",
+          "text": "Lessico del lavoro",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 36,
+          "introduced_in": "IT-B1-036",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "frame:it-b1-cercare-lavoro"
+        },
+        {
+          "id": "cosydata:it:davvero:adverb",
+          "text": "davvero",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 35,
+          "introduced_in": "IT-B1-035",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-comparativi-e-superlativi-irregolari",
+          "text": "Migliore, peggiore, maggiore",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 33,
+          "introduced_in": "IT-B1-033",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "frame:it-b1-comparativi-e-superlativi-irregolari"
+        },
+        {
+          "id": "cosydata:it:riuscire-a:phrase",
+          "text": "riuscire a",
+          "kind": "collocation",
+          "status": "exact",
+          "introduced_at": 29,
+          "introduced_in": "IT-B1-029",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-preposizioni-con-i-verbi",
+          "text": "Di, a, su, da",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 29,
+          "introduced_in": "IT-B1-029",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "frame:it-b1-preposizioni-con-i-verbi"
+        }
+      ]
+    },
+    {
+      "number": 38,
+      "unit": 8,
+      "code": "IT-B1-038",
+      "title": "Affrontare un colloquio",
+      "introduces": [
+        "pending:it:mi-descriva",
+        "pending:it:punto-di-forza",
+        "pending:it:punto-debole",
+        "pending:it:obiettivo",
+        "pending:it:ruolo",
+        "pending:it:team",
+        "pending:it:disponibilita",
+        "grammar:it-b1-colloquio-di-lavoro"
+      ],
+      "returns": [
+        {
+          "id": "grammar:it-b1-lettera-di-presentazione",
+          "text": "Registro formale",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 37,
+          "introduced_in": "IT-B1-037",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "frame:it-b1-lettera-di-presentazione"
+        },
+        {
+          "id": "grammar:it-b1-cercare-lavoro",
+          "text": "Lessico del lavoro",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 36,
+          "introduced_in": "IT-B1-036",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "frame:it-b1-cercare-lavoro"
+        },
+        {
+          "id": "grammar:it-b1-nomi-alterati",
+          "text": "Diminutivi, accrescitivi, dispregiativi",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 34,
+          "introduced_in": "IT-B1-034",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "frame:it-b1-nomi-alterati"
+        },
+        {
+          "id": "grammar:it-a2-i-pronomi-ci-e-ne",
+          "text": "Ci come luogo e argomento",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 30,
+          "introduced_in": "IT-B1-030",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "frame:it-a2-i-pronomi-ci-e-ne"
+        },
+        {
+          "id": "cosydata:it:prestare:verb",
+          "text": "prestare",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 26,
+          "introduced_in": "IT-B1-026",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "general"
+        },
+        {
+          "id": "cosydata:it:spiegare:verb",
+          "text": "spiegare",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 26,
+          "introduced_in": "IT-B1-026",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-pronomi-combinati",
+          "text": "Indiretto più diretto",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 26,
+          "introduced_in": "IT-B1-026",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "frame:it-b1-pronomi-combinati"
+        }
+      ]
+    },
+    {
+      "number": 39,
+      "unit": 8,
+      "code": "IT-B1-039",
+      "title": "Raccontare la propria esperienza",
+      "introduces": [
+        "pending:it:ho-maturato",
+        "pending:it:mi-sono-occupato",
+        "pending:it:ho-gestito",
+        "pending:it:ho-coordinato",
+        "pending:it:settore",
+        "pending:it:mansione",
+        "cosydata:it:risultato:noun",
+        "grammar:it-a2-curriculum-e-colloquio"
+      ],
+      "returns": [
+        {
+          "id": "grammar:it-b1-colloquio-di-lavoro",
+          "text": "Domande tipiche",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 38,
+          "introduced_in": "IT-B1-038",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "frame:it-b1-colloquio-di-lavoro"
+        },
+        {
+          "id": "grammar:it-b1-lettera-di-presentazione",
+          "text": "Registro formale",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 37,
+          "introduced_in": "IT-B1-037",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "frame:it-b1-lettera-di-presentazione"
+        },
+        {
+          "id": "cosydata:it:davvero:adverb",
+          "text": "davvero",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 35,
+          "introduced_in": "IT-B1-035",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "general"
+        },
+        {
+          "id": "cosydata:it:alcuni:pronoun",
+          "text": "alcuni",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 31,
+          "introduced_in": "IT-B1-031",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-aggettivi-e-pronomi-indefiniti",
+          "text": "Qualche, alcuni, nessuno",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 31,
+          "introduced_in": "IT-B1-031",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "frame:it-b1-aggettivi-e-pronomi-indefiniti"
+        },
+        {
+          "id": "grammar:it-b1-pronomi-relativi-cui-chi",
+          "text": "Che, cui, il quale",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 27,
+          "introduced_in": "IT-B1-027",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "frame:it-b1-pronomi-relativi-cui-chi"
+        }
+      ]
+    },
+    {
+      "number": 40,
+      "unit": 8,
+      "code": "IT-B1-040",
+      "title": "Competenze e formazione continua",
+      "introduces": [
+        "cosydata:it:aggiornamento:noun",
+        "pending:it:corso",
+        "pending:it:certificazione",
+        "pending:it:soft-skill",
+        "pending:it:crescita",
+        "pending:it:specializzazione",
+        "grammar:it-b1-competenze-e-formazione"
+      ],
+      "returns": [
+        {
+          "id": "grammar:it-a2-curriculum-e-colloquio",
+          "text": "Passato prossimo e imperfetto",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 39,
+          "introduced_in": "IT-B1-039",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "past"
+        },
+        {
+          "id": "grammar:it-b1-colloquio-di-lavoro",
+          "text": "Domande tipiche",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 38,
+          "introduced_in": "IT-B1-038",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "frame:it-b1-colloquio-di-lavoro"
+        },
+        {
+          "id": "grammar:it-b1-cercare-lavoro",
+          "text": "Lessico del lavoro",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 36,
+          "introduced_in": "IT-B1-036",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "frame:it-b1-cercare-lavoro"
+        },
+        {
+          "id": "cosydata:it:purtroppo:idiom",
+          "text": "purtroppo",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 32,
+          "introduced_in": "IT-B1-032",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "manner"
+        },
+        {
+          "id": "grammar:it-b1-avverbi-in-mente",
+          "text": "Formazione",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 32,
+          "introduced_in": "IT-B1-032",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "frame:it-b1-avverbi-in-mente"
+        },
+        {
+          "id": "cosydata:it:farcela:phrase",
+          "text": "farcela",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 28,
+          "introduced_in": "IT-B1-028",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "general"
+        },
+        {
+          "id": "cosydata:it:rendersi-conto:phrase",
+          "text": "rendersi conto",
+          "kind": "collocation",
+          "status": "exact",
+          "introduced_at": 28,
+          "introduced_in": "IT-B1-028",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-verbi-pronominali",
+          "text": "Verbi intrinsecamente pronominali",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 28,
+          "introduced_in": "IT-B1-028",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "frame:it-b1-verbi-pronominali"
+        }
+      ]
+    },
+    {
+      "number": 41,
+      "unit": 9,
+      "code": "IT-B1-041",
+      "title": "Media e informazione",
+      "introduces": [
+        "cosydata:it:quotidiano:adjective",
+        "pending:it:telegiornale",
+        "cosydata:it:titolo:noun",
+        "cosydata:it:articolo:noun",
+        "cosydata:it:fonte:noun",
+        "cosydata:it:intervista:noun",
+        "pending:it:inchiesta",
+        "pending:it:rassegna",
+        "grammar:it-b1-media-e-informazione"
+      ],
+      "returns": [
+        {
+          "id": "grammar:it-b1-competenze-e-formazione",
+          "text": "Lessico delle competenze",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 40,
+          "introduced_in": "IT-B1-040",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "frame:it-b1-competenze-e-formazione"
+        },
+        {
+          "id": "grammar:it-a2-curriculum-e-colloquio",
+          "text": "Passato prossimo e imperfetto",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 39,
+          "introduced_in": "IT-B1-039",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "past"
+        },
+        {
+          "id": "grammar:it-b1-lettera-di-presentazione",
+          "text": "Registro formale",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 37,
+          "introduced_in": "IT-B1-037",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "frame:it-b1-lettera-di-presentazione"
+        },
+        {
+          "id": "grammar:it-b1-comparativi-e-superlativi-irregolari",
+          "text": "Migliore, peggiore, maggiore",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 33,
+          "introduced_in": "IT-B1-033",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "frame:it-b1-comparativi-e-superlativi-irregolari"
+        },
+        {
+          "id": "cosydata:it:riuscire-a:phrase",
+          "text": "riuscire a",
+          "kind": "collocation",
+          "status": "exact",
+          "introduced_at": 29,
+          "introduced_in": "IT-B1-029",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "general"
+        },
+        {
+          "id": "cosydata:it:approfittare-di:phrase",
+          "text": "approfittare di",
+          "kind": "collocation",
+          "status": "exact",
+          "introduced_at": 29,
+          "introduced_in": "IT-B1-029",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-preposizioni-con-i-verbi",
+          "text": "Di, a, su, da",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 29,
+          "introduced_in": "IT-B1-029",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "frame:it-b1-preposizioni-con-i-verbi"
+        }
+      ]
+    },
+    {
+      "number": 42,
+      "unit": 9,
+      "code": "IT-B1-042",
+      "title": "Riconoscere una notizia falsa",
+      "introduces": [
+        "pending:it:verificare",
+        "pending:it:bufala",
+        "pending:it:titolo-ingannevole",
+        "pending:it:attendibile"
+      ],
+      "returns": [
+        {
+          "id": "grammar:it-b1-media-e-informazione",
+          "text": "Lessico dei media",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 41,
+          "introduced_in": "IT-B1-041",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "frame:it-b1-media-e-informazione"
+        },
+        {
+          "id": "grammar:it-b1-competenze-e-formazione",
+          "text": "Lessico delle competenze",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 40,
+          "introduced_in": "IT-B1-040",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "frame:it-b1-competenze-e-formazione"
+        },
+        {
+          "id": "grammar:it-b1-colloquio-di-lavoro",
+          "text": "Domande tipiche",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 38,
+          "introduced_in": "IT-B1-038",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "frame:it-b1-colloquio-di-lavoro"
+        },
+        {
+          "id": "grammar:it-b1-nomi-alterati",
+          "text": "Diminutivi, accrescitivi, dispregiativi",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 34,
+          "introduced_in": "IT-B1-034",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "frame:it-b1-nomi-alterati"
+        },
+        {
+          "id": "grammar:it-a2-i-pronomi-ci-e-ne",
+          "text": "Ci come luogo e argomento",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 30,
+          "introduced_in": "IT-B1-030",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "frame:it-a2-i-pronomi-ci-e-ne"
+        },
+        {
+          "id": "pending:it:soft-skill",
+          "text": "soft skill",
+          "kind": "collocation",
+          "status": "unresolved",
+          "introduced_at": 40,
+          "introduced_in": "IT-B1-040",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "general"
+        },
+        {
+          "id": "pending:it:mi-descriva",
+          "text": "mi descriva",
+          "kind": "collocation",
+          "status": "unresolved",
+          "introduced_at": 38,
+          "introduced_in": "IT-B1-038",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "general"
+        }
+      ]
+    },
+    {
+      "number": 43,
+      "unit": 9,
+      "code": "IT-B1-043",
+      "title": "Argomentare un'opinione",
+      "introduces": [
+        "cosydata:it:da-un-lato:idiom",
+        "pending:it:dallaltro",
+        "cosydata:it:in-conclusione:phrase",
+        "pending:it:a-mio-avviso",
+        "cosydata:it:d-altra-parte:phrase",
+        "grammar:it-b1-argomentare-un-opinione"
+      ],
+      "returns": [
+        {
+          "id": "grammar:it-b1-media-e-informazione",
+          "text": "Lessico dei media",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 41,
+          "introduced_in": "IT-B1-041",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "frame:it-b1-media-e-informazione"
+        },
+        {
+          "id": "grammar:it-a2-curriculum-e-colloquio",
+          "text": "Passato prossimo e imperfetto",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 39,
+          "introduced_in": "IT-B1-039",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "past"
+        },
+        {
+          "id": "cosydata:it:davvero:adverb",
+          "text": "davvero",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 35,
+          "introduced_in": "IT-B1-035",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "general"
+        },
+        {
+          "id": "cosydata:it:alcuni:pronoun",
+          "text": "alcuni",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 31,
+          "introduced_in": "IT-B1-031",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-aggettivi-e-pronomi-indefiniti",
+          "text": "Qualche, alcuni, nessuno",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 31,
+          "introduced_in": "IT-B1-031",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "frame:it-b1-aggettivi-e-pronomi-indefiniti"
+        }
+      ]
+    },
+    {
+      "number": 44,
+      "unit": 9,
+      "code": "IT-B1-044",
+      "title": "Società e cittadinanza",
+      "introduces": [
+        "cosydata:it:comune-municipio:noun",
+        "pending:it:regione",
+        "cosydata:it:voto:noun",
+        "cosydata:it:diritto:noun",
+        "cosydata:it:dovere:verb",
+        "cosydata:it:cittadino:noun",
+        "pending:it:associazione",
+        "pending:it:volontariato",
+        "grammar:it-b1-societa-e-cittadinanza"
+      ],
+      "returns": [
+        {
+          "id": "cosydata:it:da-un-lato:idiom",
+          "text": "da un lato",
+          "kind": "set-phrase",
+          "status": "exact",
+          "introduced_at": 43,
+          "introduced_in": "IT-B1-043",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
+        },
+        {
+          "id": "cosydata:it:in-conclusione:phrase",
+          "text": "in conclusione",
+          "kind": "collocation",
+          "status": "exact",
+          "introduced_at": 43,
+          "introduced_in": "IT-B1-043",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-argomentare-un-opinione",
+          "text": "Tesi, argomenti, esempi",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 43,
+          "introduced_in": "IT-B1-043",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "frame:it-b1-argomentare-un-opinione"
+        },
+        {
+          "id": "grammar:it-b1-competenze-e-formazione",
+          "text": "Lessico delle competenze",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 40,
+          "introduced_in": "IT-B1-040",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "frame:it-b1-competenze-e-formazione"
+        },
+        {
+          "id": "grammar:it-b1-cercare-lavoro",
+          "text": "Lessico del lavoro",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 36,
+          "introduced_in": "IT-B1-036",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "frame:it-b1-cercare-lavoro"
+        },
+        {
+          "id": "cosydata:it:purtroppo:idiom",
+          "text": "purtroppo",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 32,
+          "introduced_in": "IT-B1-032",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "manner"
+        },
+        {
+          "id": "grammar:it-b1-avverbi-in-mente",
+          "text": "Formazione",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 32,
+          "introduced_in": "IT-B1-032",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "frame:it-b1-avverbi-in-mente"
+        }
+      ]
+    },
+    {
+      "number": 45,
+      "unit": 9,
+      "code": "IT-B1-045",
+      "title": "Diritti e servizi",
+      "introduces": [
+        "pending:it:richiesta",
+        "cosydata:it:modulo:noun",
+        "pending:it:sportello",
+        "pending:it:agevolazione",
+        "pending:it:documentazione",
+        "pending:it:termine",
+        "pending:it:ricorso",
+        "grammar:it-a2-servizi-pubblici-e-moduli"
+      ],
+      "returns": [
+        {
+          "id": "cosydata:it:dovere:verb",
+          "text": "dovere",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 44,
+          "introduced_in": "IT-B1-044",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-societa-e-cittadinanza",
+          "text": "Istituzioni e partecipazione",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 44,
+          "introduced_in": "IT-B1-044",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "frame:it-b1-societa-e-cittadinanza"
+        },
+        {
+          "id": "cosydata:it:da-un-lato:idiom",
+          "text": "da un lato",
+          "kind": "set-phrase",
+          "status": "exact",
+          "introduced_at": 43,
+          "introduced_in": "IT-B1-043",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-argomentare-un-opinione",
+          "text": "Tesi, argomenti, esempi",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 43,
+          "introduced_in": "IT-B1-043",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "frame:it-b1-argomentare-un-opinione"
+        },
+        {
+          "id": "grammar:it-b1-media-e-informazione",
+          "text": "Lessico dei media",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 41,
+          "introduced_in": "IT-B1-041",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "frame:it-b1-media-e-informazione"
+        },
+        {
+          "id": "grammar:it-b1-lettera-di-presentazione",
+          "text": "Registro formale",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 37,
+          "introduced_in": "IT-B1-037",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "frame:it-b1-lettera-di-presentazione"
+        },
+        {
+          "id": "grammar:it-b1-comparativi-e-superlativi-irregolari",
+          "text": "Migliore, peggiore, maggiore",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 33,
+          "introduced_in": "IT-B1-033",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "frame:it-b1-comparativi-e-superlativi-irregolari"
+        }
+      ]
+    },
+    {
+      "number": 46,
+      "unit": 10,
+      "code": "IT-B1-046",
+      "title": "Ambiente e clima",
+      "introduces": [
+        "cosydata:it:clima:noun",
+        "cosydata:it:inquinamento:noun",
+        "pending:it:emissioni",
+        "cosydata:it:siccita:noun",
+        "cosydata:it:alluvione:noun",
+        "cosydata:it:temperatura:noun",
+        "pending:it:biodiversita",
+        "cosydata:it:impatto:noun",
+        "grammar:it-b1-ambiente-e-clima"
+      ],
+      "returns": [
+        {
+          "id": "grammar:it-a2-servizi-pubblici-e-moduli",
+          "text": "Registro impersonale",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 45,
+          "introduced_in": "IT-B1-045",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "frame:it-a2-servizi-pubblici-e-moduli"
+        },
+        {
+          "id": "cosydata:it:dovere:verb",
+          "text": "dovere",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 44,
+          "introduced_in": "IT-B1-044",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-societa-e-cittadinanza",
+          "text": "Istituzioni e partecipazione",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 44,
+          "introduced_in": "IT-B1-044",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "frame:it-b1-societa-e-cittadinanza"
+        },
+        {
+          "id": "grammar:it-b1-colloquio-di-lavoro",
+          "text": "Domande tipiche",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 38,
+          "introduced_in": "IT-B1-038",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "frame:it-b1-colloquio-di-lavoro"
+        },
+        {
+          "id": "grammar:it-b1-nomi-alterati",
+          "text": "Diminutivi, accrescitivi, dispregiativi",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 34,
+          "introduced_in": "IT-B1-034",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "frame:it-b1-nomi-alterati"
+        },
+        {
+          "id": "pending:it:titolo-ingannevole",
+          "text": "titolo ingannevole",
+          "kind": "collocation",
+          "status": "unresolved",
+          "introduced_at": 42,
+          "introduced_in": "IT-B1-042",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "general"
+        }
+      ]
+    },
+    {
+      "number": 47,
+      "unit": 10,
+      "code": "IT-B1-047",
+      "title": "Consumi e sostenibilità",
+      "introduces": [
+        "pending:it:consumo",
+        "cosydata:it:rifiuti:noun",
+        "pending:it:riciclo",
+        "pending:it:imballaggio",
+        "pending:it:filiera",
+        "pending:it:km-zero",
+        "pending:it:spreco",
+        "cosydata:it:risparmio:noun",
+        "grammar:it-b1-sostenibilita-e-consumi"
+      ],
+      "returns": [
+        {
+          "id": "grammar:it-b1-ambiente-e-clima",
+          "text": "Lessico ambientale",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 46,
+          "introduced_in": "IT-B1-046",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "frame:it-b1-ambiente-e-clima"
+        },
+        {
+          "id": "grammar:it-a2-servizi-pubblici-e-moduli",
+          "text": "Registro impersonale",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 45,
+          "introduced_in": "IT-B1-045",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "frame:it-a2-servizi-pubblici-e-moduli"
+        },
+        {
+          "id": "cosydata:it:da-un-lato:idiom",
+          "text": "da un lato",
+          "kind": "set-phrase",
+          "status": "exact",
+          "introduced_at": 43,
+          "introduced_in": "IT-B1-043",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "general"
+        },
+        {
+          "id": "cosydata:it:in-conclusione:phrase",
+          "text": "in conclusione",
+          "kind": "collocation",
+          "status": "exact",
+          "introduced_at": 43,
+          "introduced_in": "IT-B1-043",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-argomentare-un-opinione",
+          "text": "Tesi, argomenti, esempi",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 43,
+          "introduced_in": "IT-B1-043",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "frame:it-b1-argomentare-un-opinione"
+        },
+        {
+          "id": "grammar:it-a2-curriculum-e-colloquio",
+          "text": "Passato prossimo e imperfetto",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 39,
+          "introduced_in": "IT-B1-039",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "past"
+        }
+      ]
+    },
+    {
+      "number": 48,
+      "unit": 10,
+      "code": "IT-B1-048",
+      "title": "Energia e rifiuti",
+      "introduces": [
+        "pending:it:rinnovabile",
+        "pending:it:solare",
+        "pending:it:eolico",
+        "pending:it:raccolta-differenziata",
+        "pending:it:compost",
+        "pending:it:discarica",
+        "pending:it:efficienza"
+      ],
+      "returns": [
+        {
+          "id": "grammar:it-b1-sostenibilita-e-consumi",
+          "text": "Consumo responsabile",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 47,
+          "introduced_in": "IT-B1-047",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "frame:it-b1-sostenibilita-e-consumi"
+        },
+        {
+          "id": "grammar:it-b1-ambiente-e-clima",
+          "text": "Lessico ambientale",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 46,
+          "introduced_in": "IT-B1-046",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "frame:it-b1-ambiente-e-clima"
+        },
+        {
+          "id": "cosydata:it:dovere:verb",
+          "text": "dovere",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 44,
+          "introduced_in": "IT-B1-044",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-societa-e-cittadinanza",
+          "text": "Istituzioni e partecipazione",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 44,
+          "introduced_in": "IT-B1-044",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "frame:it-b1-societa-e-cittadinanza"
+        },
+        {
+          "id": "grammar:it-b1-competenze-e-formazione",
+          "text": "Lessico delle competenze",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 40,
+          "introduced_in": "IT-B1-040",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "frame:it-b1-competenze-e-formazione"
+        },
+        {
+          "id": "grammar:it-b1-cercare-lavoro",
+          "text": "Lessico del lavoro",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 36,
+          "introduced_in": "IT-B1-036",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "frame:it-b1-cercare-lavoro"
+        },
+        {
+          "id": "pending:it:km-zero",
+          "text": "km zero",
+          "kind": "collocation",
+          "status": "unresolved",
+          "introduced_at": 47,
+          "introduced_in": "IT-B1-047",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
+        }
+      ]
+    },
+    {
+      "number": 49,
+      "unit": 10,
+      "code": "IT-B1-049",
+      "title": "Turismo sostenibile",
+      "introduces": [
+        "pending:it:turismo",
+        "pending:it:overtourism",
+        "pending:it:territorio",
+        "cosydata:it:stagione:noun",
+        "cosydata:it:sentiero:noun",
+        "pending:it:ospitalita",
+        "pending:it:locanda",
+        "grammar:it-b1-turismo-sostenibile"
+      ],
+      "returns": [
+        {
+          "id": "grammar:it-b1-sostenibilita-e-consumi",
+          "text": "Consumo responsabile",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 47,
+          "introduced_in": "IT-B1-047",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "frame:it-b1-sostenibilita-e-consumi"
+        },
+        {
+          "id": "grammar:it-a2-servizi-pubblici-e-moduli",
+          "text": "Registro impersonale",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 45,
+          "introduced_in": "IT-B1-045",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "frame:it-a2-servizi-pubblici-e-moduli"
+        },
+        {
+          "id": "grammar:it-b1-media-e-informazione",
+          "text": "Lessico dei media",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 41,
+          "introduced_in": "IT-B1-041",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "frame:it-b1-media-e-informazione"
+        },
+        {
+          "id": "grammar:it-b1-lettera-di-presentazione",
+          "text": "Registro formale",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 37,
+          "introduced_in": "IT-B1-037",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "frame:it-b1-lettera-di-presentazione"
+        },
+        {
+          "id": "pending:it:raccolta-differenziata",
+          "text": "raccolta differenziata",
+          "kind": "collocation",
+          "status": "unresolved",
+          "introduced_at": 48,
+          "introduced_in": "IT-B1-048",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
+        },
+        {
+          "id": "pending:it:km-zero",
+          "text": "km zero",
+          "kind": "collocation",
+          "status": "unresolved",
+          "introduced_at": 47,
+          "introduced_in": "IT-B1-047",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "general"
+        }
+      ]
+    },
+    {
+      "number": 50,
+      "unit": 10,
+      "code": "IT-B1-050",
+      "title": "Il dibattito sull'ambiente",
+      "introduces": [
+        "cosydata:it:a-mio-parere:idiom",
+        "pending:it:obiezione",
+        "pending:it:al-contrario",
+        "cosydata:it:compromesso:noun",
+        "cosydata:it:soluzione:noun",
+        "pending:it:priorita",
+        "cosydata:it:responsabilit:noun"
+      ],
+      "returns": [
+        {
+          "id": "grammar:it-b1-turismo-sostenibile",
+          "text": "Turismo e territorio",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 49,
+          "introduced_in": "IT-B1-049",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "frame:it-b1-turismo-sostenibile"
+        },
+        {
+          "id": "grammar:it-b1-ambiente-e-clima",
+          "text": "Lessico ambientale",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 46,
+          "introduced_in": "IT-B1-046",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "frame:it-b1-ambiente-e-clima"
+        },
+        {
+          "id": "grammar:it-b1-colloquio-di-lavoro",
+          "text": "Domande tipiche",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 38,
+          "introduced_in": "IT-B1-038",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "frame:it-b1-colloquio-di-lavoro"
+        },
+        {
+          "id": "pending:it:raccolta-differenziata",
+          "text": "raccolta differenziata",
+          "kind": "collocation",
+          "status": "unresolved",
+          "introduced_at": 48,
+          "introduced_in": "IT-B1-048",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "general"
+        },
+        {
+          "id": "pending:it:titolo-ingannevole",
+          "text": "titolo ingannevole",
+          "kind": "collocation",
+          "status": "unresolved",
+          "introduced_at": 42,
+          "introduced_in": "IT-B1-042",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "general"
+        }
+      ]
+    },
+    {
+      "number": 51,
+      "unit": 11,
+      "code": "IT-B1-051",
+      "title": "Cultura e patrimonio",
+      "introduces": [
+        "cosydata:it:patrimonio:noun",
+        "pending:it:bene-culturale",
+        "pending:it:restauro",
+        "pending:it:tutela",
+        "cosydata:it:museo:noun",
+        "pending:it:scavo",
+        "pending:it:conservazione",
+        "pending:it:valorizzazione",
+        "grammar:it-b1-cultura-e-patrimonio"
+      ],
+      "returns": [
+        {
+          "id": "cosydata:it:a-mio-parere:idiom",
+          "text": "a mio parere",
+          "kind": "set-phrase",
+          "status": "exact",
+          "introduced_at": 50,
+          "introduced_in": "IT-B1-050",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-turismo-sostenibile",
+          "text": "Turismo e territorio",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 49,
+          "introduced_in": "IT-B1-049",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "frame:it-b1-turismo-sostenibile"
+        },
+        {
+          "id": "grammar:it-b1-sostenibilita-e-consumi",
+          "text": "Consumo responsabile",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 47,
+          "introduced_in": "IT-B1-047",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "frame:it-b1-sostenibilita-e-consumi"
+        },
+        {
+          "id": "cosydata:it:da-un-lato:idiom",
+          "text": "da un lato",
+          "kind": "set-phrase",
+          "status": "exact",
+          "introduced_at": 43,
+          "introduced_in": "IT-B1-043",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-argomentare-un-opinione",
+          "text": "Tesi, argomenti, esempi",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 43,
+          "introduced_in": "IT-B1-043",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "frame:it-b1-argomentare-un-opinione"
+        },
+        {
+          "id": "grammar:it-a2-curriculum-e-colloquio",
+          "text": "Passato prossimo e imperfetto",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 39,
+          "introduced_in": "IT-B1-039",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "past"
+        }
+      ]
+    },
+    {
+      "number": 52,
+      "unit": 11,
+      "code": "IT-B1-052",
+      "title": "Raccontare un libro o un film",
+      "introduces": [
+        "pending:it:trama",
+        "pending:it:protagonista",
+        "pending:it:personaggio",
+        "pending:it:scena",
+        "pending:it:finale",
+        "pending:it:colpo-di-scena",
+        "pending:it:regia",
+        "pending:it:stile",
+        "grammar:it-b1-raccontare-un-libro"
+      ],
+      "returns": [
+        {
+          "id": "grammar:it-b1-cultura-e-patrimonio",
+          "text": "Lessico del patrimonio",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 51,
+          "introduced_in": "IT-B1-051",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "frame:it-b1-cultura-e-patrimonio"
+        },
+        {
+          "id": "cosydata:it:a-mio-parere:idiom",
+          "text": "a mio parere",
+          "kind": "set-phrase",
+          "status": "exact",
+          "introduced_at": 50,
+          "introduced_in": "IT-B1-050",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "general"
+        },
+        {
+          "id": "cosydata:it:dovere:verb",
+          "text": "dovere",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 44,
+          "introduced_in": "IT-B1-044",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-societa-e-cittadinanza",
+          "text": "Istituzioni e partecipazione",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 44,
+          "introduced_in": "IT-B1-044",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "frame:it-b1-societa-e-cittadinanza"
+        },
+        {
+          "id": "grammar:it-b1-competenze-e-formazione",
+          "text": "Lessico delle competenze",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 40,
+          "introduced_in": "IT-B1-040",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "frame:it-b1-competenze-e-formazione"
+        }
+      ]
+    },
+    {
+      "number": 53,
+      "unit": 11,
+      "code": "IT-B1-053",
+      "title": "Scrivere una recensione",
+      "introduces": [
+        "pending:it:recensione",
+        "pending:it:consigliato",
+        "pending:it:deludente",
+        "pending:it:coinvolgente",
+        "pending:it:ritmo",
+        "pending:it:interpretazione",
+        "pending:it:originale",
+        "grammar:it-b1-scrivere-una-recensione"
+      ],
+      "returns": [
+        {
+          "id": "grammar:it-b1-raccontare-un-libro",
+          "text": "Trama e giudizio",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 52,
+          "introduced_in": "IT-B1-052",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "frame:it-b1-raccontare-un-libro"
+        },
+        {
+          "id": "grammar:it-b1-cultura-e-patrimonio",
+          "text": "Lessico del patrimonio",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 51,
+          "introduced_in": "IT-B1-051",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "frame:it-b1-cultura-e-patrimonio"
+        },
+        {
+          "id": "grammar:it-b1-turismo-sostenibile",
+          "text": "Turismo e territorio",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 49,
+          "introduced_in": "IT-B1-049",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "frame:it-b1-turismo-sostenibile"
+        },
+        {
+          "id": "grammar:it-a2-servizi-pubblici-e-moduli",
+          "text": "Registro impersonale",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 45,
+          "introduced_in": "IT-B1-045",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "frame:it-a2-servizi-pubblici-e-moduli"
+        },
+        {
+          "id": "grammar:it-b1-media-e-informazione",
+          "text": "Lessico dei media",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 41,
+          "introduced_in": "IT-B1-041",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "frame:it-b1-media-e-informazione"
+        },
+        {
+          "id": "pending:it:colpo-di-scena",
+          "text": "colpo di scena",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "introduced_at": 52,
+          "introduced_in": "IT-B1-052",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
+        },
+        {
+          "id": "pending:it:bene-culturale",
+          "text": "bene culturale",
+          "kind": "collocation",
+          "status": "unresolved",
+          "introduced_at": 51,
+          "introduced_in": "IT-B1-051",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "general"
+        }
+      ]
+    },
+    {
+      "number": 54,
+      "unit": 11,
+      "code": "IT-B1-054",
+      "title": "Riassumere un testo",
+      "introduces": [
+        "pending:it:riassunto",
+        "pending:it:in-sintesi",
+        "pending:it:in-breve",
+        "pending:it:lautore-sostiene",
+        "pending:it:il-testo-tratta",
+        "pending:it:concludendo",
+        "pending:it:in-sostanza",
+        "pending:it:punto-chiave",
+        "grammar:it-b1-riassumere-un-testo"
+      ],
+      "returns": [
+        {
+          "id": "grammar:it-b1-scrivere-una-recensione",
+          "text": "Struttura della recensione",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 53,
+          "introduced_in": "IT-B1-053",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "frame:it-b1-scrivere-una-recensione"
+        },
+        {
+          "id": "grammar:it-b1-raccontare-un-libro",
+          "text": "Trama e giudizio",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 52,
+          "introduced_in": "IT-B1-052",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "frame:it-b1-raccontare-un-libro"
+        },
+        {
+          "id": "cosydata:it:a-mio-parere:idiom",
+          "text": "a mio parere",
+          "kind": "set-phrase",
+          "status": "exact",
+          "introduced_at": 50,
+          "introduced_in": "IT-B1-050",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-ambiente-e-clima",
+          "text": "Lessico ambientale",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 46,
+          "introduced_in": "IT-B1-046",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "frame:it-b1-ambiente-e-clima"
+        },
+        {
+          "id": "pending:it:colpo-di-scena",
+          "text": "colpo di scena",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "introduced_at": 52,
+          "introduced_in": "IT-B1-052",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "general"
+        }
+      ]
+    },
+    {
+      "number": 55,
+      "unit": 11,
+      "code": "IT-B1-055",
+      "title": "Cultura e identità",
+      "introduces": [
+        "cosydata:it:identita:noun",
+        "cosydata:it:tradizione:noun",
+        "pending:it:radici",
+        "pending:it:stereotipo",
+        "pending:it:differenza",
+        "pending:it:appartenenza",
+        "pending:it:incontro"
+      ],
+      "returns": [
+        {
+          "id": "grammar:it-b1-riassumere-un-testo",
+          "text": "Selezione delle informazioni",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 54,
+          "introduced_in": "IT-B1-054",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "frame:it-b1-riassumere-un-testo"
+        },
+        {
+          "id": "grammar:it-b1-scrivere-una-recensione",
+          "text": "Struttura della recensione",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 53,
+          "introduced_in": "IT-B1-053",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "frame:it-b1-scrivere-una-recensione"
+        },
+        {
+          "id": "grammar:it-b1-cultura-e-patrimonio",
+          "text": "Lessico del patrimonio",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 51,
+          "introduced_in": "IT-B1-051",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "frame:it-b1-cultura-e-patrimonio"
+        },
+        {
+          "id": "grammar:it-b1-sostenibilita-e-consumi",
+          "text": "Consumo responsabile",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 47,
+          "introduced_in": "IT-B1-047",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "frame:it-b1-sostenibilita-e-consumi"
+        },
+        {
+          "id": "cosydata:it:da-un-lato:idiom",
+          "text": "da un lato",
+          "kind": "set-phrase",
+          "status": "exact",
+          "introduced_at": 43,
+          "introduced_in": "IT-B1-043",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "general"
+        },
+        {
+          "id": "cosydata:it:in-conclusione:phrase",
+          "text": "in conclusione",
+          "kind": "collocation",
+          "status": "exact",
+          "introduced_at": 43,
+          "introduced_in": "IT-B1-043",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-argomentare-un-opinione",
+          "text": "Tesi, argomenti, esempi",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 43,
+          "introduced_in": "IT-B1-043",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "frame:it-b1-argomentare-un-opinione"
+        }
+      ]
+    },
+    {
+      "number": 56,
+      "unit": 12,
+      "code": "IT-B1-056",
+      "title": "Prendere appunti e organizzarli",
+      "introduces": [
+        "pending:it:appunto",
+        "pending:it:parola-chiave",
+        "pending:it:schema",
+        "cosydata:it:mappa:noun",
+        "pending:it:sottolineare",
+        "pending:it:riassumere",
+        "cosydata:it:segnare:verb",
+        "pending:it:elenco"
+      ],
+      "returns": [
+        {
+          "id": "grammar:it-b1-riassumere-un-testo",
+          "text": "Selezione delle informazioni",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 54,
+          "introduced_in": "IT-B1-054",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "frame:it-b1-riassumere-un-testo"
+        },
+        {
+          "id": "grammar:it-b1-raccontare-un-libro",
+          "text": "Trama e giudizio",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 52,
+          "introduced_in": "IT-B1-052",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "frame:it-b1-raccontare-un-libro"
+        },
+        {
+          "id": "cosydata:it:dovere:verb",
+          "text": "dovere",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 44,
+          "introduced_in": "IT-B1-044",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-societa-e-cittadinanza",
+          "text": "Istituzioni e partecipazione",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 44,
+          "introduced_in": "IT-B1-044",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "frame:it-b1-societa-e-cittadinanza"
+        },
+        {
+          "id": "pending:it:in-sintesi",
+          "text": "in sintesi",
+          "kind": "collocation",
+          "status": "unresolved",
+          "introduced_at": 54,
+          "introduced_in": "IT-B1-054",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "general"
+        }
+      ]
+    },
+    {
+      "number": 57,
+      "unit": 12,
+      "code": "IT-B1-057",
+      "title": "Riassumere e parafrasare",
+      "introduces": [
+        "pending:it:parafrasi",
+        "pending:it:sinonimo",
+        "pending:it:riformulare",
+        "pending:it:in-altre-parole",
+        "pending:it:cioe",
+        "pending:it:significa-che",
+        "pending:it:equivalente",
+        "pending:it:registro"
+      ],
+      "returns": [
+        {
+          "id": "cosydata:it:segnare:verb",
+          "text": "segnare",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 56,
+          "introduced_in": "IT-B1-056",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-scrivere-una-recensione",
+          "text": "Struttura della recensione",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 53,
+          "introduced_in": "IT-B1-053",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "frame:it-b1-scrivere-una-recensione"
+        },
+        {
+          "id": "grammar:it-b1-turismo-sostenibile",
+          "text": "Turismo e territorio",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 49,
+          "introduced_in": "IT-B1-049",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "frame:it-b1-turismo-sostenibile"
+        },
+        {
+          "id": "grammar:it-a2-servizi-pubblici-e-moduli",
+          "text": "Registro impersonale",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 45,
+          "introduced_in": "IT-B1-045",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "frame:it-a2-servizi-pubblici-e-moduli"
+        },
+        {
+          "id": "pending:it:parola-chiave",
+          "text": "parola chiave",
+          "kind": "collocation",
+          "status": "unresolved",
+          "introduced_at": 56,
+          "introduced_in": "IT-B1-056",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
+        }
+      ]
+    },
+    {
+      "number": 58,
+      "unit": 12,
+      "code": "IT-B1-058",
+      "title": "Email formale e richieste",
+      "introduces": [
+        "pending:it:in-riferimento",
+        "pending:it:chiedo-cortesemente",
+        "pending:it:restando-a-disposizione",
+        "pending:it:allegato",
+        "pending:it:riscontro",
+        "pending:it:sollecito",
+        "grammar:it-a2-scrivere-un-email-formale"
+      ],
+      "returns": [
+        {
+          "id": "cosydata:it:segnare:verb",
+          "text": "segnare",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 56,
+          "introduced_in": "IT-B1-056",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-riassumere-un-testo",
+          "text": "Selezione delle informazioni",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 54,
+          "introduced_in": "IT-B1-054",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "frame:it-b1-riassumere-un-testo"
+        },
+        {
+          "id": "cosydata:it:a-mio-parere:idiom",
+          "text": "a mio parere",
+          "kind": "set-phrase",
+          "status": "exact",
+          "introduced_at": 50,
+          "introduced_in": "IT-B1-050",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-ambiente-e-clima",
+          "text": "Lessico ambientale",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 46,
+          "introduced_in": "IT-B1-046",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "frame:it-b1-ambiente-e-clima"
+        }
+      ]
+    },
+    {
+      "number": 59,
+      "unit": 12,
+      "code": "IT-B1-059",
+      "title": "Collegare le idee in un testo",
+      "introduces": [
+        "pending:it:poiche",
+        "cosydata:it:di-conseguenza:phrase",
+        "cosydata:it:ciononostante:adverb",
+        "pending:it:in-particolare",
+        "pending:it:innanzitutto",
+        "cosydata:it:infine:adverb",
+        "pending:it:viceversa"
+      ],
+      "returns": [
+        {
+          "id": "grammar:it-a2-scrivere-un-email-formale",
+          "text": "Formule di apertura e chiusura",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 58,
+          "introduced_in": "IT-B1-058",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "frame:it-a2-scrivere-un-email-formale"
+        },
+        {
+          "id": "grammar:it-b1-cultura-e-patrimonio",
+          "text": "Lessico del patrimonio",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 51,
+          "introduced_in": "IT-B1-051",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "frame:it-b1-cultura-e-patrimonio"
+        },
+        {
+          "id": "grammar:it-b1-sostenibilita-e-consumi",
+          "text": "Consumo responsabile",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 47,
+          "introduced_in": "IT-B1-047",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "frame:it-b1-sostenibilita-e-consumi"
+        },
+        {
+          "id": "pending:it:in-riferimento",
+          "text": "in riferimento",
+          "kind": "collocation",
+          "status": "unresolved",
+          "introduced_at": 58,
+          "introduced_in": "IT-B1-058",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
+        },
+        {
+          "id": "pending:it:chiedo-cortesemente",
+          "text": "chiedo cortesemente",
+          "kind": "collocation",
+          "status": "unresolved",
+          "introduced_at": 58,
+          "introduced_in": "IT-B1-058",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
+        }
+      ]
+    },
+    {
+      "number": 60,
+      "unit": 12,
+      "code": "IT-B1-060",
+      "title": "Rivedere e correggere un testo",
+      "introduces": [
+        "pending:it:rileggere",
+        "pending:it:correggere",
+        "pending:it:coerenza",
+        "pending:it:ripetizione",
+        "pending:it:chiarezza",
+        "pending:it:versione-finale"
+      ],
+      "returns": [
+        {
+          "id": "cosydata:it:di-conseguenza:phrase",
+          "text": "di conseguenza",
+          "kind": "collocation",
+          "status": "exact",
+          "introduced_at": 59,
+          "introduced_in": "IT-B1-059",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
+        },
+        {
+          "id": "cosydata:it:ciononostante:adverb",
+          "text": "ciononostante",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 59,
+          "introduced_in": "IT-B1-059",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-a2-scrivere-un-email-formale",
+          "text": "Formule di apertura e chiusura",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 58,
+          "introduced_in": "IT-B1-058",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "frame:it-a2-scrivere-un-email-formale"
+        },
+        {
+          "id": "grammar:it-b1-raccontare-un-libro",
+          "text": "Trama e giudizio",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 52,
+          "introduced_in": "IT-B1-052",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "frame:it-b1-raccontare-un-libro"
+        }
+      ]
+    },
+    {
+      "number": 61,
+      "unit": 13,
+      "code": "IT-B1-061",
+      "title": "Ripasso del congiuntivo",
+      "introduces": [
+        "pending:it:sia",
+        "pending:it:abbia",
+        "pending:it:fosse",
+        "pending:it:avesse"
+      ],
+      "returns": [
+        {
+          "id": "cosydata:it:di-conseguenza:phrase",
+          "text": "di conseguenza",
+          "kind": "collocation",
+          "status": "exact",
+          "introduced_at": 59,
+          "introduced_in": "IT-B1-059",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "general"
+        },
+        {
+          "id": "cosydata:it:ciononostante:adverb",
+          "text": "ciononostante",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 59,
+          "introduced_in": "IT-B1-059",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-scrivere-una-recensione",
+          "text": "Struttura della recensione",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 53,
+          "introduced_in": "IT-B1-053",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "frame:it-b1-scrivere-una-recensione"
+        },
+        {
+          "id": "grammar:it-b1-turismo-sostenibile",
+          "text": "Turismo e territorio",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 49,
+          "introduced_in": "IT-B1-049",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "frame:it-b1-turismo-sostenibile"
+        }
+      ]
+    },
+    {
+      "number": 62,
+      "unit": 13,
+      "code": "IT-B1-062",
+      "title": "Ripasso dell'ipotesi",
+      "introduces": [],
+      "returns": [
+        {
+          "id": "grammar:it-a2-scrivere-un-email-formale",
+          "text": "Formule di apertura e chiusura",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 58,
+          "introduced_in": "IT-B1-058",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "frame:it-a2-scrivere-un-email-formale"
+        },
+        {
+          "id": "grammar:it-b1-riassumere-un-testo",
+          "text": "Selezione delle informazioni",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 54,
+          "introduced_in": "IT-B1-054",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "frame:it-b1-riassumere-un-testo"
+        },
+        {
+          "id": "cosydata:it:a-mio-parere:idiom",
+          "text": "a mio parere",
+          "kind": "set-phrase",
+          "status": "exact",
+          "introduced_at": 50,
+          "introduced_in": "IT-B1-050",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "general"
+        },
+        {
+          "id": "pending:it:versione-finale",
+          "text": "versione finale",
+          "kind": "collocation",
+          "status": "unresolved",
+          "introduced_at": 60,
+          "introduced_in": "IT-B1-060",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "general"
+        }
+      ]
+    },
+    {
+      "number": 63,
+      "unit": 13,
+      "code": "IT-B1-063",
+      "title": "Ripasso di pronomi e preposizioni",
+      "introduces": [
+        "cosydata:it:ne:pronoun",
+        "cosydata:it:ci:pronoun"
+      ],
+      "returns": [
+        {
+          "id": "cosydata:it:di-conseguenza:phrase",
+          "text": "di conseguenza",
+          "kind": "collocation",
+          "status": "exact",
+          "introduced_at": 59,
+          "introduced_in": "IT-B1-059",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "general"
+        },
+        {
+          "id": "cosydata:it:ciononostante:adverb",
+          "text": "ciononostante",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 59,
+          "introduced_in": "IT-B1-059",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-cultura-e-patrimonio",
+          "text": "Lessico del patrimonio",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 51,
+          "introduced_in": "IT-B1-051",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "frame:it-b1-cultura-e-patrimonio"
+        },
+        {
+          "id": "cosydata:it:infine:adverb",
+          "text": "infine",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 59,
+          "introduced_in": "IT-B1-059",
+          "return_number": 3,
+          "offset": 4,
+          "domain": "general"
+        }
+      ]
+    },
+    {
+      "number": 64,
+      "unit": 13,
+      "code": "IT-B1-064",
+      "title": "Produzione orale: sostenere un dibattito",
+      "introduces": [
+        "pending:it:capisco-la-posizione",
+        "pending:it:vorrei-aggiungere",
+        "pending:it:sono-daccordo-in-parte",
+        "pending:it:replica"
+      ],
+      "returns": [
+        {
+          "id": "cosydata:it:ne:pronoun",
+          "text": "ne",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 63,
+          "introduced_in": "IT-B1-063",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
+        },
+        {
+          "id": "cosydata:it:ci:pronoun",
+          "text": "ci",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 63,
+          "introduced_in": "IT-B1-063",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-raccontare-un-libro",
+          "text": "Trama e giudizio",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 52,
+          "introduced_in": "IT-B1-052",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "frame:it-b1-raccontare-un-libro"
+        },
+        {
+          "id": "cosydata:it:segnare:verb",
+          "text": "segnare",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 56,
+          "introduced_in": "IT-B1-056",
+          "return_number": 4,
+          "offset": 8,
+          "domain": "general"
+        }
+      ]
+    },
+    {
+      "number": 65,
+      "unit": 13,
+      "code": "IT-B1-065",
+      "title": "Produzione scritta: un testo argomentativo",
+      "introduces": [
+        "pending:it:tesi",
+        "cosydata:it:esempio:noun",
+        "pending:it:controargomento",
+        "pending:it:in-primo-luogo"
+      ],
+      "returns": [
+        {
+          "id": "cosydata:it:ne:pronoun",
+          "text": "ne",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 63,
+          "introduced_in": "IT-B1-063",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "general"
+        },
+        {
+          "id": "cosydata:it:ci:pronoun",
+          "text": "ci",
+          "kind": "word",
+          "status": "exact",
+          "introduced_at": 63,
+          "introduced_in": "IT-B1-063",
+          "return_number": 2,
+          "offset": 2,
+          "domain": "general"
+        },
+        {
+          "id": "grammar:it-b1-scrivere-una-recensione",
+          "text": "Struttura della recensione",
+          "kind": "frame",
+          "status": "grammar-id",
+          "introduced_at": 53,
+          "introduced_in": "IT-B1-053",
+          "return_number": 5,
+          "offset": 12,
+          "domain": "frame:it-b1-scrivere-una-recensione"
+        },
+        {
+          "id": "pending:it:capisco-la-posizione",
+          "text": "capisco la posizione",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "introduced_at": 64,
+          "introduced_in": "IT-B1-064",
+          "return_number": 1,
+          "offset": 1,
+          "domain": "general"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "lessons": 65,
+    "blocks": 244,
+    "returns_planned": 408,
+    "cap": 8,
+    "hold_blocks": 244,
+    "recognise_blocks": 256,
+    "lessons_at_cap": 18,
+    "lessons_empty": 1,
+    "blocks_never_returned": 1,
+    "returns_due": 1168,
+    "returns_skipped": 760,
+    "slots": 512,
+    "capacity_blocks": 102,
+    "blocks_per_lesson": 3.8,
+    "unresolved_in_plan": 40
+  }
+}

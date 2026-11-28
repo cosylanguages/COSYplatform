@@ -1,0 +1,12 @@
+{
+  "course": "general-it-b1",
+  "note": "Hand corrections to the role rule, unit 1 only so far. A block marked hold is scheduled for return; recognise is met once on purpose. The rule cannot see part of speech for blocks COSYdata lacks, and it cannot see that 'frattempo' is taught inside 'nel frattempo'.",
+  "overrides": {
+    "pending:it:intanto": {"role": "hold", "why": "narrative connector, produced in every story: 'intanto che aspettavo...'"},
+    "pending:it:frattempo": {"role": "hold", "why": "taught as 'nel frattempo'; the collocation is productive even though the noun alone is not"},
+    "pending:it:dunque": {"role": "hold", "why": "connector of exactly the kind lesson 3 collects; unresolved only because COSYdata lacks the entry"},
+    "pending:it:pertanto": {"role": "hold", "why": "formal connector, produced in written argument"},
+    "pending:it:pur": {"role": "hold", "why": "taught as 'pur + gerund', the concession pattern of lesson 4"},
+    "cosydata:it:visto:noun": {"role": "hold", "why": "in this lesson it is the connector 'visto che'; the dictionary entry is a noun and needs a second sense"}
+  }
+}

@@ -15,8 +15,16 @@
   "assessment": "Verifica l'uso corretto di «ordine delle parole ed enfasi» e la chiarezza dell'esposizione orale.",
   "homework": "Scrivi dieci righe usando «ordine delle parole ed enfasi».",
   "recycling": {
-    "prior": "Lessico del livello A2 e del modulo precedente",
-    "next": "La lezione successiva tratta le forme del congiuntivo presente."
+    "prior": "mentre, visto, tuttavia, inoltre, Passato prossimo e imperfetto insieme, Trapassato per l'anteriorità",
+    "next": "La lezione successiva tratta le forme del congiuntivo presente.",
+    "priorBlocks": [
+      "cosydata:it:mentre:conjunction",
+      "cosydata:it:visto:noun",
+      "cosydata:it:tuttavia:adverb",
+      "cosydata:it:inoltre:idiom",
+      "grammar:it-a2-passato-prossimo-vs-imperfetto",
+      "grammar:it-a2-trapassato-prossimo"
+    ]
   },
   "differentiation": {
     "individual": "Una scheda: cinque frasi sul tema della lezione.",
@@ -80,19 +88,27 @@
       "elements": [
         {
           "type": "instruction",
-          "content": "Già in possesso: Lessico del livello A2 e del modulo precedente"
+          "content": "Riattiva: rispondi ad alta voce alle domande sui blocchi già incontrati."
         },
         {
           "type": "blockquote",
-          "content": "Lessico da riattivare: è che, quanto a, proprio"
+          "content": "1. Che cosa fai mentre aspetti l'autobus?\n2. Spiega una conseguenza che si vede dai fatti: «Visto che…, …»\n3. Sei d'accordo con questa idea? Esprimi un dubbio: «È una buona idea; tuttavia…»\n4. Dammi due motivi per studiare una lingua straniera, il secondo con «inoltre».\n5. Racconta un pomeriggio di dieci anni fa: com'era la giornata e che cosa è successo all'improvviso?\n6. Ieri sei arrivato a casa e qualcuno aveva già preparato la cena: racconta che cosa aveva già fatto.",
+          "usesChunk": [
+            "cosydata:it:mentre:conjunction",
+            "cosydata:it:visto:noun",
+            "cosydata:it:tuttavia:adverb",
+            "cosydata:it:inoltre:idiom",
+            "grammar:it-a2-passato-prossimo-vs-imperfetto",
+            "grammar:it-a2-trapassato-prossimo"
+          ]
         },
         {
           "type": "instruction",
-          "content": "A memoria: che cosa significa questa parola e dove l'hai incontrata?"
+          "content": "Scegli una domanda e rispondi in tre frasi; poi riprova senza guardare."
         },
         {
           "type": "input",
-          "placeholder": "è che — significato e contesto"
+          "placeholder": "la tua risposta, tre frasi"
         }
       ]
     },

@@ -1,0 +1,4033 @@
+{
+ "course": "general-fr-c1",
+ "lang": "fr",
+ "level": "C1",
+ "source": {
+  "cosydata_entries": 3621,
+  "curriculum": "curriculums/fr/general/C1.json"
+ },
+ "summary": {
+  "items": 520,
+  "exact": 62,
+  "normalized": 2,
+  "related": 8,
+  "missing": 448,
+  "resolved_pct": 12,
+  "different_level": 58
+ },
+ "lessons": {
+  "fr/general/C1/u01-l01": {
+   "code": "FR-C1-001",
+   "items": [
+    {
+     "text": "protocole",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "hypothèse",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "échantillon",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "enquête",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "analyse",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "résultat",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "validité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "reproductibilité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u01-l02": {
+   "code": "FR-C1-002",
+   "items": [
+    {
+     "text": "indicateur",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "corrélation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "significativité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "échantillon",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "tendance",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "écart",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "jeu de données",
+     "status": "exact",
+     "id": "fr:jeu-de-donnees:noun",
+     "level": "C2",
+     "alternatives": []
+    },
+    {
+     "text": "relevé",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u01-l03": {
+   "code": "FR-C1-003",
+   "items": [
+    {
+     "text": "transfert",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "acceptation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "scepticisme",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "vulgarisation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "discours",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "crédibilité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "public spécialisé",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "grand public",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u01-l04": {
+   "code": "FR-C1-004",
+   "items": [
+    {
+     "text": "comité d'éthique",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "consentement",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "protection des données",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "conflit d'intérêts",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "intégrité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "directive",
+     "status": "related",
+     "id": null,
+     "level": null,
+     "alternatives": [
+      {
+       "id": "fr:direct:adjective",
+       "word": "direct",
+       "level": "A2"
+      }
+     ]
+    },
+    {
+     "text": "examen",
+     "status": "exact",
+     "id": "fr:examen-ecole:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "responsabilité",
+     "status": "exact",
+     "id": "fr:responsabilit:noun",
+     "level": "B1",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u01-l05": {
+   "code": "FR-C1-005",
+   "items": [
+    {
+     "text": "financement",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "appel à projets",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "priorité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "évaluation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "excellence",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "concurrence",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "site",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "bilan",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u02-l01": {
+   "code": "FR-C1-006",
+   "items": [
+    {
+     "text": "automatisation",
+     "status": "exact",
+     "id": "fr:automatisation:noun",
+     "level": "C1",
+     "alternatives": []
+    },
+    {
+     "text": "valeur ajoutée",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "qualification",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "rationalisation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "interface",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "poste de travail",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "reconversion",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "acceptation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u02-l02": {
+   "code": "FR-C1-007",
+   "items": [
+    {
+     "text": "algorithme",
+     "status": "exact",
+     "id": "fr:algorithme:noun",
+     "level": "C1",
+     "alternatives": []
+    },
+    {
+     "text": "données d'entraînement",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "modèle",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "transparence",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "traçabilité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "biais",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "régulation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "responsabilité",
+     "status": "exact",
+     "id": "fr:responsabilit:noun",
+     "level": "B1",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u02-l03": {
+   "code": "FR-C1-008",
+   "items": [
+    {
+     "text": "consentement",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "finalité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "surveillance",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "chiffrement",
+     "status": "exact",
+     "id": "fr:chiffrement:noun",
+     "level": "C1",
+     "alternatives": []
+    },
+    {
+     "text": "accès",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "abus",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "autorité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "transparence",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u02-l04": {
+   "code": "FR-C1-009",
+   "items": [
+    {
+     "text": "souveraineté",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "dépendance",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "infrastructure",
+     "status": "exact",
+     "id": "fr:infrastructure:noun",
+     "level": "C1",
+     "alternatives": []
+    },
+    {
+     "text": "standard",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "régulation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "concurrence",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "sécurité d'approvisionnement",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "alliance",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u02-l05": {
+   "code": "FR-C1-010",
+   "items": [
+    {
+     "text": "évaluation des risques",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "scénario",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "risque",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "bénéfice",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "arbitrage",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "expertise",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "participation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "recommandation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u03-l01": {
+   "code": "FR-C1-011",
+   "items": [
+    {
+     "text": "gouvernance",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "compétence",
+     "status": "exact",
+     "id": "fr:comptence:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "tutelle",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "instance",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "délibération",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "procédure",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "légitimation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "redevabilité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u03-l02": {
+   "code": "FR-C1-012",
+   "items": [
+    {
+     "text": "constitution",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "séparation des pouvoirs",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "droit fondamental",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "arrêt",
+     "status": "related",
+     "id": null,
+     "level": null,
+     "alternatives": [
+      {
+       "id": "fr:arreter:verb",
+       "word": "arrêter",
+       "level": "A0"
+      }
+     ]
+    },
+    {
+     "text": "contrôle",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "majorité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "opposition",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "conseil constitutionnel",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u03-l03": {
+   "code": "FR-C1-013",
+   "items": [
+    {
+     "text": "participation électorale",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "mandat",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "coalition",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "légitimité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "rapport de forces",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "circonscription",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "voix",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "alternance",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u03-l04": {
+   "code": "FR-C1-014",
+   "items": [
+    {
+     "text": "réforme",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "débureaucratisation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "dématérialisation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "effectifs",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "budget",
+     "status": "exact",
+     "id": "fr:budget:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "efficacité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "acceptabilité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "mise en œuvre",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u03-l05": {
+   "code": "FR-C1-015",
+   "items": [
+    {
+     "text": "espace public",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "participation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "transparence",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "audition",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "consultation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "confiance",
+     "status": "exact",
+     "id": "fr:confiance:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "distance",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "redevabilité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u04-l01": {
+   "code": "FR-C1-016",
+   "items": [
+    {
+     "text": "ordre juridique",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "norme",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "règlement",
+     "status": "related",
+     "id": null,
+     "level": null,
+     "alternatives": [
+      {
+       "id": "fr:regle:noun",
+       "word": "règle",
+       "level": "A0"
+      }
+     ]
+    },
+    {
+     "text": "pouvoir discrétionnaire",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "délai",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "recours",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "décision",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "voie de droit",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u04-l02": {
+   "code": "FR-C1-017",
+   "items": [
+    {
+     "text": "contrat",
+     "status": "exact",
+     "id": "fr:contrat:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "clause",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "responsabilité",
+     "status": "exact",
+     "id": "fr:responsabilit:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "garantie",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "résiliation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "délai",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "droit",
+     "status": "exact",
+     "id": "fr:droit:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "indemnisation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u04-l03": {
+   "code": "FR-C1-018",
+   "items": [
+    {
+     "text": "droit pénal",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "qualification pénale",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "instruction",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "jugement",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "prévention",
+     "status": "exact",
+     "id": "fr:prvention:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "réinsertion",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "protection des victimes",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "proportionnalité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u04-l04": {
+   "code": "FR-C1-019",
+   "items": [
+    {
+     "text": "directive",
+     "status": "related",
+     "id": null,
+     "level": null,
+     "alternatives": [
+      {
+       "id": "fr:direct:adjective",
+       "word": "direct",
+       "level": "A2"
+      }
+     ]
+    },
+    {
+     "text": "règlement",
+     "status": "related",
+     "id": null,
+     "level": null,
+     "alternatives": [
+      {
+       "id": "fr:regle:noun",
+       "word": "règle",
+       "level": "A0"
+      }
+     ]
+    },
+    {
+     "text": "compétence",
+     "status": "exact",
+     "id": "fr:comptence:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "marché intérieur",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "subsidiarité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "transposition",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "primauté",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "interprétation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u04-l05": {
+   "code": "FR-C1-020",
+   "items": [
+    {
+     "text": "justice",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "équité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "égalité",
+     "status": "exact",
+     "id": "fr:egalite:noun",
+     "level": "B2",
+     "alternatives": []
+    },
+    {
+     "text": "arbitraire",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "motivation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "arbitrage",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "précédent",
+     "status": "exact",
+     "id": "fr:precedent:adjective",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "État de droit",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u05-l01": {
+   "code": "FR-C1-021",
+   "items": [
+    {
+     "text": "structure sociale",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "milieu social",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "classe",
+     "status": "exact",
+     "id": "fr:classe-ecole:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "ascension",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "inégalité",
+     "status": "exact",
+     "id": "fr:ingalit:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "patrimoine",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "éducation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "mobilité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u05-l02": {
+   "code": "FR-C1-022",
+   "items": [
+    {
+     "text": "natalité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "espérance de vie",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "pyramide des âges",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "immigration",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "pénurie de main-d'œuvre",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "retraite",
+     "status": "exact",
+     "id": "fr:retraite:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "dépendance",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "projection",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u05-l03": {
+   "code": "FR-C1-023",
+   "items": [
+    {
+     "text": "gentrification",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "prix du loyer",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "densification",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "infrastructure",
+     "status": "exact",
+     "id": "fr:infrastructure:noun",
+     "level": "C1",
+     "alternatives": []
+    },
+    {
+     "text": "quartier",
+     "status": "exact",
+     "id": "fr:quartier:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "logement vacant",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "réhabilitation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "éviction",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u05-l04": {
+   "code": "FR-C1-024",
+   "items": [
+    {
+     "text": "égalité des chances",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "sélection",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "programme",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "encadrement",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "passerelles",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "diplôme",
+     "status": "exact",
+     "id": "fr:diplome-fin:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "origine",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "accompagnement",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u05-l05": {
+   "code": "FR-C1-025",
+   "items": [
+    {
+     "text": "État social",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "redistribution",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "cotisation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "droit",
+     "status": "exact",
+     "id": "fr:droit:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "besoin",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "couverture",
+     "status": "exact",
+     "id": "fr:couverture:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "solidarité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "financement",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u06-l01": {
+   "code": "FR-C1-026",
+   "items": [
+    {
+     "text": "immigration",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "intégration",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "participation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "cours de langue",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "reconnaissance",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "séjour",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "nationalité",
+     "status": "exact",
+     "id": "fr:nationalite:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "diversité",
+     "status": "exact",
+     "id": "fr:diversite:noun",
+     "level": "B2",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u06-l02": {
+   "code": "FR-C1-027",
+   "items": [
+    {
+     "text": "asile",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "statut de protection",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "pays d'origine",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "procédure",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "hébergement",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "retour",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "protection",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "examen",
+     "status": "exact",
+     "id": "fr:examen-ecole:noun",
+     "level": "A1",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u06-l03": {
+   "code": "FR-C1-028",
+   "items": [
+    {
+     "text": "interculturalité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "stéréotype",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "préjugé",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "assignation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "dialogue",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "traduction",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "malentendu",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "respect",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u06-l04": {
+   "code": "FR-C1-029",
+   "items": [
+    {
+     "text": "langue maternelle",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "langue seconde",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "plurilinguisme",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "accent",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "politique linguistique",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "identité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "appartenance",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "valorisation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u06-l05": {
+   "code": "FR-C1-030",
+   "items": [
+    {
+     "text": "mutation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "tradition",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "évolution des valeurs",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "génération",
+     "status": "exact",
+     "id": "fr:gnration:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "norme",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "usage",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "débat",
+     "status": "exact",
+     "id": "fr:debat:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "acceptation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u07-l01": {
+   "code": "FR-C1-031",
+   "items": [
+    {
+     "text": "connaissance",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "certitude",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "doute",
+     "status": "related",
+     "id": null,
+     "level": null,
+     "alternatives": [
+      {
+       "id": "fr:douter:verb",
+       "word": "douter",
+       "level": "A2"
+      }
+     ]
+    },
+    {
+     "text": "fondement",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "intuition",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "expérience",
+     "status": "exact",
+     "id": "fr:experience:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "conclusion",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "présupposé",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u07-l02": {
+   "code": "FR-C1-032",
+   "items": [
+    {
+     "text": "vérité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "perspective",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "interprétation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "consensus",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "objectivité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "relativisme",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "témoignage",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "preuve",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u07-l03": {
+   "code": "FR-C1-033",
+   "items": [
+    {
+     "text": "preuve",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "indice",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "causalité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "fausse causalité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "source",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "vérification",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "démonstration",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "corroboration",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u07-l04": {
+   "code": "FR-C1-034",
+   "items": [
+    {
+     "text": "sophisme",
+     "status": "exact",
+     "id": "fr:sophisme:noun",
+     "level": "C1",
+     "alternatives": []
+    },
+    {
+     "text": "biais",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "postulat",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "prémisse",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "conclusion",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "contradiction",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "examen",
+     "status": "exact",
+     "id": "fr:examen-ecole:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "jugement",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u07-l05": {
+   "code": "FR-C1-035",
+   "items": [
+    {
+     "text": "société de la connaissance",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "expertise",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "confiance",
+     "status": "exact",
+     "id": "fr:confiance:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "scepticisme",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Lumières",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "autonomie",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "discours",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "responsabilité",
+     "status": "exact",
+     "id": "fr:responsabilit:noun",
+     "level": "B1",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u08-l01": {
+   "code": "FR-C1-036",
+   "items": [
+    {
+     "text": "paysage médiatique",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "tirage",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "audience",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "format",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "rédaction",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "correspondant",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "presse à sensation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "journalisme de qualité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u08-l02": {
+   "code": "FR-C1-037",
+   "items": [
+    {
+     "text": "désinformation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "falsification",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "narratif",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "diffusion",
+     "status": "related",
+     "id": null,
+     "level": null,
+     "alternatives": [
+      {
+       "id": "fr:diffus:adjective",
+       "word": "diffus",
+       "level": "C2"
+      }
+     ]
+    },
+    {
+     "text": "plateforme",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "bulle informationnelle",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "vérification",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "réfutation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u08-l03": {
+   "code": "FR-C1-038",
+   "items": [
+    {
+     "text": "source",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "preuve",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "témoin",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "document",
+     "status": "exact",
+     "id": "fr:document:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "anonymat",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "vérification",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "intérêt",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "crédibilité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u08-l04": {
+   "code": "FR-C1-039",
+   "items": [
+    {
+     "text": "liberté d'expression",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "censure",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "limite",
+     "status": "exact",
+     "id": "fr:limite:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "injure",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "satire",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "protection",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "arbitrage",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "espace public",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u08-l05": {
+   "code": "FR-C1-040",
+   "items": [
+    {
+     "text": "débat",
+     "status": "exact",
+     "id": "fr:debat:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "polarisation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "indignation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "compromis",
+     "status": "exact",
+     "id": "fr:compromis:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "camp",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "médiation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "ton",
+     "status": "exact",
+     "id": "fr:ton:pronoun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "respect",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u09-l01": {
+   "code": "FR-C1-041",
+   "items": [
+    {
+     "text": "rhétorique",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "métaphore",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "antithèse",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "répétition",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "gradation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "allusion",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "rythme",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "effet",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u09-l02": {
+   "code": "FR-C1-042",
+   "items": [
+    {
+     "text": "thèse",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "argument",
+     "status": "exact",
+     "id": "fr:argument:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "preuve",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "objection",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "réfutation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "conclusion",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "prémisse",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "pondération",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u09-l03": {
+   "code": "FR-C1-043",
+   "items": [
+    {
+     "text": "prise de parole",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "droit de réponse",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "interruption",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "rappel à l'ordre",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "synthèse",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "compromis",
+     "status": "exact",
+     "id": "fr:compromis:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "majorité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "vote",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u09-l04": {
+   "code": "FR-C1-044",
+   "items": [
+    {
+     "text": "offre",
+     "status": "exact",
+     "id": "fr:offre:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "concession",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "exigence",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "compromis",
+     "status": "exact",
+     "id": "fr:compromis:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "marge",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "accord",
+     "status": "exact",
+     "id": "fr:accord:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "délai",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "renégociation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u09-l05": {
+   "code": "FR-C1-045",
+   "items": [
+    {
+     "text": "conférence",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "table ronde",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "modération",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "public",
+     "status": "exact",
+     "id": "fr:public:adjective",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "question",
+     "status": "exact",
+     "id": "fr:question:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "réponse",
+     "status": "exact",
+     "id": "fr:reponse:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "chute",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "clôture",
+     "status": "exact",
+     "id": "fr:cloture:noun",
+     "level": "A2",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u10-l01": {
+   "code": "FR-C1-046",
+   "items": [
+    {
+     "text": "conjoncture",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "croissance",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "inflation",
+     "status": "exact",
+     "id": "fr:inflation:noun",
+     "level": "B2",
+     "alternatives": []
+    },
+    {
+     "text": "taux d'intérêt",
+     "status": "exact",
+     "id": "fr:taux-dintrt:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "chômage",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "budget",
+     "status": "exact",
+     "id": "fr:budget:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "prévision",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "indicateur",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u10-l02": {
+   "code": "FR-C1-047",
+   "items": [
+    {
+     "text": "obligation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "rendement",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "risque",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "bulle",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "supervision",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "régulation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "liquidité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "cotation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u10-l03": {
+   "code": "FR-C1-048",
+   "items": [
+    {
+     "text": "stratégie",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "bilan",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "indicateur",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "investissement",
+     "status": "exact",
+     "id": "fr:investissement:noun",
+     "level": "B2",
+     "alternatives": []
+    },
+    {
+     "text": "site",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "concurrence",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "responsabilité",
+     "status": "exact",
+     "id": "fr:responsabilit:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "supervision",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u10-l04": {
+   "code": "FR-C1-049",
+   "items": [
+    {
+     "text": "qualification",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "convention collective",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "précarité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "formation continue",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "intermédiation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "taux",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "incitation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "profil",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u10-l05": {
+   "code": "FR-C1-050",
+   "items": [
+    {
+     "text": "chaîne d'approvisionnement",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "droit de douane",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "dépendance",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "diversification",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "standard",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "certification",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "sanction",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "exportation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u11-l01": {
+   "code": "FR-C1-051",
+   "items": [
+    {
+     "text": "alliance",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "intérêt",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "influence",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "dissuasion",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "souveraineté",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "médiation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "sanction",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "négociation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u11-l02": {
+   "code": "FR-C1-052",
+   "items": [
+    {
+     "text": "charte",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "mandat",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "résolution",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "droit de veto",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "contribution",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "mission",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "légitimation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "réforme",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u11-l03": {
+   "code": "FR-C1-053",
+   "items": [
+    {
+     "text": "droit de douane",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "quota",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "accord",
+     "status": "exact",
+     "id": "fr:accord:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "règlement des différends",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "protectionnisme",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "libre-échange",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "exception",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "rétorsion",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u11-l04": {
+   "code": "FR-C1-054",
+   "items": [
+    {
+     "text": "menace",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "alliance",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "armement",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "désarmement",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "contrôle",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "dialogue",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "risque",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "stabilité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u11-l05": {
+   "code": "FR-C1-055",
+   "items": [
+    {
+     "text": "climat",
+     "status": "exact",
+     "id": "fr:climat:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "développement",
+     "status": "exact",
+     "id": "fr:developpement:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "financement",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "partenariat",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "engagement",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "mise en œuvre",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "contrôle",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "solidarité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u12-l01": {
+   "code": "FR-C1-056",
+   "items": [
+    {
+     "text": "esthétique",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "perception",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "forme",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "matière",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "effet",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "style",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "canon",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "réception",
+     "status": "exact",
+     "id": "fr:reception:noun",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u12-l02": {
+   "code": "FR-C1-057",
+   "items": [
+    {
+     "text": "critique",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "œuvre",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "interprétation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "contexte",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "citation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "référence",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "jugement",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "motivation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u12-l03": {
+   "code": "FR-C1-058",
+   "items": [
+    {
+     "text": "canon",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "genre",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "narrateur",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "motif",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "interprétation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "époque",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "traduction",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "portée",
+     "status": "related",
+     "id": null,
+     "level": null,
+     "alternatives": [
+      {
+       "id": "fr:porte:noun",
+       "word": "porte",
+       "level": "A0"
+      }
+     ]
+    }
+   ]
+  },
+  "fr/general/C1/u12-l04": {
+   "code": "FR-C1-059",
+   "items": [
+    {
+     "text": "critique culturelle",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "consommation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "marchandisation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "authenticité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "tradition",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "culture populaire",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "distinction",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "mutation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u12-l05": {
+   "code": "FR-C1-060",
+   "items": [
+    {
+     "text": "patrimoine",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "monument",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "restauration",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "valorisation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "tourisme",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "conservation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "accès",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "identité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u13-l01": {
+   "code": "FR-C1-061",
+   "items": [
+    {
+     "text": "passif",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "subjonctif",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "périphrase",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "accord",
+     "status": "exact",
+     "id": "fr:accord:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "subordonnée",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "connecteur",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "modalité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "registre",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u13-l02": {
+   "code": "FR-C1-062",
+   "items": [
+    {
+     "text": "discours rapporté",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "conditionnel",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "irréel",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "attribution",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "concordance des temps",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "reformulation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "nuance",
+     "status": "normalized",
+     "id": "fr:nuanc:adjective",
+     "level": "C2",
+     "alternatives": []
+    },
+    {
+     "text": "distance",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u13-l03": {
+   "code": "FR-C1-063",
+   "items": [
+    {
+     "text": "collocation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "style nominal",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "style verbal",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "terme technique",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "synonyme",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "registre",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "nuance",
+     "status": "normalized",
+     "id": "fr:nuanc:adjective",
+     "level": "C2",
+     "alternatives": []
+    },
+    {
+     "text": "précision",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u13-l04": {
+   "code": "FR-C1-064",
+   "items": [
+    {
+     "text": "texte",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "tâche",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "appariement",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "énoncé",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "détail",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "idée principale",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "enregistrement",
+     "status": "exact",
+     "id": "fr:enregistrement:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "note",
+     "status": "exact",
+     "id": "fr:note-scolaire:noun",
+     "level": "A1",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/C1/u13-l05": {
+   "code": "FR-C1-065",
+   "items": [
+    {
+     "text": "dissertation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "prise de position",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "synthèse",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "exposé",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "discussion",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "évaluation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "structure",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "expression",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  }
+ }
+}

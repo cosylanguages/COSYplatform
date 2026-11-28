@@ -4,7 +4,7 @@
   "level": "B1",
   "language": "it",
   "unit": "Unità 2: Il congiuntivo presente",
-  "canDo": "Dare ordini cortesi e formulare auguri in terza persona.",
+  "canDo": "Fare gli auguri e dare consigli in modo cortese.",
   "defaultDuration": 60,
   "defaultMode": "all",
   "objectives": [
@@ -15,8 +15,18 @@
   "assessment": "Verifica l'uso corretto di «l'esortativo: «che venga»» e la chiarezza dell'esposizione orale.",
   "homework": "Scrivi dieci righe usando «l'esortativo: «che venga»».",
   "recycling": {
-    "prior": "Lessico del livello A2 e del modulo precedente",
-    "next": "La lezione successiva tratta il congiuntivo passato."
+    "prior": "chi, Referente certo e incerto, sebbene, a meno che, Concessione, scopo, condizione, Coniugazioni regolari, già, prima",
+    "next": "La lezione successiva tratta il congiuntivo passato.",
+    "priorBlocks": [
+      "cosydata:it:chi:pronoun",
+      "grammar:it-b1-congiuntivo-nelle-relative",
+      "cosydata:it:sebbene:conjunction",
+      "cosydata:it:a-meno-che:phrase",
+      "grammar:it-b1-congiunzioni-con-congiuntivo",
+      "grammar:it-b1-congiuntivo-presente",
+      "cosydata:it:gia:adverb",
+      "cosydata:it:prima:adverb"
+    ]
   },
   "differentiation": {
     "individual": "Una scheda: cinque frasi sul tema della lezione.",
@@ -55,7 +65,7 @@
       "elements": [
         {
           "type": "instruction",
-          "content": "Obiettivo comunicativo: Dare ordini cortesi e formulare auguri in terza persona."
+          "content": "Obiettivo comunicativo: Fare gli auguri e dare consigli in modo cortese."
         },
         {
           "type": "blockquote",
@@ -80,19 +90,29 @@
       "elements": [
         {
           "type": "instruction",
-          "content": "Già in possesso: Lessico del livello A2 e del modulo precedente"
+          "content": "Riattiva: rispondi ad alta voce alle domande sui blocchi già incontrati."
         },
         {
           "type": "blockquote",
-          "content": "Lessico da riattivare: che vada bene, che sia chiaro, che entri"
+          "content": "1. Parla di qualcuno che ammiri, cominciando con «Chi…»\n2. Cerchi qualcuno con una qualità precisa: «Cerco una persona che sappia…»\n3. Racconta un progetto che porti avanti nonostante una difficoltà: «Sebbene…»\n4. Racconta un programma che dipende da una condizione: «Domani parto, a meno che…»\n5. Spiega a che scopo fai qualcosa: «Lo faccio affinché…»\n6. Che cosa vuoi che faccia il tuo migliore amico questo fine settimana?\n7. Che cosa avevi già fatto oggi prima di arrivare a lezione?\n8. Che cosa fai sempre prima di uscire di casa?",
+          "usesChunk": [
+            "cosydata:it:chi:pronoun",
+            "grammar:it-b1-congiuntivo-nelle-relative",
+            "cosydata:it:sebbene:conjunction",
+            "cosydata:it:a-meno-che:phrase",
+            "grammar:it-b1-congiunzioni-con-congiuntivo",
+            "grammar:it-b1-congiuntivo-presente",
+            "cosydata:it:gia:adverb",
+            "cosydata:it:prima:adverb"
+          ]
         },
         {
           "type": "instruction",
-          "content": "A memoria: che cosa significa questa parola e dove l'hai incontrata?"
+          "content": "Scegli una domanda e rispondi in tre frasi; poi riprova senza guardare."
         },
         {
           "type": "input",
-          "placeholder": "che vada bene — significato e contesto"
+          "placeholder": "la tua risposta, tre frasi"
         }
       ]
     },
@@ -252,7 +272,7 @@
       "elements": [
         {
           "type": "instruction",
-          "content": "Produzione libera: Dare ordini cortesi e formulare auguri in terza persona."
+          "content": "Produzione libera: Fare gli auguri e dare consigli in modo cortese."
         },
         {
           "type": "blockquote",

@@ -1,0 +1,5267 @@
+{
+  "course": "general-it-b1",
+  "lang": "it",
+  "level": "B1",
+  "source": {
+    "curriculum": "curriculums/it/general/B1.json",
+    "vocab_mapping": "docs/vocab-id-map/mapping-general-it-b1.json"
+  },
+  "summary": {
+    "lessons": 65,
+    "blocks": 500,
+    "resolved": 107,
+    "unresolved": 345,
+    "frames": 48,
+    "hold": 244,
+    "recognise": 256,
+    "hand_triaged": 6,
+    "repeat_mentions": 106,
+    "by_kind": {
+      "collocation": 103,
+      "frame": 48,
+      "set-phrase": 47,
+      "word": 302
+    },
+    "by_status": {
+      "exact": 105,
+      "grammar-id": 48,
+      "normalized": 2,
+      "unresolved": 345
+    },
+    "resolution_pct": 21
+  },
+  "lessons": [
+    {
+      "number": 1,
+      "unit": 1,
+      "code": "IT-B1-001",
+      "title": "Tempi del passato nel racconto",
+      "introduces": [
+        {
+          "id": "pending:it:racconto",
+          "text": "racconto",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:sfondo",
+          "text": "sfondo",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:episodio",
+          "text": "episodio",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:improvviso",
+          "text": "improvviso",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:intanto",
+          "text": "intanto",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role_why": "narrative connector, produced in every story: 'intanto che aspettavo...'",
+          "role": "hold",
+          "role_source": "hand"
+        },
+        {
+          "id": "pending:it:frattempo",
+          "text": "frattempo",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role_why": "taught as 'nel frattempo'; the collocation is productive even though the noun alone is not",
+          "role": "hold",
+          "role_source": "hand"
+        },
+        {
+          "id": "pending:it:svolta",
+          "text": "svolta",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:ricordo",
+          "text": "ricordo",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "grammar:it-a2-passato-prossimo-vs-imperfetto",
+          "text": "Passato prossimo e imperfetto insieme",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        },
+        {
+          "id": "grammar:it-a2-trapassato-prossimo",
+          "text": "Trapassato per l'anteriorità",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        }
+      ],
+      "repeats": []
+    },
+    {
+      "number": 2,
+      "unit": 1,
+      "code": "IT-B1-002",
+      "title": "L'anteriorità nel racconto",
+      "introduces": [
+        {
+          "id": "cosydata:it:gia:adverb",
+          "text": "già",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:adverb"
+        },
+        {
+          "id": "cosydata:it:prima:adverb",
+          "text": "prima",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:adverb"
+        },
+        {
+          "id": "pending:it:ancora-non",
+          "text": "ancora non",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:quando:adverb",
+          "text": "quando",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:adverb"
+        },
+        {
+          "id": "pending:it:dopo-che",
+          "text": "dopo che",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:precedente:adjective",
+          "text": "precedente",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:adjective"
+        },
+        {
+          "id": "pending:it:antefatto",
+          "text": "antefatto",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:conclusione",
+          "text": "conclusione",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        }
+      ],
+      "repeats": [
+        "grammar:it-a2-trapassato-prossimo",
+        "grammar:it-a2-passato-prossimo-vs-imperfetto"
+      ]
+    },
+    {
+      "number": 3,
+      "unit": 1,
+      "code": "IT-B1-003",
+      "title": "I connettivi del racconto",
+      "introduces": [
+        {
+          "id": "cosydata:it:tuttavia:adverb",
+          "text": "tuttavia",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:adverb"
+        },
+        {
+          "id": "cosydata:it:inoltre:idiom",
+          "text": "inoltre",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:idiom"
+        },
+        {
+          "id": "cosydata:it:quindi:adverb",
+          "text": "quindi",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:adverb"
+        },
+        {
+          "id": "cosydata:it:infatti:phrase",
+          "text": "infatti",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:phrase"
+        },
+        {
+          "id": "pending:it:dunque",
+          "text": "dunque",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role_why": "connector of exactly the kind lesson 3 collects; unresolved only because COSYdata lacks the entry",
+          "role": "hold",
+          "role_source": "hand"
+        },
+        {
+          "id": "cosydata:it:invece:idiom",
+          "text": "invece",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:idiom"
+        },
+        {
+          "id": "pending:it:pertanto",
+          "text": "pertanto",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role_why": "formal connector, produced in written argument",
+          "role": "hold",
+          "role_source": "hand"
+        },
+        {
+          "id": "cosydata:it:comunque:idiom",
+          "text": "comunque",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:idiom"
+        },
+        {
+          "id": "grammar:it-b1-connettivi-testuali",
+          "text": "Connettivi temporali e logici",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        }
+      ],
+      "repeats": []
+    },
+    {
+      "number": 4,
+      "unit": 1,
+      "code": "IT-B1-004",
+      "title": "Gerundio e participio",
+      "introduces": [
+        {
+          "id": "cosydata:it:mentre:conjunction",
+          "text": "mentre",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:conjunction"
+        },
+        {
+          "id": "pending:it:pur",
+          "text": "pur",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role_why": "taught as 'pur + gerund', the concession pattern of lesson 4",
+          "role": "hold",
+          "role_source": "hand"
+        },
+        {
+          "id": "pending:it:essendo",
+          "text": "essendo",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:avendo",
+          "text": "avendo",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:finito",
+          "text": "finito",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:visto:noun",
+          "text": "visto",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role_why": "in this lesson it is the connector 'visto che'; the dictionary entry is a noun and needs a second sense",
+          "role": "hold",
+          "role_source": "hand"
+        },
+        {
+          "id": "pending:it:considerato",
+          "text": "considerato",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:durante:preposition",
+          "text": "durante",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:preposition"
+        },
+        {
+          "id": "grammar:it-b1-gerundio-e-participio",
+          "text": "Gerundio presente e passato",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        }
+      ],
+      "repeats": []
+    },
+    {
+      "number": 5,
+      "unit": 1,
+      "code": "IT-B1-005",
+      "title": "L'ordine delle parole e l'enfasi",
+      "introduces": [
+        {
+          "id": "pending:it:e-che",
+          "text": "è che",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:quanto-a",
+          "text": "quanto a",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:proprio",
+          "text": "proprio",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:soprattutto",
+          "text": "soprattutto",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:rilievo",
+          "text": "rilievo",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:enfasi",
+          "text": "enfasi",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:tema",
+          "text": "tema",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:commento:noun",
+          "text": "commento",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:noun"
+        },
+        {
+          "id": "grammar:it-b1-ordine-delle-parole-e-enfasi",
+          "text": "Dislocazione",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        }
+      ],
+      "repeats": []
+    },
+    {
+      "number": 6,
+      "unit": 2,
+      "code": "IT-B1-006",
+      "title": "Le forme del congiuntivo presente",
+      "introduces": [
+        {
+          "id": "pending:it:che-io-sia",
+          "text": "che io sia",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:che-tu-abbia",
+          "text": "che tu abbia",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:che-vada",
+          "text": "che vada",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:che-faccia",
+          "text": "che faccia",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:che-possa",
+          "text": "che possa",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:speranza",
+          "text": "speranza",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:dubbio",
+          "text": "dubbio",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:possibilita",
+          "text": "possibilità",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "grammar:it-b1-congiuntivo-presente",
+          "text": "Coniugazioni regolari",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        }
+      ],
+      "repeats": []
+    },
+    {
+      "number": 7,
+      "unit": 2,
+      "code": "IT-B1-007",
+      "title": "I verbi che reggono il congiuntivo",
+      "introduces": [
+        {
+          "id": "pending:it:penso-che",
+          "text": "penso che",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:credo-che",
+          "text": "credo che",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:spero-che",
+          "text": "spero che",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:temo-che",
+          "text": "temo che",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:mi-sembra-che",
+          "text": "mi sembra che",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:e-importante-che",
+          "text": "è importante che",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:e-possibile-che",
+          "text": "è possibile che",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:suppongo-che",
+          "text": "suppongo che",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "grammar:it-b1-verbi-che-reggono-il-congiuntivo",
+          "text": "Verbi di opinione e volontà",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        }
+      ],
+      "repeats": []
+    },
+    {
+      "number": 8,
+      "unit": 2,
+      "code": "IT-B1-008",
+      "title": "Le congiunzioni che vogliono il congiuntivo",
+      "introduces": [
+        {
+          "id": "pending:it:benche",
+          "text": "benché",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:sebbene:conjunction",
+          "text": "sebbene",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:conjunction"
+        },
+        {
+          "id": "pending:it:affinche",
+          "text": "affinché",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:purche",
+          "text": "purché",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:a-meno-che:phrase",
+          "text": "a meno che",
+          "kind": "set-phrase",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:phrase"
+        },
+        {
+          "id": "pending:it:prima-che",
+          "text": "prima che",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:senza-che",
+          "text": "senza che",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:nonostante",
+          "text": "nonostante",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "grammar:it-b1-congiunzioni-con-congiuntivo",
+          "text": "Concessione, scopo, condizione",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        }
+      ],
+      "repeats": []
+    },
+    {
+      "number": 9,
+      "unit": 2,
+      "code": "IT-B1-009",
+      "title": "Il congiuntivo nelle relative",
+      "introduces": [
+        {
+          "id": "pending:it:cerco-un",
+          "text": "cerco un",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:non-ce-nessuno-che",
+          "text": "non c'è nessuno che",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:lunico-che",
+          "text": "l'unico che",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:il-migliore-che",
+          "text": "il migliore che",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:chiunque",
+          "text": "chiunque",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:qualunque",
+          "text": "qualunque",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:chi:pronoun",
+          "text": "chi",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:pronoun"
+        },
+        {
+          "id": "pending:it:quello-che",
+          "text": "quello che",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "grammar:it-b1-congiuntivo-nelle-relative",
+          "text": "Referente certo e incerto",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        }
+      ],
+      "repeats": []
+    },
+    {
+      "number": 10,
+      "unit": 2,
+      "code": "IT-B1-010",
+      "title": "L'esortativo e gli auguri",
+      "introduces": [
+        {
+          "id": "pending:it:che-vada-bene",
+          "text": "che vada bene",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:che-sia-chiaro",
+          "text": "che sia chiaro",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:che-entri",
+          "text": "che entri",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:che-si-accomodi",
+          "text": "che si accomodi",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:auguri:phrase",
+          "text": "auguri",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:phrase"
+        },
+        {
+          "id": "cosydata:it:in-bocca-al-lupo:phrase",
+          "text": "in bocca al lupo",
+          "kind": "set-phrase",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:phrase"
+        },
+        {
+          "id": "cosydata:it:buon-lavoro:phrase",
+          "text": "buon lavoro",
+          "kind": "collocation",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:phrase"
+        },
+        {
+          "id": "cosydata:it:congratulazioni:phrase",
+          "text": "congratulazioni",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:phrase"
+        },
+        {
+          "id": "grammar:it-b1-esortativo-che-congiuntivo",
+          "text": "Che più congiuntivo",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        }
+      ],
+      "repeats": []
+    },
+    {
+      "number": 11,
+      "unit": 3,
+      "code": "IT-B1-011",
+      "title": "Il congiuntivo passato",
+      "introduces": [
+        {
+          "id": "pending:it:abbia-fatto",
+          "text": "abbia fatto",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:sia-andato",
+          "text": "sia andato",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:abbia-visto",
+          "text": "abbia visto",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:abbia-detto",
+          "text": "abbia detto",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:prima-di",
+          "text": "prima di",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:entro",
+          "text": "entro",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:finora",
+          "text": "finora",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:recentemente:adverb",
+          "text": "recentemente",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:adverb"
+        },
+        {
+          "id": "grammar:it-b1-congiuntivo-passato",
+          "text": "Formazione con avere ed essere",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        }
+      ],
+      "repeats": []
+    },
+    {
+      "number": 12,
+      "unit": 3,
+      "code": "IT-B1-012",
+      "title": "Il congiuntivo imperfetto",
+      "introduces": [
+        {
+          "id": "pending:it:fossi",
+          "text": "fossi",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:avessi",
+          "text": "avessi",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:potessi",
+          "text": "potessi",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:volessi",
+          "text": "volessi",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:come-se",
+          "text": "come se",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:magari",
+          "text": "magari",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:desiderio",
+          "text": "desiderio",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:ipotesi",
+          "text": "ipotesi",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "grammar:it-b1-congiuntivo-imperfetto",
+          "text": "Forme regolari",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        }
+      ],
+      "repeats": []
+    },
+    {
+      "number": 13,
+      "unit": 3,
+      "code": "IT-B1-013",
+      "title": "Il congiuntivo trapassato",
+      "introduces": [
+        {
+          "id": "pending:it:avessi-saputo",
+          "text": "avessi saputo",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:fosse-partito",
+          "text": "fosse partito",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:avrei-voluto",
+          "text": "avrei voluto",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:rimpianto",
+          "text": "rimpianto",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:scelta",
+          "text": "scelta",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:conseguenza:noun",
+          "text": "conseguenza",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:noun"
+        },
+        {
+          "id": "pending:it:passato",
+          "text": "passato",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:anteriorita",
+          "text": "anteriorità",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "grammar:it-b1-congiuntivo-trapassato",
+          "text": "Avessi e fossi più participio",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        }
+      ],
+      "repeats": []
+    },
+    {
+      "number": 14,
+      "unit": 3,
+      "code": "IT-B1-014",
+      "title": "La concordanza dei tempi",
+      "introduces": [
+        {
+          "id": "pending:it:pensavo-che",
+          "text": "pensavo che",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:credevo-che",
+          "text": "credevo che",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:speravo-che",
+          "text": "speravo che",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:contemporaneo",
+          "text": "contemporaneo",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:anteriore",
+          "text": "anteriore",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "grammar:it-b1-concordanza-dei-tempi",
+          "text": "Reggente presente e passata",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        }
+      ],
+      "repeats": [
+        "pending:it:penso-che",
+        "pending:it:credo-che",
+        "pending:it:spero-che"
+      ]
+    },
+    {
+      "number": 15,
+      "unit": 3,
+      "code": "IT-B1-015",
+      "title": "Congiuntivo o indicativo",
+      "introduces": [
+        {
+          "id": "pending:it:so-che",
+          "text": "so che",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:e-vero-che",
+          "text": "è vero che",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:vedo-che",
+          "text": "vedo che",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:secondo-me:phrase",
+          "text": "secondo me",
+          "kind": "collocation",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:phrase"
+        },
+        {
+          "id": "pending:it:evidentemente",
+          "text": "evidentemente",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:probabilmente",
+          "text": "probabilmente",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        }
+      ],
+      "repeats": [
+        "pending:it:penso-che",
+        "pending:it:mi-sembra-che",
+        "grammar:it-b1-congiuntivo-presente",
+        "grammar:it-b1-verbi-che-reggono-il-congiuntivo"
+      ]
+    },
+    {
+      "number": 16,
+      "unit": 4,
+      "code": "IT-B1-016",
+      "title": "Il periodo ipotetico del secondo tipo",
+      "introduces": [
+        {
+          "id": "pending:it:se-potessi",
+          "text": "se potessi",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:se-avessi",
+          "text": "se avessi",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:se-fossi",
+          "text": "se fossi",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:verrei",
+          "text": "verrei",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:cambierei",
+          "text": "cambierei",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:immaginare:verb",
+          "text": "immaginare",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:verb"
+        },
+        {
+          "id": "cosydata:it:sogno:noun",
+          "text": "sogno",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:noun"
+        },
+        {
+          "id": "grammar:it-a2-periodo-ipotetico-2",
+          "text": "Congiuntivo imperfetto e condizionale",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        }
+      ],
+      "repeats": [
+        "pending:it:possibilita"
+      ]
+    },
+    {
+      "number": 17,
+      "unit": 4,
+      "code": "IT-B1-017",
+      "title": "Il periodo ipotetico del terzo tipo",
+      "introduces": [
+        {
+          "id": "pending:it:se-avessi-saputo",
+          "text": "se avessi saputo",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:sarei-venuto",
+          "text": "sarei venuto",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:avrei-potuto",
+          "text": "avrei potuto",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:avrei-dovuto",
+          "text": "avrei dovuto",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:occasione",
+          "text": "occasione",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:errore:noun",
+          "text": "errore",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:noun"
+        },
+        {
+          "id": "grammar:it-b1-periodo-ipotetico-3",
+          "text": "Congiuntivo trapassato e condizionale passato",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        }
+      ],
+      "repeats": [
+        "pending:it:rimpianto",
+        "cosydata:it:conseguenza:noun"
+      ]
+    },
+    {
+      "number": 18,
+      "unit": 4,
+      "code": "IT-B1-018",
+      "title": "Il periodo ipotetico misto",
+      "introduces": [
+        {
+          "id": "cosydata:it:ora:noun",
+          "text": "ora",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:noun"
+        },
+        {
+          "id": "cosydata:it:adesso:adverb",
+          "text": "adesso",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:adverb"
+        },
+        {
+          "id": "cosydata:it:oggi:adverb",
+          "text": "oggi",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:adverb"
+        },
+        {
+          "id": "pending:it:allora",
+          "text": "allora",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:se-avessi-studiato",
+          "text": "se avessi studiato",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:se-fossi-piu",
+          "text": "se fossi più",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:sarei",
+          "text": "sarei",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:avrei",
+          "text": "avrei",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "grammar:it-b1-periodo-ipotetico-misto",
+          "text": "Condizione passata e risultato presente",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        }
+      ],
+      "repeats": []
+    },
+    {
+      "number": 19,
+      "unit": 4,
+      "code": "IT-B1-019",
+      "title": "Il condizionale passato",
+      "introduces": [
+        {
+          "id": "pending:it:sarei-partito",
+          "text": "sarei partito",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:secondo-le-fonti",
+          "text": "secondo le fonti",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:sarebbe",
+          "text": "sarebbe",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:avrebbero",
+          "text": "avrebbero",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:indiscrezione",
+          "text": "indiscrezione",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:conferma",
+          "text": "conferma",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:smentita",
+          "text": "smentita",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "grammar:it-b1-condizionale-passato",
+          "text": "Forme e usi",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        }
+      ],
+      "repeats": [
+        "pending:it:avrei-voluto"
+      ]
+    },
+    {
+      "number": 20,
+      "unit": 4,
+      "code": "IT-B1-020",
+      "title": "Il futuro anteriore",
+      "introduces": [
+        {
+          "id": "pending:it:avro-finito",
+          "text": "avrò finito",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:sara-partito",
+          "text": "sarà partito",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:appena",
+          "text": "appena",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:ormai",
+          "text": "ormai",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:concluso",
+          "text": "concluso",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "grammar:it-b1-futuro-anteriore",
+          "text": "Formazione",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        }
+      ],
+      "repeats": [
+        "pending:it:entro",
+        "cosydata:it:quando:adverb",
+        "pending:it:probabilmente"
+      ]
+    },
+    {
+      "number": 21,
+      "unit": 5,
+      "code": "IT-B1-021",
+      "title": "Il discorso indiretto",
+      "introduces": [
+        {
+          "id": "pending:it:ha-detto-che",
+          "text": "ha detto che",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:mi-ha-chiesto-se",
+          "text": "mi ha chiesto se",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:ha-spiegato-che",
+          "text": "ha spiegato che",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:ha-promesso-di",
+          "text": "ha promesso di",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:qui:adverb",
+          "text": "qui",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:adverb"
+        },
+        {
+          "id": "cosydata:it:domani:adverb",
+          "text": "domani",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:adverb"
+        },
+        {
+          "id": "cosydata:it:ieri:adverb",
+          "text": "ieri",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:adverb"
+        },
+        {
+          "id": "grammar:it-b1-discorso-indiretto",
+          "text": "Trasformazione dei tempi",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        }
+      ],
+      "repeats": [
+        "cosydata:it:oggi:adverb"
+      ]
+    },
+    {
+      "number": 22,
+      "unit": 5,
+      "code": "IT-B1-022",
+      "title": "Riferire al passato",
+      "introduces": [
+        {
+          "id": "pending:it:aveva-detto-che",
+          "text": "aveva detto che",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:mi-aveva-chiesto",
+          "text": "mi aveva chiesto",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:il-giorno-prima",
+          "text": "il giorno prima",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:il-giorno-dopo",
+          "text": "il giorno dopo",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:la:determiner",
+          "text": "là",
+          "kind": "word",
+          "status": "normalized",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:determiner"
+        },
+        {
+          "id": "cosydata:it:quello:pronoun",
+          "text": "quello",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:pronoun"
+        }
+      ],
+      "repeats": [
+        "pending:it:allora",
+        "pending:it:sarebbe",
+        "grammar:it-b1-discorso-indiretto",
+        "grammar:it-b1-concordanza-dei-tempi"
+      ]
+    },
+    {
+      "number": 23,
+      "unit": 5,
+      "code": "IT-B1-023",
+      "title": "La forma passiva avanzata",
+      "introduces": [
+        {
+          "id": "pending:it:viene-pubblicato",
+          "text": "viene pubblicato",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:va-firmato",
+          "text": "va firmato",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:e-stato-approvato",
+          "text": "è stato approvato",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:sara-discusso",
+          "text": "sarà discusso",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:autore",
+          "text": "autore",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:agente",
+          "text": "agente",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:processo",
+          "text": "processo",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:ufficio:noun",
+          "text": "ufficio",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:noun"
+        },
+        {
+          "id": "grammar:it-b1-forma-passiva-avanzata",
+          "text": "Passivo con andare e venire",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        }
+      ],
+      "repeats": []
+    },
+    {
+      "number": 24,
+      "unit": 5,
+      "code": "IT-B1-024",
+      "title": "Il si impersonale e passivante",
+      "introduces": [
+        {
+          "id": "pending:it:si-dice",
+          "text": "si dice",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:si-pensa",
+          "text": "si pensa",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:si-vendono",
+          "text": "si vendono",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:si-parla",
+          "text": "si parla",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:si-puo",
+          "text": "si può",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:in-italia",
+          "text": "in Italia",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:generalmente",
+          "text": "generalmente",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:abitudine:noun",
+          "text": "abitudine",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:noun"
+        },
+        {
+          "id": "grammar:it-b1-si-impersonale-e-passivante",
+          "text": "Si impersonale",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        }
+      ],
+      "repeats": []
+    },
+    {
+      "number": 25,
+      "unit": 5,
+      "code": "IT-B1-025",
+      "title": "Scrivere in modo impersonale",
+      "introduces": [
+        {
+          "id": "pending:it:si-richiede",
+          "text": "si richiede",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:si-prega-di",
+          "text": "si prega di",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:occorre",
+          "text": "occorre",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:e-necessario",
+          "text": "è necessario",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:normativa",
+          "text": "normativa",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:procedura",
+          "text": "procedura",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:domanda:noun",
+          "text": "domanda",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:noun"
+        },
+        {
+          "id": "cosydata:it:scadenza:noun",
+          "text": "scadenza",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:noun"
+        }
+      ],
+      "repeats": [
+        "grammar:it-b1-si-impersonale-e-passivante",
+        "grammar:it-b1-forma-passiva-avanzata"
+      ]
+    },
+    {
+      "number": 26,
+      "unit": 6,
+      "code": "IT-B1-026",
+      "title": "I pronomi combinati",
+      "introduces": [
+        {
+          "id": "pending:it:me-lo",
+          "text": "me lo",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:te-la",
+          "text": "te la",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:glielo",
+          "text": "glielo",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:ce-ne",
+          "text": "ce ne",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:ve-li",
+          "text": "ve li",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:restituire",
+          "text": "restituire",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:prestare:verb",
+          "text": "prestare",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:verb"
+        },
+        {
+          "id": "cosydata:it:spiegare:verb",
+          "text": "spiegare",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:verb"
+        },
+        {
+          "id": "grammar:it-b1-pronomi-combinati",
+          "text": "Indiretto più diretto",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        }
+      ],
+      "repeats": []
+    },
+    {
+      "number": 27,
+      "unit": 6,
+      "code": "IT-B1-027",
+      "title": "I pronomi relativi",
+      "introduces": [
+        {
+          "id": "cosydata:it:che:pronoun",
+          "text": "che",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:pronoun"
+        },
+        {
+          "id": "pending:it:cui",
+          "text": "cui",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:quale:pronoun",
+          "text": "il quale",
+          "kind": "collocation",
+          "status": "normalized",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:pronoun"
+        },
+        {
+          "id": "cosydata:it:quanto:pronoun",
+          "text": "quanto",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:pronoun"
+        },
+        {
+          "id": "pending:it:colui-che",
+          "text": "colui che",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:il-cui",
+          "text": "il cui",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "grammar:it-b1-pronomi-relativi-cui-chi",
+          "text": "Che, cui, il quale",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        }
+      ],
+      "repeats": [
+        "cosydata:it:quale:pronoun",
+        "cosydata:it:chi:pronoun"
+      ]
+    },
+    {
+      "number": 28,
+      "unit": 6,
+      "code": "IT-B1-028",
+      "title": "I verbi pronominali",
+      "introduces": [
+        {
+          "id": "pending:it:andarsene",
+          "text": "andarsene",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:farcela:phrase",
+          "text": "farcela",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:phrase"
+        },
+        {
+          "id": "pending:it:prendersela",
+          "text": "prendersela",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:rendersi-conto:phrase",
+          "text": "rendersi conto",
+          "kind": "collocation",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:phrase"
+        },
+        {
+          "id": "pending:it:accorgersi",
+          "text": "accorgersi",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:pentirsi",
+          "text": "pentirsi",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:arrabbiarsi",
+          "text": "arrabbiarsi",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:trasferirsi",
+          "text": "trasferirsi",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "grammar:it-b1-verbi-pronominali",
+          "text": "Verbi intrinsecamente pronominali",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        }
+      ],
+      "repeats": []
+    },
+    {
+      "number": 29,
+      "unit": 6,
+      "code": "IT-B1-029",
+      "title": "Le preposizioni dei verbi",
+      "introduces": [
+        {
+          "id": "pending:it:cercare-di",
+          "text": "cercare di",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:riuscire-a:phrase",
+          "text": "riuscire a",
+          "kind": "collocation",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:phrase"
+        },
+        {
+          "id": "pending:it:contare-su",
+          "text": "contare su",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:dipendere-da",
+          "text": "dipendere da",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:approfittare-di:phrase",
+          "text": "approfittare di",
+          "kind": "collocation",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:phrase"
+        },
+        {
+          "id": "pending:it:interessarsi-a",
+          "text": "interessarsi a",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:smettere-di",
+          "text": "smettere di",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:imparare-a",
+          "text": "imparare a",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "grammar:it-b1-preposizioni-con-i-verbi",
+          "text": "Di, a, su, da",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        }
+      ],
+      "repeats": []
+    },
+    {
+      "number": 30,
+      "unit": 6,
+      "code": "IT-B1-030",
+      "title": "Ci e ne nei testi",
+      "introduces": [
+        {
+          "id": "pending:it:ci-penso",
+          "text": "ci penso",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:ci-credo",
+          "text": "ci credo",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:ne-parlo",
+          "text": "ne parlo",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:ne-ho-due",
+          "text": "ne ho due",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:non-ci-riesco",
+          "text": "non ci riesco",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:me-ne-occupo",
+          "text": "me ne occupo",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:argomento:noun",
+          "text": "argomento",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:noun"
+        },
+        {
+          "id": "cosydata:it:quantita:noun",
+          "text": "quantità",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:noun"
+        },
+        {
+          "id": "grammar:it-a2-i-pronomi-ci-e-ne",
+          "text": "Ci come luogo e argomento",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        }
+      ],
+      "repeats": [
+        "grammar:it-b1-verbi-pronominali"
+      ]
+    },
+    {
+      "number": 31,
+      "unit": 7,
+      "code": "IT-B1-031",
+      "title": "Aggettivi e pronomi indefiniti",
+      "introduces": [
+        {
+          "id": "pending:it:qualche",
+          "text": "qualche",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:alcuni:pronoun",
+          "text": "alcuni",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:pronoun"
+        },
+        {
+          "id": "cosydata:it:nessuno:pronoun",
+          "text": "nessuno",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:pronoun"
+        },
+        {
+          "id": "cosydata:it:ogni:pronoun",
+          "text": "ogni",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:pronoun"
+        },
+        {
+          "id": "cosydata:it:tutti:pronoun",
+          "text": "tutti",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:pronoun"
+        },
+        {
+          "id": "pending:it:ciascuno",
+          "text": "ciascuno",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "grammar:it-b1-aggettivi-e-pronomi-indefiniti",
+          "text": "Qualche, alcuni, nessuno",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        }
+      ],
+      "repeats": [
+        "pending:it:qualunque",
+        "pending:it:chiunque"
+      ]
+    },
+    {
+      "number": 32,
+      "unit": 7,
+      "code": "IT-B1-032",
+      "title": "Gli avverbi in -mente",
+      "introduces": [
+        {
+          "id": "pending:it:lentamente",
+          "text": "lentamente",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:facilmente",
+          "text": "facilmente",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:volentieri",
+          "text": "volentieri",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:bene",
+          "text": "bene",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:male",
+          "text": "male",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:purtroppo:idiom",
+          "text": "purtroppo",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:idiom"
+        },
+        {
+          "id": "pending:it:addirittura",
+          "text": "addirittura",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:pressappoco",
+          "text": "pressappoco",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "grammar:it-b1-avverbi-in-mente",
+          "text": "Formazione",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        }
+      ],
+      "repeats": []
+    },
+    {
+      "number": 33,
+      "unit": 7,
+      "code": "IT-B1-033",
+      "title": "Comparativi e superlativi irregolari",
+      "introduces": [
+        {
+          "id": "cosydata:it:migliore:adjective",
+          "text": "migliore",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:adjective"
+        },
+        {
+          "id": "cosydata:it:peggiore:adjective",
+          "text": "peggiore",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:adjective"
+        },
+        {
+          "id": "pending:it:maggiore",
+          "text": "maggiore",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:minore",
+          "text": "minore",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:ottimo",
+          "text": "ottimo",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:pessimo",
+          "text": "pessimo",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:massimo",
+          "text": "massimo",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:minimo",
+          "text": "minimo",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "grammar:it-b1-comparativi-e-superlativi-irregolari",
+          "text": "Migliore, peggiore, maggiore",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        }
+      ],
+      "repeats": []
+    },
+    {
+      "number": 34,
+      "unit": 7,
+      "code": "IT-B1-034",
+      "title": "I nomi alterati",
+      "introduces": [
+        {
+          "id": "cosydata:it:casetta:noun",
+          "text": "casetta",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:noun"
+        },
+        {
+          "id": "pending:it:librone",
+          "text": "librone",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:gattino",
+          "text": "gattino",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:giornataccia",
+          "text": "giornataccia",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:tesoruccio",
+          "text": "tesoruccio",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:portone",
+          "text": "portone",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:spuntino:noun",
+          "text": "spuntino",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:noun"
+        },
+        {
+          "id": "pending:it:attimino",
+          "text": "attimino",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "grammar:it-b1-nomi-alterati",
+          "text": "Diminutivi, accrescitivi, dispregiativi",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        }
+      ],
+      "repeats": []
+    },
+    {
+      "number": 35,
+      "unit": 7,
+      "code": "IT-B1-035",
+      "title": "Valutare e graduare un giudizio",
+      "introduces": [
+        {
+          "id": "pending:it:piuttosto",
+          "text": "piuttosto",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:alquanto",
+          "text": "alquanto",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:davvero:adverb",
+          "text": "davvero",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:adverb"
+        },
+        {
+          "id": "pending:it:assolutamente",
+          "text": "assolutamente",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:in-parte",
+          "text": "in parte",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:senzaltro",
+          "text": "senz'altro",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:moderatamente",
+          "text": "moderatamente",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:notevole",
+          "text": "notevole",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        }
+      ],
+      "repeats": [
+        "grammar:it-b1-comparativi-e-superlativi-irregolari",
+        "grammar:it-b1-avverbi-in-mente"
+      ]
+    },
+    {
+      "number": 36,
+      "unit": 8,
+      "code": "IT-B1-036",
+      "title": "Leggere un annuncio di lavoro",
+      "introduces": [
+        {
+          "id": "pending:it:annuncio",
+          "text": "annuncio",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:requisito",
+          "text": "requisito",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:esperienza:noun",
+          "text": "esperienza",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:noun"
+        },
+        {
+          "id": "cosydata:it:contratto:noun",
+          "text": "contratto",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:noun"
+        },
+        {
+          "id": "pending:it:full-time",
+          "text": "full time",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:stage",
+          "text": "stage",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:candidatura",
+          "text": "candidatura",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "grammar:it-b1-cercare-lavoro",
+          "text": "Lessico del lavoro",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        }
+      ],
+      "repeats": [
+        "cosydata:it:scadenza:noun"
+      ]
+    },
+    {
+      "number": 37,
+      "unit": 8,
+      "code": "IT-B1-037",
+      "title": "Scrivere una lettera di presentazione",
+      "introduces": [
+        {
+          "id": "cosydata:it:gentile:adjective",
+          "text": "gentile",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:adjective"
+        },
+        {
+          "id": "pending:it:in-riferimento-a",
+          "text": "in riferimento a",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:mi-candido",
+          "text": "mi candido",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:in-allegato",
+          "text": "in allegato",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:resto-a-disposizione",
+          "text": "resto a disposizione",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:cordiali-saluti",
+          "text": "cordiali saluti",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:competenza:noun",
+          "text": "competenza",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:noun"
+        },
+        {
+          "id": "cosydata:it:motivazione:noun",
+          "text": "motivazione",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:noun"
+        },
+        {
+          "id": "grammar:it-b1-lettera-di-presentazione",
+          "text": "Registro formale",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        }
+      ],
+      "repeats": []
+    },
+    {
+      "number": 38,
+      "unit": 8,
+      "code": "IT-B1-038",
+      "title": "Affrontare un colloquio",
+      "introduces": [
+        {
+          "id": "pending:it:mi-descriva",
+          "text": "mi descriva",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:punto-di-forza",
+          "text": "punto di forza",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:punto-debole",
+          "text": "punto debole",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:obiettivo",
+          "text": "obiettivo",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:ruolo",
+          "text": "ruolo",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:team",
+          "text": "team",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:disponibilita",
+          "text": "disponibilità",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "grammar:it-b1-colloquio-di-lavoro",
+          "text": "Domande tipiche",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        }
+      ],
+      "repeats": [
+        "cosydata:it:motivazione:noun"
+      ]
+    },
+    {
+      "number": 39,
+      "unit": 8,
+      "code": "IT-B1-039",
+      "title": "Raccontare la propria esperienza",
+      "introduces": [
+        {
+          "id": "pending:it:ho-maturato",
+          "text": "ho maturato",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:mi-sono-occupato",
+          "text": "mi sono occupato",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:ho-gestito",
+          "text": "ho gestito",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:ho-coordinato",
+          "text": "ho coordinato",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:settore",
+          "text": "settore",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:mansione",
+          "text": "mansione",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:risultato:noun",
+          "text": "risultato",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:noun"
+        },
+        {
+          "id": "grammar:it-a2-curriculum-e-colloquio",
+          "text": "Passato prossimo e imperfetto",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        }
+      ],
+      "repeats": [
+        "cosydata:it:esperienza:noun",
+        "grammar:it-b1-colloquio-di-lavoro"
+      ]
+    },
+    {
+      "number": 40,
+      "unit": 8,
+      "code": "IT-B1-040",
+      "title": "Competenze e formazione continua",
+      "introduces": [
+        {
+          "id": "cosydata:it:aggiornamento:noun",
+          "text": "aggiornamento",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:noun"
+        },
+        {
+          "id": "pending:it:corso",
+          "text": "corso",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:certificazione",
+          "text": "certificazione",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:soft-skill",
+          "text": "soft skill",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:crescita",
+          "text": "crescita",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:specializzazione",
+          "text": "specializzazione",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "grammar:it-b1-competenze-e-formazione",
+          "text": "Lessico delle competenze",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        }
+      ],
+      "repeats": [
+        "cosydata:it:competenza:noun",
+        "pending:it:obiettivo"
+      ]
+    },
+    {
+      "number": 41,
+      "unit": 9,
+      "code": "IT-B1-041",
+      "title": "Media e informazione",
+      "introduces": [
+        {
+          "id": "cosydata:it:quotidiano:adjective",
+          "text": "quotidiano",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:adjective"
+        },
+        {
+          "id": "pending:it:telegiornale",
+          "text": "telegiornale",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:titolo:noun",
+          "text": "titolo",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:noun"
+        },
+        {
+          "id": "cosydata:it:articolo:noun",
+          "text": "articolo",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:noun"
+        },
+        {
+          "id": "cosydata:it:fonte:noun",
+          "text": "fonte",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:noun"
+        },
+        {
+          "id": "cosydata:it:intervista:noun",
+          "text": "intervista",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:noun"
+        },
+        {
+          "id": "pending:it:inchiesta",
+          "text": "inchiesta",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:rassegna",
+          "text": "rassegna",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "grammar:it-b1-media-e-informazione",
+          "text": "Lessico dei media",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        }
+      ],
+      "repeats": []
+    },
+    {
+      "number": 42,
+      "unit": 9,
+      "code": "IT-B1-042",
+      "title": "Riconoscere una notizia falsa",
+      "introduces": [
+        {
+          "id": "pending:it:verificare",
+          "text": "verificare",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:bufala",
+          "text": "bufala",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:titolo-ingannevole",
+          "text": "titolo ingannevole",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:attendibile",
+          "text": "attendibile",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        }
+      ],
+      "repeats": [
+        "cosydata:it:fonte:noun",
+        "pending:it:conferma",
+        "pending:it:smentita",
+        "pending:it:dubbio",
+        "grammar:it-b1-media-e-informazione",
+        "grammar:it-b1-discorso-indiretto"
+      ]
+    },
+    {
+      "number": 43,
+      "unit": 9,
+      "code": "IT-B1-043",
+      "title": "Argomentare un'opinione",
+      "introduces": [
+        {
+          "id": "cosydata:it:da-un-lato:idiom",
+          "text": "da un lato",
+          "kind": "set-phrase",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:idiom"
+        },
+        {
+          "id": "pending:it:dallaltro",
+          "text": "dall'altro",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:in-conclusione:phrase",
+          "text": "in conclusione",
+          "kind": "collocation",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:phrase"
+        },
+        {
+          "id": "pending:it:a-mio-avviso",
+          "text": "a mio avviso",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:d-altra-parte:phrase",
+          "text": "d'altra parte",
+          "kind": "set-phrase",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:phrase"
+        },
+        {
+          "id": "grammar:it-b1-argomentare-un-opinione",
+          "text": "Tesi, argomenti, esempi",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        }
+      ],
+      "repeats": [
+        "cosydata:it:secondo-me:phrase",
+        "cosydata:it:inoltre:idiom",
+        "cosydata:it:tuttavia:adverb"
+      ]
+    },
+    {
+      "number": 44,
+      "unit": 9,
+      "code": "IT-B1-044",
+      "title": "Società e cittadinanza",
+      "introduces": [
+        {
+          "id": "cosydata:it:comune-municipio:noun",
+          "text": "comune",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:noun"
+        },
+        {
+          "id": "pending:it:regione",
+          "text": "regione",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:voto:noun",
+          "text": "voto",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:noun"
+        },
+        {
+          "id": "cosydata:it:diritto:noun",
+          "text": "diritto",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:noun"
+        },
+        {
+          "id": "cosydata:it:dovere:verb",
+          "text": "dovere",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:verb"
+        },
+        {
+          "id": "cosydata:it:cittadino:noun",
+          "text": "cittadino",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:noun"
+        },
+        {
+          "id": "pending:it:associazione",
+          "text": "associazione",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:volontariato",
+          "text": "volontariato",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "grammar:it-b1-societa-e-cittadinanza",
+          "text": "Istituzioni e partecipazione",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        }
+      ],
+      "repeats": []
+    },
+    {
+      "number": 45,
+      "unit": 9,
+      "code": "IT-B1-045",
+      "title": "Diritti e servizi",
+      "introduces": [
+        {
+          "id": "pending:it:richiesta",
+          "text": "richiesta",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:modulo:noun",
+          "text": "modulo",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:noun"
+        },
+        {
+          "id": "pending:it:sportello",
+          "text": "sportello",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:agevolazione",
+          "text": "agevolazione",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:documentazione",
+          "text": "documentazione",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:termine",
+          "text": "termine",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:ricorso",
+          "text": "ricorso",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "grammar:it-a2-servizi-pubblici-e-moduli",
+          "text": "Registro impersonale",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        }
+      ],
+      "repeats": [
+        "pending:it:requisito",
+        "grammar:it-b1-societa-e-cittadinanza"
+      ]
+    },
+    {
+      "number": 46,
+      "unit": 10,
+      "code": "IT-B1-046",
+      "title": "Ambiente e clima",
+      "introduces": [
+        {
+          "id": "cosydata:it:clima:noun",
+          "text": "clima",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:noun"
+        },
+        {
+          "id": "cosydata:it:inquinamento:noun",
+          "text": "inquinamento",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:noun"
+        },
+        {
+          "id": "pending:it:emissioni",
+          "text": "emissioni",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:siccita:noun",
+          "text": "siccità",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:noun"
+        },
+        {
+          "id": "cosydata:it:alluvione:noun",
+          "text": "alluvione",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:noun"
+        },
+        {
+          "id": "cosydata:it:temperatura:noun",
+          "text": "temperatura",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:noun"
+        },
+        {
+          "id": "pending:it:biodiversita",
+          "text": "biodiversità",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:impatto:noun",
+          "text": "impatto",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:noun"
+        },
+        {
+          "id": "grammar:it-b1-ambiente-e-clima",
+          "text": "Lessico ambientale",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        }
+      ],
+      "repeats": []
+    },
+    {
+      "number": 47,
+      "unit": 10,
+      "code": "IT-B1-047",
+      "title": "Consumi e sostenibilità",
+      "introduces": [
+        {
+          "id": "pending:it:consumo",
+          "text": "consumo",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:rifiuti:noun",
+          "text": "rifiuti",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:noun"
+        },
+        {
+          "id": "pending:it:riciclo",
+          "text": "riciclo",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:imballaggio",
+          "text": "imballaggio",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:filiera",
+          "text": "filiera",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:km-zero",
+          "text": "km zero",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:spreco",
+          "text": "spreco",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:risparmio:noun",
+          "text": "risparmio",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:noun"
+        },
+        {
+          "id": "grammar:it-b1-sostenibilita-e-consumi",
+          "text": "Consumo responsabile",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        }
+      ],
+      "repeats": []
+    },
+    {
+      "number": 48,
+      "unit": 10,
+      "code": "IT-B1-048",
+      "title": "Energia e rifiuti",
+      "introduces": [
+        {
+          "id": "pending:it:rinnovabile",
+          "text": "rinnovabile",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:solare",
+          "text": "solare",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:eolico",
+          "text": "eolico",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:raccolta-differenziata",
+          "text": "raccolta differenziata",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:compost",
+          "text": "compost",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:discarica",
+          "text": "discarica",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:efficienza",
+          "text": "efficienza",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        }
+      ],
+      "repeats": [
+        "pending:it:consumo",
+        "grammar:it-b1-ambiente-e-clima",
+        "grammar:it-b1-sostenibilita-e-consumi"
+      ]
+    },
+    {
+      "number": 49,
+      "unit": 10,
+      "code": "IT-B1-049",
+      "title": "Turismo sostenibile",
+      "introduces": [
+        {
+          "id": "pending:it:turismo",
+          "text": "turismo",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:overtourism",
+          "text": "overtourism",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:territorio",
+          "text": "territorio",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:stagione:noun",
+          "text": "stagione",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:noun"
+        },
+        {
+          "id": "cosydata:it:sentiero:noun",
+          "text": "sentiero",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:noun"
+        },
+        {
+          "id": "pending:it:ospitalita",
+          "text": "ospitalità",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:locanda",
+          "text": "locanda",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "grammar:it-b1-turismo-sostenibile",
+          "text": "Turismo e territorio",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        }
+      ],
+      "repeats": [
+        "cosydata:it:impatto:noun"
+      ]
+    },
+    {
+      "number": 50,
+      "unit": 10,
+      "code": "IT-B1-050",
+      "title": "Il dibattito sull'ambiente",
+      "introduces": [
+        {
+          "id": "cosydata:it:a-mio-parere:idiom",
+          "text": "a mio parere",
+          "kind": "set-phrase",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:idiom"
+        },
+        {
+          "id": "pending:it:obiezione",
+          "text": "obiezione",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:al-contrario",
+          "text": "al contrario",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:compromesso:noun",
+          "text": "compromesso",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:noun"
+        },
+        {
+          "id": "cosydata:it:soluzione:noun",
+          "text": "soluzione",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:noun"
+        },
+        {
+          "id": "pending:it:priorita",
+          "text": "priorità",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:responsabilit:noun",
+          "text": "responsabilità",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:noun"
+        }
+      ],
+      "repeats": [
+        "cosydata:it:tuttavia:adverb",
+        "grammar:it-b1-argomentare-un-opinione",
+        "grammar:it-b1-connettivi-testuali"
+      ]
+    },
+    {
+      "number": 51,
+      "unit": 11,
+      "code": "IT-B1-051",
+      "title": "Cultura e patrimonio",
+      "introduces": [
+        {
+          "id": "cosydata:it:patrimonio:noun",
+          "text": "patrimonio",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:noun"
+        },
+        {
+          "id": "pending:it:bene-culturale",
+          "text": "bene culturale",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:restauro",
+          "text": "restauro",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:tutela",
+          "text": "tutela",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:museo:noun",
+          "text": "museo",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:noun"
+        },
+        {
+          "id": "pending:it:scavo",
+          "text": "scavo",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:conservazione",
+          "text": "conservazione",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:valorizzazione",
+          "text": "valorizzazione",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "grammar:it-b1-cultura-e-patrimonio",
+          "text": "Lessico del patrimonio",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        }
+      ],
+      "repeats": []
+    },
+    {
+      "number": 52,
+      "unit": 11,
+      "code": "IT-B1-052",
+      "title": "Raccontare un libro o un film",
+      "introduces": [
+        {
+          "id": "pending:it:trama",
+          "text": "trama",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:protagonista",
+          "text": "protagonista",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:personaggio",
+          "text": "personaggio",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:scena",
+          "text": "scena",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:finale",
+          "text": "finale",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:colpo-di-scena",
+          "text": "colpo di scena",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:regia",
+          "text": "regia",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:stile",
+          "text": "stile",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "grammar:it-b1-raccontare-un-libro",
+          "text": "Trama e giudizio",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        }
+      ],
+      "repeats": []
+    },
+    {
+      "number": 53,
+      "unit": 11,
+      "code": "IT-B1-053",
+      "title": "Scrivere una recensione",
+      "introduces": [
+        {
+          "id": "pending:it:recensione",
+          "text": "recensione",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:consigliato",
+          "text": "consigliato",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:deludente",
+          "text": "deludente",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:coinvolgente",
+          "text": "coinvolgente",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:ritmo",
+          "text": "ritmo",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:interpretazione",
+          "text": "interpretazione",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:originale",
+          "text": "originale",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "grammar:it-b1-scrivere-una-recensione",
+          "text": "Struttura della recensione",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        }
+      ],
+      "repeats": [
+        "cosydata:it:in-conclusione:phrase"
+      ]
+    },
+    {
+      "number": 54,
+      "unit": 11,
+      "code": "IT-B1-054",
+      "title": "Riassumere un testo",
+      "introduces": [
+        {
+          "id": "pending:it:riassunto",
+          "text": "riassunto",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:in-sintesi",
+          "text": "in sintesi",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:in-breve",
+          "text": "in breve",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:lautore-sostiene",
+          "text": "l'autore sostiene",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:il-testo-tratta",
+          "text": "il testo tratta",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:concludendo",
+          "text": "concludendo",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:in-sostanza",
+          "text": "in sostanza",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:punto-chiave",
+          "text": "punto chiave",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "grammar:it-b1-riassumere-un-testo",
+          "text": "Selezione delle informazioni",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        }
+      ],
+      "repeats": []
+    },
+    {
+      "number": 55,
+      "unit": 11,
+      "code": "IT-B1-055",
+      "title": "Cultura e identità",
+      "introduces": [
+        {
+          "id": "cosydata:it:identita:noun",
+          "text": "identità",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:noun"
+        },
+        {
+          "id": "cosydata:it:tradizione:noun",
+          "text": "tradizione",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:noun"
+        },
+        {
+          "id": "pending:it:radici",
+          "text": "radici",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:stereotipo",
+          "text": "stereotipo",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:differenza",
+          "text": "differenza",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:appartenenza",
+          "text": "appartenenza",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:incontro",
+          "text": "incontro",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        }
+      ],
+      "repeats": [
+        "cosydata:it:abitudine:noun",
+        "grammar:it-b1-cultura-e-patrimonio",
+        "grammar:it-b1-argomentare-un-opinione"
+      ]
+    },
+    {
+      "number": 56,
+      "unit": 12,
+      "code": "IT-B1-056",
+      "title": "Prendere appunti e organizzarli",
+      "introduces": [
+        {
+          "id": "pending:it:appunto",
+          "text": "appunto",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:parola-chiave",
+          "text": "parola chiave",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:schema",
+          "text": "schema",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:mappa:noun",
+          "text": "mappa",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:noun"
+        },
+        {
+          "id": "pending:it:sottolineare",
+          "text": "sottolineare",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:riassumere",
+          "text": "riassumere",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:segnare:verb",
+          "text": "segnare",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:verb"
+        },
+        {
+          "id": "pending:it:elenco",
+          "text": "elenco",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        }
+      ],
+      "repeats": [
+        "grammar:it-b1-riassumere-un-testo"
+      ]
+    },
+    {
+      "number": 57,
+      "unit": 12,
+      "code": "IT-B1-057",
+      "title": "Riassumere e parafrasare",
+      "introduces": [
+        {
+          "id": "pending:it:parafrasi",
+          "text": "parafrasi",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:sinonimo",
+          "text": "sinonimo",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:riformulare",
+          "text": "riformulare",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:in-altre-parole",
+          "text": "in altre parole",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:cioe",
+          "text": "cioè",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:significa-che",
+          "text": "significa che",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:equivalente",
+          "text": "equivalente",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:registro",
+          "text": "registro",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        }
+      ],
+      "repeats": [
+        "grammar:it-b1-riassumere-un-testo",
+        "grammar:it-b1-connettivi-testuali"
+      ]
+    },
+    {
+      "number": 58,
+      "unit": 12,
+      "code": "IT-B1-058",
+      "title": "Email formale e richieste",
+      "introduces": [
+        {
+          "id": "pending:it:in-riferimento",
+          "text": "in riferimento",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:chiedo-cortesemente",
+          "text": "chiedo cortesemente",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:restando-a-disposizione",
+          "text": "restando a disposizione",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:allegato",
+          "text": "allegato",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:riscontro",
+          "text": "riscontro",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:sollecito",
+          "text": "sollecito",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "grammar:it-a2-scrivere-un-email-formale",
+          "text": "Formule di apertura e chiusura",
+          "kind": "frame",
+          "status": "grammar-id",
+          "source": "grammarIds",
+          "role": "hold",
+          "role_source": "rule:frame"
+        }
+      ],
+      "repeats": [
+        "cosydata:it:gentile:adjective",
+        "pending:it:cordiali-saluti",
+        "grammar:it-b1-lettera-di-presentazione"
+      ]
+    },
+    {
+      "number": 59,
+      "unit": 12,
+      "code": "IT-B1-059",
+      "title": "Collegare le idee in un testo",
+      "introduces": [
+        {
+          "id": "pending:it:poiche",
+          "text": "poiché",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:di-conseguenza:phrase",
+          "text": "di conseguenza",
+          "kind": "collocation",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:phrase"
+        },
+        {
+          "id": "cosydata:it:ciononostante:adverb",
+          "text": "ciononostante",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:adverb"
+        },
+        {
+          "id": "pending:it:in-particolare",
+          "text": "in particolare",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:innanzitutto",
+          "text": "innanzitutto",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:infine:adverb",
+          "text": "infine",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:adverb"
+        },
+        {
+          "id": "pending:it:viceversa",
+          "text": "viceversa",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        }
+      ],
+      "repeats": [
+        "pending:it:pertanto",
+        "grammar:it-b1-connettivi-testuali"
+      ]
+    },
+    {
+      "number": 60,
+      "unit": 12,
+      "code": "IT-B1-060",
+      "title": "Rivedere e correggere un testo",
+      "introduces": [
+        {
+          "id": "pending:it:rileggere",
+          "text": "rileggere",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:correggere",
+          "text": "correggere",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:coerenza",
+          "text": "coerenza",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:ripetizione",
+          "text": "ripetizione",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:chiarezza",
+          "text": "chiarezza",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:versione-finale",
+          "text": "versione finale",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        }
+      ],
+      "repeats": [
+        "cosydata:it:errore:noun",
+        "pending:it:registro",
+        "grammar:it-b1-riassumere-un-testo",
+        "grammar:it-b1-connettivi-testuali"
+      ]
+    },
+    {
+      "number": 61,
+      "unit": 13,
+      "code": "IT-B1-061",
+      "title": "Ripasso del congiuntivo",
+      "introduces": [
+        {
+          "id": "pending:it:sia",
+          "text": "sia",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:abbia",
+          "text": "abbia",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:fosse",
+          "text": "fosse",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:avesse",
+          "text": "avesse",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        }
+      ],
+      "repeats": [
+        "pending:it:penso-che",
+        "pending:it:benche",
+        "pending:it:purche",
+        "pending:it:spero-che",
+        "grammar:it-b1-congiuntivo-presente",
+        "grammar:it-b1-congiuntivo-trapassato"
+      ]
+    },
+    {
+      "number": 62,
+      "unit": 13,
+      "code": "IT-B1-062",
+      "title": "Ripasso dell'ipotesi",
+      "introduces": [],
+      "repeats": [
+        "pending:it:se-potessi",
+        "pending:it:se-avessi",
+        "pending:it:sarei",
+        "pending:it:avrei",
+        "cosydata:it:ora:noun",
+        "pending:it:allora",
+        "pending:it:ipotesi",
+        "cosydata:it:conseguenza:noun",
+        "grammar:it-b1-periodo-ipotetico-3",
+        "grammar:it-b1-periodo-ipotetico-misto"
+      ]
+    },
+    {
+      "number": 63,
+      "unit": 13,
+      "code": "IT-B1-063",
+      "title": "Ripasso di pronomi e preposizioni",
+      "introduces": [
+        {
+          "id": "cosydata:it:ne:pronoun",
+          "text": "ne",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:pronoun"
+        },
+        {
+          "id": "cosydata:it:ci:pronoun",
+          "text": "ci",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:pos:pronoun"
+        }
+      ],
+      "repeats": [
+        "pending:it:glielo",
+        "pending:it:cui",
+        "pending:it:cercare-di",
+        "cosydata:it:riuscire-a:phrase",
+        "pending:it:contare-su",
+        "pending:it:dipendere-da",
+        "grammar:it-b1-pronomi-combinati",
+        "grammar:it-b1-preposizioni-con-i-verbi"
+      ]
+    },
+    {
+      "number": 64,
+      "unit": 13,
+      "code": "IT-B1-064",
+      "title": "Produzione orale: sostenere un dibattito",
+      "introduces": [
+        {
+          "id": "pending:it:capisco-la-posizione",
+          "text": "capisco la posizione",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:vorrei-aggiungere",
+          "text": "vorrei aggiungere",
+          "kind": "collocation",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:sono-daccordo-in-parte",
+          "text": "sono d'accordo in parte",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:replica",
+          "text": "replica",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        }
+      ],
+      "repeats": [
+        "pending:it:a-mio-avviso",
+        "cosydata:it:tuttavia:adverb",
+        "pending:it:concludendo",
+        "cosydata:it:domanda:noun",
+        "grammar:it-b1-argomentare-un-opinione",
+        "grammar:it-b1-connettivi-testuali"
+      ]
+    },
+    {
+      "number": 65,
+      "unit": 13,
+      "code": "IT-B1-065",
+      "title": "Produzione scritta: un testo argomentativo",
+      "introduces": [
+        {
+          "id": "pending:it:tesi",
+          "text": "tesi",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "cosydata:it:esempio:noun",
+          "text": "esempio",
+          "kind": "word",
+          "status": "exact",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:pos:noun"
+        },
+        {
+          "id": "pending:it:controargomento",
+          "text": "controargomento",
+          "kind": "word",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "recognise",
+          "role_source": "rule:shape"
+        },
+        {
+          "id": "pending:it:in-primo-luogo",
+          "text": "in primo luogo",
+          "kind": "set-phrase",
+          "status": "unresolved",
+          "source": "vocabulary",
+          "role": "hold",
+          "role_source": "rule:shape"
+        }
+      ],
+      "repeats": [
+        "cosydata:it:argomento:noun",
+        "pending:it:conclusione",
+        "cosydata:it:infine:adverb",
+        "pending:it:in-sintesi",
+        "grammar:it-b1-scrivere-una-recensione",
+        "grammar:it-b1-riassumere-un-testo"
+      ]
+    }
+  ]
+}

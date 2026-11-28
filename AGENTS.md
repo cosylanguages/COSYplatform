@@ -17,6 +17,44 @@ npm run validate     # content integrity checks
 npm run stats:build  # regenerate data/platform-stats.json
 ```
 
+## Speaking method
+`docs/SPEAKING_METHODOLOGY.md` is the proposal for how the decks should teach: blocks introduced
+with a question, a retrieval set in stage 2 of every lesson, a schedule for what returns. The
+measurement behind it is `npm run audit:recycling` -> `docs/RECYCLING_AUDIT.md`: 35% of curriculum
+vocabulary appears in exactly one deck, and the `recycling` field holds prose ("Lessico del livello
+A2 e del modulo precedente") on 130 decks, so nothing can check it. The audit is a floor, not proof:
+presence in text is not learner production.
+
+## Chunk registry and retrieval plan
+`npm run chunks:build -- --course general-it-b1` -> `data/chunks/<course>.json` plus
+`docs/CHUNK_REGISTRY_<course>.md`; `npm run chunks:plan -- --course general-it-b1` ->
+`data/chunks/<course>-plan.json` plus `docs/RETRIEVAL_PLAN_<course>.md`. Neither writes to the
+curriculum or the decks.
+
+Italian B1 is 500 blocks over 65 lessons: 21% resolve to COSYdata ids, 345 carry `pending:` ids
+(the dictionary lacks most B1 vocabulary - intanto, racconto, episodio are all missing). The plan
+returned the capacity finding that shapes the method: 7.7 blocks per lesson against a five-question
+slot means 2,378 returns demanded and 320 available, so a 65-lesson course can hold ~64 blocks at
+that budget. Cutting the load, growing the slot, or triaging blocks into hold/recognise is a course
+design decision, not a generator one.
+
+### Retrieval pilot
+Italian B1 lessons 2-5 now carry a hand-written retrieval set: `returns: [{block, q}]` in the
+curriculum `teacher_notes`, and the same questions on deck slide 2 in a blockquote with
+`usesChunk`, plus `recycling.prior` naming the blocks and `recycling.priorBlocks` holding the ids.
+`docs/PILOT_RETRIEVAL_IT_B1_UNIT1.md` has the 28 questions and what reading them revealed. Deck
+text was read from the curriculum note, so the two cannot diverge. `scripts/lesson-build/build_decks.py`
+now parses `returns:` (`parse_returns`, `recycling_elements`) and renders the retrieval slide, so a
+rebuild keeps the questions instead of dropping them; `tests/retrieval-returns.test.js` covers it.
+Realms still to re-run: a full rebuild needs the COSYmanuals checkout.
+
+The planner now caps returns per source lesson (3) and per domain (2), relaxing the domain cap only
+to reach four questions. Italian B1 lessons 2-10 carry 40 hand-written questions over 26 blocks.
+Lesson 3 is still all past: its only predecessors are lessons 1 and 2, so the constraint cannot
+manufacture variety the curriculum has not produced - a curriculum fact, not a planner bug.
+Domains are a keyword list; "Gerundio presente e passato" matched the past domain until manner was
+tested first.
+
 ## Lesson generation
 `/tmp/cosy_build.py` holds the shared `Spec` class: it writes the ten-slide deck from a per-lesson
 dict (`cando`, `chunks`, `reading`, `listen`, `pron`, `adapt`, `practice`, `rule`, `prior`, `next`,
@@ -94,3 +132,183 @@ of the French B1 curriculum shipped with `grammarIds: null`; they were filled in
   the B1 decks embed them. A stub is recognisable by its `Mastering <topic>` subtitle and its filler
   example, `She demonstrated <topic> with great precision`. French and Russian have none.
 - Other languages: A1 courses only.
+
+## Lexicon research (2026-11-28)
+`docs/cefr-syllabus-and-vocabulary-architecture.md` holds the measured state of the three
+repositories plus the proposed level model. Facts worth remembering before touching vocabulary:
+
+- COSYdata is theme-organised at every level for English only. FR/RU/IT/EL collapse above A2 into
+  POS buckets (`noun.json`, `verb.json`, `idiom.json`), and B1+ is mostly a fixed idiom quota of
+  about 160 per level: FR B1 278 entries of which 164 idioms, so 114 real items for a 65-lesson B1.
+- The curriculum and the dictionary are parallel lexicons. Exact-form overlap between curriculum
+  `vocabulary` items and the dictionary: EN 97/84/83/80/74/61 % (A1→C2), FR 38/19/6/12/9 % (A2→C2),
+  RU 25/25/14/6/11/7 %, IT 69/51/25 % (A1→B1), EL 39/28 % (A1→A2). RU survives 5-char stemming,
+  so it is not an inflection artefact.
+- Manual vocabulary pages carry no COSYdata id (`data-vocab-id` absent everywhere), so the
+  "ids extracted from COSYdata into the vocabulary manual" link does not exist yet. Pages are
+  generated copies: FR B1 has 7 pages / 238 entries for 278 data entries.
+- Grammar ids all resolve (3 556 refs, 0 unknown), but 300 of the 1 878 pages in the five languages
+  are referenced by no curriculum (EN 84, FR 73, RU 143). English C2 has 65 lessons and 0 ids.
+- French recycles no grammar between levels (1 id at A2, 0 after); EN/RU/IT/EL recycle 9–23 ids by
+  accident, pointing at the lower-level page instead of a deeper moment.
+- Per-lesson vocabulary is a quota, not a selection: FR/RU/IT/EL carry exactly 8 items per lesson,
+  EN about 10. The A0–A1 lesson spec asks for 10–20 items + 5–10 chunks.
+- Course sizes disagree: EN A1 180 / A2 141 / B1 120 / B2 121 / C1 94 / C2 65, with 16/46/40/40/40
+  lessons in "Additional Legacy Topics & Draft Lessons"; FR/RU 142 at A1 then 65; IT/EL 65.
+- 48 lesson files are already reused by two roadmaps (`general-en-a0` and `general-en-a0-a1`),
+  which duplicate each other; A0 should be `sublevel: "start"` of A1, not a course id.
+
+## Phase 1 (2026-11-28): schema + French B1 pilot
+- Optional curriculum fields now exist in `curriculums/_schema/curriculum.schema.json`: unit
+  `theme` (t01-t22, ids from `cefr/data/themes.json`), `secondaryThemes`, `macroFunction`; lesson
+  `vocabularyIds` (`<lang>:<slug>:<form>`), `recycledIds`, `grammarThreads` (T1-T14). All optional,
+  so every existing curriculum still validates untouched.
+- `scripts/data/unit-metadata.json` declares theme + macro-function per unit for French general
+  A1-C2 (88 units: A1 23, A2-C2 13 each). `scripts/apply-unit-metadata.py` inserts the keys in
+  place, after `title`, and preserves key order and file formatting: no `--course` reports drift
+  (exit 1), `--write` applies. Idempotent; the whole French change was 264 insertions and 0
+  deletions. Inserting metadata must not move pre-existing unit keys: A1 units carry `num`, `id`,
+  `label`, `color`, `arc`, `lessons_count` around `title`, and rebuilding the dict naively
+  reorders them (that produced 119 deletions on the first attempt).
+- `scripts/build-vocab-id-map.py --cosydata ../COSYdata --course general-fr-b1 --write` produces
+  `docs/vocab-id-map/mapping-<course>.json` and `review-<course>.csv`, keyed by
+  `<lang>/<track>/<LEVEL>/uNN-lNN` like the grammar-id reviews. Statuses: exact, normalized,
+  related, missing.
+- FR results by level: A1 1 135 items 74 % resolved, A2 520 38 %, B1 520 19 %, B2 520 7 %,
+  C1 520 12 %, C2 463 9 %. Do not read `different_level` as "wrong level" for vocabulary: a B1
+  lesson reusing A2 words is intended.
+- `related` matching is deliberately strict (prefix + known ending) after edit-distance candidates
+  produced noise (raison->raisin, pétition->petit). Precision over recall.
+- Tests `tests/curriculum-metadata.test.js` and `tests/vocab-id-map.test.js` guard the metadata,
+  the artifact shape and the FR B1 pilot; `npm run audit:lexicon` needs the COSYdata/COSYmanuals
+  checkouts and is not part of `validate`.
+- B1 theming extended to English (units 1-10; unit 11 "Additional Legacy Topics & Draft Lessons"
+  is deliberately left unthemed, 40 lessons) and Russian (13 units, native macro-functions).
+  Additions only: EN +38 lines, RU +50 lines.
+- `cefr/data/unit-slots.json` holds the canonical 13-slot B1 grid; `scripts/slot-alignment.py`
+  renders `docs/B1_SLOT_ALIGNMENT.md`. All three B1 courses cover 10/13 slots and all three miss
+  t01 and t21; FR and RU spend three units on t22 and two on t17. Restructuring units is content
+  work, not a metadata change.
+- Vocabulary id maps added for EN B1 (1 193 items, 83 %), RU B1 (515 items, 15 %), IT B1 (520
+  items, 26 %). `related` is 0 for RU and IT because their inflection does not fit the Latin
+  prefix+suffix rule; the matcher stays silent rather than guess.
+- B2 themed for EN (units 1-10, legacy bucket again unthemed) and RU (13 units). Against the shared
+  B1 theme grid: EN 7/13 slots, RU 6/13, FR 5/13 — FR B2 has no work/health/travel/money/
+  environment/culture/identity unit and four t17 units. RU B2 mirrors FR B2 on 7 of 13 slot
+  positions; EN B2 is independently ordered (3 of 10), so the "literal translation" note in the
+  architecture doc was corrected.
+- `scripts/apply-recut.py --course general-fr-b1` applies the re-cut declared in
+  `scripts/data/recut-general-fr-b1.json` to the three places a unit title lives (curriculum unit,
+  roadmap `unit` strings, deck `unit` fields). Dry run by default, idempotent, renames no file.
+  After `--write`, run `npm run slots:report` or the unit-slot test fails on stale coverage.
+- The FR B1 re-cut is APPLIED: units 1, 2 and 11 are now "Éthique et dilemmes", "Mon parcours" and
+  "Argent, droits et démarches" (t21, t01, t06), with the 15 roadmap `unit` strings and 15 deck
+  `unit` fields updated. general-fr-b1 is the only course at 13/13 slots. Phase 2 (renaming the ten
+  grammar-led lessons of units 1-2 to can-dos) is NOT applied: it renames deck files and ids.
+- A1 and A2 have their own grids: `cefr/data/unit-slots-a1.json` and `unit-slots-a2.json`. The B1
+  grid has no slot for family, home, routine, food, clothes, weather or places, which is most of an
+  A-level course; measuring A1/A2 against it under-reports them badly (en-a1 read 9/13 against B1
+  and 12/13 against its own grid). `themes.json` has 22 themes, the B1 grid uses 13 of them.
+- English and Russian A1/A2/C1/C2 were themed with the same method, in their own language: en-a1
+  12/13, ru-a1 13/13, en-a2 9/13, ru-a2 10/13, en-c1 5/13, ru-c1 8/13, en-c2 7/13, ru-c2 7/13.
+  Legacy buckets and pure recap/project units stay unthemed on purpose.
+- `npm run audit:cando` renders `docs/CAN_DO_AUDIT.md`: decks whose can-do names a grammar form
+  rather than a communicative task. 130 of 1606 decks are form-first (8%), concentrated in en-b1
+  (22%), it-b1 (29%), el-a1 (25%). This is the measurable version of "is this course a grammar
+  syllabus in a course's clothes", and it corrects an earlier claim: most Italian B1 grammar decks
+  do frame the form through a purpose (`Evitare ripetizioni con ci e ne`), only 19 of 65 are pure
+  form drills. The classifier is triage, not judgement - `--explain "<can-do>"` classifies one
+  string, and the doc samples every flagged deck.
+- `npm run audit:roadmap` renders `docs/ROADMAP_DECK_AUDIT.md`: 2214 roadmap entries point at a
+  deck, 1708 of them JSON and 455 legacy `.xml` lessons (spoken-en-b1 226, cinema-en-b1 106,
+  spoken-en-c1 43, spoken-en-b2 36, spoken-en-a1 27). The XML ones load through the old content
+  table but carry no JSON metadata, so no can-do, theme or grammar audit reaches them - a fifth of
+  the catalogue sits outside the model. 0 entries point at a missing file, 0 deck-level mismatches,
+  166 JSON decks have no can-do (science-en decks reused by the discussion courses, and the 28
+  French pronunciation decks under `lessons/french-pronunciation/<level>/`). 47 decks are reused
+  across courses and all of them are the A0 -> A0-A1 -> A1 ladder. A JSON loader must not treat
+  `.xml` as a missing file - that mistake first read as "455 lessons missing", which was false.
+- `scripts/xml-lesson-to-json.py --dry-run --write` renders `docs/XML_MIGRATION_DRY_RUN.md`: all
+  456 legacy XML lessons convert into the JSON deck shape with character-exact text parity (the
+  converter refuses to write a file whose words do not match). It carries id, title, level,
+  language, defaultDuration, defaultMode and maps XML stage names onto the platform vocabulary
+  (`round-1` to controlled-practice, `error-correction` to recycling, `speak-together`/`round-2` to
+  freer-practice). It does NOT invent canDo, unit, theme or grammar ids, so a converted deck is
+  content-complete and metadata-poor - conversion is the floor, not the finish line.
+- Two traps found while writing that converter: slide-level `ol`/`ul` are not `cosy-*` tags and were
+  silently dropped (9 995 characters of a lesson became 1 801 until the mapper handled any block
+  tag); and text parity must unescape `&amp;` and ignore the list markers the converter adds, or
+  every file with a bullet list reports a false mismatch.
+- `npm run audit:shelf` renders `docs/SHELF_PARITY.md`: the JSON catalogue (1711 lessons, 9.5
+  slides) carries a can-do 90%, objectives 96%, a grammar focus 88%, reading/listening 93% and
+  pronunciation 89%; the XML shelf (456 lessons, 8.0 slides) carries 0% of every one of them and
+  100% of practice. Conversion preserves a structurally thin lesson, so the expensive part of
+  migrating the shelf is authoring, not converting. See `docs/PILOT_SPOKEN_EN_A1.md`.
+- `spoken-en-a1` promises 49 lessons: 22 have no file, and the 27 that do are club lessons from
+  Debatable Relatable, Keeping Up With Science, Lets Celebrate and The Greatest Quotes, none of them
+  from the modules the roadmap names. Eight of the 27 titles say (A2) while the file says A1.
+- A lesson's can-do reaches the deck through `cando:` inside the curriculum lesson's
+  `teacher_notes`; `build_decks.py` falls back to the manual page's `outcome`, which is the grammar
+  point, and that fallback is why the Italian and Greek grammar units read as drills. Rewriting the
+  note rewrites the can-do, and the deck copies it into three places (canDo, the objective line and
+  `Produzione libera:`). English B2 (15), French C1 (5) and French C2 (2) then went the same way,
+  and those 22 are the last ones that needed no decision. Italian is finished at every level: B1 19 decks, A1 7 and A2 8 rewrote, and every
+  Italian course now reports 0 form-first; English B2, French C1 and C2 also report 0.
+- Greek is deliberately untouched: `docs/GREEK_CAN_DO_PROPOSALS.md` holds 27 before/after pairs
+  written to the catalogue pattern (Μπορώ να + subjunctive) and waiting for a native reader. Applying
+  one is three edits per lesson: the `cando:` note, the deck's `canDo`, and the two copies of it on
+  slide 1 and slide 7.
+- what is left after that is exactly 53 decks: English B1 (26, the legacy bucket) and Greek A1/A2
+  (27). Every other course reads clean.
+- term matching is word-boundary based. Plain substring matching read the Italian term "verbi"
+  inside the German word "verbinden" and flagged a perfectly good German can-do.
+- a failed string replace can invent a finding: one edit put the German and Spanish verbs outside
+  TASK_HEADS, and Spanish instantly reported 40 form-first instead of 1. Sample the flags and read
+  the can-do before believing a jump.
+- Before rewriting a can-do, check it is really form-first: `--explain` catches the reader's own
+  gaps. `Peut ...` was not in PREFIXES, and summarise, report, deliver, say, state, outline,
+  formuler, citer, situer and illustrer were missing from the task verbs, so five decks were being
+  counted as drills when they were not. Catalogue form-first went 130 to 108, but only 14 of those 22 are content: the
+  classifier had `formulare` swallowed by the `form` prefix (fixed by testing task heads first) and
+  was missing `esprimere`, `dire`, `riferire`, `выражать`, `εκφράζω`.
+- `build_decks.py` needs `/workspace/COSYmanuals`, so no deck can be regenerated in a workspace
+  without the manuals checkout. It now takes `--only <slug>` and `--keep-roadmap`: without the
+  latter a `--write` resets every roadmap entry to `status: drafted`.
+- `npm run status:coverage` renders `docs/COVERAGE_STATUS.md`: every course against the 13 slots,
+  with themed vs grammar-only unit counts. It is the one place to see the platform state; the per
+  level `docs/*_SLOT_ALIGNMENT.md` files are the detail behind it.
+- Russian B1 10/13 -> 11/13 and B2 6/13 -> 9/13 by the same method (values to ethics, emigration to
+  identity, consumer law to rights, sustainable architecture to environment, sociology to ethics,
+  collective memory to identity). Missing as primaries afterwards: ru-b1 t06 and t10, ru-b2 t06,
+  t08, t10, t13 - authoring, not labelling.
+- French B2 was re-themed through `unit-metadata.json` only (no title changed): units 4, 7, 8 and 12
+  moved to t16, t21, t19 and t01, taking the course 5/13 -> 9/13. `docs/FR_B2_RECUT.md` explains
+  each move and what still needs authoring (money, health, travel, work).
+- `apply-unit-metadata.py` had a bug until now: it inserted the declared theme then overwrote it
+  with the existing one, so every re-theme reported "up to date". Fixed; a test covers it.
+- `docs/EN_B1_RECUT.md` records the next decision: `general-en-b1` is 80 themed lessons plus a
+  40-lesson legacy bucket whose titles do not match the can-dos their decks state (*Modern Nomads*
+  teaches healthy habits, *Elevator Pitch* teaches environmental policy). The bucket therefore
+  cannot be redistributed into the three missing slots (society, business, register); the options
+  costed there are retitle-in-place (B) or retire-and-author (A/C). English B2 has the same bucket.
+- A recut spec (`scripts/data/recut-<course>.json`) duplicates theme/macroFunction with
+  `unit-metadata.json`, so a test fails unless both hold the same values. Update both when adding
+  a re-cut.
+- `slot-alignment.py --level B2 --grid B1` renders `docs/B2_SLOT_ALIGNMENT.md`; the test recomputes
+  coverage for every committed report from the curricula.
+- Greek A2: units 1, 9-13 themed (remembrance, work, health, home, culture, revision); units 2-8
+  (present perfect, future, subjunctive, imperative, comparatives, relatives, conditionals) left
+  unthemed; map 520 items, 28 % resolved. Greek A1 is organised by sounds and grammar, so it is
+  left entirely unthemed on purpose.
+- Italian B1 is grammar-organised: units 1-7 are grammar labels and are deliberately unthemed
+  (only units 8-13 carry a topic), so IT covers 5/13 slots. Do not invent a theme to fill a cell.
+- Pipeline is now closed: `scripts/apply-vocab-ids.py` reads the `decision` column of a review
+  sheet and writes `vocabularyIds` after `vocabulary`, dry-run by default, idempotent, rejecting
+  unknown ids with `--cosydata` (exit 2, nothing written). Decisions: empty=pending, `accept`,
+  `accept <id>`, `author`, `replace`, `skip`. Tests spawn the script on a temp copy
+  (`tests/apply-vocab-ids.test.js`, skipped when python3 is absent).
+- `build-vocab-id-map.py --backlog-out` exports the unresolved items grouped by unit and theme
+  (`docs/vocab-id-map/backlog-general-fr-b1.json`, 423 items) for COSYdata authoring.
+- The `recycled` prose field is populated on 100 % of lessons in all five languages but templated
+  (51 distinct strings across 65 FR B1 lessons), and no id points at the earlier page. Recycling
+  must be wired through `recycledIds`, not through that prose.

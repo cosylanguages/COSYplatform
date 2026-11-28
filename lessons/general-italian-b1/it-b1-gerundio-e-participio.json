@@ -4,7 +4,7 @@
   "level": "B1",
   "language": "it",
   "unit": "Unità 1: Raccontare e collegare",
-  "canDo": "Rendere più dense le frasi con gerundio e participio.",
+  "canDo": "Raccontare due azioni legate tra loro, una principale e una secondaria, con gerundio e participio.",
   "defaultDuration": 60,
   "defaultMode": "all",
   "objectives": [
@@ -15,8 +15,14 @@
   "assessment": "Verifica l'uso corretto di «i modi indefiniti: gerundio e participio» e la chiarezza dell'esposizione orale.",
   "homework": "Scrivi dieci righe usando «i modi indefiniti: gerundio e participio».",
   "recycling": {
-    "prior": "Lessico del livello A2 e del modulo precedente",
-    "next": "La lezione successiva tratta l'ordine delle parole e l'enfasi."
+    "prior": "tuttavia, inoltre, già, prima",
+    "next": "La lezione successiva tratta l'ordine delle parole e l'enfasi.",
+    "priorBlocks": [
+      "cosydata:it:tuttavia:adverb",
+      "cosydata:it:inoltre:idiom",
+      "cosydata:it:gia:adverb",
+      "cosydata:it:prima:adverb"
+    ]
   },
   "differentiation": {
     "individual": "Una scheda: cinque frasi sul tema della lezione.",
@@ -55,7 +61,7 @@
       "elements": [
         {
           "type": "instruction",
-          "content": "Obiettivo comunicativo: Rendere più dense le frasi con gerundio e participio."
+          "content": "Obiettivo comunicativo: Raccontare due azioni legate tra loro, una principale e una secondaria, con gerundio e participio."
         },
         {
           "type": "blockquote",
@@ -80,19 +86,25 @@
       "elements": [
         {
           "type": "instruction",
-          "content": "Già in possesso: Lessico del livello A2 e del modulo precedente"
+          "content": "Riattiva: rispondi ad alta voce alle domande sui blocchi già incontrati."
         },
         {
           "type": "blockquote",
-          "content": "Lessico da riattivare: mentre, pur, essendo"
+          "content": "1. Sei d'accordo con questa idea? Esprimi un dubbio: «È una buona idea; tuttavia…»\n2. Dammi due motivi per studiare una lingua straniera, il secondo con «inoltre».\n3. Che cosa avevi già fatto oggi prima di arrivare a lezione?\n4. Che cosa fai sempre prima di uscire di casa?",
+          "usesChunk": [
+            "cosydata:it:tuttavia:adverb",
+            "cosydata:it:inoltre:idiom",
+            "cosydata:it:gia:adverb",
+            "cosydata:it:prima:adverb"
+          ]
         },
         {
           "type": "instruction",
-          "content": "A memoria: che cosa significa questa parola e dove l'hai incontrata?"
+          "content": "Scegli una domanda e rispondi in tre frasi; poi riprova senza guardare."
         },
         {
           "type": "input",
-          "placeholder": "mentre — significato e contesto"
+          "placeholder": "la tua risposta, tre frasi"
         }
       ]
     },
@@ -218,7 +230,7 @@
       "elements": [
         {
           "type": "instruction",
-          "content": "Produzione libera: Rendere più dense le frasi con gerundio e participio."
+          "content": "Produzione libera: Raccontare due azioni legate tra loro, una principale e una secondaria, con gerundio e participio."
         },
         {
           "type": "blockquote",

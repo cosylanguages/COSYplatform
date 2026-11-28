@@ -4,7 +4,7 @@
   "level": "B1",
   "language": "it",
   "unit": "Unità 2: Il congiuntivo presente",
-  "canDo": "Formare il congiuntivo presente dei verbi comuni.",
+  "canDo": "Esprimere desideri e speranze usando il congiuntivo presente.",
   "defaultDuration": 60,
   "defaultMode": "all",
   "objectives": [
@@ -15,8 +15,17 @@
   "assessment": "Verifica l'uso corretto di «il congiuntivo presente» e la chiarezza dell'esposizione orale.",
   "homework": "Scrivi dieci righe usando «il congiuntivo presente».",
   "recycling": {
-    "prior": "Lessico del livello A2 e del modulo precedente",
-    "next": "La lezione successiva tratta i verbi che reggono il congiuntivo."
+    "prior": "Dislocazione, mentre, visto, già, prima, è che, quanto a",
+    "next": "La lezione successiva tratta i verbi che reggono il congiuntivo.",
+    "priorBlocks": [
+      "grammar:it-b1-ordine-delle-parole-e-enfasi",
+      "cosydata:it:mentre:conjunction",
+      "cosydata:it:visto:noun",
+      "cosydata:it:gia:adverb",
+      "cosydata:it:prima:adverb",
+      "pending:it:e-che",
+      "pending:it:quanto-a"
+    ]
   },
   "differentiation": {
     "individual": "Una scheda: cinque frasi sul tema della lezione.",
@@ -55,7 +64,7 @@
       "elements": [
         {
           "type": "instruction",
-          "content": "Obiettivo comunicativo: Formare il congiuntivo presente dei verbi comuni."
+          "content": "Obiettivo comunicativo: Esprimere desideri e speranze usando il congiuntivo presente."
         },
         {
           "type": "blockquote",
@@ -80,19 +89,28 @@
       "elements": [
         {
           "type": "instruction",
-          "content": "Già in possesso: Lessico del livello A2 e del modulo precedente"
+          "content": "Riattiva: rispondi ad alta voce alle domande sui blocchi già incontrati."
         },
         {
           "type": "blockquote",
-          "content": "Lessico da riattivare: che io sia, che tu abbia, che vada"
+          "content": "1. Metti in rilievo una cosa che hai comprato di recente: «Quella borsa, l'ho comprata…»\n2. Che cosa fai mentre aspetti l'autobus?\n3. Spiega una conseguenza che si vede dai fatti: «Visto che…, …»\n4. Che cosa avevi già fatto oggi prima di arrivare a lezione?\n5. Che cosa fai sempre prima di uscire di casa?\n6. Spiega che cosa non ti convince di una decisione, con «il problema è che…»\n7. Parla del tuo lavoro e poi passa alla tua città: «Quanto a…»",
+          "usesChunk": [
+            "grammar:it-b1-ordine-delle-parole-e-enfasi",
+            "cosydata:it:mentre:conjunction",
+            "cosydata:it:visto:noun",
+            "cosydata:it:gia:adverb",
+            "cosydata:it:prima:adverb",
+            "pending:it:e-che",
+            "pending:it:quanto-a"
+          ]
         },
         {
           "type": "instruction",
-          "content": "A memoria: che cosa significa questa parola e dove l'hai incontrata?"
+          "content": "Scegli una domanda e rispondi in tre frasi; poi riprova senza guardare."
         },
         {
           "type": "input",
-          "placeholder": "che io sia — significato e contesto"
+          "placeholder": "la tua risposta, tre frasi"
         }
       ]
     },
@@ -218,7 +236,7 @@
       "elements": [
         {
           "type": "instruction",
-          "content": "Produzione libera: Formare il congiuntivo presente dei verbi comuni."
+          "content": "Produzione libera: Esprimere desideri e speranze usando il congiuntivo presente."
         },
         {
           "type": "blockquote",

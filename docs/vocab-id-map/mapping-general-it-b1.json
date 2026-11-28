@@ -1,0 +1,3985 @@
+{
+ "course": "general-it-b1",
+ "lang": "it",
+ "level": "B1",
+ "source": {
+  "cosydata_entries": 3682,
+  "curriculum": "curriculums/it/general/B1.json"
+ },
+ "summary": {
+  "items": 520,
+  "exact": 130,
+  "normalized": 3,
+  "related": 0,
+  "missing": 387,
+  "resolved_pct": 26,
+  "different_level": 78
+ },
+ "lessons": {
+  "it/general/B1/u01-l01": {
+   "code": "IT-B1-001",
+   "items": [
+    {
+     "text": "racconto",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "sfondo",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "episodio",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "improvviso",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "intanto",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "frattempo",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "svolta",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "ricordo",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u01-l02": {
+   "code": "IT-B1-002",
+   "items": [
+    {
+     "text": "già",
+     "status": "exact",
+     "id": "it:gia:adverb",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "prima",
+     "status": "exact",
+     "id": "it:prima:adverb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "ancora non",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "quando",
+     "status": "exact",
+     "id": "it:quando:adverb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "dopo che",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "precedente",
+     "status": "exact",
+     "id": "it:precedente:adjective",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "antefatto",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "conclusione",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u01-l03": {
+   "code": "IT-B1-003",
+   "items": [
+    {
+     "text": "tuttavia",
+     "status": "exact",
+     "id": "it:tuttavia:adverb",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "inoltre",
+     "status": "exact",
+     "id": "it:inoltre:idiom",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "quindi",
+     "status": "exact",
+     "id": "it:quindi:adverb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "infatti",
+     "status": "exact",
+     "id": "it:infatti:phrase",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "dunque",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "invece",
+     "status": "exact",
+     "id": "it:invece:idiom",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "pertanto",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "comunque",
+     "status": "exact",
+     "id": "it:comunque:idiom",
+     "level": "B1",
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u01-l04": {
+   "code": "IT-B1-004",
+   "items": [
+    {
+     "text": "mentre",
+     "status": "exact",
+     "id": "it:mentre:conjunction",
+     "level": "B2",
+     "alternatives": []
+    },
+    {
+     "text": "pur",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "essendo",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "avendo",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "finito",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "visto",
+     "status": "exact",
+     "id": "it:visto:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "considerato",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "durante",
+     "status": "exact",
+     "id": "it:durante:preposition",
+     "level": "A2",
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u01-l05": {
+   "code": "IT-B1-005",
+   "items": [
+    {
+     "text": "è che",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "quanto a",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "proprio",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "soprattutto",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "rilievo",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "enfasi",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "tema",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "commento",
+     "status": "exact",
+     "id": "it:commento:noun",
+     "level": "B1",
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u02-l01": {
+   "code": "IT-B1-006",
+   "items": [
+    {
+     "text": "che io sia",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "che tu abbia",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "che vada",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "che faccia",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "che possa",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "speranza",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "dubbio",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "possibilità",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u02-l02": {
+   "code": "IT-B1-007",
+   "items": [
+    {
+     "text": "penso che",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "credo che",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "spero che",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "temo che",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "mi sembra che",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "è importante che",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "è possibile che",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "suppongo che",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u02-l03": {
+   "code": "IT-B1-008",
+   "items": [
+    {
+     "text": "benché",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "sebbene",
+     "status": "exact",
+     "id": "it:sebbene:conjunction",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "affinché",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "purché",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "a meno che",
+     "status": "exact",
+     "id": "it:a-meno-che:phrase",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "prima che",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "senza che",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "nonostante",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u02-l04": {
+   "code": "IT-B1-009",
+   "items": [
+    {
+     "text": "cerco un",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "non c'è nessuno che",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "l'unico che",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "il migliore che",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "chiunque",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "qualunque",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "chi",
+     "status": "exact",
+     "id": "it:chi:pronoun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "quello che",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u02-l05": {
+   "code": "IT-B1-010",
+   "items": [
+    {
+     "text": "che vada bene",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "che sia chiaro",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "che entri",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "che si accomodi",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "auguri",
+     "status": "exact",
+     "id": "it:auguri:phrase",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "in bocca al lupo",
+     "status": "exact",
+     "id": "it:in-bocca-al-lupo:phrase",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "buon lavoro",
+     "status": "exact",
+     "id": "it:buon-lavoro:phrase",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "congratulazioni",
+     "status": "exact",
+     "id": "it:congratulazioni:phrase",
+     "level": "A2",
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u03-l01": {
+   "code": "IT-B1-011",
+   "items": [
+    {
+     "text": "abbia fatto",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "sia andato",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "abbia visto",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "abbia detto",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "prima di",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "entro",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "finora",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "recentemente",
+     "status": "exact",
+     "id": "it:recentemente:adverb",
+     "level": "B1",
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u03-l02": {
+   "code": "IT-B1-012",
+   "items": [
+    {
+     "text": "fossi",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "avessi",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "potessi",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "volessi",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "come se",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "magari",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "desiderio",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "ipotesi",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u03-l03": {
+   "code": "IT-B1-013",
+   "items": [
+    {
+     "text": "avessi saputo",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "fosse partito",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "avrei voluto",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "rimpianto",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "scelta",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "conseguenza",
+     "status": "exact",
+     "id": "it:conseguenza:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "passato",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "anteriorità",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u03-l04": {
+   "code": "IT-B1-014",
+   "items": [
+    {
+     "text": "penso che",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "pensavo che",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "credo che",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "credevo che",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "spero che",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "speravo che",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "contemporaneo",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "anteriore",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u03-l05": {
+   "code": "IT-B1-015",
+   "items": [
+    {
+     "text": "so che",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "è vero che",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "vedo che",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "penso che",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "mi sembra che",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "secondo me",
+     "status": "exact",
+     "id": "it:secondo-me:phrase",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "evidentemente",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "probabilmente",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u04-l01": {
+   "code": "IT-B1-016",
+   "items": [
+    {
+     "text": "se potessi",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "se avessi",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "se fossi",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "verrei",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "cambierei",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "possibilità",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "immaginare",
+     "status": "exact",
+     "id": "it:immaginare:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "sogno",
+     "status": "exact",
+     "id": "it:sogno:noun",
+     "level": "A1",
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u04-l02": {
+   "code": "IT-B1-017",
+   "items": [
+    {
+     "text": "se avessi saputo",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "sarei venuto",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "avrei potuto",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "avrei dovuto",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "rimpianto",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "occasione",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "errore",
+     "status": "exact",
+     "id": "it:errore:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "conseguenza",
+     "status": "exact",
+     "id": "it:conseguenza:noun",
+     "level": "B1",
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u04-l03": {
+   "code": "IT-B1-018",
+   "items": [
+    {
+     "text": "ora",
+     "status": "exact",
+     "id": "it:ora:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "adesso",
+     "status": "exact",
+     "id": "it:adesso:adverb",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "oggi",
+     "status": "exact",
+     "id": "it:oggi:adverb",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "allora",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "se avessi studiato",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "se fossi più",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "sarei",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "avrei",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u04-l04": {
+   "code": "IT-B1-019",
+   "items": [
+    {
+     "text": "avrei voluto",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "sarei partito",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "secondo le fonti",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "sarebbe",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "avrebbero",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "indiscrezione",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "conferma",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "smentita",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u04-l05": {
+   "code": "IT-B1-020",
+   "items": [
+    {
+     "text": "avrò finito",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "sarà partito",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "entro",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "quando",
+     "status": "exact",
+     "id": "it:quando:adverb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "appena",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "ormai",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "probabilmente",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "concluso",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u05-l01": {
+   "code": "IT-B1-021",
+   "items": [
+    {
+     "text": "ha detto che",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "mi ha chiesto se",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "ha spiegato che",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "ha promesso di",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "qui",
+     "status": "exact",
+     "id": "it:qui:adverb",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "oggi",
+     "status": "exact",
+     "id": "it:oggi:adverb",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "domani",
+     "status": "exact",
+     "id": "it:domani:adverb",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "ieri",
+     "status": "exact",
+     "id": "it:ieri:adverb",
+     "level": "A1",
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u05-l02": {
+   "code": "IT-B1-022",
+   "items": [
+    {
+     "text": "aveva detto che",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "mi aveva chiesto",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "il giorno prima",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "il giorno dopo",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "allora",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "là",
+     "status": "normalized",
+     "id": "it:la:determiner",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "quello",
+     "status": "exact",
+     "id": "it:quello:pronoun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "sarebbe",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u05-l03": {
+   "code": "IT-B1-023",
+   "items": [
+    {
+     "text": "viene pubblicato",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "va firmato",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "è stato approvato",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "sarà discusso",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "autore",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "agente",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "processo",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "ufficio",
+     "status": "exact",
+     "id": "it:ufficio:noun",
+     "level": "A1",
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u05-l04": {
+   "code": "IT-B1-024",
+   "items": [
+    {
+     "text": "si dice",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "si pensa",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "si vendono",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "si parla",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "si può",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "in Italia",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "generalmente",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "abitudine",
+     "status": "exact",
+     "id": "it:abitudine:noun",
+     "level": "A2",
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u05-l05": {
+   "code": "IT-B1-025",
+   "items": [
+    {
+     "text": "si richiede",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "si prega di",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "occorre",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "è necessario",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "normativa",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "procedura",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "domanda",
+     "status": "exact",
+     "id": "it:domanda:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "scadenza",
+     "status": "exact",
+     "id": "it:scadenza:noun",
+     "level": "A2",
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u06-l01": {
+   "code": "IT-B1-026",
+   "items": [
+    {
+     "text": "me lo",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "te la",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "glielo",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "ce ne",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "ve li",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "restituire",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "prestare",
+     "status": "exact",
+     "id": "it:prestare:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "spiegare",
+     "status": "exact",
+     "id": "it:spiegare:verb",
+     "level": "A2",
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u06-l02": {
+   "code": "IT-B1-027",
+   "items": [
+    {
+     "text": "che",
+     "status": "exact",
+     "id": "it:che:pronoun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "cui",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "il quale",
+     "status": "normalized",
+     "id": "it:quale:pronoun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "la quale",
+     "status": "normalized",
+     "id": "it:quale:pronoun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "chi",
+     "status": "exact",
+     "id": "it:chi:pronoun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "quanto",
+     "status": "exact",
+     "id": "it:quanto:pronoun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "colui che",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "il cui",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u06-l03": {
+   "code": "IT-B1-028",
+   "items": [
+    {
+     "text": "andarsene",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "farcela",
+     "status": "exact",
+     "id": "it:farcela:phrase",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "prendersela",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "rendersi conto",
+     "status": "exact",
+     "id": "it:rendersi-conto:phrase",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "accorgersi",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "pentirsi",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "arrabbiarsi",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "trasferirsi",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u06-l04": {
+   "code": "IT-B1-029",
+   "items": [
+    {
+     "text": "cercare di",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "riuscire a",
+     "status": "exact",
+     "id": "it:riuscire-a:phrase",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "contare su",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "dipendere da",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "approfittare di",
+     "status": "exact",
+     "id": "it:approfittare-di:phrase",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "interessarsi a",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "smettere di",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "imparare a",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u06-l05": {
+   "code": "IT-B1-030",
+   "items": [
+    {
+     "text": "ci penso",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "ci credo",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "ne parlo",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "ne ho due",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "non ci riesco",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "me ne occupo",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "argomento",
+     "status": "exact",
+     "id": "it:argomento:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "quantità",
+     "status": "exact",
+     "id": "it:quantita:noun",
+     "level": "A1",
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u07-l01": {
+   "code": "IT-B1-031",
+   "items": [
+    {
+     "text": "qualche",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "alcuni",
+     "status": "exact",
+     "id": "it:alcuni:pronoun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "nessuno",
+     "status": "exact",
+     "id": "it:nessuno:pronoun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "ogni",
+     "status": "exact",
+     "id": "it:ogni:pronoun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "tutti",
+     "status": "exact",
+     "id": "it:tutti:pronoun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "ciascuno",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "qualunque",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "chiunque",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u07-l02": {
+   "code": "IT-B1-032",
+   "items": [
+    {
+     "text": "lentamente",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "facilmente",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "volentieri",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "bene",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "male",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "purtroppo",
+     "status": "exact",
+     "id": "it:purtroppo:idiom",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "addirittura",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "pressappoco",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u07-l03": {
+   "code": "IT-B1-033",
+   "items": [
+    {
+     "text": "migliore",
+     "status": "exact",
+     "id": "it:migliore:adjective",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "peggiore",
+     "status": "exact",
+     "id": "it:peggiore:adjective",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "maggiore",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "minore",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "ottimo",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "pessimo",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "massimo",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "minimo",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u07-l04": {
+   "code": "IT-B1-034",
+   "items": [
+    {
+     "text": "casetta",
+     "status": "exact",
+     "id": "it:casetta:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "librone",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "gattino",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "giornataccia",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "tesoruccio",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "portone",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "spuntino",
+     "status": "exact",
+     "id": "it:spuntino:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "attimino",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u07-l05": {
+   "code": "IT-B1-035",
+   "items": [
+    {
+     "text": "piuttosto",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "alquanto",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "davvero",
+     "status": "exact",
+     "id": "it:davvero:adverb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "assolutamente",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "in parte",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "senz'altro",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "moderatamente",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "notevole",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u08-l01": {
+   "code": "IT-B1-036",
+   "items": [
+    {
+     "text": "annuncio",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "requisito",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "esperienza",
+     "status": "exact",
+     "id": "it:esperienza:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "contratto",
+     "status": "exact",
+     "id": "it:contratto:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "full time",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "stage",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "candidatura",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "scadenza",
+     "status": "exact",
+     "id": "it:scadenza:noun",
+     "level": "A2",
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u08-l02": {
+   "code": "IT-B1-037",
+   "items": [
+    {
+     "text": "gentile",
+     "status": "exact",
+     "id": "it:gentile:adjective",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "in riferimento a",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "mi candido",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "in allegato",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "resto a disposizione",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "cordiali saluti",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "competenza",
+     "status": "exact",
+     "id": "it:competenza:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "motivazione",
+     "status": "exact",
+     "id": "it:motivazione:noun",
+     "level": "B1",
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u08-l03": {
+   "code": "IT-B1-038",
+   "items": [
+    {
+     "text": "mi descriva",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "punto di forza",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "punto debole",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "motivazione",
+     "status": "exact",
+     "id": "it:motivazione:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "obiettivo",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "ruolo",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "team",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "disponibilità",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u08-l04": {
+   "code": "IT-B1-039",
+   "items": [
+    {
+     "text": "ho maturato",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "mi sono occupato",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "ho gestito",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "ho coordinato",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "esperienza",
+     "status": "exact",
+     "id": "it:esperienza:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "settore",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "mansione",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "risultato",
+     "status": "exact",
+     "id": "it:risultato:noun",
+     "level": "B1",
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u08-l05": {
+   "code": "IT-B1-040",
+   "items": [
+    {
+     "text": "competenza",
+     "status": "exact",
+     "id": "it:competenza:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "aggiornamento",
+     "status": "exact",
+     "id": "it:aggiornamento:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "corso",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "certificazione",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "soft skill",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "obiettivo",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "crescita",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "specializzazione",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u09-l01": {
+   "code": "IT-B1-041",
+   "items": [
+    {
+     "text": "quotidiano",
+     "status": "exact",
+     "id": "it:quotidiano:adjective",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "telegiornale",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "titolo",
+     "status": "exact",
+     "id": "it:titolo:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "articolo",
+     "status": "exact",
+     "id": "it:articolo:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "fonte",
+     "status": "exact",
+     "id": "it:fonte:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "intervista",
+     "status": "exact",
+     "id": "it:intervista:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "inchiesta",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "rassegna",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u09-l02": {
+   "code": "IT-B1-042",
+   "items": [
+    {
+     "text": "fonte",
+     "status": "exact",
+     "id": "it:fonte:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "verificare",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "bufala",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "titolo ingannevole",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "conferma",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "smentita",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "dubbio",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "attendibile",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u09-l03": {
+   "code": "IT-B1-043",
+   "items": [
+    {
+     "text": "secondo me",
+     "status": "exact",
+     "id": "it:secondo-me:phrase",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "da un lato",
+     "status": "exact",
+     "id": "it:da-un-lato:idiom",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "dall'altro",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "inoltre",
+     "status": "exact",
+     "id": "it:inoltre:idiom",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "tuttavia",
+     "status": "exact",
+     "id": "it:tuttavia:adverb",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "in conclusione",
+     "status": "exact",
+     "id": "it:in-conclusione:phrase",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "a mio avviso",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "d'altra parte",
+     "status": "exact",
+     "id": "it:d-altra-parte:phrase",
+     "level": "B1",
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u09-l04": {
+   "code": "IT-B1-044",
+   "items": [
+    {
+     "text": "comune",
+     "status": "exact",
+     "id": "it:comune-municipio:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "regione",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "voto",
+     "status": "exact",
+     "id": "it:voto:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "diritto",
+     "status": "exact",
+     "id": "it:diritto:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "dovere",
+     "status": "exact",
+     "id": "it:dovere:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "cittadino",
+     "status": "exact",
+     "id": "it:cittadino:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "associazione",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "volontariato",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u09-l05": {
+   "code": "IT-B1-045",
+   "items": [
+    {
+     "text": "richiesta",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "modulo",
+     "status": "exact",
+     "id": "it:modulo:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "sportello",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "agevolazione",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "requisito",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "documentazione",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "termine",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "ricorso",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u10-l01": {
+   "code": "IT-B1-046",
+   "items": [
+    {
+     "text": "clima",
+     "status": "exact",
+     "id": "it:clima:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "inquinamento",
+     "status": "exact",
+     "id": "it:inquinamento:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "emissioni",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "siccità",
+     "status": "exact",
+     "id": "it:siccita:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "alluvione",
+     "status": "exact",
+     "id": "it:alluvione:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "temperatura",
+     "status": "exact",
+     "id": "it:temperatura:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "biodiversità",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "impatto",
+     "status": "exact",
+     "id": "it:impatto:noun",
+     "level": "B1",
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u10-l02": {
+   "code": "IT-B1-047",
+   "items": [
+    {
+     "text": "consumo",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "rifiuti",
+     "status": "exact",
+     "id": "it:rifiuti:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "riciclo",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "imballaggio",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "filiera",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "km zero",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "spreco",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "risparmio",
+     "status": "exact",
+     "id": "it:risparmio:noun",
+     "level": "A1",
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u10-l03": {
+   "code": "IT-B1-048",
+   "items": [
+    {
+     "text": "rinnovabile",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "solare",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "eolico",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "raccolta differenziata",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "compost",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "discarica",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "efficienza",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "consumo",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u10-l04": {
+   "code": "IT-B1-049",
+   "items": [
+    {
+     "text": "turismo",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "overtourism",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "territorio",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "stagione",
+     "status": "exact",
+     "id": "it:stagione:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "impatto",
+     "status": "exact",
+     "id": "it:impatto:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "sentiero",
+     "status": "exact",
+     "id": "it:sentiero:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "ospitalità",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "locanda",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u10-l05": {
+   "code": "IT-B1-050",
+   "items": [
+    {
+     "text": "a mio parere",
+     "status": "exact",
+     "id": "it:a-mio-parere:idiom",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "obiezione",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "al contrario",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "tuttavia",
+     "status": "exact",
+     "id": "it:tuttavia:adverb",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "compromesso",
+     "status": "exact",
+     "id": "it:compromesso:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "soluzione",
+     "status": "exact",
+     "id": "it:soluzione:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "priorità",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "responsabilità",
+     "status": "exact",
+     "id": "it:responsabilit:noun",
+     "level": "B1",
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u11-l01": {
+   "code": "IT-B1-051",
+   "items": [
+    {
+     "text": "patrimonio",
+     "status": "exact",
+     "id": "it:patrimonio:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "bene culturale",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "restauro",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "tutela",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "museo",
+     "status": "exact",
+     "id": "it:museo:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "scavo",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "conservazione",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "valorizzazione",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u11-l02": {
+   "code": "IT-B1-052",
+   "items": [
+    {
+     "text": "trama",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "protagonista",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "personaggio",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "scena",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "finale",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "colpo di scena",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "regia",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "stile",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u11-l03": {
+   "code": "IT-B1-053",
+   "items": [
+    {
+     "text": "recensione",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "consigliato",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "deludente",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "coinvolgente",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "ritmo",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "interpretazione",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "originale",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "in conclusione",
+     "status": "exact",
+     "id": "it:in-conclusione:phrase",
+     "level": "B1",
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u11-l04": {
+   "code": "IT-B1-054",
+   "items": [
+    {
+     "text": "riassunto",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "in sintesi",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "in breve",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "l'autore sostiene",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "il testo tratta",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "concludendo",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "in sostanza",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "punto chiave",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u11-l05": {
+   "code": "IT-B1-055",
+   "items": [
+    {
+     "text": "identità",
+     "status": "exact",
+     "id": "it:identita:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "tradizione",
+     "status": "exact",
+     "id": "it:tradizione:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "radici",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "abitudine",
+     "status": "exact",
+     "id": "it:abitudine:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "stereotipo",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "differenza",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "appartenenza",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "incontro",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u12-l01": {
+   "code": "IT-B1-056",
+   "items": [
+    {
+     "text": "appunto",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "parola chiave",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "schema",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "mappa",
+     "status": "exact",
+     "id": "it:mappa:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "sottolineare",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "riassumere",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "segnare",
+     "status": "exact",
+     "id": "it:segnare:verb",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "elenco",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u12-l02": {
+   "code": "IT-B1-057",
+   "items": [
+    {
+     "text": "parafrasi",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "sinonimo",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "riformulare",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "in altre parole",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "cioè",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "significa che",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "equivalente",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "registro",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u12-l03": {
+   "code": "IT-B1-058",
+   "items": [
+    {
+     "text": "gentile",
+     "status": "exact",
+     "id": "it:gentile:adjective",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "in riferimento",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "chiedo cortesemente",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "restando a disposizione",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "cordiali saluti",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "allegato",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "riscontro",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "sollecito",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u12-l04": {
+   "code": "IT-B1-059",
+   "items": [
+    {
+     "text": "poiché",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "di conseguenza",
+     "status": "exact",
+     "id": "it:di-conseguenza:phrase",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "ciononostante",
+     "status": "exact",
+     "id": "it:ciononostante:adverb",
+     "level": "B2",
+     "alternatives": []
+    },
+    {
+     "text": "in particolare",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "innanzitutto",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "infine",
+     "status": "exact",
+     "id": "it:infine:adverb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "pertanto",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "viceversa",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u12-l05": {
+   "code": "IT-B1-060",
+   "items": [
+    {
+     "text": "rileggere",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "correggere",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "errore",
+     "status": "exact",
+     "id": "it:errore:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "coerenza",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "registro",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "ripetizione",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "chiarezza",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "versione finale",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u13-l01": {
+   "code": "IT-B1-061",
+   "items": [
+    {
+     "text": "sia",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "abbia",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "fosse",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "avesse",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "penso che",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "benché",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "purché",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "spero che",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u13-l02": {
+   "code": "IT-B1-062",
+   "items": [
+    {
+     "text": "se potessi",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "se avessi",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "sarei",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "avrei",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "ora",
+     "status": "exact",
+     "id": "it:ora:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "allora",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "ipotesi",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "conseguenza",
+     "status": "exact",
+     "id": "it:conseguenza:noun",
+     "level": "B1",
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u13-l03": {
+   "code": "IT-B1-063",
+   "items": [
+    {
+     "text": "glielo",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "cui",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "ne",
+     "status": "exact",
+     "id": "it:ne:pronoun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "ci",
+     "status": "exact",
+     "id": "it:ci:pronoun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "cercare di",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "riuscire a",
+     "status": "exact",
+     "id": "it:riuscire-a:phrase",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "contare su",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "dipendere da",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u13-l04": {
+   "code": "IT-B1-064",
+   "items": [
+    {
+     "text": "a mio avviso",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "capisco la posizione",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "tuttavia",
+     "status": "exact",
+     "id": "it:tuttavia:adverb",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "vorrei aggiungere",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "sono d'accordo in parte",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "concludendo",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "domanda",
+     "status": "exact",
+     "id": "it:domanda:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "replica",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "it/general/B1/u13-l05": {
+   "code": "IT-B1-065",
+   "items": [
+    {
+     "text": "tesi",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "argomento",
+     "status": "exact",
+     "id": "it:argomento:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "esempio",
+     "status": "exact",
+     "id": "it:esempio:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "controargomento",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "conclusione",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "in primo luogo",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "infine",
+     "status": "exact",
+     "id": "it:infine:adverb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "in sintesi",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  }
+ }
+}

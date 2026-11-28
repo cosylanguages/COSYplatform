@@ -1,0 +1,8804 @@
+{
+ "course": "general-fr-a1",
+ "lang": "fr",
+ "level": "A1",
+ "source": {
+  "cosydata_entries": 3621,
+  "curriculum": "curriculums/fr/general/A1.json"
+ },
+ "summary": {
+  "items": 1135,
+  "exact": 839,
+  "normalized": 3,
+  "related": 19,
+  "missing": 274,
+  "resolved_pct": 74,
+  "different_level": 758
+ },
+ "lessons": {
+  "fr/general/A1/u00-l01": {
+   "code": "FR-001",
+   "items": [
+    {
+     "text": "Bonjour",
+     "status": "exact",
+     "id": "fr:bonjour:phrase",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "Salut",
+     "status": "exact",
+     "id": "fr:salut:phrase",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "Bienvenue",
+     "status": "exact",
+     "id": "fr:bienvenue:phrase",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "Merci",
+     "status": "exact",
+     "id": "fr:merci:phrase",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "Au revoir",
+     "status": "exact",
+     "id": "fr:au-revoir:phrase",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u00-l02": {
+   "code": "FR-002",
+   "items": [
+    {
+     "text": "Nom",
+     "status": "exact",
+     "id": "fr:nom:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "Comment",
+     "status": "exact",
+     "id": "fr:comment:pronoun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "Enchanté",
+     "status": "exact",
+     "id": "fr:enchante:phrase",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "Prénom",
+     "status": "exact",
+     "id": "fr:prenom:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "Nom de famille",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Épeler",
+     "status": "exact",
+     "id": "fr:epeler:verb",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u00-l03": {
+   "code": "FR-003",
+   "items": [
+    {
+     "text": "un",
+     "status": "exact",
+     "id": "fr:un-det:determiner",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "deux",
+     "status": "exact",
+     "id": "fr:deux:number",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "trois",
+     "status": "exact",
+     "id": "fr:trois:number",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "dix",
+     "status": "exact",
+     "id": "fr:dix:number",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "vingt",
+     "status": "exact",
+     "id": "fr:vingt:number",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "table",
+     "status": "exact",
+     "id": "fr:table:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "chaise",
+     "status": "exact",
+     "id": "fr:chaise:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "livre",
+     "status": "exact",
+     "id": "fr:livre:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "stylo",
+     "status": "exact",
+     "id": "fr:stylo:noun",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u00-l04": {
+   "code": "FR-004",
+   "items": [
+    {
+     "text": "rue",
+     "status": "exact",
+     "id": "fr:rue:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "dessus",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "dessous",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "phrase",
+     "status": "exact",
+     "id": "fr:phrase:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "table",
+     "status": "exact",
+     "id": "fr:table:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "café",
+     "status": "exact",
+     "id": "fr:cafe:noun",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u00-l05": {
+   "code": "FR-005",
+   "items": [
+    {
+     "text": "S'il vous plaît",
+     "status": "exact",
+     "id": "fr:s-il-vous-plait:phrase",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "Merci beaucoup",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Pardon",
+     "status": "exact",
+     "id": "fr:pardon:phrase",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "Désolé",
+     "status": "exact",
+     "id": "fr:desole:phrase",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "Excusez-moi",
+     "status": "exact",
+     "id": "fr:excusez-moi:phrase",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "café",
+     "status": "exact",
+     "id": "fr:cafe:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "thé",
+     "status": "exact",
+     "id": "fr:the:noun",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u01-l01": {
+   "code": "FR-01",
+   "items": [
+    {
+     "text": "bonjour",
+     "status": "exact",
+     "id": "fr:bonjour:phrase",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "salut",
+     "status": "exact",
+     "id": "fr:salut:phrase",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "au revoir",
+     "status": "exact",
+     "id": "fr:au-revoir:phrase",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "merci",
+     "status": "exact",
+     "id": "fr:merci:phrase",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "s'il vous plaît",
+     "status": "exact",
+     "id": "fr:s-il-vous-plait:phrase",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "madame",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "monsieur",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "à bientôt",
+     "status": "exact",
+     "id": "fr:a-bientot:phrase",
+     "level": "A2",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u01-l02": {
+   "code": "FR-02",
+   "items": [
+    {
+     "text": "nom",
+     "status": "exact",
+     "id": "fr:nom:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "prénom",
+     "status": "exact",
+     "id": "fr:prenom:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "ami",
+     "status": "exact",
+     "id": "fr:ami:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "qui",
+     "status": "exact",
+     "id": "fr:qui:pronoun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "comment",
+     "status": "exact",
+     "id": "fr:comment:pronoun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "comment t'appelles-tu",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "enchanté",
+     "status": "exact",
+     "id": "fr:enchante:phrase",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "voici",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u01-l03": {
+   "code": "FR-03",
+   "items": [
+    {
+     "text": "alphabet",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "lettre",
+     "status": "exact",
+     "id": "fr:lettre:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "épeler",
+     "status": "exact",
+     "id": "fr:epeler:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "voyelle",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "consonne",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "accent",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "cédille",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "majuscule",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u01-l04": {
+   "code": "FR-04",
+   "items": [
+    {
+     "text": "pays",
+     "status": "exact",
+     "id": "fr:pays:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "nationalité",
+     "status": "exact",
+     "id": "fr:nationalite:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "ville",
+     "status": "exact",
+     "id": "fr:ville:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "passeport",
+     "status": "exact",
+     "id": "fr:passeport:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "France",
+     "status": "exact",
+     "id": "fr:france:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "français",
+     "status": "exact",
+     "id": "fr:francais:adjective",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "anglais",
+     "status": "exact",
+     "id": "fr:anglais:adjective",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "étranger",
+     "status": "related",
+     "id": null,
+     "level": null,
+     "alternatives": [
+      {
+       "id": "fr:etrange:adjective",
+       "word": "étrange",
+       "level": "A2"
+      }
+     ]
+    }
+   ]
+  },
+  "fr/general/A1/u01-l05": {
+   "code": "FR-05",
+   "items": [
+    {
+     "text": "langue",
+     "status": "exact",
+     "id": "fr:langue:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "français",
+     "status": "exact",
+     "id": "fr:francais:adjective",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "anglais",
+     "status": "exact",
+     "id": "fr:anglais:adjective",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "parler",
+     "status": "exact",
+     "id": "fr:parler:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "un peu",
+     "status": "exact",
+     "id": "fr:un-peu:adverb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "espagnol",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "allemand",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "couramment",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u01-l06": {
+   "code": "FR-06",
+   "items": [
+    {
+     "text": "zéro",
+     "status": "exact",
+     "id": "fr:zero:number",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "un",
+     "status": "exact",
+     "id": "fr:un-det:determiner",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "deux",
+     "status": "exact",
+     "id": "fr:deux:number",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "trois",
+     "status": "exact",
+     "id": "fr:trois:number",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "vingt",
+     "status": "exact",
+     "id": "fr:vingt:number",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "quatre",
+     "status": "exact",
+     "id": "fr:quatre:number",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "cinq",
+     "status": "exact",
+     "id": "fr:cinq:number",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "dix",
+     "status": "exact",
+     "id": "fr:dix:number",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u01-l07": {
+   "code": "FR-07",
+   "items": [
+    {
+     "text": "âge",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "an",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "anniversaire",
+     "status": "exact",
+     "id": "fr:anniversaire:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "mois",
+     "status": "exact",
+     "id": "fr:mois:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "janvier",
+     "status": "exact",
+     "id": "fr:janvier:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "février",
+     "status": "exact",
+     "id": "fr:fevrier:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "juin",
+     "status": "exact",
+     "id": "fr:juin:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "décembre",
+     "status": "exact",
+     "id": "fr:decembre:noun",
+     "level": "A1",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u01-l08": {
+   "code": "FR-08",
+   "items": [
+    {
+     "text": "numéro de téléphone",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "portable",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "courriel",
+     "status": "exact",
+     "id": "fr:courriel-electronique:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "adresse",
+     "status": "exact",
+     "id": "fr:adresse:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "rue",
+     "status": "exact",
+     "id": "fr:rue:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "code postal",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "ville",
+     "status": "exact",
+     "id": "fr:ville:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "habiter",
+     "status": "exact",
+     "id": "fr:habiter:verb",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u01-l09": {
+   "code": "FR-09",
+   "items": [
+    {
+     "text": "trente",
+     "status": "exact",
+     "id": "fr:trente:number",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "quarante",
+     "status": "exact",
+     "id": "fr:quarante:number",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "prix",
+     "status": "exact",
+     "id": "fr:prix:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "coût",
+     "status": "exact",
+     "id": "fr:cout:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "euro",
+     "status": "exact",
+     "id": "fr:euro:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "cinquante",
+     "status": "exact",
+     "id": "fr:cinquante:number",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "cent",
+     "status": "exact",
+     "id": "fr:cent:number",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "cher",
+     "status": "exact",
+     "id": "fr:cher:adjective",
+     "level": "A2",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u01-l10": {
+   "code": "FR-10",
+   "items": [
+    {
+     "text": "profil",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "identité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "information",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "personnel",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "à propos de moi",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "nom",
+     "status": "exact",
+     "id": "fr:nom:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "âge",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "adresse",
+     "status": "exact",
+     "id": "fr:adresse:noun",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u02-l01": {
+   "code": "FR-021",
+   "items": [
+    {
+     "text": "père",
+     "status": "exact",
+     "id": "fr:pere:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "mère",
+     "status": "exact",
+     "id": "fr:mere:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "parents",
+     "status": "exact",
+     "id": "fr:parents:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "frère",
+     "status": "exact",
+     "id": "fr:frere:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "sœur",
+     "status": "exact",
+     "id": "fr:soeur:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "fils",
+     "status": "exact",
+     "id": "fr:fils:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "fille",
+     "status": "exact",
+     "id": "fr:fille:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "enfants",
+     "status": "related",
+     "id": null,
+     "level": null,
+     "alternatives": [
+      {
+       "id": "fr:enfant:noun",
+       "word": "enfant",
+       "level": "A0"
+      }
+     ]
+    }
+   ]
+  },
+  "fr/general/A1/u02-l02": {
+   "code": "FR-022",
+   "items": [
+    {
+     "text": "âge",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "an",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "métier",
+     "status": "exact",
+     "id": "fr:metier:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "travail",
+     "status": "exact",
+     "id": "fr:travail:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "professeur",
+     "status": "exact",
+     "id": "fr:professeur:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "médecin",
+     "status": "exact",
+     "id": "fr:medecin:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "retraité",
+     "status": "normalized",
+     "id": "fr:retraite:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "infirmière",
+     "status": "exact",
+     "id": "fr:infirmiere:noun",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u02-l03": {
+   "code": "FR-023",
+   "items": [
+    {
+     "text": "grand",
+     "status": "exact",
+     "id": "fr:grand:adjective",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "petit",
+     "status": "exact",
+     "id": "fr:petit:adjective",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "jeune",
+     "status": "exact",
+     "id": "fr:jeune:adjective",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "vieux",
+     "status": "exact",
+     "id": "fr:vieux:adjective",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "cheveux",
+     "status": "exact",
+     "id": "fr:cheveux:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "yeux",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "beau",
+     "status": "exact",
+     "id": "fr:beau:adjective",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "belle",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u02-l04": {
+   "code": "FR-024",
+   "items": [
+    {
+     "text": "gentil",
+     "status": "exact",
+     "id": "fr:gentil:adjective",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "sympathique",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "drôle",
+     "status": "exact",
+     "id": "fr:drole:adjective",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "calme",
+     "status": "exact",
+     "id": "fr:calme:adjective",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "sérieux",
+     "status": "exact",
+     "id": "fr:serieux:adjective",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "poli",
+     "status": "exact",
+     "id": "fr:poli:adjective",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "patient",
+     "status": "exact",
+     "id": "fr:patient:adjective",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "timide",
+     "status": "exact",
+     "id": "fr:timide:adjective",
+     "level": "A2",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u02-l05": {
+   "code": "FR-025",
+   "items": [
+    {
+     "text": "ami",
+     "status": "exact",
+     "id": "fr:ami:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "voisin",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "camarade",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "collègue",
+     "status": "exact",
+     "id": "fr:collegue:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "patron",
+     "status": "exact",
+     "id": "fr:patron:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "connaître",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "rencontrer",
+     "status": "exact",
+     "id": "fr:rencontrer:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "voisine",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u02-l06": {
+   "code": "FR-026",
+   "items": [
+    {
+     "text": "présenter",
+     "status": "exact",
+     "id": "fr:presenter:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "rencontrer",
+     "status": "exact",
+     "id": "fr:rencontrer:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "photo",
+     "status": "exact",
+     "id": "fr:photo:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "combien",
+     "status": "exact",
+     "id": "fr:combien:pronoun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "qui",
+     "status": "exact",
+     "id": "fr:qui:pronoun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "marié",
+     "status": "exact",
+     "id": "fr:marie:adjective",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "célibataire",
+     "status": "exact",
+     "id": "fr:celibataire:adjective",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "divorcé",
+     "status": "normalized",
+     "id": "fr:divorce:noun",
+     "level": "B1",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u02-l07": {
+   "code": "FR-027",
+   "items": [
+    {
+     "text": "inviter",
+     "status": "exact",
+     "id": "fr:inviter:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "fête",
+     "status": "exact",
+     "id": "fr:fete:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "dîner",
+     "status": "exact",
+     "id": "fr:diner:verb",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "week-end",
+     "status": "exact",
+     "id": "fr:week-end:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "anniversaire",
+     "status": "exact",
+     "id": "fr:anniversaire:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "accepter",
+     "status": "exact",
+     "id": "fr:accepter:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "refuser",
+     "status": "exact",
+     "id": "fr:refuser:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "déjeuner",
+     "status": "exact",
+     "id": "fr:dejeuner:verb",
+     "level": "A1",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u03-l01": {
+   "code": "FR-031",
+   "items": [
+    {
+     "text": "maison",
+     "status": "exact",
+     "id": "fr:maison:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "appartement",
+     "status": "exact",
+     "id": "fr:appartement:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "immeuble",
+     "status": "exact",
+     "id": "fr:immeuble:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "pièce",
+     "status": "exact",
+     "id": "fr:piece-monnaie:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "habiter",
+     "status": "exact",
+     "id": "fr:habiter:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "ville",
+     "status": "exact",
+     "id": "fr:ville:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "rue",
+     "status": "exact",
+     "id": "fr:rue:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "près",
+     "status": "exact",
+     "id": "fr:pres:preposition",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u03-l02": {
+   "code": "FR-032",
+   "items": [
+    {
+     "text": "cuisine",
+     "status": "exact",
+     "id": "fr:cuisine:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "chambre",
+     "status": "exact",
+     "id": "fr:chambre:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "salle de bains",
+     "status": "exact",
+     "id": "fr:salle-de-bains:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "salon",
+     "status": "exact",
+     "id": "fr:salon:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "balcon",
+     "status": "exact",
+     "id": "fr:balcon:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "jardin",
+     "status": "exact",
+     "id": "fr:jardin:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "couloir",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "toilettes",
+     "status": "exact",
+     "id": "fr:toilettes:noun",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u03-l03": {
+   "code": "FR-033",
+   "items": [
+    {
+     "text": "lit",
+     "status": "exact",
+     "id": "fr:lit:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "canapé",
+     "status": "exact",
+     "id": "fr:canape:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "chaise",
+     "status": "exact",
+     "id": "fr:chaise:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "table",
+     "status": "exact",
+     "id": "fr:table:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "armoire",
+     "status": "exact",
+     "id": "fr:armoire:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "lampe",
+     "status": "exact",
+     "id": "fr:lampe:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "étagère",
+     "status": "exact",
+     "id": "fr:etagere:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "fenêtre",
+     "status": "exact",
+     "id": "fr:fenetre:noun",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u03-l04": {
+   "code": "FR-034",
+   "items": [
+    {
+     "text": "ouvrir",
+     "status": "exact",
+     "id": "fr:ouvrir:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "fermer",
+     "status": "exact",
+     "id": "fr:fermer:verb",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "nettoyer",
+     "status": "exact",
+     "id": "fr:nettoyer:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "cuisiner",
+     "status": "exact",
+     "id": "fr:cuisiner:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "laver",
+     "status": "exact",
+     "id": "fr:laver:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "dormir",
+     "status": "exact",
+     "id": "fr:dormir:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "s'asseoir",
+     "status": "exact",
+     "id": "fr:s-asseoir:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "fenêtre",
+     "status": "exact",
+     "id": "fr:fenetre:noun",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u03-l05": {
+   "code": "FR-035",
+   "items": [
+    {
+     "text": "taille",
+     "status": "exact",
+     "id": "fr:taille:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "âge",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "confort",
+     "status": "related",
+     "id": null,
+     "level": null,
+     "alternatives": [
+      {
+       "id": "fr:confortable:adjective",
+       "word": "confortable",
+       "level": "A2"
+      }
+     ]
+    },
+    {
+     "text": "confortable",
+     "status": "exact",
+     "id": "fr:confortable:adjective",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "loyer",
+     "status": "exact",
+     "id": "fr:loyer:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "prix",
+     "status": "exact",
+     "id": "fr:prix:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "cher",
+     "status": "exact",
+     "id": "fr:cher:adjective",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "bon marché",
+     "status": "exact",
+     "id": "fr:bon-marche:adjective",
+     "level": "A2",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u03-l06": {
+   "code": "FR-036",
+   "items": [
+    {
+     "text": "louer",
+     "status": "exact",
+     "id": "fr:louer:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "propriétaire",
+     "status": "exact",
+     "id": "fr:proprietaire:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "locataire",
+     "status": "exact",
+     "id": "fr:locataire:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "fête",
+     "status": "exact",
+     "id": "fr:fete:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "inviter",
+     "status": "exact",
+     "id": "fr:inviter:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "visiter",
+     "status": "exact",
+     "id": "fr:visiter:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "nouveau",
+     "status": "exact",
+     "id": "fr:nouveau:adjective",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "bienvenue",
+     "status": "exact",
+     "id": "fr:bienvenue:phrase",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u04-l01": {
+   "code": "FR-041",
+   "items": [
+    {
+     "text": "heure",
+     "status": "exact",
+     "id": "fr:heure:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "horloge",
+     "status": "exact",
+     "id": "fr:horloge:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "minute",
+     "status": "exact",
+     "id": "fr:minute:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "demi",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "quart",
+     "status": "related",
+     "id": null,
+     "level": null,
+     "alternatives": [
+      {
+       "id": "fr:quartier:noun",
+       "word": "quartier",
+       "level": "A2"
+      }
+     ]
+    },
+    {
+     "text": "matin",
+     "status": "exact",
+     "id": "fr:matin:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "soir",
+     "status": "exact",
+     "id": "fr:soir:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "montre",
+     "status": "exact",
+     "id": "fr:montre:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "midi",
+     "status": "exact",
+     "id": "fr:midi:noun",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u04-l02": {
+   "code": "FR-042",
+   "items": [
+    {
+     "text": "lundi",
+     "status": "exact",
+     "id": "fr:lundi:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "vendredi",
+     "status": "exact",
+     "id": "fr:vendredi:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "samedi",
+     "status": "exact",
+     "id": "fr:samedi:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "dimanche",
+     "status": "exact",
+     "id": "fr:dimanche:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "janvier",
+     "status": "exact",
+     "id": "fr:janvier:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "juillet",
+     "status": "exact",
+     "id": "fr:juillet:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "été",
+     "status": "exact",
+     "id": "fr:ete:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "mars",
+     "status": "exact",
+     "id": "fr:mars:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "hiver",
+     "status": "exact",
+     "id": "fr:hiver:noun",
+     "level": "A1",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u04-l03": {
+   "code": "FR-043",
+   "items": [
+    {
+     "text": "matin",
+     "status": "exact",
+     "id": "fr:matin:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "après-midi",
+     "status": "exact",
+     "id": "fr:apres-midi:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "soir",
+     "status": "exact",
+     "id": "fr:soir:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "nuit",
+     "status": "exact",
+     "id": "fr:nuit:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "tôt",
+     "status": "exact",
+     "id": "fr:tot:adverb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "tard",
+     "status": "exact",
+     "id": "fr:tard:adverb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "quotidien",
+     "status": "exact",
+     "id": "fr:quotidien:adjective",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "midi",
+     "status": "exact",
+     "id": "fr:midi:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "minuit",
+     "status": "exact",
+     "id": "fr:minuit:noun",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u04-l04": {
+   "code": "FR-044",
+   "items": [
+    {
+     "text": "se réveiller",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "se doucher",
+     "status": "exact",
+     "id": "fr:se-doucher:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "petit-déjeuner",
+     "status": "exact",
+     "id": "fr:petit-dejeuner:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "déjeuner",
+     "status": "exact",
+     "id": "fr:dejeuner:verb",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "dîner",
+     "status": "exact",
+     "id": "fr:diner:verb",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "dormir",
+     "status": "exact",
+     "id": "fr:dormir:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "se lever",
+     "status": "exact",
+     "id": "fr:se-lever-routine:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "se coucher",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u04-l05": {
+   "code": "FR-045",
+   "items": [
+    {
+     "text": "toujours",
+     "status": "exact",
+     "id": "fr:toujours:adverb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "souvent",
+     "status": "exact",
+     "id": "fr:souvent:adverb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "parfois",
+     "status": "exact",
+     "id": "fr:parfois:adverb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "rarement",
+     "status": "exact",
+     "id": "fr:rarement:phrase",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "jamais",
+     "status": "exact",
+     "id": "fr:jamais:adverb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "habitude",
+     "status": "exact",
+     "id": "fr:habitude:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "tous les jours",
+     "status": "exact",
+     "id": "fr:tous-les-jours:phrase",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "une fois par semaine",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u04-l06": {
+   "code": "FR-046",
+   "items": [
+    {
+     "text": "emploi du temps",
+     "status": "exact",
+     "id": "fr:emploi-temps:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "rendez-vous",
+     "status": "exact",
+     "id": "fr:rendez-vous:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "réunion",
+     "status": "exact",
+     "id": "fr:reunion:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "libre",
+     "status": "exact",
+     "id": "fr:libre:adjective",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "occupé",
+     "status": "exact",
+     "id": "fr:occupe:adjective",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "projet",
+     "status": "exact",
+     "id": "fr:projet:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "agenda",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "annuler",
+     "status": "exact",
+     "id": "fr:annuler:verb",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u05-l01": {
+   "code": "FR-051",
+   "items": [
+    {
+     "text": "pomme",
+     "status": "exact",
+     "id": "fr:pomme:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "banane",
+     "status": "exact",
+     "id": "fr:banane:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "orange",
+     "status": "exact",
+     "id": "fr:orange:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "pomme de terre",
+     "status": "exact",
+     "id": "fr:pomme-de-terre:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "viande",
+     "status": "exact",
+     "id": "fr:viande:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "poulet",
+     "status": "exact",
+     "id": "fr:poulet:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "lait",
+     "status": "exact",
+     "id": "fr:lait:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "fromage",
+     "status": "exact",
+     "id": "fr:fromage:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "légume",
+     "status": "exact",
+     "id": "fr:legume:noun",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u05-l02": {
+   "code": "FR-052",
+   "items": [
+    {
+     "text": "petit-déjeuner",
+     "status": "exact",
+     "id": "fr:petit-dejeuner:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "déjeuner",
+     "status": "exact",
+     "id": "fr:dejeuner:verb",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "dîner",
+     "status": "exact",
+     "id": "fr:diner:verb",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "pain",
+     "status": "exact",
+     "id": "fr:pain:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "café",
+     "status": "exact",
+     "id": "fr:cafe:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "thé",
+     "status": "exact",
+     "id": "fr:the:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "soupe",
+     "status": "exact",
+     "id": "fr:soupe:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "salade",
+     "status": "exact",
+     "id": "fr:salade:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "beurre",
+     "status": "exact",
+     "id": "fr:beurre:noun",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u05-l03": {
+   "code": "FR-053",
+   "items": [
+    {
+     "text": "café",
+     "status": "exact",
+     "id": "fr:cafe:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "thé",
+     "status": "exact",
+     "id": "fr:the:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "eau",
+     "status": "exact",
+     "id": "fr:eau:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "jus",
+     "status": "exact",
+     "id": "fr:jus:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "lait",
+     "status": "exact",
+     "id": "fr:lait:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "sucre",
+     "status": "exact",
+     "id": "fr:sucre:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "tasse",
+     "status": "exact",
+     "id": "fr:tasse:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "verre",
+     "status": "exact",
+     "id": "fr:verre:noun",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u05-l04": {
+   "code": "FR-054",
+   "items": [
+    {
+     "text": "menu",
+     "status": "exact",
+     "id": "fr:menu:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "entrée",
+     "status": "exact",
+     "id": "fr:entree-restaurant:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "plat principal",
+     "status": "exact",
+     "id": "fr:plat-principal:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "dessert",
+     "status": "exact",
+     "id": "fr:dessert:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "table",
+     "status": "exact",
+     "id": "fr:table:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "serveur",
+     "status": "exact",
+     "id": "fr:serveur:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "plat",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "addition",
+     "status": "exact",
+     "id": "fr:addition:noun",
+     "level": "A1",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u05-l05": {
+   "code": "FR-055",
+   "items": [
+    {
+     "text": "couper",
+     "status": "exact",
+     "id": "fr:couper:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "cuisiner",
+     "status": "exact",
+     "id": "fr:cuisiner:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "mélanger",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "bouillir",
+     "status": "exact",
+     "id": "fr:bouillir:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "ajouter",
+     "status": "exact",
+     "id": "fr:ajouter:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "recette",
+     "status": "exact",
+     "id": "fr:recette:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "sel",
+     "status": "exact",
+     "id": "fr:sel:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "poivre",
+     "status": "exact",
+     "id": "fr:poivre:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "huile",
+     "status": "exact",
+     "id": "fr:huile:noun",
+     "level": "A1",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u05-l06": {
+   "code": "FR-056",
+   "items": [
+    {
+     "text": "addition",
+     "status": "exact",
+     "id": "fr:addition:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "payer",
+     "status": "exact",
+     "id": "fr:payer:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "carte",
+     "status": "exact",
+     "id": "fr:carte:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "espèces",
+     "status": "exact",
+     "id": "fr:especes:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "ticket",
+     "status": "exact",
+     "id": "fr:ticket:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "supermarché",
+     "status": "exact",
+     "id": "fr:supermarche:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "kilo",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "bouteille",
+     "status": "exact",
+     "id": "fr:bouteille:noun",
+     "level": "A2",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u06-l01": {
+   "code": "M06-L01",
+   "items": [
+    {
+     "text": "supermarché",
+     "status": "exact",
+     "id": "fr:supermarche:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "boulangerie",
+     "status": "exact",
+     "id": "fr:boulangerie:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "pharmacie",
+     "status": "exact",
+     "id": "fr:pharmacie:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "magasin",
+     "status": "exact",
+     "id": "fr:magasin:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "boutique",
+     "status": "exact",
+     "id": "fr:boutique:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "marché",
+     "status": "exact",
+     "id": "fr:marche:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "centre commercial",
+     "status": "exact",
+     "id": "fr:centre-commercial:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "ouverture",
+     "status": "related",
+     "id": null,
+     "level": null,
+     "alternatives": [
+      {
+       "id": "fr:ouvert:adjective",
+       "word": "ouvert",
+       "level": "A0"
+      }
+     ]
+    }
+   ]
+  },
+  "fr/general/A1/u06-l02": {
+   "code": "M06-L02",
+   "items": [
+    {
+     "text": "produit",
+     "status": "exact",
+     "id": "fr:produit:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "aliment",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "vêtement",
+     "status": "exact",
+     "id": "fr:vetement:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "médicament",
+     "status": "exact",
+     "id": "fr:medicament:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "livre",
+     "status": "exact",
+     "id": "fr:livre:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "rayon",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "frais",
+     "status": "exact",
+     "id": "fr:frais:adjective",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "surgelé",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u06-l03": {
+   "code": "M06-L03",
+   "items": [
+    {
+     "text": "argent",
+     "status": "exact",
+     "id": "fr:argent:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "prix",
+     "status": "exact",
+     "id": "fr:prix:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "coût",
+     "status": "exact",
+     "id": "fr:cout:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "euro",
+     "status": "exact",
+     "id": "fr:euro:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "dollar",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "monnaie",
+     "status": "exact",
+     "id": "fr:monnaie:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "billet",
+     "status": "exact",
+     "id": "fr:billet:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "pièce",
+     "status": "exact",
+     "id": "fr:piece-monnaie:noun",
+     "level": "A2",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u06-l04": {
+   "code": "M06-L04",
+   "items": [
+    {
+     "text": "payer",
+     "status": "exact",
+     "id": "fr:payer:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "espèces",
+     "status": "exact",
+     "id": "fr:especes:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "carte bancaire",
+     "status": "exact",
+     "id": "fr:carte-bancaire:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "reçu",
+     "status": "exact",
+     "id": "fr:recu:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "code",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "caisse",
+     "status": "exact",
+     "id": "fr:caisse:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "monnaie",
+     "status": "exact",
+     "id": "fr:monnaie:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "accepter",
+     "status": "exact",
+     "id": "fr:accepter:verb",
+     "level": "A2",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u06-l05": {
+   "code": "M06-L05",
+   "items": [
+    {
+     "text": "réduction",
+     "status": "exact",
+     "id": "fr:reduction:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "soldes",
+     "status": "exact",
+     "id": "fr:soldes:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "offre",
+     "status": "exact",
+     "id": "fr:offre:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "kilo",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "gramme",
+     "status": "exact",
+     "id": "fr:gramme:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "promotion",
+     "status": "exact",
+     "id": "fr:promotion:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "paquet",
+     "status": "exact",
+     "id": "fr:paquet-poste:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "gratuit",
+     "status": "exact",
+     "id": "fr:gratuit:adjective",
+     "level": "A2",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u06-l06": {
+   "code": "M06-L06",
+   "items": [
+    {
+     "text": "client",
+     "status": "exact",
+     "id": "fr:client:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "caissier",
+     "status": "exact",
+     "id": "fr:caissier:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "sac",
+     "status": "exact",
+     "id": "fr:sac:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "total",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "ticket",
+     "status": "exact",
+     "id": "fr:ticket:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "achat",
+     "status": "exact",
+     "id": "fr:achat:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "dépenser",
+     "status": "exact",
+     "id": "fr:depenser:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "rendre",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u07-l01": {
+   "code": "M07-L01",
+   "items": [
+    {
+     "text": "chemise",
+     "status": "exact",
+     "id": "fr:chemise:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "pantalon",
+     "status": "exact",
+     "id": "fr:pantalon:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "jean",
+     "status": "exact",
+     "id": "fr:jean:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "robe",
+     "status": "exact",
+     "id": "fr:robe:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "jupe",
+     "status": "exact",
+     "id": "fr:jupe:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "pull",
+     "status": "exact",
+     "id": "fr:pull:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "veste",
+     "status": "exact",
+     "id": "fr:veste:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "chaussures",
+     "status": "exact",
+     "id": "fr:chaussures:noun",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u07-l02": {
+   "code": "M07-L02",
+   "items": [
+    {
+     "text": "chapeau",
+     "status": "exact",
+     "id": "fr:chapeau:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "casquette",
+     "status": "exact",
+     "id": "fr:casquette:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "lunettes",
+     "status": "exact",
+     "id": "fr:lunettes:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "montre",
+     "status": "exact",
+     "id": "fr:montre:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "sac",
+     "status": "exact",
+     "id": "fr:sac:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "écharpe",
+     "status": "exact",
+     "id": "fr:echarpe:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "ceinture",
+     "status": "exact",
+     "id": "fr:ceinture:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "bottes",
+     "status": "exact",
+     "id": "fr:bottes:noun",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u07-l03": {
+   "code": "M07-L03",
+   "items": [
+    {
+     "text": "taille",
+     "status": "exact",
+     "id": "fr:taille:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "petit",
+     "status": "exact",
+     "id": "fr:petit:adjective",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "moyen",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "grand",
+     "status": "exact",
+     "id": "fr:grand:adjective",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "rouge",
+     "status": "exact",
+     "id": "fr:rouge:adjective",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "bleu",
+     "status": "exact",
+     "id": "fr:bleu:adjective",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "noir",
+     "status": "exact",
+     "id": "fr:noir:adjective",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "blanc",
+     "status": "exact",
+     "id": "fr:blanc:adjective",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u07-l04": {
+   "code": "M07-L04",
+   "items": [
+    {
+     "text": "acheter",
+     "status": "exact",
+     "id": "fr:acheter:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "cabine",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "essayer",
+     "status": "exact",
+     "id": "fr:essayer:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "serré",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "large",
+     "status": "exact",
+     "id": "fr:large:adjective",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "conseiller",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "plaire",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "changer",
+     "status": "exact",
+     "id": "fr:changer:verb",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u07-l05": {
+   "code": "M07-L05",
+   "items": [
+    {
+     "text": "meilleur",
+     "status": "exact",
+     "id": "fr:meilleur:adjective",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "bon marché",
+     "status": "exact",
+     "id": "fr:bon-marche:adjective",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "joli",
+     "status": "exact",
+     "id": "fr:joli:adjective",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "préférer",
+     "status": "exact",
+     "id": "fr:preferer:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "comparer",
+     "status": "exact",
+     "id": "fr:comparer:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "choisir",
+     "status": "exact",
+     "id": "fr:choisir:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "cher",
+     "status": "exact",
+     "id": "fr:cher:adjective",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "qualité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u07-l06": {
+   "code": "M07-L06",
+   "items": [
+    {
+     "text": "vêtements",
+     "status": "exact",
+     "id": "fr:vetements:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "porter",
+     "status": "exact",
+     "id": "fr:porter-vetement:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "préféré",
+     "status": "exact",
+     "id": "fr:prefere:adjective",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "saison",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "garde-robe",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "mode",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "style",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "élégant",
+     "status": "exact",
+     "id": "fr:elegant:adjective",
+     "level": "A2",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u08-l01": {
+   "code": "M08-L01",
+   "items": [
+    {
+     "text": "tête",
+     "status": "exact",
+     "id": "fr:tete:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "visage",
+     "status": "exact",
+     "id": "fr:visage:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "œil",
+     "status": "exact",
+     "id": "fr:oeil:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "oreille",
+     "status": "exact",
+     "id": "fr:oreille:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "nez",
+     "status": "exact",
+     "id": "fr:nez:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "bouche",
+     "status": "exact",
+     "id": "fr:bouche:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "main",
+     "status": "exact",
+     "id": "fr:main:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "dos",
+     "status": "exact",
+     "id": "fr:dos:noun",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u08-l02": {
+   "code": "M08-L02",
+   "items": [
+    {
+     "text": "se sentir",
+     "status": "exact",
+     "id": "fr:se-sentir:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "malade",
+     "status": "exact",
+     "id": "fr:malade:adjective",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "fatigué",
+     "status": "exact",
+     "id": "fr:fatigue:adjective",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "bien",
+     "status": "exact",
+     "id": "fr:bien:adverb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "en bonne santé",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "faible",
+     "status": "exact",
+     "id": "fr:faible:adjective",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "mieux",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "se reposer",
+     "status": "exact",
+     "id": "fr:se-reposer:idiom",
+     "level": "A2",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u08-l03": {
+   "code": "M08-L03",
+   "items": [
+    {
+     "text": "mal de tête",
+     "status": "exact",
+     "id": "fr:mal-de-tete:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "fièvre",
+     "status": "exact",
+     "id": "fr:fievre:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "rhume",
+     "status": "exact",
+     "id": "fr:rhume:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "toux",
+     "status": "exact",
+     "id": "fr:toux:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "douleur",
+     "status": "exact",
+     "id": "fr:douleur:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "gorge",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "dent",
+     "status": "exact",
+     "id": "fr:dent:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "ventre",
+     "status": "exact",
+     "id": "fr:ventre:noun",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u08-l04": {
+   "code": "M08-L04",
+   "items": [
+    {
+     "text": "médecin",
+     "status": "exact",
+     "id": "fr:medecin:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "infirmière",
+     "status": "exact",
+     "id": "fr:infirmiere:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "cabinet",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "problème",
+     "status": "exact",
+     "id": "fr:probleme:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "symptôme",
+     "status": "exact",
+     "id": "fr:symptme:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "ordonnance",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "examiner",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "attendre",
+     "status": "exact",
+     "id": "fr:attendre-expect:verb",
+     "level": "A2",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u08-l05": {
+   "code": "M08-L05",
+   "items": [
+    {
+     "text": "pharmacie",
+     "status": "exact",
+     "id": "fr:pharmacie:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "médicament",
+     "status": "exact",
+     "id": "fr:medicament:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "ordonnance",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "prendre",
+     "status": "exact",
+     "id": "fr:prendre:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "comprimé",
+     "status": "exact",
+     "id": "fr:comprime:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "sirop",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "dose",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "pharmacien",
+     "status": "exact",
+     "id": "fr:pharmacien:noun",
+     "level": "A2",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u08-l06": {
+   "code": "M08-L06",
+   "items": [
+    {
+     "text": "santé",
+     "status": "exact",
+     "id": "fr:sante:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "alimentation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "exercice",
+     "status": "exact",
+     "id": "fr:exercice:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "sommeil",
+     "status": "exact",
+     "id": "fr:sommeil:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "eau",
+     "status": "exact",
+     "id": "fr:eau:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "éviter",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "stress",
+     "status": "related",
+     "id": null,
+     "level": null,
+     "alternatives": [
+      {
+       "id": "fr:stresse:adjective",
+       "word": "stressé",
+       "level": "A2"
+      },
+      {
+       "id": "fr:stressant:adjective",
+       "word": "stressant",
+       "level": "A2"
+      }
+     ]
+    },
+    {
+     "text": "régulièrement",
+     "status": "related",
+     "id": null,
+     "level": null,
+     "alternatives": [
+      {
+       "id": "fr:regulier:adjective",
+       "word": "régulier",
+       "level": "A2"
+      }
+     ]
+    }
+   ]
+  },
+  "fr/general/A1/u09-l01": {
+   "code": "M09-L01",
+   "items": [
+    {
+     "text": "professeur",
+     "status": "exact",
+     "id": "fr:professeur:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "médecin",
+     "status": "exact",
+     "id": "fr:medecin:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "ingénieur",
+     "status": "exact",
+     "id": "fr:ingenieur:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "chef",
+     "status": "exact",
+     "id": "fr:chef:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "chauffeur",
+     "status": "exact",
+     "id": "fr:chauffeur:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "infirmière",
+     "status": "exact",
+     "id": "fr:infirmiere:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "vendeur",
+     "status": "exact",
+     "id": "fr:vendeur:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "cuisinier",
+     "status": "exact",
+     "id": "fr:cuisinier:noun",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u09-l02": {
+   "code": "M09-L02",
+   "items": [
+    {
+     "text": "bureau",
+     "status": "exact",
+     "id": "fr:bureau-travail:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "hôpital",
+     "status": "exact",
+     "id": "fr:hopital:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "école",
+     "status": "exact",
+     "id": "fr:ecole:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "entreprise",
+     "status": "exact",
+     "id": "fr:entreprise:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "usine",
+     "status": "exact",
+     "id": "fr:usine:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "atelier",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "magasin",
+     "status": "exact",
+     "id": "fr:magasin:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "chantier",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u09-l03": {
+   "code": "M09-L03",
+   "items": [
+    {
+     "text": "horaire",
+     "status": "exact",
+     "id": "fr:horaire:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "emploi du temps",
+     "status": "exact",
+     "id": "fr:emploi-temps:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "réunion",
+     "status": "exact",
+     "id": "fr:reunion:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "courriel",
+     "status": "exact",
+     "id": "fr:courriel-electronique:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "projet",
+     "status": "exact",
+     "id": "fr:projet:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "collègue",
+     "status": "exact",
+     "id": "fr:collegue:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "patron",
+     "status": "exact",
+     "id": "fr:patron:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "pause",
+     "status": "exact",
+     "id": "fr:pause:noun",
+     "level": "A2",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u09-l04": {
+   "code": "M09-L04",
+   "items": [
+    {
+     "text": "école",
+     "status": "exact",
+     "id": "fr:ecole:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "université",
+     "status": "exact",
+     "id": "fr:universite:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "collège",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "lycée",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "cours",
+     "status": "exact",
+     "id": "fr:cours-matiere:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "matière",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "étudiant",
+     "status": "exact",
+     "id": "fr:etudiant:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "professeur",
+     "status": "exact",
+     "id": "fr:professeur:noun",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u09-l05": {
+   "code": "M09-L05",
+   "items": [
+    {
+     "text": "étudier",
+     "status": "exact",
+     "id": "fr:etudier:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "lire",
+     "status": "exact",
+     "id": "fr:lire:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "écrire",
+     "status": "exact",
+     "id": "fr:ecrire:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "devoirs",
+     "status": "related",
+     "id": null,
+     "level": null,
+     "alternatives": [
+      {
+       "id": "fr:devoir-maison:noun",
+       "word": "devoir",
+       "level": "A1"
+      },
+      {
+       "id": "fr:devoir:verb",
+       "word": "devoir",
+       "level": "A2"
+      }
+     ]
+    },
+    {
+     "text": "examen",
+     "status": "exact",
+     "id": "fr:examen-ecole:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "réviser",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "apprendre",
+     "status": "exact",
+     "id": "fr:apprendre:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "comprendre",
+     "status": "exact",
+     "id": "fr:comprendre:verb",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u09-l06": {
+   "code": "M09-L06",
+   "items": [
+    {
+     "text": "éducation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "expérience",
+     "status": "exact",
+     "id": "fr:experience:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "compétence",
+     "status": "exact",
+     "id": "fr:comptence:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "profil",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "travail",
+     "status": "exact",
+     "id": "fr:travail:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "CV",
+     "status": "exact",
+     "id": "fr:cv:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "entretien",
+     "status": "exact",
+     "id": "fr:entretien:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "candidature",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u10-l01": {
+   "code": "M10-L01",
+   "items": [
+    {
+     "text": "parler",
+     "status": "exact",
+     "id": "fr:parler:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "lire",
+     "status": "exact",
+     "id": "fr:lire:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "écrire",
+     "status": "exact",
+     "id": "fr:ecrire:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "écouter",
+     "status": "exact",
+     "id": "fr:ecouter:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "comprendre",
+     "status": "exact",
+     "id": "fr:comprendre:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "langue",
+     "status": "exact",
+     "id": "fr:langue:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "mot",
+     "status": "exact",
+     "id": "fr:mot:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "phrase",
+     "status": "exact",
+     "id": "fr:phrase:noun",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u10-l02": {
+   "code": "M10-L02",
+   "items": [
+    {
+     "text": "savoir",
+     "status": "exact",
+     "id": "fr:savoir:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "pouvoir",
+     "status": "exact",
+     "id": "fr:pouvoir:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "un peu",
+     "status": "exact",
+     "id": "fr:un-peu:adverb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "étudiant",
+     "status": "exact",
+     "id": "fr:etudiant:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "classe",
+     "status": "exact",
+     "id": "fr:classe-ecole:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "niveau",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "progrès",
+     "status": "exact",
+     "id": "fr:progres:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "débutant",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u10-l03": {
+   "code": "M10-L03",
+   "items": [
+    {
+     "text": "répéter",
+     "status": "exact",
+     "id": "fr:repeter:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "expliquer",
+     "status": "exact",
+     "id": "fr:expliquer:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "demander",
+     "status": "exact",
+     "id": "fr:demander:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "question",
+     "status": "exact",
+     "id": "fr:question:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "réponse",
+     "status": "exact",
+     "id": "fr:reponse:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "exercice",
+     "status": "exact",
+     "id": "fr:exercice:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "page",
+     "status": "exact",
+     "id": "fr:page-livre:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "professeur",
+     "status": "exact",
+     "id": "fr:professeur:noun",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u10-l04": {
+   "code": "M10-L04",
+   "items": [
+    {
+     "text": "traduire",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "épeler",
+     "status": "exact",
+     "id": "fr:epeler:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "prononcer",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "sens",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "dictionnaire",
+     "status": "exact",
+     "id": "fr:dictionnaire-livre:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "accent",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "syllabe",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "exemple",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u10-l05": {
+   "code": "M10-L05",
+   "items": [
+    {
+     "text": "message",
+     "status": "exact",
+     "id": "fr:message:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "courriel",
+     "status": "exact",
+     "id": "fr:courriel-electronique:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "téléphone",
+     "status": "exact",
+     "id": "fr:telephone:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "texto",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "envoyer",
+     "status": "exact",
+     "id": "fr:envoyer:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "appeler",
+     "status": "exact",
+     "id": "fr:appeler:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "répondre",
+     "status": "exact",
+     "id": "fr:repondre:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "réseau",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u10-l06": {
+   "code": "M10-L06",
+   "items": [
+    {
+     "text": "langue",
+     "status": "exact",
+     "id": "fr:langue:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "communication",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "pratique",
+     "status": "exact",
+     "id": "fr:pratique:adjective",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "objectif",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "profil",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "bilingue",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "conversation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "progresser",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u11-l01": {
+   "code": "M11-L01",
+   "items": [
+    {
+     "text": "bus",
+     "status": "exact",
+     "id": "fr:bus:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "train",
+     "status": "exact",
+     "id": "fr:train:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "voiture",
+     "status": "exact",
+     "id": "fr:voiture:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "vélo",
+     "status": "exact",
+     "id": "fr:velo:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "taxi",
+     "status": "exact",
+     "id": "fr:taxi:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "métro",
+     "status": "exact",
+     "id": "fr:metro:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "avion",
+     "status": "exact",
+     "id": "fr:avion:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "à pied",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u11-l02": {
+   "code": "M11-L02",
+   "items": [
+    {
+     "text": "gare",
+     "status": "exact",
+     "id": "fr:gare:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "aéroport",
+     "status": "exact",
+     "id": "fr:aeroport:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "arrêt",
+     "status": "related",
+     "id": null,
+     "level": null,
+     "alternatives": [
+      {
+       "id": "fr:arreter:verb",
+       "word": "arrêter",
+       "level": "A0"
+      }
+     ]
+    },
+    {
+     "text": "quai",
+     "status": "exact",
+     "id": "fr:quai:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "billet",
+     "status": "exact",
+     "id": "fr:billet:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "valise",
+     "status": "exact",
+     "id": "fr:valise:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "départ",
+     "status": "exact",
+     "id": "fr:depart:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "arrivée",
+     "status": "exact",
+     "id": "fr:arrivee:noun",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u11-l03": {
+   "code": "M11-L03",
+   "items": [
+    {
+     "text": "rue",
+     "status": "exact",
+     "id": "fr:rue:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "près",
+     "status": "exact",
+     "id": "fr:pres:preposition",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "loin",
+     "status": "exact",
+     "id": "fr:loin:adverb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "ville",
+     "status": "exact",
+     "id": "fr:ville:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "tourner",
+     "status": "exact",
+     "id": "fr:tourner:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "tout droit",
+     "status": "exact",
+     "id": "fr:tout-droit:adverb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "à gauche",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "à droite",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u11-l04": {
+   "code": "M11-L04",
+   "items": [
+    {
+     "text": "billet",
+     "status": "exact",
+     "id": "fr:billet:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "prix",
+     "status": "exact",
+     "id": "fr:prix:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "heure",
+     "status": "exact",
+     "id": "fr:heure:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "partir",
+     "status": "exact",
+     "id": "fr:partir:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "arriver",
+     "status": "exact",
+     "id": "fr:arriver:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "aller-retour",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "guichet",
+     "status": "exact",
+     "id": "fr:guichet:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "horaire",
+     "status": "exact",
+     "id": "fr:horaire:noun",
+     "level": "A2",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u11-l05": {
+   "code": "M11-L05",
+   "items": [
+    {
+     "text": "passeport",
+     "status": "exact",
+     "id": "fr:passeport:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "bagage",
+     "status": "exact",
+     "id": "fr:bagage:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "hôtel",
+     "status": "exact",
+     "id": "fr:hotel:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "aéroport",
+     "status": "exact",
+     "id": "fr:aeroport:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "valise",
+     "status": "exact",
+     "id": "fr:valise:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "enregistrer",
+     "status": "exact",
+     "id": "fr:enregistrer:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "douane",
+     "status": "exact",
+     "id": "fr:douane:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "réservation",
+     "status": "exact",
+     "id": "fr:reservation:noun",
+     "level": "A2",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u11-l06": {
+   "code": "M11-L06",
+   "items": [
+    {
+     "text": "voyage",
+     "status": "exact",
+     "id": "fr:voyage:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "gare",
+     "status": "exact",
+     "id": "fr:gare:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "aéroport",
+     "status": "exact",
+     "id": "fr:aeroport:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "billet",
+     "status": "exact",
+     "id": "fr:billet:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "bus",
+     "status": "exact",
+     "id": "fr:bus:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "trajet",
+     "status": "exact",
+     "id": "fr:trajet:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "correspondance",
+     "status": "exact",
+     "id": "fr:correspondance:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "destination",
+     "status": "exact",
+     "id": "fr:destination:noun",
+     "level": "A2",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u12-l01": {
+   "code": "M12-L01",
+   "items": [
+    {
+     "text": "banque",
+     "status": "exact",
+     "id": "fr:banque:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "parc",
+     "status": "exact",
+     "id": "fr:parc:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "musée",
+     "status": "exact",
+     "id": "fr:musee:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "cinéma",
+     "status": "exact",
+     "id": "fr:cinema:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "restaurant",
+     "status": "exact",
+     "id": "fr:restaurant:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "hôtel",
+     "status": "exact",
+     "id": "fr:hotel:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "poste",
+     "status": "exact",
+     "id": "fr:poste:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "marché",
+     "status": "exact",
+     "id": "fr:marche:noun",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u12-l02": {
+   "code": "M12-L02",
+   "items": [
+    {
+     "text": "monument",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "rue",
+     "status": "exact",
+     "id": "fr:rue:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "place",
+     "status": "exact",
+     "id": "fr:place:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "hôpital",
+     "status": "exact",
+     "id": "fr:hopital:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "mairie",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "église",
+     "status": "exact",
+     "id": "fr:eglise:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "bibliothèque",
+     "status": "exact",
+     "id": "fr:bibliotheque:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "commissariat",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u12-l03": {
+   "code": "M12-L03",
+   "items": [
+    {
+     "text": "chemin",
+     "status": "exact",
+     "id": "fr:chemin:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "traverser",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "coin",
+     "status": "exact",
+     "id": "fr:coin:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "bâtiment",
+     "status": "exact",
+     "id": "fr:batiment:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "place",
+     "status": "exact",
+     "id": "fr:place:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "près",
+     "status": "exact",
+     "id": "fr:pres:preposition",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "loin",
+     "status": "exact",
+     "id": "fr:loin:adverb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "plan",
+     "status": "exact",
+     "id": "fr:plan:noun",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u12-l04": {
+   "code": "M12-L04",
+   "items": [
+    {
+     "text": "ville",
+     "status": "exact",
+     "id": "fr:ville:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "quartier",
+     "status": "exact",
+     "id": "fr:quartier:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "centre-ville",
+     "status": "exact",
+     "id": "fr:centre-ville:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "calme",
+     "status": "exact",
+     "id": "fr:calme:adjective",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "bruyant",
+     "status": "exact",
+     "id": "fr:bruyant:adjective",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "habitant",
+     "status": "exact",
+     "id": "fr:habitant:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "immeuble",
+     "status": "exact",
+     "id": "fr:immeuble:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "commerce",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u12-l05": {
+   "code": "M12-L05",
+   "items": [
+    {
+     "text": "métro",
+     "status": "exact",
+     "id": "fr:metro:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "ligne",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "arrêt",
+     "status": "related",
+     "id": null,
+     "level": null,
+     "alternatives": [
+      {
+       "id": "fr:arreter:verb",
+       "word": "arrêter",
+       "level": "A0"
+      }
+     ]
+    },
+    {
+     "text": "plan",
+     "status": "exact",
+     "id": "fr:plan:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "correspondance",
+     "status": "exact",
+     "id": "fr:correspondance:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "ticket",
+     "status": "exact",
+     "id": "fr:ticket:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "guichet",
+     "status": "exact",
+     "id": "fr:guichet:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "direction",
+     "status": "exact",
+     "id": "fr:direction:noun",
+     "level": "A2",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u12-l06": {
+   "code": "M12-L06",
+   "items": [
+    {
+     "text": "visite",
+     "status": "exact",
+     "id": "fr:visite:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "touriste",
+     "status": "exact",
+     "id": "fr:touriste:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "monument",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "musée",
+     "status": "exact",
+     "id": "fr:musee:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "parc",
+     "status": "exact",
+     "id": "fr:parc:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "guide",
+     "status": "exact",
+     "id": "fr:guide:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "itinéraire",
+     "status": "exact",
+     "id": "fr:itinraire:noun",
+     "level": "C1",
+     "alternatives": []
+    },
+    {
+     "text": "curiosité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u13-l01": {
+   "code": "M13-L01",
+   "items": [
+    {
+     "text": "météo",
+     "status": "exact",
+     "id": "fr:meteo:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "soleil",
+     "status": "exact",
+     "id": "fr:soleil:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "pluie",
+     "status": "exact",
+     "id": "fr:pluie:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "vent",
+     "status": "exact",
+     "id": "fr:vent:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "froid",
+     "status": "exact",
+     "id": "fr:froid:adjective",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "chaud",
+     "status": "exact",
+     "id": "fr:chaud:adjective",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "nuage",
+     "status": "exact",
+     "id": "fr:nuage:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "température",
+     "status": "exact",
+     "id": "fr:temperature:noun",
+     "level": "A2",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u13-l02": {
+   "code": "M13-L02",
+   "items": [
+    {
+     "text": "printemps",
+     "status": "exact",
+     "id": "fr:printemps:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "été",
+     "status": "exact",
+     "id": "fr:ete:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "automne",
+     "status": "exact",
+     "id": "fr:automne:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "hiver",
+     "status": "exact",
+     "id": "fr:hiver:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "saison",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "fleur",
+     "status": "exact",
+     "id": "fr:fleur:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "neige",
+     "status": "exact",
+     "id": "fr:neige:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "vacances",
+     "status": "exact",
+     "id": "fr:vacances:noun",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u13-l03": {
+   "code": "M13-L03",
+   "items": [
+    {
+     "text": "mer",
+     "status": "exact",
+     "id": "fr:mer:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "montagne",
+     "status": "exact",
+     "id": "fr:montagne:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "arbre",
+     "status": "exact",
+     "id": "fr:arbre:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "forêt",
+     "status": "exact",
+     "id": "fr:foret:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "lac",
+     "status": "exact",
+     "id": "fr:lac:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "plage",
+     "status": "exact",
+     "id": "fr:plage:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "animal",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "paysage",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u13-l04": {
+   "code": "M13-L04",
+   "items": [
+    {
+     "text": "prévision",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "parapluie",
+     "status": "exact",
+     "id": "fr:parapluie:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "degré",
+     "status": "exact",
+     "id": "fr:degre:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "demain",
+     "status": "exact",
+     "id": "fr:demain-time:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "semaine",
+     "status": "exact",
+     "id": "fr:semaine:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "nuageux",
+     "status": "exact",
+     "id": "fr:nuageux:adjective",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "orage",
+     "status": "exact",
+     "id": "fr:orage:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "sec",
+     "status": "exact",
+     "id": "fr:sec:adjective",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u13-l05": {
+   "code": "M13-L05",
+   "items": [
+    {
+     "text": "recycler",
+     "status": "exact",
+     "id": "fr:recycler:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "économiser",
+     "status": "exact",
+     "id": "fr:economiser:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "protéger",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "nature",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "propre",
+     "status": "exact",
+     "id": "fr:propre:adjective",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "pollution",
+     "status": "exact",
+     "id": "fr:pollution:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "poubelle",
+     "status": "exact",
+     "id": "fr:poubelle:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "planète",
+     "status": "exact",
+     "id": "fr:planete:noun",
+     "level": "A2",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u13-l06": {
+   "code": "M13-L06",
+   "items": [
+    {
+     "text": "climat",
+     "status": "exact",
+     "id": "fr:climat:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "promenade",
+     "status": "exact",
+     "id": "fr:promenade:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "campagne",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "ciel",
+     "status": "exact",
+     "id": "fr:ciel:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "étoile",
+     "status": "exact",
+     "id": "fr:etoile:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "air",
+     "status": "exact",
+     "id": "fr:air:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "saison",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "dehors",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u14-l01": {
+   "code": "M14-L01",
+   "items": [
+    {
+     "text": "regarder",
+     "status": "exact",
+     "id": "fr:regarder:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "écouter",
+     "status": "exact",
+     "id": "fr:ecouter:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "lire",
+     "status": "exact",
+     "id": "fr:lire:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "musique",
+     "status": "exact",
+     "id": "fr:musique:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "film",
+     "status": "exact",
+     "id": "fr:film:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "télévision",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "livre",
+     "status": "exact",
+     "id": "fr:livre:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "sortir",
+     "status": "exact",
+     "id": "fr:sortir:verb",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u14-l02": {
+   "code": "M14-L02",
+   "items": [
+    {
+     "text": "sport",
+     "status": "exact",
+     "id": "fr:sport:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "jouer",
+     "status": "exact",
+     "id": "fr:jouer:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "football",
+     "status": "exact",
+     "id": "fr:football:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "tennis",
+     "status": "exact",
+     "id": "fr:tennis:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "nager",
+     "status": "exact",
+     "id": "fr:nager:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "courir",
+     "status": "exact",
+     "id": "fr:courir:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "équipe",
+     "status": "exact",
+     "id": "fr:equipe:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "match",
+     "status": "exact",
+     "id": "fr:match:noun",
+     "level": "A2",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u14-l03": {
+   "code": "M14-L03",
+   "items": [
+    {
+     "text": "cinéma",
+     "status": "exact",
+     "id": "fr:cinema:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "film",
+     "status": "exact",
+     "id": "fr:film:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "musique",
+     "status": "exact",
+     "id": "fr:musique:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "livre",
+     "status": "exact",
+     "id": "fr:livre:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "jeu",
+     "status": "exact",
+     "id": "fr:jeu:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "concert",
+     "status": "exact",
+     "id": "fr:concert:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "chanson",
+     "status": "exact",
+     "id": "fr:chanson:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "acteur",
+     "status": "exact",
+     "id": "fr:acteur:noun",
+     "level": "A2",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u14-l04": {
+   "code": "M14-L04",
+   "items": [
+    {
+     "text": "week-end",
+     "status": "exact",
+     "id": "fr:week-end:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "loisir",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "sortie",
+     "status": "exact",
+     "id": "fr:sortie:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "inviter",
+     "status": "exact",
+     "id": "fr:inviter:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "ami",
+     "status": "exact",
+     "id": "fr:ami:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "piscine",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "restaurant",
+     "status": "exact",
+     "id": "fr:restaurant:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "promenade",
+     "status": "exact",
+     "id": "fr:promenade:noun",
+     "level": "A2",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u14-l05": {
+   "code": "M14-L05",
+   "items": [
+    {
+     "text": "sondage",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "préférer",
+     "status": "exact",
+     "id": "fr:preferer:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "détester",
+     "status": "exact",
+     "id": "fr:detester:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "adorer",
+     "status": "exact",
+     "id": "fr:adorer:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "intéresser",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "répondre",
+     "status": "exact",
+     "id": "fr:repondre:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "question",
+     "status": "exact",
+     "id": "fr:question:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "résultat",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u14-l06": {
+   "code": "M14-L06",
+   "items": [
+    {
+     "text": "loisir",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "passion",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "habitude",
+     "status": "exact",
+     "id": "fr:habitude:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "équilibre",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "sport",
+     "status": "exact",
+     "id": "fr:sport:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "musique",
+     "status": "exact",
+     "id": "fr:musique:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "jeu",
+     "status": "exact",
+     "id": "fr:jeu:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "week-end",
+     "status": "exact",
+     "id": "fr:week-end:noun",
+     "level": "A2",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u15-l01": {
+   "code": "M15-L01",
+   "items": [
+    {
+     "text": "téléphone",
+     "status": "exact",
+     "id": "fr:telephone:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "ordinateur",
+     "status": "exact",
+     "id": "fr:ordinateur:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "portable",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "tablette",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "appareil photo",
+     "status": "exact",
+     "id": "fr:appareil-photo:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "écran",
+     "status": "exact",
+     "id": "fr:ecran:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "clavier",
+     "status": "exact",
+     "id": "fr:clavier:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "chargeur",
+     "status": "exact",
+     "id": "fr:chargeur-phone:noun",
+     "level": "A1",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u15-l02": {
+   "code": "M15-L02",
+   "items": [
+    {
+     "text": "ouvrir",
+     "status": "exact",
+     "id": "fr:ouvrir:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "fermer",
+     "status": "exact",
+     "id": "fr:fermer:verb",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "envoyer",
+     "status": "exact",
+     "id": "fr:envoyer:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "appeler",
+     "status": "exact",
+     "id": "fr:appeler:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "écrire",
+     "status": "exact",
+     "id": "fr:ecrire:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "cliquer",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "télécharger",
+     "status": "exact",
+     "id": "fr:telecharger:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "enregistrer",
+     "status": "exact",
+     "id": "fr:enregistrer:verb",
+     "level": "A2",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u15-l03": {
+   "code": "M15-L03",
+   "items": [
+    {
+     "text": "internet",
+     "status": "exact",
+     "id": "fr:internet:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "en ligne",
+     "status": "exact",
+     "id": "fr:en-ligne:adjective",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "site",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "courriel",
+     "status": "exact",
+     "id": "fr:courriel-electronique:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "chercher",
+     "status": "exact",
+     "id": "fr:chercher:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "lien",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "mot de passe",
+     "status": "exact",
+     "id": "fr:mot-de-passe:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "réseau",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u15-l04": {
+   "code": "M15-L04",
+   "items": [
+    {
+     "text": "message",
+     "status": "exact",
+     "id": "fr:message:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "texto",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "publier",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "recevoir",
+     "status": "exact",
+     "id": "fr:recevoir:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "photo",
+     "status": "exact",
+     "id": "fr:photo:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "commentaire",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "partager",
+     "status": "exact",
+     "id": "fr:partager:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "abonné",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u15-l05": {
+   "code": "M15-L05",
+   "items": [
+    {
+     "text": "problème",
+     "status": "exact",
+     "id": "fr:probleme:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "virus",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "sauvegarde",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "aide",
+     "status": "exact",
+     "id": "fr:aide:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "réparer",
+     "status": "exact",
+     "id": "fr:rparer:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "redémarrer",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "dysfonctionnement",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "assistance",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u15-l06": {
+   "code": "M15-L06",
+   "items": [
+    {
+     "text": "numérique",
+     "status": "exact",
+     "id": "fr:numerique:adjective",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "écran",
+     "status": "exact",
+     "id": "fr:ecran:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "application",
+     "status": "exact",
+     "id": "fr:application:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "compte",
+     "status": "exact",
+     "id": "fr:compte:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "profil",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "sécurité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "temps",
+     "status": "exact",
+     "id": "fr:temps:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "équilibre",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u16-l01": {
+   "code": "M16-L01",
+   "items": [
+    {
+     "text": "anniversaire",
+     "status": "exact",
+     "id": "fr:anniversaire:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "fête",
+     "status": "exact",
+     "id": "fr:fete:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "cadeau",
+     "status": "exact",
+     "id": "fr:cadeau:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "gâteau",
+     "status": "exact",
+     "id": "fr:gateau:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "carte",
+     "status": "exact",
+     "id": "fr:carte:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "bougie",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "invité",
+     "status": "exact",
+     "id": "fr:invite:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "souffler",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u16-l02": {
+   "code": "M16-L02",
+   "items": [
+    {
+     "text": "invitation",
+     "status": "exact",
+     "id": "fr:invitation:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "accepter",
+     "status": "exact",
+     "id": "fr:accepter:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "refuser",
+     "status": "exact",
+     "id": "fr:refuser:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "apporter",
+     "status": "exact",
+     "id": "fr:apporter:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "nourriture",
+     "status": "exact",
+     "id": "fr:nourriture:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "boisson",
+     "status": "exact",
+     "id": "fr:boisson:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "décorer",
+     "status": "exact",
+     "id": "fr:decorer:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "organiser",
+     "status": "related",
+     "id": null,
+     "level": null,
+     "alternatives": [
+      {
+       "id": "fr:organise:adjective",
+       "word": "organisé",
+       "level": "A2"
+      }
+     ]
+    }
+   ]
+  },
+  "fr/general/A1/u16-l03": {
+   "code": "M16-L03",
+   "items": [
+    {
+     "text": "jour férié",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "festival",
+     "status": "exact",
+     "id": "fr:festival:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "tradition",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "famille",
+     "status": "exact",
+     "id": "fr:famille:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "Noël",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "défilé",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "coutume",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "célébrer",
+     "status": "exact",
+     "id": "fr:celebrer:verb",
+     "level": "A2",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u16-l04": {
+   "code": "M16-L04",
+   "items": [
+    {
+     "text": "musée",
+     "status": "exact",
+     "id": "fr:musee:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "théâtre",
+     "status": "exact",
+     "id": "fr:theatre:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "concert",
+     "status": "exact",
+     "id": "fr:concert:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "billet",
+     "status": "exact",
+     "id": "fr:billet:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "exposition",
+     "status": "exact",
+     "id": "fr:exposition:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "spectacle",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "place",
+     "status": "exact",
+     "id": "fr:place:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "réservation",
+     "status": "exact",
+     "id": "fr:reservation:noun",
+     "level": "A2",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u16-l05": {
+   "code": "M16-L05",
+   "items": [
+    {
+     "text": "rencontrer",
+     "status": "exact",
+     "id": "fr:rencontrer:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "rendez-vous",
+     "status": "exact",
+     "id": "fr:rendez-vous:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "terrasse",
+     "status": "exact",
+     "id": "fr:terrasse:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "ambiance",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "parc",
+     "status": "exact",
+     "id": "fr:parc:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "restaurant",
+     "status": "exact",
+     "id": "fr:restaurant:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "sortie",
+     "status": "exact",
+     "id": "fr:sortie:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "retrouvailles",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u16-l06": {
+   "code": "M16-L06",
+   "items": [
+    {
+     "text": "célébration",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "événement",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "organiser",
+     "status": "related",
+     "id": null,
+     "level": null,
+     "alternatives": [
+      {
+       "id": "fr:organise:adjective",
+       "word": "organisé",
+       "level": "A2"
+      }
+     ]
+    },
+    {
+     "text": "musique",
+     "status": "exact",
+     "id": "fr:musique:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "nourriture",
+     "status": "exact",
+     "id": "fr:nourriture:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "souvenir",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "succès",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "invités",
+     "status": "related",
+     "id": null,
+     "level": null,
+     "alternatives": [
+      {
+       "id": "fr:invite-ia:noun",
+       "word": "invite",
+       "level": "C1"
+      },
+      {
+       "id": "fr:invite:noun",
+       "word": "invité",
+       "level": "A0"
+      }
+     ]
+    }
+   ]
+  },
+  "fr/general/A1/u17-l01": {
+   "code": "M17-L01",
+   "items": [
+    {
+     "text": "hier",
+     "status": "exact",
+     "id": "fr:hier:adverb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "dernier",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "avant",
+     "status": "exact",
+     "id": "fr:avant:preposition",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "déjà",
+     "status": "exact",
+     "id": "fr:deja:adverb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "visiter",
+     "status": "exact",
+     "id": "fr:visiter:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "travailler",
+     "status": "exact",
+     "id": "fr:travailler:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "terminer",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "commencer",
+     "status": "exact",
+     "id": "fr:commencer:verb",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u17-l02": {
+   "code": "M17-L02",
+   "items": [
+    {
+     "text": "aller",
+     "status": "exact",
+     "id": "fr:aller:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "voir",
+     "status": "exact",
+     "id": "fr:voir:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "acheter",
+     "status": "exact",
+     "id": "fr:acheter:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "rentrer",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "rester",
+     "status": "exact",
+     "id": "fr:rester:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "sortir",
+     "status": "exact",
+     "id": "fr:sortir:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "rencontrer",
+     "status": "exact",
+     "id": "fr:rencontrer:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "dépenser",
+     "status": "exact",
+     "id": "fr:depenser:verb",
+     "level": "A2",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u17-l03": {
+   "code": "M17-L03",
+   "items": [
+    {
+     "text": "enfance",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "souvenir",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "habiter",
+     "status": "exact",
+     "id": "fr:habiter:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "jouer",
+     "status": "exact",
+     "id": "fr:jouer:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "grandir",
+     "status": "exact",
+     "id": "fr:grandir:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "enfant",
+     "status": "exact",
+     "id": "fr:enfant:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "école",
+     "status": "exact",
+     "id": "fr:ecole:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "autrefois",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u17-l04": {
+   "code": "M17-L04",
+   "items": [
+    {
+     "text": "voyage",
+     "status": "exact",
+     "id": "fr:voyage:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "vacances",
+     "status": "exact",
+     "id": "fr:vacances:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "hôtel",
+     "status": "exact",
+     "id": "fr:hotel:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "plage",
+     "status": "exact",
+     "id": "fr:plage:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "partir",
+     "status": "exact",
+     "id": "fr:partir:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "revenir",
+     "status": "exact",
+     "id": "fr:revenir:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "visiter",
+     "status": "exact",
+     "id": "fr:visiter:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "photo",
+     "status": "exact",
+     "id": "fr:photo:noun",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u17-l05": {
+   "code": "M17-L05",
+   "items": [
+    {
+     "text": "naître",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "déménager",
+     "status": "exact",
+     "id": "fr:dmnager:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "commencer",
+     "status": "exact",
+     "id": "fr:commencer:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "finir",
+     "status": "exact",
+     "id": "fr:finir:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "étudier",
+     "status": "exact",
+     "id": "fr:etudier:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "mariage",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "diplôme",
+     "status": "exact",
+     "id": "fr:diplome-fin:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "carrière",
+     "status": "exact",
+     "id": "fr:carriere:noun",
+     "level": "A2",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u17-l06": {
+   "code": "M17-L06",
+   "items": [
+    {
+     "text": "passé",
+     "status": "related",
+     "id": null,
+     "level": null,
+     "alternatives": [
+      {
+       "id": "fr:passer:verb",
+       "word": "passer",
+       "level": "A0"
+      }
+     ]
+    },
+    {
+     "text": "expérience",
+     "status": "exact",
+     "id": "fr:experience:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "souvenir",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "voyage",
+     "status": "exact",
+     "id": "fr:voyage:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "événement",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "raconter",
+     "status": "exact",
+     "id": "fr:raconter:verb",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "autrefois",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "jeune",
+     "status": "exact",
+     "id": "fr:jeune:adjective",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u18-l01": {
+   "code": "M18-L01",
+   "items": [
+    {
+     "text": "demain",
+     "status": "exact",
+     "id": "fr:demain-time:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "prochain",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "semaine",
+     "status": "exact",
+     "id": "fr:semaine:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "projet",
+     "status": "exact",
+     "id": "fr:projet:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "visiter",
+     "status": "exact",
+     "id": "fr:visiter:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "bientôt",
+     "status": "exact",
+     "id": "fr:bientot:adverb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "ce soir",
+     "status": "exact",
+     "id": "fr:ce-soir:phrase",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "après",
+     "status": "exact",
+     "id": "fr:apres:preposition",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u18-l02": {
+   "code": "M18-L02",
+   "items": [
+    {
+     "text": "rêve",
+     "status": "exact",
+     "id": "fr:reve:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "objectif",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "espérer",
+     "status": "exact",
+     "id": "fr:esperer:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "apprendre",
+     "status": "exact",
+     "id": "fr:apprendre:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "réussir",
+     "status": "exact",
+     "id": "fr:reussir:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "un jour",
+     "status": "normalized",
+     "id": "fr:jour:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "ambition",
+     "status": "exact",
+     "id": "fr:ambition:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "avenir",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u18-l03": {
+   "code": "M18-L03",
+   "items": [
+    {
+     "text": "carrière",
+     "status": "exact",
+     "id": "fr:carriere:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "emploi",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "étudier",
+     "status": "exact",
+     "id": "fr:etudier:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "formation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "entreprise",
+     "status": "exact",
+     "id": "fr:entreprise:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "entretien",
+     "status": "exact",
+     "id": "fr:entretien:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "diplôme",
+     "status": "exact",
+     "id": "fr:diplome-fin:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "salaire",
+     "status": "exact",
+     "id": "fr:salaire:noun",
+     "level": "A2",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u18-l04": {
+   "code": "M18-L04",
+   "items": [
+    {
+     "text": "pays",
+     "status": "exact",
+     "id": "fr:pays:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "étranger",
+     "status": "related",
+     "id": null,
+     "level": null,
+     "alternatives": [
+      {
+       "id": "fr:etrange:adjective",
+       "word": "étrange",
+       "level": "A2"
+      }
+     ]
+    },
+    {
+     "text": "réserver",
+     "status": "exact",
+     "id": "fr:reserver:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "partir",
+     "status": "exact",
+     "id": "fr:partir:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "billet",
+     "status": "exact",
+     "id": "fr:billet:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "valise",
+     "status": "exact",
+     "id": "fr:valise:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "destination",
+     "status": "exact",
+     "id": "fr:destination:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "séjour",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u18-l05": {
+   "code": "M18-L05",
+   "items": [
+    {
+     "text": "avenir",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "penser",
+     "status": "exact",
+     "id": "fr:penser:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "monde",
+     "status": "exact",
+     "id": "fr:monde:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "technologie",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "peut-être",
+     "status": "exact",
+     "id": "fr:peut-etre:adverb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "changer",
+     "status": "exact",
+     "id": "fr:changer:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "progrès",
+     "status": "exact",
+     "id": "fr:progres:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "selon moi",
+     "status": "exact",
+     "id": "fr:selon-moi:phrase",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u18-l06": {
+   "code": "M18-L06",
+   "items": [
+    {
+     "text": "plan",
+     "status": "exact",
+     "id": "fr:plan:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "étape",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "réaliste",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "priorité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "feuille de route",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "décision",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "motivation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "objectif",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u19-l01": {
+   "code": "M19-L01",
+   "items": [
+    {
+     "text": "rapide",
+     "status": "exact",
+     "id": "fr:rapide:adjective",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "lent",
+     "status": "exact",
+     "id": "fr:lent:adjective",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "lourd",
+     "status": "exact",
+     "id": "fr:lourd:adjective",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "léger",
+     "status": "exact",
+     "id": "fr:leger:adjective",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "pratique",
+     "status": "exact",
+     "id": "fr:pratique:adjective",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "solide",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "utile",
+     "status": "exact",
+     "id": "fr:utile:adjective",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "agréable",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u19-l02": {
+   "code": "M19-L02",
+   "items": [
+    {
+     "text": "village",
+     "status": "exact",
+     "id": "fr:village:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "moderne",
+     "status": "exact",
+     "id": "fr:moderne:adjective",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "ancien",
+     "status": "exact",
+     "id": "fr:ancien:adjective",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "vert",
+     "status": "exact",
+     "id": "fr:vert:adjective",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "pollué",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "animé",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "tranquille",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "banlieue",
+     "status": "exact",
+     "id": "fr:banlieue:noun",
+     "level": "A1",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u19-l03": {
+   "code": "M19-L03",
+   "items": [
+    {
+     "text": "mode de vie",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "routine",
+     "status": "exact",
+     "id": "fr:routine:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "occupé",
+     "status": "exact",
+     "id": "fr:occupe:adjective",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "détendu",
+     "status": "exact",
+     "id": "fr:detendu:adjective",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "sain",
+     "status": "exact",
+     "id": "fr:sain:adjective",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "stressant",
+     "status": "exact",
+     "id": "fr:stressant:adjective",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "équilibré",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "rythme",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u19-l04": {
+   "code": "M19-L04",
+   "items": [
+    {
+     "text": "préférer",
+     "status": "exact",
+     "id": "fr:preferer:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "aimer mieux",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "préféré",
+     "status": "exact",
+     "id": "fr:prefere:adjective",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "choix",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "goût",
+     "status": "exact",
+     "id": "fr:gout:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "avis",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "préférence",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "détester",
+     "status": "exact",
+     "id": "fr:detester:verb",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u19-l05": {
+   "code": "M19-L05",
+   "items": [
+    {
+     "text": "choisir",
+     "status": "exact",
+     "id": "fr:choisir:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "recommander",
+     "status": "exact",
+     "id": "fr:recommander:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "raison",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "avantage",
+     "status": "related",
+     "id": null,
+     "level": null,
+     "alternatives": [
+      {
+       "id": "fr:avant:preposition",
+       "word": "avant",
+       "level": "A0"
+      }
+     ]
+    },
+    {
+     "text": "inconvénient",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "décider",
+     "status": "exact",
+     "id": "fr:decider:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "conseil",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "critère",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u19-l06": {
+   "code": "M19-L06",
+   "items": [
+    {
+     "text": "comparaison",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "opinion",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "pire",
+     "status": "exact",
+     "id": "fr:pire:adjective",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "différence",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "point commun",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "ressemblance",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "semblable",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "contraire",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u20-l01": {
+   "code": "M20-L01",
+   "items": [
+    {
+     "text": "penser",
+     "status": "exact",
+     "id": "fr:penser:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "croire",
+     "status": "exact",
+     "id": "fr:croire:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "opinion",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "bon",
+     "status": "exact",
+     "id": "fr:bon:adjective",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "mauvais",
+     "status": "exact",
+     "id": "fr:mauvais:adjective",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "avis",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "trouver",
+     "status": "exact",
+     "id": "fr:trouver:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "vrai",
+     "status": "exact",
+     "id": "fr:vrai:adjective",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u20-l02": {
+   "code": "M20-L02",
+   "items": [
+    {
+     "text": "d'accord",
+     "status": "exact",
+     "id": "fr:d-accord:phrase",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "pas d’accord",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "raison",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "tort",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "faux",
+     "status": "exact",
+     "id": "fr:faux:adjective",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "effectivement",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "pourtant",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "absolument",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u20-l03": {
+   "code": "M20-L03",
+   "items": [
+    {
+     "text": "problème",
+     "status": "exact",
+     "id": "fr:probleme:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "cassé",
+     "status": "exact",
+     "id": "fr:casse:adjective",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "perdu",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "en retard",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "panne",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "oublié",
+     "status": "related",
+     "id": null,
+     "level": null,
+     "alternatives": [
+      {
+       "id": "fr:oublier:verb",
+       "word": "oublier",
+       "level": "A0"
+      }
+     ]
+    },
+    {
+     "text": "urgent",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "grave",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u20-l04": {
+   "code": "M20-L04",
+   "items": [
+    {
+     "text": "conseil",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "essayer",
+     "status": "exact",
+     "id": "fr:essayer:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "solution",
+     "status": "exact",
+     "id": "fr:solution:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "changer",
+     "status": "exact",
+     "id": "fr:changer:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "devrait",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "éviter",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "proposer",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "utile",
+     "status": "exact",
+     "id": "fr:utile:adjective",
+     "level": "A2",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u20-l05": {
+   "code": "M20-L05",
+   "items": [
+    {
+     "text": "poli",
+     "status": "exact",
+     "id": "fr:poli:adjective",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "déranger",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "emprunter",
+     "status": "exact",
+     "id": "fr:emprunter:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "permis",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "excusez-moi",
+     "status": "exact",
+     "id": "fr:excusez-moi:phrase",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "aimable",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "autorisation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "service",
+     "status": "exact",
+     "id": "fr:service:noun",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u20-l06": {
+   "code": "M20-L06",
+   "items": [
+    {
+     "text": "enquête",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "opinion",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "solution",
+     "status": "exact",
+     "id": "fr:solution:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "accord",
+     "status": "exact",
+     "id": "fr:accord:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "majorité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "résultat",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "question",
+     "status": "exact",
+     "id": "fr:question:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "réponse",
+     "status": "exact",
+     "id": "fr:reponse:noun",
+     "level": "A2",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u21-l01": {
+   "code": "M21-L01",
+   "items": [
+    {
+     "text": "aéroport",
+     "status": "exact",
+     "id": "fr:aeroport:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "vol",
+     "status": "exact",
+     "id": "fr:vol:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "porte",
+     "status": "exact",
+     "id": "fr:porte:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "passeport",
+     "status": "exact",
+     "id": "fr:passeport:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "billet",
+     "status": "exact",
+     "id": "fr:billet:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "embarquement",
+     "status": "exact",
+     "id": "fr:embarquement:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "retard",
+     "status": "exact",
+     "id": "fr:retard:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "annonce",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u21-l02": {
+   "code": "M21-L02",
+   "items": [
+    {
+     "text": "hôtel",
+     "status": "exact",
+     "id": "fr:hotel:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "chambre",
+     "status": "exact",
+     "id": "fr:chambre:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "clé",
+     "status": "exact",
+     "id": "fr:cle:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "réservation",
+     "status": "exact",
+     "id": "fr:reservation:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "petit-déjeuner",
+     "status": "exact",
+     "id": "fr:petit-dejeuner:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "nuit",
+     "status": "exact",
+     "id": "fr:nuit:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "ascenseur",
+     "status": "exact",
+     "id": "fr:ascenseur:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "étage",
+     "status": "exact",
+     "id": "fr:etage:noun",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u21-l03": {
+   "code": "M21-L03",
+   "items": [
+    {
+     "text": "médecin",
+     "status": "exact",
+     "id": "fr:medecin:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "hôpital",
+     "status": "exact",
+     "id": "fr:hopital:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "urgence",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "médicament",
+     "status": "exact",
+     "id": "fr:medicament:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "douleur",
+     "status": "exact",
+     "id": "fr:douleur:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "ambulance",
+     "status": "exact",
+     "id": "fr:ambulance:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "ordonnance",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "pharmacie",
+     "status": "exact",
+     "id": "fr:pharmacie:noun",
+     "level": "A2",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u21-l04": {
+   "code": "M21-L04",
+   "items": [
+    {
+     "text": "perdu",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "volé",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "portefeuille",
+     "status": "exact",
+     "id": "fr:portefeuille:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "téléphone",
+     "status": "exact",
+     "id": "fr:telephone:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "sac",
+     "status": "exact",
+     "id": "fr:sac:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "plainte",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "déclaration",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "commissariat",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u21-l05": {
+   "code": "M21-L05",
+   "items": [
+    {
+     "text": "répéter",
+     "status": "exact",
+     "id": "fr:repeter:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "lentement",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "comprendre",
+     "status": "exact",
+     "id": "fr:comprendre:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "signifier",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "parler",
+     "status": "exact",
+     "id": "fr:parler:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "épeler",
+     "status": "exact",
+     "id": "fr:epeler:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "anglais",
+     "status": "exact",
+     "id": "fr:anglais:adjective",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "aider",
+     "status": "exact",
+     "id": "fr:aider:verb",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u21-l06": {
+   "code": "M21-L06",
+   "items": [
+    {
+     "text": "situation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "aide",
+     "status": "exact",
+     "id": "fr:aide:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "direction",
+     "status": "exact",
+     "id": "fr:direction:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "urgence",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "secours",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "expliquer",
+     "status": "exact",
+     "id": "fr:expliquer:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "problème",
+     "status": "exact",
+     "id": "fr:probleme:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "solution",
+     "status": "exact",
+     "id": "fr:solution:noun",
+     "level": "B1",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u22-l01": {
+   "code": "M22-L01",
+   "items": [
+    {
+     "text": "profil",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "identité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "profession",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "langue",
+     "status": "exact",
+     "id": "fr:langue:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "nationalité",
+     "status": "exact",
+     "id": "fr:nationalite:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "âge",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "adresse",
+     "status": "exact",
+     "id": "fr:adresse:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "présenter",
+     "status": "exact",
+     "id": "fr:presenter:verb",
+     "level": "A2",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u22-l02": {
+   "code": "M22-L02",
+   "items": [
+    {
+     "text": "routine",
+     "status": "exact",
+     "id": "fr:routine:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "matin",
+     "status": "exact",
+     "id": "fr:matin:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "soir",
+     "status": "exact",
+     "id": "fr:soir:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "horaire",
+     "status": "exact",
+     "id": "fr:horaire:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "journée",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "réveil",
+     "status": "exact",
+     "id": "fr:reveil:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "habitude",
+     "status": "exact",
+     "id": "fr:habitude:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "idéal",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u22-l03": {
+   "code": "M22-L03",
+   "items": [
+    {
+     "text": "logement",
+     "status": "exact",
+     "id": "fr:logement:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "quartier",
+     "status": "exact",
+     "id": "fr:quartier:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "commerce",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "transport",
+     "status": "related",
+     "id": null,
+     "level": null,
+     "alternatives": [
+      {
+       "id": "fr:transports:noun",
+       "word": "transports",
+       "level": "B1"
+      }
+     ]
+    },
+    {
+     "text": "voisin",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "immeuble",
+     "status": "exact",
+     "id": "fr:immeuble:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "agréable",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "proche",
+     "status": "exact",
+     "id": "fr:proche:adjective",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u22-l04": {
+   "code": "M22-L04",
+   "items": [
+    {
+     "text": "parcours",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "passé",
+     "status": "related",
+     "id": null,
+     "level": null,
+     "alternatives": [
+      {
+       "id": "fr:passer:verb",
+       "word": "passer",
+       "level": "A0"
+      }
+     ]
+    },
+    {
+     "text": "avenir",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "étape",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "souvenir",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "projet",
+     "status": "exact",
+     "id": "fr:projet:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "diplôme",
+     "status": "exact",
+     "id": "fr:diplome-fin:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "ambition",
+     "status": "exact",
+     "id": "fr:ambition:noun",
+     "level": "B1",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u22-l05": {
+   "code": "M22-L05",
+   "items": [
+    {
+     "text": "opinion",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "préférence",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "culture",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "choix",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "préféré",
+     "status": "exact",
+     "id": "fr:prefere:adjective",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "avis",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "différence",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "tradition",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/A1/u22-l06": {
+   "code": "M22-L06",
+   "items": [
+    {
+     "text": "cours",
+     "status": "exact",
+     "id": "fr:cours-matiere:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "présenter",
+     "status": "exact",
+     "id": "fr:presenter:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "progrès",
+     "status": "exact",
+     "id": "fr:progres:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "compétence",
+     "status": "exact",
+     "id": "fr:comptence:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "résumé",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "objectif",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "niveau",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "évaluation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  }
+ }
+}

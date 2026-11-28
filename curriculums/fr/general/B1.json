@@ -5,7 +5,9 @@
   "units": [
     {
       "unit": 1,
-      "title": "Nuancer sa pensée et exprimer des opinions",
+      "title": "Éthique et dilemmes : peser, concéder, trancher",
+      "theme": "t21",
+      "macroFunction": "peser un dilemme, concéder un point et justifier une position",
       "lessons": [
         {
           "lesson": 1,
@@ -178,7 +180,9 @@
     },
     {
       "unit": 2,
-      "title": "Modulateurs de discours et débat d'idées",
+      "title": "Mon parcours : raconter, nuancer, se situer",
+      "theme": "t01",
+      "macroFunction": "raconter son parcours, rapporter des propos et nuancer son image",
       "lessons": [
         {
           "lesson": 1,
@@ -307,7 +311,7 @@
             "writing"
           ],
           "speaking_percent": 50,
-          "teacher_notes": "code: \"FR-B1-009\"\ncando: \"Peut rédiger des phrases complexes élégantes en utilisant les pronoms relatifs composés\"",
+          "teacher_notes": "code: \"FR-B1-009\"\ncando: \"Je peux décrire une situation et préciser de quoi je parle, sans répéter les noms.\"",
           "recycled": "Formation du plus-que-parfait, Antériorité d'une action passée, Déjà",
           "grammarIds": [
             "fr-b1-accords-de-lequel-laquelle-lesquels-lesquelles",
@@ -352,6 +356,8 @@
     {
       "unit": 3,
       "title": "Travail, recrutement et monde professionnel",
+      "theme": "t13",
+      "macroFunction": "candidater, négocier et travailler en équipe",
       "lessons": [
         {
           "lesson": 1,
@@ -523,6 +529,11 @@
     {
       "unit": 4,
       "title": "Médias, société de l'information et réseaux",
+      "theme": "t15",
+      "secondaryThemes": [
+        "t16"
+      ],
+      "macroFunction": "analyser les médias et défendre la liberté d'expression",
       "lessons": [
         {
           "lesson": 1,
@@ -583,7 +594,7 @@
             "writing"
           ],
           "speaking_percent": 50,
-          "teacher_notes": "code: \"FR-B1-017\"\ncando: \"Peut suivre un débat médiatique et synthétiser les principaux arguments échangés\"",
+          "teacher_notes": "code: \"FR-B1-017\"\ncando: \"Je peux résumer une émission de radio et rapporter ce que les invités ont dit.\"",
           "recycled": "Conditionnel d'information incertaine, Source",
           "grammarIds": [
             "fr-b1-pronoms-demonstratifs-neutres-ce-qui-ce-que-ce-dont",
@@ -694,6 +705,11 @@
     {
       "unit": 5,
       "title": "Écologie, transition énergétique et planète",
+      "theme": "t19",
+      "secondaryThemes": [
+        "t11"
+      ],
+      "macroFunction": "argumenter sur le climat et la transition écologique",
       "lessons": [
         {
           "lesson": 1,
@@ -865,6 +881,11 @@
     {
       "unit": 6,
       "title": "Société, vivre-ensemble et citoyenneté",
+      "theme": "t17",
+      "secondaryThemes": [
+        "t12"
+      ],
+      "macroFunction": "comprendre et discuter les enjeux de société",
       "lessons": [
         {
           "lesson": 1,
@@ -1036,6 +1057,8 @@
     {
       "unit": 7,
       "title": "Art, patrimoine et créativité",
+      "theme": "t16",
+      "macroFunction": "décrire une œuvre et parler du patrimoine",
       "lessons": [
         {
           "lesson": 1,
@@ -1207,6 +1230,11 @@
     {
       "unit": 8,
       "title": "Économie, argent et modes de consommation",
+      "theme": "t18",
+      "secondaryThemes": [
+        "t06"
+      ],
+      "macroFunction": "parler d'argent, de consommation et d'économie",
       "lessons": [
         {
           "lesson": 1,
@@ -1378,6 +1406,8 @@
     {
       "unit": 9,
       "title": "Sciences, innovations et futur",
+      "theme": "t20",
+      "macroFunction": "expliquer une innovation et débattre de ses usages",
       "lessons": [
         {
           "lesson": 1,
@@ -1549,6 +1579,8 @@
     {
       "unit": 10,
       "title": "Santé publique et bien-être",
+      "theme": "t08",
+      "macroFunction": "décrire le système de santé et parler de bien-être",
       "lessons": [
         {
           "lesson": 1,
@@ -1719,7 +1751,12 @@
     },
     {
       "unit": 11,
-      "title": "Droits, consommation et vie citoyenne",
+      "title": "Argent, droits et démarches",
+      "theme": "t06",
+      "secondaryThemes": [
+        "t17"
+      ],
+      "macroFunction": "défendre ses droits, comprendre un contrat et une facture",
       "lessons": [
         {
           "lesson": 1,
@@ -1891,6 +1928,11 @@
     {
       "unit": 12,
       "title": "Mobilité, expatriation et interculturalité",
+      "theme": "t10",
+      "secondaryThemes": [
+        "t13"
+      ],
+      "macroFunction": "s'expatrier et s'adapter à une autre culture",
       "lessons": [
         {
           "lesson": 1,
@@ -2062,6 +2104,11 @@
     {
       "unit": 13,
       "title": "Francophonie, voyages et synthèse B1",
+      "theme": "t22",
+      "secondaryThemes": [
+        "t10"
+      ],
+      "macroFunction": "parler de la francophonie et préparer le DELF B1",
       "lessons": [
         {
           "lesson": 1,
