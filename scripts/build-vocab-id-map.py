@@ -179,6 +179,7 @@ def main() -> int:
     parser.add_argument("--out-dir", default=os.path.join(ROOT, "docs", "vocab-id-map"))
     parser.add_argument("--max-candidates", type=int, default=3)
     parser.add_argument("--write", action="store_true")
+    parser.add_argument("--backlog-out", help="also write the items with no COSYdata entry, grouped by unit")
     args = parser.parse_args()
 
     path = course_path(args.curricula, args.course)
@@ -280,6 +281,30 @@ def main() -> int:
         )
         writer.writerows(csv_rows)
     print(f"wrote {os.path.relpath(json_path, ROOT)} and {os.path.relpath(csv_path, ROOT)}")
+
+    if args.backlog_out:
+        units = {}
+        for unit in data.get("units", []):
+            number = unit.get("unit")
+            for lesson in unit.get("lessons") or []:
+                key = f"{lang}/{track}/{level}/u{int(number):02d}-l{int(lesson.get('lesson', 0)):02d}"
+                for item in lessons_out.get(key, {}).get("items", []):
+                    if item["status"] not in ("related", "missing"):
+                        continue
+                    units.setdefault(number, {
+                        "unit": number,
+                        "theme": unit.get("theme"),
+                        "macroFunction": unit.get("macroFunction"),
+                        "items": [],
+                    })["items"].append({
+                        "text": item["text"],
+                        "lesson": lesson.get("lesson"),
+                        **({"alternatives": item["alternatives"]} if item["alternatives"] else {}),
+                    })
+        payload_backlog = {"course": course, "units": sorted(units.values(), key=lambda u: u["unit"])}
+        with open(args.backlog_out, "w", encoding="utf-8") as handle:
+            handle.write(json.dumps(payload_backlog, ensure_ascii=False, indent=1) + "\n")
+        print(f"wrote {os.path.relpath(args.backlog_out, ROOT)}")
     return 0
 
 

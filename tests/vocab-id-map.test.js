@@ -76,6 +76,21 @@ test('the CSV review sheet has one row per item plus a header', () => {
   }
 });
 
+test('a backlog file lists exactly the unresolved items, grouped by themed unit', () => {
+  for (const map of mappings()) {
+    const file = path.join(dir, `backlog-${map.course}.json`);
+    if (!fs.existsSync(file)) continue;
+    const backlog = JSON.parse(fs.readFileSync(file, 'utf8'));
+    const total = backlog.units.reduce((n, u) => n + u.items.length, 0);
+    assert.equal(total, map.summary.related + map.summary.missing, map.course);
+    for (const unit of backlog.units) {
+      assert.ok(unit.theme, `${map.course} unit ${unit.unit} has no theme`);
+      assert.ok(unit.items.length > 0);
+      for (const item of unit.items) assert.ok(item.text && item.lesson);
+    }
+  }
+});
+
 test('the French B1 pilot resolves at least the measured 19 percent', () => {
   const map = mappings().find((m) => m.course === 'general-fr-b1');
   assert.ok(map, 'general-fr-b1 mapping missing');

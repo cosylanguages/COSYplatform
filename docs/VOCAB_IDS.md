@@ -68,10 +68,35 @@ column, one row per item.
 python3 scripts/build-vocab-id-map.py --cosydata ../COSYdata --course general-fr-b1 --write
 #    any course id works: general-fr-a1, general-en-b2, ...
 
-# 2. review: fill `decision` in review-general-fr-b1.csv
-#    accept id | accept alternative <id> | author new entry | replace item
+# 2. review: fill `decision` in review-general-fr-b1.csv (syntax below)
 
-# 3. write the accepted ids into `vocabularyIds` (not yet automated)
+# 3. write the accepted ids into the lesson
+python3 scripts/apply-vocab-ids.py --course general-fr-b1            # dry run, exit 1 if pending
+python3 scripts/apply-vocab-ids.py --course general-fr-b1 --write    # apply
+python3 scripts/apply-vocab-ids.py --course general-fr-b1 --cosydata ../COSYdata --write
+```
+
+`decision` column:
+
+| value | effect |
+|---|---|
+| *(empty)* | not reviewed; left pending |
+| `accept` | use the matched id from the sheet |
+| `accept fr:nuancer:verb` | use this id (usually one of the `candidates`) |
+| `author` | the item must be created in COSYdata; goes to the backlog |
+| `replace` | the curriculum item should change; goes to the backlog |
+| `skip` | deliberately left without an id |
+
+The applier inserts `vocabularyIds` right after `vocabulary`, appends without touching existing
+entries, and is idempotent; a dry run never writes. With `--cosydata` it rejects ids that do not
+exist in the dictionary and stops before writing.
+
+`--backlog-out` on the generator writes the items still without an entry, grouped by unit and
+theme, ready to be authored in COSYdata:
+
+```bash
+python3 scripts/build-vocab-id-map.py --cosydata ../COSYdata --course general-fr-b1 \
+  --write --backlog-out docs/vocab-id-map/backlog-general-fr-b1.json
 ```
 
 ## CI checks

@@ -160,6 +160,13 @@ repositories plus the proposed level model. Facts worth remembering before touch
   left entirely unthemed on purpose.
 - Italian B1 is grammar-organised: units 1-7 are grammar labels and are deliberately unthemed
   (only units 8-13 carry a topic), so IT covers 5/13 slots. Do not invent a theme to fill a cell.
+- Pipeline is now closed: `scripts/apply-vocab-ids.py` reads the `decision` column of a review
+  sheet and writes `vocabularyIds` after `vocabulary`, dry-run by default, idempotent, rejecting
+  unknown ids with `--cosydata` (exit 2, nothing written). Decisions: empty=pending, `accept`,
+  `accept <id>`, `author`, `replace`, `skip`. Tests spawn the script on a temp copy
+  (`tests/apply-vocab-ids.test.js`, skipped when python3 is absent).
+- `build-vocab-id-map.py --backlog-out` exports the unresolved items grouped by unit and theme
+  (`docs/vocab-id-map/backlog-general-fr-b1.json`, 423 items) for COSYdata authoring.
 - The `recycled` prose field is populated on 100 % of lessons in all five languages but templated
   (51 distinct strings across 65 FR B1 lessons), and no id points at the earlier page. Recycling
   must be wired through `recycledIds`, not through that prose.
