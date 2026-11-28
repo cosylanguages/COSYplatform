@@ -78,9 +78,16 @@ Russian B2 is published too: 65 decks, `docs/RUSSIAN_B2_BUILD.md`. 34 lessons ha
 pointed at B1 or A1; `wire_ru_b2.py` gives 131 ids over 57 points, using all 36 B2 pages. `build_decks.py`
 now takes `--level` up to c2 and carries a `previous` phrase per level (a B2 lesson without `recycled:`
 would have raised `KeyError`).
-C1 and C2 are still hidden and are not the same job: C1 stores `grammar` as one string per lesson where every
-other level uses a list of two, and C2 has ten lessons with no `grammar` at all; their shelves hold 28 and 20
-pages against 65 lessons each, so they need new pages before they need re-pointing. Supporting changes: the Russian page frame in `manual_page.py`
+Russian C1 and C2 are published as well: 130 decks, `docs/RUSSIAN_C1_C2_BUILD.md`. That completes the shelf:
+A1 142, A2 65, B1 65, B2 65, C1 65, C2 65 = 467 decks, 56/169 courses.
+C1 arrived with zero ids and one `grammar` string per lesson; `wire_ru_c1.py` gives each lesson the C1 page
+that *reframes* its point (the passive becomes agent removal and distancing syntax) plus the B2/B1 page that
+teaches the grammar underneath — 130 ids, all 28 C1 pages used. Its single-string `grammar` field is left as
+it is, so the curriculum still records one point while the deck shows two.
+C2 had ten lessons with no `grammar` and nine with no `vocabulary` at all (the device lessons); the nine now
+carry the metalanguage of their device (`инверсия, ритм, каденция`), added through
+`VOCABULARY_OVERRIDES` in `normalize_ru_level.py`. `wire_ru_c2.py` uses all 20 C2 pages.
+Reuse is the C1 weakness: 65 lessons over 28 pages means two pages carry eight lessons each. Supporting changes: the Russian page frame in `manual_page.py`
 (`ul.gv-lines`, `p.gv-formula`, `section.examples`, `box mint` headings, `wrong-line`/`right-line`, and
 two-column reference tables) takes page coverage from 11 to 38 of the 39 ids the curriculum uses; a
 Cyrillic table in `slug()` (without it every deck id was `ru-a1----`); a 70-string `ru` scaffold; and
