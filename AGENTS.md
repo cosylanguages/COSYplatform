@@ -25,12 +25,14 @@ resolve the grammar ids to the COSYmanuals topic files of the matching level.
 
 The base `Spec.roadmap` hard-codes `fr-a1-` in lesson ids; both subclasses override it so
 the ids carry their own level (`fr-b1-…`, `fr-b2-…`). Without that override the generated
-files are named `fr-a1-*` inside a B2 folder.
+files are named `fr-a1-*` inside a B2 folder. The slug tables also need every diacritic
+that appears in a title: `ï`, `ë`, `ÿ` and `œ` were missing, and `laïcité` produced
+`la-cite` until they were added.
 
 Every lesson needs two grammar links, or slide 5 loses its `grammar-focus` element. Units 10 to 12
 of the French B1 curriculum shipped with `grammarIds: null`; they were filled in by hand.
 
 ## Status (last update)
-- French: A1 142 lessons, A2 65, B1 65 (published in the manifest), B2 25 of 65.
+- French: A1 142 lessons, A2 65, B1 65 (published in the manifest), B2 35 of 65.
 - French C1, C2: curriculum only, no lesson files.
 - Other languages: A1 courses only.
