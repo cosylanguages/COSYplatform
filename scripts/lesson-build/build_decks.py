@@ -44,7 +44,7 @@ SETTINGS = {
 
 SCAFFOLD = {
     'it': dict(
-        recycled_default='Ripasso di {previous}.',
+        recycled_default='{previous}.',
         s1='1. Obiettivo e panoramica', s2='2. Ripasso e collegamento',
         s3='3. Lessico e espressioni chiave', s4='4. Pronuncia e ritmo',
         s5='5. Focus grammaticale e pratica guidata', s6='6. Lettura, ascolto e comprensione',
@@ -104,7 +104,7 @@ SCAFFOLD = {
         diff_seniors='Una scheda di riuso costruita sugli esempi del manuale.',
     ),
     'el': dict(
-        recycled_default='Επανάληψη του {previous}.',
+        recycled_default='{previous}.',
         s1='1. Στόχος και επισκόπηση', s2='2. Επανάληψη και σύνδεση',
         s3='3. Λεξιλόγιο και εκφράσεις-κλειδιά', s4='4. Προφορά και ρυθμός',
         s5='5. Γραμματική εστίαση και καθοδηγούμενη πρακτική', s6='6. Ανάγνωση, ακρόαση και κατανόηση',
@@ -164,7 +164,7 @@ SCAFFOLD = {
         diff_seniors='Ένα φύλλο επανάχρησης χτισμένο στα παραδείγματα του εγχειριδίου.',
     ),
     'ru': dict(
-        recycled_default='Повторение: {previous}.',
+        recycled_default='{previous}.',
         s1='1. Цель и обзор', s2='2. Повторение и связь',
         s3='3. Слова и выражения урока', s4='4. Произношение и ритм',
         s5='5. Грамматика и управляемая практика', s6='6. Чтение, слушание и понимание',
