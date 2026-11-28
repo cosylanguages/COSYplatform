@@ -38,6 +38,17 @@ slot means 2,378 returns demanded and 320 available, so a 65-lesson course can h
 that budget. Cutting the load, growing the slot, or triaging blocks into hold/recognise is a course
 design decision, not a generator one.
 
+### Retrieval pilot
+Italian B1 lessons 2-5 now carry a hand-written retrieval set: `returns: [{block, q}]` in the
+curriculum `teacher_notes`, and the same questions on deck slide 2 in a blockquote with
+`usesChunk`, plus `recycling.prior` naming the blocks and `recycling.priorBlocks` holding the ids.
+`docs/PILOT_RETRIEVAL_IT_B1_UNIT1.md` has the 28 questions and what reading them revealed. Deck
+text was read from the curriculum note, so the two cannot diverge. A rebuild from COSYmanuals still
+drops them: the builders do not know `returns:` yet.
+
+The planner lacks a variety constraint - lesson 3 came out with eight past-tense questions because
+lessons 1 and 2 were both about the past. Fix that before extending past unit 1.
+
 ## Lesson generation
 `/tmp/cosy_build.py` holds the shared `Spec` class: it writes the ten-slide deck from a per-lesson
 dict (`cando`, `chunks`, `reading`, `listen`, `pron`, `adapt`, `practice`, `rule`, `prior`, `next`,

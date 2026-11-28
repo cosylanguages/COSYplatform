@@ -211,8 +211,11 @@ rebuild.
 2. **Retrieval generator, read-only.** Done: `npm run chunks:plan -- --course general-it-b1` prints
    the plan and writes `docs/RETRIEVAL_PLAN_general-it-b1.md`. It immediately produced the finding
    that decides the rest of this work — see the capacity section below.
-3. **Rewrite stage 2 on one unit.** Five lessons, by hand, with the generated list as input. Read the
-   result as a learner: is it a conversation or a quiz?
+3. **Rewrite stage 2 on one unit.** Done for lessons 2-5 of Italian B1:
+   `docs/PILOT_RETRIEVAL_IT_B1_UNIT1.md`. 28 questions, each tied to a block id, applied to the
+   curriculum and the decks. Read as a learner it works, with one flaw the planner must fix: lesson
+   3 got eight past-tense questions because lessons 1 and 2 were both about the past, so a variety
+   constraint (no more than two returns of one kind per lesson) is needed before scaling.
 4. **Measure, then widen.** Orphan rate and retrieval density on that unit, then the course, then the
    language, then the rest.
 5. **Only then** touch the builders, so the pattern is in the generator rather than in 1,711 files.

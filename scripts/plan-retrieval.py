@@ -26,7 +26,7 @@ import os
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OFFSETS = (1, 2, 4, 8, 12)
-CAP = 5
+DEFAULT_CAP = 8
 
 
 def load(course: str) -> dict:
@@ -36,13 +36,17 @@ def load(course: str) -> dict:
     return json.load(open(path, encoding="utf-8"))
 
 
-def plan(registry: dict) -> dict:
+def plan(registry: dict, cap: int = DEFAULT_CAP) -> dict:
     lessons = registry["lessons"]
     by_number = {lesson["number"]: lesson for lesson in lessons}
     introduced: dict[str, int] = {}
     block_of: dict[str, dict] = {}
+    roles = collections.Counter()
     for lesson in lessons:
         for block in lesson["introduces"]:
+            roles[block.get("role", "hold")] += 1
+            if block.get("role", "hold") != "hold":
+                continue  # recognise-only: met once, deliberately not returned
             introduced.setdefault(block["id"], lesson["number"])
             block_of.setdefault(block["id"], block)
 
@@ -68,7 +72,7 @@ def plan(registry: dict) -> dict:
         # resolved blocks first, then the longest-waiting ones: spacing beats freshness
         due.sort(key=lambda item: (item[0]["status"] == "unresolved", -item[1]))
         selected = []
-        for block, intro, ordinal, offset in due[:CAP]:
+        for block, intro, ordinal, offset in due[:cap]:
             selected.append({
                 "id": block["id"],
                 "text": block["text"],
@@ -100,13 +104,16 @@ def plan(registry: dict) -> dict:
             "lessons": len(lessons),
             "blocks": len(introduced),
             "returns_planned": sum(len(v) for v in chosen.values()),
-            "lessons_at_cap": sum(1 for v in chosen.values() if len(v) >= CAP),
+            "cap": cap,
+            "hold_blocks": len(introduced),
+            "recognise_blocks": roles.get("recognise", 0),
+            "lessons_at_cap": sum(1 for v in chosen.values() if len(v) >= cap),
             "lessons_empty": sum(1 for n in range(1, len(lessons) + 1) if not chosen.get(n)),
             "blocks_never_returned": len(unscheduled),
             "returns_due": demand,
             "returns_skipped": demand - sum(len(v) for v in chosen.values()),
-            "slots": CAP * max(len(lessons) - 1, 0),
-            "capacity_blocks": (CAP * max(len(lessons) - 1, 0)) // len(OFFSETS),
+            "slots": cap * max(len(lessons) - 1, 0),
+            "capacity_blocks": (cap * max(len(lessons) - 1, 0)) // len(OFFSETS),
             "blocks_per_lesson": round(len(introduced) / max(len(lessons), 1), 1),
             "unresolved_in_plan": sum(
                 1 for items in chosen.values() for item in items if item["status"] == "unresolved"
@@ -127,24 +134,26 @@ def render(result: dict) -> str:
         "",
         f"- lessons: **{s['lessons']}**, blocks: **{s['blocks']}**",
         f"- scheduled returns: **{s['returns_planned']}**",
-        f"- lessons at the cap of {CAP}: **{s['lessons_at_cap']}**",
+        f"- hold blocks: **{s['hold_blocks']}**, recognise-only: **{s['recognise_blocks']}**",
+        f"- lessons at the cap of {s['cap']}: **{s['lessons_at_cap']}**",
         f"- lessons with nothing due: **{s['lessons_empty']}**",
         f"- blocks introduced too late to return: **{s['blocks_never_returned']}**",
         f"- unresolved blocks appearing in the plan: **{s['unresolved_in_plan']}** "
         f"(teachable, but not yet linked to COSYdata)",
         "",
-        "## Capacity: what five questions a lesson can carry",
+        f"## Capacity: what {s['cap']} questions a lesson can carry",
         "",
         f"This course introduces **{s['blocks_per_lesson']} blocks per lesson**. The method returns each",
         f"block five times, so it needs **{s['returns_due']}** returns; the schedule has room for",
-        f"**{s['slots']}** (five per lesson), which honours **{s['returns_planned']}** and defers",
+        f"**{s['slots']}** ({s['cap']} per lesson), which honours **{s['returns_planned']}** and defers",
         f"**{s['returns_skipped']}**. A course of this length can hold roughly",
         f"**{s['capacity_blocks']}** blocks at this budget.",
         "",
         "That gap is not a bug in the planner, it is the arithmetic of the method: the current item load",
-        "is several times what a five-question retrieval slot can sustain, which is the mechanical reason",
-        "a third of the vocabulary is never asked about again. Either the load comes down, the retrieval",
-        "slot grows, or some blocks are accepted as recognition-only and marked as such.",
+        "is more than a retrieval slot of this size can sustain, which is the mechanical reason",
+        "a third of the vocabulary is never asked about again. Only hold blocks are scheduled here;",
+        "recognise-only blocks are deliberately not returned. The remaining gap has three answers: the",
+        "load comes down, the slot grows, or the triage gets stricter.",
         "",
         "### What different budgets would carry",
         "",
@@ -184,8 +193,10 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--course", required=True)
     parser.add_argument("--write", action="store_true")
+    parser.add_argument("--cap", type=int, default=DEFAULT_CAP,
+                        help=f"retrieval questions per lesson (default {DEFAULT_CAP})")
     args = parser.parse_args()
-    result = plan(load(args.course))
+    result = plan(load(args.course), args.cap)
     s = result["summary"]
     print(f"{result['course']}: {s['returns_planned']} returns across {s['lessons']} lessons | "
           f"at cap {s['lessons_at_cap']} | empty {s['lessons_empty']} | "

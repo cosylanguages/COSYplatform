@@ -7,9 +7,9 @@ learner production. A word **absent** from every later deck cannot have been rec
 - decks scanned: **1711**
 - curriculum vocabulary items: **21040** across 13 languages
 - items seen in at least one deck: **9423**
-- items seen in exactly one deck: **3258** (34.6%)
+- items seen in exactly one deck: **3250** (34.5%)
 
-**35% of the vocabulary is met once and never asked about again.**
+**34% of the vocabulary is met once and never asked about again.**
 
 ## By language
 
@@ -17,7 +17,7 @@ learner production. A word **absent** from every later deck cannot have been rec
 |---|---|---|---|---|
 | en | 588 | 3050 | 749 | 25% |
 | fr | 526 | 2786 | 831 | 30% |
-| it | 195 | 1119 | 494 | 44% |
+| it | 195 | 1119 | 486 | 43% |
 | el | 130 | 692 | 258 | 37% |
 | pt | 65 | 546 | 273 | 50% |
 | es | 65 | 539 | 253 | 47% |
@@ -28,17 +28,18 @@ learner production. A word **absent** from every later deck cannot have been rec
 
 | appearances | items | share |
 |---|---|---|
-| 1 deck only | 3258 | 34.6% |
+| 1 deck only | 3250 | 34.5% |
 | 2 | 1446 | 15.3% |
-| 3-4 | 1292 | 13.7% |
-| 5+ | 3427 | 36.4% |
+| 3-4 | 1293 | 13.7% |
+| 5+ | 3434 | 36.4% |
 
 ## The recycling field
 
-- distinct `recycling.prior` strings: **848**
-- decks whose prior line is a generic phrase rather than named items: **130**
+- decks with a structured retrieval set (`recycling.priorBlocks`): **4**, carrying 28 planned returns
+- distinct `recycling.prior` strings: **852**
+- decks whose prior line is a generic phrase rather than named items: **126**
 
-That is 8% of decks pointing at a level or a unit instead of at the words and structures to reactivate, so nothing downstream can check it.
+That is 7% of decks pointing at a level or a unit instead of at the words and structures to reactivate, so nothing downstream can check it.
 
 ## What this cannot see
 

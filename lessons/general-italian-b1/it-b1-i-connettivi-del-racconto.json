@@ -15,8 +15,18 @@
   "assessment": "Verifica l'uso corretto di «connettivi testuali ed argomentativi» e la chiarezza dell'esposizione orale.",
   "homework": "Scrivi dieci righe usando «connettivi testuali ed argomentativi».",
   "recycling": {
-    "prior": "Lessico del livello A2 e del modulo precedente",
-    "next": "La lezione successiva tratta gerundio e participio."
+    "prior": "già, prima, quando, Passato prossimo e imperfetto insieme, Trapassato per l'anteriorità, ancora non, dopo che, intanto",
+    "next": "La lezione successiva tratta gerundio e participio.",
+    "priorBlocks": [
+      "cosydata:it:gia:adverb",
+      "cosydata:it:prima:adverb",
+      "cosydata:it:quando:adverb",
+      "grammar:it-a2-passato-prossimo-vs-imperfetto",
+      "grammar:it-a2-trapassato-prossimo",
+      "pending:it:ancora-non",
+      "pending:it:dopo-che",
+      "pending:it:intanto"
+    ]
   },
   "differentiation": {
     "individual": "Una scheda: cinque frasi sul tema della lezione.",
@@ -80,19 +90,29 @@
       "elements": [
         {
           "type": "instruction",
-          "content": "Già in possesso: Lessico del livello A2 e del modulo precedente"
+          "content": "Riattiva: rispondi ad alta voce alle domande sui blocchi già incontrati."
         },
         {
           "type": "blockquote",
-          "content": "Lessico da riattivare: tuttavia, inoltre, quindi"
+          "content": "1. Che cosa avevi già fatto oggi prima di arrivare a lezione?\n2. Che cosa fai sempre prima di uscire di casa?\n3. Che cosa stavi facendo quando hai sentito l'ultima notizia?\n4. Racconta un pomeriggio di dieci anni fa: com'era la giornata e che cosa è successo all'improvviso?\n5. Ieri sei arrivato a casa e qualcuno aveva già preparato la cena: racconta che cosa aveva già fatto.\n6. C'è qualcosa che ancora non hai fatto quest'anno e vorresti fare?\n7. Che cosa è cambiato nella tua vita dopo che hai finito la scuola?\n8. Che cosa facevi intanto che aspettavi il tuo turno? Rispondi in tre frasi.",
+          "usesChunk": [
+            "cosydata:it:gia:adverb",
+            "cosydata:it:prima:adverb",
+            "cosydata:it:quando:adverb",
+            "grammar:it-a2-passato-prossimo-vs-imperfetto",
+            "grammar:it-a2-trapassato-prossimo",
+            "pending:it:ancora-non",
+            "pending:it:dopo-che",
+            "pending:it:intanto"
+          ]
         },
         {
           "type": "instruction",
-          "content": "A memoria: che cosa significa questa parola e dove l'hai incontrata?"
+          "content": "Scegli una domanda e rispondi in tre frasi; poi riprova senza guardare."
         },
         {
           "type": "input",
-          "placeholder": "tuttavia — significato e contesto"
+          "placeholder": "la tua risposta, tre frasi"
         }
       ]
     },

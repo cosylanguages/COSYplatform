@@ -30,6 +30,12 @@ CODE_RE = re.compile(r'code:\s*"([^"]+)"')
 
 KIND_BY_WORDS = {1: "word", 2: "collocation"}
 
+# Which blocks are meant to be produced, and so must be returned on schedule. Grammar frames
+# always are. A word's part of speech, where COSYdata tells us, decides the rest: function words
+# and verbs get used by the learner, nouns and adjectives are more often read.
+HOLD_POS = ("adverb", "adverbial", "conjunction", "preposition", "pronoun", "verb", "interjection",
+            "phrase", "expression", "idiom")
+
 
 def slug(text: str) -> str:
     norm = unicodedata.normalize("NFKD", text.lower())
@@ -40,6 +46,18 @@ def slug(text: str) -> str:
 
 def word_count(text: str) -> int:
     return len(re.findall(r"[^\W\d_]+", text, re.UNICODE))
+
+
+def role_of(block: dict) -> tuple[str, str]:
+    """(role, role_source)."""
+    if block["source"] == "grammarIds":
+        return "hold", "rule:frame"
+    if block["status"] in ("exact", "normalized"):
+        pos = block["id"].rsplit(":", 1)[-1]
+        return ("hold" if pos in HOLD_POS else "recognise"), f"rule:pos:{pos}"
+    # No dictionary entry, so no part of speech: multiword material is productive by nature,
+    # a single unverified word is not.
+    return ("hold" if block["kind"] != "word" else "recognise"), "rule:shape"
 
 
 def kind_of(text: str) -> str:
@@ -73,9 +91,20 @@ def load_mapping(course: str) -> dict[str, dict[str, dict]]:
     return out
 
 
+def load_triage(course: str) -> dict[str, dict]:
+    """Hand decisions that override the rule. `data/chunks/<course>-triage.json`:
+    {"overrides": {"<block id>": {"role": "hold", "why": "..."}}}"""
+    path = os.path.join(ROOT, "data", "chunks", f"{course}-triage.json")
+    if not os.path.exists(path):
+        return {}
+    data = json.load(open(path, encoding="utf-8"))
+    return data.get("overrides", {})
+
+
 def build(course: str) -> dict:
     curriculum, lang, level = load_course(course)
     mapping = load_mapping(course)
+    overrides = load_triage(course)
     lessons_out = []
     seen: dict[str, dict] = {}
     number = 0
@@ -130,6 +159,14 @@ def build(course: str) -> dict:
                 seen[block_id] = block
                 introduces.append(block)
 
+            for block in introduces:
+                role, source = role_of(block)
+                override = overrides.get(block["id"])
+                if override:
+                    role, source = override["role"], "hand"
+                    block["role_why"] = override.get("why")
+                block["role"], block["role_source"] = role, source
+
             lessons_out.append({
                 "number": number,
                 "unit": unit.get("unit") or unit.get("number"),
@@ -142,6 +179,8 @@ def build(course: str) -> dict:
     blocks = list(seen.values())
     by_kind = collections.Counter(b["kind"] for b in blocks)
     by_status = collections.Counter(b["status"] for b in blocks)
+    by_role = collections.Counter(b["role"] for b in blocks)
+    hand = sum(1 for b in blocks if b.get("role_source") == "hand")
     return {
         "course": course,
         "lang": lang,
@@ -156,6 +195,9 @@ def build(course: str) -> dict:
             "resolved": by_status.get("exact", 0) + by_status.get("normalized", 0),
             "unresolved": by_status.get("unresolved", 0),
             "frames": by_kind.get("frame", 0),
+            "hold": by_role.get("hold", 0),
+            "recognise": by_role.get("recognise", 0),
+            "hand_triaged": hand,
             "repeat_mentions": sum(len(l["repeats"]) for l in lessons_out),
             "by_kind": dict(sorted(by_kind.items())),
             "by_status": dict(sorted(by_status.items())),
@@ -182,6 +224,9 @@ def render_report(registry: dict) -> str:
         f"- unresolved: **{s['unresolved']}**, carrying a provisional `pending:` id",
         f"- blocks the curriculum already repeats in a later lesson: **{s['repeat_mentions']}** "
         f"(accidental recycling, not scheduled)",
+        f"- hand-triaged: **{s['hand_triaged']}** blocks (the rest by rule)",
+        f"- roles: **{s['hold']} hold** (scheduled for return), **{s['recognise']} recognise** "
+        f"(met once, on purpose, not returned)",
         f"- by kind: {', '.join(f'{k} {v}' for k, v in s['by_kind'].items())}",
         "",
         "## Unresolved blocks by lesson",

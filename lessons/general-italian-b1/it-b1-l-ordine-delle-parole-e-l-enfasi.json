@@ -15,8 +15,18 @@
   "assessment": "Verifica l'uso corretto di «ordine delle parole ed enfasi» e la chiarezza dell'esposizione orale.",
   "homework": "Scrivi dieci righe usando «ordine delle parole ed enfasi».",
   "recycling": {
-    "prior": "Lessico del livello A2 e del modulo precedente",
-    "next": "La lezione successiva tratta le forme del congiuntivo presente."
+    "prior": "mentre, visto, durante, Gerundio presente e passato, tuttavia, inoltre, quindi, infatti",
+    "next": "La lezione successiva tratta le forme del congiuntivo presente.",
+    "priorBlocks": [
+      "cosydata:it:mentre:conjunction",
+      "cosydata:it:visto:noun",
+      "cosydata:it:durante:preposition",
+      "grammar:it-b1-gerundio-e-participio",
+      "cosydata:it:tuttavia:adverb",
+      "cosydata:it:inoltre:idiom",
+      "cosydata:it:quindi:adverb",
+      "cosydata:it:infatti:phrase"
+    ]
   },
   "differentiation": {
     "individual": "Una scheda: cinque frasi sul tema della lezione.",
@@ -80,19 +90,29 @@
       "elements": [
         {
           "type": "instruction",
-          "content": "Già in possesso: Lessico del livello A2 e del modulo precedente"
+          "content": "Riattiva: rispondi ad alta voce alle domande sui blocchi già incontrati."
         },
         {
           "type": "blockquote",
-          "content": "Lessico da riattivare: è che, quanto a, proprio"
+          "content": "1. Che cosa fai mentre aspetti l'autobus?\n2. Spiega una conseguenza che si vede dai fatti: «Visto che…, …»\n3. Che cosa hai fatto durante l'ultima vacanza?\n4. Racconta due azioni che avvengono insieme: «Ascoltando la musica, …»\n5. Sei d'accordo con questa idea? Esprimi un dubbio: «È una buona idea; tuttavia…»\n6. Dammi due motivi per studiare una lingua straniera, il secondo con «inoltre».\n7. Hai perso il treno. Racconta che cosa è successo dopo, con «quindi».\n8. Qualcuno dice che l'italiano è difficile. Rispondi con un esempio, usando «infatti».",
+          "usesChunk": [
+            "cosydata:it:mentre:conjunction",
+            "cosydata:it:visto:noun",
+            "cosydata:it:durante:preposition",
+            "grammar:it-b1-gerundio-e-participio",
+            "cosydata:it:tuttavia:adverb",
+            "cosydata:it:inoltre:idiom",
+            "cosydata:it:quindi:adverb",
+            "cosydata:it:infatti:phrase"
+          ]
         },
         {
           "type": "instruction",
-          "content": "A memoria: che cosa significa questa parola e dove l'hai incontrata?"
+          "content": "Scegli una domanda e rispondi in tre frasi; poi riprova senza guardare."
         },
         {
           "type": "input",
-          "placeholder": "è che — significato e contesto"
+          "placeholder": "la tua risposta, tre frasi"
         }
       ]
     },

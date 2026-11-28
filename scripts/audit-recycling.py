@@ -72,6 +72,8 @@ def collect() -> dict:
     decks_per_language: collections.Counter[str] = collections.Counter()
     prior_texts: collections.Counter[str] = collections.Counter()
     decks = 0
+    with_returns = 0
+    returns_count = 0
 
     for path in sorted(glob.glob("lessons/**/*.json", recursive=True)):
         try:
@@ -88,6 +90,10 @@ def collect() -> dict:
         recycling = deck.get("recycling")
         prior = recycling.get("prior", "") if isinstance(recycling, dict) else recycling
         prior = (prior or "").strip()
+        blocks = (recycling or {}).get("priorBlocks") if isinstance(recycling, dict) else None
+        if blocks:
+            with_returns += 1
+            returns_count += len(blocks)
         prior_texts[prior] += 1
 
     per_language: dict[str, dict[str, int]] = {}
@@ -114,6 +120,8 @@ def collect() -> dict:
         "appearances": appearances,
         "prior_values": len(prior_texts),
         "prior_generic": generic,
+        "with_returns": with_returns,
+        "returns_count": returns_count,
         "vocabulary_size": {k: len(v) for k, v in vocab.items()},
     }
 
@@ -151,6 +159,8 @@ def render(result: dict) -> str:
         lines.append(f"| {bucket} | {count} | {count / total_seen * 100:.1f}% |" if total_seen else "")
 
     lines += ["", "## The recycling field", "",
+              f"- decks with a structured retrieval set (`recycling.priorBlocks`): "
+              f"**{result['with_returns']}**, carrying {result['returns_count']} planned returns",
               f"- distinct `recycling.prior` strings: **{result['prior_values']}**",
               f"- decks whose prior line is a generic phrase rather than named items: "
               f"**{result['prior_generic']}**", ""]

@@ -9,6 +9,8 @@ what the retrieval planner reads.
 - resolved against COSYdata: **107** (21%)
 - unresolved: **345**, carrying a provisional `pending:` id
 - blocks the curriculum already repeats in a later lesson: **106** (accidental recycling, not scheduled)
+- hand-triaged: **6** blocks (the rest by rule)
+- roles: **244 hold** (scheduled for return), **256 recognise** (met once, on purpose, not returned)
 - by kind: collocation 103, frame 48, set-phrase 47, word 302
 
 ## Unresolved blocks by lesson
