@@ -216,6 +216,13 @@ repositories plus the proposed level model. Facts worth remembering before touch
   `Produzione libera:`). English B2 (15), French C1 (5) and French C2 (2) then went the same way,
   and those 22 are the last ones that needed no decision. Italian is finished at every level: B1 19 decks, A1 7 and A2 8 rewrote, and every
   Italian course now reports 0 form-first; English B2, French C1 and C2 also report 0.
+- what is left after that is exactly 53 decks: English B1 (26, the legacy bucket) and Greek A1/A2
+  (27). Every other course reads clean.
+- term matching is word-boundary based. Plain substring matching read the Italian term "verbi"
+  inside the German word "verbinden" and flagged a perfectly good German can-do.
+- a failed string replace can invent a finding: one edit put the German and Spanish verbs outside
+  TASK_HEADS, and Spanish instantly reported 40 form-first instead of 1. Sample the flags and read
+  the can-do before believing a jump.
 - Before rewriting a can-do, check it is really form-first: `--explain` catches the reader's own
   gaps. `Peut ...` was not in PREFIXES, and summarise, report, deliver, say, state, outline,
   formuler, citer, situer and illustrer were missing from the task verbs, so five decks were being

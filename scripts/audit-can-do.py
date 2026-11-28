@@ -55,7 +55,7 @@ TERMS = (
 # Can-dos open with a wrapper ("I can", "Je peux", "Могу"); the verb that matters comes after it.
 PREFIXES = (
     "i can ", "can ", "je peux ", "peut ", "peuvent ", "je sais ", "je suis capable de ", "j'arrive à ",
-    "могу ", "я могу ", "μπορώ ", "posso ", "sono in grado di ",
+    "могу ", "я могу ", "μπορώ ", "posso ", "sono in grado di ", "ich kann ", "puedo ",
 )
 
 # The form is the object of these: "use articles", "choose between tenses".
@@ -65,6 +65,10 @@ FORM_HEADS = (
     "distinguish", "apply", "choose", "avoid", "use", "employ",
     "образовывать", "спрягать", "различать", "употреблять", "использовать",
     "σχηματίζω", "κλίνω", "διακρίνω", "χρησιμοποιώ",
+    # German and Spanish, so those courses are read at all
+    "schreiben", "beschreiben", "erzählen", "sprechen", "fragen", "erklären",
+    "vergleichen", "berichten", "sagen",
+    "dar", "hablar", "describir", "contar", "explicar", "pedir", "comparar", "recomendar",
     "former", "conjuguer", "reconnaître", "distinguer",
 )
 
@@ -76,10 +80,10 @@ TASK_HEADS = (
     "evaluate", "negotiate", "critique", "lead", "present", "recommend", "compare",
     "persuade", "narrate", "complain", "review", "pitch", "summarise", "summarize",
     "report", "draft", "deliver", "demand", "propose", "edit", "translate", "judge",
-    "say", "state", "outline",
+    "say", "state", "outline", "name", "ask", "list", "identify", "spell",
     "compter", "nommer", "imaginer", "préparer", "évaluer", "rédiger", "composer",
     "modéliser", "rapporter", "nuancer", "mobiliser", "résumer", "traduire", "reformuler",
-    "citer", "situer", "illustrer", "formuler",
+    "citer", "situer", "illustrer", "formuler", "prononcer", "acheter", "commander", "mettre",
     "parlare", "descrivere", "raccontare", "spiegare", "discutere", "sostenere",
     "argomentare", "presentare", "chiedere", "rispondere", "evidenziare",
     "esprimere", "formulare", "motivare", "commentare", "suggerire", "riferire",
@@ -87,6 +91,9 @@ TASK_HEADS = (
     "рассказывать", "описывать", "говорить", "объяснять", "обсуждать", "анализировать",
     "сравнивать", "убеждать", "представлять", "жаловаться", "выражать", "формулировать",
     "μιλάω", "περιγράφω", "διηγούμαι", "εξηγώ", "συζητώ", "συγκρίνω", "εκφράζω", "διατυπώνω",
+    "schreiben", "beschreiben", "erzählen", "sprechen", "fragen", "erklären",
+    "vergleichen", "berichten", "sagen",
+    "hablar", "describir", "contar", "explicar", "pedir", "comparar", "recomendar", "dar",
 )
 
 
@@ -100,7 +107,7 @@ def classify(cando: str) -> str:
             text = text[len(prefix):]
             break
     head = text.split()[0].strip(",.:;") if text.split() else ""
-    has_term = any(term in text for term in TERMS)
+    has_term = any(re.search(rf"\b{re.escape(term)}\b", text) for term in TERMS)
     # "use the language from Unit 3 in a speaking task" is a task, not a form drill.
     if "use the language" in text or "speaking task" in text or "in a longer" in text:
         return "task"

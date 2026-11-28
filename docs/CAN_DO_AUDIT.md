@@ -11,32 +11,32 @@ themed unit should look like. The classifier is a triage aid, not a verdict: eve
 deck is sampled below so the call can be checked by eye.
 
 Decks read: 1606.
-form-first: 66 | task-with-grammar: 69 | task: 1407 | empty: 64
+form-first: 53 | task-with-grammar: 60 | task: 1429 | empty: 64
 
 | course | decks | task | task+grammar | form-first | form share |
 |---|---|---|---|---|---|
-| general-english-b1 | 120 | 87 | 7 | 26 | 22% |
+| general-english-b1 | 120 | 91 | 3 | 26 | 22% |
 | general-greek-a1 | 65 | 49 | 0 | 16 | 25% |
 | general-greek-a2 | 65 | 53 | 1 | 11 | 17% |
-| general-english-a1 | 181 | 178 | 0 | 3 | 2% |
-| general-english-a0 | 32 | 30 | 0 | 2 | 6% |
-| general-french-b1 | 65 | 46 | 17 | 2 | 3% |
-| general-english-a0-a1-inspired | 8 | 7 | 0 | 1 | 12% |
-| general-french-a1 | 142 | 138 | 3 | 1 | 1% |
-| general-french-a2 | 65 | 57 | 7 | 1 | 2% |
-| general-french-b2 | 65 | 64 | 0 | 1 | 2% |
-| general-german-a1 | 65 | 64 | 0 | 1 | 2% |
-| general-spanish-a1 | 65 | 64 | 0 | 1 | 2% |
 | english-b2 | 1 | 0 | 0 | 0 | 0% |
 | english-c1 | 1 | 0 | 0 | 0 | 0% |
+| general-english-a0-a1-inspired | 8 | 7 | 1 | 0 | 0% |
+| general-english-a0 | 32 | 32 | 0 | 0 | 0% |
+| general-english-a1 | 181 | 181 | 0 | 0 | 0% |
 | general-english-a2 | 93 | 89 | 4 | 0 | 0% |
-| general-english-b2 | 121 | 111 | 10 | 0 | 0% |
+| general-english-b2 | 121 | 114 | 7 | 0 | 0% |
+| general-french-a1 | 142 | 140 | 2 | 0 | 0% |
+| general-french-a2 | 65 | 57 | 8 | 0 | 0% |
+| general-french-b1 | 65 | 50 | 15 | 0 | 0% |
+| general-french-b2 | 65 | 65 | 0 | 0 | 0% |
 | general-french-c1 | 65 | 65 | 0 | 0 | 0% |
-| general-french-c2 | 65 | 59 | 6 | 0 | 0% |
+| general-french-c2 | 65 | 61 | 4 | 0 | 0% |
+| general-german-a1 | 65 | 65 | 0 | 0 | 0% |
 | general-italian-a1 | 65 | 63 | 2 | 0 | 0% |
 | general-italian-a2 | 65 | 61 | 4 | 0 | 0% |
 | general-italian-b1 | 65 | 57 | 8 | 0 | 0% |
 | general-portuguese-a1 | 65 | 65 | 0 | 0 | 0% |
+| general-spanish-a1 | 65 | 64 | 1 | 0 | 0% |
 | introductory | 1 | 0 | 0 | 0 | 0% |
 | science-en | 61 | 0 | 0 | 0 | 0% |
 
@@ -71,34 +71,3 @@ form-first: 66 | task-with-grammar: 69 | task: 1407 | empty: 64
 - `el-a2-i-prostaktiki.json` - Δίνω οδηγίες με την προστακτική.
 - `el-a2-i-ypotaktiki-me-na.json` - Χρησιμοποιώ την υποτακτική μετά από ρήματα.
 - `el-a2-klitika-me-prostaktiki.json` - Συνδυάζω προστακτική και κλιτικό σωστά.
-
-### general-english-a1 (3 flagged)
-- `ge-a1-classroom-interaction-requests.json` - I can use classroom communication phrases and request clarification.
-- `ge-a1-communication-breakdown-survival-strategies.json` - I can use clarification strategies when I do not understand or need repetition.
-- `numerals-a1.json` - I can use numbers up to 100 in everyday situations.
-
-### general-english-a0 (2 flagged)
-- `my-little-friend.json` - I can use possessive adjectives and 's to talk about family and friends.
-- `pronouns-plus-to-be.json` - I can use subject pronouns and 'to be' to say who I am and where I am from.
-
-### general-french-b1 (2 flagged)
-- `fr-b1-emissions-de-radio-podcasts-et-debats-televises.json` - Je peux employer ce qui, ce que, ce dont et la mise en relief.
-- `fr-b1-pronoms-relatifs-composes-lequel-auquel-duquel.json` - Je peux employer les pronoms relatifs composés lequel, auquel, duquel.
-
-### general-english-a0-a1-inspired (1 flagged)
-- `inspired-02-everyday-spaces.json` - I can name everyday objects, describe rooms and workspaces, use articles, and ask for things politely.
-
-### general-french-a1 (1 flagged)
-- `fr-a1-paires-minimales-voyelles.json` - Je peux distinguer les voyelles et construire des phrases simples.
-
-### general-french-a2 (1 flagged)
-- `fr-a2-articles-partitifs-et-expressions-de-quantite.json` - Je peux acheter des quantités précises et utiliser les articles partitifs.
-
-### general-french-b2 (1 flagged)
-- `fr-b2-l-inversion-du-sujet-apres-les-adverbes-de-tete.json` - Je peux employer l'inversion après les adverbes de tête pour donner du relief.
-
-### general-german-a1 (1 flagged)
-- `de-a1-schreiben-kurze-texte.json` - Ich kann kurze Texte schreiben und Sätze verbinden.
-
-### general-spanish-a1 (1 flagged)
-- `es-a1-vida-sana.json` - Puedo dar consejos para una vida sana con el imperativo formal.
