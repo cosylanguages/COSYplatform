@@ -216,6 +216,10 @@ repositories plus the proposed level model. Facts worth remembering before touch
   `Produzione libera:`). English B2 (15), French C1 (5) and French C2 (2) then went the same way,
   and those 22 are the last ones that needed no decision. Italian is finished at every level: B1 19 decks, A1 7 and A2 8 rewrote, and every
   Italian course now reports 0 form-first; English B2, French C1 and C2 also report 0.
+- Greek is deliberately untouched: `docs/GREEK_CAN_DO_PROPOSALS.md` holds 27 before/after pairs
+  written to the catalogue pattern (Μπορώ να + subjunctive) and waiting for a native reader. Applying
+  one is three edits per lesson: the `cando:` note, the deck's `canDo`, and the two copies of it on
+  slide 1 and slide 7.
 - what is left after that is exactly 53 decks: English B1 (26, the legacy bucket) and Greek A1/A2
   (27). Every other course reads clean.
 - term matching is word-boundary based. Plain substring matching read the Italian term "verbi"
