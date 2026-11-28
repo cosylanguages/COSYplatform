@@ -5,7 +5,7 @@ takes the scaffolding from L10N, so the deck is written in the language being ta
 curriculum carries no grammarIds are reported and skipped: their manual page does not exist yet, and a
 deck without the page would be a word list with no rule behind it.
 
-    python3 scripts/lesson-build/build_it_a2_decks.py [--write]
+    python3 scripts/lesson-build/build_it_decks.py [--level a2|b1] [--write]
 """
 import argparse
 import json
@@ -23,10 +23,14 @@ MANUALS_URL = 'https://cosylanguages.github.io/COSYManuals/'
 
 LANG = 'it'
 LEVEL = 'a2'
+LEVELS = ('a1', 'a2', 'b1')
 COURSE = f'general-it-{LEVEL}'
 TRACK_TITLE = f'Italiano Generale {LEVEL.upper()}'
 FOLDER = f'general-italian-{LEVEL}'
-PREVIOUS = 'il livello A1 e il modulo precedente'
+PREVIOUS_BY_LEVEL = {'a1': 'il livello A0 e il modulo precedente',
+                     'a2': 'il livello A1 e il modulo precedente',
+                     'b1': 'il livello A2 e il modulo precedente'}
+PREVIOUS = PREVIOUS_BY_LEVEL[LEVEL]
 
 
 def slug(text):
@@ -236,4 +240,12 @@ def main(write=False):
 if __name__ == '__main__':
     ap = argparse.ArgumentParser()
     ap.add_argument('--write', action='store_true')
-    main(write=ap.parse_args().write)
+    ap.add_argument('--level', default=LEVEL, choices=LEVELS)
+    a = ap.parse_args()
+    if a.level != LEVEL:
+        LEVEL = a.level
+        COURSE = f'general-{LANG}-{LEVEL}'
+        TRACK_TITLE = f'Italiano Generale {LEVEL.upper()}'
+        FOLDER = f'general-italian-{LEVEL}'
+        PREVIOUS = PREVIOUS_BY_LEVEL[LEVEL]
+    main(write=a.write)

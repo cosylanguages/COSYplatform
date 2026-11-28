@@ -5,24 +5,2180 @@
   "units": [
     {
       "unit": 1,
-      "title": "Unità 1: Esprimere opinioni e dubbi",
+      "title": "Unità 1: Raccontare e collegare",
       "lessons": [
         {
           "lesson": 1,
-          "title": "Il congiuntivo presente — Opinione e desiderio",
+          "type": "gv",
+          "title": "Tempi del passato nel racconto",
+          "duration_minutes": 60,
           "grammar": [
-            "Penso che + congiuntivo",
-            "Spero che + congiuntivo"
+            "Passato prossimo e imperfetto insieme",
+            "Trapassato per l'anteriorità"
           ],
           "vocabulary": [
-            "Secondo me",
-            "Opinione",
-            "Dubbio",
-            "Speranza",
-            "Ipotesi"
+            "racconto",
+            "sfondo",
+            "episodio",
+            "improvviso",
+            "intanto",
+            "frattempo",
+            "svolta",
+            "ricordo"
           ],
-          "teacher_notes": "code: \"IT-B1-001\"\ncando: \"Sa esprimere un'opinione personale con sfumature di dubbio\"",
-          "recycled": "Foundational communication & basic level vocabulary"
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-001\"\ncando: \"Raccontare un episodio alternando sfondo e fatti.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-a2-passato-prossimo-vs-imperfetto",
+            "it-a2-trapassato-prossimo"
+          ]
+        },
+        {
+          "lesson": 2,
+          "type": "gv",
+          "title": "L'anteriorità nel racconto",
+          "duration_minutes": 60,
+          "grammar": [
+            "Trapassato prossimo",
+            "Marcatori di anteriorità"
+          ],
+          "vocabulary": [
+            "già",
+            "prima",
+            "ancora non",
+            "quando",
+            "dopo che",
+            "precedente",
+            "antefatto",
+            "conclusione"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-002\"\ncando: \"Collocare un fatto prima di un altro fatto passato.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-a2-trapassato-prossimo",
+            "it-a2-passato-prossimo-vs-imperfetto"
+          ]
+        },
+        {
+          "lesson": 3,
+          "type": "gv",
+          "title": "I connettivi del racconto",
+          "duration_minutes": 60,
+          "grammar": [
+            "Connettivi temporali e logici",
+            "Coesione del testo"
+          ],
+          "vocabulary": [
+            "tuttavia",
+            "inoltre",
+            "quindi",
+            "infatti",
+            "dunque",
+            "invece",
+            "pertanto",
+            "comunque"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-003\"\ncando: \"Collegare le parti di un racconto con i connettivi.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-connettivi-testuali"
+          ]
+        },
+        {
+          "lesson": 4,
+          "type": "gv",
+          "title": "Gerundio e participio",
+          "duration_minutes": 60,
+          "grammar": [
+            "Gerundio presente e passato",
+            "Participio in funzione verbale"
+          ],
+          "vocabulary": [
+            "mentre",
+            "pur",
+            "essendo",
+            "avendo",
+            "finito",
+            "visto",
+            "considerato",
+            "durante"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-004\"\ncando: \"Rendere più dense le frasi con gerundio e participio.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-gerundio-e-participio"
+          ]
+        },
+        {
+          "lesson": 5,
+          "type": "gv",
+          "title": "L'ordine delle parole e l'enfasi",
+          "duration_minutes": 60,
+          "grammar": [
+            "Dislocazione",
+            "Frase scissa"
+          ],
+          "vocabulary": [
+            "è che",
+            "quanto a",
+            "proprio",
+            "soprattutto",
+            "rilievo",
+            "enfasi",
+            "tema",
+            "commento"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-005\"\ncando: \"Mettere in rilievo l'informazione che conta.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-ordine-delle-parole-e-enfasi"
+          ]
+        }
+      ]
+    },
+    {
+      "unit": 2,
+      "title": "Unità 2: Il congiuntivo presente",
+      "lessons": [
+        {
+          "lesson": 1,
+          "type": "gv",
+          "title": "Le forme del congiuntivo presente",
+          "duration_minutes": 60,
+          "grammar": [
+            "Coniugazioni regolari",
+            "Forme irregolari"
+          ],
+          "vocabulary": [
+            "che io sia",
+            "che tu abbia",
+            "che vada",
+            "che faccia",
+            "che possa",
+            "speranza",
+            "dubbio",
+            "possibilità"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-006\"\ncando: \"Formare il congiuntivo presente dei verbi comuni.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-congiuntivo-presente"
+          ]
+        },
+        {
+          "lesson": 2,
+          "type": "gv",
+          "title": "I verbi che reggono il congiuntivo",
+          "duration_minutes": 60,
+          "grammar": [
+            "Verbi di opinione e volontà",
+            "Espressioni impersonali"
+          ],
+          "vocabulary": [
+            "penso che",
+            "credo che",
+            "spero che",
+            "temo che",
+            "mi sembra che",
+            "è importante che",
+            "è possibile che",
+            "suppongo che"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-007\"\ncando: \"Scegliere il congiuntivo dopo i verbi di opinione e volontà.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-verbi-che-reggono-il-congiuntivo"
+          ]
+        },
+        {
+          "lesson": 3,
+          "type": "gv",
+          "title": "Le congiunzioni che vogliono il congiuntivo",
+          "duration_minutes": 60,
+          "grammar": [
+            "Concessione, scopo, condizione",
+            "Prima che e senza che"
+          ],
+          "vocabulary": [
+            "benché",
+            "sebbene",
+            "affinché",
+            "purché",
+            "a meno che",
+            "prima che",
+            "senza che",
+            "nonostante"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-008\"\ncando: \"Usare il congiuntivo dopo le congiunzioni che lo richiedono.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-congiunzioni-con-congiuntivo"
+          ]
+        },
+        {
+          "lesson": 4,
+          "type": "gv",
+          "title": "Il congiuntivo nelle relative",
+          "duration_minutes": 60,
+          "grammar": [
+            "Referente certo e incerto",
+            "Dopo il superlativo"
+          ],
+          "vocabulary": [
+            "cerco un",
+            "non c'è nessuno che",
+            "l'unico che",
+            "il migliore che",
+            "chiunque",
+            "qualunque",
+            "chi",
+            "quello che"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-009\"\ncando: \"Distinguere relativa certa e relativa ipotetica.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-congiuntivo-nelle-relative"
+          ]
+        },
+        {
+          "lesson": 5,
+          "type": "gv",
+          "title": "L'esortativo e gli auguri",
+          "duration_minutes": 60,
+          "grammar": [
+            "Che più congiuntivo",
+            "Formule di cortesia"
+          ],
+          "vocabulary": [
+            "che vada bene",
+            "che sia chiaro",
+            "che entri",
+            "che si accomodi",
+            "auguri",
+            "in bocca al lupo",
+            "buon lavoro",
+            "congratulazioni"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-010\"\ncando: \"Dare ordini cortesi e formulare auguri in terza persona.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-esortativo-che-congiuntivo"
+          ]
+        }
+      ]
+    },
+    {
+      "unit": 3,
+      "title": "Unità 3: Il congiuntivo nel passato",
+      "lessons": [
+        {
+          "lesson": 1,
+          "type": "gv",
+          "title": "Il congiuntivo passato",
+          "duration_minutes": 60,
+          "grammar": [
+            "Formazione con avere ed essere",
+            "Anteriorità rispetto al presente"
+          ],
+          "vocabulary": [
+            "abbia fatto",
+            "sia andato",
+            "abbia visto",
+            "abbia detto",
+            "prima di",
+            "entro",
+            "finora",
+            "recentemente"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-011\"\ncando: \"Esprimere un fatto anteriore con il congiuntivo passato.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-congiuntivo-passato"
+          ]
+        },
+        {
+          "lesson": 2,
+          "type": "gv",
+          "title": "Il congiuntivo imperfetto",
+          "duration_minutes": 60,
+          "grammar": [
+            "Forme regolari",
+            "Ipotesi e desiderio"
+          ],
+          "vocabulary": [
+            "fossi",
+            "avessi",
+            "potessi",
+            "volessi",
+            "come se",
+            "magari",
+            "desiderio",
+            "ipotesi"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-012\"\ncando: \"Usare il congiuntivo imperfetto nell'ipotesi e nel desiderio.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-congiuntivo-imperfetto"
+          ]
+        },
+        {
+          "lesson": 3,
+          "type": "gv",
+          "title": "Il congiuntivo trapassato",
+          "duration_minutes": 60,
+          "grammar": [
+            "Avessi e fossi più participio",
+            "Terzo tipo"
+          ],
+          "vocabulary": [
+            "avessi saputo",
+            "fosse partito",
+            "avrei voluto",
+            "rimpianto",
+            "scelta",
+            "conseguenza",
+            "passato",
+            "anteriorità"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-013\"\ncando: \"Esprimere l'ipotesi irreale del passato.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-congiuntivo-trapassato"
+          ]
+        },
+        {
+          "lesson": 4,
+          "type": "gv",
+          "title": "La concordanza dei tempi",
+          "duration_minutes": 60,
+          "grammar": [
+            "Reggente presente e passata",
+            "Anteriorità e contemporaneità"
+          ],
+          "vocabulary": [
+            "penso che",
+            "pensavo che",
+            "credo che",
+            "credevo che",
+            "spero che",
+            "speravo che",
+            "contemporaneo",
+            "anteriore"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-014\"\ncando: \"Far concordare il tempo della subordinata con la reggente.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-concordanza-dei-tempi"
+          ]
+        },
+        {
+          "lesson": 5,
+          "type": "gv",
+          "title": "Congiuntivo o indicativo",
+          "duration_minutes": 60,
+          "grammar": [
+            "Certezza e opinione",
+            "Verbi di constatazione"
+          ],
+          "vocabulary": [
+            "so che",
+            "è vero che",
+            "vedo che",
+            "penso che",
+            "mi sembra che",
+            "secondo me",
+            "evidentemente",
+            "probabilmente"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-015\"\ncando: \"Scegliere tra indicativo e congiuntivo secondo il grado di certezza.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-congiuntivo-presente",
+            "it-b1-verbi-che-reggono-il-congiuntivo"
+          ]
+        }
+      ]
+    },
+    {
+      "unit": 4,
+      "title": "Unità 4: Ipotesi e possibilità",
+      "lessons": [
+        {
+          "lesson": 1,
+          "type": "gv",
+          "title": "Il periodo ipotetico del secondo tipo",
+          "duration_minutes": 60,
+          "grammar": [
+            "Congiuntivo imperfetto e condizionale",
+            "Ipotesi improbabile"
+          ],
+          "vocabulary": [
+            "se potessi",
+            "se avessi",
+            "se fossi",
+            "verrei",
+            "cambierei",
+            "possibilità",
+            "immaginare",
+            "sogno"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-016\"\ncando: \"Formulare un'ipotesi improbabile nel presente.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-a2-periodo-ipotetico-2"
+          ]
+        },
+        {
+          "lesson": 2,
+          "type": "gv",
+          "title": "Il periodo ipotetico del terzo tipo",
+          "duration_minutes": 60,
+          "grammar": [
+            "Congiuntivo trapassato e condizionale passato",
+            "Rimpianto"
+          ],
+          "vocabulary": [
+            "se avessi saputo",
+            "sarei venuto",
+            "avrei potuto",
+            "avrei dovuto",
+            "rimpianto",
+            "occasione",
+            "errore",
+            "conseguenza"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-017\"\ncando: \"Parlare di ciò che non è accaduto e delle sue conseguenze.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-periodo-ipotetico-3"
+          ]
+        },
+        {
+          "lesson": 3,
+          "type": "gv",
+          "title": "Il periodo ipotetico misto",
+          "duration_minutes": 60,
+          "grammar": [
+            "Condizione passata e risultato presente",
+            "Condizione presente e risultato passato"
+          ],
+          "vocabulary": [
+            "ora",
+            "adesso",
+            "oggi",
+            "allora",
+            "se avessi studiato",
+            "se fossi più",
+            "sarei",
+            "avrei"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-018\"\ncando: \"Combinare i due tipi quando i tempi non coincidono.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-periodo-ipotetico-misto"
+          ]
+        },
+        {
+          "lesson": 4,
+          "type": "gv",
+          "title": "Il condizionale passato",
+          "duration_minutes": 60,
+          "grammar": [
+            "Forme e usi",
+            "Notizie non confermate"
+          ],
+          "vocabulary": [
+            "avrei voluto",
+            "sarei partito",
+            "secondo le fonti",
+            "sarebbe",
+            "avrebbero",
+            "indiscrezione",
+            "conferma",
+            "smentita"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-019\"\ncando: \"Usare il condizionale passato per il futuro nel passato e per le notizie non confermate.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-condizionale-passato"
+          ]
+        },
+        {
+          "lesson": 5,
+          "type": "gv",
+          "title": "Il futuro anteriore",
+          "duration_minutes": 60,
+          "grammar": [
+            "Formazione",
+            "Supposizione e anteriorità futura"
+          ],
+          "vocabulary": [
+            "avrò finito",
+            "sarà partito",
+            "entro",
+            "quando",
+            "appena",
+            "ormai",
+            "probabilmente",
+            "concluso"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-020\"\ncando: \"Esprimere un fatto concluso prima di un momento futuro.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-futuro-anteriore"
+          ]
+        }
+      ]
+    },
+    {
+      "unit": 5,
+      "title": "Unità 5: Discorso, voce e impersonalità",
+      "lessons": [
+        {
+          "lesson": 1,
+          "type": "gv",
+          "title": "Il discorso indiretto",
+          "duration_minutes": 60,
+          "grammar": [
+            "Trasformazione dei tempi",
+            "Pronomi e indicatori"
+          ],
+          "vocabulary": [
+            "ha detto che",
+            "mi ha chiesto se",
+            "ha spiegato che",
+            "ha promesso di",
+            "qui",
+            "oggi",
+            "domani",
+            "ieri"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-021\"\ncando: \"Riferire le parole di qualcuno al presente.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-discorso-indiretto"
+          ]
+        },
+        {
+          "lesson": 2,
+          "type": "gv",
+          "title": "Riferire al passato",
+          "duration_minutes": 60,
+          "grammar": [
+            "Concordanza nel discorso indiretto",
+            "Deissi temporale"
+          ],
+          "vocabulary": [
+            "aveva detto che",
+            "mi aveva chiesto",
+            "il giorno prima",
+            "il giorno dopo",
+            "allora",
+            "là",
+            "quello",
+            "sarebbe"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-022\"\ncando: \"Riferire un discorso quando il verbo introduttivo è al passato.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-discorso-indiretto",
+            "it-b1-concordanza-dei-tempi"
+          ]
+        },
+        {
+          "lesson": 3,
+          "type": "gv",
+          "title": "La forma passiva avanzata",
+          "duration_minutes": 60,
+          "grammar": [
+            "Passivo con andare e venire",
+            "Passivo nei tempi composti"
+          ],
+          "vocabulary": [
+            "viene pubblicato",
+            "va firmato",
+            "è stato approvato",
+            "sarà discusso",
+            "autore",
+            "agente",
+            "processo",
+            "ufficio"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-023\"\ncando: \"Usare il passivo in contesti formali e burocratici.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-forma-passiva-avanzata"
+          ]
+        },
+        {
+          "lesson": 4,
+          "type": "gv",
+          "title": "Il si impersonale e passivante",
+          "duration_minutes": 60,
+          "grammar": [
+            "Si impersonale",
+            "Si passivante con il verbo"
+          ],
+          "vocabulary": [
+            "si dice",
+            "si pensa",
+            "si vendono",
+            "si parla",
+            "si può",
+            "in Italia",
+            "generalmente",
+            "abitudine"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-024\"\ncando: \"Parlare in generale senza indicare un soggetto.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-si-impersonale-e-passivante"
+          ]
+        },
+        {
+          "lesson": 5,
+          "type": "gv",
+          "title": "Scrivere in modo impersonale",
+          "duration_minutes": 60,
+          "grammar": [
+            "Registro impersonale",
+            "Nominalizzazione"
+          ],
+          "vocabulary": [
+            "si richiede",
+            "si prega di",
+            "occorre",
+            "è necessario",
+            "normativa",
+            "procedura",
+            "domanda",
+            "scadenza"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-025\"\ncando: \"Scrivere avvisi e istruzioni in registro impersonale.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-si-impersonale-e-passivante",
+            "it-b1-forma-passiva-avanzata"
+          ]
+        }
+      ]
+    },
+    {
+      "unit": 6,
+      "title": "Unità 6: Pronomi, verbi e preposizioni",
+      "lessons": [
+        {
+          "lesson": 1,
+          "type": "gv",
+          "title": "I pronomi combinati",
+          "duration_minutes": 60,
+          "grammar": [
+            "Indiretto più diretto",
+            "Glielo e le forme unite"
+          ],
+          "vocabulary": [
+            "me lo",
+            "te la",
+            "glielo",
+            "ce ne",
+            "ve li",
+            "restituire",
+            "prestare",
+            "spiegare"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-026\"\ncando: \"Sostituire due complementi con un solo pronome.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-pronomi-combinati"
+          ]
+        },
+        {
+          "lesson": 2,
+          "type": "gv",
+          "title": "I pronomi relativi",
+          "duration_minutes": 60,
+          "grammar": [
+            "Che, cui, il quale",
+            "Chi e quanto"
+          ],
+          "vocabulary": [
+            "che",
+            "cui",
+            "il quale",
+            "la quale",
+            "chi",
+            "quanto",
+            "colui che",
+            "il cui"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-027\"\ncando: \"Collegare due frasi con il pronome relativo giusto.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-pronomi-relativi-cui-chi"
+          ]
+        },
+        {
+          "lesson": 3,
+          "type": "gv",
+          "title": "I verbi pronominali",
+          "duration_minutes": 60,
+          "grammar": [
+            "Verbi intrinsecamente pronominali",
+            "Cambi di significato"
+          ],
+          "vocabulary": [
+            "andarsene",
+            "farcela",
+            "prendersela",
+            "rendersi conto",
+            "accorgersi",
+            "pentirsi",
+            "arrabbiarsi",
+            "trasferirsi"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-028\"\ncando: \"Usare i verbi pronominali e riconoscere il cambio di senso.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-verbi-pronominali"
+          ]
+        },
+        {
+          "lesson": 4,
+          "type": "gv",
+          "title": "Le preposizioni dei verbi",
+          "duration_minutes": 60,
+          "grammar": [
+            "Di, a, su, da",
+            "Verbi senza preposizione"
+          ],
+          "vocabulary": [
+            "cercare di",
+            "riuscire a",
+            "contare su",
+            "dipendere da",
+            "approfittare di",
+            "interessarsi a",
+            "smettere di",
+            "imparare a"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-029\"\ncando: \"Scegliere la preposizione giusta dopo il verbo.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-preposizioni-con-i-verbi"
+          ]
+        },
+        {
+          "lesson": 5,
+          "type": "gv",
+          "title": "Ci e ne nei testi",
+          "duration_minutes": 60,
+          "grammar": [
+            "Ci come luogo e argomento",
+            "Ne partitivo e di argomento"
+          ],
+          "vocabulary": [
+            "ci penso",
+            "ci credo",
+            "ne parlo",
+            "ne ho due",
+            "non ci riesco",
+            "me ne occupo",
+            "argomento",
+            "quantità"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-030\"\ncando: \"Evitare ripetizioni con ci e ne in un testo scritto.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-a2-i-pronomi-ci-e-ne",
+            "it-b1-verbi-pronominali"
+          ]
+        }
+      ]
+    },
+    {
+      "unit": 7,
+      "title": "Unità 7: Descrizione e sfumature",
+      "lessons": [
+        {
+          "lesson": 1,
+          "type": "gv",
+          "title": "Aggettivi e pronomi indefiniti",
+          "duration_minutes": 60,
+          "grammar": [
+            "Qualche, alcuni, nessuno",
+            "Ogni, tutti, ciascuno"
+          ],
+          "vocabulary": [
+            "qualche",
+            "alcuni",
+            "nessuno",
+            "ogni",
+            "tutti",
+            "ciascuno",
+            "qualunque",
+            "chiunque"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-031\"\ncando: \"Indicare quantità e identità indefinite con precisione.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-aggettivi-e-pronomi-indefiniti"
+          ]
+        },
+        {
+          "lesson": 2,
+          "type": "gv",
+          "title": "Gli avverbi in -mente",
+          "duration_minutes": 60,
+          "grammar": [
+            "Formazione",
+            "Avverbi irregolari"
+          ],
+          "vocabulary": [
+            "lentamente",
+            "facilmente",
+            "volentieri",
+            "bene",
+            "male",
+            "purtroppo",
+            "addirittura",
+            "pressappoco"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-032\"\ncando: \"Modificare verbi e aggettivi con gli avverbi giusti.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-avverbi-in-mente"
+          ]
+        },
+        {
+          "lesson": 3,
+          "type": "gv",
+          "title": "Comparativi e superlativi irregolari",
+          "duration_minutes": 60,
+          "grammar": [
+            "Migliore, peggiore, maggiore",
+            "Ottimo e pessimo"
+          ],
+          "vocabulary": [
+            "migliore",
+            "peggiore",
+            "maggiore",
+            "minore",
+            "ottimo",
+            "pessimo",
+            "massimo",
+            "minimo"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-033\"\ncando: \"Confrontare con le forme irregolari senza doppi superlativi.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-comparativi-e-superlativi-irregolari"
+          ]
+        },
+        {
+          "lesson": 4,
+          "type": "gv",
+          "title": "I nomi alterati",
+          "duration_minutes": 60,
+          "grammar": [
+            "Diminutivi, accrescitivi, dispregiativi",
+            "Alterati lessicalizzati"
+          ],
+          "vocabulary": [
+            "casetta",
+            "librone",
+            "gattino",
+            "giornataccia",
+            "tesoruccio",
+            "portone",
+            "spuntino",
+            "attimino"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-034\"\ncando: \"Esprimere affetto, grandezza e giudizio con i suffissi.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-nomi-alterati"
+          ]
+        },
+        {
+          "lesson": 5,
+          "type": "gv",
+          "title": "Valutare e graduare un giudizio",
+          "duration_minutes": 60,
+          "grammar": [
+            "Avverbi di grado",
+            "Sfumature di giudizio"
+          ],
+          "vocabulary": [
+            "piuttosto",
+            "alquanto",
+            "davvero",
+            "assolutamente",
+            "in parte",
+            "senz'altro",
+            "moderatamente",
+            "notevole"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-035\"\ncando: \"Graduare un giudizio invece di dire solo bene o male.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-comparativi-e-superlativi-irregolari",
+            "it-b1-avverbi-in-mente"
+          ]
+        }
+      ]
+    },
+    {
+      "unit": 8,
+      "title": "Unità 8: Lavoro e formazione",
+      "lessons": [
+        {
+          "lesson": 1,
+          "type": "gv",
+          "title": "Leggere un annuncio di lavoro",
+          "duration_minutes": 60,
+          "grammar": [
+            "Lessico del lavoro",
+            "Requisiti e condizioni"
+          ],
+          "vocabulary": [
+            "annuncio",
+            "requisito",
+            "esperienza",
+            "contratto",
+            "full time",
+            "stage",
+            "candidatura",
+            "scadenza"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-036\"\ncando: \"Leggere un annuncio e capire che cosa richiede.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-cercare-lavoro"
+          ]
+        },
+        {
+          "lesson": 2,
+          "type": "gv",
+          "title": "Scrivere una lettera di presentazione",
+          "duration_minutes": 60,
+          "grammar": [
+            "Registro formale",
+            "Struttura della lettera"
+          ],
+          "vocabulary": [
+            "gentile",
+            "in riferimento a",
+            "mi candido",
+            "in allegato",
+            "resto a disposizione",
+            "cordiali saluti",
+            "competenza",
+            "motivazione"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-037\"\ncando: \"Scrivere una candidatura breve e pertinente.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-lettera-di-presentazione"
+          ]
+        },
+        {
+          "lesson": 3,
+          "type": "gv",
+          "title": "Affrontare un colloquio",
+          "duration_minutes": 60,
+          "grammar": [
+            "Domande tipiche",
+            "Punti di forza e debolezza"
+          ],
+          "vocabulary": [
+            "mi descriva",
+            "punto di forza",
+            "punto debole",
+            "motivazione",
+            "obiettivo",
+            "ruolo",
+            "team",
+            "disponibilità"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-038\"\ncando: \"Rispondere alle domande di un colloquio con frasi complete.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-colloquio-di-lavoro"
+          ]
+        },
+        {
+          "lesson": 4,
+          "type": "gv",
+          "title": "Raccontare la propria esperienza",
+          "duration_minutes": 60,
+          "grammar": [
+            "Passato prossimo e imperfetto",
+            "Competenze dichiarate"
+          ],
+          "vocabulary": [
+            "ho maturato",
+            "mi sono occupato",
+            "ho gestito",
+            "ho coordinato",
+            "esperienza",
+            "settore",
+            "mansione",
+            "risultato"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-039\"\ncando: \"Raccontare il proprio percorso professionale in modo ordinato.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-a2-curriculum-e-colloquio",
+            "it-b1-colloquio-di-lavoro"
+          ]
+        },
+        {
+          "lesson": 5,
+          "type": "gv",
+          "title": "Competenze e formazione continua",
+          "duration_minutes": 60,
+          "grammar": [
+            "Lessico delle competenze",
+            "Progetti di formazione"
+          ],
+          "vocabulary": [
+            "competenza",
+            "aggiornamento",
+            "corso",
+            "certificazione",
+            "soft skill",
+            "obiettivo",
+            "crescita",
+            "specializzazione"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-040\"\ncando: \"Parlare di competenze e di formazione futura.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-competenze-e-formazione"
+          ]
+        }
+      ]
+    },
+    {
+      "unit": 9,
+      "title": "Unità 9: Media, società e opinione",
+      "lessons": [
+        {
+          "lesson": 1,
+          "type": "gv",
+          "title": "Media e informazione",
+          "duration_minutes": 60,
+          "grammar": [
+            "Lessico dei media",
+            "Titoli e generi"
+          ],
+          "vocabulary": [
+            "quotidiano",
+            "telegiornale",
+            "titolo",
+            "articolo",
+            "fonte",
+            "intervista",
+            "inchiesta",
+            "rassegna"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-041\"\ncando: \"Parlare dei media e capire un titolo di giornale.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-media-e-informazione"
+          ]
+        },
+        {
+          "lesson": 2,
+          "type": "gv",
+          "title": "Riconoscere una notizia falsa",
+          "duration_minutes": 60,
+          "grammar": [
+            "Verifica delle fonti",
+            "Segnali di allarme"
+          ],
+          "vocabulary": [
+            "fonte",
+            "verificare",
+            "bufala",
+            "titolo ingannevole",
+            "conferma",
+            "smentita",
+            "dubbio",
+            "attendibile"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-042\"\ncando: \"Valutare l'attendibilità di una notizia.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-media-e-informazione",
+            "it-b1-discorso-indiretto"
+          ]
+        },
+        {
+          "lesson": 3,
+          "type": "gv",
+          "title": "Argomentare un'opinione",
+          "duration_minutes": 60,
+          "grammar": [
+            "Tesi, argomenti, esempi",
+            "Connettivi argomentativi"
+          ],
+          "vocabulary": [
+            "secondo me",
+            "da un lato",
+            "dall'altro",
+            "inoltre",
+            "tuttavia",
+            "in conclusione",
+            "a mio avviso",
+            "d'altra parte"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-043\"\ncando: \"Sostenere un'opinione con argomenti ordinati.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-argomentare-un-opinione"
+          ]
+        },
+        {
+          "lesson": 4,
+          "type": "gv",
+          "title": "Società e cittadinanza",
+          "duration_minutes": 60,
+          "grammar": [
+            "Istituzioni e partecipazione",
+            "Lessico civico"
+          ],
+          "vocabulary": [
+            "comune",
+            "regione",
+            "voto",
+            "diritto",
+            "dovere",
+            "cittadino",
+            "associazione",
+            "volontariato"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-044\"\ncando: \"Parlare di istituzioni e partecipazione civica.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-societa-e-cittadinanza"
+          ]
+        },
+        {
+          "lesson": 5,
+          "type": "gv",
+          "title": "Diritti e servizi",
+          "duration_minutes": 60,
+          "grammar": [
+            "Richiedere un servizio",
+            "Registro impersonale"
+          ],
+          "vocabulary": [
+            "richiesta",
+            "modulo",
+            "sportello",
+            "agevolazione",
+            "requisito",
+            "documentazione",
+            "termine",
+            "ricorso"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-045\"\ncando: \"Informarsi sui servizi e presentare una richiesta.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-societa-e-cittadinanza",
+            "it-a2-servizi-pubblici-e-moduli"
+          ]
+        }
+      ]
+    },
+    {
+      "unit": 10,
+      "title": "Unità 10: Ambiente e sostenibilità",
+      "lessons": [
+        {
+          "lesson": 1,
+          "type": "gv",
+          "title": "Ambiente e clima",
+          "duration_minutes": 60,
+          "grammar": [
+            "Lessico ambientale",
+            "Cause e conseguenze"
+          ],
+          "vocabulary": [
+            "clima",
+            "inquinamento",
+            "emissioni",
+            "siccità",
+            "alluvione",
+            "temperatura",
+            "biodiversità",
+            "impatto"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-046\"\ncando: \"Descrivere un problema ambientale e le sue cause.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-ambiente-e-clima"
+          ]
+        },
+        {
+          "lesson": 2,
+          "type": "gv",
+          "title": "Consumi e sostenibilità",
+          "duration_minutes": 60,
+          "grammar": [
+            "Consumo responsabile",
+            "Quantità e frequenza"
+          ],
+          "vocabulary": [
+            "consumo",
+            "rifiuti",
+            "riciclo",
+            "imballaggio",
+            "filiera",
+            "km zero",
+            "spreco",
+            "risparmio"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-047\"\ncando: \"Parlare di consumi e di scelte sostenibili.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-sostenibilita-e-consumi"
+          ]
+        },
+        {
+          "lesson": 3,
+          "type": "gv",
+          "title": "Energia e rifiuti",
+          "duration_minutes": 60,
+          "grammar": [
+            "Energie rinnovabili",
+            "Gestione dei rifiuti"
+          ],
+          "vocabulary": [
+            "rinnovabile",
+            "solare",
+            "eolico",
+            "raccolta differenziata",
+            "compost",
+            "discarica",
+            "efficienza",
+            "consumo"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-048\"\ncando: \"Spiegare come funziona la raccolta differenziata e l'energia rinnovabile.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-ambiente-e-clima",
+            "it-b1-sostenibilita-e-consumi"
+          ]
+        },
+        {
+          "lesson": 4,
+          "type": "gv",
+          "title": "Turismo sostenibile",
+          "duration_minutes": 60,
+          "grammar": [
+            "Turismo e territorio",
+            "Pro e contro"
+          ],
+          "vocabulary": [
+            "turismo",
+            "overtourism",
+            "territorio",
+            "stagione",
+            "impatto",
+            "sentiero",
+            "ospitalità",
+            "locanda"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-049\"\ncando: \"Discutere i vantaggi e i costi del turismo.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-turismo-sostenibile"
+          ]
+        },
+        {
+          "lesson": 5,
+          "type": "gv",
+          "title": "Il dibattito sull'ambiente",
+          "duration_minutes": 60,
+          "grammar": [
+            "Argomentare su un tema controverso",
+            "Rispondere a un'obiezione"
+          ],
+          "vocabulary": [
+            "a mio parere",
+            "obiezione",
+            "al contrario",
+            "tuttavia",
+            "compromesso",
+            "soluzione",
+            "priorità",
+            "responsabilità"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-050\"\ncando: \"Partecipare a un dibattito ambientale con posizioni motivate.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-argomentare-un-opinione",
+            "it-b1-connettivi-testuali"
+          ]
+        }
+      ]
+    },
+    {
+      "unit": 11,
+      "title": "Unità 11: Cultura e patrimonio",
+      "lessons": [
+        {
+          "lesson": 1,
+          "type": "gv",
+          "title": "Cultura e patrimonio",
+          "duration_minutes": 60,
+          "grammar": [
+            "Lessico del patrimonio",
+            "Tutela e valorizzazione"
+          ],
+          "vocabulary": [
+            "patrimonio",
+            "bene culturale",
+            "restauro",
+            "tutela",
+            "museo",
+            "scavo",
+            "conservazione",
+            "valorizzazione"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-051\"\ncando: \"Descrivere un bene culturale e parlare della sua tutela.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-cultura-e-patrimonio"
+          ]
+        },
+        {
+          "lesson": 2,
+          "type": "gv",
+          "title": "Raccontare un libro o un film",
+          "duration_minutes": 60,
+          "grammar": [
+            "Trama e giudizio",
+            "Tempi del racconto"
+          ],
+          "vocabulary": [
+            "trama",
+            "protagonista",
+            "personaggio",
+            "scena",
+            "finale",
+            "colpo di scena",
+            "regia",
+            "stile"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-052\"\ncando: \"Raccontare la trama di un libro o di un film senza svelare il finale.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-raccontare-un-libro"
+          ]
+        },
+        {
+          "lesson": 3,
+          "type": "gv",
+          "title": "Scrivere una recensione",
+          "duration_minutes": 60,
+          "grammar": [
+            "Struttura della recensione",
+            "Giudizio motivato"
+          ],
+          "vocabulary": [
+            "recensione",
+            "consigliato",
+            "deludente",
+            "coinvolgente",
+            "ritmo",
+            "interpretazione",
+            "originale",
+            "in conclusione"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-053\"\ncando: \"Scrivere una recensione breve con un giudizio motivato.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-scrivere-una-recensione"
+          ]
+        },
+        {
+          "lesson": 4,
+          "type": "gv",
+          "title": "Riassumere un testo",
+          "duration_minutes": 60,
+          "grammar": [
+            "Selezione delle informazioni",
+            "Riformulazione"
+          ],
+          "vocabulary": [
+            "riassunto",
+            "in sintesi",
+            "in breve",
+            "l'autore sostiene",
+            "il testo tratta",
+            "concludendo",
+            "in sostanza",
+            "punto chiave"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-054\"\ncando: \"Ridurre un testo alle informazioni essenziali.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-riassumere-un-testo"
+          ]
+        },
+        {
+          "lesson": 5,
+          "type": "gv",
+          "title": "Cultura e identità",
+          "duration_minutes": 60,
+          "grammar": [
+            "Identità e tradizioni",
+            "Confronto tra culture"
+          ],
+          "vocabulary": [
+            "identità",
+            "tradizione",
+            "radici",
+            "abitudine",
+            "stereotipo",
+            "differenza",
+            "appartenenza",
+            "incontro"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-055\"\ncando: \"Discutere il rapporto tra cultura e identità.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-cultura-e-patrimonio",
+            "it-b1-argomentare-un-opinione"
+          ]
+        }
+      ]
+    },
+    {
+      "unit": 12,
+      "title": "Unità 12: Studio, scrittura e revisione",
+      "lessons": [
+        {
+          "lesson": 1,
+          "type": "gv",
+          "title": "Prendere appunti e organizzarli",
+          "duration_minutes": 60,
+          "grammar": [
+            "Note e parole chiave",
+            "Mappe e schemi"
+          ],
+          "vocabulary": [
+            "appunto",
+            "parola chiave",
+            "schema",
+            "mappa",
+            "sottolineare",
+            "riassumere",
+            "segnare",
+            "elenco"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-056\"\ncando: \"Prendere appunti utili e riordinarli.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-riassumere-un-testo"
+          ]
+        },
+        {
+          "lesson": 2,
+          "type": "gv",
+          "title": "Riassumere e parafrasare",
+          "duration_minutes": 60,
+          "grammar": [
+            "Parafrasi",
+            "Sinonimi e struttura"
+          ],
+          "vocabulary": [
+            "parafrasi",
+            "sinonimo",
+            "riformulare",
+            "in altre parole",
+            "cioè",
+            "significa che",
+            "equivalente",
+            "registro"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-057\"\ncando: \"Riformulare un testo senza copiarne le parole.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-riassumere-un-testo",
+            "it-b1-connettivi-testuali"
+          ]
+        },
+        {
+          "lesson": 3,
+          "type": "gv",
+          "title": "Email formale e richieste",
+          "duration_minutes": 60,
+          "grammar": [
+            "Formule di apertura e chiusura",
+            "Registro al Lei"
+          ],
+          "vocabulary": [
+            "gentile",
+            "in riferimento",
+            "chiedo cortesemente",
+            "restando a disposizione",
+            "cordiali saluti",
+            "allegato",
+            "riscontro",
+            "sollecito"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-058\"\ncando: \"Scrivere una richiesta formale completa.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-a2-scrivere-un-email-formale",
+            "it-b1-lettera-di-presentazione"
+          ]
+        },
+        {
+          "lesson": 4,
+          "type": "gv",
+          "title": "Collegare le idee in un testo",
+          "duration_minutes": 60,
+          "grammar": [
+            "Connettivi di causa, conseguenza, contrasto",
+            "Coesione"
+          ],
+          "vocabulary": [
+            "poiché",
+            "di conseguenza",
+            "ciononostante",
+            "in particolare",
+            "innanzitutto",
+            "infine",
+            "pertanto",
+            "viceversa"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-059\"\ncando: \"Collegare i periodi di un testo scritto.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-connettivi-testuali"
+          ]
+        },
+        {
+          "lesson": 5,
+          "type": "gv",
+          "title": "Rivedere e correggere un testo",
+          "duration_minutes": 60,
+          "grammar": [
+            "Autocorrezione",
+            "Errori frequenti"
+          ],
+          "vocabulary": [
+            "rileggere",
+            "correggere",
+            "errore",
+            "coerenza",
+            "registro",
+            "ripetizione",
+            "chiarezza",
+            "versione finale"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-060\"\ncando: \"Rileggere un testo e correggere gli errori principali.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-riassumere-un-testo",
+            "it-b1-connettivi-testuali"
+          ]
+        }
+      ]
+    },
+    {
+      "unit": 13,
+      "title": "Unità 13: Consolidamento",
+      "lessons": [
+        {
+          "lesson": 1,
+          "type": "gv",
+          "title": "Ripasso del congiuntivo",
+          "duration_minutes": 60,
+          "grammar": [
+            "Presente, passato, imperfetto, trapassato",
+            "Concordanza"
+          ],
+          "vocabulary": [
+            "sia",
+            "abbia",
+            "fosse",
+            "avesse",
+            "penso che",
+            "benché",
+            "purché",
+            "spero che"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-061\"\ncando: \"Usare i quattro tempi del congiuntivo senza esitare.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-congiuntivo-presente",
+            "it-b1-congiuntivo-trapassato"
+          ]
+        },
+        {
+          "lesson": 2,
+          "type": "gv",
+          "title": "Ripasso dell'ipotesi",
+          "duration_minutes": 60,
+          "grammar": [
+            "Secondo, terzo e misto",
+            "Condizionale presente e passato"
+          ],
+          "vocabulary": [
+            "se potessi",
+            "se avessi",
+            "sarei",
+            "avrei",
+            "ora",
+            "allora",
+            "ipotesi",
+            "conseguenza"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-062\"\ncando: \"Scegliere il tipo di ipotesi giusto in un testo.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-periodo-ipotetico-3",
+            "it-b1-periodo-ipotetico-misto"
+          ]
+        },
+        {
+          "lesson": 3,
+          "type": "gv",
+          "title": "Ripasso di pronomi e preposizioni",
+          "duration_minutes": 60,
+          "grammar": [
+            "Combinati, relativi, ci e ne",
+            "Preposizioni dei verbi"
+          ],
+          "vocabulary": [
+            "glielo",
+            "cui",
+            "ne",
+            "ci",
+            "cercare di",
+            "riuscire a",
+            "contare su",
+            "dipendere da"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-063\"\ncando: \"Evitare ripetizioni e scegliere le preposizioni giuste.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-pronomi-combinati",
+            "it-b1-preposizioni-con-i-verbi"
+          ]
+        },
+        {
+          "lesson": 4,
+          "type": "gv",
+          "title": "Produzione orale: sostenere un dibattito",
+          "duration_minutes": 60,
+          "grammar": [
+            "Posizione e replica",
+            "Registro e cortesia"
+          ],
+          "vocabulary": [
+            "a mio avviso",
+            "capisco la posizione",
+            "tuttavia",
+            "vorrei aggiungere",
+            "sono d'accordo in parte",
+            "concludendo",
+            "domanda",
+            "replica"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-064\"\ncando: \"Sostenere una posizione e rispondere a un'obiezione.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-argomentare-un-opinione",
+            "it-b1-connettivi-testuali"
+          ]
+        },
+        {
+          "lesson": 5,
+          "type": "gv",
+          "title": "Produzione scritta: un testo argomentativo",
+          "duration_minutes": 60,
+          "grammar": [
+            "Tesi, argomenti, conclusione",
+            "Revisione finale"
+          ],
+          "vocabulary": [
+            "tesi",
+            "argomento",
+            "esempio",
+            "controargomento",
+            "conclusione",
+            "in primo luogo",
+            "infine",
+            "in sintesi"
+          ],
+          "practice_types": [
+            "speaking",
+            "listening",
+            "reading",
+            "writing"
+          ],
+          "speaking_percent": 50,
+          "teacher_notes": "code: \"IT-B1-065\"\ncando: \"Scrivere un testo argomentativo breve e coerente.\"",
+          "recycled": "Lessico del livello A2 e del modulo precedente",
+          "grammarIds": [
+            "it-b1-scrivere-una-recensione",
+            "it-b1-riassumere-un-testo"
+          ]
         }
       ]
     }
