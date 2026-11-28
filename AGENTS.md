@@ -167,6 +167,11 @@ repositories plus the proposed level model. Facts worth remembering before touch
   "Argent, droits et démarches" (t21, t01, t06), with the 15 roadmap `unit` strings and 15 deck
   `unit` fields updated. general-fr-b1 is the only course at 13/13 slots. Phase 2 (renaming the ten
   grammar-led lessons of units 1-2 to can-dos) is NOT applied: it renames deck files and ids.
+- `docs/EN_B1_RECUT.md` records the next decision: `general-en-b1` is 80 themed lessons plus a
+  40-lesson legacy bucket whose titles do not match the can-dos their decks state (*Modern Nomads*
+  teaches healthy habits, *Elevator Pitch* teaches environmental policy). The bucket therefore
+  cannot be redistributed into the three missing slots (society, business, register); the options
+  costed there are retitle-in-place (B) or retire-and-author (A/C). English B2 has the same bucket.
 - A recut spec (`scripts/data/recut-<course>.json`) duplicates theme/macroFunction with
   `unit-metadata.json`, so a test fails unless both hold the same values. Update both when adding
   a re-cut.
