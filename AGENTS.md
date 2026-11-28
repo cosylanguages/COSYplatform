@@ -174,6 +174,13 @@ repositories plus the proposed level model. Facts worth remembering before touch
 - English and Russian A1/A2/C1/C2 were themed with the same method, in their own language: en-a1
   12/13, ru-a1 13/13, en-a2 9/13, ru-a2 10/13, en-c1 5/13, ru-c1 8/13, en-c2 7/13, ru-c2 7/13.
   Legacy buckets and pure recap/project units stay unthemed on purpose.
+- `npm run audit:cando` renders `docs/CAN_DO_AUDIT.md`: decks whose can-do names a grammar form
+  rather than a communicative task. 130 of 1606 decks are form-first (8%), concentrated in en-b1
+  (22%), it-b1 (29%), el-a1 (25%). This is the measurable version of "is this course a grammar
+  syllabus in a course's clothes", and it corrects an earlier claim: most Italian B1 grammar decks
+  do frame the form through a purpose (`Evitare ripetizioni con ci e ne`), only 19 of 65 are pure
+  form drills. The classifier is triage, not judgement - `--explain "<can-do>"` classifies one
+  string, and the doc samples every flagged deck.
 - `npm run status:coverage` renders `docs/COVERAGE_STATUS.md`: every course against the 13 slots,
   with themed vs grammar-only unit counts. It is the one place to see the platform state; the per
   level `docs/*_SLOT_ALIGNMENT.md` files are the detail behind it.
