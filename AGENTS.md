@@ -94,3 +94,53 @@ of the French B1 curriculum shipped with `grammarIds: null`; they were filled in
   the B1 decks embed them. A stub is recognisable by its `Mastering <topic>` subtitle and its filler
   example, `She demonstrated <topic> with great precision`. French and Russian have none.
 - Other languages: A1 courses only.
+
+## Lexicon research (2026-11-28)
+`docs/cefr-syllabus-and-vocabulary-architecture.md` holds the measured state of the three
+repositories plus the proposed level model. Facts worth remembering before touching vocabulary:
+
+- COSYdata is theme-organised at every level for English only. FR/RU/IT/EL collapse above A2 into
+  POS buckets (`noun.json`, `verb.json`, `idiom.json`), and B1+ is mostly a fixed idiom quota of
+  about 160 per level: FR B1 278 entries of which 164 idioms, so 114 real items for a 65-lesson B1.
+- The curriculum and the dictionary are parallel lexicons. Exact-form overlap between curriculum
+  `vocabulary` items and the dictionary: EN 97/84/83/80/74/61 % (A1→C2), FR 38/19/6/12/9 % (A2→C2),
+  RU 25/25/14/6/11/7 %, IT 69/51/25 % (A1→B1), EL 39/28 % (A1→A2). RU survives 5-char stemming,
+  so it is not an inflection artefact.
+- Manual vocabulary pages carry no COSYdata id (`data-vocab-id` absent everywhere), so the
+  "ids extracted from COSYdata into the vocabulary manual" link does not exist yet. Pages are
+  generated copies: FR B1 has 7 pages / 238 entries for 278 data entries.
+- Grammar ids all resolve (3 556 refs, 0 unknown), but 300 of the 1 878 pages in the five languages
+  are referenced by no curriculum (EN 84, FR 73, RU 143). English C2 has 65 lessons and 0 ids.
+- French recycles no grammar between levels (1 id at A2, 0 after); EN/RU/IT/EL recycle 9–23 ids by
+  accident, pointing at the lower-level page instead of a deeper moment.
+- Per-lesson vocabulary is a quota, not a selection: FR/RU/IT/EL carry exactly 8 items per lesson,
+  EN about 10. The A0–A1 lesson spec asks for 10–20 items + 5–10 chunks.
+- Course sizes disagree: EN A1 180 / A2 141 / B1 120 / B2 121 / C1 94 / C2 65, with 16/46/40/40/40
+  lessons in "Additional Legacy Topics & Draft Lessons"; FR/RU 142 at A1 then 65; IT/EL 65.
+- 48 lesson files are already reused by two roadmaps (`general-en-a0` and `general-en-a0-a1`),
+  which duplicate each other; A0 should be `sublevel: "start"` of A1, not a course id.
+
+## Phase 1 (2026-11-28): schema + French B1 pilot
+- Optional curriculum fields now exist in `curriculums/_schema/curriculum.schema.json`: unit
+  `theme` (t01-t22, ids from `cefr/data/themes.json`), `secondaryThemes`, `macroFunction`; lesson
+  `vocabularyIds` (`<lang>:<slug>:<form>`), `recycledIds`, `grammarThreads` (T1-T14). All optional,
+  so every existing curriculum still validates untouched.
+- `scripts/data/unit-metadata.json` declares theme + macro-function per unit; only `general-fr-b1`
+  is declared so far (13 units). `scripts/apply-unit-metadata.py` inserts the keys and preserves
+  file formatting: `--course general-fr-b1` reports drift (exit 1), `--write` applies. Idempotent;
+  the FR B1 change was 48 insertions and 0 deletions.
+- `scripts/build-vocab-id-map.py --cosydata ../COSYdata --course general-fr-b1 --write` produces
+  `docs/vocab-id-map/mapping-<course>.json` and `review-<course>.csv`, keyed by
+  `<lang>/<track>/<LEVEL>/uNN-lNN` like the grammar-id reviews. Statuses: exact, normalized,
+  related, missing.
+- FR B1 result: 520 items, 107 resolved (19 %), 413 missing, 75 resolved items sit at another
+  level (mostly A2 recycle). Do not read `different_level` as "wrong level" for vocabulary: B1
+  reusing A2 words is intended.
+- `related` matching is deliberately strict (prefix + known ending) after edit-distance candidates
+  produced noise (raison->raisin, pétition->petit). Precision over recall.
+- Tests `tests/curriculum-metadata.test.js` and `tests/vocab-id-map.test.js` guard the metadata,
+  the artifact shape and the FR B1 pilot; `npm run audit:lexicon` needs the COSYdata/COSYmanuals
+  checkouts and is not part of `validate`.
+- The `recycled` prose field is populated on 100 % of lessons in all five languages but templated
+  (51 distinct strings across 65 FR B1 lessons), and no id points at the earlier page. Recycling
+  must be wired through `recycledIds`, not through that prose.

@@ -1,0 +1,4050 @@
+{
+ "course": "general-fr-b1",
+ "lang": "fr",
+ "level": "B1",
+ "source": {
+  "cosydata_entries": 3621,
+  "curriculum": "curriculums/fr/general/B1.json"
+ },
+ "summary": {
+  "items": 520,
+  "exact": 97,
+  "normalized": 0,
+  "related": 10,
+  "missing": 413,
+  "resolved_pct": 19,
+  "different_level": 75
+ },
+ "lessons": {
+  "fr/general/B1/u01-l01": {
+   "code": "FR-B1-001",
+   "items": [
+    {
+     "text": "Il est nécessaire",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Souhaiter",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Exiger",
+     "status": "exact",
+     "id": "fr:exiger:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "Important",
+     "status": "exact",
+     "id": "fr:important:adjective",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "Essentiel",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Volonté",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Obligation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Priorité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u01-l02": {
+   "code": "FR-B1-002",
+   "items": [
+    {
+     "text": "Raison",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Impact",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Résultat",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Facteur",
+     "status": "exact",
+     "id": "fr:facteur:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "Origine",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Provoquer",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Découler de",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Effet",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u01-l03": {
+   "code": "FR-B1-003",
+   "items": [
+    {
+     "text": "Contradiction",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Obstacle",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Même si",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Inconvénient",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Toutefois",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Malgré",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Nuancer",
+     "status": "related",
+     "id": null,
+     "level": null,
+     "alternatives": [
+      {
+       "id": "fr:nuanc:adjective",
+       "word": "nuancé",
+       "level": "C2"
+      }
+     ]
+    },
+    {
+     "text": "Réserves",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u01-l04": {
+   "code": "FR-B1-004",
+   "items": [
+    {
+     "text": "Émotion",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Déception",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Satisfaction",
+     "status": "exact",
+     "id": "fr:satisfaction:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "Soulagement",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Crainte",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "S'inquiéter",
+     "status": "exact",
+     "id": "fr:s-inquieter:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "Ressentir",
+     "status": "exact",
+     "id": "fr:ressentir:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "Affection",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u01-l05": {
+   "code": "FR-B1-005",
+   "items": [
+    {
+     "text": "Hypothèse",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Scénario",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Si j'étais vous",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Imaginez",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Éventualité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Changer",
+     "status": "exact",
+     "id": "fr:changer:verb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "Conseiller",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Utopie",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u02-l01": {
+   "code": "FR-B1-006",
+   "items": [
+    {
+     "text": "À mon avis",
+     "status": "exact",
+     "id": "fr:mon-avis:adverb",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "Il me semble que",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Tout à fait",
+     "status": "exact",
+     "id": "fr:tout-a-fait:phrase",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "Pas du tout",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "C'est discutable",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Ça dépend",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Je suis convaincu(e) que",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Sceptique",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u02-l02": {
+   "code": "FR-B1-007",
+   "items": [
+    {
+     "text": "Soutenir",
+     "status": "exact",
+     "id": "fr:soutenir:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "Réfuter",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Admettre",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Contester",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Nuancer",
+     "status": "related",
+     "id": null,
+     "level": null,
+     "alternatives": [
+      {
+       "id": "fr:nuanc:adjective",
+       "word": "nuancé",
+       "level": "C2"
+      }
+     ]
+    },
+    {
+     "text": "Argument",
+     "status": "exact",
+     "id": "fr:argument:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "Preuve",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Thèse",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u02-l03": {
+   "code": "FR-B1-008",
+   "items": [
+    {
+     "text": "Préalablement",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Antérieurement",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Déjà",
+     "status": "exact",
+     "id": "fr:deja:adverb",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "Rétrospective",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Avant de",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Étape",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Déroulement",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Antécédent",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u02-l04": {
+   "code": "FR-B1-009",
+   "items": [
+    {
+     "text": "Sujet",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Thématique",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Document",
+     "status": "exact",
+     "id": "fr:document:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "Raisonnement",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Structure",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Référence",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Au sujet duquel",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Grâce auquel",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u02-l05": {
+   "code": "FR-B1-010",
+   "items": [
+    {
+     "text": "Témoignage",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Affirmer que",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Déclarer que",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Prendre note",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Rapporter",
+     "status": "exact",
+     "id": "fr:rapporter:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "Confirmer",
+     "status": "exact",
+     "id": "fr:confirmer:verb",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "La veille",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Le lendemain",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u03-l01": {
+   "code": "FR-B1-011",
+   "items": [
+    {
+     "text": "Candidature",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Lettre de motivation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Parcours",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Compétence",
+     "status": "exact",
+     "id": "fr:comptence:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "Profil",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Atout",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Recruteur",
+     "status": "exact",
+     "id": "fr:recruteur:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "Postuler",
+     "status": "exact",
+     "id": "fr:postuler:verb",
+     "level": "A2",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u03-l02": {
+   "code": "FR-B1-012",
+   "items": [
+    {
+     "text": "Entretien",
+     "status": "exact",
+     "id": "fr:entretien:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "Rémunération",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Prétentions",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Points forts",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Axe d'amélioration",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Polyvalent",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Rigueur",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Autonomie",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u03-l03": {
+   "code": "FR-B1-013",
+   "items": [
+    {
+     "text": "Négociation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Compromis",
+     "status": "exact",
+     "id": "fr:compromis:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "Désaccord",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Tension",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Médiation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Revendication",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Accord",
+     "status": "exact",
+     "id": "fr:accord:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "Concilier",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u03-l04": {
+   "code": "FR-B1-014",
+   "items": [
+    {
+     "text": "Ordre du jour",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Compte-rendu",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Échéancier",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Intervenant",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Attribuer",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Priorité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Piloter",
+     "status": "related",
+     "id": null,
+     "level": null,
+     "alternatives": [
+      {
+       "id": "fr:pilote:noun",
+       "word": "pilote",
+       "level": "A1"
+      }
+     ]
+    },
+    {
+     "text": "Avancement",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u03-l05": {
+   "code": "FR-B1-015",
+   "items": [
+    {
+     "text": "Télétravail",
+     "status": "exact",
+     "id": "fr:tltravail:noun",
+     "level": "C1",
+     "alternatives": []
+    },
+    {
+     "text": "Présentiel",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Distanciel",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Flexibilité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Déconnexion",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Équilibre",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Surcharge",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Organisation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u04-l01": {
+   "code": "FR-B1-016",
+   "items": [
+    {
+     "text": "Source",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Vérification",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Parti pris",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Ligne éditoriale",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Journalisme",
+     "status": "related",
+     "id": null,
+     "level": null,
+     "alternatives": [
+      {
+       "id": "fr:journal:noun",
+       "word": "journal",
+       "level": "A1"
+      }
+     ]
+    },
+    {
+     "text": "Désinformation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Article",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Fact-checking",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u04-l02": {
+   "code": "FR-B1-017",
+   "items": [
+    {
+     "text": "Chronique",
+     "status": "exact",
+     "id": "fr:chronique:adjective",
+     "level": "B2",
+     "alternatives": []
+    },
+    {
+     "text": "Auditeur",
+     "status": "exact",
+     "id": "fr:auditeur:noun",
+     "level": "B2",
+     "alternatives": []
+    },
+    {
+     "text": "Présentateur",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Débat",
+     "status": "exact",
+     "id": "fr:debat:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "Acroche",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Audience",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Diffuser",
+     "status": "related",
+     "id": null,
+     "level": null,
+     "alternatives": [
+      {
+       "id": "fr:diffus:adjective",
+       "word": "diffus",
+       "level": "C2"
+      }
+     ]
+    },
+    {
+     "text": "Incontournable",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u04-l03": {
+   "code": "FR-B1-018",
+   "items": [
+    {
+     "text": "Rumeur",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Infox",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Manipulation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Liberté d'expression",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Censure",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Algorithme",
+     "status": "exact",
+     "id": "fr:algorithme:noun",
+     "level": "C1",
+     "alternatives": []
+    },
+    {
+     "text": "Viralité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Esprit critique",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u04-l04": {
+   "code": "FR-B1-019",
+   "items": [
+    {
+     "text": "Campagne",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Slogan",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Cible",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Influenceur",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Incitation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Marque",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Consommateur",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Convaincre",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u04-l05": {
+   "code": "FR-B1-020",
+   "items": [
+    {
+     "text": "Scénario",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Jeu d'acteur",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Mise en scène",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Trame",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Série télévisée",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Bande-annonce",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Récompense",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Succès",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u05-l01": {
+   "code": "FR-B1-021",
+   "items": [
+    {
+     "text": "Réchauffement",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Émissions",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Carbone",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Empreinte écologique",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Urgence",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Sécheresse",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Inondation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Catastrophe",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u05-l02": {
+   "code": "FR-B1-022",
+   "items": [
+    {
+     "text": "Éolien",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Solaire",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Nucléaire",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Fossile",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Transition",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Ressource",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Inépuisable",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Rendement",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u05-l03": {
+   "code": "FR-B1-023",
+   "items": [
+    {
+     "text": "Espèce",
+     "status": "related",
+     "id": null,
+     "level": null,
+     "alternatives": [
+      {
+       "id": "fr:especes:noun",
+       "word": "espèces",
+       "level": "A2"
+      }
+     ]
+    },
+    {
+     "text": "En voie de disparition",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Habitat",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Écosystème",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Faune",
+     "status": "exact",
+     "id": "fr:faune:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "Flore",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Réserve naturelle",
+     "status": "exact",
+     "id": "fr:reserve-naturelle:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "Préserver",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u05-l04": {
+   "code": "FR-B1-024",
+   "items": [
+    {
+     "text": "Zéro déchet",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Vrac",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Compostage",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Recyclage",
+     "status": "exact",
+     "id": "fr:recyclage:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "Consommation responsable",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Gaspillage alimentaire",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Réutiliser",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Emballage",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u05-l05": {
+   "code": "FR-B1-025",
+   "items": [
+    {
+     "text": "Piste cyclable",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Piétonnisation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Transport propre",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Urbanisme",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Espace vert",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Qualité de l'air",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Covoiturage",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Proximité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u06-l01": {
+   "code": "FR-B1-026",
+   "items": [
+    {
+     "text": "Égalité",
+     "status": "exact",
+     "id": "fr:egalite:noun",
+     "level": "B2",
+     "alternatives": []
+    },
+    {
+     "text": "Parité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Écart salarial",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Stereotype de genre",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Plafond de verre",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Discrimination",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Droits",
+     "status": "related",
+     "id": null,
+     "level": null,
+     "alternatives": [
+      {
+       "id": "fr:droit:noun",
+       "word": "droit",
+       "level": "A2"
+      },
+      {
+       "id": "fr:droit:adjective",
+       "word": "droit",
+       "level": "A0"
+      }
+     ]
+    },
+    {
+     "text": "Équité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u06-l02": {
+   "code": "FR-B1-027",
+   "items": [
+    {
+     "text": "Enseignement",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Apprentissage",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Pédagogie",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Classe inversée",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Évaluation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Autonomie",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Décrochage",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Tutorat",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u06-l03": {
+   "code": "FR-B1-028",
+   "items": [
+    {
+     "text": "Association",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Bénévolat",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Solidarité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Entraide",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Inclusion",
+     "status": "exact",
+     "id": "fr:inclusion:noun",
+     "level": "B2",
+     "alternatives": []
+    },
+    {
+     "text": "Collecte",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Don",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Engagement",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u06-l04": {
+   "code": "FR-B1-029",
+   "items": [
+    {
+     "text": "Vote",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Citoyen",
+     "status": "exact",
+     "id": "fr:citoyen:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "Référendum",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Pétition",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Débat public",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Consultation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Élu",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Institution",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u06-l05": {
+   "code": "FR-B1-030",
+   "items": [
+    {
+     "text": "Diversité",
+     "status": "exact",
+     "id": "fr:diversite:noun",
+     "level": "B2",
+     "alternatives": []
+    },
+    {
+     "text": "Intégration",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Patrimoine",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Tradition",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Échange culturel",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Tolérance",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Acculturation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Partage",
+     "status": "related",
+     "id": null,
+     "level": null,
+     "alternatives": [
+      {
+       "id": "fr:partager:verb",
+       "word": "partager",
+       "level": "A2"
+      }
+     ]
+    }
+   ]
+  },
+  "fr/general/B1/u07-l01": {
+   "code": "FR-B1-031",
+   "items": [
+    {
+     "text": "Toile",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Sculpture",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Exposition",
+     "status": "exact",
+     "id": "fr:exposition:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "Galerie",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Esthétique",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Harmonie",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Contraste",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Sensation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u07-l02": {
+   "code": "FR-B1-032",
+   "items": [
+    {
+     "text": "Monument",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Époque",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Restauration",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Façade",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Style",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Édifice",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Conservation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Histoire",
+     "status": "exact",
+     "id": "fr:histoire:noun",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u07-l03": {
+   "code": "FR-B1-033",
+   "items": [
+    {
+     "text": "Concert",
+     "status": "exact",
+     "id": "fr:concert:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "Scène",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Mélodie",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Rythme",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Interprétation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Public",
+     "status": "exact",
+     "id": "fr:public:adjective",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "Festival",
+     "status": "exact",
+     "id": "fr:festival:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "Sonorité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u07-l04": {
+   "code": "FR-B1-034",
+   "items": [
+    {
+     "text": "Roman",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Auteur",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Chapitre",
+     "status": "exact",
+     "id": "fr:chapitre-livre:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "Personnage",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Intrigue",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Surnaturel",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Style",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Écriture",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u07-l05": {
+   "code": "FR-B1-035",
+   "items": [
+    {
+     "text": "Artisan",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Atelier",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Matière première",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Savoir-faire",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Fabriquer",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Authenticité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Traditionnel",
+     "status": "exact",
+     "id": "fr:traditionnel:adjective",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "Pièce unique",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u08-l01": {
+   "code": "FR-B1-036",
+   "items": [
+    {
+     "text": "Pouvoir d'achat",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Inflation",
+     "status": "exact",
+     "id": "fr:inflation:noun",
+     "level": "B2",
+     "alternatives": []
+    },
+    {
+     "text": "Dépense",
+     "status": "exact",
+     "id": "fr:depense:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "Épargne",
+     "status": "exact",
+     "id": "fr:epargne:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "Ressources",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Coût de la vie",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Fixe",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Variable",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u08-l02": {
+   "code": "FR-B1-037",
+   "items": [
+    {
+     "text": "Seconde main",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Occasion",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Plateforme",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Échange",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Troc",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Économie circulaire",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Revente",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Durabilité",
+     "status": "exact",
+     "id": "fr:durabilite:noun",
+     "level": "B1",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u08-l03": {
+   "code": "FR-B1-038",
+   "items": [
+    {
+     "text": "Cryptomonnaie",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Paiement sans contact",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Sécurité bancaire",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Transaction",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Frais",
+     "status": "exact",
+     "id": "fr:frais:adjective",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "Virtuel",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Piratage",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Portefeuille numérique",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u08-l04": {
+   "code": "FR-B1-039",
+   "items": [
+    {
+     "text": "Entreprise sociale",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Micro-crédit",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Financement participatif",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Investissement",
+     "status": "exact",
+     "id": "fr:investissement:noun",
+     "level": "B2",
+     "alternatives": []
+    },
+    {
+     "text": "Projet",
+     "status": "exact",
+     "id": "fr:projet:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "Bénéfice",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Impact social",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Soutenir",
+     "status": "exact",
+     "id": "fr:soutenir:verb",
+     "level": "A2",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u08-l05": {
+   "code": "FR-B1-040",
+   "items": [
+    {
+     "text": "Commerce équitable",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Producteur",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Label",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Transparence",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Justice sociale",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Filière",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Rémunération juste",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Éthique",
+     "status": "exact",
+     "id": "fr:ethique:adjective",
+     "level": "B2",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u09-l01": {
+   "code": "FR-B1-041",
+   "items": [
+    {
+     "text": "Intelligence artificielle",
+     "status": "exact",
+     "id": "fr:intelligence-artificielle:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "Robotique",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Algorithme",
+     "status": "exact",
+     "id": "fr:algorithme:noun",
+     "level": "C1",
+     "alternatives": []
+    },
+    {
+     "text": "Automatisation",
+     "status": "exact",
+     "id": "fr:automatisation:noun",
+     "level": "C1",
+     "alternatives": []
+    },
+    {
+     "text": "Données",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Progrès",
+     "status": "exact",
+     "id": "fr:progres:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "Assistant virtuel",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Révolution numérique",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u09-l02": {
+   "code": "FR-B1-042",
+   "items": [
+    {
+     "text": "Espace",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Astronaute",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Sonde",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Découverte",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Galaxie",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Mission",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Laboratoire",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Expérience",
+     "status": "exact",
+     "id": "fr:experience:noun",
+     "level": "A2",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u09-l03": {
+   "code": "FR-B1-043",
+   "items": [
+    {
+     "text": "Génétique",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Thérapie",
+     "status": "exact",
+     "id": "fr:thrapie:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "Chercheur",
+     "status": "exact",
+     "id": "fr:chercheur:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "Vaccin",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Éthique médicale",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Biologie",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Traitement",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Progrès",
+     "status": "exact",
+     "id": "fr:progres:noun",
+     "level": "B1",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u09-l04": {
+   "code": "FR-B1-044",
+   "items": [
+    {
+     "text": "Hyperloop",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Autonomie",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Vitesse",
+     "status": "exact",
+     "id": "fr:vitesse:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "Invention",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Lévitation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Prototype",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Propre",
+     "status": "exact",
+     "id": "fr:propre:adjective",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "Mobilité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u09-l05": {
+   "code": "FR-B1-045",
+   "items": [
+    {
+     "text": "Vie privée",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Surveillance",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Données personnelles",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Réglementation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Protection",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Consentement",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Éthique",
+     "status": "exact",
+     "id": "fr:ethique:adjective",
+     "level": "B2",
+     "alternatives": []
+    },
+    {
+     "text": "Transparence",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u10-l01": {
+   "code": "FR-B1-046",
+   "items": [
+    {
+     "text": "sécurité sociale",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "remboursement",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "médecin traitant",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "ordonnance",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "prévention",
+     "status": "exact",
+     "id": "fr:prvention:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "dépistage",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "urgences",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "mutuelle",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u10-l02": {
+   "code": "FR-B1-047",
+   "items": [
+    {
+     "text": "anxiété",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "épuisement",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "sommeil",
+     "status": "exact",
+     "id": "fr:sommeil:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "équilibre",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "soutien",
+     "status": "exact",
+     "id": "fr:soutien:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "thérapie",
+     "status": "exact",
+     "id": "fr:thrapie:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "respiration",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "récupérer",
+     "status": "exact",
+     "id": "fr:rcuprer:verb",
+     "level": "C2",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u10-l03": {
+   "code": "FR-B1-048",
+   "items": [
+    {
+     "text": "endurance",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "entraînement",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "blessure",
+     "status": "exact",
+     "id": "fr:blessure:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "échauffement",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "régularité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "sédentarité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "club",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "performance",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u10-l04": {
+   "code": "FR-B1-049",
+   "items": [
+    {
+     "text": "équilibré",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "portion",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "nutriment",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "sucre",
+     "status": "exact",
+     "id": "fr:sucre:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "gras",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "habitude",
+     "status": "exact",
+     "id": "fr:habitude:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "marché",
+     "status": "exact",
+     "id": "fr:marche:noun",
+     "level": "A0",
+     "alternatives": []
+    },
+    {
+     "text": "cuisiner",
+     "status": "exact",
+     "id": "fr:cuisiner:verb",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u10-l05": {
+   "code": "FR-B1-050",
+   "items": [
+    {
+     "text": "vaccination",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "dépistage",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "consultation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "facteur de risque",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "antécédent",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "campagne",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "bilan",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "sensibiliser",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u11-l01": {
+   "code": "FR-B1-051",
+   "items": [
+    {
+     "text": "garantie",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "rétractation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "litige",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "remboursement",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "association",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "recours",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "clause",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "preuve",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u11-l02": {
+   "code": "FR-B1-052",
+   "items": [
+    {
+     "text": "bail",
+     "status": "exact",
+     "id": "fr:bail:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "locataire",
+     "status": "exact",
+     "id": "fr:locataire:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "propriétaire",
+     "status": "exact",
+     "id": "fr:proprietaire:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "caution",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "état des lieux",
+     "status": "exact",
+     "id": "fr:etat-des-lieux:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "charges",
+     "status": "exact",
+     "id": "fr:charges:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "préavis",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "litige",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u11-l03": {
+   "code": "FR-B1-053",
+   "items": [
+    {
+     "text": "déclaration",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "impôt",
+     "status": "exact",
+     "id": "fr:impot:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "taxe",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "service public",
+     "status": "exact",
+     "id": "fr:service-public:noun",
+     "level": "B2",
+     "alternatives": []
+    },
+    {
+     "text": "guichet",
+     "status": "exact",
+     "id": "fr:guichet:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "prestation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "échéance",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "exonération",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u11-l04": {
+   "code": "FR-B1-054",
+   "items": [
+    {
+     "text": "bénévolat",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "association",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "pétition",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "vote",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "conseil municipal",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "initiative",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "mobiliser",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "cause",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u11-l05": {
+   "code": "FR-B1-055",
+   "items": [
+    {
+     "text": "empreinte",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "tri",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "gaspillage",
+     "status": "exact",
+     "id": "fr:gaspillage:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "sobriété",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "recyclage",
+     "status": "exact",
+     "id": "fr:recyclage:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "label",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "impact",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "responsabilité",
+     "status": "exact",
+     "id": "fr:responsabilit:noun",
+     "level": "B1",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u12-l01": {
+   "code": "FR-B1-056",
+   "items": [
+    {
+     "text": "expatriation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "démarche",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "visa",
+     "status": "exact",
+     "id": "fr:visa:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "équivalence",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "installation",
+     "status": "exact",
+     "id": "fr:installation:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "démarrage",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "retour",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "projet",
+     "status": "exact",
+     "id": "fr:projet:noun",
+     "level": "A2",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u12-l02": {
+   "code": "FR-B1-057",
+   "items": [
+    {
+     "text": "choc culturel",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "coutume",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "malentendu",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "intégration",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "réseau",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "repère",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "adaptation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "ouverture",
+     "status": "related",
+     "id": null,
+     "level": null,
+     "alternatives": [
+      {
+       "id": "fr:ouvert:adjective",
+       "word": "ouvert",
+       "level": "A0"
+      }
+     ]
+    }
+   ]
+  },
+  "fr/general/B1/u12-l03": {
+   "code": "FR-B1-058",
+   "items": [
+    {
+     "text": "contrat",
+     "status": "exact",
+     "id": "fr:contrat:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "mobilité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "compétence",
+     "status": "exact",
+     "id": "fr:comptence:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "langue de travail",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "réunion",
+     "status": "exact",
+     "id": "fr:reunion:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "fuseau horaire",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "collègue",
+     "status": "exact",
+     "id": "fr:collegue:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "expérience",
+     "status": "exact",
+     "id": "fr:experience:noun",
+     "level": "A2",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u12-l04": {
+   "code": "FR-B1-059",
+   "items": [
+    {
+     "text": "cours magistral",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "prise de notes",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "exposé",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "mémoire",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "plagiat",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "méthode",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "bibliographie",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "soutenance",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u12-l05": {
+   "code": "FR-B1-060",
+   "items": [
+    {
+     "text": "itinéraire",
+     "status": "exact",
+     "id": "fr:itinraire:noun",
+     "level": "C1",
+     "alternatives": []
+    },
+    {
+     "text": "patrimoine",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "guide",
+     "status": "exact",
+     "id": "fr:guide:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "artisanat",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "saison",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "affluence",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "découverte",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "respect",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u13-l01": {
+   "code": "FR-B1-061",
+   "items": [
+    {
+     "text": "Francophonie",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Région",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Accent",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Expression imagée",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Diversité culturelle",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Patrimoine linguistique",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Rayonnement",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Partager",
+     "status": "exact",
+     "id": "fr:partager:verb",
+     "level": "A2",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u13-l02": {
+   "code": "FR-B1-062",
+   "items": [
+    {
+     "text": "Tourisme vert",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Immersion",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Habitant",
+     "status": "exact",
+     "id": "fr:habitant:noun",
+     "level": "A1",
+     "alternatives": []
+    },
+    {
+     "text": "Respect",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Lieu préservé",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Guide local",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Empreinte",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Authenticité",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u13-l03": {
+   "code": "FR-B1-063",
+   "items": [
+    {
+     "text": "Essai",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Introduction",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Développement",
+     "status": "exact",
+     "id": "fr:developpement:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "Conclusion",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Problématique",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Plaidoyer",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Transition",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Argumentation",
+     "status": "related",
+     "id": null,
+     "level": null,
+     "alternatives": [
+      {
+       "id": "fr:argument:noun",
+       "word": "argument",
+       "level": "B1"
+      }
+     ]
+    }
+   ]
+  },
+  "fr/general/B1/u13-l04": {
+   "code": "FR-B1-064",
+   "items": [
+    {
+     "text": "Exposé",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Entretien",
+     "status": "exact",
+     "id": "fr:entretien:noun",
+     "level": "A2",
+     "alternatives": []
+    },
+    {
+     "text": "Interaction",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Argument",
+     "status": "exact",
+     "id": "fr:argument:noun",
+     "level": "B1",
+     "alternatives": []
+    },
+    {
+     "text": "Relancer",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Clarifier",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Convaincre",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Répondre",
+     "status": "exact",
+     "id": "fr:repondre:verb",
+     "level": "A0",
+     "alternatives": []
+    }
+   ]
+  },
+  "fr/general/B1/u13-l05": {
+   "code": "FR-B1-065",
+   "items": [
+    {
+     "text": "Connecteurs logiques",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Subjonctif",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Conditionnel",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Discours rapporté",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Pronoms relatifs",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Nominalisation",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Registre",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    },
+    {
+     "text": "Cohérence",
+     "status": "missing",
+     "id": null,
+     "level": null,
+     "alternatives": []
+    }
+   ]
+  }
+ }
+}
