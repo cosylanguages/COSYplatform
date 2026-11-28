@@ -91,7 +91,8 @@ def collect() -> dict:
             candidates = [e for e in entries if band_of(e) == band]
             if band == "a1":
                 candidates += [e for e in entries if band_of(e) in ("a0-a1", "a0")]
-            candidates.sort(key=lambda e: band_of(e) != "a0-a1")
+            # prefer the band's own name, and a visible entry over a retired one
+            candidates.sort(key=lambda e: (band_of(e) != band, not visible(e)))
             chosen = candidates[0] if candidates else None
             stats = roadmap_stats(chosen["id"]) if chosen else {"roadmap": False, "planned": 0, "present": 0, "missing_files": 0}
             planned.append({
@@ -118,7 +119,10 @@ def collect() -> dict:
             "track_planned": f"{entry.get('lang')}/{(entry.get('track') or '').lower()}" in planned_keys,
         })
 
-    return {"planned": planned, "outside": outside, "manifest_size": len(manifest)}
+    a0_named = [e["id"] for e in manifest if band_of(e) in ("a0", "a0-a1")]
+    visible_a0 = [e["id"] for e in manifest if band_of(e) in ("a0", "a0-a1") and visible(e)]
+    return {"planned": planned, "outside": outside, "manifest_size": len(manifest),
+            "a0_named": a0_named, "visible_a0": visible_a0}
 
 
 def render(result: dict) -> str:
@@ -160,7 +164,14 @@ def render(result: dict) -> str:
             f"{(row['entry_level'] or '—').upper()} | {'yes' if row['visible'] else 'no'} | {lessons} | {state(row)} |"
         )
 
-    lines += ["", "### Planned courses that are not fully delivered", ""]
+    entry = next((r for r in planned if r["key"].startswith("en/") and r["band"] == "a1"), None)
+    lines += ["", "## Decisions already applied", "",
+              f"- A0-named entries in the manifest: **{len(result['a0_named'])}** "
+              f"(visible: {len(result['visible_a0'])}), all retired starters kept for their decks.",
+              f"- The English entry band resolves to **{entry['id'] if entry else '—'}** "
+              f"({entry['present']}/{entry['planned']} lessons, "
+              f"{'visible' if entry and entry['visible'] else 'hidden'})." if entry else "",
+              "", "### Planned courses that are not fully delivered", ""]
     if not inner_gaps:
         lines.append("None: every planned course is visible and complete.")
     for row in inner_gaps:
@@ -215,20 +226,17 @@ def render(result: dict) -> str:
               "default for work not started, so nothing here needs a decision.", "",
               "Languages with a hidden general track: "
               + ", ".join(sorted({r["lang"] for r in hidden_outside if (r["track"] or "").lower() == "general"})) + "",
-              "", "## Decisions needed", "",
-              "1. **The entry band name.** No language has an A0 curriculum, so A0 exists only as manifest",
-              "   placeholders. Keeping `a1` as the band name is consistent with the content; the 12 A0",
-              "   entries should then be removed rather than left to imply a level we do not teach.",
-              "2. **English carries the entry band twice.** `general-en-a1` (180 lessons, built from",
-              "   `curriculums/en/general/A1.json`) and `general-en-a0-a1` (48 decks under",
-              "   `lessons/general-english-a0`, from a curriculum id that has no JSON file). Both are visible.",
-              "   One must be the entry course, and the 48-lesson series has no curriculum to regenerate from.",
-              "3. **`general-en-c1` is visible with one lesson of 65.** Either hide it until built or build it;",
-              "   a published course with a single lesson is worse than a hidden one.",
-              "4. **Russian is written and invisible.** Six curricula exist (A1 has 142 lessons) and none has a",
+              "", "## Decisions taken, and what is left", "",
+              "Taken: the A0 level is gone. Thirteen A0 placeholders were removed (twelve `general-*-a0` plus",
+              "`grammar-en-a0`), because no language has an A0 curriculum. The only A0-named entry left is the",
+              "retired `general-en-a0-a1` starter, hidden and kept for its 48 decks. The English entry band is",
+              "now the 180-lesson `general-en-a1`, and `general-en-c1` is hidden until built - which removed 65",
+              "lesson slots from the \"available\" count that never had files behind them.", "",
+              "Left open:", "",
+              "1. **Russian is written and invisible.** Six curricula exist (A1 has 142 lessons) and none has a",
               "   roadmap, so all six entries are hidden. This is the biggest planned gap with the least work",
               "   left in front of it: the syllabus is done.",
-              "5. **36 visible courses sit outside the plan** (pronunciation, spoken, cinema, discussion, and",
+              "2. **35 visible courses sit outside the plan** (pronunciation, spoken, cinema, discussion, and",
               "   the single-level German, Spanish, Portuguese courses). Each is either added to the plan or",
               "   hidden; leaving them visible-but-unplanned is how the manifest drifted in the first place.",
               "", "## What this cannot tell you", "",

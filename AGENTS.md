@@ -31,6 +31,13 @@ presence in text is not learner production.
 anywhere: the entry band is A1, and A1 courses carry 142-180 lessons, i.e. two blocks. Twelve
 `general-*-a0` manifest entries are pure placeholders.
 
+The A0 level does not exist and the manifest no longer claims it: the twelve `general-*-a0` entries and
+`grammar-en-a0` were deleted, `general-en-a0-a1` retired to `not_yet_available` (it has 48 decks under
+`lessons/general-english-a0` but no curriculum JSON), and `general-en-c1` hidden until built. The English
+entry band is `general-en-a1` (180 lessons from `curriculums/en/general/A1.json`). Manifest totals after
+the change: **169 entries, 50 visible, 2357/2859 lesson slots, 2167 lesson files** - the previous
+"2470 available lessons" included 65 C1 slots whose files never existed.
+
 Two things this audit corrected in earlier notes: `general-en-c1` is visible with **1 of 65**
 lessons (its roadmap lists 64 entries with an empty `lessonFile`, and an empty path used to join to
 the repo root and count as present), and Russian has **six curricula written** (A1 142 lessons)

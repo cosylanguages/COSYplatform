@@ -1,17 +1,17 @@
 # Course coverage
 
-Manifest entries: **182**. The declared plan is in `data/course-plan.json`.
+Manifest entries: **169**. The declared plan is in `data/course-plan.json`.
 There is no standalone A0 level: the entry band is one A1 course covering A0-A1.
 
 ## The plan, course by course
 
 | course | level | manifest id | entry named | visible | lessons on disk | state |
 |---|---|---|---|---|---|---|
-| en/general | A1 | general-en-a0-a1 | A0-A1 | yes | 48/48 | visible, complete |
+| en/general | A1 | general-en-a1 | A1 | yes | 180/180 | visible, complete |
 | en/general | A2 | general-en-a2 | A2 | yes | 93/93 | visible, complete |
 | en/general | B1 | general-en-b1 | B1 | yes | 120/120 | visible, complete |
 | en/general | B2 | general-en-b2 | B2 | yes | 121/121 | visible, complete |
-| en/general | C1 | general-en-c1 | C1 | yes | 1/65 | visible, 1/65 lessons |
+| en/general | C1 | general-en-c1 | C1 | no | 1/65 | hidden |
 | en/general | C2 | general-en-c2 | C2 | no | — | hidden |
 | fr/general | A1 | general-fr-a1 | A1 | yes | 142/142 | visible, complete |
 | fr/general | A2 | general-fr-a2 | A2 | yes | 65/65 | visible, complete |
@@ -31,11 +31,16 @@ There is no standalone A0 level: the entry band is one A1 course covering A0-A1.
 | el/general | A1 | general-el-a1 | A1 | yes | 65/65 | visible, complete |
 | el/general | A2 | general-el-a2 | A2 | yes | 65/65 | visible, complete |
 
+## Decisions already applied
+
+- A0-named entries in the manifest: **1** (visible: 0), all retired starters kept for their decks.
+- The English entry band resolves to **general-en-a1** (180/180 lessons, visible).
+
 ### Planned courses that are not fully delivered
 
-- **en/general C1** — visible, 1/65 lessons
+- **en/general C1** — hidden
 - **en/general C2** — hidden
-- **ru/general A1** — hidden; duplicate entries: general-ru-a0
+- **ru/general A1** — hidden
 - **ru/general A2** — hidden
 - **ru/general B1** — hidden
 - **ru/general B2** — hidden
@@ -48,22 +53,18 @@ These languages expose the same band twice. Since there is no A0 level, one of t
 two must be the visible entry course; the other is either the same course renamed or a
 second series that has to be merged or retired.
 
-- **en**: `general-en-a0-a1` (a0-a1, 48/48 lessons) and `general-en-a1`, `vocabulary-en-a1`
+- **en**: `general-en-a1` (a1, 180/180 lessons) and `vocabulary-en-a1`, `general-en-a0-a1`
 - **en**: `general-en-a2` (a2, 93/93 lessons) and `phrasal-verbs-en-a2`, `vocabulary-en-a2`
 - **en**: `general-en-b1` (b1, 120/120 lessons) and `phrasal-verbs-en-b1`, `vocabulary-en-b1`
 - **en**: `general-en-b2` (b2, 121/121 lessons) and `phrasal-verbs-en-b2`
-- **fr**: `general-fr-a1` (a1, 142/142 lessons) and `general-fr-a0`
-- **ru**: `general-ru-a1` (a1, 0/0 lessons) and `general-ru-a0`
-- **it**: `general-it-a1` (a1, 65/65 lessons) and `general-it-a0`
-- **el**: `general-el-a1` (a1, 65/65 lessons) and `general-el-a0`
 
 ## Nothing behind the entry
 
-**35** manifest entries have no curriculum, no roadmap and no lessons: they are
+**23** manifest entries have no curriculum, no roadmap and no lessons: they are
 placeholders for work not started. Harmless while hidden, but they inflate every count of
 "courses" the platform claims.
 
-Of those, **12** are named A0: general-ba-a0, general-br-a0, general-de-a0, general-el-a0, general-es-a0, general-fr-a0, general-hy-a0, general-it-a0, general-ka-a0, general-pt-a0, general-ru-a0, general-tt-a0.
+Of those, **0** are named A0: none.
 No language has an A0 curriculum file, and the entry band is A1, so these entries name a level
 that does not exist. They are the strongest candidates for removal.
 
@@ -153,7 +154,6 @@ not decided either: each should be either added to the plan or hidden.
 | course | level | lessons |
 |---|---|---|
 | spoken-en-b1 | B1 | 226/306 |
-| general-en-a1 | A1 | 180/180 |
 | cinema-en-b1 | B1 | 106/106 |
 | general-de-a1 | A1 | 65/65 |
 | general-es-a1 | A1 | 65/65 |
@@ -191,26 +191,25 @@ not decided either: each should be either added to the plan or hidden.
 
 ## Hidden, outside the plan
 
-123 entries are not yet available and outside the plan. That is the intended
+111 entries are not yet available and outside the plan. That is the intended
 default for work not started, so nothing here needs a decision.
 
-Languages with a hidden general track: ba, br, de, el, en, es, fr, hy, it, ka, pt, ru, tt
+Languages with a hidden general track: ba, br, de, el, en, es, hy, it, ka, pt, tt
 
-## Decisions needed
+## Decisions taken, and what is left
 
-1. **The entry band name.** No language has an A0 curriculum, so A0 exists only as manifest
-   placeholders. Keeping `a1` as the band name is consistent with the content; the 12 A0
-   entries should then be removed rather than left to imply a level we do not teach.
-2. **English carries the entry band twice.** `general-en-a1` (180 lessons, built from
-   `curriculums/en/general/A1.json`) and `general-en-a0-a1` (48 decks under
-   `lessons/general-english-a0`, from a curriculum id that has no JSON file). Both are visible.
-   One must be the entry course, and the 48-lesson series has no curriculum to regenerate from.
-3. **`general-en-c1` is visible with one lesson of 65.** Either hide it until built or build it;
-   a published course with a single lesson is worse than a hidden one.
-4. **Russian is written and invisible.** Six curricula exist (A1 has 142 lessons) and none has a
+Taken: the A0 level is gone. Thirteen A0 placeholders were removed (twelve `general-*-a0` plus
+`grammar-en-a0`), because no language has an A0 curriculum. The only A0-named entry left is the
+retired `general-en-a0-a1` starter, hidden and kept for its 48 decks. The English entry band is
+now the 180-lesson `general-en-a1`, and `general-en-c1` is hidden until built - which removed 65
+lesson slots from the "available" count that never had files behind them.
+
+Left open:
+
+1. **Russian is written and invisible.** Six curricula exist (A1 has 142 lessons) and none has a
    roadmap, so all six entries are hidden. This is the biggest planned gap with the least work
    left in front of it: the syllabus is done.
-5. **36 visible courses sit outside the plan** (pronunciation, spoken, cinema, discussion, and
+2. **35 visible courses sit outside the plan** (pronunciation, spoken, cinema, discussion, and
    the single-level German, Spanish, Portuguese courses). Each is either added to the plan or
    hidden; leaving them visible-but-unplanned is how the manifest drifted in the first place.
 
