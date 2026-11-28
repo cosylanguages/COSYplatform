@@ -190,6 +190,17 @@ repositories plus the proposed level model. Facts worth remembering before touch
   French pronunciation decks under `lessons/french-pronunciation/<level>/`). 47 decks are reused
   across courses and all of them are the A0 -> A0-A1 -> A1 ladder. A JSON loader must not treat
   `.xml` as a missing file - that mistake first read as "455 lessons missing", which was false.
+- `scripts/xml-lesson-to-json.py --dry-run --write` renders `docs/XML_MIGRATION_DRY_RUN.md`: all
+  456 legacy XML lessons convert into the JSON deck shape with character-exact text parity (the
+  converter refuses to write a file whose words do not match). It carries id, title, level,
+  language, defaultDuration, defaultMode and maps XML stage names onto the platform vocabulary
+  (`round-1` to controlled-practice, `error-correction` to recycling, `speak-together`/`round-2` to
+  freer-practice). It does NOT invent canDo, unit, theme or grammar ids, so a converted deck is
+  content-complete and metadata-poor - conversion is the floor, not the finish line.
+- Two traps found while writing that converter: slide-level `ol`/`ul` are not `cosy-*` tags and were
+  silently dropped (9 995 characters of a lesson became 1 801 until the mapper handled any block
+  tag); and text parity must unescape `&amp;` and ignore the list markers the converter adds, or
+  every file with a bullet list reports a false mismatch.
 - `npm run status:coverage` renders `docs/COVERAGE_STATUS.md`: every course against the 13 slots,
   with themed vs grammar-only unit counts. It is the one place to see the platform state; the per
   level `docs/*_SLOT_ALIGNMENT.md` files are the detail behind it.
