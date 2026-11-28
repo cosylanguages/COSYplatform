@@ -1,0 +1,373 @@
+{
+  "id": "fr-c2-finance-quantitative-produits-derives-et-theorie-des-jeux",
+  "title": "Finance quantitative, produits dérivés et théorie des jeux",
+  "level": "C2",
+  "language": "fr",
+  "unit": "Produits dérivés macroéconomiques, théorie des jeux et haute finance",
+  "canDo": "Peut évaluer les structures financières complexes, les équilibres de théorie des jeux et les politiques des banques centrales",
+  "defaultDuration": 60,
+  "defaultMode": "all",
+  "objectives": [
+    "utiliser la structure cible : l'inversion conditionnelle des prévisions",
+    "utiliser 10 mots : Arbitrage, Équilibre de Nash, Obligation adossée à des actifs, Couverture de défaillance, Insolvabilité systémique, Assouplissement quantitatif, Consolidation budgétaire, Fuite des capitaux, Élasticité-prix, Transmission monétaire"
+  ],
+  "materials": "Pages de grammaire C2 de COSYmanuals sur l'inversion conditionnelle des prévisions et les réseaux hypothétiques des accords; cartes de vocabulaire, extraits audio, fiche de lecture.",
+  "assessment": "Vérifie l’usage correct de l'inversion conditionnelle des prévisions et la clarté de la production orale.",
+  "homework": "Rédigez dix lignes qui emploient l'inversion conditionnelle des prévisions, avec au moins deux corrections vérifiées.",
+  "recycling": {
+    "prior": "Contrôle de portée exacte avec les adverbes de cadrage, Modifications de portée dans le placement, Specieux",
+    "next": "Le cours suivant traite de posture hypothétique et conditionnelles complexes en modélisation."
+  },
+  "differentiation": {
+    "individual": "Une fiche : cinq phrases sur le thème du cours.",
+    "group": "Une tâche en binôme ou en petits groupes.",
+    "children": "Une phrase à compléter, puis à lire à voix haute.",
+    "teens": "Un débat court sur le thème du cours.",
+    "adults": "Cinq phrases de transposition professionnelle.",
+    "seniors": "Une fiche de réemploi à partir des exemples du manuel."
+  },
+  "links": {
+    "vocabulary": [
+      "Arbitrage",
+      "Équilibre de Nash",
+      "Obligation adossée à des actifs",
+      "Couverture de défaillance",
+      "Insolvabilité systémique",
+      "Assouplissement quantitatif",
+      "Consolidation budgétaire",
+      "Fuite des capitaux",
+      "Élasticité-prix",
+      "Transmission monétaire"
+    ],
+    "grammar": [
+      {
+        "topic_id": "inversion-conditionnelle-dans-les-previsions-macroeconomiques-appliquerions-nous-ce-modele-nous-obtiendrions",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/fr/grammar/c2/topics/inversion-conditionnelle-dans-les-previsions-macroeconomiques-appliquerions-nous-ce-modele-nous-obtiendrions.html"
+      },
+      {
+        "topic_id": "reseaux-syntaxiques-hypothetiques-complexes-des-accords-multilateraux",
+        "manual_url": "https://cosylanguages.github.io/COSYmanuals/manuals/fr/grammar/c2/topics/reseaux-syntaxiques-hypothetiques-complexes-des-accords-multilateraux.html"
+      }
+    ],
+    "phonetics": "appliquerions-nous /a.pli.kə.ʁjɔ̃ nu/, la trajectoire /la tʁa.ʒɛk.twaʁ/."
+  },
+  "slides": [
+    {
+      "id": "fr-c2-finance-quantitative-produits-derives-et-theorie-des-jeux-slide-1",
+      "title": "1. Objectif communicatif et vue d’ensemble",
+      "stage": "warm-up",
+      "duration": 60,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Objectif communicatif : Peut évaluer les structures financières complexes, les équilibres de théorie des jeux et les politiques des banques centrales"
+        },
+        {
+          "type": "blockquote",
+          "content": "Vue d’ensemble du cours :\n- Niveau : C2 Français général\n- Unité : Produits dérivés macroéconomiques, théorie des jeux et haute finance\n- Durée : 60 minutes\n- Code : FR-C2-036"
+        },
+        {
+          "type": "instruction",
+          "content": "À deux, en trois minutes : que dit déjà cette phrase ? Appliquerions-nous ce modèle, nous obtiendrions une croissance de 1,4 %."
+        },
+        {
+          "type": "input",
+          "placeholder": "Votre reformulation de l’objectif…"
+        }
+      ]
+    },
+    {
+      "id": "fr-c2-finance-quantitative-produits-derives-et-theorie-des-jeux-slide-2",
+      "title": "2. Révision et lien",
+      "stage": "recycling",
+      "duration": 60,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Ce qui est déjà acquis : Contrôle de portée exacte avec les adverbes de cadrage, Modifications de portée dans le placement, Specieux"
+        },
+        {
+          "type": "blockquote",
+          "content": "Vocabulaire révisé : Arbitrage, Équilibre de Nash, Obligation adossée à des actifs"
+        },
+        {
+          "type": "instruction",
+          "content": "Réponds de mémoire : que signifie ce mot, et dans quel contexte l’avez-vous rencontré ?"
+        },
+        {
+          "type": "input",
+          "placeholder": "Arbitrage — définition et contexte"
+        }
+      ]
+    },
+    {
+      "id": "fr-c2-finance-quantitative-produits-derives-et-theorie-des-jeux-slide-3",
+      "title": "3. Vocabulaire et expressions essentielles",
+      "stage": "input",
+      "duration": 60,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Vocabulaire actif de base (10 éléments) :"
+        },
+        {
+          "type": "blockquote",
+          "content": "Arbitrage\nÉquilibre de Nash\nObligation adossée à des actifs\nCouverture de défaillance\nInsolvabilité systémique\nAssouplissement quantitatif\nConsolidation budgétaire\nFuite des capitaux\nÉlasticité-prix\nTransmission monétaire"
+        },
+        {
+          "type": "instruction",
+          "content": "Classez ces mots en deux familles : ceux qui désignent une action, ceux qui désignent un objet de discours."
+        },
+        {
+          "type": "input",
+          "placeholder": "Actions : … / Objets de discours : …"
+        },
+        {
+          "type": "instruction",
+          "content": "Employez trois de ces mots dans une phrase qui pourrait figurer dans le cours : l'inversion conditionnelle des prévisions."
+        }
+      ]
+    },
+    {
+      "id": "fr-c2-finance-quantitative-produits-derives-et-theorie-des-jeux-slide-4",
+      "title": "4. Prononciation et rythme",
+      "stage": "pronunciation",
+      "duration": 60,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Note de prononciation du point de grammaire :"
+        },
+        {
+          "type": "blockquote",
+          "content": "appliquerions-nous /a.pli.kə.ʁjɔ̃ nu/, la trajectoire /la tʁa.ʒɛk.twaʁ/."
+        },
+        {
+          "type": "instruction",
+          "content": "Lisez à voix haute, puis enregistrez-vous : l’accent tombe sur le dernier élément du groupe."
+        },
+        {
+          "type": "input",
+          "placeholder": "La phrase lue (transcription ou IPA)…"
+        }
+      ]
+    },
+    {
+      "id": "fr-c2-finance-quantitative-produits-derives-et-theorie-des-jeux-slide-5",
+      "title": "5. Point de grammaire et pratique guidée",
+      "stage": "grammar",
+      "duration": 60,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Point de grammaire : L'inversion conditionnelle des prévisions."
+        },
+        {
+          "type": "blockquote",
+          "content": "L'inversion conditionnelle permet de chiffrer un scénario sans engager de prévision : le conditionnel des deux côtés signale que ni l'hypothèse ni le résultat ne sont réalisés. C'est le mode de la modélisation, non celui de la communication financière.\n\nappliquerions-nous + nom — hypothèse : appliquerions-nous ce modèle\nnous obtiendrions — résultat conditionnel : une croissance de 1,4 %\nretiendrions-nous — hypothèse alternative : l'hypothèse haute du scénario\nl'écart serait de — chiffrage : 0,8 point de déficit\nserait-ce le cas — reprise d'hypothèse : la trajectoire s'infléchirait\nla trajectoire s'infléchirait dès — conséquence datée : dès 2027"
+        },
+        {
+          "type": "grammar-focus",
+          "grammarId": "fr-c2-inversion-conditionnelle-dans-les-previsions-macroeconomiques-appliquerions-nous-ce-modele-nous-obtiendrions"
+        },
+        {
+          "type": "grammar-focus",
+          "grammarId": "fr-c2-reseaux-syntaxiques-hypothetiques-complexes-des-accords-multilateraux"
+        },
+        {
+          "type": "instruction",
+          "content": "Pratique guidée : choisissez la bonne option."
+        },
+        {
+          "type": "test",
+          "content": "Pourquoi le conditionnel dans les deux membres ?",
+          "options": [
+            "Les deux sont non réalisés.",
+            "Par élégance.",
+            "Par prudence."
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Que risque le glissement au futur ?",
+          "options": [
+            "Rien.",
+            "Le scénario devient prévision.",
+            "Une faute d'accord."
+          ]
+        },
+        {
+          "type": "test",
+          "content": "Que fait serait-ce le cas ?",
+          "options": [
+            "Il conclut.",
+            "Il réfute.",
+            "Il reprend l'hypothèse."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fr-c2-finance-quantitative-produits-derives-et-theorie-des-jeux-slide-6",
+      "title": "6. Lecture, écoute et compréhension",
+      "stage": "reading-listening",
+      "duration": 60,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Lisez et écoutez : trois exemples en contexte."
+        },
+        {
+          "type": "blockquote",
+          "content": "Appliquerions-nous ce modèle, nous obtiendrions une croissance de 1,4 %. (Inversion et résultat.)\nRetiendrions-nous l'hypothèse haute, l'écart de déficit serait de 0,8 point. (Scénario chiffré.)\nSerait-ce le cas, la trajectoire de dette s'infléchirait dès 2027. (Conséquence datée.)"
+        },
+        {
+          "type": "instruction",
+          "content": "Qu’observez-vous ?"
+        },
+        {
+          "type": "blockquote",
+          "content": "Inversion conditionnelle : appliquerions-nous, retiendrions-nous, serait-ce le cas, nous obtiendrions, l'écart serait de, la trajectoire s'infléchirait. Toujours conditionnel dans les deux membres."
+        },
+        {
+          "type": "test",
+          "content": "1. Pourquoi le conditionnel dans les deux membres ?",
+          "options": [
+            "Parce que l'hypothèse et le résultat sont tous deux non réalisés.",
+            "Par symétrie."
+          ]
+        },
+        {
+          "type": "test",
+          "content": "2. Que marque serait-ce le cas ?",
+          "options": [
+            "Il reprend l'hypothèse précédente sans la répéter.",
+            "Il conclut."
+          ]
+        },
+        {
+          "type": "instruction",
+          "content": "Reformulez la règle en une phrase, sans regarder le tableau."
+        },
+        {
+          "type": "input",
+          "placeholder": "La règle en une phrase…"
+        }
+      ]
+    },
+    {
+      "id": "fr-c2-finance-quantitative-produits-derives-et-theorie-des-jeux-slide-7",
+      "title": "7. Production libre",
+      "stage": "freer-practice",
+      "duration": 60,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Production libre : Peut évaluer les structures financières complexes, les équilibres de théorie des jeux et les politiques des banques centrales"
+        },
+        {
+          "type": "blockquote",
+          "content": "Critères de réussite :\n- Je mets le conditionnel des deux côtés.\n- Je reprends l'hypothèse par serait-ce le cas.\n- Je ne glisse pas au futur."
+        },
+        {
+          "type": "instruction",
+          "content": "Jeu de rôle : exposez votre point de vue en quatre-vingt-dix secondes, votre partenaire note les emplois de la structure."
+        },
+        {
+          "type": "input",
+          "placeholder": "Votre production (dix lignes)…"
+        }
+      ]
+    },
+    {
+      "id": "fr-c2-finance-quantitative-produits-derives-et-theorie-des-jeux-slide-8",
+      "title": "8. Erreurs fréquentes et correction",
+      "stage": "adaptation",
+      "duration": 60,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Erreurs fréquentes et correction :"
+        },
+        {
+          "type": "blockquote",
+          "content": "❌ appliquerions-nous ce modèle, nous obtiendrons 1,4 % (glissement au futur) → ✅ appliquerions-nous ce modèle, nous obtiendrions 1,4 %\n❌ serait le cas, la trajectoire s'infléchirait → ✅ serait-ce le cas, la trajectoire s'infléchirait"
+        },
+        {
+          "type": "instruction",
+          "content": "Corrigez ces phrases : dites ce qui ne va pas, puis la version juste."
+        },
+        {
+          "type": "input",
+          "placeholder": "Correction et justification…"
+        },
+        {
+          "type": "instruction",
+          "content": "Variantes acceptables :"
+        },
+        {
+          "type": "blockquote",
+          "content": "Retiendrions-nous une élasticité plus faible, la recette serait inférieure de 0,3 point.\nSerait-ce le cas, le déficit primaire resterait stable.\nFussions-nous convenus d'un tel cadre, la dette se serait stabilisée dès 2026."
+        }
+      ]
+    },
+    {
+      "id": "fr-c2-finance-quantitative-produits-derives-et-theorie-des-jeux-slide-9",
+      "title": "9. Variantes selon le public",
+      "stage": "adaptation",
+      "duration": 60,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Adapter la même tâche au groupe :"
+        },
+        {
+          "type": "blockquote",
+          "content": "- Individuel : cinq phrases avec la structure, sur le thème du cours.\n- Binôme : un dialogue de dix répliques où les réseaux hypothétiques des accords sert d’argument.\n- Groupe : un débat de six minutes, deux camps, la structure imposée à chaque prise de parole.\n- Public professionnel : transposer la structure dans une note de service.\n- Public académique : transposer dans un paragraphe d’analyse."
+        },
+        {
+          "type": "instruction",
+          "content": "Deuxième point de grammaire du cours : Les réseaux hypothétiques des accords. Un accord multilatéral se juge à l'articulation de ses conditions : chaque condition doit être vérifiable par une instance nommée, et chaque échec doit avoir une suite prévue. Sans"
+        },
+        {
+          "type": "input",
+          "placeholder": "Votre transposition…"
+        }
+      ]
+    },
+    {
+      "id": "fr-c2-finance-quantitative-produits-derives-et-theorie-des-jeux-slide-10",
+      "title": "10. Bilan et travail personnel",
+      "stage": "cool-down",
+      "duration": 60,
+      "mode": "all",
+      "elements": [
+        {
+          "type": "instruction",
+          "content": "Pouvez-vous déjà l’utiliser ?"
+        },
+        {
+          "type": "blockquote",
+          "content": "- Je mets le conditionnel des deux côtés.\n- Je reprends l'hypothèse par serait-ce le cas.\n- Je ne glisse pas au futur."
+        },
+        {
+          "type": "instruction",
+          "content": "Travail personnel : Rédigez dix lignes qui emploient l'inversion conditionnelle des prévisions, avec au moins deux corrections vérifiées."
+        },
+        {
+          "type": "instruction",
+          "content": "Prochain cours : Posture hypothétique et conditionnelles complexes en modélisation."
+        }
+      ]
+    }
+  ]
+}

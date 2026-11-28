@@ -36,8 +36,14 @@ Every lesson needs two grammar links, or slide 5 loses its `grammar-focus` eleme
 of the French B1 curriculum shipped with `grammarIds: null`; they were filled in by hand.
 
 ## Status (last update)
-- French: A1 142 lessons, A2 65, B1 65 (published in the manifest), B2 65 lessons (published as General French B2).
-- French C1, C2: curriculum and manual scaffolding only, no lesson files.
+- French: A1 142 lessons, A2 65, B1 65, B2 65, C1 65 and C2 65 lessons, all six published in the
+  manifest. General French C1 and C2 were published last: 130 decks under `lessons/general-french-c1`
+  and `lessons/general-french-c2`, built by `scripts/lesson-build/build_fr_c1_c2_decks.py` from the
+  curriculum plus the two manual pages each lesson links to.
+- Those decks present authored manual material (rule, table, examples, traps, exercise) inside a
+  fixed ten-slide frame; the surrounding sentences are templated. Refining the templated slide 9
+  differentiation lines for C1/C2 is still open.
+- Platform totals after that publish: 46/182 courses, 1977/2447 lesson slots, 1601 lesson files.
 - Manual coverage, verified by counting `Voici un exemple clair` in each topic file:
   COMPLETE for French: A1 202/202, A2 202/202, B1 246/246, B2 209/209, C1 129/129, C2 121/121 —
   1109 topic pages, no stub pages, no broken links. Earlier notes claiming 144 C1 and 137 C2 pages
