@@ -156,6 +156,32 @@ Three numbers, all computable today, none of them requiring a teacher to fill in
 `npm run audit:recycling` computes the first and part of the third. Retrieval density needs the
 `usesChunk` tags to be authored, which is why the data model comes before the audit.
 
+## The capacity finding
+
+Running the planner on Italian B1 turned an intuition into arithmetic. The course introduces **7.7
+blocks per lesson**. Five returns each needs **2,378** returns; five questions per lesson provides
+**320** slots. The schedule therefore honours 13% of the demand, and a 65-lesson course can hold
+about **64 blocks** at that budget against the 500 it currently introduces.
+
+| questions per lesson | returns per block | blocks a 65-lesson course can hold |
+|---|---|---|
+| 5 | 5 | 64 |
+| 10 | 5 | 128 |
+| 15 | 5 | 192 |
+| 15 | 3 | 320 |
+
+This is the mechanical explanation for the 35% orphan rate: the item load is several times what any
+plausible retrieval slot can sustain. There are only three honest responses, and they are a decision
+for the course design, not for the generator:
+
+1. **Cut the load.** Fewer new blocks per lesson, more reuse. A lesson can carry about one new block
+   per five questions of retrieval budget.
+2. **Grow the slot.** A longer stage 2 (10-15 questions) roughly doubles or triples capacity, at the
+   cost of time elsewhere in the 60-minute frame.
+3. **Triage.** Mark some blocks `hold` (recycled on schedule) and others `recognise` (met once on
+   purpose, never returned). Recognise-only blocks are legitimate — a reading text needs words the
+   learner will not produce — but they must be *chosen*, not the accidental remainder.
+
 ## Failure modes, and the guard for each
 
 **Fake recycling.** The word appears in an instruction ("use *temo che* in a sentence"), so the
@@ -178,10 +204,13 @@ rebuild.
 
 ## Order of work
 
-1. **Chunk registry, one course.** Take Italian B1 (65 decks, already coherent) and tag its existing
-   vocabulary and grammar with COSYdata ids. No rewriting yet. This proves the ids resolve.
-2. **Retrieval generator, read-only.** A script that, given the registry and the schedule, prints the
-   five blocks each lesson should return. Review it by eye on ten lessons before it writes anything.
+1. **Chunk registry, one course.** Done for Italian B1: `npm run chunks:build -- --course general-it-b1`
+   writes `data/chunks/general-it-b1.json`, 500 blocks in 65 lessons. Only 21% resolve to COSYdata
+   ids; the rest carry provisional `pending:` ids so planning is not blocked. Report:
+   `docs/CHUNK_REGISTRY_general-it-b1.md`.
+2. **Retrieval generator, read-only.** Done: `npm run chunks:plan -- --course general-it-b1` prints
+   the plan and writes `docs/RETRIEVAL_PLAN_general-it-b1.md`. It immediately produced the finding
+   that decides the rest of this work — see the capacity section below.
 3. **Rewrite stage 2 on one unit.** Five lessons, by hand, with the generated list as input. Read the
    result as a learner: is it a conversation or a quiz?
 4. **Measure, then widen.** Orphan rate and retrieval density on that unit, then the course, then the

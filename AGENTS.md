@@ -25,6 +25,19 @@ vocabulary appears in exactly one deck, and the `recycling` field holds prose ("
 A2 e del modulo precedente") on 130 decks, so nothing can check it. The audit is a floor, not proof:
 presence in text is not learner production.
 
+## Chunk registry and retrieval plan
+`npm run chunks:build -- --course general-it-b1` -> `data/chunks/<course>.json` plus
+`docs/CHUNK_REGISTRY_<course>.md`; `npm run chunks:plan -- --course general-it-b1` ->
+`data/chunks/<course>-plan.json` plus `docs/RETRIEVAL_PLAN_<course>.md`. Neither writes to the
+curriculum or the decks.
+
+Italian B1 is 500 blocks over 65 lessons: 21% resolve to COSYdata ids, 345 carry `pending:` ids
+(the dictionary lacks most B1 vocabulary - intanto, racconto, episodio are all missing). The plan
+returned the capacity finding that shapes the method: 7.7 blocks per lesson against a five-question
+slot means 2,378 returns demanded and 320 available, so a 65-lesson course can hold ~64 blocks at
+that budget. Cutting the load, growing the slot, or triaging blocks into hold/recognise is a course
+design decision, not a generator one.
+
 ## Lesson generation
 `/tmp/cosy_build.py` holds the shared `Spec` class: it writes the ten-slide deck from a per-lesson
 dict (`cando`, `chunks`, `reading`, `listen`, `pron`, `adapt`, `practice`, `rule`, `prior`, `next`,

@@ -21,6 +21,8 @@
     "audit:roadmap": "python3 scripts/roadmap-deck-audit.py --write",
     "audit:shelf": "python3 scripts/shelf-parity.py --write",
     "audit:recycling": "python3 scripts/audit-recycling.py --write",
+    "chunks:build": "python3 scripts/build-chunk-registry.py",
+    "chunks:plan": "python3 scripts/plan-retrieval.py",
     "seed:workbooks": "node scripts/seed-workbooks.js",
     "validate": "npm run check:content && npm run check:languages && npm run check:protected && npm run stats:check && npm test"
   },
