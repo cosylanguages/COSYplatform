@@ -108,6 +108,7 @@ have no entry in the map yet, so they are reported as "no metadata" rather than 
 | fr general | C2 | 463 | 9 % | unit themes applied |
 | en general | B1 | 1 193 | 83 % | unit themes applied, legacy bucket excluded |
 | ru general | B1 | 515 | 15 % | unit themes applied |
+| it general | B1 | 520 | 26 % | 6 topical units themed, 7 grammar-led units not |
 
 French general is now themed end to end (88 units: A1 23, A2–C2 13 each) and every level has a
 review sheet. The fall is not French-specific: A1/A2 vocabulary is concrete and the dictionary
@@ -115,6 +116,8 @@ covers it; from B1 the dictionary holds idioms and part-of-speech buckets instea
 English B1 (83 %) is the exception because its curriculum was drawn from the same source as the
 dictionary; Russian B1 (15 %) is the other extreme, and its `related` count is 0 because Russian
 inflection does not fit the Latin prefix+suffix rule — the matcher stays silent rather than guess.
+Italian B1 (26 %) is grammar-organised: units 1-7 are congiuntivo, ipotesi, discorso indiretto and
+pronomi, so they carry no topic and are left unthemed rather than given a false one.
 
 ## Open decisions before scaling
 

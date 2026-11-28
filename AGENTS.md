@@ -151,8 +151,11 @@ repositories plus the proposed level model. Facts worth remembering before touch
   renders `docs/B1_SLOT_ALIGNMENT.md`. All three B1 courses cover 10/13 slots and all three miss
   t01 and t21; FR and RU spend three units on t22 and two on t17. Restructuring units is content
   work, not a metadata change.
-- Vocabulary id maps added for EN B1 (1 193 items, 83 %) and RU B1 (515 items, 15 %; `related` is
-  0 because Russian inflection does not fit the Latin prefix+suffix rule).
+- Vocabulary id maps added for EN B1 (1 193 items, 83 %), RU B1 (515 items, 15 %), IT B1 (520
+  items, 26 %). `related` is 0 for RU and IT because their inflection does not fit the Latin
+  prefix+suffix rule; the matcher stays silent rather than guess.
+- Italian B1 is grammar-organised: units 1-7 are grammar labels and are deliberately unthemed
+  (only units 8-13 carry a topic), so IT covers 5/13 slots. Do not invent a theme to fill a cell.
 - The `recycled` prose field is populated on 100 % of lessons in all five languages but templated
   (51 distinct strings across 65 FR B1 lessons), and no id points at the earlier page. Recycling
   must be wired through `recycledIds`, not through that prose.

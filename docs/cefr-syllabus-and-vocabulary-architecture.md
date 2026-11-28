@@ -650,6 +650,9 @@ cover 10 of 13 slots. All three lack the identity slot (t01) and the ethics slot
 lacks money (t06), Russian lacks travel (t10), English lacks civic life, budgets and register
 (t17, t18, t22). French and Russian each spend three units on t22 and two on t17, so the gap is
 duplication as much as absence. The English legacy bucket (40 lessons, unit 11) carries no theme.
+Italian is the worst case and confirms rule 5: seven of its thirteen B1 units are grammar labels
+(congiuntivo presente, congiuntivo nel passato, ipotesi e possibilità, discorso indiretto, pronomi,
+descrizione), so only 6 units could be themed and the course covers 5 of the 13 slots.
 
 This keeps the useful part of the current French B1 map and fixes the three defects: the English
 slot titles stop being noun phrases, the Russian and Italian maps stop being grammar labels, and
