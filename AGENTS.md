@@ -43,7 +43,20 @@ of the French B1 curriculum shipped with `grammarIds: null`; they were filled in
 - Those decks present authored manual material (rule, table, examples, traps, exercise) inside a
   fixed ten-slide frame; the surrounding sentences are templated. Refining the templated slide 9
   differentiation lines for C1/C2 is still open.
-- Platform totals after that publish: 46/182 courses, 1977/2447 lesson slots, 1601 lesson files.
+- English B2 (121 lessons, 11 units) published: `lessons/general-english-b2/` and
+  `roadmaps/general-en-b2.json`, built by `scripts/lesson-build/build_en_b2_decks.py`. The 23 lessons
+  that had no grammar ids were wired by `scripts/grammar-ids/wire_en_b2.py`; the rest carry the ids
+  they shipped with, so the curriculum now totals 147 ids for 121 lessons (95 lessons have one id,
+  26 have two) and the deck emits one `grammar-focus` per id rather than assuming two.
+- `scripts/lesson-build/manual_page.py` now parses both locales: English pages label the same
+  sections as "What you can communicate after this page", "What do you observe", "Formula / rule"
+  and "Additional example bank". Without that the English decks parsed as empty.
+- Platform totals after that publish: 46/182 courses, 2025/2495 lesson slots, 1722 lesson files.
+- Known gap: 21 of the English B2 decks have an empty reading slide because their lesson links a B1
+  page that is still generated filler. Nine B1 pages are involved: all-both-either-neither-none,
+  causative-have-get-something-done, have-to-must-should-had-better, mixed-conditionals,
+  modifying-comparatives, present-perfect-simple-vs-continuous, reported-speech-statements,
+  second-conditional, wish-if-only.
 - Manual coverage, verified by counting `Voici un exemple clair` in each topic file:
   COMPLETE for French: A1 202/202, A2 202/202, B1 246/246, B2 209/209, C1 129/129, C2 121/121 —
   1109 topic pages, no stub pages, no broken links. Earlier notes claiming 144 C1 and 137 C2 pages
@@ -65,4 +78,8 @@ of the French B1 curriculum shipped with `grammarIds: null`; they were filled in
   tense id carried an accent (`es-a1-pretérito-perfecto`) that the platform's id pattern rejects.
   Both were fixed in COSYmanuals by regenerating the registry and renaming the page.
 - The check needs the COSYmanuals checkout, so it is not part of `npm run validate`.
+- English in COSYmanuals is the thin shelf, in reverse order of how much it matters: A2 25 stub
+  pages of 47, B1 43 of 48, B2 0 of 47 (rewritten), C1 1 of 26, C2 1 of 20. A stub is recognisable by
+  its `Mastering <topic>` subtitle and its filler example, `She demonstrated <topic> with great
+  precision`. French and Russian have none.
 - Other languages: A1 courses only.

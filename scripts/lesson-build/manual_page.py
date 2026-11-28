@@ -64,11 +64,33 @@ def _quizzes(block):
     return out
 
 
+def _clean_rule(rule_text):
+    for lbl in RULE_LABELS:
+        rule_text = rule_text.replace(lbl, '')
+    return rule_text.strip()
+
+
+def _first(page, patterns):
+    for pat in patterns:
+        m = re.search(pat, page, re.S)
+        if m:
+            return m
+    return None
+
+
+OUTCOME_LABELS = ['Objectif de communication :', 'What you can communicate after this page:']
+OBSERVE_PATTERNS = [r"Qu'observez-vous \?.*?</h3>\s*<p>(.*?)</p>",
+                    r"What do you observe\?.*?</h3>\s*<p>(.*?)</p>"]
+RULE_LABELS = ['Formule / Règle :', 'Formula / rule:']
+BANK_PATTERNS = [r'<span class="label">Banque d.exemples.*?(<ul>.*?</ul>)',
+                 r'<span class="label">Additional example bank.*?(<ul>.*?</ul>)']
+
+
 def parse(page):
     h1 = re.search(r'<h1>(.*?)</h1>', page, re.S)
     subtitle = re.search(r'<p class="subtitle">(.*?)</p>', page, re.S)
-    outcome = re.search(r'Objectif de communication :</strong>(.*?)</div>', page, re.S)
-    observe = re.search(r"Qu'observez-vous \?.*?</h3>\s*<p>(.*?)</p>", page, re.S)
+    outcome = _first(page, [re.escape(lbl) + r'</strong>(.*?)</div>' for lbl in OUTCOME_LABELS])
+    observe = _first(page, OBSERVE_PATTERNS)
 
     examples = _examples(_section(page, 'contexte'))
 
@@ -80,7 +102,7 @@ def parse(page):
 
     rule = re.search(r'<div class="box rule-box"[^>]*>\s*<p>(.*?)</p>', page, re.S)
 
-    bank = re.search(r'<span class="label">Banque d.exemples.*?(<ul>.*?</ul>)', page, re.S)
+    bank = _first(page, BANK_PATTERNS)
     extra = _examples(bank.group(1)) if bank else []
 
     traps = []
@@ -103,9 +125,9 @@ def parse(page):
         'examples': examples,
         'observe': text(observe.group(1)) if observe else '',
         'table': table,
-        'rule': text(rule.group(1)).replace('Formule / Règle :', '').strip() if rule else '',
-        'why': _box(page, 'why', 'Pourquoi'),
-        'native': _box(page, 'native', 'Pensez'),
+        'rule': _clean_rule(text(rule.group(1))) if rule else '',
+        'why': _box(page, 'why', 'Pourquoi') or _box(page, 'why', 'Why'),
+        'native': _box(page, 'native', 'Pensez') or _box(page, 'native', 'Think'),
         'pron': text(re.search(r'<div class="pron-callout"[^>]*>.*?<p>(.*?)</p>', page, re.S).group(1))
         if re.search(r'<div class="pron-callout"[^>]*>.*?<p>(.*?)</p>', page, re.S) else '',
         'extra': extra,
