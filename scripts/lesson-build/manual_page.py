@@ -49,6 +49,28 @@ def _examples(block):
     return out
 
 
+def _gv_lines(block):
+    """Examples from the guided-discovery opener used by the earlier English frame."""
+    out = []
+    for li in re.findall(r'<li>(.*?)</li>', block, re.S):
+        before = re.search(r'<span class="gv-r1">(.*?)</span>', li, re.S)
+        gap = re.search(r'<span class="gv-r2">(.*?)</span>', li, re.S)
+        tail = li.split('</details>', 1)[1] if '</details>' in li else ''
+        body = ' '.join(text(x.group(1)) if x else '' for x in (before, gap))
+        out.append({'label': '', 'text': (body + ' ' + text(tail)).strip(), 'comment': ''})
+    return [e for e in out if e['text']]
+
+
+def _quiz_panels(page):
+    starts = [(m.start(), m.group(1)) for m in
+              re.finditer(r'<div class="(ccq-panel|quiz-panel)"[^>]*>', page)]
+    out = []
+    for i, (pos, cls) in enumerate(starts):
+        end = starts[i + 1][0] if i + 1 < len(starts) else len(page)
+        out.append((cls, page[pos:end]))
+    return out
+
+
 def _quizzes(block):
     out = []
     chunks = block.split('<div class="qitem">')[1:]
@@ -93,6 +115,14 @@ def parse(page):
     observe = _first(page, OBSERVE_PATTERNS)
 
     examples = _examples(_section(page, 'contexte'))
+    if not examples:
+        gv = re.search(r'<ol class="gv-lines">(.*?)</ol>', page, re.S)
+        if gv:
+            examples = _gv_lines(gv.group(1))
+    if not examples:
+        m = re.search(r'<ul class="ex-list">(.*?)</ul>', page, re.S)
+        if m:
+            examples = _examples(m.group(1))
 
     table = []
     for tr in re.findall(r'<tr>(.*?)</tr>', page, re.S):
@@ -101,6 +131,10 @@ def parse(page):
             table.append({'element': cells[0], 'role': cells[1], 'example': cells[2]})
 
     rule = re.search(r'<div class="box rule-box"[^>]*>\s*<p>(.*?)</p>', page, re.S)
+    if not rule:
+        rule = re.search(r'<div class="gv gv-formula"[^>]*>(.*?)</div>', page, re.S)
+    if not rule:
+        rule = re.search(r'<div class="box rule"[^>]*>\s*<p>(.*?)</p>', page, re.S)
 
     bank = _first(page, BANK_PATTERNS)
     extra = _examples(bank.group(1)) if bank else []
@@ -134,6 +168,9 @@ def parse(page):
         'traps': traps,
         'connect': connect,
         'checklist': checklist,
-        'ccq': _quizzes(_section(page, 'ccq')),
-        'practice': _quizzes(_section(page, 'pratique')),
+        'ccq': _quizzes(_section(page, 'ccq')) or next(
+            (q for cls, block in _quiz_panels(page) if cls == 'ccq-panel' for q in [_quizzes(block)] if q), []),
+        'practice': _quizzes(_section(page, 'pratique')) or next(
+            (q for cls, block in reversed(_quiz_panels(page)) if cls == 'quiz-panel'
+             for q in [_quizzes(block)] if q), []),
     }

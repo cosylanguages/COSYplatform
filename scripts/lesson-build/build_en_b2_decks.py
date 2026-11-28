@@ -4,7 +4,7 @@ Every lesson names its grammar points, and each page supplies the rule, the tabl
 traps and the exercise, so the deck presents authored material. Only the scaffolding sentences are
 templated.
 
-    python3 scripts/lesson-build/build_en_b2_decks.py [--write]
+    python3 scripts/lesson-build/build_en_b2_decks.py [--level b1] [--write]
 
 Without --write it prints a summary and the first deck it would emit.
 """
@@ -23,10 +23,13 @@ MANUALS = os.environ.get('COSY_MANUALS', '/workspace/COSYmanuals')
 MANUALS_URL = 'https://cosylanguages.github.io/COSYManuals/'
 
 LEVEL = 'b2'
-COURSE = 'general-en-b2'
-TRACK_TITLE = 'General English B2'
-FOLDER = 'general-english-b2'
-PREVIOUS = 'the general B1 course'
+PREVIOUS_BY_LEVEL = {'a1': 'the general A0-A1 course', 'a2': 'the general A1 course',
+                     'b1': 'the general A2 course', 'b2': 'the general B1 course',
+                     'c1': 'the general B2 course', 'c2': 'the general C1 course'}
+COURSE = f'general-en-{LEVEL}'
+TRACK_TITLE = f'General English {LEVEL.upper()}'
+FOLDER = f'general-english-{LEVEL}'
+PREVIOUS = PREVIOUS_BY_LEVEL[LEVEL]
 
 
 def slug(text):
@@ -86,7 +89,7 @@ def build_deck(lesson, unit, next_title, code, unit_vocab=None):
         'elements': [
             {'type': 'instruction', 'content': f'Can-do objective: {cando}'},
             {'type': 'blockquote', 'content':
-                f"Course overview:\n- Level: B2 General English\n- Unit: {unit}\n"
+                f"Course overview:\n- Level: {LEVEL.upper()} General English\n- Unit: {unit}\n"
                 f"- Duration: {duration} minutes\n- Code: {code}"},
             {'type': 'instruction', 'content': (f'In pairs, three minutes: what does this sentence already tell you? '
                                                 f'{ex[0]["text"]}') if ex else
@@ -259,7 +262,7 @@ def build_deck(lesson, unit, next_title, code, unit_vocab=None):
             f'use the target structure: {page["title"].lower()}',
             f'use {len(vocab)} new words: ' + ', '.join(vocab),
         ],
-        'materials': (f'COSYmanuals B2 grammar pages on {page["title"].lower()}'
+        'materials': (f'COSYmanuals {LEVEL.upper()} grammar pages on {page["title"].lower()}'
                       + (f' and {second_title.lower()}' if second else '')
                       + '; vocabulary cards, audio extracts, reading handout.'),
         'assessment': f'Check accurate use of {page["title"].lower()} and clear delivery in the spoken task.',
@@ -286,7 +289,7 @@ def build_deck(lesson, unit, next_title, code, unit_vocab=None):
 
 
 def lessons_of():
-    path = os.path.join(REPO, 'curriculums', 'en', 'general', 'B2.json')
+    path = os.path.join(REPO, 'curriculums', 'en', 'general', LEVEL.upper() + '.json')
     data = json.load(open(path, encoding='utf-8'))
     flat = []
     for section, unit in enumerate(data['units'], 1):
@@ -306,7 +309,7 @@ def main(write=False):
     sequence = []
     seen = {}
     for i, (unit, lesson, section) in enumerate(flat):
-        code = f'EN-B2-{i + 1:03d}'
+        code = f'EN-{LEVEL.upper()}-{i + 1:03d}'
         next_title = flat[i + 1][1]['title'] if i + 1 < len(flat) else 'the end-of-course review'
         deck = build_deck(lesson, unit, next_title, code, unit_vocab.get(unit))
         base = deck['id']
@@ -335,7 +338,7 @@ def main(write=False):
     if write:
         with open(os.path.join(REPO, 'roadmaps', COURSE + '.json'), 'w', encoding='utf-8') as fh:
             fh.write(json.dumps(roadmap, ensure_ascii=False, indent=2) + '\n')
-    print(f'b2: {len(sequence)} decks')
+    print(f'{LEVEL}: {len(sequence)} decks')
     if write:
         print('wrote roadmaps/' + COURSE + '.json')
     else:
@@ -345,5 +348,12 @@ def main(write=False):
 if __name__ == '__main__':
     ap = argparse.ArgumentParser()
     ap.add_argument('--write', action='store_true')
+    ap.add_argument('--level', default=LEVEL, choices=sorted(PREVIOUS_BY_LEVEL))
     a = ap.parse_args()
+    if a.level != LEVEL:
+        LEVEL = a.level
+        COURSE = f'general-en-{LEVEL}'
+        TRACK_TITLE = f'General English {LEVEL.upper()}'
+        FOLDER = f'general-english-{LEVEL}'
+        PREVIOUS = PREVIOUS_BY_LEVEL[LEVEL]
     main(write=a.write)

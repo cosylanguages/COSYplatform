@@ -75,7 +75,7 @@ window.CosyAuth.FULL_MANIFEST = [
   {"id":"general-en-a2","title":"General English A2","track":"General","lang":"en","level":"a2"},
   {"id":"phrasal-verbs-en-a2","title":"Phrasal Verbs A2 - Pre-Intermediate","track":"General","lang":"en","level":"a2","status":"not_yet_available"},
   {"id":"vocabulary-en-a2","title":"Vocabulary Practice A2 - Pre-Intermediate","track":"General","lang":"en","level":"a2","status":"not_yet_available"},
-  {"id":"general-en-b1","title":"General English B1","track":"General","lang":"en","level":"b1","status":"not_yet_available"},
+  {"id":"general-en-b1","title":"General English B1","track":"General","lang":"en","level":"b1"},
   {"id":"phrasal-verbs-en-b1","title":"Phrasal Verbs B1 - Intermediate","track":"General","lang":"en","level":"b1","status":"not_yet_available"},
   {"id":"vocabulary-en-b1","title":"Vocabulary Practice B1 - Intermediate","track":"General","lang":"en","level":"b1","status":"not_yet_available"},
   {"id":"general-en-b2","title":"General English B2","track":"General","lang":"en","level":"b2"},

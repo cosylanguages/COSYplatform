@@ -58,6 +58,15 @@ of the French B1 curriculum shipped with `grammarIds: null`; they were filled in
   second-conditional, wish-if-only) were written in COSYmanuals, and the 121 decks were rebuilt: no
   slide now carries an empty element. A deck builder that reads manual pages must be re-run after a
   page is rewritten, because the deck copies the text at build time.
+- English B1 (120 lessons, 11 units) published: `lessons/general-english-b1/` and
+  `roadmaps/general-en-b1.json`. The 22 lessons that had no grammar ids were wired by
+  `scripts/grammar-ids/wire_en_b1.py`; the curriculum now totals 163 ids. The deck builder is
+  `scripts/lesson-build/build_en_b2_decks.py --level b1 --write`, parameterised by `--level`
+  (a1, a2, b1, b2, c1, c2) so one script serves every published English level.
+- `manual_page.parse` now also reads the guided-discovery frame (`.gv-lines` gap-fill opener,
+  `.gv-formula` rule, `ccq-panel` / `quiz-panel` quiz blocks) used by the pages written before the
+  B2 rewrite, so those pages produce examples, a rule and both quizzes instead of empty strings.
+- Platform totals after that publish: 47/182 courses, 2145/2534 lesson slots, 1842 lesson files.
 - Manual coverage, verified by counting `Voici un exemple clair` in each topic file:
   COMPLETE for French: A1 202/202, A2 202/202, B1 246/246, B2 209/209, C1 129/129, C2 121/121 —
   1109 topic pages, no stub pages, no broken links. Earlier notes claiming 144 C1 and 137 C2 pages
@@ -79,8 +88,9 @@ of the French B1 curriculum shipped with `grammarIds: null`; they were filled in
   tense id carried an accent (`es-a1-pretérito-perfecto`) that the platform's id pattern rejects.
   Both were fixed in COSYmanuals by regenerating the registry and renaming the page.
 - The check needs the COSYmanuals checkout, so it is not part of `npm run validate`.
-- English in COSYmanuals is the thin shelf, in reverse order of how much it matters: A2 25 stub
-  pages of 47, B1 43 of 48, B2 0 of 47 (rewritten), C1 1 of 26, C2 1 of 20. A stub is recognisable by
-  its `Mastering <topic>` subtitle and its filler example, `She demonstrated <topic> with great
-  precision`. French and Russian have none.
+- English in COSYmanuals is now complete from A1 to C2 except for the A2 shelf: B1 0 stub pages of
+  48 (finished), B2 0 of 47 (rewritten), C1 1 of 26, C2 1 of 20, A1 1 of 81. The remaining English gap
+  is A2 with 25 stub pages of 47; so-neither and infinitives-and-gerunds were rewritten early because
+  the B1 decks embed them. A stub is recognisable by its `Mastering <topic>` subtitle and its filler
+  example, `She demonstrated <topic> with great precision`. French and Russian have none.
 - Other languages: A1 courses only.
