@@ -20,6 +20,7 @@
     "audit:cando": "python3 scripts/audit-can-do.py --write",
     "audit:roadmap": "python3 scripts/roadmap-deck-audit.py --write",
     "audit:shelf": "python3 scripts/shelf-parity.py --write",
+    "audit:recycling": "python3 scripts/audit-recycling.py --write",
     "seed:workbooks": "node scripts/seed-workbooks.js",
     "validate": "npm run check:content && npm run check:languages && npm run check:protected && npm run stats:check && npm test"
   },

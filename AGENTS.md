@@ -17,6 +17,14 @@ npm run validate     # content integrity checks
 npm run stats:build  # regenerate data/platform-stats.json
 ```
 
+## Speaking method
+`docs/SPEAKING_METHODOLOGY.md` is the proposal for how the decks should teach: blocks introduced
+with a question, a retrieval set in stage 2 of every lesson, a schedule for what returns. The
+measurement behind it is `npm run audit:recycling` -> `docs/RECYCLING_AUDIT.md`: 35% of curriculum
+vocabulary appears in exactly one deck, and the `recycling` field holds prose ("Lessico del livello
+A2 e del modulo precedente") on 130 decks, so nothing can check it. The audit is a floor, not proof:
+presence in text is not learner production.
+
 ## Lesson generation
 `/tmp/cosy_build.py` holds the shared `Spec` class: it writes the ten-slide deck from a per-lesson
 dict (`cando`, `chunks`, `reading`, `listen`, `pron`, `adapt`, `practice`, `rule`, `prior`, `next`,
