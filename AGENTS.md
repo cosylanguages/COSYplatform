@@ -201,6 +201,14 @@ repositories plus the proposed level model. Facts worth remembering before touch
   silently dropped (9 995 characters of a lesson became 1 801 until the mapper handled any block
   tag); and text parity must unescape `&amp;` and ignore the list markers the converter adds, or
   every file with a bullet list reports a false mismatch.
+- `npm run audit:shelf` renders `docs/SHELF_PARITY.md`: the JSON catalogue (1711 lessons, 9.5
+  slides) carries a can-do 90%, objectives 96%, a grammar focus 88%, reading/listening 93% and
+  pronunciation 89%; the XML shelf (456 lessons, 8.0 slides) carries 0% of every one of them and
+  100% of practice. Conversion preserves a structurally thin lesson, so the expensive part of
+  migrating the shelf is authoring, not converting. See `docs/PILOT_SPOKEN_EN_A1.md`.
+- `spoken-en-a1` promises 49 lessons: 22 have no file, and the 27 that do are club lessons from
+  Debatable Relatable, Keeping Up With Science, Lets Celebrate and The Greatest Quotes, none of them
+  from the modules the roadmap names. Eight of the 27 titles say (A2) while the file says A1.
 - `npm run status:coverage` renders `docs/COVERAGE_STATUS.md`: every course against the 13 slots,
   with themed vs grammar-only unit counts. It is the one place to see the platform state; the per
   level `docs/*_SLOT_ALIGNMENT.md` files are the detail behind it.
