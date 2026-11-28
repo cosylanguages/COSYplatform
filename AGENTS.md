@@ -154,6 +154,10 @@ repositories plus the proposed level model. Facts worth remembering before touch
 - Vocabulary id maps added for EN B1 (1 193 items, 83 %), RU B1 (515 items, 15 %), IT B1 (520
   items, 26 %). `related` is 0 for RU and IT because their inflection does not fit the Latin
   prefix+suffix rule; the matcher stays silent rather than guess.
+- Greek A2: units 1, 9-13 themed (remembrance, work, health, home, culture, revision); units 2-8
+  (present perfect, future, subjunctive, imperative, comparatives, relatives, conditionals) left
+  unthemed; map 520 items, 28 % resolved. Greek A1 is organised by sounds and grammar, so it is
+  left entirely unthemed on purpose.
 - Italian B1 is grammar-organised: units 1-7 are grammar labels and are deliberately unthemed
   (only units 8-13 carry a topic), so IT covers 5/13 slots. Do not invent a theme to fill a cell.
 - The `recycled` prose field is populated on 100 % of lessons in all five languages but templated

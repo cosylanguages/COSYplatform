@@ -652,7 +652,9 @@ lacks money (t06), Russian lacks travel (t10), English lacks civic life, budgets
 duplication as much as absence. The English legacy bucket (40 lessons, unit 11) carries no theme.
 Italian is the worst case and confirms rule 5: seven of its thirteen B1 units are grammar labels
 (congiuntivo presente, congiuntivo nel passato, ipotesi e possibilità, discorso indiretto, pronomi,
-descrizione), so only 6 units could be themed and the course covers 5 of the 13 slots.
+descrizione), so only 6 units could be themed and the course covers 5 of the 13 slots. Greek has no B1 course
+yet, so the grid cannot be applied there; its A2 course has the same 6-of-13 shape, and its A1
+course (sounds, articles, verbs in the present) has no topical unit at all.
 
 This keeps the useful part of the current French B1 map and fixes the three defects: the English
 slot titles stop being noun phrases, the Russian and Italian maps stop being grammar labels, and
