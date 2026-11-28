@@ -144,6 +144,15 @@ repositories plus the proposed level model. Facts worth remembering before touch
 - Tests `tests/curriculum-metadata.test.js` and `tests/vocab-id-map.test.js` guard the metadata,
   the artifact shape and the FR B1 pilot; `npm run audit:lexicon` needs the COSYdata/COSYmanuals
   checkouts and is not part of `validate`.
+- B1 theming extended to English (units 1-10; unit 11 "Additional Legacy Topics & Draft Lessons"
+  is deliberately left unthemed, 40 lessons) and Russian (13 units, native macro-functions).
+  Additions only: EN +38 lines, RU +50 lines.
+- `cefr/data/unit-slots.json` holds the canonical 13-slot B1 grid; `scripts/slot-alignment.py`
+  renders `docs/B1_SLOT_ALIGNMENT.md`. All three B1 courses cover 10/13 slots and all three miss
+  t01 and t21; FR and RU spend three units on t22 and two on t17. Restructuring units is content
+  work, not a metadata change.
+- Vocabulary id maps added for EN B1 (1 193 items, 83 %) and RU B1 (515 items, 15 %; `related` is
+  0 because Russian inflection does not fit the Latin prefix+suffix rule).
 - The `recycled` prose field is populated on 100 % of lessons in all five languages but templated
   (51 distinct strings across 65 FR B1 lessons), and no id points at the earlier page. Recycling
   must be wired through `recycledIds`, not through that prose.

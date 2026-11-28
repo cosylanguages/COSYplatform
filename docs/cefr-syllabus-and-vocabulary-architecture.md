@@ -644,6 +644,13 @@ so unit *k* lesson *j* is the same pedagogical moment everywhere.
 | 12 | t18 | discuss a budget or a market | Budgets, markets and consumption | Budget, marchés et consommation | Бюджет, рынки и потребление | Bilancio, mercati e consumi |
 | 13 | t22 | adapt my register | Language, register and communication | Langue, registre et francophonie | Язык, стиль и русскоязычный мир | Lingua, registro e italofonia |
 
+The actual state of that grid is measured in `docs/B1_SLOT_ALIGNMENT.md` (regenerate with
+`python3 scripts/slot-alignment.py --level B1 --write`). Result on 2026-11-28: EN, FR and RU B1 all
+cover 10 of 13 slots. All three lack the identity slot (t01) and the ethics slot (t21); French also
+lacks money (t06), Russian lacks travel (t10), English lacks civic life, budgets and register
+(t17, t18, t22). French and Russian each spend three units on t22 and two on t17, so the gap is
+duplication as much as absence. The English legacy bucket (40 lessons, unit 11) carries no theme.
+
 This keeps the useful part of the current French B1 map and fixes the three defects: the English
 slot titles stop being noun phrases, the Russian and Italian maps stop being grammar labels, and
 B2/C1/C2 no longer repeat these titles verbatim in translation — each higher level returns to the
