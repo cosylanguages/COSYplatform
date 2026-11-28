@@ -88,6 +88,9 @@ SCAFFOLD = {
                     '- Pubblico accademico: trasponila in un paragrafo di analisi.'),
         second_point='Secondo punto della lezione: {second}.', your_adaptation='Il tuo adattamento…',
         do_you='Sai già usare questa struttura?', homework='Compiti: ',
+        check_1='Ho capito la regola «{title}» e so fare un esempio mio.',
+        check_2='Uso le parole nuove della lezione in una frase.',
+        check_3='So fare una domanda sul tema e rispondere.',
         homework_default='Scrivi dieci righe usando «{title}», con almeno due frasi controllate sulla pagina del manuale.',
         next_lesson='Prossima lezione: {next}.',
         obj_structure='usare la struttura: {title}', obj_words='usare {n} parole nuove: {words}',
@@ -148,6 +151,9 @@ SCAFFOLD = {
                     '- Ακαδημαϊκό κοινό: μεταφέρε τη σε παράγραφο ανάλυσης.'),
         second_point='Δεύτερο σημείο του μαθήματος: {second}.', your_adaptation='Η προσαρμογή σου…',
         do_you='Ξέρεις ήδη να χρησιμοποιείς αυτή τη δομή;', homework='Εργασίες: ',
+        check_1='Κατάλαβα τον κανόνα «{title}» και μπορώ να δώσω δικό μου παράδειγμα.',
+        check_2='Χρησιμοποιώ τις νέες λέξεις του μαθήματος σε μια φράση.',
+        check_3='Μπορώ να κάνω μια ερώτηση για το θέμα και να απαντήσω.',
         homework_default='Γράψε δέκα γραμμές χρησιμοποιώντας «{title}», με τουλάχιστον δύο φράσεις ελεγμένες στη σελίδα του εγχειριδίου.',
         next_lesson='Επόμενο μάθημα: {next}.',
         obj_structure='χρήση της δομής: {title}', obj_words='χρήση {n} νέων λέξεων: {words}',
@@ -208,6 +214,9 @@ SCAFFOLD = {
                     '- Для учёбы: перенесите её в абзац анализа.'),
         second_point='Вторая тема урока: {second}.', your_adaptation='Ваш вариант задания…',
         do_you='Вы уже умеете пользоваться этой конструкцией?', homework='Домашнее задание: ',
+        check_1='Я понимаю правило «{title}» и могу привести свой пример.',
+        check_2='Я использую новые слова урока в коротком высказывании.',
+        check_3='Я могу задать вопрос по теме урока и ответить на него.',
         homework_default='Напишите десять строк с «{title}»; проверьте не меньше двух фраз по странице руководства.',
         next_lesson='Следующий урок: {next}.',
         obj_structure='использовать конструкцию: {title}', obj_words='использовать {n} новых слов: {words}',
@@ -330,7 +339,8 @@ def build_deck(lang, level, t, lesson, unit, next_title, code):
     table_lines = [(f"{r['element']} — {r['role']}: {r['example']}" if r.get('role')
                     else f"{r['element']} — {r.get('note', '')}") for r in page['table'][:6]]
     trap_lines = [f"❌ {x['wrong']} → ✅ {x['right']}" for x in page['traps'][:2]]
-    check = page['checklist'][:3]
+    check = page['checklist'][:3] or [t['check_1'].format(title=page['title'].lower()),
+                                      t['check_2'], t['check_3']]
     practice = page['practice'][:3]
     ccq = page['ccq'][:2]
     rule = page['rule'] or page['observe']

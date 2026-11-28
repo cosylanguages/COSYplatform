@@ -53,7 +53,17 @@ with no roadmap, so all six entries are hidden. English also carries the entry b
 `scripts/content/normalize_ru_a1_titles.py` turned `Раздел 0: Первые шаги (A0)`, `MODULE 1. ...` and
 `МОДУЛЬ 2. ...` into `Модуль N. Sentence case`. Both scripts are idempotent. The 142 decks carry no empty
 element; six still print an English quiz prompt, `Переведите «I like this book»:`, which lives in
-COSYmanuals and should become a Russian sentence. Supporting changes: the Russian page frame in `manual_page.py`
+COSYmanuals and should become a Russian sentence.
+
+Russian A2 is published too: 65 decks, 13 modules, `docs/RUSSIAN_A2_BUILD.md`. The curriculum already read in
+Russian, but 25 lessons had no `grammarIds`, 40 cited the **A1** shelf (`ru-a1-proshedshee-vremya` for a
+lesson the A2 shelf answers with `ru-a2-proshedshee-vremya-i-vid`), the titles used three numbering schemes,
+381 vocabulary items were Title Case where A1 is lowercase, 16 can-do lines were bare infinitives and 15
+homework notes said `ты`. `scripts/grammar-ids/wire_ru_a2.py` and `scripts/content/normalize_ru_a2.py` fix
+all of it; the result is 131 ids over 57 pages (52 of the 55 A2 pages).
+Ten A2 pages carry no checklist block, which used to leave the cool-down slide empty: `build_decks.py` now
+falls back to three scaffold sentences (`check_1..check_3`, added for it, el and ru) when `page['checklist']`
+is empty, and its `recycled_default` no longer repeats the label that `prior` already prints. Supporting changes: the Russian page frame in `manual_page.py`
 (`ul.gv-lines`, `p.gv-formula`, `section.examples`, `box mint` headings, `wrong-line`/`right-line`, and
 two-column reference tables) takes page coverage from 11 to 38 of the 39 ids the curriculum uses; a
 Cyrillic table in `slug()` (without it every deck id was `ru-a1----`); a 70-string `ru` scaffold; and
