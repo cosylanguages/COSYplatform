@@ -209,6 +209,14 @@ repositories plus the proposed level model. Facts worth remembering before touch
 - `spoken-en-a1` promises 49 lessons: 22 have no file, and the 27 that do are club lessons from
   Debatable Relatable, Keeping Up With Science, Lets Celebrate and The Greatest Quotes, none of them
   from the modules the roadmap names. Eight of the 27 titles say (A2) while the file says A1.
+- A lesson's can-do reaches the deck through `cando:` inside the curriculum lesson's
+  `teacher_notes`; `build_decks.py` falls back to the manual page's `outcome`, which is the grammar
+  point, and that fallback is why the Italian and Greek grammar units read as drills. Rewriting the
+  note rewrites the can-do, and the deck copies it into three places (canDo, the objective line and
+  `Produzione libera:`). Pilot done for Italian B1 unit 2: five lessons, it-b1 form-first 19 to 14.
+- `build_decks.py` needs `/workspace/COSYmanuals`, so no deck can be regenerated in a workspace
+  without the manuals checkout. It now takes `--only <slug>` and `--keep-roadmap`: without the
+  latter a `--write` resets every roadmap entry to `status: drafted`.
 - `npm run status:coverage` renders `docs/COVERAGE_STATUS.md`: every course against the 13 slots,
   with themed vs grammar-only unit counts. It is the one place to see the platform state; the per
   level `docs/*_SLOT_ALIGNMENT.md` files are the detail behind it.

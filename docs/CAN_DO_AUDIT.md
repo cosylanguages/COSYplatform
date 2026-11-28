@@ -11,14 +11,14 @@ themed unit should look like. The classifier is a triage aid, not a verdict: eve
 deck is sampled below so the call can be checked by eye.
 
 Decks read: 1606.
-form-first: 130 | task-with-grammar: 46 | task: 1366 | empty: 64
+form-first: 125 | task-with-grammar: 48 | task: 1369 | empty: 64
 
 | course | decks | task | task+grammar | form-first | form share |
 |---|---|---|---|---|---|
 | general-english-b1 | 120 | 87 | 7 | 26 | 22% |
-| general-italian-b1 | 65 | 46 | 0 | 19 | 29% |
 | general-english-b2 | 121 | 99 | 4 | 18 | 15% |
 | general-greek-a1 | 65 | 49 | 0 | 16 | 25% |
+| general-italian-b1 | 65 | 49 | 2 | 14 | 22% |
 | general-greek-a2 | 65 | 53 | 1 | 11 | 17% |
 | general-italian-a2 | 65 | 54 | 2 | 9 | 14% |
 | general-italian-a1 | 65 | 58 | 0 | 7 | 11% |
@@ -52,16 +52,6 @@ form-first: 130 | task-with-grammar: 46 | task: 1366 | empty: 64
 - `en-b1-both-either-neither-all-every.json` - I can use quantifiers for groups.
 - `en-b1-clipping-b1.json` - I can recognise clipped words.
 
-### general-italian-b1 (19 flagged)
-- `it-b1-ci-e-ne-nei-testi.json` - Evitare ripetizioni con ci e ne in un testo scritto.
-- `it-b1-congiuntivo-o-indicativo.json` - Scegliere tra indicativo e congiuntivo secondo il grado di certezza.
-- `it-b1-gerundio-e-participio.json` - Rendere più dense le frasi con gerundio e participio.
-- `it-b1-gli-avverbi-in-mente.json` - Modificare verbi e aggettivi con gli avverbi giusti.
-- `it-b1-i-connettivi-del-racconto.json` - Collegare le parti di un racconto con i connettivi.
-- `it-b1-i-verbi-che-reggono-il-congiuntivo.json` - Scegliere il congiuntivo dopo i verbi di opinione e volontà.
-- `it-b1-i-verbi-pronominali.json` - Usare i verbi pronominali e riconoscere il cambio di senso.
-- `it-b1-il-condizionale-passato.json` - Usare il condizionale passato per il futuro nel passato e per le notizie non confermate.
-
 ### general-english-b2 (18 flagged)
 - `en-b2-adjectives-and-adverbs.json` - I can use adjectives and adverbs precisely.
 - `en-b2-all-tenses-revision.json` - I can use a range of tenses accurately.
@@ -81,6 +71,16 @@ form-first: 130 | task-with-grammar: 46 | task: 1366 | empty: 64
 - `el-a1-epanalipsi-rimata-enestota.json` - Κλίνω τα βασικά ρήματα στον ενεστώτα.
 - `el-a1-epitatika-moria.json` - Χρησιμοποιώ τα μόρια να, ας, θα.
 - `el-a1-i-klisi-toy-oysiastikoy.json` - Κλίνω ένα ουσιαστικό σε όλες τις πτώσεις.
+
+### general-italian-b1 (14 flagged)
+- `it-b1-ci-e-ne-nei-testi.json` - Evitare ripetizioni con ci e ne in un testo scritto.
+- `it-b1-congiuntivo-o-indicativo.json` - Scegliere tra indicativo e congiuntivo secondo il grado di certezza.
+- `it-b1-gerundio-e-participio.json` - Rendere più dense le frasi con gerundio e participio.
+- `it-b1-gli-avverbi-in-mente.json` - Modificare verbi e aggettivi con gli avverbi giusti.
+- `it-b1-i-connettivi-del-racconto.json` - Collegare le parti di un racconto con i connettivi.
+- `it-b1-i-verbi-pronominali.json` - Usare i verbi pronominali e riconoscere il cambio di senso.
+- `it-b1-il-condizionale-passato.json` - Usare il condizionale passato per il futuro nel passato e per le notizie non confermate.
+- `it-b1-il-congiuntivo-imperfetto.json` - Usare il congiuntivo imperfetto nell'ipotesi e nel desiderio.
 
 ### general-greek-a2 (11 flagged)
 - `el-a2-anomaloi-typoi-sygkrisis.json` - Χρησιμοποιώ τους ανώμαλους τύπους σύγκρισης.

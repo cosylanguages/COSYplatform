@@ -79,9 +79,10 @@ TASK_HEADS = (
     "modéliser", "rapporter", "nuancer", "mobiliser", "résumer", "traduire", "reformuler",
     "parlare", "descrivere", "raccontare", "spiegare", "discutere", "sostenere",
     "argomentare", "presentare", "chiedere", "rispondere", "evidenziare",
+    "esprimere", "formulare", "motivare", "commentare", "suggerire",
     "рассказывать", "описывать", "говорить", "объяснять", "обсуждать", "анализировать",
-    "сравнивать", "убеждать", "представлять", "жаловаться",
-    "μιλάω", "περιγράφω", "διηγούμαι", "εξηγώ", "συζητώ", "συγκρίνω",
+    "сравнивать", "убеждать", "представлять", "жаловаться", "выражать", "формулировать",
+    "μιλάω", "περιγράφω", "διηγούμαι", "εξηγώ", "συζητώ", "συγκρίνω", "εκφράζω", "διατυπώνω",
 )
 
 

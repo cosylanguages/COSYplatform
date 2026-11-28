@@ -330,7 +330,7 @@ def lessons_of(lang, level):
     return flat
 
 
-def main(lang, level, write=False):
+def main(lang, level, write=False, only=None, keep_roadmap=False):
     t = SCAFFOLD[lang]
     settings = SETTINGS[lang]
     course = f'general-{lang}-{level}'
@@ -342,6 +342,8 @@ def main(lang, level, write=False):
     for i, (unit, lesson, section) in enumerate(flat):
         if not lesson.get('grammarIds'):
             skipped.append(lesson['title'])
+            continue
+        if only and slug(lesson['title']) not in only:
             continue
         next_title = flat[i + 1][1]['title'] if i + 1 < len(flat) else settings['last']
         deck = build_deck(lang, level, t, lesson, unit, next_title, f"{settings['code']}-{level.upper()}-{i + 1:03d}")
@@ -361,7 +363,7 @@ def main(lang, level, write=False):
                          'section': section, 'unit': unit, 'isOptional': False, 'status': 'drafted',
                          'lessonFile': f'lessons/{folder_name}/{deck["id"]}.json'})
     roadmap = {'curriculumId': course, 'title': track, 'totalLessons': len(flat), 'sequence': sequence}
-    if write:
+    if write and not keep_roadmap:
         with open(os.path.join(REPO, 'roadmaps', course + '.json'), 'w', encoding='utf-8') as fh:
             fh.write(json.dumps(roadmap, ensure_ascii=False, indent=2) + '\n')
     print(f'{lang}-{level}: {len(sequence)} decks, {len(skipped)} lessons without a manual page')
@@ -374,5 +376,8 @@ if __name__ == '__main__':
     ap.add_argument('--lang', default='it', choices=LANGS)
     ap.add_argument('--level', default='a2', choices=('a1', 'a2', 'b1'))
     ap.add_argument('--write', action='store_true')
+    ap.add_argument('--only', nargs='+', help='regenerate only these lesson slugs')
+    ap.add_argument('--keep-roadmap', action='store_true',
+                    help='leave the roadmap untouched (statuses are otherwise reset to drafted)')
     a = ap.parse_args()
-    main(a.lang, a.level, write=a.write)
+    main(a.lang, a.level, write=a.write, only=set(a.only or []), keep_roadmap=a.keep_roadmap)
