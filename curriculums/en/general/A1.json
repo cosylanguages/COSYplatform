@@ -6,6 +6,8 @@
     {
       "unit": 1,
       "title": "MODULE 1. FIRST CONTACT & PERSONAL IDENTITY",
+      "theme": "t01",
+      "macroFunction": "say who I am and give my personal details",
       "lessons": [
         {
           "lesson": 1,
@@ -754,6 +756,8 @@
     {
       "unit": 2,
       "title": "MODULE 2. PEOPLE & RELATIONSHIPS",
+      "theme": "t02",
+      "macroFunction": "talk about my family, friends and relationships",
       "lessons": [
         {
           "lesson": 1,
@@ -1224,6 +1228,8 @@
     {
       "unit": 3,
       "title": "MODULE 3. OBJECTS & PERSONAL SPACE",
+      "theme": "t03",
+      "macroFunction": "name my things and describe my personal space",
       "lessons": [
         {
           "lesson": 1,
@@ -1396,6 +1402,8 @@
     {
       "unit": 4,
       "title": "MODULE 4. HOME & EVERYDAY ENVIRONMENT",
+      "theme": "t03",
+      "macroFunction": "describe my home and the place I live in",
       "lessons": [
         {
           "lesson": 1,
@@ -1939,6 +1947,8 @@
     {
       "unit": 5,
       "title": "MODULE 5. FOOD & DRINK",
+      "theme": "t05",
+      "macroFunction": "order food and drink and talk about what I like",
       "lessons": [
         {
           "code": "EN-051",
@@ -2330,6 +2340,8 @@
       "id": "u6",
       "label": "SHOPPING & MONEY",
       "title": "MODULE 6. SHOPPING & MONEY",
+      "theme": "t06",
+      "macroFunction": "buy something and ask the price",
       "color": "#A7C2FB",
       "arc": "Navigating shops, asking prices, paying and understanding discounts",
       "lessons_count": 6,
@@ -2499,6 +2511,8 @@
       "id": "u7",
       "label": "CLOTHES & APPEARANCE",
       "title": "MODULE 7. CLOTHES & APPEARANCE",
+      "theme": "t07",
+      "macroFunction": "describe clothes and appearance",
       "color": "#ACCBFB",
       "arc": "Describing clothing, accessories, fitting, sizes and personal style",
       "lessons_count": 6,
@@ -2693,6 +2707,8 @@
       "id": "u8",
       "label": "HEALTH & BODY",
       "title": "MODULE 8. HEALTH & BODY",
+      "theme": "t08",
+      "macroFunction": "say how I feel and describe a health problem",
       "color": "#B0D4FB",
       "arc": "Body parts, symptoms, doctor visits, pharmacy and healthy habits",
       "lessons_count": 6,
@@ -2934,6 +2950,11 @@
       "id": "u9",
       "label": "WORK & EDUCATION",
       "title": "MODULE 9. WORK & EDUCATION",
+      "theme": "t13",
+      "secondaryThemes": [
+        "t12"
+      ],
+      "macroFunction": "talk about my job and my studies",
       "color": "#B5DDFB",
       "arc": "Occupations, workplaces, working hours, studies, exams and career profiles",
       "lessons_count": 6,
@@ -3127,6 +3148,8 @@
       "id": "u10",
       "label": "LANGUAGES & COMMUNICATION",
       "title": "MODULE 10. LANGUAGES & COMMUNICATION",
+      "theme": "t22",
+      "macroFunction": "ask what a word means and manage a simple conversation",
       "color": "#B9E6FB",
       "arc": "Language skills, learning levels, classroom phrases, translation, messaging and portfolio",
       "lessons_count": 6,
@@ -3320,6 +3343,8 @@
       "id": "u11",
       "label": "TRANSPORT & TRAVEL",
       "title": "MODULE 11. TRANSPORT & TRAVEL",
+      "theme": "t10",
+      "macroFunction": "take a bus or a train and buy a ticket",
       "color": "#BEEFFB",
       "arc": "Transport modes, travel places, directions, tickets, schedules and airport check-in",
       "lessons_count": 6,
@@ -3507,6 +3532,8 @@
       "id": "u12",
       "label": "CITY & PLACES",
       "title": "MODULE 12. CITY & PLACES",
+      "theme": "t11",
+      "macroFunction": "ask for directions and say where things are",
       "color": "#C2F8FB",
       "arc": "Places in town, public buildings, landmarks, city orientation and neighborhood guide",
       "lessons_count": 6,
@@ -3700,6 +3727,11 @@
       "id": "u13",
       "label": "WEATHER & NATURE",
       "title": "MODULE 13. WEATHER & NATURE",
+      "theme": "t09",
+      "secondaryThemes": [
+        "t19"
+      ],
+      "macroFunction": "talk about the weather and the seasons",
       "color": "#82104F6",
       "arc": "Weather conditions, seasons, natural landscapes, weather forecast and eco-habits",
       "lessons_count": 6,
@@ -3943,6 +3975,8 @@
       "id": "u14",
       "label": "FREE TIME & HOBBIES",
       "title": "MODULE 14. FREE TIME & HOBBIES",
+      "theme": "t14",
+      "macroFunction": "talk about my free time and what I like doing",
       "color": "#8c118F6",
       "arc": "Leisure activities, sports, entertainment, weekend plans, hobbies survey and portfolio",
       "lessons_count": 6,
@@ -4283,6 +4317,8 @@
       "id": "u15",
       "label": "TECHNOLOGY",
       "title": "MODULE 15. TECHNOLOGY",
+      "theme": "t15",
+      "macroFunction": "use a phone and talk about everyday technology",
       "color": "#9612cF6",
       "arc": "Devices, tech operations, internet activities, messaging, safety and digital life",
       "lessons_count": 6,
@@ -4476,6 +4512,8 @@
       "id": "u16",
       "label": "CELEBRATIONS, CULTURE & EVENTS",
       "title": "MODULE 16. CELEBRATIONS, CULTURE & EVENTS",
+      "theme": "t16",
+      "macroFunction": "join a celebration and wish someone well",
       "color": "#a0140F6",
       "arc": "Personal celebrations, party invitations, national holidays, cultural outings, social events and capstone project",
       "lessons_count": 6,
@@ -4663,6 +4701,8 @@
       "id": "u17",
       "label": "PAST EXPERIENCES",
       "title": "MODULE 17. PAST EXPERIENCES (MOVING TOWARDS A2)",
+      "theme": "t01",
+      "macroFunction": "tell someone what I did yesterday",
       "color": "#aa154F6",
       "arc": "Talking about past events, yesterday, weekends, childhood memories, travel, and personal milestones",
       "lessons_count": 6,
@@ -4905,6 +4945,8 @@
       "id": "u18",
       "label": "FUTURE PLANS & DREAMS",
       "title": "MODULE 18. FUTURE PLANS & DREAMS",
+      "theme": "t01",
+      "macroFunction": "talk about my plans and what I want to do",
       "color": "#b4168F6",
       "arc": "Immediate future intentions, personal goals, career ambitions, future travel, simple predictions and capstone roadmap",
       "lessons_count": 6,
@@ -5099,6 +5141,8 @@
       "id": "u19",
       "label": "COMPARING MY WORLD",
       "title": "MODULE 19. COMPARING MY WORLD",
+      "theme": "t11",
+      "macroFunction": "compare two places and say which I prefer",
       "color": "#be17cF6",
       "arc": "Comparing objects, people, places, lifestyles, preferences, recommendations and comparative capstone",
       "lessons_count": 6,
@@ -5292,6 +5336,11 @@
       "id": "u20",
       "label": "BASIC OPINIONS & SOCIAL INTERACTION",
       "title": "MODULE 20. BASIC OPINIONS & SOCIAL INTERACTION",
+      "theme": "t17",
+      "secondaryThemes": [
+        "t21"
+      ],
+      "macroFunction": "give a simple opinion and agree or disagree politely",
       "color": "#c8190F6",
       "arc": "Giving opinions, polite agreement/disagreement, handling everyday problems, giving advice, polite requests and capstone survey",
       "lessons_count": 6,

@@ -167,6 +167,13 @@ repositories plus the proposed level model. Facts worth remembering before touch
   "Argent, droits et démarches" (t21, t01, t06), with the 15 roadmap `unit` strings and 15 deck
   `unit` fields updated. general-fr-b1 is the only course at 13/13 slots. Phase 2 (renaming the ten
   grammar-led lessons of units 1-2 to can-dos) is NOT applied: it renames deck files and ids.
+- A1 and A2 have their own grids: `cefr/data/unit-slots-a1.json` and `unit-slots-a2.json`. The B1
+  grid has no slot for family, home, routine, food, clothes, weather or places, which is most of an
+  A-level course; measuring A1/A2 against it under-reports them badly (en-a1 read 9/13 against B1
+  and 12/13 against its own grid). `themes.json` has 22 themes, the B1 grid uses 13 of them.
+- English and Russian A1/A2/C1/C2 were themed with the same method, in their own language: en-a1
+  12/13, ru-a1 13/13, en-a2 9/13, ru-a2 10/13, en-c1 5/13, ru-c1 8/13, en-c2 7/13, ru-c2 7/13.
+  Legacy buckets and pure recap/project units stay unthemed on purpose.
 - `npm run status:coverage` renders `docs/COVERAGE_STATUS.md`: every course against the 13 slots,
   with themed vs grammar-only unit counts. It is the one place to see the platform state; the per
   level `docs/*_SLOT_ALIGNMENT.md` files are the detail behind it.
