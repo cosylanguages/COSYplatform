@@ -44,11 +44,16 @@ of the French B1 curriculum shipped with `grammarIds: null`; they were filled in
   were wrong; the real counts are 129 and 121.
 - Cross-level manual links from a topics/ page need `../../<level>/topics/<slug>.html` (three
   levels up is wrong; a bare `../c1/...` resolves one directory too shallow).
-- C1 and C2 lessons do not use `grammarIds` at all. They carry a free-text `grammar` field
-  (e.g. "Voix passive et substituts du passif (se faire, se voir + infinitif)"), so no course
-  link points at a manual page and the platform cannot resolve them the way A1-B2 do. Only the
-  C2 curriculum has ids (19), and all 19 are boilerplate.
-- The C1/C2 manual topic lists were not generated from their curriculum grammar strings: a
-  prefix match finds a page for only 5 of C1's 65 lessons. Writing the pages makes the manual
-  real; wiring the course to it is a separate decision that needs a mapping step.
+- C1 and C2 lessons are wired to the manual: 299 lessons across exam/general/professional/
+  pronunciation/spoken, each with two `grammarIds` of the form `fr-c1-<slug>` / `fr-c2-<slug>`,
+  every one resolving to a real topic page. The mapping was produced by
+  `scripts/grammar-ids/wire_fr_c1_c2.py` (segments matched against
+  `manual-fr-c1-c2-index.json` by IDF-weighted stem overlap, with `fr_c1_c2_rules.py` holding the
+  hand rules where the matcher is weak) and is reviewed in
+  `docs/grammar-id-review/mapping-fr-c1-c2.json`.
+- General C2 unit 1-9 and 13 lessons (the vocabulary lessons) have no `grammar` string at all;
+  their two ids were assigned by hand from the unit's topic.
+- `scripts/grammar-ids/check_grammar_ids.py` reports 11 unknown ids that predate this work: 8 in
+  `curriculums/fr/general/B2.json` (slugs written for pages that were never created) and 3 in
+  `curriculums/es/general/A1.json` (`es-a1-preterito-perfecto` reused across unrelated lessons).
 - Other languages: A1 courses only.
