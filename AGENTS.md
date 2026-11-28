@@ -74,7 +74,13 @@ and bare infinitives both), homework to the formal imperative, the English `recy
 final-exam "vocabulary" that was really a description of the exam. It is idempotent; A2 is already clean.
 `build_decks.py` picks the Russian numeral form for the objectives line (1 слово, 3 слова, 6 слов), which
 `использовать 3 новых слов` had hard-coded wrong for A1's first unit.
-Still to do on the Russian shelf: B2 (34 lessons unwired), C1 (65), C2 (55). Supporting changes: the Russian page frame in `manual_page.py`
+Russian B2 is published too: 65 decks, `docs/RUSSIAN_B2_BUILD.md`. 34 lessons had no ids and the rest
+pointed at B1 or A1; `wire_ru_b2.py` gives 131 ids over 57 points, using all 36 B2 pages. `build_decks.py`
+now takes `--level` up to c2 and carries a `previous` phrase per level (a B2 lesson without `recycled:`
+would have raised `KeyError`).
+C1 and C2 are still hidden and are not the same job: C1 stores `grammar` as one string per lesson where every
+other level uses a list of two, and C2 has ten lessons with no `grammar` at all; their shelves hold 28 and 20
+pages against 65 lessons each, so they need new pages before they need re-pointing. Supporting changes: the Russian page frame in `manual_page.py`
 (`ul.gv-lines`, `p.gv-formula`, `section.examples`, `box mint` headings, `wrong-line`/`right-line`, and
 two-column reference tables) takes page coverage from 11 to 38 of the 39 ids the curriculum uses; a
 Cyrillic table in `slug()` (without it every deck id was `ru-a1----`); a 70-string `ru` scaffold; and

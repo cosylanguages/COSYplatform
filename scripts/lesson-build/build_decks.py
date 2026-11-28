@@ -335,7 +335,7 @@ def build_deck(lang, level, t, lesson, unit, next_title, code):
     returns = parse_returns(notes)
     recycled = lesson.get('recycled') or ''
     if not in_language(recycled, lang):
-        recycled = t['recycled_default'].format(previous=settings['previous'][level])
+        recycled = t['recycled_default'].format(previous=settings['previous'].get(level, settings['previous']['a1']))
     deck_id = f'{lang}-{level}-{slug(lesson["title"])}'
     duration = lesson.get('duration_minutes', 60)
 
@@ -513,7 +513,7 @@ def main(lang, level, write=False, only=None, keep_roadmap=False):
 if __name__ == '__main__':
     ap = argparse.ArgumentParser()
     ap.add_argument('--lang', default='it', choices=LANGS)
-    ap.add_argument('--level', default='a2', choices=('a1', 'a2', 'b1'))
+    ap.add_argument('--level', default='a2', choices=('a1', 'a2', 'b1', 'b2', 'c1', 'c2'))
     ap.add_argument('--write', action='store_true')
     ap.add_argument('--only', nargs='+', help='regenerate only these lesson slugs')
     ap.add_argument('--keep-roadmap', action='store_true',
