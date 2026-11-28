@@ -154,6 +154,13 @@ repositories plus the proposed level model. Facts worth remembering before touch
 - Vocabulary id maps added for EN B1 (1 193 items, 83 %), RU B1 (515 items, 15 %), IT B1 (520
   items, 26 %). `related` is 0 for RU and IT because their inflection does not fit the Latin
   prefix+suffix rule; the matcher stays silent rather than guess.
+- B2 themed for EN (units 1-10, legacy bucket again unthemed) and RU (13 units). Against the shared
+  B1 theme grid: EN 7/13 slots, RU 6/13, FR 5/13 — FR B2 has no work/health/travel/money/
+  environment/culture/identity unit and four t17 units. RU B2 mirrors FR B2 on 7 of 13 slot
+  positions; EN B2 is independently ordered (3 of 10), so the "literal translation" note in the
+  architecture doc was corrected.
+- `slot-alignment.py --level B2 --grid B1` renders `docs/B2_SLOT_ALIGNMENT.md`; the test recomputes
+  coverage for every committed report from the curricula.
 - Greek A2: units 1, 9-13 themed (remembrance, work, health, home, culture, revision); units 2-8
   (present perfect, future, subjunctive, imperative, comparatives, relatives, conditionals) left
   unthemed; map 520 items, 28 % resolved. Greek A1 is organised by sounds and grammar, so it is

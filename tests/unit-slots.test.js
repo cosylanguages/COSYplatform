@@ -29,23 +29,35 @@ test('every slot states a macro-function and the five-moment lesson frame', () =
   }
 });
 
-test('the alignment report covers every themed B1 course with the computed coverage', () => {
+function themedCourses(level) {
   const base = path.join(root, 'curriculums');
-  const themed = [];
+  const out = [];
   for (const lang of fs.readdirSync(base)) {
     if (lang.startsWith('_')) continue;
     for (const track of fs.readdirSync(path.join(base, lang))) {
-      const file = path.join(base, lang, track, 'B1.json');
+      const file = path.join(base, lang, track, `${level}.json`);
       if (!fs.existsSync(file)) continue;
       const units = JSON.parse(fs.readFileSync(file, 'utf8')).units || [];
       const primary = new Set(units.map((u) => u.theme).filter(Boolean));
       if (primary.size === 0) continue;
-      const covered = slots.filter((s) => primary.has(s.theme)).length;
-      themed.push({ course: `${track}-${lang}-b1`, covered });
+      out.push({
+        course: `${track}-${lang}-${level.toLowerCase()}`,
+        covered: slots.filter((slot) => primary.has(slot.theme)).length,
+      });
     }
   }
-  assert.ok(themed.length >= 3, 'expected at least the EN/FR/RU B1 courses');
-  for (const { course, covered } of themed) {
-    assert.match(report, new RegExp(`### ${course} — ${covered}/13 slots`), course);
+  return out;
+}
+
+test('every committed alignment report matches the curricula it was built from', () => {
+  for (const level of ['B1', 'B2']) {
+    const file = path.join(root, 'docs', `${level}_SLOT_ALIGNMENT.md`);
+    if (!fs.existsSync(file)) continue;
+    const report = fs.readFileSync(file, 'utf8');
+    const courses = themedCourses(level);
+    assert.ok(courses.length >= 2, `${level}: expected themed courses`);
+    for (const { course, covered } of courses) {
+      assert.match(report, new RegExp(`### ${course} — ${covered}/13 slots`), `${level} ${course}`);
+    }
   }
 });

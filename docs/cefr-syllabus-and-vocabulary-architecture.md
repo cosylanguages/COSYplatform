@@ -615,7 +615,7 @@ new; the thread is the same).
 
 | issue | evidence | fix |
 |---|---|---|
-| C-level clone courses | EN/FR/RU B2–C2 units are literal translations | rewrite by theme + can-do per language; keep the theme grid, drop the mirrored titles |
+| C-level clone courses | measured: RU B2 mirrors FR B2 on 7 of 13 slot positions and shares its theme vocabulary; EN B2 is independently ordered (3 of 10) and still carries a 40-lesson legacy bucket | rewrite by theme + can-do per language; keep the theme grid, drop the mirrored titles. The clone problem is real for RU B2–C2, weak for EN |
 | EN legacy units | 16/46/40/40/40 lessons in bucket units | dissolve into the 22-theme grid or retire |
 | FR/RU 65 vs EN 120–141 | course sizes | set the standard to 65 per level (A1 142) and retire the surplus, or formally declare EN "extended" |
 | FR unit titles are can-do, EN are nouns | A2/B1 | adopt rule 1 platform-wide |
@@ -655,6 +655,12 @@ Italian is the worst case and confirms rule 5: seven of its thirteen B1 units ar
 descrizione), so only 6 units could be themed and the course covers 5 of the 13 slots. Greek has no B1 course
 yet, so the grid cannot be applied there; its A2 course has the same 6-of-13 shape, and its A1
 course (sounds, articles, verbs in the present) has no topical unit at all.
+
+B2 shows the drift the grid is meant to prevent (`docs/B2_SLOT_ALIGNMENT.md`): against the same 13
+themes, EN B2 covers 7, RU B2 6 and FR B2 5 — and FR B2 has no work, health, travel, money,
+environment, culture or identity unit at all, spending four units on t17 and three on t22 instead.
+The B2 courses were written as "advanced topics" lists, not as a second pass over the same
+domains, which is exactly what has to change.
 
 This keeps the useful part of the current French B1 map and fixes the three defects: the English
 slot titles stop being noun phrases, the Russian and Italian maps stop being grammar labels, and
