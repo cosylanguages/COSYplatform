@@ -18,6 +18,7 @@
     "slots:report": "python3 scripts/slot-alignment.py --level A1 --grid a1 --write && python3 scripts/slot-alignment.py --level A2 --grid a2 --write && python3 scripts/slot-alignment.py --level B1 --write && python3 scripts/slot-alignment.py --level B2 --grid B1 --write && python3 scripts/slot-alignment.py --level C1 --grid B1 --write && python3 scripts/slot-alignment.py --level C2 --grid B1 --write",
     "status:coverage": "python3 scripts/coverage-status.py --write",
     "audit:cando": "python3 scripts/audit-can-do.py --write",
+    "audit:roadmap": "python3 scripts/roadmap-deck-audit.py --write",
     "seed:workbooks": "node scripts/seed-workbooks.js",
     "validate": "npm run check:content && npm run check:languages && npm run check:protected && npm run stats:check && npm test"
   },

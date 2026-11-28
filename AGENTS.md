@@ -181,6 +181,15 @@ repositories plus the proposed level model. Facts worth remembering before touch
   do frame the form through a purpose (`Evitare ripetizioni con ci e ne`), only 19 of 65 are pure
   form drills. The classifier is triage, not judgement - `--explain "<can-do>"` classifies one
   string, and the doc samples every flagged deck.
+- `npm run audit:roadmap` renders `docs/ROADMAP_DECK_AUDIT.md`: 2214 roadmap entries point at a
+  deck, 1708 of them JSON and 455 legacy `.xml` lessons (spoken-en-b1 226, cinema-en-b1 106,
+  spoken-en-c1 43, spoken-en-b2 36, spoken-en-a1 27). The XML ones load through the old content
+  table but carry no JSON metadata, so no can-do, theme or grammar audit reaches them - a fifth of
+  the catalogue sits outside the model. 0 entries point at a missing file, 0 deck-level mismatches,
+  166 JSON decks have no can-do (science-en decks reused by the discussion courses, and the 28
+  French pronunciation decks under `lessons/french-pronunciation/<level>/`). 47 decks are reused
+  across courses and all of them are the A0 -> A0-A1 -> A1 ladder. A JSON loader must not treat
+  `.xml` as a missing file - that mistake first read as "455 lessons missing", which was false.
 - `npm run status:coverage` renders `docs/COVERAGE_STATUS.md`: every course against the 13 slots,
   with themed vs grammar-only unit counts. It is the one place to see the platform state; the per
   level `docs/*_SLOT_ALIGNMENT.md` files are the detail behind it.
