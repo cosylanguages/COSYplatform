@@ -45,6 +45,21 @@ with no roadmap, so all six entries are hidden. English also carries the entry b
 `general-en-a1` (180, from `curriculums/en/general/A1.json`) and `general-en-a0-a1` (48 decks under
 `lessons/general-english-a0`, from a curriculum id with no JSON file).
 
+## Russian A1 and the monolingual rule
+`build_decks.py --lang ru --level a1 --write` builds the 142 decks of `lessons/general-russian-a1/` and
+`roadmaps/general-ru-a1.json`; see `docs/RUSSIAN_A1_BUILD.md`. The course stays hidden: **102 of 142
+lessons carry English vocabulary** (module 6 lists `supermarket, bakery, pharmacy`), so the remaining work
+is translating ~800 items, not code. Supporting changes: the Russian page frame in `manual_page.py`
+(`ul.gv-lines`, `p.gv-formula`, `section.examples`, `box mint` headings, `wrong-line`/`right-line`, and
+two-column reference tables) takes page coverage from 11 to 38 of the 39 ids the curriculum uses; a
+Cyrillic table in `slug()` (without it every deck id was `ru-a1----`); a 70-string `ru` scaffold; and
+`in_language()` so an English `recycled:` field cannot land on slide 2.
+
+`npm run audit:monolingual` -> `docs/MONOLINGUAL_AUDIT.md` measures the rule platform-wide: **213 of 5,149
+lessons** have a fully foreign vocabulary list (ru A1 102, hy A1 55/55, ka A1 55/55 as complete English
+shells, ru C2 1), and 99 of 142 Russian decks leak Latin words. A list counts as foreign only when every
+item is foreign, so a half-translated lesson still reads as clean.
+
 ## Chunk registry and retrieval plan
 `npm run chunks:build -- --course general-it-b1` -> `data/chunks/<course>.json` plus
 `docs/CHUNK_REGISTRY_<course>.md`; `npm run chunks:plan -- --course general-it-b1` ->

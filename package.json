@@ -22,6 +22,8 @@
     "audit:shelf": "python3 scripts/shelf-parity.py --write",
     "audit:recycling": "python3 scripts/audit-recycling.py --write",
     "audit:coverage": "python3 scripts/audit-coverage.py --write",
+    "audit:monolingual": "python3 scripts/audit-monolingual.py --write",
+    "decks:ru:a1": "python3 scripts/lesson-build/build_decks.py --lang ru --level a1 --write",
     "chunks:build": "python3 scripts/build-chunk-registry.py",
     "chunks:plan": "python3 scripts/plan-retrieval.py",
     "seed:workbooks": "node scripts/seed-workbooks.js",

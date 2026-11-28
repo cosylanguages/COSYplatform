@@ -20,6 +20,8 @@ def text(fragment):
 
 def _section(page, name):
     m = re.search(r'<section id="%s"[^>]*>(.*?)</section>' % name, page, re.S)
+    if not m:
+        m = re.search(r'<section[^>]*class="[^"]*\b%s\b[^"]*"[^>]*>(.*?)</section>' % name, page, re.S)
     return m.group(1) if m else ''
 
 
@@ -46,6 +48,16 @@ def _examples(block):
         if lab and body.startswith(lab):
             body = body[len(lab):].lstrip(' :') or body
         out.append({'label': lab, 'text': body, 'comment': comment})
+    return out
+
+
+def _plain_lines(block):
+    """Examples from a list whose items are plain sentences, as the Russian frame writes them."""
+    out = []
+    for li in re.findall(r'<li>(.*?)</li>', block, re.S):
+        body = text(li)
+        if body:
+            out.append({'label': '', 'text': body, 'comment': ''})
     return out
 
 
@@ -100,7 +112,8 @@ def _first(page, patterns):
     return None
 
 
-OUTCOME_LABELS = ['Objectif de communication :', 'What you can communicate after this page:']
+OUTCOME_LABELS = ['Objectif de communication :', 'What you can communicate after this page:',
+                  'Коммуникативная цель:']
 OBSERVE_PATTERNS = [r"Qu'observez-vous \?.*?</h3>\s*<p>(.*?)</p>",
                     r"What do you observe\?.*?</h3>\s*<p>(.*?)</p>"]
 RULE_LABELS = ['Formule / Règle :', 'Formula / rule:']
@@ -116,9 +129,11 @@ def parse(page):
 
     examples = _examples(_section(page, 'contexte'))
     if not examples:
-        gv = re.search(r'<ol class="gv-lines">(.*?)</ol>', page, re.S)
+        examples = _examples(_section(page, 'examples')) or _plain_lines(_section(page, 'examples'))
+    if not examples:
+        gv = re.search(r'<(?:ol|ul) class="gv-lines">(.*?)</(?:ol|ul)>', page, re.S)
         if gv:
-            examples = _gv_lines(gv.group(1))
+            examples = _gv_lines(gv.group(1)) or _plain_lines(gv.group(1))
     if not examples:
         m = re.search(r'<ul class="ex-list">(.*?)</ul>', page, re.S)
         if m:
@@ -129,8 +144,13 @@ def parse(page):
         cells = [text(c) for c in re.findall(r'<td>(.*?)</td>', tr, re.S)]
         if len(cells) == 3:
             table.append({'element': cells[0], 'role': cells[1], 'example': cells[2]})
+        elif len(cells) == 2 and cells[0] and cells[1]:
+            # the Russian reference pages put the example first and the note second
+            table.append({'element': cells[0], 'role': '', 'example': cells[0], 'note': cells[1]})
 
-    rule = re.search(r'<div class="box rule-box"[^>]*>\s*<p>(.*?)</p>', page, re.S)
+    rule = re.search(r'<p class="gv-formula"[^>]*>(.*?)</p>', page, re.S)
+    if not rule:
+        rule = re.search(r'<div class="box rule-box"[^>]*>\s*<p>(.*?)</p>', page, re.S)
     if not rule:
         rule = re.search(r'<div class="gv gv-formula"[^>]*>(.*?)</div>', page, re.S)
     if not rule:
@@ -140,6 +160,11 @@ def parse(page):
     extra = _examples(bank.group(1)) if bank else []
 
     traps = []
+    for pair in re.finditer(r'<div class="wrong-line">.*?<span class="wrong-text">(.*?)</span>.*?'
+                            r'<div class="right-line">.*?<span class="right-text">(.*?)</span>', page, re.S):
+        wrong, right = text(pair.group(1)), text(pair.group(2))
+        if wrong and right:
+            traps.append({'wrong': wrong, 'right': right})
     for m in re.finditer(r'<span class="key-error[^"]*">(.*?)</span>(.*?)</p>.*?<span class="key-verb[^"]*">(.*?)</span>(.*?)</p>',
                          page, re.S):
         wrong = text(m.group(2)).lstrip('❌ ').strip()
@@ -157,13 +182,16 @@ def parse(page):
         'subtitle': text(subtitle.group(1)) if subtitle else '',
         'outcome': text(outcome.group(1)).lstrip('🎯 ').strip() if outcome else '',
         'examples': examples,
-        'observe': text(observe.group(1)) if observe else '',
+        'observe': (text(observe.group(1)) if observe else
+                    _box(page, 'mint', 'Что вы замечаете') or _box(page, 'mint', 'Обрати внимание')),
         'table': table,
         'rule': _clean_rule(text(rule.group(1))) if rule else '',
-        'why': _box(page, 'why', 'Pourquoi') or _box(page, 'why', 'Why'),
-        'native': _box(page, 'native', 'Pensez') or _box(page, 'native', 'Think'),
-        'pron': text(re.search(r'<div class="pron-callout"[^>]*>.*?<p>(.*?)</p>', page, re.S).group(1))
-        if re.search(r'<div class="pron-callout"[^>]*>.*?<p>(.*?)</p>', page, re.S) else '',
+        'why': _box(page, 'why', 'Pourquoi') or _box(page, 'why', 'Why') or _box(page, 'mint', 'Почему это важно'),
+        'native': (_box(page, 'native', 'Pensez') or _box(page, 'native', 'Think')
+                   or _box(page, 'mint', 'Думайте как носитель')),
+        'pron': (text(re.search(r'<div class="pron-callout"[^>]*>.*?<p>(.*?)</p>', page, re.S).group(1))
+                 if re.search(r'<div class="pron-callout"[^>]*>.*?<p>(.*?)</p>', page, re.S)
+                 else _box(page, 'mint', 'Замечание о произношении')),
         'extra': extra,
         'traps': traps,
         'connect': connect,
