@@ -234,6 +234,65 @@ UNITS = [
  ]),
 ]
 
+# Manual page for each lesson, absent where the shelf has no page yet. The deck builder refuses a lesson
+# without grammarIds, so these gaps are visible instead of being papered over.
+MAP = {
+    "Il passato prossimo con avere": ["it-a2-passato-prossimo-essere-avere", "it-a1-passato-prossimo"],
+    "Il passato prossimo con essere": ["it-a2-passato-prossimo-essere-avere"],
+    "L'accordo del participio passato": ["it-a2-passato-prossimo-essere-avere", "it-a1-passato-prossimo"],
+    "L'imperfetto indicativo": ["it-a2-limperfetto-indicativo"],
+    "Passato prossimo o imperfetto": ["it-a2-passato-prossimo-vs-imperfetto", "it-a2-trapassato-prossimo"],
+    "Descrivere l'aspetto e il carattere": ["it-a1-aggettivi-qualificativi"],
+    "Descrivere una casa e un quartiere": ["it-a1-c-e-ci-sono", "it-a1-preposizioni-luogo"],
+    "Parlare del tempo atmosferico": ["it-a2-il-tempo-atmosferico"],
+    "Esprimere emozioni al passato": ["it-a2-emozioni-al-passato", "it-a1-verbi-riflessivi"],
+    "Raccontare un viaggio": ["it-a2-passato-prossimo-vs-imperfetto"],
+    "Il futuro semplice regolare": ["it-a2-il-futuro-semplice"],
+    "Il futuro irregolare": ["it-a2-il-futuro-irregolare"],
+    "Fare previsioni": ["it-a2-fare-previsioni"],
+    "Se più presente e futuro": ["it-a2-se-presente-futuro"],
+    "Parlare di intenzioni e decisioni": ["it-a2-stare-per-e-intenzioni"],
+    "Il condizionale presente": ["it-a2-il-condizionale-presente"],
+    "Il periodo ipotetico del secondo tipo": ["it-a2-periodo-ipotetico-2"],
+    "Dare consigli": ["it-a2-dare-consigli"],
+    "Esprimere desideri e speranze": ["it-a2-esprimere-desideri-e-speranze", "it-b1-congiuntivo-presente"],
+    "Parlare di ciò che sarebbe potuto accadere": ["it-b1-condizionale-passato"],
+    "L'imperativo diretto": ["it-a1-imperativo"],
+    "L'imperativo con i pronomi": ["it-a2-imperativo-con-pronomi"],
+    "L'imperativo con Lei": ["it-a1-imperativo"],
+    "Esprimere obbligo e necessità": ["it-a2-obbligo-dovere-bisogna"],
+    "Chiedere e dare il permesso": ["it-a1-verbi-modali", "it-a2-obbligo-dovere-bisogna"],
+    "I pronomi diretti": ["it-a1-pronomi-diretti", "it-a2-pronomi-diretti-e-indiretti"],
+    "I pronomi indiretti": ["it-a2-pronomi-indiretti"],
+    "I pronomi combinati": ["it-a2-pronomi-combinati"],
+    "Ci e ne": ["it-a2-i-pronomi-ci-e-ne"],
+    "I pronomi relativi": ["it-b1-pronomi-relativi-cui-chi"],
+    "Il comparativo di maggioranza e minoranza": ["it-a2-il-comparativo-e-il-superlativo", "it-a1-comparativo-superlativo"],
+    "Il comparativo di uguaglianza": ["it-a2-il-comparativo-e-il-superlativo"],
+    "Il superlativo relativo": ["it-a1-comparativo-superlativo"],
+    "Il superlativo assoluto": ["it-b1-comparativi-e-superlativi-irregolari"],
+    "Valutare e dare giudizi": ["it-b1-comparativi-e-superlativi-irregolari"],
+    "L'articolo partitivo": ["it-a2-l-articolo-partitivo"],
+    "Molto, poco, troppo": ["it-a2-molto-poco-troppo"],
+    "Il ne partitivo": ["it-a2-i-pronomi-ci-e-ne"],
+    "I contenitori e le misure": ["it-a2-l-articolo-partitivo"],
+    "Fare la spesa e chiedere prezzi": ["it-a2-molto-poco-troppo", "it-a2-l-articolo-partitivo"],
+    "La forma passiva semplice": ["it-a2-forma-passiva-base"],
+    "Mezzi e biglietti": ["it-a1-preposizioni-articolate", "it-a1-preposizioni-semplici"],
+    "Chiedere e dare indicazioni": ["it-a1-preposizioni-luogo", "it-a1-imperativo"],
+    "Parlare di un viaggio futuro": ["it-a2-il-futuro-semplice"],
+    "Raccontare un viaggio al ritorno": ["it-a2-passato-prossimo-vs-imperfetto"],
+    "Parlare di progetti professionali": ["it-a2-il-futuro-semplice"],
+    "Ambiente e riciclo": ["it-a1-imperativo"],
+    "Feste e tradizioni": ["it-a2-passato-prossimo-vs-imperfetto"],
+    "Raccontare una notizia": ["it-b1-discorso-indiretto"],
+    "Ripasso dei tempi del passato": ["it-a2-passato-prossimo-vs-imperfetto", "it-a2-trapassato-prossimo"],
+    "Ripasso del futuro e dell'ipotesi": ["it-a2-periodo-ipotetico-2", "it-a2-il-condizionale-presente"],
+    "Ripasso dei pronomi": ["it-a2-pronomi-combinati", "it-a2-i-pronomi-ci-e-ne"],
+    "Produzione orale guidata": ["it-b1-connettivi-testuali"],
+    "Produzione scritta guidata": ["it-a1-congiunzioni-fondamentali", "it-b1-connettivi-testuali"],
+}
+
 
 def build():
     units = []
@@ -247,7 +306,8 @@ def build():
                 practice_types=['speaking', 'listening', 'reading', 'writing'],
                 speaking_percent=50,
                 teacher_notes=f'code: "IT-A2-{code:03d}"\ncando: "{cando}"',
-                recycled='Lessico del livello A1 e del modulo precedente'))
+                recycled='Lessico del livello A1 e del modulo precedente',
+                **({'grammarIds': MAP[ltitle]} if ltitle in MAP else {})))
             code += 1
         units.append(dict(unit=n, title=f'Unità {n}: {title}', lessons=out))
     data = dict(language='it', course_type='general', level='A2', units=units)
