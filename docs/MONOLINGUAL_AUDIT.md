@@ -152,7 +152,7 @@ written in Latin script. One leak is enough to flag the deck.
 |---|---|---|
 | de | 65 | 0 |
 | el | 130 | 0 |
-| en | 558 | 0 |
+| en | 717 | 0 |
 | es | 65 | 0 |
 | fr | 467 | 0 |
 | it | 195 | 0 |

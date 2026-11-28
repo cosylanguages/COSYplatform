@@ -1,588 +1,947 @@
 {
-  "curriculumId": "curriculum-english-c1",
-  "title": "General English C1 Advanced Roadmap",
-  "totalLessons": 65,
+  "curriculumId": "general-en-c1",
+  "title": "General English C1",
+  "totalLessons": 94,
   "sequence": [
     {
-      "lessonNumber": 3,
-      "id": "opposites-attract",
-      "title": "Opposites attract",
+      "lessonNumber": 1,
+      "id": "en-c1-science-tech-and-society-vocabulary-i",
+      "title": "Science, Tech & Society - Vocabulary I",
       "section": 1,
-      "unit": "Unit 1. Identity",
+      "unit": "Unit 1. Science, Tech & Society",
       "isOptional": false,
-      "ageRestriction": null,
-      "lessonFile": "lessons/english-c1/opposites-attract.xml"
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-science-tech-and-society-vocabulary-i.json"
+    },
+    {
+      "lessonNumber": 2,
+      "id": "en-c1-science-tech-and-society-advanced-grammar",
+      "title": "Science, Tech & Society - Advanced Grammar",
+      "section": 1,
+      "unit": "Unit 1. Science, Tech & Society",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-science-tech-and-society-advanced-grammar.json"
+    },
+    {
+      "lessonNumber": 3,
+      "id": "en-c1-science-tech-and-society-seminar-and-debate",
+      "title": "Science, Tech & Society - Seminar & Debate",
+      "section": 1,
+      "unit": "Unit 1. Science, Tech & Society",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-science-tech-and-society-seminar-and-debate.json"
     },
     {
       "lessonNumber": 4,
-      "id": "gender-stereotypes",
-      "title": "Gender stereotypes",
+      "id": "en-c1-on-top-of-the-world",
+      "title": "On Top of the World",
       "section": 1,
-      "unit": "Unit 1. Identity",
+      "unit": "Unit 1. Science, Tech & Society",
       "isOptional": false,
-      "ageRestriction": null,
-      "status": "planned"
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-on-top-of-the-world.json"
     },
     {
       "lessonNumber": 5,
-      "id": "tribal-or-cosmopolitan",
-      "title": "Tribal or cosmopolitan?",
+      "id": "en-c1-making-the-world-better",
+      "title": "Making the World Better",
       "section": 1,
-      "unit": "Unit 1. Identity",
+      "unit": "Unit 1. Science, Tech & Society",
       "isOptional": false,
-      "ageRestriction": null,
-      "status": "planned"
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-making-the-world-better.json"
     },
     {
       "lessonNumber": 6,
-      "id": "intolerance-of-tolerance",
-      "title": "The intolerance of tolerance",
+      "id": "en-c1-male-and-female-language",
+      "title": "Male and Female Language",
       "section": 1,
-      "unit": "Unit 1. Identity",
-      "isOptional": true,
-      "ageRestriction": null,
-      "status": "planned"
+      "unit": "Unit 1. Science, Tech & Society",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-male-and-female-language.json"
     },
     {
       "lessonNumber": 7,
-      "id": "wonders-of-life",
-      "title": "Wonders of life",
+      "id": "en-c1-talking-to-a-robot",
+      "title": "Talking to a Robot",
       "section": 1,
-      "unit": "Unit 2. Navigating the world",
+      "unit": "Unit 1. Science, Tech & Society",
       "isOptional": false,
-      "ageRestriction": null,
-      "status": "planned"
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-talking-to-a-robot.json"
     },
     {
       "lessonNumber": 8,
-      "id": "smart-cities",
-      "title": "Smart cities",
+      "id": "en-c1-globish",
+      "title": "Globish",
       "section": 1,
-      "unit": "Unit 2. Navigating the world",
+      "unit": "Unit 1. Science, Tech & Society",
       "isOptional": false,
-      "ageRestriction": null,
-      "status": "planned"
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-globish.json"
     },
     {
       "lessonNumber": 9,
-      "id": "sustainable-tourism",
-      "title": "Sustainable tourism",
+      "id": "en-c1-diverse-voices",
+      "title": "Diverse Voices",
       "section": 1,
-      "unit": "Unit 2. Navigating the world",
+      "unit": "Unit 1. Science, Tech & Society",
       "isOptional": false,
-      "ageRestriction": null,
-      "status": "planned"
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-diverse-voices.json"
     },
     {
       "lessonNumber": 10,
-      "id": "on-top-of-the-world",
-      "title": "On top of the world",
+      "id": "en-c1-linking-verbs-and-phrases",
+      "title": "Linking Verbs and Phrases",
       "section": 1,
-      "unit": "Unit 2. Navigating the world",
-      "isOptional": true,
-      "ageRestriction": null,
-      "status": "planned"
+      "unit": "Unit 1. Science, Tech & Society",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-linking-verbs-and-phrases.json"
     },
     {
       "lessonNumber": 11,
-      "id": "ge-c1-progress-test-1-simple",
-      "title": "Progress test 1 (simple)",
+      "id": "en-c1-modal-verbs-obligation-necessity-advice",
+      "title": "Modal Verbs Obligation Necessity Advice",
       "section": 1,
-      "isMilestone": true,
-      "status": "planned"
+      "unit": "Unit 1. Science, Tech & Society",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-modal-verbs-obligation-necessity-advice.json"
     },
     {
       "lessonNumber": 12,
-      "id": "ge-c1-progress-test-1-full",
-      "title": "Progress test 1 (full)",
+      "id": "en-c1-will-and-would-certainty-habit",
+      "title": "Will and Would Certainty Habit",
       "section": 1,
-      "isMilestone": true,
-      "status": "planned"
+      "unit": "Unit 1. Science, Tech & Society",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-will-and-would-certainty-habit.json"
     },
     {
       "lessonNumber": 13,
-      "id": "theory-of-happiness",
-      "title": "The theory of happiness",
-      "section": 2,
-      "unit": "Unit 3. Feelings",
+      "id": "en-c1-inversion",
+      "title": "Inversion",
+      "section": 1,
+      "unit": "Unit 1. Science, Tech & Society",
       "isOptional": false,
-      "status": "planned"
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-inversion.json"
     },
     {
       "lessonNumber": 14,
-      "id": "constructive-criticism",
-      "title": "Constructive criticism",
-      "section": 2,
-      "unit": "Unit 3. Feelings",
+      "id": "en-c1-passive-transitive-intransitive",
+      "title": "Passive Transitive Intransitive",
+      "section": 1,
+      "unit": "Unit 1. Science, Tech & Society",
       "isOptional": false,
-      "status": "planned"
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-passive-transitive-intransitive.json"
     },
     {
       "lessonNumber": 15,
-      "id": "personal-space",
-      "title": "Personal space",
+      "id": "en-c1-power-and-institutions-vocabulary-i",
+      "title": "Power & Institutions - Vocabulary I",
       "section": 2,
-      "unit": "Unit 3. Feelings",
+      "unit": "Unit 2. Power & Institutions",
       "isOptional": false,
-      "status": "planned"
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-power-and-institutions-vocabulary-i.json"
     },
     {
       "lessonNumber": 16,
-      "id": "crisis-guidelines",
-      "title": "Crisis guidelines",
+      "id": "en-c1-power-and-institutions-advanced-grammar",
+      "title": "Power & Institutions - Advanced Grammar",
       "section": 2,
-      "unit": "Unit 3. Feelings",
-      "isOptional": true,
-      "status": "planned"
+      "unit": "Unit 2. Power & Institutions",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-power-and-institutions-advanced-grammar.json"
     },
     {
       "lessonNumber": 17,
-      "id": "changing-professions",
-      "title": "Changing professions",
+      "id": "en-c1-power-and-institutions-seminar-and-debate",
+      "title": "Power & Institutions - Seminar & Debate",
       "section": 2,
-      "unit": "Unit 4. Changes",
+      "unit": "Unit 2. Power & Institutions",
       "isOptional": false,
-      "ageRestriction": "18+",
-      "status": "planned"
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-power-and-institutions-seminar-and-debate.json"
     },
     {
       "lessonNumber": 18,
-      "id": "fear-of-ones-future",
-      "title": "Fear of one's future",
+      "id": "en-c1-emphasis",
+      "title": "Emphasis",
       "section": 2,
-      "unit": "Unit 4. Changes",
+      "unit": "Unit 2. Power & Institutions",
       "isOptional": false,
-      "status": "planned"
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-emphasis.json"
     },
     {
       "lessonNumber": 19,
-      "id": "in-search-of-a-new-life",
-      "title": "In search of a new life",
+      "id": "en-c1-emphasis-clefting-and-fronting",
+      "title": "Emphasis Clefting and Fronting",
       "section": 2,
-      "unit": "Unit 4. Changes",
+      "unit": "Unit 2. Power & Institutions",
       "isOptional": false,
-      "status": "planned"
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-emphasis-clefting-and-fronting.json"
     },
     {
       "lessonNumber": 20,
-      "id": "making-the-world-better",
-      "title": "Making the world better",
+      "id": "en-c1-reported-speech-reporting-verbs",
+      "title": "Reported Speech Reporting Verbs",
       "section": 2,
-      "unit": "Unit 4. Changes",
-      "isOptional": true,
-      "status": "planned"
+      "unit": "Unit 2. Power & Institutions",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-reported-speech-reporting-verbs.json"
     },
     {
       "lessonNumber": 21,
-      "id": "ge-c1-progress-test-2-simple",
-      "title": "Progress test 2 (simple)",
-      "section": 2,
-      "isMilestone": true,
-      "status": "planned"
+      "id": "en-c1-social-structures-vocabulary-i",
+      "title": "Social Structures - Vocabulary I",
+      "section": 3,
+      "unit": "Unit 3. Social Structures",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-social-structures-vocabulary-i.json"
     },
     {
       "lessonNumber": 22,
-      "id": "ge-c1-progress-test-2-full",
-      "title": "Progress test 2 (full)",
-      "section": 2,
-      "isMilestone": true,
-      "status": "planned"
+      "id": "en-c1-social-structures-advanced-grammar",
+      "title": "Social Structures - Advanced Grammar",
+      "section": 3,
+      "unit": "Unit 3. Social Structures",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-social-structures-advanced-grammar.json"
     },
     {
       "lessonNumber": 23,
-      "id": "man-made-nature",
-      "title": "Man-made nature",
+      "id": "en-c1-social-structures-seminar-and-debate",
+      "title": "Social Structures - Seminar & Debate",
       "section": 3,
-      "unit": "Unit 5. Scientific trends",
+      "unit": "Unit 3. Social Structures",
       "isOptional": false,
-      "status": "planned"
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-social-structures-seminar-and-debate.json"
     },
     {
       "lessonNumber": 24,
-      "id": "future-food",
-      "title": "Future food",
+      "id": "en-c1-in-search-of-a-new-life",
+      "title": "In Search of a New Life",
       "section": 3,
-      "unit": "Unit 5. Scientific trends",
+      "unit": "Unit 3. Social Structures",
       "isOptional": false,
-      "status": "planned"
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-in-search-of-a-new-life.json"
     },
     {
       "lessonNumber": 25,
-      "id": "editing-ones-body",
-      "title": "Editing one's body",
+      "id": "en-c1-street-art",
+      "title": "Street Art",
       "section": 3,
-      "unit": "Unit 5. Scientific trends",
+      "unit": "Unit 3. Social Structures",
       "isOptional": false,
-      "status": "planned"
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-street-art.json"
     },
     {
       "lessonNumber": 26,
-      "id": "want-to-live-forever",
-      "title": "Want to live forever?",
+      "id": "en-c1-cinephilia",
+      "title": "Cinephilia",
       "section": 3,
-      "unit": "Unit 5. Scientific trends",
-      "isOptional": true,
-      "ageRestriction": "18+",
-      "status": "planned"
+      "unit": "Unit 3. Social Structures",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-cinephilia.json"
     },
     {
       "lessonNumber": 27,
-      "id": "male-and-female-language",
-      "title": "Male and female language",
+      "id": "en-c1-performance-art",
+      "title": "Performance Art",
       "section": 3,
-      "unit": "Unit 6. Language and communication",
+      "unit": "Unit 3. Social Structures",
       "isOptional": false,
-      "status": "planned"
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-performance-art.json"
     },
     {
       "lessonNumber": 28,
-      "id": "talking-to-a-robot",
-      "title": "Talking to a robot",
+      "id": "en-c1-ellipsis",
+      "title": "Ellipsis",
       "section": 3,
-      "unit": "Unit 6. Language and communication",
+      "unit": "Unit 3. Social Structures",
       "isOptional": false,
-      "status": "planned"
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-ellipsis.json"
     },
     {
       "lessonNumber": 29,
-      "id": "globish",
-      "title": "Globish",
+      "id": "en-c1-substitution",
+      "title": "Substitution",
       "section": 3,
-      "unit": "Unit 6. Language and communication",
+      "unit": "Unit 3. Social Structures",
       "isOptional": false,
-      "status": "planned"
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-substitution.json"
     },
     {
       "lessonNumber": 30,
-      "id": "diverse-voices",
-      "title": "Diverse voices",
+      "id": "en-c1-participle-clauses",
+      "title": "Participle Clauses",
       "section": 3,
-      "unit": "Unit 6. Language and communication",
-      "isOptional": true,
-      "status": "planned"
+      "unit": "Unit 3. Social Structures",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-participle-clauses.json"
     },
     {
       "lessonNumber": 31,
-      "id": "ge-c1-progress-test-3-simple",
-      "title": "Progress test 3 (simple)",
-      "section": 3,
-      "isMilestone": true,
-      "status": "planned"
+      "id": "en-c1-knowledge-and-truth-vocabulary-i",
+      "title": "Knowledge & Truth - Vocabulary I",
+      "section": 4,
+      "unit": "Unit 4. Knowledge & Truth",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-knowledge-and-truth-vocabulary-i.json"
     },
     {
       "lessonNumber": 32,
-      "id": "ge-c1-progress-test-3-full",
-      "title": "Progress test 3 (full)",
-      "section": 3,
-      "isMilestone": true,
-      "status": "planned"
+      "id": "en-c1-knowledge-and-truth-advanced-grammar",
+      "title": "Knowledge & Truth - Advanced Grammar",
+      "section": 4,
+      "unit": "Unit 4. Knowledge & Truth",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-knowledge-and-truth-advanced-grammar.json"
     },
     {
       "lessonNumber": 33,
-      "id": "ge-c1-midterm-exam-simple",
-      "title": "Midterm exam (simple)",
-      "section": 3,
-      "isExam": true,
-      "status": "planned"
+      "id": "en-c1-knowledge-and-truth-seminar-and-debate",
+      "title": "Knowledge & Truth - Seminar & Debate",
+      "section": 4,
+      "unit": "Unit 4. Knowledge & Truth",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-knowledge-and-truth-seminar-and-debate.json"
     },
     {
       "lessonNumber": 34,
-      "id": "ge-c1-midterm-exam-full",
-      "title": "Midterm exam (full)",
-      "section": 3,
-      "isExam": true,
-      "status": "planned"
+      "id": "en-c1-english-punctuation-commas",
+      "title": "English Punctuation Commas",
+      "section": 4,
+      "unit": "Unit 4. Knowledge & Truth",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-english-punctuation-commas.json"
     },
     {
       "lessonNumber": 35,
-      "id": "handle-your-neighbours",
-      "title": "Handle your neighbours",
+      "id": "en-c1-english-punctuation-dashes-semicolons",
+      "title": "English Punctuation Dashes Semicolons",
       "section": 4,
-      "unit": "Unit 7. Relations",
+      "unit": "Unit 4. Knowledge & Truth",
       "isOptional": false,
-      "status": "planned"
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-english-punctuation-dashes-semicolons.json"
     },
     {
       "lessonNumber": 36,
-      "id": "under-one-roof",
-      "title": "Under one roof",
+      "id": "en-c1-all-tenses-review",
+      "title": "All Tenses Review",
       "section": 4,
-      "unit": "Unit 7. Relations",
+      "unit": "Unit 4. Knowledge & Truth",
       "isOptional": false,
-      "status": "planned"
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-all-tenses-review.json"
     },
     {
       "lessonNumber": 37,
-      "id": "generation-gap",
-      "title": "Generation gap",
+      "id": "en-c1-conditionals-all-types-mixed",
+      "title": "Conditionals All Types Mixed",
       "section": 4,
-      "unit": "Unit 7. Relations",
+      "unit": "Unit 4. Knowledge & Truth",
       "isOptional": false,
-      "status": "planned"
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-conditionals-all-types-mixed.json"
     },
     {
       "lessonNumber": 38,
-      "id": "self-partnership",
-      "title": "Self-partnership",
+      "id": "en-c1-reduced-conditionals",
+      "title": "Reduced Conditionals",
       "section": 4,
-      "unit": "Unit 7. Relations",
-      "isOptional": true,
-      "status": "planned"
+      "unit": "Unit 4. Knowledge & Truth",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-reduced-conditionals.json"
     },
     {
       "lessonNumber": 39,
-      "id": "time-keepers",
-      "title": "Time keepers",
+      "id": "en-c1-different-types-of-clauses",
+      "title": "Different Types of Clauses",
       "section": 4,
-      "unit": "Unit 8. Free time",
+      "unit": "Unit 4. Knowledge & Truth",
       "isOptional": false,
-      "status": "planned"
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-different-types-of-clauses.json"
     },
     {
       "lessonNumber": 40,
-      "id": "hobby-vs-career",
-      "title": "Hobby vs career",
+      "id": "en-c1-reduced-relative-clauses",
+      "title": "Reduced Relative Clauses",
       "section": 4,
-      "unit": "Unit 8. Free time",
+      "unit": "Unit 4. Knowledge & Truth",
       "isOptional": false,
-      "ageRestriction": "18+",
-      "status": "planned"
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-reduced-relative-clauses.json"
     },
     {
       "lessonNumber": 41,
-      "id": "too-risky-to-approve",
-      "title": "Too risky to approve",
-      "section": 4,
-      "unit": "Unit 8. Free time",
+      "id": "en-c1-discourse-and-argument-vocabulary-i",
+      "title": "Discourse & Argument - Vocabulary I",
+      "section": 5,
+      "unit": "Unit 5. Discourse & Argument",
       "isOptional": false,
-      "status": "planned"
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-discourse-and-argument-vocabulary-i.json"
     },
     {
       "lessonNumber": 42,
-      "id": "too-much-free-time",
-      "title": "Too much free time?",
-      "section": 4,
-      "unit": "Unit 8. Free time",
-      "isOptional": true,
-      "status": "planned"
+      "id": "en-c1-discourse-and-argument-advanced-grammar",
+      "title": "Discourse & Argument - Advanced Grammar",
+      "section": 5,
+      "unit": "Unit 5. Discourse & Argument",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-discourse-and-argument-advanced-grammar.json"
     },
     {
       "lessonNumber": 43,
-      "id": "ge-c1-progress-test-4-simple",
-      "title": "Progress test 4 (simple)",
-      "section": 4,
-      "isMilestone": true,
-      "status": "planned"
+      "id": "en-c1-discourse-and-argument-seminar-and-debate",
+      "title": "Discourse & Argument - Seminar & Debate",
+      "section": 5,
+      "unit": "Unit 5. Discourse & Argument",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-discourse-and-argument-seminar-and-debate.json"
     },
     {
       "lessonNumber": 44,
-      "id": "ge-c1-progress-test-4-full",
-      "title": "Progress test 4 (full)",
-      "section": 4,
-      "isMilestone": true,
-      "status": "planned"
+      "id": "en-c1-economics-and-global-markets-vocabulary-i",
+      "title": "Economics & Global Markets - Vocabulary I",
+      "section": 6,
+      "unit": "Unit 6. Economics, Global Markets & Geopolitics",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-economics-and-global-markets-vocabulary-i.json"
     },
     {
       "lessonNumber": 45,
-      "id": "literature-bucket-list",
-      "title": "Literature bucket list",
-      "section": 5,
-      "unit": "Unit 9. Art and culture",
+      "id": "en-c1-economics-and-global-markets-advanced-grammar",
+      "title": "Economics & Global Markets - Advanced Grammar",
+      "section": 6,
+      "unit": "Unit 6. Economics, Global Markets & Geopolitics",
       "isOptional": false,
-      "status": "planned"
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-economics-and-global-markets-advanced-grammar.json"
     },
     {
       "lessonNumber": 46,
-      "id": "street-art",
-      "title": "Street art",
-      "section": 5,
-      "unit": "Unit 9. Art and culture",
+      "id": "en-c1-economics-and-global-markets-seminar-and-debate",
+      "title": "Economics & Global Markets - Seminar & Debate",
+      "section": 6,
+      "unit": "Unit 6. Economics, Global Markets & Geopolitics",
       "isOptional": false,
-      "status": "planned"
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-economics-and-global-markets-seminar-and-debate.json"
     },
     {
       "lessonNumber": 47,
-      "id": "cinephilia",
-      "title": "Cinephilia",
-      "section": 5,
-      "unit": "Unit 9. Art and culture",
+      "id": "en-c1-womens-political-progress",
+      "title": "Womens Political Progress",
+      "section": 6,
+      "unit": "Unit 6. Economics, Global Markets & Geopolitics",
       "isOptional": false,
-      "status": "planned"
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-womens-political-progress.json"
     },
     {
       "lessonNumber": 48,
-      "id": "performance-art",
-      "title": "Performance art",
-      "section": 5,
-      "unit": "Unit 9. Art and culture",
-      "isOptional": true,
-      "status": "planned"
+      "id": "en-c1-new-era-of-political-participation",
+      "title": "New Era of Political Participation",
+      "section": 6,
+      "unit": "Unit 6. Economics, Global Markets & Geopolitics",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-new-era-of-political-participation.json"
     },
     {
       "lessonNumber": 49,
-      "id": "womens-political-progress",
-      "title": "Women's political progress",
-      "section": 5,
-      "unit": "Unit 10. Political challenges",
+      "id": "en-c1-ideal-economic-model",
+      "title": "Ideal Economic Model",
+      "section": 6,
+      "unit": "Unit 6. Economics, Global Markets & Geopolitics",
       "isOptional": false,
-      "ageRestriction": "18+",
-      "status": "planned"
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-ideal-economic-model.json"
     },
     {
       "lessonNumber": 50,
-      "id": "new-era-of-political-participation",
-      "title": "The new era of political participation",
-      "section": 5,
-      "unit": "Unit 10. Political challenges",
+      "id": "en-c1-art-market",
+      "title": "Art Market",
+      "section": 6,
+      "unit": "Unit 6. Economics, Global Markets & Geopolitics",
       "isOptional": false,
-      "status": "planned"
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-art-market.json"
     },
     {
       "lessonNumber": 51,
-      "id": "world-issues",
-      "title": "World issues",
-      "section": 5,
-      "unit": "Unit 10. Political challenges",
+      "id": "en-c1-aesthetics-fine-arts-and-cultural-criticism",
+      "title": "Aesthetics, Fine Arts & Cultural Criticism",
+      "section": 7,
+      "unit": "Unit 7. Aesthetics, Fine Arts & C1 Master Consolidation",
       "isOptional": false,
-      "status": "planned"
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-aesthetics-fine-arts-and-cultural-criticism.json"
     },
     {
       "lessonNumber": 52,
-      "id": "animal-rights",
-      "title": "Animal rights",
-      "section": 5,
-      "unit": "Unit 10. Political challenges",
-      "isOptional": true,
-      "status": "planned"
+      "id": "en-c1-aesthetics-and-cultural-criticism-advanced-grammar",
+      "title": "Aesthetics & Cultural Criticism - Advanced Grammar",
+      "section": 7,
+      "unit": "Unit 7. Aesthetics, Fine Arts & C1 Master Consolidation",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-aesthetics-and-cultural-criticism-advanced-grammar.json"
     },
     {
       "lessonNumber": 53,
-      "id": "ge-c1-progress-test-5-simple",
-      "title": "Progress test 5 (simple)",
-      "section": 5,
-      "isMilestone": true,
-      "status": "planned"
+      "id": "en-c1-c1-master-proficiency-examination-and-consolidation",
+      "title": "C1 Master Proficiency Examination & Consolidation",
+      "section": 7,
+      "unit": "Unit 7. Aesthetics, Fine Arts & C1 Master Consolidation",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-c1-master-proficiency-examination-and-consolidation.json"
     },
     {
       "lessonNumber": 54,
-      "id": "ge-c1-progress-test-5-full",
-      "title": "Progress test 5 (full)",
-      "section": 5,
-      "isMilestone": true,
-      "status": "planned"
+      "id": "en-c1-literature-bucket-list",
+      "title": "Literature Bucket List",
+      "section": 7,
+      "unit": "Unit 7. Aesthetics, Fine Arts & C1 Master Consolidation",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-literature-bucket-list.json"
     },
     {
       "lessonNumber": 55,
-      "id": "ideal-economic-model",
-      "title": "Ideal economic model",
-      "section": 6,
-      "unit": "Unit 11. Economics",
+      "id": "en-c1-opposites-attract",
+      "title": "Opposites Attract",
+      "section": 8,
+      "unit": "Unit 8. Additional Legacy Topics & Draft Lessons",
       "isOptional": false,
-      "status": "planned"
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-opposites-attract.json"
     },
     {
       "lessonNumber": 56,
-      "id": "whats-wrong-with-monopolies",
-      "title": "What's wrong with monopolies?",
-      "section": 6,
-      "unit": "Unit 11. Economics",
+      "id": "en-c1-gender-stereotypes",
+      "title": "Gender Stereotypes",
+      "section": 8,
+      "unit": "Unit 8. Additional Legacy Topics & Draft Lessons",
       "isOptional": false,
-      "status": "planned"
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-gender-stereotypes.json"
     },
     {
       "lessonNumber": 57,
-      "id": "what-to-invest-in",
-      "title": "What to invest in?",
-      "section": 6,
-      "unit": "Unit 11. Economics",
+      "id": "en-c1-tribal-or-cosmopolitan",
+      "title": "Tribal or Cosmopolitan",
+      "section": 8,
+      "unit": "Unit 8. Additional Legacy Topics & Draft Lessons",
       "isOptional": false,
-      "status": "planned"
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-tribal-or-cosmopolitan.json"
     },
     {
       "lessonNumber": 58,
-      "id": "art-market",
-      "title": "Art market",
-      "section": 6,
-      "unit": "Unit 11. Economics",
-      "isOptional": true,
-      "status": "planned"
+      "id": "en-c1-intolerance-of-tolerance",
+      "title": "Intolerance of Tolerance",
+      "section": 8,
+      "unit": "Unit 8. Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-intolerance-of-tolerance.json"
     },
     {
       "lessonNumber": 59,
-      "id": "the-big-bang",
-      "title": "The big bang",
-      "section": 6,
-      "unit": "Unit 12. Universe",
+      "id": "en-c1-wonders-of-life",
+      "title": "Wonders of Life",
+      "section": 8,
+      "unit": "Unit 8. Additional Legacy Topics & Draft Lessons",
       "isOptional": false,
-      "status": "planned"
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-wonders-of-life.json"
     },
     {
       "lessonNumber": 60,
-      "id": "habitat-for-humanity",
-      "title": "Habitat for humanity",
-      "section": 6,
-      "unit": "Unit 12. Universe",
+      "id": "en-c1-smart-cities",
+      "title": "Smart Cities",
+      "section": 8,
+      "unit": "Unit 8. Additional Legacy Topics & Draft Lessons",
       "isOptional": false,
-      "status": "planned"
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-smart-cities.json"
     },
     {
       "lessonNumber": 61,
-      "id": "alien-life",
-      "title": "Alien life",
-      "section": 6,
-      "unit": "Unit 12. Universe",
+      "id": "en-c1-sustainable-tourism",
+      "title": "Sustainable Tourism",
+      "section": 8,
+      "unit": "Unit 8. Additional Legacy Topics & Draft Lessons",
       "isOptional": false,
-      "status": "planned"
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-sustainable-tourism.json"
     },
     {
       "lessonNumber": 62,
-      "id": "tech-to-live-on-other-planets",
-      "title": "Tech to live on other planets",
-      "section": 6,
-      "unit": "Unit 12. Universe",
-      "isOptional": true,
-      "status": "planned"
+      "id": "en-c1-theory-of-happiness",
+      "title": "Theory of Happiness",
+      "section": 8,
+      "unit": "Unit 8. Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-theory-of-happiness.json"
     },
     {
       "lessonNumber": 63,
-      "id": "ge-c1-final-exam-prep-simple",
-      "title": "Final exam preparation (simple)",
-      "section": 6,
-      "isExam": true,
-      "status": "planned"
+      "id": "en-c1-constructive-criticism",
+      "title": "Constructive Criticism",
+      "section": 8,
+      "unit": "Unit 8. Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-constructive-criticism.json"
     },
     {
       "lessonNumber": 64,
-      "id": "ge-c1-final-exam-prep-full",
-      "title": "Final exam preparation (full)",
-      "section": 6,
-      "isExam": true,
-      "status": "planned"
+      "id": "en-c1-personal-space",
+      "title": "Personal Space",
+      "section": 8,
+      "unit": "Unit 8. Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-personal-space.json"
     },
     {
       "lessonNumber": 65,
-      "id": "ge-c1-final-exam-simple",
-      "title": "Final exam (simple)",
-      "section": 6,
-      "isExam": true,
-      "status": "planned"
+      "id": "en-c1-crisis-guidelines",
+      "title": "Crisis Guidelines",
+      "section": 8,
+      "unit": "Unit 8. Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-crisis-guidelines.json"
     },
     {
       "lessonNumber": 66,
-      "id": "ge-c1-final-exam-full",
-      "title": "Final exam (full)",
-      "section": 6,
-      "isExam": true,
-      "status": "planned"
+      "id": "en-c1-changing-professions",
+      "title": "Changing Professions",
+      "section": 8,
+      "unit": "Unit 8. Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-changing-professions.json"
+    },
+    {
+      "lessonNumber": 67,
+      "id": "en-c1-fear-of-ones-future",
+      "title": "Fear of Ones Future",
+      "section": 8,
+      "unit": "Unit 8. Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-fear-of-ones-future.json"
+    },
+    {
+      "lessonNumber": 68,
+      "id": "en-c1-man-made-nature",
+      "title": "Man Made Nature",
+      "section": 8,
+      "unit": "Unit 8. Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-man-made-nature.json"
+    },
+    {
+      "lessonNumber": 69,
+      "id": "en-c1-future-food",
+      "title": "Future Food",
+      "section": 8,
+      "unit": "Unit 8. Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-future-food.json"
     },
     {
       "lessonNumber": 70,
-      "id": "ge-c1-final-feedback",
-      "title": "Final feedback",
-      "section": 6,
-      "isExam": false,
-      "isMilestone": true,
-      "status": "planned"
+      "id": "en-c1-editing-ones-body",
+      "title": "Editing Ones Body",
+      "section": 8,
+      "unit": "Unit 8. Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-editing-ones-body.json"
+    },
+    {
+      "lessonNumber": 71,
+      "id": "en-c1-want-to-live-forever",
+      "title": "Want to Live Forever",
+      "section": 8,
+      "unit": "Unit 8. Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-want-to-live-forever.json"
+    },
+    {
+      "lessonNumber": 72,
+      "id": "en-c1-handle-your-neighbours",
+      "title": "Handle Your Neighbours",
+      "section": 8,
+      "unit": "Unit 8. Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-handle-your-neighbours.json"
+    },
+    {
+      "lessonNumber": 73,
+      "id": "en-c1-under-one-roof",
+      "title": "Under One Roof",
+      "section": 8,
+      "unit": "Unit 8. Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-under-one-roof.json"
+    },
+    {
+      "lessonNumber": 74,
+      "id": "en-c1-generation-gap",
+      "title": "Generation Gap",
+      "section": 8,
+      "unit": "Unit 8. Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-generation-gap.json"
+    },
+    {
+      "lessonNumber": 75,
+      "id": "en-c1-self-partnership",
+      "title": "Self Partnership",
+      "section": 8,
+      "unit": "Unit 8. Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-self-partnership.json"
+    },
+    {
+      "lessonNumber": 76,
+      "id": "en-c1-time-keepers",
+      "title": "Time Keepers",
+      "section": 8,
+      "unit": "Unit 8. Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-time-keepers.json"
+    },
+    {
+      "lessonNumber": 77,
+      "id": "en-c1-hobby-vs-career",
+      "title": "Hobby Vs Career",
+      "section": 8,
+      "unit": "Unit 8. Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-hobby-vs-career.json"
+    },
+    {
+      "lessonNumber": 78,
+      "id": "en-c1-too-risky-to-approve",
+      "title": "Too Risky to Approve",
+      "section": 8,
+      "unit": "Unit 8. Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-too-risky-to-approve.json"
+    },
+    {
+      "lessonNumber": 79,
+      "id": "en-c1-too-much-free-time",
+      "title": "Too Much Free Time",
+      "section": 8,
+      "unit": "Unit 8. Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-too-much-free-time.json"
+    },
+    {
+      "lessonNumber": 80,
+      "id": "en-c1-world-issues",
+      "title": "World Issues",
+      "section": 8,
+      "unit": "Unit 8. Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-world-issues.json"
+    },
+    {
+      "lessonNumber": 81,
+      "id": "en-c1-animal-rights",
+      "title": "Animal Rights",
+      "section": 8,
+      "unit": "Unit 8. Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-animal-rights.json"
+    },
+    {
+      "lessonNumber": 82,
+      "id": "en-c1-whats-wrong-with-monopolies",
+      "title": "Whats Wrong with Monopolies",
+      "section": 8,
+      "unit": "Unit 8. Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-whats-wrong-with-monopolies.json"
+    },
+    {
+      "lessonNumber": 83,
+      "id": "en-c1-what-to-invest-in",
+      "title": "What to Invest In",
+      "section": 8,
+      "unit": "Unit 8. Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-what-to-invest-in.json"
+    },
+    {
+      "lessonNumber": 84,
+      "id": "en-c1-the-big-bang",
+      "title": "The Big Bang",
+      "section": 8,
+      "unit": "Unit 8. Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-the-big-bang.json"
+    },
+    {
+      "lessonNumber": 85,
+      "id": "en-c1-habitat-for-humanity",
+      "title": "Habitat for Humanity",
+      "section": 8,
+      "unit": "Unit 8. Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-habitat-for-humanity.json"
+    },
+    {
+      "lessonNumber": 86,
+      "id": "en-c1-alien-life",
+      "title": "Alien Life",
+      "section": 8,
+      "unit": "Unit 8. Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-alien-life.json"
+    },
+    {
+      "lessonNumber": 87,
+      "id": "en-c1-tech-to-live-on-other-planets",
+      "title": "Tech to Live on Other Planets",
+      "section": 8,
+      "unit": "Unit 8. Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-tech-to-live-on-other-planets.json"
+    },
+    {
+      "lessonNumber": 88,
+      "id": "en-c1-continuous-aspect",
+      "title": "Continuous Aspect",
+      "section": 8,
+      "unit": "Unit 8. Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-continuous-aspect.json"
+    },
+    {
+      "lessonNumber": 89,
+      "id": "en-c1-perfect-aspect",
+      "title": "Perfect Aspect",
+      "section": 8,
+      "unit": "Unit 8. Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-perfect-aspect.json"
+    },
+    {
+      "lessonNumber": 90,
+      "id": "en-c1-often-confused-adverbs",
+      "title": "Often Confused Adverbs",
+      "section": 8,
+      "unit": "Unit 8. Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-often-confused-adverbs.json"
+    },
+    {
+      "lessonNumber": 91,
+      "id": "en-c1-future-tenses-lexical-means",
+      "title": "Future Tenses Lexical Means",
+      "section": 8,
+      "unit": "Unit 8. Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-future-tenses-lexical-means.json"
+    },
+    {
+      "lessonNumber": 92,
+      "id": "en-c1-infinitive-complexes",
+      "title": "Infinitive Complexes",
+      "section": 8,
+      "unit": "Unit 8. Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-infinitive-complexes.json"
+    },
+    {
+      "lessonNumber": 93,
+      "id": "en-c1-gerundial-constructions",
+      "title": "Gerundial Constructions",
+      "section": 8,
+      "unit": "Unit 8. Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-gerundial-constructions.json"
+    },
+    {
+      "lessonNumber": 94,
+      "id": "en-c1-participles",
+      "title": "Participles",
+      "section": 8,
+      "unit": "Unit 8. Additional Legacy Topics & Draft Lessons",
+      "isOptional": false,
+      "status": "drafted",
+      "lessonFile": "lessons/general-english-c1/en-c1-participles.json"
     }
   ]
 }

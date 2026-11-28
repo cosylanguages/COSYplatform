@@ -138,6 +138,11 @@ def parse(page):
         m = re.search(r'<ul class="ex-list">(.*?)</ul>', page, re.S)
         if m:
             examples = _examples(m.group(1))
+    if not examples:
+        # eighteen of the C1 pages wrap their examples in <div class="examples"> rather than a section
+        m = re.search(r'<div class="examples">(.*?)</div>', page, re.S)
+        if m:
+            examples = _examples(m.group(1)) or _plain_lines(m.group(1))
 
     table = []
     for tr in re.findall(r'<tr>(.*?)</tr>', page, re.S):

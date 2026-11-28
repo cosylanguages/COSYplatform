@@ -87,7 +87,21 @@ it is, so the curriculum still records one point while the deck shows two.
 C2 had ten lessons with no `grammar` and nine with no `vocabulary` at all (the device lessons); the nine now
 carry the metalanguage of their device (`инверсия, ритм, каденция`), added through
 `VOCABULARY_OVERRIDES` in `normalize_ru_level.py`. `wire_ru_c2.py` uses all 20 C2 pages.
-Reuse is the C1 weakness: 65 lessons over 28 pages means two pages carry eight lessons each. Supporting changes: the Russian page frame in `manual_page.py`
+Reuse is the C1 weakness: 65 lessons over 28 pages means two pages carry eight lessons each.
+
+English general C1 and C2 are published too: 159 decks, `docs/ENGLISH_C1_C2_BUILD.md`, 58/169 courses.
+C1's roadmap was the legacy 65-entry course (one built deck, `.xml` paths) while the curriculum had moved to 94
+lessons with the old topics folded into unit 8; `build_en_b2_decks.py --level c1` now rebuilds roadmap and
+decks from the curriculum, and the legacy files stay in `lessons/english-c1/`. 29 C1 lessons had a `grammar`
+phrase and no id — `wire_en_c1.py` fixes them, mostly literally. C2 had no ids and no roadmap at all:
+`wire_en_c2.py` gives 130 ids over all 20 pages.
+`manual_page.parse` now falls back to `<div class="examples">`: 18 of the 26 English C1 pages use that wrapper
+instead of a section, which is why the first C1 build had 55 empty reading blocks while B1/B2 never did. The
+builder also falls back to examples when a page has no readable table, and to the checklist for an index page
+such as `confusing-grammar-guide`.
+Open on the English side: vocabulary case is mixed (194/1203 B2 items capitalised, some are proper nouns, so a
+blanket lowercase pass would damage *Shakespearean*); A2 leaves 81 of its 141 curriculum lessons unscheduled;
+exam, professional, relocation, travelling and spoken C2 are still hidden and unbuilt. Supporting changes: the Russian page frame in `manual_page.py`
 (`ul.gv-lines`, `p.gv-formula`, `section.examples`, `box mint` headings, `wrong-line`/`right-line`, and
 two-column reference tables) takes page coverage from 11 to 38 of the 39 ids the curriculum uses; a
 Cyrillic table in `slug()` (without it every deck id was `ru-a1----`); a 70-string `ru` scaffold; and

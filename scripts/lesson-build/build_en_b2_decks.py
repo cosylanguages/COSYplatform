@@ -71,12 +71,18 @@ def build_deck(lesson, unit, next_title, code, unit_vocab=None):
         return head + e['text'] + (f" ({e['comment']})" if e['comment'] else '')
 
     ex_lines = [ex_line(e) for e in ex]
+    if not ex_lines:
+        # an index page such as the confusing-grammar guide has no examples; its checklist stands in
+        ex_lines = page['checklist'][:3]
     table_lines = [f"{r['element']} — {r['role']}: {r['example']}" for r in page['table'][:6]]
+    if not table_lines:
+        # two C1 pages carry their form table as prose; the examples then stand in for it
+        table_lines = ex_lines[:4]
     trap_lines = [f"❌ {t['wrong']} → ✅ {t['right']}" for t in page['traps'][:2]]
     check = page['checklist'][:3]
     practice = page['practice'][:3]
     ccq = page['ccq'][:2]
-    grammar_rule = page['rule'] or page['observe']
+    grammar_rule = page['rule'] or page['observe'] or page['subtitle']
 
     slides = []
 
