@@ -54,7 +54,7 @@ TERMS = (
 
 # Can-dos open with a wrapper ("I can", "Je peux", "Могу"); the verb that matters comes after it.
 PREFIXES = (
-    "i can ", "can ", "je peux ", "je sais ", "je suis capable de ", "j'arrive à ",
+    "i can ", "can ", "je peux ", "peut ", "peuvent ", "je sais ", "je suis capable de ", "j'arrive à ",
     "могу ", "я могу ", "μπορώ ", "posso ", "sono in grado di ",
 )
 
@@ -74,9 +74,12 @@ TASK_HEADS = (
     "demander", "expliquer", "exprimer", "négocier", "argumenter", "rédiger", "présenter",
     "talk", "describe", "tell", "explain", "discuss", "argue", "analyse", "analyze",
     "evaluate", "negotiate", "critique", "lead", "present", "recommend", "compare",
-    "persuade", "narrate", "complain", "review", "pitch",
+    "persuade", "narrate", "complain", "review", "pitch", "summarise", "summarize",
+    "report", "draft", "deliver", "demand", "propose", "edit", "translate", "judge",
+    "say", "state", "outline",
     "compter", "nommer", "imaginer", "préparer", "évaluer", "rédiger", "composer",
     "modéliser", "rapporter", "nuancer", "mobiliser", "résumer", "traduire", "reformuler",
+    "citer", "situer", "illustrer", "formuler",
     "parlare", "descrivere", "raccontare", "spiegare", "discutere", "sostenere",
     "argomentare", "presentare", "chiedere", "rispondere", "evidenziare",
     "esprimere", "formulare", "motivare", "commentare", "suggerire", "riferire",

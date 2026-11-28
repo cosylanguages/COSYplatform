@@ -11,16 +11,13 @@ themed unit should look like. The classifier is a triage aid, not a verdict: eve
 deck is sampled below so the call can be checked by eye.
 
 Decks read: 1606.
-form-first: 93 | task-with-grammar: 60 | task: 1389 | empty: 64
+form-first: 66 | task-with-grammar: 69 | task: 1407 | empty: 64
 
 | course | decks | task | task+grammar | form-first | form share |
 |---|---|---|---|---|---|
 | general-english-b1 | 120 | 87 | 7 | 26 | 22% |
-| general-english-b2 | 121 | 99 | 4 | 18 | 15% |
 | general-greek-a1 | 65 | 49 | 0 | 16 | 25% |
 | general-greek-a2 | 65 | 53 | 1 | 11 | 17% |
-| general-french-c1 | 65 | 60 | 0 | 5 | 8% |
-| general-french-c2 | 65 | 58 | 3 | 4 | 6% |
 | general-english-a1 | 181 | 178 | 0 | 3 | 2% |
 | general-english-a0 | 32 | 30 | 0 | 2 | 6% |
 | general-french-b1 | 65 | 46 | 17 | 2 | 3% |
@@ -33,6 +30,9 @@ form-first: 93 | task-with-grammar: 60 | task: 1389 | empty: 64
 | english-b2 | 1 | 0 | 0 | 0 | 0% |
 | english-c1 | 1 | 0 | 0 | 0 | 0% |
 | general-english-a2 | 93 | 89 | 4 | 0 | 0% |
+| general-english-b2 | 121 | 111 | 10 | 0 | 0% |
+| general-french-c1 | 65 | 65 | 0 | 0 | 0% |
+| general-french-c2 | 65 | 59 | 6 | 0 | 0% |
 | general-italian-a1 | 65 | 63 | 2 | 0 | 0% |
 | general-italian-a2 | 65 | 61 | 4 | 0 | 0% |
 | general-italian-b1 | 65 | 57 | 8 | 0 | 0% |
@@ -51,16 +51,6 @@ form-first: 93 | task-with-grammar: 60 | task: 1389 | empty: 64
 - `en-b1-as-or-like.json` - I can use as and like correctly.
 - `en-b1-both-either-neither-all-every.json` - I can use quantifiers for groups.
 - `en-b1-clipping-b1.json` - I can recognise clipped words.
-
-### general-english-b2 (18 flagged)
-- `en-b2-adjectives-and-adverbs.json` - I can use adjectives and adverbs precisely.
-- `en-b2-all-tenses-revision.json` - I can use a range of tenses accurately.
-- `en-b2-as-if-as-though-present-past.json` - I can use as if and as though.
-- `en-b2-complex-subject.json` - I can use complex-subject structures.
-- `en-b2-fronting-to-be-and-normal-verbs.json` - I can use fronting for emphasis.
-- `en-b2-gerund-and-perfect-gerund.json` - I can use simple and perfect gerunds.
-- `en-b2-gerund-forms-and-usage.json` - I can use gerunds in complex sentences.
-- `en-b2-inversion-after-negative-and-limiting-adverbials.json` - Can deliver dramatic rhetorical emphasis in formal presentations and economic briefings using negative inversion
 
 ### general-greek-a1 (16 flagged)
 - `el-a1-anomala-rimata-1.json` - Χρησιμοποιώ τα πιο συχνά ανώμαλα ρήματα.
@@ -81,19 +71,6 @@ form-first: 93 | task-with-grammar: 60 | task: 1389 | empty: 64
 - `el-a2-i-prostaktiki.json` - Δίνω οδηγίες με την προστακτική.
 - `el-a2-i-ypotaktiki-me-na.json` - Χρησιμοποιώ την υποτακτική μετά από ρήματα.
 - `el-a2-klitika-me-prostaktiki.json` - Συνδυάζω προστακτική και κλιτικό σωστά.
-
-### general-french-c1 (5 flagged)
-- `fr-c1-critique-culturelle.json` - formuler une critique culturelle
-- `fr-c1-grammaire-discours-rapporte-et-conditionnelles.json` - employer le discours rapporté et les conditionnelles
-- `fr-c1-grammaire-passif-et-subjonctif.json` - employer le passif et le subjonctif avec sûreté
-- `fr-c1-lexique-et-collocations.json` - employer le lexique avec précision
-- `fr-c1-verite-et-perspective.json` - distinguer des prétentions à la vérité
-
-### general-french-c2 (4 flagged)
-- `fr-c2-archaismes-juridiques-et-syntaxe-de-la-doctrine.json` - Peut analyser et rédiger une syntaxe juridique formelle, des clauses statutaires et des arguments de cassation
-- `fr-c2-citations-latines-et-grecques.json` - employer les locutions savantes à bon escient
-- `fr-c2-inversion-stylistique-du-sujet-et-cadence-poetique.json` - Peut composer une prose littéraire très élaborée en utilisant le chiasme, le parallélisme et l'inversion stylistique
-- `fr-c2-posture-hypothetique-et-conditionnelles-complexes-en-modelisation.json` - Peut modéliser des contingences économiques complexes et rédiger des rapports économétriques avec inversions et incises
 
 ### general-english-a1 (3 flagged)
 - `ge-a1-classroom-interaction-requests.json` - I can use classroom communication phrases and request clarification.
