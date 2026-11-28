@@ -52,11 +52,12 @@ of the French B1 curriculum shipped with `grammarIds: null`; they were filled in
   sections as "What you can communicate after this page", "What do you observe", "Formula / rule"
   and "Additional example bank". Without that the English decks parsed as empty.
 - Platform totals after that publish: 46/182 courses, 2025/2495 lesson slots, 1722 lesson files.
-- Known gap: 21 of the English B2 decks have an empty reading slide because their lesson links a B1
-  page that is still generated filler. Nine B1 pages are involved: all-both-either-neither-none,
+- That gap is closed. The nine B1 pages the B2 lessons leaned on (all-both-either-neither-none,
   causative-have-get-something-done, have-to-must-should-had-better, mixed-conditionals,
   modifying-comparatives, present-perfect-simple-vs-continuous, reported-speech-statements,
-  second-conditional, wish-if-only.
+  second-conditional, wish-if-only) were written in COSYmanuals, and the 121 decks were rebuilt: no
+  slide now carries an empty element. A deck builder that reads manual pages must be re-run after a
+  page is rewritten, because the deck copies the text at build time.
 - Manual coverage, verified by counting `Voici un exemple clair` in each topic file:
   COMPLETE for French: A1 202/202, A2 202/202, B1 246/246, B2 209/209, C1 129/129, C2 121/121 —
   1109 topic pages, no stub pages, no broken links. Earlier notes claiming 144 C1 and 137 C2 pages

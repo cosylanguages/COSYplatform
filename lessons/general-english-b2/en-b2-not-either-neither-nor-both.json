@@ -8,12 +8,12 @@
   "defaultDuration": 60,
   "defaultMode": "all",
   "objectives": [
-    "use the target structure: all both either neither none",
+    "use the target structure: all, both, either, neither, none",
     "use 10 new words: neither, nor, either, both, none, not either, agreement, choice, pair, negative"
   ],
-  "materials": "COSYmanuals B2 grammar pages on all both either neither none; vocabulary cards, audio extracts, reading handout.",
-  "assessment": "Check accurate use of all both either neither none and clear delivery in the spoken task.",
-  "homework": "Write ten lines using all both either neither none, with at least two sentences you have checked against the manual page.",
+  "materials": "COSYmanuals B2 grammar pages on all, both, either, neither, none; vocabulary cards, audio extracts, reading handout.",
+  "assessment": "Check accurate use of all, both, either, neither, none and clear delivery in the spoken task.",
+  "homework": "Write ten lines using all, both, either, neither, none, with at least two sentences you have checked against the manual page.",
   "recycling": {
     "prior": "Recycles the previous lesson in this module.",
     "next": "The next lesson deals with suffixes."
@@ -45,7 +45,7 @@
         "manual_url": "https://cosylanguages.github.io/COSYManuals/manuals/en/grammar/b1/topics/all-both-either-neither-none.html"
       }
     ],
-    "phonetics": "Focus on natural sentence rhythm: emphasize the main content words when expressing All Both Either Neither None, while keeping grammatical function words unstressed."
+    "phonetics": "Both is stressed when the contrast is the point (BOTH proposals), and neither takes a stress on the first syllable /ˈnaɪ.ðə/ in British English."
   },
   "slides": [
     {
@@ -65,7 +65,7 @@
         },
         {
           "type": "instruction",
-          "content": "In pairs, three minutes: say the objective again in your own words."
+          "content": "In pairs, three minutes: what does this sentence already tell you? Two, affirmative, plural verb."
         },
         {
           "type": "input",
@@ -123,7 +123,7 @@
         },
         {
           "type": "instruction",
-          "content": "Use three of them in a sentence that could appear in a text about all both either neither none."
+          "content": "Use three of them in a sentence that could appear in a text about all, both, either, neither, none."
         }
       ]
     },
@@ -140,7 +140,7 @@
         },
         {
           "type": "blockquote",
-          "content": "Focus on natural sentence rhythm: emphasize the main content words when expressing All Both Either Neither None, while keeping grammatical function words unstressed."
+          "content": "Both is stressed when the contrast is the point (BOTH proposals), and neither takes a stress on the first syllable /ˈnaɪ.ðə/ in British English."
         },
         {
           "type": "instruction",
@@ -161,11 +161,11 @@
       "elements": [
         {
           "type": "instruction",
-          "content": "Grammar focus: All Both Either Neither None."
+          "content": "Grammar focus: All, Both, Either, Neither, None."
         },
         {
           "type": "blockquote",
-          "content": "Core Rule: Master the usage, nuance, and structural patterns of All Both Either Neither None ."
+          "content": "Count first: two things take both, either or neither; three or more take all or none. Then match the verb: both and all plural, either and neither singular, none singular in formal writing and plural in speech. Never write both of them was, and never use neither with three things.\n\nboth + plural verb — two, affirmative: both proposals were rejected\neither + singular verb — one of two, any: either option works\nneither + singular verb — two, negative: neither proposal was acceptable\nall + plural verb — three or more, affirmative: all the bids were opened\nnone of + plural noun — three or more, negative: none of the bids was opened\nnot either / neither ... nor — negative of two: neither the chair nor the members replied"
         },
         {
           "type": "grammar-focus",
@@ -174,6 +174,32 @@
         {
           "type": "instruction",
           "content": "Guided practice: choose the correct option."
+        },
+        {
+          "type": "test",
+          "content": "1. Complete: '___ of the two plans was approved.'",
+          "options": [
+            "Neither",
+            "None",
+            "Both"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "2. Complete: 'Both proposals ___ rejected.'",
+          "options": [
+            "is",
+            "were",
+            "was"
+          ]
+        },
+        {
+          "type": "test",
+          "content": "3. Which is correct for three or more?",
+          "options": [
+            "None of the three bids was opened.",
+            "Neither of the three bids was opened."
+          ]
         }
       ]
     },
@@ -190,7 +216,31 @@
         },
         {
           "type": "blockquote",
-          "content": ""
+          "content": "Both reports were late. — Two, affirmative, plural verb. (Both + plural.)\nNeither report was complete. — Two, negative, singular verb. (Neither + singular in formal use.)\nNone of the reports was complete. — More than two, negative. (None of + plural noun.)"
+        },
+        {
+          "type": "instruction",
+          "content": "What do you observe?"
+        },
+        {
+          "type": "blockquote",
+          "content": "Both, either and neither work with two things. Both is affirmative and takes a plural verb. Either means one or the other, and takes a singular verb. Neither means not one and not the other, and is singular in careful use. All and none work with three or more: all takes a plural verb when it means every one, none can take either, with the singular preferred in formal writing."
+        },
+        {
+          "type": "test",
+          "content": "1. Which quantifier refers to exactly two things?",
+          "options": [
+            "Neither.",
+            "None."
+          ]
+        },
+        {
+          "type": "test",
+          "content": "2. Which verb follows 'both proposals'?",
+          "options": [
+            "A plural verb.",
+            "A singular verb."
+          ]
         },
         {
           "type": "instruction",
@@ -215,7 +265,7 @@
         },
         {
           "type": "blockquote",
-          "content": "Success criteria:\n- Form correct sentences using All Both Either Neither None\n- Avoid common learner mistakes"
+          "content": "Success criteria:\n- I can use both, either and neither for two things.\n- I can use all and none for three or more.\n- I can match the verb to the quantifier."
         },
         {
           "type": "instruction",
@@ -240,7 +290,7 @@
         },
         {
           "type": "blockquote",
-          "content": "No recorded error for this point."
+          "content": "❌ Both of the proposals was rejected (singular verb after both) → ✅ Both of the proposals were rejected\n❌ None of the three report was complete (singular noun after none of) → ✅ None of the three reports was complete"
         },
         {
           "type": "instruction",
@@ -249,6 +299,14 @@
         {
           "type": "input",
           "placeholder": "Correction and explanation…"
+        },
+        {
+          "type": "instruction",
+          "content": "Acceptable variants:"
+        },
+        {
+          "type": "blockquote",
+          "content": "Neither of the two suppliers met the deadline.\nNone of the three suppliers met the deadline.\nEither candidate would suit the role."
         }
       ]
     },
@@ -265,11 +323,11 @@
         },
         {
           "type": "blockquote",
-          "content": "- Individual: five sentences with the structure, on the topic of the lesson.\n- Pair: a ten-line dialogue where all both either neither none carries the argument.\n- Group: a six-minute debate, two sides, the structure required in every turn.\n- Professional audience: transpose the structure into a memo.\n- Academic audience: transpose it into a paragraph of analysis."
+          "content": "- Individual: five sentences with the structure, on the topic of the lesson.\n- Pair: a ten-line dialogue where all, both, either, neither, none carries the argument.\n- Group: a six-minute debate, two sides, the structure required in every turn.\n- Professional audience: transpose the structure into a memo.\n- Academic audience: transpose it into a paragraph of analysis."
         },
         {
           "type": "instruction",
-          "content": "Second grammar point of the lesson: All Both Either Neither None. Core Rule: Master the usage, nuance, and structural patterns of All Both Either Neither None ."
+          "content": "Second grammar point of the lesson: All, Both, Either, Neither, None. Count first: two things take both, either or neither; three or more take all or none. Then match the verb: both and all plural, either and neither singular, none singular in formal"
         },
         {
           "type": "input",
@@ -290,11 +348,11 @@
         },
         {
           "type": "blockquote",
-          "content": "- Form correct sentences using All Both Either Neither None\n- Avoid common learner mistakes"
+          "content": "- I can use both, either and neither for two things.\n- I can use all and none for three or more.\n- I can match the verb to the quantifier."
         },
         {
           "type": "instruction",
-          "content": "Homework: Write ten lines using all both either neither none, with at least two sentences you have checked against the manual page."
+          "content": "Homework: Write ten lines using all, both, either, neither, none, with at least two sentences you have checked against the manual page."
         },
         {
           "type": "instruction",
