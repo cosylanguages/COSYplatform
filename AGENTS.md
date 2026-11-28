@@ -59,7 +59,10 @@ of the French B1 curriculum shipped with `grammarIds: null`; they were filled in
   `docs/grammar-id-review/mapping-fr-c1-c2.json`.
 - General C2 unit 1-9 and 13 lessons (the vocabulary lessons) have no `grammar` string at all;
   their two ids were assigned by hand from the unit's topic.
-- `scripts/grammar-ids/check_grammar_ids.py` reports 11 unknown ids that predate this work: 8 in
-  `curriculums/fr/general/B2.json` (slugs written for pages that were never created) and 3 in
-  `curriculums/es/general/A1.json` (`es-a1-preterito-perfecto` reused across unrelated lessons).
+- `scripts/grammar-ids/check_grammar_ids.py --manuals /workspace/COSYmanuals --curricula curriculums`
+  reports 0 unknown ids. The 11 it used to report were registry drift, not missing content: nine
+  French pages existed but were absent from `data/grammar-points.json`, and the Spanish A1 perfect
+  tense id carried an accent (`es-a1-pretérito-perfecto`) that the platform's id pattern rejects.
+  Both were fixed in COSYmanuals by regenerating the registry and renaming the page.
+- The check needs the COSYmanuals checkout, so it is not part of `npm run validate`.
 - Other languages: A1 courses only.
