@@ -662,6 +662,11 @@ environment, culture or identity unit at all, spending four units on t17 and thr
 The B2 courses were written as "advanced topics" lists, not as a second pass over the same
 domains, which is exactly what has to change.
 
+A concrete, costed re-cut for one course exists in `docs/FR_B1_RECUT.md`: renaming three French B1
+units (1 -> ethics, 2 -> life story, 11 -> money and rights) reaches 13/13 slots and touches no
+lesson, no deck file and no id. The ten grammar-led lessons of units 1-2 are the phase-2 part,
+because renaming them renames deck files.
+
 This keeps the useful part of the current French B1 map and fixes the three defects: the English
 slot titles stop being noun phrases, the Russian and Italian maps stop being grammar labels, and
 B2/C1/C2 no longer repeat these titles verbatim in translation — each higher level returns to the

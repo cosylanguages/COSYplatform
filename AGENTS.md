@@ -159,6 +159,10 @@ repositories plus the proposed level model. Facts worth remembering before touch
   environment/culture/identity unit and four t17 units. RU B2 mirrors FR B2 on 7 of 13 slot
   positions; EN B2 is independently ordered (3 of 10), so the "literal translation" note in the
   architecture doc was corrected.
+- `docs/FR_B1_RECUT.md` is a proposal, not applied: renaming FR B1 units 1/2/11 (ethics, life
+  story, money+rights) takes the course from 10/13 to 13/13 slots with no lesson, deck or id
+  change. Phase 2 (renaming the ten grammar-led lessons of units 1-2 to can-dos) renames deck
+  files and ids, so it needs an explicit decision.
 - `slot-alignment.py --level B2 --grid B1` renders `docs/B2_SLOT_ALIGNMENT.md`; the test recomputes
   coverage for every committed report from the curricula.
 - Greek A2: units 1, 9-13 themed (remembrance, work, health, home, culture, revision); units 2-8
