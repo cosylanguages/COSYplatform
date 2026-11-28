@@ -157,7 +157,7 @@ written in Latin script. One leak is enough to flag the deck.
 | fr | 467 | 0 |
 | it | 195 | 0 |
 | pt | 65 | 0 |
-| ru | 207 | 6 |
+| ru | 272 | 6 |
 - ru `general-russian-a1` — grammar: 1. Переведите «I like this book»:
 - ru `general-russian-a1` — grammar: 1. Переведите «I like this book»:
 

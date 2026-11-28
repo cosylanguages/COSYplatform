@@ -219,7 +219,7 @@ SCAFFOLD = {
         check_3='Я могу задать вопрос по теме урока и ответить на него.',
         homework_default='Напишите десять строк с «{title}»; проверьте не меньше двух фраз по странице руководства.',
         next_lesson='Следующий урок: {next}.',
-        obj_structure='использовать конструкцию: {title}', obj_words='использовать {n} новых слов: {words}',
+        obj_structure='использовать конструкцию: {title}', obj_words='использовать {n} новых {noun}: {words}',
         materials='Страницы грамматики COSYmanuals по теме «{title}»',
         materials_second=' и {second}', materials_tail='; карточки слов, аудио, лист для чтения.',
         assessment='Проверяется правильное употребление «{title}» и ясность устной речи.',
@@ -272,6 +272,13 @@ def in_language(text, lang):
     if lang == 'el':
         return bool(re.search('[Α-Ωα-ω]', text))
     return True
+
+
+NUMERAL_NOUN = {
+    'it': lambda n: 'parole',
+    'el': lambda n: 'λέξεων',
+    'ru': lambda n: 'слов' if n % 10 in (0, 5, 6, 7, 8, 9) or 11 <= n % 100 <= 14 else ('слово' if n % 10 == 1 else 'слова'),
+}
 
 
 def teacher_note(notes, key):
@@ -425,7 +432,7 @@ def build_deck(lang, level, t, lesson, unit, next_title, code):
         'defaultDuration': duration,
         'defaultMode': 'all',
         'objectives': [t['obj_structure'].format(title=page['title'].lower()),
-                       t['obj_words'].format(n=len(vocab), words=', '.join(vocab))],
+                       t['obj_words'].format(n=len(vocab), words=', '.join(vocab), noun=NUMERAL_NOUN[lang](len(vocab)))],
         'materials': (t['materials'].format(title=page['title'].lower())
                       + (t['materials_second'].format(second=second_title.lower()) if second else '')
                       + t['materials_tail']),

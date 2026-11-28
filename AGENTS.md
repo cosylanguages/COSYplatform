@@ -63,7 +63,18 @@ homework notes said `ты`. `scripts/grammar-ids/wire_ru_a2.py` and `scripts/con
 all of it; the result is 131 ids over 57 pages (52 of the 55 A2 pages).
 Ten A2 pages carry no checklist block, which used to leave the cool-down slide empty: `build_decks.py` now
 falls back to three scaffold sentences (`check_1..check_3`, added for it, el and ru) when `page['checklist']`
-is empty, and its `recycled_default` no longer repeats the label that `prior` already prints. Supporting changes: the Russian page frame in `manual_page.py`
+is empty, and its `recycled_default` no longer repeats the label that `prior` already prints.
+
+Russian B1 is published as well: 65 decks, `docs/RUSSIAN_B1_BUILD.md`. Most of its ids pointed a level down
+(the participles lesson cited `ru-a1-prilagatelnye`), so `scripts/grammar-ids/wire_ru_b1.py` gives all 65
+lessons 136 ids over 45 of the 47 B1 pages plus ten A2 spirals.
+`scripts/content/normalize_ru_level.py --level <A1|B1|...>` now carries the mechanical passes for every
+Russian level: unit titles to `Модуль N.`, vocabulary to lowercase, can-do to the third person (`Я могу X`
+and bare infinitives both), homework to the formal imperative, the English `recycled:` line, and the
+final-exam "vocabulary" that was really a description of the exam. It is idempotent; A2 is already clean.
+`build_decks.py` picks the Russian numeral form for the objectives line (1 слово, 3 слова, 6 слов), which
+`использовать 3 новых слов` had hard-coded wrong for A1's first unit.
+Still to do on the Russian shelf: B2 (34 lessons unwired), C1 (65), C2 (55). Supporting changes: the Russian page frame in `manual_page.py`
 (`ul.gv-lines`, `p.gv-formula`, `section.examples`, `box mint` headings, `wrong-line`/`right-line`, and
 two-column reference tables) takes page coverage from 11 to 38 of the 39 ids the curriculum uses; a
 Cyrillic table in `slug()` (without it every deck id was `ru-a1----`); a 70-string `ru` scaffold; and
